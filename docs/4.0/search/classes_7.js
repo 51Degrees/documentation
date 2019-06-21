@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['notimplementedexception',['NotImplementedException',['../../../../device-detection-cxx/docs/4.0/class_fiftyone_degrees_1_1_common_1_1_not_implemented_exception.html',1,'FiftyoneDegrees::Common']]],
-  ['novaluesavailableexception',['NoValuesAvailableException',['../../../../device-detection-cxx/docs/4.0/class_fiftyone_degrees_1_1_common_1_1_no_values_available_exception.html',1,'FiftyoneDegrees::Common']]]
+  ['httpclient',['HttpClient',['../../../../pipeline-java/docs/4.0/interfacefiftyone_1_1pipeline_1_1engines_1_1services_1_1_http_client.html',1,'fiftyone::pipeline::engines::services']]],
+  ['httpclientdefault',['HttpClientDefault',['../../../../pipeline-java/docs/4.0/classfiftyone_1_1pipeline_1_1engines_1_1services_1_1_http_client_default.html',1,'fiftyone::pipeline::engines::services']]]
 ];
