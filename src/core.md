@@ -8,4 +8,6 @@
 
 [link to concepts](@ref Concepts)
 
+@ref Concepts
+
 some docs for the core group
