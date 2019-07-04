@@ -15,7 +15,6 @@ var searchData=
   ['dataupdateservice',['DataUpdateService',['../../../../pipeline-java/docs/4.0/interfacefiftyone_1_1pipeline_1_1engines_1_1services_1_1_data_update_service.html',1,'fiftyone::pipeline::engines::services']]],
   ['dataupdateservicedefault',['DataUpdateServiceDefault',['../../../../pipeline-java/docs/4.0/classfiftyone_1_1pipeline_1_1engines_1_1services_1_1_data_update_service_default.html',1,'fiftyone::pipeline::engines::services']]],
   ['dataupdateurlformatter',['DataUpdateUrlFormatter',['../../../../pipeline-java/docs/4.0/interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_data_update_url_formatter.html',1,'fiftyone::pipeline::engines::data']]],
-  ['date',['Date',['../../../../device-detection-cxx/docs/4.0/class_fiftyone_degrees_1_1_common_1_1_date.html',1,'FiftyoneDegrees::Common']]],
   ['default',['Default',['../../../../pipeline-java/docs/4.0/classfiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_error_1_1_default.html',1,'fiftyone::pipeline::core::data::FlowError']]],
   ['dynamicfilters',['DynamicFilters',['../../../../pipeline-java/docs/4.0/classfiftyone_1_1devicedetection_1_1examples_1_1pattern_1_1_dynamic_filters.html',1,'fiftyone::devicedetection::examples::pattern']]]
 ];
