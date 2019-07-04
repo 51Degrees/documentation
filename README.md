@@ -109,7 +109,11 @@ DoxyGen must be downloaded [FS1/Ben/DoxyGen](\\fs1\Data\Ben\DoxyGen)
 In order for DoxyGen to generate nice diagrams, [GraphVis 2.38](https://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.msi) must be installed.
 
 ### Pattern Lab
-The css used in all documentation comes from the pattern lab submodule. To generate the `docs-main.min.css` needed by the documentation, follow the installation instructions in the [PatternLab readme](patternlab/README.md) to generat the css, then run ``gulp minify-css`` to minify it. The minified css will now live in `patternlab/source/css`.
+The css used in all documentation comes from the pattern lab submodule.
+
+To generate the `docs-main.min.css` needed by the documentation, follow the installation instructions in the [PatternLab readme](patternlab/README.md) to generat the css, then run ``gulp minify-css`` to minify it. The minified css will now live in `patternlab/source/css`.
+
+After re running the pattern lab generation, the SVG images in `patternlab/source/images/' should also be copied to the `docs/images` directory.
 
 ## DoxyWizard
 The DoxyGen package includes `doxywizard.exe` which will guide you through generating the documentation. After opening it, open the `DoxyFile` within it and go to generate the documentation.
