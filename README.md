@@ -5,12 +5,14 @@ This contains general documentation about the v4 API.
 
 # Structure
 
-| | |
-| ------- | ----- |
+| Source  | Description |
+| ------- | ----------- |
 | `src/`  | All documentation source lives in the src directory in markdown form with the addition of DoxyGen syntax. |
 | `docs/` | HTML documentation generated from `src/` ends up here. This is what is displayed on the documentation pages. |
 | `Doxyfile` | Configuration for generating the documentation using DoxyGen. |
 | `DoxygenLayout.xml` | Defines how the navigation is layed out in the generated documentation. |
+| `examplegrabber.js` | Included in the generated documentation to pull in language specific examples. |
+| `patternlab` | PatternLab submodule which generates the custom CSS used in the generated documentation. |
 
 # Markdown Files
 Markdown files in the src directory use standard markdown syntax to document each concept. Each concept should live in its own file.
@@ -29,7 +31,8 @@ Each page must be declared with a ``@page`` tag giving it a unique identifier, a
 where the unique id is its location inside the documentation structure (this is just convention and does not affect the output), and the name of the page is a more friendly name.
 
 ### @subpage
-Each subpage must be declared in its parent page using the ``@subpage`` tag and the unique identifier of the subpage. For example, the `Pipeline` page lives under the `Core` page, so the ``Core`` page contains
+Each subpage must be declared in its parent page using the ``@subpage`` tag and the unique identifier of the 
+subpage. For example, the `Pipeline` page lives under the `Core` page, so the `Core` page contains
 
 ```
 @subpage Concepts-Core-Pipeline
@@ -87,7 +90,12 @@ Any links on the page (e.g. to classes which are documented in the target reposi
 # Tag Files
 To enable linking to documented members (e.g. classes, structs etc) from other repositories, tag files must be included in the `Doxyfile` using the `TAGFILES` property.
 
-**TODO: explain more**
+This means that any links which are possible in the documentation which generated the tag file is also possible from the documentation which includes the tag file. For example, by including the C tag file with the line
+
+```
+device-detection-cxx/tagfile=../../../device-detection-cxx/4.0
+```
+any link to a member of the C documentation will be included with the prefix `../../../device-detection-cxx/4.0` (the path to the repository).
 
 # DoxygenLayout.xml
 This contains the structure of the navigation. First there is the main page (defined by the ``@mainpage`` tag), then pages (defined with ``@page`` and ``@subpage`` tags), then the static links to the language specific documentation (these are hardcoded with the repository names).
@@ -95,10 +103,15 @@ This contains the structure of the navigation. First there is the main page (def
 # Generating
 ## Dependencies
 ### DoxyGen
-DoxyGen must be downloaded from **TODO: link**
+DoxyGen must be downloaded [FS1/Ben/DoxyGen](\\fs1\Data\Ben\DoxyGen)
 
 ### GraphVis
 In order for DoxyGen to generate nice diagrams, [GraphVis 2.38](https://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.msi) must be installed.
 
 ### Pattern Lab
-**TODO: add style info**
+The css used in all documentation comes from the pattern lab submodule. To generate the `docs-main.min.css` needed by the documentation, follow the installation instructions in the [PatternLab readme](patternlab/README.md) to generat the css, then run ``gulp minify-css`` to minify it. The minified css will now live in `patternlab/source/css`.
+
+## DoxyWizard
+The DoxyGen package includes `doxywizard.exe` which will guide you through generating the documentation. After opening it, open the `DoxyFile` within it and go to generate the documentation.
+
+The `DoxyFile` can be edited entirely through this wizard, making changing things a bit simpler (this is the prefered method).

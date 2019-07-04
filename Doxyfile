@@ -51,7 +51,7 @@ PROJECT_BRIEF          =
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO           = docs/images/logo-51Degrees-Docs.png
+PROJECT_LOGO           = patternlab/source/images/logo-51Degrees-Docs.png
 
 # The PROJECT_URL tag is used to specify the URL which is linked by the
 # PROJECT_LOGO.
@@ -1189,7 +1189,7 @@ HTML_FOOTER            =
 # obsolete.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_STYLESHEET        = docs/main.min.css
+HTML_STYLESHEET        = patternlab/source/css/main.min.css
 
 # The HTML_EXTRA_STYLESHEET tag can be used to specify additional user-defined
 # cascading style sheets that are included after the standard style sheets
@@ -2194,8 +2194,8 @@ SKIP_FUNCTION_MACROS   = YES
 # the path). If a tag file is not located in the directory in which doxygen is
 # run, you must also specify the path to the tagfile here.
 
-TAGFILES               = ../device-detection-cxx/tagfile=../../../device-detection-cxx/docs/4.0 \
-                         ../pipeline-java/tagfile=../../../pipeline-java/docs/4.0
+TAGFILES               = ../pipeline-java/tagfile=../../../pipeline-java/docs/4.0 \
+                         ../device-detection-cxx/tagfile=../../../device-detection-cxx/docs/4.0
 
 # When a file name is specified after GENERATE_TAGFILE, doxygen will create a
 # tag file that is based on the input files it reads. See section "Linking to
