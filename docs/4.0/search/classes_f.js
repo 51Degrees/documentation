@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['stringmanipulation',['StringManipulation',['../../../../pipeline-java/docs/4.0/classfiftyone_1_1pipeline_1_1util_1_1_string_manipulation.html',1,'fiftyone::pipeline::util']]],
-  ['stronglytyped',['StronglyTyped',['../../../../pipeline-java/docs/4.0/classfiftyone_1_1devicedetection_1_1examples_1_1pattern_1_1_strongly_typed.html',1,'fiftyone::devicedetection::examples::pattern::StronglyTyped'],['../../../../pipeline-java/docs/4.0/classfiftyone_1_1devicedetection_1_1examples_1_1hash_1_1_strongly_typed.html',1,'fiftyone::devicedetection::examples::hash::StronglyTyped']]],
-  ['swigmap',['SwigMap',['../../../../pipeline-java/docs/4.0/interfacefiftyone_1_1pipeline_1_1engines_1_1interop_1_1_swig_map.html',1,'fiftyone::pipeline::engines::interop']]],
-  ['swigmapbase',['SwigMapBase',['../../../../pipeline-java/docs/4.0/classfiftyone_1_1pipeline_1_1engines_1_1interop_1_1_swig_map_base.html',1,'fiftyone::pipeline::engines::interop']]],
-  ['swigmapiterator',['SwigMapIterator',['../../../../pipeline-java/docs/4.0/interfacefiftyone_1_1pipeline_1_1engines_1_1interop_1_1_swig_map_iterator.html',1,'fiftyone::pipeline::engines::interop']]],
-  ['swigpropertymetadata',['SwigPropertyMetaData',['../../../../pipeline-java/docs/4.0/interfacefiftyone_1_1pipeline_1_1engines_1_1interop_1_1_swig_property_meta_data.html',1,'fiftyone::pipeline::engines::interop']]],
-  ['swigvector',['SwigVector',['../../../../pipeline-java/docs/4.0/interfacefiftyone_1_1pipeline_1_1engines_1_1interop_1_1_swig_vector.html',1,'fiftyone::pipeline::engines::interop']]],
-  ['swigvectorbase',['SwigVectorBase',['../../../../pipeline-java/docs/4.0/classfiftyone_1_1pipeline_1_1engines_1_1interop_1_1_swig_vector_base.html',1,'fiftyone::pipeline::engines::interop']]]
+  ['reloadfromfile',['ReloadFromFile',['../../../../device-detection-cxx/docs/4.0/class_fiftyone_degrees_1_1_examples_1_1_hash_1_1_reload_from_file.html',0,'FiftyoneDegrees::Examples::Hash::ReloadFromFile'],['../../../../device-detection-cxx/docs/4.0/class_fiftyone_degrees_1_1_examples_1_1_pattern_1_1_reload_from_file.html',0,'FiftyoneDegrees::Examples::Pattern::ReloadFromFile']]],
+  ['reloadfrommemory',['ReloadFromMemory',['../../../../device-detection-cxx/docs/4.0/class_fiftyone_degrees_1_1_examples_1_1_pattern_1_1_reload_from_memory.html',0,'FiftyoneDegrees::Examples::Pattern::ReloadFromMemory'],['../../../../device-detection-cxx/docs/4.0/class_fiftyone_degrees_1_1_examples_1_1_hash_1_1_reload_from_memory.html',0,'FiftyoneDegrees::Examples::Hash::ReloadFromMemory']]],
+  ['reportiterable',['ReportIterable',['../../../../pipeline-java/docs/4.0/classfiftyone_1_1devicedetection_1_1examples_1_1_example_base_1_1_report_iterable.html',0,'fiftyone::devicedetection::examples::ExampleBase']]],
+  ['requiredpropertiesconfig',['RequiredPropertiesConfig',['../../../../device-detection-cxx/docs/4.0/class_fiftyone_degrees_1_1_common_1_1_required_properties_config.html',0,'FiftyoneDegrees::Common']]],
+  ['resultsbase',['ResultsBase',['../../../../device-detection-cxx/docs/4.0/class_fiftyone_degrees_1_1_common_1_1_results_base.html',0,'FiftyoneDegrees::Common']]],
+  ['resultsdevicedetection',['ResultsDeviceDetection',['../../../../device-detection-cxx/docs/4.0/class_fiftyone_degrees_1_1_device_detection_1_1_results_device_detection.html',0,'FiftyoneDegrees::DeviceDetection']]],
+  ['resultshash',['ResultsHash',['../../../../device-detection-cxx/docs/4.0/class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html',0,'FiftyoneDegrees::DeviceDetection::Hash']]],
+  ['resultspattern',['ResultsPattern',['../../../../device-detection-cxx/docs/4.0/class_fiftyone_degrees_1_1_device_detection_1_1_pattern_1_1_results_pattern.html',0,'FiftyoneDegrees::DeviceDetection::Pattern']]]
 ];
