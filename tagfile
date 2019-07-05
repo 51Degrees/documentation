@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="page">
+    <name>Concepts</name>
+    <title>Conceptual Docs</title>
+    <filename>_concepts</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts-Core</name>
+    <title>Core</title>
+    <filename>_concepts-_core</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts-Core-Pipeline</name>
+    <title>Pipeline</title>
+    <filename>_concepts-_core-_pipeline</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples</name>
+    <title>Examples</title>
+    <filename>_examples</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples-GettingStarted</name>
+    <title>Getting Started</title>
+    <filename>_examples-_getting_started</filename>
+  </compound>
+  <compound kind="page">
+    <name>index</name>
+    <title>Home</title>
+    <filename>index</filename>
+  </compound>
+</tagfile>
