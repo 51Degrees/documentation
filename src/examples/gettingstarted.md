@@ -1,4 +1,4 @@
-@page Examples-GettingStarted Getting Started
+@page Examples_GettingStarted Getting Started
 
 Here is how to do some stuff...
 

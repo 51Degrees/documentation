@@ -2,4 +2,4 @@
 
 Here are soime examples...
 
-@subpage Examples-GettingStarted
+@subpage Examples_GettingStarted

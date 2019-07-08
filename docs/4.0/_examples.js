@@ -1,4 +1,4 @@
 var _examples =
 [
-    [ "Getting Started", "_examples-_getting_started.html", null ]
+    [ "Getting Started", "_examples__getting_started.html", null ]
 ];
