@@ -3,6 +3,8 @@ Documenting Code
 
 Code documentation should follow the language syntax, plus a few DoxyGen specific additions.
 
+Before reading this, the reader should be familiar with the [Documenting](Documenting.md) file.
+
 # General
 
 All public code comments should only live in header files if the language is structured that way (e.g. C or C++). Code which is not publicly exposed should still be commented in the code file, however this will not be included in the public generated documentation.
@@ -121,11 +123,19 @@ All comment blocks can be formatted using markdown. This is the prefered method 
 
 # Links
 
-Links to other documented items are usualy generated automaticaly, however it is preferable to explicitely link using a `#` to indicate a link:
+Links to other documented items are usualy generated automaticaly, however it is preferable to explicitely link using a ``#`` to indicate a link:
 
 ``` C
 /**
  * Here is a link to the #someFunction function.
+ */
+```
+
+If the thing being linked is a member of something else, and will be linked with a ``::``, this an indicator like ``#`` so only one is needed. For example, the above example could also be written as:
+
+``` C
+/**
+ * Here is a link to the ContainingClass::someFunction function.
  */
 ```
 
@@ -222,7 +232,7 @@ ResultsBase *results = engine->processBase(evidence);
 delete evidence;
 ```
 
-It is also important to include any namespaces in the snippet to ensure that classes and methods are linked properly in the generated documentation. In the above example, the user should be able to click on ``EngineBase`` or any other method and be taken to the documentation for it.
+It is also important to include any namespaces in the snippet to ensure that classes and methods are linked properly in the generated documentation. In the above example, the reader should be able to click on ``EngineBase`` or any other method and be taken to the documentation for it.
 
 ## Full Examples
 
