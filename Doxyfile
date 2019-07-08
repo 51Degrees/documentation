@@ -1174,8 +1174,8 @@ HTML_EXTRA_FILES       = examplegrabber.js
 HTML_IMAGE_OUTPUT      = docs/images
 
 
-HTML_EXTRA_IMAGES      = doc-src/patternlab/source/images/icon-arrow-solid-right-mute.svg \
-                         doc-src/patternlab/source/images/icon-arrow-solid-right-orange.svg
+HTML_EXTRA_IMAGES      = patternlab/source/images/icon-arrow-solid-right-mute.svg \
+                         patternlab/source/images/icon-arrow-solid-right-orange.svg
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the style sheet and background images according to
