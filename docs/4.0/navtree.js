@@ -261,8 +261,8 @@ function newNode(o, po, text, link, childrenData, lastNode)
 function showRoot()
 {
   var headerHeight = $("#titlearea").height();
-  //var footerHeight = $("#nav-path").height();
-  var windowHeight = $(window).height() - headerHeight;// - footerHeight;
+  var footerHeight = $("#nav-path").height();
+  var windowHeight = $(window).height() - headerHeight; - footerHeight;
   (function (){ // retry until we can scroll to the selected item
     try {
       var navtree=$('#nav-tree');

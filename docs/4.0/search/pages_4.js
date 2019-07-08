@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['naming_20conventions',['Naming Conventions',['../../../../device-detection-cxx/docs/4.0/md_src_common-cxx__r_e_a_d_m_e.html',1,'']]]
+  ['pipeline',['Pipeline',['../_concepts-_core-_pipeline.html',1,'Concepts-Core']]]
 ];

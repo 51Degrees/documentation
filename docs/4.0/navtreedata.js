@@ -27,14 +27,14 @@ var NAVTREE =
     [ "Conceptual Docs", "_concepts.html", "_concepts" ],
     [ "Examples", "_examples.html", "_examples" ],
     [ "Language Specific", "usergroup0.html", [
-      [ "C/C++ Docs", "../../../device-detection-cxx/docs/4.0/index.html", null ],
-      [ "Java Docs", "../../../pipeline-java/docs/4.0/index.html", null ]
+      [ "C/C++ Docs", "../../device-detection-cxx/4.0/index.html", null ],
+      [ "Java Docs", "../../pipeline-java/4.0/index.html", null ]
     ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"../../../device-detection-cxx/docs/4.0/index.html"
+"../../device-detection-cxx/4.0/index.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

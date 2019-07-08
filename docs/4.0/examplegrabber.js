@@ -1,4 +1,4 @@
-var DOC_URL_BASE = 'documentation/docs/';
+var DOC_URL_BASE = 'documentation/';
 
 /**
  * Get the documentation version from the URL.
@@ -49,7 +49,7 @@ function grabExample(caller, project, name) {
     }
     // Load the example into the 'grabbed-example' div, then update the links.
     $('#grabbed-example').load(
-        '../../../' + project + '/docs/' + getVersion()
+        '../../' + project + '/' + getVersion()
         + '/' + name + '-example.html'
         + ' #primary',
         function() { updateLinks(project); });
