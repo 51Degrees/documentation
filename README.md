@@ -88,14 +88,14 @@ The HTML loaded will come from the ``g-docs__primary`` div on the target page wh
 Any links on the page (e.g. to classes which are documented in the target repository) are fixed so they point to the correct URL.
 
 # Tag Files
-To enable linking to documented members (e.g. classes, structs etc) from other repositories, tag files must be included in the `Doxyfile` using the `TAGFILES` property.
+To enable linking to this documentation from other repositories, tag files must be included in their `Doxyfile` using the `TAGFILES` property.
 
-This means that any links which are possible in the documentation which generated the tag file is also possible from the documentation which includes the tag file. For example, by including the C tag file with the line
+This means that any links which are possible here are also possible from the documentation which includes the tag file. With this as a git submodule under the directory `doc-src`, including the tag file with the line
 
 ```
-device-detection-cxx/tagfile=../../../device-detection-cxx/4.0
+doc-src/tagfile=../../documentation/4.0
 ```
-any link to a member of the C documentation will be included with the prefix `../../../device-detection-cxx/4.0` (the path to the repository).
+any link to a member of the general documentation will be included with the prefix `../../documentation/4.0` (the path to the repository).
 
 # DoxygenLayout.xml
 This contains the structure of the navigation. First there is the main page (defined by the ``@mainpage`` tag), then pages (defined with ``@page`` and ``@subpage`` tags), then the static links to the language specific documentation (these are hardcoded with the repository names).
@@ -111,9 +111,7 @@ In order for DoxyGen to generate nice diagrams, [GraphVis 2.38](https://graphviz
 ### Pattern Lab
 The css used in all documentation comes from the pattern lab submodule.
 
-To generate the `docs-main.min.css` needed by the documentation, follow the installation instructions in the [PatternLab readme](patternlab/README.md) to generat the css, then run ``gulp minify-css`` to minify it. The minified css will now live in `patternlab/source/css`.
-
-After re running the pattern lab generation, the SVG images in `patternlab/source/images/' should also be copied to the `docs/images` directory.
+To generate the `main.min.css` needed by the documentation, follow the installation instructions in the [PatternLab readme](patternlab/README.md) to generat the css, then run ``gulp minify-css`` to minify it. The minified css will now live in `patternlab/source/css`.
 
 ## DoxyWizard
 The DoxyGen package includes `doxywizard.exe` which will guide you through generating the documentation. After opening it, open the `DoxyFile` within it and go to generate the documentation.
