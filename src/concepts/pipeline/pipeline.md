@@ -46,12 +46,12 @@ digraph pipelineflow {
     bgcolor=transparent;
     node [ shape=record, fontname=Helvetica, fontsize=10 ];
     edge [ fontname=Helvetica, fontsize=10 ];
-    Pipeline [ label="Pipeline" ]
-    FlowData [ label="FlowData" URL="@ref Concepts_Data_FlowData"];
-    Pipeline -> FlowData [ label="create"]
-    FlowData -> Pipeline [label="process" color="green"];
-    Pipeline -> FlowData [ color="green" ];
-    FlowData -> Pipeline [ label="dispose" ];
+    P [ label="Pipeline" ]
+    FD [ label="FlowData" URL="@ref Concepts_Data_FlowData"];
+    P -> FD [ label="create"]
+    FD -> P [label="process" color="green"];
+    P -> FD [ color="green" ];
+    FD -> P [ label="dispose" ];
 }
 @enddot
 
@@ -93,20 +93,21 @@ order.
 
 @dot
 digraph P {
-    newrank=true;
+    rankdir=LR;
     bgcolor=transparent;
     node [ shape=record, fontname=Helvetica, fontsize=10 ];
-    in [ shape=plaintext ];
-    subgraph clusterPipelineSeq {
+    
+    i [label=in, shape=plaintext ];
+    subgraph clusterP {
         label="Pipeline";
         fontname=Helvetica;
         fontsize=10;
-        "FlowElement (E1)";
-        "FlowElement (E2)";
+        E1 [label="FlowElement (E1)"];
+        E2 [label="FlowElement (E2)"];
     };
-    out [ shape=plaintext ];
-    in -> "FlowElement (E1)" -> "FlowElement (E2)" -> out;
-    {rank=same; "FlowElement (E1)"; "FlowElement (E2)"; in; out; };
+    o [ label=out, shape=plaintext ];
+    
+    i -> E1 -> E2 -> o;
 }
 @enddot
 
@@ -119,27 +120,29 @@ Now consider an example where both **E1** and **E2** are added in parallel.
 
 @dot
 digraph P {
-    newrank=true;
+    rankdir=LR;
     compond=true;
     bgcolor=transparent;
     node [ shape=record, fontname=Helvetica, fontsize=10 ];
-    in [ shape=plaintext ];
-    subgraph clusterPipelineSeq {
+    
+    i [ label=in, shape=plaintext ];
+    subgraph clusterP {
         label="Pipeline";
         fontname=Helvetica;
         fontsize=10;
         I1 [label="", style=invis, width=0, height=0, fixedsize=true ];
-        "FlowElement (E1)";
-        "FlowElement (E2)";
+        E1 [label="FlowElement (E1)"];
+        E2 [label="FlowElement (E2)"];
         I2 [label="", style=invis, width=0, height=0, fixedsize=true ];
     };
-    out [ label="out" shape=plaintext ];
-    in -> I1 [arrowhead=none];
-    I1 -> "FlowElement (E1)";
-    "FlowElement (E1)" -> I2 [arrowhead=none];
-    I2 -> out;
-    I1 -> "FlowElement (E2)" -> I2;
-    {rank=same; I1; "FlowElement (E1)"; I2; in; out; };
+    o [ label="out" shape=plaintext ];
+    
+    i -> I1 [arrowhead=none];
+    I1 -> E1;
+    E1 -> I2 [arrowhead=none];
+    I2 -> o;
+    I1 -> E2;
+    E2 -> I2 [arrowhead=none];
 }
 @enddot
 
