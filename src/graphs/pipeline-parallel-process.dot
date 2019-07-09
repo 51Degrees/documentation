@@ -9,10 +9,10 @@ digraph P {
         label="Pipeline";
         fontname=Helvetica;
         fontsize=10;
-        I1 [label="", style=invis, width=0, height=0, fixedsize=true ];
+        I1 [label="", shape=point ];
         E1 [label="FlowElement (E1)"];
         E2 [label="FlowElement (E2)"];
-        I2 [label="", style=invis, width=0, height=0, fixedsize=true ];
+        I2 [label="", shape=point ];
     };
     o [ label="out" shape=plaintext ];
     
