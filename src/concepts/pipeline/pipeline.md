@@ -41,19 +41,7 @@ whichever order has been configured when the Pipeline was built, the FlowData is
 results from the processing contained within.
 
 
-@dot
-digraph pipelineflow {
-    bgcolor=transparent;
-    node [ shape=record, fontname=Helvetica, fontsize=10 ];
-    edge [ fontname=Helvetica, fontsize=10 ];
-    P [ label="Pipeline" ]
-    FD [ label="FlowData" URL="@ref Concepts_Data_FlowData"];
-    P -> FD [ label="create"]
-    FD -> P [label="process" color="green"];
-    P -> FD [ color="green" ];
-    FD -> P [ label="dispose" ];
-}
-@enddot
+@dotfile basic-pipeline-flow.dot
 
 ## Public Access
 
@@ -91,25 +79,7 @@ by how it is created.
 Consider an example where Elements **E1** and **E2** are added to the Pipeline individually in that
 order.
 
-@dot
-digraph P {
-    rankdir=LR;
-    bgcolor=transparent;
-    node [ shape=record, fontname=Helvetica, fontsize=10 ];
-    
-    i [label=in, shape=plaintext ];
-    subgraph clusterP {
-        label="Pipeline";
-        fontname=Helvetica;
-        fontsize=10;
-        E1 [label="FlowElement (E1)"];
-        E2 [label="FlowElement (E2)"];
-    };
-    o [ label=out, shape=plaintext ];
-    
-    i -> E1 -> E2 -> o;
-}
-@enddot
+@dotfile pipeline-process.dot
 
 **E1** will carry out its processing on the FlowData, then once it is finished, **E2** will
 do the same. A consequence of this scenario is that the FlowData created by the Pipeline will not be
@@ -118,33 +88,7 @@ that **E1** and **E2** will never be writing at the same time.
 
 Now consider an example where both **E1** and **E2** are added in parallel.
 
-@dot
-digraph P {
-    rankdir=LR;
-    compond=true;
-    bgcolor=transparent;
-    node [ shape=record, fontname=Helvetica, fontsize=10 ];
-    
-    i [ label=in, shape=plaintext ];
-    subgraph clusterP {
-        label="Pipeline";
-        fontname=Helvetica;
-        fontsize=10;
-        I1 [label="", style=invis, width=0, height=0, fixedsize=true ];
-        E1 [label="FlowElement (E1)"];
-        E2 [label="FlowElement (E2)"];
-        I2 [label="", style=invis, width=0, height=0, fixedsize=true ];
-    };
-    o [ label="out" shape=plaintext ];
-    
-    i -> I1 [arrowhead=none];
-    I1 -> E1;
-    E1 -> I2 [arrowhead=none];
-    I2 -> o;
-    I1 -> E2;
-    E2 -> I2 [arrowhead=none];
-}
-@enddot
+@dotfile pipeline-parallel-process.dot
 
 In this case, both will carry out their processing at the same time. This time, the FlowData
 which the Pipeline creates will be thread-safe for writing as it is likely that both **E1** and
