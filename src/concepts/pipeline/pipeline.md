@@ -41,6 +41,20 @@ whichever order has been configured when the Pipeline was built, the FlowData is
 results from the processing contained within.
 
 
+@dot
+digraph pipelineflow {
+    bgcolor=transparent;
+    node [ shape=record, fontname=Helvetica, fontsize=10 ];
+    edge [ fontname=Helvetica, fontsize=10 ];
+    Pipeline [ label="Pipeline" ]
+    FlowData [ label="FlowData" URL="@ref Concepts_Data_FlowData"];
+    Pipeline -> FlowData [ label="create"]
+    FlowData -> Pipeline [label="process" color="green"];
+    Pipeline -> FlowData [ color="green" ];
+    FlowData -> Pipeline [ label="dispose" ];
+}
+@enddot
+
 ## Public Access
 
 Other than the creation of a new FlowData, there are very few other publicly accessible parts
@@ -75,22 +89,70 @@ The structure of the Elements within the Pipeline, and the FlowData which it cre
 by how it is created.
 
 Consider an example where Elements **E1** and **E2** are added to the Pipeline individually in that
-order. **E1** will carry out its processing on the FlowData, then once it is finished, **E2** will
+order.
+
+@dot
+digraph P {
+    newrank=true;
+    bgcolor=transparent;
+    node [ shape=record, fontname=Helvetica, fontsize=10 ];
+    in [ shape=plaintext ];
+    subgraph clusterPipelineSeq {
+        label="Pipeline";
+        fontname=Helvetica;
+        fontsize=10;
+        "FlowElement (E1)";
+        "FlowElement (E2)";
+    };
+    out [ shape=plaintext ];
+    in -> "FlowElement (E1)" -> "FlowElement (E2)" -> out;
+    {rank=same; "FlowElement (E1)"; "FlowElement (E2)"; in; out; };
+}
+@enddot
+
+**E1** will carry out its processing on the FlowData, then once it is finished, **E2** will
 do the same. A consequence of this scenario is that the FlowData created by the Pipeline will not be
 thread-safe for the purposes of processing. This improves performance, and is safe as it is known
 that **E1** and **E2** will never be writing at the same time.
 
-Now consider an example where both **E1** and **E2** are added in parallel. In this case, both will
-carry out their processing at the same time. This time, the FlowData which the Pipeline creates will
-be thread-safe for writing as it is likely that both **E1** and **E2** will attempt to write their
-results to the FlowData at the same time.
+Now consider an example where both **E1** and **E2** are added in parallel.
+
+@dot
+digraph P {
+    newrank=true;
+    compond=true;
+    bgcolor=transparent;
+    node [ shape=record, fontname=Helvetica, fontsize=10 ];
+    in [ shape=plaintext ];
+    subgraph clusterPipelineSeq {
+        label="Pipeline";
+        fontname=Helvetica;
+        fontsize=10;
+        I1 [label="", style=invis, width=0, height=0, fixedsize=true ];
+        "FlowElement (E1)";
+        "FlowElement (E2)";
+        I2 [label="", style=invis, width=0, height=0, fixedsize=true ];
+    };
+    out [ label="out" shape=plaintext ];
+    in -> I1 [arrowhead=none];
+    I1 -> "FlowElement (E1)";
+    "FlowElement (E1)" -> I2 [arrowhead=none];
+    I2 -> out;
+    I1 -> "FlowElement (E2)" -> I2;
+    {rank=same; I1; "FlowElement (E1)"; I2; in; out; };
+}
+@enddot
+
+In this case, both will carry out their processing at the same time. This time, the FlowData
+which the Pipeline creates will be thread-safe for writing as it is likely that both **E1** and
+**E2** will attempt to write their results to the FlowData at the same time.
 
 =========
 
 @htmlonly
 
-<button class="b-btn b-btn--secondary configBtn" onclick="grabSnippet(this, 'documentation', '_snippets.html', 'build-pipeline-cs', 'configBtn', 'config-eg')">C#</button>
-<button class="b-btn b-btn--secondary configBtn" onclick="grabSnippet(this, 'documentation', '_snippets.html', 'build-pipeline-java', 'configBtn', 'config-eg')">Java</button>
+<button class="b-btn b-btn--secondary configBtn" onclick="grabSnippet(this, 'pipeline-dotnet', '_snippets.html', 'build-pipeline-cs', 'configBtn', 'config-eg')">C#</button>
+<button class="b-btn b-btn--secondary configBtn" onclick="grabSnippet(this, 'pipeline-java', '_snippets.html', 'build-pipeline-java', 'configBtn', 'config-eg')">Java</button>
 <div id="config-eg"></div>
 
 @endhtmlonly
