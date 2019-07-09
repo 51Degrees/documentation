@@ -108,13 +108,33 @@ $(document).ready(function(){initNavTree('_concepts__pipeline__pipeline.html',''
 <h2 class="g-docs__page-title">Pipeline </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"></section></div><!-- PageDoc -->
+<section class="g-docs__section"><h2>Introduction</h2>
+<p>The Pipeline is the glue that holds together all the <a class="el" href="_concepts__flow_elements__index.html">Elements</a>. It orchestrates the way FlowData is passed through each <a class="el" href="_concepts__flow_elements__index.html">Element</a> in order to turn <a class="el" href="_concepts__data__evidence.html">Evidence</a> into useful results in the form of <a class="el" href="_concepts__data__element_data.html">ElementData</a>.</p>
+<h2>Creation</h2>
+<p>A Pipeline is built using a <a class="el" href="_concepts__configuration__builders__pipeline_builder.html">PipelineBuilder</a> using the fluent builder pattern. By adding FlowElements to the Pipeline, the nature of the processing it will carry out is defined.</p>
+<p>Once created, a Pipeline is immutable. So once it is built, its configuration will not change, nor will the way in which it processes Evidence.</p>
+<p>In addition to configuring a Pipeline through a builder, a configuration can be used to make setup simpler and more configurable. This is the default operation for <a class="el" href="_concepts__web__index.html">Web integrations</a>, but can be used for any other use-case. For more on this, see the build from file section, and the configure from file example.</p>
+<h2>Processing</h2>
+<p>The flow of a Pipeline's operation starts with the creation of a <a class="el" href="_concepts__data__flow_data.html">FlowData</a> which is handled by the Pipeline, and handed out to the user. This is specific to the Pipeline that handed it out, and cannot be processed with another Pipeline.</p>
+<p>Next, <a class="el" href="_concepts__data__evidence.html">Evidence</a> is added to the FlowData ready to be processed.</p>
+<p>Hi Ben</p>
+<p>Finally, the FlowData is processed. Doing this sends the data (along with all the Evidence it now contains) through the Pipeline. After each Element in the pipeline has finished its processing in whichever order has been configured when the Pipeline was built, the FlowData is returned with and results from the processing contained within.</p>
+<h2>Internals</h2>
+<p>The structure of the Elements within the Pipeline, and the FlowData which it creates, is defined by how it is created.</p>
+<p>Consider an example where Elements <b>E1</b> and <b>E2</b> are added to the Pipeline individually in that order. <b>E1</b> will carry out its processing on the FlowData, then once it is finished, <b>E2</b> will do the same. A consequence of this scenario is that the FlowData created by the Pipeline will not be thread-safe for the purposes of processing. This improves performance, and is safe as it is known that <b>E1</b> and <b>E2</b> will never be writing at the same time.</p>
+<p>Now consider an example where both <b>E1</b> and <b>E2</b> are added in parallel. In this case, both will carry out their processing at the same time. This time, the FlowData which the Pipeline creates will be thread-safe for writing as it is likely that both <b>E1</b> and <b>E2</b> will attempt to write their results to the FlowData at the same time.</p>
+<h2>Lifecycle</h2>
+<p>A Pipeline is the second thing to be created, after the Elements which it contains. It then exists for as long as processing is required. When a Pipeline is disposed of, it can optionally dispose of the Elements within too. This makes managing the lifetime of the Elements easy, however this should not be done if the Elements are also present in another Pipeline.</p>
+<p>If an attempt is made to process a FlowData from a Pipeline which has since been disposed, an error will occur. The Pipeline which creates a FlowData <b>MUST</b> exist for as long as the FlowData. This is also true of post processing usage like retrieving results from the FlowData. Imagine a case where a certain result has been lazily loaded - a call to get that result will require the FlowElement which created it to do the loading, so if a Pipeline has disposed of the FlowElement there will be an error.</p>
+<p>While not a necessity, it is good practice to dispose of each FlowData produced by the Pipeline once it is finished with.</p>
+<p>Snippet </p>
+</section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
-    <p class="g-footer__copyright">Generated on Mon Jul 8 2019 14:35:51 for Documentation by
+    <p class="g-footer__copyright">Generated on Mon Jul 8 2019 16:59:28 for Documentation by
     <a href="http://www.doxygen.org/index.html">
     <b>doxygen</b></a> 1.8.15
   </p>

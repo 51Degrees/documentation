@@ -21,14 +21,14 @@
     <filename>_concepts__configuration__builders__pipeline_builder</filename>
   </compound>
   <compound kind="page">
-    <name>Concepts_Configuration_Builders</name>
-    <title>Builders</title>
-    <filename>_concepts__configuration__builders</filename>
-  </compound>
-  <compound kind="page">
     <name>Concepts_Configuration_Caching</name>
     <title>Caching</title>
     <filename>_concepts__configuration__caching</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Configuration_DataFiles</name>
+    <title>Data Files</title>
+    <filename>_concepts__configuration__data_files</filename>
   </compound>
   <compound kind="page">
     <name>Concepts_Configuration_Index</name>
@@ -224,6 +224,11 @@
     <name>Concepts_Services_MissingProperties</name>
     <title>Missing Properties</title>
     <filename>_concepts__services__missing_properties</filename>
+  </compound>
+  <compound kind="page">
+    <name>Snippets</name>
+    <title>snippets</title>
+    <filename>_snippets</filename>
   </compound>
   <compound kind="page">
     <name>Concepts_Web_Index</name>

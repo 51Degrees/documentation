@@ -24,8 +24,8 @@ for the JavaScript code in this file
 var NAVTREE =
 [
     [ "Home", "index.html", null ],
-    [ "Builders", "_concepts__configuration__builders__index.html", "_concepts__configuration__builders__index" ],
     [ "Conceptual Docs", "_concepts__index.html", "_concepts__index" ],
+    [ "snippets", "_snippets.html", null ],
     [ "Examples", "_examples.html", "_examples" ],
     [ "Language Specific", "usergroup0.html", [
       [ "C/C++ Docs", "../../device-detection-cxx/4.0/index.html", null ],
