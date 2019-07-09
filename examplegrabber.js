@@ -14,9 +14,9 @@ function getVersion() {
  * @param project the repository name which the example came from
  * e.g. 'device-detection-cxx'.
  */
-function updateLinks(project) {
+function updateLinks(project, divId) {
     var base = DOC_URL_BASE.split('/')[0];
-    var as = $('#grabbed-example a');
+    var as = $('#' + divId + ' a');
     for (i = 0; i < as.length; i++) {
         if (as[i].href.includes('/' + base + '/')) {
             // Replace the local part of the URL with the correct repository part
@@ -35,7 +35,17 @@ function updateLinks(project) {
  * @param name the name of the example to get e.g. '_hash_2_getting_started_8cpp'.
  */
 function grabExample(caller, project, name) {
-    var btns = document.getElementsByClassName('examplebtn');
+    grabSnippet(
+        caller,
+        project,
+        name + '-example.html',
+        'primary',
+        'exampleBtn',
+        'grabbed-example');
+}
+
+function grabSnippet(caller, project, file, tag, btnClass, divId) {
+    var btns = document.getElementsByClassName(btnClass);
     for (i = 0; i < btns.length; i++) {
         if (btns[i] === caller) {
             // This is the selected button, so highlight it.
@@ -48,9 +58,10 @@ function grabExample(caller, project, name) {
         }
     }
     // Load the example into the 'grabbed-example' div, then update the links.
-    $('#grabbed-example').load(
+    $('#' + divId).load(
         '../../' + project + '/' + getVersion()
-        + '/' + name + '-example.html'
-        + ' #primary',
-        function() { updateLinks(project); });
+        + '/' + file
+        + ' #' + tag,
+        function() { updateLinks(project, divId); });
+
 }
