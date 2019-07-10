@@ -5,17 +5,17 @@
 
 ## Introduction
 
-A **Pipeline** is a data processing system. At the most basic level, input data is supplied in the form 
-of [Evidence](@ref Concepts_Data_Evidence). One or more [Element](@ref Concepts_FlowElements_Index) in 
-the pipeline then use this [Evidence](@ref Concepts_Data_Evidence) to return data values that are 
-required by the user.
-The incoming [Evidence](@ref Concepts_Data_Evidence) is usually related to a web request, for example 
-the HTTP headers, the source IP address or values from the query string. However, conceptually, the 
-[Evidence](@ref Concepts_Data_Evidence) could be anything that can be represented as a string.
-The [Evidence](@ref Concepts_Data_Evidence) is carried through the **Pipeline** to the 
-[Element](@ref Concepts_FlowElements_Index) by a [FlowData](@ref Conepts_Data_FlowData) instance. 
-[FlowData](@ref Conepts_Data_FlowData) contains all input and output data associated with a single 
-**Pipeline** process request.
+A **Pipeline** is a customisable data processing system. At the most basic level, input data is 
+supplied in the form of [evidence](@ref Concepts_Data_Evidence). 
+One or more [flow elements](@ref Concepts_FlowElements_Index) in the pipeline then use this 
+[evidence](@ref Concepts_Data_Evidence) to populate data values that are required by the user.
+
+The incoming [evidence](@ref Concepts_Data_Evidence) is usually related to a web request, for example 
+the HTTP headers, cookies, the source IP address or values from the query string.
+The [evidence](@ref Concepts_Data_Evidence) is carried through the **Pipeline** to the 
+[elements](@ref Concepts_FlowElements_Index) by a [flow data](@ref Conepts_Data_FlowData) instance. 
+The [flow data](@ref Conepts_Data_FlowData) structure encapsulates all input and output data associated 
+with a single **Pipeline** process request.
 
 
 ## Creation

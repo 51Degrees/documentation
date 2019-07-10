@@ -1,5 +1,5 @@
 @page Examples Examples
 
-Here are soime examples...
+Here are some examples...
 
 @subpage Examples_GettingStarted
