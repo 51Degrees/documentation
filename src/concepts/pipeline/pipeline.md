@@ -5,10 +5,17 @@
 
 ## Introduction
 
-The Pipeline is the glue that holds together all the [Elements](@ref Concepts_FlowElements_Index).
-It orchestrates the way [FlowData](@ref Conepts_Data_FlowData) is passed through each
-[Element](@ref Concepts_FlowElements_Index) in order to turn [Evidence](@ref Concepts_Data_Evidence)
-into useful results in the form of [ElementData](@ref Concepts_Data_ElementData).
+A **Pipeline** is a data processing system. At the most basic level, input data is supplied in the form 
+of [Evidence](@ref Concepts_Data_Evidence). One or more [Element](@ref Concepts_FlowElements_Index) in 
+the pipeline then use this [Evidence](@ref Concepts_Data_Evidence) to return data values that are 
+required by the user.
+The incoming [Evidence](@ref Concepts_Data_Evidence) is usually related to a web request, for example 
+the HTTP headers, the source IP address or values from the query string. However, conceptually, the 
+[Evidence](@ref Concepts_Data_Evidence) could be anything that can be represented as a string.
+The [Evidence](@ref Concepts_Data_Evidence) is carried through the **Pipeline** to the 
+[Element](@ref Concepts_FlowElements_Index) by a [FlowData](@ref Conepts_Data_FlowData) instance. 
+[FlowData](@ref Conepts_Data_FlowData) contains all input and output data associated with a single 
+**Pipeline** process request.
 
 
 ## Creation
@@ -20,11 +27,11 @@ to the Pipeline, the nature of the processing it will carry out is defined.
 Once created, a Pipeline is immutable. So once it is built, its configuration will not change, nor
 will the way in which it processes Evidence.
 
-In addition to configuring a Pipeline through a builder, a configuration can be used to make setup
-simpler and more configurable. This is the default operation for [Web integrations](@ref Concepts_Web_Index),
-but can be used for any other use-case. For more on this, see the
-[build from file](@ref Concepts_Configuration_Builder_BuildFromFile) section, and the
-[configure from file](@ref Examples_Configure_From_File) example.
+As an alternative to configuring a Pipeline through a builder, a configuration file can be used to make 
+the pipeline configurable at runtime without recompiling the code. This is the default operation for 
+[Web integrations](@ref Concepts_Web_Index), but can be used for any other use-case. 
+For more on this, see the [build from file](@ref Concepts_Configuration_Builder_BuildFromFile) section, 
+and the [configure from file](@ref Examples_Configure_From_File) example.
 
 
 ## Processing
@@ -52,7 +59,7 @@ FlowElements inside the Pipeline are accessible as a read-only collection, and c
 individually if the type of the required FlowElement is known.
 
 All [Properties](@ref Concepts_MetaData_Properties) available in the Pipeline's FlowElements are also
-exposed in one place. This enabled easy iteration over all properties.
+exposed in one place. This enables easy iteration over all properties.
 
 =========
 
@@ -112,7 +119,7 @@ which the Pipeline creates will be thread-safe for writing as it is likely that 
 A Pipeline is the second thing to be created, after the Elements which it contains. It then exists for
 as long as processing is required. When a Pipeline is disposed of, it can optionally dispose
 of the Elements within too. This makes managing the lifetime of the Elements easy, however this
-should not be done if the Elements are also present in another Pipeline.
+should not be done if the same Element instances have also been added to another Pipeline.
 
 If an attempt is made to process a FlowData from a Pipeline which has since been disposed, an error
 will occur. The Pipeline which creates a FlowData **MUST** exist for as long as the FlowData. This
