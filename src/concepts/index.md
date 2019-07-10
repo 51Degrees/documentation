@@ -1,6 +1,6 @@
 @page Concepts_Index Conceptual Docs
 
-@subpage Concepts_Pipeline_Index
+@subpage Concepts_Pipeline
 
 @subpage Concepts_FlowElements_Index
 
