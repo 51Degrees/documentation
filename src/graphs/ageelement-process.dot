@@ -10,19 +10,11 @@ digraph P {
         fontsize=10;
         label="Flow Data";
         URL="@ref Concepts_Data_FlowData";
-        subgraph clusterE {
-            label=Evidence; 
-            URL="@ref Concepts_Data_Evidence";
-            structD [label="{<f0>date of birth|<f1>18/12/1992}"];
-        }
-        subgraph clusterED {
-            label="Element Data";
-            URL="@ref Concepts_Data_ElementData";
-            structV [label="{<f0>age|<f1>26}"];
-        }
+        structE [label="<f0>Evidence|{<f1>date of birth|<f2>18/12/1992}", URL="@ref Concepts_Data_Evidence"];
+        structED [label="<f0>Element Data|{<f1>age|<f2>26}", URL="@ref Concepts_Data_ElementData"];
     }
     FE [label="Age Element"];
     
-    structD -> FE [ltail=clusterFD, label=process];
-    FE -> structV [lhead=clusterED, label=output];
+    structE -> FE [ltail=clusterFD, label=process];
+    FE -> structED [label=output];
 }
