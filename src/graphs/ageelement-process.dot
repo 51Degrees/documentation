@@ -1,0 +1,28 @@
+digraph P {
+    compound=true;
+    bgcolor=transparent;
+    rankdir=LR;
+    node [shape=record, fontname=Helvetica, fontsize=10];
+    edge [fontname=Helvetica, fontsize=10];
+    
+    subgraph clusterFD {
+        fontname=Helvetica;
+        fontsize=10;
+        label="Flow Data";
+        URL="@ref Concepts_Data_FlowData";
+        subgraph clusterE {
+            label=Evidence; 
+            URL="@ref Concepts_Data_Evidence";
+            structD [label="{<f0>date of birth|<f1>18/12/1992}"];
+        }
+        subgraph clusterED {
+            label="Element Data";
+            URL="@ref Concepts_Data_ElementData";
+            structV [label="{<f0>age|<f1>26}"];
+        }
+    }
+    FE [label="Age Element"];
+    
+    structD -> FE [ltail=clusterFD, label=process];
+    FE -> structV [lhead=clusterED, label=output];
+}
