@@ -1,4 +1,4 @@
-@page Concepts_Pipeline_Pipeline Pipeline
+@page Concepts_PipelinePipeline
 
 @htmlonly <script type="text/javascript" src="examplegrabber.js"></script> @endhtmlonly
 
@@ -7,11 +7,12 @@
 
 A **Pipeline** is a customisable data processing system. At the most basic level, input data is 
 supplied in the form of [evidence](@ref Concepts_Data_Evidence). 
-One or more [flow elements](@ref Concepts_FlowElements_Index) in the pipeline then use this 
-[evidence](@ref Concepts_Data_Evidence) to populate data values that are required by the user.
+One or more [flow elements](@ref Concepts_FlowElements_Index) in the pipeline then perform processing 
+based on that [evidence](@ref Concepts_Data_Evidence) and optionally, populate data values that 
+are required by the user.
 
 The incoming [evidence](@ref Concepts_Data_Evidence) is usually related to a web request, for example 
-the HTTP headers, cookies, the source IP address or values from the query string.
+the HTTP headers, cookies, source IP address or values from the query string.
 The [evidence](@ref Concepts_Data_Evidence) is carried through the **Pipeline** to the 
 [elements](@ref Concepts_FlowElements_Index) by a [flow data](@ref Conepts_Data_FlowData) instance. 
 The [flow data](@ref Conepts_Data_FlowData) structure encapsulates all input and output data associated 

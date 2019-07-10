@@ -7,7 +7,7 @@ The 51Degrees Pipeline provides a single home for all your web request intellige
 ## High level
 
 * Check the [examples](@ref Examples_Examples) for help getting up and running as soon as possible.
-* For a conceptual overview, start with the [Pipeline](@ref Concepts_Pipeline_Pipeline) page. 
+* For a conceptual overview, start with the [Pipeline](@ref Concepts_Pipeline) page. 
 * Explore the [web request intelligence services](@ref Services_Index) (i.e. [engines](@ref Concepts_Flowelements_AspectEngine)) offered by 51Degees.
 
 ## Technical detail
