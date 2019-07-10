@@ -1,4 +1,4 @@
-@page Concepts_PipelinePipeline
+@page Concepts_Pipeline Pipeline
 
 @htmlonly <script type="text/javascript" src="examplegrabber.js"></script> @endhtmlonly
 
