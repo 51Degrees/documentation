@@ -1,4 +1,4 @@
-@page Concepts_Terminology
+@page Concepts_Terminology Terminology
 
 
 ## Terminology

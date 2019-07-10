@@ -5,7 +5,7 @@
 
 ## Introduction
 
-A **Pipeline** is a customisable data processing system. At the most basic level, input data is 
+A **Pipeline** is a customizable data processing system. At the most basic level, input data is 
 supplied in the form of [evidence](@ref Concepts_Data_Evidence). 
 One or more [flow elements](@ref Concepts_FlowElements_Index) in the pipeline then perform processing 
 based on that [evidence](@ref Concepts_Data_Evidence) and optionally, populate data values that 
