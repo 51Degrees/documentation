@@ -8,12 +8,12 @@ digraph P {
     subgraph clusterFD {
         fontname=Helvetica;
         fontsize=10;
-        label="FlowData";
+        label="Flow Data";
         URL="@ref Concepts_Data_FlowData";
         E [label=Evidence, URL="@ref Concepts_Data_Evidence"];
-        ED [label=ElementData, URL="@ref Concepts_Data_ElementData"];
+        ED [label="Element Data", URL="@ref Concepts_Data_ElementData"];
     }
-    FE [label=FlowElement, URL="@ref Concepts_FlowElements"];
+    FE [label="Flow Element", URL="@ref Concepts_FlowElements_Index"];
     
     E -> FE [ltail=clusterFD, label=process];
     FE -> ED [label=output];

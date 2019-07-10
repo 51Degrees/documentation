@@ -2,16 +2,17 @@ digraph H {
     bgcolor=transparent;
     node [shape=record, fontname=Helvetica, fontsize=10];
     
-    FE [label=FlowElements, URL="@ref Concepts_FlowElements_FlowElement"];
-    AE [label=AspectEngines, URL="@ref Concepts_FlowElements_AspectEngine"];
+    FE [label="Flow Elements", URL="@ref Concepts_FlowElements_FlowElement"];
+    AE [label="Aspect Engines", URL="@ref Concepts_FlowElements_AspectEngine"];
     FODE [label="51Degrees Engines", URL="@ref Concepts_FlowElements_FiftyOneEngine"];
     OPE [label="On-Premise Engines", URL="@ref Concepts_FlowElements_OnPremiseEngine"];
     CE [label="Cloud Engines", URL="@ref Concepts_FlowElements_CloudEngine"];
-    I [label=Implementations, URL="@ref Concepts_FlowElements_Implementations"];
+    I [label=Implementations, URL="@ref Services_Index"];
     
     FE -> AE -> FODE -> OPE;
     FODE -> CE;
     
+    edge[style=dashed];
     FE -> I;
     AE -> I;
     FODE -> I;

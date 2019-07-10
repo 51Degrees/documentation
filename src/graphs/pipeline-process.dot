@@ -8,8 +8,8 @@ digraph P {
         label="Pipeline";
         fontname=Helvetica;
         fontsize=10;
-        E1 [label="FlowElement (E1)"];
-        E2 [label="FlowElement (E2)"];
+        E1 [label="Flow Element (E1)"];
+        E2 [label="Flow Element (E2)"];
     };
     o [ label=out, shape=plaintext ];
     

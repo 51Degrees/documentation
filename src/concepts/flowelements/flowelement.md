@@ -1,31 +1,69 @@
-@page Concepts_FlowElements_FlowElement FlowElement
+@page Concepts_FlowElements_FlowElement Flow Element
 
 ## Introduction
 
-A FlowElement is an element which takes an input in the form of [Evidence](@ref Concepts_Data_Evidence),
-and outputs results in the form of [ElementData](@ref Concepts_Data_ElementData). These are the building
-blocks of a [Pipeline](@ref Concepts_Pipeline) and do all the processing as instructed by the
-Pipeline they live in.
+A **flow element** is an element which takes an input in the form of @evidence,
+and outputs results in the form of @elementdata. They can be seen as a black
+box where the internal method of processing and the way in which it is used externally are decoupled in such a
+way that any **element** can be used in the same manor, regardless of its input, output, or method of processing.
+These are the building blocks of a @pipeline and do all the processing as instructed by
+the @pipeline they reside in.
 
 ## Creation
 
-FlowElements are built using their [Builder](@ref Concepts_Configuration_Builders_ElementBuilder) which
-follows the fluent builder pattern.
+**Flow elements** are built using their @elementbuilder which
+follows the fluent builder pattern. All configuration of an **element** occurs in the
+@elementbuilder, and once an **element** has been built it is
+immutable.
 
 ## Processing
 
-The primary function of a FlowElement is to process data. Acting on a [FlowData](@ref Concepts_Data_FlowData)
-given to it, the FlowElement processes the [Evidence](@ref Concepts_Data_Evidence) which is contained within.
+The primary function of a **flow element** is to process data. Both the input and the output
+(@evidence and @elementdata respectively) of
+the processing are contained in a single place called a @flowdata.
 
-The results from this processing are then added to the FlowData in the form of
-[ElementData](@ref Concepts_Data_ElementData).
+Acting on a @flowdata given to it, the **flow element** processes the
+@evidence which is contained within.
+
+The results from this processing are then added to the @flowdata in the form of
+@elementdata.
 
 @dotfile flowelement-process.dot
 
 
+For example, a "user age" **element** might look for a date of birth in the @evidence, and add
+the age of the user to @elementdata before adding the @elementdata into the same @flowdata which
+the @evidence came from.
+
+@dotfile ageelement-process.dot
+
 ## Hierarchy
 
-While an implementation can implement just FlowElement, useful functionality is built up in layers which
-can be used by an implementation depending on its requirements.
+While an implementation can implement just **flow element**, useful functionality is built up in layers as shown below.
+Any of these layers can be built upon by an implementation depending on its requirements.
 
 @dotfile flowelement-hierarchy.dot
+
+
+## Properties
+
+The @elementdata produced by an **element** contains values of @properties based on the
+@evidence provided. Each **element** has a set of @properties it provides values for.
+
+The @properties available in an **element** can be queried directly for meta data purposes, or to
+retrieve the names of the @properties whos values are present in the @elementdata produced.
+
+
+## Evidence Keys
+
+Each **element** expects certain 
+
+## Data Keys
+
+
+
+## Concurrency
+
+## Scope
+
+* multiple pipelines

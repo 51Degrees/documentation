@@ -10,8 +10,8 @@ digraph P {
         fontname=Helvetica;
         fontsize=10;
         I1 [label="", shape=point ];
-        E1 [label="FlowElement (E1)"];
-        E2 [label="FlowElement (E2)"];
+        E1 [label="Flow Element (E1)"];
+        E2 [label="Flow Element (E2)"];
         I2 [label="", shape=point ];
     };
     o [ label="out" shape=plaintext ];
