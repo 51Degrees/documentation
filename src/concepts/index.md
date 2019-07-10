@@ -12,8 +12,6 @@
 
 @subpage Concepts_Configuration_Index
 
-@subpage Concepts_Services_Index
-
 @subpage Concepts_Web_Index
 
 @subpage Concepts_WritingAnEngine_Index
