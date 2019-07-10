@@ -44,6 +44,9 @@ and the ``@ref`` tag will be replaced with the correct URL.
 ### @htmlonly and @endhtmlonly
 Pure HTML can be added to a markdown file by surrounding it with the ``@htmlonly`` and ``@endhtmlonly`` tags.
 
+### @dotfile
+Used to generate and include a graph from a dot file which must be in the `graphs` directory.
+
 # Example Grabber
 The `examplegrabber.js` file is used to load language specific examples onto a general example page. The file must be included in a ``<script>`` tag, then buttons and a ``<div>`` must be set up correctly.
 
@@ -75,6 +78,90 @@ Then a ``<div>`` with the id ``"grabbed-example"`` can be added which the ``exam
 The HTML loaded will come from the ``g-docs__primary`` div on the target page which will have the id ``"primary"``.
 
 Any links on the page (e.g. to classes which are documented in the target repository) are fixed so they point to the correct URL.
+
+# Graphs
+The GraphViz tool uses the dot language to generate graphs. Each graph should be stored in its own file in the `graphs` directory.
+
+For consistency, all graphs should have the following properties:
+* transparent background
+* Helvetica font
+* size 10 font
+* default arrow and node style
+
+A simple example of a graph looks as follows:
+
+``` js
+digraph ExampleGraph {
+    // Set the background to transparent
+    bgcolor=transparent;
+    // Place nodes left to right
+    rankdir=LR;
+    // Style the nodes
+    node [shape=record, fontname=Helvetica, fontsize=10];
+    // Style the arrow labels
+    edge [fontname=Helvetica, fontsize=10];
+    
+    // Add two nodes
+    Node1 [label=Node1, URL="@ref Node1_page"];
+    Node1 [label=Node2, URL="@ref Node2_page"];
+
+    // Add an edge between the nodes
+    Node1 -> Node2 [label="an optional label"];
+}
+```
+
+and will be output as:
+
+![simple-graph](images/simple-graph.png)
+
+The following example includes a few more complicated parts as a reference:
+
+``` js
+digraph ExampleGraph {
+    // Set compound to true to allow ending edges
+    // at the node group
+    compound=true;
+
+    // Set the background to transparent
+    bgcolor=transparent;
+    // Style the nodes
+    node [shape=record, fontname=Helvetica, fontsize=10];
+    // Style the arrow labels
+    edge [fontname=Helvetica, fontsize=10];
+    
+    // Add a node
+    Node1 [label=Node1];
+    
+    // Add a node group (name must start with "cluster")
+    subgraph clusterParentNode {
+        label="Parent Node";
+        fontname=Helvetica;
+        fontsize=10;
+        
+        // Add two nested nodes
+        Node2 [label=Node2];
+        Node3 [label=Node3];
+    };
+
+    Node4 [label=Node4];
+
+    // Add some edges
+    Node1 -> Node2 -> Node3 -> Node1;
+    // Add an edge to the parent node with no arrow
+    Node4 -> Node2 [lhead=clusterParentNode, arrowhead=none];
+}
+```
+
+and will be output as:
+
+![complex-graph](images/complex-graph.png)
+
+Graphs are included on a page using the ``@dotfile`` tag like
+```
+@dotfile some-graph.dot
+```
+
+[More on the dot language in GraphViz](https://graphviz.gitlab.io/documentation/)
 
 # Tag Files
 To enable linking to this documentation from other repositories, tag files must be included in their `Doxyfile` using the `TAGFILES` property.
