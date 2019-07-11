@@ -1,7 +1,20 @@
 @page Concepts_FlowElements_AspectEngine Aspect Engine
 
-TODO: Description of each of the features that aspect engine gives you and how to make use of them. 
-* Caching
-* Lazy loading (Language dependent)
-* Auto-updates for data files
-* Missing property handling
+## Introduction
+
+An **aspect engine** builds on the @flowelement concept to introduce the ability to:
+* load data files and keep them up to date
+* cache processing results
+* handle cases where a property value does not exist in the @flowdata
+* lazily load values in the @flowdata
+
+## Data Files
+
+
+## Caching
+
+
+## Missing Property Handling
+
+
+## Lazy Loading

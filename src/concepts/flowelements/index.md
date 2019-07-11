@@ -3,7 +3,7 @@
 ## Contents
 
 * @subpage Concepts_FlowElements_FlowElement - The base level of flow elements, all specializations build on this.
-* @subpage Concepts_FlowElements_AspectEngine
+* @subpage Concepts_FlowElements_AspectEngine - Adds data files, caching, lazy loading, and property handling to flow element.
 * @subpage Concepts_FlowElements_FiftyOneEngine
 * @subpage Concepts_FlowElements_CloudEngine
 * @subpage Concepts_FlowElements_OnPremiseEngine

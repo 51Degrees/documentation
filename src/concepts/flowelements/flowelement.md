@@ -1,6 +1,6 @@
 @page Concepts_FlowElements_FlowElement Flow Element
 
-## Introduction
+# Introduction
 
 A **flow element** is an atomic processing component of a @Pipeline. 
 It takes an input in the form of @evidence and outputs results in the form of @elementdata. 
@@ -10,7 +10,7 @@ way that any **element** can be used in the same manner, regardless of its input
 These are the building blocks of a @pipeline and do all the processing as instructed by
 the @pipeline they reside in.
 
-## Creation
+# Creation
 
 **Flow elements** are built using a corresponding @elementbuilder, which
 follows the fluent builder pattern. All configuration of an **element** occurs in the
@@ -18,7 +18,7 @@ follows the fluent builder pattern. All configuration of an **element** occurs i
 By convention, the configuration of an **element** is immutable once it has been built. 
 However, this is not enforced and is dependent on the implementation of each specific **element**.
 
-## Processing
+# Processing
 
 The primary function of a **flow element** is to process data. Both the input and the output
 (@evidence and @elementdata respectively) of
@@ -43,7 +43,7 @@ the age of the user in an @elementdata instance before adding the @elementdata i
 
 @dotfile ageelement-process.dot
 
-## Hierarchy
+# Hierarchy
 
 While an implementation can implement just **flow element**, useful functionality is built up in layers as shown below.
 Any of these layers can be built upon by an implementation depending on its requirements.
@@ -53,7 +53,7 @@ TODO: This may not be true in all languages. TBC.
 @dotfile flowelement-hierarchy.dot
 
 
-## Properties
+# Properties
 
 The @elementdata produced by an **element** contains values of @properties based on the
 @evidence provided. Each **element** has a set of @properties it can populate values for.
@@ -62,7 +62,7 @@ The @properties populated by an **element** can be queried directly to retrieve 
 to each property. The data available will vary by implementation but will typically include
 information such as the property name and data type. 
 
-## Evidence Keys
+# Evidence Keys
 
 Each **element** can only make use of certain items of @evidence during processing. In the **age element**
 example above, it expects a date of birth to be present in the @evidence.
@@ -80,7 +80,7 @@ the header name.
 @dotfile flowelement-evidencekeys.dot
 
 
-## Data Keys
+# Data Keys
 
 Results of an **element**'s processing are stored in the @flowdata, keyed on the **element**'s data key. 
 While not required, it is convention that each **element** has a unique key name. 
@@ -91,7 +91,7 @@ In addition to the key name, an **element**'s data key also contains the type of
 TODO: Not sure how true the above is for typeless languages such as PHP and Node. TBC.
 
 
-## Scope
+# Scope
 
 By convention, an **element**'s configuration is immutable once created. Although this is not enforced
 
@@ -104,7 +104,7 @@ In this case, it is the responsibility of the **element** to ensure any use of t
 (todo is this true, or does the getoradd handle this?)
 
 
-## Concurrency
+# Concurrency
 
 **Flow elements** are required to be thread-safe. As multiple @pipelines may be calling on an **element** to carry out processing
 simultaneously, they must be able to handle this.
