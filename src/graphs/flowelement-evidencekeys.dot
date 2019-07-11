@@ -1,0 +1,17 @@
+digraph P {
+    compound=true;
+    bgcolor=transparent;
+    node [shape=record, fontname=Helvetica, fontsize=10];
+    edge [fontname=Helvetica, fontsize=10];
+    
+    E1 [label="date of birth"];
+    E2 [label="hometown"];
+    FE [label="Age Element"];
+    
+    E1 -> FE [label="do you want this?"];
+    FE -> E1 [label="yes"];
+    E2 -> FE [label="do you want this?"];
+    FE -> E2 [label="no"];
+    
+    {rank=same E1 E2};
+}

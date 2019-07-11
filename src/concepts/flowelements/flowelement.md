@@ -56,7 +56,14 @@ retrieve the names of the @properties whos values are present in the @elementdat
 
 ## Evidence Keys
 
-Each **element** expects certain 
+Each **element** expects certain items of @evidence to be present during processing. In the **age element**
+example, it expects a date of birth to be present in the @evidence.
+
+The items of @evidence which an **element** expects is exposed via an @evidencekeyfilter, which is present in each **element** and an aggregated form in a @pipeline (equivalent to looking at each **element** of the @pipeline individually).
+
+Using an @evidencekeyfilter means that instead of asking an **element** 'which items of @evidence do you want?', one would ask 'do you want this item of @evidence?'. This achieves the same result and gives an **element** a greater degree of flexibility.
+
+@dotfile flowelement-evidencekeys.dot
 
 ## Data Keys
 

@@ -262,7 +262,8 @@ ALIASES                = "values=[values](@ref Concepts_MetaData_Values)" \
                          "elementdata=[element data](@ref Concepts_Data_ElementData)" \
                          "pipeline=[pipeline](@ref Concepts_Pipeline)" \
                          "properties=[properties](@ref Concepts_MetaData_Properties)" \
-                         "elementbuilder=[element builder](@ref Concepts_Configuration_Builders_ElementBuilder)"
+                         "elementbuilder=[element builder](@ref Concepts_Configuration_Builders_ElementBuilder)" \
+                         "evidencekeyfilter=[evidence key filter](@ref Concepts_Data_Keys_EvidenceKeyFilter)"
 
 # This tag can be used to specify a number of word-keyword mappings (TCL only).
 # A mapping has the form "name=value". For example adding "class=itcl::class"
