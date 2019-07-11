@@ -73,7 +73,6 @@ convention that each **element** has a unique key. For example, our "user age" e
 
 An **element**'s @datakey contains not just a string key, but the type of @elementdata which the results are. 
 
-## Concurrency
 
 ## Scope
 
@@ -81,3 +80,14 @@ An **element** is immutable once created, so the configuration cannot be altered
 
 An **element** can be added to any number of @pipelines. A @pipeline is merely an organizational layer which instructs **element**'s to
 carry out processing on a @flowdata, so the **element** acts in isolation without the need to reference to the @pipeline.
+
+It is also possible for an **element** to be added more than once to the same @pipeline. For example, an **element** which opens a
+persistent connection to a database, then closes it at another point in the @pipeline would exist more than once in the same @pipeline.
+In this case, it is the responsibility of the **element** to ensure any use of the @datakey is strictly controlled.
+(todo is this true, or does the getoradd handle this?)
+
+
+## Concurrency
+
+**Flow elements** are required to be thread-safe. As multiple @pipelines may be calling on an **element** to carry out processing
+simultaneously, they must be able to handle this.
