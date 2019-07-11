@@ -7,11 +7,12 @@
 
 A **Pipeline** is a customizable data processing system. At the most basic level, input data is 
 supplied in the form of [evidence](@ref Concepts_Data_Evidence). 
-One or more [flow elements](@ref Concepts_FlowElements_Index) in the pipeline then perform processing 
+One or more [flow elements](@ref Concepts_FlowElements_Index) in the **Pipeline** then perform processing 
 based on that [evidence](@ref Concepts_Data_Evidence) and optionally, populate data values that 
 are required by the user.
 
-The incoming [evidence](@ref Concepts_Data_Evidence) is usually related to a web request, for example 
+The incoming [evidence](@ref Concepts_Data_Evidence) is usually related to a 
+[web request](@ref Concepts_Terminology), for example 
 the HTTP headers, cookies, source IP address or values from the query string.
 The [evidence](@ref Concepts_Data_Evidence) is carried through the **Pipeline** to the 
 [elements](@ref Concepts_FlowElements_Index) by a [flow data](@ref Conepts_Data_FlowData) instance. 
@@ -21,46 +22,69 @@ with a single **Pipeline** process request.
 
 ## Creation
 
-A Pipeline is built using a [PipelineBuilder](@ref Concepts_Configuration_Builders_PipelineBuilder)
-using the fluent builder pattern. By adding [FlowElements](@ref Concepts_FlowElements_FlowElements)
-to the Pipeline, the nature of the processing it will carry out is defined.
+A **Pipeline** is built using a [pipeline builder](@ref Concepts_Configuration_Builders_PipelineBuilder)
+utilising the fluent builder pattern. By adding [flow elements](@ref Concepts_FlowElements_FlowElements)
+to the **Pipeline**, the nature of the processing it will carry out is defined.
 
-Once created, a Pipeline is immutable. So once it is built, its configuration will not change, nor
-will the way in which it processes Evidence.
+Once created, a **Pipeline** is immutable. I.e. The [flow elements](@ref Concepts_FlowElements_FlowElements)
+it contains and the order in which they execute cannot be changed. Individual 
+[flow elements](@ref Concepts_FlowElements_FlowElements) may be immutable or not based upon thier
+individual implementations.
 
-As an alternative to configuring a Pipeline through a builder, a configuration file can be used to make 
-the pipeline configurable at runtime without recompiling the code. This is the default operation for 
-[Web integrations](@ref Concepts_Web_Index), but can be used for any other use-case. 
+As an alternative to configuring a **Pipeline** using a builder, configuration can be supplied from a file. 
+Depending on the language features and conventions, this could be formatted as either JSON or XML.
+This allows the **Pipeline** to be configurable at runtime without recompiling the code. This is the 
+default operation for [Web integrations](@ref Concepts_Web_Index), but can be used for any other use-case
+as well. 
 For more on this, see the [build from file](@ref Concepts_Configuration_Builder_BuildFromFile) section, 
 and the [configure from file](@ref Examples_Configure_From_File) example.
 
 
 ## Processing
 
-The flow of a Pipeline's operation starts with the creation of a [FlowData](@ref Concepts_Data_FlowData)
-which is handled by the Pipeline, and handed out to the user. This is specific to the Pipeline
-that handed it out, and cannot be processed with another Pipeline.
+The flow of a **Pipeline's** operation starts with the creation of a [flow data](@ref Concepts_Data_FlowData).
+This is created from the **Pipeline**, and is specific to it. Each [flow data](@ref Concepts_Data_FlowData) instance
+can only be processed using the **Pipeline** that created it.
 
-Next, [Evidence](@ref Concepts_Data_Evidence) is added to the FlowData ready to be processed.
+Next, [evidence](@ref Concepts_Data_Evidence) is added to the [flow data](@ref Concepts_Data_FlowData) ready 
+to be processed.
 
-Finally, the FlowData is processed. Doing this sends the data (along with all the Evidence it
-now contains) through the Pipeline. After each Element in the pipeline has finished its processing in
-whichever order has been configured when the Pipeline was built, the FlowData is returned with and
-results from the processing contained within.
+Finally, the [flow data](@ref Concepts_Data_FlowData) is processed. 
+Doing this sends the data (along with all the [evidence](@ref Concepts_Data_Evidence) it
+now contains) through the **Pipeline**. Each [flow element](@ref Concepts_FlowElements_FlowElements) will 
+recieve the [flow data](@ref Concepts_Data_FlowData) and do its processing before optionally updating the 
+[flow data](@ref Concepts_Data_FlowData) with new values.
+
+Note that the order of execution of [flow elements](@ref Concepts_FlowElements_FlowElements) is decided when the
+**Pipeline** is created.
+By default, [flow elements](@ref Concepts_FlowElements_FlowElements) are executed sequentially in the order
+they are added. However, if the language supports it, two or more [flow elements](@ref Concepts_FlowElements_FlowElements)
+can also be executed in parallel within the overall sequential structure.
+For more information, see (TODO: Add link to internals secton below)
+
+Additionally, the **Pipeline** may offer asynchronous (TODO: Add link) execution or a lazy loading (TODO: add link) capability for individual 
+[flow elements](@ref Concepts_FlowElements_FlowElements). This will be language dependent. 
+(TODO Link to language/feature matrix).
+
+Regardless of the method of execution and configuration, after processing the 
+[flow data](@ref Concepts_Data_FlowData) will contain the results, which can then be accessed by the caller.
 
 
 @dotfile basic-pipeline-flow.dot
 
 ## Public Access
 
-Other than the creation of a new FlowData, there are very few other publicly accessible parts
+Other than the creation of a new [flow data](@ref Concepts_Data_FlowData), there are very few other 
+publicly accessible parts
 of the Pipeline.
 
-FlowElements inside the Pipeline are accessible as a read-only collection, and can also be retrieved
-individually if the type of the required FlowElement is known.
+[flow elements](@ref Concepts_FlowElements_FlowElements) inside the **Pipeline** are accessible as 
+a read-only collection, and can also be retrieved individually if the type of the required 
+[flow elements](@ref Concepts_FlowElements_FlowElements) is known.
 
-All [Properties](@ref Concepts_MetaData_Properties) available in the Pipeline's FlowElements are also
-exposed in one place. This enables easy iteration over all properties.
+All [properties](@ref Concepts_MetaData_Properties) that the **Pipeline's** 
+[flow elements](@ref Concepts_FlowElements_FlowElements) can populate are also exposed in one place.
+This enables easy iteration over all [properties](@ref Concepts_MetaData_Properties).
 
 =========
 
@@ -74,33 +98,38 @@ exposed in one place. This enables easy iteration over all properties.
 
 =========
 
-An [EvidenceKeyFilter](@ref Concepts_Data_Keys_EvidenceKeyFilter) is also exposed which aggregates
-all the keys accepted by the FlowElements within the Pipeline. This tells the caller which items
-of [Evidence](@ref Concepts_Data_Evidence) should be added to the FlowData before processing.
+An [evidence key filter](@ref Concepts_Data_Keys_EvidenceKeyFilter) is also exposed. 
+This aggregates all the [evidence](@ref Concepts_Data_Evidence) keys accepted by all the 
+[flow elements](@ref Concepts_FlowElements_FlowElements) within the **Pipeline**. 
+This can be used by the caller to check which items of [evidence](@ref Concepts_Data_Evidence) 
+could affect the result of processing.
 
 
 ## Internals
 
-The structure of the Elements within the Pipeline, and the FlowData which it creates, is defined
+The structure of the [flow elements](@ref Concepts_FlowElements_FlowElements) within the 
+**Pipeline**, and the [flow data](@ref Concepts_Data_FlowData) which it creates, is defined
 by how it is created.
 
-Consider an example where Elements **E1** and **E2** are added to the Pipeline individually in that
-order.
+Consider an example where [flow elements](@ref Concepts_FlowElements_FlowElements) **E1** 
+and **E2** are added to the **Pipeline** individually in that order.
 
 @dotfile pipeline-process.dot
 
-**E1** will carry out its processing on the FlowData, then once it is finished, **E2** will
-do the same. A consequence of this scenario is that the FlowData created by the Pipeline will not be
-thread-safe for the purposes of processing. This improves performance, and is safe as it is known
-that **E1** and **E2** will never be writing at the same time.
+**E1** will carry out its processing on the [flow data](@ref Concepts_Data_FlowData), then 
+once it is finished, **E2** will do the same. In this scenario, the Pipeline 'knows' 
+that the [flow data](@ref Concepts_Data_FlowData) will not be written to by multiple threads.
+As such, the [flow data](@ref Concepts_Data_FlowData) created by the **Pipeline** will not be
+thread-safe but will have slightly improved performance.
 
 Now consider an example where both **E1** and **E2** are added in parallel.
 
 @dotfile pipeline-parallel-process.dot
 
-In this case, both will carry out their processing at the same time. This time, the FlowData
-which the Pipeline creates will be thread-safe for writing as it is likely that both **E1** and
-**E2** will attempt to write their results to the FlowData at the same time.
+In this case, both will carry out their processing at the same time. This time, the 
+[flow data](@ref Concepts_Data_FlowData)
+which the **Pipeline** creates will be thread-safe for writing as it is possible that both 
+**E1** and **E2** will attempt to write their results to the FlowData at the same time.
 
 =========
 
@@ -117,16 +146,29 @@ which the Pipeline creates will be thread-safe for writing as it is likely that 
 
 ## Lifecycle
 
-A Pipeline is the second thing to be created, after the Elements which it contains. It then exists for
-as long as processing is required. When a Pipeline is disposed of, it can optionally dispose
-of the Elements within too. This makes managing the lifetime of the Elements easy, however this
-should not be done if the same Element instances have also been added to another Pipeline.
+A **Pipeline** is the second thing to be created, after the 
+[flow elements](@ref Concepts_FlowElements_FlowElements) which it contains. It then exists for
+as long as processing is required. When a **Pipeline** is disposed of, it can optionally dispose
+of the [flow elements](@ref Concepts_FlowElements_FlowElements) within too. 
+This makes managing the lifetime of the [flow elements](@ref Concepts_FlowElements_FlowElements)
+easy, however this should not be done if the same 
+[flow element](@ref Concepts_FlowElements_FlowElements) instances have also been added to 
+another **Pipeline**.
 
-If an attempt is made to process a FlowData from a Pipeline which has since been disposed, an error
-will occur. The Pipeline which creates a FlowData **MUST** exist for as long as the FlowData. This
-is also true of post processing usage like retrieving results from the FlowData. Imagine a case
-where a certain result has been lazily loaded - a call to get that result will require the FlowElement
-which created it to do the loading, so if a Pipeline has disposed of the FlowElement there will be an error.
+If an attempt is made to process a [flow data](@ref Concepts_Data_FlowData) from a **Pipeline**
+which has since been disposed, an error
+will occur. The **Pipeline** which creates a [flow data](@ref Concepts_Data_FlowData) **MUST** 
+exist for as long as the [flow data](@ref Concepts_Data_FlowData). This
+is also true of post processing usage like retrieving results from the 
+[flow data](@ref Concepts_Data_FlowData). 
+Imagine a case where a certain result has been lazily loaded (TODO: Add link to lazy loading) - a call to get that result will 
+require the [flow element](@ref Concepts_FlowElements_FlowElements)
+which created it to do the loading, so if the **Pipeline** has disposed of the 
+[flow element](@ref Concepts_FlowElements_FlowElements), there will be an error.
 
-While not a necessity, it is good practice to dispose of each FlowData produced by the Pipeline once
+While not a necessity, it is good practice to dispose of each 
+[flow data](@ref Concepts_Data_FlowData) produced by the **Pipeline** once
 it is finished with.
+
+
+(TODO description on why memory management matters for languages that usually don't have to worry about it)
