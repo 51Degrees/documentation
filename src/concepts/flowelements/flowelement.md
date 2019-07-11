@@ -71,10 +71,13 @@ Using an @evidencekeyfilter means that instead of asking an **element** 'which i
 Results of an **element**'s processing are stored in the @flowdata, keyed on the **element**'s @datakey. While not required, it is
 convention that each **element** has a unique key. For example, our "user age" example would likely have the key "user age".
 
-An **element**'s @elementdatakey contains not just a string key, but the type of @elementdata which the results are. 
+An **element**'s @datakey contains not just a string key, but the type of @elementdata which the results are. 
 
 ## Concurrency
 
 ## Scope
 
-* multiple pipelines
+An **element** is immutable once created, so the configuration cannot be altered.
+
+An **element** can be added to any number of @pipelines. A @pipeline is merely an organizational layer which instructs **element**'s to
+carry out processing on a @flowdata, so the **elemement** acts in isolation without the need to reference to the @pipeline.
