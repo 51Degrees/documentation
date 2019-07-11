@@ -1,11 +1,7 @@
 @page Concepts_Terminology Terminology
 
 
-## Terminology
-
-
-
-#### Web request
+# Web Request @anchor Concepts_Terminology_WebRequest
 
 A web request is a message sent from a client device to a server where a web site is hosted.
 This message will usually be a simple request for a particular web page or other resource. 
@@ -13,7 +9,7 @@ However, it contains a lot of additional information ([evidence](@ref Concepts_D
 that can be used to infer details about different contexts within which the request takes 
 place (aspects). 
 
-#### Aspect
+# Aspect @anchor Concepts_Terminology_Aspect
 
 An aspect of a web request is a specific entity that is involved in that request. 
 Some examples of aspects are:
