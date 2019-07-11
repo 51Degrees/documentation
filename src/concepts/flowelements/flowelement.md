@@ -2,19 +2,21 @@
 
 ## Introduction
 
-A **flow element** is an element which takes an input in the form of @evidence,
-and outputs results in the form of @elementdata. They can be seen as a black
+A **flow element** is an atomic processing component of a @Pipeline. 
+It takes an input in the form of @evidence and outputs results in the form of @elementdata. 
+A **flow element** can be seen as a black
 box where the internal method of processing and the way in which it is used externally are decoupled in such a
-way that any **element** can be used in the same manor, regardless of its input, output, or method of processing.
+way that any **element** can be used in the same manner, regardless of its input, output, or method of processing.
 These are the building blocks of a @pipeline and do all the processing as instructed by
 the @pipeline they reside in.
 
 ## Creation
 
-**Flow elements** are built using their @elementbuilder which
+**Flow elements** are built using a corresponding @elementbuilder, which
 follows the fluent builder pattern. All configuration of an **element** occurs in the
-@elementbuilder, and once an **element** has been built it is
-immutable.
+@elementbuilder
+By convention, the configuration of an **element** is immutable once it has been built. 
+However, this is not enforced and is dependent on the implementation of each specific **element**.
 
 ## Processing
 
@@ -22,18 +24,22 @@ The primary function of a **flow element** is to process data. Both the input an
 (@evidence and @elementdata respectively) of
 the processing are contained in a single place called a @flowdata.
 
-Acting on a @flowdata given to it, the **flow element** processes the
-@evidence which is contained within.
+The **flow element** typically uses the @evidence contained within the supplied @flowdata to
+determine values that it populates in the resulting @elementdata, which is then added to the @flowdata
+as an output.
 
-The results from this processing are then added to the @flowdata in the form of
-@elementdata.
+However, **flow elements** may also use existing @elementdata from the @flowdata as input and 
+are not required to populate any output data if it is not necesary.
+
 
 @dotfile flowelement-process.dot
 
+(TODO: I'm not sure the diagram above is very clear. Possibly need to whiteboard some ideas)
 
-For example, a "user age" **element** might look for a date of birth in the @evidence, and add
-the age of the user to @elementdata before adding the @elementdata into the same @flowdata which
-the @evidence came from.
+
+For example, a "user age" **element** might look for a date of birth in the @evidence, set
+the age of the user in an @elementdata instance before adding the @elementdata into the same 
+@flowdata which the @evidence came from.
 
 @dotfile ageelement-process.dot
 
@@ -42,41 +48,52 @@ the @evidence came from.
 While an implementation can implement just **flow element**, useful functionality is built up in layers as shown below.
 Any of these layers can be built upon by an implementation depending on its requirements.
 
+TODO: This may not be true in all languages. TBC.
+
 @dotfile flowelement-hierarchy.dot
 
 
 ## Properties
 
 The @elementdata produced by an **element** contains values of @properties based on the
-@evidence provided. Each **element** has a set of @properties it provides values for.
+@evidence provided. Each **element** has a set of @properties it can populate values for.
 
-The @properties available in an **element** can be queried directly for meta data purposes, or to
-retrieve the names of the @properties whos values are present in the @elementdata produced.
-
+The @properties populated by an **element** can be queried directly to retrieve metadata relating 
+to each property. The data available will vary by implementation but will typically include
+information such as the property name and data type. 
 
 ## Evidence Keys
 
-Each **element** expects certain items of @evidence to be present during processing. In the **age element**
-example, it expects a date of birth to be present in the @evidence.
+Each **element** can only make use of certain items of @evidence during processing. In the **age element**
+example above, it expects a date of birth to be present in the @evidence.
 
-The items of @evidence which an **element** expects is exposed via an @evidencekeyfilter, which is present in each **element** and an aggregated form in a @pipeline (equivalent to looking at each **element** of the @pipeline individually).
+The items of @evidence which an **element** can make use of is exposed via an @evidencekeyfilter. This is 
+also available in an aggregated form from the parent @Pipeline. 
+(This would be equivalent to combining the @evidencekeyfilter from each **element** of the @pipeline individually).
 
-Using an @evidencekeyfilter means that instead of asking an **element** 'which items of @evidence do you want?', one would ask 'do you want this item of @evidence?'. This achieves the same result and gives an **element** a greater degree of flexibility in the @evidence it accepts.
+Using an @evidencekeyfilter means that instead of asking an **element** 'which items of @evidence do you want?', 
+one would ask 'do you want this item of @evidence?'. This gives an 
+**element** a greater degree of flexibility how it specifies the @evidence that it accepts. 
+For example, it allows an element to easily indicate that it can make use of any HTTP headers, regardless of 
+the header name.
 
 @dotfile flowelement-evidencekeys.dot
 
 
 ## Data Keys
 
-Results of an **element**'s processing are stored in the @flowdata, keyed on the **element**'s @datakey. While not required, it is
-convention that each **element** has a unique key. For example, our "user age" example would likely have the key "user age".
+Results of an **element**'s processing are stored in the @flowdata, keyed on the **element**'s data key. 
+While not required, it is convention that each **element** has a unique key name. 
+For example, our "user age" example would likely have the key name "user age".
 
-An **element**'s @datakey contains not just a string key, but the type of @elementdata which the results are. 
+In addition to the key name, an **element**'s data key also contains the type of @elementdata that the element populates. 
+
+TODO: Not sure how true the above is for typeless languages such as PHP and Node. TBC.
 
 
 ## Scope
 
-An **element** is immutable once created, so the configuration cannot be altered.
+By convention, an **element**'s configuration is immutable once created. Although this is not enforced
 
 An **element** can be added to any number of @pipelines. A @pipeline is merely an organizational layer which instructs **element**'s to
 carry out processing on a @flowdata, so the **element** acts in isolation without the need to reference to the @pipeline.
@@ -91,3 +108,5 @@ In this case, it is the responsibility of the **element** to ensure any use of t
 
 **Flow elements** are required to be thread-safe. As multiple @pipelines may be calling on an **element** to carry out processing
 simultaneously, they must be able to handle this.
+
+TODO: Language specific.
