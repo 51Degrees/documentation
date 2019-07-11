@@ -163,6 +163,34 @@ Graphs are included on a page using the ``@dotfile`` tag like
 
 [More on the dot language in GraphViz](https://graphviz.gitlab.io/documentation/)
 
+# Aliases
+
+The `Doxygen` file contains useful aliases (mainly for links). These are stored as a list in the ``ALIASES`` configuration option.
+
+For example, a link to the flow data page is written as
+
+```
+[flow data](@ref Concepts_Data_FlowData)
+```
+
+so the alias:
+
+```
+flowdata=[flow data](@ref Concepts_Data_FlowData)
+```
+
+means that the link can instead be written as
+
+```
+@flowdata
+```
+
+This makes writing page links simpler, and more difficult to write incorrectly, and enforces conventions (e.g. `flow data`, not `FlowData` or `Flow Data`).
+
+Any extra pages that are added should have an alias added to the `Doxyfile`. It is also worth adding capitalized versions too. For example, if a link to
+flow data was at the start of a sentence, `@Flowdata` can be used instead of `@flowdata`.
+
+
 # Tag Files
 To enable linking to this documentation from other repositories, tag files must be included in their `Doxyfile` using the `TAGFILES` property.
 

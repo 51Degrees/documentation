@@ -61,13 +61,17 @@ example, it expects a date of birth to be present in the @evidence.
 
 The items of @evidence which an **element** expects is exposed via an @evidencekeyfilter, which is present in each **element** and an aggregated form in a @pipeline (equivalent to looking at each **element** of the @pipeline individually).
 
-Using an @evidencekeyfilter means that instead of asking an **element** 'which items of @evidence do you want?', one would ask 'do you want this item of @evidence?'. This achieves the same result and gives an **element** a greater degree of flexibility.
+Using an @evidencekeyfilter means that instead of asking an **element** 'which items of @evidence do you want?', one would ask 'do you want this item of @evidence?'. This achieves the same result and gives an **element** a greater degree of flexibility in the @evidence it accepts.
 
 @dotfile flowelement-evidencekeys.dot
 
+
 ## Data Keys
 
+Results of an **element**'s processing are stored in the @flowdata, keyed on the **element**'s @datakey. While not required, it is
+convention that each **element** has a unique key. For example, our "user age" example would likely have the key "user age".
 
+An **element**'s @elementdatakey contains not just a string key, but the type of @elementdata which the results are. 
 
 ## Concurrency
 
