@@ -45,7 +45,11 @@ and the ``@ref`` tag will be replaced with the correct URL.
 Pure HTML can be added to a markdown file by surrounding it with the ``@htmlonly`` and ``@endhtmlonly`` tags.
 
 ### @dotfile
-Used to generate and include a graph from a dot file which must be in the `graphs` directory.
+Used to generate and include a graph from a dot file which must be in the `graphs` directory. Graphs should be in files and
+included in this way rather than being added directly to the page.
+
+### @anchor
+Used to add an anchor to a location in the page which can be linked to. Linking to an anchor links to the page, then scrolls to the anchor.
 
 # Example Grabber
 The `examplegrabber.js` file is used to load language specific examples onto a general example page. The file must be included in a ``<script>`` tag, then buttons and a ``<div>`` must be set up correctly.
@@ -189,6 +193,28 @@ This makes writing page links simpler, and more difficult to write incorrectly, 
 
 Any extra pages that are added should have an alias added to the `Doxyfile`. It is also worth adding capitalized versions too. For example, if a link to
 flow data was at the start of a sentence, `@Flowdata` can be used instead of `@flowdata`.
+
+
+# Headings and Anchors
+
+The main sections of a page should use a single hash (`#`), then subheadings 2, etc.
+
+Top level sections (`#`) have a different styling to the rest, so should be used to lay out the main structure of a page.
+
+`@anchor` is mainly used with headings which start a section which may be linked to. For example, the terminology page has terms which will be linked to.
+So a heading has an anchor like:
+
+```
+# Some Term @anchor Concepts_Terminology_SomeTerm
+```
+
+where the naming convention is the page, then the heading in camel case.
+
+An alias exists for terms on the terminology page and linking to the above example would be done like:
+
+```
+[link text](@term{SomeTerm})
+```
 
 
 # Tag Files
