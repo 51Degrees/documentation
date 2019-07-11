@@ -80,4 +80,4 @@ An **element**'s @datakey contains not just a string key, but the type of @eleme
 An **element** is immutable once created, so the configuration cannot be altered.
 
 An **element** can be added to any number of @pipelines. A @pipeline is merely an organizational layer which instructs **element**'s to
-carry out processing on a @flowdata, so the **elemement** acts in isolation without the need to reference to the @pipeline.
+carry out processing on a @flowdata, so the **element** acts in isolation without the need to reference to the @pipeline.
