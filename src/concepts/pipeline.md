@@ -26,7 +26,7 @@ A **Pipeline** is built using a [pipeline builder](@ref Concepts_Configuration_B
 utilizing the fluent builder pattern. By adding [flow elements](@ref Concepts_FlowElements_FlowElement)
 to the **Pipeline**, the nature of the processing it will carry out is defined.
 
-Once created, a **Pipeline** is immutable, i.e. The [flow elements](@ref Concepts_FlowElements_FlowElement)
+Once created, a **Pipeline** is immutable, i.e. the [flow elements](@ref Concepts_FlowElements_FlowElement)
 it contains and the order in which they execute cannot be changed. Individual 
 [flow elements](@ref Concepts_FlowElements_FlowElement) may be immutable, or not, based upon their
 individual implementations.
@@ -60,9 +60,9 @@ Note that the order of execution of [flow elements](@ref Concepts_FlowElements_F
 By default, [flow elements](@ref Concepts_FlowElements_FlowElement) are executed sequentially in the order
 they are added. However, if the [language supports](@ref Info_FeatureMatrix) it, 
 two or more [flow elements](@ref Concepts_FlowElements_FlowElement)
-can also be executed in @parallel within the overall sequential structure.
+can also be executed in [parallel](@ref Concepts_Feature_parallelexecution) within the overall sequential structure.
 
-Additionally, the **Pipeline** may offer @asynchronous execution or a \@lazyloading capability for individual 
+Additionally, the **Pipeline** may offer [asynchronous execution](@ref Concepts_Feature_AsynchronousExecution) or a [lazyloading](@ref Concepts_Feature_LazyLoading) capability for individual 
 [flow elements](@ref Concepts_FlowElements_FlowElement). These features are also [language dependent](@ref Info_FeatureMatrix).
 
 Regardless of the method of execution and configuration, after processing the 
