@@ -12,6 +12,18 @@ An **on-premise engine** builds on the @aspectengine concept to introduce the ab
 * keep @datafiles up to date
 
 
+# Use Cases
+
+An **on-premise engine** has no external dependencies, so is limited only by the hardware it is running on.
+This makes it best suited to cases where performance it critical, and the hardware the service is running on
+reflects that. For cases where there performance is not compromised for anything, **on-premise engines** can
+be configured to run entirely in memory, so that there are no calls to disk.
+
+There are also situations where security of a service is particularly tight, and sending sensitive data to an
+external [cloud service](@term{CloudService}) is something to be avoided. This is where an **on-premise engine**
+is a must over a @cloudengine.
+
+
 # Data Files
 
 An **aspect engine** can make use of a @datafile to carry out its processing. This is typically the case when an **engine**
