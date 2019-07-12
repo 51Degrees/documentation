@@ -1,6 +1,8 @@
 @page Concepts_Terminology Terminology
 
 
+# Web Server @anchor Concepts_Terminology_WebServer
+
 # Web Request @anchor Concepts_Terminology_WebRequest
 
 A web request is a message sent from a client device to a server where a web site is hosted.
