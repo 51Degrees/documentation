@@ -11,3 +11,5 @@
 @subpage Concepts_MetaData_Profiles
 
 @subpage Concepts_MetaData_Components
+
+@subpage Concepts_MetaData_ElementProperties
