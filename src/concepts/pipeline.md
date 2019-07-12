@@ -82,13 +82,10 @@ This enables easy iteration over all @elementproperties.
 
 =========
 
-@htmlonly
+@grabsnippet{iter-properties,pipeline-dotnet,_snippets.html,iter-properties,C#}
+@grabsnippet{iter-properties,pipeline-java,_snippets.html,iter-properties,Java}
 
-<button class="b-btn b-btn--secondary iterPropertiesBtn" onclick="grabSnippet(this, 'pipeline-dotnet', '_snippets.html', 'iter-properties', 'iterPropertiesBtn', 'iter-properties-eg')">C#</button>
-<button class="b-btn b-btn--secondary iterPropertiesBtn" onclick="grabSnippet(this, 'pipeline-java', '_snippets.html', 'iter-properties', 'iterPropertiesBtn', 'iter-properties-eg')">Java</button>
-<div id="iter-properties-eg"></div>
-
-@endhtmlonly
+@grabbedexample{iter-properties}
 
 =========
 
@@ -129,13 +126,10 @@ TODO: The above example is language-specific.
 
 =========
 
-@htmlonly
+@grabsnippet{config,pipeline-dotnet,_snippets.html,build-pipeline-cs,C#}
+@grabsnippet{config,pipeline-java,_snippets.html,build-pipeline-java,Java}
 
-<button class="b-btn b-btn--secondary configBtn" onclick="grabSnippet(this, 'pipeline-dotnet', '_snippets.html', 'build-pipeline-cs', 'configBtn', 'config-eg')">C#</button>
-<button class="b-btn b-btn--secondary configBtn" onclick="grabSnippet(this, 'pipeline-java', '_snippets.html', 'build-pipeline-java', 'configBtn', 'config-eg')">Java</button>
-<div id="config-eg"></div>
-
-@endhtmlonly
+@grabbedsnippet{config}
 
 =========
 
