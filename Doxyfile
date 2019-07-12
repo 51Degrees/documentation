@@ -280,6 +280,8 @@ ALIASES                = "values=[values](@ref Concepts_MetaData_Values)" \
                          "aspectengines=[aspect engines](@ref Concepts_FlowElements_AspectEngine)" \
                          "cloudengine=[cloud engine](@ref Concepts_FlowElements_CloudEngine)" \
                          "cloudengines=[cloud engines](@ref Concepts_FlowElements_CloudEngine)" \
+                         "onpremiseengine=[on-premise engine](@ref Concepts_FlowELements_OnPremiseEngine) \
+                         "onpremiseengines=[on-premise engines](@ref Concepts_FlowELements_OnPremiseEngine) \
                          "term{1}=@ref Concepts_Terminology_\1" \
                          "elementdatakey=[element data key](@ref Concepts_Data_Keys_ElementDataKey)" \
                          "caching=[caching](@ref Concepts_Configuration_Caching)" \
