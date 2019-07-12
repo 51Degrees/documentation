@@ -62,7 +62,7 @@ they are added. However, if the [language supports](@ref Info_FeatureMatrix) it,
 two or more [flow elements](@ref Concepts_FlowElements_FlowElement)
 can also be executed in @parallel within the overall sequential structure.
 
-Additionally, the **Pipeline** may offer @asynchronous execution or a \@lazyloading capability for individual 
+Additionally, the **Pipeline** may offer [asynchronous execution](@ref Concepts_Feature_AsynchronousExecution) or a [lazyloading](@ref Concepts_Feature_LazyLoading) capability for individual 
 [flow elements](@ref Concepts_FlowElements_FlowElement). These features are also [language dependent](@ref Info_FeatureMatrix).
 
 Regardless of the method of execution and configuration, after processing the 
