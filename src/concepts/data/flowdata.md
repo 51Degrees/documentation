@@ -36,9 +36,9 @@ and record any exceptions that occur when a @flowelement is processing. However,
 later @flowelements will continue as normal.
 
 By default, once all @flowelements have been processed, an exception will be thrown with details 
-of any errors that have occured.
+of any errors that have occurred.
 
-The @pipelinebuilder has an option to modify this behaviour so that exceptions are totally supressed.
+The @pipelinebuilder has an option to modify this behavior so that exceptions are totally suppressed.
 In this situation, the caller is responsible for handling any exceptions by checking the errors
 collection after processing.
 
@@ -60,11 +60,19 @@ is configured to execute @elements in parallel.
 **Flow data** should be disposed of correctly when no longer in use. This ensures that any 
 resources being held by the instance are correctly freed.
 
+=========
+
+@htmlonly
+
 <button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-dotnet', '_snippets.html', 'dispose-flowdata-cs', 'disposalBtn', 'disposal-eg')">C#</button>
 <button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-java', '_snippets.html', 'dispose-flowdata-java', 'disposalBtn', 'disposal-eg')">Java</button>
 <button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-php', '_snippets.html', 'dispose-flowdata-php', 'disposalBtn', 'disposal-eg')">PHP</button>
 <button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-node', '_snippets.html', 'dispose-flowdata-node', 'disposalBtn', 'disposal-eg')">Node</button>
 <div id="disposal-eg"></div>
+
+@endhtmlonly
+
+=========
 
 ## Concurrency
 
@@ -75,27 +83,36 @@ we will describe the data structures used in each langauge separately:
 
 @htmlonly
 
-<button class="b-btn b-btn--secondary concurrencyBtn" onclick="grabSnippet(this, 'concurrencyBtn', 'concurrency-dotnet')">C#</button>
-<button class="b-btn b-btn--secondary concurrencyBtn" onclick="grabSnippet(this, 'concurrencyBtn', 'concurrency-java')">Java</button>
-<button class="b-btn b-btn--secondary concurrencyBtn" onclick="grabSnippet(this, 'concurrencyBtn', 'concurrency-php')">PHP</button>
-<button class="b-btn b-btn--secondary concurrencyBtn" onclick="grabSnippet(this, 'concurrencyBtn', 'concurrency-node')">Node.js</button>
-<div id="concurrency-dotnet">
-  In .NET, by default, the non-thread-safe Dictionary class is used for both @elementdata and
-  @Evidence.
-  In both cases, this can be overriden to use another IDictionary implementation such as the 
-  thread-safe ConcurrentDictionary.
-
-  The errors collection uses the List class. This is not thread-safe. As performance is less 
-  of an issue with this collection, a simple lock is used to synchronise items being 
-  added to the list.
-</div>
-<div id="concurrency-java">
-</div>
-<div id="concurrency-php">
-  PHP runs in a single thread. Consequently, elements cannot run in parallel and 
-  concurency issues are not a concern.
-</div>
-<div id="concurrency-node">
+<button class="b-btn b-btn--secondary concurrencyBtn" onclick="showSnippet(this, 'concurrency', 'concurrencyBtn', 'dotnet')">C#</button>
+<button class="b-btn b-btn--secondary concurrencyBtn" onclick="showSnippet(this, 'concurrency', 'concurrencyBtn', 'java')">Java</button>
+<button class="b-btn b-btn--secondary concurrencyBtn" onclick="showSnippet(this, 'concurrency', 'concurrencyBtn', 'php')">PHP</button>
+<button class="b-btn b-btn--secondary concurrencyBtn" onclick="showSnippet(this, 'concurrency', 'concurrencyBtn', 'node')">Node.js</button>
+<div id="concurrency">
+  <div data-lang="dotnet" style="display: none;">  
+    <p>
+      In .NET, by default, the non-thread-safe Dictionary class is used for both element data and
+      evidence.
+    </p>
+    <p>
+      In both cases, this can be overridden to use another IDictionary implementation such as the 
+      thread-safe ConcurrentDictionary.
+    </p>
+    <p>
+      The errors collection uses the List class. This is not thread-safe. As performance is less 
+      of an issue with this collection, a simple lock is used to synchronize items being 
+      added to the list.
+    </p>
+  </div>
+  <div data-lang="java" style="display: none;">
+  </div> 
+  <div data-lang="php" style="display: none;">
+    <p>
+      PHP runs in a single thread. Consequently, elements cannot run in parallel and 
+      concurrency issues are not a concern.
+    </p>
+  </div>
+  <div data-lang="node" style="display: none;">
+  </div>
 </div>
 
 @endhtmlonly
