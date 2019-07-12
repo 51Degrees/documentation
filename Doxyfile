@@ -56,7 +56,7 @@ PROJECT_LOGO           = patternlab/source/images/logo-51Degrees-Docs.png
 # The PROJECT_URL tag is used to specify the URL which is linked by the
 # PROJECT_LOGO.
 
-PROJECT_URL            = https://51degrees.com
+PROJECT_URL            = /index.html
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
 # into which the generated documentation will be written. If a relative path is
@@ -277,6 +277,8 @@ ALIASES                = "values=[values](@ref Concepts_MetaData_Values)" \
                          "elements=[elements](@ref Concepts_FlowElements_FlowElement)" \
                          "flowelement=[flow element](@ref Concepts_FlowElements_FlowElement)" \
                          "flowelements=[flow elements](@ref Concepts_FlowElements_FlowElement)" \
+                         "aspectengine=[aspect engine](@ref Concepts_FlowElements_AspectEngine)" \
+                         "aspectengines=[aspect engines](@ref Concepts_FlowElements_AspectEngine)" \
                          "cloudengine=[cloud engine](@ref Concepts_FlowElements_CloudEngine)" \
                          "cloudengines=[cloud engines](@ref Concepts_FlowElements_CloudEngine)" \
                          "term{1}=@ref Concepts_Terminology_\1" \
