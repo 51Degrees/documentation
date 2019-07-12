@@ -52,3 +52,9 @@ the @dataupdateservice with the age of the @datafile, the time at which a new on
 from when it is available.
 
 The location of the @datafile is also exposed, along with the location of the temporary copy if one has been made. 
+
+## Multiple Files
+
+An **on-premise engine** can require more than one @datafile. This does not change how they are handled by the @dataupdateservice if
+they are registered with it, and can be individually registered. So if only one of two @datafiles needs to be kept up to date, then
+this is handled just as well as if both needed to be kept up to date.

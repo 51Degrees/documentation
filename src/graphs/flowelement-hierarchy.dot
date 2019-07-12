@@ -10,7 +10,7 @@ digraph H {
     I [label=Implementations, URL="@ref Services_Index"];
     
     FE -> AE -> OPE;
-    OPE -> CE;
+    AE -> CE;
     
     edge[style=dashed];
     FE -> I;
