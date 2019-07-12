@@ -85,42 +85,35 @@ TODO: Add the snippets for this example.
 Concurrency is a complex topic that has subtle nuances within different languages. As such,
 we will describe the data structures used in each language separately:
 
+
 =========
 
-@htmlonly
+@showsnippet{concurrency,dotnet,C#}
+@showsnippet{concurrency,java,Java}
+@showsnippet{concurrency,php,PHP}
+@showsnippet{concurrency,node,Node.js}
 
-<button class="b-btn b-btn--secondary concurrencyBtn" onclick="showSnippet(this, 'concurrency', 'concurrencyBtn', 'dotnet')">C#</button>
-<button class="b-btn b-btn--secondary concurrencyBtn" onclick="showSnippet(this, 'concurrency', 'concurrencyBtn', 'java')">Java</button>
-<button class="b-btn b-btn--secondary concurrencyBtn" onclick="showSnippet(this, 'concurrency', 'concurrencyBtn', 'php')">PHP</button>
-<button class="b-btn b-btn--secondary concurrencyBtn" onclick="showSnippet(this, 'concurrency', 'concurrencyBtn', 'node')">Node.js</button>
-<div id="concurrency">
-  <div data-lang="dotnet" style="display: none;">  
-    <p>
-      In .NET, by default, the non-thread-safe Dictionary class is used for both element data and
-      evidence.
-    </p>
-    <p>
-      In both cases, this can be overridden to use another IDictionary implementation such as the 
-      thread-safe ConcurrentDictionary.
-    </p>
-    <p>
-      The errors collection uses the List class. This is not thread-safe. As performance is less 
-      of an issue with this collection, a simple lock is used to synchronize items being 
-      added to the list.
-    </p>
-  </div>
-  <div data-lang="java" style="display: none;">
-  </div> 
-  <div data-lang="php" style="display: none;">
-    <p>
-      PHP runs in a single thread. Consequently, elements cannot run in parallel and 
-      concurrency issues are not a concern.
-    </p>
-  </div>
-  <div data-lang="node" style="display: none;">
-  </div>
-</div>
+@startsnippets{concurrency}
+@startsnippet{dotnet}
+In .NET, by default, the non-thread-safe Dictionary class is used for both @elementdata and @evidence.
 
-@endhtmlonly
+In both cases, this can be overridden to use another IDictionary implementation such as the thread-safe ConcurrentDictionary.
+
+The errors collection uses the List class. This is not thread-safe. As performance is less of an issue with this collection, a simple lock is used to synchronize items being added to the list.
+@endsnippet
+
+@startsnippet{java}
+**todo**
+@endsnippet
+
+@startsnippet{php}
+PHP runs in a single thread. Consequently, elements cannot run in parallel and 
+concurrency issues are not a concern.
+@endsnippet
+
+@startsnippet{node}
+**todo**
+@endsnippet
+@endsnippets
 
 =========
