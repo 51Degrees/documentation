@@ -40,7 +40,7 @@ function grabExample(caller, project, name) {
         project,
         name + '-example.html',
         'primary',
-        'exampleBtn',
+        'examplebtn',
         'grabbed-example');
 }
 

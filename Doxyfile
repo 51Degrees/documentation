@@ -304,7 +304,9 @@ ALIASES                = "buildfromfile=[build from file](@ref Concepts_Configur
                          "startsnippets{1}=@htmlonly <div id=\"\1\"> @endhtmlonly" \
                          "startsnippet{1}=@htmlonly <div data-lang=\"\1\" style=\"display:none;\"> @endhtmlonly" \
                          "endsnippet=@htmlonly </div> @endhtmlonly" \
-                         "endsnippets=@endsnippet"
+                         "endsnippets=@endsnippet" \
+                         "grabexample{3}=@htmlonly <button class=\"b-btn b-btn--secondary examplebtn\" onclick=\"grabExample(this, '\1', '\2')\">\3</button> @endhtmlonly" \
+                         "grabbedexample=@htmlonly <div id=\"grabbed-example\"></div> @endhtmlonly"
                        
 
 # This tag can be used to specify a number of word-keyword mappings (TCL only).
