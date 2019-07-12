@@ -289,7 +289,7 @@ ALIASES                = "values=[values](@ref Concepts_MetaData_Values)" \
                          "datafiles=[data files](@ref Concepts_Configuration_DataFiles)" \
                          "datafile=[data file](@ref Concepts_Configuration_DataFiles)" \
                          "asynchronous=[asynchronous](@ref Concepts_Feature_AsynchronousExecution)" \
-                         "lazyloading=[lazy loading](@ref Concepts_Feature_LazyLoading) \
+                         "lazyloading=[lazy loading](@ref Concepts_Feature_LazyLoading)" \
                          "elementproperties=[element properties](@ref Concepts_MetaData_ElementProperties)"
 
 # This tag can be used to specify a number of word-keyword mappings (TCL only).
