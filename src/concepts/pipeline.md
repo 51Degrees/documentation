@@ -28,7 +28,7 @@ to the **Pipeline**, the nature of the processing it will carry out is defined.
 
 Once created, a **Pipeline** is immutable. I.e. The [flow elements](@ref Concepts_FlowElements_FlowElements)
 it contains and the order in which they execute cannot be changed. Individual 
-[flow elements](@ref Concepts_FlowElements_FlowElements) may be immutable or not based upon thier
+[flow elements](@ref Concepts_FlowElements_FlowElements) may be immutable or not based upon their
 individual implementations.
 
 As an alternative to configuring a **Pipeline** using a builder, configuration can be supplied from a file. 
