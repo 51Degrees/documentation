@@ -60,6 +60,8 @@ is configured to execute @elements in parallel.
 **Flow data** should be disposed of correctly when no longer in use. This ensures that any 
 resources being held by the instance are correctly freed.
 
+TODO: Add the snippets for this example.
+
 =========
 
 @htmlonly
@@ -67,7 +69,7 @@ resources being held by the instance are correctly freed.
 <button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-dotnet', '_snippets.html', 'dispose-flowdata-cs', 'disposalBtn', 'disposal-eg')">C#</button>
 <button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-java', '_snippets.html', 'dispose-flowdata-java', 'disposalBtn', 'disposal-eg')">Java</button>
 <button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-php', '_snippets.html', 'dispose-flowdata-php', 'disposalBtn', 'disposal-eg')">PHP</button>
-<button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-node', '_snippets.html', 'dispose-flowdata-node', 'disposalBtn', 'disposal-eg')">Node</button>
+<button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-node', '_snippets.html', 'dispose-flowdata-node', 'disposalBtn', 'disposal-eg')">Node.js</button>
 <div id="disposal-eg"></div>
 
 @endhtmlonly
@@ -77,7 +79,7 @@ resources being held by the instance are correctly freed.
 ## Concurrency
 
 Concurrency is a complex topic that has subtle nuances within different languages. As such,
-we will describe the data structures used in each langauge separately:
+we will describe the data structures used in each language separately:
 
 =========
 
