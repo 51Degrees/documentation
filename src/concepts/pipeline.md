@@ -26,7 +26,7 @@ A **Pipeline** is built using a [pipeline builder](@ref Concepts_Configuration_B
 utilizing the fluent builder pattern. By adding [flow elements](@ref Concepts_FlowElements_FlowElement)
 to the **Pipeline**, the nature of the processing it will carry out is defined.
 
-Once created, a **Pipeline** is immutable, i.e. The [flow elements](@ref Concepts_FlowElements_FlowElement)
+Once created, a **Pipeline** is immutable, i.e. the [flow elements](@ref Concepts_FlowElements_FlowElement)
 it contains and the order in which they execute cannot be changed. Individual 
 [flow elements](@ref Concepts_FlowElements_FlowElement) may be immutable, or not, based upon their
 individual implementations.
