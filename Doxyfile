@@ -281,8 +281,8 @@ ALIASES                = "values=[values](@ref Concepts_MetaData_Values)" \
                          "aspectengines=[aspect engines](@ref Concepts_FlowElements_AspectEngine)" \
                          "cloudengine=[cloud engine](@ref Concepts_FlowElements_CloudEngine)" \
                          "cloudengines=[cloud engines](@ref Concepts_FlowElements_CloudEngine)" \
-                         "onpremiseengine=[on-premise engine](@ref Concepts_FlowELements_OnPremiseEngine)" \
-                         "onpremiseengines=[on-premise engines](@ref Concepts_FlowELements_OnPremiseEngine)" \
+                         "onpremiseengine=[on-premise engine](@ref Concepts_FlowElements_OnPremiseEngine)" \
+                         "onpremiseengines=[on-premise engines](@ref Concepts_FlowElements_OnPremiseEngine)" \
                          "term{1}=@ref Concepts_Terminology_\1" \
                          "elementdatakey=[element data key](@ref Concepts_Data_Keys_ElementDataKey)" \
                          "caching=[caching](@ref Concepts_Configuration_Caching)" \
@@ -290,7 +290,9 @@ ALIASES                = "values=[values](@ref Concepts_MetaData_Values)" \
                          "datafile=[data file](@ref Concepts_Configuration_DataFiles)" \
                          "asynchronous=[asynchronous](@ref Concepts_Feature_AsynchronousExecution)" \
                          "lazyloading=[lazy loading](@ref Concepts_Feature_LazyLoading)" \
-                         "elementproperties=[element properties](@ref Concepts_MetaData_ElementProperties)"
+                         "elementproperties=[element properties](@ref Concepts_MetaData_ElementProperties)" \
+                         "clientsideevidence=[client side evidence](@ref Concepts_Feature_ClientSideEvidence)" \
+                         "webintegration=[web integration](@ref Concepts_Feature_WebIntegration)"
 
 # This tag can be used to specify a number of word-keyword mappings (TCL only).
 # A mapping has the form "name=value". For example adding "class=itcl::class"
