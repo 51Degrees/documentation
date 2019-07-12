@@ -305,7 +305,7 @@ ALIASES                = "buildfromfile=[build from file](@ref Concepts_Configur
                          "startsnippet{1}=@htmlonly <div data-lang=\"\1\" style=\"display:none;\"> @endhtmlonly" \
                          "endsnippet=@htmlonly </div> @endhtmlonly" \
                          "endsnippets=@endsnippet" \
-                         "grabsnippet{4}=@htmlonly <button class=\"b-btn b-btn--secondary \1Btn" onclick=\"grabSnippet(this, '\2', '\3', '\1', '\1Btn', '\1')\">\4</button> @endhtmlonly" \
+                         "grabsnippet{5}=@htmlonly <button class=\"b-btn b-btn--secondary \1Btn" onclick=\"grabSnippet(this, '\2', '\3', '\4', '\1Btn', '\1')\">\5</button> @endhtmlonly" \
                          "grabbedsnippet{1}=@htmlonly <div id=\"\1\"></div> @endhtmlonly" \
                          "grabexample{3}=@htmlonly <button class=\"b-btn b-btn--secondary examplebtn\" onclick=\"grabExample(this, '\1', '\2')\">\3</button> @endhtmlonly" \
                          "grabbedexample=@htmlonly <div id=\"grabbed-example\"></div> @endhtmlonly"
