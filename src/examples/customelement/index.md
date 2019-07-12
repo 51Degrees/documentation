@@ -1,4 +1,4 @@
-@page Examples_CustomElement_Index Examples with a custom @flowelement
+@page Examples_CustomElement_Index Examples with a custom flow element
 
 @subpage Examples_CustomElement_ClientSideEvidence
 
