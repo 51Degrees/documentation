@@ -23,12 +23,12 @@ with a single **Pipeline** process request.
 ## Creation
 
 A **Pipeline** is built using a [pipeline builder](@ref Concepts_Configuration_Builders_PipelineBuilder)
-utilising the fluent builder pattern. By adding [flow elements](@ref Concepts_FlowElements_FlowElements)
+utilizing the fluent builder pattern. By adding [flow elements](@ref Concepts_FlowElements_FlowElements)
 to the **Pipeline**, the nature of the processing it will carry out is defined.
 
 Once created, a **Pipeline** is immutable. I.e. The [flow elements](@ref Concepts_FlowElements_FlowElements)
 it contains and the order in which they execute cannot be changed. Individual 
-[flow elements](@ref Concepts_FlowElements_FlowElements) may be immutable or not based upon thier
+[flow elements](@ref Concepts_FlowElements_FlowElements) may be immutable or not based upon their
 individual implementations.
 
 As an alternative to configuring a **Pipeline** using a builder, configuration can be supplied from a file. 
@@ -52,19 +52,18 @@ to be processed.
 Finally, the [flow data](@ref Concepts_Data_FlowData) is processed. 
 Doing this sends the data (along with all the [evidence](@ref Concepts_Data_Evidence) it
 now contains) through the **Pipeline**. Each [flow element](@ref Concepts_FlowElements_FlowElements) will 
-recieve the [flow data](@ref Concepts_Data_FlowData) and do its processing before optionally updating the 
+receive the [flow data](@ref Concepts_Data_FlowData) and do its processing before optionally updating the 
 [flow data](@ref Concepts_Data_FlowData) with new values.
 
 Note that the order of execution of [flow elements](@ref Concepts_FlowElements_FlowElements) is decided when the
 **Pipeline** is created.
 By default, [flow elements](@ref Concepts_FlowElements_FlowElements) are executed sequentially in the order
-they are added. However, if the language supports it, two or more [flow elements](@ref Concepts_FlowElements_FlowElements)
-can also be executed in parallel within the overall sequential structure.
-For more information, see (TODO: Add link to internals secton below)
+they are added. However, if the [language supports](@ref Info_FeatureMatrix) it, 
+two or more [flow elements](@ref Concepts_FlowElements_FlowElements)
+can also be executed in @parallel within the overall sequential structure.
 
-Additionally, the **Pipeline** may offer asynchronous (TODO: Add link) execution or a lazy loading (TODO: add link) capability for individual 
-[flow elements](@ref Concepts_FlowElements_FlowElements). This will be language dependent. 
-(TODO Link to language/feature matrix).
+Additionally, the **Pipeline** may offer @asynchronous execution or a @lazyloading capability for individual 
+[flow elements](@ref Concepts_FlowElements_FlowElements). These features are also [language dependent](@ref Info_FeatureMatrix).
 
 Regardless of the method of execution and configuration, after processing the 
 [flow data](@ref Concepts_Data_FlowData) will contain the results, which can then be accessed by the caller.
@@ -75,16 +74,14 @@ Regardless of the method of execution and configuration, after processing the
 ## Public Access
 
 Other than the creation of a new [flow data](@ref Concepts_Data_FlowData), there are very few other 
-publicly accessible parts
-of the Pipeline.
+publicly accessible parts of the **Pipeline**.
 
 [flow elements](@ref Concepts_FlowElements_FlowElements) inside the **Pipeline** are accessible as 
-a read-only collection, and can also be retrieved individually if the type of the required 
-[flow elements](@ref Concepts_FlowElements_FlowElements) is known.
+a read-only collection, and can also be retrieved individually if needed.
 
-All [properties](@ref Concepts_MetaData_Properties) that the **Pipeline's** 
+All @elementproperties that the **Pipeline's** 
 [flow elements](@ref Concepts_FlowElements_FlowElements) can populate are also exposed in one place.
-This enables easy iteration over all [properties](@ref Concepts_MetaData_Properties).
+This enables easy iteration over all @elementproperties.
 
 =========
 
@@ -117,7 +114,7 @@ and **E2** are added to the **Pipeline** individually in that order.
 @dotfile pipeline-process.dot
 
 **E1** will carry out its processing on the [flow data](@ref Concepts_Data_FlowData), then 
-once it is finished, **E2** will do the same. In this scenario, the Pipeline 'knows' 
+once it is finished, **E2** will do the same. In this scenario, the **Pipeline** 'knows' 
 that the [flow data](@ref Concepts_Data_FlowData) will not be written to by multiple threads.
 As such, the [flow data](@ref Concepts_Data_FlowData) created by the **Pipeline** will not be
 thread-safe but will have slightly improved performance.
@@ -130,6 +127,8 @@ In this case, both will carry out their processing at the same time. This time, 
 [flow data](@ref Concepts_Data_FlowData)
 which the **Pipeline** creates will be thread-safe for writing as it is possible that both 
 **E1** and **E2** will attempt to write their results to the FlowData at the same time.
+
+TODO: The above example is language-specific.
 
 =========
 
@@ -161,8 +160,8 @@ will occur. The **Pipeline** which creates a [flow data](@ref Concepts_Data_Flow
 exist for as long as the [flow data](@ref Concepts_Data_FlowData). This
 is also true of post processing usage like retrieving results from the 
 [flow data](@ref Concepts_Data_FlowData). 
-Imagine a case where a certain result has been lazily loaded (TODO: Add link to lazy loading) - a call to get that result will 
-require the [flow element](@ref Concepts_FlowElements_FlowElements)
+Imagine a case where a certain result has been [lazily loaded](@ref Concepts_Feature_LazyLoading) - 
+a call to get that result will require the [flow element](@ref Concepts_FlowElements_FlowElements)
 which created it to do the loading, so if the **Pipeline** has disposed of the 
 [flow element](@ref Concepts_FlowElements_FlowElements), there will be an error.
 
