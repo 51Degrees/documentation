@@ -49,7 +49,6 @@ collection after processing.
 
 # Life cycle
 
-
 ## Creation
 
 **Flow data** is only ever created by a @Pipeline, when the ```CreateFlowData``` method is called.
@@ -80,10 +79,7 @@ TODO: Add the snippets for this example.
 
 =========
 
-## Concurrency
-
-Concurrency is a complex topic that has subtle nuances within different languages. As such,
-we will describe the data structures used in each language separately:
+# Thread-safety
 
 
 =========
