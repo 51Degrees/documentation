@@ -1,0 +1,5 @@
+@page Info_Benchmarks_Index Benchmarks
+
+@subpage Info_Benchmarks_DeviceDetection
+
+@subpage Info_Benchmarks_GeoLocation
