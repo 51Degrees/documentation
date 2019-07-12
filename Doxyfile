@@ -258,7 +258,7 @@ TAB_SIZE               = 4
 
 ALIASES                = "buildfromfile=[build from file](@ref Concepts_Configuration_Builders_buildfromfile)" \
                          "datakey=[data key](@ref Concepts_Data_Keys_DataKey)" \
-                         "elementbuilder=[element builder](@ref Concepts_Configuration_Builders_ElementBuilder)" \
+                         "elementbuilder=[element builder](@ref Concepts_Configuration_Builders_ElementBuilder)" \                    
                          "element=[element](@ref Concepts_FlowElements_FlowElement)" \
                          "elements=[elements](@ref Concepts_FlowElements_FlowElement)" \
                          "evidence=[evidence](@ref Concepts_Data_Evidence)" \
@@ -274,7 +274,7 @@ ALIASES                = "buildfromfile=[build from file](@ref Concepts_Configur
                          "lazilyloaded=[lazily loaded](@ref Concepts_Feature_LazyLoading)" \
                          "aspectdata=[aspect data](@ref Concepts_Data_AspectData)" \
                          "Aspectdata=[Aspect data](@ref Concepts_Data_AspectData)" \
-                         "parallel=[parallel](@ref Concepts_Feature_parallelexecution)" \
+                         "parallel=[parallel](@ref Concepts_Feature_parallelexecution)"\
                          "Pipeline=[Pipeline](@ref Concepts_Pipeline)" \
                          "pipeline=[Pipeline](@ref Concepts_Pipeline)" \
                          "pipelines=[Pipelines](@ref Concepts_Pipeline)" \
@@ -287,8 +287,8 @@ ALIASES                = "buildfromfile=[build from file](@ref Concepts_Configur
                          "aspectengines=[aspect engines](@ref Concepts_FlowElements_AspectEngine)" \
                          "cloudengine=[cloud engine](@ref Concepts_FlowElements_CloudEngine)" \
                          "cloudengines=[cloud engines](@ref Concepts_FlowElements_CloudEngine)" \
-                         "onpremiseengine=[on-premise engine](@ref Concepts_FlowELements_OnPremiseEngine)" \
-                         "onpremiseengines=[on-premise engines](@ref Concepts_FlowELements_OnPremiseEngine)" \
+                         "onpremiseengine=[on-premise engine](@ref Concepts_FlowElements_OnPremiseEngine)" \
+                         "onpremiseengines=[on-premise engines](@ref Concepts_FlowElements_OnPremiseEngine)" \
                          "term{1}=@ref Concepts_Terminology_\1" \
                          "elementdatakey=[element data key](@ref Concepts_Data_Keys_ElementDataKey)" \
                          "caching=[caching](@ref Concepts_Configuration_Caching)" \
@@ -296,8 +296,11 @@ ALIASES                = "buildfromfile=[build from file](@ref Concepts_Configur
                          "datafile=[data file](@ref Concepts_Configuration_DataFiles)" \
                          "asynchronous=[asynchronous](@ref Concepts_Feature_AsynchronousExecution)" \
                          "elementproperties=[element properties](@ref Concepts_MetaData_ElementProperties)" \
-                         "webintegrations=[web integrations] (@refConcepts_Feature_webintegration)" \
-                         "values=[values](@ref Concepts_MetaData_Values)"
+                         "clientsideevidence=[client side evidence](@ref Concepts_Feature_ClientSideEvidence)" \
+                         "webintegration=[web integration](@ref Concepts_Feature_WebIntegration)" \
+                         "webintegrations=[web integrations] (@ref Concepts_Feature_webintegration)"\
+                         "values=[values](@ref Concepts_MetaData_Values)" 
+                       
 
 # This tag can be used to specify a number of word-keyword mappings (TCL only).
 # A mapping has the form "name=value". For example adding "class=itcl::class"

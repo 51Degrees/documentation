@@ -1,8 +1,12 @@
 @page Concepts_Data_FlowData Flow Data
 
-## Introduction
+# Introduction
 
 **Flow data** is a container that encapsulates all the data related to a single @Pipeline process request.
+This includes input and output data as well as meta-data related to the processing such as 
+the details of any errors that occurred.
+
+# Internal data structures
 
 **Flow data** has several sub-containers that are used to segment the data that it contains:
 * @Evidence
@@ -43,10 +47,10 @@ In this situation, the caller is responsible for handling any exceptions by chec
 collection after processing.
 
 
-## Life cycle
+# Life cycle
 
 
-### Creation
+## Creation
 
 **Flow data** is only ever created by a @Pipeline, when the ```CreateFlowData``` method is called.
 This allows the @Pipeline to create the **flow data** internal data structures using implementations
@@ -55,7 +59,7 @@ that are most appropriate for the configuration of the @flowelements in the @Pip
 For example, thread-safe but slower data collections only need to be used if the @Pipeline
 is configured to execute @elements in parallel.
 
-### Disposal/Cleanup
+## Disposal/Cleanup
 
 **Flow data** should be disposed of correctly when no longer in use. This ensures that any 
 resources being held by the instance are correctly freed.
