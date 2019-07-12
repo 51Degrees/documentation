@@ -45,6 +45,17 @@ function grabExample(caller, project, name) {
 }
 
 function grabSnippet(caller, project, file, tag, btnClass, divId) {
+    selectBtn(caller, btnClass);
+    // Load the example into the 'grabbed-example' div, then update the links.
+    $('#' + divId).load(
+        '../../' + project + '/' + getVersion()
+        + '/' + file
+        + ' #' + tag,
+        function() { updateLinks(project, divId); });
+
+}
+
+function selectBtn(caller, btnClass) {
     var btns = document.getElementsByClassName(btnClass);
     for (i = 0; i < btns.length; i++) {
         if (btns[i] === caller) {
@@ -57,11 +68,19 @@ function grabSnippet(caller, project, file, tag, btnClass, divId) {
             btns[i].classList.add('b-btn--secondary');
         }
     }
-    // Load the example into the 'grabbed-example' div, then update the links.
-    $('#' + divId).load(
-        '../../' + project + '/' + getVersion()
-        + '/' + file
-        + ' #' + tag,
-        function() { updateLinks(project, divId); });
 
+}
+
+function showSnippet(caller, name, btnClass, language) {
+    selectBtn(caller, btnClass);
+    var div = document.getElementById(name);
+    for (i = 0; i < div.children.length; i++) {
+        var item = div.children.item(i);
+        if (item.getAttribute("data-lang") === language) {
+            item.style.display = "block";
+        }
+        else {
+            item.style.display = "none";
+        }
+    }
 }
