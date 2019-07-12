@@ -54,13 +54,15 @@ Used to add an anchor to a location in the page which can be linked to. Linking 
 # Example Grabber
 The `examplegrabber.js` file is used to load language specific examples onto a general example page. The file must be included in a ``<script>`` tag, then buttons and a ``<div>`` must be set up correctly.
 
-On an example page, the JavaScript is included with (inside a ``@htmlonly``)
+All pages have the JavaScript is included already with
 
 ``` html
 <script type="text/javascript" src="examplegrabber.js"></script>
 ```
 
-Then a button can be added to view the example in Java:
+from the `header.html` file.
+
+A button can then be added to view the example in Java:
 
 ``` html
 <button class="b-btn b-btn--secondary examplebtn" onclick="grabExample(this, 'pipeline-java','hash_2_getting_started_8java')">Java Code</button>

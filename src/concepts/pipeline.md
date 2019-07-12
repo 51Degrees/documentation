@@ -1,8 +1,5 @@
 @page Concepts_Pipeline Pipeline
 
-@htmlonly <script type="text/javascript" src="examplegrabber.js"></script> @endhtmlonly
-
-
 # Introduction
 
 A **Pipeline** is a customizable data processing system. At the most basic level, input data is 
