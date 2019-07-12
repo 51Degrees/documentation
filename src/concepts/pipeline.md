@@ -6,7 +6,7 @@
 # Introduction
 
 A **Pipeline** is a customizable data processing system. At the most basic level, input data is 
-supplied in the form of [evidence](@ref Concepts_Data_Evidence). 
+supplied in the form of @evidence. 
 One or more [flow elements](@ref Concepts_FlowElements_Index) in the **Pipeline** then perform processing 
 based on that [evidence](@ref Concepts_Data_Evidence) and optionally, populate data values that 
 are required by the user.
@@ -15,7 +15,7 @@ The incoming [evidence](@ref Concepts_Data_Evidence) is usually related to a
 [web request](@term{WebRequest}), for example 
 the HTTP headers, cookies, source IP address or values from the query string.
 The [evidence](@ref Concepts_Data_Evidence) is carried through the **Pipeline** to the 
-[elements](@ref Concepts_FlowElements_Index) by a [flow data](@ref Conepts_Data_FlowData) instance. 
+[elements](@ref Concepts_FlowElements_Index) by a @flowdata instance. 
 The [flow data](@ref Conepts_Data_FlowData) structure encapsulates all input and output data associated 
 with a single **Pipeline** process request.
 
@@ -60,9 +60,9 @@ Note that the order of execution of [flow elements](@ref Concepts_FlowElements_F
 By default, [flow elements](@ref Concepts_FlowElements_FlowElement) are executed sequentially in the order
 they are added. However, if the [language supports](@ref Info_FeatureMatrix) it, 
 two or more [flow elements](@ref Concepts_FlowElements_FlowElement)
-can also be executed in [parallel](@ref Concepts_Feature_parallelexecution) within the overall sequential structure.
+can also be executed in @parallel within the overall sequential structure.
 
-Additionally, the **Pipeline** may offer [asynchronous execution](@ref Concepts_Feature_AsynchronousExecution) or a [lazyloading](@ref Concepts_Feature_LazyLoading) capability for individual 
+Additionally, the **Pipeline** may offer @asynchronous execution or a @lazyloading capability for individual 
 [flow elements](@ref Concepts_FlowElements_FlowElement). These features are also [language dependent](@ref Info_FeatureMatrix).
 
 Regardless of the method of execution and configuration, after processing the 
