@@ -88,21 +88,28 @@ we will describe the data structures used in each langauge separately:
 <button class="b-btn b-btn--secondary concurrencyBtn" onclick="showSnippet(this, 'concurrency', 'concurrencyBtn', 'php')">PHP</button>
 <button class="b-btn b-btn--secondary concurrencyBtn" onclick="showSnippet(this, 'concurrency', 'concurrencyBtn', 'node')">Node.js</button>
 <div id="concurrency">
-  <div data-lang="dotnet" style="display: none;">    
-    In .NET, by default, the non-thread-safe Dictionary class is used for both @elementdata and
-    @Evidence.
-    In both cases, this can be overridden to use another IDictionary implementation such as the 
-    thread-safe ConcurrentDictionary.
-
-    The errors collection uses the List class. This is not thread-safe. As performance is less 
-    of an issue with this collection, a simple lock is used to synchronize items being 
-    added to the list.
+  <div data-lang="dotnet" style="display: none;">  
+    <p>
+      In .NET, by default, the non-thread-safe Dictionary class is used for both element data and
+      evidence.
+    </p>
+    <p>
+      In both cases, this can be overridden to use another IDictionary implementation such as the 
+      thread-safe ConcurrentDictionary.
+    </p>
+    <p>
+      The errors collection uses the List class. This is not thread-safe. As performance is less 
+      of an issue with this collection, a simple lock is used to synchronize items being 
+      added to the list.
+    </p>
   </div>
   <div data-lang="java" style="display: none;">
   </div> 
   <div data-lang="php" style="display: none;">
-    PHP runs in a single thread. Consequently, elements cannot run in parallel and 
-    concurrency issues are not a concern.
+    <p>
+      PHP runs in a single thread. Consequently, elements cannot run in parallel and 
+      concurrency issues are not a concern.
+    </p>
   </div>
   <div data-lang="node" style="display: none;">
   </div>
