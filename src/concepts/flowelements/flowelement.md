@@ -82,11 +82,11 @@ the header name.
 
 # Data Keys
 
-Results of an **element**'s processing are stored in the @flowdata, keyed on the **element**'s data key. 
+Results of an **element**'s processing are stored in the @flowdata, keyed on the **element**'s @elementdatakey. 
 While not required, it is convention that each **element** has a unique key name. 
 For example, our "user age" example would likely have the key name "user age".
 
-In addition to the key name, an **element**'s data key also contains the type of @elementdata that the element populates. 
+In addition to the name, an @elementdatakey also contains the type of @elementdata that the element populates.
 
 TODO: Not sure how true the above is for typeless languages such as PHP and Node. TBC.
 
