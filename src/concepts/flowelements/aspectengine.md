@@ -56,3 +56,4 @@ particularly useful in a [web server](@term{WebServer}) where processing can sta
 received, and the [server](@term{WebServer}) can continue serving the page until it reaches a point where the result of the processing
 is needed.
 
+By default @lazyloading is not enabled, and can be enabled in an **engine**'s builder.
