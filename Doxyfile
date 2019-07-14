@@ -295,7 +295,7 @@ ALIASES                = "buildfromfile=[build from file](@ref Concepts_Configur
                          "elementproperties=[element properties](@ref Concepts_MetaData_ElementProperties)" \
                          "clientsideevidence=[client side evidence](@ref Concepts_Feature_ClientSideEvidence)" \
                          "webintegration=[web integration](@ref Concepts_Feature_WebIntegration)" \
-                         "webintegrations=[web integrations] (@ref Concepts_Feature_webintegration)"\
+                         "webintegrations=[web integrations](@ref Concepts_Feature_WebIntegration)" \
                          "values=[values](@ref Concepts_MetaData_Values)" \
                          "term{1}=@ref Concepts_Terminology_\1" \
                          "showsnippet{3}=@htmlonly <button class=\"b-btn b-btn--secondary \1Btn\" onclick=\"showSnippet(this,'\1','\1Btn','\2')\">\3</button> @endhtmlonly" \

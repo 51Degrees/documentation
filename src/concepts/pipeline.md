@@ -31,7 +31,7 @@ individual implementations.
 As an alternative to configuring a **Pipeline** using a builder, configuration can be supplied from a file. 
 Depending on the language features and conventions, this could be formatted as either JSON or XML.
 This allows the **Pipeline** to be configurable at runtime without recompiling the code. This is the 
-default operation for @Webintegrations, but can be used for any other use-case
+default operation for @webintegrations, but can be used for any other use-case
 as well. 
 For more on this, see the @buildfromfile section, 
 and the [configure from file](@ref Examples_Configure_From_File) example.
