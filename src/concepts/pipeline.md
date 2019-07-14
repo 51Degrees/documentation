@@ -73,7 +73,7 @@ Regardless of the method of execution and configuration, after processing the
 Other than the creation of a new @flowdata, there are very few other 
 publicly accessible parts of the **Pipeline**.
 
-@flowelements inside the **Pipeline** are accessible as 
+@Flowelements inside the **Pipeline** are accessible as 
 a read-only collection, and can also be retrieved individually if needed.
 
 All @elementproperties that the **Pipeline's** 

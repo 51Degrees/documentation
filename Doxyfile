@@ -261,7 +261,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "aspectengine=[aspect engine](@ref Concepts_FlowElements_AspectEngine)" \
                          "aspectengines=[aspect engines](@ref Concepts_FlowElements_AspectEngine)" \
                          "asynchronous=[asynchronous](@ref Concepts_Feature_AsynchronousExecution)" \
-                         "buildfromfile=[build from file](@ref Concepts_Configuration_Builders_buildfromfile)" \       
+                         "buildfromfile=[build from file](@ref Concepts_Configuration_Builders_BuildFromFile)" \       
                          "caching=[caching](@ref Concepts_Configuration_Caching)" \
                          "clientsideevidence=[client side evidence](@ref Concepts_Feature_ClientSideEvidence)" \
                          "cloudengine=[cloud engine](@ref Concepts_FlowElements_CloudEngine)" \
@@ -286,6 +286,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "flowdata=[flow data](@ref Concepts_Data_FlowData)" \
                          "flowelement=[flow element](@ref Concepts_FlowElements_FlowElement)" \
                          "flowelements=[flow elements](@ref Concepts_FlowElements_FlowElement)" \
+                         "Flowelements=[Flow elements](@ref Concepts_FlowElements_FlowElement)" \
                          "grabsnippet{5}=@htmlonly <button class=\"b-btn b-btn--secondary \1Btn\" onclick=\"grabSnippet(this, '\2', '\3', '\4', '\1Btn', '\1')\">\5</button> @endhtmlonly" \
                          "grabbedsnippet{1}=@htmlonly <div id=\"\1\"></div> @endhtmlonly" \
                          "grabexample{3}=@htmlonly <button class=\"b-btn b-btn--secondary examplebtn\" onclick=\"grabExample(this, '\1', '\2')\">\3</button> @endhtmlonly" \
@@ -297,7 +298,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "Pipeline=[Pipeline](@ref Concepts_Pipeline)" \
                          "pipeline=[Pipeline](@ref Concepts_Pipeline)" \
                          "pipelines=[Pipelines](@ref Concepts_Pipeline)" \
-                         "pipelinebuilder=[pipelinebuilder](@ref Concepts_Configuration_Builders_pipelinebuilder)" \
+                         "pipelinebuilder=[pipeline builder](@ref Concepts_Configuration_Builders_PipelineBuilder)" \
                          "properties=[properties](@ref Concepts_MetaData_Properties)" \
                          "property=[property](@ref Concepts_MetaData_Properties)" \
                          "startsnippets{1}=@htmlonly <div id=\"\1\"> @endhtmlonly" \
