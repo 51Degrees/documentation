@@ -9,7 +9,7 @@ based on that @evidence and optionally, populate data values that
 are required by the user.
 
 The incoming @evidence is usually related to a 
-[web request](@term{WebRequest}), for example 
+[web request](@term{Concepts_Terminology_WebRequest}), for example 
 the HTTP headers, cookies, source IP address or values from the query string.
 The @evidence is carried through the **Pipeline** to the 
 @elements by a @flowdata instance. 
