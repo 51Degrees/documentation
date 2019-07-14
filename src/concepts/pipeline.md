@@ -60,7 +60,7 @@ two or more @flowelements
 can also be executed in @parallel within the overall sequential structure.
 
 Additionally, the **Pipeline** may offer @asynchronous execution or a @lazyloading capability for individual 
-@flowelements. These features are also @languagedependent.
+@flowelements. These features are also [language dependent](@ref Info_FeatureMatrix).
 
 Regardless of the method of execution and configuration, after processing the 
 @flowdata will contain the results, which can then be accessed by the caller.
@@ -151,7 +151,7 @@ will occur. The **Pipeline** which creates a @flowdata **MUST**
 exist for as long as the @flowdata. This
 is also true of post processing usage like retrieving results from the 
 @flowdata. 
-Imagine a case where a certain result has been @lazilyloaded -- 
+Imagine a case where a certain result has been [lazily loaded] (@ref Concepts_Feature_LazyLoading) -- 
 a call to get that result will require the @flowelement
 which created it to do the loading, so if the **Pipeline** has disposed of the 
 @flowelement, there will be an error.

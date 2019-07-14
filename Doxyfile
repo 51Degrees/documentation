@@ -269,9 +269,7 @@ ALIASES                = "buildfromfile=[build from file](@ref Concepts_Configur
                          "flowdata=[flow data](@ref Concepts_Data_FlowData)" \
                          "elementdata=[element data](@ref Concepts_Data_ElementData)" \
                          "Elementdata=[Element data](@ref Concepts_Data_ElementData)" \
-                         "language dependent=[language dependent](@ref Info_FeatureMatrix)" \
                          "lazyloading=[lazy loading](@ref Concepts_Feature_LazyLoading)" \
-                         "lazilyloaded=[lazily loaded](@ref Concepts_Feature_LazyLoading)" \
                          "aspectdata=[aspect data](@ref Concepts_Data_AspectData)" \
                          "Aspectdata=[Aspect data](@ref Concepts_Data_AspectData)" \
                          "parallel=[parallel](@ref Concepts_Feature_parallelexecution)"\
