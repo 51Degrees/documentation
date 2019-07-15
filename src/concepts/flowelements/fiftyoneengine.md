@@ -4,7 +4,7 @@
 
 A @fiftyonedegrees **on-premise engine** add functionality to an @onpremiseengine which is
 specific to @fiftyonedegrees. @Metadata is exposed which relates to the data structure
-common to most @51degrees data files.
+common to most @fiftyonedegrees data files.
 
 In many cases, a @fiftyonedegrees **engine** contains a [native](@term{NativeCode}) binary which
 the **engine** acts as a wrapper for. This gives the added performance of [native code](@term{NativeCode})
@@ -24,7 +24,7 @@ is a common way for all @fiftyonedegrees **engines**.
 
 The @properties exposed by a @fiftyonedegrees **engine** should not be seen differently from the @properties
 which are exposed by any other **engine**. They merely extend the @property to add some @metadata specific
-to the @properties in @51degrees data structures.
+to the @properties in @fiftyonedegrees data structures.
 
 
 ## Values
@@ -35,7 +35,7 @@ Each @property has a set of @values which it can return. These @values are expos
 
 ## Components
 
-In a @51degrees data set, a @property exists in a single @component. For example, the **Browser Name** @property
+In a @fiftyonedegrees data set, a @property exists in a single @component. For example, the **Browser Name** @property
 is part of the **Software** @component, whereas the **Model Name** @property is part of the **Hardware** @component.
 
 
