@@ -109,7 +109,7 @@ accessed in a safe manner.
 **Flow elements** are required to be thread-safe in languages that support multi-threaded operation. As multiple @pipelines may be
 calling on an **element** to carry out processing simultaneously, they must be able to handle this.
 
-**Flow elements** also expose whether or not they will carry out concurrent operations as the @pipeline needs to know this.
+**Flow elements** also expose whether or not they will carry out concurrent operations, as the @pipeline needs to know this.
 
 @showsnippet{concurrency,dotnet,C#}
 @showsnippet{concurrency,java,Java}

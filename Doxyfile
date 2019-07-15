@@ -281,7 +281,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "evidencekey=[evidence key ](@ref Concepts_Data_EvidenceKeyFilter)" \
                          "evidence=[evidence](@ref Concepts_Data_Evidence)" \
                          "Evidence=[Evidence](@ref Concepts_Data_Evidence)" \        
-                         "evidencekeyfilter=[evidence key filter](@ref Concepts_Data_Keys_EvidenceKeyFilter)" \
+                         "evidencekeyfilter=[evidence key filter](@ref Concepts_Data_EvidenceKeyFilter)" \
                          "featurematrix=[feature matrix] (@ref Info_featurematrix)" \
                          "flowdata=[flow data](@ref Concepts_Data_FlowData)" \
                          "flowelement=[flow element](@ref Concepts_FlowElements_FlowElement)" \
