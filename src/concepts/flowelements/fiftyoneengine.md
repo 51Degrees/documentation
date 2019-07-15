@@ -49,6 +49,7 @@ directly as @metadata so all possible results can be interrogated.
 # Native Library
 
 Most @fiftyonedegrees **on-premise engines** act as a wrapper between the target language and a [native library](@term{NativeCode}).
+
 When the **engine** is packaged for release to a package manager for the target language, multiple
 [native binaries](@term{NativeCode}) are included. Each is compiled for a specific platform (e.g. 32 bit Windows, or 64 bit OS X)
 and the correct binary is automatically selected at startup.
