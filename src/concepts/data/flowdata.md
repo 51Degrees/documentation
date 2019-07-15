@@ -6,7 +6,7 @@
 This includes input and output data as well as meta-data related to the processing such as 
 the details of any errors that occurred.
 
-# Internal data structures
+# Data Structure
 
 **Flow data** has several sub-containers that are used to segment the data that it contains:
 * @Evidence
@@ -20,7 +20,7 @@ Before the @flowdata is passed into the @Pipeline, input data is supplied. We re
 The @evidence can be set manually or automatically by using a 
 [web integration](@ref Concepts_Web_Index) package where available for your web framework of choice.
 
-## Element data
+## Element Data
 
 The responses from each @flowelement are stored in key/value pair structure within **flow data**.
 In each case, the key is the string key of the @flowelement and the value is an @elementdata instance.
@@ -47,7 +47,7 @@ In this situation, the caller is responsible for handling any exceptions by chec
 collection after processing.
 
 
-# Life cycle
+# Life Cycle
 
 ## Creation
 
@@ -58,7 +58,7 @@ that are most appropriate for the configuration of the @flowelements in the @Pip
 For example, thread-safe but slower data collections only need to be used if the @Pipeline
 is configured to execute @elements in parallel.
 
-## Disposal/Cleanup
+## Disposal / Cleanup
 
 **Flow data** should be disposed of correctly when no longer in use. This ensures that any 
 resources being held by the instance are correctly freed.
@@ -79,7 +79,7 @@ TODO: Add the snippets for this example.
 
 =========
 
-# Thread-safety
+# Thread Safety
 
 
 =========

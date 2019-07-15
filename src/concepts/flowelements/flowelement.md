@@ -37,7 +37,7 @@ are not required to populate any output data if it is not necessary.
 (TODO: I'm not sure the diagram above is very clear. Possibly need to whiteboard some ideas)
 
 
-For example, a "user age" **element** might look for a date of birth in the @evidence, set
+For example, a 'user age' **element** might look for a date of birth in the @evidence, set
 the age of the user in an @elementdata instance before adding the @elementdata into the same 
 @flowdata which the @evidence came from.
 
@@ -85,7 +85,7 @@ the header name.
 
 Results of an **element**'s processing are stored in the @flowdata, keyed on the **element**'s @elementdatakey. 
 While not required, it is convention that each **element** has a unique key name. 
-For example, our "user age" example would likely have the key name "user age".
+For example, our 'user age' example would likely have the key name 'user age'.
 
 In addition to the name, an @elementdatakey also contains the type of @elementdata that the element populates.
 Note that this is only the case in languages which support this.

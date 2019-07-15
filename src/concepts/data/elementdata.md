@@ -5,7 +5,7 @@
 **Element data** is the container for data that is returned as a result of the processing 
 performed by a @flowelement.
 
-# Data structure
+# Data Structure
 
 The precise details of the storage structure used internally by **element data** will
 vary by language and even by @flowelement implementation.
@@ -41,7 +41,7 @@ or an alternative key comparer.
 =========
 
 
-# Life cycle
+# Life Cycle
 
 **Element data** instances are typically created by a specific factory method that is 
 associated with a given @flowelement.
@@ -58,7 +58,7 @@ As such, we TODO: iron this out. Seems like it should rely on the finaliser but 
 is a warning against that in .net.
 
 
-# Thread-safety
+# Thread Safety
 
 The thread-safety of a given **element data** instance is directly tied to it's internal 
 data structure.
