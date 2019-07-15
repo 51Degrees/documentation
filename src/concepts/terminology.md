@@ -30,6 +30,8 @@ receive data, carry out processing, or all of the above.
 A cloud service can be used in much the same way as a local service running on the same machine,
 with the extra step of a [web request](@term{WebRequest}) being required.
 
+# Data Tier @anchor Concepts_Terminology_DataTier
+Placeholder
 
 # Native Code @anchor Concepts_Terminology_NativeCode
 
