@@ -256,8 +256,7 @@ TAB_SIZE               = 4
 # commands \{ and \} for these it is advised to use the version @{ and @} or use
 # a double escape (\\{ and \\})
 
-ALIASES                = "fiftyonedegrees=[51Degrees](https://51degrees.com)" \
-                         "aspectdata=[aspect data](@ref Concepts_Data_AspectData)" \
+ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData)" \
                          "Aspectdata=[Aspect data](@ref Concepts_Data_AspectData)" \
                          "aspectengine=[aspect engine](@ref Concepts_FlowElements_AspectEngine)" \
                          "aspectengines=[aspect engines](@ref Concepts_FlowElements_AspectEngine)" \

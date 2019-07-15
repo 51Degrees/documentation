@@ -2,11 +2,11 @@
 
 # Introduction
 
-A @fiftyonedegrees **on-premise engine** add functionality to an @onpremiseengine which is
-specific to @fiftyonedegrees. @Metadata is exposed which relates to the data structure
-common to most @fiftyonedegrees data files.
+A **51Degrees on-premise engine** add functionality to an @onpremiseengine which is
+specific to 51Degrees. @Metadata is exposed which relates to the data structure
+common to most 51Degrees data files.
 
-In many cases, a @fiftyonedegrees **engine** contains a [native](@term{NativeCode}) binary which
+In many cases, a **51Degrees engine** contains a [native](@term{NativeCode}) binary which
 the **engine** acts as a wrapper for. This gives the added performance of [native code](@term{NativeCode})
 while still slotting in seamlessly with the target language (it is often not be obvious that a 
 [native](@term{NativeCode}) binary was being used). This also means that all languages the **engine** is
@@ -15,27 +15,27 @@ implemented in quickly benefit from any optimizations or features which are adde
 
 # Meta Data
 
-The majority of @fiftyonedegrees **engines** share a similar data structure. This means @metadata is exposed
-is a common way for all @fiftyonedegrees **engines**.
+The majority of **51Degrees engines** share a similar data structure. This means @metadata is exposed
+is a common way for all **51Degrees engines**.
 
 @dotfile 51d-data-structure.dot
 
 ## Properties
 
-The @properties exposed by a @fiftyonedegrees **engine** should not be seen differently from the @properties
+The @properties exposed by a **51Degrees engine** should not be seen differently from the @properties
 which are exposed by any other **engine**. They merely extend the @property to add some @metadata specific
-to the @properties in @fiftyonedegrees data structures.
+to the @properties in 51Degrees data structures.
 
 
 ## Values
 
-Each @property has a set of @values which it can return. These @values are exposed by a @fiftyonedegrees
-**engine** and give more information on what the implications of a @value are.
+Each @property has a set of @values which it can return. These @values are exposed by a **51Degrees
+engine** and give more information on what the implications of a @value are.
 
 
 ## Components
 
-In a @fiftyonedegrees data set, a @property exists in a single @component. For example, the **Browser Name** @property
+In a 51Degrees data set, a @property exists in a single @component. For example, the **Browser Name** @property
 is part of the **Software** @component, whereas the **Model Name** @property is part of the **Hardware** @component.
 
 
@@ -48,7 +48,7 @@ directly as @metadata so all possible results can be interrogated.
 
 # Native Library
 
-Most @fiftyonedegrees **on-premise engines** act as a wrapper between the target language and a [native library](@term{NativeCode}).
+Most **51Degrees on-premise engines** act as a wrapper between the target language and a [native library](@term{NativeCode}).
 
 When the **engine** is packaged for release to a package manager for the target language, multiple
 [native binaries](@term{NativeCode}) are included. Each is compiled for a specific platform (e.g. 32 bit Windows, or 64 bit OS X)
