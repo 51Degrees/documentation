@@ -66,7 +66,7 @@ Regardless of the method of execution and configuration, after processing the
 @flowdata will contain the results, which can then be accessed by the caller.
 
 
-@dotfile basic-pipeline-flow.dot
+@dotfile basic-pipeline-flow.gvdot
 
 # Public Access
 
@@ -105,7 +105,7 @@ by how it is created.
 Consider an example where @flowelements **E1** 
 and **E2** are added to the **Pipeline** individually in that order.
 
-@dotfile pipeline-process.dot
+@dotfile pipeline-process.gvdot
 
 **E1** will carry out its processing on the @flowdata, then 
 once it is finished, **E2** will do the same. In this scenario, the **Pipeline** 'knows' 
@@ -115,7 +115,7 @@ thread-safe but will have slightly improved performance.
 
 Now consider an example where both **E1** and **E2** are added in parallel.
 
-@dotfile pipeline-parallel-process.dot
+@dotfile pipeline-parallel-process.gvdot
 
 In this case, both will carry out their processing at the same time. This time, the 
 @flowdata

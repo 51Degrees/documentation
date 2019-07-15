@@ -32,7 +32,7 @@ However, **flow elements** may also use existing @elementdata from the @flowdata
 are not required to populate any output data if it is not necessary.
 
 
-@dotfile flowelement-process.dot
+@dotfile flowelement-process.gvdot
 
 (TODO: I'm not sure the diagram above is very clear. Possibly need to whiteboard some ideas)
 
@@ -41,7 +41,7 @@ For example, a 'user age' **element** might look for a date of birth in the @evi
 the age of the user in an @elementdata instance before adding the @elementdata into the same 
 @flowdata which the @evidence came from.
 
-@dotfile ageelement-process.dot
+@dotfile ageelement-process.gvdot
 
 # Hierarchy
 
@@ -51,7 +51,7 @@ Any of these layers can be built upon by an implementation depending on its requ
 In languages which support inheritance, this is a structural hierarchy. In other languages, this may be more of a conceptual
 hierarchy, and not reflected directly in the code.
 
-@dotfile flowelement-hierarchy.dot
+@dotfile flowelement-hierarchy.gvdot
 
 
 # Properties
@@ -78,7 +78,7 @@ one would ask 'do you want this item of @evidence?'. This gives an
 For example, it allows an element to easily indicate that it can make use of any HTTP headers, regardless of 
 the header name.
 
-@dotfile flowelement-evidencekeys.dot
+@dotfile flowelement-evidencekeys.gvdot
 
 
 # Data Keys

@@ -18,7 +18,7 @@ implemented in can more readily benefit from any optimizations or features which
 The majority of **51Degrees engines** share a similar data structure. This means @metadata is exposed
 is a common way for all **51Degrees engines**.
 
-@dotfile 51d-data-structure.dot
+@dotfile 51d-data-structure.gvdot
 
 ## Properties
 

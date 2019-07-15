@@ -164,7 +164,7 @@ and will be output as:
 
 Graphs are included on a page using the ``@dotfile`` tag like
 ```
-@dotfile some-graph.dot
+@dotfile some-graph.gvdot
 ```
 
 [More on the dot language in GraphViz](https://graphviz.gitlab.io/documentation/)
