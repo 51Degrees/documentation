@@ -310,7 +310,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "startsnippets{1}=@htmlonly <div id=\"\1\"> @endhtmlonly" \
                          "startsnippet{1}=@htmlonly <div data-lang=\"\1\" style=\"display:none;\"> @endhtmlonly" \
                          "showsnippet{3}=@htmlonly <button class=\"b-btn b-btn--secondary \1Btn\" onclick=\"showSnippet(this,'\1','\1Btn','\2')\">\3</button> @endhtmlonly" \
-                         "term{1}=[{1}]@ref Concepts_Terminology_\1" \    
+                         "term{1}=@ref Concepts_Terminology_\1" \    
                          "values=[values](@ref Concepts_MetaData_Values)" \
                          "value=[value](@ref Concepts_MetaData_Values)" \
                          "webintegration=[web integration](@ref Concepts_Feature_WebIntegration)" \
