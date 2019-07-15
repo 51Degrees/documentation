@@ -2,7 +2,7 @@
 
 # Introduction
 
-**On-premise engines** are a specialization of @aspectengine where additional data exists locally to
+**On-Premise engines** are a specialization of @aspectengine where additional data exists locally to
 the **engine**, either in memory or a @datafile. This is in contrast to a @cloudengine where data
 exists in a cloud service which is called by the **engine**. Having data which does not reside in the
 **engine** itself means that the same **engine** can be used with multiple data sets.

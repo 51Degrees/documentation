@@ -240,6 +240,7 @@ Use single quotation when  enclosing text.
 
 Use American English for spellings.
 
+All terms should use the same format as the 51Degrees glossary, for capitals, hyphenation etc.
 
 # Generating
 ## Dependencies

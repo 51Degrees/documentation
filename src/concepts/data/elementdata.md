@@ -54,8 +54,8 @@ This is because the **element data** may be stored in other locations such as a 
 Equally, it must not be disposed when it leaves a @cache as it may still be in use
 externally to the @Pipeline.
 
-As such, we TODO: iron this out. Seems like it should rely on the finaliser but there
-is a warning against that in .net.
+As such, memory managed languages rely on the finalizer to dispose of any
+associated resources cleanly.
 
 
 # Thread Safety

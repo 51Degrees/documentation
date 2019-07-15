@@ -2,15 +2,15 @@
 
 # Introduction
 
-A **51Degrees on-premise engine** add functionality to an @onpremiseengine which is
+A **51Degrees on-premise engine** adds functionality to an @onpremiseengine which is
 specific to 51Degrees. @Metadata is exposed which relates to the data structure
 common to most 51Degrees data files.
 
 In many cases, a **51Degrees engine** contains a [native](@term{NativeCode}) binary which
-the **engine** acts as a wrapper for. This gives the added performance of [native](@term{NativeCode}) code
-while still slotting in seamlessly with the target language (it is often not be obvious that a 
-[native](@term{NativeCode}) binary was being used). This also means that all languages the **engine** is
-implemented in quickly benefit from any optimizations or features which are added to the
+the **engine** acts as a wrapper for. This gives the improved performance achievable with [native](@term{NativeCode}) code,
+while still seamlessly slotting in with the target language (it is not always obvious that a 
+[native](@term{NativeCode}) binary has been used). It also means that all languages the **engine** is
+implemented in can more readily benefit from any optimizations or features which are added to the
 [native](@term{NativeCode}) library.
 
 # Meta Data
@@ -23,8 +23,8 @@ is a common way for all **51Degrees engines**.
 ## Properties
 
 The @properties exposed by a **51Degrees engine** should not be seen differently from the @properties
-which are exposed by any other **engine**. They merely extend the @property to add some @metadata specific
-to the @properties in 51Degrees data structures.
+which are exposed by any other **engine**. They merely extend the @property to add @metadata that is specific
+to the @properties in 51Degrees' data structures.
 
 
 ## Values

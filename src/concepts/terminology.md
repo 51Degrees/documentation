@@ -34,7 +34,7 @@ with the extra step of a [web request](@term{WebRequest}) being required.
 # Native Code @anchor Concepts_Terminology_NativeCode
 
 Native code refers to code written in C/C++. This is done to maximize performance, as many more
-optimizations can be made in lower level languages, than in high level languages such as C# or Java.
+optimizations can be made in lower level languages than compared to high level languages such as C# or Java.
 
 
 # Web Request @anchor Concepts_Terminology_WebRequest
