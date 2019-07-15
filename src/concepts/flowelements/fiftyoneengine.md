@@ -1,8 +1,8 @@
-@page Concepts_FlowElements_FiftyOneOnPremiseEngine 51Degrees On Premise Engine
+@page Concepts_FlowElements_FiftyOneOnPremiseEngine 51Degrees On-Premise Engine
 
 # Introduction
 
-A **51Degrees on premise engine** adds functionality to an @onpremiseengine which is
+A **51Degrees on-premise engine** adds functionality to an @onpremiseengine which is
 specific to 51Degrees. @Metadata is exposed which relates to the data structure
 common to most 51Degrees data files.
 
@@ -48,7 +48,7 @@ directly as @metadata so all possible results can be interrogated.
 
 # Native Library
 
-Most **51Degrees on premise engines** act as a wrapper between the target language and a [native](@term{NativeCode}) library.
+Most **51Degrees on-premise engines** act as a wrapper between the target language and a [native](@term{NativeCode}) library.
 
 When the **engine** is packaged for release to a package manager for the target language, multiple
 [native](@term{NativeCode}) binaries  are included. Each is compiled for a specific platform (e.g. 32 bit Windows, or 64 bit OS X)
