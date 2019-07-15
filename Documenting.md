@@ -245,6 +245,13 @@ The css used in all documentation comes from the pattern lab submodule.
 
 To generate the `main.min.css` needed by the documentation, follow the installation instructions in the [PatternLab readme](patternlab/README.md) to generat the css, then run ``gulp minify-css`` to minify it. The minified css will now live in `patternlab/source/css`.
 
+# General Standardization
+All headings should be written in Title Case. e.g. 'Last of the Mohican's'
+
+Use single quotation when  enclosing text.
+
+Use American English for spellings.
+
 ## DoxyWizard
 The DoxyGen package includes `doxywizard.exe` which will guide you through generating the documentation. After opening it, open the `DoxyFile` within it and go to generate the documentation.
 
