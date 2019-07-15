@@ -33,7 +33,7 @@ Consider another case where an **engine** has been built with specific @properti
 attempts to retrieve a value for a @property which was not included. An error would be returned stating that the **engine** was not
 configured correctly to return values for that @property.
 
-Both these cases are distinct from the case where the **engine** simply does not know what the @property is, and cannot return values
+Both these cases are distinct from that where the **engine** simply does not know what the @property is, and cannot return values
 for it. So it is important to distinguish between these scenarios.
 
 
@@ -42,7 +42,7 @@ for it. So it is important to distinguish between these scenarios.
 The @aspectdata produced by an **engine** can be returned before it has been completely populated. This means that the caller does not
 need to wait for processing to finish before carrying on with other things, and the processing will continue in the background. This is
 particularly useful in a [web server](@term{WebServer}) where processing can start the instant a [web request](@term{WebRequest}) is
-received, and the [server](@term{WebServer}) can continue serving the page until it reaches a point where the result of the processing
+received and the [server](@term{WebServer}) can continue serving the page until it reaches a point where the result of the processing
 is needed.
 
-By default @lazyloading is not enabled, and can be enabled in an **engine**'s builder.
+By default @lazyloading is not enabled, but can be via the **engine**'s builder.
