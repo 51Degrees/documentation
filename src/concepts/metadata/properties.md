@@ -38,10 +38,14 @@ Most @fiftyoneengines make use of @datafiles with a similar data structure. This
 certain meta data related to them. Some to do with how the **property** should be used, and others to do with how the **property**
 is populated before releasing a @datafile.
 
+A **51Degrees property** relates to @values, @components and @profiles consistently across different @datafiles.
+
+@dotfile 51d-data-structure.gvdot
+
 | Metadata | Description |
 | -------- | ----------- |
-| URL      | A URL where more information on the **property** can be found. |
 | Description| A description of the **property** explaining what it refers to, and what significance its values have. |
+| URL      | A URL where more information on the **property** can be found. |
 | Component| The @component which the **property** belongs to. This is subtly different to the category, in that a @profile defines the values for all the **properties** of a single @component, which likely contains multiple categories of **properties**. |
 | Values   | The values which the **property** can have. As a simple example, a **property** named ``'supports a thing'`` might have three values: ``true``, ``false`` and ``unknown``.|
 | Default value| The default value for the value if it is not otherwise known. In the above example, the **property** named ``'supports a thing'`` would probably have ``unknown`` as the default value. |
