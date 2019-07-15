@@ -3,9 +3,9 @@
 
 # Introduction
 
-**Evidence** refers to all the information associated with a given @termWebRequest. 
+**Evidence** refers to all the information associated with a given[web request](@term{Concepts_Terminology_LizTest}).
 The **evidence** values are used by @aspectengines to determine 
-the details of the @termAspect they are concerned with.
+the details of the @termAspect @termLizTest.  they are concerned with.
 
 # Data structure
 
