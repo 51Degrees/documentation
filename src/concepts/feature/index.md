@@ -11,3 +11,5 @@
 @subpage Concepts_Feature_ParallelExecution
 
 @subpage Concepts_Feature_WebIntegration
+
+@subpage Concepts_Feature_Logging
