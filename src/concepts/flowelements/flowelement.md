@@ -29,7 +29,7 @@ determine values that it populates in the resulting @elementdata, which is then 
 as an output.
 
 However, **flow elements** may also use existing @elementdata from the @flowdata as input and 
-are not required to populate any output data if it is not necesary.
+are not required to populate any output data if it is not necessary.
 
 
 @dotfile flowelement-process.dot
@@ -68,7 +68,7 @@ information such as the property name and data type.
 Each **element** can only make use of certain items of @evidence during processing. In the **age element**
 example above, it expects a date of birth to be present in the @evidence.
 
-The items of @evidence which an **element** can make use of is exposed via an @evidencekeyfilter. This is 
+The items of @evidence which an **element** can make use of are exposed via an @evidencekeyfilter. This is 
 also available in an aggregated form from the parent @Pipeline. 
 (This would be equivalent to combining the @evidencekeyfilter from each **element** of the @pipeline individually).
 
@@ -88,12 +88,12 @@ While not required, it is convention that each **element** has a unique key name
 For example, our "user age" example would likely have the key name "user age".
 
 In addition to the name, an @elementdatakey also contains the type of @elementdata that the element populates.
-Note that this is only the case in languages that support this.
+Note that this is only the case in languages which support this.
 
 
 # Scope
 
-By convention, an **element**'s configuration is immutable once created. Although this is not enforced
+By convention, an **element**'s configuration is immutable once created. Although this is not enforced.
 
 An **element** can be added to any number of @pipelines. A @pipeline is merely an organizational layer which instructs **element**'s to
 carry out processing on a @flowdata, so the **element** acts in isolation without the need to reference to the @pipeline.
@@ -106,10 +106,10 @@ accessed in a safe manner.
 
 # Thread-Safety
 
-**Flow elements** are required to be thread-safe in languages support multi-threaded operation. As multiple @pipelines may be
+**Flow elements** are required to be thread-safe in languages that support multi-threaded operation. As multiple @pipelines may be
 calling on an **element** to carry out processing simultaneously, they must be able to handle this.
 
-**Flow elements** also expose whether or not they will carry out concurrent operations as this need to be known by the @pipeline.
+**Flow elements** also expose whether or not they will carry out concurrent operations, as the @pipeline needs to know this.
 
 @showsnippet{concurrency,dotnet,C#}
 @showsnippet{concurrency,java,Java}
