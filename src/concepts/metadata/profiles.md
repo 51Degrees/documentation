@@ -25,3 +25,11 @@ The metadata contained in a **profile** is:
 | Component| The @component which the **profile** relates to. This is the @component which the **profile** contains @values for. |
 | Values   | The @values which define the **profile**. These are the reason for a **profile**, to return @values for @properties. |
 | Signature count| The number of signatures which define how to find the **profile**. This is internal to the @fiftyoneengine and differs slightly in meaning between each. |
+
+# Retrieval
+
+**Profiles** can be retrieved from a @fiftyoneengine where the id is known. The id remains unique across
+@datafiles (both different @datatiers and different release dates), so can be used as an efficient way to store
+results with the intention of retrieving the @values at a later date.
+
+All **profiles** can also be returned as a collection to be iterated.

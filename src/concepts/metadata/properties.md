@@ -64,3 +64,10 @@ The metadata contained in an **51Degrees aspect property** is:
 | Mandatory| Whether the **property** is mandatory or not. If a **property** is mandatory, a @profile must have values for it to be classed as valid. |
 | Show     | Whether the **property** should be displayed in situations such as a page listing **properties**. Less important **properties** may not be displayed. |
 | Show values| Whether values of the **property** should be displayed in situations such as a page listing the **property**'s values. Showing all the values can make a very long list. |
+
+# Retrieval
+
+**Properties** can be retrieved from a @flowelement using its name. The name remains unique across
+@datafiles (both different @datatiers and different release dates).
+
+All **properties** can also be returned as a collection to be iterated.

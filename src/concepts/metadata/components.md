@@ -26,3 +26,11 @@ The metadata contained in a **component** is:
 | Name     | The name of the **component** which gives a more 'human' identifier than id. By convention this is unique within the @datafile. |
 | Default profile| The default @profile for the **component** if it is not otherwise known. |
 | Properties| The @properties which a @profile for the **component** must provide values for. |
+
+# Retrieval
+
+**Components** can be retrieved from a @fiftyoneengine where the id is known. The id remains unique across
+@datafiles (both different @datatiers and different release dates).
+
+All **components** can also be returned as a collection to be iterated. A @datafile typically only contains a few
+**components**, so retrieving all is not a heavy operation.
