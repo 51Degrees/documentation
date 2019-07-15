@@ -294,8 +294,8 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "grabexample{3}=@htmlonly <button class=\"b-btn b-btn--secondary examplebtn\" onclick=\"grabExample(this, '\1', '\2')\">\3</button> @endhtmlonly" \
                          "grabbedexample=@htmlonly <div id=\"grabbed-example\"></div> @endhtmlonly" \
                          "lazyloading=[lazy loading](@ref Concepts_Feature_LazyLoading)" \
-                         "metadata=[meta data](@ref Concepts_MetaData_Index)" \
-                         "Metadata=[Meta data](@ref Concepts_MetaData_Index)" \
+                         "metadata=[metadata](@ref Concepts_MetaData_Index)" \
+                         "Metadata=[Metadata](@ref Concepts_MetaData_Index)" \
                          "onpremiseengine=[on-premise engine](@ref Concepts_FlowElements_OnPremiseEngine)" \
                          "onpremiseengines=[on-premise engines](@ref Concepts_FlowElements_OnPremiseEngine)" \
                          "parallel=[parallel](@ref Concepts_Feature_parallelexecution)" \

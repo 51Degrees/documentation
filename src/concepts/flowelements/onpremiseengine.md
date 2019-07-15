@@ -45,9 +45,9 @@ An **engine** can optionally create a temporary copy of the @datafile to use. Th
 update functionality, as an **engine** may be configured in a way that means it is streaming data from the @datafile. When a temporary @datafile
 is used, the original @datafile is freed up to be updated without affecting the @datafile currently in use.
 
-## Meta Data
+## Metadata
 
-Each @datafile in an **engine** contains meta data, some of which is used by the @dataupdateservice. This meta data provides
+Each @datafile in an **engine** contains metadata, some of which is used by the @dataupdateservice. This metadata provides
 the @dataupdateservice with the age of the @datafile, the time at which a new one will be available, and a URL to get the new @datafile
 from when it is available.
 
