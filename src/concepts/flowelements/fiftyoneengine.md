@@ -7,7 +7,7 @@ specific to 51Degrees. @Metadata is exposed which relates to the data structure
 common to most 51Degrees data files.
 
 In many cases, a **51Degrees engine** contains a [native](@term{NativeCode}) binary which
-the **engine** acts as a wrapper for. This gives the added performance of [native code](@term{NativeCode})
+the **engine** acts as a wrapper for. This gives the added performance of [native](@term{NativeCode}) code
 while still slotting in seamlessly with the target language (it is often not be obvious that a 
 [native](@term{NativeCode}) binary was being used). This also means that all languages the **engine** is
 implemented in quickly benefit from any optimizations or features which are added to the
@@ -48,8 +48,8 @@ directly as @metadata so all possible results can be interrogated.
 
 # Native Library
 
-Most **51Degrees on-premise engines** act as a wrapper between the target language and a [native library](@term{NativeCode}).
+Most **51Degrees on-premise engines** act as a wrapper between the target language and a [native](@term{NativeCode}) library.
 
 When the **engine** is packaged for release to a package manager for the target language, multiple
-[native binaries](@term{NativeCode}) are included. Each is compiled for a specific platform (e.g. 32 bit Windows, or 64 bit OS X)
+[native](@term{NativeCode}) binaries  are included. Each is compiled for a specific platform (e.g. 32 bit Windows, or 64 bit OS X)
 and the correct binary is automatically selected at startup.
