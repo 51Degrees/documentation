@@ -23,6 +23,6 @@ The metadata contained in a **component** is:
 | Metadata | Description |
 | -------- | ----------- |
 | Id       | The unique id of the **component**. This is usually a number and will remain unique across all @datafiles. |
-| Name     | The name of the **component** which gives a more 'human' identifier that id. By convention this is unique within the @datafile. |
+| Name     | The name of the **component** which gives a more 'human' identifier than id. By convention this is unique within the @datafile. |
 | Default profile| The default @profile for the **component** if it is not otherwise known. |
 | Properties| The @properties which a @profile for the **component** must provide values for. |
