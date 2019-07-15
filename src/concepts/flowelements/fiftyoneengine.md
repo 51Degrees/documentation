@@ -35,8 +35,8 @@ engine** and give more information on what the implications of a @value are.
 
 ## Components
 
-In a 51Degrees data set, a @property exists in a single @component. For example, the **Browser Name** @property
-is part of the **Software** @component, whereas the **Model Name** @property is part of the **Hardware** @component.
+In a 51Degrees data set, a @property exists in a single @component. For example, the ``Browser Name`` @property
+is part of the ``Software`` @component, whereas the ``Model Name`` @property is part of the ``Hardware`` @component.
 
 
 ## Profiles
