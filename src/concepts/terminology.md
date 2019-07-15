@@ -24,7 +24,12 @@ aspect has properties such as:
 
 # Cloud Service @anchor Concepts_Terminology_CloudService
 
-**todo**
+A service accessed via a [web request](@term{WebRequest}). It is used to send data,
+receive data, carry out processing, or all of the above.
+
+A cloud service can be used in much the same way as a local service running on the same machine,
+with the extra step of a [web request](@term{WebRequest}) being required.
+
 
 # Native Code @anchor Concepts_Terminology_NativeCode
 
@@ -42,6 +47,5 @@ place (aspects).
 
 # Web Server @anchor Concepts_Terminology_WebServer
 
-
-
-**todo**
+A network connected machine which designed to serve content to external devices, or carry out
+tasks. Most commonly, a web server is the host of a website.
