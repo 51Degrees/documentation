@@ -85,7 +85,7 @@ This enables easy iteration over all @elementproperties.
 @grabsnippet{iter-properties,pipeline-dotnet,_snippets.html,iter-properties,C#}
 @grabsnippet{iter-properties,pipeline-java,_snippets.html,iter-properties,Java}
 
-@grabbedexample{iter-properties}
+@grabbedsnippet{iter-properties}
 
 =========
 
