@@ -3,8 +3,12 @@
 # Introduction
 
 **Values** refer to the **values** which @properties (specifically
-[51Degrees properties](@ref Concepts_MetaData_Properties_FiftyOneProperties) can take.
+[51Degrees properties](@ref Concepts_MetaData_Properties_FiftyOneAspectProperties)) can take.
 The metadata for **values** of a @property are exposed by @fiftyoneengines.
+
+A 51Degrees **value** relates to @properties, @components and @profiles consistently across different @datafiles.
+
+@dotfile 51d-data-structure.gvdot
 
 There is no constraint on non 51Degrees @aspectengines to stop them exposing **values** in the same
 form, however it may be that a different form better reflects the internal data structure of the @aspectengine.
