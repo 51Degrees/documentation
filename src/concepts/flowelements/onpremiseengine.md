@@ -1,26 +1,26 @@
-@page Concepts_FlowElements_OnPremiseEngine On-Premise Engine
+@page Concepts_FlowElements_OnPremiseEngine On Premise Engine
 
 # Introduction
 
-**On-premise engines** are a specialization of @aspectengine where additional data exists locally to
+**On premise engines** are a specialization of @aspectengine where additional data exists locally to
 the **engine**, either in memory or a @datafile. This is in contrast to a @cloudengine where data
 exists in a cloud service which is called by the **engine**. Having data which does not reside in the
 **engine** itself means that the same **engine** can be used with multiple data sets.
 
-An **on-premise engine** builds on the @aspectengine concept to introduce the ability to:
+An **on premise engine** builds on the @aspectengine concept to introduce the ability to:
 * load data either from memory or a @datafile
 * keep @datafiles up to date
 
 
 # Use Cases
 
-An **on-premise engine** has no external dependencies, so is limited only by the hardware it is running on.
+An **on premise engine** has no external dependencies, so is limited only by the hardware it is running on.
 This makes it best suited to cases where performance it critical, and the hardware the service is running on
-reflects that. For cases where there performance is not compromised for anything, **on-premise engines** can
+reflects that. For cases where there performance is not compromised for anything, **on premise engines** can
 be configured to run entirely in memory, so that there are no calls to disk.
 
 There are also situations where security of a service is particularly tight, and sending sensitive data to an
-external [cloud service](@term{CloudService}) is something to be avoided. This is where an **on-premise engine**
+external [cloud service](@term{CloudService}) is something to be avoided. This is where an **on premise engine**
 is a must over a @cloudengine.
 
 
@@ -55,6 +55,6 @@ The location of the @datafile is also exposed, along with the location of the te
 
 ## Multiple Files
 
-An **on-premise engine** can require more than one @datafile. This does not change how they are handled by the @dataupdateservice if
+An **on premise engine** can require more than one @datafile. This does not change how they are handled by the @dataupdateservice if
 they are registered with it, and can be individually registered. So if only one of two @datafiles needs to be kept up to date, then
 this is handled just as well as if both needed to be kept up to date.
