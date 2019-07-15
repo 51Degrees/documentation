@@ -48,7 +48,8 @@ the age of the user in an @elementdata instance before adding the @elementdata i
 While an implementation can implement just **flow element**, useful functionality is built up in layers as shown below.
 Any of these layers can be built upon by an implementation depending on its requirements.
 
-TODO: This may not be true in all languages. TBC.
+In languages which support inheritance, this is a structural hierarchy. In other languages, this may be more of a conceptual
+hierarchy, and not reflected directly in the code.
 
 @dotfile flowelement-hierarchy.dot
 
@@ -87,8 +88,7 @@ While not required, it is convention that each **element** has a unique key name
 For example, our "user age" example would likely have the key name "user age".
 
 In addition to the name, an @elementdatakey also contains the type of @elementdata that the element populates.
-
-TODO: Not sure how true the above is for typeless languages such as PHP and Node. TBC.
+Note that this is only the case in languages that support this.
 
 
 # Scope
@@ -100,13 +100,42 @@ carry out processing on a @flowdata, so the **element** acts in isolation withou
 
 It is also possible for an **element** to be added more than once to the same @pipeline. For example, an **element** which opens a
 persistent connection to a database, then closes it at another point in the @pipeline would exist more than once in the same @pipeline.
-In this case, it is the responsibility of the **element** to ensure any use of the @datakey is strictly controlled.
-(todo is this true, or does the getoradd handle this?)
+In this case, it is the responsibility of the **element** to ensure access to a @flowdata does not assume it is a fresh instance, and is
+accessed in a safe manner.
 
 
-# Concurrency
+# Thread-Safety
 
-**Flow elements** are required to be thread-safe. As multiple @pipelines may be calling on an **element** to carry out processing
-simultaneously, they must be able to handle this.
+**Flow elements** are required to be thread-safe in languages support multi-threaded operation. As multiple @pipelines may be
+calling on an **element** to carry out processing simultaneously, they must be able to handle this.
+
+**Flow elements** also expose whether or not they will carry out concurrent operations as this need to be known by the @pipeline.
+
+@showsnippet{concurrency,dotnet,C#}
+@showsnippet{concurrency,java,Java}
+@showsnippet{concurrency,php,PHP}
+@showsnippet{concurrency,node,Node.js}
+
+@startsnippets{concurrency}
+@startsnippet{dotnet}
+**Flow elements** in C# are generally immutable, so do not need thread safety built in directly, however they often alter a @flowdata which
+must be done in a thread-safe way. This is usually left up to the @flowdata to handle, and data within it altered by the **element**
+calling a thread-safe ``set`` method which is exposed only to the **element**.
+@endsnippet
+
+@startsnippet{java}
+**Flow elements** in Java are generally immutable, so do not need thread safety built in directly, however they often alter a @flowdata which
+must be done in a thread-safe way. This is usually left up to the @flowdata to handle, and data within it altered by the **element**
+calling a thread-safe ``set`` method which is exposed only to the **element**.
+@endsnippet
+
+@startsnippet{php}
+**todo**
+@endsnippet
+
+@startsnippet{node}
+**todo**
+@endsnippet
+@endsnippets
 
 TODO: Language specific.
