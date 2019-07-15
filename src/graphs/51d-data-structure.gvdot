@@ -12,6 +12,6 @@ digraph D {
     C -> PF [arrowhead=crow];
     PF -> V [arrowhead=crow];
     
-    {rank=same; P; V;};
-    {rank=same; PF; C;};
+    {rank=same P V};
+    {rank=same PF C};
 }

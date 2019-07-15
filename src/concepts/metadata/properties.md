@@ -56,8 +56,8 @@ The metadata contained in an **51Degrees aspect property** is:
 | Description| A description of the **property** explaining what it refers to, and what significance its values have. |
 | URL      | A URL where more information on the **property** can be found. |
 | Component| The @component which the **property** belongs to. This is subtly different to the category, in that a @profile defines the values for all the **properties** of a single @component, which likely contains multiple categories of **properties**. |
-| Values   | The values which the **property** can have. As a simple example, a **property** named ``'supports a thing'`` might have three values: ``true``, ``false`` and ``unknown``.|
-| Default value| The default value for the value if it is not otherwise known. In the above example, the **property** named ``'supports a thing'`` would probably have ``unknown`` as the default value. |
+| Values   | The @values which the **property** can have. As a simple example, a **property** named ``'supports a thing'`` might have three values: ``true``, ``false`` and ``unknown``.|
+| Default value| The default @value for the **property** if it is not otherwise known. In the above example, the **property** named ``'supports a thing'`` would probably have ``unknown`` as the default value. |
 | List     | Whether or not the **property** has values in the for of a list. For example, the connectivity types a device supports would be a list. |
 | Obsolete | Whether the **property** is obsolete and only exists to maintain backwards compatibility. |
 | Display order| The order in which to display the **property** when listing **properties**. |

@@ -13,6 +13,9 @@ A 51Degrees **value** relates to @properties, @components and @profiles consiste
 There is no constraint on non 51Degrees @aspectengines to stop them exposing **values** in the same
 form, however it may be that a different form better reflects the internal data structure of the @aspectengine.
 
+# Metadata
+The metadata contained in a **value** is:
+
 | Metadata | Description |
 | -------- | ----------- |
 | Name     | The **value** as a string. This uniquely identifies the **value** only within the **values** relating to the same @property. |
