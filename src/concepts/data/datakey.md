@@ -10,13 +10,17 @@ A data key builder is used to construct **data keys** by specifying the details
 of the keys to be included.
 This will often be a subset of the evidence keys stored in a @flowdata instance.
 
-TODO: Diagram
+@dotfile datakey-evidence.gvdot
 
 The **data key** can then be used to quickly check if the current @flowdata
 contains the same values for the subset of evidence keys we're interested in
 as any other from a list.
 
-TODO: Diagram
+@dotfile datakey-check.gvdot
+
+In the example above, the generated **data key** matches two of the items in
+the cache on hash code but only one of them when the values of the key
+fields are checked.
 
 # Internals
 
