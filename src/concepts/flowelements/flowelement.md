@@ -29,7 +29,7 @@ determine values that it populates in the resulting @elementdata, which is then 
 as an output.
 
 However, **flow elements** may also use existing @elementdata from the @flowdata as input and 
-are not required to populate any output data if it is not necesary.
+are not required to populate any output data if it is not necessary.
 
 
 @dotfile flowelement-process.dot
