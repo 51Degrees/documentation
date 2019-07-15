@@ -3,9 +3,9 @@
 
 # Introduction
 
-**Evidence** refers to all the information associated with a given @termwebrequest. 
+**Evidence** refers to all the information associated with a given @termWebRequest. 
 The **evidence** values are used by @aspectengines to determine 
-the details of the @termaspects they are concerned with.
+the details of the @termAspect they are concerned with.
 
 # Data structure
 
@@ -25,7 +25,7 @@ Categories used by 51Degrees are:
 - header - For values from HTTP headers
 - cookie - For values from cookies
 - query - For values from the query string
-- server - For values from the request meta-data
+- server - For values from the request metadata
 
 # Life cycle
 
@@ -42,7 +42,7 @@ Categories used by 51Degrees are:
 * HTTP headers
 * Cookies
 * Query parameters
-* Request meta-data such as source IP address
+* Request metadata such as source IP address
 
 Generally, any device making a request will be sending some of this data. However, in
 some cases, additional **evidence** can be obtained from code running directly on the 
