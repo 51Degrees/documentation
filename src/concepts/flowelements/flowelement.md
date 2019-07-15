@@ -68,7 +68,7 @@ information such as the property name and data type.
 Each **element** can only make use of certain items of @evidence during processing. In the **age element**
 example above, it expects a date of birth to be present in the @evidence.
 
-The items of @evidence which an **element** can make use of is exposed via an @evidencekeyfilter. This is 
+The items of @evidence which an **element** can make use of are exposed via an @evidencekeyfilter. This is 
 also available in an aggregated form from the parent @Pipeline. 
 (This would be equivalent to combining the @evidencekeyfilter from each **element** of the @pipeline individually).
 
