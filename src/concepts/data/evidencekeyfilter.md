@@ -37,7 +37,7 @@ aggregator will allow it as well.
 
 ## Share Usage Filter
 
-The share usage filter is a specific implementation for the 51Degrees @shareusage element.
+The share usage filter is a specific implementation for 51Degrees @usagesharing.
 It will include anything that meets the following criteria:
 
 1. Any HTTP header.
