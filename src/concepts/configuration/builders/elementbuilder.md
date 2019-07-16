@@ -34,20 +34,10 @@ which are compulsory.
 Select a language to view language specific usage example.
 @endsnippet
 @startsnippet{dotnet}
-``` c#
-var element = new ElementBuilder(loggerFactory)
-    .SetOption(value)
-    .SetAnotherOption(anotherValue)
-    .Build(compulsoryOption);
-```
+@snippet snippets.cs Using a builder
 @endsnippet
 @startsnippet{java}
-```
-FlowElement element = new ElementBuilder(loggerFactory)
-    .setOption(value)
-    .setAnotherOption(anotherValue)
-    .build(compulsoryOption);
-```
+@snippet snippets.java Using a builder
 @endsnippet
 @startsnippet{php}
 **todo**
