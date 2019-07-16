@@ -151,7 +151,7 @@ will occur. The **Pipeline** which creates a @flowdata **MUST**
 exist for as long as the @flowdata. This
 is also true of post processing usage like retrieving results from the 
 @flowdata. 
-Imagine a case where a certain result has been [lazily loaded] (@ref Concepts_Feature_LazyLoading) -- 
+Imagine a case where a certain result has been [lazily loaded] (@ref Features_LazyLoading) -- 
 a call to get that result will require the @flowelement
 which created it to do the loading, so if the **Pipeline** has disposed of the 
 @flowelement, there will be an error.
