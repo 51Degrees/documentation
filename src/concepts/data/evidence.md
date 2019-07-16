@@ -3,9 +3,12 @@
 
 # Introduction
 
-**Evidence** refers to all the information associated with a given [web request](@term{WebRequest}).
-The **evidence** values are used by @aspectengines to determine 
-the details of the [apsect](@term{Aspect}) they are concerned with.
+**Evidence** is the term for input data used in the @Pipeline. **Evidence** can be 
+anything but is most commonly details relating to a [web request](@term{WebRequest})
+such as HTTP headers, source IP address or query string parameters.
+
+The **evidence** values are used by @aspectengines to determine the details of the 
+[apsect](@term{Aspect}) they are concerned with.
 
 # Data Structure
 
@@ -44,10 +47,13 @@ Categories used by 51Degrees are:
 * Query parameters
 * Request metadata such as source IP address
 
-Generally, any device making a request will be sending some of this data. However, in
-some cases, additional **evidence** can be obtained from code running directly on the 
-client device. 
-As an example, this technique can be used to retrieve the latitude and longitude 
+Any device making a request to a web site will include some of this information.
+For example, the User-Agent HTTP header is almost always populated as part of a
+request.
+In some cases though, additional **evidence** allowing more detail can be obtained
+from code running directly on the client device. In some cases, this may even be 
+required.
+For example, this technique can be used to retrieve the latitude and longitude 
 from devices that have this capability.
 Typically, this **evidence** will be sent back to the server as a cookie in the next request.
 
