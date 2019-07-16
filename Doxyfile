@@ -283,7 +283,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "elementproperties=[element properties](@ref Concepts_Metadata_Elementproperties)" \
                          "endsnippet=@htmlonly </div> @endhtmlonly" \
                          "endsnippets=@endsnippet" \
-                         "evidencekey=[evidence key ](@ref Concepts_Data_EvidenceKeyFilter)" \
+                         "evidencekey=[evidence key](@ref Concepts_Data_EvidenceKeyFilter)" \
                          "evidence=[evidence](@ref Concepts_Data_Evidence)" \
                          "Evidence=[Evidence](@ref Concepts_Data_Evidence)" \        
                          "evidencekeyfilter=[evidence key filter](@ref Concepts_Data_EvidenceKeyFilter)" \
