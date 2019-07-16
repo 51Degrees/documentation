@@ -260,7 +260,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "Aspectdata=[Aspect data](@ref Concepts_Data_AspectData)" \
                          "aspectengine=[aspect engine](@ref Concepts_FlowElements_AspectEngine)" \
                          "aspectengines=[aspect engines](@ref Concepts_FlowElements_AspectEngine)" \
-                         "automaticdatafileupdates"=[automatic data file updates](@ref Concepts_Feature_AutomaticDatafileUpdate)" \   
+                         "automaticdatafileupdates=[automatic data file updates](@ref Concepts_Feature_AutomaticDatafileUpdate)" \   
                          "asynchronous=[asynchronous](@ref Concepts_Feature_AsynchronousExecution)" \
                          "buildfromfile=[build from file](@ref Concepts_Configuration_Builders_BuildFromFile)" \       
                          "caching=[caching](@ref Concepts_Configuration_Caching)" \
