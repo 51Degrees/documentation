@@ -32,7 +32,7 @@ relies on data being updated, so the data is not stored statically in the **engi
 
 To facilitate keeping the data up to date, an **engine** may be registered with the @dataupdateservice, to provide 'automatic updates'. Enabling this feature
 in an **engine** means that when it is added to a @pipeline, it will be registered for updates, and the @dataupdateservice
-will handle the updating of the @datafile automatically.
+will refresh the @datafile automatically.
 
 An **engine**'s data can also be refreshed manually by giving the **engine** either a new @datafile or memory location and requesting
 it use that. Refreshing the data in an **engine** happens without downtime, so any processing or other access to the **engine** will
