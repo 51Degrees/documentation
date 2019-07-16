@@ -26,6 +26,6 @@ The metadata contained in a **value** is:
 # Retrieval
 
 **Values** can be retrieved from a @fiftyoneengine using its unique id (the combination of its name and @property).
-The id remains unique across @datafiles (both different @datatiers and different release dates).
+The id remains unique across @datafiles (both different [data tiers](@term{DataTier}) and different release dates).
 
 All **values** can also be returned as a collection to be iterated.

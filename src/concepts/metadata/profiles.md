@@ -29,7 +29,7 @@ The metadata contained in a **profile** is:
 # Retrieval
 
 **Profiles** can be retrieved from a @fiftyoneengine where the id is known. The id remains unique across
-@datafiles (both different @datatiers and different release dates), so can be used as an efficient way to store
+@datafiles (both different [data tiers](@term{DataTier}) and different release dates), so can be used as an efficient way to store
 results with the intention of retrieving the @values at a later date.
 
 All **profiles** can also be returned as a collection to be iterated.

@@ -68,6 +68,6 @@ The metadata contained in an **51Degrees aspect property** is:
 # Retrieval
 
 **Properties** can be retrieved from a @flowelement using its name. The name remains unique across
-@datafiles (both different @datatiers and different release dates).
+@datafiles (both different [data tiers](@term{DataTier}) and different release dates).
 
 All **properties** can also be returned as a collection to be iterated.

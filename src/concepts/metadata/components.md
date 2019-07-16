@@ -30,7 +30,7 @@ The metadata contained in a **component** is:
 # Retrieval
 
 **Components** can be retrieved from a @fiftyoneengine where the id is known. The id remains unique across
-@datafiles (both different @datatiers and different release dates).
+@datafiles (both different [data tiers](@term{DataTier}) and different release dates).
 
 All **components** can also be returned as a collection to be iterated. A @datafile typically only contains a few
 **components**, so retrieving all is not a heavy operation.
