@@ -60,12 +60,14 @@ function selectBtn(caller, btnClass) {
     for (i = 0; i < btns.length; i++) {
         if (btns[i] === caller) {
             // This is the selected button, so highlight it.
-            btns[i].classList.remove('b-btn--secondary');
+            if (!btns[i].classList.contains('b-btn--secondary')) {
+                btns[i].classList.add('b-btn--secondary');
+            }
         }
-        else if (!btns[i].classList.contains('b-btn--secondary')) {
+        else if (btns[i].classList.contains('b-btn--secondary')) {
             // This is not the selected button, and it is highlighted,
             // so un highlight it.
-            btns[i].classList.add('b-btn--secondary');
+            btns[i].classList.remove('b-btn--secondary');
         }
     }
 
