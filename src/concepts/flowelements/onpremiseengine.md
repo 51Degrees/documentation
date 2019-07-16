@@ -15,27 +15,27 @@ An **on-premise engine** builds on the @aspectengine concept to introduce the ab
 # Use Cases
 
 An **on-premise engine** has no external dependencies, so is limited only by the hardware it is running on.
-This makes it best suited to cases where performance it critical and the hardware implementation
+This makes it best suited to cases where performance it critical and the supporting hardware implementation
 reflects this. To provide optimal performance, an **on-premise engine** can
 be configured to run entirely in memory, so that there are no calls to disk.
 
 There are also situations where the security demands of a service make sending sensitive data to an
-external [cloud service](@term{CloudService}) problematic. Using an **on-premise engine** will avoid this issue.
+external [cloud service](@term{CloudService}) problematic. Using an **on-premise engine** will address this issue.
 
 
 # Data Files
 
-An **aspect engine** can make use of a @datafile to carry out its processing. This is typically the case when an **engine**
+An @aspectengine can make use of a @datafile to carry out its processing. This is typically the case when an **engine**
 relies on data being updated, so the data is not stored statically in the **engine** itself.
 
 ## Updates
 
-To facilitate keeping the data up to date, an **engine** may be registered with the @dataupdateservice. Enabling automatic
-updates in an **engine** means that when it is added to a @pipeline, it will be registered for updates, and the @dataupdateservice
+To facilitate keeping the data up to date, an **engine** may be registered with the @dataupdateservice, to provide 'automatic updates'. Enabling this feature
+in an **engine** means that when it is added to a @pipeline, it will be registered for updates, and the @dataupdateservice
 will handle the updating of the @datafile automatically.
 
 An **engine**'s data can also be refreshed manually by giving the **engine** either a new @datafile or memory location and requesting
-that it use that. Refreshing the data in an **engine** happens without downtime, so any processing or other access to the **engine** will
+it use that. Refreshing the data in an **engine** happens without downtime, so any processing or other access to the **engine** will
 be uninterrupted.
 
 ## Temporary Data Files
