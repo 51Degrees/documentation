@@ -91,6 +91,41 @@ In addition to the name, an @elementdatakey also contains the type of @elementda
 Note that this is only the case in languages which support this.
 
 
+# Creating Data
+
+When an **element** adds @elementdata to a @flowdata, it cannot be assumed that an @elementdata does not
+already exist for the **element**. For this reason, an **element** contains an 'element data factory' which
+it gives to the @flowdata when it asks for a new or exising @elementdata. A method is called on the @flowdata,
+giving the factory as an argument, and the @flowdata returns either the @elementdata previously created with
+the same key, or a new @elementdata from the factory which it has added to its internal structure.
+
+@showsnippet{getoradd,dotnet,C#}
+@showsnippet{getoradd,java,Java}
+@showsnippet{getoradd,php,PHP}
+@showsnippet{getoradd,node,Node.js}
+
+@startsnippets{getoradd}
+@startsnippet{dotnet}
+In .NET the 'factory' is an anonymous function given to the **element** at construction,
+taking a @flowdata and returning an @elementdata.
+``` c#
+var elementData = flowData.GetOrAdd(ElementDataKeyTyped, CreateElementData);
+```
+@endsnippet
+@startsnippet{java}
+In Java the 'factory' is an instance of a factory class given to the **element** at construction,
+taking a @flowdata and returning an @elementdata.
+``` java
+final TData aspectData = flowData.getOrAdd(getTypedDataKey(), getDataFactory())
+```
+@endsnippet
+@startsnippet{php}
+**todo**
+@endsnippet
+@startsnippet{node}
+**todo**
+@endsnippet
+@endsnippets
 # Scope
 
 By convention, an **element**'s configuration is immutable once created. Although this is not enforced.
