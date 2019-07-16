@@ -15,13 +15,12 @@ An **on-premise engine** builds on the @aspectengine concept to introduce the ab
 # Use Cases
 
 An **on-premise engine** has no external dependencies, so is limited only by the hardware it is running on.
-This makes it best suited to cases where performance it critical, and the hardware the service is running on
-reflects that. For cases where there performance is not compromised for anything, **on-premise engines** can
+This makes it best suited to cases where performance it critical and the hardware implementation
+reflects this. To provide optimal performance, an **on-premise engine** can
 be configured to run entirely in memory, so that there are no calls to disk.
 
-There are also situations where security of a service is particularly tight, and sending sensitive data to an
-external [cloud service](@term{CloudService}) is something to be avoided. This is where an **on-premise engine**
-is a must over a @cloudengine.
+There are also situations where the security demands of a service make sending sensitive data to an
+external [cloud service](@term{CloudService}) problematic. Using an **on-premise engine** will avoid this issue.
 
 
 # Data Files
@@ -41,20 +40,18 @@ be uninterrupted.
 
 ## Temporary Data Files
 
-An **engine** can optionally create a temporary copy of the @datafile to use. This is good practice when updates when making use of the
-update functionality, as an **engine** may be configured in a way that means it is streaming data from the @datafile. When a temporary @datafile
-is used, the original @datafile is freed up to be updated without affecting the @datafile currently in use.
+An **engine** can optionally create a temporary copy of the @datafile to use. This is good practice when making use of the
+update functionality, as an **engine** can be configured so that it streams data from the @datafile. When a temporary @datafile
+is used, the original @datafile is free to be updated without affecting the @datafile currently in use.
 
 ## Metadata
 
 Each @datafile in an **engine** contains metadata, some of which is used by the @dataupdateservice. This metadata provides
-the @dataupdateservice with the age of the @datafile, the time at which a new one will be available, and a URL to get the new @datafile
-from when it is available.
+the @dataupdateservice with the age of the @datafile, the time at which a new one will be available, and the URL of where the new @datafile can be obtained.
 
-The location of the @datafile is also exposed, along with the location of the temporary copy if one has been made. 
+
+The location of the @datafile is also exposed, as is the location of the temporary copy - if one has been made. 
 
 ## Multiple Files
 
-An **on-premise engine** can require more than one @datafile. This does not change how they are handled by the @dataupdateservice if
-they are registered with it, and can be individually registered. So if only one of two @datafiles needs to be kept up to date, then
-this is handled just as well as if both needed to be kept up to date.
+An **on-premise engine** can require more than one @datafile. Files can be individually registered with the @dataupdateservice, which will handle each file according to its own metadata. This allows different @datafiles to have distinct update requirements.
