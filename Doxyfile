@@ -273,13 +273,14 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "datafile=[data file](@ref Concepts_Configuration_DataFiles)" \
                          "datakey=[data key](@ref Concepts_Data_Keys_DataKey)" \
                          "elementbuilder=[element builder](@ref Concepts_Configuration_Builders_ElementBuilder)" \
-                         "dataupdateservice"=[data update service](@ref Concepts_Feature_AutomaticDatafileUpdate)" \                 
+                         "dataupdateservice"=[data update service](@ref Concepts_Feature_AutomaticDatafileUpdate)" \ 
+                         "devicedetection"=[device detection](@ref Services_DeviceDetection)" \                 
                          "element=[element](@ref Concepts_FlowElements_FlowElement)" \
                          "elements=[elements](@ref Concepts_FlowElements_FlowElement)" \
                          "elementdata=[element data](@ref Concepts_Data_ElementData)" \
                          "Elementdata=[Element data](@ref Concepts_Data_ElementData)" \
                          "elementdatakey=[element data key](@ref Concepts_Data_ElementDataKey)" \
-                         "elementproperties=[element properties](@ref Conecepts_Metadata_Elementproperties)" \
+                         "elementproperties=[element properties](@ref Concepts_Metadata_Elementproperties)" \
                          "endsnippet=@htmlonly </div> @endhtmlonly" \
                          "endsnippets=@endsnippet" \
                          "evidencekey=[evidence key ](@ref Concepts_Data_EvidenceKeyFilter)" \
