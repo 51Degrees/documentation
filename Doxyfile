@@ -272,7 +272,8 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "customengine=[custom engine](@ref Examples_CustomElement_Index)" \
                          "datafiles=[data files](@ref Concepts_Configuration_DataFiles)" \
                          "datafile=[data file](@ref Concepts_Configuration_DataFiles)" \
-                         "datakey=[data key](@ref Concepts_Data_Keys_DataKey)" \
+                         "datakey=[data key](@ref Concepts_Data_DataKey)" \
+                         "datakeys=[data keys](@ref Concepts_Data_DataKey)" \
                          "elementbuilder=[element builder](@ref Concepts_Configuration_Builders_ElementBuilder)" \
                          "dataupdateservice=[data update service](@ref Concepts_Feature_AutomaticDatafileUpdates)" \ 
                          "devicedetection=[device detection](@ref Services_DeviceDetection)" \                 

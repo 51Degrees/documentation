@@ -1,1 +1,1 @@
-@page Info_Benchmarks_GeoLocation Geo-Location Benchmarks
+@page Benchmarks_GeoLocation Geo-Location Benchmarks
