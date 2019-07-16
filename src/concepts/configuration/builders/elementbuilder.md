@@ -7,8 +7,9 @@
 This gives a consistent structure to building any @flowelement, allowing
 automatic building via configuration files.
 
+By convention, a @flowelement's configuration is immutable once it has been
+constructed, so all of its configuration should be done in the **builder**.
 
-# Requirements
 
 # Configuration
 
