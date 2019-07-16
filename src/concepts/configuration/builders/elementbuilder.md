@@ -48,7 +48,7 @@ FlowElement element = new ElementBuilder(loggerFactory)
     .setAnotherOption(anotherValue)
     .build(compulsoryOption);
 ```
-#endsnippet
+@endsnippet
 @startsnippet{php}
 **todo**
 @endsnippet
