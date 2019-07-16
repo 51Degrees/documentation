@@ -7,3 +7,52 @@
 This gives a consistent structure to building any @flowelement, allowing
 automatic building via configuration files.
 
+
+# Requirements
+
+# Configuration
+
+Following the convention of fluent builder, configuration options are set using 'set' naming. For example,
+to set a configuration option with the name 'setting', a **builder** would have a 'SetSetting' method which
+takes the value of the option as an argument and returns the **builder**.
+
+
+# Building
+
+Once all configuration are set in a **builder**, a 'build' method is used to build a @flowelement
+using the configuration options provided. This can optionally take extra options, usually these are options
+which are compulsory.
+
+# Usage
+
+@startsnippets{usage}
+@showsnippet{usage,dotnet,C#}
+@showsnippet{usage,java,Java}
+@showsnippet{usage,php,PHP}
+@showsnippet{usage,node,Node.js}
+@startsnippet{none,block}
+Select a language to view language specific usage example.
+@endsnippet
+@startsnippet{dotnet}
+``` c#
+var element = new ElementBuilder(loggerFactory)
+    .SetOption(value)
+    .SetAnotherOption(anotherValue)
+    .Build(compulsoryOption);
+```
+@endsnippet
+@startsnippet{java}
+```
+FlowElement element = new ElementBuilder(loggerFactory)
+    .setOption(value)
+    .setAnotherOption(anotherValue)
+    .build(compulsoryOption);
+```
+#endsnippet
+@startsnippet{php}
+**todo**
+@endsnippet
+@startsnippet{node}
+**todo**
+@endsnippet
+
