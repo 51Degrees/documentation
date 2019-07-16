@@ -1,4 +1,4 @@
-@page Concepts_Data_ElementData ElementData
+@page Concepts_Data_ElementData Element Data
 
 # Introduction
 
