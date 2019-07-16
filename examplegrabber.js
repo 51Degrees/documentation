@@ -76,11 +76,13 @@ function showSnippet(caller, name, btnClass, language) {
     var div = document.getElementById(name);
     for (i = 0; i < div.children.length; i++) {
         var item = div.children.item(i);
-        if (item.getAttribute("data-lang") === language) {
-            item.style.display = "block";
-        }
-        else {
-            item.style.display = "none";
+        if (item.classList.contains("c-tabgroup__main")) {
+            if (item.getAttribute("data-lang") === language) {
+                item.style.display = "block";
+            }
+            else {
+                item.style.display = "none";
+            }
         }
     }
 }

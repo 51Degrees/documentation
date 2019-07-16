@@ -99,12 +99,14 @@ it gives to the @flowdata when it asks for a new or exising @elementdata. A meth
 giving the factory as an argument, and the @flowdata returns either the @elementdata previously created with
 the same key, or a new @elementdata from the factory which it has added to its internal structure.
 
+@startsnippets{getoradd}
 @showsnippet{getoradd,dotnet,C#}
 @showsnippet{getoradd,java,Java}
 @showsnippet{getoradd,php,PHP}
 @showsnippet{getoradd,node,Node.js}
-
-@startsnippets{getoradd}
+@startsnippet{none, block}
+Select a language to view an example of the 'get or add' method.
+@endsnippet
 @startsnippet{dotnet}
 In .NET the 'factory' is an anonymous function given to the **element** at construction,
 taking a @flowdata and returning an @elementdata.
@@ -146,28 +148,27 @@ calling on an **element** to carry out processing simultaneously, they must be a
 
 **Flow elements** also expose whether or not they will carry out concurrent operations, as the @pipeline needs to know this.
 
+@startsnippets{concurrency}
 @showsnippet{concurrency,dotnet,C#}
 @showsnippet{concurrency,java,Java}
 @showsnippet{concurrency,php,PHP}
 @showsnippet{concurrency,node,Node.js}
-
-@startsnippets{concurrency}
+@startsnippet{none,block}
+Select a language to view language specific info on thread-safety.
+@endsnippet
 @startsnippet{dotnet}
 **Flow elements** in C# are generally immutable, so do not need thread safety built in directly, however they often alter a @flowdata which
 must be done in a thread-safe way. This is usually left up to the @flowdata to handle, and data within it altered by the **element**
 calling a thread-safe ``set`` method which is exposed only to the **element**.
 @endsnippet
-
 @startsnippet{java}
 **Flow elements** in Java are generally immutable, so do not need thread safety built in directly, however they often alter a @flowdata which
 must be done in a thread-safe way. This is usually left up to the @flowdata to handle, and data within it altered by the **element**
 calling a thread-safe ``set`` method which is exposed only to the **element**.
 @endsnippet
-
 @startsnippet{php}
 **todo**
 @endsnippet
-
 @startsnippet{node}
 **todo**
 @endsnippet
