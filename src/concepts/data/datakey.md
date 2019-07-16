@@ -4,24 +4,6 @@
 
 A **data key** is a multi-field key intended for use in caching and similar scenarios.
 
-# Usage example
-
-A data key builder is used to construct **data keys** by specifying the details 
-of the keys to be included.
-This will often be a subset of the evidence keys stored in a @flowdata instance.
-
-@dotfile datakey-evidence.gvdot
-
-The **data key** can then be used to quickly check if the current @flowdata
-contains the same values for the subset of evidence keys we're interested in
-as any other from a list.
-
-@dotfile datakey-check.gvdot
-
-In the example above, the generated **data key** matches two of the items in
-the cache on hash code but only one of them when the values of the key
-fields are checked.
-
 # Internals
 
 Exact implementation details for **data key** may vary depending on language.
@@ -38,3 +20,25 @@ This is because the possibility space for a large number of keys with arbitrary
 value types is far larger than that of a 32 bit integer so hash collisions 
 can occur.
 
+# Usage example
+
+A data key builder is used to construct **data keys** by specifying the details 
+of the keys to be included.
+This will often be a subset of the evidence keys stored in a @flowdata instance.
+The diagram below shows an example **data key** being generated from the
+longitude and latitude values in an @evidence collection.
+
+@dotfile datakey-evidence.gvdot
+
+The **data key** can then be used to quickly check if the current @flowdata
+contains the same values for the subset of evidence keys we're interested in
+as any other **data key** instance from a list.
+
+@dotfile datakey-check.gvdot
+
+First, the cache will look for a match on just hash code as this is a fast 
+operation.
+In the example above, the generated **data key** matches two of the items in
+the cache on hash code. 
+When the hashes are found to match, the cache will then compare the values of 
+the key fields to check for a true match.
