@@ -1,1 +1,1 @@
-@page Info_Benchmarks_DeviceDetection Device Detection Benchmarks
+@page Benchmarks_DeviceDetection Device Detection Benchmarks
