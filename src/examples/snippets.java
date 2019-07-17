@@ -14,6 +14,21 @@ Pipeline pipeline = new PipelineBuilder(loggerFactory)
     .build();
 //! [Using a pipeline builder]
 
+//! [Build from xml]
+File file = new File("configuration.xml");
+Unmarshaller unmarshaller = JAXBContext
+    .newInstance(PipelineOptions.class)
+    .createUnmarshaller();
+PipelineOptions options = (PipelineOptions) unmarshaller.unmarshal(file);
+
+Pipeline pipeline = new PipelineBuilder(loggerFactory)
+    .buildFromConfiguration(options);
+//! [Build from xml]
+
+//! [Build from json]
+// **todo**
+//! [Build from json]
+
 //! [Get or add]
 final TData aspectData = flowData.getOrAdd(getTypedDataKey(), getDataFactory());
 //! [Get or add]

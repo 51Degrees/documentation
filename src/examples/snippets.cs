@@ -16,6 +16,28 @@ IPipeline pipeline = new PipelineBuilder(loggerFactory)
     .Build();
 //! [Using a pipeline builder]
 
+//! [Build from xml]
+var config = new ConfigurationBuilder()
+    .AddXmlFile("configuration.xml")
+    .Build();
+PipelineOptions options = new PipelineOptions();
+config.Bind("PipelineOptions", options);
+
+IPipeline pipeline = new PipelineBuilder(loggerFactory)
+    .BuildFromConfiguration(options);
+//! [Build from xml]
+
+//! [Build from json]
+var config = new ConfigurationBuilder()
+    .AddJsonFile("configuration.json")
+    .Build();
+PipelineOptions options = new PipelineOptions();
+config.Bind("PipelineOptions", options);
+
+IPipeline pipeline = new PipelineBuilder(loggerFactory)
+    .BuildFromConfiguration(options);
+//! [Build from json]
+
 //! [Get or add]
 var elementData = flowData.GetOrAdd(ElementDataKeyTyped, CreateElementData);
 //! [Get or add]
