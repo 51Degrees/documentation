@@ -3,7 +3,7 @@
 # Introduction
 
 **Flow data** is a container that encapsulates all the data related to a single @Pipeline process request.
-This includes input and output data as well as meta-data related to the processing such as 
+This includes input and output data as well as metadata related to the processing such as 
 the details of any errors that occurred.
 
 # Data Structure
@@ -13,26 +13,26 @@ the details of any errors that occurred.
 * @Elementdata
 * Errors
 
-## Evidence
+### Evidence
 
 Before the @flowdata is passed into the @Pipeline, input data is supplied. We refer to this data as
 '@evidence'.
 The @evidence can be set manually or automatically by using a 
-[web integration](@ref Concepts_Web_Index) package where available for your web framework of choice.
+[web integration](@ref Features_WebIntegration) package (where available) for your web framework of choice.
 
-## Element Data
+### Element Data
 
 The responses from each @flowelement are stored in key/value pair structure within **flow data**.
 In each case, the key is the string key of the @flowelement and the value is an @elementdata instance.
 The @elementdata structure is visible to each @flowelement so one @element can use the result
-from another @element in it's processing.
+from another @element in its processing.
 
-An example where this is required is the 51Degrees @cloudengines. First, an @element makes the
+An example where this is required is the 51Degrees @cloudengines. First, an @element makes an
 HTTP request to the cloud and stores the JSON response in the **flow data**. Later, another 
 @element takes that JSON response and parses it to populate a strongly typed object with values
-for the specific @aspect it is concerned with.
+for the specific [aspect](@term{Aspect}) it is concerned with.
 
-## Errors @anchor Concepts_Data_FlowData_Errors
+### Errors @anchor Concepts_Data_FlowData_Errors
 
 The errors collection stores the details of any errors that occur during processing.
 The language's default exception handling mechanism will be used to catch
@@ -49,16 +49,16 @@ collection after processing.
 
 # Life Cycle
 
-## Creation
+### Creation
 
 **Flow data** is only ever created by a @Pipeline, when the ```CreateFlowData``` method is called.
 This allows the @Pipeline to create the **flow data** internal data structures using implementations
 that are most appropriate for the configuration of the @flowelements in the @Pipeline.
 
 For example, thread-safe but slower data collections only need to be used if the @Pipeline
-is configured to execute @elements in parallel.
+is configured to execute @elements in @parallel.
 
-## Disposal / Cleanup
+### Disposal / Cleanup
 
 **Flow data** should be disposed of correctly when no longer in use. This ensures that any 
 resources being held by the instance are correctly freed.

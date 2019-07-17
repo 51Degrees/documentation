@@ -20,26 +20,26 @@ is a common way for all **51Degrees engines**.
 
 @dotfile 51d-data-structure.gvdot
 
-## Properties
+### Properties
 
 The @properties exposed by a **51Degrees engine** should not be seen differently from the @properties
 which are exposed by any other **engine**. They merely extend the @property to add @metadata that is specific
 to the @properties in 51Degrees' data structures.
 
 
-## Values
+### Values
 
 Each @property has a set of @values which it can return. These @values are exposed by a **51Degrees
 engine** and give more information on what the implications of a @value are.
 
 
-## Components
+### Components
 
 In a 51Degrees data set, a @property exists in a single @component. For example, the ``Browser Name`` @property
 is part of the ``Software`` @component, whereas the ``Model Name`` @property is part of the ``Hardware`` @component.
 
 
-## Profiles
+### Profiles
 
 A @profile contains a unique set of @values relating to all the @properties in a single @component. Internally, this
 is how @values are stored in a @flowdata once @evidence has been processed. However, these @profiles are also exposed

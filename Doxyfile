@@ -270,6 +270,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "component=[component](@ref Concepts_MetaData_Components)" \
                          "components=[components](@ref Concepts_MetaData_Components)" \
                          "customengine=[custom engine](@ref Examples_CustomElement_Index)" \
+                         "Datafiles=[Data files](@ref Concepts_Configuration_DataFiles)" \
                          "datafiles=[data files](@ref Concepts_Configuration_DataFiles)" \
                          "datafile=[data file](@ref Concepts_Configuration_DataFiles)" \
                          "datakey=[data key](@ref Concepts_Data_DataKey)" \
@@ -307,7 +308,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "Metadata=[Metadata](@ref Concepts_MetaData_Index)" \
                          "onpremiseengine=[on-premise engine](@ref Concepts_FlowElements_OnPremiseEngine)" \
                          "onpremiseengines=[on-premise engines](@ref Concepts_FlowElements_OnPremiseEngine)" \
-                         "parallel=[parallel](@ref Features_parallelexecution)" \
+                         "parallel=[parallel](@ref Features_ParallelExecution)" \
                          "Pipeline=[Pipeline](@ref Concepts_Pipeline)" \
                          "pipeline=[Pipeline](@ref Concepts_Pipeline)" \
                          "pipelines=[Pipelines](@ref Concepts_Pipeline)" \

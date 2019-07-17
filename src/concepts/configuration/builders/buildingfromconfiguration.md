@@ -14,7 +14,7 @@ Alternatively, in @webintegrations, a configuration file is loaded automatically
 
 Parsing XML or JSON is very language dependent, and in some languages one format is preferable.
 
-## Parsing XML
+### Parsing XML
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -38,7 +38,7 @@ Select a language for an example of parsing XML.
 @endsnippet
 @endsnippets
 
-## Parsing JSON
+### Parsing JSON
 
 @startsnippets
 @showsnippet{dotnet,C#}
