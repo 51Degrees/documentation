@@ -285,6 +285,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "Elementdata=[Element data](@ref Concepts_Data_ElementData)" \
                          "elementdatakey=[element data key](@ref Concepts_Data_ElementDataKey)" \
                          "elementproperties=[element properties](@ref Concepts_Metadata_Elementproperties)" \
+                         "Elementproperties=[Element properties](@ref Concepts_Metadata_Elementproperties)" \
                          "endsnippet=@htmlonly </div> @endhtmlonly" \
                          "endsnippets=@endsnippet" \
                          "evidencekey=[evidence key](@ref Concepts_Data_EvidenceKeyFilter)" \
