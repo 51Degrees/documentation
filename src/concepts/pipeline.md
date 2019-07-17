@@ -33,7 +33,7 @@ Depending on the language features and conventions, this could be formatted as e
 This allows the **Pipeline** to be configurable at runtime without recompiling the code. This is the 
 default operation for @webintegrations, but can be used for any other use-case
 as well. 
-For more on this, see the @buildfromfile section, 
+For more on this, see the @buildfromconfiguration section, 
 and the [configure from file](@ref Examples_Configure_From_File) example.
 
 

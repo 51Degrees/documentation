@@ -262,7 +262,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "aspectengines=[aspect engines](@ref Concepts_FlowElements_AspectEngine)" \
                          "automaticdatafileupdates=[automatic data file updates](@ref Features_AutomaticDatafileUpdates)" \
                          "asynchronous=[asynchronous](@ref Features_AsynchronousExecution)" \
-                         "buildfromfile=[build from file](@ref Concepts_Configuration_Builders_BuildFromFile)" \
+                         "buildfromconfiguration=[build from configuration](@ref Concepts_Configuration_Builders_BuildFromConfiguration)" \
                          "caching=[caching](@ref Concepts_Configuration_Caching)" \
                          "clientsideevidence=[client side evidence](@ref Features_ClientSideEvidence)" \
                          "cloudengine=[cloud engine](@ref Concepts_FlowElements_CloudEngine)" \
