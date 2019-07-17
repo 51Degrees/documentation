@@ -8,6 +8,14 @@ IFlowElement element = new ElementBuilder(loggerFactory)
     .Build(compulsoryOption);
 //! [Using a builder]
 
+//! [Using a pipeline builder]
+IPipeline pipeline = new PipelineBuilder(loggerFactory)
+    .SetAutoDisposeElements(true)
+    .SetSuppressProcessException(true)
+    .AddFlowElement(element)
+    .Build();
+//! [Using a pipeline builder]
+
 //! [Get or add]
 var elementData = flowData.GetOrAdd(ElementDataKeyTyped, CreateElementData);
 //! [Get or add]

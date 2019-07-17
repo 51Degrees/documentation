@@ -6,6 +6,14 @@ FlowElement element = new ElementBuilder(loggerFactory)
     .build(compulsoryOption);
 //! [Using a builder]
 
+//! [Using a pipeline builder]
+Pipeline pipeline = new PipelineBuilder(loggerFactory)
+    .setAutoDisposeElements(true)
+    .setSuppressProcessException(true)
+    .addFlowElement(element)
+    .build();
+//! [Using a pipeline builder]
+
 //! [Get or add]
 final TData aspectData = flowData.getOrAdd(getTypedDataKey(), getDataFactory());
 //! [Get or add]

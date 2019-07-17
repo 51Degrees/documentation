@@ -38,3 +38,38 @@ them at runtime rather than letting them break execution.
 By enabling this option, any exceptions that occur during the processing of a
 @flowdata are added to an [errors](@ref Concepts_Data_FlowData_Errors) collection
 in the @flowdata instead of being thrown.
+
+# Configuration
+
+Following the convention of fluent builder, configuration options are set using 'set' naming. For example,
+to set a the 'auto dispose elements' option, the **builder** has a 'SetAutoDisposeElements' method which
+takes a boolean as an argument and returns the **builder**.
+
+
+# Building
+
+Once all configuration are set in a **builder**, a 'build' method is used to build a @pipeline
+using the configuration options provided.
+
+# Usage
+
+@startsnippets{usage}
+@showsnippet{usage,dotnet,C#}
+@showsnippet{usage,java,Java}
+@showsnippet{usage,php,PHP}
+@showsnippet{usage,node,Node.js}
+@startsnippet{none,block}
+Select a language to view language specific usage example.
+@endsnippet
+@startsnippet{dotnet}
+@snippet snippets.cs Using a pipeline builder
+@endsnippet
+@startsnippet{java}
+@snippet snippets.java Using a pipeline builder
+@endsnippet
+@startsnippet{php}
+**todo**
+@endsnippet
+@startsnippet{node}
+**todo**
+@endsnippet
