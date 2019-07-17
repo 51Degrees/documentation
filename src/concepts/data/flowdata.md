@@ -30,7 +30,7 @@ from another @element in its processing.
 An example where this is required is the 51Degrees @cloudengines. First, an @element makes an
 HTTP request to the cloud and stores the JSON response in the **flow data**. Later, another 
 @element takes that JSON response and parses it to populate a strongly typed object with values
-for the specific (@term{Aspect}) it is concerned with.
+for the specific [aspect](@term{Aspect}) it is concerned with.
 
 ## Errors @anchor Concepts_Data_FlowData_Errors
 
