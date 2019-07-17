@@ -84,12 +84,11 @@ TODO: Add the snippets for this example.
 
 =========
 
-@showsnippet{concurrency,dotnet,C#}
-@showsnippet{concurrency,java,Java}
-@showsnippet{concurrency,php,PHP}
-@showsnippet{concurrency,node,Node.js}
-
-@startsnippets{concurrency}
+@startsnippets
+@showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@showsnippet{php,PHP}
+@showsnippet{node,Node.js}
 @startsnippet{dotnet}
 In .NET, by default, the non-thread-safe Dictionary class is used for both @elementdata and @evidence.
 
@@ -97,16 +96,13 @@ In both cases, this can be overridden to use another IDictionary implementation 
 
 The errors collection uses the List class. This is not thread-safe. As performance is less of an issue with this collection, a simple lock is used to synchronize items being added to the list.
 @endsnippet
-
 @startsnippet{java}
 **todo**
 @endsnippet
-
 @startsnippet{php}
 PHP runs in a single thread. Consequently, elements cannot run in parallel and 
 concurrency issues are not a concern.
 @endsnippet
-
 @startsnippet{node}
 **todo**
 @endsnippet

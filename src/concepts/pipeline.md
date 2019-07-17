@@ -80,11 +80,11 @@ All @elementproperties that the **Pipeline's**
 @flowelements can populate are also exposed in one place.
 This enables easy iteration over all @elementproperties.
 
-@startsnippets{iter-properties}
-@showsnippet{iter-properties,dotnet,C#}
-@showsnippet{iter-properties,java,Java}
-@showsnippet{iter-properties,php,PHP}
-@showsnippet{iter-properties,node,Node.js}
+@startsnippets
+@showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@showsnippet{php,PHP}
+@showsnippet{node,Node.js}
 @startsnippet{none,block}
 Select a language to view language specific iterator example.
 @endsnippet
@@ -138,11 +138,11 @@ which the **Pipeline** creates will be thread-safe for writing as it is possible
 
 TODO: The above example is language-specific.
 
-@startsnippets{config}
-@showsnippet{config,dotnet,C#}
-@showsnippet{config,java,Java}
-@showsnippet{config,php,PHP}
-@showsnippet{config,node,Node.js}
+@startsnippets
+@showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@showsnippet{php,PHP}
+@showsnippet{node,Node.js}
 @startsnippet{none,block}
 Select a language to view language specific build example.
 @endsnippet

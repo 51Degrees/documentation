@@ -51,13 +51,19 @@ takes a boolean as an argument and returns the **builder**.
 Once all configuration are set in a **builder**, a 'build' method is used to build a @pipeline
 using the configuration options provided.
 
+# Building From a Configuration
+
+Rather than setting all build options and @flowelements explicitly in code form, it is often
+preferable to make the @pipeline configurable without recompiling. For more on this, see
+[Building From Configuration](@ref Concepts_Configuration_Builder_BuildFromConfiguration).
+
 # Usage
 
-@startsnippets{usage}
-@showsnippet{usage,dotnet,C#}
-@showsnippet{usage,java,Java}
-@showsnippet{usage,php,PHP}
-@showsnippet{usage,node,Node.js}
+@startsnippets
+@showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@showsnippet{php,PHP}
+@showsnippet{node,Node.js}
 @startsnippet{none,block}
 Select a language to view language specific usage example.
 @endsnippet

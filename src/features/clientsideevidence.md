@@ -50,14 +50,13 @@ TODO: Add details for other web frameworks.
 
 =========
 
-@showsnippet{webintegration,aspnet,ASP.NET}
-@showsnippet{webintegration,aspnetcore,ASP.NET Core}
-
-@startsnippets{webintegration}
+@startsnippets
+@showsnippet{aspnet,ASP.NET}
+@showsnippet{aspnetcore,ASP.NET Core}
+@emptysnippet
 @startsnippet{aspnet}
 
 @endsnippet
-
 @startsnippet{aspnetcore}
 
 @endsnippet

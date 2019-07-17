@@ -45,7 +45,7 @@ function grabExample(caller, project, name) {
 }
 
 function grabSnippet(caller, project, file, tag, btnClass, divId) {
-    selectBtn(caller, btnClass);
+    selectBtn(caller, document.getElementsByClassName(btnClass));
     // Load the example into the 'grabbed-example' div, then update the links.
     $('#' + divId).load(
         '../../' + project + '/' + getVersion()
@@ -55,8 +55,8 @@ function grabSnippet(caller, project, file, tag, btnClass, divId) {
 
 }
 
-function selectBtn(caller, btnClass) {
-    var btns = document.getElementsByClassName(btnClass);
+function selectBtn(caller, btns) {
+    
     for (i = 0; i < btns.length; i++) {
         if (btns[i] === caller) {
             // This is the selected button, so highlight it.
@@ -73,9 +73,9 @@ function selectBtn(caller, btnClass) {
 
 }
 
-function showSnippet(caller, name, btnClass, language) {
-    selectBtn(caller, btnClass);
-    var div = document.getElementById(name);
+function showSnippet(caller, language) {
+    selectBtn(caller, caller.parentElement.children);
+    var div = caller.parentElement;
     for (i = 0; i < div.children.length; i++) {
         var item = div.children.item(i);
         if (item.classList.contains("c-tabgroup__main")) {

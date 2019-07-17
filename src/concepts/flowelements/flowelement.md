@@ -99,11 +99,11 @@ it gives to the @flowdata when it asks for a new or exising @elementdata. A meth
 giving the factory as an argument, and the @flowdata returns either the @elementdata previously created with
 the same key, or a new @elementdata from the factory which it has added to its internal structure.
 
-@startsnippets{getoradd}
-@showsnippet{getoradd,dotnet,C#}
-@showsnippet{getoradd,java,Java}
-@showsnippet{getoradd,php,PHP}
-@showsnippet{getoradd,node,Node.js}
+@startsnippets
+@showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@showsnippet{php,PHP}
+@showsnippet{node,Node.js}
 @startsnippet{none, block}
 Select a language to view an example of the 'get or add' method.
 @endsnippet
@@ -144,11 +144,11 @@ calling on an **element** to carry out processing simultaneously, they must be a
 
 **Flow elements** also expose whether or not they will carry out concurrent operations, as the @pipeline needs to know this.
 
-@startsnippets{concurrency}
-@showsnippet{concurrency,dotnet,C#}
-@showsnippet{concurrency,java,Java}
-@showsnippet{concurrency,php,PHP}
-@showsnippet{concurrency,node,Node.js}
+@startsnippets
+@showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@showsnippet{php,PHP}
+@showsnippet{node,Node.js}
 @startsnippet{none,block}
 Select a language to view language specific info on thread-safety.
 @endsnippet

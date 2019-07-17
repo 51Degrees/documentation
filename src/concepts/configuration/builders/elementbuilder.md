@@ -7,6 +7,9 @@
 This gives a consistent structure to building any @flowelement, allowing
 automatic building via configuration files.
 
+Typically the @flowelement built by a **builder** is added to a @pipeline
+via a @pipelinebuilder.
+
 By convention, a @flowelement's configuration is immutable once it has been
 constructed, so all of its configuration should be done in the **builder**.
 
@@ -26,11 +29,11 @@ which are compulsory.
 
 # Usage
 
-@startsnippets{usage}
-@showsnippet{usage,dotnet,C#}
-@showsnippet{usage,java,Java}
-@showsnippet{usage,php,PHP}
-@showsnippet{usage,node,Node.js}
+@startsnippets
+@showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@showsnippet{php,PHP}
+@showsnippet{node,Node.js}
 @startsnippet{none,block}
 Select a language to view language specific usage example.
 @endsnippet

@@ -13,26 +13,22 @@ However, **element data** must always expose it's contents as a collection of ke
 
 =========
 
-@showsnippet{datastructure,dotnet,C#}
-@showsnippet{datastructure,java,Java}
-@showsnippet{datastructure,php,PHP}
-@showsnippet{datastructure,node,Node.js}
-
-@startsnippets{datastructure}
+@startsnippets
+@showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@showsnippet{php,PHP}
+@showsnippet{node,Node.js}
 @startsnippet{dotnet}
 By default, the Dictionary class is used with a case-insensitive key comparer.
 This can be overridden in the constructor to use any other IDictionary implementation 
 or an alternative key comparer.
 @endsnippet
-
 @startsnippet{java}
 **todo**
 @endsnippet
-
 @startsnippet{php}
 **todo**
 @endsnippet
-
 @startsnippet{node}
 **todo**
 @endsnippet
@@ -65,27 +61,23 @@ data structure.
 
 =========
 
-@showsnippet{concurrency,dotnet,C#}
-@showsnippet{concurrency,java,Java}
-@showsnippet{concurrency,php,PHP}
-@showsnippet{concurrency,node,Node.js}
-
-@startsnippets{concurrency}
+@startsnippets
+@showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@showsnippet{php,PHP}
+@showsnippet{node,Node.js}
 @startsnippet{dotnet}
 By default, the Dictionary class is used. As such, accessing **element data**'s stored values
 will not be thread-safe.
 However, this can be overridden to use another IDictionary implementation such as the ConcurrentDictionary. 
 In this case, the accessing the stored values will be thread-safe.
 @endsnippet
-
 @startsnippet{java}
 **todo**
 @endsnippet
-
 @startsnippet{php}
 PHP runs in a single thread. Consequently, concurrency issues are not a concern.
 @endsnippet
-
 @startsnippet{node}
 **todo**
 @endsnippet
