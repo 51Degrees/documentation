@@ -80,14 +80,28 @@ All @elementproperties that the **Pipeline's**
 @flowelements can populate are also exposed in one place.
 This enables easy iteration over all @elementproperties.
 
-=========
-
-@grabsnippet{iter-properties,pipeline-dotnet,_snippets.html,iter-properties,C#}
-@grabsnippet{iter-properties,pipeline-java,_snippets.html,iter-properties,Java}
-
-@grabbedsnippet{iter-properties}
-
-=========
+@startsnippets{iter-properties}
+@showsnippet{iter-properties,dotnet,C#}
+@showsnippet{iter-properties,java,Java}
+@showsnippet{iter-properties,php,PHP}
+@showsnippet{iter-properties,node,Node.js}
+@startsnippet{none,block}
+Select a language to view language specific iterator example.
+@endsnippet
+@startsnippet{dotnet}
+Iterate over all @properties in the **Pipeline**.
+@snippet snippets.cs Iterate properties
+@endsnippet
+@startsnippet{java}
+Iterate over all @properties in the **Pipeline**.
+@snippet snippets.java Iterate properties
+@endsnippet
+@startsnippet{php}
+**todo**
+@endsnippet
+@startsnippet{node}
+**todo**
+@endsnippet
 
 An @evidencekeyfilter is also exposed. 
 This aggregates all the evidence keys accepted by all the 
@@ -124,14 +138,32 @@ which the **Pipeline** creates will be thread-safe for writing as it is possible
 
 TODO: The above example is language-specific.
 
-=========
-
-@grabsnippet{config,pipeline-dotnet,_snippets.html,build-pipeline-cs,C#}
-@grabsnippet{config,pipeline-java,_snippets.html,build-pipeline-java,Java}
-
-@grabbedsnippet{config}
-
-=========
+@startsnippets{config}
+@showsnippet{config,dotnet,C#}
+@showsnippet{config,java,Java}
+@showsnippet{config,php,PHP}
+@showsnippet{config,node,Node.js}
+@startsnippet{none,block}
+Select a language to view language specific build example.
+@endsnippet
+@startsnippet{dotnet}
+Build a **Pipeline** with two @flowelements in sequence.
+@snippet snippets.cs Build in sequence
+Build a **Pipeline** with two @flowelements in parallel.
+@snippet snippets.cs Build in parallel
+@endsnippet
+@startsnippet{java}
+Build a **Pipeline** with two @flowelements in sequence.
+@snippet snippets.java Build in sequence
+Build a **Pipeline** with two @flowelements in parallel.
+@snippet snippets.java Build in parallel
+@endsnippet
+@startsnippet{php}
+**todo**
+@endsnippet
+@startsnippet{node}
+**todo**
+@endsnippet
 
 
 # Lifecycle
