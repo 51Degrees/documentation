@@ -275,6 +275,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "datakey=[data key](@ref Concepts_Data_DataKey)" \
                          "datakeys=[data keys](@ref Concepts_Data_DataKey)" \
                          "elementbuilder=[element builder](@ref Concepts_Configuration_Builders_ElementBuilder)" \
+                         "elementbuilders=[element builders](@ref Concepts_Configuration_Builders_ElementBuilder)" \
                          "dataupdateservice=[data update service](@ref Features_AutomaticDatafileUpdates)" \
                          "devicedetection=[device detection](@ref Services_DeviceDetection)" \
                          "element=[element](@ref Concepts_FlowElements_FlowElement)" \
