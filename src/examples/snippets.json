@@ -1,0 +1,17 @@
+//! [Pipeline configuration]
+{
+  "PipelineOptions": {
+    "Elements": [
+      {
+        "BuilderName": "MyElementBuilder",
+        "BuildParameters": {
+          "MyBuildParameter": "a value for the element"
+        }
+      }
+    ],
+    "BuildParameters": {
+      "SuppressProcessExceptions": true
+    }
+  }
+}
+//! [Pipeline configuration]

@@ -1,0 +1,15 @@
+//! [Pipeline configuration]
+<PipelineOptions>
+    <Elements>
+        <Element>
+            <BuilderName>MyElementBuilder</BuilderName>
+            <BuildParameters>
+                <MyBuildParameter>a value for the element</MyBuildParameter>
+            </BuildParameters>
+        </Element>
+    </Elements>
+    <BuildParameters>
+        <SuppressProcessExceptions>true</SuppressProcessExceptions>
+    </BuildParameters>
+</PipelineOptions>
+//! [Pipeline configuration]

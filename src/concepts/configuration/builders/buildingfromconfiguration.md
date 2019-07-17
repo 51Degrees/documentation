@@ -8,4 +8,14 @@ this via its 'BuildFromConfiguration' method. A @pipeline's configuration can be
 code, however the most flexible method is to store the configuration in a file.
 
 
-@
+@startsnippets
+@showsnippet{XML}
+@showsnippet{JSON}
+@emptysnippet
+@startsnippet{XML}
+@snippet snippets.xml Pipeline configuration
+@endsnippet
+@startsnippet{JSON}
+@snippet snippets.json Pipeline configuration
+@endsnippet
+@endsnippets
