@@ -28,7 +28,7 @@ external [cloud service](@term{CloudService}) problematic. Using an **on-premise
 An @aspectengine can make use of a @datafile to carry out its processing. This is typically the case when an **engine**
 relies on data being updated, so the data is not stored statically in the **engine** itself.
 
-## Updates
+### Updates
 
 To facilitate keeping the data up to date, an **engine** may be registered with the @dataupdateservice, to provide 'automatic updates'. Enabling this feature
 in an **engine** means that when it is added to a @pipeline, it will be registered for updates, and the @dataupdateservice
@@ -38,13 +38,13 @@ An **engine**'s data can also be refreshed manually by giving the **engine** eit
 it use that. Refreshing the data in an **engine** happens without downtime, so any processing or other access to the **engine** will
 be uninterrupted.
 
-## Temporary Data Files
+### Temporary Data Files
 
 An **engine** can optionally create a temporary copy of the @datafile to use. This is good practice when making use of the
 update functionality, as an **engine** can be configured so that it streams data from the @datafile. When a temporary @datafile
 is used, the original @datafile is free to be updated without affecting the @datafile currently in use.
 
-## Metadata
+### Metadata
 
 Each @datafile in an **engine** contains metadata, some of which is used by the @dataupdateservice. This metadata provides
 the @dataupdateservice with the age of the @datafile, the time at which a new one will be available, and the URL of where the new @datafile can be obtained.
@@ -52,6 +52,6 @@ the @dataupdateservice with the age of the @datafile, the time at which a new on
 
 The location of the @datafile is also exposed, as is the location of the temporary copy - if one has been made. 
 
-## Multiple Files
+### Multiple Files
 
 An **on-premise engine** can require more than one @datafile. Files can be individually registered with the @dataupdateservice, which will handle each file according to its own metadata. This allows different @datafiles to have distinct update requirements.

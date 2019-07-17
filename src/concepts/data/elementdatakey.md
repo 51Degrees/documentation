@@ -31,7 +31,7 @@ instance at all.
 The @aspectengine base class does explicitly allow conflicting key names, although
 it is still up to specific implementations to operate responsibly.
 
-## Name Conflict Example
+### Name Conflict Example
 
 Consider a @Pipeline with 2 @devicedetection engines. One determines values relating 
 to the device hardware. (i.e. manufacturer, screen information, CPU/GPU specs, etc)

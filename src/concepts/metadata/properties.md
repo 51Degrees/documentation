@@ -15,7 +15,7 @@ of metadata, which is then added to in inheriting **property** types.
 An **element property** is the simplest description of a property which a @flowelement populates
 the values of. The metadata contained in an **element property** is:
 
-## Metadata
+### Metadata
 The metadata contained in an **element property** is:
 
 | Metadata | Description |
@@ -31,7 +31,7 @@ The metadata contained in an **element property** is:
 As @aspectengines consume external data from either a @datafile or [cloud service](@term{CloudService}), extra metadata
 included to indicate where the **property** is available.
 
-## Metadata
+### Metadata
 The metadata contained in an **aspect property** is:
 
 | Metadata | Description |
@@ -48,7 +48,7 @@ A **51Degrees property** relates to @values, @components and @profiles consisten
 
 @dotfile 51d-data-structure.gvdot
 
-## Metadata
+### Metadata
 The metadata contained in an **51Degrees aspect property** is:
 
 | Metadata | Description |

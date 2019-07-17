@@ -15,7 +15,7 @@ all of its configuration must be done in the **builder**.
 
 # Options
 
-## Auto Dispose Elements
+### Auto Dispose Elements
 
 By default, when a @pipeline is disposed of, the @flowelements which it
 contained will still exist and will need to be disposed of at some point.
@@ -29,7 +29,7 @@ function as intended. This will not usually be the case, but should be a
 consideration when building multiple @pipelines.
 
 
-## Suppress Process Exceptions
+### Suppress Process Exceptions
 
 When exceptions occur during the processing of a @flowdata, these will be thrown
 by default. However, it is sometimes preferable to suppress these and analyze
