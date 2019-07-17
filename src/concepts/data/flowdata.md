@@ -3,7 +3,7 @@
 # Introduction
 
 **Flow data** is a container that encapsulates all the data related to a single @Pipeline process request.
-This includes input and output data as well as meta-data related to the processing such as 
+This includes input and output data as well as metadata related to the processing such as 
 the details of any errors that occurred.
 
 # Data Structure
@@ -18,19 +18,19 @@ the details of any errors that occurred.
 Before the @flowdata is passed into the @Pipeline, input data is supplied. We refer to this data as
 '@evidence'.
 The @evidence can be set manually or automatically by using a 
-[web integration](@ref Concepts_Features_WebIntegration) package (where available) for your web framework of choice.
+[web integration](@ref Features_WebIntegration) package (where available) for your web framework of choice.
 
 ## Element Data
 
 The responses from each @flowelement are stored in key/value pair structure within **flow data**.
 In each case, the key is the string key of the @flowelement and the value is an @elementdata instance.
 The @elementdata structure is visible to each @flowelement so one @element can use the result
-from another @element in it's processing.
+from another @element in its processing.
 
 An example where this is required is the 51Degrees @cloudengines. First, an @element makes an
 HTTP request to the cloud and stores the JSON response in the **flow data**. Later, another 
 @element takes that JSON response and parses it to populate a strongly typed object with values
-for the specific (@term{aspect}) it is concerned with.
+for the specific (@term{Aspect}) it is concerned with.
 
 ## Errors @anchor Concepts_Data_FlowData_Errors
 
