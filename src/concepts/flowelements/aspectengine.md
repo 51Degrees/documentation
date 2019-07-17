@@ -4,7 +4,8 @@
 
 An **aspect engine** builds on the @flowelement concept to introduce the ability to:
 * cache processing results
-* handle cases where a property value does not exist in the @flowdata
+* handle cases where a property has not been populated by an **aspect engine** but it could be if certain configuration 
+changes were made.
 * [lazily load] (@ref Features_LazyLoading) values in the @flowdata
 
 In the same way a @flowelement can produce an @elementdata containing results of its processing, an 
@@ -18,8 +19,8 @@ For performance reasons, it may be desirable to add results @caching to an **eng
 processing.
 
 Logic in an **engine** makes use of a @flowcache provided to it to avoid doing any processing when a result has already been found
-for a certain set of @evidence. The key for a @flowcache is based of the @evidence which is relevant to an **engine**. So an **engine**'s
-cache is independent of @evidence which is irrelevant to its processing, resulting in a much higher hit to miss ratio in the cache.
+for a certain set of @evidence. The key for a @flowcache is a @datakey generated using the @evidencekeyfilter from the **engine**.
+This means that only @evidence relevant to the **engine** is used in the key for the cache, making the cache more space-efficient.
 
 
 # Missing Property Handling
@@ -34,7 +35,8 @@ attempts to retrieve a value for a @property which was not included. An error wo
 configured correctly to return values for that @property.
 
 Both these cases are distinct from that where the **engine** simply does not know what the @property is, and cannot return values
-for it. So it is important to distinguish between these scenarios.
+for it. So it is important to distinguish between these scenarios and be clear to the user about what they need to do to get 
+access to the property they want.
 
 
 # Lazy Loading
@@ -46,3 +48,8 @@ received and the [server](@term{WebServer}) can continue serving the page until 
 is needed.
 
 By default @lazyloading is not enabled, but can be via the **engine**'s builder.
+
+Note that @lazyloading is only available in a subset of languages. This is because it either is not possible or doesn't make sense
+in some cases.
+For example, PHP is single-threaded so @lazyloading is not possible.
+The Node.js @Pipeline is entirely @asynchronous so a @lazyloading capability is unnecessary.
