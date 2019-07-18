@@ -24,18 +24,18 @@ The @webintegration feature will do this automatically for many languages and we
 
 # Implementations
 
-### Whitelist Filter
+## Whitelist Filter
 
 The whitelist filter is a very simple filter that will include any @evidence key names that 
 are in a list supplied at construction time.
 
-### Filter Aggregator
+## Filter Aggregator
 
 The filter aggregator combines multiple filters together using a logical OR approach.
 I.e. If any one of the child filters would allow the inclusion of an evidence key then this 
 aggregator will allow it as well.
 
-### Share Usage Filter
+## Share Usage Filter
 
 The share usage filter is a specific implementation for 51Degrees @usagesharing.
 It will include anything that meets the following criteria:

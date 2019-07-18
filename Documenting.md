@@ -252,7 +252,7 @@ flow data was at the start of a sentence, `@Flowdata` can be used instead of `@f
 
 # Headings and Anchors
 
-The main sections of a page should use a single hash (`#`), then subheadings 3, etc. (`##` should be skipped as it is too large compared to the `#` heading).
+The main sections of a page should use a single hash (`#`), then subheadings 2, etc.
 
 Top level sections (`#`) have a different styling to the rest, so should be used to lay out the main structure of a page.
 
