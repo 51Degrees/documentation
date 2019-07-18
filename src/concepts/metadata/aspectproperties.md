@@ -7,8 +7,8 @@
 As @aspectengines consume external data from either a @datafile or [cloud service](@term{CloudService}), extra metadata
 is included to indicate where the **property** is available.
 
-# Date Tier
+# Data Tier
 
 The data tier of a **property** describes which product tiers the **property** is available in. For example,
-an @aspectengine could consume both a free, and premium @datafile, a certain **property** may not be available in both.
+an @aspectengine could consume both a free and premium @datafile, and certain **properties** may not be available in both.
 
