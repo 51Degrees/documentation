@@ -269,6 +269,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "clientsideevidence=[client side evidence](@ref Features_ClientSideEvidence)" \
                          "cloudengine=[cloud engine](@ref Concepts_FlowElements_CloudEngine)" \
                          "cloudengines=[cloud engines](@ref Concepts_FlowElements_CloudEngine)" \
+                         "cloudservice=[cloud service](@ref Concepts_FlowElements_CloudEngine)" \
                          "customengine=[custom engine](@ref Examples_CustomElement_Index)" \
                          "Datafiles=[Data files](@ref Concepts_Configuration_DataFiles)" \
                          "datafiles=[data files](@ref Concepts_Configuration_DataFiles)" \
@@ -300,6 +301,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "flowelement=[flow element](@ref Concepts_FlowElements_FlowElement)" \
                          "flowelements=[flow elements](@ref Concepts_FlowElements_FlowElement)" \
                          "Flowelements=[Flow elements](@ref Concepts_FlowElements_FlowElement)" \
+                         "geolocation=[Geo_Location](@ref Services_GeoLocation)" \
                          "grabsnippet{5}=@htmlonly <button class=\"b-btn b-btn--secondary \1Btn\" onclick=\"grabSnippet(this, '\2', '\3', '\4', '\1Btn', '\1')\">\5</button> @endhtmlonly" \
                          "grabbedsnippet{1}=@htmlonly <div id=\"\1\"></div> @endhtmlonly" \
                          "grabexample{3}=@htmlonly <button class=\"b-btn b-btn--secondary examplebtn\" onclick=\"grabExample(this, '\1', '\2')\">\3</button> @endhtmlonly" \
