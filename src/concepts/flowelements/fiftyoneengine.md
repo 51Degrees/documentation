@@ -16,7 +16,7 @@ implemented in can more readily benefit from any optimizations or features which
 # Meta Data
 
 The majority of **51Degrees engines** share a similar data structure. This means @metadata is exposed
-is a common way for all **51Degrees engines**.
+in a common way for all **51Degrees engines** that share this structure.
 
 @dotfile 51d-data-structure.gvdot
 
@@ -33,18 +33,18 @@ The metadata contained in an **51Degrees aspect property** is everything in an @
 | Description| A description of the **property** explaining what it refers to, and what significance its values have. |
 | URL      | A URL where more information on the **property** can be found. |
 | Component| The **component** which the **property** belongs to. This is subtly different to the category, in that a **profile** defines the values for all the **properties** of a single **component**, which likely contains multiple categories of **properties**. |
-| Values   | The **values** which the **property** can have. As a simple example, a **property** named ``'supports a thing'`` might have three values: ``true``, ``false`` and ``unknown``.|
-| Default value| The default **value** for the **property** if it is not otherwise known. In the above example, the **property** named ``'supports a thing'`` would probably have ``unknown`` as the default value. |
-| List     | Whether or not the **property** has values in the for of a list. For example, the connectivity types a device supports would be a list. |
+| Values   | The **values** which the **property** can have. As a simple example, a **property** named ``'IsSmartPhone'`` might have three values: ``true``, ``false`` and ``unknown``.|
+| Default value| The default **value** for the **property** if it is not otherwise known. In the above example, the **property** named ``'IsSmartPhone'`` would probably have ``unknown`` as the default value. |
+| List     | Whether or not the **property** may have multiple values. For example, the connectivity types a device supports would be a list as a single device might support Bluetooth, HSDPA, LTE, WiFi, etc. |
 | Obsolete | Whether the **property** is obsolete and only exists to maintain backwards compatibility. |
-| Display order| The order in which to display the **property** when listing **properties**. |
-| Mandatory| Whether the **property** is mandatory or not. If a **property** is mandatory, a **profile** must have values for it to be classed as valid. |
+| Display order| The suggested order in which to display the **property** when listing **properties**. |
+| Mandatory| Whether the **property** is mandatory or not. If a **property** is mandatory, a **profile** must have a non-default value for it to be classed as valid. |
 | Show     | Whether the **property** should be displayed in situations such as a page listing **properties**. Less important **properties** may not be displayed. |
 | Show values| Whether values of the **property** should be displayed in situations such as a page listing the **property**'s values. Showing all the values can make a very long list. |
 
 ### Values @anchor Concepts_FlowElements_FiftyOneOnPremiseEngine_Values
 
-**Values** refer to the **values** which **properties** can take.
+**Values** refer to all **values** which the associated **properties** can take in the current @datafile.
 The metadata for **values** of a **property** are exposed by an **engine**.
 
 Each **property** has a set of **values** which it can return. These **values** are exposed by a **51Degrees
@@ -55,15 +55,13 @@ The metadata contained in a **value** is:
 | Metadata | Description |
 | -------- | ----------- |
 | Name     | The **value** as a string. This uniquely identifies the **value** only within the **values** relating to the same **property**. |
-| Property | The **property** which the **value** relates to. This, in combination with the name, uniquely identifies the **value** within the **fiftyoneengine** it belongs to. For example, there may be many **values** whose name is ``true``, but each be a **value** for a different **property**. |
+| Property | The **property** which the **value** relates to. This, in combination with the name, uniquely identifies the **value** within the **51Degrees engine** it belongs to. For example, there may be many **values** whose name is ``true``, but each is a **value** for a different **property**. |
 | Description| A description of the **value** explaining what it refers to, and what it means if a **profile** has this **value**. |
 | URL      | A URL where more information on the **value** can be found. |
 
 ### Components @anchor Concepts_FlowElements_FiftyOneOnPremiseEngine_Components
 
-A **component** defines a group of **properties** whose **values** must be defined by a **profile**
-for the **component**. Typically an @aspectdata produced by an **engine** contains a **profile** for each
-**component** in its @datafile, therefore enabling retrieval of **values** for all **properties**.
+A **component** defines a group of **properties** that are related.
 
 In a 51Degrees data set, a **property** only exists in a single **component**. For example, the ``Browser Name``
 **property** is part of the ``Software`` **component**, whereas the ``Model Name`` **property** is part of
@@ -73,28 +71,29 @@ The metadata contained in a **component** is:
 
 | Metadata | Description |
 | -------- | ----------- |
-| Id       | The unique id of the **component**. This is usually a number and will remain unique across all @datafiles. |
+| Id       | The unique id of the **component**. This is usually a number and will remain the same when a @datafile is updated. |
 | Name     | The name of the **component** which gives a more 'human' identifier than id. By convention this is unique within the @datafile. |
-| Default profile| The default **profile** for the **component** if it is not otherwise known. |
-| Properties| The **properties** which a **profile** for the **component** must provide values for. |
+| Default profile| The default **profile** for the **component**. This is used to provide **values** for the **component's** **properties** when a **profile** matching the @evidence cannot be found. |
+| Properties| The **properties** associated with this **component**. |
 
 
 ### Profiles @anchor Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles
 
-A **profile** defines a unique set of **values** for all **properties**
-of a single **component**. A **engine** will populate an @aspectdata with at least one **profile**
-for each **component** in the @datafile to enable the retrieval of all **properties**.
+A **profile** defines a unique set of **values** for all **properties** of a single **component**. 
 
-Internally, this is how **values** are stored in an @elementdata once @evidence has been processed. However,
+An **engine** will populate @aspectdata with at least one **profile** for each **component** 
+in the @datafile. This means that all properties should be able to present a value, even if that value is 'Unknown'. 
+
+Internally, this is how **values** are stored in @elementdata once @evidence has been processed. However,
 these **profiles** are also exposed directly as @metadata so all possible results can be interrogated.
 The metadata contained in a **profile** is:
 
 | Metadata | Description |
 | -------- | ----------- |
-| Id       | The unique id of the **profile**. This is usually a number and will remain unique across all @datafiles. |
+| Id       | The unique id of the **profile**. This is usually a number and will remain the same when a @datafile is updated. |
 | Name     | The name of the **profile** which gives a more 'human' identifier than id, usually describing what the **values** it contains are. By convention this is unique within the @datafile. |
 | Component| The **component** which the **profile** relates to. This is the **component** which the **profile** contains **values** for. |
-| Values   | The **values** which define the **profile**. These are the reason for a **profile**, to return **values** for **properties**. |
+| Values   | The **values** which define the **profile**. |
 | Signature count| The number of signatures which define how to find the **profile**. This is internal to the **engine** and differs slightly in meaning between each. |
 
 
