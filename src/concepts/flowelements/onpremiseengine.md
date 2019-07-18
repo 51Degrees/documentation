@@ -15,14 +15,14 @@ An **on-premise engine** builds on the @aspectengine concept to introduce the ab
 # Use Cases
 
 An **on-premise engine** typically has no need to call external components when processing a request.
-This makes it best suited to cases where performance it critical and the supporting hardware implementation
+This makes it best suited to cases where performance is critical and the supporting hardware implementation
 reflects this. To provide optimal performance, some **on-premise engines** can be configured to run 
 with any @datafiles held entirely in memory, reducing latency further.
 
 There are also situations where the security demands of a service make sending sensitive data to an
 external [cloud service](@term{CloudService}) problematic. Using an **on-premise engine** will address this issue.
 
-Note that an **on-premise engine** and cloud engine are not necessarily mutually exclusive. For example,
+Note that an **on-premise engine** and @cloudengine are not necessarily mutually exclusive. For example,
 the 51Degrees @geolocation engine makes use of the @datafile management capabilities of an **on-premise engine**
 to manage the small lookup files it needs. However, the actual processing is handed off to a remote @cloudservice.
 
@@ -31,7 +31,7 @@ to manage the small lookup files it needs. However, the actual processing is han
 An @aspectengine can make use of one or more @datafiles to carry out its processing. This is typically the 
 case when an **engine** relies on data being updated, so the data is not stored statically in the **engine** itself.
 
-## Updates
+### Updates
 
 To facilitate keeping the data up to date, an **engine** may be registered with the @dataupdateservice, to provide 'automatic updates'. Enabling this feature
 in an **engine** means that when it is added to a @pipeline, it will be registered for updates, and the @dataupdateservice
@@ -42,10 +42,10 @@ it use that. Depending on the **engine** implementation, refreshing the data in 
 briefly stop serving requests. 
 All 51Degrees **engines** have been designed so that processing will be uninterrupted by data updates.
 
-## Temporary Data Files
+### Temporary Data Files
 
 An **engine** can optionally create a temporary copy of the @datafile to use. This is good practice when making use of the
-update functionality, as an **engine** can be configured so that it streams data from the @datafile. When a temporary @datafile
+[update functionality](@ref Features_AutomaticDatafileUpdates), as an **engine** can be configured so that it streams data from the @datafile. When a temporary @datafile
 is used, the original @datafile cannot be updated because the **engine** will have a lock on the file.
 
 ## Metadata
@@ -53,7 +53,7 @@ is used, the original @datafile cannot be updated because the **engine** will ha
 Each @datafile in an **engine** can contain metadata, some of which is used by the @dataupdateservice. This metadata can provide
 the @dataupdateservice with the age of the @datafile, the time at which a new one will be available, and the URL of where the new @datafile can be obtained.
 
-## Multiple Files
+### Multiple Files
 
 An **on-premise engine** can require more than one @datafile. Files can be individually registered with the @dataupdateservice, 
 which will handle each file according to its own metadata. This allows different @datafiles to have distinct update configurations.
