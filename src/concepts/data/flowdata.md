@@ -23,7 +23,7 @@ The @evidence can be set manually or automatically by using a
 ### Element Data
 
 The responses from each @flowelement are stored in key/value pair structure within **flow data**.
-In each case, the key is the string key of the @flowelement and the value is an @elementdata instance.
+In each case, [the key](@ref Concepts_Data_ElementDataKey) is the string key of the @flowelement and the value is an @elementdata instance.
 The @elementdata structure is visible to each @flowelement so one @element can use the result
 from another @element in its processing.
 
