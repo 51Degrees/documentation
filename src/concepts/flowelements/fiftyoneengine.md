@@ -13,7 +13,7 @@ while still seamlessly slotting in with the target language (it is not always ob
 implemented in can more readily benefit from any optimizations or features which are added to the
 [native](@term{NativeCode}) library.
 
-# Meta Data
+# Metadata
 
 The majority of **51Degrees engines** share a similar data structure. This means @metadata is exposed
 in a common way for all **51Degrees engines** that share this structure.
