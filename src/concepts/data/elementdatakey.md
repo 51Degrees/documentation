@@ -43,7 +43,7 @@ Each of these engines uses the same **element data key** as shown below:
 @dotfile elementdatakey-conflict-example.gvdot
 
 At step 1, the @flowdata enters the @Pipeline with no @elementdata.
-At step 2, the hardware @devicedetection engine has created the @elementdata and added 
+At step 2, the Hardware @devicedetection engine has created the @elementdata and added 
 it to @flowdata using the key 'device'. It will be populated with details of the 
 device hardware but other values relating to the software platform will not have been
 set.
