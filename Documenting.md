@@ -62,7 +62,9 @@ All pages have the JavaScript is included already with
 
 from the `header.html` file.
 
-A button can then be added to view the example in Java:
+## External Examples
+
+A button can be added to view the example in Java:
 
 ``` html
 <button class="b-btn b-btn--secondary examplebtn" onclick="grabExample(this, 'pipeline-java','hash_2_getting_started_8java')">Java Code</button>
@@ -84,6 +86,56 @@ Then a ``<div>`` with the id ``"grabbed-example"`` can be added which the ``exam
 The HTML loaded will come from the ``g-docs__primary`` div on the target page which will have the id ``"primary"``.
 
 Any links on the page (e.g. to classes which are documented in the target repository) are fixed so they point to the correct URL.
+
+### Aliases
+
+The following aliases are available to make including example simpler (these do not need to be surrounded by ``@htmlonly``):
+
+| Alias | Meaning |
+| ----- | ------- |
+| `@grabexample{project,name,label}` | `<button class=\"b-btn b-btn--secondary examplebtn\" onclick=\"grabExample(this, 'project', 'name')\">label</button>` |
+| `@grabbedexample` | `<div id=\"grabbed-example\"></div>` |
+
+
+## Inline Snippets
+
+Inline snippets can be included with tabs select which snippet to display. These are available in the following aliases:
+
+| Alias | Description |
+| ----- | ----------- |
+| `@startsnippets` | start a block containing tabs and snippets |
+| `@showsnippet{name,label}` | add a tab to display the content with the name 'name' |
+| `@showsnippet{name}` | same as above where the label is the same as the name |
+| `@startsnippet{name}` | start a snippet which will be displayed when its tab is selected. The content can be markdown |
+| `@startsnippet{name,display}` | same as above where the 'display' style is set. This is 'none' by default to hide it until the tab is selected |
+| `@endsnippet` | end the snippet |
+| `@emptysnippet` | insert an empty snippet which is displayed until a tab is selected |
+| `@endsnippets` | end the whole snippets block |
+
+The following example shows how to set up a single tab with some content, and some default text for when no tabs
+are selected.
+
+```
+@startsnippets
+@showsnippet{name,label}
+@showsnippet{anothername,another label}
+@startsnippet{none,block}
+here is some default content for when a tab is not selected
+@endsnippet
+@startsnippet{name}
+here is the content for 'label'
+@endsnippet
+@startsnippet{anothername}
+here is the content for 'another label'
+@endsnippet
+@endsnippets
+```
+
+**NOTE**: There must only be line breaks between ``@startsnippet`` and ``@endsnippet``, all others must be on consecutive lines.
+
+This is output as shown in the images below.
+![unselected](images/snippets-unselected.png)
+![selected](images/snippets-selected.png)
 
 # Graphs
 The GraphViz tool uses the dot language to generate graphs. Each graph should be stored in its own file in the `graphs` directory.
@@ -199,7 +251,7 @@ flow data was at the start of a sentence, `@Flowdata` can be used instead of `@f
 
 # Headings and Anchors
 
-The main sections of a page should use a single hash (`#`), then subheadings 2, etc.
+The main sections of a page should use a single hash (`#`), then subheadings 3, etc. (`##` should be skipped as it is too large compared to the `#` heading).
 
 Top level sections (`#`) have a different styling to the rest, so should be used to lay out the main structure of a page.
 
