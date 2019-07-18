@@ -260,6 +260,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "Aspectdata=[Aspect data](@ref Concepts_Data_AspectData)" \
                          "aspectengine=[aspect engine](@ref Concepts_FlowElements_AspectEngine)" \
                          "aspectengines=[aspect engines](@ref Concepts_FlowElements_AspectEngine)" \
+                         "aspectproperties=[aspect properties](@ref Concepts_MetaData_AspectProperties)" \
                          "automaticdatafileupdates=[automatic data file updates](@ref Features_AutomaticDatafileUpdates)" \
                          "asynchronous=[asynchronous](@ref Features_AsynchronousExecution)" \
                          "buildfromconfiguration=[build from configuration](@ref Concepts_Configuration_Builders_BuildFromConfiguration)" \
@@ -268,8 +269,6 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "clientsideevidence=[client side evidence](@ref Features_ClientSideEvidence)" \
                          "cloudengine=[cloud engine](@ref Concepts_FlowElements_CloudEngine)" \
                          "cloudengines=[cloud engines](@ref Concepts_FlowElements_CloudEngine)" \
-                         "component=[component](@ref Concepts_MetaData_Components)" \
-                         "components=[components](@ref Concepts_MetaData_Components)" \
                          "customengine=[custom engine](@ref Examples_CustomElement_Index)" \
                          "Datafiles=[Data files](@ref Concepts_Configuration_DataFiles)" \
                          "datafiles=[data files](@ref Concepts_Configuration_DataFiles)" \
@@ -316,10 +315,8 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "pipeline=[Pipeline](@ref Concepts_Pipeline)" \
                          "pipelines=[Pipelines](@ref Concepts_Pipeline)" \
                          "pipelinebuilder=[pipeline builder](@ref Concepts_Configuration_Builders_PipelineBuilder)" \
-                         "profile=[profile](@ref Concepts_MetaData_Profiles)" \
-                         "profiles=[profiles](@ref Concepts_MetaData_Profiles)" \
-                         "properties=[properties](@ref Concepts_MetaData_Properties)" \
-                         "property=[property](@ref Concepts_MetaData_Properties)" \
+                         "properties=[properties](@ref Concepts_MetaData_ElementProperties)" \
+                         "property=[property](@ref Concepts_MetaData_ElementProperties)" \
                          "shareusage=[share usage](@ref Features_UsageSharing)" \
                          "startsnippets=@htmlonly <div class=\"c-tabgroup\"> @endhtmlonly" \
                          "startsnippet{2}=@htmlonly <div class=\"c-tabgroup__main\" data-lang=\"\1\" style=\"display:\2;\"> @endhtmlonly" \
@@ -329,8 +326,6 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "showsnippet{1}=@showsnippet{\1,\1}" \
                          "term{1}=@ref Concepts_Terminology_\1" \
                          "usagesharing=[usage sharing](@ref Features_UsageSharing)" \
-                         "values=[values](@ref Concepts_MetaData_Values)" \
-                         "value=[value](@ref Concepts_MetaData_Values)" \
                          "webintegration=[web integration](@ref Features_WebIntegration)" \
                          "webintegrations=[web integrations](@ref Features_WebIntegration)"
 

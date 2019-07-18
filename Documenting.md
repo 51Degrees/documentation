@@ -134,6 +134,7 @@ here is the content for 'another label'
 **NOTE**: There must only be line breaks between ``@startsnippet`` and ``@endsnippet``, all others must be on consecutive lines.
 
 This is output as shown in the images below.
+
 ![unselected](images/snippets-unselected.png)
 ![selected](images/snippets-selected.png)
 
