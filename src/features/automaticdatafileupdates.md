@@ -67,6 +67,15 @@ URL formatters are necessary in many cases where multiple @datafiles are availab
 the required format or version of the @datafile may need to be specified as a parameter in the URL. This is handled by the
 URL formatter by looking at the current @datafile to see what is needed.
 
+### Temporary File
+
+It is good practice to set a @datafile to be copied to a temporary location for use by an @onpremiseengine. This means that
+whatever mode the file is being used in (e.g. in memory or streamed from file) an **update** can occur smoothly.
+
+By setting the @onpremiseengine to use a temporary file location, the original @datafile is free to be changed by the
+@autoupdateservice. Once it has been replaced, the @onpremiseengine will be informed and will take care of removing the
+temporary file and creating a new one.
+
 ### Decompression
 
 @Datafiles are often served as GZipped content from their download URL to minimize the amount of data which needs to be
