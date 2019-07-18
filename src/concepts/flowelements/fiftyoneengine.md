@@ -22,28 +22,80 @@ is a common way for all **51Degrees engines**.
 
 ### Properties
 
-The @properties exposed by a **51Degrees engine** should not be seen differently from the @properties
-which are exposed by any other **engine**. They merely extend the @property to add @metadata that is specific
-to the @properties in 51Degrees' data structures.
+The **properties** exposed by a **51Degrees engine** should not be seen differently from the @elementproperties
+or @aspectproperties which are exposed by any other **engine**. They merely extend @aspectproperty to add @metadata
+that is specific to the **properties** in 51Degrees' data structures.
 
+The metadata contained in an **51Degrees aspect property** is everything in an @aspectproperty with the addition of:
+
+| Metadata | Description |
+| -------- | ----------- |
+| Description| A description of the **property** explaining what it refers to, and what significance its values have. |
+| URL      | A URL where more information on the **property** can be found. |
+| Component| The **component** which the **property** belongs to. This is subtly different to the category, in that a **profile** defines the values for all the **properties** of a single @component, which likely contains multiple categories of **properties**. |
+| Values   | The **values** which the **property** can have. As a simple example, a **property** named ``'supports a thing'`` might have three values: ``true``, ``false`` and ``unknown``.|
+| Default value| The default **value** for the **property** if it is not otherwise known. In the above example, the **property** named ``'supports a thing'`` would probably have ``unknown`` as the default value. |
+| List     | Whether or not the **property** has values in the for of a list. For example, the connectivity types a device supports would be a list. |
+| Obsolete | Whether the **property** is obsolete and only exists to maintain backwards compatibility. |
+| Display order| The order in which to display the **property** when listing **properties**. |
+| Mandatory| Whether the **property** is mandatory or not. If a **property** is mandatory, a **profile** must have values for it to be classed as valid. |
+| Show     | Whether the **property** should be displayed in situations such as a page listing **properties**. Less important **properties** may not be displayed. |
+| Show values| Whether values of the **property** should be displayed in situations such as a page listing the **property**'s values. Showing all the values can make a very long list. |
 
 ### Values
 
-Each @property has a set of @values which it can return. These @values are exposed by a **51Degrees
-engine** and give more information on what the implications of a @value are.
+**Values** refer to the **values** which **properties** can take.
+The metadata for **values** of a **property** are exposed by an **engine**.
 
+Each **property** has a set of **values** which it can return. These **values** are exposed by a **51Degrees
+engine** and give more information on what the implications of a **value** are.
+
+The metadata contained in a **value** is:
+
+| Metadata | Description |
+| -------- | ----------- |
+| Name     | The **value** as a string. This uniquely identifies the **value** only within the **values** relating to the same **property**. |
+| Property | The **property** which the **value** relates to. This, in combination with the name, uniquely identifies the **value** within the **fiftyoneengine** it belongs to. For example, there may be many **values** whose name is ``true``, but each be a **value** for a different **property**. |
+| Description| A description of the **value** explaining what it refers to, and what it means if a **profile** has this **value**. |
+| URL      | A URL where more information on the **value** can be found. |
 
 ### Components
 
-In a 51Degrees data set, a @property exists in a single @component. For example, the ``Browser Name`` @property
-is part of the ``Software`` @component, whereas the ``Model Name`` @property is part of the ``Hardware`` @component.
+A **component** defines a group of **properties** whose **values** must be defined by a **profile**
+for the **component**. Typically an @aspectdata produced by an **engine** contains a **profile** for each
+**component** in its @datafile, therefore enabling retrieval of **values** for all **properties**.
+
+In a 51Degrees data set, a **property** only exists in a single **component**. For example, the ``Browser Name``
+**property** is part of the ``Software`` **component**, whereas the ``Model Name`` **property** is part of
+the ``Hardware`` **component**.
+
+The metadata contained in a **component** is:
+
+| Metadata | Description |
+| -------- | ----------- |
+| Id       | The unique id of the **component**. This is usually a number and will remain unique across all @datafiles. |
+| Name     | The name of the **component** which gives a more 'human' identifier than id. By convention this is unique within the @datafile. |
+| Default profile| The default **profile** for the **component** if it is not otherwise known. |
+| Properties| The **properties** which a **profile** for the **component** must provide values for. |
 
 
 ### Profiles
 
-A @profile contains a unique set of @values relating to all the @properties in a single @component. Internally, this
-is how @values are stored in a @flowdata once @evidence has been processed. However, these @profiles are also exposed
-directly as @metadata so all possible results can be interrogated.
+A **profile** defines a unique set of **values** for all **properties**
+of a single **component**. A **engine** will populate an @aspectdata with at least one **profile**
+for each **component** in the @datafile to enable the retrieval of all **properties**.
+
+Internally, this is how **values** are stored in an @elementdata once @evidence has been processed. However,
+these **profiles** are also exposed directly as @metadata so all possible results can be interrogated.
+The metadata contained in a **profile** is:
+
+| Metadata | Description |
+| -------- | ----------- |
+| Id       | The unique id of the **profile**. This is usually a number and will remain unique across all @datafiles. |
+| Name     | The name of the **profile** which gives a more 'human' identifier than id, usually describing what the **values** it contains are. By convention this is unique within the @datafile. |
+| Component| The **component** which the **profile** relates to. This is the **component** which the **profile** contains **values** for. |
+| Values   | The **values** which define the **profile**. These are the reason for a **profile**, to return **values** for **properties**. |
+| Signature count| The number of signatures which define how to find the **profile**. This is internal to the **engine** and differs slightly in meaning between each. |
 
 
 # Native Library
