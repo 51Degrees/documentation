@@ -36,7 +36,7 @@ key comparator.
 @endsnippets
 
 An **element data** also contains references to the @pipeline it is associated with.
-This is useful for data which may just be a translation layer for other data. Or if metadata
+This is useful for data which may just be a translation layer for other data, or if metadata
 needs to be retrieved by the **element data**.
 
 # Life Cycle
