@@ -9,7 +9,7 @@ performed by a @flowelement.
 
 The precise details of the storage structure used internally by **element data** will
 vary by language and even by @flowelement implementation.
-However, **element data** must always expose it's contents as a collection of key/value pairs.
+However, **element data** must always expose its contents as a collection of [key](@ref Concepts_Data_ElementDataKey)/value pairs.
 
 =========
 
@@ -56,7 +56,7 @@ associated resources cleanly.
 
 # Thread Safety
 
-The thread-safety of a given **element data** instance is directly tied to it's internal 
+The thread-safety of a given **element data** instance is directly tied to its internal 
 data structure.
 
 =========
@@ -70,7 +70,7 @@ data structure.
 By default, the Dictionary class is used. As such, accessing **element data**'s stored values
 will not be thread-safe.
 However, this can be overridden to use another IDictionary implementation such as the ConcurrentDictionary. 
-In this case, the accessing the stored values will be thread-safe.
+In this case, the accessing of the stored values will be thread-safe.
 @endsnippet
 @startsnippet{java}
 **todo**
