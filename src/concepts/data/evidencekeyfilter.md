@@ -18,9 +18,9 @@ This allows the @datakey to contain the minimum amount of necessary information 
 if a given @flowdata will result in the same output from a given @aspectengine as another, regardless
 of any other values that may be present in the @evidence.
 
-**Evidence key filters** can also be used by Pipeline callers to restrict the amount of evidence 
-they supply to only that which is needed.
-The @webintegration feature will do this automatically for multiple languages and web frameworks.
+**Evidence key filters** can also be used by @Pipeline callers to restrict the amount of evidence 
+they supply, to only that which is needed.
+The @webintegration feature will do this automatically for many languages and web frameworks.
 
 # Implementations
 
