@@ -2,10 +2,10 @@ digraph D {
     bgcolor=transparent;
     node [shape=record, fontname=Helvetica, fontsize=10];
     
-    P [label="Properties", URL="@ref Concepts_MetaData_Properties"];
-    V [label="Values", URL="@ref Concepts_MetaData_Values"];
-    C [label="Components", URL="@ref Concepts_MetaData_Components"];
-    PF [label="Profiles", URL="@ref Concepts_MetaData_Profiles"];
+    P [label="Properties", URL="@ref Concepts_FlowElements_FiftyOneOnPremiseEngine_Properties"];
+    V [label="Values", URL="@ref Concepts_FlowElements_FiftyOneOnPremiseEngine_Values"];
+    C [label="Components", URL="@ref Concepts_FlowElements_FiftyOneOnPremiseEngine_Components"];
+    PF [label="Profiles", URL="@ref Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles"];
 
     P -> V [arrowhead=crow];
     C -> P [arrowhead=crow];

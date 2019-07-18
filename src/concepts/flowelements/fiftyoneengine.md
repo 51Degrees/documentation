@@ -20,7 +20,7 @@ is a common way for all **51Degrees engines**.
 
 @dotfile 51d-data-structure.gvdot
 
-### Properties
+### Properties @anchor Concepts_FlowElements_FiftyOneOnPremiseEngine_Properties
 
 The **properties** exposed by a **51Degrees engine** should not be seen differently from the @elementproperties
 or @aspectproperties which are exposed by any other **engine**. They merely extend @aspectproperty to add @metadata
@@ -32,7 +32,7 @@ The metadata contained in an **51Degrees aspect property** is everything in an @
 | -------- | ----------- |
 | Description| A description of the **property** explaining what it refers to, and what significance its values have. |
 | URL      | A URL where more information on the **property** can be found. |
-| Component| The **component** which the **property** belongs to. This is subtly different to the category, in that a **profile** defines the values for all the **properties** of a single @component, which likely contains multiple categories of **properties**. |
+| Component| The **component** which the **property** belongs to. This is subtly different to the category, in that a **profile** defines the values for all the **properties** of a single **component**, which likely contains multiple categories of **properties**. |
 | Values   | The **values** which the **property** can have. As a simple example, a **property** named ``'supports a thing'`` might have three values: ``true``, ``false`` and ``unknown``.|
 | Default value| The default **value** for the **property** if it is not otherwise known. In the above example, the **property** named ``'supports a thing'`` would probably have ``unknown`` as the default value. |
 | List     | Whether or not the **property** has values in the for of a list. For example, the connectivity types a device supports would be a list. |
@@ -42,7 +42,7 @@ The metadata contained in an **51Degrees aspect property** is everything in an @
 | Show     | Whether the **property** should be displayed in situations such as a page listing **properties**. Less important **properties** may not be displayed. |
 | Show values| Whether values of the **property** should be displayed in situations such as a page listing the **property**'s values. Showing all the values can make a very long list. |
 
-### Values
+### Values @anchor Concepts_FlowElements_FiftyOneOnPremiseEngine_Values
 
 **Values** refer to the **values** which **properties** can take.
 The metadata for **values** of a **property** are exposed by an **engine**.
@@ -59,7 +59,7 @@ The metadata contained in a **value** is:
 | Description| A description of the **value** explaining what it refers to, and what it means if a **profile** has this **value**. |
 | URL      | A URL where more information on the **value** can be found. |
 
-### Components
+### Components @anchor Concepts_FlowElements_FiftyOneOnPremiseEngine_Components
 
 A **component** defines a group of **properties** whose **values** must be defined by a **profile**
 for the **component**. Typically an @aspectdata produced by an **engine** contains a **profile** for each
@@ -79,7 +79,7 @@ The metadata contained in a **component** is:
 | Properties| The **properties** which a **profile** for the **component** must provide values for. |
 
 
-### Profiles
+### Profiles @anchor Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles
 
 A **profile** defines a unique set of **values** for all **properties**
 of a single **component**. A **engine** will populate an @aspectdata with at least one **profile**
