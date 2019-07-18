@@ -8,17 +8,17 @@ Each @flowelement has a hard-coded key value.
 
 # Structure
 
-**element data key** will always have a string name that is used as the key 
+**Element data key** will always have a string name that is used as the key 
 when storing the @elementdata within @flowdata.
 
-In addition, in strongly-typed languages such as Java and C# **element data key** 
+In addition, in strongly-typed languages such as Java and C#, **element data key** 
 will also contain the specific type of the @elementdata that it corresponds to.
 This allows the @flowdata to return the @elementdata instance as the correct type.
 
-# Name conflicts
+# Name Conflicts
 
-The @Pipeline does not require that each @flowelements has a unique 
-**element data key**. In fact, it is sometimes desirable that this is the case.
+The @Pipeline does not require that each @flowelement has a unique 
+**element data key**. In fact, it is sometimes desirable for this to be the case.
 However, care must be taken to ensure that conflicting key names do not cause
 unexpected behavior or errors.
 
@@ -47,7 +47,7 @@ At step 2, the hardware @devicedetection engine has created the @elementdata and
 it to @flowdata using the key 'device'. It will be populated with details of the 
 device hardware but other values relating to the software platform will not have been
 set.
-The platform @devicedetection engine will see that an @elementdata instance already
+The Platform/OS @devicedetection engine will see that an @elementdata instance already
 exists in the @flowdata for its **element data key**. Rather than creating a new
 one, it will take that instance and update it with values relating to the OS running 
 on the device.
