@@ -11,20 +11,21 @@ The precise details of the storage structure used internally by **element data**
 vary by language and even by @flowelement implementation.
 However, **element data** must always expose its contents as a collection of [key](@ref Concepts_Data_ElementDataKey)/value pairs.
 
-=========
-
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
+@defaultsnippet{Select a tab to view language specific information on the internal data structure.}
 @startsnippet{dotnet}
 By default, the Dictionary class is used with a case-insensitive key comparer.
 This can be overridden in the constructor to use any other IDictionary implementation 
 or an alternative key comparer.
 @endsnippet
 @startsnippet{java}
-**todo**
+By default, the TreeMap class is used with a case-insensitive key comparator. This can be
+overridden in the constructor to use any other Map<String,Object> implementation or an alternative
+key comparator.
 @endsnippet
 @startsnippet{php}
 **todo**
@@ -34,8 +35,9 @@ or an alternative key comparer.
 @endsnippet
 @endsnippets
 
-=========
-
+An **element data** also contains references to the @pipeline it is associated with.
+This is useful for data which may just be a translation layer for other data. Or if metadata
+needs to be retrieved by the **element data**.
 
 # Life Cycle
 
@@ -59,13 +61,12 @@ associated resources cleanly.
 The thread-safety of a given **element data** instance is directly tied to its internal 
 data structure.
 
-=========
-
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
+@defaultsnippet{Select a tab to view language specific information on thread safety.}
 @startsnippet{dotnet}
 By default, the Dictionary class is used. As such, accessing **element data**'s stored values
 will not be thread-safe.
@@ -73,7 +74,10 @@ However, this can be overridden to use another IDictionary implementation such a
 In this case, the accessing of the stored values will be thread-safe.
 @endsnippet
 @startsnippet{java}
-**todo**
+By default, the TreeMap class is used. As such, accessing **element data**'s stored values
+will not be thread-safe.
+However, this can be overridden to use another Map<String,Object> implementation such as the ConcurrentHashMap. 
+In this case, the accessing of the stored values will be thread-safe.
 @endsnippet
 @startsnippet{php}
 PHP runs in a single thread. Consequently, concurrency issues are not a concern.
@@ -82,5 +86,3 @@ PHP runs in a single thread. Consequently, concurrency issues are not a concern.
 **todo**
 @endsnippet
 @endsnippets
-
-=========

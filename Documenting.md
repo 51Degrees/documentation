@@ -110,6 +110,7 @@ Inline snippets can be included with tabs select which snippet to display. These
 | `@startsnippet{name,display}` | same as above where the 'display' style is set. This is 'none' by default to hide it until the tab is selected |
 | `@endsnippet` | end the snippet |
 | `@emptysnippet` | insert an empty snippet which is displayed until a tab is selected |
+| `@defaultsnippet{text}` | insert a snippet which is displayed until a tab is selected. The content will be the text argument |
 | `@endsnippets` | end the whole snippets block |
 
 The following example shows how to set up a single tab with some content, and some default text for when no tabs
@@ -119,8 +120,7 @@ are selected.
 @startsnippets
 @showsnippet{name,label}
 @showsnippet{anothername,another label}
-@startsnippet{none,block}
-here is some default content for when a tab is not selected
+@defaultsnippet{here is some default content for when a tab is not selected}
 @endsnippet
 @startsnippet{name}
 here is the content for 'label'
