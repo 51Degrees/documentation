@@ -48,7 +48,7 @@ it to @flowdata using the key 'device'. It will be populated with details of the
 device hardware but other values relating to the software platform will not have been
 set.
 The platform @devicedetection engine will see that an @elementdata instance already
-exists in the @flowdata for it's **element data key**. Rather than creating a new
+exists in the @flowdata for its **element data key**. Rather than creating a new
 one, it will take that instance and update it with values relating to the OS running 
 on the device.
 
