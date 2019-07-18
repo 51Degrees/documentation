@@ -9,6 +9,6 @@ specialization of @elementdata.
 
 **Aspect data** works with @aspectengine to provide the features associated with engines.
 For example, much of the @lazyloading functionality in .NET actually resides in the 
-**aspect data** class.
+**aspect data** class. For more details see the @lazyloading feature page.
 
 For details on data structure, life cycle and thread safety, see @elementdata.
