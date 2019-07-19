@@ -90,11 +90,35 @@ Select a language to view language specific iterator example.
 @endsnippet
 @startsnippet{dotnet}
 Iterate over all @properties in the **Pipeline**.
-@snippet snippets.cs Iterate properties
+```{cs}
+foreach (var elementProperties in pipeline.ElementAvailableProperties)
+{
+    var elementName = elementProperties.Key;
+    
+    foreach (var item in elementProperties.Value)
+    {
+        var propertyName = item.Key;
+        var property = item.Value;
+    }
+}
+```
 @endsnippet
 @startsnippet{java}
 Iterate over all @properties in the **Pipeline**.
-@snippet snippets.java Iterate properties
+```{java}
+for (Map.Entry<String, Map<String, ElementPropertyMetaData>> elementProperties
+    : pipeline.getElementAvailableProperties().entrySet()) {
+    
+    String elementName = elementProperties.getKey();
+    
+    for (Map.Entry<String, ElementPropertyMetaData> item
+        : elementProperties.getValue().entrySet()) {
+        
+        String propertyName = item.getKey();
+        ElementPropertyMetaData property = item.getValue();
+    }
+}
+```
 @endsnippet
 @startsnippet{php}
 **todo**
@@ -148,15 +172,33 @@ Select a language to view language specific build example.
 @endsnippet
 @startsnippet{dotnet}
 Build a **Pipeline** with two @flowelements in sequence.
-@snippet snippets.cs Build in sequence
+```{cs}
+IPipeline pipeline = new PipelineBuilder(loggerFactory)
+    .AddFlowElement(E1)
+    .AddFlowElement(E2)
+    .Build();
+```
 Build a **Pipeline** with two @flowelements in parallel.
-@snippet snippets.cs Build in parallel
+```{cs}
+IPipeline pipeline = new PipelineBuilder(loggerFactory)
+    .AddFlowElementsParallel(E1, E2)
+    .Build();
+```
 @endsnippet
 @startsnippet{java}
 Build a **Pipeline** with two @flowelements in sequence.
-@snippet snippets.java Build in sequence
+```{java}
+Pipeline pipeline = new PipelineBuilder(loggerFactory)
+    .addFlowElement(E1)
+    .addFlowElement(E2)
+    .build();
+```
 Build a **Pipeline** with two @flowelements in parallel.
-@snippet snippets.java Build in parallel
+```{java}
+Pipeline pipeline = new PipelineBuilder(loggerFactory)
+    .addFlowElementsParallel(new FlowElement[]{ E1, E2 })
+    .build();
+```
 @endsnippet
 @startsnippet{php}
 **todo**

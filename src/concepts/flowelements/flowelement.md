@@ -110,12 +110,16 @@ Select a language to view an example of the 'get or add' method.
 @startsnippet{dotnet}
 In .NET the 'factory' is an anonymous function given to the **element** at construction,
 taking a @flowdata and returning an @elementdata.
-@snippet snippets.cs Get or add
+```{cs}
+var elementData = flowData.GetOrAdd(ElementDataKeyTyped, CreateElementData);
+```
 @endsnippet
 @startsnippet{java}
 In Java the 'factory' is an instance of a factory class given to the **element** at construction,
 taking a @flowdata and returning an @elementdata.
-@snippet snippets.java Get or add
+```{java}
+final TData aspectData = flowData.getOrAdd(getTypedDataKey(), getDataFactory());
+```
 @endsnippet
 @startsnippet{php}
 **todo**

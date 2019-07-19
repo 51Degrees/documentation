@@ -38,10 +38,20 @@ which are compulsory.
 Select a language to view language specific usage example.
 @endsnippet
 @startsnippet{dotnet}
-@snippet snippets.cs Using a builder
+```{cs}
+IFlowElement element = new ElementBuilder(loggerFactory)
+    .SetOption(value)
+    .SetAnotherOption(anotherValue)
+    .Build(compulsoryOption);
+```
 @endsnippet
 @startsnippet{java}
-@snippet snippets.java Using a builder
+```{java}
+FlowElement element = new ElementBuilder(loggerFactory)
+    .setOption(value)
+    .setAnotherOption(anotherValue)
+    .build(compulsoryOption);
+```
 @endsnippet
 @startsnippet{php}
 **todo**

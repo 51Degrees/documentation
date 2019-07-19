@@ -326,7 +326,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "startsnippets=@htmlonly <div class=\"c-tabgroup\"> @endhtmlonly" \
                          "startsnippet{2}=@htmlonly <div class=\"c-tabgroup__main\" data-lang=\"\1\" style=\"display:\2;\"> @endhtmlonly" \
                          "startsnippet{1}=@startsnippet{\1,none}" \
-                         "emptysnippet=@defaultsnippet{}" \
+                         "emptysnippet=@defaultsnippet{ }" \
                          "defaultsnippet{1}=@startsnippet{none,block} \1 @endsnippet" \
                          "showsnippet{2}=@htmlonly <button class=\"b-btn b-btn--tab\" onclick=\"showSnippet(this,'\1')\">\2</button> @endhtmlonly" \
                          "showsnippet{1}=@showsnippet{\1,\1}" \

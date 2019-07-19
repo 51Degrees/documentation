@@ -25,10 +25,28 @@ Parsing XML or JSON is very language dependent, and in some languages one format
 Select a language for an example of parsing XML.
 @endsnippet
 @startsnippet{dotnet}
-@snippet snippets.cs Build from xml
+```{cs}
+var config = new ConfigurationBuilder()
+    .AddXmlFile("configuration.xml")
+    .Build();
+PipelineOptions options = new PipelineOptions();
+config.Bind("PipelineOptions", options);
+
+IPipeline pipeline = new PipelineBuilder(loggerFactory)
+    .BuildFromConfiguration(options);
+```
 @endsnippet
 @startsnippet{java}
-@snippet snippets.java Build from xml
+```{java}
+File file = new File("configuration.xml");
+Unmarshaller unmarshaller = JAXBContext
+    .newInstance(PipelineOptions.class)
+    .createUnmarshaller();
+PipelineOptions options = (PipelineOptions) unmarshaller.unmarshal(file);
+
+Pipeline pipeline = new PipelineBuilder(loggerFactory)
+    .buildFromConfiguration(options);
+```
 @endsnippet
 @startsnippet{php}
 **todo**
@@ -49,11 +67,19 @@ Select a language for an example of parsing XML.
 Select a language for an example of parsing JSON.
 @endsnippet
 @startsnippet{dotnet}
-@snippet snippets.cs Build from json
+```{cs}
+var config = new ConfigurationBuilder()
+    .AddJsonFile("configuration.json")
+    .Build();
+PipelineOptions options = new PipelineOptions();
+config.Bind("PipelineOptions", options);
+
+IPipeline pipeline = new PipelineBuilder(loggerFactory)
+    .BuildFromConfiguration(options);
+```
 @endsnippet
 @startsnippet{java}
 **todo**
-@snippet snippets.java Build from json
 @endsnippet
 @startsnippet{php}
 **todo**
@@ -69,16 +95,46 @@ Select a language for an example of parsing JSON.
 @startsnippets
 @showsnippet{XML}
 @showsnippet{JSON}
-@emptysnippet
+@defaultsnippet{Select a file format to view an example configuration.}
 @startsnippet{XML}
 Configure a @pipeline with a @flowelement named 'MyElement' with a build parameter, and
 set the @pipeline to suppress process exceptions.
-@snippet snippets.xml Pipeline configuration
+```{xml}
+<PipelineOptions>
+    <Elements>
+        <Element>
+            <BuilderName>MyElementBuilder</BuilderName>
+            <BuildParameters>
+                <MyBuildParameter>a value for the element</MyBuildParameter>
+            </BuildParameters>
+        </Element>
+    </Elements>
+    <BuildParameters>
+        <SuppressProcessExceptions>true</SuppressProcessExceptions>
+    </BuildParameters>
+</PipelineOptions>
+```
 @endsnippet
 @startsnippet{JSON}
 Configure a @pipeline with a @flowelement named 'MyElement' with a build parameter, and
 set the @pipeline to suppress process exceptions.
-@snippet snippets.json Pipeline configuration
+```{js}
+{
+  "PipelineOptions": {
+    "Elements": [
+      {
+        "BuilderName": "MyElementBuilder",
+        "BuildParameters": {
+          "MyBuildParameter": "a value for the element"
+        }
+      }
+    ],
+    "BuildParameters": {
+      "SuppressProcessExceptions": true
+    }
+  }
+}
+```
 @endsnippet
 @endsnippets
 

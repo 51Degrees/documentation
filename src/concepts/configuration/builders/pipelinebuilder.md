@@ -68,10 +68,22 @@ preferable to make the @pipeline configurable without recompiling. For more on t
 Select a language to view language specific usage example.
 @endsnippet
 @startsnippet{dotnet}
-@snippet snippets.cs Using a pipeline builder
+```{cs}
+IPipeline pipeline = new PipelineBuilder(loggerFactory)
+    .SetAutoDisposeElements(true)
+    .SetSuppressProcessException(true)
+    .AddFlowElement(element)
+    .Build();
+```
 @endsnippet
 @startsnippet{java}
-@snippet snippets.java Using a pipeline builder
+```{java}
+Pipeline pipeline = new PipelineBuilder(loggerFactory)
+    .setAutoDisposeElements(true)
+    .setSuppressProcessException(true)
+    .addFlowElement(element)
+    .build();
+```
 @endsnippet
 @startsnippet{php}
 **todo**
