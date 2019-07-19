@@ -264,6 +264,8 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "automaticdatafileupdates=[automatic data file updates](@ref Features_AutomaticDatafileUpdates)" \
                          "asynchronous=[asynchronous](@ref Features_AsynchronousExecution)" \
                          "buildfromconfiguration=[build from configuration](@ref Concepts_Configuration_Builders_BuildFromConfiguration)" \
+                         "builder=[builder](@ref Concepts_Configuration_Builders_Index)" \
+                         "builders=[builders](@ref Concepts_Configuration_Builders_Index)" \
                          "caching=[caching](@ref Concepts_Configuration_Caching)" \
                          "cache=[cache](@ref Concepts_Configuration_Caching)" \
                          "clientsideevidence=[client side evidence](@ref Features_ClientSideEvidence)" \
@@ -317,6 +319,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "pipeline=[Pipeline](@ref Concepts_Pipeline)" \
                          "pipelines=[Pipelines](@ref Concepts_Pipeline)" \
                          "pipelinebuilder=[pipeline builder](@ref Concepts_Configuration_Builders_PipelineBuilder)" \
+                         "pipelinebuilders=[pipeline builders](@ref Concepts_Configuration_Builders_PipelineBuilder)" \
                          "properties=[properties](@ref Concepts_MetaData_ElementProperties)" \
                          "property=[property](@ref Concepts_MetaData_ElementProperties)" \
                          "shareusage=[share usage](@ref Features_UsageSharing)" \

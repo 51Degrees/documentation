@@ -7,6 +7,20 @@ This contains guidance on how to write documentation in this repository.
 Markdown files in the src directory use standard markdown syntax to document each concept. Each concept should live in its own file.
 For example, `Pipeline` and `FlowData` have their own files.
 
+## Code Fencing
+
+When including fenced code blocks using ` ``` ` above and below, the language to use when highlighting is taken from the file
+by default. For documentation files, this will be markdown. So when writing language code blocks, the language should be added
+in brackets like `{java}`. There must also be no space after the backticks. For example, for an XML block one would write:
+````
+```{xml}
+<top>
+    <middle>
+    </middle>
+</top>
+```
+````
+
 ## DoxyGen Tags
 Each markdown file must have certain definitions inside for them to be handled correctly by DoxyGen.
 
