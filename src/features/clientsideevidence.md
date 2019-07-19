@@ -1,4 +1,4 @@
-@page Features_ClientSideEvidence Client-side evidence
+@page Features_ClientSideEvidence Client-side Evidence
 
 # Introduction
 
