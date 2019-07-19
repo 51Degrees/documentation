@@ -28,7 +28,7 @@ function updateLinks(project, divId) {
 
 function addLink(url, divId) {
     var div = $('#' + divId);
-    var link = "<p><a href=\"" + url + "\" class=\"b-link--dotted\">Go to original page...</a></p>";
+    var link = "<div style=\"text-align:right;\"><a href=\"" + url + "\" class=\"b-link--dotted\">Go to original page...</a></div>";
     div.html(link + div.html());
 }
 
