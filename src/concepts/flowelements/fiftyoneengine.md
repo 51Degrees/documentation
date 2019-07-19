@@ -34,13 +34,13 @@ The metadata contained in an **51Degrees aspect property** is everything in an @
 | URL      | A URL where more information on the **property** can be found. |
 | Component| The **component** which the **property** belongs to. This is subtly different to the category, in that a **profile** defines the values for all the **properties** of a single **component**, which likely contains multiple categories of **properties**. |
 | Values   | The **values** which the **property** can have. As a simple example, a **property** named ``'IsSmartPhone'`` might have three values: ``true``, ``false`` and ``unknown``.|
-| Default value| The default **value** for the **property** if it is not otherwise known. In the above example, the **property** named ``'IsSmartPhone'`` would probably have ``unknown`` as the default value. |
-| List     | Whether or not the **property** may have multiple values. For example, the connectivity types a device supports would be a list as a single device might support Bluetooth, HSDPA, LTE, WiFi, etc. |
+| Default Value| The default **value** for the **property** if it is not otherwise known. In the above example, the **property** named ``'IsSmartPhone'`` would probably have ``unknown`` as the default value. |
+| List     | Whether or not the **property** may have multiple values. For example, the connectivity types a device supports would be a list, as a single device might support Bluetooth, HSDPA, LTE, WiFi, etc. |
 | Obsolete | Whether the **property** is obsolete and only exists to maintain backwards compatibility. |
-| Display order| The suggested order in which to display the **property** when listing **properties**. |
+| Display Order| The suggested order in which to display the **property** when listing **properties**. |
 | Mandatory| Whether the **property** is mandatory or not. If a **property** is mandatory, a **profile** must have a non-default value for it to be classed as valid. |
 | Show     | Whether the **property** should be displayed in situations such as a page listing **properties**. Less important **properties** may not be displayed. |
-| Show values| Whether values of the **property** should be displayed in situations such as a page listing the **property**'s values. Showing all the values can make a very long list. |
+| Show Values| Whether values of the **property** should be displayed in situations such as a page listing the **property**'s values. Showing all the values can make a very long list. |
 
 ## Values @anchor Concepts_FlowElements_FiftyOneOnPremiseEngine_Values
 
@@ -94,13 +94,13 @@ The metadata contained in a **profile** is:
 | Name     | The name of the **profile** which gives a more 'human' identifier than id, usually describing what the **values** it contains are. By convention this is unique within the @datafile. |
 | Component| The **component** which the **profile** relates to. This is the **component** which the **profile** contains **values** for. |
 | Values   | The **values** which define the **profile**. |
-| Signature count| The number of signatures which define how to find the **profile**. This is internal to the **engine** and differs slightly in meaning between each. |
+| Signature Count| The number of signatures which define how to find the **profile**. This is internal to the **engine** and differs slightly in meaning between each. |
 
 
 # Native Library
 
 Most **51Degrees on-premise engines** act as a wrapper between the target language and a [native](@term{NativeCode}) library.
 
-When the **engine** is packaged for release to a package manager for the target language, multiple
+When the **engine** is packaged for release to a target language's package manager, multiple
 [native](@term{NativeCode}) binaries  are included. Each is compiled for a specific platform (e.g. 32 bit Windows, or 64 bit OS X)
 and the correct binary is automatically selected at startup.

@@ -1,4 +1,4 @@
-@page Concepts_Configuration_Builders_BuildFromConfiguration Building From Configuration
+@page Concepts_Configuration_Builders_BuildFromConfiguration Building from Configuration
 
 # Introduction
 
@@ -9,10 +9,9 @@ code, however the most flexible method is to store the configuration in a file.
 
 # Usage
 
-A configuration can either be parsed manually from XML or JSON and given to a @pipelinebuilder.
-Alternatively, in @webintegrations, a configuration file is loaded automatically.
+A configuration can be parsed manually from XML or JSON and given to a @pipelinebuilder. Alternatively, in @webintegrations, a configuration file is loaded automatically.
 
-Parsing XML or JSON is very language dependent, and in some languages one format is preferable.
+Note, the parsing of XML or JSON varies greatly between languages, with some languages having a preference for which format is used.
 
 ## Parsing XML
 
@@ -98,7 +97,7 @@ IPipeline pipeline = new PipelineBuilder(loggerFactory)
 @defaultsnippet{Select a file format to view an example configuration.}
 @startsnippet{XML}
 Configure a @pipeline with a @flowelement named 'MyElement' with a build parameter, and
-set the @pipeline to suppress process exceptions.
+set the @pipeline to [suppress process exceptions](@ref Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions).
 ```{xml}
 <PipelineOptions>
     <Elements>
@@ -117,7 +116,7 @@ set the @pipeline to suppress process exceptions.
 @endsnippet
 @startsnippet{JSON}
 Configure a @pipeline with a @flowelement named 'MyElement' with a build parameter, and
-set the @pipeline to suppress process exceptions.
+set the @pipeline to [suppress process exceptions](@ref Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions).
 ```{js}
 {
   "PipelineOptions": {
@@ -143,7 +142,7 @@ set the @pipeline to suppress process exceptions.
 
 Internally, the @pipelinebuilder relies on reflection to find the correct builder to build
 the @flowelements required by the configuration. For this reason, it is necessary for the
-libraries containing the @elementbuilders for these @flowelement to be loaded. This can be done
+libraries that contain the @elementbuilders for those @flowelement to be loaded. This can be done
 in a number of ways:
 * loading the library by calling a method in code;
 * adding a library to a config file to be loaded;
@@ -152,7 +151,7 @@ in a number of ways:
 The best method to use depends heavily on the language and use case. For example, a .NET Core
 web app would use dependency injection to add builder implementations to its service collection.
 
-Build parameters for the @flowelements in the configuration are set through the @elementbuilder
+Build parameters for the @flowelements in the configuration are set through the @elementbuilder,
 using methods with the naming convention of 'set' + option name, or the build method itself for
 options which are compulsory.
 

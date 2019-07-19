@@ -23,8 +23,8 @@ takes the value of the option as an argument and returns the **builder**.
 
 # Building
 
-Once all configuration is set in the **builder**, a 'build' method is used to build a @flowelement
-using the configuration options provided. This can optionally take extra options, usually these are options
+Once all options are set in the **builder**, a 'build' method is used to build a @flowelement
+with the configuration provided. This can optionally take extra options, usually these are options
 which are compulsory.
 
 # Usage
