@@ -12,8 +12,65 @@ the default is to not **lazily load** them, so the @pipeline's processing does n
 have been populated. When **lazy loading** is configured in an @aspectengine, values begin to load in another
 thread, and the processing can continue.
 
+# Caveats
+
+Getting an @aspectproperty's value from an @aspectdata which has been **lazily loaded** has the added
+complexity of the value not yet being known. For this reason, an exception that would otherwise have
+occurred during the @pipeline's processing stage has now been deferred until the point at which a value
+is fetched. So when **lazy loading** is enabled, the extra possibility of an error should be taken into
+consideration.
 
 # Configuration
 
+**Lazy loading** has two main configuration options.
+
+## Property Timeout
+
+As it is not known at the point of fetching an @aspectproperty's value whether or not it has been
+populated, a timeout option is available. This is the time to wait for the value before throwing an
+exception.
+
+
+## Cancellation
+
+In languages where this is possible, a 'cancellation token' can be provided. This is a means of
+canceling all processing which is still being carried out internally to the @aspectdata.
+
 
 # Implementation
+
+@startsnippets
+@showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@showsnippet{php,PHP}
+@showsnippet{node,Node.js}
+@defaultsnippet{Select a tab to view language specific implementation details.}
+@startsnippet{dotnet}
+**Lazy loading** functionality in .NET is fulfilled by `Tasks`. An @aspectengine's processing will be
+added to its @aspectdata as a new `Task` using its `AddProcessTask` method . Then when a value is
+requested from the @aspectdata, the `Task` is waited on by internal methods.
+
+The cancellation token in C# is the `CancellationToken` class from System.Threading.
+
+In the case where fetching a property times out, a `TimeoutException` is thrown, or if the token has
+been used to cancel processing, a `OperationCanceledException` is thrown.
+@endsnippet
+@startsnippet{java}
+**Lazy loading** functionality in Java is fulfilled by the `Callable` class which returns a `Future`. An
+@aspectengine's processing will be added to its @aspectdata as a new `Callable` using its `addProcessCallable`
+method. Then when a value is requested from the @aspectdata, the `Future` is waited on by internal methods.
+
+Java does not support cancellation tokens. However, an aggregate `Future` is exposed by an @aspectdata which
+can be canceled in the same manner as an individual `Future`, canceling all futures associated with the
+@aspectdata.
+
+In the case where fetching a property times out, a `LazyLoadTimeoutException` is thrown, or if the token has
+been used to cancel processing, a `CancellationException` is thrown.
+@endsnippet
+@startsnippet{php}
+**todo**
+@endsnippet
+@startsnippet{node}
+**todo**
+@endsnippet
+@endsnippets
