@@ -27,7 +27,7 @@ are also present in another @pipeline, as they may still be required elsewhere. 
 considered if building multiple @pipelines.
 
 
-## Suppress Process Exceptions
+## Suppress Process Exceptions @anchor Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions
 
 By default, exceptions that occur during the processing of a @flowdata will be thrown. 
 However, it is sometimes preferable to suppress and analyze
@@ -53,7 +53,7 @@ with the configuration provided.
 
 Rather than setting all build options and @flowelements explicitly in code form, it is often
 preferable to make the @pipeline configurable without recompiling. For more on this, see
-[Building From Configuration](@ref Concepts_Configuration_Builders_BuildFromConfiguration).
+[Building from Configuration](@ref Concepts_Configuration_Builders_BuildfromConfiguration).
 
 # Usage
 
