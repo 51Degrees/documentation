@@ -5,12 +5,12 @@
 A @pipeline is created using a **builder** which follows the
 [fluent builder pattern](https://en.wikipedia.org/wiki/Fluent_interface).
 @Flowelements are added to a @pipeline via the **builder**, along with
-other configuration options for the @pipeline. A @pipeline can also be
-built from a configuration by using dependency injection to find and build
-the @flowelements it needs in languages where this is supported.
+other configuration options for the @pipeline. In languages that support it, a @pipeline can also be
+built from a configuration using dependency injection to find and build
+the @flowelements needed.
 
 A @pipeline's configuration is immutable once it has been constructed, so
-all of its configuration must be done in the **builder**.
+all its configuration must be done in the **builder**.
 
 
 # Options
@@ -21,23 +21,21 @@ By default, when a @pipeline is disposed of, the @flowelements which it
 contained will still exist and will need to be disposed of at some point.
 
 An option is available in the **Pipeline builder** to automatically dispose
-of all the @pipeline's @flowelements during its own disposal.
-
+of all the @pipeline's @flowelements during its own disposal. 
 This option should not be used when a @pipeline contains @flowelements which
-are also present in another @pipeline, as the other @pipeline will then not
-function as intended. This will not usually be the case, but should be a
-consideration when building multiple @pipelines.
+are also present in another @pipeline, as they may still be required elsewhere. This should not usually be the case, but must be 
+considered if building multiple @pipelines.
 
 
 ## Suppress Process Exceptions
 
-When exceptions occur during the processing of a @flowdata, these will be thrown
-by default. However, it is sometimes preferable to suppress these and analyze
-them at runtime rather than letting them break execution.
+By default, exceptions that occur during the processing of a @flowdata will be thrown. 
+However, it is sometimes preferable to suppress and analyze
+these at runtime, rather than breaking the execution.
 
 By enabling this option, any exceptions that occur during the processing of a
 @flowdata are added to an [errors](@ref Concepts_Data_FlowData_Errors) collection
-in the @flowdata instead of being thrown.
+in the @flowdata and are not thrown.
 
 # Configuration
 
@@ -48,14 +46,14 @@ takes a boolean as an argument and returns the **builder**.
 
 # Building
 
-Once all configuration are set in a **builder**, a 'build' method is used to build a @pipeline
-using the configuration options provided.
+Once all options are set in the **builder**, a 'build' method is used to build a @pipeline
+with the configuration provided.
 
 # Building From a Configuration
 
 Rather than setting all build options and @flowelements explicitly in code form, it is often
 preferable to make the @pipeline configurable without recompiling. For more on this, see
-[Building From Configuration](@ref Concepts_Configuration_Builder_BuildFromConfiguration).
+[Building From Configuration](@ref Concepts_Configuration_Builders_BuildFromConfiguration).
 
 # Usage
 
