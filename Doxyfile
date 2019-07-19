@@ -261,6 +261,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "aspectengine=[aspect engine](@ref Concepts_FlowElements_AspectEngine)" \
                          "aspectengines=[aspect engines](@ref Concepts_FlowElements_AspectEngine)" \
                          "aspectproperties=[aspect properties](@ref Concepts_MetaData_AspectProperties)" \
+                         "aspectproperty=[aspect property](@ref Concepts_MetaData_AspectProperties)" \
                          "automaticdatafileupdates=[automatic data file updates](@ref Features_AutomaticDatafileUpdates)" \
                          "asynchronous=[asynchronous](@ref Features_AsynchronousExecution)" \
                          "buildfromconfiguration=[build from configuration](@ref Concepts_Configuration_Builders_BuildfromConfiguration)" \
