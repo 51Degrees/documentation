@@ -9,9 +9,9 @@ code, however the most flexible method is to store the configuration in a file.
 
 # Usage
 
-A configuration can be parsed manually from XML or JSON and given to a @pipelinebuilder, alternatively, in @webintegrations, a configuration file is loaded automatically.
+A configuration can be parsed manually from XML or JSON and given to a @pipelinebuilder. Alternatively, in @webintegrations, a configuration file is loaded automatically.
 
-Note, the parsing of XML or JSON is varies greatly between languages, with some languages having a preference for which format is used.
+Note, the parsing of XML or JSON varies greatly between languages, with some languages having a preference for which format is used.
 
 ## Parsing XML
 
