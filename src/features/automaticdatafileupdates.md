@@ -1,9 +1,9 @@
-@page Features_AutomaticDatafileUpdates Automatic Datafile Updates
+@page Features_AutomaticDatafileUpdates Automatic Data File Updates
 
 # Introduction
 
 @Onpremiseengines added to a @pipeline can have their @datafiles registered for automatic
-updates. When there is a new version of a @datafile available, it will be downloaded,
+updates. When there is a new version of a @datafile available, it will be downloaded
 and the @onpremiseengine refreshed with it. The file location where the @datafile was loaded
 from can also be monitored for changes, so when a @datafile is manually replaced, the
 @onpremiseengine will be refreshed with it.
@@ -17,18 +17,18 @@ to a @pipeline.
 
 A @datafile can also be manually registered for **automatic updates** by registering with the
 @dataupdateservice. This works in exactly the same way as if it was registered by the @pipelinebuilder,
-but in most cases is not necessary as the @pipelinebuilder will do the job.
+but in most cases is not necessary as the @pipelinebuilder will do this.
 
 
 # Configuration
 
-There are options available when registering a @datafile for **automatic updates** which deal with
+There are options available when registering a @datafile for **automatic updates** which specify
 when and how the @datafile is updated.
 
 ## Data Update URL
 
-To download a new @datafile when one is available, the @dataupdateservice must have a URL to download
-the new @datafile from. This can be a constant URL, or a
+To download a new @datafile when one becomes available, the @dataupdateservice must have a URL to download
+it from. This can be a constant URL, or a
 [URL formatter](@ref Features_AutomaticDatafileUpdates_UrlFormatter) can be used to dynamically
 generate the URL based on other options.
 
@@ -41,13 +41,13 @@ to download a @datafile which is only available to licensed users.
 ## File Watcher
 
 The location of the @datafile in the file system can be monitored by enabling the file system watcher. If
-the @datafile changes, then the @dataupdateservice will be called on to refresh the @onpremiseengine which
-is using the @datafile. This can be useful when distributing @datafiles to a local cluster.
+the @datafile changes, then the @dataupdateservice will be called to refresh the @onpremiseengine using that file.
+This can be useful when distributing @datafiles to a local cluster.
 
 ## Polling Interval
 
 The polling interval tells the @dataupdateservice the frequency with which to check for the availability of
-a new @datafile if the expected data is not known. If the @datafile itself provides the data which the next
+a new @datafile if the expected date is not known. If the @datafile itself provides the date when the next
 update will be available, then this option is ignored.
 
 ## Randomization
@@ -73,26 +73,25 @@ It is good practice to set a @datafile to be copied to a temporary location for 
 whatever mode the file is being used in (e.g. in memory or streamed from file) an **update** can occur smoothly.
 
 By setting the @onpremiseengine to use a temporary file location, the original @datafile is free to be changed by the
-@autoupdateservice. Once it has been replaced, the @onpremiseengine will be informed and will take care of removing the
-temporary file and creating a new one.
+**autoupdateservice**. Once the file has been replaced, the @onpremiseengine will be informed and manage the removal of the
+temporary file and creation of a new one.
 
 ## Decompression
 
 @Datafiles are often served as GZipped content from their download URL to minimize the amount of data which needs to be
 downloaded. When this is the case, the @dataupdateservice will unzip the @datafile before carrying on with the process.
 
-Usually an @onpremiseengine will set this, along with the URL/[URL formatter](@ref Features_AutomaticDatafileUpdates_UrlFormatter).
-But if an alternative URL has been set, then this option may need to be set also.
+Usually an @onpremiseengine will set this option, along with the URL/[URL formatter](@ref Features_AutomaticDatafileUpdates_UrlFormatter).
+But if an alternative URL has been set, then this option may need to be overridden too.
 
 ## Verify MD5
 
 A server will often provide the MD5 hash of the @datafile which it has served in the 'Content-MD5' response header. This can then
-be checked against what has actually been downloaded to ensure the integrity of the @datafile. By default this is usually enabled,
-however not all download servers support this.
+be checked against that which was actually downloaded to ensure the integrity of the @datafile. By default this is usually enabled,
+however not all download servers support it.
 
 ## Verify 'If-Modified-Since'
 
 Unnecessary downloads can be prevented by providing the download server with an 'If-Modified-Since' HTTP header. If this option
-is enabled (which it is by default for most @onpremiseengines) the 'If-Modified-Since' header will be set to the data at which the
-current @datafile was last modified. So if the server doesn't have a @datafile newer than that yet, then the @datafile will not be
-served.
+is enabled (which it is by default for most @onpremiseengines) the 'If-Modified-Since' header will be set to the date at which the
+current @datafile was last modified. If there is not a newer @datafile on the server then the service will not attempt to download a file.
