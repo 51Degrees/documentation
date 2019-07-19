@@ -53,7 +53,7 @@ with the configuration provided.
 
 Rather than setting all build options and @flowelements explicitly in code form, it is often
 preferable to make the @pipeline configurable without recompiling. For more on this, see
-[Building from Configuration](@ref Concepts_Configuration_Builders_BuildfromConfiguration).
+[Building from Configuration](@ref Concepts_Configuration_Builders_BuildFromConfiguration).
 
 # Usage
 
