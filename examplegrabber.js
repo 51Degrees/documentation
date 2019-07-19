@@ -26,6 +26,12 @@ function updateLinks(project, divId) {
     }
 }
 
+function addLink(url, divId) {
+    var div = $('#' + divId);
+    var link = "<p><a href=\"" + url + ""\" class=\"b-link--dotted\">Go to original page...</a></p>";
+    div.html(link + div.html());
+}
+
 /**
  * Grab the example from the target language project, parse, and place in
  * the 'grabbed-example' div.
@@ -46,12 +52,11 @@ function grabExample(caller, project, name) {
 
 function grabSnippet(caller, project, file, tag, btnClass, divId) {
     selectBtn(caller, document.getElementsByClassName(btnClass));
+    var url = '../../' + project + '/' + getVersion()
+        + '/' + file;
     // Load the example into the 'grabbed-example' div, then update the links.
-    $('#' + divId).load(
-        '../../' + project + '/' + getVersion()
-        + '/' + file
-        + ' #' + tag,
-        function() { updateLinks(project, divId); });
+    $('#' + divId).load(url + ' #' + tag,
+        function() { updateLinks(project, divId); addLink(url, divId)});
 
 }
 
