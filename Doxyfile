@@ -305,9 +305,9 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "flowelements=[flow elements](@ref Concepts_FlowElements_FlowElement)" \
                          "Flowelements=[Flow elements](@ref Concepts_FlowElements_FlowElement)" \
                          "geolocation=[Geo_Location](@ref Services_GeoLocation)" \
-                         "grabsnippet{5}=@htmlonly <button class=\"b-btn b-btn--secondary \1Btn\" onclick=\"grabSnippet(this, '\2', '\3', '\4', '\1Btn', '\1')\">\5</button> @endhtmlonly" \
+                         "grabsnippet{5}=@htmlonly <button class=\"b-btn b-btn--tab \1Btn\" onclick=\"grabSnippet(this, '\2', '\3', '\4', '\1Btn', 'b-btn--tab--is-active', '\1')\">\5</button> @endhtmlonly" \
                          "grabbedsnippet{1}=@htmlonly <div id=\"\1\"></div> @endhtmlonly" \
-                         "grabexample{3}=@htmlonly <button class=\"b-btn b-btn--secondary examplebtn\" onclick=\"grabExample(this, '\1', '\2')\">\3</button> @endhtmlonly" \
+                         "grabexample{3}=@htmlonly <button class=\"b-btn b-btn--tab examplebtn\" onclick=\"grabExample(this, '\1', '\2')\">\3</button> @endhtmlonly" \
                          "grabbedexample=@htmlonly <div id=\"grabbed-example\"></div> @endhtmlonly" \
                          "lazyloading=[lazy loading](@ref Features_LazyLoading)" \
                          "metadata=[metadata](@ref Concepts_MetaData_Index)" \
