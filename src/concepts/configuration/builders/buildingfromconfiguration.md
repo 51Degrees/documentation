@@ -9,10 +9,9 @@ code, however the most flexible method is to store the configuration in a file.
 
 # Usage
 
-A configuration can be parsed manually from XML or JSON and given to a @pipelinebuilder.
-Alternatively, in @webintegrations, a configuration file is loaded automatically.
+A configuration can be parsed manually from XML or JSON and given to a @pipelinebuilder, alternatively, in @webintegrations, a configuration file is loaded automatically.
 
-Note, the parsing of XML or JSON is heavily language dependent, and in some languages one format is preferable.
+Note, the parsing of XML or JSON is varies greatly between languages, with some languages having a preference for which format is used.
 
 ## Parsing XML
 
@@ -117,7 +116,7 @@ set the @pipeline to [suppress process exceptions](@ref Concepts_Configuration_B
 @endsnippet
 @startsnippet{JSON}
 Configure a @pipeline with a @flowelement named 'MyElement' with a build parameter, and
-set the @pipeline to suppress process exceptions.
+set the @pipeline to [suppress process exceptions](@ref Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions).
 ```{js}
 {
   "PipelineOptions": {
