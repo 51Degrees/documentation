@@ -4,14 +4,14 @@
 
 @Flowelements are constructed using a **builder** which follows the
 [fluent builder pattern](https://en.wikipedia.org/wiki/Fluent_interface).
-This gives a consistent structure to building any @flowelement, allowing
+This gives a consistent structure when building any @flowelement, allowing
 automatic building via configuration files.
 
 Typically the @flowelement built by a **builder** is added to a @pipeline
 via a @pipelinebuilder.
 
 By convention, a @flowelement's configuration is immutable once it has been
-constructed, so all of its configuration should be done in the **builder**.
+constructed, so all configuration should be done in the **builder**.
 
 
 # Configuration
@@ -23,7 +23,7 @@ takes the value of the option as an argument and returns the **builder**.
 
 # Building
 
-Once all configuration are set in a **builder**, a 'build' method is used to build a @flowelement
+Once all configuration is set in the **builder**, a 'build' method is used to build a @flowelement
 using the configuration options provided. This can optionally take extra options, usually these are options
 which are compulsory.
 
