@@ -41,8 +41,8 @@ The only part of the **client-side evidence** that the @Pipeline does not handle
 by default is how the values of any JavaScript properties actually end up embedded
 in the payload sent to the client device.
 
-This can be handled manually. However, the various @webintegration solutions will
-handle it automatically for a variety of languages and web frameworks.
+This can be managed manually. However, there are many @webintegration solutions, covering
+a wide variety of languages and web frameworks, that will handle it automatically .
 
 This section covers the specifics of how this works for each web framework:
 
@@ -82,7 +82,7 @@ This service will aggregate all JavaScript properties that have been returned by
 @flowelements in the @Pipeline into a single block of JavaScript code.
 This will then be returned to the caller as the response.
 
-Additionally, this service implements a caching mechanism so the resulting 
+Additionally, this service implements a caching mechanism, so the resulting 
 JavaScript will not need to be regenerated if successive requests contain the
 same evidence values.
 @endsnippet
