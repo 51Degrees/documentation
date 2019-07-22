@@ -1,1 +1,0 @@
-@page Services_GeoLocation Geo_Location
