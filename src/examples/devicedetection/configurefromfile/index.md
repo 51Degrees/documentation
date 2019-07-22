@@ -1,0 +1,7 @@
+@page Examples_DeviceDetection_ConfigureFromFile_Index Device Detection Configure From File Examples
+
+@subpage Examples_DeviceDetection_ConfigureFromFile_Cloud
+
+@subpage Examples_DeviceDetection_ConfigureFromFile_OnPremiseHash
+
+@subpage Examples_DeviceDetection_ConfigureFromFile_OnPremisePattern

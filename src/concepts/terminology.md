@@ -43,11 +43,11 @@ optimizations can be made in lower level languages than compared to high level l
 
 A web request is a message sent from a client device to a server where a web site is hosted.
 This message will usually be a simple request for a particular web page or other resource. 
-However, it contains a lot of additional information ([evidence](@ref Concepts_Data_Evidence)) 
+However, it also contains a lot of additional information ([evidence](@ref Concepts_Data_Evidence)) 
 that can be used to infer details about different contexts within which the request takes 
 place (aspects). 
 
 # Web Server @anchor Concepts_Terminology_WebServer
 
-A network connected machine which designed to serve content to external devices, or carry out
+A network connected machine designed to serve content to external devices, or carry out
 tasks. Most commonly, a web server is the host of a website.
