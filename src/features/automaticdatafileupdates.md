@@ -34,9 +34,9 @@ generate the URL based on other options.
 
 ## License Keys
 
-Premium @datafiles often require a license key to download as they are not freely available. The
-@dataupdateservice will use this, in combination with a [URL formatter](@ref Features_AutomaticDatafileUpdates_UrlFormatter)
-to download a @datafile which is only available to licensed users.
+A license key may be required when downloading certain types of @datafile. The
+@dataupdateservice uses the license key, in combination with a [URL formatter](@ref Features_AutomaticDatafileUpdates_UrlFormatter),
+to ensure the @datafile is only made available to licensed users.
 
 ## File Watcher
 
@@ -47,8 +47,8 @@ This can be useful when distributing @datafiles to a local cluster.
 ## Polling Interval
 
 The polling interval tells the @dataupdateservice the frequency with which to check for the availability of
-a new @datafile if the expected date is not known. If the @datafile itself provides the date when the next
-update will be available, then this option is ignored.
+a new @datafile when the expected date is not known. If the @datafile itself provides the date when the next
+update is expected, then this option is ignored.
 
 ## Randomization
 
