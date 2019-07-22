@@ -23,7 +23,7 @@ from devices that have this capability.
 @Elementproperties include a 'Type' property that indicates the type of the 
 data represented by the property's values.
 
-JavaScript properties are simply properties that have their Type set to 'Javascript'.
+JavaScript properties are simply properties that have their Type set to 'JavaScript'.
 The value of such a property should be a snippet of JavaScript code that, when run on
 the client device, will determine something about the device and then set a cookie 
 to record the value.

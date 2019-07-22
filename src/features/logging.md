@@ -3,8 +3,8 @@
 # Introduction
 
 **Logging** is available in all parts of the @pipeline, including @flowdata and @flowelements.
-The way **logging** is set up and used is very dependent on the language, as each language
-will have its own idiomatic way of carrying it out. Any **logging** method which matches the
+The way **logging** is implemented is heavily language dependent, with each having
+its own idiomatic way of performing the function. Any **logging** method which matches the
 language's logging interface can be used. Where possible, dependency injection
 is used to introduce a **logger** / **logger factory** to the @pipeline.
 
