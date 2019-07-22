@@ -1,0 +1,1 @@
+@page Examples_DeviceDetection_Performance_OnPremisePattern Device Detection Performance On-Premise Pattern Examples

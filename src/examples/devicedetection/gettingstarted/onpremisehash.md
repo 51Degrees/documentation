@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_GettingStarted_OnPremiseHash Device Detection On-Premise Hash Examples
+@page Examples_DeviceDetection_GettingStarted_OnPremiseHash Device Detection Getting Started On-Premise Hash Examples
 
 # Introduction
 

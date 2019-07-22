@@ -1,1 +1,1 @@
-@page Examples_DeviceDetection_GettingStarted_Cloud Device Detection Cloud Examples
+@page Examples_DeviceDetection_GettingStarted_Cloud Device Detection Cloud Getting Started Examples
