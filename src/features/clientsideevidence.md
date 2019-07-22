@@ -12,7 +12,7 @@
 Any device making a request to a web site will include some of this information.
 For example, the User-Agent HTTP header is almost always populated as part of a
 request.
-In some cases though, additional @evidence allowing more detail can be obtained
+In some cases though, additional @evidence providing more detail can be obtained
 from code running directly on the client device. In some cases, this may even be 
 required.
 For example, this technique can be used to retrieve the latitude and longitude 
