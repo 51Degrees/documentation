@@ -1,0 +1,3 @@
+@page Examples_DeviceDetection_Index Device Detection Examples
+
+@subpage Examples_DeviceDetection_GettingStarted_Index
