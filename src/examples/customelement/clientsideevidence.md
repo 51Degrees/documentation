@@ -1,1 +1,1 @@
-@page Examples_CustomElement_ClientSideEvidence Custom engine using client-side evidence
+@page Examples_CustomElement_ClientSideEvidence Custom Engine Using Client-Side Evidence

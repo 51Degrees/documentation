@@ -6,4 +6,6 @@
 
 @subpage Examples_CustomElement_GettingStarted
 
-@subpage Examples_CustomElement_Cloud
+@subpage Examples_CustomElement_OnPremise
+
+@subpage Examples_CustomElement_Parallel

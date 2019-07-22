@@ -6,6 +6,8 @@
 
 @subpage Features_ClientSideEvidence
 
+@subpage Features_CustomElements
+
 @subpage Features_LazyLoading
 
 @subpage Features_Logging
