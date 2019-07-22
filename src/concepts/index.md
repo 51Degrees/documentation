@@ -1,4 +1,4 @@
-@page Concepts_Index Conceptual Docs
+@page Concepts_Index Concepts
 
 @subpage Concepts_FlowElements_Index
 
