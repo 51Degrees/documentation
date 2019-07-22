@@ -8,7 +8,6 @@ digraph {
     // Style the arrow labels
     edge [fontname=Helvetica, fontsize=10];
     
-    flowdata [label="Flow data"];    
     arrow1 [label="1", shape=rarrow];
     // Add the flow data cluster
     subgraph clusterPipeline {
@@ -18,7 +17,7 @@ digraph {
         URL="@ref Concepts_Pipeline";        
 
         subgraph clusterDDHardware {
-            label="DeviceDetectionEngine (Hardware)";
+            label="DeviceDetectionEngine\n(Hardware)";
             fontname=Helvetica;
             fontsize=10;
             URL="@ref Services_DeviceDetection";
@@ -27,7 +26,7 @@ digraph {
         };
         arrow2 [label="2", shape=rarrow];
         subgraph clusterDDPlatform {
-            label="DeviceDetectionEngine (Platform/OS)";
+            label="DeviceDetectionEngine\n(Platform/OS)";
             fontname=Helvetica;
             fontsize=10;
             URL="@ref Services_DeviceDetection";
@@ -37,7 +36,6 @@ digraph {
     };
     arrow3 [label="3", shape=rarrow];    
     
-    flowdata -> arrow1 [style=invis];
     arrow1 -> Keys1 [lhead=clusterDDHardware, style=invis];
     
     Keys1 -> arrow2 [ltail=clusterDDHardware, style=invis];
