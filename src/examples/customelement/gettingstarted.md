@@ -63,7 +63,7 @@ public interface IAgeData : IElementDataReadOnly
 }
 ```
 
-Now the implementation of it will implement this 'getter' and add an internal 'setter' for the @flowelement
+Now the internal implementation of it will implement this 'getter' and add an 'setter' for the @flowelement
 to use.
 ```{cs}
 internal class AgeData : ElementDataBase, IAgeData
@@ -78,8 +78,8 @@ internal class AgeData : ElementDataBase, IAgeData
 
     public TimeSpan Age
     {
-        // Get the age from the internal IDictionary and cast to TimeSpan.
-        get { return (TimeSpan)this["age"]; }
+        // Get the age from the internal IDictionary as a TimeSpan.
+        get { return GetAs<TimeSpan>("age"); }
         // Add the age to the internal IDictionary.
         set { AsDictionary().Add("age", value); }
     }
@@ -120,9 +120,10 @@ can be used which deals with most of the logic. The @elementproperties,
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific @flowelement implementation.}
 @startsnippet{dotnet}
-First lets define a class which implements `FlowElementBase`. This has the type arguments of
-`IAgeData` - the interface extending @elementdata which will be added to the @flowdata, and 
-`IElementPropertyMetaData` as we only need the standard metadata for @elementproperties.
+First lets define a class which extends `FlowElementBase` (which partially implements `IFlowElement`).
+This has the type arguments of `IAgeData` - the interface extending @elementdata which will be 
+added to the @flowdata, and  `IElementPropertyMetaData` as we only need the standard metadata for
+@elementproperties.
 
 This needs a constructor matching the `FlowElementBase` class. So it takes a logger, and an
 @elementdata factory which will be used to construct an `IAgeData`:
