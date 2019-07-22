@@ -22,7 +22,7 @@ but in most cases is not necessary as the @pipelinebuilder will do this.
 
 # Configuration
 
-There are options available when registering a @datafile for **automatic updates** which specify
+There are a number of configuration options available when registering a @datafile for **automatic updates** which specify
 when and how the @datafile is updated.
 
 ## Data Update URL
