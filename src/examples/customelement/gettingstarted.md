@@ -6,6 +6,14 @@ This example looks at a very simple @flowelement which will take a date of birth
 and return an age. This is a very simple (and not all that useful) @flowelement which
 demonstrates the way in which a @flowelement should be implemented.
 
+# Download Example
+
+The source code used in this example is available here:
+- [C# Visual Studio project **todo**]()
+- [Java project **todo**]()
+- [PHP project **todo**]()
+- [Node.js project **todo**]()
+
 # Dependencies
 
 The @flowelement will need to a dependency on the @pipeline core package

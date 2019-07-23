@@ -12,6 +12,14 @@ The previous example took a date of birth, and returned an age. This example wil
 containing star signs to provide the extra property 'star sign'.
 
 
+# Download Example
+
+The source code used in this example is available here:
+- [C# Visual Studio project **todo**]()
+- [Java project **todo**]()
+- [PHP project **todo**]()
+- [Node.js project **todo**]()
+
 # Dependencies
 
 The @aspectengine will need to a dependency on the @pipeline engines package now that
