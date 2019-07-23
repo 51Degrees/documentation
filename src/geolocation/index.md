@@ -1,2 +1,2 @@
-@page GeoLocation_Index Geo-location
+@page Geolocation_Index Geolocation
 

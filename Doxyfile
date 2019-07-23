@@ -256,7 +256,9 @@ TAB_SIZE               = 4
 # commands \{ and \} for these it is advised to use the version @{ and @} or use
 # a double escape (\\{ and \\})
 
-ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData)" \
+ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
+                         "Antifraud=[Anti-fraud](@ref Fraud_Index)" \
+                         "aspectdata=[aspect data](@ref Concepts_Data_AspectData)" \
                          "Aspectdata=[Aspect data](@ref Concepts_Data_AspectData)" \
                          "aspectengine=[aspect engine](@ref Concepts_FlowElements_AspectEngine)" \
                          "aspectengines=[aspect engines](@ref Concepts_FlowElements_AspectEngine)" \
@@ -284,7 +286,8 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "elementbuilder=[element builder](@ref Concepts_Configuration_Builders_ElementBuilder)" \
                          "elementbuilders=[element builders](@ref Concepts_Configuration_Builders_ElementBuilder)" \
                          "dataupdateservice=[data update service](@ref Features_AutomaticDatafileUpdates)" \
-                         "devicedetection=[device detection](@ref Services_DeviceDetection)" \
+                         "devicedetection=[device detection](@ref DeviceDetection_Index)" \
+                         "Devicedetection=[Device detection](@ref DeviceDetection_Index)" \
                          "element=[element](@ref Concepts_FlowElements_FlowElement)" \
                          "elements=[elements](@ref Concepts_FlowElements_FlowElement)" \
                          "elementdata=[element data](@ref Concepts_Data_ElementData)" \
@@ -306,11 +309,14 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "flowelement=[flow element](@ref Concepts_FlowElements_FlowElement)" \
                          "flowelements=[flow elements](@ref Concepts_FlowElements_FlowElement)" \
                          "Flowelements=[Flow elements](@ref Concepts_FlowElements_FlowElement)" \
-                         "geolocation=[Geo_Location](@ref Services_GeoLocation)" \
+                         "geolocation=[geolocation](@ref Geolocation_Index)" \
+                         "Geolocation=[Geolocation](@ref Geolocation_Index)" \
                          "grabsnippet{5}=@htmlonly <button class=\"b-btn b-btn--tab \1Btn\" onclick=\"grabSnippet(this, '\2', '\3', '\4', '\1Btn', 'b-btn--tab--is-active', '\1')\">\5</button> @endhtmlonly" \
                          "grabbedsnippet{1}=@htmlonly <div id=\"\1\"></div> @endhtmlonly" \
                          "grabexample{3}=@htmlonly <button class=\"b-btn b-btn--tab examplebtn\" onclick=\"grabExample(this, '\1', '\2')\">\3</button> @endhtmlonly" \
                          "grabbedexample=@htmlonly <div class=\"c-tabgroup__main\" id=\"grabbed-example\"></div> @endhtmlonly" \
+                         "ipintelligence=[IP intelligence](@ref ipintelligence_Index)" \
+                         "Ipintelligence=[IP intelligence](@ref ipintelligence_Index)" \
                          "lazyloading=[lazy loading](@ref Features_LazyLoading)" \
                          "metadata=[metadata](@ref Concepts_MetaData_Index)" \
                          "Metadata=[Metadata](@ref Concepts_MetaData_Index)" \
@@ -325,6 +331,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "pipelinebuilders=[pipeline builders](@ref Concepts_Configuration_Builders_PipelineBuilder)" \
                          "properties=[properties](@ref Concepts_MetaData_ElementProperties)" \
                          "property=[property](@ref Concepts_MetaData_ElementProperties)" \
+                         "quickstart=[quick start](@ref Quickstart_Index)" \
                          "shareusage=[share usage](@ref Features_UsageSharing)" \
                          "startsnippets=@htmlonly <div class=\"c-tabgroup\"> @endhtmlonly" \
                          "startsnippet{2}=@htmlonly <div class=\"c-tabgroup__main\" data-lang=\"\1\" style=\"display:\2;\"> @endhtmlonly" \
@@ -337,6 +344,7 @@ ALIASES                = "aspectdata=[aspect data](@ref Concepts_Data_AspectData
                          "usagesharing=[usage sharing](@ref Features_UsageSharing)" \
                          "webintegration=[web integration](@ref Features_WebIntegration)" \
                          "webintegrations=[web integrations](@ref Features_WebIntegration)"
+                         
 
 # This tag can be used to specify a number of word-keyword mappings (TCL only).
 # A mapping has the form "name=value". For example adding "class=itcl::class"
