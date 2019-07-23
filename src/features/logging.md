@@ -3,7 +3,7 @@
 # Introduction
 
 **Logging** is available in all parts of the @pipeline, including @flowdata and @flowelements.
-The way **logging** is implemented is heavily language dependent, with each having
+How **logging** is implemented will differ depending on language, with each having
 its own idiomatic way of performing the function. Any **logging** method which matches the
 language's logging interface can be used. Where possible, dependency injection
 is used to introduce a **logger** / **logger factory** to the @pipeline.
@@ -11,10 +11,10 @@ is used to introduce a **logger** / **logger factory** to the @pipeline.
 
 # Configuration
 
-Idiomatic set up of logging differs a lot between languages, but the basic principals apply
+Idiomatic set up of logging varies greatly between languages, but the basic principals apply
 to all. A logger factory is provided to all @builders so everything has access to logging
 functionality by creating a logger for its instance. Standard log levels are adhered to,
-so the information logged can be limited to 'warn' etc.
+so the information logged can be limited to 'warn' for example.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -28,7 +28,7 @@ This means that @pipelinebuilders and @elementbuilders should be supplied with a
 of `ILoggerFactory` which will create **logger** instances for each @pipeline and @flowelement
 they create. **Loggers** will also be created for all @flowdata and @elementdata that are created.
 
-The simplest way is to create the default Microsoft implementation available in Microsoft.Logging.Extensions:
+The simplest way is to create the default Microsoft implementation available in Microsoft.Extensions.Logging:
 ```{cs}
 ILoggerFactory loggerFactory = new LoggerFactory();
 ```
@@ -41,7 +41,7 @@ In Java, the `Logger` interface from org.slf4j.slf4j-api is used for **logging**
 @pipelinebuilders and @elementbuilders should be supplied with an implementation of `ILoggerFactory` which
 will create **logger** instances for each @pipeline and @flowelement that are created.
 
-The simplest way is to include a dependency on an implementation of slf4j-api such as org.slf4j.slf4j-simple:
+The simplest way is to include a dependency on an implementation of slf4j-api such as org.slf4j.slf4j\-simple:
 ```{xml}
 <project>
   ...
