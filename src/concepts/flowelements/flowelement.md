@@ -158,13 +158,13 @@ Select a language to view language specific info on thread-safety.
 @endsnippet
 @startsnippet{dotnet}
 **Flow elements** in C# are generally immutable, so do not need thread safety built in directly, however they often alter a @flowdata which
-must be done in a thread-safe way. This is usually left up to the @flowdata to handle, and data within it altered by the **element**
-calling a thread-safe ``set`` method which is exposed only to the **element**.
+must be done in a thread-safe way. Accessing the internal data structure is usually left up to the @flowdata itself by exposing a thread safe
+`set` method to the **element**.
 @endsnippet
 @startsnippet{java}
 **Flow elements** in Java are generally immutable, so do not need thread safety built in directly, however they often alter a @flowdata which
-must be done in a thread-safe way. This is usually left up to the @flowdata to handle, and data within it altered by the **element**
-calling a thread-safe ``set`` method which is exposed only to the **element**.
+must be done in a thread-safe way. Accessing the internal data structure is usually left up to the @flowdata itself by exposing a thread safe
+`set` method to the **element**.
 @endsnippet
 @startsnippet{php}
 **todo**
