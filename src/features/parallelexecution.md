@@ -5,13 +5,14 @@
 **Parallel execution** can refer to two or more @flowelements whose processing is executed
 simultaneously within the @Pipeline.
 
-It can also refer to the ability of an individual @flowelement instance to process multiple 
-requests simultaneously. E.g. One pipeline instance with one @flowelement that is called  
+It also refers to the ability of an individual @flowelement instance to process multiple 
+requests simultaneously. E.g. One @pipeline instance with one @flowelement being called 
 from separate threads.
+
 
 Note, that some languages with @Pipeline implementations do not have the built-in 
 ability to handle **parallel execution**. For example, the PHP process runs in a 
-single-thread so @flowelements cannot be configured to run in **parallel**.
+single-thread, so @flowelements cannot be configured to run in **parallel**.
 
 # Executing Flow Elements in Parallel
 
