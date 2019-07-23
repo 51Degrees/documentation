@@ -59,7 +59,7 @@ to add a 'getter' for it.
 ```{cs}
 public interface IAgeData : IElementDataReadOnly
 {
-    TimeSpan Age { get; }
+    int Age { get; }
 }
 ```
 
@@ -76,10 +76,10 @@ internal class AgeData : ElementDataBase, IAgeData
         // No need to do anything here, lets use the internal IDictionary.
     }
 
-    public TimeSpan Age
+    public int Age
     {
-        // Get the age from the internal IDictionary as a TimeSpan.
-        get { return GetAs<TimeSpan>("age"); }
+        // Get the age from the internal IDictionary as an int.
+        get { return GetAs<int>("age"); }
         // Add the age to the internal IDictionary.
         set { AsDictionary().Add("age", value); }
     }
@@ -155,30 +155,31 @@ public class SimpleFlowElement : FlowElementBase<IAgeData, IElementPropertyMetaD
 
     // The only item of evidence needed is "date-of-birth".
     public override IEvidenceKeyFilter EvidenceKeyFilter =>
-        new EvidenceKeyFilterWhitelist(new List<string>(){"date-of-birth"});
+        new EvidenceKeyFilterWhitelist(new List<string>() { "date-of-birth" });
 
     public override IList<IElementPropertyMetaData> Properties =>
         new List<IElementPropertyMetaData>()
         {
             // The only property which will be returned is "age" which will be
-            // a TimeSpan.
-            new ElementPropertyMetaData(this, "age",typeof(TimeSpan),true)
+            // an int.
+            new ElementPropertyMetaData(this, "age", typeof(int), true)
         };
 
     protected override void ProcessInternal(IFlowData data)
     {
+        DateTime zero = new DateTime(1, 1, 1);
         // Create a new IAgeData, and cast to AgeData so the 'setter' is available.
         AgeData ageData = (AgeData)data.GetOrAdd(ElementDataKey, CreateElementData);
 
-        if (data.TryGetEvidence("data-of-birth", out DateTime dateOfBirth))
+        if (data.TryGetEvidence("date-of-birth", out DateTime dateOfBirth))
         {
             // "date-of-birth" is there, so set the age.
-            ageData.Age = DateTime.Now - dateOfBirth;
+            ageData.Age = (zero + (DateTime.Now - dateOfBirth)).Year - 1;
         }
         else
         {
-            // "data-of-birth" is not there, so set the age to minimum.
-            ageData.Age = TimeSpan.MinValue;
+            // "date-of-birth" is not there, so set the age to -1.
+            ageData.Age = -1;
         }
     }
 
@@ -242,7 +243,9 @@ public class SimpleFlowElementBuilder
     }
 
     // This is the element data factory, and is called in the Process method of the element.
-    public IAgeData CreateData(IFlowData flowData, FlowElementBase<IAgeData,IElementPropertyMetaData> element)
+    public IAgeData CreateData(
+        IFlowData flowData,
+        FlowElementBase<IAgeData,IElementPropertyMetaData> element)
     {
         return new AgeData(_loggerFactory.CreateLogger<AgeData>(), flowData);
     }
