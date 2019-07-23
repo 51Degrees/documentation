@@ -41,7 +41,7 @@ In Java, the `Logger` interface from org.slf4j.slf4j-api is used for **logging**
 @pipelinebuilders and @elementbuilders should be supplied with an implementation of `ILoggerFactory` which
 will create **logger** instances for each @pipeline and @flowelement that are created.
 
-The simplest way is to include a dependency on an implementation of slf4j-api such as org.slf4j.slf4j\-simple:
+The simplest way is to include a dependency on an implementation of slf4j-api such as org.slf4j.slf4j\c \-simple:
 ```{xml}
 <project>
   ...
