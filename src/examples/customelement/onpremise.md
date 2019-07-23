@@ -66,7 +66,7 @@ which extends `IElementDataReadOnly`. A 'getter' is also added for the new prope
 //public interface IAgeData : IElementDataReadOnly
 public interface IAgeData : IAspectData
 {
-    TimeSpan Age { get; }
+    int Age { get; }
     string StarSign { get; }
 }
 ```
@@ -78,29 +78,30 @@ same way as `Age`.
 internal class AgeData : AspectDataBase, IAgeData
 {
     public AgeData(
-        ILogger<ElementDataBase> logger,
-        IFlowData flowData)
-        : base(logger, flowData)
+        ILogger<AspectDataBase> logger,
+        IFlowData flowData,
+        IAspectEngine engine,
+        IMissingPropertyService missingPropertyService)
+        : base(logger, flowData, engine, missingPropertyService)
     {
-        // No need to do anything here, lets use the internal IDictionary.
     }
 
-    public TimeSpan Age
+    public int Age
     {
-        // Get the age from the internal IDictionary as a TimeSpan.
-        get { return GetAs<TimeSpan>("age"); }
+        // Get the age from the internal IDictionary as an int.
+        get { return GetAs<int>("age"); }
         // Add the age to the internal IDictionary.
         set { AsDictionary().Add("age", value); }
     }
 
-    public string Age
+    public string StarSign
     {
-        // Get the star sign from the internal IDictionary as a TimeSpan.
+        // Get the star sign from the internal IDictionary as a string.
         get { return GetAs<string>("starsign"); }
         // Add the star sign to the internal IDictionary.
         set { AsDictionary().Add("starsign", value); }
     }
-    
+
     protected override void ManagedResourcesCleanup()
     {
         // Nothing to clean up here.
@@ -167,7 +168,39 @@ public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspect
 ```
 
 The `Init` method in this example will simply read a CSV file with the start and end dates of each
-star sign, and add each to a list.
+star sign, which looks like:
+```{csv}
+Aries,21/03,19/04
+Taurus,20/04,20/05
+Gemini,21/05,20/06
+Cancer,21/06,22/07
+...
+```
+
+and add each to a list of a new class named `StarSign` which has the following simple implementation:
+```{cs}
+internal class StarSign
+{
+    public StarSign(string name, DateTime start, DateTime end)
+    {
+        Name = name;
+        Start = start.AddYears(-start.Year + 1);
+        End = end.AddYears(-end.Year + 1);
+    }
+
+    public string Name { get; private set; }
+
+    public DateTime Start { get; private set; }
+
+    public DateTime End { get; private set; }
+}
+```
+
+Note that the year of the start and end date are both set to 1, as the year should be ignored, but
+the year 0 cannot be used in a `DateTime`.
+
+The new `Init` method looks like this:
+
 ```{cs}
 private void Init()
 {
@@ -189,6 +222,7 @@ private void Init()
     _starSigns = starSigns;
 }
 ```
+
 
 Now the abstract methods can be implemented to create a functional @aspectengine.
 ```{cs}
@@ -236,9 +270,15 @@ public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspect
     public override IEvidenceKeyFilter EvidenceKeyFilter =>
         new EvidenceKeyFilterWhitelist(new List<string>() { "date-of-birth" });
 
+    // These properties now implement IAspectPropertyMetaData.
     public override IList<IAspectPropertyMetaData> Properties => new List<IAspectPropertyMetaData>() {
-        new AspectPropertyMetaData(this, "age", typeof(TimeSpan), "age", new List<string>(){"free"}, true)};
+        // The age property.
+        new AspectPropertyMetaData(this, "age", typeof(int), "age", new List<string>(){"free"}, true),
+        // The new star sign property.
+        new AspectPropertyMetaData(this, "starsign", typeof(string), "age", new List<string>(){"free"}, true),
+    };
 
+    // The data file is free.
     public override string DataSourceTier => "free";
 
     public override DateTime GetDataFilePublishedDate(string dataFileIdentifier = null)
@@ -248,16 +288,20 @@ public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspect
 
     public override DateTime GetDataFileUpdateAvailableTime(string dataFileIdentifier = null)
     {
-        return DataFiles[0].UpdateAvailableTime;
+        // Just return a date which will never be reached as this will never
+        // need updating.
+        return DateTime.MaxValue;
     }
 
     public override void RefreshData()
     {
+        // Reload star signs from the data file.
         Init();
     }
 
     public override void RefreshData(string dataFileIdentifier)
     {
+        // Reload star signs from the data file.
         Init();
     }
 
@@ -269,14 +313,15 @@ public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspect
 
     protected override void ProcessEngine(IFlowData data, IAgeData aspectData)
     {
-        // Create a new IAgeData, and cast to AgeData so the 'setters' are available.
+        DateTime zero = new DateTime(1, 1, 1);
+        // Create a new IAgeData, and cast to AgeData so the 'setter' is available.
         AgeData ageData = (AgeData)data.GetOrAdd(ElementDataKey, CreateElementData);
 
-        if (data.TryGetEvidence("data-of-birth", out DateTime dateOfBirth))
+        if (data.TryGetEvidence("date-of-birth", out DateTime dateOfBirth))
         {
-            // "date-of-birth" is there, so set the age and find the star sign.
-            ageData.Age = DateTime.Now - dateOfBirth;
-            var monthAndDay = new DateTime(0, dateOfBirth.Month, dateOfBirth.Day);
+            // "date-of-birth" is there, so set the age and star sign.
+            ageData.Age = (zero + (DateTime.Now - dateOfBirth)).Year - 1;
+            var monthAndDay = new DateTime(1, dateOfBirth.Month, dateOfBirth.Day);
             foreach (var starSign in _starSigns)
             {
                 if (monthAndDay > starSign.Start &&
@@ -290,7 +335,7 @@ public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspect
         else
         {
             // "date-of-birth" is not there, so set the properties to defaults.
-            ageData.Age = TimeSpan.MinValue;
+            ageData.Age = -1;
             ageData.StarSign = "Unknown";
         }
     }
@@ -343,9 +388,12 @@ public class SimpleOnPremiseEngineBuilder : SingleFileAspectEngineBuilderBase<Si
 
     public override SimpleOnPremiseEngineBuilder SetPerformanceProfile(PerformanceProfiles profile)
     {
+        // Lets not implement multiple performance profiles in this example.
         throw new NotImplementedException();
     }
 
+    // This method is called by the Build method in the base class which contains
+    // general logic.
     protected override SimpleOnPremiseEngine BuildEngine(string tempPath, List<string> properties)
     {
         if (DataFileConfigs.Count != 1)
@@ -362,6 +410,7 @@ public class SimpleOnPremiseEngineBuilder : SingleFileAspectEngineBuilderBase<Si
             CreateData,
             TempDir);
     }
+    // This is the aspect data factory, and is called in the Process method of the engine.
     public IAgeData CreateData(
         IFlowData flowData,
         FlowElementBase<IAgeData, IAspectPropertyMetaData> aspectEngine)
