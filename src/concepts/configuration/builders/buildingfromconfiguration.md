@@ -236,8 +236,7 @@ in a number of ways:
 * adding a library to a config file to be loaded;
 
 For example:
-```
-{cs}
+```{cs}
 Assembly.Load("FiftyOne.DeviceDetection.Pattern.Engine.OnPremise");
 ```
 
