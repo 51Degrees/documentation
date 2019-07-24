@@ -12,9 +12,9 @@ is used to introduce a **logger** / **logger factory** to the @pipeline.
 # Configuration
 
 Idiomatic set up of logging varies greatly between languages, but the basic principals apply
-to all. A logger factory is provided to all @builders so everything has access to logging
-functionality by creating a logger for its instance. Standard log levels are adhered to,
-so the information logged can be limited to 'warn' for example.
+to all. Both an @elementbuilder, and a @pipelinebuilder, are provided with a **logger factory**
+so that every new object that is created has **logging** functionality specific to its instance.
+Standard log levels are adhered to, so the information logged can be limited to 'warn' for example.
 
 @startsnippets
 @showsnippet{dotnet,C#}
