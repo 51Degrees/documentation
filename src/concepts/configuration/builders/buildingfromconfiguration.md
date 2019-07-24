@@ -139,7 +139,7 @@ set the @pipeline to [suppress process exceptions](@ref Concepts_Configuration_B
 @endsnippet
 @endsnippets
 
-# Rules for Building a Configuration File
+# Rules for Building from a Configuration File
 
 The core **build from configuration** logic ends up calling the same configuration
 methods on the same builders as the developer does when they configure the @Pipeline in code.
@@ -154,7 +154,8 @@ Each of the following is tried in turn to find a builder that matches the suppli
 
 1. Case insensitive match on type name. (e.g. 'MyElementBuilder' matches a type with that name.)
 2. Case insensitive match on type name suffixed with 'builder'. (e.g. 'MyElement' matches a type called 'MyElementBuilder'.)
-3. Where the language allows it, match on some alternative name for the builder. (See language-specific section below.)
+3. Where the language allows it, match on some 
+[alternative name](@ref Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName) for the builder.
 
 ## Element Build Parameters
 
@@ -164,7 +165,8 @@ Each of the following is tried in turn to find a method that matches the supplie
 
 1. Case insensitive match on method name. (e.g. 'SetCacheSize' matches a method with that name.)
 2. Case insensitive match on method name prefixed with 'set'. (e.g. 'CacheSize' matches a method called 'SetCacheSize'.)
-3. Where the language allows it, match on some alternative name for the method. (See language-specific section below.)
+3. Where the language allows it, match on some 
+[alternative name](@ref Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName) for the method.
 
 The value part of each entry in the 'build parameters' list is then passed to the matching method as a parameter.
 For strongly-types languages, this may also involve parsing a string value from the configuration into the required type.
@@ -181,6 +183,10 @@ methods on the @pipelinebuilder instead of the @elementbuilder.
 
 See above for all the rules governing this.
 
+## Alternative Naming Details @anchor Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName
+
+Some languages have a mechanism for specifying alternative names for builders and methods.
+These can be used to match against supplied configuration options.
 
 @startsnippets
 @showsnippet{dotnet,C#}
