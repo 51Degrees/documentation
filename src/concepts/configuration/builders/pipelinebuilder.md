@@ -6,8 +6,7 @@ A @pipeline is created using a **builder** which follows the
 [fluent builder pattern](https://en.wikipedia.org/wiki/Fluent_interface).
 @Flowelements are added to a @pipeline via the **builder**, along with
 other configuration options for the @pipeline. In languages that support it, a @pipeline can also be
-built from a configuration using dependency injection to find and build
-the @flowelements needed.
+built from a configuration.
 
 A @pipeline's configuration is immutable once it has been constructed, so
 all its configuration must be done in the **builder**.
@@ -39,8 +38,8 @@ in the @flowdata and are not thrown.
 
 # Configuration
 
-Following the convention of fluent builder, configuration options are set using 'set' naming. For example,
-to set a the 'auto dispose elements' option, the **builder** has a 'SetAutoDisposeElements' method which
+Following the convention of fluent builder, configuration methods are prefixed with 'set'. For example,
+to set the 'auto dispose elements' option, the **builder** has a 'SetAutoDisposeElements' method which
 takes a boolean as an argument and returns the **builder**.
 
 
