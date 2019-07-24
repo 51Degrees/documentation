@@ -53,7 +53,7 @@ configuration file.
 
 # Building
 
-Once all options are set in the **builder**, a 'build' method is used to build a @flowelement
+Once all options are set in the **builder**, a 'build' method is used to build and return a @flowelement
 with the configuration provided. 
 A build method can take additional arguments and a **builder** may have multiple build methods.
 When an argument appears on all build methods for that **builder** it becomes compulsory.

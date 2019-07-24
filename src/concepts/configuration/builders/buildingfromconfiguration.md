@@ -141,8 +141,8 @@ set the @pipeline to [suppress process exceptions](@ref Concepts_Configuration_B
 
 # Rules for Building from a Configuration File
 
-The core **build from configuration** logic ends up calling the same configuration
-methods on the same builders as the developer does when they configure the @Pipeline in code.
+The core **build from configuration** logic ultimately calls the same configuration
+methods, on the same builders as the developer does if they configure the @Pipeline in code.
 
 There are several rules that govern how a value in a configuration file is mapped to a 
 builder or configuration method:
@@ -215,9 +215,9 @@ This can be used to specify one or more other names to match on when building fr
 
 # Internals
 
-Internally, the precise mechanism depends on the language being used.
-Where possible, the rules for how things are mapped are consistent between languages but this
-is not always possible.
+The precise internal mechanics depend on the language being used.
+Wherever possible, the rules for mapping are consistent between languages but this
+cannot always be achieved.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -245,7 +245,7 @@ by the @elementbuilders it creates.
 
 By default, the @pipelinebuilder will call a constructor on @elementbuilder that takes an 
 ILoggerFactory if one is available. 
-If not, it will call the default constructor if one is available.
+If not, it will call the default constructor - if one is available.
 
 If neither are available then the @pipelinebuilder will be unable to create the @elementbuilder.
 

@@ -5,8 +5,8 @@
 A @pipeline is created using a **builder** which follows the
 [fluent builder pattern](https://en.wikipedia.org/wiki/Fluent_interface).
 @Flowelements are added to a @pipeline via the **builder**, along with
-other configuration options for the @pipeline. In languages that support it, a @pipeline can also be
-built from a configuration.
+other configuration options for the @pipeline. In languages that support it, a 
+@pipeline can also be built from a configuration file.
 
 A @pipeline's configuration is immutable once it has been constructed, so
 all its configuration must be done in the **builder**.
@@ -22,8 +22,8 @@ contained will still exist and will need to be disposed of at some point.
 An option is available in the **Pipeline builder** to automatically dispose
 of all the @pipeline's @flowelements during its own disposal. 
 This option should not be used when a @pipeline contains @flowelements which
-are also present in another @pipeline, as they may still be required elsewhere. This should not usually be the case, but must be 
-considered if building multiple @pipelines.
+are also present in another @pipeline, as they may still be required elsewhere. This should
+not usually be the case, but must be considered if building multiple @pipelines.
 
 
 ## Suppress Process Exceptions @anchor Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions
@@ -48,10 +48,10 @@ takes a boolean as an argument and returns the **builder**.
 Once all options are set in the **builder**, a 'build' method is used to build and return a @pipeline
 with the configuration provided.
 
-# Building From a Configuration
+# Building from a Configuration
 
 Rather than setting all build options and @flowelements explicitly in code form, it is often
-preferable to make the @pipeline configurable without recompiling. For more on this, see
+preferable to make the @pipeline configurable without the need to recompile. For more on this, see
 [Building from Configuration](@ref Concepts_Configuration_Builders_BuildFromConfiguration).
 
 # Usage
