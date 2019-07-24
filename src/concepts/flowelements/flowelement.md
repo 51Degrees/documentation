@@ -24,7 +24,7 @@ The primary function of a **flow element** is to process data. Both the input (@
 (@elementdata) of the processing are contained in a single place called a @flowdata.
 
 The **flow element** typically uses the @evidence contained within the supplied @flowdata to
-determine values which it populates in the resulting @elementdata and is then added to the @flowdata
+determine the values it will populate in the resulting @elementdata, which is then added to the @flowdata
 as an output.
 
 However, **flow elements** may also use existing @elementdata from the @flowdata as input and 
@@ -45,7 +45,7 @@ the age of the user in an @elementdata instance before adding the @elementdata i
 # Hierarchy
 
 While an implementation can implement just **flow element**, useful functionality is built up in layers as shown below.
-Any of these layers can be built upon by an implementation depending on its requirements.
+Any of these layers can be added to by an implementation, depending on its requirements.
 
 In languages which support inheritance, this is a structural hierarchy. In other languages, this may be more of a conceptual
 hierarchy, and not reflected directly in the code.
