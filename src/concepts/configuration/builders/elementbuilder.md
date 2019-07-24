@@ -4,10 +4,10 @@
 
 @Flowelements are constructed using a **builder** which follows the
 [fluent builder pattern](https://en.wikipedia.org/wiki/Fluent_interface).
-This gives a consistent structure when building any @flowelement, allowing
+This gives a consistent structure when building any @flowelement and allows
 automatic building via configuration files.
 
-Typically the @flowelement built by a **builder** is added to a @pipeline
+Typically the @flowelement built by an **element builder** is added to a @pipeline
 via a @pipelinebuilder.
 
 By convention, a @flowelement's configuration is immutable once it has been
@@ -32,12 +32,12 @@ Select a language.
 @endsnippet
 @startsnippet{dotnet}
 In .NET, the user is free to define methods on the builder as they wish.
-However, if they want to take advantage of the Pipeline's @buildfromconfiguration method then they must 
+However, if they want to take advantage of the @Pipeline's @buildfromconfiguration method then they must 
 follow certain rules:
 
 1. A configuration method on an **element builder** must have one and only one parameter.
 2. The builder must have at least one method named 'Build' which returns an instance that implements IFlowElement.
-3. The types of any parameters on configuration methods and Build methods must be string or have a static 
+3. The types of any parameters on configuration methods and build methods must be string or have a static 
 'TryParse' method. This can be an extension method if needed. It is used to parse the string value from the 
 configuration file.
 @endsnippet
@@ -58,10 +58,10 @@ with the configuration provided.
 A build method can take additional arguments and a **builder** may have multiple build methods.
 When an argument appears on all build methods for that **builder** it becomes compulsory.
 
-For example, a 'resource key' is compulsory for 51Degrees @cloudengines. Consequently, it appears as 
+For example, a 'resource key' is compulsory for 51Degrees' @cloudengines. Consequently, it appears as 
 an argument in all build methods for the associated **builders**.
 
-Combinations of compulsory arguments can also be arranged. For example, 51Degrees @onpremiseengines 
+Combinations of compulsory arguments can also be arranged. For example, 51Degrees' @onpremiseengines 
 require either a filename or a data structure containing the file data in memory.
 Therefore they have two build methods, one taking a filename and the other taking the memory-based
 data structure.
