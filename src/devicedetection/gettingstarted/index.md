@@ -1,1 +1,0 @@
-@page DeviceDetection_GettingStarted_Index Getting Started
