@@ -20,6 +20,8 @@ occurred during the @pipeline's processing stage has now been deferred until the
 is fetched. When **lazy loading** is enabled, this extra possibility of an error should be taken into
 consideration.
 
+TODO: Add examples of how to handle these errors.
+
 # Configuration
 
 **Lazy loading** has two main configuration options.
