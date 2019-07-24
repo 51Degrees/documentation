@@ -31,7 +31,7 @@ asynchronous approach as we believe this gives better control to the developer.
 @endsnippet
 @startsnippet{php}
 PHP is single-threaded and does not support non-blocking execution out of the box.
-The @Pipeline has no support for **asynchronous execution** or @lazyloading in PHP.  
+The @Pipeline has no support for **asynchronous execution** nor @lazyloading in PHP.  
 @endsnippet
 @startsnippet{node}
 Node.js, being based on JavaScript is a fundamentally asynchronous language. As such,

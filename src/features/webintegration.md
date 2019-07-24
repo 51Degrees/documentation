@@ -10,7 +10,7 @@ have produced a range of packages to integrate with different web frameworks.
 # Features
 
 The details of each integration vary significantly. However, the features provided
-remain largely the same.
+are largely the same.
 
 - Create a @Pipeline directly from configuration with little or no other direction from the developer.
 - Automatically feed relevant @evidence to the @Pipeline from incoming web requests.
