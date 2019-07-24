@@ -215,7 +215,7 @@ This can be used to specify one or more other names to match on when building fr
 
 # Internals
 
-The precise internal mechanics will depend on the language being used.
+The precise internal mechanics depend on the language being used.
 Wherever possible, the rules for mapping are consistent between languages but this
 cannot always be achieved.
 
