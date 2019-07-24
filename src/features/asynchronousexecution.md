@@ -25,6 +25,9 @@ However, for .NET we have decided to implement a @lazyloading feature instead of
 asynchronous approach as we believe this gives better control to the developer.
 @endsnippet
 @startsnippet{java}
+Java supports asynchronous code using the [CompletableFuture](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html) class.
+For Java we have decided to implement a @lazyloading feature instead of a fully
+asynchronous approach as we believe this gives better control to the developer.
 @endsnippet
 @startsnippet{php}
 PHP is single-threaded and does not support non-blocking execution out of the box.
@@ -35,5 +38,5 @@ Node.js, being based on JavaScript is a fundamentally asynchronous language. As 
 the @Pipeline will work in a non-blocking way by default through the use of promises.
 
 See the node documentation for more details about 
-[blocking vs non-blocking calls](@ref https://nodejs.org/de/docs/guides/blocking-vs-non-blocking/). 
+[blocking vs non-blocking calls](https://nodejs.org/de/docs/guides/blocking-vs-non-blocking/). 
 @endsnippet
