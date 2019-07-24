@@ -45,7 +45,7 @@ takes a boolean as an argument and returns the **builder**.
 
 # Building
 
-Once all options are set in the **builder**, a 'build' method is used to build a @pipeline
+Once all options are set in the **builder**, a 'build' method is used to build and return a @pipeline
 with the configuration provided.
 
 # Building from a Configuration
