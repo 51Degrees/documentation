@@ -25,7 +25,7 @@ two or more @flowelements can be executed in **parallel** within the overall seq
 In the example above, elements **E1** and **E2** will start their processing at the same time. 
 
 Note that **parallel execution** is limited by the hardware the @Pipeline is running on. 
-If the CPU only has two cores then running four elements in parallel is unlikely to 
+If the CPU only has two cores, then running four elements in parallel is unlikely to 
 prove effective.
 
 

@@ -5,8 +5,8 @@
 A **flow element** is an atomic processing component of a @Pipeline. 
 It takes an input in the form of @evidence and outputs results in the form of @elementdata. 
 A **flow element** can be seen as a black
-box where the internal method of processing and the way in which it is used externally are decoupled in such a
-way that any **element** can be used in the same manner, regardless of its input, output, or method of processing.
+box where the internal method of processing and the way in which it is used externally are decoupled such
+that any **element** can be used in the same manner, regardless of its input, output, or method of processing.
 These are the building blocks of a @pipeline and do all the processing as instructed by
 the @pipeline they reside in.
 
@@ -14,22 +14,21 @@ the @pipeline they reside in.
 
 **Flow elements** are built using a corresponding @elementbuilder, which
 follows the fluent builder pattern. All configuration of an **element** occurs in the
-@elementbuilder
+@elementbuilder.
 By convention, the configuration of an **element** is immutable once it has been built. 
 However, this is not enforced and is dependent on the implementation of each specific **element**.
 
 # Processing
 
-The primary function of a **flow element** is to process data. Both the input and the output
-(@evidence and @elementdata respectively) of
-the processing are contained in a single place called a @flowdata.
+The primary function of a **flow element** is to process data. Both the input (@evidence) and output
+(@elementdata) of the processing are contained in a single place called a @flowdata.
 
 The **flow element** typically uses the @evidence contained within the supplied @flowdata to
-determine values that it populates in the resulting @elementdata, which is then added to the @flowdata
+determine values which it populates in the resulting @elementdata and is then added to the @flowdata
 as an output.
 
 However, **flow elements** may also use existing @elementdata from the @flowdata as input and 
-are not required to populate any output data if it is not necessary.
+are not required to populate any output data.
 
 
 @dotfile flowelement-process.gvdot
@@ -95,7 +94,7 @@ Note that this is only the case in languages which support this.
 
 When an **element** adds @elementdata to a @flowdata, it cannot be assumed that an @elementdata does not
 already exist for the **element**. For this reason, an **element** contains an 'element data factory' which
-it gives to the @flowdata when it asks for a new or exising @elementdata. A method is called on the @flowdata,
+it gives to the @flowdata when it asks for a new or existing @elementdata. A method is called on the @flowdata,
 giving the factory as an argument, and the @flowdata returns either the @elementdata previously created with
 the same key, or a new @elementdata from the factory which it has added to its internal structure.
 
@@ -108,14 +107,14 @@ the same key, or a new @elementdata from the factory which it has added to its i
 Select a language to view an example of the 'get or add' method.
 @endsnippet
 @startsnippet{dotnet}
-In .NET the 'factory' is an anonymous function given to the **element** at construction,
+In .NET, the 'factory' is an anonymous function given to the **element** at construction,
 taking a @flowdata and returning an @elementdata.
 ```{cs}
 var elementData = flowData.GetOrAdd(ElementDataKeyTyped, CreateElementData);
 ```
 @endsnippet
 @startsnippet{java}
-In Java the 'factory' is an instance of a factory class given to the **element** at construction,
+In Java, the 'factory' is an instance of a factory class given to the **element** at construction,
 taking a @flowdata and returning an @elementdata.
 ```{java}
 final TData aspectData = flowData.getOrAdd(getTypedDataKey(), getDataFactory());
