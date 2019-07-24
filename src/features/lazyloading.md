@@ -20,6 +20,8 @@ occurred during the @pipeline's processing stage has now been deferred until the
 is fetched. When **lazy loading** is enabled, this extra possibility of an error should be taken into
 consideration.
 
+TODO: Add examples of how to handle these errors.
+
 # Configuration
 
 **Lazy loading** has two main configuration options.
@@ -33,7 +35,7 @@ exception.
 
 ## Cancellation
 
-In languages where this is possible, a 'cancellation token' can be provided. This is a means of
+In languages where it is possible, a 'cancellation token' can be provided. This is a means of
 canceling all processing which is still being carried out internally to the @aspectdata.
 
 

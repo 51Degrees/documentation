@@ -48,7 +48,7 @@ This can be useful when distributing @datafiles to a local cluster.
 
 The polling interval tells the @dataupdateservice the frequency with which to check for the availability of
 a new @datafile when the expected date is not known. If the @datafile itself provides the date when the next
-update is expected, then this option is ignored.
+update is expected, then the @dataupdateservice will not check for updates at all until after that date is passed.
 
 ## Randomization
 
