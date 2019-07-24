@@ -22,7 +22,7 @@ name, uniquely identifies the **property** globally.
 
 # Category
 
-The category an **element property** groups **properties** sharing a similar
+The category groups **element properties** sharing a similar
 theme. For example ``FrontCameraMegaPixels`` and ``Has3DCamera``
 both belong to the ``Camera`` category.
 
