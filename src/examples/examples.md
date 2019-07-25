@@ -11,3 +11,7 @@ Here are some examples...
 @subpage Examples_CombiningServices
 
 @subpage Examples_WebIntegration
+
+@subpage Examples_Caching
+
+@subpage Examples_CustomCache
