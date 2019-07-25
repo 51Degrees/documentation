@@ -2,8 +2,8 @@
 
 # Introduction
 
-The @Pipeline has been designed as an extensible hierarchy of functionality and is fully
-publicly accessible. This allows 3rd party developers to create custom @flowelements which
+The @Pipeline has been designed as an extensible hierarchy of functionality which is fully
+publicly accessible. This allows 3rd party developers to create custom @flowelements that
 focus on their core business logic, whilst also benefiting from the features of the @Pipeline - such as
 @buildfromconfiguration, @automaticdatafileupdates, @resultcaching, @webintegration, etc.
 
@@ -12,7 +12,7 @@ focus on their core business logic, whilst also benefiting from the features of 
 At the most basic level, all that is required to create a **custom flow element** is a class 
 implementing the @flowelement interface.
 
-However, there are various levels of base classes that build up functionality that a 
+However, there are various levels of base classes that build up functionality which a 
 developer may wish to take advantage of.
 The diagram below shows this hierarchy and the features introduced at each level. Note that
 the precise details of class names, etc will vary between languages.
@@ -32,7 +32,7 @@ Each level has associated classes as described by the following table:
 
 # Examples
 
-Examples are provided [examples](@ref Examples_CustomElement_Index) which cover the creation of a 
+[Examples](@ref Examples_CustomElement_Index) are provided which cover the creation of a 
 **custom flow element** in a variety of scenarios.
 
 
