@@ -77,9 +77,9 @@ This service will aggregate all JavaScript properties that have been returned by
 This will then be returned to the caller as the response.
 If configured to do so, this JavaScript will also be minified.
 
-Additionally, this service implements a caching mechanism, so the resulting 
-JavaScript will not need to be regenerated if successive requests contain the
-same evidence values.
+Additionally, this service implements a [caching mechanism](@ref Features_ResultCaching), 
+so the resulting JavaScript will not need to be regenerated if successive requests contain
+the same evidence values.
 @endsnippet
 @startsnippet{aspnet}
 
