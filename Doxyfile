@@ -261,18 +261,20 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "aspectdata=[aspect data](@ref Concepts_Data_AspectData)" \
                          "Aspectdata=[Aspect data](@ref Concepts_Data_AspectData)" \
                          "aspectengine=[aspect engine](@ref Concepts_FlowElements_AspectEngine)" \
+                         "Aspectengine=[Aspect engine](@ref Concepts_FlowElements_AspectEngine)" \
                          "aspectengines=[aspect engines](@ref Concepts_FlowElements_AspectEngine)" \
                          "aspectproperties=[aspect properties](@ref Concepts_MetaData_AspectProperties)" \
                          "aspectproperty=[aspect property](@ref Concepts_MetaData_AspectProperties)" \
                          "Aspectpropertymetadata=[Aspect property metadata](@ref Concepts_MetaData_AspectProperties)" \
                          "automaticdatafileupdates=[automatic data file updates](@ref Features_AutomaticDatafileUpdates)" \
                          "asynchronous=[asynchronous](@ref Features_AsynchronousExecution)" \
-                         "buildfromconfiguration=[build from configuration](@ref Concepts_Configuration_Builders_BuildfromConfiguration)" \
+                         "buildfromconfiguration=[build from configuration](@ref Concepts_Configuration_Builders_BuildFromConfiguration)" \
                          "builder=[builder](@ref Concepts_Configuration_Builders_Index)" \
                          "builders=[builders](@ref Concepts_Configuration_Builders_Index)" \
                          "caching=[caching](@ref Concepts_Configuration_Caching)" \
                          "cache=[cache](@ref Concepts_Configuration_Caching)" \
                          "clientsideevidence=[client side evidence](@ref Features_ClientSideEvidence)" \
+                         "Cloudengine=[Cloud engine](@ref Concepts_FlowElements_CloudEngine)" \
                          "cloudengine=[cloud engine](@ref Concepts_FlowElements_CloudEngine)" \
                          "cloudengines=[cloud engines](@ref Concepts_FlowElements_CloudEngine)" \
                          "cloudservice=[cloud service](@ref Concepts_FlowElements_CloudEngine)" \
@@ -310,6 +312,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "fiftyoneengines=[51Degrees engines](@ref Concepts_FlowElements_FiftyOneOnPremiseEngine)" \
                          "flowdata=[flow data](@ref Concepts_Data_FlowData)" \
                          "flowelement=[flow element](@ref Concepts_FlowElements_FlowElement)" \
+                         "Flowelement=[Flow element](@ref Concepts_FlowElements_FlowElement)" \
                          "flowelements=[flow elements](@ref Concepts_FlowElements_FlowElement)" \
                          "Flowelements=[Flow elements](@ref Concepts_FlowElements_FlowElement)" \
                          "geolocation=[geolocation](@ref Geolocation_Index)" \
@@ -326,6 +329,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "Metadata=[Metadata](@ref Concepts_MetaData_Index)" \
                          "onpremiseengine=[on-premise engine](@ref Concepts_FlowElements_OnPremiseEngine)" \
                          "onpremiseengines=[on-premise engines](@ref Concepts_FlowElements_OnPremiseEngine)" \
+                         "Onpremiseengine=[On-premise engine](@ref Concepts_FlowElements_OnPremiseEngine)" \
                          "Onpremiseengines=[On-premise engines](@ref Concepts_FlowElements_OnPremiseEngine)" \
                          "parallel=[parallel](@ref Features_ParallelExecution)" \
                          "Pipeline=[Pipeline](@ref Concepts_Pipeline)" \
@@ -336,6 +340,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "properties=[properties](@ref Concepts_MetaData_ElementProperties)" \
                          "property=[property](@ref Concepts_MetaData_ElementProperties)" \
                          "quickstart=[quick start](@ref Quickstart_Index)" \
+                         "resultcaching=[result caching](@ref Features_ResultCaching)" \
                          "shareusage=[share usage](@ref Features_UsageSharing)" \
                          "startsnippets=@htmlonly <div class=\"c-tabgroup\"> @endhtmlonly" \
                          "startsnippet{2}=@htmlonly <div class=\"c-tabgroup__main\" data-lang=\"\1\" style=\"display:\2;\"> @endhtmlonly" \
