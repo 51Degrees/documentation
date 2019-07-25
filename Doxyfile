@@ -297,9 +297,9 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "elementdata=[element data](@ref Concepts_Data_ElementData)" \
                          "Elementdata=[Element data](@ref Concepts_Data_ElementData)" \
                          "elementdatakey=[element data key](@ref Concepts_Data_ElementDataKey)" \
-                         "elementproperties=[element properties](@ref Concepts_Metadata_Elementproperties)" \
-                         "Elementproperties=[Element properties](@ref Concepts_Metadata_Elementproperties)" \
-                         "Elementpropertymetadata=[Element property metadata](@ref Concepts_Metadata_Elementproperties)" \
+                         "elementproperties=[element properties](@ref Concepts_MetaData_ElementProperties)" \
+                         "Elementproperties=[Element properties](@ref Concepts_MetaData_ElementProperties)" \
+                         "Elementpropertymetadata=[Element property metadata](@ref Concepts_MetaData_ElementProperties)" \
                          "endsnippet=@htmlonly </div> @endhtmlonly" \
                          "endsnippets=@endsnippet" \
                          "evidencekey=[evidence key](@ref Concepts_Data_EvidenceKeyFilter)" \

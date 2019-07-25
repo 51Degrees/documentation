@@ -362,7 +362,7 @@ as this example has no extra configuration options.
 @defaultsnippet{Select a tab to view language specific @elementbuilder implementation.}
 @startsnippet{dotnet}
 The @elementbuilder has one important method, and that is `Build`. This returns a new @flowelement
-which the @elementbuilder provides with a logger, and an @elementdata factory.
+which the @elementbuilder provides with a logger and an @elementdata factory.
 
 The @elementdata factory is implemented in the @elementbuilder class to make use of the same
 logger factory.
@@ -395,7 +395,7 @@ public class SimpleFlowElementBuilder
 @endsnippet
 @startsnippet{java}
 The @elementbuilder has one important method, and that is `build`. This returns a new @flowelement
-which the @elementbuilder provides with a logger, and an @elementdata factory.
+which the @elementbuilder provides with a logger and an @elementdata factory.
 
 The @elementdata factory is implemented in the @elementbuilder class to make use of the same
 logger factory.
