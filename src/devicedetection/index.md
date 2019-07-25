@@ -20,5 +20,9 @@ For more detail on exactly how each algorithm works, follow the links below:
 - @subpage DeviceDetection_Pattern
 - @subpage DeviceDetection_Hash
 
+# Migrating from other Providers
 
+Due to an increasing number of customers migrating from other device detection platforms we 
+have introduced a [migration guide](@subpage DeviceDetection_MigrationGuides_Index) that helps customers 
+switch properties or capabilities used on other platforms to 51Degrees device properties. 
 

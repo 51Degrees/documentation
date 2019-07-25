@@ -1,1 +1,1 @@
-@page DeviceDetection_Pattern Device Detection - Pattern
+@page DeviceDetection_Pattern Pattern
