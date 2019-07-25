@@ -1,0 +1,15 @@
+digraph {
+    bgcolor=transparent;
+    node [ shape=record, fontname=Helvetica, fontsize=10 ];
+    edge [ fontname=Helvetica, fontsize=10 ];
+    
+    
+    W [ label="Web server using Pipeline" ];
+    D [ label="51Degrees data processing" ];
+    F [ label="51Degrees data file export" ];
+    
+    
+    W -> D [ label="Evidence shared with\n51Degrees" ];
+    D -> F [ label="New evidence values identified\nand associated with\nappropriate data" ];
+    F -> W [ label="Updated data file contains\nexact mappings for newly\nidentified evidence." ];
+}
