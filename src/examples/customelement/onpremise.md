@@ -216,8 +216,8 @@ the additional arguments of a @datafile path, and a temporary @datafile path. Th
 that the @aspectengine will use, and where to make a temporary copy if required.
 
 The constructor will also read the @datafile containing the star signs into memory. This is done in another
-method so that it can also be used by the `RefreshData` method when a new @datafile is downloaded
-(not applicable for this example as star sign data is static)..
+method so that it can also be used by the `RefreshData` method when a new @datafile is downloaded (this is not
+applicable for this example as star sign data is static).
 ```{cs}
 //public class SimpleFlowElement : FlowElementBase<IAgeData, IElementPropertyMetaData>
 public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspectPropertyMetaData>
@@ -426,8 +426,8 @@ the additional arguments of a @datafile path, and a temporary @datafile path. Th
 that the @aspectengine will use, and where to make a temporary copy if required.
 
 The constructor will also read the @datafile containing the star signs into memory. This is done in another
-method so that it can also be used by the `refreshData` method when a new @datafile is downloaded
-(not applicable for this example as star sign data is static).
+method so that it can also be used by the `refreshData` method when a new @datafile is downloaded (this is not
+applicable for this example as star sign data is static).
 ```{java}
 //public class SimpleFlowElement extends FlowElementBase<AgeData, ElementPropertyMetaData> {
 public class SimpleOnPremiseEngine extends OnPremiseAspectEngineBase<AgeData, AspectPropertyMetaData> {
