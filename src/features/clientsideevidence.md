@@ -37,58 +37,9 @@ The example below shows the process flow between client and server.
 
 # Web Integration
 
-The only part of the **client-side evidence** that the @Pipeline does not handle
-by default is how the values of any JavaScript properties actually end up embedded
+The only part of the **client-side evidence** feature that the @Pipeline does not handle
+automatically is how the values of any JavaScript properties actually end up embedded
 in the payload sent to the client device.
 
 This can be managed manually. However, there are many @webintegration solutions, covering
-a wide variety of languages and web frameworks, that will handle it automatically .
-
-This section covers the specifics of how this works for each web framework:
-
-TODO: Add details for other web frameworks.
-
-=========
-
-@startsnippets
-@showsnippet{aspnet,ASP.NET}
-@showsnippet{aspnetcore,ASP.NET Core}
-@emptysnippet
-@startsnippet{aspnetcore}
-The ASP.NET Core integration makes use of a 
-[View Component](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components)
-that is embedded in the @webintegration assembly.
-This view component simply requests a JavaScript file called '51Degrees.core.js' 
-if **client-side evidence** is enabled:
-
-```
-@if (Model.Value.ClientsidePropertiesEnabled)
-{
-    <script src='51Degrees.core.js' type='text/javascript'></script>
-}
-```
-
-The view component can be included in pages as needed. If it is needed on all
-pages then adding it to your _layout.cshtml is often the easiest solution.
-
-```
-@await Component.InvokeAsync("FiftyOneJS")
-```
-
-When 51Degrees.core.js is requested, the 
-[FiftyOneDegreesMiddleware](@ref Features_WebIntegration) component will 
-intercept the request and pass it to a service class.
-This service will aggregate all JavaScript properties that have been returned by
-@flowelements in the @Pipeline into a single block of JavaScript code.
-This will then be returned to the caller as the response.
-
-Additionally, this service implements a caching mechanism, so the resulting 
-JavaScript will not need to be regenerated if successive requests contain the
-same evidence values.
-@endsnippet
-@startsnippet{aspnet}
-
-@endsnippet
-@endsnippets
-
-=========
+a wide variety of languages and web frameworks, that will handle it automatically.

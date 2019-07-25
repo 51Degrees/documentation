@@ -9,3 +9,5 @@ Here are some examples...
 @subpage Examples_MigrationFromV3
 
 @subpage Examples_CombiningServices
+
+@subpage Examples_WebIntegration

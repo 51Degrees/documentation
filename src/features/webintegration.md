@@ -28,3 +28,62 @@ provide @clientsideevidence in the next request.
 - Nginx (@devicedetection only)
 - HAProxy (@devicedetection only)
 - Varnish (@devicedetection only)
+
+# Client-side Evidence
+
+One feature that is implemented very differently in each framework is the integration with the
+@clientsideevidence feature of the @Pipeline.
+
+This section covers the specifics of how it works for each web framework.
+Additionally the [web integration examples](@ref Examples_WebIntegration) include details of how
+to enable @clientsideevidence for each framework.
+
+TODO: Add details for other web frameworks.
+
+=========
+
+@startsnippets
+@showsnippet{aspnet,ASP.NET}
+@showsnippet{aspnetcore,ASP.NET Core}
+@startsnippet{none,block}
+Select a web framework to view details of how client-side evidence is supported.
+@endsnippet
+@startsnippet{aspnetcore}
+The ASP.NET Core integration makes use of a 
+[View Component](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components)
+that is embedded in the @webintegration assembly.
+This view component simply requests a JavaScript file called '51Degrees.core.js' 
+if **client-side evidence** is enabled:
+
+```{html}
+@if (Model.Value.ClientsidePropertiesEnabled)
+{
+    <script src='51Degrees.core.js' type='text/javascript'></script>
+}
+```
+
+The view component can be included in pages as needed. If it is needed on all
+pages then adding it to your _layout.cshtml is often the easiest solution.
+
+```{cs}
+@await Component.InvokeAsync("FiftyOneJS")
+```
+
+When 51Degrees.core.js is requested, the 
+[FiftyOneDegreesMiddleware](@ref Features_WebIntegration) component will 
+intercept the request and pass it to a service class.
+This service will aggregate all JavaScript properties that have been returned by
+@flowelements in the @Pipeline into a single block of JavaScript code.
+This will then be returned to the caller as the response.
+If configured to do so, this JavaScript will also be minified.
+
+Additionally, this service implements a caching mechanism, so the resulting 
+JavaScript will not need to be regenerated if successive requests contain the
+same evidence values.
+@endsnippet
+@startsnippet{aspnet}
+
+@endsnippet
+@endsnippets
+
+=========
