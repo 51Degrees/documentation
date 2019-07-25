@@ -123,7 +123,67 @@ internal class AgeData : AspectDataBase, IAgeData
 ```
 @endsnippet
 @startsnippet{java}
-**todo**
+Instead of implementing `ElementDataReadOnly`, the `AgeData` will now implement `AspectData`
+which extends `ElementDataReadOnly`. A 'getter' is also added for the new property.
+```{java}
+//public interface AgeData : ElementDataReadOnly
+public interface AgeData extends AspectData {
+    int getAge();
+
+    String getStarSign();
+}
+```
+
+Now the internal implementation of it will implement a 'getter' and add an 'setter' for `StarSign` in the
+same way as `Age`.
+```{java}
+//class AgeDataDefault extends ElementDataBase implements AgeData {
+class AgeDataDefault extends AspectDataBase implements AgeData {
+
+    private int age;
+
+    private String starSign;
+
+    public AgeDataDefault(
+        Logger logger,
+        FlowData flowData,
+        AspectEngine engine,
+        MissingPropertyService missingPropertyService) {
+        super(logger, flowData, engine, missingPropertyService);
+    }
+
+    @Override
+    public int getAge() {
+        return age;
+    }
+
+    void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String getStarSign() {
+        return starSign;
+    }
+
+    void setStarSign(String starSign) {
+        this.starSign = starSign;
+    }
+
+    @Override
+    protected void managedResourcesCleanup() {
+        // Nothing to clean up here
+    }
+
+    @Override
+    protected void unmanagedResourcesCleanup() {
+        // Nothing to clean up here
+    }
+}
+```
+
+Note that this concrete implementation of `AgeData` sits in the same package as the @aspectengine,
+not the `AgeData` interface, as it only needs to be accessible by the @aspectengine.
 @endsnippet
 @startsnippet{php}
 **todo**
@@ -322,8 +382,8 @@ public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspect
     protected override void ProcessEngine(IFlowData data, IAgeData aspectData)
     {
         DateTime zero = new DateTime(1, 1, 1);
-        // Create a new IAgeData, and cast to AgeData so the 'setter' is available.
-        AgeData ageData = (AgeData)data.GetOrAdd(ElementDataKey, CreateElementData);
+        // Cast aspectData to AgeData so the 'setter' is available.
+        AgeData ageData = (AgeData)aspectData;
 
         if (data.TryGetEvidence("date-of-birth", out DateTime dateOfBirth))
         {
@@ -356,7 +416,260 @@ public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspect
 ```
 @endsnippet
 @startsnippet{java}
-**todo**
+First lets change the class to extend `OnPremiseAspectEngineBase` (which partially implements
+`OnPremiseAspectEngine`). This has the type arguments of
+`AgeData` - the interface extending @aspectdata which will be added to the @flowdata, and 
+`AspectPropertyMetaData` instead of `ElementPropertyMetaData`.
+
+The existing constructor needs to change to match the `OnPremiseAspectEngineBase` class. So it takes
+the additional arguments of a @datafile path, and a temporary @datafile path. This is where the @datafile
+will that the @aspectengine will use, and the location to make a temporary copy if required.
+
+The constructor will also read the @datafile containing the star signs into memory. This is done in another
+method so that it can also be used by the `refreshData` method when a new @datafile is downloaded (this will
+not happen in this example as it is only star signs).
+```{java}
+//public class SimpleFlowElement extends FlowElementBase<AgeData, ElementPropertyMetaData> {
+public class SimpleOnPremiseEngine extends OnPremiseAspectEngineBase<AgeData, AspectPropertyMetaData> {
+
+    public SimpleOnPremiseEngine(
+        String dataFile,
+        Logger logger,
+        ElementDataFactory<AgeData> elementDataFactory,
+        String tempDir) throws IOException {
+        super(logger, elementDataFactory, tempDir);
+        this.dataFile = dataFile;
+        init();
+    }
+```
+
+The `init` method in this example will simply read a CSV file with the start and end dates of each
+star sign, which looks like:
+```{csv}
+Aries,21/03,19/04
+Taurus,20/04,20/05
+Gemini,21/05,20/06
+Cancer,21/06,22/07
+...
+```
+
+and add each to a list of a new class named `StarSign` which has the following simple implementation:
+```{java}
+public class StarSign {
+    private Calendar end;
+    private Calendar start;
+    private String name;
+
+    public StarSign(String name, String start, String end) {
+        this.name = name;
+        this.start = Calendar.getInstance();
+        String[] startDate = start.split("/");
+        this.start.set(
+            0,
+            Integer.parseInt(startDate[1]) - 1,
+            Integer.parseInt(startDate[0]));
+        this.end = Calendar.getInstance();
+        String[] endDate = end.split("/");
+        this.end.set(
+            0,
+            Integer.parseInt(endDate[1]) - 1,
+            Integer.parseInt(endDate[0]));
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Calendar getStart() {
+        return start;
+    }
+
+    public Calendar getEnd() {
+        return end;
+    }
+}
+```
+
+Note that the year of the start and end date are both set to 0, as the year should be ignored.
+
+The new `init` method looks like this:
+
+```{java}
+private void init() throws IOException {
+    List<StarSign> starSigns = new ArrayList<>();
+    try (FileReader fileReader = new FileReader(dataFile)) {
+        try (BufferedReader reader = new BufferedReader(fileReader)) {
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                String[] columns = line.split(",");
+                starSigns.add(new StarSign(
+                    columns[0],
+                    columns[1],
+                    columns[2]));
+            }
+        }
+    }
+    this.starSigns = starSigns;
+}
+```
+
+
+Now the abstract methods can be implemented to create a functional @aspectengine.
+```{java}
+public class SimpleOnPremiseEngine extends OnPremiseAspectEngineBase<AgeData, AspectPropertyMetaData> {
+
+    public SimpleOnPremiseEngine(
+        String dataFile,
+        Logger logger,
+        ElementDataFactory<AgeData> elementDataFactory,
+        String tempDir) throws IOException {
+        super(logger, elementDataFactory, tempDir);
+        this.dataFile = dataFile;
+        init();
+    }
+
+    private String dataFile;
+
+    private List<StarSign> starSigns;
+
+    private void init() throws IOException {
+        List<StarSign> starSigns = new ArrayList<>();
+        try (FileReader fileReader = new FileReader(dataFile)) {
+            try (BufferedReader reader = new BufferedReader(fileReader)) {
+                String line = null;
+                while ((line = reader.readLine()) != null) {
+                    String[] columns = line.split(",");
+                    starSigns.add(new StarSign(
+                        columns[0],
+                        columns[1],
+                        columns[2]));
+                }
+            }
+        }
+        this.starSigns = starSigns;
+    }
+
+    @Override
+    public String getTempDataDirPath() {
+        return dataFile;
+    }
+
+    @Override
+    public Date getDataFilePublishedDate(String dataFileIdentifier) {
+        return null;
+    }
+
+    @Override
+    public Date getDataFileUpdateAvailableTime(String dataFileIdentifier) {
+        return null;
+    }
+
+    @Override
+    public void refreshData() {
+        try {
+            init();
+        } catch (IOException e) {
+
+        }
+    }
+
+    @Override
+    public void refreshData(String dataFileIdentifier) {
+        try {
+            init();
+        } catch (IOException e) {
+
+        }
+    }
+
+    @Override
+    public void refreshData(String dataFileIdentifier, byte[] data) {
+        // Lets not implement this logic in this example.
+    }
+
+    @Override
+    protected void processEngine(FlowData data, AgeData aspectData) throws Exception {
+        // Cast aspectData to AgeDataDefault, and cast to AgeDataDefault so the 'setter' is available.
+        AgeDataDefault ageData = (AgeDataDefault)aspectData;
+
+        TryGetResult<Date> date = data.tryGetEvidence("date-of-birth", Date.class);
+        if (date.hasValue()) {
+            // "date-of-birth" is there, so set the age and star sign.
+            Calendar age = Calendar.getInstance();
+            Calendar dob = Calendar.getInstance();
+            dob.setTime(date.getValue());
+
+            age.add(Calendar.YEAR, - dob.get(Calendar.YEAR));
+            age.add(Calendar.MONTH, - dob.get(Calendar.MONTH));
+            age.add(Calendar.DATE, - dob.get(Calendar.DATE));
+
+            ageData.setAge(age.get(Calendar.YEAR));
+
+            Calendar monthAndDay = Calendar.getInstance();
+            monthAndDay.set(
+                0,
+                dob.get(Calendar.MONTH),
+                dob.get(Calendar.DATE));
+            for (StarSign starSign : starSigns) {
+                if (monthAndDay.compareTo(starSign.getStart()) >= 0 &&
+                    monthAndDay.compareTo(starSign.getEnd()) <= 0) {
+                    ageData.setStarSign(starSign.getName());
+                    break;
+                }
+            }
+        }
+        else
+        {
+            // "date-of-birth" is not there, so set the defaults.
+            ageData.setAge(-1);
+            ageData.setStarSign("Unknown");
+        }
+    }
+
+    @Override
+    public String getElementDataKey() {
+        // The AgeData will be stored with the key "age" in the FlowData.
+        return "age";
+    }
+
+    @Override
+    public EvidenceKeyFilter getEvidenceKeyFilter() {
+        // The only item of evidence needed is "date-of-birth".
+        return new EvidenceKeyFilterWhitelist(Arrays.asList("date-of-birth"));
+    }
+
+    @Override
+    public List<AspectPropertyMetaData> getProperties() {
+        // The only property which will be returned is "age" which will be
+        // an Integer.
+        return Arrays.asList(
+            (AspectPropertyMetaData)new AspectPropertyMetaDataDefault(
+                "age",
+                this,
+                "age",
+                Integer.class,
+                Arrays.asList("free"),
+                true),
+            (AspectPropertyMetaData)new AspectPropertyMetaDataDefault(
+                "starsign",
+                this,
+                "age",
+                String.class,
+                Arrays.asList("free"),
+                true));
+    }
+
+    @Override
+    public String getDataSourceTier() {
+        return "free";
+    }
+
+    @Override
+    protected void unmanagedResourcesCleanup() {
+        // Nothing to clean up here.
+    }
+}
+```
 @endsnippet
 @startsnippet{php}
 **todo**
@@ -433,7 +746,137 @@ public class SimpleOnPremiseEngineBuilder : SingleFileAspectEngineBuilderBase<Si
 ```
 @endsnippet
 @startsnippet{java}
+As this @aspectengine is using a @datafile, the builder can make use of the logic in the
+`SingleFileAspectEngineBuilderBase`.
+```{java}
+public class SimpleOnPremiseEngineBuilder
+    extends SingleFileAspectEngineBuilderBase<
+        SimpleOnPremiseEngineBuilder,
+        SimpleOnPremiseEngine> {
+
+    public SimpleOnPremiseEngineBuilder(DataUpdateService dataUpdateService) {
+        super(dataUpdateService);
+    }
+
+    @Override
+    public SimpleOnPremiseEngineBuilder setPerformanceProfile(Constants.PerformanceProfiles profile) {
+        // Lets not implement multiple performance profiles in this example.
+        return this;
+    }
+
+    @Override
+    protected SimpleOnPremiseEngine buildEngine(String tempPath, List<String> properties) {
+        if (dataFileConfigs.size() != 1)
+        {
+            throw new RuntimeException(
+                "This builder requires one and only one configured file " +
+                    "but it has " + dataFileConfigs.size());
+        }
+        DataFileConfiguration config = dataFileConfigs.get(0);
+
+        try {
+            return new SimpleOnPremiseEngine(
+                config.getDataFilePath(),
+                loggerFactory.getLogger(SimpleOnPremiseEngine.class.getName()),
+                new ElementDataFactory<AgeData>() {
+                    @Override
+                    public AgeData create(
+                        FlowData flowData,
+                        FlowElement<AgeData, ?> flowElement) {
+                        return new AgeDataDefault(
+                            loggerFactory.getLogger(AgeDataDefault.class.getName()),
+                            flowData,
+                            (SimpleOnPremiseEngine)flowElement,
+                            MissingPropertyServiceDefault.getInstance());
+                    }
+                },
+                tempDir);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
+```
+@endsnippet
+@startsnippet{php}
 **todo**
+@endsnippet
+@startsnippet{node}
+**todo**
+@endsnippet
+@endsnippets
+
+
+# Usage
+
+@startsnippets
+@showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@showsnippet{php,PHP}
+@showsnippet{node,Node.js}
+@defaultsnippet{Select a tab to view language specific usage.}
+@startsnippet{dotnet}
+This new @aspectengine can now be added to a @pipeline and used like:
+```{cs}
+var ageEngine = new SimpleOnPremiseEngineBuilder(_loggerFactory, null)
+    .SetAutoUpdate(false)
+    .Build("starsigns.csv", false);
+var pipeline = new PipelineBuilder(_loggerFactory)
+    .AddFlowElement(ageEngine)
+    .Build();
+var dob = new DateTime(1992, 12, 18);
+var flowData = pipeline.CreateFlowData();
+flowData
+    .AddEvidence("date-of-birth", dob)
+    .Process();
+Console.WriteLine($"With a date of birth of {dob},\n" +
+    $"your age is {flowData.GetFromElement(ageEngine).Age},\n" +
+    $"and your star sign is {flowData.GetFromElement(ageEngine).StarSign}.");
+Console.ReadKey();
+```
+
+to give an output of:
+```{bash}
+With a date of birth of 18/12/1992,
+your age is 26,
+and your star sign is Sagittarius.
+```
+@endsnippet
+@startsnippet{java}
+This new @aspectengine can now be added to a @pipeline and used like:
+```{java}
+File file = new File(Main.class.getClassLoader().getResource("starsigns.csv").getFile());
+
+SimpleOnPremiseEngine ageElement =
+    new SimpleOnPremiseEngineBuilder(null)
+        .setAutoUpdate(false)
+        .build(file.getAbsolutePath(), false);
+
+Pipeline pipeline = new PipelineBuilder(loggerFactory)
+    .addFlowElement(ageElement)
+    .build();
+Calendar dob = Calendar.getInstance();
+dob.set(1992, Calendar.DECEMBER, 18);
+
+FlowData flowData = pipeline.createFlowData();
+flowData
+    .addEvidence("date-of-birth", dob.getTime())
+    .process();
+
+System.out.println("With a date of birth of " +
+    new SimpleDateFormat("yyyy/MM/dd").format(dob.getTime()) +
+    ",\nyour age is " +
+    flowData.getFromElement(ageElement).getAge() + ",\n" +
+    "and your star sign is " +
+    flowData.getFromElement(ageElement).getStarSign() + ".");
+```
+
+to give an output of:
+```{bash}
+With a date of birth of 18/12/1992,
+your age is 26,
+and your star sign is Sagittarius.
+```
 @endsnippet
 @startsnippet{php}
 **todo**
