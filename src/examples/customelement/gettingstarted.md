@@ -290,7 +290,6 @@ public class SimpleFlowElement extends FlowElementBase<AgeData, ElementPropertyM
             dob.setTime(date.getValue());
 
             age.add(Calendar.YEAR, - dob.get(Calendar.YEAR));
-            age.add(Calendar.YEAR, - dob.get(Calendar.YEAR));
             age.add(Calendar.MONTH, - dob.get(Calendar.MONTH));
             age.add(Calendar.DATE, - dob.get(Calendar.DATE));
 
@@ -444,24 +443,21 @@ public class SimpleFlowElementBuilder {
 @startsnippet{dotnet}
 This new @flowelement can now be added to a @pipeline and used like:
 ```{cs}
-using (var ageElement = new SimpleFlowElementBuilder(_loggerFactory)
-    .Build())
-using (var pipeline = new PipelineBuilder(_loggerFactory)
+var ageElement = new SimpleFlowElementBuilder(_loggerFactory)
+    .Build();
+var pipeline = new PipelineBuilder(_loggerFactory)
     .AddFlowElement(ageElement)
-    .Build())
-{
-    var dob = new DateTime(1992, 12, 18);
-    using (var flowData = pipeline.CreateFlowData())
-    {
-        flowData
-            .AddEvidence("date-of-birth", dob)
-            .Process();
-        Console.WriteLine($"With a date of birth of " +
-            $"{dob.ToString("dd/MM/yyy")}" +
-            $", your age is " +
-            $" {flowData.GetFromElement(ageElement).Age}.");
-    }
-}
+    .Build();
+var dob = new DateTime(1992, 12, 18);
+var flowData = pipeline.CreateFlowData();
+flowData
+    .AddEvidence("date-of-birth", dob)
+    .Process();
+Console.WriteLine($"With a date of birth of " +
+    $"{dob.ToString("dd/MM/yyy")}" +
+    $", your age is " +
+    $"{flowData.GetFromElement(ageElement).Age}.");
+Console.ReadKey();
 ```
 
 to give an output of:
@@ -472,27 +468,25 @@ With a date of birth of 18/12/1992, your age is 26.
 @startsnippet{java}
 This new @flowelement can now be added to a @pipeline and used like:
 ```{java}
-try (SimpleFlowElement ageElement =
+SimpleFlowElement ageElement =
     new SimpleFlowElementBuilder(loggerFactory)
-    .build()) {
-    try (Pipeline pipeline = new PipelineBuilder(loggerFactory)
-        .addFlowElement(ageElement)
-        .build()) {
-        Calendar dob = Calendar.getInstance();
-        dob.set(1992, Calendar.DECEMBER, 18);
+    .build();
 
-        try (FlowData flowData = pipeline.createFlowData()) {
-            flowData
-                .addEvidence("date-of-birth", dob.getTime())
-                .process();
+Pipeline pipeline = new PipelineBuilder(loggerFactory)
+    .addFlowElement(ageElement)
+    .build();
+Calendar dob = Calendar.getInstance();
+dob.set(1992, Calendar.DECEMBER, 18);
 
-            System.out.println("With a date of birth of " +
-                new SimpleDateFormat("yyyy/MM/dd").format(dob.getTime()) +
-                ", your age is " +
-                flowData.getFromElement(ageElement).getAge() + ".");
-        }
-    }
-}
+FlowData flowData = pipeline.createFlowData();
+flowData
+    .addEvidence("date-of-birth", dob.getTime())
+    .process();
+
+System.out.println("With a date of birth of " +
+    new SimpleDateFormat("yyyy/MM/dd").format(dob.getTime()) +
+    ", your age is " +
+    flowData.getFromElement(ageElement).getAge() + ".");
 ```
 
 to give an output of:
