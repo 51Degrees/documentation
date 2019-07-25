@@ -4,12 +4,12 @@
 
 This example takes the very simple @flowelement described in the
 [simple flow element example](@ref Examples_CustomElement_GettingStarted), and adds
-a @datafile, upgrading the @flowelement to an @aspectengine, to provide additional properties.
+a @datafile, upgrading the @flowelement to an @aspectengine which provides additional properties.
 
-To follow this example, the reader should be familiar with the previous [example](@ref Examples_CustomElement_GettingStarted).
+To follow this example, the reader should be familiar with the previous [example](@ref Examples_CustomElement_GettingStarted),
+which took a date of birth, and returned an age. 
 
-The previous example took a date of birth, and returned an age. This example will add a @datafile
-containing star signs to provide the extra property 'star sign'.
+This example will add a @datafile containing star signs to provide the extra property 'star sign'.
 
 
 # Download Example
@@ -22,7 +22,7 @@ The source code used in this example is available here:
 
 # Dependencies
 
-The @aspectengine will need a dependency on the @pipeline engines package now that
+The @aspectengine will need a dependency on the @pipeline engines package now
 it is implementing an @aspectengine instead of a @flowelement
 
 @startsnippets
@@ -216,8 +216,8 @@ the additional arguments of a @datafile path, and a temporary @datafile path. Th
 that the @aspectengine will use, and where to make a temporary copy if required.
 
 The constructor will also read the @datafile containing the star signs into memory. This is done in another
-method so that it can also be used by the `RefreshData` method when a new @datafile is downloaded (this will
-not happen in this example as it is only star signs).
+method so that it can also be used by the `RefreshData` method when a new @datafile is downloaded
+(not applicable for this example as star sign data is static)..
 ```{cs}
 //public class SimpleFlowElement : FlowElementBase<IAgeData, IElementPropertyMetaData>
 public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspectPropertyMetaData>
@@ -426,8 +426,8 @@ the additional arguments of a @datafile path, and a temporary @datafile path. Th
 that the @aspectengine will use, and where to make a temporary copy if required.
 
 The constructor will also read the @datafile containing the star signs into memory. This is done in another
-method so that it can also be used by the `refreshData` method when a new @datafile is downloaded (this will
-not happen in this example as it is only star signs).
+method so that it can also be used by the `refreshData` method when a new @datafile is downloaded
+(not applicable for this example as star sign data is static).
 ```{java}
 //public class SimpleFlowElement extends FlowElementBase<AgeData, ElementPropertyMetaData> {
 public class SimpleOnPremiseEngine extends OnPremiseAspectEngineBase<AgeData, AspectPropertyMetaData> {
