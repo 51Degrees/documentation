@@ -22,7 +22,7 @@ The source code used in this example is available here:
 
 # Dependencies
 
-The @aspectengine will need to a dependency on the @pipeline engines package now that
+The @aspectengine will need a dependency on the @pipeline engines package now that
 it is implementing an @aspectengine instead of a @flowelement
 
 @startsnippets
@@ -79,7 +79,7 @@ public interface IAgeData : IAspectData
 }
 ```
 
-Now the internal implementation of it will implement a 'getter' and add an 'setter' for `StarSign` in the
+Now the internal implementation of it will implement a 'getter' and add a 'setter' for `StarSign` in the
 same way as `Age`.
 ```{cs}
 //internal class AgeData : ElementDataBase, IAgeData
@@ -134,7 +134,7 @@ public interface AgeData extends AspectData {
 }
 ```
 
-Now the internal implementation of it will implement a 'getter' and add an 'setter' for `StarSign` in the
+Now the internal implementation of it will implement a 'getter' and add a 'setter' for `StarSign` in the
 same way as `Age`.
 ```{java}
 //class AgeDataDefault extends ElementDataBase implements AgeData {
@@ -206,14 +206,14 @@ example will now implement the @onpremiseengine's base class.
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific @aspectengine implementation.}
 @startsnippet{dotnet}
-First lets change the class to extend `OnPremiseAspectEngineBase` (which partially implements
+First let's change the class to extend `OnPremiseAspectEngineBase` (which partially implements
 `IOnPremiseAspectEngine`). This has the type arguments of
 `IAgeData` - the interface extending @aspectdata which will be added to the @flowdata, and 
-`IAspectPropertyMetaData` instead of `IElementPropertyMetaData`.
+`IAspectPropertyMetaData` - instead of `IElementPropertyMetaData`.
 
 The existing constructor needs to change to match the `OnPremiseAspectEngineBase` class. So it takes
-the additional arguments of a @datafile path, and a temporary @datafile path. This is where the @datafile
-will that the @aspectengine will use, and the location to make a temporary copy if required.
+the additional arguments of a @datafile path, and a temporary @datafile path. This is the location of the @datafile
+that the @aspectengine will use, and where to make a temporary copy if required.
 
 The constructor will also read the @datafile containing the star signs into memory. This is done in another
 method so that it can also be used by the `RefreshData` method when a new @datafile is downloaded (this will
@@ -416,14 +416,14 @@ public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspect
 ```
 @endsnippet
 @startsnippet{java}
-First lets change the class to extend `OnPremiseAspectEngineBase` (which partially implements
+First let's change the class to extend `OnPremiseAspectEngineBase` (which partially implements
 `OnPremiseAspectEngine`). This has the type arguments of
 `AgeData` - the interface extending @aspectdata which will be added to the @flowdata, and 
-`AspectPropertyMetaData` instead of `ElementPropertyMetaData`.
+`AspectPropertyMetaData` - instead of `ElementPropertyMetaData`.
 
 The existing constructor needs to change to match the `OnPremiseAspectEngineBase` class. So it takes
-the additional arguments of a @datafile path, and a temporary @datafile path. This is where the @datafile
-will that the @aspectengine will use, and the location to make a temporary copy if required.
+the additional arguments of a @datafile path, and a temporary @datafile path. This is  the location of the @datafile
+that the @aspectengine will use, and where to make a temporary copy if required.
 
 The constructor will also read the @datafile containing the star signs into memory. This is done in another
 method so that it can also be used by the `refreshData` method when a new @datafile is downloaded (this will
@@ -682,8 +682,8 @@ public class SimpleOnPremiseEngine extends OnPremiseAspectEngineBase<AgeData, As
 
 # Builder
 
-Now the @aspectengine needs one final thing. An @elementbuilder to construct it.
-This needs to provide the @aspectengine with a logger and an @aspectdata factory, as in
+Now the @aspectengine needs one final thing, an @elementbuilder to construct it.
+This needs to provide the @aspectengine with a logger and an @aspectdata factory as in
 the previous example. However, it also now needs a data file.
 
 @startsnippets
