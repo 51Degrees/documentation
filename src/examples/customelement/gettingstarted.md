@@ -2,9 +2,9 @@
 
 # Introduction
 
-This example looks at a very simple @flowelement which will take a date of birth
-and return an age. This is a very simple (and not all that useful) @flowelement which
-demonstrates the way in which a @flowelement should be implemented.
+This example shows a very simple @flowelement which takes a date of birth
+and returns an age. Although a basic (and not all that useful) @flowelement, the
+example demonstrates how you can start to implement your own @flowelement's.
 
 # Download Example
 
@@ -16,7 +16,7 @@ The source code used in this example is available here:
 
 # Dependencies
 
-The @flowelement will need to a dependency on the @pipeline core package
+The @flowelement will need a dependency on the @pipeline core package
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -71,7 +71,7 @@ public interface IAgeData : IElementDataReadOnly
 }
 ```
 
-Now the internal implementation of it will implement this 'getter' and add an 'setter' for the @flowelement
+Now the internal implementation of it will implement this 'getter' and add a 'setter' for the @flowelement
 to use.
 ```{cs}
 internal class AgeData : ElementDataBase, IAgeData
@@ -105,7 +105,7 @@ internal class AgeData : ElementDataBase, IAgeData
 ```
 @endsnippet
 @startsnippet{java}
-Java supports interfaces, so the @elementdata should have a public interface and an package private
+Java supports interfaces, so the @elementdata should have a public interface and a package private
 concrete implementation with easy 'setters'.
 
 In this example, only one value is populated. So an interface `AgeData` will extend `ElementDataReadOnly`
@@ -116,7 +116,7 @@ public interface AgeData extends ElementDataReadOnly {
 }
 ```
 
-Now the internal implementation of it will implement this 'getter' and add an 'setter' for the @flowelement
+Now the internal implementation of it will implement this 'getter' and add a 'setter' for the @flowelement
 to use.
 ```{java}
 class AgeDataDefault extends ElementDataBase implements AgeData {
@@ -172,9 +172,9 @@ can be used which deals with most of the logic. The @elementproperties,
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific @flowelement implementation.}
 @startsnippet{dotnet}
-First lets define a class which extends `FlowElementBase` (which partially implements `IFlowElement`).
+First let's define a class which extends `FlowElementBase` (and partially implements `IFlowElement`).
 This has the type arguments of `IAgeData` - the interface extending @elementdata which will be 
-added to the @flowdata, and  `IElementPropertyMetaData` as we only need the standard metadata for
+added to the @flowdata, and  `IElementPropertyMetaData` - as we only need the standard metadata for
 @elementproperties.
 
 This needs a constructor matching the `FlowElementBase` class. So it takes a logger, and an
@@ -249,9 +249,9 @@ public class SimpleFlowElement : FlowElementBase<IAgeData, IElementPropertyMetaD
 @endsnippet
 @startsnippet{java}
 
-First lets define a class which extends `FlowElementBase` (which partially implements `FlowElement`).
+First let's define a class which extends `FlowElementBase` (which partially implements `FlowElement`).
 This has the type arguments of `AgeData` - the interface extending @elementdata which will be 
-added to the @flowdata, and  `ElementPropertyMetaData` as we only need the standard metadata for
+added to the @flowdata, and  `ElementPropertyMetaData` - as we only need the standard metadata for
 @elementproperties.
 
 This needs a constructor matching the `FlowElementBase` class. So it takes a logger, and an
@@ -350,8 +350,8 @@ public class SimpleFlowElement extends FlowElementBase<AgeData, ElementPropertyM
 
 # Builder
 
-Now the @flowelement needs one final thing. An @elementbuilder to construct it.
-This only needs to provide the @flowelement with a logger and an @elementdata factory
+Now the @flowelement needs one final thing, an @elementbuilder to construct it.
+This only needs to provide the @flowelement with a logger and an @elementdata factory -
 as this example has no extra configuration options.
 
 @startsnippets

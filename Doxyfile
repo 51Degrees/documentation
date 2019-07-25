@@ -303,6 +303,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "endsnippet=@htmlonly </div> @endhtmlonly" \
                          "endsnippets=@endsnippet" \
                          "evidencekey=[evidence key](@ref Concepts_Data_EvidenceKeyFilter)" \
+                         "evidencekeys=[evidence keys](@ref Concepts_Data_EvidenceKeyFilter)" \
                          "evidence=[evidence](@ref Concepts_Data_Evidence)" \
                          "Evidence=[Evidence](@ref Concepts_Data_Evidence)" \
                          "evidencekeyfilter=[evidence key filter](@ref Concepts_Data_EvidenceKeyFilter)" \
