@@ -14,6 +14,8 @@
 
 @subpage Features_ParallelExecution
 
+@subpage Features_ResultCaching
+
 @subpage Features_UsageSharing
 
 @subpage Features_WebIntegration
