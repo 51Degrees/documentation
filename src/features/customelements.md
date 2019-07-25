@@ -9,15 +9,30 @@ focusing on their core business logic while gaining the features of the @Pipelin
 
 # Choosing the Right Classes to Extend
 
-At the most basic level, creating a custom flow element requires the creation of several classes.
-Exactly how many will depend on the language being used but all will need at least:
+At the most basic level, all that is required to create a **custom flow element** is a class 
+implementing the @flowelement interface.
 
-- A class implementing IFlowElement
+However, there are various levels of base classes that build up functionality that a 
+developer may wish to take advantage of.
+The diagram below shows this hierarchy and the features introduced at each level. Note that
+the precise details of class names, etc will vary between languages.
 
+@dotfile customflowelement-hierarchy.gvdot
+
+
+Each level has associated classes as described by the following table:
+
+| Element | Data | Metadata | Builder |
+|---|---|---|---| 
+|@Flowelement|@Elementdata|@Elementpropertymetadata|N/A|
+|@Aspectengine|@Aspectdata|@Aspectpropertymetadata|Aspect engine builder|
+|@Onpremiseengine|@Aspectdata|@Aspectpropertymetadata|On-premise aspect engine builder|
+|@Cloudengine|@Aspectdata|@Aspectpropertymetadata|Cloud engine builder|
 
 
 # Examples
 
-There are several [examples](@ref Examples_CustomElement_Index) covering a variety of scenarios.
+There are several [examples](@ref Examples_CustomElement_Index) covering the creation of a 
+**custom flow element** in a variety of scenarios.
 
 

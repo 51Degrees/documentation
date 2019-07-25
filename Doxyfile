@@ -264,6 +264,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "aspectengines=[aspect engines](@ref Concepts_FlowElements_AspectEngine)" \
                          "aspectproperties=[aspect properties](@ref Concepts_MetaData_AspectProperties)" \
                          "aspectproperty=[aspect property](@ref Concepts_MetaData_AspectProperties)" \
+                         "Aspectpropertymetadata=[Aspect property metadata](@ref Concepts_MetaData_AspectProperties)" \
                          "automaticdatafileupdates=[automatic data file updates](@ref Features_AutomaticDatafileUpdates)" \
                          "asynchronous=[asynchronous](@ref Features_AsynchronousExecution)" \
                          "buildfromconfiguration=[build from configuration](@ref Concepts_Configuration_Builders_BuildfromConfiguration)" \
@@ -296,6 +297,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "elementdatakey=[element data key](@ref Concepts_Data_ElementDataKey)" \
                          "elementproperties=[element properties](@ref Concepts_Metadata_Elementproperties)" \
                          "Elementproperties=[Element properties](@ref Concepts_Metadata_Elementproperties)" \
+                         "Elementpropertymetadata=[Element property metadata](@ref Concepts_Metadata_Elementproperties)" \
                          "endsnippet=@htmlonly </div> @endhtmlonly" \
                          "endsnippets=@endsnippet" \
                          "evidencekey=[evidence key](@ref Concepts_Data_EvidenceKeyFilter)" \
