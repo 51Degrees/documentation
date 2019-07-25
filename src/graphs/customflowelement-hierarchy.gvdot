@@ -33,5 +33,5 @@ digraph H {
     
     FE -> AE [ltail=clusterFlowElement, lhead=clusterAspectEngine];
     AE -> OPE [ltail=clusterAspectEngine, lhead=clusterOnPremiseAspectEngine];
-    AE -> CE;    
+    AE -> CE [ltail=clusterAspectEngine];    
 }
