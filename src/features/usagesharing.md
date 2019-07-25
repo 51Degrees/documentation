@@ -15,7 +15,7 @@ To minimize any overhead of this feature, received requests are grouped and sent
 rather than sending each request individually.
 
 **Usage sharing** is designed such that any failure within it should not impact the 
-result of the @Pipeline. If a failure does occur then usage sharing will simply be disabled 
+result of the @Pipeline. If a failure does occur then **usage sharing** will simply be disabled 
 and an appropriate warning logged.
 
 In languages that support multiple threading, **Usage sharing** will typically use a producer/consumer model,
@@ -26,22 +26,22 @@ This is done to avoid blocking the @Pipeline process thread.
 ## Repeated Evidence @anchor Features_UsageSharing_RepeatEvidence
 
 To avoid situations where the same @evidence is sent multiple times (for example, a single user
-visiting multiple pages on a web site.), we keep track of the @evidence that has been shared over
+visiting multiple pages on a web site), we keep track of the @evidence that has been shared over
 a defined time period (maximum 20 minutes by default) and only share @evidence which is different to any
 already shared during the window.
 
-Note that the amount of @evidence tracked is also constrained based upon available memory.  
+Note that the amount of @evidence tracked is also constrained based upon available memory.
 In high-traffic scenarios, this may mean that the time period covered by the @evidence in the tracker
 is much smaller than the configured maximum.
 
 # Configuration
 
 The **usage sharing** feature is provided by a @flowelement that is added to the @Pipeline.
-Certain @pipelinebuilders will do this automatically. For example, the @devicedetection 
-@pipelinebuilder will add the **usage sharing** element by default.
+Certain @pipelinebuilders will do this automatically. For example, the @devicedetection @pipelinebuilder
+will add the **usage sharing** element by default.
 This can be disabled using the SetShareUsage method on the builder.
 
-There are also several options when building a **usage sharing** element. These can be used to 
+There are also several configuration options when building a **usage sharing** element. These can be used to 
 control what is shared and how it is collected:
 
 ## Evidence Shared
@@ -54,13 +54,13 @@ These are the rules for whether or not a particular piece of evidence is shared:
 - Any evidence named 'cookie.&lt;name&gt;' is ignored, unless &lt;name&gt; starts with '51D_'
 - Any other evidence is shared if it is not on a configured blacklist.
 
-The various black' and whitelists can be configured using the **share usage** @element builder.
+The various black' and whitelists can be configured using the **share usage** @elementbuilder.
 
 ## Share Percentage
 
 **Usage sharing** can be configured to only share a certain percentage of requests that 
 pass through the @Pipeline.
-This can be useful in very high-traffic scenarios where **usage sharing** is desired but sharing every
+This can be useful in very high-traffic scenarios where **usage sharing** is desired, but sharing every
 request could put too much strain on the web server. 
 
 This is based on a randomized value, so the exact amount shared may not be precisely the percentage specified. 
@@ -84,5 +84,5 @@ to the **usage sharing** web service.
 
 ## Repeat Evidence Interval
 
-The maximum time period which @evidence is stored for the filtering of 
-[repeat evidence](@refFeatures_UsageSharing_RepeatEvidence).
+The maximum time period which @evidence is stored for the purpose of filtering 
+[repeat evidence](@ref Features_UsageSharing_RepeatEvidence).
