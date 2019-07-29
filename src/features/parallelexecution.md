@@ -6,7 +6,7 @@
 simultaneously within the @Pipeline.
 
 It also refers to the ability of an individual @flowelement instance to process multiple 
-requests simultaneously. E.g. One @pipeline instance with one @flowelement being called 
+requests simultaneously. E.g. one @pipeline instance with one @flowelement being called 
 from separate threads.
 
 
@@ -35,7 +35,7 @@ The @Pipeline is able to handle concurrent process requests. However, the abilit
 to also support this will depend on its individual implementation.
 
 All 51Degrees @flowelements have been designed to function correctly in this scenario. 
-(Assuming the [language supports it](@ref Info_FeatureMatrix).)
+(Assuming the [language supports it](@ref Info_FeatureMatrix)).
 If you are writing a @customelement and want to ensure it will work in multi-threaded scenarios
 then see the [custom element parallel example](@ref Examples_CustomElement_Parallel).
 
