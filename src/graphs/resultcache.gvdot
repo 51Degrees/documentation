@@ -1,0 +1,31 @@
+digraph {
+    // Set the background to transparent
+    bgcolor=transparent;
+    // Style the nodes
+    node [shape=record, fontname=Helvetica, fontsize=10];
+    // Style the arrow labels
+    edge [fontname=Helvetica, fontsize=10];    
+    
+    // Add the data key cluster
+    subgraph clusterEngine {
+        label=<Engine with <B>result cache</B>>;
+        fontname=Helvetica;
+        fontsize=10;
+
+        key [label="Create data key\nfrom evidence"];
+        cache [label="Does key\nexist in cache?" shape="diamond"];
+        data [label="Create aspect data"];
+        process [label="Normal engine\nprocessing"];
+        getaspectdata [label="Get aspect data\nfrom cache"];
+        addtoflow [label="Add aspect data to\nflow data and return"];
+        addtocache [label="Add aspect data to\ncache using data key"];
+    };   
+    
+    key -> cache;
+    cache -> data [label="no"];
+    cache -> getaspectdata [label="yes"];
+    data -> process
+    process -> addtocache
+    addtocache -> addtoflow
+    getaspectdata -> addtoflow
+}

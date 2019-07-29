@@ -30,7 +30,9 @@ If one is found then it will be added to the @flowdata as normal.
 If not, the @aspectengine performs the usual processing and then stores the result 
 in the cache using the @datakey.
 
-The size of the cache and its implementation are configurable as described below.   
+Below is a flow chart illustrating this process. 
+
+@dotfile resultcache.gvdot   
 
 # Configuration
 
