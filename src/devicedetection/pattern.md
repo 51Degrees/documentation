@@ -113,7 +113,7 @@ Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/        AppleWebKit/
 **Difference** 120  
 **Method** Closest
 
-The numeric difference between the ASCII characters i and u is 12. If the difference was lower, perhaps because the characters represented the version of a sub string using letters rather than numbers, the difference value would be lower. The numeric difference in characters is multiplied by 10 as the method is the least accurate.
+The numeric difference between the [ASCII characters](http://www.asciitable.com/) i (ASCII value = 105) and u (ASCII value = 117) is 12. This is then multiplied by 10 to give the difference value of 120. The difference is multiplied by 10 as this method is the least accurate.
 
 The difference in the character lengths of the closest sub strings and the target User-Agent is also a factor in the calculation of difference.
 
