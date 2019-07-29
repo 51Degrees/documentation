@@ -2,9 +2,10 @@
 
 # Introduction
 
-Some of the services offered by 51Degrees require @evidence from live installations of the 
-@Pipeline to be sent back to 51Degrees' data processing system. We use this evidence to ensure 
-that our data is up-to-date, comprehensive and continues to provide accurate results.
+Some of the services offered by 51Degrees benefit from @evidence (optionally) being sent back to
+51Degrees' data processing system from live installations of the @Pipeline. We use
+this evidence to ensure that our data is up-to-date, comprehensive and continues to
+provide accurate results.
 
 
 @dotfile usagesharing.gvdot
@@ -54,7 +55,7 @@ These are the rules for whether or not a particular piece of evidence is shared:
 - Any evidence named 'cookie.&lt;name&gt;' is ignored, unless &lt;name&gt; starts with '51D_'
 - Any other evidence is shared if it is not on a configured blacklist.
 
-The various black' and whitelists can be configured using the **share usage** @elementbuilder.
+The various blacklists and whitelists can be configured using the **share usage** @elementbuilder.
 
 ## Share Percentage
 
