@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_Metadata_Index Device Detection Metadata Examples
+@page Examples_DeviceDetection_Metadata_Index Metadata
 
 @subpage Examples_DeviceDetection_Metadata_Cloud
 

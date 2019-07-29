@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_ConfigureFromFile_Index Device Detection Configure From File Examples
+@page Examples_DeviceDetection_ConfigureFromFile_Index Configure From File
 
 @subpage Examples_DeviceDetection_ConfigureFromFile_Cloud
 

@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_GettingStarted_Index Device Detection Getting Started Examples
+@page Examples_DeviceDetection_GettingStarted_Index Getting Started
 
 @subpage Examples_DeviceDetection_GettingStarted_Cloud
 

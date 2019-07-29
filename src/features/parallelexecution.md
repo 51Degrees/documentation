@@ -6,7 +6,7 @@
 simultaneously within the @Pipeline.
 
 It also refers to the ability of an individual @flowelement instance to process multiple 
-requests simultaneously. E.g. one @pipeline instance with one @flowelement being called 
+requests simultaneously. For example, one @pipeline instance with one @flowelement being called 
 from separate threads.
 
 
