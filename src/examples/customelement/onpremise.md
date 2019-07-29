@@ -3,10 +3,10 @@
 # Introduction
 
 This example takes the very simple @flowelement described in the
-[simple flow element example](@ref Examples_CustomElement_GettingStarted), and adds
+[simple flow element example](@ref Examples_CustomElement_FlowElement), and adds
 a @datafile, upgrading the @flowelement to an @aspectengine which provides additional properties.
 
-To follow this example, the reader should be familiar with the previous [example](@ref Examples_CustomElement_GettingStarted),
+To follow this example, the reader should be familiar with the previous [example](@ref Examples_CustomElement_FlowElement),
 which took a date of birth, and returned an age. 
 
 This example will add a @datafile containing star signs to provide the extra property 'star sign'.
