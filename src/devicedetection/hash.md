@@ -35,7 +35,7 @@ Continuing the above example the branch node that follows the matched prefix may
 
 The production of an optimized data set is extremely computationally intensive, requiring multiple servers to work for several hours. However the resulting data set is small and fast for 51Degrees users. As only the relevant characters are evaluated and some tolerance for substrings drifting within the User-Agent can be allowed for, the predictive features of Hash are better than character based trie solutions.
 
-# Predictive Power
+# Predictive Power @anchor DeviceDetection_Hash_PredictivePower
 The Hash algorithm has two tolerances which can be enabled through the API to enhance the predictive power of the algorithm. Predictive power of a matching algorithm can be measured by how accurately it can match things it has not yet encountered based solely on the information it already has. By ignoring irrelevant sub strings, the Hash algorithm already fairs well when matching unknown User-Agents. But by configuring drift and difference, the predictive power can be fine tuned by the user.
 
 ## Drift
