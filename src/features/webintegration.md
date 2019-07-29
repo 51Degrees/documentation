@@ -22,9 +22,10 @@ provide @clientsideevidence in the next request.
 
 - ASP.NET Core
 - ASP.NET
-- Java (TODO something)
+- Java Servlet
+- Java Spring MVC Interceptor
 - PHP
-- Node.js
+- Node.js (**todo http module + express?**)
 - Nginx (@devicedetection only)
 - HAProxy (@devicedetection only)
 - Varnish (@devicedetection only)
