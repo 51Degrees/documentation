@@ -4,14 +4,10 @@
 
 This example takes the very simple @flowelement described in the
 [simple flow element example](@ref Examples_CustomElement_FlowElement), and adds
-a @datafile, upgrading the @flowelement to an @aspectengine which provides additional properties.
+a @datafile, upgrading the @flowelement to an @aspectengine. 
 
-To follow this example, the reader should be familiar with the previous [example](@ref Examples_CustomElement_FlowElement),
-which took a date of birth, and returned an age. 
-
-This example will add a @datafile containing star signs to provide the extra property 'star sign'.
-
-
+Instead of storing data statically, as the [simple flow element example](@ref Examples_CustomElement_FlowElement)
+did, this example will store it in a @datafile which will be loaded, and can be updated.
 # Download Example
 
 The source code used in this example is available here:
@@ -67,25 +63,23 @@ The @elementdata implemented in the previous example can now be upgraded to impl
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific @aspectdata implementation.}
 @startsnippet{dotnet}
-Instead of implementing `IElementDataReadOnly`, the `IAgeData` will now implement `IAspectData`
-which extends `IElementDataReadOnly`. A 'getter' is also added for the new property.
+Instead of implementing `IElementDataReadOnly`, the `IStarSignData` will now implement `IAspectData`
+which extends `IElementDataReadOnly`.
 ```{cs}
-
-//public interface IAgeData : IElementDataReadOnly
-public interface IAgeData : IAspectData
+//public interface IStarSignData : IElementDataReadOnly
+public interface IStarSignData : IAspectData
 {
-    int Age { get; }
     string StarSign { get; }
 }
 ```
 
 Now the internal implementation of it will implement a 'getter' and add a 'setter' for `StarSign` in the
-same way as `Age`.
+same way as the [previous example](@ref Examples_CustomElement_FlowElement).
 ```{cs}
-//internal class AgeData : ElementDataBase, IAgeData
-internal class AgeData : AspectDataBase, IAgeData
+//internal class StarSignData : ElementDataBase, IStarSignData
+internal class StarSignData : AspectDataBase, IStarSignData
 {
-    public AgeData(
+    public StarSignData(
         ILogger<AspectDataBase> logger,
         IFlowData flowData,
         IAspectEngine engine,
@@ -93,15 +87,7 @@ internal class AgeData : AspectDataBase, IAgeData
         : base(logger, flowData, engine, missingPropertyService)
     {
     }
-
-    public int Age
-    {
-        // Get the age from the internal IDictionary as an int.
-        get { return GetAs<int>("age"); }
-        // Add the age to the internal IDictionary.
-        set { AsDictionary().Add("age", value); }
-    }
-
+    
     public string StarSign
     {
         // Get the star sign from the internal IDictionary as a string.
@@ -123,28 +109,23 @@ internal class AgeData : AspectDataBase, IAgeData
 ```
 @endsnippet
 @startsnippet{java}
-Instead of implementing `ElementDataReadOnly`, the `AgeData` will now implement `AspectData`
-which extends `ElementDataReadOnly`. A 'getter' is also added for the new property.
+Instead of implementing `ElementDataReadOnly`, the `StarSignData` will now implement `AspectData`
+which extends `ElementDataReadOnly`.
 ```{java}
-//public interface AgeData : ElementDataReadOnly
-public interface AgeData extends AspectData {
-    int getAge();
+//public interface StarSignData : ElementDataReadOnly
+public interface StarSignData extends AspectData {
 
     String getStarSign();
 }
 ```
 
 Now the internal implementation of it will implement a 'getter' and add a 'setter' for `StarSign` in the
-same way as `Age`.
+same way as the [previous example](@ref Examples_CustomElement_FlowElement).
 ```{java}
-//class AgeDataDefault extends ElementDataBase implements AgeData {
-class AgeDataDefault extends AspectDataBase implements AgeData {
+//class StarSignDataInternal extends ElementDataBase implements StarSignData {
+class StarSignDataInternal extends AspectDataBase implements StarSignData {
 
-    private int age;
-
-    private String starSign;
-
-    public AgeDataDefault(
+    public StarSignDataInternal(
         Logger logger,
         FlowData flowData,
         AspectEngine engine,
@@ -153,23 +134,13 @@ class AgeDataDefault extends AspectDataBase implements AgeData {
     }
 
     @Override
-    public int getAge() {
-        return age;
-    }
-
-    void setAge(int age) {
-        this.age = age;
-    }
-
-    @Override
     public String getStarSign() {
-        return starSign;
+        return getAs("starsign", String.class);
     }
 
     void setStarSign(String starSign) {
-        this.starSign = starSign;
+        asKeyMap().put("starsign", starSign);
     }
-
     @Override
     protected void managedResourcesCleanup() {
         // Nothing to clean up here
@@ -182,8 +153,8 @@ class AgeDataDefault extends AspectDataBase implements AgeData {
 }
 ```
 
-Note that this concrete implementation of `AgeData` sits in the same package as the @aspectengine,
-not the `AgeData` interface, as it only needs to be accessible by the @aspectengine.
+Note that this concrete implementation of `StarSignData` sits in the same package as the @aspectengine,
+not the `StarSignData` interface, as it only needs to be accessible by the @aspectengine.
 @endsnippet
 @startsnippet{php}
 **todo**
@@ -196,8 +167,9 @@ not the `AgeData` interface, as it only needs to be accessible by the @aspecteng
 
 # Aspect Engine
 
-Now the actual @aspectengine needs to be implemented. For this, the class from the previous
-example will now implement the @onpremiseengine's base class.
+Now the actual @aspectengine needs to be implemented. For this, the class from the
+[previous example](@ref Examples_CustomElement_FlowElement) will now implement the
+@onpremiseengine's base class.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -208,7 +180,7 @@ example will now implement the @onpremiseengine's base class.
 @startsnippet{dotnet}
 First let's change the class to extend `OnPremiseAspectEngineBase` (which partially implements
 `IOnPremiseAspectEngine`). This has the type arguments of
-`IAgeData` - the interface extending @aspectdata which will be added to the @flowdata, and 
+`IStarSignData` - the interface extending @aspectdata which will be added to the @flowdata, and 
 `IAspectPropertyMetaData` - instead of `IElementPropertyMetaData`.
 
 The existing constructor needs to change to match the `OnPremiseAspectEngineBase` class. So it takes
@@ -217,15 +189,15 @@ that the @aspectengine will use, and where to make a temporary copy if required.
 
 The constructor will also read the @datafile containing the star signs into memory. This is done in another
 method so that it can also be used by the `RefreshData` method when a new @datafile is downloaded (this is not
-applicable for this example as star sign data is static).
+applicable for this example as star sign data will not change).
 ```{cs}
-//public class SimpleFlowElement : FlowElementBase<IAgeData, IElementPropertyMetaData>
-public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspectPropertyMetaData>
+//public class SimpleFlowElement : FlowElementBase<IStarSignData, IElementPropertyMetaData>
+public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IStarSignData, IAspectPropertyMetaData>
 {
     public SimpleOnPremiseEngine(
         string dataFilePath,
-        ILogger<AspectEngineBase<IAgeData, IAspectPropertyMetaData>> logger,
-        Func<IFlowData, FlowElementBase<IAgeData, IAspectPropertyMetaData>, IAgeData> aspectDataFactory,
+        ILogger<AspectEngineBase<IStarSignData, IAspectPropertyMetaData>> logger,
+        Func<IFlowData, FlowElementBase<IStarSignData, IAspectPropertyMetaData>, IStarSignData> aspectDataFactory,
         string tempDataFilePath)
         : base(logger, aspectDataFactory, tempDataFilePath)
     {
@@ -294,12 +266,12 @@ private void Init()
 
 Now the abstract methods can be implemented to create a functional @aspectengine.
 ```{cs}
-public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspectPropertyMetaData>
+public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IStarSignData, IAspectPropertyMetaData>
 {
     public SimpleOnPremiseEngine(
         string dataFilePath,
-        ILogger<AspectEngineBase<IAgeData, IAspectPropertyMetaData>> logger,
-        Func<IFlowData, FlowElementBase<IAgeData, IAspectPropertyMetaData>, IAgeData> aspectDataFactory,
+        ILogger<AspectEngineBase<IStarSignData, IAspectPropertyMetaData>> logger,
+        Func<IFlowData, FlowElementBase<IStarSignData, IAspectPropertyMetaData>, IStarSignData> aspectDataFactory,
         string tempDataFilePath)
         : base(logger, aspectDataFactory, tempDataFilePath)
     {
@@ -338,12 +310,10 @@ public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspect
     public override IEvidenceKeyFilter EvidenceKeyFilter =>
         new EvidenceKeyFilterWhitelist(new List<string>() { "date-of-birth" });
 
-    // These properties now implement IAspectPropertyMetaData.
     public override IList<IAspectPropertyMetaData> Properties => new List<IAspectPropertyMetaData>() {
-        // The age property.
-        new AspectPropertyMetaData(this, "age", typeof(int), "age", new List<string>(){"free"}, true),
-        // The new star sign property.
-        new AspectPropertyMetaData(this, "starsign", typeof(string), "age", new List<string>(){"free"}, true),
+        // The only property which will be returned is "starsign" which will be
+        // a string.
+        new AspectPropertyMetaData(this, "starsign", typeof(string), "starsign", new List<string>(){"free"}, true),
     };
 
     // The data file is free.
@@ -379,32 +349,30 @@ public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspect
         throw new NotImplementedException();
     }
 
-    protected override void ProcessEngine(IFlowData data, IAgeData aspectData)
+    protected override void ProcessEngine(IFlowData data, IStarSignData aspectData)
     {
         DateTime zero = new DateTime(1, 1, 1);
         // Cast aspectData to AgeData so the 'setter' is available.
-        AgeData ageData = (AgeData)aspectData;
+        StarSignData starSignData = (StarSignData)aspectData;
 
         if (data.TryGetEvidence("date-of-birth", out DateTime dateOfBirth))
         {
-            // "date-of-birth" is there, so set the age and star sign.
-            ageData.Age = (zero + (DateTime.Now - dateOfBirth)).Year - 1;
+            // "date-of-birth" is there, so set the star sign.
             var monthAndDay = new DateTime(1, dateOfBirth.Month, dateOfBirth.Day);
             foreach (var starSign in _starSigns)
             {
                 if (monthAndDay > starSign.Start &&
                     monthAndDay < starSign.End)
                 {
-                    ageData.StarSign = starSign.Name;
+                    starSignData.StarSign = starSign.Name;
                     break;
                 }
             }
         }
         else
         {
-            // "date-of-birth" is not there, so set the properties to defaults.
-            ageData.Age = -1;
-            ageData.StarSign = "Unknown";
+            // "date-of-birth" is not there, so set the star sign to unknown.
+            starSignData.StarSign = "Unknown";
         }
     }
 
@@ -418,7 +386,7 @@ public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IAgeData, IAspect
 @startsnippet{java}
 First let's change the class to extend `OnPremiseAspectEngineBase` (which partially implements
 `OnPremiseAspectEngine`). This has the type arguments of
-`AgeData` - the interface extending @aspectdata which will be added to the @flowdata, and 
+`StarSignData` - the interface extending @aspectdata which will be added to the @flowdata, and 
 `AspectPropertyMetaData` - instead of `ElementPropertyMetaData`.
 
 The existing constructor needs to change to match the `OnPremiseAspectEngineBase` class. So it takes
@@ -429,13 +397,13 @@ The constructor will also read the @datafile containing the star signs into memo
 method so that it can also be used by the `refreshData` method when a new @datafile is downloaded (this is not
 applicable for this example as star sign data is static).
 ```{java}
-//public class SimpleFlowElement extends FlowElementBase<AgeData, ElementPropertyMetaData> {
-public class SimpleOnPremiseEngine extends OnPremiseAspectEngineBase<AgeData, AspectPropertyMetaData> {
+//public class SimpleFlowElement extends FlowElementBase<StarSignData, ElementPropertyMetaData> {
+public class SimpleOnPremiseEngine extends OnPremiseAspectEngineBase<StarSignData, AspectPropertyMetaData> {
 
     public SimpleOnPremiseEngine(
         String dataFile,
         Logger logger,
-        ElementDataFactory<AgeData> elementDataFactory,
+        ElementDataFactory<StarSignData> elementDataFactory,
         String tempDir) throws IOException {
         super(logger, elementDataFactory, tempDir);
         this.dataFile = dataFile;
@@ -516,12 +484,12 @@ private void init() throws IOException {
 
 Now the abstract methods can be implemented to create a functional @aspectengine.
 ```{java}
-public class SimpleOnPremiseEngine extends OnPremiseAspectEngineBase<AgeData, AspectPropertyMetaData> {
+public class SimpleOnPremiseEngine extends OnPremiseAspectEngineBase<StarSignData, AspectPropertyMetaData> {
 
     public SimpleOnPremiseEngine(
         String dataFile,
         Logger logger,
-        ElementDataFactory<AgeData> elementDataFactory,
+        ElementDataFactory<StarSignData> elementDataFactory,
         String tempDir) throws IOException {
         super(logger, elementDataFactory, tempDir);
         this.dataFile = dataFile;
@@ -548,6 +516,7 @@ public class SimpleOnPremiseEngine extends OnPremiseAspectEngineBase<AgeData, As
         }
         this.starSigns = starSigns;
     }
+
 
     @Override
     public String getTempDataDirPath() {
@@ -588,23 +557,15 @@ public class SimpleOnPremiseEngine extends OnPremiseAspectEngineBase<AgeData, As
     }
 
     @Override
-    protected void processEngine(FlowData data, AgeData aspectData) throws Exception {
-        // Cast aspectData to AgeDataDefault, and cast to AgeDataDefault so the 'setter' is available.
-        AgeDataDefault ageData = (AgeDataDefault)aspectData;
+    protected void processEngine(FlowData data, StarSignData aspectData) throws Exception {
+        // Cast the StarSignData to StarSignDataInternal so the 'setter' is available.
+        StarSignDataInternal starSignData = (StarSignDataInternal)aspectData;
 
         TryGetResult<Date> date = data.tryGetEvidence("date-of-birth", Date.class);
         if (date.hasValue()) {
-            // "date-of-birth" is there, so set the age and star sign.
-            Calendar age = Calendar.getInstance();
+            // "date-of-birth" is there, so set the star sign.
             Calendar dob = Calendar.getInstance();
             dob.setTime(date.getValue());
-
-            age.add(Calendar.YEAR, - dob.get(Calendar.YEAR));
-            age.add(Calendar.MONTH, - dob.get(Calendar.MONTH));
-            age.add(Calendar.DATE, - dob.get(Calendar.DATE));
-
-            ageData.setAge(age.get(Calendar.YEAR));
-
             Calendar monthAndDay = Calendar.getInstance();
             monthAndDay.set(
                 0,
@@ -613,23 +574,22 @@ public class SimpleOnPremiseEngine extends OnPremiseAspectEngineBase<AgeData, As
             for (StarSign starSign : starSigns) {
                 if (monthAndDay.compareTo(starSign.getStart()) >= 0 &&
                     monthAndDay.compareTo(starSign.getEnd()) <= 0) {
-                    ageData.setStarSign(starSign.getName());
+                    starSignData.setStarSign(starSign.getName());
                     break;
                 }
             }
         }
         else
         {
-            // "date-of-birth" is not there, so set the defaults.
-            ageData.setAge(-1);
-            ageData.setStarSign("Unknown");
+            // "date-of-birth" is not there, so set the star sign to unknown.
+            starSignData.setStarSign("Unknown");
         }
     }
 
     @Override
     public String getElementDataKey() {
-        // The AgeData will be stored with the key "age" in the FlowData.
-        return "age";
+        // The StarSignData will be stored with the key "starsign" in the FlowData.
+        return "starsign";
     }
 
     @Override
@@ -640,20 +600,13 @@ public class SimpleOnPremiseEngine extends OnPremiseAspectEngineBase<AgeData, As
 
     @Override
     public List<AspectPropertyMetaData> getProperties() {
-        // The only property which will be returned is "age" which will be
-        // an Integer.
+        // The only property which will be returned is "starsign" which will be
+        // an String.
         return Arrays.asList(
-            (AspectPropertyMetaData)new AspectPropertyMetaDataDefault(
-                "age",
-                this,
-                "age",
-                Integer.class,
-                Arrays.asList("free"),
-                true),
             (AspectPropertyMetaData)new AspectPropertyMetaDataDefault(
                 "starsign",
                 this,
-                "age",
+                "starsign",
                 String.class,
                 Arrays.asList("free"),
                 true));
@@ -709,12 +662,9 @@ public class SimpleOnPremiseEngineBuilder : SingleFileAspectEngineBuilderBase<Si
 
     public override SimpleOnPremiseEngineBuilder SetPerformanceProfile(PerformanceProfiles profile)
     {
-        // Lets not implement multiple performance profiles in this example.
         throw new NotImplementedException();
     }
 
-    // This method is called by the Build method in the base class which contains
-    // general logic.
     protected override SimpleOnPremiseEngine BuildEngine(string tempPath, List<string> properties)
     {
         if (DataFileConfigs.Count != 1)
@@ -731,13 +681,12 @@ public class SimpleOnPremiseEngineBuilder : SingleFileAspectEngineBuilderBase<Si
             CreateData,
             TempDir);
     }
-    // This is the aspect data factory, and is called in the Process method of the engine.
-    public IAgeData CreateData(
+    public IStarSignData CreateData(
         IFlowData flowData,
-        FlowElementBase<IAgeData, IAspectPropertyMetaData> aspectEngine)
+        FlowElementBase<IStarSignData, IAspectPropertyMetaData> aspectEngine)
     {
-        return new AgeData(
-            _loggerFactory.CreateLogger<AgeData>(),
+        return new StarSignData(
+            _loggerFactory.CreateLogger<StarSignData>(),
             flowData,
             (SimpleOnPremiseEngine)aspectEngine,
             MissingPropertyService.Instance);
@@ -754,8 +703,8 @@ public class SimpleOnPremiseEngineBuilder
         SimpleOnPremiseEngineBuilder,
         SimpleOnPremiseEngine> {
 
-    public SimpleOnPremiseEngineBuilder(DataUpdateService dataUpdateService) {
-        super(dataUpdateService);
+    public SimpleOnPremiseEngineBuilder(ILoggerFactory loggerFactory) {
+        super(loggerFactory);
     }
 
     @Override
@@ -778,13 +727,13 @@ public class SimpleOnPremiseEngineBuilder
             return new SimpleOnPremiseEngine(
                 config.getDataFilePath(),
                 loggerFactory.getLogger(SimpleOnPremiseEngine.class.getName()),
-                new ElementDataFactory<AgeData>() {
+                new ElementDataFactory<StarSignData>() {
                     @Override
-                    public AgeData create(
+                    public StarSignData create(
                         FlowData flowData,
-                        FlowElement<AgeData, ?> flowElement) {
-                        return new AgeDataDefault(
-                            loggerFactory.getLogger(AgeDataDefault.class.getName()),
+                        FlowElement<StarSignData, ?> flowElement) {
+                        return new StarSignDataInternal(
+                            loggerFactory.getLogger(StarSignDataInternal.class.getName()),
                             flowData,
                             (SimpleOnPremiseEngine)flowElement,
                             MissingPropertyServiceDefault.getInstance());
@@ -796,6 +745,7 @@ public class SimpleOnPremiseEngineBuilder
         }
     }
 }
+
 ```
 @endsnippet
 @startsnippet{php}
@@ -818,42 +768,38 @@ public class SimpleOnPremiseEngineBuilder
 @startsnippet{dotnet}
 This new @aspectengine can now be added to a @pipeline and used like:
 ```{cs}
-var ageEngine = new SimpleOnPremiseEngineBuilder(_loggerFactory, null)
+var starSignEngine = new SimpleOnPremiseEngineBuilder(_loggerFactory, null)
     .SetAutoUpdate(false)
     .Build("starsigns.csv", false);
 var pipeline = new PipelineBuilder(_loggerFactory)
-    .AddFlowElement(ageEngine)
+    .AddFlowElement(starSignEngine)
     .Build();
 var dob = new DateTime(1992, 12, 18);
 var flowData = pipeline.CreateFlowData();
 flowData
     .AddEvidence("date-of-birth", dob)
     .Process();
-Console.WriteLine($"With a date of birth of {dob},\n" +
-    $"your age is {flowData.GetFromElement(ageEngine).Age},\n" +
-    $"and your star sign is {flowData.GetFromElement(ageEngine).StarSign}.");
-Console.ReadKey();
+Console.WriteLine($"With a date of birth of {dob}, " +
+    $"your star sign is {flowData.GetFromElement(starSignEngine).StarSign}.");
 ```
 
 to give an output of:
 ```{bash}
-With a date of birth of 18/12/1992,
-your age is 26,
-and your star sign is Sagittarius.
+With a date of birth of 18/12/1992, your star sign is Sagittarius.
 ```
 @endsnippet
 @startsnippet{java}
 This new @aspectengine can now be added to a @pipeline and used like:
 ```{java}
-File file = new File(Main.class.getClassLoader().getResource("starsigns.csv").getFile());
-
-SimpleOnPremiseEngine ageElement =
-    new SimpleOnPremiseEngineBuilder(null)
-        .setAutoUpdate(false)
-        .build(file.getAbsolutePath(), false);
+SimpleOnPremiseEngine starSignEngine =
+    new SimpleOnPremiseEngineBuilder(loggerFactory)
+    .setAutoUpdate(false)
+    .build(
+        Main.class.getClassLoader().getResource("starsigns.csv").getPath(),
+        false);
 
 Pipeline pipeline = new PipelineBuilder(loggerFactory)
-    .addFlowElement(ageElement)
+    .addFlowElement(starSignEngine)
     .build();
 Calendar dob = Calendar.getInstance();
 dob.set(1992, Calendar.DECEMBER, 18);
@@ -865,17 +811,13 @@ flowData
 
 System.out.println("With a date of birth of " +
     new SimpleDateFormat("yyyy/MM/dd").format(dob.getTime()) +
-    ",\nyour age is " +
-    flowData.getFromElement(ageElement).getAge() + ",\n" +
-    "and your star sign is " +
-    flowData.getFromElement(ageElement).getStarSign() + ".");
+    ", your star sign is " +
+    flowData.getFromElement(starSignEngine).getStarSign() + ".");
 ```
 
 to give an output of:
 ```{bash}
-With a date of birth of 18/12/1992,
-your age is 26,
-and your star sign is Sagittarius.
+With a date of birth of 18/12/1992, your tar sign is Sagittarius.
 ```
 @endsnippet
 @startsnippet{php}
