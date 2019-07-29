@@ -21,13 +21,11 @@ Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/        AppleWebKit/
 **Difference** 0  
 **Method** Exact
 
-TODO: The example below does not work.
-
-Those characters not relevant to the matching process could be changed and the same result returned. The following user agent has the string "Opera Mobi," in place of the characters "KHTML, like" which proceed the Gecko string.
+Those characters not relevant to the matching process could be changed and the same result returned. The following user agent has the string "AAAAAA" in place of the characters "JSS15Q" which follow the "Build/" string.
 
 **Target UserAgent**  
 
-[`Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/JSS15Q) AppleWebKit/537.36 
+[`Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/AAAAAA) AppleWebKit/537.36 
 (Opera Mobi, Gecko) Chrome/29.0.1547.72 Safari/537.36`][UA2]
  
 **Closest Sub Strings** 
@@ -39,7 +37,8 @@ Mozilla/5.0 (Linux; Android 4.3  Nexus 7 Build/        AppleWebKit
 **Difference** 0  
 **Method** Exact
 
-This revised user agent returns precisely the same device details as the original because the detection algorithm knows the presence of “Opera Mobi,” at these character positions are unimportant. Knowledge of the positions of relevant sub strings improves performance and accuracy as irrelevant characters do not provide distractions. Regular expression based solutions suffer from this problem.
+This revised user agent returns precisely the same device details as the original because the detection algorithm knows the presence of “AAAAAA” at these character positions are unimportant. Knowledge of the positions of relevant sub strings improves performance and accuracy as irrelevant characters do not provide distractions. 
+In contrast, regular expression based solutions often suffer from considering these unimportant characters when determining the details of the device.
 
 # Additional Matching Methods
 Four different methods are used to match user agents against device information. The most commonly used is the exact match shown in the examples above.
@@ -71,31 +70,30 @@ In this case the method used was Nearest indicating that all the relevant sub st
 
 If a device data file becomes older and does not contain up to date data  the Nearest method will be used more often when obtaining the result as subtle differences are observed between the older data in the device data file and the real user agents used by devices created after the data file. This is common with the Lite or Basic data files provided freely.
 
-# Numeric
-Where the only difference in a user agent is the numeric version of a sub string the numeric matching method may be used to provide the result. Consider the following user agent where the version of Chrome appears to be 51. The result returned is the most current version of Chrome supported by the device, in this case version 32.
+# Closest
 
-TODO: This example says it matches using 'closest' it seems to actually be using numeric though.
+If the previous methods fail to detect the device, the closest method is used. This method finds the device signature that most closely matches as many of the relevant sub strings as possible. It will always return a result but the difference value may be very high.
+
+Firstly, consider the following User-Agent where the Chrome version has been set to 10:
 
 **Target UserAgent** 
 
 [`Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/JSS15Q) AppleWebKit/537.36 
-(KHTML, like Gecko) Chrome/99.0.1547.72 Safari/537.36`][UA4]
+(KHTML, like Gecko) Chrome/10.0.1547.72 Safari/537.36`][UA4]
 
 **Closest Sub Strings** 
 ```
 Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/        AppleWebKit/              
-(KHTML, like Gecko) Chrome/69           Safari/537
+(KHTML, like Gecko) Chrome/28           Safari/537
 ```       
-**Rank** 61152  
-**Difference** 30  
-**Method** Numeric
+**Rank** 59047  
+**Difference** 18  
+**Method** Closest
 
-The numeric difference between 51 and 32 is 19. This difference is returned in the Difference value and the matching method used is set to Numeric. The approach ensures that the most appropriate detection result is returned even when the device data does not know about the most recent versions of devices.
+The closest Chrome version in the file being used is 28. Therefore, this is the version that matches and the difference is set to 18. This approach ensures that the most appropriate detection result is returned even when the device data does not know about the most recent versions of devices.
 
-Regular expression or tree structure based detection methods will not be able to distinguish between the numeric differences in relevant sub strings and therefore become susceptible to accuracy problems.
+In contrast, regular expression or tree structure based detection methods are usually unable to distinguish between the numeric differences in relevant sub strings and therefore become susceptible to accuracy problems.
 
-# Closest
-If none of the previous methods detect the device the closest method is used. This method finds the device signature that most closely matches as many of the relevant sub strings as possible. It will always return a result but the difference value may be very high.
 
 Consider the following target user agent where the u in Nexus has been changed to an i. The Nexus 7 is returned correctly but the difference score is 120. 
 
@@ -140,7 +138,7 @@ Finally if none of the previous methods have resulted in a match, usually becaus
 
 **Target UserAgent** sadsa%$^"dfs  
 **Relevant Sub Strings**  
-**Rank** 59666  
+**Rank** 61381  
 **Difference** 0  
 **Method** None
 
