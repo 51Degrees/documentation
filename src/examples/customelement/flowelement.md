@@ -65,17 +65,17 @@ concrete implementation with easy 'setters'.
 In this example, only one value is populated. So an interface `IStarSign` will extend `IElementDataReadOnly`
 to add a 'getter' for it.
 ```{cs}
+public interface IStarSignData : IElementDataReadOnly
+{
+    string StarSign { get; }
+}
+```
+
+Now the internal implementation of it will implement this 'getter' and add a 'setter' for the @flowelement
+to use.
+```{cs}
 internal class StarSignData : ElementDataBase, IStarSignData
 {
-    public interface IStarSignData : IElementDataReadOnly
-    {
-        string StarSign { get; }
-    }
-    ```
-
-    Now the internal implementation of it will implement this 'getter' and add a 'setter' for the @flowelement
-    to use.
-    ```{cs}
     public StarSignData(
         ILogger<ElementDataBase> logger,
         IFlowData flowData)
