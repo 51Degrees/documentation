@@ -1,4 +1,4 @@
-@page Examples_CustomElement_FlowElement Simple Custom Flow Element
+@page Examples_CustomElement_FlowElement 1 Simple Custom Flow Element
 
 # Introduction
 
@@ -667,3 +667,4 @@ With a date of birth of 18/12/1992, your star sign is Sagittarius.
 **todo**
 @endsnippet
 @endsnippets
+
