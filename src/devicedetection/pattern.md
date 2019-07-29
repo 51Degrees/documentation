@@ -47,7 +47,7 @@ The method used to obtain the matched is provided in all detection results along
 
 If an exact match cannot be found then a small subset of possible results will be searched using 3 methods in the following order.
 
-# Nearest
+## Nearest
 Sometimes relevant sub strings may have been moved as irrelevant characters are added elsewhere in the user agent. The following user agent has an additional X characters placed after the full version of Chrome. All other characters that might be relevant are now moved 1 character position to the right of where we’d ideally like them.
 
 **Target UserAgent** 
@@ -70,7 +70,7 @@ In this case the method used was Nearest indicating that all the relevant sub st
 
 If a device data file becomes older and does not contain up to date data  the Nearest method will be used more often when obtaining the result as subtle differences are observed between the older data in the device data file and the real user agents used by devices created after the data file. This is common with the Lite or Basic data files provided freely.
 
-# Closest
+## Closest
 
 If the previous methods fail to detect the device, the closest method is used. This method finds the device signature that most closely matches as many of the relevant sub strings as possible. It will always return a result but the difference value may be very high.
 
@@ -133,10 +133,10 @@ Mozilla/5.0 (Linux; Android 4.3; Nexus 10 Build/        AppleWebKit/
 
 Tree structures and regular expression solutions can not provide this level of intelligence concerning the validity of the result where unusual target user agents are encountered.
 
-# None
+## None
 Finally if none of the previous methods have resulted in a match, usually because the user agent is a random collection of characters, the None method will be returned.
 
-**Target UserAgent** [2sadsa%$^"dfs][UA7]  
+**Target UserAgent** [2sadsa%$^dfs][UA7]  
 **Relevant Sub Strings**  
 **Difference** 0  
 **Method** None
@@ -163,4 +163,4 @@ Memory mode loads the entire data file into main memory. Faster than stream mode
 [UA4]: https://51degrees.com/Products/DeviceData/UserAgentTester/tabid/316Products/DeviceData/UserAgentTester//TabId/316/Products/DeviceData/Default.aspx?UserAgentTester=Default.aspx&useragent=Mozilla%2f5.0+(Linux%3b+Android+4.3%3b+Nexus+7+Build%2fJSS15Q)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f51.0.1547.72+Safari%2f537.36
 [UA5]: https://51degrees.com/Products/DeviceData/UserAgentTester/tabid/316Products/DeviceData/UserAgentTester/TabId/316/Products/DeviceData/Default.aspx?UserAgentTester=Default.aspx&useragent=Mozilla%2f5.0+(Linux%3b+Android+4.3%3b+Nexis+7+Build%2fJSS15Q)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f29.0.1547.72+Safari%2f537.36
 [UA6]: https://51degrees.com/Products/DeviceData/UserAgentTester/tabid/316Products/DeviceData/UserAgentTester/TabId/316/Products/DeviceData/Default.aspx?UserAgentTester=Default.aspx&useragent=Mozilla%2f5.0+(Linux%3b+Android+4.3%3b+iPhone+7+Build%2fJSS15Q)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f29.0.1547.72+Safari%2f537.36
-[UA7]: https://51degrees.com/Products/DeviceData/UserAgentTester/tabid/316Products/DeviceData/UserAgentTester/TabId/316/Products/DeviceData/Default.aspx?UserAgentTester=Default.aspx&useragent=2sadsa%$^"dfs
+[UA7]: https://51degrees.com/Products/DeviceData/UserAgentTester/tabid/316Products/DeviceData/UserAgentTester/TabId/316/Products/DeviceData/Default.aspx?UserAgentTester=Default.aspx&useragent=2sadsa%$^dfs

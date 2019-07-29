@@ -1,6 +1,7 @@
 digraph {
     // Set the background to transparent
     bgcolor=transparent;
+    graph [pad="0", nodesep="0.2", ranksep="0"];
     // Style the nodes
     node [shape=record, fontname=Helvetica, fontsize=10];
     // Style the arrow labels
@@ -12,13 +13,19 @@ digraph {
         fontname=Helvetica;
         fontsize=10;
 
-        key [label="Create data key\nfrom evidence"];
-        cache [label="Does key\nexist in cache?" shape="diamond"];
-        data [label="Create aspect data"];
-        process [label="Normal engine\nprocessing"];
-        getaspectdata [label="Get aspect data\nfrom cache"];
+        {
+          rank=same; 
+          key [label="Create data key\nfrom evidence"];
+          getaspectdata [label="Get aspect data\nfrom cache"];
+          cache [label="Does key\nexist in cache?" shape="diamond"];
+        }
+        {
+          rank=same; 
+          data [label="Create aspect data"];
+          process [label="Normal engine\nprocessing"];
+          addtocache [label="Add aspect data to\ncache using data key"];
+        }
         addtoflow [label="Add aspect data to\nflow data and return"];
-        addtocache [label="Add aspect data to\ncache using data key"];
     };   
     
     key -> cache;
