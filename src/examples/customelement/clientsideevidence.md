@@ -733,8 +733,6 @@ The message is constructed in the controller in the same way as in the [previous
 ```{cs}
 public class HomeController : Controller
 {
-    private Random _random = new Random();
-
     private IFlowDataProvider _flowDataProvider;
 
     public HomeController(IFlowDataProvider flowDataProvider)
@@ -798,8 +796,6 @@ public class ExampleController {
 
     private FlowDataProvider flowDataProvider;
 
-    private Random rand = new Random();
-
     @Autowired
     public ExampleController(FlowDataProvider flowDataProvider) {
         this.flowDataProvider = flowDataProvider;
@@ -815,7 +811,6 @@ public class ExampleController {
         data.getEvidence().get("cookie.date-of-birth") +
         ", your star sign is " +
         data.get(StarSignData.class).getStarSign());
-        model.addAttribute("version", rand.nextInt());
         return "example";
     }
 }
