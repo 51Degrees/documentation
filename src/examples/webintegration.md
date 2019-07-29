@@ -1,1 +1,1 @@
-@page Examples_WebIntegration Web Integration Examples
+@page Examples_WebIntegration Web Integration

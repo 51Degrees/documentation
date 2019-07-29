@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_Performance_Index Device Detection Performance Examples
+@page Examples_DeviceDetection_Performance_Index Performance
 
 @subpage Examples_DeviceDetection_Performance_Cloud
 

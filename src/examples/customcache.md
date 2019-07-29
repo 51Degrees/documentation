@@ -1,1 +1,1 @@
-@page Examples_CustomCache Custom Cache Implementation Examples
+@page Examples_CustomCache Custom Cache Implementation

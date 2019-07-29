@@ -1,1 +1,1 @@
-@page Examples_Caching Result Caching Examples
+@page Examples_Caching Result Caching
