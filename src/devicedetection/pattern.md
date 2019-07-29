@@ -14,12 +14,14 @@ When provided to the device detection routines the following sub strings relate 
 
 **Closest Sub Strings**
 ```
-Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/             WebKit
-             Gecko) Chrome/29           Safari/537
+Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/        AppleWebKit/
+(KHTML, like Gecko) Chrome/29           Safari/537
 ```
-**Rank** 28072  
+**Rank** 60057  
 **Difference** 0  
 **Method** Exact
+
+TODO: The example below does not work.
 
 Those characters not relevant to the matching process could be changed and the same result returned. The following user agent has the string "Opera Mobi," in place of the characters "KHTML, like" which proceed the Gecko string.
 
@@ -33,7 +35,7 @@ Those characters not relevant to the matching process could be changed and the s
 Mozilla/5.0 (Linux; Android 4.3  Nexus 7 Build/        AppleWebKit              
              Gecko) Chrome/29           Safari/537
 ```       
-**Rank** 28072  
+**Rank** 60057  
 **Difference** 0  
 **Method** Exact
 
@@ -56,10 +58,10 @@ Sometimes relevant sub strings may have been moved as irrelevant characters are 
 
 **Closest Sub Strings** 
 ```
-Mozilla/5.0 (Linux; Android 4.3  Nexus 7 Build/        AppleWebKit              
-             Gecko) Chrome/29            Safari/537
+Mozilla/5.0 (Linux; Android 4.3  Nexus 7 Build/        AppleWebKit/              
+(KHTML, like Gecko) Chrome/29            Safari/537
 ```       
-**Rank** 28072  
+**Rank** 60057  
 **Difference** 1  
 **Method** Nearest
 
@@ -72,18 +74,20 @@ If a device data file becomes older and does not contain up to date data  the Ne
 # Numeric
 Where the only difference in a user agent is the numeric version of a sub string the numeric matching method may be used to provide the result. Consider the following user agent where the version of Chrome appears to be 51. The result returned is the most current version of Chrome supported by the device, in this case version 32.
 
+TODO: This example says it matches using 'closest' it seems to actually be using numeric though.
+
 **Target UserAgent** 
 
 [`Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/JSS15Q) AppleWebKit/537.36 
-(KHTML, like Gecko) Chrome/51.0.1547.72 Safari/537.36`][UA4]
+(KHTML, like Gecko) Chrome/99.0.1547.72 Safari/537.36`][UA4]
 
 **Closest Sub Strings** 
 ```
-Mozilla/5.0 (Linux; Android 4.3  Nexus 7 Build/        AppleWebKit              
-             Gecko) Chrome/32           Safari/537
+Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/        AppleWebKit/              
+(KHTML, like Gecko) Chrome/69           Safari/537
 ```       
-**Rank** 39827  
-**Difference** 19  
+**Rank** 61152  
+**Difference** 30  
 **Method** Numeric
 
 The numeric difference between 51 and 32 is 19. This difference is returned in the Difference value and the matching method used is set to Numeric. The approach ensures that the most appropriate detection result is returned even when the device data does not know about the most recent versions of devices.
@@ -102,10 +106,10 @@ Consider the following target user agent where the u in Nexus has been changed t
 
 **Closest Sub Strings** 
 ```
-Mozilla/5.0 (Linux; Android 4.3  Nexus 7 Build/        AppleWebKit              
-             Gecko) Chrome/29           Safari/537       
+Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/        AppleWebKit/              
+(KHTML, like Gecko) Chrome/29           Safari/537       
 ```
-**Rank** 39827  
+**Rank** 60057  
 **Difference** 120  
 **Method** Closest
 
@@ -122,10 +126,10 @@ Consider the following target user agent where "Nexus" has been replaced entirel
 
 **Closest Sub Strings** 
 ```
-Mozilla/5.0 (Linux; Android 4.3  Nexus 10 Build/        AppleWebKit             
+Mozilla/5.0 (Linux; Android 4.3; Nexus 10 Build/        AppleWebKit/             
                     Chrome/29           Safari/537
 ```
-**Rank** 39827  
+**Rank** 60897  
 **Difference** 1510  
 **Method** Closest
 
@@ -160,5 +164,5 @@ Memory mode loads the entire data file into main memory. Faster than stream mode
 [UA2]: https://51degrees.com/Products/DeviceData/UserAgentTester/tabid/316Products/DeviceData/UserAgentTester//TabId/316/Products/DeviceData/Default.aspx?UserAgentTester=Default.aspx&useragent=Mozilla%2f5.0+(Linux%3b+Android+4.3%3b+Nexus+7+Build%2fJSS15Q)+AppleWebKit%2f537.36+(Opera+Mobi%2c+Gecko)+Chrome%2f29.0.1547.72+Safari%2f537.36
 [UA3]: https://51degrees.com/Products/DeviceData/UserAgentTester/TabId/316/Products/DeviceData/Default.aspx?UserAgentTester=Default.aspx&useragent=Mozilla%2f5.0+(Linux%3b+Android+4.3%3b+Nexus+7+Build%2fJSS15Q)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f29.0.1547.72X+Safari%2f537.36
 [UA4]: https://51degrees.com/Products/DeviceData/UserAgentTester/tabid/316Products/DeviceData/UserAgentTester//TabId/316/Products/DeviceData/Default.aspx?UserAgentTester=Default.aspx&useragent=Mozilla%2f5.0+(Linux%3b+Android+4.3%3b+Nexus+7+Build%2fJSS15Q)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f51.0.1547.72+Safari%2f537.36
-[UA5]: https://51degrees.com/Products/DeviceData/UserAgentTester/tabid/316Products/DeviceData/UserAgentTester/TabId/316/Products/DeviceData/Default.aspx?UserAgentTester=Default.aspx&useragent=Mozilla%2f5.0+(Linux%3b+Android+4.3%3b+Nexus+7+Build%2fJSS15Q)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f51.0.1547.72+Safari%2f537.36
-[UA6]: https://51degrees.com/Products/DeviceData/UserAgentTester/tabid/316Products/DeviceData/UserAgentTester/TabId/316/Products/DeviceData/Default.aspx?UserAgentTester=Default.aspx&useragent=Mozilla%2f5.0+(Linux%3b+Android+4.3%3b+Nexus+7+Build%2fJSS15Q)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f51.0.1547.72+Safari%2f537.36
+[UA5]: https://51degrees.com/Products/DeviceData/UserAgentTester/tabid/316Products/DeviceData/UserAgentTester/TabId/316/Products/DeviceData/Default.aspx?UserAgentTester=Default.aspx&useragent=Mozilla%2f5.0+(Linux%3b+Android+4.3%3b+Nexis+7+Build%2fJSS15Q)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f29.0.1547.72+Safari%2f537.36
+[UA6]: https://51degrees.com/Products/DeviceData/UserAgentTester/tabid/316Products/DeviceData/UserAgentTester/TabId/316/Products/DeviceData/Default.aspx?UserAgentTester=Default.aspx&useragent=Mozilla%2f5.0+(Linux%3b+Android+4.3%3b+iPhone+7+Build%2fJSS15Q)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f29.0.1547.72+Safari%2f537.36
