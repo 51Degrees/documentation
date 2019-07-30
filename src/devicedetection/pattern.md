@@ -5,6 +5,11 @@ With the Pattern method, User-Agent (UA) is the main HTTP header used to identif
 The device data file contains signatures which consist of the relevant characters of the User-Agent. Only the segments of the UA considered applicable to device detection are stored, characters which are not deemed necessary are omitted in order to reduce the size of the data file. For this reason detection results will rarely contain an entire User-Agent for the device returned.
 
 The [51Degrees User-Agent Tester](https://51degrees.com/resources/user-agent-tester) can be used to show the relevant segments for a given User-Agent. 
+
+Below, we will step through a number of User-Agent scenarios to illustrate the different way in which the **pattern** method identifies a match.
+
+## Exact Match
+
 Consider the following User-Agent for the Nexus 7 running Android 4.3 and Chrome 29.
 
 **Target UserAgent**  
@@ -43,14 +48,14 @@ This revised User-Agent returns exactly the same device details as the original 
 
 In contrast, regular expression based solutions often suffer from considering these unimportant characters when determining the details of the device.
 
-# Additional Matching Methods
+## Additional Matching Methods
 Four different methods can be used to find a match for a User-Agent, the most commonly used is the **Exact** match as shown in the example above.
 
 The method used to obtain the match is provided in all detection results along with a difference indicator. The difference value will always be zero when the Exact method has been used, as a precise match has been obtained against the signatures held in the data file and there is no difference between them.
 
 If an Exact match cannot be found then a small subset of possible results will be searched using the following 3 methods in turn. If a method finds a match the results will be returned and further methods not attempted.
 
-## Nearest
+### Nearest
 Sometimes relevant sub strings may have been moved when irrelevant characters are added elsewhere in the User-Agent. The following User-Agent has an additional X character placed after the full version of Chrome. All other characters that might be relevant are now moved 1 character position to the right of where the algorithm would expect to find them.
 
 **Target UserAgent** 
@@ -73,7 +78,7 @@ In this case the method used was **Nearest** indicating that all the relevant su
 
 If an older data file is being used for device detection the **Nearest** method will be used more often as subtle differences are observed between the older data in the file and the format of current User-Agents.
 
-## Closest
+### Closest
 
 If the previous methods fail to detect the device, the **Closest** method is used. This method finds the device signature that most closely matches as many of the relevant sub strings as possible. For the majority of genuine UAs it will always return a result, although the difference value may be very high.
 
@@ -135,7 +140,7 @@ Mozilla/5.0 (Linux; Android 4.3; Nexus 10 Build/        AppleWebKit/
 
 Tree structures and regular expression solutions can not provide this level of intelligence concerning the validity of the result where unusual target User-Agents are encountered.
 
-## None
+### None
 Finally if none of the previous methods have resulted in a match, usually because the User-Agent is a random collection of characters, the None method will be returned.
 
 **Target UserAgent** [2sadsa%$^dfs][UA7]  
