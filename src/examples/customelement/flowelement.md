@@ -1,4 +1,4 @@
-@page Examples_CustomElement_FlowElement 1 Simple Custom Flow Element
+@page Examples_CustomElement_FlowElement Simple Custom Flow Element
 
 # Introduction
 
