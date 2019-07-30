@@ -8,7 +8,7 @@ Details of all available [DeviceAtlas Properties](https://deviceatlas.com/device
 
 # Obsolete DeviceAtlas Capabilities
 
-DeviceAtlas was launched in 2008 when the web and mobile was very different to now. As such the many of the properties DeviceAtlas list have not proven relevant to businesses who've migrated to 51Degrees. 
+DeviceAtlas was launched in 2008 when the web and mobile was very different to now. As such many of the properties DeviceAtlas list have not proven relevant to businesses who've migrated to 51Degrees. 
 Examples of these include properties related to J2ME which has been surpassed by platforms like Android, iOS and Windows Phone, legacy data delivery mechanisms that are no longer in use or markup specifications that are no longer popular.
 
 Such capabilities are considered obsolete and for reference are listed at the bottom of this page.
