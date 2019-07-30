@@ -30,7 +30,7 @@ User-Agent and the data file. Each method has its own strengths and weaknesses.
 || Pattern | Hash |
 |---|---|---|
 |Performance|[Fast](@ref Benchmarks_DeviceDetection)|[Fastest](@ref Benchmarks_DeviceDetection)|
-|Approx. data file size (uncompressed)| 150Mb (Lite) - 400Mb (Enterprise)| 200Mb |
+|Approx. data file size (uncompressed)| 150Mb (Lite) - 400Mb (Enterprise)| 200Mb (all file variants) |
 |Adaptability (i.e. ability to cope with<br>User-Agents that are not in the<br>source data file)|Best|[Configurable](@ref DeviceDetection_Hash_PredictivePower)|
 
 For more detail on how each algorithm works, follow the links below:
