@@ -64,7 +64,7 @@ Currently, the following fields are not directly supported by 51Degrees. Unless 
 |ext|Placeholder for exchange-specific extensions to OpenRTB.|n/a||
 
 # OpenRTB Property Values
-Below are several lists of values for use with OpenRTb, these are all open source Creative Commons licensed,
+Below are several lists of values for use with OpenRTB, these are all open source Creative Commons licensed,
 
 - [Hardware Vendors](https://51degrees.com/developers/documentation/open-rtb-mappings/hardware-vendors) - A list of popular consumer electronic manufactures that sell connected devices. 
 - [Hardware Models](https://51degrees.com/developers/documentation/open-rtb-mappings/hardware-models) - A list of popular consumer electronic model codes.
