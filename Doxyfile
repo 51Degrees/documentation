@@ -330,6 +330,8 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "Lazyloading=[Lazy loading](@ref Features_LazyLoading)" \
                          "metadata=[metadata](@ref Concepts_MetaData_Index)" \
                          "Metadata=[Metadata](@ref Concepts_MetaData_Index)" \
+                         "MigrationGuide=[Migration Guide](@ref DeviceDetection_MigrationGuides_Index)" \
+                         "MigrationGuides=[Migration Guides](@ref DeviceDetection_MigrationGuides_Index)" \
                          "onpremiseengine=[on-premise engine](@ref Concepts_FlowElements_OnPremiseEngine)" \
                          "onpremiseengines=[on-premise engines](@ref Concepts_FlowElements_OnPremiseEngine)" \
                          "Onpremiseengine=[On-premise engine](@ref Concepts_FlowElements_OnPremiseEngine)" \
