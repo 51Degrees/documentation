@@ -357,6 +357,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "showsnippet{2}=@htmlonly <button class=\"b-btn b-btn--tab\" onclick=\"showSnippet(this,'\1')\">\2</button> @endhtmlonly" \
                          "showsnippet{1}=@showsnippet{\1,\1}" \
                          "term{1}=@ref Concepts_Terminology_\1" \
+                         "tick=@htmlonly&#9745;@endhtmlonly" \
                          "usagesharing=[usage sharing](@ref Features_UsageSharing)" \
                          "webintegration=[web integration](@ref Features_WebIntegration)" \
                          "webintegrations=[web integrations](@ref Features_WebIntegration)"

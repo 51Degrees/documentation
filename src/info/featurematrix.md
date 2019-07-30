@@ -5,10 +5,10 @@
 |Language / Framework|@Pipeline|@Devicedetection|@Geolocation|
 |---|---|---|---|
 |C/C++    |       |On-premise only   |       | 
-|.NET     |&#9745;|&#9745; | Cloud only   | 
-|Java     |&#9745;|&#9745; | Cloud only   | 
-|PHP      |&#9745;|Cloud only | Cloud only |
-|Node.js  |&#9745;|&#9745; | Cloud only |
+|.NET     |@tick|@tick | Cloud only   | 
+|Java     |@tick|@tick | Cloud only   | 
+|PHP      |@tick|Cloud only | Cloud only |
+|Node.js  |@tick|@tick | Cloud only |
 |JavaScript|      |Cloud only | Cloud only |
 
 # Web integrations and plugins
@@ -25,10 +25,10 @@
 # Features
 
 |Language / Framework|@Automaticdataupdates|@Clientsideevidence|@Asynchronousexecution|@Lazyloading|@Parallelexecution|@Resultcaching|
-|---|---|---|---|---|---|---|---|---|---|
-|C/C++    | TODO |   |   |   |   |   |   | 
-|.NET     |&#9745;|&#9745;|       |&#9745;|&#9745;|&#9745;|
-|Java     |&#9745;|&#9745;|       |&#9745;|&#9745;|&#9745;| 
-|PHP      |&#9745;|&#9745;|       |       |       |&#9745;|
-|Node.js  |&#9745;|&#9745;|&#9745;|       |&#9745;|&#9745;|
-|JavaScript|N/A|&#9745;|N/A|N/A|N/A|N/A|
+|---|---|---|---|---|---|---|
+|C/C++    | TODO |   |   |   |   |   |
+|.NET     |@tick|@tick|       |@tick|@tick|@tick|
+|Java     |@tick|@tick|       |@tick|@tick|@tick| 
+|PHP      |@tick|@tick|       |       |       |@tick|
+|Node.js  |@tick|@tick|@tick|       |@tick|@tick|
+|JavaScript|N/A|@tick|N/A|N/A|N/A|N/A|
