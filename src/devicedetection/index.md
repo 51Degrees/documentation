@@ -5,7 +5,7 @@
 By providing information on the type and capabilities of the device, operating system and browser being used to access your website, **device detection** enables you to provide your users with the optimal online experience, whether they're using a smartphone, tablet, TV, feature phone or a large screen desktop or laptop computer. 
 
 
-If you're ready to get going, follow the [quick start guide](@ref Quickstart_DeviceDetection) to get you up and running with just a few clicks - or if you'd like to know more about how our solution works and some of its benefits over others', then carry on reading below.
+If you're ready to get going with **device detection**, follow the [quick start guide](@ref Quickstart_DeviceDetection) to get you up and running with just a few clicks - or if you'd like to know more about how our solution works and some of its benefits over others', then carry on reading below.
 
 # How Device Detection Works
 
