@@ -85,6 +85,46 @@ TODO:
 3. (optional) Configure [client-side evidence](@ref) to get better results. Particularly for iPhone and iPad.
 @endsnippet
 @startsnippet{java}
+### Standalone pipeline / off-line processing
+
+1. Install the com.51degrees.device-detection package via Maven.
+2. Follow the appropriate example from the options below:  
+  * [Cloud](@ref Examples_DeviceDetection_GettingStarted_Cloud) - Negligible processing and memory overhead but slower due to Internet latency. 
+  * On-premise 
+  * [On-premise Pattern](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern) - Device detection processing is performed locally using 
+  a data file that must be kept updated. Pattern is not as fast as Hash but is better able to
+  cope with @evidence values that have not been seen before.
+  * [On-premise Hash](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) - Device detection processing is performed locally using 
+  a data file that must be kept updated. Hash is faster than Pattern but is less able to cope 
+  with @evidence values that have not been seen before.
+
+### Web servlet integration.
+
+1. Install the com.51degrees.device-detection and com.51degrees.pipeline.web packages via Maven.
+2. Follow the appropriate example from the options below:  
+  * [Cloud](@ref Examples_DeviceDetection_GettingStarted_Cloud) - Parameters are passed to the 51Degrees cloud service, which performs device 
+  detection processing and returns the properties you need.
+  * [On-premise Pattern](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern) - Device detection processing is performed locally using 
+  a data file that must be kept updated. Pattern is not as fast as Hash but is better able to
+  cope with @evidence values that have not been seen before.
+  * [On-premise Hash](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) - Device detection processing is performed locally using 
+  a data file that must be kept updated. Hash is faster than Pattern but is less able to cope 
+  with @evidence values that have not been seen before.
+3. (optional) Configure [client-side evidence](@ref) to get better results. Particularly for iPhone and iPad.
+
+### Spring MVC integration.
+
+1. Install the com.51degrees.device-detection and com.51degrees.web.mvc packages via Maven.
+2. Follow the appropriate example from the options below:  
+  * [Cloud](@ref Examples_DeviceDetection_GettingStarted_Cloud) - Parameters are passed to the 51Degrees cloud service, which performs device 
+  detection processing and returns the properties you need.
+  * [On-premise Pattern](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern) - Device detection processing is performed locally using 
+  a data file that must be kept updated. Pattern is not as fast as Hash but is better able to
+  cope with @evidence values that have not been seen before.
+  * [On-premise Hash](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) - Device detection processing is performed locally using 
+  a data file that must be kept updated. Hash is faster than Pattern but is less able to cope 
+  with @evidence values that have not been seen before.
+3. (optional) Configure [client-side evidence](@ref) to get better results. Particularly for iPhone and iPad.
 @endsnippet
 @startsnippet{php}
 @endsnippet
