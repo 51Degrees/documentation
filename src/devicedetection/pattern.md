@@ -143,7 +143,8 @@ Tree structures and regular expression solutions can not provide this level of i
 ### None
 Finally if none of the previous methods have resulted in a match, usually because the User-Agent is a random collection of characters, the None method will be returned.
 
-**Target UserAgent** [2sadsa%$^dfs][UA7]  
+**Target UserAgent** [`2sadsa%$^dfs`][UA7]  
+
 **Relevant Sub Strings**  
 **Difference** 0  
 **Method** None

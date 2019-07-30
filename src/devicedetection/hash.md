@@ -1,7 +1,7 @@
 @page DeviceDetection_Hash Hash
 
 # Introduction
-Whilst @Pattern, our original device detection algorithm, is very fast, accurate and continues to be fully supported, 51Degrees are always looking for any improvements that might be achieved.
+Whilst @Pattern, our original device detection algorithm, is very fast, accurate and continues to be fully supported, 51Degrees are continually looking for any improvements that might be achieved.
 
 During extensive analysis of hundreds of billions of web interactions over several years, we discovered that a smart method of identifying and hashing sub strings within User-Agents could be used to produce an optimum data set that displays the following characteristics:
 
