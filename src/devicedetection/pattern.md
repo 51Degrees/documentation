@@ -6,7 +6,7 @@ The device data file contains signatures which consist of the relevant character
 
 The [51Degrees User-Agent Tester](https://51degrees.com/resources/user-agent-tester) can be used to show the relevant segments for a given User-Agent. 
 
-Below, we will step through a number of User-Agent scenarios to illustrate the different way in which the **pattern** method identifies a match.
+Below, we will step through a number of User-Agent scenarios to illustrate the different ways in which the **pattern** method identifies a match.
 
 ## Exact Match
 
@@ -28,7 +28,7 @@ Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/        AppleWebKit/
 **Difference** 0  
 **Method** Exact
 
-Those characters not relevant to the matching process could be changed and the same result returned. The following User-Agent has the string "AAAAAA" in place of the characters "JSS15Q" which follow the "Build/" string.
+Those characters not relevant to the matching process could be changed and the same result returned. For example, the following User-Agent has the string "AAAAAA" in place of the characters "JSS15Q" which follow the "Build/" string.
 
 **Target UserAgent**  
 
@@ -49,14 +49,14 @@ This revised User-Agent returns exactly the same device details as the original 
 In contrast, regular expression based solutions often suffer from considering these unimportant characters when determining the details of the device.
 
 ## Additional Matching Methods
-Four different methods can be used to find a match for a User-Agent, the most commonly used is the **Exact** match as shown in the example above.
+Three different methods can be used to find a match for a User-Agent, the most commonly used is the **Exact** match as shown in the example above.
 
 The method used to obtain the match is provided in all detection results along with a difference indicator. The difference value will always be zero when the Exact method has been used, as a precise match has been obtained against the signatures held in the data file and there is no difference between them.
 
-If an Exact match cannot be found then a small subset of possible results will be searched using the following 3 methods in turn. If a method finds a match the results will be returned and further methods not attempted.
+If an Exact match cannot be found then a small subset of possible results will be searched using the following methods in turn. If a method finds a match the results will be returned and further methods not attempted.
 
 ### Nearest
-Sometimes relevant sub strings may have been moved when irrelevant characters are added elsewhere in the User-Agent. The following User-Agent has an additional X character placed after the full version of Chrome. All other characters that might be relevant are now moved 1 character position to the right of where the algorithm would expect to find them.
+Sometimes relevant sub strings may have been moved when irrelevant characters are added elsewhere in the User-Agent. The following User-Agent has an additional X character placed after the full version of Chrome. All subsequent characters that might be relevant are now moved 1 character position to the right of where the algorithm would expect to find them.
 
 **Target UserAgent** 
 
@@ -122,7 +122,7 @@ The numeric difference between the [ASCII characters](http://www.asciitable.com/
 
 The difference in the character lengths of the closest sub strings and the target User-Agent is also a factor in the calculation of difference.
 
-In this example User-Agent "Nexus" has been replaced entirely by "iPhone". A Nexus device is still returned but the difference value is very high, indicating the result should be considered unreliable. 
+In our final example using a 'closest' match, the string "Nexus" has been replaced entirely by "iPhone". A Nexus device is still returned but the difference value is very high, indicating the result should be considered unreliable. 
 
 **Target UserAgent** 
 
@@ -159,9 +159,9 @@ Some of our APIs , for example, Java and .NET, provide two modes of operation wh
 **Memory mode** loads the entire data file into main memory. This is faster than stream mode but requires considerably more memory and does not use cache. Device detection will retrieve data directly from memory. Once initialized there should be no further read requests for the data file.
 
 # Summary
-This page provides an overview of the pattern detection methods, the four matching methods available, and how to use the difference and match method indicators to understand the validity of the result. The source code used to implement the algorithms is licensed under the Mozilla Public License 2 and is available for inspection. As such we encourage those that would like to know more about pattern detection to explore the source code and comments contained within it.
+This page provides an overview of the pattern detection methods, the three matching methods available, and how to use the difference and match method indicators to understand the validity of the result. The source code used to implement the algorithms is licensed under the Mozilla Public License 2 and is available for inspection. As such we encourage those that would like to know more about pattern detection to explore the source code and comments contained within it.
 
-51Degrees also provide a @Hash device detection method which is much faster than Pattern but consumes more main memory.
+51Degrees also provide a @Hash device detection method which is much faster than Pattern at the expense of being less able to cope with non-exact matches.
 
 [UA1]: https://51degrees.com/Products/DeviceData/UserAgentTester/tabid/316/Products/DeviceData/UserAgentTester/Default.aspx?useragent=Mozilla%2f5.0+(Linux%3b+Android+4.3%3b+Nexus+7+Build%2fJSS15Q)+AppleWebKit%2f537.36+(KHTML%2c+like+Gecko)+Chrome%2f29.0.1547.72+Safari%2f537.36
 [UA2]: https://51degrees.com/Products/DeviceData/UserAgentTester/tabid/316Products/DeviceData/UserAgentTester//TabId/316/Products/DeviceData/Default.aspx?UserAgentTester=Default.aspx&useragent=Mozilla%2f5.0+(Linux%3b+Android+4.3%3b+Nexus+7+Build%2fJSS15Q)+AppleWebKit%2f537.36+(Opera+Mobi%2c+Gecko)+Chrome%2f29.0.1547.72+Safari%2f537.36

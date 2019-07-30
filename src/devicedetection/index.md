@@ -30,16 +30,16 @@ User-Agent and the data file. Each method has its own strengths and weaknesses.
 || Pattern | Hash |
 |---|---|---|
 |Performance|[Fast](@ref Benchmarks_DeviceDetection)|[Fastest](@ref Benchmarks_DeviceDetection)|
-|Approx. data file size (uncompressed)| 150Mb (Lite) - 400Mb (Enterprise)| 200Mb |
+|Approx. data file size (uncompressed)| 150Mb (Lite) - 400Mb (Enterprise)| 200Mb (all file variants) |
 |Adaptability (i.e. ability to cope with<br>User-Agents that are not in the<br>source data file)|Best|[Configurable](@ref DeviceDetection_Hash_PredictivePower)|
 
 For more detail on how each algorithm works, follow the links below:
 
-- @Pattern
-- @Hash
+- @subpage DeviceDetection_Pattern
+- @subpage DeviceDetection_Hash
 
 # Migrating from Other Providers
 
-If you're already using a device detection solution from an alternative provider and are considering switching to 51Degrees, we have a number of @MigrationGuides showing how our properties and capabilities map to others'.
+If you're already using a device detection solution from an alternative provider and are considering switching to 51Degrees, we have a number of @subpage DeviceDetection_MigrationGuides_Index showing how our properties and capabilities map to others'.
 
 
