@@ -16,7 +16,9 @@ Device Detection.
 To get started with C device detection on-premise:
 
 1. Clone the GitHub [repository]().
-2. Decide if you want [hash]() or [pattern](). Hash has better performance but is less able to cope with User-Agents that have not been seen before.
+2. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash) (Hash has better performance but is 
+less able to cope with @evidence values that have not been seen before) and follow the linked examples here:[hash](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) or 
+[pattern](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern)
 3. (optional) Contact us to purchase a license key and [download]() a premium data file with access to more devices and properties.
 
 TODO: 
@@ -30,9 +32,9 @@ Device Detection.
 To get started with C++ device detection on-premise:
 
 1. Clone the GitHub [repository]().
-2. Decide if you want [hash](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) or 
-[pattern](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern) and follow the linked examples. Hash has better performance but is 
-less able to cope with @evidence values that have not been seen before.
+2. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash) (Hash has better performance but is 
+less able to cope with @evidence values that have not been seen before) and follow the linked examples here:[hash](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) or 
+[pattern](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern)
 3. (optional) Contact us to purchase a license key and [download]() a premium data file with access to more devices and properties.
 
 TODO: 

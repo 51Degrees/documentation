@@ -5,7 +5,7 @@
 By providing information on the type and capabilities of the device, operating system and browser being used to access your website, **device detection** enables you to provide your users with the optimal online experience, whether they're using a smartphone, tablet, TV, feature phone or a large screen desktop or laptop computer. 
 
 
-If you're ready to get going, follow the [quick start guide](@ref Quickstart_DeviceDetection) to get you up and running with just a few clicks - or if you'd like to know more about how our solution works and some of its benefits over others', then carry on reading below.
+If you're ready to get going with **device detection**, follow the [quick start guide](@ref Quickstart_DeviceDetection) to get you up and running with just a few clicks - or if you'd like to know more about how our solution works and some of its benefits over others', then carry on reading below.
 
 # How Device Detection Works
 
@@ -14,13 +14,13 @@ further complexity has been introduced which does not rely solely on the User-Ag
 
 * Apple purposefully obfuscate the hardware model in the User-Agent. We use 
 [various techniques](https://51degrees.com/blog/multi-stage-approach-to-apple-ios-device-detection) to overcome this. 
-* Browsers that perform [transcoding](@https://en.wikipedia.org/wiki/Mobile_browser#Mobile_HTML_transcoders) will 
+* Browsers that perform [transcoding](https://en.wikipedia.org/wiki/Mobile_browser#Mobile_HTML_transcoders) will 
 generally replace the content of the User-Agent with something else. The real User-Agent may or may not be sent 
 in a separate header.
 * Although the User-Agent can tell us a lot about the hardware and software being used, further information can often
 be obtained by scripts running on the client device.
 
-## Pattern vs Hash Algorithms
+## Pattern vs Hash Algorithms @anchor DeviceDetection_Index_PatternVsHash
 
 51Degrees have two separate algorithms that can be used to perform device detection, 'Pattern' and 'Hash'. 
 
