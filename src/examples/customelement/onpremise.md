@@ -1,4 +1,4 @@
-@page Examples_CustomElement_OnPremise 2 Custom On-Premise Engine
+@page Examples_CustomElement_OnPremise Custom On-Premise Engine
 
 # Introduction
 
