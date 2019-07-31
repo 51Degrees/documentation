@@ -21,7 +21,7 @@ Firstly, the configuration file used for this example will set up a @pipeline wi
                 <DataFile>51Degrees-LiteV3.2.dat</DataFile>
                 <PerformanceProfile>LowMemory</PerformanceProfile>
             </BuildParameters>
-            <BuilderName>DeviceDetectionPatternEngineBuilder</BuilderName>
+            <BuilderName>DeviceDetectionPatternEngine</BuilderName>
         </Element>
     </Elements>
 </PipelineOptions>
@@ -31,7 +31,7 @@ Firstly, the configuration file used for this example will set up a @pipeline wi
   "PipelineOptions": {
     "Elements": [
       {
-        "BuilderName": "DeviceDetectionPatternEngineBuilder",
+        "BuilderName": "DeviceDetectionPatternEngine",
         "BuildParameters": {
           "DataFile": "51Degrees-LiteV3.2.dat",
           "CreateTempDataCopy": false,
