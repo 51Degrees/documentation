@@ -333,7 +333,7 @@ added to the @flowdata, and  `ElementPropertyMetaData` - as we only need the sta
 @elementproperties.
 
 This needs a constructor matching the `FlowElementBase` class. So it takes a logger, and an
-@elementdata factory which will be used to construct an `StarSignData`:
+@elementdata factory which will be used to construct a `StarSignData`:
 ```{java}
 public class SimpleFlowElement extends FlowElementBase<AgeData, ElementPropertyMetaData> {
 
@@ -621,7 +621,7 @@ flowData
     .AddEvidence("date-of-birth", dob)
     .Process();
 Console.WriteLine($"With a date of birth of " +
-    $"{dob.ToString("dd/MM/yyy")}" +
+    $"{dob.ToString("dd/MM/yyyy")}" +
     $", your star sign is " +
     $"{flowData.GetFromElement(starSignElement).StarSign}.");
 ```
