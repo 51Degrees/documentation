@@ -44,7 +44,7 @@ Mozilla/5.0 (Linux; Android 4.3  Nexus 7 Build/        AppleWebKit
 **Difference** 0  
 **Method** Exact
 
-This revised User-Agent returns exactly the same device details as the original because the detection algorithm knows the presence of “AAAAAA” at these character positions are unimportant. Knowledge of the positions of relevant sub strings improves performance and accuracy as irrelevant characters do not provide distractions. 
+This revised User-Agent returns exactly the same device details as the original because the detection algorithm knows the presence of “AAAAAA” at these character positions is unimportant. Knowledge of the positions of relevant sub strings improves performance and accuracy as irrelevant characters do not provide distractions. 
 
 In contrast, regular expression based solutions often suffer from considering these unimportant characters when determining the details of the device.
 

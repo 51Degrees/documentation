@@ -49,7 +49,8 @@ TODO:
 1. Install the FiftyOne.DeviceDetection package via Nuget.
 2. Follow the appropriate example from the options below:  
   * [Cloud Example](@ref Examples_DeviceDetection_GettingStarted_Cloud) - Negligible processing and memory overhead but slower due to Internet latency. 
-  * **On-premise** - Device detection processing is performed locally using a data file that must be kept updated. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
+  * **On-premise** - Device detection processing is performed locally using a data file that must be kept updated.
+  Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
     * [On-premise Pattern Example ](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern)
     * [On-premise Hash Example](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash)
 
@@ -62,6 +63,7 @@ TODO:
     * [On-premise Pattern Example ](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern)
     * [On-premise Hash Example](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash)
 3. (optional) Configure [client-side evidence](@ref) to get better results. Particularly for iPhone and iPad.
+
 ### ASP.NET integration.
 
 1. Install the FiftyOne.DeviceDetection and FiftyOne.Pipeline.Web packages via Nuget.
@@ -77,9 +79,9 @@ TODO:
 ### Standalone pipeline / off-line processing
 
 1. Install the com.51degrees.device-detection package via Maven.
-2. Follow the appropriate example from the options below:  
+2. Follow the appropriate example from the options below:
 * [Cloud Example](@ref Examples_DeviceDetection_GettingStarted_Cloud) - Negligible processing and memory overhead but slower due to Internet latency. 
-  * **On-premise** - Device detection processing is performed locally using a data file that must be kept updated. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
+* **On-premise** - Device detection processing is performed locally using a data file that must be kept updated. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
     * [On-premise Pattern Example ](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern)
     * [On-premise Hash Example](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash)
     
@@ -99,7 +101,7 @@ TODO:
 1. Install the com.51degrees.device-detection and com.51degrees.web.mvc packages via Maven.
 2. Follow the appropriate example from the options below:  
    * [Cloud Example](@ref Examples_DeviceDetection_GettingStarted_Cloud) - Negligible processing and memory overhead but slower due to Internet latency. 
-  * **On-premise** - Device detection processing is performed locally using a data file that must be kept updated. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
+ * **On-premise** - Device detection processing is performed locally using a data file that must be kept updated. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
     * [On-premise Pattern Example ](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern)
     * [On-premise Hash Example](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash)
 3. (optional) Configure [client-side evidence](@ref) to get better results. Particularly for iPhone and iPad.

@@ -17,7 +17,7 @@ The exact structure of the data is optimized at the time of the data file's prod
 As a result of using hashes and selecting only the important sub strings, the data structure is not only fast, it is small. For all but the shortest sub strings, a hash code will take up far less space than the string itself. In addition, by omitting irrelevant parts of a User-Agent, such as strings which identify the user or location, the size can be reduced, and operations which yield no benefit are removed.
 
 # Detection Process
-A series of nodes arranged in a tree (or Trie) are evaluated from root to leaf. Each root or branch node can contain one or more hash values that occur between a given range of character positions. The characters in the target User-Agent are evaluated against the node to either match one of the hash values or not. If a hash value is matched then the corresponding next match node is evaluated. If none of the hash values match then an unmatched node is evaluated. This process continues until a leaf node is reached and the device identified. Consider the following User-Agent.
+A series of nodes arranged in a tree (or trie) are evaluated from root to leaf. Each root or branch node can contain one or more hash values that occur between a given range of character positions. The characters in the target User-Agent are evaluated against the node to either match one of the hash values or not. If a hash value is matched then the corresponding next match node is evaluated. If none of the hash values match then an unmatched node is evaluated. This process continues until a leaf node is reached and the device identified. Consider the following User-Agent.
 
 
 ```
