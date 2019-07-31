@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_MatchMetricsOnPremisePattern Device Detection Match Metrics On-Premise Pattern Examples
+@page Examples_DeviceDetection_MatchMetrics_OnPremisePattern Device Detection Match Metrics On-Premise Pattern Examples
 
 # Introduction
 

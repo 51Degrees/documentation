@@ -304,8 +304,8 @@ public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IStarSignData, IA
         _starSigns = starSigns;
     }
 
-    // The IAgeData will be stored with the key "age" in the FlowData.
-    public override string ElementDataKey => "age";
+    // The IStarSignData will be stored with the key "starsign" in the FlowData.
+    public override string ElementDataKey => "starsign";
 
     // The only item of evidence needed is "date-of-birth".
     public override IEvidenceKeyFilter EvidenceKeyFilter =>
@@ -353,7 +353,7 @@ public class SimpleOnPremiseEngine : OnPremiseAspectEngineBase<IStarSignData, IA
     protected override void ProcessEngine(IFlowData data, IStarSignData aspectData)
     {
         DateTime zero = new DateTime(1, 1, 1);
-        // Cast aspectData to AgeData so the 'setter' is available.
+        // Cast aspectData to StarSignData so the 'setter' is available.
         StarSignData starSignData = (StarSignData)aspectData;
 
         if (data.TryGetEvidence("date-of-birth", out DateTime dateOfBirth))
