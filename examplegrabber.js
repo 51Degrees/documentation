@@ -41,7 +41,7 @@ function addLink(url, divId) {
  * @param name the name of the example to get e.g. '_hash_2_getting_started_8cpp'.
  */
 function grabExample(caller, project, name) {
-    $('#' + divId).html("");
+    $('#grabbed-example').html("");
     grabSnippet(
         caller,
         project,
