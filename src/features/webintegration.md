@@ -52,9 +52,9 @@ Select a web framework to view details of how client-side evidence is supported.
 @startsnippet{aspnetcore}
 The ASP.NET Core integration makes use of a 
 [View Component](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components)
-that is embedded in the @webintegration assembly.
+that is embedded in the **webintegration** assembly.
 This view component simply requests a JavaScript file called '51Degrees.core.js' 
-if **client-side evidence** is enabled:
+if @clientsideevidence is enabled:
 
 ```{html}
 @if (Model.Value.ClientsidePropertiesEnabled)
@@ -63,7 +63,7 @@ if **client-side evidence** is enabled:
 }
 ```
 
-The view component can be included in pages as needed. If it is needed on all
+The view component can be included in pages as needed. If it is required on all
 pages then adding it to your _layout.cshtml is often the easiest solution.
 
 ```{cs}
