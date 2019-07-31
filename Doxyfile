@@ -1280,7 +1280,9 @@ HTML_IMAGE_OUTPUT      = docs/images
 
 
 HTML_EXTRA_IMAGES      = patternlab/source/images/icon-arrow-solid-right-mute.svg \
-                         patternlab/source/images/icon-arrow-solid-right-orange.svg
+                         patternlab/source/images/icon-arrow-solid-right-orange.svg \
+                         patternlab/source/images/icon-arrow-left-black.svg \
+                         patternlab/source/images/icon-arrow-right-black.svg
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the style sheet and background images according to
@@ -1576,6 +1578,9 @@ GENERATE_TREEVIEW      = YES
 # This tag requires that the tag GENERATE_TREEVIEW is set to YES.
 
 HIDE_TREEVIEW_ROOT     = YES
+
+
+HIDE_TREEVIEW_SYNC     = YES
 
 # The ENUM_VALUES_PER_LINE tag can be used to set the number of enum values that
 # doxygen will group on one line in the generated HTML documentation.
