@@ -670,5 +670,4 @@ With a date of birth of 18/12/1992, your star sign is Sagittarius.
 
 # Next Steps
 
-To increase the functionality of this **flow element** to use a @datafile, see the next examples:
-[Custom On-premise Engine](@ref Examples_CustomElement_OnPremise) and [Custom Cloud Engine](@ref Examples_CustomElement_Cloud).
+The examples for [Custom On-premise Engine](@ref Examples_CustomElement_OnPremise) and [Custom Cloud Engine](@ref Examples_CustomElement_Cloud) show how you can extend the functionality of this **flow element** to use a @datafile.
