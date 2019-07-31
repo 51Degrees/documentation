@@ -12,6 +12,7 @@ Firstly, the configuration file used for this example will set up a @pipeline wi
 @showsnippet{JSON}
 @defaultsnippet{Select a tab to view the configuration file in XML or JSON format.}
 @startsnippet{XML}
+```{xml}
 <PipelineOptions>
     <Elements>
         <Element>
@@ -25,8 +26,10 @@ Firstly, the configuration file used for this example will set up a @pipeline wi
         </Element>
     </Elements>
 </PipelineOptions>
+```
 @endsnippet
 @startsnippet{JSON}
+```{json}
 {
   "PipelineOptions": {
     "Elements": [
@@ -42,15 +45,14 @@ Firstly, the configuration file used for this example will set up a @pipeline wi
     ]
   }
 }
+```
 @endsnippet
 @endsnippets
 
 @startsnippets
 @grabexample{pipeline-dotnet,_hash_2_configure_from_file_2_program_8cs,C#}
-@grabexample{device-detection-cxx,_hash_2_configure_from_file_8c,C}
-@grabexample{device-detection-cxx,_hash_2_configure_from_file_8cpp,C++}
 @grabexample{pipeline-java,_hash_2_configure_from_file_8java,Java}
-@grabexample{pipeline-dotnet,_hash_2_configure_from_file_8php,PHP}
-@grabexample{pipeline-dotnet,_hash_2_configure_from_file_8js,Node.js}
+@grabexample{pipeline-php,_hash_2_configure_from_file_8php,PHP}
+@grabexample{pipeline-node,_hash_2_configure_from_file_8js,Node.js}
 @grabbedexample
 @endsnippets
