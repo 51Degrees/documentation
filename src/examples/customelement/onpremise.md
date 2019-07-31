@@ -7,7 +7,7 @@ This example takes the very simple @flowelement described in the
 a @datafile, upgrading the @flowelement to an @aspectengine. 
 
 Instead of storing data statically, as the [simple flow element example](@ref Examples_CustomElement_FlowElement)
-did, this example will store it in a @datafile which will be loaded, and can be updated.
+did, this example will store it in a @datafile which will be loaded and can also be updated.
 
 # Download Example
 
@@ -19,8 +19,8 @@ The source code used in this example is available here:
 
 # Dependencies
 
-The @aspectengine will need a dependency on the @pipeline engines package now
-it is implementing an @aspectengine instead of a @flowelement
+The @aspectengine will need a dependency on the @pipeline engines package now as
+it is implementing an @aspectengine rather than a @flowelement.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -828,3 +828,6 @@ With a date of birth of 18/12/1992, your tar sign is Sagittarius.
 **todo**
 @endsnippet
 @endsnippets
+
+# Next Steps
+The [Custom Client-Side Evidence](@ref Examples_CustomElement_ClientSideEvidence) example shows how you can build a custom engine that can take evidence supplied by the client.
