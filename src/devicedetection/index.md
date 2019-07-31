@@ -10,7 +10,7 @@ If you're ready to get going with **device detection**, follow the [quick start 
 # How Device Detection Works
 
 Primarily, 51Degrees device detection solutions focus on the User-Agent HTTP header to identify a device. However, over time
-further complexity has been introduced which does not rely solely on the User-Agent string and enables us to return improved results for the following use cases:
+we have introduced greater complexity which does not rely solely on the User-Agent string and enables us to return improved results for the following use cases:
 
 * Apple purposefully obfuscate the hardware model in the User-Agent. We use 
 [various techniques](https://51degrees.com/blog/multi-stage-approach-to-apple-ios-device-detection) to overcome this. 
@@ -22,7 +22,7 @@ be obtained by scripts running on the client device.
 
 ## Pattern vs Hash Algorithms @anchor DeviceDetection_Index_PatternVsHash
 
-51Degrees have two separate algorithms that can be used to perform device detection, 'Pattern' and 'Hash'. 
+51Degrees have two separate algorithms which can be used to perform device detection, 'Pattern' and 'Hash'. 
 
 These use differently formatted data files and employ different methods to determine matches between the supplied 
 User-Agent and the data file. Each method has its own strengths and weaknesses.
