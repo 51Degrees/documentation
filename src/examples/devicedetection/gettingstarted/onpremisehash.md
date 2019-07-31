@@ -2,8 +2,8 @@
 
 # Introduction
 
-This example shows how to get set up with a Device Detection @aspectengine and begin
-using it to process User-Agents.
+This example shows how to get set up with a Device Detection @aspectengine using the Hash algorithm
+and begin using it to process User-Agents.
 
 @startsnippets
 @grabexample{pipeline-dotnet,_hash_2_getting_started_2_program_8cs,C#}
