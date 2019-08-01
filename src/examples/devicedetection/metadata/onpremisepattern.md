@@ -2,7 +2,7 @@
 
 # Introduction
 
-This example shows how to meta data associated with the contents of a Device Detection Pattern @datafile.
+This example shows how to interrogate the meta data associated with the contents of a Device Detection Pattern @datafile.
 
 @startsnippets
 @grabexample{pipeline-dotnet,_pattern_2_metadata_2_program_8cs,C#}
