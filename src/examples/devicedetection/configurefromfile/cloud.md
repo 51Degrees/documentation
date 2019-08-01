@@ -52,7 +52,7 @@ Firstly, the configuration file used for this example will set up a @pipeline wi
 
 @startsnippets
 @grabexample{pipeline-dotnet,_cloud_2_configure_from_file_2_program_8cs,C#}
-@grabexample{pipeline-java,_cloud_2_configure_from_file_8java,Java}
+@grabexample{pipeline-java,cloud_2_configure_from_file_8java,Java}
 @grabexample{pipeline-php,_cloud_2_configure_from_file_8php,PHP}
 @grabexample{pipeline-node,_cloud_2_configure_from_file_8js,Node.js}
 @grabbedexample

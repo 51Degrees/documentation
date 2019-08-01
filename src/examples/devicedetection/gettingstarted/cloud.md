@@ -7,7 +7,7 @@ using it to process User-Agents.
 
 @startsnippets
 @grabexample{pipeline-dotnet,_cloud_2_getting_started_2_program_8cs,C#}
-@grabexample{pipeline-java,_cloud_2_getting_started_8java,Java}
+@grabexample{pipeline-java,cloud_2_getting_started_8java,Java}
 @grabexample{pipeline-php,_cloud_2_getting_started_8php,PHP}
 @grabexample{pipeline-node,_cloud_2_getting_started_8js,Node.js}
 @grabbedexample
