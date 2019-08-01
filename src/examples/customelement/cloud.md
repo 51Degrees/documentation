@@ -538,7 +538,7 @@ public class SimpleCloudEngine extends CloudAspectEngineBase<StarSignData, Aspec
 
 Now the @aspectengine needs one final thing, an @elementbuilder to construct it.
 This needs to provide the @aspectengine with a logger and an @aspectdata factory as in
-the previous example. However, it also now needs a data file.
+the previous example. However, it also now needs a cloud request @aspectengine.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -555,8 +555,8 @@ public class SimpleCloudEngineBuilder : CloudAspectEngineBuilderBase<SimpleCloud
     private ILoggerFactory _loggerFactory;
     private CloudRequestEngine _engine;
 
-    public SimpleCloudEngineBuilder(ILoggerFactory loggerFactory,
-        HttpClient httpClient,
+    public SimpleCloudEngineBuilder(
+        ILoggerFactory loggerFactory,
         CloudRequestEngine engine)
     {
         _loggerFactory = loggerFactory;
