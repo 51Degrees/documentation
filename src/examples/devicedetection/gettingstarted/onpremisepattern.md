@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_GettingStarted_OnPremisePattern Device Detection Getting Started On-Premise Pattern Examples
+@page Examples_DeviceDetection_GettingStarted_OnPremisePattern On-Premise Pattern
 
 # Introduction
 

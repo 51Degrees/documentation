@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_MatchForDeviceId_OnPremisePattern Device Detection Match For Device Id On-Premise Pattern Examples
+@page Examples_DeviceDetection_MatchForDeviceId_OnPremisePattern On-Premise Pattern
 
 
 # Introduction

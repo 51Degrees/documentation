@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_OfflineProcessing_OnPremisePattern Device Detection Offline Processing On-Premise Pattern Examples
+@page Examples_DeviceDetection_OfflineProcessing_OnPremisePattern On-Premise Pattern
 
 # Introduction
 

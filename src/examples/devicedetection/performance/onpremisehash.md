@@ -1,1 +1,1 @@
-@page Examples_DeviceDetection_Performance_OnPremiseHash Device Detection Performance On-Premise Hash Examples
+@page Examples_DeviceDetection_Performance_OnPremiseHash On-Premise Hash

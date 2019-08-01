@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_OfflineProcessing_OnPremiseHash Device Detection Offline Processing On-Premise Hash Examples
+@page Examples_DeviceDetection_OfflineProcessing_OnPremiseHash On-Premise Hash
 
 # Introduction
 

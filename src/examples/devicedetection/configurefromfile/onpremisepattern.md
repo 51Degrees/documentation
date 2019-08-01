@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_ConfigureFromFile_OnPremisePattern Device Detection Configure From File On-Premise Pattern Examples
+@page Examples_DeviceDetection_ConfigureFromFile_OnPremisePattern On-Premise Pattern
 
 # Introduction
 

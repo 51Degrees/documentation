@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_GettingStarted_Cloud Device Detection Cloud Getting Started Examples
+@page Examples_DeviceDetection_GettingStarted_Cloud Cloud
 
 # Introduction
 

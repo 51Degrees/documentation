@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_Metadata_OnPremisePattern Device Detection Metadata On-Premise Pattern Examples
+@page Examples_DeviceDetection_Metadata_OnPremisePattern On-Premise Pattern
 
 # Introduction
 
