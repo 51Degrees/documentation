@@ -670,6 +670,8 @@ With a date of birth of 18/12/1992, your star sign is Sagittarius.
 
 # Next Steps
 
-The examples for [Custom On-premise Engine](@ref Examples_CustomElement_OnPremise) and [Custom Cloud Engine](@ref Examples_CustomElement_Cloud) show how you can extend the functionality of this **flow element** to use a @datafile.
+The example for [Custom On-premise Engine](@ref Examples_CustomElement_OnPremise) shows how you can extend the functionality of this **flow element** to use a @datafile.
 
-The **flow element** can also be extended to use evidence supplied by the client, as shown in the [Custom Client-Side Evidence](@ref Examples_CustomElement_ClientSideEvidence) example.
+The **flow element** can also be upgraded to use evidence supplied by the client, as shown in the [Custom Client-Side Evidence](@ref Examples_CustomElement_ClientSideEvidence) example.
+
+To delegate the processing and logic to a cloud service, refer to the [Custom Cloud Engine](@ref Examples_CustomElement_Cloud) example.

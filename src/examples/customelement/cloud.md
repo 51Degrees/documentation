@@ -6,9 +6,9 @@ This example takes the very simple @flowelement described in the
 [simple flow element example](@ref Examples_CustomElement_FlowElement),
 and delegates all the logic to a cloud service.
 
-Instead the data being stored locally and processing being carried out by the @flowelement
-directly, as the [simple flow element example](@ref Examples_CustomElement_FlowElement)
-did, this example will call a cloud service.
+Instead of the data being stored locally and processing being carried out by the @flowelement
+directly, as demonstrated in the [simple flow element example](@ref Examples_CustomElement_FlowElement),
+this example will call a cloud service to perform the required functionality.
 
 # Download Example
 
@@ -176,7 +176,7 @@ not the `StarSignData` interface, as it only needs to be accessible by the @aspe
 
 Now the actual @aspectengine needs to be implemented. For this, the class from the
 [previous example](@ref Examples_CustomElement_FlowElement) will now implement the
-@cloudaspectengine's base class.
+[cloud aspect engine's](@ref Concepts_FlowElements_CloudEngine) base class.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -212,7 +212,7 @@ public class SimpleCloudEngine : CloudAspectEngineBase<IStarSignData, IAspectPro
 
 The `LoadAspectProperties` method in this example will get the @aspectproperties from the `CloudRequestEngine`
 and store them. In this case we know the only property will be 'star sign', but more complex @cloudengines can have many
-properties which may change.
+properties.
 ```{cs}
 private bool LoadAspectProperties(CloudRequestEngine engine)
 {
@@ -377,7 +377,7 @@ public class SimpleCloudEngine extends CloudAspectEngineBase<StarSignData, Aspec
 
 The `loadAspectProperties` method in this example will get the @aspectproperties from the `CloudRequestEngine`
 and store them. In this case we know the only property will be 'star sign', but more complex @cloudengines can have many
-properties which may change.
+properties.
 ```{java}
 private boolean loadAspectProperties(CloudRequestEngine engine) {
     Map<String, AccessiblePropertyMetaData.ProductMetaData> map =
@@ -712,3 +712,7 @@ System.out.println("With a date of birth of " +
 **todo**
 @endsnippet
 @endsnippets
+
+# Next Steps
+
+The [Custom On-premise Engine](@ref Examples_CustomElement_OnPremise) example shows you how to build an on premise engine to perform the functionality that was executed by the **cloud engine** here.

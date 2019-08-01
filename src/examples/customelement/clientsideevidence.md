@@ -390,7 +390,7 @@ added to the @flowdata, and  `ElementPropertyMetaData` - as we only need the sta
 @elementproperties.
 
 This needs a constructor matching the `FlowElementBase` class. So it takes a logger, and an
-@elementdata factory which will be used to construct an `StarSignData`:
+@elementdata factory which will be used to construct a `StarSignData`:
 ```{java}
 public class SimpleClientSideElement extends FlowElementBase<AgeData, ElementPropertyMetaData> {
 
@@ -696,7 +696,7 @@ client-side JavaScript automatically run.
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific usage.}
 @startsnippet{dotnet}
-Using a ASP.NET Core project (full example included in the source), a @pipelineconfiguration can be
+Using a ASP.NET Core project (full example included in the source), a [pipeline configuration](@ref Concepts_Configuration_Builders_BuildFromConfiguration) file can be
 added to the 'appsettings.json' to load the new @flowelement and a 'JavaScriptBundlerElement' to
 include the client-side JavaScript:
 ```{json}
@@ -755,7 +755,7 @@ public class HomeController : Controller
 
 @endsnippet
 @startsnippet{java}
-Using a Spring MVC project (full example included in the source), a @pipelineconfiguration file
+Using a Spring MVC project (full example included in the source), a [pipeline configuration](@ref Concepts_Configuration_Builders_BuildFromConfiguration) file
 can be added to load the new @flowelement and a 'JavaScriptBundlerElement' to include the client-side
 JavaScript:
 ```{xml}
@@ -824,3 +824,5 @@ public class ExampleController {
 @endsnippet
 @endsnippets
 
+# Next Steps
+The example for [Custom On-premise Engine](@ref Examples_CustomElement_OnPremise) shows how you can extend the functionality of this **flow element** to use a @datafile rather than hard coded values.
