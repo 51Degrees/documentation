@@ -12,6 +12,8 @@
 
 @subpage Examples_DeviceDetection_Metadata_Index
 
+@subpage Examples_DeviceDetection_OfflineProcessing_Index
+
 @subpage Examples_DeviceDetection_Performance_Index
 
 @subpage Examples_DeviceDetection_MigrationFromV3
