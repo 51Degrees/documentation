@@ -8,7 +8,7 @@ This example shows how to interrogate the meta data associated with the contents
 @grabexample{pipeline-dotnet,_pattern_2_metadata_2_program_8cs,C#}
 @grabexample{device-detection-cxx,_pattern_2_metadata_8c,C}
 @grabexample{device-detection-cxx,_pattern_2_metadata_8cpp,C++}
-@grabexample{pipeline-java,pattern_2_metadata_8java,Java}
+@grabexample{pipeline-java,pattern_2_meta_data_8java,Java}
 @grabexample{pipeline-php,_pattern_2_metadata_8php,PHP}
 @grabexample{pipeline-node,_pattern_2_metadata_8js,Node.js}
 @grabbedexample
