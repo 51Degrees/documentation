@@ -538,7 +538,7 @@ public class SimpleCloudEngine extends CloudAspectEngineBase<StarSignData, Aspec
 
 Now the @aspectengine needs one final thing, an @elementbuilder to construct it.
 This needs to provide the @aspectengine with a logger and an @aspectdata factory as in
-the previous example. However, it also now needs a data file.
+the previous example.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -713,6 +713,6 @@ System.out.println("With a date of birth of " +
 @endsnippet
 @endsnippets
 
-#Next Steps
+# Next Steps
 
-The [Custom On-premise Engine](@ref Examples_CustomElement_OnPremise) example shows you how to build an on premise engine to perform the functionality that was executed by the **cloud engine* here.
+The [Custom On-premise Engine](@ref Examples_CustomElement_OnPremise) example shows you how to build an on premise engine to perform the functionality that was executed by the **cloud engine** here.
