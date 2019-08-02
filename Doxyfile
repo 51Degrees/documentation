@@ -361,7 +361,6 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "usagesharing=[usage sharing](@ref Features_UsageSharing)" \
                          "webintegration=[web integration](@ref Features_WebIntegration)" \
                          "webintegrations=[web integrations](@ref Features_WebIntegration)"
-                         
 
 # This tag can be used to specify a number of word-keyword mappings (TCL only).
 # A mapping has the form "name=value". For example adding "class=itcl::class"
@@ -1275,14 +1274,26 @@ HTML_EXTRA_STYLESHEET  =
 
 HTML_EXTRA_FILES       = examplegrabber.js
 
+# The HTML_IMAGE_OUTPUT tag can be used to specify a directory other than
+# HTML_OUTPUT which image files should be copied to. The image files specified
+# in the HTML_EXTRA_IMAGES will be copied. Operation of the HTML_EXTRA_FILES tag
+# will remain unchanged.
+# The default directory is: images.
+# This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_IMAGE_OUTPUT      = docs/images
 
+# The HTML_EXTRA_IMAGES tag can be used to specify one or more extra images
+# copied to the output directory specified by HTML_IMAGE_OUTPUT. For any files
+# which should be copied to the HTML_OUTPUT directory, the HTML_EXTRA_FILES
+# option should be used instead.
+# This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_EXTRA_IMAGES      = pattern-library/source/images/icon-arrow-solid-right-mute.svg \
                          pattern-library/source/images/icon-arrow-solid-right-orange.svg \
                          pattern-library/source/images/icon-arrow-left-black.svg \
-                         pattern-library/source/images/icon-arrow-right-black.svg
+                         pattern-library/source/images/icon-arrow-right-black.svg \
+                         pattern-library/source/images/icon-search.svg
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the style sheet and background images according to
@@ -1579,6 +1590,10 @@ GENERATE_TREEVIEW      = YES
 
 HIDE_TREEVIEW_ROOT     = YES
 
+# The HIDE_TREEVIEW_SYNC tag is used to remove the sync option button from the
+# tree view. When hidden, tree sync will always be enabled.
+# The default value is: NO.
+# This tag requires that the tag GENERATE_TREEVIEW is set to YES.
 
 HIDE_TREEVIEW_SYNC     = YES
 
