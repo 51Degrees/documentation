@@ -28,7 +28,7 @@ function updateLinks(project, divId) {
 
 function addLink(url, divId) {
     var div = $('#' + divId);
-    var link = "<div style=\"text-align:right;\"><a href=\"" + url + "\" class=\"b-link--dotted\">Go to original page...</a></div>";
+    var link = "<div id=\"grabbed-example-link\" style=\"text-align:right;\"><a href=\"" + url + "\" class=\"b-link--dotted\">Go to original page...</a></div>";
     div.html(link + div.html());
 }
 
@@ -41,7 +41,10 @@ function addLink(url, divId) {
  * @param name the name of the example to get e.g. '_hash_2_getting_started_8cpp'.
  */
 function grabExample(caller, project, name) {
-    $('#grabbed-example').html("");
+    var exampleLink = $('#grabbed-example-link');
+    if (exampleLink) {
+        exampleLink.remove();
+    }
     grabSnippet(
         caller,
         project,
