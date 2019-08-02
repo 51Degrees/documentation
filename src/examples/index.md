@@ -1,6 +1,4 @@
-@page Examples Examples
-
-Here are some examples...
+@page Examples_Index Examples
 
 @subpage Examples_CustomElement_Index
 
