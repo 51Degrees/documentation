@@ -7,10 +7,8 @@ you need as soon as possible.
 
 # Client-Side JavaScript
 
-TODO: Add link to configurator.
-
 If you intend to use client-side JavaScript only then you can use the 51Degrees cloud 
-[Configurator]() 
+[Configurator](https://configure.51degrees.com/) 
 to select the properties you need and build a custom JavaScript snippet to include in your
 web page.
 
