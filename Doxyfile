@@ -346,7 +346,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "pipelinebuilders=[pipeline builders](@ref Concepts_Configuration_Builders_PipelineBuilder)" \
                          "properties=[properties](@ref Concepts_MetaData_ElementProperties)" \
                          "property=[property](@ref Concepts_MetaData_ElementProperties)" \
-                         "quickstart=[quick start](@ref Quickstart_Index)" \
+                         "quickstart=[quick start](@ref Quickstart_Quickstart)" \
                          "resultcaching=[result caching](@ref Features_ResultCaching)" \
                          "shareusage=[share usage](@ref Features_UsageSharing)" \
                          "startsnippets=@htmlonly <div class=\"c-tabgroup\"> @endhtmlonly" \
