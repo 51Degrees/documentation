@@ -2,7 +2,7 @@
 
 # Data services
 
-|Language / Framework|@Pipeline|@Devicedetection|@Geolocation|
+|Language / Framework|@Pipeline|[Device Detection](@ref DeviceDetection_Index)|Location|
 |---|---|---|---|
 |C/C++    |       |On-premise only   |       | 
 |.NET     |@tick|@tick | Cloud only   | 
@@ -24,7 +24,7 @@
 
 # Features
 
-|Language / Framework|@Automaticdataupdates|@Clientsideevidence|@Asynchronousexecution|@Lazyloading|@Parallelexecution|@Resultcaching|
+|Language / Framework|[Automatic Data Updates](@ref Features_AutomaticDatafileUpdates)|[Client-side Evidence](@ref Features_ClientSideEvidence)|[Asynchronous Execution](@ref Features_AsynchronousExecution)|[Lazy Loading](@ref Features_LazyLoading)|[Parallel Execution](@ref Features_ParallelExecution)|[Result Caching](@ref Features_ResultCaching)|
 |---|---|---|---|---|---|---|
 |C/C++    | TODO |   |   |   |   |   |
 |.NET     |@tick|@tick|       |@tick|@tick|@tick|
