@@ -292,6 +292,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "dataupdateservice=[data update service](@ref Features_AutomaticDatafileUpdates)" \
                          "devicedetection=[device detection](@ref DeviceDetection_Index)" \
                          "Devicedetection=[Device detection](@ref DeviceDetection_Index)" \
+                         "DeviceDetection=[Device Detection](@ref DeviceDetection_Index)" \
                          "element=[element](@ref Concepts_FlowElements_FlowElement)" \
                          "elements=[elements](@ref Concepts_FlowElements_FlowElement)" \
                          "elementdata=[element data](@ref Concepts_Data_ElementData)" \
@@ -318,6 +319,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "Flowelements=[Flow elements](@ref Concepts_FlowElements_FlowElement)" \
                          "geolocation=[geolocation](@ref Geolocation_Index)" \
                          "Geolocation=[Geolocation](@ref Geolocation_Index)" \
+                         "GeoLocation=[GeoLocation](@ref Geolocation_Index)" \
                          "grabsnippet{5}=@htmlonly <button class=\"b-btn b-btn--tab \1Btn\" onclick=\"grabSnippet(this, '\2', '\3', '\4', '\1Btn', 'b-btn--tab--is-active', '\1')\">\5</button> @endhtmlonly" \
                          "grabbedsnippet{1}=@htmlonly <div id=\"\1\"></div> @endhtmlonly" \
                          "grabexample{3}=@htmlonly <button class=\"b-btn b-btn--tab examplebtn\" onclick=\"grabExample(this, '\1', '\2')\">\3</button> @endhtmlonly" \
@@ -326,6 +328,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "Hash=[Hash](@ref DeviceDetection_Hash)" \
                          "ipintelligence=[IP intelligence](@ref ipintelligence_Index)" \
                          "Ipintelligence=[IP intelligence](@ref ipintelligence_Index)" \
+                         "IpIntelligence=[IP Intelligence](@ref ipintelligence_Index)" \
                          "lazyloading=[lazy loading](@ref Features_LazyLoading)" \
                          "Lazyloading=[Lazy loading](@ref Features_LazyLoading)" \
                          "metadata=[metadata](@ref Concepts_MetaData_Index)" \

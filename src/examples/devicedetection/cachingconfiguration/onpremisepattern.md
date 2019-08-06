@@ -2,7 +2,7 @@
 
 # Introduction
 
-This example shows how to implement a cache adapter for the Guava cache and use in a
+This example shows how to implement a cache adapter for the Guava cache and deploy in a
 Device Detection @aspectengine using the Pattern algorithm.
 
 @startsnippets
