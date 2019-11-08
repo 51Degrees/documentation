@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['gettingstarted',['GettingStarted',['../../../../device-detection-cxx/docs/4.0/class_fiftyone_degrees_1_1_examples_1_1_pattern_1_1_getting_started.html',1,'FiftyoneDegrees::Examples::Pattern::GettingStarted'],['../../../../pipeline-java/docs/4.0/classfiftyone_1_1devicedetection_1_1examples_1_1hash_1_1_getting_started.html',1,'fiftyone::devicedetection::examples::hash::GettingStarted'],['../../../../pipeline-java/docs/4.0/classfiftyone_1_1devicedetection_1_1examples_1_1pattern_1_1_getting_started.html',1,'fiftyone::devicedetection::examples::pattern::GettingStarted'],['../../../../pipeline-java/docs/4.0/classfiftyone_1_1devicedetection_1_1examples_1_1cloud_1_1_getting_started.html',1,'fiftyone::devicedetection::examples::cloud::GettingStarted'],['../../../../device-detection-cxx/docs/4.0/class_fiftyone_degrees_1_1_examples_1_1_hash_1_1_getting_started.html',1,'FiftyoneDegrees::Examples::Hash::GettingStarted']]]
-];

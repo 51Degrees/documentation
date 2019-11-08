@@ -24,14 +24,22 @@ for the JavaScript code in this file
 var NAVTREE =
 [
     [ "Home", "index.html", null ],
-    [ "Conceptual Docs", "_concepts__index.html", "_concepts__index" ],
-    [ "snippets", "_snippets.html", null ],
-    [ "Examples", "_examples.html", "_examples" ],
+    [ "Quick Start", null, "_quickstart__index" ],
+    [ "Concepts", null, "_concepts__index" ],
+    [ "Examples", null, "_examples__index" ],
+    [ "Device Detection", null, "_device_detection__index" ],
+    [ "Information", null, "_info__index" ],
+    [ "Features", null, "_features__index" ],
+    [ "Benchmarks", null, "_benchmarks__index" ],
     [ "Language Specific", "usergroup0.html", [
       [ "C/C++ Docs", "../../device-detection-cxx/4.0/index.html", null ],
       [ "Java Docs", "../../pipeline-java/4.0/index.html", null ]
     ] ]
 ];
+
+var NAVTREEHIDEROOT = true;
+
+var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [

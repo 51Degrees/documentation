@@ -377,8 +377,8 @@ function SearchBox(name, resultsPath, inFrame, label)
        else
        {
          var domPopupSearchResults = this.DOMPopupSearchResults();
-         var left = getXPos(domSearchBox) + 150; // domSearchBox.offsetWidth;
-         var top  = getYPos(domSearchBox) + 20;  // domSearchBox.offsetHeight + 1;
+         var left = getXPos(domSearchBox) + 300; // domSearchBox.offsetWidth;
+         var top  = getYPos(domSearchBox) + 50;  // domSearchBox.offsetHeight + 1;
          domPopupSearchResultsWindow.style.display = 'block';
          left -= domPopupSearchResults.offsetWidth;
          domPopupSearchResultsWindow.style.top     = top  + 'px';
@@ -400,7 +400,6 @@ function SearchBox(name, resultsPath, inFrame, label)
         this.DOMPopupSearchResultsWindow().style.display == 'block'
        )
     {
-      this.DOMSearchBox().className = 'MSearchBoxActive';
 
       var searchField = this.DOMSearchField();
 
@@ -412,7 +411,6 @@ function SearchBox(name, resultsPath, inFrame, label)
     }
     else if (!isActive) // directly remove the panel
     {
-      this.DOMSearchBox().className = 'MSearchBoxInactive';
       this.DOMSearchField().value   = this.searchLabel;
       this.searchActive             = false;
       this.lastSearchValue          = ''

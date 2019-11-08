@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['geo_5flocation',['Geo_Location',['../_concepts__flow_elements__implementations__geo_location.html',1,'Concepts_FlowElements_Implementations_Index']]],
-  ['getting_20started',['Getting Started',['../_examples__getting_started.html',1,'Examples']]]
+  ['getting_20started',['Getting Started',['../_examples__device_detection__getting_started__index.html',1,'Examples_DeviceDetection_Index']]]
 ];

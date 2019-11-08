@@ -59,23 +59,23 @@ function initResizable()
   {
     var windowWidth = $(window).width() + "px";
     var sidenavWidth = $(sidenav).outerWidth();
-    content.css({marginLeft:parseInt(sidenavWidth)+"px"});
+    //content.css({marginLeft:parseInt(sidenavWidth)+"px"});
     writeCookie('width',sidenavWidth-barWidth, null);
   }
 
   function restoreWidth(navWidth)
   {
     var windowWidth = $(window).width() + "px";
-    content.css({marginLeft:parseInt(navWidth)+barWidth+"px"});
+    //content.css({marginLeft:parseInt(navWidth)+barWidth+"px"});
     sidenav.css({width:navWidth + "px"});
   }
 
   function resizeHeight()
   {
     var headerHeight = header.outerHeight();
-    var footerHeight = footer.outerHeight();
-    var windowHeight = $(window).height() - headerHeight - footerHeight;
-    content.css({height:windowHeight + "px"});
+    //var footerHeight = footer.outerHeight();
+    var windowHeight = $(window).height() - headerHeight;// - footerHeight;
+    //content.css({height:windowHeight + "px"});
     navtree.css({height:windowHeight + "px"});
     sidenav.css({height:windowHeight + "px"});
     var width=$(window).width();
@@ -106,10 +106,10 @@ function initResizable()
     }
   }
 
-  header  = $("#top");
+  header  = $("#titlearea");
   sidenav = $("#side-nav");
   content = $("#doc-content");
-  navtree = $("#nav-tree");
+  navtree = $("#nav-tree-contents");
   footer  = $("#nav-path");
   $(".side-nav-resizable").resizable({resize: function(e, ui) { resizeWidth(); } });
   $(sidenav).resizable({ minWidth: 0 });

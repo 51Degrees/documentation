@@ -14,9 +14,9 @@ function getVersion() {
  * @param project the repository name which the example came from
  * e.g. 'device-detection-cxx'.
  */
-function updateLinks(project) {
+function updateLinks(project, divId) {
     var base = DOC_URL_BASE.split('/')[0];
-    var as = $('#grabbed-example a');
+    var as = $('#' + divId + ' a');
     for (i = 0; i < as.length; i++) {
         if (as[i].href.includes('/' + base + '/')) {
             // Replace the local part of the URL with the correct repository part
@@ -24,6 +24,12 @@ function updateLinks(project) {
             as[i].href = as[i].href.replace('/' + base + '/', '/' + project + '/');
         }
     }
+}
+
+function addLink(url, divId) {
+    var div = $('#' + divId);
+    var link = "<div id=\"grabbed-example-link\" style=\"text-align:right;\"><a href=\"" + url + "\" class=\"b-link--dotted\">Go to original page...</a></div>";
+    div.html(link + div.html());
 }
 
 /**
@@ -35,22 +41,59 @@ function updateLinks(project) {
  * @param name the name of the example to get e.g. '_hash_2_getting_started_8cpp'.
  */
 function grabExample(caller, project, name) {
-    var btns = document.getElementsByClassName('examplebtn');
+    var exampleLink = $('#grabbed-example-link');
+    if (exampleLink) {
+        exampleLink.remove();
+    }
+    grabSnippet(
+        caller,
+        project,
+        name + '-example.html',
+        'primary',
+        'examplebtn',
+        'grabbed-example');
+}
+
+function grabSnippet(caller, project, file, tag, btnClass, divId) {
+    selectBtn(caller, document.getElementsByClassName(btnClass));
+    var url = '../../' + project + '/' + getVersion()
+        + '/' + file;
+    // Load the example into the 'grabbed-example' div, then update the links.
+    $('#' + divId).load(url + ' #' + tag,
+        function() { updateLinks(project, divId); addLink(url, divId)});
+
+}
+
+function selectBtn(caller, btns) {
+    
     for (i = 0; i < btns.length; i++) {
         if (btns[i] === caller) {
             // This is the selected button, so highlight it.
-            btns[i].classList.remove('b-btn--secondary');
+            if (!btns[i].classList.contains('b-btn--tab--is-active')) {
+                btns[i].classList.add('b-btn--tab--is-active');
+            }
         }
-        else if (!btns[i].classList.contains('b-btn--secondary')) {
+        else if (btns[i].classList.contains('b-btn--tab--is-active')) {
             // This is not the selected button, and it is highlighted,
             // so un highlight it.
-            btns[i].classList.add('b-btn--secondary');
+            btns[i].classList.remove('b-btn--tab--is-active');
         }
     }
-    // Load the example into the 'grabbed-example' div, then update the links.
-    $('#grabbed-example').load(
-        '../../' + project + '/' + getVersion()
-        + '/' + name + '-example.html'
-        + ' #primary',
-        function() { updateLinks(project); });
+
+}
+
+function showSnippet(caller, language) {
+    selectBtn(caller, caller.parentElement.children);
+    var div = caller.parentElement;
+    for (i = 0; i < div.children.length; i++) {
+        var item = div.children.item(i);
+        if (item.classList.contains("c-tabgroup__main")) {
+            if (item.getAttribute("data-lang") === language) {
+                item.style.display = "block";
+            }
+            else {
+                item.style.display = "none";
+            }
+        }
+    }
 }

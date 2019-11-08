@@ -120,28 +120,28 @@ function createIndent(o,domNode,node,level)
   while (n.parentNode) { level++; n=n.parentNode; }
   if (node.childrenData) {
     var imgNode = document.createElement("span");
-    imgNode.className = 'c-table__arrow';
+    imgNode.className = 'c-sidenav__arrow';
     //imgNode.style.paddingLeft=(16*level).toString()+'px';
     //imgNode.innerHTML=arrowRight;
     node.plus_img = imgNode;
-    node.expandToggle = document.createElement("a");
-    node.expandToggle.href = "javascript:void(0)";
+    node.expandToggle = imgNode;//..= document.createElement("a");
+    //node.expandToggle.href = "javascript:void(0)";
     node.expandToggle.onclick = function() {
       if (node.expanded) {
         $(node.getChildrenUL()).slideUp("fast");
-        node.plus_img.className = "c-table__arrow";//.innerHTML=arrowRight;
+        node.plus_img.className = "c-sidenav__arrow";//.innerHTML=arrowRight;
         node.expanded = false;
       } else {
         expandNode(o, node, false, false);
       }
     }
-    node.expandToggle.appendChild(imgNode);
+    //node.expandToggle.appendChild(imgNode);
     domNode.appendChild(node.expandToggle);
   } else {
     var span = document.createElement("span");
     span.className = 'arrow';
-    span.style.width   = 16*(level+1)+'px';
-    span.innerHTML = '&#160;';
+    //span.style.width   = 16*(level+1)+'px';
+    //span.innerHTML = '&#160;';
     domNode.appendChild(span);
   }
 }
@@ -187,24 +187,27 @@ function newNode(o, po, text, link, childrenData, lastNode)
 
   node.li = document.createElement("li");
   node.li.classList.add("c-sidenav__item");
+  node.li.classList.add("item");
   po.getChildrenUL().appendChild(node.li);
   node.parentNode = po;
 
-  node.itemDiv = document.createElement("div");
-  node.itemDiv.className = "item";
+  //node.itemDiv = document.createElement("div");
+  //node.itemDiv.className = "item";
 
-  node.labelSpan = document.createElement("span");
-  node.labelSpan.className = "c-sidenav__link label";
+  //node.labelSpan = document.createElement("span");
+  //node.labelSpan.className = "c-sidenav__link label";
 
-  createIndent(o,node.labelSpan,node,0);
-  node.itemDiv.appendChild(node.labelSpan);
-  node.li.appendChild(node.itemDiv);
+  createIndent(o,node.li,node,0);
+  //node.itemDiv.appendChild(node.labelSpan);
+  //node.li.appendChild(node.itemDiv);
 
-  var a = document.createElement("a");
-  node.labelSpan.appendChild(a);
+  node.a = document.createElement("a");
+  node.a.classList.add("c-sidenav__link");
+  node.a.classList.add("label");
+  node.li.appendChild(node.a);
   node.label = document.createTextNode(text);
   node.expanded = false;
-  a.appendChild(node.label);
+  node.a.appendChild(node.label);
   if (link) {
     var url;
     if (link.substring(0,1)=='^') {
@@ -213,34 +216,34 @@ function newNode(o, po, text, link, childrenData, lastNode)
     } else {
       url = node.relpath+link;
     }
-    a.className = stripPath(link.replace('#',':'));
+    node.a.classList.add(stripPath(link.replace('#',':')));
     if (link.indexOf('#')!=-1) {
       var aname = '#'+link.split('#')[1];
       var srcPage = stripPath(pathName());
       var targetPage = stripPath(link.split('#')[0]);
-      a.href = srcPage!=targetPage ? url : "javascript:void(0)";
-      a.onclick = function(){
+      node.a.href = srcPage!=targetPage ? url : "javascript:void(0)";
+      node.a.onclick = function(){
         storeLink(link);
         if (!$(a).parent().parent().hasClass('selected'))
         {
           $('.item').removeClass('selected');
           $('.item').removeAttr('id');
-          $(a).parent().parent().addClass('selected');
-          $(a).parent().parent().attr('id','selected');
+          $(node.a).parent().parent().addClass('selected');
+          $(node.a).parent().parent().attr('id','selected');
         }
         var anchor = $(aname);
         gotoAnchor(anchor,aname,true);
       };
     } else {
-      a.href = url;
-      a.onclick = function() { storeLink(link); }
+      node.a.href = url;
+      node.a.onclick = function() { storeLink(link); }
     }
   } else {
     if (childrenData != null)
     {
-      a.className = "nolink";
-      a.href = "javascript:void(0)";
-      a.onclick = node.expandToggle.onclick;
+      node.a.classList.add("nolink");
+      node.a.href = "javascript:void(0)";
+      node.a.onclick = node.expandToggle.onclick;
     }
   }
 
@@ -291,7 +294,7 @@ function expandNode(o, node, imm, showRoot)
       } else {
         $(node.getChildrenUL()).slideDown("fast");
       }
-      node.plus_img.className = "c-table__arrow c-table__arrow--is-open";//.innerHTML = arrowDown;
+      node.plus_img.className = "c-sidenav__arrow c-sidenav__arrow--is-open";//.innerHTML = arrowDown;
       node.expanded = true;
     }
   }
@@ -335,8 +338,9 @@ function selectAndHighlight(hash,n)
     a.parent().parent().attr('id','selected');
     highlightAnchor();
   } else if (n) {
-    $(n.itemDiv).addClass('selected');
-    $(n.itemDiv).attr('id','selected');
+    $(n.li).addClass('selected');
+    $(n.li).attr('id','selected');
+    $(n.a).addClass("c-sidenav__link--is-active")
   }
   if ($('#nav-tree-contents .c-sidenav__item:first').hasClass('selected')) {
     $('#nav-sync').css('top','30px');
@@ -360,7 +364,7 @@ function showNode(o, node, index, hash)
         getNode(o, node);
       }
       $(node.getChildrenUL()).css({'display':'block'});
-      node.plus_img.className = "c-table__arrow c-table__arrow--is-open";//.innerHTML = arrowDown;
+      node.plus_img.className = "c-sidenav__arrow c-sidenav__arrow--is-open";//.innerHTML = arrowDown;
       node.expanded = true;
       var n = node.children[o.breadcrumbs[index]];
       if (index+1<o.breadcrumbs.length) {
@@ -423,7 +427,9 @@ function gotoNode(o,subIndex,root,hash,relpath)
     $('.item').removeAttr('id');
   }
   if (o.breadcrumbs) {
-    o.breadcrumbs.unshift(0); // add 0 for root node
+    if (!NAVTREEHIDEROOT) {
+      o.breadcrumbs.unshift(0); // add 0 for root node
+    }
     showNode(o, o.node, 0, hash);
   }
 }
@@ -499,10 +505,10 @@ function initNavTree(toroot,relpath)
   o.node.expanded = false;
   o.node.isLast = true;
   o.node.plus_img = document.createElement("span");
-  o.node.plus_img.className = 'c-table__arrow';
+  o.node.plus_img.className = 'c-sidenav__arrow';
   //o.node.plus_img.innerHTML = arrowRight;
 
-  if (localStorageSupported()) {
+  if (localStorageSupported() && !NAVTREEHIDESYNC) {
     var navSync = $('#nav-sync');
     if (cachedLink()) {
       showSyncOff(navSync,relpath);
