@@ -4,7 +4,7 @@
 
 This example shows a very simple @flowelement which takes a date of birth
 and returns an star sign. Although a basic (and not all that useful) @flowelement, the
-example demonstrates how you can start to implement your own @flowelement's.
+example demonstrates how you can start to implement your own @flowelements.
 
 # Download Example
 
@@ -16,7 +16,7 @@ The source code used in this example is available here:
 
 # Dependencies
 
-The @flowelement will need a dependency on the @pipeline core package
+The @flowelement will need a reference to the @pipeline core package
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -25,7 +25,9 @@ The @flowelement will need a dependency on the @pipeline core package
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific dependencies.}
 @startsnippet{dotnet}
-The only dependency needed for .NET is the `FiftyOne.Pipeline.Core` NuGet package.
+Create a new console project (.NET Core or Framework) and add a reference to
+the `FiftyOne.Pipeline.Core` NuGet package.
+TODO: Add link to package on nuget.
 @endsnippet
 @startsnippet{java}
 The only dependency needed for Java is the `pipeline.core` Maven package from `com.51degrees`.

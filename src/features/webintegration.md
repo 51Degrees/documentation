@@ -71,14 +71,14 @@ pages then adding it to your _layout.cshtml is often the easiest solution.
 ```
 
 When 51Degrees.core.js is requested, the 
-[FiftyOneDegreesMiddleware](@ref Features_WebIntegration) component will 
+**FiftyOneDegreesMiddleware** component will 
 intercept the request and pass it to a service class.
 This service will aggregate all JavaScript properties that have been returned by
 @flowelements in the @Pipeline into a single block of JavaScript code.
 This will then be returned to the caller as the response.
 If configured to do so, this JavaScript will also be minified.
 
-Additionally, this service implements a [caching mechanism](@ref Features_ResultCaching), 
+Additionally, this service implements a caching mechanism, 
 so the resulting JavaScript will not need to be regenerated if successive requests contain
 the same evidence values.
 @endsnippet

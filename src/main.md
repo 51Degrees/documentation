@@ -2,8 +2,8 @@
 
 # 51Degrees Pipeline Documentation
 
-The 51Degrees Pipeline is an open source set of APIs for consuming multiple real-time data services
-delivered both on-premise and via the cloud in a single flexible interface.
+The 51Degrees Pipeline is an open source set of APIs for aggregating multiple real-time data services.
+These services can be on-premise or cloud-based. All accessed with a single call.
 
 Key features:
 
@@ -14,14 +14,14 @@ need to interrupt running processes.
 - Support for high performance native data processing libraries via SWIG.
 - All components designed for scalable, multi-threaded applications.
 - Modern software design including fluent builders, dependency injection, unit testing and continuous integration. DevOps friendly.
-- Support for C, C++, .NET, Java, PHP and Node.
-- Originally developed to provide information about devices accessing a website, version 4 and beyond of the API provide support for third party data services.
-
+- Support for .NET, Java, PHP and Node.
+- Plug-in architecture supporting custom third party data services.
 
 ## New to the Pipeline?
 
 * Check the @quickstart guide for help getting up and running as soon as possible.
 * For a conceptual overview of the API, start with the @Pipeline page. 
+* If you're migrating from the older 51Degrees device detection API then start with the @v3migrationguide.
 
 ## 51Degrees Data Services
 

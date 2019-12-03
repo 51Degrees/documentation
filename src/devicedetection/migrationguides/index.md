@@ -5,3 +5,5 @@
 @subpage DeviceDetection_MigrationGuides_Wurfl
 
 @subpage DeviceDetection_MigrationGuides_OpenRTBMappings
+
+@subpage DeviceDetection_MigrationGuides_51DegreesV3

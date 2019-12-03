@@ -362,6 +362,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "term{1}=@ref Concepts_Terminology_\1" \
                          "tick=@htmlonly&#9745;@endhtmlonly" \
                          "usagesharing=[usage sharing](@ref Features_UsageSharing)" \
+                         "v3migrationguide=[version 3 migration guide](@ref DeviceDetection_MigrationGuides_51DegreesV3) \
                          "webintegration=[web integration](@ref Features_WebIntegration)" \
                          "webintegrations=[web integrations](@ref Features_WebIntegration)"
 

@@ -18,17 +18,17 @@
 |C/C++    |Nginx<BR>HAProxy<BR>Varnish |
 |.NET     |ASP.NET Core<BR>ASP.NET | 
 |Java     |Java Servlet<BR>Java Spring MVC Interceptor| 
-|PHP      |WordPress<BR>Drupal|
-|Node.js  | TODO |
+|PHP      |WordPress<BR>Symphony<BR>Drupal|
+|Node.js  | N/A |
 |JavaScript| N/A |
 
-# Features
+# Pipeline API Features
 
 |Language / Framework|[Automatic Data Updates](@ref Features_AutomaticDatafileUpdates)|[Client-side Evidence](@ref Features_ClientSideEvidence)|[Asynchronous Execution](@ref Features_AsynchronousExecution)|[Lazy Loading](@ref Features_LazyLoading)|[Parallel Execution](@ref Features_ParallelExecution)|[Result Caching](@ref Features_ResultCaching)|
 |---|---|---|---|---|---|---|
-|C/C++    | TODO |   |   |   |   |   |
-|.NET     |@tick|@tick|       |@tick|@tick|@tick|
-|Java     |@tick|@tick|       |@tick|@tick|@tick| 
-|PHP      |@tick|@tick|       |       |       |@tick|
-|Node.js  |@tick|@tick|@tick|       |@tick|@tick|
-|JavaScript|N/A|@tick|N/A|N/A|N/A|N/A|
+|.NET     |@tick|@tick|       |@tick  |@tick  |@tick|
+|Java     |@tick|@tick|       |@tick  |@tick  |@tick| 
+|PHP      |     |@tick|       |       |       |@tick*|
+|Node.js  |@tick|@tick|@tick  |       |@tick  |@tick|
+
+\* Session cache only.
