@@ -37,7 +37,6 @@ To get started with C++ device detection on-premise:
 [Pattern](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern)
 4. (optional) Contact us to purchase a license key and [download]() a premium data file with access to more devices and properties.
 
-
 TODO: 
 - Populate links.
 - Add missing steps between 1 and 2.
@@ -71,8 +70,7 @@ TODO:
   * [Cloud Example](@ref Examples_DeviceDetection_GettingStarted_Cloud) - Negligible processing and memory overhead but slower due to Internet latency. 
   * **On-premise** - Device detection processing is performed locally using a data file that must be kept updated. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
     * [On-premise Pattern Example ](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern)
-    * [On-premise Hash Example](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash)
-  
+    * [On-premise Hash Example](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash)  
 3. (optional) Configure [client-side evidence](@ref) to get better results. Particularly for iPhone and iPad.
 @endsnippet
 @startsnippet{java}
