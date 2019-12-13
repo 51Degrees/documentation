@@ -34,7 +34,7 @@ This allows the **Pipeline** to be configurable at runtime without recompiling t
 default operation for @webintegrations, but can be used for any other use-case
 as well. 
 For more on this, see the @buildfromconfiguration section, 
-and the [configure from file](@ref Examples_Configure_From_File) example.
+and the [configure from file](@ref Examples_DeviceDetection_ConfigureFromFile_Index) example.
 
 
 # Processing

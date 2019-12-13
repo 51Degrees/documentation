@@ -6,8 +6,8 @@
     <tab type="pages" visible="yes" title="" intro=""/>
     <tab type="modules" visible="yes" title="" intro=""/>
   	<tab type="usergroup" visible="yes" title="Language Specific">
-      <tab type="user" visible="yes" title="C/C++ Docs" url="../../device-detection-cxx/4.0/index.html"/>
-  	  <tab type="user" visible="yes" title="Java Docs" url="../../pipeline-java/4.0/index.html"/>
+    <tab type="user" visible="yes" title="C/C++ Docs" url="../../device-detection-cxx/4.1/index.html"/>
+	  <tab type="user" visible="yes" title="Java Docs" url="../../pipeline-java/4.1/index.html"/>
   </tab>
 
 </navindex>

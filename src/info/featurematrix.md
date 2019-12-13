@@ -31,4 +31,4 @@
 |PHP      |     |@tick|       |       |       |@tick*|
 |Node.js  |@tick|@tick|@tick  |       |@tick  |@tick|
 
-\* Session cache only.
+*Session cache only.

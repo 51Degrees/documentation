@@ -28,8 +28,8 @@ The following table lists the WURFL capability name and 51Degrees properties and
 
 |WURFL Capability|51Degrees Equivalent Property|51Degrees Value|Comments|
 |---|---|---|---|
-|release_date|[ReleaseMonth](@ref https://51degrees.com/resources/property-dictionary#ReleaseMonth), [ReleaseYear](@ref https://51degrees.com/resources/property-dictionary#ReleaseYear)|||
-|pointing_method|[HasClickWheel](@ref https://51degrees.com/resources/property-dictionary#HasClickWheel), [HasTrackPad](@ref https://51degrees.com/resources/property-dictionary#HasTrackPad), [HasTouchScreen](@ref https://51degrees.com/resources/property-dictionary#HasTouchScreen)|||
+|release_date|[ReleaseMonth](https://51degrees.com/resources/property-dictionary#ReleaseMonth), [ReleaseYear](https://51degrees.com/resources/property-dictionary#ReleaseYear)|||
+|pointing_method|[HasClickWheel](https://51degrees.com/resources/property-dictionary#HasClickWheel), [HasTrackPad](https://51degrees.com/resources/property-dictionary#HasTrackPad), [HasTouchScreen](https://51degrees.com/resources/property-dictionary#HasTouchScreen)|||
 
 TODO: Finish migrating the full table from here: https://51degrees.com/scientiamobile
  

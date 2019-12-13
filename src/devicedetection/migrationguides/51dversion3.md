@@ -655,4 +655,6 @@ if($device->get("ismobile")->hasValue) {
     $isMobile = $device->get("ismobile").value;
 }
 ```
+
 @endsnippet
+@endsnippets

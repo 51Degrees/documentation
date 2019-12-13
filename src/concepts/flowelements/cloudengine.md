@@ -40,10 +40,10 @@ separate @aspectengines.
 The 'cloud request engine' marshals the evidence and makes a request to the cloud service. The resulting
 raw JSON string is stored in the request engine's associated @elementdata.
 
-There are then individual **cloud engines** that can be added to the @Pipeline for each @termaspect. These will take
+There are then individual **cloud engines** that can be added to the @Pipeline for each @term{Aspect}. These will take
 the part of the raw JSON string which is relevant to them and transform it into something with the same interface
 as the associated @onpremiseengine.
 
 This splitting thus allows a single request to be made even if the details of multiple [aspects](@ref Concepts_Terminology_Aspect) need to be 
 populated while also allowing the ability to easily swap between a **cloud engine** and the @onpremiseengine 
-concerned with the same @termaspect.
+concerned with the same @term{Aspect}.

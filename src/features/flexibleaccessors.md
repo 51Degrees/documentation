@@ -26,10 +26,10 @@ current version of the @flowelement was built.
 @startsnippet{dotnet}
 In .NET, IDE auto-complete support is dependent on having a specific interface/type with defined properties.
 This is supported by allowing the @aspectdata type and associated interface to be extended for each engine.
-@FlowData can then then return this specific type/interface.
+@Flowdata can then then return this specific type/interface.
 For example, the 51Degrees device detection engines use the IDeviceData interface to define all 
 the properties that are available.
-After @FlowData has been processed, you can request the IDeviceData from it:
+After @flowdata has been processed, you can request the IDeviceData from it:
 
 ```{cs}
 var deviceData = flowdata.Get<IDeviceData>();
@@ -76,10 +76,10 @@ flowdata.GetAs<AspectPropertyValue<bool>>("IsMobile");
 @startsnippet{java}
 In Java, IDE auto-complete support is dependent on having a specific interface/type with defined properties.
 This is supported by allowing the @aspectdata interface to be extended for each engine.
-@FlowData can then then return this specific interface.
+@Flowdata can then then return this specific interface.
 For example, the 51Degrees device detection engines use the DeviceData interface to define all the 
 properties that are available.
-After @FlowData has been processed, you can request the DeviceData from it:
+After @flowdata has been processed, you can request the DeviceData from it:
 
 ```{java}
 DeviceData deviceData = flowdata.get(DeviceData.class);
@@ -119,7 +119,7 @@ flowdata.getAs("IsMobile", AspectPropertyValue.class, Boolean.class);
 @startsnippet{php}
 In PHP, auto-complete support is not feasible so you need to know the name of the element and property that 
 you're accessing.
-For example, if you are using the 51Degrees device detection engine then after the @FlowData has been processed, 
+For example, if you are using the 51Degrees device detection engine then after the @flowdata has been processed, 
 you can request the device data from it:
 
 ```{php}
@@ -146,7 +146,7 @@ flowdata->device->ismobile;
 @startsnippet{node}
 In Node, auto-complete support is not feasible so you need to know the name of the element and property that 
 you're accessing.
-For example, if you are using the 51Degrees device detection engine then after the @FlowData has been processed, 
+For example, if you are using the 51Degrees device detection engine then after the @flowdata has been processed, 
 you can request the device data from it:
 
 ```{js}

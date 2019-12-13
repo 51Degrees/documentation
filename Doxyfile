@@ -32,13 +32,13 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
-PROJECT_NAME           = Documentation
+PROJECT_NAME           = "51Degrees Pipeline Documentation"
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
 # control system is used.
 
-PROJECT_NUMBER         = 4.0
+PROJECT_NUMBER         = 4.1
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer a
@@ -51,7 +51,7 @@ PROJECT_BRIEF          =
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO           = pattern-library/source/images/logo-51Degrees-Docs.png
+PROJECT_LOGO           = docs/images/logo-51Degrees-Docs.png
 
 # The PROJECT_URL tag is used to specify the URL which is linked by the
 # PROJECT_LOGO.
@@ -313,6 +313,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "fiftyoneengine=[51Degrees engine](@ref Concepts_FlowElements_FiftyOneOnPremiseEngine)" \
                          "fiftyoneengines=[51Degrees engines](@ref Concepts_FlowElements_FiftyOneOnPremiseEngine)" \
                          "flowdata=[flow data](@ref Concepts_Data_FlowData)" \
+                         "Flowdata=[Flow data](@ref Concepts_Data_FlowData)" \
                          "flowelement=[flow element](@ref Concepts_FlowElements_FlowElement)" \
                          "Flowelement=[Flow element](@ref Concepts_FlowElements_FlowElement)" \
                          "flowelements=[flow elements](@ref Concepts_FlowElements_FlowElement)" \
@@ -362,7 +363,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "term{1}=@ref Concepts_Terminology_\1" \
                          "tick=@htmlonly&#9745;@endhtmlonly" \
                          "usagesharing=[usage sharing](@ref Features_UsageSharing)" \
-                         "v3migrationguide=[version 3 migration guide](@ref DeviceDetection_MigrationGuides_51DegreesV3) \
+                         "v3migrationguide=[version 3 migration guide](@ref DeviceDetection_MigrationGuides_51DegreesV3)" \
                          "webintegration=[web integration](@ref Features_WebIntegration)" \
                          "webintegrations=[web integrations](@ref Features_WebIntegration)"
 
@@ -1020,7 +1021,7 @@ EXAMPLE_RECURSIVE      = NO
 # that contain images that are to be included in the documentation (see the
 # \image command).
 
-IMAGE_PATH             = pattern-library/source/images
+IMAGE_PATH             =
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
@@ -1205,7 +1206,7 @@ GENERATE_HTML          = YES
 # The default directory is: html.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_OUTPUT            = 4.0
+HTML_OUTPUT            = 4.1
 
 # The HTML_FILE_EXTENSION tag can be used to specify the file extension for each
 # generated HTML page (for example: .htm, .php, .asp).
@@ -1232,7 +1233,7 @@ HTML_FILE_EXTENSION    = .html
 # of the possible markers and block names see the documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_HEADER            = header.html
+HTML_HEADER            = docs/header.html
 
 # The HTML_FOOTER tag can be used to specify a user-defined HTML footer for each
 # generated HTML page. If the tag is left blank doxygen will generate a standard
@@ -1242,7 +1243,7 @@ HTML_HEADER            = header.html
 # that doxygen normally uses.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_FOOTER            = footer.html
+HTML_FOOTER            = docs/footer.html
 
 # The HTML_STYLESHEET tag can be used to specify a user-defined cascading style
 # sheet that is used by each HTML page. It can be used to fine-tune the look of
@@ -1254,7 +1255,7 @@ HTML_FOOTER            = footer.html
 # obsolete.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_STYLESHEET        = docs/main.min.css
+HTML_STYLESHEET        = docs/docs-main.min.css
 
 # The HTML_EXTRA_STYLESHEET tag can be used to specify additional user-defined
 # cascading style sheets that are included after the standard style sheets
@@ -1277,28 +1278,12 @@ HTML_EXTRA_STYLESHEET  =
 # files will be copied as-is; there are no commands or markers available.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_FILES       = examplegrabber.js
-
-# The HTML_IMAGE_OUTPUT tag can be used to specify a directory other than
-# HTML_OUTPUT which image files should be copied to. The image files specified
-# in the HTML_EXTRA_IMAGES will be copied. Operation of the HTML_EXTRA_FILES tag
-# will remain unchanged.
-# The default directory is: images.
-# This tag requires that the tag GENERATE_HTML is set to YES.
-
-HTML_IMAGE_OUTPUT      = docs/images
-
-# The HTML_EXTRA_IMAGES tag can be used to specify one or more extra images
-# copied to the output directory specified by HTML_IMAGE_OUTPUT. For any files
-# which should be copied to the HTML_OUTPUT directory, the HTML_EXTRA_FILES
-# option should be used instead.
-# This tag requires that the tag GENERATE_HTML is set to YES.
-
-HTML_EXTRA_IMAGES      = pattern-library/source/images/icon-arrow-solid-right-mute.svg \
-                         pattern-library/source/images/icon-arrow-solid-right-orange.svg \
-                         pattern-library/source/images/icon-arrow-left-black.svg \
-                         pattern-library/source/images/icon-arrow-right-black.svg \
-                         pattern-library/source/images/icon-search.svg
+HTML_EXTRA_FILES       = examplegrabber.js \
+                         docs/images/icon-arrow-left-black.svg \
+                         docs/images/icon-arrow-right-black.svg \
+                         docs/images/icon-arrow-solid-right-mute.svg \
+                         docs/images/icon-arrow-solid-right-orange.svg \
+                         docs/images/icon-search.svg
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the style sheet and background images according to
@@ -1337,7 +1322,7 @@ HTML_COLORSTYLE_GAMMA  = 240
 # The default value is: NO.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_TIMESTAMP         = YES
+HTML_TIMESTAMP         = NO
 
 # If the HTML_DYNAMIC_MENUS tag is set to YES then the generated HTML
 # documentation will contain a main index with vertical navigation menus that

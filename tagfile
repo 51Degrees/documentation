@@ -197,6 +197,11 @@
     <docanchor file="_device_detection__hash">DeviceDetection_Hash_PredictivePower</docanchor>
   </compound>
   <compound kind="page">
+    <name>DeviceDetection_MigrationGuides_51DegreesV3</name>
+    <title>51Degrees Device Detection API Version 3.x</title>
+    <filename>_device_detection__migration_guides_51_degrees_v3</filename>
+  </compound>
+  <compound kind="page">
     <name>DeviceDetection_MigrationGuides_DeviceAtlas</name>
     <title>Device Atlas</title>
     <filename>_device_detection__migration_guides__device_atlas</filename>
@@ -400,6 +405,11 @@
     <filename>_examples__device_detection__performance__on_premise_pattern</filename>
   </compound>
   <compound kind="page">
+    <name>Examples_PropertyAccessors</name>
+    <title>Property Accessors</title>
+    <filename>_examples__property_accessors</filename>
+  </compound>
+  <compound kind="page">
     <name>Examples_WebIntegration</name>
     <title>Web Integration</title>
     <filename>_examples__web_integration</filename>
@@ -424,6 +434,11 @@
     <name>Features_CustomElements</name>
     <title>Custom Flow Elements</title>
     <filename>_features__custom_elements</filename>
+  </compound>
+  <compound kind="page">
+    <name>Features_FlexibleAccessors</name>
+    <title>Flexible Accessors</title>
+    <filename>_features__flexible_accessors</filename>
   </compound>
   <compound kind="page">
     <name>Features_LazyLoading</name>
