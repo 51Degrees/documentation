@@ -25,7 +25,7 @@ provide @clientsideevidence in the next request.
 - Java Servlet
 - Java Spring MVC Interceptor
 - PHP
-- Node.js (**todo http module + express?**)
+- Node.js
 - Nginx (@devicedetection only)
 - HAProxy (@devicedetection only)
 - Varnish (@devicedetection only)
@@ -39,9 +39,7 @@ This section covers the specifics of how it works for each web framework.
 Additionally the [web integration examples](@ref Examples_WebIntegration) include details of how
 to enable @clientsideevidence for each framework.
 
-TODO: Add details for other web frameworks.
-
-=========
+<!--TODO: Add details for other web frameworks.-->
 
 @startsnippets
 @showsnippet{aspnet,ASP.NET}
@@ -86,5 +84,3 @@ the same evidence values.
 
 @endsnippet
 @endsnippets
-
-=========

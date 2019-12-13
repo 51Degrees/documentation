@@ -60,29 +60,9 @@ is configured to execute @elements in @parallel.
 
 ## Disposal / Cleanup
 
-**Flow data** should be disposed of correctly when no longer in use. This ensures that any 
-resources being held by the instance are correctly freed.
-
-TODO: Add the snippets for this example.
-
-=========
-
-@htmlonly
-
-<button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-dotnet', '_snippets.html', 'dispose-flowdata-cs', 'disposalBtn', 'disposal-eg')">C#</button>
-<button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-java', '_snippets.html', 'dispose-flowdata-java', 'disposalBtn', 'disposal-eg')">Java</button>
-<button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-php', '_snippets.html', 'dispose-flowdata-php', 'disposalBtn', 'disposal-eg')">PHP</button>
-<button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-node', '_snippets.html', 'dispose-flowdata-node', 'disposalBtn', 'disposal-eg')">Node.js</button>
-<div id="disposal-eg"></div>
-
-@endhtmlonly
-
-=========
+**Flow data** disposal should be left up to the garbage collector. This enures that any resource which may still be needed (e.g. if it has been cached) is freed at the correct point
 
 # Thread Safety @anchor Concepts_Data_FlowData_ThreadSafety
-
-
-=========
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -97,7 +77,9 @@ In both cases, this can be overridden to use another IDictionary implementation 
 The errors collection uses the List class. This is not thread-safe. As performance is less of an issue with this collection, a simple lock is used to synchronize items being added to the list.
 @endsnippet
 @startsnippet{java}
-**todo**
+In Java, by default, the non-thread-safe `TreeMap` class is used for @elementdata and the thread-safe `ConcurrentSkipListMap` class for @evidence.
+
+In both cases, this can be overridden to use another `Map` implementation such as the thread-safe `ConcurrentHashMap`. However, it should be noted that not all `Map` implementations support case insensitivity.
 @endsnippet
 @startsnippet{php}
 PHP runs in a single thread. Consequently, elements cannot run in parallel and 
@@ -107,5 +89,3 @@ concurrency issues are not a concern.
 **todo**
 @endsnippet
 @endsnippets
-
-=========

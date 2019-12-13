@@ -36,13 +36,19 @@ However, if they want to take advantage of the @Pipeline's @buildfromconfigurati
 follow certain rules:
 
 1. A configuration method on an **element builder** must have one and only one parameter.
-2. The builder must have at least one method named 'Build' which returns an instance that implements IFlowElement.
+2. The builder must have at least one method named 'Build' which returns an instance that implements `IFlowElement`.
 3. The types of any parameters on configuration methods and build methods must be string or have a static 
 'TryParse' method. This can be an extension method if needed. It is used to parse the string value from the 
 configuration file.
 @endsnippet
 @startsnippet{java}
-**todo**
+In Java, the user is free to define methods on the builder as they wish.
+However, if they want to take advantage of the @Pipeline's @buildfromconfiguration method then they must 
+follow certain rules:
+
+1. A configuration method on an **element builder** must have one and only one parameter.
+2. The builder must have at least one method named 'Build' which returns an instance that implements `FlowElement`.
+3. The types of any parameters on configuration methods and build methods must be string or have a static `parse` method. This can be in the boxed class in the case of primative type e.g. `Integer.parseInt` is used for `int`. It is used to parse the string value from the configuration file.
 @endsnippet
 @startsnippet{php}
 **todo**

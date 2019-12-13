@@ -202,7 +202,8 @@ on an @elementbuilder.
 This can be used to specify one or more other names to match on when building from configuration.
 @endsnippet
 @startsnippet{java}
-**todo**
+The `ElementBuilder(alternateName)` attribute can be used to decorate @elementbuilder classes.
+This can be used to specify one or more other names to match when buiding from configuration.
 @endsnippet
 @startsnippet{php}
 **todo**

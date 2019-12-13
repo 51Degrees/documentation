@@ -33,7 +33,7 @@ are not required to populate any output data.
 
 @dotfile flowelement-process.gvdot
 
-(TODO: I'm not sure the diagram above is very clear. Possibly need to whiteboard some ideas)
+<!--(TODO: I'm not sure the diagram above is very clear. Possibly need to whiteboard some ideas)-->
 
 
 For example, a 'user age' **element** might look for a date of birth in the @evidence, set
@@ -172,5 +172,3 @@ must be done in a thread-safe way. Accessing the internal data structure is usua
 **todo**
 @endsnippet
 @endsnippets
-
-TODO: Language specific.

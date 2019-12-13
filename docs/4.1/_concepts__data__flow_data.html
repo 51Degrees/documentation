@@ -119,26 +119,13 @@ $(document).ready(function(){initNavTree('_concepts__data__flow_data.html','');}
 <p><b>Flow data</b> is only ever created by a <a class="el" href="_concepts__pipeline.html">Pipeline</a>, when the <code>CreateFlowData</code> method is called. This allows the <a class="el" href="_concepts__pipeline.html">Pipeline</a> to create the <b>flow data</b> internal data structures using implementations that are most appropriate for the configuration of the <a class="el" href="_concepts__flow_elements__flow_element.html">flow elements</a> in the <a class="el" href="_concepts__pipeline.html">Pipeline</a>.</p>
 <p>For example, thread-safe but slower data collections only need to be used if the <a class="el" href="_concepts__pipeline.html">Pipeline</a> is configured to execute <a class="el" href="_concepts__flow_elements__flow_element.html">elements</a> in <a class="el" href="_features__parallel_execution.html">parallel</a>.</p>
 <h2>Disposal / Cleanup</h2>
-<p><b>Flow data</b> should be disposed of correctly when no longer in use. This ensures that any resources being held by the instance are correctly freed.</p>
-<p>TODO: Add the snippets for this example.</p>
-<hr/>
-<p> 
-
-<button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-dotnet', '_snippets.html', 'dispose-flowdata-cs', 'disposalBtn', 'disposal-eg')">C#</button>
-<button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-java', '_snippets.html', 'dispose-flowdata-java', 'disposalBtn', 'disposal-eg')">Java</button>
-<button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-php', '_snippets.html', 'dispose-flowdata-php', 'disposalBtn', 'disposal-eg')">PHP</button>
-<button class="b-btn b-btn--secondary disposalBtn" onclick="grabSnippet(this, 'pipeline-node', '_snippets.html', 'dispose-flowdata-node', 'disposalBtn', 'disposal-eg')">Node.js</button>
-<div id="disposal-eg"></div>
-
-</p>
-<hr/>
+<p><b>Flow data</b> disposal should be left up to the garbage collector. This enures that any resource which may still be needed (e.g. if it has been cached) is freed at the correct point</p>
 <h1 class="g-docs__section-heading">Thread Safety<a class="anchor" id="Concepts_Data_FlowData_ThreadSafety"></a></h1>
-<hr/>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  In .NET, by default, the non-thread-safe Dictionary class is used for both <a class="el" href="_concepts__data__element_data.html">element data</a> and <a class="el" href="_concepts__data__evidence.html">evidence</a>.</p>
 <p>In both cases, this can be overridden to use another IDictionary implementation such as the thread-safe ConcurrentDictionary.</p>
-<p>The errors collection uses the List class. This is not thread-safe. As performance is less of an issue with this collection, a simple lock is used to synchronize items being added to the list.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  <b>todo</b>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  PHP runs in a single thread. Consequently, elements cannot run in parallel and concurrency issues are not a concern.  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  <b>todo</b>  </div>   </div> </p>
-<hr/>
- </section></div><!-- PageDoc -->
+<p>The errors collection uses the List class. This is not thread-safe. As performance is less of an issue with this collection, a simple lock is used to synchronize items being added to the list.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  In Java, by default, the non-thread-safe <code>TreeMap</code> class is used for <a class="el" href="_concepts__data__element_data.html">element data</a> and the thread-safe <code>ConcurrentSkipListMap</code> class for <a class="el" href="_concepts__data__evidence.html">evidence</a>.</p>
+<p>In both cases, this can be overridden to use another <code>Map</code> implementation such as the thread-safe <code>ConcurrentHashMap</code>. However, it should be noted that not all <code>Map</code> implementations support case insensitivity.  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  PHP runs in a single thread. Consequently, elements cannot run in parallel and concurrency issues are not a concern.  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  <b>todo</b>  </div>   </div>  </p>
+</section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
 <!-- HTML footer for doxygen 1.8.15-->

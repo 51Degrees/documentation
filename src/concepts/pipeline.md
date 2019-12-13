@@ -160,7 +160,7 @@ In this case, both will carry out their processing at the same time. This time, 
 which the **Pipeline** creates will be thread-safe for writing as it is possible that both 
 **E1** and **E2** will attempt to write their results to the FlowData at the same time.
 
-TODO: The above example is language-specific.
+<!--TODO: The above example is language-specific.-->
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -235,4 +235,4 @@ While not a necessity, it is good practice to dispose of each
 it is finished with.
 
 
-(TODO description on why memory management matters for languages that usually don't have to worry about it)
+<!--(TODO description on why memory management matters for languages that usually don't have to worry about it)-->

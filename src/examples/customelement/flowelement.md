@@ -27,7 +27,7 @@ The @flowelement will need a reference to the @pipeline core package
 @startsnippet{dotnet}
 Create a new console project (.NET Core or Framework) and add a reference to
 the `FiftyOne.Pipeline.Core` NuGet package.
-TODO: Add link to package on nuget.
+<!--TODO: Add link to package on nuget.-->
 @endsnippet
 @startsnippet{java}
 The only dependency needed for Java is the `pipeline.core` Maven package from `com.51degrees`.

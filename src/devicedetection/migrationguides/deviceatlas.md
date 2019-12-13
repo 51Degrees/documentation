@@ -25,7 +25,7 @@ The following table lists the DeviceAtlas API Name and 51Degrees properties and 
 |3gp.aac.lc|[CcppAccept](https://51degrees.com/resources/property-dictionary#CcppAccept)|video/AAC||	 
 |3gp.amr.nb|[CcppAccept](https://51degrees.com/resources/property-dictionary#CcppAccept)|video/amr, video/amr-nb||
 
-TODO: Migrate the rest of this table from https://51degrees.com/deviceatlas
+<!--TODO: Migrate the rest of this table from https://51degrees.com/deviceatlas-->
 
 # Obsolete DeviceAtlas Capabilities @anchor DeviceDetection_MigrationGuides_DeviceAtlas_Obsolete
 
@@ -40,4 +40,4 @@ The following DeviceAtlas API Names are considered  to be obsolete and are not c
 |drmOmaForwardLock||
 |drmOmaSeparateDelivery||
 
-TODO: Migrate the rest of this table from https://51degrees.com/deviceatlas
+<!--TODO: Migrate the rest of this table from https://51degrees.com/deviceatlas-->

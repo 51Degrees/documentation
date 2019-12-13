@@ -179,7 +179,8 @@ if(device.IsMobile.HasValue)
 ```
 
 
-TODO: maybe offer this option? (I can't see why you would want to do it this way but I know others seem to prefer it!) If you don't mind specifying the return type and dealing with magic strings, You can cut out a step and access properties directly from the flow data if desired. E.g:
+<!--TODO: maybe offer this option? (I can't see why you would want to do it this way but I know others seem to prefer it!)-->
+If you don't mind specifying the return type and dealing with magic strings, You can cut out a step and access properties directly from the flow data if desired. E.g:
 
 ```{cs}
 if(data.GetAs<AspectPropertyValue>("IsMobile").HasValue)
@@ -603,8 +604,8 @@ if(device.isMobile.hasValue) {
      |                                      PHP                                        |
      =================================================================================== -->
 @startsnippet{php}
-If you currently use an on-premise data file with PHP then you will need to get the on-premise version of the PHP API from GitHub (TODO add link).  
-TODO: Add complete steps for on-premise PHP.
+If you currently use an on-premise data file with PHP then you will need to get the on-premise version of the PHP API from [GitHub](https://github.com/51degrees/pipeline-php).  
+<!--TODO: Add complete steps for on-premise PHP.-->
 If you use the cloud version then you can install the fiftyone.devicedetection package from composer.
 
 With the V3 API, a provider could be created with something like this:

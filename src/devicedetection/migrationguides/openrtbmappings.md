@@ -4,7 +4,7 @@
 
 The RTB Project is an API specification for companies needing an open protocol for the automated trading of digital media across a broader range of platforms, devices, and advertising solutions. To aid those wishing to enhance the capture of device data, we've compiled a guide to map OpenRTB Object: Device fields to 51Degrees properties and values. The full Open RTB API Specification can be found [here](http://www.iab.com/wp-content/uploads/2016/03/OpenRTB-API-Specification-Version-2-5-FINAL.pdf) with the Device Object specification on page 23.
 
-TODO: We talk about OpenRTB 2.5 here, should we be moving on to [OpenRTB 3]( https://iabtechlab.com/standards/openrtb/)?
+<!--TODO: We talk about OpenRTB 2.5 here, should we be moving on to [OpenRTB 3]( https://iabtechlab.com/standards/openrtb/)?-->
 
 # OpenRTB API Mappings
 

@@ -15,32 +15,27 @@ C does not have a @Pipeline implementation or the ability to use the cloud-based
 Device Detection.
 To get started with C device detection on-premise:
 
-1. Clone the GitHub [repository]().
+1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-cxx).
 2. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
 3. Follow the linked examples here: [Hash](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) or 
 [Pattern](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern)
 4. (optional) Contact us to purchase a license key and [download]() a premium data file with access to more devices and properties.
 
-TODO: 
-- Populate links.
-- Add missing steps between 1 and 2.
-- Add contact details in step 3.
+<!--TODO: Add contact details in step 3.-->
 @endsnippet
 @startsnippet{cxx}
 C++ does not have a @Pipeline implementation or the ability to use the cloud-based version of 
 Device Detection.
 To get started with C++ device detection on-premise:
 
-1. Clone the GitHub [repository]().
+1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-cxx).
 2. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
 3. Follow the linked examples here: [Hash](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) or 
 [Pattern](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern)
 4. (optional) Contact us to purchase a license key and [download]() a premium data file with access to more devices and properties.
 
-TODO: 
-- Populate links.
-- Add missing steps between 1 and 2.
-- Add contact details in step 3.
+<!--TODO: Add contact details in step 3.-->
+
 @endsnippet
 @startsnippet{dotnet}
 ### Standalone pipeline / off-line processing

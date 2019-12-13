@@ -31,7 +31,7 @@ The following table lists the WURFL capability name and 51Degrees properties and
 |release_date|[ReleaseMonth](https://51degrees.com/resources/property-dictionary#ReleaseMonth), [ReleaseYear](https://51degrees.com/resources/property-dictionary#ReleaseYear)|||
 |pointing_method|[HasClickWheel](https://51degrees.com/resources/property-dictionary#HasClickWheel), [HasTrackPad](https://51degrees.com/resources/property-dictionary#HasTrackPad), [HasTouchScreen](https://51degrees.com/resources/property-dictionary#HasTouchScreen)|||
 
-TODO: Finish migrating the full table from here: https://51degrees.com/scientiamobile
+<!--TODO: Finish migrating the full table from here: https://51degrees.com/scientiamobile-->
  
 # Obsolete WURFL Capabilities @anchor DeviceDetection_MigrationGuides_Wurfl_Obsolete
 The following WURFL capabilities are considered to be obsolete and are not currently present in our published data set. Should you require these capabilities in order to migrate to 51Degrees, please ask us for advice.
@@ -48,4 +48,4 @@ The following WURFL capabilities are considered to be obsolete and are not curre
 |nokia_edition||
 |is_google_glass|Google glass is currently under review.|
 
-TODO: Finish migrating the full table from here: https://51degrees.com/scientiamobile
+<!--TODO: Finish migrating the full table from here: https://51degrees.com/scientiamobile-->
