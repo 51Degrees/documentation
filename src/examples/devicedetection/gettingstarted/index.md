@@ -1,0 +1,7 @@
+@page Examples_DeviceDetection_GettingStarted_Index Getting Started
+
+@subpage Examples_DeviceDetection_GettingStarted_Cloud
+
+@subpage Examples_DeviceDetection_GettingStarted_OnPremiseHash
+
+@subpage Examples_DeviceDetection_GettingStarted_OnPremisePattern

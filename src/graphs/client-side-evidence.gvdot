@@ -1,0 +1,33 @@
+digraph {
+    // Set the background to transparent
+    bgcolor=transparent;
+    // Place nodes left to right
+    rankdir=LR;
+    // Style the nodes
+    node [shape=record, fontname=Helvetica, fontsize=10];
+    // Style the arrow labels
+    edge [fontname=Helvetica, fontsize=10];
+    
+    // Add the flow data cluster
+    subgraph clusterWebServer {
+        label="Web server";
+        fontname=Helvetica;
+        fontsize=10;       
+
+        Process1[label="Pipeline has geo engine\nthat needs lat and long.\nAs neither are available\nin the evidence, it\npopulates a JavaScript\nproperty with code\nto get these values."];
+        Process2[label="Pipeline takes cookies\nas evidence.\nGeo engine uses\nlat and long values\nto determine postal\naddress."];
+    };
+    // Add the flow data cluster
+    subgraph clusterClient {
+        label="Client";
+        fontname=Helvetica;
+        fontsize=10;       
+
+        Start;
+        ProcessB[label="JavaScript runs on\nclient and sets cookies\nfor lat and long."];
+    };
+    
+    Start -> Process1 [label="1. Inital request"];
+    Process1 -> ProcessB [label="2. Response includes\nJavaScript"];
+    ProcessB -> Process2 [label="3. Second request\nincludes cookies"];
+}

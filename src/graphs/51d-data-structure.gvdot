@@ -1,0 +1,17 @@
+digraph D {
+    bgcolor=transparent;
+    node [shape=record, fontname=Helvetica, fontsize=10];
+    
+    P [label="Properties", URL="@ref Concepts_FlowElements_FiftyOneOnPremiseEngine_Properties"];
+    V [label="Values", URL="@ref Concepts_FlowElements_FiftyOneOnPremiseEngine_Values"];
+    C [label="Components", URL="@ref Concepts_FlowElements_FiftyOneOnPremiseEngine_Components"];
+    PF [label="Profiles", URL="@ref Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles"];
+
+    P -> V [arrowhead=crow];
+    C -> P [arrowhead=crow];
+    C -> PF [arrowhead=crow];
+    PF -> V [arrowhead=crow];
+    
+    {rank=same P V};
+    {rank=same PF C};
+}

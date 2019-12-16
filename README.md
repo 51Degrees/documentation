@@ -18,4 +18,4 @@ In addition, this contains information of how to document the API consistently:
 | `Doxyfile` | Configuration for generating the documentation using DoxyGen. |
 | `DoxygenLayout.xml` | Defines how the navigation is layed out in the generated documentation. |
 | `examplegrabber.js` | Included in the generated documentation to pull in language specific examples. |
-| `patternlab` | PatternLab submodule which generates the custom CSS used in the generated documentation. |
+| `pattern-library` | PatternLab submodule which generates the custom CSS used in the generated documentation. |

@@ -23,7 +23,7 @@ Code comments can be formatted in a few ways, for example, the C way, or the C# 
  */
 ```
 
-**NOTE:** the asterisks should be horizontaly aligned with a space for neatness.
+**NOTE:** the asterisks should be horizontally aligned with a space for neatness.
 
 Alternatively in C#:
 
@@ -35,7 +35,7 @@ Alternatively in C#:
 
 These comment blocks should be above the item which is being documented.
 
-Members, constants etc. can also be commented to the right by begining the comment with ``/**<``. This can be useful for structures:
+Members, constants etc. can also be commented to the right by beginning the comment with ``/**<``. This can be useful for structures:
 
 ``` C
 /**
@@ -78,9 +78,9 @@ The most useful keywords are:
 |   Keyword   | Arguments | Description |
 | ----------- | --------- | ----------- |
 | ``@param``  | 1         | Describes a parameter of the method. First argument is the param name. |
-| ``@return`` | 0         | Descibes the value returned by the method. ``@returns`` is also acceptable, but should be consistent across all docuemntation for that language. |
+| ``@return`` | 0         | Describes the value returned by the method. ``@returns`` is also acceptable, but should be consistent across all documentation for that language. |
 | ``@tparam`` | 1         | Describes a template parameter. First argument is the param name. For example, a method ``someMethod<T>()`` would use ``@tparam`` to document ``T``. |
-| ``@throws`` | 1         | Descibes in which situations an exception will be thrown by the method. First argument is the exception type. |
+| ``@throws`` | 1         | Describes in which situations an exception will be thrown by the method. First argument is the exception type. |
 | ``@see``    | 1         | Adds a link to a related item. Mainly useful in Java. |
 | ``@copydoc``| 1         | Copies the full comment from another item. This is helpful for inheritance. Also useful are ``@copybrief`` and ``@copydetails``. |
 
@@ -88,7 +88,7 @@ The most useful keywords are:
 
 # Groups
 
-Groups are mainly useful in C where there is no concept of namspaces or subclasses. Each `.h` file should belong to a group. A group is defined using ``@defgroup``, and the contents of a header file can be added to a group using ``@ingroup`` and surrounding with ``@{`` and ``@}``. For example, `arrays.h` is part of the common library, so the header file starts with:
+Groups are mainly useful in C where there is no concept of namespaces or subclasses. Each `.h` file should belong to a group. A group is defined using ``@defgroup``, and the contents of a header file can be added to a group using ``@ingroup`` and surrounding with ``@{`` and ``@}``. For example, `arrays.h` is part of the common library, so the header file starts with:
 
 ``` C
 /**
@@ -115,7 +115,7 @@ The ``FiftyOneDegreesCommon`` group is also defined in the same way in another f
 
 # Markdown
 
-All comment blocks can be formatted using markdown. This is the prefered method as it is more readable in the code file than HTML.
+All comment blocks can be formatted using markdown. This is the preferred method as it is more readable in the code file than HTML.
 
 [Markdown "cheatsheet"](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
@@ -123,7 +123,7 @@ All comment blocks can be formatted using markdown. This is the prefered method 
 
 # Links
 
-Links to other documented items are usualy generated automaticaly, however it is preferable to explicitely link using a ``#`` to indicate a link:
+Links to other documented items are usually generated automatically, however it is preferable to explicitly link using a ``#`` to indicate a link:
 
 ``` C
 /**
@@ -139,7 +139,7 @@ If the thing being linked is a member of something else, and will be linked with
  */
 ```
 
-With overloaded functions it is neccessary to include the argument types to differentiate, e.g.
+With overloaded functions it is necessary to include the argument types to differentiate, e.g.
 
 ``` C++
 /**
@@ -155,7 +155,7 @@ rather than
  */
 ```
 
-URLs will be automacaly linked, but can also be done using markdown syntax:
+URLs will be automatically linked, but can also be done using markdown syntax:
 
 ```
 [link text](http:://link.com)
@@ -187,9 +187,9 @@ class SomeClass {
 
 depending on the language.
 
-This can also include ``@tparam`` if the class has one or more type paramter.
+This can also include ``@tparam`` if the class has one or more type parameter.
 
-Classes and namespaces are automaticaly structured by DoxyGen so there is no need to use grouping on them. However, methods should be grouped either by using the ``#region`` marker in C#, or like:
+Classes and namespaces are automatically structured by DoxyGen so there is no need to use grouping on them. However, methods should be grouped either by using the ``#region`` marker in C#, or like:
 
 ``` C++
 /**

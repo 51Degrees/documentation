@@ -1,0 +1,17 @@
+digraph P {
+    rankdir=LR;
+    bgcolor=transparent;
+    node [ shape=record, fontname=Helvetica, fontsize=10 ];
+    
+    i [label=in, shape=plaintext ];
+    subgraph clusterP {
+        label="Pipeline";
+        fontname=Helvetica;
+        fontsize=10;
+        E1 [label="Flow Element (E1)"];
+        E2 [label="Flow Element (E2)"];
+    };
+    o [ label=out, shape=plaintext ];
+    
+    i -> E1 -> E2 -> o;
+}

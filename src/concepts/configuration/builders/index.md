@@ -4,4 +4,4 @@
 
 @subpage Concepts_Configuration_Builders_PipelineBuilder
 
-@subpage Concepts_Configuration_Builders_BuildFromFile
+@subpage Concepts_Configuration_Builders_BuildFromConfiguration

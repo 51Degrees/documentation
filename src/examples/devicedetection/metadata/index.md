@@ -1,0 +1,7 @@
+@page Examples_DeviceDetection_Metadata_Index Metadata
+
+@subpage Examples_DeviceDetection_Metadata_Cloud
+
+@subpage Examples_DeviceDetection_Metadata_OnPremiseHash
+
+@subpage Examples_DeviceDetection_Metadata_OnPremisePattern

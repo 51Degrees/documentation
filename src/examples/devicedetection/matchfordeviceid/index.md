@@ -1,0 +1,3 @@
+@page Examples_DeviceDetection_MatchForDeviceId_Index Match For Device Id
+
+@subpage Examples_DeviceDetection_MatchForDeviceId_OnPremisePattern

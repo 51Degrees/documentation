@@ -1,0 +1,11 @@
+digraph pipelineflow {
+    bgcolor=transparent;
+    node [ shape=record, fontname=Helvetica, fontsize=10 ];
+    edge [ fontname=Helvetica, fontsize=10 ];
+    P [ label="Pipeline" ]
+    FD [ label="Flow Data" URL="@ref Concepts_Data_FlowData"];
+    P -> FD [ label="create"]
+    FD -> P [label="process" color="green"];
+    P -> FD [ color="green" ];
+    FD -> P [ label="dispose" ];
+}

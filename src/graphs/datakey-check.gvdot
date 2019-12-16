@@ -1,0 +1,60 @@
+digraph {
+    // Set the background to transparent
+    bgcolor=transparent;
+    // Place nodes left to right
+    rankdir=LR;
+    // Style the nodes
+    node [shape=record, fontname=Helvetica, fontsize=10];
+    // Style the arrow labels
+    edge [fontname=Helvetica, fontsize=10];    
+    
+    // Add the data key cluster
+    subgraph clusterDataKey {
+        label=<<B>Data key</B>>;
+        fontname=Helvetica;
+        fontsize=10;
+
+        Keys [label="{{<lat1>Latitude = 51.3|<lon1>Longitude = 11.5}|{Hash = 123456}}"];
+    };    
+    
+    subgraph clusterCache {
+        label=<Cache keys>;
+        fontname=Helvetica;
+        fontsize=10;
+        node [shape=plaintext]
+        
+        Keys1
+        [
+            label = <<table border="0" cellborder="1" cellspacing="0" cellpadding="4">
+                        <tr>
+                          <td >Latitude = 1.6</td>
+                          <td rowspan="2" bgcolor="lightgreen">Hash = 123456</td>
+                        </tr>
+                        <tr><td>Longitude = 48.6</td></tr>                        
+                    </table>>
+        ]
+        Keys2
+        [
+            label = <<table border="0" cellborder="1" cellspacing="0" cellpadding="4">
+                        <tr>
+                          <td bgcolor="lightgreen">Latitude = 51.3</td>
+                          <td rowspan="2" bgcolor="lightgreen">Hash = 123456</td>
+                        </tr>
+                        <tr><td bgcolor="lightgreen">Longitude = 11.5</td></tr>                        
+                    </table>>
+        ]
+        Keys3
+        [
+            label = <<table border="0" cellborder="1" cellspacing="0" cellpadding="4">
+                        <tr>
+                          <td >Latitude = 149.1</td>
+                          <td rowspan="2">Hash = 725528</td>
+                        </tr>
+                        <tr><td>Longitude = 4.0</td></tr>                        
+                    </table>>
+        ]
+    };    
+    
+    // Add an edge between the nodes
+    Keys -> Keys2;
+}

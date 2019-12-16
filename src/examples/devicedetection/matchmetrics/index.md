@@ -1,0 +1,5 @@
+@page Examples_DeviceDetection_MatchMetrics_Index Match Metrics
+
+@subpage Examples_DeviceDetection_MatchMetrics_OnPremiseHash
+
+@subpage Examples_DeviceDetection_MatchMetrics_OnPremisePattern

@@ -1,0 +1,20 @@
+digraph P {
+    compound=true;
+    bgcolor=transparent;
+    rankdir=LR;
+    node [shape=record, fontname=Helvetica, fontsize=10];
+    edge [fontname=Helvetica, fontsize=10];
+    
+    subgraph clusterFD {
+        fontname=Helvetica;
+        fontsize=10;
+        label="Flow Data";
+        URL="@ref Concepts_Data_FlowData";
+        E [label=Evidence, URL="@ref Concepts_Data_Evidence"];
+        ED [label="Element Data", URL="@ref Concepts_Data_ElementData"];
+    }
+    FE [label="Flow Element", URL="@ref Concepts_FlowElements_Index"];
+    
+    E -> FE [ltail=clusterFD, label=process];
+    FE -> ED [label=output];
+}

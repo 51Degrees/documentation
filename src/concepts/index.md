@@ -1,6 +1,4 @@
-@page Concepts_Index Conceptual Docs
-
-@subpage Concepts_Pipeline_Index
+@page Concepts_Index Concepts
 
 @subpage Concepts_FlowElements_Index
 
@@ -10,8 +8,6 @@
 
 @subpage Concepts_Configuration_Index
 
-@subpage Concepts_Services_Index
+@subpage Concepts_Pipeline
 
-@subpage Concepts_Web_Index
-
-@subpage Concepts_WritingAnEngine_Index
+@subpage Concepts_Terminology
