@@ -6,11 +6,11 @@ This example shows how to get set up with a Device Detection @aspectengine using
 and begin using it to process User-Agents.
 
 @startsnippets
-@grabexample{pipeline-dotnet,_pattern_2_getting_started_2_program_8cs,C#}
+@grabexample{device-detection-dotnet,_pattern_2_getting_started_2_program_8cs,C#}
 @grabexample{device-detection-cxx,_pattern_2_getting_started_8c,C}
 @grabexample{device-detection-cxx,_pattern_2_getting_started_8cpp,C++}
-@grabexample{pipeline-java,pattern_2_getting_started_8java,Java}
-@grabexample{pipeline-php,_pattern_2_getting_started_8php,PHP}
-@grabexample{pipeline-node,_pattern_2_getting_started_8js,Node.js}
+@grabexample{device-detection-java,pattern_2_getting_started_8java,Java}
+@grabexample{device-detection-php,_pattern_2_getting_started_8php,PHP}
+@grabexample{device-detection-node,_pattern_2_getting_started_8js,Node.js}
 @grabbedexample
 @endsnippets
