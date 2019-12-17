@@ -1,7 +1,14 @@
 var NAVTREEINDEX0 =
 {
 "../../device-detection-cxx/4.1/index.html":[8,0],
+"../../device-detection-dotnet/4.1/index.html":[8,4],
+"../../device-detection-java/4.1/index.html":[8,2],
+"../../device-detection-node/4.1/index.html":[8,8],
+"../../device-detection-php/4.1/index.html":[8,6],
+"../../pipeline-dotnet/4.1/index.html":[8,3],
 "../../pipeline-java/4.1/index.html":[8,1],
+"../../pipeline-node/4.1/index.html":[8,7],
+"../../pipeline-php/4.1/index.html":[8,5],
 "_benchmarks__device_detection.html":[7,0],
 "_benchmarks__index.html":[7],
 "_concepts__configuration__builders__build_from_configuration.html":[2,3,0,2],

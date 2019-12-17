@@ -32,8 +32,15 @@ var NAVTREE =
     [ "Features", null, "_features__index" ],
     [ "Benchmarks", null, "_benchmarks__index" ],
     [ "Language Specific", "usergroup0.html", [
-      [ "C/C++ Docs", "../../device-detection-cxx/4.1/index.html", null ],
-      [ "Java Docs", "../../pipeline-java/4.1/index.html", null ]
+      [ "C/C++", "../../device-detection-cxx/4.1/index.html", null ],
+      [ "Java Pipeline", "../../pipeline-java/4.1/index.html", null ],
+      [ "Java Device Detection", "../../device-detection-java/4.1/index.html", null ],
+      [ ".NET Pipeline", "../../pipeline-dotnet/4.1/index.html", null ],
+      [ ".NET Device Detection", "../../device-detection-dotnet/4.1/index.html", null ],
+      [ "PHP Pipeline", "../../pipeline-php/4.1/index.html", null ],
+      [ "PHP Device Detection", "../../device-detection-php/4.1/index.html", null ],
+      [ "Node.js Pipeline", "../../pipeline-node/4.1/index.html", null ],
+      [ "Node.js Device Detection", "../../device-detection-node/4.1/index.html", null ]
     ] ]
 ];
 
