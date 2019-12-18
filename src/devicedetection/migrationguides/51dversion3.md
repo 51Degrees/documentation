@@ -161,7 +161,7 @@ var device = data.Get<IDeviceData>();
 
 Finally, the way that data is accessed has also changed in several ways.
 1. Values can now be accessed by strongly typed properties rather than having to remember 'magic strings' (although magic string accessors still work as well).
-2. Many properties follow the nullable pattern. For example, rather than returning a boolean, the 'IsMobile' property returns a wrapper type that has 'HasValue' and 'Value' accessors. Calling '.Value' on a property that does not have a value will result in an exception.
+2. Many properties follow the nullable pattern. For example, rather than returning a boolean, the 'IsMobile' property returns a wrapper type that has 'HasValue' and 'Value' accessors. Calling '.Value' on a property that does not have a value will result in an exception. For more detail see the @falsepositivecontrol feature page.
 
 As an example:
 
@@ -488,7 +488,7 @@ DeviceData device = data.get(DeviceData.class);
 
 Finally, the way that data is accessed has also changed in several ways.
 1. Values can now be accessed by strongly typed properties rather than having to remember 'magic strings' (although magic string accessors still work as well).
-2. Many properties follow the nullable pattern. For example, rather than returning a boolean, the 'IsMobile' property returns a wrapper type that has 'hasValue' and 'value' accessors. Calling '.value' on a property that does not have a value will result in an exception.
+2. Many properties follow the nullable pattern. For example, rather than returning a boolean, the 'IsMobile' property returns a wrapper type that has 'hasValue' and 'value' accessors. Calling '.value' on a property that does not have a value will result in an exception. For more detail see the @falsepositivecontrol feature page.
 
 As an example:
 
@@ -586,7 +586,9 @@ flowData.process().then(function () {
 });
 ```
 
-Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found:
+Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found. For more detail on this see the @falsepositivecontrol feature page.
+
+As an example:
 
 ```{node}
 var isMobile = device.isMobile;
@@ -643,7 +645,9 @@ $pipelineResult = $flowData->process();
 $device = $result->get("device")
 ```
 
-Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found:
+Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found. For more detail on this see the @falsepositivecontrol feature page.
+
+As an example:
 
 ```{php}
 $isMobile = $match->getValue("IsMobile");

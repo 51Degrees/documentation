@@ -191,6 +191,16 @@
     <docanchor file="_concepts__terminology">Concepts_Terminology_WebServer</docanchor>
   </compound>
   <compound kind="page">
+    <name>DeviceDetection_Features_FalsePositiveControl</name>
+    <title>Device Detection - False Positives</title>
+    <filename>_device_detection__features__false_positive_control</filename>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_Index</name>
+    <title>Features</title>
+    <filename>_device_detection__features__index</filename>
+  </compound>
+  <compound kind="page">
     <name>DeviceDetection_Hash</name>
     <title>Hash</title>
     <filename>_device_detection__hash</filename>
