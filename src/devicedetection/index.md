@@ -38,6 +38,8 @@ For more detail on how each algorithm works, follow the links below:
 - @subpage DeviceDetection_Pattern
 - @subpage DeviceDetection_Hash
 
+Check the @subpage DeviceDetection_Features_Index page for detail about specific features of 51Degrees' device detection API.
+
 # Migrating from an Older Version or Other Providers
 
 If you're already using 51Degrees' v3 device detection API, or a device detection solution from an alternative provider and are considering switching to 51Degrees, we have a number of @subpage DeviceDetection_MigrationGuides_Index showing how our properties and capabilities map to others'.
