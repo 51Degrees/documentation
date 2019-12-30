@@ -27,22 +27,183 @@ Regardless of which API you are migrating to, there are breaking changes and new
 @startsnippet{none,block}
 Select a language to view a language specific migration guide.
 @endsnippet
+@startsnippet{c}
 <!-- ===================================================================================
      |                                        C                                        |
      =================================================================================== -->
-@startsnippet{c}
+
+First, add the device detection libraries from the
+[GitHub repo](https://github.com/51degrees/device-detection-cxx). These can be included
+using the Visual Studio projects, the CMake projects, or just the files themselves.
+
+The old (V3) device detection API used a single method to initialize a `fiftyoneDegreesProvider`.
+This took all available options as parameters, and was similar for Pattern and Hash.
+
+```{c}
+fiftyoneDegreesDataSetInitStatus status =
+    fiftyoneDegreesInitProviderWithPropertyString(
+    fileName, &provider, properties, 4, 1000);
+```
+
+An equivalent service can be set up using the V4 device detection API. Rather than all options
+being provided as inidividual arguments, both the Pattern and Hash follow the same pattern
+of taking the following:
+1. A resource manager. This is similar to the V3 provider, but provides a generic was of managing resources in a thread-safe manner.
+2. A configuration structure. This defines the way the data set is used. For example, whether the data set is loaded into memory, or streamed from file.
+3. A required properties structure. This is a structure which can contain a string or array indicating the properties which should be loaded.
+4. Data file path. This is the path to the data file which should be loaded.
+5. An exception structure. This provides a way for internal methods to report exceptions instead of allowing the process to crash.
+
+Note: That these examples all use the Hash API, however the Pattern API follows the same pattern and naming convensions.
+
+After setting any configuration options required in the config structure, the data set is
+initialized using the `fiftyoneDegreesHashInitManagerFromFile`, or `fiftyoneDegreesHashInitManagerFromMemory`
+method.
+
+```{c}
+fiftyoneDegreesStatusCode status =
+    fiftyoneDegreesHashInitManagerFromFile(
+        &manager,
+        &config,
+        &properties,
+        dataFilePath,
+        exception);
+```
+
+To process a User-Agent with the old API, the `fiftyoneDegreesMatch` is called with a workset
+which has been fetched from the provider. Instead new set of results should be created, then
+the `fiftyoneDegreesResultsHashFromUserAgent` is used in a similar way to `fiftyoneDegreesMatch`.
+
+```{c}
+fiftyoneDegreesResultsHash *result =
+    fiftyoneDegreesResultsHashCreate(&manager, 1, 0);
+
+fiftyoneDegreesResultsHashFromUserAgent(
+    results,
+    userAgent,
+    strlen(userAgent),
+    exception);
+```
+
+To get a value of a property in the old API, the `fiftyoneDegreesSetValues` and
+`fiftyoneDegreesGetString` methods were used. Using the new results structure,
+values of a property can be retrieved using the `fiftyoneDegreesResultsHashGetValueString`
+method.
+
+```{c}
+fiftyoneDegreesResultsPatternGetValuesString(
+    results,
+    propertyName,
+    valueBuffer,
+    sizeof(valueBuffer),
+    ",",
+    exception);
+```
+
+Multiple HTTP header matching can follows a similar pattern to single User-Agent matching.
+Instead of a single string, a `fiftyoneDegreesEvidenceKeyValuePairArray` structure is used.
+Each header is added to the evidence before calling the `fiftyoneDegreesResultsHashFromEvidence`
+method.
+
+```{c}
+fiftyoneDegreesEvidenceKeyValuePairArray *evidence =
+    fiftyoneDegreesEvidenceCreate(1);
+fiftyoneDegreesEvidenceAddString(
+    evidence,
+    FIFTYONE_DEGREES_EVIDENCE_HTTP_HEADER_STRING,
+    "User-Agent",
+    userAgent);
+
+fiftyoneDegreesResultsHashFromEvidence(
+    results,
+    evidence,
+    exception);
+```
+
+Once finished, the results are released using the `fiftyoneDegreesResultsHashFree` method,
+and the data set with the `fiftyoneDegreesManagerFree` method.
 
 @endsnippet
+@startsnippet{cpp}
 <!-- ===================================================================================
      |                                       C++                                       |
      =================================================================================== -->
-@startsnippet{cpp}
+
+First, add the device detection libraries from the
+[GitHub repo](https://github.com/51degrees/device-detection-cxx). These can be included
+using the Visual Studio projects, the CMake projects, or just the files themselves.
+
+The old (V3) device detection API used a `Provider` class initialized with the path
+to the data file and the required properties, and was similar for Pattern and Hash.
+
+```{cpp}
+Provider *provider = Provider(fileName, properties);
+```
+
+An equivalent service can be set up using the V4 device detection API. Rather than a `Provider`,
+the equivalent class is an "Engine" which extends the `EngineBase` base class. An engine is
+constructed with the following:
+1. Data file path. This is the path to the data file which should be loaded.
+2. A configuration instance. This defines the way the data set is used. For example, whether the data set is loaded into memory, or streamed from file.
+3. A required properties instance. This is a class which can contain a string or array indicating the properties which should be loaded.
+
+Note: That these examples all use the Hash API, however the Pattern API follows the same pattern and naming convensions.
+
+After setting any configuration options required in the config structure, the engine is
+constructed.
+
+```{cpp}
+RequiredPropertiesConfig *properties = new RequiredPropertiesConfig(propertiesString);
+ConfigHash *config = new ConfigHash();
+
+EngineHash *engine = new EngineHash(dataFile, config, properties);
+```
+
+To process HTTP headers with the old API, the `provider->getMatch` is called with either
+a single User-Agent string, or a `map<string, string>` containing HTTP header names and values.
+Instead, an `EvidenceDeviceDetection` instance should be created, then the `engine->process`
+is used in a similar way to `provider->getMatch`. The `EvidenceBase` class actually extends
+`map<string, string>` so usage is almost identical. The difference is that the keys will be
+different to the old API. For example, instead of "User-Agent", the key would be "header.User-Agent".
+This is because more evidence is supported in the new API (e.g. cookies, query params).
+
+```{cpp}
+EvidenceDeviceDetection *evidence = new EvidenceDeviceDetection();
+evidence->operator[]("header.User-Agent") = userAgent;
+
+ResultsHash *results = engine->process(evidence);
+```
+
+Getting values from a `ResultsHash` (or any class extending `ResultsBase`) instance is similar
+to the old API, however the values returned are slightly different. Values follow the nullable
+pattern. For example, rather than returning a boolean, the `results->getValueAsBool` method returns a
+`Value<bool>` type that has `hasValue()` and `getValue()` methods (in addition to a `*` operator which
+maps to the `getValue()` method). Calling `getValue()` on a property value that does not have a value
+will result in an exception. For more detail see the @falsepositivecontrol feature page.
+
+```{cpp}
+Value<bool> value = results->getValueAsBool("IsMobile");
+
+if (value.hasValue()) {
+    bool isMobile = *value;
+}
+else {
+    // No valid value.
+}
+```
+
+Once finished, the results, evidence, engine, and configuration are freed using their
+destructors.
+```{cpp}
+delete results;
+...
+```
 
 @endsnippet
+@startsnippet{dotnet}
 <!-- ===================================================================================
      |                                      .NET                                       |
      =================================================================================== -->
-@startsnippet{dotnet}
 Note: If you are working with a ASP.NET or ASP.NET Core web app then check those tabs for a more focused migration guide.
 
 First, add the `FiftyOne.DeviceDetection` NuGet package.
@@ -189,10 +350,10 @@ if(data.GetAs<AspectPropertyValue>("IsMobile").HasValue)
 }
 ```
 @endsnippet
+@startsnippet{aspdotnet}
 <!-- ===================================================================================
      |                                    ASP.NET                                      |
      =================================================================================== -->
-@startsnippet{aspdotnet}
 This section describes how to migrate from the ASP.NET integration in version 3 of the device detection API to the ASP.NET integration in Pipeline API.
 Note - The redirect, image optimization and performance monitoring services are no longer supported in the Pipeline API.
 
@@ -228,7 +389,7 @@ This file should follow the usual structure of a pipeline configuration file. Fo
 ```
 
 - Use the performance profile setting to control the trade-off between performance and memory. `LowMemory` is recommended if you're not sure. `MaxPerformance` uses the most memory but gives the best performance.
-- If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": "false)`
+- If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false`
 - If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this resource key to the Pipeline. If you are accessing paid-for properties then a license key will also be required.
 
 ```{json}
@@ -257,10 +418,10 @@ The previous web integration used the `Request.Browser` functionality that was b
 if (Request.Browser["IsMobile"] == "True")
 ```
 @endsnippet
+@startsnippet{aspdotnetcore}
 <!-- ===================================================================================
      |                                  ASP.NET Core                                   |
      =================================================================================== -->
-@startsnippet{aspdotnetcore}
 This section describes how to migrate from the ASP.NET integration in version 3 of the device detection API to the ASP.NET Core integration in Pipeline API.
 Note - The redirect, image optimization and performance monitoring services are no longer supported in the Pipeline API.
 
@@ -308,7 +469,7 @@ Add a PipelineOptions section to your appsettings.json file and configure approp
 ```
 
 - Use the performance profile setting to control the trade-off between performance and memory. `LowMemory` is recommended if you're not sure. `MaxPerformance` uses the most memory but gives the best performance.
-- If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": "false)`
+- If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false`
 - If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this resource key to the Pipeline. If you are accessing paid-for properties then a license key will also be required.
 
 ```{json}
@@ -374,10 +535,10 @@ The device properties can then be accessed in the corresponding view. For exampl
 The `FiftyOneJS` component handles the inclusion of client-side evidence.
 The main use-case for this in device detection is in detecting iPhone and iPad models correctly.
 @endsnippet
+@startsnippet{java}
 <!-- ===================================================================================
      |                                     Java                                        |
      =================================================================================== -->
-@startsnippet{java}
 First, add the `com.51degrees.device-detection` Maven package.
 
 The old (V3) device detection API generally had two initialization steps, one to create a `DataSet` and one to create a `Provider` from that `DataSet`.
@@ -505,10 +666,10 @@ if(device.getIsMobile().hasValue)
 }
 ```
 @endsnippet
+@startsnippet{node}
 <!-- ===================================================================================
      |                                      Node                                       |
      =================================================================================== -->
-@startsnippet{node}
 First, add the fiftyone.devicedetection package from NPM.
 
 With the V3 API, a provider could be created with something like this:
@@ -602,10 +763,10 @@ if(device.isMobile.hasValue) {
 }
 ```
 @endsnippet
+@startsnippet{php}
 <!-- ===================================================================================
      |                                      PHP                                        |
      =================================================================================== -->
-@startsnippet{php}
 If you currently use an on-premise data file with PHP then you will need to get the on-premise version of the PHP API from [GitHub](https://github.com/51degrees/pipeline-php).  
 <!--TODO: Add complete steps for on-premise PHP.-->
 If you use the cloud version then you can install the fiftyone.devicedetection package from composer.

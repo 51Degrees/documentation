@@ -19,7 +19,6 @@
     <name>DeviceDetection_Index</name>
     <title>Device Detection</title>
     <filename>_device_detection__index</filename>
-    <docanchor file="_device_detection__index">DeviceDetection_Index_PatternVsHash</docanchor>
   </compound>
   <compound kind="page">
     <name>Info_Index</name>
@@ -233,6 +232,12 @@
     <title>WURFL</title>
     <filename>_device_detection__migration_guides__wurfl</filename>
     <docanchor file="_device_detection__migration_guides__wurfl">DeviceDetection_MigrationGuides_Wurfl_Obsolete</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Overview</name>
+    <title>Device Detection - Overview</title>
+    <filename>_device_detection__overview</filename>
+    <docanchor file="_device_detection__overview">DeviceDetection_Index_PatternVsHash</docanchor>
   </compound>
   <compound kind="page">
     <name>DeviceDetection_Pattern</name>

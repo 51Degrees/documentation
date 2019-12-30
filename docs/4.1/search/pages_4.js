@@ -7,6 +7,7 @@ var searchData=
   ['device_20detection_20_2d_20false_20positives',['Device Detection - False Positives',['../_device_detection__features__false_positive_control.html',1,'DeviceDetection_Features_Index']]],
   ['device_20detection',['Device Detection',['../_device_detection__index.html',1,'']]],
   ['device_20atlas',['Device Atlas',['../_device_detection__migration_guides__device_atlas.html',1,'DeviceDetection_MigrationGuides_Index']]],
+  ['device_20detection_20_2d_20overview',['Device Detection - Overview',['../_device_detection__overview.html',1,'DeviceDetection_Index']]],
   ['device_20detection_20examples',['Device Detection Examples',['../_examples__device_detection__index.html',1,'Examples_Index']]],
   ['device_20detection_20_2d_20quick_20start',['Device Detection - Quick Start',['../_quickstart__device_detection.html',1,'Quickstart_Index']]]
 ];
