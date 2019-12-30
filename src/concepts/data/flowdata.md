@@ -69,6 +69,7 @@ is configured to execute @elements in @parallel.
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
+@defaultsnippet{Select a language.}
 @startsnippet{dotnet}
 In .NET, by default, the non-thread-safe Dictionary class is used for both @elementdata and @evidence.
 

@@ -23,13 +23,11 @@ takes the value of the option as an argument and returns the **builder**.
 The precise constraints around these methods vary by language.
 
 @startsnippets
-@showsnippet{dotnet,.NET}
+@showsnippet{dotnet,C#}
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@startsnippet{none,block}
-Select a language.
-@endsnippet
+@defaultsnippet{Select a language.}
 @startsnippet{dotnet}
 In .NET, the user is free to define methods on the builder as they wish.
 However, if they want to take advantage of the @Pipeline's @buildfromconfiguration method then they must 
@@ -79,9 +77,7 @@ data structure.
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@startsnippet{none,block}
-Select a language to view language specific usage example.
-@endsnippet
+@defaultsnippet{Select a language.}
 @startsnippet{dotnet}
 ```{cs}
 IFlowElement element = new ElementBuilder(loggerFactory)

@@ -85,9 +85,7 @@ This enables easy iteration over all @elementproperties.
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@startsnippet{none,block}
-Select a language to view language specific iterator example.
-@endsnippet
+@defaultsnippet{Select a language to view language specific iterator example.}
 @startsnippet{dotnet}
 Iterate over all @properties in the **Pipeline**.
 ```{cs}
@@ -167,9 +165,7 @@ which the **Pipeline** creates will be thread-safe for writing as it is possible
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@startsnippet{none,block}
-Select a language to view language specific build example.
-@endsnippet
+@defaultsnippet{Select a language to view language specific build example.}
 @startsnippet{dotnet}
 Build a **Pipeline** with two @flowelements in sequence.
 ```{cs}

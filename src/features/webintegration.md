@@ -44,9 +44,7 @@ to enable @clientsideevidence for each framework.
 @startsnippets
 @showsnippet{aspnet,ASP.NET}
 @showsnippet{aspnetcore,ASP.NET Core}
-@startsnippet{none,block}
-Select a web framework to view details of how client-side evidence is supported.
-@endsnippet
+@defaultsnippet{Select a web framework to view details of how client-side evidence is supported.}
 @startsnippet{aspnetcore}
 The ASP.NET Core integration makes use of a 
 [View Component](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components)

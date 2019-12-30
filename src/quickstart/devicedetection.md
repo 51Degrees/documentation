@@ -1,4 +1,4 @@
-@page Quickstart_DeviceDetection Device Detection - Quick Start
+@page Quickstart_DeviceDetection Device Detection
 
 @startsnippets
 @showsnippet{c,C}
@@ -7,21 +7,20 @@
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@startsnippet{none,block}
-Select a language.
-@endsnippet
+@defaultsnippet{Select a language.}
 @startsnippet{c}
 C does not have a @Pipeline implementation or the ability to use the cloud-based version of 
 Device Detection.
 To get started with C device detection on-premise:
 
-1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-cxx).
-2. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-3. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
-4. Follow the [installation instructions](../../device-detection-cxx/4.1/md__r_e_a_d_m_e.html) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
-5. Follow the linked examples here: [Hash](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) or 
+1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-cxx). (During the beta period, this repository is private. Please [contact us](mailto:support@51degrees.com) to request access.)
+2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly so Git LFS is used.
+3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
+4. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
+5. Follow the [installation instructions](../../device-detection-cxx/4.1/md__r_e_a_d_m_e.html) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
+6. Follow the linked examples here: [Hash](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) or 
 [Pattern](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern). Both examples are included in the project.
-6. (optional) Contact us to purchase a license key and [download](https://51degrees.com/resources/downloads/enhanced-device-data) a premium data file with access to more devices and properties.
+7. (optional) Contact us to purchase a license key and [download](https://51degrees.com/resources/downloads/enhanced-device-data) a premium data file with access to more devices and properties.
 
 <!--TODO: Add contact details in step 3.-->
 @endsnippet
@@ -30,13 +29,14 @@ C++ does not have a @Pipeline implementation or the ability to use the cloud-bas
 Device Detection.
 To get started with C++ device detection on-premise:
 
-1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-cxx).
-2. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-3. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
-4. Follow the [installation instructions](../../device-detection-cxx/4.1/md__r_e_a_d_m_e.html) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
-5. Follow the linked examples here: [Hash](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) or 
+1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-cxx). (During the beta period, this repository is private. Please [contact us](mailto:support@51degrees.com) to request access.)
+2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly so Git LFS is used.
+3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
+4. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
+5. Follow the [installation instructions](../../device-detection-cxx/4.1/md__r_e_a_d_m_e.html) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
+6. Follow the linked examples here: [Hash](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) or 
 [Pattern](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern). Both examples are included in the project.
-6. (optional) Contact us to purchase a license key and [download](https://51degrees.com/resources/downloads/enhanced-device-data) a premium data file with access to more devices and properties.
+7. (optional) Contact us to purchase a license key and [download](https://51degrees.com/resources/downloads/enhanced-device-data) a premium data file with access to more devices and properties.
 
 <!--TODO: Add contact details in step 3.-->
 

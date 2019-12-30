@@ -24,9 +24,7 @@ Regardless of which API you are migrating to, there are breaking changes and new
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@startsnippet{none,block}
-Select a language to view a language specific migration guide.
-@endsnippet
+@defaultsnippet{Select a language to view a language specific migration guide.}
 @startsnippet{c}
 <!-- ===================================================================================
      |                                        C                                        |
