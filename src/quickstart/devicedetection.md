@@ -61,7 +61,7 @@ To get started with C++ device detection on-premise:
  * **On-premise** - Device detection processing is performed locally using a data file that must be kept updated. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
    * [On-premise Pattern Example](@ref Examples_DeviceDetection_ConfigureFromFile_OnPremisePattern)
    * [On-premise Hash Example](@ref Examples_DeviceDetection_ConfigureFromFile_OnPremiseHash)
-4. (optional) Configure [client-side evidence](@ref) to get better results. Particularly for iPhone and iPad.
+4. (optional) Configure [client-side evidence](@ref Features_ClientSideEvidence) to get better results. Particularly for iPhone and iPad.
 
 ### ASP.NET integration.
 
@@ -72,12 +72,12 @@ To get started with C++ device detection on-premise:
  * **On-premise** - Device detection processing is performed locally using a data file that must be kept updated. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
    * [On-premise Pattern Example](@ref Examples_DeviceDetection_ConfigureFromFile_OnPremisePattern)
    * [On-premise Hash Example](@ref Examples_DeviceDetection_ConfigureFromFile_OnPremiseHash)
-4. (optional) Configure [client-side evidence](@ref) to get better results. Particularly for iPhone and iPad.
+4. (optional) Configure [client-side evidence](@ref Features_ClientSideEvidence) to get better results. Particularly for iPhone and iPad.
 @endsnippet
 @startsnippet{java}
 ### Standalone pipeline / off-line processing
 
-1. Install the com.51degrees.device-detection package via Maven.
+1. Install the [com.51degrees.pipeline.device-detection](@ref https://search.maven.org/artifact/com.51degrees/pipeline.device-detection) package via Maven.
 2. Follow the appropriate example from the options below:
   * [Cloud Example](@ref Examples_DeviceDetection_GettingStarted_Cloud) - Negligible processing and memory overhead but slower due to Internet latency. 
   * **On-premise** - Device detection processing is performed locally using a data file that must be kept updated. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
@@ -87,27 +87,49 @@ To get started with C++ device detection on-premise:
     
 ### Web servlet integration.
 
-1. Install the com.51degrees.device-detection and com.51degrees.pipeline.web packages via Maven.
+1. Install the [com.51degrees.pipeline.device-detection](@ref https://search.maven.org/artifact/com.51degrees/pipeline.device-detection) and [com.51degrees.pipeline.web](@ref https://search.maven.org/artifact/com.51degrees/pipeline.web) packages via Maven.
 2. Follow the [servlet example](@ref Examples_WebIntegration) to add the @Pipeline filter.
 3. Configure the pipeline using the configuration from the approproate example from the options below:
  * [Cloud Example](@ref Examples_DeviceDetection_ConfigureFromFile_Cloud) - Negligible processing and memory overhead but slower due to Internet latency.
  * **On-premise** - Device detection processing is performed locally using a data file that must be kept updated. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
    * [On-premise Pattern Example](@ref Examples_DeviceDetection_ConfigureFromFile_OnPremisePattern)
    * [On-premise Hash Example](@ref Examples_DeviceDetection_ConfigureFromFile_OnPremiseHash)
-4. (optional) Configure [client-side evidence](@ref) to get better results. Particularly for iPhone and iPad.
+4. (optional) Configure [client-side evidence](@ref Features_ClientSideEvidence) to get better results. Particularly for iPhone and iPad.
 
 ### Spring MVC integration.
 
-1. Install the com.51degrees.device-detection and com.51degrees.pipeline.web packages via Maven.
+1. Install the [com.51degrees.pipeline.device-detection](@ref https://search.maven.org/artifact/com.51degrees/pipeline.device-detection) and [com.51degrees.pipeline.web](@ref https://search.maven.org/artifact/com.51degrees/pipeline.web) packages via Maven.
 2. Follow the [Spring MVC example](@ref Examples_WebIntegration) to add the @Pipeline filter.
 3. Configure the pipeline using the configuration from the approproate example from the options below:
  * [Cloud Example](@ref Examples_DeviceDetection_ConfigureFromFile_Cloud) - Negligible processing and memory overhead but slower due to Internet latency.
  * **On-premise** - Device detection processing is performed locally using a data file that must be kept updated. Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
    * [On-premise Pattern Example](@ref Examples_DeviceDetection_ConfigureFromFile_OnPremisePattern)
    * [On-premise Hash Example](@ref Examples_DeviceDetection_ConfigureFromFile_OnPremiseHash)
-4. (optional) Configure [client-side evidence](@ref) to get better results. Particularly for iPhone and iPad.
+4. (optional) Configure [client-side evidence](@ref Features_ClientSideEvidence) to get better results. Particularly for iPhone and iPad.
 @endsnippet
 @startsnippet{php}
+### Cloud 
+
+This implementation of device detection makes use of 51Degrees' cloud service. In PHP, the cloud version is much easier to work with than the on-premise implementation as well as having much lower memory and CPU requirements. However, it is slower due to Internet latency. If you want faster detections, you should consider on-premise. 
+
+1. Install the [51degrees/fiftyone.devicedetection](https://packagist.org/packages/51degrees/fiftyone.devicedetection) package using Composer.
+2. Follow the [Cloud Example](@ref Examples_DeviceDetection_GettingStarted_Cloud).
+
+### On-premise
+
+Device detection processing is performed locally using a data file that must be kept updated.
+Due to the restrictions imposed by Composer and Packagist, we cannot supply the on-premise engines through the usual package management ecosystem. Instead, you'll need to clone the [repository](https://github.com/51Degrees/device-detection-php-onpremise) from GitHub and follow the instructions there in order to build and use the on-premise implementation.
+
+One that's done, decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
+    * [On-premise Pattern Example](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern)
+    * [On-premise Hash Example](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash)
 @endsnippet
 @startsnippet{node}
+1. Install the [fiftyone.devicedetection](https://www.npmjs.com/package/fiftyone.devicedetection) package from NPM.
+2. Follow the appropriate example from the options below:  
+  * [Cloud Example](@ref Examples_DeviceDetection_GettingStarted_Cloud) - Negligible processing and memory overhead but slower due to Internet latency. 
+  * **On-premise** - Device detection processing is performed locally using a data file that must be kept updated.
+  Decide if you want [Hash or Pattern](@ref DeviceDetection_Index_PatternVsHash). In summary, @Hash is faster than @Pattern but is less able to cope with User-Agents that have not been seen before.
+    * [On-premise Pattern Example ](@ref Examples_DeviceDetection_GettingStarted_OnPremisePattern)
+    * [On-premise Hash Example](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash)
 @endsnippet
