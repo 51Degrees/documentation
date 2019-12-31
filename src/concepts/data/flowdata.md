@@ -9,18 +9,20 @@ the details of any errors that occurred.
 # Data Structure
 
 **Flow data** has several sub-containers that are used to segment the data that it contains:
-* @Evidence
-* @Elementdata
-* Errors
+* [Evidence](@ref Concepts_Data_FlowData_Evidence)
+* [Element data](@ref Concepts_Data_FlowData_ElementData)
+* [Errors](@ref Concepts_Data_FlowData_Errors)
 
-## Evidence
+## Evidence @anchor Concepts_Data_FlowData_Evidence
 
 Before the @flowdata is passed into the @Pipeline, input data is supplied. We refer to this data as
 '@evidence'.
 The @evidence can be set manually or automatically by using a 
 [web integration](@ref Features_WebIntegration) package (where available) for your web framework of choice.
 
-## Element Data
+Visit the @evidence page for more details.
+
+## Element Data @anchor Concepts_Data_FlowData_ElementData
 
 The responses from each @flowelement are stored in key/value pair structure within **flow data**.
 In each case, [the key](@ref Concepts_Data_ElementDataKey) is the string key of the @flowelement and the value is an @elementdata instance.
@@ -31,6 +33,8 @@ An example where this is required is the 51Degrees @cloudengines. First, an @ele
 HTTP request to the cloud and stores the JSON response in the **flow data**. Later, another 
 @element takes that JSON response and parses it to populate a strongly typed object with values
 for the specific [aspect](@term{Aspect}) it is concerned with.
+
+Visit the @elementdata page for more details.
 
 ## Errors @anchor Concepts_Data_FlowData_Errors
 
@@ -69,6 +73,7 @@ is configured to execute @elements in @parallel.
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
+@defaultsnippet{Select a language.}
 @startsnippet{dotnet}
 In .NET, by default, the non-thread-safe Dictionary class is used for both @elementdata and @evidence.
 

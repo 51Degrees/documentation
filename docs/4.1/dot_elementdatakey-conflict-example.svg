@@ -21,7 +21,7 @@
 </g>
 <!-- structH -->
 <g id="node2" class="node"><title>structH</title>
-<g id="a_node2"><a xlink:href="" target="_top" xlink:title="&lt;DDH&gt;DeviceDetectionEngine\n(Hardware)|{&lt;DK&gt;Element data key|&lt;DKV&gt;device}">
+<g id="a_node2"><a xlink:href="_device_detection__overview.html#DeviceDetection_Overview" target="_top" xlink:title="&lt;DDH&gt;DeviceDetectionEngine\n(Hardware)|{&lt;DK&gt;Element data key|&lt;DKV&gt;device}">
 <polygon fill="none" stroke="black" points="91,-16.5 91,-65.5 228,-65.5 228,-16.5 91,-16.5"/>
 <text text-anchor="middle" x="159.5" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00">DeviceDetectionEngine</text>
 <text text-anchor="middle" x="159.5" y="-42.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Hardware)</text>
@@ -39,7 +39,7 @@
 </g>
 <!-- structP -->
 <g id="node3" class="node"><title>structP</title>
-<g id="a_node3"><a xlink:href="" target="_top" xlink:title="&lt;DDH&gt;DeviceDetectionEngine\n(Platform/OS)|{&lt;DK&gt;Element data key|&lt;DKV&gt;device}">
+<g id="a_node3"><a xlink:href="_device_detection__overview.html#DeviceDetection_Overview" target="_top" xlink:title="&lt;DDH&gt;DeviceDetectionEngine\n(Platform/OS)|{&lt;DK&gt;Element data key|&lt;DKV&gt;device}">
 <polygon fill="none" stroke="black" points="270,-16.5 270,-65.5 407,-65.5 407,-16.5 270,-16.5"/>
 <text text-anchor="middle" x="338.5" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00">DeviceDetectionEngine</text>
 <text text-anchor="middle" x="338.5" y="-42.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Platform/OS)</text>

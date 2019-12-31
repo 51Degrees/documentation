@@ -19,7 +19,6 @@
     <name>DeviceDetection_Index</name>
     <title>Device Detection</title>
     <filename>_device_detection__index</filename>
-    <docanchor file="_device_detection__index">DeviceDetection_Index_PatternVsHash</docanchor>
   </compound>
   <compound kind="page">
     <name>Info_Index</name>
@@ -117,6 +116,8 @@
     <name>Concepts_Data_FlowData</name>
     <title>Flow Data</title>
     <filename>_concepts__data__flow_data</filename>
+    <docanchor file="_concepts__data__flow_data">Concepts_Data_FlowData_Evidence</docanchor>
+    <docanchor file="_concepts__data__flow_data">Concepts_Data_FlowData_ElementData</docanchor>
     <docanchor file="_concepts__data__flow_data">Concepts_Data_FlowData_Errors</docanchor>
     <docanchor file="_concepts__data__flow_data">Concepts_Data_FlowData_ThreadSafety</docanchor>
   </compound>
@@ -192,7 +193,7 @@
   </compound>
   <compound kind="page">
     <name>DeviceDetection_Features_FalsePositiveControl</name>
-    <title>Device Detection - False Positives</title>
+    <title>False Positives</title>
     <filename>_device_detection__features__false_positive_control</filename>
   </compound>
   <compound kind="page">
@@ -233,6 +234,12 @@
     <title>WURFL</title>
     <filename>_device_detection__migration_guides__wurfl</filename>
     <docanchor file="_device_detection__migration_guides__wurfl">DeviceDetection_MigrationGuides_Wurfl_Obsolete</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Overview</name>
+    <title>Device Detection - Overview</title>
+    <filename>_device_detection__overview</filename>
+    <docanchor file="_device_detection__overview">DeviceDetection_Index_PatternVsHash</docanchor>
   </compound>
   <compound kind="page">
     <name>DeviceDetection_Pattern</name>
@@ -380,11 +387,6 @@
     <filename>_examples__device_detection__metadata__on_premise_pattern</filename>
   </compound>
   <compound kind="page">
-    <name>Examples_DeviceDetection_MigrationFromV3</name>
-    <title>Migrating from Version 3 of 51Degrees Device Detection</title>
-    <filename>_examples__device_detection__migration_from_v3</filename>
-  </compound>
-  <compound kind="page">
     <name>Examples_DeviceDetection_OfflineProcessing_Index</name>
     <title>Offline Processing</title>
     <filename>_examples__device_detection__offline_processing__index</filename>
@@ -489,7 +491,7 @@
   </compound>
   <compound kind="page">
     <name>Quickstart_DeviceDetection</name>
-    <title>Device Detection - Quick Start</title>
+    <title>Device Detection</title>
     <filename>_quickstart__device_detection</filename>
   </compound>
   <compound kind="page">

@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_FalsePositiveControl Device Detection - False Positives
+@page DeviceDetection_Features_FalsePositiveControl False Positives
 
 # Introduction
 

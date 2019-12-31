@@ -344,11 +344,13 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "pattern=[pattern](@ref DeviceDetection_Pattern)" \
                          "Pattern=[Pattern](@ref DeviceDetection_Pattern)" \
                          "parallel=[parallel](@ref Features_ParallelExecution)" \
+                         "parallelexecution=[parallel execution](@ref Features_ParallelExecution)" \
                          "Pipeline=[Pipeline](@ref Concepts_Pipeline)" \
                          "pipeline=[Pipeline](@ref Concepts_Pipeline)" \
                          "pipelines=[Pipelines](@ref Concepts_Pipeline)" \
                          "pipelinebuilder=[pipeline builder](@ref Concepts_Configuration_Builders_PipelineBuilder)" \
                          "pipelinebuilders=[pipeline builders](@ref Concepts_Configuration_Builders_PipelineBuilder)" \
+                         "profile=[profile](@ref Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles)" \
                          "properties=[properties](@ref Concepts_MetaData_ElementProperties)" \
                          "property=[property](@ref Concepts_MetaData_ElementProperties)" \
                          "quickstart=[quick start](@ref Quickstart_Quickstart)" \

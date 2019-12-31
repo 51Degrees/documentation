@@ -2,7 +2,7 @@
 
 # Data services
 
-|Language / Framework|@Pipeline|[Device Detection](@ref DeviceDetection_Index)|Location|
+|Language / Framework|@Pipeline|[Device Detection](@ref DeviceDetection_Index)|Location (coming soon)|
 |---|---|---|---|
 |C/C++    |       |On-premise only   |       | 
 |.NET     |@tick|@tick | Cloud only   | 

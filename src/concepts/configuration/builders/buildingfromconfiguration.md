@@ -22,9 +22,7 @@ Where possible, we recommend using JSON as the simplest and most transferable co
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@startsnippet{none,block}
-Select a language for an example of parsing XML.
-@endsnippet
+@defaultsnippet{Select a language for an example of parsing XML.}
 @startsnippet{dotnet}
 ```{cs}
 var config = new ConfigurationBuilder()
@@ -64,9 +62,7 @@ Pipeline pipeline = new PipelineBuilder(loggerFactory)
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@startsnippet{none,block}
-Select a language for an example of parsing JSON.
-@endsnippet
+@defaultsnippet{Select a language for an example of parsing JSON.}
 @startsnippet{dotnet}
 ```{cs}
 var config = new ConfigurationBuilder()
@@ -193,9 +189,7 @@ These can be used to match against supplied configuration options.
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@startsnippet{none,block}
-Select a language for information of specifying an alternative name for element builders and configuration methods.
-@endsnippet
+@defaultsnippet{Select a language for information of specifying an alternative name for element builders and configuration methods.}
 @startsnippet{dotnet}
 The AlternateNameAttribute can be used to decorate @elementbuilder classes as well as configuration methods
 on an @elementbuilder.
@@ -225,9 +219,7 @@ cannot always be achieved.
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@startsnippet{none,block}
-Select a language for more details of the internals of **build from configuration**.
-@endsnippet
+@defaultsnippet{Select a language for more details of the internals of **build from configuration**.}
 @startsnippet{dotnet}
 In .NET, @pipelinebuilder relies on reflection to find the correct builder to build
 the @flowelements required by the configuration. For this reason, it is necessary for the

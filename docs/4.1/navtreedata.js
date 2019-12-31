@@ -31,6 +31,10 @@ var NAVTREE =
     [ "Information", null, "_info__index" ],
     [ "Features", null, "_features__index" ],
     [ "Benchmarks", null, "_benchmarks__index" ],
+    [ "Result Caching", "_examples__caching.html", null ],
+    [ "Combining Services", "_examples__combining_services.html", null ],
+    [ "Custom Cache Implementation", "_examples__custom_cache.html", null ],
+    [ "Property Accessors", "_examples__property_accessors.html", null ],
     [ "Language Specific", "usergroup0.html", [
       [ "C/C++", "../../device-detection-cxx/4.1/index.html", null ],
       [ "Java Pipeline", "../../pipeline-java/4.1/index.html", null ],

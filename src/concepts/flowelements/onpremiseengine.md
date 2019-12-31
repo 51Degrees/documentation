@@ -22,10 +22,6 @@ with any @datafiles held entirely in memory, reducing latency further.
 There are also situations where the security demands of a service make sending sensitive data to an
 external [cloud service](@term{CloudService}) problematic. Using an **on-premise engine** will address this issue.
 
-Note that an **on-premise engine** and @cloudengine are not necessarily mutually exclusive. For example,
-the 51Degrees @geolocation engine makes use of the @datafile management capabilities of an **on-premise engine**
-to manage the small lookup files it needs. However, the actual processing is handed off to a remote @cloudservice.
-
 # Data Files
 
 An @aspectengine can make use of one or more @datafiles to carry out its processing. This is typically the 

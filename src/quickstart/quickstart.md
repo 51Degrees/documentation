@@ -20,6 +20,6 @@ If you want to use multiple services then work through the quick start guides
 below and then see the @combiningservices example.
 
 - [Device Detection](@ref Quickstart_DeviceDetection)
-- GeoLocation
-- IP Intelligence
-- Fraud Detection
+- GeoLocation (Coming soon)
+- IP Intelligence (Coming soon)
+- Fraud Detection (Coming soon)

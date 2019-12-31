@@ -17,9 +17,9 @@ digraph {
         fontsize=10;        
         URL="@ref Concepts_Pipeline";        
 
-        structH [label="<DDH>DeviceDetectionEngine\n(Hardware)|{<DK>Element data key|<DKV>device}", URL="@ref Services_DeviceDetection"];
+        structH [label="<DDH>DeviceDetectionEngine\n(Hardware)|{<DK>Element data key|<DKV>device}", URL="@ref DeviceDetection_Overview"];
         //arrow2 [label="2", shape=none];
-        structP [label="<DDH>DeviceDetectionEngine\n(Platform/OS)|{<DK>Element data key|<DKV>device}", URL="@ref Services_DeviceDetection"];
+        structP [label="<DDH>DeviceDetectionEngine\n(Platform/OS)|{<DK>Element data key|<DKV>device}", URL="@ref DeviceDetection_Overview"];
       
     };
     arrow3 [label="3", shape=none];

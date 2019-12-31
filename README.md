@@ -1,13 +1,15 @@
-Documentation
-=============
+![51Degrees](https://51degrees.com/DesktopModules/FiftyOne/Distributor/Logo.ashx?utm_source=github&utm_medium=repository&utm_content=readme_main "Data rewards the curious") **Pipeline API Documentation**
 
-This contains general documentation about the v4 API.
+# Summary
 
-In addition, this contains information of how to document the API consistently:
+This repository contains documentation for the 51Degrees Pipeline API.
 
-[Documenting](Documenting.md) - Guidance on writing general documentation for this repository.
+In addition, it contains information of how to document the API consistently:
 
-[Documenting Code](Documenting Code.md) - Guidance on documenting code in other repositories.
+- [Documenting](Documenting.md) - Guidance on writing the documentation in this repository.
+- [Documenting Code](Documenting%20Code.md) - Guidance on documenting code in other repositories in order to automatically generate pages in the same style as the documentation in this repository.
+
+Documentation is written and maintained in [Markdown](https://en.wikipedia.org/wiki/Markdown) format. A customized build of [Doxygen](http://www.doxygen.nl/) is then used to generate HTML pages from the Markdown source files. Finally, some custom CSS is used to apply 51Degrees branding and styling.
 
 # Directory Structure
 
@@ -19,3 +21,21 @@ In addition, this contains information of how to document the API consistently:
 | `DoxygenLayout.xml` | Defines how the navigation is layed out in the generated documentation. |
 | `examplegrabber.js` | Included in the generated documentation to pull in language specific examples. |
 | `pattern-library` | PatternLab submodule which generates the custom CSS used in the generated documentation. |
+
+# Building HTML Documents
+
+This is only intended to be performed by 51Degrees employees.
+For complete instructions, see [Documenting](Documenting.md).
+
+First, make sure you have the latest custom build of Doxygen.
+Next, run Doxygen to generate the HTML. There are two ways of doing this:
+
+## Windows UI
+
+Simply run the DoxyWizard program and open the Doxyfile in the root of this repository. 
+
+## Command Line
+
+Open a command line, navigate to the repository root and execute the command: `Doxygen`.
+
+

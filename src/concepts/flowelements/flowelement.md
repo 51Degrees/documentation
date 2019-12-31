@@ -103,9 +103,7 @@ the same key, or a new @elementdata from the factory which it has added to its i
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@startsnippet{none, block}
-Select a language to view an example of the 'get or add' method.
-@endsnippet
+@defaultsnippet{Select a language to view an example of the 'get or add' method.}
 @startsnippet{dotnet}
 In .NET, the 'factory' is an anonymous function given to the **element** at construction,
 taking a @flowdata and returning an @elementdata.
@@ -152,9 +150,7 @@ calling on an **element** to carry out processing simultaneously, they must be a
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@startsnippet{none,block}
-Select a language to view language specific info on thread-safety.
-@endsnippet
+@defaultsnippet{Select a language to view language specific info on thread-safety.}
 @startsnippet{dotnet}
 **Flow elements** in C# are generally immutable, so do not need thread safety built in directly, however they often alter a @flowdata which
 must be done in a thread-safe way. Accessing the internal data structure is usually left up to the @flowdata itself by exposing a thread safe

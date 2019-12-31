@@ -40,9 +40,9 @@ For a deeper understanding of the Pipeline concept, start with the @Pipeline pag
 ## 51Degrees Data Services
 
 * @DeviceDetection - Detailed insight into the devices being used to access your content.
-* @GeoLocation - Obtain accurate data regarding the users' location.
-* @Antifraud - Identify and exclude fraudulent requests.
-* @IpIntelligence - Determine key information from the network path taken by the request such as mobile carrier. (Coming in 2020)
+* @GeoLocation - Obtain accurate data regarding the users' location. (Coming soon)
+* @Antifraud - Identify and exclude fraudulent requests. (Coming soon)
+* @IpIntelligence - Determine key information from the network path taken by the request such as mobile carrier. (Coming soon)
 
 ## Technical Detail
 

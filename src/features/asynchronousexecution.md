@@ -16,9 +16,7 @@ In contrast, **asynchronous execution** refers to non-blocking execution of the
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@startsnippet{none,block}
-Select a language to view details of **asynchronous execution** support for that language.
-@endsnippet
+@defaultsnippet{Select a language to view details of **asynchronous execution** support for that language.}
 @startsnippet{dotnet}
 .NET supports asynchronous code using the [Task asynchronous programming model](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/).
 However, for .NET we have decided to implement a @lazyloading feature instead of a fully
