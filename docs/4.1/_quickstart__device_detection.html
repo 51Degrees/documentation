@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>51Degrees Pipeline Documentation: Device Detection - Quick Start</title>
+<title>51Degrees Pipeline Documentation: Device Detection</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,14 +92,15 @@ $(document).ready(function(){initNavTree('_quickstart__device_detection.html',''
 <div class="PageDoc"><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_quickstart__index.html">Quick Start</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_quickstart__device_detection.html">Device Detection - Quick Start</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_quickstart__index.html">Quick Start</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_quickstart__device_detection.html">Device Detection</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Device Detection - Quick Start </h2></div><!--header-->
+<h2 class="g-docs__page-title">Device Detection </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'c')">C</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language.  </div>   <div class="c-tabgroup__main" data-lang="c" style="display:none;">  C does not have a <a class="el" href="_concepts__pipeline.html">Pipeline</a> implementation or the ability to use the cloud-based version of Device Detection. To get started with C device detection on-premise:</p>
+<section class="g-docs__section"><p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'c')">C</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language. </div>   <div class="c-tabgroup__main" data-lang="c" style="display:none;">  C does not have a <a class="el" href="_concepts__pipeline.html">Pipeline</a> implementation or the ability to use the cloud-based version of Device Detection. To get started with C device detection on-premise:</p>
 <ol type="1">
-<li>Clone the GitHub <a href="https://github.com/51degrees/device-detection-cxx">repository</a>.</li>
+<li>Clone the GitHub <a href="https://github.com/51degrees/device-detection-cxx">repository</a>. (During the beta period, this repository is private. Please <a href="#" onclick="location.href='mai'+'lto:'+'sup'+'po'+'rt@'+'51'+'deg'+'re'+'es.'+'co'+'m'; return false;">contact us</a> to request access.)</li>
+<li>Ensure you have <a href="https://git-lfs.github.com/">Git LFS</a> installed. The device data files are large binary files that can cause problems if stored in a Git repository directly so Git LFS is used.</li>
 <li>Ensure all submodules are checked out by running <code>git submodule update --init --recursive</code> in the repository.</li>
 <li>Decide if you want <a class="el" href="_device_detection__overview.html#DeviceDetection_Index_PatternVsHash">Hash or Pattern</a>. In summary, <a class="el" href="_device_detection__hash.html">Hash</a> is faster than <a class="el" href="_device_detection__pattern.html">Pattern</a> but is less able to cope with User-Agents that have not been seen before.</li>
 <li>Follow the <a href="../../device-detection-cxx/4.1/md__r_e_a_d_m_e.html">installation instructions</a> to get set up with the project.</li>
@@ -108,7 +109,8 @@ $(document).ready(function(){initNavTree('_quickstart__device_detection.html',''
 </ol>
 <p> </div>   <div class="c-tabgroup__main" data-lang="cxx" style="display:none;">  C++ does not have a <a class="el" href="_concepts__pipeline.html">Pipeline</a> implementation or the ability to use the cloud-based version of Device Detection. To get started with C++ device detection on-premise:</p>
 <ol type="1">
-<li>Clone the GitHub <a href="https://github.com/51degrees/device-detection-cxx">repository</a>.</li>
+<li>Clone the GitHub <a href="https://github.com/51degrees/device-detection-cxx">repository</a>. (During the beta period, this repository is private. Please <a href="#" onclick="location.href='mai'+'lto:'+'sup'+'po'+'rt@'+'51'+'deg'+'re'+'es.'+'co'+'m'; return false;">contact us</a> to request access.)</li>
+<li>Ensure you have <a href="https://git-lfs.github.com/">Git LFS</a> installed. The device data files are large binary files that can cause problems if stored in a Git repository directly so Git LFS is used.</li>
 <li>Ensure all submodules are checked out by running <code>git submodule update --init --recursive</code> in the repository.</li>
 <li>Decide if you want <a class="el" href="_device_detection__overview.html#DeviceDetection_Index_PatternVsHash">Hash or Pattern</a>. In summary, <a class="el" href="_device_detection__hash.html">Hash</a> is faster than <a class="el" href="_device_detection__pattern.html">Pattern</a> but is less able to cope with User-Agents that have not been seen before.</li>
 <li>Follow the <a href="../../device-detection-cxx/4.1/md__r_e_a_d_m_e.html">installation instructions</a> to get set up with the project.</li>
