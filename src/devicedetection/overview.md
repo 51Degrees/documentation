@@ -19,7 +19,7 @@ in a separate header.
 * Although the User-Agent can tell us a lot about the hardware and software being used, further information can often
 be obtained by scripts running on the client device.
 
-## Pattern vs Hash Algorithms @anchor DeviceDetection_Index_PatternVsHash
+## Pattern vs Hash Algorithms @anchor DeviceDetection_Overview_PatternVsHash
 
 51Degrees have two separate algorithms which can be used to perform device detection, 'Pattern' and 'Hash'. 
 
