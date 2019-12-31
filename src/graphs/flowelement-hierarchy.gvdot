@@ -7,7 +7,7 @@ digraph H {
     FODE [label="51Degrees On-Premise Engine", URL="@ref Concepts_FlowElements_FiftyOneOnPremiseEngine"];
     OPE [label="On-Premise Engine", URL="@ref Concepts_FlowElements_OnPremiseEngine"];
     CE [label="Cloud Engine", URL="@ref Concepts_FlowElements_CloudEngine"];
-    I [label=Implementations, URL="@ref Services_Index"];
+    I [label=Implementations];
     
     FE -> AE -> OPE -> FODE;
     AE -> CE;

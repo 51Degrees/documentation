@@ -350,6 +350,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "pipelines=[Pipelines](@ref Concepts_Pipeline)" \
                          "pipelinebuilder=[pipeline builder](@ref Concepts_Configuration_Builders_PipelineBuilder)" \
                          "pipelinebuilders=[pipeline builders](@ref Concepts_Configuration_Builders_PipelineBuilder)" \
+                         "profile=[profile](@ref Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles)" \
                          "properties=[properties](@ref Concepts_MetaData_ElementProperties)" \
                          "property=[property](@ref Concepts_MetaData_ElementProperties)" \
                          "quickstart=[quick start](@ref Quickstart_Quickstart)" \

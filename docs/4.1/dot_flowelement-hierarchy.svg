@@ -31,11 +31,8 @@
 </g>
 <!-- I -->
 <g id="node6" class="node"><title>I</title>
-<g id="a_node6"><a xlink:href="" target="_top" xlink:title="Implementations">
 <polygon fill="none" stroke="black" points="200.5,-0.5 200.5,-36.5 288.5,-36.5 288.5,-0.5 200.5,-0.5"/>
 <text text-anchor="middle" x="244.5" y="-16" font-family="Helvetica,sans-Serif" font-size="10.00">Implementations</text>
-</a>
-</g>
 </g>
 <!-- FE&#45;&gt;I -->
 <g id="edge5" class="edge"><title>FE&#45;&gt;I</title>

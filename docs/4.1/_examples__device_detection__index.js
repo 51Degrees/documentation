@@ -7,6 +7,5 @@ var _examples__device_detection__index =
     [ "Match Metrics", null, "_examples__device_detection__match_metrics__index" ],
     [ "Metadata", null, "_examples__device_detection__metadata__index" ],
     [ "Offline Processing", null, "_examples__device_detection__offline_processing__index" ],
-    [ "Performance", null, "_examples__device_detection__performance__index" ],
-    [ "Migrating from Version 3 of 51Degrees Device Detection", "_examples__device_detection__migration_from_v3.html", null ]
+    [ "Performance", null, "_examples__device_detection__performance__index" ]
 ];

@@ -101,15 +101,17 @@ $(document).ready(function(){initNavTree('_concepts__data__flow_data.html','');}
 <p><b>Flow data</b> is a container that encapsulates all the data related to a single <a class="el" href="_concepts__pipeline.html">Pipeline</a> process request. This includes input and output data as well as metadata related to the processing such as the details of any errors that occurred.</p>
 <h1 class="g-docs__section-heading">Data Structure</h1>
 <p><b>Flow data</b> has several sub-containers that are used to segment the data that it contains:</p><ul>
-<li><a class="el" href="_concepts__data__evidence.html">Evidence</a></li>
-<li><a class="el" href="_concepts__data__element_data.html">Element data</a></li>
-<li>Errors</li>
+<li><a class="el" href="_concepts__data__flow_data.html#Concepts_Data_FlowData_Evidence">Evidence</a></li>
+<li><a class="el" href="_concepts__data__flow_data.html#Concepts_Data_FlowData_ElementData">Element data</a></li>
+<li><a class="el" href="_concepts__data__flow_data.html#Concepts_Data_FlowData_Errors">Errors</a></li>
 </ul>
-<h2>Evidence</h2>
+<h2>Evidence<a class="anchor" id="Concepts_Data_FlowData_Evidence"></a></h2>
 <p>Before the <a class="el" href="_concepts__data__flow_data.html">flow data</a> is passed into the <a class="el" href="_concepts__pipeline.html">Pipeline</a>, input data is supplied. We refer to this data as '<a class="el" href="_concepts__data__evidence.html">evidence</a>'. The <a class="el" href="_concepts__data__evidence.html">evidence</a> can be set manually or automatically by using a <a class="el" href="_features__web_integration.html">web integration</a> package (where available) for your web framework of choice.</p>
-<h2>Element Data</h2>
+<p>Visit the <a class="el" href="_concepts__data__evidence.html">evidence</a> page for more details.</p>
+<h2>Element Data<a class="anchor" id="Concepts_Data_FlowData_ElementData"></a></h2>
 <p>The responses from each <a class="el" href="_concepts__flow_elements__flow_element.html">flow element</a> are stored in key/value pair structure within <b>flow data</b>. In each case, <a class="el" href="_concepts__data__element_data_key.html">the key</a> is the string key of the <a class="el" href="_concepts__flow_elements__flow_element.html">flow element</a> and the value is an <a class="el" href="_concepts__data__element_data.html">element data</a> instance. The <a class="el" href="_concepts__data__element_data.html">element data</a> structure is visible to each <a class="el" href="_concepts__flow_elements__flow_element.html">flow element</a> so one <a class="el" href="_concepts__flow_elements__flow_element.html">element</a> can use the result from another <a class="el" href="_concepts__flow_elements__flow_element.html">element</a> in its processing.</p>
 <p>An example where this is required is the 51Degrees <a class="el" href="_concepts__flow_elements__cloud_engine.html">cloud engines</a>. First, an <a class="el" href="_concepts__flow_elements__flow_element.html">element</a> makes an HTTP request to the cloud and stores the JSON response in the <b>flow data</b>. Later, another <a class="el" href="_concepts__flow_elements__flow_element.html">element</a> takes that JSON response and parses it to populate a strongly typed object with values for the specific <a class="el" href="_concepts__terminology.html#Concepts_Terminology_Aspect">aspect</a> it is concerned with.</p>
+<p>Visit the <a class="el" href="_concepts__data__element_data.html">element data</a> page for more details.</p>
 <h2>Errors<a class="anchor" id="Concepts_Data_FlowData_Errors"></a></h2>
 <p>The errors collection stores the details of any errors that occur during processing. The language's default exception handling mechanism will be used to catch and record any exceptions that occur when a <a class="el" href="_concepts__flow_elements__flow_element.html">flow element</a> is processing. However, processing of later <a class="el" href="_concepts__flow_elements__flow_element.html">flow elements</a> will continue as normal.</p>
 <p>By default, once all <a class="el" href="_concepts__flow_elements__flow_element.html">flow elements</a> have been processed, an exception will be thrown with details of any errors that have occurred.</p>

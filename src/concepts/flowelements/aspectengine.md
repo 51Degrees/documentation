@@ -18,8 +18,8 @@ listed above.
 For performance reasons, it may be desirable to add results @caching to an **engine** which has a particularly large overhead for 
 processing.
 
-Logic in an **engine** makes use of a @flowcache provided to it to avoid doing any processing when a result has already been found
-for a certain set of @evidence. The key for a @flowcache is a @datakey generated using the @evidencekeyfilter from the **engine**.
+Logic in an **engine** makes use of a cache passed at construction time to avoid doing any processing when a result has already been found
+for a certain set of @evidence. The key for this cache is a @datakey generated using the @evidencekeyfilter from the **engine**.
 This means that only @evidence relevant to the **engine** is used in the key for the cache, making the cache more space-efficient.
 
 

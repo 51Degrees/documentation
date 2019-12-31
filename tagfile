@@ -116,6 +116,8 @@
     <name>Concepts_Data_FlowData</name>
     <title>Flow Data</title>
     <filename>_concepts__data__flow_data</filename>
+    <docanchor file="_concepts__data__flow_data">Concepts_Data_FlowData_Evidence</docanchor>
+    <docanchor file="_concepts__data__flow_data">Concepts_Data_FlowData_ElementData</docanchor>
     <docanchor file="_concepts__data__flow_data">Concepts_Data_FlowData_Errors</docanchor>
     <docanchor file="_concepts__data__flow_data">Concepts_Data_FlowData_ThreadSafety</docanchor>
   </compound>
@@ -383,11 +385,6 @@
     <name>Examples_DeviceDetection_Metadata_OnPremisePattern</name>
     <title>On-Premise Pattern</title>
     <filename>_examples__device_detection__metadata__on_premise_pattern</filename>
-  </compound>
-  <compound kind="page">
-    <name>Examples_DeviceDetection_MigrationFromV3</name>
-    <title>Migrating from Version 3 of 51Degrees Device Detection</title>
-    <filename>_examples__device_detection__migration_from_v3</filename>
   </compound>
   <compound kind="page">
     <name>Examples_DeviceDetection_OfflineProcessing_Index</name>
