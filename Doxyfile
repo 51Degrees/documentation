@@ -290,9 +290,9 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "elementbuilder=[element builder](@ref Concepts_Configuration_Builders_ElementBuilder)" \
                          "elementbuilders=[element builders](@ref Concepts_Configuration_Builders_ElementBuilder)" \
                          "dataupdateservice=[data update service](@ref Features_AutomaticDatafileUpdates)" \
-                         "devicedetection=[device detection](@ref DeviceDetection_Index)" \
-                         "Devicedetection=[Device detection](@ref DeviceDetection_Index)" \
-                         "DeviceDetection=[Device Detection](@ref DeviceDetection_Index)" \
+                         "devicedetection=[device detection](@ref DeviceDetection_Overview)" \
+                         "Devicedetection=[Device detection](@ref DeviceDetection_Overview)" \
+                         "DeviceDetection=[Device Detection](@ref DeviceDetection_Overview)" \
                          "element=[element](@ref Concepts_FlowElements_FlowElement)" \
                          "elements=[elements](@ref Concepts_FlowElements_FlowElement)" \
                          "elementdata=[element data](@ref Concepts_Data_ElementData)" \

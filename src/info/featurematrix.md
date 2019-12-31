@@ -2,25 +2,33 @@
 
 # Data services
 
-|Language / Framework|@Pipeline|[Device Detection](@ref DeviceDetection_Index)|Location (coming soon)|
+|Language / Framework|@Pipeline|@DeviceDetection|Location (coming soon)|
 |---|---|---|---|
 |C/C++    |       |On-premise only   |       | 
 |.NET     |@tick|@tick | Cloud only   | 
 |Java     |@tick|@tick | Cloud only   | 
-|PHP      |@tick|Cloud only | Cloud only |
+|PHP      |@tick|@tick** | Cloud only |
 |Node.js  |@tick|@tick | Cloud only |
 |JavaScript|      |Cloud only | Cloud only |
+|Python*  |@tick|@tick| Cloud only |
+|Go*      |@tick|@tick| Cloud only |
+
+*Coming soon.
+**On-premise not available through composer.
 
 # Web integrations and plugins
 
 |Language / Framework|Web frameworks / CMS plugins|
 |---|---|
-|C/C++    |Nginx<BR>HAProxy<BR>Varnish |
+|C/C++    |Nginx*<BR>HAProxy*<BR>Varnish* |
 |.NET     |ASP.NET Core<BR>ASP.NET | 
 |Java     |Java Servlet<BR>Java Spring MVC Interceptor| 
-|PHP      |WordPress<BR>Symphony<BR>Drupal|
+|PHP      |WordPress*<BR>Drupal*|
 |Node.js  | N/A |
 |JavaScript| N/A |
+|Python*  |Flask*|
+
+*Coming soon
 
 # Pipeline API Features
 
