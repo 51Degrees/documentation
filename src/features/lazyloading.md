@@ -66,8 +66,8 @@ Java does not support cancellation tokens. However, an aggregate `Future` is exp
 can be canceled in the same manner as an individual `Future`, canceling all futures associated with the
 @aspectdata.
 
-In the case where fetching a property times out, a `LazyLoadTimeoutException` is thrown. Or, if the token has
-been used to cancel processing, a `CancellationException` is thrown.
+In the case where fetching a property times out, a `LazyLoadTimeoutException` is thrown. Or, if the aggregate
+future has been canceled, a `CancellationException` is thrown.
 @endsnippet
 @startsnippet{php}
 **todo**
