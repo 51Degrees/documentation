@@ -11,6 +11,6 @@ and begin using it to process User-Agents.
 @grabexample{device-detection-dotnet,_hash_2_getting_started_2_program_8cs,C#}
 @grabexample{device-detection-java,hash_2_getting_started_8java,Java}
 @grabexample{device-detection-php,_hash_2_getting_started_8php,PHP}
-@grabexample{device-detection-node,_hash_2_getting_started_8js,Node.js}
+@grabexample{device-detection-node,hash_2getting_started_8js,Node.js}
 @grabbedexample
 @endsnippets

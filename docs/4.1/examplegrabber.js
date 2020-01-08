@@ -32,6 +32,26 @@ function addLink(url, divId) {
     div.html(link + div.html());
 }
 
+function selectAllWithName(name, index) {
+    var btns = document.getElementsByClassName("b-btn--tab");
+    for (var i = 0; i < btns.length; i++) {
+        if (btns[i].innerText === name) {
+            btns[i].click();
+        }
+    }
+} 
+
+function selectFromMemory() {
+    var selectedTabs = [];
+    var selectedTabsString = readCookie('selectedTabs');
+    if (selectedTabsString !== null) {
+        selectedTabs = selectedTabsString.split(",");
+    }
+    selectedTabs.forEach(selectAllWithName);
+}
+
+$(document).ready(function() { selectFromMemory(); });
+
 /**
  * Grab the example from the target language project, parse, and place in
  * the 'grabbed-example' div.
@@ -65,21 +85,33 @@ function grabSnippet(caller, project, file, tag, btnClass, divId) {
 }
 
 function selectBtn(caller, btns) {
-    
+    var selectedTabs = [];
+    var selectedTabsString = readCookie('selectedTabs');
+    if (selectedTabsString !== null) {
+        selectedTabs = selectedTabsString.split(",");
+    }
     for (i = 0; i < btns.length; i++) {
         if (btns[i] === caller) {
             // This is the selected button, so highlight it.
             if (!btns[i].classList.contains('b-btn--tab--is-active')) {
                 btns[i].classList.add('b-btn--tab--is-active');
             }
+            if (selectedTabs.indexOf(btns[i].innerText) < 0) {
+                selectedTabs.push(btns[i].innerText);
+            }
         }
-        else if (btns[i].classList.contains('b-btn--tab--is-active')) {
-            // This is not the selected button, and it is highlighted,
-            // so un highlight it.
-            btns[i].classList.remove('b-btn--tab--is-active');
+        else {
+            if (btns[i].classList.contains('b-btn--tab--is-active')) {
+                // This is not the selected button, and it is highlighted,
+                // so un highlight it.
+                btns[i].classList.remove('b-btn--tab--is-active');
+            }
+            if (selectedTabs.indexOf(btns[i].innerText) >= 0) {
+                selectedTabs.splice(selectedTabs.indexOf(btns[i].innerText), 1);
+            }
         }
     }
-
+    document.cookie = "selectedTabs=" + selectedTabs.toString();
 }
 
 function showSnippet(caller, language) {
@@ -96,4 +128,16 @@ function showSnippet(caller, language) {
             }
         }
     }
+}
+
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return "";
 }
