@@ -1,0 +1,27 @@
+[submodule "apis/device-detection-cxx"]
+	path = apis/device-detection-cxx
+	url = ../device-detection-cxx
+[submodule "apis/pipeline-dotnet"]
+	path = apis/pipeline-dotnet
+	url = ../pipeline-dotnet
+[submodule "apis/device-detection-dotnet"]
+	path = apis/device-detection-dotnet
+	url = ../device-detection-dotnet
+[submodule "apis/pipeline-java"]
+	path = apis/pipeline-java
+	url = ../pipeline-java
+[submodule "apis/device-detection-java"]
+	path = apis/device-detection-java
+	url = ../device-detection-java
+[submodule "apis/pipeline-node"]
+	path = apis/pipeline-node
+	url = ../pipeline-node
+[submodule "apis/pipeline-php"]
+	path = apis/pipeline-php
+	url = ../pipeline-php
+[submodule "apis/device-detection-php"]
+	path = apis/device-detection-php
+	url = ../device-detection-php
+[submodule "apis/device-detection-node"]
+	path = apis/device-detection-node
+	url = ../device-detection-node
