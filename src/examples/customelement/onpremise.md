@@ -46,7 +46,8 @@ To include this, add the following to the `<dependencies>` section of the projec
 **todo**
 @endsnippet
 @startsnippet{node}
-**todo**
+Add a dependency to the `fiftyone.pipeline.engines` NPM package to the package.json, and required it
+in the source with `require("fiftyone.pipeline.engines")`.
 @endsnippet
 @endsnippets
 
@@ -91,7 +92,7 @@ not the `StarSignData` interface, as it only needs to be accessible by the @aspe
 **todo**
 @endsnippet
 @startsnippet{node}
-**todo**
+Node's implementation of @elementdata does not require concrete getters for IDE autocompletion, so `aspectDataDictionary` can be used.
 @endsnippet
 @endsnippets
 
@@ -195,7 +196,45 @@ Now the abstract methods can be implemented to create a functional @aspectengine
 **todo**
 @endsnippet
 @startsnippet{node}
-**todo**
+
+First let's change the class to extend `engine`.
+
+The existing constructor needs to change to match the `engine` class. So it takes
+the additional argument of a @datafile path. This is  the location of the @datafile
+that the @aspectengine will use.
+
+The constructor will also read the @datafile containing the star signs into memory. This is done in another
+method so that it can also be used when a new @datafile is downloaded (this is not
+applicable for this example as star sign data is static).
+
+@snippet onPremiseFlowElement.js constructor
+
+The `refresh` method in this example will simply read a JSON file with the start and end dates of each
+star sign, which looks like:
+```{json}
+[
+    [
+        "Aries",
+        "21/03",
+        "19/04"
+    ],
+    [
+        "Taurus",
+        "20/04",
+        "20/05"
+    ],
+    ...
+```
+
+and parse into objects.
+
+The new `refresh` method looks like this:
+
+@snippet onPremiseFlowElement.js refresh
+
+Now the abstract methods can be implemented to create a functional @aspectengine.
+
+@snippet onPremiseFlowElement.js class
 @endsnippet
 @endsnippets
 
@@ -230,7 +269,7 @@ As this @aspectengine is using a @datafile, the builder can make use of the logi
 **todo**
 @endsnippet
 @startsnippet{node}
-**todo**
+The Node implementation does not use separate builder classes. Instead the options are provided by optional constructor parameters.
 @endsnippet
 @endsnippets
 
@@ -268,7 +307,11 @@ With a date of birth of 18/12/1992, your tar sign is Sagittarius.
 **todo**
 @endsnippet
 @startsnippet{node}
-**todo**
+This new @aspectengine can now be added to a @pipeline and used like:
+
+@snippet onPremiseFlowElement.js usage
+
+To print the star sign of the user.
 @endsnippet
 @endsnippets
 

@@ -309,7 +309,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "Evidence=[Evidence](@ref Concepts_Data_Evidence)" \
                          "evidencekeyfilter=[evidence key filter](@ref Concepts_Data_EvidenceKeyFilter)" \
                          "examples=[examples](@ref Examples)" \
-                         "falsepositivecontrol=[false positive control](@ref DeviceDetection_Features_FalsePositiveControl)" \                         
+                         "falsepositivecontrol=[false positive control](@ref DeviceDetection_Features_FalsePositiveControl)" \
                          "featurematrix=[feature matrix] (@ref Info_featurematrix)" \
                          "fiftyoneengine=[51Degrees engine](@ref Concepts_FlowElements_FiftyOneOnPremiseEngine)" \
                          "fiftyoneengines=[51Degrees engines](@ref Concepts_FlowElements_FiftyOneOnPremiseEngine)" \
@@ -1005,8 +1005,13 @@ EXCLUDE_SYMBOLS        =
 # command).
 
 EXAMPLE_PATH           = src/examples \
-                         ../pipeline-java/examples \
-                         ../pipeline-dotnet/Examples
+                         apis/pipeline-java/examples \
+                         apis/pipeline-dotnet/Examples \
+                         apis/pipeline-node/fiftyone.pipeline.core/examples \
+                         apis/pipeline-node/fiftyone.pipeline.engines/examples \
+                         apis/pipeline-php/pipeline.core/examples \
+                         apis/device-detection-php/examples \
+                         apis/device-detection-node/fiftyone.devicedetection/examples
 
 # If the value of the EXAMPLE_PATH tag contains directories, you can use the
 # EXAMPLE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp and
@@ -1014,7 +1019,9 @@ EXAMPLE_PATH           = src/examples \
 # files are included.
 
 EXAMPLE_PATTERNS       = *.java \
-                         *.cs
+                         *.cs \
+                         *.php \
+                         *.js
 
 # If the EXAMPLE_RECURSIVE tag is set to YES then subdirectories will be
 # searched for input files to be used with the \include or \dontinclude commands

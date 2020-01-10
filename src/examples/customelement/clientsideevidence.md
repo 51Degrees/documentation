@@ -45,7 +45,8 @@ To include this, add the following to the `<dependencies>` section of the projec
 **todo**
 @endsnippet
 @startsnippet{node}
-**todo**
+Add a dependency to the `fiftyone.pipeline.core` NPM package to the package.json, and required it
+in the source with `require("fiftyone.pipeline.core")`.
 @endsnippet
 @endsnippets
 
@@ -99,7 +100,7 @@ not the `StarSignData` interface, as it only needs to be accessible by the @flow
 **todo**
 @endsnippet
 @startsnippet{node}
-**todo**
+Node's implementation of @elementdata does not require concrete getters for IDE autocompletion, so `elementDataDictionary` can be used.
 @endsnippet
 @endsnippets
 
@@ -193,7 +194,17 @@ Now the abstract methods can be implemented to create a functional @flowelement.
 **todo**
 @endsnippet
 @startsnippet{node}
-**todo**
+
+First let's define a class which extends `flowElement`.
+
+This needs a constructor matching the `flowElement` class:
+
+@snippet 2-clientSideEvidenceFlowElement.js constructor
+
+Now the abstract methods can be implemented to create a functional @flowelement.
+
+@snippet 2-clientSideEvidenceFlowElement.js class
+
 @endsnippet
 @endsnippets
 
@@ -234,7 +245,7 @@ logger factory.
 **todo**
 @endsnippet
 @startsnippet{node}
-**todo**
+The Node implementation does not use separate builder classes. Instead the options are provided by optional constructor parameters.
 @endsnippet
 @endsnippets
 
@@ -332,7 +343,33 @@ The message is constructed in the controller in the same way as in the [previous
 **todo**
 @endsnippet
 @startsnippet{node}
-**todo**
+Using a simple HTTP server, a pipeline can created containing the new @flowelement.
+```{js}
+let pipeline = new FiftyOnePipelineCore.pipelineBuilder()
+    .add(astrology)
+    .build();
+```
+
+Then a simple view can be added which includes the JavaScript to run, and displays
+the star sign which is passed from the controller:
+```{html}
+<h1>Starsigns</h1>
+
+${flowData.astrology.starSign ? "<p>Your starsign is " + flowData.astrology.starSign + " </p>" : "<p>Add your date of birth to get your starsign</p>"}
+
+${flowData.astrology.hemisphere ? "<p>Look at the " + flowData.astrology.hemisphere + " hemisphere stars tonight</p>" : ""}
+
+<form><label for='dateOfBirth'>Date of birth</label><input type='date' name='dateOfBirth' id='dateOfBirth'><input type='submit'></form>
+
+<script>
+
+${js}
+
+</script>
+```
+The message is constructed and returned:
+
+@snippet 2-clientSideEvidenceFlowElement.js usage
 @endsnippet
 @endsnippets
 

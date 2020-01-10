@@ -41,10 +41,11 @@ To include this, add the following to the `<dependencies>` section of the projec
 ```
 @endsnippet
 @startsnippet{php}
-**todo**
+Add a dependency to the `fiftyone.pipeline.core` composer package to the composer.json, and required it in the source with `include("../vendor/autoload.php");`
 @endsnippet
 @startsnippet{node}
-**todo**
+Add a dependency to the `fiftyone.pipeline.core` NPM package to the package.json, and required it
+in the source with `require("fiftyone.pipeline.core")`.
 @endsnippet
 @endsnippets
 
@@ -94,10 +95,10 @@ Note that this concrete implementation of `StarSignData` sits in the same packag
 not the `StarSignData` interface, as it only needs to be accessible by the @flowelement.
 @endsnippet
 @startsnippet{php}
-**todo**
+PHP's implementation of @elementdata does not require concrete getters for IDE autocompletion, so `elementDataDictionary` can be used.
 @endsnippet
 @startsnippet{node}
-**todo**
+Node's implementation of @elementdata does not require concrete getters for IDE autocompletion, so `elementDataDictionary` can be used.
 @endsnippet
 @endsnippets
 
@@ -169,10 +170,24 @@ Now the abstract methods can be implemented to create a functional @flowelement.
 @snippet developerexamples/flowelement/flowelements/SimpleFlowElement.java class
 @endsnippet
 @startsnippet{php}
-**todo**
+First let's define a class which extends `flowElement`:
+
+@snippet customFlowElement.php declaration
+
+Now the abstract methods can be implemented to create a functional @flowelement.
+
+@snippet customFlowElement.php class
 @endsnippet
 @startsnippet{node}
-**todo**
+First let's define a class which extends `flowElement`.
+
+This needs a constructor matching the `flowElement` class which initializes the element:
+
+@snippet 1-simpleEvidenceFlowElement.js constructor
+
+Now the abstract methods can be implemented to create a functional @flowelement.
+
+@snippet 1-simpleEvidenceFlowElement.js class
 @endsnippet
 @endsnippets
 
@@ -209,10 +224,10 @@ logger factory.
 @snippet developerexamples/flowelement/flowelements/SimpleFlowElementBuilder.java class
 @endsnippet
 @startsnippet{php}
-**todo**
+The PHP implementation does not use separate builder classes. Instead the options are provided by optional constructor parameters.
 @endsnippet
 @startsnippet{node}
-**todo**
+The Node implementation does not use separate builder classes. Instead the options are provided by optional constructor parameters.
 @endsnippet
 @endsnippets
 
@@ -245,10 +260,28 @@ With a date of birth of 18/12/1992, your star sign is Sagittarius.
 ```
 @endsnippet
 @startsnippet{php}
-**todo**
+This new @flowelement can now be added to a @pipeline and used like:
+
+@snippet customFlowElement.php usage
+
+To print the star sign of the user.
 @endsnippet
 @startsnippet{node}
-**todo**
+This new @flowelement can now be added to a @pipeline and used like:
+
+@snippet 1-simpleEvidenceFlowElement.js usage
+
+To print the star sign of the user.
+@endsnippet
+@startsnippet{java}
+This new @flowelement can now be added to a @pipeline and used like:
+
+@snippet developerexamples/flowelement/Main.java usage
+
+to give an output of:
+```{bash}
+With a date of birth of 18/12/1992, your star sign is Sagittarius.
+```
 @endsnippet
 @endsnippets
 
