@@ -47,6 +47,7 @@ steps:
 
 
 - task: Bash@3
+  displayName: 'Commit and push HTML docs'
   inputs:
     targetType: 'inline'
     script: |
@@ -58,6 +59,7 @@ steps:
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  condition: true
   inputs:
     SourceFolder: '$(build.sourcesdirectory)'
     Contents: 'docs/4.1/**'
@@ -65,6 +67,8 @@ steps:
     CleanTargetFolder: true
 
 - task: PublishBuildArtifacts@1
+  displayName: 'Publish HTML docs'
+  condition: true
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'docs'
