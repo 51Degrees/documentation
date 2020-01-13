@@ -61,10 +61,6 @@ $(document).ready(function() { selectFromMemory(); });
  * @param name the name of the example to get e.g. '_hash_2_getting_started_8cpp'.
  */
 function grabExample(caller, project, name) {
-    var exampleLink = $('#grabbed-example-link');
-    if (exampleLink) {
-        exampleLink.remove();
-    }
     grabSnippet(
         caller,
         project,
@@ -79,9 +75,12 @@ function grabSnippet(caller, project, file, tag, btnClass, divId) {
     var url = '../../' + project + '/' + getVersion()
         + '/' + file;
     // Load the example into the 'grabbed-example' div, then update the links.
-    $('#' + divId).load(url + ' #' + tag,
-        function() { updateLinks(project, divId); addLink(url, divId)});
-
+    $('#' + divId)
+    .html('')
+    .load(url + ' #' + tag, function() {
+        updateLinks(project, divId);
+        addLink(url, divId);
+    }); 
 }
 
 function selectBtn(caller, btns) {
