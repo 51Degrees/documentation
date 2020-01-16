@@ -87,7 +87,7 @@ To get started with C++ device detection on-premise:
     
 ### Web servlet integration.
 
-1. Install the [com.51degrees.pipeline.device-detection](https://search.maven.org/artifact/com.51degrees/pipeline.device-detection) and [com.51degrees.pipeline.web](https://search.maven.org/artifact/com.51degrees/pipeline.web) packages via Maven.
+1. Install the [com.51degrees.device-detection](https://search.maven.org/artifact/com.51degrees/device-detection) and [com.51degrees.pipeline.web](https://search.maven.org/artifact/com.51degrees/pipeline.web) packages via Maven.
 2. Follow the [servlet example](@ref Examples_WebIntegration) to add the @Pipeline filter.
 3. Configure the pipeline using the configuration from the approproate example from the options below:
  * [Cloud Example](@ref Examples_DeviceDetection_ConfigureFromFile_Cloud) - Negligible processing and memory overhead but slower due to Internet latency.
@@ -98,7 +98,7 @@ To get started with C++ device detection on-premise:
 
 ### Spring MVC integration.
 
-1. Install the [com.51degrees.pipeline.device-detection](https://search.maven.org/artifact/com.51degrees/pipeline.device-detection) and [com.51degrees.pipeline.web](https://search.maven.org/artifact/com.51degrees/pipeline.web) packages via Maven.
+1. Install the [com.51degrees.device-detection](https://search.maven.org/artifact/com.51degrees/device-detection) and [com.51degrees.pipeline.web](https://search.maven.org/artifact/com.51degrees/pipeline.web) packages via Maven.
 2. Follow the [Spring MVC example](@ref Examples_WebIntegration) to add the @Pipeline filter.
 3. Configure the pipeline using the configuration from the approproate example from the options below:
  * [Cloud Example](@ref Examples_DeviceDetection_ConfigureFromFile_Cloud) - Negligible processing and memory overhead but slower due to Internet latency.
