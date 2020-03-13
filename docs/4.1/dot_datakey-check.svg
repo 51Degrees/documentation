@@ -10,11 +10,11 @@
 <title>%3</title>
 <g id="clust1" class="cluster"><title>clusterDataKey</title>
 <polygon fill="none" stroke="black" points="8,-81 8,-156 196,-156 196,-81 8,-81"/>
-<text text-anchor="start" x="82" y="-145" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">Data key</text>
+<text text-anchor="start" x="81" y="-145" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="10.00">Data key</text>
 </g>
 <g id="clust2" class="cluster"><title>clusterCache</title>
 <polygon fill="none" stroke="black" points="216,-8 216,-229 408,-229 408,-8 216,-8"/>
-<text text-anchor="start" x="285.5" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">Cache keys</text>
+<text text-anchor="start" x="286" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">Cache keys</text>
 </g>
 <!-- Keys -->
 <g id="node1" class="node"><title>Keys</title>
