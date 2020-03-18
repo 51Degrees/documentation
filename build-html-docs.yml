@@ -76,7 +76,6 @@ steps:
       mv $(apiversion)new $(apiversion)
       git add $(apiversion)
       git commit -m "DOC: Regenerated HTML documentation pages."
-      git config user.name
       git push origin gh-pages
 
 - task: Bash@3
@@ -87,8 +86,6 @@ steps:
       for api in `find ./apis -mindepth 1 -maxdepth 1 -type d`; do
         cd ${api}
         echo "Commiting ${api}"
-        git config credential.https://51degrees.visualstudio.com.username 51Degrees
-        git config credential.https://51degrees.visualstudio.com.password $SYSTEM_ACCESSTOKEN
         mv $(apiversion) $(apiversion)new
         [ -f docs/tagfile ] && git checkout -- docs/tagfile
         git checkout gh-pages
