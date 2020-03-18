@@ -45,6 +45,17 @@ steps:
     targetType: 'inline'
     script: './doxygen'
 
+- task: Bash@3
+  displayName: 'Generate HTML documentation for APIs'
+  inputs:
+    targetType: 'inline'
+    script: |
+      for api in `find ./apis -mindepth 1 -maxdepth 1 -type d`; do
+        cd ${api}/docs
+        '$(build.sourcesdirectory)'/doxygen
+        cd $(build.sourcesdirectory)
+      done
+
 
 - task: Bash@3
   displayName: 'Commit and push HTML docs'
@@ -55,14 +66,33 @@ steps:
       git config --global user.email "CI@51degrees.com"
       git add docs
       git commit -m "DOC: Regenerated HTML documentation pages."
-      git push origin HEAD:$(build.sourcebranchname)
+#      git push origin HEAD:$(build.sourcebranchname)
+
+- task: Bash@3
+  displayName: 'Commit and push HTML docs for APIs'
+  inputs:
+    targetType: 'inline'
+    script: |
+      for api in `find ./apis -mindepth 1 -maxdepth 1 -type d`; do
+        cd ${api}
+        mv $(apiversion) $(apiversion)new
+        git chekcout gh-pages
+        rm $(apiversion)
+        mv $(apiversion)new $(apiversion)
+        git add $(apiversion)
+        git config --global user.name "51Degrees"
+        git config --global user.email "CI@51degrees.com"
+        git commit -m "DOC: Regenerated HTML documentation pages."
+#        git push origin gh-pages
+        cd $(build.sourcesdirectory)
+      done
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
   condition: true
   inputs:
     SourceFolder: '$(build.sourcesdirectory)'
-    Contents: 'docs/4.1/**'
+    Contents: 'docs/$(apiversion)/**'
     TargetFolder: '$(build.artifactstagingdirectory)'
     CleanTargetFolder: true
 
