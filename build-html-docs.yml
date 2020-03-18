@@ -83,7 +83,6 @@ steps:
         git config --global user.name "51Degrees"
         git config --global user.email "CI@51degrees.com"
         git commit -m "DOC: Regenerated HTML documentation pages."
-#        git push origin gh-pages
         cd $(build.sourcesdirectory)
       done
 
