@@ -87,6 +87,7 @@ steps:
       for api in `find ./apis -mindepth 1 -maxdepth 1 -type d`; do
         cd ${api}
         echo "Commiting ${api}"
+        git config credential.https://51degrees.visualstudio.com.username 51Degrees
         mv $(apiversion) $(apiversion)new
         [ -f docs/tagfile ] && git checkout -- docs/tagfile
         git checkout gh-pages
