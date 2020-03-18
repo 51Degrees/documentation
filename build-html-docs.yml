@@ -65,8 +65,6 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      git config --global user.name "51Degrees"
-      git config --global user.email "CI@51degrees.com"
       echo "Commiting ${api}"
       mv $(apiversion) $(apiversion)new
       [ -f docs/tagfile ] && git checkout -- docs/tagfile
