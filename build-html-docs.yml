@@ -75,9 +75,7 @@ steps:
       [ -d "$(apiversion)" ] && rm -r $(apiversion)
       mv $(apiversion)new $(apiversion)
       git add $(apiversion)
-      git status
       git commit -m "DOC: Regenerated HTML documentation pages."
-      git status
       git push origin gh-pages
 
 - task: Bash@3
@@ -97,7 +95,6 @@ steps:
         [ -d "$(apiversion)" ] && rm -r $(apiversion)
         mv $(apiversion)new $(apiversion)
         git add $(apiversion)
-        git status
         git commit -m "DOC: Regenerated HTML documentation pages."
         git push origin gh-pages
         cd $(build.sourcesdirectory)
