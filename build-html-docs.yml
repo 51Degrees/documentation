@@ -43,14 +43,12 @@ steps:
   displayName: 'Generate HTML documentation'
   inputs:
     targetType: 'inline'
-    failOnStderr: true
     script: './doxygen'
 
 - task: Bash@3
   displayName: 'Generate HTML documentation for APIs'
   inputs:
     targetType: 'inline'
-    failOnStderr: true
     script: |
       for api in `find ./apis -mindepth 1 -maxdepth 1 -type d`; do
         cd ${api}/docs
