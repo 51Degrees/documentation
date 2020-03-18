@@ -43,7 +43,10 @@ steps:
   displayName: 'Generate HTML documentation'
   inputs:
     targetType: 'inline'
-    script: './doxygen'
+    script: |
+      cd docs
+      '$(build.sourcesdirectory)'/doxygen
+      cd $(build.sourcesdirectory)
 
 - task: Bash@3
   displayName: 'Generate HTML documentation for APIs'
