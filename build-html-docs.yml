@@ -77,7 +77,7 @@ steps:
       git status
       git commit -m "DOC: Regenerated HTML documentation pages."
       git status
-#      git push origin HEAD:$(build.sourcebranchname)
+      git push origin gh-pages
 
 - task: Bash@3
   displayName: 'Commit and push HTML docs for APIs'
@@ -97,6 +97,7 @@ steps:
         git config --global user.email "CI@51degrees.com"
         git status
         git commit -m "DOC: Regenerated HTML documentation pages."
+        git push origin gh-pages
         cd $(build.sourcesdirectory)
       done
 
