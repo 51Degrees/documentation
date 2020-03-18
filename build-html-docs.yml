@@ -65,7 +65,9 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      echo "Commiting ${api}"
+      git config --global user.name "51Degrees"
+      git config --global user.email "CI@51degrees.com"
+      echo "Commiting Docs"
       mv $(apiversion) $(apiversion)new
       [ -f docs/tagfile ] && git checkout -- docs/tagfile
       git checkout gh-pages
@@ -91,8 +93,6 @@ steps:
         [ -d "$(apiversion)" ] && rm -r $(apiversion)
         mv $(apiversion)new $(apiversion)
         git add $(apiversion)
-        git config --global user.name "51Degrees"
-        git config --global user.email "CI@51degrees.com"
         git status
         git commit -m "DOC: Regenerated HTML documentation pages."
         git push origin gh-pages
