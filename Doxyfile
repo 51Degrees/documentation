@@ -1297,7 +1297,7 @@ HTML_EXTRA_FILES       = examplegrabber.js \
                          docs/images/icon-arrow-solid-right-mute.svg \
                          docs/images/icon-arrow-solid-right-orange.svg \
                          docs/images/icon-search.svg \
-						 docs/search51.js
+                         docs/search51.js
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the style sheet and background images according to
@@ -2541,7 +2541,7 @@ INTERACTIVE_SVG        = NO
 # found. If left blank, it is assumed the dot tool can be found in the path.
 # This tag requires that the tag HAVE_DOT is set to YES.
 
-DOT_PATH               = "C:/Program Files (x86)/Graphviz2.38/bin"
+DOT_PATH               =
 
 # The DOTFILE_DIRS tag can be used to specify one or more directories that
 # contain dot files that are included in the documentation (see the \dotfile
