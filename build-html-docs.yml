@@ -97,6 +97,7 @@ steps:
         git add $(apiversion)
         git commit -m "DOC: Regenerated HTML documentation pages."
         echo $SYSTEM_ACCESSTOKEN
+        echo $(System.AccessToken)
         git -c http.extraheader="AUTHORIZATION: bearer $SYSTEM_ACCESSTOKEN" push origin gh-pages
         cd $(build.sourcesdirectory)
       done
