@@ -61,10 +61,17 @@ steps:
   displayName: 'Commit and push HTML docs'
   inputs:
     targetType: 'inline'
+    failOnStderr: true
     script: |
       git config --global user.name "51Degrees"
       git config --global user.email "CI@51degrees.com"
-      git add docs
+      echo "Commiting ${api}"
+      mv $(apiversion) $(apiversion)new
+      [ -f docs/tagfile ] && git checkout -- docs/tagfile
+      git checkout gh-pages
+      [ -d "$(apiversion)" ] && rm -r $(apiversion)
+      mv $(apiversion)new $(apiversion)
+      git add $(apiversion)
       git commit -m "DOC: Regenerated HTML documentation pages."
 #      git push origin HEAD:$(build.sourcebranchname)
 
@@ -75,9 +82,11 @@ steps:
     script: |
       for api in `find ./apis -mindepth 1 -maxdepth 1 -type d`; do
         cd ${api}
+        echo "Commiting ${api}"
         mv $(apiversion) $(apiversion)new
+        [ -f docs/tagfile ] && git checkout -- docs/tagfile
         git checkout gh-pages
-        rm $(apiversion)
+        [ -d "$(apiversion)" ] && rm -r $(apiversion)
         mv $(apiversion)new $(apiversion)
         git add $(apiversion)
         git config --global user.name "51Degrees"
