@@ -51,7 +51,7 @@ PROJECT_BRIEF          =
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO           = docs/images/logo-51Degrees-Docs.png
+PROJECT_LOGO           = images/logo-51Degrees-Docs.png
 
 # The PROJECT_URL tag is used to specify the URL which is linked by the
 # PROJECT_LOGO.
@@ -63,7 +63,7 @@ PROJECT_URL            = index.html
 # entered, it will be relative to the location where doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = docs
+OUTPUT_DIRECTORY       = ../
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create 4096 sub-
 # directories (in 2 levels) under the output directory of each output format and
@@ -930,8 +930,8 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = src/pageorder.md \
-                         src
+INPUT                  = ../src/pageorder.md \
+                         ../src
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1004,14 +1004,14 @@ EXCLUDE_SYMBOLS        =
 # that contain example code fragments that are included (see the \include
 # command).
 
-EXAMPLE_PATH           = src/examples \
-                         apis/pipeline-java/examples \
-                         apis/pipeline-dotnet/Examples \
-                         apis/pipeline-node/fiftyone.pipeline.core/examples \
-                         apis/pipeline-node/fiftyone.pipeline.engines/examples \
-                         apis/pipeline-php/pipeline.core/examples \
-                         apis/device-detection-php/examples \
-                         apis/device-detection-node/fiftyone.devicedetection/examples
+EXAMPLE_PATH           = ../src/examples \
+                         ../apis/pipeline-java/examples \
+                         ../apis/pipeline-dotnet/Examples \
+                         ../apis/pipeline-node/fiftyone.pipeline.core/examples \
+                         ../apis/pipeline-node/fiftyone.pipeline.engines/examples \
+                         ../apis/pipeline-php/pipeline.core/examples \
+                         ../apis/device-detection-php/examples \
+                         ../apis/device-detection-node/fiftyone.devicedetection/examples
 
 # If the value of the EXAMPLE_PATH tag contains directories, you can use the
 # EXAMPLE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp and
@@ -1246,7 +1246,7 @@ HTML_FILE_EXTENSION    = .html
 # of the possible markers and block names see the documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_HEADER            = docs/header.html
+HTML_HEADER            = header.html
 
 # The HTML_FOOTER tag can be used to specify a user-defined HTML footer for each
 # generated HTML page. If the tag is left blank doxygen will generate a standard
@@ -1256,7 +1256,7 @@ HTML_HEADER            = docs/header.html
 # that doxygen normally uses.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_FOOTER            = docs/footer.html
+HTML_FOOTER            = footer.html
 
 # The HTML_STYLESHEET tag can be used to specify a user-defined cascading style
 # sheet that is used by each HTML page. It can be used to fine-tune the look of
@@ -1268,7 +1268,7 @@ HTML_FOOTER            = docs/footer.html
 # obsolete.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_STYLESHEET        = docs/docs-main.min.css
+HTML_STYLESHEET        = docs-main.min.css
 
 # The HTML_EXTRA_STYLESHEET tag can be used to specify additional user-defined
 # cascading style sheets that are included after the standard style sheets
@@ -1292,12 +1292,12 @@ HTML_EXTRA_STYLESHEET  =
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_EXTRA_FILES       = examplegrabber.js \
-                         docs/images/icon-arrow-left-black.svg \
-                         docs/images/icon-arrow-right-black.svg \
-                         docs/images/icon-arrow-solid-right-mute.svg \
-                         docs/images/icon-arrow-solid-right-orange.svg \
-                         docs/images/icon-search.svg \
-                         docs/search51.js
+                         images/icon-arrow-left-black.svg \
+                         images/icon-arrow-right-black.svg \
+                         images/icon-arrow-solid-right-mute.svg \
+                         images/icon-arrow-solid-right-orange.svg \
+                         images/icon-search.svg \
+                         search51.js
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the style sheet and background images according to
@@ -2548,7 +2548,7 @@ DOT_PATH               =
 # command).
 # This tag requires that the tag HAVE_DOT is set to YES.
 
-DOTFILE_DIRS           = src/graphs
+DOTFILE_DIRS           = ../src/graphs
 
 # The MSCFILE_DIRS tag can be used to specify one or more directories that
 # contain msc files that are included in the documentation (see the \mscfile
