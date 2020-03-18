@@ -76,14 +76,13 @@ steps:
       for api in `find ./apis -mindepth 1 -maxdepth 1 -type d`; do
         cd ${api}
         mv $(apiversion) $(apiversion)new
-        git chekcout gh-pages
+        git checkout gh-pages
         rm $(apiversion)
         mv $(apiversion)new $(apiversion)
         git add $(apiversion)
         git config --global user.name "51Degrees"
         git config --global user.email "CI@51degrees.com"
         git commit -m "DOC: Regenerated HTML documentation pages."
-#        git push origin gh-pages
         cd $(build.sourcesdirectory)
       done
 
