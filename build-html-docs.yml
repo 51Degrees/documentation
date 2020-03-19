@@ -96,20 +96,3 @@ steps:
         git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin gh-pages
         cd $(build.sourcesdirectory)
       done
-
-- task: CopyFiles@2
-  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
-  condition: true
-  inputs:
-    SourceFolder: '$(build.sourcesdirectory)'
-    Contents: 'docs/$(apiversion)/**'
-    TargetFolder: '$(build.artifactstagingdirectory)'
-    CleanTargetFolder: true
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish HTML docs'
-  condition: true
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'docs'
-    publishLocation: 'Container'
