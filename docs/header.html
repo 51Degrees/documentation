@@ -12,6 +12,7 @@
 <script type="text/javascript" src="$relpath^jquery.js"></script>
 <script type="text/javascript" src="$relpath^dynsections.js"></script>
 <script type="text/javascript" src="$relpath^examplegrabber.js"></script>
+<script type="text/javascript" src="$relpath^search51.js"></script>
 $treeview
 $search
 $mathjax
@@ -26,7 +27,7 @@ $extrastylesheet
 <div id="titlearea" class="g-header g-header--docs">
   <h1 class="c-brand">
   <!--BEGIN PROJECT_LOGO-->
-  <a id="projectlogo" href="$projecturl" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="$relpath^$projectlogo"/></a>
+  <a id="projectlogo" href="$projecturl" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="$relpath^$projectlogo" style="width:172px;"/></a>
   <!--BEGIN PROJECT_NAME-->
   <span class="c-tagline">$projectname
    <!--BEGIN PROJECT_NUMBER-->&#160;<span id="projectnumber">$projectnumber</span><!--END PROJECT_NUMBER-->
@@ -45,9 +46,22 @@ $extrastylesheet
    <!--END PROJECT_BRIEF-->
   <!--END !PROJECT_NAME-->
   <div id="main-nav"></div>
+  <section class="g-search">
+    <div class="c-search is-openable" id="searchOpenable">
+    <form class="c-search__form">
+      <div class="b-form-group b-form-group--with-icon">
+        <label for="inputSearch" class="b-text--hidden">Search</label>
+        <img src="icon-search.svg" class="b-icon" alt="Search" />
+        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+      </div>
+    </form>
+    <div class="c-search__content" id="searchContent">
+    </div>
+  </div> 
+  </section>
   <!--BEGIN DISABLE_INDEX-->
    <!--BEGIN SEARCHENGINE-->
-   $searchbox
+   <!--$searchbox-->
    <!--END SEARCHENGINE-->
   <!--END DISABLE_INDEX-->
 </div>

@@ -44,6 +44,8 @@ to enable @clientsideevidence for each framework.
 @startsnippets
 @showsnippet{aspnet,ASP.NET}
 @showsnippet{aspnetcore,ASP.NET Core}
+@showsnippet{javaservlet,Java Servlet}
+@showsnippet{javaspringmvc,Java Spring MVC}
 @defaultsnippet{Select a web framework to view details of how client-side evidence is supported.}
 @startsnippet{aspnetcore}
 The ASP.NET Core integration makes use of a 
@@ -81,4 +83,7 @@ the same evidence values.
 @startsnippet{aspnet}
 
 @endsnippet
+@startsnippet{javaservlet}
+@endsnippet
+@startsnippet{javaspringmvc}
 @endsnippets

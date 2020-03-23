@@ -43,7 +43,21 @@ steps:
   displayName: 'Generate HTML documentation'
   inputs:
     targetType: 'inline'
-    script: './doxygen'
+    script: |
+      cd docs
+      '$(build.sourcesdirectory)'/doxygen
+      cd $(build.sourcesdirectory)
+
+- task: Bash@3
+  displayName: 'Generate HTML documentation for APIs'
+  inputs:
+    targetType: 'inline'
+    script: |
+      for api in `find ./apis -mindepth 1 -maxdepth 1 -type d`; do
+        cd ${api}/docs
+        '$(build.sourcesdirectory)'/doxygen
+        cd $(build.sourcesdirectory)
+      done
 
 
 - task: Bash@3
@@ -53,23 +67,32 @@ steps:
     script: |
       git config --global user.name "51Degrees"
       git config --global user.email "CI@51degrees.com"
-      git add docs
+      git remote -v
+      echo "Commiting Docs"
+      mv $(apiversion) $(apiversion)new
+      [ -f docs/tagfile ] && git checkout -- docs/tagfile
+      git checkout gh-pages
+      [ -d "$(apiversion)" ] && rm -r $(apiversion)
+      mv $(apiversion)new $(apiversion)
+      git add $(apiversion)
       git commit -m "DOC: Regenerated HTML documentation pages."
-      git push origin HEAD:$(build.sourcebranchname)
+      git push origin gh-pages
 
-- task: CopyFiles@2
-  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
-  condition: true
+- task: Bash@3
+  displayName: 'Commit and push HTML docs for APIs'
   inputs:
-    SourceFolder: '$(build.sourcesdirectory)'
-    Contents: 'docs/4.1/**'
-    TargetFolder: '$(build.artifactstagingdirectory)'
-    CleanTargetFolder: true
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish HTML docs'
-  condition: true
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'docs'
-    publishLocation: 'Container'
+    targetType: 'inline'
+    script: |
+      for api in `find ./apis -mindepth 1 -maxdepth 1 -type d`; do
+        cd ${api}
+        echo "Commiting ${api}"
+        mv $(apiversion) $(apiversion)new
+        [ -f docs/tagfile ] && git checkout -- docs/tagfile
+        git checkout gh-pages
+        [ -d "$(apiversion)" ] && rm -r $(apiversion)
+        mv $(apiversion)new $(apiversion)
+        git add $(apiversion)
+        git commit -m "DOC: Regenerated HTML documentation pages."
+        git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin gh-pages
+        cd $(build.sourcesdirectory)
+      done
