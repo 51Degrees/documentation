@@ -6,6 +6,8 @@
 
 @page DeviceDetection_Index Device Detection
 
+@page ReverseGeocoding_Index Reverse Geocoding
+
 @page Info_Index Information
 
 @page Features_Index Features

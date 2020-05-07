@@ -35,7 +35,7 @@ First, add the device detection libraries from the
 using the Visual Studio projects, the CMake projects, or just the files themselves.
 
 The old (V3) device detection API used a single method to initialize a `fiftyoneDegreesProvider`.
-This took all available options as parameters, and was similar for Pattern and Hash.
+This took all available options as parameters, and was similar for both the 'Pattern' and 'Hash' algorithms.
 
 ```{c}
 fiftyoneDegreesDataSetInitStatus status =
@@ -43,16 +43,14 @@ fiftyoneDegreesDataSetInitStatus status =
     fileName, &provider, properties, 4, 1000);
 ```
 
-An equivalent service can be set up using the V4 device detection API. Rather than all options
-being provided as inidividual arguments, both the Pattern and Hash follow the same pattern
-of taking the following:
-1. A resource manager. This is similar to the V3 provider, but provides a generic was of managing resources in a thread-safe manner.
+An equivalent service can be set up using the V4 device detection API. However, the Hash data files have been significantly improved for V4, 
+and are now equivalent or superior to Pattern in every way. As such, Hash is now the only option. It takes the following parameters:
+
+1. A resource manager. This is similar to the V3 provider, but provides a generic way of managing resources in a thread-safe manner.
 2. A configuration structure. This defines the way the data set is used. For example, whether the data set is loaded into memory, or streamed from file.
 3. A required properties structure. This is a structure which can contain a string or array indicating the properties which should be loaded.
 4. Data file path. This is the path to the data file which should be loaded.
 5. An exception structure. This provides a way for internal methods to report exceptions instead of allowing the process to crash.
-
-Note: That these examples all use the Hash API, however the Pattern API follows the same pattern and naming convensions.
 
 After setting any configuration options required in the config structure, the data set is
 initialized using the `fiftyoneDegreesHashInitManagerFromFile`, or `fiftyoneDegreesHashInitManagerFromMemory`
@@ -145,8 +143,6 @@ constructed with the following:
 2. A configuration instance. This defines the way the data set is used. For example, whether the data set is loaded into memory, or streamed from file.
 3. A required properties instance. This is a class which can contain a string or array indicating the properties which should be loaded.
 
-Note: That these examples all use the Hash API, however the Pattern API follows the same pattern and naming convensions.
-
 After setting any configuration options required in the config structure, the engine is
 constructed.
 
@@ -187,6 +183,7 @@ if (value.hasValue()) {
 }
 else {
     // No valid value.
+    string reason = value.getNoValueMessage();
 }
 ```
 
@@ -194,7 +191,9 @@ Once finished, the results, evidence, engine, and configuration are freed using 
 destructors.
 ```{cpp}
 delete results;
-...
+delete evidence;
+delete engine;
+delete config
 ```
 
 @endsnippet
@@ -228,13 +227,12 @@ var pipeline = new DeviceDetectionPipelineBuilder()
   .Build()
 ```
 
-The builder will work out whether to use the Pattern or Hash algorithm based on the supplied data file.
-Other settings will be dependent on your old implementation:
+The supplied settings will be dependent on your old implementation:
 
 - If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, change the first line to `.UseCloud` and pass in the resource key you created.
 - If using `MemoryFactory` rather that `StreamFactory` then change the performance profile to `MaxPerformance`.
-- If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionPatternEngineBuilder` or `DeviceDetectionHashEngineBuilder` depending on your data file. The `SetCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
-- If you have auto updates disabled then remove the `SetDataUpdateLinceseKey` line and instead use `SetAutoUpdate(false)`
+- If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionHashEngineBuilder`. The `SetCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
+- If you have auto updates disabled then remove the `SetDataUpdateLinceseKey` line and instead use `SetAutoUpdate(false)` and `SetUpdateOnStartup(false)`.
 
 Regardless of the details above, a configuration file can be used instead:
 
@@ -262,9 +260,9 @@ The JSON configuration file for the same setup as above (on premise, low memory,
   "PipelineOptions": {
     "Elements": [
       {
-        "BuilderName": "DeviceDetectionPatternEngineBuilder",
+        "BuilderName": "DeviceDetectionHashEngineBuilder",
         "BuildParameters": {
-          "DataFile": "51Degrees-EnterpriseV3.2.dat",
+          "DataFile": "51Degrees-EnterpriseV4.1.hash",
           "CreateTempDataCopy": true,
           "DataUpdateLicenseKey": "yourkey",
           "PerformanceProfile": "LowMemory"
@@ -275,7 +273,6 @@ The JSON configuration file for the same setup as above (on premise, low memory,
 }
 ```
 
-Note that the 'BuilderName' parameter must be set to the correct type for the data file. Either `DeviceDetectionPatternEngineBuilder` or `DeviceDetectionHashEngineBuilder`.
 If you are using the 51Degrees cloud then you'll need to add two elements using the builders `CloudRequestEngineBuilder` and `DeviceDetectionCloudEngineBuilder`. For example:
 
 ```{json}
@@ -285,9 +282,7 @@ If you are using the 51Degrees cloud then you'll need to add two elements using 
       {
         "BuilderName": "CloudRequestEngineBuilder",
         "BuildParameters": {
-          "ResourceKey": "yourresourcekey",
-          "LicenseKey": "yourlicensekey",
-          "EndPoint": "cloud.51degrees.com"
+          "ResourceKey": "yourresourcekey"
         }
       },
       {
@@ -373,9 +368,9 @@ This file should follow the usual structure of a pipeline configuration file. Fo
   "PipelineOptions": {
     "Elements": [
       {
-        "BuilderName": "DeviceDetectionPatternEngineBuilder",
+        "BuilderName": "DeviceDetectionHashEngineBuilder",
         "BuildParameters": {
-          "DataFile": "51Degrees-EnterpriseV3.2.dat",
+          "DataFile": "51Degrees-EnterpriseV4.1.hash",
           "CreateTempDataCopy": true,
           "DataUpdateLicenseKey": "yourkey",
           "PerformanceProfile": "LowMemory"
@@ -387,8 +382,8 @@ This file should follow the usual structure of a pipeline configuration file. Fo
 ```
 
 - Use the performance profile setting to control the trade-off between performance and memory. `LowMemory` is recommended if you're not sure. `MaxPerformance` uses the most memory but gives the best performance.
-- If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false`
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this resource key to the Pipeline. If you are accessing paid-for properties then a license key will also be required.
+- If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false` and `"UpdateOnStartup": false`
+- If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this resource key to the Pipeline.
 
 ```{json}
 {
@@ -397,9 +392,7 @@ This file should follow the usual structure of a pipeline configuration file. Fo
       {
         "BuilderName": "CloudRequestEngineBuilder",
         "BuildParameters": {
-          "ResourceKey": "yourresourcekey",
-          "LicenseKey": "yourlicensekey",
-          "EndPoint": "https://cloud.51degrees.com/api/v4/json"
+          "ResourceKey": "yourresourcekey"
         }
       },
       {
@@ -410,7 +403,7 @@ This file should follow the usual structure of a pipeline configuration file. Fo
 }
 ```
 
-The previous web integration used the `Request.Browser` functionality that was built in to ASP.NET in order to access result values. The Pipeline integration uses the same approach so you can still do things like:
+The old v3 web integration used the `Request.Browser` functionality that was built in to ASP.NET in order to access result values. The Pipeline integration uses the same approach so you can still do things like:
 
 ```{cs}
 if (Request.Browser["IsMobile"] == "True")
@@ -428,11 +421,9 @@ First, add the `FiftyOne.DeviceDetection` and `FiftyOne.Pipeline.Web` NuGet pack
 Add the following lines to you 'ConfigureService' method:
 
 ```{cs}
-services.AddSingleton<DeviceDetectionPatternEngineBuilder>();
+services.AddSingleton<DeviceDetectionHashEngineBuilder>();
 services.AddFiftyOne<PipelineBuilder>(Configuration);
 ```
-
-If you are using the @Hash algorithm, you will need to specify the `DeviceDetectionHashEngineBuilder` instead.
 
 Add the following line to the 'Configure' method:
 
@@ -453,9 +444,9 @@ Add a PipelineOptions section to your appsettings.json file and configure approp
   "PipelineOptions": {
     "Elements": [
       {
-        "BuilderName": "DeviceDetectionPatternEngineBuilder",
+        "BuilderName": "DeviceDetectionHashEngineBuilder",
         "BuildParameters": {
-          "DataFile": "51Degrees-EnterpriseV3.2.dat",
+          "DataFile": "51Degrees-EnterpriseV4.1.hash",
           "CreateTempDataCopy": true,
           "DataUpdateLicenseKey": "yourkey",
           "PerformanceProfile": "LowMemory"
@@ -467,8 +458,8 @@ Add a PipelineOptions section to your appsettings.json file and configure approp
 ```
 
 - Use the performance profile setting to control the trade-off between performance and memory. `LowMemory` is recommended if you're not sure. `MaxPerformance` uses the most memory but gives the best performance.
-- If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false`
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this resource key to the Pipeline. If you are accessing paid-for properties then a license key will also be required.
+- If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false` and `"UpdateOnStartup": false`
+- If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this resource key to the Pipeline.
 
 ```{json}
 "PipelineOptions": {
@@ -476,9 +467,7 @@ Add a PipelineOptions section to your appsettings.json file and configure approp
     {
       "BuilderName": "CloudRequestEngineBuilder",
       "BuildParameters": {
-        "ResourceKey": "yourresourcekey",
-        "LicenseKey": "yourlicensekey",
-        "EndPoint": "https://cloud.51degrees.com/api/v4/json"
+        "ResourceKey": "yourresourcekey"
       }
     },
     {
@@ -521,17 +510,25 @@ The device properties can then be accessed in the corresponding view. For exampl
 <h2>Example</h2>
 
 <p>
-    Hardware: @Model.HardwareVendor @string.Join(',', Model.HardwareName)<br />
-    Device Type: @Model.DeviceType<br />
-    Platform: @Model.PlatformVendor @Model.PlatformName @Model.PlatformVersion<br />
-    Browser: @Model.BrowserVendor @Model.BrowserName @Model.BrowserVersion<br />
+    Hardware Vendor: @(hardwareVendor.HasValue ? hardwareVendor.Value : $"Unknown ({hardwareVendor.NoValueMessage})")<br />
+    Hardware Name: @(hardwareName.HasValue ? string.Join(", ", hardwareName.Value) : $"Unknown ({hardwareName.NoValueMessage})")<br />
+    Device Type: @(deviceType.HasValue ? deviceType.Value : $"Unknown ({deviceType.NoValueMessage})")<br />
+    Platform Vendor: @(platformVendor.HasValue ? platformVendor.Value : $"Unknown ({platformVendor.NoValueMessage})")<br />
+    Platform Name: @(platformName.HasValue ? platformName.Value : $"Unknown ({platformName.NoValueMessage})")<br />
+    Platform Version: @(platformVersion.HasValue ? platformVersion.Value : $"Unknown ({platformVersion.NoValueMessage})")<br />
+    Browser Vendor: @(browserVendor.HasValue ? browserVendor.Value : $"Unknown ({browserVendor.NoValueMessage})")<br />
+    Browser Name: @(browserName.HasValue ? browserName.Value : $"Unknown ({browserName.NoValueMessage})")<br />
+    Browser Version: @(browserVersion.HasValue ? browserVersion.Value : $"Unknown ({browserVersion.NoValueMessage})")
 </p>
 
 @await Component.InvokeAsync("FiftyOneJS")
 ```
 
-The `FiftyOneJS` component handles the inclusion of client-side evidence.
+The `FiftyOneJS` component handles the inclusion of @clientsideevidence.
 The main use-case for this in device detection is in detecting iPhone and iPad models correctly.
+
+<!-- TODO Add link to client-side evidence example or guide 
+Refer to the specific guide for more detail on using client-side evidence.-->
 @endsnippet
 @startsnippet{java}
 <!-- ===================================================================================
@@ -546,7 +543,7 @@ The precise details would depend on:
 - Other DataSet creation options being used.
 
 ```{java}
-DataSet dataSet = StreamFactory.create(filename, false)
+DataSet dataSet = StreamFactory.create(filename, false);
 Provider provider = new Provider(dataSet);   
 ```
 
@@ -561,31 +558,29 @@ Pipeline pipeline = new DeviceDetectionPipelineBuilder()
   .build();
 ```
 
-The builder will work out whether to use the Pattern or Hash algorithm based on the supplied data file.
-Other settings will be dependent on your old implementation:
+Settings will be dependent on your old implementation:
 
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, change the first line to `.UseCloud` and pass in the resource key you created.
+- If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, change the first line to `.useCloud` and pass in the resource key you created.
 - If using `MemoryFactory` rather that `StreamFactory` then change the performance profile to `MaxPerformance`.
-- If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionPatternEngineBuilder` or `DeviceDetectionHashEngineBuilder` depending on your data file. The `SetCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
-- If you have auto updates disabled then remove the `SetDataUpdateLinceseKey` line and instead use `SetAutoUpdate(false)`
+- If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionHashEngineBuilder`. The `setCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
+- If you have auto updates disabled then remove the `setDataUpdateLinceseKey` line and instead use `setAutoUpdate(false)` and `setUpdateOnStartup(false)`
 
 Regardless of the details above, a configuration file can be used instead:
 
 ```{java}
 // Create the configuration object
-File file = new File(getClass().getClassLoader().getResource("hash.xml").getFile());
+File file = new File("yourconfiguration.xml").getFile());
 JAXBContext jaxbContext = JAXBContext.newInstance(PipelineOptions.class);
 Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 // Bind the configuration to a pipeline options instance
 PipelineOptions options = (PipelineOptions) unmarshaller.unmarshal(file);
 
-FiftyOnePipelineBuilder builder = new FiftyOnePipelineBuilder();
 // Create a simple pipeline to access the engine with.
 Pipeline pipeline = new FiftyOnePipelineBuilder()
     .buildFromConfiguration(options);
 ```
 
-The XML configuration file for the same setup as above (on premise, low memory, auto updates enabled) would look like this:
+The XML configuration file for the same setup as above (on-premise, low memory, auto updates enabled) would look like this:
 
 ```{xml}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -595,16 +590,15 @@ The XML configuration file for the same setup as above (on premise, low memory, 
             <BuildParameters>
                 <DataUpdateLicenseKey>yourkey</DataUpdateLicenseKey>
                 <CreateTempDataCopy>true</CreateTempDataCopy>
-                <DataFile>51Degrees-EnterpriseV3.4.trie</DataFile>
+                <DataFile>51Degrees-EnterpriseV4.1.hash</DataFile>
                 <PerformanceProfile>LowMemory</PerformanceProfile>
             </BuildParameters>
-            <BuilderName>DeviceDetectionPatternEngineBuilder</BuilderName>
+            <BuilderName>DeviceDetectionHashEngineBuilder</BuilderName>
         </Element>
     </Elements>
 </PipelineOptions>
 ```
 
-Note that the 'BuilderName' parameter must be set to the correct type for the data file. Either `DeviceDetectionPatternEngineBuilder` or `DeviceDetectionHashEngineBuilder`.
 If you are using the 51Degrees cloud then you'll need to add two elements using the builders `CloudRequestEngineBuilder` and `DeviceDetectionCloudEngineBuilder`. For example:
 
 ```{xml}
@@ -613,9 +607,7 @@ If you are using the 51Degrees cloud then you'll need to add two elements using 
     <Elements>
         <Element>
             <BuildParameters>
-                <EndPoint>https://cloud.51degrees.com/api/v4/json</EndPoint>
                 <ResourceKey>yourresourcekey</ResourceKey>
-                <LicenseKey>yourlicensekey</LicenseKey>
             </BuildParameters>
             <BuilderName>CloudRequestEngine</BuilderName>
         </Element>
@@ -639,7 +631,7 @@ The Pipeline API is far more flexible so splits this line into 3 parts:
 // 1. Create a 'FlowData' instance from the Pipeline. This is used to pass data in and access results.
 FlowData data = pipeline.createFlowData()
 // 2. Add 'evidence' to the FlowData and process it. In this case, we are adding a User-Agent HTTP header.
-    .addEvidence("header.user-agent", mobileUserAgent)
+    .addEvidence("header.user-agent", userAgent)
     .process();
 // 3. The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.
 DeviceData device = data.get(DeviceData.class);
@@ -647,7 +639,7 @@ DeviceData device = data.get(DeviceData.class);
 
 Finally, the way that data is accessed has also changed in several ways.
 1. Values can now be accessed by strongly typed properties rather than having to remember 'magic strings' (although magic string accessors still work as well).
-2. Many properties follow the nullable pattern. For example, rather than returning a boolean, the 'IsMobile' property returns a wrapper type that has 'hasValue' and 'value' accessors. Calling '.value' on a property that does not have a value will result in an exception. For more detail see the @falsepositivecontrol feature page.
+2. Many properties follow the nullable pattern. For example, rather than returning a boolean, the 'IsMobile' property returns a wrapper type that has 'hasValue' and 'value' accessors. Calling '.gertValue' on a property that does not have a value will result in an exception. For more detail see the @falsepositivecontrol feature page.
 
 As an example:
 
@@ -658,9 +650,8 @@ boolean isMobile = match.getValues("IsMobile").ToBoolean();
 becomes:
 
 ```{java}
-if(device.getIsMobile().hasValue)
-{
-    boolean isMobile = device.getIsMobile().value;
+if(device.getIsMobile().hasValue) {
+    boolean isMobile = device.getIsMobile().getValue();
 }
 ```
 @endsnippet
@@ -689,15 +680,14 @@ Creating a Pipeline with a device detection engine is similar although the optio
 // Create a new device detection pipeline and set the config.
 let pipeline = new deviceDetectionPipelineBuilder({    
     performanceProfile: "MaxPerformance",
-    dataFile: require("fiftyonedegreeslitepattern"),
+    dataFile: "[your path]/51Degrees-LiteV4.1.hash",
     autoUpdate: false
 }).build();
 ```
 
-The builder will work out whether to use the Pattern or Hash algorithm based on the supplied data file.
-Other settings will be dependent on your old implementation:
+Settings will be dependent on your old implementation:
 
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the resource key you created (along with your license key if you're using paid-for properties).
+- If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the resource key you created.
 - If you want to trade some performance for system memory then change the performance profile to `MaxPerformance`, `Balanced` or `LowMemory`
 - If you want the data file to be updated automatically then remove `autoUpdate: false` and add your license key to the configuration. (Not available for free users)
 
@@ -716,7 +706,7 @@ Where settings.json contains the following:
             "elementName": "fiftyone.pipeline.devicedetection/deviceDetectionOnPremise",  
             "elementParameters": {
                 "performanceProfile": "MaxPerformance",
-                "dataFile": "51Degrees-LiteV3.2.dat",
+                "dataFile": "51Degrees-LiteV4.1.hash",
                 "autoUpdate": false
             }
         }
@@ -765,7 +755,7 @@ if(device.isMobile.hasValue) {
 <!-- ===================================================================================
      |                                      PHP                                        |
      =================================================================================== -->
-If you currently use an on-premise data file with PHP then you will need to get the on-premise version of the PHP API from [GitHub](https://github.com/51degrees/pipeline-php).  
+If you currently use an on-premise data file with PHP then you will need to get the on-premise version of the PHP API from [GitHub](https://github.com/51Degrees/device-detection-php-onpremise).
 <!--TODO: Add complete steps for on-premise PHP.-->
 If you use the cloud version then you can install the fiftyone.devicedetection package from composer.
 
@@ -775,7 +765,7 @@ With the V3 API, a provider could be created with something like this:
 $provider = FiftyOneDegreesPatternV3::provider_get();
 ```
 
-If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Now create a device detection pipeline using the resource key you created (along with your license key if you're using paid-for properties).:
+If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, create a device detection pipeline using the resource key you created:
 
 ```{php}
 $deviceDetectionPipeline = new deviceDetectionPipelineBuilder(array(

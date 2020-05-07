@@ -263,7 +263,7 @@ client-side JavaScript automatically run.
 @defaultsnippet{Select a tab to view language specific usage.}
 @startsnippet{dotnet}
 Using a ASP.NET Core project (full example included in the source), a [pipeline configuration](@ref Concepts_Configuration_Builders_BuildFromConfiguration) file can be
-added to the 'appsettings.json' to load the new @flowelement and a 'JavaScriptBundlerElement' to
+added to the 'appsettings.json' to load the new @flowelement and a 'JavaScriptBuilderElement' to
 include the client-side JavaScript:
 ```{json}
 {
@@ -274,7 +274,7 @@ include the client-side JavaScript:
         "BuilderName": "SimpleClientSideElement"
       },
       {
-        "BuilderName": "JavaScriptBundlerElement"
+        "BuilderName": "JavaScriptBuilderElement"
       }
     ]
   }
@@ -302,7 +302,7 @@ The message is constructed in the controller in the same way as in the [previous
 @endsnippet
 @startsnippet{java}
 Using a Spring MVC project (full example included in the source), a [pipeline configuration](@ref Concepts_Configuration_Builders_BuildFromConfiguration) file
-can be added to load the new @flowelement and a 'JavaScriptBundlerElement' to include the client-side
+can be added to load the new @flowelement and a 'JavaScriptBuilderElement' to include the client-side
 JavaScript:
 ```{xml}
 <PipelineOptions>
@@ -311,7 +311,7 @@ JavaScript:
             <BuilderName>SimpleClientSideElement</BuilderName>
         </Element>
         <Element>
-            <BuilderName>JavaScriptBundlerElement</BuilderName>
+            <BuilderName>JavaScriptBuilderElement</BuilderName>
         </Element>
     </Elements>
 </PipelineOptions>

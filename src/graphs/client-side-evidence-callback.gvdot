@@ -1,0 +1,35 @@
+digraph {
+    // Set the background to transparent
+    bgcolor=transparent;
+    // Place nodes left to right
+    rankdir=RL;
+    // Style the nodes
+    node [shape=record, fontname=Helvetica, fontsize=10];
+    // Style the arrow labels
+    edge [fontname=Helvetica, fontsize=10];
+    
+    // Add the flow data cluster
+    subgraph clusterWebServer {
+        label="Web server";
+        fontname=Helvetica;
+        fontsize=10;       
+
+        Process1[label="Pipeline has geo engine\nthat needs lat and long.\nAs neither are available\nin the evidence, it\npopulates a JavaScript\nproperty with code\nto get these values."];
+        Process2[label="Pipeline consumes lat and long\nas evidence.\nGeo engine uses these\nvalues to determine postal\naddress and populates JSON\nresponse accordingly."];
+    };
+    // Add the flow data cluster
+    subgraph clusterClient {
+        label="Client";
+        fontname=Helvetica;
+        fontsize=10;       
+
+        Start;
+        ProcessB[label="JavaScript runs on client\nand gets lat and long values.\nA request is then sent\nto the server in the background."];
+        ProcessC[label="JavaScript updates existing\nJSON payload from response.\nAn event is triggered to\nlet subscribers know that\nnew data is available."];
+    };
+    
+    Start -> Process1 [label="1. Inital request"];
+    Process1 -> ProcessB [label="2. Response includes\nJavaScript and JSON\ndata object"];
+    ProcessB -> Process2 [label="3. Background request\nincludes lat and long from\nclient"];
+    Process2 -> ProcessC [label="4. Response contains\nupdated JSON data\nobject with postal\naddress"];
+}

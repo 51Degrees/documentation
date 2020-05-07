@@ -33,10 +33,23 @@ with the extra step of a [web request](@term{WebRequest}) being required.
 # Data Tier @anchor Concepts_Terminology_DataTier
 <!--TODO-->
 
+# Distributor @anchor Concepts_Terminology_Distributor
+
+The 51Degrees Distributor is a cloud-based web service that distributes data files for 51Degrees
+services.
+In order to access it, you will need to have a license key that defines the products that
+you are allowed to access.
+
 # Native Code @anchor Concepts_Terminology_NativeCode
 
 Native code refers to code written in C/C++. This is done to maximize performance, as many more
 optimizations can be made in lower level languages than compared to high level languages such as C# or Java.
+
+# Resource Key @anchor Concepts_Terminology_ResourceKey
+
+A resource key is used by the 51Degrees cloud service as a shorthand for various parameters that can be sent 
+as part of a request. For example, the properties that the user wishes to be populated in the response and
+any license keys that allow access to more properties or a greater request allowance.
 
 # Web Request @anchor Concepts_Terminology_WebRequest
 

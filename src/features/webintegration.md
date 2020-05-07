@@ -15,8 +15,9 @@ are largely the same.
 - Create a @Pipeline directly from configuration with little or no other direction from the developer.
 - Automatically feed relevant @evidence to the @Pipeline from incoming web requests.
 - Make the results of the @Pipeline available to all other components.
-- Option to automatically bundle any values from JavaScript properties into the response, in order to 
-provide @clientsideevidence in the next request.
+- Option to automatically bundle property values into the response, in order to 
+provide @clientsideevidence in the next request and/or to allow client-side code access to the 
+results from the @Pipeline API.
 
 # Implementations
 

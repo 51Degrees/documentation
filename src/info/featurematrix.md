@@ -2,7 +2,7 @@
 
 # Data services
 
-|Language / Framework|@Pipeline|@DeviceDetection|Location (coming soon)|
+|Language / Framework|@Pipeline|@DeviceDetection|@ReverseGeocoding|
 |---|---|---|---|
 |C/C++    |       |On-premise only   |       | 
 |.NET     |@tick|@tick | Cloud only   | 

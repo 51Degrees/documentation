@@ -18,6 +18,17 @@ required.
 For example, this technique can be used to retrieve the latitude and longitude 
 from devices that have this capability.
 
+# Client-side Data
+
+When using the client-side evidence integration, the first step is for the @Pipeline
+to produce a JSON representation of all the properties that have been populated
+by @flowelements.
+
+This JSON data is sent to the client along with some JavaScript that is used to
+handle updating that JSON payload with new property values determined from 
+client-side evidence as well as provide easy access to the property values 
+in client-side JavaScript code.
+
 # JavaScript Properties
 
 @Elementproperties include a 'Type' property that indicates the type of the 
@@ -25,21 +36,61 @@ data represented by the property's values.
 
 JavaScript properties are simply properties that have their Type set to 'JavaScript'.
 The value of such a property should be a snippet of JavaScript code that, when run on
-the client device, will determine something about the device and then set a cookie 
-to record the value.
+the client device, will obtain some extra values from the device. 
 
-When the device requests the next page from the web server, these cookies will be 
-included in the request and added to the @evidence passed to the @pipeline.
+# How it Works
 
-The example below shows the process flow between client and server.
+The JSON data management JavaScript will check for any properties of type 'JavaScript'
+and execute them on the client. There are then two possible mechanisms to get 
+these extra values back to the server in order for them to be included in the 
+evidence used by the @Pipeline.
+
+1. A background callback to the server yields updated JSON data that is integrated 
+into the existing JSON payload.
+2. The JavaScript property sets a cookie that is then sent to the server on the
+next request.
+
+## Background Callback
+
+A request is made to the server in the background that includes the extra values 
+as form parameters. The server sends this through the pipeline and the result is 
+packaged as JSON and sent in the response to the client, which will update it's 
+JSON payload data, making the new values available to all client-side code.
+
+This example shows the process flow between client and server.
+
+@dotfile client-side-evidence-callback.gvdot
+
+## Cookies on Next Request
+
+When executed, the JavaScript property sets a cookie that is then sent to the 
+server on the next request. The @Pipeline will automatically use these cookies
+as @evidence so that the results it returns take account of the new information.
+
+This example shows the process flow between client and server.
 
 @dotfile client-side-evidence.gvdot
 
 # Web Integration
 
-The only part of the **client-side evidence** feature that the @Pipeline does not handle
-automatically is how the values of any JavaScript properties actually end up embedded
-in the payload sent to the client device.
+The **client-side evidence** feature requires multiple @Pipeline components to operate
+together. There are @webintegration solutions for various web frameworks that handle 
+most of the complexity for you.
 
-This can be managed manually. However, there are many @webintegration solutions, covering
-a wide variety of languages and web frameworks, that will handle it automatically.
+These solutions are generally enabled by default but do require some additional 
+configuration in order to function. The implementations vary significantly based 
+on the language and framework, but the core steps will involve the following:
+
+- Make a change to request the initial JavaScript with JSON payload. 
+For example, by adding a JavaScript include.
+- If using the **background callback** mechanism:
+  - Create an endpoint that can pass requests to the @Pipeline and serve the 
+  required JSON response.
+  - Configure the JavaScriptBuilderElement with the URL for your endpoint.
+  - Add some JavaScript code to update the page content when new JSON data is
+  received.
+
+For more detailed, language-specific steps, see the 
+[web integration examples](@ref Examples_WebIntegration) or the engine-specific 
+examples such as the 
+[device detection examples](@ref Examples_DeviceDetection_WebIntegration_Examples)

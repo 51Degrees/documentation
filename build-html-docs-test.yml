@@ -1,0 +1,65 @@
+name: build-html-docs-test
+
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- checkout: self
+  submodules: recursive
+  lfs: false
+  persistCredentials: true
+
+- task: DownloadSecureFile@1
+  displayName: 'Download DoxyGen'
+  name: doxygen
+  inputs:  
+    secureFile: 'doxygen.zip'
+
+- task: Bash@3
+  displayName: 'Unzip DoxyGen executable'
+  inputs:
+    targetType: 'inline'
+    script: 'unzip "$(doxygen.secureFilePath)" -d .'
+
+- task: Bash@3
+  displayName: 'Mark DoxyGen as executable'
+  inputs:
+    targetType: 'inline'
+    script: 'chmod +x doxygen'
+
+- task: Bash@3
+  displayName: 'Install  GraphViz'
+  inputs:
+    targetType: 'inline'
+    script: 'sudo apt-get install graphviz'
+
+- task: Bash@3
+  displayName: 'Generate HTML documentation'
+  inputs:
+    targetType: 'inline'
+    script: './doxygen'
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  condition: true
+  inputs:
+    SourceFolder: '$(build.sourcesdirectory)'
+    Contents: 'docs/4.1/**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+    CleanTargetFolder: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish HTML docs'
+  condition: true
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'docs'
+    publishLocation: 'Container'

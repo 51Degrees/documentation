@@ -2,4 +2,4 @@
 
 @subpage Benchmarks_DeviceDetection
 
-@subpage Benchmarks_GeoLocation
+@subpage Benchmarks_ReverseGeocoding

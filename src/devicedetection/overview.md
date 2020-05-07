@@ -19,24 +19,6 @@ in a separate header.
 * Although the User-Agent can tell us a lot about the hardware and software being used, further information can often
 be obtained by scripts running on the client device.
 
-## Pattern vs Hash Algorithms @anchor DeviceDetection_Overview_PatternVsHash
-
-51Degrees have two separate algorithms which can be used to perform device detection, 'Pattern' and 'Hash'. 
-
-These use differently formatted data files and employ different methods to determine matches between the supplied 
-User-Agent and the data file. Each method has its own strengths and weaknesses.
-
-|| Pattern | Hash |
-|---|---|---|
-|Performance|[Fast](@ref Benchmarks_DeviceDetection)|[Fastest](@ref Benchmarks_DeviceDetection)|
-|Approx. data file size (uncompressed)| 150Mb (Lite) - 400Mb (Enterprise)| 200Mb (all file variants) |
-|Adaptability (i.e. ability to cope with<br>User-Agents that are not in the<br>source data file)|Best|[Configurable](@ref DeviceDetection_Hash_PredictivePower)|
-
-For more detail on how each algorithm works, follow the links below:
-
-- @Pattern
-- @Hash
-
 Check the [Features](@ref DeviceDetection_Features_Index) page for detail about specific features of 51Degrees' device detection API.
 
 # Migrating from an Older Version or Other Providers

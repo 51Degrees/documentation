@@ -18,7 +18,7 @@ Firstly, the configuration file used for this example will set up a @pipeline wi
     <Elements>
         <Element>
             <BuildParameters>
-                <EndPoint>https://cloud.51degrees.com/api/v4/</EndPoint>
+                <ResourceKey>YourKey</ResourceKey>
             </BuildParameters>
             <BuilderName>CloudRequestEngine</BuilderName>
         </Element>
@@ -37,7 +37,7 @@ Firstly, the configuration file used for this example will set up a @pipeline wi
       {
         "BuilderName": "CloudRequestEngine",
         "BuildParamters": {
-          "EndPoint": "https://cloud.51degrees.com/api/v4/"
+          "ResourceKey": "YourKey"
         }
       },
       {

@@ -16,12 +16,24 @@
 [submodule "apis/pipeline-node"]
 	path = apis/pipeline-node
 	url = ../pipeline-node
+[submodule "apis/device-detection-node"]
+	path = apis/device-detection-node
+	url = ../device-detection-node
 [submodule "apis/pipeline-php"]
 	path = apis/pipeline-php
 	url = ../pipeline-php
 [submodule "apis/device-detection-php"]
 	path = apis/device-detection-php
 	url = ../device-detection-php
-[submodule "apis/device-detection-node"]
-	path = apis/device-detection-node
-	url = ../device-detection-node
+[submodule "apis/location-dotnet"]
+	path = apis/location-dotnet
+	url = ../location-dotnet
+[submodule "apis/location-java"]
+	path = apis/location-java
+	url = ../location-java
+[submodule "apis/location-php"]
+	path = apis/location-php
+	url = ../location-php
+[submodule "apis/location-node"]
+	path = apis/location-node
+	url = ../location-node

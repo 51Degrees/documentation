@@ -230,7 +230,7 @@ in a number of ways:
 
 For example:
 ```{cs}
-Assembly.Load("FiftyOne.DeviceDetection.Pattern.Engine.OnPremise");
+Assembly.Load("FiftyOne.DeviceDetection.Hash.Engine.OnPremise");
 ```
 
 Additionally, the @pipelinebuilder will need to know how to supply any dependencies required 

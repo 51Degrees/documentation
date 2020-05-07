@@ -18,8 +18,9 @@ Firstly, the configuration file used for this example will set up a @pipeline wi
         <Element>
             <BuildParameters>
                 <AutoUpdate>false</AutoUpdate>
+                <UpdateOnStartup>false</UpdateOnStartup>
                 <CreateTempDataCopy>false</CreateTempDataCopy>
-                <DataFile>51Degrees-LiteV3.4.trie</DataFile>
+                <DataFile>51Degrees-LiteV4.1.hash</DataFile>
                 <PerformanceProfile>LowMemory</PerformanceProfile>
             </BuildParameters>
             <BuilderName>DeviceDetectionHashEngine</BuilderName>
@@ -36,9 +37,10 @@ Firstly, the configuration file used for this example will set up a @pipeline wi
       {
         "BuilderName": "DeviceDetectionHashEngine",
         "BuildParameters": {
-          "DataFile": "51Degrees-LiteV3.4.trie",
+          "DataFile": "51Degrees-LiteV4.1.hash",
           "CreateTempDataCopy": false,
           "AutoUpdate": false,
+          "UpdateOnStartup": false,
           "PerformanceProfile": "LowMemory"
         }
       }

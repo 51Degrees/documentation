@@ -5,8 +5,6 @@
 
 - @subpage DeviceDetection_Hash
 
-- @subpage DeviceDetection_Pattern
-
 - @subpage DeviceDetection_Features_Index
 
 - @subpage DeviceDetection_MigrationGuides_Index

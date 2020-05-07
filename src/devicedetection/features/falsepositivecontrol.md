@@ -18,28 +18,25 @@ The detail associated with this exception will explain why the property does not
 
 # No Match Found
 
-Both @Pattern and @Hash algorithms can theoretically fail to find any match at all for the supplied evidence. (In practice, this is far more likely to occur with @Hash than @Pattern due to the flexibility of @Pattern in finding matches that are not the same but similar in some way)
+In some cases, the device detection algorithm can fail to find any match at all for the supplied evidence.
 
 The `AllowUnmatched` setting can be used to control what happens in this situation.  
-If `AllowUnmatched` is false (default) then no result will be returned and `HasValue` will be false.  
+If `AllowUnmatched` is false (default) then no result will be returned and `HasValue` will be false for the requested properties.  
 If `AllowUnmatched` is true then the default @profile will be returned.
 
 The default @profile has specific values for properties but they may be incorrect. For example, the default hardware profile has `IsMobile = false`. In reality, if no match was found then we have no idea if the device is a mobile device or not.
 
 # Bad Match
 
-The @Pattern and @Hash algorithms have slightly different methods for controlling and measuring how different a potential match is from the supplied evidence.
+The `Difference` value is used to measure how different a potential match is from the supplied evidence.
+The `Drift` value is used to measure how far a matching sub-string is from it's expected position.
 
-In both cases, The `Difference` value is used to measure how different a potential match is from the supplied evidence.  
-For example, if a substring within the User-Agent is present as expected but the ASCII value on a character is 1 higher than expected then the difference will be 1 (for @Pattern. The calculation of difference for @Hash is more complex).  
-For @Pattern, the difference can also be affected by shifting the position of the expected sub-string within the User-Agent. @Hash uses a separate value for this called `Drift`.
+The maximum allowable `Difference` and `Drift` values can be set when the engine is created. This is used to control how far the supplied evidence is allowed to differ from the real-world training data that was used to create the data file.  
+For example, if the maximum `Difference` value is set to 0 (default) then a match will only be returned if the difference value is 0. 
 
-The maximum `Difference` (and `Drift` for @Hash) value can be set when the engine is created. This is used to control how far a potential match is allowed to deviate from the supplied evidence.  
-For example, if the maximum `Difference` value is set to 10 (default) then a match will only be returned if the difference value is 10 or less. 
+If the maximum `Difference` or `Drift` setting prevents any result from being returned then `HasValue` will be false for the requested properties.
 
-If the maximum `Difference` or `Drift` setting prevents any result from being returned then `HasValue` will be false.
-
-By default, `Difference` is set to 10 for @Pattern and both `Difference` and `Drift` are set to 0 for @Hash. (I.e. no deviation from the expected sub strings is permitted). Setting them to -1 will mean that there is no limit. (although this does not guarantee a match will always be found)
+By default, `Difference` and `Drift` are set to 0. (I.e. no deviation from the expected sub strings is permitted). Setting them to -1 will mean that there is no limit. However, note that this often results in highly inaccurate results and does not guarantee a match will always be found.
 
 # Match Meta-Data
 
@@ -47,9 +44,9 @@ Regardless of the settings used, the result will return additional meta-data tha
 
 `Difference` - Contains the difference value between the supplied evidence and the returned match.  
 `UserAgents` - Contains a list of the matching substrings from the User-Agent.  
-`Drift` - (@Hash only) - Contains the drift value between the supplied evidence and the returned match.  
-`MatchedNodes` - (@Hash only) - The number of 'nodes' in the @hash tree where a match was found. If this is zero then no match was found.  
-`Method` - (@Pattern only) - The method used to find a match. 'EXACT' indicates an exact match. 'NONE' indicates no match. Any other value is the name of the technique used to find the result that best matches the supplied evidence.
+`Drift` - Contains the drift value between the supplied evidence and the returned match.  
+`MatchedNodes` - The number of 'nodes' in the @hash tree where a match was found. If this is zero then no match was found.  
+`Method` - The method used to find a match. 'EXACT' indicates an exact match. 'NONE' indicates no match. Any other value is the name of the technique used to find the result that best matches the supplied evidence.
 
 # The 'Unknown' Value
 
@@ -61,15 +58,15 @@ In the future, this may be changed so that `HasValue` will return false if `Valu
 
 # Use-Cases
 
-> I only want a result if the API is reasonably sure it is correct. (Default configuration for @Pattern)
+> I only want a result if the API is reasonably sure it is correct.
 
 Set `AllowUnmatched` to false.  
-Set `Difference` (and `Drift` if using Hash) to 10.
+Set `Difference` and `Drift` to 10.
 
-> I only want exact matches to previously observed User-Agents. (Default configuration for @Hash)
+> I only want exact matches to previously observed User-Agents. (Default configuration)
 
 Set `AllowUnmatched` to false.  
-Set `Difference` (and `Drift` if using @Hash) to 0.  
+Set `Difference` and `Drift` to 0.  
 These settings will mean that a result is only returned if it exactly matches a unique sub-string from a User-Agent that has been included when building the data file.
 
 > If there is no match found then I want the API to assume that the device is a desktop running an unknown operating system.
