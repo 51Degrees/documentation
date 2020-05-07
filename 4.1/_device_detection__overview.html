@@ -77,26 +77,6 @@ $(document).ready(function(){initNavTree('_device_detection__overview.html','');
 <li>Browsers that perform <a href="https://en.wikipedia.org/wiki/Mobile_browser#Mobile_HTML_transcoders">transcoding</a> will generally replace the content of the User-Agent with something else. The real User-Agent may or may not be sent in a separate header.</li>
 <li>Although the User-Agent can tell us a lot about the hardware and software being used, further information can often be obtained by scripts running on the client device.</li>
 </ul>
-<h2>Pattern vs Hash Algorithms<a class="anchor" id="DeviceDetection_Overview_PatternVsHash"></a></h2>
-<p>51Degrees have two separate algorithms which can be used to perform device detection, 'Pattern' and 'Hash'.</p>
-<p>These use differently formatted data files and employ different methods to determine matches between the supplied User-Agent and the data file. Each method has its own strengths and weaknesses.</p>
-<div class="g-table g-table--overflow"><table class="c-table">
-<tr class="c-table__row--heading">
-<td class="c-table__cell"></td><td class="c-table__cell">Pattern  </td><td class="c-table__cell">Hash   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">Performance  </td><td class="c-table__cell"><a class="el" href="_benchmarks__device_detection.html">Fast</a>  </td><td class="c-table__cell"><a class="el" href="_benchmarks__device_detection.html">Fastest</a>   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">Approx. data file size (uncompressed)  </td><td class="c-table__cell">150Mb (Lite) - 400Mb (Enterprise)  </td><td class="c-table__cell">200Mb (all file variants)   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">Adaptability (i.e. ability to cope with<br />
-User-Agents that are not in the<br />
-source data file)  </td><td class="c-table__cell">Best  </td><td class="c-table__cell"><a class="el" href="_device_detection__hash.html#DeviceDetection_Hash_PredictivePower">Configurable</a>   </td></tr>
-</table>
-</div><p>For more detail on how each algorithm works, follow the links below:</p>
-<ul>
-<li><a class="el" href="_device_detection__pattern.html">Pattern</a></li>
-<li><a class="el" href="_device_detection__hash.html">Hash</a></li>
-</ul>
 <p>Check the <a class="el" href="_device_detection__features__index.html">Features</a> page for detail about specific features of 51Degrees' device detection API.</p>
 <h1 class="g-docs__section-heading">Migrating from an Older Version or Other Providers</h1>
 <p>If you're already using 51Degrees' v3 device detection API, or a device detection solution from an alternative provider and are considering switching to 51Degrees, we have a number of <a class="el" href="_device_detection__migration_guides__index.html">Migration Guides</a> showing how our properties and capabilities map to others'. </p>

@@ -76,17 +76,43 @@ $(document).ready(function(){initNavTree('_features__client_side_evidence.html',
 <li>Request metadata such as source IP address</li>
 </ul>
 <p>Any device making a request to a web site will include some of this information. For example, the User-Agent HTTP header is almost always populated as part of a request. In some cases though, additional <a class="el" href="_concepts__data__evidence.html">evidence</a> providing more detail can be obtained from code running directly on the client device. In some cases, this may even be required. For example, this technique can be used to retrieve the latitude and longitude from devices that have this capability.</p>
+<h1 class="g-docs__section-heading">Client-side Data</h1>
+<p>When using the client-side evidence integration, the first step is for the <a class="el" href="_concepts__pipeline.html">Pipeline</a> to produce a JSON representation of all the properties that have been populated by <a class="el" href="_concepts__flow_elements__flow_element.html">flow elements</a>.</p>
+<p>This JSON data is sent to the client along with some JavaScript that is used to handle updating that JSON payload with new property values determined from client-side evidence as well as provide easy access to the property values in client-side JavaScript code.</p>
 <h1 class="g-docs__section-heading">JavaScript Properties</h1>
 <p><a class="el" href="_concepts__meta_data__element_properties.html">Element properties</a> include a 'Type' property that indicates the type of the data represented by the property's values.</p>
-<p>JavaScript properties are simply properties that have their Type set to 'JavaScript'. The value of such a property should be a snippet of JavaScript code that, when run on the client device, will determine something about the device and then set a cookie to record the value.</p>
-<p>When the device requests the next page from the web server, these cookies will be included in the request and added to the <a class="el" href="_concepts__data__evidence.html">evidence</a> passed to the <a class="el" href="_concepts__pipeline.html">Pipeline</a>.</p>
-<p>The example below shows the process flow between client and server.</p>
+<p>JavaScript properties are simply properties that have their Type set to 'JavaScript'. The value of such a property should be a snippet of JavaScript code that, when run on the client device, will obtain some extra values from the device.</p>
+<h1 class="g-docs__section-heading">How it Works</h1>
+<p>The JSON data management JavaScript will check for any properties of type 'JavaScript' and execute them on the client. There are then two possible mechanisms to get these extra values back to the server in order for them to be included in the evidence used by the <a class="el" href="_concepts__pipeline.html">Pipeline</a>.</p>
+<ol type="1">
+<li>A background callback to the server yields updated JSON data that is integrated into the existing JSON payload.</li>
+<li>The JavaScript property sets a cookie that is then sent to the server on the next request.</li>
+</ol>
+<h2>Background Callback</h2>
+<p>A request is made to the server in the background that includes the extra values as form parameters. The server sends this through the pipeline and the result is packaged as JSON and sent in the response to the client, which will update it's JSON payload data, making the new values available to all client-side code.</p>
+<p>This example shows the process flow between client and server.</p>
+<p><div class="dotgraph">
+<iframe scrolling="no" frameborder="0" src="dot_client-side-evidence-callback.svg" width="660" height="367"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</p>
+<h2>Cookies on Next Request</h2>
+<p>When executed, the JavaScript property sets a cookie that is then sent to the server on the next request. The <a class="el" href="_concepts__pipeline.html">Pipeline</a> will automatically use these cookies as <a class="el" href="_concepts__data__evidence.html">evidence</a> so that the results it returns take account of the new information.</p>
+<p>This example shows the process flow between client and server.</p>
 <p><div class="dotgraph">
 <iframe scrolling="no" frameborder="0" src="dot_client-side-evidence.svg" width="544" height="318"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
 <h1 class="g-docs__section-heading">Web Integration</h1>
-<p>The only part of the <b>client-side evidence</b> feature that the <a class="el" href="_concepts__pipeline.html">Pipeline</a> does not handle automatically is how the values of any JavaScript properties actually end up embedded in the payload sent to the client device.</p>
-<p>This can be managed manually. However, there are many <a class="el" href="_features__web_integration.html">web integration</a> solutions, covering a wide variety of languages and web frameworks, that will handle it automatically. </p>
+<p>The <b>client-side evidence</b> feature requires multiple <a class="el" href="_concepts__pipeline.html">Pipeline</a> components to operate together. There are <a class="el" href="_features__web_integration.html">web integration</a> solutions for various web frameworks that handle most of the complexity for you.</p>
+<p>These solutions are generally enabled by default but do require some additional configuration in order to function. The implementations vary significantly based on the language and framework, but the core steps will involve the following:</p>
+<ul>
+<li>Make a change to request the initial JavaScript with JSON payload. For example, by adding a JavaScript include.</li>
+<li>If using the <b>background callback</b> mechanism:<ul>
+<li>Create an endpoint that can pass requests to the <a class="el" href="_concepts__pipeline.html">Pipeline</a> and serve the required JSON response.</li>
+<li>Configure the JavaScriptBuilderElement with the URL for your endpoint.</li>
+<li>Add some JavaScript code to update the page content when new JSON data is received.</li>
+</ul>
+</li>
+</ul>
+<p>For more detailed, language-specific steps, see the <a class="el" href="_examples__web_integration.html">web integration examples</a> or the engine-specific examples such as the <a class="el" href="_examples__device_detection__web_integration__examples.html">device detection examples</a> </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->

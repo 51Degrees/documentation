@@ -76,27 +76,24 @@ $(document).ready(function(){initNavTree('_device_detection__features__false_pos
 <p>Each language implements this differently but in all cases, there will be some form of <code>HasValue</code> method or property associated with each result property. Where <code>HasValue</code> is false, accessing the property value will cause an exception to be returned or thrown (depending on the language).</p>
 <p>The detail associated with this exception will explain why the property does not have a specified value.</p>
 <h1 class="g-docs__section-heading">No Match Found</h1>
-<p>Both <a class="el" href="_device_detection__pattern.html">Pattern</a> and <a class="el" href="_device_detection__hash.html">Hash</a> algorithms can theoretically fail to find any match at all for the supplied evidence. (In practice, this is far more likely to occur with <a class="el" href="_device_detection__hash.html">Hash</a> than <a class="el" href="_device_detection__pattern.html">Pattern</a> due to the flexibility of <a class="el" href="_device_detection__pattern.html">Pattern</a> in finding matches that are not the same but similar in some way)</p>
+<p>In some cases, the device detection algorithm can fail to find any match at all for the supplied evidence.</p>
 <p>The <code>AllowUnmatched</code> setting can be used to control what happens in this situation.</p>
-<p>If <code>AllowUnmatched</code> is false (default) then no result will be returned and <code>HasValue</code> will be false.</p>
+<p>If <code>AllowUnmatched</code> is false (default) then no result will be returned and <code>HasValue</code> will be false for the requested properties.</p>
 <p>If <code>AllowUnmatched</code> is true then the default <a class="el" href="_concepts__flow_elements__fifty_one_on_premise_engine.html#Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles">profile</a> will be returned.</p>
 <p>The default <a class="el" href="_concepts__flow_elements__fifty_one_on_premise_engine.html#Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles">profile</a> has specific values for properties but they may be incorrect. For example, the default hardware profile has <code>IsMobile = false</code>. In reality, if no match was found then we have no idea if the device is a mobile device or not.</p>
 <h1 class="g-docs__section-heading">Bad Match</h1>
-<p>The <a class="el" href="_device_detection__pattern.html">Pattern</a> and <a class="el" href="_device_detection__hash.html">Hash</a> algorithms have slightly different methods for controlling and measuring how different a potential match is from the supplied evidence.</p>
-<p>In both cases, The <code>Difference</code> value is used to measure how different a potential match is from the supplied evidence.</p>
-<p>For example, if a substring within the User-Agent is present as expected but the ASCII value on a character is 1 higher than expected then the difference will be 1 (for <a class="el" href="_device_detection__pattern.html">Pattern</a>. The calculation of difference for <a class="el" href="_device_detection__hash.html">Hash</a> is more complex).</p>
-<p>For <a class="el" href="_device_detection__pattern.html">Pattern</a>, the difference can also be affected by shifting the position of the expected sub-string within the User-Agent. <a class="el" href="_device_detection__hash.html">Hash</a> uses a separate value for this called <code>Drift</code>.</p>
-<p>The maximum <code>Difference</code> (and <code>Drift</code> for <a class="el" href="_device_detection__hash.html">Hash</a>) value can be set when the engine is created. This is used to control how far a potential match is allowed to deviate from the supplied evidence.</p>
-<p>For example, if the maximum <code>Difference</code> value is set to 10 (default) then a match will only be returned if the difference value is 10 or less.</p>
-<p>If the maximum <code>Difference</code> or <code>Drift</code> setting prevents any result from being returned then <code>HasValue</code> will be false.</p>
-<p>By default, <code>Difference</code> is set to 10 for <a class="el" href="_device_detection__pattern.html">Pattern</a> and both <code>Difference</code> and <code>Drift</code> are set to 0 for <a class="el" href="_device_detection__hash.html">Hash</a>. (I.e. no deviation from the expected sub strings is permitted). Setting them to -1 will mean that there is no limit. (although this does not guarantee a match will always be found)</p>
+<p>The <code>Difference</code> value is used to measure how different a potential match is from the supplied evidence. The <code>Drift</code> value is used to measure how far a matching sub-string is from it's expected position.</p>
+<p>The maximum allowable <code>Difference</code> and <code>Drift</code> values can be set when the engine is created. This is used to control how far the supplied evidence is allowed to differ from the real-world training data that was used to create the data file.</p>
+<p>For example, if the maximum <code>Difference</code> value is set to 0 (default) then a match will only be returned if the difference value is 0.</p>
+<p>If the maximum <code>Difference</code> or <code>Drift</code> setting prevents any result from being returned then <code>HasValue</code> will be false for the requested properties.</p>
+<p>By default, <code>Difference</code> and <code>Drift</code> are set to 0. (I.e. no deviation from the expected sub strings is permitted). Setting them to -1 will mean that there is no limit. However, note that this often results in highly inaccurate results and does not guarantee a match will always be found.</p>
 <h1 class="g-docs__section-heading">Match Meta-Data</h1>
 <p>Regardless of the settings used, the result will return additional meta-data that can be queried to find out details about the match.</p>
 <p><code>Difference</code> - Contains the difference value between the supplied evidence and the returned match.</p>
 <p><code>UserAgents</code> - Contains a list of the matching substrings from the User-Agent.</p>
-<p><code>Drift</code> - (<a class="el" href="_device_detection__hash.html">Hash</a> only) - Contains the drift value between the supplied evidence and the returned match.</p>
-<p><code>MatchedNodes</code> - (<a class="el" href="_device_detection__hash.html">Hash</a> only) - The number of 'nodes' in the <a class="el" href="_device_detection__hash.html">hash</a> tree where a match was found. If this is zero then no match was found.</p>
-<p><code>Method</code> - (<a class="el" href="_device_detection__pattern.html">Pattern</a> only) - The method used to find a match. 'EXACT' indicates an exact match. 'NONE' indicates no match. Any other value is the name of the technique used to find the result that best matches the supplied evidence.</p>
+<p><code>Drift</code> - Contains the drift value between the supplied evidence and the returned match.</p>
+<p><code>MatchedNodes</code> - The number of 'nodes' in the <a class="el" href="_device_detection__hash.html">hash</a> tree where a match was found. If this is zero then no match was found.</p>
+<p><code>Method</code> - The method used to find a match. 'EXACT' indicates an exact match. 'NONE' indicates no match. Any other value is the name of the technique used to find the result that best matches the supplied evidence.</p>
 <h1 class="g-docs__section-heading">The 'Unknown' Value</h1>
 <p>Previous versions of the device detection API were unable to indicate that a property did not have a value.</p>
 <p>Therefore, in the past, the string values <code>Unknown</code> or <code>N/A</code> were used to indicate that the API did not have a value for a particular property.</p>
@@ -104,15 +101,15 @@ $(document).ready(function(){initNavTree('_device_detection__features__false_pos
 <p>In the future, this may be changed so that <code>HasValue</code> will return false if <code>Value</code> is <code>Unknown</code>, <code>N/A</code> or similar but this is not currently planned.</p>
 <h1 class="g-docs__section-heading">Use-Cases</h1>
 <blockquote class="doxtable">
-<p>I only want a result if the API is reasonably sure it is correct. (Default configuration for <a class="el" href="_device_detection__pattern.html">Pattern</a>) </p>
+<p>I only want a result if the API is reasonably sure it is correct. </p>
 </blockquote>
 <p>Set <code>AllowUnmatched</code> to false.</p>
-<p>Set <code>Difference</code> (and <code>Drift</code> if using Hash) to 10.</p>
+<p>Set <code>Difference</code> and <code>Drift</code> to 10.</p>
 <blockquote class="doxtable">
-<p>I only want exact matches to previously observed User-Agents. (Default configuration for <a class="el" href="_device_detection__hash.html">Hash</a>) </p>
+<p>I only want exact matches to previously observed User-Agents. (Default configuration) </p>
 </blockquote>
 <p>Set <code>AllowUnmatched</code> to false.</p>
-<p>Set <code>Difference</code> (and <code>Drift</code> if using <a class="el" href="_device_detection__hash.html">Hash</a>) to 0.</p>
+<p>Set <code>Difference</code> and <code>Drift</code> to 0.</p>
 <p>These settings will mean that a result is only returned if it exactly matches a unique sub-string from a User-Agent that has been included when building the data file.</p>
 <blockquote class="doxtable">
 <p>If there is no match found then I want the API to assume that the device is a desktop running an unknown operating system. </p>
