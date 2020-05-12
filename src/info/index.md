@@ -2,4 +2,6 @@
 
 @subpage Info_FeatureMatrix
 
+@subpage Info_VersionSupport
+
 @subpage Info_FAQs
