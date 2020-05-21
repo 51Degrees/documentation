@@ -5,7 +5,7 @@ All APIs are written with a minimum supported language version. Any version abov
 If something is not supported here, and you believe it should be, [contact us](mailto:support@51degrees.com).
 
 |Language / Framework|Minimum Supported Version|Platforms Tested|Versions Tested|
-|---|---|---|
+|---|---|---|---|
 |C/C++  |C11         |Windows 10<BR>Mac OS 10.14<BR>Ubuntu 16.04         |VS2017<BR>Clang 11<BR>GCC 5.4|
 |.NET   |Standard 2.0|Windows Server 2019                                |.NET Core 3.1<BR>.NET Framework 4.6.2|
 |Java   |JDK8        |Windows Server 2019<BR>Mac OS 10.14<BR>Ubuntu 16.04|OpenJDK 8| 

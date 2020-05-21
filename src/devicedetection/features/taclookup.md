@@ -15,7 +15,7 @@ other data query mechanism.
 
 # Cloud service
 
-Requests to the cloud service can include a 'tac' query parameter. As long as the @termResourceKey 
+Requests to the cloud service can include a 'tac' query parameter. As long as the [resource key](@term{ResourceKey}) 
 includes one or more 'hardware device' properties, the cloud service will return a result set with 
 the details of any devices that match the supplied TAC.
 
@@ -24,7 +24,7 @@ For language specific details, see the [example](@ref Examples_DeviceDetection_T
 # Local lookup
 
 Currently, the recommended solution for a local lookup is to use the TAC CSV file.
-This is a data file that is available from the 51Degrees @termDistributor service (assuming you 
+This is a data file that is available from the 51Degrees [distributor](@term{Distributor}) service (assuming you 
 have a valid license key that includes access to this product). 
 
 This data file includes all values for all properties and can be used to populate a database or 

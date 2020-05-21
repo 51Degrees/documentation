@@ -75,9 +75,9 @@ is configured to execute @elements in @parallel.
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a language.}
 @startsnippet{dotnet}
-In .NET, by default, the non-thread-safe Dictionary class is used for both @elementdata and @evidence.
+In .NET, by default, the non-thread-safe `Dictionary` class is used for both @elementdata and @evidence.
 
-In both cases, this can be overridden to use another IDictionary implementation such as the thread-safe ConcurrentDictionary.
+In both cases, this can be overridden to use another `IDictionary` implementation such as the thread-safe `ConcurrentDictionary`.
 
 The errors collection uses the List class. This is not thread-safe. As performance is less of an issue with this collection, a simple lock is used to synchronize items being added to the list.
 @endsnippet
