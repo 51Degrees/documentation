@@ -353,6 +353,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "resultcaching=[result caching](@ref Features_ResultCaching)" \
                          "reversegeocoding=[reverse geocoding](@ref ReverseGeocoding_Overview)" \
                          "Reversegeocoding=[Reverse geocoding](@ref ReverseGeocoding_Overview)" \
+                         "ReverseGeocoding=[Reverse Geocoding](@ref ReverseGeocoding_Overview)" \
                          "shareusage=[share usage](@ref Features_UsageSharing)" \
                          "startsnippets=@htmlonly <div class=\"c-tabgroup\"> @endhtmlonly" \
                          "startsnippet{2}=@htmlonly <div class=\"c-tabgroup__main\" data-lang=\"\1\" style=\"display:\2;\"> @endhtmlonly" \

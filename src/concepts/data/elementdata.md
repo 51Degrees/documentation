@@ -18,13 +18,13 @@ However, **element data** must always expose its contents as a collection of [ke
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific information on the internal data structure.}
 @startsnippet{dotnet}
-By default, the Dictionary class is used with a case-insensitive key comparer.
+By default, the `Dictionary` class is used with a case-insensitive key comparer.
 This can be overridden in the constructor to use any other IDictionary implementation 
 or an alternative key comparer.
 @endsnippet
 @startsnippet{java}
-By default, the TreeMap class is used with a case-insensitive key comparator. This can be
-overridden in the constructor to use any other Map<String,Object> implementation or an alternative
+By default, the `TreeMap` class is used with a case-insensitive key comparator. This can be
+overridden in the constructor to use any other `Map<String,Object>` implementation or an alternative
 key comparator.
 @endsnippet
 @startsnippet{php}
@@ -68,15 +68,15 @@ data structure.
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific information on thread safety.}
 @startsnippet{dotnet}
-By default, the Dictionary class is used. As such, accessing **element data**'s stored values
+By default, the `Dictionary` class is used. As such, accessing **element data**'s stored values
 will not be thread-safe.
-However, this can be overridden to use another IDictionary implementation such as the ConcurrentDictionary. 
+However, this can be overridden to use another `IDictionary` implementation such as the `ConcurrentDictionary`. 
 In this case, the accessing of the stored values will be thread-safe.
 @endsnippet
 @startsnippet{java}
-By default, the TreeMap class is used. As such, accessing **element data**'s stored values
+By default, the `TreeMap` class is used. As such, accessing **element data**'s stored values
 will not be thread-safe.
-However, this can be overridden to use another Map<String,Object> implementation such as the ConcurrentHashMap. 
+However, this can be overridden to use another `Map<String,Object>` implementation such as the `ConcurrentHashMap`. 
 In this case, the accessing of the stored values will be thread-safe.
 @endsnippet
 @startsnippet{php}
