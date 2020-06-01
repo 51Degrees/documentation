@@ -7,6 +7,7 @@ var NAVTREEINDEX0 =
 "../../device-detection-php/4.1/index.html":[10,8],
 "../../location-dotnet/4.1/index.html":[10,6],
 "../../location-java/4.1/index.html":[10,3],
+"../../location-node/4.1/index.html":[10,11],
 "../../pipeline-dotnet/4.1/index.html":[10,4],
 "../../pipeline-java/4.1/index.html":[10,1],
 "../../pipeline-node/4.1/index.html":[10,9],

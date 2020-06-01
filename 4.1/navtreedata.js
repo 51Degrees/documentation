@@ -44,7 +44,8 @@ var NAVTREE =
       [ "PHP Pipeline", "../../pipeline-php/4.1/index.html", null ],
       [ "PHP Device Detection", "../../device-detection-php/4.1/index.html", null ],
       [ "Node.js Pipeline", "../../pipeline-node/4.1/index.html", null ],
-      [ "Node.js Device Detection", "../../device-detection-node/4.1/index.html", null ]
+      [ "Node.js Device Detection", "../../device-detection-node/4.1/index.html", null ],
+      [ "Node.js Location", "../../location-node/4.1/index.html", null ]
     ] ]
 ];
 
