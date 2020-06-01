@@ -9,6 +9,6 @@ This example shows how to get set up a reverse geocoding @aspectengine using the
 @grabexample{location-dotnet,_cloud_2_getting_started_2_program_8cs,C#}
 @grabexample{location-java,cloud_2_getting_started_8java,Java}
 @grabexample{location-php,cloud_2gettingstarted_8php,PHP}
-@grabexample{location-node,cloud_2getting_started_8js,Node.js}
+@grabexample{location-node,getting_started_8js,Node.js}
 @grabbedexample
 @endsnippets
