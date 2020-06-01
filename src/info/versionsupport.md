@@ -4,9 +4,9 @@ All APIs are written with a minimum supported language version. Any version abov
 
 If something is not supported here, and you believe it should be, [contact us](mailto:support@51degrees.com).
 
-|Language / Framework|Minimum Supported Version|Platforms Tested|Versions Tested|
-|---|---|---|---|
-|C/C++  |C11         |Windows 10<BR>Mac OS 10.14<BR>Ubuntu 16.04         |VS2017<BR>Clang 11<BR>GCC 5.4|
-|.NET   |Standard 2.0|Windows Server 2019                                |.NET Core 3.1<BR>.NET Framework 4.6.2|
-|Java   |JDK8        |Windows Server 2019<BR>Mac OS 10.14<BR>Ubuntu 16.04|OpenJDK 8| 
-|Node.js|6           |Ubuntu 18.04                                       |6<BR>8<BR>10<BR>12|
+|Language / Framework|Minimum Supported Version|Tested Configurations (if it is not routinely tested, that does not mean it's not supported)|
+|---|---|---|
+|C/C++  |C11 and above                |Windows 10 - VS2017<BR>Mac OS 10.14 - Clang 11<BR>Ubuntu 16.04 - GCC 5.4|
+|.NET   |Standard 2.0 and above       |Windows Server 2019 - .NET Core 3.1 and .NET Framework 4.6.2|
+|Java   |JDK8 and above               |Windows Server 2019 - OpenJDK 8<BR>Mac OS 10.14 - OpenJDK 8<BR>Ubuntu 16.04 - OpenJDK 8| 
+|Node.js|6 and all LTS versions above |Ubuntu 18.04 - Node.js LTS versions (6, 8, 10 and 12)|
