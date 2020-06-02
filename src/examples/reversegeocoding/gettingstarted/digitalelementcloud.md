@@ -11,7 +11,7 @@ Note that you can also call GeoMPrint via the
 This can save on requests and bandwidth if you use other 51Degrees cloud products.
 
 @startsnippets
-@grabexample{location-dotnet,_digital_element_2_getting_started_2_program_8cs,C#}
-@grabexample{location-java,digitalelement_2_getting_started_8java,Java}
+@grabexample{location-onpremise-dotnet,_digital_element_2_getting_started_2_program_8cs,C#}
+@grabexample{location-onpremise-java,digitalelement_2_getting_started_8java,Java}
 @grabbedexample
 @endsnippets
