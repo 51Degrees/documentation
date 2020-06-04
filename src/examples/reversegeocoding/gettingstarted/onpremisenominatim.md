@@ -7,7 +7,7 @@ installation of the [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) A
 process coordinates.
 
 @startsnippets
-@grabexample{location-dotnet,_nominatim_2_getting_started_2_program_8cs,C#}
-@grabexample{location-java,nominatim_2_getting_started_8java,Java}
+@grabexample{location-onpremise-dotnet,_nominatim_2_getting_started_2_program_8cs,C#}
+@grabexample{location-onpremise-java,nominatim_2_getting_started_8java,Java}
 @grabbedexample
 @endsnippets
