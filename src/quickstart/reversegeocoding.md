@@ -14,7 +14,7 @@
   * [Digital Element Cloud Example](@ref Examples_ReverseGeocoding_GettingStarted_DigitalElementCloud) - Using a direct request to Digital Element's [GeoMPrint](https://www.digitalelement.com/solutions/geomprint/) service.
 @endsnippet
 @startsnippet{java}
-1. Install the [com.51degrees.pipeline.geolocation](https://search.maven.org/artifact/com.51degrees/pipeline.geolocation) package via Maven.
+1. Install the [com.51degrees.pipeline.geo-location](https://search.maven.org/artifact/com.51degrees/pipeline.geo-location) package via Maven.
 2. Follow the appropriate example from the options below:  
   * [51Degrees Cloud Example](@ref Examples_ReverseGeocoding_GettingStarted_51DegreesCloud) - Backed by either a 51Degrees-hosted [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) API instance or Digital Element's [GeoMPrint](https://www.digitalelement.com/solutions/geomprint/) service depending on your configuration.
   * [Local Nominatim Example](@ref Examples_ReverseGeocoding_GettingStarted_OnPremiseNominatim) - Using a [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) instance that you host internally.
