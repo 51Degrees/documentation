@@ -16,7 +16,7 @@ To get started with C device detection on-premise:
 1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-cxx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly so Git LFS is used.
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-5. Follow the [installation instructions](../../device-detection-cxx/4.1/md__r_e_a_d_m_e.html) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
+5. Follow the [installation instructions](../../device-detection-cxx/4.1/md__home_vsts_work_1_s_apis_device-detection-cxx__r_e_a_d_m_e.html) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
 6. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash).
 7. (optional) Contact us to purchase a license key and [download](https://51degrees.com/resources/downloads/enhanced-device-data) a premium data file with access to more devices and properties.
 
@@ -29,7 +29,7 @@ To get started with C++ device detection on-premise:
 1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-cxx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly so Git LFS is used.
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-5. Follow the [installation instructions](../../device-detection-cxx/4.1/md__r_e_a_d_m_e.html) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
+5. Follow the [installation instructions](../../device-detection-cxx/4.1/md__home_vsts_work_1_s_apis_device-detection-cxx__r_e_a_d_m_e.html) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
 6. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash).
 7. (optional) Contact us to purchase a license key and [download](https://51degrees.com/resources/downloads/enhanced-device-data) a premium data file with access to more devices and properties.
 
