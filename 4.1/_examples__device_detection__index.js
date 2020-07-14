@@ -1,5 +1,6 @@
 var _examples__device_detection__index =
 [
+    [ "Automatic Updates", null, "_examples__device_detection__automatic_updates__index" ],
     [ "Configure From File", null, "_examples__device_detection__configure_from_file__index" ],
     [ "Getting Started", null, "_examples__device_detection__getting_started__index" ],
     [ "Match Metrics", null, "_examples__device_detection__match_metrics__index" ],
