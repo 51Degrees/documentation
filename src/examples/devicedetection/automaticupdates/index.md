@@ -1,0 +1,7 @@
+@page Examples_DeviceDetection_AutomaticUpdates_Index Automatic Updates
+
+@subpage Examples_DeviceDetection_AutomaticUpdates_FileSystemWatcher_Index
+
+@subpage Examples_DeviceDetection_AutomaticUpdates_PollingInterval_Index
+
+@subpage Examples_DeviceDetection_AutomaticUpdates_UpdateOnStartup_Index

@@ -1,0 +1,11 @@
+@htmlonly
+<p>
+This example shows how to change the performance profile when creating 
+a 51Degrees device detection engine.
+It also includes a simple method of benchmarking the engine that
+can illustrate the performance differences.
+Note that benchmarking is a complex area and this is not a sophisticated 
+solution. It is simply intended to demonstrate the approximate, relative 
+performance of the pre-configured profiles. 
+</p>
+@endhtmlonly

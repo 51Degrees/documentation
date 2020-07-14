@@ -1,0 +1,5 @@
+@htmlonly
+<p>
+This example shows how to use the 51Degrees Cloud service to determine whether a given User-Agent corresponds to a mobile device or not.
+</p>
+@endhtmlonly

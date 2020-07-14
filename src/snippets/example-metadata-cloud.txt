@@ -1,0 +1,10 @@
+@htmlonly
+<p>
+This example shows how to retrieve property meta data from the 51Degrees 
+cloud service. 
+This feature can be used to get information such as the category that 
+a property belongs to or the possible values a property can have. 
+(At the time of the request. If the data file being used by the cloud 
+service is updated, the possible values for a property can change)
+</p>
+@endhtmlonly

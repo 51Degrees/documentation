@@ -1,5 +1,7 @@
 @page Examples_DeviceDetection_Index Device Detection Examples
 
+@subpage Examples_DeviceDetection_AutomaticUpdates_Index
+
 @subpage Examples_DeviceDetection_CachingConfiguration_Index
 
 @subpage Examples_DeviceDetection_ConfigureFromFile_Index

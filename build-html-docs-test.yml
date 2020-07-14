@@ -45,16 +45,43 @@ steps:
   displayName: 'Generate HTML documentation'
   inputs:
     targetType: 'inline'
-    script: './doxygen'
+    script: |
+      cd docs
+      '$(build.sourcesdirectory)'/doxygen
+      cd $(build.sourcesdirectory)
+
+- task: Bash@3
+  displayName: 'Generate HTML documentation for APIs'
+  inputs:
+    targetType: 'inline'
+    script: |
+      for api in `find ./apis -mindepth 1 -maxdepth 1 -type d`; do
+        cd ${api}/docs
+        '$(build.sourcesdirectory)'/doxygen
+        cd $(build.sourcesdirectory)
+      done
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
   condition: true
   inputs:
     SourceFolder: '$(build.sourcesdirectory)'
-    Contents: 'docs/4.1/**'
+    Contents: '4.1/**'
     TargetFolder: '$(build.artifactstagingdirectory)'
     CleanTargetFolder: true
+
+- task: Bash@3
+  displayName: 'Copy API Files'
+  inputs:
+    targetType: 'inline'
+    script: |
+      cd ./apis
+      for api in `find ./ -mindepth 1 -maxdepth 1 -type d`; do
+        readarray -d / -t strarr <<< ${api}
+        mkdir '$(build.artifactstagingdirectory)/'${strarr[1]}
+        cp -r ${api}/4.1/ '$(build.artifactstagingdirectory)'/${strarr[1]}
+      done
+
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish HTML docs'

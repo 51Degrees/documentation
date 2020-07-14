@@ -1,0 +1,8 @@
+@htmlonly
+<p>
+This example shows how to access the 'match metrics' assocaited with 
+a result from 51Degrees device detection. 
+Match metrics are various properties that indicate the level of confidence 
+that the supplied evidence corresponds to the result that has been returned.
+</p>
+@endhtmlonly

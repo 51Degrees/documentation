@@ -1,0 +1,8 @@
+@htmlonly
+<p>
+This example shows how to use the 51Degrees Cloud service to lookup 
+the details of a device based on a given 'TAC'. 
+More background information on TACs can be found through various online 
+sources such as <a href="https://en.wikipedia.org/wiki/Type_Allocation_Code">Wikipedia</a>.
+</p>
+@endhtmlonly
