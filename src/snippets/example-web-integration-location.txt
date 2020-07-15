@@ -1,0 +1,19 @@
+@htmlonly
+<p>
+This example demonstrates how to get location information from the device
+that a user is using to access a website. 
+In addition, JavaScript is used to update the page with postal address details 
+for this location.
+</p>
+<p>
+This works by using the <a href="http://www.51degrees.com/documentation/4.1/_features__client_side_evidence.html">client-side evidence</a> 
+feature of the Pipeline.
+Briefly, properties containing JavaScript snippets are populated by engines 
+in the Pipeline and these are then bundled together into a single JavaScript 
+block by the 'JsonBuilder' and 'JavaScriptBuilder' elements.
+This JavaScript is then used to obtain the additional evidence from the 
+client (in this case, latitude and longitude) and pass it back to the server. 
+The Pipeline running on the server then processes this evidence to 
+populate a new JSON result object that is returned to the client.
+</p>
+@endhtmlonly
