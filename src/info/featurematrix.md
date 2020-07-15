@@ -20,7 +20,7 @@
 
 |Language / Framework|Web frameworks / CMS plugins|
 |---|---|
-|C/C++    |Nginx*<BR>HAProxy*<BR>Varnish* |
+|C/C++    |Nginx*<BR>HAProxy*<BR>Varnish |
 |.NET     |ASP.NET Core<BR>ASP.NET | 
 |Java     |Java Servlet<BR>Java Spring MVC Interceptor| 
 |PHP      |WordPress*<BR>Drupal*|

@@ -12,5 +12,6 @@ and begin using it to process User-Agents.
 @grabexample{device-detection-java,hash_2_getting_started_8java,Java}
 @grabexample{device-detection-php,_hash_2_getting_started_8php,PHP}
 @grabexample{device-detection-node,hash_2getting_started_8js,Node.js}
+@grabexample{device-detection-varnish,example_8vcl,Varnish}
 @grabbedexample
 @endsnippets

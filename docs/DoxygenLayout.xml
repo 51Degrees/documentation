@@ -18,6 +18,7 @@
     <tab type="user" visible="yes" title="Node.js Pipeline" url="../../pipeline-node/4.1/index.html"/>
     <tab type="user" visible="yes" title="Node.js Device Detection" url="../../device-detection-node/4.1/index.html"/>
     <tab type="user" visible="yes" title="Node.js Location" url="../../location-node/4.1/index.html"/>
+    <tab type="user" visible="yes" title="Varnish Device Detection" url="../../device-detection-varnish/4.1/index.html"/>
     </tab>
 
 </navindex>

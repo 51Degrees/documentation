@@ -13,3 +13,5 @@
 @page Features_Index Features
 
 @page Benchmarks_Index Benchmarks
+
+@page OtherIntegrations_Index Other Integrations

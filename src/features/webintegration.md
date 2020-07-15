@@ -29,7 +29,7 @@ results from the @Pipeline API.
 - Node.js
 - Nginx (@devicedetection only)
 - HAProxy (@devicedetection only)
-- Varnish (@devicedetection only)
+- [Varnish](@ref OtherIntegrations_Varnish) (@devicedetection only)
 
 # Client-side Evidence
 

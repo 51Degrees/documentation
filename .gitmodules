@@ -43,3 +43,6 @@
 [submodule "apis/location-onpremise-java"]
 	path = apis/location-onpremise-java
 	url = https://51degrees.visualstudio.com/defaultcollection/pipeline/_git/location-onpremise-java
+[submodule "apis/device-detection-varnish"]
+	path = apis/device-detection-varnish
+	url = https://51degrees.visualstudio.com/DefaultCollection/Pipeline/_git/device-detection-varnish
