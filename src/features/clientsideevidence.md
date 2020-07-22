@@ -24,6 +24,25 @@ When using the client-side evidence integration, the first step is for the @Pipe
 to produce a JSON representation of all the properties that have been populated
 by @flowelements.
 
+Each property may also have some meta-data associated with it in the form of 
+another property or attribute. The naming convention of meta-data properties 
+is the related property name with a suffix. e.g. 
+
+```json
+"device": {
+	"javascript": "",
+	"javascriptdelayexecution": true
+}
+```
+
+List of suffixes:
+
+| Suffix | Description |
+| ------ | ----------- |
+| ``nullreason`` | If the result for a property is null this field will be populated with a reason as to why there is no result. |
+| ``delayexecution`` | If this value is true the related property is a JavaScript property and will not run immediately when evaluating the JavaScript Resource. |
+| ``evidenceproperties`` | A list of JavaScript properties which need to be evaluated first before this property can be populated. |
+
 This JSON data is sent to the client along with some JavaScript that is used to
 handle updating that JSON payload with new property values determined from 
 client-side evidence as well as provide easy access to the property values 
@@ -38,15 +57,21 @@ JavaScript properties are simply properties that have their Type set to 'JavaScr
 The value of such a property should be a snippet of JavaScript code that, when run on
 the client device, will obtain some extra values from the device. 
 
+@Elementproperties also include a 'DelayExecution' property which indicates if a 'JavaScript' property
+should not be executed on the client straight away and a 'EvidenceProperties' property which
+contains a list of JavaScript properties that, when executed, will obtain additional 
+@evidence that can help in determining the value of this property.
+
 # How it Works
 
 The JSON data management JavaScript will check for any properties of type 'JavaScript'
-and execute them on the client. There are then two possible mechanisms to get 
-these extra values back to the server in order for them to be included in the 
-evidence used by the @Pipeline.
+and execute them on the client or if the 'DelayExecution' property is set to true then 
+the 'JavaScript' will only be executed in response to some user action. There are then two 
+possible mechanisms to get these extra values back to the server in order for them to 
+be included in the evidence used by the @Pipeline.
 
-1. A background callback to the server yields updated JSON data that is integrated 
-into the existing JSON payload.
+1. A background callback to the server yields updated JSON data that replaces 
+the existing JSON payload.
 2. The JavaScript property sets a cookie that is then sent to the server on the
 next request.
 

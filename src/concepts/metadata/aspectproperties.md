@@ -10,5 +10,6 @@ is included to indicate where the **property** is available.
 # Data Tier
 
 The data tier of a **property** describes which product tiers the **property** is available in. For example,
-an @aspectengine could consume both a free and premium @datafile, and certain **properties** may not be available in both.
+an @aspectengine could consume both a free and enterprise @datafile. Please be aware that certain 
+**properties** may not be available in the free data file..
 

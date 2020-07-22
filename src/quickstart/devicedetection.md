@@ -19,7 +19,7 @@ To get started with C device detection on-premise:
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
 5. Follow the [installation instructions](../../device-detection-cxx/4.1/md__home_vsts_work_1_s_apis_device-detection-cxx__r_e_a_d_m_e.html) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
 6. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash).
-7. (optional) Contact us to purchase a license key and [download](https://51degrees.com/resources/downloads/enhanced-device-data) a premium data file with access to more devices and properties.
+7. (optional) Obtain a license key by starting a free trial and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{cxx}
@@ -32,7 +32,7 @@ To get started with C++ device detection on-premise:
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
 5. Follow the [installation instructions](../../device-detection-cxx/4.1/md__home_vsts_work_1_s_apis_device-detection-cxx__r_e_a_d_m_e.html) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
 6. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash).
-7. (optional) Contact us to purchase a license key and [download](https://51degrees.com/resources/downloads/enhanced-device-data) a premium data file with access to more devices and properties.
+7. (optional) Obtain a license key by starting a free trial and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{dotnet}
@@ -117,6 +117,6 @@ To get started with Varnish device detection on-premise:
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
 4. Follow the [installation instructions](@ref OtherIntegrations_Varnish) to get set up with the project.
 5. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash).
-6. (optional) Contact us to [purchase a license key](https://51degrees.com/pricing) and [download](https://51degrees.com/resources/downloads/enhanced-device-data) a premium data file with access to more devices and properties.
+6. (optional) Obtain a license key by starting a free trial and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet

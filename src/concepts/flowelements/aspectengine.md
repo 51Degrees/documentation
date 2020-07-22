@@ -27,8 +27,8 @@ This means that only @evidence relevant to the **engine** is used in the key for
 
 An **engine** adds handling of cases where a value is requested for a @property which is not available for some reason.
 
-Consider the case where an **engine** is set up with free data, and the user attempts to retrieve a value for a premium @property.
-An error would be returned stating that the @property was only available in a the premium [data tier](@term{DataTier}).
+Consider the case where an **engine** is set up with free data, and the user attempts to retrieve a value for an enterprise @property.
+An error would be returned stating that the @property was only available in a the enterprise [data tier](@term{DataTier}).
 
 Consider another case where an **engine** has been built with specific @properties included rather than the full set, and the user
 attempts to retrieve a value for a @property which was not included. An error would be returned stating that the **engine** was not
