@@ -8,5 +8,6 @@ var _examples__device_detection__index =
     [ "Native Key Lookup", null, "_examples__device_detection__native_key_lookup__index" ],
     [ "Offline Processing", null, "_examples__device_detection__offline_processing__index" ],
     [ "Performance", null, "_examples__device_detection__performance__index" ],
-    [ "TAC Lookup", null, "_examples__device_detection__tac_lookup__index" ]
+    [ "TAC Lookup", null, "_examples__device_detection__tac_lookup__index" ],
+    [ "Web Integration", null, "_examples__device_detection__web_integration__index" ]
 ];

@@ -33,7 +33,6 @@ var NAVTREE =
     [ "Features", null, "_features__index" ],
     [ "Benchmarks", null, "_benchmarks__index" ],
     [ "Other Integrations", null, "_other_integrations__index" ],
-    [ "Web Integration", null, "_examples__device_detection__web_integration__index" ],
     [ "Language Specific", "usergroup0.html", [
       [ "C/C++", "../../device-detection-cxx/4.1/index.html", null ],
       [ "Java Pipeline", "../../pipeline-java/4.1/index.html", null ],
@@ -48,7 +47,8 @@ var NAVTREE =
       [ "Node.js Device Detection", "../../device-detection-node/4.1/index.html", null ],
       [ "Node.js Location", "../../location-node/4.1/index.html", null ],
       [ "Varnish Device Detection", "../../device-detection-varnish/4.1/index.html", null ]
-    ] ]
+    ] ],
+    [ "Cloud API Documentation", "^https://cloud.51degrees.com/api-docs/index.html", null ]
 ];
 
 var NAVTREEHIDEROOT = true;
