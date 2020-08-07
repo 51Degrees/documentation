@@ -41,8 +41,8 @@ For a deeper understanding of the Pipeline concept, start with the @Pipeline pag
 
 * @DeviceDetection - Detailed insight into the devices being used to access your content.
 * @ReverseGeocoding - Obtain accurate real-world data such as postal address from the users' location as reported by their smart phone or similar device.
-* @Antifraud - Identify and exclude fraudulent requests. (Coming soon)
-* @IpIntelligence - Determine key information from the network path taken by the request such as mobile carrier. (Coming soon)
+* Antifraud - Identify and exclude fraudulent requests. (Coming soon)
+* IpIntelligence - Determine key information from the network path taken by the request such as mobile carrier or location. (Coming soon)
 
 ## Technical Detail
 

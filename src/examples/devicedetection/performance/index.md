@@ -1,5 +1,3 @@
 @page Examples_DeviceDetection_Performance_Index Performance
 
-@subpage Examples_DeviceDetection_Performance_Cloud
-
 @subpage Examples_DeviceDetection_Performance_OnPremiseHash

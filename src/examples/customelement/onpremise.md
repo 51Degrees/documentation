@@ -12,10 +12,9 @@ did, this example will store it in a @datafile which will be loaded and can also
 # Download Example
 
 The source code used in this example is available here:
-- [C# Visual Studio project](https://github.com/51degrees/pipeline-dotnet)
-- [Java project](https://github.com/51degrees/pipeline-java)
-- PHP project <!-- TODO: add link -->
-- Node.js project <!-- TODO: add link -->
+- [C# Visual Studio project](https://github.com/51Degrees/pipeline-dotnet/tree/master/Examples/CustomFlowElement/2.%20On%20Premise%20Engine)
+- [Java project](https://github.com/51Degrees/pipeline-java/tree/master/examples/pipeline.developer-examples.onpremise-engine)
+- [Node.js project](https://github.com/51Degrees/pipeline-node/blob/master/fiftyone.pipeline.engines/examples/onPremiseFlowElement.js)
 
 # Dependencies
 
@@ -25,7 +24,6 @@ it is implementing an @aspectengine rather than a @flowelement.
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific dependencies.}
 @startsnippet{dotnet}
@@ -42,9 +40,6 @@ To include this, add the following to the `<dependencies>` section of the projec
 </dependency>
 ```
 @endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
 @startsnippet{node}
 Add a dependency to the `fiftyone.pipeline.engines` NPM package to the package.json, and required it
 in the source with `require("fiftyone.pipeline.engines")`.
@@ -59,7 +54,6 @@ The @elementdata implemented in the previous example can now be upgraded to impl
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific @aspectdata implementation.}
 @startsnippet{dotnet}
@@ -88,9 +82,6 @@ same way as the [previous example](@ref Examples_CustomElement_FlowElement).
 Note that this concrete implementation of `StarSignData` sits in the same package as the @aspectengine,
 not the `StarSignData` interface, as it only needs to be accessible by the @aspectengine.
 @endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
 @startsnippet{node}
 Node's implementation of @elementdata does not require concrete getters for IDE autocompletion, so `aspectDataDictionary` can be used.
 @endsnippet
@@ -106,7 +97,6 @@ Now the actual @aspectengine needs to be implemented. For this, the class from t
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific @aspectengine implementation.}
 @startsnippet{dotnet}
@@ -192,9 +182,6 @@ Now the abstract methods can be implemented to create a functional @aspectengine
 @snippet developerexamples/onpremiseengine/flowelements/SimpleOnPremiseEngine.java class
 
 @endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
 @startsnippet{node}
 
 First let's change the class to extend `engine`.
@@ -248,7 +235,6 @@ the previous example. However, it also now needs a data file.
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific @elementbuilder implementation.}
 @startsnippet{dotnet}
@@ -265,9 +251,6 @@ As this @aspectengine is using a @datafile, the builder can make use of the logi
 @snippet developerexamples/onpremiseengine/flowelements/SimpleOnPremiseEngineBuilder.java class
 
 @endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
 @startsnippet{node}
 The Node implementation does not use separate builder classes. Instead the options are provided by optional constructor parameters.
 @endsnippet
@@ -279,7 +262,6 @@ The Node implementation does not use separate builder classes. Instead the optio
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific usage.}
 @startsnippet{dotnet}
@@ -300,11 +282,8 @@ This new @aspectengine can now be added to a @pipeline and used like:
 
 to give an output of:
 ```{bash}
-With a date of birth of 18/12/1992, your tar sign is Sagittarius.
+With a date of birth of 18/12/1992, your star sign is Sagittarius.
 ```
-@endsnippet
-@startsnippet{php}
-**todo**
 @endsnippet
 @startsnippet{node}
 This new @aspectengine can now be added to a @pipeline and used like:

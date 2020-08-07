@@ -11,7 +11,17 @@ In addition, it contains information of how to document the API consistently:
 
 Documentation is written and maintained in [Markdown](https://en.wikipedia.org/wiki/Markdown) format. A customized build of [Doxygen](http://www.doxygen.nl/) is then used to generate HTML pages from the Markdown source files. Finally, some custom CSS is used to apply 51Degrees branding and styling.
 
-# Directory Structure
+# Structure
+
+## Documentation structure
+
+The final generated documentation can be broken down into three major groups:
+
+ - The 'written' pages contain entirely hand-written content. They live in this repository.
+ - The 'generated' pages contain reference documentation that has been generated automatically from the source code and associated comments. These are built from the sub modules referenced in this repository by the continuous build pipeline when master is updated.
+ - Example pages contain a combination of hand-written and generated content. The content for the page file itself is maintained in this repository. However, the example code for each language is pulled in from the generated pages. In order to know the name of the example code file, you will need to generate the HTML documentation from the relevant sub-module.
+
+## Repository Directory Structure
 
 | Source  | Description |
 | ------- | ----------- |
@@ -21,6 +31,7 @@ Documentation is written and maintained in [Markdown](https://en.wikipedia.org/w
 | `DoxygenLayout.xml` | Defines how the navigation is layed out in the generated documentation. |
 | `examplegrabber.js` | Included in the generated documentation to pull in language specific examples. |
 | `pattern-library` | PatternLab submodule which generates the custom CSS used in the generated documentation. |
+
 
 # Building HTML Documents
 

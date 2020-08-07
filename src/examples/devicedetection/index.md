@@ -2,13 +2,9 @@
 
 @subpage Examples_DeviceDetection_AutomaticUpdates_Index
 
-@subpage Examples_DeviceDetection_CachingConfiguration_Index
-
 @subpage Examples_DeviceDetection_ConfigureFromFile_Index
 
 @subpage Examples_DeviceDetection_GettingStarted_Index
-
-@subpage Examples_DeviceDetection_MatchForDeviceId_Index
 
 @subpage Examples_DeviceDetection_MatchMetrics_Index
 
@@ -21,3 +17,5 @@
 @subpage Examples_DeviceDetection_Performance_Index
 
 @subpage Examples_DeviceDetection_TacLookup_Index
+
+@subpage Examples_DeviceDetection_WebIntegration_Index

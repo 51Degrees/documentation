@@ -110,12 +110,16 @@ on the language and framework, but the core steps will involve the following:
 For example, by adding a JavaScript include.
 - If using the **background callback** mechanism:
   - Create an endpoint that can pass requests to the @Pipeline and serve the 
-  required JSON response.
-  - Configure the JavaScriptBuilderElement with the URL for your endpoint.
+  required JSON response. *
+  - Configure the JavaScriptBuilderElement with the URL for your endpoint. *
   - Add some JavaScript code to update the page content when new JSON data is
   received.
+
+\* These tasks are handled automatically by the ASP.NET Core, Java MVC 
+and Java Servlet integrations
 
 For more detailed, language-specific steps, see the 
 [web integration examples](@ref Examples_WebIntegration) or the engine-specific 
 examples such as the 
 [device detection examples](@ref Examples_DeviceDetection_WebIntegration_Examples)
+or [reverse geocoding examples](@ref Examples_ReverseGeocoding_WebIntegration_Examples)
