@@ -10,7 +10,7 @@
 |PHP      |@tick|@tick** | Cloud only |
 |Node.js  |@tick|@tick | Cloud only |
 |JavaScript|      |Cloud only | Cloud only |
-|Python*  |@tick|@tick| Cloud only |
+|Python  |@tick| Cloud only | Cloud only |
 |Go*      |@tick|@tick| Cloud only |
 
 *Coming soon.
@@ -26,7 +26,7 @@
 |PHP      |WordPress*<BR>Drupal*|
 |Node.js  | N/A |
 |JavaScript| N/A |
-|Python*  |Flask*|
+|Python  |Flask|
 
 *Coming soon
 
@@ -38,5 +38,6 @@
 |Java     |@tick|@tick|       |@tick  |@tick  |@tick| 
 |PHP      |     |@tick|       |       |       |@tick*|
 |Node.js  |@tick|@tick|@tick  |       |@tick  |@tick|
+|Python   |     |@tick|       |       |       |     |
 
 *Session cache only.

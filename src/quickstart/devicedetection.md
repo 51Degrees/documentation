@@ -8,6 +8,7 @@
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
 @showsnippet{varnish,Varnish}
+@showsnippet{python,Python}
 @defaultsnippet{Select a language.}
 @startsnippet{c}
 C does not have a @Pipeline implementation or the ability to use the cloud-based version of 
@@ -119,4 +120,10 @@ To get started with Varnish device detection on-premise:
 5. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash).
 6. (optional) Obtain a license key by starting a free trial and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
+@endsnippet
+@startsnippet{python}
+1. Install the [fiftyone_devicedetection](https://pypi.org/project/fiftyone-devicedetection/) package from pypi.
+2. Follow the appropriate example from the options below:  
+  * [Cloud Example](@ref Examples_DeviceDetection_GettingStarted_Cloud) - Negligible processing and memory overhead but slower due to Internet latency. 
+  * [On-Premise Example](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) - Device detection processing is performed locally using a data file that must be kept updated.
 @endsnippet
