@@ -52,3 +52,6 @@
 [submodule "apis/location-python"]
 	path = apis/location-python
 	url = https://51degrees.visualstudio.com/DefaultCollection/Pipeline/_git/location-python
+[submodule "apis/pipeline-python"]
+	path = apis/pipeline-python
+	url = https://51degrees.visualstudio.com/DefaultCollection/Pipeline/_git/pipeline-python
