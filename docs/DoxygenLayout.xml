@@ -15,6 +15,9 @@
     <tab type="user" visible="yes" title=".NET Location" url="../../location-dotnet/4.1/index.html"/>
     <tab type="user" visible="yes" title="PHP Pipeline" url="../../pipeline-php/4.1/index.html"/>
     <tab type="user" visible="yes" title="PHP Device Detection" url="../../device-detection-php/4.1/index.html"/>
+    <tab type="user" visible="yes" title="Python Pipeline" url="../../pipeline-python/4.1/index.html"/>
+    <tab type="user" visible="yes" title="Python Device Detection" url="../../device-detection-python/4.1/index.html"/>
+    <tab type="user" visible="yes" title="Python Location" url="../../location-python/4.1/index.html"/>
     <tab type="user" visible="yes" title="Node.js Pipeline" url="../../pipeline-node/4.1/index.html"/>
     <tab type="user" visible="yes" title="Node.js Device Detection" url="../../device-detection-node/4.1/index.html"/>
     <tab type="user" visible="yes" title="Node.js Location" url="../../location-node/4.1/index.html"/>
