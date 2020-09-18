@@ -21,6 +21,7 @@ Standard log levels are adhered to, so the information logged can be limited to 
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
+@showsnippet{python,Python}
 @defaultsnippet{Select a tab to view language specific information on configuring **logging**}
 @startsnippet{dotnet}
 In C#, the `ILogger` interface from Microsoft.Extensions.Logging.Abstractions is used for **logging**.
@@ -66,9 +67,111 @@ PipelineBuilder builder = new PipelineBuilder(new MyLoggerFactory());
 ```
 @endsnippet
 @startsnippet{php}
-**todo**
+
+The PHP pipeline implementation includes a Logger class that can be used to record events that take place in the pipeline.
+
+Here is an example of a basic logger that stores its logs in an array.
+
+The log object passed to the overriden logInternal function is an associative array that contains:
+
+* time - Y-m-d H:i:s format timestamp
+* level - one of "trace", "debug", "information", "warning", "error", "critical"
+* message - the message
+
+```{php}
+
+use fiftyone\pipeline\core\Logger;
+
+class MemoryLogger extends Logger
+{
+    public $log = [];
+
+    public function logInternal($log)
+    {
+
+            $this->log[] = $log;
+    }
+}
+
+```
+
+After making a logging class, you would then use this in a Pipeline as follows:
+
+```{php}
+
+use fiftyone\pipeline\core\PipelineBuilder;
+
+$logger = new MemoryLogger("info"); // Pass in the minimum log level to the constructor
+
+$pipelineBuilder = new PipelineBuilder();
+
+$pipelineBuilder->addLogger($this->logger);
+
+// Then add elements and build the Pipeline as usual
+
+```
+
 @endsnippet
 @startsnippet{node}
-**todo**
+
+In node.js a Pipeline has an instance of an eventEmitter inside it which can be used to listen to events, logs and errors.
+
+```{js}
+
+  // Build the pipeline using an instance of the PipelineBuilder class
+
+  // Then, to monitor the pipeline we can put in listeners for various log events.
+  // Valid types are info, debug, warn, error
+  pipeline.on('error', console.error);
+
+```
+
 @endsnippet
+@startsnippet{python}
+
+The python pipeline implementation includes a Logger class that can be used to record events that take place in the pipeline.
+
+Here is an example of a basic logger that stores its logs in a list.
+
+The log object passed to the overriden log_internal function is a dictionary that contains:
+
+* time - Y-m-d H:i:s format timestamp
+* level - one of "trace", "debug", "information", "warning", "error", "critical"
+* message - the message
+
+```{python}
+
+from fiftyone_pipeline_core.logger import Logger
+
+class MemoryLogger(Logger):
+
+    def __init__(self, min_level="error", settings = {}):
+
+        super(MemoryLogger, self).__init__(min_level, settings)
+
+        self.memory_log = []
+
+    def log_internal(self, level, log):
+
+        self.memory_log.append(log)
+
+
+```
+
+After making a logging class, you would then use this in a Pipeline by using it in the PipelineBuilder when making your pipeline:
+
+```{python}
+
+from fiftyone_pipeline_core.pipelinebuilder import PipelineBuilder
+
+logger = MemoryLogger('info') // Pass in the minimum log level to the constructor
+
+pipeline = (PipelineBuilder())\
+            .add_logger(logger)\
+            .build()
+
+```
+
+@endsnippet
+
 @endsnippets
