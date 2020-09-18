@@ -38,6 +38,6 @@
 |Java     |@tick|@tick|       |@tick  |@tick  |@tick| 
 |PHP      |     |@tick|       |       |       |@tick*|
 |Node.js  |@tick|@tick|@tick  |       |@tick  |@tick|
-|Python   |     |@tick|       |       |       |     |
+|Python   |     |@tick|       |       |       |@tick|
 
 *Session cache only.

@@ -22,7 +22,7 @@ current version of the @flowelement was built.
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@showsnippet{python,Pyhon}
+@showsnippet{python,Python}
 @defaultsnippet{Select a tab to view language specific information on the internal data structure.}
 @startsnippet{dotnet}
 In .NET, IDE auto-complete support is dependent on having a specific interface/type with defined properties.
@@ -170,8 +170,6 @@ accessing the `IsMobile` property looks like this:
 flowdata.device.ismobile;
 ```
 @endsnippet
-@endsnippets
-
 @startsnippet{python}
 In python, auto-complete support is not feasible so you need to know the name of the element and property that you're accessing.
 For example, if you are using the 51Degrees device detection engine then after the @flowdata has been processed, 
@@ -197,3 +195,4 @@ accessing the `IsMobile` property looks like this:
 flowdata.device.ismobile;
 ```
 @endsnippet
+@endsnippets
