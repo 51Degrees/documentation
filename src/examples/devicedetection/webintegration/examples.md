@@ -11,6 +11,7 @@ This example shows how to integrate a Pipeline running a @devicedetection engine
 @grabexample{device-detection-java,mvc_2configuration_2_example_mvc_config_8java,Java Spring MVC}
 @grabexample{device-detection-php,cloud_2web_integration_8php,PHP}
 @grabexample{device-detection-node,cloud_2web_integration_8js,Node.js}
+@grabexample{device-detection-python,cloud_2web_8py,Python}
 @grabbedexample
 @endsnippets
 

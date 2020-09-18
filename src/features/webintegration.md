@@ -27,6 +27,7 @@ results from the @Pipeline API.
 - Java Spring MVC Interceptor
 - PHP
 - Node.js
+- Python
 - Nginx (@devicedetection only)
 - HAProxy (@devicedetection only)
 - [Varnish](@ref OtherIntegrations_Varnish) (@devicedetection only)

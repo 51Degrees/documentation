@@ -5,6 +5,7 @@
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
+@showsnippet{python,Python}
 @defaultsnippet{Select a language.}
 @startsnippet{dotnet}
 1. Install the [FiftyOne.GeoLocation](https://www.nuget.org/packages/FiftyOne.GeoLocation) package via Nuget.
@@ -26,5 +27,9 @@
 @endsnippet
 @startsnippet{node}
 1. Install the [fiftyone.geolocation](https://www.npmjs.com/package/fiftyone.geolocation) package from NPM.
+2. Follow the [51Degrees Cloud Example](@ref Examples_ReverseGeocoding_GettingStarted_51DegreesCloud) - Backed by either a 51Degrees-hosted [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) API instance or Digital Element's [GeoMPrint](https://www.digitalelement.com/solutions/geomprint/) service depending on your configuration.
+@endsnippet
+@startsnippet{python}
+1. Install the [fiftyone_location](https://pypi.org/project/fiftyone-location/) package from pypi.
 2. Follow the [51Degrees Cloud Example](@ref Examples_ReverseGeocoding_GettingStarted_51DegreesCloud) - Backed by either a 51Degrees-hosted [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) API instance or Digital Element's [GeoMPrint](https://www.digitalelement.com/solutions/geomprint/) service depending on your configuration.
 @endsnippet

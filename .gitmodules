@@ -39,10 +39,19 @@
 	url = ../location-node
 [submodule "apis/internal-engines-dotnet"]
 	path = apis/internal-engines-dotnet
-	url = https://51degrees.visualstudio.com/Pipeline/_git/internal-engines-dotnet
+	url = ../internal-engines-dotnet
 [submodule "apis/location-onpremise-java"]
 	path = apis/location-onpremise-java
-	url = https://51degrees.visualstudio.com/defaultcollection/pipeline/_git/location-onpremise-java
+	url = ../location-onpremise-java
 [submodule "apis/device-detection-varnish"]
 	path = apis/device-detection-varnish
-	url = https://51degrees.visualstudio.com/DefaultCollection/Pipeline/_git/device-detection-varnish
+	url = ../device-detection-varnish
+[submodule "apis/device-detection-python"]
+	path = apis/device-detection-python
+	url = ../device-detection-python
+[submodule "apis/location-python"]
+	path = apis/location-python
+	url = ../location-python
+[submodule "apis/pipeline-python"]
+	path = apis/pipeline-python
+	url = ../pipeline-python

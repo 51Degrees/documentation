@@ -12,3 +12,4 @@ If something is not supported here, and you believe it should be, [contact us](m
 |Node.js|6 and all LTS versions above  |Ubuntu 18.04 - Node.js LTS versions (6, 8, 10 and 12)|
 |Varnish|Varnish 6.0.6<BR>C11 and above|Ubuntu 16.04 - GCC 5.4 - 64-bit<BR>Ubuntu 18.04 - GCC 7.4 - 64-bit|
 |PHP    |PHP 5.6 and 7.x               |Ubuntu 18.04 - PHP 5.6, 7.2, 7.3 and 7.4|
+|Python |Python 2.7 or Python 3        |Ubuntu 16.04 - Python 2.7, 3.5<BR>Ubuntu 18.04 - Python 2.7, 3.6|

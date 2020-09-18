@@ -10,5 +10,6 @@ This example shows how to get set up a reverse geocoding @aspectengine using the
 @grabexample{location-java,cloud_2_getting_started_8java,Java}
 @grabexample{location-php,cloud_2getting_started_8php,PHP}
 @grabexample{location-node,getting_started_8js,Node.js}
+@grabexample{location-python,cloud_2gettingstarted_8py,Python}
 @grabbedexample
 @endsnippets

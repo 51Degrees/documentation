@@ -22,6 +22,7 @@ current version of the @flowelement was built.
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
+@showsnippet{python,Python}
 @defaultsnippet{Select a tab to view language specific information on the internal data structure.}
 @startsnippet{dotnet}
 In .NET, IDE auto-complete support is dependent on having a specific interface/type with defined properties.
@@ -117,30 +118,28 @@ flowdata.getAs("IsMobile", AspectPropertyValue.class, Boolean.class);
 ```
 @endsnippet
 @startsnippet{php}
-In PHP, auto-complete support is not feasible so you need to know the name of the element and property that 
-you're accessing.
+In PHP, auto-complete support is not feasible so you need to know the name of the element and property that you're accessing.
 For example, if you are using the 51Degrees device detection engine then after the @flowdata has been processed, 
 you can request the device data from it:
 
 ```{php}
-var deviceData = flowdata->device;
+$deviceData = flowdata->device;
 ```
 
 If you have an instance of the element that you want to get data for, this can also be used to get the 
 data populated by that instance without having to know the associated name:
 
 ```{php}
-var deviceData = flowdata->getFromElement(deviceDetectionEngine);
+$deviceData = $flowdata->getFromElement(deviceDetectionEngine);
 ```
 
-After you have the specific element data instance, the individual properties can be accessed using normal
-property accessors. 
+After you have the specific element data instance, the individual properties can be accessed using normal property accessors. 
 PHP's weakly typed nature means that the scenario where a new property is available in the data source is not a problem. 
 Wherever it's come from, you just need to know the name of the property you want to retrieve. For example, 
 accessing the `IsMobile` property looks like this:
 
 ```{php}
-flowdata->device->ismobile;
+$flowdata->device->ismobile;
 ```
 @endsnippet
 @startsnippet{node}
@@ -150,14 +149,14 @@ For example, if you are using the 51Degrees device detection engine then after t
 you can request the device data from it:
 
 ```{js}
-var deviceData = flowdata.device;
+let deviceData = flowdata.device;
 ```
 
 If you have an instance of the element that you want to get data for, this can also be used to get the data
 populated by that instance without having to know the associated name:
 
 ```{js}
-var deviceData = flowdata.getFromElement(deviceDetectionEngine);
+let deviceData = flowdata.getFromElement(deviceDetectionEngine);
 ```
 
 After you have the specific element data instance, the individual properties can be accessed using normal 
@@ -171,5 +170,29 @@ accessing the `IsMobile` property looks like this:
 flowdata.device.ismobile;
 ```
 @endsnippet
-@endsnippets
+@startsnippet{python}
+In python, auto-complete support is not feasible so you need to know the name of the element and property that you're accessing.
+For example, if you are using the 51Degrees device detection engine then after the @flowdata has been processed, 
+you can request the device data from it:
 
+```{python}
+deviceData = flowdata.device;
+```
+
+If you have an instance of the element that you want to get data for, this can also be used to get the 
+data populated by that instance without having to know the associated name:
+
+```{python}
+deviceData = flowdata.get_from_element(deviceDetectionEngine);
+```
+
+After you have the specific element data instance, the individual properties can be accessed using normal property accessors. 
+Python's weakly typed nature means that the scenario where a new property is available in the data source is not a problem. 
+Wherever it's come from, you just need to know the name of the property you want to retrieve. For example, 
+accessing the `IsMobile` property looks like this:
+
+```{python}
+flowdata.device.ismobile;
+```
+@endsnippet
+@endsnippets
