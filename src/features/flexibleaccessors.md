@@ -20,8 +20,8 @@ current version of the @flowelement was built.
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
 @showsnippet{node,Node.js}
+@showsnippet{php,PHP}
 @showsnippet{python,Python}
 @defaultsnippet{Select a tab to view language specific information on the internal data structure.}
 @startsnippet{dotnet}
@@ -117,31 +117,6 @@ For example, the `IsMobile` property can be accessed like this:
 flowdata.getAs("IsMobile", AspectPropertyValue.class, Boolean.class);
 ```
 @endsnippet
-@startsnippet{php}
-In PHP, auto-complete support is not feasible so you need to know the name of the element and property that you're accessing.
-For example, if you are using the 51Degrees device detection engine then after the @flowdata has been processed, 
-you can request the device data from it:
-
-```{php}
-$deviceData = flowdata->device;
-```
-
-If you have an instance of the element that you want to get data for, this can also be used to get the 
-data populated by that instance without having to know the associated name:
-
-```{php}
-$deviceData = $flowdata->getFromElement(deviceDetectionEngine);
-```
-
-After you have the specific element data instance, the individual properties can be accessed using normal property accessors. 
-PHP's weakly typed nature means that the scenario where a new property is available in the data source is not a problem. 
-Wherever it's come from, you just need to know the name of the property you want to retrieve. For example, 
-accessing the `IsMobile` property looks like this:
-
-```{php}
-$flowdata->device->ismobile;
-```
-@endsnippet
 @startsnippet{node}
 In Node, auto-complete support is not feasible so you need to know the name of the element and property that 
 you're accessing.
@@ -168,6 +143,31 @@ accessing the `IsMobile` property looks like this:
 
 ```{js}
 flowdata.device.ismobile;
+```
+@endsnippet
+@startsnippet{php}
+In PHP, auto-complete support is not feasible so you need to know the name of the element and property that you're accessing.
+For example, if you are using the 51Degrees device detection engine then after the @flowdata has been processed, 
+you can request the device data from it:
+
+```{php}
+$deviceData = flowdata->device;
+```
+
+If you have an instance of the element that you want to get data for, this can also be used to get the 
+data populated by that instance without having to know the associated name:
+
+```{php}
+$deviceData = $flowdata->getFromElement(deviceDetectionEngine);
+```
+
+After you have the specific element data instance, the individual properties can be accessed using normal property accessors. 
+PHP's weakly typed nature means that the scenario where a new property is available in the data source is not a problem. 
+Wherever it's come from, you just need to know the name of the property you want to retrieve. For example, 
+accessing the `IsMobile` property looks like this:
+
+```{php}
+$flowdata->device->ismobile;
 ```
 @endsnippet
 @startsnippet{python}

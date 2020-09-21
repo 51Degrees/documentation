@@ -25,8 +25,8 @@ results from the @Pipeline API.
 - ASP.NET
 - Java Servlet
 - Java Spring MVC Interceptor
-- PHP
 - Node.js
+- PHP
 - Python
 - Nginx (@devicedetection only)
 - HAProxy (@devicedetection only)
