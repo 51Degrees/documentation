@@ -5,10 +5,10 @@
 @showsnippet{cxx,C++}
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
 @showsnippet{node,Node.js}
-@showsnippet{varnish,Varnish}
+@showsnippet{php,PHP}
 @showsnippet{python,Python}
+@showsnippet{varnish,Varnish}
 @defaultsnippet{Select a language.}
 @startsnippet{c}
 C does not have a @Pipeline implementation or the ability to use the cloud-based version of 
@@ -88,6 +88,12 @@ To get started with C++ device detection on-premise:
  * [On-Premise Example](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) - Device detection processing is performed locally using a data file that must be kept updated.
 4. (optional) Configure [client-side evidence](@ref Features_ClientSideEvidence) to get better results. Particularly for iPhone and iPad.
 @endsnippet
+@startsnippet{node}
+1. Install the [fiftyone.devicedetection](https://www.npmjs.com/package/fiftyone.devicedetection) package from NPM.
+2. Follow the appropriate example from the options below:  
+  * [Cloud Example](@ref Examples_DeviceDetection_GettingStarted_Cloud) - Negligible processing and memory overhead but slower due to Internet latency. 
+  * [On-Premise Example](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) - Device detection processing is performed locally using a data file that must be kept updated.
+@endsnippet
 @startsnippet{php}
 ### Cloud 
 
@@ -102,8 +108,8 @@ Device detection processing is performed locally using a data file that must be 
 Due to the restrictions imposed by Composer and Packagist, we cannot supply the on-premise engines through the usual package management ecosystem. Instead, you'll need to clone the [repository](https://github.com/51Degrees/device-detection-php-onpremise) from GitHub and follow the instructions there in order to build and use the on-premise implementation.
 
 @endsnippet
-@startsnippet{node}
-1. Install the [fiftyone.devicedetection](https://www.npmjs.com/package/fiftyone.devicedetection) package from NPM.
+@startsnippet{python}
+1. Install the [fiftyone_devicedetection](https://pypi.org/project/fiftyone-devicedetection/) package from pypi.
 2. Follow the appropriate example from the options below:  
   * [Cloud Example](@ref Examples_DeviceDetection_GettingStarted_Cloud) - Negligible processing and memory overhead but slower due to Internet latency. 
   * [On-Premise Example](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) - Device detection processing is performed locally using a data file that must be kept updated.
@@ -120,10 +126,4 @@ To get started with Varnish device detection on-premise:
 5. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash).
 6. (optional) Obtain a license key by starting a free trial and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
-@endsnippet
-@startsnippet{python}
-1. Install the [fiftyone_devicedetection](https://pypi.org/project/fiftyone-devicedetection/) package from pypi.
-2. Follow the appropriate example from the options below:  
-  * [Cloud Example](@ref Examples_DeviceDetection_GettingStarted_Cloud) - Negligible processing and memory overhead but slower due to Internet latency. 
-  * [On-Premise Example](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) - Device detection processing is performed locally using a data file that must be kept updated.
 @endsnippet
