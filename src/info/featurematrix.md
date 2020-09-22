@@ -4,12 +4,12 @@
 
 |Language / Framework|@Pipeline|@DeviceDetection|@ReverseGeocoding|
 |---|---|---|---|
-|C/C++    |       |On-premise only   |       | 
-|.NET     |@tick|@tick | Cloud only   | 
-|Java     |@tick|@tick | Cloud only   | 
-|PHP      |@tick|@tick** | Cloud only |
-|Node.js  |@tick|@tick | Cloud only |
+|C/C++    |       |On-premise only   |       |
+|.NET     |@tick|@tick | Cloud only   |
+|Java     |@tick|@tick | Cloud only   |
 |JavaScript|      |Cloud only | Cloud only |
+|Node.js  |@tick|@tick | Cloud only |
+|PHP      |@tick|@tick** | Cloud only |
 |Python  |@tick| Cloud only | Cloud only |
 |Go*      |@tick|@tick| Cloud only |
 
@@ -22,10 +22,10 @@
 |---|---|
 |C/C++    |Nginx*<BR>HAProxy*<BR>Varnish |
 |.NET     |ASP.NET Core<BR>ASP.NET | 
-|Java     |Java Servlet<BR>Java Spring MVC Interceptor| 
-|PHP      |WordPress*<BR>Drupal*|
-|Node.js  | N/A |
+|Java     |Java Servlet<BR>Java Spring MVC Interceptor|
 |JavaScript| N/A |
+|Node.js  | N/A |
+|PHP      |WordPress*<BR>Drupal*|
 |Python  |Flask|
 
 *Coming soon
@@ -36,8 +36,8 @@
 |---|---|---|---|---|---|---|
 |.NET     |@tick|@tick|       |@tick  |@tick  |@tick|
 |Java     |@tick|@tick|       |@tick  |@tick  |@tick| 
-|PHP      |     |@tick|       |       |       |@tick*|
 |Node.js  |@tick|@tick|@tick  |       |@tick  |@tick|
+|PHP      |     |@tick|       |       |       |@tick*|
 |Python   |     |@tick|       |       |       |@tick|
 
 *Session cache only.

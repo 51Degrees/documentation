@@ -19,8 +19,8 @@ Standard log levels are adhered to, so the information logged can be limited to 
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
 @showsnippet{node,Node.js}
+@showsnippet{php,PHP}
 @showsnippet{python,Python}
 @defaultsnippet{Select a tab to view language specific information on configuring **logging**}
 @startsnippet{dotnet}
@@ -66,6 +66,21 @@ Alternatively, an implementation can be passed explicitly in a @builder's constr
 PipelineBuilder builder = new PipelineBuilder(new MyLoggerFactory());
 ```
 @endsnippet
+@startsnippet{node}
+
+In node.js a Pipeline has an instance of an eventEmitter inside it which can be used to listen to events, logs and errors.
+
+```{js}
+
+  // Build the pipeline using an instance of the PipelineBuilder class
+
+  // Then, to monitor the pipeline we can put in listeners for various log events.
+  // Valid types are info, debug, warn, error
+  pipeline.on('error', console.error);
+
+```
+
+@endsnippet
 @startsnippet{php}
 
 The PHP pipeline implementation includes a Logger class that can be used to record events that take place in the pipeline.
@@ -108,21 +123,6 @@ $pipelineBuilder = new PipelineBuilder();
 $pipelineBuilder->addLogger($this->logger);
 
 // Then add elements and build the Pipeline as usual
-
-```
-
-@endsnippet
-@startsnippet{node}
-
-In node.js a Pipeline has an instance of an eventEmitter inside it which can be used to listen to events, logs and errors.
-
-```{js}
-
-  // Build the pipeline using an instance of the PipelineBuilder class
-
-  // Then, to monitor the pipeline we can put in listeners for various log events.
-  // Valid types are info, debug, warn, error
-  pipeline.on('error', console.error);
 
 ```
 
@@ -173,5 +173,4 @@ pipeline = (PipelineBuilder())\
 ```
 
 @endsnippet
-
 @endsnippets

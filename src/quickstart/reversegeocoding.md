@@ -3,8 +3,8 @@
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
 @showsnippet{node,Node.js}
+@showsnippet{php,PHP}
 @showsnippet{python,Python}
 @defaultsnippet{Select a language.}
 @startsnippet{dotnet}
@@ -21,12 +21,12 @@
   * [Local Nominatim Example](@ref Examples_ReverseGeocoding_GettingStarted_OnPremiseNominatim) - Using a [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) instance that you host internally.
   * [Digital Element Cloud Example](@ref Examples_ReverseGeocoding_GettingStarted_DigitalElementCloud) - Using a direct request to Digital Element's [GeoMPrint](https://www.digitalelement.com/solutions/geomprint/) service.    
 @endsnippet
-@startsnippet{php}
-1. Install the [51degrees/fiftyone.geolocation](https://packagist.org/packages/51degrees/fiftyone.geolocation) package using Composer.
-2. Follow the [51Degrees Cloud Example](@ref Examples_ReverseGeocoding_GettingStarted_51DegreesCloud) - Backed by either a 51Degrees-hosted [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) API instance or Digital Element's [GeoMPrint](https://www.digitalelement.com/solutions/geomprint/) service depending on your configuration.
-@endsnippet
 @startsnippet{node}
 1. Install the [fiftyone.geolocation](https://www.npmjs.com/package/fiftyone.geolocation) package from NPM.
+2. Follow the [51Degrees Cloud Example](@ref Examples_ReverseGeocoding_GettingStarted_51DegreesCloud) - Backed by either a 51Degrees-hosted [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) API instance or Digital Element's [GeoMPrint](https://www.digitalelement.com/solutions/geomprint/) service depending on your configuration.
+@endsnippet
+@startsnippet{php}
+1. Install the [51degrees/fiftyone.geolocation](https://packagist.org/packages/51degrees/fiftyone.geolocation) package using Composer.
 2. Follow the [51Degrees Cloud Example](@ref Examples_ReverseGeocoding_GettingStarted_51DegreesCloud) - Backed by either a 51Degrees-hosted [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) API instance or Digital Element's [GeoMPrint](https://www.digitalelement.com/solutions/geomprint/) service depending on your configuration.
 @endsnippet
 @startsnippet{python}
