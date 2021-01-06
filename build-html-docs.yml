@@ -75,10 +75,12 @@ steps:
       readarray -d / -t verarr <<< ${verpath}
       ver=${verarr[1]}
       echo version is ${ver}
+      echo mv ${ver} ${ver}new
       mv ${ver} ${ver}new
       [ -f docs/tagfile ] && git checkout -- docs/tagfile
       git checkout gh-pages
       [ -d "${ver}" ] && rm -r ${ver}
+      echo mv ${ver}new ${ver}
       mv ${ver}new ${ver}
       git add ${ver}
       git commit -m "DOC: Regenerated HTML documentation pages."
