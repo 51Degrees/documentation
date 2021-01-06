@@ -72,7 +72,6 @@ steps:
       git remote -v
       echo "Commiting Docs"
       verpath=`find ./ -maxdepth 1 -type d -regex ".*/4\.[0-9]*"`
-      echo mv ${verpath} ${verpath}new
       mv ${verpath} ${verpath}new
       [ -f docs/tagfile ] && git checkout -- docs/tagfile
       git checkout gh-pages
@@ -91,7 +90,6 @@ steps:
         cd ${api}
         echo "Commiting ${api}"
         verpath=`find ./ -maxdepth 1 -type d -regex ".*/4\.[0-9]*"`
-        echo mv ${verpath} ${verpath}new
         mv ${verpath} ${verpath}new
         [ -f docs/tagfile ] && git checkout -- docs/tagfile
         git checkout gh-pages
