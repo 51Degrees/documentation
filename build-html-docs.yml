@@ -15,6 +15,7 @@ steps:
   submodules: recursive
   lfs: false
   persistCredentials: true
+  clean: true
 
 - task: DownloadSecureFile@1
   displayName: 'Download DoxyGen'
