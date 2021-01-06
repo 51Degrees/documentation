@@ -68,13 +68,13 @@ data structure.
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific information on thread safety.}
 @startsnippet{dotnet}
-By default, the `Dictionary` class is used. As such, accessing **element data**'s stored values
+By default, the `Dictionary` class is used. As such, accessing **element data's** stored values
 will not be thread-safe.
 However, this can be overridden to use another `IDictionary` implementation such as the `ConcurrentDictionary`. 
 In this case, the accessing of the stored values will be thread-safe.
 @endsnippet
 @startsnippet{java}
-By default, the `TreeMap` class is used. As such, accessing **element data**'s stored values
+By default, the `TreeMap` class is used. As such, accessing **element data's** stored values
 will not be thread-safe.
 However, this can be overridden to use another `Map<String,Object>` implementation such as the `ConcurrentHashMap`. 
 In this case, the accessing of the stored values will be thread-safe.
@@ -83,6 +83,6 @@ In this case, the accessing of the stored values will be thread-safe.
 PHP runs in a single thread. Consequently, concurrency issues are not a concern.
 @endsnippet
 @startsnippet{node}
-**todo**
+Node runs in a single thread with asynchronous execution, except where worker threads are used. It is strongly recommended to not share an element data object with a worker thread.
 @endsnippet
 @endsnippets

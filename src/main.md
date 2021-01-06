@@ -1,52 +1,35 @@
 @mainpage Home
 
-# 51Degrees Pipeline Documentation
+# 51Degrees API Documentation
 
-The Pipeline API has been created by 51Degrees to remove friction from the process of working with real-time data micro-services.
-It is the mechanism for delivering 51Degrees' data services such as device detection but it is more than that.
+Using the 51Degrees API to integrate real-time data insights into your own services involves a few steps.
 
-The Pipeline aggregates multiple different services from multiple vendors into a single, simple request.
-The plug-in based architecture makes it easy for new services to be added by third parties. You can also add your own custom elements, taking advantage of the features built into the Pipeline and allowing you to focus on your business logic.
+1. Create a Resource Key to authenticate your requests
+2. Obtain the programming library for your choice of language
+3. Choose your service: reverse geocoding, device detction, or others
+4. Query the APIs for the data you need
 
-## Fundamentals
+Each of these steps are described in more detail in this documentation and below.
 
-Each @Pipeline is defined by the @flowelements that are added to it.
-Each @flowelement performs some data processing task.
+## Authentication with a Resource Key
 
-When a @Pipeline is created, the desired @flowelements are added to it and can be configured to run in sequence or in parallel as required. (If the language supports @parallelexecution).
+To create a Resource Key, use the [Configurator](https://configure.51degrees.com/) to select the data you need returned. Read @configuratorexplanation for more detail on how to create a resource key and errors that may occur.
 
-Once created, a @Pipeline can then be used to create @flowdata. This is a one-time-use construct that is used both to pass data to the @Pipeline for processing and to access the results.
+## Choose a programming library
 
-After the input data (@evidence) has been added to the @flowdata, it is processed by the component @flowelements that make up the @Pipeline. Each @flowelement can add new values to the @flowdata, which can be retrieved once processing is complete.
+There are programming libraries available in C#, Java, Node.js, client-side JavaScript, PHP, and Python for each of the services. 
 
-For a deeper understanding of the Pipeline concept, start with the @Pipeline page. 
-
-## Key features
-
-- Seamless switching between on-premise data and cloud backed data services.
-- Automatic updating of on-premise data files from a configurable central service, including in place updates to avoid the need to interrupt running processes.
-- For web environments, JavaScript bundling to improve client side performance and network efficiency.
-- Support for high performance native data processing libraries via SWIG.
-- All components designed for scalable, multi-threaded applications.
-- Modern software design including fluent builders, dependency injection, unit testing and continuous integration. DevOps friendly.
-- Support for .NET, Java, PHP and Node with more being added over time.
-- Plug-in architecture supporting custom third party data services.
-
-## New to the Pipeline?
-
-* If you're migrating from the older 51Degrees device detection API then start with the @v3migrationguide.
-* New users should check the @quickstart guide for help getting up and running as soon as possible.
-
-## 51Degrees Data Services
+## Choosing your service
 
 * @DeviceDetection - Detailed insight into the devices being used to access your content.
 * @ReverseGeocoding - Obtain accurate real-world data such as postal address from the users' location as reported by their smart phone or similar device.
 * Antifraud - Identify and exclude fraudulent requests. (Coming soon)
 * IpIntelligence - Determine key information from the network path taken by the request such as mobile carrier or location. (Coming soon)
 
-## Technical Detail
+## Query the APIs
 
-* Explore detailed technical documentation for each language supported by the Pipeline.
-* Build a @customengine to match your requirements.
-* [Compare features](@ref Info_FeatureMatrix) of Pipeline and data service implementations in each language.
+Querying 51Degrees APIs is done by constructing a Pipeline and adding Evidence to it and then telling it to process to get the best data for that evidence; for example, a location request might involve creating a Pipeline and adding an IP address to it and then processing to receive a latitude and longitude associated with that IP address. 
 
+To get started, next see real examples of how to obtain resource keys and query the APIs in detail in the @quickstart.
+
+For further detail once the @quickstart is completed, please see the Advanced documentation in the menu. Pipelines are described in more detail in the @pipelinebasics, which explains how pipelines are constructed from flow elements and consume flow data. Reference documentation for the HTTP API is provided in the [cloud API documentation](https://cloud.51degrees.com/api-docs/index.html).

@@ -14,7 +14,7 @@ This is because all the complex processing and any data that is required for tha
 by the associated [cloud service](@term{CloudService}). The trade-off is that a **cloud engine**
 cannot provide the same performance as an @onpremiseengine.
 
-For many cases, a **cloud engine**'s performance is sufficient, and is ideal for small environments where
+For many cases, a **cloud engine's** performance is sufficient, and is ideal for small environments where
 memory is in short supply. On small services such as a cloud Lambda function where there are low limits to the size of
 the services, **cloud engines** are a perfect fit.
 

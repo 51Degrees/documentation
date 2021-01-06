@@ -54,7 +54,7 @@ Firstly, the configuration file used for this example will set up a @pipeline wi
 @startsnippets
 @grabexample{device-detection-dotnet,_hash_2_configure_from_file_2_program_8cs,C#}
 @grabexample{device-detection-java,hash_2_configure_from_file_8java,Java}
-@grabexample{device-detection-php,_hash_2_configure_from_file_8php,PHP}
+@grabexample{device-detection-php-onpremise,_hash_2_configure_from_file_8php,PHP}
 @grabexample{device-detection-node,hash_2configure_from_file_8js,Node.js}
 @grabbedexample
 @endsnippets

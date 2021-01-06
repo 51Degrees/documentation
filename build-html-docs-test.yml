@@ -66,7 +66,7 @@ steps:
   condition: true
   inputs:
     SourceFolder: '$(build.sourcesdirectory)'
-    Contents: '4.1/**'
+    Contents: '4.*/**'
     TargetFolder: '$(build.artifactstagingdirectory)'
     CleanTargetFolder: true
 
@@ -77,9 +77,12 @@ steps:
     script: |
       cd ./apis
       for api in `find ./ -mindepth 1 -maxdepth 1 -type d`; do
-        readarray -d / -t strarr <<< ${api}
-        mkdir '$(build.artifactstagingdirectory)/'${strarr[1]}
-        cp -r ${api}/4.1/ '$(build.artifactstagingdirectory)'/${strarr[1]}
+        for version in `find ${api} -maxdepth 1 -type d -regex ".*/4\.[0-9]*"`; do
+          echo copying ${strarr[1]} ${strarr[2]}
+          readarray -d / -t strarr <<< ${version}
+          mkdir '$(build.artifactstagingdirectory)/'${strarr[1]}
+          cp -r ${version}/ '$(build.artifactstagingdirectory)'/${strarr[1]}/${strarr[2]}
+        done
       done
 
 

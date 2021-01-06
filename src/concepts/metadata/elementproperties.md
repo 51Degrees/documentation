@@ -5,9 +5,9 @@
 **Element properties** refer to the individual **properties** whose values are populated in
 an @elementdata by a @flowelement.
 
-A **property**'s unique identifier is its name, but it also has other metadata which describe it. The
+A **property's** unique identifier is its name, but it also has other metadata which describe it. The
 concept of a **property** is built up in a hierarchy, starting at an **element property**,
-which is then added to in inheriting **property** types.
+which is then added to by inheriting **property** types.
 
 # Name
 
@@ -16,7 +16,7 @@ The name of the property uniquely identifies the **property** within a @flowelem
 # Element
 
 The @flowelement which the **property** belongs to.
-Although the **property**'s name is unique within the @flowelement, this does not prevent another
+Although the **property's** name is unique within the @flowelement, this does not prevent another
 @flowelement from containing a **property** with the same name. This, in combination with the
 name, uniquely identifies the **property** globally.
 
@@ -41,8 +41,7 @@ This is not a constant, and depends on how the @flowelement is built
 
 This is only relevant where Type is a collection of complex objects. It contains a list of the 
 **property** meta-data for the items in the value for this **property**. For example, if this meta-data 
-instance represents a list of hardware devices, ItemProperties will contain a list of the  
-meta-data for **properties** available on each hardware device element within that list.
+instance represents a list of hardware devices, ItemProperties will contain a list of the meta-data for **properties** available on each hardware device element within that list.
 
 # Delay Execution
 

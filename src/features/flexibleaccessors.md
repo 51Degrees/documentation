@@ -27,7 +27,7 @@ current version of the @flowelement was built.
 @startsnippet{dotnet}
 In .NET, IDE auto-complete support is dependent on having a specific interface/type with defined properties.
 This is supported by allowing the @aspectdata type and associated interface to be extended for each engine.
-@Flowdata can then then return this specific type/interface.
+@Flowdata can then return this specific type/interface.
 For example, the 51Degrees device detection engines use the IDeviceData interface to define all 
 the properties that are available.
 After @flowdata has been processed, you can request the IDeviceData from it:
@@ -77,7 +77,7 @@ flowdata.GetAs<AspectPropertyValue<bool>>("IsMobile");
 @startsnippet{java}
 In Java, IDE auto-complete support is dependent on having a specific interface/type with defined properties.
 This is supported by allowing the @aspectdata interface to be extended for each engine.
-@Flowdata can then then return this specific interface.
+@Flowdata can then return this specific interface.
 For example, the 51Degrees device detection engines use the DeviceData interface to define all the 
 properties that are available.
 After @flowdata has been processed, you can request the DeviceData from it:

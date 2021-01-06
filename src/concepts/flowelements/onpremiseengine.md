@@ -33,8 +33,8 @@ To facilitate keeping the data up to date, an **engine** may be registered with 
 in an **engine** means that when it is added to a @pipeline, it will be registered for updates, and the @dataupdateservice
 will refresh the @datafile automatically.
 
-An **engine**'s data can also be refreshed manually by giving the **engine** either a new @datafile or memory location, and requesting
-it use that. Depending on the **engine** implementation, refreshing the data in an **engine** may or may not require the engine to
+An **engine's** data can also be refreshed manually by giving the **engine** either a new @datafile or memory location, and requesting that
+it use that new datafile or memory location. Depending on the **engine** implementation, refreshing the data in an **engine** may or may not require the engine to
 briefly stop serving requests. 
 All 51Degrees **engines** have been designed so that processing will be uninterrupted by data updates.
 

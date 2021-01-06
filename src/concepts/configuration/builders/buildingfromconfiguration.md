@@ -13,15 +13,14 @@ Alternatively, in @webintegrations, a configuration file is loaded automatically
 
 Note, the possible format of the configuration file varies greatly between languages, with some languages 
 having many options and others only having one.
-Where possible, we recommend using JSON as the simplest and most transferable configuration format.
+Where possible, we recommend using JSON as the simplest and most transferable configuration format; JSON is
+also supported by the PHP and Node.js bindings, where XML is not.
 
 ## Parsing XML
 
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
-@showsnippet{node,Node.js}
 @defaultsnippet{Select a language for an example of parsing XML.}
 @startsnippet{dotnet}
 ```{cs}
@@ -46,12 +45,6 @@ PipelineOptions options = (PipelineOptions) unmarshaller.unmarshal(file);
 Pipeline pipeline = new PipelineBuilder(loggerFactory)
     .buildFromConfiguration(options);
 ```
-@endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
-@startsnippet{node}
-**todo**
 @endsnippet
 @endsnippets
 
@@ -79,10 +72,17 @@ IPipeline pipeline = new PipelineBuilder(loggerFactory)
 **todo**
 @endsnippet
 @startsnippet{php}
-**todo**
+\verbatim
+use fiftyone\pipeline\core\PipelineBuilder;
+$builder = new PipelineBuilder();
+$pipeline = $builder->buildFromConfig($configFile)->build();
+\endverbatim
 @endsnippet
 @startsnippet{node}
-**todo**
+```js
+const pipeline = new FiftyOneDegreesGeoLocation.GeoLocationPipelineBuilder({resourceKey:localResourceKey});
+pipeline.buildFromConfigurationFile(configFilePath);
+```
 @endsnippet
 @endsnippets
 
@@ -115,6 +115,8 @@ set the @pipeline to [suppress process exceptions](@ref Concepts_Configuration_B
 @startsnippet{JSON}
 Configure a @pipeline with a @flowelement named 'MyElement' with a build parameter, and
 set the @pipeline to [suppress process exceptions](@ref Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions).
+
+Note that for use in node.js, `BuilderName` and `BuilderParameters` should be replaced by `elementName` and `elementParameters`.
 ```{js}
 {
   "PipelineOptions": {
@@ -187,8 +189,6 @@ These can be used to match against supplied configuration options.
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
-@showsnippet{node,Node.js}
 @defaultsnippet{Select a language for information of specifying an alternative name for element builders and configuration methods.}
 @startsnippet{dotnet}
 The AlternateNameAttribute can be used to decorate @elementbuilder classes as well as configuration methods
@@ -198,12 +198,6 @@ This can be used to specify one or more other names to match on when building fr
 @startsnippet{java}
 The `ElementBuilder(alternateName)` attribute can be used to decorate @elementbuilder classes.
 This can be used to specify one or more other names to match when buiding from configuration.
-@endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
-@startsnippet{node}
-**todo**
 @endsnippet
 @endsnippets
 
@@ -223,7 +217,7 @@ cannot always be achieved.
 @startsnippet{dotnet}
 In .NET, @pipelinebuilder relies on reflection to find the correct builder to build
 the @flowelements required by the configuration. For this reason, it is necessary for the
-libraries that contain the @elementbuilders for those @flowelement to be loaded. This can be done
+libraries that contain the @elementbuilders for each @flowelement to be loaded. This can be done
 in a number of ways:
 * loading the library by calling a method in code;
 * adding a library to a config file to be loaded;
@@ -249,10 +243,17 @@ construction that is populated with instances of the services that @elementbuild
 **todo**
 @endsnippet
 @startsnippet{php}
-**todo**
+PHP will load elements named in `BuilderName` as if they were specified in a `use` statement, so for example:
+
+\verbatim
+"BuilderName": "fiftyone\\pipeline\\cloudrequestengine\\CloudRequestEngine"
+\endverbatim
+
 @endsnippet
 @startsnippet{node}
-**todo**
+Node will load elements named in `ElementName` as if they were specified in a `require` statement, so for example:
+
+"ElementName": "fiftyone.pipeline.cloudrequestengine"
 @endsnippet
 @endsnippets
 

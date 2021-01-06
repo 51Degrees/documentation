@@ -4,7 +4,7 @@
 # Introduction
 
 **Evidence** is the term for input data used in the @Pipeline. **Evidence** can be 
-anything but is most commonly details relating to a [web request](@term{WebRequest})
+anything but will usually be details relating to a [web request](@term{WebRequest})
 such as HTTP headers, source IP address or query string parameters.
 
 The **evidence** values are used by @aspectengines to determine the details of the 

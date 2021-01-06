@@ -10,7 +10,7 @@ automatic building via configuration files.
 Typically the @flowelement built by an **element builder** is added to a @pipeline
 via a @pipelinebuilder.
 
-By convention, a @flowelement's configuration is immutable once it has been
+By convention, the configuration of a @flowelement is immutable once it has been
 constructed, so all configuration should be done in the **builder**.
 
 
@@ -30,7 +30,7 @@ The precise constraints around these methods vary by language.
 @defaultsnippet{Select a language.}
 @startsnippet{dotnet}
 In .NET, the user is free to define methods on the builder as they wish.
-However, if they want to take advantage of the @Pipeline's @buildfromconfiguration method then they must 
+However, if they want to take advantage of the @buildfromconfiguration method on the @Pipeline then they must 
 follow certain rules:
 
 1. A configuration method on an **element builder** must have one and only one parameter.
@@ -41,7 +41,7 @@ configuration file.
 @endsnippet
 @startsnippet{java}
 In Java, the user is free to define methods on the builder as they wish.
-However, if they want to take advantage of the @Pipeline's @buildfromconfiguration method then they must 
+However, if they want to take advantage of the @buildfromconfiguration method on the @Pipeline then they must 
 follow certain rules:
 
 1. A configuration method on an **element builder** must have one and only one parameter.
@@ -49,10 +49,9 @@ follow certain rules:
 3. The types of any parameters on configuration methods and build methods must be string or have a static `parse` method. This can be in the boxed class in the case of primative type e.g. `Integer.parseInt` is used for `int`. It is used to parse the string value from the configuration file.
 @endsnippet
 @startsnippet{php}
-**todo**
 @endsnippet
 @startsnippet{node}
-**todo**
+
 @endsnippet
 
 # Building

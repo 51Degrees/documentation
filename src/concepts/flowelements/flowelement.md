@@ -82,7 +82,7 @@ the header name.
 
 # Data Keys
 
-Results of an **element**'s processing are stored in the @flowdata, keyed on the **element**'s @elementdatakey. 
+Results of an **element's** processing are stored in the @flowdata, keyed on the **element's** @elementdatakey. 
 While not required, it is convention that each **element** has a unique key name. 
 For example, our 'user age' example would likely have the key name 'user age'.
 
@@ -127,9 +127,9 @@ final TData aspectData = flowData.getOrAdd(getTypedDataKey(), getDataFactory());
 @endsnippets
 # Scope
 
-By convention, an **element**'s configuration is immutable once created. Although this is not enforced.
+By convention, an **element's** configuration is immutable once created. Although this is not enforced.
 
-An **element** can be added to any number of @pipelines. A @pipeline is merely an organizational layer which instructs **element**'s to
+An **element** can be added to any number of @pipelines. A @pipeline is merely an organizational layer which instructs **elements** to
 carry out processing on a @flowdata, so the **element** acts in isolation without the need to reference to the @pipeline.
 
 It is also possible for an **element** to be added more than once to the same @pipeline. For example, an **element** which opens a
@@ -162,9 +162,10 @@ must be done in a thread-safe way. Accessing the internal data structure is usua
 `set` method to the **element**.
 @endsnippet
 @startsnippet{php}
-**todo**
+PHP runs in a single thread. Consequently, elements cannot run in parallel and 
+concurrency issues are not a concern.
 @endsnippet
 @startsnippet{node}
-**todo**
+Node runs in a single thread with asynchronous execution, except where worker threads are used. It is strongly recommended to not share a flow element object with a worker thread.
 @endsnippet
 @endsnippets

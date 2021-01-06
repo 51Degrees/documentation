@@ -32,13 +32,13 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
-PROJECT_NAME           = "51Degrees Pipeline Documentation"
+PROJECT_NAME           = "51Degrees API Documentation"
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
 # control system is used.
 
-PROJECT_NUMBER         = 4.1
+PROJECT_NUMBER         = 4.2
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer a
@@ -273,13 +273,14 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "builders=[builders](@ref Concepts_Configuration_Builders_Index)" \
                          "caching=[caching](@ref Concepts_Configuration_Caching)" \
                          "cache=[cache](@ref Concepts_Configuration_Caching)" \
-                         "clientsideevidence=[client side evidence](@ref Features_ClientSideEvidence)" \
+                         "clientsideevidence=[client-side evidence](@ref Features_ClientSideEvidence)" \
                          "Cloudengine=[Cloud engine](@ref Concepts_FlowElements_CloudEngine)" \
                          "cloudengine=[cloud engine](@ref Concepts_FlowElements_CloudEngine)" \
                          "cloudengines=[cloud engines](@ref Concepts_FlowElements_CloudEngine)" \
                          "cloudservice=[cloud service](@ref Concepts_FlowElements_CloudEngine)" \
                          "combiningservices=[combining services](@ref Examples_CombiningServices)" \
                          "component=[component](@ref Concepts_FlowElements_FiftyOneOnPremiseEngine_Components)" \
+                         "configuratorexplanation=[Configurator explanation](@ref Concepts_Configurator)" \
                          "customengine=[custom engine](@ref Features_CustomElements)" \
                          "customelement=[custom element](@ref Features_CustomElements)" \
                          "customelements=[custom elements](@ref Features_CustomElements)" \
@@ -349,6 +350,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "profile=[profile](@ref Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles)" \
                          "properties=[properties](@ref Concepts_MetaData_ElementProperties)" \
                          "property=[property](@ref Concepts_MetaData_ElementProperties)" \
+                         "pipelinebasics=[basic pipeline description](@ref Concepts_PipelineBasics)" \
                          "quickstart=[quick start](@ref Quickstart_Quickstart)" \
                          "resultcaching=[result caching](@ref Features_ResultCaching)" \
                          "reversegeocoding=[reverse geocoding](@ref ReverseGeocoding_Overview)" \
@@ -1033,7 +1035,7 @@ EXAMPLE_RECURSIVE      = YES
 # that contain images that are to be included in the documentation (see the
 # \image command).
 
-IMAGE_PATH             =
+IMAGE_PATH             = images
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
@@ -1218,7 +1220,7 @@ GENERATE_HTML          = YES
 # The default directory is: html.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_OUTPUT            = 4.1
+HTML_OUTPUT            = 4.2
 
 # The HTML_FILE_EXTENSION tag can be used to specify the file extension for each
 # generated HTML page (for example: .htm, .php, .asp).

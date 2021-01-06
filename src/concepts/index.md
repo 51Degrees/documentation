@@ -8,6 +8,10 @@
 
 @subpage Concepts_Configuration_Index
 
+@subpage Concepts_PipelineBasics
+
 @subpage Concepts_Pipeline
 
 @subpage Concepts_Terminology
+
+@subpage Concepts_Configurator

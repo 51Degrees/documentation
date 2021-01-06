@@ -20,7 +20,7 @@ By default, when a @pipeline is disposed of, the @flowelements which it
 contained will still exist and will need to be disposed of at some point.
 
 An option is available in the **Pipeline builder** to automatically dispose
-of all the @pipeline's @flowelements during its own disposal. 
+of all the @flowelements on the @pipeline during its own disposal. 
 This option should not be used when a @pipeline contains @flowelements which
 are also present in another @pipeline, as they may still be required elsewhere. This should
 not usually be the case, but must be considered if building multiple @pipelines.
@@ -83,8 +83,18 @@ Pipeline pipeline = new PipelineBuilder(loggerFactory)
 ```
 @endsnippet
 @startsnippet{php}
-**todo**
+\verbatim
+use fiftyone\pipeline\core\PipelineBuilder;
+$builder = new PipelineBuilder();
+$builder->flowElements = [$element];
+$pipeline = $builder->build();
+\endverbatim
 @endsnippet
 @startsnippet{node}
-**todo**
+```js
+const PipelineBuilder = require('fiftyone.pipeline.core').PipelineBuilder;
+const pipeline = new PipelineBuilder();
+pipeline.flowElements.push(element);
+pipeline.build();
+```
 @endsnippet

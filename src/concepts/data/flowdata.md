@@ -91,6 +91,6 @@ PHP runs in a single thread. Consequently, elements cannot run in parallel and
 concurrency issues are not a concern.
 @endsnippet
 @startsnippet{node}
-**todo**
+Node runs in a single thread with asynchronous execution, except where worker threads are used. It is strongly recommended to not share an element data object with a worker thread.
 @endsnippet
 @endsnippets
