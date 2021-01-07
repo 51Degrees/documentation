@@ -199,11 +199,11 @@ First let's define a class which extends `flowElement`.
 
 This needs a constructor matching the `flowElement` class:
 
-@snippet 2-clientSideEvidenceFlowElement.js constructor
+@snippet clientSideEvidenceFlowElement.js constructor
 
 Now the abstract methods can be implemented to create a functional @flowelement.
 
-@snippet 2-clientSideEvidenceFlowElement.js class
+@snippet clientSideEvidenceFlowElement.js class
 
 @endsnippet
 @endsnippets
@@ -369,7 +369,7 @@ ${js}
 ```
 The message is constructed and returned:
 
-@snippet 2-clientSideEvidenceFlowElement.js usage
+@snippet clientSideEvidenceFlowElement.js usage
 @endsnippet
 @endsnippets
 

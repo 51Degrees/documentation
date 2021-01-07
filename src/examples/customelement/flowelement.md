@@ -183,11 +183,11 @@ First let's define a class which extends `flowElement`.
 
 This needs a constructor matching the `flowElement` class which initializes the element:
 
-@snippet 1-simpleEvidenceFlowElement.js constructor
+@snippet simpleEvidenceFlowElement.js constructor
 
 Now the abstract methods can be implemented to create a functional @flowelement.
 
-@snippet 1-simpleEvidenceFlowElement.js class
+@snippet simpleEvidenceFlowElement.js class
 @endsnippet
 @endsnippets
 
@@ -269,7 +269,7 @@ To print the star sign of the user.
 @startsnippet{node}
 This new @flowelement can now be added to a @pipeline and used like:
 
-@snippet 1-simpleEvidenceFlowElement.js usage
+@snippet simpleEvidenceFlowElement.js usage
 
 To print the star sign of the user.
 @endsnippet
