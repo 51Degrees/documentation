@@ -15,6 +15,7 @@ steps:
   submodules: recursive
   lfs: false
   persistCredentials: true
+  clean: true
 
 - task: DownloadSecureFile@1
   displayName: 'Download DoxyGen'
@@ -71,14 +72,12 @@ steps:
       git remote -v
       echo "Commiting Docs"
       verpath=`find ./ -maxdepth 1 -type d -regex ".*/4\.[0-9]*"`
-      readarray -d / -t verarr <<< ${verpath}
-      ver=${verarr[1]}
-      mv ${ver} ${ver}new
+      mv ${verpath} ${verpath}new
       [ -f docs/tagfile ] && git checkout -- docs/tagfile
       git checkout gh-pages
-      [ -d "${ver}" ] && rm -r ${ver}
-      mv ${ver}new ${ver}
-      git add ${ver}
+      [ -d "${verpath}" ] && rm -r ${verpath}
+      mv ${verpath}new ${verpath}
+      git add ${verpath}
       git commit -m "DOC: Regenerated HTML documentation pages."
       git push origin gh-pages
 
@@ -91,14 +90,12 @@ steps:
         cd ${api}
         echo "Commiting ${api}"
         verpath=`find ./ -maxdepth 1 -type d -regex ".*/4\.[0-9]*"`
-        readarray -d / -t verarr <<< ${verpath}
-        ver=${verarr[1]}
-        mv ${ver} ${ver}new
+        mv ${verpath} ${verpath}new
         [ -f docs/tagfile ] && git checkout -- docs/tagfile
         git checkout gh-pages
-        [ -d "${ver}" ] && rm -r ${ver}
-        mv ${ver}new ${ver}
-        git add ${ver}
+        [ -d "${verpath}" ] && rm -r ${verpath}
+        mv ${verpath}new ${verpath}
+        git add ${verpath}
         git commit -m "DOC: Regenerated HTML documentation pages."
         git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin gh-pages
         cd $(build.sourcesdirectory)
