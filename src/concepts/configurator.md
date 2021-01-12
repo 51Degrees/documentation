@@ -7,7 +7,7 @@ Access to API queries is controlled by a Resource Key, which is obtained from th
 When a Resource Key is created, you choose the properties that it will return from queries, and once these are set they cannot be changed. However, it is possible to create more keys, each tied to whichever properties you choose.
 
 \htmlonly
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lAUSUM5J0y0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/499278328" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 \endhtmlonly
 
 
