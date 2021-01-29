@@ -16,6 +16,12 @@ Note that some @aspectengines (for example, the 51Degrees on-premise @devicedete
 may have internal caches for various reasons, these are separate to the @Pipeline 
 **results cache** and may or may not be configurable depending on the implementation of the @aspectengine.
 
+In the .NET API, @aspectengines can be configured to flag whether an instance of
+@Aspectdata has originated from the cache or from processing of the engine. E.g. 
+if CacheHitOrMiss is set to true then the the CacheHit value will be set to true
+on the @Aspectdata. The primary use case for this is to validate in testing 
+whether a cache hit or miss has occurred.
+
 # Internals
 
 The @evidence encapsulated within @flowdata will often contain many more values than are relevant 
