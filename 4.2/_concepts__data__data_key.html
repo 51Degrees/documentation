@@ -76,11 +76,11 @@ $(document).ready(function(){initNavTree('_concepts__data__data_key.html','');})
 <h1 class="g-docs__section-heading">Usage Example</h1>
 <p>A data key builder is used to construct <b>data keys</b> by specifying the details of the keys to be included. This will often be a subset of the evidence keys stored in a <a class="el" href="_concepts__data__flow_data.html">flow data</a> instance. The diagram below shows an example <b>data key</b> being generated from the latitude and longitude values in an <a class="el" href="_concepts__data__evidence.html">evidence</a> collection.</p>
 <p><div class="dotgraph">
-<iframe scrolling="no" frameborder="0" src="dot_datakey-evidence.svg" width="279" height="203"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<iframe scrolling="no" frameborder="0" src="dot_datakey-evidence.svg" width="294" height="203"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
 <p>The <b>data key</b> can then be used to quickly check if the current <a class="el" href="_concepts__data__flow_data.html">flow data</a> contains the same values for the subset of evidence keys we're interested in as any other <b>data key</b> instance from a list.</p>
 <p><div class="dotgraph">
-<iframe scrolling="no" frameborder="0" src="dot_datakey-check.svg" width="566" height="327"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<iframe scrolling="no" frameborder="0" src="dot_datakey-check.svg" width="619" height="327"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
 <p>First, the cache will look for a match on just hash code as this is a fast operation. In the example above, the generated <b>data key</b> matches two of the items in the cache on hash code. When the hashes are found to match, the cache will then compare the values of the key fields to check for a true match. </p>
 </section></div><!-- PageDoc -->
