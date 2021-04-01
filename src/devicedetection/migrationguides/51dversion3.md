@@ -370,7 +370,7 @@ This file should follow the usual structure of a pipeline configuration file. Fo
       {
         "BuilderName": "DeviceDetectionHashEngineBuilder",
         "BuildParameters": {
-          "DataFile": "51Degrees-EnterpriseV4.1.hash",
+          "DataFile": "C:\\Absolute\\Path\\To\\Data\\File\\51Degrees-EnterpriseV4.1.hash",
           "CreateTempDataCopy": true,
           "DataUpdateLicenseKey": "yourkey",
           "PerformanceProfile": "LowMemory"
@@ -381,8 +381,9 @@ This file should follow the usual structure of a pipeline configuration file. Fo
 }
 ```
 
+- **IMPORTANT:** `C:\\Absolute\\Path\\To\\Data\\File\\51Degrees-EnterpriseV4.1.hash` is an absolute path to the data file. **Please amend this entry accordingly to your configuration.**
 - Use the performance profile setting to control the trade-off between performance and memory. `LowMemory` is recommended if you're not sure. `MaxPerformance` uses the most memory but gives the best performance.
-- If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false` and `"UpdateOnStartup": false`
+- If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false` and `"DataUpdateOnStartup": false`
 - If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this resource key to the Pipeline.
 
 ```{json}
@@ -401,6 +402,20 @@ This file should follow the usual structure of a pipeline configuration file. Fo
     ]
   }
 }
+```
+
+- Modification to `Application_Start` method in the application class from `"global.asax.cs"` file to include loading of assemblies required by the pipeline is needed. See the snippet below for an example. 
+```{cs}
+// Make sure the assemblies that are needed by the pipeline
+// are loaded into the app domain.
+AppDomain.CurrentDomain.Load(
+    typeof(DeviceDetectionHashEngineBuilder).Assembly.GetName());
+AppDomain.CurrentDomain.Load(
+    typeof(JavaScriptBuilderElement).Assembly.GetName());
+AppDomain.CurrentDomain.Load(
+    typeof(JsonBuilderElement).Assembly.GetName());
+AppDomain.CurrentDomain.Load(
+    typeof(SequenceElementBuilder).Assembly.GetName());
 ```
 
 The old v3 web integration used the `Request.Browser` functionality that was built in to ASP.NET in order to access result values. The Pipeline integration uses the same approach so you can still do things like:
@@ -458,7 +473,7 @@ Add a PipelineOptions section to your appsettings.json file and configure approp
 ```
 
 - Use the performance profile setting to control the trade-off between performance and memory. `LowMemory` is recommended if you're not sure. `MaxPerformance` uses the most memory but gives the best performance.
-- If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false` and `"UpdateOnStartup": false`
+- If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false` and `"DataUpdateOnStartup": false`
 - If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this resource key to the Pipeline.
 
 ```{json}
