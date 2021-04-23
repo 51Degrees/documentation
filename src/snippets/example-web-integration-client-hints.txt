@@ -1,0 +1,4 @@
+This example demonstrates device detection using user-agent client hints in a real-world scenario.
+When a clint-hints-enabled user first visits a website, the server will recieve the sec-ch-ua and sec-ch-ua-mobile headers. Along with the user-agent.
+This information is then used to determine if the client supports user-agent client hints and request them if needed by setting the Accept-CH header in the response.
+Clicking the button below will cause a new request to be sent to the server, along with any additional headers that have been requested.
