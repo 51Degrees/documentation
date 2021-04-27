@@ -1,0 +1,5 @@
+@page Examples_DeviceDetection_UserAgentClientHints_Index User-Agent Client Hints
+
+@subpage Examples_DeviceDetection_UserAgentClientHints_Examples
+
+@subpage Examples_DeviceDetection_UserAgentClientHints_WebIntegration

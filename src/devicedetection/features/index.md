@@ -5,3 +5,5 @@
 @subpage DeviceDetection_Features_TacLookup
 
 @subpage DeviceDetection_Features_NativeKeyLookup
+
+@subpage DeviceDetection_Features_UserAgentClientHints
