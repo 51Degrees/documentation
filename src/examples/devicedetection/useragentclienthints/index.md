@@ -3,3 +3,5 @@
 @subpage Examples_DeviceDetection_UserAgentClientHints_Examples
 
 @subpage Examples_DeviceDetection_UserAgentClientHints_WebIntegration
+
+@subpage Examples_DeviceDetection_UserAgentClientHints_UACH_Manual

@@ -8,15 +8,15 @@ This example demonstrates how to detect devices using
 See the [web integration examples](@ref Examples_DeviceDetection_UserAgentClientHints_WebIntegration) 
 for real-world implementations. 
 
-TODO - Add the actual examples
+See the [UACH without Web Integration examples](@ref Examples_DeviceDetection_UserAgentClientHints_UACH_Manual) 
+to send user agent client hints without using web integration.
+
 @startsnippets
-@grabexample{device-detection-dotnet,_asp_net_core2_81_2_startup_8cs,ASP.NET Core}
-@grabexample{device-detection-dotnet,_example_web_site_2_startup_8cs,ASP.NET}
-@grabexample{device-detection-java,servlet_2_example_8java,Java Servlet}
-@grabexample{device-detection-java,mvc_2configuration_2_example_mvc_config_8java,Java Spring MVC}
-@grabexample{device-detection-node,cloud_2web_integration_8js,Node.js}
-@grabexample{device-detection-php,cloud_2web_integration_8php,PHP}
-@grabexample{device-detection-python,cloud_2web_8py,Python}
+@grabexample{device-detection-dotnet, _hash_2_user_agent_client_hints_2_program_8cs-example, ASP.NET}
+@grabexample{device-detection-java, hash_2_user_agent_client_hints_8java-example, Java}
+@grabexample{device-detection-node, hash_2user_agent_client_hints_8js-example, Node.js}
+@grabexample{device-detection-php, hash_2user_agent_client_hints_8php-example, PHP}
+@grabexample{device-detection-python, hash_2useragentclienthints_8py-example, Python}
 @grabbedexample
 @endsnippets
 
