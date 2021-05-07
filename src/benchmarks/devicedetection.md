@@ -35,3 +35,21 @@ your own profiling.
 | ---------------------- | ------------------ | ------------------- | ----------------------: | --------------------: |
 | Quad core Xeon 2.4 GHz | Asynchronous Tasks | `MaxPerformance`    | 0.04642                 | ≈ 22,000              |
 |                        |                    | `HighPerformance`   | 0.04929                 | ≈ 20,000              |
+
+# Java
+
+- **Number of User Agents**: 20000
+
+| Machine                | Settings           | Performance Profile | Time Per Detection (ms) | Detections Per Second |
+| ---------------------- |------------------- | ------------------- | ----------------------: | --------------------: |
+| Quad core i7 2.2 GHz   | 4 Threads          | `MaxPerformance`    | 0.01900                 | ≈ 52,632              |
+|                        |                    | `HighPerformance`   | 0.01957                 | ≈ 51,086              |
+
+# Python
+
+- **Number of User Agents**: 20000
+
+| Machine                | Settings           | Performance Profile | Time Per Detection (ms) | Detections Per Second |
+| ---------------------- |------------------- | ------------------- | ----------------------: | --------------------: |
+| Quad core Xeon 2.4 GHz | 2 Threads          | `MaxPerformance`    | 0.02632                 | ≈ 38,023              |
+|                        |                    | `HighPerformance`   | 0.02636                 | ≈ 37,950              |
