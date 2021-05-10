@@ -11,7 +11,7 @@ This example shows how to carry out a performance test on the Device Detection H
 @grabexample{device-detection-java,hash_2_performance_8java,Java}
 @showsnippet{php,PHP}
 @grabexample{device-detection-node,hash_2performance_8js,Node.js}
-@grabexample{device-detection-python,hash_2performance_8python,Python}
+@grabexample{device-detection-python,hash_2performance_8py,Python}
 @startsnippet{cpp}
 A performance example has been provided by its C variant.
 @endsnippet

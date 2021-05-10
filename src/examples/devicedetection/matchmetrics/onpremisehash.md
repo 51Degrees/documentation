@@ -12,6 +12,6 @@ This example shows how to view metrics associated with the results of processing
 @grabexample{device-detection-java,hash_2_match_metrics_8java,Java}
 @grabexample{device-detection-php-onpremise,hash_2match_metrics_8php,PHP}
 @grabexample{device-detection-node,hash_2match_metrics_8js,Node.js}
-@grabexample{device-detection-python,hash_2match_metrics_8python,Python}
+@grabexample{device-detection-python,hash_2matchmetrics_8py,Python}
 @grabbedexample
 @endsnippets
