@@ -9,6 +9,7 @@
 @showsnippet{php,PHP}
 @showsnippet{python,Python}
 @showsnippet{varnish,Varnish}
+@showsnippet{nginx,Nginx}
 @defaultsnippet{Select a language.}
 @startsnippet{c}
 C does not have a @Pipeline implementation or the ability to use the cloud-based version of 
@@ -123,6 +124,19 @@ To get started with Varnish device detection on-premise:
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly so Git LFS is used.
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
 4. Follow the [installation instructions](@ref OtherIntegrations_Varnish) to get set up with the project.
+5. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash).
+6. (optional) Obtain a license key by starting a free trial and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+
+@endsnippet
+@startsnippet{nginx}
+Nginx does not have a @Pipeline implementation or the ability to use the cloud-based version of 
+Device Detection.
+To get started with Nginx device detection on-premise:
+
+1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-nginx).
+2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly so Git LFS is used.
+3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
+4. Follow the [installation instructions](@ref OtherIntegrations_Nginx) to get set up with the project.
 5. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash).
 6. (optional) Obtain a license key by starting a free trial and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 

@@ -26,6 +26,7 @@
     <tab type="user" visible="yes" title="Node.js Device Detection" url="../../device-detection-node/4.2/index.html"/>
     <tab type="user" visible="yes" title="Node.js Location" url="../../location-node/4.2/index.html"/>
     <tab type="user" visible="yes" title="Varnish Device Detection" url="../../device-detection-varnish/4.2/index.html"/>
+    <tab type="user" visible="yes" title="Nginx Device Detection" url="../../device-detection-nginx/4.2/index.html"/>
     </tab>
     <tab type="user" visible="yes" title="Cloud API Documentation" url="https://cloud.51degrees.com/api-docs/index.html"/>
   </navindex>

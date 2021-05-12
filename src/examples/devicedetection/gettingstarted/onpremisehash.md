@@ -14,5 +14,6 @@ and begin using it to process User-Agents.
 @grabexample{device-detection-node,hash_2getting_started_8js,Node.js}
 @grabexample{device-detection-python,hash_2gettingstarted_8py,Python}
 @grabexample{device-detection-varnish,hash_2getting_started_8vcl,Varnish}
+@grabexample{device-detection-nginx,hash_2getting_started_8conf,Nginx}
 @grabbedexample
 @endsnippets

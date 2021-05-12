@@ -24,6 +24,7 @@ Regardless of which API you are migrating to, there are breaking changes and new
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
+@showsnippet{nginx,Nginx}
 @defaultsnippet{Select a language to view a language specific migration guide.}
 @startsnippet{c}
 <!-- ===================================================================================
@@ -826,4 +827,45 @@ if($device->get("ismobile")->hasValue) {
 ```
 
 @endsnippet
+@startsnippet{nginx}
+<!-- ===================================================================================
+     |                                    Nginx                                        |
+     =================================================================================== -->
+Nginx module comes only with an on-premise version, you will need to get the on-premise version of the Nginx API from [GitHub](https://github.com/51Degrees/device-detection-nginx).
+ 
+The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file at [pricing](https://51degrees.com/pricing)  and be aware of the changes described below. 
+ 
+Removed in V4:
+- V4 version supports only one method of detection which is Hash.
+  - Building V4 module is done as below without specifying the detection method:
+```{nginx}
+make install
+```
+- The following build options are not available:
+  - `FIFTYONEDEGREES_CACHE_KEY_LENGTH`
+  - `FIFTYONEDEGREES_VALUE_SEPARATOR`
+- The following directives are removed or changed:
+  - `51D_cache` is removed.
+  - `51D_filePath` changed to `51D_file_path`.
+  - `51D_valueSeparator` changed to `51D_value_separator`.
+ 
+New in V4:
+- `51D_drift`
+- `51D_difference`
+- `51D_allow_unmatched`
+- `51D_use_performance_graph`
+- `51D_use_predictive_graph`
+- `51D_get_javascript_single`
+- `51D_get_javascript_all`
+- `51D_set_resp_headers`
+ 
+Changes in behaviour:
+- `51D_match_all` also takes evidence from query string and cookie.
+ - Evidence input from query string takes precedence over header evidence.
+   - For example, if `User-Agent` is supplied via query string, the value will be used instead of the header `User-Agent`.
+ - Properties that are overridable can now be overridden by value supplied as input from cookie and query string.
+Further reads:
+- [Nginx Integration](@ref OtherIntegrations_Nginx)
+@endsnippet
+
 @endsnippets

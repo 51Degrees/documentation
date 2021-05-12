@@ -1,0 +1,102 @@
+name: build-html-docs
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- checkout: self
+  submodules: recursive
+  lfs: false
+  persistCredentials: true
+  clean: true
+
+- task: DownloadSecureFile@1
+  displayName: 'Download DoxyGen'
+  name: doxygen
+  inputs:  
+    secureFile: 'doxygen.zip'
+
+- task: Bash@3
+  displayName: 'Unzip DoxyGen executable'
+  inputs:
+    targetType: 'inline'
+    script: 'unzip "$(doxygen.secureFilePath)" -d .'
+
+- task: Bash@3
+  displayName: 'Mark DoxyGen as executable'
+  inputs:
+    targetType: 'inline'
+    script: 'chmod +x doxygen'
+
+- task: Bash@3
+  displayName: 'Install  GraphViz'
+  inputs:
+    targetType: 'inline'
+    script: 'sudo apt-get install graphviz'
+
+- task: Bash@3
+  displayName: 'Generate HTML documentation'
+  inputs:
+    targetType: 'inline'
+    script: |
+      cd docs
+      '$(build.sourcesdirectory)'/doxygen
+      cd $(build.sourcesdirectory)
+
+- task: Bash@3
+  displayName: 'Generate HTML documentation for APIs'
+  inputs:
+    targetType: 'inline'
+    script: |
+      for api in `find ./apis -mindepth 1 -maxdepth 1 -type d`; do
+        cd ${api}/docs
+        '$(build.sourcesdirectory)'/doxygen
+        cd $(build.sourcesdirectory)
+      done
+
+
+- task: Bash@3
+  displayName: 'Commit and push HTML docs'
+  inputs:
+    targetType: 'inline'
+    script: |
+      git config --global user.name "51Degrees"
+      git config --global user.email "CI@51degrees.com"
+      git remote -v
+      echo "Commiting Docs"
+      verpath=`find ./ -maxdepth 1 -type d -regex ".*/4\.[0-9]*"`
+      mv ${verpath} ${verpath}new
+      [ -f docs/tagfile ] && git checkout -- docs/tagfile
+      git checkout gh-pages-staging
+      [ -d "${verpath}" ] && rm -r ${verpath}
+      mv ${verpath}new ${verpath}
+      git add ${verpath}
+      git commit -m "DOC: Regenerated HTML documentation pages."
+      git push origin gh-pages-staging
+
+- task: Bash@3
+  displayName: 'Commit and push HTML docs for APIs'
+  inputs:
+    targetType: 'inline'
+    script: |
+      for api in `find ./apis -mindepth 1 -maxdepth 1 -type d`; do
+        cd ${api}
+        echo "Commiting ${api}"
+        verpath=`find ./ -maxdepth 1 -type d -regex ".*/4\.[0-9]*"`
+        mv ${verpath} ${verpath}new
+        [ -f docs/tagfile ] && git checkout -- docs/tagfile
+        git checkout gh-pages-staging
+        [ -d "${verpath}" ] && rm -r ${verpath}
+        mv ${verpath}new ${verpath}
+        git add ${verpath}
+        git commit -m "DOC: Regenerated HTML documentation pages."
+        git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin gh-pages-staging
+        cd $(build.sourcesdirectory)
+      done
