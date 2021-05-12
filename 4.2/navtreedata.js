@@ -53,7 +53,8 @@ var NAVTREE =
       [ "Node.js Pipeline", "../../pipeline-node/4.2/index.html", null ],
       [ "Node.js Device Detection", "../../device-detection-node/4.2/index.html", null ],
       [ "Node.js Location", "../../location-node/4.2/index.html", null ],
-      [ "Varnish Device Detection", "../../device-detection-varnish/4.2/index.html", null ]
+      [ "Varnish Device Detection", "../../device-detection-varnish/4.2/index.html", null ],
+      [ "Nginx Device Detection", "../../device-detection-nginx/4.2/index.html", null ]
     ] ],
     [ "Cloud API Documentation", "^https://cloud.51degrees.com/api-docs/index.html", null ]
 ];

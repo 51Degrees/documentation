@@ -73,7 +73,7 @@ $(document).ready(function(){initNavTree('_device_detection__migration_guides_51
 <p>The language that you are using is the most important factor in determining what work is required to migrate to the new API. For some languages and frameworks, such as C or Nginx, there is no <a class="el" href="_concepts__pipeline.html">Pipeline</a> API so you will be migrating directly to version 4 of the device detection API. For other languages such as Java or .NET, you will be migrating from a pure device detection installation to the <a class="el" href="_concepts__pipeline.html">Pipeline</a> API with a device detection plugin.</p>
 <h1 class="g-docs__section-heading">Detail</h1>
 <p>Regardless of which API you are migrating to, there are breaking changes and new features to be aware of. See the following section for detail on the changes needed for your language of choice.</p>
-<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'c')">C</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cpp')">C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'aspdotnet')">ASP.NET</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'aspdotnetcore')">ASP.NET Core</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view a language specific migration guide. </div>   <div class="c-tabgroup__main" data-lang="c" style="display:none;"> </p>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'c')">C</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cpp')">C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'aspdotnet')">ASP.NET</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'aspdotnetcore')">ASP.NET Core</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'nginx')">Nginx</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view a language specific migration guide. </div>   <div class="c-tabgroup__main" data-lang="c" style="display:none;"> </p>
 <p>First, add the device detection libraries from the <a href="https://github.com/51degrees/device-detection-cxx">GitHub repo</a>. These can be included using the Visual Studio projects, the CMake projects, or just the files themselves.</p>
 <p>The old (V3) device detection API used a single method to initialize a <code>fiftyoneDegreesProvider</code>. This took all available options as parameters, and was similar for both the 'Pattern' and 'Hash' algorithms.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesDataSetInitStatus status =</div><div class="c-code__line">    fiftyoneDegreesInitProviderWithPropertyString(</div><div class="c-code__line">    fileName, &amp;provider, properties, 4, 1000);</div></div><p>An equivalent service can be set up using the V4 device detection API. However, the Hash data files have been significantly improved for V4, and are now equivalent or superior to Pattern in every way. As such, Hash is now the only option. It takes the following parameters:</p>
@@ -218,7 +218,48 @@ $(document).ready(function(){initNavTree('_device_detection__migration_guides_51
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">// 1. Create a &#39;FlowData&#39; instance from the Pipeline. This is used to pass data in and access results.</div><div class="c-code__line">$flowData = $deviceDetectionPipeline-&gt;createFlowData();</div><div class="c-code__line">// 2. Add &#39;evidence&#39; to the FlowData. In this case, we are adding a User-Agent HTTP header.</div><div class="c-code__line">$flowData-&gt;evidence-&gt;set(&quot;header.user-agent&quot;, userAgent);</div><div class="c-code__line">// 3. Process the evidence.</div><div class="c-code__line">$pipelineResult = $flowData-&gt;process();</div><div class="c-code__line">// 4. The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.</div><div class="c-code__line">$device = $result-&gt;get(&quot;device&quot;)</div></div><p>Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found. For more detail on this see the <a class="el" href="_device_detection__features__false_positive_control.html">false positive control</a> feature page.</p>
 <p>As an example:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">$isMobile = $match-&gt;getValue(<span class="c-code__stringliteral">&quot;IsMobile&quot;</span>);</div></div><p>Becomes:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keywordflow">if</span>($device-&gt;get(<span class="c-code__stringliteral">&quot;ismobile&quot;</span>)-&gt;hasValue) {</div><div class="c-code__line">    $isMobile = $device-&gt;get(<span class="c-code__stringliteral">&quot;ismobile&quot;</span>).value;</div><div class="c-code__line">}</div></div><p> </div>   </div>  </p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keywordflow">if</span>($device-&gt;get(<span class="c-code__stringliteral">&quot;ismobile&quot;</span>)-&gt;hasValue) {</div><div class="c-code__line">    $isMobile = $device-&gt;get(<span class="c-code__stringliteral">&quot;ismobile&quot;</span>).value;</div><div class="c-code__line">}</div></div><p> </div>   <div class="c-tabgroup__main" data-lang="nginx" style="display:none;"> </p>
+<p>Nginx module comes only with an on-premise version, you will need to get the on-premise version of the Nginx API from <a href="https://github.com/51Degrees/device-detection-nginx">GitHub</a>.</p>
+<p>The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file at <a href="https://51degrees.com/pricing">pricing</a> and be aware of the changes described below.</p>
+<p>Removed in V4:</p><ul>
+<li>V4 version supports only one method of detection which is Hash.<ul>
+<li>Building V4 module is done as below without specifying the detection method: <div class="c-code__block c-code__block--outline"><div class="c-code__line">make install</div></div></li>
+</ul>
+</li>
+<li>The following build options are not available:<ul>
+<li><code>FIFTYONEDEGREES_CACHE_KEY_LENGTH</code></li>
+<li><code>FIFTYONEDEGREES_VALUE_SEPARATOR</code></li>
+</ul>
+</li>
+<li>The following directives are removed or changed:<ul>
+<li><code>51D_cache</code> is removed.</li>
+<li><code>51D_filePath</code> changed to <code>51D_file_path</code>.</li>
+<li><code>51D_valueSeparator</code> changed to <code>51D_value_separator</code>.</li>
+</ul>
+</li>
+</ul>
+<p>New in V4:</p><ul>
+<li><code>51D_drift</code></li>
+<li><code>51D_difference</code></li>
+<li><code>51D_allow_unmatched</code></li>
+<li><code>51D_use_performance_graph</code></li>
+<li><code>51D_use_predictive_graph</code></li>
+<li><code>51D_get_javascript_single</code></li>
+<li><code>51D_get_javascript_all</code></li>
+<li><code>51D_set_resp_headers</code></li>
+</ul>
+<p>Changes in behaviour:</p><ul>
+<li><code>51D_match_all</code> also takes evidence from query string and cookie.<ul>
+<li>Evidence input from query string takes precedence over header evidence.<ul>
+<li>For example, if <code>User-Agent</code> is supplied via query string, the value will be used instead of the header <code>User-Agent</code>.</li>
+</ul>
+</li>
+<li>Properties that are overridable can now be overridden by value supplied as input from cookie and query string. Further reads:</li>
+</ul>
+</li>
+<li><a class="el" href="_other_integrations__nginx.html">Nginx Integration</a>  </div> </li>
+</ul>
+<p> </div>  </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
