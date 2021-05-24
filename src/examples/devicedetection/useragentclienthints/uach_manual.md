@@ -3,7 +3,7 @@
 # Introduction
 
 This example demonstrates how to detect devices accessing a website using 
-[User-Agent Client Hints](@ref DeviceDetection_Features_UserAgentClientHints).
+[User-Agent Client Hints](@ref DeviceDetection_Features_UserAgentClientHints), but without the web integration feature, which handles setting the necessary response headers.
  
 @startsnippets
 @grabexample{device-detection-dotnet,_asp_net_core3_81-_u_a_c_h-manual_2_startup_8cs-example,ASP.NET Core}

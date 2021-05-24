@@ -54,25 +54,22 @@ However, there are some scenarios that cause additional complexity.
 
 ### Calling from Pipeline API
 
-If you are calling the cloud from a Pipeline API then you simply need 
+If you are calling the cloud from a Pipeline API then you need 
 to ensure that the appropriate response headers are set and that the 
 UACH headers are then included in the request to cloud.
 
-TODO: Will users need to get a new resource key in order to have access
-to the SetHeader* properties?
-
-The Pipeline API will handle this for you for the most part. There are 
+The Pipeline API can handle this for you for the most part. There are 
 [examples](@ref Examples_DeviceDetection_UserAgentClientHints_Examples) 
 available to show what changes you need to make for your language.
+As this functionality requires new properties, you will need to create a new resource key that includes these: SetHeaderHardwareAccept-CH, SetHeaderPlatformAccept-CH and SetHeaderBrowserAccept-CH.
+
+Alternatively, you can modify your site to set the necessary response headers yourself. The UACH values will automatically be sent to cloud in order to perform detection.
 
 ### Calling from (non-Pipeline API) server-side code.
 
 As above, in order to use UACH, you'll just need to ensure that the 
 appropriate response headers are set and that the UACH headers are 
 then included in the request to cloud.
-
-TODO: Will users need to get a new resource key in order to have access
-to the SetHeader* properties?
 
 Exactly what this looks like will vary by language, but there are 
 2 essential steps.
@@ -107,16 +104,14 @@ covering how UACH works.
 51Degrees has also [blogged](https://51degrees.com/blog/user-agent-client-hints-chrome-89-update) 
 [extensively](https://51degrees.com/blog/user-agent-client-hints-update-september-2020) on the subject.
 
-The timeline for deprecation of the User-Agent is currently unclear.
+In May 2021, Google [outlined](https://blog.chromium.org/2021/05/update-on-user-agent-string-reduction.html) their plans for the rollout of UACH. This also included mention that the deprecation of the existing User-Agent will not happen until at least 2022.
+
 The status of the UACH feature is tracked [here](https://www.chromestatus.com/feature/5995832180473856).
-The best place to get the latest updates appears to be 
-[this](https://groups.google.com/a/chromium.org/g/blink-dev/c/-2JIRNMWJ7s/m/u-YzXjZ8BAAJ) 
-conversation.
 
 User-Agent Client Hints extends the existing Client Hints content 
 negotiation feature.
 
-There is documentation of Client Hints on 
+There is documentation of the general Client Hints feature on 
 [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Client_hints) and
 from [Google](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints)
 

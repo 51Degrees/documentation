@@ -9,7 +9,7 @@ See the [web integration examples](@ref Examples_DeviceDetection_UserAgentClient
 for real-world implementations. 
 
 See the [UACH without Web Integration examples](@ref Examples_DeviceDetection_UserAgentClientHints_UACH_Manual) 
-to send user agent client hints without using web integration.
+to make use of user agent client hints without using web integration.
 
 @startsnippets
 @grabexample{device-detection-dotnet,_hash_2_user_agent_client_hints_2_program_8cs-example,ASP.NET}
