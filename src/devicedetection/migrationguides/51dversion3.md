@@ -858,6 +858,9 @@ New in V4:
 - `51D_get_javascript_single`
 - `51D_get_javascript_all`
 - `51D_set_resp_headers`
+
+New requirements in V4:
+- Building V4 module requires a compiler that support C11.
  
 Changes in behaviour:
 - `51D_match_all` also takes evidence from query string and cookie.
