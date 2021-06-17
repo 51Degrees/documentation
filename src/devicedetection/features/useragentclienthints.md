@@ -84,16 +84,16 @@ don't need to worry about setting the Accept-CH header or manually
 including the sec-ch-ua values in the calls to cloud.
 However, it does have the additional complication that 
 [Client Hints are not sent to third parties by default](https://web.dev/user-agent-client-hints/#hint-scope-and-cross-origin-requests).
-To get around this, you will need to include the following values in the 
-Feature-Policy header:
+To get around this, you will need to include the required values in the 
+Permissions-Policy header:
 
-sec-ch-ua cloud.51degrees.com;
-sec-ch-ua-full-version cloud.51degrees.com;
-sec-ch-ua-mobile cloud.51degrees.com;
-sec-ch-ua-platform cloud.51degrees.com;
-sec-ch-ua-platform-version cloud.51degrees.com;
-sec-ch-ua-arch cloud.51degrees.com;
-sec-ch-ua-model cloud.51degrees.com;
+sec-ch-ua=(self "https://cloud.51degrees.com")  
+sec-ch-ua-full-version=(self "https://cloud.51degrees.com")  
+sec-ch-ua-mobile=(self "https://cloud.51degrees.com")  
+sec-ch-ua-platform=(self "https://cloud.51degrees.com")  
+sec-ch-ua-platform-version=(self "https://cloud.51degrees.com")  
+sec-ch-ua-arch=(self "https://cloud.51degrees.com")  
+sec-ch-ua-model=(self "https://cloud.51degrees.com")  
 
 TODO: Testing is needed to confirm if these values are correct.
 
@@ -103,6 +103,7 @@ The authors of the proposal have created an [article](https://web.dev/user-agent
 covering how UACH works.
 51Degrees has also [blogged](https://51degrees.com/blog/user-agent-client-hints-chrome-89-update) 
 [extensively](https://51degrees.com/blog/user-agent-client-hints-update-september-2020) on the subject.
+We also have a [test page](https://51degrees.com/client-hints) that shows how they interact with the Accept-CH and Permissions-Policy response headers.
 
 In May 2021, Google [outlined](https://blog.chromium.org/2021/05/update-on-user-agent-string-reduction.html) their plans for the rollout of UACH. This also included mention that the deprecation of the existing User-Agent will not happen until at least 2022.
 
