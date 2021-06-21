@@ -80,22 +80,32 @@ Exactly what this looks like will vary by language, but there are
 ### Calling from client-side code. 
 
 Calling the cloud from client-side code is simpler in some ways, as you 
-don't need to worry about setting the Accept-CH header or manually 
-including the sec-ch-ua values in the calls to cloud.
+don't need to worry about manually including the sec-ch-ua values in
+the calls to cloud.
 However, it does have the additional complication that 
 [Client Hints are not sent to third parties by default](https://web.dev/user-agent-client-hints/#hint-scope-and-cross-origin-requests).
 To get around this, you will need to include the required values in the 
 Permissions-Policy header:
 
-sec-ch-ua=(self "https://cloud.51degrees.com")  
-sec-ch-ua-full-version=(self "https://cloud.51degrees.com")  
-sec-ch-ua-mobile=(self "https://cloud.51degrees.com")  
-sec-ch-ua-platform=(self "https://cloud.51degrees.com")  
-sec-ch-ua-platform-version=(self "https://cloud.51degrees.com")  
-sec-ch-ua-arch=(self "https://cloud.51degrees.com")  
-sec-ch-ua-model=(self "https://cloud.51degrees.com")  
+ch-ua-full-version=(self "https://cloud.51degrees.com")  
+ch-ua-platform=(self "https://cloud.51degrees.com")  
+ch-ua-platform-version=(self "https://cloud.51degrees.com")  
+ch-ua-arch=(self "https://cloud.51degrees.com")  
+ch-ua-model=(self "https://cloud.51degrees.com")  
 
-TODO: Testing is needed to confirm if these values are correct.
+In addition, As of Chrome 91, the browser will only send client hints 
+headers to the third party that are also requested by the first-party.
+It's unclear if this is intentional, or a mistake in the initial implementation.
+Regardless, it means that you'll also need to set your Accept-CH header 
+to request the client hints headers:
+
+sec-ch-ua  
+sec-ch-ua-mobile  
+sec-ch-ua-full-version  
+sec-ch-ua-platform  
+sec-ch-ua-platform-version  
+sec-ch-ua-arch  
+sec-ch-ua-model  
 
 # Background
 
