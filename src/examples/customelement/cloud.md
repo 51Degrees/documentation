@@ -108,12 +108,6 @@ from.
 
 @snippet "CustomFlowElement/4. Cloud Engine/FlowElements/SimpleCloudEngine.cs" constructor
 
-The `LoadAspectProperties` method in this example will get the @aspectproperties from the `CloudRequestEngine`
-and store them. In this case we know the only property will be 'star sign', but more complex @cloudengines can have many
-properties.
-
-@snippet "CustomFlowElement/4. Cloud Engine/FlowElements/SimpleCloudEngine.cs" loadaspectproperties
-
 Now the abstract methods can be implemented to create a functional @aspectengine.
 
 @snippet "CustomFlowElement/4. Cloud Engine/FlowElements/SimpleCloudEngine.cs" class
