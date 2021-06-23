@@ -351,6 +351,3 @@ The message is constructed and returned:
 @snippet clientSideEvidenceFlowElement.js usage
 @endsnippet
 @endsnippets
-
-# Next Steps
-The example for [Custom On-premise Engine](@ref Examples_CustomElement_OnPremise) shows how you can extend the functionality of this **flow element** to use a @datafile rather than hard coded values.
