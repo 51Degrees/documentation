@@ -1,6 +1,6 @@
 @page Examples_Index Examples
 
-@subpage Examples_CombiningServices_Index
+@subpage Examples_CombiningServices
 
 @subpage Examples_CustomElement_Index
 
