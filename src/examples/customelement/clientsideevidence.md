@@ -64,12 +64,12 @@ concrete implementation with easy 'setters'.
 In this example, values for star sign and JavaScript are populated. So an interface `IStarSign`
 will extend `IElementData` to add a 'getter' for it.
 
-@snippet "CustomFlowElement/3. Client-side evidence/Data/IStarSignData.cs" class
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.Shared/Data/IStarSignData.cs" class
 
 Now the internal implementation of it will implement this 'getter' and add a 'setter' for the @flowelement
 to use.
 
-@snippet "CustomFlowElement/3. Client-side evidence/Data/StarSignData.cs" class
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.Shared/Data/StarSignData.cs" class
 
 @endsnippet
 @startsnippet{java}
@@ -133,23 +133,23 @@ added to the @flowdata, and  `IElementPropertyMetaData` - as we only need the st
 This needs a constructor matching the `FlowElementBase` class. So it takes a logger, and an
 @elementdata factory which will be used to construct an `IStarSignData`:
 
-@snippet "CustomFlowElement/3. Client-side evidence/FlowElements/SimpleClientSideElement.cs" constructor
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.Shared/FlowElements/SimpleClientSideElement.cs" constructor
 
 The `Init` method in this example will simply initialize a list of star signs with the start and end dates of
 each star sign and add each to a list of a new class named `StarSign` which has the following simple implementation:
 
-@snippet "CustomFlowElement/3. Client-side evidence/Data/StarSign.cs" class
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.Shared/Data/StarSign.cs" class
 
 Note that the year of the start and end date are both set to 1, as the year should be ignored, but
 the year 0 cannot be used in a `DateTime`.
 
 The new `Init` method looks like this:
 
-@snippet "CustomFlowElement/3. Client-side evidence/FlowElements/SimpleClientSideElement.cs" init
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.Shared/FlowElements/SimpleClientSideElement.cs" init
 
 Now the abstract methods can be implemented to create a functional @flowelement.
 
-@snippet "CustomFlowElement/3. Client-side evidence/FlowElements/SimpleClientSideElement.cs" class
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.Shared/FlowElements/SimpleClientSideElement.cs" class
 
 @endsnippet
 @startsnippet{java}
@@ -214,7 +214,7 @@ which the @elementbuilder provides with a logger and an @elementdata factory.
 The @elementdata factory is implemented in the @elementbuilder class to make use of the same
 logger factory.
 
-@snippet "CustomFlowElement/3. Client-side evidence/FlowElements/SimpleClientSideElementBuilder.cs" class
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.Shared/FlowElements/SimpleClientSideElementBuilder.cs" class
 
 @endsnippet
 @startsnippet{java}
@@ -279,7 +279,7 @@ the message which is passed from the controller:
 
 The message is constructed in the controller in the same way as in the [previous example](@ref Examples_CustomElement_FlowElement):
 
-@snippet SimpleClientSideElementMVC/Controllers/HomeController.cs usage
+@snippet "CustomFlowElement\3. Client-side evidence\ClientSideEvidence.MVC\Controllers/HomeController.cs" usage
 
 @endsnippet
 @startsnippet{java}
