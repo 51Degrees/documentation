@@ -312,7 +312,9 @@ All terms should use the same format as the 51Degrees glossary, for capitals, hy
 # Generating
 ## Dependencies
 ### DoxyGen
-DoxyGen must be downloaded [FS1/Ben/DoxyGen](\\fs1\Data\Ben\DoxyGen)
+We use a customised build of DoxyGen.
+The source code is available from the [DoxyGen](https://51degrees.visualstudio.com/Documentation/_git/DoxyGen) repository. However, building from source can be [fiddly](https://www.doxygen.nl/manual/install.html).
+Pre-built binaries can be downloaded from Sharepoint for [Linux](https://51degrees.sharepoint.com/:u:/r/Product%20Team/doxygen-linux.zip?csf=1&web=1&e=fTWXlN) or [Windows](https://51degrees.sharepoint.com/:u:/r/Product%20Team/doxygen-win.zip?csf=1&web=1&e=T7MvWo).
 
 ### GraphVis
 In order for DoxyGen to generate nice diagrams, [GraphVis 2.38](https://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.msi) must be installed.
@@ -321,8 +323,3 @@ In order for DoxyGen to generate nice diagrams, [GraphVis 2.38](https://graphviz
 The css used in all documentation comes from the pattern lab submodule.
 
 To generate the `main.min.css` needed by the documentation, follow the installation instructions in the [PatternLab readme](patternlab/README.md) to generat the css, then run ``gulp minify-css`` to minify it. The minified css will now live in `patternlab/source/css`.
-
-## DoxyWizard
-The DoxyGen package includes `doxywizard.exe` which will guide you through generating the documentation. After opening it, open the `DoxyFile` within it and go to generate the documentation.
-
-The `DoxyFile` can be edited entirely through this wizard, making changing things a bit simpler (this is the prefered method).

@@ -7,5 +7,3 @@
 @subpage Examples_CustomElement_ClientSideEvidence
 
 @subpage Examples_CustomElement_Cloud
-
-@subpage Examples_CustomElement_Parallel

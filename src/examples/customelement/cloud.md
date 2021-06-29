@@ -13,10 +13,8 @@ this example will call a cloud service to perform the required functionality.
 # Download Example
 
 The source code used in this example is available here:
-- [C# Visual Studio project](https://github.com/51degrees/pipeline-dotnet)
-- [Java project](https://github.com/51degrees/pipeline-java)
-- [PHP project](https://github.com/51degrees/pipeline-php)
-- [Node.js project](https://github.com/51degrees/pipeline-node)
+- [C# Visual Studio project](https://github.com/51Degrees/pipeline-dotnet/tree/master/Examples/CustomFlowElement/4.%20Cloud%20Engine)
+- [Java project](https://github.com/51Degrees/pipeline-java/tree/master/examples/pipeline.developer-examples.cloud-engine)
 
 # Dependencies
 
@@ -25,8 +23,6 @@ The @aspectengine will need a dependency on the @pipeline engines package, and c
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
-@showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific dependencies.}
 @startsnippet{dotnet}
 The dependencies needed for .NET are the `FiftyOne.Pipeline.Engines` and
@@ -48,12 +44,6 @@ To include this, add the following to the `<dependencies>` section of the projec
 </dependency>
 ```
 @endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
-@startsnippet{node}
-**todo**
-@endsnippet
 @endsnippets
 
 
@@ -66,19 +56,17 @@ The @elementdata implemented in the previous example can now be upgraded to impl
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
-@showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific @aspectdata implementation.}
 @startsnippet{dotnet}
 Instead of implementing `IElementData`, the `IStarSignData` will now implement `IAspectData`
 which extends `IElementData`.
 
-@snippet SimpleCloudEngine/Data/IStarSignData.cs class
+@snippet "CustomFlowElement/4. Cloud Engine/Data/IStarSignData.cs" class
 
 Now the internal implementation of it will implement a 'getter' and add a 'setter' for `StarSign` in the
 same way as the [previous example](@ref Examples_CustomElement_FlowElement).
 
-@snippet SimpleCloudEngine/Data/StarSignData.cs class
+@snippet "CustomFlowElement/4. Cloud Engine/Data/StarSignData.cs" class
 
 @endsnippet
 @startsnippet{java}
@@ -95,12 +83,6 @@ same way as the [previous example](@ref Examples_CustomElement_FlowElement).
 Note that this concrete implementation of `StarSignData` sits in the same package as the @aspectengine,
 not the `StarSignData` interface, as it only needs to be accessible by the @aspectengine.
 @endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
-@startsnippet{node}
-**todo**
-@endsnippet
 @endsnippets
 
 
@@ -113,8 +95,6 @@ Now the actual @aspectengine needs to be implemented. For this, the class from t
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
-@showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific @aspectengine implementation.}
 @startsnippet{dotnet}
 First let's change the class to extend `CloudAspectEngineBase`. This has the type arguments of
@@ -126,17 +106,11 @@ The existing constructor needs to change to match the `CloudAspectEngineBase` cl
 The constructor will also take a `CloudRequestEngine` instance to get the available properties
 from.
 
-@snippet SimpleCloudEngine/FlowElements/SimpleCloudEngine.cs constructor
-
-The `LoadAspectProperties` method in this example will get the @aspectproperties from the `CloudRequestEngine`
-and store them. In this case we know the only property will be 'star sign', but more complex @cloudengines can have many
-properties.
-
-@snippet SimpleCloudEngine/FlowElements/SimpleCloudEngine.cs loadaspectproperties
+@snippet "CustomFlowElement/4. Cloud Engine/FlowElements/SimpleCloudEngine.cs" constructor
 
 Now the abstract methods can be implemented to create a functional @aspectengine.
 
-@snippet SimpleCloudEngine/FlowElements/SimpleCloudEngine.cs class
+@snippet "CustomFlowElement/4. Cloud Engine/FlowElements/SimpleCloudEngine.cs" class
 
 @endsnippet
 @startsnippet{java}
@@ -162,12 +136,6 @@ Now the abstract methods can be implemented to create a functional @aspectengine
 @snippet developerexamples/cloudengine/flowelements/SimpleCloudEngine.java class
 
 @endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
-@startsnippet{node}
-**todo**
-@endsnippet
 @endsnippets
 
 
@@ -180,14 +148,12 @@ the previous example. However, it also now needs a cloud request @aspectengine.
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
-@showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific @elementbuilder implementation.}
 @startsnippet{dotnet}
 As this @aspectengine is using a @datafile, the builder can make use of the logic in the
 `CloudAspectEngineBuilderBase`.
 
-@snippet SimpleCloudEngine/FlowElements/SimpleCloudEngineBuilder.cs class
+@snippet "CustomFlowElement/4. Cloud Engine/FlowElements/SimpleCloudEngineBuilder.cs" class
 
 @endsnippet
 @startsnippet{java}
@@ -197,12 +163,6 @@ As this @aspectengine is using a @datafile, the builder can make use of the logi
 @snippet developerexamples/cloudengine/flowelements/SimpleCloudEngineBuilder.java class
 
 @endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
-@startsnippet{node}
-**todo**
-@endsnippet
 @endsnippets
 
 
@@ -211,14 +171,12 @@ As this @aspectengine is using a @datafile, the builder can make use of the logi
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
-@showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific usage.}
 @startsnippet{dotnet}
 This new @aspectengine can now be added to a @pipeline along with a `CloudRequestEngine`,
 and used like:
 
-@snippet SimpleCloudEngine/Program.cs usage
+@snippet "CustomFlowElement/4. Cloud Engine/Program.cs" usage
 
 to give an output of:
 ```{bash}
@@ -235,12 +193,6 @@ to give an output of:
 ```{bash}
 With a date of birth of 18/12/1992, your star sign is Sagittarius.
 ```
-@endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
-@startsnippet{node}
-**todo**
 @endsnippet
 @endsnippets
 

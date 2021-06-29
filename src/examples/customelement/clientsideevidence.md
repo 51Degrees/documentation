@@ -14,7 +14,6 @@ did, this example will send JavaScript to the a client to get the @evidence.
 The source code used in this example is available here:
 - [C# Visual Studio project](https://github.com/51degrees/pipeline-dotnet)
 - [Java project](https://github.com/51degrees/pipeline-java)
-- [PHP project](https://github.com/51degrees/pipeline-php)
 - [Node.js project](https://github.com/51degrees/pipeline-node)
 
 # Dependencies
@@ -24,7 +23,6 @@ The @flowelement will need a dependency on the @pipeline core package
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific dependencies.}
 @startsnippet{dotnet}
@@ -40,9 +38,6 @@ To include this, add the following to the `<dependencies>` section of the projec
     <version>4.2.0</version>
 </dependency>
 ```
-@endsnippet
-@startsnippet{php}
-**todo**
 @endsnippet
 @startsnippet{node}
 Add a dependency to the `fiftyone.pipeline.core` NPM package to the package.json, and required it
@@ -60,7 +55,6 @@ get the date of birth is also added using the appropriate type.
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific @elementdata implementation.}
 @startsnippet{dotnet}
@@ -70,12 +64,12 @@ concrete implementation with easy 'setters'.
 In this example, values for star sign and JavaScript are populated. So an interface `IStarSign`
 will extend `IElementData` to add a 'getter' for it.
 
-@snippet SimpleClientSideElement/Data/IStarSignData.cs class
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.Shared/Data/IStarSignData.cs" class
 
 Now the internal implementation of it will implement this 'getter' and add a 'setter' for the @flowelement
 to use.
 
-@snippet SimpleClientSideElement/Data/StarSignData.cs class
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.Shared/Data/StarSignData.cs" class
 
 @endsnippet
 @startsnippet{java}
@@ -95,9 +89,6 @@ to use.
 
 Note that this concrete implementation of `StarSignData` sits in the same package as the @flowelement,
 not the `StarSignData` interface, as it only needs to be accessible by the @flowelement.
-@endsnippet
-@startsnippet{php}
-**todo**
 @endsnippet
 @startsnippet{node}
 Node's implementation of @elementdata does not require concrete getters for IDE autocompletion, so `elementDataDictionary` can be used.
@@ -131,7 +122,6 @@ can be used which deals with most of the logic. The @elementproperties,
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific @flowelement implementation.}
 @startsnippet{dotnet}
@@ -143,23 +133,23 @@ added to the @flowdata, and  `IElementPropertyMetaData` - as we only need the st
 This needs a constructor matching the `FlowElementBase` class. So it takes a logger, and an
 @elementdata factory which will be used to construct an `IStarSignData`:
 
-@snippet SimpleClientSideElement/FlowElements/SimpleClientSideElement.cs constructor
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.Shared/FlowElements/SimpleClientSideElement.cs" constructor
 
 The `Init` method in this example will simply initialize a list of star signs with the start and end dates of
 each star sign and add each to a list of a new class named `StarSign` which has the following simple implementation:
 
-@snippet SimpleClientSideElement/Data/StarSign.cs class
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.Shared/Data/StarSign.cs" class
 
 Note that the year of the start and end date are both set to 1, as the year should be ignored, but
 the year 0 cannot be used in a `DateTime`.
 
 The new `Init` method looks like this:
 
-@snippet SimpleClientSideElement/FlowElements/SimpleClientSideElement.cs init
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.Shared/FlowElements/SimpleClientSideElement.cs" init
 
 Now the abstract methods can be implemented to create a functional @flowelement.
 
-@snippet SimpleClientSideElement/FlowElements/SimpleClientSideElement.cs class
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.Shared/FlowElements/SimpleClientSideElement.cs" class
 
 @endsnippet
 @startsnippet{java}
@@ -190,9 +180,6 @@ Now the abstract methods can be implemented to create a functional @flowelement.
 @snippet developerexamples/clientsideelement/flowelements/SimpleClientSideElement.java class
 
 @endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
 @startsnippet{node}
 
 First let's define a class which extends `flowElement`.
@@ -218,7 +205,6 @@ as this example has no extra configuration options.
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific @elementbuilder implementation.}
 @startsnippet{dotnet}
@@ -228,7 +214,7 @@ which the @elementbuilder provides with a logger and an @elementdata factory.
 The @elementdata factory is implemented in the @elementbuilder class to make use of the same
 logger factory.
 
-@snippet SimpleClientSideElement/FlowElements/SimpleClientSideElementBuilder.cs class
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.Shared/FlowElements/SimpleClientSideElementBuilder.cs" class
 
 @endsnippet
 @startsnippet{java}
@@ -240,9 +226,6 @@ logger factory.
 
 @snippet developerexamples/clientsideelement/flowelements/SimpleClientSideElementBuilder.java class
 
-@endsnippet
-@startsnippet{php}
-**todo**
 @endsnippet
 @startsnippet{node}
 The Node implementation does not use separate builder classes. Instead the options are provided by optional constructor parameters.
@@ -258,7 +241,6 @@ client-side JavaScript automatically run.
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific usage.}
 @startsnippet{dotnet}
@@ -297,7 +279,7 @@ the message which is passed from the controller:
 
 The message is constructed in the controller in the same way as in the [previous example](@ref Examples_CustomElement_FlowElement):
 
-@snippet SimpleClientSideElementMVC/Controllers/HomeController.cs usage
+@snippet "CustomFlowElement\3. Client-side evidence\ClientSideEvidence.MVC\Controllers/HomeController.cs" usage
 
 @endsnippet
 @startsnippet{java}
@@ -339,9 +321,6 @@ The message is constructed in the controller in the same way as in the [previous
 @snippet controller/ExampleController.java class
 
 @endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
 @startsnippet{node}
 Using a simple HTTP server, a pipeline can created containing the new @flowelement.
 ```{js}
@@ -372,6 +351,3 @@ The message is constructed and returned:
 @snippet clientSideEvidenceFlowElement.js usage
 @endsnippet
 @endsnippets
-
-# Next Steps
-The example for [Custom On-premise Engine](@ref Examples_CustomElement_OnPremise) shows how you can extend the functionality of this **flow element** to use a @datafile rather than hard coded values.
