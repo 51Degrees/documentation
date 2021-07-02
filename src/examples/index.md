@@ -6,6 +6,8 @@
 
 @subpage Examples_ReverseGeocoding_Index
 
+@subpage Examples_UsageSharing
+
 @subpage Examples_WebIntegration
 
 @subpage Examples_CombiningServices
