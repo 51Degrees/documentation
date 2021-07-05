@@ -76,17 +76,17 @@ $(document).ready(function(){initNavTree('_concepts__flow_elements__flow_element
 <p>The <b>flow element</b> typically uses the <a class="el" href="_concepts__data__evidence.html">evidence</a> contained within the supplied <a class="el" href="_concepts__data__flow_data.html">flow data</a> to determine the values it will populate in the resulting <a class="el" href="_concepts__data__element_data.html">element data</a>, which is then added to the <a class="el" href="_concepts__data__flow_data.html">flow data</a> as an output.</p>
 <p>However, <b>flow elements</b> may also use existing <a class="el" href="_concepts__data__element_data.html">element data</a> from the <a class="el" href="_concepts__data__flow_data.html">flow data</a> as input and are not required to populate any output data.</p>
 <p><div class="dotgraph">
-</div>
+<iframe scrolling="no" frameborder="0" src="dot_flowelement-process.svg" width="352" height="203"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
 <p>For example, a 'user age' <b>element</b> might look for a date of birth in the <a class="el" href="_concepts__data__evidence.html">evidence</a>, set the age of the user in an <a class="el" href="_concepts__data__element_data.html">element data</a> instance before adding the <a class="el" href="_concepts__data__element_data.html">element data</a> into the same <a class="el" href="_concepts__data__flow_data.html">flow data</a> which the <a class="el" href="_concepts__data__evidence.html">evidence</a> came from.</p>
 <p><div class="dotgraph">
-</div>
+<iframe scrolling="no" frameborder="0" src="dot_ageelement-process.svg" width="434" height="208"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
 <h1 class="g-docs__section-heading">Hierarchy</h1>
 <p>While an implementation can implement just <b>flow element</b>, useful functionality is built up in layers as shown below. Any of these layers can be added to by an implementation, depending on its requirements.</p>
 <p>In languages which support inheritance, this is a structural hierarchy. In other languages, this may be more of a conceptual hierarchy, and not reflected directly in the code.</p>
 <p><div class="dotgraph">
-</div>
+<iframe scrolling="no" frameborder="0" src="dot_flowelement-hierarchy.svg" width="506" height="450"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
 <h1 class="g-docs__section-heading">Properties</h1>
 <p>The <a class="el" href="_concepts__data__element_data.html">element data</a> produced by an <b>element</b> contains values of <a class="el" href="_concepts__meta_data__element_properties.html">properties</a> based on the <a class="el" href="_concepts__data__evidence.html">evidence</a> provided. Each <b>element</b> has a set of <a class="el" href="_concepts__meta_data__element_properties.html">properties</a> it can populate values for.</p>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('_concepts__flow_elements__flow_element
 <p>The items of <a class="el" href="_concepts__data__evidence.html">evidence</a> which an <b>element</b> can make use of are exposed via an <a class="el" href="_concepts__data__evidence_key_filter.html">evidence key filter</a>. This is also available in an aggregated form from the parent <a class="el" href="_concepts__pipeline.html">Pipeline</a>. (This would be equivalent to combining the <a class="el" href="_concepts__data__evidence_key_filter.html">evidence key filter</a> from each <b>element</b> of the <a class="el" href="_concepts__pipeline.html">Pipeline</a> individually).</p>
 <p>Using an <a class="el" href="_concepts__data__evidence_key_filter.html">evidence key filter</a> means that instead of asking an <b>element</b> 'which items of <a class="el" href="_concepts__data__evidence.html">evidence</a> do you want?', one would ask 'do you want this item of <a class="el" href="_concepts__data__evidence.html">evidence</a>?'. This gives an <b>element</b> a greater degree of flexibility how it specifies the <a class="el" href="_concepts__data__evidence.html">evidence</a> that it accepts. For example, it allows an element to easily indicate that it can make use of any HTTP headers, regardless of the header name.</p>
 <p><div class="dotgraph">
-</div>
+<iframe scrolling="no" frameborder="0" src="dot_flowelement-evidencekeys.svg" width="354" height="172"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
 <h1 class="g-docs__section-heading">Data Keys</h1>
 <p>Results of an <b>element's</b> processing are stored in the <a class="el" href="_concepts__data__flow_data.html">flow data</a>, keyed on the <b>element's</b> <a class="el" href="_concepts__data__element_data_key.html">element data key</a>. While not required, it is convention that each <b>element</b> has a unique key name. For example, our 'user age' example would likely have the key name 'user age'.</p>
