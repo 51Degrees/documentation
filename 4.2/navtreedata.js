@@ -34,27 +34,27 @@ var NAVTREE =
     [ "Other Integrations", null, "_other_integrations__index" ],
     [ "Reverse Geocoding", null, "_reverse_geocoding__index" ],
     [ "Language Specific", "usergroup0.html", [
-      [ "C/C++", "../../device-detection-cxx/4.3/index.html", null ],
-      [ "Java Pipeline", "../../pipeline-java/4.3/index.html", null ],
-      [ "Java Device Detection", "../../device-detection-java/4.3/index.html", null ],
-      [ "Java Location", "../../location-java/4.3/index.html", null ],
-      [ "Java Location On-Premise", "../../location-onpremise-java/4.3/index.html", null ],
-      [ ".NET Pipeline", "../../pipeline-dotnet/4.3/index.html", null ],
-      [ ".NET Device Detection", "../../device-detection-dotnet/4.3/index.html", null ],
-      [ ".NET Location", "../../location-dotnet/4.3/index.html", null ],
-      [ ".NET Location On-Premise", "../../internal-engines-dotnet/4.3/index.html", null ],
-      [ "PHP Pipeline", "../../pipeline-php/4.3/index.html", null ],
-      [ "PHP Device Detection", "../../device-detection-php/4.3/index.html", null ],
-      [ "PHP Device Detection On-Premise", "../../device-detection-php-onpremise/4.3/index.html", null ],
-      [ "PHP Location", "../../location-php/4.3/index.html", null ],
-      [ "Python Pipeline", "../../pipeline-python/4.3/index.html", null ],
-      [ "Python Device Detection", "../../device-detection-python/4.3/index.html", null ],
-      [ "Python Location", "../../location-python/4.3/index.html", null ],
-      [ "Node.js Pipeline", "../../pipeline-node/4.3/index.html", null ],
-      [ "Node.js Device Detection", "../../device-detection-node/4.3/index.html", null ],
-      [ "Node.js Location", "../../location-node/4.3/index.html", null ],
-      [ "Varnish Device Detection", "../../device-detection-varnish/4.3/index.html", null ],
-      [ "Nginx Device Detection", "../../device-detection-nginx/4.3/index.html", null ]
+      [ "C/C++", "../../device-detection-cxx/index.html", null ],
+      [ "Java Pipeline", "../../pipeline-java/index.html", null ],
+      [ "Java Device Detection", "../../device-detection-java/index.html", null ],
+      [ "Java Location", "../../location-java/index.html", null ],
+      [ "Java Location On-Premise", "../../location-onpremise-java/index.html", null ],
+      [ ".NET Pipeline", "../../pipeline-dotnet/index.html", null ],
+      [ ".NET Device Detection", "../../device-detection-dotnet/index.html", null ],
+      [ ".NET Location", "../../location-dotnet/index.html", null ],
+      [ ".NET Location On-Premise", "../../internal-engines-dotnet/index.html", null ],
+      [ "PHP Pipeline", "../../pipeline-php/index.html", null ],
+      [ "PHP Device Detection", "../../device-detection-php/index.html", null ],
+      [ "PHP Device Detection On-Premise", "../../device-detection-php-onpremise/index.html", null ],
+      [ "PHP Location", "../../location-php/index.html", null ],
+      [ "Python Pipeline", "../../pipeline-python/index.html", null ],
+      [ "Python Device Detection", "../../device-detection-python/index.html", null ],
+      [ "Python Location", "../../location-python/index.html", null ],
+      [ "Node.js Pipeline", "../../pipeline-node/index.html", null ],
+      [ "Node.js Device Detection", "../../device-detection-node/index.html", null ],
+      [ "Node.js Location", "../../location-node/index.html", null ],
+      [ "Varnish Device Detection", "../../device-detection-varnish/index.html", null ],
+      [ "Nginx Device Detection", "../../device-detection-nginx/index.html", null ]
     ] ],
     [ "Cloud API Documentation", "^https://cloud.51degrees.com/api-docs/index.html", null ]
 ];
@@ -65,7 +65,7 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-"../../device-detection-cxx/4.3/index.html"
+"../../device-detection-cxx/index.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
