@@ -278,7 +278,7 @@ function showRoot()
 
 function expandNode(o, node, imm, showRoot)
 {
-  if (node.childrenData && !node.expanded) {
+  if (typeof(node) !== 'undefined' && node.childrenData && !node.expanded) {
     if (typeof(node.childrenData)==='string') {
       var varName    = node.childrenData;
       getScript(node.relpath+varName,function(){
@@ -370,7 +370,7 @@ function showNode(o, node, index, hash)
       if (index+1<o.breadcrumbs.length) {
         showNode(o,n,index+1,hash);
       } else {
-        if (typeof(n.childrenData)==='string') {
+        if (typeof(n) !== 'undefined' && typeof(n.childrenData)==='string') {
           var varName = n.childrenData;
           getScript(n.relpath+varName,function(){
             n.childrenData = getData(varName);

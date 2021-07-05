@@ -68,7 +68,7 @@ $(document).ready(function(){initNavTree('_concepts__data__data_key.html','');})
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
-<p>A <b>data key</b> is a multi-field key intended for use in caching and similar scenarios.</p>
+<p>A <b>data key</b> is a multi-field key intended for use in <a class="el" href="_features__result_caching.html">caching</a> and similar scenarios.</p>
 <h1 class="g-docs__section-heading">Internals</h1>
 <p>Exact implementation details for <b>data key</b> may vary depending on language. However, in each case, the primary features are an integer hash code and a list of values in a specific order.</p>
 <p>The hash code is calculated when the <b>data key</b> is created. It can subsequently be used as an efficient method to identify if one <b>data key</b> instance may match with another.</p>
@@ -82,7 +82,7 @@ $(document).ready(function(){initNavTree('_concepts__data__data_key.html','');})
 <p><div class="dotgraph">
 <iframe scrolling="no" frameborder="0" src="dot_datakey-check.svg" width="619" height="327"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
-<p>First, the cache will look for a match on just hash code as this is a fast operation. In the example above, the generated <b>data key</b> matches two of the items in the cache on hash code. When the hashes are found to match, the cache will then compare the values of the key fields to check for a true match. </p>
+<p>First, the <a class="el" href="_features__result_caching.html">cache</a> will look for a match on just hash code as this is a fast operation. In the example above, the generated <b>data key</b> matches two of the items in the cache on hash code. When the hashes are found to match, the <a class="el" href="_features__result_caching.html">cache</a> will then compare the values of the key fields to check for a true match. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
