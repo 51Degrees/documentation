@@ -4,6 +4,8 @@
 
 This example shows how to carry out a performance test on the Device Detection Hash @aspectengine.
 
+A [feature page](@ref DeviceDetection_Features_PerformanceOptions) is also available with more details on the different performance options.
+
 @startsnippets
 @grabexample{device-detection-cxx,_hash_2_performance_8c,C}
 @showsnippet{cpp,C++}
