@@ -15,13 +15,13 @@ The mechanism used to access the data, as well as the size of these caches, can 
 
 The exact method for specifying the template will vary by programing language. See the [performance examples](@ref Examples_DeviceDetection_Performance_OnPremiseHash) for a demonstration.
 
-The table below explains the options, from fastest performance, highest memory usage to slowest performance and lowest memory usage.
+The table below explains the options, from fastest performance and highest memory usage to slowest performance and lowest memory usage.
 
 | Template Name | Behavior | Recommendations |
 |---|---|---|
 |MaxPerformance|All data from the data file is mapped into main memory at startup. As caches are not needed, data access is lock-free| Use when memory usage is not a problem and performance is critical. This configuration is also strongly recommended when the API is running in a highly concurrent environment|
-|HighPerformance|Data accessed via caches, caches are large enough that all data from the data file can be accommodated as it is requested over time |Generally not recommended. It offers slightly worse performance than MaxPerformance but will grow to the same memory usage over time. Can be useful as a starting point when creating a custom configuration|
-|Balanced (Default)|Data accessed via caches, some caches are smaller than the high performance template. However, there is enough space that the most commonly accessed items are retained in memory. As such, loading from the disk is still relatively uncommon (assuming a typical web server workload) |Fine for generic workloads where there is no extreme memory or performance requirement|
+|HighPerformance|Data accessed via caches; caches are large enough that all data from the data file can be accommodated as it is requested over time |Generally not recommended. It offers slightly worse performance than MaxPerformance but will grow to the same memory usage over time. Can be useful as a starting point when creating a custom configuration|
+|Balanced (Default)|Data accessed via caches; some caches are smaller than the high performance template. However, there is enough space that the most commonly accessed items are retained in memory. As such, loading from the disk is still relatively uncommon (assuming a typical web server workload) |Fine for generic workloads where there is no extreme memory or performance requirement|
 |LowMemory|Data always streamed from disk on-demand | Recommended when the lowest possible memory usage is more important than performance |
 
 The precise values associated with each template can be seen in the source code on [GitHub](https://github.com/51Degrees/device-detection-cxx/blob/67503df045efb32e84eb59fe7e320772dd6475db/src/hash/hash.c#L177).
