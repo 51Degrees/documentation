@@ -17,14 +17,14 @@ The exact method for specifying the template will vary by programing language. S
 
 The table below explains the options, from fastest performance, highest memory usage to slowest performance and lowest memory usage.
 
-| Template Name | Behavior | Recommended when |
+| Template Name | Behavior | Recommendations |
 |---|---|---|
-|MaxPerformance|All data from the data file is mapped into main memory at startup. As caches are not needed, data access is lock-free| Performance is critical and/or the API is running in a highly concurrent environment|
-|HighPerformance|Data accessed via caches, caches are large enough that all data from the data file can be accommodated as it is requested over time | tbc|
-|Balanced (Default)|Data accessed via caches, some caches are smaller than the high performance template. However, there is enough space that the most commonly accessed items are retained in memory. As such, loading from the disk is still relatively uncommon (assuming a typical web server workload) |There is no extreme memory or performance requirement|
-|LowMemory|Data always streamed from disk on-demand. Memory footprint is as low as possible| Having a very low memory overhead is more important than performance |
+|MaxPerformance|All data from the data file is mapped into main memory at startup. As caches are not needed, data access is lock-free| Use when memory usage is not a problem and performance is critical. This configuration is also strongly recommended when the API is running in a highly concurrent environment|
+|HighPerformance|Data accessed via caches, caches are large enough that all data from the data file can be accommodated as it is requested over time |Generally not recommended. It offers slightly worse performance than MaxPerformance but will grow to the same memory usage over time. Can be useful as a starting point when creating a custom configuration|
+|Balanced (Default)|Data accessed via caches, some caches are smaller than the high performance template. However, there is enough space that the most commonly accessed items are retained in memory. As such, loading from the disk is still relatively uncommon (assuming a typical web server workload) |Fine for generic workloads where there is no extreme memory or performance requirement|
+|LowMemory|Data always streamed from disk on-demand | Recommended when the lowest possible memory usage is more important than performance |
 
-The precise values associated with each template can be seen in source on [GitHub](https://github.com/51Degrees/device-detection-cxx/blob/67503df045efb32e84eb59fe7e320772dd6475db/src/hash/hash.c#L177).
+The precise values associated with each template can be seen in the source code on [GitHub](https://github.com/51Degrees/device-detection-cxx/blob/67503df045efb32e84eb59fe7e320772dd6475db/src/hash/hash.c#L177).
 
 # Evaluation graphs
 
@@ -36,5 +36,8 @@ This means that the performance graph is generally recommended when fast matchin
 
 In comparison, the predictive graph is recommended when getting an accurate match for every request is the primary concern, particularly when user-agents are frequently encountered that are not in the training data.
 
-Note that if both graphs are enabled, performance will be used first. Predictive will only be used if the algorithm fails to find a match with the performance graph.
+Note that if both graphs are enabled, performance will be used first. Predictive will only then be used if the algorithm fails to find a match with the performance graph.
+
+The default graph options are defined by the performance templates described above. At time of writing, all templates enable predictive and disable performance.
+This is done in order to maximize accuracy and ensure consistent device detection results between the profiles.
 
