@@ -2,6 +2,8 @@
 
 @subpage DeviceDetection_Features_FalsePositiveControl
 
-@subpage DeviceDetection_Features_TacLookup
-
 @subpage DeviceDetection_Features_NativeKeyLookup
+
+@subpage DeviceDetection_Features_PerformanceOptions
+
+@subpage DeviceDetection_Features_TacLookup
