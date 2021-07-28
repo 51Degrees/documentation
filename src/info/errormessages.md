@@ -84,22 +84,22 @@ This resource key is not authorized for use with the Referer or Origin domain. S
 
 Your subscription does not contain the products required to access location properties. Check that you have access to the correct subscription by checking your sign-up email, otherwise see our [pricing page](https://51degrees.com/pricing) to sign up for a 51Degrees Cloud subscription with access to location.
 
-# @anchor Location_lookup_error	
+# Location Lookup Error @anchor Location_lookup_error	
 
 Could not perform reverse geo lookup. If the problem persists then please create a new issue on our [cloud-issues Git Hub](https://github.com/51Degrees/cloud-issues/issues) repo.
 
-# @anchor Resource_key_required	
+# Resource Key Required @anchor Resource_key_required	
 
 A Resource Key is required to access the 51Degrees Cloud Service. This contains your property configuration, preferences and subscriptions. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to create a Resource Key.
 
-# @anchor Evidence_keys_could_not_be_determined	
+# Evidence Keys Could Not Be Determined @anchor Evidence_keys_could_not_be_determined	
 
 Evidence keys for this resource key could not be determined. This could be caused by an invalid Resource Key or due to a lack of subscription. Please see the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to generate a new resource key. If you require a license key, visit our [pricing page](https://51degrees.com/pricing) to sign up for a 51Degrees cloud subscription.
 
-# @anchor Sequence_value_invalid	
+# Sequence Value Invalid @anchor Sequence_value_invalid	
 
 The value for the ‘sequence’ parameter could not be parsed to an integer, make sure that the ‘sequence’ value is an integer. If the problem persists then please create a new issue on our [cloud-issues Git Hub](https://github.com/51Degrees/cloud-issues/issues) repo.
 
-# @anchor Sequence_value_not_found	
+# Sequence Value Not Found @anchor Sequence_value_not_found	
 
 The value for the ‘sequence’ parameter could not found. If the ‘sequence’ parameter has been provided in the request, make sure that the value in is an integer. Otherwise, please create a new issue on our [cloud-issues Git Hub](https://github.com/51Degrees/cloud-issues/issues) repo.
