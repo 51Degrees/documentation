@@ -47,7 +47,7 @@ The products available in your subscription are not valid. Refer to the error me
 
 # There Are No Valid Products @anchor There_are_no_valid_products	
 
-The supplied license key(s) do not contain any valid products for the 51Degrees cloud service. Ccheck that you have access to the correct subscription by checking your sign-up email. Otherwise, please see our [pricing page](https://51degrees.com/pricing) for details. 
+The supplied license key(s) do not contain any valid products for the 51Degrees cloud service. Check that you have access to the correct subscription by checking your sign-up email. Otherwise, please see our [pricing page](https://51degrees.com/pricing) for details. 
 
 # Invalid Product @anchor Invalid_product	
 
@@ -98,8 +98,8 @@ Evidence keys for this resource key could not be determined. This could be cause
 
 # Sequence Value Invalid @anchor Sequence_value_invalid	
 
-The value for the ‘sequence’ parameter could not be parsed to an integer, make sure that the ‘sequence’ value is an integer. If the problem persists then please create a new issue on our [cloud-issues Git Hub](https://github.com/51Degrees/cloud-issues/issues) repo.
+The value for the `sequence` parameter could not be parsed to an integer, make sure that the `sequence` value is an integer. If the problem persists then please create a new issue on our [cloud-issues Git Hub](https://github.com/51Degrees/cloud-issues/issues) repo.
 
 # Sequence Value Not Found @anchor Sequence_value_not_found	
 
-The value for the ‘sequence’ parameter could not found. If the ‘sequence’ parameter has been provided in the request, make sure that the value in is an integer. Otherwise, please create a new issue on our [cloud-issues Git Hub](https://github.com/51Degrees/cloud-issues/issues) repo.
+The value for the `sequence` parameter could not found. If the `sequence` parameter has been provided in the request, make sure that the value in is an integer. Otherwise, please create a new issue on our [cloud-issues Git Hub](https://github.com/51Degrees/cloud-issues/issues) repo.
