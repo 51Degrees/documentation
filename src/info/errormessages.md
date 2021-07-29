@@ -1,5 +1,19 @@
 @page Info_ErrorMessages Error Messages
 
+This page contains explainers for error messages when using 51Degrees services. 
+
+# Product to Subscription Mapping @anchor Product_to_subscription_mapping
+
+Some error messages from the 51Degrees Cloud Service may list the products that are available in the request or the products that are required to resolve the error. These map to a subscriptions references on the [pricing page](https://51degrees.com/pricing) and the [property dictionary](https://51degrees.com/developers/property-dictionary). The following is a table which maps the product IDs to the Subscription name. If a Product ID is not listed here then it is not valid for use with the Cloud Service.
+
+|Product ID|Subscription(s)|
+|-|-|
+|CloudV4Free|Free (Cloud)|
+|CloudV4Complete|Big, Bigger or Biggest|
+|CloudV4TAC|Bespoke|
+|CloudV4DigitalElementLocation|Digital Element Add-On|
+
+
 # Internal Server Errors @anchor Internal_server_error
 
 There is an issue with the Cloud Service. Check the [service status page](http://stats.pingdom.com/qci12uolgufy) for current outages.
@@ -15,7 +29,7 @@ The supplied license key(s) do not contain any valid products for the 51Degrees 
 
 # Properties Not Available with this Subscription @anchor Properties_not_available_with_this_subscription	
 
-There are no available properties which are associated with the products determined in the request. Refer to the products listed in the original error message and visit the 51Degrees [property dictionary](https://51degrees.com/developers/property-dictionary) to see the table of available properties for your subscription.
+There are no available properties which are associated with the products determined in the request. Refer to the products listed in the original error message and the mapping in @ref Product_to_subscription_mapping then visit the 51Degrees [property dictionary](https://51degrees.com/developers/property-dictionary) to see the table of available properties for your subscription.
 
 # Non-unique Properties Requested @anchor Non_unique_property_requested	
 
@@ -23,7 +37,9 @@ A non-unique property has been requested, make sure that each property is only r
 
 # No Properties Associated with these Products @anchor No_properties_associated_with_these_products	
 
-This error means that there are no properties that are offered by the cloud service which can be accessed by the available products that are defined by your license keys. The error will list the available products, cross reference this with the 51Degrees [property dictionary](https://51degrees.com/developers/property-dictionary).
+This error means that there are no properties that are offered by the cloud service which can be accessed by the available products that are defined by your license keys. The error will list the available products, cross reference this with the mapping in @ref Product_to_subscription_mapping and the [property dictionary](https://51degrees.com/developers/property-dictionary).
+
+
 
 # Supplied Licenses Do Not Contain Any Valid Products @anchor Supplied_licenses_do_not contain_any_valid_products	
 
@@ -39,11 +55,11 @@ Your trial period has expired. To keep using the cloud service, please upgrade y
 
 # Products Not Associated With the Cloud Service @anchor Products_not_associated_with_the_cloud_service	
 
-There were no products available that are associated with the cloud service. Refer to the error message for products available in your subscription. Check that you have access to the correct subscription by checking your sign up email. If the your subscription is not valid then please see our [pricing page](https://51degrees.com/pricing) for details on subscriptions for the Cloud Service.
+There were no products available that are associated with the cloud service. Refer to the error message for products available in your subscription and cross reference this with the mapping in @ref Product_to_subscription_mapping. Check that you have access to the correct subscription by checking your sign up email. If your subscription is not valid then please see our [pricing page](https://51degrees.com/pricing) for details on subscriptions for the Cloud Service.
 
 # Products in Subscription Not Valid @anchor Products_in_subscription_not_valid	
 
-The products available in your subscription are not valid. Refer to the error message for products available in your subscription. Check that you have access to the correct subscription by checking your sign-up email, otherwise, please see our [pricing page](https://51degrees.com/pricing) to sign up for a valid 51Degrees Cloud product.
+The products available in your subscription are not valid. Refer to the error message for products available in your subscription and cross reference this with the mapping in @ref Product_to_subscription_mapping. Check that you have access to the correct subscription by checking your sign-up email, otherwise, please see our [pricing page](https://51degrees.com/pricing) to sign up for a valid 51Degrees Cloud product.
 
 # There Are No Valid Products @anchor There_are_no_valid_products	
 
@@ -51,7 +67,7 @@ The supplied license key(s) do not contain any valid products for the 51Degrees 
 
 # Invalid Product @anchor Invalid_product	
 
-The product mentioned in the error message is invalid. Check that you have access to the correct subscription by checking your sign-up email. Otherwise, please see our [pricing page](https://51degrees.com/pricing) for details.
+The product(s) mentioned in the error message is invalid. Cross reference this with the mapping in @ref Product_to_subscription_mapping and check that you have access to the correct subscription by checking your sign-up email. Otherwise, please see our [pricing page](https://51degrees.com/pricing) for details.
 
 # Only Add On Product Provided @anchor Only_add_on_product_provided	
 
