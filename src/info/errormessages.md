@@ -29,7 +29,7 @@ The supplied license key(s) do not contain any valid products for the 51Degrees 
 
 # Properties Not Available with this Subscription @anchor Properties_not_available_with_this_subscription	
 
-There are no available properties which are associated with the products determined in the request. Refer to the products listed in the original error message and the mapping in the @ref Product_to_subscription_mapping "product to subscripion mapping", then visit the 51Degrees [property dictionary](https://51degrees.com/developers/property-dictionary) to see the table of available properties for your subscription.
+There are no available properties which are associated with the products determined in the request. Refer to the products listed in the original error message and the mapping in the @ref Product_to_subscription_mapping "product to subscription mapping", then visit the 51Degrees [property dictionary](https://51degrees.com/developers/property-dictionary) to see the table of available properties for your subscription.
 
 # Non-unique Properties Requested @anchor Non_unique_property_requested	
 
@@ -55,7 +55,7 @@ Your trial period has expired. To keep using the cloud service, please upgrade y
 
 # Products Not Associated With the Cloud Service @anchor Products_not_associated_with_the_cloud_service	
 
-There were no products available that are associated with the cloud service. Refer to the error message for products available in your subscription and cross reference this with the mapping in the @ref Product_to_subscription_mapping "product to subscription mapping". Check that you have access to the correct subscription by checking your sign up email. If your subscription is not valid then please see our [pricing page](https://51degrees.com/pricing) for details on subscriptions for the Cloud Service.
+There were no products available that are associated with the cloud service. Refer to the error message for products available in your subscription and cross reference this with the mapping in the @ref Product_to_subscription_mapping "product to subscription mapping". Check that you have access to the correct subscription by checking your sign-up email. If your subscription is not valid then please see our [pricing page](https://51degrees.com/pricing) for details on subscriptions for the Cloud Service.
 
 # Products in Subscription Not Valid @anchor Products_in_subscription_not_valid	
 
@@ -71,7 +71,7 @@ The product(s) mentioned in the error message is invalid. Cross reference this w
 
 # Only Add On Product Provided @anchor Only_add_on_product_provided	
 
-This product is an add-on to one of the plans outlined on the [pricing page](https://51degrees.com/pricing). The base subscription is licensed in a separate licence key. Ensure this licence key found in your sign-up email has been included when creating your resource key on the 51Degrees [Cloud Configurator](https://configure.51degrees.com/)
+This product is an add-on to one of the plans outlined on the [pricing page](https://51degrees.com/pricing). The base subscription is licensed in a separate licence key. Ensure this licence key found in your sign-up email has been included when creating your Resource Key on the 51Degrees [Cloud Configurator](https://configure.51degrees.com/)
 
 # Referer or Origin Header Not Set @anchor Referer_or_Origin_header_not_set	
 
@@ -79,7 +79,7 @@ The Referer or Origin header has not been provided in the request. These headers
 
 # Continuous Processing of Unique User-Agents @anchor Continuous_processing_of_unique_User_Agents	
 
-Continuous processing of unique user agents is limited. This is to limit the amount of offline processing that is performed using the 51Degrees cloud service. You can resume making requests when the number of seconds in the `Retry-After` response header has elapsed. To find out more see the [cloud documentation](https://cloud.51degrees.com/api-docs/index.html)
+Continuous processing of unique User-Agents is limited. This is to limit the amount of offline processing that is performed using the 51Degrees cloud service. You can resume making requests when the number of seconds in the `Retry-After` response header has elapsed. To find out more see the [cloud documentation](https://cloud.51degrees.com/api-docs/index.html)
 
 # Resource Key Not Valid @anchor Resource_key_not_valid	
 
@@ -94,7 +94,7 @@ The Resource Key provided in the request to the Cloud Service was not recognized
 There was an error when getting the details for the Resource Key provided in the request. If the problem persists then please create a new issue on our [cloud-issues Git Hub](https://github.com/51Degrees/cloud-issues/issues) repo.
 # Resource Key Not Authorized On Domain @anchor Resource_key_not_authorized_on_domain	
 
-This resource key is not authorized for use with the Referer or Origin domain. See the original error message for the disallowed domain. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to update the permitted domains for your resource key or leave blank to allow usage on all domains. If using one of the native pipeline APIs then you can use the `CloudRequestOrigin` setting in the Pipeline or Cloud Request Engine builder to specify the origin. See the API documentation on how to set the header: [coming soon].
+This Resource Key is not authorized for use with the Referer or Origin domain. See the original error message for the disallowed domain. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to update the permitted domains for your Resource Key or leave blank to allow usage on all domains. If using one of the native pipeline APIs then you can use the `CloudRequestOrigin` setting in the Pipeline or Cloud Request Engine builder to specify the origin. See the API documentation on how to set the header: [coming soon].
 
 # Location Products Missing @anchor Location_products_missing	
 
@@ -110,7 +110,7 @@ A Resource Key is required to access the 51Degrees Cloud Service. This contains 
 
 # Evidence Keys Could Not Be Determined @anchor Evidence_keys_could_not_be_determined	
 
-Evidence keys for this resource key could not be determined. This could be caused by an invalid Resource Key or due to a lack of subscription. Please see the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to generate a new resource key. If you require a license key, visit our [pricing page](https://51degrees.com/pricing) to sign up for a 51Degrees cloud subscription.
+Evidence keys for this Resource Key could not be determined. This could be caused by an invalid Resource Key or due to a lack of subscription. Please see the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to generate a new Resource Key. If you require a license key, visit our [pricing page](https://51degrees.com/pricing) to sign up for a 51Degrees cloud subscription.
 
 # Sequence Value Invalid @anchor Sequence_value_invalid	
 
