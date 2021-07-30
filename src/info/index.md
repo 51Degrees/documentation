@@ -7,3 +7,5 @@
 @subpage Info_VersionSupport
 
 @subpage Info_FAQs
+
+@subpage Info_ErrorMessages
