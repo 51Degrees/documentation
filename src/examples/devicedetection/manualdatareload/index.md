@@ -1,0 +1,3 @@
+@page Examples_DeviceDetection_ManualDataReload_Index Manual Data Reload
+
+@subpage Examples_DeviceDetection_ManualDataReload_OnPremiseHash
