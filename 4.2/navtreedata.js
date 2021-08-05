@@ -28,6 +28,7 @@ var NAVTREE =
     [ "Benchmarks", null, "_benchmarks__index" ],
     [ "Concepts", null, "_concepts__index" ],
     [ "Device Detection", null, "_device_detection__index" ],
+    [ "Manual Data Reload", null, "_examples__device_detection__manual_data_reload__index" ],
     [ "Examples", null, "_examples__index" ],
     [ "Features", null, "_features__index" ],
     [ "Information", null, "_info__index" ],
