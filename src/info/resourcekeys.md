@@ -37,18 +37,14 @@ your Resource Key: `https://cloud.51degrees.com/api/v4/<resource_key>.json` (del
 {
   "device": {
     "ismobile": true,
-    "hardwaremodel": "Pixel 2",
     "priceband": null,
     "pricebandnullreason": "priceband is a paid feature. You need a licence key to retrieve data. Visit https://51degrees.com/pricing for details",
-    "devicetype": "SmartPhone",
   },
   "hardware": {
     "profiles": null,
     "profilesnullreason": "profiles is a paid feature. You need a licence key to retrieve data. Visit https://51degrees.com/pricing for details"
   },
-  "javascriptProperties": [
-    "device.javascripthardwareprofile"
-  ]
+  ...
 }
 ```
 
