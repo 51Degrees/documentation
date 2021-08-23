@@ -31,6 +31,7 @@ results from the @Pipeline API.
 - Nginx (@devicedetection only)
 - HAProxy (@devicedetection only)
 - [Varnish](@ref OtherIntegrations_Varnish) (@devicedetection only)
+- [Nginx](@ref OtherIntegrations_Nginx) (@devicedetection only)
 
 # Client-side Evidence
 

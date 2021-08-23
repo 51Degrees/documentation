@@ -36,7 +36,7 @@ To include this, add the following to the `<dependencies>` section of the projec
 <dependency>
     <groupId>com.51degrees</groupId>
     <artifactId>pipeline.engines</artifactId>
-    <version>4.1.0</version>
+    <version>4.2.0</version>
 </dependency>
 ```
 @endsnippet
@@ -60,12 +60,12 @@ The @elementdata implemented in the previous example can now be upgraded to impl
 Instead of implementing `IElementData`, the `IStarSignData` will now implement `IAspectData`
 which extends `IElementData`.
 
-@snippet SimpleOnPremiseEngine/Data/IStarSignData.cs class
+@snippet "CustomFlowElement/2. On Premise Engine/Data/IStarSignData.cs" class
 
 Now the internal implementation of it will implement a 'getter' and add a 'setter' for `StarSign` in the
 same way as the [previous example](@ref Examples_CustomElement_FlowElement).
 
-@snippet SimpleOnPremiseEngine/Data/StarSignData.cs class
+@snippet "CustomFlowElement/2. On Premise Engine/Data/StarSignData.cs" class
 
 @endsnippet
 @startsnippet{java}
@@ -113,7 +113,7 @@ The constructor will also read the @datafile containing the star signs into memo
 method so that it can also be used by the `RefreshData` method when a new @datafile is downloaded (this is not
 applicable for this example as star sign data will not change).
 
-@snippet SimpleOnPremiseEngine/FlowElements/SimpleOnPremiseEngine.cs constructor
+@snippet "CustomFlowElement/2. On Premise Engine/FlowElements/SimpleOnPremiseEngine.cs" constructor
 
 The `Init` method in this example will simply read a CSV file with the start and end dates of each
 star sign, which looks like:
@@ -127,18 +127,18 @@ Cancer,21/06,22/07
 
 and add each to a list of a new class named `StarSign` which has the following simple implementation:
 
-@snippet SimpleOnPremiseEngine/Data/StarSign.cs class
+@snippet "CustomFlowElement/2. On Premise Engine/Data/StarSign.cs" class
 
 Note that the year of the start and end date are both set to 1, as the year should be ignored, but
 the year 0 cannot be used in a `DateTime`.
 
 The new `Init` method looks like this:
 
-@snippet SimpleOnPremiseEngine/FlowElements/SimpleOnPremiseEngine.cs init
+@snippet "CustomFlowElement/2. On Premise Engine/FlowElements/SimpleOnPremiseEngine.cs" init
 
 Now the abstract methods can be implemented to create a functional @aspectengine.
 
-@snippet SimpleOnPremiseEngine/FlowElements/SimpleOnPremiseEngine.cs class
+@snippet "CustomFlowElement/2. On Premise Engine/FlowElements/SimpleOnPremiseEngine.cs" class
 
 @endsnippet
 @startsnippet{java}
@@ -241,7 +241,7 @@ the previous example. However, it also now needs a data file.
 As this @aspectengine is using a @datafile, the builder can make use of the logic in the
 `SingleFileAspectEngineBuilderBase`.
 
-@snippet SimpleOnPremiseEngine/FlowElements/SimpleOnPremiseEngineBuilder.cs class
+@snippet "CustomFlowElement/2. On Premise Engine/FlowElements/SimpleOnPremiseEngineBuilder.cs" class
 
 @endsnippet
 @startsnippet{java}
@@ -267,7 +267,7 @@ The Node implementation does not use separate builder classes. Instead the optio
 @startsnippet{dotnet}
 This new @aspectengine can now be added to a @pipeline and used like:
 
-@snippet SimpleOnPremiseEngine/Program.cs usage
+@snippet "CustomFlowElement/2. On Premise Engine/Program.cs" usage
 
 
 to give an output of:

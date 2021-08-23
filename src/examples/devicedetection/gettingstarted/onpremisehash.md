@@ -12,6 +12,8 @@ and begin using it to process User-Agents.
 @grabexample{device-detection-java,hash_2_getting_started_8java,Java}
 @grabexample{device-detection-php-onpremise,hash_2gettingstarted_8php,PHP}
 @grabexample{device-detection-node,hash_2getting_started_8js,Node.js}
+@grabexample{device-detection-python,hash_2gettingstarted_8py,Python}
 @grabexample{device-detection-varnish,hash_2getting_started_8vcl,Varnish}
+@grabexample{device-detection-nginx,hash_2getting_started_8conf,Nginx}
 @grabbedexample
 @endsnippets

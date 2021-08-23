@@ -1,0 +1,16 @@
+@htmlonly
+<p>
+This Example shows how to configure the usage sharing feature of 
+the Pipeline API. Usage sharing is a feature that allows you to share details 
+of the requests you are processing with 51Degrees.
+</p>
+<p>
+Usage sharing works by adding a 'ShareUsageElement' to the pipeline.
+This element will collect evidence values as they pass through, 
+periodically sending them to 51Degrees for processing.
+<p>
+If you want to know more about usage sharing, and why you should 
+consider using it, see the usage sharing 
+<a href="http://51degrees.com/documentation/_features__usage_sharing.html">feature page</a>.
+</p>
+@endhtmlonly

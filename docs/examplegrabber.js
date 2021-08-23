@@ -71,16 +71,18 @@ function grabExample(caller, project, name) {
 }
 
 function grabSnippet(caller, project, file, tag, btnClass, divId) {
-    selectBtn(caller, document.getElementsByClassName(btnClass));
+    selectBtn(caller, caller.parentElement.children);
     var url = '../../' + project + '/' + getVersion()
         + '/' + file;
     // Load the example into the 'grabbed-example' div, then update the links.
+	var element = document.getElementById(divId);
+	element.style = "display:block"
     $('#' + divId)
     .html('')
     .load(url + ' #' + tag, function() {
         updateLinks(project, divId);
         addLink(url, divId);
-    }); 
+    });	
 }
 
 function selectBtn(caller, btns) {
@@ -108,6 +110,9 @@ function selectBtn(caller, btns) {
             if (selectedTabs.indexOf(btns[i].innerText) >= 0) {
                 selectedTabs.splice(selectedTabs.indexOf(btns[i].innerText), 1);
             }
+			if(btns[i].classList.contains("c-tabgroup__main") && btns[i].getAttribute("data-lang") !== null){
+				btns[i].style.display = "none"
+			}
         }
     }
     document.cookie = "selectedTabs=" + selectedTabs.toString();

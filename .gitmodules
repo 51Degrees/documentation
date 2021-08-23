@@ -58,3 +58,6 @@
 [submodule "apis/device-detection-php-onpremise"]
 	path = apis/device-detection-php-onpremise
 	url = ../device-detection-php-onpremise
+[submodule "apis/device-detection-nginx"]
+	path = apis/device-detection-nginx
+url=../device-detection-nginx
