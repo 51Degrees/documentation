@@ -332,6 +332,8 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "IpIntelligence=[IP Intelligence](@ref ipintelligence_Index)" \
                          "lazyloading=[lazy loading](@ref Features_LazyLoading)" \
                          "Lazyloading=[Lazy loading](@ref Features_LazyLoading)" \
+                         "logging=[logging](@ref Features_Logging)" \
+                         "Logging=[Logging](@ref Features_Logging)" \
                          "metadata=[metadata](@ref Concepts_MetaData_Index)" \
                          "Metadata=[Metadata](@ref Concepts_MetaData_Index)" \
                          "MigrationGuide=[Migration Guide](@ref DeviceDetection_MigrationGuides_Index)" \

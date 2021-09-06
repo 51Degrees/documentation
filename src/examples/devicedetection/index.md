@@ -8,6 +8,8 @@
 
 @subpage Examples_DeviceDetection_MatchMetrics_Index
 
+@subpage Examples_DeviceDetection_ManualDataReload_Index
+
 @subpage Examples_DeviceDetection_Metadata_Index
 
 @subpage Examples_DeviceDetection_NativeKeyLookup_Index
