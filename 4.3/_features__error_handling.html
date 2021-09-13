@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>51Degrees API Documentation: Device Detection Examples</title>
+<title>51Degrees API Documentation: Error Handling</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -55,29 +55,44 @@
 	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
   <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('_examples__device_detection__index.html','');});
+$(document).ready(function(){initNavTree('_features__error_handling.html','');});
 /* @license-end */
 </script>
 <div id="doc-content" class="g-docs__content">
 <div class="PageDoc"><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_examples__index.html">Examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_examples__device_detection__index.html">Device Detection Examples</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_features__error_handling.html">Error Handling</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Device Detection Examples </h2></div><!--header-->
+<h2 class="g-docs__page-title">Error Handling </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><p><a class="el" href="_examples__device_detection__automatic_updates__index.html">Automatic Updates</a></p>
-<p><a class="el" href="_examples__device_detection__configure_from_file__index.html">Configure From File</a></p>
-<p><a class="el" href="_examples__device_detection__getting_started__index.html">Getting Started</a></p>
-<p><a class="el" href="_examples__device_detection__match_metrics__index.html">Match Metrics</a></p>
-<p><a class="el" href="_examples__device_detection__manual_data_reload__index.html">Manual Data Reload</a></p>
-<p><a class="el" href="_examples__device_detection__metadata__index.html">Metadata</a></p>
-<p><a class="el" href="_examples__device_detection__native_key_lookup__index.html">Native Key Lookup</a></p>
-<p><a class="el" href="_examples__device_detection__offline_processing__index.html">Offline Processing</a></p>
-<p><a class="el" href="_examples__device_detection__performance__index.html">Performance</a></p>
-<p><a class="el" href="_examples__device_detection__tac_lookup__index.html">TAC Lookup</a></p>
-<p><a class="el" href="_examples__device_detection__web_integration__index.html">Web Integration</a> </p>
+<section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
+<p>The <a class="el" href="_concepts__pipeline.html">Pipeline</a> can contain and number or configuration of <a class="el" href="_concepts__flow_elements__flow_element.html">flow elements</a>, including custom third-party ones. As such, it must have a robust and consistent error handling solution.</p>
+<h1 class="g-docs__section-heading">Approach</h1>
+<p>Almost all languages have <code>try/catch</code> constructs, so these are used by the <a class="el" href="_concepts__pipeline.html">Pipeline</a> code when calling functions on flow elements.</p>
+<p>If the flow element code raises an error, it will be handled by the catch statement.</p>
+<p>Any error that occurs will be logged in the <code>Errors</code> section of the current <a class="el" href="_concepts__data__flow_data.html">flow data</a>. The pipeline then proceeds to execution of the next <a class="el" href="_concepts__flow_elements__flow_element.html">flow element</a>.</p>
+<p>After all <a class="el" href="_concepts__flow_elements__flow_element.html">flow elements</a> have completed, there are two possible scenarios, depending on pipeline configuration:</p>
+<ol type="1">
+<li>If the <a class="el" href="_concepts__data__flow_data.html">flow data</a> contains any errors then an error will be raised using the standard language features.</li>
+<li>Execution will return to the caller of the <code>Process</code> function. Any errors will effectively be hidden/suppressed unless <a class="el" href="_features__logging.html">logging</a> is configured or the <code>Errors</code> section of the <a class="el" href="_concepts__data__flow_data.html">flow data</a> is checked by the caller.</li>
+</ol>
+<h1 class="g-docs__section-heading">Configuration</h1>
+<p>Error handling is configured using the 'Suppress Process Exceptions' setting. If set to <code>true</code>, errors are hidden/suppressed. If <code>false</code>, an error will be raised at the end of <a class="el" href="_concepts__pipeline.html">Pipeline</a> execution.</p>
+<p>The default value is <code>false</code>. This is recommended for development/testing to highlight issues.</p>
+<p>When running the Pipeline in production, we recommend setting this to <code>true</code> in order to prevent unexpected errors from crashing the application.</p>
+<p>As with all configuration settings, this can be set in code or via a <a class="el" href="_concepts__pipeline.html">Pipeline</a> configuration file.</p>
+<h1 class="g-docs__section-heading">Language Specific Guidance</h1>
+<p>At time of writing, there is inconsistency in error handling between languages.</p>
+<p>Java and .NET will operate as described above.</p>
+<p>Python, PHP, and Node do not have the 'SuppressProcessException' setting, but will function as if it has been set to <code>true</code>. I.e. errors will be suppressed.</p>
+<p>The intention is to address this in a future release. There are issues on GitHub to track the status of this change for each language:</p>
+<ul>
+<li><a href="https://github.com/51Degrees/pipeline-python/issues/3">Python</a></li>
+<li><a href="https://github.com/51Degrees/pipeline-php-core/issues/1">PHP</a></li>
+<li><a href="https://github.com/51Degrees/pipeline-node/issues/8">Node</a> </li>
+</ul>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->

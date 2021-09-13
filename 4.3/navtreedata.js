@@ -24,15 +24,17 @@ for the JavaScript code in this file
 var NAVTREE =
 [
     [ "Home", "index.html", null ],
-    [ "Quick Start", null, "_quickstart__index" ],
+    [ "Upgrade to V4", "_upgradingto_v4.html", null ],
+    [ "Quick Start", null, null ],
     [ "Benchmarks", null, "_benchmarks__index" ],
     [ "Concepts", null, "_concepts__index" ],
     [ "Device Detection", null, "_device_detection__index" ],
-    [ "Manual Data Reload", null, "_examples__device_detection__manual_data_reload__index" ],
     [ "Examples", null, "_examples__index" ],
+    [ "Error Handling", "_features__error_handling.html", null ],
     [ "Features", null, "_features__index" ],
     [ "Information", null, "_info__index" ],
     [ "Other Integrations", null, "_other_integrations__index" ],
+    [ "Quick Start", null, "_quickstart__index" ],
     [ "Reverse Geocoding", null, "_reverse_geocoding__index" ],
     [ "Language Specific", "usergroup0.html", [
       [ "C/C++", "../../device-detection-cxx/index.html", null ],
