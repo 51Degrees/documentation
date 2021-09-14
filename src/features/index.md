@@ -8,6 +8,8 @@
 
 @subpage Features_CustomElements
 
+@subpage Features_ErrorHandling
+
 @subpage Features_FlexibleAccessors
 
 @subpage Features_LazyLoading
