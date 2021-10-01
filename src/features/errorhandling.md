@@ -27,17 +27,3 @@ The default value is `false`. This is recommended for development/testing to hig
 When running the Pipeline in production, we recommend setting this to `true` in order to prevent unexpected errors from crashing the application.
 
 As with all configuration settings, this can be set in code or via a @Pipeline configuration file.
-
-# Language Specific Guidance
-
-At time of writing, there is inconsistency in error handling between languages.
-
-Java and .NET will operate as described above.
-
-Python, PHP, and Node do not have the 'SuppressProcessException' setting, but will function as if it has been set to `true`. I.e. errors will be suppressed.
-
-The intention is to address this in a future release. There are issues on GitHub to track the status of this change for each language:
-
-- [Python](https://github.com/51Degrees/pipeline-python/issues/3)
-- [PHP](https://github.com/51Degrees/pipeline-php-core/issues/1)
-- [Node](https://github.com/51Degrees/pipeline-node/issues/8)
