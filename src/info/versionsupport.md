@@ -14,3 +14,4 @@ If something is not supported here, and you believe it should be, [contact us](m
 |Nginx  |`Nginx 1.19.0`,`1.19.5`,`1.19.10`,`1.20.0`<BR>`C11` and above|`Ubuntu 18.04` - `GCC 7.5` - `64-bit`<BR>`Ubuntu 20.04` - `GCC 9.3` - `64-bit`|
 |PHP    |`PHP 5.6`, `7.x` and `8.0`        |`Ubuntu 18.04` - `PHP 5.6`, `7.2`, `7.3`, `7.4` and `8.0`|
 |Python |`Python 3.5+`                   |`Ubuntu 20.04` - `Python 3.6`<BR>`Mac OS 10.15` - `Python 3.9`<BR>`Windows Server 2019` - `Python 3.6`|
+|Go     |`Golang 1.17.1`                   |`Ubuntu 18.04` - `Golang 1.17.1`<BR>`Ubuntu 20.04` - `Golang 1.17.1`<BR>`Mac OS 10.14` - `Golang 1.17.1`<BR>`Mac OS 10.15` - `Golang 1.17.1`|
