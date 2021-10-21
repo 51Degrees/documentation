@@ -82,17 +82,7 @@ $(document).ready(function(){initNavTree('_features__error_handling.html','');})
 <p>Error handling is configured using the 'Suppress Process Exceptions' setting. If set to <code>true</code>, errors are hidden/suppressed. If <code>false</code>, an error will be raised at the end of <a class="el" href="_concepts__pipeline.html">Pipeline</a> execution.</p>
 <p>The default value is <code>false</code>. This is recommended for development/testing to highlight issues.</p>
 <p>When running the Pipeline in production, we recommend setting this to <code>true</code> in order to prevent unexpected errors from crashing the application.</p>
-<p>As with all configuration settings, this can be set in code or via a <a class="el" href="_concepts__pipeline.html">Pipeline</a> configuration file.</p>
-<h1 class="g-docs__section-heading">Language Specific Guidance</h1>
-<p>At time of writing, there is inconsistency in error handling between languages.</p>
-<p>Java and .NET will operate as described above.</p>
-<p>Python, PHP, and Node do not have the 'SuppressProcessException' setting, but will function as if it has been set to <code>true</code>. I.e. errors will be suppressed.</p>
-<p>The intention is to address this in a future release. There are issues on GitHub to track the status of this change for each language:</p>
-<ul>
-<li><a href="https://github.com/51Degrees/pipeline-python/issues/3">Python</a></li>
-<li><a href="https://github.com/51Degrees/pipeline-php-core/issues/1">PHP</a></li>
-<li><a href="https://github.com/51Degrees/pipeline-node/issues/8">Node</a> </li>
-</ul>
+<p>As with all configuration settings, this can be set in code or via a <a class="el" href="_concepts__pipeline.html">Pipeline</a> configuration file. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
