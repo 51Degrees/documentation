@@ -71,8 +71,15 @@ $(document).ready(function(){initNavTree('_info__f_a_qs.html','');});
 <p>In .NET core, the finalizer is not called when a program exits as described on <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/destructors">this page</a>. Some engines maintain files in a temporary directory while they are in operation and these can remain if a .NET core application using one of these engines is closed.</p>
 <p>To workaround this problem, you can either:</p><ul>
 <li>Use the <code>SetAutoDisposeElements</code> setting to ensure elements are disposed when the Pipeline is disposed.</li>
-<li>Explicitly call dispose on all engines before exiting the program. </li>
+<li>Explicitly call dispose on all engines before exiting the program.</li>
 </ul>
+<h4>Why are my temp files not being cleared when using the Node.js Pipeline API?</h4>
+<p>In Node.js, the finalizer is not called when a program exits. Some engines maintain files in a temporary directory while they are in operation and these can remain if a Node.js application using one of these engines is closed.</p>
+<p>To workaround this problem, you can either:</p><ul>
+<li>Set the <code>createTempDataCopy</code> to false to use the original file directly. Note that automatic updates cannot be enabled without either using a temporary file, or the <code>MaxPerformance</code> configuration option where the data file is copied into memory completely.</li>
+<li>Set the <code>tempDataDir</code> to a directory which will be periodically cleaned up by another process e.g. <code>os.tmpdir()</code>.</li>
+</ul>
+<p>These is the options in the device detection on-premise engine, other third party engines may use different option naming. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->

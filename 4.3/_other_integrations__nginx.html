@@ -79,7 +79,7 @@ $(document).ready(function(){initNavTree('_other_integrations__nginx.html','');}
 </ul>
 <h2>Supported versions:</h2>
 <ul>
-<li>Nginx 1.20.0 (stable), 1.19.0, 1.19.5, 1.19.10</li>
+<li>Nginx 1.21.3, 1.20.0, 1.19.0, 1.19.5, 1.19.10</li>
 <li>C11 or above</li>
 </ul>
 <h2>Supported platforms:</h2>
@@ -150,13 +150,13 @@ Specify the separator to be used in the value string returned from a detection. 
 <tr class="c-table__row">
 <td class="c-table__cell">Syntax: <code>51D_match_single</code> <em>header</em> <em>properties</em> [<em>argument</em>];<br />
 Default: &mdash;<br />
-Context: main, server, location<br />
+Context: main, server, <code>location</code> (<b>NOTE</b>: This directive can be used in main, server and location blocks. Specified properties are aggregated and eventually queried in the location. <em>header</em> value is set after the query is performed and is only available within <code>location</code> block)<br />
 Perform a detection using a single request header <code>User-Agent</code>. <em>header</em> specifies which request header the returned <em>properties</em> values should be stored at. <em>properties</em> is a comma separated list string. <em>argument</em> specifies if <code>User-Agent</code> is supplied as a query argument. This will override the value in the <code>User-Agent</code> header. The <em>argument</em> is optional.<br />
 If a property is not available for any reason, the value being returned for that property will be <code>NA</code>   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Syntax: <code>51D_match_all</code> <em>header</em> <em>properties</em>;<br />
 Default: &mdash;<br />
-Context: main, server, location<br />
+Context: main, server, <code>location</code> (<b>NOTE</b>: This directive can be used in main, server and location blocks. Specified properties are aggregated and eventually queried in the location. <em>header</em> value is set after the query is performed and is only available within <code>location</code> block)<br />
 Perform a detection using all headers, query argument and cookie from a http request. <em>header</em> specifies which request header the returned <em>properties</em> values should be stored at. <em>properties</em> is a comma separated list string.<br />
 If a property is not available for any reason, the value being returned for that property will be <code>NA</code>   </td></tr>
 <tr class="c-table__row">
@@ -173,6 +173,11 @@ Context: location<br />
 Perform a detection using all headers, cookie and query arguments from a http request. The returned value of <em>javascript_property</em> is set in the response body. This works in a similar way as CDN to serve static content.<br />
 If the Javascript property is not available for any reason, a Javascript block comment will be returned so that it will not cause syntax error when the client executes it.<br />
 The whole response body is used for the returned content so only one of these directives can be used in a single location block. Also, since the static content does not actually exist as a static file, the nginx http core module will log an error, so it is recommended to use this directive with <a href="http://nginx.org/en/docs/http/ngx_http_core_module.html#log_not_found">log_not_found</a> set to off.   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">Syntax: <code>51D_set_resp_headers</code> <em>on | off</em>;<br />
+Default: 51D_set_resp_headers off<br />
+Context: main, server, location<br />
+Allow Client Hints to be set in response headers where it is applicable to the user agent (e.g. Chrome 89 or above) so that more evidence can be returned in subsequent requests, allowing more accurate detection. Value set in a block overwrites values set in precedent blocks (e.g. value set in <code>location</code> block will overwrite value set in <code>server</code> and <code>main</code> blocks). This will only be available from the 4.3.0 version onwards.   </td></tr>
 </table>
 </div><h1 class="g-docs__section-heading">New features</h1>
 <p>Following set of new features has been introduced in Nginx Device Detection V4 module:</p><ul>
