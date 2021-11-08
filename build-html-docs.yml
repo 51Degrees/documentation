@@ -5,7 +5,7 @@ name: build-html-docs
 # https://aka.ms/yaml
 
 trigger:
-- develop
+- main
 
 pool:
   vmImage: 'ubuntu-latest'
