@@ -103,8 +103,10 @@ stages:
         ArtifactName: 'docs'
         publishLocation: 'Container'
     
+# TODO - Temporarily removed as it was unexpectedly failing:
+# https://51degrees.visualstudio.com/Pipeline/_build/results?buildId=26070&view=results
 # Try to complete the corresponding pull request if
 # this is triggered by one.    
-- template: shared-auto-complete-pr-stage.yml@ciTemplates
-  parameters:
-    stageDependencies: [Build_and_Test_Stage]
+#- template: shared-auto-complete-pr-stage.yml@ciTemplates
+#  parameters:
+#    stageDependencies: [Build_and_Test_Stage]
