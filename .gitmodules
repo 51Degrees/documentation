@@ -61,3 +61,6 @@
 [submodule "apis/device-detection-nginx"]
 	path = apis/device-detection-nginx
 url=../device-detection-nginx
+[submodule "ci/common-ci"]
+	path = ci/common-ci
+	url = https://51degrees.visualstudio.com/DefaultCollection/Pipeline/_git/common-ci

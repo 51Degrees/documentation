@@ -1,0 +1,110 @@
+name: build-html-docs-test
+
+# No push trigger. However, by default without PR trigger specified,
+# this is run when a PR is created.
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+resources:
+  repositories:
+  - repository: ciTemplates # Id of the repository used to reference to in this script
+    type: git
+    name: common-ci # Name of the actual repository
+    
+stages:
+- stage: Build_and_Test_Stage
+  dependsOn: []
+
+  jobs:
+  - job: Build_and_Test
+    displayName: Build and Test
+    
+    steps:
+    - checkout: self
+      submodules: recursive
+      lfs: false
+      persistCredentials: true
+
+    - task: DownloadSecureFile@1
+      displayName: 'Download DoxyGen'
+      name: doxygen
+      inputs:  
+        secureFile: 'doxygen.zip'
+
+    - task: Bash@3
+      displayName: 'Unzip DoxyGen executable'
+      inputs:
+        targetType: 'inline'
+        script: 'unzip "$(doxygen.secureFilePath)" -d .'
+
+    - task: Bash@3
+      displayName: 'Mark DoxyGen as executable'
+      inputs:
+        targetType: 'inline'
+        script: 'chmod +x doxygen'
+
+    - task: Bash@3
+      displayName: 'Install  GraphViz'
+      inputs:
+        targetType: 'inline'
+        script: 'sudo apt-get install graphviz'
+
+    - task: Bash@3
+      displayName: 'Generate HTML documentation'
+      inputs:
+        targetType: 'inline'
+        script: |
+          cd docs
+          '$(build.sourcesdirectory)'/doxygen
+          cd $(build.sourcesdirectory)
+
+    - task: Bash@3
+      displayName: 'Generate HTML documentation for APIs'
+      inputs:
+        targetType: 'inline'
+        script: |
+          for api in `find ./apis -mindepth 1 -maxdepth 1 -type d`; do
+            cd ${api}/docs
+            '$(build.sourcesdirectory)'/doxygen
+            cd $(build.sourcesdirectory)
+          done
+
+    - task: CopyFiles@2
+      displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+      condition: true
+      inputs:
+        SourceFolder: '$(build.sourcesdirectory)'
+        Contents: '4.*/**'
+        TargetFolder: '$(build.artifactstagingdirectory)'
+        CleanTargetFolder: true
+
+    - task: Bash@3
+      displayName: 'Copy API Files'
+      inputs:
+        targetType: 'inline'
+        script: |
+          cd ./apis
+          for api in `find ./ -mindepth 1 -maxdepth 1 -type d`; do
+            for version in `find ${api} -maxdepth 1 -type d -regex ".*/4\.[0-9]*"`; do
+              echo copying ${strarr[1]} ${strarr[2]}
+              readarray -d / -t strarr <<< ${version}
+              mkdir '$(build.artifactstagingdirectory)/'${strarr[1]}
+              cp -r ${version}/ '$(build.artifactstagingdirectory)'/${strarr[1]}/${strarr[2]}
+            done
+          done
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish HTML docs'
+      condition: true
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'docs'
+        publishLocation: 'Container'
+    
+# Try to complete the corresponding pull request if
+# this is triggered by one.    
+- template: shared-auto-complete-pr-stage.yml@ciTemplates
+  parameters:
+    stageDependencies: [Build_and_Test_Stage]
