@@ -12,21 +12,21 @@ Using real-time data, our plugin can optimize your website for users, based on d
 
 1.  Visit the new `51Degrees` Settings menu.
 
-2.  To start using this plugin, you will need to create a `resource key`. This enables access to the data you need via the 51Degrees cloud service.  You can 
+2.  To start using this plugin, you will need to create a `resource key`. This enables access to the data you need via the 51Degrees cloud service. You can 
       create a `resource key` for free, using the configurator to select the properties you want.
 
 
 ## Integration with Google Analytics
 
-1.  To integrate with Google Analytics goto `Google Analytics` tab and click `Log in with Google Analytics Account` button, follow the steps and give 51Degrees plugin the required permissions. Copy the provided Google Analytics `Access Code`.
+1.  To integrate with Google Analytics, go to the `Google Analytics` tab and click `Log in with Google Analytics Account` button, follow the steps and give the 51Degrees plugin the required permissions. Copy the provided Google Analytics `Access Code`.
 
-2.  Enter the copied Code in `Access Code` text field and click `Authenticate`. This will connect your Google Analytics Account to the 51Degrees Plugin.
+2.  Enter the copied Code in the `Access Code` text field and click `Authenticate`. This will connect your Google Analytics account to the 51Degrees plugin.
 
-3.  After authentication, select your preferred profiles for which you want to enable Custom Dimensions Tracking via the`Google Analytics Property` dropdown.
+3.  After authentication, select your preferred profiles for which you want to enable Custom Dimensions Tracking via the `Google Analytics Property` dropdown.
 
 4.  Check `Send Page View` if you want to send Default Page View hits along with Custom Dimensions. It is only recommended if you have not already integrated with any other Google Analytics plugin to avoid data duplication.
 
-5.  Click `Save Changes`. This will prompt to new Custom Dimensions screen where you can find all the Custom Dimensions available with resource key.
+5.  Click `Save Changes`. This will prompt to new Custom Dimensions screen where you can find all the Custom Dimensions available with the resource key.
 
 6.  Click on `Enable Google Analytics Tracking` to enable tracking of all the Device Data Properties as Custom Dimensions.
 
@@ -39,7 +39,7 @@ You can insert snippets into your pages that will be replaced with the correspon
 
 *Conditional blocks*
 
-This feature allows you to show/hide content based on the property values supplied by the Pipeline API. To start, click add a new block and select the `51Degrees conditional group block`. Select the block to display the configuration UI on the right-hand side. For example, upu can configure the block to only appear if the hardware vendor property is 'Apple'.
+This feature allows you to show/hide content based on the property values supplied by the Pipeline API. To start, click add a new block and select the `51Degrees conditional group block`. Select the block to display the configuration UI on the right-hand side. For example, you can configure the block to only appear if the hardware vendor property is 'Apple'.
 
 
 ## Accessing properties in PHP code
@@ -72,7 +72,7 @@ In some cases, additional evidence needs to be gathered by running JavaScript on
 
 ## Location
 
-Location works slightly differently to other properties. Currently, the address is determined from the location provided by the client device. When this data is requested, a confirmation pop-up will appear. It is good practice to delay the appearance of this pop-up until the location is really needed. Otherwise, the user may not know why they are being asked for the information and is more likely to refuse. To facilitate this, the location data needs to be explicitly requested by adding some additional JavaScript. There are many ways to do this but for an example, we have gone with the simplest approach.
+Location works slightly differently to other properties. Currently, the address is determined from the location provided by the client's device. When this data is requested, a confirmation pop-up will appear. It is good practice to delay the appearance of this pop-up until the location is really needed. Otherwise, the user may not know why they are being asked for the information and is more likely to refuse. To facilitate this, the location data needs to be explicitly requested by adding some additional JavaScript. There are many ways to do this but for an example, we have gone with the simplest approach.
 
 Firstly, add a button to your page. Make sure to set a css class that we can use to identify this button and add an event to it.
 
@@ -92,7 +92,7 @@ Next, add an HTML element and paste the following snippet of code into it:
 
 Now, when the user clicks on the 'Use my location' button, the JavaScript that we pasted in will execute. This lets the global `fod` object know that we want access to the location data, which in turn causes the 'wants to know your location' confirmation pop-up to be displayed.
 
-**Note:**  On the first request, the server will not have the location information so the location properties will not have values. After the button is clicked, we need to make another request to the server for the location values to be populated.  The content on the page can also be updated by using JavaScript, rather than waiting for the user to make a second request. This involves editing the JavaScript snippet above to update the page within the callback function that is passed to fod.complete.
+**Note:** On the first request, the server will not have the location information so the location properties will not have values. After the button is clicked, we need to make another request to the server for the location values to be populated. The content on the page can also be updated by using JavaScript, rather than waiting for the user to make a second request. This involves editing the JavaScript snippet above to update the page within the callback function that is passed to fod.complete.
 
 
 ## Apple device models
