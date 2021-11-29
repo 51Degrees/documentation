@@ -6,4 +6,6 @@
 
 @subpage DeviceDetection_Features_PerformanceOptions
 
+@subpage DeviceDetection_Features_AppleDeviceTable
+
 @subpage DeviceDetection_Features_TacLookup
