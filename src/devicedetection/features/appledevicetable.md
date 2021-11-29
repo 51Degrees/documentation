@@ -1,5 +1,9 @@
 @page DeviceDetection_Features_AppleDeviceTable Results for Apple Devices
 
+# Introduction
+
+Apple has continually worked to homogenize any information that a website can get about a device, through JavaScript or any other means. For more information look at our [Upgrade Apple Device](https://51degrees.com/blog/upgrade-apple-device-detection) blog. Below we cover the detection results that are experienced for each iPhone and iPad device, starting from the iPhone 3GS and the first iPad model. 
+
 # iPhones using browswer in mobile mode @anchor iphones_mobile_mode
 
 |Device|Display Mode|Results|Results with CPU benchmarking|
