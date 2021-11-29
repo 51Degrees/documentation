@@ -15,7 +15,7 @@
 |iPhone 6 Plus|Standard|iPhone 6 Plus|N/A|
 |iPhone 6 Plus|Zoom|iPhone 6 Plus|N/A|
 |iPhone 6s|Standard|iPhone 6s|N/A|
-|iPhone 6s|Zoom|iPhone 6s, iPhone SE iPhone 6s iPhone SE, iPhone 6s|N/A|
+|iPhone 6s|Zoom|iPhone 6s, iPhone SE<br/> iPhone 6s<br/> iPhone SE, iPhone 6s|N/A|
 |iPhone 6s Plus|Standard|iPhone 6s Plus|N/A|
 |iPhone 6s Plus|Zoom|iPhone 6s Plus|N/A|
 |iPhone SE|N/A|iPhone 6s, iPhone SE iPhone SE|N/A|
@@ -36,11 +36,11 @@
 |iPhone XS Max|Standard|iPhone XS Max|N/A|
 |iPhone XS Max|Zoom|iPhone XS, iPhone XS Max|N/A|
 |iPhone 11|Standard|iPhone 11|N/A|
-|iPhone 11|Zoom|N/A|
+|iPhone 11|Zoom|iPhone 11|N/A|
 |iPhone 11 Pro|Standard|iPhone 11 Pro, iPhone 11 Pro Max|N/A|
 |iPhone 11 Pro|Zoom|iPhone 11 Pro|N/A|
 |iPhone 11 Pro Max|Standard|iPhone 11 Pro Max|N/A|
-|iPhone 11 Pro Max|Zoom||iPhone 11 Pro, iPhone 11 Pro Max|
+|iPhone 11 Pro Max|Zoom|iPhone 11 Pro, iPhone 11 Pro Max|N/A|
 |iPhone SE (2nd Gen.)|Standard|iPhone SE (2nd Gen.)|N/A|
 |iPhone SE (2nd Gen.)|Zoom|iPhone SE (2nd Gen.)|N/A|
 |iPhone 12|Standard|iPhone 12, iPhone 12 Pro iPhone 12|N/A|
