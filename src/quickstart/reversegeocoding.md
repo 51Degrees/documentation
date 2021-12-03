@@ -2,11 +2,11 @@
 
 This example demonstrates how to look up a latitude and longitude to a geographical location.
 
-## Step 1: create a resource key
+## Step 1: Create a Resource Key
 
-First, obtain a resource key by following the @configuratorexplanation. For this example, ensure that the resource key is authorised for at least the Country field provided by 51Degrees.
+First, obtain a Resource Key by following the @configuratorexplanation. For this example, ensure that the Resource Key is authorized for at least the Country field provided by 51Degrees.
 
-## Step 2: install the relevant library
+## Step 2: Install the relevant library
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -28,13 +28,13 @@ Install the [fiftyone.geolocation](https://www.npmjs.com/package/fiftyone.geoloc
 Install the [51degrees/fiftyone.geolocation](https://packagist.org/packages/51degrees/fiftyone.geolocation) package using [Composer](https://getcomposer.org) with `composer require 51degrees/fiftyone.geolocation`
 @endsnippet
 @startsnippet{python}
-Install the [fiftyone-location](https://pypi.org/project/fiftyone-location/) package from pypi with `pip install fiftyone-location`.
+Install the [fiftyone-location](https://pypi.org/project/fiftyone-location/) package from PyPI with `pip install fiftyone-location`.
 @endsnippet
 
 
-## Step 3: create a Pipeline and authorise it with the resource key
+## Step 3: Create a Pipeline and authorize it with the Resource Key
 
-The pipeline, as explained in the @pipelinebasics and @pipeline, is the way to consume 51Degrees APIs. Set the resource key to be the one you obtained above in step 1.
+The pipeline, as explained in the @pipelinebasics and @pipeline, is the way to consume 51Degrees APIs. Set the Resource Key to be the one you obtained above in step 1.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -99,7 +99,7 @@ pipeline = LocationPipelineBuilder({"resourceKey": resourceKey}).build()
 ```
 @endsnippet
 
-## Step 4: create a FlowData on the Pipeline and add evidence to it
+## Step 4: Create a FlowData on the Pipeline and add evidence to it
 
 For reverse geocoding, two pieces of query data (called @evidence) are required: latitude and longitude. Each piece of data is passed to the APIs with a key naming the type of data that it is. The relevant evidence keys for reverse geocoding are:
 
@@ -159,7 +159,7 @@ fd.evidence.add("query.51D_Pos_longitude", longitude)
 ```
 @endsnippet
 
-## Step 5: start a query with `process()`
+## Step 5: Start a query with `process()`
 
 This actually initiates the query and contacts your data source, whether the 51Degrees cloud API or a local deployment.
 
@@ -195,7 +195,7 @@ fd.process()
 ```
 @endsnippet
 
-## Step 6: read the results
+## Step 6: Read the results
 
 Results are available in the existing `flowData` object (note: they are not returned from the `process()` call) in an @aspectdata dictionary with relevant properties. Each property has a `hasValue` boolean; if the property is populated, `flowData.property.hasValue` will be true and `flowData.property.value` will be the relevant value. If the property is not populated, `flowData.property.hasValue` will be false and `flowData.propertynullreason` will be populated.
 
@@ -290,13 +290,13 @@ https://github.com/51Degrees/location-python/blob/master/examples/cloud/gettings
 
 If you are finding unexpected results from querying the APIs, this section may give some indication of where to start debugging.
 
-## Invalid resource key
+## Invalid Resource Key
 
-If your resource key is invalid or unrecognised by the server, you should receive a server error reading "Resource key not found", but you may also receive an error like "An invalid IP address was specified. Parameter name: address". In both of these cases, generate a new resource key with access to the properties you require and use that.
+If your Resource Key is invalid or unrecognized by the server, you should receive a server error reading "Resource key not found", but you may also receive an error like "An invalid IP address was specified. Parameter name: address". In both of these cases, generate a new Resource Key with access to the properties you require and use that.
 
-## Unauthorised resource key
+## Unauthorized Resource Key
 
-If you find that properties are unexpectedly undefined on your `flowData` object (for example, if `flowData.location.country` is not present at all, rather than being present with `hasValue` false) then your resource key may not be authorised to access any location properties at all. Try generating a new resource key and using it, or visiting https://configure.51degrees.com/YOUR_RESOURCE_KEY to see the properties which that resource key can access. Note that a resource key's properties cannot be changed once created; create a new key instead of trying to edit an existing one.
+If you find that properties are unexpectedly undefined on your `flowData` object (for example, if `flowData.location.country` is not present at all, rather than being present with `hasValue` false) then your Resource Key may not be authorized to access any location properties at all. Try generating a new Resource Key and using it, or visiting https://configure.51degrees.com/YOUR_RESOURCE_KEY to see the properties which that Resource Key can access. Note that a Resource Key's properties cannot be changed once created; create a new key instead of trying to edit an existing one.
 
 (If you can inspect the JSON response from the HTTP APIs, you may find that `device.geolocationnullreason` is set, which is another indicator of this problem.)
 
