@@ -23,8 +23,6 @@ There are programming libraries available in C#, Java, Node.js, client-side Java
 
 * @DeviceDetection – Detailed insight into the devices being used to access your content.
 * @ReverseGeocoding – Obtain accurate real-world data such as postal address from the users' location as reported by their smartphone or similar device.
-* Antifraud – Identify and exclude fraudulent requests. (Coming soon)
-* IpIntelligence – Determine key information from the network path taken by the request such as mobile carrier or location. (Coming soon)
 
 ## Query the APIs
 
