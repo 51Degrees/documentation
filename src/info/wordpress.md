@@ -7,7 +7,7 @@ Optimize your website for a range of devices and personalize your content based 
 Using real-time data, our plugin can optimize your website for users, based on device type and location. Upgrade your analytic reporting with a click of a button. Install from the WordPress plugin manager by searching for “51Degrees”.
 
 \htmlonly
-<iframe src="https://player.vimeo.com/video/631017900/8e8c844804" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/631017900?h=8e8c844804" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 \endhtmlonly
 
 ## After activation
