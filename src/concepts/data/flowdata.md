@@ -64,7 +64,37 @@ is configured to execute @elements in @parallel.
 
 ## Disposal / Cleanup
 
-**Flow data** disposal should be left up to the garbage collector. This enures that any resource which may still be needed (e.g. if it has been cached) is freed at the correct point
+**Flow data** disposal should be left up to the garbage collector. This enures that any resource which may still be needed (e.g. if it has been cached) is freed at the correct point.
+
+There are exceptions where **Flow data** must be disposed immediately after it is no longer needed. This is because the garbage collector does not free the resource fast enough under high load and cause out of memory exception. Two languages where this is required are Java and C#.
+
+@startsnippets
+@showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@defaultsnippet{Select a language.}
+@startsnippet{dotnet}
+In .NET, try-with-resource pattern is done as below.
+```
+// Create the FlowData instance.
+using (var data = pipeline.CreateFlowData())
+{
+   ...
+}
+```
+@endsnippet
+@startsnippet{java}
+In Java, try-with-resource pattern is done as below.
+
+```            
+// A try-with-resource block MUST be used for 
+// the FlowData instance. This ensures that native resources created
+// by the device detection engine are freed.
+try (FlowData data = pipeline.createFlowData()) {
+    ...
+}
+```
+@endsnippet
+@endsnippets
 
 # Thread Safety @anchor Concepts_Data_FlowData_ThreadSafety
 
