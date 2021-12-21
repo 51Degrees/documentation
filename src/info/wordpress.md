@@ -12,8 +12,8 @@ Using real-time data, our plugin can optimize your website for users, based on d
 
 1.  Visit the new `51Degrees` Settings menu.
 
-2.  To start using this plugin, you will need to create a `resource key`. This enables access to the data you need via the 51Degrees cloud service. You can 
-      create a `resource key` for free, using the configurator to select the properties you want.
+2.  To start using this plugin, you will need to create a `Resource Key`. This enables access to the data you need via the 51Degrees cloud service. You can 
+    create a `Resource Key` for free, using the [configurator](https://configure.51degrees.com/) to select the properties you want.
 
 
 ## Integration with Google Analytics
@@ -26,7 +26,7 @@ Using real-time data, our plugin can optimize your website for users, based on d
 
 4.  Check `Send Page View` if you want to send Default Page View hits along with Custom Dimensions. It is only recommended if you have not already integrated with any other Google Analytics plugin to avoid data duplication.
 
-5.  Click `Save Changes`. This will prompt to new Custom Dimensions screen where you can find all the Custom Dimensions available with the resource key.
+5.  Click `Save Changes`. This will prompt to the new Custom Dimensions screen where you can find all the Custom Dimensions available with the Resource Key.
 
 6.  Click on `Enable Google Analytics Tracking` to enable tracking of all the Device Data Properties as Custom Dimensions.
 
@@ -39,7 +39,7 @@ You can insert snippets into your pages that will be replaced with the correspon
 
 *Conditional blocks*
 
-This feature allows you to show/hide content based on the property values supplied by the Pipeline API. To start, click add a new block and select the `51Degrees conditional group block`. Select the block to display the configuration UI on the right-hand side. For example, you can configure the block to only appear if the hardware vendor property is 'Apple'.
+This feature allows you to show/hide content based on the property values supplied by the Pipeline API. To start, click 'add a new block' and select the `51Degrees conditional group block`. Select the block to display the configuration UI on the right-hand side. For example, you can configure the block to only appear if the hardware vendor property is 'Apple'.
 
 
 ## Accessing properties in PHP code
@@ -50,8 +50,7 @@ To get a specific property, look it up on the available properties list and use 
 You can also get a list of properties by category as an array.
 
 `Pipeline::getCategory("Supported Media"))`
-
-Above code snippet will give you all the properties with `Supported Media` category included in the resource key.
+The code snippet above will give you all the properties with `Supported Media` category included in the Resource Key.
 
 ## JavaScript Integration
 
@@ -97,7 +96,7 @@ Now, when the user clicks on the 'Use my location' button, the JavaScript that w
 
 ## Apple device models
 
-Determining the exact model of Apple devices is more difficult that others. This is because Apple include only very limited information about the device hardware in the 'User-Agent' HTTP header that is sent to the webserver. To get around this problem, device detection uses JavaScript that runs directly on the client to gather some additional information. This can usually be used to determine the exact model of device and will at least narrow down the possibilities.
+Determining the exact model of Apple devices is more difficult that others. This is because Apple include limited information about the device hardware in the 'User-Agent' HTTP header that is sent to the webserver. To get around this problem, device detection uses JavaScript that runs directly on the client to gather some additional information. This can usually be used to determine the exact model of device and will at least narrow down the possibilities.
 
 The WordPress plugin will handle this for you automatically. However, be aware that, due to having to get additional data from the client, the model may be less clear on the first request than on subsequent requests. After the JavaScript runs on the client, a second request is made and the array of values would be significantly narrowed down.
 
