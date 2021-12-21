@@ -9,3 +9,5 @@
 @subpage Info_FAQs
 
 @subpage Info_ErrorMessages
+
+@subpage Info_WordPress

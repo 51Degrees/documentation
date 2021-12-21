@@ -1,4 +1,4 @@
-@page Info_WordPress 51Degrees – Optimize by Device & Location - WordPress Plugin
+@page Info_WordPress 51Degrees – Optimize by Device & Location
 
 Optimize your website for a range of devices and personalize your content based on your user’s location.
 
