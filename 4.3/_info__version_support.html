@@ -68,7 +68,7 @@ $(document).ready(function(){initNavTree('_info__version_support.html','');});
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><p>All APIs are written with a minimum tested language version. Any version above this is theoretically tested, but bleeding edge releases may not be supported by our testing. To help determine whether a version is supported, the table below shows the versions which are tested as part of each release, in addition to the minimum target version.</p>
-<p>If something is not tested here, and you believe it should be, <a href="#" onclick="location.href='mai'+'lto:'+'sup'+'po'+'rt@'+'51'+'deg'+'re'+'es.'+'co'+'m'; return false;">contact us</a>.</p>
+<p>If something is not tested here, and you believe it should be, please raise an issue via our <a href="https://github.com/51Degrees">GitHub</a> page and we will look into it.</p>
 <div class="g-table g-table--overflow"><table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Language / Framework  </td><td class="c-table__cell">Minimum Tested Version  </td><td class="c-table__cell">Tested Configurations*   </td></tr>
@@ -79,33 +79,36 @@ $(document).ready(function(){initNavTree('_info__version_support.html','');});
 <code>Mac OS 10.14</code> - <code>Clang 11</code> - <code>x86_64</code>/<code>amd64</code><br />
 <code>Ubuntu 18.04</code> - <code>GCC 7.5</code> - <code>x86</code> &amp; <code>x86_64</code>/<code>amd64</code>   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">.NET  </td><td class="c-table__cell"><code>Standard 2.0</code> and above  </td><td class="c-table__cell"><code>Windows Server 2019</code> - <code>.NET Core 3.1</code> and <code>.NET Framework 4.6.2</code><br />
-<code>Ubuntu 18.04</code> - <code>.NET Core 3.1</code>   </td></tr>
+<td class="c-table__cell">.NET  </td><td class="c-table__cell"><code>Standard 2.0</code> and above  </td><td class="c-table__cell"><code>Windows Server 2019</code> - <code>.NET Core 3.1</code> - <code>x86</code> &amp; <code>x64</code><br />
+<code>Ubuntu 18.04</code> - <code>.NET Core 3.1</code> - <code>x64</code>   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Java  </td><td class="c-table__cell"><code>JDK8</code> and all <code>LTS</code> versions above  </td><td class="c-table__cell"><code>Windows Server 2019</code> - <code>OpenJDK 8</code>, <code>11</code> &amp; <code>17</code><br />
-<code>Mac OS 10.15</code> - <code>OpenJDK 8</code>, <code>11</code> &amp; <code>17</code><br />
-<code>Ubuntu 20.04</code> - <code>OpenJDK 8</code>, <code>11</code> &amp; <code>17</code>   </td></tr>
+<td class="c-table__cell">Java  </td><td class="c-table__cell"><code>JDK8</code> and all <code>LTS</code> versions above  </td><td class="c-table__cell"><code>Windows Server 2019</code> - <code>OpenJDK 8</code>, <code>11</code> &amp; <code>17</code> - <code>x64</code><br />
+<code>Mac OS 10.15</code> - <code>OpenJDK 8</code>, <code>11</code> &amp; <code>17</code> - <code>x64</code><br />
+<code>Ubuntu 20.04</code> - <code>OpenJDK 8</code>, <code>11</code> &amp; <code>17</code> - <code>x64</code>   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Node.js  </td><td class="c-table__cell"><code>Node.js 10</code>, <code>12</code>, <code>14</code> and <code>16</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>Node.js LTS</code> versions (<code>10</code>, <code>12</code>, <code>14</code>, <code>16</code>)   </td></tr>
+<td class="c-table__cell">Node.js  </td><td class="c-table__cell"><code>Node.js 10</code>, <code>12</code>, <code>14</code> and <code>16</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>Node.js LTS</code> versions (<code>10</code>, <code>12</code>, <code>14</code>, <code>16</code>) - <code>x64</code><br />
+<code>Windows 2016</code> - <code>Node.js LTS</code> versions - <code>x64</code><br />
+<code>MacOS 10.14</code> - <code>Node.js LTS</code> versions - <code>x64</code>   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Varnish  </td><td class="c-table__cell"><code>Varnish 6.0.6</code><br />
-<code>C11</code> and above  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>GCC 7.5</code> - <code>64-bit</code><br />
-<code>Ubuntu 20.04</code> - <code>GCC 9.3</code> - <code>64-bit</code>   </td></tr>
+<code>C11</code> and above  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>GCC 7.5</code> - <code>x64</code><br />
+<code>Ubuntu 20.04</code> - <code>GCC 9.3</code> - <code>x64</code>   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Nginx  </td><td class="c-table__cell"><code>Nginx 1.19.0</code>,<code>1.19.5</code>,<code>1.19.10</code>,<code>1.20.0</code>,<code>1.21.3</code><br />
-<code>C11</code> and above  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>GCC 7.5</code> - <code>64-bit</code><br />
-<code>Ubuntu 20.04</code> - <code>GCC 9.3</code> - <code>64-bit</code>   </td></tr>
+<code>C11</code> and above  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>GCC 7.5</code> - <code>x64</code><br />
+<code>Ubuntu 20.04</code> - <code>GCC 9.3</code> - <code>x64</code>   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">PHP  </td><td class="c-table__cell"><code>PHP 5.6</code>, <code>7.x</code> and <code>8.0</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>PHP 5.6</code>, <code>7.2</code>, <code>7.3</code>, <code>7.4</code> and <code>8.0</code>   </td></tr>
+<td class="c-table__cell">PHP  </td><td class="c-table__cell"><code>PHP 5.6</code>, <code>7.x</code> and <code>8.0</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>PHP 5.6</code>, <code>7.2</code>, <code>7.3</code>, <code>7.4</code> and <code>8.0</code> - <code>x64</code>   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Python  </td><td class="c-table__cell"><code>Python 3.5+</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>Python 3.7</code>, <code>3.8</code>, <code>3.9</code><br />
-<code>Mac OS 10.14</code> - <code>Python 3.7</code>, <code>3.8</code>, <code>3.9</code><br />
-<code>Windows Server 2016</code> - <code>Python 3.7</code>, <code>3.8</code>, <code>3.9</code>   </td></tr>
+<td class="c-table__cell">Python  </td><td class="c-table__cell"><code>Python 3.5+</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>Python 3.7</code>, <code>3.8</code>, <code>3.9</code> - <code>x64</code><br />
+<code>Mac OS 10.14</code> - <code>Python 3.7</code>, <code>3.8</code>, <code>3.9</code> - <code>x64</code><br />
+<code>Windows Server 2016</code> - <code>Python 3.7</code>, <code>3.8</code>, <code>3.9</code> - <code>x86</code> &amp; <code>x64</code>   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Go  </td><td class="c-table__cell"><code>Golang 1.17.1</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>Golang 1.17.1</code><br />
-<code>Ubuntu 20.04</code> - <code>Golang 1.17.1</code><br />
-<code>Mac OS 10.14</code> - <code>Golang 1.17.1</code><br />
-<code>Mac OS 10.15</code> - <code>Golang 1.17.1</code>   </td></tr>
+<td class="c-table__cell">Go  </td><td class="c-table__cell"><code>Golang 1.17.1</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>Golang 1.17.1</code> - <code>x86</code> &amp; <code>x64</code><br />
+<code>Ubuntu 20.04</code> - <code>Golang 1.17.1</code> - <code>x86</code> &amp; <code>x64</code><br />
+<code>Mac OS 10.14</code> - <code>Golang 1.17.1</code> - <code>x64</code><br />
+<code>Mac OS 10.15</code> - <code>Golang 1.17.1</code> - <code>x64</code><br />
+<code>Windows 2019</code> - <code>Golang 1.17.1</code> - <code>x64</code>   </td></tr>
 </table>
 </div><p>*Other environments may work, but are not tested by 51Degrees. </p>
 </section></div><!-- PageDoc -->
