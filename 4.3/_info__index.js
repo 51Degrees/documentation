@@ -4,5 +4,6 @@ var _info__index =
     [ "Resource Keys", "_info__resource_keys.html", null ],
     [ "Version Support", "_info__version_support.html", null ],
     [ "Frequently Asked Questions", "_info__f_a_qs.html", null ],
-    [ "Error Messages", "_info__error_messages.html", null ]
+    [ "Error Messages", "_info__error_messages.html", null ],
+    [ "WordPress", "_info__word_press.html", null ]
 ];

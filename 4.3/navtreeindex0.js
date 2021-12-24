@@ -130,6 +130,7 @@ var NAVTREEINDEX0 =
 "_info__index.html":[8],
 "_info__resource_keys.html":[8,1],
 "_info__version_support.html":[8,2],
+"_info__word_press.html":[8,5],
 "_other_integrations__index.html":[9],
 "_other_integrations__nginx.html":[9,1],
 "_other_integrations__varnish.html":[9,0],
