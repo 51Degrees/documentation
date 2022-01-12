@@ -22,6 +22,6 @@ If something is not tested here, and you believe it should be, please raise an i
 Terminology:
 - `32-bit`: 32 bit build
 - `64-bit`: 64 bit build
-- `x64`/`x86_64`/`amd64`/`Intel 64`: AMD64 architecture
+- `x86_64`/`amd64`: x86-64 architecture (Also known as x64/AMD64/Intel 64)
 - `armhf (ARM hard float)`:  32-bit ARM architecture (Debian Linux)
 - `aarch64`/`arm64`: 64-bit ARM architecture
