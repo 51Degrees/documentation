@@ -50,6 +50,7 @@ var NAVTREEINDEX0 =
 "_concepts__pipeline.html":[4,5],
 "_concepts__pipeline_basics.html":[4,4],
 "_concepts__terminology.html":[4,6],
+"_device_detection__features__apple_device_table.html":[5,2,4],
 "_device_detection__features__false_positive_control.html":[5,2,0],
 "_device_detection__features__index.html":[5,2],
 "_device_detection__features__native_key_lookup.html":[5,2,1],
