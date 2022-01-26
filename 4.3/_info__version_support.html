@@ -74,12 +74,14 @@ $(document).ready(function(){initNavTree('_info__version_support.html','');});
 <td class="c-table__cell">Language / Framework  </td><td class="c-table__cell">Minimum Supported Version  </td><td class="c-table__cell">Supported Platform/Architecture  </td><td class="c-table__cell">Tested Configurations*   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">C/C++  </td><td class="c-table__cell"><code>C11</code> and above<br />
-<code>GCC 5</code> and above on Linux  </td><td class="c-table__cell"><code>Windows</code>- <code>x86_64</code>/<code>amd64</code><br />
+<code>GCC 5</code> and above on Linux<br />
+Platform Toolset Version <code>v142</code> and above on Windows<br />
+Windows 10 SDK Version <code>10.0.18362.0</code> and above on Windows  </td><td class="c-table__cell"><code>Windows</code>- <code>x86_64</code>/<code>amd64</code><br />
 <code>Linux</code>- <code>x86_64</code>/<code>amd64</code><br />
 <code>Linux</code> - <code>armhf</code>/<code>aarch64</code> - (Not Tested)<br />
 <code>MacOS</code>- <code>x86_64</code>/<code>amd64</code><br />
-<code>MacOS</code> - <code>arm64</code> - (Not Tested)  </td><td class="c-table__cell"><code>Windows 10</code> - <code>VS2017</code> - <code>32-bit</code> &amp; <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Mac OS 10.14</code> - <code>Clang 11</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
+<code>MacOS</code> - <code>arm64</code> - (Not Tested)  </td><td class="c-table__cell"><code>Windows Server 2019</code> - <code>VS2019</code> - <code>32-bit</code> &amp; <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code> - Platform Toolset Version <code>v142</code> - Windows 10 SDK Version <code>10.0.18362.0</code><br />
+<code>Mac OS 11</code> - <code>Clang 13</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
 <code>Ubuntu 18.04</code> - <code>GCC 7.5</code> - <code>32-bit</code> &amp; <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">.NET  </td><td class="c-table__cell"><code>Standard 2.0</code> and above  </td><td class="c-table__cell"><code>Windows</code> - <code>x86_64</code>/<code>amd64</code><br />
@@ -91,8 +93,8 @@ $(document).ready(function(){initNavTree('_info__version_support.html','');});
 <code>Linux</code> - <code>armhf</code>/<code>aarch64</code>- (Not Tested)<br />
 <code>MacOS</code> - <code>x86_64</code>/<code>amd64</code><br />
 <code>MacOS</code> - <code>arm64</code>- (Not Tested)  </td><td class="c-table__cell"><code>Windows Server 2019</code> - <code>OpenJDK 8</code>, <code>11</code> &amp; <code>17</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Mac OS 10.15</code> - <code>OpenJDK 8</code>, <code>11</code> &amp; <code>17</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Ubuntu 20.04</code> - <code>OpenJDK 8</code>, <code>11</code> &amp; <code>17</code> - <code>64bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
+<code>Mac OS 11</code> - <code>OpenJDK 8</code>, <code>11</code> &amp; <code>17</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
+<code>Ubuntu 18.04</code> - <code>OpenJDK 8</code>, <code>11</code> &amp; <code>17</code> - <code>64bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Node.js  </td><td class="c-table__cell"><code>Node.js 10</code>, <code>12</code>, <code>14</code> and <code>16</code>  </td><td class="c-table__cell"><code>Windows</code>- <code>x86_64</code>/<code>amd64</code><br />
 <code>Linux</code>- <code>x86_64</code>/<code>amd64</code><br />
@@ -111,16 +113,14 @@ $(document).ready(function(){initNavTree('_info__version_support.html','');});
 <td class="c-table__cell">PHP  </td><td class="c-table__cell"><code>PHP 5.6</code>, <code>7.x</code> and <code>8.0</code>  </td><td class="c-table__cell"><code>Linux</code>- <code>x86_64</code>/<code>amd64</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>PHP 5.6</code>, <code>7.2</code>, <code>7.3</code>, <code>7.4</code> and <code>8.0</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Python  </td><td class="c-table__cell"><code>Python 3.5+</code>  </td><td class="c-table__cell"><code>Linux</code>- <code>x86_64</code>/<code>amd64</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>Python 3.7</code>, <code>3.8</code>, <code>3.9</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Mac OS 10.14</code> - <code>Python 3.7</code>, <code>3.8</code>, <code>3.9</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Windows Server 2016</code> - <code>Python 3.7</code>, <code>3.8</code>, <code>3.9</code> - <code>32-bit</code> &amp; <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
+<code>Mac OS 11</code> - <code>Python 3.7</code>, <code>3.8</code>, <code>3.9</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
+<code>Windows Server 2019</code> - <code>Python 3.7</code>, <code>3.8</code>, <code>3.9</code> - <code>32-bit</code> &amp; <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Go  </td><td class="c-table__cell"><code>Golang 1.17.1</code>  </td><td class="c-table__cell"><code>Windows</code>- <code>x86_64</code>/<code>amd64</code><br />
 <code>Linux</code>- <code>x86_64</code>/<code>amd64</code><br />
 <code>MacOS</code>- <code>x86_64</code>/<code>amd64</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>Golang 1.17.1</code> - <code>32-bit</code> &amp; <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Ubuntu 20.04</code> - <code>Golang 1.17.1</code> - <code>32-bit</code> &amp; <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Mac OS 10.14</code> - <code>Golang 1.17.1</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Mac OS 10.15</code> - <code>Golang 1.17.1</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Windows 2019</code> - <code>Golang 1.17.1</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
+<code>Mac OS 11</code> - <code>Golang 1.17.1</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
+<code>Windows Server 2019</code> - <code>Golang 1.17.1</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
 </table>
 </div><p>*Other environments may work, but are not tested by 51Degrees.</p>
 <p>Terminology:</p><ul>
