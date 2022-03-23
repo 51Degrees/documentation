@@ -10,9 +10,9 @@ and begin using it to process User-Agents.
 @grabexample{device-detection-cxx,_hash_2_getting_started_8cpp,C++}
 @grabexample{device-detection-dotnet,_hash_2_getting_started_2_program_8cs,C#}
 @grabexample{device-detection-java,hash_2_getting_started_8java,Java}
-@grabexample{device-detection-php-onpremise,hash_2gettingstarted_8php,PHP}
+@grabexample{device-detection-php-onpremise,onpremise_2getting_started_console_8php,PHP}
 @grabexample{device-detection-node,hash_2getting_started_8js,Node.js}
-@grabexample{device-detection-python,hash_2gettingstarted_8py,Python}
+@grabexample{device-detection-python,onpremise_2getting_started_console_8py,Python}
 @grabexample{device-detection-varnish,hash_2getting_started_8vcl,Varnish}
 @grabexample{device-detection-nginx,hash_2getting_started_8conf,Nginx}
 @grabbedexample
