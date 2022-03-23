@@ -10,6 +10,6 @@ using it to process User-Agents.
 @grabexample{device-detection-java,cloud_2_getting_started_8java,Java}
 @grabexample{device-detection-node,cloud_2getting_started_8js,Node.js}
 @grabexample{device-detection-php,cloud_2getting_started_console_8php,PHP}
-@grabexample{device-detection-python,cloud_2getting_started_console_8py,Python}
+@grabexample{device-detection-python,cloud_2gettingstarted_console_8py,Python}
 @grabbedexample
 @endsnippets
