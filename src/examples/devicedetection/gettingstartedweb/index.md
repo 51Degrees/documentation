@@ -1,0 +1,5 @@
+@page Examples_DeviceDetection_GettingStarted_Web_Index Getting Started - Web
+
+@subpage Examples_DeviceDetection_GettingStarted_Console_Cloud
+
+@subpage Examples_DeviceDetection_GettingStarted_Console_OnPremiseHash

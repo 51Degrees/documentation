@@ -7,7 +7,6 @@ This example shows how process data for later viewing using a Device Detection H
 @startsnippets
 @grabexample{device-detection-cxx,_hash_2_offline_processing_8c,C}
 @showsnippet{cpp,C++}
-@grabexample{device-detection-dotnet,_hash_2_offline_processing_2_program_8cs,C#}
 @grabexample{device-detection-java,hash_2_offline_processing_8java,Java}
 @showsnippet{php,PHP}
 @grabexample{device-detection-node,hash_2offline_processing_8js,Node.js}
