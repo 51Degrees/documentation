@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_GettingStarted_Console_OnPremiseHash On-Premise
+@page Examples_DeviceDetection_GettingStarted_Console_OnPremise On-Premise
 
 # Introduction
 
@@ -6,8 +6,8 @@ This example shows how to get set up an on-premise Device Detection @aspectengin
 to process User-Agents and/or User-Agent Client Hints.
 
 There are many different ways to use the pipeline. Rather that creating examples for every scenario, 
-we have used the following table where possible when creating examples. You can mix and match 
-elements from different examples in order to match your use-case.
+we have used the following table where possible when creating the 'getting started' examples. 
+You can mix and match elements from different examples in order to match your use-case.
 
 |            | Console             | Web                 |
 |------------|---------------------|---------------------|
