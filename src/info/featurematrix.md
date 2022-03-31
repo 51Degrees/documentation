@@ -11,10 +11,11 @@
 |Node.js  |@tick|@tick | Cloud only |
 |PHP      |@tick|@tick** | Cloud only |
 |Python  |@tick| Cloud only | Cloud only |
-|Go*      |@tick|@tick| Cloud only |
+|Go      |@tick*|@tick***| Cloud only* |
 
-*Coming soon.
-**On-premise not available through composer.
+*Coming soon.<BR>
+**On-premise not available through composer.<BR>
+***Available in Lite version with minimum features. Details are available in README.md.
 
 # Web integrations and plugins
 
@@ -26,7 +27,8 @@
 |JavaScript| N/A |
 |Node.js  | N/A |
 |PHP      |WordPress*<BR>Drupal*|
-|Python  |Flask|
+|Python   |Flask|
+|Go       | N/A |
 
 *Coming soon
 

@@ -1,16 +1,17 @@
 @htmlonly
 <p>
-This example demonstrates how to enhance results by incorporating evidence 
-from client-side JavaScript.
-This approach is required to perform certain tasks such as identify iPhone 
-and iPad models or get the screen resolution for a desktop device. 
+This example shows how to use 51Degrees on-premise device detection in a web context to determine 
+details about a device based on its User-Agent and User-Agent Client Hint HTTP header values.
 </p>
 <p>
-Properties containing JavaScript snippets are populated by engines in the 
-Pipeline and these are then bundled together into a single JavaScript 
-block by the 'JsonBuilder' and 'JavaScriptBuilder' elements.
-This JavaScript is then used to obtain the additional evidence from the 
-client and pass it back to the server. The updated results can then be 
-used immediately on the client-side or on subsequent requests to the server.
+We demonstrate how to use the
+<a href="http://51degrees.com/documentation/_features__web_integration.html">web integration</a> 
+feature to:
+<ul>
+  <li>Pass the required information from the web context to the pipeline API.</li>
+  <li>Populate relevant response headers such as Accept-CH for User-Agent Client Hints</li>
+  <li>Acquire and process evidence from client-side JavaScript. This is used to determine 
+  iPhone / iPad models.</li>
+</ul>
 </p>
 @endhtmlonly

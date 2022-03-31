@@ -1,4 +1,4 @@
-@page DeviceDetection_MigrationGuides_51DegreesV3 51Degrees Device Detection API Version 3.x
+@page DeviceDetection_MigrationGuides_51DegreesV3 51Degrees - Upgrading to Version 4
 
 # Introduction
 

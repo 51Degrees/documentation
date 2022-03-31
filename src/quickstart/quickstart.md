@@ -12,18 +12,17 @@ by the @Pipeline to help get you started.
 If you want to use multiple services then work through the quick start guides 
 below and then see the @combiningservices example.
 
-- Quickstart for [Device Detection](@ref Quickstart_DeviceDetection)
-- Quickstart for [Reverse Geocoding](@ref Quickstart_ReverseGeocoding)
+- Quick Start for [Device Detection](@ref Quickstart_DeviceDetection)
+- Quick Start for [Reverse Geocoding](@ref Quickstart_ReverseGeocoding)
 - IP Intelligence (Coming soon)
 - Fraud Detection (Coming soon)
 
 # Client-Side JavaScript
 
-If you intend to use client-side JavaScript only then you can use the 51Degrees cloud 
+If you intend to only use client-side JavaScript then you can use the 51Degrees cloud 
 [Configurator](https://configure.51degrees.com/) to select the properties you need and
 build a custom JavaScript snippet to include in your web page.
 
 See the @configuratorexplanation for details of how to obtain a Resource Key from the
-Configurator, and then copy the Client Side code examples from the Configurator, which
+Configurator, and then copy the client-side code examples from the Configurator, which
 have your new key included.
-

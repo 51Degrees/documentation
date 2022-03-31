@@ -1,7 +1,13 @@
 @htmlonly
 <p>
-This example requires a local data file. Free data files can be acquired by
-pulling the submodules under this repository or from the
-<a href="https://github.com/51Degrees/device-detection-data">device-detection-data</a>
+This example requires a local data file. The free 'Lite' data file can be acquired by
+pulling the git submodules under this repository (run `git submodule update --recursive`) 
+or from the <a href="https://github.com/51Degrees/device-detection-data">device-detection-data</a>
 GitHub repository.
 </p>
+<p>
+The Lite data file is only used for illustration, and has limited accuracy and capabilities.
+Find out about the more capable data files that are available on our 
+<a href="https://51degrees.com/pricing">pricing page</a>
+</p>
+@endhtmlonly

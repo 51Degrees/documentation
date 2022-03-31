@@ -1,5 +1,7 @@
 @page DeviceDetection_Features_Index Features
 
+@subpage DeviceDetection_Features_AppleDeviceTable
+
 @subpage DeviceDetection_Features_FalsePositiveControl
 
 @subpage DeviceDetection_Features_NativeKeyLookup

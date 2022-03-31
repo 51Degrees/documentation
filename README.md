@@ -18,7 +18,7 @@ Documentation is written and maintained in [Markdown](https://en.wikipedia.org/w
 The final generated documentation can be broken down into three major groups:
 
  - The 'written' pages contain entirely hand-written content. They live in this repository.
- - The 'generated' pages contain reference documentation that has been generated automatically from the source code and associated comments. These are built from the sub modules referenced in this repository by the continuous build pipeline when master is updated.
+ - The 'generated' pages contain reference documentation that has been generated automatically from the source code and associated comments. These are built from the sub modules referenced in this repository by the continuous build pipeline when main is updated.
  - Example pages contain a combination of hand-written and generated content. The content for the page file itself is maintained in this repository. However, the example code for each language is pulled in from the generated pages. In order to know the name of the example code file, you will need to generate the HTML documentation from the relevant sub-module.
 
 ## Repository Directory Structure
