@@ -12,8 +12,8 @@ A [feature page](@ref DeviceDetection_Features_PerformanceOptions) is also avail
 @grabexample{device-detection-dotnet,_hash_2_performance_2_program_8cs,C#}
 @grabexample{device-detection-java,hash_2_performance_8java,Java}
 @showsnippet{php,PHP}
-@grabexample{device-detection-node,hash_2performance_8js,Node.js}
-@grabexample{device-detection-python,hash_2performance_8py,Python}
+@grabexample{device-detection-node,onpremise_2performance-console_2performance_8js,Node.js}
+@grabexample{device-detection-python,onpremise_2performance_8py,Python}
 @startsnippet{cpp}
 A performance example has been provided by its C variant.
 @endsnippet
