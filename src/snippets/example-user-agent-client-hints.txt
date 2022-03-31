@@ -1,0 +1,5 @@
+This example demonstrates detection using user-agent client hints.
+Each client hints header can only be used to determine the properties for a single component.
+For example, the sec-ch-ua value can be used to determine the browser of the connecting device, but not other components such as the hardware.
+We show this by first performing detection with sec-ch-ua only.
+We then repeat with the user-agent header set as well. Note that the client hint takes priority over the user-agent for detecting browser details.
