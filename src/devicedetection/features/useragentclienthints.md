@@ -16,10 +16,11 @@ based on one of the client hints headers (Sec-CH-UA only) in data files
 from 7th December 2020.
 
 We also support the one off case of identifying Windows 11 using User Agent Client Hints as there
-is no other way to do so.
+is [no other way to do so](https://docs.microsoft.com/en-us/microsoft-edge/web-platform/how-to-detect-win11).
 
 This limited support will be superseded by functionality in a future version (exact version 
-number TBC), which will fully support detection of device from Client Hints headers. 
+number TBC), which will fully support detection of devices, operating systems and browsers from 
+UACH headers. 
 
 This will also require a new data file (date of availability TBC). The format of the data file 
 remains the same (what we refer to as Hash V4.1). But the contents will be updated to support 
@@ -31,13 +32,13 @@ using BOTH the future version of the API and a newer data file.
 
 # Examples
 
-We have [console](Examples_DeviceDetection_GettingStarted_Console_Index) and 
-[web](Examples_DeviceDetection_GettingStarted_Web_Index) examples that include detection 
-using User-Agent Client Hints.
+We have [console](@ref Examples_DeviceDetection_GettingStarted_Console_Index) and 
+[web](@ref Examples_DeviceDetection_GettingStarted_Web_Index) examples that include detection 
+using User-Agent Client Hints for both on-premise and cloud scenarios.
 
-The console examples pass client hints values directly to the API, so will work in any situation.
-The web examples run as a simple web page, so you will need a browser that supports User-Agent
-Client Hints in order to try it out.
+The console examples pass UACH values directly to the API, so will work in any situation.
+The web examples run as a simple web page, so you will need a browser that supports UACH in 
+order to try it out.
 
 # HTTP Headers
 
@@ -107,9 +108,9 @@ Permissions-Policy header:
 - ch-ua-platform-version=(self "https://cloud.51degrees.com")
 - ch-ua-model=(self "https://cloud.51degrees.com")  
 
-Note that the browser will only send client hints headers to the third party that are also 
+Note that the browser will only send UACH headers to the third party that are also 
 requested by the first-party. This means that you'll also need to set your Accept-CH header 
-to request the client hints headers:
+to request the UACH headers:
 
 - sec-ch-ua  
 - sec-ch-ua-mobile  
@@ -120,7 +121,7 @@ to request the client hints headers:
 
 # Client Hints JavaScript API
 
-Instead of using HTTP headers, the client hints values can be requested using a 
+Instead of using HTTP headers, the UACH values can be requested using a 
 [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API).
 Unfortunately, this API formats the values quite differently to the values in the HTTP headers.
 Currently, 51Degrees only supports detection using the HTTP header values.
@@ -138,7 +139,7 @@ covering how UACH works.
 51Degrees has also [blogged](https://51degrees.com/blog/user-agent-client-hints-chrome-89-update) 
 [extensively](https://51degrees.com/blog/user-agent-client-hints-update-september-2020) on the subject.
 We also have an [explainer](https://learnclienthints.com/) and a [test page](https://51degrees.com/client-hints) 
-that shows how client hints interact with the Accept-CH and Permissions-Policy response headers.
+that shows how UACH headers interact with the Accept-CH and Permissions-Policy response headers.
 
 In May 2021, Google [outlined](https://blog.chromium.org/2021/05/update-on-user-agent-string-reduction.html) 
 their plans for the rollout of UACH. This also included mention that the deprecation of the 
