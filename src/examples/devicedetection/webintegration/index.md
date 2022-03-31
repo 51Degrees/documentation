@@ -1,3 +1,0 @@
-@page Examples_DeviceDetection_WebIntegration_Index Web Integration
-
-@subpage Examples_DeviceDetection_WebIntegration_Examples
