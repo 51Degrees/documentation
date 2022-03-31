@@ -16,9 +16,8 @@ You can mix and match elements from different examples in order to match your us
 
 @startsnippets
 @grabexample{device-detection-dotnet,_on_premise_2_getting_started-_web_2_startup_8cs,ASP.NET}
-@grabexample{device-detection-java,servlet_2_example_8java,Java Servlet}
-@grabexample{device-detection-java,mvc_2configuration_2_example_mvc_config_8java,Java Spring MVC}
-@grabexample{device-detection-node,cloud_2web_integration_8js,Node.js}
+@grabexample{device-detection-java,_getting_started_web_on_prem_8java,Java Servlet}
+@grabexample{device-detection-node,onpremise_2gettingstarted-web_2getting_started_8js,Node.js}
 @grabexample{device-detection-php-onpremise,onpremise_2getting_started_web_8php,PHP}
 @grabexample{device-detection-python,onpremise_2gettingstarted_web_2app_8py,Python}
 @grabbedexample
