@@ -102,21 +102,21 @@ However, it does have the additional complication that
 To get around this, you will need to include the required values in the 
 Permissions-Policy header:
 
-ch-ua-full-version-list=(self "https://cloud.51degrees.com")  
-ch-ua-platform=(self "https://cloud.51degrees.com")  
-ch-ua-platform-version=(self "https://cloud.51degrees.com")
-ch-ua-model=(self "https://cloud.51degrees.com")  
+- ch-ua-full-version-list=(self "https://cloud.51degrees.com")  
+- ch-ua-platform=(self "https://cloud.51degrees.com")  
+- ch-ua-platform-version=(self "https://cloud.51degrees.com")
+- ch-ua-model=(self "https://cloud.51degrees.com")  
 
 Note that the browser will only send client hints headers to the third party that are also 
 requested by the first-party. This means that you'll also need to set your Accept-CH header 
 to request the client hints headers:
 
-sec-ch-ua  
-sec-ch-ua-mobile  
-sec-ch-ua-full-version-list 
-sec-ch-ua-platform  
-sec-ch-ua-platform-version
-sec-ch-ua-model  
+- sec-ch-ua  
+- sec-ch-ua-mobile  
+- sec-ch-ua-full-version-list 
+- sec-ch-ua-platform  
+- sec-ch-ua-platform-version
+- sec-ch-ua-model  
 
 # Client Hints JavaScript API
 
