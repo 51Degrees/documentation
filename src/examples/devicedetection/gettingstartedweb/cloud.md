@@ -16,5 +16,7 @@ You can mix and match elements from different examples in order to match your us
 
 @startsnippets
 @grabexample{device-detection-dotnet,_cloud_2_getting_started-_web_2_startup_8cs,ASP.NET}
+@grabexample{device-detection-php,cloud_2getting_started_web_8php,PHP}
+@grabexample{device-detection-python,cloud_2gettingstarted_web_2app_8py,Python}
 @grabbedexample
 @endsnippets
