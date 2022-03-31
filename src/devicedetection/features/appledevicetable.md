@@ -63,6 +63,8 @@ Apple has continually worked to homogenize any information that a website can ge
 |iPhone 13 Pro Max|Zoom|iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|
 |iPhone 13 mini|Standard|iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|
 |iPhone 13 mini|Zoom|iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro|
+|iPhone SE (3rd Gen.)|Standard|iPhone SE (3rd Gen.)|
+|iPhone SE (3rd Gen.)|Zoom|iPhone SE (3rd Gen.)|
 
 # iPads using browser in mobile mode @anchor ipads_mobile_mode
 
@@ -81,6 +83,7 @@ Apple has continually worked to homogenize any information that a website can ge
 |iPad Air 2|N/A|iPad mini 4, iPad Air 2<br/> iPad Air 2|iPad Air 2<br/> iPad mini 4, iPad Air 2|
 |iPad Air (3rd Gen.)|N/A|iPad Air (3rd Gen.)|N/A|
 |iPad Air (4th Gen.)|N/A|iPad Air (4th Gen.)|N/A|
+|iPad Air (5th Gen.)|N/A|iPad Air (5th Gen.)|N/A|
 |iPad mini|N/A|iPad mini|N/A|
 |iPad mini 2|N/A|iPad Air, iPad mini 2, iPad mini 3|N/A|
 |iPad mini 3|N/A|iPad Air, iPad mini 2, iPad mini 3|N/A|
@@ -152,6 +155,8 @@ Apple has continually worked to homogenize any information that a website can ge
 |iPhone 13 Pro Max|Zoom|iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|N/A|
 |iPhone 13 mini|Standard|iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|N/A|
 |iPhone 13 mini|Zoom|iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro|N/A|
+|iPhone SE (3rd Gen.)|Standard|iPhone SE (3rd Gen.)|
+|iPhone SE (3rd Gen.)|Zoom|iPhone SE (3rd Gen.)|
 |iPad 5|N/A|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad 5, iPad Pro 12.9, iPad 6<br/> iPad 5|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad Pro 12.9, iPad 5<br/> iPad 5, iPad Pro 12.9<br/> iPad 5|
 |iPad 6|N/A|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad Pro 12.9, iPad 6<br/> iPad 5, iPad Pro 12.9, iPad 6<br/> iPad 6|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad Pro 12.9, iPad 6<br/> iPad 6, iPad Pro 12.9<br/> iPad 6|
 |iPad 7|N/A|iPad 7|N/A|
@@ -160,6 +165,7 @@ Apple has continually worked to homogenize any information that a website can ge
 |iPad Air 2|N/A|iPad mini 4, iPad Air 2<br/> iPad Air 2|iPad Air 2<br/> iPad mini 4, iPad Air 2|
 |iPad Air (3rd Gen.)|N/A|iPad Air (3rd Gen.)|N/A|
 |iPad Air (4th Gen.)|N/A|iPad Air (4th Gen.)|N/A|
+|iPad Air (5th Gen.)|N/A|iPad Air (5th Gen.)|N/A|
 |iPad mini (5th Gen.)|N/A|iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.)<br/> iPad mini (5th Gen.)|N/A|
 |iPad mini (6th Gen.)|N/A|iPad mini (6th Gen.)|N/A|
 |iPad Pro 11.0|N/A|iPad Pro 11.0, iPad Pro 11.0 (2nd Gen.)<br/> iPad Pro 11.0|N/A|
