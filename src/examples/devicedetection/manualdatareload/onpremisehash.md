@@ -9,6 +9,6 @@ This example demonstrates how to prompt the Device Detection @aspectengine to re
 Note that, in all languages, the same function can also be used to update the Device Detection @aspectengine from a data file that is held in memory.
 
 @startsnippets
-@grabexample{device-detection-php-onpremise,hash_2manual_data_update_8php,PHP}
+@grabexample{device-detection-php-onpremise,onpremise_2manual_data_update_8php,PHP}
 @grabbedexample
 @endsnippets
