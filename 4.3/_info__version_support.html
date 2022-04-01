@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>51Degrees API Documentation: Version Support</title>
+<title>51Degrees API Documentation: Tested Versions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,74 +62,372 @@ $(document).ready(function(){initNavTree('_info__version_support.html','');});
 <div class="PageDoc"><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_info__index.html">Information</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_info__version_support.html">Version Support</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_info__index.html">Information</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_info__version_support.html">Tested Versions</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Version Support </h2></div><!--header-->
+<h2 class="g-docs__page-title">Tested Versions </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><p>All APIs are written with a minimum tested language version. Any version above this is theoretically tested, but bleeding edge releases may not be supported by our testing. To help determine whether a version is supported, the table below shows the versions which are tested as part of each release, in addition to the minimum target version.</p>
+<section class="g-docs__section"><p>All APIs are written with a minimum tested language version. Any version above this is theoretically tested, but bleeding edge releases may not be covered by our testing. The table below shows the versions which are tested as part of each release. Where 'prebuilt packages' are available, we detail the built and tested environment together with other dependencies needed to use the packages; and only list the links to the instructions for 'build from source' options. Where 'prebuilt packages' are broadly not available, we list the build and tested environment under the 'build from source' option.</p>
+<p>Our policy is to use the build agents from Microsoft that they have at the current time. You can see Microsoft's build agent <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops&amp;tabs=yaml">here</a>.</p>
+<p>We open source all the build scripts in the CI folder. If you wish to ensure that the system is being tested on an environment or a particular combination of configurations that isn't covered by us, you might want to replicate these build scripts in your build environment rather than relying on the packages that we produce.</p>
+<p>Testing exclusively takes place on long-term support releases.</p>
+<hr/>
 <p>If something is not tested here, and you believe it should be, please raise an issue via our <a href="https://github.com/51Degrees">GitHub</a> page and we will look into it.</p>
-<p><code>NOTE</code>: Please refer to the bottom of this page for terminology used in the below table. </p><div class="g-table g-table--overflow"><table class="c-table">
-<tr class="c-table__row--heading">
-<td class="c-table__cell">Language / Framework  </td><td class="c-table__cell">Minimum Supported Version  </td><td class="c-table__cell">Supported Platform/Architecture  </td><td class="c-table__cell">Tested Configurations*   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">C/C++  </td><td class="c-table__cell"><code>C11</code> and above<br />
-<code>GCC 5</code> and above on Linux<br />
-Platform Toolset Version <code>v142</code> and above on Windows<br />
-Windows 10 SDK Version <code>10.0.18362.0</code> and above on Windows  </td><td class="c-table__cell"><code>Windows</code>- <code>x86_64</code>/<code>amd64</code><br />
-<code>Linux</code>- <code>x86_64</code>/<code>amd64</code> - (with <code>glibc 2.27</code> if using OnPremise)<br />
-<code>Linux</code> - <code>armhf</code>/<code>aarch64</code> - (with <code>glibc 2.27</code> if using OnPremise) - (Not Tested)<br />
-<code>MacOS</code>- <code>x86_64</code>/<code>amd64</code><br />
-<code>MacOS</code> - <code>arm64</code> - (Not Tested)  </td><td class="c-table__cell"><code>Windows Server 2019</code> - <code>VS2019</code> - <code>32-bit</code> &amp; <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code> - Platform Toolset Version <code>v142</code> - Windows 10 SDK Version <code>10.0.18362.0</code><br />
-<code>Mac OS 11</code> - <code>Clang 13</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Ubuntu 18.04</code> - <code>GCC 7.5</code> - <code>32-bit</code> &amp; <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">.NET  </td><td class="c-table__cell"><code>Standard 2.0</code> and above  </td><td class="c-table__cell"><code>Windows</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Linux</code> - <code>x86_64</code>/<code>amd64</code> - (with <code>glibc 2.27</code> if using OnPremise)  </td><td class="c-table__cell"><code>Windows Server 2019</code> - <code>.NET Core 3.1</code> - <code>32-bit</code> &amp; <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Ubuntu 18.04</code> - <code>.NET Core 3.1</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">Java  </td><td class="c-table__cell"><code>JDK8</code> and all <code>LTS</code> versions above  </td><td class="c-table__cell"><code>Windows</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Linux</code> - <code>x86_64</code>/<code>amd64</code> - (with <code>glibc 2.27</code> if using OnPremise)<br />
-<code>Linux</code> - <code>armhf</code>/<code>aarch64</code> - (with <code>glibc 2.27</code> if using OnPremise) - (Not Tested)<br />
-<code>MacOS</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>MacOS</code> - <code>arm64</code>- (Not Tested)  </td><td class="c-table__cell"><code>Windows Server 2019</code> - <code>OpenJDK 8</code>, <code>11</code> &amp; <code>17</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Mac OS 11</code> - <code>OpenJDK 8</code>, <code>11</code> &amp; <code>17</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Ubuntu 18.04</code> - <code>OpenJDK 8</code>, <code>11</code> &amp; <code>17</code> - <code>64bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">Node.js  </td><td class="c-table__cell"><code>Node.js 10</code>, <code>12</code>, <code>14</code> and <code>16</code>  </td><td class="c-table__cell"><code>Windows</code>- <code>x86_64</code>/<code>amd64</code><br />
-<code>Linux</code>- <code>x86_64</code>/<code>amd64</code> - (with <code>glibc 2.27</code> if using OnPremise)<br />
-<code>MacOS</code>- <code>x86_64</code>/<code>amd64</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>Node.js LTS</code> versions (<code>10</code>, <code>12</code>, <code>14</code>, <code>16</code>) - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Windows Server 2019</code> - <code>Node.js LTS</code> versions - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>MacOS 11</code> - <code>Node.js LTS</code> versions - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">Varnish  </td><td class="c-table__cell"><code>Varnish 6.0.6</code><br />
-<code>C11</code> and above  </td><td class="c-table__cell"><code>Linux</code>- <code>x86_64</code>/<code>amd64</code> - (with <code>glibc 2.27</code> if using OnPremise)  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>GCC 7.5</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Ubuntu 20.04</code> - <code>GCC 9.3</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">Nginx  </td><td class="c-table__cell"><code>Nginx 1.19.0</code>, <code>1.19.5</code>, <code>1.19.10</code>, <code>1.20.0</code>, <code>1.21.3</code><br />
-<code>C11</code> and above  </td><td class="c-table__cell"><code>Linux</code>- <code>x86_64</code>/<code>amd64</code> - (with <code>glibc 2.27</code> if using OnPremise)  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>GCC 7.5</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Ubuntu 20.04</code> - <code>GCC 9.3</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">PHP  </td><td class="c-table__cell"><code>PHP 5.6</code>, <code>7.x</code> and <code>8.0</code>  </td><td class="c-table__cell"><code>Linux</code>- <code>x86_64</code>/<code>amd64</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>PHP 5.6</code>, <code>7.2</code>, <code>7.3</code>, <code>7.4</code> and <code>8.0</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code> - (with <code>glibc 2.27</code> if using OnPremise)   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">Python  </td><td class="c-table__cell"><code>Python 3.5+</code>  </td><td class="c-table__cell"><code>Linux</code>- <code>x86_64</code>/<code>amd64</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>Python 3.7</code>, <code>3.8</code>, <code>3.9</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Mac OS 11</code> - <code>Python 3.7</code>, <code>3.8</code>, <code>3.9</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Windows Server 2019</code> - <code>Python 3.7</code>, <code>3.8</code>, <code>3.9</code> - <code>32-bit</code> &amp; <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">Go  </td><td class="c-table__cell"><code>Golang 1.17.1</code>  </td><td class="c-table__cell"><code>Windows</code>- <code>x86_64</code>/<code>amd64</code><br />
-<code>Linux</code>- <code>x86_64</code>/<code>amd64</code> - (with <code>glibc 2.27</code> if using OnPremise)<br />
-<code>MacOS</code>- <code>x86_64</code>/<code>amd64</code>  </td><td class="c-table__cell"><code>Ubuntu 18.04</code> - <code>Golang 1.17.1</code> - <code>32-bit</code> &amp; <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Mac OS 11</code> - <code>Golang 1.17.1</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code><br />
-<code>Windows Server 2019</code> - <code>Golang 1.17.1</code> - <code>64-bit</code> - <code>x86_64</code>/<code>amd64</code>   </td></tr>
-</table>
-</div><p><b>NOTE</b> Due to a dependency on <code>glibc 2.27</code> for OnPremise product, some language specific packages might not work on <code>platforms</code> that have different versions installed (e.g. CentOS 7.*). In this case, we recommend to build the package from source on your target environment.</p>
+<p><b>NOTE</b>: Please refer to the bottom of this page for terminology used in the below table.</p>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C/C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">.NET</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'go')">Go</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'varnish')">Varnish</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'nginx')">Nginx</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'wordpress')">Wordpress</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'sitecore')">Sitecore</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'rust')">Rust</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view the tested versions. </div>   <div class="c-tabgroup__main" data-lang="cxx" style="display:none;">  Tested versions:</p><ul>
+<li>C11</li>
+</ul>
+<p>Prebuilt packages:</p><ul>
+<li>No prebuilt packages are available</li>
+</ul>
+<p>To build from source:</p><ul>
+<li>Instructions:<ul>
+<li><a href="https://github.com/51Degrees/device-detection-cxx">Device Detection</a></li>
+<li><a href="https://github.com/51Degrees/common-cxx">Common Code</a></li>
+</ul>
+</li>
+<li>Tested Platforms:<ul>
+<li>Windows Server 2019<ul>
+<li>32-bit &amp; 64-bit</li>
+<li>x86_64/amd64</li>
+<li>Platform Toolset Version v142</li>
+<li>Windows 10 SDK version 10.0.18362.0</li>
+</ul>
+</li>
+<li>Ubuntu 18.04<ul>
+<li>32-bit &amp; 64-bit</li>
+<li>x86_64/amd64</li>
+<li>GCC 7.5</li>
+<li>libatomic1</li>
+</ul>
+</li>
+<li>MacOS 11<ul>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>Clang 13</li>
+<li>libatomic1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p> </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  Tested versions:</p><ul>
+<li>.NET Standard 2.0</li>
+</ul>
+<p>Prebuilt packages are built and tested on the following systems:</p><ul>
+<li>Windows Server 2019<ul>
+<li>.NET Standard 2.0</li>
+<li>32-bit &amp; 64-bit</li>
+<li>x86_64/amd64</li>
+<li>C/C++ Redistributable 14.2*</li>
+</ul>
+</li>
+<li>Ubuntu 18.04<ul>
+<li>.NET Standard 2.0</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>libatomic1</li>
+</ul>
+</li>
+</ul>
+<p>To build from source:</p><ul>
+<li>Instructions:<ul>
+<li><a href="https://github.com/51Degrees/pipeline-dotnet">Pipeline</a></li>
+<li><a href="https://github.com/51Degrees/device-detection-dotnet">Device Detection</a></li>
+<li><a href="https://github.com/51Degrees/location-dotnet">Location</a></li>
+</ul>
+</li>
+</ul>
+<p> </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  Tested versions:</p><ul>
+<li>Java 8, 11, 17</li>
+</ul>
+<p>Prebuilt packages are built and tested on the following systems:</p><ul>
+<li>Windows Server 2019<ul>
+<li>Java 8, 11 &amp; 17</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>C/C++ Redistributable 14.2*</li>
+</ul>
+</li>
+<li>Ubuntu 18.04<ul>
+<li>Java 8, 11 &amp; 17</li>
+<li>64bit</li>
+<li>x86_64/amd64</li>
+<li>libatomic1</li>
+</ul>
+</li>
+<li>MacOS 11<ul>
+<li>Java 8, 11 &amp; 17</li>
+<li>64bit</li>
+<li>x86_64/amd64</li>
+<li>libatomic1</li>
+</ul>
+</li>
+</ul>
+<p>To build from source:</p><ul>
+<li><a href="https://github.com/51Degrees/pipeline-java">Pipeline</a></li>
+<li><a href="https://github.com/51Degrees/device-detection-java">Device Detection</a></li>
+<li><a href="https://github.com/51Degrees/location-java">Location</a></li>
+</ul>
+<p> </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  Tested versions:</p><ul>
+<li>PHP 5.6, 7.x, 8.0</li>
+</ul>
+<p>Prebuilt packages are built and tested on the following systems:</p><ul>
+<li>Ubuntu 18.04<ul>
+<li>PHP 5.6, 7.2, 7.3, 7.4 and 8.0</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>For 'Device Detection - Onpremise'<ul>
+<li>No prebuilt packages are available</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>To build from source:</p><ul>
+<li>Instructions:<ul>
+<li>Pipeline:<ul>
+<li><a href="https://github.com/51Degrees/pipeline-php-core">Core</a></li>
+<li><a href="https://github.com/51Degrees/pipeline-php-engines">Engines</a></li>
+<li><a href="https://github.com/51Degrees/pipeline-php-cloudrequestengine">Cloud Request Engine</a></li>
+</ul>
+</li>
+<li>Device Detection:<ul>
+<li><a href="https://github.com/51Degrees/device-detection-php">Cloud</a></li>
+<li><a href="https://github.com/51Degrees/device-detection-php-onpremise">Onpremise</a></li>
+</ul>
+</li>
+<li>Location:<ul>
+<li><a href="https://github.com/51Degrees/location-php">Location</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tested platforms:<ul>
+<li>Ubuntu 18.04<ul>
+<li>PHP 5.6, 7.2, 7.3, 7.4 and 8.0</li>
+<li>php-dev</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>For 'Device Detection - Onpremise'<ul>
+<li>GCC 7.5</li>
+<li>libatomic1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><b>NOTE</b>: When using our PHP Device Detection solution under a process manager such as Apache MPM, php-fpm or any other process manager, the following restrictions are applied:</p><ul>
+<li>Only <b>MaxPerformance</b> profile can be used.</li>
+<li>Manual reload cannot be used. A full server restart is required. If Apache MPM is used:</li>
+<li>Only <b>prefork</b> mode can be used. These restrictions are due to the design of our API. We have designed our API to allow setting of different performance profiles, offer the user flexibility between performance and memory usage, while also scaling well in highly concurrent environments.</li>
+</ul>
+<p> </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  Tested versions:</p><ul>
+<li>Node.js 10, 12, 14, 16</li>
+</ul>
+<p>Prebuilt packages are built and tested on the following systems:</p><ul>
+<li>Windows Server 2019<ul>
+<li>Node.js LTS versions (10, 12, 14, 16)</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>C/C++ Redistributable 14.2*</li>
+</ul>
+</li>
+<li>Ubuntu 18.04<ul>
+<li>Node.js LTS versions (10, 12, 14, 16)</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>libatomic1</li>
+</ul>
+</li>
+<li>MacOS 11<ul>
+<li>Node.js LTS versions (10, 12, 14, 16)</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>libatomic1</li>
+</ul>
+</li>
+</ul>
+<p>To build from source:</p><ul>
+<li><a href="https://github.com/51Degrees/pipeline-node">Pipeline</a></li>
+<li><a href="https://github.com/51Degrees/device-detection-node">Device Detection</a></li>
+<li><a href="https://github.com/51Degrees/location-node">Location</a></li>
+</ul>
+<p> </div>   <div class="c-tabgroup__main" data-lang="python" style="display:none;">  Tested versions:</p><ul>
+<li>Python 3.7, 3.8, 3.9</li>
+</ul>
+<p>Prebuilt packages are built and tested on the following systems:</p><ul>
+<li>Windows Server 2019<ul>
+<li>Python 3.7, 3.8, 3.9</li>
+<li>32-bit &amp; 64-bit</li>
+<li>x86_64/amd64</li>
+<li>For 'Device Detection':<ul>
+<li>Cython</li>
+<li>Platform Toolset Version v142</li>
+<li>Windows 10 SDK version 10.0.18362.0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ubuntu 18.04<ul>
+<li>Python 3.7, 3.8, 3.9</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>For 'Device Detection':<ul>
+<li>Cython</li>
+<li>GCC 7.5</li>
+<li>libatomic1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MacOS 11<ul>
+<li>Python 3.7, 3.8, 3.9</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>For 'Device Detection':<ul>
+<li>Cython</li>
+<li>Clang 13</li>
+<li>libatomic1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>To build from source:</p><ul>
+<li><a href="https://github.com/51Degrees/pipeline-python">Pipeline</a></li>
+<li><a href="https://github.com/51Degrees/device-detection-python">Device Detection</a></li>
+<li><a href="https://github.com/51Degrees/location-python">Location</a></li>
+</ul>
+<p><b>NOTE</b>: When using Device Detection API for On-premise in a spawned multi processes environment, the Pipeline object should be created for each process. If it is created as a global variable, the spawned process will re-initialize the variable and therefore, each process will have their own version of the pipeline object. In this environment, <code>create_temp_data_copy</code> option should to be set to <code>False</code> and the <code>performance_profile</code> option should be set to <code>MaxPerformance</code>. Since a pipeline is created for each process, there will be an associated memory cost.</p>
+<p>These restrictions are due to the design of our API. We have designed our API to allow setting of different performance profiles, offer the user flexibility between performance and memory usage, while also scaling well in highly concurrent environments.</p>
+<p> </div>   <div class="c-tabgroup__main" data-lang="go" style="display:none;">  Tested versions:</p><ul>
+<li>Golang 1.17.1</li>
+</ul>
+<p>Prebuilt packages:</p><ul>
+<li>No prebuilt packages are available</li>
+</ul>
+<p>To build from source:</p><ul>
+<li>Instructions:<ul>
+<li><a href="https://github.com/51Degrees/device-detection-go">Device Detection</a></li>
+</ul>
+</li>
+<li>Tested Platforms:<ul>
+<li>Windows Server 2019<ul>
+<li>Golang 1.17.1</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>MinGW-w64</li>
+</ul>
+</li>
+<li>Ubuntu 18.04<ul>
+<li>Golang 1.17.1</li>
+<li>32-bit &amp; 64-bit</li>
+<li>x86_64/amd64</li>
+<li>GCC 7.5</li>
+<li>libatomic1</li>
+</ul>
+</li>
+<li>MacOS 11<ul>
+<li>Golang 1.17.1</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>Clang 13</li>
+<li>libatomic1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p> </div>   <div class="c-tabgroup__main" data-lang="varnish" style="display:none;">  Tested versions:</p><ul>
+<li>Varnish 6.0.8</li>
+</ul>
+<p>Prebuilt packages:</p><ul>
+<li>No prebuilt packages are available</li>
+</ul>
+<p>To build from source:</p><ul>
+<li>Instructions:<ul>
+<li><a href="https://github.com/51Degrees/device-detection-varnish">Device Detection</a></li>
+</ul>
+</li>
+<li>Tested Platforms:<ul>
+<li>Ubuntu 18.04<ul>
+<li>Varnish 6.0.8</li>
+<li>GCC 7.5</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>libatomic1</li>
+</ul>
+</li>
+<li>Ubuntu 20.04<ul>
+<li>Varnish 6.0.8</li>
+<li>GCC 9.3</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>libatomic1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p> </div>   <div class="c-tabgroup__main" data-lang="nginx" style="display:none;">  Tested versions:</p><ul>
+<li>Nginx 1.19.0, 1.19.5, 1.19.10, 1.20.0, 1.21.3</li>
+</ul>
+<p>Prebuilt packages:</p><ul>
+<li>No prebuilt packages are available</li>
+</ul>
+<p>To build from source:</p><ul>
+<li>Instructions:<ul>
+<li><a href="https://github.com/51Degrees/device-detection-nginx">Device Detection</a></li>
+</ul>
+</li>
+<li>Tested Platforms:<ul>
+<li>Ubuntu 18.04<ul>
+<li>Nginx 1.19.0, 1.19.5, 1.19.10, 1.20.0, 1.21.3</li>
+<li>GCC 7.5</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>libatomic1</li>
+</ul>
+</li>
+<li>Ubuntu 20.04<ul>
+<li>Nginx 1.19.0, 1.19.5, 1.19.10, 1.20.0, 1.21.3</li>
+<li>GCC 9.3</li>
+<li>64-bit</li>
+<li>x86_64/amd64</li>
+<li>libatomic1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p> </div>   <div class="c-tabgroup__main" data-lang="wordpress" style="display:none;">  Tested versions:</p><ul>
+<li>Wordpress 5.9.2</li>
+</ul>
+<p>Prebuilt packages are built and tested on the following systems:</p><ul>
+<li>Ubuntu 18.04<ul>
+<li>Wordpress 5.9.2</li>
+<li>PHP 5.6, 7.2, 7.3, 7.4</li>
+</ul>
+</li>
+</ul>
+<p>To build from source:</p><ul>
+<li><a href="https://github.com/51Degrees/pipeline-wordpress">Pipeline</a></li>
+</ul>
+<p> </div>   <div class="c-tabgroup__main" data-lang="sitecore" style="display:none;"> </p>
+<p>Will be available soon.</p>
+<p> </div>   <div class="c-tabgroup__main" data-lang="rust" style="display:none;"> </p>
+<p>Not tested but available to try <a href="https://crates.io/crates/fiftyonedegrees">here</a>.</p>
+<p> </div>   </div> </p>
 <p>*Other environments may work, but are not tested by 51Degrees.</p>
 <p>Terminology:</p><ul>
-<li><code>32-bit</code>: 32 bit build</li>
-<li><code>64-bit</code>: 64 bit build</li>
-<li><code>x86_64</code>/<code>amd64</code>: x86-64 architecture (Also known as x64/AMD64/Intel 64)</li>
-<li><code>armhf (ARM hard float)</code>: 32-bit ARM architecture (Debian Linux)</li>
-<li><code>aarch64</code>/<code>arm64</code>: 64-bit ARM architecture </li>
+<li><b>32-bit</b>: 32 bit build</li>
+<li><b>64-bit</b>: 64 bit build</li>
+<li><b>x86_64</b> / <b>amd64</b>: x86-64 architecture (Also known as x64/AMD64/Intel 64)</li>
+<li><b>armhf (ARM hard float)</b>: 32-bit ARM architecture (Debian Linux)</li>
+<li><b>aarch64</b> / <b>arm64</b>: 64-bit ARM architecture </li>
 </ul>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->

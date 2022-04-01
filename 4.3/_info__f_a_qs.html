@@ -79,7 +79,11 @@ $(document).ready(function(){initNavTree('_info__f_a_qs.html','');});
 <li>Set the <code>createTempDataCopy</code> to false to use the original file directly. Note that automatic updates cannot be enabled without either using a temporary file, or the <code>MaxPerformance</code> configuration option where the data file is copied into memory completely.</li>
 <li>Set the <code>tempDataDir</code> to a directory which will be periodically cleaned up by another process e.g. <code>os.tmpdir()</code>.</li>
 </ul>
-<p>These is the options in the device detection on-premise engine, other third party engines may use different option naming. </p>
+<p>These is the options in the device detection on-premise engine, other third party engines may use different option naming.</p>
+<h4>Why am I getting <code>version 'GLIBC_2.27' not found</code> or <code>libatomic.so.1: cannot open shared object file: No such file or directory</code> error when using 51Degrees Device Detection API package for On-premise?</h4>
+<p>Most of 51Degrees Device Detection API packages for On-premise come with a set of prebuilt libraries. These libraries are built and linked in our build environment and require certain libraries with a minimum version to be available at the runtime. Please check out <a href="http://51degrees.com/documentation/_info__version_support.html">tested version page</a> to find out about what configurations we have tested with and what dependencies are required to use our prebuilt packages. If your target environment does not match our tested environment, there are chances that the prebuilt package will still work. If it does not, we suggest building your own packages from source in your target environment. The <a href="http://51degrees.com/documentation/_info__version_support.html">tested version page</a> also includes links to the <code>README</code> files which details how it can be done.</p>
+<p>In the case of missing the <code>libatomic.so.1</code> library, just make sure the <code>libatomic1</code> package is installed in your runtime environment.</p>
+<p>If the issue is with version <code>GLIBC_2.27</code> not found, we recommend to build the package from source as <code>GLIBC</code> is the C standard library which is a core library to the Linux system and reinstalling it would potentially break your environment. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
