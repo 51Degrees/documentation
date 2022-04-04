@@ -59,16 +59,16 @@ To build from source:
 @endsnippet
 @startsnippet{dotnet}
 Tested versions:
-- .NET Standard 2.0
+- .NET Core 3.1
 
 Prebuilt packages are built and tested on the following systems:
 - Windows Server 2019
-  - .NET Standard 2.0
+  - .NET Core 3.1
   - 32-bit & 64-bit
   - x86_64/amd64
   - C/C++ Redistributable 14.2*
 - Ubuntu 18.04
-  - .NET Standard 2.0
+  - .NET Core 3.1
   - 64-bit
   - x86_64/amd64
   - libatomic1
