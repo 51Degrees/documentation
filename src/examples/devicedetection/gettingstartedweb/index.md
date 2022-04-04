@@ -2,4 +2,4 @@
 
 @subpage Examples_DeviceDetection_GettingStarted_Web_Cloud
 
-@subpage Examples_DeviceDetection_GettingStarted_Web_OnPremiseHash
+@subpage Examples_DeviceDetection_GettingStarted_Web_OnPremise
