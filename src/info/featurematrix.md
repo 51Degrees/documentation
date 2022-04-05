@@ -4,33 +4,29 @@
 
 |Language / Framework|@Pipeline|@DeviceDetection|@ReverseGeocoding|
 |---|---|---|---|
-|C/C++    |       |On-premise only   |       |
-|.NET     |@tick|@tick | Cloud only   |
-|Java     |@tick|@tick | Cloud only   |
+|C/C++     |       |On-premise only   |       |
+|.NET      |@tick|@tick | Cloud only   |
+|Java      |@tick|@tick | Cloud only   |
 |JavaScript|      |Cloud only | Cloud only |
-|Node.js  |@tick|@tick | Cloud only |
-|PHP      |@tick|@tick** | Cloud only |
-|Python  |@tick| Cloud only | Cloud only |
-|Go      |@tick*|@tick***| Cloud only* |
+|Node.js   |@tick|@tick | Cloud only |
+|PHP       |@tick|@tick* | Cloud only |
+|Python    |@tick| Cloud only | Cloud only |
+|Go        |     |On-premise only|          |
 
-*Coming soon.<BR>
-**On-premise not available through composer.<BR>
-***Available in Lite version with minimum features. Details are available in README.md.
+*On-premise not available through composer.<BR>
 
 # Web integrations and plugins
 
 |Language / Framework|Web frameworks / CMS plugins|
 |---|---|
-|C/C++    |Nginx<BR>HAProxy*<BR>Varnish |
+|C/C++    |Nginx<BR>Varnish |
 |.NET     |ASP.NET Core<BR>ASP.NET | 
-|Java     |Java Servlet<BR>Java Spring MVC Interceptor|
+|Java     |Java Servlet|
 |JavaScript| N/A |
 |Node.js  | N/A |
-|PHP      |WordPress*<BR>Drupal*|
+|PHP      |WordPress|
 |Python   |Flask|
 |Go       | N/A |
-
-*Coming soon
 
 # Pipeline API Features
 
