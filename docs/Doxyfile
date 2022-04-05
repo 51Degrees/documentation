@@ -292,6 +292,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "elementbuilder=[element builder](@ref Concepts_Configuration_Builders_ElementBuilder)" \
                          "elementbuilders=[element builders](@ref Concepts_Configuration_Builders_ElementBuilder)" \
                          "dataupdateservice=[data update service](@ref Features_AutomaticDatafileUpdates)" \
+                         "dependencies=[dependencies](@ref Info_Dependencies)" \
                          "devicedetection=[device detection](@ref DeviceDetection_Overview)" \
                          "Devicedetection=[Device detection](@ref DeviceDetection_Overview)" \
                          "DeviceDetection=[Device Detection](@ref DeviceDetection_Overview)" \
@@ -311,6 +312,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "Evidence=[Evidence](@ref Concepts_Data_Evidence)" \
                          "evidencekeyfilter=[evidence key filter](@ref Concepts_Data_EvidenceKeyFilter)" \
                          "examples=[examples](@ref Examples)" \
+                         "faqs=[faqs](@ref Info_FAQs)" \
                          "falsepositivecontrol=[false positive control](@ref DeviceDetection_Features_FalsePositiveControl)" \
                          "featurematrix=[feature matrix] (@ref Info_featurematrix)" \
                          "fiftyoneengine=[51Degrees engine](@ref Concepts_FlowElements_FiftyOneOnPremiseEngine)" \
@@ -367,7 +369,10 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "showsnippet{2}=@htmlonly <button class=\"b-btn b-btn--tab\" onclick=\"showSnippet(this,'\1')\">\2</button> @endhtmlonly" \
                          "showsnippet{1}=@showsnippet{\1,\1}" \
                          "term{1}=@ref Concepts_Terminology_\1" \
+                         "testedversions=[tested versions](@ref Info_TestedVersions)" \
                          "tick=@htmlonly&#9745;@endhtmlonly" \
+                         "uach=[UA-CH](@ref DeviceDetection_Features_UserAgentClientHints)"  \
+                         "useragentclienthints=[User Agent Client Hints](@ref DeviceDetection_Features_UserAgentClientHints)" \
                          "usagesharing=[usage sharing](@ref Features_UsageSharing)" \
                          "v3migrationguide=[version 3 migration guide](@ref DeviceDetection_MigrationGuides_51DegreesV3)" \
                          "webintegration=[web integration](@ref Features_WebIntegration)" \
