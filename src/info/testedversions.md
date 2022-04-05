@@ -36,16 +36,13 @@ Language Versions:
 
 Platforms:
 - Windows Server 2019
-  - 32-bit & 64-bit
-  - x86_64/amd64
+  - 32-bit (x86_64)
+  - 64-bit (x86_64)
 - Ubuntu 18.04
-  - 32-bit & 64-bit
-  - x86_64/amd64
-  - GCC 7.5
+  - 32-bit (x86_64)
+  - 64-bit (x86_64)
 - MacOS 11
-  - 64-bit
-  - x86_64/amd64
-  - Clang 13
+  - 64-bit (x86_64)
 
 @endsnippet
 @startsnippet{dotnet}
@@ -55,13 +52,10 @@ Language Versions:
 
 Platforms:
 - Windows Server 2019
-  - 32-bit & 64-bit
-  - x86_64/amd64  TODO
-  - C/C++ Redistributable 14.2*
+  - 32-bit (x86_64)
+  - 64-bit (x86_64)
 - Ubuntu 18.04
-  - 64-bit
-  - x86_64/amd64  TODO
-  - libatomic1
+  - 64-bit (x86_64)
 
 @endsnippet
 @startsnippet{java}
@@ -70,15 +64,11 @@ Language Versions:
 
 Platforms:
 - Windows Server 2019
-  - 64-bit
-  - x86_64/amd64
-  - C/C++ Redistributable 14.2*
+  - 64-bit (x86_64)
 - Ubuntu 18.04
-  - 64bit
-  - x86_64/amd64
+  - 64-bit (x86_64)
 - MacOS 11
-  - 64bit
-  - x86_64/amd64
+  - 64-bit (x86_64)
 
 To build from source:
   - [Pipeline](https://github.com/51Degrees/pipeline-java)
@@ -92,12 +82,7 @@ Language Versions:
 
 Platforms:
 - Ubuntu 18.04
-  - php-dev
-  - 64-bit
-  - x86_64/amd64
-  - For 'Device Detection - Onpremise'
-    - GCC 7.5
-    - libatomic1
+  - 64-bit (x86_64)
 
 @endsnippet
 @startsnippet{node}
@@ -106,15 +91,12 @@ Language Versions:
 
 Platforms:
 - Windows Server 2019
-  - 64-bit
-  - x86_64/amd64
+  - 64-bit (x86_64)
   - C/C++ Redistributable 14.2*
 - Ubuntu 18.04
-  - 64-bit
-  - x86_64/amd64
+  - 64-bit (x86_64)
 - MacOS 11
-  - 64-bit
-  - x86_64/amd64
+  - 64-bit (x86_64)
 @endsnippet
 @startsnippet{python}
 Language Versions:
@@ -122,26 +104,12 @@ Language Versions:
 
 Platforms:
 - Windows Server 2019
-  - 32-bit & 64-bit
-  - x86_64/amd64
-  - For 'Device Detection':
-    - Cython
-    - Platform Toolset Version v142
-    - Windows 10 SDK version 10.0.18362.0
+  - 32-bit (x86_64)
+  - 64-bit (x86_64)
 - Ubuntu 18.04
-  - 64-bit
-  - x86_64/amd64
-  - For 'Device Detection':
-    - Cython
-    - GCC 7.5
-    - libatomic1
+  - 64-bit (x86_64)
 - MacOS 11
-  - 64-bit
-  - x86_64/amd64
-  - For 'Device Detection':
-    - Cython
-    - Clang 13
-    - libatomic1
+  - 64-bit (x86_64)
 @endsnippet
 @startsnippet{go}
 Language Versions:
@@ -149,19 +117,13 @@ Language Versions:
 
 Platforms:
 - Windows Server 2019
-  - 64-bit
-  - x86_64/amd64
-  - MinGW-w64
+  - 64-bit (x86_64)
 - Ubuntu 18.04
-  - 32-bit & 64-bit
-  - x86_64/amd64
-  - GCC 7.5
-  - libatomic1
+  - 32-bit (x86_64)
+  - 64-bit (x86_64)
 - MacOS 11
-  - 64-bit
-  - x86_64/amd64
-  - Clang 13
-  - libatomic1
+  - 32-bit (x86_64)
+  - 64-bit (x86_64)
 
 @endsnippet
 @startsnippet{varnish}
@@ -170,15 +132,9 @@ Language Versions:
 
 Platforms:
 - Ubuntu 18.04
-  - GCC 7.5
-  - 64-bit
-  - x86_64/amd64
-  - libatomic1
+  - 64-bit (x86_64)
 - Ubuntu 20.04
-  - GCC 9.3
-  - 64-bit
-  - x86_64/amd64
-  - libatomic1
+  - 64-bit (x86_64)
 
 @endsnippet
 @startsnippet{nginx}
@@ -187,15 +143,9 @@ Language Versions:
 
 Platforms:
 - Ubuntu 18.04
-  - GCC 7.5
-  - 64-bit
-  - x86_64/amd64
-  - libatomic1
+  - 64-bit (x86_64)
 - Ubuntu 20.04
-  - GCC 9.3
-  - 64-bit
-  - x86_64/amd64
-  - libatomic1
+  - 64-bit (x86_64)
 
 @endsnippet
 @startsnippet{wordpress}

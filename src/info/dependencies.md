@@ -58,12 +58,8 @@ Packages:
 - On-premise device detection
   - Windows
     - C++ redistributable 14.2 or later
-    - Platform Toolset Version v142? TODO - Needed for runtime or just build?
-    - Windows 10 SDK version 10.0.18362.0? TODO - Needed for runtime or just build?
   - Linux
-    - GCC 7.5
     - libatomic1
-    - glibc 2.? TODO - Is this just a sub-dependency of gcc (or clang on mac?)?
 
 Instructions for building from source:
 - [Pipeline](https://github.com/51Degrees/pipeline-dotnet#readme)
@@ -76,11 +72,7 @@ Packages:
 - On-premise device detection
   - Windows
     - C++ redistributable 14.2 or later
-  - Linux
-    - GCC 7.5
-    - libatomic1
-  - Mac OS
-    - Clang 13
+  - Linux/Mac OS
     - libatomic1
 
 Instructions for building from source:
@@ -93,7 +85,6 @@ Packages:
 - See [Packagist](https://packagist.org/packages/51degrees/) for details of package dependencies
 - On-premise device detection
   - Linux
-    - GCC 7.5
     - libatomic1
 
 Instructions for building from source:
@@ -113,11 +104,7 @@ Packages:
 - On-premise device detection
   - Windows
     - C++ redistributable 14.2 or later
-  - Linux
-    - GCC 7.5
-    - libatomic1
-  - Mac OS
-    - Clang 13
+  - Linux/Mac OS
     - libatomic1
 
 Instructions for building from source:
@@ -132,15 +119,12 @@ Packages:
 - On-premise device detection
   - Windows
     - C++ redistributable 14.2 or later
-    - Cython - TODO is this a runtime dependency for the packages?
-  - Linux
-    - GCC 7.5
+  - Linux/Mac OS
     - libatomic1
+  - In addition, the following dependencies are required at package install time in order to build the native binary
     - Cython
-  - Mac OS
-    - Clang 13
-    - libatomic1
-    - Cython
+    - Platform Toolset Version v142
+    - Windows 10 SDK version 10.0.18362.0
 
 Instructions for building from source:
 - [Pipeline](https://github.com/51Degrees/pipeline-python#readme)
@@ -151,7 +135,7 @@ Instructions for building from source:
 @startsnippet{go}
 Packages:
 - No prebuilt packages are available
-
+  
 Instructions for building from source:
 - [Device Detection](https://github.com/51Degrees/device-detection-go#readme)
 
