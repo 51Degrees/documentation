@@ -10,4 +10,3 @@
 
 @subpage Info_ErrorMessages
 
-@subpage Info_WordPress

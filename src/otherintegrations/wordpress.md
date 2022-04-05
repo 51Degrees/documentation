@@ -1,4 +1,4 @@
-@page Info_WordPress WordPress
+@page OtherIntegrations_WordPress WordPress
 
 # 51Degrees - Optimize by Device & Location
 
