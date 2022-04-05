@@ -3,9 +3,8 @@
 51Degrees produce packages that can be consumed via the industry standard package managers for
 each language. (NuGet for .NET, Maven for Java, etc)
 
-As we are an open source company, you also have the option of building directly from the source code, 
-rather than using the pre-built packages. This generally requires more in the way of dependencies 
-than the pre-built packages described above.
+There is also the option of building directly from the source code, hosted at Github, 
+rather than using the pre-built packages. This will require build-time dependencies to be provided.
 
 Your intended deployment environment may also influence the dependencies that are required.
 For example, the on-premise implementation of our Device Detection product is written in C for the 
