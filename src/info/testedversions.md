@@ -12,6 +12,8 @@ The tabs below show the specific platforms and versions that are currently teste
 
 If something is not tested here, and you believe it should be, please raise an issue via our [GitHub](https://github.com/51Degrees) page and we will look into it.
 
+You may also want to review the @dependencies page, as these topics are related.
+
 **NOTE**: Please refer to the bottom of this page for terminology used below.
 
 @startsnippets
@@ -36,18 +38,14 @@ Platforms:
 - Windows Server 2019
   - 32-bit & 64-bit
   - x86_64/amd64
-  - Platform Toolset Version v142
-  - Windows 10 SDK version 10.0.18362.0
 - Ubuntu 18.04
   - 32-bit & 64-bit
   - x86_64/amd64
   - GCC 7.5
-  - libatomic1
 - MacOS 11
   - 64-bit
   - x86_64/amd64
   - Clang 13
-  - libatomic1
 
 @endsnippet
 @startsnippet{dotnet}
@@ -78,11 +76,9 @@ Platforms:
 - Ubuntu 18.04
   - 64bit
   - x86_64/amd64
-  - libatomic1
 - MacOS 11
   - 64bit
   - x86_64/amd64
-  - libatomic1
 
 To build from source:
   - [Pipeline](https://github.com/51Degrees/pipeline-java)
@@ -116,11 +112,9 @@ Platforms:
 - Ubuntu 18.04
   - 64-bit
   - x86_64/amd64
-  - libatomic1
 - MacOS 11
   - 64-bit
   - x86_64/amd64
-  - libatomic1
 @endsnippet
 @startsnippet{python}
 Language Versions:
@@ -214,12 +208,12 @@ Platforms:
 @endsnippet
 @startsnippet{sitecore}
 
-Details to follow
+Details to follow.
 
 @endsnippet
 @startsnippet{rust}
 
-Not tested but available to try [here](https://crates.io/crates/fiftyonedegrees).
+Not tested by 51Degrees but available to try [here](https://crates.io/crates/fiftyonedegrees).
 
 @endsnippet
 @endsnippets
