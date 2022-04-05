@@ -50,9 +50,11 @@ Packages:
 Instructions for building from source:
 - [Device Detection](https://github.com/51Degrees/device-detection-cxx#readme)
 - [Common Code](https://github.com/51Degrees/common-cxx#readme)
+
 @endsnippet
 @startsnippet{dotnet}
-Packages:
+
+Packages:  
 - .NET Standard 2.0
 - See [Nuget](https://www.nuget.org/profiles/51Degrees) for other specific .NET package dependencies
 - On-premise device detection
@@ -65,6 +67,7 @@ Instructions for building from source:
 - [Pipeline](https://github.com/51Degrees/pipeline-dotnet#readme)
 - [Device Detection](https://github.com/51Degrees/device-detection-dotnet#readme)
 - [Location](https://github.com/51Degrees/location-dotnet#readme)
+
 @endsnippet
 @startsnippet{java}
 Packages:
@@ -79,9 +82,11 @@ Instructions for building from source:
 - [Pipeline](https://github.com/51Degrees/pipeline-java#readme)
 - [Device Detection](https://github.com/51Degrees/device-detection-java#readme)
 - [Location](https://github.com/51Degrees/location-java#readme)
+
 @endsnippet
 @startsnippet{php}
 Packages:
+
 - See [Packagist](https://packagist.org/packages/51degrees/) for details of package dependencies
 - On-premise device detection
   - Linux
@@ -97,9 +102,12 @@ Instructions for building from source:
     - [Onpremise](https://github.com/51Degrees/device-detection-php-onpremise#readme)
   - Location:
     - [Location](https://github.com/51Degrees/location-php#readme)
+
 @endsnippet
 @startsnippet{node}
+
 Packages:
+
 - See [NPM](https://www.npmjs.com/~51degrees) for details of package dependencies
 - On-premise device detection
   - Windows
@@ -114,7 +122,9 @@ Instructions for building from source:
 
 @endsnippet
 @startsnippet{python}
+
 Packages:
+
 - See [pypi](https://pypi.org/user/51Degrees.mobi/) for details of package dependencies
 - On-premise device detection
   - Windows
@@ -133,6 +143,7 @@ Instructions for building from source:
 
 @endsnippet
 @startsnippet{go}
+
 Packages:
 - No prebuilt packages are available
   
@@ -146,6 +157,7 @@ Packages:
 
 Instructions for building from source:
 - [Device Detection](https://github.com/51Degrees/device-detection-varnish#readme)
+
 @endsnippet
 @startsnippet{nginx}
 Packages:
@@ -153,6 +165,7 @@ Packages:
 
 Instructions for building from source:
 - [Device Detection](https://github.com/51Degrees/device-detection-nginx#readme)
+
 @endsnippet
 @startsnippet{wordpress}
 
@@ -163,6 +176,7 @@ Packages:
 
 Instructions for building from source:
 - The Wordpress integration only supports cloud, not on-premise. As such, there is less need to build from source. If you want to do so, you will need to clone the source code from [GitHub](https://github.com/51Degrees/pipeline-wordpress).
+
 @endsnippet
 @startsnippet{sitecore}
 

@@ -3,18 +3,14 @@
 51Degrees uses automated testing to continuously validate our API against a number of platforms and language versions.
 The tests cover a wide array of scenarios and are available to view in our repositories on GitHub.
 In general, we apply the following guidelines when deciding which platforms and versions to test against:
-- We use Azure DevOps with Microsoft-hosted build agents, so we test against platforms that Microsoft [has hosted agents for](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted).
+- We use Azure DevOps with Microsoft-hosted build agents, so we test against platforms that Microsoft has [hosted agents](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted) for.
 - We test against all versions of languages that are currently considered LTS (Long Term Support) versions.
 
 The tabs below show the specific platforms and versions that are currently tested as part of each release.
 
-****
-
 If something is not tested here, and you believe it should be, please raise an issue via our [GitHub](https://github.com/51Degrees) page and we will look into it.
 
 You may also want to review the @dependencies page, as these topics are related.
-
-**NOTE**: Please refer to the bottom of this page for terminology used below.
 
 @startsnippets
 @showsnippet{cxx,C/C++}
@@ -97,6 +93,7 @@ Platforms:
   - 64-bit (x86_64)
 - MacOS 11
   - 64-bit (x86_64)
+
 @endsnippet
 @startsnippet{python}
 Language Versions:
@@ -110,6 +107,7 @@ Platforms:
   - 64-bit (x86_64)
 - MacOS 11
   - 64-bit (x86_64)
+
 @endsnippet
 @startsnippet{go}
 Language Versions:
@@ -155,6 +153,7 @@ Language Versions:
 Platforms:
 - Ubuntu 18.04
   - PHP 5.6, 7.2, 7.3, 7.4
+
 @endsnippet
 @startsnippet{sitecore}
 
@@ -167,8 +166,3 @@ Not tested by 51Degrees but available to try [here](https://crates.io/crates/fif
 
 @endsnippet
 @endsnippets
-
-Terminology:
-- **32-bit**: 32 bit build
-- **64-bit**: 64 bit build
-- **x86_64** / **amd64**: x86-64 architecture (Also known as x64/AMD64/Intel 64)
