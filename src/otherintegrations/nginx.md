@@ -12,15 +12,15 @@ We have also integrated our Device Detection to Nginx. This page describes in de
 * libpcre3
 * libpcre3-dev
 
-## Supported versions:
+## Tested versions:
 * Nginx 1.21.3, 1.20.0, 1.19.0, 1.19.5, 1.19.10
 * C11 or above
 
-## Supported platforms:
+## Tested platforms:
 * Ubuntu 18.04
 * Ubuntu 20.04
 
-## Supported architectures:
+## Tested architectures:
 * 64-bit
 
 # Installing
