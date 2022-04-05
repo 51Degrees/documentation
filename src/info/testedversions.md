@@ -3,8 +3,8 @@
 51Degrees uses automated testing to continuously validate our API against a number of platforms and language versions.
 The tests cover a wide array of scenarios and are available to view in our repositories on GitHub.
 In general, we apply the following guidelines when deciding which platforms and versions to test against:
-- We use Azure DevOps with Microsoft-hosted build agents, as such, we generally only test against platforms that Microsoft [has hosted agents for](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted).
-- We aim to test against all versions of languages that are currently considered LTS (Long Term Support) versions.
+- We use Azure DevOps with Microsoft-hosted build agents, so we test against platforms that Microsoft [has hosted agents for](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted).
+- We test against all versions of languages that are currently considered LTS (Long Term Support) versions.
 
 The tabs below show the specific platforms and versions that are currently tested as part of each release.
 

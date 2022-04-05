@@ -3,10 +3,9 @@
 51Degrees produce packages that can be consumed via the industry standard package managers for
 each language. (NuGet for .NET, Maven for Java, etc)
 
-As we are an open source company, you also have the option of building directly from the source code, 
-rather than using the pre-built packages. This generally requires more in the way of dependencies 
-than the pre-built packages described above. However, it does allow you to target different versions
-of dependencies than those required by the packages.
+There is also the option of building directly from the source code, hosted at Github, 
+rather than using the pre-built packages. This will require build-time dependencies to be provided.
+
 
 Your intended deployment environment may also influence the dependencies that are required.
 For example, the on-premise implementation of our Device Detection product is written in C for the 
@@ -15,11 +14,11 @@ than is typical for higher-level languages. In comparison, the cloud product has
 more complex dependencies.
 
 51Degrees' dependencies policy is:
--	We aim to minimize third-party dependencies.
--	We will use >= binding where possible. (i.e. the package should work with the target version and any later version)
--	We will target the oldest version that:
-  -	Has no known vulnerabilities.
-  -	Is compatible with the most recent stable (i.e. non-beta, rtm, etc) version
+- We aim to minimize third-party dependencies.
+- We will use >= binding where possible. (i.e. the package should work with the target version and any later version)
+- We will target the oldest version that:
+  - Has no known vulnerabilities.
+  - Is compatible with the most recent stable (i.e. non-beta, rtm, etc) version
 - We use Azure DevOps with Microsoft-hosted build agents, as such, the pre-built packages may include low-level dependencies based on the [software](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted) that is available on these build agents.
 
 If you are having trouble with a particular dependency, check our @faqs for common problems and solutions.
