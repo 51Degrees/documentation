@@ -24,12 +24,9 @@ results from the @Pipeline API.
 - ASP.NET Core
 - ASP.NET
 - Java Servlet
-- Java Spring MVC Interceptor
 - Node.js
 - PHP
 - Python
-- Nginx (@devicedetection only)
-- HAProxy (@devicedetection only)
 - [Varnish](@ref OtherIntegrations_Varnish) (@devicedetection only)
 - [Nginx](@ref OtherIntegrations_Nginx) (@devicedetection only)
 
@@ -48,7 +45,6 @@ to enable @clientsideevidence for each framework.
 @showsnippet{aspnet,ASP.NET}
 @showsnippet{aspnetcore,ASP.NET Core}
 @showsnippet{javaservlet,Java Servlet}
-@showsnippet{javaspringmvc,Java Spring MVC}
 @defaultsnippet{Select a web framework to view details of how client-side evidence is supported.}
 @startsnippet{aspnetcore}
 The ASP.NET Core integration makes use of a 
@@ -88,5 +84,4 @@ the same evidence values.
 @endsnippet
 @startsnippet{javaservlet}
 @endsnippet
-@startsnippet{javaspringmvc}
 @endsnippets
