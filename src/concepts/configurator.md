@@ -2,7 +2,7 @@
 
 # Obtaining a Resource Key
 
-Access to API queries is controlled by a Resource Key, which is obtained from the Cloud Configurator.
+Access to API queries is controlled by a Resource Key, which is obtained from the [Cloud Configurator](https://configure.51degrees.com/).
 
 When a Resource Key is created, you choose the properties that it will return from queries, and once these are set they cannot be changed. However, it is possible to create more keys, each tied to whichever properties you choose.
 
@@ -13,7 +13,7 @@ When a Resource Key is created, you choose the properties that it will return fr
 
 ## Step 1: choose properties
 
-To obtain a key, visit the Configurator (link below). This will show the complete list of properties, broken down by category and by vendor. Choose whichever properties you need for the query you are planning.
+To obtain a Resource Key, visit the Configurator (link below). This will show the complete list of properties, broken down by category and by vendor. Choose whichever properties you need for the query you are planning.
 
 For example, if you intend to look up latitude and longitude data to get a country, using 51Degrees as the vendor, then in the Configurator you can find the **country** key by choosing **Location** on the left, then **location** again, then ticking **Country** with the 51D logo. Clicking on that **Country** key shows a description: "Country By 51Degrees: The name of the country that the supplied location is in." Descriptions are there to help you understand what each key means and whether you want to include it in your queries.
 
@@ -37,7 +37,7 @@ Make a note of that key and then continue following the @quickstart.
 
 # Displaying details for an existing resource key
 
-If you have a resource key and need to establish which properties it has access to, you can construct a URL https://configure.51degrees.com/YOUR_RESOURCE_KEY. This will show Step 1 of the Configurator with the properties for this specific key already selected.
+If you have a Resource Key and need to establish which properties it has access to, you can construct a URL https://configure.51degrees.com/YOUR_RESOURCE_KEY. This will show Step 1 of the Configurator with the properties for this specific key already selected.
 
-Beware: do not continue to steps 2 or 3. Doing this will not edit the properties attached to your resource key, since resource keys are immutable; instead, it wil create a new resource key.
+Beware: do not continue to steps 2 or 3. Doing this will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it wil create a new Resource Key.
 
