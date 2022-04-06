@@ -312,7 +312,8 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "Evidence=[Evidence](@ref Concepts_Data_Evidence)" \
                          "evidencekeyfilter=[evidence key filter](@ref Concepts_Data_EvidenceKeyFilter)" \
                          "examples=[examples](@ref Examples)" \
-                         "faqs=[faqs](@ref Info_FAQs)" \
+                         "faqs=[FAQs](@ref Info_FAQs)" \
+                         "FAQs=[FAQs](@ref Info_FAQs)" \
                          "falsepositivecontrol=[false positive control](@ref DeviceDetection_Features_FalsePositiveControl)" \
                          "featurematrix=[feature matrix] (@ref Info_featurematrix)" \
                          "fiftyoneengine=[51Degrees engine](@ref Concepts_FlowElements_FiftyOneOnPremiseEngine)" \

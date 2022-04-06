@@ -1,9 +1,9 @@
 @page Info_Dependencies Dependencies
 
 51Degrees produce packages that can be consumed via the industry standard package managers for
-each language. (NuGet for .NET, Maven for Java, etc)
+each language. (NuGet for .NET, Maven for Java, etc.)
 
-There is also the option of building directly from the source code, hosted at Github, 
+There is also the option of building directly from the source code, hosted at [GitHub](https://github.com/51Degrees), 
 rather than using the pre-built packages. This will require build-time dependencies to be provided.
 
 
@@ -18,7 +18,7 @@ more complex dependencies.
 - We will use >= binding where possible. (i.e. the package should work with the target version and any later version)
 - We will target the oldest version that:
   - Has no known vulnerabilities.
-  - Is compatible with the most recent stable (i.e. non-beta, rtm, etc) version
+  - Is compatible with the most recent stable (i.e. non-beta, rtm, etc.) version
 - We use Azure DevOps with Microsoft-hosted build agents, as such, the pre-built packages may include low-level dependencies based on the [software](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted) that is available on these build agents.
 
 If you are having trouble with a particular dependency, check our @faqs for common problems and solutions.
@@ -59,7 +59,7 @@ Packages:
 - See [Nuget](https://www.nuget.org/profiles/51Degrees) for other specific .NET package dependencies
 - On-premise device detection
   - Windows
-    - C++ redistributable 14.2 or later
+    - C++ redistributable 14.20 or later
   - Linux
     - libatomic1
 
@@ -74,7 +74,7 @@ Packages:
 - See [Maven](https://search.maven.org/search?q=g:com.51degrees) for details of package dependencies
 - On-premise device detection
   - Windows
-    - C++ redistributable 14.2 or later
+    - C++ redistributable 14.20 or later
   - Linux/Mac OS
     - libatomic1
 
@@ -99,7 +99,7 @@ Instructions for building from source:
     - [Cloud Request Engine](https://github.com/51Degrees/pipeline-php-cloudrequestengine#readme)
   - Device Detection:
     - [Cloud](https://github.com/51Degrees/device-detection-php#readme)
-    - [Onpremise](https://github.com/51Degrees/device-detection-php-onpremise#readme)
+    - [On-premise](https://github.com/51Degrees/device-detection-php-onpremise#readme)
   - Location:
     - [Location](https://github.com/51Degrees/location-php#readme)
 
@@ -111,7 +111,7 @@ Packages:
 - See [NPM](https://www.npmjs.com/~51degrees) for details of package dependencies
 - On-premise device detection
   - Windows
-    - C++ redistributable 14.2 or later
+    - C++ redistributable 14.20 or later
   - Linux/Mac OS
     - libatomic1
 
@@ -128,7 +128,7 @@ Packages:
 - See [pypi](https://pypi.org/user/51Degrees.mobi/) for details of package dependencies
 - On-premise device detection
   - Windows
-    - C++ redistributable 14.2 or later
+    - C++ redistributable 14.20 or later
   - Linux/Mac OS
     - libatomic1
   - In addition, the following dependencies are required at package install time in order to build the native binary
