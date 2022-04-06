@@ -14,15 +14,15 @@ We have also integrated our Device Detection to Varnish. This page details an ov
 * python
 * Varnish source
 
-## Supported versions:
+## Tested versions:
 * Varnish 6.0.6 (LTS)
 * C11 or above
 
-## Supported platforms:
+## Tested platforms:
 * Ubuntu 16.04
 * Ubuntu 18.04
 
-## Supported architectures:
+## Tested architectures:
 * 64-bit
 
 # Installing
