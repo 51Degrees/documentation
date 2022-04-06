@@ -67,23 +67,38 @@ $(document).ready(function(){initNavTree('_info__f_a_qs.html','');});
 <h2 class="g-docs__page-title">Frequently Asked Questions </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><h4>Why are my temp files not being cleared when using the .NET Pipeline API?</h4>
+<section class="g-docs__section"><p><a class="anchor" id="Dotn_TempFiles"></a></p><h4>Why are my temp files not being cleared when using the .NET Pipeline API?</h4>
 <p>In .NET core, the finalizer is not called when a program exits as described on <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/destructors">this page</a>. Some engines maintain files in a temporary directory while they are in operation and these can remain if a .NET core application using one of these engines is closed.</p>
 <p>To workaround this problem, you can either:</p><ul>
 <li>Use the <code>SetAutoDisposeElements</code> setting to ensure elements are disposed when the Pipeline is disposed.</li>
 <li>Explicitly call dispose on all engines before exiting the program.</li>
 </ul>
-<h4>Why are my temp files not being cleared when using the Node.js Pipeline API?</h4>
+<p><a class="anchor" id="Node_TempFiles"></a></p><h4>Why are my temp files not being cleared when using the Node.js Pipeline API?</h4>
 <p>In Node.js, the finalizer is not called when a program exits. Some engines maintain files in a temporary directory while they are in operation and these can remain if a Node.js application using one of these engines is closed.</p>
 <p>To workaround this problem, you can either:</p><ul>
 <li>Set the <code>createTempDataCopy</code> to false to use the original file directly. Note that automatic updates cannot be enabled without either using a temporary file, or the <code>MaxPerformance</code> configuration option where the data file is copied into memory completely.</li>
 <li>Set the <code>tempDataDir</code> to a directory which will be periodically cleaned up by another process e.g. <code>os.tmpdir()</code>.</li>
 </ul>
 <p>These is the options in the device detection on-premise engine, other third party engines may use different option naming.</p>
-<h4>Why am I getting <code>version 'GLIBC_2.27' not found</code> or <code>libatomic.so.1: cannot open shared object file: No such file or directory</code> error when using 51Degrees Device Detection API package for On-premise?</h4>
-<p>Most of 51Degrees Device Detection API packages for On-premise come with a set of prebuilt libraries. These libraries are built and linked in our build environment and require certain libraries with a minimum version to be available at the runtime. Please check out <a href="http://51degrees.com/documentation/_info__version_support.html">tested version page</a> to find out about what configurations we have tested with and what dependencies are required to use our prebuilt packages. If your target environment does not match our tested environment, there are chances that the prebuilt package will still work. If it does not, we suggest building your own packages from source in your target environment. The <a href="http://51degrees.com/documentation/_info__version_support.html">tested version page</a> also includes links to the <code>README</code> files which details how it can be done.</p>
-<p>In the case of missing the <code>libatomic.so.1</code> library, just make sure the <code>libatomic1</code> package is installed in your runtime environment.</p>
-<p>If the issue is with version <code>GLIBC_2.27</code> not found, we recommend to build the package from source as <code>GLIBC</code> is the C standard library which is a core library to the Linux system and reinstalling it would potentially break your environment. </p>
+<p><a class="anchor" id="Dependencies_Glibc_Libatomic"></a></p><h4>Why am I getting <code>version 'GLIBC_2.27' not found</code> or <code>libatomic.so.1: cannot open shared object file: No such file or directory</code> error when using 51Degrees Device Detection API package for On-premise?</h4>
+<p>Most of 51Degrees Device Detection API packages for On-premise come with a set of prebuilt libraries. These libraries are built and linked in our build environment and require certain libraries with a minimum version to be available at the runtime. Please check out the <a class="el" href="_info__dependencies.html">dependencies</a> page to find out what dependencies are required to use our prebuilt packages. If you cannot modify your environment in order to provide the necessary dependencies, we suggest building your own packages from source in your target environment. The <a class="el" href="_info__dependencies.html">dependencies</a> page also includes links to the <code>README</code> files which detail how this can be done.</p>
+<p>In the case of missing the <code>libatomic.so.1</code> library, make sure the <code>libatomic1</code> package is installed in your runtime environment.</p>
+<p>If the issue is with version <code>GLIBC_2.27</code> not found, we recommend to build the package from source as <code>GLIBC</code> is the C standard library which is a core library to the Linux system and reinstalling it would potentially break your environment.</p>
+<p><a class="anchor" id="PHP_ProcessManager"></a></p><h4>Can I use PHP on-premise device detection with a process manager such as Apache MPM or php-fpm?</h4>
+<p>When using our PHP Device Detection solution under a process manager such as Apache MPM, php-fpm or any other process manager, the following restrictions are applied:</p><ul>
+<li>Only <b>MaxPerformance</b> profile can be used.</li>
+<li>Manual reload cannot be used. A full server restart is required. If Apache MPM is used:</li>
+<li>Only <b>prefork</b> mode can be used. These restrictions are due to the interaction between the native libraries used by our on-premise API and the way that OS handles and memory are handled by these process managers.</li>
+</ul>
+<p><a class="anchor" id="Python_MultiProcess"></a></p><h4>Can I use Python on-premise device detection in a multi-process environment?</h4>
+<p>When using Device Detection API for On-premise in a spawned multi processes environment, the Pipeline object should be created for each process. If it is created as a global variable, the spawned process will re-initialize the variable and therefore, each process will have their own version of the pipeline object. In this environment the following settings should be used:</p><ul>
+<li><code>create_temp_data_copy</code> set to <code>False</code></li>
+<li><code>performance_profile</code> set to <code>MaxPerformance</code> Since a pipeline is created for each process, the memory cost of running the API will be multiplied by the number of processes.</li>
+</ul>
+<p>These restrictions are due to the interaction between the native libraries used by our on-premise API and the way that OS handles and memory are handled in a multi-process environment.</p>
+<p><a class="anchor" id="UACH_DualEvidence"></a></p><h4>Can I use User Agent Client Hints (UA-CH) at the same time as User-Agent?</h4>
+<p>Yes. In fact, this is recommended. The device detection algorithm will use the UA-CH data where possible. However, if a match cannot be found for the supplied UA-CH values, then User-Agent will be used as a fall back.</p>
+<p>If you are using a <a class="el" href="_features__web_integration.html">web integration</a> then the UA-CH and User-Agent will both be passed to the Pipeline automatically. Otherwise, you need to supply the available header values manually. See the <a class="el" href="_examples__device_detection__getting_started__console__index.html">getting started</a> examples for a demonstration of how to supply UA-CH evidence in parallel with User-Agent. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
