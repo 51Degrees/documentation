@@ -17,17 +17,16 @@ from 7 December 2020.
 We also support the one off case of [identifying Windows 11 using User Agent Client Hints](https://51degrees.com/blog/windows-11-detectable-with-uach)
 as there is [no other way to do so](https://docs.microsoft.com/en-us/microsoft-edge/web-platform/how-to-detect-win11).
 
-This limited support will be superseded by functionality in a future version (exact version 
-number TBC), which will fully support the detection of devices, operating systems and browsers from 
-UA-CH headers. 
+This limited support will be superseded by functionality in version 4.4, which will 
+fully support the detection of devices, operating systems and browsers from UA-CH headers. 
 
-This will also require a new data file (date of availability TBC). The format of the data file 
-remains the same (what we refer to as Hash v4.1). But the contents will be updated to support 
-detection from the full range of UA-CH values.
+Full UA-CH detection will also require a new data file (date of availability TBC). The format of 
+the data file remains the same (what we refer to as Hash v4.1). But the contents will be updated 
+to support detection from the full range of UA-CH values.
 
 Note that newer and older API versions and data files will be fully cross-compatible with each 
-other. It's just that in order to perform detection using the full range of UA-CH values, you must be 
-using BOTH the future version of the API and a newer data file.
+other. It's just that in order to perform detection using the full range of UA-CH values, you must 
+be using BOTH version 4.4 of the API and a newer data file.
 
 # Examples
 
