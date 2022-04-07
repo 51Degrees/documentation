@@ -66,11 +66,6 @@ Platforms:
 - MacOS 11
   - 64-bit (x86_64)
 
-To build from source:
-  - [Pipeline](https://github.com/51Degrees/pipeline-java)
-  - [Device Detection](https://github.com/51Degrees/device-detection-java)
-  - [Location](https://github.com/51Degrees/location-java)
-
 @endsnippet
 @startsnippet{php}
 Language Versions:
