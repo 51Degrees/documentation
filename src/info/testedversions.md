@@ -23,7 +23,6 @@ You may also want to review the @dependencies page, as these topics are related.
 @showsnippet{varnish,Varnish}
 @showsnippet{nginx,Nginx}
 @showsnippet{wordpress,Wordpress}
-@showsnippet{sitecore,Sitecore}
 @showsnippet{rust,Rust}
 @defaultsnippet{Select a language to view the tested versions.}
 @startsnippet{cxx}
@@ -65,11 +64,6 @@ Platforms:
   - 64-bit (x86_64)
 - MacOS 11
   - 64-bit (x86_64)
-
-To build from source:
-  - [Pipeline](https://github.com/51Degrees/pipeline-java)
-  - [Device Detection](https://github.com/51Degrees/device-detection-java)
-  - [Location](https://github.com/51Degrees/location-java)
 
 @endsnippet
 @startsnippet{php}
@@ -152,11 +146,6 @@ Language Versions:
 Platforms:
 - Ubuntu 18.04
   - PHP 5.6, 7.2, 7.3, 7.4
-
-@endsnippet
-@startsnippet{sitecore}
-
-Details to follow.
 
 @endsnippet
 @startsnippet{rust}

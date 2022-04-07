@@ -40,7 +40,6 @@ code.
 @showsnippet{varnish,Varnish}
 @showsnippet{nginx,Nginx}
 @showsnippet{wordpress,Wordpress}
-@showsnippet{sitecore,Sitecore}
 @showsnippet{rust,Rust}
 @defaultsnippet{Select a language to view the tested versions.}
 @startsnippet{cxx}
@@ -71,6 +70,7 @@ Instructions for building from source:
 @endsnippet
 @startsnippet{java}
 Packages:
+- Java 8 or later
 - See [Maven](https://search.maven.org/search?q=g:com.51degrees) for details of package dependencies
 - On-premise device detection
   - Windows
@@ -87,6 +87,7 @@ Instructions for building from source:
 @startsnippet{php}
 Packages:
 
+- PHP 5.6 or later
 - See [Packagist](https://packagist.org/packages/51degrees/) for details of package dependencies
 - On-premise device detection
   - Linux
@@ -108,6 +109,7 @@ Instructions for building from source:
 
 Packages:
 
+- Node.js 10 or later
 - See [NPM](https://www.npmjs.com/~51degrees) for details of package dependencies
 - On-premise device detection
   - Windows
@@ -125,6 +127,7 @@ Instructions for building from source:
 
 Packages:
 
+- Python 3.7 or later
 - See [pypi](https://pypi.org/user/51Degrees.mobi/) for details of package dependencies
 - On-premise device detection
   - Windows
@@ -148,6 +151,7 @@ Packages:
 - No prebuilt packages are available
   
 Instructions for building from source:
+- Golang 1.17.1 or later
 - [Device Detection](https://github.com/51Degrees/device-detection-go#readme)
 
 @endsnippet
@@ -156,6 +160,7 @@ Packages:
 - No prebuilt packages are available
 
 Instructions for building from source:
+- Varnish 6.0.8 or later
 - [Device Detection](https://github.com/51Degrees/device-detection-varnish#readme)
 
 @endsnippet
@@ -164,6 +169,7 @@ Packages:
 - No prebuilt packages are available
 
 Instructions for building from source:
+- Nginx 1.19.0 or later
 - [Device Detection](https://github.com/51Degrees/device-detection-nginx#readme)
 
 @endsnippet
@@ -172,15 +178,10 @@ Instructions for building from source:
 Packages:
 - Linux
   - Wordpress 5.9.2
-  - PHP 5.6, 7.2, 7.3, 7.4
+  - PHP 5.6 or later
 
 Instructions for building from source:
 - The Wordpress integration only supports cloud, not on-premise. As such, there is less need to build from source. If you want to do so, you will need to clone the source code from [GitHub](https://github.com/51Degrees/pipeline-wordpress).
-
-@endsnippet
-@startsnippet{sitecore}
-
-Details to follow.
 
 @endsnippet
 @startsnippet{rust}

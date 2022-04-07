@@ -204,6 +204,9 @@ delete config
      =================================================================================== -->
 Note: If you are working with a ASP.NET or ASP.NET Core web app then check those tabs for a more focused migration guide.
 
+The [getting started](@ref Examples_DeviceDetection_GettingStarted_Console_Index) examples may 
+be a useful reference while migrating.
+
 First, add the `FiftyOne.DeviceDetection` NuGet package.
 
 The old (V3) device detection API generally had two initialization steps, one to create a `DataSet` and one to create a `Provider` from that `DataSet`.
@@ -351,6 +354,9 @@ if(data.GetAs<AspectPropertyValue>("IsMobile").HasValue)
 This section describes how to migrate from the ASP.NET integration in version 3 of the device detection API to the ASP.NET integration in Pipeline API.
 Note - The redirect, image optimization and performance monitoring services are no longer supported in the Pipeline API.
 
+The [getting started](@ref Examples_DeviceDetection_GettingStarted_Web_Index) examples may 
+be a useful reference while migrating.
+
 First, add the `FiftyOne.DeviceDetection` and `FiftyOne.Pipeline.Web` NuGet packages.
 
 The main difference is in the configuration file supplied to the Pipeline. This must be in the App_Data folder and can be named:
@@ -431,6 +437,9 @@ if (Request.Browser["IsMobile"] == "True")
      =================================================================================== -->
 This section describes how to migrate from the ASP.NET integration in version 3 of the device detection API to the ASP.NET Core integration in Pipeline API.
 Note - The redirect, image optimization and performance monitoring services are no longer supported in the Pipeline API.
+
+The [getting started](@ref Examples_DeviceDetection_GettingStarted_Web_Index) examples may 
+be a useful reference while migrating.
 
 First, add the `FiftyOne.DeviceDetection` and `FiftyOne.Pipeline.Web` NuGet packages.
 
@@ -542,9 +551,6 @@ The device properties can then be accessed in the corresponding view. For exampl
 
 The `FiftyOneJS` component handles the inclusion of @clientsideevidence.
 The main use-case for this in device detection is in detecting iPhone and iPad models correctly.
-
-<!-- TODO Add link to client-side evidence example or guide 
-Refer to the specific guide for more detail on using client-side evidence.-->
 @endsnippet
 @startsnippet{java}
 <!-- ===================================================================================
