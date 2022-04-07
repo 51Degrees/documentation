@@ -23,7 +23,6 @@ You may also want to review the @dependencies page, as these topics are related.
 @showsnippet{varnish,Varnish}
 @showsnippet{nginx,Nginx}
 @showsnippet{wordpress,Wordpress}
-@showsnippet{sitecore,Sitecore}
 @showsnippet{rust,Rust}
 @defaultsnippet{Select a language to view the tested versions.}
 @startsnippet{cxx}
@@ -147,11 +146,6 @@ Language Versions:
 Platforms:
 - Ubuntu 18.04
   - PHP 5.6, 7.2, 7.3, 7.4
-
-@endsnippet
-@startsnippet{sitecore}
-
-Details to follow.
 
 @endsnippet
 @startsnippet{rust}

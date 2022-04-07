@@ -40,7 +40,6 @@ code.
 @showsnippet{varnish,Varnish}
 @showsnippet{nginx,Nginx}
 @showsnippet{wordpress,Wordpress}
-@showsnippet{sitecore,Sitecore}
 @showsnippet{rust,Rust}
 @defaultsnippet{Select a language to view the tested versions.}
 @startsnippet{cxx}
@@ -183,11 +182,6 @@ Packages:
 
 Instructions for building from source:
 - The Wordpress integration only supports cloud, not on-premise. As such, there is less need to build from source. If you want to do so, you will need to clone the source code from [GitHub](https://github.com/51Degrees/pipeline-wordpress).
-
-@endsnippet
-@startsnippet{sitecore}
-
-Details to follow.
 
 @endsnippet
 @startsnippet{rust}
