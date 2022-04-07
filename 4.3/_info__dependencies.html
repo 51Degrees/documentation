@@ -83,7 +83,7 @@ $(document).ready(function(){initNavTree('_info__dependencies.html','');});
 <p>If you are having trouble with a particular dependency, check our <a class="el" href="_info__f_a_qs.html">FAQs</a> for common problems and solutions.</p>
 <p>You may also want to review the <a class="el" href="_info__tested_versions.html">tested versions</a> page, as these topics are related.</p>
 <p>Click the tabs below to see dependencies for running the pre-built packages as well as additional dependencies required for on-premise device detection and instructions for building from the source code.</p>
-<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C/C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">.NET</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'go')">Go</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'varnish')">Varnish</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'nginx')">Nginx</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'wordpress')">Wordpress</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'sitecore')">Sitecore</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'rust')">Rust</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view the tested versions. </div>   <div class="c-tabgroup__main" data-lang="cxx" style="display:none;">  Packages:</p><ul>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C/C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">.NET</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'go')">Go</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'varnish')">Varnish</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'nginx')">Nginx</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'wordpress')">Wordpress</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'rust')">Rust</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view the tested versions. </div>   <div class="c-tabgroup__main" data-lang="cxx" style="display:none;">  Packages:</p><ul>
 <li>No prebuilt packages are available</li>
 </ul>
 <p>Instructions for building from source:</p><ul>
@@ -113,6 +113,7 @@ $(document).ready(function(){initNavTree('_info__dependencies.html','');});
 <li><a href="https://github.com/51Degrees/location-dotnet#readme">Location</a></li>
 </ul>
 <p> </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  Packages:</p><ul>
+<li>Java 8 or later</li>
 <li>See <a href="https://search.maven.org/search?q=g:com.51degrees">Maven</a> for details of package dependencies</li>
 <li>On-premise device detection<ul>
 <li>Windows<ul>
@@ -133,6 +134,7 @@ $(document).ready(function(){initNavTree('_info__dependencies.html','');});
 </ul>
 <p> </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  Packages:</p>
 <ul>
+<li>PHP 5.6 or later</li>
 <li>See <a href="https://packagist.org/packages/51degrees/">Packagist</a> for details of package dependencies</li>
 <li>On-premise device detection<ul>
 <li>Linux<ul>
@@ -162,6 +164,7 @@ $(document).ready(function(){initNavTree('_info__dependencies.html','');});
 <p> </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;"> </p>
 <p>Packages:</p>
 <ul>
+<li>Node.js 10 or later</li>
 <li>See <a href="https://www.npmjs.com/~51degrees">NPM</a> for details of package dependencies</li>
 <li>On-premise device detection<ul>
 <li>Windows<ul>
@@ -183,6 +186,7 @@ $(document).ready(function(){initNavTree('_info__dependencies.html','');});
 <p> </div>   <div class="c-tabgroup__main" data-lang="python" style="display:none;"> </p>
 <p>Packages:</p>
 <ul>
+<li>Python 3.7 or later</li>
 <li>See <a href="https://pypi.org/user/51Degrees.mobi/">pypi</a> for details of package dependencies</li>
 <li>On-premise device detection<ul>
 <li>Windows<ul>
@@ -212,33 +216,34 @@ $(document).ready(function(){initNavTree('_info__dependencies.html','');});
 <li>No prebuilt packages are available</li>
 </ul>
 <p>Instructions for building from source:</p><ul>
+<li>Golang 1.17.1 or later</li>
 <li><a href="https://github.com/51Degrees/device-detection-go#readme">Device Detection</a></li>
 </ul>
 <p> </div>   <div class="c-tabgroup__main" data-lang="varnish" style="display:none;">  Packages:</p><ul>
 <li>No prebuilt packages are available</li>
 </ul>
 <p>Instructions for building from source:</p><ul>
+<li>Varnish 6.0.8 or later</li>
 <li><a href="https://github.com/51Degrees/device-detection-varnish#readme">Device Detection</a></li>
 </ul>
 <p> </div>   <div class="c-tabgroup__main" data-lang="nginx" style="display:none;">  Packages:</p><ul>
 <li>No prebuilt packages are available</li>
 </ul>
 <p>Instructions for building from source:</p><ul>
+<li>Nginx 1.19.0 or later</li>
 <li><a href="https://github.com/51Degrees/device-detection-nginx#readme">Device Detection</a></li>
 </ul>
 <p> </div>   <div class="c-tabgroup__main" data-lang="wordpress" style="display:none;"> </p>
 <p>Packages:</p><ul>
 <li>Linux<ul>
 <li>Wordpress 5.9.2</li>
-<li>PHP 5.6, 7.2, 7.3, 7.4</li>
+<li>PHP 5.6 or later</li>
 </ul>
 </li>
 </ul>
 <p>Instructions for building from source:</p><ul>
 <li>The Wordpress integration only supports cloud, not on-premise. As such, there is less need to build from source. If you want to do so, you will need to clone the source code from <a href="https://github.com/51Degrees/pipeline-wordpress">GitHub</a>.</li>
 </ul>
-<p> </div>   <div class="c-tabgroup__main" data-lang="sitecore" style="display:none;"> </p>
-<p>Details to follow.</p>
 <p> </div>   <div class="c-tabgroup__main" data-lang="rust" style="display:none;"> </p>
 <p>Not tested by 51Degrees but available to try <a href="https://crates.io/crates/fiftyonedegrees">here</a>.</p>
 <p> </div>  </p>

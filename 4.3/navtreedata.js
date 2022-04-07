@@ -32,7 +32,6 @@ var NAVTREE =
     [ "Examples", null, "_examples__index" ],
     [ "Features", null, "_features__index" ],
     [ "Information", null, "_info__index" ],
-    [ "Tested Versions", "_info__version_support.html", null ],
     [ "Other Integrations", null, "_other_integrations__index" ],
     [ "Reverse Geocoding", null, "_reverse_geocoding__index" ],
     [ "Language Specific", "usergroup0.html", [
