@@ -8,7 +8,7 @@ In either case, there are breaking changes so this guide should be followed care
 # Overview
 
 The language that you are using is the most important factor in determining what work is required to migrate to the new API.
-For some languages and frameworks, such as C or Nginx, there is no @Pipeline API so you will be migrating directly to version 4 of the device detection API.
+For some languages and frameworks, such as C, Nginx or Varnish, there is no @Pipeline API so you will be migrating directly to version 4 of the device detection API.
 For other languages such as Java or .NET, you will be migrating from a pure device detection installation to the @Pipeline API with a device detection plugin.
 
 # Detail
@@ -25,6 +25,7 @@ Regardless of which API you are migrating to, there are breaking changes and new
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
 @showsnippet{nginx,Nginx}
+@showsnippet{varnish,Varnish}
 @defaultsnippet{Select a language to view a language specific migration guide.}
 @startsnippet{c}
 <!-- ===================================================================================
@@ -844,7 +845,7 @@ The implementation of 51Degrees Device Detection V4 module is based on the V3 ve
 Removed in V4:
 - V4 version supports only one method of detection which is Hash.
   - Building V4 module is done as below without specifying the detection method:
-```{nginx}
+```
 make install
 ```
 - The following build options are not available:
@@ -867,6 +868,7 @@ New in V4:
 
 New requirements in V4:
 - Building V4 module requires a compiler that support C11.
+- libatomic1
  
 Changes in behaviour:
 - `51D_match_all` also takes evidence from query string and cookie.
@@ -875,6 +877,51 @@ Changes in behaviour:
  - Properties that are overridable can now be overridden by value supplied as input from cookie and query string.
 Further reads:
 - [Nginx Integration](@ref OtherIntegrations_Nginx)
+@endsnippet
+@startsnippet{varnish}
+<!-- ===================================================================================
+     |                                    Varnish                                       |
+     =================================================================================== -->
+Varnish module comes only with an on-premise version. You will need to get the on-premise version of the Varnish API from [GitHub](https://github.com/51Degrees/device-detection-varnish).
+ 
+The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file at [pricing](https://51degrees.com/pricing) and be aware of the changes described below. 
+ 
+Removed in V4:
+- V4 version supports only one method of detection which is Hash.
+  - Building V4 module is done as below without specifying the detection method:
+```
+./autogen.sh
+./configure --with-config=release|test --with-datafile=(optional)
+make
+sudo make install
+```
+- The following build options can now only be set as environment variables:
+  - `VARNISHSRC`
+  - `VMOD_DIR`
+- The following settings are removed:
+  - `set_cache`
+  - `set_pool`
+ 
+New in V4:
+- The build `./configure` command can now be run with the following new flags:
+  - `--with-config`: set whether `release` or `test` module should be built.
+  - `--with-datafile`: set the data file to be used with tests. This is only applicable when `--with-config` is set to `test`.
+- The following new settings are available to be set before calling `fiftyonedegrees.start` in V4 in addition to `set_delimiter` and `set_properties`:
+  - `set_performance_profile`
+  - `set_drift`
+  - `set_difference`
+  - `set_max_concurrency`
+  - `set_allow_unmatched`
+  - `set_use_performance_graph`
+  - `set_use_predictive_graph`
+- To support automatic requesting relevant User-Agent Client Hints, a new function `set_resp_headers` can be added to the `vcl_deliver` block. This only works with browsers that support User-Agent Client Hints. For device detection to work with User-Agent Client Hints, the function `match_all` should be used.
+
+New requirements in V4:
+- Building V4 module requires a compiler that support C11.
+- libatomic1
+ 
+Further reads:
+- [Varnish Integration](@ref OtherIntegrations_Varnish)
 @endsnippet
 
 @endsnippets
