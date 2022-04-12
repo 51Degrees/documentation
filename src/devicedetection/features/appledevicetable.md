@@ -144,9 +144,9 @@ Apple has continually worked to homogenize any information that a website can ge
 |iPhone 12 Pro|Standard|iPhone 12, iPhone 12 Pro|N/A|
 |iPhone 12 Pro|Zoom|iPhone 12, iPhone 12 mini, iPhone 12 Pro<br/> iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br/> iPhone 12 Pro, iPhone 12|N/A|
 |iPhone 12 Pro Max|Standard|iPhone 12 Pro Max|N/A|
-|iPhone 12 Pro Max|Zoom|iPhone 12 mini, iPhone 12 Pro Max<br/> iPhone 12 Pro Max<br/> iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|N/A
+|iPhone 12 Pro Max|Zoom|iPhone 12 mini, iPhone 12 Pro Max<br/> iPhone 12 Pro Max<br/> iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|N/A|
 |iPhone 12 mini|Standard|iPhone 12 mini, iPhone 12 Pro Max<br/> iPhone 12 mini<br/> iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|N/A|
-|iPhone 12 mini|Zoom|iPhone 12, iPhone 12 mini, iPhone 12 Pro<br/> iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br/> iPhone 12 mini|N/A
+|iPhone 12 mini|Zoom|iPhone 12, iPhone 12 mini, iPhone 12 Pro<br/> iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br/> iPhone 12 mini|N/A|
 |iPhone 13|Standard|iPhone 13|N/A|
 |iPhone 13|Zoom|iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro|N/A|
 |iPhone 13 Pro|Standard|iPhone 12, iPhone 12 Pro, iPhone 13 Pro, iPhone 13|N/A|
@@ -155,9 +155,9 @@ Apple has continually worked to homogenize any information that a website can ge
 |iPhone 13 Pro Max|Zoom|iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|N/A|
 |iPhone 13 mini|Standard|iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|N/A|
 |iPhone 13 mini|Zoom|iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro|N/A|
-|iPhone SE (3rd Gen.)|Standard|iPhone SE (3rd Gen.)|
-|iPhone SE (3rd Gen.)|Zoom|iPhone SE (3rd Gen.)|
-|iPad 5|N/A|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad 5, iPad Pro 12.9, iPad 6<br/> iPad 5|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad Pro 12.9, iPad 5<br/> iPad 5, iPad Pro 12.9<br/> iPad 5|
+|iPhone SE (3rd Gen.)|Standard|iPhone SE (3rd Gen.)|N/A|
+|iPhone SE (3rd Gen.)|Zoom|iPhone SE (3rd Gen.)|N/A|
+|iPad 5|N/A|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad 5, iPad Pro 12.9, iPad 6<br/> iPad 5|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad Pro 12.9, iPad 5<br/> iPad 5|
 |iPad 6|N/A|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad Pro 12.9, iPad 6<br/> iPad 5, iPad Pro 12.9, iPad 6<br/> iPad 6|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad Pro 12.9, iPad 6<br/> iPad 6, iPad Pro 12.9<br/> iPad 6|
 |iPad 7|N/A|iPad 7|N/A|
 |iPad 8|N/A|iPad 8|N/A|
@@ -170,7 +170,7 @@ Apple has continually worked to homogenize any information that a website can ge
 |iPad mini (6th Gen.)|N/A|iPad mini (6th Gen.)|N/A|
 |iPad Pro 11.0|N/A|iPad Pro 11.0, iPad Pro 11.0 (2nd Gen.)<br/> iPad Pro 11.0|N/A|
 |iPad Pro 12.9|Standard|iPad Pro 12.9|N/A|
-|iPad Pro 12.9|Zoom|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad Pro 12.9, iPad 6<br/> iPad 5, iPad Pro 12.9, iPad 6<br/> iPad Pro 12.9|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad Pro 12.9, iPad 6<br/> iPad Pro 12.9, iPad 5<br/> iPad 6, iPad Pro 12.9<br/> iPad 5, iPad Pro 12.9<br/> iPad Pro 12.9|
+|iPad Pro 12.9|Zoom|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad Pro 12.9, iPad 6<br/> iPad 5, iPad Pro 12.9, iPad 6<br/> iPad Pro 12.9|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad Pro 12.9, iPad 6<br/> iPad Pro 12.9, iPad 5<br/> iPad 6, iPad Pro 12.9<br/> iPad Pro 12.9|
 |iPad Pro 10.5|N/A|iPad Pro 10.5|N/A|
 |iPad Pro 9.7|N/A|iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7<br/> iPad Pro 9.7|N/A|
 |iPad Pro 12.9 (2nd Gen.)|Standard|iPad Pro 12.9 (2nd Gen.)|N/A|
