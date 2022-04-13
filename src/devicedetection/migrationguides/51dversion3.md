@@ -24,6 +24,7 @@ Regardless of which API you are migrating to, there are breaking changes and new
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
+@showsnippet{python,Python}
 @showsnippet{nginx,Nginx}
 @defaultsnippet{Select a language to view a language specific migration guide.}
 @startsnippet{c}
@@ -765,6 +766,68 @@ Becomes:
 if(device.isMobile.hasValue) {
     var isMobile = device.isMobile.value;
 }
+```
+@endsnippet
+@startsnippet{python}
+<!-- ===================================================================================
+     |                                      Python                                     |
+     =================================================================================== -->
+First, add the fiftyone_devicedetection package from PyPi.
+
+With the V3 API, a provider could be created with something like this:
+
+```{python}
+provider = fiftyone_degrees_mobile_detector_v3_trie_wrapper.Provider(
+	dataFile,
+	properties)
+```
+
+Creating a Pipeline with a device detection engine is similar although the options are different:
+
+```{python}
+pipeline = DeviceDetectionPipelineBuilder(
+  data_file_path = data_file,
+  performance_profile = "LowMemory",
+  auto_update = False).build()
+```
+
+Settings will be dependent on your old implementation:
+
+- If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the resource key you created.
+- If you want to trade some performance for system memory then change the performance profile to `MaxPerformance`, `Balanced` or `LowMemory`
+- If you want the data file to be updated automatically then remove `auto_update: false` and add your license key to the configuration. (Not available for free users)
+
+Once the @Pipeline has been created, you'll need to make a few changes to the way data is passed to it and accessed.
+With the old API, you would do something like this:
+
+```{python}
+match = provider.getMatch(userAgent)
+```
+
+In the new API, this is slightly more complicated as it needs to deal with the potential for different types of data in and out.
+
+```{python}
+// 1. Create a 'FlowData' instance from the Pipeline. This is used to pass data in and access results.
+flowData = pipeline.create_flowdata()
+// 2. Add 'evidence' to the FlowData and process it. In this case, we are adding a User-Agent HTTP header.
+flowData.evidence.add("header.user-agent", userAgent)
+// 3. The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.
+device = flowData.device
+```
+
+Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found. For more detail on this see the @falsepositivecontrol feature page.
+
+As an example:
+
+```{python}
+match.getValues('IsMobile')
+```
+
+Becomes:
+
+```{node}
+if (device.ismobile.has_value():
+  isMobile = device.ismobile.value()
 ```
 @endsnippet
 @startsnippet{php}
