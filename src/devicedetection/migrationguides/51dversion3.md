@@ -825,7 +825,7 @@ match.getValues('IsMobile')
 
 Becomes:
 
-```{node}
+```{python}
 if (device.ismobile.has_value():
   isMobile = device.ismobile.value()
 ```
