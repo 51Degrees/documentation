@@ -147,7 +147,7 @@ Apple has continually worked to homogenize any information that a website can ge
 |iPhone 12 Pro Max|Zoom|iPhone 12 mini, iPhone 12 Pro Max<br/> iPhone 12 Pro Max<br/> iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|N/A|
 |iPhone 12 mini|Standard|iPhone 12 mini, iPhone 12 Pro Max<br/> iPhone 12 mini<br/> iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|N/A|
 |iPhone 12 mini|Zoom|iPhone 12, iPhone 12 mini, iPhone 12 Pro<br/> iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br/> iPhone 12 mini|N/A|
-|iPhone 13|Standard|iPhone 13|N/A|
+|iPhone 13|Standard|iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro<br/> iPhone 13|
 |iPhone 13|Zoom|iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro|N/A|
 |iPhone 13 Pro|Standard|iPhone 12, iPhone 12 Pro, iPhone 13 Pro, iPhone 13|N/A|
 |iPhone 13 Pro|Zoom|iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro|N/A|
