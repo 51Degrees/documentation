@@ -15,12 +15,13 @@ We have also integrated our Device Detection to Varnish. This page details an ov
 * Varnish source
 
 ## Tested versions:
-* Varnish 6.0.6 (LTS)
+* Varnish 6.0.8 (LTS)
 * C11 or above
+* libatomic1
 
 ## Tested platforms:
-* Ubuntu 16.04
 * Ubuntu 18.04
+* Ubuntu 20.04
 
 ## Tested architectures:
 * 64-bit
@@ -77,6 +78,18 @@ These settings are valid in vcl_rev and vcl_deliver methods, and any number can 
 For full documentation, use
 ```
 $ man vmod_fiftyonedegrees
+```
+
+## User-Agents CLient Hints
+
+To enable client-hint matching, add the set_resp_headers to the vcl_deliver block. This adds the Accept-CH header to the response if it is supported by the browser. The client-hint headers sent by the browser are then automatically used by the match_all method.
+```
+sub vcl_deliver {
+    # Enable client-hints
+    fiftyonedegrees.set_resp_headers();
+    # Use the match_all as above.
+    set resp.http.X-IsMobile = fiftyonedegrees.match_all("IsMobile");
+}
 ```
 
 # New features
