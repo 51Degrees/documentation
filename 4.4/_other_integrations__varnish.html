@@ -82,13 +82,14 @@ $(document).ready(function(){initNavTree('_other_integrations__varnish.html','')
 </ul>
 <h2>Tested versions:</h2>
 <ul>
-<li>Varnish 6.0.6 (LTS)</li>
+<li>Varnish 6.0.8 (LTS)</li>
 <li>C11 or above</li>
+<li>libatomic1</li>
 </ul>
 <h2>Tested platforms:</h2>
 <ul>
-<li>Ubuntu 16.04</li>
 <li>Ubuntu 18.04</li>
+<li>Ubuntu 20.04</li>
 </ul>
 <h2>Tested architectures:</h2>
 <ul>
@@ -137,7 +138,8 @@ $(document).ready(function(){initNavTree('_other_integrations__varnish.html','')
 <tr class="c-table__row">
 <td class="c-table__cell">fiftyonedegrees.match_all  </td><td class="c-table__cell">Gets device properties using multiple HTTP headers. Takes comma separated list of properties to return.   </td></tr>
 </table>
-</div><p>For full documentation, use </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">$ man vmod_fiftyonedegrees</div></div><h1 class="g-docs__section-heading">New features</h1>
+</div><p>For full documentation, use </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">$ man vmod_fiftyonedegrees</div></div><h2>User-Agents CLient Hints</h2>
+<p>To enable client-hint matching, add the set_resp_headers to the vcl_deliver block. This adds the Accept-CH header to the response if it is supported by the browser. The client-hint headers sent by the browser are then automatically used by the match_all method. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">sub vcl_deliver {</div><div class="c-code__line">    # Enable client-hints</div><div class="c-code__line">    fiftyonedegrees.set_resp_headers();</div><div class="c-code__line">    # Use the match_all as above.</div><div class="c-code__line">    set resp.http.X-IsMobile = fiftyonedegrees.match_all(&quot;IsMobile&quot;);</div><div class="c-code__line">}</div></div><h1 class="g-docs__section-heading">New features</h1>
 <p>New features were introduced to aid users with their decisions on the match results via the meta-data properties. These features are also supported in Varnish. Further details about this data can be found in <a class="el" href="_device_detection__features__false_positive_control.html">False Positive page</a></p>
 <p>These meta data can be used in the same way as the properties </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">set req.http.X-IsMobileX = fiftyonedegrees.match_all(&quot;IsMobile,Iterations,Drift,Difference,Method,UserAgents,MatchedNodes,DeviceId&quot;);</div></div><p><code>HasValue</code> is also supported in Varnish. Whether a property has values or not is indicated by a return of an empty string in the returned list. A message, detailing the reason will also be printed out. </p>
 </section></div><!-- PageDoc -->

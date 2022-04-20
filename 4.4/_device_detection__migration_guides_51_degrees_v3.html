@@ -70,10 +70,10 @@ $(document).ready(function(){initNavTree('_device_detection__migration_guides_51
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
 <p>This page describes the steps for migrating from 51Degrees' previous device detection API to either version 4 of that API or to the <a class="el" href="_concepts__pipeline.html">Pipeline</a> API where it is available. In either case, there are breaking changes so this guide should be followed carefully to ensure no problems arise.</p>
 <h1 class="g-docs__section-heading">Overview</h1>
-<p>The language that you are using is the most important factor in determining what work is required to migrate to the new API. For some languages and frameworks, such as C or Nginx, there is no <a class="el" href="_concepts__pipeline.html">Pipeline</a> API so you will be migrating directly to version 4 of the device detection API. For other languages such as Java or .NET, you will be migrating from a pure device detection installation to the <a class="el" href="_concepts__pipeline.html">Pipeline</a> API with a device detection plugin.</p>
+<p>The language that you are using is the most important factor in determining what work is required to migrate to the new API. For some languages and frameworks, such as C, Nginx or Varnish, there is no <a class="el" href="_concepts__pipeline.html">Pipeline</a> API so you will be migrating directly to version 4 of the device detection API. For other languages such as Java or .NET, you will be migrating from a pure device detection installation to the <a class="el" href="_concepts__pipeline.html">Pipeline</a> API with a device detection plugin.</p>
 <h1 class="g-docs__section-heading">Detail</h1>
 <p>Regardless of which API you are migrating to, there are breaking changes and new features to be aware of. See the following section for detail on the changes needed for your language of choice.</p>
-<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'c')">C</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cpp')">C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'aspdotnet')">ASP.NET</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'aspdotnetcore')">ASP.NET Core</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'nginx')">Nginx</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view a language specific migration guide. </div>   <div class="c-tabgroup__main" data-lang="c" style="display:none;"> </p>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'c')">C</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cpp')">C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'aspdotnet')">ASP.NET</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'aspdotnetcore')">ASP.NET Core</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'nginx')">Nginx</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'varnish')">Varnish</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view a language specific migration guide. </div>   <div class="c-tabgroup__main" data-lang="c" style="display:none;"> </p>
 <p>First, add the device detection libraries from the <a href="https://github.com/51degrees/device-detection-cxx">GitHub repo</a>. These can be included using the Visual Studio projects, the CMake projects, or just the files themselves.</p>
 <p>The old (V3) device detection API used a single method to initialize a <code>fiftyoneDegreesProvider</code>. This took all available options as parameters, and was similar for both the 'Pattern' and 'Hash' algorithms.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesDataSetInitStatus status =</div><div class="c-code__line">    fiftyoneDegreesInitProviderWithPropertyString(</div><div class="c-code__line">    fileName, &amp;provider, properties, 4, 1000);</div></div><p>An equivalent service can be set up using the V4 device detection API. However, the Hash data files have been significantly improved for V4, and are now equivalent or superior to Pattern in every way. As such, Hash is now the only option. It takes the following parameters:</p>
@@ -210,7 +210,22 @@ $(document).ready(function(){initNavTree('_device_detection__migration_guides_51
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">// 1. Create a &#39;FlowData&#39; instance from the Pipeline. This is used to pass data in and access results.</div><div class="c-code__line">let flowData = pipeline.createFlowData();</div><div class="c-code__line">// 2. Add &#39;evidence&#39; to the FlowData and process it. In this case, we are adding a User-Agent HTTP header.</div><div class="c-code__line">flowData.evidence.add(&quot;header.user-agent&quot;, userAgent);</div><div class="c-code__line">flowData.process().then(function () {</div><div class="c-code__line">    // 3. The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.</div><div class="c-code__line">    var device = flowData.device;</div><div class="c-code__line">});</div></div><p>Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found. For more detail on this see the <a class="el" href="_device_detection__features__false_positive_control.html">false positive control</a> feature page.</p>
 <p>As an example:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">var isMobile = device.isMobile;</div></div><p>Becomes:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">if(device.isMobile.hasValue) {</div><div class="c-code__line">    var isMobile = device.isMobile.value;</div><div class="c-code__line">}</div></div><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;"> </p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">if(device.isMobile.hasValue) {</div><div class="c-code__line">    var isMobile = device.isMobile.value;</div><div class="c-code__line">}</div></div><p>  </div>   <div class="c-tabgroup__main" data-lang="python" style="display:none;"> </p>
+<p>First, add the fiftyone_devicedetection package from PyPi.</p>
+<p>With the V3 API, a provider could be created with something like this:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">provider = fiftyone_degrees_mobile_detector_v3_trie_wrapper.Provider(</div><div class="c-code__line">    dataFile,</div><div class="c-code__line">    properties)</div></div><p>Creating a Pipeline with a device detection engine is similar although the options are different:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">pipeline = DeviceDetectionPipelineBuilder(</div><div class="c-code__line">  data_file_path = data_file,</div><div class="c-code__line">  performance_profile = &quot;LowMemory&quot;,</div><div class="c-code__line">  auto_update = False).build()</div></div><p>Settings will be dependent on your old implementation:</p>
+<ul>
+<li>If using the 51Degrees cloud service, you'll first need to use <a href="configure.51degrees.com">the Configurator</a> to create a resource key (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the resource key you created.</li>
+<li>If you want to trade some performance for system memory then change the performance profile to <code>MaxPerformance</code>, <code>Balanced</code> or <code>LowMemory</code></li>
+<li>If you want the data file to be updated automatically then remove <code>auto_update: false</code> and add your license key to the configuration. (Not available for free users)</li>
+</ul>
+<p>Once the <a class="el" href="_concepts__pipeline.html">Pipeline</a> has been created, you'll need to make a few changes to the way data is passed to it and accessed. With the old API, you would do something like this:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">match = provider.getMatch(userAgent)</div></div><p>In the new API, this is slightly more complicated as it needs to deal with the potential for different types of data in and out.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">// 1. Create a &#39;FlowData&#39; instance from the Pipeline. This is used to pass data in and access results.</div><div class="c-code__line">flowData = pipeline.create_flowdata()</div><div class="c-code__line">// 2. Add &#39;evidence&#39; to the FlowData and process it. In this case, we are adding a User-Agent HTTP header.</div><div class="c-code__line">flowData.evidence.add(&quot;header.user-agent&quot;, userAgent)</div><div class="c-code__line">// 3. The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.</div><div class="c-code__line">device = flowData.device</div></div><p>Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found. For more detail on this see the <a class="el" href="_device_detection__features__false_positive_control.html">false positive control</a> feature page.</p>
+<p>As an example:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">match.getValues(&#39;IsMobile&#39;)</div></div><p>Becomes:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">if (device.ismobile.has_value():</div><div class="c-code__line">  isMobile = device.ismobile.value()</div></div><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;"> </p>
 <p>If you currently use an on-premise data file with PHP then you will need to get the on-premise version of the PHP API from <a href="https://github.com/51Degrees/device-detection-php-onpremise">GitHub</a>.</p>
 <p>If you use the cloud version then you can install the fiftyone.devicedetection package from composer.</p>
 <p>With the V3 API, a provider could be created with something like this:</p>
@@ -252,6 +267,7 @@ $(document).ready(function(){initNavTree('_device_detection__migration_guides_51
 </ul>
 <p>New requirements in V4:</p><ul>
 <li>Building V4 module requires a compiler that support C11.</li>
+<li>libatomic1</li>
 </ul>
 <p>Changes in behaviour:</p><ul>
 <li><code>51D_match_all</code> also takes evidence from query string and cookie.<ul>
@@ -262,7 +278,50 @@ $(document).ready(function(){initNavTree('_device_detection__migration_guides_51
 <li>Properties that are overridable can now be overridden by value supplied as input from cookie and query string. Further reads:</li>
 </ul>
 </li>
-<li><a class="el" href="_other_integrations__nginx.html">Nginx Integration</a>  </div> </li>
+<li><a class="el" href="_other_integrations__nginx.html">Nginx Integration</a>  </div>   <div class="c-tabgroup__main" data-lang="varnish" style="display:none;"> </li>
+</ul>
+<p>Varnish module comes only with an on-premise version. You will need to get the on-premise version of the Varnish API from <a href="https://github.com/51Degrees/device-detection-varnish">GitHub</a>.</p>
+<p>The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file at <a href="https://51degrees.com/pricing">pricing</a> and be aware of the changes described below.</p>
+<p>Removed in V4:</p><ul>
+<li>V4 version supports only one method of detection which is Hash.<ul>
+<li>Building V4 module is done as below without specifying the detection method: <div class="c-code__block c-code__block--outline"><div class="c-code__line">./autogen.sh</div><div class="c-code__line">./configure --with-config=release|test --with-datafile=(optional)</div><div class="c-code__line">make</div><div class="c-code__line">sudo make install</div></div></li>
+</ul>
+</li>
+<li>The following build options can now only be set as environment variables:<ul>
+<li><code>VARNISHSRC</code></li>
+<li><code>VMOD_DIR</code></li>
+</ul>
+</li>
+<li>The following settings are removed:<ul>
+<li><code>set_cache</code></li>
+<li><code>set_pool</code></li>
+</ul>
+</li>
+</ul>
+<p>New in V4:</p><ul>
+<li>The build <code>./configure</code> command can now be run with the following new flags:<ul>
+<li><code>--with-config</code>: set whether <code>release</code> or <code>test</code> module should be built.</li>
+<li><code>--with-datafile</code>: set the data file to be used with tests. This is only applicable when <code>--with-config</code> is set to <code>test</code>.</li>
+</ul>
+</li>
+<li>The following new settings are available to be set before calling <code>fiftyonedegrees.start</code> in V4 in addition to <code>set_delimiter</code> and <code>set_properties</code>:<ul>
+<li><code>set_performance_profile</code></li>
+<li><code>set_drift</code></li>
+<li><code>set_difference</code></li>
+<li><code>set_max_concurrency</code></li>
+<li><code>set_allow_unmatched</code></li>
+<li><code>set_use_performance_graph</code></li>
+<li><code>set_use_predictive_graph</code></li>
+</ul>
+</li>
+<li>To support automatic requesting relevant User-Agent Client Hints, a new function <code>set_resp_headers</code> can be added to the <code>vcl_deliver</code> block. This only works with browsers that support User-Agent Client Hints. For device detection to work with User-Agent Client Hints, the function <code>match_all</code> should be used.</li>
+</ul>
+<p>New requirements in V4:</p><ul>
+<li>Building V4 module requires a compiler that support C11.</li>
+<li>libatomic1</li>
+</ul>
+<p>Further reads:</p><ul>
+<li><a class="el" href="_other_integrations__varnish.html">Varnish Integration</a>  </div> </li>
 </ul>
 <p> </div>  </p>
 </section></div><!-- PageDoc -->
