@@ -10,11 +10,9 @@
     <tab type="user" visible="yes" title="Java Pipeline" url="../../pipeline-java/index.html"/>
     <tab type="user" visible="yes" title="Java Device Detection" url="../../device-detection-java/index.html"/>
     <tab type="user" visible="yes" title="Java Location" url="../../location-java/index.html"/>
-	<tab type="user" visible="yes" title="Java Location On-Premise" url="../../location-onpremise-java/index.html"/>
     <tab type="user" visible="yes" title=".NET Pipeline" url="../../pipeline-dotnet/index.html"/>
     <tab type="user" visible="yes" title=".NET Device Detection" url="../../device-detection-dotnet/index.html"/>
     <tab type="user" visible="yes" title=".NET Location" url="../../location-dotnet/index.html"/>
-	<tab type="user" visible="yes" title=".NET Location On-Premise" url="../../internal-engines-dotnet/index.html"/>
     <tab type="user" visible="yes" title="PHP Pipeline" url="../../pipeline-php/index.html"/>
     <tab type="user" visible="yes" title="PHP Device Detection" url="../../device-detection-php/index.html"/>
     <tab type="user" visible="yes" title="PHP Device Detection On-Premise" url="../../device-detection-php-onpremise/index.html"/>
