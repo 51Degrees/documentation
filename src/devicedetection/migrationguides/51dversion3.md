@@ -698,7 +698,9 @@ var config = {"dataFile" : require("fiftyonedegreeslitepattern"),
 var provider = new fiftyonedegrees.provider(config);
 ```
 
-Creating a Pipeline with a device detection engine is similar although the options are different:
+Creating a Pipeline with a device detection engine is similar although the options are different. You can use either the generic builder or the specific one for on-premise or cloud separately.
+
+Using the generic builder:
 
 ```{node}
 // Create a new device detection pipeline and set the config.
@@ -707,6 +709,24 @@ let pipeline = new deviceDetectionPipelineBuilder({
     dataFile: "[your path]/51Degrees-LiteV4.1.hash",
     autoUpdate: false
 }).build();
+```
+
+Using the specific on-premise builder:
+
+```{node}
+const pipeline = new DeviceDetectionOnPremisePipelineBuilder({
+    performanceProfile: "MaxPerformance",
+    dataFile: "[your path]/51Degrees-LiteV4.1.hash",
+    autoUpdate: false
+  }).build();
+```
+
+Using the specific cloud builder:
+
+```{node}
+const pipeline = new DeviceDetectionCloudPipelineBuilder({
+    resourceKey: "[your resource key]"
+  }).build();
 ```
 
 Settings will be dependent on your old implementation:
