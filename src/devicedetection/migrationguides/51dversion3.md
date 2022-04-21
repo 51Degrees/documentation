@@ -764,14 +764,14 @@ Accessing the property values is similar in the new API and the old API. The mai
 As an example:
 
 ```{node}
-var isMobile = device.isMobile;
+var isMobile = device.ismobile;
 ```
 
 Becomes:
 
 ```{node}
-if(device.isMobile.hasValue) {
-    var isMobile = device.isMobile.value;
+if(device.ismobile.hasValue) {
+    var isMobile = device.ismobile.value;
 }
 ```
 @endsnippet
