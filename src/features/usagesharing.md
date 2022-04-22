@@ -87,3 +87,53 @@ to the **usage sharing** web service.
 
 The maximum time period which @evidence is stored for the purpose of filtering 
 [repeat evidence](@ref Features_UsageSharing_RepeatEvidence).
+
+@anchor Low_Level_Usage_Sharing
+# Usage Sharing for low-level APIs
+
+The low-level device-detection APIs such as C, Nginx and Varnish do not support **usage sharing** 
+out of the box. However, some customers using these technologies still want to share usage with 
+us in order to help us improve the accuracy of results.
+
+Our recommended approach in this situation is to have the low-level code write a log file containing
+the necessary evidence values from requests. This file can then be processed offline at a later 
+date using one of the higher-level languages in order to share the data with 51Degrees.
+
+The [offline processing](@ref Examples_DeviceDetection_OfflineProcessing_OnPremiseHash) examples 
+provide a good sample for how this might work. These take a YAML file where each record represents 
+a request. For example:
+
+```
+---
+header.User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 15_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1
+---
+header.Sec-CH-UA-Mobile: ?0
+header.Sec-CH-UA-Platform: '"Windows"'
+header.Sec-CH-UA: '" Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"'
+header.User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36
+...
+```
+
+You will need to modify your low-level code to output this data to a file (or memory stream, etc). 
+As a minimum, the values below MUST be present for each record. If not, the record 
+will be discarded by our backend processing system.
+
+```
+header.user-agent [The value of the User-Agent HTTP header]
+header.host: [The value of the Host HTTP header]
+server.client-ip: [The source public IP that is making the request to your server]
+```
+
+The output will then need to be consumed by a process using one of the higher-level APIs.
+You can of course use whatever format you wish for transferring the data between your low-level 
+code and the usage sharing process. If using the suggested YAML format and the offline processing 
+example, the following changes will need to be made to the example:
+
+1. Configure the input stream to take the output stream that is producing the YAML formatted data.
+2. Device detection is not needed, only usage sharing, so replace the `DeviceDetectionPipelineBuilder` with `FiftyOnePipelineBuilder` and remove all the builder options that are no longer valid.
+3. Configure the `setShareUsage` option to true.
+4. Remove the code to get the device detection result and write an output file.
+
+This code should now be able to consume the output from the low-level code and send the usage data 
+back to 51Degrees for analysis.
+
