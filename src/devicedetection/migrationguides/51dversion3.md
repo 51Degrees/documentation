@@ -585,19 +585,16 @@ Pipeline pipeline = new DeviceDetectionPipelineBuilder()
 Settings will be dependent on your old implementation:
 
 - If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, change the first line to `.useCloud` and pass in the resource key you created.
-- If using `MemoryFactory` rather that `StreamFactory` then change the performance profile to `MaxPerformance`.
-- If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionHashEngineBuilder`. The `setCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
-- If you have auto updates disabled then remove the `setDataUpdateLinceseKey` line and instead use `setAutoUpdate(false)` and `setUpdateOnStartup(false)`
+- If using `MemoryFactory` rather than `StreamFactory` then change the performance profile to `MaxPerformance`.
+- If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionCloudEngineBuilder` (cache is not available on hash engine). The `setCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
+- If you have auto updates disabled then remove the `setDataUpdateLincenseKey` line and instead use `setAutoUpdate(false)` and `setUpdateOnStartup(false)`
 
 Regardless of the details above, a configuration file can be used instead:
 
 ```{java}
 // Create the configuration object
 File file = new File("yourconfiguration.xml").getFile());
-JAXBContext jaxbContext = JAXBContext.newInstance(PipelineOptions.class);
-Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-// Bind the configuration to a pipeline options instance
-PipelineOptions options = (PipelineOptions) unmarshaller.unmarshal(file);
+PipelineOptions pipelineOptions = PipelineOptionsFactory.getOptionsFromFile(file);
 
 // Create a simple pipeline to access the engine with.
 Pipeline pipeline = new FiftyOnePipelineBuilder()
@@ -652,13 +649,19 @@ match = provider.Match(userAgent);
 The Pipeline API is far more flexible so splits this line into 3 parts:
 
 ```{java}
-// 1. Create a 'FlowData' instance from the Pipeline. This is used to pass data in and access results.
-FlowData data = pipeline.createFlowData()
-// 2. Add 'evidence' to the FlowData and process it. In this case, we are adding a User-Agent HTTP header.
-    .addEvidence("header.user-agent", userAgent)
+// Create a 'FlowData' instance from the Pipeline. This is used to pass data in and access results.
+// always use "try with resources" to dispose the flowData when you are done.
+try(FlowData data = pipeline.createFlowData()){
+     // Add 'evidence' to the FlowData and process it. In this case, we are adding a User-Agent HTTP header.
+    data.addEvidence("header.user-agent", userAgent)
+    // remember to add client hints where applicable
+    .addEvidence("header.sec-ch-ua-mobile", secChUaMobile)
+    ...
     .process();
-// 3. The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.
-DeviceData device = data.get(DeviceData.class);
+    // The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.
+    DeviceData device = data.get(DeviceData.class);
+    ...
+}
 ```
 
 Finally, the way that data is accessed has also changed in several ways.
