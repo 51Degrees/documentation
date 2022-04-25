@@ -68,8 +68,8 @@ $(document).ready(function(){initNavTree('_concepts__data__evidence.html','');})
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
-<p><b>Evidence</b> is the term for input data used in the <a class="el" href="_concepts__pipeline.html">Pipeline</a>. <b>Evidence</b> can be anything but will usually be details relating to a <a class="el" href="_concepts__terminology.html#Concepts_Terminology_WebRequest">web request</a> such as HTTP headers, source IP address or query string parameters.</p>
-<p>The <b>evidence</b> values are used by <a class="el" href="_concepts__flow_elements__aspect_engine.html">aspect engines</a> to determine the details of the <a class="el" href="_concepts__terminology.html#Concepts_Terminology_Aspect">apsect</a> they are concerned with.</p>
+<p><b>Evidence</b> is the term for input data used in the <a class="el" href="_concepts__pipeline.html">Pipeline</a>. <b>Evidence</b> can be anything but will usually be details relating to a <a class="el" href="_concepts__terminology.html#Concepts_Terminology_WebRequest">web request</a> such as HTTP headers, source IP address, or query string parameters.</p>
+<p>The <b>evidence</b> values are used by <a class="el" href="_concepts__flow_elements__aspect_engine.html">aspect engines</a> to determine the details of the <a class="el" href="_concepts__terminology.html#Concepts_Terminology_Aspect">aspect</a> they are concerned with.</p>
 <h1 class="g-docs__section-heading">Data Structure</h1>
 <p>The precise details of the data structure behind <b>evidence</b> will vary depending on the language. However, all languages use a similar approach of exposing the stored evidence values as a collection of string key/value pairs.</p>
 <p>By convention, the key is all lower-case and uses a '.' character to separate the values into categories based on the source of that data. For example, all keys starting with 'header.' will have come from an HTTP header.</p>

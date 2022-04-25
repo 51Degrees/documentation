@@ -68,7 +68,7 @@ $(document).ready(function(){initNavTree('_concepts__flow_elements__fifty_one_on
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
-<p>A <b>51Degrees on-premise engine</b> adds functionality to an <a class="el" href="_concepts__flow_elements__on_premise_engine.html">on-premise engine</a> which is specific to 51Degrees. <a class="el" href="_concepts__meta_data__index.html">Metadata</a> is exposed which relates to the data structure common to most 51Degrees data files.</p>
+<p>A <b>51Degrees on-premise engine</b> adds functionality to an <a class="el" href="_concepts__flow_elements__on_premise_engine.html">on-premise engine</a> that is specific to 51Degrees. <a class="el" href="_concepts__meta_data__index.html">Metadata</a> is exposed which relates to the data structure common to most 51Degrees data files.</p>
 <p>In many cases, a <b>51Degrees engine</b> contains a <a class="el" href="_concepts__terminology.html#Concepts_Terminology_NativeCode">native</a> binary which the <b>engine</b> acts as a wrapper for. This gives the improved performance achievable with <a class="el" href="_concepts__terminology.html#Concepts_Terminology_NativeCode">native</a> code, while still seamlessly slotting in with the target language (it is not always obvious that a <a class="el" href="_concepts__terminology.html#Concepts_Terminology_NativeCode">native</a> binary has been used). It also means that all languages the <b>engine</b> is implemented in can more readily benefit from any optimizations or features which are added to the <a class="el" href="_concepts__terminology.html#Concepts_Terminology_NativeCode">native</a> library.</p>
 <h1 class="g-docs__section-heading">Metadata</h1>
 <p>The majority of <b>51Degrees engines</b> share a similar data structure. This means <a class="el" href="_concepts__meta_data__index.html">metadata</a> is exposed in a common way for all <b>51Degrees engines</b> that share this structure.</p>
@@ -76,8 +76,8 @@ $(document).ready(function(){initNavTree('_concepts__flow_elements__fifty_one_on
 </div>
 </p>
 <h2>Properties<a class="anchor" id="Concepts_FlowElements_FiftyOneOnPremiseEngine_Properties"></a></h2>
-<p>The <b>properties</b> exposed by a <b>51Degrees engine</b> should not be seen differently from the <a class="el" href="_concepts__meta_data__element_properties.html">element properties</a> or <a class="el" href="_concepts__meta_data__aspect_properties.html">aspect properties</a> which are exposed by any other <b>engine</b>. They merely extend <a class="el" href="_concepts__meta_data__aspect_properties.html">aspect property</a> to add <a class="el" href="_concepts__meta_data__index.html">metadata</a> that is specific to the <b>properties</b> in 51Degrees' data structures.</p>
-<p>The metadata contained in an <b>51Degrees aspect property</b> is everything in an <a class="el" href="_concepts__meta_data__aspect_properties.html">aspect property</a> with the addition of:</p>
+<p>The <b>properties</b> exposed by a <b>51Degrees engine</b> should not be seen differently from the <a class="el" href="_concepts__meta_data__element_properties.html">element properties</a> or <a class="el" href="_concepts__meta_data__aspect_properties.html">aspect properties</a> that are exposed by any other <b>engine</b>. They merely extend <a class="el" href="_concepts__meta_data__aspect_properties.html">aspect property</a> to add <a class="el" href="_concepts__meta_data__index.html">metadata</a> that is specific to the <b>properties</b> in 51Degrees data structures.</p>
+<p>The metadata contained in a <b>51Degrees aspect property</b> is everything in an <a class="el" href="_concepts__meta_data__aspect_properties.html">aspect property</a> with the addition of:</p>
 <div class="g-table g-table--overflow"><table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Metadata  </td><td class="c-table__cell">Description   </td></tr>
@@ -86,15 +86,15 @@ $(document).ready(function(){initNavTree('_concepts__flow_elements__fifty_one_on
 <tr class="c-table__row">
 <td class="c-table__cell">URL  </td><td class="c-table__cell">A URL where more information on the <b>property</b> can be found.   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Component  </td><td class="c-table__cell">The <b>component</b> which the <b>property</b> belongs to. This is subtly different to the category, in that a <b>profile</b> defines the values for all the <b>properties</b> of a single <b>component</b>, which likely contains multiple categories of <b>properties</b>.   </td></tr>
+<td class="c-table__cell">Component  </td><td class="c-table__cell">The <b>component</b> to which the <b>property</b> belongs. This is subtly different from the category, in that a <b>profile</b> defines the values for all the <b>properties</b> of a single <b>component</b>, which likely contains multiple categories of <b>properties</b>.   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Values  </td><td class="c-table__cell">The <b>values</b> which the <b>property</b> can have. As a simple example, a <b>property</b> named <code>'IsSmartPhone'</code> might have three values: <code>true</code>, <code>false</code> and <code>unknown</code>.   </td></tr>
+<td class="c-table__cell">Values  </td><td class="c-table__cell">The <b>values</b> that the <b>property</b> can have. As a simple example, a <b>property</b> named <code>'IsSmartPhone'</code> might have three values: <code>true</code>, <code>false</code>, and <code>unknown</code>.   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Default Value  </td><td class="c-table__cell">The default <b>value</b> for the <b>property</b> if it is not otherwise known. In the above example, the <b>property</b> named <code>'IsSmartPhone'</code> would probably have <code>unknown</code> as the default value.   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">List  </td><td class="c-table__cell">Whether or not the <b>property</b> may have multiple values. For example, the connectivity types a device supports would be a list, as a single device might support Bluetooth, HSDPA, LTE, WiFi, etc.   </td></tr>
+<td class="c-table__cell">List  </td><td class="c-table__cell">Whether or not the <b>property</b> may have multiple values. For example, the connectivity types a device supports would be a list, as a single device might support Bluetooth, HSDPA, LTE, Wi-Fi, etc.   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Obsolete  </td><td class="c-table__cell">Whether the <b>property</b> is obsolete and only exists to maintain backwards compatibility.   </td></tr>
+<td class="c-table__cell">Obsolete  </td><td class="c-table__cell">Whether the <b>property</b> is obsolete and only exists to maintain backward compatibility.   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Display Order  </td><td class="c-table__cell">The suggested order in which to display the <b>property</b> when listing <b>properties</b>.   </td></tr>
 <tr class="c-table__row">
@@ -102,11 +102,11 @@ $(document).ready(function(){initNavTree('_concepts__flow_elements__fifty_one_on
 <tr class="c-table__row">
 <td class="c-table__cell">Show  </td><td class="c-table__cell">Whether the <b>property</b> should be displayed in situations such as a page listing <b>properties</b>. Less important <b>properties</b> may not be displayed.   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Show Values  </td><td class="c-table__cell">Whether values of the <b>property</b> should be displayed in situations such as a page listing the <b>property</b>'s values. Showing all the values can make a very long list.   </td></tr>
+<td class="c-table__cell">Show Values  </td><td class="c-table__cell">Whether values of the <b>property</b> should be displayed in situations such as a page listing the <b>property's</b> values. Showing all the values can make a very long list.   </td></tr>
 </table>
 </div><h2>Values<a class="anchor" id="Concepts_FlowElements_FiftyOneOnPremiseEngine_Values"></a></h2>
 <p><b>Values</b> refer to all <b>values</b> which the associated <b>properties</b> can take in the current data file. The metadata for <b>values</b> of a <b>property</b> are exposed by an <b>engine</b>.</p>
-<p>Each <b>property</b> has a set of <b>values</b> which it can return. These <b>values</b> are exposed by a <b>51Degrees engine</b> and give more information on what the implications of a <b>value</b> are.</p>
+<p>Each <b>property</b> has a set of <b>values</b> that it can return. These <b>values</b> are exposed by a <b>51Degrees engine</b> and give more information on what the implications of a <b>value</b> are.</p>
 <p>The metadata contained in a <b>value</b> is:</p>
 <div class="g-table g-table--overflow"><table class="c-table">
 <tr class="c-table__row--heading">
@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('_concepts__flow_elements__fifty_one_on
 <tr class="c-table__row">
 <td class="c-table__cell">Name  </td><td class="c-table__cell">The <b>value</b> as a string. This uniquely identifies the <b>value</b> only within the <b>values</b> relating to the same <b>property</b>.   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Property  </td><td class="c-table__cell">The <b>property</b> which the <b>value</b> relates to. This, in combination with the name, uniquely identifies the <b>value</b> within the <b>51Degrees engine</b> it belongs to. For example, there may be many <b>values</b> whose name is <code>true</code>, but each is a <b>value</b> for a different <b>property</b>.   </td></tr>
+<td class="c-table__cell">Property  </td><td class="c-table__cell">The <b>property</b> to which the <b>value</b> relates. This, in combination with the name, uniquely identifies the <b>value</b> within the <b>51Degrees engine</b> it belongs to. For example, there may be many <b>values</b> whose name is <code>true</code>, but each is a <b>value</b> for a different <b>property</b>.   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Description  </td><td class="c-table__cell">A description of the <b>value</b> explaining what it refers to, and what it means if a <b>profile</b> has this <b>value</b>.   </td></tr>
 <tr class="c-table__row">
@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('_concepts__flow_elements__fifty_one_on
 <tr class="c-table__row">
 <td class="c-table__cell">Id  </td><td class="c-table__cell">The unique id of the <b>component</b>. This is usually a number and will remain the same when a data file is updated.   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Name  </td><td class="c-table__cell">The name of the <b>component</b> which gives a more 'human' identifier than id. By convention this is unique within the data file.   </td></tr>
+<td class="c-table__cell">Name  </td><td class="c-table__cell">The name of the <b>component</b> that gives a more 'human' identifier than id. By convention, this is unique within the data file.   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Default profile  </td><td class="c-table__cell">The default <b>profile</b> for the <b>component</b>. This is used to provide <b>values</b> for the <b>component's</b> <b>properties</b> when a <b>profile</b> matching the <a class="el" href="_concepts__data__evidence.html">evidence</a> cannot be found.   </td></tr>
 <tr class="c-table__row">
@@ -146,17 +146,17 @@ $(document).ready(function(){initNavTree('_concepts__flow_elements__fifty_one_on
 <tr class="c-table__row">
 <td class="c-table__cell">Id  </td><td class="c-table__cell">The unique id of the <b>profile</b>. This is usually a number and will remain the same when a data file is updated.   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Name  </td><td class="c-table__cell">The name of the <b>profile</b> which gives a more 'human' identifier than id, usually describing what the <b>values</b> it contains are. By convention this is unique within the data file.   </td></tr>
+<td class="c-table__cell">Name  </td><td class="c-table__cell">The name of the <b>profile</b> that gives a more 'human' identifier than id, usually describing what the <b>values</b> it contains are. By convention, this is unique within the data file.   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Component  </td><td class="c-table__cell">The <b>component</b> which the <b>profile</b> relates to. This is the <b>component</b> which the <b>profile</b> contains <b>values</b> for.   </td></tr>
+<td class="c-table__cell">Component  </td><td class="c-table__cell">The <b>component</b> to which the <b>profile</b> relates. This is the <b>component</b> which the <b>profile</b> contains <b>values</b> for.   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Values  </td><td class="c-table__cell">The <b>values</b> which define the <b>profile</b>.   </td></tr>
+<td class="c-table__cell">Values  </td><td class="c-table__cell">The <b>values</b> that define the <b>profile</b>.   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Signature Count  </td><td class="c-table__cell">The number of signatures which define how to find the <b>profile</b>. This is internal to the <b>engine</b> and differs slightly in meaning between each.   </td></tr>
+<td class="c-table__cell">Signature Count  </td><td class="c-table__cell">The number of signatures that define how to find the <b>profile</b>. This is internal to the <b>engine</b> and differs slightly in meaning between each.   </td></tr>
 </table>
 </div><h1 class="g-docs__section-heading">Native Library</h1>
 <p>Most <b>51Degrees on-premise engines</b> act as a wrapper between the target language and a <a class="el" href="_concepts__terminology.html#Concepts_Terminology_NativeCode">native</a> library.</p>
-<p>When the <b>engine</b> is packaged for release to a target language's package manager, multiple <a class="el" href="_concepts__terminology.html#Concepts_Terminology_NativeCode">native</a> binaries are included. Each is compiled for a specific platform (e.g. 32 bit Windows, or 64 bit OS X) and the correct binary is automatically selected at startup. </p>
+<p>When the <b>engine</b> is packaged for release to a target language's package manager, multiple <a class="el" href="_concepts__terminology.html#Concepts_Terminology_NativeCode">native</a> binaries are included. Each is compiled for a specific platform (e.g., 32-bit Windows, or 64-bit OS X) and the correct binary is automatically selected at start-up. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
