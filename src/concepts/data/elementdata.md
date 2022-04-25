@@ -19,7 +19,7 @@ However, **element data** must always expose its contents as a collection of [ke
 @defaultsnippet{Select a tab to view language specific information on the internal data structure.}
 @startsnippet{dotnet}
 By default, the `Dictionary` class is used with a case-insensitive key comparer.
-This can be overridden in the constructor to use any other IDictionary implementation 
+This can be overridden in the constructor to use any other `IDictionary` implementation 
 or an alternative key comparer.
 @endsnippet
 @startsnippet{java}
@@ -36,7 +36,7 @@ key comparator.
 @endsnippets
 
 An **element data** also contains references to the @pipeline it is associated with.
-This is useful for data which may just be a translation layer for other data, or if metadata
+This is useful for data that may just be a translation layer for other data, or if metadata
 needs to be retrieved by the **element data**.
 
 # Life Cycle
@@ -49,7 +49,7 @@ before they are added to @flowdata.
 Although **element data** instances are stored within @flowdata, they must not be 
 disposed of at the same time.
 This is because the **element data** may be stored in other locations such as a @cache.
-Equally, it must not be disposed when it leaves a @cache as it may still be in use
+Equally, it must not be disposed of when it leaves a @cache as it may still be in use
 externally to the @Pipeline.
 
 As such, memory managed languages rely on the finalizer to dispose of any

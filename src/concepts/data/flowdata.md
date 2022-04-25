@@ -24,7 +24,7 @@ Visit the @evidence page for more details.
 
 ## Element Data @anchor Concepts_Data_FlowData_ElementData
 
-The responses from each @flowelement are stored in key/value pair structure within **flow data**.
+The responses from each @flowelement are stored in a key/value pair structure within **flow data**.
 In each case, [the key](@ref Concepts_Data_ElementDataKey) is the string key of the @flowelement and the value is an @elementdata instance.
 The @elementdata structure is visible to each @flowelement so one @element can use the result
 from another @element in its processing.
@@ -40,7 +40,7 @@ Visit the @elementdata page for more details.
 
 The errors collection stores the details of any errors that occur during processing.
 The language's default exception handling mechanism will be used to catch
-and record any exceptions that occur when a @flowelement is processing. However, processing of 
+and record any exceptions that occur when a @flowelement is processing. However, the processing of 
 later @flowelements will continue as normal.
 
 By default, once all @flowelements have been processed, an exception will be thrown with details 
@@ -64,9 +64,9 @@ is configured to execute @elements in @parallel.
 
 ## Disposal / Cleanup
 
-**Flow data** disposal should be left up to the garbage collector. This enures that any resource which may still be needed (e.g. if it has been cached) is freed at the correct point.
+**Flow data** disposal should be left up to the garbage collector. This ensures that any resource which may still be needed (e.g., if it has been cached) is freed at the correct point.
 
-There are exceptions where **Flow data** must be disposed immediately after it is no longer needed. This is because the garbage collector does not free the resource fast enough under high load and cause out of memory exception. Two languages where this is required are Java and C#.
+There are exceptions where **Flow data** must be disposed immediately after it is no longer needed. This is because the garbage collector does not free the resource fast enough under high load and causes an out of memory exception. Two languages where this is required are Java and C#.
 
 @startsnippets
 @showsnippet{dotnet,C#}

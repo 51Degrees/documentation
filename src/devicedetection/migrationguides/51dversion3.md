@@ -800,7 +800,7 @@ pipeline = DeviceDetectionPipelineBuilder(
 
 Settings will be dependent on your old implementation:
 
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the resource key you created.
+- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the resource key you created.
 - If you want to trade some performance for system memory then change the performance profile to `MaxPerformance`, `Balanced` or `LowMemory`
 - If you want the data file to be updated automatically then remove `auto_update: false` and add your license key to the configuration. (Not available for free users)
 
