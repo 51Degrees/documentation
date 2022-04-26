@@ -1,5 +1,6 @@
 var _device_detection__features__index =
 [
+    [ "Apple Model Detection", "_device_detection__features__apple_detection.html", null ],
     [ "Results for Apple Devices", "_device_detection__features__apple_device_table.html", null ],
     [ "False Positives", "_device_detection__features__false_positive_control.html", null ],
     [ "Native Key Lookup", "_device_detection__features__native_key_lookup.html", null ],
