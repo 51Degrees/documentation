@@ -101,7 +101,20 @@ $(document).ready(function(){initNavTree('_features__usage_sharing.html','');});
 <h2>Minimum Entries per Message</h2>
 <p>The minimum number of <a class="el" href="_concepts__data__evidence.html">evidence</a> entries that must be added before the message will be sent to the <b>usage sharing</b> web service.</p>
 <h2>Repeat Evidence Interval</h2>
-<p>The maximum time period which <a class="el" href="_concepts__data__evidence.html">evidence</a> is stored for the purpose of filtering <a class="el" href="_features__usage_sharing.html#Features_UsageSharing_RepeatEvidence">repeat evidence</a>. </p>
+<p>The maximum time period which <a class="el" href="_concepts__data__evidence.html">evidence</a> is stored for the purpose of filtering <a class="el" href="_features__usage_sharing.html#Features_UsageSharing_RepeatEvidence">repeat evidence</a>.</p>
+<p><a class="anchor" id="Low_Level_Usage_Sharing"></a></p><h1 class="g-docs__section-heading">Usage Sharing for low-level APIs</h1>
+<p>The low-level device detection APIs such as C, Nginx and Varnish do not support <b>usage sharing</b> out of the box. However, some customers using these technologies still want to share usage with us in order to help us improve the accuracy of results.</p>
+<p>Our recommended approach in this situation is to have the low-level code write a log file containing the necessary evidence values from requests. This file can then be processed offline at a later date using one of the higher-level languages in order to share the data with 51Degrees.</p>
+<p>The <a class="el" href="_examples__device_detection__offline_processing__on_premise_hash.html">offline processing</a> examples provide a good sample for how this might work. These take a YAML file where each record represents a request. For example:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">---</div><div class="c-code__line">header.User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 15_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1</div><div class="c-code__line">---</div><div class="c-code__line">header.Sec-CH-UA-Mobile: ?0</div><div class="c-code__line">header.Sec-CH-UA-Platform: &#39;&quot;Windows&quot;&#39;</div><div class="c-code__line">header.Sec-CH-UA: &#39;&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;98&quot;, &quot;Google Chrome&quot;;v=&quot;98&quot;&#39;</div><div class="c-code__line">header.User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36</div><div class="c-code__line">...</div></div><p>You will need to modify your low-level code to output this data to a file (or memory stream, etc). As a minimum, the values below MUST be present for each record. If not, the record will be discarded by our backend processing system.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">header.user-agent [The value of the User-Agent HTTP header]</div><div class="c-code__line">header.host: [The value of the Host HTTP header]</div><div class="c-code__line">server.client-ip: [The source public IP that is making the request to your server]</div></div><p>The output will then need to be consumed by a process using one of the higher-level APIs. You can of course use whatever format you wish for transferring the data between your low-level code and the usage sharing process. If using the suggested YAML format and the offline processing example, the following changes will need to be made to the example:</p>
+<ol type="1">
+<li>Configure the input stream to take the output stream that is producing the YAML formatted data.</li>
+<li>Device detection is not needed, only usage sharing, so replace the <code>DeviceDetectionPipelineBuilder</code> with <code>FiftyOnePipelineBuilder</code> and remove all the builder options that are no longer valid.</li>
+<li>Configure the <code>setShareUsage</code> option to true.</li>
+<li>Remove the code to get the device detection result and write an output file.</li>
+</ol>
+<p>This code should now be able to consume the output from the low-level code and send the usage data back to 51Degrees for analysis. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
