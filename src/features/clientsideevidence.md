@@ -121,5 +121,5 @@ and Java Servlet integrations
 For more detailed, language-specific steps, see the 
 [web integration examples](@ref Examples_WebIntegration) or the engine-specific 
 examples such as the 
-[device detection examples](@ref Examples_DeviceDetection_WebIntegration_Examples)
+[device detection examples](@ref Examples_DeviceDetection_GettingStarted_Web_Index)
 or [reverse geocoding examples](@ref Examples_ReverseGeocoding_WebIntegration_Examples)

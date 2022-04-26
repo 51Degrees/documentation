@@ -10,7 +10,7 @@ Depending on the language, implementation of features such as
 @clientsideevidence may be handled automatically as well.
 
 For engine-specific examples, see:
-- [device detection web integration](@ref Examples_DeviceDetection_WebIntegration_Examples)
+- [device detection web integration](@ref Examples_DeviceDetection_GettingStarted_Web_Index)
 - [reverse geocoding web integration](@ref Examples_ReverseGeocoding_WebIntegration_Examples)
 
 @startsnippets
