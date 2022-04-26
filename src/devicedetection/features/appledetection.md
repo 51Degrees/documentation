@@ -2,7 +2,9 @@
 
 # Introduction
 
-In the early days of the internet, the User Agent header was made part of the 
+In the early days of the internet, the 
+[User Agent header](https://51degrees.com/blog/understanding-user-agent-string) 
+was made part of the 
 [HTTP/1.0 specification](https://datatracker.ietf.org/doc/html/rfc1945#page-46).
 
 > This is for statistical purposes,
@@ -18,7 +20,7 @@ the request.
 In the case of mobile devices, the native hardware model name is also included in the User Agent.
 This means the web server can additionally determine details about the hardware making the request.
 
-Apple are unique in never having included the mobile device model name in the User Agent. 
+Apple are unique as they have never included the mobile device model name in the User Agent. 
 Consequently, it is generally not possible to identify Apple devices from the User Agent alone. 
 (This is not always the case. Some apps, such as Facebook, will add the model name to the 
 User Agent when they make requests)
