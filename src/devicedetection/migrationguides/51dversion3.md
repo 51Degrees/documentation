@@ -900,7 +900,7 @@ $flowData->evidence->set("header.user-agent", userAgent);
 // 3. Process the evidence.
 $pipelineResult = $flowData->process();
 // 4. The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.
-$device = $result->get("device")
+$device = $pipelineResult->get("device")
 ```
 
 Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found. For more detail on this see the @falsepositivecontrol feature page.
