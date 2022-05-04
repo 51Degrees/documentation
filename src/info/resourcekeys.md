@@ -31,7 +31,7 @@ First, check that you have selected properties that are supported by the Engine.
 A Resource Key cannot have its list of properties changed, but you can follow the @configuratorexplanation to create a new different Resource Key which does have access to the properties you need.
 
 Second, if the above does not solve the issue then make sure that you are authorized to use the properties selected when creating the Resource Key. To do this, browse to Cloud service using 
-your Resource Key: `https://cloud.51degrees.com/api/v4/<resource_key>.json` (delete `<` and `>` when providing your Resource Key). You will see a response containing values for your configure properties like the following:
+your Resource Key: `%https://cloud.51degrees.com/api/v4/<resource_key>.json` (delete `<` and `>` when providing your Resource Key). You will see a response containing values for your configure properties like the following:
 
 ```json
 {
