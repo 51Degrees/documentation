@@ -7,10 +7,11 @@ This example shows how process data for later viewing using a Device Detection H
 @startsnippets
 @grabexample{device-detection-cxx,_hash_2_offline_processing_8c,C}
 @showsnippet{cpp,C++}
+@grabexample{device-detection-dotnet,_on_premise_2_offline_processing-_console_2_program_8cs,C#}
 @grabexample{device-detection-java,console_2_offline_processing_8java,Java}
 @showsnippet{php,PHP}
 @grabexample{device-detection-node,onpremise_2offlineprocessing-console_2offline_processing_8js,Node.js}
-@grabexample{device-detection-python,onpremise_2offline_processing_8py,Python}
+@grabexample{device-detection-python,onpremise_2offlineprocessing_8py,Python}
 @startsnippet{cpp}
 An offline (or batch) processing example has been provided by its C variant. Example of how to obtain data for offline processing in C++ can be found in other Device Detection C++ examples.
 @endsnippet

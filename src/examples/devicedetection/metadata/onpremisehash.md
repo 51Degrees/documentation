@@ -1,15 +1,15 @@
-@page Examples_DeviceDetection_Metadata_OnPremiseHash On-Premise Hash
+@page Examples_DeviceDetection_Metadata_OnPremiseHash On-Premise
 
 # Introduction
 
-This example shows how to interrogate the meta data associated with the contents of a Device Detection Hash @datafile.
+This example shows how to interrogate the meta data associated with the contents of a Device Detection @datafile.
 
 @startsnippets
 @showsnippet{c,C}
 @grabexample{device-detection-cxx,_hash_2_meta_data_8cpp,C++}
-@grabexample{device-detection-dotnet,_hash_2_metadata_2_program_8cs,C#}
-@grabexample{device-detection-java,hash_2_meta_data_8java,Java}
-@grabexample{device-detection-php-onpremise,onpremise_2metadata_8php,PHP}
+@grabexample{device-detection-dotnet,_on_premise_2_metadata-_console_2_program_8cs,C#}
+@grabexample{device-detection-java,_metadata_on_prem_8java,Java}
+@grabexample{device-detection-php-onpremise,onpremise_2metadata_console_8php,PHP}
 @grabexample{device-detection-node,onpremise_2metadata-console_2meta_data_8js,Node.js}
 @grabexample{device-detection-python,onpremise_2metadata_8py,Python}
 @startsnippet{c}
