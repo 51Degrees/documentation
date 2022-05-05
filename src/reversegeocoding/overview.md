@@ -8,11 +8,9 @@ longitude information.
 
 This service is currently only available via a cloud service rather than a local on-premise solution.
 
-The 51Degrees cloud service exposes location data from two different providers:
+The 51Degrees cloud service exposes location data from the following provider:
 1. A 51Degrees-hosted solution based on the [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) 
 API and backed by [Open Street Map](https://www.openstreetmap.org/) data.
-2. The [GeoMprint](https://www.digitalelement.com/solutions/geomprint/) product from 
-[Digital Element](https://www.digitalelement.com/).
 
 There is a [quickstart](@ref Quickstart_ReverseGeocoding) guide to get you up and running ASAP or you can
 browse the more in-depth [examples](@ref Examples_ReverseGeocoding_Index) first.
