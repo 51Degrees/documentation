@@ -88,6 +88,7 @@ var NAVTREEINDEX0 =
 "_examples__device_detection__manual_data_reload__on_premise_hash.html":[6,1,3,0],
 "_examples__device_detection__match_metrics__index.html":[6,1,4],
 "_examples__device_detection__match_metrics__on_premise_hash.html":[6,1,4,0],
+"_examples__device_detection__metadata__cloud.html":[6,1,5,1],
 "_examples__device_detection__metadata__index.html":[6,1,5],
 "_examples__device_detection__metadata__on_premise_hash.html":[6,1,5,0],
 "_examples__device_detection__native_key_lookup__cloud.html":[6,1,6,0],
