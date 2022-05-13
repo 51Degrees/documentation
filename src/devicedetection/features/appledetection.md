@@ -25,6 +25,11 @@ Consequently, it is generally not possible to identify Apple devices from the Us
 (This is not always the case. Some apps, such as Facebook, will add the model name to the 
 User Agent when they make requests)
 
+Additionally, Apple have certain tools within their system that can change the values within 
+the User Agent string. For example, an iPhone browsing the web in Desktop mode would have a 
+User Agent that identifies the device as a Mac, rather than an iPhone. It is impossible to detect 
+an iPhone browsing in Desktop mode from the User Agent alone.
+
 51Degrees uses client-side code to collect additional information from the device, which is used
 to determine the model. This page explains how the feature works.
 
