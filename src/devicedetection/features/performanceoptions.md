@@ -6,6 +6,9 @@ For device detection, as with many computing tasks, there are tradeoffs to be ma
 
 Rather than trying to solve this with a one-size-fits-all approach, our device detection API allows you to easily configure the solution to suit your requirements.
 
+Be aware that all these options only apply to the on-premise implementation. The cloud solution is
+inherently far more limited in the range of options you have to adjust performance.
+
 # Performance Profile Templates
 
 At the low level, the device detection API uses various collections of data from the data file in order to perform detections.
@@ -41,3 +44,18 @@ Note that if both graphs are enabled, performance will be used first. Predictive
 The default graph options are defined by the performance templates described above. At time of writing, all templates enable predictive and disable performance.
 This is done in order to maximize accuracy and ensure consistent device detection results between the profiles.
 
+# Restrict properties
+
+When the device detection engine is created, you can specify exactly which properties you want 
+to be populated in the result.
+By default, all properties are populated. By limiting the properties to only those that you're 
+actually going to use, performance may be significantly improved.
+
+Internally, detection is actually performed separately for each **component** (The 4 components 
+associated with device detection are hardware, operating system, browser and crawler)
+This means that if you only want 'IsMobile' and 'HardwareName', which are both hardware properties, 
+then the algorithm can skip the detection for operating system, browser and crawler.
+
+As with all the performance options, we recommend experimenting to see what effect this has in 
+your specific scenario. See the [performance examples](@ref Examples_DeviceDetection_Performance_OnPremiseHash)
+for a demonstration of how to specify the properties you want in your language of choice.
