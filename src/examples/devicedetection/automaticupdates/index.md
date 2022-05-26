@@ -5,3 +5,5 @@
 @subpage Examples_DeviceDetection_AutomaticUpdates_PollingInterval_Index
 
 @subpage Examples_DeviceDetection_AutomaticUpdates_UpdateOnStartup_Index
+
+@subpage Examples_DeviceDetection_AutomaticUpdates_OnPremise

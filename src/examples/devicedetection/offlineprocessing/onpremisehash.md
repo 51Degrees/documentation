@@ -13,7 +13,7 @@ This example shows how process data for later viewing using a Device Detection H
 @grabexample{device-detection-node,onpremise_2offlineprocessing-console_2offline_processing_8js,Node.js}
 @grabexample{device-detection-python,onpremise_2offlineprocessing_8py,Python}
 @startsnippet{cpp}
-An offline (or batch) processing example has been provided by its C variant. Example of how to obtain data for offline processing in C++ can be found in other Device Detection C++ examples.
+There is no offline (or batch) processing example for C++, see the C tab instead.
 @endsnippet
 @startsnippet{php}
 PHP designed specifically to service web requests. So, for this reason, an offline (or batch) processing example has been omitted. Processing data from a file is possible using the PHP API. However, the use of another language is advised.

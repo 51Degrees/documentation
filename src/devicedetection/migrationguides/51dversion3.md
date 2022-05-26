@@ -209,7 +209,7 @@ Note: If you are working with a ASP.NET or ASP.NET Core web app then check those
 The [getting started](@ref Examples_DeviceDetection_GettingStarted_Console_Index) examples may 
 be a useful reference while migrating.
 
-First, add the `FiftyOne.DeviceDetection` NuGet package.
+First, add the `FiftyOne.DeviceDetection` NuGet package. Don't forget to remove the old `51Degrees.mobi-core` package and any related packages as well.
 
 The old (V3) device detection API generally had two initialization steps, one to create a `DataSet` and one to create a `Provider` from that `DataSet`.
 The precise details would depend on:
@@ -359,7 +359,7 @@ Note - The redirect, image optimization and performance monitoring services are 
 The [getting started](@ref Examples_DeviceDetection_GettingStarted_Web_Index) examples may 
 be a useful reference while migrating.
 
-First, add the `FiftyOne.DeviceDetection` and `FiftyOne.Pipeline.Web` NuGet packages.
+First, add the `FiftyOne.DeviceDetection` and `FiftyOne.Pipeline.Web` NuGet packages. Don't forget to remove the old `51Degrees.mobi-core` package and any related packages as well.
 
 The main difference is in the configuration file supplied to the Pipeline. This must be in the App_Data folder and can be named:
 
@@ -443,7 +443,7 @@ Note - The redirect, image optimization and performance monitoring services are 
 The [getting started](@ref Examples_DeviceDetection_GettingStarted_Web_Index) examples may 
 be a useful reference while migrating.
 
-First, add the `FiftyOne.DeviceDetection` and `FiftyOne.Pipeline.Web` NuGet packages.
+First, add the `FiftyOne.DeviceDetection` and `FiftyOne.Pipeline.Web` NuGet packages. Don't forget to remove the old `51Degrees.mobi-core` package and any related packages as well.
 
 Add the following lines to you 'ConfigureService' method:
 
