@@ -73,6 +73,7 @@ var NAVTREEINDEX0 =
 "_examples__device_detection__automatic_updates__file_system_watcher__index.html":[6,1,0,0],
 "_examples__device_detection__automatic_updates__file_system_watcher__on_premise_hash.html":[6,1,0,0,0],
 "_examples__device_detection__automatic_updates__index.html":[6,1,0],
+"_examples__device_detection__automatic_updates__on_premise.html":[6,1,0,3],
 "_examples__device_detection__automatic_updates__polling_interval__index.html":[6,1,0,1],
 "_examples__device_detection__automatic_updates__polling_interval__on_premise_hash.html":[6,1,0,1,0],
 "_examples__device_detection__automatic_updates__update_on_startup__index.html":[6,1,0,2],
