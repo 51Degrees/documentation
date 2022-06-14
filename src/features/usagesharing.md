@@ -3,8 +3,8 @@
 # Introduction
 
 Some of the services offered by 51Degrees benefit from @evidence (optionally) being sent back to
-51Degrees' data processing system from live installations of the @Pipeline. We use
-this evidence to ensure that our data is up-to-date, comprehensive and continues to
+51Degrees data processing system from live installations of the @Pipeline. We use
+this evidence to ensure that our data is up-to-date, comprehensive, and continues to
 provide accurate results.
 
 
@@ -21,13 +21,13 @@ and an appropriate warning logged.
 
 In languages that support multiple threading, **Usage sharing** will typically use a producer/consumer model,
 where the 'main' thread adds the evidence to a queue while a background thread takes items from this queue,
-transforms them into the appropriate format, adds them into a message and sends the message when ready.
+transforms them into the appropriate format, adds them into a message, and sends the message when ready.
 This is done to avoid blocking the @Pipeline process thread.
 
 ## Repeated Evidence @anchor Features_UsageSharing_RepeatEvidence
 
 To avoid situations where the same @evidence is sent multiple times (for example, a single user
-visiting multiple pages on a web site), we keep track of the @evidence that has been shared over
+visiting multiple pages on a website), we keep track of the @evidence that has been shared over
 a defined time period (maximum 20 minutes by default) and only share @evidence which is different to any
 already shared during the window.
 
@@ -52,7 +52,7 @@ These are the rules for whether or not a particular piece of evidence is shared:
 
 - Any evidence named 'header.&lt;name&gt;', if &lt;name&gt; is **not** on a configured blacklist.
 - Any evidence named 'query.&lt;name&gt;', if &lt;name&gt; **is** on a configured whitelist.
-- Any evidence named 'cookie.&lt;name&gt;' is ignored, unless &lt;name&gt; starts with '51D_'
+- Any evidence named 'cookie.&lt;name&gt;' is ignored, unless &lt;name&gt; starts with '51D_'.
 - Any other evidence is shared if it is not on a configured blacklist.
 
 The various blacklists and whitelists can be configured using the **share usage** @elementbuilder.
@@ -114,7 +114,7 @@ header.User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 
 ...
 ```
 
-You will need to modify your low-level code to output this data to a file (or memory stream, etc). 
+You will need to modify your low-level code to output this data to a file (or memory stream, etc.). 
 As a minimum, the values below MUST be present for each record. If not, the record 
 will be discarded by our backend processing system.
 
