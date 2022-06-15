@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_AutomaticUpdates_FileSystemWatcher_OnPremiseHash On-Premise Hash
+@page Examples_DeviceDetection_DataFileUpdates_FileSystemWatcher_OnPremiseHash On-Premise Hash
 
 # Introduction
 

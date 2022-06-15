@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_ManualDataReload_OnPremiseHash On-Premise Hash
+@page Examples_DeviceDetection_DataFileUpdates_Manual Manual
 
 # Introduction
 
