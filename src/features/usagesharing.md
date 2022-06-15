@@ -141,8 +141,8 @@ back to 51Degrees for analysis.
 
 The steps to configure **usage sharing** is dependant on the programming language you use.
 
-For Java, .NET, Python, and Node, please see our [on-premise examples](@Examples_DeviceDetection_GettingStarted_Console_OnPremise) for more information on how to enable
-**usage sharing**. You will spot a line of code in the examples referring to `SetShareUsage`, `shareUsage` or `usage_sharing`. Ensure this is set to `true` to enable **usage sharing**.
+For Java, .NET, Python, and Node, please see our [on-premise examples](@ref Examples_DeviceDetection_GettingStarted_Console_OnPremise) for more information on how to enable
+**usage sharing**. You will spot a line of code in the examples referring to `SetShareUsage`, `shareUsage`, or `usage_sharing`. Ensure this is set to `true` to enable **usage sharing**.
 
 At this time we do not have **usage sharing** for PHP or other languages. If you'd like to make a feature
 request, please [get in touch](https://51degrees.com/contact-us).
