@@ -12,7 +12,7 @@ provide accurate results.
 
 # How to enable usage sharing
 
-**Usage sharing** is enabled by default if you are using a pipeline builder that is derived from a 51Degrees pipeline builder (for example, DeviceDetetctionPipelineBuilder or FiftyOnePipelineBuilder). To configure the **usage sharing** feature, please refer to our [usage sharing examples](@ref Examples_UsageSharing Usage Sharing).
+**Usage sharing** is enabled by default if you are using a pipeline builder that is derived from a 51Degrees pipeline builder (for example, DeviceDetetctionPipelineBuilder or FiftyOnePipelineBuilder). To configure the **usage sharing** feature, please refer to our @ref Examples_UsageSharing examples.
 
 To enable **usage sharing** for lower-level APIs such as C, Nginx, and Varnish, please refer to the [Usage Sharing for lower-level APIs section](@ref Low_Level_Usage_Sharing) further down this page.
 
