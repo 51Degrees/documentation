@@ -10,6 +10,15 @@ provide accurate results.
 
 @dotfile usagesharing.gvdot
 
+# How to enable usage sharing
+
+**Usage sharing** is enabled by default if you are using a pipeline builder that is derived from a 51Degrees pipeline builder (for example, DeviceDetetctionPipelineBuilder or FiftyOnePipelineBuilder). To configure the **usage sharing** feature, please refer to our [usage sharing examples](@ref Examples_UsageSharing Usage Sharing).
+
+To enable **usage sharing** for lower-level APIs such as C, Nginx, and Varnish, please refer to the [Usage Sharing for lower-level APIs section](@ref Low_Level_Usage_Sharing) further down this page.
+
+At this time, we do not have **usage sharing** for PHP or other languages. If you'd like to make a feature
+request, please [get in touch](https://51degrees.com/contact-us).
+
 # Internals @anchor Features_UsageSharing_Internals
 
 To minimize any overhead of this feature, received requests are grouped and sent in batches,
@@ -91,7 +100,7 @@ The maximum time period which @evidence is stored for the purpose of filtering
 @anchor Low_Level_Usage_Sharing
 # Usage Sharing for low-level APIs
 
-The low-level device detection APIs such as C, Nginx and Varnish do not support **usage sharing** 
+The low-level device detection APIs such as C, Nginx, and Varnish do not support **usage sharing** 
 out of the box. However, some customers using these technologies still want to share usage with 
 us in order to help us improve the accuracy of results.
 
@@ -136,13 +145,3 @@ example, the following changes will need to be made to the example:
 
 This code should now be able to consume the output from the low-level code and send the usage data 
 back to 51Degrees for analysis.
-
-# Usage Sharing for other APIs
-
-The steps to configure **usage sharing** is dependant on the programming language you use.
-
-For Java, .NET, Python, and Node, please see our [on-premise examples](@ref Examples_DeviceDetection_GettingStarted_Console_OnPremise) for more information on how to enable
-**usage sharing**. You will spot a line of code in the examples referring to `SetShareUsage`, `shareUsage`, or `usage_sharing`. Ensure this is set to `true` to enable **usage sharing**.
-
-At this time we do not have **usage sharing** for PHP or other languages. If you'd like to make a feature
-request, please [get in touch](https://51degrees.com/contact-us).
