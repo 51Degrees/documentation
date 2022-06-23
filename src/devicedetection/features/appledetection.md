@@ -71,5 +71,5 @@ client-side code.
 
 - This [table](@ref DeviceDetection_Features_AppleDeviceTable) contains a break down of exactly which iPhone and iPad models our solution can identify.
 - Check the [getting started - web](@ref Examples_DeviceDetection_GettingStarted_Web_Index) examples for a demonstration of how to use this functionality.
-- Browse the many [blogs](http://51degrees.com/resources/blogs/tag/Apple) that we've produced relating to Apple.
+- Browse the many [blogs](https://51degrees.com/resources/blogs/tag/Apple) that we've produced relating to Apple.
 
