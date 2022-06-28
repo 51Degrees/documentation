@@ -31,9 +31,7 @@ are in a list supplied at construction time.
 
 ## Filter Aggregator
 
-The filter aggregator combines multiple filters together using a logical OR approach.
-I.e. If any one of the child filters would allow the inclusion of an evidence key then this 
-aggregator will allow it as well.
+The filter aggregator combines multiple filters together using a logical OR approach, i.e. if any one of the child filters would allow the inclusion of an evidence key then this aggregator will allow it as well.
 
 ## Share Usage Filter
 

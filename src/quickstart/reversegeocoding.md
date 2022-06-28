@@ -260,7 +260,7 @@ else:
 ```
 @endsnippet
 
-You can get all this code from the examples attached to each library on Github, and other examples as well. See below for the link to the appropriate getting-started example and other examples for each language.
+You can get all this code from the examples attached to each library on GitHub, and other examples as well. See below for the link to the appropriate getting-started example and other examples for each language.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -306,7 +306,7 @@ The list of @evidence keys which are used to add @evidence must be adhered to. I
 
 This property requires evidence values from JavaScript running on the client. It cannot be populated until a future request is made that contains this additional data.
 
-If this happens, check your calls to `flowData.evidence.add` and ensure that you are using valid evidence keys. There is deliberately no comprehensive list of evidence keys, because they vary depending on source and API queried. For geocoding, the evidence keys that are likely to be useful are
+If this happens, check your calls to `flowData.evidence.add` and ensure that you are using valid evidence keys. There is deliberately no comprehensive list of evidence keys, because they vary depending on source and API queried. For geocoding, the evidence keys that are likely to be useful are:
 
 * query.51d_pos_latitude
 * query.51d_pos_longitude

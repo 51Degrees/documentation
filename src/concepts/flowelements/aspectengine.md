@@ -4,8 +4,7 @@
 
 An **aspect engine** builds on the @flowelement concept to introduce the ability to:
 * cache processing results
-* handle cases where a property has not been populated by an **aspect engine**, but it could be if certain configuration 
-changes were made.
+* handle cases where a property has not been populated by an **aspect engine**, but it could be if certain configuration changes were made
 * [lazily load] (@ref Features_LazyLoading) values in the @flowdata
 
 In the same way a @flowelement can produce an @elementdata containing results of its processing, an 
@@ -47,7 +46,7 @@ particularly useful in a [web server](@term{WebServer}) where processing can sta
 received, and the [server](@term{WebServer}) can continue serving the page until it reaches a point where the result of the processing
 is needed.
 
-By default, @lazyloading is not enabled but can be via the **engine**'s builder.
+By default, @lazyloading is not enabled but can be via the **engine's** builder.
 
 Please note that @lazyloading is only available in a subset of languages. This is because it either is not possible, or doesn't make sense
 in some cases.
