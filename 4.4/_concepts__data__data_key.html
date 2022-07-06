@@ -72,7 +72,7 @@ $(document).ready(function(){initNavTree('_concepts__data__data_key.html','');})
 <h1 class="g-docs__section-heading">Internals</h1>
 <p>Exact implementation details for <b>data key</b> may vary depending on language. However, in each case, the primary features are an integer hash code and a list of values in a specific order.</p>
 <p>The hash code is calculated when the <b>data key</b> is created. It can subsequently be used as an efficient method to identify if one <b>data key</b> instance may match with another.</p>
-<p>When a hash match occurs, each individual key field value should also be checked for equality between the keys to ensure a true match. This is necessary because the possibility space for a large number of keys with arbitrary value types is far larger than that of a 32 bit integer, so hash collisions can occur.</p>
+<p>When a hash match occurs, each individual key field value should also be checked for equality between the keys to ensure a true match. This is necessary because the possibility space for a large number of keys with arbitrary value types is far larger than that of a 32-bit integer, so hash collisions can occur.</p>
 <h1 class="g-docs__section-heading">Usage Example</h1>
 <p>A data key builder is used to construct <b>data keys</b> by specifying the details of the keys to be included. This will often be a subset of the evidence keys stored in a <a class="el" href="_concepts__data__flow_data.html">flow data</a> instance. The diagram below shows an example <b>data key</b> being generated from the latitude and longitude values in an <a class="el" href="_concepts__data__evidence.html">evidence</a> collection.</p>
 <p><div class="dotgraph">
