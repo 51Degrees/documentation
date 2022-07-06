@@ -21,7 +21,7 @@ values into categories based on the source of that data.
 For example, all keys starting with 'header.' will have come from an HTTP header.
 
 The second part of the key indicates the specific name within the category.
-For example 'header.user-agent' refers to the 'User-Agent' HTTP header.
+For example 'header.user-agent' refers to the 'User Agent' HTTP header.
 
 Categories used by 51Degrees are:
 
@@ -48,7 +48,7 @@ Categories used by 51Degrees are:
 * Request metadata such as source IP address
 
 Any device making a request to a web site will include some of this information.
-For example, the User-Agent HTTP header is almost always populated as part of a
+For example, the User Agent HTTP header is almost always populated as part of a
 request.
 In some cases though, additional **evidence** providing more detail can be obtained
 from code running directly on the client device. In some cases, this may even be 

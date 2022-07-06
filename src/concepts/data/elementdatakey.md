@@ -33,10 +33,10 @@ it is still up to specific implementations to operate responsibly.
 
 ## Name Conflict Example
 
-Consider a @Pipeline with 2 @devicedetection engines. One determines values relating 
-to the device hardware. (i.e. manufacturer, screen information, CPU/GPU specs, etc)
+Consider a @Pipeline with two @devicedetection engines. One determines values relating 
+to the device hardware. (i.e. manufacturer, screen information, CPU/GPU specs, etc.)
 The other determines values relating to the software platform or operating system running 
-on the device. (i.e. Software vendor, name, version, etc)
+on the device. (i.e. software vendor, name, version, etc.)
 
 Each of these engines uses the same **element data key** as shown below:
 

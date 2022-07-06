@@ -61,7 +61,7 @@ with the configuration provided.
 A build method can take additional arguments and a **builder** may have multiple build methods.
 When an argument appears on all build methods for that **builder** it becomes compulsory.
 
-For example, a 'resource key' is compulsory for 51Degrees' @cloudengines. Consequently, it appears as 
+For example, a 'Resource Key' is compulsory for 51Degrees' @cloudengines. Consequently, it appears as 
 an argument in all build methods for the associated **builders**.
 
 Combinations of compulsory arguments can also be arranged. For example, 51Degrees' @onpremiseengines 

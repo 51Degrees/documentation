@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_AutomaticUpdates_OnPremise
+@page Examples_DeviceDetection_AutomaticUpdates_OnPremise On-Premise
 
 # Introduction
 
