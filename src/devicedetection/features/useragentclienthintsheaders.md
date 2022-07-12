@@ -27,5 +27,3 @@ In some cases, there are multiple pseudo-headers for a component. These are proc
 |Sec-CH-UA-Mobile|0||0|
 |Sec-CH-UA-Platform|0|0|0|
 |Sec-CH-UA-Platform-Version||0||
-
-Any evidence shared with us is subject to our [usage sharing](@ref Features_UsageSharing) terms. Please refer to our ['Usage sharing: how do we use your data'](https://51degrees.com/blog/usage-sharing-how-we-use-your-data) for more information.
