@@ -10,13 +10,13 @@ However, multiple UA-CH values are sometimes needed to fully identify a componen
 
 # Pseudo-headers
 
-We concatenate the various UA-CH headers that are needed to identify a component to create ‘pseudo-headers’. These are then used internally to perform the detection. The table below shows the pseudo-headers that exist for each component.
+We concatenate the various UA-CH headers that are needed to identify a component to create ‘pseudo-headers’. These are then used internally to perform the detection. The table below shows which pseudo-headers are required in order to detect each component.
 
 In some cases, there are multiple pseudo-headers for a component. These are processed in order from providing most detail to least. 
 
 ## Key
-0 = This value is required in order to determine the component.
-1/2 = One of these values are required. Supplying 1 will enable a more accurate result and removes the need to supply 2.
+- 0 = This value is required in order to determine the component.
+- 1/2 = One of these values are required. Supplying 1 will enable a more accurate result and removes the need to supply 2.
 
 |UA-CH header|Hardware|Platform|Browser/App|
 |---|---|---|---|
