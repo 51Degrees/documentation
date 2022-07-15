@@ -20,8 +20,7 @@ as there is [no other way to do so](https://docs.microsoft.com/en-us/microsoft-e
 This limited support will be superseded by functionality in version 4.4, which will 
 fully support the detection of devices, operating systems and browsers from UA-CH headers. 
 
-Full UA-CH detection will also require a new data file (date of availability TBC). The format of 
-the data file remains the same (what we refer to as Hash v4.1). But the contents will be updated 
+Full UA-CH detection will also require a [new data file](https://51degrees.com/blog/updates-to-user-agent-client-hints-version-4-4). The format of the data file remains the same (what we refer to as Hash v4.1). But the contents will be updated 
 to support detection from the full range of UA-CH values.
 
 Note that newer and older API versions and data files will be fully cross-compatible with each 
@@ -57,11 +56,11 @@ When using the Pipeline web integration, most languages will automatically set t
 headers for you as well. If not using a web integration, or your language does not support it, 
 you will need to set the response headers manually.
 
-## Pseudo-headers
+## Pseudo-headers @anchor UACH_Http_Headers_Pseudoheaders
 
 51Degrees groups properties associated with the request by ‘component’. The components 51Degrees recognize are hardware device, platform (operating system), browser, and crawler.
 
-The User Agent header contains information relating to all four of these components. [User Agent Client Hints](@ref DeviceDetection_Features_UserAgentClientHints) values are different in that they relate to varying numbers of components. For example, the Sec-CH-UA-Model header only relates to the hardware device component.
+The User Agent header contains information relating to all four of these components. User Agent Client Hints values are different in that they relate to varying numbers of components. For example, the Sec-CH-UA-Model header only relates to the hardware device component.
 
 However, multiple UA-CH values are sometimes needed to fully identify a component. Apple devices running Chrome will not populate the Sec-CH-UA-Model header, so that won't help give us an answer to the hardware component. Instead, we need the Sec-CH-UA-Platform header, which can at least tell us that this is an iOS device.
 
