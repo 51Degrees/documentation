@@ -64,23 +64,28 @@ The User Agent header contains information relating to all four of these compone
 
 However, multiple UA-CH values are sometimes needed to fully identify a component. Apple devices running Chrome will not populate the Sec-CH-UA-Model header, so that won't help give us an answer to the hardware component. Instead, we need the Sec-CH-UA-Platform header, which can at least tell us that this is an iOS device.
 
-We concatenate the various UA-CH headers that are needed to identify a component to create ‘pseudo-headers’. These are then used internally to perform the detection. The table below shows which pseudo-headers are required in order to detect each component.
+We concatenate the various UA-CH headers that are needed to identify a component to create ‘pseudo-headers’. These are then used internally to perform the detection. 
+
+The table below shows which pseudo-headers are required in order to detect each component. These are the bare minimum pseudo-headers we use to detect the component, however, we recommend providing all Sec-CH-UA values for the best detection. Additionally, this table is only applicable for Chromium-based browsers; to detect non-Chromium browsers, you will need to continue supplying User Agent information.
+
+Some pseudo-headers are not required to detect the component, but can provide more detailed detection results. For example, Sec-CH-UA-Platform-Version is not required to determine the Platform component, but provides additional version information when supplied.
 
 In some cases, there are multiple pseudo-headers for a component. These are processed in order from providing most detail to least. 
 
 ### Key
-- 0 = This value is required in order to determine the component.
-- 1/2 = One of these values are required. Supplying 1 will enable a more accurate result and removes the need to supply 2.
+- != This value is required in order to determine the component.
+- !*= This value is not required, but if provided will allow more detailed results.
+- 1 and 2 = One of these values are required. Supplying 1 will enable a more accurate result and removes the need to supply 2.
 
 |UA-CH header|Hardware|Platform|Browser/App|
 |---|---|---|---|
 |Sec-CH-UA|||2|
 |Sec-CH-UA-Version|||| 
 |Sec-CH-UA-Full-Version-List|||1|
-|Sec-CH-UA-Model|0|||
-|Sec-CH-UA-Mobile|0||0|
-|Sec-CH-UA-Platform|0|0|0|
-|Sec-CH-UA-Platform-Version||||
+|Sec-CH-UA-Model|!|||
+|Sec-CH-UA-Mobile|!||!|
+|Sec-CH-UA-Platform|!|!|!|
+|Sec-CH-UA-Platform-Version||!*||
 
 ## Cloud @anchor UACH_Cloud
 
