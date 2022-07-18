@@ -73,8 +73,8 @@ Some pseudo-headers are not required to detect the component but can provide mor
 In some cases, there are multiple pseudo-headers for a component. These are processed in order from providing most detail to least. 
 
 ### Key
-- x= This value is required in order to determine the component.
-- x*= This value is not required, but if provided will allow more detailed results.
+- x = This value is required in order to determine the component.
+- x* = This value is not required, but if provided will allow more detailed results.
 - y and z = One of these values are required. Supplying y will enable a more accurate result and removes the need to supply z.
 
 |UA-CH header|Hardware|Platform|Browser/App|
