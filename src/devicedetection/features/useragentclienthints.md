@@ -79,7 +79,7 @@ In some cases, there are multiple pseudo-headers for a component. These are proc
 
 |UA-CH header|Hardware|Platform|Browser/App|
 |---|---|---|---|
-|Sec-CH-UA|||y|
+|Sec-CH-UA|x||y|
 |Sec-CH-UA-Version|||| 
 |Sec-CH-UA-Full-Version-List|||z|
 |Sec-CH-UA-Model|x|||
