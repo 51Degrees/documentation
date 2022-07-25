@@ -2,27 +2,34 @@
 
 # Introduction
 
-Apple has continually worked to homogenize any information that a website can get about a device, through JavaScript or any other means. For more information look at our [Upgrade Apple Device](https://51degrees.com/blog/upgrade-apple-device-detection) blog. Below we cover the detection results that are experienced for each iPhone and iPad device, starting from the iPhone 3GS and the first iPad model. 
+Apple has continually worked to homogenize any information that a website can get about a device, through JavaScript or any other means. For more information look at our [Upgrade Apple Device](https://51degrees.com/blog/upgrade-apple-device-detection) blog. 
+
+Below we cover the detection results that are experienced for each iPhone and iPad device, starting from the iPhone 3GS and the first iPad model. 
+
+The 'percentage' column refers to the likelihood that you will receive that detection result for that particular display mode. For example, '100.00%' in Standard mode indicates a 100% chance of receiving that result when the Apple device is in Standard mode. '85.00%' in Zoom mode indicates that 85% of the time, the device in Zoom mode will be deected as one way, and the other 15% of the time you will see the other detection result.
+
+This table is updated monthly, and is currently accurate as of 25 July 2022.
+
 
 # iPhones using browser in mobile mode @anchor iphones_mobile_mode
 
-|Device|Display Mode|Results|
-|---|---|---|
-|iPhone 3GS|N/A|iPhone 3GS|
-|iPhone 4|N/A|iPhone 4| 
-|iPhone 4S|N/A|iPhone 4S|
-|iPhone 5|N/A|iPhone 5, iPhone 5c|
-|iPhone 5c|N/A|iPhone 5, iPhone 5c|
-|iPhone 5S|N/A|iPhone 5S|
-|iPhone 6|Standard|iPhone 6|
-|iPhone 6|Zoom|iPhone 6|
-|iPhone 6 Plus|Standard|iPhone 6 Plus|
-|iPhone 6 Plus|Zoom|iPhone 6 Plus|
-|iPhone 6s|Standard|iPhone 6s|
-|iPhone 6s|Zoom|iPhone 6s, iPhone SE<br/> iPhone 6s<br/> iPhone SE, iPhone 6s|
-|iPhone 6s Plus|Standard|iPhone 6s Plus|
-|iPhone 6s Plus|Zoom|iPhone 6s Plus|
-|iPhone SE|N/A|iPhone 6s, iPhone SE<br/> iPhone SE|
+|Device|Display Mode|Results|Percentage|
+|---|---|---|---|
+|iPhone 3GS|N/A|iPhone 3GS|100.00%|
+|iPhone 4|N/A|iPhone 4|100.00%|
+|iPhone 4S|N/A|iPhone 4S|100.00%|
+|iPhone 5|N/A|iPhone 5, iPhone 5c|100.00%|
+|iPhone 5c|N/A|iPhone 5, iPhone 5c|100.00%|
+|iPhone 5S|N/A|iPhone 5S|100.00%|
+|iPhone 6|Standard|iPhone 6|100.00%|
+|iPhone 6|Zoom|iPhone 6|100.00%|
+|iPhone 6 Plus|Standard|iPhone 6 Plus|100.00%|
+|iPhone 6 Plus|Zoom|iPhone 6 Plus|100.00%|
+|iPhone 6s|Standard|iPhone 6s|100.00%|
+|iPhone 6s|Zoom|iPhone 6s, iPhone SE<br/> iPhone 6s<br/> iPhone SE, iPhone 6s|88.08%<br/> 0.07%<br/> 11.84%|
+|iPhone 6s Plus|Standard|iPhone 6s Plus|100.00%|
+|iPhone 6s Plus|Zoom|iPhone 6s Plus|100.00%|
+|iPhone SE|N/A|iPhone 6s, iPhone SE<br/> iPhone SE|98.74%<br/> 1.26%|
 |iPhone 7|Standard|iPhone 7|
 |iPhone 7|Zoom|iPhone 7|
 |iPhone 7 Plus|Standard|iPhone 7 Plus|
