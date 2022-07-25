@@ -3,12 +3,21 @@
 # Introduction
 
 Some of the services offered by 51Degrees benefit from @evidence (optionally) being sent back to
-51Degrees' data processing system from live installations of the @Pipeline. We use
-this evidence to ensure that our data is up-to-date, comprehensive and continues to
+51Degrees data processing system from live installations of the @Pipeline. We use
+this evidence to ensure that our data is up-to-date, comprehensive, and continues to
 provide accurate results.
 
 
 @dotfile usagesharing.gvdot
+
+# How to enable usage sharing
+
+**Usage sharing** is enabled by default if you are using a pipeline builder that is derived from a 51Degrees pipeline builder (for example, DeviceDetetctionPipelineBuilder or FiftyOnePipelineBuilder). To configure the **usage sharing** feature, please refer to our @ref Examples_UsageSharing examples.
+
+To enable **usage sharing** for low-level APIs such as C, Nginx, and Varnish, please refer to the [Usage Sharing for low-level APIs section](@ref Low_Level_Usage_Sharing) further down this page.
+
+At this time, we do not have **usage sharing** for PHP or other languages. If you'd like to make a feature
+request, please [get in touch](https://51degrees.com/contact-us).
 
 # Internals @anchor Features_UsageSharing_Internals
 
@@ -21,13 +30,13 @@ and an appropriate warning logged.
 
 In languages that support multiple threading, **Usage sharing** will typically use a producer/consumer model,
 where the 'main' thread adds the evidence to a queue while a background thread takes items from this queue,
-transforms them into the appropriate format, adds them into a message and sends the message when ready.
+transforms them into the appropriate format, adds them into a message, and sends the message when ready.
 This is done to avoid blocking the @Pipeline process thread.
 
 ## Repeated Evidence @anchor Features_UsageSharing_RepeatEvidence
 
 To avoid situations where the same @evidence is sent multiple times (for example, a single user
-visiting multiple pages on a web site), we keep track of the @evidence that has been shared over
+visiting multiple pages on a website), we keep track of the @evidence that has been shared over
 a defined time period (maximum 20 minutes by default) and only share @evidence which is different to any
 already shared during the window.
 
@@ -52,7 +61,7 @@ These are the rules for whether or not a particular piece of evidence is shared:
 
 - Any evidence named 'header.&lt;name&gt;', if &lt;name&gt; is **not** on a configured blacklist.
 - Any evidence named 'query.&lt;name&gt;', if &lt;name&gt; **is** on a configured whitelist.
-- Any evidence named 'cookie.&lt;name&gt;' is ignored, unless &lt;name&gt; starts with '51D_'
+- Any evidence named 'cookie.&lt;name&gt;' is ignored, unless &lt;name&gt; starts with '51D_'.
 - Any other evidence is shared if it is not on a configured blacklist.
 
 The various blacklists and whitelists can be configured using the **share usage** @elementbuilder.
@@ -91,7 +100,7 @@ The maximum time period which @evidence is stored for the purpose of filtering
 @anchor Low_Level_Usage_Sharing
 # Usage Sharing for low-level APIs
 
-The low-level device detection APIs such as C, Nginx and Varnish do not support **usage sharing** 
+The low-level device detection APIs such as C, Nginx, and Varnish do not support **usage sharing** 
 out of the box. However, some customers using these technologies still want to share usage with 
 us in order to help us improve the accuracy of results.
 
@@ -114,7 +123,7 @@ header.User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 
 ...
 ```
 
-You will need to modify your low-level code to output this data to a file (or memory stream, etc). 
+You will need to modify your low-level code to output this data to a file (or memory stream, etc.). 
 As a minimum, the values below MUST be present for each record. If not, the record 
 will be discarded by our backend processing system.
 
@@ -136,4 +145,3 @@ example, the following changes will need to be made to the example:
 
 This code should now be able to consume the output from the low-level code and send the usage data 
 back to 51Degrees for analysis.
-

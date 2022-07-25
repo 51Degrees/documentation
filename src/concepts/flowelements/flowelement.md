@@ -71,10 +71,10 @@ The items of @evidence which an **element** can make use of are exposed via an @
 also available in an aggregated form from the parent @Pipeline. 
 (This would be equivalent to combining the @evidencekeyfilter from each **element** of the @pipeline individually).
 
-Using an @evidencekeyfilter means that instead of asking an **element** 'which items of @evidence do you want?', 
-one would ask 'do you want this item of @evidence?'. This gives an 
+Using an @evidencekeyfilter means that instead of asking an **element** "which items of @evidence do you want?", 
+one would ask "do you want this item of @evidence?". This gives an 
 **element** a greater degree of flexibility with how it specifies the @evidence that it accepts. 
-For example, it allows an element to easily indicate that it can make use of any HTTP headers, regardless of 
+For example, it allows an **element** to easily indicate that it can make use of any HTTP headers, regardless of 
 the header name.
 
 @dotfile flowelement-evidencekeys.gvdot

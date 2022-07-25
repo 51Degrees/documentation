@@ -10,7 +10,7 @@ are required by the user.
 
 The incoming @evidence is usually related to a 
 [web request](@term{WebRequest}), for example 
-the HTTP headers, cookies, source IP address or values from the query string.
+the HTTP headers, cookies, source IP address, or values from the query string.
 The @evidence is carried through the **Pipeline** to the 
 @elements by a @flowdata instance. 
 The @flowdata structure encapsulates all input and output data associated 
@@ -34,7 +34,7 @@ This allows the **Pipeline** to be configurable at runtime without recompiling t
 default operation for @webintegrations, but can be used for any other use-case
 as well. 
 For more on this, see the @buildfromconfiguration section, 
-and the [configure from file](@ref Examples_DeviceDetection_ConfigureFromFile_Index) example.
+and the [configure from file](@ref Examples_DeviceDetection_GettingStarted_Console_Cloud) example.
 
 
 # Processing

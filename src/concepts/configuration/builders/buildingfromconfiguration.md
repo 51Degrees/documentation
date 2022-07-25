@@ -8,7 +8,7 @@ this via its 'BuildFromConfiguration' method.
 
 # Usage
 
-A configuration can be parsed manually from XML, JSON or any other source and given to a @pipelinebuilder. 
+A configuration can be parsed manually from XML, JSON, or any other source and given to a @pipelinebuilder. 
 Alternatively, in @webintegrations, a configuration file is loaded automatically.
 
 Note, the possible format of the configuration file varies greatly between languages, with some languages 
@@ -150,8 +150,8 @@ builder or configuration method:
 The element builder name is used to determine the @elementbuilder that we want to use.
 Each of the following is tried in turn to find a builder that matches the supplied name:
 
-1. Case insensitive match on type name. (e.g. 'MyElementBuilder' matches a type with that name.)
-2. Case insensitive match on type name suffixed with 'builder'. (e.g. 'MyElement' matches a type called 'MyElementBuilder'.)
+1. Case insensitive match on type name (e.g. 'MyElementBuilder' matches a type with that name).
+2. Case insensitive match on type name suffixed with 'builder' (e.g. 'MyElement' matches a type called 'MyElementBuilder').
 3. Where the language allows it, match on some 
 [alternative name](@ref Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName) for the builder.
 
@@ -161,8 +161,8 @@ The key value of each entry in the 'build parameters' list associated with each 
 the method to call on the @elementbuilder.
 Each of the following is tried in turn to find a method that matches the supplied name:
 
-1. Case insensitive match on method name. (e.g. 'SetCacheSize' matches a method with that name.)
-2. Case insensitive match on method name prefixed with 'set'. (e.g. 'CacheSize' matches a method called 'SetCacheSize'.)
+1. Case insensitive match on method name (e.g. 'SetCacheSize' matches a method with that name).
+2. Case insensitive match on method name prefixed with 'set' (e.g. 'CacheSize' matches a method called 'SetCacheSize').
 3. Where the language allows it, match on some 
 [alternative name](@ref Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName) for the method.
 

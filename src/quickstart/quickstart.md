@@ -19,8 +19,8 @@ below and then see the @combiningservices example.
 
 # Client-Side JavaScript
 
-If you intend to only use client-side JavaScript then you can use the 51Degrees cloud 
-[Configurator](https://configure.51degrees.com/) to select the properties you need and
+If you intend to only use client-side JavaScript then you can use the 51Degrees 
+[Cloud Configurator](https://configure.51degrees.com/) to select the properties you need and
 build a custom JavaScript snippet to include in your web page.
 
 See the @configuratorexplanation for details of how to obtain a Resource Key from the

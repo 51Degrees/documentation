@@ -10,17 +10,17 @@ Some examples of aspects are:
 * The operating system running on that device.
 * The physical location of the device.
 * The ISP that is being used to service the request.
-* The cell tower that services the request (If the device is a mobile using its network 
+* The cell tower that services the request (if the device is a mobile using its network 
 data access)
-* etc
+* etc.
 
 Each aspect can have one or more associated properties. For example, the device hardware
 aspect has properties such as:
 
-* Type of device (smart phone, computer, smart TV, games console, etc)
-* Screen size in pixels
-* Screen size in inches
-* etc
+* Type of device (smart phone, computer, smart TV, games console, etc.).
+* Screen size in pixels.
+* Screen size in inches.
+* etc.
 
 # Cloud Service @anchor Concepts_Terminology_CloudService
 
@@ -37,7 +37,7 @@ with the extra step of a [web request](@term{WebRequest}) being required.
 
 The 51Degrees Distributor is a cloud-based web service that distributes data files for 51Degrees
 services.
-In order to access it, you will need to have a license key that defines the products that
+In order to access it, you will need to have a License Key that defines the products that
 you are allowed to access.
 
 # Native Code @anchor Concepts_Terminology_NativeCode
@@ -47,9 +47,9 @@ optimizations can be made in lower level languages than compared to high level l
 
 # Resource Key @anchor Concepts_Terminology_ResourceKey
 
-A resource key is used by the 51Degrees cloud service as a shorthand for various parameters that can be sent 
+A Resource Key is used by the 51Degrees cloud service as a shorthand for various parameters that can be sent 
 as part of a request. For example, the properties that the user wishes to be populated in the response and
-any license keys that allow access to more properties or a greater request allowance.
+any License Keys that allow access to more properties or a greater request allowance.
 
 # Web Request @anchor Concepts_Terminology_WebRequest
 
