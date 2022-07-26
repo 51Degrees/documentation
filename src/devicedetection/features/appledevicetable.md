@@ -10,6 +10,7 @@ The 'percentage' column refers to the likelihood that you will receive that dete
 
 As we receive more data on Apple devices, this table will change. We will update this table monthly and it is currently accurate as of 25 July 2022.
 
+For optimized viewing of the table, it is recommended you zoom out within your browser.
 
 # iPhones using browser in mobile mode @anchor iphones_mobile_mode
 
@@ -59,7 +60,7 @@ As we receive more data on Apple devices, this table will change. We will update
 |iPhone 12 Pro|Standard|iPhone 12, iPhone 12 Pro<br/> iPhone 12, iPhone 12 Pro, iPhone 13 Pro, iPhone 13|78.71%<br/> 21.29%|
 |iPhone 12 Pro|Zoom|iPhone 12, iPhone 12 mini, iPhone 12 Pro<br/> iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br/> iPhone 12 Pro, iPhone 12|59.90%<br/> 39.85%<br/> 0.25%|
 |iPhone 12 Pro Max|Standard|iPhone 12 Pro Max<br/> iPhone 12 Pro Max, iPhone 13 Pro Max|82.76%<br/> 17.24%|
-|iPhone 12 Pro Max|Zoom|iPhone 12 mini, iPhone 12 Pro Max<br/> iPhone 12 Pro Max<br/> iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|60.40%<br/> 39.60%|
+|iPhone 12 Pro Max|Zoom|iPhone 12 mini, iPhone 12 Pro Max<br/> iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|60.40%<br/> 39.60%|
 |iPhone 12 mini|Standard|iPhone 12 mini, iPhone 12 Pro Max<br/> iPhone 12 mini<br/> iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|29.50%<br/> 0.15%<br/> 70.35%|
 |iPhone 12 mini|Zoom|iPhone 12, iPhone 12 mini, iPhone 12 Pro<br/> iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br/> iPhone 12 mini|33.17%<br/> 66.67%<br/> 0.17%|
 |iPhone 13|Standard|iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro<br/> iPhone 13|99.80%<br/> 0.20%|
@@ -75,7 +76,7 @@ As we receive more data on Apple devices, this table will change. We will update
 
 # iPads using browser in mobile mode @anchor ipads_mobile_mode
 
-|Device|Display Mode|Results|Percentate|
+|Device|Display Mode|Results|Percentage|
 |---|---|---|---|
 |iPad|N/A|iPad|100.00%|
 |iPad 2|N/A|iPad 2|100.00%|
@@ -87,7 +88,7 @@ As we receive more data on Apple devices, this table will change. We will update
 |iPad 8|N/A|iPad 8|100.00%|
 |iPad (9th Gen.)|N/A|iPad (9th Gen.)|100.00%|
 |iPad Air|N/A|iPad Air, iPad mini 2, iPad mini 3|100.00%|
-|iPad Air 2|N/A|iPad mini 4, iPad Air 2<br/> iPad Air 2|98.24% 2<br/> 1.76%|
+|iPad Air 2|N/A|iPad mini 4, iPad Air 2<br/> iPad Air 2|98.24%<br/> 1.76%|
 |iPad Air (3rd Gen.)|N/A|iPad Air (3rd Gen.)|100.00%|
 |iPad Air (4th Gen.)|N/A|iPad Air (4th Gen.)|100.00%|
 |iPad Air (5th Gen.)|N/A|iPad Air (5th Gen.)|100.00%|
@@ -103,7 +104,7 @@ As we receive more data on Apple devices, this table will change. We will update
 |iPad Pro 10.5|N/A|iPad Pro 10.5|100.00%|
 |iPad Pro 9.7|N/A|iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7|98.49%<br/> 1.51%|
 |iPad Pro 12.9 (2nd Gen.)|Standard|iPad Pro 12.9 (2nd Gen.), iPad Pro 12.9 (3rd Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (2nd Gen.)|98.11%<br/> 1.89%|
-|iPad Pro 12.9 (2nd Gen.)|Zoom|	iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7<br/> iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7|86.38%<br/> 13.62%|
+|iPad Pro 12.9 (2nd Gen.)|Zoom|	iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7|86.38%<br/> 13.62%|
 |iPad Pro 12.9 (3rd Gen.)|Standard|iPad Pro 12.9 (2nd Gen.), iPad Pro 12.9 (3rd Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (3rd Gen.)|99.92%<br/> 0.08%|
 |iPad Pro 12.9 (3rd Gen.)|Zoom|iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.)|99.78%<br/> 0.22%|
 |iPad Pro 11.0 (2nd Gen.)|N/A|iPad Pro 11.0, iPad Pro 11.0 (2nd Gen.)|100.00%|
@@ -179,7 +180,7 @@ As we receive more data on Apple devices, this table will change. We will update
 |iPad Pro 12.9|Standard|iPad Pro 12.9|100.00%|
 |iPad Pro 12.9|Zoom|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad 5, iPad Pro 12.9, iPad 6<br/> iPad Pro 12.9, iPad 6<br/> iPad Pro 12.9|66.98%<br/> 33.00%<br/> 0.00%<br/> 0.02%|
 |iPad Pro 10.5|N/A|iPad Pro 10.5|100.00%|
-|iPad Pro 9.7|N/A|iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7<br/> iPad Pro 9.7|98.49%<br/> 1.51%|
+|iPad Pro 9.7|N/A|iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7|98.49%<br/> 1.51%|
 |iPad Pro 12.9 (2nd Gen.)|Standard|iPad Pro 12.9 (2nd Gen.), iPad Pro 12.9 (3rd Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (2nd Gen.)|98.11%<br/> 1.89%|
 |iPad Pro 12.9 (2nd Gen.)|Zoom|iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7|86.38%<br/> 13.62%|
 |iPad Pro 12.9 (3rd Gen.)|Standard|iPad Pro 12.9 (2nd Gen.), iPad Pro 12.9 (3rd Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (3rd Gen.)|99.92%<br/> 0.08%|
