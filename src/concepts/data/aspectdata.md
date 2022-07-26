@@ -11,4 +11,4 @@ specialization of @elementdata.
 For example, much of the @lazyloading functionality in .NET actually resides in the 
 **aspect data** class. For more details see the @lazyloading feature page.
 
-For details on data structure, life cycle and thread safety, see @elementdata.
+For details on data structure, lifecycle and thread-safety, see @elementdata.

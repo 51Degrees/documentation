@@ -5,7 +5,7 @@
 In the early days of the internet, the 
 [User Agent header](https://51degrees.com/blog/understanding-user-agent-string) 
 was made part of the 
-[HTTP/1.0 specification](https://datatracker.ietf.org/doc/html/rfc1945#page-46).
+[HTTP/1.0 specification](https://datatracker.ietf.org/doc/html/rfc1945#page-46):
 
 > This is for statistical purposes,
 > the tracing of protocol violations, and automated recognition of user
@@ -23,7 +23,7 @@ This means the web server can additionally determine details about the hardware 
 Apple are unique as they have never included the mobile device model name in the User Agent. 
 Consequently, it is generally not possible to identify Apple devices from the User Agent alone. 
 (This is not always the case. Some apps, such as Facebook, will add the model name to the 
-User Agent when they make requests)
+User Agent when they make requests.)
 
 Additionally, Apple have certain tools within their system that can change the values within 
 the User Agent string. For example, an iPhone browsing the web in Desktop mode would have a 
@@ -46,7 +46,7 @@ server is handled by the [client-side evidence](@ref Features_ClientSideEvidence
 The JavaScript that runs on the client comes from the [JavascriptHardwareProfile](https://51degrees.com/developers/property-dictionary?item=Device%7CJavascript) property.
 In order to explain how this is used, we need to define a little 51Degrees terminology:
 
-- A profile can be thought of as a database record. A profile can represent a hardware device, a specific operating system version or web browser version. The profile will contain values for the properties that are returned by device detection. For example, `model name` or `release date`. 
+- A profile can be thought of as a database record. A profile can represent a hardware device, a specific operating system version, or web browser version. The profile will contain values for the properties that are returned by device detection. For example, `model name` or `release date`. 
 - A profile id is the unique identifier for a specific profile.
 - A device id is a combination of profile ids. For example, `12280-118061-117398` represents an unknown model of iPhone running iOS 15.3 and using Safari 15.3.
 
@@ -67,7 +67,7 @@ This profile id is then passed back to the server. When detection is performed, 
 that can be determined from the User Agent is swapped for the profile that was passed from the 
 client-side code.
 
-# Further Reading
+# Further reading
 
 - This [table](@ref DeviceDetection_Features_AppleDeviceTable) contains a break down of exactly which iPhone and iPad models our solution can identify.
 - Check the [getting started - web](@ref Examples_DeviceDetection_GettingStarted_Web_Index) examples for a demonstration of how to use this functionality.

@@ -12,7 +12,7 @@ An **on-premise engine** builds on the @aspectengine concept to introduce the ab
 * keep data files up to date
 
 
-# Use Cases
+# Use cases
 
 An **on-premise engine** typically does not need to call external components when processing a request.
 This makes it best suited to cases where performance is critical, and the supporting hardware implementation
@@ -22,7 +22,7 @@ with any data files held entirely in memory, reducing latency further.
 There are also situations where the security demands of a service make sending sensitive data to an
 external [cloud service](@term{CloudService}) problematic. Using an **on-premise engine** will address this issue.
 
-# Data Files
+# Data files
 
 An @aspectengine can make use of one or more data files to carry out its processing. This is typically the 
 case when an **engine** relies on data being updated, so the data is not stored statically in the **engine** itself.
@@ -38,7 +38,7 @@ it use that new data file or memory location. Depending on the **engine** implem
 briefly stop serving requests. 
 All 51Degrees **engines** have been designed so that processing will be uninterrupted by data updates.
 
-## Temporary Data Files
+## Temporary data files
 
 An **engine** can optionally create a temporary copy of the data file to use. This is good practice when making use of the
 [update functionality](@ref Features_AutomaticDatafileUpdates), as an **engine** can be configured so that it streams data from the data file. When a temporary data file
@@ -49,7 +49,7 @@ is used, the original data file cannot be updated because the **engine** will ha
 Each data file in an **engine** can contain metadata, some of which is used by the @dataupdateservice. This metadata can provide
 the @dataupdateservice with the age of the data file, the time at which a new one will be available, and the URL of where the new data file can be obtained.
 
-## Multiple Files
+## Multiple files
 
 An **on-premise engine** can require more than one data file. Files can be individually registered with the @dataupdateservice, 
 which will handle each file according to its own metadata. This allows different data files to have distinct update configurations.

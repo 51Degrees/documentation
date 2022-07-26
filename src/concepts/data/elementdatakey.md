@@ -15,7 +15,7 @@ In addition, in strongly-typed languages such as Java and C#, **element data key
 will also contain the specific type of the @elementdata that it corresponds to.
 This allows the @flowdata to return the @elementdata instance as the correct type.
 
-# Name Conflicts
+# Name conflicts
 
 The @Pipeline does not require that each @flowelement has a unique 
 **element data key**. In fact, it is sometimes desirable for this to be the case.
@@ -31,7 +31,7 @@ instance at all.
 The @aspectengine base class does explicitly allow conflicting key names, although
 it is still up to specific implementations to operate responsibly.
 
-## Name Conflict Example
+## Name conflict example
 
 Consider a @Pipeline with two @devicedetection engines. One determines values relating 
 to the device hardware. (i.e. manufacturer, screen information, CPU/GPU specs, etc.)

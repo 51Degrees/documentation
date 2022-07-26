@@ -87,7 +87,7 @@ pipeline.buildFromConfigurationFile(configFilePath);
 @endsnippets
 
 
-# Example Configuration
+# Example configuration
 
 @startsnippets
 @showsnippet{XML}
@@ -137,7 +137,7 @@ Note that for use in node.js, `BuilderName` and `BuilderParameters` should be re
 @endsnippet
 @endsnippets
 
-# Rules for Building from a Configuration File
+# Rules for building from a configuration file
 
 The core **build from configuration** logic ultimately calls the same configuration
 methods, on the same builders as the developer does if they configure the @Pipeline in code.
@@ -145,7 +145,7 @@ methods, on the same builders as the developer does if they configure the @Pipel
 There are several rules that govern how a value in a configuration file is mapped to a 
 builder or configuration method:
 
-## Element Builder Names
+## Element builder names
 
 The element builder name is used to determine the @elementbuilder that we want to use.
 Each of the following is tried in turn to find a builder that matches the supplied name:
@@ -155,7 +155,7 @@ Each of the following is tried in turn to find a builder that matches the suppli
 3. Where the language allows it, match on some 
 [alternative name](@ref Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName) for the builder.
 
-## Element Build Parameters
+## Element build parameters
 
 The key value of each entry in the 'build parameters' list associated with each @element is used to determine 
 the method to call on the @elementbuilder.
@@ -174,14 +174,14 @@ If there are any build parameters for which a method cannot be found, they will 
 In this case, a simple case-insensitive match is performed to determine the parameter value to set.
 
 
-## Pipeline Build Parameters
+## Pipeline build parameters
 
 @Pipeline build parameters work in the same way as element build parameters but they are used to call configuration
 methods on the @pipelinebuilder instead of the @elementbuilder.
 
 See above for all the rules governing this.
 
-## Alternative Naming Details @anchor Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName
+## Alternative naming details @anchor Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName
 
 Some languages have a mechanism for specifying alternative names for builders and methods.
 These can be used to match against supplied configuration options.

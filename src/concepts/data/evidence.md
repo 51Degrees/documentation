@@ -10,7 +10,7 @@ such as HTTP headers, source IP address, or query string parameters.
 The **evidence** values are used by @aspectengines to determine the details of the 
 [aspect](@term{Aspect}) they are concerned with.
 
-# Data Structure
+# Data structure
 
 The precise details of the data structure behind **evidence** will vary depending on the
 language. However, all languages use a similar approach of exposing the stored evidence
@@ -30,15 +30,15 @@ Categories used by 51Degrees are:
 - query - For values from the query string
 - server - For values from the request metadata
 
-# Life Cycle
+# Lifecycle
 
 **Evidence** is fully managed by the @flowdata that contains it.
 
-# Thread Safety
+# Thread-safety
 
 **Evidence** is not thread-safe and should never be written to by @flowelements.
 
-# Client Side Evidence
+# Client-side evidence
 
 **Evidence** will usually be drawn from one of 4 places:
 

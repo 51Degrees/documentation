@@ -62,7 +62,7 @@ The @properties populated by an **element** can be queried directly to retrieve 
 to each property. The data available will vary by implementation but will typically include
 information such as the property name and data type. 
 
-# Evidence Keys
+# Evidence keys
 
 Each **element** can only make use of certain items of @evidence during processing. In the **age element**
 example above, it expects a date of birth to be present in the @evidence.
@@ -80,7 +80,7 @@ the header name.
 @dotfile flowelement-evidencekeys.gvdot
 
 
-# Data Keys
+# Data keys
 
 Results of an **element's** processing are stored in the @flowdata, keyed on the **element's** @elementdatakey. 
 While not required, it is convention that each **element** has a unique key name. 
@@ -90,7 +90,7 @@ In addition to the name, an @elementdatakey also contains the type of @elementda
 Please note that this is only the case in languages which support this.
 
 
-# Creating Data
+# Creating data
 
 When an **element** adds @elementdata to a @flowdata, it cannot be assumed that an @elementdata does not
 already exist for the **element**. For this reason, an **element** contains an 'element data factory', which
@@ -138,7 +138,7 @@ In this case, it is the responsibility of the **element** to ensure access to a 
 accessed in a safe manner.
 
 
-# Thread-Safety
+# Thread-safety
 
 **Flow elements** are required to be thread-safe in languages that support multi-threaded operations. As multiple @pipelines may be
 calling on an **element** to carry out processing simultaneously, they must be able to handle this.

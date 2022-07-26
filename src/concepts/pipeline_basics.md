@@ -1,6 +1,6 @@
 @page Concepts_PipelineBasics Pipeline Basics
 
-# 51Degrees Pipeline Documentation
+# 51Degrees Pipeline documentation
 
 The Pipeline API has been created by 51Degrees to remove friction from the process of working with real-time data micro-services.
 It is the mechanism for delivering 51Degrees data services such as device detection but it is more than that.
@@ -37,14 +37,14 @@ For a deeper understanding of the Pipeline concept, start with the @Pipeline pag
 * If you're migrating from the older 51Degrees Device Detection API then start with the @v3migrationguide.
 * New users should check the @quickstart guide for help getting up and running as soon as possible.
 
-## 51Degrees Data Services
+## 51Degrees data services
 
 * @DeviceDetection - Detailed insight into the devices being used to access your content.
 * @ReverseGeocoding - Obtain accurate real-world data such as postal address from the users' location as reported by their smart phone or similar device.
 * Antifraud - Identify and exclude fraudulent requests. (Coming soon)
 * IpIntelligence - Determine key information from the network path taken by the request such as mobile carrier or location. (Coming soon)
 
-## Technical Detail
+## Technical detail
 
 * Explore detailed technical documentation for each language supported by the Pipeline.
 * Build a @customengine to match your requirements.

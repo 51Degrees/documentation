@@ -6,7 +6,7 @@
 This includes input and output data as well as metadata related to the processing such as 
 the details of any errors that occurred.
 
-# Data Structure
+# Data structure
 
 **Flow data** has several sub-containers that are used to segment the data that it contains:
 * [Evidence](@ref Concepts_Data_FlowData_Evidence)
@@ -22,7 +22,7 @@ The @evidence can be set manually or automatically by using a
 
 Visit the @evidence page for more details.
 
-## Element Data @anchor Concepts_Data_FlowData_ElementData
+## Element data @anchor Concepts_Data_FlowData_ElementData
 
 The responses from each @flowelement are stored in a key/value pair structure within **flow data**.
 In each case, [the key](@ref Concepts_Data_ElementDataKey) is the string key of the @flowelement and the value is an @elementdata instance.
@@ -51,7 +51,7 @@ In this situation, the caller is responsible for handling any exceptions by chec
 collection after processing.
 
 
-# Life Cycle
+# Lifecycle
 
 ## Creation
 
@@ -96,7 +96,7 @@ try (FlowData data = pipeline.createFlowData()) {
 @endsnippet
 @endsnippets
 
-# Thread Safety @anchor Concepts_Data_FlowData_ThreadSafety
+# Thread-safety @anchor Concepts_Data_FlowData_ThreadSafety
 
 @startsnippets
 @showsnippet{dotnet,C#}

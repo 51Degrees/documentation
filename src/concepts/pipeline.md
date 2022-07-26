@@ -68,7 +68,7 @@ Regardless of the method of execution and configuration, after processing the
 
 @dotfile basic-pipeline-flow.gvdot
 
-# Public Access
+# Public access
 
 Other than the creation of a new @flowdata, there are very few other 
 publicly accessible parts of the **Pipeline**.
