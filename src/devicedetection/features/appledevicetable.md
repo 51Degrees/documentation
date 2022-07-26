@@ -41,7 +41,7 @@ As we receive more data on Apple devices, this table will change. We will update
 |iPhone X|Standard|iPhone X<br/> iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|3.25%<br/> 96.75%|
 |iPhone X|Zoom|iPhone X|100.00%|
 |iPhone XR|Standard|iPhone XR<br/> iPhone XR, iPhone 11|14.20%<br/> 85.80%|
-|iPhone XR|Zoom|iPhone XR<br/> iPhone XR, iPhone 11|7.61%<br/> 92.39%||
+|iPhone XR|Zoom|iPhone XR<br/> iPhone XR, iPhone 11|7.61%<br/> 92.39%|
 |iPhone XS|Standard|iPhone XS, iPhone XS Max<br/> iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|3.04%<br/> 96.96%|
 |iPhone XS|Zoom|iPhone XS|100.00%|
 |iPhone XS Max|Standard|iPhone XS Max</br/> iPhone XS Max, iPhone 11 Pro Max|1.57%<br/> 98.43%|
@@ -84,7 +84,7 @@ As we receive more data on Apple devices, this table will change. We will update
 |iPad 5|N/A|iPad 5, iPad Pro 12.9, iPad 6<br/> iPad Pro 12.9, iPad 5, iPad 6|49.38%<br/> 50.62%|
 |iPad 6|N/A|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad 6<br/> iPad 5, iPad Pro 12.9, iPad 6<br/> iPad Pro 12.9, iPad 6|64.73%<br/> 0.02%<br/> 35.24%<br/> 0.00%|
 |iPad 7|N/A|iPad 7|100.00%|
-|iPad 8|N/A|iPad 8100.00%|
+|iPad 8|N/A|iPad 8|100.00%|
 |iPad (9th Gen.)|N/A|iPad (9th Gen.)|100.00%|
 |iPad Air|N/A|iPad Air, iPad mini 2, iPad mini 3|100.00%|
 |iPad Air 2|N/A|iPad mini 4, iPad Air 2<br/> iPad Air 2|98.24% 2<br/> 1.76%|
