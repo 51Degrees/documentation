@@ -115,7 +115,7 @@ For example, by adding a JavaScript include.
   - Add some JavaScript code to update the page content when new JSON data is
   received.
 
- * These tasks are handled automatically by the ASP.NET Core, Java MVC 
+(*) These tasks are handled automatically by the ASP.NET Core, Java MVC 
 and Java Servlet integrations
 
 For more detailed, language-specific steps, see the 
