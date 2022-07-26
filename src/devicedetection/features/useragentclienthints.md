@@ -11,18 +11,17 @@ work with them using the 51Degrees API, then read on.
 @anchor UACH_Support
 # Support for detection from Client Hints [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Support)
 
-The 51Degrees device detection API has provided support for detection 
-based on one of the client hints headers (Sec-CH-UA only) in data files 
+The 51Degrees Device Detection API has provided support for detection 
+based on one of the Client Hints headers (Sec-CH-UA only) in data files 
 from 7 December 2020.
 
-We also support the one off case of [identifying Windows 11 using User Agent Client Hints](https://51degrees.com/blog/windows-11-detectable-with-uach)
+We also support the one-off case of [identifying Windows 11 using User Agent Client Hints](https://51degrees.com/blog/windows-11-detectable-with-uach)
 as there is [no other way to do so](https://docs.microsoft.com/en-us/microsoft-edge/web-platform/how-to-detect-win11).
 
 This limited support will be superseded by functionality in version 4.4, which will 
-fully support the detection of devices, operating systems and browsers from UA-CH headers. 
+fully support the detection of devices, operating systems, and browsers from UA-CH headers. 
 
-Full UA-CH detection will also require a new data file (date of availability TBC). The format of 
-the data file remains the same (what we refer to as Hash v4.1). But the contents will be updated 
+Full UA-CH detection will also require a [new data file](https://51degrees.com/blog/updates-to-user-agent-client-hints-version-4-4). The format of the data file remains the same (what we refer to as Hash v4.1). But the contents will be updated 
 to support detection from the full range of UA-CH values.
 
 Note that newer and older API versions and data files will be fully cross-compatible with each 
@@ -40,7 +39,7 @@ The web examples run as a simple web page, so you will need a browser that suppo
 order to try it out.
 
 @anchor UACH_Http_Headers
-# HTTP Headers [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Http_Headers)
+# HTTP headers [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Http_Headers)
 
 Previously, device detection worked primarily by examining the 
 value of the User Agent HTTP header. This header is always sent as part 
@@ -58,6 +57,37 @@ any response headers that need to be set based on the initial information.
 When using the Pipeline web integration, most languages will automatically set the response 
 headers for you as well. If not using a web integration, or your language does not support it, 
 you will need to set the response headers manually.
+
+@anchor UACH_Http_Headers_Pseudoheaders
+## Pseudo-headers [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Http_Headers_Pseudoheaders)
+
+51Degrees groups properties associated with the request by ‘component’. The components 51Degrees recognize are hardware device, platform (operating system), browser, and crawler.
+
+The User Agent header contains information relating to all four of these components. User Agent Client Hints values are different in that they relate to varying numbers of components. For example, the Sec-CH-UA-Model header only relates to the hardware device component.
+
+However, multiple UA-CH values are sometimes needed to fully identify a component. Apple devices running Chrome will not populate the Sec-CH-UA-Model header, so that won't help give us an answer to the hardware component. Instead, we need the Sec-CH-UA-Platform header, which can at least tell us that this is an iOS device.
+
+We concatenate the various UA-CH headers that are needed to identify a component to create ‘pseudo-headers’. These are then used internally to perform the detection. 
+
+The table below shows which pseudo-headers are required in order to detect each component. These are the minimum pseudo-headers we use to detect the component; however, we recommend providing all UA-CH values for the best detection. Additionally, this table is only applicable for Chromium-based browsers; to detect non-Chromium browsers, you will need to continue supplying User Agent information.
+
+Some pseudo-headers are not required to detect the component but can provide more detailed detection results. For example, Sec-CH-UA-Platform-Version is not required to determine the Platform component, but provides additional version information when supplied.
+
+In some cases, there are multiple pseudo-headers for a component. These are processed in order from providing most detail to least. 
+
+### Key
+- x = This value is required in order to determine the component.
+- x* = This value is not required, but if provided may return more detailed results.
+- y and z = One of these values are required. Supplying y may return a more accurate result and removes the need to supply z.
+
+|UA-CH header|Hardware|Platform|Browser/App|
+|---|---|---|---|
+|Sec-CH-UA|||z|
+|Sec-CH-UA-Full-Version-List|||y|
+|Sec-CH-UA-Model|x|||
+|Sec-CH-UA-Mobile|x||x|
+|Sec-CH-UA-Platform|x|x|x|
+|Sec-CH-UA-Platform-Version||x*||
 
 @anchor UACH_Cloud
 ## Cloud [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Cloud)
@@ -140,7 +170,7 @@ JavaScript API value does not include the double quotes, then these should be ad
 give the best results.
 
 @anchor UACH_Background
-# Background Reading [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Background)	
+# Background reading [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Background)	
 
 The authors of the proposal have created an [article](https://web.dev/user-agent-client-hints) 
 covering how UA-CH works.
@@ -161,7 +191,7 @@ negotiation feature.
 
 There is documentation of the general Client Hints feature on 
 [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Client_hints) and
-from [Google](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints)
+from [Google](https://web.dev/user-agent-client-hints/).
 
 Caniuse.com can be used to check browser support for both 
 [Client Hints](https://caniuse.com/client-hints-dpr-width-viewport) and 
