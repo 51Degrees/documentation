@@ -19,7 +19,8 @@ To enable **usage sharing** for low-level APIs such as C, Nginx, and Varnish, pl
 At this time, we do not have **usage sharing** for PHP or other languages. If you'd like to make a feature
 request, please [get in touch](https://51degrees.com/contact-us).
 
-# Internals @anchor Features_UsageSharing_Internals
+@anchor Features_UsageSharing_Internals
+# Internals [#](@ref Features_UsageSharing_Internals)	
 
 To minimize any overhead of this feature, received requests are grouped and sent in batches,
 rather than sending each request individually.
@@ -33,7 +34,8 @@ where the 'main' thread adds the evidence to a queue while a background thread t
 transforms them into the appropriate format, adds them into a message, and sends the message when ready.
 This is done to avoid blocking the @Pipeline process thread.
 
-## Repeated Evidence @anchor Features_UsageSharing_RepeatEvidence
+@anchor Features_UsageSharing_RepeatEvidence
+## Repeated Evidence [#](@ref Features_UsageSharing_RepeatEvidence)	
 
 To avoid situations where the same @evidence is sent multiple times (for example, a single user
 visiting multiple pages on a website), we keep track of the @evidence that has been shared over
@@ -98,7 +100,7 @@ The maximum time period which @evidence is stored for the purpose of filtering
 [repeat evidence](@ref Features_UsageSharing_RepeatEvidence).
 
 @anchor Low_Level_Usage_Sharing
-# Usage Sharing for low-level APIs
+# Usage Sharing for low-level APIs [#](@ref Features_UsageSharing_Low_Level_Usage_Sharing)	
 
 The low-level device detection APIs such as C, Nginx, and Varnish do not support **usage sharing** 
 out of the box. However, some customers using these technologies still want to share usage with 

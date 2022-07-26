@@ -8,7 +8,8 @@ For more details on what User Agent Client Hints are and how they work,
 see the Background section below. If you just want to know how to
 work with them using the 51Degrees API, then read on.
 
-# Support for detection from Client Hints @anchor UACH_Support
+@anchor UACH_Support
+# Support for detection from Client Hints [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Support)
 
 The 51Degrees device detection API has provided support for detection 
 based on one of the client hints headers (Sec-CH-UA only) in data files 
@@ -38,7 +39,8 @@ The console examples pass UA-CH values directly to the API, so will work in any 
 The web examples run as a simple web page, so you will need a browser that supports UA-CH in 
 order to try it out.
 
-# HTTP Headers @anchor UACH_Http_Headers
+@anchor UACH_Http_Headers
+# HTTP Headers [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Http_Headers)
 
 Previously, device detection worked primarily by examining the 
 value of the User Agent HTTP header. This header is always sent as part 
@@ -57,12 +59,14 @@ When using the Pipeline web integration, most languages will automatically set t
 headers for you as well. If not using a web integration, or your language does not support it, 
 you will need to set the response headers manually.
 
-## Cloud @anchor UACH_Cloud
+@anchor UACH_Cloud
+## Cloud [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Cloud)
 
 Using UA-CH for device detection with our cloud product is usually simple.
 However, there are some scenarios that cause additional complexity.
 
-### Calling from Pipeline API @anchor UACH_Cloud_Pipeline_ServerSide
+@anchor UACH_Cloud_Pipeline_ServerSide
+### Calling from Pipeline API [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Cloud_Pipeline_ServerSide)
 
 If you are calling the cloud from a Pipeline API, then you need 
 to ensure that the appropriate response headers are set and that the 
@@ -81,7 +85,8 @@ that includes these:
 Alternatively, you can modify your site to set the necessary response headers yourself. The 
 UA-CH values will automatically be sent to the cloud in order to perform detection.
 
-### Calling from (non-Pipeline API) server-side code @anchor UACH_Cloud_NonPipeline_ServerSide
+@anchor UACH_Cloud_NonPipeline_ServerSide
+### Calling from (non-Pipeline API) server-side code [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Cloud_NonPipeline_ServerSide)
 
 As above, in order to use UA-CH, you'll just need to ensure that the 
 appropriate response headers are set and that the UA-CH headers are 
@@ -93,7 +98,8 @@ two essential steps;
 1. The relevant response headers must be set after a first request. Currently, this is the Accept-CH header for UA-CH. The 'SetHeader*' properties will provide a list of the values that need to be set on response headers in order to request the relevant UA-CH headers. Alternatively, you can just request all the [available](https://wicg.github.io/ua-client-hints/#http-ua-hints) values. 
 2. The call to the cloud must be modified to include the UA-CH header values you are interested in. For example: `https://cloud.51degrees.com/api/v4/RESOURCEKEY.json?user-agent=UA&sec-ch-ua=HEADERVALUE&sec-ch-ua-model=HEADERVALUE2`
 
-### Calling from client-side code @anchor UACH_Cloud_ClientSide	
+@anchor UACH_Cloud_ClientSide
+### Calling from client-side code [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Cloud_ClientSide)	
 
 Calling the cloud from client-side code is simpler in some ways, as you 
 don't need to worry about manually including the Sec-CH-UA values in
@@ -119,7 +125,8 @@ to request the UA-CH headers:
 - Sec-CH-UA-Platform-Version
 - Sec-CH-UA-Model  
 
-# Client Hints JavaScript API @anchor UACH_JavaScriptAPI	
+@anchor UACH_JavaScriptAPI
+# Client Hints JavaScript API [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_JavaScriptAPI)	
 
 Instead of using HTTP headers, the UA-CH values can be requested using a 
 [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API).
@@ -132,7 +139,8 @@ HTTP headers. For example, if the value in the header is surrounded by double qu
 JavaScript API value does not include the double quotes, then these should be added in order to
 give the best results.
 
-# Background Reading @anchor UACH_Background
+@anchor UACH_Background
+# Background Reading [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Background)	
 
 The authors of the proposal have created an [article](https://web.dev/user-agent-client-hints) 
 covering how UA-CH works.
