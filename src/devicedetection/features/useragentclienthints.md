@@ -10,15 +10,15 @@ work with them using the 51Degrees API, then read on.
 
 # Support for detection from Client Hints @anchor UACH_Support
 
-The 51Degrees device detection API has provided support for detection 
-based on one of the client hints headers (Sec-CH-UA only) in data files 
+The 51Degrees Device Detection API has provided support for detection 
+based on one of the Client Hints headers (Sec-CH-UA only) in data files 
 from 7 December 2020.
 
-We also support the one off case of [identifying Windows 11 using User Agent Client Hints](https://51degrees.com/blog/windows-11-detectable-with-uach)
+We also support the one-off case of [identifying Windows 11 using User Agent Client Hints](https://51degrees.com/blog/windows-11-detectable-with-uach)
 as there is [no other way to do so](https://docs.microsoft.com/en-us/microsoft-edge/web-platform/how-to-detect-win11).
 
 This limited support will be superseded by functionality in version 4.4, which will 
-fully support the detection of devices, operating systems and browsers from UA-CH headers. 
+fully support the detection of devices, operating systems, and browsers from UA-CH headers. 
 
 Full UA-CH detection will also require a [new data file](https://51degrees.com/blog/updates-to-user-agent-client-hints-version-4-4). The format of the data file remains the same (what we refer to as Hash v4.1). But the contents will be updated 
 to support detection from the full range of UA-CH values.
@@ -37,7 +37,7 @@ The console examples pass UA-CH values directly to the API, so will work in any 
 The web examples run as a simple web page, so you will need a browser that supports UA-CH in 
 order to try it out.
 
-# HTTP Headers @anchor UACH_Http_Headers
+# HTTP headers @anchor UACH_Http_Headers
 
 Previously, device detection worked primarily by examining the 
 value of the User Agent HTTP header. This header is always sent as part 
@@ -161,7 +161,7 @@ HTTP headers. For example, if the value in the header is surrounded by double qu
 JavaScript API value does not include the double quotes, then these should be added in order to
 give the best results.
 
-# Background Reading @anchor UACH_Background
+# Background reading @anchor UACH_Background
 
 The authors of the proposal have created an [article](https://web.dev/user-agent-client-hints) 
 covering how UA-CH works.
@@ -182,7 +182,7 @@ negotiation feature.
 
 There is documentation of the general Client Hints feature on 
 [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Client_hints) and
-from [Google](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints)
+from [Google](https://web.dev/user-agent-client-hints/).
 
 Caniuse.com can be used to check browser support for both 
 [Client Hints](https://caniuse.com/client-hints-dpr-width-viewport) and 
