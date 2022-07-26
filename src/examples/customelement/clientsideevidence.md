@@ -9,7 +9,7 @@ a JavaScript @property to use @clientsideevidence.
 Instead of using @evidence which is already available, as the [simple flow element example](@ref Examples_CustomElement_FlowElement)
 did, this example will send JavaScript to the a client to get the @evidence.
 
-# Download Example
+# Download example
 
 The source code used in this example is available here:
 - [C# Visual Studio project](https://github.com/51degrees/pipeline-dotnet)
@@ -113,7 +113,7 @@ if (dob != null) {
 }
 ```
 
-# Flow Element
+# Flow element
 
 Now the actual @flowelement needs to be implemented. For this, the @flowelement's base class
 can be used which deals with most of the logic. The @elementproperties,

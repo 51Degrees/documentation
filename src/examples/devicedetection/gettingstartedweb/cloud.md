@@ -7,7 +7,7 @@ into a simple web page.
 
 There are many different ways to use the pipeline. Rather that creating examples for every scenario, 
 we have used the following table where possible when creating the 'getting started' examples. 
-You can mix and match elements from different examples in order to match your use-case.
+You can mix and match elements from different examples in order to match your use case.
 
 |            | Console             | Web                 |
 |------------|---------------------|---------------------|

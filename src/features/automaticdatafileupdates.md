@@ -9,7 +9,7 @@ from can also be monitored for changes, so when a @datafile is manually replaced
 @onpremiseengine will be refreshed with it.
 
 
-# Registering for Updates
+# Registering for updates
 
 All @datafiles added to an @onpremiseengine have the option to enable **automatic updates**.
 By enabling this, the @datafile is automatically registered when the @onpremiseengine is added
@@ -25,7 +25,7 @@ but in most cases is not necessary as the @pipelinebuilder will do this.
 There are a number of configuration options available when registering a @datafile for **automatic updates**, which specify
 when and how the @datafile is updated.
 
-## Data Update URL
+## Data update URL
 
 To download a new @datafile when one becomes available, the @dataupdateservice must have a URL to download
 it from. This can be a constant URL, or a
@@ -34,17 +34,17 @@ generate the URL based on other options.
 
 ## License Keys
 
-A license key may be required when downloading certain types of @datafile. The
-@dataupdateservice uses the license key, in combination with a [URL formatter](@ref Features_AutomaticDatafileUpdates_UrlFormatter),
+A License Key may be required when downloading certain types of data files. The
+@dataupdateservice uses the License Key, in combination with a [URL formatter](@ref Features_AutomaticDatafileUpdates_UrlFormatter),
 to ensure the @datafile is only made available to licensed users.
 
-## File Watcher
+## File watcher
 
 The location of the @datafile in the file system can be monitored by enabling the file system watcher. If
 the @datafile changes, then the @dataupdateservice will be called to refresh the @onpremiseengine using that file.
 This can be useful when distributing @datafiles to a local cluster.
 
-## Polling Interval
+## Polling interval
 
 The polling interval tells the @dataupdateservice the frequency with which to check for the availability of
 a new @datafile when the expected date is not known. If the @datafile itself provides the date when the next
@@ -58,7 +58,7 @@ enables a random time interval to be added to the time at which the new @datafil
 are 10 servers, and a full download and refresh takes around 10 seconds, it is sensible to set the randomization to
 above 10 seconds. In this case, there should only be one server updating at any one time.
 
-## URL Formatter @anchor Features_AutomaticDatafileUpdates_UrlFormatter
+## URL formatter @anchor Features_AutomaticDatafileUpdates_UrlFormatter
 
 Where an @onpremiseengine needs to download a @datafile from a URL which is not constant, a URL formatter is used.
 @Onpremiseengines generally provide the correct URL formatter automatically, but the option to override this is available.
@@ -67,10 +67,10 @@ URL formatters are necessary in many cases where multiple @datafiles are availab
 the required format or version of the @datafile may need to be specified as a parameter in the URL. This is handled by the
 URL formatter by looking at the current @datafile to see what is needed.
 
-## Temporary File
+## Temporary file
 
 It is good practice to set a @datafile to be copied to a temporary location for use by an @onpremiseengine. This means that
-whatever mode the file is being used in (e.g. in memory or streamed from file) an **update** can occur smoothly.
+whatever mode the file is being used in (e.g., in memory or streamed from file) an **update** can occur smoothly.
 
 By setting the @onpremiseengine to use a temporary file location, the original @datafile is free to be changed by the
 **autoupdateservice**. Once the file has been replaced, the @onpremiseengine will be informed and manage the removal of the
