@@ -12,7 +12,7 @@ As we receive more data on Apple devices, this table will change. We will update
 
 For optimized viewing of the table, it is recommended you zoom out within your browser.
 
-# iPhones using browser in mobile mode @anchor iphones_mobile_mode
+# iPhones using browser in Mobile mode @anchor iphones_mobile_mode
 
 |Device|Display Mode|Results|Percentage|
 |---|---|---|---|
@@ -74,7 +74,7 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 |iPhone SE (3rd Gen.)|Standard|iPhone SE (3rd Gen.)|100.00%|
 |iPhone SE (3rd Gen.)|Zoom|iPhone SE (3rd Gen.)|100.00%|
 
-# iPads using browser in mobile mode @anchor ipads_mobile_mode
+# iPads using browser in Mobile mode @anchor ipads_mobile_mode
 
 |Device|Display Mode|Results|Percentage|
 |---|---|---|---|
@@ -114,7 +114,7 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 |iPad Pro 12.9 (5th Gen.)|Standard|iPad Pro 12.9 (5th Gen.)<br/> iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)|36.11%<br/> 63.89%|
 |iPad Pro 12.9 (5th Gen.)|Zoom|iPad Pro 12.9 (5th Gen.)|100.00%|
 
-# iOS devices using browser in desktop mode @anchor ios_desktop_mode
+# iOS devices using browser in Desktop mode @anchor ios_desktop_mode
 
 |Device|Display Mode|Results|Percentage|
 |---|---|---|---|
