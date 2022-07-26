@@ -29,7 +29,7 @@ As we receive more data on Apple devices, this table will change. We will update
 |iPhone 6s|Zoom|iPhone 6s, iPhone SE<br/> iPhone 6s<br/> iPhone SE, iPhone 6s|88.08%<br/> 0.07%<br/> 11.84%|
 |iPhone 6s Plus|Standard|iPhone 6s Plus|100.00%|
 |iPhone 6s Plus|Zoom|iPhone 6s Plus|100.00%|
-|iPhone SE|N/A|iPhone 6s, iPhone SE<br/> iPhone SE, iPhone 6s<br/>iPhone SE|98.74%<br/> 1.26%|<br/> 0.01%|
+|iPhone SE|N/A|iPhone 6s, iPhone SE<br/> iPhone SE, iPhone 6s<br/>iPhone SE|98.74%<br/> 1.26%<br/> 0.01%|
 |iPhone 7|Standard|iPhone 7, iPhone 8, iPhone SE (2nd Gen.), iPhone SE (3rd Gen.)<br/> iPhone 7|98.37%<br/> 1.63%|
 |iPhone 7|Zoom|iPhone 7, iPhone 8, iPhone SE (2nd Gen.), iPhone SE (3rd Gen.)<br/> iPhone 7|34.80%<br/> 65.20%|
 |iPhone 7 Plus|Standard|iPhone 7 Plus|100.00%|
