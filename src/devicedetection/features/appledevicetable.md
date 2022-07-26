@@ -2,13 +2,13 @@
 
 # Introduction
 
-Apple has continually worked to homogenize any information that a website can get about a device, through JavaScript or any other means. For more information look at our [Upgrade Apple Device](https://51degrees.com/blog/upgrade-apple-device-detection) blog. 
+Apple has continually worked to homogenize any information that a website can get about a device, through JavaScript or any other means. For more information, take a look at our [Upgrade Apple Device](https://51degrees.com/blog/upgrade-apple-device-detection) blog. 
 
 Below we cover the detection results that are experienced for each iPhone and iPad device, starting from the iPhone 3GS and the first iPad model. 
 
-The 'percentage' column refers to the likelihood that you will receive that detection result for that particular display mode. For example, '100.00%' in Standard mode indicates a 100% chance of receiving that result when the Apple device is in Standard mode. '85.00%' in Zoom mode indicates that 85% of the time, the device in Zoom mode will be deected as one way, and the other 15% of the time you will see the other detection result.
+The 'percentage' column refers to the likelihood that you will receive that detection result for that particular display mode. For example, '100.00%' in Standard mode indicates a 100% chance of receiving that result when the Apple device is in Standard mode. '1.50%' in indicates that 1.5% of submissions will receive that detection result.
 
-This table is updated monthly, and is currently accurate as of 25 July 2022.
+As we receive more data on Apple devices, this table will change. We will update this table monthly and it is currently accurate as of 25 July 2022.
 
 
 # iPhones using browser in mobile mode @anchor iphones_mobile_mode
