@@ -19,7 +19,7 @@ At this time, we do not have **usage sharing** for PHP or other languages. If yo
 request, please [get in touch](https://51degrees.com/contact-us).
 
 @anchor Features_UsageSharing_Internals
-# Internals [#](@ref Features_UsageSharing_Internals)	
+# Internals [#](@ref Internals)	
 
 To minimize any overhead of this feature, received requests are grouped and sent in batches,
 rather than sending each request individually.
@@ -34,7 +34,7 @@ transforms them into the appropriate format, adds them into a message, and sends
 This is done to avoid blocking the @Pipeline process thread.
 
 @anchor Features_UsageSharing_RepeatEvidence
-## Repeated Evidence [#](@ref Features_UsageSharing_RepeatEvidence)	
+## Repeated Evidence [#](@ref RepeatEvidence)	
 
 To avoid situations where the same @evidence is sent multiple times (for example, a single user
 visiting multiple pages on a website), we keep track of the @evidence that has been shared over
@@ -185,7 +185,7 @@ are used to suspend **usage sharing** if its internal mechanisms are responding 
 ## Maximum Queue Size
 
 In languages that support multiple threads, this settings controls the size of the [internal 
-producer/consumer queue](@ref Features_UsageSharing_Internals).
+producer/consumer queue](@ref Internals).
 
 ## Minimum Entries per Message
 
@@ -195,10 +195,10 @@ to the **usage sharing** web service.
 ## Repeat Evidence Interval
 
 The maximum time period which @evidence is stored for the purpose of filtering 
-[repeat evidence](@ref Features_UsageSharing_RepeatEvidence).
+[repeat evidence](@ref RepeatEvidence).
 
 @anchor Low_Level_Usage_Sharing
-# Usage Sharing for low-level APIs [#](@ref Features_UsageSharing_Low_Level_Usage_Sharing)	
+# Usage Sharing for low-level APIs [#](@ref Low_Level_Usage_Sharing)	
 
 The low-level device detection APIs such as C, Nginx, and Varnish do not support **usage sharing** 
 out of the box. However, some customers using these technologies still want to share usage with 
