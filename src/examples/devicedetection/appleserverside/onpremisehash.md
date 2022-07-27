@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_AppleServerSide_OnPremiseHash On-Premise Hash
+@page Examples_DeviceDetection_AppleServerSide_OnPremise On-Premise Hash
 
 # Introduction
 
