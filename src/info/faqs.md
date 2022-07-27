@@ -1,8 +1,8 @@
 @page Info_FAQs Frequently Asked Questions
 
 @anchor Dotn_TempFiles
-@anchor Info_FAQs_Dotn_TempFiles
-#### Why are my temp files not being cleared when using the .NET Pipeline API? [test](@ref Dotn_TempFiles)
+
+[#](@ref Dotn_TempFiles) #### Why are my temp files not being cleared when using the .NET Pipeline API? 
 
 In .NET core, the finalizer is not called when a program exits as described on [this page](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/destructors). Some engines maintain files in a temporary directory while they are in operation and these can remain if a .NET core application using one of these engines is closed.
 
@@ -11,7 +11,7 @@ To workaround this problem, you can either:
 - Explicitly call dispose on all engines before exiting the program.
 
 @anchor Node_TempFiles
-#### Why are my temp files not being cleared when using the Node.js Pipeline API? [#](@ref Node_TempFiles)
+ [#](@ref Node_TempFiles) #### Why are my temp files not being cleared when using the Node.js Pipeline API?
 
 In Node.js, the finalizer is not called when a program exits. Some engines maintain files in a temporary directory while they are in operation and these can remain if a Node.js application using one of these engines is closed.
 
@@ -21,9 +21,6 @@ temporary file, or the `MaxPerformance` configuration option where the data file
 - Set the `tempDataDir` to a directory which will be periodically cleaned up by another process e.g. `os.tmpdir()`.
 
 These is the options in the device detection on-premise engine, other third party engines may use different option naming.
-
-[test](@ref Dotn_TempFiles)
-[test2](@ref Info_FAQs_Dotn_TempFiles)
 
 @anchor Dependencies_Glibc_Libatomic
 #### Why am I getting <code>version 'GLIBC_2.27' not found</code> or <code>libatomic.so.1: cannot open shared object file: No such file or directory</code> error when using 51Degrees Device Detection API package for On-premise? [#](@ref Dependencies_Glibc_Libatomic)
