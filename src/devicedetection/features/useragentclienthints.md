@@ -9,7 +9,8 @@ see the Background section below. If you just want to know how to
 work with them using the 51Degrees API, then read on.
 
 @anchor UACH_Support
-# Support for detection from Client Hints [#](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Support)
+# Support for detection from Client Hints [#1](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Support)
+[test](@ref DeviceDetection_Features_UserAgentClientHints_UACH_Support)
 
 The 51Degrees Device Detection API has provided support for detection 
 based on one of the Client Hints headers (Sec-CH-UA only) in data files 
