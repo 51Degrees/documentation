@@ -413,25 +413,61 @@ This file should follow the usual structure of a pipeline configuration file. Fo
 }
 ```
 
-- Modification to `Application_Start` method in the application class from `"global.asax.cs"` file to include loading of assemblies required by the pipeline is needed. See the snippet below for an example. 
+- Modification to `Application_Start` method in the application class from `"global.asax.cs"` file to include loading of assemblies required by the pipeline is needed. Again, this is different for cloud and on-premise scenarios. See snippets for both below. 
+
+On-premise:
 ```{cs}
+using FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements;
+using FiftyOne.Pipeline.Engines.FiftyOne.FlowElements;
+using FiftyOne.Pipeline.JavaScriptBuilder.FlowElement;
+using FiftyOne.Pipeline.JsonBuilder.FlowElement;
+.
+.
+.
 // Make sure the assemblies that are needed by the pipeline
 // are loaded into the app domain.
-AppDomain.CurrentDomain.Load(
-    typeof(DeviceDetectionHashEngineBuilder).Assembly.GetName());
-AppDomain.CurrentDomain.Load(
-    typeof(JavaScriptBuilderElement).Assembly.GetName());
-AppDomain.CurrentDomain.Load(
-    typeof(JsonBuilderElement).Assembly.GetName());
-AppDomain.CurrentDomain.Load(
-    typeof(SequenceElementBuilder).Assembly.GetName());
+AppDomain.CurrentDomain.Load(typeof(DeviceDetectionHashEngineBuilder).Assembly.GetName());
+AppDomain.CurrentDomain.Load(typeof(JavaScriptBuilderElement).Assembly.GetName());
+AppDomain.CurrentDomain.Load(typeof(JsonBuilderElement).Assembly.GetName());
+AppDomain.CurrentDomain.Load(typeof(SequenceElementBuilder).Assembly.GetName());
 ```
+
+Cloud:
+```
+using FiftyOne.DeviceDetection.Cloud.FlowElements;
+using FiftyOne.Pipeline.CloudRequestEngine.FlowElements;
+using FiftyOne.Pipeline.Engines.FiftyOne.FlowElements;
+using FiftyOne.Pipeline.JavaScriptBuilder.FlowElement;
+using FiftyOne.Pipeline.JsonBuilder.FlowElement;
+.
+.
+.
+// Make sure the assemblies that are needed by the pipeline
+// are loaded into the app domain.
+AppDomain.CurrentDomain.Load(typeof(CloudRequestEngine).Assembly.GetName());
+AppDomain.CurrentDomain.Load(typeof(DeviceDetectionCloudEngine).Assembly.GetName());
+AppDomain.CurrentDomain.Load(typeof(JavaScriptBuilderElement).Assembly.GetName());
+AppDomain.CurrentDomain.Load(typeof(JsonBuilderElement).Assembly.GetName());
+AppDomain.CurrentDomain.Load(typeof(SequenceElementBuilder).Assembly.GetName());
+```
+
 
 The old v3 web integration used the `Request.Browser` functionality that was built in to ASP.NET in order to access result values. The Pipeline integration uses the same approach so you can still do things like:
 
 ```{cs}
 if (Request.Browser["IsMobile"] == "True")
 ```
+
+See the [property dictionary](https://51degrees.com/developers/property-dictionary) for a complete 
+list of the available properties.
+
+If you need to access values specific to the 51Degrees implementation then you can do so by casting:
+
+```{cs}
+var 51capabilities = (FiftyOne.Pipeline.Web.Framework.Providers.PipelineCapabilities)Request.Browser;
+```
+
+
 @endsnippet
 @startsnippet{aspdotnetcore}
 <!-- ===================================================================================
