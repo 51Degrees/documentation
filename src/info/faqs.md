@@ -2,7 +2,7 @@
 
 @anchor Dotn_TempFiles
 
-[#](@ref Dotn_TempFiles) #### Why are my temp files not being cleared when using the .NET Pipeline API? 
+#### Why are my temp files not being cleared when using the .NET Pipeline API?   [#](@ref Dotn_TempFiles) 
 
 In .NET core, the finalizer is not called when a program exits as described on [this page](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/destructors). Some engines maintain files in a temporary directory while they are in operation and these can remain if a .NET core application using one of these engines is closed.
 
@@ -11,7 +11,8 @@ To workaround this problem, you can either:
 - Explicitly call dispose on all engines before exiting the program.
 
 @anchor Node_TempFiles
- [#](@ref Node_TempFiles) #### Why are my temp files not being cleared when using the Node.js Pipeline API?
+[#](@ref Node_TempFiles) 
+#### Why are my temp files not being cleared when using the Node.js Pipeline API?  
 
 In Node.js, the finalizer is not called when a program exits. Some engines maintain files in a temporary directory while they are in operation and these can remain if a Node.js application using one of these engines is closed.
 
