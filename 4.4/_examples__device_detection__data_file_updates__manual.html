@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>51Degrees API Documentation: On-Premise Hash</title>
+<title>51Degrees API Documentation: Manual</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -55,21 +55,23 @@
 	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
   <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('_examples__device_detection__automatic_updates__update_on_startup__on_premise_hash.html','');});
+$(document).ready(function(){initNavTree('_examples__device_detection__data_file_updates__manual.html','');});
 /* @license-end */
 </script>
 <div id="doc-content" class="g-docs__content">
 <div class="PageDoc"><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_examples__index.html">Examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_examples__device_detection__index.html">Device Detection Examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_examples__device_detection__automatic_updates__index.html">Automatic Updates</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_examples__device_detection__automatic_updates__update_on_startup__index.html">Update On Start-up</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_examples__device_detection__automatic_updates__update_on_startup__on_premise_hash.html">On-Premise Hash</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_examples__index.html">Examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_examples__device_detection__index.html">Device Detection Examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_examples__device_detection__data_file_updates__index.html">Data File Updates</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_examples__device_detection__data_file_updates__manual.html">Manual</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">On-Premise Hash </h2></div><!--header-->
+<h2 class="g-docs__page-title">Manual </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
-<p>This example shows how to configure the device detection pipeline to update the Device data file on start-up.</p>
-<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-node', 'onpremise_2automaticupdates_2update_on_start_up_8js')">Node.js</button>   <div class="c-tabgroup__main" id="grabbed-example"></div>   </div>  </p>
+<p>New device detection data files are released daily by 51Degrees. Where possible, we recommend using the <a class="el" href="_features__automatic_datafile_updates.html">automatic update</a> feature to ensure you are using the latest data file. However, this feature is not available for all languages, and is not practical in all environments.</p>
+<p>This example demonstrates how to prompt the Device Detection <a class="el" href="_concepts__flow_elements__aspect_engine.html">aspect engine</a> to refresh it's internal data structures from the data file after it has been updated on disk.</p>
+<p>Note that, in all languages, the same function can also be used to update the Device Detection <a class="el" href="_concepts__flow_elements__aspect_engine.html">aspect engine</a> from a data file that is held in memory.</p>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-php-onpremise', 'onpremise_2manual_data_update_8php')">PHP</button>   <div class="c-tabgroup__main" id="grabbed-example"></div>   </div>  </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->

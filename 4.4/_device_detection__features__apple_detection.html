@@ -95,6 +95,10 @@ $(document).ready(function(){initNavTree('_device_detection__features__apple_det
 <p>The User Agent header can be used to determine which of these groups the device making the request falls in to. Each of these profiles has a <code>JavascriptHardwareProfile</code> property value that contains slightly different JavaScript snippets that need to be executed on the client device.</p>
 <p>In each case, the snippet will get several values and then use those values to determine the profile id of the hardware profile representing the actual model.</p>
 <p>This profile id is then passed back to the server. When detection is performed, the group profile that can be determined from the User Agent is swapped for the profile that was passed from the client-side code.</p>
+<h1 class="g-docs__section-heading">Server-Side detection</h1>
+<p>For customers that are unable to use dynamically generated JavaScript, we have a solution that uses data gathered from static JavaScript to perform the detection server-side.</p>
+<p>This feature is currently only available for .NET. Examples are <a class="el" href="_examples__device_detection__apple_server_side__index.html">here</a>.</p>
+<p>Note that data will still need to be gathered using client-side JavaScript. A system to handle this, along with any client-side caching, etc. will need to be implemented by the user.</p>
 <h1 class="g-docs__section-heading">Further Reading</h1>
 <ul>
 <li>This <a class="el" href="_device_detection__features__apple_device_table.html">table</a> contains a break down of exactly which iPhone and iPad models our solution can identify.</li>
