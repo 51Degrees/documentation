@@ -20,9 +20,9 @@ A Resource Key cannot have its list of properties changed, but you can follow th
 
 When using the on-Premise APIs, if you attempt to create a cloud pipeline with properties for which your Resource Key is not authorized, you may see errors similar to these:
 
-`Your resource key does not include access to any properties under the engine with key hardware that was added to the pipeline. For more details on resource keys, see our explainer: https://51degrees.com/documentation/_info__resource_keys.html Available engine data keys are: ['device']`
+- Your resource key does not include access to any properties under the engine with key hardware that was added to the pipeline. For more details on resource keys, see our explainer: https://51degrees.com/documentation/_info__resource_keys.html Available engine data keys are: ['device']
 
-`Failed to load aspect properties for element 'hardware'. This is because your resource key does not include access to any properties under 'hardware'. For more details on resource keys, see our explainer: https://51degrees.com/documentation/_info__resource_keys.html`
+- Failed to load aspect properties for element 'hardware'. This is because your resource key does not include access to any properties under 'hardware'. For more details on resource keys, see our explainer: https://51degrees.com/documentation/_info__resource_keys.html
 
 This occurs when creating a Cloud Engine or Element and the Resource Key you provided is not authorized to access any properties associated with the Engine. 
 
