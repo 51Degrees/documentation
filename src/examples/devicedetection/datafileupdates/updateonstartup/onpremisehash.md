@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_AutomaticUpdates_UpdateOnStartup_OnPremiseHash On-Premise Hash
+@page Examples_DeviceDetection_DataFileUpdates_UpdateOnStartup_OnPremiseHash On-Premise Hash
 
 # Introduction
 

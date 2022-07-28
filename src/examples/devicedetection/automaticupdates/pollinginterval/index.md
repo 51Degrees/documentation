@@ -1,3 +1,0 @@
-@page Examples_DeviceDetection_AutomaticUpdates_PollingInterval_Index Update Polling Interval
-
-@subpage Examples_DeviceDetection_AutomaticUpdates_PollingInterval_OnPremiseHash

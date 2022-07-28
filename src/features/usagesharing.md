@@ -7,7 +7,6 @@ Some of the services offered by 51Degrees benefit from @evidence (optionally) be
 this evidence to ensure that our data is up-to-date, comprehensive, and continues to
 provide accurate results.
 
-
 @dotfile usagesharing.gvdot
 
 # How to enable usage sharing
@@ -19,7 +18,9 @@ To enable **usage sharing** for low-level APIs such as C, Nginx, and Varnish, pl
 At this time, we do not have **usage sharing** for PHP or other languages. If you'd like to make a feature
 request, please [get in touch](https://51degrees.com/contact-us).
 
-# Internals @anchor Features_UsageSharing_Internals
+@anchor Internals
+[#](@ref Internals)	
+# Internals
 
 To minimize any overhead of this feature, received requests are grouped and sent in batches,
 rather than sending each request individually.
@@ -33,7 +34,9 @@ where the 'main' thread adds the evidence to a queue while a background thread t
 transforms them into the appropriate format, adds them into a message, and sends the message when ready.
 This is done to avoid blocking the @Pipeline process thread.
 
-## Repeated Evidence @anchor Features_UsageSharing_RepeatEvidence
+@anchor RepeatEvidence
+[#](@ref RepeatEvidence)
+## Repeated Evidence 
 
 To avoid situations where the same @evidence is sent multiple times (for example, a single user
 visiting multiple pages on a website), we keep track of the @evidence that has been shared over
@@ -54,7 +57,7 @@ This can be disabled using the SetShareUsage method on the builder.
 There are also several configuration options when building a **usage sharing** element. These can be used to 
 control what is shared and how it is collected:
 
-## Evidence Shared
+## Evidence shared
 
 The **usage sharing** element will not be interested in all @evidence in the @flowdata. 
 These are the rules for whether or not a particular piece of evidence is shared:
@@ -66,7 +69,106 @@ These are the rules for whether or not a particular piece of evidence is shared:
 
 The various blacklists and whitelists can be configured using the **share usage** @elementbuilder.
 
-## Share Percentage
+### Evidence detail
+
+Some of the values sent as evidence are more important for our backend processing than others.
+This section describes some of the most important, along with why they are useful to us.
+Any values marked with 'REQUIRED' must be included, or our backend systems will discard the data.
+
+- server.client-ip - REQUIRED - The IP address of the client that is connecting to the 
+  website/service. This is useful in order for us to evaluate the quality of the data. For an 
+  over-simplified example, large numbers of requests coming from a single IP are more likely to 
+  be bot or test traffic with spoofed details, which we do not want in our database.
+- header.user-agent - REQUIRED - The value from the HTTP Header 'User-Agent'. This is the primary 
+  means of device detection (before @uach began to supplant it)
+- header.usage-from - This is not from a real HTTP header, but is added to usage data by customers 
+  in order for us to more easily identify where data is coming from. This can assist with 
+  troubleshooting problems.
+- header.host - The value from the HTTP Header 'Host'. Identifies the website that the traffic 
+  is coming from. Similar to usage-from above, this can assist with troubleshooting problems.
+- header.sec-ch-ua* - The various @uach headers are becoming ever more important for device 
+  detection. In order for us to be able to provide a good detection service, we require data from
+  the real world to train our machine learning algorithm.
+
+When using our @webintegration solutions, these values (with the exception of usage-from) will
+be added as evidence automatically. If you are not using web integration, then you will need to 
+ensure these values are added to evidence manually. The snippet below illustrates this:
+
+@startsnippets
+@showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@showsnippet{node,Node.js}
+@showsnippet{php,PHP}
+@showsnippet{python,Python}
+@defaultsnippet{Select a tab to view language specific information on configuring **logging**}
+@startsnippet{dotnet}
+```{cs}
+data.AddEvidence(“header.user-agent”, [User-Agent HTTP header])
+  .AddEvidence(“server.client-ip”, [source IP address of client connection])
+  // The website root e.g. 51degrees.com
+  .AddEvidence(“header.host”, [Host HTTP header])
+  // Provide simple name to allow 51Degrees to identify source of usage data
+  .AddEvidence(“header.usage-from”, [Business name])
+  // Repeat for each user-agent client hints header (sec-ch-ua, sec-ch-ua-full-version-list, sec-ch-ua-platform, etc)
+  .AddEvidence(“header.sec-ch-ua-mobile”, [Sec-CH-UA-Mobile HTTP header])
+  .Process();
+```
+@endsnippet
+@startsnippet{java}
+```{java}
+data.addEvidence(“header.user-agent”, [User-Agent HTTP header])
+  .addEvidence(“server.client-ip”, [source IP address of client connection])
+  // The website root e.g. 51degrees.com
+  .addEvidence(“header.host”, [Host HTTP header])
+  // Provide simple name to allow 51Degrees to identify source of usage data
+  .addEvidence(“header.usage-from”, [Business name])
+  // Repeat for each user-agent client hints header (sec-ch-ua, sec-ch-ua-full-version-list, sec-ch-ua-platform, etc)
+  .addEvidence(“header.sec-ch-ua-mobile”, [Sec-CH-UA-Mobile HTTP header])
+  .process();
+```
+@endsnippet
+@startsnippet{node}
+```{js}
+data.evidence.add(“header.user-agent”, [User-Agent HTTP header]);
+data.evidence.add(“server.client-ip”, [source IP address of client connection]);
+// The website root e.g. 51degrees.com
+data.evidence.add(“header.host”, [Host HTTP header]);
+// Provide simple name to allow 51Degrees to identify source of usage data
+data.evidence.add(“header.usage-from”, [Business name]);
+// Repeat for each user-agent client hints header (sec-ch-ua, sec-ch-ua-full-version-list, sec-ch-ua-platform, etc)
+data.evidence.add(“header.sec-ch-ua-mobile”, [Sec-CH-UA-Mobile HTTP header]);
+data.process();
+```
+@endsnippet
+@startsnippet{php}
+```{php}
+$data->evidence->set(“header.user-agent”, [User-Agent HTTP header]);
+$data->evidence->set(“server.client-ip” => [source IP address of client connection]);
+// The website root e.g. 51degrees.com
+$data->evidence->set(“header.host” => [Host HTTP header]);
+// Provide simple name to allow 51Degrees to identify source of usage data
+$data->evidence->set(“header.usage-from” => [Business name]);
+// Repeat for each user-agent client hints header (sec-ch-ua, sec-ch-ua-full-version-list, sec-ch-ua-platform, etc)
+$data->evidence->set(“header.sec-ch-ua-mobile” => [Sec-CH-UA-Mobile HTTP header]);
+$data->process();
+```
+@endsnippet
+@startsnippet{python}
+```{js}
+data.evidence.add(“header.user-agent”, [User-Agent HTTP header])
+data.evidence.add(“server.client-ip”, [source IP address of client connection])
+# The website root e.g. 51degrees.com
+data.evidence.add(“header.host”, [Host HTTP header])
+# Provide simple name to allow 51Degrees to identify source of usage data
+data.evidence.add(“header.usage-from”, [Business name])
+# Repeat for each user-agent client hints header (sec-ch-ua, sec-ch-ua-full-version-list, sec-ch-ua-platform, etc)
+data.evidence.add(“header.sec-ch-ua-mobile”, [Sec-CH-UA-Mobile HTTP header])
+data.process()
+```
+@endsnippet
+@endsnippets
+
+## Share percentage
 
 **Usage sharing** can be configured to only share a certain percentage of requests that 
 pass through the @Pipeline.
@@ -85,7 +187,7 @@ are used to suspend **usage sharing** if its internal mechanisms are responding 
 ## Maximum Queue Size
 
 In languages that support multiple threads, this settings controls the size of the [internal 
-producer/consumer queue](@ref Features_UsageSharing_Internals).
+producer/consumer queue](@ref Internals).
 
 ## Minimum Entries per Message
 
@@ -95,9 +197,10 @@ to the **usage sharing** web service.
 ## Repeat Evidence Interval
 
 The maximum time period which @evidence is stored for the purpose of filtering 
-[repeat evidence](@ref Features_UsageSharing_RepeatEvidence).
+[repeat evidence](@ref RepeatEvidence).
 
 @anchor Low_Level_Usage_Sharing
+[#](@ref Low_Level_Usage_Sharing)	
 # Usage Sharing for low-level APIs
 
 The low-level device detection APIs such as C, Nginx, and Varnish do not support **usage sharing** 

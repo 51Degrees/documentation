@@ -67,6 +67,17 @@ This profile id is then passed back to the server. When detection is performed, 
 that can be determined from the User Agent is swapped for the profile that was passed from the 
 client-side code.
 
+# Server-Side detection
+
+For customers that are unable to use dynamically generated JavaScript, we have a solution that uses 
+data gathered from static JavaScript to perform the detection server-side.
+
+This feature is currently only available for .NET. Examples are 
+[here](@ref Examples_DeviceDetection_AppleServerSide_Index).
+
+Note that data will still need to be gathered using client-side JavaScript. A system to handle this, 
+along with any client-side caching, etc. will need to be implemented by the user.
+
 # Further Reading
 
 - This [table](@ref DeviceDetection_Features_AppleDeviceTable) contains a break down of exactly which iPhone and iPad models our solution can identify.

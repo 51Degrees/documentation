@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_AutomaticUpdates_OnPremise On-Premise
+@page Examples_DeviceDetection_DataFileUpdates_Automatic Automatic
 
 # Introduction
 

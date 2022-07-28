@@ -1,0 +1,3 @@
+@page Examples_DeviceDetection_AppleServerSide_Index Apple Server-Side Detection
+
+@subpage Examples_DeviceDetection_AppleServerSide_OnPremise
