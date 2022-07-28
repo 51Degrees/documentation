@@ -2,7 +2,7 @@
 
 # Introduction
 
-The @Pipeline API has been designed to be easy-to-use, adding IDE auto-complete support where possible. 
+The @Pipeline API has been designed to be easy to use, adding IDE auto-complete support where possible. 
 However, one of our key design goals was to allow new properties to be added without the API software 
 needing to be updated. These goals are often in conflict and lead to the creation of several possible 
 mechanisms to retrieve property values.
@@ -10,7 +10,7 @@ mechanisms to retrieve property values.
 # Detail
 
 The precise nature of the available accessors depend on the language being used but we have aimed 
-to support the following use-cases:
+to support the following use cases:
 
 1. Accessing properties without any 'magic strings' and with IDE auto-complete support.
 2. Accessing a property that has been returned by the data source but that did not exist when the 

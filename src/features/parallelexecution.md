@@ -14,7 +14,7 @@ Note, that some languages with @Pipeline implementations do not have the built-i
 ability to handle **parallel execution**. For example, the PHP process runs in a 
 single-thread, so @flowelements cannot be configured to run in **parallel**.
 
-# Executing Flow Elements in Parallel
+# Executing flow elements in parallel
 
 By default, @flowelements are executed sequentially in the order
 they are added to the @Pipeline. However, if the [language supports it](@ref Info_FeatureMatrix), 
@@ -29,13 +29,13 @@ If the CPU only has two cores, then running four elements in parallel is unlikel
 prove effective.
 
 
-# Calling the Pipeline from Multiple Threads
+# Calling the Pipeline from multiple threads
 
 The @Pipeline is able to handle concurrent process requests. However, the ability of a @flowelement
 to also support this will depend on its individual implementation.
 
-All 51Degrees @flowelements have been designed to function correctly in this scenario. 
-(Assuming the [language supports it](@ref Info_FeatureMatrix)).
+All 51Degrees @flowelements have been designed to function correctly in this scenario 
+(assuming the [language supports it](@ref Info_FeatureMatrix)).
 If you are writing a @customelement and want to ensure it will work in multi-threaded scenarios
 then see the [custom element parallel example](@ref Examples_CustomElement_Parallel).
 

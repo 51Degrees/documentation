@@ -33,7 +33,7 @@ where the 'main' thread adds the evidence to a queue while a background thread t
 transforms them into the appropriate format, adds them into a message, and sends the message when ready.
 This is done to avoid blocking the @Pipeline process thread.
 
-## Repeated Evidence @anchor Features_UsageSharing_RepeatEvidence
+## Repeated evidence @anchor Features_UsageSharing_RepeatEvidence
 
 To avoid situations where the same @evidence is sent multiple times (for example, a single user
 visiting multiple pages on a website), we keep track of the @evidence that has been shared over
@@ -54,7 +54,7 @@ This can be disabled using the SetShareUsage method on the builder.
 There are also several configuration options when building a **usage sharing** element. These can be used to 
 control what is shared and how it is collected:
 
-## Evidence Shared
+## Evidence shared
 
 The **usage sharing** element will not be interested in all @evidence in the @flowdata. 
 These are the rules for whether or not a particular piece of evidence is shared:
@@ -66,7 +66,7 @@ These are the rules for whether or not a particular piece of evidence is shared:
 
 The various blacklists and whitelists can be configured using the **share usage** @elementbuilder.
 
-## Share Percentage
+## Share percentage
 
 **Usage sharing** can be configured to only share a certain percentage of requests that 
 pass through the @Pipeline.
@@ -82,23 +82,23 @@ the time but it's unlikely to be exact.
 There may be one or multiple configurable timeouts depending on the language. Typically, these 
 are used to suspend **usage sharing** if its internal mechanisms are responding too slowly.
 
-## Maximum Queue Size
+## Maximum queue size
 
 In languages that support multiple threads, this settings controls the size of the [internal 
 producer/consumer queue](@ref Features_UsageSharing_Internals).
 
-## Minimum Entries per Message
+## Minimum entries per message
 
 The minimum number of @evidence entries that must be added before the message will be sent
 to the **usage sharing** web service.
 
-## Repeat Evidence Interval
+## Repeat evidence interval
 
 The maximum time period which @evidence is stored for the purpose of filtering 
 [repeat evidence](@ref Features_UsageSharing_RepeatEvidence).
 
 @anchor Low_Level_Usage_Sharing
-# Usage Sharing for low-level APIs
+# Usage sharing for low-level APIs
 
 The low-level device detection APIs such as C, Nginx, and Varnish do not support **usage sharing** 
 out of the box. However, some customers using these technologies still want to share usage with 

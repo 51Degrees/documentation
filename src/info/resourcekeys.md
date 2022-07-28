@@ -1,8 +1,8 @@
 @page Info_ResourceKeys Resource Keys
 
-A Resource Key grants your code access to the 51Degrees cloud APIs. A specific Resource Key has access to a particular set of properties which are chosen at key creation time and cannot be changed afterwards. The number of accesses authorized by a particular Resource Key is limited for free keys, or can be associated with your license key and thus your account.
+A Resource Key grants your code access to the 51Degrees Cloud APIs. A specific Resource Key has access to a particular set of properties which are chosen at key creation time and cannot be changed afterwards. The number of accesses authorized by a particular Resource Key is limited for free keys, or can be associated with your License Key and thus your account.
 
-To obtain a Resource Key, use the Cloud Configurator; instructions on how to use the Cloud Configurator to create a key while associating it with properties and your license key are part of the @configuratorexplanation, which describes the process in detail.
+To obtain a Resource Key, use the Cloud Configurator; instructions on how to use the Cloud Configurator to create a key while associating it with properties and your License Key are part of the @configuratorexplanation, which describes the process in detail.
 
 # Authorization errors
 
@@ -18,7 +18,7 @@ A Resource Key cannot have its list of properties changed, but you can follow th
 
 # Failed to load aspect properties
 
-When using the On-Premise APIs, if you attempt to create a cloud pipeline with properties for which your Resource Key is not authorized, you may see errors similar to these:
+When using the on-Premise APIs, if you attempt to create a cloud pipeline with properties for which your Resource Key is not authorized, you may see errors similar to these:
 
 `Your resource key does not include access to any properties under the engine with key hardware that was added to the pipeline. For more details on resource keys, see our explainer: https://51degrees.com/documentation/_info__resource_keys.html Available engine data keys are: ['device']`
 
@@ -54,4 +54,4 @@ If you see any null reasons like `priceband is a paid feature. You need a licenc
 
 Some of the error message above will list the properties for which the used key is authorized, but you can also see the properties for a key you already have by constructing and visiting the URL https://configure.51degrees.com/YOUR_RESOURCE_KEY. This will show Step 1 of the Configurator with the properties for this specific key already selected.
 
-Beware: Continuing to steps 2 or 3 will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it will create a new Resource Key. 
+Beware: continuing to steps 2 or 3 will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it will create a new Resource Key. 

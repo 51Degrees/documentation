@@ -2,15 +2,15 @@
 
 # Introduction
 
-One of the primary use-cases for the @Pipeline is as part of the request processing for a web site 
+One of the primary use cases for the @Pipeline is as part of the request processing for a website 
 or web service. 
-To make using the 51Degrees' @Pipeline as simple as possible in this scenario, we
+To make using the 51Degrees @Pipeline as simple as possible in this scenario, we
 have produced a range of packages to integrate with different web frameworks.
 
 # Features
 
 The details of each integration vary significantly. However, the features provided
-are largely the same.
+are largely the same:
 
 - Create a @Pipeline directly from configuration with little or no other direction from the developer.
 - Automatically feed relevant @evidence to the @Pipeline from incoming web requests.
@@ -30,7 +30,7 @@ results from the @Pipeline API.
 - [Varnish](@ref OtherIntegrations_Varnish) (@devicedetection only)
 - [Nginx](@ref OtherIntegrations_Nginx) (@devicedetection only)
 
-# Client-side Evidence
+# Client-side evidence
 
 One feature that is implemented very differently in each framework is the integration with the
 @clientsideevidence feature of the @Pipeline.

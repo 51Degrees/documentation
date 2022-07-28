@@ -5,7 +5,7 @@
 Lazy loading is a concept whereby an object is not loaded until it is actually needed. This can mean that it
 does not start loading until it is required, or it is loaded in the background so that there is no delay in the 
 execution of other logic. The latter is usually preferable, as loading in the background often results in no
-waiting at all (i.e. by the time the object is needed, it has already been loaded).
+waiting at all (i.e., by the time the object is needed, it has already been loaded).
 
 In the context of a @pipeline, lazy loading refers to the way values are populated in an @aspectdata. Usually
 the default is to not lazily load them, so an @aspectengine's processing does not finish until all values
@@ -26,7 +26,7 @@ consideration.
 
 Lazy loading has two main configuration options.
 
-## Property Timeout
+## Property timeout
 
 As it is not known at the point of fetching an @aspectproperty's value whether or not it has been
 populated, a timeout option is available. This is the time to wait for the value before throwing an
