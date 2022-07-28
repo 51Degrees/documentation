@@ -79,7 +79,7 @@ Firstly, add a button to your page. Make sure to set a css class that we can use
 
 Next, add an HTML element and paste the following snippet of code into it:
 
-```
+```json
 <script type="text/javascript" >
      window.onload = function() {
        var elements = document.getElementsByClassName('get-user-location');
@@ -106,7 +106,7 @@ The WordPress plugin will handle this for you automatically. However, be aware t
 
 **Note:** The content on the page can also be updated by using JavaScript, rather than waiting for the user to make a second request. The global `fod` object can be used to pass a callback that is executed when the updated values are available. For example:
 
-```
+```json
 <script type="text/javascript" >
      window.onload = function() {
        fod.complete(function(data) { /* access values here. e.g. data.device.hardwarename */ });
