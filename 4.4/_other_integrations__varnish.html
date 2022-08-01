@@ -98,11 +98,11 @@ $(document).ready(function(){initNavTree('_other_integrations__varnish.html','')
 <h1 class="g-docs__section-heading">Installing</h1>
 <p>If you haven’t already, you can obtain a copy of the latest version of the API <a href="https://github.com/51Degrees/device-detection-varnish">here</a>. To install on a Linux system, run the following commands from the project's root directory.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">$ ./autogen.sh</div><div class="c-code__line">$ ./configure --with-config=release|test</div><div class="c-code__line">$ make</div><div class="c-code__line">$ sudo make install</div></div><p>Where <code>--with-config [optional]</code> sets the version of the module that you want to build. Defaults to release. To run all the test, you will need to use the <code>test</code> option.</p>
-<p>If your Varnish source is not installed at the standard location (i.e. <code>/usr/local/include/varnish</code>), you can adjust this by setting the environment variable <code>VARNISHSRC [optional]</code> to point to the correct location. For example, if you have installed Varnish source via package manager, it will be located at <code>/usr/include/varnish</code>. Then, you will need to set <code>VARNISHSRC</code> to <code>/usr/include/varnish</code> for the installation to succeed. If you want to install the module to a location of your choice, you can also set it via <code>VMOD_DIR [optional]</code>.</p>
+<p>If your Varnish source is not installed at the standard location (i.e., <code>/usr/local/include/varnish</code>), you can adjust this by setting the environment variable <code>VARNISHSRC [optional]</code> to point to the correct location. For example, if you have installed Varnish source via package manager, it will be located at <code>/usr/include/varnish</code>. Then, you will need to set <code>VARNISHSRC</code> to <code>/usr/include/varnish</code> for the installation to succeed. If you want to install the module to a location of your choice, you can also set it via <code>VMOD_DIR [optional]</code>.</p>
 <p>Finally run the included tests. You will need to make sure that the module is built with <code>test</code> option.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">$ make check</div></div><h1 class="g-docs__section-heading">Configuring the Varnish API</h1>
-<p>Before you start matching user agents, you may wish to configure the solution to use a different data set for example, or to use a certain performance profile.</p>
-<h2>Init Settings</h2>
+<p>Before you start matching User Agents, you may wish to configure the solution to use a different data set for example, or to use a certain performance profile.</p>
+<h2>Init settings</h2>
 <p>These settings are used in the vcl_init and should only be set once.</p>
 <div class="g-table g-table--overflow"><table class="c-table">
 <tr class="c-table__row--heading">
@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('_other_integrations__varnish.html','')
 <tr class="c-table__row">
 <td class="c-table__cell">fiftyonedegrees.set_drift  </td><td class="c-table__cell">0  </td><td class="c-table__cell">Set the drift value to allow sub strings to be matched in a wider range of character positions.   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">fiftyonedegrees.set_difference  </td><td class="c-table__cell">0  </td><td class="c-table__cell">Set the difference value to allow User-Agents which are slightly different to what is expected.   </td></tr>
+<td class="c-table__cell">fiftyonedegrees.set_difference  </td><td class="c-table__cell">0  </td><td class="c-table__cell">Set the difference value to allow User Agents which are slightly different to what is expected.   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">fiftyonedegrees.set_allow_unmatched  </td><td class="c-table__cell">NO  </td><td class="c-table__cell">Set whether the unmatched node should be used. <code>NO</code> means if there are no matched results, an empty string will be returned for the required property. A default string will be returned if <code>YES</code> is set.   </td></tr>
 <tr class="c-table__row">
@@ -134,14 +134,14 @@ $(document).ready(function(){initNavTree('_other_integrations__varnish.html','')
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Setting  </td><td class="c-table__cell">Description   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">fiftyonedegrees.match_single  </td><td class="c-table__cell">Gets device properties using a User-Agent. Takes a User-Agent string and a comma separated list of properties to return.   </td></tr>
+<td class="c-table__cell">fiftyonedegrees.match_single  </td><td class="c-table__cell">Gets device properties using a User Agent. Takes a User Agent string and a comma separated list of properties to return.   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">fiftyonedegrees.match_all  </td><td class="c-table__cell">Gets device properties using multiple HTTP headers. Takes comma separated list of properties to return.   </td></tr>
 </table>
-</div><p>For full documentation, use </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">$ man vmod_fiftyonedegrees</div></div><h2>User-Agents CLient Hints</h2>
+</div><p>For full documentation, use </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">$ man vmod_fiftyonedegrees</div></div><h2>User Agents Client Hints</h2>
 <p>To enable client-hint matching, add the set_resp_headers to the vcl_deliver block. This adds the Accept-CH header to the response if it is supported by the browser. The client-hint headers sent by the browser are then automatically used by the match_all method. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">sub vcl_deliver {</div><div class="c-code__line">    # Enable client-hints</div><div class="c-code__line">    fiftyonedegrees.set_resp_headers();</div><div class="c-code__line">    # Use the match_all as above.</div><div class="c-code__line">    set resp.http.X-IsMobile = fiftyonedegrees.match_all(&quot;IsMobile&quot;);</div><div class="c-code__line">}</div></div><h1 class="g-docs__section-heading">New features</h1>
-<p>New features were introduced to aid users with their decisions on the match results via the meta-data properties. These features are also supported in Varnish. Further details about this data can be found in <a class="el" href="_device_detection__features__false_positive_control.html">False Positive page</a></p>
-<p>These meta data can be used in the same way as the properties </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">set req.http.X-IsMobileX = fiftyonedegrees.match_all(&quot;IsMobile,Iterations,Drift,Difference,Method,UserAgents,MatchedNodes,DeviceId&quot;);</div></div><p><code>HasValue</code> is also supported in Varnish. Whether a property has values or not is indicated by a return of an empty string in the returned list. A message, detailing the reason will also be printed out. </p>
+<p>New features were introduced to aid users with their decisions on the match results via the metadata properties. These features are also supported in Varnish. Further details about this data can be found in <a class="el" href="_device_detection__features__false_positive_control.html">False Positive page</a></p>
+<p>These metadata can be used in the same way as the properties </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">set req.http.X-IsMobileX = fiftyonedegrees.match_all(&quot;IsMobile,Iterations,Drift,Difference,Method,UserAgents,MatchedNodes,DeviceId&quot;);</div></div><p><code>HasValue</code> is also supported in Varnish. Whether a property has values or not is indicated by a return of an empty string in the returned list. A message, detailing the reason will also be printed out. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->

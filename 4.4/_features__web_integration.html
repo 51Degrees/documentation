@@ -68,9 +68,9 @@ $(document).ready(function(){initNavTree('_features__web_integration.html','');}
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
-<p>One of the primary use-cases for the <a class="el" href="_concepts__pipeline.html">Pipeline</a> is as part of the request processing for a web site or web service. To make using the 51Degrees' <a class="el" href="_concepts__pipeline.html">Pipeline</a> as simple as possible in this scenario, we have produced a range of packages to integrate with different web frameworks.</p>
+<p>One of the primary use cases for the <a class="el" href="_concepts__pipeline.html">Pipeline</a> is as part of the request processing for a website or web service. To make using the 51Degrees <a class="el" href="_concepts__pipeline.html">Pipeline</a> as simple as possible in this scenario, we have produced a range of packages to integrate with different web frameworks.</p>
 <h1 class="g-docs__section-heading">Features</h1>
-<p>The details of each integration vary significantly. However, the features provided are largely the same.</p>
+<p>The details of each integration vary significantly. However, the features provided are largely the same:</p>
 <ul>
 <li>Create a <a class="el" href="_concepts__pipeline.html">Pipeline</a> directly from configuration with little or no other direction from the developer.</li>
 <li>Automatically feed relevant <a class="el" href="_concepts__data__evidence.html">evidence</a> to the <a class="el" href="_concepts__pipeline.html">Pipeline</a> from incoming web requests.</li>
@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('_features__web_integration.html','');}
 <li><a class="el" href="_other_integrations__varnish.html">Varnish</a> (<a class="el" href="_device_detection__overview.html">device detection</a> only)</li>
 <li><a class="el" href="_other_integrations__nginx.html">Nginx</a> (<a class="el" href="_device_detection__overview.html">device detection</a> only)</li>
 </ul>
-<h1 class="g-docs__section-heading">Client-side Evidence</h1>
+<h1 class="g-docs__section-heading">Client-side evidence</h1>
 <p>One feature that is implemented very differently in each framework is the integration with the <a class="el" href="_features__client_side_evidence.html">client-side evidence</a> feature of the <a class="el" href="_concepts__pipeline.html">Pipeline</a>.</p>
 <p>This section covers the specifics of how it works for each web framework. Additionally the <a class="el" href="_examples__web_integration.html">web integration examples</a> include details of how to enable <a class="el" href="_features__client_side_evidence.html">client-side evidence</a> for each framework.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'aspnet')">ASP.NET</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'aspnetcore')">ASP.NET Core</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'javaservlet')">Java Servlet</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a web framework to view details of how client-side evidence is supported. </div>   <div class="c-tabgroup__main" data-lang="aspnetcore" style="display:none;">  The ASP.NET Core integration makes use of a <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components">View Component</a> that is embedded in the <b>webintegration</b> assembly. This view component simply requests a JavaScript file called '51Degrees.core.js' if <a class="el" href="_features__client_side_evidence.html">client-side evidence</a> is enabled:</p>

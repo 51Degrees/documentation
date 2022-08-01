@@ -80,11 +80,11 @@ $(document).ready(function(){initNavTree('_concepts__meta_data__element_properti
 <p>The type of value which the <b>property</b> has e.g. <code>string</code> or <code>integer</code>. Note, this is only relevant for strongly typed languages.</p>
 <h1 class="g-docs__section-heading">Available</h1>
 <p>Available lets the user know whether the <b>property</b> is available in a certain configuration. This is not a constant, and depends on how the <a class="el" href="_concepts__flow_elements__flow_element.html">flow element</a> is built (e.g. what data file is used).</p>
-<h1 class="g-docs__section-heading">Item Properties</h1>
+<h1 class="g-docs__section-heading">Item properties</h1>
 <p>This is only relevant where Type is a collection of complex objects. It contains a list of the <b>property</b> meta-data for the items in the value for this <b>property</b>. For example, if this meta-data instance represents a list of hardware devices, ItemProperties will contain a list of the meta-data for <b>properties</b> available on each hardware device element within that list.</p>
-<h1 class="g-docs__section-heading">Delay Execution</h1>
+<h1 class="g-docs__section-heading">Delay execution</h1>
 <p>This is only relevant if the type of value is <code>JavaScript</code> and defaults to false. If set to true then the JavaScript in this <b>property</b> will not be executed automatically on the client device. This is used where executing the JavaScript would result in undesirable behavior. For example, attempting to access the location of the device will cause the browser to show a pop-up confirming if the user is happy to allow the website access to their location. In general, we don't want this to happen immediately when a user enters a website, but when they try to use a feature that requires location data (e.g. show restaurants near me).</p>
-<h1 class="g-docs__section-heading">Evidence Properties</h1>
+<h1 class="g-docs__section-heading">Evidence properties</h1>
 <p>Get the names of any JavaScript <b>properties</b> that, when executed, will obtain additional <a class="el" href="_concepts__data__evidence.html">evidence</a> that can help in determining the value of this <b>property</b>. For example, the <code>ScreenPixelsWidthJavascript</code> <b>property</b> will get the pixel width of the client-device's screen. This is used to update the <code>ScreenPixelsWidth</code> <b>property</b>. As such, <code>ScreenPixelsWidth</code> will have <code>ScreenPixelWidthJavascript</code> in its list of <a class="el" href="_concepts__data__evidence.html">evidence</a> <b>properties</b>. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->

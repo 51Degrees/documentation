@@ -68,13 +68,13 @@ $(document).ready(function(){initNavTree('_features__lazy_loading.html','');});
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
-<p>Lazy loading is a concept whereby an object is not loaded until it is actually needed. This can mean that it does not start loading until it is required, or it is loaded in the background so that there is no delay in the execution of other logic. The latter is usually preferable, as loading in the background often results in no waiting at all (i.e. by the time the object is needed, it has already been loaded).</p>
+<p>Lazy loading is a concept whereby an object is not loaded until it is actually needed. This can mean that it does not start loading until it is required, or it is loaded in the background so that there is no delay in the execution of other logic. The latter is usually preferable, as loading in the background often results in no waiting at all (i.e., by the time the object is needed, it has already been loaded).</p>
 <p>In the context of a <a class="el" href="_concepts__pipeline.html">Pipeline</a>, lazy loading refers to the way values are populated in an <a class="el" href="_concepts__data__aspect_data.html">aspect data</a>. Usually the default is to not lazily load them, so an <a class="el" href="_concepts__flow_elements__aspect_engine.html">aspect engine</a>'s processing does not finish until all values have been populated. When lazy loading is configured in an <a class="el" href="_concepts__flow_elements__aspect_engine.html">aspect engine</a>, values begin to load in another thread, and other processing can continue.</p>
 <h1 class="g-docs__section-heading">Caveats</h1>
 <p>Getting an <a class="el" href="_concepts__meta_data__aspect_properties.html">aspect property</a>'s value from an <a class="el" href="_concepts__data__aspect_data.html">aspect data</a> which has been lazily loaded has the added complexity of the value not yet being known. Consequently, an exception that would otherwise have occurred during the <a class="el" href="_concepts__pipeline.html">Pipeline</a>'s processing stage has now been deferred until the point at which a value is fetched. When lazy loading is enabled, this extra possibility of an error should be taken into consideration.</p>
 <h1 class="g-docs__section-heading">Configuration</h1>
 <p>Lazy loading has two main configuration options.</p>
-<h2>Property Timeout</h2>
+<h2>Property timeout</h2>
 <p>As it is not known at the point of fetching an <a class="el" href="_concepts__meta_data__aspect_properties.html">aspect property</a>'s value whether or not it has been populated, a timeout option is available. This is the time to wait for the value before throwing an exception.</p>
 <h2>Cancellation</h2>
 <p>In languages where it is possible, a 'cancellation token' can be provided. This is a means of canceling all processing which is still being carried out internally to the <a class="el" href="_concepts__data__aspect_data.html">aspect data</a>.</p>

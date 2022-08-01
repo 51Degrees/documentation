@@ -70,12 +70,12 @@ $(document).ready(function(){initNavTree('_info__dependencies.html','');});
 <section class="g-docs__section"><p>51Degrees produce packages that can be consumed via the industry standard package managers for each language. (NuGet for .NET, Maven for Java, etc.)</p>
 <p>There is also the option of building directly from the source code, hosted at <a href="https://github.com/51Degrees">GitHub</a>, rather than using the pre-built packages. This will require build-time dependencies to be provided.</p>
 <p>Your intended deployment environment may also influence the dependencies that are required. For example, the on-premise implementation of our Device Detection product is written in C for the best possible performance. However, this does come with the price of more complex dependencies than is typical for higher-level languages. In comparison, the cloud product has no need for these more complex dependencies.</p>
-<p>51Degrees' dependencies policy is:</p><ul>
+<p>Our dependencies policy is:</p><ul>
 <li>We aim to minimize third-party dependencies.</li>
-<li>We will use &gt;= binding where possible. (i.e. the package should work with the target version and any later version)</li>
+<li>We will use &gt;= binding where possible (i.e., the package should work with the target version and any later version).</li>
 <li>We will target the oldest version that:<ul>
 <li>Has no known vulnerabilities.</li>
-<li>Is compatible with the most recent stable (i.e. non-beta, rtm, etc.) version</li>
+<li>Is compatible with the most recent stable (i.e., non-beta, rtm, etc.) version.</li>
 </ul>
 </li>
 <li>We use Azure DevOps with Microsoft-hosted build agents, as such, the pre-built packages may include low-level dependencies based on the <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted">software</a> that is available on these build agents.</li>
