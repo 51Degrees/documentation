@@ -2,14 +2,14 @@
 
 # Introduction
 
-Here you'll find a list of DeviceAtlas Properties and their 51Degrees equivalent. 
-Details of all available [DeviceAtlas Properties](https://deviceatlas.com/device-data/properties) can be found on their website, whilst the [51Degrees Property Dictionary](https://51degrees.com/resources/property-dictionary) contains details of all our properties and their possible values.
+Here you'll find a list of DeviceAtlas properties and their 51Degrees equivalent. 
+Details of all available [DeviceAtlas properties](https://deviceatlas.com/device-data/properties) can be found on their website, whilst the [51Degrees property dictionary](https://51degrees.com/resources/property-dictionary) contains details of all our properties and their possible values.
 
 
-# Obsolete DeviceAtlas Capabilities
+# Obsolete DeviceAtlas capabilities
 
-DeviceAtlas was launched in 2008 when the web and mobile was very different to now. As such many of the properties DeviceAtlas list have not proven relevant to businesses who've migrated to 51Degrees. 
-Examples of these include properties related to J2ME which has been surpassed by platforms like Android, iOS and Windows Phone, legacy data delivery mechanisms that are no longer in use or markup specifications that are no longer popular.
+DeviceAtlas was launched in 2008 when the web and mobile was very different to now. As such, many of the properties DeviceAtlas list have not proven relevant to businesses who've migrated to 51Degrees. 
+Examples of these include properties related to J2ME which has been surpassed by platforms like Android, iOS, and Windows Phone, legacy data delivery mechanisms that are no longer in use, or markup specifications that are no longer popular.
 
 Such capabilities are considered obsolete and for reference are listed at the bottom of this page.
 
@@ -150,7 +150,7 @@ The following table lists the DeviceAtlas API Name and 51Degrees properties and 
 
 # Obsolete DeviceAtlas Capabilities @anchor DeviceDetection_MigrationGuides_DeviceAtlas_Obsolete
 
-The following DeviceAtlas API Names are considered  to be obsolete and are not currently present in our published data set. Should you require these capabilities in order to migrate to 51Degrees, please ask us for advice.
+The following DeviceAtlas API Names are considered  to be obsolete and are not currently present in our published data set. Should you require these capabilities in order to migrate to 51Degrees, please [ask us for advice](https://51degrees.com/contact-us).
 
 |DeviceAtlas API Name|Comments|
 |---|---|

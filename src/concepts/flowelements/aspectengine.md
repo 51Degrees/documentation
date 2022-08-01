@@ -22,7 +22,7 @@ for a certain set of @evidence. The key for this cache is a @datakey generated u
 This means that only @evidence relevant to the **engine** is used in the key for the cache, making the cache more space-efficient.
 
 
-# Missing Property Handling
+# Missing property handling
 
 An **engine** adds handling of cases where a value is requested for a @property that is not available for some reason.
 
@@ -38,7 +38,7 @@ for it. So, it is important to distinguish between these scenarios, and be clear
 access to the property they want.
 
 
-# Lazy Loading
+# Lazy loading
 
 The @aspectdata produced by an **engine** can be returned before it has been completely populated. This means that the caller does not
 need to wait for processing to finish before carrying on with other things, and the processing will continue in the background. This is

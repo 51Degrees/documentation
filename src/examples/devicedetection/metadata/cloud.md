@@ -2,7 +2,7 @@
 
 # Introduction
 
-This example shows how to interrogate the meta data returned by the 51Degrees cloud service.
+This example shows how to interrogate the metadata returned by the 51Degrees Cloud service.
 
 @startsnippets
 @grabexample{device-detection-dotnet,_cloud_2_metadata-_console_2_program_8cs,C#}

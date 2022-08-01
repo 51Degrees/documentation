@@ -2,13 +2,13 @@
 
 # Introduction
 
-This page describes the steps for migrating from 51Degrees' previous device detection API to either version 4 of that API or to the @Pipeline API where it is available.
+This page describes the steps for migrating from the previous 51Degrees Device detection API to either version 4 of that API or to the @Pipeline API where it is available.
 In either case, there are breaking changes so this guide should be followed carefully to ensure no problems arise.
 
 # Overview
 
 The language that you are using is the most important factor in determining what work is required to migrate to the new API.
-For some languages and frameworks, such as C, Nginx or Varnish, there is no @Pipeline API so you will be migrating directly to version 4 of the device detection API.
+For some languages and frameworks, such as C, Nginx, or Varnish, there is no @Pipeline API so you will be migrating directly to version 4 of the Device Detection API.
 For other languages such as Java or .NET, you will be migrating from a pure device detection installation to the @Pipeline API with a device detection plugin.
 
 # Detail

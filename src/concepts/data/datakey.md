@@ -20,7 +20,7 @@ This is necessary because the possibility space for a large number of keys with 
 value types is far larger than that of a 32-bit integer, so hash collisions 
 can occur.
 
-# Usage Example
+# Usage example
 
 A data key builder is used to construct **data keys** by specifying the details 
 of the keys to be included.

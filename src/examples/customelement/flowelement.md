@@ -6,7 +6,7 @@ This example shows a very simple @flowelement which takes a date of birth
 and returns an star sign. Although a basic (and not all that useful) @flowelement, the
 example demonstrates how you can start to implement your own @flowelements.
 
-# Download Example
+# Download example
 
 The source code used in this example is available here:
 - [C# Visual Studio project](https://github.com/51degrees/pipeline-dotnet)
@@ -102,7 +102,7 @@ Node's implementation of @elementdata does not require concrete getters for IDE 
 @endsnippet
 @endsnippets
 
-# Flow Element
+# Flow element
 
 Now the actual @flowelement needs to be implemented. For this, the @flowelement's base class
 can be used which deals with most of the logic. The @elementproperties,
@@ -285,7 +285,7 @@ With a date of birth of 18/12/1992, your star sign is Sagittarius.
 @endsnippet
 @endsnippets
 
-# Next Steps
+# Next steps
 
 The example for [Custom On-premise Engine](@ref Examples_CustomElement_OnPremise) shows how you can extend the functionality of this **flow element** to use a @datafile.
 

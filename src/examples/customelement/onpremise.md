@@ -9,7 +9,7 @@ a @datafile, upgrading the @flowelement to an @aspectengine.
 Instead of storing data statically, as the [simple flow element example](@ref Examples_CustomElement_FlowElement)
 did, this example will store it in a @datafile which will be loaded and can also be updated.
 
-# Download Example
+# Download example
 
 The source code used in this example is available here:
 - [C# Visual Studio project](https://github.com/51Degrees/pipeline-dotnet/tree/master/Examples/CustomFlowElement/2.%20On%20Premise%20Engine)
@@ -88,7 +88,7 @@ Node's implementation of @elementdata does not require concrete getters for IDE 
 @endsnippets
 
 
-# Aspect Engine
+# Aspect engine
 
 Now the actual @aspectengine needs to be implemented. For this, the class from the
 [previous example](@ref Examples_CustomElement_FlowElement) will now implement the
@@ -294,5 +294,5 @@ To print the star sign of the user.
 @endsnippet
 @endsnippets
 
-# Next Steps
+# Next steps
 The [Custom Client-Side Evidence](@ref Examples_CustomElement_ClientSideEvidence) example shows how you can build a custom engine that can take evidence supplied by the client.

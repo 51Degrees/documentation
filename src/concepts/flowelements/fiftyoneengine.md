@@ -97,7 +97,7 @@ The metadata contained in a **profile** is:
 | Signature Count| The number of signatures that define how to find the **profile**. This is internal to the **engine** and differs slightly in meaning between each. |
 
 
-# Native Library
+# Native library
 
 Most **51Degrees on-premise engines** act as a wrapper between the target language and a [native](@term{NativeCode}) library.
 

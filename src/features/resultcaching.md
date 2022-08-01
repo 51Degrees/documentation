@@ -17,8 +17,8 @@ may have internal caches for various reasons, these are separate to the @Pipelin
 **results cache** and may or may not be configurable depending on the implementation of the @aspectengine.
 
 In the .NET API, @aspectengines can be configured to flag whether an instance of
-@Aspectdata has originated from the cache or from processing of the engine. E.g. 
-if CacheHitOrMiss is set to true then the the CacheHit value will be set to true
+@Aspectdata has originated from the cache or from processing of the engine. For example, 
+if CacheHitOrMiss is set to true then the CacheHit value will be set to true
 on the @Aspectdata. The primary use case for this is to validate in testing 
 whether a cache hit or miss has occurred.
 
@@ -46,7 +46,7 @@ The **result cache** can be configured using the @elementbuilder associated with
 
 Any cache that implements the 51Degrees cache interface can be used, but by default we provide
 a relatively simple shared LRU (least recently used) cache which has a low overhead, copes 
-well with concurrent access and enables good performance in a wide range of scenarios.
+well with concurrent access, and enables good performance in a wide range of scenarios.
 
 This cache has a single 'size' parameter that determines how many result instances will be stored.
 Increasing this value will generally improve performance at the cost of increased memory usage. 

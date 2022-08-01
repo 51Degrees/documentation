@@ -3,11 +3,11 @@
 # Introduction
 
 This example shows how to get set up an cloud based Device Detection @aspectengine and use it 
-to process User-Agents and/or User-Agent Client Hints.
+to process User Agents and/or User Agent Client Hints.
 
 There are many different ways to use the pipeline. Rather that creating examples for every scenario, 
 we have used the following table where possible when creating the 'getting started' examples. 
-You can mix and match elements from different examples in order to match your use-case.
+You can mix and match elements from different examples in order to match your use case.
 
 |            | Console             | Web                 |
 |------------|---------------------|---------------------|

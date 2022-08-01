@@ -14,13 +14,13 @@ Using real-time data, our plugin can optimize your website for users, based on d
 
 1.  Visit the new `51Degrees` Settings menu.
 
-2.  To start using this plugin, you will need to create a `Resource Key`. This enables access to the data you need via the 51Degrees cloud service. You can 
+2.  To start using this plugin, you will need to create a `Resource Key`. This enables access to the data you need via the 51Degrees Cloud service. You can 
     create a `Resource Key` for free, using the [configurator](https://configure.51degrees.com/) to select the properties you want.
 
 
 ## Integration with Google Analytics
 
-1.  To integrate with Google Analytics, go to the `Google Analytics` tab and click `Log in with Google Analytics Account` button, follow the steps and give the 51Degrees plugin the required permissions. Copy the provided Google Analytics `Access Code`.
+1.  To integrate with Google Analytics, go to the `Google Analytics` tab and click `Log in with Google Analytics Account` button. Follow the steps and give the 51Degrees plugin the required permissions. Copy the provided Google Analytics `Access Code`.
 
 2.  Enter the copied Code in the `Access Code` text field and click `Authenticate`. This will connect your Google Analytics account to the 51Degrees plugin.
 
@@ -37,7 +37,7 @@ Using real-time data, our plugin can optimize your website for users, based on d
 
 *Value replacement*
 
-You can insert snippets into your pages that will be replaced with the corresponding value. For example, the text `{Pipeline::get("device", "browsername")}` would be replaced with `Chrome`, `Safari` and `Firefox`, etc. Depending on the browser being used by the person visiting your site. To set this up, take the text from the 'Usage in Content' column on the 'Properties' tab of the plugin.
+You can insert snippets into your pages that will be replaced with the corresponding value. For example, the text `{Pipeline::get("device", "browsername")}` would be replaced with `Chrome`, `Safari` and `Firefox`, etc, depending on the browser being used by the person visiting your site. To set this up, take the text from the 'Usage in Content' column on the 'Properties' tab of the plugin.
 
 *Conditional blocks*
 
@@ -54,7 +54,7 @@ You can also get a list of properties by category as an array.
 `Pipeline::getCategory("Supported Media"))`
 The code snippet above will give you all the properties with `Supported Media` category included in the Resource Key.
 
-## JavaScript Integration
+## JavaScript integration
 
 The 51Degrees library exposes the same property values in JavaScript. These are accessed through the global `fod` object
 
@@ -66,7 +66,7 @@ The 51Degrees library exposes the same property values in JavaScript. These are 
        });
      }
 </script>
-'
+```
 
 In some cases, additional evidence needs to be gathered by running JavaScript on the client. This is mostly handled automatically by the plugin and the fod object. For specific examples, see the 'Location' and 'Apple device models' sections below.
 
@@ -79,6 +79,7 @@ Firstly, add a button to your page. Make sure to set a css class that we can use
 
 Next, add an HTML element and paste the following snippet of code into it:
 
+```json
 <script type="text/javascript" >
      window.onload = function() {
        var elements = document.getElementsByClassName('get-user-location');
@@ -90,6 +91,7 @@ Next, add an HTML element and paste the following snippet of code into it:
        }
      };
 </script>
+```
 
 Now, when the user clicks on the 'Use my location' button, the JavaScript that we pasted in will execute. This lets the global `fod` object know that we want access to the location data, which in turn causes the 'wants to know your location' confirmation pop-up to be displayed.
 
@@ -104,13 +106,13 @@ The WordPress plugin will handle this for you automatically. However, be aware t
 
 **Note:** The content on the page can also be updated by using JavaScript, rather than waiting for the user to make a second request. The global `fod` object can be used to pass a callback that is executed when the updated values are available. For example:
 
-'
+```json
 <script type="text/javascript" >
      window.onload = function() {
        fod.complete(function(data) { /* access values here. e.g. data.device.hardwarename */ });
      };
 </script>
-'
+```
 
 ## Manual installation using WordPress Plugin Manager
 
@@ -138,4 +140,4 @@ If you want to build the plugin yourself and install locally, you will need to f
 5.  Activate the 51Degrees plugin.
 
 
-This plugin is free and provided without warranty of any kind. Use it at your own risk, 51Degrees is not responsible for any improper use of this plugin, nor for any damage it might cause to your site. Always backup all your data before installing a new plugin.
+This plugin is free and provided without warranty of any kind. Use it at your own risk; 51Degrees is not responsible for any improper use of this plugin, nor for any damage it might cause to your site. Always backup all your data before installing a new plugin.

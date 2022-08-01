@@ -5,7 +5,7 @@
 **Element data** is the container for data that is returned as a result of the processing 
 performed by a @flowelement.
 
-# Data Structure
+# Data structure
 
 The precise details of the storage structure used internally by **element data** will
 vary by language and even by @flowelement implementation.
@@ -39,7 +39,7 @@ An **element data** also contains references to the @pipeline it is associated w
 This is useful for data that may just be a translation layer for other data, or if metadata
 needs to be retrieved by the **element data**.
 
-# Life Cycle
+# Lifecycle
 
 **Element data** instances are typically created by a specific factory method that is 
 associated with a given @flowelement.
@@ -56,7 +56,7 @@ As such, memory managed languages rely on the finalizer to dispose of any
 associated resources cleanly.
 
 
-# Thread Safety
+# Thread-safety
 
 The thread-safety of a given **element data** instance is directly tied to its internal 
 data structure.

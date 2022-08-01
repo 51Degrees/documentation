@@ -36,13 +36,13 @@ To build the module and Nginx, run the following command.
 ```
 make install
 ```
-By default, this will use the latest version of Nginx specified in the Makefile. To use a specific version of Nginx, run the above command with the `FIFTYONEDEGREES_NGINX_VERSION` variable. e.g.
+By default, this will use the latest version of Nginx specified in the Makefile. To use a specific version of Nginx, run the above command with the `FIFTYONEDEGREES_NGINX_VERSION` variable. e.g.,
 ```
 make install FIFTYONEDEGREES_NGINX_VERSION=[Version]
 ```
 <br>
 
-To build and link the module statically with Nginx, use the `STATIC_BUILD` variable. e.g.
+To build and link the module statically with Nginx, use the `STATIC_BUILD` variable. e.g.,
 ```
 make install STATIC_BUILD=1
 ```
@@ -58,7 +58,7 @@ To run the 51Degrees together with the Nginx test suite, run the following comma
 make test-full
 ```
 
-These do not run all the required tests as some tests require properties that are not supported with the Lite version of the data file. To run all tests, obtain a data file that provides properties: JavascriptHardwareProfile, ScreenPixelsWidthJavascript and ScreenPixelsWidth. Then, use the `FIFTYONEDEGREES_DATAFILE` variable to specify the file name to run the tests with. The new data file should be placed in the `device-detection-cxx\device-detection-data` folder and should have a different name to `51Degrees-LiteV4.1.hash`. If tests still fail, obtain a data file with any other properties used in the tests. Below is an example of running tests with a different data file named `51Degrees-EnterpriseV4.1.hash`:
+These do not run all the required tests as some tests require properties that are not supported with the Lite version of the data file. To run all tests, obtain a data file that provides properties: JavascriptHardwareProfile, ScreenPixelsWidthJavascript, and ScreenPixelsWidth. Then, use the `FIFTYONEDEGREES_DATAFILE` variable to specify the file name to run the tests with. The new data file should be placed in the `device-detection-cxx\device-detection-data` folder and should have a different name to `51Degrees-LiteV4.1.hash`. If tests still fail, obtain a data file with any other properties used in the tests. Below is an example of running tests with a different data file named `51Degrees-EnterpriseV4.1.hash`:
 ```
 make [test|test-full] FIFTYONEDEGREES_DATAFILE=51Degrees-EnterpriseV4.1.hash
 ```
@@ -111,11 +111,11 @@ Once the value has been obtained by executing the Javascript in client user agen
 
 ## False Positive Controls
 
-Nginx Device Detection V4 module supports `False Positives` features as described at [False Positives](@ref DeviceDetection_Features_FalsePositiveControl) via settings of directives `51D_drift`, `51D_difference` and `51D_allow_unmatched`. When `AllowUnmatched` is set to `off`, if `HasValue` is `false`, a `NoMatch` will be returned. Else, if `AllowUnmatched` is set to `on`, when a match can not be found, default profile will be returned such as `Unknown`, `N/A` or similar.
+Nginx Device Detection V4 module supports `False Positives` features as described at [False Positives](@ref DeviceDetection_Features_FalsePositiveControl) via settings of directives `51D_drift`, `51D_difference`, and `51D_allow_unmatched`. When `AllowUnmatched` is set to `off`, if `HasValue` is `false`, a `NoMatch` will be returned. Else, if `AllowUnmatched` is set to `on`, when a match can not be found, default profile will be returned such as `Unknown`, `N/A`, or similar.
 
 ## User Agent Client Hint supports
 
-User Agent Client Hint was introduced by Google in Chrome, preventing traditional detection using User-Agent from performing accurate matches. In Nginx Device Detection V4 module, `51D_set_resp_headers` was implemented to allow Client Hint request headers to be set in responses so that more evidence is provided in subsequent requests, allowing better matches.
+User Agent Client Hint was introduced by Google in Chrome, preventing traditional detection using User Agents from performing accurate matches. In Nginx Device Detection V4 module, `51D_set_resp_headers` was implemented to allow Client Hint request headers to be set in responses so that more evidence is provided in subsequent requests, allowing better matches.
 
 # Other resources
 More details can be found at:

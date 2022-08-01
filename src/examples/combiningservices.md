@@ -2,8 +2,8 @@
 
 # Introduction
 
-This example shows how to set up @aspectengines using the 51Degrees cloud for both @devicedetection 
-and @reversegeocoding and use these engines in a @Pipeline to process User-Agents and latitude/longitude 
+This example shows how to set up @aspectengines using the 51Degrees Cloud for both @devicedetection 
+and @reversegeocoding and use these engines in a @Pipeline to process User Agents and latitude/longitude 
 coordinates.
 
 @startsnippets

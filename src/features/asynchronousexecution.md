@@ -9,7 +9,7 @@ for an individual @aspectengine.
 In contrast, **asynchronous execution** refers to non-blocking execution of the 
 @Pipeline as a whole.
 
-# Language Support
+# Language support
 
 @startsnippets
 @showsnippet{dotnet,C#}

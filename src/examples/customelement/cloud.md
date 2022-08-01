@@ -10,7 +10,7 @@ Instead of the data being stored locally and processing being carried out by the
 directly, as demonstrated in the [simple flow element example](@ref Examples_CustomElement_FlowElement),
 this example will call a cloud service to perform the required functionality.
 
-# Download Example
+# Download example
 
 The source code used in this example is available here:
 - [C# Visual Studio project](https://github.com/51Degrees/pipeline-dotnet/tree/master/Examples/CustomFlowElement/4.%20Cloud%20Engine)
@@ -86,7 +86,7 @@ not the `StarSignData` interface, as it only needs to be accessible by the @aspe
 @endsnippets
 
 
-# Aspect Engine
+# Aspect engine
 
 Now the actual @aspectengine needs to be implemented. For this, the class from the
 [previous example](@ref Examples_CustomElement_FlowElement) will now implement the
@@ -196,6 +196,6 @@ With a date of birth of 18/12/1992, your star sign is Sagittarius.
 @endsnippet
 @endsnippets
 
-# Next Steps
+# Next steps
 
-The [Custom On-premise Engine](@ref Examples_CustomElement_OnPremise) example shows you how to build an on premise engine to perform the functionality that was executed by the **cloud engine** here.
+The [Custom On-premise Engine](@ref Examples_CustomElement_OnPremise) example shows you how to build an on-premise engine to perform the functionality that was executed by the **cloud engine** here.

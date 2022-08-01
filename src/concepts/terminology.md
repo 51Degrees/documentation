@@ -22,7 +22,7 @@ aspect has properties such as:
 * Screen size in inches.
 * etc.
 
-# Cloud Service @anchor Concepts_Terminology_CloudService
+# Cloud service @anchor Concepts_Terminology_CloudService
 
 A service accessed via a [web request](@term{WebRequest}). It is used to send data,
 receive data, carry out processing, or all of the above.
@@ -30,7 +30,7 @@ receive data, carry out processing, or all of the above.
 A cloud service can be used in much the same way as a local service running on the same machine,
 with the extra step of a [web request](@term{WebRequest}) being required.
 
-# Data Tier @anchor Concepts_Terminology_DataTier
+# Data tier @anchor Concepts_Terminology_DataTier
 <!--TODO-->
 
 # Distributor @anchor Concepts_Terminology_Distributor
@@ -40,7 +40,7 @@ services.
 In order to access it, you will need to have a License Key that defines the products that
 you are allowed to access.
 
-# Native Code @anchor Concepts_Terminology_NativeCode
+# Native code @anchor Concepts_Terminology_NativeCode
 
 Native code refers to code written in C/C++. This is done to maximize performance, as many more
 optimizations can be made in lower level languages than compared to high level languages such as C# or Java.
@@ -51,7 +51,7 @@ A Resource Key is used by the 51Degrees cloud service as a shorthand for various
 as part of a request. For example, the properties that the user wishes to be populated in the response and
 any License Keys that allow access to more properties or a greater request allowance.
 
-# Web Request @anchor Concepts_Terminology_WebRequest
+# Web request @anchor Concepts_Terminology_WebRequest
 
 A web request is a message sent from a client device to a server where a web site is hosted.
 This message will usually be a simple request for a particular web page or other resource. 
@@ -59,7 +59,7 @@ However, it also contains a lot of additional information ([evidence](@ref Conce
 that can be used to infer details about different contexts within which the request takes 
 place (aspects). 
 
-# Web Server @anchor Concepts_Terminology_WebServer
+# Web server @anchor Concepts_Terminology_WebServer
 
 A network connected machine designed to serve content to external devices, or carry out
 tasks. Most commonly, a web server is the host of a website.

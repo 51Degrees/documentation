@@ -7,7 +7,7 @@
 occurs locally to the **engine**. Having data that does not reside
 in the **engine** itself means that the same **engine** can be used with multiple data sets.
 
-# Use Cases
+# Use cases
 
 A **cloud engine** is very lightweight compared to an @onpremiseengine both in terms of memory and CPU usage.
 This is because all the complex processing and any data that is required for that processing to occur are handled
@@ -33,7 +33,7 @@ populated from a request to the [cloud service](@term{CloudService}).
 Typically, a **cloud engine** does not carry out processing itself. Instead, its processing consists of sending
 a call to a [cloud service](@term{CloudService}) and interpreting the result.
 
-# 51Degrees Cloud Engines
+# 51Degrees cloud engines
 
 The functionality of all @aspectengines that make use of the 51Degrees cloud is split into two 
 separate @aspectengines.

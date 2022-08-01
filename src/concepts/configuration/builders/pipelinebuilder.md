@@ -14,7 +14,7 @@ all its configuration must be done in the **builder**.
 
 # Options
 
-## Auto Dispose Elements
+## Auto dispose rlements
 
 By default, when a @pipeline is disposed of, the @flowelements which it
 contained will still exist and will need to be disposed of at some point.
@@ -26,7 +26,7 @@ are also present in another @pipeline, as they may still be required elsewhere. 
 not usually be the case, but must be considered if building multiple @pipelines.
 
 
-## Suppress Process Exceptions @anchor Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions
+## Suppress process exceptions @anchor Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions
 
 By default, exceptions that occur during the processing of a @flowdata will be thrown. 
 However, it is sometimes preferable to suppress and analyze
@@ -48,7 +48,7 @@ takes a boolean as an argument and returns the **builder**.
 Once all options are set in the **builder**, a 'build' method is used to build and return a @pipeline
 with the configuration provided.
 
-# Building from a Configuration
+# Building from a configuration
 
 Rather than setting all build options and @flowelements explicitly in code form, it is often
 preferable to make the @pipeline configurable without the need to recompile. For more on this, see

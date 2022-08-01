@@ -2,7 +2,7 @@
 
 # Introduction
 
-This example shows how to interrogate the meta data associated with the contents of a Device Detection @datafile.
+This example shows how to interrogate the metadata associated with the contents of a Device Detection @datafile.
 
 @startsnippets
 @showsnippet{c,C}

@@ -13,12 +13,12 @@ best possible performance. However, this does come with the price of more comple
 than is typical for higher-level languages. In comparison, the cloud product has no need for these 
 more complex dependencies.
 
-51Degrees' dependencies policy is:
+Our dependencies policy is:
 - We aim to minimize third-party dependencies.
-- We will use >= binding where possible. (i.e. the package should work with the target version and any later version)
+- We will use >= binding where possible (i.e., the package should work with the target version and any later version).
 - We will target the oldest version that:
   - Has no known vulnerabilities.
-  - Is compatible with the most recent stable (i.e. non-beta, rtm, etc.) version
+  - Is compatible with the most recent stable (i.e., non-beta, rtm, etc.) version.
 - We use Azure DevOps with Microsoft-hosted build agents, as such, the pre-built packages may include low-level dependencies based on the [software](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted) that is available on these build agents.
 
 If you are having trouble with a particular dependency, check our @faqs for common problems and solutions.
