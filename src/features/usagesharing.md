@@ -186,7 +186,7 @@ the time but it's unlikely to be exact.
 There may be one or multiple configurable timeouts depending on the language. Typically, these 
 are used to suspend **usage sharing** if its internal mechanisms are responding too slowly.
 
-## Maximum queue Size
+## Maximum queue size
 
 In languages that support multiple threads, this settings controls the size of the [internal](@ref Internals) 
 producer/consumer queue.
