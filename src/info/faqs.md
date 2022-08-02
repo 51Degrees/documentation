@@ -27,7 +27,7 @@ These is the options in the device detection on-premise engine, other third part
 [#](@ref Dependencies_Glibc_Libatomic)
 #### Why am I getting <code>version 'GLIBC_2.27' not found</code> or <code>libatomic.so.1: cannot open shared object file: No such file or directory</code> error when using 51Degrees Device Detection API package for On-premise?
 
-Most of 51Degrees Device Detection API packages for On-premise come with a set of prebuilt libraries. These libraries are built and linked in our build environment and require certain libraries with a minimum version to be available at the runtime. Please check out the @dependencies page to find out what dependencies are required to use our prebuilt packages. If you cannot modify your environment in order to provide the necessary dependencies, we suggest building your own packages from source in your target environment. The @dependencies page also includes links to the `README` files which detail how this can be done.
+Most of 51Degrees Device Detection API packages for on-premise come with a set of prebuilt libraries. These libraries are built and linked in our build environment and require certain libraries with a minimum version to be available at the runtime. Please check out the @dependencies page to find out what dependencies are required to use our prebuilt packages. If you cannot modify your environment in order to provide the necessary dependencies, we suggest building your own packages from source in your target environment. The @dependencies page also includes links to the `README` files which detail how this can be done.
 
 In the case of missing the `libatomic.so.1` library, make sure the `libatomic1` package is installed in your runtime environment.
 
@@ -37,9 +37,10 @@ If the issue is with version `GLIBC_2.27` not found, we recommend to build the p
 [#](@ref PHP_ProcessManager)
 #### Can I use PHP on-premise device detection with a process manager such as Apache MPM or php-fpm? 
 
-When using our PHP Device Detection solution under a process manager such as Apache MPM, php-fpm or any other process manager, the following restrictions are applied:
+When using our PHP Device Detection solution under a process manager such as Apache MPM, php-fpm, or any other process manager, the following restrictions are applied:
 -	Only **MaxPerformance** profile can be used.
 -	Manual reload cannot be used. A full server restart is required.
+
 If Apache MPM is used:
 -	Only **prefork** mode can be used.
 These restrictions are due to the interaction between the native libraries used by our on-premise API and the way that OS handles and memory are handled by these process managers.
@@ -48,7 +49,7 @@ These restrictions are due to the interaction between the native libraries used 
 [#](@ref Python_MultiProcess)
 #### Can I use Python on-premise device detection in a multi-process environment?
 
-When using Device Detection API for On-premise in a spawned multi processes environment, the Pipeline object should be created for each process. If it is created as a global variable, the spawned process will re-initialize the variable and therefore, each process will have their own version of the pipeline object. In this environment the following settings should be used:
+When using Device Detection API for on-premise in a spawned multi processes environment, the Pipeline object should be created for each process. If it is created as a global variable, the spawned process will re-initialize the variable and therefore, each process will have their own version of the pipeline object. In this environment the following settings should be used:
 - `create_temp_data_copy` set to `False`
 - `performance_profile` set to `MaxPerformance`
 Since a pipeline is created for each process, the memory cost of running the API will be multiplied by the number of processes.
@@ -57,11 +58,11 @@ These restrictions are due to the interaction between the native libraries used 
 
 @anchor UACH_DualEvidence
 [#](@ref UACH_DualEvidence)
-#### Can I use User Agent Client Hints (UA-CH) at the same time as User-Agent? 
+#### Can I use User Agent Client Hints (UA-CH) at the same time as the User Agent? 
 
 Yes. In fact, this is recommended. The device detection algorithm will use the UA-CH data where possible. 
-However, if a match cannot be found for the supplied UA-CH values, then User-Agent will be used as a fall back.
+However, if a match cannot be found for the supplied UA-CH values, then the User Agent will be used as a fall back.
 
-If you are using a @webintegration then the UA-CH and User-Agent will both be passed to the Pipeline 
+If you are using a @webintegration then the UA-CH and User Agent will both be passed to the Pipeline 
 automatically. Otherwise, you need to supply the available header values manually. See the [getting started](@ref Examples_DeviceDetection_GettingStarted_Console_Index) examples for a demonstration of how to supply 
-UA-CH evidence in parallel with User-Agent.
+UA-CH evidence in parallel with the User Agent.

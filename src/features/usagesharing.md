@@ -18,6 +18,8 @@ To enable **usage sharing** for low-level APIs such as C, Nginx, and Varnish, pl
 At this time, we do not have **usage sharing** for PHP or other languages. If you'd like to make a feature
 request, please [get in touch](https://51degrees.com/contact-us).
 
+If you have any questions on how we use the data you share with us via usage sharing, please refer to our blog [Usage sharing: how do we use your data](https://51degrees.com/blog/usage-sharing-how-do-we-use-your-data).
+
 @anchor Internals
 [#](@ref Internals)	
 # Internals
@@ -36,7 +38,7 @@ This is done to avoid blocking the @Pipeline process thread.
 
 @anchor RepeatEvidence
 [#](@ref RepeatEvidence)
-## Repeated Evidence 
+## Repeated evidence 
 
 To avoid situations where the same @evidence is sent multiple times (for example, a single user
 visiting multiple pages on a website), we keep track of the @evidence that has been shared over
@@ -184,17 +186,17 @@ the time but it's unlikely to be exact.
 There may be one or multiple configurable timeouts depending on the language. Typically, these 
 are used to suspend **usage sharing** if its internal mechanisms are responding too slowly.
 
-## Maximum Queue Size
+## Maximum queue Size
 
-In languages that support multiple threads, this settings controls the size of the [internal 
-producer/consumer queue](@ref Internals).
+In languages that support multiple threads, this settings controls the size of the [internal](@ref Internals) 
+producer/consumer queue.
 
-## Minimum Entries per Message
+## Minimum entries per message
 
 The minimum number of @evidence entries that must be added before the message will be sent
 to the **usage sharing** web service.
 
-## Repeat Evidence Interval
+## Repeat evidence interval
 
 The maximum time period which @evidence is stored for the purpose of filtering 
 [repeat evidence](@ref RepeatEvidence).
