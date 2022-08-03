@@ -76,11 +76,12 @@ $(document).ready(function(){initNavTree('_features__usage_sharing.html','');});
 <p><b>Usage sharing</b> is enabled by default if you are using a pipeline builder that is derived from a 51Degrees pipeline builder (for example, DeviceDetetctionPipelineBuilder or FiftyOnePipelineBuilder). To configure the <b>usage sharing</b> feature, please refer to our <a class="el" href="_examples__usage_sharing.html">Usage Sharing</a> examples.</p>
 <p>To enable <b>usage sharing</b> for low-level APIs such as C, Nginx, and Varnish, please refer to the <a class="el" href="_features__usage_sharing.html#Low_Level_Usage_Sharing">Usage Sharing for low-level APIs section</a> further down this page.</p>
 <p>At this time, we do not have <b>usage sharing</b> for PHP or other languages. If you'd like to make a feature request, please <a href="https://51degrees.com/contact-us">get in touch</a>.</p>
+<p>If you have any questions on how we use the data you share with us via usage sharing, please refer to our blog <a href="https://51degrees.com/blog/usage-sharing-how-do-we-use-your-data">Usage sharing: how do we use your data</a>.</p>
 <p><a class="anchor" id="Internals"></a><a class="el" href="_features__usage_sharing.html#Internals">#</a> </p><h1 class="g-docs__section-heading">Internals</h1>
 <p>To minimize any overhead of this feature, received requests are grouped and sent in batches, rather than sending each request individually.</p>
 <p><b>Usage sharing</b> is designed such that any failure within it should not impact the result of the <a class="el" href="_concepts__pipeline.html">Pipeline</a>. If a failure does occur then <b>usage sharing</b> will simply be disabled and an appropriate warning logged.</p>
 <p>In languages that support multiple threading, <b>Usage sharing</b> will typically use a producer/consumer model, where the 'main' thread adds the evidence to a queue while a background thread takes items from this queue, transforms them into the appropriate format, adds them into a message, and sends the message when ready. This is done to avoid blocking the <a class="el" href="_concepts__pipeline.html">Pipeline</a> process thread.</p>
-<p><a class="anchor" id="RepeatEvidence"></a><a class="el" href="_features__usage_sharing.html#RepeatEvidence">#</a> </p><h2>Repeated Evidence</h2>
+<p><a class="anchor" id="RepeatEvidence"></a><a class="el" href="_features__usage_sharing.html#RepeatEvidence">#</a> </p><h2>Repeated evidence</h2>
 <p>To avoid situations where the same <a class="el" href="_concepts__data__evidence.html">evidence</a> is sent multiple times (for example, a single user visiting multiple pages on a website), we keep track of the <a class="el" href="_concepts__data__evidence.html">evidence</a> that has been shared over a defined time period (maximum 20 minutes by default) and only share <a class="el" href="_concepts__data__evidence.html">evidence</a> which is different to any already shared during the window.</p>
 <p>Note that the amount of <a class="el" href="_concepts__data__evidence.html">evidence</a> tracked is also constrained based upon available memory. In high-traffic scenarios, this may mean that the time period covered by the <a class="el" href="_concepts__data__evidence.html">evidence</a> in the tracker is much smaller than the configured maximum.</p>
 <h1 class="g-docs__section-heading">Configuration</h1>
@@ -111,11 +112,11 @@ $(document).ready(function(){initNavTree('_features__usage_sharing.html','');});
 <p>This is based on a randomized value, so the exact amount shared may not be precisely the percentage specified. For example, if generating a number between 0 and 1, the result will be above 0.5 roughly 50% of the time but it's unlikely to be exact.</p>
 <h2>Timeouts</h2>
 <p>There may be one or multiple configurable timeouts depending on the language. Typically, these are used to suspend <b>usage sharing</b> if its internal mechanisms are responding too slowly.</p>
-<h2>Maximum Queue Size</h2>
-<p>In languages that support multiple threads, this settings controls the size of the <a class="el" href="_features__usage_sharing.html#Internals">internal </a>producer/consumer queue".</p>
-<h2>Minimum Entries per Message</h2>
+<h2>Maximum queue size</h2>
+<p>In languages that support multiple threads, this settings controls the size of the <a class="el" href="_features__usage_sharing.html#Internals">internal</a> producer/consumer queue.</p>
+<h2>Minimum entries per message</h2>
 <p>The minimum number of <a class="el" href="_concepts__data__evidence.html">evidence</a> entries that must be added before the message will be sent to the <b>usage sharing</b> web service.</p>
-<h2>Repeat Evidence Interval</h2>
+<h2>Repeat evidence interval</h2>
 <p>The maximum time period which <a class="el" href="_concepts__data__evidence.html">evidence</a> is stored for the purpose of filtering <a class="el" href="_features__usage_sharing.html#RepeatEvidence">repeat evidence</a>.</p>
 <p><a class="anchor" id="Low_Level_Usage_Sharing"></a><a class="el" href="_features__usage_sharing.html#Low_Level_Usage_Sharing">#</a></p>
 <h1 class="g-docs__section-heading">Usage Sharing for low-level APIs</h1>

@@ -71,7 +71,7 @@ $(document).ready(function(){initNavTree('_device_detection__features__performan
 <p>For device detection, as with many computing tasks, there are trade-offs to be made between the performance of the algorithm and memory usage, as well as performance vs adaptability.</p>
 <p>Rather than trying to solve this with a one-size-fits-all approach, our Device Detection API allows you to easily configure the solution to suit your requirements.</p>
 <p>Be aware that all these options only apply to the on-premise implementation. The cloud solution is inherently far more limited in the range of options you have to adjust performance.</p>
-<h1 class="g-docs__section-heading">Performance Profile Templates</h1>
+<h1 class="g-docs__section-heading">Performance profile templates</h1>
 <p>At the low level, the Device Detection API uses various collections of data from the data file in order to perform detections. These collections may either be fully mapped into memory or accessed via highly optimized <a href="https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)">LRU caches</a>, with data being loaded from disk on a cache miss.</p>
 <p>The mechanism used to access the data, as well as the size of these caches, can be configured specifically. However, we have defined templates which we believe will cover the majority of scenarios.</p>
 <p>The exact method for specifying the template will vary by programing language. See the <a class="el" href="_examples__device_detection__performance__on_premise_hash.html">performance examples</a> for a demonstration.</p>
