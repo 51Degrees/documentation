@@ -9,7 +9,7 @@ Rather than trying to solve this with a one-size-fits-all approach, our Device D
 Be aware that all these options only apply to the on-premise implementation. The cloud solution is
 inherently far more limited in the range of options you have to adjust performance.
 
-# Performance Profile Templates
+# Performance profile templates
 
 At the low level, the Device Detection API uses various collections of data from the data file in order to perform detections.
 These collections may either be fully mapped into memory or accessed via highly optimized [LRU caches](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)), with data being loaded from disk on a cache miss.

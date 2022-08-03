@@ -5,7 +5,7 @@
 This guide aims to give you everything you need to get up and running with whatever services 
 you need as soon as possible.
 
-# Server-Side and Off-line Processing
+# Server-side and off-line processing
 
 We have examples for each of the languages supported and services provided
 by the @Pipeline to help get you started.
@@ -17,7 +17,7 @@ below and then see the @combiningservices example.
 - IP Intelligence (Coming soon)
 - Fraud Detection (Coming soon)
 
-# Client-Side JavaScript
+# Client-side JavaScript
 
 If you intend to only use client-side JavaScript then you can use the 51Degrees 
 [Cloud Configurator](https://configure.51degrees.com/) to select the properties you need and
