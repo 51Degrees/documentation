@@ -191,4 +191,4 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 |iPad Pro 11.0 (3rd Gen.)|N/A|iPad Pro 11.0 (3rd Gen.)|100.00%|
 |iPad Pro 12.9 (5th Gen.)|Standard|iPad Pro 12.9 (5th Gen.)<br/> iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)|36.11%<br/> 63.89%|
 |iPad Pro 12.9 (5th Gen.)|Zoom|iPad Pro 12.9 (5th Gen.)|100.00%|
-|iPod touch (7th generation)|N/A|iPhone 6s, iPhone SE, iPod touch (7th generation)<br/> iPod touch (7th generation)|N/A|
+|iPod touch (7th generation)|N/A|iPod touch (7th generation)|100.00%|
