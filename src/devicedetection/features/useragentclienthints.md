@@ -85,12 +85,12 @@ In some cases, there are multiple pseudo-headers for a component. These are proc
 
 |UA-CH header|Hardware|Platform|Browser/App|
 |---|---|---|---|
-|Sec-CH-UA|||z|
-|Sec-CH-UA-Full-Version-List|||y|
-|Sec-CH-UA-Model|x|||
-|Sec-CH-UA-Mobile|x||x|
-|Sec-CH-UA-Platform|x|x|x|
-|Sec-CH-UA-Platform-Version||x*||
+|Sec-CH-UA                   |   |    | z |
+|Sec-CH-UA-Full-Version-List |   |    | y |
+|Sec-CH-UA-Model             | x |    |   |
+|Sec-CH-UA-Mobile            | x |    | x |
+|Sec-CH-UA-Platform          | x | x  | x |
+|Sec-CH-UA-Platform-Version  |   | x* |   |
 
 @anchor UACH_Cloud
 [#](@ref UACH_Cloud)
