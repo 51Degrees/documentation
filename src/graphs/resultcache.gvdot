@@ -5,29 +5,16 @@ digraph {
     // Style the nodes
     node [shape=record, fontname=Helvetica, fontsize=10];
     // Style the arrow labels
-    edge [fontname=Helvetica, fontsize=10];    
-    
-    // Add the data key cluster
-    subgraph clusterEngine {
-        label=<Engine with <B>result cache</B>>;
-        fontname=Helvetica;
-        fontsize=10;
+    edge [fontname=Helvetica, fontsize=10];
 
-        {
-          rank=same; 
-          key [label="Create data key\nfrom evidence"];
-          getaspectdata [label="Get aspect data\nfrom cache"];
-          cache [label="Does key\nexist in cache?" shape="diamond"];
-        }
-        {
-          rank=same; 
-          data [label="Create aspect data"];
-          process [label="Normal engine\nprocessing"];
-          addtocache [label="Add aspect data to\ncache using data key"];
-        }
-        addtoflow [label="Add aspect data to\nflow data and return"];
-    };   
-    
+    key [label="Create data key\nfrom evidence"];
+    getaspectdata [label="Get aspect data\nfrom cache"];
+    cache [label="Does key\nexist in cache?" shape="diamond"];
+    data [label="Create aspect data"];
+    process [label="Normal engine\nprocessing"];
+    addtocache [label="Add aspect data to\ncache using data key"];
+    addtoflow [label="Add aspect data to\nflow data and return"];
+      
     key -> cache;
     cache -> data [label="no"];
     cache -> getaspectdata [label="yes"];

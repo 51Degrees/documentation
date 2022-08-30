@@ -27,7 +27,6 @@ The @flowelement will need a reference to the @pipeline core package
 @startsnippet{dotnet}
 Create a new console project (.NET Core or Framework) and add a reference to
 the `FiftyOne.Pipeline.Core` NuGet package.
-<!--TODO: Add link to package on nuget.-->
 @endsnippet
 @startsnippet{java}
 The only dependency needed for Java is the `pipeline.core` Maven package from `com.51degrees`.
@@ -84,12 +83,12 @@ concrete implementation with easy 'setters'.
 In this example, only one value is populated. So an interface `StarSignData` will extend `ElementData`
 to add a 'getter' for it.
 
-@snippet developerexamples/flowelement/data/StarSignData.java class
+@snippet "pipeline.developer-examples.flowelement/src/main/java/pipeline/developerexamples/flowelement/data/StarSignData.java" class
 
 Now the internal implementation of it will implement this 'getter' and add a 'setter' for the @flowelement
 to use.
 
-@snippet developerexamples/flowelement/flowelements/StarSignDataInternal.java class
+@snippet "pipeline.developer-examples.flowelement/src/main/java/pipeline/developerexamples/flowelement/flowelements/StarSignDataInternal.java" class
 
 Note that this concrete implementation of `StarSignData` sits in the same package as the @flowelement,
 not the `StarSignData` interface, as it only needs to be accessible by the @flowelement.
@@ -152,22 +151,22 @@ added to the @flowdata, and  `ElementPropertyMetaData` - as we only need the sta
 This needs a constructor matching the `FlowElementBase` class. So it takes a logger, and an
 @elementdata factory which will be used to construct a `StarSignData`:
 
-@snippet developerexamples/flowelement/flowelements/SimpleFlowElement.java constructor
+@snippet "pipeline.developer-examples.flowelement/src/main/java/pipeline/developerexamples/flowelement/flowelements/SimpleFlowElement.java" constructor
 
 The `init` method in this example will simply initialize a list of star signs with the start and end dates of
 each star sign and add each to a list of a new class named `StarSign` which has the following simple implementation:
 
-@snippet developerexamples/flowelement/data/StarSign.java class
+@snippet "pipeline.developer-examples.flowelement/src/main/java/pipeline/developerexamples/flowelement/data/StarSign.java" class
 
 Note that the year of the start and end date are both set to 0, as the year should be ignored.
 
 The new `init` method looks like this:
 
-@snippet developerexamples/flowelement/flowelements/SimpleFlowElement.java init
+@snippet "pipeline.developer-examples.flowelement/src/main/java/pipeline/developerexamples/flowelement/flowelements/SimpleFlowElement.java" init
 
 Now the abstract methods can be implemented to create a functional @flowelement.
 
-@snippet developerexamples/flowelement/flowelements/SimpleFlowElement.java class
+@snippet "pipeline.developer-examples.flowelement/src/main/java/pipeline/developerexamples/flowelement/flowelements/SimpleFlowElement.java" class
 @endsnippet
 @startsnippet{php}
 First let's define a class which extends `flowElement`:
@@ -221,7 +220,7 @@ which the @elementbuilder provides with a logger and an @elementdata factory.
 The @elementdata factory is implemented in the @elementbuilder class to make use of the same
 logger factory.
 
-@snippet developerexamples/flowelement/flowelements/SimpleFlowElementBuilder.java class
+@snippet "pipeline.developer-examples.flowelement/src/main/java/pipeline/developerexamples/flowelement/flowelements/SimpleFlowElementBuilder.java" class
 @endsnippet
 @startsnippet{php}
 The PHP implementation does not use separate builder classes. Instead the options are provided by optional constructor parameters.
@@ -252,7 +251,7 @@ With a date of birth of 18/12/1992, your star sign is Sagittarius.
 @startsnippet{java}
 This new @flowelement can now be added to a @pipeline and used like:
 
-@snippet developerexamples/flowelement/Main.java usage
+@snippet "pipeline.developer-examples.flowelement/src/main/java/pipeline/developerexamples/flowelement/Main.java" usage
 
 to give an output of:
 ```{bash}
@@ -269,14 +268,14 @@ To print the star sign of the user.
 @startsnippet{node}
 This new @flowelement can now be added to a @pipeline and used like:
 
-@snippet simpleEvidenceFlowElement.js usage
+@snippet "simpleEvidenceFlowElement.js" usage
 
 To print the star sign of the user.
 @endsnippet
 @startsnippet{java}
 This new @flowelement can now be added to a @pipeline and used like:
 
-@snippet developerexamples/flowelement/Main.java usage
+@snippet "pipeline.developer-examples.flowelement/src/main/java/pipeline/developerexamples/flowelement/Main.java" usage
 
 to give an output of:
 ```{bash}

@@ -25,8 +25,6 @@ The precise constraints around these methods vary by language.
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
-@showsnippet{node,Node.js}
 @defaultsnippet{Select a language.}
 @startsnippet{dotnet}
 In .NET, the user is free to define methods on the builder as they wish.
@@ -48,11 +46,7 @@ follow certain rules:
 2. The builder must have at least one method named 'Build' which returns an instance that implements `FlowElement`.
 3. The types of any parameters on configuration methods and build methods must be string or have a static `parse` method. This can be in the boxed class in the case of primative type e.g. `Integer.parseInt` is used for `int`. It is used to parse the string value from the configuration file.
 @endsnippet
-@startsnippet{php}
-@endsnippet
-@startsnippet{node}
-
-@endsnippet
+@endsnippets
 
 # Building
 
@@ -74,8 +68,6 @@ data structure.
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
-@showsnippet{node,Node.js}
 @defaultsnippet{Select a language.}
 @startsnippet{dotnet}
 ```{cs}
@@ -93,10 +85,4 @@ FlowElement element = new ElementBuilder(loggerFactory)
     .build(compulsoryOption);
 ```
 @endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
-@startsnippet{node}
-**todo**
-@endsnippet
-
+@endsnippets

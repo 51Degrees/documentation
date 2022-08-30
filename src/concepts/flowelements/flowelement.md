@@ -101,8 +101,6 @@ the same key, or a new @elementdata from the factory which it has added to its i
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
-@showsnippet{node,Node.js}
 @defaultsnippet{Select a language to view an example of the 'get or add' method.}
 @startsnippet{dotnet}
 In .NET, the 'factory' is an anonymous function given to the **element** at construction,
@@ -117,12 +115,6 @@ taking a @flowdata and returning an @elementdata.
 ```{java}
 final TData aspectData = flowData.getOrAdd(getTypedDataKey(), getDataFactory());
 ```
-@endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
-@startsnippet{node}
-**todo**
 @endsnippet
 @endsnippets
 # Scope

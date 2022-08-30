@@ -72,12 +72,12 @@ same way as the [previous example](@ref Examples_CustomElement_FlowElement).
 Instead of implementing `ElementData`, the `StarSignData` will now implement `AspectData`
 which extends `ElementData`.
 
-@snippet developerexamples/onpremiseengine/data/StarSignData.java class
+@snippet pipeline.developer-examples.onpremise-engine/src/main/java/pipeline/developerexamples/onpremiseengine/data/StarSignData.java class
 
 Now the internal implementation of it will implement a 'getter' and add a 'setter' for `StarSign` in the
 same way as the [previous example](@ref Examples_CustomElement_FlowElement).
 
-@snippet developerexamples/onpremiseengine/flowelements/StarSignDataInternal.java class
+@snippet pipeline.developer-examples.onpremise-engine/src/main/java/pipeline/developerexamples/onpremiseengine/flowelements/StarSignDataInternal.java class
 
 Note that this concrete implementation of `StarSignData` sits in the same package as the @aspectengine,
 not the `StarSignData` interface, as it only needs to be accessible by the @aspectengine.
@@ -155,7 +155,7 @@ The constructor will also read the @datafile containing the star signs into memo
 method so that it can also be used by the `refreshData` method when a new @datafile is downloaded (this is not
 applicable for this example as star sign data is static).
 
-@snippet developerexamples/onpremiseengine/flowelements/SimpleOnPremiseEngine.java constructor
+@snippet pipeline.developer-examples.onpremise-engine/src/main/java/pipeline/developerexamples/onpremiseengine/flowelements/SimpleOnPremiseEngine.java constructor
 
 The `init` method in this example will simply read a CSV file with the start and end dates of each
 star sign, which looks like:
@@ -169,13 +169,13 @@ Cancer,21/06,22/07
 
 and add each to a list of a new class named `StarSign` which has the following simple implementation:
 
-@snippet developerexamples/onpremiseengine/data/StarSign.java class
+@snippet pipeline.developer-examples.onpremise-engine/src/main/java/pipeline/developerexamples/onpremiseengine/data/StarSign.java class
 
 Note that the year of the start and end date are both set to 0, as the year should be ignored.
 
 The new `init` method looks like this:
 
-@snippet developerexamples/onpremiseengine/flowelements/SimpleOnPremiseEngine.java init
+@snippet pipeline.developer-examples.onpremise-engine/src/main/java/pipeline/developerexamples/onpremiseengine/flowelements/SimpleOnPremiseEngine.java init
 
 Now the abstract methods can be implemented to create a functional @aspectengine.
 
@@ -248,7 +248,7 @@ As this @aspectengine is using a @datafile, the builder can make use of the logi
 As this @aspectengine is using a @datafile, the builder can make use of the logic in the
 `SingleFileAspectEngineBuilderBase`.
 
-@snippet developerexamples/onpremiseengine/flowelements/SimpleOnPremiseEngineBuilder.java class
+@snippet pipeline.developer-examples.onpremise-engine/src/main/java/pipeline/developerexamples/onpremiseengine/flowelements/SimpleOnPremiseEngineBuilder.java class
 
 @endsnippet
 @startsnippet{node}
@@ -278,7 +278,7 @@ With a date of birth of 18/12/1992, your star sign is Sagittarius.
 @startsnippet{java}
 This new @aspectengine can now be added to a @pipeline and used like:
 
-@snippet developerexamples/onpremiseengine/Main.java usage
+@snippet pipeline.developer-examples.onpremise-engine/src/main/java/pipeline/developerexamples/onpremiseengine/Main.java usage
 
 to give an output of:
 ```{bash}

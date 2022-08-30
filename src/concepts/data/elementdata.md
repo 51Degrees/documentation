@@ -14,8 +14,6 @@ However, **element data** must always expose its contents as a collection of [ke
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
-@showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific information on the internal data structure.}
 @startsnippet{dotnet}
 By default, the `Dictionary` class is used with a case-insensitive key comparer.
@@ -26,12 +24,6 @@ or an alternative key comparer.
 By default, the `TreeMap` class is used with a case-insensitive key comparator. This can be
 overridden in the constructor to use any other `Map<String,Object>` implementation or an alternative
 key comparator.
-@endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
-@startsnippet{node}
-**todo**
 @endsnippet
 @endsnippets
 
