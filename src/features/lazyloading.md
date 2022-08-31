@@ -72,9 +72,10 @@ future has been canceled, a `CancellationException` is thrown.
 PHP does not support lazy loading
 @endsnippet
 @startsnippet{node}
-Node.js does not support lazy loading
+As Node.js is inherently asynchronous, it will always function in a similar way to a lazy loading 
+implementation without the need for specific functionality.
 @endsnippet
 @startsnippet{python}
-Node.js does not support lazy loading
+Python does not support lazy loading
 @endsnippet
 @endsnippets
