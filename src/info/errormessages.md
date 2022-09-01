@@ -69,7 +69,7 @@ There are no available properties which are associated with the products determi
 
 ### Referer or origin header not set @anchor Referer_or_Origin_header_not_set	
 
-The Referer or Origin header has not been provided in the request. These headers are used to validate that the traffic has originated from a legitimate source. Make sure that the Referer or Origin header is set when making requests to the 51Degrees Cloud service. You can resume making requests when the number of seconds in the `Retry-After` response header has elapsed. If using one of the native pipeline APIs then you can use the `CloudRequestOrigin` setting in the Pipeline or Cloud Request Engine builder to specify the origin. See the API documentation on how to set the header: [coming soon].
+The Referer or Origin header has not been provided in the request. These headers are used to validate that the traffic has originated from a legitimate source. Make sure that the Referer or Origin header is set when making requests to the 51Degrees Cloud service. You can resume making requests when the number of seconds in the `Retry-After` response header has elapsed. If using one of the native pipeline APIs then you can use the `CloudRequestOrigin` setting in the Pipeline or Cloud Request Engine builder to specify the origin. Note that, as with all engine builder methods, this can also be specified in the configuration file.
 
 ### Requests have been blocked @anchor Requests_have_been_blocked
 
@@ -85,7 +85,7 @@ There was an error when getting the details for the Resource Key provided in the
 
 ### Resource Key not authorized on domain @anchor Resource_key_not_authorized_on_domain	
 
-This Resource Key is not authorized for use with the Referer or Origin domain. See the original error message for the disallowed domain. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to update the permitted domains for your Resource Key or leave blank to allow usage on all domains. If using one of the native pipeline APIs then you can use the `CloudRequestOrigin` setting in the Pipeline or Cloud Request Engine builder to specify the origin. See the API documentation on how to set the header: [coming soon].
+This Resource Key is not authorized for use with the Referer or Origin domain. See the original error message for the disallowed domain. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to update the permitted domains for your Resource Key or leave blank to allow usage on all domains. If using one of the native pipeline APIs then you can use the `CloudRequestOrigin` setting in the Pipeline or Cloud Request Engine builder to specify the origin. Note that, as with all engine builder methods, this can also be specified in the configuration file.
 
 ### Resource Key not recognized @anchor Resource_key_not_recognized	
 

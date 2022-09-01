@@ -38,7 +38,7 @@ in the cache using the @datakey.
 
 Below is a flow chart illustrating this process. 
 
-@dotfile resultcache.gvdot   
+@dotfile resultcache.gvdot
 
 # Configuration
 

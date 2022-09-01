@@ -31,7 +31,23 @@ A cloud service can be used in much the same way as a local service running on t
 with the extra step of a [web request](@term{WebRequest}) being required.
 
 # Data tier @anchor Concepts_Terminology_DataTier
-<!--TODO-->
+
+The data tier is a term that encapsulates the properties and capabilities that a user has access to.
+
+Currently active tiers are:
+- Lite
+- Enterprise
+- Premium (V3 only)
+- TAC (V4 only)
+
+For on-premise solutions, the data tier is defined by the data file that is used. 
+Different files contain values for different sets of properties.
+In addition, the lite (free) file is updated far less frequently and is not made available via 
+our [Distributor](@ref Concepts_Terminology_Distributor) automatic update service.
+
+For cloud, the data tier is defined by the License Key that is used when generating a 
+[Resource Key](@ref Concepts_Terminology_ResourceKey).
+In this case, the data tier only affects the properties that are available.
 
 # Distributor @anchor Concepts_Terminology_Distributor
 

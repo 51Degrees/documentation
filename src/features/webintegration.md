@@ -39,8 +39,6 @@ This section covers the specifics of how it works for each web framework.
 Additionally the [web integration examples](@ref Examples_WebIntegration) include details of how
 to enable @clientsideevidence for each framework.
 
-<!--TODO: Add details for other web frameworks.-->
-
 @startsnippets
 @showsnippet{aspnet,ASP.NET}
 @showsnippet{aspnetcore,ASP.NET Core}
@@ -78,10 +76,13 @@ If configured to do so, this JavaScript will also be minified.
 Additionally, this service implements a caching mechanism, 
 so the resulting JavaScript will not need to be regenerated if successive requests contain
 the same evidence values.
+
+Also see the [getting started web examples](@ref Examples_DeviceDetection_GettingStarted_Web_Index).
 @endsnippet
 @startsnippet{aspnet}
-
+See the [getting started web examples](@ref Examples_DeviceDetection_GettingStarted_Web_Index).
 @endsnippet
 @startsnippet{javaservlet}
+See the [getting started web examples](@ref Examples_DeviceDetection_GettingStarted_Web_Index).
 @endsnippet
 @endsnippets

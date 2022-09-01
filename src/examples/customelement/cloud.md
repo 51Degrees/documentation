@@ -73,12 +73,12 @@ same way as the [previous example](@ref Examples_CustomElement_FlowElement).
 Instead of implementing `ElementData`, the `StarSignData` will now implement `AspectData`
 which extends `ElementData`.
 
-@snippet developerexamples/cloudengine/data/StarSignData.java class
+@snippet pipeline.developer-examples.cloud-engine/src/main/java/pipeline/developerexamples/cloudengine/data/StarSignData.java class
 
 Now the internal implementation of it will implement a 'getter' and add a 'setter' for `StarSign` in the
 same way as the [previous example](@ref Examples_CustomElement_FlowElement).
 
-@snippet developerexamples/cloudengine/flowelements/StarSignDataInternal.java class
+@snippet pipeline.developer-examples.cloud-engine/src/main/java/pipeline/developerexamples/cloudengine/flowelements/StarSignDataInternal.java class
 
 Note that this concrete implementation of `StarSignData` sits in the same package as the @aspectengine,
 not the `StarSignData` interface, as it only needs to be accessible by the @aspectengine.
@@ -123,17 +123,17 @@ The existing constructor needs to change to match the `CloudAspectEngineBase` cl
 The constructor will also take a `CloudRequestEngine` instance to get the available properties
 from.
 
-@snippet developerexamples/cloudengine/flowelements/SimpleCloudEngine.java constructor
+@snippet pipeline.developer-examples.cloud-engine/src/main/java/pipeline/developerexamples/cloudengine/flowelements/SimpleCloudEngine.java constructor
 
 The `loadAspectProperties` method in this example will get the @aspectproperties from the `CloudRequestEngine`
 and store them. In this case we know the only property will be 'star sign', but more complex @cloudengines can have many
 properties.
 
-@snippet developerexamples/cloudengine/flowelements/SimpleCloudEngine.java loadaspectproperties
+@snippet pipeline.developer-examples.cloud-engine/src/main/java/pipeline/developerexamples/cloudengine/flowelements/SimpleCloudEngine.java loadaspectproperties
 
 Now the abstract methods can be implemented to create a functional @aspectengine.
 
-@snippet developerexamples/cloudengine/flowelements/SimpleCloudEngine.java class
+@snippet pipeline.developer-examples.cloud-engine/src/main/java/pipeline/developerexamples/cloudengine/flowelements/SimpleCloudEngine.java class
 
 @endsnippet
 @endsnippets
@@ -160,7 +160,7 @@ As this @aspectengine is using a @datafile, the builder can make use of the logi
 As this @aspectengine is using a @datafile, the builder can make use of the logic in the
 `CloudAspectEngineBuilderBase`.
 
-@snippet developerexamples/cloudengine/flowelements/SimpleCloudEngineBuilder.java class
+@snippet pipeline.developer-examples.cloud-engine/src/main/java/pipeline/developerexamples/cloudengine/flowelements/SimpleCloudEngineBuilder.java class
 
 @endsnippet
 @endsnippets
@@ -187,7 +187,7 @@ With a date of birth of 18/12/1992, your star sign is Sagittarius.
 This new @aspectengine can now be added to a @pipeline along with a `CloudRequestEngine`,
 and used like:
 
-@snippet developerexamples/cloudengine/Main.java usage
+@snippet pipeline.developer-examples.cloud-engine/src/main/java/pipeline/developerexamples/cloudengine/Main.java usage
 
 to give an output of:
 ```{bash}

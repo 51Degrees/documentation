@@ -52,7 +52,6 @@ Pipeline pipeline = new PipelineBuilder(loggerFactory)
 
 @startsnippets
 @showsnippet{dotnet,C#}
-@showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a language for an example of parsing JSON.}
@@ -67,9 +66,6 @@ config.Bind("PipelineOptions", options);
 IPipeline pipeline = new PipelineBuilder(loggerFactory)
     .BuildFromConfiguration(options);
 ```
-@endsnippet
-@startsnippet{java}
-**todo**
 @endsnippet
 @startsnippet{php}
 \verbatim
@@ -210,7 +206,6 @@ cannot always be achieved.
 
 @startsnippets
 @showsnippet{dotnet,C#}
-@showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a language for more details of the internals of **build from configuration**.}
@@ -238,9 +233,6 @@ If neither are available then the @pipelinebuilder will be unable to create the 
 
 This can be resolved by passing an IServiceProvider to the @pipelinebuilder on
 construction that is populated with instances of the services that @elementbuilders will require.
-@endsnippet
-@startsnippet{java}
-**todo**
 @endsnippet
 @startsnippet{php}
 PHP will load elements named in `BuilderName` as if they were specified in a `use` statement, so for example:

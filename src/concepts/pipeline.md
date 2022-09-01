@@ -83,8 +83,6 @@ This enables easy iteration over all @elementproperties.
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
-@showsnippet{node,Node.js}
 @defaultsnippet{Select a language to view language specific iterator example.}
 @startsnippet{dotnet}
 Iterate over all @properties in the **Pipeline**.
@@ -118,12 +116,7 @@ for (Map.Entry<String, Map<String, ElementPropertyMetaData>> elementProperties
 }
 ```
 @endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
-@startsnippet{node}
-**todo**
-@endsnippet
+@endsnippets
 
 An @evidencekeyfilter is also exposed. 
 This aggregates all the evidence keys accepted by all the 
@@ -163,8 +156,6 @@ which the **Pipeline** creates will be thread-safe for writing as it is possible
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
-@showsnippet{php,PHP}
-@showsnippet{node,Node.js}
 @defaultsnippet{Select a language to view language specific build example.}
 @startsnippet{dotnet}
 Build a **Pipeline** with two @flowelements in sequence.
@@ -196,12 +187,7 @@ Pipeline pipeline = new PipelineBuilder(loggerFactory)
     .build();
 ```
 @endsnippet
-@startsnippet{php}
-**todo**
-@endsnippet
-@startsnippet{node}
-**todo**
-@endsnippet
+@endsnippets
 
 
 # Lifecycle
