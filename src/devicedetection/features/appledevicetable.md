@@ -45,7 +45,7 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 |iPhone XR|Zoom|iPhone XR<br/> iPhone XR, iPhone 11|8.03%<br/> 91.97%|
 |iPhone XS|Standard|iPhone XS, iPhone XS Max<br/> iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max|3.14%<br/> 96.86%|
 |iPhone XS|Zoom|iPhone XS|100.00%|
-|iPhone XS Max|Standard|iPhone XS Max</br/> iPhone XS Max, iPhone 11 Pro Max|2.10%<br/> 97.90%|
+|iPhone XS Max|Standard|iPhone XS Max<br/> iPhone XS Max, iPhone 11 Pro Max|2.10%<br/> 97.90%|
 |iPhone XS Max|Zoom|iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br/> iPhone XS, iPhone XS Max|96.42%<br/> 3.58%|
 |iPhone 11|Standard|iPhone XR, iPhone 11<br/> iPhone 11|90.81%<br/> 9.19%|
 |iPhone 11|Zoom|iPhone XR, iPhone 11<br/> iPhone 11|40.34%<br/> 59.66%|
