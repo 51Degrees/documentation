@@ -66,3 +66,20 @@ However, if a match cannot be found for the supplied UA-CH values, then the User
 If you are using a @webintegration then the UA-CH and User Agent will both be passed to the Pipeline 
 automatically. Otherwise, you need to supply the available header values manually. See the [getting started](@ref Examples_DeviceDetection_GettingStarted_Console_Index) examples for a demonstration of how to supply 
 UA-CH evidence in parallel with the User Agent.
+
+@anchor UserAgent_ContainsBetterData
+[#](@ref UserAgent_ContainsBetterData)
+#### I've supplied the User Agent in addition to UA-CH. The result returns unknown values for things that are clearly present in the User Agent.
+
+UA-CH evidence always takes precedence over the User Agent. In some scenarios, this means that additional detail that is available in the User Agent will be ignored. For example:
+
+`Sec-CH-UA-Platform` = `"Windows"`
+`User-Agent` = `Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0`
+
+The result from the API will return Windows, but the version number will be unknown; this is because the Sec-CH-UA-Platform-Version header has not been supplied.
+
+Since UA-CH take precedence over the User Agent (in this case, when Sec-CH-UA-Platform is used in preference to User Agent), despite the User Agent containing version information, the result from the API will not return any version information. To combat this, we recommend supplying all the Sec-CH-UA headers you need.
+
+We take this approach because the version provided by User Agent is incorrect in some scenarios. For example, Windows 11 will always appear as Windows 10 in the User Agent. 
+
+In addition, as Google press ahead with [deprecating the data](https://www.chromium.org/updates/ua-reduction/) in parts of the User Agent, the values presented will become less reliable. Therefore, we believe that returning 'Windows unknown version' is better than returning 'Windows 10' when the user may not actually be using Windows 10.
