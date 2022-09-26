@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('_device_detection__features__user_agen
 <p>We concatenate the various UA-CH headers that are needed to identify a component to create ‘pseudo-headers’. These are then used internally to perform the detection.</p>
 <p>The table below shows which pseudo-headers are required in order to detect each component. These are the minimum pseudo-headers we use to detect the component; however, we recommend providing all UA-CH values for the best detection. Additionally, this table is only applicable for Chromium-based browsers; to detect non-Chromium browsers, you will need to continue supplying User Agent information.</p>
 <p>Some pseudo-headers are not required to detect the component but can provide more detailed detection results. For example, Sec-CH-UA-Platform-Version is not required to determine the Platform component, but provides additional version information when supplied.</p>
-<p>In some cases, there are multiple pseudo-headers for a component. These are processed in order from providing most detail to least.</p>
+<p>In some cases, there are multiple pseudo-headers for a component. These are processed in order from providing most detail to least. In addition, pseudo-headers will always take precedence over the User Agent, even in cases where the User Agent provides more detail. See the <a class="el" href="_info__f_a_qs.html">FAQs</a> for more discussion on this.</p>
 <h3>Key</h3>
 <ul>
 <li>x = This value is required in order to determine the component.</li>
