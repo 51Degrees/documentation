@@ -73,7 +73,7 @@ The table below shows which pseudo-headers are required in order to detect each 
 
 Some pseudo-headers are not required to detect the component but can provide more detailed detection results. For example, Sec-CH-UA-Platform-Version is not required to determine the Platform component, but provides additional version information when supplied.
 
-In some cases, there are multiple pseudo-headers for a component. These are processed in order from providing most detail to least. 
+In some cases, there are multiple pseudo-headers for a component. These are processed in order from providing most detail to least. In addition, psuedo-headers will always take precedence over User Agent, even in cases where the User Agent provides more detail. See the [FAQ](@ref Info_FAQs_UserAgent_ContainsBetterData) for more discussion on this.
 
 ### Key
 - x = This value is required in order to determine the component.
