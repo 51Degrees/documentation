@@ -69,7 +69,7 @@ UA-CH evidence in parallel with the User Agent.
 
 @anchor UserAgent_ContainsBetterData
 [#](@ref UserAgent_ContainsBetterData)
-#### I've supplied User Agent in addition to UA-CH. The result returns unknown values for things that are clearly present in the User Agent.
+#### I've supplied a User Agent in addition to UA-CH. The result returns unknown values for things that are clearly present in the User Agent.
 
 UA-CH evidence always takes precedence over User Agent. In some scenarios, this means that additional detail that is available in the User Agent will be ignored. For example:
 
