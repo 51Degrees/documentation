@@ -69,9 +69,9 @@ UA-CH evidence in parallel with the User Agent.
 
 @anchor UserAgent_ContainsBetterData
 [#](@ref UserAgent_ContainsBetterData)
-#### I've supplied a User Agent in addition to UA-CH. The result returns unknown values for things that are clearly present in the User Agent.
+#### I've supplied the User Agent in addition to UA-CH. The result returns unknown values for things that are clearly present in the User Agent.
 
-UA-CH evidence always takes precedence over User Agent. In some scenarios, this means that additional detail that is available in the User Agent will be ignored. For example:
+UA-CH evidence always takes precedence over the User Agent. In some scenarios, this means that additional detail that is available in the User Agent will be ignored. For example:
 
 `Sec-CH-UA-Platform` = `"Windows"`
 `User-Agent` = `Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0`
