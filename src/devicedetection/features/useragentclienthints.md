@@ -203,8 +203,5 @@ Caniuse.com can be used to check browser support for both
 [Client Hints](https://caniuse.com/client-hints-dpr-width-viewport) and 
 [User Agent Client Hints](https://caniuse.com/mdn-api_navigator_useragentdata).
 
-
-
-
-
-
+Finally, on 28 September 2022, we hosted a webinar discussing User Agent Client Hints and the
+future of the User Agent. [Watch the webinar recording here](https://vimeo.com/755026259).
