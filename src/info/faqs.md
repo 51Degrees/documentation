@@ -92,4 +92,4 @@ There is a limit to the number of requests that you can make – only one reques
 
 The best solution is to only download the data file when you need to (ideally, once per day), or set up @ref Features_AutomaticDatafileUpdates for the latest data.
 
-Alternatively, you can wait until after the 30-minute window to try again. However, if you continue to receive the <code>FiftyOne.Pipeline.Engines.Exceptions.DataUpdateException: 'Too many requests to 'https://distributor.51degrees.com/api/v2/download?LicenseKeys=<our_lic_key_here>&Download=True&Type=HashV41' for engine 'DeviceDetectionHashEngine''</code> error, we recommend following the above solutions.
+Alternatively, you can wait until after the 30-minute window to try again. However, you may encounter the error again.
