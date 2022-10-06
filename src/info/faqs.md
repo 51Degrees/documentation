@@ -83,3 +83,13 @@ Since UA-CH take precedence over the User Agent (in this case, when Sec-CH-UA-Pl
 We take this approach because the version provided by User Agent is incorrect in some scenarios. For example, Windows 11 will always appear as Windows 10 in the User Agent. 
 
 In addition, as Google press ahead with [deprecating the data](https://www.chromium.org/updates/ua-reduction/) in parts of the User Agent, the values presented will become less reliable. Therefore, we believe that returning 'Windows unknown version' is better than returning 'Windows 10' when the user may not actually be using Windows 10.
+
+@anchor Error_OnPremise_DataFile
+[#](@ref Error_OnPremise_DataFile) 
+#### Why am I getting the following error message when updating the on-premise data file? <code>FiftyOne.Pipeline.Engines.Exceptions.DataUpdateException: 'Too many requests to 'https://distributor.51degrees.com/api/v2/download?LicenseKeys=<our_lic_key_here>&Download=True&Type=HashV41' for engine 'DeviceDetectionHashEngine''</code>
+
+There is a limit to the number of requests that you can make – only one request every 30 minutes can be made for each IP address.
+
+The best solution is to only download the data file when you need to (ideally, once per day), or set up @ref Features_AutomaticDatafileUpdates for the latest data.
+
+Alternatively, you can wait until after the 30-minute window to try again. However, you may encounter the error again.
