@@ -8,6 +8,9 @@ and the @onpremiseengine refreshed with it. The file location where the @datafil
 from can also be monitored for changes, so when a @datafile is manually replaced, the
 @onpremiseengine will be refreshed with it.
 
+This page describes the functionality and options for data updates in the pipeline API. 
+In addition, it is worth being familiar with the [Distributor](@ref Info_Distributor) web API, 
+which supplies the updated data files.
 
 # Registering for updates
 
@@ -18,7 +21,6 @@ to a @pipeline.
 A @datafile can also be manually registered for **automatic updates** by registering with the
 @dataupdateservice. This works in exactly the same way as if it was registered by the @pipelinebuilder,
 but in most cases is not necessary as the @pipelinebuilder will do this.
-
 
 # Configuration
 
@@ -95,3 +97,64 @@ however not all download servers support it.
 Unnecessary downloads can be prevented by providing the download server with an 'If-Modified-Since' HTTP header. If this option
 is enabled (which it is by default for most @onpremiseengines) the 'If-Modified-Since' header will be set to the date at which the
 current @datafile was last modified. If there is not a newer @datafile on the server then the service will not attempt to download a file.
+
+@anchor Large_Clusters
+[#](@ref Large_Clusters) 
+# Recommendations for large clusters
+
+The [Distributor](@ref Info_Distributor) API is limited in the number of requests it can 
+service per day. This is enforced by each license key being limited to a certain number of 
+requests (max 100 - although some keys will have a lower threshold than this) in each 
+30 minute period.
+
+Environments that use large numbers of independent nodes can easily exceed this threshold 
+if the automatic update functionality provided by the pipeline API is switched on.
+
+Instead, we recommend that a single machine (with secondaries as necessary for redundancy, etc) 
+is tasked with downloading the data file each day using curl or similar.
+
+There are then two approaches for deploying the new data file within you environment:
+
+## File system watcher
+
+You can use whatever tools are provided by your environment to push the new file out to the 
+nodes in the cluster.
+
+If the ‘File System Watcher’ option (described in the sections above) is enabled in the API, 
+it will watch the file on disk and refresh the API when it is updated. Where file system watcher
+is not supported by the language, the pipeline will need to be re-created using the new data file.
+
+## Self-hosted HTTP update
+
+If the data file is hosted and made available on a static url that is accessible within your 
+environment, The nodes can be configured to check this location for updates, instead of the 
+distributor service.
+
+An example of how to configure this is shown below. You can also configure it in code using the 
+DeviceDetectionHashEngineBuilder.
+
+```
+{
+  "BuilderName": "DeviceDetectionHashEngine",
+  "BuildParameters": {
+    "DataFile": "data/TAC-HashV41.hash",
+    "TempDirPath": "data/tmp",
+    "AutoUpdate": true,
+    "DataUpdateOnStartup": true,
+    "UpdatePollingInterval": 14400,
+    "UpdateRandomisationMax": 600,
+    "CreateTempDataCopy": true,
+    "DataUpdateUrl": "https://myhost.net/51Ddatafile",
+    "DataUpdateVerifyMd5": false,
+    "DataUpdateUseUrlFormatter": false,
+    "DataUpdateLicenseKey": "KEY"
+  }
+}
+```
+
+The key settings for our purposes are:
+- **DataUpdateUrl** - The static URL to use when checking for a new data file.
+- **DataUpdateVerifyMd5** - You can either configure your endpoint to also response with an MD5 HTTP 
+  Header, or set this to false to prevent it trying to verify the content.
+- **DataUpdateUseUrlFormatter** - This must be set to false to prevent the API from appending the 
+  query string parameters that are required when calling the 51Degrees Distributor service. 
