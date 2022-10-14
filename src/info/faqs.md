@@ -93,3 +93,5 @@ There is a limit to the number of requests that you can make – only one reques
 The best solution is to only download the data file when you need to (ideally, once per day), or set up @ref Features_AutomaticDatafileUpdates for the latest data.
 
 Alternatively, you can wait until after the 30-minute window to try again. However, you may encounter the error again.
+
+If you have a production environment with a large number of nodes in a cluster, you need to take special care when designing your system to support data updates in a way that impact on our server and external bandwidth usage from your own systems. The [automatic updates feature page](@ref Features_AutomaticDatafileUpdates) has a section at the bottom with some recommendations.
