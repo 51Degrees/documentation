@@ -3,7 +3,7 @@
 The 51Degrees Distributor service is a client-facing cloud-based service which is used by the 
 API to request the latest data files. You can also manually download files via the front end on
 our [website](https://51degrees.com/developers/downloads/enhanced-device-data), or by calling the 
-Distributor web API directly using Curl or similar.
+Distributor web API directly using curl or similar.
 
 The URL is `https://distributor.51degrees.com/api/v2/download`
 

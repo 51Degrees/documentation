@@ -115,7 +115,7 @@ is tasked with downloading the data file each day using curl or similar.
 
 There are then several approaches for deploying the new data file within your environment:
 
-## Share network location
+## Shared network location
 
 The data file can be placed in a shared network location that is visible to many nodes. The
 pipeline can then be created using this shared file as the data file location. 
@@ -132,6 +132,11 @@ This could be mitigated by using multiple shared locations that are updated in a
 way from a single master copy of the data file. Alternatively, one of the approaches below 
 gives you more control over when updates happen.
 
+In addition, we would only recommend using this setup with the 'MaxPerformance' 
+[performance option](@ref DeviceDetection_Features_PerformanceOptions) enabled.
+Other options will stream data from the data file as needed, which will be relatively 
+slow and bandwidth-heavy. 
+
 ## Push data file to nodes
 
 You can use whatever tools are provided by your environment to push the new file out to the 
@@ -146,8 +151,8 @@ If the data file is hosted and made available on a static URL that is accessible
 environment, the nodes can be configured to check this location for updates, instead of the 
 Distributor service.
 
-An example of how to configure this is shown below. You can also configure it in code using the 
-DeviceDetectionHashEngineBuilder.
+An example of how to configure a device detection engine in this scenario is shown below. 
+You can also configure it in code using the relevant engine builder.
 
 ```
 {
@@ -176,10 +181,11 @@ The key settings for our purposes are:
   query string parameters that are required when calling the 51Degrees Distributor service. 
 
 Be aware that the compute nodes will start checking the URL for updates as soon as the 
-'Next published date', which is stored in the data file, is reached.
+'next published date', which is stored in the data file, is reached.
 This may be before a new data file is actually available from the static URL.
 
-This means that you will probably need to make use of the `If-Modified-Since` HTTP header to 
-allow the API to check if it needs an update without downloading the entire data file.
+This means that you will probably need to configure your URL to accept and make use of 
+the `If-Modified-Since` HTTP header to allow the API to check if it needs an update without 
+downloading the entire data file.
 
 See the [Distributor](@ref Info_Distributor) documentation for details of how this works.
