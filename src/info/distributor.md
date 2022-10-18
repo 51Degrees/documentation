@@ -11,12 +11,16 @@ The URL is `https://distributor.51degrees.com/api/v2/download`
 
 Query string parameters are supplied as normal.
 For example: `https://distributor.51degrees.com/api/v2/download?LicenseKeys=ABC&Type=27&Product=23`
+If you're unsure what 'product' or 'type' values to use, check the download page on the 
+[website](https://51degrees.com/developers/downloads/enhanced-device-data) and copy the link
+for the file you need from there.
+
 
 | Parameter      | Description      | Possible values     |
 |---|---|---|
 | LicenseKeys    | Pipe-separated list of 51Degrees License Keys. You must have a valid License Key for the data file that you are trying to download. | N/A  |
-| Type           | The type of data file to download.  | <ul><li>12 = Enterprise V3.1 Pattern</li><li>16 = Enterprise V3.2 Pattern</li><li>21 = CSV</li><li>27 = Hash V4.1</li></ul>  |
-| Product        | The 51Degrees 'product' that the data file is part of. | <ul><li>4 = V3 Enterprise</li><li>23 = V4 TAC</li></ul> |
+| Type           | The type of data file to download. Accepts either the string or id from the list of values. | <ul><li>12 or `BinaryV3` = V3.1 Pattern</li><li>13 or `BinaryV3Uncompressed` = V3.1 Pattern uncompressed</li><li>16 or `BinaryV32` = V3.2 Pattern</li><li>17 or `BinaryV32Uncompressed` = V3.2 Pattern uncompressed</li><li>18 or `BinaryV32UAT` = V3.2 Pattern file with a very limited set of data. Designed to support automated testing</li><li>19 or `TrieV32` = V3.2 Trie</li><li>20 or `HashTrieV34` = V3.4 Hash Trie</li><li>21 or `CSV` = CSV file containing a dump of the data for the devices, browsers, etc that are used to generate the data file</li><li>27 or `HashV41` = Hash V4.1</li></ul> |
+| Product        | The 51Degrees 'product' that the data file is part of. Accepts either the string or id from the list of values. | <ul><li>2 or `Premium` = The Premium V3 data file</li><li>4 or `Enterprise` = The Enterprise V3 data file</li><li>8 or `Lite` = The Lite V3 data file</li><li>15 or `TAC` = The TAC V3 data file</li><li>21 or `V4Free` = The free V4 data file</li><li>22 or `V4Enterprise` = The Enterprise V4 data file</li><li>23  or `V4TAC` = The TAC V4 data file</li></ul> |
 | Download       | Legacy - Has no effect | True/False          |
 
 ## HTTP headers
@@ -48,7 +52,7 @@ If the data file is newer, it will be returned, along with HTTP 200.
 | 403               | Forbidden. The supplied License Key has been revoked. Contact support@51degrees.com for assistance. |
 | 404               | Not found. Usually indicates that a License Key has been supplied without a 'Product', and the Distributor has been unable to automatically determine which product you want. May also occur due to the supplied product and type being an invalid combination. | 
 | 429               | Too many requests. Has a couple of causes <ul><li>You are over the threshold of requests per minute for this License Key. The server will specify a `Retry-After` header. Also see the 'Recommendations for large clusters' section at the bottom of the [data updates feature page](@ref Features_AutomaticDatafileUpdates) for advice.</li><li>`Unable to update the data file successfully due to another process using the file.` This is an internal failure due to the way Distributor currently works. It should be resolved if you try again in a few minutes.</li></ul> |
-| 500               | Internal server error. Some unexpected problem has occurred. Please try again later and contact support@51degrees.com if this continues |
+| 500               | Internal server error. Some unexpected problem has occurred. Please try again later and contact support@51degrees.com if this continues. |
 
 
 
