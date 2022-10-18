@@ -111,7 +111,8 @@ $(document).ready(function(){initNavTree('_info__f_a_qs.html','');});
 <p><a class="anchor" id="Error_OnPremise_DataFile"></a><a class="el" href="_info__f_a_qs.html#Error_OnPremise_DataFile">#</a> </p><h4>Why am I getting the following error message when updating the on-premise data file? <code>FiftyOne.Pipeline.Engines.Exceptions.DataUpdateException: 'Too many requests to '<a href="https://distributor.51degrees.com/api/v2/download?LicenseKeys=">https://distributor.51degrees.com/api/v2/download?LicenseKeys=</a>&amp;Download=True&amp;Type=HashV41' for engine 'DeviceDetectionHashEngine''</code></h4>
 <p>There is a limit to the number of requests that you can make – only one request every 30 minutes can be made for each IP address.</p>
 <p>The best solution is to only download the data file when you need to (ideally, once per day), or set up <a class="el" href="_features__automatic_datafile_updates.html">Automatic Data File Updates</a> for the latest data.</p>
-<p>Alternatively, you can wait until after the 30-minute window to try again. However, you may encounter the error again. </p>
+<p>Alternatively, you can wait until after the 30-minute window to try again. However, you may encounter the error again.</p>
+<p>If you have a production environment with a large number of nodes in a cluster, you need to take special care when designing your system to support data updates in a way that impact on our server and external bandwidth usage from your own systems. The <a class="el" href="_features__automatic_datafile_updates.html">automatic updates feature page</a> has a section at the bottom with some recommendations. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->

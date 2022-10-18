@@ -1,6 +1,7 @@
 var _info__index =
 [
     [ "Dependencies", "_info__dependencies.html", null ],
+    [ "Distributor", "_info__distributor.html", null ],
     [ "Error Messages", "_info__error_messages.html", null ],
     [ "Frequently Asked Questions", "_info__f_a_qs.html", null ],
     [ "Feature Matrix", "_info__feature_matrix.html", null ],
