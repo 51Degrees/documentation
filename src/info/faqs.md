@@ -80,7 +80,7 @@ The result from the API will return Windows, but the version number will be unkn
 
 Since UA-CH take precedence over the User Agent (in this case, when Sec-CH-UA-Platform is used in preference to User Agent), despite the User Agent containing version information, the result from the API will not return any version information. To combat this, we recommend supplying all the Sec-CH-UA headers you need.
 
-We take this approach because the version provided by User Agent is incorrect in some scenarios. For example, Windows 11 will always appear as Windows 10 in the User Agent. 
+We take this approach because the version provided by the User Agent is incorrect in some scenarios. For example, Windows 11 will always appear as Windows 10 in the User Agent. 
 
 In addition, as Google press ahead with [deprecating the data](https://www.chromium.org/updates/ua-reduction/) in parts of the User Agent, the values presented will become less reliable. Therefore, we believe that returning 'Windows unknown version' is better than returning 'Windows 10' when the user may not actually be using Windows 10.
 
