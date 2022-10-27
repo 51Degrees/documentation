@@ -174,15 +174,18 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 |iPhone SE (3rd Gen.)|Zoom|iPhone SE (3rd Gen.)|100.00%|
 |iPhone 14|Standard|iPhone 14, iPhone 13, iPhone 13 Pro|100.00%
 |iPhone 14|Zoom|iPhone 14, iPhone 14 Pro, iPhone 13, iPhone 12 mini, iPhone 13 Pro<br/> iPhone 14, iPhone 14 Pro|96.58%<br/> 3.42%|
-
-
-
-|iPad 5|N/A|iPad 5, iPad Pro 12.9, iPad 6<br/> iPad Pro 12.9, iPad 5, iPad 6|49.09%<br/> 50.91%|
-|iPad 6|N/A|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad 6<br/> iPad 5, iPad Pro 12.9, iPad 6<br/> iPad Pro 12.9, iPad 6|65.08%<br/> 0.02%<br/> 34.89%<br/> 0.00%|
+|iPhone 14 Pro|Standard|iPhone 14 Pro|100.00%|
+|iPhone 14 Pro|Zoom|iPhone 14, iPhone 14 Pro, iPhone 13, iPhone 12 mini, iPhone 13 Pro<br/> iPhone 14, iPhone 14 Pro|96.40%<br/> 3.60%|
+|iPhone 14 Pro Max|Standard|iPhone 14 Pro Max|100.00%|
+|iPhone 14 Pro Max|Zoom|iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 12 mini, iPhone 14 Plus<br/> iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus|97.84%<br/> 2.16%|
+|iPhone 14 Plus|Standard|iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus|100.00%|
+|iPhone 14 Plus|Zoom|iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 12 mini, iPhone 14 Plus<br/> iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus|93.39%<br/> 0.61%|
+|iPad 5|N/A|iPad Pro 12.9, iPad 5, iPad 6|100.00%|
+|iPad 6|N/A|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad 6|99.99%<br/> 0.01%|
 |iPad 7|N/A|iPad 7|100.00%|
 |iPad 8|N/A|iPad 8|100.00%|
 |iPad (9th Gen.)|N/A|iPad (9th Gen.)|100.00%|
-|iPad Air 2|N/A|iPad mini 4, iPad Air 2<br/> iPad Air 2|98.21%<br/> 1.79%|
+|iPad Air 2|N/A|iPad mini 4, iPad Air 2<br/> iPad Air 2|97.12%<br/> 2.88%|
 |iPad Air (3rd Gen.)|N/A|iPad Air (3rd Gen.)|100.00%|
 |iPad Air (4th Gen.)|N/A|iPad Air (4th Gen.)|100.00%|
 |iPad Air (5th Gen.)|N/A|iPad Air (5th Gen.)|100.00%|
@@ -190,9 +193,9 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 |iPad mini (6th Gen.)|N/A|iPad mini (6th Gen.)|100.00%|
 |iPad Pro 11.0|N/A|iPad Pro 11.0<br/> iPad Pro 11.0, iPad Pro 11.0 (3rd Gen.), iPad Pro 11.0 (2nd Gen.)<br/> iPad Pro 11.0, iPad Pro 11.0 (2nd Gen.)|56.67%<br/> 43.23%<br/> 0.10%|
 |iPad Pro 12.9|Standard|iPad Pro 12.9|100.00%|
-|iPad Pro 12.9|Zoom|iPad Pro 12.9, iPad 5, iPad 6<br/> iPad 5, iPad Pro 12.9, iPad 6<br/> iPad Pro 12.9, iPad 6|67.18%<br/> 32.82%<br/> 0.00%|
+|iPad Pro 12.9|Zoom|iPad Pro 12.9, iPad 5, iPad 6|100.00%|
 |iPad Pro 10.5|N/A|iPad Pro 10.5|100.00%|
-|iPad Pro 9.7|N/A|iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7|97.05%<br/> 2.95%|
+|iPad Pro 9.7|N/A|iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7|93.62%<br/> 6.38%|
 |iPad Pro 12.9 (2nd Gen.)|Standard|iPad Pro 12.9 (2nd Gen.), iPad Pro 12.9 (3rd Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (2nd Gen.)|97.95%<br/> 2.05%|
 |iPad Pro 12.9 (2nd Gen.)|Zoom|iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7|85.80%<br/> 14.20%|
 |iPad Pro 12.9 (3rd Gen.)|Standard|iPad Pro 12.9 (2nd Gen.), iPad Pro 12.9 (3rd Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (3rd Gen.)|99.92%<br/> 0.08%|
@@ -200,7 +203,8 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 |iPad Pro 11.0 (2nd Gen.)|N/A|iPad Pro 11.0, iPad Pro 11.0 (2nd Gen.)|100.00%|
 |iPad Pro 12.9 (4th Gen.)|Standard|iPad Pro 12.9 (4th Gen.)<br/> iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)|99.76%<br/> 0.24%|
 |iPad Pro 12.9 (4th Gen.)|Zoom|iPad Pro 12.9 (4th Gen.)|100.00%|
-|iPad Pro 11.0 (3rd Gen.)|N/A|iPad Pro 11.0 (3rd Gen.)|100.00%|
-|iPad Pro 12.9 (5th Gen.)|Standard|iPad Pro 12.9 (5th Gen.)<br/> iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)|36.11%<br/> 63.89%|
+|iPad Pro 11.0 (3rd Gen.)|Standard|iPad Pro 11.0 (3rd Gen.)|100.00%|
+|iPad Pro 11.0 (3rd Gen.)|Zoom|iPad Air (5th Gen.), iPad Pro 11.0 (3rd Gen.)|100.00%|
+|iPad Pro 12.9 (5th Gen.)|Standard|iPad Pro 12.9 (5th Gen.)<br/> iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)|61.67%<br/> 38.33%|
 |iPad Pro 12.9 (5th Gen.)|Zoom|iPad Pro 12.9 (5th Gen.)|100.00%|
 |iPod touch (7th generation)|N/A|iPod touch (7th generation)|100.00%|
