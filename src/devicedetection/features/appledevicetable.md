@@ -6,7 +6,7 @@ Apple has continually worked to homogenize any information that a website can ge
 
 Below we cover the detection results that are experienced for each iPhone and iPad device, starting from the iPhone 3GS and the first iPad model. 
 
-The 'percentage' column refers to the likelihood that you will receive that detection result for that particular display mode. For example, '100.00%' in Standard mode indicates a 100% chance of receiving that result when the Apple device is in Standard mode. '1.50%' in indicates that 1.5% of submissions will receive that detection result.
+The 'percentage' column refers to the percentage of the data submissions we have received that would return that detection result for that particular display mode. For example, '100.00%' in Standard mode indicates that 100% of our submissions for that device would receive that result if the data from the submission were passed to our detection script. '1.50%' in indicates that 1.5% of our submissions would receive that detection result.
 
 As we receive more data on Apple devices, this table will change. We will update this table every two months and it is currently accurate as of 26 October 2022.
 
