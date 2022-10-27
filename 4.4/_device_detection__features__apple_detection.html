@@ -98,7 +98,10 @@ $(document).ready(function(){initNavTree('_device_detection__features__apple_det
 <h1 class="g-docs__section-heading">Server-side detection</h1>
 <p>For customers that are unable to use dynamically generated JavaScript, we have a solution that uses data gathered from static JavaScript to perform the detection server-side.</p>
 <p>This feature is currently only available for .NET. Examples are <a class="el" href="_examples__device_detection__apple_server_side__index.html">here</a>.</p>
-<p>Note that data will still need to be gathered using client-side JavaScript. A system to handle this, along with any client-side caching, etc. will need to be implemented by the user.</p>
+<p>Note that data will still need to be gathered using client-side JavaScript. A snippet containing the JavaScript functions that will retrieve the necessary values from the client device are available from our <a href="https://cloud.51degrees.com/cdn/apple-functions.js">cloud service</a>.</p>
+<p>This will need to be integrated into your own infrastructure and the values it collects need to be passed back to the server so they can be supplied as evidence values to the API.</p>
+<p>This JavaScript may be updated with new Apple device detection mechanisms in future. These changes would need to be reflected in your own implementation.</p>
+<p>The engine that determines the Apple device on the server uses a JSON file, which can be automatically updated using the <a class="el" href="_features__automatic_datafile_updates.html">normal mechanisms</a>. This JSON file can also be downloaded from our <a href="https://cloud.51degrees.com/cdn/macintosh.data.json">cloud service</a> as needed.</p>
 <h1 class="g-docs__section-heading">Further reading</h1>
 <ul>
 <li>This <a class="el" href="_device_detection__features__apple_device_table.html">table</a> contains a break down of exactly which iPhone and iPad models our solution can identify.</li>

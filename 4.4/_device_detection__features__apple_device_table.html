@@ -70,8 +70,8 @@ $(document).ready(function(){initNavTree('_device_detection__features__apple_dev
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
 <p>Apple has continually worked to homogenize any information that a website can get about a device, through JavaScript or any other means. For more information, take a look at our <a href="https://51degrees.com/blog/upgrade-apple-device-detection">Upgrade Apple Device</a> blog.</p>
 <p>Below we cover the detection results that are experienced for each iPhone and iPad device, starting from the iPhone 3GS and the first iPad model.</p>
-<p>The 'percentage' column refers to the likelihood that you will receive that detection result for that particular display mode. For example, '100.00' in Standard mode indicates a 100% chance of receiving that result when the Apple device is in Standard mode. '1.50' in indicates that 1.5% of submissions will receive that detection result.</p>
-<p>As we receive more data on Apple devices, this table will change. We will update this table every two months and it is currently accurate as of 1 September 2022.</p>
+<p>The 'percentage' column refers to the percentage of the data submissions we have received that would return that detection result for that particular display mode. For example, '100.00' in Standard mode indicates that 100% of our submissions for that device would receive that result if the data from the submission were passed to our detection script. '1.50' in indicates that 1.5% of our submissions would receive that detection result.</p>
+<p>As we receive more data on Apple devices, this table will change. We will update this table every two months and it is currently accurate as of 26 October 2022.</p>
 <p>For optimized viewing of the table, it is recommended you zoom out within your browser.</p>
 <h1 class="g-docs__section-heading">iPhones using browser in Mobile mode<a class="anchor" id="iphones_mobile_mode"></a></h1>
 <div class="g-table g-table--overflow"><table class="c-table">
@@ -100,313 +100,19 @@ $(document).ready(function(){initNavTree('_device_detection__features__apple_dev
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 6s  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 6s  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">iPhone 6s  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 6s, iPhone SE<br />
- iPhone 6s<br />
- iPhone SE, iPhone 6s  </td><td class="c-table__cell">88.08%<br />
- 0.07%<br />
- 11.84%   </td></tr>
+<td class="c-table__cell">iPhone 6s  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 6s, iPhone SE  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 6s Plus  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 6s Plus  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 6s Plus  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 6s Plus  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">iPhone SE  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPhone 6s, iPhone SE<br />
- iPhone SE, iPhone 6s<br />
-iPhone SE  </td><td class="c-table__cell">98.74%<br />
- 1.26%<br />
- 0.01%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 7  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 7, iPhone 8, iPhone SE (2nd Gen.), iPhone SE (3rd Gen.)<br />
- iPhone 7  </td><td class="c-table__cell">98.37%<br />
- 1.63%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 7  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 7, iPhone 8, iPhone SE (2nd Gen.), iPhone SE (3rd Gen.)<br />
- iPhone 7  </td><td class="c-table__cell">34.80%<br />
- 65.20%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 7 Plus  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 7 Plus  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 7 Plus  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 7 Plus  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 8  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 7, iPhone 8, iPhone SE (2nd Gen.), iPhone SE (3rd Gen.)<br />
- iPhone 8  </td><td class="c-table__cell">41.01%<br />
- 58.99%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 8  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 7, iPhone 8, iPhone SE (2nd Gen.), iPhone SE (3rd Gen.)<br />
- iPhone 8  </td><td class="c-table__cell">71.38%<br />
- 28.62%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 8 Plus  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 8 Plus  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 8 Plus  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 8 Plus  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone X  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone X<br />
- iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max  </td><td class="c-table__cell">3.68%<br />
- 96.32%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone X  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone X  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone XR  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone XR<br />
- iPhone XR, iPhone 11  </td><td class="c-table__cell">14.78%<br />
- 85.22%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone XR  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone XR<br />
- iPhone XR, iPhone 11  </td><td class="c-table__cell">8.03%<br />
- 91.97%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone XS  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone XS, iPhone XS Max<br />
- iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max  </td><td class="c-table__cell">3.14%<br />
- 96.86%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone XS  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone XS  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone XS Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone XS Max<br />
- iPhone XS Max, iPhone 11 Pro Max  </td><td class="c-table__cell">2.10%<br />
- 97.90%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone XS Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
- iPhone XS, iPhone XS Max  </td><td class="c-table__cell">96.42%<br />
- 3.58%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 11  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone XR, iPhone 11<br />
- iPhone 11  </td><td class="c-table__cell">90.81%<br />
- 9.19%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 11  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone XR, iPhone 11<br />
- iPhone 11  </td><td class="c-table__cell">40.34%<br />
- 59.66%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 11 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
- iPhone 11 Pro, iPhone 11 Pro Max  </td><td class="c-table__cell">99.87%<br />
- 0.13%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 11 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 11 Pro  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 11 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone XS Max, iPhone 11 Pro Max<br />
- iPhone 11 Pro Max  </td><td class="c-table__cell">89.71%<br />
- 10.29%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 11 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
- iPhone 11 Pro, iPhone 11 Pro Max  </td><td class="c-table__cell">99.91%<br />
- 0.09%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 12  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro<br />
- iPhone 12, iPhone 12 Pro, iPhone 13 Pro, iPhone 13<br />
- iPhone 12  </td><td class="c-table__cell">90.95%<br />
- 9.35%<br />
- 0.14%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 12  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro<br />
- iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br />
- iPhone 12 Pro, iPhone 12  </td><td class="c-table__cell">40.14%<br />
- 59.73%<br />
- 0.14%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 12 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro<br />
- iPhone 12, iPhone 12 Pro, iPhone 13 Pro, iPhone 13  </td><td class="c-table__cell">76.08%<br />
- 23.92%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 12 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro<br />
- iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br />
- iPhone 12 Pro, iPhone 12  </td><td class="c-table__cell">58.43%<br />
- 41.32%<br />
- 0.25%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 12 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 Pro Max<br />
- iPhone 12 Pro Max, iPhone 13 Pro Max  </td><td class="c-table__cell">82.76%<br />
- 17.24%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 12 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max<br />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max  </td><td class="c-table__cell">60.40%<br />
- 39.60%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 12 mini  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max<br />
- iPhone 12 mini<br />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
- iPhone 12 mini, iPhone 13 mini, iPhone 13 Pro Max  </td><td class="c-table__cell">27.82%<br />
- 0.14%<br />
- 66.33%<br />
- 5.71%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 12 mini  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro<br />
- iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br />
- iPhone 12 mini  </td><td class="c-table__cell">31.11%<br />
- 68.73%<br />
- 0.15%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 13  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro<br />
- iPhone 13  </td><td class="c-table__cell">99.82%<br />
- 0.18%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 13  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 13 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13 Pro, iPhone 13<br />
- iPhone 13 Pro  </td><td class="c-table__cell">99.83%<br />
- 0.17%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 13 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 13 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 Pro Max, iPhone 13 Pro Max<br />
- iPhone 13 Pro Max  </td><td class="c-table__cell">78.04%<br />
- 21.96%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 13 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
- iPhone 13 mini, iPhone 13 Pro Max, iPhone 12 mini  </td><td class="c-table__cell">88.27%<br />
- 11.73%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 13 mini  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
- iPhone 13 mini, iPhone 13 Pro Max, iPhone 12 mini  </td><td class="c-table__cell">90.29%<br />
- 9.71%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 13 mini  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
-</table>
-</div><h1 class="g-docs__section-heading">iPads using browser in Mobile mode<a class="anchor" id="ipads_mobile_mode"></a></h1>
-<div class="g-table g-table--overflow"><table class="c-table">
-<tr class="c-table__row--heading">
-<td class="c-table__cell">Device  </td><td class="c-table__cell">Display Mode  </td><td class="c-table__cell">Results  </td><td class="c-table__cell">Percentage   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad 2  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad 2  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad 3  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad 3  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad 4  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad 4  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad 5  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad 5, iPad Pro 12.9, iPad 6<br />
- iPad Pro 12.9, iPad 5, iPad 6  </td><td class="c-table__cell">49.09%<br />
- 50.91%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad 6  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 12.9, iPad 5, iPad 6<br />
- iPad 6<br />
- iPad 5, iPad Pro 12.9, iPad 6<br />
- iPad Pro 12.9, iPad 6  </td><td class="c-table__cell">65.08%<br />
- 0.02%<br />
- 34.89%<br />
- 0.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad 7  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad 7  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad 8  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad 8  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad (9th Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad (9th Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Air  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Air, iPad mini 2, iPad mini 3  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Air 2  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad mini 4, iPad Air 2<br />
- iPad Air 2  </td><td class="c-table__cell">98.24%<br />
- 1.76%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Air (3rd Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Air (3rd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Air (4th Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Air (4th Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Air (5th Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Air (5th Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad mini  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad mini  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad mini 2  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Air, iPad mini 2, iPad mini 3  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad mini 3  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Air, iPad mini 2, iPad mini 3  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad mini 4  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad mini 4<br />
- iPad mini 4, iPad Air 2  </td><td class="c-table__cell">5.34%<br />
- 94.66%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad mini (5th Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iiPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br />
- iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.)  </td><td class="c-table__cell">99.85%<br />
- 0.15%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad mini (6th Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad mini (6th Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 11.0  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 11.0<br />
- iPad Pro 11.0, iPad Pro 11.0 (3rd Gen.), iPad Pro 11.0 (2nd Gen.)<br />
- iPad Pro 11.0, iPad Pro 11.0 (2nd Gen.)  </td><td class="c-table__cell">56.67%<br />
- 43.23%<br />
- 0.10%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 12.9  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 12.9  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 12.9  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad Pro 12.9, iPad 5, iPad 6<br />
- iPad 5, iPad Pro 12.9, iPad 6<br />
-iPad Pro 12.9, iPad 6  </td><td class="c-table__cell">67.18%<br />
- 32.82%<br />
- 0.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 10.5  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 10.5  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 9.7  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br />
- iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7  </td><td class="c-table__cell">97.05%<br />
- 2.95%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 12.9 (2nd Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 12.9 (2nd Gen.), iPad Pro 12.9 (3rd Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br />
- iPad Pro 12.9 (2nd Gen.)  </td><td class="c-table__cell">97.95%<br />
- 2.05%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 12.9 (2nd Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br />
- iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7  </td><td class="c-table__cell">85.80%<br />
- 14.20%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 12.9 (3rd Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 12.9 (2nd Gen.), iPad Pro 12.9 (3rd Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br />
- iPad Pro 12.9 (3rd Gen.)  </td><td class="c-table__cell">99.92%<br />
- 0.08%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 12.9 (3rd Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br />
- iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.)  </td><td class="c-table__cell">99.78%<br />
- 0.22%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 11.0 (2nd Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 11.0, iPad Pro 11.0 (2nd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 12.9 (4th Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 12.9 (4th Gen.)<br />
- iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)  </td><td class="c-table__cell">99.76%<br />
- 0.24%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 12.9 (4th Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad 12.9 (4th Gen)  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 11.0 (3rd Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 11.0 (3rd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 12.9 (5th Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 12.9 (5th Gen.)<br />
- iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)  </td><td class="c-table__cell">36.11%<br />
- 63.89%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 12.9 (5th Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad Pro 12.9 (5th Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
-</table>
-</div><h1 class="g-docs__section-heading">iOS devices using browser in Desktop mode<a class="anchor" id="ios_desktop_mode"></a></h1>
-<div class="g-table g-table--overflow"><table class="c-table">
-<tr class="c-table__row--heading">
-<td class="c-table__cell">Device  </td><td class="c-table__cell">Display Mode  </td><td class="c-table__cell">Results  </td><td class="c-table__cell">Percentage   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 6s  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 6s  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 6s  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 6s, iPhone SE<br />
- iPhone 6s<br />
- iPhone SE, iPhone 6s  </td><td class="c-table__cell">88.08%<br />
- 0.07%<br />
- 11.84%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 6s Plus  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 6s Plus  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 6s Plus  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 6s Plus  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone SE  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPhone 6s, iPhone SE<br />
- iPhone SE, iPhone 6s<br />
- iPhone SE  </td><td class="c-table__cell">98.74%<br />
- 1.26%<br />
- 0.01%   </td></tr>
+<td class="c-table__cell">iPhone SE  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPhone 6s, iPhone SE  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 7  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 7  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 7  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 7, iPhone 8, iPhone SE (2nd Gen.), iPhone SE (3rd Gen.)<br />
- iPhone 7  </td><td class="c-table__cell">34.80%<br />
- 65.20%   </td></tr>
+ iPhone 7  </td><td class="c-table__cell">34.47%<br />
+ 65.53%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 7 Plus  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 7 Plus  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
@@ -425,7 +131,7 @@ iPad Pro 12.9, iPad 6  </td><td class="c-table__cell">67.18%<br />
 <td class="c-table__cell">iPhone 8 Plus  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 8 Plus  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone X  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone X<br />
- iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max  </td><td class="c-table__cell">3.68%<br />
+ iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">3.68%<br />
  96.32%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone X  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone X  </td><td class="c-table__cell">100.00%   </td></tr>
@@ -439,7 +145,7 @@ iPad Pro 12.9, iPad 6  </td><td class="c-table__cell">67.18%<br />
  91.97%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone XS  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone XS, iPhone XS Max<br />
- iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max  </td><td class="c-table__cell">3.14%<br />
+ iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">3.14%<br />
  96.86%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone XS  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone XS  </td><td class="c-table__cell">100.00%   </td></tr>
@@ -448,8 +154,8 @@ iPad Pro 12.9, iPad 6  </td><td class="c-table__cell">67.18%<br />
  iPhone XS Max, iPhone 11 Pro Max  </td><td class="c-table__cell">2.10%<br />
  97.90%   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">iPhone XS Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
-iPhone XS, iPhone XS Max  </td><td class="c-table__cell">96.42%<br />
+<td class="c-table__cell">iPhone XS Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus<br />
+ iPhone XS, iPhone XS Max  </td><td class="c-table__cell">96.42%<br />
  3.58%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone XR, iPhone 11<br />
@@ -460,19 +166,21 @@ iPhone XS, iPhone XS Max  </td><td class="c-table__cell">96.42%<br />
  iPhone 11  </td><td class="c-table__cell">40.34%<br />
  59.66%   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">iPhone 11 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
- iPhone 11 Pro, iPhone 11 Pro Max  </td><td class="c-table__cell">99.87%<br />
- 0.13%   </td></tr>
+<td class="c-table__cell">iPhone 11 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus<br />
+ iPhone 11 Pro, iPhone 11 Pro Max<br />
+ iPhone 11 Pro  </td><td class="c-table__cell">34.69%<br />
+ 65.27%<br />
+0.05%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 11 Pro  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone XS Max, iPhone 11 Pro Max<br />
- iPhone 11 Pro Max  </td><td class="c-table__cell">89.71%<br />
- 10.29%   </td></tr>
+ iPhone 11 Pro Max  </td><td class="c-table__cell">30.30%<br />
+ 69.70%   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">iPhone 11 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
- iPhone 11 Pro, iPhone 11 Pro Max  </td><td class="c-table__cell">99.91%<br />
- 0.09%   </td></tr>
+<td class="c-table__cell">iPhone 11 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus<br />
+ iPhone 11 Pro, iPhone 11 Pro Max  </td><td class="c-table__cell">72.59%<br />
+ 27.41%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
@@ -501,50 +209,74 @@ iPhone XS, iPhone XS Max  </td><td class="c-table__cell">96.42%<br />
  0.25%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 Pro Max<br />
- iPhone 12 Pro Max, iPhone 13 Pro Max  </td><td class="c-table__cell">82.76%<br />
- 17.24%   </td></tr>
+ iPhone 12 Pro Max, iPhone 13 Pro Max<br />
+ iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">61.66%<br />
+ 25.24%<br />
+ 13.10%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max<br />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max  </td><td class="c-table__cell">60.40%<br />
- 39.60%   </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
+ iPhone 12 Pro Max, iPhone 12 mini<br />
+ iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 12 mini, iPhone 14 Plus<br />
+ iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">32.92%<br />
+ 44.31%<br />
+ 0.45%<br />
+ 21.76%<br />
+ 0.56%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 mini  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max<br />
  iPhone 12 mini<br />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
- iPhone 13 mini, iPhone 13 Pro Max, iPhone 12 mini  </td><td class="c-table__cell">27.82%<br />
- 0.14%<br />
- 66.33%<br />
- 5.71%   </td></tr>
+ iPhone 12 Pro Max, iPhone 12 mini<br />
+ iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro max, iPhone 12 mini, iPhone 14 Plus  </td><td class="c-table__cell">26.18%<br />
+ 0.13%<br />
+ 68.15%<br />
+ 0.13% <br />
+ 5.40%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 mini  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro<br />
  iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br />
- iPhone 12 mini  </td><td class="c-table__cell">33.11%<br />
- 68.73%<br />
- 0.15%   </td></tr>
+ iPhone 12 mini<br />
+ iPhone 14, iPhone 14 Pro, iPhone 13, iPhone 12 mini, iPhone 13 Pro  </td><td class="c-table__cell">29.30%<br />
+ 64.72%<br />
+ 0.15%<br />
+ 5.83%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro<br />
- iPhone 13  </td><td class="c-table__cell">99.82%<br />
- 0.18%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 13  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">100.00%   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">iPhone 13 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13 Pro, iPhone 13<br />
- iPhone 13 Pro  </td><td class="c-table__cell">99.83%<br />
+ iPhone 13<br />
+ iPhone 14, iPhone 13, iPhone 13 Pro<br />
+ iPhone 13 Pro, iPhone 13  </td><td class="c-table__cell">92.94%<br />
+ 0.17%<br />
+ 6.71%<br />
  0.17%   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">iPhone 13 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">100.00%   </td></tr>
+<td class="c-table__cell">iPhone 13  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br />
+ iPhone 14, iPhone 14 Pro, iPhone 13, iPhone 12 mini, iPhone 13 Pro  </td><td class="c-table__cell">89.50%<br />
+ 10.50%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 13 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13 Pro, iPhone 13<br />
+ iPhone 13 Pro, iPhone 13<br />
+ iPhone 14, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">74.59%<br />
+ 0.13%<br />
+ 25.28%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 13 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br />
+ iPhone 14, iPhone 14 Pro, iPhone 13, iPhone 12 mini, iPhone 13 Pro  </td><td class="c-table__cell">163.10%<br />
+ 36.90%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 Pro Max, iPhone 13 Pro Max<br />
- iPhone 13 Pro Max  </td><td class="c-table__cell">78.04%<br />
- 21.96%   </td></tr>
+ iPhone 13 Pro Max<br />
+ iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">92.97%<br />
+ 0.15%<br />
+ 6.88%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini  </td><td class="c-table__cell">88.27%<br />
- 11.73%   </td></tr>
+ iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 12 mini, iPhone 14 Plus<br />
+ iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">83.58%<br />
+ 16.18%<br />
+ 0.25%   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">iPhone 13 mini  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
- iPhone 13 mini, iPhone 13 Pro Max, iPhone 12 mini  </td><td class="c-table__cell">90.29%<br />
- 9.71%   </td></tr>
+<td class="c-table__cell">iPhone 13 mini  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13 mini  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
@@ -552,17 +284,347 @@ iPhone XS, iPhone XS Max  </td><td class="c-table__cell">96.42%<br />
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
+<td class="c-table__cell">iPhone 14  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 14, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 14  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 14, iPhone 14 Pro, iPhone 13, iPhone 12 mini, iPhone 13 Pro<br />
+ iPhone 14, iPhone 14 Pro  </td><td class="c-table__cell">96.57%<br />
+ 3.42%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 14 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 14 Pro  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 14 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 14, iPhone 14 Pro, iPhone 13, iPhone 12 mini, iPhone 13 Pro<br />
+ iPhone 14, iPhone 14 Pro  </td><td class="c-table__cell">96.40%<br />
+ 3.60%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 14 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 14 Pro Max  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 14 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 12 mini, iPhone 14 Plus<br />
+ iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">97.84%<br />
+ 2.16%   </td></tr>
+</table>
+</div><h1 class="g-docs__section-heading">iPads using browser in Mobile mode<a class="anchor" id="ipads_mobile_mode"></a></h1>
+<div class="g-table g-table--overflow"><table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Device  </td><td class="c-table__cell">Display Mode  </td><td class="c-table__cell">Results  </td><td class="c-table__cell">Percentage   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad 2  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad 2  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad 3  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad 3  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad 4  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad 4  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
 <td class="c-table__cell">iPad 5  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad 5, iPad Pro 12.9, iPad 6<br />
  iPad Pro 12.9, iPad 5, iPad 6  </td><td class="c-table__cell">49.09%<br />
  50.91%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPad 6  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 12.9, iPad 5, iPad 6<br />
- iPad 6<br />
- iPad 5, iPad Pro 12.9, iPad 6<br />
- iPad Pro 12.9, iPad 6  </td><td class="c-table__cell">65.08%<br />
- 0.02%<br />
- 34.89%<br />
- 0.00%   </td></tr>
+ iPad 6  </td><td class="c-table__cell">99.99%<br />
+ 0.01%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad 7  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad 7  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad 8  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad 8  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad (9th Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad (9th Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Air  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Air, iPad mini 2, iPad mini 3  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Air 2  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad mini 4, iPad Air 2<br />
+ iPad Air 2  </td><td class="c-table__cell">97.15%<br />
+ 2.85%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Air (3rd Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Air (3rd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Air (4th Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Air (4th Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Air (5th Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Air (5th Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad mini  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad mini  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad mini 2  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Air, iPad mini 2, iPad mini 3  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad mini 3  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Air, iPad mini 2, iPad mini 3  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad mini 4  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad mini 4<br />
+ iPad mini 4, iPad Air 2  </td><td class="c-table__cell">5.43%<br />
+ 94.57%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad mini (5th Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br />
+ iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.)  </td><td class="c-table__cell">99.85%<br />
+ 0.15%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad mini (6th Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad mini (6th Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 11.0  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 11.0<br />
+ iPad Pro 11.0, iPad Pro 11.0 (3rd Gen.), iPad Pro 11.0 (2nd Gen.)<br />
+ iPad Pro 11.0, iPad Pro 11.0 (2nd Gen.)  </td><td class="c-table__cell">56.67%<br />
+ 43.23%<br />
+ 0.10%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 12.9  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 12.9  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 12.9  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad Pro 12.9, iPad 5, iPad 6  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 10.5  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 10.5  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 9.7  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br />
+ iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7  </td><td class="c-table__cell">93.62%<br />
+ 6.38%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 12.9 (2nd Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 12.9 (2nd Gen.), iPad Pro 12.9 (3rd Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br />
+ iPad Pro 12.9 (2nd Gen.)  </td><td class="c-table__cell">97.95%<br />
+ 2.05%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 12.9 (2nd Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br />
+ iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7  </td><td class="c-table__cell">85.80%<br />
+ 14.20%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 12.9 (3rd Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 12.9 (2nd Gen.), iPad Pro 12.9 (3rd Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br />
+ iPad Pro 12.9 (3rd Gen.)  </td><td class="c-table__cell">99.92%<br />
+ 0.08%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 12.9 (3rd Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br />
+ iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.)  </td><td class="c-table__cell">99.78%<br />
+ 0.22%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 11.0 (2nd Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 11.0, iPad Pro 11.0 (2nd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 12.9 (4th Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 12.9 (4th Gen.)<br />
+ iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)  </td><td class="c-table__cell">99.76%<br />
+ 0.24%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 12.9 (4th Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad 12.9 (4th Gen)  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 11.0 (3rd Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 11.0 (3rd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 11.0 (3rd Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad Air (5th Gen.), iPad Pro 11.0 (3rd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 12.9 (5th Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 12.9 (5th Gen.)<br />
+ iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)  </td><td class="c-table__cell">61.67%<br />
+ 38.33%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 12.9 (5th Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad Pro 12.9 (5th Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+</table>
+</div><h1 class="g-docs__section-heading">iOS devices using browser in Desktop mode<a class="anchor" id="ios_desktop_mode"></a></h1>
+<div class="g-table g-table--overflow"><table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Device  </td><td class="c-table__cell">Display Mode  </td><td class="c-table__cell">Results  </td><td class="c-table__cell">Percentage   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 6s  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 6s  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 6s  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 6s, iPhone SE  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 6s Plus  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 6s Plus  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 6s Plus  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 6s Plus  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone SE  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPhone 6s, iPhone SE  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 7  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 7  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 7  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 7, iPhone 8, iPhone SE (2nd Gen.), iPhone SE (3rd Gen.)<br />
+ iPhone 7  </td><td class="c-table__cell">34.47%<br />
+ 65.53%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 7 Plus  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 7 Plus  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 7 Plus  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 7 Plus  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 8  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 8, iPhone SE (2nd Gen.)<br />
+ iPhone 8  </td><td class="c-table__cell">41.01%<br />
+ 58.99%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 8  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 7, iPhone 8, iPhone SE (2nd Gen.), iPhone SE (3rd Gen.)<br />
+ iPhone 8  </td><td class="c-table__cell">71.38%<br />
+ 28.62%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 8 Plus  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 8 Plus  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 8 Plus  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 8 Plus  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone X  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone X<br />
+ iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">3.68%<br />
+ 96.32%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone X  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone X  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone XR  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone XR<br />
+ iPhone XR, iPhone 11  </td><td class="c-table__cell">14.78%<br />
+ 85.22%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone XR  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone XR<br />
+ iPhone XR, iPhone 11  </td><td class="c-table__cell">8.03%<br />
+ 91.97%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone XS  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone XS, iPhone XS Max<br />
+ iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">3.14%<br />
+ 96.86%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone XS  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone XS  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone XS Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone XS Max<br />
+ iPhone XS Max, iPhone 11 Pro Max  </td><td class="c-table__cell">2.10%<br />
+ 97.90%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone XS Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus<br />
+iPhone XS, iPhone XS Max  </td><td class="c-table__cell">96.42%<br />
+ 3.58%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 11  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone XR, iPhone 11<br />
+ iPhone 11  </td><td class="c-table__cell">90.81%<br />
+ 9.19%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 11  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone XR, iPhone 11<br />
+ iPhone 11  </td><td class="c-table__cell">40.34%<br />
+ 59.66%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 11 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus<br />
+ iPhone 11 Pro, iPhone 11 Pro Max<br />
+ iPhone 11 Pro  </td><td class="c-table__cell">34.69%<br />
+ 65.27%<br />
+ 0.05%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 11 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 11 Pro  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 11 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone XS Max, iPhone 11 Pro Max<br />
+ iPhone 11 Pro Max  </td><td class="c-table__cell">30.30%<br />
+ 69.70%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 11 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus<br />
+ iPhone 11 Pro, iPhone 11 Pro Max  </td><td class="c-table__cell">72.59%<br />
+ 27.41%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 12  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro<br />
+ iPhone 12, iPhone 12 Pro, iPhone 13 Pro, iPhone 13<br />
+ iPhone 12  </td><td class="c-table__cell">90.51%<br />
+ 9.35%<br />
+ 0.14%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 12  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro<br />
+ iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br />
+ iPhone 12 Pro, iPhone 12  </td><td class="c-table__cell">40.14%<br />
+ 59.73%<br />
+ 0.14%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 12 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro<br />
+ iPhone 12, iPhone 12 Pro, iPhone 13 Pro, iPhone 13  </td><td class="c-table__cell">76.08%<br />
+ 23.92%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 12 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro<br />
+ iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br />
+ iPhone 12 Pro, iPhone 12  </td><td class="c-table__cell">58.43%<br />
+ 41.32%<br />
+ 0.25%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 12 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 Pro Max<br />
+ iPhone 12 Pro Max, iPhone 13 Pro Max<br />
+ iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">61.66%<br />
+ 25.24%<br />
+ 13.10%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 12 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max<br />
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 12 Pro Max, iPhone 12 mini<br />
+ iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 12 mini, iPhone 14 Plus<br />
+ iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">32.92%<br />
+ 44.31%<br />
+ 0.45%<br />
+ 21.76%<br />
+ 0.56%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 12 mini  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max<br />
+ iPhone 12 mini<br />
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
+ iPhone 12 Pro Max, iPhone 12 min<br />
+ iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 12 mini, iPhone 14 Plus  </td><td class="c-table__cell">226.18%<br />
+ 0.13%<br />
+ 68.15%<br />
+ 0.13%<br />
+ 5.40%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 12 mini  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro<br />
+ iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br />
+ iPhone 12 mini<br />
+ iPhone 14, iPhone 14 Pro, iPhone 13, iPhone 12 mini, iPhone 13 Pro  </td><td class="c-table__cell">29.30%<br />
+ 64.72%<br />
+ 0.15%<br />
+ 5.83%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 13  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro<br />
+ iPhone 13<br />
+ iPhone 14, iPhone 13, iPhone 13 Pro<br />
+ iPhone 13 Pro, iPhone 13  </td><td class="c-table__cell">92.94%<br />
+ 0.17%<br />
+ 6.71%<br />
+ 0.17%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 13  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br />
+ iPhone 14, iPhone 14 Pro, iPhone 13, iPhone 12 mini, iPhone 13 Pro  </td><td class="c-table__cell">89.50%<br />
+ 10.50%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 13 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13 Pro, iPhone 13<br />
+ iPhone 13 Pro, iPhone 13<br />
+ iPhone 14, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">74.59%<br />
+ 0.13%<br />
+ 25.28%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 13 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro<br />
+ iPhone 14, iPhone 14 Pro, iPhone 13, iPhone 12 mini, iPhone 13 Pro  </td><td class="c-table__cell">63.10%<br />
+ 36.90%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 13 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 Pro Max, iPhone 13 Pro Max<br />
+ iPhone 13 Pro Max<br />
+ iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">92.97%<br />
+ 0.15%<br />
+ 6.88%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 13 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br />
+ iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 12 mini, iPhone 14 Plus  </td><td class="c-table__cell">83.58%<br />
+ 16.18%<br />
+ 0.25%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 13 mini  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 13 mini  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 Pro, iPhone 12 mini, iPhone 12, iPhone 13 mini, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 14  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 14, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 14  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 14, iPhone 14 Pro, iPhone 13, iPhone 12 mini, iPhone 13 Pro<br />
+ iPhone 14, iPhone 14 Pro  </td><td class="c-table__cell">96.58%<br />
+ 3.42%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 14 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 14 Pro  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 14 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 14, iPhone 14 Pro, iPhone 13, iPhone 12 mini, iPhone 13 Pro<br />
+ iPhone 14, iPhone 14 Pro  </td><td class="c-table__cell">96.40%<br />
+ 3.60%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 14 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 14 Pro Max  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 14 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 12 mini, iPhone 14 Plus<br />
+ iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">97.84%<br />
+ 2.16%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 14 Plus  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone 14 Plus  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 12 mini, iPhone 14 Plus<br />
+ iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">93.39%<br />
+ 0.61%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad 5  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 12.9, iPad 5, iPad 6  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad 6  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 12.9, iPad 5, iPad 6<br />
+ iPad 6  </td><td class="c-table__cell">99.99%<br />
+ 0.01%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPad 7  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad 7  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
@@ -571,8 +633,8 @@ iPhone XS, iPhone XS Max  </td><td class="c-table__cell">96.42%<br />
 <td class="c-table__cell">iPad (9th Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad (9th Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPad Air 2  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad mini 4, iPad Air 2<br />
- iPad Air 2  </td><td class="c-table__cell">98.21%<br />
- 1.79%   </td></tr>
+ iPad Air 2  </td><td class="c-table__cell">97.12%<br />
+ 2.88%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPad Air (3rd Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Air (3rd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
@@ -594,17 +656,13 @@ iPhone XS, iPhone XS Max  </td><td class="c-table__cell">96.42%<br />
 <tr class="c-table__row">
 <td class="c-table__cell">iPad Pro 12.9  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 12.9  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 12.9  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad Pro 12.9, iPad 5, iPad 6<br />
- iPad 5, iPad Pro 12.9, iPad 6<br />
- iPad Pro 12.9, iPad 6  </td><td class="c-table__cell">67.18%<br />
- 32.82%<br />
- 0.00%   </td></tr>
+<td class="c-table__cell">iPad Pro 12.9  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad Pro 12.9, iPad 5, iPad 6  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPad Pro 10.5  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 10.5  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPad Pro 9.7  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7, iPad Pro 12.9 (3rd Gen.), iPad mini (5th Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br />
- iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7  </td><td class="c-table__cell">97.05%<br />
- 2.95%   </td></tr>
+ iPad Pro 12.9 (2nd Gen.), iPad Pro 9.7  </td><td class="c-table__cell">93.62%<br />
+ 6.38%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPad Pro 12.9 (2nd Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 12.9 (2nd Gen.), iPad Pro 12.9 (3rd Gen.), iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)<br />
  iPad Pro 12.9 (2nd Gen.)  </td><td class="c-table__cell">97.95%<br />
@@ -630,11 +688,13 @@ iPhone XS, iPhone XS Max  </td><td class="c-table__cell">96.42%<br />
 <tr class="c-table__row">
 <td class="c-table__cell">iPad Pro 12.9 (4th Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad Pro 12.9 (4th Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">iPad Pro 11.0 (3rd Gen.)  </td><td class="c-table__cell">N/A  </td><td class="c-table__cell">iPad Pro 11.0 (3rd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+<td class="c-table__cell">iPad Pro 11.0 (3rd Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 11.0 (3rd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPad Pro 11.0 (3rd Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad Air (5th Gen.), iPad Pro 11.0 (3rd Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPad Pro 12.9 (5th Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPad Pro 12.9 (5th Gen.)<br />
- iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)  </td><td class="c-table__cell">36.11%<br />
- 63.89%   </td></tr>
+ iPad Pro 12.9 (5th Gen.), iPad Pro 12.9 (4th Gen.)  </td><td class="c-table__cell">61.67%<br />
+ 38.33%   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPad Pro 12.9 (5th Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPad Pro 12.9 (5th Gen.)  </td><td class="c-table__cell">100.00%   </td></tr>
 <tr class="c-table__row">
