@@ -8,6 +8,8 @@ to deploy dynamic JavaScript. In this case 51Degrees have an alternative approac
 the required data is gathered using static JavaScript. This is then passed to the server to
 determine the Apple model.
 
+For more details, see the 'Server-side detection' section on the [Apple detection](@ref DeviceDetection_Features_AppleDetection) page.
+
 @startsnippets
 @grabexample{device-detection-dotnet,_on_premise_2_apple_server_side-_console_2_program_8cs,C#}
 @grabbedexample
