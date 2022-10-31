@@ -73,8 +73,8 @@ UA-CH evidence in parallel with the User Agent.
 
 UA-CH evidence always takes precedence over the User Agent. In some scenarios, this means that additional detail that is available in the User Agent will be ignored. For example:
 
-`Sec-CH-UA-Platform` = `"Windows"`
-`User-Agent` = `Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0`
+- `Sec-CH-UA-Platform` = `"Windows"`
+- `User-Agent` = `Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0`
 
 The result from the API will return Windows, but the version number will be unknown; this is because the Sec-CH-UA-Platform-Version header has not been supplied.
 
@@ -83,6 +83,8 @@ Since UA-CH take precedence over the User Agent (in this case, when Sec-CH-UA-Pl
 We take this approach because the version provided by the User Agent is incorrect in some scenarios. For example, Windows 11 will always appear as Windows 10 in the User Agent. 
 
 In addition, as Google press ahead with [deprecating the data](https://www.chromium.org/updates/ua-reduction/) in parts of the User Agent, the values presented will become less reliable. Therefore, we believe that returning 'Windows unknown version' is better than returning 'Windows 10' when the user may not actually be using Windows 10.
+
+Finally, be aware that Sec-CH-UA-Platform-Version, unlike Sec-CH-UA-Platform, will rarely be available in the first request. There is nothing we can do about this, as it is an intentional part of Google's design for UA-CH. For more details, see our [UA-CH feature page](@ref DeviceDetection_Features_UserAgentClientHints).
 
 @anchor Error_OnPremise_DataFile
 [#](@ref Error_OnPremise_DataFile) 
