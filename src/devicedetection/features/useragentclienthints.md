@@ -174,8 +174,9 @@ HTTP headers.
 
 The following snippet demonstrates how to do this using JavaScript:
 
-```
-<script type="text/javascript">
+<div class="c-code__block c-code__block--outline">
+<pre>
+&lt;script type="text/javascript"&gt;
 function convertToHeaderFormat(uaData) {
     // Define a function that will be used to serialize individual values into the correct format.
     let serialize = (v) => {
@@ -221,8 +222,8 @@ navigator.userAgentData.getHighEntropyValues(
             // For example: flowData.AddEvidence("header.Sec-CH-UA", [value])
             console.log(headerFormatUach);
     });
-</script>
-```
+&lt;/script&gt;
+</pre>
 
 @anchor UACH_Background
 [#](@ref UACH_Background)	
