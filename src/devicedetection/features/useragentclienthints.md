@@ -192,8 +192,7 @@ function convertToHeaderFormat(uaData) {
             result += `${serialize(i.brand)};v=${serialize(i.version)}`
         })
         return result;
-    }
-
+    }&#13;&#10;
     // Create a new object containing UA-CH values in the same format as the UA-CH HTTP headers.
     return {
         ["Sec-CH-UA"]: serializeBrandArray(uaData.brands),
@@ -203,8 +202,7 @@ function convertToHeaderFormat(uaData) {
         ["Sec-CH-UA-Platform"]: serialize(uaData.platform),
         ["Sec-CH-UA-Platform-Version"]: serialize(uaData.platformVersion)
     }
-}
-
+}&#13;&#10;
 // We need the 'high entropy' values so use the appropriate callback function.
 navigator.userAgentData.getHighEntropyValues(
         ["model",
