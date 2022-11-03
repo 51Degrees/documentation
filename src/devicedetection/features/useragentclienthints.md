@@ -98,7 +98,7 @@ However, there are some scenarios that cause additional complexity.
 
 @anchor UACH_Cloud_Pipeline_ServerSide
 [#](@ref UACH_Cloud_Pipeline_ServerSide)
-### Calling from Pipeline API
+### Calling the Cloud from Pipeline API
 
 If you are calling the cloud from a Pipeline API, then you need 
 to ensure that the appropriate response headers are set and that the 
@@ -119,7 +119,7 @@ UA-CH values will automatically be sent to the cloud in order to perform detecti
 
 @anchor UACH_Cloud_NonPipeline_ServerSide
 [#](@ref UACH_Cloud_NonPipeline_ServerSide)
-### Calling from (non-Pipeline API) server-side code 
+### Calling the Cloud from (non-Pipeline API) server-side code 
 
 As above, in order to use UA-CH, you'll just need to ensure that the 
 appropriate response headers are set and that the UA-CH headers are 
@@ -133,7 +133,7 @@ two essential steps;
 
 @anchor UACH_Cloud_ClientSide
 [#](@ref UACH_Cloud_ClientSide)	
-### Calling from client-side code 
+### Calling the Cloud from client-side code 
 
 Calling the cloud from client-side code is simpler in some ways, as you 
 don't need to worry about manually including the Sec-CH-UA values in
@@ -170,9 +170,56 @@ Currently, 51Degrees only supports detection using the HTTP header values.
 
 If you need to use the JavaScript API to retrieve the values, care must be taken to ensure 
 that the string values passed to the 51Degrees API exactly match the format of the values in the
-HTTP headers. For example, if the value in the header is surrounded by double quotes, but the 
-JavaScript API value does not include the double quotes, then these should be added in order to
-give the best results.
+HTTP headers. 
+
+The following snippet demonstrates how to do this using JavaScript:
+
+```{js}
+function convertToHeaderFormat(uaData) {
+    // Define a function that will be used to serialize individual values into the correct format.
+    let serialize = (v) => {
+        return (v.toString().length > 0 ? `"${v}"` : ``);
+    }
+    // Define a function that will be used to serialize an array of brand values into the correct format.
+    let serializeBrandArray = (a) => {
+        let result = ``;
+        a.forEach((i) => {
+            if (result.length > 0) {
+                result += `, `;
+            }
+            result += `${serialize(i.brand)};v=${serialize(i.version)}`
+        })
+        return result;
+    }
+
+    // Create a new object containing UA-CH values in the same format as the UA-CH HTTP headers.
+    return {
+        ["Sec-CH-UA"]: serializeBrandArray(uaData.brands),
+        ["Sec-CH-UA-Full-Version-List"]: serializeBrandArray(uaData.fullVersionList),
+        ["Sec-CH-UA-Mobile"]: (uaData.mobile ? `?1` : `?0`),
+        ["Sec-CH-UA-Model"]: serialize(uaData.model),
+        ["Sec-CH-UA-Platform"]: serialize(uaData.platform),
+        ["Sec-CH-UA-Platform-Version"]: serialize(uaData.platformVersion)
+    }
+}
+
+// We need the 'high entropy' values so use the appropriate callback function.
+navigator.userAgentData.getHighEntropyValues(
+        ["model",
+            "platform",
+            "platformVersion",
+            "fullVersionList"
+        ])
+    .then((uach) => {
+            // Log the UA-CH data in it's client-side format.
+            console.log(uach);
+            // Convert to the format used in the UA-CH HTTP headers.
+            var headerFormatUach = convertToHeaderFormat(uach);
+            // Log the UA-CH data in the converted format.
+            // These values now need to be supplied as evidence to the 51Degrees API.
+            // For example: flowData.AddEvidence("header.Sec-CH-UA", [value])
+            console.log(headerFormatUach);
+```
 
 @anchor UACH_Background
 [#](@ref UACH_Background)	
