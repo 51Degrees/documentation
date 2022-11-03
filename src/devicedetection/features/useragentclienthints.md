@@ -224,6 +224,7 @@ navigator.userAgentData.getHighEntropyValues(
     });
 &lt;/script&gt;
 </pre>
+</div>
 
 @anchor UACH_Background
 [#](@ref UACH_Background)	
