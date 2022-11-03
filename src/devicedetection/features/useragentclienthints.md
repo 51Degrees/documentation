@@ -219,6 +219,7 @@ navigator.userAgentData.getHighEntropyValues(
             // These values now need to be supplied as evidence to the 51Degrees API.
             // For example: flowData.AddEvidence("header.Sec-CH-UA", [value])
             console.log(headerFormatUach);
+    });
 ```
 
 @anchor UACH_Background
