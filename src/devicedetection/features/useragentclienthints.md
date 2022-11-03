@@ -174,7 +174,7 @@ HTTP headers.
 
 The following snippet demonstrates how to do this using JavaScript:
 
-```json
+```
 <script type="text/javascript">
 function convertToHeaderFormat(uaData) {
     // Define a function that will be used to serialize individual values into the correct format.
