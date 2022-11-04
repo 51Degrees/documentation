@@ -180,7 +180,7 @@ The following snippet demonstrates how to do this using JavaScript:
 function convertToHeaderFormat(uaData) {
     // Define a function that will be used to serialize individual values into the correct format.
     let serialize = (v) => {
-        return (v.toString().length > 0 ? `"${v}"` : ``);
+        return v.length > 0 ? JSON.stringify(v) : ``;
     }
     // Define a function that will be used to serialize an array of brand values into the correct format.
     let serializeBrandArray = (a) => {

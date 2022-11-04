@@ -82,9 +82,13 @@ Since UA-CH take precedence over the User Agent (in this case, when Sec-CH-UA-Pl
 
 We take this approach because the version provided by the User Agent is incorrect in some scenarios. For example, Windows 11 will always appear as Windows 10 in the User Agent. 
 
-In addition, as Google press ahead with [deprecating the data](https://www.chromium.org/updates/ua-reduction/) in parts of the User Agent, the values presented will become less reliable. Therefore, we believe that returning 'Windows unknown version' is better than returning 'Windows 10' when the user may not actually be using Windows 10.
+In addition, as Google press ahead with [deprecating the data](https://www.chromium.org/updates/ua-reduction/) in parts of the User Agent, the values presented will become less reliable. For example, all Android versions sending a User Agent with 'Android 10' in it.
 
-Finally, be aware that Sec-CH-UA-Platform-Version, unlike Sec-CH-UA-Platform, will rarely be available in the first request. There is nothing we can do about this, as it is an intentional part of Google's design for UA-CH. For more details, see our [UA-CH feature page](@ref DeviceDetection_Features_UserAgentClientHints).
+Therefore, we believe that returning 'Windows unknown version' or 'Android unknown version' is better than returning 'Windows 10' or 'Android 10' when the user may not actually be using those versions.
+
+Be aware that Sec-CH-UA-Platform-Version, unlike Sec-CH-UA-Platform, will rarely be available in the first request. There is nothing we can do about this, as it is an intentional part of Google's design for UA-CH. For more details, see our [UA-CH feature page](@ref DeviceDetection_Features_UserAgentClientHints).
+
+Finally, some of our users prefer to receive a platform version that is potentially incorrect, rather than an unknown platform version. If you would prefer this behavior, you can modify your system to only supply Sec-CH-UA-Platform to our API when you also have Sec-CH-UA-Platform-Version. This will cause it to fallback to using the platform version from the User Agent when the complete data from UA-CH is not available.
 
 @anchor Error_OnPremise_DataFile
 [#](@ref Error_OnPremise_DataFile) 
