@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('_device_detection__features__user_agen
 function convertToHeaderFormat(uaData) {
     // Define a function that will be used to serialize individual values into the correct format.
     let serialize = (v) =&gt; {
-        return (v.toString().length &gt; 0 ? `"${v}"` : ``);
+        return v.length &gt; 0 ? JSON.stringify(v) : ``;
     }
     // Define a function that will be used to serialize an array of brand values into the correct format.
     let serializeBrandArray = (a) =&gt; {
