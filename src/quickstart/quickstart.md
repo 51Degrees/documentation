@@ -14,8 +14,6 @@ below and then see the @combiningservices example.
 
 - Quick Start for [Device Detection](@ref Quickstart_DeviceDetection)
 - Quick Start for [Reverse Geocoding](@ref Quickstart_ReverseGeocoding)
-- IP Intelligence (Coming soon)
-- Fraud Detection (Coming soon)
 
 # Client-side JavaScript
 
