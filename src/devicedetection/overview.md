@@ -8,15 +8,15 @@ If you're ready to get going with **device detection**, follow the [quick start 
 
 # How device detection works
 
-Primarily, 51Degrees device detection solutions focus on the User Agent HTTP header to identify a device. However, over time
-we have introduced greater complexity which does not rely solely on the User Agent string and enables us to return improved results for the following use cases:
+Primarily, 51Degrees device detection solutions focus on the User-Agent HTTP header to identify a device. However, over time
+we have introduced greater complexity which does not rely solely on the User-Agent and enables us to return improved results for the following use cases:
 
-* Apple purposefully obfuscate the hardware model in the User Agent. We use 
+* Apple purposefully obfuscate the hardware model in the User-Agent. We use 
 [various techniques](https://51degrees.com/blog/multi-stage-approach-to-apple-ios-device-detection) to overcome this. 
 * Browsers that perform [transcoding](https://en.wikipedia.org/wiki/Mobile_browser#Mobile_HTML_transcoders) will 
-generally replace the content of the User Agent with something else. The real User Agent may or may not be sent 
+generally replace the content of the User-Agent with something else. The real User-Agent may or may not be sent 
 in a separate header.
-* Although the User Agent can tell us a lot about the hardware and software being used, further information can often
+* Although the User-Agent can tell us a lot about the hardware and software being used, further information can often
 be obtained by scripts running on the client device.
 
 Check the [Features](@ref DeviceDetection_Features_Index) page for detail about specific features of 51Degrees Device Detection API.

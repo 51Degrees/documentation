@@ -4,9 +4,9 @@
 
 This page contains explainers for cloud error messages when using 51Degrees services.
 
-### Continuous processing of unique User Agents @anchor Continuous_processing_of_unique_User_Agents	
+### Continuous processing of unique User-Agents @anchor Continuous_processing_of_unique_User_Agents	
 
-Continuous processing of unique User Agents is limited. This is to limit the amount of offline processing that is performed using the 51Degrees Cloud service. You can resume making requests when the number of seconds in the `Retry-After` response header has elapsed. To find out more see the [cloud documentation](https://cloud.51degrees.com/api-docs/index.html)
+Continuous processing of unique User-Agents is limited. This is to limit the amount of offline processing that is performed using the 51Degrees Cloud service. You can resume making requests when the number of seconds in the `Retry-After` response header has elapsed. To find out more see the [cloud documentation](https://cloud.51degrees.com/api-docs/index.html)
 
 ### Evidence keys could not be determined @anchor Evidence_keys_could_not_be_determined	
 

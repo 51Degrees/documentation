@@ -2,7 +2,7 @@
 
 # Introduction
 
-Most device detection solutions rely primarily on the User Agent HTTP header. However, the content of this header can be any string at all. This inevitably leads to situations where finding an exact match to a previously observed User Agent is not possible. 
+Most device detection solutions rely primarily on the User-Agent HTTP header. However, the content of this header can be any string at all. This inevitably leads to situations where finding an exact match to a previously observed User-Agent is not possible. 
 
 A false positive occurs when the service tells you it has found a match but in reality the details provided are incorrect.
 
@@ -43,7 +43,7 @@ By default, `Difference` and `Drift` are set to 0 (i.e., no deviation from the e
 Regardless of the settings used, the result will return additional meta-data that can be queried to find out details about the match.
 
 `Difference` - Contains the difference value between the supplied evidence and the returned match.  
-`UserAgents` - Contains a list of the matching substrings from the User Agent.  
+`UserAgents` - Contains a list of the matching substrings from the User-Agent.  
 `Drift` - Contains the drift value between the supplied evidence and the returned match.  
 `MatchedNodes` - The number of 'nodes' in the @hash tree where a match was found. If this is zero then no match was found.  
 `Method` - The method used to find a match. 'EXACT' indicates an exact match. 'NONE' indicates no match. Any other value is the name of the technique used to find the result that best matches the supplied evidence.
@@ -63,11 +63,11 @@ In the future, this may be changed so that `HasValue` will return false if `Valu
 Set `AllowUnmatched` to false.  
 Set `Difference` and `Drift` to 10.
 
-> I only want exact matches to previously observed User Agents (default configuration).
+> I only want exact matches to previously observed User-Agents (default configuration).
 
 Set `AllowUnmatched` to false.  
 Set `Difference` and `Drift` to 0.  
-These settings will mean that a result is only returned if it exactly matches a unique substring from a User Agent that has been included when building the data file.
+These settings will mean that a result is only returned if it exactly matches a unique substring from a User-Agent that has been included when building the data file.
 
 > If there is no match found then I want the API to assume that the device is a desktop running an unknown operating system.
 

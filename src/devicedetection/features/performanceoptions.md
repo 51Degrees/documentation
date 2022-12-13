@@ -33,11 +33,11 @@ The precise values associated with each template can be seen in the source code 
 
 The hash data file includes two different 'graphs' that can be used when trying to find a match, [performance](@ref DeviceDetection_Hash_DataSetProduction_Performance) and [predictive](@ref DeviceDetection_Hash_DataSetProduction_Predictive).
 
-The performance graph is significantly faster than predictive, but is less tolerant of differences between the training data and the evaluated User Agent.
+The performance graph is significantly faster than predictive, but is less tolerant of differences between the training data and the evaluated User-Agent.
 
 This means that the performance graph is generally recommended when fast matching is the primary concern and the data file is regularly and frequently updated.
 
-In comparison, the predictive graph is recommended when getting an accurate match for every request is the primary concern, particularly when User Agents are frequently encountered that are not in the training data.
+In comparison, the predictive graph is recommended when getting an accurate match for every request is the primary concern, particularly when User-Agents are frequently encountered that are not in the training data.
 
 Note that if both graphs are enabled, performance will be used first. Predictive will only then be used if the algorithm fails to find a match with the performance graph.
 

@@ -115,7 +115,7 @@ Nginx Device Detection V4 module supports `False Positives` features as describe
 
 ## User Agent Client Hint supports
 
-User Agent Client Hint was introduced by Google in Chrome, preventing traditional detection using User Agents from performing accurate matches. In Nginx Device Detection V4 module, `51D_set_resp_headers` was implemented to allow Client Hint request headers to be set in responses so that more evidence is provided in subsequent requests, allowing better matches.
+User Agent Client Hint was introduced by Google in Chrome, preventing traditional detection using User-Agents from performing accurate matches. In Nginx Device Detection V4 module, `51D_set_resp_headers` was implemented to allow Client Hint request headers to be set in responses so that more evidence is provided in subsequent requests, allowing better matches.
 
 # Other resources
 More details can be found at:

@@ -49,7 +49,7 @@ $ make check
 
 # Configuring the Varnish API
 
-Before you start matching User Agents, you may wish to configure the solution to use a different data set for example, or to use a certain performance profile.
+Before you start matching User-Agents, you may wish to configure the solution to use a different data set for example, or to use a certain performance profile.
 
 ## Init settings
 These settings are used in the vcl_init and should only be set once.
