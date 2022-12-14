@@ -3,7 +3,7 @@
 # Introduction
 
 In the early days of the internet, the 
-[User Agent header](https://51degrees.com/blog/understanding-user-agent-string) 
+[User-Agent header](https://51degrees.com/blog/understanding-user-agent-string) 
 was made part of the 
 [HTTP/1.0 specification](https://datatracker.ietf.org/doc/html/rfc1945#page-46).
 
@@ -13,22 +13,22 @@ was made part of the
 > agent limitations. Although it is not required, user agents should
 > include this field with requests. 
 
-Generally, web browsers will populate the User Agent header with information that allows the 
+Generally, web browsers will populate the User-Agent header with information that allows the 
 web server to derive details about the operating system and browser that are being used to make 
 the request. 
 
-In the case of mobile devices, the native hardware model name is also included in the User Agent.
+In the case of mobile devices, the native hardware model name is also included in the User-Agent.
 This means the web server can additionally determine details about the hardware making the request.
 
-Apple are unique as they have never included the mobile device model name in the User Agent. 
-Consequently, it is generally not possible to identify Apple devices from the User Agent alone. 
+Apple are unique as they have never included the mobile device model name in the User-Agent. 
+Consequently, it is generally not possible to identify Apple devices from the User-Agent alone. 
 (This is not always the case. Some apps, such as Facebook, will add the model name to the 
-User Agent when they make requests)
+User-Agent when they make requests)
 
 Additionally, Apple have certain tools within their system that can change the values within 
-the User Agent string. For example, an iPhone browsing the web in Desktop mode would have a 
-User Agent that identifies the device as a Mac, rather than an iPhone. It is impossible to detect 
-an iPhone browsing in Desktop mode from the User Agent alone.
+the User-Agent. For example, an iPhone browsing the web in Desktop mode would have a 
+User-Agent that identifies the device as a Mac, rather than an iPhone. It is impossible to detect 
+an iPhone browsing in Desktop mode from the User-Agent alone.
 
 51Degrees uses client-side code to collect additional information from the device, which is used
 to determine the model. This page explains how the feature works.
@@ -56,7 +56,7 @@ The 51Degrees device database contains 3 top-level 'group' profiles for Apple de
 - iPad
 - Mac
 
-The User Agent header can be used to determine which of these groups the device making the request 
+The User-Agent header can be used to determine which of these groups the device making the request 
 falls in to. Each of these profiles has a `JavascriptHardwareProfile` property value that contains 
 slightly different JavaScript snippets that need to be executed on the client device.
 
@@ -64,7 +64,7 @@ In each case, the snippet will get several values and then use those values to d
 profile id of the hardware profile representing the actual model.
 
 This profile id is then passed back to the server. When detection is performed, the group profile 
-that can be determined from the User Agent is swapped for the profile that was passed from the 
+that can be determined from the User-Agent is swapped for the profile that was passed from the 
 client-side code.
 
 # Server-side detection

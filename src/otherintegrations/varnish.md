@@ -49,7 +49,7 @@ $ make check
 
 # Configuring the Varnish API
 
-Before you start matching User Agents, you may wish to configure the solution to use a different data set for example, or to use a certain performance profile.
+Before you start matching User-Agents, you may wish to configure the solution to use a different data set for example, or to use a certain performance profile.
 
 ## Init settings
 These settings are used in the vcl_init and should only be set once.
@@ -72,7 +72,7 @@ These settings are valid in vcl_rev and vcl_deliver methods, and any number can 
 
 |Setting|Description|
 |---|---|
-|fiftyonedegrees.match_single|Gets device properties using a User Agent. Takes a User Agent string and a comma separated list of properties to return.|
+|fiftyonedegrees.match_single|Gets device properties using a User-Agent. Takes a User-Agent and a comma separated list of properties to return.|
 |fiftyonedegrees.match_all	 |Gets device properties using multiple HTTP headers. Takes comma separated list of properties to return.|
 
 For full documentation, use

@@ -58,37 +58,37 @@ These restrictions are due to the interaction between the native libraries used 
 
 @anchor UACH_DualEvidence
 [#](@ref UACH_DualEvidence)
-#### Can I use User Agent Client Hints (UA-CH) at the same time as the User Agent? 
+#### Can I use User Agent Client Hints (UA-CH) at the same time as the User-Agent? 
 
 Yes. In fact, this is recommended. The device detection algorithm will use the UA-CH data where possible. 
-However, if a match cannot be found for the supplied UA-CH values, then the User Agent will be used as a fall back.
+However, if a match cannot be found for the supplied UA-CH values, then the User-Agent will be used as a fall back.
 
-If you are using a @webintegration then the UA-CH and User Agent will both be passed to the Pipeline 
+If you are using a @webintegration then the UA-CH and User-Agent will both be passed to the Pipeline 
 automatically. Otherwise, you need to supply the available header values manually. See the [getting started](@ref Examples_DeviceDetection_GettingStarted_Console_Index) examples for a demonstration of how to supply 
-UA-CH evidence in parallel with the User Agent.
+UA-CH evidence in parallel with the User-Agent.
 
 @anchor UserAgent_ContainsBetterData
 [#](@ref UserAgent_ContainsBetterData)
-#### I've supplied the User Agent in addition to UA-CH. The result returns unknown values for things that are clearly present in the User Agent.
+#### I've supplied the User-Agent in addition to UA-CH. The result returns unknown values for things that are clearly present in the User-Agent.
 
-UA-CH evidence always takes precedence over the User Agent. In some scenarios, this means that additional detail that is available in the User Agent will be ignored. For example:
+UA-CH evidence always takes precedence over the User-Agent. In some scenarios, this means that additional detail that is available in the User-Agent will be ignored. For example:
 
 - `Sec-CH-UA-Platform` = `"Windows"`
 - `User-Agent` = `Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0`
 
 The result from the API will return Windows, but the version number will be unknown; this is because the Sec-CH-UA-Platform-Version header has not been supplied.
 
-Since UA-CH take precedence over the User Agent (in this case, when Sec-CH-UA-Platform is used in preference to User Agent), despite the User Agent containing version information, the result from the API will not return any version information. To combat this, we recommend supplying all the Sec-CH-UA headers you need.
+Since UA-CH take precedence over the User-Agent (in this case, when Sec-CH-UA-Platform is used in preference to User-Agent), despite the User-Agent containing version information, the result from the API will not return any version information. To combat this, we recommend supplying all the Sec-CH-UA headers you need.
 
-We take this approach because the version provided by the User Agent is incorrect in some scenarios. For example, Windows 11 will always appear as Windows 10 in the User Agent. 
+We take this approach because the version provided by the User-Agent is incorrect in some scenarios. For example, Windows 11 will always appear as Windows 10 in the User-Agent. 
 
-In addition, as Google press ahead with [deprecating the data](https://www.chromium.org/updates/ua-reduction/) in parts of the User Agent, the values presented will become less reliable. For example, all Android versions sending a User Agent with 'Android 10' in it.
+In addition, as Google press ahead with [deprecating the data](https://www.chromium.org/updates/ua-reduction/) in parts of the User-Agent, the values presented will become less reliable. For example, all Android versions sending a User-Agent with 'Android 10' in it.
 
 Therefore, we believe that returning 'Windows unknown version' or 'Android unknown version' is better than returning 'Windows 10' or 'Android 10' when the user may not actually be using those versions.
 
 Be aware that Sec-CH-UA-Platform-Version, unlike Sec-CH-UA-Platform, will rarely be available in the first request. There is nothing we can do about this, as it is an intentional part of Google's design for UA-CH. For more details, see our [UA-CH feature page](@ref DeviceDetection_Features_UserAgentClientHints).
 
-Finally, some of our users prefer to receive a platform version that is potentially incorrect, rather than an unknown platform version. If you would prefer this behavior, you can modify your system to only supply Sec-CH-UA-Platform to our API when you also have Sec-CH-UA-Platform-Version. This will cause it to fallback to using the platform version from the User Agent when the complete data from UA-CH is not available.
+Finally, some of our users prefer to receive a platform version that is potentially incorrect, rather than an unknown platform version. If you would prefer this behavior, you can modify your system to only supply Sec-CH-UA-Platform to our API when you also have Sec-CH-UA-Platform-Version. This will cause it to fallback to using the platform version from the User-Agent when the complete data from UA-CH is not available.
 
 @anchor Error_OnPremise_DataFile
 [#](@ref Error_OnPremise_DataFile) 
