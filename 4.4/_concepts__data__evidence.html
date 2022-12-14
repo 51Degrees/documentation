@@ -73,7 +73,7 @@ $(document).ready(function(){initNavTree('_concepts__data__evidence.html','');})
 <h1 class="g-docs__section-heading">Data structure</h1>
 <p>The precise details of the data structure behind <b>evidence</b> will vary depending on the language. However, all languages use a similar approach of exposing the stored evidence values as a collection of string key/value pairs.</p>
 <p>By convention, the key is all lower-case and uses a '.' character to separate the values into categories based on the source of that data. For example, all keys starting with 'header.' will have come from an HTTP header.</p>
-<p>The second part of the key indicates the specific name within the category. For example 'header.user-agent' refers to the 'User Agent' HTTP header.</p>
+<p>The second part of the key indicates the specific name within the category. For example 'header.user-agent' refers to the 'User-Agent' HTTP header.</p>
 <p>Categories used by 51Degrees are:</p>
 <ul>
 <li>header - For values from HTTP headers</li>
@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('_concepts__data__evidence.html','');})
 <li>Query parameters</li>
 <li>Request metadata such as source IP address</li>
 </ul>
-<p>Any device making a request to a web site will include some of this information. For example, the User Agent HTTP header is almost always populated as part of a request. In some cases though, additional <b>evidence</b> providing more detail can be obtained from code running directly on the client device. In some cases, this may even be required. For example, this technique can be used to retrieve the latitude and longitude from devices that have this capability. Typically, this <b>evidence</b> will be sent back to the server as a cookie in the next request.</p>
+<p>Any device making a request to a web site will include some of this information. For example, the User-Agent HTTP header is almost always populated as part of a request. In some cases though, additional <b>evidence</b> providing more detail can be obtained from code running directly on the client device. In some cases, this may even be required. For example, this technique can be used to retrieve the latitude and longitude from devices that have this capability. Typically, this <b>evidence</b> will be sent back to the server as a cookie in the next request.</p>
 <p>For more details, see the <a class="el" href="_features__client_side_evidence.html">client-side evidence</a> page.</p>
 <p>This use of client-side code requires additional JavaScript to be sent to the client device. The Pipeline <a class="el" href="_features__web_integration.html">web integration</a> is designed to handle this seamlessly for a variety of languages and web frameworks. </p>
 </section></div><!-- PageDoc -->

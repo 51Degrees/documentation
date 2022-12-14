@@ -68,7 +68,7 @@ $(document).ready(function(){initNavTree('_device_detection__features__false_pos
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
-<p>Most device detection solutions rely primarily on the User Agent HTTP header. However, the content of this header can be any string at all. This inevitably leads to situations where finding an exact match to a previously observed User Agent is not possible.</p>
+<p>Most device detection solutions rely primarily on the User-Agent HTTP header. However, the content of this header can be any string at all. This inevitably leads to situations where finding an exact match to a previously observed User-Agent is not possible.</p>
 <p>A false positive occurs when the service tells you it has found a match but in reality the details provided are incorrect.</p>
 <p>In these scenarios, different use cases often demand different responses. 51Degrees Device Detection allows the developer to determine exactly what happens.</p>
 <h1 class="g-docs__section-heading">HasValue</h1>
@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('_device_detection__features__false_pos
 <h1 class="g-docs__section-heading">Match meta-data</h1>
 <p>Regardless of the settings used, the result will return additional meta-data that can be queried to find out details about the match.</p>
 <p><code>Difference</code> - Contains the difference value between the supplied evidence and the returned match.</p>
-<p><code>UserAgents</code> - Contains a list of the matching substrings from the User Agent.</p>
+<p><code>UserAgents</code> - Contains a list of the matching substrings from the User-Agent.</p>
 <p><code>Drift</code> - Contains the drift value between the supplied evidence and the returned match.</p>
 <p><code>MatchedNodes</code> - The number of 'nodes' in the <a class="el" href="_device_detection__hash.html">hash</a> tree where a match was found. If this is zero then no match was found.</p>
 <p><code>Method</code> - The method used to find a match. 'EXACT' indicates an exact match. 'NONE' indicates no match. Any other value is the name of the technique used to find the result that best matches the supplied evidence.</p>
@@ -106,11 +106,11 @@ $(document).ready(function(){initNavTree('_device_detection__features__false_pos
 <p>Set <code>AllowUnmatched</code> to false.</p>
 <p>Set <code>Difference</code> and <code>Drift</code> to 10.</p>
 <blockquote class="doxtable">
-<p>I only want exact matches to previously observed User Agents (default configuration). </p>
+<p>I only want exact matches to previously observed User-Agents (default configuration). </p>
 </blockquote>
 <p>Set <code>AllowUnmatched</code> to false.</p>
 <p>Set <code>Difference</code> and <code>Drift</code> to 0.</p>
-<p>These settings will mean that a result is only returned if it exactly matches a unique substring from a User Agent that has been included when building the data file.</p>
+<p>These settings will mean that a result is only returned if it exactly matches a unique substring from a User-Agent that has been included when building the data file.</p>
 <blockquote class="doxtable">
 <p>If there is no match found then I want the API to assume that the device is a desktop running an unknown operating system. </p>
 </blockquote>

@@ -68,14 +68,14 @@ $(document).ready(function(){initNavTree('_device_detection__features__apple_det
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
-<p>In the early days of the internet, the <a href="https://51degrees.com/blog/understanding-user-agent-string">User Agent header</a> was made part of the <a href="https://datatracker.ietf.org/doc/html/rfc1945#page-46">HTTP/1.0 specification</a>.</p>
+<p>In the early days of the internet, the <a href="https://51degrees.com/blog/understanding-user-agent-string">User-Agent header</a> was made part of the <a href="https://datatracker.ietf.org/doc/html/rfc1945#page-46">HTTP/1.0 specification</a>.</p>
 <blockquote class="doxtable">
 <p>This is for statistical purposes, the tracing of protocol violations, and automated recognition of user agents for the sake of tailoring responses to avoid particular user agent limitations. Although it is not required, user agents should include this field with requests. </p>
 </blockquote>
-<p>Generally, web browsers will populate the User Agent header with information that allows the web server to derive details about the operating system and browser that are being used to make the request.</p>
-<p>In the case of mobile devices, the native hardware model name is also included in the User Agent. This means the web server can additionally determine details about the hardware making the request.</p>
-<p>Apple are unique as they have never included the mobile device model name in the User Agent. Consequently, it is generally not possible to identify Apple devices from the User Agent alone. (This is not always the case. Some apps, such as Facebook, will add the model name to the User Agent when they make requests)</p>
-<p>Additionally, Apple have certain tools within their system that can change the values within the User Agent string. For example, an iPhone browsing the web in Desktop mode would have a User Agent that identifies the device as a Mac, rather than an iPhone. It is impossible to detect an iPhone browsing in Desktop mode from the User Agent alone.</p>
+<p>Generally, web browsers will populate the User-Agent header with information that allows the web server to derive details about the operating system and browser that are being used to make the request.</p>
+<p>In the case of mobile devices, the native hardware model name is also included in the User-Agent. This means the web server can additionally determine details about the hardware making the request.</p>
+<p>Apple are unique as they have never included the mobile device model name in the User-Agent. Consequently, it is generally not possible to identify Apple devices from the User-Agent alone. (This is not always the case. Some apps, such as Facebook, will add the model name to the User-Agent when they make requests)</p>
+<p>Additionally, Apple have certain tools within their system that can change the values within the User-Agent. For example, an iPhone browsing the web in Desktop mode would have a User-Agent that identifies the device as a Mac, rather than an iPhone. It is impossible to detect an iPhone browsing in Desktop mode from the User-Agent alone.</p>
 <p>51Degrees uses client-side code to collect additional information from the device, which is used to determine the model. This page explains how the feature works.</p>
 <p>If you just want to see it working, the <a class="el" href="_examples__device_detection__getting_started__web__index.html">getting started - web</a> examples demonstrate this capability.</p>
 <h1 class="g-docs__section-heading">Overview</h1>
@@ -92,9 +92,9 @@ $(document).ready(function(){initNavTree('_device_detection__features__apple_det
 <li>iPad</li>
 <li>Mac</li>
 </ul>
-<p>The User Agent header can be used to determine which of these groups the device making the request falls in to. Each of these profiles has a <code>JavascriptHardwareProfile</code> property value that contains slightly different JavaScript snippets that need to be executed on the client device.</p>
+<p>The User-Agent header can be used to determine which of these groups the device making the request falls in to. Each of these profiles has a <code>JavascriptHardwareProfile</code> property value that contains slightly different JavaScript snippets that need to be executed on the client device.</p>
 <p>In each case, the snippet will get several values and then use those values to determine the profile id of the hardware profile representing the actual model.</p>
-<p>This profile id is then passed back to the server. When detection is performed, the group profile that can be determined from the User Agent is swapped for the profile that was passed from the client-side code.</p>
+<p>This profile id is then passed back to the server. When detection is performed, the group profile that can be determined from the User-Agent is swapped for the profile that was passed from the client-side code.</p>
 <h1 class="g-docs__section-heading">Server-side detection</h1>
 <p>For customers that are unable to use dynamically generated JavaScript, we have a solution that uses data gathered from static JavaScript to perform the detection server-side.</p>
 <p>This feature is currently only available for .NET. Examples are <a class="el" href="_examples__device_detection__apple_server_side__index.html">here</a>.</p>

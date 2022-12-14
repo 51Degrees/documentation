@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('_other_integrations__varnish.html','')
 <p>If your Varnish source is not installed at the standard location (i.e., <code>/usr/local/include/varnish</code>), you can adjust this by setting the environment variable <code>VARNISHSRC [optional]</code> to point to the correct location. For example, if you have installed Varnish source via package manager, it will be located at <code>/usr/include/varnish</code>. Then, you will need to set <code>VARNISHSRC</code> to <code>/usr/include/varnish</code> for the installation to succeed. If you want to install the module to a location of your choice, you can also set it via <code>VMOD_DIR [optional]</code>.</p>
 <p>Finally run the included tests. You will need to make sure that the module is built with <code>test</code> option.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">$ make check</div></div><h1 class="g-docs__section-heading">Configuring the Varnish API</h1>
-<p>Before you start matching User Agents, you may wish to configure the solution to use a different data set for example, or to use a certain performance profile.</p>
+<p>Before you start matching User-Agents, you may wish to configure the solution to use a different data set for example, or to use a certain performance profile.</p>
 <h2>Init settings</h2>
 <p>These settings are used in the vcl_init and should only be set once.</p>
 <div class="g-table g-table--overflow"><table class="c-table">
@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('_other_integrations__varnish.html','')
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Setting  </td><td class="c-table__cell">Description   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">fiftyonedegrees.match_single  </td><td class="c-table__cell">Gets device properties using a User Agent. Takes a User Agent string and a comma separated list of properties to return.   </td></tr>
+<td class="c-table__cell">fiftyonedegrees.match_single  </td><td class="c-table__cell">Gets device properties using a User-Agent. Takes a User-Agent and a comma separated list of properties to return.   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">fiftyonedegrees.match_all  </td><td class="c-table__cell">Gets device properties using multiple HTTP headers. Takes comma separated list of properties to return.   </td></tr>
 </table>
