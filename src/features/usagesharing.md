@@ -7,6 +7,9 @@ Some of the services offered by 51Degrees benefit from @evidence (optionally) be
 this evidence to ensure that our data is up-to-date, comprehensive, and continues to
 provide accurate results.
 
+A specific set of evidence must be seen a number of times, from a number of sources to be
+deemed reliable enough to contribute to the data file.
+
 @dotfile usagesharing.gvdot
 
 # How to enable usage sharing
