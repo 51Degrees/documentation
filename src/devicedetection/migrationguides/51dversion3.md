@@ -19,8 +19,8 @@ Regardless of which API you are migrating to, there are breaking changes and new
 @showsnippet{c,C}
 @showsnippet{cpp,C++}
 @showsnippet{dotnet,C#}
-@showsnippet{aspdotnet,ASP.NET}
-@showsnippet{aspdotnetcore,ASP.NET Core}
+@showsnippet{aspdotnet,C# - ASP.NET Framework}
+@showsnippet{aspdotnetcore,C# - ASP.NET Core}
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
@@ -461,13 +461,28 @@ if (Request.Browser["IsMobile"] == "True")
 See the [property dictionary](https://51degrees.com/developers/property-dictionary) for a complete 
 list of the available properties.
 
-If you need to access values specific to the 51Degrees implementation then you can do so by casting:
+If you need to access values specific to the 51Degrees implementation then you can do so by casting to `PipelineCapabilities` and accessing the `FlowData` instance:
 
 ```{cs}
-var 51capabilities = (FiftyOne.Pipeline.Web.Framework.Providers.PipelineCapabilities)Request.Browser;
+var flowData = ((PipelineCapabilities)Request.Browser).FlowData;
+var deviceData = flowData.Get<IDeviceData>();
 ```
 
+You may also want to access meta data relating to profiles, properties, etc.
+This data can be obtained from the device detection engine. You can access this by getting the `IPipeline` instance from the static `WebPipeline` class:
 
+```{cs}
+var deviceDetectionPipeline = WebPipeline.GetInstance();
+var engine = deviceDetectionPipeline.GetElement<DeviceDetectionHashEngine>(); 
+```
+
+Finally, if you use client-side overrides (which enables detection of Apple models), you'll need to make sure you add a script tag for `51degrees.core.js`. The 51Degrees infrastructure will intercept this request and serve the JavaScript that is used to gather the necessary client side data and pass it back to the server. 
+
+You can see examples of this feature in action in the [getting started](@ref Examples_DeviceDetection_GettingStarted_Web_Index) web examples.
+
+```
+<script async src='51Degrees.core.js' type='text/javascript'></script>
+```
 @endsnippet
 @startsnippet{aspdotnetcore}
 <!-- ===================================================================================

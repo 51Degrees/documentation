@@ -40,8 +40,8 @@ Additionally the [web integration examples](@ref Examples_WebIntegration) includ
 to enable @clientsideevidence for each framework.
 
 @startsnippets
-@showsnippet{aspnet,ASP.NET}
-@showsnippet{aspnetcore,ASP.NET Core}
+@showsnippet{aspnet,C# - ASP.NET Framework}
+@showsnippet{aspnetcore,C# - ASP.NET Core}
 @showsnippet{javaservlet,Java Servlet}
 @defaultsnippet{Select a web framework to view details of how client-side evidence is supported.}
 @startsnippet{aspnetcore}

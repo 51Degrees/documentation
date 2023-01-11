@@ -5,7 +5,7 @@
 This example shows how to integrate a Pipeline running a @reversegeocoding engine into various web frameworks.
 
 @startsnippets
-@grabexample{location-dotnet,_asp_net_core3_81_2_startup_8cs,ASP.NET Core}
+@grabexample{location-dotnet,_asp_net_core3_81_2_startup_8cs,C# - ASP.NET Core}
 @grabexample{location-java,servlet_2_example_8java,Java Servlet}
 @grabexample{location-java,mvc_2configuration_2_example_mvc_config_8java,Java Spring MVC}
 @grabexample{location-node,web_integration_8js,Node.js}
