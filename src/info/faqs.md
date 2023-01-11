@@ -101,3 +101,60 @@ The best solution is to only download the data file when you need to (ideally, o
 Alternatively, you can wait until after the 30-minute window to try again. However, you may encounter the error again.
 
 If you have a production environment with a large number of nodes in a cluster, you need to take special care when designing your system to support data updates in a way that impact on our server and external bandwidth usage from your own systems. The [automatic updates feature page](@ref Features_AutomaticDatafileUpdates) has a section at the bottom with some recommendations.
+
+@anchor Error_NetFramework_NetStandard
+[#](@ref Error_NetFramework_NetStandard) 
+#### When using the 51Degrees API with ASP.NET (.NET Framework), how do I resolve the error <code>CS0012: The type 'System.Object' is defined in an assembly that is not referenced. You must add a reference to assembly 'netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51'</code>
+
+This happens because our API targets .NET Standard 2.0. You'll need to modify the 'compilation' element in your web.config file to add a reference to the netstandard assembly as shown below:
+
+```
+<compilation debug="true" targetFramework="4.7.2">
+  <assemblies>
+    <add assembly="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51"/>
+  </assemblies>
+</compilation>
+```
+
+@anchor Error_NetFramework_NewerPackage
+[#](@ref Error_NetFramework_NewerPackage) 
+#### When using the 51Degrees API with .NET Framework, how do I resolve errors like <code>Could not load file or assembly 'Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)</code>
+
+These errors can be seen when a package you are referencing has a dependency on another package and you have a direct reference in your project to a different version of the same package.
+For example, if our package references Newtonsoft.Json version 11 and your project references Newtonsoft.Json version 13.
+
+Sometimes, you'll need to reference the same version as the one required by your dependency. In many cases, this is not necessary though. Instead, you can tell the .NET Framework to handle calls to the version 11 dll by sending them to the version 13 dll.
+
+You do this by configuring a binding redirect in the web.config file:
+
+```
+<runtime>
+  <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+    <dependentAssembly>
+      <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" />
+      <bindingRedirect oldVersion="0.0.0.0-13.0.0.0" newVersion="13.0.0.0" />
+   </dependentAssembly>
+  </assemblyBinding>
+</runtime>
+```
+
+@anchor Error_NetFramework_NativeDll
+[#](@ref Error_NetFramework_NativeDll) 
+#### When using the 51Degrees API with .NET Framework, I get an error loading the native dll <code>Unable to load DLL 'FiftyOne.DeviceDetection.Hash.Engine.OnPremise.Native.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)</code>
+
+This error message makes it pretty clear what is happening, but resolving it can be tricky.
+
+Firstly, there are multiple versions of the native dll and we include 3 different flavours in the NuGet package:
+- Win86
+- Win64
+- Linux64
+
+Unlike .NET/.NET Core, the .NET Framework is currently unable to resolve the correct binary at runtime. As a workaround, you'll need to copy the correct dll from the 'runtimes' folder to the root of the 'bin' folder.
+This can be done by adding the following snippet as a post build step for your project:
+
+```
+copy /Y "$(TargetDir)\runtimes\win-$(Platform)\native\FiftyOne.DeviceDetection.Hash.Engine.OnPremise.Native.dll" "$(TargetDir)\FiftyOne.DeviceDetection.Hash.Engine.OnPremise.Native.dll"
+```
+
+You need to make sure that the type of the native dll matches the type of the process that will be executing it. 
+For example, if your production IIS instance is running in 32 bit mode, you'll need to make sure that you target the x86 platform for your production build. This will mean that the x86 binary is copied to the root of the bin folder and used at runtime.
