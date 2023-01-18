@@ -15,7 +15,8 @@ You can mix and match elements from different examples in order to match your us
 | Cloud      | Configure from file | Configure in code   |
 
 @startsnippets
-@grabexample{device-detection-dotnet,_cloud_2_getting_started-_web_2_startup_8cs,ASP.NET}
+@grabexample{device-detection-dotnet,_cloud_2_getting_started-_web_2_startup_8cs,C# - ASP.NET Core}
+@grabexample{device-detection-dotnet,_cloud_2_framework-_web_2_default_8aspx_8cs,C# - ASP.NET Framework}
 @grabexample{device-detection-java,_getting_started_web_cloud_8java,Java}
 @grabexample{device-detection-node,cloud_2gettingstarted-web_2getting_started_8js,Node.js}
 @grabexample{device-detection-php,cloud_2getting_started_web_8php,PHP}

@@ -67,12 +67,12 @@ control what is shared and how it is collected:
 The **usage sharing** element will not be interested in all @evidence in the @flowdata. 
 These are the rules for whether or not a particular piece of evidence is shared:
 
-- Any evidence named 'header.&lt;name&gt;', if &lt;name&gt; is **not** on a configured blacklist.
-- Any evidence named 'query.&lt;name&gt;', if &lt;name&gt; **is** on a configured whitelist.
+- Any evidence named 'header.&lt;name&gt;', if &lt;name&gt; is **not** on a configured blocklist.
+- Any evidence named 'query.&lt;name&gt;', if &lt;name&gt; **is** on a configured allowlist.
 - Any evidence named 'cookie.&lt;name&gt;' is ignored, unless &lt;name&gt; starts with '51D_'.
-- Any other evidence is shared if it is not on a configured blacklist.
+- Any other evidence is shared if it is not on a configured blocklist.
 
-The various blacklists and whitelists can be configured using the **share usage** @elementbuilder.
+The various blocklists and allowlists can be configured using the **share usage** @elementbuilder.
 
 ### Evidence detail
 
