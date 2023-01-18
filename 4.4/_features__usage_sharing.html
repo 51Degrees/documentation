@@ -91,12 +91,12 @@ $(document).ready(function(){initNavTree('_features__usage_sharing.html','');});
 <h2>Evidence shared</h2>
 <p>The <b>usage sharing</b> element will not be interested in all <a class="el" href="_concepts__data__evidence.html">evidence</a> in the <a class="el" href="_concepts__data__flow_data.html">flow data</a>. These are the rules for whether or not a particular piece of evidence is shared:</p>
 <ul>
-<li>Any evidence named 'header.&lt;name&gt;', if &lt;name&gt; is <b>not</b> on a configured blacklist.</li>
-<li>Any evidence named 'query.&lt;name&gt;', if &lt;name&gt; <b>is</b> on a configured whitelist.</li>
+<li>Any evidence named 'header.&lt;name&gt;', if &lt;name&gt; is <b>not</b> on a configured blocklist.</li>
+<li>Any evidence named 'query.&lt;name&gt;', if &lt;name&gt; <b>is</b> on a configured allowlist.</li>
 <li>Any evidence named 'cookie.&lt;name&gt;' is ignored, unless &lt;name&gt; starts with '51D_'.</li>
-<li>Any other evidence is shared if it is not on a configured blacklist.</li>
+<li>Any other evidence is shared if it is not on a configured blocklist.</li>
 </ul>
-<p>The various blacklists and whitelists can be configured using the <b>share usage</b> <a class="el" href="_concepts__configuration__builders__element_builder.html">element builder</a>.</p>
+<p>The various blocklists and allowlists can be configured using the <b>share usage</b> <a class="el" href="_concepts__configuration__builders__element_builder.html">element builder</a>.</p>
 <h3>Evidence detail</h3>
 <p>Some of the values sent as evidence are more important for our backend processing than others. This section describes some of the most important, along with why they are useful to us. Any values marked with 'REQUIRED' must be included, or our backend systems will discard the data.</p>
 <ul>
