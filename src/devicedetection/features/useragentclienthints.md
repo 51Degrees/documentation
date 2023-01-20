@@ -24,7 +24,7 @@ to support detection from the full range of UA-CH values.
 
 Note that newer and older API versions and data files will be fully cross-compatible with each 
 other. It's just that in order to perform detection using the full range of UA-CH values, you must 
-be using BOTH version 4.4 of the API and a newer data file.
+be using a newer (preferably the latest) data file and Version 4.4 of the API.
 
 # Examples
 
