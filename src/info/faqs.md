@@ -147,3 +147,14 @@ This error message makes it pretty clear what is happening, but resolving it can
 1. Ensure the server has the necessary [dependencies](@ref Info_Dependencies) installed.
 2. Use the correct version of the native dll. There are multiple versions of the native dll. Unlike .NET/.NET Core, .NET Framework is currently unable to resolve the correct binary at runtime. As a workaround, you'll need to copy the correct dll from the 'runtimes' folder to the root of the 'bin' folder. This can be done by adding the following snippet as a post build step for your project: `copy /Y "$(TargetDir)\runtimes\win-$(Platform)\native\FiftyOne.DeviceDetection.Hash.Engine.OnPremise.Native.dll" "$(TargetDir)\FiftyOne.DeviceDetection.Hash.Engine.OnPremise.Native.dll"` You need to make sure that the type of the native dll matches the type of the process that will be executing it. For example, if your production IIS instance is running in 32 bit mode, you'll need to make sure that you target the x86 platform for your production build. This will mean that the x86 binary is copied to the root of the bin folder and used at runtime.
 3. IIS hosting & dll location. When .NET loads a native dll, it first looks for the dll in the current application directory. For IIS, the current application directory is not the ASP.NET application’s bin folder, but the folder with the IIS executable. If .NET cannot find the dll in that location, it will follow the standard dll search order. Therefore, the native dll must be in one of the searched locations in order for device detection to work. We would usually recommend resolving this by updating the PATH environment variable to include the application directory where the dll is stored. 
+
+
+@anchor IsMobile_Sec-CH-UA-Mobile
+[#](@ref IsMobile_Sec-CH-UA-Mobile)
+#### How do I know if I should serve a mobile version of the website when isMobile and Sec-CH-UA-Mobile do not match?
+
+Our IsMobile property indicates that the device is meant to function mostly on battery power and that its principal data connection is wireless. Meanwhile, the Sec-CH-UA-Mobile header field indicates to the server whether a user prefers a "mobile" user experience – it is not comparable with the IsMobile property. 
+
+You might see inconsistencies between values in our property and the header on some devices, such as tablets. Tablets function on battery power and are wireless, but the Sec-CH-UA-Mobile appears to be set to false by default.
+
+Sites that wish to serve mobile-specific sites can do that by using the value of the Sec-CH-UA-Mobile header directly which is sent by default on every request.
