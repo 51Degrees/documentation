@@ -1,0 +1,111 @@
+@page DeviceDetection_Features_ConcurrentProcessing Concurrent Processing
+
+# Introduction
+
+When using a @PerformanceProfile that loads collections completely into memory, running parallel
+processing using a single @Pipeline is not limited. However, when using a lower memory @PerformanceProfile
+where collections are partially or fully read from file, consideration needs to be given to how
+many parallel threads will be accessing the @Pipeline. 
+
+# Detail
+
+For @PerformanceProfiles such as `LowMemory` and `Balanced`, the concurrency is limited by the number
+of file handles available in the file pool. In most implementations, the default value for this, is
+the number of cores available on the machine. If more threads than this will be used, the expected
+concurrency must be configured when creating the engine, so that
+the file pool is created with the correct size to handle the expected number of concurrent accesses.
+
+The snippet below shows how to set this when creating the engine:
+@startsnippets
+@showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@showsnippet{node,Node.js}
+@showsnippet{php,PHP}
+@showsnippet{python,Python}
+@showsnippet{c,C}
+@showsnippet{cpp,C++}
+@defaultsnippet{Select a tab to view language specific information on setting the concurrency.}
+@startsnippet{dotnet}
+```{cs}
+var pipeline =  new DeviceDetectionPipelineBuilder(loggerFactory)
+    .UseOnPremise(dataFile, null, false)
+    // Set performance profile
+    .SetPerformanceProfile(PerformanceProfiles.LowMemory)
+    // Set the expected concurrency
+    .SetConcurrency(threadCount)
+    .Build();
+```
+@endsnippet
+@startsnippet{java}
+```{java}
+DeviceDetectionOnPremisePipelineBuilder builder = new DeviceDetectionPipelineBuilder()
+    .useOnPremise(dataFileLocation, false)
+    // Set performance profile
+    .setPerformanceProfile(PerformanceProfiles.LowMemory)
+    // Set the expected concurrency
+    .setConcurrency(threadCount)
+    .build();
+```
+@endsnippet
+@startsnippet{node}
+```{js}
+// TODO Add concurrency to pipeline builder
+const pipeline = new DeviceDetectionOnPremisePipelineBuilder({
+    dataFile: datafile,
+    performanceProfile: 'LowMemory',
+    concurrency: threadCount
+}).build();
+```
+@endsnippet
+@startsnippet{php}
+For PHP, the concurrency options is set in the php.ini file.
+```
+extension=/usr/lib/php/20170718/FiftyOneDegreesHashEngine.so
+FiftyOneDegreesHashEngine.data_file=/path to your file/51Degrees-LiteV4.1.hash
+FiftyOneDegreesHashEngine.performance_profile=LowMemory
+FiftyOneDegreesHashEngine.concurrency=30
+```
+@endsnippet
+@startsnippet{python}
+```{py}
+pipeline = DeviceDetectionOnPremisePipelineBuilder(
+    data_file_path = data_file, 
+    performance_profile = 'LowMemory', 
+    concurrency = thread_count).build()
+```
+@endsnippet
+@startsnippet{c}
+```{c}
+ConfigHash config = HashLowMemoryConfig;
+
+config.strings.concurrency = threadCount;
+config.properties.concurrency = threadCount;
+config.values.concurrency = threadCount;
+config.profiles.concurrency = threadCount;
+config.nodes.concurrency = threadCount;
+config.profileOffsets.concurrency = threadCount;
+config.maps.concurrency = threadCount;
+config.components.concurrency = threadCount;
+
+StatusCode status = HashInitManagerFromFile(
+    &manager,
+    &dataSetConfig,
+    &properties,
+    dataFileLocation,
+    exception);
+```
+@endsnippet
+@startsnippet{cpp}
+```{cpp}
+ConfigHash* config = new ConfigHash();
+config->setLowMemory();
+config->setConcurrency(threadCount);
+
+EngineHash *engine =
+	new DeviceDetection::Hash::EngineHash(
+	dataFilePath,
+	config,
+	properties);
+```
+@endsnippet
+@endsnippets

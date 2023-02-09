@@ -347,6 +347,8 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "Onpremiseengines=[On-premise engines](@ref Concepts_FlowElements_OnPremiseEngine)" \
                          "parallel=[parallel](@ref Features_ParallelExecution)" \
                          "parallelexecution=[parallel execution](@ref Features_ParallelExecution)" \
+                         "PerformanceProfile=[PerformanceProfile](@ref DeviceDetection_Features_PerformanceOptions)" \
+                         "PerformanceProfiles=[PerformanceProfiles](@ref DeviceDetection_Features_PerformanceOptions)" \
                          "Pipeline=[Pipeline](@ref Concepts_Pipeline)" \
                          "pipeline=[Pipeline](@ref Concepts_Pipeline)" \
                          "pipelines=[Pipelines](@ref Concepts_Pipeline)" \
