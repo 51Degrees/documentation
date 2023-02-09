@@ -49,7 +49,6 @@ DeviceDetectionOnPremisePipelineBuilder builder = new DeviceDetectionPipelineBui
 @endsnippet
 @startsnippet{node}
 ```{js}
-// TODO Add concurrency to pipeline builder
 const pipeline = new DeviceDetectionOnPremisePipelineBuilder({
     dataFile: datafile,
     performanceProfile: 'LowMemory',
