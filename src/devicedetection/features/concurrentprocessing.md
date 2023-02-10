@@ -26,6 +26,7 @@ The snippet below shows how to set this when creating the engine:
 @showsnippet{cpp,C++}
 @defaultsnippet{Select a tab to view language specific information on setting the concurrency.}
 @startsnippet{dotnet}
+In code:
 ```{cs}
 var pipeline =  new DeviceDetectionPipelineBuilder(loggerFactory)
     .UseOnPremise(dataFile, null, false)
@@ -35,8 +36,25 @@ var pipeline =  new DeviceDetectionPipelineBuilder(loggerFactory)
     .SetConcurrency(threadCount)
     .Build();
 ```
+Or in config file:
+```{json}
+"PipelineOptions": {
+    "Elements": [
+        {
+            "BuilderName": "DeviceDetectionHashEngineBuilder",
+            "BuildParameters": {
+                "DataFile": "51Degrees-LiteV4.1.hash",
+                "PerformanceProfile": "LowMemory",
+                "Concurrency": 30
+            }
+        }
+    ...
+    ]
+}
+```
 @endsnippet
 @startsnippet{java}
+In code:
 ```{java}
 DeviceDetectionOnPremisePipelineBuilder builder = new DeviceDetectionPipelineBuilder()
     .useOnPremise(dataFileLocation, false)
@@ -46,14 +64,47 @@ DeviceDetectionOnPremisePipelineBuilder builder = new DeviceDetectionPipelineBui
     .setConcurrency(threadCount)
     .build();
 ```
+Or in config file:
+```{xml}
+<PipelineOptions>
+    <Elements>
+        <Element>
+            <BuildParameters>
+                <DataFile>51Degrees-LiteV4.1.hash</DataFile>
+                <PerformanceProfile>LowMemory</PerformanceProfile>
+                <Concurrency>30</Concurrency>
+            </BuildParameters>
+            <BuilderName>DeviceDetectionHashEngine</BuilderName>
+        </Element>
+        ...
+    </Elements>
+</PipelineOptions>
+```
 @endsnippet
 @startsnippet{node}
+In code:
 ```{js}
 const pipeline = new DeviceDetectionOnPremisePipelineBuilder({
     dataFile: datafile,
     performanceProfile: 'LowMemory',
     concurrency: threadCount
 }).build();
+```
+Or in config file:
+```{json}
+"PipelineOptions": {
+    "Elements": [
+        {
+            "elementName": "deviceDetectionOnPremise",
+            "elementParameters": {
+                "performanceProfile": "LowMemmory",
+                "dataFilePath": "51Degrees-LiteV4.1.hash",
+                "concurrency": 30
+            }
+        }
+        ...
+    ]
+}
 ```
 @endsnippet
 @startsnippet{php}
@@ -66,11 +117,29 @@ FiftyOneDegreesHashEngine.concurrency=30
 ```
 @endsnippet
 @startsnippet{python}
+In code:
 ```{py}
 pipeline = DeviceDetectionOnPremisePipelineBuilder(
     data_file_path = data_file, 
     performance_profile = 'LowMemory', 
     concurrency = thread_count).build()
+```
+Or in config file:
+```{json}
+"PipelineOptions": {
+    "Elements": [
+        {
+            "elementName": "DeviceDetectionOnPremise",
+            "elementPath": "fiftyone_devicedetection_onpremise.devicedetection_onpremise",
+            "elementParameters": {
+                "data_file_path": "51Degrees-LiteV4.1.hash",
+                "performance_profile": "LowMemory",
+                "concurrency": 30
+            }
+        }
+    ...
+    ]
+}
 ```
 @endsnippet
 @startsnippet{c}
