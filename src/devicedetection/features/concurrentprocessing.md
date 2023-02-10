@@ -2,15 +2,15 @@
 
 # Introduction
 
-When using a @PerformanceProfile that loads collections completely into memory, running parallel
-processing using a single @Pipeline is not limited. However, when using a lower memory @PerformanceProfile
-where collections are partially or fully read from file, consideration needs to be given to how
-many parallel threads will be accessing the @Pipeline. 
+When using a @PerformanceProfile that loads collections completely into memory, the API's ability
+to handle concurrent requests is only limited by the available hardware resources. However, when
+using a lower memory @PerformanceProfile where collections are partially or fully read from file,
+consideration needs to be given to how many parallel threads will be accessing the @Pipeline. 
 
 # Detail
 
 For @PerformanceProfiles such as `LowMemory` and `Balanced`, the concurrency is limited by the number
-of file handles available in the file pool. In most implementations, the default value for this, is
+of file handles available in the file pool. In most implementations, the default value for this is
 the number of cores available on the machine. If more threads than this will be used, the expected
 concurrency must be configured when creating the engine, so that
 the file pool is created with the correct size to handle the expected number of concurrent accesses.
