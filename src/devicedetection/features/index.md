@@ -15,3 +15,5 @@
 @subpage DeviceDetection_Features_TacLookup
 
 @subpage DeviceDetection_Features_UserAgentClientHints
+
+@subpage DeviceDetection_Features_ConcurrentProcessing
