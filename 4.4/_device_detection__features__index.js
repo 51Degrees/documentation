@@ -7,5 +7,6 @@ var _device_detection__features__index =
     [ "Native Key Lookup", "_device_detection__features__native_key_lookup.html", null ],
     [ "Performance Options", "_device_detection__features__performance_options.html", null ],
     [ "TAC Lookup", "_device_detection__features__tac_lookup.html", null ],
-    [ "User Agent Client Hints", "_device_detection__features__user_agent_client_hints.html", null ]
+    [ "User Agent Client Hints", "_device_detection__features__user_agent_client_hints.html", null ],
+    [ "Concurrent Processing", "_device_detection__features__concurrent_processing.html", null ]
 ];

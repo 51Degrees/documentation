@@ -50,6 +50,7 @@ var NAVTREEINDEX0 =
 "_concepts__terminology.html":[4,6],
 "_device_detection__features__apple_detection.html":[5,2,0],
 "_device_detection__features__apple_device_table.html":[5,2,1],
+"_device_detection__features__concurrent_processing.html":[5,2,8],
 "_device_detection__features__csv_data_file.html":[5,2,2],
 "_device_detection__features__false_positive_control.html":[5,2,3],
 "_device_detection__features__index.html":[5,2],
