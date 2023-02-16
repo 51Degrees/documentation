@@ -139,18 +139,27 @@ Calling the cloud from client-side code is simpler in some ways, as you
 don't need to worry about manually including the Sec-CH-UA values in
 the calls to the cloud.
 However, it does have the additional complication that 
-[Client Hints are not sent to third parties by default](https://web.dev/user-agent-client-hints/#hint-scope-and-cross-origin-requests).
-To get around this, you will need to include the required values in the 
-Permissions-Policy header:
+['high entropy' Client Hints are not sent to third parties by default](https://web.dev/user-agent-client-hints/#hint-scope-and-cross-origin-requests).
+To get around this, you will need to let the browser know that it's okay to send the hints to our cloud service by including the `Delegate-CH` element in the `Head` of your page:
+
+```
+<head>
+    <meta http-equiv="Delegate-CH" content="sec-ch-ua-full-version-list https://cloud.51degrees.com; sec-ch-ua-model https://cloud.51degrees.com; sec-ch-ua-platform https://cloud.51degrees.com; sec-ch-ua-platform-version https://cloud.51degrees.com"/>
+</head>
+```
+
+If you would rather use HTTP response headers than HTML, you can use the `Permissions-Policy` 
+header to do the same job as `Delegate-CH`. This header will need to be configured with the 
+following values:
 
 - ch-ua-full-version-list=(self "https://cloud.51degrees.com")  
 - ch-ua-platform=(self "https://cloud.51degrees.com")  
 - ch-ua-platform-version=(self "https://cloud.51degrees.com")
-- ch-ua-model=(self "https://cloud.51degrees.com")  
+- ch-ua-model=(self "https://cloud.51degrees.com") 
 
-Note that the browser will only send UA-CH headers to the third party that are also 
-requested by the first-party. This means that you'll also need to set your Accept-CH header 
-to request the UA-CH headers:
+In addition, when using `Permissions-Policy`, the browser will only send UA-CH headers to the third 
+party that are also requested by the first-party. This means that you'll also need to set your 
+`Accept-CH` header to request the UA-CH headers:
 
 - Sec-CH-UA  
 - Sec-CH-UA-Mobile  
