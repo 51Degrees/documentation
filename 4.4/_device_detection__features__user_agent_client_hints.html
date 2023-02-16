@@ -131,14 +131,15 @@ $(document).ready(function(){initNavTree('_device_detection__features__user_agen
 <li>The call to the cloud must be modified to include the UA-CH header values you are interested in. For example: <code><a href="https://cloud.51degrees.com/api/v4/RESOURCEKEY.json?user-agent=UA&sec-ch-ua=HEADERVALUE&sec-ch-ua-model=HEADERVALUE2">https://cloud.51degrees.com/api/v4/RESOURCEKEY.json?user-agent=UA&amp;sec-ch-ua=HEADERVALUE&amp;sec-ch-ua-model=HEADERVALUE2</a></code></li>
 </ol>
 <p><a class="anchor" id="UACH_Cloud_ClientSide"></a><a class="el" href="_device_detection__features__user_agent_client_hints.html#UACH_Cloud_ClientSide">#</a> </p><h3>Calling the Cloud from client-side code</h3>
-<p>Calling the cloud from client-side code is simpler in some ways, as you don't need to worry about manually including the Sec-CH-UA values in the calls to the cloud. However, it does have the additional complication that <a href="https://web.dev/user-agent-client-hints/#hint-scope-and-cross-origin-requests">Client Hints are not sent to third parties by default</a>. To get around this, you will need to include the required values in the Permissions-Policy header:</p>
+<p>Calling the cloud from client-side code is simpler in some ways, as you don't need to worry about manually including the Sec-CH-UA values in the calls to the cloud. However, it does have the additional complication that <a href="https://web.dev/user-agent-client-hints/#hint-scope-and-cross-origin-requests">'high entropy' Client Hints are not sent to third parties by default</a>. To get around this, you will need to let the browser know that it's okay to send the hints to our cloud service by including the <code>Delegate-CH</code> element in the <code>Head</code> of your page:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;head&gt;</div><div class="c-code__line">    &lt;meta http-equiv=&quot;Delegate-CH&quot; content=&quot;sec-ch-ua-full-version-list https://cloud.51degrees.com; sec-ch-ua-model https://cloud.51degrees.com; sec-ch-ua-platform https://cloud.51degrees.com; sec-ch-ua-platform-version https://cloud.51degrees.com&quot;/&gt;</div><div class="c-code__line">&lt;/head&gt;</div></div><p>If you would rather use HTTP response headers than HTML, you can use the <code>Permissions-Policy</code> header to do the same job as <code>Delegate-CH</code>. This header will need to be configured with the following values:</p>
 <ul>
 <li>ch-ua-full-version-list=(self "https://cloud.51degrees.com")</li>
 <li>ch-ua-platform=(self "https://cloud.51degrees.com")</li>
 <li>ch-ua-platform-version=(self "https://cloud.51degrees.com")</li>
 <li>ch-ua-model=(self "https://cloud.51degrees.com")</li>
 </ul>
-<p>Note that the browser will only send UA-CH headers to the third party that are also requested by the first-party. This means that you'll also need to set your Accept-CH header to request the UA-CH headers:</p>
+<p>In addition, when using <code>Permissions-Policy</code>, the browser will only send UA-CH headers to the third party that are also requested by the first-party. This means that you'll also need to set your <code>Accept-CH</code> header to request the UA-CH headers:</p>
 <ul>
 <li>Sec-CH-UA</li>
 <li>Sec-CH-UA-Mobile</li>
