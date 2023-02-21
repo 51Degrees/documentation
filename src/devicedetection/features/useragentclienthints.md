@@ -220,7 +220,11 @@ navigator.userAgentData.getHighEntropyValues(
             "fullVersionList"
         ])
     .then((uach) => {
-            // Log the UA-CH data in it's client-side format.
+            // Add low-entropy data if you want it
+            ua.brands = navigator.userAgentData.brands;
+            ua.mobile = navigator.userAgentData.mobile;
+            ua.platform = navigator.userAgentData.platform;
+            // Log the UA-CH data in its client-side format.
             console.log(uach);
             // Convert to the format used in the UA-CH HTTP headers.
             var headerFormatUach = convertToHeaderFormat(uach);
