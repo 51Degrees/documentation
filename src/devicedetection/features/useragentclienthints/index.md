@@ -4,6 +4,6 @@
 
 @subpage DeviceDetection_Features_UACH_Headers
 
-@subpage DeviceDetection_Features_UACH_JavaScript
+@subpage DeviceDetection_Features_UACH_Javascript
 
 @subpage DeviceDetection_Features_UACH_RequiredValues
