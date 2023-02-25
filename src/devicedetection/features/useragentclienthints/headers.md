@@ -83,8 +83,8 @@ by default for on-premise)
 If you're unsure which ones are relevant for you, see the 
 [required values](@ref DeviceDetection_Features_UACH_RequiredValues) page.
 
-@anchor UACH_Http_Headers_Javascript_Integrated
-[#](@ref UACH_Http_Headers_Javascript_Integrated)
+@anchor UACH_Http_Headers_Integrated
+[#](@ref UACH_Http_Headers_Integrated)
 ## Integrated
 
 If you are using our [web integration](@ref Features_WebIntegration), then this will take 
@@ -93,8 +93,8 @@ care of setting the header automatically.
 This uses an internal element called `SetHeadersElement` to set the values of response headers
 based on any `SetHeader*` properties that are present. 
 
-@anchor UACH_Http_Headers_Javascript_NonIntegrated
-[#](@ref UACH_Http_Headers_Javascript_NonIntegrated)
+@anchor UACH_Http_Headers_NonIntegrated
+[#](@ref UACH_Http_Headers_NonIntegrated)
 ## Non-integrated
 
 If you don't want to, or can't, use the web integrations as described above, then you'll need to 
@@ -106,6 +106,8 @@ you are populating.
 This will also ensure that the header is only sent to browsers that support UA-CH.
 Alternatively, you can just request all the [available](https://wicg.github.io/ua-client-hints/#http-ua-hints) values if you want a simpler solution.
 
+@anchor UACH_Http_Headers_B2B
+[#](@ref UACH_Http_Headers_B2B)
 ## B2B Service Supplier
 
 If your service would be classed as a third-party in the 'browser to web server' communication, 

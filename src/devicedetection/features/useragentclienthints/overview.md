@@ -5,8 +5,7 @@
 User Agent Client Hints (UA-CH) are part of a Google proposal to replace the 
 existing User-Agent HTTP header.
 
-This page gives an overview of UA-CH detection in our API and guidance in 
-navigating our documentation around UA-CH.
+This page gives an overview of UA-CH detection in our API and guidance on which of several possible mechanisms to use based on your use-case.
 
 This topic has the following sub pages:
 
@@ -39,22 +38,22 @@ as there is [no other way to do so](https://docs.microsoft.com/en-us/microsoft-e
 
 Support for getting values using the UA-CH [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API) was added in API versions from [TODO DATE] and data files from [TODO DATE].
 
+@anchor UACH_Guidance
+[#](@ref UACH_Guidance)
 # Guidance
 
 UA-CH has several different mechanisms for accessing these values. The following section 
 explains our recommendations for different use-cases.
 
-- On-premise direct to browser:
+- Our Pipeline API is running on-premise on the web server sending responses to the end-user:
   - If you are using our web integration, ensure the `SetHeaderBrowserAccept-CH`, `SetHeaderHardwareAccept-CH` and `SetHeaderPlatformAccept-CH` properties are included (all properties are included by default for on-premise). Our software will ensure the `Accept-CH` header is set to request the client hints you need from the browser.
   - If you are not using our web integration, see the 'non-integrated' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers)
-- On-premise B2B service supplier:
-  - If you are using our web integration, ensure the `JavascriptGetHighEntropyValues` property is included (all properties are included by default for on-premise). This will use the UA-CH JavaScript API to get the values you need.
-  - If you are not using our web integration, see the 'non-integrated' section on the [UA-CH JavaScript page](@ref DeviceDetection_Features_UACH_Javascript).
-  - For better performance - You'll need ask your clients to set `Delegate-CH` or `Permissions-Policy`. This will allow their user's browser to send UA-CH values to your service.
+- Our Pipeline API is running on-premise as part of a B2B service endpoint (i.e. not serving responses to end-users directly):
+  - Ideally, we recommend you ask your clients to set `Delegate-CH` or `Permissions-Policy`. This will allow their user's browser to send UA-CH values to your service. See the 'B2B service supplier' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers) for instructions.
+  - If the above is not feasible, and/or you want a backup option in case your clients do not implement the required changes, then you can use the UA-CH JavaScript API to retrieve the values. See the 'non-integrated' section on the [UA-CH JavaScript page](@ref DeviceDetection_Features_UACH_Javascript) for instructions.
 - Calling our cloud service from client-side code:
-  - Simple option - Ensure your resource key includes the `JavascriptGetHighEntropyValues` property. This will gather the values and send them to our cloud service.
-  - For better performance - Set `Delegate-CH` or `Permissions-Policy` as described in the 'Cloud' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers)
-
+  - For best performance, set `Delegate-CH` or `Permissions-Policy` as described in the 'Cloud' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers)
+  - If making the changes for the option above is not feasible, you can simply ensure your resource key includes the `JavascriptGetHighEntropyValues` property. This will gather the values and send them to our cloud service without any other changes required.
 
 @anchor UACH_Background
 [#](@ref UACH_Background)	

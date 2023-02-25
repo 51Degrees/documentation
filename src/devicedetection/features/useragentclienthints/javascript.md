@@ -40,8 +40,8 @@ to your server.
 In either case, you need to ensure the `JavascriptGetHighEntropyValues` property is included 
 in the results. (all properties are included by default for on-premise)
 
-@anchor UACH_Http_Headers_Javascript_Integrated
-[#](@ref UACH_Http_Headers_Javascript_Integrated)
+@anchor UACH_Javascript_Integrated
+[#](@ref UACH_Javascript_Integrated)
 ## Integrated
 
 If you are using our [web integration](@ref Features_WebIntegration) with 
@@ -72,8 +72,8 @@ For example:
 },
 ```
 
-@anchor UACH_Http_Headers_Javascript_NonIntegrated
-[#](@ref UACH_Http_Headers_Javascript_NonIntegrated)
+@anchor UACH_Javascript_NonIntegrated
+[#](@ref UACH_Javascript_NonIntegrated)
 ## Non-integrated
 
 If you don't want to, or can't, use the web integrations as described above, then you'll need to 
