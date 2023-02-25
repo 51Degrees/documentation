@@ -97,7 +97,7 @@ based on any `SetHeader*` properties that are present.
 [#](@ref UACH_Http_Headers_NonIntegrated)
 ## Non-integrated
 
-If you don't want to, or can't, use the web integrations as described above, then you'll need to 
+If you don't want to, or can't, use the web integration as described above, then you'll need to 
 manually set the `Accept-CH` header.
 
 The values of the 'SetHeader*Accept-CH' properties will provide a list of the values that need 
@@ -117,6 +117,6 @@ This is because the 'high-entropy' UA-CH values are not sent to third-parties by
 
 In order to do this, you'll need to ask your customers to use the `Delegate-CH` HTML directive or
 the `Permissions-Policy` HTTP header.
-This will be similar to as described [above](@ref UACH_Headers_Cloud) for calls to our cloud service. (In that instance, our cloud service is the third-party)
+This will be similar to the changes described [above](@ref UACH_Headers_Cloud) for calls to our cloud service. (In that instance, our cloud service is the third-party)
 The difference being that you'll need to replace 'https://cloud.51degrees.com' with the domain for your service.
 

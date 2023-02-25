@@ -50,7 +50,7 @@ care of sending the snippet to the client device, getting the values back to the
 passing them into our API.
 
 If you're using our cloud service, no other changes are needed.
-However, if you're using on-premise solution then you'll also need to modify your configuration 
+However, if you're using our on-premise solution, then you'll also need to modify your configuration 
 to include a new engine called `UachJsConversionEngine` to convert the result from the 
 JavaScript snippet to evidence values that can be used by the existing device detection engine.
 
@@ -80,11 +80,13 @@ If you don't want to, or can't, use the web integrations as described above, the
 handle the steps of getting the values from the JavaScript API, transferring those to the server
 and adding them to the pipeline evidence values.
 
-The following snippet demonstrates how to get the UA-CH values using JavaScript and 
-convert them to the same format used in the HTTP headers.
-The mechanism to get this value from the client device to your server will depend on your 
-infrastructure. Once there, it will need to be added to the flowData evidence using 
-the key `cookie.51D_GetHighEntropyValues`.
+The following snippet demonstrates how to get the UA-CH values using JavaScript.
+The exact mechanism to get this value from the client device to your server will depend on your 
+infrastructure. Once there, it will need to be added to the flowData evidence:
+
+```
+flowData.AddEvidence("cookie.51D_GetHighEntropyValues", b64Uach);
+```
 
 <div class="c-code__block c-code__block--outline">
 <pre>
@@ -107,7 +109,7 @@ if (navigator.userAgentData) {
 </div>
 
 If you're using our cloud service, no other changes are needed.
-However, if you're using on-premise solution then you'll also need to modify your configuration 
+However, if you're using on-premise solution, then you'll also need to modify your configuration 
 to include a new engine called `UachJsConversionEngine` to convert the base-64 json from the 
 JavaScript snippet above to evidence values that can be used by the existing device detection engine.
 
