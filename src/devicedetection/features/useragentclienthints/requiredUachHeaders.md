@@ -1,10 +1,10 @@
-@page DeviceDetection_Features_UACH_RequiredValues Required Values
+@page DeviceDetection_Features_UACH_RequiredUachHeaders Required UA-CH Headers
 
 # Overview
 
-This page explains which UA-CH properties you need in order to get results for different properties.
+This page explains which UA-CH values you need in order to get results for different properties.
 
-If you just want to get all properties, you'll need the following values. We generally 
+If you just want to get all properties, you'll need the following UA-CH values. We generally 
 recommend supplying all of these for the best detection results:
 
 - Sec-CH-UA

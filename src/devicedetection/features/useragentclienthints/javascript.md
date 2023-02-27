@@ -80,6 +80,9 @@ If you don't want to, or can't, use the web integrations as described above, the
 handle the steps of getting the values from the JavaScript API, transferring those to the server
 and adding them to the pipeline evidence values.
 
+This will require a good knowledge of your production environment and how communication works 
+between your client and server side code.
+
 The following snippet demonstrates how to get the UA-CH values using JavaScript.
 The exact mechanism to get this value from the client device to your server will depend on your 
 infrastructure. Once there, it will need to be added to the flowData evidence:

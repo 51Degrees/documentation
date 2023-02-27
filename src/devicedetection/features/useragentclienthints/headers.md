@@ -100,14 +100,20 @@ based on any `SetHeader*` properties that are present.
 If you don't want to, or can't, use the web integration as described above, then you'll need to 
 manually set the `Accept-CH` header.
 
-The values of the 'SetHeader*Accept-CH' properties will provide a list of the values that need 
-to be set on response headers in order to request the UA-CH headers relevant to the properties 
-you are populating. 
-This will also ensure that the header is only sent to browsers that support UA-CH.
-Alternatively, you can just request all the [available](https://wicg.github.io/ua-client-hints/#http-ua-hints) values if you want a simpler solution.
+We don't provide code samples for this, due to the number of different languages and web frameworks.
+So, you'll need to know how to set response headers using your particular set of tools.
 
-@anchor UACH_Http_Headers_B2B
-[#](@ref UACH_Http_Headers_B2B)
+We recommend using the values of the 'SetHeader*Accept-CH' device detection properties from our API 
+to get a list of the UA-CH headers that you need to request. This has a couple of benefits:
+1. You won't waste bandwidth sending `Accept-CH` to browsers that don't support UA-CH. 
+2. If new UA-CH headers are added, and we use them for device detection, you won't need to 
+   change any code in order to request the new headers from the browser.
+
+Alternatively, you can just request all the [required](@ref DeviceDetection_Features_UACH_RequiredUachHeaders) 
+headers if you want a more immediate solution.
+
+@anchor UACH_Http_Headers_BtoB
+[#](@ref UACH_Http_Headers_BtoB)
 ## B2B Service Supplier
 
 If your service would be classed as a third-party in the 'browser to web server' communication, 

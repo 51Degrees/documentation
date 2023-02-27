@@ -7,6 +7,10 @@ existing User-Agent HTTP header.
 
 This page gives an overview of UA-CH detection in our API and guidance on which of several possible mechanisms to use based on your use-case.
 
+There are two ways to retrieve UA-CH values. You can either set HTTP headers in your response to 
+the user's browser to ask it to send UA-CH values as HTTP Headers, or you can use a JavaScript 
+API to retrieve the UA-CH values on the client.
+
 This topic has the following sub pages:
 
 - [Headers](@ref DeviceDetection_Features_UACH_Headers) - How to use UA-CH HTTP headers with our API.
@@ -15,15 +19,15 @@ This topic has the following sub pages:
 
 In addition, we have examples that demonstrate detection using UA-CH in a variety of scenarios:
 
-- [On-premise console](@ref Examples_DeviceDetection_GettingStarted_Console_Index) 
-- [On-premise web page](@ref Examples_DeviceDetection_GettingStarted_Web_Index) 
+- [On-premise console](@ref Examples_DeviceDetection_GettingStarted_Console_OnPremise) 
+- [On-premise web page](@ref Examples_DeviceDetection_GettingStarted_Web_OnPremise) 
 - [Cloud console](@ref Examples_DeviceDetection_GettingStarted_Console_Cloud) 
 - [Cloud web page](@ref Examples_DeviceDetection_GettingStarted_Web_Cloud)
 - Our [Configurator](https://configure.51degrees.com/) site includes an example on the 3rd page for how to implement a fully client-side solution that calls our cloud service directly.
 
 The console examples pass UA-CH values directly to the API, so will work in any situation.
 The web examples run as a simple web page, so you will need a browser that supports UA-CH in 
-order to try it out.
+order to try them out.
 
 @anchor UACH_Support
 [#](@ref UACH_Support)
