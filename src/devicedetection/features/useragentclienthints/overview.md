@@ -15,7 +15,7 @@ This topic has the following sub pages:
 
 - [Headers](@ref DeviceDetection_Features_UACH_Headers) - How to use UA-CH HTTP headers with our API.
 - [JavaScript](@ref DeviceDetection_Features_UACH_Javascript) - How to use the UA-CH JavaScript API with our API.
-- [Required Values](@ref DeviceDetection_Features_UACH_RequiredValues) - Which UA-CH values do I need?
+- [Required Values](@ref DeviceDetection_Features_UACH_RequiredUachHeaders) - Which UA-CH values do I need?
 
 In addition, we have examples that demonstrate detection using UA-CH in a variety of scenarios:
 

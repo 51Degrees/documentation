@@ -29,7 +29,7 @@ you will need to set the response headers manually.
 
 @anchor UACH_Headers_Cloud
 [#](@ref UACH_Headers_Cloud)
-## Cloud
+# Cloud
 
 Make sure that one or more of the following properties are included with your resource key:
 - `SetHeaderBrowserAccept-CH`
@@ -44,7 +44,7 @@ section below for the two approaches to doing this.
 If you are calling our cloud service directly from the client device, then you'll need to let 
 the browser know that its okay to send the hints to our cloud service. There are two ways to do this.
 
-### Delegate-CH
+## Delegate-CH
 
 This only requires a change to HTML. Simply add the following `meta` element to the `head` of your page.
 
@@ -54,7 +54,7 @@ This only requires a change to HTML. Simply add the following `meta` element to 
 </head>
 ```
 
-### Permissions-Policy
+## Permissions-Policy
 
 If you would rather use HTTP response headers than HTML, you can use the `Permissions-Policy` 
 header to do the same job as `Delegate-CH`. This header will need to be configured with the 
@@ -81,7 +81,7 @@ In either case, you need to ensure the relevant `SetHeaderBrowserAccept-CH`, `Se
 `SetHeaderPlatformAccept-CH` properties are included in the results. (all properties are included 
 by default for on-premise)
 If you're unsure which ones are relevant for you, see the 
-[required values](@ref DeviceDetection_Features_UACH_RequiredValues) page.
+[required values](@ref DeviceDetection_Features_UACH_RequiredUachHeaders) page.
 
 @anchor UACH_Http_Headers_Integrated
 [#](@ref UACH_Http_Headers_Integrated)
