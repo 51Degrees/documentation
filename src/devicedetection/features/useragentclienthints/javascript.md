@@ -2,7 +2,8 @@
 
 # Introduction
 
-User-Agent Client Hint values can be obtained using HTTP headers or a [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API).
+User-Agent Client Hints (UA-CH) values can be obtained using HTTP headers or 
+a [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API).
 This page explains how to use the JavaScript approach with our API.
 
 The [UA-CH headers page](@ref DeviceDetection_Features_UACH_Headers) explains the alternative.
@@ -19,7 +20,7 @@ approach described below. If not, you'll need to use the 'non-integrated' approa
 # Cloud
 
 Firstly, ensure that the `JavascriptGetHighEntropyValues` property is selected when 
-you create your resource key. This contains the JavaScript snippet to get the values from 
+you create your Resource Key. This contains the JavaScript snippet to get the values from 
 the UA-CH API on the client device.
 
 If you are calling our cloud service directly from the client device, our solution will take care 
@@ -38,7 +39,7 @@ need a way to get the necessary JavaScript to run on the client and get the valu
 to your server.
 
 In either case, you need to ensure the `JavascriptGetHighEntropyValues` property is included 
-in the results. (all properties are included by default for on-premise)
+in the results (all properties are included by default for on-premise).
 
 @anchor UACH_Javascript_Integrated
 [#](@ref UACH_Javascript_Integrated)
@@ -85,7 +86,7 @@ between your client and server side code.
 
 The following snippet demonstrates how to get the UA-CH values using JavaScript.
 The exact mechanism to get this value from the client device to your server will depend on your 
-infrastructure. Once there, it will need to be added to the flowData evidence:
+infrastructure. Once there, it will need to be added to the @flowdata evidence:
 
 ```
 flowData.AddEvidence("cookie.51D_GetHighEntropyValues", b64Uach);

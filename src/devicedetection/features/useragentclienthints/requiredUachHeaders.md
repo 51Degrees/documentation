@@ -2,7 +2,8 @@
 
 # Overview
 
-This page explains which UA-CH values you need in order to get results for different properties.
+This page explains which User-Agent Client Hints (UA-CH) values you need in order to get 
+results for different properties.
 
 If you just want to get all properties, you'll need the following UA-CH values. We generally 
 recommend supplying all of these for the best detection results:
@@ -19,13 +20,20 @@ used. The table at the end shows which UA-CH values are needed for each 'compone
 
 # Background
 
-51Degrees groups properties associated with the request by ‘component’. The components 51Degrees recognize are hardware device, platform (operating system), browser, and crawler.
+51Degrees groups properties associated with the request by ‘component’. The components 51Degrees 
+recognize are hardware device, platform (operating system), browser, and crawler.
 
-The User-Agent header contains information relating to all four of these components. User Agent Client Hints values are different in that they relate to varying numbers of components. For example, the Sec-CH-UA-Model header only relates to the hardware device component.
+The User-Agent header contains information relating to all four of these components. User-Agent 
+Client Hints values are different in that they relate to varying numbers of components. For 
+example, the Sec-CH-UA-Model header only relates to the hardware device component.
 
-However, multiple UA-CH values are sometimes needed to fully identify a component. Apple devices running Chrome will not populate the Sec-CH-UA-Model header, so that won't help give us an answer to the hardware component. Instead, we need the Sec-CH-UA-Platform header, which can at least tell us that this is an iOS device.
+However, multiple UA-CH values are sometimes needed to fully identify a component. For example, 
+Apple devices running Chrome will not populate the Sec-CH-UA-Model header, so that won't help 
+give us an answer to the hardware component. Instead, we need the Sec-CH-UA-Platform header, 
+which can at least tell us that this is an iOS device.
 
-We concatenate the various UA-CH headers that are needed to identify a component to create ‘pseudo-headers’. These are then used internally to perform the detection. 
+We concatenate the various UA-CH headers that are needed to identify a component to create 
+‘pseudo-headers’. These are then used internally to perform the detection. 
 
 
 @anchor UACH_Http_Headers_Pseudoheaders

@@ -2,17 +2,17 @@
 
 # Introduction
 
-User Agent Client Hints (UA-CH) are part of a Google proposal to replace the 
+User-Agent Client Hints (UA-CH) are part of a Google proposal to replace the 
 existing User-Agent HTTP header.
 
 This page gives an overview of UA-CH detection in our API and guidance on which of several possible mechanisms to use based on your use-case.
 
 There are two ways to retrieve UA-CH values. You can either set HTTP headers in your response to 
-the user's browser to ask it to send UA-CH values as HTTP Headers, or you can use a JavaScript 
+the user's browser to ask it to send UA-CH values as HTTP headers, or you can use a JavaScript 
 API to retrieve the UA-CH values on the client. See the [Guidance](@ref UACH_Guidance) section 
 below if you're unsure which to use.
 
-This topic has the following sub pages:
+This topic has the following subpages:
 
 - [Headers](@ref DeviceDetection_Features_UACH_Headers) - How to use UA-CH HTTP headers with our API.
 - [JavaScript](@ref DeviceDetection_Features_UACH_Javascript) - How to use the UA-CH JavaScript API with our API.
@@ -24,11 +24,11 @@ In addition, we have examples that demonstrate detection using UA-CH in a variet
 - [On-premise web page](@ref Examples_DeviceDetection_GettingStarted_Web_OnPremise) 
 - [Cloud console](@ref Examples_DeviceDetection_GettingStarted_Console_Cloud) 
 - [Cloud web page](@ref Examples_DeviceDetection_GettingStarted_Web_Cloud)
-- Our [Configurator](https://configure.51degrees.com/) site includes an example on the 3rd page for how to implement a fully client-side solution that calls our cloud service directly.
+- Our [Configurator](@ref Concepts_Configurator) site includes an example (visible after the Resource Key generation) for how to implement a fully client-side solution that calls our cloud service directly.
 
 The console examples pass UA-CH values directly to the API, so will work in any situation.
-The web examples run as a simple web page, so you will need a browser that supports UA-CH in 
-order to try them out.
+The web examples run as a simple web page, so you will need a browser that supports UA-CH such 
+as Chrome, Edge or other Chromium-based browsers in order to try them out.
 
 @anchor UACH_Support
 [#](@ref UACH_Support)
@@ -38,7 +38,7 @@ The 51Degrees Device Detection API has provided support for detection
 based on one of the Client Hints headers (Sec-CH-UA) in data files 
 from 7 December 2020. Full support for the detection of devices, operating systems, and browsers from UA-CH headers was added in Version 4.4 and data files from [June 2022 onwards](https://51degrees.com/blog/updates-to-user-agent-client-hints-version-4-4).
 
-This support also includes [identifying Windows 11 using User Agent Client Hints](https://51degrees.com/blog/windows-11-detectable-with-uach)
+This support also includes [identifying Windows 11 using User-Agent Client Hints](https://51degrees.com/blog/windows-11-detectable-with-uach)
 as there is [no other way to do so](https://docs.microsoft.com/en-us/microsoft-edge/web-platform/how-to-detect-win11).
 
 Support for getting values using the UA-CH [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API) was added in API versions from [TODO DATE] and data files from [TODO DATE].
@@ -58,7 +58,7 @@ recommendations for different use-cases.
   - If the above is not feasible, and/or you want a backup option in case your clients do not implement the required changes, then you can use the UA-CH JavaScript API to retrieve the values. See the 'non-integrated' section on the [UA-CH JavaScript page](@ref DeviceDetection_Features_UACH_Javascript) for instructions.
 - Calling our cloud service from client-side code:
   - For best performance, set `Delegate-CH` or `Permissions-Policy` as described in the 'Cloud' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers)
-  - If making the changes for the option above is not feasible, you can simply ensure your resource key includes the `JavascriptGetHighEntropyValues` property. This will gather the values and send them to our cloud service without any other changes required.
+  - If making the changes for the option above is not feasible, you can simply ensure your Resource Key includes the `JavascriptGetHighEntropyValues` property. This will gather the values and send them to our cloud service without any other changes required.
 
 @anchor UACH_Background
 [#](@ref UACH_Background)	
@@ -78,7 +78,7 @@ In September 2021, there was [further detail](https://blog.chromium.org/2021/09/
 about the plan for the phased deprecation of the User-Agent.
 This will start with Chrome 101 (roughly Q2 2022) and end with Chrome 113 (roughly Q2 2023).
 
-User Agent Client Hints extends the previously existing Client Hints content 
+User-Agent Client Hints extends the previously existing Client Hints content 
 negotiation feature.
 
 There is documentation of the general Client Hints feature on 
@@ -87,7 +87,7 @@ from [Google](https://web.dev/user-agent-client-hints/).
 
 Caniuse.com can be used to check browser support for both 
 [Client Hints](https://caniuse.com/client-hints-dpr-width-viewport) and 
-[User Agent Client Hints](https://caniuse.com/mdn-api_navigator_useragentdata).
+[User-Agent Client Hints](https://caniuse.com/mdn-api_navigator_useragentdata).
 
-Finally, on 28 September 2022, we hosted a webinar discussing User Agent Client Hints and the
+Finally, on 28 September 2022, we hosted a webinar discussing User-Agent Client Hints and the
 future of the User-Agent. [Watch the webinar recording here](https://vimeo.com/755026259).

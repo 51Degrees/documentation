@@ -2,7 +2,7 @@
 
 # Introduction
 
-User-Agent Client Hint values can be obtained using HTTP headers or a [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API).
+User-Agent Client Hints (UA-CH) values can be obtained using HTTP headers or a [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API).
 This page explains how to use the HTTP headers approach with our API.
 
 The [UA-CH JavaScript page](@ref DeviceDetection_Features_UACH_Javascript) explains the alternative.
@@ -12,12 +12,12 @@ The [Overview page](@ref DeviceDetection_Features_UACH_Overview) includes advice
 
 In the past, device detection worked primarily by examining the 
 value of the User-Agent HTTP header. This header is always sent as part 
-of the first request to a webserver, meaning device information was 
+of the first request to a web server, meaning device information was 
 available immediately on the server-side.
 
 With UA-CH, only a limited subset of information is sent as part of the 
 first request.
-If the server wishes to know more, then it needs to set an HTTP header in
+If the server wishes to know more, then it needs to set a HTTP header in
 the response to request the additional detail.
 
 The 51Degrees API will automatically determine the names and values of
@@ -31,7 +31,8 @@ you will need to set the response headers manually.
 [#](@ref UACH_Headers_Cloud)
 # Cloud
 
-Make sure that one or more of the following properties are included with your resource key:
+Make sure that one or more of the following properties are included with your 
+[Resource Key](@ref Concepts_Configurator):
 - `SetHeaderBrowserAccept-CH`
 - `SetHeaderHardwareAccept-CH`
 - `SetHeaderPlatformAccept-CH`
@@ -42,7 +43,8 @@ also need to ensure the `Accept-CH` HTTP header is set using these values. See t
 section below for the two approaches to doing this.
 
 If you are calling our cloud service directly from the client device, then you'll need to let 
-the browser know that its okay to send the hints to our cloud service. There are two ways to do this.
+the browser know that it's okay to send the client hints to our cloud service. There are two 
+ways to do this.
 
 ## Delegate-CH
 
@@ -65,9 +67,9 @@ following values:
 - ch-ua-platform-version=(self "https://cloud.51degrees.com")
 - ch-ua-model=(self "https://cloud.51degrees.com") 
 
-In addition, when using `Permissions-Policy`, the browser will only send UA-CH headers to the third 
-party that are also requested by the first-party. This means that you'll also need to set your 
-`Accept-CH` header to request the same UA-CH headers.
+In addition, when using `Permissions-Policy`, the browser will only send UA-CH headers to the 
+third-party that are also requested by the first-party. This means that you'll also need to 
+set your `Accept-CH` header to request the same UA-CH headers.
 
 
 @anchor UACH_Headers_OnPrem
@@ -78,8 +80,8 @@ If you are using our Pipeline API on your server (either cloud or on-premise) th
 need a way to set the `Accept-CH` header in the response to the client.
 
 In either case, you need to ensure the relevant `SetHeaderBrowserAccept-CH`, `SetHeaderHardwareAccept-CH` and 
-`SetHeaderPlatformAccept-CH` properties are included in the results. (all properties are included 
-by default for on-premise)
+`SetHeaderPlatformAccept-CH` properties are included in the results (all properties are included 
+by default for on-premise).
 If you're unsure which ones are relevant for you, see the 
 [required values](@ref DeviceDetection_Features_UACH_RequiredUachHeaders) page.
 
@@ -117,12 +119,14 @@ headers if you want a more immediate solution.
 ## B2B Service Supplier
 
 If your service would be classed as a third-party in the 'browser to web server' communication, 
-then you'll also need to arrange for your clients to let their users know that its okay to
+then you'll also need to arrange for your clients to let their users know that it's okay to
 send your server UA-CH values.
 This is because the 'high-entropy' UA-CH values are not sent to third-parties by default.
 
 In order to do this, you'll need to ask your customers to use the `Delegate-CH` HTML directive or
 the `Permissions-Policy` HTTP header.
-This will be similar to the changes described [above](@ref UACH_Headers_Cloud) for calls to our cloud service. (In that instance, our cloud service is the third-party)
-The difference being that you'll need to replace 'https://cloud.51degrees.com' with the domain for your service.
+This will be similar to the changes described [above](@ref UACH_Headers_Cloud) for calls to 
+our cloud service. (In that instance, our cloud service is the third-party.)
+The difference being that you'll need to replace <pre>https://cloud.51degrees.com</pre> with 
+the domain for your service.
 
