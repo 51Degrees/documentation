@@ -9,7 +9,8 @@ This page gives an overview of UA-CH detection in our API and guidance on which 
 
 There are two ways to retrieve UA-CH values. You can either set HTTP headers in your response to 
 the user's browser to ask it to send UA-CH values as HTTP Headers, or you can use a JavaScript 
-API to retrieve the UA-CH values on the client.
+API to retrieve the UA-CH values on the client. See the [Guidance](@ref UACH_Guidance) section 
+below if you're unsure which to use.
 
 This topic has the following sub pages:
 
@@ -46,13 +47,13 @@ Support for getting values using the UA-CH [JavaScript API](https://developer.mo
 [#](@ref UACH_Guidance)
 # Guidance
 
-UA-CH has several different mechanisms for accessing these values. The following section 
-explains our recommendations for different use-cases.
+UA-CH has several different mechanisms for accessing these values. This section explains our 
+recommendations for different use-cases.
 
 - Our Pipeline API is running on-premise on the web server sending responses to the end-user:
   - If you are using our web integration, ensure the `SetHeaderBrowserAccept-CH`, `SetHeaderHardwareAccept-CH` and `SetHeaderPlatformAccept-CH` properties are included (all properties are included by default for on-premise). Our software will ensure the `Accept-CH` header is set to request the client hints you need from the browser.
   - If you are not using our web integration, see the 'non-integrated' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers)
-- Our Pipeline API is running on-premise as part of a B2B service endpoint (i.e. not serving responses to end-users directly):
+- Our Pipeline API is running on-premise as part of a system that is not serving responses to end-users directly:
   - Ideally, we recommend you ask your clients to set `Delegate-CH` or `Permissions-Policy`. This will allow their user's browser to send UA-CH values to your service. See the 'B2B service supplier' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers) for instructions.
   - If the above is not feasible, and/or you want a backup option in case your clients do not implement the required changes, then you can use the UA-CH JavaScript API to retrieve the values. See the 'non-integrated' section on the [UA-CH JavaScript page](@ref DeviceDetection_Features_UACH_Javascript) for instructions.
 - Calling our cloud service from client-side code:
