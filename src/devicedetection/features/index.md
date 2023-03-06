@@ -4,6 +4,8 @@
 
 @subpage DeviceDetection_Features_AppleDeviceTable
 
+@subpage DeviceDetection_Features_ConcurrentProcessing
+
 @subpage DeviceDetection_Features_CsvDataFile
 
 @subpage DeviceDetection_Features_FalsePositiveControl
@@ -14,6 +16,6 @@
 
 @subpage DeviceDetection_Features_TacLookup
 
-@subpage DeviceDetection_Features_UserAgentClientHints
+@subpage DeviceDetection_Features_UACH_Index
 
-@subpage DeviceDetection_Features_ConcurrentProcessing
+@subpage DeviceDetection_Features_UserAgentClientHints
