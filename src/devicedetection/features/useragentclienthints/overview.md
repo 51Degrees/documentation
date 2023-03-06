@@ -41,7 +41,7 @@ from 7 December 2020. Full support for the detection of devices, operating syste
 This support also includes [identifying Windows 11 using User-Agent Client Hints](https://51degrees.com/blog/windows-11-detectable-with-uach)
 as there is [no other way to do so](https://docs.microsoft.com/en-us/microsoft-edge/web-platform/how-to-detect-win11).
 
-Support for getting values using the UA-CH [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API) was added in API versions from [TODO DATE] and data files from [TODO DATE].
+Support for getting values using the UA-CH [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API) was added in .NET API versions 4.4.19 and data files from 6th March 2023. (Dates for availability in other APIs TBC)
 
 @anchor UACH_Guidance
 [#](@ref UACH_Guidance)
