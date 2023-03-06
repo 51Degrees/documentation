@@ -62,10 +62,9 @@ If you would rather use HTTP response headers than HTML, you can use the `Permis
 header to do the same job as `Delegate-CH`. This header will need to be configured with the 
 following values:
 
-- ch-ua-full-version-list=(self "https://cloud.51degrees.com")  
-- ch-ua-platform=(self "https://cloud.51degrees.com")  
-- ch-ua-platform-version=(self "https://cloud.51degrees.com")
-- ch-ua-model=(self "https://cloud.51degrees.com") 
+```
+Permissions-Policy: ch-ua-full-version-list=(self "https://cloud.51degrees.com"), ch-ua-platform=(self "https://cloud.51degrees.com"), ch-ua-platform-version=(self "https://cloud.51degrees.com"), ch-ua-model=(self "https://cloud.51degrees.com") 
+```
 
 In addition, when using `Permissions-Policy`, the browser will only send UA-CH headers to the 
 third-party that are also requested by the first-party. This means that you'll also need to 
@@ -113,6 +112,12 @@ to get a list of the UA-CH headers that you need to request. This has a couple o
 
 Alternatively, you can just request all the [required](@ref DeviceDetection_Features_UACH_RequiredUachHeaders) 
 headers if you want a more immediate solution.
+
+The Accept-CH header should look something like this in the HTML response:
+
+```
+Accept-CH: sec-ch-ua,sec-ch-ua-mobile,sec-ch-ua-full-version-list,sec-ch-ua-platform,sec-ch-ua-platform-version,sec-ch-ua-model 
+```
 
 @anchor UACH_Http_Headers_BtoB
 [#](@ref UACH_Http_Headers_BtoB)

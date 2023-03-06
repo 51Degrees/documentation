@@ -54,10 +54,10 @@ recommendations for different use-cases.
   - If you are using our web integration, ensure the `SetHeaderBrowserAccept-CH`, `SetHeaderHardwareAccept-CH` and `SetHeaderPlatformAccept-CH` properties are included (all properties are included by default for on-premise). Our software will ensure the `Accept-CH` header is set to request the client hints you need from the browser.
   - If you are not using our web integration, see the 'non-integrated' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers)
 - Our Pipeline API is running on-premise as part of a system that is not serving responses to end-users directly:
-  - Ideally, we recommend you ask your clients to set `Delegate-CH` or `Permissions-Policy`. This will allow their user's browser to send UA-CH values to your service. See the 'B2B service supplier' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers) for instructions.
+  - Ideally, we recommend you ask your clients to set `Delegate-CH` or `Permissions-Policy` (and `Accept-CH`). This will allow their user's browser to send UA-CH values to your service. See the 'B2B service supplier' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers) for instructions.
   - If the above is not feasible, and/or you want a backup option in case your clients do not implement the required changes, then you can use the UA-CH JavaScript API to retrieve the values. See the 'non-integrated' section on the [UA-CH JavaScript page](@ref DeviceDetection_Features_UACH_Javascript) for instructions.
 - Calling our cloud service from client-side code:
-  - For best performance, set `Delegate-CH` or `Permissions-Policy` as described in the 'Cloud' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers)
+  - For best performance, set `Delegate-CH` or `Permissions-Policy` (and `Accept-CH`) as described in the 'Cloud' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers)
   - If making the changes for the option above is not feasible, you can simply ensure your Resource Key includes the `JavascriptGetHighEntropyValues` property. This will gather the values and send them to our cloud service without any other changes required.
 
 @anchor UACH_Background
