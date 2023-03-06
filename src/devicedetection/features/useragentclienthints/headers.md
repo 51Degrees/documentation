@@ -56,20 +56,18 @@ This only requires a change to HTML. Simply add the following `meta` element to 
 </head>
 ```
 
-## Permissions-Policy
+## Permissions-Policy + Accept-CH
 
 If you would rather use HTTP response headers than HTML, you can use the `Permissions-Policy` 
-header to do the same job as `Delegate-CH`. This header will need to be configured with the 
-following values:
+header to do the same job as `Delegate-CH`. 
+Note that, when using `Permissions-Policy`, the browser will only send UA-CH headers to the 
+third-party that are also requested by the first-party. This means that you also need to set
+`Accept-CH` as well. As an example, you might use the following values:
 
 ```
+Accept-CH: sec-ch-ua,sec-ch-ua-mobile,sec-ch-ua-full-version-list,sec-ch-ua-platform,sec-ch-ua-platform-version,sec-ch-ua-model 
 Permissions-Policy: ch-ua-full-version-list=(self "https://cloud.51degrees.com"), ch-ua-platform=(self "https://cloud.51degrees.com"), ch-ua-platform-version=(self "https://cloud.51degrees.com"), ch-ua-model=(self "https://cloud.51degrees.com") 
 ```
-
-In addition, when using `Permissions-Policy`, the browser will only send UA-CH headers to the 
-third-party that are also requested by the first-party. This means that you'll also need to 
-set your `Accept-CH` header to request the same UA-CH headers.
-
 
 @anchor UACH_Headers_OnPrem
 [#](@ref UACH_Headers_OnPrem)
