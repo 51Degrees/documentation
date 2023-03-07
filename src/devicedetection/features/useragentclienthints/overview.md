@@ -24,7 +24,7 @@ In addition, we have examples that demonstrate detection using UA-CH in a variet
 - [On-premise web page](@ref Examples_DeviceDetection_GettingStarted_Web_OnPremise) 
 - [Cloud console](@ref Examples_DeviceDetection_GettingStarted_Console_Cloud) 
 - [Cloud web page](@ref Examples_DeviceDetection_GettingStarted_Web_Cloud)
-- Our [Configurator](@ref Concepts_Configurator) site includes an example (visible after the Resource Key generation) for how to implement a fully client-side solution that calls our cloud service directly.
+- Our [Configurator](@ref Concepts_Configurator) site includes an example (visible after the Resource Key generation) for how to implement a full client-side solution that calls our cloud service directly.
 
 The console examples pass UA-CH values directly to the API, so will work in any situation.
 The web examples run as a simple web page, so you will need a browser that supports UA-CH such 
@@ -41,7 +41,7 @@ from 7 December 2020. Full support for the detection of devices, operating syste
 This support also includes [identifying Windows 11 using User-Agent Client Hints](https://51degrees.com/blog/windows-11-detectable-with-uach)
 as there is [no other way to do so](https://docs.microsoft.com/en-us/microsoft-edge/web-platform/how-to-detect-win11).
 
-Support for getting values using the UA-CH [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API) was added in .NET API versions 4.4.19 and data files from 6th March 2023. (Dates for availability in other APIs TBC)
+Support for getting values using the UA-CH [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API) was added in .NET API version 4.4.19 and data files from 6th March 2023. (Dates for availability in other APIs TBC)
 
 @anchor UACH_Guidance
 [#](@ref UACH_Guidance)
@@ -54,10 +54,10 @@ recommendations for different use-cases.
   - If you are using our web integration, ensure the `SetHeaderBrowserAccept-CH`, `SetHeaderHardwareAccept-CH` and `SetHeaderPlatformAccept-CH` properties are included (all properties are included by default for on-premise). Our software will ensure the `Accept-CH` header is set to request the client hints you need from the browser.
   - If you are not using our web integration, see the 'non-integrated' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers)
 - Our Pipeline API is running on-premise as part of a system that is not serving responses to end-users directly:
-  - Ideally, we recommend you ask your clients to set `Delegate-CH` or `Permissions-Policy` (and `Accept-CH`). This will allow their user's browser to send UA-CH values to your service. See the 'B2B service supplier' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers) for instructions.
+  - Ideally, we recommend you ask your clients to set `Delegate-CH` meta http-equiv tag or set the `Permissions-Policy` and `Accept-CH` response headers. This will allow their user's browser to send UA-CH values to your service. See the 'B2B service supplier' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers) for instructions.
   - If the above is not feasible, and/or you want a backup option in case your clients do not implement the required changes, then you can use the UA-CH JavaScript API to retrieve the values. See the 'non-integrated' section on the [UA-CH JavaScript page](@ref DeviceDetection_Features_UACH_Javascript) for instructions.
 - Calling our cloud service from client-side code:
-  - For best performance, set `Delegate-CH` or `Permissions-Policy` (and `Accept-CH`) as described in the 'Cloud' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers)
+  - For best performance, set `Delegate-CH` meta http-equiv tag or `Permissions-Policy` and `Accept-CH` response headers as described in the 'Cloud' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers)
   - If making the changes for the option above is not feasible, you can simply ensure your Resource Key includes the `JavascriptGetHighEntropyValues` property. This will gather the values and send them to our cloud service without any other changes required.
 
 @anchor UACH_Background
