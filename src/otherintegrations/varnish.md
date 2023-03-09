@@ -59,7 +59,7 @@ These settings are used in the vcl_init and should only be set once.
 |fiftyonedegrees.start                    |N/A           |Starts the 51Degrees module using the dataset path provided. All other 51Degrees init options must be set before calling this.|
 |fiftyonedegrees.set_performance_profile  |DEFAULTS      |Set the performance profile that will be used. This will determine how the module allocate memory and manage data. **NOTE:** the set_performance_profile is used as a base configuration, which will set the default values for the configurable fields. Any subsequence call to set these fields will override these default values.|
 |fiftyonedegrees.set_drift                |0             |Set the drift value to allow sub strings to be matched in a wider range of character positions.|
-|fiftyonedegrees.set_difference           |0             |Set the difference value to allow User Agents which are slightly different to what is expected.|
+|fiftyonedegrees.set_difference           |0             |Set the difference value to allow User-Agents which are slightly different to what is expected.|
 |fiftyonedegrees.set_allow_unmatched      |NO            |Set whether the unmatched node should be used. `NO` means if there are no matched results, an empty string will be returned for the required property. A default string will be returned if `YES` is set.|
 |fiftyonedegrees.set_use_performance_graph|YES           |Set whether performance optimized graph should be used|
 |fiftyonedegrees.set_use_predictive_graph |YES           |Set whether predictive optimized graph should be used|
@@ -80,7 +80,7 @@ For full documentation, use
 $ man vmod_fiftyonedegrees
 ```
 
-## User Agents Client Hints
+## User-Agents Client Hints
 
 To enable client-hint matching, add the set_resp_headers to the vcl_deliver block. This adds the Accept-CH header to the response if it is supported by the browser. The client-hint headers sent by the browser are then automatically used by the match_all method.
 ```

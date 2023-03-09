@@ -9,7 +9,7 @@ your own profiling.
 
 # C/C++
 
-- **Number of User Agents**: 20000
+- **Number of User-Agents**: 20000
 - **Data File**: Enterprise
 
 | Machine                | Settings           | Performance Profile | Time Per Detection (ms) | Detections Per Second |
@@ -28,7 +28,7 @@ your own profiling.
 
 # Node.js
 
-- **Number of User Agents**: 20000
+- **Number of User-Agents**: 20000
 - **Data File**: Enterprise
 
 | Machine                | Settings           | Performance Profile | Time Per Detection (ms) | Detections Per Second |
@@ -38,7 +38,7 @@ your own profiling.
 
 # Java
 
-- **Number of User Agents**: 20000
+- **Number of User-Agents**: 20000
 
 | Machine                | Settings           | Performance Profile | Time Per Detection (ms) | Detections Per Second |
 | ---------------------- |------------------- | ------------------- | ----------------------: | --------------------: |
@@ -47,7 +47,7 @@ your own profiling.
 
 # Python
 
-- **Number of User Agents**: 20000
+- **Number of User-Agents**: 20000
 
 | Machine                | Settings           | Performance Profile | Time Per Detection (ms) | Detections Per Second |
 | ---------------------- |------------------- | ------------------- | ----------------------: | --------------------: |
