@@ -184,7 +184,7 @@ Allow Client Hints to be set in response headers where it is applicable to the u
 <li>Detection match metrics</li>
 <li>Javascript and property overrides</li>
 <li>False Positive controls</li>
-<li>User Agent Client Hint supports</li>
+<li>User-Agent Client Hint supports</li>
 </ul>
 <h2>Detection match metrics</h2>
 <p>This V3 functionality is extended with more options available in V4. These metrics can be used in the same way as the properties. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">51D_match_all x-metrics IsMobile,Iterations,Drift,Difference,Method,UserAgents,MatchedNodes,DeviceId;</div></div><h2>Javascript and property overrides</h2>
@@ -192,8 +192,8 @@ Allow Client Hints to be set in response headers where it is applicable to the u
 <p>Once the value has been obtained by executing the Javascript in client user agent, it can be added as evidence in the next request's cookie or query argument. 51Degrees module will override the returned value with what it found in the request.</p>
 <h2>False Positive Controls</h2>
 <p>Nginx Device Detection V4 module supports <code>False Positives</code> features as described at <a class="el" href="_device_detection__features__false_positive_control.html">False Positives</a> via settings of directives <code>51D_drift</code>, <code>51D_difference</code>, and <code>51D_allow_unmatched</code>. When <code>AllowUnmatched</code> is set to <code>off</code>, if <code>HasValue</code> is <code>false</code>, a <code>NoMatch</code> will be returned. Else, if <code>AllowUnmatched</code> is set to <code>on</code>, when a match can not be found, default profile will be returned such as <code>Unknown</code>, <code>N/A</code>, or similar.</p>
-<h2>User Agent Client Hint supports</h2>
-<p>User Agent Client Hint was introduced by Google in Chrome, preventing traditional detection using User-Agents from performing accurate matches. In Nginx Device Detection V4 module, <code>51D_set_resp_headers</code> was implemented to allow Client Hint request headers to be set in responses so that more evidence is provided in subsequent requests, allowing better matches.</p>
+<h2>User-Agent Client Hint supports</h2>
+<p>User-Agent Client Hint was introduced by Google in Chrome, preventing traditional detection using User-Agents from performing accurate matches. In Nginx Device Detection V4 module, <code>51D_set_resp_headers</code> was implemented to allow Client Hint request headers to be set in responses so that more evidence is provided in subsequent requests, allowing better matches.</p>
 <h1 class="g-docs__section-heading">Other resources</h1>
 <p>More details can be found at:</p><ul>
 <li><a href="https://51degrees.com/device-detection-nginx/md__home_vsts_work_1_s_apis_device-detection-nginx__r_e_a_d_m_e.html">README</a>.</li>
