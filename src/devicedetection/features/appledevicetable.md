@@ -8,7 +8,7 @@ Below we cover the detection results that are experienced for each iPhone and iP
 
 The 'percentage' column refers to the percentage of the data submissions we have received that would return that detection result for that particular display mode. For example, '100.00%' in Standard mode indicates that 100% of our submissions for that device would receive that result if the data from the submission were passed to our detection script. '1.50%' in indicates that 1.5% of our submissions would receive that detection result.
 
-As we receive more data on Apple devices, this table will change. We will update this table every two months and it is currently accurate as of 4 January 2023.
+As we receive more data on Apple devices, this table will change. We will update this table every two months and it is currently accurate as of 7 March 2023.
 
 For optimized viewing of the table, it is recommended you zoom out within your browser.
 
@@ -49,7 +49,7 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 |iPhone XS Max|Zoom|iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus<br/> iPhone XS, iPhone XS Max|96.42%<br/> 3.58%|
 |iPhone 11|Standard|iPhone XR, iPhone 11<br/> iPhone 11|90.81%<br/> 9.19%|
 |iPhone 11|Zoom|iPhone XR, iPhone 11<br/> iPhone 11|40.34%<br/> 59.66%|
-|iPhone 11 Pro|Standard|iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus<br/> iPhone 11 Pro, iPhone 11 Pro Max<br/> iPhone 11 Pro|30.34%<br/> 69.53%<br/>0.04%|
+|iPhone 11 Pro|Standard|iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus<br/> iPhone 11 Pro, iPhone 11 Pro Max<br/> iPhone 11 Pro|30.43%<br/> 69.53%<br/>0.04%|
 |iPhone 11 Pro|Zoom |iPhone 11 Pro|100.00%|
 |iPhone 11 Pro Max|Standard|iPhone XS Max, iPhone 11 Pro Max<br/> iPhone 11 Pro Max|30.30%<br/> 69.70%|
 |iPhone 11 Pro Max |Zoom |iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus<br/> iPhone 11 Pro, iPhone 11 Pro Max|72.59%<br/> 27.41%|
