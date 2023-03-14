@@ -58,7 +58,7 @@ These restrictions are due to the interaction between the native libraries used 
 
 @anchor UACH_DualEvidence
 [#](@ref UACH_DualEvidence)
-#### Can I use User Agent Client Hints (UA-CH) at the same time as the User-Agent? 
+#### Can I use User-Agent Client Hints (UA-CH) at the same time as the User-Agent? 
 
 Yes. In fact, this is recommended. The device detection algorithm will use the UA-CH data where possible. 
 However, if a match cannot be found for the supplied UA-CH values, then the User-Agent will be used as a fall back.

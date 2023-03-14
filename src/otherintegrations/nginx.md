@@ -95,7 +95,7 @@ Following set of new features has been introduced in Nginx Device Detection V4 m
 - Detection match metrics
 - Javascript and property overrides
 - False Positive controls
-- User Agent Client Hint supports
+- User-Agent Client Hint supports
 
 ## Detection match metrics
 This V3 functionality is extended with more options available in V4. These metrics can be used in the same way as the properties.
@@ -113,9 +113,9 @@ Once the value has been obtained by executing the Javascript in client user agen
 
 Nginx Device Detection V4 module supports `False Positives` features as described at [False Positives](@ref DeviceDetection_Features_FalsePositiveControl) via settings of directives `51D_drift`, `51D_difference`, and `51D_allow_unmatched`. When `AllowUnmatched` is set to `off`, if `HasValue` is `false`, a `NoMatch` will be returned. Else, if `AllowUnmatched` is set to `on`, when a match can not be found, default profile will be returned such as `Unknown`, `N/A`, or similar.
 
-## User Agent Client Hint supports
+## User-Agent Client Hint supports
 
-User Agent Client Hint was introduced by Google in Chrome, preventing traditional detection using User-Agents from performing accurate matches. In Nginx Device Detection V4 module, `51D_set_resp_headers` was implemented to allow Client Hint request headers to be set in responses so that more evidence is provided in subsequent requests, allowing better matches.
+User-Agent Client Hint was introduced by Google in Chrome, preventing traditional detection using User-Agents from performing accurate matches. In Nginx Device Detection V4 module, `51D_set_resp_headers` was implemented to allow Client Hint request headers to be set in responses so that more evidence is provided in subsequent requests, allowing better matches.
 
 # Other resources
 More details can be found at:
