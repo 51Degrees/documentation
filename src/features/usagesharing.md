@@ -204,6 +204,10 @@ to the **usage sharing** web service.
 The maximum time period which @evidence is stored for the purpose of filtering 
 [repeat evidence](@ref RepeatEvidence).
 
+## ShareUsageURL
+
+The target destination for **usage sharing** data, which is https://devices-v4.51degrees.com/new.ashx. 
+
 @anchor Low_Level_Usage_Sharing
 [#](@ref Low_Level_Usage_Sharing)	
 # Usage Sharing for low-level APIs
