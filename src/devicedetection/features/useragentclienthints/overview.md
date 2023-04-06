@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_UACH_Overview Overview
+@page DeviceDetection_Features_UACH_Overview User-Agent Client Hints Technical Overview
 
 # Introduction
 
