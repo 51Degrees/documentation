@@ -51,18 +51,20 @@ The minimum recommended properties to include in your Resource Key are:
 
 To migrate from the original ua-parser-js, you probably had the page code similar to the below:
 
-    <!doctype html>
+```json
+<!doctype html>
     <html>
         <head>
-        <script src="ua-parser.min.js"></script>
-        <script>
-            let result = UAParser();
-            console.log(result);
-        </script>
+            <script src="ua-parser.min.js"></script>
+            <script>
+                let result = UAParser();
+                console.log(result);
+            </script>
         </head>
-        <body>
-        </body> 
+    <body>
+    </body> 
     </html>
+```
 
 To migrate this code to use 51Degrees UAParser:
 
@@ -74,49 +76,55 @@ To migrate this code to use 51Degrees UAParser:
 6. The code below obtaining the result can stay the same, but if you had additional properties configured for this Resource Key, you can access them directly (using lowercase key names) inside the result.device object.
 
 The migrated code snippet looks like this:
-    
-        <!doctype html> 
-        <html> 
-            <head> 
+
+```json
+<!doctype html> 
+    <html> 
+        <head> 
             <meta http-equiv="Delegate-CH" content="Sec-CH-UA-Model https://cloud.51degrees.com; Sec-CH-UA https://cloud.51degrees.com; Sec-CH-UA-Arch https://cloud.51degrees.com; Sec-CH-UA-Full-Version https://cloud.51degrees.com; Sec-CH-UA-Mobile https://cloud.51degrees.com; Sec-CH-UA-Platform https://cloud.51degrees.com; Sec-CH-UA-Platform-Version https://cloud.51degrees.com" /> 
             <script src="ua-parser.min.js"></script> 
             <script type="module"> 
                let result = await UAParser("resource key");  
                console.log(result); 
             </script> 
-            </head> 
-            <body> 
-            </body> 
-        </html>  
+        </head> 
+        <body> 
+        </body> 
+    </html>
+``` 
     
 Alternatively, if the server adds Accept-CH and Permissions-Policy response headers, the snippet becomes even simpler as you can omit the Delegate-CH meta tag.
-    
-        <!doctype html> 
-        <html>
-            <head> 
+
+```json
+<!doctype html> 
+    <html>
+        <head> 
             <script src="https://cdn.jsdelivr.net/npm/@51degrees/ua-parser-js"></script> 
             <script type="module"> 
                 let result = await UAParser("resource key");  
                 console.log(result); 
             </script> 
-            </head> 
-            <body> 
-            </body> 
-        </html> 
+        </head> 
+        <body> 
+        </body> 
+    </html> 
+```
     
 ## Migrating server-side code
 
 A common scenario on the server is to receive a User-Agent as a request header and pass it to the UAParser to recognize the device. The Node.js server code could look something like this:
-    
-        var http = require('http'); 
-        var parser = require('ua-parser-js'); 
+
+```json
+var http = require('http'); 
+var parser = require('ua-parser-js'); 
  
-        http.createServer(function (req, res) { 
-            // parse user-agent header 
-            var result = parser(req.headers['user-agent']); 
-            res.end(JSON.stringify(result, null, ' ')); 
-        }) 
-        .listen(80, '0.0.0.0');
+http.createServer(function (req, res) { 
+    // parse user-agent header 
+    var result = parser(req.headers['user-agent']); 
+    res.end(JSON.stringify(result, null, ' ')); 
+}) 
+.listen(80, '0.0.0.0');
+```
     
 Here is what we need to change to migrate this to use 51Degrees UAParser:
 
@@ -126,6 +134,7 @@ Here is what we need to change to migrate this to use 51Degrees UAParser:
 4. The parser call should be prepended with await.
 5. The parser call now takes the Resource Key and the request header map as a parameter.
     
+```json
         // the self-signed certificate for the test environment 
             var fs = require('fs'); 
             var options = { 
@@ -147,12 +156,13 @@ Here is what we need to change to migrate this to use 51Degrees UAParser:
                 ");
             })
             .listen(443, '0.0.0.0');
+```
     
 Now we assume that this would be a secondary call to the server from within the page that has already been rendered and had an Accept-CH header in the response that listed all the necessary User-Agent Client Hints. The Accept-CH header in the original page would make it send the Client Hints in all subsequent requests to the same origin. This feature is called the Accept-CH cache.
 
 Here is a quick and dirty example where we'll show how to ask the browser to immediately send the User-Agent Client Hints by setting two response headers: Accept-CH and Critical-CH. The latter tells the browser to immediately come back with the Client Hints if it did not send them on the first attempt, so it starts another request before loading the response body.
 
-     
+```json
         // the self-signed certificate for the test environment 
         var fs = require('fs'); 
         var options = { 
@@ -181,8 +191,8 @@ Here is a quick and dirty example where we'll show how to ask the browser to imm
 " + JSON.stringify(result, null, ' ') + ""); 
         }) 
         .listen(443, '0.0.0.0'); 
+```
     
-
 ## Live code demo
 
 We hosted a live code demo of the 51Degrees UAParser during a webinar.
