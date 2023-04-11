@@ -5,3 +5,5 @@
 @subpage OtherIntegrations_Varnish
 
 @subpage OtherIntegrations_Wordpress
+
+@subpage OtherIntegrations_UAParser
