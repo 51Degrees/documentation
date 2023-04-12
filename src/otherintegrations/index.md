@@ -6,4 +6,4 @@
 
 @subpage OtherIntegrations_Wordpress
 
-@subpage OtherIntegrations_UaParser
+@subpage OtherIntegrations_UAParser
