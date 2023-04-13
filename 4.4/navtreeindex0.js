@@ -141,6 +141,7 @@ var NAVTREEINDEX0 =
 "_info__tested_versions.html":[8,6],
 "_other_integrations__index.html":[9],
 "_other_integrations__nginx.html":[9,0],
+"_other_integrations__u_a_parser.html":[9,3],
 "_other_integrations__varnish.html":[9,1],
 "_other_integrations__wordpress.html":[9,2],
 "_quickstart__device_detection.html":[2,1],
