@@ -56,9 +56,9 @@ The minimum recommended properties to include in your Resource Key are:
 - SetHeaderHardwareAccept-CH
 - SetHeaderPlatformAccept-CH
 
-The majority of the above recommended properties are equivalent to the properties that the original UAParser.js returned. 
+The majority of the recommended properties are the equivalent to the properties that the original UAParser.js returned. 
 However, the 51Degrees UAParser requires additional properties for accurate device detection. JavascriptHardwareProfile is 
-needed for [reliable detection of Apple devices]@ref DeviceDetection_Features_AppleDetection, and the trio of Accept-CH 
+needed for [reliable detection of Apple devices](@ref DeviceDetection_Features_AppleDetection), and the trio of Accept-CH 
 properties are needed for [User-Agent Client Hints detection](@ref DeviceDetection_Features_UACH_Overview).
 
 ## Migrating client-side code
@@ -87,8 +87,8 @@ To migrate this code to use 51Degrees UAParser:
 element. We chose the latter in the below migrated code snippet example.
 3. Change the script import statement to use the path to the new package in the src attribute or use a CDN link.
 4. The new 51Degrees UAParser is inherently asynchronous, thus UAParser is a promise. We prefer resolving promises 
-using the await keyword – in order to use the [top-level await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await), we must set the script [type="module" ()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). 
-It is possible, hwoever, to use the UAParser without await, calling then () instead.
+using the [await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await) keyword – in order to use the top-level await, we must set the script [type="module" ()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). 
+It is possible, however, to use the UAParser without await, calling then () instead.
 5. Here is the code to obtain the result object, notice the await keyword and the Resource Key: 
 `let result = await UAParser("<your resource key>");`
 6. The code below obtaining the result can stay the same, but if you had additional properties configured for 
