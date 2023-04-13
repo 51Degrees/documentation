@@ -13,6 +13,7 @@ we have introduced greater complexity which does not rely solely on the User-Age
 
 * Apple purposefully obfuscate the hardware model in the User-Agent. We use 
 [various techniques](https://51degrees.com/blog/multi-stage-approach-to-apple-ios-device-detection) to overcome this. 
+* Google has reduced the amount of information available within Chromium-based browser User-Agents. Device information is now available in [User-Agent Client Hints.](@ref DeviceDetection_Features_UACH_Overview) 
 * Browsers that perform [transcoding](https://en.wikipedia.org/wiki/Mobile_browser#Mobile_HTML_transcoders) will 
 generally replace the content of the User-Agent with something else. The real User-Agent may or may not be sent 
 in a separate header.
