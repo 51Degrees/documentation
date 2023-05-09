@@ -1,0 +1,756 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile>
+  <compound kind="page">
+    <name>UpgradingtoV4</name>
+    <title>Upgrade to V4</title>
+    <filename>_upgradingto_v4</filename>
+  </compound>
+  <compound kind="page">
+    <name>Quickstart_Index</name>
+    <title>Quick Start</title>
+    <filename>_quickstart__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Benchmarks_DeviceDetection</name>
+    <title>Device Detection Benchmarks</title>
+    <filename>_benchmarks__device_detection</filename>
+  </compound>
+  <compound kind="page">
+    <name>Benchmarks_Index</name>
+    <title>Benchmarks</title>
+    <filename>_benchmarks__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Configuration_Builders_BuildFromConfiguration</name>
+    <title>Building from Configuration</title>
+    <filename>_concepts__configuration__builders__build_from_configuration</filename>
+    <docanchor file="_concepts__configuration__builders__build_from_configuration">Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Configuration_Builders_ElementBuilder</name>
+    <title>Element Builder</title>
+    <filename>_concepts__configuration__builders__element_builder</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Configuration_Builders_Index</name>
+    <title>Builders</title>
+    <filename>_concepts__configuration__builders__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Configuration_Builders_PipelineBuilder</name>
+    <title>Pipeline Builder</title>
+    <filename>_concepts__configuration__builders__pipeline_builder</filename>
+    <docanchor file="_concepts__configuration__builders__pipeline_builder">Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Configuration_Index</name>
+    <title>Configuration</title>
+    <filename>_concepts__configuration__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Configurator</name>
+    <title>Configurator</title>
+    <filename>_concepts__configurator</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Data_AspectData</name>
+    <title>Aspect Data</title>
+    <filename>_concepts__data__aspect_data</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Data_DataKey</name>
+    <title>Data Key</title>
+    <filename>_concepts__data__data_key</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Data_ElementData</name>
+    <title>Element Data</title>
+    <filename>_concepts__data__element_data</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Data_ElementDataKey</name>
+    <title>Element Data Key</title>
+    <filename>_concepts__data__element_data_key</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Data_Evidence</name>
+    <title>Evidence</title>
+    <filename>_concepts__data__evidence</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Data_EvidenceKeyFilter</name>
+    <title>Evidence Key Filter</title>
+    <filename>_concepts__data__evidence_key_filter</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Data_FlowData</name>
+    <title>Flow Data</title>
+    <filename>_concepts__data__flow_data</filename>
+    <docanchor file="_concepts__data__flow_data">Concepts_Data_FlowData_Evidence</docanchor>
+    <docanchor file="_concepts__data__flow_data">Concepts_Data_FlowData_ElementData</docanchor>
+    <docanchor file="_concepts__data__flow_data">Concepts_Data_FlowData_Errors</docanchor>
+    <docanchor file="_concepts__data__flow_data">Concepts_Data_FlowData_ThreadSafety</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Data_Index</name>
+    <title>Data</title>
+    <filename>_concepts__data__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_FlowElements_AspectEngine</name>
+    <title>Aspect Engine</title>
+    <filename>_concepts__flow_elements__aspect_engine</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_FlowElements_CloudEngine</name>
+    <title>Cloud Engine</title>
+    <filename>_concepts__flow_elements__cloud_engine</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_FlowElements_FiftyOneOnPremiseEngine</name>
+    <title>51Degrees On-Premise Engine</title>
+    <filename>_concepts__flow_elements__fifty_one_on_premise_engine</filename>
+    <docanchor file="_concepts__flow_elements__fifty_one_on_premise_engine">Concepts_FlowElements_FiftyOneOnPremiseEngine_Properties</docanchor>
+    <docanchor file="_concepts__flow_elements__fifty_one_on_premise_engine">Concepts_FlowElements_FiftyOneOnPremiseEngine_Values</docanchor>
+    <docanchor file="_concepts__flow_elements__fifty_one_on_premise_engine">Concepts_FlowElements_FiftyOneOnPremiseEngine_Components</docanchor>
+    <docanchor file="_concepts__flow_elements__fifty_one_on_premise_engine">Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_FlowElements_FlowElement</name>
+    <title>Flow Element</title>
+    <filename>_concepts__flow_elements__flow_element</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_FlowElements_Index</name>
+    <title>Flow Elements</title>
+    <filename>_concepts__flow_elements__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_FlowElements_OnPremiseEngine</name>
+    <title>On-Premise Engine</title>
+    <filename>_concepts__flow_elements__on_premise_engine</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Index</name>
+    <title>Concepts</title>
+    <filename>_concepts__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_MetaData_AspectProperties</name>
+    <title>Aspect Properties</title>
+    <filename>_concepts__meta_data__aspect_properties</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_MetaData_ElementProperties</name>
+    <title>Element Properties</title>
+    <filename>_concepts__meta_data__element_properties</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_MetaData_Index</name>
+    <title>Metadata</title>
+    <filename>_concepts__meta_data__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Pipeline</name>
+    <title>Pipeline</title>
+    <filename>_concepts__pipeline</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_PipelineBasics</name>
+    <title>Pipeline Basics</title>
+    <filename>_concepts__pipeline_basics</filename>
+  </compound>
+  <compound kind="page">
+    <name>Concepts_Terminology</name>
+    <title>Terminology</title>
+    <filename>_concepts__terminology</filename>
+    <docanchor file="_concepts__terminology">Concepts_Terminology_Aspect</docanchor>
+    <docanchor file="_concepts__terminology">Concepts_Terminology_CloudService</docanchor>
+    <docanchor file="_concepts__terminology">Concepts_Terminology_DataTier</docanchor>
+    <docanchor file="_concepts__terminology">Concepts_Terminology_Distributor</docanchor>
+    <docanchor file="_concepts__terminology">Concepts_Terminology_NativeCode</docanchor>
+    <docanchor file="_concepts__terminology">Concepts_Terminology_ResourceKey</docanchor>
+    <docanchor file="_concepts__terminology">Concepts_Terminology_WebRequest</docanchor>
+    <docanchor file="_concepts__terminology">Concepts_Terminology_WebServer</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_AppleDetection</name>
+    <title>Apple Model Detection</title>
+    <filename>_device_detection__features__apple_detection</filename>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_AppleDeviceTable</name>
+    <title>Results for Apple Devices</title>
+    <filename>_device_detection__features__apple_device_table</filename>
+    <docanchor file="_device_detection__features__apple_device_table">iphones_mobile_mode</docanchor>
+    <docanchor file="_device_detection__features__apple_device_table">ipads_mobile_mode</docanchor>
+    <docanchor file="_device_detection__features__apple_device_table">ios_desktop_mode</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_ConcurrentProcessing</name>
+    <title>Concurrent Processing</title>
+    <filename>_device_detection__features__concurrent_processing</filename>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_CsvDataFile</name>
+    <title>CSV Data File</title>
+    <filename>_device_detection__features__csv_data_file</filename>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_FalsePositiveControl</name>
+    <title>False Positives</title>
+    <filename>_device_detection__features__false_positive_control</filename>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_Index</name>
+    <title>Features</title>
+    <filename>_device_detection__features__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_NativeKeyLookup</name>
+    <title>Native Key Lookup</title>
+    <filename>_device_detection__features__native_key_lookup</filename>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_PerformanceOptions</name>
+    <title>Performance Options</title>
+    <filename>_device_detection__features__performance_options</filename>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_TacLookup</name>
+    <title>TAC Lookup</title>
+    <filename>_device_detection__features__tac_lookup</filename>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_UACH_Headers</name>
+    <title>HTTP Headers</title>
+    <filename>_device_detection__features__u_a_c_h__headers</filename>
+    <docanchor file="_device_detection__features__u_a_c_h__headers">UACH_Headers_Cloud</docanchor>
+    <docanchor file="_device_detection__features__u_a_c_h__headers">UACH_Headers_OnPrem</docanchor>
+    <docanchor file="_device_detection__features__u_a_c_h__headers">UACH_Http_Headers_Integrated</docanchor>
+    <docanchor file="_device_detection__features__u_a_c_h__headers">UACH_Http_Headers_NonIntegrated</docanchor>
+    <docanchor file="_device_detection__features__u_a_c_h__headers">UACH_Http_Headers_BtoB</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_UACH_Index</name>
+    <title>User-Agent Client Hints</title>
+    <filename>_device_detection__features__u_a_c_h__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_UACH_Javascript</name>
+    <title>JavaScript</title>
+    <filename>_device_detection__features__u_a_c_h__javascript</filename>
+    <docanchor file="_device_detection__features__u_a_c_h__javascript">UACH_Javscript_Cloud</docanchor>
+    <docanchor file="_device_detection__features__u_a_c_h__javascript">UACH_Javscript_OnPrem</docanchor>
+    <docanchor file="_device_detection__features__u_a_c_h__javascript">UACH_Javascript_Integrated</docanchor>
+    <docanchor file="_device_detection__features__u_a_c_h__javascript">UACH_Javascript_NonIntegrated</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_UACH_Overview</name>
+    <title>Overview</title>
+    <filename>_device_detection__features__u_a_c_h__overview</filename>
+    <docanchor file="_device_detection__features__u_a_c_h__overview">UACH_Support</docanchor>
+    <docanchor file="_device_detection__features__u_a_c_h__overview">UACH_Guidance</docanchor>
+    <docanchor file="_device_detection__features__u_a_c_h__overview">UACH_Background</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_UACH_RequiredUachHeaders</name>
+    <title>Required UA-CH Headers</title>
+    <filename>_device_detection__features__u_a_c_h__required_uach_headers</filename>
+    <docanchor file="_device_detection__features__u_a_c_h__required_uach_headers">UACH_Http_Headers_Pseudoheaders</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Features_UserAgentClientHints</name>
+    <title>User-Agent Client Hints (old page)</title>
+    <filename>_device_detection__features__user_agent_client_hints</filename>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Hash</name>
+    <title>Hash</title>
+    <filename>_device_detection__hash</filename>
+    <docanchor file="_device_detection__hash">DeviceDetection_Hash_DataSetProduction</docanchor>
+    <docanchor file="_device_detection__hash">DeviceDetection_Hash_DataSetProduction_Performance</docanchor>
+    <docanchor file="_device_detection__hash">DeviceDetection_Hash_DataSetProduction_Predictive</docanchor>
+    <docanchor file="_device_detection__hash">DeviceDetection_Hash_PredictivePower</docanchor>
+    <docanchor file="_device_detection__hash">Device_Detection_Hash_InAction</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Index</name>
+    <title>Device Detection</title>
+    <filename>_device_detection__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_MigrationGuides_51DegreesV3</name>
+    <title>51Degrees - Upgrading to Version 4</title>
+    <filename>_device_detection__migration_guides_51_degrees_v3</filename>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_MigrationGuides_DeviceAtlas</name>
+    <title>Device Atlas</title>
+    <filename>_device_detection__migration_guides__device_atlas</filename>
+    <docanchor file="_device_detection__migration_guides__device_atlas">DeviceDetection_MigrationGuides_DeviceAtlas_Obsolete</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_MigrationGuides_Index</name>
+    <title>Migration Guides</title>
+    <filename>_device_detection__migration_guides__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_MigrationGuides_OpenRTBMappings</name>
+    <title>OpenRTB Mappings</title>
+    <filename>_device_detection__migration_guides__open_r_t_b_mappings</filename>
+    <docanchor file="_device_detection__migration_guides__open_r_t_b_mappings">DeviceDetection_MigrationGuides_OpenRTBMappings_DeviceType</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_MigrationGuides_Wurfl</name>
+    <title>WURFL</title>
+    <filename>_device_detection__migration_guides__wurfl</filename>
+    <docanchor file="_device_detection__migration_guides__wurfl">DeviceDetection_MigrationGuides_Wurfl_Obsolete</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>DeviceDetection_Overview</name>
+    <title>Device Detection - Overview</title>
+    <filename>_device_detection__overview</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_CombiningServices</name>
+    <title>Combining Services</title>
+    <filename>_examples__combining_services</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_CustomElement_ClientSideEvidence</name>
+    <title>Custom Engine Using Client-Side Evidence</title>
+    <filename>_examples__custom_element__client_side_evidence</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_CustomElement_Cloud</name>
+    <title>Custom Cloud Engine</title>
+    <filename>_examples__custom_element__cloud</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_CustomElement_FlowElement</name>
+    <title>Simple Custom Flow Element</title>
+    <filename>_examples__custom_element__flow_element</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_CustomElement_Index</name>
+    <title>Examples with a custom flow element</title>
+    <filename>_examples__custom_element__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_CustomElement_OnPremise</name>
+    <title>Custom On-Premise Engine</title>
+    <filename>_examples__custom_element__on_premise</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_AppleServerSide_Index</name>
+    <title>Apple Server-Side Detection</title>
+    <filename>_examples__device_detection__apple_server_side__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_AppleServerSide_OnPremise</name>
+    <title>On-Premise Hash</title>
+    <filename>_examples__device_detection__apple_server_side__on_premise</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_DataFileUpdates_Automatic</name>
+    <title>Automatic</title>
+    <filename>_examples__device_detection__data_file_updates__automatic</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_DataFileUpdates_FileSystemWatcher_Index</name>
+    <title>File System Watcher</title>
+    <filename>_examples__device_detection__data_file_updates__file_system_watcher__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_DataFileUpdates_FileSystemWatcher_OnPremiseHash</name>
+    <title>On-Premise Hash</title>
+    <filename>_examples__device_detection__data_file_updates__file_system_watcher__on_premise_hash</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_DataFileUpdates_Index</name>
+    <title>Data File Updates</title>
+    <filename>_examples__device_detection__data_file_updates__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_DataFileUpdates_Manual</name>
+    <title>Manual</title>
+    <filename>_examples__device_detection__data_file_updates__manual</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_DataFileUpdates_PollingInterval_Index</name>
+    <title>Update Polling Interval</title>
+    <filename>_examples__device_detection__data_file_updates__polling_interval__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_DataFileUpdates_PollingInterval_OnPremiseHash</name>
+    <title>On-Premise Hash</title>
+    <filename>_examples__device_detection__data_file_updates__polling_interval__on_premise_hash</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_DataFileUpdates_UpdateOnStartup_Index</name>
+    <title>Update On Start-up</title>
+    <filename>_examples__device_detection__data_file_updates__update_on_startup__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_DataFileUpdates_UpdateOnStartup_OnPremiseHash</name>
+    <title>On-Premise Hash</title>
+    <filename>_examples__device_detection__data_file_updates__update_on_startup__on_premise_hash</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_GettingStarted_Console_Cloud</name>
+    <title>Cloud</title>
+    <filename>_examples__device_detection__getting_started__console__cloud</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_GettingStarted_Console_Index</name>
+    <title>Getting Started - Console</title>
+    <filename>_examples__device_detection__getting_started__console__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_GettingStarted_Console_OnPremise</name>
+    <title>On-Premise</title>
+    <filename>_examples__device_detection__getting_started__console__on_premise</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_GettingStarted_Web_Cloud</name>
+    <title>Cloud</title>
+    <filename>_examples__device_detection__getting_started__web__cloud</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_GettingStarted_Web_Index</name>
+    <title>Getting Started - Web</title>
+    <filename>_examples__device_detection__getting_started__web__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_GettingStarted_Web_OnPremise</name>
+    <title>On-Premise</title>
+    <filename>_examples__device_detection__getting_started__web__on_premise</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_Index</name>
+    <title>Device Detection Examples</title>
+    <filename>_examples__device_detection__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_MatchMetrics_Index</name>
+    <title>Match Metrics</title>
+    <filename>_examples__device_detection__match_metrics__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_MatchMetrics_OnPremiseHash</name>
+    <title>On-Premise Hash</title>
+    <filename>_examples__device_detection__match_metrics__on_premise_hash</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_Metadata_Cloud</name>
+    <title>Cloud</title>
+    <filename>_examples__device_detection__metadata__cloud</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_Metadata_Index</name>
+    <title>Metadata</title>
+    <filename>_examples__device_detection__metadata__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_Metadata_OnPremiseHash</name>
+    <title>On-Premise</title>
+    <filename>_examples__device_detection__metadata__on_premise_hash</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_NativeKeyLookup_Cloud</name>
+    <title>Cloud</title>
+    <filename>_examples__device_detection__native_key_lookup__cloud</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_NativeKeyLookup_Index</name>
+    <title>Native Key Lookup</title>
+    <filename>_examples__device_detection__native_key_lookup__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_OfflineProcessing_Index</name>
+    <title>Offline Processing</title>
+    <filename>_examples__device_detection__offline_processing__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_OfflineProcessing_OnPremiseHash</name>
+    <title>On-Premise Hash</title>
+    <filename>_examples__device_detection__offline_processing__on_premise_hash</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_Performance_Index</name>
+    <title>Performance</title>
+    <filename>_examples__device_detection__performance__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_Performance_OnPremiseHash</name>
+    <title>On-Premise Hash</title>
+    <filename>_examples__device_detection__performance__on_premise_hash</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_TacLookup_Cloud</name>
+    <title>Cloud</title>
+    <filename>_examples__device_detection__tac_lookup__cloud</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_DeviceDetection_TacLookup_Index</name>
+    <title>TAC Lookup</title>
+    <filename>_examples__device_detection__tac_lookup__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_Index</name>
+    <title>Examples</title>
+    <filename>_examples__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_ReverseGeocoding_ConfigureFromFile_51DegreesCloud</name>
+    <title>51Degrees Cloud</title>
+    <filename>_examples__reverse_geocoding__configure_from_file_51_degrees_cloud</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_ReverseGeocoding_ConfigureFromFile_Index</name>
+    <title>Configure From File</title>
+    <filename>_examples__reverse_geocoding__configure_from_file__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_ReverseGeocoding_GettingStarted_51DegreesCloud</name>
+    <title>51Degrees Cloud</title>
+    <filename>_examples__reverse_geocoding__getting_started_51_degrees_cloud</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_ReverseGeocoding_GettingStarted_Index</name>
+    <title>Getting Started</title>
+    <filename>_examples__reverse_geocoding__getting_started__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_ReverseGeocoding_Index</name>
+    <title>Reverse Geocoding</title>
+    <filename>_examples__reverse_geocoding__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_ReverseGeocoding_WebIntegration_Examples</name>
+    <title>Examples</title>
+    <filename>_examples__reverse_geocoding__web_integration__examples</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_ReverseGeocoding_WebIntegration_Index</name>
+    <title>Web Integration</title>
+    <filename>_examples__reverse_geocoding__web_integration__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_UsageSharing</name>
+    <title>Usage Sharing</title>
+    <filename>_examples__usage_sharing</filename>
+  </compound>
+  <compound kind="page">
+    <name>Examples_WebIntegration</name>
+    <title>Web Integration</title>
+    <filename>_examples__web_integration</filename>
+  </compound>
+  <compound kind="page">
+    <name>Features_AsynchronousExecution</name>
+    <title>Asynchronous Execution</title>
+    <filename>_features__asynchronous_execution</filename>
+  </compound>
+  <compound kind="page">
+    <name>Features_AutomaticDatafileUpdates</name>
+    <title>Automatic Data File Updates</title>
+    <filename>_features__automatic_datafile_updates</filename>
+    <docanchor file="_features__automatic_datafile_updates">Features_AutomaticDatafileUpdates_UrlFormatter</docanchor>
+    <docanchor file="_features__automatic_datafile_updates">Large_Clusters</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>Features_ClientSideEvidence</name>
+    <title>Client-side Evidence</title>
+    <filename>_features__client_side_evidence</filename>
+  </compound>
+  <compound kind="page">
+    <name>Features_CustomElements</name>
+    <title>Custom Flow Elements</title>
+    <filename>_features__custom_elements</filename>
+  </compound>
+  <compound kind="page">
+    <name>Features_ErrorHandling</name>
+    <title>Error Handling</title>
+    <filename>_features__error_handling</filename>
+  </compound>
+  <compound kind="page">
+    <name>Features_FlexibleAccessors</name>
+    <title>Flexible Accessors</title>
+    <filename>_features__flexible_accessors</filename>
+  </compound>
+  <compound kind="page">
+    <name>Features_Index</name>
+    <title>Features</title>
+    <filename>_features__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Features_LazyLoading</name>
+    <title>Lazy Loading</title>
+    <filename>_features__lazy_loading</filename>
+  </compound>
+  <compound kind="page">
+    <name>Features_Logging</name>
+    <title>Logging</title>
+    <filename>_features__logging</filename>
+  </compound>
+  <compound kind="page">
+    <name>Features_ParallelExecution</name>
+    <title>Parallel Execution</title>
+    <filename>_features__parallel_execution</filename>
+  </compound>
+  <compound kind="page">
+    <name>Features_ResultCaching</name>
+    <title>Result Caching</title>
+    <filename>_features__result_caching</filename>
+  </compound>
+  <compound kind="page">
+    <name>Features_UsageSharing</name>
+    <title>Usage Sharing</title>
+    <filename>_features__usage_sharing</filename>
+    <docanchor file="_features__usage_sharing">Internals</docanchor>
+    <docanchor file="_features__usage_sharing">RepeatEvidence</docanchor>
+    <docanchor file="_features__usage_sharing">Low_Level_Usage_Sharing</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>Features_WebIntegration</name>
+    <title>Web Integration</title>
+    <filename>_features__web_integration</filename>
+  </compound>
+  <compound kind="page">
+    <name>Info_Dependencies</name>
+    <title>Dependencies</title>
+    <filename>_info__dependencies</filename>
+  </compound>
+  <compound kind="page">
+    <name>Info_Distributor</name>
+    <title>Distributor</title>
+    <filename>_info__distributor</filename>
+  </compound>
+  <compound kind="page">
+    <name>Info_ErrorMessages</name>
+    <title>Error Messages</title>
+    <filename>_info__error_messages</filename>
+    <docanchor file="_info__error_messages">Continuous_processing_of_unique_User_Agents</docanchor>
+    <docanchor file="_info__error_messages">Evidence_keys_could_not_be_determined</docanchor>
+    <docanchor file="_info__error_messages">Internal_server_error</docanchor>
+    <docanchor file="_info__error_messages">Invalid_license_supplied</docanchor>
+    <docanchor file="_info__error_messages">Invalid_product</docanchor>
+    <docanchor file="_info__error_messages">Location_lookup_error</docanchor>
+    <docanchor file="_info__error_messages">Location_products_missing</docanchor>
+    <docanchor file="_info__error_messages">No_properties_associated_with_these_products</docanchor>
+    <docanchor file="_info__error_messages">Non_unique_property_requested</docanchor>
+    <docanchor file="_info__error_messages">Only_add_on_product_provided</docanchor>
+    <docanchor file="_info__error_messages">Product_to_subscription_mapping</docanchor>
+    <docanchor file="_info__error_messages">Products_in_subscription_not_valid</docanchor>
+    <docanchor file="_info__error_messages">Products_not_associated_with_the_cloud_service</docanchor>
+    <docanchor file="_info__error_messages">Properties_not_available_with_this_subscription</docanchor>
+    <docanchor file="_info__error_messages">Referer_or_Origin_header_not_set</docanchor>
+    <docanchor file="_info__error_messages">Requests_have_been_blocked</docanchor>
+    <docanchor file="_info__error_messages">Request_limit_reached</docanchor>
+    <docanchor file="_info__error_messages">Resource_key_could_not_be_retrieved</docanchor>
+    <docanchor file="_info__error_messages">Resource_key_not_authorized_on_domain</docanchor>
+    <docanchor file="_info__error_messages">Resource_key_not_recognized</docanchor>
+    <docanchor file="_info__error_messages">Resource_key_not_valid</docanchor>
+    <docanchor file="_info__error_messages">Resource_key_required</docanchor>
+    <docanchor file="_info__error_messages">Sequence_value_invalid</docanchor>
+    <docanchor file="_info__error_messages">Sequence_value_not_found</docanchor>
+    <docanchor file="_info__error_messages">Supplied_licenses_do_not_contain_any_valid_products</docanchor>
+    <docanchor file="_info__error_messages">There_are_no_valid_products</docanchor>
+    <docanchor file="_info__error_messages">Trial_period_expired</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>Info_FAQs</name>
+    <title>Frequently Asked Questions</title>
+    <filename>_info__f_a_qs</filename>
+    <docanchor file="_info__f_a_qs">Dotn_TempFiles</docanchor>
+    <docanchor file="_info__f_a_qs">Node_TempFiles</docanchor>
+    <docanchor file="_info__f_a_qs">Dependencies_Glibc_Libatomic</docanchor>
+    <docanchor file="_info__f_a_qs">PHP_ProcessManager</docanchor>
+    <docanchor file="_info__f_a_qs">Python_MultiProcess</docanchor>
+    <docanchor file="_info__f_a_qs">UACH_DualEvidence</docanchor>
+    <docanchor file="_info__f_a_qs">UserAgent_ContainsBetterData</docanchor>
+    <docanchor file="_info__f_a_qs">Error_OnPremise_DataFile</docanchor>
+    <docanchor file="_info__f_a_qs">Error_NetFramework_NetStandard</docanchor>
+    <docanchor file="_info__f_a_qs">Error_NetFramework_NewerPackage</docanchor>
+    <docanchor file="_info__f_a_qs">Error_NetFramework_NativeDll</docanchor>
+    <docanchor file="_info__f_a_qs">IsMobile_Sec-CH-UA-Mobile</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>Info_FeatureMatrix</name>
+    <title>Feature Matrix</title>
+    <filename>_info__feature_matrix</filename>
+  </compound>
+  <compound kind="page">
+    <name>Info_Index</name>
+    <title>Information</title>
+    <filename>_info__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>Info_ResourceKeys</name>
+    <title>Resource Keys</title>
+    <filename>_info__resource_keys</filename>
+    <docanchor file="_info__resource_keys">Seeing_existing_key_authorized_properties</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>Info_TestedVersions</name>
+    <title>Tested Versions</title>
+    <filename>_info__tested_versions</filename>
+  </compound>
+  <compound kind="page">
+    <name>OtherIntegrations_Index</name>
+    <title>Other Integrations</title>
+    <filename>_other_integrations__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>OtherIntegrations_Nginx</name>
+    <title>Nginx</title>
+    <filename>_other_integrations__nginx</filename>
+  </compound>
+  <compound kind="page">
+    <name>OtherIntegrations_UAParser</name>
+    <title>UAParser.js</title>
+    <filename>_other_integrations__u_a_parser</filename>
+    <docanchor file="_other_integrations__u_a_parser">Download_UAParser</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>OtherIntegrations_Varnish</name>
+    <title>Varnish</title>
+    <filename>_other_integrations__varnish</filename>
+  </compound>
+  <compound kind="page">
+    <name>OtherIntegrations_Wordpress</name>
+    <title>WordPress</title>
+    <filename>_other_integrations__wordpress</filename>
+  </compound>
+  <compound kind="page">
+    <name>Quickstart_DeviceDetection</name>
+    <title>Device Detection</title>
+    <filename>_quickstart__device_detection</filename>
+  </compound>
+  <compound kind="page">
+    <name>Quickstart_Quickstart</name>
+    <title>Quick Start</title>
+    <filename>_quickstart__quickstart</filename>
+  </compound>
+  <compound kind="page">
+    <name>Quickstart_ReverseGeocoding</name>
+    <title>Reverse Geocoding</title>
+    <filename>_quickstart__reverse_geocoding</filename>
+  </compound>
+  <compound kind="page">
+    <name>ReverseGeocoding_Index</name>
+    <title>Reverse Geocoding</title>
+    <filename>_reverse_geocoding__index</filename>
+  </compound>
+  <compound kind="page">
+    <name>ReverseGeocoding_Overview</name>
+    <title>Reverse Geocoding - Overview</title>
+    <filename>_reverse_geocoding__overview</filename>
+  </compound>
+  <compound kind="page">
+    <name>index</name>
+    <title>Home</title>
+    <filename>index</filename>
+  </compound>
+</tagfile>
