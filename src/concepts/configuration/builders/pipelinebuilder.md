@@ -11,6 +11,9 @@ other configuration options for the @pipeline. In languages that support it, a
 A @pipeline's configuration is immutable once it has been constructed, so
 all its configuration must be done in the **builder**.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/pipeline-configuration.md)
+for more technical details.
 
 # Options
 

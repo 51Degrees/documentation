@@ -6,6 +6,10 @@ By providing information on the type and capabilities of the device, operating s
 
 If you're ready to get going with **device detection**, follow the [quick start guide](@ref Quickstart_DeviceDetection) to get you up and running with just a few clicks. If you'd like to know more about how our solution works and some of its benefits over those of others, then carry on reading below.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README.md)
+for more technical details.
+
 # How device detection works
 
 Primarily, 51Degrees device detection solutions focus on the User-Agent HTTP header to identify a device. However, over time

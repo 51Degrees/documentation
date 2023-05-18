@@ -6,6 +6,10 @@ Rather than setting all build options and @flowelements explicitly in code form,
 preferable to make the @pipeline configurable without recompiling. A @pipelinebuilder allows
 this via its 'BuildFromConfiguration' method.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/pipeline-configuration.md)
+for more technical details.
+
 # Usage
 
 A configuration can be parsed manually from XML, JSON, or any other source and given to a @pipelinebuilder. 

@@ -16,6 +16,9 @@ The @evidence is carried through the **Pipeline** to the
 The @flowdata structure encapsulates all input and output data associated 
 with a single **Pipeline** process request.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#pipeline)
+for more technical details.
 
 # Creation
 
