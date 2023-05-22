@@ -22,6 +22,10 @@ if CacheHitOrMiss is set to true then the CacheHit value will be set to true
 on the @Aspectdata. The primary use case for this is to validate in testing 
 whether a cache hit or miss has occurred.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/caching.md)
+for more technical details.
+
 # Internals
 
 The @evidence encapsulated within @flowdata will often contain many more values than are relevant 

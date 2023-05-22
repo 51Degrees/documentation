@@ -7,6 +7,10 @@ It is part of the [IMEI](https://en.wikipedia.org/wiki/International_Mobile_Equi
 number and is generally only available to code running with sufficient privileges on the 
 user's device.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/pipeline-elements/hardware-profile-lookup-cloud.md)
+for more technical details.
+
 TAC lookup is currently available in two forms:
 1. Requests to the 51Degrees cloud service, fully integrated into the Pipeline API.
 2. Using the 'TAC CSV' data file to create a local lookup solution based on SQL or some 

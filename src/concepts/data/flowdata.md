@@ -6,6 +6,10 @@
 This includes input and output data as well as metadata related to the processing such as 
 the details of any errors that occurred.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#flow-data)
+for more technical details.
+
 # Data structure
 
 **Flow data** has several sub-containers that are used to segment the data that it contains:

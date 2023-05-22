@@ -5,6 +5,10 @@
 **Element data** is the container for data that is returned as a result of the processing 
 performed by a @flowelement.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#element-data)
+for more technical details.
+
 # Data structure
 
 The precise details of the storage structure used internally by **element data** will
