@@ -6,25 +6,25 @@
     <tab type="pages" visible="yes" title="" intro=""/>
     <tab type="modules" visible="yes" title="" intro=""/>
   	<tab type="usergroup" visible="yes" title="Language Specific">
-    <tab type="user" visible="yes" title="C/C++" url="../../device-detection-cxx/index.html"/>
-    <tab type="user" visible="yes" title="Java Pipeline" url="../../pipeline-java/index.html"/>
-    <tab type="user" visible="yes" title="Java Device Detection" url="../../device-detection-java/index.html"/>
-    <tab type="user" visible="yes" title="Java Location" url="../../location-java/index.html"/>
-    <tab type="user" visible="yes" title=".NET Pipeline" url="../../pipeline-dotnet/index.html"/>
-    <tab type="user" visible="yes" title=".NET Device Detection" url="../../device-detection-dotnet/index.html"/>
-    <tab type="user" visible="yes" title=".NET Location" url="../../location-dotnet/index.html"/>
-    <tab type="user" visible="yes" title="PHP Pipeline" url="../../pipeline-php/index.html"/>
-    <tab type="user" visible="yes" title="PHP Device Detection" url="../../device-detection-php/index.html"/>
-    <tab type="user" visible="yes" title="PHP Device Detection On-Premise" url="../../device-detection-php-onpremise/index.html"/>
-	<tab type="user" visible="yes" title="PHP Location" url="../../location-php/index.html"/>
-    <tab type="user" visible="yes" title="Python Pipeline" url="../../pipeline-python/index.html"/>
-    <tab type="user" visible="yes" title="Python Device Detection" url="../../device-detection-python/index.html"/>
-    <tab type="user" visible="yes" title="Python Location" url="../../location-python/index.html"/>
-    <tab type="user" visible="yes" title="Node.js Pipeline" url="../../pipeline-node/index.html"/>
-    <tab type="user" visible="yes" title="Node.js Device Detection" url="../../device-detection-node/index.html"/>
-    <tab type="user" visible="yes" title="Node.js Location" url="../../location-node/index.html"/>
-    <tab type="user" visible="yes" title="Varnish Device Detection" url="../../device-detection-varnish/index.html"/>
-    <tab type="user" visible="yes" title="Nginx Device Detection" url="../../device-detection-nginx/index.html"/>
+    <tab type="user" visible="yes" title="C/C++" url="../device-detection-cxx/index.html"/>
+    <tab type="user" visible="yes" title="Java Pipeline" url="../pipeline-java/index.html"/>
+    <tab type="user" visible="yes" title="Java Device Detection" url="../device-detection-java/index.html"/>
+    <tab type="user" visible="yes" title="Java Location" url="../location-java/index.html"/>
+    <tab type="user" visible="yes" title=".NET Pipeline" url="../pipeline-dotnet/index.html"/>
+    <tab type="user" visible="yes" title=".NET Device Detection" url="../device-detection-dotnet/index.html"/>
+    <tab type="user" visible="yes" title=".NET Location" url="../location-dotnet/index.html"/>
+    <tab type="user" visible="yes" title="PHP Pipeline" url="../pipeline-php/index.html"/>
+    <tab type="user" visible="yes" title="PHP Device Detection" url="../device-detection-php/index.html"/>
+    <tab type="user" visible="yes" title="PHP Device Detection On-Premise" url="../device-detection-php-onpremise/index.html"/>
+	<tab type="user" visible="yes" title="PHP Location" url="../location-php/index.html"/>
+    <tab type="user" visible="yes" title="Python Pipeline" url="../pipeline-python/index.html"/>
+    <tab type="user" visible="yes" title="Python Device Detection" url="../device-detection-python/index.html"/>
+    <tab type="user" visible="yes" title="Python Location" url="../location-python/index.html"/>
+    <tab type="user" visible="yes" title="Node.js Pipeline" url="../pipeline-node/index.html"/>
+    <tab type="user" visible="yes" title="Node.js Device Detection" url="../device-detection-node/index.html"/>
+    <tab type="user" visible="yes" title="Node.js Location" url="../location-node/index.html"/>
+    <tab type="user" visible="yes" title="Varnish Device Detection" url="../device-detection-varnish/index.html"/>
+    <tab type="user" visible="yes" title="Nginx Device Detection" url="../device-detection-nginx/index.html"/>
     </tab>
     <tab type="user" visible="yes" title="Cloud API Documentation" url="https://cloud.51degrees.com/api-docs/index.html"/>
   </navindex>
