@@ -19,6 +19,7 @@ your own profiling.
 
 We also run performance tests regularly on GitHub actions. The performance of this will
 not be as good, as it's running on a GitHub runner, but gives an indication of consistency:
+
 ![Ubuntu Results](https://raw.githubusercontent.com/51Degrees/device-detection-cxx/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png)
 
 # .NET
@@ -32,6 +33,7 @@ not be as good, as it's running on a GitHub runner, but gives an indication of c
 
 We also run performance tests regularly on GitHub actions. The performance of this will
 not be as good, as it's running on a GitHub runner, but gives an indication of consistency:
+
 ![Ubuntu Results](https://raw.githubusercontent.com/51Degrees/device-detection-dotnet/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png)
 
 # Node.js
@@ -55,6 +57,7 @@ not be as good, as it's running on a GitHub runner, but gives an indication of c
 
 We also run performance tests regularly on GitHub actions. The performance of this will
 not be as good, as it's running on a GitHub runner, but gives an indication of consistency:
+
 ![Ubuntu Results](https://raw.githubusercontent.com/51Degrees/device-detection-java/gh-images/perf-graph-Ubuntu_Java_17-DetectionsPerSecond-latest.png)
 
 # Python
