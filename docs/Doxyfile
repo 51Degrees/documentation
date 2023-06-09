@@ -1303,6 +1303,7 @@ HTML_EXTRA_STYLESHEET  =
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_EXTRA_FILES       = examplegrabber.js \
+                         testedversionsgrabber.js \
                          images/icon-arrow-left-black.svg \
                          images/icon-arrow-right-black.svg \
                          images/icon-arrow-solid-right-mute.svg \
