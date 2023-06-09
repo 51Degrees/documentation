@@ -3,7 +3,7 @@
 51Degrees uses automated testing to continuously validate our API against a number of platforms and language versions.
 The tests cover a wide array of scenarios and are available to view in our repositories on [GitHub](https://github.com/51Degrees).
 In general, we apply the following guidelines when deciding which platforms and versions to test against:
-- We use Azure DevOps with Microsoft-hosted build agents, so we test against platforms that Microsoft has [hosted agents](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted) for.
+- We use GitHub Actions with hosted runners, so we test against platforms that GitHub has [hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources) for.
 - We test against all versions of languages that are currently considered LTS (Long Term Support) versions.
 
 The tabs below show the specific platforms and versions that are currently tested as part of each release.
@@ -11,6 +11,25 @@ The tabs below show the specific platforms and versions that are currently teste
 If something is not tested here, and you believe it should be, please raise an issue via our [GitHub](https://github.com/51Degrees) page and we will look into it.
 
 You may also want to review the @dependencies page, as these topics are related.
+@htmlonly
+<script>
+  $( document ).ready(function() {
+      grabTestedVersions("device-detection-nginx", "nginx-versions", [
+          { title: "NGINX Version", getValue: (d) => d.NginxVersion }
+      ]);
+      grabTestedVersions("device-detection-cxx", "cxx-versions", [
+          { title: "Architecture", getValue: (d) => d.Arch }
+      ]);
+      grabTestedVersions("device-detection-java", "java-versions", [
+          { title: "JDK", getValue: d => d.JavaSDKEnvVar.split("_")[2] },
+          { title: "Architecture", getValue: d => d.JavaSDKEnvVar.split("_")[3].toLowerCase() }
+      ]);
+      grabTestedVersions("device-detection-dotnet", "dotnet-versions", [
+          { title: "Architecture", getValue: d => d.Arch }
+      ]);
+  });
+</script>
+@endhtmlonly
 
 @startsnippets
 @showsnippet{cxx,C/C++}
@@ -26,45 +45,14 @@ You may also want to review the @dependencies page, as these topics are related.
 @showsnippet{rust,Rust}
 @defaultsnippet{Select a language to view the tested versions.}
 @startsnippet{cxx}
-Language Versions:
-- C11
 
-Platforms:
-- Windows Server 2019
-  - 32-bit (x86_64)
-  - 64-bit (x86_64)
-- Ubuntu 18.04
-  - 32-bit (x86_64)
-  - 64-bit (x86_64)
-- MacOS 11
-  - 64-bit (x86_64)
-
+<div id="cxx-versions"></div>
 @endsnippet
 @startsnippet{dotnet}
-
-Language Versions:
-- .NET Core 3.1
-
-Platforms:
-- Windows Server 2019
-  - 32-bit (x86_64)
-  - 64-bit (x86_64)
-- Ubuntu 18.04
-  - 64-bit (x86_64)
-
+<div id="dotnet-versions"></div>
 @endsnippet
 @startsnippet{java}
-Language Versions:
-- Java 8, 11 & 17
-
-Platforms:
-- Windows Server 2019
-  - 64-bit (x86_64)
-- Ubuntu 18.04
-  - 64-bit (x86_64)
-- MacOS 11
-  - 64-bit (x86_64)
-
+<div id="java-versions"></div>
 @endsnippet
 @startsnippet{php}
 Language Versions:
@@ -129,15 +117,7 @@ Platforms:
 
 @endsnippet
 @startsnippet{nginx}
-Language Versions:
-- Nginx 1.19.0, 1.19.5, 1.19.10, 1.20.0, 1.21.3
-
-Platforms:
-- Ubuntu 18.04
-  - 64-bit (x86_64)
-- Ubuntu 20.04
-  - 64-bit (x86_64)
-
+<div id="nginx-versions"></div>
 @endsnippet
 @startsnippet{wordpress}
 Language Versions:
