@@ -17,6 +17,10 @@ your own profiling.
 | Quad core Xeon 2.4 GHz | 4 Threads          | `MaxPerformance`    | 0.00058                 | ≈ 1,700,000           |
 |                        |                    | `HighPerformance`   | 0.00080                 | ≈ 1,250,000           |
 
+We also run performance tests regularly on GitHub actions. The performance of this will
+not be as good, as it's running on a GitHub runner, but gives an indication of consistency:
+![Ubuntu Results](https://raw.githubusercontent.com/51Degrees/device-detection-cxx/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png)
+
 # .NET
 
 | Machine              | Settings           | Performance Profile | Time Per Detection (ms) | Detections Per Second |
@@ -25,6 +29,10 @@ your own profiling.
 |                      |                    | `HighPerformance`   | 0.00481                 | ≈ 210,000             |
 |                      |                    | `Balanced`          | 0.01711                 | ≈ 58,000              |
 |                      |                    | `LowMemory`         | 0.06042                 | ≈ 16,000              |
+
+We also run performance tests regularly on GitHub actions. The performance of this will
+not be as good, as it's running on a GitHub runner, but gives an indication of consistency:
+![Ubuntu Results](https://raw.githubusercontent.com/51Degrees/device-detection-dotnet/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png)
 
 # Node.js
 
@@ -44,6 +52,10 @@ your own profiling.
 | ---------------------- |------------------- | ------------------- | ----------------------: | --------------------: |
 | Quad core i7 2.2 GHz   | 4 Threads          | `MaxPerformance`    | 0.01900                 | ≈ 52,632              |
 |                        |                    | `HighPerformance`   | 0.01957                 | ≈ 51,086              |
+
+We also run performance tests regularly on GitHub actions. The performance of this will
+not be as good, as it's running on a GitHub runner, but gives an indication of consistency:
+![Ubuntu Results](https://raw.githubusercontent.com/51Degrees/device-detection-java/gh-images/perf-graph-Ubuntu_Java_17-DetectionsPerSecond-latest.png)
 
 # Python
 
