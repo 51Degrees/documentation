@@ -41,4 +41,4 @@ If you are looking for User-Agent Client Hints support, please follow the [User-
 If you wish to get started with 51Degrees, check out our pricing page for an overview of all our pricing tiers. You can then follow the 
 [Configurator guide](@configuratorexplanation) to get started in the cloud or our [on-premise documentation](https://51degrees.com/documentation/index.html).
 
-Alternatively, get in touch with our [Sales](https://51degrees.com/contact-us) team and mention your use case – we will discuss the best solution for you.
+Alternatively, get in touch with our [Sales](https://51degrees.com/contact-us) team and mention your use case, as we will discuss the best solution for you.
