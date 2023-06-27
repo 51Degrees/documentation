@@ -12,3 +12,7 @@ For example, much of the @lazyloading functionality in .NET actually resides in 
 **aspect data** class. For more details see the @lazyloading feature page.
 
 For details on data structure, lifecycle and thread-safety, see @elementdata.
+
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#aspect-data)
+for more technical details.

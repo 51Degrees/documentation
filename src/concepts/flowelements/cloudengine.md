@@ -7,6 +7,10 @@
 occurs locally to the **engine**. Having data that does not reside
 in the **engine** itself means that the same **engine** can be used with multiple data sets.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#cloud-aspect-engine)
+for more technical details.
+
 # Use cases
 
 A **cloud engine** is very lightweight compared to an @onpremiseengine both in terms of memory and CPU usage.

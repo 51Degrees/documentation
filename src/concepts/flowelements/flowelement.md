@@ -10,6 +10,10 @@ that any **element** can be used in the same manner, regardless of its input, ou
 These are the building blocks of a @pipeline, and do all the processing as instructed by
 the @pipeline they reside in.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#flow-element)
+for more technical details.
+
 # Creation
 
 **Flow elements** are built using a corresponding @elementbuilder, which

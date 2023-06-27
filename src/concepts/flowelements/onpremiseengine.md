@@ -11,6 +11,9 @@ An **on-premise engine** builds on the @aspectengine concept to introduce the ab
 * load data either from memory or one or more data files
 * keep data files up to date
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#on-premise-engines)
+for more technical details.
 
 # Use cases
 

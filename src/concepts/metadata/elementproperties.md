@@ -9,6 +9,10 @@ A **property's** unique identifier is its name, but it also has other metadata w
 concept of a **property** is built up in a hierarchy, starting at an **element property**,
 which is then added to by inheriting **property** types.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/properties.md#property-metadata)
+for more technical details.
+
 # Name
 
 The name of the property uniquely identifies the **property** within a @flowelement. 

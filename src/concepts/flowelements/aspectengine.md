@@ -11,6 +11,9 @@ In the same way a @flowelement can produce an @elementdata containing results of
 **engine** can produce an @aspectdata. This builds on @elementdata to add some of the extra functionality
 listed above.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#aspect-engine)
+for more technical details.
 
 # Caching
 

@@ -8,6 +8,10 @@ This string is generally only available to code running with sufficient privileg
 user's device and is available for both [Android](https://developer.android.com/reference/android/os/Build#MODEL) 
 and [iOS](https://gist.github.com/soapyigu/c99e1f45553070726f14c1bb0a54053b#file-machinename-swift) devices.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/pipeline-elements/hardware-profile-lookup-cloud.md)
+for more technical details.
+
 Native key lookup is currently available in two forms:
 1. Requests to the 51Degrees cloud service, fully integrated into the Pipeline API.
 2. Using the 'TAC CSV' data file to create a local lookup solution based on SQL or some 
