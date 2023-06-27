@@ -26,7 +26,7 @@ To access the Version 4 data files, you will need to purchase a License Key. Vis
 select the suitable plan for your needs. Alternatively, get in touch with [Sales](https://51degrees.com/contact-us) if you require any help.
 
 Once you have received a License Key, you can use this to download a data file containing all the properties. You can 
-[download the file manually](https://51degrees.com/developers/downloads) or set up [automatic data file updates](Features_AutomaticDatafileUpdates).
+[download the file manually](https://51degrees.com/developers/downloads) or set up [automatic data file updates](@ref Features_AutomaticDatafileUpdates).
 
 You can download the latest API packages for your programming language via our [downloads page](https://51degrees.com/developers/downloads)
 or [GitHub](https://github.com/51Degrees).
@@ -34,11 +34,15 @@ or [GitHub](https://github.com/51Degrees).
 Once you have obtained your new License Key and downloaded the latest API packages and data file, please visit our 
 [Migration guide](@ref DeviceDetection_MigrationGuides_51DegreesV3) for the next steps.
 
+We also recommend enabling @usagesharing in your environment. This allows our machine learning algorithm to grow and therefore detect new and unique User-Agents quicker with 
+higher levels of accuracy.
+
 If you are looking for User-Agent Client Hints support, please follow the [User-Agent Client Hints documentation](@ref DeviceDetection_Features_UACH_Overview).
 
 ## New customers
 
-If you wish to get started with 51Degrees, check out our pricing page for an overview of all our pricing tiers. You can then follow the 
-[Configurator guide](@configuratorexplanation) to get started in the cloud or our [on-premise documentation](https://51degrees.com/documentation/index.html).
+If you wish to get started with 51Degrees, check out our [pricing](https://51degrees.com/pricing) page for an overview of all our pricing tiers. You can then follow the 
+@configuratorexplanation to get started in the cloud or use our [on-premise documentation](https://51degrees.com/documentation/index.html).
 
-Alternatively, get in touch with our [Sales](https://51degrees.com/contact-us) team and mention your use case, as we will discuss the best solution for you.
+Alternatively, get in touch with our [Sales](https://51degrees.com/contact-us) team and mention your use case. Please provide as much information as possible such as 
+intended deployment method, programming language, and environment configuration as this will help us discuss the best solution for you.
