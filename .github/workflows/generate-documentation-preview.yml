@@ -1,0 +1,13 @@
+name: Generate Documentation Preview
+
+on:
+  workflow_dispatch:
+
+jobs:
+  # Run the common workflow on each pull request
+  Generate_Documentation_Preview:
+    uses: 51Degrees/common-ci/.github/workflows/generate-documentation-preview.yml@main
+    with:
+      repo-name: ${{ github.event.repository.name }}
+    secrets: 
+      token: ${{ secrets.ACCESS_TOKEN }}
