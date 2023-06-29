@@ -70,73 +70,18 @@ $(document).ready(function(){initNavTree('_benchmarks__device_detection.html',''
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><p>Precise benchmarking is a complex topic. The following results are intended more as an illustration of the difference in performance between platforms and configurations than an in-depth exploration of performance.</p>
 <p>If performance is important to you then we highly recommend running your own profiling.</p>
+<p>These tests are run using a console performance example. Evidence from the <code>Evidence Records</code> file in <a href="https://github.com/51Degrees/device-detection-data">device-detection-data</a> is processed by the pipeline and the time taken measured. If language appropriate, multiple threads are used to run the tests. For technical details, see the example repositories on <a href="https://github.com/51Degrees?q=example">GitHub</a>. We run performance tests regularly on GitHub actions. The performance of this may not be as good as a dedicated machine, as it's running on a GitHub runner, but gives an indication of consistency.</p>
 <h1 class="g-docs__section-heading">C/C++</h1>
-<ul>
-<li><b>Number of User-Agents</b>: 20000</li>
-<li><b>Data File</b>: Enterprise</li>
-</ul>
-<div class="g-table g-table--overflow"><table class="c-table">
-<tr class="c-table__row--heading">
-<td class="c-table__cell">Machine  </td><td class="c-table__cell">Settings  </td><td class="c-table__cell">Performance Profile  </td><td class="c-table__cell">Time Per Detection (ms)  </td><td class="c-table__cell">Detections Per Second   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">Quad core Xeon 2.4 GHz  </td><td class="c-table__cell">4 Threads  </td><td class="c-table__cell"><code>MaxPerformance</code>  </td><td class="c-table__cell">0.00058  </td><td class="c-table__cell">≈ 1,700,000   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell"></td><td class="c-table__cell"></td><td class="c-table__cell"><code>HighPerformance</code>  </td><td class="c-table__cell">0.00080  </td><td class="c-table__cell">≈ 1,250,000   </td></tr>
-</table>
-</div><p>We also run performance tests regularly on GitHub actions. The performance of this will not be as good, as it's running on a GitHub runner, but gives an indication of consistency: <img src="https://raw.githubusercontent.com/51Degrees/device-detection-cxx/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png" alt="Ubuntu Results" class="inline"/>
+<img src="https://raw.githubusercontent.com/51Degrees/device-detection-cxx/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png" alt="Ubuntu Results" class="inline"/>
 <h1 class="g-docs__section-heading">.NET</h1>
-<div class="g-table g-table--overflow"><table class="c-table">
-<tr class="c-table__row--heading">
-<td class="c-table__cell">Machine  </td><td class="c-table__cell">Settings  </td><td class="c-table__cell">Performance Profile  </td><td class="c-table__cell">Time Per Detection (ms)  </td><td class="c-table__cell">Detections Per Second   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">Quad core i7 2.2 GHz  </td><td class="c-table__cell">Parallel Tasks  </td><td class="c-table__cell"><code>MaxPerformance</code>  </td><td class="c-table__cell">0.00461  </td><td class="c-table__cell">≈ 220,000   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell"></td><td class="c-table__cell"></td><td class="c-table__cell"><code>HighPerformance</code>  </td><td class="c-table__cell">0.00481  </td><td class="c-table__cell">≈ 210,000   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell"></td><td class="c-table__cell"></td><td class="c-table__cell"><code>Balanced</code>  </td><td class="c-table__cell">0.01711  </td><td class="c-table__cell">≈ 58,000   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell"></td><td class="c-table__cell"></td><td class="c-table__cell"><code>LowMemory</code>  </td><td class="c-table__cell">0.06042  </td><td class="c-table__cell">≈ 16,000   </td></tr>
-</table>
-</div><p>We also run performance tests regularly on GitHub actions. The performance of this will not be as good, as it's running on a GitHub runner, but gives an indication of consistency: <img src="https://raw.githubusercontent.com/51Degrees/device-detection-dotnet/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png" alt="Ubuntu Results" class="inline"/>
+<img src="https://raw.githubusercontent.com/51Degrees/device-detection-dotnet/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png" alt="Ubuntu Results" class="inline"/>
 <h1 class="g-docs__section-heading">Node.js</h1>
-<ul>
-<li><b>Number of User-Agents</b>: 20000</li>
-<li><b>Data File</b>: Enterprise</li>
-</ul>
-<div class="g-table g-table--overflow"><table class="c-table">
-<tr class="c-table__row--heading">
-<td class="c-table__cell">Machine  </td><td class="c-table__cell">Settings  </td><td class="c-table__cell">Performance Profile  </td><td class="c-table__cell">Time Per Detection (ms)  </td><td class="c-table__cell">Detections Per Second   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">Quad core Xeon 2.4 GHz  </td><td class="c-table__cell">Asynchronous Tasks  </td><td class="c-table__cell"><code>MaxPerformance</code>  </td><td class="c-table__cell">0.04642  </td><td class="c-table__cell">≈ 22,000   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell"></td><td class="c-table__cell"></td><td class="c-table__cell"><code>HighPerformance</code>  </td><td class="c-table__cell">0.04929  </td><td class="c-table__cell">≈ 20,000   </td></tr>
-</table>
-</div><h1 class="g-docs__section-heading">Java</h1>
-<ul>
-<li><b>Number of User-Agents</b>: 20000</li>
-</ul>
-<div class="g-table g-table--overflow"><table class="c-table">
-<tr class="c-table__row--heading">
-<td class="c-table__cell">Machine  </td><td class="c-table__cell">Settings  </td><td class="c-table__cell">Performance Profile  </td><td class="c-table__cell">Time Per Detection (ms)  </td><td class="c-table__cell">Detections Per Second   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">Quad core i7 2.2 GHz  </td><td class="c-table__cell">4 Threads  </td><td class="c-table__cell"><code>MaxPerformance</code>  </td><td class="c-table__cell">0.01900  </td><td class="c-table__cell">≈ 52,632   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell"></td><td class="c-table__cell"></td><td class="c-table__cell"><code>HighPerformance</code>  </td><td class="c-table__cell">0.01957  </td><td class="c-table__cell">≈ 51,086   </td></tr>
-</table>
-</div><p>We also run performance tests regularly on GitHub actions. The performance of this will not be as good, as it's running on a GitHub runner, but gives an indication of consistency: <img src="https://raw.githubusercontent.com/51Degrees/device-detection-java/gh-images/perf-graph-Ubuntu_Java_17-DetectionsPerSecond-latest.png" alt="Ubuntu Results" class="inline"/>
+<img src="https://raw.githubusercontent.com/51Degrees/device-detection-node/gh-images/perf-graph-Ubuntu_Node_20-DetectionsPerSecond-latest.png" alt="Ubuntu Results" class="inline"/>
+<h1 class="g-docs__section-heading">Java</h1>
+<img src="https://raw.githubusercontent.com/51Degrees/device-detection-java/gh-images/perf-graph-Ubuntu_Java_17-DetectionsPerSecond-latest.png" alt="Ubuntu Results" class="inline"/>
 <h1 class="g-docs__section-heading">Python</h1>
-<ul>
-<li><b>Number of User-Agents</b>: 20000</li>
-</ul>
-<div class="g-table g-table--overflow"><table class="c-table">
-<tr class="c-table__row--heading">
-<td class="c-table__cell">Machine  </td><td class="c-table__cell">Settings  </td><td class="c-table__cell">Performance Profile  </td><td class="c-table__cell">Time Per Detection (ms)  </td><td class="c-table__cell">Detections Per Second   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell">Quad core Xeon 2.4 GHz  </td><td class="c-table__cell">2 Threads  </td><td class="c-table__cell"><code>MaxPerformance</code>  </td><td class="c-table__cell">0.02632  </td><td class="c-table__cell">≈ 38,023   </td></tr>
-<tr class="c-table__row">
-<td class="c-table__cell"></td><td class="c-table__cell"></td><td class="c-table__cell"><code>HighPerformance</code>  </td><td class="c-table__cell">0.02636  </td><td class="c-table__cell">≈ 37,950   </td></tr>
-</table>
-</div> </section></div><!-- PageDoc -->
+<img src="https://raw.githubusercontent.com/51Degrees/device-detection-python/gh-images/perf-graph-Ubuntu_Python_3.11-DetectionsPerSecond-latest.png" alt="Ubuntu Results" class="inline"/>
+ </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
 <!-- HTML footer for doxygen 1.8.15-->
