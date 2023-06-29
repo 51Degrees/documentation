@@ -10,14 +10,15 @@ your own profiling.
 These tests are run using a console performance example. Evidence from the `Evidence Records` file in
 [device-detection-data](https://github.com/51Degrees/device-detection-data) is processed by the pipeline
 and the time taken measured. If language appropriate, multiple threads are used to run the tests.
-For technical details, see the example repositories on [GitHub](https://github.com/51Degrees?q=example].
+For technical details, see the example repositories on [GitHub](https://github.com/51Degrees?q=example).
 We run performance tests regularly on GitHub actions. The performance of this may
 not be as good as a dedicated machine, as it's running on a GitHub runner, but gives an indication of consistency.
 
 
 # C/C++
 
-<!--- **Number of User-Agents**: 20000
+<!--
+- **Number of User-Agents**: 20000
 - **Data File**: Enterprise
 
 | Machine                | Settings           | Performance Profile | Time Per Detection (ms) | Detections Per Second |
