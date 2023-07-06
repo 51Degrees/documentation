@@ -5,26 +5,7 @@ We have also integrated our Device Detection to Varnish. This page details an ov
 
 # Prerequisites
 
-## Dependencies:
-* gcc
-* make
-* automake
-* autotools-dev
-* libtool
-* python
-* Varnish source
-
-## Tested versions:
-* Varnish 6.0.8 (LTS)
-* C11 or above
-* libatomic1
-
-## Tested platforms:
-* Ubuntu 18.04
-* Ubuntu 20.04
-
-## Tested architectures:
-* 64-bit
+For the latest dependencies, tested version, and tested platforms information, please refer to our @testedversions and @dependencies pages.
 
 # Installing
 If you haven’t already, you can obtain a copy of the latest version of the API [here](https://github.com/51Degrees/device-detection-varnish).

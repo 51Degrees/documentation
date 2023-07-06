@@ -5,23 +5,7 @@
 We have also integrated our Device Detection to Nginx. This page describes in detail how you can install and use our module in your Nginx environment.
 # Prerequisites
 
-## Dependencies:
-* gcc
-* make
-* zlib1g-dev
-* libpcre3
-* libpcre3-dev
-
-## Tested versions:
-* Nginx 1.21.3, 1.20.0, 1.19.0, 1.19.5, 1.19.10
-* C11 or above
-
-## Tested platforms:
-* Ubuntu 18.04
-* Ubuntu 20.04
-
-## Tested architectures:
-* 64-bit
+For the latest dependencies, tested version, and tested platforms information, please refer to our @testedversions and @dependencies pages.
 
 # Installing
 If you haven’t already, you can obtain a copy of the latest version of the API [here](https://github.com/51Degrees/device-detection-nginx).
