@@ -27,6 +27,12 @@ You may also want to review the @dependencies page, as these topics are related.
       grabTestedVersions("device-detection-dotnet", "dotnet-versions", [
           { title: "Architecture", getValue: d => d.Arch }
       ]);
+      grabTestedVersions("device-detection-python", "python-versions", [
+          { title: "Python", getValue: d => d.LanguageVersion }
+      ]);
+      grabTestedVersions("device-detection-node", "node-versions", [
+          { title: "Node", getValue: d => d.LanguageVersion }
+      ]);
   });
 </script>
 @endhtmlonly
@@ -64,31 +70,10 @@ Platforms:
 
 @endsnippet
 @startsnippet{node}
-Language Versions:
-- Node.js 10, 12, 14, 16
-
-Platforms:
-- Windows Server 2019
-  - 64-bit (x86_64)
-- Ubuntu 18.04
-  - 64-bit (x86_64)
-- MacOS 11
-  - 64-bit (x86_64)
-
+<div id="node-versions"></div>
 @endsnippet
 @startsnippet{python}
-Language Versions:
-- Python 3.7, 3.8, 3.9
-
-Platforms:
-- Windows Server 2019
-  - 32-bit (x86_64)
-  - 64-bit (x86_64)
-- Ubuntu 18.04
-  - 64-bit (x86_64)
-- MacOS 11
-  - 64-bit (x86_64)
-
+<div id="python-versions"></div>
 @endsnippet
 @startsnippet{go}
 Language Versions:
