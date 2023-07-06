@@ -10,6 +10,8 @@ Additionally, Version 4 has support for [Google's changes to the User-Agent](htt
 
 The steps to upgrade will vary depending on whether you are using our cloud or on-premise service.
 
+@anchor V3_Cloud
+[#](@ref V3_Cloud)
 ## V3 Cloud users
 
 Use our [Cloud Configurator](https://configure.51degrees.com/) to generate a new Resource Key. You can follow our 
@@ -20,12 +22,14 @@ to be granted a 30-day free trial and a License Key.
 
 If you are looking for User-Agent Client Hints support in the cloud, please follow the [User-Agent Client Hints documentation](@ref DeviceDetection_Features_UACH_Overview).
 
+@anchor V3_On_Prem
+[#](@ref V3_On_Prem)
 ## V3 On-premise users
 
-To access the Version 4 data files, you will need to purchase a License Key. Visit our [pricing](https://51degrees.com/pricing) page and
-select the suitable plan for your needs. Alternatively, get in touch with [Sales](https://51degrees.com/contact-us) if you require any help.
+If you wish to continue to use 51Degrees on-premise, you will need to purchase a License Key to access the Version 4 data files. Visit our [pricing](https://51degrees.com/pricing) page and
+select the suitable plan for your needs. Alternatively, you may wish to use our [cloud service](@ref V3_Cloud), which can be called from the server via our APIs.
 
-Once you have received a License Key, you can use this to download a data file containing all the properties. You can 
+Once you have received a License Key after signing up for a pricing plan, you can use the key to download a data file for on-premise implementations that contains all the properties. You can 
 [download the file manually](https://51degrees.com/developers/downloads) or set up [automatic data file updates](@ref Features_AutomaticDatafileUpdates).
 
 You can download the latest API packages for your programming language via our [downloads page](https://51degrees.com/developers/downloads)
@@ -39,6 +43,10 @@ higher levels of accuracy.
 
 If you are looking for User-Agent Client Hints support, please follow the [User-Agent Client Hints documentation](@ref DeviceDetection_Features_UACH_Overview).
 
+If you require any help upgrading, get in touch with [Sales](https://51degrees.com/contact-us).
+
+@anchor New_Customers
+[#](@ref New_Customers)
 ## New customers
 
 If you wish to get started with 51Degrees, check out our [pricing](https://51degrees.com/pricing) page for an overview of all our pricing tiers. You can then follow the 
