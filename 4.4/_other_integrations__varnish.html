@@ -71,31 +71,7 @@ $(document).ready(function(){initNavTree('_other_integrations__varnish.html','')
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
 <p>We have also integrated our Device Detection to Varnish. This page details an overview of how you can install and use our module in your Varnish environment.</p>
 <h1 class="g-docs__section-heading">Prerequisites</h1>
-<h2>Dependencies:</h2>
-<ul>
-<li>gcc</li>
-<li>make</li>
-<li>automake</li>
-<li>autotools-dev</li>
-<li>libtool</li>
-<li>python</li>
-<li>Varnish source</li>
-</ul>
-<h2>Tested versions:</h2>
-<ul>
-<li>Varnish 6.0.8 (LTS)</li>
-<li>C11 or above</li>
-<li>libatomic1</li>
-</ul>
-<h2>Tested platforms:</h2>
-<ul>
-<li>Ubuntu 18.04</li>
-<li>Ubuntu 20.04</li>
-</ul>
-<h2>Tested architectures:</h2>
-<ul>
-<li>64-bit</li>
-</ul>
+<p>For the latest dependencies, tested version, and tested platforms information, please refer to our <a class="el" href="_info__tested_versions.html">tested versions</a> and <a class="el" href="_info__dependencies.html">dependencies</a> pages.</p>
 <h1 class="g-docs__section-heading">Installing</h1>
 <p>If you haven’t already, you can obtain a copy of the latest version of the API <a href="https://github.com/51Degrees/device-detection-varnish">here</a>. To install on a Linux system, run the following commands from the project's root directory.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">$ ./autogen.sh</div><div class="c-code__line">$ ./configure --with-config=release|test</div><div class="c-code__line">$ make</div><div class="c-code__line">$ sudo make install</div></div><p>Where <code>--with-config [optional]</code> sets the version of the module that you want to build. Defaults to release. To run all the test, you will need to use the <code>test</code> option.</p>
