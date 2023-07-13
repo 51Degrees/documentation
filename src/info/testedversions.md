@@ -136,7 +136,9 @@ Platforms:
 
 @endsnippet
 @startsnippet{nginx}
+These are automatically tested on [GitHub](https://github.com/51Degrees?q=nginx&type=all&language=&sort=).
 <div id="nginx-versions"></div>
+If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{wordpress}
 Language Versions:
