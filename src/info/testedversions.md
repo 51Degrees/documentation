@@ -1,6 +1,29 @@
 @page Info_TestedVersions Tested Versions
 
-51Degrees uses automated testing to continuously validate our API against a number of platforms and language versions.
+Our code base operates on the following CPUs:
+
+- ARM
+- M1, M2
+- x64
+- x86
+
+And the following operating systems:
+
+- Linux
+  - Alpine
+  - Amazon Linux
+  - CentOS
+  - Red Hat Enterprise Linux
+  - Ubuntu
+- Windows
+- macOS
+
+These lists are not exhaustive, so please [contact us](https://51degrees.com/contact-us) if you don't see your environment listed.
+
+We automatically test and distribute packages using a limited set of configurations.
+
+# Automation
+
 The tests cover a wide array of scenarios and are available to view in our repositories on [GitHub](https://github.com/51Degrees).
 In general, we apply the following guidelines when deciding which platforms and versions to test against:
 - We use GitHub Actions with hosted runners, so we test against platforms that GitHub has [hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources) for.
@@ -8,7 +31,8 @@ In general, we apply the following guidelines when deciding which platforms and 
 
 The tabs below show the specific platforms and versions that are currently tested as part of each release.
 
-If something is not tested here, and you believe it should be, please raise an issue via our [GitHub](https://github.com/51Degrees) page and we will look into it.
+If something is not tested here, and you believe it should be, please raise an issue via our [GitHub](https://github.com/51Degrees) page. If
+you have a configuration that is not covered, [contact us](https://51degrees.com/contact-us) and we will look into it.
 
 You may also want to review the @dependencies page, as these topics are related.
 @htmlonly
@@ -50,15 +74,21 @@ You may also want to review the @dependencies page, as these topics are related.
 @showsnippet{wordpress,Wordpress}
 @showsnippet{rust,Rust}
 @defaultsnippet{Select a language to view the tested versions.}
-@startsnippet{cxx}
 
+@startsnippet{cxx}
+These are automatically tested on [GitHub](https://github.com/51Degrees?q=cxx&type=all&language=&sort=).
 <div id="cxx-versions"></div>
+If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{dotnet}
+These are automatically tested on [GitHub](https://github.com/51Degrees?q=dotnet&type=all&language=&sort=).
 <div id="dotnet-versions"></div>
+If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{java}
+These are automatically tested on [GitHub](https://github.com/51Degrees?q=java&type=all&language=&sort=).
 <div id="java-versions"></div>
+If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{php}
 Language Versions:
@@ -70,10 +100,14 @@ Platforms:
 
 @endsnippet
 @startsnippet{node}
+These are automatically tested on [GitHub](https://github.com/51Degrees?q=node&type=all&language=&sort=).
 <div id="node-versions"></div>
+If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{python}
+These are automatically tested on [GitHub](https://github.com/51Degrees?q=python&type=all&language=&sort=).
 <div id="python-versions"></div>
+If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{go}
 Language Versions:
