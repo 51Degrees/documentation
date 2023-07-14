@@ -68,12 +68,35 @@ $(document).ready(function(){initNavTree('_info__tested_versions.html','');});
 <h2 class="g-docs__page-title">Tested Versions </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><p>51Degrees uses automated testing to continuously validate our API against a number of platforms and language versions. The tests cover a wide array of scenarios and are available to view in our repositories on <a href="https://github.com/51Degrees">GitHub</a>. In general, we apply the following guidelines when deciding which platforms and versions to test against:</p><ul>
+<section class="g-docs__section"><p>Our code base operates on the following CPUs:</p>
+<ul>
+<li>ARM</li>
+<li>M1, M2</li>
+<li>x64</li>
+<li>x86</li>
+</ul>
+<p>And the following operating systems:</p>
+<ul>
+<li>Linux<ul>
+<li>Alpine</li>
+<li>Amazon Linux</li>
+<li>CentOS</li>
+<li>Red Hat Enterprise Linux</li>
+<li>Ubuntu</li>
+</ul>
+</li>
+<li>Windows</li>
+<li>macOS</li>
+</ul>
+<p>These lists are not exhaustive, so please <a href="https://51degrees.com/contact-us">contact us</a> if you don't see your environment listed.</p>
+<p>We automatically test and distribute packages using a limited set of configurations.</p>
+<h1 class="g-docs__section-heading">Automation</h1>
+<p>The tests cover a wide array of scenarios and are available to view in our repositories on <a href="https://github.com/51Degrees">GitHub</a>. In general, we apply the following guidelines when deciding which platforms and versions to test against:</p><ul>
 <li>We use GitHub Actions with hosted runners, so we test against platforms that GitHub has <a href="https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources">hosted runners</a> for.</li>
 <li>We test against all versions of languages that are currently considered LTS (Long Term Support) versions.</li>
 </ul>
 <p>The tabs below show the specific platforms and versions that are currently tested as part of each release.</p>
-<p>If something is not tested here, and you believe it should be, please raise an issue via our <a href="https://github.com/51Degrees">GitHub</a> page and we will look into it.</p>
+<p>If something is not tested here, and you believe it should be, please raise an issue via our <a href="https://github.com/51Degrees">GitHub</a> page. If you have a configuration that is not covered, <a href="https://51degrees.com/contact-us">contact us</a> and we will look into it.</p>
 <p>You may also want to review the <a class="el" href="_info__dependencies.html">dependencies</a> page, as these topics are related.  
 <script>
   $( document ).ready(function() {
@@ -99,8 +122,8 @@ $(document).ready(function(){initNavTree('_info__tested_versions.html','');});
   });
 </script>
 </p>
-<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C/C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">.NET</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'go')">Go</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'varnish')">Varnish</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'nginx')">Nginx</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'wordpress')">Wordpress</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'rust')">Rust</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view the tested versions. </div>   <div class="c-tabgroup__main" data-lang="cxx" style="display:none;"> </p>
-<div id="cxx-versions"></div><p>  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  </p><div id="dotnet-versions"></div><p>  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  </p><div id="java-versions"></div><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  Language Versions:</p><ul>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C/C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">.NET</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'go')">Go</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'varnish')">Varnish</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'nginx')">Nginx</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'wordpress')">Wordpress</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'rust')">Rust</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view the tested versions. </div> </p>
+<p> <div class="c-tabgroup__main" data-lang="cxx" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=cxx&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="cxx-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=dotnet&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="dotnet-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=java&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="java-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  Language Versions:</p><ul>
 <li>PHP 5.6, 7.2, 7.3, 7.4 and 8.0</li>
 </ul>
 <p>Platforms:</p><ul>
@@ -109,7 +132,7 @@ $(document).ready(function(){initNavTree('_info__tested_versions.html','');});
 </ul>
 </li>
 </ul>
-<p> </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  </p><div id="node-versions"></div><p>  </div>   <div class="c-tabgroup__main" data-lang="python" style="display:none;">  </p><div id="python-versions"></div><p>  </div>   <div class="c-tabgroup__main" data-lang="go" style="display:none;">  Language Versions:</p><ul>
+<p> </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=node&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="node-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="python" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=python&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="python-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="go" style="display:none;">  Language Versions:</p><ul>
 <li>Golang 1.17.1</li>
 </ul>
 <p>Platforms:</p><ul>
@@ -141,7 +164,7 @@ $(document).ready(function(){initNavTree('_info__tested_versions.html','');});
 </ul>
 </li>
 </ul>
-<p> </div>   <div class="c-tabgroup__main" data-lang="nginx" style="display:none;">  </p><div id="nginx-versions"></div><p>  </div>   <div class="c-tabgroup__main" data-lang="wordpress" style="display:none;">  Language Versions:</p><ul>
+<p> </div>   <div class="c-tabgroup__main" data-lang="nginx" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=nginx&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="nginx-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="wordpress" style="display:none;">  Language Versions:</p><ul>
 <li>Wordpress 5.9.2</li>
 </ul>
 <p>Platforms:</p><ul>
