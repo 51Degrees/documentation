@@ -13,7 +13,9 @@ And the following operating systems:
   - Alpine
   - Amazon Linux
   - CentOS
+  - Oracle Linux
   - Red Hat Enterprise Linux
+  - SUSE
   - Ubuntu
 - Windows
 - macOS
@@ -78,6 +80,7 @@ You may also want to review the @dependencies page, as these topics are related.
 @startsnippet{cxx}
 These are automatically tested on [GitHub](https://github.com/51Degrees?q=cxx&type=all&language=&sort=).
 <div id="cxx-versions"></div>
+Windows includes Framework and Core.
 If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{dotnet}
