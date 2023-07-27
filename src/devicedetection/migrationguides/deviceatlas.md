@@ -3,7 +3,7 @@
 # Introduction
 
 Here you'll find a list of DeviceAtlas properties and their 51Degrees equivalent. 
-Details of all available [DeviceAtlas properties](https://deviceatlas.com/device-data/properties) can be found on their website, whilst the [51Degrees property dictionary](https://51degrees.com/resources/property-dictionary) contains details of all our properties and their possible values.
+Details of all available DeviceAtlas properties can be found on their website, whilst the [51Degrees property dictionary](https://51degrees.com/resources/property-dictionary) contains details of all our properties and their possible values.
 
 
 # Obsolete DeviceAtlas capabilities
