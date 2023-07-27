@@ -2,7 +2,7 @@
 
 # Introduction
 
-Here you'll find a list of [ScientiaMobile's WURFL](http://wurfl.sourceforge.net) properties and values and the 51Degrees equivalents that they map to.
+Here you'll find a list of ScientiaMobile's WURFL properties and values and the 51Degrees equivalents that they map to.
 
 Details of all available WURFL Capabilities can be found on ScientiaMobile's website, whilst the [51Degrees property dictionary](https://51degrees.com/resources/property-dictionary) contains details of all our properties and their possible values.
 
