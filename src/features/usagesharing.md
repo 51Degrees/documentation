@@ -91,7 +91,7 @@ Any values marked with 'REQUIRED' must be included, or our backend systems will 
   troubleshooting problems.
 - header.host - The value from the HTTP Header 'Host'. Identifies the website that the traffic 
   is coming from. Similar to usage-from above, this can assist with troubleshooting problems.
-- header.sec-ch-ua* - The various @uach headers are becoming ever more important for device 
+- header.sec-ch-ua* - The various [UA-CH](@ref DeviceDetection_Features_UACH_Overview) headers are becoming ever more important for device 
   detection. In order for us to be able to provide a good detection service, we require data from
   the real world to train our machine learning algorithm.
 
@@ -206,7 +206,7 @@ The maximum time period which @evidence is stored for the purpose of filtering
 
 ## ShareUsageURL
 
-The target destination for **usage sharing** data. The default is https://devices-v4.51degrees.com/new.ashx. 
+The target destination for **usage sharing** data. The default is htps://devices-v4.51degrees.com/new.ashx. 
 
 @anchor Low_Level_Usage_Sharing
 [#](@ref Low_Level_Usage_Sharing)	
