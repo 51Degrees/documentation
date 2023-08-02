@@ -206,7 +206,7 @@ The maximum time period which @evidence is stored for the purpose of filtering
 
 ## ShareUsageURL
 
-The target destination for **usage sharing** data. The default is htps://devices-v4.51degrees.com/new.ashx. 
+The target destination for **usage sharing** data. The default is https://devices-v4.51degrees.com/new.ashx. 
 
 @anchor Low_Level_Usage_Sharing
 [#](@ref Low_Level_Usage_Sharing)	
