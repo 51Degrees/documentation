@@ -46,8 +46,7 @@ Under any of these conditions your server app won't be able to talk to `cloud.51
 ## Testing
 1. Simulate the failure using one of the methods above. 
 2. By default `SuppressProcessExceptions` is `false` - thus demanding you to first test the behaviors under this setting. Verify that you receive an exception originating in the 51D `Pipeline` code - it should state that `cloud.51degrees.com` is not reachable or similar.
-3. Next set `SuppressProcessExceptions` to `true` in the configuration and rerun the service - verify that you now don't get an exception from the 51D `Pipeline` code, but instead it now returns `FlowData` object with `Errors`.  
-If you still get some exceptions - check the next step.
+3. Next set `SuppressProcessExceptions` to `true` in the configuration and rerun the service - verify that you now don't get an exception from the 51D `Pipeline` code, but instead it now returns `FlowData` object with `Errors`. If you still get some exceptions - check the next step.
 4. Make sure you properly wrap getting the device data in your code from FlowData (`FlowData.Get<IDeviceData>()` in .NET) as this call may throw an exception (see [.NET example](https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/Cloud/Framework-Web/Default.aspx#L97)), also make sure that you wrap retrieving properties from device data: f.e. using a function that try-catch-wraps and null-checks the device data and its properties (see [.NET example](https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/Cloud/Framework-Web/Default.aspx#L111)). 
 5. Finally, undo the failure simulation (either remove the non-existant endpoint from the configuration or comment out the record in the `hosts` file), and observe the happy path scenario - all should work as expected.
 
