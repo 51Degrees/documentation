@@ -80,10 +80,29 @@ $(document).ready(function(){initNavTree('_features__error_handling.html','');})
 <li>Execution will return to the caller of the <code>Process</code> function. Any errors will effectively be hidden/suppressed unless <a class="el" href="_features__logging.html">logging</a> is configured or the <code>Errors</code> section of the <a class="el" href="_concepts__data__flow_data.html">flow data</a> is checked by the caller.</li>
 </ol>
 <h1 class="g-docs__section-heading">Configuration</h1>
-<p>Error handling is configured using the 'Suppress Process Exceptions' setting. If set to <code>true</code>, errors are hidden/suppressed. If <code>false</code>, an error will be raised at the end of <a class="el" href="_concepts__pipeline.html">Pipeline</a> execution.</p>
+<p>Error handling is configured using the 'SuppressProcessExceptions' setting. If set to <code>true</code>, errors are hidden/suppressed. If <code>false</code>, an error will be raised at the end of <a class="el" href="_concepts__pipeline.html">Pipeline</a> execution.</p>
 <p>The default value is <code>false</code>. This is recommended for development/testing to highlight issues.</p>
 <p>When running the <a class="el" href="_concepts__pipeline.html">Pipeline</a> in production, we recommend setting this to <code>true</code> in order to prevent unexpected errors from crashing the application.</p>
-<p>As with all configuration settings, this can be set in code or via a <a class="el" href="_concepts__pipeline.html">Pipeline</a> configuration file. </p>
+<p>As with all configuration settings, this can be set in code or via a <a class="el" href="_concepts__pipeline.html">Pipeline</a> configuration file (see <a href="https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/Cloud/Framework-Web/App_Data/51Degrees.json#L41">.NET example</a>).</p>
+<h1 class="g-docs__section-heading">Testing the unhappy path scenarios</h1>
+<p>In each integration there are dependencies that can fail, such as network connectivity, DNS, load balancers, web servers etc.</p>
+<p>This is especially true for scenarios relying on 51Degrees Cloud Service. There are several steps you need to take to ensure your integration is safe against such failures and won't crash in production.</p>
+<h2>Simulating the failure</h2>
+<p>For Cloud integration there two ways to simulate a 51Degrees Cloud Service dependency failure:</p>
+<ol type="1">
+<li>Specify a non-existent <code>EndPoint</code> in the <code>CloudRequestEngine</code> configuration in the configuration file. For example, set it to "http://nonexistent.domain/".</li>
+<li>Specify <code>127.0.0.1 cloud.51degrees.com</code> in the <code>/etc/hosts</code> file (<code>C:\Windows\System32\drivers\etc\hosts</code> on Windows).</li>
+</ol>
+<p>Under any of these conditions your server app won't be able to talk to <code>cloud.51degrees.com</code>.</p>
+<h2>Testing</h2>
+<ol type="1">
+<li>Simulate the failure using one of the methods above.</li>
+<li>By default <code>SuppressProcessExceptions</code> is <code>false</code>, thus demanding you to first test the behaviors under this setting. Verify that you receive an exception originating in the 51D <code>Pipeline</code> code – it should state that <code>cloud.51degrees.com</code> is not reachable or similar.</li>
+<li>Next set <code>SuppressProcessExceptions</code> to <code>true</code> in the configuration and rerun the service. Verify that you don't get an exception from the 51D <code>Pipeline</code> code, but instead it now returns <code>FlowData</code> object with <code>Errors</code>. If you still get some exceptions, check the next step.</li>
+<li>Make sure you properly wrap getting the device data in your code from FlowData (<code>FlowData.Get&lt;IDeviceData&gt;()</code> in .NET) as this call may throw an exception (see <a href="https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/Cloud/Framework-Web/Default.aspx#L97">.NET example</a>). Also make sure that you wrap retrieving properties from device data, such as using a function that try-catch-wraps and null-checks the device data and its properties (see <a href="https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/Cloud/Framework-Web/Default.aspx#L111">.NET example</a>).</li>
+<li>Finally, undo the failure simulation (either remove the non-existent endpoint from the configuration or comment out the record in the <code>hosts</code> file), and observe the happy path scenario. All should work as expected.</li>
+</ol>
+<p>Leave the <code>SuppressProcessExceptions</code> configuration set to <code>true</code> for the production setup, as it will protect the users from interruptions in case any of the dependencies fail. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
