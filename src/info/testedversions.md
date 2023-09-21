@@ -22,6 +22,8 @@ And the following operating systems:
 
 These lists are not exhaustive, so please [contact us](https://51degrees.com/contact-us) if you don't see your environment listed.
 
+Of the operating systems, we target from the latest versions to the older versions that are still maintained by the vendor. For programming languages, we target the LTS (Long Term Support) versions.
+
 We automatically test and distribute packages using a limited set of configurations.
 
 # Automation
@@ -29,7 +31,7 @@ We automatically test and distribute packages using a limited set of configurati
 The tests cover a wide array of scenarios and are available to view in our repositories on [GitHub](https://github.com/51Degrees).
 In general, we apply the following guidelines when deciding which platforms and versions to test against:
 - We use GitHub Actions with hosted runners, so we test against platforms that GitHub has [hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources) for.
-- We test against all versions of languages that are currently considered LTS (Long Term Support) versions.
+- We test against all versions of languages that are currently considered LTS versions.
 
 The tabs below show the specific platforms and versions that are currently tested as part of each release.
 
