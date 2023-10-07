@@ -8,7 +8,7 @@ Below we cover the detection results that are experienced for each iPhone and iP
 
 The 'percentage' column refers to the percentage of the data submissions we have received that would return that detection result for that particular display mode. For example, '100.00%' in Standard mode indicates that 100% of our submissions for that device would receive that result if the data from the submission were passed to our detection script. '1.50%' in indicates that 1.5% of our submissions would receive that detection result.
 
-As we receive more data on Apple devices, this table will change. We will update this table every two months and it is currently accurate as of 6 October 2023.
+As we receive more data on Apple devices, this table will change. We will update this table every two months and it is currently accurate as of 7 October 2023.
 
 For optimized viewing of the table, it is recommended you zoom out within your browser.
 
