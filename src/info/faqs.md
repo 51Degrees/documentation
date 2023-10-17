@@ -6,7 +6,7 @@
 
 In .NET core, the finalizer is not called when a program exits as described on [this page](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/destructors). Some engines maintain files in a temporary directory while they are in operation and these can remain if a .NET core application using one of these engines is closed.
 
-To workaround this problem, you can either:
+To workaround this problem, you can her:
 - Use the `SetAutoDisposeElements` setting to ensure elements are disposed when the Pipeline is disposed.
 - Explicitly call dispose on all engines before exiting the program.
 
