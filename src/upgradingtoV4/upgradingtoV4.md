@@ -18,7 +18,7 @@ Use our [Cloud Configurator](https://configure.51degrees.com/) to generate a new
 @configuratorexplanation for a step by step guide. This Resource Key should contain all the properties you wish to collect data for – 
 you can find a list of all the available properties on our [property dictionary](https://51degrees.com/developers/property-dictionary). 
 Some advanced properties may require the purchase of a License Key. Sign up to one of our [pricing plans](https://51degrees.com/pricing) 
-to be granted a 30-day free trial and a License Key.
+to be granted a License Key.
 
 If you are looking for User-Agent Client Hints support in the cloud, please follow the [User-Agent Client Hints documentation](@ref DeviceDetection_Features_UACH_Overview).
 
