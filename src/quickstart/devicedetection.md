@@ -22,7 +22,7 @@ To get started with C device detection on-premise:
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
 4. Follow the [installation instructions](../../device-detection-cxx/md__home_vsts_work_1_s_apis_device-detection-cxx__r_e_a_d_m_e.html) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
 5. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_Console_OnPremise).
-6. (optional) Obtain a License Key by starting a free trial and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+6. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{cxx}
@@ -35,7 +35,7 @@ To get started with C++ device detection on-premise:
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
 5. Follow the [installation instructions](../../device-detection-cxx/md__home_vsts_work_1_s_apis_device-detection-cxx__r_e_a_d_m_e.html) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
 6. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_Console_OnPremise).
-7. (optional) Obtain a License Key by starting a free trial and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+7. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{dotnet}
@@ -125,7 +125,7 @@ To get started with Varnish device detection on-premise:
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
 4. Follow the [installation instructions](@ref OtherIntegrations_Varnish) to get set up with the project.
 5. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_Console_OnPremise).
-6. (optional) Obtain a License Key by starting a free trial and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+6. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{nginx}
@@ -137,7 +137,7 @@ To get started with Nginx device detection on-premise:
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
 4. Follow the [installation instructions](@ref OtherIntegrations_Nginx) to get set up with the project.
 5. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_Console_OnPremise).
-6. (optional) Obtain a License Key by starting a free trial and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+6. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{go}
@@ -150,6 +150,6 @@ To get started with Go device detection on-premise:
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
 4. Follow the [installation instructions](https://github.com/51Degrees/device-detection-go#build-and-usage) to get set up with the project.
 5. Follow the linked example here: [Getting Started](https://github.com/51Degrees/device-detection-examples-go/blob/main/dd/getting_started_test.go).
-6. (optional) Obtain a License Key by starting a free trial and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+6. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
