@@ -13,7 +13,7 @@ did, this example will store it in a @datafile which will be loaded and can also
 
 The source code used in this example is available here:
 - [C# Visual Studio project](https://github.com/51Degrees/pipeline-dotnet/tree/master/Examples/CustomFlowElement/2.%20On%20Premise%20Engine)
-- [Java project](https://github.com/51Degrees/pipeline-java/tree/master/examples/pipeline.developer-examples.onpremise-engine)
+- [Java project](https://github.com/51Degrees/pipeline-java/tree/main/pipeline.developer-examples/pipeline.developer-examples.onpremise-engine)
 - [Node.js project](https://github.com/51Degrees/pipeline-node/blob/master/fiftyone.pipeline.engines/examples/onPremiseFlowElement.js)
 
 # Dependencies
