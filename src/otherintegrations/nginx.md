@@ -103,6 +103,6 @@ User-Agent Client Hint was introduced by Google in Chrome, preventing traditiona
 
 # Other resources
 More details can be found at:
-- [README](https://51degrees.com/device-detection-nginx/md__home_vsts_work_1_s_apis_device-detection-nginx__r_e_a_d_m_e.html).
-- [Examples](https://github.com/51Degrees/device-detection-nginx/blob/main/README.md)
+- [README](https://github.com/51Degrees/device-detection-nginx/blob/main/README.md).
+- [Examples](https://51degrees.com/device-detection-nginx/examples.html)
 - [Migrations](@ref DeviceDetection_MigrationGuides_51DegreesV3)
