@@ -14,7 +14,7 @@ this example will call a cloud service to perform the required functionality.
 
 The source code used in this example is available here:
 - [C# Visual Studio project](https://github.com/51Degrees/pipeline-dotnet/tree/master/Examples/CustomFlowElement/4.%20Cloud%20Engine)
-- [Java project](https://github.com/51Degrees/pipeline-java/tree/master/examples/pipeline.developer-examples.cloud-engine)
+- [Java project](https://github.com/51Degrees/pipeline-java/tree/main/pipeline.developer-examples/pipeline.developer-examples.cloud-engine)
 
 # Dependencies
 
