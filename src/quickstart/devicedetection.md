@@ -20,7 +20,7 @@ To get started with C device detection on-premise:
 1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-cxx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-4. Follow the [installation instructions](../../device-detection-cxx/md__home_vsts_work_1_s_apis_device-detection-cxx__r_e_a_d_m_e.html) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
+4. Follow the [installation instructions](https://github.com/51Degrees/device-detection-cxx/blob/main/README.md) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
 5. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_Console_OnPremise).
 6. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
@@ -33,7 +33,7 @@ To get started with C++ device detection on-premise:
 1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-cxx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-5. Follow the [installation instructions](../../device-detection-cxx/md__home_vsts_work_1_s_apis_device-detection-cxx__r_e_a_d_m_e.html) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
+5. Follow the [installation instructions](https://github.com/51Degrees/device-detection-cxx/blob/main/README.md) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
 6. Follow the linked example here: [Getting Started](@ref Examples_DeviceDetection_GettingStarted_Console_OnPremise).
 7. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
