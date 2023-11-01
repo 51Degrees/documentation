@@ -92,9 +92,7 @@ Finally, some of our users prefer to receive a platform version that is potentia
 
 @anchor Error_OnPremise_DataFile
 [#](@ref Error_OnPremise_DataFile) 
-#### Why am I getting the following error message when updating the on-premise data file? <code>FiftyOne.Pipeline.Engines.Exceptions.DataUpdateException: 'Too many requests to '%
-https://distributor.51degrees.com/api/v2/download?LicenseKeys=[
-our_lic_key_here]&Download=True&Type=HashV41' for engine 'DeviceDetectionHashEngine''</code>
+#### Why am I getting the following error message when updating the on-premise data file? <code>FiftyOne.Pipeline.Engines.Exceptions.DataUpdateException: 'Too many requests to '%https://distributor.51degrees.com/api/v2/download?LicenseKeys=[our_lic_key_here]&Download=True&Type=HashV41' for engine 'DeviceDetectionHashEngine''</code>
 
 There is a limit to the number of requests that you can make – only one request every 30 minutes can be made for each IP address.
 
