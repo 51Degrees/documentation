@@ -5,12 +5,12 @@ API to request the latest data files. You can also manually download files via t
 our [website](https://51degrees.com/developers/downloads/enhanced-device-data), or by calling the 
 Distributor web API directly using curl or similar.
 
-The URL is `https://distributor.51degrees.com/api/v2/download`
+The URL is `%https://distributor.51degrees.com/api/v2/download`
 
 ## Parameters
 
 Query string parameters are supplied as normal.
-For example: `https://distributor.51degrees.com/api/v2/download?LicenseKeys=ABC&Type=27&Product=23`
+For example: `%https://distributor.51degrees.com/api/v2/download?LicenseKeys=ABC&Type=27&Product=23`
 If you're unsure what 'product' or 'type' values to use, check the download page on the 
 [website](https://51degrees.com/developers/downloads/enhanced-device-data) and copy the link
 for the file you need from there.
