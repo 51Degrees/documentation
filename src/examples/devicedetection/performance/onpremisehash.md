@@ -9,11 +9,10 @@ A [feature page](@ref DeviceDetection_Features_PerformanceOptions) is also avail
 @startsnippets
 @grabexample{device-detection-cxx,_hash_2_performance_8c,C}
 @showsnippet{cpp,C++}
-@grabexample{device-detection-dotnet,_hash_2_performance_2_program_8cs,C#}
+@grabexample{device-detection-dotnet,_on_premise_2_performance-_console_2_program_8cs,C#}
 @grabexample{device-detection-java,_performance_benchmark_8java,Java}
 @showsnippet{php,PHP}
 @grabexample{device-detection-node,onpremise_2performance-console_2performance_8js,Node.js}
-@grabexample{device-detection-python,onpremise_2performance_8py,Python}
 @startsnippet{cpp}
 There is no performance example for C++, see the C tab instead.
 @endsnippet
