@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_NativeKeyLookup_Cloud Cloud
+@page Examples_DeviceDetection_NativeKeyLookup_Cloud Cloud Native Key Lookup
 
 # Introduction
 
