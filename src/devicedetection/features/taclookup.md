@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_TacLookup TAC Lookup
+@page DeviceDetection_Features_TacLookup TAC Lookup Feature
 
 # Introduction
 
