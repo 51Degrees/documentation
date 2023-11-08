@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_GettingStarted_Web_OnPremise On-Premise
+@page Examples_DeviceDetection_GettingStarted_Web_OnPremise Getting Started Web On-Premise
 
 # Introduction
 
