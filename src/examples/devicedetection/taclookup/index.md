@@ -1,3 +1,3 @@
-@page Examples_DeviceDetection_TacLookup_Index TAC Lookup
+@page Examples_DeviceDetection_TacLookup_Index TAC Lookup Index
 
 @subpage Examples_DeviceDetection_TacLookup_Cloud
