@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_GettingStarted_Console_OnPremise On-Premise
+@page Examples_DeviceDetection_GettingStarted_Console_OnPremise Getting Started Console On-Premise
 
 # Introduction
 
