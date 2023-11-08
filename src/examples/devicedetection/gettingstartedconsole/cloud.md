@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_GettingStarted_Console_Cloud Cloud
+@page Examples_DeviceDetection_GettingStarted_Console_Cloud Getting Started Console Cloud
 
 # Introduction
 
