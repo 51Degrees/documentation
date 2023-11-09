@@ -1,4 +1,4 @@
-@page Concepts_Data_Index Data
+@page Concepts_Data_Index Data Concepts Index
 
 @subpage Concepts_Data_FlowData
 
