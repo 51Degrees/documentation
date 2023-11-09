@@ -1,4 +1,4 @@
-@page Concepts_MetaData_Index Metadata
+@page Concepts_MetaData_Index Metadata Concept Index
 
 @subpage Concepts_MetaData_ElementProperties
 
