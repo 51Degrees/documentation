@@ -1,4 +1,4 @@
-@page Examples_CombiningServices Reverse Geocoding Combining Services
+@page Examples_CombiningServices Combining Services
 
 # Introduction
 
