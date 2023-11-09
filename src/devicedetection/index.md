@@ -1,4 +1,4 @@
-@page DeviceDetection_Index Device Detection
+@page DeviceDetection_Index Device Detection Index
 
 
 - @subpage DeviceDetection_Overview
