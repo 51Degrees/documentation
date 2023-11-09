@@ -1,4 +1,4 @@
-@page ReverseGeocoding_Index Reverse Geocoding Index
+@page ReverseGeocoding_Index Reverse Geocoding
 
 
 - @subpage ReverseGeocoding_Overview
