@@ -1,4 +1,4 @@
-@page Concepts_FlowElements_Index Flow Elements
+@page Concepts_FlowElements_Index Flow Elements Index
 
 @subpage Concepts_FlowElements_FlowElement
 
