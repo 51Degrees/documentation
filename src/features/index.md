@@ -1,4 +1,4 @@
-@page Features_Index Features Index
+@page Features_Index Features
 
 @subpage Features_AsynchronousExecution
 
