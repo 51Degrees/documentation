@@ -1,3 +1,3 @@
-@page Concepts_Configuration_Index Concepts Configuration Index
+@page Concepts_Configuration_Index Configuration
 
 @subpage Concepts_Configuration_Builders_Index
