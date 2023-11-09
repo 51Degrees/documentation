@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_Performance_OnPremiseHash On-Premise Hash
+@page Examples_DeviceDetection_Performance_OnPremiseHash Performance Test On-Premise Hash
 
 # Introduction
 

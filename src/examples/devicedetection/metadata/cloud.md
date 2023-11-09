@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_Metadata_Cloud Cloud
+@page Examples_DeviceDetection_Metadata_Cloud Metadata Cloud
 
 # Introduction
 

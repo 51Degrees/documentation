@@ -1,4 +1,4 @@
-@page Quickstart_Index Quick Start
+@page Quickstart_Index Quick Start Index
 
 @subpage Quickstart_Quickstart
 

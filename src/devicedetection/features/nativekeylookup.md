@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_NativeKeyLookup Native Key Lookup
+@page DeviceDetection_Features_NativeKeyLookup Native Key Lookup Feature
 
 # Introduction
 

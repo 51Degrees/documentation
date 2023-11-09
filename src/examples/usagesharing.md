@@ -1,4 +1,4 @@
-@page Examples_UsageSharing Usage Sharing
+@page Examples_UsageSharing Usage Sharing Examples
 
 # Introduction
 

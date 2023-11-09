@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_TacLookup_Cloud Cloud
+@page Examples_DeviceDetection_TacLookup_Cloud TAC Cloud Lookup
 
 # Introduction
 

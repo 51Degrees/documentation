@@ -1,4 +1,4 @@
-@page Features_WebIntegration Web Integration
+@page Features_WebIntegration Web Integration Feature
 
 # Introduction
 

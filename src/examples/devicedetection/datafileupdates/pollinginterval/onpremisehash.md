@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_DataFileUpdates_PollingInterval_OnPremiseHash On-Premise Hash
+@page Examples_DeviceDetection_DataFileUpdates_PollingInterval_OnPremiseHash Polling Interval On-Premise Hash
 
 # Introduction
 

@@ -1,4 +1,4 @@
-@page Quickstart_Quickstart Quick Start
+@page Quickstart_Quickstart Quick Start Guide
 
 # Introduction
 

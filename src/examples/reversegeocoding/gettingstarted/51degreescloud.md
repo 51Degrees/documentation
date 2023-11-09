@@ -1,4 +1,4 @@
-@page Examples_ReverseGeocoding_GettingStarted_51DegreesCloud 51Degrees Cloud
+@page Examples_ReverseGeocoding_GettingStarted_51DegreesCloud Reverse Geocoding Getting Started
 
 # Introduction
 

@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_GettingStarted_Web_Cloud Cloud
+@page Examples_DeviceDetection_GettingStarted_Web_Cloud Getting Started Web Cloud
 
 # Introduction
 
