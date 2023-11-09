@@ -1,4 +1,4 @@
-@page Quickstart_DeviceDetection Device Detection
+@page Quickstart_DeviceDetection Device Detection Quick Start
 
 @startsnippets
 @showsnippet{c,C}
