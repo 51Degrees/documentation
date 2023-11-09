@@ -1,3 +1,3 @@
-@page Examples_ReverseGeocoding_WebIntegration_Index Reverse Geocoding Web Integration Index
+@page Examples_ReverseGeocoding_WebIntegration_Index Reverse Geocoding Web Integration
 
 @subpage Examples_ReverseGeocoding_WebIntegration_Examples
