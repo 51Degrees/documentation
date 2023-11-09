@@ -1,4 +1,4 @@
-@page Examples_DeviceDetection_Metadata_OnPremiseHash On-Premise Metadata
+@page Examples_DeviceDetection_Metadata_OnPremiseHash On-Premise Hash Metadata
 
 # Introduction
 
