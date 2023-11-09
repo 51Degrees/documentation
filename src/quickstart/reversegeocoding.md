@@ -1,4 +1,4 @@
-@page Quickstart_ReverseGeocoding Reverse Geocoding
+@page Quickstart_ReverseGeocoding Reverse Geocoding Quick Start
 
 This example demonstrates how to look up a latitude and longitude to a geographical location.
 
