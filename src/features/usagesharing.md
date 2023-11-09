@@ -1,4 +1,4 @@
-@page Features_UsageSharing Usage Sharing
+@page Features_UsageSharing Usage Sharing Feature
 
 # Introduction
 
