@@ -1,4 +1,4 @@
-@page Examples_ReverseGeocoding_Index Reverse Geocoding Examples Index
+@page Examples_ReverseGeocoding_Index Reverse Geocoding Examples
 
 
 @subpage Examples_ReverseGeocoding_GettingStarted_Index
