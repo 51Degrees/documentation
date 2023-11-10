@@ -10,6 +10,6 @@ var _features__index =
     [ "Logging", "_features__logging.html", null ],
     [ "Parallel Execution", "_features__parallel_execution.html", null ],
     [ "Result Caching", "_features__result_caching.html", null ],
-    [ "Usage Sharing", "_features__usage_sharing.html", null ],
-    [ "Web Integration", "_features__web_integration.html", null ]
+    [ "Usage Sharing Feature", "_features__usage_sharing.html", null ],
+    [ "Web Integration Feature", "_features__web_integration.html", null ]
 ];
