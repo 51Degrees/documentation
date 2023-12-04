@@ -116,7 +116,7 @@ If you have a configuration that is not covered, please [contact us](https://51d
 @endsnippet
 @startsnippet{go}
 Language Versions:
-- Golang 1.17.1
+- Golang 1.20. Earlier versions of Go are compatible following small changes to the API code.
 
 Platforms:
 - Windows Server 2019
