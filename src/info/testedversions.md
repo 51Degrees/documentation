@@ -56,10 +56,16 @@ You may also want to review the @dependencies page, as these topics are related.
           { title: "Architecture", getValue: d => d.Arch }
       ]);
       grabTestedVersions("device-detection-python", "python-versions", [
-          { title: "Python", getValue: d => d.LanguageVersion }
+          { title: "Python Version", getValue: d => d.LanguageVersion }
       ]);
       grabTestedVersions("device-detection-node", "node-versions", [
-          { title: "Node", getValue: d => d.LanguageVersion }
+          { title: "Node Version", getValue: d => d.LanguageVersion }
+      ]);
+      grabTestedVersions("device-detection-go", "go-versions", [
+          { title: "GoLang Version", getValue: d => d.LanguageVersion }
+      ]);
+      grabTestedVersions("device-detection-php", "php-versions", [
+          { title: "PHP Version", getValue: d => d.LanguageVersion }
       ]);
   });
 </script>
@@ -96,13 +102,9 @@ These are automatically tested on [GitHub](https://github.com/51Degrees?q=java&t
 If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{php}
-Language Versions:
-- PHP 5.6, 7.2, 7.3, 7.4 and 8.0
-
-Platforms:
-- Ubuntu 18.04
-  - 64-bit (x86_64)
-
+These are automatically tested on [GitHub](https://github.com/51Degrees?q=php&type=all&language=&sort=).
+<div id="php-versions"></div>
+If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{node}
 These are automatically tested on [GitHub](https://github.com/51Degrees?q=node&type=all&language=&sort=).
@@ -115,19 +117,9 @@ These are automatically tested on [GitHub](https://github.com/51Degrees?q=python
 If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{go}
-Language Versions:
-- Golang 1.20. Earlier versions of Go are compatible following small changes to the API code.
-
-Platforms:
-- Windows Server 2019
-  - 64-bit (x86_64)
-- Ubuntu 18.04
-  - 32-bit (x86_64)
-  - 64-bit (x86_64)
-- MacOS 11
-  - 32-bit (x86_64)
-  - 64-bit (x86_64)
-
+These are automatically tested on [GitHub](https://github.com/51Degrees?q=go&type=all&language=&sort=).
+<div id="go-versions"></div>
+If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{varnish}
 Language Versions:
