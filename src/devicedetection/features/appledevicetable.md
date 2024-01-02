@@ -200,7 +200,7 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 |iPhone 15 Plus|Standard|iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max|100.00%|
 |iPhone 15 Plus|Zoom|iPhone 15 Plus, iPhone 15 Pro Max, iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 12 mini, iPhone 13 mini, iPhone SE (2nd Gen.)|100.00%|
 |iPhone 15 Pro|Standard|iPhone 14 Pro, iPhone 15 Pro, iPhone 15|100.00%|
-|iPhone 15 Pro|Zoom	iPhone 15 Pro, iPhone 15, iPhone 13 mini, iPhone 12 mini, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 12, iPhone 12 Pro, iPhone 14 Pro|100.00%|
+|iPhone 15 Pro|Zoom|iPhone 15 Pro, iPhone 15, iPhone 13 mini, iPhone 12 mini, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 12, iPhone 12 Pro, iPhone 14 Pro|100.00%|
 |iPhone 15 Pro Max|Standard|iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max|100.00%|
 |iPhone 15 Pro Max|Zoom|iPhone 15 Plus, iPhone 15 Pro Max, iPhone 12 Pro Max, iPhone 14 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 12 mini, iPhone 13 mini, iPhone SE (2nd Gen.)|100.00%|
 |iPad 5|N/A|iPad 5, iPad Pro 12.9, iPad 6<br/> iPad Pro 12.9, iPad 5, iPad 6|47.85%<br/> 52.15%|
