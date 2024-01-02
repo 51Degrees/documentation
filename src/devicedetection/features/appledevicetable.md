@@ -39,20 +39,20 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 |iPhone 8|Zoom|iPhone 7, iPhone 8, iPhone SE (2nd Gen.), iPhone SE (3rd Gen.)<br/> iPhone 8|68.92%<br/> 31.08%|
 |iPhone 8 Plus|Standard|iPhone 8 Plus|100.00%|
 |iPhone 8 Plus|Zoom|iPhone 8 Plus|100.00%|
-|iPhone X|Standard|iPhone X<br/> iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus, iPhone 15 Plus, iPhone 15 Pro Max|3.68%<br/> 96.32%|
+|iPhone X|Standard|iPhone X<br/> iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)|3.68%<br/> 96.32%|
 |iPhone X|Zoom|iPhone X|100.00%|
 |iPhone XR|Standard|iPhone XR<br/> iPhone XR, iPhone 11|14.49%<br/> 85.51%|
 |iPhone XR|Zoom|iPhone XR<br/> iPhone XR, iPhone 11|7.76%<br/> 92.24%|
-|iPhone XS|Standard|iPhone XS, iPhone XS Max<br/> iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus, iPhone 15 Plus, iPhone 15 Pro Max<br/> iPhone XS Max, iPhone XS, iPhone 11 Pro, iPhone 11 Pro Max|1.33%<br/> 96.04%<br/> 1.78%|
+|iPhone XS|Standard|iPhone XS, iPhone XS Max<br/> iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br/> iPhone XS Max, iPhone XS<br/> iPhone XS Max, iPhone 11 Pro, iPhone XS, iPhone 11 Pro Max|1.33%<br/> 96.04%<br/> 1.78%<br/> 0.85%|
 |iPhone XS|Zoom|iPhone XS<br/> , iPhone 11 Pro, iPhone XS|84.68%<br/> 15.32%|
 |iPhone XS Max|Standard|iPhone XS Max<br/> iPhone XS Max, iPhone 11 Pro Max|2.05%<br/> 97.95%|
 |iPhone XS Max|Zoom|iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br/> iPhone XS, iPhone XS Max<br/> iPhone XS Max, iPhone XS<br/> iPhone XS Max, iPhone 11 Pro, iPhone XS, iPhone 11 Pro Max|95.50%<br/> 0.06%<br/> 3.48%<br/> 0.96|
 |iPhone 11|Standard|iPhone XR, iPhone 11<br/> iPhone 11|91.14%<br/> 8.86%|
 |iPhone 11|Zoom|iPhone XR, iPhone 11<br/> iPhone 11|44.58%<br/> 55.42%|
-|iPhone 11 Pro|Standard|iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus, iPhone 15 Plus, iPhone 15 Pro Max<br/> iPhone 11 Pro, iPhone 11 Pro Max<br/> iPhone 11 Pro<br/> iPhone XS Max, iPhone XS, iPhone 11 Pro, iPhone 11 Pro Max|25.26%<br/> 57.72%<br/>0.03%<br/> 16.98%|
+|iPhone 11 Pro|Standard|iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br/> iPhone 11 Pro, iPhone 11 Pro Max<br/> iPhone 11 Pro<br/> iPhone XS Max, iPhone XS, iPhone 11 Pro, iPhone 11 Pro Max|25.26%<br/> 57.72%<br/>0.03%<br/> 16.98%|
 |iPhone 11 Pro|Zoom |iPhone 11 Pro<br/> iPhone 11 Pro, iPhone XS|69.44%<br/> 30.56%|
 |iPhone 11 Pro Max|Standard|iPhone XS Max, iPhone 11 Pro Max<br/> iPhone 11 Pro Max|53.53%<br/> 46.47%|
-|iPhone 11 Pro Max |Zoom |iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus, iPhone 15 Plus, iPhone 15 Pro Max<br/> iPhone 11 Pro, iPhone 11 Pro Max<br/> iPhone XS Max, iPhone XS, iPhone 11 Pro, iPhone 11 Pro Max|64.19%<br/> 24.24%<br/> 11.57%|
+|iPhone 11 Pro Max |Zoom |iPhone X, iPhone XS, iPhone XS Max, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Pro Max, iPhone 14 Plus, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br/> iPhone 11 Pro, iPhone 11 Pro Max<br/> iPhone XS Max, iPhone XS, iPhone 11 Pro, iPhone 11 Pro Max|64.19%<br/> 24.24%<br/> 11.57%|
 |iPhone SE (2nd Gen.)|Standard|iPhone SE (2nd Gen.)|100.00%|
 |iPhone SE (2nd Gen.)|Zoom|iPhone SE (2nd Gen.)|100.00%|
 |iPhone 12|Standard|iPhone 12, iPhone 12 Pro<br/> iPhone 12 Pro, iPhone 12, iPhone 13 Pro, iPhone 13<br/> iPhone 12<br/> iPhone 12, iPhone 12 Pro, iPhone 13 Pro, iPhone 13, iPhone 14|82.73%<br/> 8.55%<br/> 0.13%<br/> 8.59%|
