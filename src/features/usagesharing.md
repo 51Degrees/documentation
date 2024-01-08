@@ -18,7 +18,7 @@ deemed reliable enough to contribute to the data file.
 
 To enable **usage sharing** for low-level APIs such as C, Nginx, and Varnish, please refer to the [Usage Sharing for low-level APIs section](@ref Low_Level_Usage_Sharing) further down this page.
 
-At this time, we do not have **usage sharing** for PHP or other languages. If you'd like to make a feature
+At this time, we do not have **usage sharing** for PHP and Go. If you'd like to make a feature
 request, please [get in touch](https://51degrees.com/contact-us).
 
 If you have any questions on how we use the data you share with us via usage sharing, please refer to our blog [Usage sharing: how do we use your data](https://51degrees.com/blog/usage-sharing-how-do-we-use-your-data).
