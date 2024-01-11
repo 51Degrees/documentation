@@ -19,5 +19,6 @@ There is no performance example for C++, see the C tab instead.
 @startsnippet{php}
 The PHP device-detection on-premise repository includes a modified version of ApacheBench along with benchmarking script tool. Details of how to run this can be found in the [GitHub Readme](https://github.com/51Degrees/device-detection-php-onpremise#performance)
 @endsnippet
+@grabexample{device-detection-python,onpremise_2performance_8py,Python}
 @grabbedexample
 @endsnippets
