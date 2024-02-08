@@ -40,7 +40,7 @@ Make sure that one or more of the following properties are included with your
 
 If you are calling our cloud service via our Pipeline API, hosted on your servers, then you'll
 also need to ensure the `Accept-CH` HTTP header is set using these values. See the 'on-premise' 
-section below for the two approaches to doing this.
+section below for the two approaches to doing this, as well as a note on the `Critical-CH` header.
 
 If you are calling our cloud service directly from the client device, then you'll need to let 
 the browser know that it's okay to send the client hints to our cloud service. There are two 
@@ -111,10 +111,33 @@ to get a list of the UA-CH headers that you need to request. This has a couple o
 Alternatively, you can just request all the [required](@ref DeviceDetection_Features_UACH_RequiredUachHeaders) 
 headers if you want a more immediate solution.
 
-The Accept-CH header should look something like this in the HTML response:
+The `Accept-CH` header should look something like this in the HTML response:
 
 ```
 Accept-CH: sec-ch-ua,sec-ch-ua-mobile,sec-ch-ua-full-version-list,sec-ch-ua-platform,sec-ch-ua-platform-version,sec-ch-ua-model 
+```
+@anchor UACH_Http_Headers_Critical
+[#](@ref UACH_Http_Headers_Critical)
+## Critical-CH
+
+`Critical-CH` (as described by [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Critical-CH)) is an experimental Client Hint 
+response header used along with the `Accept-CH` header. It specifies that the accepted Client Hints are also critical Client Hints,
+such that the web application may not function without them. When the browser supporting Client Hints receives the `Critical-CH` header, 
+it checks if the indicated Client Hints were sent in the original request, and if not, immediately makes another request supplying 
+the missing Client Hints.   
+
+This has to be used with caution for it may often cause another round trip for the client. We recommend only using `Critical-CH` if you need to do the 
+device detection immediately on the very first request from the user. 
+
+In that case, the application or middleware logic must 
+consider if the Client Hints necessary for the device detection were missing. If the Client Hints were missing, the application or 
+middleware logic will add `Critical-CH` and `Accept-CH` headers and send an immediate response to the client:
+
+```
+Critical-CH: sec-ch-ua-arch, sec-ch-ua-full-version, sec-ch-ua-full-version-list, sec-ch-ua-model, sec-ch-ua-platform, sec-ch-ua-platform-version 
+```
+```
+Accept-CH:  sec-ch-ua-arch, sec-ch-ua-full-version, sec-ch-ua-full-version-list, sec-ch-ua-model, sec-ch-ua-platform, sec-ch-ua-platform-version
 ```
 
 @anchor UACH_Http_Headers_BtoB
