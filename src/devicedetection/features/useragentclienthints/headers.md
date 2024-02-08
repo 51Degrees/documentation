@@ -40,7 +40,7 @@ Make sure that one or more of the following properties are included with your
 
 If you are calling our cloud service via our Pipeline API, hosted on your servers, then you'll
 also need to ensure the `Accept-CH` HTTP header is set using these values. See the 'on-premise' 
-section below for the two approaches to doing this.
+section below for the two approaches to doing this, as well as a note on the `Critical-CH` header.
 
 If you are calling our cloud service directly from the client device, then you'll need to let 
 the browser know that it's okay to send the client hints to our cloud service. There are two 
