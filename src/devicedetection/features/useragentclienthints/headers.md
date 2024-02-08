@@ -127,7 +127,9 @@ it checks if the indicated Client Hints were sent in the original request, and i
 the missing Client Hints.   
 
 This has to be used with caution for it may often cause another round trip for the client. We recommend only using `Critical-CH` if you need to do the 
-device detection immediately on the very first request from the user. In that case, the application or middleware logic must 
+device detection immediately on the very first request from the user. 
+
+In that case, the application or middleware logic must 
 consider if the Client Hints necessary for the device detection were missing. If the Client Hints were missing, the application or 
 middleware logic will add `Critical-CH` and `Accept-CH` headers and send an immediate response to the client:
 
