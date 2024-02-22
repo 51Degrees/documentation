@@ -23,14 +23,14 @@ The final generated documentation can be broken down into three major groups:
 
 ## Repository Directory Structure
 
-| Source  | Description |
-| ------- | ----------- |
-| `src/`  | All documentation source lives in the src directory in markdown form with the addition of DoxyGen syntax. |
-| `docs/` | HTML documentation generated from `src/` ends up here. This is what is displayed on the documentation pages. |
-| `Doxyfile` | Configuration for generating the documentation using DoxyGen. |
-| `DoxygenLayout.xml` | Defines how the navigation is layed out in the generated documentation. |
-| `examplegrabber.js` | Included in the generated documentation to pull in language specific examples. |
-| `pattern-library` | PatternLab submodule which generates the custom CSS used in the generated documentation. |
+| Source              | Description                                                                                                  |
+|---------------------|--------------------------------------------------------------------------------------------------------------|
+| `src/`              | All documentation source lives in the src directory in markdown form with the addition of DoxyGen syntax.    |
+| `docs/`             | HTML documentation generated from `src/` ends up here. This is what is displayed on the documentation pages. |
+| `Doxyfile`          | Configuration for generating the documentation using DoxyGen.                                                |
+| `DoxygenLayout.xml` | Defines how the navigation is layed out in the generated documentation.                                      |
+| `examplegrabber.js` | Included in the generated documentation to pull in language specific examples.                               |
+| `pattern-library`   | PatternLab submodule which generates the custom CSS used in the generated documentation.                     |
 
 
 # Building HTML Documents

@@ -18,6 +18,10 @@ required.
 For example, this technique can be used to retrieve the latitude and longitude 
 from devices that have this capability.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/web-integration.md#client-side-features)
+for more technical details.
+
 # Client-side data
 
 When using the client-side evidence integration, the first step is for the @Pipeline

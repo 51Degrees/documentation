@@ -13,6 +13,10 @@ while still seamlessly slotting in with the target language (it is not always ob
 implemented in can more readily benefit from any optimizations or features which are added to the
 [native](@term{NativeCode}) library.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#on-premise-engines)
+for more technical details.
+
 # Metadata
 
 The majority of **51Degrees engines** share a similar data structure. This means @metadata is exposed
