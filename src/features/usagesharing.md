@@ -11,7 +11,7 @@ A specific set of evidence must be seen a number of times, from a number of sour
 deemed reliable enough to contribute to the data file.
 
 See the
-[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/usage-sharing.md)
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/usage-sharing.md#)
 for more technical details.
 
 @dotfile usagesharing.gvdot

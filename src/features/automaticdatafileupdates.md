@@ -13,7 +13,7 @@ In addition, it is worth being familiar with the [Distributor](@ref Info_Distrib
 which supplies the updated data files.
 
 See the
-[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/data-updates.md)
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/data-updates.md#)
 for more technical details.
 
 # Registering for updates

@@ -23,7 +23,7 @@ on the @Aspectdata. The primary use case for this is to validate in testing
 whether a cache hit or miss has occurred.
 
 See the
-[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/caching.md)
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/caching.md#)
 for more technical details.
 
 # Internals

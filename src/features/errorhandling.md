@@ -5,7 +5,7 @@
 The @Pipeline can contain and number or configuration of @flowelements, including custom third-party ones. As such, it must have a robust and consistent error handling solution.
 
 See the
-[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/exception-handling.md)
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/exception-handling.md#)
 for more technical details.
 
 # Approach

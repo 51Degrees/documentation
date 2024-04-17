@@ -7,7 +7,7 @@ preferable to make the @pipeline configurable without recompiling. A @pipelinebu
 this via its 'BuildFromConfiguration' method.
 
 See the
-[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/pipeline-configuration.md)
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/pipeline-configuration.md#)
 for more technical details.
 
 # Usage

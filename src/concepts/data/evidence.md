@@ -11,7 +11,7 @@ The **evidence** values are used by @aspectengines to determine the details of t
 [aspect](@term{Aspect}) they are concerned with.
 
 See the
-[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/evidence.md)
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/evidence.md#)
 for more technical details.
 
 # Data structure

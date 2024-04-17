@@ -8,7 +8,7 @@ number and is generally only available to code running with sufficient privilege
 user's device.
 
 See the
-[Specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/pipeline-elements/hardware-profile-lookup-cloud.md)
+[Specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/pipeline-elements/hardware-profile-lookup-cloud.md#)
 for more technical details.
 
 TAC lookup is currently available in two forms:

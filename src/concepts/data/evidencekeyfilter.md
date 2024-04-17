@@ -11,7 +11,7 @@ Additionally, the **evidence key filter** can indicate the relative importance o
 of each key value that it includes.
 
 See the
-[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/advertize-accepted-evidence.md)
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/advertize-accepted-evidence.md#)
 for more technical details.
 
 # Usage

@@ -14,7 +14,7 @@ ability to handle **parallel execution**. For example, the PHP process runs in a
 single-thread, so @flowelements cannot be configured to run in **parallel**.
 
 See the
-[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/advanced-features/parallel-processing.md)
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/advanced-features/parallel-processing.md#)
 for more technical details.
 
 # Executing flow elements in parallel

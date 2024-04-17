@@ -13,7 +13,7 @@ have been populated. When lazy loading is configured in an @aspectengine, values
 thread, and other processing can continue.
 
 See the
-[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/advanced-features/lazy-loading.md)
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/advanced-features/lazy-loading.md#)
 for more technical details.
 
 # Caveats

@@ -8,7 +8,7 @@ needing to be updated. These goals are often in conflict and lead to the creatio
 mechanisms to retrieve property values.
 
 See the
-[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/access-to-results.md)
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/access-to-results.md#)
 for more technical details.
 
 # Detail

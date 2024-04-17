@@ -9,7 +9,7 @@ language's logging interface can be used. Where possible, dependency injection
 is used to introduce a **logger** / **logger factory** to the @pipeline.
 
 See the
-[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/logging.md)
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/logging.md#)
 for more technical details.
 
 # Configuration
