@@ -12,6 +12,10 @@ the default is to not lazily load them, so an @aspectengine's processing does no
 have been populated. When lazy loading is configured in an @aspectengine, values begin to load in another
 thread, and other processing can continue.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/advanced-features/lazy-loading.md#)
+for more technical details.
+
 # Caveats
 
 Getting an @aspectproperty's value from an @aspectdata which has been lazily loaded has the added

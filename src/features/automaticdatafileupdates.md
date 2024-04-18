@@ -12,6 +12,10 @@ This page describes the functionality and options for data updates in the pipeli
 In addition, it is worth being familiar with the [Distributor](@ref Info_Distributor) web API, 
 which supplies the updated data files.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/data-updates.md#)
+for more technical details.
+
 # Registering for updates
 
 All @datafiles added to an @onpremiseengine have the option to enable **automatic updates**.

@@ -10,6 +10,10 @@ such as HTTP headers, source IP address, or query string parameters.
 The **evidence** values are used by @aspectengines to determine the details of the 
 [aspect](@term{Aspect}) they are concerned with.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/evidence.md#)
+for more technical details.
+
 # Data structure
 
 The precise details of the data structure behind **evidence** will vary depending on the

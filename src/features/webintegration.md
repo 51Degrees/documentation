@@ -7,6 +7,10 @@ or web service.
 To make using the 51Degrees @Pipeline as simple as possible in this scenario, we
 have produced a range of packages to integrate with different web frameworks.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/web-integration.md#)
+for more technical details.
+
 # Features
 
 The details of each integration vary significantly. However, the features provided

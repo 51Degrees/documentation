@@ -10,6 +10,10 @@ that the @flowelement can make use of.
 Additionally, the **evidence key filter** can indicate the relative importance or order
 of each key value that it includes.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/advertize-accepted-evidence.md#)
+for more technical details.
+
 # Usage
 
 **Evidence key filters** are used by @flowdata to generate @datakeys. These @datakeys can then

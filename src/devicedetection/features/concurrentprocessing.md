@@ -7,6 +7,10 @@ to handle concurrent requests is only limited by the available hardware resource
 using a lower memory @PerformanceProfile where collections are partially or fully read from file,
 consideration needs to be given to how many parallel threads will be accessing the @Pipeline. 
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/advanced-features/parallel-processing.md#)
+for more technical details.
+
 # Detail
 
 For @PerformanceProfiles such as `LowMemory` and `Balanced`, the concurrency is limited by the number

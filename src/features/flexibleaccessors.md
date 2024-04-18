@@ -7,6 +7,10 @@ However, one of our key design goals was to allow new properties to be added wit
 needing to be updated. These goals are often in conflict and lead to the creation of several possible 
 mechanisms to retrieve property values.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/access-to-results.md#)
+for more technical details.
+
 # Detail
 
 The precise nature of the available accessors depend on the language being used but we have aimed 

@@ -6,6 +6,10 @@ Rather than setting all build options and @flowelements explicitly in code form,
 preferable to make the @pipeline configurable without recompiling. A @pipelinebuilder allows
 this via its 'BuildFromConfiguration' method.
 
+See the
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/pipeline-configuration.md#)
+for more technical details.
+
 # Usage
 
 A configuration can be parsed manually from XML, JSON, or any other source and given to a @pipelinebuilder. 
@@ -14,7 +18,8 @@ Alternatively, in @webintegrations, a configuration file is loaded automatically
 Note, the possible format of the configuration file varies greatly between languages, with some languages 
 having many options and others only having one.
 Where possible, we recommend using JSON as the simplest and most transferable configuration format; JSON is
-also supported by the PHP and Node.js bindings, where XML is not.
+also supported by the PHP and Node.js bindings, where XML is not. In contrast, it should be noted that Java 
+only supports XML configuration files.
 
 ## Parsing XML
 
@@ -28,7 +33,10 @@ var config = new ConfigurationBuilder()
     .AddXmlFile("configuration.xml")
     .Build();
 PipelineOptions options = new PipelineOptions();
-config.Bind("PipelineOptions", options);
+var section = config.GetRequiredSection("PipelineOptions");
+// Use the 'ErrorOnUnknownConfiguration' option to warn us if we've got any
+// misnamed configuration keys.
+section.Bind(options, (o) => { o.ErrorOnUnknownConfiguration = true; });
 
 IPipeline pipeline = new PipelineBuilder(loggerFactory)
     .BuildFromConfiguration(options);
@@ -36,11 +44,8 @@ IPipeline pipeline = new PipelineBuilder(loggerFactory)
 @endsnippet
 @startsnippet{java}
 ```{java}
-File file = new File("configuration.xml");
-Unmarshaller unmarshaller = JAXBContext
-    .newInstance(PipelineOptions.class)
-    .createUnmarshaller();
-PipelineOptions options = (PipelineOptions) unmarshaller.unmarshal(file);
+
+PipelineOptions options = PipelineOptionsFactory.getOptionsFromFile("configuration.xml");
 
 Pipeline pipeline = new PipelineBuilder(loggerFactory)
     .buildFromConfiguration(options);
@@ -61,7 +66,10 @@ var config = new ConfigurationBuilder()
     .AddJsonFile("configuration.json")
     .Build();
 PipelineOptions options = new PipelineOptions();
-config.Bind("PipelineOptions", options);
+var section = config.GetRequiredSection("PipelineOptions");
+// Use the 'ErrorOnUnknownConfiguration' option to warn us if we've got any
+// misnamed configuration keys.
+section.Bind(options, (o) => { o.ErrorOnUnknownConfiguration = true; });
 
 IPipeline pipeline = new PipelineBuilder(loggerFactory)
     .BuildFromConfiguration(options);
@@ -90,6 +98,8 @@ pipeline.buildFromConfigurationFile(configFilePath);
 @showsnippet{JSON}
 @defaultsnippet{Select a file format to view an example configuration.}
 @startsnippet{XML}
+There is a sample file demonstrating all configuration options for Java on [GitHub](@ref https://github.com/51Degrees/device-detection-java-examples/blob/main/web/getting-started.onprem/src/main/webapp/WEB-INF/51Degrees-OnPrem.xml).
+
 Configure a @pipeline with a @flowelement named 'MyElement' with a build parameter, and
 set the @pipeline to [suppress process exceptions](@ref Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions).
 ```{xml}
@@ -113,6 +123,9 @@ Configure a @pipeline with a @flowelement named 'MyElement' with a build paramet
 set the @pipeline to [suppress process exceptions](@ref Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions).
 
 Note that for use in node.js, `BuilderName` and `BuilderParameters` should be replaced by `elementName` and `elementParameters`.
+
+There is a sample file demonstrating all configuration options for .NET on [GitHub](@ref https://github.com/51Degrees/device-detection-dotnet-examples/blob/master/Examples/sample-configuration.json).
+
 ```{js}
 {
   "PipelineOptions": {
