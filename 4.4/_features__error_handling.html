@@ -70,6 +70,7 @@ $(document).ready(function(){initNavTree('_features__error_handling.html','');})
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
 <p>The <a class="el" href="_concepts__pipeline.html">Pipeline</a> can contain and number or configuration of <a class="el" href="_concepts__flow_elements__flow_element.html">flow elements</a>, including custom third-party ones. As such, it must have a robust and consistent error handling solution.</p>
+<p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/exception-handling.md#">Specification</a> for more technical details.</p>
 <h1 class="g-docs__section-heading">Approach</h1>
 <p>Almost all languages have <code>try/catch</code> constructs, so these are used by the <a class="el" href="_concepts__pipeline.html">Pipeline</a> code when calling functions on flow elements.</p>
 <p>If the flow element code raises an error, it will be handled by the catch statement.</p>

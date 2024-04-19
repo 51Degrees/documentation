@@ -74,6 +74,7 @@ $(document).ready(function(){initNavTree('_concepts__flow_elements__on_premise_e
 <li>load data either from memory or one or more data files</li>
 <li>keep data files up to date</li>
 </ul>
+<p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#on-premise-engines">Specification</a> for more technical details.</p>
 <h1 class="g-docs__section-heading">Use cases</h1>
 <p>An <b>on-premise engine</b> typically does not need to call external components when processing a request. This makes it best suited to cases where performance is critical, and the supporting hardware implementation reflects this. To provide optimal performance, some <b>on-premise engines</b> can be configured to run with any data files held entirely in memory, reducing latency further.</p>
 <p>There are also situations where the security demands of a service make sending sensitive data to an external <a class="el" href="_concepts__terminology.html#Concepts_Terminology_CloudService">cloud service</a> problematic. Using an <b>on-premise engine</b> will address this issue.</p>

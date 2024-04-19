@@ -71,6 +71,7 @@ $(document).ready(function(){initNavTree('_concepts__configuration__builders__pi
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
 <p>A <a class="el" href="_concepts__pipeline.html">Pipeline</a> is created using a <b>builder</b> which follows the <a href="https://en.wikipedia.org/wiki/Fluent_interface">fluent builder pattern</a>. <a class="el" href="_concepts__flow_elements__flow_element.html">Flow elements</a> are added to a <a class="el" href="_concepts__pipeline.html">Pipeline</a> via the <b>builder</b>, along with other configuration options for the <a class="el" href="_concepts__pipeline.html">Pipeline</a>. In languages that support it, a <a class="el" href="_concepts__pipeline.html">Pipeline</a> can also be built from a configuration file.</p>
 <p>A <a class="el" href="_concepts__pipeline.html">Pipeline</a>'s configuration is immutable once it has been constructed, so all its configuration must be done in the <b>builder</b>.</p>
+<p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/pipeline-configuration.md#">Specification</a> for more technical details.</p>
 <h1 class="g-docs__section-heading">Options</h1>
 <h2>Auto dispose rlements</h2>
 <p>By default, when a <a class="el" href="_concepts__pipeline.html">Pipeline</a> is disposed of, the <a class="el" href="_concepts__flow_elements__flow_element.html">flow elements</a> which it contained will still exist and will need to be disposed of at some point.</p>
