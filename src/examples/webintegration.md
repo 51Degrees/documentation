@@ -14,6 +14,6 @@ For engine-specific examples, see:
 - [reverse geocoding web integration](@ref Examples_ReverseGeocoding_WebIntegration_Examples)
 
 @startsnippets
-@grabexample{pipeline-dotnet,_example_framework_web_site_2_controllers_2_home_controller_8cs,C# - ASP.NET Framework}
+@grabexample{pipeline-dotnet,_example_framework_website_2_controllers_2_home_controller_8cs,C# - ASP.NET Framework}
 @grabbedexample
 @endsnippets
