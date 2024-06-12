@@ -37,5 +37,6 @@
 |Node.js  |@tick|@tick|@tick  |       |@tick  |@tick|
 |PHP      |     |@tick|       |       |       |@tick*|
 |Python   |     |@tick|       |       |       |@tick|
+|Go       |@tick|     |       |       |       |     |
 
 *Session cache only.
