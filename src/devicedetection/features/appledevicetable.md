@@ -8,7 +8,7 @@ Below we cover the detection results that are experienced for each iPhone and iP
 
 The 'percentage' column refers to the percentage of the data submissions we have received that would return that detection result for that particular display mode. For example, '100.00%' in Standard mode indicates that 100% of our submissions for that device would receive that result if the data from the submission were passed to our detection script. '1.50%' in indicates that 1.5% of our submissions would receive that detection result.
 
-As we receive more data on Apple devices, this table will change. We will update this table every two months and it is currently accurate as of 27 August 2024.
+As we receive more data on Apple devices, this table will change. We will update this table every two months and it is currently accurate as of 25 September 2024.
 
 For optimized viewing of the table, it is recommended you zoom out within your browser.
 
@@ -16,6 +16,10 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 
 |Device|Results|Percentage|
 |---|---|---|
+|iPhone 16 Pro Max|iPhone 16 Pro Max|100.00%|
+|iPhone 16 Pro|iPhone 16 Pro|100.00%|
+|iPhone 16 Plus|iPhone 15 Pro Max, iPhone 16 Plus|99.51%|
+|iPhone 16|iPhone 15 Pro, iPhone 16<br/> iPhone 16|98.00%<br/> 2.00%|
 |iPhone 15 Pro Max|iPhone 15 Pro Max<br/> iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max|61.44%<br/> 38.56%|
 |iPhone 15 Pro|iPhone 15 Pro<br/> iPhone 14 Pro, iPhone 15, iPhone 15 Pro|51.21%<br/> 48.79%|
 |iPhone 15 Plus|iPhone 14 Pro Max, iPhone 15 Plus<br/> iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max|68.28%<br/> 31.65%|
@@ -61,6 +65,10 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 
 |Device|Results|Percentage|
 |---|---|---|
+|iPhone 16 Pro Max|iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max|100.00%|
+|iPhone 16 Pro|iPhone 15 Pro, iPhone 16, iPhone 16 Pro|100.00%|
+|iPhone 16 Plus|iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br/> iPhone 16 Plus|98.00%<br/> 2.00%|
+|iPhone 16|iPhone 15 Pro, iPhone 16, iPhone 16 Pro|100.00%|
 |iPhone 15 Pro Max|iPhone 15 Pro Max<br/> iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br/> iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max|56.05%<br/> 24.41%<br/> 19.53%|
 |iPhone 15 Pro|iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br/> iPhone 15 Pro|56.62%<br/> 43.48%|
 |iPhone 15 Plus|iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus<br/> iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br/> iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max|55.56%<br/> 22.22%<br/> 22.22%|
@@ -99,6 +107,14 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 
 |Device|Display Mode|Results|Percentage|
 |---|---|---|---|
+|iPhone 16 Pro Max|Standard|iPhone 16 Pro Max|100.00%|
+|iPhone 16 Pro Max|Zoom|iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max|100.00%|
+|iPhone 16 Pro|Standard|iPhone 16 Pro|100.00%|
+|iPhone 16 Pro|Zoom|iPhone 15 Pro, iPhone 16, iPhone 16 Pro|100.00%|
+|iPhone 16 Plus|Standard|iPhone 15 Pro Max, iPhone 16 Plus|99.51%|
+|iPhone 16 Plus|Zoom|iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br/> iPhone 16 Plus|98.00%<br/> 2.00%|
+|iPhone 16|Standard|iPhone 15 Pro, iPhone 16<br/> iPhone 16|98.00%<br/> 2.00%|
+|iPhone 16|Zoom|iPhone 15 Pro, iPhone 16, iPhone 16 Pro|100.00%|
 |iPhone 15 Pro Max|Standard|iPhone 15 Pro Max<br/> iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max|61.44%<br/> 38.56%|
 |iPhone 15 Pro Max|Zoom|iPhone 15 Pro Max<br/> iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br/> iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max|56.05%<br/> 24.41%<br/> 19.53%|
 |iPhone 15 Pro|Standard|iPhone 15 Pro<br/> iPhone 14 Pro, iPhone 15, iPhone 15 Pro|51.21%<br/> 48.79%|
