@@ -28,6 +28,18 @@ not be as good as a dedicated machine, as it's running on a GitHub runner, but g
 -->
 ![Ubuntu Results](https://raw.githubusercontent.com/51Degrees/device-detection-cxx/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png)
 
+# Go
+
+<!--
+- **Number of User-Agents**: 20000
+
+| Machine                | Settings           | Performance Profile | Time Per Detection (ms) | Detections Per Second |
+| ---------------------- |------------------- | ------------------- | ----------------------: | --------------------: |
+| Quad core Xeon 2.4 GHz | 2 Threads          | `MaxPerformance`    | 0.02632                 | ≈ 38,023              |
+|                        |                    | `HighPerformance`   | 0.02636                 | ≈ 37,950              |
+-->
+![Ubuntu Results](https://raw.githubusercontent.com/51Degrees/device-detection-go/gh-images/perf-graph-ubuntu-latest-go-1.21-DetectionsPerSecond-latest.png)
+
 # .NET
 
 <!--
@@ -73,3 +85,4 @@ not be as good as a dedicated machine, as it's running on a GitHub runner, but g
 |                        |                    | `HighPerformance`   | 0.02636                 | ≈ 37,950              |
 -->
 ![Ubuntu Results](https://raw.githubusercontent.com/51Degrees/device-detection-python/gh-images/perf-graph-Ubuntu_Python_3.11-DetectionsPerSecond-latest.png)
+
