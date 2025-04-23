@@ -43,6 +43,6 @@ To get started with C++ device detection on-premise:
 1. Install the [FiftyOne.IpIntelligence](https://www.nuget.org/packages/FiftyOne.IpIntelligence) and [FiftyOne.Pipeline.Web](https://www.nuget.org/packages/FiftyOne.Pipeline.Web) packages via Nuget.
 2. Follow the [web example](@ref Examples_WebIntegration) to add the @Pipeline middleware.
 3. Configure the pipeline using the configuration from the appropriate example from the options below:
- * [On-Premise Example](@ref Examples_IpIntelligence_GettingStarted_OnPremiseHash) - IP intelligence processing is performed locally using a data file that must be kept updated.
+ * [On-Premise Example](@ref Examples_IpIntelligence_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
 
 @endsnippet
