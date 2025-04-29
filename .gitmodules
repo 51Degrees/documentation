@@ -1,18 +1,9 @@
-[submodule "apis/device-detection-cxx"]
-	path = apis/device-detection-cxx
-	url = ../device-detection-cxx
 [submodule "apis/pipeline-dotnet"]
 	path = apis/pipeline-dotnet
 	url = ../pipeline-dotnet
-[submodule "apis/device-detection-dotnet"]
-	path = apis/device-detection-dotnet
-	url = ../device-detection-dotnet
 [submodule "apis/pipeline-java"]
 	path = apis/pipeline-java
 	url = ../pipeline-java
-[submodule "apis/device-detection-java"]
-	path = apis/device-detection-java
-	url = ../device-detection-java
 [submodule "apis/pipeline-node"]
 	path = apis/pipeline-node
 	url = ../pipeline-node
@@ -25,44 +16,3 @@
 [submodule "apis/device-detection-php"]
 	path = apis/device-detection-php
 	url = ../device-detection-php
-[submodule "apis/location-dotnet"]
-	path = apis/location-dotnet
-	url = ../location-dotnet
-[submodule "apis/location-java"]
-	path = apis/location-java
-	url = ../location-java
-[submodule "apis/location-php"]
-	path = apis/location-php
-	url = ../location-php
-[submodule "apis/location-node"]
-	path = apis/location-node
-	url = ../location-node
-[submodule "apis/internal-engines-dotnet"]
-	path = apis/internal-engines-dotnet
-	url = ../internal-engines-dotnet
-[submodule "apis/location-onpremise-java"]
-	path = apis/location-onpremise-java
-	url = ../location-onpremise-java
-[submodule "apis/device-detection-varnish"]
-	path = apis/device-detection-varnish
-	url = ../device-detection-varnish
-[submodule "apis/device-detection-python"]
-	path = apis/device-detection-python
-	url = ../device-detection-python
-[submodule "apis/location-python"]
-	path = apis/location-python
-	url = ../location-python
-[submodule "apis/pipeline-python"]
-	path = apis/pipeline-python
-	url = ../pipeline-python
-[submodule "apis/device-detection-php-onpremise"]
-	path = apis/device-detection-php-onpremise
-	url = ../device-detection-php-onpremise
-[submodule "apis/device-detection-nginx"]
-	path = apis/device-detection-nginx
-	url = ../device-detection-nginx
-    branch = main
-[submodule "ci/common-ci"]
-	path = ci/common-ci
-	url = ../common-ci
-    branch = main
