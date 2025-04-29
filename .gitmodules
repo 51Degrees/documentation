@@ -60,7 +60,7 @@
 	url = ../device-detection-php-onpremise
 [submodule "apis/device-detection-nginx"]
 	path = apis/device-detection-nginx
-    url=../device-detection-nginx
+	url = ../device-detection-nginx
     branch = main
 [submodule "ci/common-ci"]
 	path = ci/common-ci
