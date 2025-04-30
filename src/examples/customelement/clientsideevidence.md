@@ -79,12 +79,12 @@ concrete implementation with easy 'setters'.
 In this example, values for star sign and JavaScript are populated. So an interface `StarSignData`
 will extend `ElementData` to add a 'getter' for it.
 
-@snippet pipeline.developer-examples.clientside-element/src/main/java/pipeline/developerexamples/clientsideelement/data/StarSignData.java class
+@snippet pipeline.developer-examples.clientside-element/src/main/java/fiftyone/pipeline/developerexamples/clientsideelement/data/StarSignData.java class
 
 Now the internal implementation of it will implement this 'getter' and add a 'setter' for the @flowelement
 to use.
 
-@snippet pipeline.developer-examples.clientside-element/src/main/java/pipeline/developerexamples/clientsideelement/flowelements/StarSignDataInternal.java class
+@snippet pipeline.developer-examples.clientside-element/src/main/java/fiftyone/pipeline/developerexamples/clientsideelement/flowelements/StarSignDataInternal.java class
 
 
 Note that this concrete implementation of `StarSignData` sits in the same package as the @flowelement,
@@ -162,22 +162,22 @@ added to the @flowdata, and  `ElementPropertyMetaData` - as we only need the sta
 This needs a constructor matching the `FlowElementBase` class. So it takes a logger, and an
 @elementdata factory which will be used to construct a `StarSignData`:
 
-@snippet pipeline.developer-examples.clientside-element/src/main/java/pipeline/developerexamples/clientsideelement/flowelements/SimpleClientSideElement.java constructor
+@snippet pipeline.developer-examples.clientside-element/src/main/java/fiftyone/pipeline/developerexamples/clientsideelement/flowelements/SimpleClientSideElement.java constructor
 
 The `init` method in this example will simply initialize a list of star signs with the start and end dates of
 each star sign and add each to a list of a new class named `StarSign` which has the following simple implementation:
 
-@snippet pipeline.developer-examples.clientside-element/src/main/java/pipeline/developerexamples/clientsideelement/data/StarSign.java class
+@snippet pipeline.developer-examples.clientside-element/src/main/java/fiftyone/pipeline/developerexamples/clientsideelement/data/StarSign.java class
 
 Note that the year of the start and end date are both set to 0, as the year should be ignored.
 
 The new `init` method looks like this:
 
-@snippet pipeline.developer-examples.clientside-element/src/main/java/pipeline/developerexamples/clientsideelement/flowelements/SimpleClientSideElement.java init
+@snippet pipeline.developer-examples.clientside-element/src/main/java/fiftyone/pipeline/developerexamples/clientsideelement/flowelements/SimpleClientSideElement.java init
 
 Now the abstract methods can be implemented to create a functional @flowelement.
 
-@snippet pipeline.developer-examples.clientside-element/src/main/java/pipeline/developerexamples/clientsideelement/flowelements/SimpleClientSideElement.java class
+@snippet pipeline.developer-examples.clientside-element/src/main/java/fiftyone/pipeline/developerexamples/clientsideelement/flowelements/SimpleClientSideElement.java class
 
 @endsnippet
 @startsnippet{node}
@@ -224,7 +224,7 @@ which the @elementbuilder provides with a logger and an @elementdata factory.
 The @elementdata factory is implemented in the @elementbuilder class to make use of the same
 logger factory.
 
-@snippet pipeline.developer-examples.clientside-element/src/main/java/pipeline/developerexamples/clientsideelement/flowelements/SimpleClientSideElementBuilder.java class
+@snippet pipeline.developer-examples.clientside-element/src/main/java/fiftyone/pipeline/developerexamples/clientsideelement/flowelements/SimpleClientSideElementBuilder.java class
 
 @endsnippet
 @startsnippet{node}
@@ -279,7 +279,7 @@ the message which is passed from the controller:
 
 The message is constructed in the controller in the same way as in the [previous example](@ref Examples_CustomElement_FlowElement):
 
-@snippet "CustomFlowElement\3. Client-side evidence\ClientSideEvidence.MVC\Controllers/HomeController.cs" usage
+@snippet "CustomFlowElement/3. Client-side evidence/ClientSideEvidence.MVC/Controllers/HomeController.cs" usage
 
 @endsnippet
 @startsnippet{java}
