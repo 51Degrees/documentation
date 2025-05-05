@@ -1,0 +1,3 @@
+@page Examples_IpIntelligence_GettingStarted_Console_Index Getting Started - Console
+
+@subpage Examples_IpIntelligence_GettingStarted_Console_OnPremise

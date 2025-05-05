@@ -4,6 +4,8 @@
 
 @subpage Examples_DeviceDetection_Index
 
+@subpage Examples_IpIntelligence_Index
+
 @subpage Examples_ReverseGeocoding_Index
 
 @subpage Examples_UsageSharing
