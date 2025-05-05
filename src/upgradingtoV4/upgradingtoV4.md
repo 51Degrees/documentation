@@ -10,9 +10,9 @@ Additionally, Version 4 has support for [Google's changes to the User-Agent](htt
 
 The steps to upgrade will vary depending on whether you are using our cloud or on-premise service.
 
-@anchor V3_Cloud
-[#](@ref V3_Cloud)
-## V3 Cloud users
+<BR>
+
+## V3 Cloud users <a href="#V3_Cloud">#</a> @anchor V3_Cloud
 
 Use our [Cloud Configurator](https://configure.51degrees.com/) to generate a new Resource Key. You can follow our 
 @configuratorexplanation for a step by step guide. This Resource Key should contain all the properties you wish to collect data for – 
@@ -22,9 +22,9 @@ to be granted a License Key.
 
 If you are looking for User-Agent Client Hints support in the cloud, please follow the [User-Agent Client Hints documentation](@ref DeviceDetection_Features_UACH_Overview).
 
-@anchor V3_On_Prem
-[#](@ref V3_On_Prem)
-## V3 On-premise users
+<BR>
+
+## V3 On-premise users <a href="#V3_On_Prem">#</a> @anchor V3_On_Prem
 
 If you wish to continue to use 51Degrees on-premise, you will need to purchase a License Key to access the Version 4 data files. Visit our [pricing](https://51degrees.com/pricing) page and
 select the suitable plan for your needs. Alternatively, you may wish to use our [cloud service](@ref V3_Cloud), which can be called from the server via our APIs.
@@ -45,9 +45,9 @@ If you are looking for User-Agent Client Hints support, please follow the [User-
 
 If you require any help upgrading, get in touch with [Sales](https://51degrees.com/contact-us).
 
-@anchor New_Customers
-[#](@ref New_Customers)
-## New customers
+<BR>
+
+## New customers <a href="#New_Customers">#</a> @anchor New_Customers
 
 If you wish to get started with 51Degrees, check out our [pricing](https://51degrees.com/pricing) page for an overview of all our pricing tiers. You can then follow the 
 @configuratorexplanation to get started in the cloud or use our [on-premise documentation](https://51degrees.com/documentation/index.html).
