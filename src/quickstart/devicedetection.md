@@ -52,7 +52,7 @@ To get started with C++ device detection on-premise:
 2. Follow the [web example](@ref Examples_WebIntegration) to add the @Pipeline middleware.
 3. Configure the pipeline using the configuration from the appropriate example from the options below:
  * [Cloud Example](@ref Examples_DeviceDetection_GettingStarted_Console_Cloud) - Negligible processing and memory overhead but slower due to Internet latency.
- * [On-Premise Example](@ref Examples_DeviceDetection_GettingStarted_OnPremiseHash) - Device detection processing is performed locally using a data file that must be kept updated.
+ * [On-Premise Example](@ref Examples_DeviceDetection_GettingStarted_Console_OnPremise) - Device detection processing is performed locally using a data file that must be kept updated.
 4. (optional) Configure [client-side evidence](@ref Features_ClientSideEvidence) to get better results. Particularly for iPhone and iPad.
 
 ### ASP.NET integration.

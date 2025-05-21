@@ -17,5 +17,3 @@
 @subpage DeviceDetection_Features_TacLookup
 
 @subpage DeviceDetection_Features_UACH_Index
-
-@subpage DeviceDetection_Features_UserAgentClientHints

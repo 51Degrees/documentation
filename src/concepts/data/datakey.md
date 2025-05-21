@@ -30,9 +30,9 @@ latitude and longitude values in an @evidence collection.
 
 @dotfile datakey-evidence.gvdot
 
-The **data key** can then be used to quickly check if the current @flowdata
-contains the same values for the subset of evidence keys we're interested in
-as any other **data key** instance from a list.
+The **data key** can then be used to determine whether the current
+@flowdata has the same values, for a specific subset of evidence keys,
+as any **data key** in a given list.
 
 @dotfile datakey-check.gvdot
 

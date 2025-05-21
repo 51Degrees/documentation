@@ -28,7 +28,7 @@ for the file you need from there.
 ### Response headers 
 
 The server will respond with a `Content-MD5` header. This contains the MD5 hash of the data file content.
-It can be used to verify the download by hashing the content and comparing the result with the value in this header. For an example see https://docs.developer.amazonservices.com/en_DE/dev_guide/DG_MD5.html 
+It can be used to verify the download by hashing the content and comparing the result with the value in this header.
 
 The server will also respond with a `Last-Modified` header. This contains the publish date of the data file that is being downloaded.
 This value should be used to populate the `If-Modified-Since` header on the next request (see request headers below).

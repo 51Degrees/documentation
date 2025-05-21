@@ -1,12 +1,12 @@
 @htmlonly
 <p>
-To run this example, you will need to create a <strong>resource key</strong>. 
-The resource key is used as shorthand to store the particular set of 
-properties you are interested in as well as any associated license keys 
+To run this example, you will need to create a <strong>Resource Key</strong>.
+The Resource Key is used as shorthand to store the particular set of
+properties you are interested in as well as any associated license keys
 that entitle you to increased request limits and/or paid-for properties.
 </p>
 <p>
-You can create a resource key using the 51Degrees 
+You can create a Resource Key using the 51Degrees
 <a href="https://configure.51degrees.com">Configurator</a>.
 </p>
 @endhtmlonly

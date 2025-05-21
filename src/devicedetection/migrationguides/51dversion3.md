@@ -99,7 +99,7 @@ fiftyoneDegreesResultsPatternGetValuesString(
     exception);
 ```
 
-Multiple HTTP header matching can follows a similar pattern to single User-Agent matching.
+Multiple HTTP header matching can follow a similar pattern to single User-Agent matching.
 Instead of a single string, a `fiftyoneDegreesEvidenceKeyValuePairArray` structure is used.
 Each header is added to the evidence before calling the `fiftyoneDegreesResultsHashFromEvidence`
 method.
@@ -235,7 +235,7 @@ var pipeline = new DeviceDetectionPipelineBuilder()
 
 The supplied settings will be dependent on your old implementation:
 
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, change the first line to `.UseCloud` and pass in the resource key you created.
+- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). Next, change the first line to `.UseCloud` and pass in the Resource Key you created.
 - If using `MemoryFactory` rather that `StreamFactory` then change the performance profile to `MaxPerformance`.
 - If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionHashEngineBuilder`. The `SetCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
 - If you have auto updates disabled then remove the `SetDataUpdateLinceseKey` line and instead use `SetAutoUpdate(false)` and `SetUpdateOnStartup(false)`.
@@ -340,7 +340,7 @@ if(device.IsMobile.HasValue)
 
 
 <!--TODO: maybe offer this option? (I can't see why you would want to do it this way but I know others seem to prefer it!)-->
-If you don't mind specifying the return type and dealing with magic strings, You can cut out a step and access properties directly from the flow data if desired. E.g:
+If you don't mind specifying the return type and dealing with magic strings, you can cut out a step and access properties directly from the flow data if desired. E.g:
 
 ```{cs}
 if(data.GetAs<AspectPropertyValue>("IsMobile").HasValue)
@@ -393,7 +393,7 @@ This file should follow the usual structure of a pipeline configuration file. Fo
 - **IMPORTANT:** `C:\\Absolute\\Path\\To\\Data\\File\\51Degrees-EnterpriseV4.1.hash` is an absolute path to the data file. **Please amend this entry accordingly to your configuration.**
 - Use the performance profile setting to control the trade-off between performance and memory. `LowMemory` is recommended if you're not sure. `MaxPerformance` uses the most memory but gives the best performance.
 - If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false` and `"DataUpdateOnStartup": false`
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this resource key to the Pipeline.
+- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this Resource Key to the Pipeline.
 
 ```{json}
 {
@@ -537,7 +537,7 @@ Add a PipelineOptions section to your appsettings.json file and configure approp
 
 - Use the performance profile setting to control the trade-off between performance and memory. `LowMemory` is recommended if you're not sure. `MaxPerformance` uses the most memory but gives the best performance.
 - If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false` and `"DataUpdateOnStartup": false`
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this resource key to the Pipeline.
+- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this Resource Key to the Pipeline.
 
 ```{json}
 "PipelineOptions": {
@@ -635,7 +635,7 @@ Pipeline pipeline = new DeviceDetectionPipelineBuilder()
 
 Settings will be dependent on your old implementation:
 
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, change the first line to `.useCloud` and pass in the resource key you created.
+- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). Next, change the first line to `.useCloud` and pass in the Resource Key you created.
 - If using `MemoryFactory` rather than `StreamFactory` then change the performance profile to `MaxPerformance`.
 - If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionCloudEngineBuilder` (cache is not available on hash engine). The `setCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
 - If you have auto updates disabled then remove the `setDataUpdateLincenseKey` line and instead use `setAutoUpdate(false)` and `setUpdateOnStartup(false)`
@@ -785,9 +785,9 @@ const pipeline = new DeviceDetectionCloudPipelineBuilder({
 
 Settings will be dependent on your old implementation:
 
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the resource key you created.
+- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the Resource Key you created.
 - If you want to trade some performance for system memory then change the performance profile to `MaxPerformance`, `Balanced` or `LowMemory`
-- If you want the data file to be updated automatically then remove `autoUpdate: false` and add your license key to the configuration. (Not available for free users)
+- If you want the data file to be updated automatically then remove `autoUpdate: false` and add your License Key to the configuration. (Not available for free users)
 
 You can also build a @Pipeline from a JSON configuration file:
 
@@ -874,9 +874,9 @@ pipeline = DeviceDetectionPipelineBuilder(
 
 Settings will be dependent on your old implementation:
 
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the resource key you created.
+- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the Resource Key you created.
 - If you want to trade some performance for system memory then change the performance profile to `MaxPerformance`, `Balanced` or `LowMemory`
-- If you want the data file to be updated automatically then remove `auto_update: false` and add your license key to the configuration. (Not available for free users)
+- If you want the data file to be updated automatically then remove `auto_update: false` and add your License Key to the configuration. (Not available for free users)
 
 Once the @Pipeline has been created, you'll need to make a few changes to the way data is passed to it and accessed.
 With the old API, you would do something like this:
@@ -925,7 +925,7 @@ With the V3 API, a provider could be created with something like this:
 $provider = FiftyOneDegreesPatternV3::provider_get();
 ```
 
-If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a resource key (this will only take a few minutes and does not require any payment). Next, create a device detection pipeline using the resource key you created:
+If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). Next, create a device detection pipeline using the Resource Key you created:
 
 ```{php}
 $deviceDetectionPipeline = new deviceDetectionPipelineBuilder(array(
@@ -977,7 +977,7 @@ if($device->get("ismobile")->hasValue) {
      =================================================================================== -->
 Nginx module comes only with an on-premise version, you will need to get the on-premise version of the Nginx API from [GitHub](https://github.com/51Degrees/device-detection-nginx).
  
-The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file at [pricing](https://51degrees.com/pricing)  and be aware of the changes described below. 
+The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file using 51Degrees @Distributor (License Key is required, check [pricing](https://51degrees.com/pricing) page) and be aware of the changes described below. 
  
 Removed in V4:
 - V4 version supports only one method of detection which is Hash.
@@ -1021,7 +1021,7 @@ Further reads:
      =================================================================================== -->
 Varnish module comes only with an on-premise version. You will need to get the on-premise version of the Varnish API from [GitHub](https://github.com/51Degrees/device-detection-varnish).
  
-The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file at [pricing](https://51degrees.com/pricing) and be aware of the changes described below. 
+The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file using 51Degrees @Distributor (License Key is required, check [pricing](https://51degrees.com/pricing) page) and be aware of the changes described below. 
  
 Removed in V4:
 - V4 version supports only one method of detection which is Hash.

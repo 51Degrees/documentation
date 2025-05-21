@@ -18,7 +18,7 @@ $ make
 $ sudo make install
 ```
 
-Where `--with-config [optional]` sets the version of the module that you want to build. Defaults to release. To run all the test, you will need to use the `test` option.
+Where `--with-config [optional]` sets the version of the module that you want to build. Defaults to release. To run all the tests, you will need to use the `test` option.
 
 If your Varnish source is not installed at the standard location (i.e., `/usr/local/include/varnish`), you can adjust this by setting the environment variable `VARNISHSRC [optional]` to point to the correct location. For example, if you have installed Varnish source via package manager, it will be located at `/usr/include/varnish`. Then, you will need to set `VARNISHSRC` to `/usr/include/varnish` for the installation to succeed. If you want to install the module to a location of your choice, you can also set it via `VMOD_DIR [optional]`.
 

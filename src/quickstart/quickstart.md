@@ -23,4 +23,4 @@ build a custom JavaScript snippet to include in your web page.
 
 See the @configuratorexplanation for details of how to obtain a Resource Key from the
 Configurator, and then copy the client-side code examples from the Configurator, which
-have your new key included.
+has your new key included.

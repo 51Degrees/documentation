@@ -51,7 +51,7 @@ In this case, the data tier only affects the properties that are available.
 
 # Distributor @anchor Concepts_Terminology_Distributor
 
-The 51Degrees Distributor is a cloud-based web service that distributes data files for 51Degrees
+The 51Degrees @Distributor is a cloud-based web service that distributes data files for 51Degrees
 services.
 In order to access it, you will need to have a License Key that defines the products that
 you are allowed to access.
@@ -69,7 +69,7 @@ any License Keys that allow access to more properties or a greater request allow
 
 # Web request @anchor Concepts_Terminology_WebRequest
 
-A web request is a message sent from a client device to a server where a web site is hosted.
+A web request is a message sent from a client device to a server where a website is hosted.
 This message will usually be a simple request for a particular web page or other resource. 
 However, it also contains a lot of additional information ([evidence](@ref Concepts_Data_Evidence)) 
 that can be used to infer details about different contexts within which the request takes 

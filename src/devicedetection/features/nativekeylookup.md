@@ -19,11 +19,11 @@ other data query mechanism.
 
 # Cloud service
 
-Requests to the cloud service can include a 'NativeModel' query parameter. As long as the [Resouce Key](@term{ResourceKey}) 
+Requests to the cloud service can include a 'NativeModel' query parameter. As long as the [Resource Key](@term{ResourceKey}) 
 includes one or more 'hardware device' properties and the 'profiles' property, the cloud service will return a result set with 
 the details of any devices that match the supplied native model key.
 
-NOTE: The 'profiles' and property ***MUST** be selected for native lookup to function.
+NOTE: The 'profiles' and property **MUST** be selected for native lookup to function.
 
 For language specific details, see these [examples](@ref Examples_DeviceDetection_NativeKeyLookup_Cloud). 
 

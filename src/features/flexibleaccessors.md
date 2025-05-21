@@ -17,7 +17,7 @@ The precise nature of the available accessors depend on the language being used 
 to support the following use cases:
 
 1. Accessing properties without any 'magic strings' and with IDE auto-complete support.
-2. Accessing a property that has been returned by the data source but that did not exist when the 
+2. Accessing a property that has been returned by the data source but did not exist when the 
 current version of the @flowelement was built.
 3. Accessing a property without first accessing the associated @aspectdata.  
 

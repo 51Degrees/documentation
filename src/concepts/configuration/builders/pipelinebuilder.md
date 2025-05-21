@@ -17,7 +17,7 @@ for more technical details.
 
 # Options
 
-## Auto dispose rlements
+## Auto dispose Elements
 
 By default, when a @pipeline is disposed of, the @flowelements which it
 contained will still exist and will need to be disposed of at some point.

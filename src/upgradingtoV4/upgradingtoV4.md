@@ -49,8 +49,8 @@ If you require any help upgrading, get in touch with [Sales](https://51degrees.c
 
 ## New customers <a href="#New_Customers">#</a> @anchor New_Customers
 
-If you wish to get started with 51Degrees, check out our [pricing](https://51degrees.com/pricing) page for an overview of all our pricing tiers. You can then follow the 
-@configuratorexplanation to get started in the cloud or use our [on-premise documentation](https://51degrees.com/documentation/index.html).
+If you wish to get started with 51Degrees, check out our @pricing page for an overview of all our pricing tiers. You can then follow the 
+@configuratorexplanation to get started in the cloud or use our [on-premise documentation](@ref Examples_DeviceDetection_GettingStarted_Web_OnPremise).
 
 Alternatively, get in touch with our [Sales](https://51degrees.com/contact-us) team and mention your use case. Please provide as much information as possible such as 
 intended deployment method, programming language, and environment configuration as this will help us discuss the best solution for you.

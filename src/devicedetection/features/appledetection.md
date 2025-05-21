@@ -10,7 +10,7 @@ was made part of the
 > This is for statistical purposes,
 > the tracing of protocol violations, and automated recognition of user
 > agents for the sake of tailoring responses to avoid particular user
-> agent limitations. Although it is not required, user agents should
+> agent limitations. Although it is not required, User-Agents should
 > include this field with requests. 
 
 Generally, web browsers will populate the User-Agent header with information that allows the 

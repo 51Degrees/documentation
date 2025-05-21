@@ -296,6 +296,8 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "devicedetection=[device detection](@ref DeviceDetection_Overview)" \
                          "Devicedetection=[Device detection](@ref DeviceDetection_Overview)" \
                          "DeviceDetection=[Device Detection](@ref DeviceDetection_Overview)" \
+                         "distributor=[distributor](@ref Info_Distributor)" \
+                         "Distributor=[Distributor](@ref Info_Distributor)" \
                          "element=[element](@ref Concepts_FlowElements_FlowElement)" \
                          "elements=[elements](@ref Concepts_FlowElements_FlowElement)" \
                          "elementdata=[element data](@ref Concepts_Data_ElementData)" \
@@ -354,6 +356,8 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "pipelines=[Pipelines](@ref Concepts_Pipeline)" \
                          "pipelinebuilder=[pipeline builder](@ref Concepts_Configuration_Builders_PipelineBuilder)" \
                          "pipelinebuilders=[pipeline builders](@ref Concepts_Configuration_Builders_PipelineBuilder)" \
+                         "pricing=@htmlonly<a href=\"https://51degrees.com/pricing\" target=\"_blank\">pricing</a>@endhtmlonly" \
+                         "Pricing=@htmlonly<a href=\"https://51degrees.com/pricing\" target=\"_blank\">Pricing</a>@endhtmlonly" \
                          "profile=[profile](@ref Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles)" \
                          "properties=[properties](@ref Concepts_MetaData_ElementProperties)" \
                          "property=[property](@ref Concepts_MetaData_ElementProperties)" \
@@ -363,6 +367,8 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "reversegeocoding=[reverse geocoding](@ref ReverseGeocoding_Overview)" \
                          "Reversegeocoding=[Reverse geocoding](@ref ReverseGeocoding_Overview)" \
                          "ReverseGeocoding=[Reverse Geocoding](@ref ReverseGeocoding_Overview)" \
+                         "servicestatuspage=@htmlonly<a href=\"https://51degrees.com/service-availability\" target=\"_blank\">service status page</a>@endhtmlonly" \
+                         "servicestatus=@htmlonly<a href=\"https://51degrees.com/service-availability\" target=\"_blank\">service status</a>@endhtmlonly" \
                          "shareusage=[share usage](@ref Features_UsageSharing)" \
                          "startsnippets=@htmlonly <div class=\"c-tabgroup\"> @endhtmlonly" \
                          "startsnippet{2}=@htmlonly <div class=\"c-tabgroup__main\" data-lang=\"\1\" style=\"display:\2;\"> @endhtmlonly" \
@@ -374,8 +380,8 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "term{1}=@ref Concepts_Terminology_\1" \
                          "testedversions=[tested versions](@ref Info_TestedVersions)" \
                          "tick=@htmlonly&#9745;@endhtmlonly" \
-                         "uach=[UA-CH](@ref DeviceDetection_Features_UserAgentClientHints)"  \
-                         "useragentclienthints=[User Agent Client Hints](@ref DeviceDetection_Features_UserAgentClientHints)" \
+                         "uach=[UA-CH](@ref DeviceDetection_Features_UACH_Overview)"  \
+                         "useragentclienthints=[User-Agent Client Hints](@ref DeviceDetection_Features_UACH_Overview)" \
                          "usagesharing=[usage sharing](@ref Features_UsageSharing)" \
                          "v3migrationguide=[version 3 migration guide](@ref DeviceDetection_MigrationGuides_51DegreesV3)" \
                          "webintegration=[web integration](@ref Features_WebIntegration)" \

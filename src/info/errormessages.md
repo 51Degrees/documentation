@@ -14,7 +14,7 @@ Evidence keys for this Resource Key could not be determined. This could be cause
 
 ### Internal server errors @anchor Internal_server_error
 
-There is an issue with the Cloud service. Check the [service status page](http://stats.pingdom.com/qci12uolgufy) for current outages.
+There is an issue with the Cloud service. Check the @servicestatuspage for current outages.
 If the problem persists then please create a new issue on our [cloud-issues GitHub](https://github.com/51Degrees/cloud-issues/issues) repository.
 
 ### Invalid License supplied @anchor Invalid_license_supplied	
@@ -47,13 +47,13 @@ This product is an add-on to one of the plans outlined on the [pricing page](htt
 
 ### Product to subscription mapping @anchor Product_to_subscription_mapping
 
-Some error messages from the 51Degrees Cloud service may list the products that are available in the request or the products that are required to resolve the error. These map to a subscriptions references on the [pricing page](https://51degrees.com/pricing) and the [property dictionary](https://51degrees.com/developers/property-dictionary). The following is a table which maps the product IDs to the Subscription name. If a Product ID is not listed here then it is not valid for use with the Cloud service.
+Some error messages from the 51Degrees Cloud service may list the products that are available in the request or the products that are required to resolve the error. These map to a subscriptions references on the @pricing page and the [property dictionary](https://51degrees.com/developers/property-dictionary). The following is a table which maps the product IDs to the Subscription name. If a Product ID is not listed here then it is not valid for use with the Cloud service.
 
-|Product ID|Subscription(s)|
-|-|-|
-|CloudV4Free|Free (Cloud)|
-|CloudV4Complete|Big, Bigger, or Biggest|
-|CloudV4TAC|Bespoke|
+| Product ID      | Subscription(s)         |
+|-----------------|-------------------------|
+| CloudV4Free     | Free (Cloud)            |
+| CloudV4Complete | Big, Bigger, or Biggest |
+| CloudV4TAC      | Bespoke                 |
 
 ### Products in subscription not valid @anchor Products_in_subscription_not_valid	
 
@@ -85,7 +85,7 @@ There was an error when getting the details for the Resource Key provided in the
 
 ### Resource Key not authorized on domain @anchor Resource_key_not_authorized_on_domain	
 
-This Resource Key is not authorized for use with the Referer or Origin domain. See the original error message for the disallowed domain. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to update the permitted domains for your Resource Key or leave blank to allow usage on all domains. If using one of the native pipeline APIs then you can use the `CloudRequestOrigin` setting in the Pipeline or Cloud Request Engine builder to specify the origin. Note that, as with all engine builder methods, this can also be specified in the configuration file.
+This Resource Key is not authorized for use with the Referer or Origin domain. See the original error message for the disallowed domain. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to update the permitted domains for your Resource Key. If using one of the native pipeline APIs, you can use the `CloudRequestOrigin` setting in the Pipeline or Cloud Request Engine builder to specify the origin. Note that, as with all engine builder methods, this can also be specified in the configuration file.
 
 ### Resource Key not recognized @anchor Resource_key_not_recognized	
 
