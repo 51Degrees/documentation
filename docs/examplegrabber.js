@@ -75,21 +75,19 @@ function grabSnippet(caller, project, file, tag, btnClass, divId) {
     let url = '../../' + project + '/' + getVersion() + '/' + file;
     // Load the example into the 'grabbed-example' div, then update the links.
     let element = document.getElementById(divId);
-    element.style.display = "block";
+    element.style.display = 'block';
 
     $('#' + divId)
         .html('')
         .load(url + ' #' + tag, function(response, status) {
-            if (status === "error") {
-                if (getVersion() === '4.5') {
-                    url = '../../' + project + '/' + '4.4' + '/' + file;
-                    $('#' + divId)
-                        .html('')
-                        .load(url + ' #' + tag, function() {
-                            updateLinks(project, divId);
-                            addLink(url, divId);
-                        });
-                }
+            if (status === 'error' && getVersion() === '4.5') {
+                url = '../../' + project + '/' + '4.4' + '/' + file;
+                $('#' + divId)
+                    .html('')
+                    .load(url + ' #' + tag, function() {
+                        updateLinks(project, divId);
+                        addLink(url, divId);
+                    });
             } else {
                 updateLinks(project, divId);
                 addLink(url, divId);
