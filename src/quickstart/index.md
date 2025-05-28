@@ -5,3 +5,5 @@
 @subpage Quickstart_DeviceDetection
 
 @subpage Quickstart_ReverseGeocoding
+
+@subpage Quickstart_IpIntelligence
