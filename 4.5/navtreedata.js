@@ -26,7 +26,7 @@ var NAVTREE =
     [ "Home", "index.html", null ],
     [ "Getting Started", null, "_quickstart__index" ],
     [ "Device Detection", null, "_device_detection__index" ],
-    [ "IP Intelligence", null, null ],
+    [ "IP Intelligence", null, "_ip_intelligence__index" ],
     [ "Reverse Geocoding", null, "_reverse_geocoding__index" ],
     [ "Examples", null, "_examples__index" ],
     [ "API Features", null, "_features__index" ],

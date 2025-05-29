@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>51Degrees API Documentation: Getting Started</title>
+<title>51Degrees API Documentation: Weighting</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,22 +56,23 @@
 	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
   <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('_quickstart__index.html','');});
+$(document).ready(function(){initNavTree('_ip_intelligence__features__weighting.html','');});
 /* @license-end */
 </script>
 <div id="doc-content" class="g-docs__content">
 <div class="PageDoc"><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_quickstart__index.html">Getting Started</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__features__index.html">IP Intelligence Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__features__weighting.html">Weighting</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Getting Started </h2></div><!--header-->
+<h2 class="g-docs__page-title">Weighting </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><p><a class="el" href="_quickstart__quickstart.html">Quick Start Guide</a></p>
-<p><a class="el" href="_quickstart__device_detection.html">Device Detection Quick Start</a></p>
-<p><a class="el" href="_quickstart__reverse_geocoding.html">Reverse Geocoding Quick Start</a></p>
-<p><a class="el" href="_quickstart__ip_intelligence.html">IP Intelligence Quick Start</a> </p>
+<section class="g-docs__section"><h1 class="g-docs__section-heading">Overview</h1>
+<p>In some cases, there cannot be a certain answer when an IP address is used as <a class="el" href="_concepts__data__evidence.html">evidence</a>. For example, a range that an IP address is registered may serve more than one town. In these cases, the IP intelligence engine returns the possible values with a weighting, ordered by descending probability.</p>
+<p>For more details on how weightings are implemented, see the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/weighted-values.md#">specifications</a>.</p>
+<h1 class="g-docs__section-heading">Usage</h1>
+<p>The weightings of all the values returned for a single property will always add up to <code>1</code>. If there is a single value, the weighting will be <code>1</code>. But if there are multiple values, they could be weighted in a number of ways. An even weighting of <code>0.5</code> and <code>0.5</code> would indicate an even probability of both, or a heavier weighting of <code>0.9</code> and <code>0.1</code> would indicate it the first value is likely the best one to use. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
