@@ -1,4 +1,4 @@
-@page Benchmarks_IpIntelligence IP Intelligence Benchmarks
+@page ProductSummaries_Benchmarks_IpIntelligence IP Intelligence Benchmarks
 
 Precise benchmarking is a complex topic. The following results are intended 
 more as an illustration of the difference in performance between 

@@ -1013,7 +1013,7 @@ Changes in behaviour:
    - For example, if `User-Agent` is supplied via query string, the value will be used instead of the header `User-Agent`.
  - Properties that are overridable can now be overridden by value supplied as input from cookie and query string.
 Further reads:
-- [Nginx Integration](@ref OtherIntegrations_Nginx)
+- [Nginx Integration](@ref DeviceDetection_OtherIntegrations_Nginx)
 @endsnippet
 @startsnippet{varnish}
 <!-- ===================================================================================
@@ -1058,7 +1058,7 @@ New requirements in V4:
 - libatomic1
  
 Further reads:
-- [Varnish Integration](@ref OtherIntegrations_Varnish)
+- [Varnish Integration](@ref DeviceDetection_OtherIntegrations_Varnish)
 @endsnippet
 
 @endsnippets

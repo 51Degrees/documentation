@@ -1,4 +1,4 @@
-@page OtherIntegrations_Nginx Nginx
+@page DeviceDetection_OtherIntegrations_Nginx Nginx
 
 # Introduction
 

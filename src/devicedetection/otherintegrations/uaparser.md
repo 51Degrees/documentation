@@ -1,4 +1,4 @@
-@page OtherIntegrations_UAParser UAParser.js
+@page DeviceDetection_OtherIntegrations_UAParser UAParser.js
 
 # 51Degrees UAParser
 

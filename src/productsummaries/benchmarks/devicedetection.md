@@ -1,4 +1,4 @@
-@page Benchmarks_DeviceDetection Device Detection Benchmarks
+@page ProductSummaries_Benchmarks_DeviceDetection Device Detection Benchmarks
 
 Precise benchmarking is a complex topic. The following results are intended 
 more as an illustration of the difference in performance between 

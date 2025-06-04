@@ -1,0 +1,5 @@
+@page ProductSummaries_Benchmarks_Index Benchmarks
+
+@subpage ProductSummaries_Benchmarks_DeviceDetection
+
+@subpage ProductSummaries_Benchmarks_IpIntelligence

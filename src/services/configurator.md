@@ -1,4 +1,4 @@
-@page Concepts_Configurator Configurator
+@page Services_Configurator Configurator
 
 # Obtaining a Resource Key
 

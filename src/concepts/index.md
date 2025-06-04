@@ -13,5 +13,3 @@
 @subpage Concepts_Pipeline
 
 @subpage Concepts_Terminology
-
-@subpage Concepts_Configurator

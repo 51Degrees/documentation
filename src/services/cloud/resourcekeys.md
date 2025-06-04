@@ -1,4 +1,4 @@
-@page Info_ResourceKeys Resource Keys
+@page Services_Cloud_ResourceKeys Resource Keys
 
 A Resource Key grants your code access to the 51Degrees Cloud APIs. A specific Resource Key has access to a particular set of properties which are chosen at key creation time and cannot be changed afterwards. The number of accesses authorized by a particular Resource Key is limited for free keys, or can be associated with your License Key and thus your account.
 

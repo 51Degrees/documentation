@@ -1,4 +1,4 @@
-@page Info_TestedVersions Tested Versions
+@page ProductSummaries_TestedVersions Tested Versions
 
 Our code base operates on the following CPUs:
 

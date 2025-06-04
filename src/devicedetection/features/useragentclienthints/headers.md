@@ -32,7 +32,7 @@ you will need to set the response headers manually.
 # Cloud
 
 Make sure that one or more of the following properties are included with your 
-[Resource Key](@ref Concepts_Configurator):
+[Resource Key](@ref Services_Configurator):
 - `SetHeaderBrowserAccept-CH`
 - `SetHeaderHardwareAccept-CH`
 - `SetHeaderPlatformAccept-CH`

@@ -8,12 +8,10 @@
 
 @page Examples_Index Examples
 
+@page Services_Index Services
+
+@page ProductSummaries_Index Product Summaries
+
 @page Features_Index API Features
 
 @page Concepts_Index Concepts
-
-@page Benchmarks_Index Benchmarks
-
-@page OtherIntegrations_Index Other Integrations
-
-@page Info_Index Information

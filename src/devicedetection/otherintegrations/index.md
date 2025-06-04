@@ -1,0 +1,9 @@
+@page DeviceDetection_OtherIntegrations_Index Other Integrations
+
+@subpage DeviceDetection_OtherIntegrations_Nginx
+
+@subpage DeviceDetection_OtherIntegrations_Varnish
+
+@subpage DeviceDetection_OtherIntegrations_Wordpress
+
+@subpage DeviceDetection_OtherIntegrations_UAParser

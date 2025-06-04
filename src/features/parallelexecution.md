@@ -20,7 +20,7 @@ for more technical details.
 # Executing flow elements in parallel
 
 By default, @flowelements are executed sequentially in the order
-they are added to the @Pipeline. However, if the [language supports it](@ref Info_FeatureMatrix), 
+they are added to the @Pipeline. However, if the [language supports it](@ref ProductSummaries_FeatureMatrix), 
 two or more @flowelements can be executed in **parallel** within the overall sequential structure.
 
 @dotfile pipeline-parallel-process.gvdot
@@ -38,5 +38,5 @@ The @Pipeline is able to handle concurrent process requests. However, the abilit
 to also support this will depend on its individual implementation.
 
 All 51Degrees @flowelements have been designed to function correctly in this scenario 
-(assuming the [language supports it](@ref Info_FeatureMatrix)). 
+(assuming the [language supports it](@ref ProductSummaries_FeatureMatrix)). 
 

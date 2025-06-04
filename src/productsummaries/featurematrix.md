@@ -1,4 +1,4 @@
-@page Info_FeatureMatrix Feature Matrix
+@page ProductSummaries_FeatureMatrix Feature Matrix
 
 # Data services
 

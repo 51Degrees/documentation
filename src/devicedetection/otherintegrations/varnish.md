@@ -1,4 +1,4 @@
-@page OtherIntegrations_Varnish Varnish
+@page DeviceDetection_OtherIntegrations_Varnish Varnish
 
 # Introduction
 We have also integrated our Device Detection to Varnish. This page details an overview of how you can install and use our module in your Varnish environment.

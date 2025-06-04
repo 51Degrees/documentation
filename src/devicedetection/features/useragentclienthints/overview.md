@@ -24,7 +24,7 @@ In addition, we have examples that demonstrate detection using UA-CH in a variet
 - [On-premise web page](@ref Examples_DeviceDetection_GettingStarted_Web_OnPremise) 
 - [Cloud console](@ref Examples_DeviceDetection_GettingStarted_Console_Cloud) 
 - [Cloud web page](@ref Examples_DeviceDetection_GettingStarted_Web_Cloud)
-- Our [Configurator](@ref Concepts_Configurator) site includes an example (visible after the Resource Key generation) for how to implement a full client-side solution that calls our cloud service directly.
+- Our [Configurator](@ref Services_Configurator) site includes an example (visible after the Resource Key generation) for how to implement a full client-side solution that calls our cloud service directly.
 
 The console examples pass UA-CH values directly to the API, so will work in any situation.
 The web examples run as a simple web page, so you will need a browser that supports UA-CH such 

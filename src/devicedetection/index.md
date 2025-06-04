@@ -7,6 +7,8 @@
 
 - @subpage DeviceDetection_Features_Index
 
+- @subpage DeviceDetection_UpgradingtoV4 Upgrade to V4 (to remove?)
+
 - @subpage DeviceDetection_MigrationGuides_Index
 
-- @subpage DeviceDetection_UpgradingtoV4 Upgrade to V4 
+- @subpage DeviceDetection_OtherIntegrations_Index

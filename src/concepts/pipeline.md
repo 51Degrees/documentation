@@ -58,12 +58,12 @@ receive the @flowdata and do its processing before optionally updating the
 Note that the order of execution of @flowelements is decided when the
 **Pipeline** is created.
 By default, @flowelements are executed sequentially in the order
-they are added. However, if the [language supports](@ref Info_FeatureMatrix) it, 
+they are added. However, if the [language supports](@ref ProductSummaries_FeatureMatrix) it, 
 two or more @flowelements
 can also be executed in @parallel within the overall sequential structure.
 
 Additionally, the **Pipeline** may offer @asynchronous execution or a @lazyloading capability for individual 
-@flowelements. These features are also [language dependent](@ref Info_FeatureMatrix).
+@flowelements. These features are also [language dependent](@ref ProductSummaries_FeatureMatrix).
 
 Regardless of the method of execution and configuration, after processing the 
 @flowdata will contain the results, which can then be accessed by the caller.

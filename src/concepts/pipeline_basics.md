@@ -48,5 +48,5 @@ For a deeper understanding of the Pipeline concept, start with the @Pipeline pag
 
 * Explore detailed technical documentation for each language supported by the Pipeline.
 * Build a @customengine to match your requirements.
-* [Compare features](@ref Info_FeatureMatrix) of Pipeline and data service implementations in each language.
+* [Compare features](@ref ProductSummaries_FeatureMatrix) of Pipeline and data service implementations in each language.
 

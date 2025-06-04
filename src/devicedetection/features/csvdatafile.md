@@ -15,6 +15,6 @@ You may load the data into a database or similar indexing system if you wish. Th
 
 # How do I get it?
 
-The CSV file is supplied via our [Distributor](@ref Info_Distributor) service, just like the other data files. 
+The CSV file is supplied via our @Distributor service, just like the other data files. 
 
 As such, you will need a License Key that allows access to this particular file. This may or may not be included in your current license. See our [pricing page](https://51degrees.com/pricing) for details of which packages include access to the CSV file.

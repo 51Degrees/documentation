@@ -9,7 +9,7 @@ from can also be monitored for changes, so when a @datafile is manually replaced
 @onpremiseengine will be refreshed with it.
 
 This page describes the functionality and options for data updates in the pipeline API. 
-In addition, it is worth being familiar with the [Distributor](@ref Info_Distributor) web API, 
+In addition, it is worth being familiar with the @Distributor web API, 
 which supplies the updated data files.
 
 See the
@@ -106,7 +106,7 @@ current @datafile was last modified. If there is not a newer @datafile on the se
 [#](@ref Large_Clusters) 
 # Recommendations for large clusters
 
-The [Distributor](@ref Info_Distributor) API is limited in the number of requests it can 
+The @Distributor API is limited in the number of requests it can 
 service per day. This is enforced by each License Key being limited to a certain number of 
 requests (max 100, although some Keys will have a lower threshold than this) in each 
 30-minute period.
@@ -192,4 +192,4 @@ This means that you will probably need to configure your URL to accept and make 
 the `If-Modified-Since` HTTP header to allow the API to check if it needs an update without 
 downloading the entire data file.
 
-See the [Distributor](@ref Info_Distributor) documentation for details of how this works.
+See the @Distributor documentation for details of how this works.

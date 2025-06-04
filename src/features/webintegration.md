@@ -31,8 +31,8 @@ results from the @Pipeline API.
 - Node.js
 - PHP
 - Python
-- [Varnish](@ref OtherIntegrations_Varnish) (@devicedetection only)
-- [Nginx](@ref OtherIntegrations_Nginx) (@devicedetection only)
+- [Varnish](@ref DeviceDetection_OtherIntegrations_Varnish) (@devicedetection only)
+- [Nginx](@ref DeviceDetection_OtherIntegrations_Nginx) (@devicedetection only)
 
 # Client-side evidence
 
