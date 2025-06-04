@@ -56,14 +56,14 @@
 	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
   <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('_other_integrations__u_a_parser.html','');});
+$(document).ready(function(){initNavTree('_device_detection__other_integrations__u_a_parser.html','');});
 /* @license-end */
 </script>
 <div id="doc-content" class="g-docs__content">
 <div class="PageDoc"><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_other_integrations__index.html">Other Integrations</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_other_integrations__u_a_parser.html">UAParser.js</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__other_integrations__index.html">Other Integrations</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__other_integrations__u_a_parser.html">UAParser.js</a></li>  </ul>
 </div>
 <h2 class="g-docs__page-title">UAParser.js </h2></div><!--header-->
 <div class="g-docs__inner">
@@ -85,7 +85,7 @@ $(document).ready(function(){initNavTree('_other_integrations__u_a_parser.html',
 </ul>
 <h2>Migrating from UAParser.js to 51Degrees UAParser</h2>
 <h3>Creating a Resource Key</h3>
-<p>Before integrating 51Degrees UAParser, you need to register and configure a 51Degrees Resource Key using the <a href="https://configure.51degrees.com/">Cloud Configurator</a>. The Configurator tool allows you to choose the device properties you would like to get as a result of the call to UAParser. Follow the <a class="el" href="_concepts__configurator.html">Configurator explanation</a> for more detail on how to create a Resource Key.</p>
+<p>Before integrating 51Degrees UAParser, you need to register and configure a 51Degrees Resource Key using the <a href="https://configure.51degrees.com/">Cloud Configurator</a>. The Configurator tool allows you to choose the device properties you would like to get as a result of the call to UAParser. Follow the <a class="el" href="_services__configurator.html">Configurator explanation</a> for more detail on how to create a Resource Key.</p>
 <p>We recommend following this URL <a href="https://configure.51degrees.com/S6fGMDKw">https://configure.51degrees.com/S6fGMDKw</a> to create a Resource Key, as it contains the minimum recommended properties that you will need for the UAParser to work.</p>
 <p>The minimum recommended properties to include in your Resource Key are:</p><ul>
 <li>IsMobile</li>
@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('_other_integrations__u_a_parser.html',
 <p>To migrate from the original ua-parser-js, you probably had the page code similar to the below:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;!doctype html&gt;</div><div class="c-code__line">    &lt;html&gt;</div><div class="c-code__line">        &lt;head&gt;</div><div class="c-code__line">            &lt;script src=&quot;ua-parser.min.js&quot;&gt;&lt;/script&gt;</div><div class="c-code__line">            &lt;script&gt;</div><div class="c-code__line">                let result = UAParser();</div><div class="c-code__line">                console.log(result);</div><div class="c-code__line">            &lt;/script&gt;</div><div class="c-code__line">        &lt;/head&gt;</div><div class="c-code__line">    &lt;body&gt;</div><div class="c-code__line">    &lt;/body&gt; </div><div class="c-code__line">    &lt;/html&gt;</div></div><p>To migrate this code to use 51Degrees UAParser:</p>
 <ol type="1">
-<li><a class="el" href="_other_integrations__u_a_parser.html#Download_UAParser">Download the 51Degrees UAParser package</a></li>
+<li><a class="el" href="_device_detection__other_integrations__u_a_parser.html#Download_UAParser">Download the 51Degrees UAParser package</a></li>
 <li>We need to either use Accept-CH and Permissions-Policy headers or add a Delegate-CH meta tag within the <code>&lt;head&gt;</code> element. We chose the latter in the below migrated code snippet example.</li>
 <li>Change the script import statement to use the path to the new package in the src attribute or use a CDN link.</li>
 <li>The new 51Degrees UAParser is inherently asynchronous, thus UAParser is a promise. We prefer resolving promises using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await">await</a> keyword – in order to use the top-level await, we must set the script <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">type="module" ()</a>. It is possible, however, to use the UAParser without await, calling then () instead.</li>

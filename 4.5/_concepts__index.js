@@ -6,6 +6,5 @@ var _concepts__index =
     [ "Configuration", null, "_concepts__configuration__index" ],
     [ "Pipeline Basics", "_concepts__pipeline_basics.html", null ],
     [ "Pipeline", "_concepts__pipeline.html", null ],
-    [ "Terminology", "_concepts__terminology.html", null ],
-    [ "Configurator", "_concepts__configurator.html", null ]
+    [ "Terminology", "_concepts__terminology.html", null ]
 ];

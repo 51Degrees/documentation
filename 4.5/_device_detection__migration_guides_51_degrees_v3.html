@@ -246,7 +246,7 @@ $(document).ready(function(){initNavTree('_device_detection__migration_guides_51
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">$isMobile = $match-&gt;getValue(<span class="c-code__stringliteral">&quot;IsMobile&quot;</span>);</div></div><p>Becomes:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keywordflow">if</span>($device-&gt;get(<span class="c-code__stringliteral">&quot;ismobile&quot;</span>)-&gt;hasValue) {</div><div class="c-code__line">    $isMobile = $device-&gt;get(<span class="c-code__stringliteral">&quot;ismobile&quot;</span>).value;</div><div class="c-code__line">}</div></div><p> </div>   <div class="c-tabgroup__main" data-lang="nginx" style="display:none;"> </p>
 <p>Nginx module comes only with an on-premise version, you will need to get the on-premise version of the Nginx API from <a href="https://github.com/51Degrees/device-detection-nginx">GitHub</a>.</p>
-<p>The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file using 51Degrees <a class="el" href="_info__distributor.html">Distributor</a> (License Key is required, check <a href="https://51degrees.com/pricing">pricing</a> page) and be aware of the changes described below.</p>
+<p>The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file using 51Degrees <a class="el" href="_services__distributor.html">Distributor</a> (License Key is required, check <a href="https://51degrees.com/pricing">pricing</a> page) and be aware of the changes described below.</p>
 <p>Removed in V4:</p><ul>
 <li>V4 version supports only one method of detection which is Hash.<ul>
 <li>Building V4 module is done as below without specifying the detection method: <div class="c-code__block c-code__block--outline"><div class="c-code__line">make install</div></div></li>
@@ -287,10 +287,10 @@ $(document).ready(function(){initNavTree('_device_detection__migration_guides_51
 <li>Properties that are overridable can now be overridden by value supplied as input from cookie and query string. Further reads:</li>
 </ul>
 </li>
-<li><a class="el" href="_other_integrations__nginx.html">Nginx Integration</a>  </div>   <div class="c-tabgroup__main" data-lang="varnish" style="display:none;"> </li>
+<li><a class="el" href="_device_detection__other_integrations__nginx.html">Nginx Integration</a>  </div>   <div class="c-tabgroup__main" data-lang="varnish" style="display:none;"> </li>
 </ul>
 <p>Varnish module comes only with an on-premise version. You will need to get the on-premise version of the Varnish API from <a href="https://github.com/51Degrees/device-detection-varnish">GitHub</a>.</p>
-<p>The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file using 51Degrees <a class="el" href="_info__distributor.html">Distributor</a> (License Key is required, check <a href="https://51degrees.com/pricing">pricing</a> page) and be aware of the changes described below.</p>
+<p>The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file using 51Degrees <a class="el" href="_services__distributor.html">Distributor</a> (License Key is required, check <a href="https://51degrees.com/pricing">pricing</a> page) and be aware of the changes described below.</p>
 <p>Removed in V4:</p><ul>
 <li>V4 version supports only one method of detection which is Hash.<ul>
 <li>Building V4 module is done as below without specifying the detection method: <div class="c-code__block c-code__block--outline"><div class="c-code__line">./autogen.sh</div><div class="c-code__line">./configure --with-config=release|test --with-datafile=(optional)</div><div class="c-code__line">make</div><div class="c-code__line">sudo make install</div></div></li>
@@ -330,7 +330,7 @@ $(document).ready(function(){initNavTree('_device_detection__migration_guides_51
 <li>libatomic1</li>
 </ul>
 <p>Further reads:</p><ul>
-<li><a class="el" href="_other_integrations__varnish.html">Varnish Integration</a>  </div> </li>
+<li><a class="el" href="_device_detection__other_integrations__varnish.html">Varnish Integration</a>  </div> </li>
 </ul>
 <p> </div>  </p>
 </section></div><!-- PageDoc -->
