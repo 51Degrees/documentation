@@ -47,13 +47,7 @@ This product is an add-on to one of the plans outlined on the [pricing page](htt
 
 ### Product to subscription mapping @anchor Product_to_subscription_mapping
 
-Some error messages from the 51Degrees Cloud service may list the products that are available in the request or the products that are required to resolve the error. These map to a subscriptions references on the @pricing page and the [property dictionary](https://51degrees.com/developers/property-dictionary). The following is a table which maps the product IDs to the Subscription name. If a Product ID is not listed here then it is not valid for use with the Cloud service.
-
-| Product ID      | Subscription(s)         |
-|-----------------|-------------------------|
-| CloudV4Free     | Free (Cloud)            |
-| CloudV4Complete | Big, Bigger, or Biggest |
-| CloudV4TAC      | Bespoke                 |
+Some error messages from the 51Degrees Cloud service may list the products that are available in the request or the products that are required to resolve the error. These map to a subscriptions references on the @pricing page and the [property dictionary](https://51degrees.com/developers/property-dictionary).
 
 ### Products in subscription not valid @anchor Products_in_subscription_not_valid	
 
