@@ -12,3 +12,5 @@
 - @subpage DeviceDetection_MigrationGuides_Index
 
 - @subpage DeviceDetection_OtherIntegrations_Index
+
+- @subpage DeviceDetection_WhatsNewV45
