@@ -1,5 +1,6 @@
 var _device_detection__other_integrations__index =
 [
+    [ "Prebid", "_device_detection__other_integrations__prebid.html", null ],
     [ "Nginx", "_device_detection__other_integrations__nginx.html", null ],
     [ "Varnish", "_device_detection__other_integrations__varnish.html", null ],
     [ "WordPress", "_device_detection__other_integrations__wordpress.html", null ],

@@ -5,5 +5,6 @@ var _device_detection__index =
     [ "Device Detection Features", null, "_device_detection__features__index" ],
     [ "Upgrading to Version 4", "_device_detection__upgradingto_v4.html", null ],
     [ "Migration Guides", null, "_device_detection__migration_guides__index" ],
-    [ "Other Integrations", null, "_device_detection__other_integrations__index" ]
+    [ "Other Integrations", null, "_device_detection__other_integrations__index" ],
+    [ "Version 4.5 – Release Notes", "_device_detection__whats_new_v45.html", null ]
 ];
