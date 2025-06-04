@@ -1,5 +1,7 @@
 @page DeviceDetection_OtherIntegrations_Index Other Integrations
 
+@subpage DeviceDetection_OtherIntegrations_Prebid
+
 @subpage DeviceDetection_OtherIntegrations_Nginx
 
 @subpage DeviceDetection_OtherIntegrations_Varnish
