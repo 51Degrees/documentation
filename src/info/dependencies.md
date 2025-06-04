@@ -21,8 +21,6 @@ Our dependencies policy is:
   - Is compatible with the most recent stable (i.e., non-beta, rtm, etc.) version.
 - We use Azure DevOps with Microsoft-hosted build agents, as such, the pre-built packages may include low-level dependencies based on the [software](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted) that is available on these build agents.
 
-If you are having trouble with a particular dependency, check our @faqs for common problems and solutions.
-
 You may also want to review the @testedversions page, as these topics are related.
 
 Click the tabs below to see dependencies for running the pre-built packages as well as additional
