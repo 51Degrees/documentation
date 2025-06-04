@@ -1,7 +1,5 @@
 @page Info_Index Information
 
-@subpage Info_Dependencies
-
 @subpage Info_Distributor
 
 @subpage Info_ErrorMessages

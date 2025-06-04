@@ -38,7 +38,6 @@ The tabs below show the specific platforms and versions that are currently teste
 If something is not tested here, and you believe it should be, please raise an issue via our [GitHub](https://github.com/51Degrees) page. If
 you have a configuration that is not covered, [contact us](https://51degrees.com/contact-us) and we will look into it.
 
-You may also want to review the @dependencies page, as these topics are related.
 @htmlonly
 <script>
   $( document ).ready(function() {

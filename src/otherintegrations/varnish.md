@@ -5,7 +5,7 @@ We have also integrated our Device Detection to Varnish. This page details an ov
 
 # Prerequisites
 
-For the latest dependencies, tested version, and tested platforms information, please refer to our @testedversions and @dependencies pages.
+For the latest tested versions and tested platforms information, please refer to our @testedversions page.
 
 # Installing
 If you haven’t already, you can obtain a copy of the latest version of the API [here](https://github.com/51Degrees/device-detection-varnish).
