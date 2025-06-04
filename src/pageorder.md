@@ -17,5 +17,3 @@
 @page OtherIntegrations_Index Other Integrations
 
 @page Info_Index Information
-
-@page UpgradingtoV4 Upgrade to V4 

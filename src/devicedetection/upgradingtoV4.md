@@ -1,4 +1,4 @@
-@page UpgradingtoV4 Upgrading to Version 4
+@page DeviceDetection_UpgradingtoV4 Upgrading to Version 4
 
 # Upgrading to 51Degrees Version 4
 

@@ -9,3 +9,4 @@
 
 - @subpage DeviceDetection_MigrationGuides_Index
 
+- @subpage DeviceDetection_UpgradingtoV4 Upgrade to V4 
