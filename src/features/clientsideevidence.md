@@ -86,6 +86,12 @@ as form parameters. The server sends this through the pipeline and the result is
 packaged as JSON and sent in the response to the client, which will update it's 
 JSON payload data, making the new values available to all client-side code.
 
+Adding this feature to the page may result in data being written to the client
+device using `cookies` or `sessionStorage` for efficiency.
+Any keys prefixed with `51D_` are 51Degrees cookies,
+and any keys prefixed with `fod_` are sessionStorage items used for efficient
+evidence handling and data transfer.
+
 This example shows the process flow between client and server.
 
 @dotfile client-side-evidence-callback.gvdot
@@ -99,6 +105,33 @@ as @evidence so that the results it returns take account of the new information.
 This example shows the process flow between client and server.
 
 @dotfile client-side-evidence.gvdot
+
+## Privacy Policy
+
+If you are using this feature, especially when using the server-side capability
+to return enriched data, it is your responsibility to consider any updates to
+your customer privacy policy.
+
+**This is not legal advice**, and you should consult your legal team for guidance.
+
+If you are using the 51Degrees Cloud service, or would like to see an example
+of how to describe this in your service that incorporates client-side evidence,
+see our [Client Services Policy](https://51degrees.com/terms/client-services-privacy-policy/20240430).
+
+For efficiency, we store limited data in cookies or session storage.
+Anything prefixed `51D_` or `fod_` is related to 51Degrees **client-side evidence**
+handling and is used solely for the purpose of enabling this technical feature.
+
+## Storage Mechanism
+
+By default, when using the 51Degrees Cloud service, values returned from client-side
+evidence processing are stored using `sessionStorage`. This avoids setting any
+cookies unless explicitly required. However, this behaviour can be changed by
+adding the `fod-js-enable-cookies=true` query parameter to the resource key URL.
+When set, this instructs the client-side script to use `cookies` instead of 
+`sessionStorage` for storing data.
+
+For more details on this parameter and related options, see the [Cloud API Documentation](https://cloud.51degrees.com/api-docs/index.html).
 
 # Web integration
 
