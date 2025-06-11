@@ -1,6 +1,5 @@
 var _examples__device_detection__index =
 [
-    [ "Apple Server-Side Detection", null, "_examples__device_detection__apple_server_side__index" ],
     [ "Data File Updates", null, "_examples__device_detection__data_file_updates__index" ],
     [ "Getting Started - Console", null, "_examples__device_detection__getting_started__console__index" ],
     [ "Getting Started - Web", null, "_examples__device_detection__getting_started__web__index" ],
