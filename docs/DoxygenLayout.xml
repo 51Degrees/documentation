@@ -5,7 +5,7 @@
     <tab type="mainpage" visible="yes" title=""/>
     <tab type="pages" visible="yes" title="" intro=""/>
     <tab type="modules" visible="yes" title="" intro=""/>
-  	<tab type="usergroup" visible="yes" title="Language Specific">
+    <!-- <tab type="usergroup" visible="yes" title="Language Specific">
       <tab type="user" visible="yes" title="C/C++" url="/device-detection-cxx/index.html"/>
       <tab type="user" visible="yes" title="Java Pipeline" url="/pipeline-java/index.html"/>
       <tab type="user" visible="yes" title="Java Device Detection" url="/device-detection-java/index.html"/>
@@ -25,7 +25,7 @@
       <tab type="user" visible="yes" title="Node.js Location" url="/location-node/index.html"/>
       <tab type="user" visible="yes" title="Varnish Device Detection" url="/device-detection-varnish/index.html"/>
       <tab type="user" visible="yes" title="Nginx Device Detection" url="/device-detection-nginx/index.html"/>
-    </tab>
+    </tab> -->
     <tab type="user" visible="yes" title="Cloud API Documentation" url="https://cloud.51degrees.com/api-docs/index.html"/>
   </navindex>
 
