@@ -1,24 +1,5 @@
 var NAVTREEINDEX0 =
 {
-"/device-detection-cxx/index.html":[10,0],
-"/device-detection-dotnet/index.html":[10,5],
-"/device-detection-java/index.html":[10,2],
-"/device-detection-nginx/index.html":[10,18],
-"/device-detection-node/index.html":[10,15],
-"/device-detection-php-onpremise/index.html":[10,9],
-"/device-detection-php/index.html":[10,8],
-"/device-detection-python/index.html":[10,12],
-"/device-detection-varnish/index.html":[10,17],
-"/location-dotnet/index.html":[10,6],
-"/location-java/index.html":[10,3],
-"/location-node/index.html":[10,16],
-"/location-php/index.html":[10,10],
-"/location-python/index.html":[10,13],
-"/pipeline-dotnet/index.html":[10,4],
-"/pipeline-java/index.html":[10,1],
-"/pipeline-node/index.html":[10,14],
-"/pipeline-php/index.html":[10,7],
-"/pipeline-python/index.html":[10,11],
 "_concepts__configuration__builders__build_from_configuration.html":[9,3,0,2],
 "_concepts__configuration__builders__element_builder.html":[9,3,0,0],
 "_concepts__configuration__builders__index.html":[9,3,0],
@@ -160,6 +141,5 @@ var NAVTREEINDEX0 =
 "_services__configurator.html":[6,0],
 "_services__distributor.html":[6,1],
 "_services__index.html":[6],
-"index.html":[0],
-"usergroup0.html":[10]
+"index.html":[0]
 };
