@@ -2,16 +2,16 @@
 
 # Data services
 
-| Language / Framework | @Pipeline | @DeviceDetection | @ReverseGeocoding |
-|----------------------|-----------|------------------|-------------------|
-| C/C++                |           | On-premise only  |                   |
-| .NET                 | @tick     | @tick            | Cloud only        |
-| Java                 | @tick     | @tick            | Cloud only        |
-| JavaScript           |           | Cloud only       | Cloud only        |
-| Node.js              | @tick     | @tick            | Cloud only        |
-| PHP                  | @tick     | @tick*           | Cloud only        |
-| Python               | @tick     | Cloud only       | Cloud only        |
-| Go                   |           | On-premise only  |                   |
+| Language / Framework | @Pipeline | @DeviceDetection | @IpIntelligence  | @ReverseGeocoding |
+|----------------------|-----------|------------------|------------------|-------------------|
+| C/C++                |           | On-premise only  | On-premise only  |                   |
+| .NET                 | @tick     | @tick            | On-premise only  | Cloud only        |
+| Java                 | @tick     | @tick            | On-premise only  | Cloud only        |
+| JavaScript           |           | Cloud only       |                  | Cloud only        |
+| Node.js              | @tick     | @tick            |                  | Cloud only        |
+| PHP                  | @tick     | @tick*           |                  | Cloud only        |
+| Python               | @tick     | @tick            |                  | Cloud only        |
+| Go                   |           | On-premise only  | On-premise only  |                   |
 
 *On-premise not available through composer.<BR>
 

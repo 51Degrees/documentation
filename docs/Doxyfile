@@ -329,9 +329,11 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "grabbedexample=@htmlonly <div class=\"c-tabgroup__main\" id=\"grabbed-example\"></div> @endhtmlonly" \
                          "hash=[hash](@ref DeviceDetection_Hash)" \
                          "Hash=[Hash](@ref DeviceDetection_Hash)" \
-                         "ipintelligence=[IP intelligence](@ref ipintelligence_Index)" \
-                         "Ipintelligence=[IP intelligence](@ref ipintelligence_Index)" \
-                         "IpIntelligence=[IP Intelligence](@ref ipintelligence_Index)" \
+                         "ipi=[IP Intelligence](@ref IpIntelligence_Index)" \
+                         "IPI=[IP Intelligence](@ref IpIntelligence_Index)" \
+                         "ipintelligence=[IP Intelligence](@ref IpIntelligence_Overview)" \
+                         "Ipintelligence=[IP Intelligence](@ref IpIntelligence_Overview)" \
+                         "IpIntelligence=[IP Intelligence](@ref IpIntelligence_Overview)" \
                          "lazyloading=[lazy loading](@ref Features_LazyLoading)" \
                          "Lazyloading=[Lazy loading](@ref Features_LazyLoading)" \
                          "logging=[logging](@ref Features_Logging)" \
