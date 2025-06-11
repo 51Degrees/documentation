@@ -1,7 +1,5 @@
 @page Examples_DeviceDetection_Index Device Detection Examples
 
-@subpage Examples_DeviceDetection_AppleServerSide_Index
-
 @subpage Examples_DeviceDetection_DataFileUpdates_Index
 
 @subpage Examples_DeviceDetection_GettingStarted_Console_Index 
