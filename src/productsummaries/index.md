@@ -1,6 +1,6 @@
 @page ProductSummaries_Index Product Summaries
 
-- @subpage ProductSummaries_Benchmarks_Index
+- @subpage ProductSummaries_Benchmarks
 
 - @subpage ProductSummaries_FeatureMatrix
 
