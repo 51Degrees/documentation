@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>51Degrees API Documentation: IP Intelligence Benchmarks</title>
+<title>51Degrees API Documentation: Benchmarks</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,27 +56,48 @@
 	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
   <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('_product_summaries__benchmarks__ip_intelligence.html','');});
+$(document).ready(function(){initNavTree('_product_summaries__benchmarks.html','');});
 /* @license-end */
 </script>
 <div id="doc-content" class="g-docs__content">
 <div class="PageDoc"><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__index.html">Product Summaries</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__benchmarks__index.html">Benchmarks</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__benchmarks__ip_intelligence.html">IP Intelligence Benchmarks</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__index.html">Product Summaries</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__benchmarks.html">Benchmarks</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">IP Intelligence Benchmarks </h2></div><!--header-->
+<h2 class="g-docs__page-title">Benchmarks </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><p>Precise benchmarking is a complex topic. The following results are intended more as an illustration of the difference in performance between platforms and configurations than an in-depth exploration of performance.</p>
 <p>If performance is important to you then we highly recommend running your own profiling.</p>
-<h1 class="g-docs__section-heading">C/C++</h1>
-<img src="https://raw.githubusercontent.com/51Degrees/ip-intelligence-cxx/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png" alt="Ubuntu Results" class="inline"/>
-<p><br />
-</p>
-<h1 class="g-docs__section-heading">.NET</h1>
-<img src="https://raw.githubusercontent.com/51Degrees/ip-intelligence-dotnet/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png" alt="Ubuntu Results" class="inline"/>
- </section></div><!-- PageDoc -->
+<p>These tests are run using a console performance example.</p>
+<p>If language appropriate, multiple threads are used to run the tests. For technical details, see the example repositories on <a href="https://github.com/51Degrees?q=example">GitHub</a>. We run performance tests regularly on GitHub actions. The performance of this may not be as good as a dedicated machine, as it's running on a GitHub runner, but gives an indication of consistency.</p>
+<div class="g-table g-table--overflow"><table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">API / Product  </td><td class="c-table__cell">ip-intelligence  </td><td class="c-table__cell">device-detection   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">C/C++  </td><td class="c-table__cell"><img src="https://raw.githubusercontent.com/51Degrees/ip-intelligence-cxx/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png" alt="ip-cxx" class="inline"/>
+  </td><td class="c-table__cell"><img src="https://raw.githubusercontent.com/51Degrees/device-detection-cxx/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png" alt="dd-cxx" class="inline"/>
+   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">.NET  </td><td class="c-table__cell"><img src="https://raw.githubusercontent.com/51Degrees/ip-intelligence-dotnet/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png" alt="ip-dotnet" class="inline"/>
+  </td><td class="c-table__cell"><img src="https://raw.githubusercontent.com/51Degrees/device-detection-dotnet/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png" alt="dd-dotnet" class="inline"/>
+   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">Java  </td><td class="c-table__cell"><img src="https://raw.githubusercontent.com/51Degrees/ip-intelligence-java/gh-images/perf-graph-Ubuntu_Java_11-DetectionsPerSecond-latest.png" alt="ip-java" class="inline"/>
+  </td><td class="c-table__cell"><img src="https://raw.githubusercontent.com/51Degrees/device-detection-java/gh-images/perf-graph-Ubuntu_Java_17-DetectionsPerSecond-latest.png" alt="dd-java" class="inline"/>
+   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">GO  </td><td class="c-table__cell"></td><td class="c-table__cell"><img src="https://raw.githubusercontent.com/51Degrees/device-detection-go/gh-images/perf-graph-ubuntu-DetectionsPerSecond-latest.png" alt="dd-go" class="inline"/>
+   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">Node.js  </td><td class="c-table__cell"></td><td class="c-table__cell"><img src="https://raw.githubusercontent.com/51Degrees/device-detection-node/gh-images/perf-graph-Ubuntu_Node_22-DetectionsPerSecond-latest.png" alt="dd-node" class="inline"/>
+   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">Python  </td><td class="c-table__cell"></td><td class="c-table__cell"><img src="https://raw.githubusercontent.com/51Degrees/device-detection-python/gh-images/perf-graph-Ubuntu_Python_3.13-DetectionsPerSecond-latest.png" alt="dd-python" class="inline"/>
+   </td></tr>
+</table>
+</div> </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
 <!-- HTML footer for doxygen 1.8.15-->
