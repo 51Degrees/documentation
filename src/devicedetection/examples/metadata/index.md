@@ -1,0 +1,5 @@
+@page DeviceDetection_Examples_Metadata_Index Metadata
+
+@subpage DeviceDetection_Examples_Metadata_OnPremiseHash
+
+@subpage DeviceDetection_Examples_Metadata_Cloud

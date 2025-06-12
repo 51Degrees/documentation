@@ -4,17 +4,17 @@ digraph P {
     rankdir=LR;
     node [shape=record, fontname=Helvetica, fontsize=10];
     edge [fontname=Helvetica, fontsize=10];
-    
+
     subgraph clusterFD {
         fontname=Helvetica;
         fontsize=10;
         label="Flow Data";
-        URL="@ref Concepts_Data_FlowData";
-        structE [label="<f0>Evidence|{<f1>date of birth|<f2>18/12/1992}", URL="@ref Concepts_Data_Evidence"];
-        structED [label="<f0>Element Data|{<f1>age|<f2>26}", URL="@ref Concepts_Data_ElementData"];
+        URL="@ref PipelineApi_Concepts_Data_FlowData";
+        structE [label="<f0>Evidence|{<f1>date of birth|<f2>18/12/1992}", URL="@ref PipelineApi_Concepts_Data_Evidence"];
+        structED [label="<f0>Element Data|{<f1>age|<f2>26}", URL="@ref PipelineApi_Concepts_Data_ElementData"];
     }
     FE [label="Age Element"];
-    
+
     structE -> FE [ltail=clusterFD, label=process];
     FE -> structED [label=output];
 }

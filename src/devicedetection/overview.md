@@ -1,10 +1,10 @@
-@page DeviceDetection_Overview Device Detection - Overview
+@page DeviceDetection_Overview Device Detection Overview
 
 # Introduction
 
 By providing information on the type and capabilities of the device, operating system, and browser being used to access your website, **device detection** enables you to provide your users with the optimal online experience, whether they're using a smartphone, tablet, TV, feature phone, large screen desktop, or laptop computer. 
 
-If you're ready to get going with **device detection**, follow the [quick start guide](@ref Quickstart_DeviceDetection) to get you up and running with just a few clicks. If you'd like to know more about how our solution works and some of its benefits over those of others, then carry on reading below.
+If you're ready to get going with **device detection**, follow the [quick start guide](@ref DeviceDetection_Quickstart) to get you up and running with just a few clicks. If you'd like to know more about how our solution works and some of its benefits over those of others, then carry on reading below.
 
 See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README.md#)

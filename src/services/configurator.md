@@ -33,7 +33,7 @@ Finally your newly created Resource Key is available. The Implement screen shows
 
 Follow these three steps by visiting the configurator at [configure.51degrees.com](https://configure.51degrees.com/) and obtaining a Resource Key from the Resource Key section in Step 3. 
 
-Make a note of that Resource Key and then continue following the @quickstart.
+Make a note of that Resource Key and then continue following the @introduction.
 
 # Displaying details for an existing Resource Key
 

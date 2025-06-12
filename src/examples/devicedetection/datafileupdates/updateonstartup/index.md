@@ -1,3 +1,0 @@
-@page Examples_DeviceDetection_DataFileUpdates_UpdateOnStartup_Index Update On Start-up
-
-@subpage Examples_DeviceDetection_DataFileUpdates_UpdateOnStartup_OnPremiseHash

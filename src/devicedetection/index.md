@@ -1,16 +1,20 @@
 @page DeviceDetection_Index Device Detection
 
 
-- @subpage DeviceDetection_Overview
+@subpage DeviceDetection_Overview
 
-- @subpage DeviceDetection_Hash
+@subpage DeviceDetection_Quickstart
 
-- @subpage DeviceDetection_Features_Index
+@subpage DeviceDetection_Hash
 
-- @subpage DeviceDetection_UpgradingtoV4 Upgrade to V4 (to remove?)
+@subpage DeviceDetection_Features_Index
 
-- @subpage DeviceDetection_MigrationGuides_Index
+@subpage DeviceDetection_Examples_Index
 
-- @subpage DeviceDetection_OtherIntegrations_Index
+@subpage DeviceDetection_UpgradingtoV4 Upgrade to V4 (to remove?)
 
-- @subpage DeviceDetection_WhatsNewV45
+@subpage DeviceDetection_MigrationGuides_Index
+
+@subpage DeviceDetection_OtherIntegrations_Index
+
+@subpage DeviceDetection_WhatsNewV45

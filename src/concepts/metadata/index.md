@@ -1,5 +1,0 @@
-@page Concepts_MetaData_Index Metadata Properties
-
-@subpage Concepts_MetaData_ElementProperties
-
-@subpage Concepts_MetaData_AspectProperties

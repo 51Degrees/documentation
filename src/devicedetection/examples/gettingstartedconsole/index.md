@@ -1,0 +1,5 @@
+@page DeviceDetection_Examples_GettingStarted_Console_Index Getting Started - Console
+
+@subpage DeviceDetection_Examples_GettingStarted_Console_Cloud
+
+@subpage DeviceDetection_Examples_GettingStarted_Console_OnPremise

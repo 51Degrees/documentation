@@ -1,0 +1,5 @@
+@page DeviceDetection_Examples_GettingStarted_Web_Index Getting Started - Web
+
+@subpage DeviceDetection_Examples_GettingStarted_Web_Cloud
+
+@subpage DeviceDetection_Examples_GettingStarted_Web_OnPremise

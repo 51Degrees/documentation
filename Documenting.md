@@ -243,13 +243,13 @@ The `Doxygen` file contains useful aliases (mainly for links). These are stored 
 For example, a link to the flow data page is written as
 
 ```
-[flow data](@ref Concepts_Data_FlowData)
+[flow data](@ref PipelineApi_Concepts_Data_FlowData)
 ```
 
 so the alias:
 
 ```
-flowdata=[flow data](@ref Concepts_Data_FlowData)
+flowdata=[flow data](@ref PipelineApi_Concepts_Data_FlowData)
 ```
 
 means that the link can instead be written as
@@ -274,7 +274,7 @@ Top level sections (`#`) have a different styling to the rest, so should be used
 So a heading has an anchor like:
 
 ```
-# Some Term @anchor Concepts_Terminology_SomeTerm
+# Some Term @anchor PipelineApi_Concepts_Terminology_SomeTerm
 ```
 
 where the naming convention is the page, then the heading in camel case.

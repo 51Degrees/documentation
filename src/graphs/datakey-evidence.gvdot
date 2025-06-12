@@ -7,24 +7,24 @@ digraph {
     node [shape=record, fontname=Helvetica, fontsize=10];
     // Style the arrow labels
     edge [fontname=Helvetica, fontsize=10];
-    
+
     // Add the flow data cluster
     subgraph clusterFlowData {
         label="Flow data";
         fontname=Helvetica;
-        fontsize=10;        
-        URL="@ref Concepts_Data_FlowData";        
+        fontsize=10;
+        URL="@ref PipelineApi_Concepts_Data_FlowData";
 
         subgraph clusterEvidence {
             label="Evidence";
             fontname=Helvetica;
             fontsize=10;
-            URL="@ref Concepts_Data_Evidence";
+            URL="@ref PipelineApi_Concepts_Data_Evidence";
 
             Keys1 [label="<ua1>User-Agent|<lat>Latitude|<lon>Longitude"];
         };
     };
-    
+
     // Add the data key cluster
     subgraph clusterDataKey {
         label=<<B>Data key</B>>;
@@ -33,7 +33,7 @@ digraph {
 
         Keys2 [label="<lat>Latitude|<lon>Longitude"];
     };
-    
+
     // Add an edge between the nodes
     Keys1:lat -> Keys2:lat
     Keys1:lon -> Keys2:lon

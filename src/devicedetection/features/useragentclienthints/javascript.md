@@ -45,8 +45,8 @@ in the results (all properties are included by default for on-premise).
 [#](@ref UACH_Javascript_Integrated)
 ## Integrated
 
-If you are using our [web integration](@ref Features_WebIntegration) with 
-[client-side evidence](@ref Features_ClientSideEvidence) enabled, then this will take 
+If you are using our [web integration](@ref PipelineApi_Features_WebIntegration) with 
+[client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) enabled, then this will take 
 care of sending the snippet to the client device, getting the values back to the server and 
 passing them into our API.
 

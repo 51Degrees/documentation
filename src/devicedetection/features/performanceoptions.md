@@ -16,7 +16,7 @@ These collections may either be fully mapped into memory or accessed via highly 
 
 The mechanism used to access the data, as well as the size of these caches, can be configured specifically. However, we have defined templates which we believe will cover the majority of scenarios.
 
-The exact method for specifying the template will vary by programing language. See the [performance examples](@ref Examples_DeviceDetection_Performance_OnPremiseHash) for a demonstration.
+The exact method for specifying the template will vary by programing language. See the [performance examples](@ref DeviceDetection_Examples_Performance_OnPremiseHash) for a demonstration.
 
 The table below explains the options, from fastest performance and highest memory usage to slowest performance and lowest memory usage.
 
@@ -57,5 +57,5 @@ This means that if you only want 'IsMobile' and 'HardwareName', which are both h
 then the algorithm can skip the detection for operating system, browser, and crawler.
 
 As with all the performance options, we recommend experimenting to see what effect this has in 
-your specific scenario. See the [performance examples](@ref Examples_DeviceDetection_Performance_OnPremiseHash)
+your specific scenario. See the [performance examples](@ref DeviceDetection_Examples_Performance_OnPremiseHash)
 for a demonstration of how to specify the properties you want in your language of choice.

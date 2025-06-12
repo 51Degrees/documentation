@@ -11,11 +11,11 @@ such as screen resolution and GPU model.
 This allows us to identify the precise Apple hardware model - including the specific iPhone or iPad generation.
 Even when the User-Agent string is generic!
 
-This feature is built into the [client-side evidence](@ref Features_ClientSideEvidence) functionality,
+This feature is built into the [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) functionality,
 and is automatically enabled when the relevant property is included in your resource key.
 
 To see this feature in action, check out the 
-[Getting Started - Web](@ref Examples_DeviceDetection_GettingStarted_Web_Index) example.
+[Getting Started - Web](@ref DeviceDetection_Examples_GettingStarted_Web_Index) example.
 
 ## How it works
 
@@ -55,6 +55,6 @@ the generic Apple group profile with a more accurate one.
 
 ## More information
 
-- [Web Integration Example](@ref Examples_DeviceDetection_GettingStarted_Web_Index): See how to implement it with code samples
+- [Web Integration Example](@ref DeviceDetection_Examples_GettingStarted_Web_Index): See how to implement it with code samples
 - [Supported Apple Models](@ref DeviceDetection_Features_AppleDeviceTable): A full list of iPhone and iPad models that can be detected by 51Degrees
 - [51Degrees Blog - Apple](https://51degrees.com/resources/blogs/tag/Apple): Technical deep dives, case studies, and news we've produced relating to Apple

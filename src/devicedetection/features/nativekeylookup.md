@@ -25,7 +25,7 @@ the details of any devices that match the supplied native model key.
 
 NOTE: The 'profiles' and property **MUST** be selected for native lookup to function.
 
-For language specific details, see these [examples](@ref Examples_DeviceDetection_NativeKeyLookup_Cloud). 
+For language specific details, see these [examples](@ref DeviceDetection_Examples_NativeKeyLookup_Cloud). 
 
 # Local lookup
 

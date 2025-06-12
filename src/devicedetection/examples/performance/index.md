@@ -1,0 +1,3 @@
+@page DeviceDetection_Examples_Performance_Index Performance
+
+@subpage DeviceDetection_Examples_Performance_OnPremiseHash

@@ -9,7 +9,7 @@ This includes all property values for all profiles (hardware, platform, browser,
 
 This data may be used to lookup details using some other key such as TAC or the model name returned by native apps running on the device. 
 
-It can also be used to obtain sets of possible values for each value (this can also be accessed using the API with the standard data file – see the [meta data examples](@ref Examples_DeviceDetection_Metadata_Index))
+It can also be used to obtain sets of possible values for each value (this can also be accessed using the API with the standard data file – see the [meta data examples](@ref DeviceDetection_Examples_Metadata_Index))
 
 You may load the data into a database or similar indexing system if you wish. The unique keys (profile id) for each profile are included in the CSV. These values are also returned by the device detection API. One use for this would be to store the profile ids along with other details related to the request. Later, some offline process could then use the profile ids to lookup the corresponding device values in the database, rather than needing to do device detection on the original evidence again.
 

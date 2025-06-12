@@ -1,0 +1,11 @@
+@page DeviceDetection_Examples_DataFileUpdates_Index Data File Updates
+
+@subpage DeviceDetection_Examples_DataFileUpdates_FileSystemWatcher_Index
+
+@subpage DeviceDetection_Examples_DataFileUpdates_PollingInterval_Index
+
+@subpage DeviceDetection_Examples_DataFileUpdates_UpdateOnStartup_Index
+
+@subpage DeviceDetection_Examples_DataFileUpdates_Automatic
+
+@subpage DeviceDetection_Examples_DataFileUpdates_Manual

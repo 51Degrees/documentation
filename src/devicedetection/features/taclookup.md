@@ -24,7 +24,7 @@ return a result set with the details of any devices that match the supplied TAC.
 
 NOTE: The 'profiles' and 'TAC' properties ***MUST** be selected for TAC lookup to function.
 
-For language specific details, see these [examples](@ref Examples_DeviceDetection_TacLookup_Cloud). 
+For language specific details, see these [examples](@ref DeviceDetection_Examples_TacLookup_Cloud). 
 
 # Local lookup
 

@@ -1,0 +1,5 @@
+@page IpIntelligence_Examples_Index IP Intelligence Examples
+
+@subpage IpIntelligence_Examples_GettingStarted_Console_Index 
+
+@subpage IpIntelligence_Examples_GettingStarted_Web_Index 

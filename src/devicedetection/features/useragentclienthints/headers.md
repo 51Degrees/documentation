@@ -86,7 +86,7 @@ If you're unsure which ones are relevant for you, see the
 [#](@ref UACH_Http_Headers_Integrated)
 ## Integrated
 
-If you are using our [web integration](@ref Features_WebIntegration), then this will take 
+If you are using our [web integration](@ref PipelineApi_Features_WebIntegration), then this will take 
 care of setting the header automatically.
 
 This uses an internal element called `SetHeadersElement` to set the values of response headers

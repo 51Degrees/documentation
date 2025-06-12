@@ -1,4 +1,4 @@
-@page ReverseGeocoding_Overview Reverse Geocoding - Overview
+@page ReverseGeocoding_Overview Reverse Geocoding Overview
 
 # Introduction
 
@@ -12,6 +12,5 @@ The 51Degrees Cloud service exposes location data from the following provider:
 1. A 51Degrees-hosted solution based on the [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) 
 API and backed by [OpenStreetMap](https://www.openstreetmap.org/) data.
 
-There is a [quickstart](@ref Quickstart_ReverseGeocoding) guide to get you up and running ASAP or you can
-browse the more in-depth [examples](@ref Examples_ReverseGeocoding_Index) first.
-
+There is a [quickstart](@ref ReverseGeocoding_Quickstart) guide to get you up and running ASAP or you can
+browse the more in-depth [examples](@ref ReverseGeocoding_Examples_Index) first.

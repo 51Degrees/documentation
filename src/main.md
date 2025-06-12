@@ -1,4 +1,11 @@
-@mainpage Home
+@mainpage Introduction
+
+# Welcome to 51Degrees
+
+51Degrees helps you enrich user data in real time by detecting device details, geolocation, and IP intelligence.
+Our tools power high-performance web experiences, fraud prevention, targeted content delivery, and more.
+
+We offer both cloud-hosted and on-premise solutions, with support for major programming languages.
 
 # 51Degrees API Documentation
 

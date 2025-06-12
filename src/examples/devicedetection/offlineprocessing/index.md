@@ -1,3 +1,0 @@
-@page Examples_DeviceDetection_OfflineProcessing_Index Offline Processing
-
-@subpage Examples_DeviceDetection_OfflineProcessing_OnPremiseHash

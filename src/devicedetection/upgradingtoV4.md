@@ -30,7 +30,7 @@ If you wish to continue to use 51Degrees on-premise, you will need to purchase a
 select the suitable plan for your needs. Alternatively, you may wish to use our [cloud service](@ref V3_Cloud), which can be called from the server via our APIs.
 
 Once you have received a License Key after signing up for a pricing plan, you can use the key to download a data file for on-premise implementations that contains all the properties. You can 
-[download the file manually](https://51degrees.com/developers/downloads) or set up [automatic data file updates](@ref Features_AutomaticDatafileUpdates).
+[download the file manually](https://51degrees.com/developers/downloads) or set up [automatic data file updates](@ref PipelineApi_Features_AutomaticDatafileUpdates).
 
 You can download the latest API packages for your programming language via our [downloads page](https://51degrees.com/developers/downloads)
 or [GitHub](https://github.com/51Degrees).
@@ -50,7 +50,7 @@ If you require any help upgrading, get in touch with [Sales](https://51degrees.c
 ## New customers <a href="#New_Customers">#</a> @anchor New_Customers
 
 If you wish to get started with 51Degrees, check out our @pricing page for an overview of all our pricing tiers. You can then follow the 
-@configuratorexplanation to get started in the cloud or use our [on-premise documentation](@ref Examples_DeviceDetection_GettingStarted_Web_OnPremise).
+@configuratorexplanation to get started in the cloud or use our [on-premise documentation](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise).
 
 Alternatively, get in touch with our [Sales](https://51degrees.com/contact-us) team and mention your use case. Please provide as much information as possible such as 
 intended deployment method, programming language, and environment configuration as this will help us discuss the best solution for you.

@@ -1,10 +1,10 @@
-@page IpIntelligence_Overview IP Intelligence - Overview
+@page IpIntelligence_Overview IP Intelligence Overview
 
 # Introduction
 
 By providing information on the network and location of the device being used to access your website, **IP intelligence** enables you to provide your users with the optimal online experience. 
 
-If you're ready to get going with **IP intelligence**, follow the [quick start guide](@ref Quickstart_IpIntelligence) to get you up and running with just a few clicks. If you'd like to know more about how our solution works and some of its benefits over those of others, then carry on reading below.
+If you're ready to get going with **IP intelligence**, follow the [quick start guide](@ref IpIntelligence_Quickstart) to get you up and running with just a few clicks. If you'd like to know more about how our solution works and some of its benefits over those of others, then carry on reading below.
 
 See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/ip-intelligence-specification/README.md#)

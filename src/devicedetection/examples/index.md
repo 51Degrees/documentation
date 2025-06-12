@@ -1,0 +1,19 @@
+@page DeviceDetection_Examples_Index Device Detection Examples
+
+@subpage DeviceDetection_Examples_GettingStarted_Console_Index 
+
+@subpage DeviceDetection_Examples_GettingStarted_Web_Index 
+
+@subpage DeviceDetection_Examples_DataFileUpdates_Index
+
+@subpage DeviceDetection_Examples_MatchMetrics_Index
+
+@subpage DeviceDetection_Examples_Metadata_Index
+
+@subpage DeviceDetection_Examples_NativeKeyLookup_Index
+
+@subpage DeviceDetection_Examples_OfflineProcessing_Index
+
+@subpage DeviceDetection_Examples_Performance_Index
+
+@subpage DeviceDetection_Examples_TacLookup_Index

@@ -206,7 +206,7 @@ delete config
      =================================================================================== -->
 Note: If you are working with a ASP.NET or ASP.NET Core web app then check those tabs for a more focused migration guide.
 
-The [getting started](@ref Examples_DeviceDetection_GettingStarted_Console_Index) examples may 
+The [getting started](@ref DeviceDetection_Examples_GettingStarted_Console_Index) examples may 
 be a useful reference while migrating.
 
 First, add the `FiftyOne.DeviceDetection` NuGet package. Don't forget to remove the old `51Degrees.mobi-core` package and any related packages as well.
@@ -356,7 +356,7 @@ if(data.GetAs<AspectPropertyValue>("IsMobile").HasValue)
 This section describes how to migrate from the ASP.NET integration in version 3 of the device detection API to the ASP.NET integration in Pipeline API.
 Note - The redirect, image optimization and performance monitoring services are no longer supported in the Pipeline API.
 
-The [getting started](@ref Examples_DeviceDetection_GettingStarted_Web_Index) examples may 
+The [getting started](@ref DeviceDetection_Examples_GettingStarted_Web_Index) examples may 
 be a useful reference while migrating.
 
 First, add the `FiftyOne.DeviceDetection` and `FiftyOne.Pipeline.Web` NuGet packages. Don't forget to remove the old `51Degrees.mobi-core` package and any related packages as well.
@@ -478,7 +478,7 @@ var engine = deviceDetectionPipeline.GetElement<DeviceDetectionHashEngine>();
 
 Finally, if you use client-side overrides (which enables detection of Apple models), you'll need to make sure you add a script tag for `51degrees.core.js`. The 51Degrees infrastructure will intercept this request and serve the JavaScript that is used to gather the necessary client side data and pass it back to the server. 
 
-You can see examples of this feature in action in the [getting started](@ref Examples_DeviceDetection_GettingStarted_Web_Index) web examples.
+You can see examples of this feature in action in the [getting started](@ref DeviceDetection_Examples_GettingStarted_Web_Index) web examples.
 
 ```
 <script async src='51Degrees.core.js' type='text/javascript'></script>
@@ -491,7 +491,7 @@ You can see examples of this feature in action in the [getting started](@ref Exa
 This section describes how to migrate from the ASP.NET integration in version 3 of the device detection API to the ASP.NET Core integration in Pipeline API.
 Note - The redirect, image optimization and performance monitoring services are no longer supported in the Pipeline API.
 
-The [getting started](@ref Examples_DeviceDetection_GettingStarted_Web_Index) examples may 
+The [getting started](@ref DeviceDetection_Examples_GettingStarted_Web_Index) examples may 
 be a useful reference while migrating.
 
 First, add the `FiftyOne.DeviceDetection` and `FiftyOne.Pipeline.Web` NuGet packages. Don't forget to remove the old `51Degrees.mobi-core` package and any related packages as well.
