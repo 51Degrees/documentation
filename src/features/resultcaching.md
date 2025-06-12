@@ -55,10 +55,3 @@ well with concurrent access, and enables good performance in a wide range of sce
 This cache has a single 'size' parameter that determines how many result instances will be stored.
 Increasing this value will generally improve performance at the cost of increased memory usage. 
 Profiling should always be used to determine appropriate settings for your use-case.
-
-# Examples
-
-We provide [examples](@ref Examples_Caching) on how to enable **result caching** for each language 
-where it is supported.
-Additionally, there are [examples](@ref Examples_CustomCache) on implementing and using a custom 
-caching implementation.
