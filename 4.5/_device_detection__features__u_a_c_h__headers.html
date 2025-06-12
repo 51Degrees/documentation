@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('_device_detection__features__u_a_c_h__
 <p>If you are using our Pipeline API on your server (either cloud or on-premise) then you'll need a way to set the <code>Accept-CH</code> header in the response to the client.</p>
 <p>In either case, you need to ensure the relevant <code>SetHeaderBrowserAccept-CH</code>, <code>SetHeaderHardwareAccept-CH</code> and <code>SetHeaderPlatformAccept-CH</code> properties are included in the results (all properties are included by default for on-premise). If you're unsure which ones are relevant for you, see the <a class="el" href="_device_detection__features__u_a_c_h__required_uach_headers.html">required values</a> page.</p>
 <p><a class="anchor" id="UACH_Http_Headers_Integrated"></a><a class="el" href="_device_detection__features__u_a_c_h__headers.html#UACH_Http_Headers_Integrated">#</a> </p><h2>Integrated</h2>
-<p>If you are using our <a class="el" href="_features__web_integration.html">web integration</a>, then this will take care of setting the header automatically.</p>
+<p>If you are using our <a class="el" href="_pipeline_api__features__web_integration.html">web integration</a>, then this will take care of setting the header automatically.</p>
 <p>This uses an internal element called <code>SetHeadersElement</code> to set the values of response headers based on any <code>SetHeader*</code> properties that are present.</p>
 <p><a class="anchor" id="UACH_Http_Headers_NonIntegrated"></a><a class="el" href="_device_detection__features__u_a_c_h__headers.html#UACH_Http_Headers_NonIntegrated">#</a> </p><h2>Non-integrated</h2>
 <p>If you don't want to, or can't, use the web integration as described above, then you'll need to manually set the <code>Accept-CH</code> header.</p>

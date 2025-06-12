@@ -76,11 +76,11 @@ $(document).ready(function(){initNavTree('_device_detection__features__tac_looku
 <li>Using the 'TAC CSV' data file to create a local lookup solution based on SQL or some other data query mechanism.</li>
 </ol>
 <h1 class="g-docs__section-heading">Cloud service</h1>
-<p>Requests to the cloud service can include a 'TAC' query parameter. As long as the <a class="el" href="_concepts__terminology.html#Concepts_Terminology_ResourceKey">Resource Key</a> includes one or more 'hardware device' properties and the 'profiles', and 'TAC' property, the cloud service will return a result set with the details of any devices that match the supplied TAC.</p>
+<p>Requests to the cloud service can include a 'TAC' query parameter. As long as the <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_ResourceKey">Resource Key</a> includes one or more 'hardware device' properties and the 'profiles', and 'TAC' property, the cloud service will return a result set with the details of any devices that match the supplied TAC.</p>
 <p>NOTE: The 'profiles' and 'TAC' properties ***MUST** be selected for TAC lookup to function.</p>
-<p>For language specific details, see these <a class="el" href="_examples__device_detection__tac_lookup__cloud.html">examples</a>.</p>
+<p>For language specific details, see these <a class="el" href="_device_detection__examples__tac_lookup__cloud.html">examples</a>.</p>
 <h1 class="g-docs__section-heading">Local lookup</h1>
-<p>Currently, the recommended solution for a local lookup is to use the TAC CSV file. This is a data file that is available from the 51Degrees <a class="el" href="_concepts__terminology.html#Concepts_Terminology_Distributor">Distributor</a> service (assuming you have a valid License Key that includes access to this product).</p>
+<p>Currently, the recommended solution for a local lookup is to use the TAC CSV file. This is a data file that is available from the 51Degrees <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_Distributor">Distributor</a> service (assuming you have a valid License Key that includes access to this product).</p>
 <p>This data file includes all values for all properties and can be used to populate a database or similar. The database can then be used to perform indexed lookups on given property values, such as TAC. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->

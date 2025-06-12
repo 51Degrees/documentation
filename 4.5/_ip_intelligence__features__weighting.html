@@ -69,7 +69,7 @@ $(document).ready(function(){initNavTree('_ip_intelligence__features__weighting.
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Overview</h1>
-<p>In some cases, there cannot be a certain answer when an IP address is used as <a class="el" href="_concepts__data__evidence.html">evidence</a>. For example, a range that an IP address is registered may serve more than one town. In these cases, the IP intelligence engine returns the possible values with a weighting, ordered by descending probability.</p>
+<p>In some cases, there cannot be a certain answer when an IP address is used as <a class="el" href="_pipeline_api__concepts__data__evidence.html">evidence</a>. For example, a range that an IP address is registered may serve more than one town. In these cases, the IP intelligence engine returns the possible values with a weighting, ordered by descending probability.</p>
 <p>For more details on how weightings are implemented, see the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/weighted-values.md#">specifications</a>.</p>
 <h1 class="g-docs__section-heading">Usage</h1>
 <p>The weightings of all the values returned for a single property will always add up to <code>1</code>. If there is a single value, the weighting will be <code>1</code>. But if there are multiple values, they could be weighted in a number of ways. An even weighting of <code>0.5</code> and <code>0.5</code> would indicate an even probability of both, or a heavier weighting of <code>0.9</code> and <code>0.1</code> would indicate it the first value is likely the best one to use. </p>

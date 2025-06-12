@@ -75,7 +75,7 @@ $(document).ready(function(){initNavTree('_device_detection__features__performan
 <h1 class="g-docs__section-heading">Performance profile templates</h1>
 <p>At the low level, the Device Detection API uses various collections of data from the data file in order to perform detections. These collections may either be fully mapped into memory or accessed via highly optimized <a href="https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)">LRU caches</a>, with data being loaded from disk on a cache miss.</p>
 <p>The mechanism used to access the data, as well as the size of these caches, can be configured specifically. However, we have defined templates which we believe will cover the majority of scenarios.</p>
-<p>The exact method for specifying the template will vary by programing language. See the <a class="el" href="_examples__device_detection__performance__on_premise_hash.html">performance examples</a> for a demonstration.</p>
+<p>The exact method for specifying the template will vary by programing language. See the <a class="el" href="_device_detection__examples__performance__on_premise_hash.html">performance examples</a> for a demonstration.</p>
 <p>The table below explains the options, from fastest performance and highest memory usage to slowest performance and lowest memory usage.</p>
 <div class="g-table g-table--overflow"><table class="c-table">
 <tr class="c-table__row--heading">
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('_device_detection__features__performan
 <h1 class="g-docs__section-heading">Restrict properties</h1>
 <p>When the device detection engine is created, you can specify exactly which properties you want to be populated in the result. By default, all properties are populated. By limiting the properties to only those that you're actually going to use, performance may be significantly improved.</p>
 <p>Internally, detection is actually performed separately for each <b>component</b> (The four components associated with device detection are hardware, operating system, browser, and crawler) This means that if you only want 'IsMobile' and 'HardwareName', which are both hardware properties, then the algorithm can skip the detection for operating system, browser, and crawler.</p>
-<p>As with all the performance options, we recommend experimenting to see what effect this has in your specific scenario. See the <a class="el" href="_examples__device_detection__performance__on_premise_hash.html">performance examples</a> for a demonstration of how to specify the properties you want in your language of choice. </p>
+<p>As with all the performance options, we recommend experimenting to see what effect this has in your specific scenario. See the <a class="el" href="_device_detection__examples__performance__on_premise_hash.html">performance examples</a> for a demonstration of how to specify the properties you want in your language of choice. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->

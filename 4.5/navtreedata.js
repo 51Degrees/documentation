@@ -23,16 +23,14 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-    [ "Home", "index.html", null ],
-    [ "Getting Started", null, "_quickstart__index" ],
+    [ "Introduction", "index.html", null ],
+    [ "Getting Started", "_quickstart.html", null ],
     [ "Device Detection", null, "_device_detection__index" ],
     [ "IP Intelligence", null, "_ip_intelligence__index" ],
     [ "Reverse Geocoding", null, "_reverse_geocoding__index" ],
-    [ "Examples", null, "_examples__index" ],
     [ "Services", null, "_services__index" ],
+    [ "Pipeline API", null, "_pipeline_api__index" ],
     [ "Product Summaries", null, "_product_summaries__index" ],
-    [ "API Features", null, "_features__index" ],
-    [ "Concepts", null, "_concepts__index" ],
     [ "Cloud API Documentation", "^https://cloud.51degrees.com/api-docs/index.html", null ]
 ];
 
@@ -42,7 +40,7 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-"_concepts__configuration__builders__build_from_configuration.html"
+"_device_detection__examples__data_file_updates__automatic.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
