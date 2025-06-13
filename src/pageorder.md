@@ -1,5 +1,3 @@
-@page Quickstart Getting Started
-
 @page DeviceDetection_Index Device Detection
 
 @page IpIntelligence_Index IP Intelligence

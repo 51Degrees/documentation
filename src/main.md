@@ -39,6 +39,16 @@ Obtain accurate real-world location data from coordinates, such as postal addres
 * Learn how it works in the [Reverse Geocoding Overview](@ref ReverseGeocoding_Overview).
 * Follow the [Reverse Geocoding Quickstart](@ref ReverseGeocoding_Quickstart) to implement reverse geocoding in your application.
 
+### Client-side JavaScript
+
+If you're working entirely in the browser, you can use 51Degrees without server-side code.
+
+Use the <a href="https://configure.51degrees.com/" target="_blank">Cloud Configurator</a>
+to select the properties you want
+and generate a custom JavaScript snippet to embed in your page.
+
+See the @configuratorexplanation for instructions on how to obtain a Resource Key and use it with the generated snippet.
+
 <BR>
 
 ---

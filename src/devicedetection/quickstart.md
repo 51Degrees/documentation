@@ -1,5 +1,29 @@
 @page DeviceDetection_Quickstart Device Detection Quick Start
 
+# Getting Started with Device Detection
+
+51Degrees Device Detection is available in two models:
+
+### Cloud Service provided by 51Degrees
+
+* Easiest to set up.
+* No data files required.
+* Detection is performed on our infrastructure.
+* Lower CPU/RAM use, but network latency applies.
+* Requires a [Resource Key](@ref Services_Configurator) for authentication.
+
+### On-Premise Deployment
+
+* Detection runs locally using a downloaded data file.
+* Requires some initial setup but offers higher performance and privacy.
+* Ideal for high-throughput environments or offline use.
+* Requires a [License Key](https://51degrees.com/pricing).
+
+Most programming languages and environments are supported by both models. You can find Cloud and On-Premise examples for each in the dropdown below.
+
+For even more accurate results (e.g. resolving specific iPhone models),
+consider enabling [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence).
+
 @startsnippets
 @showsnippet{c,C}
 @showsnippet{cxx,C++}
