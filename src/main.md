@@ -2,39 +2,139 @@
 
 # Welcome to 51Degrees
 
-51Degrees helps you enrich user data in real time by detecting device details, geolocation, and IP intelligence.
+51Degrees helps you enrich user data in real time by detecting device details, geolocation, and IP Intelligence.
 Our tools power high-performance web experiences, fraud prevention, targeted content delivery, and more.
 
 We offer both cloud-hosted and on-premise solutions, with support for major programming languages.
 
-# 51Degrees API Documentation
+<BR>
 
-Using the 51Degrees API to integrate real-time data insights into your own services involves a few steps:
+---
 
-1. Create a Resource Key to authenticate your requests.
-2. Obtain the programming library for your choice of language.
-3. Choose your service: Reverse Geocoding, Device Detection, or others.
-4. Query the APIs for the data you need.
+<BR>
 
-Each of these steps are described in more detail in this documentation and below.
+## Get Started Fast
 
-## Authentication with a Resource Key
+Choose a service - or combine them together:
 
-To create a Resource Key, use the [Configurator](https://configure.51degrees.com/) to select the data you need returned. Read @configuratorexplanation for more detail on how to create a Resource Key and errors that may occur.
+### Device Detection
 
-## Choose a programming library
+Identify device types, capabilities, and features to optimize experiences across phones, tablets, TVs, and more.
 
-There are programming libraries available in C#, Java, Node.js, client-side JavaScript, PHP, and Python for each of the services. 
+* Start by reading the [Device Detection Overview](@ref DeviceDetection_Overview) to understand how it works and its benefits.
+* Follow the [Device Detection Quickstart](@ref DeviceDetection_Quickstart) to add it to your application.
+* Learn how to detect Apple models with [Apple Device Detection](@ref DeviceDetection_Features_AppleDetection) using client-side JavaScript.
 
-## Choosing your service
+### IP Intelligence
 
-* @DeviceDetection – Detailed insight into the devices being used to access your content.
-* @ReverseGeocoding – Obtain accurate real-world data such as postal address from the users' location as reported by their smartphone or similar device.
+Gain insights into user locations and IP addresses for targeted content, analytics, and fraud prevention.
 
-## Query the APIs
+* Read the [IP Intelligence Overview](@ref IpIntelligence_Overview) to learn about our IP intelligence capabilities.
+* Follow the [IP Intelligence Quickstart](@ref IpIntelligence_Quickstart) to integrate IP intelligence into your application.
 
-Querying 51Degrees APIs is done by constructing a Pipeline and adding Evidence to it and then telling it to process to get the best data for that evidence; for example, a location request might involve creating a Pipeline and adding an IP address to it, and then processing to receive a latitude and longitude associated with that IP address. 
+### Reverse Geocoding
 
-To get started, see real examples of how to obtain Resource Keys and query the APIs in detail in the @quickstart.
+Obtain accurate real-world location data from coordinates, such as postal addresses, using our Reverse Geocoding service.
 
-For further detail, once the @quickstart is completed, please refer to the documentation in the menu. Pipelines are described in more detail in the @pipelinebasics, which explains how pipelines are constructed from flow elements and consume flow data. Reference documentation for the HTTP API is provided in the [cloud API documentation](https://cloud.51degrees.com/api-docs/index.html).
+* Learn how it works in the [Reverse Geocoding Overview](@ref ReverseGeocoding_Overview).
+* Follow the [Reverse Geocoding Quickstart](@ref ReverseGeocoding_Quickstart) to implement reverse geocoding in your application.
+
+<BR>
+
+---
+
+<BR>
+
+## Supported Languages
+
+We offer official libraries for:
+
+### .NET (C#)
+
+* [device-detection-dotnet](https://github.com/51Degrees/device-detection-dotnet) - for Device Detection
+* [device-detection-dotnet-examples](https://github.com/51Degrees/device-detection-dotnet-examples) - examples for Device Detection
+* [ip-intelligence-dotnet](https://github.com/51Degrees/ip-intelligence-dotnet) - for IP intelligence
+* [ip-intelligence-dotnet-examples](https://github.com/51Degrees/ip-intelligence-dotnet-examples) - examples for IP intelligence
+* [location-dotnet](https://github.com/51Degrees/location-dotnet) - for Reverse Geocoding
+* [pipeline-dotnet](https://github.com/51Degrees/pipeline-dotnet) - for the @Pipeline API
+
+### Java
+
+* [device-detection-java](https://github.com/51Degrees/device-detection-java) - for Device Detection
+* [device-detection-java-examples](https://github.com/51Degrees/device-detection-java-examples) - examples for Device Detection
+* [ip-intelligence-java](https://github.com/51Degrees/ip-intelligence-java) - for IP intelligence
+* [ip-intelligence-java-examples](https://github.com/51Degrees/ip-intelligence-java-examples) - examples for IP intelligence
+* [location-java](https://github.com/51Degrees/location-java) - for Reverse Geocoding
+* [pipeline-java](https://github.com/51Degrees/pipeline-java) - for the @Pipeline API
+
+### Node.js
+
+* [device-detection-node](https://github.com/51Degrees/device-detection-node) - for Device Detection (with examples)
+* [location-node](https://github.com/51Degrees/location-node) - for Reverse Geocoding
+* [pipeline-node](https://github.com/51Degrees/pipeline-node) - for the @Pipeline API
+
+### Go
+
+* [device-detection-go](https://github.com/51Degrees/device-detection-go) - for Device Detection
+* [device-detection-examples-go](https://github.com/51Degrees/device-detection-examples-go) - examples for Device Detection
+
+### Python
+
+* [device-detection-python](https://github.com/51Degrees/device-detection-python) - for Device Detection (with examples)
+* [location-python](https://github.com/51Degrees/location-python) - for Reverse Geocoding
+* [pipeline-python](https://github.com/51Degrees/pipeline-python) - for the @Pipeline API
+
+### PHP
+
+* [device-detection-php](https://github.com/51Degrees/device-detection-php) - for Device Detection (with examples)
+* [device-detection-php-onpremise](https://github.com/51Degrees/device-detection-php-onpremise) - for Device Detection with on-premise data (with examples)
+* [location-php](https://github.com/51Degrees/location-php) - for Reverse Geocoding
+
+### Client-side JavaScript
+
+* Check out our [Configurator](@ref Services_Configurator) page for details on how to use client-side JavaScript with Device Detection.
+
+### Other Languages / Tools
+
+* [device-detection-nginx](https://github.com/51Degrees/device-detection-nginx) - for Device Detection in Nginx
+* [device-detection-varnish](https://github.com/51Degrees/device-detection-varnish) - for Device Detection in Varnish
+* [UA Parser JS](https://github.com/51Degrees/ua-parser-js) - our fork of the popular UA Parser library, with support of @uach
+* [Device Detection Prebid Integration](@ref DeviceDetection_OtherIntegrations_Prebid) - for integrating Device Detection with Prebid.js/Prebid Server
+
+Find SDKs and examples on [51Degrees GitHub](https://github.com/51Degrees/)
+
+<BR>
+
+---
+
+<BR>
+
+## Explore the Docs
+
+| Link                                | Description                                                       |
+|-------------------------------------|-------------------------------------------------------------------|
+| @ref PipelineApi_Features_Index     | built-in features and configuration                               |
+| @ref DeviceDetection_Overview       | Device Detection documentation                                    |
+| @ref DeviceDetection_Quickstart     | Device Detection quickstart guide                                 |
+| @ref IpIntelligence_Overview        | IP Intelligence documentation                                     |
+| @ref IpIntelligence_Quickstart      | IP Intelligence quickstart guide                                  |
+| @ref ReverseGeocoding_Overview      | Reverse Geocoding documentation                                   |
+| @ref ReverseGeocoding_Quickstart    | Reverse Geocoding quickstart guide                                |
+| @ref PipelineApi_Concepts_Index     | architecture, pipelines, flow elements                            |
+| @ref DeviceDetection_Overview       | capabilities and setup                                            |
+| @ref ReverseGeocoding_Overview      | get location data from coordinates                                |
+| @ref ProductSummaries_FeatureMatrix | compare features across products and languages                    |
+| @ref ProductSummaries_Benchmarks    | performance benchmarks for different languages and configurations |
+
+<BR>
+
+---
+
+<BR>
+
+## Need Help?
+
+Raise an issue on [GitHub](https://github.com/51Degrees/) or contact our support team at [support@51degrees.com](mailto:support@51degrees.com).
+
+View full HTTP API reference docs here:
+<a href="https://cloud.51degrees.com/api-docs/index.html" target="_blank" rel="noopener">cloud.51degrees.com/api-docs</a>
