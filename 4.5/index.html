@@ -65,30 +65,140 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Welcome to 51Degrees</h1>
-<p>51Degrees helps you enrich user data in real time by detecting device details, geolocation, and IP intelligence. Our tools power high-performance web experiences, fraud prevention, targeted content delivery, and more.</p>
+<p>51Degrees helps you enrich user data in real time by detecting device details, geolocation, and IP Intelligence. Our tools power high-performance web experiences, fraud prevention, targeted content delivery, and more.</p>
 <p>We offer both cloud-hosted and on-premise solutions, with support for major programming languages.</p>
-<h1 class="g-docs__section-heading">51Degrees API Documentation</h1>
-<p>Using the 51Degrees API to integrate real-time data insights into your own services involves a few steps:</p>
-<ol type="1">
-<li>Create a Resource Key to authenticate your requests.</li>
-<li>Obtain the programming library for your choice of language.</li>
-<li>Choose your service: Reverse Geocoding, Device Detection, or others.</li>
-<li>Query the APIs for the data you need.</li>
-</ol>
-<p>Each of these steps are described in more detail in this documentation and below.</p>
-<h2>Authentication with a Resource Key</h2>
-<p>To create a Resource Key, use the <a href="https://configure.51degrees.com/">Configurator</a> to select the data you need returned. Read <a class="el" href="_services__configurator.html">Configurator explanation</a> for more detail on how to create a Resource Key and errors that may occur.</p>
-<h2>Choose a programming library</h2>
-<p>There are programming libraries available in C#, Java, Node.js, client-side JavaScript, PHP, and Python for each of the services.</p>
-<h2>Choosing your service</h2>
+<p><br />
+</p>
+<hr/>
+<p><br />
+</p>
+<h2>Get Started Fast</h2>
+<p>Choose a service - or combine them together:</p>
+<h3>Device Detection</h3>
+<p>Identify device types, capabilities, and features to optimize experiences across phones, tablets, TVs, and more.</p>
 <ul>
-<li><a class="el" href="_device_detection__overview.html">Device Detection</a> – Detailed insight into the devices being used to access your content.</li>
-<li><a class="el" href="_reverse_geocoding__overview.html">Reverse Geocoding</a> – Obtain accurate real-world data such as postal address from the users' location as reported by their smartphone or similar device.</li>
+<li>Start by reading the <a class="el" href="_device_detection__overview.html">Device Detection Overview</a> to understand how it works and its benefits.</li>
+<li>Follow the <a class="el" href="_device_detection__quickstart.html">Device Detection Quickstart</a> to add it to your application.</li>
+<li>Learn how to detect Apple models with <a class="el" href="_device_detection__features__apple_detection.html">Apple Device Detection</a> using client-side JavaScript.</li>
 </ul>
-<h2>Query the APIs</h2>
-<p>Querying 51Degrees APIs is done by constructing a Pipeline and adding Evidence to it and then telling it to process to get the best data for that evidence; for example, a location request might involve creating a Pipeline and adding an IP address to it, and then processing to receive a latitude and longitude associated with that IP address.</p>
-<p>To get started, see real examples of how to obtain Resource Keys and query the APIs in detail in the @quickstart.</p>
-<p>For further detail, once the @quickstart is completed, please refer to the documentation in the menu. Pipelines are described in more detail in the <a class="el" href="_pipeline_api__concepts__pipeline_basics.html">basic pipeline description</a>, which explains how pipelines are constructed from flow elements and consume flow data. Reference documentation for the HTTP API is provided in the <a href="https://cloud.51degrees.com/api-docs/index.html">cloud API documentation</a>. </p>
+<h3>IP Intelligence</h3>
+<p>Gain insights into user locations and IP addresses for targeted content, analytics, and fraud prevention.</p>
+<ul>
+<li>Read the <a class="el" href="_ip_intelligence__overview.html">IP Intelligence Overview</a> to learn about our IP intelligence capabilities.</li>
+<li>Follow the <a class="el" href="_ip_intelligence__quickstart.html">IP Intelligence Quickstart</a> to integrate IP intelligence into your application.</li>
+</ul>
+<h3>Reverse Geocoding</h3>
+<p>Obtain accurate real-world location data from coordinates, such as postal addresses, using our Reverse Geocoding service.</p>
+<ul>
+<li>Learn how it works in the <a class="el" href="_reverse_geocoding__overview.html">Reverse Geocoding Overview</a>.</li>
+<li>Follow the <a class="el" href="_reverse_geocoding__quickstart.html">Reverse Geocoding Quickstart</a> to implement reverse geocoding in your application.</li>
+</ul>
+<h3>Client-side JavaScript</h3>
+<p>If you're working entirely in the browser, you can use 51Degrees without server-side code.</p>
+<p>Use the <a href="https://configure.51degrees.com/" target="_blank">Cloud Configurator</a> to select the properties you want and generate a custom JavaScript snippet to embed in your page.</p>
+<p>See the <a class="el" href="_services__configurator.html">Configurator explanation</a> for instructions on how to obtain a Resource Key and use it with the generated snippet.</p>
+<p><br />
+</p>
+<hr/>
+<p><br />
+</p>
+<h2>Supported Languages</h2>
+<p>We offer official libraries for:</p>
+<h3>.NET (C#)</h3>
+<ul>
+<li><a href="https://github.com/51Degrees/device-detection-dotnet">device-detection-dotnet</a> - for Device Detection</li>
+<li><a href="https://github.com/51Degrees/device-detection-dotnet-examples">device-detection-dotnet-examples</a> - examples for Device Detection</li>
+<li><a href="https://github.com/51Degrees/ip-intelligence-dotnet">ip-intelligence-dotnet</a> - for IP intelligence</li>
+<li><a href="https://github.com/51Degrees/ip-intelligence-dotnet-examples">ip-intelligence-dotnet-examples</a> - examples for IP intelligence</li>
+<li><a href="https://github.com/51Degrees/location-dotnet">location-dotnet</a> - for Reverse Geocoding</li>
+<li><a href="https://github.com/51Degrees/pipeline-dotnet">pipeline-dotnet</a> - for the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> API</li>
+</ul>
+<h3>Java</h3>
+<ul>
+<li><a href="https://github.com/51Degrees/device-detection-java">device-detection-java</a> - for Device Detection</li>
+<li><a href="https://github.com/51Degrees/device-detection-java-examples">device-detection-java-examples</a> - examples for Device Detection</li>
+<li><a href="https://github.com/51Degrees/ip-intelligence-java">ip-intelligence-java</a> - for IP intelligence</li>
+<li><a href="https://github.com/51Degrees/ip-intelligence-java-examples">ip-intelligence-java-examples</a> - examples for IP intelligence</li>
+<li><a href="https://github.com/51Degrees/location-java">location-java</a> - for Reverse Geocoding</li>
+<li><a href="https://github.com/51Degrees/pipeline-java">pipeline-java</a> - for the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> API</li>
+</ul>
+<h3>Node.js</h3>
+<ul>
+<li><a href="https://github.com/51Degrees/device-detection-node">device-detection-node</a> - for Device Detection (with examples)</li>
+<li><a href="https://github.com/51Degrees/location-node">location-node</a> - for Reverse Geocoding</li>
+<li><a href="https://github.com/51Degrees/pipeline-node">pipeline-node</a> - for the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> API</li>
+</ul>
+<h3>Go</h3>
+<ul>
+<li><a href="https://github.com/51Degrees/device-detection-go">device-detection-go</a> - for Device Detection</li>
+<li><a href="https://github.com/51Degrees/device-detection-examples-go">device-detection-examples-go</a> - examples for Device Detection</li>
+</ul>
+<h3>Python</h3>
+<ul>
+<li><a href="https://github.com/51Degrees/device-detection-python">device-detection-python</a> - for Device Detection (with examples)</li>
+<li><a href="https://github.com/51Degrees/location-python">location-python</a> - for Reverse Geocoding</li>
+<li><a href="https://github.com/51Degrees/pipeline-python">pipeline-python</a> - for the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> API</li>
+</ul>
+<h3>PHP</h3>
+<ul>
+<li><a href="https://github.com/51Degrees/device-detection-php">device-detection-php</a> - for Device Detection (with examples)</li>
+<li><a href="https://github.com/51Degrees/device-detection-php-onpremise">device-detection-php-onpremise</a> - for Device Detection with on-premise data (with examples)</li>
+<li><a href="https://github.com/51Degrees/location-php">location-php</a> - for Reverse Geocoding</li>
+</ul>
+<h3>Client-side JavaScript</h3>
+<ul>
+<li>Check out our <a class="el" href="_services__configurator.html">Configurator</a> page for details on how to use client-side JavaScript with Device Detection.</li>
+</ul>
+<h3>Other Languages / Tools</h3>
+<ul>
+<li><a href="https://github.com/51Degrees/device-detection-nginx">device-detection-nginx</a> - for Device Detection in Nginx</li>
+<li><a href="https://github.com/51Degrees/device-detection-varnish">device-detection-varnish</a> - for Device Detection in Varnish</li>
+<li><a href="https://github.com/51Degrees/ua-parser-js">UA Parser JS</a> - our fork of the popular UA Parser library, with support of <a class="el" href="_device_detection__features__u_a_c_h__overview.html">UA-CH</a></li>
+<li><a class="el" href="_device_detection__other_integrations__prebid.html">Device Detection Prebid Integration</a> - for integrating Device Detection with Prebid.js/Prebid Server</li>
+</ul>
+<p>Find SDKs and examples on <a href="https://github.com/51Degrees/">51Degrees GitHub</a></p>
+<p><br />
+</p>
+<hr/>
+<p><br />
+</p>
+<h2>Explore the Docs</h2>
+<div class="g-table g-table--overflow"><table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Link  </td><td class="c-table__cell">Description   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><a class="el" href="_pipeline_api__features__index.html">API Features</a>  </td><td class="c-table__cell">built-in features and configuration   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><a class="el" href="_device_detection__overview.html">Device Detection Overview</a>  </td><td class="c-table__cell">Device Detection documentation   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><a class="el" href="_device_detection__quickstart.html">Device Detection Quick Start</a>  </td><td class="c-table__cell">Device Detection quickstart guide   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><a class="el" href="_ip_intelligence__overview.html">IP Intelligence Overview</a>  </td><td class="c-table__cell">IP Intelligence documentation   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><a class="el" href="_ip_intelligence__quickstart.html">IP Intelligence Quick Start</a>  </td><td class="c-table__cell">IP Intelligence quickstart guide   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><a class="el" href="_reverse_geocoding__overview.html">Reverse Geocoding Overview</a>  </td><td class="c-table__cell">Reverse Geocoding documentation   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><a class="el" href="_reverse_geocoding__quickstart.html">Reverse Geocoding Quick Start</a>  </td><td class="c-table__cell">Reverse Geocoding quickstart guide   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><a class="el" href="_pipeline_api__concepts__index.html">Concepts</a>  </td><td class="c-table__cell">architecture, pipelines, flow elements   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><a class="el" href="_device_detection__overview.html">Device Detection Overview</a>  </td><td class="c-table__cell">capabilities and setup   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><a class="el" href="_reverse_geocoding__overview.html">Reverse Geocoding Overview</a>  </td><td class="c-table__cell">get location data from coordinates   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><a class="el" href="_product_summaries__feature_matrix.html">Feature Matrix</a>  </td><td class="c-table__cell">compare features across products and languages   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><a class="el" href="_product_summaries__benchmarks.html">Benchmarks</a>  </td><td class="c-table__cell">performance benchmarks for different languages and configurations   </td></tr>
+</table>
+</div><p><br />
+</p>
+<hr/>
+<p><br />
+</p>
+<h2>Need Help?</h2>
+<p>Raise an issue on <a href="https://github.com/51Degrees/">GitHub</a> or contact our support team at <a href="#" onclick="location.href='mai'+'lto:'+'sup'+'po'+'rt@'+'51'+'deg'+'re'+'es.'+'co'+'m'; return false;">support@51degrees.com</a>.</p>
+<p>View full HTTP API reference docs here: <a href="https://cloud.51degrees.com/api-docs/index.html" target="_blank" rel="noopener">cloud.51degrees.com/api-docs</a> </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->

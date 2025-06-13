@@ -68,7 +68,26 @@ $(document).ready(function(){initNavTree('_device_detection__quickstart.html',''
 <h2 class="g-docs__page-title">Device Detection Quick Start </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'c')">C</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'varnish')">Varnish</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'nginx')">Nginx</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'go')">Go</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language. </div>   <div class="c-tabgroup__main" data-lang="c" style="display:none;">  C does not have a <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> implementation or the ability to use the cloud-based version of Device Detection. To get started with C device detection on-premise:</p>
+<section class="g-docs__section"><h1 class="g-docs__section-heading">Getting Started with Device Detection</h1>
+<p>51Degrees Device Detection is available in two models:</p>
+<h3>Cloud Service provided by 51Degrees</h3>
+<ul>
+<li>Easiest to set up.</li>
+<li>No data files required.</li>
+<li>Detection is performed on our infrastructure.</li>
+<li>Lower CPU/RAM use, but network latency applies.</li>
+<li>Requires a <a class="el" href="_services__configurator.html">Resource Key</a> for authentication.</li>
+</ul>
+<h3>On-Premise Deployment</h3>
+<ul>
+<li>Detection runs locally using a downloaded data file.</li>
+<li>Requires some initial setup but offers higher performance and privacy.</li>
+<li>Ideal for high-throughput environments or offline use.</li>
+<li>Requires a <a href="https://51degrees.com/pricing">License Key</a>.</li>
+</ul>
+<p>Most programming languages and environments are supported by both models. You can find Cloud and On-Premise examples for each in the dropdown below.</p>
+<p>For even more accurate results (e.g. resolving specific iPhone models), consider enabling <a class="el" href="_pipeline_api__features__client_side_evidence.html">client-side evidence</a>.</p>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'c')">C</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'varnish')">Varnish</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'nginx')">Nginx</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'go')">Go</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language. </div>   <div class="c-tabgroup__main" data-lang="c" style="display:none;">  C does not have a <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> implementation or the ability to use the cloud-based version of Device Detection. To get started with C device detection on-premise:</p>
 <ol type="1">
 <li>Clone the GitHub <a href="https://github.com/51degrees/device-detection-cxx">repository</a>.</li>
 <li>Ensure you have <a href="https://git-lfs.github.com/">Git LFS</a> installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.</li>

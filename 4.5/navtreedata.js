@@ -24,7 +24,6 @@ for the JavaScript code in this file
 var NAVTREE =
 [
     [ "Introduction", "index.html", null ],
-    [ "Getting Started", "_quickstart.html", null ],
     [ "Device Detection", null, "_device_detection__index" ],
     [ "IP Intelligence", null, "_ip_intelligence__index" ],
     [ "Reverse Geocoding", null, "_reverse_geocoding__index" ],
