@@ -8,7 +8,7 @@
 
 ## How it works
 
-51Degrees uses a patented [Hash Algorithm](@ref DeviceDetection_Hash) primarily analyzing User-Agent HTTP headers. Additional techniques handle modern challenges:
+51Degrees uses a patented [Hash Algorithm](@ref DeviceDetection_Hash) primarily analyzing User-Agent and other HTTP headers. Additional techniques handle modern challenges:
 
 * **Apple devices:** [JavaScript-based detection](@ref DeviceDetection_Features_AppleDetection) overcomes obfuscated User-Agents
 * **Modern browsers:** [User-Agent Client Hints](@ref DeviceDetection_Features_UACH_Overview) support for Chromium browsers  
