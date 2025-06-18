@@ -1,4 +1,4 @@
-@page DeviceDetection_Hash Hash
+@page DeviceDetection_Hash Hash Algorithm
 
 # Introduction
 During extensive analysis of hundreds of billions of web interactions over several years, we discovered that a smart method of identifying and hashing substrings within User-Agents could be used to produce an optimum data set that displays the following characteristics:
