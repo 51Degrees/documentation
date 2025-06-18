@@ -9,3 +9,5 @@
 @subpage DeviceDetection_OtherIntegrations_Wordpress
 
 @subpage DeviceDetection_OtherIntegrations_UAParser
+
+@subpage DeviceDetection_MigrationGuides_OpenRTBMappings

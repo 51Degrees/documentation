@@ -11,10 +11,11 @@
 
 @subpage DeviceDetection_Examples_Index
 
-@subpage DeviceDetection_UpgradingtoV4 Upgrade to V4 (to remove?)
+@subpage DeviceDetection_WhatsNewV45
 
-@subpage DeviceDetection_MigrationGuides_Index
+@subpage DeviceDetection_UpgradingtoV4
 
 @subpage DeviceDetection_OtherIntegrations_Index
 
-@subpage DeviceDetection_WhatsNewV45
+@subpage DeviceDetection_MigrationGuides_Index
+
