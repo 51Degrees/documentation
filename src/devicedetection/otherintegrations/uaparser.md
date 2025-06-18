@@ -17,7 +17,7 @@ You can find out more on which method is more suitable for your environment via
 [this UAParser blog](https://51degrees.com/blog/introducing-51degrees-uaparser). You can also see the 51Degrees UAParser 
 in action with this [UAParser demonstration page.](https://51degrees.github.io/ua-parser-js/)
 
-@anchor Download_UAParser
+# Download UAParser <a href="#Download_UAParser">#</a> @anchor Download_UAParser
 ## Download the 51D UAParser
 
 The packages are available via:

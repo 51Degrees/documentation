@@ -190,7 +190,7 @@ methods on the @pipelinebuilder instead of the @elementbuilder.
 
 See above for all the rules governing this.
 
-## Alternative naming details @anchor PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName
+## Alternative naming details <a href="#PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName">#</a> @anchor PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName
 
 Some languages have a mechanism for specifying alternative names for builders and methods.
 These can be used to match against supplied configuration options.

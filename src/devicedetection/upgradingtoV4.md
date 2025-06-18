@@ -12,7 +12,7 @@ The steps to upgrade will vary depending on whether you are using our cloud or o
 
 <BR>
 
-## V3 Cloud users @anchor V3_Cloud
+## V3 Cloud users <a href="#V3_Cloud">#</a> @anchor V3_Cloud
 
 Use our [Cloud Configurator](https://configure.51degrees.com/) to generate a new Resource Key. You can follow our 
 @configuratorexplanation for a step by step guide. This Resource Key should contain all the properties you wish to collect data for – 
@@ -24,7 +24,7 @@ If you are looking for User-Agent Client Hints support in the cloud, please foll
 
 <BR>
 
-## V3 On-premise users @anchor V3_On_Prem
+## V3 On-premise users <a href="#V3_On_Prem">#</a> @anchor V3_On_Prem
 
 If you wish to continue to use 51Degrees on-premise, you will need to purchase a License Key to access the Version 4 data files. Visit our [pricing](https://51degrees.com/pricing) page and
 select the suitable plan for your needs. Alternatively, you may wish to use our [cloud service](@ref V3_Cloud), which can be called from the server via our APIs.
@@ -46,7 +46,7 @@ If you require any help upgrading, get in touch with [Sales](https://51degrees.c
 
 <BR>
 
-## New customers @anchor New_Customers
+## New customers <a href="#New_Customers">#</a> @anchor New_Customers
 
 If you wish to get started with 51Degrees, check out our @pricing page for an overview of all our pricing tiers. You can then follow the 
 @configuratorexplanation to get started in the cloud or use our [on-premise documentation](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise).
@@ -56,7 +56,7 @@ intended deployment method, programming language, and environment configuration 
 
 <BR>
 
-# Migration Guides @anchor migration-guides
+# Migration Guides <a href="#migration-guides">#</a> @anchor migration-guides
 
 This section describes the detailed steps for migrating from the previous 51Degrees Device detection API to either version 4 of that API or to the @Pipeline API where it is available.
 In either case, there are breaking changes so this guide should be followed carefully to ensure no problems arise.

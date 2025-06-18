@@ -23,7 +23,7 @@ The following table lists the OpenRTB (3.2.18 Object: Device) field names, suppo
 |ppi|Screen size as pixels per linear inch.|(([ScreenPixelsWidth](https://51degrees.com/developers/property-dictionary?item=Device%7CScreen) / [ScreenInchesWidth](https://51degrees.com/developers/property-dictionary?item=Device%7CScreen)) + ([ScreenPixelsHeight]( https://51degrees.com/developers/property-dictionary?item=Device%7CScreen) / [ScreenInchesHeight]( https://51degrees.com/developers/property-dictionary?item=Device%7CScreen))) / 2|Screen size as pixels per linear inch computed from screen dimensions in pixels and inches.|
 |js|Support for JavaScript, where 0 = no, 1 = yes.|[Javascript](https://51degrees.com/developers/property-dictionary?item=WebBrowserandApps%7CJavascript)|Indicates if the browser supports JavaScript.|
 
-# OpenRTB Device Type Mappings @anchor DeviceDetection_MigrationGuides_OpenRTBMappings_DeviceType
+# OpenRTB Device Type Mappings <a href="#DeviceDetection_MigrationGuides_OpenRTBMappings_DeviceType">#</a> @anchor DeviceDetection_MigrationGuides_OpenRTBMappings_DeviceType
 This table shows the mappings between OpenRTB Device Types (5.21) and 51Degrees [DeviceType](https://51degrees.com/developers/property-dictionary?item=Device%7CDevice) Values.
 
 |OpenRTB Value|OpenRTB Description|51Degrees Value|

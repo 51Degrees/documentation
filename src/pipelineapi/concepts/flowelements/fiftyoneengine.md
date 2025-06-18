@@ -24,7 +24,7 @@ in a common way for all **51Degrees engines** that share this structure.
 
 @dotfile 51d-data-structure.gvdot
 
-## Properties @anchor PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Properties
+## Properties <a href="#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Properties">#</a> @anchor PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Properties
 
 The **properties** exposed by a **51Degrees engine** should not be seen differently from the @elementproperties
 or @aspectproperties that are exposed by any other **engine**. They merely extend @aspectproperty to add @metadata
@@ -46,7 +46,7 @@ The metadata contained in a **51Degrees aspect property** is everything in an @a
 | Show     | Whether the **property** should be displayed in situations such as a page listing **properties**. Less important **properties** may not be displayed. |
 | Show Values| Whether values of the **property** should be displayed in situations such as a page listing the **property's** values. Showing all the values can make a very long list. |
 
-## Values @anchor PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Values
+## Values <a href="#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Values">#</a> @anchor PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Values
 
 **Values** refer to all **values** which the associated **properties** can take in the current data file.
 The metadata for **values** of a **property** are exposed by an **engine**.
@@ -63,7 +63,7 @@ The metadata contained in a **value** is:
 | Description| A description of the **value** explaining what it refers to, and what it means if a **profile** has this **value**. |
 | URL      | A URL where more information on the **value** can be found. |
 
-## Components @anchor PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components
+## Components <a href="#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components">#</a> @anchor PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components
 
 A **component** defines a group of **properties** that are related.
 
@@ -81,7 +81,7 @@ The metadata contained in a **component** is:
 | Properties| The **properties** associated with this **component**. |
 
 
-## Profiles @anchor PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles
+## Profiles <a href="#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles">#</a> @anchor PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles
 
 A **profile** defines a unique set of **values** for all **properties** of a single **component**. 
 

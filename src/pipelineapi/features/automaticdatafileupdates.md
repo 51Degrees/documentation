@@ -64,7 +64,7 @@ enables a random time interval to be added to the time at which the new @datafil
 are 10 servers, and a full download and refresh takes around 10 seconds, it is sensible to set the randomization to
 above 10 seconds. In this case, there should only be one server updating at any one time.
 
-## URL formatter @anchor PipelineApi_Features_AutomaticDatafileUpdates_UrlFormatter
+## URL formatter <a href="#PipelineApi_Features_AutomaticDatafileUpdates_UrlFormatter">#</a> @anchor PipelineApi_Features_AutomaticDatafileUpdates_UrlFormatter
 
 Where an @onpremiseengine needs to download a @datafile from a URL which is not constant, a URL formatter is used.
 @Onpremiseengines generally provide the correct URL formatter automatically, but the option to override this is available.
@@ -102,7 +102,7 @@ Unnecessary downloads can be prevented by providing the download server with an 
 is enabled (which it is by default for most @onpremiseengines) the `If-Modified-Since` header will be set to the date at which the
 current @datafile was last modified. If there is not a newer @datafile on the server then the service will not attempt to download a file.
 
-# Recommendations for large clusters @anchor Large_Clusters
+# Recommendations for large clusters <a href="#Large_Clusters">#</a> @anchor Large_Clusters
 
 The @Distributor API is limited in the number of requests it can 
 service per day. This is enforced by each License Key being limited to a certain number of 

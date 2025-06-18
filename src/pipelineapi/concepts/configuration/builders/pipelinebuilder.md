@@ -29,7 +29,7 @@ are also present in another @pipeline, as they may still be required elsewhere. 
 not usually be the case, but must be considered if building multiple @pipelines.
 
 
-## Suppress process exceptions @anchor PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions
+## Suppress process exceptions <a href="#PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions">#</a> @anchor PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions
 
 By default, exceptions that occur during the processing of a @flowdata will be thrown. 
 However, it is sometimes preferable to suppress and analyze

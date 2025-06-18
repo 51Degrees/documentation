@@ -17,7 +17,7 @@ for more technical details.
 * [Element data](@ref PipelineApi_Concepts_Data_FlowData_ElementData)
 * [Errors](@ref PipelineApi_Concepts_Data_FlowData_Errors)
 
-## Evidence @anchor PipelineApi_Concepts_Data_FlowData_Evidence
+## Evidence <a href="#PipelineApi_Concepts_Data_FlowData_Evidence">#</a> @anchor PipelineApi_Concepts_Data_FlowData_Evidence
 
 Before the @flowdata is passed into the @Pipeline, input data is supplied. We refer to this data as
 '@evidence'.
@@ -26,7 +26,7 @@ The @evidence can be set manually or automatically by using a
 
 Visit the @evidence page for more details.
 
-## Element data @anchor PipelineApi_Concepts_Data_FlowData_ElementData
+## Element data <a href="#PipelineApi_Concepts_Data_FlowData_ElementData">#</a> @anchor PipelineApi_Concepts_Data_FlowData_ElementData
 
 The responses from each @flowelement are stored in a key/value pair structure within **flow data**.
 In each case, [the key](@ref PipelineApi_Concepts_Data_ElementDataKey) is the string key of the @flowelement and the value is an @elementdata instance.
@@ -40,7 +40,7 @@ for the specific [aspect](@term{Aspect}) it is concerned with.
 
 Visit the @elementdata page for more details.
 
-## Errors @anchor PipelineApi_Concepts_Data_FlowData_Errors
+## Errors <a href="#PipelineApi_Concepts_Data_FlowData_Errors">#</a> @anchor PipelineApi_Concepts_Data_FlowData_Errors
 
 The errors collection stores the details of any errors that occur during processing.
 The language's default exception handling mechanism will be used to catch
@@ -100,7 +100,7 @@ try (FlowData data = pipeline.createFlowData()) {
 @endsnippet
 @endsnippets
 
-# Thread-safety @anchor PipelineApi_Concepts_Data_FlowData_ThreadSafety
+# Thread-safety <a href="#PipelineApi_Concepts_Data_FlowData_ThreadSafety">#</a> @anchor PipelineApi_Concepts_Data_FlowData_ThreadSafety
 
 @startsnippets
 @showsnippet{dotnet,C#}
