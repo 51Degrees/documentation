@@ -53,6 +53,9 @@ Apple devices require special handling due to limited User-Agent information. Ou
 ## 🔍 User-Agent Client Hints
 Modern browsers are reducing User-Agent information. Stay ahead with our [User-Agent Client Hints support](@ref DeviceDetection_Features_UACH_Overview) for Chromium-based browsers.
 
+## 📱 TAC Lookup
+Identify mobile device models from IMEI numbers using Type Allocation Code (TAC) lookup. See our [TAC lookup feature](@ref DeviceDetection_Features_TacLookup) for mobile device identification.
+
 ## ⚙️ Flexible Integration Options
 - **Cloud API:** Zero maintenance, always up-to-date, pay-as-you-go
 - **On-Premise:** Full control, high performance, enterprise security
@@ -66,8 +69,11 @@ Modern browsers are reducing User-Agent information. Stay ahead with our [User-A
 
 At its core, 51Degrees uses a patented [Hash Algorithm](@ref DeviceDetection_Hash) that delivers:
 - **Speed:** Over 1 million detections per second per CPU core
+- **Ultra-low latency:** Sub-microsecond detection time with in-process deployment
+- **Performance-critical ready:** Ideal for real-time servers, edge/load balancers, and high-load scenarios
 - **Accuracy:** Industry-leading detection rates across 400+ device properties  
 - **Efficiency:** Minimal memory footprint and bandwidth usage
+- **Deployment flexibility:** In-process by default, with optional out-of-process or separate server deployment
 
 For complete technical details, see our [specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README.md).
 
