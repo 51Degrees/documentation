@@ -10,4 +10,4 @@
 
 @subpage DeviceDetection_OtherIntegrations_UAParser
 
-@subpage DeviceDetection_MigrationGuides_OpenRTBMappings
+@subpage DeviceDetection_OtherIntegrations_OpenRTBMappings

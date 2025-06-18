@@ -1,4 +1,4 @@
-@page DeviceDetection_MigrationGuides_OpenRTBMappings OpenRTB Mappings
+@page DeviceDetection_OtherIntegrations_OpenRTBMappings OpenRTB Mappings
 
 # Introduction 
 
@@ -12,7 +12,7 @@ The following table lists the OpenRTB (3.2.18 Object: Device) field names, suppo
 |---|---|---|---|
 |ua|Browser user agent string.|User-Agent field from HTTP header.|The User-Agent string can be used to identify the device, application, operating system, software vendor or software version of the requesting device.|
 |sua|Structured user agent information defined by a UserAgent object (see Section 3.2.29 of the OpenRTB 2.6 spec).|Info obtained from the [User-Agent Client Hints (UA-CH) HTTP headers](@ref DeviceDetection_Features_UACH_Overview) (or equivalent NavigatorUAData JS object) sent by the browsers that support it.|ua may contain a reduced User-Agent string, thus if present, 'sua' should be considered a more accurate and complete device info. [You can also convert UA-CH values into sua information (and vice versa)](https://github.com/51Degrees/sua-uach-conversion) with our [sua and UA-CH converter](https://51degrees.github.io/sua-uach-conversion/).|
-|devicetype|The general type of device. Refer to List 5.21.|[DeviceType](https://51degrees.com/developers/property-dictionary?item=Device%7CDevice)| Indicates the type of the device based on values set in other properties, such as IsMobile, IsTablet, IsSmartphone, IsSmallScreen etc.<br>See [OpenRTB Device Type Mappings](@ref DeviceDetection_MigrationGuides_OpenRTBMappings_DeviceType) table below.|
+|devicetype|The general type of device. Refer to List 5.21.|[DeviceType](https://51degrees.com/developers/property-dictionary?item=Device%7CDevice)| Indicates the type of the device based on values set in other properties, such as IsMobile, IsTablet, IsSmartphone, IsSmallScreen etc.<br>See [OpenRTB Device Type Mappings](@ref DeviceDetection_OtherIntegrations_OpenRTBMappings_DeviceType) table below.|
 |make|Device make (e.g., “Apple”)|[HardwareVendor](https://51degrees.com/developers/property-dictionary?item=Device%7CName)|Indicates the name of the company that manufactures the device or primarily sells it, e.g. Samsung.<br>[List of Manufactures](https://51degrees.com/developers/documentation/open-rtb-mappings/hardware-vendors).
 |model|Device model (e.g., “iPhone”)|[HardwareModel](https://51degrees.com/developers/property-dictionary?item=Device%7CName)| Indicates the model name or number used primarily by the hardware vendor to identify the device, e.g.SM-T805S. When a model identifier is not available the HardwareName will be used.<br>[List of Models](https://51degrees.com/developers/documentation/open-rtb-mappings/hardware-models).|
 |os|Device operating system (e.g., “iOS”)|[PlatformName](https://51degrees.com/developers/property-dictionary?item=OperatingSystem%7CName)|Indicates the name of the operating system the device is using.<br>[List of Operating Systems](https://51degrees.com/developers/documentation/open-rtb-mappings/platform-names).|
@@ -23,7 +23,7 @@ The following table lists the OpenRTB (3.2.18 Object: Device) field names, suppo
 |ppi|Screen size as pixels per linear inch.|(([ScreenPixelsWidth](https://51degrees.com/developers/property-dictionary?item=Device%7CScreen) / [ScreenInchesWidth](https://51degrees.com/developers/property-dictionary?item=Device%7CScreen)) + ([ScreenPixelsHeight]( https://51degrees.com/developers/property-dictionary?item=Device%7CScreen) / [ScreenInchesHeight]( https://51degrees.com/developers/property-dictionary?item=Device%7CScreen))) / 2|Screen size as pixels per linear inch computed from screen dimensions in pixels and inches.|
 |js|Support for JavaScript, where 0 = no, 1 = yes.|[Javascript](https://51degrees.com/developers/property-dictionary?item=WebBrowserandApps%7CJavascript)|Indicates if the browser supports JavaScript.|
 
-# OpenRTB Device Type Mappings <a href="#DeviceDetection_MigrationGuides_OpenRTBMappings_DeviceType">#</a> @anchor DeviceDetection_MigrationGuides_OpenRTBMappings_DeviceType
+# OpenRTB Device Type Mappings <a href="#DeviceDetection_OtherIntegrations_OpenRTBMappings_DeviceType">#</a> @anchor DeviceDetection_OtherIntegrations_OpenRTBMappings_DeviceType
 This table shows the mappings between OpenRTB Device Types (5.21) and 51Degrees [DeviceType](https://51degrees.com/developers/property-dictionary?item=Device%7CDevice) Values.
 
 |OpenRTB Value|OpenRTB Description|51Degrees Value|
