@@ -383,7 +383,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "uach=[UA-CH](@ref DeviceDetection_Features_UACH_Overview)"  \
                          "useragentclienthints=[User-Agent Client Hints](@ref DeviceDetection_Features_UACH_Overview)" \
                          "usagesharing=[usage sharing](@ref PipelineApi_Features_UsageSharing)" \
-                         "v3migrationguide=[version 3 migration guide](@ref DeviceDetection_MigrationGuides_51DegreesV3)" \
+                         "v3migrationguide=[version 3 migration guide](@ref DeviceDetection_UpgradingtoV4)" \
                          "webintegration=[web integration](@ref PipelineApi_Features_WebIntegration)" \
                          "webintegrations=[web integrations](@ref PipelineApi_Features_WebIntegration)"
 
