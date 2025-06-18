@@ -69,51 +69,73 @@ $(document).ready(function(){initNavTree('_device_detection__other_integrations_
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Prebid Integration</h1>
-<p>51Degrees provides modules for Prebid.js and Prebid Server (PBS-Go and PBS-Java) that enrich OpenRTB requests with detailed device data. These modules enable real-time identification of user devices, improving ad targeting, personalisation, and analytics.</p>
-<p><br />
-</p>
+<p><b>Supercharge your programmatic advertising</b> with 51Degrees Device Detection modules for Prebid. Transform basic OpenRTB requests into rich, device-aware bid opportunities that drive higher CPMs and better user experiences.</p>
+<h2>🚀 Why Prebid + 51Degrees?</h2>
+<p>Most bid requests contain minimal device information, leaving money on the table. Our Prebid modules enrich auctions with detailed device identification, enabling:</p>
+<ul>
+<li><b>📈 Higher bid values</b> - Detailed device data enables more precise targeting and competitive bidding</li>
+<li><b>🎯 Precise targeting</b> - Advertisers reach users with device-appropriate creatives</li>
+<li><b>📊 Enhanced analytics</b> - Rich device data provides deeper insights into audience behavior, campaign performance, and audience segmentation</li>
+<li><b>⚡ Real-time performance</b> - Sub-millisecond device detection doesn't slow auctions</li>
+<li><b>🍎 Apple device clarity</b> - Identify specific iPhone/iPad models where others fail</li>
+</ul>
 <hr/>
-<p><br />
-</p>
-<h2>Benefits</h2>
-<ul>
-<li><b>Accurate Device Detection</b>: Enrich OpenRTB requests with make, model, OS, screen size, pixel ratio, and more.</li>
-<li><b>Permanent Device ID</b>: Includes a unique <code>device.ext.fiftyonedegrees_deviceId</code> useful for consistent device-level targeting.</li>
-<li><b>Free to Use</b>: Cloud integration is free with a Resource Key. On-premise options available for more control and privacy.</li>
-<li><b>Automatic Updates</b>: Enterprise subscriptions support daily data file updates and broader device property coverage.</li>
-<li><b>Apple Device Support</b>: Detects grouped iPhone/iPad models where other solutions cannot.</li>
-<li><b>Fast and Compatible</b>: Designed to integrate seamlessly with the Prebid ecosystem and improve auction quality.</li>
-</ul>
-<p><br />
-</p>
+<h2>💰 Publisher Benefits</h2>
+<p>🎯 <b>Enhanced Inventory Value</b></p>
+<p>Transform generic "mobile" traffic into premium, targetable inventory with specific device models, screen sizes, and capabilities.</p>
+<p>📊 <b>Rich Analytics &amp; Insights</b></p>
+<p>Understand your audience better with detailed device breakdowns and performance metrics by device type.</p>
+<p>🔒 <b>Device Model Identification</b></p>
+<p><code>device.ext.fiftyonedegrees_deviceId</code> provides consistent device model classification for targeting and analytics, allowing you to associate a device with all of its attributes on the server side. This <b>unlocks access to <a href="https://51degrees.com/developers/property-dictionary">250+ device properties</a></b> based on the device ID.</p>
+<h2>🎨 Advertiser Benefits</h2>
+<p>🎪 <b>Creative Optimization</b></p>
+<p>Deliver device-appropriate ad formats - video for capable devices, static for older models, optimal sizes for screens.</p>
+<p>🧭 <b>Precise Audience Targeting</b></p>
+<p>Reach "iPhone 15 Pro users" instead of generic "mobile users" for luxury goods, gaming apps, and premium services (specific iPhone/iPad models available with Prebid.js and <a class="el" href="_pipeline_api__features__client_side_evidence.html">client-side evidence</a> via <a class="el" href="_device_detection__features__apple_detection.html">Apple model detection</a>).</p>
+<p>⚡ <b>Campaign Performance</b></p>
+<p>Reduce wasted spend on incompatible device targeting and improve conversion rates with device-aware strategies.</p>
 <hr/>
-<p><br />
-</p>
-<h2>Supported Platforms</h2>
-<ul>
-<li><b>Prebid.js</b> (client-side)</li>
-<li><b>Prebid Server – Java</b> (server-side)</li>
-<li><b>Prebid Server – Go</b> (server-side)</li>
+<h2>🛠️ Implementation Options</h2>
+<h3>🌐 Client-Side: Prebid.js RTD Module</h3>
+<p><b>Best for:</b> Publisher-controlled enrichment, maximum device properties</p><ul>
+<li>Runs in browser for most accurate device detection</li>
+<li>Full access to JavaScript-based Apple device identification</li>
+<li><b><a href="https://docs.prebid.org/dev-docs/modules/51DegreesRtdProvider.html">→ Prebid.js RTD Module Documentation</a></b></li>
 </ul>
-<p>Each implementation method is documented on prebid.org:</p>
-<ul>
-<li><a href="https://docs.prebid.org/dev-docs/modules/51DegreesRtdProvider.html" target="_blank">Prebid.js RTD Module Documentation</a></li>
-<li><a href="https://docs.prebid.org/prebid-server/pbs-modules/51degrees-device-detection.html" target="_blank">Prebid Server Java Module Documentation</a></li>
-<li><a href="https://docs.prebid.org/prebid-server/pbs-modules/51degrees-device-detection.html" target="_blank">Prebid Server Go Module Documentation</a></li>
+<h3>⚡ Server-Side: Prebid Server Modules</h3>
+<p><b>Best for:</b> Reduced latency, centralized management, privacy compliance</p>
+<p><b>Prebid Server - Java</b></p><ul>
+<li>Enterprise-grade performance and scalability</li>
+<li><b><a href="https://docs.prebid.org/prebid-server/pbs-modules/51degrees-device-detection.html">→ PBS Java Module Documentation</a></b></li>
 </ul>
-<p><br />
-</p>
+<p><b>Prebid Server - Go</b></p>
+<ul>
+<li>Lightweight, high-performance alternative</li>
+<li><b><a href="https://docs.prebid.org/prebid-server/pbs-modules/51degrees-device-detection.html">→ PBS Go Module Documentation</a></b></li>
+</ul>
 <hr/>
-<p><br />
-</p>
-<h2>Try It Out</h2>
-<p>To get started, you can:</p>
+<h2>🚀 Getting Started</h2>
+<h3>⚡ Quick Start (Cloud - Free)</h3>
+<ol type="1">
+<li><b><a href="https://configure.51degrees.com">Get your Resource Key</a></b> - Free cloud integration</li>
+<li><b>Choose your module</b> - Pick client-side or server-side integration</li>
+<li><b>Follow the setup guide</b> - Each Prebid module includes detailed examples</li>
+<li><b>Start earning more</b> - Watch your CPMs increase with enriched bid requests</li>
+</ol>
+<h3>🏢 Enterprise Setup (On-Premise)</h3>
 <ul>
-<li>Use our <a href="https://configure.51degrees.com">Configurator</a> to get a Resource Key.</li>
-<li>Try the <a href="https://github.com/51Degrees/device-detection-data">Lite data file</a> for on-premise use.</li>
-<li>Follow examples provided in each Prebid module guide.</li>
+<li><b><a href="https://github.com/51Degrees/device-detection-data">Download Lite data file</a></b> for testing</li>
+<li><b>Purchase enterprise license</b> for full device coverage and automatic updates</li>
+<li><b>Deploy locally</b> for maximum performance and data privacy</li>
 </ul>
-<p>Have questions? Reach out to <a href="#" onclick="location.href='mai'+'lto:'+'sup'+'po'+'rt@'+'51'+'deg'+'re'+'es.'+'co'+'m'; return false;">support@51degrees.com</a>. </p>
+<h3>📋 What Gets Added to Your Bid Requests</h3>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div><div class="c-code__line">  &quot;device&quot;: {</div><div class="c-code__line">    &quot;make&quot;: &quot;Apple&quot;,</div><div class="c-code__line">    &quot;model&quot;: &quot;iPhone 15 Pro&quot;, </div><div class="c-code__line">    &quot;os&quot;: &quot;iOS&quot;,</div><div class="c-code__line">    &quot;osv&quot;: &quot;17.1&quot;,</div><div class="c-code__line">    &quot;w&quot;: 393,</div><div class="c-code__line">    &quot;h&quot;: 852,</div><div class="c-code__line">    &quot;pxratio&quot;: 3.0,</div><div class="c-code__line">    &quot;ext&quot;: {</div><div class="c-code__line">      &quot;fiftyonedegrees_deviceId&quot;: &quot;17595-131070-140777-18092&quot;</div><div class="c-code__line">    }</div><div class="c-code__line">  }</div><div class="c-code__line">}</div></div><hr/>
+<h2>💬 Need Help?</h2>
+<ul>
+<li><b>Questions?</b> Email <a href="#" onclick="location.href='mai'+'lto:'+'sup'+'po'+'rt@'+'51'+'deg'+'re'+'es.'+'co'+'m'; return false;">support@51degrees.com</a></li>
+<li><b>Integration support?</b> Our team helps with custom implementations</li>
+<li><b>Performance questions?</b> We provide optimization guidance for high-volume scenarios </li>
+</ul>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->

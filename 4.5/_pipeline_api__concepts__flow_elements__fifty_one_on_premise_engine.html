@@ -77,7 +77,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__concepts__flow_elements
 <p><div class="dotgraph">
 </div>
 </p>
-<h2>Properties<a class="anchor" id="PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Properties"></a></h2>
+<h2>Properties <a href="#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Properties">#</a><a class="anchor" id="PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Properties"></a></h2>
 <p>The <b>properties</b> exposed by a <b>51Degrees engine</b> should not be seen differently from the <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html">element properties</a> or <a class="el" href="_pipeline_api__concepts__meta_data__aspect_properties.html">aspect properties</a> that are exposed by any other <b>engine</b>. They merely extend <a class="el" href="_pipeline_api__concepts__meta_data__aspect_properties.html">aspect property</a> to add <a class="el" href="_pipeline_api__concepts__meta_data__index.html">metadata</a> that is specific to the <b>properties</b> in 51Degrees data structures.</p>
 <p>The metadata contained in a <b>51Degrees aspect property</b> is everything in an <a class="el" href="_pipeline_api__concepts__meta_data__aspect_properties.html">aspect property</a> with the addition of:</p>
 <div class="g-table g-table--overflow"><table class="c-table">
@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__concepts__flow_elements
 <tr class="c-table__row">
 <td class="c-table__cell">Show Values  </td><td class="c-table__cell">Whether values of the <b>property</b> should be displayed in situations such as a page listing the <b>property's</b> values. Showing all the values can make a very long list.   </td></tr>
 </table>
-</div><h2>Values<a class="anchor" id="PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Values"></a></h2>
+</div><h2>Values <a href="#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Values">#</a><a class="anchor" id="PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Values"></a></h2>
 <p><b>Values</b> refer to all <b>values</b> which the associated <b>properties</b> can take in the current data file. The metadata for <b>values</b> of a <b>property</b> are exposed by an <b>engine</b>.</p>
 <p>Each <b>property</b> has a set of <b>values</b> that it can return. These <b>values</b> are exposed by a <b>51Degrees engine</b> and give more information on what the implications of a <b>value</b> are.</p>
 <p>The metadata contained in a <b>value</b> is:</p>
@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__concepts__flow_elements
 <tr class="c-table__row">
 <td class="c-table__cell">URL  </td><td class="c-table__cell">A URL where more information on the <b>value</b> can be found.   </td></tr>
 </table>
-</div><h2>Components<a class="anchor" id="PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components"></a></h2>
+</div><h2>Components <a href="#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components">#</a><a class="anchor" id="PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components"></a></h2>
 <p>A <b>component</b> defines a group of <b>properties</b> that are related.</p>
 <p>In a 51Degrees data set, a <b>property</b> only exists in a single <b>component</b>. For example, the <code>Browser Name</code> <b>property</b> is part of the <code>Software</code> <b>component</b>, whereas the <code>Model Name</code> <b>property</b> is part of the <code>Hardware</code> <b>component</b>.</p>
 <p>The metadata contained in a <b>component</b> is:</p>
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__concepts__flow_elements
 <tr class="c-table__row">
 <td class="c-table__cell">Properties  </td><td class="c-table__cell">The <b>properties</b> associated with this <b>component</b>.   </td></tr>
 </table>
-</div><h2>Profiles<a class="anchor" id="PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles"></a></h2>
+</div><h2>Profiles <a href="#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles">#</a><a class="anchor" id="PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles"></a></h2>
 <p>A <b>profile</b> defines a unique set of <b>values</b> for all <b>properties</b> of a single <b>component</b>.</p>
 <p>An <b>engine</b> will populate <a class="el" href="_pipeline_api__concepts__data__aspect_data.html">aspect data</a> with at least one <b>profile</b> for each <b>component</b> in the data file. This means that all properties should be able to present a value, even if that value is 'Unknown'.</p>
 <p>Internally, this is how <b>values</b> are stored in <a class="el" href="_pipeline_api__concepts__data__element_data.html">element data</a> once <a class="el" href="_pipeline_api__concepts__data__evidence.html">evidence</a> has been processed. However, these <b>profiles</b> are also exposed directly as <a class="el" href="_pipeline_api__concepts__meta_data__index.html">metadata</a> so all possible results can be interrogated. The metadata contained in a <b>profile</b> is:</p>

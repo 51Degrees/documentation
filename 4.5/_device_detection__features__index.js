@@ -1,7 +1,6 @@
 var _device_detection__features__index =
 [
     [ "Apple Model Detection", "_device_detection__features__apple_detection.html", null ],
-    [ "Results for Apple Devices", "_device_detection__features__apple_device_table.html", null ],
     [ "Concurrent Processing", "_device_detection__features__concurrent_processing.html", null ],
     [ "CSV Data File", "_device_detection__features__csv_data_file.html", null ],
     [ "False Positives", "_device_detection__features__false_positive_control.html", null ],

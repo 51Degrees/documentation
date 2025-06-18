@@ -69,18 +69,76 @@ $(document).ready(function(){initNavTree('_ip_intelligence__overview.html','');}
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
-<p>By providing information on the network and location of the device being used to access your website, <b>IP intelligence</b> enables you to provide your users with the optimal online experience.</p>
-<p>If you're ready to get going with <b>IP intelligence</b>, follow the <a class="el" href="_ip_intelligence__quickstart.html">quick start guide</a> to get you up and running with just a few clicks. If you'd like to know more about how our solution works and some of its benefits over those of others, then carry on reading below.</p>
-<p>See the <a href="https://github.com/51Degrees/specifications/blob/main/ip-intelligence-specification/README.md#">Specification</a> for more technical details.</p>
-<h1 class="g-docs__section-heading">How IP Intelligence Works</h1>
-<p>51Degrees IP intelligence solutions uses an IP address associated with a web request to identify the network which is being used, and the location the device is connecting from.</p>
-<p>The engine uses a patent applied for algorithm to produce and consume a data file specifically optimized for fast and small IP detection.</p>
-<p>Using an IP address as <a class="el" href="_pipeline_api__concepts__data__evidence.html">evidence</a>, the IP intelligence engine matches the IP ranges which contain the IP, and return the following results:</p><ul>
-<li><b>network</b> - information on the officially registered IP range, e.g. the registered owner,</li>
-<li><b>location</b> - information on the location in which the IP has been observed, e.g. the town.</li>
+<p><b>IP Intelligence</b> provides geolocation, ISP, connection type, and network information for any IP address to enhance user experience, security, and content delivery.</p>
+<p><b>→ <a class="el" href="_ip_intelligence__quickstart.html">Quick Start Guide</a> - Get running in minutes</b></p>
+<h2>How it works</h2>
+<p>51Degrees uses a patent-applied algorithm to identify IP network ranges and locations. The engine returns:</p><ul>
+<li><b>Network data:</b> ISP, organization, connection type</li>
+<li><b>Location data:</b> Country, region, city with probability weighting</li>
+<li><b>Ultra-low latency:</b> Sub-microsecond detection time with in-process deployment</li>
+<li><b>Performance-critical ready:</b> Ideal for real-time servers, edge/load balancers, and high-load scenarios</li>
+<li><b>Deployment flexibility:</b> In-process by default, with optional out-of-process or separate server deployment</li>
 </ul>
-<p>There are cases where there is more than one possible value. For this reason, the IP intelligence engine gives all the possible values, with a probability weighting. See <a class="el" href="_ip_intelligence__features__weighting.html">weighting feature</a> for more info.</p>
-<p>For general privacy, the latitude and longitude values returned by the engine are randomized. See <a class="el" href="_ip_intelligence__features__randomization.html">randomization feature</a> for more info. </p>
+<p>Features include <a class="el" href="_ip_intelligence__features__randomization.html">randomized coordinates</a> for privacy and <a class="el" href="_ip_intelligence__features__weighting.html">multiple result weighting</a> for accuracy.</p>
+<p>See technical specification for details.</p>
+<h1 class="g-docs__section-heading">Common Use Cases</h1>
+<h2>🎯 Targeted Advertising</h2>
+<p>Deliver location and device-appropriate advertising based on IP geolocation combined with device characteristics.</p>
+<h2>🌍 Content Personalization</h2>
+<p>Serve location-relevant content (news, language, pricing) while adapting to device capabilities and connection quality.</p>
+<h2>🚀 Performance Optimization</h2>
+<p>Anticipate network characteristics based on ISP and connection type to optimize content delivery and user experience.</p>
+<h2>🛡️ Fraud Detection &amp; Security</h2>
+<p>Detect click fraud, suspicious logins, and automated attacks by analyzing IP patterns, locations, and device combinations.</p>
+<h2>⚖️ Compliance &amp; Geo-blocking</h2>
+<p>Enforce geographical restrictions for gambling, content licensing, or data privacy regulations like GDPR.</p>
+<h2>📶 Connection Intelligence</h2>
+<p>Adapt interfaces and content quality based on connection type (cellular, corporate, broadband) for optimal performance.</p>
+<h2>📍 Reverse Geocoding</h2>
+<p>Convert coordinates to human-readable addresses using our <a class="el" href="_reverse_geocoding__overview.html">Reverse Geocoding service</a>.</p>
+<hr/>
+<h1 class="g-docs__section-heading">Advanced Features</h1>
+<h2>🌐 GeoLite2 Integration</h2>
+<p>Includes MaxMind's GeoLite2-City database for basic geolocation. See attribution requirements.</p>
+<h2>🔄 Device Detection Integration</h2>
+<p>Combine IP Intelligence with Device Detection for comprehensive user profiling and enhanced accuracy.</p>
+<hr/>
+<h1 class="g-docs__section-heading">Integration Examples</h1>
+<h2>Combined with Device Detection</h2>
+<div class="g-table g-table--overflow"><table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Use Case  </td><td class="c-table__cell">IP Intelligence  </td><td class="c-table__cell">Device Detection  </td><td class="c-table__cell">Enhanced Outcome   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><b>Responsive Design</b>  </td><td class="c-table__cell">Mobile carrier detected  </td><td class="c-table__cell">Desktop User-Agent  </td><td class="c-table__cell">Optimize for mobile despite desktop UA   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><b>Content Delivery</b>  </td><td class="c-table__cell">Geographic location  </td><td class="c-table__cell">Device capabilities  </td><td class="c-table__cell">Select optimal CDN endpoint and media format   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><b>Advertising</b>  </td><td class="c-table__cell">Location + ISP data  </td><td class="c-table__cell">Device properties  </td><td class="c-table__cell">Location-relevant ads with device-appropriate formats   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><b>Fraud Detection</b>  </td><td class="c-table__cell">IP risk assessment  </td><td class="c-table__cell">Device fingerprint  </td><td class="c-table__cell">Identify suspicious device/location combinations   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><b>Analytics</b>  </td><td class="c-table__cell">Connection type + location  </td><td class="c-table__cell">Device capabilities  </td><td class="c-table__cell">Enhanced user segmentation and behavior analysis   </td></tr>
+</table>
+</div><hr/>
+<h1 class="g-docs__section-heading">Examples and Getting Started</h1>
+<h2>Quick Start</h2>
+<ul>
+<li><b><a class="el" href="_ip_intelligence__quickstart.html">Quick Start Guide</a></b> - Get up and running in minutes</li>
+</ul>
+<h2>Examples</h2>
+<ul>
+<li><b><a class="el" href="_ip_intelligence__examples__index.html">Examples Index</a></b> - Browse all available examples</li>
+<li><b><a class="el" href="_ip_intelligence__examples__getting_started__console__index.html">Console Examples</a></b> - Command-line examples</li>
+<li><b><a class="el" href="_ip_intelligence__examples__getting_started__web__index.html">Web Integration Examples</a></b> - Web integration examples</li>
+</ul>
+<hr/>
+<h1 class="g-docs__section-heading">Migration &amp; Upgrading</h1>
+<p><b>Already using IP Intelligence?</b> We make switching easy:</p>
+<ul>
+<li><b>51Degrees V3 users:</b> Migration guides available</li>
+<li><b>Other providers:</b> Contact our team for migration assistance</li>
+</ul>
+<p>View all migration guides </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->

@@ -68,11 +68,10 @@ $(document).ready(function(){initNavTree('_product_summaries__tested_versions.ht
 <h2 class="g-docs__page-title">Tested Versions </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><p>Our code base operates on the following CPUs:</p>
+<section class="g-docs__section"><p>Our code base has been tested on the following CPU architectures:</p>
 <ul>
-<li>ARM</li>
-<li>M1, M2</li>
-<li>x64</li>
+<li>ARM and ARM64 (including AWS Graviton and Apple Silicon)</li>
+<li>x64 (aka x86_64 or AMD64)</li>
 <li>x86</li>
 </ul>
 <p>And the following operating systems:</p>
@@ -92,7 +91,12 @@ $(document).ready(function(){initNavTree('_product_summaries__tested_versions.ht
 </ul>
 <p>These lists are not exhaustive, so please <a href="https://51degrees.com/contact-us">contact us</a> if you don't see your environment listed.</p>
 <p>Of the operating systems, we target from the latest versions to the older versions that are still maintained by the vendor. For programming languages, we target the LTS (Long Term Support) versions.</p>
-<p>We automatically test and distribute packages using a limited set of configurations.</p>
+<h2>Building from source</h2>
+<p>We automatically test and distribute binary packages for a limited list of platforms and architectures. In case the provided binary package does not run on your environment - you have to build the library from source for your specific platform and architecture. All 51Degrees language libraries provide instructions on building the library from source. F.e. see:</p>
+<ul>
+<li><a href="https://github.com/51Degrees/device-detection-dotnet?tab=readme-ov-file#build-from-source">Building Device Detection .NET library from source</a></li>
+<li><a href="https://github.com/51Degrees/device-detection-dotnet?tab=readme-ov-file#build-from-source">Building Device Detection Java library from source</a></li>
+</ul>
 <h1 class="g-docs__section-heading">Automation</h1>
 <p>The tests cover a wide array of scenarios and are available to view in our repositories on <a href="https://github.com/51Degrees">GitHub</a>. In general, we apply the following guidelines when deciding which platforms and versions to test against:</p><ul>
 <li>We use GitHub Actions with hosted runners, so we test against platforms that GitHub has <a href="https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources">hosted runners</a> for.</li>

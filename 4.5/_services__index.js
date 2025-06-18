@@ -1,6 +1,6 @@
 var _services__index =
 [
-    [ "Configurator", "_services__configurator.html", null ],
-    [ "Distributor", "_services__distributor.html", null ],
-    [ "Cloud", null, "_services__cloud__index" ]
+    [ "Configurator (Cloud)", "_services__configurator.html", null ],
+    [ "Distributor (On-Premise)", "_services__distributor.html", null ],
+    [ "Cloud Service", null, "_services__cloud__index" ]
 ];
