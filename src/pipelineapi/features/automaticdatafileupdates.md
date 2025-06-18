@@ -102,9 +102,7 @@ Unnecessary downloads can be prevented by providing the download server with an 
 is enabled (which it is by default for most @onpremiseengines) the `If-Modified-Since` header will be set to the date at which the
 current @datafile was last modified. If there is not a newer @datafile on the server then the service will not attempt to download a file.
 
-@anchor Large_Clusters
-[#](@ref Large_Clusters) 
-# Recommendations for large clusters
+# Recommendations for large clusters @anchor Large_Clusters
 
 The @Distributor API is limited in the number of requests it can 
 service per day. This is enforced by each License Key being limited to a certain number of 

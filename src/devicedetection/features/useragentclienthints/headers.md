@@ -27,9 +27,7 @@ When using the Pipeline web integration, most languages will automatically set t
 headers for you as well. If not using a web integration, or your language does not support it, 
 you will need to set the response headers manually.
 
-@anchor UACH_Headers_Cloud
-[#](@ref UACH_Headers_Cloud)
-# Cloud
+# Cloud @anchor UACH_Headers_Cloud
 
 Make sure that one or more of the following properties are included with your 
 [Resource Key](@ref Services_Configurator):
@@ -69,9 +67,7 @@ Accept-CH: sec-ch-ua,sec-ch-ua-mobile,sec-ch-ua-full-version-list,sec-ch-ua-plat
 Permissions-Policy: ch-ua-full-version-list=(self "https://cloud.51degrees.com"), ch-ua-platform=(self "https://cloud.51degrees.com"), ch-ua-platform-version=(self "https://cloud.51degrees.com"), ch-ua-model=(self "https://cloud.51degrees.com") 
 ```
 
-@anchor UACH_Headers_OnPrem
-[#](@ref UACH_Headers_OnPrem)
-# On-Premise Pipeline API
+# On-Premise Pipeline API @anchor UACH_Headers_OnPrem
 
 If you are using our Pipeline API on your server (either cloud or on-premise) then you'll
 need a way to set the `Accept-CH` header in the response to the client.
@@ -82,9 +78,7 @@ by default for on-premise).
 If you're unsure which ones are relevant for you, see the 
 [required values](@ref DeviceDetection_Features_UACH_RequiredUachHeaders) page.
 
-@anchor UACH_Http_Headers_Integrated
-[#](@ref UACH_Http_Headers_Integrated)
-## Integrated
+## Integrated @anchor UACH_Http_Headers_Integrated
 
 If you are using our [web integration](@ref PipelineApi_Features_WebIntegration), then this will take 
 care of setting the header automatically.
@@ -92,9 +86,7 @@ care of setting the header automatically.
 This uses an internal element called `SetHeadersElement` to set the values of response headers
 based on any `SetHeader*` properties that are present. 
 
-@anchor UACH_Http_Headers_NonIntegrated
-[#](@ref UACH_Http_Headers_NonIntegrated)
-## Non-integrated
+## Non-integrated @anchor UACH_Http_Headers_NonIntegrated
 
 If you don't want to, or can't, use the web integration as described above, then you'll need to 
 manually set the `Accept-CH` header.
@@ -116,9 +108,7 @@ The `Accept-CH` header should look something like this in the HTML response:
 ```
 Accept-CH: sec-ch-ua,sec-ch-ua-mobile,sec-ch-ua-full-version-list,sec-ch-ua-platform,sec-ch-ua-platform-version,sec-ch-ua-model 
 ```
-@anchor UACH_Http_Headers_Critical
-[#](@ref UACH_Http_Headers_Critical)
-## Critical-CH
+## Critical-CH @anchor UACH_Http_Headers_Critical
 
 `Critical-CH` (as described by [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Critical-CH)) is an experimental Client Hint 
 response header used along with the `Accept-CH` header. It specifies that the accepted Client Hints are also critical Client Hints,
@@ -140,9 +130,7 @@ Critical-CH: sec-ch-ua-arch, sec-ch-ua-full-version, sec-ch-ua-full-version-list
 Accept-CH:  sec-ch-ua-arch, sec-ch-ua-full-version, sec-ch-ua-full-version-list, sec-ch-ua-model, sec-ch-ua-platform, sec-ch-ua-platform-version
 ```
 
-@anchor UACH_Http_Headers_BtoB
-[#](@ref UACH_Http_Headers_BtoB)
-## B2B Service Supplier
+## B2B Service Supplier @anchor UACH_Http_Headers_BtoB
 
 If your service would be classed as a third-party in the 'browser to web server' communication, 
 then you'll also need to arrange for your clients to let their users know that it's okay to

@@ -26,9 +26,7 @@ Please refer to the @ref PipelineApi_Examples_UsageSharing section to check if *
 
 If you have any questions on how we use the data you share with us via usage sharing, please refer to our blog [Usage sharing: how do we use your data](https://51degrees.com/blog/usage-sharing-how-do-we-use-your-data).
 
-@anchor Internals
-[#](@ref Internals)	
-# Internals
+# Internals @anchor Internals
 
 To minimize any overhead of this feature, received requests are grouped and sent in batches,
 rather than sending each request individually.
@@ -42,9 +40,7 @@ where the 'main' thread adds the evidence to a queue while a background thread t
 transforms them into the appropriate format, adds them into a message, and sends the message when ready.
 This is done to avoid blocking the @Pipeline process thread.
 
-@anchor RepeatEvidence
-[#](@ref RepeatEvidence)
-## Repeated evidence 
+## Repeated evidence @anchor RepeatEvidence 
 
 To avoid situations where the same @evidence is sent multiple times (for example, a single user
 visiting multiple pages on a website), we keep track of the @evidence that has been shared over
@@ -211,9 +207,7 @@ The maximum time period which @evidence is stored for the purpose of filtering
 
 The target destination for **usage sharing** data. The default is https://devices-v4.51degrees.com/new.ashx. 
 
-@anchor Low_Level_Usage_Sharing
-[#](@ref Low_Level_Usage_Sharing)	
-# Usage Sharing for low-level APIs
+# Usage Sharing for low-level APIs @anchor Low_Level_Usage_Sharing
 
 The low-level device detection APIs such as C, Nginx, and Varnish do not support **usage sharing** 
 out of the box. However, some customers using these technologies still want to share usage with 

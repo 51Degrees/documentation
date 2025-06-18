@@ -36,9 +36,7 @@ We concatenate the various UA-CH headers that are needed to identify a component
 ‘pseudo-headers’. These are then used internally to perform the detection. 
 
 
-@anchor UACH_Http_Headers_Pseudoheaders
-[#](@ref UACH_Http_Headers_Pseudoheaders)
-# Pseudo-headers
+# Pseudo-headers @anchor UACH_Http_Headers_Pseudoheaders
 
 The table below shows which pseudo-headers are required in order to detect each component. These are the minimum pseudo-headers we use to detect the component; however, we recommend providing all UA-CH values for the best detection. Additionally, this table is only applicable for Chromium-based browsers; to detect non-Chromium browsers, you will need to continue supplying User-Agent information.
 
