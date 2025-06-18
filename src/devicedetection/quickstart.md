@@ -121,15 +121,6 @@ To get started with C++ device detection on-premise:
  * [Cloud Example](@ref DeviceDetection_Examples_GettingStarted_Console_Cloud) - Negligible processing and memory overhead but slower due to Internet latency.
  * [On-Premise Example](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise) - Device detection processing is performed locally using a data file that must be kept updated.
 4. (optional) Configure [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) to get better results. Particularly for iPhone and iPad.
-
-### ASP.NET integration.
-
-1. Install the [FiftyOne.DeviceDetection](https://www.nuget.org/packages/FiftyOne.DeviceDetection) and [FiftyOne.Pipeline.Web](https://www.nuget.org/packages/FiftyOne.Pipeline.Web) packages via Nuget.
-2. Follow the [web example](@ref PipelineApi_Examples_WebIntegration) to add the @Pipeline middleware.
-3. Configure the pipeline using the configuration from the appropriate example from the options below:
- * [Cloud Example](@ref DeviceDetection_Examples_GettingStarted_Console_Cloud) - Negligible processing and memory overhead but slower due to Internet latency.
- * [On-Premise Example](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise) - Device detection processing is performed locally using a data file that must be kept updated.
-4. (optional) Configure [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) to get better results. Particularly for iPhone and iPad.
 @endsnippet
 @startsnippet{java}
 ### Standalone pipeline / off-line processing
