@@ -15,7 +15,7 @@ See details below.
 Otherwise, if you are using one of our web integrations, you can use the 'Integrated' 
 approach described below. If not, you'll need to use the 'non-integrated' approach instead.
 
-# Cloud @anchor UACH_Javscript_Cloud
+# Cloud <a href="#UACH_Javscript_Cloud">#</a> @anchor UACH_Javscript_Cloud
 
 Firstly, ensure that the `JavascriptGetHighEntropyValues` property is selected when 
 you create your Resource Key. This contains the JavaScript snippet to get the values from 
@@ -28,7 +28,7 @@ If you are calling our cloud service via our Pipeline API, hosted on your server
 also need to get this snippet to the client device. See the 'on-premise' section below for
 the two approaches to doing this.
 
-# On-Premise Pipeline API @anchor UACH_Javscript_OnPrem
+# On-Premise Pipeline API <a href="#UACH_Javscript_OnPrem">#</a> @anchor UACH_Javscript_OnPrem
 
 If you are using our Pipeline API on your server (either cloud or on-premise) then you'll
 need a way to get the necessary JavaScript to run on the client and get the values back
@@ -37,7 +37,7 @@ to your server.
 In either case, you need to ensure the `JavascriptGetHighEntropyValues` property is included 
 in the results (all properties are included by default for on-premise).
 
-## Integrated @anchor UACH_Javascript_Integrated
+## Integrated <a href="#UACH_Javascript_Integrated">#</a> @anchor UACH_Javascript_Integrated
 
 If you are using our [web integration](@ref PipelineApi_Features_WebIntegration) with 
 [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) enabled, then this will take 
@@ -67,7 +67,7 @@ For example:
 },
 ```
 
-## Non-integrated @anchor UACH_Javascript_NonIntegrated
+## Non-integrated <a href="#UACH_Javascript_NonIntegrated">#</a> @anchor UACH_Javascript_NonIntegrated
 
 If you don't want to, or can't, use the web integrations as described above, then you'll need to 
 handle the steps of getting the values from the JavaScript API, transferring those to the server

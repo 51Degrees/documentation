@@ -30,7 +30,7 @@ The console examples pass UA-CH values directly to the API, so will work in any 
 The web examples run as a simple web page, so you will need a browser that supports UA-CH such 
 as Chrome, Edge or other Chromium-based browsers in order to try them out.
 
-# Support for detection from Client Hints @anchor UACH_Support
+# Support for detection from Client Hints <a href="#UACH_Support">#</a> @anchor UACH_Support
 
 The 51Degrees Device Detection API has provided support for detection 
 based on one of the Client Hints headers (Sec-CH-UA) in data files 
@@ -41,7 +41,7 @@ as there is [no other way to do so](https://docs.microsoft.com/en-us/microsoft-e
 
 Support for getting values using the UA-CH [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API) was added in .NET API version 4.4.19 and data files from 6th March 2023. (Dates for availability in other APIs TBC)
 
-# Guidance @anchor UACH_Guidance
+# Guidance <a href="#UACH_Guidance">#</a> @anchor UACH_Guidance
 
 UA-CH has several different mechanisms for accessing these values. This section explains our 
 recommendations for different use-cases.
@@ -56,7 +56,7 @@ recommendations for different use-cases.
   - For best performance, set `Delegate-CH` meta http-equiv tag or `Permissions-Policy` and `Accept-CH` response headers as described in the 'Cloud' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers)
   - If making the changes for the option above is not feasible, you can simply ensure your Resource Key includes the `JavascriptGetHighEntropyValues` property. This will gather the values and send them to our cloud service without any other changes required.
 
-# Background reading @anchor UACH_Background 
+# Background reading <a href="#UACH_Background">#</a> @anchor UACH_Background 
 
 The authors of the proposal have created an [article](https://web.dev/user-agent-client-hints) 
 covering how UA-CH works.
