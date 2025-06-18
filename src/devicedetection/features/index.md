@@ -2,8 +2,6 @@
 
 @subpage DeviceDetection_Features_AppleDetection
 
-@subpage DeviceDetection_Features_AppleDeviceTable
-
 @subpage DeviceDetection_Features_ConcurrentProcessing
 
 @subpage DeviceDetection_Features_CsvDataFile
