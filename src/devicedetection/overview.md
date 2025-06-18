@@ -26,10 +26,10 @@ Detect screen size, device type, and input methods to serve optimal layouts and 
 Optimize images, reduce content, and adapt features based on device capabilities and network conditions to improve loading times.
 
 ## 📊 Analytics & Business Intelligence
-Detailed device, OS, and browser analytics to understand user behavior patterns and make data-driven decisions.
+Detailed device, OS, and browser analytics to understand user behavior patterns and make data-driven decisions. Enhance programmatic advertising analytics with [Prebid integration](@ref DeviceDetection_OtherIntegrations_Prebid).
 
 ## 🎯 Advertising & Monetization
-Device-specific ad formats, targeting capabilities, and placement optimization to maximize ad revenue.
+Device-specific ad formats, targeting capabilities, and placement optimization to maximize ad revenue. Boost programmatic advertising with [Prebid integration](@ref DeviceDetection_OtherIntegrations_Prebid) for enriched bid requests.
 
 ## 🛡️ Security & Fraud Detection
 Device fingerprinting and behavioral analysis to identify suspicious traffic, bots, and potential security threats.
