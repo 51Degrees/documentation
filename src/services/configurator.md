@@ -1,4 +1,4 @@
-@page Services_Configurator Configurator
+@page Services_Configurator Configurator (Cloud)
 
 # Obtaining a Resource Key
 
