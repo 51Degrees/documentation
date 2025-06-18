@@ -1,6 +1,6 @@
-@page DeviceDetection_WhatsNewV45 Version 4.5 – Release Notes
+@page DeviceDetection_WhatsNewV45 What's New in Version 4.5 (Pre-release)
 
-# Device Detection Version 4.5 – Release Notes
+# What's New in Version 4.5 (Pre-release) of Device Detection
 
 ## Performance
 
