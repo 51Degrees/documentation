@@ -53,7 +53,12 @@ When the hardware profile ID is returned from the client,
 we swap it into the final device ID on the server - replacing
 the generic Apple group profile with a more accurate one.
 
-## Detection Results for Apple Devices @anchor detection-results
+## More information
+
+- [Web Integration Example](@ref DeviceDetection_Examples_GettingStarted_Web_Index): See how to implement it with code samples
+- [51Degrees Blog - Apple](https://51degrees.com/resources/blogs/tag/Apple): Technical deep dives, case studies, and news we've produced relating to Apple
+
+## Detection Results for Apple Devices <a href="#detection-results">#</a> @anchor detection-results
 
 Apple has continually worked to homogenize any information that a website can get about a device, through JavaScript or any other means. For more information, take a look at our [Upgrade Apple Device](https://51degrees.com/blog/upgrade-apple-device-detection) blog. 
 
@@ -65,7 +70,7 @@ As we receive more data on Apple devices, this table will change. We will update
 
 For optimized viewing of the table, it is recommended you zoom out within your browser.
 
-### iPhones using browser in Mobile mode and in standard display mode @anchor iphones_mobile_standard_mode
+### iPhones using browser in Mobile mode and in standard display mode <a href="#iphones_mobile_standard_mode">#</a> @anchor iphones_mobile_standard_mode
 
 | Device               | Results                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Percentage                                             |
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
@@ -115,7 +120,7 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 | iPhone 4             | iPhone 4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | 100.00%                                                |
 | iPhone 3GS           | iPhone 3GS                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | 100.00%                                                |
 
-### iPhones using browser in Mobile mode and in zoomed display mode @anchor iphones_mobile_zoom_mode
+### iPhones using browser in Mobile mode and in zoomed display mode <a href="#iphones_mobile_zoom_mode">#</a> @anchor iphones_mobile_zoom_mode
 
 This table is for display zoom, an iPhone accessibility feature. It is not the normal zoom operation in browsers. It is enabled in Settings > Display & Brightness > Display Zoom > Zoomed.
 
@@ -160,7 +165,7 @@ This table is for display zoom, an iPhone accessibility feature. It is not the n
 | iPhone 6 Plus        | iPhone 5s<br/> iPhone 5                                                                                                                                                                                                                                                                                                  | 51.56%<br/> 48.44%                             |
 | iPhone 6             | iPhone 5s<br/> iPhone 5                                                                                                                                                                                                                                                                                                  | 51.00%<br/> 49.00%                             |
 
-### iPhones using browser in Desktop mode @anchor iphones_desktop_mode
+### iPhones using browser in Desktop mode <a href="#iphones_desktop_mode">#</a> @anchor iphones_desktop_mode
 
 | Device               | Results                                                                                                                                                                                                                                      | Percentage                       |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|
@@ -200,8 +205,3 @@ This table is for display zoom, an iPhone accessibility feature. It is not the n
 | iPhone 7             | iPhone 11, iPhone XR<br/> iPhone 6<br/> iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14<br/> iPhone 5                                                                                                                          | 60.00%<br/> 25.00%<br/> 12.50%<br/> 2.50% |
 | iPhone 6s Plus       | iPhone 5s<br/> iPhone 5c<br/> iPhone 5                                                                                                                                                                                                       | 33.33%<br/> 33.33%<br/> 33.33%   |
 | iPhone 6 Plus        | iPhone 5s<br/> iPhone 5c<br/> iPhone 5                                                                                                                                                                                                       | 33.33%<br/> 33.33%<br/> 33.33%   |
-
-## More information
-
-- [Web Integration Example](@ref DeviceDetection_Examples_GettingStarted_Web_Index): See how to implement it with code samples
-- [51Degrees Blog - Apple](https://51degrees.com/resources/blogs/tag/Apple): Technical deep dives, case studies, and news we've produced relating to Apple
