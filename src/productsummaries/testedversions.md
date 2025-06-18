@@ -1,10 +1,9 @@
 @page ProductSummaries_TestedVersions Tested Versions
 
-Our code base operates on the following CPUs:
+Our code base has been tested on the following CPU architectures:
 
-- ARM
-- M1, M2
-- x64
+- ARM and ARM64 (including AWS Graviton and Apple Silicon)
+- x64 (aka x86_64 or AMD64)
 - x86
 
 And the following operating systems:
@@ -24,7 +23,11 @@ These lists are not exhaustive, so please [contact us](https://51degrees.com/con
 
 Of the operating systems, we target from the latest versions to the older versions that are still maintained by the vendor. For programming languages, we target the LTS (Long Term Support) versions.
 
-We automatically test and distribute packages using a limited set of configurations.
+## Building from source
+We automatically test and distribute binary packages for a limited list of platforms and architectures.  In case the provided binary package does not run on your environment - you have to build the library from source for your specific platform and architecture. All 51Degrees language libraries provide instructions on building the library from source.  F.e. see:
+
+- [Building Device Detection .NET library from source](https://github.com/51Degrees/device-detection-dotnet?tab=readme-ov-file#build-from-source)
+- [Building Device Detection Java library from source](https://github.com/51Degrees/device-detection-dotnet?tab=readme-ov-file#build-from-source)
 
 # Automation
 
