@@ -12,6 +12,8 @@ for more technical details.
 
 # How device detection works
 
+At the core 51Degrees uses a patented [Hash Algorithm](@ref DeviceDetection_Hash) to do device detection.
+
 Primarily, 51Degrees device detection solutions focus on the User-Agent HTTP header to identify a device. However, over time
 we have introduced greater complexity which does not rely solely on the User-Agent and enables us to return improved results for the following use cases:
 
