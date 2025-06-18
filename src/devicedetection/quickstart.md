@@ -2,27 +2,70 @@
 
 # Getting Started with Device Detection
 
-51Degrees Device Detection is available in two models:
+51Degrees Device Detection offers two integration scenarios, each with distinct trade-offs to match your requirements:
 
-### Cloud Service provided by 51Degrees
+## 🚀 Quick Start: Choose Your Integration
 
-* Easiest to set up.
-* No data files required.
-* Detection is performed on our infrastructure.
-* Lower CPU/RAM use, but network latency applies.
-* Requires a [Resource Key](@ref Services_Configurator) for authentication.
+### ☁️ Cloud Service <a href="#cloud-integration">#</a> @anchor cloud-integration
+**Best for:** Rapid deployment, minimal infrastructure, cost-effective scaling
 
-### On-Premise Deployment
+✅ **Pros:**
+- **Zero setup** - No data files or local infrastructure required
+- **Always updated** - Latest device data without manual updates
+- **Minimal resources** - Negligible CPU/RAM usage on your servers
+- **Pay-as-you-go** - Cost scales with usage
+- **Global availability** - Multiple data centers for low latency
 
-* Detection runs locally using a downloaded data file.
-* Requires some initial setup but offers higher performance and privacy.
-* Ideal for high-throughput environments or offline use.
-* Requires a [License Key](https://51degrees.com/pricing).
+⚠️ **Considerations:**
+- **Network dependency** - Requires internet connectivity and handles latency (typically 10-50ms)
+- **External service** - Detection processing occurs on 51Degrees infrastructure
 
-Most programming languages and environments are supported by both models. You can find Cloud and On-Premise examples for each in the dropdown below.
+**Authentication:** Requires a [Resource Key](@ref Services_Configurator)
 
-For even more accurate results (e.g. resolving specific iPhone models),
-consider enabling [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence).
+---
+
+### 🏢 On-Premise Deployment <a href="#on-premise-integration">#</a> @anchor on-premise-integration
+**Best for:** High-performance, privacy-sensitive, or offline environments
+
+✅ **Pros:**
+- **Ultra-low latency** - Sub-microsecond detection time with in-process deployment
+- **Complete privacy** - All processing stays within your infrastructure
+- **High throughput** - Over 1 million detections per second per CPU core
+- **Offline capable** - No internet dependency for detection
+- **Full control** - Customize update schedules and deployment architecture
+
+⚠️ **Considerations:**
+- **Setup required** - Initial configuration and data file management
+- **Resource usage** - Uses local CPU/RAM (optimized but measurable)
+- **Update management** - Periodic data file updates needed for latest devices ([automatic updates available](@ref PipelineApi_Features_AutomaticDatafileUpdates))
+
+**Licensing:** Requires a [License Key](https://51degrees.com/pricing)
+
+---
+
+## 🎯 Which Integration Should I Choose?
+
+| **Use Case** | **Recommended** | **Why** |
+|--------------|-----------------|----------|
+| **Prototyping & Development** | Cloud | Fastest setup, no infrastructure overhead |
+| **Low-volume Production** | Cloud | Cost-effective, automatic updates |
+| **High-traffic Web Servers** | On-Premise | Maximum performance, cost efficiency at scale |
+| **Real-time Applications** | On-Premise | Sub-microsecond latency requirements |
+| **Edge/CDN Integration** | On-Premise | Offline capability, minimal latency |
+| **Privacy-sensitive Applications** | On-Premise | Data never leaves your infrastructure |
+| **Variable Traffic Patterns** | Cloud | Pay-as-you-go scaling |
+
+---
+
+## 📱 Enhanced Accuracy Options
+
+For even more accurate results (**especially for identifying specific iPhone and iPad models** ❗), consider enabling [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) collection.
+
+---
+
+## 💻 Language-Specific Integration
+
+Most programming languages support both integration models. Select your language below for detailed setup instructions:
 
 @startsnippets
 @showsnippet{c,C}
