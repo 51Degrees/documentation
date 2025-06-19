@@ -73,8 +73,7 @@ Device Detection + IP Intelligence = **Comprehensive risk assessment**
 
 ### 🎯 **Programmatic Advertising**
 
-Device Detection + IP Intelligence + [Prebid Integration](@ref DeviceDetection_OtherIntegrations_Prebid) = **Higher CPMs
-**  
+Device Detection + IP Intelligence + [Prebid Integration](@ref DeviceDetection_OtherIntegrations_Prebid) = **Higher CPMs**
 *Enrich bid requests with precise device and location data for better targeting*
 
 ### 📊 **Advanced Analytics**
