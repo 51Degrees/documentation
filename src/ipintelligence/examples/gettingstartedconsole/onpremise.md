@@ -14,8 +14,8 @@ You can mix and match elements from different examples in order to match your us
 | On-Premise | Configure in code   | Configure from file |
 
 @startsnippets
-@grabexample{ip-intelligence-cxx,_hash_2_getting_started_8c,C}
-@grabexample{ip-intelligence-cxx,_hash_2_getting_started_8cpp,C++}
+@grabexample{ip-intelligence-cxx,_ip_intelligence_2_getting_started_8c,C}
+@grabexample{ip-intelligence-cxx,_ip_intelligence_2_getting_started_8cpp,C++}
 @grabexample{ip-intelligence-dotnet,_on_premise_2_getting_started-_console_2_program_8cs,C#}
 @grabbedexample
 @endsnippets
