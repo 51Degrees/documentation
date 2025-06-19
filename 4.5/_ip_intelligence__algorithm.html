@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>51Degrees API Documentation: IP Intelligence</title>
+<title>51Degrees API Documentation: IP Intelligence Algorithm</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,23 +56,50 @@
 	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
   <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('_ip_intelligence__index.html','');});
+$(document).ready(function(){initNavTree('_ip_intelligence__algorithm.html','');});
 /* @license-end */
 </script>
 <div id="doc-content" class="g-docs__content">
 <div class="PageDoc"><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__algorithm.html">IP Intelligence Algorithm</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">IP Intelligence </h2></div><!--header-->
+<h2 class="g-docs__page-title">IP Intelligence Algorithm </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><p><a class="el" href="_ip_intelligence__overview.html">IP Intelligence Overview</a></p>
-<p><a class="el" href="_ip_intelligence__quickstart.html">IP Intelligence Quick Start</a></p>
-<p><a class="el" href="_ip_intelligence__algorithm.html">IP Intelligence Algorithm</a></p>
-<p><a class="el" href="_ip_intelligence__features__index.html">IP Intelligence Features</a></p>
-<p><a class="el" href="_ip_intelligence__examples__index.html">IP Intelligence Examples</a> </p>
+<section class="g-docs__section"><h1 class="g-docs__section-heading">IP Intelligence Algorithm</h1>
+<p>51Degrees IP Intelligence uses a proprietary tree-based algorithm for IP address geolocation and network identification, protected under <b><a href="https://www.ipo.gov.uk/p-ipsum/Case/ApplicationNumber/GB2506025.2">UK Patent Application No. 2506025.2</a></b>.</p>
+<h2>Core Algorithm Design</h2>
+<h3>Tree Forest Data Structure</h3>
+<p>The algorithm uses a <b>forest of trees</b> to efficiently evaluate IP addresses:</p>
+<ul>
+<li><b>Nodes</b>: Fixed-width records with bit-packed data containing value, span index, and navigation flags</li>
+<li><b>Spans</b>: Define IP address ranges with variable bit lengths supporting both IPv4 (32-bit) and IPv6 (128-bit)</li>
+<li><b>Clusters</b>: Group nodes for efficient traversal with 256 span index mappings enabling binary search optimization</li>
+</ul>
+<h3>Evaluation Process</h3>
+<p>The algorithm performs <b>bit-by-bit traversal</b> of IP addresses:</p>
+<ol type="1">
+<li><b>Initialization</b>: Position cursor at graph root entry</li>
+<li><b>Bit processing</b>: Traverse IP address bits from most to least significant</li>
+<li><b>Span comparison</b>: Compare current IP bits against span limits</li>
+<li><b>Navigation</b>: Select path based on comparison results (less than, equal, between, greater than)</li>
+<li><b>Termination</b>: Continue until leaf node found or IP bits exhausted</li>
+</ol>
+<h3>Performance Optimizations</h3>
+<ul>
+<li><b>Binary search</b> on clustered nodes for logarithmic complexity</li>
+<li><b>Bit manipulation</b> with efficient packed data structures</li>
+<li><b>Lazy loading</b> of spans and clusters to minimize memory usage</li>
+<li><b>Memory-efficient</b> collections with proper cleanup</li>
+</ul>
+<h2>Technical Characteristics</h2>
+<ul>
+<li><b>Variable-length spans</b> for optimal space utilization</li>
+<li><b>Comprehensive tracing</b> system for debugging and validation</li>
+<li><b>Support for both file and memory-based data sources</b> </li>
+</ul>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
