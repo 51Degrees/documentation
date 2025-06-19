@@ -20,7 +20,7 @@ user experience, security, and content delivery.
 Features include [randomized coordinates](@ref IpIntelligence_Features_Randomization) for privacy
 and [multiple result weighting](@ref IpIntelligence_Features_Weighting) for accuracy.
 
-See [technical specification](https://github.com/51Degrees/specifications/blob/main/ip-intelligence-specification/README.md)
+See [technical specification](https://github.com/51Degrees/specifications/blob/main/ip-intelligence-specification/README%2Emd)
 for details.
 
 # Common Use Cases

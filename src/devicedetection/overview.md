@@ -20,7 +20,7 @@ headers. Additional techniques handle modern challenges:
 * **Transcoding browsers:** Detection from alternative headers when User-Agent is modified
 * **Enhanced accuracy:** Client-side evidence collection for detailed device identification
 
-See [technical specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README.md)
+See [technical specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd)
 and [features overview](@ref DeviceDetection_Features_Index) for details.
 
 # Common Use Cases
@@ -106,7 +106,7 @@ At its core, 51Degrees uses a patented [Hash Algorithm](@ref DeviceDetection_Has
 - **Deployment flexibility:** In-process by default, with optional out-of-process or separate server deployment
 
 For complete technical details, see
-our [specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README.md).
+our [specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd).
 
 ---
 
