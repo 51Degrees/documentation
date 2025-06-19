@@ -75,11 +75,11 @@ $(document).ready(function(){initNavTree('_device_detection__overview.html','');
 <p>51Degrees uses a patented <a class="el" href="_device_detection__hash.html">Hash Algorithm</a> primarily analyzing User-Agent and other HTTP headers. Additional techniques handle modern challenges:</p>
 <ul>
 <li><b>Apple devices:</b> <a class="el" href="_device_detection__features__apple_detection.html">JavaScript-based detection</a> overcomes obfuscated User-Agents</li>
-<li><b>Modern browsers:</b> <a class="el" href="_device_detection__features__u_a_c_h__overview.html">User-Agent Client Hints</a> support for Chromium browsers</li>
+<li><b>Modern browsers:</b> <a class="el" href="_device_detection__features__u_a_c_h__overview.html">User-Agent Client Hints</a> support for Chromium-based browsers for precise detection and to overcome Google's Android User-Agent reduction</li>
 <li><b>Transcoding browsers:</b> Detection from alternative headers when User-Agent is modified</li>
 <li><b>Enhanced accuracy:</b> Client-side evidence collection for detailed device identification</li>
 </ul>
-<p>See technical specification and <a class="el" href="_device_detection__features__index.html">features overview</a> for details.</p>
+<p>See <a href="https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd">technical specification</a> and <a class="el" href="_device_detection__features__index.html">features overview</a> for details.</p>
 <h1 class="g-docs__section-heading">Common Use Cases</h1>
 <h2>🎨 Responsive Design &amp; User Experience</h2>
 <p>Detect screen size, device type, and input methods to serve optimal layouts and navigation for different device categories.</p>
@@ -111,18 +111,19 @@ $(document).ready(function(){initNavTree('_device_detection__overview.html','');
 <li><b>On-Premise:</b> Full control, high performance, enterprise security</li>
 <li><b>Hybrid:</b> Combine both for optimal flexibility</li>
 </ul>
-<p><a class="el" href="_device_detection__quickstart.html">Compare integration options</a></p>
+<p><a class="el" href="_device_detection__quickstart.html">Compare integration options</a> | <a class="el" href="_device_detection__cloud_to_on_premise.html">Migrate from Cloud to On-Premise</a></p>
 <hr/>
 <h1 class="g-docs__section-heading">Technical Foundation</h1>
-<p>At its core, 51Degrees uses a patented <a class="el" href="_device_detection__hash.html">Hash Algorithm</a> that delivers:</p><ul>
+<p>At its core, 51Degrees uses a patented <a class="el" href="_device_detection__hash.html">Hash Algorithm</a> that delivers:</p>
+<ul>
 <li><b>Speed:</b> Over 1 million detections per second per CPU core</li>
 <li><b>Ultra-low latency:</b> Sub-microsecond detection time with in-process deployment</li>
 <li><b>Performance-critical ready:</b> Ideal for real-time servers, edge/load balancers, and high-load scenarios</li>
-<li><b>Accuracy:</b> Industry-leading detection rates across 400+ device properties</li>
+<li><b>Accuracy:</b> Industry-leading detection rates across <a href="https://51degrees.com/developers/property-dictionary">250+ device properties</a></li>
 <li><b>Efficiency:</b> Minimal memory footprint and bandwidth usage</li>
 <li><b>Deployment flexibility:</b> In-process by default, with optional out-of-process or separate server deployment</li>
 </ul>
-<p>For complete technical details, see our specification.</p>
+<p>For complete technical details, see our <a href="https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd">specification</a>.</p>
 <hr/>
 <h1 class="g-docs__section-heading">Migration &amp; Upgrading</h1>
 <p><b>Already using device detection?</b> We make switching easy:</p>
@@ -155,7 +156,7 @@ $(document).ready(function(){initNavTree('_device_detection__overview.html','');
 </ul>
 <hr/>
 <h1 class="g-docs__section-heading">Migrating from an older version or other providers</h1>
-<p>If you're already using 51Degrees V3 Device Detection API, or a device detection solution from an alternative provider and are considering switching to 51Degrees, we have a number of <a class="el" href="_device_detection__migration_guides__index.html">Migration Guides</a> showing how our properties and capabilities map to those of others. </p>
+<p>If you're already using <a class="el" href="_device_detection__upgradingto_v4.html">51Degrees V3 Device Detection API</a>, or a device detection solution from an alternative provider and are considering switching to 51Degrees, we have a number of <a class="el" href="_device_detection__migration_guides__index.html">Migration Guides</a> showing how our properties and capabilities map to those of others. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->

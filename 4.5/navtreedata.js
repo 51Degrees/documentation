@@ -39,7 +39,7 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-"_device_detection__examples__data_file_updates__automatic.html"
+"_device_detection__cloud_to_on_premise.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
