@@ -46,8 +46,8 @@ Convert coordinates to human-readable addresses using our [Reverse Geocoding ser
 
 # Advanced Features
 
-## 🌐 GeoLite2 Integration  
-Includes MaxMind's GeoLite2-City database for basic geolocation. See [attribution requirements](@ref IpIntelligence_GeoLite2Attribution).
+## 🌐 Enhanced Coverage
+Network and location data sourced from multiple authoritative databases to provide comprehensive global coverage.
 
 ## 🔄 Device Detection Integration
 Combine IP Intelligence with Device Detection for comprehensive user profiling and enhanced accuracy.
