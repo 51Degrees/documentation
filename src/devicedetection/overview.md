@@ -11,7 +11,7 @@
 51Degrees uses a patented [Hash Algorithm](@ref DeviceDetection_Hash) primarily analyzing User-Agent and other HTTP headers. Additional techniques handle modern challenges:
 
 * **Apple devices:** [JavaScript-based detection](@ref DeviceDetection_Features_AppleDetection) overcomes obfuscated User-Agents
-* **Modern browsers:** [User-Agent Client Hints](@ref DeviceDetection_Features_UACH_Overview) support for Chromium browsers  
+* **Modern browsers:** [User-Agent Client Hints](@ref DeviceDetection_Features_UACH_Overview) support for Chromium-based browsers for precise detection and to overcome Google's Android User-Agent reduction  
 * **Transcoding browsers:** Detection from alternative headers when User-Agent is modified
 * **Enhanced accuracy:** Client-side evidence collection for detailed device identification
 
@@ -71,7 +71,7 @@ At its core, 51Degrees uses a patented [Hash Algorithm](@ref DeviceDetection_Has
 - **Speed:** Over 1 million detections per second per CPU core
 - **Ultra-low latency:** Sub-microsecond detection time with in-process deployment
 - **Performance-critical ready:** Ideal for real-time servers, edge/load balancers, and high-load scenarios
-- **Accuracy:** Industry-leading detection rates across 400+ device properties  
+- **Accuracy:** Industry-leading detection rates across [250+ device properties](https://51degrees.com/developers/property-dictionary)  
 - **Efficiency:** Minimal memory footprint and bandwidth usage
 - **Deployment flexibility:** In-process by default, with optional out-of-process or separate server deployment
 
@@ -111,4 +111,4 @@ For complete technical details, see our [specification](https://github.com/51Deg
 
 # Migrating from an older version or other providers
 
-If you're already using 51Degrees V3 Device Detection API, or a device detection solution from an alternative provider and are considering switching to 51Degrees, we have a number of [Migration Guides](@ref DeviceDetection_MigrationGuides_Index) showing how our properties and capabilities map to those of others.
+If you're already using [51Degrees V3 Device Detection API](@ref DeviceDetection_UpgradingtoV4), or a device detection solution from an alternative provider and are considering switching to 51Degrees, we have a number of [Migration Guides](@ref DeviceDetection_MigrationGuides_Index) showing how our properties and capabilities map to those of others.

@@ -8,7 +8,7 @@
 
 51Degrees enriches every user interaction with precise intelligence:
 
-- **🔍 Device Detection** - Identify [250+ device properties](https://51degrees.com/developers/property-dictionary) from User-Agents
+- **🔍 Device Detection** - Identify [250+ device properties](https://51degrees.com/developers/property-dictionary) from HTTP headers and other evidence
 - **🌐 IP Intelligence** - Extract geolocation, ISP, and network data from IP addresses ([property dictionary](https://51degrees.com/developers/property-dictionary) - see Location and Network components)  
 - **📍 Reverse Geocoding** - Convert coordinates to real-world addresses
 - **⚡ Ultra-fast** - Sub-microsecond detection time with in-process deployment
