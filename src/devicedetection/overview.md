@@ -89,7 +89,7 @@ our [TAC lookup feature](@ref DeviceDetection_Features_TacLookup) for mobile dev
 - **On-Premise:** Full control, high performance, enterprise security
 - **Hybrid:** Combine both for optimal flexibility
 
-[Compare integration options](@ref DeviceDetection_Quickstart)
+[Compare integration options](@ref DeviceDetection_Quickstart) | [Migrate from Cloud to On-Premise](@ref DeviceDetection_CloudToOnPremise)
 
 ---
 

@@ -13,6 +13,8 @@
 
 @subpage DeviceDetection_WhatsNewV45
 
+@subpage DeviceDetection_CloudToOnPremise
+
 @subpage DeviceDetection_UpgradingtoV4
 
 @subpage DeviceDetection_OtherIntegrations_Index
