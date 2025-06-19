@@ -5,6 +5,8 @@
 
 @subpage IpIntelligence_Quickstart
 
+@subpage IpIntelligence_Algorithm
+
 @subpage IpIntelligence_Features_Index
 
 @subpage IpIntelligence_Examples_Index
