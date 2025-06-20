@@ -6,12 +6,15 @@
     <tab type="pages" visible="yes" title="" intro=""/>
     <tab type="modules" visible="yes" title="" intro=""/>
   	<tab type="usergroup" visible="yes" title="Language Specific">
-      <tab type="user" visible="yes" title="C/C++" url="/device-detection-cxx/index.html"/>
+      <tab type="user" visible="yes" title="C/C++ Device Detection" url="/device-detection-cxx/index.html"/>
+      <tab type="user" visible="yes" title="C/C++ IP Intelligence" url="/ip-intelligence-cxx/index.html"/>
       <tab type="user" visible="yes" title="Java Pipeline" url="/pipeline-java/index.html"/>
       <tab type="user" visible="yes" title="Java Device Detection" url="/device-detection-java/index.html"/>
+      <tab type="user" visible="yes" title="Java IP Intelligence" url="/ip-intelligence-java/index.html"/>
       <tab type="user" visible="yes" title="Java Location" url="/location-java/index.html"/>
       <tab type="user" visible="yes" title=".NET Pipeline" url="/pipeline-dotnet/index.html"/>
       <tab type="user" visible="yes" title=".NET Device Detection" url="/device-detection-dotnet/index.html"/>
+      <tab type="user" visible="yes" title=".NET IP Intelligence" url="/ip-intelligence-dotnet/index.html"/>
       <tab type="user" visible="yes" title=".NET Location" url="/location-dotnet/index.html"/>
       <tab type="user" visible="yes" title="PHP Pipeline" url="/pipeline-php/index.html"/>
       <tab type="user" visible="yes" title="PHP Device Detection" url="/device-detection-php/index.html"/>
