@@ -9,7 +9,7 @@ user experience, security, and content delivery.
 
 ## How it works
 
-51Degrees uses a patent-applied algorithm to identify IP network ranges and locations. The engine returns:
+51Degrees uses an algorithm to identify IP network ranges and locations. The engine returns:
 
 - **Network data:** ISP, organization, connection type
 - **Location data:** Country, region, city with probability weighting
