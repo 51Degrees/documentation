@@ -2,7 +2,7 @@
 
 # IP Intelligence Algorithm
 
-51Degrees IP Intelligence uses a proprietary tree-based algorithm for IP address geolocation and network identification, protected under **[UK Patent Application No. 2506025.2](https://www.ipo.gov.uk/p-ipsum/Case/ApplicationNumber/GB2506025.2)**.
+51Degrees IP Intelligence uses a tree-based algorithm for IP address geolocation and network identification.
 
 ## Core Algorithm Design
 
