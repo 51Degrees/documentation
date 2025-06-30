@@ -171,11 +171,11 @@ Now the abstract methods can be implemented to create a functional @flowelement.
 @startsnippet{php}
 First let's define a class which extends `flowElement`:
 
-@snippet customFlowElement.php declaration
+@snippet CustomFlowElement.php declaration
 
 Now the abstract methods can be implemented to create a functional @flowelement.
 
-@snippet customFlowElement.php class
+@snippet CustomFlowElement.php class
 @endsnippet
 @startsnippet{node}
 First let's define a class which extends `flowElement`.
@@ -261,7 +261,7 @@ With a date of birth of 18/12/1992, your star sign is Sagittarius.
 @startsnippet{php}
 This new @flowelement can now be added to a @pipeline and used like:
 
-@snippet customFlowElement.php usage
+@snippet CustomFlowElement.php usage
 
 To print the star sign of the user.
 @endsnippet
