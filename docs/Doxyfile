@@ -1021,7 +1021,8 @@ EXCLUDE_SYMBOLS        =
 # that contain example code fragments that are included (see the \include
 # command).
 
-EXAMPLE_PATH           = ../src/pipelineapi/examples \
+EXAMPLE_PATH           = ../src/snippets \
+                         ../src/pipelineapi/examples \
                          ../src/devicedetection/examples \
                          ../src/ipintelligence/examples \
                          ../src/reversegeocoding/examples \
