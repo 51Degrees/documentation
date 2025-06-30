@@ -7,12 +7,12 @@
 [submodule "apis/pipeline-node"]
 	path = apis/pipeline-node
 	url = ../pipeline-node
+[submodule "apis/pipeline-php-core"]
+	path = apis/pipeline-php-core
+	url = ../pipeline-php-core
 [submodule "apis/device-detection-node"]
 	path = apis/device-detection-node
 	url = ../device-detection-node
-[submodule "apis/pipeline-php"]
-	path = apis/pipeline-php
-	url = ../pipeline-php
 [submodule "apis/device-detection-php"]
 	path = apis/device-detection-php
 	url = ../device-detection-php
