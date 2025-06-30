@@ -1029,7 +1029,7 @@ EXAMPLE_PATH           = ../src/pipelineapi/examples \
                          ../apis/pipeline-dotnet/Examples \
                          ../apis/pipeline-node/fiftyone.pipeline.core/examples \
                          ../apis/pipeline-node/fiftyone.pipeline.engines/examples \
-                         ../apis/pipeline-php/pipeline.core/examples \
+                         ../apis/pipeline-php-core/examples \
                          ../apis/device-detection-php/examples \
                          ../apis/device-detection-node/fiftyone.devicedetection/examples
 
