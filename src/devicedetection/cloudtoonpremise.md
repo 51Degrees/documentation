@@ -7,6 +7,7 @@ This guide helps you transition from 51Degrees Cloud Device Detection to On-Prem
 ## Why Migrate to On-Premise? <a href="#why-migrate">#</a> @anchor why-migrate
 
 Consider migrating when you need:
+
 - **⚡ Ultra-low latency** - Sub-microsecond detection time with in-process deployment
 - **🔒 Complete privacy** - All processing stays within your infrastructure
 - **📈 High volume processing** - Over 1 million detections per second per CPU core
@@ -16,18 +17,19 @@ Consider migrating when you need:
 ## Migration Overview <a href="#migration-overview">#</a> @anchor migration-overview
 
 The migration process involves:
-1. Obtaining an on-premise license and data file
+
+1. Obtaining an On-Premise License Key and @datafile
 2. Updating your dependencies
 3. Modifying pipeline configuration
 4. Implementing data file updates
 5. Testing and optimization
 
-## Step 1: Obtain License and Data File <a href="#step1-license">#</a> @anchor step1-license
+## Step 1: Obtain License Key and Data File <a href="#step1-license">#</a> @anchor step1-license
 
 1. **Choose your data file**:
-   - **Lite** - Free data file with limited properties (no license key required)
-   - **Enterprise** - Full data file with all properties (requires license key)
-2. **For Enterprise users**: [Contact us](https://51degrees.com/contact-us) to purchase a license key
+   - **Lite** - Free data file with limited properties (no License Key required)
+   - **Enterprise** - Full data file with all properties (requires License Key)
+2. **For Enterprise users**: [Contact us](https://51degrees.com/contact-us) to purchase a License Key
 
 ## Step 2: Update Dependencies <a href="#step2-dependencies">#</a> @anchor step2-dependencies
 
@@ -44,8 +46,7 @@ Most packages already include both cloud and on-premise capabilities - only conf
 <!-- Add: FiftyOne.DeviceDetection -->
 ```
 
-
-<b>Java</b>
+**Java**
 
 ```xml
 <!-- Maven - device-detection includes both cloud and on-premise -->
@@ -56,16 +57,14 @@ Most packages already include both cloud and on-premise capabilities - only conf
 </dependency>
 ```
 
-
-<b>Node.js</b>
+**Node.js**
 
 ```bash
 # Package includes both cloud and on-premise capabilities
 npm install fiftyone.devicedetection
 ```
 
-
-<b>Other Languages</b>
+**Other Languages**
 
 - **C/C++**: Clone [device-detection-cxx](https://github.com/51degrees/device-detection-cxx)
 - **Go**: Clone [device-detection-go](https://github.com/51degrees/device-detection-go)
@@ -74,7 +73,7 @@ npm install fiftyone.devicedetection
 
 ## Step 3: Update Pipeline Configuration <a href="#step3-configuration">#</a> @anchor step3-configuration
 
-<b>From Cloud Configuration:</b>
+**From Cloud Configuration:**
 
 ```json
 {
@@ -90,8 +89,7 @@ npm install fiftyone.devicedetection
 }
 ```
 
-
-<b>To On-Premise Configuration:</b>
+**To On-Premise Configuration:**
 
 ```json
 {
@@ -113,7 +111,7 @@ npm install fiftyone.devicedetection
 
 ## Step 4: Code Changes <a href="#step4-code-changes">#</a> @anchor step4-code-changes
 
-<b>Minimal Code Changes Required</b>
+**Minimal Code Changes Required**
 
 The beauty of 51Degrees Pipeline API is that most code remains unchanged. The primary differences are:
 
@@ -121,9 +119,9 @@ The beauty of 51Degrees Pipeline API is that most code remains unchanged. The pr
 2. **Error Handling** - Handle file-related errors instead of network errors
 3. **Property Access** - All properties available locally (no cloud property restrictions)
 
-<b>Example: Pipeline Creation</b>
+**Example: Pipeline Creation**
 
-<b>Cloud Version:</b>
+**Cloud Version:**
 
 ```csharp
 var pipeline = new DeviceDetectionPipelineBuilder()
@@ -131,8 +129,7 @@ var pipeline = new DeviceDetectionPipelineBuilder()
     .Build();
 ```
 
-
-<b>On-Premise Version:</b>
+**On-Premise Version:**
 
 ```csharp
 var pipeline = new DeviceDetectionPipelineBuilder()
@@ -143,6 +140,7 @@ var pipeline = new DeviceDetectionPipelineBuilder()
 ```
 
 For complete examples, see:
+
 - [On-Premise Console Examples](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise)
 - [On-Premise Web Examples](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise)
 
@@ -150,34 +148,36 @@ For complete examples, see:
 
 On-premise deployments require periodic data file updates for latest device information:
 
-<b>Automatic Updates (Recommended)</b>
+**Automatic Updates (Recommended)**
 
 Configure automatic updates in your pipeline:
-- [Update on Startup](@ref DeviceDetection_Examples_DataFileUpdates_UpdateOnStartUp)
-- [File System Watcher](@ref DeviceDetection_Examples_DataFileUpdates_FileSystemWatcher)
-- [Polling Interval](@ref DeviceDetection_Examples_DataFileUpdates_PollingInterval)
 
-<b>Manual Updates</b>
+- [Update on Startup](@ref DeviceDetection_Examples_DataFileUpdates_UpdateOnStartup_OnPremiseHash)
+- [File System Watcher](@ref DeviceDetection_Examples_DataFileUpdates_FileSystemWatcher_OnPremiseHash)
+- [Polling Interval](@ref DeviceDetection_Examples_DataFileUpdates_PollingInterval_OnPremiseHash)
 
-Download new data files from the [51Degrees Distributor](https://51degrees.com/developers/distributor) using your license key.
+**Manual Updates**
+
+Download new data files from the [51Degrees Distributor](https://51degrees.com/developers/distributor) using your License Key.
 
 ## Step 6: Performance Optimization <a href="#step6-performance">#</a> @anchor step6-performance
 
-<b>Performance Profiles</b>
+**Performance Profiles**
 
 We recommend **MaxPerformance** for optimal speed:
+
 - **MaxPerformance** - Fastest detection, higher memory usage (recommended)
 - **HighPerformance** - Balanced speed and memory
 - **LowMemory** - Minimal memory footprint
 - **Balanced** - Default balanced option
 
-<b>Deployment Options</b>
+**Deployment Options**
 
 - **In-Process** (Default) - Sub-microsecond latency
 - **Out-of-Process** - Process isolation
 - **Separate Server** - Centralized detection service
 
-See [Performance Examples](@ref DeviceDetection_Examples_Performance) for benchmarking.
+See [Performance Examples](@ref DeviceDetection_Examples_Performance_OnPremiseHash) for benchmarking.
 
 ## Step 7: Testing and Validation <a href="#step7-testing">#</a> @anchor step7-testing
 
@@ -188,19 +188,19 @@ See [Performance Examples](@ref DeviceDetection_Examples_Performance) for benchm
 
 ## Common Migration Scenarios <a href="#migration-scenarios">#</a> @anchor migration-scenarios
 
-<b>Web Applications</b>
+**Web Applications**
 
 - Use [on-premise web integration](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise)
 - Configure middleware for automatic request processing
 - Enable client-side evidence for enhanced accuracy
 
-<b>Batch Processing</b>
+**Batch Processing**
 
-- Use [offline processing](@ref DeviceDetection_Examples_OfflineProcessing)
+- Use [offline processing](@ref DeviceDetection_Examples_OfflineProcessing_OnPremiseHash)
 - Process User-Agent lists efficiently
 - Leverage multi-threading for maximum throughput
 
-<b>Microservices</b>
+**Microservices**
 
 - Deploy as sidecar container
 - Share data file via volume mount
@@ -209,36 +209,40 @@ See [Performance Examples](@ref DeviceDetection_Examples_Performance) for benchm
 ## Rollback Plan <a href="#rollback">#</a> @anchor rollback
 
 Keep cloud configuration available during migration:
-1. Maintain cloud resource key
+
+1. Maintain cloud Resource Key
 2. Use feature flags to switch between cloud/on-premise
 3. Monitor both implementations initially
 4. Gradually migrate traffic to on-premise
 
 ## Troubleshooting <a href="#troubleshooting">#</a> @anchor troubleshooting
 
-<b>Common Issues</b>
+**Common Issues**
 
-<b>Data file not found</b>
+**Data file not found**
+
 - Verify file path is absolute
 - Check file permissions
 - Ensure data file is downloaded
 
-<b>License key invalid</b>
-- Confirm license key is for on-premise use
-- Check license expiration
+**License Key invalid**
+
+- Confirm License Key is for on-premise use
+- Check License expiration
 - Verify product tier matches data file
 
-<b>Performance not improved</b>
+**Performance not improved**
+
 - Check performance profile setting
 - Verify in-process deployment
-- Review [performance examples](@ref DeviceDetection_Examples_Performance)
+- Review [performance examples](@ref DeviceDetection_Examples_Performance_OnPremiseHash)
 
 ## Next Steps <a href="#next-steps">#</a> @anchor next-steps
 
 1. Review [on-premise examples](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise)
 2. Implement [automatic updates](@ref DeviceDetection_Examples_DataFileUpdates_Index)
 3. Enable [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) for enhanced accuracy
-4. Monitor [match metrics](@ref DeviceDetection_Examples_MatchMetrics) for quality assurance
+4. Monitor [match metrics](@ref DeviceDetection_Examples_MatchMetrics_OnPremiseHash) for quality assurance
 
 ## Need Help?
 
