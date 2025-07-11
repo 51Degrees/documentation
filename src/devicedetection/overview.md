@@ -65,9 +65,7 @@ Read the [full technical specification](https://github.com/51Degrees/specificati
 Already using 51Degrees V3 or another device detection tool? Thinking of making the switch? We've made it easy. Our migration guides show exactly how our properties and features match up with what you're used to - so you can transition smoothly without missing a beat.
 
 - **Upgrading from 51Degrees V3?** Check out our [V4 upgrade guide](@ref DeviceDetection_UpgradingtoV4).
-- **Moving from DeviceAtlas or WURFL?** We've got dedicated migration guides.
-
-[See all migration guides](@ref DeviceDetection_MigrationGuides_Index)
+- **Moving from DeviceAtlas or WURFL?** We've got dedicated migration guides. [See all migration guides](@ref DeviceDetection_MigrationGuides_Index)
 
 ## Examples and Getting Started
 
