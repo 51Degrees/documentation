@@ -1,12 +1,14 @@
 @page ReverseGeocoding_Quickstart Reverse Geocoding Quick Start
 
-This example demonstrates how to look up a latitude and longitude to a geographical location.
+# Getting Started with Reverse Geocoding
 
-## Step 1: Create a Resource Key
+Reverse geocoding turns GPS coordinates into real places like countries, cities, and addresses. Here's how to set it up in minutes.
 
-First, obtain a Resource Key by following the @configuratorexplanation. For this example, ensure that the Resource Key is authorized for at least the Country field provided by 51Degrees.
+## Step 1: Get Your Resource Key
 
-## Step 2: Install the relevant library
+You'll need a Resource Key to access our reverse geocoding service. Follow the @configuratorexplanation to create one. Make sure your Resource Key includes at least the Country field.
+
+## Step 2: Install the Library
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -32,9 +34,9 @@ Install the [fiftyone-location](https://pypi.org/project/fiftyone-location/) pac
 @endsnippet
 
 
-## Step 3: Create a Pipeline and authorize it with the Resource Key
+## Step 3: Set Up Your Pipeline
 
-The pipeline, as explained in the @pipelinebasics and @pipeline, is the way to consume 51Degrees APIs. Set the Resource Key to be the one you obtained above in step 1.
+The pipeline is how you connect to 51Degrees APIs (learn more in @pipelinebasics and @pipeline). Use the Resource Key you created in step 1.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -99,14 +101,14 @@ pipeline = LocationPipelineBuilder({"resourceKey": resourceKey}).build()
 ```
 @endsnippet
 
-## Step 4: Create a FlowData on the Pipeline and add evidence to it
+## Step 4: Add Your Coordinates
 
-For reverse geocoding, two pieces of query data (called @evidence) are required: latitude and longitude. Each piece of data is passed to the APIs with a key naming the type of data that it is. The relevant evidence keys for reverse geocoding are:
+You need to provide latitude and longitude coordinates (called @evidence). Use these specific keys:
 
 * query.51D_pos_latitude
 * query.51D_pos_longitude
 
-Keys are not case-sensitive. Add each piece of evidence with its key.
+The keys aren't case-sensitive.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -159,9 +161,9 @@ fd.evidence.add("query.51D_Pos_longitude", longitude)
 ```
 @endsnippet
 
-## Step 5: Start a query with `process()`
+## Step 5: Run the Query
 
-This actually initiates the query and contacts your data source, whether the 51Degrees cloud API or a local deployment.
+Call `process()` to start the reverse geocoding lookup.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -195,9 +197,9 @@ fd.process()
 ```
 @endsnippet
 
-## Step 6: Read the results
+## Step 6: Get Your Results
 
-Results are available in the existing `flowData` object (note: they are not returned from the `process()` call) in an @aspectdata dictionary with relevant properties. Each property has a `hasValue` boolean; if the property is populated, `flowData.property.hasValue` will be true and `flowData.property.value` will be the relevant value. If the property is not populated, `flowData.property.hasValue` will be false and `flowData.propertynullreason` will be populated.
+Your results are in the `flowData` object (not returned from `process()`). Each property has a `hasValue` boolean. If it's populated, `hasValue` is true and `value` contains the result. If not, `hasValue` is false and you'll find why in the null reason property.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -260,7 +262,7 @@ else:
 ```
 @endsnippet
 
-You can get all this code from the examples attached to each library on GitHub, and other examples as well. See below for the link to the appropriate getting-started example and other examples for each language.
+Find complete working code examples on GitHub for each language:
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -288,25 +290,19 @@ https://github.com/51Degrees/location-python/blob/master/examples/cloud/gettings
 
 # Troubleshooting
 
-If you are finding unexpected results from querying the APIs, this section may give some indication of where to start debugging.
+Having issues? Here are common problems and fixes:
 
-## Invalid Resource Key
+## Resource Key Problems
 
-If your Resource Key is invalid or unrecognized by the server, you should receive a server error reading "Resource key not found", but you may also receive an error like "An invalid IP address was specified. Parameter name: address". In both of these cases, generate a new Resource Key with access to the properties you require and use that.
+**"Resource key not found" error:** Your Resource Key is invalid. Create a new one with the properties you need.
 
-## Unauthorized Resource Key
+**Properties missing from results:** Your Resource Key might not have access to location properties. Check what your key can access at https://configure.51degrees.com/YOUR_RESOURCE_KEY or create a new key with the right permissions.
 
-If you find that properties are unexpectedly undefined on your `flowData` object (for example, if `flowData.location.country` is not present at all, rather than being present with `hasValue` false) then your Resource Key may not be authorized to access any location properties at all. Try generating a new Resource Key and using it, or visiting https://configure.51degrees.com/YOUR_RESOURCE_KEY to see the properties which that Resource Key can access. Note that a Resource Key's properties cannot be changed once created; create a new key instead of trying to edit an existing one.
+## Wrong Evidence Keys
 
-(If you can inspect the JSON response from the HTTP APIs, you may find that `device.geolocationnullreason` is set, which is another indicator of this problem.)
-
-## Incorrect evidence keys
-
-The list of @evidence keys which are used to add @evidence must be adhered to. If you provide evidence with an invalid key, it will be ignored. If you do not have any valid keys (or have insufficient valid evidence), then an error like this will be returned:
-
-This property requires evidence values from JavaScript running on the client. It cannot be populated until a future request is made that contains this additional data.
-
-If this happens, check your calls to `flowData.evidence.add` and ensure that you are using valid evidence keys. There is deliberately no comprehensive list of evidence keys, because they vary depending on source and API queried. For geocoding, the evidence keys that are likely to be useful are:
+If you get an error about missing evidence, check you're using the correct keys:
 
 * query.51d_pos_latitude
 * query.51d_pos_longitude
+
+Wrong keys get ignored, which can cause errors if you don't have any valid evidence.

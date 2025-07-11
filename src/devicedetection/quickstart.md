@@ -2,21 +2,21 @@
 
 # Getting Started with Device Detection
 
-51Degrees Device Detection offers two integration scenarios, each with distinct trade-offs to match your requirements:
+51Degrees Device Detection offers two integration options. Each has different benefits to match your needs:
 
-## 🚀 Quick Start: Choose Your Integration
+## Choose Your Integration
 
-### ☁️ Cloud Service <a href="#cloud-integration">#</a> @anchor cloud-integration
-**Best for:** Rapid deployment, minimal infrastructure, cost-effective scaling
+### Cloud Service <a href="#cloud-integration">#</a> @anchor cloud-integration
+**Best for:** Quick setup, minimal infrastructure, cost-effective scaling
 
-✅ **Pros:**
-- **Zero setup** - No data files or local infrastructure required
+**Benefits:**
+- **No setup needed** - No data files or local infrastructure required
 - **Always updated** - Latest device data without manual updates
-- **Minimal resources** - Negligible CPU/RAM usage on your servers
+- **Minimal resources** - Very low CPU/RAM usage on your servers
 - **Pay-as-you-go** - Cost scales with usage
 - **Global availability** - Multiple data centers for low latency
 
-⚠️ **Considerations:**
+**Things to consider:**
 - **Network dependency** - Requires internet connectivity and handles latency (typically 10-50ms)
 - **External service** - Detection processing occurs on 51Degrees infrastructure
 
@@ -24,17 +24,17 @@
 
 ---
 
-### 🏢 On-Premise Deployment <a href="#on-premise-integration">#</a> @anchor on-premise-integration
+### On-Premise Deployment <a href="#on-premise-integration">#</a> @anchor on-premise-integration
 **Best for:** High-performance, privacy-sensitive, or offline environments
 
-✅ **Pros:**
+**Benefits:**
 - **Ultra-low latency** - Sub-microsecond detection time with in-process deployment
 - **Complete privacy** - All processing stays within your infrastructure
 - **High throughput** - Over 1 million detections per second per CPU core
 - **Offline capable** - No internet dependency for detection
 - **Full control** - Customize update schedules and deployment architecture
 
-⚠️ **Considerations:**
+**Things to consider:**
 - **Setup required** - Initial configuration and data file management
 - **Resource usage** - Uses local CPU/RAM (optimized but measurable)
 - **Update management** - Periodic data file updates needed for latest devices ([automatic updates available](@ref PipelineApi_Features_AutomaticDatafileUpdates))
@@ -43,7 +43,7 @@
 
 ---
 
-## 🎯 Which Integration Should I Choose?
+## Which Integration Should I Choose?
 
 | **Use Case** | **Recommended** | **Why** |
 |--------------|-----------------|----------|
@@ -57,13 +57,13 @@
 
 ---
 
-## 📱 Enhanced Accuracy Options
+## Enhanced Accuracy Options
 
-For even more accurate results (**especially for identifying specific iPhone and iPad models** ❗), consider enabling [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) collection.
+For more accurate results (especially for identifying specific iPhone/iPad models), consider enabling [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) collection.
 
 ---
 
-## 💻 Language-Specific Integration
+## Language-Specific Integration
 
 Most programming languages support both integration models. Select your language below for detailed setup instructions:
 
@@ -120,7 +120,7 @@ To get started with C++ device detection on-premise:
 3. Configure the pipeline using the configuration from the appropriate example from the options below:
  * [Cloud Example](@ref DeviceDetection_Examples_GettingStarted_Console_Cloud) - Negligible processing and memory overhead but slower due to Internet latency.
  * [On-Premise Example](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise) - Device detection processing is performed locally using a data file that must be kept updated.
-4. (optional) Configure [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) to get better results. Particularly for iPhone and iPad.
+4. (optional) Configure [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) to get better results. Particularly for iPhone/iPad.
 @endsnippet
 @startsnippet{java}
 ### Standalone pipeline / off-line processing
@@ -137,7 +137,7 @@ To get started with C++ device detection on-premise:
 3. Configure the pipeline using the configuration from the appropriate example from the options below:
  * [Cloud Example](@ref DeviceDetection_Examples_GettingStarted_Console_Cloud) - Negligible processing and memory overhead but slower due to Internet latency.
  * [On-Premise Example](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise) - Device detection processing is performed locally using a data file that must be kept updated.
-4. (optional) Configure [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) to get better results. Particularly for iPhone and iPad.
+4. (optional) Configure [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) to get better results. Particularly for iPhone/iPad.
 
 ### Spring MVC integration.
 
@@ -146,7 +146,7 @@ To get started with C++ device detection on-premise:
 3. Configure the pipeline using the configuration from the appropriate example from the options below:
  * [Cloud Example](@ref DeviceDetection_Examples_GettingStarted_Console_Cloud) - Negligible processing and memory overhead but slower due to Internet latency.
  * [On-Premise Example](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise) - Device detection processing is performed locally using a data file that must be kept updated.
-4. (optional) Configure [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) to get better results. Particularly for iPhone and iPad.
+4. (optional) Configure [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) to get better results. Particularly for iPhone/iPad.
 @endsnippet
 @startsnippet{node}
 1. Install the [fiftyone.devicedetection](https://www.npmjs.com/package/fiftyone.devicedetection) package from NPM.

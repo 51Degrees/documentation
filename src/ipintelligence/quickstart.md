@@ -1,5 +1,32 @@
 @page IpIntelligence_Quickstart IP Intelligence Quick Start
 
+# Getting Started with IP Intelligence
+
+IP Intelligence provides geolocation, ISP, connection type, and network information from IP addresses. It helps enhance user experience, security, and content delivery.
+
+## Choose Your Integration
+
+### On-Premise Deployment
+**Best for:** High-performance, privacy-sensitive, or offline environments
+
+**Benefits:**
+- **Ultra-low latency** - Sub-microsecond detection time with in-process deployment
+- **Complete privacy** - All processing stays within your infrastructure
+- **High throughput** - Designed for high-load scenarios
+- **Offline capable** - No internet dependency for detection
+- **Full control** - Customize update schedules and deployment architecture
+
+**Things to consider:**
+- **Setup required** - Initial configuration and data file management
+- **Resource usage** - Uses local CPU/RAM (optimized but measurable)
+- **Update management** - Periodic data file updates needed for latest data
+
+**Licensing:** Requires a [License Key](https://51degrees.com/pricing)
+
+## Language-Specific Integration
+
+Select your language below for detailed setup instructions:
+
 @startsnippets
 @showsnippet{c,C}
 @showsnippet{cxx,C++}
