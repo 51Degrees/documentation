@@ -1,6 +1,6 @@
 @htmlonly
 <p>
-This example shows how to retrieve property meta data from 51Degrees 
+This example shows how to retrieve property metadata from 51Degrees 
 on-premise device detection. 
 This feature can be used to get information such as the category that 
 a property belongs to or the possible values a property can have. 

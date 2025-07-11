@@ -524,7 +524,7 @@ var flowData = ((PipelineCapabilities)Request.Browser).FlowData;
 var deviceData = flowData.Get<IDeviceData>();
 ```
 
-You may also want to access meta data relating to profiles, properties, etc.
+You may also want to access metadata relating to profiles, properties, etc.
 This data can be obtained from the device detection engine. You can access this by getting the `IPipeline` instance from the static `WebPipeline` class:
 
 ```{cs}
