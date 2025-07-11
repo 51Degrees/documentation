@@ -2,152 +2,123 @@
 
 # Introduction
 
-**Device detection** identifies the device, operating system, and browser accessing your website,
-plus [over 250 other device properties](https://51degrees.com/developers/property-dictionary) to optimize user
-experience across smartphones, tablets, desktops, TVs, and other connected devices.
+Device Detection identifies the device, operating system, and browser hitting your website, plus over 250 other details you can use to fine-tune experiences across smartphones, tablets, desktops, TVs, and other connected devices.
 
-**→ [Quick Start Guide](@ref DeviceDetection_Quickstart) - Get running in minutes**
+[Quick Start Guide](@ref DeviceDetection_Quickstart) - Get running in minutes!
 
-## How it works
+## How It Works
 
-51Degrees uses a patented [Hash Algorithm](@ref DeviceDetection_Hash) primarily analyzing User-Agent and other HTTP
-headers. Additional techniques handle modern challenges:
+At the core of 51Degrees is our patented [Hash Algorithm](@ref DeviceDetection_Hash). It scans the User-Agent and other HTTP headers to identify devices in record time. Want to jump straight to real-world uses? Scroll down to Common use cases. Or stick around to see how we tackle the tougher challenges modern web traffic throws our way.
 
-* **Apple devices:** [JavaScript-based detection](@ref DeviceDetection_Features_AppleDetection) overcomes obfuscated
-  User-Agents
-* **Modern browsers:** [User-Agent Client Hints](@ref DeviceDetection_Features_UACH_Overview) support for Chromium-based
-  browsers for precise detection and to overcome Google's Android User-Agent reduction
-* **Transcoding browsers:** Detection from alternative headers when User-Agent is modified
-* **Enhanced accuracy:** Client-side evidence collection for detailed device identification
+- **Apple devices:** We use JavaScript detection to see through Apple's hidden User-Agents and spot specific iPhone/iPad models.
+- **Modern browsers:** We support [User-Agent Client Hints](@ref DeviceDetection_Features_UACH_Overview) from Chromium browsers to keep detection accurate, even as Google reduces Android User-Agent details.
+- **Transcoding browsers:** We detect devices using alternative headers when the User-Agent gets rewritten or stripped out.
+- **Enhanced accuracy:** We can gather client-side evidence for deeper device insights.
 
-See [technical specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd)
-and [features overview](@ref DeviceDetection_Features_Index) for details.
+Dig deeper in our [technical spec](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd) and [feature overview](@ref DeviceDetection_Features_Index).
 
-# Common Use Cases
+## Advanced Capabilities
 
-## 🎨 Responsive Design & User Experience
+### Apple Device Detection
 
-Detect screen size, device type, and input methods to serve optimal layouts and navigation for different device
-categories.
+Apple makes device detection tricky by hiding User-Agent details. We bypass that with client-side JavaScript to identify specific iPhone/iPad models with precision.
 
-## ⚡ Performance Optimization
+[Learn more about Apple Detection](@ref DeviceDetection_Features_AppleDetection)
 
-Optimize images, reduce content, and adapt features based on device capabilities and network conditions to improve
-loading times.
+### User-Agent Client Hints
 
-## 📊 Analytics & Business Intelligence
+Browsers like Chrome are cutting down User-Agent info. Our Client Hints support ensures you stay ahead and maintain accurate detection.
 
-Detailed device, OS, and browser analytics to understand user behavior patterns and make data-driven decisions. Enhance
-programmatic advertising analytics with [Prebid integration](@ref DeviceDetection_OtherIntegrations_Prebid).
+[Learn more about User-Agent Client Hints](@ref DeviceDetection_Features_UACH_Overview)
 
-## 🎯 Advertising & Monetization
+### TAC Lookup
 
-Device-specific ad formats, targeting capabilities, and placement optimization to maximize ad revenue. Boost
-programmatic advertising with [Prebid integration](@ref DeviceDetection_OtherIntegrations_Prebid) for enriched bid
-requests.
+Need to identify a mobile device from its IMEI number? Our Type Allocation Code (TAC) lookup has you covered.
 
-## 🛡️ Security & Fraud Detection
+[Learn more about TAC Lookup](@ref DeviceDetection_Features_TacLookup)
 
-Device fingerprinting and behavioral analysis to identify suspicious traffic, bots, and potential security threats.
+## Flexible Integration Options
 
-## 📱 Mobile App Development
+Choose what fits your stack:
 
-Progressive Web App detection, feature support identification, and mobile-specific optimizations for native-like
-experiences.
+- **Cloud API:** No infrastructure headaches, always updated, pay-as-you-go.
+- **On-Premise:** Maximum control, lightning speed, enterprise security.
+- **Hybrid:** The best of both worlds.
 
-## 🔄 Cross-Device User Journeys
+[Compare integration options](@ref DeviceDetection_Quickstart) | [See how to migrate from Cloud to On-Premise](@ref DeviceDetection_CloudToOnPremise)
 
-Device identification and user journey mapping across smartphones, tablets, and desktops for omnichannel experiences.
+## Technical Foundation
 
-## 🎵 Content Delivery & Media
+Our patented [Hash Algorithm](@ref DeviceDetection_Hash) is built for performance and scale:
 
-Codec support detection, screen resolution optimization, and bandwidth-aware delivery for streaming and media platforms.
+- **Speed:** Processes over one million detections per second, per CPU core
+- **Ultra-low latency:** Delivers sub-microsecond detection times with in-process deployment
+- **Performance-critical ready:** Perfect for high-load servers, edge environments, and real-time systems
+- **Accuracy:** Maintains industry-leading accuracy across [250+ device properties](https://51degrees.com/developers/property-dictionary)
+- **Efficiency:** Keeps memory and bandwidth usage minimal
+- **Deployment flexibility:** Runs in-process by default, or deploys out-of-process or on a separate server if needed
 
----
+Read the [full technical specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd) for the nitty-gritty details.
 
-# Advanced Capabilities
+## Migrating from older versions or other providers
 
-## 🍎 Apple Device Detection
+Already using 51Degrees V3 or another device detection tool? Thinking of making the switch? We've made it easy. Our migration guides show exactly how our properties and features match up with what you're used to - so you can transition smoothly without missing a beat.
 
-Apple devices require special handling due to limited User-Agent information.
-Our [advanced Apple detection](@ref DeviceDetection_Features_AppleDetection) uses client-side JavaScript to identify
-specific iPhone and iPad models with high accuracy.
+- **Upgrading from 51Degrees V3?** Check out our [V4 upgrade guide](@ref DeviceDetection_UpgradingtoV4).
+- **Moving from DeviceAtlas or WURFL?** We've got dedicated migration guides.
 
-## 🔍 User-Agent Client Hints
+[See all migration guides](@ref DeviceDetection_MigrationGuides_Index)
 
-Modern browsers are reducing User-Agent information. Stay ahead with
-our [User-Agent Client Hints support](@ref DeviceDetection_Features_UACH_Overview) for Chromium-based browsers.
+## Examples and Getting Started
 
-## 📱 TAC Lookup
+Want to see how it works? Dive into our examples and hit the ground running:
 
-Identify mobile device models from IMEI numbers using Type Allocation Code (TAC) lookup. See
-our [TAC lookup feature](@ref DeviceDetection_Features_TacLookup) for mobile device identification.
+### Quick Start
+- [Quick Start Guide](@ref DeviceDetection_Quickstart) - Get started in minutes
 
-## ⚙️ Flexible Integration Options
+### Web Integration Examples
+- [Web Examples Index](@ref DeviceDetection_Examples_GettingStarted_Web_Index) - Web integrations, Cloud or On-Premise
+- [Cloud Web Integration](@ref DeviceDetection_Examples_GettingStarted_Web_Cloud) - Cloud API examples
+- [On-Premise Web Integration](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise) - On-premise examples
 
-- **Cloud API:** Zero maintenance, always up-to-date, pay-as-you-go
-- **On-Premise:** Full control, high performance, enterprise security
-- **Hybrid:** Combine both for optimal flexibility
+### Console Examples
+- [Console Examples Index](@ref DeviceDetection_Examples_GettingStarted_Console_Index) - Command-line examples
+- [Cloud Console Examples](@ref DeviceDetection_Examples_GettingStarted_Console_Cloud) - Cloud API on the console
+- [On-Premise Console Examples](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise) - On-premise console setups
 
-[Compare integration options](@ref DeviceDetection_Quickstart) | [Migrate from Cloud to On-Premise](@ref DeviceDetection_CloudToOnPremise)
+### All Examples
+- [Examples Index](@ref DeviceDetection_Examples_Index) - Browse all our examples in one place
 
----
+## Common Use Cases
 
-# Technical Foundation
+### Responsive Design and User Experience
 
-At its core, 51Degrees uses a patented [Hash Algorithm](@ref DeviceDetection_Hash) that delivers:
+Detect screen size, device type, and input methods to serve layouts and navigation that feel just right on any device.
 
-- **Speed:** Over 1 million detections per second per CPU core
-- **Ultra-low latency:** Sub-microsecond detection time with in-process deployment
-- **Performance-critical ready:** Ideal for real-time servers, edge/load balancers, and high-load scenarios
-- **Accuracy:** Industry-leading detection rates
-  across [250+ device properties](https://51degrees.com/developers/property-dictionary)
-- **Efficiency:** Minimal memory footprint and bandwidth usage
-- **Deployment flexibility:** In-process by default, with optional out-of-process or separate server deployment
+### Performance Optimization
 
-For complete technical details, see
-our [specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd).
+Speed things up. Optimize images, trim down content, or tweak features based on device capabilities and network conditions.
 
----
+### Analytics and Business Intelligence
 
-# Migration & Upgrading
+Get a detailed picture of your audience's devices, browsers, and operating systems. Use the data to understand behavior, improve user journeys, or enhance programmatic ad analytics—especially with [Prebid integrations](@ref DeviceDetection_OtherIntegrations_Prebid).
 
-**Already using device detection?** We make switching easy:
+### Advertising and Monetization
 
-- **51Degrees V3 users:** [Upgrade to V4](@ref DeviceDetection_UpgradingtoV4)
-- **DeviceAtlas users:** [Migration Guide](@ref DeviceDetection_MigrationGuides_DeviceAtlas)
-- **WURFL users:** [Migration Guide](@ref DeviceDetection_MigrationGuides_Wurfl)
+Run device-specific ad formats, fine-tune targeting, and optimize placements to boost revenue. Integrate with [Prebid](@ref DeviceDetection_OtherIntegrations_Prebid) to enrich bid requests and make programmatic smarter.
 
-[View all migration guides](@ref DeviceDetection_MigrationGuides_Index)
+### Security and Fraud Detection
 
-# Examples and Getting Started
+Spot suspicious traffic and potential threats using device characteristics and behavioral signals.
 
-## Quick Start
+### Mobile App Development
 
-- **[Quick Start Guide](@ref DeviceDetection_Quickstart)** - Get up and running in minutes
+Identify Progressive Web Apps (PWAs), check feature support, and tailor mobile experiences that feel native.
 
-## Web Integration Examples
+### Cross-Device User Journeys
 
-- **[Web Examples Index](@ref DeviceDetection_Examples_GettingStarted_Web_Index)** - Complete web integration examples
-- **[Cloud Web Integration](@ref DeviceDetection_Examples_GettingStarted_Web_Cloud)** - Cloud API examples
-- **[On-Premise Web Integration](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise)** - On-premise examples
+Track users across smartphones, tablets, and desktops for seamless omnichannel experiences.
 
-## Console Examples
+### Content Delivery and Media
 
-- **[Console Examples Index](@ref DeviceDetection_Examples_GettingStarted_Console_Index)** - Command-line examples
-- **[Cloud Console Examples](@ref DeviceDetection_Examples_GettingStarted_Console_Cloud)** - Cloud API console examples
-- **[On-Premise Console Examples](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise)** - On-premise console
-  examples
-
-## All Examples
-
-- **[Examples Index](@ref DeviceDetection_Examples_Index)** - Browse all available examples
-
----
-
-# Migrating from an older version or other providers
-
-If you're already using [51Degrees V3 Device Detection API](@ref DeviceDetection_UpgradingtoV4), or a device detection
-solution from an alternative provider and are considering switching to 51Degrees, we have a number
-of [Migration Guides](@ref DeviceDetection_MigrationGuides_Index) showing how our properties and capabilities map to
-those of others.
+Detect codecs, screen resolutions, and bandwidth conditions to deliver streaming media without hiccups.

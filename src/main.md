@@ -2,156 +2,144 @@
 
 # Welcome to 51Degrees
 
-**Real-time user intelligence** that transforms basic web requests into rich, actionable data. Detect devices 📱,
-understand locations 🌍, and enhance experiences with **sub-microsecond performance** and industry-leading accuracy.
+Real-time user intelligence that transforms web requests into powerful insights
 
-## 🚀 What We Do
+Why settle for vague analytics when you can truly understand who's visiting your site and what they need? 51Degrees gives you instant, precise intelligence so you can detect devices, pinpoint locations, and deliver brilliant user experiences at lightning speed, all with industry-leading accuracy.
 
-51Degrees enriches every user interaction with precise intelligence:
+## What We Do
 
-- **🔍 Device Detection** - Identify [250+ device properties](https://51degrees.com/developers/property-dictionary) from
-  HTTP headers and other evidence
-- **🌐 IP Intelligence** - Extract geolocation, ISP, and network data from IP
-  addresses ([property dictionary](https://51degrees.com/developers/property-dictionary) - see Location and Network
-  components)
-- **📍 Reverse Geocoding** - Convert coordinates to real-world addresses
-- **⚡ Ultra-fast** - Sub-microsecond detection time with in-process deployment
-- **🎯 Privacy-first** - On-premise options keep all data in your infrastructure
+At 51Degrees, we turn every user interaction into a chance to learn, optimize, and impress. Here's how:
 
----
+- **Device Detection** - Detect 250+ device properties from HTTP headers and other signals to tailor every user experience.
+- **IP Intelligence** - Unlock geolocation, ISP, and network data from IP addresses for sharper insights and smarter decisions.
+- **Reverse Geocoding** - Transform latitude and longitude into real-world addresses, cities, and regions.
+- **Ultra-fast Performance** - Enjoy lightning-fast detection speeds thanks to in-process deployment.
+- **Privacy-first Architecture** - Prefer to keep your data close? Our On-premise options ensure full control and compliance.
 
 ## Get Started Fast
 
-**Mix and match our services for maximum impact:**
+Mix and match our services to fit your needs:
 
-### 📱 Device Detection <a href="#device-detection">#</a> @anchor device-detection
+### Device Detection
 
-**Identify devices, browsers, and capabilities** - Optimize experiences across smartphones, tablets, desktops, TVs, and
-IoT devices.
+Identify devices, browsers, and capabilities to deliver tailored experiences across smartphones, tablets, desktops, TVs, and IoT devices.
 
-- **[📖 Overview](@ref DeviceDetection_Overview)** - How it works and key benefits
-- **[⚡ Quick Start](@ref DeviceDetection_Quickstart)** - Cloud vs on-premise setup guide
-- **[🍎 Apple Detection](@ref DeviceDetection_Features_AppleDetection)** - Specific iPhone/iPad model identification
+- [Overview](@ref DeviceDetection_Overview) - How it works and why it matters
+- [Quick Start](@ref DeviceDetection_Quickstart) - Cloud vs. on-premise setup
+- [Apple Detection](@ref DeviceDetection_Features_AppleDetection) - Pinpoint specific iPhone/iPad models
 
-### 🌍 IP Intelligence <a href="#ip-intelligence">#</a> @anchor ip-intelligence
+### IP Intelligence
 
-**Geolocation, ISP, and network insights** - Perfect for fraud prevention, content personalization, and compliance.
+Tap into geolocation, ISP, and network insights. Perfect for fraud prevention, personalization, and compliance.
 
-- **[📖 Overview](@ref IpIntelligence_Overview)** - Network data and location capabilities
-- **[⚡ Quick Start](@ref IpIntelligence_Quickstart)** - Integration in minutes
+- [Overview](@ref IpIntelligence_Overview) - Understand network data and location capabilities
+- [Quick Start](@ref IpIntelligence_Quickstart) - Integrate in minutes
 
-### 📍 Reverse Geocoding <a href="#reverse-geocoding">#</a> @anchor reverse-geocoding
+### Reverse Geocoding
 
-**Convert coordinates to addresses** - Transform lat/lng into postal addresses, cities, and regions.
+Turn GPS coordinates into meaningful places. Bring real-world context to your digital experiences.
 
-- **[📖 Overview](@ref ReverseGeocoding_Overview)** - Real-world location from coordinates
-- **[⚡ Quick Start](@ref ReverseGeocoding_Quickstart)** - Implementation guide
+- [Overview](@ref ReverseGeocoding_Overview) - Map coordinates to addresses, cities, and regions
+- [Quick Start](@ref ReverseGeocoding_Quickstart) - Step-by-step implementation guide
 
-### 🌐 Client-Side Only <a href="#client-side">#</a> @anchor client-side
+### Client-Side Only
 
-**Browser-only implementation** - No server-side code required for simple integrations.
+Prefer a lightweight approach? Implement device detection directly in the browser - no server-side code needed.
 
-- **[🔧 Cloud Configurator](https://configure.51degrees.com/)** - Generate custom JavaScript snippets
-- **[📋 Setup Guide](@ref Services_Configurator)** - Resource Key and implementation
-- **[📚 Cloud API Reference](https://cloud.51degrees.com/api-docs/index.html)** - Complete HTTP API documentation
+- [Cloud Configurator](https://configure.51degrees.com/) - Generate custom JavaScript snippets
+- [Setup Guide](@ref Services_Configurator) - Resource Key and integration steps
+- [Cloud API Reference](https://cloud.51degrees.com/api-docs/index.html) - Complete HTTP API documentation
 
----
+## Common Use Cases
 
-## 🎯 Common Use Cases
+Here's how you can combine our services for real-world results:
 
-**Combine our services for powerful solutions:**
+### Enhanced User Experience
 
-### 🎨 **Enhanced User Experience**
+Device Detection + IP Intelligence = spot-on content delivery.
 
-Device Detection + IP Intelligence = **Perfect content delivery**  
-*Detect mobile devices from rural areas → Serve lightweight, location-relevant content*
+Detect mobile users in rural areas and serve relevant content tailored to their needs.
 
-### 🛡️ **Fraud Prevention & Security**
+### Fraud Prevention & Security
 
-Device Detection + IP Intelligence = **Comprehensive risk assessment**  
-*Flag suspicious device/location combinations, detect bot traffic, prevent account takeovers*
+Device Detection + IP Intelligence = rock-solid risk assessment.
 
-### 🎯 **Programmatic Advertising**
+Spot suspicious device and location patterns, detect bots, and prevent account takeovers.
 
-Device Detection + IP Intelligence + [Prebid Integration](@ref DeviceDetection_OtherIntegrations_Prebid) = **Higher CPMs**
-*Enrich bid requests with precise device and location data for better targeting*
+### Programmatic Advertising
 
-### 📊 **Advanced Analytics**
+Device Detection + IP Intelligence + [Prebid Integration](@ref DeviceDetection_OtherIntegrations_Prebid) = higher CPMs.
 
-Device Detection + IP Intelligence = **Rich user segmentation**  
-*"iPhone users from London" vs "Android tablets from rural areas" - precise audience insights*
+Enrich bid requests with precise device and location data for sharper targeting.
 
-### 🌍 **Geo-Compliance & Personalization**
+### Advanced Analytics
 
-IP Intelligence + Reverse Geocoding = **Location-aware applications**  
-*GDPR compliance, content licensing, local regulations, and address completion*
+Device Detection + IP Intelligence = next-level audience segmentation.
 
-### ⚡ **Performance Optimization**
+See the difference between "iPhone users in London" and "Android tablet users in rural areas" for highly targeted insights.
 
-Device Detection + IP Intelligence = **Smart content adaptation**  
-*Optimize images for device capabilities, adjust for connection types, select optimal CDN*
+### Geo-Compliance & Personalization
 
----
+IP Intelligence + Reverse Geocoding = smarter, compliant experiences.
 
-## 💻 Language Support
+Enable GDPR compliance, local content licensing, and location-based personalization.
 
-**Choose your preferred language** - all services work consistently across platforms:
+### Performance Optimization
 
-### 🚀 **Production-Ready Libraries**
+Device Detection + IP Intelligence = faster, smarter websites.
 
-- **[.NET (C#)](https://github.com/51Degrees/device-detection-dotnet)** - Enterprise-grade with full feature
-  support ([Device Detection](https://github.com/51Degrees/device-detection-dotnet), [IP Intelligence](https://github.com/51Degrees/ip-intelligence-dotnet))
-- **[Java](https://github.com/51Degrees/device-detection-java)** - High-performance server
-  applications ([Device Detection](https://github.com/51Degrees/device-detection-java), [IP Intelligence](https://github.com/51Degrees/ip-intelligence-java))
-- **[Go](https://github.com/51Degrees/device-detection-go)** - Lightweight, high-performance
-  applications ([Device Detection](https://github.com/51Degrees/device-detection-go), [IP Intelligence](https://github.com/51Degrees/ip-intelligence-go))
-- **[Node.js](https://github.com/51Degrees/device-detection-node)** - Modern web applications
-- **[Python](https://github.com/51Degrees/device-detection-python)** - Data science and web frameworks
-- **[PHP](https://github.com/51Degrees/device-detection-php)** - Web development with cloud and on-premise options
+Serve optimized images, adjust content for connection speeds, and choose the best CDN for each user.
 
-### 🛠️ **Specialized Integrations**
+## Language Support
 
-- **[Nginx Module](https://github.com/51Degrees/device-detection-nginx)** - Edge/load balancer integration
-- **[Prebid Integration](@ref DeviceDetection_OtherIntegrations_Prebid)** - Programmatic advertising
-- **[UA Parser JS](https://github.com/51Degrees/ua-parser-js)** - Versatile cloud-API integration wrapper library with
-  full device detection capabilities
-- **[Varnish Module](https://github.com/51Degrees/device-detection-varnish)** - Cache optimization
+Work in the language that suits you best. Our services are production-ready across:
 
-**[📦 Browse all SDKs on GitHub](https://github.com/51Degrees/)**
+- [.NET (C#)](https://github.com/51Degrees/device-detection-dotnet)
+- [Java](https://github.com/51Degrees/device-detection-java)
+- [Go](https://github.com/51Degrees/device-detection-go)
+- [Node.js](https://github.com/51Degrees/device-detection-node)
+- [Python](https://github.com/51Degrees/device-detection-python)
+- [PHP](https://github.com/51Degrees/device-detection-php)
 
----
+## Specialized Integrations
 
-## 📚 Documentation Hub
+Tailor your setup for maximum performance:
 
-**Everything you need to succeed:**
+- [Nginx Module](https://github.com/51Degrees/device-detection-nginx) - integrate device detection at the edge
+- [Prebid Integration](@ref DeviceDetection_OtherIntegrations_Prebid) - boost programmatic advertising
+- [UA Parser JS](https://github.com/51Degrees/ua-parser-js) - seamless cloud API integration
+- [Varnish Module](https://github.com/51Degrees/device-detection-varnish) - cache smarter, deliver faster
 
-### 🚀 **Quick Starts**
+Explore all our SDKs on [GitHub](https://github.com/51Degrees/).
 
-- **[Device Detection Quickstart](@ref DeviceDetection_Quickstart)** - Cloud vs on-premise setup
-- **[IP Intelligence Quickstart](@ref IpIntelligence_Quickstart)** - Location and network data
-- **[Reverse Geocoding Quickstart](@ref ReverseGeocoding_Quickstart)** - Coordinates to addresses
+## Documentation Hub
 
-### 📖 **Deep Dives**
+Everything you need to succeed:
 
-- **[Device Detection Overview](@ref DeviceDetection_Overview)** - Capabilities and use cases
-- **[IP Intelligence Overview](@ref IpIntelligence_Overview)** - Geolocation and network insights
-- **[Reverse Geocoding Overview](@ref ReverseGeocoding_Overview)** - Address resolution
+### Quick Starts
 
-### ⚙️ **Advanced Topics**
+- [Device Detection](@ref DeviceDetection_Quickstart) - Cloud vs. On-premise
+- [IP Intelligence](@ref IpIntelligence_Quickstart) - Location and network data
+- [Reverse Geocoding](@ref ReverseGeocoding_Quickstart) - From coordinates to addresses
 
-- **[Pipeline API Features](@ref PipelineApi_Features_Index)** - Built-in capabilities and configuration
-- **[Architecture Concepts](@ref PipelineApi_Concepts_Index)** - Pipelines, flow elements, and design patterns
-- **[Feature Matrix](@ref ProductSummaries_FeatureMatrix)** - Compare capabilities across languages
-- **[Performance Benchmarks](@ref ProductSummaries_Benchmarks)** - Speed comparisons and optimization
+### Deep Dives
 
----
+- [Device Detection Overview](@ref DeviceDetection_Overview)
+- [IP Intelligence Overview](@ref IpIntelligence_Overview)
+- [Reverse Geocoding Overview](@ref ReverseGeocoding_Overview)
 
-## 💬 Get Support
+### Advanced Topics
 
-**We're here to help you succeed:**
+- [Pipeline API features](@ref PipelineApi_Features_Index)
+- [Architecture concepts](@ref PipelineApi_Concepts_Index)
+- [Feature comparisons](@ref ProductSummaries_FeatureMatrix)
+- [Performance benchmarks](@ref ProductSummaries_Benchmarks)
 
-- **🚀 Quick questions?** [GitHub Issues](https://github.com/51Degrees/) - Community support
-- **📧 Enterprise support?** [support@51degrees.com](mailto:support@51degrees.com) - Direct technical assistance
-- **📝 API Reference?** [Cloud API Documentation](https://cloud.51degrees.com/api-docs/index.html) - Complete HTTP API
-  reference
-- **📈 Performance guidance?** Contact our team for optimization recommendations
+## Get Support
+
+We're here to help every step of the way:
+
+- Have quick questions? [Raise an issue on GitHub](https://github.com/51Degrees/)
+- Need enterprise support? Email us at [support@51degrees.com](mailto:support@51degrees.com)
+- Looking for API details? Check the [Cloud API documentation](https://cloud.51degrees.com/api-docs/index.html)
+- Want performance tips? Get in touch for optimization advice.
