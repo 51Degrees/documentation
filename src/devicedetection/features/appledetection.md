@@ -4,11 +4,11 @@
 
 Apple devices are unique in that their User-Agent strings do not include hardware model
 identifiers - unlike most Android devices.
-This means it's not possible to identify the exact iPhone or iPad model using only the HTTP request headers.
+This means it's not possible to identify the exact iPhone/iPad model using only the HTTP request headers.
 
 To solve this, 51Degrees uses **client-side JavaScript** to gather additional evidence from the device,
 such as screen resolution and GPU model.
-This allows us to identify the precise Apple hardware model - including the specific iPhone or iPad generation.
+This allows us to identify the precise Apple hardware model - including the specific iPhone/iPad generation.
 Even when the User-Agent string is generic!
 
 This feature is built into the [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) functionality,
@@ -21,7 +21,7 @@ To see this feature in action, check out the
 
 When a request from an Apple device is received:
 
-1. The server inspects the User-Agent to determine the general device type: iPhone, iPad, or Mac.
+1. The server inspects the User-Agent to determine the general device type: iPhone/iPad or Mac.
 2. Based on this, the server sends JavaScript to the client that gathers device-specific information.
 3. The JavaScript runs on the client and returns a **hardware profile ID**.
 4. This ID is sent back to the server.

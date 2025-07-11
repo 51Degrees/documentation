@@ -659,7 +659,7 @@ The device properties can then be accessed in the corresponding view. For exampl
 ```
 
 The `FiftyOneJS` component handles the inclusion of @clientsideevidence.
-The main use-case for this in device detection is in detecting iPhone and iPad models correctly.
+The main use-case for this in device detection is in detecting iPhone/iPad models correctly.
 @endsnippet
 @startsnippet{java}
 <!-- ===================================================================================
