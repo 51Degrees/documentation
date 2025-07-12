@@ -68,7 +68,27 @@ $(document).ready(function(){initNavTree('_ip_intelligence__quickstart.html','')
 <h2 class="g-docs__page-title">IP Intelligence Quick Start </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'c')">C</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language. </div>   <div class="c-tabgroup__main" data-lang="c" style="display:none;">  C does not have a <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> implementation or the ability to use the cloud-based version of IP intelligence. To get started with C IP intelligence on-premise:</p>
+<section class="g-docs__section"><h1 class="g-docs__section-heading">Getting Started with IP Intelligence</h1>
+<p>IP Intelligence provides geolocation, ISP, connection type, and network information from IP addresses. It helps enhance user experience, security, and content delivery.</p>
+<h2>Choose Your Integration</h2>
+<h3>On-Premise Deployment</h3>
+<p><b>Best for:</b> High-performance, privacy-sensitive, or offline environments</p>
+<p><b>Benefits:</b></p><ul>
+<li><b>Ultra-low latency</b> - Sub-microsecond detection time with in-process deployment</li>
+<li><b>Complete privacy</b> - All processing stays within your infrastructure</li>
+<li><b>High throughput</b> - Designed for high-load scenarios</li>
+<li><b>Offline capable</b> - No internet dependency for detection</li>
+<li><b>Full control</b> - Customize update schedules and deployment architecture</li>
+</ul>
+<p><b>Things to consider:</b></p><ul>
+<li><b>Setup required</b> - Initial configuration and data file management</li>
+<li><b>Resource usage</b> - Uses local CPU/RAM (optimized but measurable)</li>
+<li><b>Update management</b> - Periodic data file updates needed for latest data</li>
+</ul>
+<p><b>Licensing:</b> Requires a <a href="https://51degrees.com/pricing">License Key</a></p>
+<h2>Language-Specific Integration</h2>
+<p>Select your language below for detailed setup instructions:</p>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'c')">C</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language. </div>   <div class="c-tabgroup__main" data-lang="c" style="display:none;">  C does not have a <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> implementation or the ability to use the cloud-based version of IP intelligence. To get started with C IP intelligence on-premise:</p>
 <ol type="1">
 <li>Clone the GitHub <a href="https://github.com/51degrees/ip-intelligence-cxx">repository</a>.</li>
 <li>Ensure you have <a href="https://git-lfs.github.com/">Git LFS</a> installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.</li>

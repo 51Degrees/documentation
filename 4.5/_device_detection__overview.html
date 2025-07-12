@@ -69,94 +69,91 @@ $(document).ready(function(){initNavTree('_device_detection__overview.html','');
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
-<p><b>Device detection</b> identifies the device, operating system, and browser accessing your website, plus <a href="https://51degrees.com/developers/property-dictionary">over 250 other device properties</a> to optimize user experience across smartphones, tablets, desktops, TVs, and other connected devices.</p>
-<p><b>→ <a class="el" href="_device_detection__quickstart.html">Quick Start Guide</a> - Get running in minutes</b></p>
-<h2>How it works</h2>
-<p>51Degrees uses a patented <a class="el" href="_device_detection__hash.html">Hash Algorithm</a> primarily analyzing User-Agent and other HTTP headers. Additional techniques handle modern challenges:</p>
+<p>Device Detection identifies the device, operating system, and browser hitting your website, plus over 250 other details you can use to fine-tune experiences across smartphones, tablets, desktops, TVs, and other connected devices.</p>
+<p><a class="el" href="_device_detection__quickstart.html">Quick Start Guide</a> - Get running in minutes!</p>
+<h2>How It Works</h2>
+<p>At the core of 51Degrees is our patented <a class="el" href="_device_detection__hash.html">Hash Algorithm</a>. It scans the User-Agent and other HTTP headers to identify devices in record time. Want to jump straight to real-world uses? Scroll down to Common use cases. Or stick around to see how we tackle the tougher challenges modern web traffic throws our way.</p>
 <ul>
-<li><b>Apple devices:</b> <a class="el" href="_device_detection__features__apple_detection.html">JavaScript-based detection</a> overcomes obfuscated User-Agents</li>
-<li><b>Modern browsers:</b> <a class="el" href="_device_detection__features__u_a_c_h__overview.html">User-Agent Client Hints</a> support for Chromium-based browsers for precise detection and to overcome Google's Android User-Agent reduction</li>
-<li><b>Transcoding browsers:</b> Detection from alternative headers when User-Agent is modified</li>
-<li><b>Enhanced accuracy:</b> Client-side evidence collection for detailed device identification</li>
+<li><b>Apple devices:</b> We use JavaScript detection to see through Apple's hidden User-Agents and spot specific iPhone/iPad models.</li>
+<li><b>Modern browsers:</b> We support <a class="el" href="_device_detection__features__u_a_c_h__overview.html">User-Agent Client Hints</a> from Chromium browsers to keep detection accurate, even as Google reduces Android User-Agent details.</li>
+<li><b>Transcoding browsers:</b> We detect devices using alternative headers when the User-Agent gets rewritten or stripped out.</li>
+<li><b>Enhanced accuracy:</b> We can gather client-side evidence for deeper device insights.</li>
 </ul>
-<p>See <a href="https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd">technical specification</a> and <a class="el" href="_device_detection__features__index.html">features overview</a> for details.</p>
-<h1 class="g-docs__section-heading">Common Use Cases</h1>
-<h2>🎨 Responsive Design &amp; User Experience</h2>
-<p>Detect screen size, device type, and input methods to serve optimal layouts and navigation for different device categories.</p>
-<h2>⚡ Performance Optimization</h2>
-<p>Optimize images, reduce content, and adapt features based on device capabilities and network conditions to improve loading times.</p>
-<h2>📊 Analytics &amp; Business Intelligence</h2>
-<p>Detailed device, OS, and browser analytics to understand user behavior patterns and make data-driven decisions. Enhance programmatic advertising analytics with <a class="el" href="_device_detection__other_integrations__prebid.html">Prebid integration</a>.</p>
-<h2>🎯 Advertising &amp; Monetization</h2>
-<p>Device-specific ad formats, targeting capabilities, and placement optimization to maximize ad revenue. Boost programmatic advertising with <a class="el" href="_device_detection__other_integrations__prebid.html">Prebid integration</a> for enriched bid requests.</p>
-<h2>🛡️ Security &amp; Fraud Detection</h2>
-<p>Device fingerprinting and behavioral analysis to identify suspicious traffic, bots, and potential security threats.</p>
-<h2>📱 Mobile App Development</h2>
-<p>Progressive Web App detection, feature support identification, and mobile-specific optimizations for native-like experiences.</p>
-<h2>🔄 Cross-Device User Journeys</h2>
-<p>Device identification and user journey mapping across smartphones, tablets, and desktops for omnichannel experiences.</p>
-<h2>🎵 Content Delivery &amp; Media</h2>
-<p>Codec support detection, screen resolution optimization, and bandwidth-aware delivery for streaming and media platforms.</p>
-<hr/>
-<h1 class="g-docs__section-heading">Advanced Capabilities</h1>
-<h2>🍎 Apple Device Detection</h2>
-<p>Apple devices require special handling due to limited User-Agent information. Our <a class="el" href="_device_detection__features__apple_detection.html">advanced Apple detection</a> uses client-side JavaScript to identify specific iPhone and iPad models with high accuracy.</p>
-<h2>🔍 User-Agent Client Hints</h2>
-<p>Modern browsers are reducing User-Agent information. Stay ahead with our <a class="el" href="_device_detection__features__u_a_c_h__overview.html">User-Agent Client Hints support</a> for Chromium-based browsers.</p>
-<h2>📱 TAC Lookup</h2>
-<p>Identify mobile device models from IMEI numbers using Type Allocation Code (TAC) lookup. See our <a class="el" href="_device_detection__features__tac_lookup.html">TAC lookup feature</a> for mobile device identification.</p>
-<h2>⚙️ Flexible Integration Options</h2>
+<p>Dig deeper in our <a href="https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd">technical spec</a> and <a class="el" href="_device_detection__features__index.html">feature overview</a>.</p>
+<h2>Advanced Capabilities</h2>
+<h3>Apple Device Detection</h3>
+<p>Apple makes device detection tricky by hiding User-Agent details. We bypass that with client-side JavaScript to identify specific iPhone/iPad models with precision.</p>
+<p><a class="el" href="_device_detection__features__apple_detection.html">Learn more about Apple Detection</a></p>
+<h3>User-Agent Client Hints</h3>
+<p>Browsers like Chrome are cutting down User-Agent info. Our Client Hints support ensures you stay ahead and maintain accurate detection.</p>
+<p><a class="el" href="_device_detection__features__u_a_c_h__overview.html">Learn more about User-Agent Client Hints</a></p>
+<h3>TAC Lookup</h3>
+<p>Need to identify a mobile device from its IMEI number? Our Type Allocation Code (TAC) lookup has you covered.</p>
+<p><a class="el" href="_device_detection__features__tac_lookup.html">Learn more about TAC Lookup</a></p>
+<h2>Flexible Integration Options</h2>
+<p>Choose what fits your stack:</p>
 <ul>
-<li><b>Cloud API:</b> Zero maintenance, always up-to-date, pay-as-you-go</li>
-<li><b>On-Premise:</b> Full control, high performance, enterprise security</li>
-<li><b>Hybrid:</b> Combine both for optimal flexibility</li>
+<li><b>Cloud API:</b> No infrastructure headaches, always updated, pay-as-you-go.</li>
+<li><b>On-Premise:</b> Maximum control, lightning speed, enterprise security.</li>
+<li><b>Hybrid:</b> The best of both worlds.</li>
 </ul>
-<p><a class="el" href="_device_detection__quickstart.html">Compare integration options</a> | <a class="el" href="_device_detection__cloud_to_on_premise.html">Migrate from Cloud to On-Premise</a></p>
-<hr/>
-<h1 class="g-docs__section-heading">Technical Foundation</h1>
-<p>At its core, 51Degrees uses a patented <a class="el" href="_device_detection__hash.html">Hash Algorithm</a> that delivers:</p>
+<p><a class="el" href="_device_detection__quickstart.html">Compare integration options</a> | <a class="el" href="_device_detection__cloud_to_on_premise.html">See how to migrate from Cloud to On-Premise</a></p>
+<h2>Technical Foundation</h2>
+<p>Our patented <a class="el" href="_device_detection__hash.html">Hash Algorithm</a> is built for performance and scale:</p>
 <ul>
-<li><b>Speed:</b> Over 1 million detections per second per CPU core</li>
-<li><b>Ultra-low latency:</b> Sub-microsecond detection time with in-process deployment</li>
-<li><b>Performance-critical ready:</b> Ideal for real-time servers, edge/load balancers, and high-load scenarios</li>
-<li><b>Accuracy:</b> Industry-leading detection rates across <a href="https://51degrees.com/developers/property-dictionary">250+ device properties</a></li>
-<li><b>Efficiency:</b> Minimal memory footprint and bandwidth usage</li>
-<li><b>Deployment flexibility:</b> In-process by default, with optional out-of-process or separate server deployment</li>
+<li><b>Speed:</b> Processes over one million detections per second, per CPU core</li>
+<li><b>Ultra-low latency:</b> Delivers sub-microsecond detection times with in-process deployment</li>
+<li><b>Performance-critical ready:</b> Perfect for high-load servers, edge environments, and real-time systems</li>
+<li><b>Accuracy:</b> Maintains industry-leading accuracy across <a href="https://51degrees.com/developers/property-dictionary">250+ device properties</a></li>
+<li><b>Efficiency:</b> Keeps memory and bandwidth usage minimal</li>
+<li><b>Deployment flexibility:</b> Runs in-process by default, or deploys out-of-process or on a separate server if needed</li>
 </ul>
-<p>For complete technical details, see our <a href="https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd">specification</a>.</p>
-<hr/>
-<h1 class="g-docs__section-heading">Migration &amp; Upgrading</h1>
-<p><b>Already using device detection?</b> We make switching easy:</p>
+<p>Read the <a href="https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd">full technical specification</a> for the nitty-gritty details.</p>
+<h2>Migrating from older versions or other providers</h2>
+<p>Already using 51Degrees V3 or another device detection tool? Thinking of making the switch? We've made it easy. Our migration guides show exactly how our properties and features match up with what you're used to - so you can transition smoothly without missing a beat.</p>
 <ul>
-<li><b>51Degrees V3 users:</b> <a class="el" href="_device_detection__upgradingto_v4.html">Upgrade to V4</a></li>
-<li><b>DeviceAtlas users:</b> <a class="el" href="_device_detection__migration_guides__device_atlas.html">Migration Guide</a></li>
-<li><b>WURFL users:</b> <a class="el" href="_device_detection__migration_guides__wurfl.html">Migration Guide</a></li>
+<li><b>Upgrading from 51Degrees V3?</b> Check out our <a class="el" href="_device_detection__upgradingto_v4.html">V4 upgrade guide</a>.</li>
+<li><b>Moving from DeviceAtlas or WURFL?</b> We've got dedicated migration guides. <a class="el" href="_device_detection__migration_guides__index.html">See all migration guides</a></li>
 </ul>
-<p><a class="el" href="_device_detection__migration_guides__index.html">View all migration guides</a></p>
-<h1 class="g-docs__section-heading">Examples and Getting Started</h1>
-<h2>Quick Start</h2>
+<h2>Examples and Getting Started</h2>
+<p>Want to see how it works? Dive into our examples and hit the ground running:</p>
+<h3>Quick Start</h3>
 <ul>
-<li><b><a class="el" href="_device_detection__quickstart.html">Quick Start Guide</a></b> - Get up and running in minutes</li>
+<li><a class="el" href="_device_detection__quickstart.html">Quick Start Guide</a> - Get started in minutes</li>
 </ul>
-<h2>Web Integration Examples</h2>
+<h3>Web Integration Examples</h3>
 <ul>
-<li><b><a class="el" href="_device_detection__examples__getting_started__web__index.html">Web Examples Index</a></b> - Complete web integration examples</li>
-<li><b><a class="el" href="_device_detection__examples__getting_started__web__cloud.html">Cloud Web Integration</a></b> - Cloud API examples</li>
-<li><b><a class="el" href="_device_detection__examples__getting_started__web__on_premise.html">On-Premise Web Integration</a></b> - On-premise examples</li>
+<li><a class="el" href="_device_detection__examples__getting_started__web__index.html">Web Examples Index</a> - Web integrations, Cloud or On-Premise</li>
+<li><a class="el" href="_device_detection__examples__getting_started__web__cloud.html">Cloud Web Integration</a> - Cloud API examples</li>
+<li><a class="el" href="_device_detection__examples__getting_started__web__on_premise.html">On-Premise Web Integration</a> - On-premise examples</li>
 </ul>
-<h2>Console Examples</h2>
+<h3>Console Examples</h3>
 <ul>
-<li><b><a class="el" href="_device_detection__examples__getting_started__console__index.html">Console Examples Index</a></b> - Command-line examples</li>
-<li><b><a class="el" href="_device_detection__examples__getting_started__console__cloud.html">Cloud Console Examples</a></b> - Cloud API console examples</li>
-<li><b><a class="el" href="_device_detection__examples__getting_started__console__on_premise.html">On-Premise Console Examples</a></b> - On-premise console examples</li>
+<li><a class="el" href="_device_detection__examples__getting_started__console__index.html">Console Examples Index</a> - Command-line examples</li>
+<li><a class="el" href="_device_detection__examples__getting_started__console__cloud.html">Cloud Console Examples</a> - Cloud API on the console</li>
+<li><a class="el" href="_device_detection__examples__getting_started__console__on_premise.html">On-Premise Console Examples</a> - On-premise console setups</li>
 </ul>
-<h2>All Examples</h2>
+<h3>All Examples</h3>
 <ul>
-<li><b><a class="el" href="_device_detection__examples__index.html">Examples Index</a></b> - Browse all available examples</li>
+<li><a class="el" href="_device_detection__examples__index.html">Examples Index</a> - Browse all our examples in one place</li>
 </ul>
-<hr/>
-<h1 class="g-docs__section-heading">Migrating from an older version or other providers</h1>
-<p>If you're already using <a class="el" href="_device_detection__upgradingto_v4.html">51Degrees V3 Device Detection API</a>, or a device detection solution from an alternative provider and are considering switching to 51Degrees, we have a number of <a class="el" href="_device_detection__migration_guides__index.html">Migration Guides</a> showing how our properties and capabilities map to those of others. </p>
+<h2>Common Use Cases</h2>
+<h3>Responsive Design and User Experience</h3>
+<p>Detect screen size, device type, and input methods to serve layouts and navigation that feel just right on any device.</p>
+<h3>Performance Optimization</h3>
+<p>Speed things up. Optimize images, trim down content, or tweak features based on device capabilities and network conditions.</p>
+<h3>Analytics and Business Intelligence</h3>
+<p>Get a detailed picture of your audience's devices, browsers, and operating systems. Use the data to understand behavior, improve user journeys, or enhance programmatic ad analytics—especially with <a class="el" href="_device_detection__other_integrations__prebid.html">Prebid integrations</a>.</p>
+<h3>Advertising and Monetization</h3>
+<p>Run device-specific ad formats, fine-tune targeting, and optimize placements to boost revenue. Integrate with <a class="el" href="_device_detection__other_integrations__prebid.html">Prebid</a> to enrich bid requests and make programmatic smarter.</p>
+<h3>Security and Fraud Detection</h3>
+<p>Spot suspicious traffic and potential threats using device characteristics and behavioral signals.</p>
+<h3>Mobile App Development</h3>
+<p>Identify Progressive Web Apps (PWAs), check feature support, and tailor mobile experiences that feel native.</p>
+<h3>Cross-Device User Journeys</h3>
+<p>Track users across smartphones, tablets, and desktops for seamless omnichannel experiences.</p>
+<h3>Content Delivery and Media</h3>
+<p>Detect codecs, screen resolutions, and bandwidth conditions to deliver streaming media without hiccups. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
