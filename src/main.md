@@ -68,7 +68,7 @@ Spot suspicious device and location patterns, detect bots, and prevent account t
 
 ### Programmatic Advertising
 
-Device Detection + IP Intelligence + [Prebid Integration](@ref DeviceDetection_OtherIntegrations_Prebid) = higher CPMs.
+Device Detection + IP Intelligence + [Prebid Integration](@ref DeviceDetection_OtherIntegrations_Prebid) = better targeting.
 
 Enrich bid requests with precise device and location data for sharper targeting.
 

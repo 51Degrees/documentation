@@ -2,7 +2,7 @@
 
 # Prebid Integration
 
-**Supercharge your programmatic advertising** with 51Degrees Device Detection modules for Prebid. Transform basic OpenRTB requests into rich, device-aware bid opportunities that drive higher CPMs and better user experiences.
+**Supercharge your programmatic advertising** with 51Degrees Device Detection modules for Prebid. Transform basic OpenRTB requests into rich, device-aware bid opportunities that improve targeting and deliver better user experiences.
 
 ## 🚀 Why Prebid + 51Degrees?
 
