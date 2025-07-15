@@ -31,6 +31,8 @@ Select your language below for detailed setup instructions:
 @showsnippet{c,C}
 @showsnippet{cxx,C++}
 @showsnippet{dotnet,C#}
+@showsnippet{java,Java}
+@showsnippet{go,Go}
 @defaultsnippet{Select a language.}
 @startsnippet{c}
 C does not have a @Pipeline implementation or the ability to use the cloud-based version of 
@@ -73,3 +75,46 @@ To get started with C++ device detection on-premise:
  * [On-Premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
 
 @endsnippet
+@startsnippet{java}
+To get started with Java IP Intelligence:
+
+1. Add the IP Intelligence dependency to your project:
+   ```xml
+   <dependency>
+       <groupId>com.51degrees</groupId>
+       <artifactId>ip-intelligence</artifactId>
+   </dependency>
+   ```
+   Check [Maven Central](https://search.maven.org/artifact/com.51degrees/ip-intelligence) for the latest version.
+2. Follow the appropriate example from the options below:
+   * [On-Premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
+
+### Web Integration
+
+For web applications, add the web integration dependency:
+```xml
+<dependency>
+    <groupId>com.51degrees</groupId>
+    <artifactId>pipeline.web</artifactId>
+</dependency>
+```
+
+Configure the pipeline using the configuration from the on-premise example above.
+
+@endsnippet
+@startsnippet{go}
+To get started with Go IP Intelligence:
+
+1. Install the IP Intelligence package:
+   ```bash
+   go get github.com/51Degrees/ip-intelligence-go/v4
+   ```
+2. Follow the appropriate example from the options below:
+   * [On-Premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
+
+### Web Integration
+
+For web applications, you can integrate IP Intelligence into your HTTP handlers. See the on-premise example for implementation details.
+
+@endsnippet
+@endsnippets
