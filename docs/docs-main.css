@@ -2978,8 +2978,8 @@ ol.linenums li {
 @media (min-width: 1501px) {
   .l-docs-index .g-docs__primary {
     padding-right: 30px;
-    flex: 0 0 calc(100% - 300px);
-    max-width: calc(100% - 300px);
+    flex: 0 0 100%;
+    max-width: 100%;
     order: 1;
   }
 }
