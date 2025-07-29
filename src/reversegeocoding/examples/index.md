@@ -1,8 +1,8 @@
 @page ReverseGeocoding_Examples_Index Reverse Geocoding Examples
 
 
-@subpage ReverseGeocoding_Examples_GettingStarted_Index
+@subpage ReverseGeocoding_Examples_GettingStarted_51DegreesCloud
 
-@subpage ReverseGeocoding_Examples_ConfigureFromFile_Index
+@subpage ReverseGeocoding_Examples_ConfigureFromFile_51DegreesCloud
 
-@subpage ReverseGeocoding_Examples_WebIntegration_Index
+@subpage ReverseGeocoding_Examples_WebIntegration_Examples

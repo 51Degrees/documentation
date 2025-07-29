@@ -47,5 +47,5 @@ Ready to start? Check out our examples:
 
 - [Quick Start Guide](@ref ReverseGeocoding_Quickstart) - Set up in minutes
 - [Complete Examples](@ref ReverseGeocoding_Examples_Index) - Dive deeper with code samples
-- [Configuration Guide](@ref ReverseGeocoding_Examples_ConfigureFromFile) - Advanced setup options
+- [Configuration Guide](@ref ReverseGeocoding_Examples_ConfigureFromFile_51DegreesCloud) - Advanced setup options
 

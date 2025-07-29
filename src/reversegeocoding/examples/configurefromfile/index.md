@@ -1,3 +1,0 @@
-@page ReverseGeocoding_Examples_ConfigureFromFile_Index Configure From File
-
-@subpage ReverseGeocoding_Examples_ConfigureFromFile_51DegreesCloud
