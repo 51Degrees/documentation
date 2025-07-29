@@ -2,16 +2,16 @@
 
 # Data services
 
-| Language / Framework | @Pipeline | @DeviceDetection | @IpIntelligence  | @ReverseGeocoding |
-|----------------------|-----------|------------------|------------------|-------------------|
-| C/C++                |           | On-premise only  | On-premise only  |                   |
-| .NET                 | @tick     | @tick            | On-premise only  | Cloud only        |
-| Java                 | @tick     | @tick            | On-premise only  | Cloud only        |
-| JavaScript           |           | Cloud only       |                  | Cloud only        |
-| Node.js              | @tick     | @tick            |                  | Cloud only        |
-| PHP                  | @tick     | @tick*           |                  | Cloud only        |
-| Python               | @tick     | @tick            |                  | Cloud only        |
-| Go                   |           | On-premise only  | On-premise only  |                   |
+| Language / Framework | <center>@DeviceDetection</center> | <center>@IpIntelligence</center>  | <center>@ReverseGeocoding</center> | <center>@Pipeline</center> |
+|----------------------|------------------|------------------|-------------------|-----------|
+| C/C++                | <center>On-premise only</center>  | <center>On-premise only</center>  |                   |           |
+| .NET                 | <center>@tick</center>            | <center>On-premise only</center>  | <center>Cloud only</center>        | <center>@tick</center>     |
+| Java                 | <center>@tick</center>            | <center>On-premise only</center>  | <center>Cloud only</center>        | <center>@tick</center>     |
+| JavaScript           | <center>Cloud only</center>       |                  | <center>Cloud only</center>        |           |
+| Node.js              | <center>@tick</center>            |                  | <center>Cloud only</center>        | <center>@tick</center>     |
+| PHP                  | <center>@tick*</center>           |                  | <center>Cloud only</center>        | <center>@tick</center>     |
+| Python               | <center>@tick</center>            |                  | <center>Cloud only</center>        | <center>@tick</center>     |
+| Go                   | <center>On-premise only</center>  | <center>On-premise only</center>  |                   |           |
 
 *On-premise not available through composer.<BR>
 
@@ -30,13 +30,13 @@
 
 # Pipeline API Features
 
-| Language / Framework | [Automatic Data Updates](@ref PipelineApi_Features_AutomaticDatafileUpdates) | [Client-side Evidence](@ref PipelineApi_Features_ClientSideEvidence) | [Usage Sharing](@ref PipelineApi_Features_UsageSharing) | [Asynchronous Execution](@ref PipelineApi_Features_AsynchronousExecution) | [Lazy Loading](@ref PipelineApi_Features_LazyLoading) | [Parallel Execution](@ref PipelineApi_Features_ParallelExecution) | [Result Caching](@ref PipelineApi_Features_ResultCaching) |
+| Language / Framework | <center>[Automatic Data Updates](@ref PipelineApi_Features_AutomaticDatafileUpdates)</center> | <center>[Client-side Evidence](@ref PipelineApi_Features_ClientSideEvidence)</center> | <center>[Usage Sharing](@ref PipelineApi_Features_UsageSharing)</center> | <center>[Asynchronous Execution](@ref PipelineApi_Features_AsynchronousExecution)</center> | <center>[Lazy Loading](@ref PipelineApi_Features_LazyLoading)</center> | <center>[Parallel Execution](@ref PipelineApi_Features_ParallelExecution)</center> | <center>[Result Caching](@ref PipelineApi_Features_ResultCaching)</center> |
 |----------------------|------------------------------------------------------------------|----------------------------------------------------------|---------------------------------------------|---------------------------------------------------------------|-------------------------------------------|-------------------------------------------------------|-----------------------------------------------|
-| .NET                 | @tick                                                            | @tick                                                    | @tick                                       |                                                               | @tick                                     | @tick                                                 | @tick                                         |
-| Java                 | @tick                                                            | @tick                                                    | @tick                                       |                                                               | @tick                                     | @tick                                                 | @tick                                         | 
-| Node.js              | @tick                                                            | @tick                                                    | @tick                                       | @tick                                                         |                                           | @tick                                                 | @tick                                         |
-| PHP                  |                                                                  | @tick                                                    |                                             |                                                               |                                           |                                                       | @tick*                                        |
-| Python               | @tick                                                            | @tick                                                    | @tick                                       |                                                               |                                           |                                                       | @tick                                         |
-| Go                   | @tick                                                            |                                                          |                                             |                                                               |                                           |                                                       |                                               |
+| .NET                 | <center>@tick</center>                                                            | <center>@tick</center>                                                    | <center>@tick</center>                                       |                                                               | <center>@tick</center>                                     | <center>@tick</center>                                                 | <center>@tick</center>                                         |
+| Java                 | <center>@tick</center>                                                            | <center>@tick</center>                                                    | <center>@tick</center>                                       |                                                               | <center>@tick</center>                                     | <center>@tick</center>                                                 | <center>@tick</center>                                         | 
+| Node.js              | <center>@tick</center>                                                            | <center>@tick</center>                                                    | <center>@tick</center>                                       | <center>@tick</center>                                                         |                                           | <center>@tick</center>                                                 | <center>@tick</center>                                         |
+| PHP                  |                                                                  | <center>@tick</center>                                                    |                                             |                                                               |                                           |                                                       | <center>@tick*</center>                                        |
+| Python               | <center>@tick</center>                                                            | <center>@tick</center>                                                    | <center>@tick</center>                                       |                                                               |                                           |                                                       | <center>@tick</center>                                         |
+| Go                   | <center>@tick</center>                                                            |                                                          |                                             |                                                               |                                           |                                                       |                                               |
 
 *Session cache only.
