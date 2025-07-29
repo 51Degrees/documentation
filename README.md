@@ -11,6 +11,8 @@ In addition, it contains information of how to document the API consistently:
 
 Documentation is written and maintained in [Markdown](https://en.wikipedia.org/wiki/Markdown) format. A customized build of [Doxygen](http://www.doxygen.nl/) is then used to generate HTML pages from the Markdown source files. Finally, some custom CSS is used to apply 51Degrees branding and styling.
 
+**CSS Generation**: The custom CSS styling is generated from the [51Degrees Pattern Library](https://github.com/51degrees/pattern-library). See the pattern library README for instructions on building and updating the CSS files.
+
 # Structure
 
 ## Documentation structure
