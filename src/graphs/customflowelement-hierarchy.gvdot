@@ -1,6 +1,6 @@
 digraph H {
     bgcolor=transparent;
-    node [shape=record, fontname=Helvetica, fontsize=10];
+    node [shape=box, style="rounded,filled", fillcolor="#CB3D36", fontcolor="white", fontname=Helvetica, fontsize=10];
     compound=true;
     graph [pad="0.2", nodesep="1", ranksep="1"];
 
@@ -10,7 +10,11 @@ digraph H {
         fontsize=10;
         URL="@ref PipelineApi_Concepts_FlowElements_FlowElement";
 
-        FE [label="{Element Properties|Element Data|Logging of Process calls}"];
+        FE [shape=none, label=<<table border="0" cellborder="1" cellspacing="0" bgcolor="#CB3D36" style="rounded">
+            <tr><td bgcolor="#CB3D36"><font color="white">Element Properties</font></td></tr>
+            <tr><td bgcolor="#CB3D36"><font color="white">Element Data</font></td></tr>
+            <tr><td bgcolor="#CB3D36"><font color="white">Logging of Process calls</font></td></tr>
+        </table>>];
     };
     subgraph clusterAspectEngine {
         label=<<B>Aspect Engine</B>>;
@@ -18,7 +22,11 @@ digraph H {
         fontsize=10;
         URL="@ref PipelineApi_Concepts_FlowElements_AspectEngine";
 
-        AE [label="{Result Caching|Lazy Loading|Missing Property Handling}"];
+        AE [shape=none, label=<<table border="0" cellborder="1" cellspacing="0" bgcolor="#CB3D36" style="rounded">
+            <tr><td bgcolor="#CB3D36"><font color="white">Result Caching</font></td></tr>
+            <tr><td bgcolor="#CB3D36"><font color="white">Lazy Loading</font></td></tr>
+            <tr><td bgcolor="#CB3D36"><font color="white">Missing Property Handling</font></td></tr>
+        </table>>];
     };
     subgraph clusterOnPremiseAspectEngine {
         label=<<B>On-Premise Engine</B>>;
@@ -26,7 +34,9 @@ digraph H {
         fontsize=10;
         URL="@ref PipelineApi_Concepts_FlowElements_OnPremiseEngine";
 
-        OPE [label="{Data file updates}"];
+        OPE [shape=none, label=<<table border="0" cellborder="1" cellspacing="0" bgcolor="#CB3D36" style="rounded">
+            <tr><td bgcolor="#CB3D36"><font color="white">Data file updates</font></td></tr>
+        </table>>];
     };
 
     CE [label="Cloud Engine", URL="@ref PipelineApi_Concepts_FlowElements_CloudEngine"];

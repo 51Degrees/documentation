@@ -1,6 +1,6 @@
 digraph H {
     bgcolor=transparent;
-    node [shape=record, fontname=Helvetica, fontsize=10];
+    node [shape=box, style="rounded,filled", fillcolor="#CB3D36", fontcolor="white", fontname=Helvetica, fontsize=10];
 
     FE [label="Flow Element", URL="@ref PipelineApi_Concepts_FlowElements_FlowElement"];
     AE [label="Aspect Engine", URL="@ref PipelineApi_Concepts_FlowElements_AspectEngine"];

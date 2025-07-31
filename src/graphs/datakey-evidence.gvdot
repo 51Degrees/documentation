@@ -4,7 +4,7 @@ digraph {
     // Place nodes left to right
     rankdir=LR;
     // Style the nodes
-    node [shape=record, fontname=Helvetica, fontsize=10];
+    node [shape=box, style="rounded,filled", fillcolor="#CB3D36", fontcolor="white", fontname=Helvetica, fontsize=10];
     // Style the arrow labels
     edge [fontname=Helvetica, fontsize=10];
 
@@ -21,7 +21,11 @@ digraph {
             fontsize=10;
             URL="@ref PipelineApi_Concepts_Data_Evidence";
 
-            Keys1 [label="<ua1>User-Agent|<lat>Latitude|<lon>Longitude"];
+            Keys1 [shape=none, label=<<table border="0" cellborder="1" cellspacing="0" bgcolor="#CB3D36" style="rounded">
+                <tr><td bgcolor="#CB3D36"><font color="white">User-Agent</font></td></tr>
+                <tr><td bgcolor="#CB3D36"><font color="white">Latitude</font></td></tr>
+                <tr><td bgcolor="#CB3D36"><font color="white">Longitude</font></td></tr>
+            </table>>];
         };
     };
 
@@ -31,10 +35,12 @@ digraph {
         fontname=Helvetica;
         fontsize=10;
 
-        Keys2 [label="<lat>Latitude|<lon>Longitude"];
+        Keys2 [shape=none, label=<<table border="0" cellborder="1" cellspacing="0" bgcolor="#CB3D36" style="rounded">
+            <tr><td bgcolor="#CB3D36"><font color="white">Latitude</font></td></tr>
+            <tr><td bgcolor="#CB3D36"><font color="white">Longitude</font></td></tr>
+        </table>>];
     };
 
     // Add an edge between the nodes
-    Keys1:lat -> Keys2:lat
-    Keys1:lon -> Keys2:lon
+    Keys1 -> Keys2 [label="extract location data"]
 }

@@ -4,7 +4,7 @@ digraph {
     // Place nodes left to right
     rankdir=LR;
     // Style the nodes
-    node [shape=record, fontname=Helvetica, fontsize=10];
+    node [shape=box, style="rounded,filled", fillcolor="#CB3D36", fontcolor="white", fontname=Helvetica, fontsize=10];
     // Style the arrow labels
     edge [fontname=Helvetica, fontsize=10];    
     
@@ -14,7 +14,11 @@ digraph {
         fontname=Helvetica;
         fontsize=10;
 
-        Keys [label="{{<lat1>Latitude = 51.3|<lon1>Longitude = 11.5}|{Hash = 123456}}"];
+        Keys [shape=none, label=<<table border="0" cellborder="1" cellspacing="0" bgcolor="#CB3D36" style="rounded">
+            <tr><td bgcolor="#CB3D36"><font color="white">Latitude = 51.3</font></td></tr>
+            <tr><td bgcolor="#CB3D36"><font color="white">Longitude = 11.5</font></td></tr>
+            <tr><td bgcolor="#CB3D36"><font color="white">Hash = 123456</font></td></tr>
+        </table>>];
     };    
     
     subgraph clusterCache {
@@ -27,30 +31,30 @@ digraph {
         [
             label = <<table border="0" cellborder="1" cellspacing="0" cellpadding="4">
                         <tr>
-                          <td >Latitude = 1.6</td>
-                          <td rowspan="2" bgcolor="lightgreen">Hash = 123456</td>
+                          <td bgcolor="#CB3D36"><font color="white">Latitude = 1.6</font></td>
+                          <td rowspan="2" bgcolor="lightgreen"><font color="black">Hash = 123456</font></td>
                         </tr>
-                        <tr><td>Longitude = 48.6</td></tr>                        
+                        <tr><td bgcolor="#CB3D36"><font color="white">Longitude = 48.6</font></td></tr>                        
                     </table>>
         ]
         Keys2
         [
             label = <<table border="0" cellborder="1" cellspacing="0" cellpadding="4">
                         <tr>
-                          <td bgcolor="lightgreen">Latitude = 51.3</td>
-                          <td rowspan="2" bgcolor="lightgreen">Hash = 123456</td>
+                          <td bgcolor="lightgreen"><font color="black">Latitude = 51.3</font></td>
+                          <td rowspan="2" bgcolor="lightgreen"><font color="black">Hash = 123456</font></td>
                         </tr>
-                        <tr><td bgcolor="lightgreen">Longitude = 11.5</td></tr>                        
+                        <tr><td bgcolor="lightgreen"><font color="black">Longitude = 11.5</font></td></tr>                        
                     </table>>
         ]
         Keys3
         [
             label = <<table border="0" cellborder="1" cellspacing="0" cellpadding="4">
                         <tr>
-                          <td >Latitude = 149.1</td>
-                          <td rowspan="2">Hash = 725528</td>
+                          <td bgcolor="#CB3D36"><font color="white">Latitude = 149.1</font></td>
+                          <td rowspan="2" bgcolor="#CB3D36"><font color="white">Hash = 725528</font></td>
                         </tr>
-                        <tr><td>Longitude = 4.0</td></tr>                        
+                        <tr><td bgcolor="#CB3D36"><font color="white">Longitude = 4.0</font></td></tr>                        
                     </table>>
         ]
     };    

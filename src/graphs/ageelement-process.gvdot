@@ -2,7 +2,7 @@ digraph P {
     compound=true;
     bgcolor=transparent;
     rankdir=LR;
-    node [shape=record, fontname=Helvetica, fontsize=10];
+    node [shape=box, style="rounded,filled", fillcolor="#CB3D36", fontcolor="white", fontname=Helvetica, fontsize=10];
     edge [fontname=Helvetica, fontsize=10];
 
     subgraph clusterFD {
@@ -10,8 +10,14 @@ digraph P {
         fontsize=10;
         label="Flow Data";
         URL="@ref PipelineApi_Concepts_Data_FlowData";
-        structE [label="<f0>Evidence|{<f1>date of birth|<f2>18/12/1992}", URL="@ref PipelineApi_Concepts_Data_Evidence"];
-        structED [label="<f0>Element Data|{<f1>age|<f2>26}", URL="@ref PipelineApi_Concepts_Data_ElementData"];
+        structE [shape=none, label=<<table border="0" cellborder="1" cellspacing="0" bgcolor="#CB3D36" style="rounded">
+            <tr><td colspan="2" bgcolor="#CB3D36"><font color="white">Evidence</font></td></tr>
+            <tr><td bgcolor="#CB3D36"><font color="white">date of birth</font></td><td bgcolor="#CB3D36"><font color="white">18/12/1992</font></td></tr>
+        </table>>, URL="@ref PipelineApi_Concepts_Data_Evidence"];
+        structED [shape=none, label=<<table border="0" cellborder="1" cellspacing="0" bgcolor="#CB3D36" style="rounded">
+            <tr><td colspan="2" bgcolor="#CB3D36"><font color="white">Element Data</font></td></tr>
+            <tr><td bgcolor="#CB3D36"><font color="white">age</font></td><td bgcolor="#CB3D36"><font color="white">26</font></td></tr>
+        </table>>, URL="@ref PipelineApi_Concepts_Data_ElementData"];
     }
     FE [label="Age Element"];
 

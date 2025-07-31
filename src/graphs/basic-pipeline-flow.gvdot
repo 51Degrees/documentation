@@ -1,6 +1,6 @@
 digraph pipelineflow {
     bgcolor=transparent;
-    node [ shape=record, fontname=Helvetica, fontsize=10 ];
+    node [shape=box, style="rounded,filled", fillcolor="#CB3D36", fontcolor="white", fontname=Helvetica, fontsize=10];
     edge [ fontname=Helvetica, fontsize=10 ];
     P [ label="Pipeline" ]
     FD [ label="Flow Data" URL="@ref PipelineApi_Concepts_Data_FlowData"];

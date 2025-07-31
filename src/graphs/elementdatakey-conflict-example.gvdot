@@ -4,7 +4,7 @@ digraph {
     // Place nodes left to right
     rankdir=LR;
     // Style the nodes
-    node [shape=record, fontname=Helvetica, fontsize=10];
+    node [shape=box, style="rounded,filled", fillcolor="#CB3D36", fontcolor="white", fontname=Helvetica, fontsize=10];
     // Style the arrow labels
     edge [fontname=Helvetica, fontsize=10];
 
@@ -17,9 +17,15 @@ digraph {
         fontsize=10;
         URL="@ref PipelineApi_Concepts_Pipeline";
 
-        structH [label="<DDH>DeviceDetectionEngine\n(Hardware)|{<DK>Element data key|<DKV>device}", URL="@ref DeviceDetection_Overview"];
+        structH [shape=none, label=<<table border="0" cellborder="1" cellspacing="0" bgcolor="#CB3D36" style="rounded">
+            <tr><td colspan="2" bgcolor="#CB3D36"><font color="white">DeviceDetectionEngine<br/>(Hardware)</font></td></tr>
+            <tr><td bgcolor="#CB3D36"><font color="white">Element data key</font></td><td bgcolor="#CB3D36"><font color="white">device</font></td></tr>
+        </table>>, URL="@ref DeviceDetection_Overview"];
         //arrow2 [label="2", shape=none];
-        structP [label="<DDH>DeviceDetectionEngine\n(Platform/OS)|{<DK>Element data key|<DKV>device}", URL="@ref DeviceDetection_Overview"];
+        structP [shape=none, label=<<table border="0" cellborder="1" cellspacing="0" bgcolor="#CB3D36" style="rounded">
+            <tr><td colspan="2" bgcolor="#CB3D36"><font color="white">DeviceDetectionEngine<br/>(Platform/OS)</font></td></tr>
+            <tr><td bgcolor="#CB3D36"><font color="white">Element data key</font></td><td bgcolor="#CB3D36"><font color="white">device</font></td></tr>
+        </table>>, URL="@ref DeviceDetection_Overview"];
 
     };
     arrow3 [label="3", shape=none];

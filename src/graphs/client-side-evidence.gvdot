@@ -4,7 +4,7 @@ digraph {
     // Place nodes left to right
     rankdir=LR;
     // Style the nodes
-    node [shape=record, fontname=Helvetica, fontsize=10];
+    node [shape=box, style="rounded,filled", fillcolor="#CB3D36", fontcolor="white", fontname=Helvetica, fontsize=10];
     // Style the arrow labels
     edge [fontname=Helvetica, fontsize=10];
     

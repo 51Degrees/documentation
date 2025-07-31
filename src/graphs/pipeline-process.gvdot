@@ -1,7 +1,7 @@
 digraph P {
     rankdir=LR;
     bgcolor=transparent;
-    node [ shape=record, fontname=Helvetica, fontsize=10 ];
+    node [shape=box, style="rounded,filled", fillcolor="#CB3D36", fontcolor="white", fontname=Helvetica, fontsize=10];
     
     i [label=in, shape=plaintext ];
     subgraph clusterP {
