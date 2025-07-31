@@ -835,7 +835,7 @@ Using the specific cloud builder:
 
 ```{node}
 const pipeline = new DeviceDetectionCloudPipelineBuilder({
-    resourceKey: "[your resource key]"
+    resourceKey: "[your Resource Key]"
   }).build();
 ```
 

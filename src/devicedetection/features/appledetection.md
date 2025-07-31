@@ -12,7 +12,7 @@ This allows us to identify the precise Apple hardware model - including the spec
 Even when the User-Agent string is generic!
 
 This feature is built into the [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) functionality,
-and is automatically enabled when the relevant property is included in your resource key.
+and is automatically enabled when the relevant property is included in your Resource Key.
 
 To see this feature in action, check out the 
 [Getting Started - Web](@ref DeviceDetection_Examples_GettingStarted_Web_Index) example, or jump directly to the [detection results tables](#detection-results) to see which Apple devices can be identified.

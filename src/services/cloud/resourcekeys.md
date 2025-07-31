@@ -8,9 +8,9 @@ To obtain a Resource Key, use the Cloud Configurator; instructions on how to use
 
 If you attempt to retrieve API values for which your Resource Key is not authorized, you may see errors similar to these:
 
-`Property "country" not found in data for element "location". This is because your resource key does not include access to any properties under "location".`
+`Property "country" not found in data for element "location". This is because your Resource Key does not include access to any properties under "location".`
 
-`Property "state" not found in data for element "location". This is because your resource key does not include access to this property. Properties that are included for this key under "location" are javascript, town, country.`
+`Property "state" not found in data for element "location". This is because your Resource Key does not include access to this property. Properties that are included for this key under "location" are javascript, town, country.`
 
 As mentioned, all properties that a key is authorized to access must be chosen at key creation time. If you create a key with access to the `javascript`, `town`, and `country` properties under `location`, for example, and then try to access the `state` property of a geolocation retrieved from the cloud APIs, you will see the second error, above. (If the key in question has access to _no_ properties under `location`, you may see the first error instead.)
 
@@ -20,9 +20,9 @@ A Resource Key cannot have its list of properties changed, but you can follow th
 
 If you attempt to create a cloud pipeline with properties for which your Resource Key is not authorized, you may see errors similar to these:
 
-- Your resource key does not include access to any properties under the engine with key hardware that was added to the pipeline. For more details on resource keys, see our explainer: https://51degrees.com/documentation/_info__resource_keys.html Available engine data keys are: ['device']
+- Your Resource Key does not include access to any properties under the engine with key hardware that was added to the pipeline. For more details on Resource Keys, see our explainer: https://51degrees.com/documentation/_info__resource_keys.html Available engine data keys are: ['device']
 
-- Failed to load aspect properties for element 'hardware'. This is because your resource key does not include access to any properties under 'hardware'. For more details on resource keys, see our explainer: https://51degrees.com/documentation/_info__resource_keys.html
+- Failed to load aspect properties for element 'hardware'. This is because your Resource Key does not include access to any properties under 'hardware'. For more details on Resource Keys, see our explainer: https://51degrees.com/documentation/_info__resource_keys.html
 
 This occurs when creating a Cloud Engine or Element and the Resource Key you provided is not authorized to access any properties associated with the Engine. 
 

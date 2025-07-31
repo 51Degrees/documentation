@@ -90,7 +90,7 @@ element. We chose the latter in the below migrated code snippet example.
 using the [await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await) keyword – in order to use the top-level await, we must set the script [type="module" ()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). 
 It is possible, however, to use the UAParser without await, calling then () instead.
 5. Here is the code to obtain the result object, notice the await keyword and the Resource Key: 
-`let result = await UAParser("<your resource key>");`
+`let result = await UAParser("<your Resource Key>");`
 6. The code below obtaining the result can stay the same, but if you had additional properties configured for 
 this Resource Key, you can access them directly (using lowercase key names) inside the result.device object.
 
@@ -103,7 +103,7 @@ The migrated code snippet looks like this:
             <meta http-equiv="Delegate-CH" content="Sec-CH-UA-Model https://cloud.51degrees.com; Sec-CH-UA https://cloud.51degrees.com; Sec-CH-UA-Arch https://cloud.51degrees.com; Sec-CH-UA-Full-Version https://cloud.51degrees.com; Sec-CH-UA-Mobile https://cloud.51degrees.com; Sec-CH-UA-Platform https://cloud.51degrees.com; Sec-CH-UA-Platform-Version https://cloud.51degrees.com" /> 
             <script src="ua-parser.min.js"></script> 
             <script type="module"> 
-               let result = await UAParser("resource key");  
+               let result = await UAParser("Resource Key");  
                console.log(result); 
             </script> 
         </head> 
@@ -121,7 +121,7 @@ simpler as you can omit the Delegate-CH meta tag.
         <head> 
             <script src="https://cdn.jsdelivr.net/npm/@51degrees/ua-parser-js"></script> 
             <script type="module"> 
-                let result = await UAParser("resource key");  
+                let result = await UAParser("Resource Key");  
                 console.log(result); 
             </script> 
         </head> 
@@ -171,7 +171,7 @@ Here is what we need to change to migrate this to use 51Degrees UAParser:
         // note the async function 
             https.createServer(options, async function (req, res) { 
             // note the await keyword and parameters 
-                let result = await UAParser("your resource key", req.headers); 
+                let result = await UAParser("your Resource Key", req.headers); 
                 res.end("
 51Degrees:
 " + JSON.stringify(result, null, ' ') + "
@@ -204,7 +204,7 @@ Client Hints if it did not send them on the first attempt, so it starts another 
         // note the async function 
         https.createServer(options, async function (req, res) { 
         // note the await keyword and parameters 
-        let result = await UAParser("your resource key", req.headers); 
+        let result = await UAParser("your Resource Key", req.headers); 
  
         ch = 'Sec-CH-UA, Sec-CH-UA-Arch, Sec-CH-Bitness, Sec-CH-UA-Full-Version, \ 
         Sec-CH-UA-Full-Version-List, Sec-CH-UA-Mobile, Sec-CH-UA-Model, \ 

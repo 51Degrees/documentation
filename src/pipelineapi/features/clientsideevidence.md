@@ -127,7 +127,7 @@ handling and is used solely for the purpose of enabling this technical feature.
 By default, when using the 51Degrees Cloud service, values returned from client-side
 evidence processing are stored using `sessionStorage`. This avoids setting any
 cookies unless explicitly required. However, this behaviour can be changed by
-adding the `fod-js-enable-cookies=true` query parameter to the resource key URL.
+adding the `fod-js-enable-cookies=true` query parameter to the Resource Key URL.
 When set, this instructs the client-side script to use `cookies` instead of 
 `sessionStorage` for storing data.
 
