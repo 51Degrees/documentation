@@ -28,8 +28,8 @@ When using the client-side evidence integration, the first step is for the @Pipe
 to produce a JSON representation of all the properties that have been populated
 by @flowelements.
 
-Each property may also have some meta-data associated with it in the form of 
-another property or attribute. The naming convention of meta-data properties 
+Each property may also have some metadata associated with it in the form of 
+another property or attribute. The naming convention of metadata properties 
 is the related property name with a suffix. e.g., 
 
 ```json

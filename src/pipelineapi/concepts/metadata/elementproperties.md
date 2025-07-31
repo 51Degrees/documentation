@@ -44,8 +44,8 @@ This is not a constant, and depends on how the @flowelement is built
 # Item properties
 
 This is only relevant where Type is a collection of complex objects. It contains a list of the 
-**property** meta-data for the items in the value for this **property**. For example, if this meta-data 
-instance represents a list of hardware devices, ItemProperties will contain a list of the meta-data for **properties** available on each hardware device element within that list.
+**property** metadata for the items in the value for this **property**. For example, if this metadata 
+instance represents a list of hardware devices, ItemProperties will contain a list of the metadata for **properties** available on each hardware device element within that list.
 
 # Delay execution
 

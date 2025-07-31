@@ -38,9 +38,9 @@ If the maximum `Difference` or `Drift` setting prevents any result from being re
 
 By default, `Difference` and `Drift` are set to 0 (i.e., no deviation from the expected substrings is permitted). Setting them to -1 will mean that there is no limit. However, note that this often results in highly inaccurate results and does not guarantee a match will always be found.
 
-# Match meta-data
+# Match metadata
 
-Regardless of the settings used, the result will return additional meta-data that can be queried to find out details about the match.
+Regardless of the settings used, the result will return additional metadata that can be queried to find out details about the match.
 
 `Difference` - Contains the difference value between the supplied evidence and the returned match.  
 `UserAgents` - Contains a list of the matching substrings from the User-Agent.  
