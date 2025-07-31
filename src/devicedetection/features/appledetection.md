@@ -35,11 +35,11 @@ This works even in edge cases such as:
 
 The JavaScript involved comes from the [`JavascriptHardwareProfile`](https://51degrees.com/developers/property-dictionary?item=Device%7CJavascript) property and is tailored per device group.
 
-![](images/51D-detection-example-1.svg)
+![iPhone Example](images/51D-detection-example-1.svg)
 
-![](images/51D-detection-example-2.svg)
+![iPhone in Desktop Mode Example](images/51D-detection-example-2.svg)
 
-![](images/51D-detection-example-3.svg)
+![Mac Example](images/51D-detection-example-3.svg)
 
 ## Terminology
 
