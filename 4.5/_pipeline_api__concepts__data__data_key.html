@@ -77,11 +77,11 @@ $(document).ready(function(){initNavTree('_pipeline_api__concepts__data__data_ke
 <h1 class="g-docs__section-heading">Usage example</h1>
 <p>A data key builder is used to construct <b>data keys</b> by specifying the details of the keys to be included. This will often be a subset of the evidence keys stored in a <a class="el" href="_pipeline_api__concepts__data__flow_data.html">flow data</a> instance. The diagram below shows an example <b>data key</b> being generated from the latitude and longitude values in an <a class="el" href="_pipeline_api__concepts__data__evidence.html">evidence</a> collection.</p>
 <p><div class="dotgraph">
-<iframe scrolling="no" frameborder="0" src="dot_datakey-evidence.svg" width="294" height="203"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<iframe scrolling="no" frameborder="0" src="dot_datakey-evidence.svg" width="454" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
 <p>The <b>data key</b> can then be used to determine whether the current <a class="el" href="_pipeline_api__concepts__data__flow_data.html">flow data</a> has the same values, for a specific subset of evidence keys, as any <b>data key</b> in a given list.</p>
 <p><div class="dotgraph">
-<iframe scrolling="no" frameborder="0" src="dot_datakey-check.svg" width="619" height="327"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<iframe scrolling="no" frameborder="0" src="dot_datakey-check.svg" width="504" height="327"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
 <p>First, the <a class="el" href="_pipeline_api__features__result_caching.html">cache</a> will look for a match on just hash code as this is a fast operation. In the example above, the generated <b>data key</b> matches two of the items in the cache on hash code. When the hashes are found to match, the <a class="el" href="_pipeline_api__features__result_caching.html">cache</a> will then compare the values of the key fields to check for a true match. </p>
 </section></div><!-- PageDoc -->

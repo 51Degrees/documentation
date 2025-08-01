@@ -88,8 +88,8 @@ $(document).ready(function(){initNavTree('_device_detection__features__false_pos
 <p>For example, if the maximum <code>Difference</code> value is set to 0 (default) then a match will only be returned if the difference value is 0.</p>
 <p>If the maximum <code>Difference</code> or <code>Drift</code> setting prevents any result from being returned then <code>HasValue</code> will be false for the requested properties.</p>
 <p>By default, <code>Difference</code> and <code>Drift</code> are set to 0 (i.e., no deviation from the expected substrings is permitted). Setting them to -1 will mean that there is no limit. However, note that this often results in highly inaccurate results and does not guarantee a match will always be found.</p>
-<h1 class="g-docs__section-heading">Match meta-data</h1>
-<p>Regardless of the settings used, the result will return additional meta-data that can be queried to find out details about the match.</p>
+<h1 class="g-docs__section-heading">Match metadata</h1>
+<p>Regardless of the settings used, the result will return additional metadata that can be queried to find out details about the match.</p>
 <p><code>Difference</code> - Contains the difference value between the supplied evidence and the returned match.</p>
 <p><code>UserAgents</code> - Contains a list of the matching substrings from the User-Agent.</p>
 <p><code>Drift</code> - Contains the drift value between the supplied evidence and the returned match.</p>

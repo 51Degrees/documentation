@@ -76,7 +76,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__parallel_exec
 <h1 class="g-docs__section-heading">Executing flow elements in parallel</h1>
 <p>By default, <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow elements</a> are executed sequentially in the order they are added to the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a>. However, if the <a class="el" href="_product_summaries__feature_matrix.html">language supports it</a>, two or more <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow elements</a> can be executed in <b>parallel</b> within the overall sequential structure.</p>
 <p><div class="dotgraph">
-<iframe scrolling="no" frameborder="0" src="dot_pipeline-parallel-process.svg" width="498" height="203"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<iframe scrolling="no" frameborder="0" src="dot_pipeline-parallel-process.svg" width="498" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
 <p>In the example above, elements <b>E1</b> and <b>E2</b> will start their processing at the same time.</p>
 <p>Note that <b>parallel execution</b> is limited by the hardware the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> is running on. If the CPU only has two cores, then running four elements in parallel is unlikely to prove effective.</p>

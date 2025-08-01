@@ -80,7 +80,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__client_side_e
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/web-integration.md#client-side-features">Specification</a> for more technical details.</p>
 <h1 class="g-docs__section-heading">Client-side data</h1>
 <p>When using the client-side evidence integration, the first step is for the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> to produce a JSON representation of all the properties that have been populated by <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow elements</a>.</p>
-<p>Each property may also have some meta-data associated with it in the form of another property or attribute. The naming convention of meta-data properties is the related property name with a suffix. e.g.,</p>
+<p>Each property may also have some metadata associated with it in the form of another property or attribute. The naming convention of metadata properties is the related property name with a suffix. e.g.,</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&quot;device&quot;: {</div><div class="c-code__line">    &quot;javascript&quot;: &quot;&quot;,</div><div class="c-code__line">    &quot;javascriptdelayexecution&quot;: true</div><div class="c-code__line">}</div></div><p>List of suffixes:</p>
 <div class="g-table g-table--overflow"><table class="c-table">
 <tr class="c-table__row--heading">
@@ -108,13 +108,13 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__client_side_e
 <p>Adding this feature to the page may result in data being written to the client device using <code>cookies</code> or <code>sessionStorage</code> for efficiency. Any keys prefixed with <code>51D_</code> are 51Degrees cookies, and any keys prefixed with <code>fod_</code> are sessionStorage items used for efficient evidence handling and data transfer.</p>
 <p>This example shows the process flow between client and server.</p>
 <p><div class="dotgraph">
-<iframe scrolling="no" frameborder="0" src="dot_client-side-evidence-callback.svg" width="728" height="367"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<iframe scrolling="no" frameborder="0" src="dot_client-side-evidence-callback.svg" width="728" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
 <h2>Cookies on next request</h2>
 <p>When executed, the JavaScript property sets a cookie that is then sent to the server on the next request. The <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> will automatically use these cookies as <a class="el" href="_pipeline_api__concepts__data__evidence.html">evidence</a> so that the results it returns take account of the new information.</p>
 <p>This example shows the process flow between client and server.</p>
 <p><div class="dotgraph">
-<iframe scrolling="no" frameborder="0" src="dot_client-side-evidence.svg" width="587" height="318"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<iframe scrolling="no" frameborder="0" src="dot_client-side-evidence.svg" width="587" height="316"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
 <h2>Privacy Policy</h2>
 <p>If you are using this feature, especially when using the server-side capability to return enriched data, it is your responsibility to consider any updates to your customer privacy policy.</p>
@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__client_side_e
 <p>If you are using the 51Degrees Cloud service, or would like to see an example of how to describe this in your service that incorporates client-side evidence, see our <a href="https://51degrees.com/terms/client-services-privacy-policy/20240430">Client Services Policy</a>.</p>
 <p>For efficiency, we store limited data in cookies or session storage. Anything prefixed <code>51D_</code> or <code>fod_</code> is related to 51Degrees <b>client-side evidence</b> handling and is used solely for the purpose of enabling this technical feature.</p>
 <h2>Storage Mechanism</h2>
-<p>By default, when using the 51Degrees Cloud service, values returned from client-side evidence processing are stored using <code>sessionStorage</code>. This avoids setting any cookies unless explicitly required. However, this behaviour can be changed by adding the <code>fod-js-enable-cookies=true</code> query parameter to the resource key URL. When set, this instructs the client-side script to use <code>cookies</code> instead of <code>sessionStorage</code> for storing data.</p>
+<p>By default, when using the 51Degrees Cloud service, values returned from client-side evidence processing are stored using <code>sessionStorage</code>. This avoids setting any cookies unless explicitly required. However, this behaviour can be changed by adding the <code>fod-js-enable-cookies=true</code> query parameter to the Resource Key URL. When set, this instructs the client-side script to use <code>cookies</code> instead of <code>sessionStorage</code> for storing data.</p>
 <p>For more details on this parameter and related options, see the <a href="https://cloud.51degrees.com/api-docs/index.html">Cloud API Documentation</a>.</p>
 <h1 class="g-docs__section-heading">Web integration</h1>
 <p>The <b>client-side evidence</b> feature requires multiple <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> components to operate together. There are <a class="el" href="_pipeline_api__features__web_integration.html">web integration</a> solutions for various web frameworks that handle most of the complexity for you.</p>
