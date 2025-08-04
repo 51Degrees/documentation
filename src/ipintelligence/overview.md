@@ -6,7 +6,10 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 
 [Quick Start Guide](@ref IpIntelligence_Quickstart) - Get running in minutes!
 
+---
+
 ## How it works
+
 
 51Degrees uses an algorithm to identify IP network ranges and locations. The engine returns:
 
@@ -20,7 +23,10 @@ Features include [randomized coordinates](@ref IpIntelligence_Features_Randomiza
 
 See [technical specification](https://github.com/51Degrees/specifications/blob/main/ip-intelligence-specification/README%2Emd) for details.
 
+---
+
 ## Advanced Features
+
 
 ### Enhanced Coverage
 
@@ -38,7 +44,10 @@ Multiple data sources are [weighted](@ref IpIntelligence_Features_Weighting) to 
 
 Combine IP Intelligence with [Device Detection](@ref DeviceDetection_Overview) for comprehensive user profiling and enhanced accuracy.
 
+---
+
 ## Integration Options
+
 
 Choose what fits your stack:
 
@@ -48,7 +57,10 @@ Choose what fits your stack:
 
 [Compare integration options](@ref IpIntelligence_Quickstart)
 
+---
+
 ## Examples and Getting Started
+
 
 Want to see how it works? Dive into our examples and hit the ground running:
 
@@ -64,7 +76,10 @@ Want to see how it works? Dive into our examples and hit the ground running:
 ### All Examples
 - [Examples Index](@ref IpIntelligence_Examples_Index) - Browse all available examples
 
+---
+
 ## Common Use Cases
+
 
 ### Targeted Advertising
 
@@ -94,7 +109,10 @@ Adapt interfaces and content quality based on connection type (cellular, corpora
 
 Convert coordinates to human-readable addresses using our [Reverse Geocoding service](@ref ReverseGeocoding_Overview).
 
+---
+
 ## Combined with Device Detection
+
 
 When you combine IP Intelligence with Device Detection, you get powerful insights:
 

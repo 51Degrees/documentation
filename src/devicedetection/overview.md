@@ -6,7 +6,10 @@ Device Detection identifies the device, operating system, and browser hitting yo
 
 [Quick Start Guide](@ref DeviceDetection_Quickstart) - Get running in minutes!
 
+---
+
 ## How It Works
+
 
 At the core of 51Degrees is our patented [Hash Algorithm](@ref DeviceDetection_Hash). It scans the User-Agent and other HTTP headers to identify devices in record time. Want to jump straight to real-world uses? Scroll down to Common use cases. Or stick around to see how we tackle the tougher challenges modern web traffic throws our way.
 
@@ -17,7 +20,10 @@ At the core of 51Degrees is our patented [Hash Algorithm](@ref DeviceDetection_H
 
 Dig deeper in our [technical spec](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd) and [feature overview](@ref DeviceDetection_Features_Index).
 
+---
+
 ## Advanced Capabilities
+
 
 ### Apple Device Detection
 
@@ -37,7 +43,10 @@ Need to identify a mobile device from its IMEI number? Our Type Allocation Code 
 
 [Learn more about TAC Lookup](@ref DeviceDetection_Features_TacLookup)
 
+---
+
 ## Flexible Integration Options
+
 
 Choose what fits your stack:
 
@@ -47,7 +56,10 @@ Choose what fits your stack:
 
 [Compare integration options](@ref DeviceDetection_Quickstart) | [See how to migrate from Cloud to On-Premise](@ref DeviceDetection_CloudToOnPremise)
 
+---
+
 ## Technical Foundation
+
 
 Our patented [Hash Algorithm](@ref DeviceDetection_Hash) is built for performance and scale:
 
@@ -60,14 +72,20 @@ Our patented [Hash Algorithm](@ref DeviceDetection_Hash) is built for performanc
 
 Read the [full technical specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd) for the nitty-gritty details.
 
+---
+
 ## Migrating from older versions or other providers
+
 
 Already using 51Degrees V3 or another device detection tool? Thinking of making the switch? We've made it easy. Our migration guides show exactly how our properties and features match up with what you're used to - so you can transition smoothly without missing a beat.
 
 - **Upgrading from 51Degrees V3?** Check out our [V4 upgrade guide](@ref DeviceDetection_UpgradingtoV4).
 - **Moving from DeviceAtlas or WURFL?** We've got dedicated migration guides. [See all migration guides](@ref DeviceDetection_MigrationGuides_Index)
 
+---
+
 ## Examples and Getting Started
+
 
 Want to see how it works? Dive into our examples and hit the ground running:
 
@@ -87,7 +105,10 @@ Want to see how it works? Dive into our examples and hit the ground running:
 ### All Examples
 - [Examples Index](@ref DeviceDetection_Examples_Index) - Browse all our examples in one place
 
+---
+
 ## Common Use Cases
+
 
 ### Responsive Design and User Experience
 

@@ -8,6 +8,7 @@ This page gives an overview of UA-CH detection in our API. It also provides guid
 
 ## Two ways to retrieve UA-CH values
 
+
 You can retrieve UA-CH values using either of these methods:
 
 - **HTTP headers** - Set headers in your response to ask the browser to send UA-CH values
@@ -23,6 +24,7 @@ This topic has the following subpages:
 
 ## Examples
 
+
 We have examples that demonstrate UA-CH detection in various scenarios:
 
 - [On-premise console](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise) 
@@ -33,9 +35,12 @@ We have examples that demonstrate UA-CH detection in various scenarios:
 
 **Note:** Console examples work in any situation. Web examples require a browser that supports UA-CH (Chrome, Edge, or other Chromium-based browsers).
 
+---
+
 # Support for detection from Client Hints <a href="#UACH_Support">#</a> @anchor UACH_Support
 
 ## Current support
+
 
 The 51Degrees Device Detection API provides comprehensive UA-CH support:
 
@@ -45,16 +50,20 @@ The 51Degrees Device Detection API provides comprehensive UA-CH support:
 
 ## JavaScript API support
 
+
 We added support for the UA-CH [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API) in:
 
 - .NET API version 4.4.19 
 - Data files from March 6, 2023
+
+---
 
 # Guidance <a href="#UACH_Guidance">#</a> @anchor UACH_Guidance
 
 UA-CH offers several mechanisms for accessing values. This section explains our recommendations for different use-cases.
 
 ## On-premise API serving end-users directly
+
 
 **Using our web integration:**
 - Ensure these properties are included: `SetHeaderBrowserAccept-CH`, `SetHeaderHardwareAccept-CH`, and `SetHeaderPlatformAccept-CH`
@@ -65,6 +74,7 @@ UA-CH offers several mechanisms for accessing values. This section explains our 
 - See the 'non-integrated' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers)
 
 ## On-premise API not serving end-users directly
+
 
 **Recommended approach:**
 - Ask your clients to set the `Delegate-CH` meta http-equiv tag
@@ -78,6 +88,7 @@ UA-CH offers several mechanisms for accessing values. This section explains our 
 
 ## Calling cloud service from client-side code
 
+
 **Best performance:**
 - Set `Delegate-CH` meta http-equiv tag or `Permissions-Policy` and `Accept-CH` response headers
 - See the 'Cloud' section on the [UA-CH Headers page](@ref DeviceDetection_Features_UACH_Headers)
@@ -86,9 +97,12 @@ UA-CH offers several mechanisms for accessing values. This section explains our 
 - Ensure your Resource Key includes the `JavascriptGetHighEntropyValues` property
 - This gathers values automatically and sends them to our cloud service
 
+---
+
 # Background reading <a href="#UACH_Background">#</a> @anchor UACH_Background 
 
 ## How UA-CH works
+
 
 The authors of the proposal have created an [article](https://web.dev/user-agent-client-hints) covering how UA-CH works.
 
@@ -99,6 +113,7 @@ The authors of the proposal have created an [article](https://web.dev/user-agent
 
 ## Google's rollout timeline
 
+
 **May 2021:** Google [outlined](https://blog.chromium.org/2021/05/update-on-user-agent-string-reduction.html) their UA-CH rollout plans. They confirmed that User-Agent deprecation wouldn't happen until at least 2022.
 
 **September 2021:** Google provided [further detail](https://blog.chromium.org/2021/09/user-agent-reduction-origin-trial-and-dates.html) about the phased User-Agent deprecation:
@@ -106,6 +121,7 @@ The authors of the proposal have created an [article](https://web.dev/user-agent
 - End: Chrome 113 (roughly Q2 2023)
 
 ## Technical context
+
 
 User-Agent Client Hints extends the previously existing Client Hints content negotiation feature.
 
@@ -118,5 +134,6 @@ User-Agent Client Hints extends the previously existing Client Hints content neg
 - [User-Agent Client Hints support](https://caniuse.com/mdn-api_navigator_useragentdata)
 
 ## Additional resources
+
 
 On September 28, 2022, we hosted a webinar discussing User-Agent Client Hints and the future of the User-Agent. [Watch the webinar recording here](https://vimeo.com/755026259).

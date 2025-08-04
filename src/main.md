@@ -8,6 +8,7 @@ Why settle for vague analytics when you can truly understand who's visiting your
 
 ## What We Do
 
+
 At 51Degrees, we turn every user interaction into a chance to learn, optimize, and impress. Here's how:
 
 - **Device Detection** - Detect 250+ device properties from HTTP headers and other signals to tailor every user experience.
@@ -16,7 +17,10 @@ At 51Degrees, we turn every user interaction into a chance to learn, optimize, a
 - **Ultra-fast Performance** - Enjoy lightning-fast detection speeds thanks to in-process deployment.
 - **Privacy-first Architecture** - Prefer to keep your data close? Our On-premise options ensure full control and compliance.
 
+---
+
 ## Get Started Fast
+
 
 Mix and match our services to fit your needs:
 
@@ -50,7 +54,10 @@ Prefer a lightweight approach? Implement device detection directly in the browse
 - [Setup Guide](@ref Services_Configurator) - Resource Key and integration steps
 - [Cloud API Reference](https://cloud.51degrees.com/api-docs/index.html) - Complete HTTP API documentation
 
+---
+
 ## Common Use Cases
+
 
 Here's how you can combine our services for real-world results:
 
@@ -90,7 +97,10 @@ Device Detection + IP Intelligence = faster, smarter websites.
 
 Serve optimized images, adjust content for connection speeds, and choose the best CDN for each user.
 
+---
+
 ## Language Support
+
 
 Work in the language that suits you best. Our services are production-ready across:
 
@@ -101,7 +111,10 @@ Work in the language that suits you best. Our services are production-ready acro
 - [Python](https://github.com/51Degrees/device-detection-python)
 - [PHP](https://github.com/51Degrees/device-detection-php)
 
+---
+
 ## Specialized Integrations
+
 
 Tailor your setup for maximum performance:
 
@@ -112,7 +125,10 @@ Tailor your setup for maximum performance:
 
 Explore all our SDKs on [GitHub](https://github.com/51Degrees/).
 
+---
+
 ## Documentation Hub
+
 
 Everything you need to succeed:
 
@@ -135,7 +151,10 @@ Everything you need to succeed:
 - [Feature comparisons](@ref ProductSummaries_FeatureMatrix)
 - [Performance benchmarks](@ref ProductSummaries_Benchmarks)
 
+---
+
 ## Get Support
+
 
 We're here to help every step of the way:
 

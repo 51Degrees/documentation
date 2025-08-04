@@ -2,11 +2,17 @@
 
 There are a couple methods to integrate the Cloud Service, but regardless of the integration method you will need a [Resource Key](@ref Services_Cloud_ResourceKeys).
 
+---
+
 # RESTful API
+
 
 In the most raw form Cloud Service is accessible via RESTful API that is documented [here](https://cloud.51degrees.com/api-docs/index.html).
 
+---
+
 # Libraries
+
 
 Cloud Service can also be used via a language-specific library wrapping the API calls:
 
