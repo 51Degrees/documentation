@@ -236,7 +236,7 @@ Keep cloud access during migration:
 3. Enable [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) for better accuracy
 4. Monitor [match metrics](@ref DeviceDetection_Examples_MatchMetrics_OnPremiseHash) for quality
 
-## Get Help
+## 💬 Get Help
 
 - Enterprise support: [support@51degrees.com](mailto:support@51degrees.com)  
 - Technical documentation: [On-Premise Guide](@ref DeviceDetection_Quickstart)

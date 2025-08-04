@@ -134,7 +134,7 @@ Serve optimized images, adjust content for connection speeds, and choose the bes
 
 Everything you need to succeed:
 
-### Quick Starts
+### 💡 Quick Starts
 
 - [Device Detection](@ref DeviceDetection_Quickstart) - Cloud vs. On-premise
 - [IP Intelligence](@ref IpIntelligence_Quickstart) - Location and network data
@@ -155,7 +155,7 @@ Everything you need to succeed:
 
 ---
 
-## Get Support
+## 💬 Get Support
 
 
 We're here to help every step of the way:

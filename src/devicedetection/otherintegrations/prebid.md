@@ -107,7 +107,7 @@ If device data doesn't appear in bid requests:
 
 For Apple device detection, ensure you're using client-side evidence collection for the most accurate results.
 
-## Support
+## 💬 Support
 
 - Technical questions: [support@51degrees.com](mailto:support@51degrees.com)
 - Integration assistance available for custom implementations

@@ -64,7 +64,7 @@ Choose what fits your stack:
 
 Want to see how it works? Dive into our examples and hit the ground running:
 
-### Quick Start
+### 💡 Quick Start
 - [Quick Start Guide](@ref IpIntelligence_Quickstart) - Get up and running in minutes
 
 ### Console Examples

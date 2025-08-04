@@ -89,7 +89,7 @@ Already using 51Degrees V3 or another device detection tool? Thinking of making 
 
 Want to see how it works? Dive into our examples and hit the ground running:
 
-### Quick Start
+### 💡 Quick Start
 - [Quick Start Guide](@ref DeviceDetection_Quickstart) - Get started in minutes
 
 ### Web Integration Examples
