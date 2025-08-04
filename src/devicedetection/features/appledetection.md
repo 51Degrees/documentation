@@ -9,7 +9,7 @@ This means it's not possible to identify the exact iPhone/iPad model using only 
 To solve this, 51Degrees uses **client-side JavaScript** to gather additional evidence from the device,
 such as screen resolution and GPU model.
 This allows us to identify the precise Apple hardware model - including the specific iPhone/iPad generation.
-Even when the User-Agent string is generic!
+Even when the User-Agent string is generic.
 
 This feature is built into the [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) functionality,
 and is automatically enabled when the relevant property is included in your Resource Key.

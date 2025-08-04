@@ -4,7 +4,7 @@
 
 Device Detection identifies the device, operating system, and browser hitting your website, plus over 250 other details you can use to fine-tune experiences across smartphones, tablets, desktops, TVs, and other connected devices.
 
-[Quick Start Guide](@ref DeviceDetection_Quickstart) - Get running in minutes!
+[Quick Start Guide](@ref DeviceDetection_Quickstart) - Get running in minutes.
 
 ---
 

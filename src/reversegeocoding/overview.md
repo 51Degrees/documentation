@@ -4,7 +4,7 @@
 
 Reverse geocoding turns GPS coordinates into real places. Give us a latitude and longitude, and we'll tell you the country, city, street address, or other location details.
 
-[Quick Start Guide](@ref ReverseGeocoding_Quickstart) - Get running in minutes!
+[Quick Start Guide](@ref ReverseGeocoding_Quickstart) - Get running in minutes.
 
 ---
 

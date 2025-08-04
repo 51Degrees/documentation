@@ -4,7 +4,7 @@
 
 IP Intelligence provides geolocation, ISP, connection type, and network information for any IP address to enhance user experience, security, and content delivery.
 
-[Quick Start Guide](@ref IpIntelligence_Quickstart) - Get running in minutes!
+[Quick Start Guide](@ref IpIntelligence_Quickstart) - Get running in minutes.
 
 ---
 
