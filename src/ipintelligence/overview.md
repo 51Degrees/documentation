@@ -81,31 +81,31 @@ Want to see how it works? Dive into our examples and hit the ground running:
 ## Common Use Cases
 
 
-### Targeted Advertising
+### 🎯 Targeted Advertising
 
 Deliver location and device-appropriate advertising based on IP geolocation combined with device characteristics.
 
-### Content Personalization
+### 🌍 Content Personalization
 
 Serve location-relevant content (news, language, pricing) while adapting to device capabilities and connection quality.
 
-### Performance Optimization
+### ⚡ Performance Optimization
 
 Anticipate network characteristics based on ISP and connection type to optimize content delivery and user experience.
 
-### Fraud Detection & Security
+### 🛡️ Fraud Detection & Security
 
 Detect click fraud, suspicious logins, and automated attacks by analyzing IP patterns, locations, and device combinations.
 
-### Compliance & Geo-blocking
+### 🚫 Compliance & Geo-blocking
 
 Enforce geographical restrictions for gambling, content licensing, or data privacy regulations like GDPR.
 
-### Connection Intelligence
+### 🔌 Connection Intelligence
 
 Adapt interfaces and content quality based on connection type (cellular, corporate, broadband) for optimal performance.
 
-### Reverse Geocoding
+### 🗺️ Reverse Geocoding
 
 Convert coordinates to human-readable addresses using our [Reverse Geocoding service](@ref ReverseGeocoding_Overview).
 

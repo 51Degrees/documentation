@@ -30,23 +30,23 @@ Reverse geocoding runs as a cloud service, so there's no local setup needed. We 
 ## Common Use Cases
 
 
-### Content Personalization
+### 🌍 Content Personalization
 
 Turn user coordinates into local content. Show nearby stores, local weather, or region-specific offers.
 
-### Address Completion
+### 📝 Address Completion
 
 Help users fill out forms by converting their GPS location into a full address automatically.
 
-### Analytics and Insights
+### 📊 Analytics and Insights
 
 Understand where your traffic comes from. Map user behavior to specific cities, regions, or countries.
 
-### Compliance and Geo-fencing
+### 🚫 Compliance and Geo-fencing
 
 Enforce geographic restrictions for content licensing, gambling regulations, or data privacy laws.
 
-### Emergency Services
+### 🆘 Emergency Services
 
 Convert GPS coordinates into actionable addresses for emergency response or delivery services.
 

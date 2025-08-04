@@ -110,34 +110,34 @@ Want to see how it works? Dive into our examples and hit the ground running:
 ## Common Use Cases
 
 
-### Responsive Design and User Experience
+### 📱 Responsive Design and User Experience
 
 Detect screen size, device type, and input methods to serve layouts and navigation that feel just right on any device.
 
-### Performance Optimization
+### ⚡ Performance Optimization
 
 Speed things up. Optimize images, trim down content, or tweak features based on device capabilities and network conditions.
 
-### Analytics and Business Intelligence
+### 📊 Analytics and Business Intelligence
 
 Get a detailed picture of your audience's devices, browsers, and operating systems. Use the data to understand behavior, improve user journeys, or enhance programmatic ad analytics—especially with [Prebid integrations](@ref DeviceDetection_OtherIntegrations_Prebid).
 
-### Advertising and Monetization
+### 💰 Advertising and Monetization
 
 Run device-specific ad formats, fine-tune targeting, and optimize placements to boost revenue. Integrate with [Prebid](@ref DeviceDetection_OtherIntegrations_Prebid) to enrich bid requests and make programmatic smarter.
 
-### Security and Fraud Detection
+### 🛡️ Security and Fraud Detection
 
 Spot suspicious traffic and potential threats using device characteristics and behavioral signals.
 
-### Mobile App Development
+### 📲 Mobile App Development
 
 Identify Progressive Web Apps (PWAs), check feature support, and tailor mobile experiences that feel native.
 
-### Cross-Device User Journeys
+### 🔄 Cross-Device User Journeys
 
 Track users across smartphones, tablets, and desktops for seamless omnichannel experiences.
 
-### Content Delivery and Media
+### 🎬 Content Delivery and Media
 
 Detect codecs, screen resolutions, and bandwidth conditions to deliver streaming media without hiccups.
