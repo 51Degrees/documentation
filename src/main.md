@@ -56,60 +56,19 @@ Prefer a lightweight approach? Implement device detection directly in the browse
 
 ---
 
-## Common Use Cases
-
-
-Here's how you can combine our services for real-world results:
-
-### Enhanced User Experience
-
-Device Detection + IP Intelligence = spot-on content delivery.
-
-Detect mobile users in rural areas and serve relevant content tailored to their needs.
-
-### Fraud Prevention & Security
-
-Device Detection + IP Intelligence = rock-solid risk assessment.
-
-Spot suspicious device and location patterns, detect bots, and prevent account takeovers.
-
-### Programmatic Advertising
-
-Device Detection + IP Intelligence + [Prebid Integration](@ref DeviceDetection_OtherIntegrations_Prebid) = better targeting.
-
-Enrich bid requests with precise device and location data for sharper targeting.
-
-### Advanced Analytics
-
-Device Detection + IP Intelligence = next-level audience segmentation.
-
-See the difference between "iPhone users in London" and "Android tablet users in rural areas" for highly targeted insights.
-
-### Geo-Compliance & Personalization
-
-IP Intelligence + Reverse Geocoding = smarter, compliant experiences.
-
-Enable GDPR compliance, local content licensing, and location-based personalization.
-
-### Performance Optimization
-
-Device Detection + IP Intelligence = faster, smarter websites.
-
-Serve optimized images, adjust content for connection speeds, and choose the best CDN for each user.
-
----
-
 ## Language Support
 
 
 Work in the language that suits you best. Our services are production-ready across:
 
-- [.NET (C#)](https://github.com/51Degrees/device-detection-dotnet)
-- [Java](https://github.com/51Degrees/device-detection-java)
-- [Go](https://github.com/51Degrees/device-detection-go)
-- [Node.js](https://github.com/51Degrees/device-detection-node)
-- [Python](https://github.com/51Degrees/device-detection-python)
-- [PHP](https://github.com/51Degrees/device-detection-php)
+| Language | Device Detection | IP Intelligence |
+|----------|------------------|-----------------|
+| .NET (C#) | [device-detection-dotnet](https://github.com/51Degrees/device-detection-dotnet) | [ip-intelligence-dotnet](https://github.com/51Degrees/ip-intelligence-dotnet) |
+| Java | [device-detection-java](https://github.com/51Degrees/device-detection-java) | [ip-intelligence-java](https://github.com/51Degrees/ip-intelligence-java) |
+| Go | [device-detection-go](https://github.com/51Degrees/device-detection-go) | [ip-intelligence-go](https://github.com/51Degrees/ip-intelligence-go) |
+| Node.js | [device-detection-node](https://github.com/51Degrees/device-detection-node) | - |
+| Python | [device-detection-python](https://github.com/51Degrees/device-detection-python) | - |
+| PHP | [device-detection-php](https://github.com/51Degrees/device-detection-php) | - |
 
 ---
 
@@ -124,6 +83,49 @@ Tailor your setup for maximum performance:
 - [Varnish Module](https://github.com/51Degrees/device-detection-varnish) - cache smarter, deliver faster
 
 Explore all our SDKs on [GitHub](https://github.com/51Degrees/).
+
+---
+
+## Common Use Cases
+
+
+Here's how you can combine our services for real-world results:
+
+### 🎯 Enhanced User Experience
+
+Device Detection + IP Intelligence = spot-on content delivery.
+
+Detect mobile users in rural areas and serve relevant content tailored to their needs.
+
+### 🛡️ Fraud Prevention & Security
+
+Device Detection + IP Intelligence = rock-solid risk assessment.
+
+Spot suspicious device and location patterns, detect bots, and prevent account takeovers.
+
+### 📊 Programmatic Advertising
+
+Device Detection + IP Intelligence + [Prebid Integration](@ref DeviceDetection_OtherIntegrations_Prebid) = better targeting.
+
+Enrich bid requests with precise device and location data for sharper targeting.
+
+### 📈 Advanced Analytics
+
+Device Detection + IP Intelligence = next-level audience segmentation.
+
+See the difference between "iPhone users in London" and "Android tablet users in rural areas" for highly targeted insights.
+
+### 🌍 Geo-Compliance & Personalization
+
+IP Intelligence + Reverse Geocoding = smarter, compliant experiences.
+
+Enable GDPR compliance, local content licensing, and location-based personalization.
+
+### ⚡ Performance Optimization
+
+Device Detection + IP Intelligence = faster, smarter websites.
+
+Serve optimized images, adjust content for connection speeds, and choose the best CDN for each user.
 
 ---
 
