@@ -16,7 +16,7 @@ On-premise deployment works better when you need:
 
 ## Migration Steps Overview
 
-1. Get an on-premise license and data file
+1. Get an On-Premise license and data file
 2. Update package dependencies (if needed)
 3. Change pipeline configuration 
 4. Modify code for file-based detection
@@ -36,7 +36,7 @@ On-premise deployment works better when you need:
 
 ## Step 2: Update Dependencies
 
-Most 51Degrees packages already include both cloud and on-premise capabilities. You typically only need configuration changes.
+Most 51Degrees packages already include both cloud and On-Premise capabilities. You typically only need configuration changes.
 
 **.NET**
 ```xml
@@ -203,9 +203,9 @@ See [Performance Examples](@ref DeviceDetection_Examples_Performance_OnPremiseHa
 Keep cloud access during migration:
 
 1. Maintain your cloud Resource Key
-2. Use feature flags to switch between cloud and on-premise
+2. Use feature flags to switch between cloud and On-Premise
 3. Run both implementations in parallel initially
-4. Gradually shift traffic to on-premise
+4. Gradually shift traffic to On-Premise
 
 ## Troubleshooting
 
@@ -215,7 +215,7 @@ Keep cloud access during migration:
 - Confirm data file downloaded successfully
 
 **License key issues**
-- Ensure license is for on-premise (not cloud)
+- Ensure license is for On-Premise (not cloud)
 - Check license hasn't expired
 - Verify product tier matches your data file
 
@@ -231,7 +231,7 @@ Keep cloud access during migration:
 
 ## Next Steps
 
-1. Review [on-premise examples](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise)
+1. Review [On-Premise examples](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise)
 2. Set up [automatic data file updates](@ref DeviceDetection_Examples_DataFileUpdates_Index)
 3. Enable [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) for better accuracy
 4. Monitor [match metrics](@ref DeviceDetection_Examples_MatchMetrics_OnPremiseHash) for quality

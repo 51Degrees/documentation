@@ -24,7 +24,7 @@
 
 ---
 
-### On-Premise Deployment <a href="#on-premise-integration">#</a> @anchor on-premise-integration
+### On-Premise Deployment <a href="#On-Premise-integration">#</a> @anchor On-Premise-integration
 **Best for:** High-performance, privacy-sensitive, or offline environments
 
 **Benefits:**
@@ -82,7 +82,7 @@ Most programming languages support both integration models. Select your language
 @startsnippet{c}
 C does not have a @Pipeline implementation or the ability to use the cloud-based version of 
 Device Detection.
-To get started with C device detection on-premise:
+To get started with C device detection On-Premise:
 
 1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-cxx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
@@ -95,7 +95,7 @@ To get started with C device detection on-premise:
 @startsnippet{cxx}
 C++ does not have a @Pipeline implementation or the ability to use the cloud-based version of 
 Device Detection.
-To get started with C++ device detection on-premise:
+To get started with C++ device detection On-Premise:
 
 1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-cxx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
@@ -157,7 +157,7 @@ To get started with C++ device detection on-premise:
 @startsnippet{php}
 ### Cloud 
 
-This implementation of device detection makes use of 51Degrees' cloud service. In PHP, the cloud version is much easier to work with than the on-premise implementation as well as having much lower memory and CPU requirements. However, it is slower due to Internet latency. If you want faster detections, you should consider on-premise. 
+This implementation of device detection makes use of 51Degrees' cloud service. In PHP, the cloud version is much easier to work with than the On-Premise implementation as well as having much lower memory and CPU requirements. However, it is slower due to Internet latency. If you want faster detections, you should consider On-Premise. 
 
 1. Install the [51degrees/fiftyone.devicedetection](https://packagist.org/packages/51degrees/fiftyone.devicedetection) package using Composer.
 2. Follow the [Cloud Example](@ref DeviceDetection_Examples_GettingStarted_Console_Cloud).
@@ -165,7 +165,7 @@ This implementation of device detection makes use of 51Degrees' cloud service. I
 ### On-Premise
 
 Device detection processing is performed locally using a data file that must be kept updated.
-Due to the restrictions imposed by Composer and Packagist, we cannot supply the on-premise engines through the usual package management ecosystem. Instead, you'll need to clone the [repository](https://github.com/51Degrees/device-detection-php-onpremise) from GitHub and follow the instructions there in order to build and use the on-premise implementation.
+Due to the restrictions imposed by Composer and Packagist, we cannot supply the On-Premise engines through the usual package management ecosystem. Instead, you'll need to clone the [repository](https://github.com/51Degrees/device-detection-php-onpremise) from GitHub and follow the instructions there in order to build and use the On-Premise implementation.
 
 @endsnippet
 @startsnippet{python}
@@ -176,7 +176,7 @@ Due to the restrictions imposed by Composer and Packagist, we cannot supply the 
 @endsnippet
 @startsnippet{varnish}
 Varnish does not have a @Pipeline implementation or the ability to use the cloud-based version of Device Detection.
-To get started with Varnish device detection on-premise:
+To get started with Varnish device detection On-Premise:
 
 1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-varnish).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
@@ -188,7 +188,7 @@ To get started with Varnish device detection on-premise:
 @endsnippet
 @startsnippet{nginx}
 Nginx does not have a @Pipeline implementation or the ability to use the cloud-based version of Device Detection.
-To get started with Nginx device detection on-premise:
+To get started with Nginx device detection On-Premise:
 
 1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-nginx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
@@ -201,7 +201,7 @@ To get started with Nginx device detection on-premise:
 @startsnippet{go}
 Currently, we have a light set of device detection features for Go users to try and evaluate the capability of 51Degrees device detection. Documentation for Go can be found via the following GitHub repositories:
 [device-detection-go](https://github.com/51Degrees/device-detection-go#readme), [device-detection-examples-go](https://github.com/51Degrees/device-detection-examples-go#readme).
-To get started with Go device detection on-premise:
+To get started with Go device detection On-Premise:
 
 1. Clone the GitHub [repository](https://github.com/51Degrees/device-detection-go).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.

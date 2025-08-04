@@ -8,7 +8,7 @@ Version 4 is faster, has a smaller data file, and has an upgraded algorithm that
 Additionally, Version 4 has support for [Google's changes to the User-Agent](https://learnclienthints.com/) and the new 
 [User-Agent Client Hints](https://51degrees.com/blog/updates-to-user-agent-client-hints-version-4-4) HTTP request header.
 
-The steps to upgrade will vary depending on whether you are using our cloud or on-premise service.
+The steps to upgrade will vary depending on whether you are using our cloud or On-Premise service.
 
 <BR>
 
@@ -26,10 +26,10 @@ If you are looking for User-Agent Client Hints support in the cloud, please foll
 
 ## V3 On-premise users <a href="#V3_On_Prem">#</a> @anchor V3_On_Prem
 
-If you wish to continue to use 51Degrees on-premise, you will need to purchase a License Key to access the Version 4 data files. Visit our [pricing](https://51degrees.com/pricing) page and
+If you wish to continue to use 51Degrees On-Premise, you will need to purchase a License Key to access the Version 4 data files. Visit our [pricing](https://51degrees.com/pricing) page and
 select the suitable plan for your needs. Alternatively, you may wish to use our [cloud service](@ref V3_Cloud), which can be called from the server via our APIs.
 
-Once you have received a License Key after signing up for a pricing plan, you can use the key to download a data file for on-premise implementations that contains all the properties. You can 
+Once you have received a License Key after signing up for a pricing plan, you can use the key to download a data file for On-Premise implementations that contains all the properties. You can 
 [download the file manually](https://51degrees.com/developers/downloads) or set up [automatic data file updates](@ref PipelineApi_Features_AutomaticDatafileUpdates).
 
 You can download the latest API packages for your programming language via our [downloads page](https://51degrees.com/developers/downloads)
@@ -49,7 +49,7 @@ If you require any help upgrading, get in touch with [Sales](https://51degrees.c
 ## New customers <a href="#New_Customers">#</a> @anchor New_Customers
 
 If you wish to get started with 51Degrees, check out our @pricing page for an overview of all our pricing tiers. You can then follow the 
-@configuratorexplanation to get started in the cloud or use our [on-premise documentation](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise).
+@configuratorexplanation to get started in the cloud or use our [On-Premise documentation](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise).
 
 Alternatively, get in touch with our [Sales](https://51degrees.com/contact-us) team and mention your use case. Please provide as much information as possible such as 
 intended deployment method, programming language, and environment configuration as this will help us discuss the best solution for you.
@@ -469,7 +469,7 @@ This file should follow the usual structure of a pipeline configuration file. Fo
 }
 ```
 
-- Modification to `Application_Start` method in the application class from `"global.asax.cs"` file to include loading of assemblies required by the pipeline is needed. Again, this is different for cloud and on-premise scenarios. See snippets for both below. 
+- Modification to `Application_Start` method in the application class from `"global.asax.cs"` file to include loading of assemblies required by the pipeline is needed. Again, this is different for cloud and On-Premise scenarios. See snippets for both below. 
 
 On-premise:
 ```{cs}
@@ -708,7 +708,7 @@ Pipeline pipeline = new FiftyOnePipelineBuilder()
     .buildFromConfiguration(options);
 ```
 
-The XML configuration file for the same setup as above (on-premise, low memory, auto updates enabled) would look like this:
+The XML configuration file for the same setup as above (On-Premise, low memory, auto updates enabled) would look like this:
 
 ```{xml}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -808,7 +808,7 @@ var config = {"dataFile" : require("fiftyonedegreeslitepattern"),
 var provider = new fiftyonedegrees.provider(config);
 ```
 
-Creating a Pipeline with a device detection engine is similar although the options are different. You can use either the generic builder or the specific one for on-premise or cloud separately.
+Creating a Pipeline with a device detection engine is similar although the options are different. You can use either the generic builder or the specific one for On-Premise or cloud separately.
 
 Using the generic builder:
 
@@ -821,7 +821,7 @@ let pipeline = new deviceDetectionPipelineBuilder({
 }).build();
 ```
 
-Using the specific on-premise builder:
+Using the specific On-Premise builder:
 
 ```{node}
 const pipeline = new DeviceDetectionOnPremisePipelineBuilder({
@@ -971,8 +971,8 @@ if (device.ismobile.has_value():
 <!-- ===================================================================================
      |                                      PHP                                        |
      =================================================================================== -->
-If you currently use an on-premise data file with PHP then you will need to get the on-premise version of the PHP API from [GitHub](https://github.com/51Degrees/device-detection-php-onpremise).
-<!--TODO: Add complete steps for on-premise PHP.-->
+If you currently use an On-Premise data file with PHP then you will need to get the On-Premise version of the PHP API from [GitHub](https://github.com/51Degrees/device-detection-php-onpremise).
+<!--TODO: Add complete steps for On-Premise PHP.-->
 If you use the cloud version then you can install the fiftyone.devicedetection package from composer.
 
 With the V3 API, a provider could be created with something like this:
@@ -1031,7 +1031,7 @@ if($device->get("ismobile")->hasValue) {
 <!-- ===================================================================================
      |                                    Nginx                                        |
      =================================================================================== -->
-Nginx module comes only with an on-premise version, you will need to get the on-premise version of the Nginx API from [GitHub](https://github.com/51Degrees/device-detection-nginx).
+Nginx module comes only with an On-Premise version, you will need to get the On-Premise version of the Nginx API from [GitHub](https://github.com/51Degrees/device-detection-nginx).
  
 The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file using 51Degrees @Distributor (License Key is required, check [pricing](https://51degrees.com/pricing) page) and be aware of the changes described below. 
  
@@ -1075,7 +1075,7 @@ Further reads:
 <!-- ===================================================================================
      |                                    Varnish                                       |
      =================================================================================== -->
-Varnish module comes only with an on-premise version. You will need to get the on-premise version of the Varnish API from [GitHub](https://github.com/51Degrees/device-detection-varnish).
+Varnish module comes only with an On-Premise version. You will need to get the On-Premise version of the Varnish API from [GitHub](https://github.com/51Degrees/device-detection-varnish).
  
 The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file using 51Degrees @Distributor (License Key is required, check [pricing](https://51degrees.com/pricing) page) and be aware of the changes described below. 
  

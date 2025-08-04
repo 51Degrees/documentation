@@ -40,7 +40,7 @@ Currently active tiers are:
 - Premium (V3 only)
 - TAC (V4 only)
 
-For on-premise solutions, the data tier is defined by the data file that is used. 
+For On-Premise solutions, the data tier is defined by the data file that is used. 
 Different files contain values for different sets of properties.
 In addition, the lite (free) file is updated far less frequently and is not made available via 
 our [Distributor](@ref PipelineApi_Concepts_Terminology_Distributor) automatic update service.

@@ -2,7 +2,7 @@
 
 # Introduction
 
-This example shows how to get set up an on-premise Device Detection @aspectengine and use it 
+This example shows how to get set up an On-Premise Device Detection @aspectengine and use it 
 to process User-Agents and/or User-Agent Client Hints.
 
 There are many different ways to use the pipeline. Rather that creating examples for every scenario, 
@@ -26,7 +26,7 @@ You can mix and match elements from different examples in order to match your us
 @grabexample{device-detection-nginx,hash_2getting_started_8conf,Nginx}
 @grabbedexample
 @startsnippet{varnish}
-This example shows how to use 51Degrees on-premise device detection to determine details about a device based on its User-Agent and User-Agent Client Hint HTTP header values.
+This example shows how to use 51Degrees On-Premise device detection to determine details about a device based on its User-Agent and User-Agent Client Hint HTTP header values.
 
 This example is available in full on [GitHub](https://github.com/51Degrees/device-detection-varnish/blob/master/examples/hash/gettingStarted.vcl).
 

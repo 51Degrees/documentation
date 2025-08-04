@@ -2,7 +2,7 @@
 
 # Introduction
 
-This example shows how to integrate a Pipeline running an on-premise @devicedetection engine 
+This example shows how to integrate a Pipeline running an On-Premise @devicedetection engine 
 into a simple web page.
 
 There are many different ways to use the pipeline. Rather that creating examples for every scenario, 

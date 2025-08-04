@@ -7,23 +7,23 @@ the **engine**, either in memory or a data file. This is in contrast to a @cloud
 exists in a cloud service which is called by the **engine**. Having data that does not reside in the
 **engine** itself means that the same **engine** can be used with multiple data sets.
 
-An **on-premise engine** builds on the @aspectengine concept to introduce the ability to:
+An **On-Premise engine** builds on the @aspectengine concept to introduce the ability to:
 * load data either from memory or one or more data files
 * keep data files up to date
 
 See the
-[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#on-premise-engines)
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#On-Premise-engines)
 for more technical details.
 
 # Use cases
 
-An **on-premise engine** typically does not need to call external components when processing a request.
+An **On-Premise engine** typically does not need to call external components when processing a request.
 This makes it best suited to cases where performance is critical, and the supporting hardware implementation
-reflects this. To provide optimal performance, some **on-premise engines** can be configured to run 
+reflects this. To provide optimal performance, some **On-Premise engines** can be configured to run 
 with any data files held entirely in memory, reducing latency further.
 
 There are also situations where the security demands of a service make sending sensitive data to an
-external [cloud service](@term{CloudService}) problematic. Using an **on-premise engine** will address this issue.
+external [cloud service](@term{CloudService}) problematic. Using an **On-Premise engine** will address this issue.
 
 # Data files <a href="#PipelineApi_Concepts_Configuration_DataFiles">#</a> @anchor PipelineApi_Concepts_Configuration_DataFiles
 
@@ -54,5 +54,5 @@ the @dataupdateservice with the age of the data file, the time at which a new on
 
 ## Multiple files
 
-An **on-premise engine** can require more than one data file. Files can be individually registered with the @dataupdateservice, 
+An **On-Premise engine** can require more than one data file. Files can be individually registered with the @dataupdateservice, 
 which will handle each file according to its own metadata. This allows different data files to have distinct update configurations.

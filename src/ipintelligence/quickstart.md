@@ -37,7 +37,7 @@ Select your language below for detailed setup instructions:
 @startsnippet{c}
 C does not have a @Pipeline implementation or the ability to use the cloud-based version of 
 IP intelligence.
-To get started with C IP intelligence on-premise:
+To get started with C IP intelligence On-Premise:
 
 1. Clone the GitHub [repository](https://github.com/51degrees/ip-intelligence-cxx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
@@ -50,7 +50,7 @@ To get started with C IP intelligence on-premise:
 @startsnippet{cxx}
 C++ does not have a @Pipeline implementation or the ability to use the cloud-based version of 
 Ip intelligence.
-To get started with C++ device detection on-premise:
+To get started with C++ device detection On-Premise:
 
 1. Clone the GitHub [repository](https://github.com/51degrees/ip-intelligence-cxx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
@@ -99,7 +99,7 @@ For web applications, add the web integration dependency:
 </dependency>
 ```
 
-Configure the pipeline using the configuration from the on-premise example above.
+Configure the pipeline using the configuration from the On-Premise example above.
 
 @endsnippet
 @startsnippet{go}
@@ -114,7 +114,7 @@ To get started with Go IP Intelligence:
 
 ### Web Integration
 
-For web applications, you can integrate IP Intelligence into your HTTP handlers. See the on-premise example for implementation details.
+For web applications, you can integrate IP Intelligence into your HTTP handlers. See the On-Premise example for implementation details.
 
 @endsnippet
 @endsnippets

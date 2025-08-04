@@ -2,7 +2,7 @@
 
 # Introduction
 
-This example shows how to get set up an on-premise IP Intelligence @aspectengine and use it 
+This example shows how to get set up an On-Premise IP Intelligence @aspectengine and use it 
 to process IP addresses.
 
 There are many different ways to use the pipeline. Rather that creating examples for every scenario, 

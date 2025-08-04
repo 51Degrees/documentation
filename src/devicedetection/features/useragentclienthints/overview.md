@@ -67,7 +67,7 @@ UA-CH offers several mechanisms for accessing values. This section explains our 
 
 **Using our web integration:**
 - Ensure these properties are included: `SetHeaderBrowserAccept-CH`, `SetHeaderHardwareAccept-CH`, and `SetHeaderPlatformAccept-CH`
-- All properties are included by default for on-premise
+- All properties are included by default for On-Premise
 - Our software automatically sets the `Accept-CH` header to request needed client hints
 
 **Not using our web integration:**

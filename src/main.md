@@ -29,7 +29,7 @@ Mix and match our services to fit your needs:
 Identify devices, browsers, and capabilities to deliver tailored experiences across smartphones, tablets, desktops, TVs, and IoT devices.
 
 - [Overview](@ref DeviceDetection_Overview) - How it works and why it matters
-- [Quick Start](@ref DeviceDetection_Quickstart) - Cloud vs. on-premise setup
+- [Quick Start](@ref DeviceDetection_Quickstart) - Cloud vs. On-Premise setup
 - [Apple Detection](@ref DeviceDetection_Features_AppleDetection) - Pinpoint specific iPhone/iPad models
 
 ### IP Intelligence

@@ -37,7 +37,7 @@ Make sure that one or more of the following properties are included with your
 (The configurator will automatically add the ones relevant to the properties you have selected)
 
 If you are calling our cloud service via our Pipeline API, hosted on your servers, then you'll
-also need to ensure the `Accept-CH` HTTP header is set using these values. See the 'on-premise' 
+also need to ensure the `Accept-CH` HTTP header is set using these values. See the 'On-Premise' 
 section below for the two approaches to doing this, as well as a note on the `Critical-CH` header.
 
 If you are calling our cloud service directly from the client device, then you'll need to let 
@@ -69,12 +69,12 @@ Permissions-Policy: ch-ua-full-version-list=(self "https://cloud.51degrees.com")
 
 # On-Premise Pipeline API <a href="#UACH_Headers_OnPrem">#</a> @anchor UACH_Headers_OnPrem
 
-If you are using our Pipeline API on your server (either cloud or on-premise) then you'll
+If you are using our Pipeline API on your server (either cloud or On-Premise) then you'll
 need a way to set the `Accept-CH` header in the response to the client.
 
 In either case, you need to ensure the relevant `SetHeaderBrowserAccept-CH`, `SetHeaderHardwareAccept-CH` and 
 `SetHeaderPlatformAccept-CH` properties are included in the results (all properties are included 
-by default for on-premise).
+by default for On-Premise).
 If you're unsure which ones are relevant for you, see the 
 [required values](@ref DeviceDetection_Features_UACH_RequiredUachHeaders) page.
 
