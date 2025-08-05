@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('_device_detection__features__u_a_c_h__
 <li>Our <a class="el" href="_services__configurator.html">Configurator</a> site includes an example for implementing a full client-side solution</li>
 </ul>
 <p><b>Note:</b> Console examples work in any situation. Web examples require a browser that supports UA-CH (Chrome, Edge, or other Chromium-based browsers).</p>
+<hr/>
 <h1 class="g-docs__section-heading">Support for detection from Client Hints <a href="#UACH_Support">#</a><a class="anchor" id="UACH_Support"></a></h1>
 <h2>Current support</h2>
 <p>The 51Degrees Device Detection API provides comprehensive UA-CH support:</p>
@@ -108,12 +109,13 @@ $(document).ready(function(){initNavTree('_device_detection__features__u_a_c_h__
 <li>.NET API version 4.4.19</li>
 <li>Data files from March 6, 2023</li>
 </ul>
+<hr/>
 <h1 class="g-docs__section-heading">Guidance <a href="#UACH_Guidance">#</a><a class="anchor" id="UACH_Guidance"></a></h1>
 <p>UA-CH offers several mechanisms for accessing values. This section explains our recommendations for different use-cases.</p>
 <h2>On-premise API serving end-users directly</h2>
 <p><b>Using our web integration:</b></p><ul>
 <li>Ensure these properties are included: <code>SetHeaderBrowserAccept-CH</code>, <code>SetHeaderHardwareAccept-CH</code>, and <code>SetHeaderPlatformAccept-CH</code></li>
-<li>All properties are included by default for on-premise</li>
+<li>All properties are included by default for On-Premise</li>
 <li>Our software automatically sets the <code>Accept-CH</code> header to request needed client hints</li>
 </ul>
 <p><b>Not using our web integration:</b></p><ul>
@@ -139,6 +141,7 @@ $(document).ready(function(){initNavTree('_device_detection__features__u_a_c_h__
 <li>Ensure your Resource Key includes the <code>JavascriptGetHighEntropyValues</code> property</li>
 <li>This gathers values automatically and sends them to our cloud service</li>
 </ul>
+<hr/>
 <h1 class="g-docs__section-heading">Background reading <a href="#UACH_Background">#</a><a class="anchor" id="UACH_Background"></a></h1>
 <h2>How UA-CH works</h2>
 <p>The authors of the proposal have created an <a href="https://web.dev/user-agent-client-hints">article</a> covering how UA-CH works.</p>

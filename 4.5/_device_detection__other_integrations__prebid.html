@@ -69,72 +69,81 @@ $(document).ready(function(){initNavTree('_device_detection__other_integrations_
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Prebid Integration</h1>
-<p><b>Supercharge your programmatic advertising</b> with 51Degrees Device Detection modules for Prebid. Transform basic OpenRTB requests into rich, device-aware bid opportunities that improve targeting and deliver better user experiences.</p>
-<h2>🚀 Why Prebid + 51Degrees?</h2>
-<p>Most bid requests contain minimal device information, leaving money on the table. Our Prebid modules enrich auctions with detailed device identification, enabling:</p>
+<p>51Degrees provides modules for Prebid that add device detection to programmatic advertising. These modules enrich OpenRTB bid requests with detailed device information before they reach advertisers.</p>
+<h2>How It Works</h2>
+<p>Most bid requests only include basic information like "mobile" or "tablet". This makes it difficult for advertisers to target specific devices or optimize creatives. The 51Degrees modules detect device properties from HTTP headers and add them to the bid request.</p>
+<p>The modules provide:</p>
 <ul>
-<li><b>📈 Higher bid values</b> - Detailed device data enables more precise targeting and competitive bidding</li>
-<li><b>🎯 Precise targeting</b> - Advertisers reach users with device-appropriate creatives</li>
-<li><b>📊 Enhanced analytics</b> - Rich device data provides deeper insights into audience behavior, campaign performance, and audience segmentation</li>
-<li><b>⚡ Real-time performance</b> - Sub-millisecond device detection doesn't slow auctions</li>
-<li><b>🍎 Apple device clarity</b> - Identify specific iPhone/iPad models where others fail</li>
+<li>Device make, model, and operating system details</li>
+<li>Screen dimensions and pixel density</li>
+<li>Hardware capabilities like video support</li>
+<li>Unique device identifiers for consistent targeting</li>
+<li>Access to 250+ device properties through the device ID</li>
 </ul>
-<hr/>
-<h2>💰 Publisher Benefits</h2>
-<p>🎯 <b>Enhanced Inventory Value</b></p>
-<p>Transform generic "mobile" traffic into premium, targetable inventory with specific device models, screen sizes, and capabilities.</p>
-<p>📊 <b>Rich Analytics &amp; Insights</b></p>
-<p>Understand your audience better with detailed device breakdowns and performance metrics by device type.</p>
-<p>🔒 <b>Device Model Identification</b></p>
-<p><code>device.ext.fiftyonedegrees_deviceId</code> provides consistent device model classification for targeting and analytics, allowing you to associate a device with all of its attributes on the server side. This <b>unlocks access to <a href="https://51degrees.com/developers/property-dictionary">250+ device properties</a></b> based on the device ID.</p>
-<h2>🎨 Advertiser Benefits</h2>
-<p>🎪 <b>Creative Optimization</b></p>
-<p>Deliver device-appropriate ad formats - video for capable devices, static for older models, optimal sizes for screens.</p>
-<p>🧭 <b>Precise Audience Targeting</b></p>
-<p>Reach "iPhone 15 Pro users" instead of generic "mobile users" for luxury goods, gaming apps, and premium services (specific iPhone/iPad models available with Prebid.js and <a class="el" href="_pipeline_api__features__client_side_evidence.html">client-side evidence</a> via <a class="el" href="_device_detection__features__apple_detection.html">Apple model detection</a>).</p>
-<p>⚡ <b>Campaign Performance</b></p>
-<p>Reduce wasted spend on incompatible device targeting and improve conversion rates with device-aware strategies.</p>
-<hr/>
-<h2>🛠️ Implementation Options</h2>
-<h3>🌐 Client-Side: Prebid.js RTD Module</h3>
-<p><b>Best for:</b> Publisher-controlled enrichment, maximum device properties</p><ul>
-<li>Runs in browser for most accurate device detection</li>
-<li>Full access to JavaScript-based Apple device identification</li>
-<li><b><a href="https://docs.prebid.org/dev-docs/modules/51DegreesRtdProvider.html">→ Prebid.js RTD Module Documentation</a></b></li>
+<h2>Implementation Options</h2>
+<p>You can integrate device detection at different points in your Prebid setup.</p>
+<h3>Client-Side: Prebid.js RTD Module</h3>
+<p>Use this when you want maximum device detection accuracy and control over the enrichment process.</p>
+<p>The module runs in the user's browser and can access JavaScript APIs for more precise device identification. This approach works best for detecting specific Apple device models.</p>
+<p><b>Setup:</b> <a href="https://docs.prebid.org/dev-docs/modules/51DegreesRtdProvider.html">Prebid.js RTD Module Documentation</a></p>
+<h3>Server-Side: Prebid Server Modules</h3>
+<p>Use these when you need faster response times or want to centralize device detection logic.</p>
+<p><b>Prebid Server (Java)</b></p><ul>
+<li>Handles high request volumes efficiently</li>
+<li>Suitable for enterprise deployments</li>
+<li><b>Setup:</b> <a href="https://docs.prebid.org/prebid-server/pbs-modules/51degrees-device-detection.html">PBS Java Module Documentation</a></li>
 </ul>
-<h3>⚡ Server-Side: Prebid Server Modules</h3>
-<p><b>Best for:</b> Reduced latency, centralized management, privacy compliance</p>
-<p><b>Prebid Server - Java</b></p><ul>
-<li>Enterprise-grade performance and scalability</li>
-<li><b><a href="https://docs.prebid.org/prebid-server/pbs-modules/51degrees-device-detection.html">→ PBS Java Module Documentation</a></b></li>
+<p><b>Prebid Server (Go)</b></p><ul>
+<li>Lightweight implementation</li>
+<li>Good for smaller deployments</li>
+<li><b>Setup:</b> <a href="https://docs.prebid.org/prebid-server/pbs-modules/51degrees-device-detection.html">PBS Go Module Documentation</a></li>
 </ul>
-<p><b>Prebid Server - Go</b></p>
-<ul>
-<li>Lightweight, high-performance alternative</li>
-<li><b><a href="https://docs.prebid.org/prebid-server/pbs-modules/51degrees-device-detection.html">→ PBS Go Module Documentation</a></b></li>
-</ul>
-<hr/>
-<h2>🚀 Getting Started</h2>
-<h3>⚡ Quick Start (Cloud - Free)</h3>
+<h2>Getting Started</h2>
+<h3>Cloud Setup (Free)</h3>
 <ol type="1">
-<li><b><a href="https://configure.51degrees.com">Get your Resource Key</a></b> - Free cloud integration</li>
-<li><b>Choose your module</b> - Pick client-side or server-side integration</li>
-<li><b>Follow the setup guide</b> - Each Prebid module includes detailed examples</li>
-<li><b>Start earning more</b> - Watch your CPMs increase with enriched bid requests</li>
+<li>Get a Resource Key from the <a href="https://configure.51degrees.com">Cloud Configurator</a></li>
+<li>Install and configure your chosen Prebid module</li>
+<li>Test with sample bid requests to verify device data appears</li>
 </ol>
-<h3>🏢 Enterprise Setup (On-Premise)</h3>
-<ul>
-<li><b><a href="https://github.com/51Degrees/device-detection-data">Download Lite data file</a></b> for testing</li>
-<li><b>Purchase enterprise license</b> for full device coverage and automatic updates</li>
-<li><b>Deploy locally</b> for maximum performance and data privacy</li>
+<h3>On-Premise Setup</h3>
+<ol type="1">
+<li>Download the <a href="https://github.com/51Degrees/device-detection-data">Lite data file</a> for testing</li>
+<li>For production, purchase a license for the full dataset with automatic updates</li>
+<li>Configure your module to use the local data file</li>
+</ol>
+<h2>Bid Request Enrichment</h2>
+<p>The modules add device information to the OpenRTB <code>device</code> object:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div><div class="c-code__line">  &quot;device&quot;: {</div><div class="c-code__line">    &quot;make&quot;: &quot;Apple&quot;,</div><div class="c-code__line">    &quot;model&quot;: &quot;iPhone 15 Pro&quot;, </div><div class="c-code__line">    &quot;os&quot;: &quot;iOS&quot;,</div><div class="c-code__line">    &quot;osv&quot;: &quot;17.1&quot;,</div><div class="c-code__line">    &quot;w&quot;: 393,</div><div class="c-code__line">    &quot;h&quot;: 852,</div><div class="c-code__line">    &quot;pxratio&quot;: 3.0,</div><div class="c-code__line">    &quot;ext&quot;: {</div><div class="c-code__line">      &quot;fiftyonedegrees_deviceId&quot;: &quot;17595-131070-140777-18092&quot;</div><div class="c-code__line">    }</div><div class="c-code__line">  }</div><div class="c-code__line">}</div></div><p>The <code>fiftyonedegrees_deviceId</code> links to additional properties in our <a href="https://51degrees.com/developers/property-dictionary">device database</a>. Use this ID to access hardware specs, browser capabilities, and other targeting criteria.</p>
+<h2>Use Cases</h2>
+<p>📰 <b>Publishers</b> can use device data to:</p><ul>
+<li>Create device-specific ad placements</li>
+<li>Analyze traffic by device type</li>
+<li>Set floor prices based on device capabilities</li>
 </ul>
-<h3>📋 What Gets Added to Your Bid Requests</h3>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div><div class="c-code__line">  &quot;device&quot;: {</div><div class="c-code__line">    &quot;make&quot;: &quot;Apple&quot;,</div><div class="c-code__line">    &quot;model&quot;: &quot;iPhone 15 Pro&quot;, </div><div class="c-code__line">    &quot;os&quot;: &quot;iOS&quot;,</div><div class="c-code__line">    &quot;osv&quot;: &quot;17.1&quot;,</div><div class="c-code__line">    &quot;w&quot;: 393,</div><div class="c-code__line">    &quot;h&quot;: 852,</div><div class="c-code__line">    &quot;pxratio&quot;: 3.0,</div><div class="c-code__line">    &quot;ext&quot;: {</div><div class="c-code__line">      &quot;fiftyonedegrees_deviceId&quot;: &quot;17595-131070-140777-18092&quot;</div><div class="c-code__line">    }</div><div class="c-code__line">  }</div><div class="c-code__line">}</div></div><hr/>
-<h2>💬 Need Help?</h2>
+<p>🎯 <b>Advertisers</b> can use this data to:</p><ul>
+<li>Target specific device models for app campaigns</li>
+<li>Serve appropriate creative formats (video vs. static)</li>
+<li>Optimize campaigns based on device performance data</li>
+</ul>
+<p>⚙️ <b>Ad Tech Platforms</b> can:</p><ul>
+<li>Build device-aware bidding algorithms</li>
+<li>Provide better reporting and analytics</li>
+<li>Create device-based audience segments</li>
+</ul>
+<h2>Troubleshooting</h2>
+<p>If device data doesn't appear in bid requests:</p>
+<ol type="1">
+<li>Check your Resource Key or data file configuration</li>
+<li>Verify the module is properly installed and enabled</li>
+<li>Confirm bid requests include the necessary HTTP headers</li>
+<li>Check module logs for error messages</li>
+</ol>
+<p>For Apple device detection, ensure you're using client-side evidence collection for the most accurate results.</p>
+<h2>💬 Support</h2>
 <ul>
-<li><b>Questions?</b> Email <a href="#" onclick="location.href='mai'+'lto:'+'sup'+'po'+'rt@'+'51'+'deg'+'re'+'es.'+'co'+'m'; return false;">support@51degrees.com</a></li>
-<li><b>Integration support?</b> Our team helps with custom implementations</li>
-<li><b>Performance questions?</b> We provide optimization guidance for high-volume scenarios </li>
+<li>Technical questions: <a href="#" onclick="location.href='mai'+'lto:'+'sup'+'po'+'rt@'+'51'+'deg'+'re'+'es.'+'co'+'m'; return false;">support@51degrees.com</a></li>
+<li>Integration assistance available for custom implementations</li>
+<li>Performance optimization guidance for high-volume scenarios </li>
 </ul>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->

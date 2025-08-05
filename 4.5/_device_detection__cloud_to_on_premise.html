@@ -69,158 +69,151 @@ $(document).ready(function(){initNavTree('_device_detection__cloud_to_on_premise
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Migrating from Cloud to On-Premise Device Detection</h1>
-<p>This guide helps you transition from 51Degrees Cloud Device Detection to On-Premise deployment, enabling sub-microsecond detection times and complete data privacy.</p>
-<h2>Why Migrate to On-Premise? <a href="#why-migrate">#</a><a class="anchor" id="why-migrate"></a></h2>
-<p>Consider migrating when you need:</p>
+<p>This guide walks you through migrating from 51Degrees Cloud Device Detection to On-Premise deployment. You'll learn when to migrate, how to update your configuration, and what changes to expect.</p>
+<h2>When to Consider On-Premise</h2>
+<p>On-premise deployment works better when you need:</p>
 <ul>
-<li><b>⚡ Ultra-low latency</b> - Sub-microsecond detection time with in-process deployment</li>
-<li><b>🔒 Complete privacy</b> - All processing stays within your infrastructure</li>
-<li><b>📈 High volume processing</b> - Over 1 million detections per second per CPU core</li>
-<li><b>🌐 Offline capability</b> - No internet dependency for detection</li>
-<li><b>💰 Cost efficiency at scale</b> - Fixed licensing vs pay-per-request</li>
+<li><b>Faster response times</b> - Sub-microsecond detection with in-process deployment</li>
+<li><b>Data privacy</b> - All processing happens within your infrastructure</li>
+<li><b>High-volume processing</b> - Handle millions of detections without API limits</li>
+<li><b>Offline capability</b> - No internet connection required</li>
+<li><b>Predictable costs</b> - Fixed licensing instead of per-request pricing</li>
 </ul>
-<h2>Migration Overview <a href="#migration-overview">#</a><a class="anchor" id="migration-overview"></a></h2>
-<p>The migration process involves:</p>
+<h2>Migration Steps Overview</h2>
 <ol type="1">
-<li>Obtaining an On-Premise License Key and <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html#PipelineApi_Concepts_Configuration_DataFiles">data file</a></li>
-<li>Updating your dependencies</li>
-<li>Modifying pipeline configuration</li>
-<li>Implementing data file updates</li>
-<li>Testing and optimization</li>
+<li>Get an On-Premise license and data file</li>
+<li>Update package dependencies (if needed)</li>
+<li>Change pipeline configuration</li>
+<li>Modify code for file-based detection</li>
+<li>Set up data file updates</li>
+<li>Test and optimize performance</li>
 </ol>
-<h2>Step 1: Obtain License Key and Data File <a href="#step1-license">#</a><a class="anchor" id="step1-license"></a></h2>
-<ol type="1">
-<li><b>Choose your data file</b>:<ul>
-<li><b>Lite</b> - Free data file with limited properties (no License Key required)</li>
-<li><b>Enterprise</b> - Full data file with all properties (requires License Key)</li>
+<h2>Step 1: Get License and Data File</h2>
+<p><b>For testing:</b></p><ul>
+<li>Download the free Lite data file from <a href="https://github.com/51degrees/device-detection-data">GitHub</a></li>
+<li>No license key required, but limited device properties</li>
 </ul>
-</li>
-<li><b>For Enterprise users</b>: <a href="https://51degrees.com/contact-us">Contact us</a> to purchase a License Key</li>
-</ol>
-<h2>Step 2: Update Dependencies <a href="#step2-dependencies">#</a><a class="anchor" id="step2-dependencies"></a></h2>
-<p>Most packages already include both cloud and on-premise capabilities - only configuration changes are needed:</p>
-<p><b>.NET</b></p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">&lt;!-- FiftyOne.DeviceDetection includes both cloud and on-premise --&gt;</span></div><div class="c-code__line">&lt;<span class="c-code__keywordtype">PackageReference</span> <span class="c-code__keyword">Include</span>=<span class="c-code__stringliteral">&quot;FiftyOne.DeviceDetection&quot;</span> <span class="c-code__keyword">Version</span>=<span class="c-code__stringliteral">&quot;4.x.x&quot;</span> /&gt;</div><div class="c-code__line"></div><div class="c-code__line"><span class="c-code__comment">&lt;!-- Only replace if you were using cloud-specific packages --&gt;</span></div><div class="c-code__line"><span class="c-code__comment">&lt;!-- Remove: FiftyOne.DeviceDetection.Cloud --&gt;</span></div><div class="c-code__line"><span class="c-code__comment">&lt;!-- Add: FiftyOne.DeviceDetection --&gt;</span></div></div><p><b>Java</b></p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">&lt;!-- Maven - device-detection includes both cloud and on-premise --&gt;</span></div><div class="c-code__line">&lt;<span class="c-code__keywordtype">dependency</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">groupId</span>&gt;<span class="c-code__keyword">com.51degrees</span>&lt;/<span class="c-code__keywordtype">groupId</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">artifactId</span>&gt;<span class="c-code__keyword">device-detection</span>&lt;/<span class="c-code__keywordtype">artifactId</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">version</span>&gt;4.<span class="c-code__keyword">x.x</span>&lt;/<span class="c-code__keywordtype">version</span>&gt;</div><div class="c-code__line">&lt;/<span class="c-code__keywordtype">dependency</span>&gt;</div></div><p><b>Node.js</b></p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line"># Package includes both cloud and on-premise capabilities</div><div class="c-code__line">npm install fiftyone.devicedetection</div></div><p><b>Other Languages</b></p>
-<ul>
-<li><b>C/C++</b>: Clone <a href="https://github.com/51degrees/device-detection-cxx">device-detection-cxx</a></li>
-<li><b>Go</b>: Clone <a href="https://github.com/51degrees/device-detection-go">device-detection-go</a></li>
-<li><b>PHP</b>: Clone <a href="https://github.com/51degrees/device-detection-php-onpremise">device-detection-php-onpremise</a></li>
-<li><b>Python</b>: Install <code>fiftyone-devicedetection-onpremise</code></li>
+<p><b>For production:</b></p><ul>
+<li><a href="https://51degrees.com/contact-us">Contact 51Degrees</a> to purchase an Enterprise license</li>
+<li>Includes full data file with all device properties</li>
+<li>Automatic data file updates included</li>
 </ul>
-<h2>Step 3: Update Pipeline Configuration <a href="#step3-configuration">#</a><a class="anchor" id="step3-configuration"></a></h2>
-<p><b>From Cloud Configuration:</b></p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div><div class="c-code__line">  &quot;Elements&quot;: [</div><div class="c-code__line">    {</div><div class="c-code__line">      &quot;elementKey&quot;: &quot;device&quot;,</div><div class="c-code__line">      &quot;elementParameters&quot;: {</div><div class="c-code__line">        &quot;cloudEndpoint&quot;: &quot;https://cloud.51degrees.com/api/v4&quot;,</div><div class="c-code__line">        &quot;resourceKey&quot;: &quot;YOUR_RESOURCE_KEY&quot;</div><div class="c-code__line">      }</div><div class="c-code__line">    }</div><div class="c-code__line">  ]</div><div class="c-code__line">}</div></div><p><b>To On-Premise Configuration:</b></p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div><div class="c-code__line">  &quot;Elements&quot;: [</div><div class="c-code__line">    {</div><div class="c-code__line">      &quot;elementKey&quot;: &quot;device&quot;,</div><div class="c-code__line">      &quot;elementParameters&quot;: {</div><div class="c-code__line">        &quot;dataFilePath&quot;: &quot;/path/to/51Degrees-LiteV4.1.hash&quot;,</div><div class="c-code__line">        &quot;performanceProfile&quot;: &quot;MaxPerformance&quot;,</div><div class="c-code__line">        &quot;licenseKey&quot;: &quot;YOUR_LICENSE_KEY&quot;,</div><div class="c-code__line">        &quot;autoUpdate&quot;: true,</div><div class="c-code__line">        &quot;updateOnStart&quot;: true,</div><div class="c-code__line">        &quot;fileSystemWatcher&quot;: true</div><div class="c-code__line">      }</div><div class="c-code__line">    }</div><div class="c-code__line">  ]</div><div class="c-code__line">}</div></div><h2>Step 4: Code Changes <a href="#step4-code-changes">#</a><a class="anchor" id="step4-code-changes"></a></h2>
-<p><b>Minimal Code Changes Required</b></p>
-<p>The beauty of 51Degrees Pipeline API is that most code remains unchanged. The primary differences are:</p>
-<ol type="1">
-<li><b>Pipeline Creation</b> - Use file-based builder instead of cloud builder</li>
-<li><b>Error Handling</b> - Handle file-related errors instead of network errors</li>
-<li><b>Property Access</b> - All properties available locally (no cloud property restrictions)</li>
-</ol>
-<p><b>Example: Pipeline Creation</b></p>
-<p><b>Cloud Version:</b></p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">var pipeline = new DeviceDetectionPipelineBuilder()</div><div class="c-code__line">    .UseCloud(resourceKey)</div><div class="c-code__line">    .Build();</div></div><p><b>On-Premise Version:</b></p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">var pipeline = new DeviceDetectionPipelineBuilder()</div><div class="c-code__line">    .UseOnPremise(dataFilePath, licenseKey)</div><div class="c-code__line">    .SetAutoUpdate(true)</div><div class="c-code__line">    .SetPerformanceProfile(PerformanceProfiles.MaxPerformance)</div><div class="c-code__line">    .Build();</div></div><p>For complete examples, see:</p>
-<ul>
+<h2>Step 2: Update Dependencies</h2>
+<p>Most 51Degrees packages already include both cloud and On-Premise capabilities. You typically only need configuration changes.</p>
+<p>**.NET** </p><div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">&lt;!-- Most users already have this --&gt;</span></div><div class="c-code__line">&lt;<span class="c-code__keywordtype">PackageReference</span> <span class="c-code__keyword">Include</span>=<span class="c-code__stringliteral">&quot;FiftyOne.DeviceDetection&quot;</span> <span class="c-code__keyword">Version</span>=<span class="c-code__stringliteral">&quot;4.x.x&quot;</span> /&gt;</div><div class="c-code__line"></div><div class="c-code__line"><span class="c-code__comment">&lt;!-- Only if you had cloud-specific packages --&gt;</span></div><div class="c-code__line"><span class="c-code__comment">&lt;!-- Remove: FiftyOne.DeviceDetection.Cloud --&gt;</span></div><div class="c-code__line"><span class="c-code__comment">&lt;!-- Add: FiftyOne.DeviceDetection --&gt;</span></div></div><p><b>Java</b> </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;<span class="c-code__keywordtype">dependency</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">groupId</span>&gt;<span class="c-code__keyword">com.51degrees</span>&lt;/<span class="c-code__keywordtype">groupId</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">artifactId</span>&gt;<span class="c-code__keyword">device-detection</span>&lt;/<span class="c-code__keywordtype">artifactId</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">version</span>&gt;4.<span class="c-code__keyword">x.x</span>&lt;/<span class="c-code__keywordtype">version</span>&gt;</div><div class="c-code__line">&lt;/<span class="c-code__keywordtype">dependency</span>&gt;</div></div><p><b>Node.js</b> </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">npm install fiftyone.devicedetection</div></div><p><b>Other Languages</b></p><ul>
+<li><b>C/C++</b>: <a href="https://github.com/51degrees/device-detection-cxx">device-detection-cxx</a></li>
+<li><b>Go</b>: <a href="https://github.com/51degrees/device-detection-go">device-detection-go</a></li>
+<li><b>PHP</b>: <a href="https://github.com/51degrees/device-detection-php-onpremise">device-detection-php-onpremise</a></li>
+<li><b>Python</b>: <code>pip install fiftyone-devicedetection-onpremise</code></li>
+</ul>
+<h2>Step 3: Update Configuration</h2>
+<p>Replace your cloud configuration with file-based settings.</p>
+<p><b>Before (Cloud):</b> </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div><div class="c-code__line">  &quot;Elements&quot;: [</div><div class="c-code__line">    {</div><div class="c-code__line">      &quot;elementKey&quot;: &quot;device&quot;,</div><div class="c-code__line">      &quot;elementParameters&quot;: {</div><div class="c-code__line">        &quot;cloudEndpoint&quot;: &quot;https://cloud.51degrees.com/api/v4&quot;,</div><div class="c-code__line">        &quot;resourceKey&quot;: &quot;YOUR_RESOURCE_KEY&quot;</div><div class="c-code__line">      }</div><div class="c-code__line">    }</div><div class="c-code__line">  ]</div><div class="c-code__line">}</div></div><p><b>After (On-Premise):</b> </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div><div class="c-code__line">  &quot;Elements&quot;: [</div><div class="c-code__line">    {</div><div class="c-code__line">      &quot;elementKey&quot;: &quot;device&quot;, </div><div class="c-code__line">      &quot;elementParameters&quot;: {</div><div class="c-code__line">        &quot;dataFilePath&quot;: &quot;/path/to/51Degrees-LiteV4.1.hash&quot;,</div><div class="c-code__line">        &quot;performanceProfile&quot;: &quot;MaxPerformance&quot;,</div><div class="c-code__line">        &quot;licenseKey&quot;: &quot;YOUR_LICENSE_KEY&quot;,</div><div class="c-code__line">        &quot;autoUpdate&quot;: true,</div><div class="c-code__line">        &quot;updateOnStart&quot;: true,</div><div class="c-code__line">        &quot;fileSystemWatcher&quot;: true</div><div class="c-code__line">      }</div><div class="c-code__line">    }</div><div class="c-code__line">  ]</div><div class="c-code__line">}</div></div><h2>Step 4: Update Code</h2>
+<p>The Pipeline API keeps most code unchanged. Main differences:</p>
+<p><b>Pipeline Creation</b></p>
+<p>Before: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">var pipeline = new DeviceDetectionPipelineBuilder()</div><div class="c-code__line">    .UseCloud(resourceKey)</div><div class="c-code__line">    .Build();</div></div><p>After: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">var pipeline = new DeviceDetectionPipelineBuilder()</div><div class="c-code__line">    .UseOnPremise(dataFilePath, licenseKey)</div><div class="c-code__line">    .SetAutoUpdate(true)</div><div class="c-code__line">    .SetPerformanceProfile(PerformanceProfiles.MaxPerformance)</div><div class="c-code__line">    .Build();</div></div><p><b>Error Handling</b></p><ul>
+<li>Handle file system errors instead of network errors</li>
+<li>Check data file permissions and disk space</li>
+<li>Monitor data file update failures</li>
+</ul>
+<p><b>Property Access</b></p><ul>
+<li>All properties are available locally (no cloud restrictions)</li>
+<li>No rate limiting on property requests</li>
+<li>Consistent response times regardless of property count</li>
+</ul>
+<p>For complete examples:</p><ul>
 <li><a class="el" href="_device_detection__examples__getting_started__console__on_premise.html">On-Premise Console Examples</a></li>
 <li><a class="el" href="_device_detection__examples__getting_started__web__on_premise.html">On-Premise Web Examples</a></li>
 </ul>
-<h2>Step 5: Implement Data File Updates <a href="#step5-updates">#</a><a class="anchor" id="step5-updates"></a></h2>
-<p>On-premise deployments require periodic data file updates for latest device information:</p>
+<h2>Step 5: Set Up Data File Updates</h2>
+<p>On-premise deployments need regular data file updates to detect new devices.</p>
 <p><b>Automatic Updates (Recommended)</b></p>
-<p>Configure automatic updates in your pipeline:</p>
-<ul>
+<p>Configure the pipeline to handle updates:</p><ul>
 <li><a class="el" href="_device_detection__examples__data_file_updates__update_on_startup__on_premise_hash.html">Update on Startup</a></li>
 <li><a class="el" href="_device_detection__examples__data_file_updates__file_system_watcher__on_premise_hash.html">File System Watcher</a></li>
 <li><a class="el" href="_device_detection__examples__data_file_updates__polling_interval__on_premise_hash.html">Polling Interval</a></li>
 </ul>
 <p><b>Manual Updates</b></p>
-<p>Download new data files from the <a href="https://51degrees.com/developers/distributor">51Degrees Distributor</a> using your License Key.</p>
-<h2>Step 6: Performance Optimization <a href="#step6-performance">#</a><a class="anchor" id="step6-performance"></a></h2>
-<p><b>Performance Profiles</b></p>
-<p>We recommend <b>MaxPerformance</b> for optimal speed:</p>
+<p>Download new data files from the <a href="https://51degrees.com/developers/distributor">51Degrees Distributor</a> using your license key.</p>
+<h2>Step 6: Optimize Performance</h2>
+<p><b>Choose Performance Profile</b></p>
 <ul>
-<li><b>MaxPerformance</b> - Fastest detection, higher memory usage (recommended)</li>
-<li><b>HighPerformance</b> - Balanced speed and memory</li>
-<li><b>LowMemory</b> - Minimal memory footprint</li>
-<li><b>Balanced</b> - Default balanced option</li>
+<li><b>MaxPerformance</b> - Fastest detection, uses more memory (recommended)</li>
+<li><b>HighPerformance</b> - Good balance of speed and memory</li>
+<li><b>LowMemory</b> - Slowest but minimal memory usage</li>
+<li><b>Balanced</b> - Default middle ground</li>
 </ul>
 <p><b>Deployment Options</b></p>
 <ul>
-<li><b>In-Process</b> (Default) - Sub-microsecond latency</li>
-<li><b>Out-of-Process</b> - Process isolation</li>
+<li><b>In-Process</b> - Fastest option, detection in your application</li>
+<li><b>Out-of-Process</b> - Separate process for isolation</li>
 <li><b>Separate Server</b> - Centralized detection service</li>
 </ul>
 <p>See <a class="el" href="_device_detection__examples__performance__on_premise_hash.html">Performance Examples</a> for benchmarking.</p>
-<h2>Step 7: Testing and Validation <a href="#step7-testing">#</a><a class="anchor" id="step7-testing"></a></h2>
+<h2>Testing Your Migration</h2>
 <ol type="1">
-<li><b>Compare Results</b> - Verify detection results match cloud version</li>
-<li><b>Performance Testing</b> - Confirm latency improvements</li>
-<li><b>Load Testing</b> - Validate throughput at expected volumes</li>
-<li><b>Update Testing</b> - Ensure data file updates work correctly</li>
+<li><b>Compare Results</b> - Verify detection matches cloud results for test cases</li>
+<li><b>Load Testing</b> - Confirm performance under expected traffic</li>
+<li><b>Update Testing</b> - Ensure data file updates work without disruption</li>
+<li><b>Failover Testing</b> - Test what happens if data file becomes unavailable</li>
 </ol>
-<h2>Common Migration Scenarios <a href="#migration-scenarios">#</a><a class="anchor" id="migration-scenarios"></a></h2>
-<p><b>Web Applications</b></p>
-<ul>
-<li>Use <a class="el" href="_device_detection__examples__getting_started__web__on_premise.html">on-premise web integration</a></li>
-<li>Configure middleware for automatic request processing</li>
-<li>Enable client-side evidence for enhanced accuracy</li>
+<h2>Common Migration Patterns</h2>
+<p><b>Web Applications</b></p><ul>
+<li>Use <a class="el" href="_device_detection__examples__getting_started__web__on_premise.html">web integration examples</a></li>
+<li>Configure automatic request processing</li>
+<li>Add client-side evidence for better accuracy</li>
 </ul>
-<p><b>Batch Processing</b></p>
-<ul>
+<p><b>Batch Processing</b></p><ul>
 <li>Use <a class="el" href="_device_detection__examples__offline_processing__on_premise_hash.html">offline processing</a></li>
-<li>Process User-Agent lists efficiently</li>
-<li>Leverage multi-threading for maximum throughput</li>
+<li>Process large User-Agent lists efficiently</li>
+<li>Use multi-threading for maximum throughput</li>
 </ul>
-<p><b>Microservices</b></p>
-<ul>
+<p><b>Microservices</b></p><ul>
 <li>Deploy as sidecar container</li>
 <li>Share data file via volume mount</li>
 <li>Use environment variables for configuration</li>
 </ul>
-<h2>Rollback Plan <a href="#rollback">#</a><a class="anchor" id="rollback"></a></h2>
-<p>Keep cloud configuration available during migration:</p>
+<h2>Planning Your Rollback</h2>
+<p>Keep cloud access during migration:</p>
 <ol type="1">
-<li>Maintain cloud Resource Key</li>
-<li>Use feature flags to switch between cloud/on-premise</li>
-<li>Monitor both implementations initially</li>
-<li>Gradually migrate traffic to on-premise</li>
+<li>Maintain your cloud Resource Key</li>
+<li>Use feature flags to switch between cloud and On-Premise</li>
+<li>Run both implementations in parallel initially</li>
+<li>Gradually shift traffic to On-Premise</li>
 </ol>
-<h2>Troubleshooting <a href="#troubleshooting">#</a><a class="anchor" id="troubleshooting"></a></h2>
-<p><b>Common Issues</b></p>
-<p><b>Data file not found</b></p>
-<ul>
-<li>Verify file path is absolute</li>
-<li>Check file permissions</li>
-<li>Ensure data file is downloaded</li>
+<h2>Troubleshooting</h2>
+<p><b>Data file not found</b></p><ul>
+<li>Check file path is absolute and correct</li>
+<li>Verify file permissions allow read access</li>
+<li>Confirm data file downloaded successfully</li>
 </ul>
-<p><b>License Key invalid</b></p>
-<ul>
-<li>Confirm License Key is for on-premise use</li>
-<li>Check License expiration</li>
-<li>Verify product tier matches data file</li>
+<p><b>License key issues</b></p><ul>
+<li>Ensure license is for On-Premise (not cloud)</li>
+<li>Check license hasn't expired</li>
+<li>Verify product tier matches your data file</li>
 </ul>
-<p><b>Performance not improved</b></p>
-<ul>
-<li>Check performance profile setting</li>
-<li>Verify in-process deployment</li>
+<p><b>Poor performance</b></p><ul>
+<li>Confirm you're using MaxPerformance profile</li>
+<li>Check you're running in-process (not separate service)</li>
 <li>Review <a class="el" href="_device_detection__examples__performance__on_premise_hash.html">performance examples</a></li>
 </ul>
-<h2>Next Steps <a href="#next-steps">#</a><a class="anchor" id="next-steps"></a></h2>
+<p><b>Memory usage too high</b></p><ul>
+<li>Switch to HighPerformance or LowMemory profile</li>
+<li>Consider out-of-process deployment</li>
+<li>Monitor memory usage patterns</li>
+</ul>
+<h2>Next Steps</h2>
 <ol type="1">
-<li>Review <a class="el" href="_device_detection__examples__getting_started__console__on_premise.html">on-premise examples</a></li>
-<li>Implement <a class="el" href="_device_detection__examples__data_file_updates__index.html">automatic updates</a></li>
-<li>Enable <a class="el" href="_pipeline_api__features__client_side_evidence.html">client-side evidence</a> for enhanced accuracy</li>
-<li>Monitor <a class="el" href="_device_detection__examples__match_metrics__on_premise_hash.html">match metrics</a> for quality assurance</li>
+<li>Review <a class="el" href="_device_detection__examples__getting_started__console__on_premise.html">On-Premise examples</a></li>
+<li>Set up <a class="el" href="_device_detection__examples__data_file_updates__index.html">automatic data file updates</a></li>
+<li>Enable <a class="el" href="_pipeline_api__features__client_side_evidence.html">client-side evidence</a> for better accuracy</li>
+<li>Monitor <a class="el" href="_device_detection__examples__match_metrics__on_premise_hash.html">match metrics</a> for quality</li>
 </ol>
-<h2>Need Help?</h2>
+<h2>💬 Get Help</h2>
 <ul>
-<li>📧 Enterprise support: <a href="#" onclick="location.href='mai'+'lto:'+'sup'+'po'+'rt@'+'51'+'deg'+'re'+'es.'+'co'+'m'; return false;">support@51degrees.com</a></li>
-<li>📚 Documentation: <a class="el" href="_device_detection__quickstart.html">On-Premise Integration Guide</a></li>
-<li>💬 Community: <a href="https://github.com/51Degrees">GitHub Discussions</a> </li>
+<li>Enterprise support: <a href="#" onclick="location.href='mai'+'lto:'+'sup'+'po'+'rt@'+'51'+'deg'+'re'+'es.'+'co'+'m'; return false;">support@51degrees.com</a></li>
+<li>Technical documentation: <a class="el" href="_device_detection__quickstart.html">On-Premise Guide</a></li>
+<li>Community support: <a href="https://github.com/51Degrees">GitHub Issues</a> </li>
 </ul>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
