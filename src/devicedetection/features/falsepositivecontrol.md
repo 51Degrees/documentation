@@ -58,32 +58,26 @@ In the future, this may be changed so that `HasValue` will return false if `Valu
 
 # Use cases
 
-> I only want a result if the API is reasonably sure it is correct.
+- **I only want a result if the API is reasonably sure it is correct.**  
+  Set `AllowUnmatched` to false.  
+  Set `Difference` and `Drift` to 10.
 
-Set `AllowUnmatched` to false.  
-Set `Difference` and `Drift` to 10.
+- **I only want exact matches to previously observed User-Agents (default configuration).**  
+  Set `AllowUnmatched` to false.  
+  Set `Difference` and `Drift` to 0.  
+  These settings will mean that a result is only returned if it exactly matches a unique substring from a User-Agent that has been included when building the data file.
 
-> I only want exact matches to previously observed User-Agents (default configuration).
+- **If there is no match found then I want the API to assume that the device is a desktop running an unknown operating system.**  
+  Set `AllowUnmatched` to true.  
+  `Difference` and `Drift` do not influence this use case.  
+  This setting will cause the default (desktop) profiles to be returned if there is no match.
 
-Set `AllowUnmatched` to false.  
-Set `Difference` and `Drift` to 0.  
-These settings will mean that a result is only returned if it exactly matches a unique substring from a User-Agent that has been included when building the data file.
-
-> If there is no match found then I want the API to assume that the device is a desktop running an unknown operating system.
-
-Set `AllowUnmatched` to true.  
-`Difference` and `Drift` do not influence this use case.  
-This setting will cause the default (desktop) profiles to be returned if there is no match.
-
-> I'm migrating from 51Degrees V3 Device Detection and want to retain the previous functionality.
-
-OR
-
-> I want to keep my as code simple as possible. I'm not worried about some false positives.
-
-Set `AllowUnmatched` to true.
-Set `Difference` (and `Drift` if using @Hash) to -1.   
-These settings will mean that `HasValue` is never false. Each property will always have a value so you don't need to worry about dealing with a situation where they do not. 
+- **I'm migrating from 51Degrees V3 Device Detection and want to retain the previous functionality.**  
+  OR  
+  **I want to keep my code simple as possible. I'm not worried about some false positives.**  
+  Set `AllowUnmatched` to true.  
+  Set `Difference` (and `Drift` if using @Hash) to -1.  
+  These settings will mean that `HasValue` is never false. Each property will always have a value so you don't need to worry about dealing with a situation where they do not. 
 
 
 
