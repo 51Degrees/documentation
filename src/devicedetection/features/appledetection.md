@@ -41,6 +41,8 @@ The JavaScript involved comes from the [`JavascriptHardwareProfile`](https://51d
 
 ![Mac Example](images/51D-detection-example-3.svg)
 
+---
+
 ## Terminology
 
 - **Profile**: A set of property values describing a device, OS, or browser.
