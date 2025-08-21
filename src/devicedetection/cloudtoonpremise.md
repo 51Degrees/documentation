@@ -27,7 +27,7 @@ On-premise deployment works better when you need:
 
 **For testing:**
 - Download the free Lite data file from [GitHub](https://github.com/51degrees/device-detection-data)
-- No license key required, but limited device properties
+- No License Key required, but limited device properties
 
 **For production:**
 - [Contact 51Degrees](https://51degrees.com/contact-us) to purchase an Enterprise license
@@ -155,7 +155,7 @@ Configure the pipeline to handle updates:
 
 **Manual Updates**
 
-Download new data files from the [51Degrees Distributor](https://51degrees.com/developers/distributor) using your license key.
+Download new data files from the [51Degrees Distributor](https://51degrees.com/developers/distributor) using your License Key.
 
 ## Step 6: Optimize Performance
 
