@@ -6,7 +6,7 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 
 ## Choose Your Integration
 
-### On-Premise Deployment
+### On-premise Deployment
 **Best for:** High-performance, privacy-sensitive, or offline environments
 
 **Benefits:**
@@ -37,7 +37,7 @@ Select your language below for detailed setup instructions:
 @startsnippet{c}
 C does not have a @Pipeline implementation or the ability to use the cloud-based version of 
 IP intelligence.
-To get started with C IP intelligence On-Premise:
+To get started with C IP intelligence On-premise:
 
 1. Clone the GitHub [repository](https://github.com/51degrees/ip-intelligence-cxx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
@@ -50,7 +50,7 @@ To get started with C IP intelligence On-Premise:
 @startsnippet{cxx}
 C++ does not have a @Pipeline implementation or the ability to use the cloud-based version of 
 Ip intelligence.
-To get started with C++ device detection On-Premise:
+To get started with C++ device detection On-premise:
 
 1. Clone the GitHub [repository](https://github.com/51degrees/ip-intelligence-cxx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
@@ -65,14 +65,14 @@ To get started with C++ device detection On-Premise:
 
 1. Install the [FiftyOne.IpIntelligence](https://www.nuget.org/packages/FiftyOne.IpIntelligence) package via Nuget.
 2. Follow the appropriate example from the options below:  
-  * [On-Premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
+  * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
 
 ### ASP.NET Core integration.
 
 1. Install the [FiftyOne.IpIntelligence](https://www.nuget.org/packages/FiftyOne.IpIntelligence) and [FiftyOne.Pipeline.Web](https://www.nuget.org/packages/FiftyOne.Pipeline.Web) packages via Nuget.
 2. Follow the [web example](@ref PipelineApi_Examples_WebIntegration) to add the @Pipeline middleware.
 3. Configure the pipeline using the configuration from the appropriate example from the options below:
- * [On-Premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
+ * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
 
 @endsnippet
 @startsnippet{java}
@@ -87,7 +87,7 @@ To get started with Java IP Intelligence:
    ```
    Check [Maven Central](https://search.maven.org/artifact/com.51degrees/ip-intelligence) for the latest version.
 2. Follow the appropriate example from the options below:
-   * [On-Premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
+   * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
 
 ### Web Integration
 
@@ -99,7 +99,7 @@ For web applications, add the web integration dependency:
 </dependency>
 ```
 
-Configure the pipeline using the configuration from the On-Premise example above.
+Configure the pipeline using the configuration from the On-premise example above.
 
 @endsnippet
 @startsnippet{go}
@@ -110,11 +110,11 @@ To get started with Go IP Intelligence:
    go get github.com/51Degrees/ip-intelligence-go/v4
    ```
 2. Follow the appropriate example from the options below:
-   * [On-Premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
+   * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
 
 ### Web Integration
 
-For web applications, you can integrate IP Intelligence into your HTTP handlers. See the On-Premise example for implementation details.
+For web applications, you can integrate IP Intelligence into your HTTP handlers. See the On-premise example for implementation details.
 
 @endsnippet
 @endsnippets

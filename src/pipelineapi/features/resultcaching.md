@@ -12,7 +12,7 @@ being required.
 time of an @aspectengine is significant. However, profiling should always be undertaken to 
 ensure that the configuration used is returning real benefit in the relevant environment.
 
-Note that some @aspectengines (for example, the 51Degrees On-Premise @devicedetection engine) 
+Note that some @aspectengines (for example, the 51Degrees On-premise @devicedetection engine) 
 may have internal caches for various reasons, these are separate to the @Pipeline 
 **results cache** and may or may not be configurable depending on the implementation of the @aspectengine.
 

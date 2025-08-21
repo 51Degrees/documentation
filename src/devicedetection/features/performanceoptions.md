@@ -6,7 +6,7 @@ For device detection, as with many computing tasks, there are trade-offs to be m
 
 Rather than trying to solve this with a one-size-fits-all approach, our Device Detection API allows you to easily configure the solution to suit your requirements.
 
-Be aware that all these options only apply to the On-Premise implementation. The cloud solution is
+Be aware that all these options only apply to the On-premise implementation. The cloud solution is
 inherently far more limited in the range of options you have to adjust performance.
 
 # Performance profile templates

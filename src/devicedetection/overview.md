@@ -51,10 +51,10 @@ Need to identify a mobile device from its IMEI number? Our Type Allocation Code 
 Choose what fits your stack:
 
 - **Cloud API:** No infrastructure headaches, always updated, pay-as-you-go.
-- **On-Premise:** Maximum control, lightning speed, enterprise security.
+- **On-premise:** Maximum control, lightning speed, enterprise security.
 - **Hybrid:** The best of both worlds.
 
-[Compare integration options](@ref DeviceDetection_Quickstart) | [See how to migrate from Cloud to On-Premise](@ref DeviceDetection_CloudToOnPremise)
+[Compare integration options](@ref DeviceDetection_Quickstart) | [See how to migrate from Cloud to On-premise](@ref DeviceDetection_CloudToOnPremise)
 
 ---
 
@@ -93,14 +93,14 @@ Want to see how it works? Dive into our examples and hit the ground running:
 - [Quick Start Guide](@ref DeviceDetection_Quickstart) - Get started in minutes
 
 ### Web Integration Examples
-- [Web Examples Index](@ref DeviceDetection_Examples_GettingStarted_Web_Index) - Web integrations, Cloud or On-Premise
+- [Web Examples Index](@ref DeviceDetection_Examples_GettingStarted_Web_Index) - Web integrations, Cloud or On-premise
 - [Cloud Web Integration](@ref DeviceDetection_Examples_GettingStarted_Web_Cloud) - Cloud API examples
-- [On-Premise Web Integration](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise) - On-premise examples
+- [On-premise Web Integration](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise) - On-premise examples
 
 ### Console Examples
 - [Console Examples Index](@ref DeviceDetection_Examples_GettingStarted_Console_Index) - Command-line examples
 - [Cloud Console Examples](@ref DeviceDetection_Examples_GettingStarted_Console_Cloud) - Cloud API on the console
-- [On-Premise Console Examples](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise) - On-premise console setups
+- [On-premise Console Examples](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise) - On-premise console setups
 
 ### All Examples
 - [Examples Index](@ref DeviceDetection_Examples_Index) - Browse all our examples in one place

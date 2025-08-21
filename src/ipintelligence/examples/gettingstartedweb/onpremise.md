@@ -1,8 +1,8 @@
-@page IpIntelligence_Examples_GettingStarted_Web_OnPremise Getting Started Web On-Premise
+@page IpIntelligence_Examples_GettingStarted_Web_OnPremise Getting Started Web On-premise
 
 # Introduction
 
-This example shows how to integrate a Pipeline running an On-Premise IP intelligence engine 
+This example shows how to integrate a Pipeline running an On-premise IP intelligence engine 
 into a simple web page.
 
 There are many different ways to use the pipeline. Rather that creating examples for every scenario, 
@@ -11,7 +11,7 @@ You can mix and match elements from different examples in order to match your us
 
 |            | Console             | Web                 |
 |------------|---------------------|---------------------|
-| On-Premise | Configure in code   | Configure from file |
+| On-premise | Configure in code   | Configure from file |
 
 @startsnippets
 @grabexample{ip-intelligence-dotnet,_on_premise_2_getting_started-_web_2_startup_8cs,C# - ASP.NET Core}

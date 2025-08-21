@@ -23,8 +23,8 @@ For a deeper understanding of the Pipeline concept, start with the @Pipeline pag
 
 ## Key features
 
-- Seamless switching between On-Premise data and cloud backed data services.
-- Automatic updating of On-Premise data files from a configurable central service, including in place updates to avoid the need to interrupt running processes.
+- Seamless switching between On-premise data and cloud backed data services.
+- Automatic updating of On-premise data files from a configurable central service, including in place updates to avoid the need to interrupt running processes.
 - For web environments, JavaScript bundling to improve client side performance and network efficiency.
 - Support for high performance native data processing libraries via SWIG.
 - All components designed for scalable, multithreaded applications.

@@ -1,4 +1,4 @@
-@page DeviceDetection_Examples_MatchMetrics_OnPremiseHash Match Metrics On-Premise Hash
+@page DeviceDetection_Examples_MatchMetrics_OnPremiseHash Match Metrics On-premise Hash
 
 # Introduction
 

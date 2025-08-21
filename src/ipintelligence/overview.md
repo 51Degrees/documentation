@@ -52,7 +52,7 @@ Combine IP Intelligence with [Device Detection](@ref DeviceDetection_Overview) f
 Choose what fits your stack:
 
 - **Cloud API:** No infrastructure headaches, always updated, pay-as-you-go.
-- **On-Premise:** Maximum control, lightning speed, enterprise security.
+- **On-premise:** Maximum control, lightning speed, enterprise security.
 - **Hybrid:** The best of both worlds.
 
 [Compare integration options](@ref IpIntelligence_Quickstart)

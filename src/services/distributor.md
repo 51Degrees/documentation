@@ -1,4 +1,4 @@
-@page Services_Distributor Distributor (On-Premise)
+@page Services_Distributor Distributor (On-premise)
 
 The 51Degrees Distributor service is a client-facing cloud-based service which is used by the 
 API to request the latest data files. You can also manually download files via the front end on

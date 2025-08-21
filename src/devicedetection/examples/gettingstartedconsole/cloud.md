@@ -11,7 +11,7 @@ You can mix and match elements from different examples in order to match your us
 
 |            | Console             | Web                 |
 |------------|---------------------|---------------------|
-| On-Premise | Configure in code   | Configure from file |
+| On-premise | Configure in code   | Configure from file |
 | Cloud      | Configure from file | Configure in code   |
 
 @startsnippets

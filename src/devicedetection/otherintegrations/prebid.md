@@ -50,7 +50,7 @@ Use these when you need faster response times or want to centralize device detec
 2. Install and configure your chosen Prebid module
 3. Test with sample bid requests to verify device data appears
 
-### On-Premise Setup
+### On-premise Setup
 
 1. Download the [Lite data file](https://github.com/51Degrees/device-detection-data) for testing
 2. For production, purchase a license for the full dataset with automatic updates

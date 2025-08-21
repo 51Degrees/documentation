@@ -1,8 +1,8 @@
-@page DeviceDetection_Examples_GettingStarted_Web_OnPremise Getting Started Web On-Premise
+@page DeviceDetection_Examples_GettingStarted_Web_OnPremise Getting Started Web On-premise
 
 # Introduction
 
-This example shows how to integrate a Pipeline running an On-Premise @devicedetection engine 
+This example shows how to integrate a Pipeline running an On-premise @devicedetection engine 
 into a simple web page.
 
 There are many different ways to use the pipeline. Rather that creating examples for every scenario, 
@@ -11,7 +11,7 @@ You can mix and match elements from different examples in order to match your us
 
 |            | Console             | Web                 |
 |------------|---------------------|---------------------|
-| On-Premise | Configure in code   | Configure from file |
+| On-premise | Configure in code   | Configure from file |
 | Cloud      | Configure from file | Configure in code   |
 
 @startsnippets

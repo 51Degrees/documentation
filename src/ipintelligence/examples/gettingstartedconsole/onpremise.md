@@ -1,8 +1,8 @@
-@page IpIntelligence_Examples_GettingStarted_Console_OnPremise Getting Started Console On-Premise
+@page IpIntelligence_Examples_GettingStarted_Console_OnPremise Getting Started Console On-premise
 
 # Introduction
 
-This example shows how to get set up an On-Premise IP Intelligence @aspectengine and use it 
+This example shows how to get set up an On-premise IP Intelligence @aspectengine and use it 
 to process IP addresses.
 
 There are many different ways to use the pipeline. Rather that creating examples for every scenario, 
@@ -11,7 +11,7 @@ You can mix and match elements from different examples in order to match your us
 
 |            | Console             | Web                 |
 |------------|---------------------|---------------------|
-| On-Premise | Configure in code   | Configure from file |
+| On-premise | Configure in code   | Configure from file |
 
 @startsnippets
 @grabexample{ip-intelligence-cxx,_ip_intelligence_2_getting_started_8c,C}

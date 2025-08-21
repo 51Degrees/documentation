@@ -1,8 +1,8 @@
-@page PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine 51Degrees On-Premise Engine
+@page PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine 51Degrees On-premise Engine
 
 # Introduction
 
-A **51Degrees On-Premise engine** adds functionality to an @onpremiseengine that is
+A **51Degrees On-premise engine** adds functionality to an @onpremiseengine that is
 specific to 51Degrees. @Metadata is exposed which relates to the data structure
 common to most 51Degrees data files.
 
@@ -14,7 +14,7 @@ implemented in can more readily benefit from any optimizations or features which
 [native](@term{NativeCode}) library.
 
 See the
-[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#On-Premise-engines)
+[Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#On-premise-engines)
 for more technical details.
 
 # Metadata
@@ -103,7 +103,7 @@ The metadata contained in a **profile** is:
 
 # Native library
 
-Most **51Degrees On-Premise engines** act as a wrapper between the target language and a [native](@term{NativeCode}) library.
+Most **51Degrees On-premise engines** act as a wrapper between the target language and a [native](@term{NativeCode}) library.
 
 When the **engine** is packaged for release to a target language's package manager, multiple
 [native](@term{NativeCode}) binaries  are included. Each is compiled for a specific platform (e.g., 32-bit Windows, or 64-bit OS X)
