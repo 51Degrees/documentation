@@ -72,7 +72,7 @@ function grabExample(caller, project, name) {
 
 function grabSnippet(caller, project, file, tag, btnClass, divId) {
     selectBtn(caller, caller.parentElement.children);
-    let url = '../../' + project + '/' + getVersion() + '/' + file;
+    let url = 'apis/' + project + '/' + file;
     // Load the example into the 'grabbed-example' div, then update the links.
     let element = document.getElementById(divId);
     element.style.display = 'block';
@@ -81,7 +81,7 @@ function grabSnippet(caller, project, file, tag, btnClass, divId) {
         .html('')
         .load(url + ' #' + tag, function(response, status) {
             if (status === 'error' && getVersion() === '4.5') {
-                url = '../../' + project + '/' + '4.4' + '/' + file;
+                url = 'apis/' + project + '/' + file;
                 $('#' + divId)
                     .html('')
                     .load(url + ' #' + tag, function() {

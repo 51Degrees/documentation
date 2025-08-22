@@ -27,17 +27,34 @@ if (-not (Test-Path $toolsPath)) {
 # List of repositories to clone and build documentation for
 # Format: @{ main = "repo-name"; examples = "examples-repo-name" } or just "standalone-repo-name"
 $repositories = @(
+    # Device Detection repositories
+    "device-detection-cxx",
     @{ main = "device-detection-dotnet"; examples = "device-detection-dotnet-examples" },
     @{ main = "device-detection-java"; examples = "device-detection-java-examples" },
-    @{ main = "ip-intelligence-dotnet"; examples = "ip-intelligence-dotnet-examples" },
-    @{ main = "ip-intelligence-java"; examples = "ip-intelligence-java-examples" },
-    "device-detection-python",
-    "device-detection-node", 
+    "device-detection-nginx",
+    "device-detection-node",
     "device-detection-php",
+    "device-detection-php-onpremise",
+    "device-detection-python",
+    
+    # IP Intelligence repositories
+    "ip-intelligence-cxx",
+    @{ main = "ip-intelligence-dotnet"; examples = "ip-intelligence-dotnet-examples" },
+    "ip-intelligence-go",
+    @{ main = "ip-intelligence-java"; examples = "ip-intelligence-java-examples" },
+    
+    # Location repositories
+    "location-dotnet",
+    "location-java",
+    "location-node",
+    "location-php",
+    "location-python",
+    
+    # Pipeline repositories
     "pipeline-dotnet",
     "pipeline-java",
     "pipeline-node",
-    "pipeline-php-core"
+    "pipeline-python"
 )
 
 # Get current branch name
@@ -90,6 +107,15 @@ New-Item -ItemType Directory -Path $tempDir | Out-Null
 
 Write-Host "Working in directory: $tempDir"
 
+# Clone documentation repository into temp directory so it's a sibling to other repos
+Write-Host "Cloning documentation repository as sibling..."
+$docRepoPath = Join-Path $tempDir "documentation"
+git clone --depth 1 "https://github.com/51Degrees/documentation.git" $docRepoPath 2>&1 | Out-Null
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Failed to clone documentation repository!" -ForegroundColor Red
+    exit 1
+}
+
 # Clone and build documentation for each repository
 foreach ($repoItem in $repositories) {
     # Handle both standalone repos and main+examples pairs
@@ -113,9 +139,9 @@ foreach ($repoItem in $repositories) {
             continue
         }
         
-        # Clone examples repository as sibling directory (expected by Doxyfiles)
-        $examplesPath = Join-Path $tempDir $examplesRepo
-        Write-Host "Cloning $examplesRepo as sibling to $mainRepo..."
+        # Clone examples repository inside the main repository
+        $examplesPath = Join-Path $repoPath $examplesRepo
+        Write-Host "Cloning $examplesRepo into $mainRepo..."
         git clone --depth 1 $examplesRepoUrl $examplesPath 2>&1 | Out-Null
         
         if ($LASTEXITCODE -ne 0) {
@@ -178,27 +204,17 @@ foreach ($repoItem in $repositories) {
             }
         }
         
-        # Look for Doxyfile in common locations
-        $doxyfilePaths = @(
-            (Join-Path $repoPath "docs/Doxyfile"),
-            (Join-Path $repoPath "Doxyfile"),
-            (Join-Path $repoPath "doc/Doxyfile")
-        )
-        
-        $doxyfile = $null
-        foreach ($path in $doxyfilePaths) {
-            if (Test-Path $path) {
-                $doxyfile = $path
-                break
+        # Sync submodules after switching to the correct branch
+        Push-Location $repoPath
+        try {
+            Write-Host "Syncing submodules for $repo..."
+            git submodule update --init --recursive --depth 1 2>&1 | Out-Null
+            if ($LASTEXITCODE -ne 0) {
+                Write-Host "Failed to sync submodules for $repo, continuing..." -ForegroundColor Yellow
             }
+        } finally {
+            Pop-Location
         }
-        
-        if (-not $doxyfile) {
-            Write-Host "No Doxyfile found for $repo, skipping documentation generation" -ForegroundColor Yellow
-            continue
-        }
-        
-        Write-Host "Found Doxyfile at: $doxyfile"
         
         # Create output directory for this repo
         $repoOutputDir = Join-Path $OutputDir "apis" $repo
@@ -206,91 +222,25 @@ foreach ($repoItem in $repositories) {
             New-Item -ItemType Directory -Path $repoOutputDir -Force | Out-Null
         }
         
-        # Generate documentation
-        Write-Host "Generating documentation for $repo..."
-        
-        # Create symlinks to documentation directory so relative paths work
-        $doxyParentDir = Split-Path $doxyfile -Parent
-        # From docs directory, path ../../documentation should point to main documentation
-        $expectedDocPath = Join-Path (Split-Path (Split-Path $doxyParentDir -Parent) -Parent) "documentation"
-        
-        if (-not (Test-Path $expectedDocPath)) {
-            Write-Host "Creating symlink to documentation directory at: $expectedDocPath" -ForegroundColor Yellow
-            # Create the directory structure if it doesn't exist
-            $parentPath = Split-Path $expectedDocPath -Parent
-            if (-not (Test-Path $parentPath)) {
-                New-Item -ItemType Directory -Path $parentPath -Force | Out-Null
-            }
-            # On Linux, we can create a symbolic link
-            $currentDocPath = "/media/51drepos/documentation"
-            New-Item -ItemType SymbolicLink -Path $expectedDocPath -Target $currentDocPath -Force | Out-Null
+        # Generate documentation by running Doxygen in the docs directory
+        $docsDir = Join-Path $repoPath "docs"
+        if (-not (Test-Path $docsDir)) {
+            Write-Host "No docs directory found for $repo, skipping documentation generation" -ForegroundColor Yellow
+            continue
         }
         
-        Push-Location (Split-Path $doxyfile -Parent)
+        Write-Host "Generating documentation for $repo..."
+        Push-Location $docsDir
         try {
-            # Run Doxygen with original configuration (don't modify OUTPUT_DIRECTORY)
-            $doxyfileName = Split-Path $doxyfile -Leaf
-            Write-Host "Running Doxygen..." -ForegroundColor Yellow
+            Write-Host "Running Doxygen in: $(Get-Location)" -ForegroundColor Yellow
             
-            # Modify Doxyfile to use absolute paths for documentation assets
-            $tempDoxyfile = "Doxyfile.temp"
-            $absoluteDocPath = "/media/51drepos/documentation"
-            Get-Content $doxyfileName | ForEach-Object {
-                if ($_ -match "HTML_HEADER\s*=\s*(.*)") {
-                    $relativePath = $matches[1].Trim().Trim('"')
-                    if ($relativePath.StartsWith("../../documentation/")) {
-                        $newPath = $relativePath -replace "../../documentation/", "$absoluteDocPath/"
-                        "HTML_HEADER = `"$newPath`""
-                        Write-Host "Modified HTML_HEADER: $relativePath -> $newPath" -ForegroundColor Green
-                    } else {
-                        $_
-                    }
-                } elseif ($_ -match "HTML_FOOTER\s*=\s*(.*)") {
-                    $relativePath = $matches[1].Trim().Trim('"')
-                    if ($relativePath.StartsWith("../../documentation/")) {
-                        $newPath = $relativePath -replace "../../documentation/", "$absoluteDocPath/"
-                        "HTML_FOOTER = `"$newPath`""
-                        Write-Host "Modified HTML_FOOTER: $relativePath -> $newPath" -ForegroundColor Green
-                    } else {
-                        $_
-                    }
-                } elseif ($_ -match "HTML_STYLESHEET\s*=\s*(.*)") {
-                    $relativePath = $matches[1].Trim().Trim('"')
-                    if ($relativePath.StartsWith("../../documentation/")) {
-                        $newPath = $relativePath -replace "../../documentation/", "$absoluteDocPath/"
-                        "HTML_STYLESHEET = `"$newPath`""
-                        Write-Host "Modified HTML_STYLESHEET: $relativePath -> $newPath" -ForegroundColor Green
-                    } else {
-                        $_
-                    }
-                } else {
-                    $_
-                }
-            } | Out-File $tempDoxyfile -Encoding UTF8
-
-            # Use Start-Process to capture output properly
-            $pinfo = New-Object System.Diagnostics.ProcessStartInfo
-            $pinfo.FileName = $DoxyGen
-            $pinfo.Arguments = (Resolve-Path $tempDoxyfile).Path
-            $pinfo.RedirectStandardOutput = $true
-            $pinfo.RedirectStandardError = $true
-            $pinfo.UseShellExecute = $false
-            $pinfo.CreateNoWindow = $true
-            
-            $process = New-Object System.Diagnostics.Process
-            $process.StartInfo = $pinfo
-            $process.Start() | Out-Null
-            $process.WaitForExit()
-            
-            $stdout = $process.StandardOutput.ReadToEnd()
-            $stderr = $process.StandardError.ReadToEnd()
-            $exitCode = $process.ExitCode
-            
-            Write-Host "Doxygen stdout:" -ForegroundColor Yellow
-            Write-Host $stdout -ForegroundColor Gray
-            if ($stderr) {
-                Write-Host "Doxygen stderr:" -ForegroundColor Yellow
-                Write-Host $stderr -ForegroundColor Gray
+            $exitCode = 0
+            try {
+                & $DoxyGen
+                $exitCode = $LASTEXITCODE
+            } catch {
+                Write-Host "Error running Doxygen: $_" -ForegroundColor Red
+                $exitCode = 1
             }
             
             if ($exitCode -ne 0) {
@@ -299,43 +249,20 @@ foreach ($repoItem in $repositories) {
                 Write-Host "Doxygen completed successfully" -ForegroundColor Green
             }
             
-            # Check if documentation already exists in the main repository
-            $mainRepoPath = "/media/51drepos/$repo"
-            $possibleMainOutputDirs = @(
-                (Join-Path $mainRepoPath "4.4"),
-                (Join-Path $mainRepoPath "4.5")
+            # Look for generated documentation in the temp repository
+            $possibleOutputDirs = @(
+                (Join-Path $repoPath "4.5"),
+                (Join-Path $repoPath "4.4")
             )
             
             $sourceDir = $null
-            foreach ($dir in $possibleMainOutputDirs) {
+            foreach ($dir in $possibleOutputDirs) {
                 if (Test-Path $dir) {
                     $htmlFiles = Get-ChildItem -Path $dir -Filter "*.html" -Recurse
-                    if ($htmlFiles.Count -gt 5) {  # Main repos have many example files
+                    if ($htmlFiles.Count -gt 0) {
                         $sourceDir = $dir
-                        Write-Host "Found existing documentation in main repo: $sourceDir" -ForegroundColor Green
+                        Write-Host "Found generated documentation: $sourceDir" -ForegroundColor Green
                         break
-                    }
-                }
-            }
-            
-            # If not found in main repo, look in the temp directory  
-            if (-not $sourceDir) {
-                $possibleOutputDirs = @(
-                    (Join-Path $repoPath "4.4"),
-                    (Join-Path $repoPath "4.5"), 
-                    (Join-Path (Split-Path $doxyfile -Parent) "html"),
-                    (Join-Path $repoPath "html"),
-                    (Join-Path $repoPath "docs/html")
-                )
-                
-                foreach ($dir in $possibleOutputDirs) {
-                    if (Test-Path $dir) {
-                        $htmlFiles = Get-ChildItem -Path $dir -Filter "*.html" -Recurse
-                        if ($htmlFiles.Count -gt 0) {
-                            $sourceDir = $dir
-                            Write-Host "Found generated documentation in temp repo: $sourceDir" -ForegroundColor Green
-                            break
-                        }
                     }
                 }
             }
@@ -369,10 +296,10 @@ foreach ($repoItem in $repositories) {
 }
 
 
-# Clean up temporary directory
-if (Test-Path $tempDir) {
-    Remove-Item $tempDir -Recurse -Force
-}
+# Clean up temporary directory (disabled for debug)
+# if (Test-Path $tempDir) {
+#     Remove-Item $tempDir -Recurse -Force
+# }
 
 Write-Host "`n========================================" -ForegroundColor Green
 Write-Host "Documentation generation complete!" -ForegroundColor Green
