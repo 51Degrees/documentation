@@ -101,32 +101,29 @@ $(document).ready(function(){initNavTree('_device_detection__features__false_pos
 <p>These values are treated as distinct from <code>HasValue</code>, i.e., it is possible for <code>HasValue</code> to return <code>true</code> and <code>Value</code> to return <code>Unknown</code>.</p>
 <p>In the future, this may be changed so that <code>HasValue</code> will return false if <code>Value</code> is <code>Unknown</code>, <code>N/A</code>, or similar, but this is not currently planned.</p>
 <h1 class="g-docs__section-heading">Use cases</h1>
-<blockquote class="doxtable">
-<p>I only want a result if the API is reasonably sure it is correct. </p>
-</blockquote>
-<p>Set <code>AllowUnmatched</code> to false.</p>
-<p>Set <code>Difference</code> and <code>Drift</code> to 10.</p>
-<blockquote class="doxtable">
-<p>I only want exact matches to previously observed User-Agents (default configuration). </p>
-</blockquote>
-<p>Set <code>AllowUnmatched</code> to false.</p>
-<p>Set <code>Difference</code> and <code>Drift</code> to 0.</p>
-<p>These settings will mean that a result is only returned if it exactly matches a unique substring from a User-Agent that has been included when building the data file.</p>
-<blockquote class="doxtable">
-<p>If there is no match found then I want the API to assume that the device is a desktop running an unknown operating system. </p>
-</blockquote>
-<p>Set <code>AllowUnmatched</code> to true.</p>
-<p><code>Difference</code> and <code>Drift</code> do not influence this use case.</p>
-<p>This setting will cause the default (desktop) profiles to be returned if there is no match.</p>
-<blockquote class="doxtable">
-<p>I'm migrating from 51Degrees V3 Device Detection and want to retain the previous functionality. </p>
-</blockquote>
-<p>OR</p>
-<blockquote class="doxtable">
-<p>I want to keep my as code simple as possible. I'm not worried about some false positives. </p>
-</blockquote>
-<p>Set <code>AllowUnmatched</code> to true. Set <code>Difference</code> (and <code>Drift</code> if using <a class="el" href="_device_detection__hash.html">Hash</a>) to -1.</p>
-<p>These settings will mean that <code>HasValue</code> is never false. Each property will always have a value so you don't need to worry about dealing with a situation where they do not. </p>
+<ul>
+<li><p class="startli"><b>I only want a result if the API is reasonably sure it is correct.</b></p>
+<p class="startli">Set <code>AllowUnmatched</code> to false.</p>
+<p class="startli">Set <code>Difference</code> and <code>Drift</code> to 10.</p>
+</li>
+<li><p class="startli"><b>I only want exact matches to previously observed User-Agents (default configuration).</b></p>
+<p class="startli">Set <code>AllowUnmatched</code> to false.</p>
+<p class="startli">Set <code>Difference</code> and <code>Drift</code> to 0.</p>
+<p class="startli">These settings will mean that a result is only returned if it exactly matches a unique substring from a User-Agent that has been included when building the data file.</p>
+</li>
+<li><p class="startli"><b>If there is no match found then I want the API to assume that the device is a desktop running an unknown operating system.</b></p>
+<p class="startli">Set <code>AllowUnmatched</code> to true.</p>
+<p class="startli"><code>Difference</code> and <code>Drift</code> do not influence this use case.</p>
+<p class="startli">This setting will cause the default (desktop) profiles to be returned if there is no match.</p>
+</li>
+<li><p class="startli"><b>I'm migrating from 51Degrees V3 Device Detection and want to retain the previous functionality.</b></p>
+<p class="startli">OR</p>
+<p class="startli"><b>I want to keep my code simple as possible. I'm not worried about some false positives.</b></p>
+<p class="startli">Set <code>AllowUnmatched</code> to true.</p>
+<p class="startli">Set <code>Difference</code> (and <code>Drift</code> if using <a class="el" href="_device_detection__hash.html">Hash</a>) to -1.</p>
+<p class="startli">These settings will mean that <code>HasValue</code> is never false. Each property will always have a value so you don't need to worry about dealing with a situation where they do not. </p>
+</li>
+</ul>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->

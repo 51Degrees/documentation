@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>51Degrees API Documentation: On-Premise Engine</title>
+<title>51Degrees API Documentation: On-premise Engine</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,21 +63,21 @@ $(document).ready(function(){initNavTree('_pipeline_api__concepts__flow_elements
 <div class="PageDoc"><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__index.html">Flow Elements</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html">On-Premise Engine</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__index.html">Flow Elements</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html">On-premise Engine</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">On-Premise Engine </h2></div><!--header-->
+<h2 class="g-docs__page-title">On-premise Engine </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
 <p><b>On-premise engines</b> are a specialization of <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html">aspect engine</a> where additional data exists locally to the <b>engine</b>, either in memory or a data file. This is in contrast to a <a class="el" href="_pipeline_api__concepts__flow_elements__cloud_engine.html">cloud engine</a> where data exists in a cloud service which is called by the <b>engine</b>. Having data that does not reside in the <b>engine</b> itself means that the same <b>engine</b> can be used with multiple data sets.</p>
-<p>An <b>On-Premise engine</b> builds on the <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html">aspect engine</a> concept to introduce the ability to:</p><ul>
+<p>An <b>On-premise engine</b> builds on the <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html">aspect engine</a> concept to introduce the ability to:</p><ul>
 <li>load data either from memory or one or more data files</li>
 <li>keep data files up to date</li>
 </ul>
-<p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#On-Premise-engines">Specification</a> for more technical details.</p>
+<p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#On-premise-engines">Specification</a> for more technical details.</p>
 <h1 class="g-docs__section-heading">Use cases</h1>
-<p>An <b>On-Premise engine</b> typically does not need to call external components when processing a request. This makes it best suited to cases where performance is critical, and the supporting hardware implementation reflects this. To provide optimal performance, some <b>On-Premise engines</b> can be configured to run with any data files held entirely in memory, reducing latency further.</p>
-<p>There are also situations where the security demands of a service make sending sensitive data to an external <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_CloudService">cloud service</a> problematic. Using an <b>On-Premise engine</b> will address this issue.</p>
+<p>An <b>On-premise engine</b> typically does not need to call external components when processing a request. This makes it best suited to cases where performance is critical, and the supporting hardware implementation reflects this. To provide optimal performance, some <b>On-premise engines</b> can be configured to run with any data files held entirely in memory, reducing latency further.</p>
+<p>There are also situations where the security demands of a service make sending sensitive data to an external <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_CloudService">cloud service</a> problematic. Using an <b>On-premise engine</b> will address this issue.</p>
 <h1 class="g-docs__section-heading">Data files <a href="#PipelineApi_Concepts_Configuration_DataFiles">#</a><a class="anchor" id="PipelineApi_Concepts_Configuration_DataFiles"></a></h1>
 <p>An <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html">aspect engine</a> can make use of one or more data files to carry out its processing. This is typically the case when an <b>engine</b> relies on data being updated, so the data is not stored statically in the <b>engine</b> itself.</p>
 <h2>Updates</h2>
@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__concepts__flow_elements
 <h2>Metadata</h2>
 <p>Each data file in an <b>engine</b> can contain metadata, some of which is used by the <a class="el" href="_pipeline_api__features__automatic_datafile_updates.html">data update service</a>. This metadata can provide the <a class="el" href="_pipeline_api__features__automatic_datafile_updates.html">data update service</a> with the age of the data file, the time at which a new one will be available, and the URL of where the new data file can be obtained.</p>
 <h2>Multiple files</h2>
-<p>An <b>On-Premise engine</b> can require more than one data file. Files can be individually registered with the <a class="el" href="_pipeline_api__features__automatic_datafile_updates.html">data update service</a>, which will handle each file according to its own metadata. This allows different data files to have distinct update configurations. </p>
+<p>An <b>On-premise engine</b> can require more than one data file. Files can be individually registered with the <a class="el" href="_pipeline_api__features__automatic_datafile_updates.html">data update service</a>, which will handle each file according to its own metadata. This allows different data files to have distinct update configurations. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->

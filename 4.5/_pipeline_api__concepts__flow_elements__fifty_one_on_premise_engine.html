@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>51Degrees API Documentation: 51Degrees On-Premise Engine</title>
+<title>51Degrees API Documentation: 51Degrees On-premise Engine</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,15 +63,15 @@ $(document).ready(function(){initNavTree('_pipeline_api__concepts__flow_elements
 <div class="PageDoc"><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__index.html">Flow Elements</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html">51Degrees On-Premise Engine</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__index.html">Flow Elements</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html">51Degrees On-premise Engine</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">51Degrees On-Premise Engine </h2></div><!--header-->
+<h2 class="g-docs__page-title">51Degrees On-premise Engine </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
-<p>A <b>51Degrees On-Premise engine</b> adds functionality to an <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html">on-premise engine</a> that is specific to 51Degrees. <a class="el" href="_pipeline_api__concepts__meta_data__index.html">Metadata</a> is exposed which relates to the data structure common to most 51Degrees data files.</p>
+<p>A <b>51Degrees On-premise engine</b> adds functionality to an <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html">on-premise engine</a> that is specific to 51Degrees. <a class="el" href="_pipeline_api__concepts__meta_data__index.html">Metadata</a> is exposed which relates to the data structure common to most 51Degrees data files.</p>
 <p>In many cases, a <b>51Degrees engine</b> contains a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_NativeCode">native</a> binary which the <b>engine</b> acts as a wrapper for. This gives the improved performance achievable with <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_NativeCode">native</a> code, while still seamlessly slotting in with the target language (it is not always obvious that a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_NativeCode">native</a> binary has been used). It also means that all languages the <b>engine</b> is implemented in can more readily benefit from any optimizations or features which are added to the <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_NativeCode">native</a> library.</p>
-<p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#On-Premise-engines">Specification</a> for more technical details.</p>
+<p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#On-premise-engines">Specification</a> for more technical details.</p>
 <h1 class="g-docs__section-heading">Metadata</h1>
 <p>The majority of <b>51Degrees engines</b> share a similar data structure. This means <a class="el" href="_pipeline_api__concepts__meta_data__index.html">metadata</a> is exposed in a common way for all <b>51Degrees engines</b> that share this structure.</p>
 <p><div class="dotgraph">
@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__concepts__flow_elements
 <td class="c-table__cell">Signature Count  </td><td class="c-table__cell">The number of signatures that define how to find the <b>profile</b>. This is internal to the <b>engine</b> and differs slightly in meaning between each.   </td></tr>
 </table>
 </div><h1 class="g-docs__section-heading">Native library</h1>
-<p>Most <b>51Degrees On-Premise engines</b> act as a wrapper between the target language and a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_NativeCode">native</a> library.</p>
+<p>Most <b>51Degrees On-premise engines</b> act as a wrapper between the target language and a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_NativeCode">native</a> library.</p>
 <p>When the <b>engine</b> is packaged for release to a target language's package manager, multiple <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_NativeCode">native</a> binaries are included. Each is compiled for a specific platform (e.g., 32-bit Windows, or 64-bit OS X) and the correct binary is automatically selected at start-up. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
