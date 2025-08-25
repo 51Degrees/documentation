@@ -6,16 +6,21 @@ param(
     [string]$TempDir,
     
     [Parameter(Mandatory=$true)]
-    [string]$OutputDir,
-    
-    [Parameter(Mandatory=$true)]
-    [string]$DoxyGen,
+    [string]$Version,
     
     [Parameter(Mandatory=$true)]
     [string]$CurrentBranch,
     
     [string]$ExamplesRepo = $null
 )
+
+# Determine Doxygen path from tools repository
+$toolsPath = Join-Path (Split-Path $TempDir -Parent) "tools"
+$DoxyGen = "$toolsPath/DoxyGen/doxygen-linux"
+
+# Calculate output directory based on script location and version
+$documentationRoot = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
+$OutputDir = Join-Path $documentationRoot $Version
 
 # Handle both standalone repos and main+examples pairs
 if ($ExamplesRepo) {
