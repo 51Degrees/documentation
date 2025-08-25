@@ -35,7 +35,8 @@
 param(
     [string]$Version = "4.5",
     [string]$GitHubToken = "",
-    [switch]$DryRun = $false
+    [switch]$DryRun = $false,
+    [switch]$GenerateOnly = $false
 )
 
 $ErrorActionPreference = "Stop"
@@ -243,6 +244,12 @@ Write-Host "Documentation generation complete!"
 Write-Host "Generated in: $OutputDir/"
 Write-Host "========================================"
 
+# Exit early if GenerateOnly flag is set
+if ($GenerateOnly) {
+    Write-Host "`nGenerateOnly mode - exiting without gh-pages operations"
+    Write-Host "Documentation is available in: $OutputDir/"
+    exit 0
+}
 
 # Store the original branch
 $originalBranch = git rev-parse --abbrev-ref HEAD

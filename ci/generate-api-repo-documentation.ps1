@@ -79,7 +79,10 @@ if ($ExamplesRepo) {
 Push-Location $repoPath
 try {
     Write-Host "Syncing submodules for $RepoName..."
-    git submodule update --init --recursive --depth 1 2>&1 | Out-Null
+    & {
+        $PSNativeCommandUseErrorActionPreference = $false
+        git submodule update --init --recursive --depth 1 2>&1 | Out-Null
+    }
     if ($LASTEXITCODE -ne 0) {
         Write-Host "Failed to sync submodules for $RepoName, continuing..."
     }
@@ -173,7 +176,10 @@ try {
     Push-Location $repoPath
     try {
         Write-Host "Syncing submodules for $RepoName..."
-        git submodule update --init --recursive --depth 1 2>&1 | Out-Null
+        & {
+            $PSNativeCommandUseErrorActionPreference = $false
+            git submodule update --init --recursive --depth 1 2>&1 | Out-Null
+        }
         if ($LASTEXITCODE -ne 0) {
             Write-Host "Failed to sync submodules for $RepoName, continuing..."
         }
