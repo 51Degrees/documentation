@@ -283,6 +283,20 @@ if (Test-Path $tempOutputPath) {
     exit 1
 }
 
+# Clone common-ci repository and configure git
+$commonCiPath = Join-Path (Split-Path (Get-Location) -Parent) "common-ci"
+if (-not (Test-Path $commonCiPath)) {
+    Write-Host "Cloning common-ci repository..."
+    git clone --depth 1 "https://github.com/postindustria-tech/common-ci.git" $commonCiPath 2>&1 | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Failed to clone common-ci repository!"
+        exit 1
+    }
+}
+
+Write-Host "Configuring git using common-ci script..."
+& "$commonCiPath/steps/configure-git.ps1" -GitHubToken $GitHubToken
+
 # Stage all changes
 Write-Host "Staging documentation changes..."
 git add $Version
