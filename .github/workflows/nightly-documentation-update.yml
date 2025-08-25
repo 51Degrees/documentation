@@ -35,4 +35,3 @@ jobs:
       - env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: ./ci/generate-documentation.ps1 -Version '4.5'
-      - run: ./ci/update-gh-pages.ps1
