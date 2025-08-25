@@ -1,0 +1,6 @@
+var classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_required_properties_config_swig =
+[
+    [ "__init__", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_required_properties_config_swig.html#ab1b2600c6fa691685f5ea030f6f7b20a", null ],
+    [ "getProperties", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_required_properties_config_swig.html#a7ce0caad319e039d3ef3e7294307eccb", null ],
+    [ "thisown", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_required_properties_config_swig.html#a136a64e05db184e1eb3689c6302a1222", null ]
+];

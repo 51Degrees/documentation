@@ -1,0 +1,4 @@
+var namespacefiftyone__devicedetection__cloud_1_1devicedetection__cloud =
+[
+    [ "DeviceDetectionCloud", "classfiftyone__devicedetection__cloud_1_1devicedetection__cloud_1_1_device_detection_cloud.html", "classfiftyone__devicedetection__cloud_1_1devicedetection__cloud_1_1_device_detection_cloud" ]
+];

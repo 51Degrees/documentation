@@ -1,0 +1,7 @@
+var classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_device_detection_swig =
+[
+    [ "__init__", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_device_detection_swig.html#af5da55f4cb746078544bac161523f37d", null ],
+    [ "processDeviceDetection", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_device_detection_swig.html#a64ff88cbba50125c2be8d076342d8744", null ],
+    [ "defaultElementDataKey", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_device_detection_swig.html#aa95703f58e9fa9d4113994b614028fa3", null ],
+    [ "thisown", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_device_detection_swig.html#ae703ff10677b41107bc08b6cfe526c72", null ]
+];

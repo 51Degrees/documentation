@@ -1,0 +1,4 @@
+var namespacefiftyone__devicedetection__onpremise_1_1devicedetection__datafile =
+[
+    [ "DeviceDetectionDataFile", "classfiftyone__devicedetection__onpremise_1_1devicedetection__datafile_1_1_device_detection_data_file.html", "classfiftyone__devicedetection__onpremise_1_1devicedetection__datafile_1_1_device_detection_data_file" ]
+];

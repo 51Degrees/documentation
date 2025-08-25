@@ -1,0 +1,4 @@
+var classfiftyone__devicedetection_1_1devicedetection__pipelinebuilder_1_1_device_detection_pipeline_builder =
+[
+    [ "__init__", "classfiftyone__devicedetection_1_1devicedetection__pipelinebuilder_1_1_device_detection_pipeline_builder.html#a237a2b26db3e30c8f7be8b2a56dcd2c9", null ]
+];

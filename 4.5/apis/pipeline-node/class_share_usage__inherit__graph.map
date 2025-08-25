@@ -1,0 +1,5 @@
+<map id="ShareUsage" name="ShareUsage">
+<area shape="rect" id="node1" title="The ShareUsage element sends usage data to 51Degrees in zipped batches." alt="" coords="9,155,109,181"/>
+<area shape="rect" id="node2" href="$class_engine.html" title="An Engine is an extension of a FlowElement which adds options such as restricting to a subset of prop..." alt="" coords="25,80,92,107"/>
+<area shape="rect" id="node3" href="$class_flow_element.html" title="A FlowElement is placed inside a pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="5,5,112,32"/>
+</map>

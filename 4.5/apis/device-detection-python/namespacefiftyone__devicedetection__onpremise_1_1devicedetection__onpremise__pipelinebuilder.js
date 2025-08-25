@@ -1,0 +1,4 @@
+var namespacefiftyone__devicedetection__onpremise_1_1devicedetection__onpremise__pipelinebuilder =
+[
+    [ "DeviceDetectionOnPremisePipelineBuilder", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise__pipelinebuilder_1_1_devc2daa24b0615e3840bb3297cd768b8ca.html", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise__pipelinebuilder_1_1_devc2daa24b0615e3840bb3297cd768b8ca" ]
+];

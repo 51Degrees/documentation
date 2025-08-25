@@ -1,0 +1,4 @@
+var namespacefiftyone__devicedetection__examples_1_1cloud_1_1nativemodellookup__console =
+[
+    [ "NativeModelLookupConsole", "classfiftyone__devicedetection__examples_1_1cloud_1_1nativemodellookup__console_1_1_native_model_lookup_console.html", "classfiftyone__devicedetection__examples_1_1cloud_1_1nativemodellookup__console_1_1_native_model_lookup_console" ]
+];

@@ -1,0 +1,8 @@
+<map id="FileCollection" name="FileCollection">
+<area shape="rect" id="node1" title="DATA STRUCTURES." alt="" coords="83,288,193,315"/>
+<area shape="rect" id="node2" href="$structfiftyone_degrees_collection_config.html" title="Collection configuration structure which defines how the collection should be created by the create m..." alt="" coords="5,184,196,225"/>
+<area shape="rect" id="node3" href="$structfiftyone_degrees_file_pool.html" title="Stack of handles used to read data from a single source file." alt="" coords="221,191,397,218"/>
+<area shape="rect" id="node4" href="$structfiftyone_degrees_pool.html" title="Pool of resources stored as items in a stack." alt="" coords="372,95,525,121"/>
+<area shape="rect" id="node6" href="$structfiftyone_degrees_pool_item.html" title="Pool item node in the stack of items." alt="" coords="421,191,604,218"/>
+<area shape="rect" id="node5" href="$unionfiftyone_degrees_pool_head.html" title="The head of the stack used for pop and push operations." alt="" coords="355,5,542,32"/>
+</map>

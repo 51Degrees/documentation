@@ -1,0 +1,4 @@
+var namespacefiftyone__devicedetection_1_1devicedetection__pipelinebuilder =
+[
+    [ "DeviceDetectionPipelineBuilder", "classfiftyone__devicedetection_1_1devicedetection__pipelinebuilder_1_1_device_detection_pipeline_builder.html", "classfiftyone__devicedetection_1_1devicedetection__pipelinebuilder_1_1_device_detection_pipeline_builder" ]
+];

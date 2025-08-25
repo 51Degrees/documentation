@@ -1,0 +1,11 @@
+<map id="CollectionTest" name="CollectionTest">
+<area shape="rect" id="node1" title=" " alt="" coords="257,81,371,108"/>
+<area shape="rect" id="node4" href="$class_collection_test_file.html" title=" " alt="" coords="434,56,570,83"/>
+<area shape="rect" id="node7" href="$class_collection_test_memory.html" title=" " alt="" coords="419,107,585,133"/>
+<area shape="rect" id="node2" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="155,81,209,108"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,81,107,108"/>
+<area shape="rect" id="node5" href="$class_collection_test_file_fixed.html" title=" " alt="" coords="658,5,829,32"/>
+<area shape="rect" id="node6" href="$class_collection_test_file_variable.html" title=" " alt="" coords="649,56,838,83"/>
+<area shape="rect" id="node8" href="$class_collection_test_memory_fixed.html" title=" " alt="" coords="643,107,844,133"/>
+<area shape="rect" id="node9" href="$class_collection_test_memory_variable.html" title=" " alt="" coords="633,157,853,184"/>
+</map>

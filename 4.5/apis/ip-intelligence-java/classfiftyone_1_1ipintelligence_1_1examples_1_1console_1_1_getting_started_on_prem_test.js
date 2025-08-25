@@ -1,0 +1,4 @@
+var classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_on_prem_test =
+[
+    [ "gettingStartedOnPremTest", "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_on_prem_test.html#a5f781065177defba456b6dd4de4d8bdd", null ]
+];

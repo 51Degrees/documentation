@@ -1,0 +1,5 @@
+<map id="Tracker" name="Tracker">
+<area shape="rect" id="node1" title="A tracker is an instance of datakeyed cache which, if a result is found in the cache,..." alt="" coords="45,80,113,107"/>
+<area shape="rect" id="node3" href="$class_share_usage_tracker.html" title="The ShareUsageTracker is used by the ShareUsageElement to determine whether to put evidence into a bu..." alt="" coords="5,155,152,181"/>
+<area shape="rect" id="node2" href="$class_data_keyed_cache.html" title="A simple cache getter that takes a cache key and returns an element if it is found in the cache." alt="" coords="12,5,145,32"/>
+</map>

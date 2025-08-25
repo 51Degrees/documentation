@@ -1,0 +1,17 @@
+<map id="memoryThreadState" name="memoryThreadState">
+<area shape="rect" id="node1" title="Individual thread state where all members are exclusively accessed by a single test thread." alt="" coords="1655,128,1811,155"/>
+<area shape="rect" id="node2" href="$structmemory_state.html" title="Shared test state." alt="" coords="1387,5,1497,32"/>
+<area shape="rect" id="node3" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="973,31,1216,57"/>
+<area shape="rect" id="node4" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="1327,76,1557,103"/>
+<area shape="rect" id="node5" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="1003,114,1186,155"/>
+<area shape="rect" id="node6" href="$structfiftyone_degrees_result_ipi_array.html" title="Array of items of type fiftyoneDegreesResultIpi used to easily access and track the size of the array..." alt="" coords="1351,223,1533,265"/>
+<area shape="rect" id="node7" href="$structfiftyone_degrees_result_ipi.html" title="Singular IP address result returned by a detection process method." alt="" coords="1003,180,1186,207"/>
+<area shape="rect" id="node8" href="$structfiftyone_degrees_ip_address.html" title="The structure to hold a IP Address in byte array format." alt="" coords="603,129,793,156"/>
+<area shape="rect" id="node9" href="$structfiftyone_degrees_ipi_cg_result.html" title="The evaluation result from graph collection." alt="" coords="599,180,797,207"/>
+<area shape="rect" id="node10" href="$structfiftyone_degrees_ipi_list.html" title="The structure which represents the list of values returned for the required property from the results..." alt="" coords="1013,281,1177,308"/>
+<area shape="rect" id="node11" href="$structfiftyone_degrees_profile_percentage.html" title="The structure to hold a pair of result item and its percentage When getting values for a property fro..." alt="" coords="579,281,817,308"/>
+<area shape="rect" id="node12" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="243,312,463,339"/>
+<area shape="rect" id="node13" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="603,385,793,412"/>
+<area shape="rect" id="node14" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="5,312,161,339"/>
+<area shape="rect" id="node15" href="$structfiftyone_degrees_results_base.html" title="Base results structure which any processing results should extend." alt="" coords="992,332,1197,359"/>
+</map>

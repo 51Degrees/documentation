@@ -1,0 +1,10 @@
+<map id="PropValuesChunkContext" name="PropValuesChunkContext">
+<area shape="rect" id="node1" title="Context structure for populating a property values chunk." alt="" coords="133,276,319,303"/>
+<area shape="rect" id="node2" href="$struct_prop_values_chunk.html" title="Structure for a chunk of property values of the same type." alt="" coords="17,95,152,121"/>
+<area shape="rect" id="node3" href="$struct_prop_values_converter.html" title="Structure defining a converter for property values." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node4" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="197,5,353,32"/>
+<area shape="rect" id="node7" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="201,95,421,121"/>
+<area shape="rect" id="node5" href="$structfiftyone_degrees_exception.html" title="Structure used to represent a 51Degrees exception and passed into methods that might generate excepti..." alt="" coords="705,185,894,212"/>
+<area shape="rect" id="node6" href="$structfiftyone_degrees_profile_percentage.html" title="The structure to hold a pair of result item and its percentage When getting values for a property fro..." alt="" coords="107,185,345,212"/>
+<area shape="rect" id="node8" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="369,185,560,212"/>
+</map>

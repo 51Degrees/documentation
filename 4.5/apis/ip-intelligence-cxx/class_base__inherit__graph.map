@@ -1,0 +1,32 @@
+<map id="Base" name="Base">
+<area shape="rect" id="node1" title="Base test class used to carry out memory leak checks." alt="" coords="155,505,209,532"/>
+<area shape="rect" id="node3" href="$class_cache_test.html" title="Unit tests for the cache implementation." alt="" coords="308,33,396,60"/>
+<area shape="rect" id="node4" href="$class_collection_test.html" title=" " alt="" coords="295,84,409,111"/>
+<area shape="rect" id="node11" href="$class_collection_test_file_variable_limits.html" title=" " alt="" coords="257,135,447,177"/>
+<area shape="rect" id="node12" href="$class_engine_tests.html" title=" " alt="" coords="303,201,401,228"/>
+<area shape="rect" id="node13" href="$class_evidence.html" title="Evidence test class used to test the functionality in evidence.c." alt="" coords="311,252,393,279"/>
+<area shape="rect" id="node17" href="$class_example_tests.html" title=" " alt="" coords="296,303,408,329"/>
+<area shape="rect" id="node18" href="$class_file.html" title="File test class used to test the functionality of file.c." alt="" coords="329,353,375,380"/>
+<area shape="rect" id="node19" href="$class_headers_tests.html" title="Header test class used to test the functionality of header.c using a string collection built from the..." alt="" coords="297,404,407,431"/>
+<area shape="rect" id="node20" href="$class_json_tests.html" title=" " alt="" coords="311,455,393,481"/>
+<area shape="rect" id="node21" href="$class_memory_leak.html" title="Memory Leak test class used to verify that the Base.cpp memory leak check functionality works as expe..." alt="" coords="299,505,405,532"/>
+<area shape="rect" id="node22" href="$class_pool.html" title="File test class used to test the functionality of file.c." alt="" coords="327,556,377,583"/>
+<area shape="rect" id="node23" href="$class_profile_tests.html" title=" " alt="" coords="304,607,400,633"/>
+<area shape="rect" id="node24" href="$class_properties.html" title="Properties test class used to test the functionality of properties.c." alt="" coords="308,657,396,684"/>
+<area shape="rect" id="node25" href="$class_property_tests.html" title=" " alt="" coords="297,708,407,735"/>
+<area shape="rect" id="node26" href="$class_resource_manager.html" title=" " alt="" coords="283,759,421,785"/>
+<area shape="rect" id="node27" href="$class_stored_binary_values.html" title=" " alt="" coords="277,809,427,836"/>
+<area shape="rect" id="node28" href="$class_strings.html" title=" " alt="" coords="319,860,385,887"/>
+<area shape="rect" id="node29" href="$class_threading.html" title=" " alt="" coords="309,911,395,937"/>
+<area shape="rect" id="node30" href="$class_value_tests.html" title="Value test class used to test the functionality of Value.cpp." alt="" coords="307,961,397,988"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,505,107,532"/>
+<area shape="rect" id="node5" href="$class_collection_test_file.html" title=" " alt="" coords="522,56,658,83"/>
+<area shape="rect" id="node8" href="$class_collection_test_memory.html" title=" " alt="" coords="507,107,673,133"/>
+<area shape="rect" id="node6" href="$class_collection_test_file_fixed.html" title=" " alt="" coords="758,5,929,32"/>
+<area shape="rect" id="node7" href="$class_collection_test_file_variable.html" title=" " alt="" coords="749,56,938,83"/>
+<area shape="rect" id="node9" href="$class_collection_test_memory_fixed.html" title=" " alt="" coords="743,107,944,133"/>
+<area shape="rect" id="node10" href="$class_collection_test_memory_variable.html" title=" " alt="" coords="733,157,953,184"/>
+<area shape="rect" id="node14" href="$class_evidence_with_headers_test___multiple_headers.html" title=" " alt="" coords="495,179,685,221"/>
+<area shape="rect" id="node15" href="$class_evidence_with_headers_test___no_header.html" title=" " alt="" coords="495,245,685,286"/>
+<area shape="rect" id="node16" href="$class_evidence_with_headers_test___single_header.html" title=" " alt="" coords="495,310,685,351"/>
+</map>

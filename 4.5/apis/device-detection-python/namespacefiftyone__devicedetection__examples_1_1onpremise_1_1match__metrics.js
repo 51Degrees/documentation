@@ -1,0 +1,4 @@
+var namespacefiftyone__devicedetection__examples_1_1onpremise_1_1match__metrics =
+[
+    [ "MatchMetricsConsole", "classfiftyone__devicedetection__examples_1_1onpremise_1_1match__metrics_1_1_match_metrics_console.html", "classfiftyone__devicedetection__examples_1_1onpremise_1_1match__metrics_1_1_match_metrics_console" ]
+];

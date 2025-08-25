@@ -1,0 +1,15 @@
+<map id="performanceState" name="performanceState">
+<area shape="rect" id="node1" title="Shared performance state." alt="" coords="387,317,526,344"/>
+<area shape="rect" id="node6" href="$structthread_state.html" title="State specific to a single thread." alt="" coords="411,421,510,448"/>
+<area shape="rect" id="node2" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="525,102,767,129"/>
+<area shape="rect" id="node3" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="737,206,968,233"/>
+<area shape="rect" id="node11" href="$class_resource_manager.html" title=" " alt="" coords="605,317,743,344"/>
+<area shape="rect" id="node4" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="792,95,975,136"/>
+<area shape="rect" id="node5" href="$structshared_string_node.html" title=" " alt="" coords="295,206,434,233"/>
+<area shape="rect" id="node7" href="$structevidence_node.html" title=" " alt="" coords="177,317,291,344"/>
+<area shape="rect" id="node8" href="$structfiftyone_degrees_evidence_key_value_pair_array.html" title="Array of evidence key value pairs and a pointer to the next array if present or NULL of not present." alt="" coords="6,199,214,240"/>
+<area shape="rect" id="node9" href="$structfiftyone_degrees_evidence_key_value_pair.html" title="Evidence key value pair structure which combines the prefix, key and value." alt="" coords="6,95,214,136"/>
+<area shape="rect" id="node10" href="$structfiftyone_degrees_key_value_pair.html" title=" " alt="" coords="5,5,215,32"/>
+<area shape="rect" id="node12" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="1008,206,1063,233"/>
+<area shape="rect" id="node13" title=" " alt="" coords="999,102,1101,129"/>
+</map>
