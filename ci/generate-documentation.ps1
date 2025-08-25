@@ -41,21 +41,21 @@ $ErrorActionPreference = "Stop"
 $PSNativeCommandUseErrorActionPreference = $true
 
 # Install system requirements (for CI/Ubuntu environments)
-Write-Host "Installing system requirements..." -ForegroundColor Yellow
+Write-Host "Installing system requirements..."
 # Use sudo if available, otherwise run directly (for Docker containers running as root)
 $sudoCmd = ""
 if (Get-Command sudo -ErrorAction SilentlyContinue) {
-    $sudoCmd = "sudo"
+    $sudoCmd = "sudo "
 }
-Invoke-Expression "${sudoCmd} apt-get update"
-Invoke-Expression "${sudoCmd} apt-get install -y graphviz flex bison unzip"
+Invoke-Expression "${sudoCmd}apt-get update"
+Invoke-Expression "${sudoCmd}apt-get install -y graphviz flex bison unzip"
 
 # Get GitHub token from parameter or environment
 if (-not $GitHubToken) {
     $GitHubToken = $env:GITHUB_TOKEN
     if (-not $GitHubToken) {
-        Write-Host "Error: GitHub token is required for cloning private repositories" -ForegroundColor Red
-        Write-Host "Please provide -GitHubToken parameter or set GITHUB_TOKEN environment variable" -ForegroundColor Yellow
+        Write-Host "Error: GitHub token is required for cloning private repositories"
+        Write-Host "Please provide -GitHubToken parameter or set GITHUB_TOKEN environment variable"
         exit 1
     }
 }
@@ -65,18 +65,18 @@ $toolsRepo = "tools"
 $toolsPath = Join-Path (Split-Path (Get-Location) -Parent) "tools"
 
 if (-not (Test-Path $toolsPath)) {
-    Write-Host "Cloning tools repository..." -ForegroundColor Yellow
+    Write-Host "Cloning tools repository..."
     # Use authenticated URL for private repo
     $authenticatedUrl = "https://${GitHubToken}@github.com/51Degrees/tools.git"
     git clone --depth 1 $authenticatedUrl $toolsPath 2>&1 | Out-Null
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "Failed to clone tools repository!" -ForegroundColor Red
-        Write-Host "Please check that the GitHub token has access to the tools repository" -ForegroundColor Yellow
+        Write-Host "Failed to clone tools repository!"
+        Write-Host "Please check that the GitHub token has access to the tools repository"
         exit 1
     }
-    Write-Host "Tools repository cloned successfully" -ForegroundColor Green
+    Write-Host "Tools repository cloned successfully"
 } else {
-    Write-Host "Tools repository already exists at $toolsPath" -ForegroundColor Green
+    Write-Host "Tools repository already exists at $toolsPath"
 }
 
 # Extract and setup Doxygen executable
@@ -85,7 +85,7 @@ $DoxyGenExecutable = "$DoxyGenPath/doxygen-linux"
 $DoxyGenZip = "$DoxyGenPath/doxygen-linux.zip"
 
 if (-not (Test-Path $DoxyGenExecutable)) {
-    Write-Host "Extracting Doxygen executable..." -ForegroundColor Yellow
+    Write-Host "Extracting Doxygen executable..."
     Push-Location $DoxyGenPath
     try {
         if (Test-Path $DoxyGenZip) {
@@ -94,9 +94,9 @@ if (-not (Test-Path $DoxyGenExecutable)) {
             } else {
                 Expand-Archive -Path $DoxyGenZip -DestinationPath $DoxyGenPath -Force
             }
-            Write-Host "Doxygen extracted successfully" -ForegroundColor Green
+            Write-Host "Doxygen extracted successfully"
         } else {
-            Write-Host "Doxygen zip file not found at: $DoxyGenZip" -ForegroundColor Red
+            Write-Host "Doxygen zip file not found at: $DoxyGenZip"
             exit 1
         }
     } finally {
@@ -106,7 +106,7 @@ if (-not (Test-Path $DoxyGenExecutable)) {
 
 # Make Doxygen executable on Unix-like systems
 if ($IsMacOS -or $IsLinux) {
-    Write-Host "Marking Doxygen as executable..." -ForegroundColor Yellow
+    Write-Host "Marking Doxygen as executable..."
     chmod +x $DoxyGenExecutable 2>&1 | Out-Null
 }
 
@@ -157,16 +157,16 @@ Write-Host "Using Doxygen: $DoxyGen"
 Write-Host "Output directory: $OutputDir"
 
 # Generate main documentation first
-Write-Host "`n========================================" -ForegroundColor Cyan
-Write-Host "Generating main documentation..." -ForegroundColor Cyan
-Write-Host "========================================" -ForegroundColor Cyan
+Write-Host "`n========================================"
+Write-Host "Generating main documentation..."
+Write-Host "========================================"
 
 Push-Location "docs"
 try {
     Invoke-Expression "$DoxyGen Doxyfile" 2>&1 | Out-Null
-    Write-Host "Main documentation generated successfully" -ForegroundColor Green
+    Write-Host "Main documentation generated successfully"
 } catch {
-    Write-Host "Failed to generate main documentation: $_" -ForegroundColor Red
+    Write-Host "Failed to generate main documentation: $_"
     exit 1
 } finally {
     Pop-Location
@@ -186,7 +186,7 @@ Write-Host "Cloning documentation repository as sibling..."
 $docRepoPath = Join-Path $tempDir "documentation"
 git clone --depth 1 "https://github.com/51Degrees/documentation.git" $docRepoPath 2>&1 | Out-Null
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "Failed to clone documentation repository!" -ForegroundColor Red
+    Write-Host "Failed to clone documentation repository!"
     exit 1
 }
 
@@ -213,22 +213,22 @@ if (Test-Path $tempDir) {
     Remove-Item $tempDir -Recurse -Force
 }
 
-Write-Host "`n========================================" -ForegroundColor Green
-Write-Host "Documentation generation complete!" -ForegroundColor Green
-Write-Host "Generated in: $OutputDir/" -ForegroundColor Green
-Write-Host "========================================" -ForegroundColor Green
+Write-Host "`n========================================"
+Write-Host "Documentation generation complete!"
+Write-Host "Generated in: $OutputDir/"
+Write-Host "========================================"
 
 # Now checkout gh-pages branch and stage the generated documentation
-Write-Host "`n========================================" -ForegroundColor Cyan
-Write-Host "Switching to gh-pages branch and staging changes..." -ForegroundColor Cyan
-Write-Host "========================================" -ForegroundColor Cyan
+Write-Host "`n========================================"
+Write-Host "Switching to gh-pages branch and staging changes..."
+Write-Host "========================================"
 
 # Move the generated documentation to a temporary location
 $tempOutputPath = "$OutputDir-new"
 if (Test-Path $tempOutputPath) {
     Remove-Item $tempOutputPath -Recurse -Force
 }
-Write-Host "Moving documentation to temporary location..." -ForegroundColor Yellow
+Write-Host "Moving documentation to temporary location..."
 Move-Item $OutputDir $tempOutputPath -Force
 
 # Check if gh-pages branch exists
@@ -240,45 +240,45 @@ Write-Host "Switching to branch '$branch'"
 }
 
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "Creating new orphan branch 'gh-pages'" -ForegroundColor Yellow
+    Write-Host "Creating new orphan branch 'gh-pages'"
     git checkout --force --recurse-submodules --orphan $branch
     git rm -rf .
 } else {
-    Write-Host "Checking out existing 'gh-pages' branch" -ForegroundColor Yellow
+    Write-Host "Checking out existing 'gh-pages' branch"
     git checkout --force --recurse-submodules $branch
 }
 
 # Remove old version documentation if it exists
 if (Test-Path $Version) {
-    Write-Host "Removing existing docs in $Version" -ForegroundColor Yellow
+    Write-Host "Removing existing docs in $Version"
     Remove-Item -Recurse -Path $Version
 }
 
 # Create .nojekyll file if it doesn't exist (prevents GitHub from processing with Jekyll)
 if (!(Test-Path ".nojekyll")) {
-    Write-Host "Creating .nojekyll file" -ForegroundColor Yellow
+    Write-Host "Creating .nojekyll file"
     Write-Output "" > .nojekyll
     git add .nojekyll
     git commit -m "Add .nojekyll file" 2>&1 | Out-Null
 }
 
 # Move the new documentation into place
-Write-Host "Moving new documentation to $Version" -ForegroundColor Yellow
+Write-Host "Moving new documentation to $Version"
 Move-Item $tempOutputPath $Version
 
 # Stage all changes
-Write-Host "Staging documentation changes..." -ForegroundColor Yellow
+Write-Host "Staging documentation changes..."
 git add $Version
 
-Write-Host "`n========================================" -ForegroundColor Green
-Write-Host "Documentation staged on gh-pages branch!" -ForegroundColor Green
-Write-Host "========================================" -ForegroundColor Green
+Write-Host "`n========================================"
+Write-Host "Documentation staged on gh-pages branch!"
+Write-Host "========================================"
 Write-Host ""
-Write-Host "Changes are staged and ready. To commit and push:" -ForegroundColor Yellow
-Write-Host "  ./ci/update-gh-pages.ps1" -ForegroundColor White
+Write-Host "Changes are staged and ready. To commit and push:"
+Write-Host "  ./ci/update-gh-pages.ps1"
 Write-Host ""
-Write-Host "For dry run (preview changes):" -ForegroundColor Yellow
-Write-Host "  ./ci/update-gh-pages.ps1 -DryRun" -ForegroundColor White
+Write-Host "For dry run (preview changes):"
+Write-Host "  ./ci/update-gh-pages.ps1 -DryRun"
 Write-Host ""
-Write-Host "To return to original branch:" -ForegroundColor Yellow
-Write-Host "  git checkout $currentBranch" -ForegroundColor White
+Write-Host "To return to original branch:"
+Write-Host "  git checkout $currentBranch"
