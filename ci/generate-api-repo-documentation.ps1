@@ -93,7 +93,10 @@ try {
     try {
         # Fetch the specific branch if it exists
         Write-Host "Checking for branch: $CurrentBranch in $RepoName"
-        git fetch origin $CurrentBranch`:$CurrentBranch --depth 1 2>&1 | Out-Null
+        & {
+            $PSNativeCommandUseErrorActionPreference = $false
+            git fetch origin $CurrentBranch`:$CurrentBranch --depth 1 2>&1 | Out-Null
+        }
         
         if ($LASTEXITCODE -eq 0) {
             git checkout $CurrentBranch 2>&1 | Out-Null
@@ -101,12 +104,18 @@ try {
         } else {
             Write-Host "Branch $CurrentBranch not found in $RepoName, trying main branch"
             # Try main branch first, then master as fallback
-            git fetch origin main:main --depth 1 2>&1 | Out-Null
+            & {
+                $PSNativeCommandUseErrorActionPreference = $false
+                git fetch origin main:main --depth 1 2>&1 | Out-Null
+            }
             if ($LASTEXITCODE -eq 0) {
                 git checkout main 2>&1 | Out-Null
                 Write-Host "Switched to main branch"
             } else {
-                git fetch origin master:master --depth 1 2>&1 | Out-Null
+                & {
+                    $PSNativeCommandUseErrorActionPreference = $false
+                    git fetch origin master:master --depth 1 2>&1 | Out-Null
+                }
                 if ($LASTEXITCODE -eq 0) {
                     git checkout master 2>&1 | Out-Null
                     Write-Host "Switched to master branch"
@@ -124,7 +133,10 @@ try {
         Push-Location $examplesPath
         try {
             Write-Host "Checking for branch: $CurrentBranch in $ExamplesRepo"
-            git fetch origin $CurrentBranch`:$CurrentBranch --depth 1 2>&1 | Out-Null
+            & {
+                $PSNativeCommandUseErrorActionPreference = $false
+                git fetch origin $CurrentBranch`:$CurrentBranch --depth 1 2>&1 | Out-Null
+            }
             
             if ($LASTEXITCODE -eq 0) {
                 git checkout $CurrentBranch 2>&1 | Out-Null
@@ -132,12 +144,18 @@ try {
             } else {
                 Write-Host "Branch $CurrentBranch not found in examples, trying main branch"
                 # Try main branch first, then master as fallback
-                git fetch origin main:main --depth 1 2>&1 | Out-Null
+                & {
+                    $PSNativeCommandUseErrorActionPreference = $false
+                    git fetch origin main:main --depth 1 2>&1 | Out-Null
+                }
                 if ($LASTEXITCODE -eq 0) {
                     git checkout main 2>&1 | Out-Null
                     Write-Host "Switched to main branch in examples"
                 } else {
-                    git fetch origin master:master --depth 1 2>&1 | Out-Null
+                    & {
+                        $PSNativeCommandUseErrorActionPreference = $false
+                        git fetch origin master:master --depth 1 2>&1 | Out-Null
+                    }
                     if ($LASTEXITCODE -eq 0) {
                         git checkout master 2>&1 | Out-Null
                         Write-Host "Switched to master branch in examples"

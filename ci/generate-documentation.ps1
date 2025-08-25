@@ -263,7 +263,10 @@ if (!(Test-Path ".nojekyll")) {
     Write-Host "Creating .nojekyll file"
     Write-Output "" > .nojekyll
     git add .nojekyll
-    git commit -m "Add .nojekyll file" 2>&1 | Out-Null
+    & {
+        $PSNativeCommandUseErrorActionPreference = $false
+        git commit -m "Add .nojekyll file" 2>&1 | Out-Null
+    }
 }
 
 # Move the new documentation into place
