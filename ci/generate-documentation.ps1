@@ -260,21 +260,21 @@ Write-Host "`n========================================"
 Write-Host "Switching to gh-pages branch and staging changes..."
 Write-Host "========================================"
 
-# Check if gh-pages branch exists
+# Fetch and checkout gh-pages branch
 $branch = "gh-pages"
-Write-Host "Switching to branch '$branch'"
+Write-Host "Fetching '$branch' from origin..."
 & {
     $PSNativeCommandUseErrorActionPreference = $false
-    git show-ref --quiet $branch
+    git fetch origin $branch 2>&1 | Out-Null
 }
 
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "Creating new orphan branch 'gh-pages'"
+if ($LASTEXITCODE -eq 0) {
+    Write-Host "Checking out existing 'gh-pages' branch from origin"
+    git checkout --force --recurse-submodules -B $branch origin/$branch
+} else {
+    Write-Host "No remote gh-pages branch found, creating new orphan branch"
     git checkout --force --recurse-submodules --orphan $branch
     git rm -rf .
-} else {
-    Write-Host "Checking out existing 'gh-pages' branch"
-    git checkout --force --recurse-submodules $branch
 }
 
 # Remove old version documentation if it exists
