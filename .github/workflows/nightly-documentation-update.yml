@@ -23,11 +23,16 @@ jobs:
   NightlyDocumentationUpdate-v4_5:
     needs: NightlyDocumentationUpdate
     if: ${{ !cancelled() }}
-    uses: 51Degrees/common-ci/.github/workflows/nightly-documentation-update.yml@main
-    with:
-      repo-name: ${{ github.event.repository.name }}
-      org-name: ${{ github.event.repository.owner.login }}
-      branch: version/4.5
-      dryrun: ${{ inputs.dryrun || false }}
-    secrets: 
-      token: ${{ secrets.ACCESS_TOKEN }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          ref: version/4.5
+      - env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: ./ci/generate-documentation.ps1 -Version '4.5'
+      - run: ./ci/update-gh-pages.ps1
