@@ -140,20 +140,20 @@ if ($IsMacOS -or $IsLinux) {
 # List of repositories to clone and build documentation for
 # Format: @{ main = "repo-name"; examples = "examples-repo-name" } or just "standalone-repo-name"
 $repositories = @(
-    # Device Detection repositories
+    # # Device Detection repositories
     "device-detection-cxx",
     @{ main = "device-detection-dotnet"; examples = "device-detection-dotnet-examples"},
-    @{ main = "device-detection-java"; examples = "device-detection-java-examples" },
+    @{ main = "device-detection-java"; examples = "device-detection-java-examples" }
     "device-detection-nginx",
     "device-detection-node",
     "device-detection-php",
     "device-detection-php-onpremise",
     "device-detection-python",
     
-    # IP Intelligence repositories
+    # # IP Intelligence repositories
     "ip-intelligence-cxx",
     @{ main = "ip-intelligence-dotnet"; examples = "ip-intelligence-dotnet-examples" },
-    "ip-intelligence-go",
+    @{ main = "ip-intelligence-go"; examples = "ip-intelligence-go-examples" },
     @{ main = "ip-intelligence-java"; examples = "ip-intelligence-java-examples" },
     
     # Location repositories
@@ -206,7 +206,7 @@ try {
 }
 
 # Create directory for cloning repos (for API documentation)
-$tempDir = Join-Path (Get-Location) "apis-temp"
+$tempDir = Join-Path (Get-Location) "apis"
 if (Test-Path $tempDir) {
     Remove-Item $tempDir -Recurse -Force
 }
