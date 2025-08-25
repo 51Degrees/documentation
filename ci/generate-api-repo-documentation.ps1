@@ -11,8 +11,15 @@ param(
     [Parameter(Mandatory=$true)]
     [string]$CurrentBranch,
     
-    [string]$ExamplesRepo = $null
+    [Parameter(Mandatory=$true)]
+    [string]$CommonCiPath,
+    
+    [string]$ExamplesRepo = $null,
+    [switch]$ShowDoxygenOutput = $false
 )
+
+# Include common helper functions
+. "$PSScriptRoot/common-helpers.ps1"
 
 # Determine Doxygen path from tools repository
 # TempDir is /media/51drepos/documentation/apis-temp
@@ -22,13 +29,76 @@ $parentDir = Split-Path $documentationDir -Parent  # /media/51drepos
 $toolsPath = Join-Path $parentDir "tools"  # /media/51drepos/tools
 $DoxyGen = "$toolsPath/DoxyGen/doxygen-linux"
 
-
 # Calculate output directory based on script location and version
 # PSScriptRoot is /media/51drepos/documentation/ci
 # We want /media/51drepos/documentation/4.5
 $documentationRoot = Split-Path $PSScriptRoot -Parent  # /media/51drepos/documentation
 $OutputDir = Join-Path $documentationRoot $Version     # /media/51drepos/documentation/4.5
 
+# Helper function to clone repository with proper branch fallback
+function Clone-Repository {
+    param(
+        [string]$RepoName,
+        [string]$DestinationDir,
+        [string]$Branch
+    )
+    
+    Push-Location $DestinationDir
+    try {
+        $repoUrl = "https://github.com/51Degrees/$RepoName.git"
+        
+        Write-Host "Cloning $RepoName..."
+        
+        # Try to clone with the specific branch first
+        & {
+            $PSNativeCommandUseErrorActionPreference = $false
+            git clone --depth 1 --branch $Branch $repoUrl $RepoName 2>&1 | Out-Null
+        }
+        
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "Branch $Branch not found, trying main branch..."
+            
+            # Try main branch
+            & {
+                $PSNativeCommandUseErrorActionPreference = $false
+                git clone --depth 1 --branch main $repoUrl $RepoName 2>&1 | Out-Null
+            }
+            
+            if ($LASTEXITCODE -ne 0) {
+                Write-Host "Main branch not found, trying master branch..."
+                
+                # Try master branch
+                & {
+                    $PSNativeCommandUseErrorActionPreference = $false
+                    git clone --depth 1 --branch master $repoUrl $RepoName 2>&1 | Out-Null
+                }
+                
+                if ($LASTEXITCODE -ne 0) {
+                    Write-Host "Failed to clone $RepoName with any branch"
+                    return $false
+                }
+            }
+        }
+        
+        # Initialize submodules if they exist, but don't fail if they don't work
+        Push-Location $RepoName
+        try {
+            & {
+                $PSNativeCommandUseErrorActionPreference = $false
+                git submodule update --init --recursive --depth 1 2>&1 | Out-Null
+            }
+            if ($LASTEXITCODE -ne 0) {
+                Write-Host "Failed to sync submodules for $RepoName, continuing without them..."
+            }
+        } finally {
+            Pop-Location
+        }
+        
+        return $true
+    } finally {
+        Pop-Location
+    }
+}
 
 # Handle both standalone repos and main+examples pairs
 if ($ExamplesRepo) {
@@ -36,25 +106,16 @@ if ($ExamplesRepo) {
     Write-Host "Processing: $RepoName (with examples: $ExamplesRepo)"
     Write-Host "========================================"
     
-    $repoPath = Join-Path $TempDir $RepoName
-    $mainRepoUrl = "https://github.com/51Degrees/$RepoName.git"
-    $examplesRepoUrl = "https://github.com/51Degrees/$ExamplesRepo.git"
-    
     # Clone main repository
-    Write-Host "Cloning $RepoName..."
-    git clone --depth 1 $mainRepoUrl $repoPath 2>&1 | Out-Null
-    
-    if ($LASTEXITCODE -ne 0) {
+    if (-not (Clone-Repository -RepoName $RepoName -DestinationDir $TempDir -Branch $CurrentBranch)) {
         Write-Host "Failed to clone $RepoName, skipping..."
         exit 1
     }
     
-    # Clone examples repository inside the main repository
-    $examplesPath = Join-Path $repoPath $ExamplesRepo
-    Write-Host "Cloning $ExamplesRepo into $RepoName..."
-    git clone --depth 1 $examplesRepoUrl $examplesPath 2>&1 | Out-Null
+    $repoPath = Join-Path $TempDir $RepoName
     
-    if ($LASTEXITCODE -ne 0) {
+    # Clone examples repository inside the main repository
+    if (-not (Clone-Repository -RepoName $ExamplesRepo -DestinationDir $repoPath -Branch $CurrentBranch)) {
         Write-Host "Failed to clone $ExamplesRepo, continuing with main repo only..."
     }
 } else {
@@ -62,135 +123,24 @@ if ($ExamplesRepo) {
     Write-Host "Processing: $RepoName"
     Write-Host "========================================"
     
-    $repoPath = Join-Path $TempDir $RepoName
-    $repoUrl = "https://github.com/51Degrees/$RepoName.git"
-    
     # Clone standalone repository
-    Write-Host "Cloning $RepoName..."
-    git clone --depth 1 $repoUrl $repoPath 2>&1 | Out-Null
-    
-    if ($LASTEXITCODE -ne 0) {
+    if (-not (Clone-Repository -RepoName $RepoName -DestinationDir $TempDir -Branch $CurrentBranch)) {
         Write-Host "Failed to clone $RepoName, skipping..."
         exit 1
     }
+    
+    $repoPath = Join-Path $TempDir $RepoName
 }
 
-# Sync submodules for both main and standalone repositories
-Push-Location $repoPath
-try {
-    Write-Host "Syncing submodules for $RepoName..."
-    & {
-        $PSNativeCommandUseErrorActionPreference = $false
-        git submodule update --init --recursive --depth 1 2>&1 | Out-Null
-    }
-    if ($LASTEXITCODE -ne 0) {
-        Write-Host "Failed to sync submodules for $RepoName, continuing..."
-    }
-} finally {
-    Pop-Location
-}
+# Repository is now cloned and ready for documentation generation
+# The common-ci clone-repo.ps1 script has already:
+# - Cloned the repository with recursive submodules
+# - Switched to the correct branch (with fallback to main)
+# - Synced all submodules properly
 
 try {
-    # Try to checkout the current branch in main repository
-    Push-Location $repoPath
-    try {
-        # Fetch the specific branch if it exists
-        Write-Host "Checking for branch: $CurrentBranch in $RepoName"
-        & {
-            $PSNativeCommandUseErrorActionPreference = $false
-            git fetch origin $CurrentBranch`:$CurrentBranch --depth 1 2>&1 | Out-Null
-        }
-        
-        if ($LASTEXITCODE -eq 0) {
-            git checkout $CurrentBranch 2>&1 | Out-Null
-            Write-Host "Switched to branch: $CurrentBranch"
-        } else {
-            Write-Host "Branch $CurrentBranch not found in $RepoName, trying main branch"
-            # Try main branch first, then master as fallback
-            & {
-                $PSNativeCommandUseErrorActionPreference = $false
-                git fetch origin main:main --depth 1 2>&1 | Out-Null
-            }
-            if ($LASTEXITCODE -eq 0) {
-                git checkout main 2>&1 | Out-Null
-                Write-Host "Switched to main branch"
-            } else {
-                & {
-                    $PSNativeCommandUseErrorActionPreference = $false
-                    git fetch origin master:master --depth 1 2>&1 | Out-Null
-                }
-                if ($LASTEXITCODE -eq 0) {
-                    git checkout master 2>&1 | Out-Null
-                    Write-Host "Switched to master branch"
-                } else {
-                    Write-Host "No main/master branch found, staying on default branch"
-                }
-            }
-        }
-    } finally {
-        Pop-Location
-    }
-    
-    # If this is a main+examples pair, also checkout the branch in the examples repo
-    if ($ExamplesRepo -and (Test-Path $examplesPath)) {
-        Push-Location $examplesPath
-        try {
-            Write-Host "Checking for branch: $CurrentBranch in $ExamplesRepo"
-            & {
-                $PSNativeCommandUseErrorActionPreference = $false
-                git fetch origin $CurrentBranch`:$CurrentBranch --depth 1 2>&1 | Out-Null
-            }
-            
-            if ($LASTEXITCODE -eq 0) {
-                git checkout $CurrentBranch 2>&1 | Out-Null
-                Write-Host "Switched to branch: $CurrentBranch in examples"
-            } else {
-                Write-Host "Branch $CurrentBranch not found in examples, trying main branch"
-                # Try main branch first, then master as fallback
-                & {
-                    $PSNativeCommandUseErrorActionPreference = $false
-                    git fetch origin main:main --depth 1 2>&1 | Out-Null
-                }
-                if ($LASTEXITCODE -eq 0) {
-                    git checkout main 2>&1 | Out-Null
-                    Write-Host "Switched to main branch in examples"
-                } else {
-                    & {
-                        $PSNativeCommandUseErrorActionPreference = $false
-                        git fetch origin master:master --depth 1 2>&1 | Out-Null
-                    }
-                    if ($LASTEXITCODE -eq 0) {
-                        git checkout master 2>&1 | Out-Null
-                        Write-Host "Switched to master branch in examples"
-                    } else {
-                        Write-Host "No main/master branch found in examples, staying on default branch"
-                    }
-                }
-            }
-        } finally {
-            Pop-Location
-        }
-    }
-    
-    # Sync submodules after switching to the correct branch
-    Push-Location $repoPath
-    try {
-        Write-Host "Syncing submodules for $RepoName..."
-        & {
-            $PSNativeCommandUseErrorActionPreference = $false
-            git submodule update --init --recursive --depth 1 2>&1 | Out-Null
-        }
-        if ($LASTEXITCODE -ne 0) {
-            Write-Host "Failed to sync submodules for $RepoName, continuing..."
-        }
-    } finally {
-        Pop-Location
-    }
-    
     # Create output directory for this repo
     $repoOutputDir = Join-Path $OutputDir "apis" $RepoName
-    Write-Host "DEBUG: OutputDir = $OutputDir"
-    Write-Host "DEBUG: RepoOutputDir = $repoOutputDir"
     if (-not (Test-Path $repoOutputDir)) {
         New-Item -ItemType Directory -Path $repoOutputDir -Force | Out-Null
     } else {
@@ -210,8 +160,7 @@ try {
         
         $exitCode = 0
         try {
-                & $DoxyGen
-            $exitCode = $LASTEXITCODE
+            $exitCode = Invoke-Doxygen -DoxygenPath $DoxyGen -ShowDoxygenOutput:$ShowDoxygenOutput
         } catch {
             Write-Host "Error running Doxygen: $_"
             $exitCode = 1

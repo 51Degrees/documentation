@@ -36,11 +36,15 @@ param(
     [string]$Version = "4.5",
     [string]$GitHubToken = "",
     [switch]$DryRun = $false,
-    [switch]$GenerateOnly = $false
+    [switch]$GenerateOnly = $false,
+    [switch]$ShowDoxygenOutput = $false
 )
 
 $ErrorActionPreference = "Stop"
 $PSNativeCommandUseErrorActionPreference = $true
+
+# Include common helper functions
+. "$PSScriptRoot/common-helpers.ps1"
 
 # Install system requirements (for CI/Ubuntu environments)
 Write-Host "Installing system requirements..."
@@ -50,7 +54,7 @@ if (Get-Command sudo -ErrorAction SilentlyContinue) {
     $sudoCmd = "sudo "
 }
 Invoke-Expression "${sudoCmd}apt-get update"
-Invoke-Expression "${sudoCmd}apt-get install -y graphviz flex bison unzip"
+Invoke-Expression "${sudoCmd}apt-get install -y graphviz flex bison unzip git-lfs"
 
 # Get GitHub token from parameter or environment
 if (-not $GitHubToken) {
@@ -186,8 +190,14 @@ Write-Host "========================================"
 
 Push-Location "docs"
 try {
-    Invoke-Expression "$DoxyGen Doxyfile"
-    Write-Host "Main documentation generated successfully"
+    $exitCode = Invoke-Doxygen -DoxygenPath $DoxyGen -ShowDoxygenOutput:$ShowDoxygenOutput
+    
+    if ($exitCode -eq 0) {
+        Write-Host "Main documentation generated successfully"
+    } else {
+        Write-Host "Doxygen failed with exit code $exitCode"
+        exit 1
+    }
 } catch {
     Write-Host "Failed to generate main documentation: $_"
     exit 1
@@ -225,12 +235,12 @@ foreach ($repoItem in $repositories) {
         $examplesRepo = $repoItem.examples
         
         # Call helper script for main+examples repo
-        & "$PSScriptRoot/generate-api-repo-documentation.ps1" -RepoName $mainRepo -TempDir $tempDir -Version $Version -CurrentBranch $currentBranch -ExamplesRepo $examplesRepo
+        & "$PSScriptRoot/generate-api-repo-documentation.ps1" -RepoName $mainRepo -TempDir $tempDir -Version $Version -CurrentBranch $currentBranch -CommonCiPath $commonCiPath -ExamplesRepo $examplesRepo -ShowDoxygenOutput:$ShowDoxygenOutput
     } else {
         $repo = $repoItem
         
         # Call helper script for standalone repo
-        & "$PSScriptRoot/generate-api-repo-documentation.ps1" -RepoName $repo -TempDir $tempDir -Version $Version -CurrentBranch $currentBranch
+        & "$PSScriptRoot/generate-api-repo-documentation.ps1" -RepoName $repo -TempDir $tempDir -Version $Version -CurrentBranch $currentBranch -CommonCiPath $commonCiPath -ShowDoxygenOutput:$ShowDoxygenOutput
     }
 }
 
