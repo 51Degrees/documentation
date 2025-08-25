@@ -1,12 +1,11 @@
 <#
 .SYNOPSIS
-    Generates API documentation for all 51Degrees repositories and updates gh-pages branch.
+    Generates API documentation for all 51Degrees repositories.
 
 .DESCRIPTION
-    This script clones all necessary repositories, generates documentation using Doxygen
-    (extracted from the tools repository), and automatically updates the gh-pages branch 
-    with the new documentation unless running in dry-run mode. System requirements are 
-    automatically installed on Ubuntu.
+    This script clones all necessary repositories and generates documentation using Doxygen
+    (extracted from the tools repository). System requirements are automatically installed 
+    on Ubuntu. To update gh-pages branch after generation, use update-gh-pages.ps1.
 
 .PARAMETER Version
     The version number for the documentation (default: "4.5"). 
@@ -16,16 +15,9 @@
     GitHub token for accessing private repositories (tools). 
     Can also be set via GITHUB_TOKEN environment variable.
 
-.PARAMETER DryRun
-    Switch to preview changes without committing or pushing to gh-pages
-
 .EXAMPLE
-    # Generate documentation and update gh-pages branch
+    # Generate documentation
     ./generate-documentation.ps1 -GitHubToken "ghp_xxxxx"
-
-.EXAMPLE
-    # Preview what would be committed (dry run)
-    ./generate-documentation.ps1 -DryRun -GitHubToken "ghp_xxxxx"
 
 .EXAMPLE
     # CI environment usage
@@ -34,11 +26,15 @@
 .EXAMPLE
     # Generate documentation for a different version
     ./generate-documentation.ps1 -Version "4.6" -GitHubToken "ghp_xxxxx"
+
+.EXAMPLE
+    # Generate and then update gh-pages
+    ./generate-documentation.ps1 -GitHubToken "ghp_xxxxx"
+    ./update-gh-pages.ps1
 #>
 param(
     [string]$Version = "4.5",
-    [string]$GitHubToken = "",
-    [switch]$DryRun = $false
+    [string]$GitHubToken = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -217,13 +213,14 @@ if (Test-Path $tempDir) {
     Remove-Item $tempDir -Recurse -Force
 }
 
-# Update gh-pages branch (always, unless in dry-run mode)
+Write-Host "`n========================================" -ForegroundColor Green
+Write-Host "Documentation generation complete!" -ForegroundColor Green
+Write-Host "Generated in: $OutputDir/" -ForegroundColor Green
+Write-Host "========================================" -ForegroundColor Green
+
+# Now checkout gh-pages branch and stage the generated documentation
 Write-Host "`n========================================" -ForegroundColor Cyan
-if ($DryRun) {
-    Write-Host "Preparing gh-pages branch update (DRY RUN)..." -ForegroundColor Cyan
-} else {
-    Write-Host "Updating gh-pages branch..." -ForegroundColor Cyan
-}
+Write-Host "Switching to gh-pages branch and staging changes..." -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 
 # Move the generated documentation to a temporary location
@@ -231,6 +228,7 @@ $tempOutputPath = "$OutputDir-new"
 if (Test-Path $tempOutputPath) {
     Remove-Item $tempOutputPath -Recurse -Force
 }
+Write-Host "Moving documentation to temporary location..." -ForegroundColor Yellow
 Move-Item $OutputDir $tempOutputPath -Force
 
 # Check if gh-pages branch exists
@@ -261,6 +259,7 @@ if (!(Test-Path ".nojekyll")) {
     Write-Host "Creating .nojekyll file" -ForegroundColor Yellow
     Write-Output "" > .nojekyll
     git add .nojekyll
+    git commit -m "Add .nojekyll file" 2>&1 | Out-Null
 }
 
 # Move the new documentation into place
@@ -271,45 +270,15 @@ Move-Item $tempOutputPath $Version
 Write-Host "Staging documentation changes..." -ForegroundColor Yellow
 git add $Version
 
-if ($DryRun) {
-    Write-Host "`n========================================" -ForegroundColor Yellow
-    Write-Host "DRY RUN MODE - No changes will be committed" -ForegroundColor Yellow
-    Write-Host "========================================" -ForegroundColor Yellow
-    
-    # Show what would be committed
-    Write-Host "`nChanges that would be committed:" -ForegroundColor Cyan
-    git status --short
-    
-    Write-Host "`nTo commit and push these changes, run without -DryRun flag" -ForegroundColor Yellow
-    Write-Host "Returning to branch: $currentBranch" -ForegroundColor Yellow
-    git checkout $currentBranch
-} else {
-    # Commit the changes
-    $commitMessage = "Update documentation for version $Version"
-    Write-Host "Committing changes: $commitMessage" -ForegroundColor Yellow
-    git commit -m $commitMessage
-    
-    if ($LASTEXITCODE -eq 0) {
-        # Push to origin
-        Write-Host "Pushing to origin/gh-pages..." -ForegroundColor Yellow
-        git push origin gh-pages
-        
-        if ($LASTEXITCODE -eq 0) {
-            Write-Host "`nSuccessfully updated gh-pages branch!" -ForegroundColor Green
-        } else {
-            Write-Host "Failed to push to origin/gh-pages" -ForegroundColor Red
-            Write-Host "You may need to push manually with: git push origin gh-pages" -ForegroundColor Yellow
-        }
-    } else {
-        Write-Host "No changes to commit" -ForegroundColor Yellow
-    }
-    
-    # Return to original branch
-    Write-Host "Returning to branch: $currentBranch" -ForegroundColor Yellow
-    git checkout $currentBranch
-}
-
 Write-Host "`n========================================" -ForegroundColor Green
-Write-Host "Documentation generation complete!" -ForegroundColor Green
-Write-Host "Output directory: $OutputDir/" -ForegroundColor Green
+Write-Host "Documentation staged on gh-pages branch!" -ForegroundColor Green
 Write-Host "========================================" -ForegroundColor Green
+Write-Host ""
+Write-Host "Changes are staged and ready. To commit and push:" -ForegroundColor Yellow
+Write-Host "  ./ci/update-gh-pages.ps1" -ForegroundColor White
+Write-Host ""
+Write-Host "For dry run (preview changes):" -ForegroundColor Yellow
+Write-Host "  ./ci/update-gh-pages.ps1 -DryRun" -ForegroundColor White
+Write-Host ""
+Write-Host "To return to original branch:" -ForegroundColor Yellow
+Write-Host "  git checkout $currentBranch" -ForegroundColor White
