@@ -61,10 +61,13 @@ if (-not $GitHubToken) {
     }
 }
 
-# Clone tools repository first (for Doxygen)
-$toolsRepo = "tools"
-$toolsPath = Join-Path (Split-Path (Get-Location) -Parent) "tools"
+# Clone all necessary repositories upfront for early failure detection
+Write-Host "========================================"
+Write-Host "Cloning necessary repositories..."
+Write-Host "========================================"
 
+# Clone tools repository first (for Doxygen)
+$toolsPath = Join-Path (Split-Path (Get-Location) -Parent) "tools"
 if (-not (Test-Path $toolsPath)) {
     Write-Host "Cloning tools repository..."
     # Use authenticated URL for private repo
@@ -79,6 +82,24 @@ if (-not (Test-Path $toolsPath)) {
 } else {
     Write-Host "Tools repository already exists at $toolsPath"
 }
+
+# Clone common-ci repository (for git configuration)
+$commonCiPath = Join-Path (Split-Path (Get-Location) -Parent) "common-ci"
+if (-not (Test-Path $commonCiPath)) {
+    Write-Host "Cloning common-ci repository..."
+    git clone --depth 1 "https://github.com/postindustria-tech/common-ci.git" $commonCiPath 2>&1 | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Failed to clone common-ci repository!"
+        exit 1
+    }
+    Write-Host "Common-ci repository cloned successfully"
+} else {
+    Write-Host "Common-ci repository already exists at $commonCiPath"
+}
+
+# Configure git using common-ci script early so all subsequent clones use the token
+Write-Host "Configuring git for authenticated operations..."
+& "$commonCiPath/steps/configure-git.ps1" -GitHubToken $GitHubToken
 
 # Extract and setup Doxygen executable
 $DoxyGenPath = "$toolsPath/DoxyGen"
@@ -283,67 +304,53 @@ if (Test-Path $tempOutputPath) {
     exit 1
 }
 
-# Clone common-ci repository and configure git
-$commonCiPath = Join-Path (Split-Path (Get-Location) -Parent) "common-ci"
-if (-not (Test-Path $commonCiPath)) {
-    Write-Host "Cloning common-ci repository..."
-    git clone --depth 1 "https://github.com/postindustria-tech/common-ci.git" $commonCiPath 2>&1 | Out-Null
-    if ($LASTEXITCODE -ne 0) {
-        Write-Host "Failed to clone common-ci repository!"
-        exit 1
-    }
-}
-
-Write-Host "Configuring git using common-ci script..."
-& "$commonCiPath/steps/configure-git.ps1" -GitHubToken $GitHubToken
-
-# Stage all changes
-Write-Host "Staging documentation changes..."
-git add $Version
-
-# Update gh-pages branch
+# Check for changes, commit and push using common-ci scripts
 Write-Host "`n========================================"
-if ($DryRun) {
-    Write-Host "Previewing gh-pages commit (DRY RUN)..."
-} else {
-    Write-Host "Committing and pushing to gh-pages..."
-}
+Write-Host "Checking for changes..."
 Write-Host "========================================"
 
-if ($DryRun) {
-    Write-Host "`n========================================"
-    Write-Host "DRY RUN MODE - No changes will be committed"
-    Write-Host "========================================"
-    
-    # Show what would be committed
-    Write-Host "`nStaged changes that would be committed:"
-    git diff --cached --stat
-    Write-Host ""
-    git status --short
-    
-    Write-Host "`nTo commit and push these changes, run without -DryRun flag"
-} else {
-    # Set commit message
-    $CommitMessage = "Update documentation for version $Version"
-    
-    # Commit the changes
-    Write-Host "Committing changes: $CommitMessage"
-    git commit -m $CommitMessage
-    
-    if ($LASTEXITCODE -eq 0) {
-        # Push to origin
-        Write-Host "Pushing to origin/gh-pages..."
-        git push origin gh-pages
+# Check if there are changes to commit
+& "$commonCiPath/steps/has-changed.ps1" -RepoName "."
+
+if ($LASTEXITCODE -eq 0) {
+    # There are changes to commit
+    if ($DryRun) {
+        Write-Host "`n========================================"
+        Write-Host "DRY RUN MODE - No changes will be committed"
+        Write-Host "========================================"
+        
+        # Show what would be committed
+        Write-Host "`nStaged changes that would be committed:"
+        git status --porcelain
+        
+        Write-Host "`nTo commit and push these changes, run without -DryRun flag"
+    } else {
+        # Set commit message
+        $CommitMessage = "Update documentation for version $Version"
+        
+        Write-Host "`n========================================"
+        Write-Host "Committing and pushing to gh-pages..."
+        Write-Host "========================================"
+        
+        # Commit the changes using common-ci script
+        & "$commonCiPath/steps/commit-changes.ps1" -RepoName "." -Message $CommitMessage
         
         if ($LASTEXITCODE -eq 0) {
-            Write-Host "`nSuccessfully updated gh-pages branch!"
+            # Push to origin using common-ci script
+            & "$commonCiPath/steps/push-changes.ps1" -RepoName "." -Force $false -DryRun $false
+            
+            if ($LASTEXITCODE -eq 0) {
+                Write-Host "`nSuccessfully updated gh-pages branch!"
+            } else {
+                Write-Host "Failed to push to origin/gh-pages"
+                Write-Host "You may need to push manually with: git push origin gh-pages"
+            }
         } else {
-            Write-Host "Failed to push to origin/gh-pages"
-            Write-Host "You may need to push manually with: git push origin gh-pages"
+            Write-Host "Failed to commit changes"
         }
-    } else {
-        Write-Host "No changes to commit"
     }
+} else {
+    Write-Host "No changes to commit"
 }
 
 Write-Host "`n========================================"
