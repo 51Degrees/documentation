@@ -58,7 +58,7 @@ var NAVTREEINDEX0 =
 "cloud_2useragentclienthints-web_2user_agent_client_hints_web_8js-example.html":[3,5],
 "examples.html":[3],
 "getting_started_8js-example.html":[3,6],
-"md__home_runner_work_documentation_documentation_apis-temp_device-detection-node_readme.html":[1],
+"md__home_runner_work_documentation_documentation_apis_device-detection-node_readme.html":[1],
 "onpremise_2automaticupdates_2data_file_system_watcher_8js-example.html":[3,7],
 "onpremise_2automaticupdates_2update_on_start_up_8js-example.html":[3,8],
 "onpremise_2automaticupdates_2update_polling_interval_8js-example.html":[3,9],

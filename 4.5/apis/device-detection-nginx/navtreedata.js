@@ -24,7 +24,7 @@ for the JavaScript code in this file
 var NAVTREE =
 [
     [ "General Docs", "../../documentation/4.4/index.html", null ],
-    [ "51Degrees Device Detection Nginx Module", "md__home_runner_work_documentation_documentation_apis-temp_device-detection-nginx__r_e_a_d_m_e.html", null ],
+    [ "51Degrees Device Detection Nginx Module", "md__home_runner_work_documentation_documentation_apis_device-detection-nginx__r_e_a_d_m_e.html", null ],
     [ "Nginx Module", "modules.html", "modules" ],
     [ "Examples", "examples.html", "examples" ]
 ];

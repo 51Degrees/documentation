@@ -24,8 +24,8 @@ for the JavaScript code in this file
 var NAVTREE =
 [
     [ "General Docs", "../../documentation/4.5/index.html", null ],
-    [ "51Degrees Device Detection API", "md__home_runner_work_documentation_documentation_apis-temp_device-detection-cxx__r_e_a_d_m_e.html", null ],
-    [ "51Degrees Common Code Library", "md__home_runner_work_documentation_documentation_apis-temp_device-detection-cxx_src_common-cxx__r_e_a_d_m_e.html", null ],
+    [ "51Degrees Device Detection API", "md__home_runner_work_documentation_documentation_apis_device-detection-cxx__r_e_a_d_m_e.html", null ],
+    [ "51Degrees Common Code Library", "md__home_runner_work_documentation_documentation_apis_device-detection-cxx_src_common-cxx__r_e_a_d_m_e.html", null ],
     [ "C Modules", "modules.html", "modules" ],
     [ "C++ Namespaces", "namespaces.html", "namespaces" ],
     [ "Examples", "examples.html", "examples" ]

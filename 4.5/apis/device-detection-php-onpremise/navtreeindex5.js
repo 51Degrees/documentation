@@ -75,7 +75,7 @@ var NAVTREEINDEX5 =
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_meta_data_console.html":[2,0,0,0,0,0,0,4],
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_meta_data_console.html#a043be1574298f643396163cbe06c1a24":[2,0,0,0,0,0,0,4,0],
 "examples.html":[3],
-"md__home_runner_work_documentation_documentation_apis-temp_device-detection-php-onpremise_readme.html":[1],
+"md__home_runner_work_documentation_documentation_apis_device-detection-php-onpremise_readme.html":[1],
 "onpremise_2failure_to_match_8php-example.html":[3,0],
 "onpremise_2getting_started_console_8php-example.html":[3,1],
 "onpremise_2getting_started_web_8php-example.html":[3,2],

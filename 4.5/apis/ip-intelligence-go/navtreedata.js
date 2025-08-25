@@ -23,7 +23,9 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-    [ "51Degrees IP Intelligence API", "md__home_runner_work_documentation_documentation_apis-temp_ip-intelligence-go__r_e_a_d_m_e.html", null ]
+    [ "51Degrees IP Intelligence API", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-go__r_e_a_d_m_e.html", null ],
+    [ "51Degrees Ip Intelligence API", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-go_ip-intelligence-go-examples__r_e_a_d_m_e.html", null ],
+    [ "Examples", "examples.html", "examples" ]
 ];
 
 var NAVTREEHIDEROOT = true;
@@ -32,7 +34,7 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-"md__home_runner_work_documentation_documentation_apis-temp_ip-intelligence-go__r_e_a_d_m_e.html"
+"examples.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

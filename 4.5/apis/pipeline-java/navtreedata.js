@@ -24,7 +24,7 @@ for the JavaScript code in this file
 var NAVTREE =
 [
     [ "General Docs", "../../documentation/4.4/index.html", null ],
-    [ "51Degrees Pipeline", "md__home_runner_work_documentation_documentation_apis-temp_pipeline-java__r_e_a_d_m_e.html", null ],
+    [ "51Degrees Pipeline", "md__home_runner_work_documentation_documentation_apis_pipeline-java__r_e_a_d_m_e.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Examples", "examples.html", "examples" ]

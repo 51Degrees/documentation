@@ -169,7 +169,7 @@ var NAVTREEINDEX0 =
 "hash_2match_metrics_8conf-example.html":[3,3],
 "hash_2match_query_8conf-example.html":[3,4],
 "hash_2response_headers_2response_header_8conf-example.html":[3,5],
-"md__home_runner_work_documentation_documentation_apis-temp_device-detection-nginx__r_e_a_d_m_e.html":[1],
+"md__home_runner_work_documentation_documentation_apis_device-detection-nginx__r_e_a_d_m_e.html":[1],
 "modules.html":[2],
 "structngx__http__51_d__data__to__set__t.html":[2,0,0],
 "structngx__http__51_d__data__to__set__t.html#a0818e81e40efbe0ad99a39cc4b8afce6":[2,0,0,2],

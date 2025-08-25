@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['the_20mit_20license_20_28mit_29',['The MIT License (MIT)',['../md__home_runner_work_documentation_documentation_apis-temp_location-dotnet__examples__cloud__asp7ad483d9e47204f8ddf07e32d9d81064.html',1,'']]],
+  ['the_20mit_20license_20_28mit_29',['The MIT License (MIT)',['../md__home_runner_work_documentation_documentation_apis_location-dotnet__examples__cloud__asp_net_1cc31f4246e8512a170ed2a814082ddb.html',1,'']]],
   ['timezoneoffset',['TimeZoneOffset',['../class_fifty_one_1_1_geo_location_1_1_core_1_1_data_1_1_geo_data.html#a3df4d779f534627e77f6906b60a3200e',1,'FiftyOne.GeoLocation.Core.Data.GeoData.TimeZoneOffset()'],['../interface_fifty_one_1_1_geo_location_1_1_core_1_1_data_1_1_i_geo_data.html#a4bd814a8dfd8fc0b7d1db8797c88c928',1,'FiftyOne.GeoLocation.Core.Data.IGeoData.TimeZoneOffset()']]],
   ['tostringhelper',['ToStringHelper',['../class_fifty_one_1_1_geo_location_1_1_core_1_1_templates_1_1_java_script_resource_base.html#ac02ae5e992d73b8ccff3ebc5d8ecd9ab',1,'FiftyOne::GeoLocation::Core::Templates::JavaScriptResourceBase']]],
   ['tostringinstancehelper',['ToStringInstanceHelper',['../class_fifty_one_1_1_geo_location_1_1_core_1_1_templates_1_1_java_script_resource_base_1_1_to_string_instance_helper.html',1,'FiftyOne::GeoLocation::Core::Templates::JavaScriptResourceBase']]],

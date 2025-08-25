@@ -28,7 +28,7 @@ var NAVTREEINDEX1 =
 "class_getting_started___web___client_only_1_1_pages_1_1_error_model.html#ac0c74cba28055d88f6d55062902198d6":[2,7,0,0,3],
 "class_getting_started___web___client_only_1_1_pages_1_1_error_model.html#aff33e7cb08ca5258b1db458332e47904":[2,7,0,0,0],
 "examples.html":[3],
-"md__home_runner_work_documentation_documentation_apis-temp_device-detection-dotnet__r_e_a_d_m_e.html":[1],
+"md__home_runner_work_documentation_documentation_apis_device-detection-dotnet__r_e_a_d_m_e.html":[1],
 "namespace_client___hints.html":[2,0],
 "namespace_client___hints_1_1_controllers.html":[2,0,0],
 "namespace_client___hints___not___integrated.html":[2,1],

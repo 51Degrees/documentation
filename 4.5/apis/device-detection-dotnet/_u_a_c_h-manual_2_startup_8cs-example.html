@@ -29,7 +29,7 @@
   <h1 class="c-brand">
   <a id="projectlogo" href="../../documentation/4.4/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" style="width:172px;"/></a>
   <span class="c-tagline">51Degrees Device Detection .NET
-   &#160;<span id="projectnumber">4.4</span>
+   &#160;<span id="projectnumber">4.5</span>
   </span>
   </h1>
   <div id="projectalign" style="padding-left: 0.5em;">
@@ -67,7 +67,7 @@ $(document).ready(function(){initNavTree('_u_a_c_h-manual_2_startup_8cs-example.
 <div class="g-docs__primary" id="primary">
 <p>This example demonstrates device detection using user-agent client hints in a real-world scenario. When a clint-hints-enabled user first visits a website, the server will recieve the sec-ch-ua and sec-ch-ua-mobile headers. Along with the user-agent. This information is then used to determine if the client supports user-agent client hints and request them if needed by setting the Accept-CH header in the response. Clicking the button below will cause a new request to be sent to the server, along with any additional headers that have been requested.</p>
 <p>In this scenario, the standard Pipeline API web integration is not used. This means that several jobs that the API usually takes care of automatically must be handled manually. For example, setting the HTTP response headers to request user-agent client hints.</p>
-<p>The source code for this example is available in full on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/tree/main/Examples/Legacy%20Web/Cloud-UACH-manual">GitHub</a>.</p>
+<p>The source code for this example is available in full on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/tree/version/4.5/Examples/Legacy%20Web/Cloud-UACH-manual">GitHub</a>.</p>
 <p>To use the cloud service you will need to create a <b>resource key</b>. The resource key is used as short-hand to store the particular set of properties you are interested in as well as any associated license keys that entitle you to increased request limits and/or paid-for properties.</p>
 <p>You can create a resource key using the 51Degrees <a href="https://configure.51degrees.com/X9F2f6Zm">Configurator</a>. The properties used in this example are: HardwareVendor, HardwareName, DeviceType PlatformVendor, PlatformName, PlatformVersion BrowserVendor, BrowserName, BrowserVersion SetHeaderBrowserAccept-CH, SetHeaderHardwareAccept-CH, SetHeaderPlatformAccept-CH</p>
 <p>Required NuGet Dependencies:</p><ul>

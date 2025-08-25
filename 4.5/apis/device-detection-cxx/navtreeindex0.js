@@ -1,8 +1,8 @@
 var NAVTREEINDEX0 =
 {
 "../../documentation/4.5/index.html":[0],
-"_2home_2runner_2work_2documentation_2documentation_2apis-temp_2device-detection-cxx_2src_2common-cxx_2string_8h-example.html":[5,1],
-"_2home_2runner_2work_2documentation_2documentation_2apis-temp_2device-detection-cxx_2src_2common16e77e880cb5da3fc2e9dc4ee1416f0b.html":[5,0],
+"_2home_2runner_2work_2documentation_2documentation_2apis_2device-detection-cxx_2src_2common-cxx_2stored_binary_value_8h-example.html":[5,0],
+"_2home_2runner_2work_2documentation_2documentation_2apis_2device-detection-cxx_2src_2common-cxx_2string_8h-example.html":[5,1],
 "_hash_2_getting_started_8c-example.html":[5,2],
 "_hash_2_getting_started_8cpp-example.html":[5,3],
 "_hash_2_match_metrics_8c-example.html":[5,4],

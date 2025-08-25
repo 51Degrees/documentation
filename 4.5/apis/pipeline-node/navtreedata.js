@@ -24,7 +24,7 @@ for the JavaScript code in this file
 var NAVTREE =
 [
     [ "General Docs", "../../documentation/4.4/index.html", null ],
-    [ "readme", "md__home_runner_work_documentation_documentation_apis-temp_pipeline-node_readme.html", null ],
+    [ "readme", "md__home_runner_work_documentation_documentation_apis_pipeline-node_readme.html", null ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Examples", "examples.html", "examples" ]
 ];

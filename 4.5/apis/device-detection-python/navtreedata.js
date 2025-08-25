@@ -24,15 +24,15 @@ for the JavaScript code in this file
 var NAVTREE =
 [
     [ "General Docs", "../../documentation/4.4/index.html", null ],
-    [ "51Degrees Device Detection Engines - Device Detection", "md__home_runner_work_documentation_documentation_apis-temp_device-detection-python_fiftyone_devicedetection_readme.html", null ],
-    [ "51Degrees Device Detection Engines - Cloud", "md__home_runner_work_documentation_documentation_apis-temp_device-detection-python_fiftyone_devicedetection_cloud_readme.html", null ],
-    [ "51Degrees Device Detection Engines - On-Premise", "md__home_runner_work_documentation_documentation_apis-temp_device-detection-python_fiftyone_devicedetection_onpremise_readme.html", null ],
-    [ "README", "md__home_runner_work_documentation_documentation_apis-temp_device-detection-python_fiftyone_devi3f63585e47e39dc32c21682a5f1048cd.html", null ],
-    [ "51Degrees Device Detection API", "md__home_runner_work_documentation_documentation_apis-temp_device-detection-python_fiftyone_deviae7b73a7a27777df333cc222156005b0.html", null ],
-    [ "51Degrees Common Code Library", "md__home_runner_work_documentation_documentation_apis-temp_device-detection-python_fiftyone_devi0d690cbfdc48f8944c54a320c276dda4.html", null ],
-    [ "51Degrees Device Detection Engines - Shared", "md__home_runner_work_documentation_documentation_apis-temp_device-detection-python_fiftyone_devicedetection_shared_readme.html", null ],
-    [ "51Degrees Device Detection Engines - Examples", "md__home_runner_work_documentation_documentation_apis-temp_device-detection-python_fiftyone_devicedetection_examples_readme.html", null ],
-    [ "51Degrees Device Detection Engines", "md__home_runner_work_documentation_documentation_apis-temp_device-detection-python_readme.html", null ],
+    [ "51Degrees Device Detection Engines - Device Detection", "md__home_runner_work_documentation_documentation_apis_device-detection-python_fiftyone_devicedetection_readme.html", null ],
+    [ "51Degrees Device Detection Engines - Cloud", "md__home_runner_work_documentation_documentation_apis_device-detection-python_fiftyone_devicedetection_cloud_readme.html", null ],
+    [ "51Degrees Device Detection Engines - On-Premise", "md__home_runner_work_documentation_documentation_apis_device-detection-python_fiftyone_devicedetection_onpremise_readme.html", null ],
+    [ "README", "md__home_runner_work_documentation_documentation_apis_device-detection-python_fiftyone_devicedet7ec3d6bf27fbd5b1c30277bf97e7506c.html", null ],
+    [ "51Degrees Device Detection API", "md__home_runner_work_documentation_documentation_apis_device-detection-python_fiftyone_devicedete60e432e1afd6d4a909f175bd7c95b90.html", null ],
+    [ "51Degrees Common Code Library", "md__home_runner_work_documentation_documentation_apis_device-detection-python_fiftyone_devicedet26b639f07deb6cff92eb9d2162399cdf.html", null ],
+    [ "51Degrees Device Detection Engines - Shared", "md__home_runner_work_documentation_documentation_apis_device-detection-python_fiftyone_devicedetection_shared_readme.html", null ],
+    [ "51Degrees Device Detection Engines - Examples", "md__home_runner_work_documentation_documentation_apis_device-detection-python_fiftyone_devicedetection_examples_readme.html", null ],
+    [ "51Degrees Device Detection Engines", "md__home_runner_work_documentation_documentation_apis_device-detection-python_readme.html", null ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Examples", "examples.html", "examples" ]
 ];

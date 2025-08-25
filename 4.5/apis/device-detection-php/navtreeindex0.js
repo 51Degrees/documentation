@@ -49,5 +49,5 @@ var NAVTREEINDEX0 =
 "cloud_2tac_lookup_console_8php-example.html":[3,5],
 "cloud_2user_agent_client_hints-_web_8php-example.html":[3,6],
 "examples.html":[3],
-"md__home_runner_work_documentation_documentation_apis-temp_device-detection-php_readme.html":[1]
+"md__home_runner_work_documentation_documentation_apis_device-detection-php_readme.html":[1]
 };

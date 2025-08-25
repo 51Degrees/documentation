@@ -24,7 +24,7 @@ for the JavaScript code in this file
 var NAVTREE =
 [
     [ "General Docs", "../../documentation/4.4/index.html", null ],
-    [ "51Degrees PHP Device Detection On-Premise", "md__home_runner_work_documentation_documentation_apis-temp_device-detection-php-onpremise_readme.html", null ],
+    [ "51Degrees PHP Device Detection On-Premise", "md__home_runner_work_documentation_documentation_apis_device-detection-php-onpremise_readme.html", null ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Examples", "examples.html", "examples" ]
 ];

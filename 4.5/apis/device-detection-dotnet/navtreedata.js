@@ -24,7 +24,7 @@ for the JavaScript code in this file
 var NAVTREE =
 [
     [ "General Docs", "../../documentation/4.4/index.html", null ],
-    [ "51Degrees Device Detection Engines", "md__home_runner_work_documentation_documentation_apis-temp_device-detection-dotnet__r_e_a_d_m_e.html", null ],
+    [ "51Degrees Device Detection Engines", "md__home_runner_work_documentation_documentation_apis_device-detection-dotnet__r_e_a_d_m_e.html", null ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Examples", "examples.html", "examples" ]
 ];

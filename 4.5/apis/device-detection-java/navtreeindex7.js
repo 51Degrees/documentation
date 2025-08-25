@@ -25,6 +25,6 @@ var NAVTREEINDEX7 =
 "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#afe53a805fb2422a21c2673dd2062f143":[3,0,0,3,3,146],
 "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#aff21151f88b70f995aac950889624374":[3,0,0,3,3,251],
 "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#aff7936b2cdc9ac1f8c985348cd43b81d":[3,0,0,3,3,157],
-"md__home_runner_work_documentation_documentation_apis-temp_device-detection-java__r_e_a_d_m_e.html":[1],
+"md__home_runner_work_documentation_documentation_apis_device-detection-java__r_e_a_d_m_e.html":[1],
 "namespacefiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison.html":[3,0,0,1,0,0]
 };

@@ -1,7 +1,7 @@
 var examples =
 [
-    [ "/home/runner/work/documentation/documentation/apis-temp/device-detection-cxx/src/common-cxx/storedBinaryValue.h", "_2home_2runner_2work_2documentation_2documentation_2apis-temp_2device-detection-cxx_2src_2common16e77e880cb5da3fc2e9dc4ee1416f0b.html", null ],
-    [ "/home/runner/work/documentation/documentation/apis-temp/device-detection-cxx/src/common-cxx/string.h", "_2home_2runner_2work_2documentation_2documentation_2apis-temp_2device-detection-cxx_2src_2common-cxx_2string_8h-example.html", null ],
+    [ "/home/runner/work/documentation/documentation/apis/device-detection-cxx/src/common-cxx/storedBinaryValue.h", "_2home_2runner_2work_2documentation_2documentation_2apis_2device-detection-cxx_2src_2common-cxx_2stored_binary_value_8h-example.html", null ],
+    [ "/home/runner/work/documentation/documentation/apis/device-detection-cxx/src/common-cxx/string.h", "_2home_2runner_2work_2documentation_2documentation_2apis_2device-detection-cxx_2src_2common-cxx_2string_8h-example.html", null ],
     [ "Hash/GettingStarted.c", "_hash_2_getting_started_8c-example.html", null ],
     [ "Hash/GettingStarted.cpp", "_hash_2_getting_started_8cpp-example.html", null ],
     [ "Hash/MatchMetrics.c", "_hash_2_match_metrics_8c-example.html", null ],

@@ -1,8 +1,8 @@
 var NAVTREEINDEX0 =
 {
 "../../documentation/4.4/index.html":[0],
-"_2home_2runner_2work_2documentation_2documentation_2apis-temp_2ip-intelligence-cxx_2src_2common-cxx_2string_8h-example.html":[7,1],
-"_2home_2runner_2work_2documentation_2documentation_2apis-temp_2ip-intelligence-cxx_2src_2common-f57e5a94de036cd7ffd1884b217f7520.html":[7,0],
+"_2home_2runner_2work_2documentation_2documentation_2apis_2ip-intelligence-cxx_2src_2common-cxx_2stored_binary_value_8h-example.html":[7,0],
+"_2home_2runner_2work_2documentation_2documentation_2apis_2ip-intelligence-cxx_2src_2common-cxx_2string_8h-example.html":[7,1],
 "_ip_intelligence_2_find_profiles_8c-example.html":[7,2],
 "_ip_intelligence_2_getting_started_8c-example.html":[7,3],
 "_ip_intelligence_2_getting_started_8cpp-example.html":[7,4],

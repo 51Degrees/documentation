@@ -23,13 +23,13 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-    [ "API Specific CI Approach", "md__home_runner_work_documentation_documentation_apis-temp_ip-intelligence-dotnet__fifty_one_8_i1bbdb6bd9921efa23ecedd8675337e5a.html", null ],
-    [ "<img src=\"https://51degrees.com/DesktopModules/FiftyOne/Distributor/Logo.ashx?utm_source=github&utm_medium=repository&utm_content=home&utm_campaign=c-open-source\" alt=\"51Degrees\" title=\"Data rewards the curious\"/> <strong>IP Intelligence Data Files</strong>", "md__home_runner_work_documentation_documentation_apis-temp_ip-intelligence-dotnet__fifty_one_8_i6c31ddd838ae3af92089f6ca565c4bb8.html", null ],
-    [ "51Degrees Ip Intelligence API", "md__home_runner_work_documentation_documentation_apis-temp_ip-intelligence-dotnet__fifty_one_8_i61c71acef56edc45585e07ff129540e3.html", null ],
-    [ "API Specific CI Approach", "md__home_runner_work_documentation_documentation_apis-temp_ip-intelligence-dotnet__fifty_one_8_i95cdbdd9ab15d0a16b4ad508d02a01f7.html", null ],
-    [ "51Degrees Common Code Library", "md__home_runner_work_documentation_documentation_apis-temp_ip-intelligence-dotnet__fifty_one_8_i01e8785a60ac115a3421b0f799492d5d.html", null ],
-    [ "ip-graph-cxx", "md__home_runner_work_documentation_documentation_apis-temp_ip-intelligence-dotnet__fifty_one_8_i30b67f2311bc06e5e507c9c925a4c976.html", null ],
-    [ "51Degrees IP Intelligence Engines", "md__home_runner_work_documentation_documentation_apis-temp_ip-intelligence-dotnet__r_e_a_d_m_e.html", null ],
+    [ "API Specific CI Approach", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_inte52c006b2bd2f424d294bbe13f380298.html", null ],
+    [ "<img src=\"https://51degrees.com/DesktopModules/FiftyOne/Distributor/Logo.ashx?utm_source=github&utm_medium=repository&utm_content=home&utm_campaign=c-open-source\" alt=\"51Degrees\" title=\"Data rewards the curious\"/> <strong>IP Intelligence Data Files</strong>", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_int328625fe41d6356007b2e301240cc7c7.html", null ],
+    [ "51Degrees Ip Intelligence API", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_int20cc440911b6f5219a76337566da63d9.html", null ],
+    [ "API Specific CI Approach", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_inta77b6486230ebe2c4d65474255a1a750.html", null ],
+    [ "51Degrees Common Code Library", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_int50d5de6fb61092e686320a7f6c771861.html", null ],
+    [ "ip-graph-cxx", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_int8a2dd3b222839f0dfe83fb02a9e49d62.html", null ],
+    [ "51Degrees IP Intelligence Engines", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__r_e_a_d_m_e.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
