@@ -115,7 +115,7 @@ if ($IsMacOS -or $IsLinux) {
 $repositories = @(
     # Device Detection repositories
     "device-detection-cxx",
-    @{ main = "device-detection-dotnet"; examples = "device-detection-dotnet-examples" },
+    @{ main = "device-detection-dotnet"; examples = "device-detection-dotnet-examples"},
     @{ main = "device-detection-java"; examples = "device-detection-java-examples" },
     "device-detection-nginx",
     "device-detection-node",
@@ -163,7 +163,7 @@ Write-Host "========================================"
 
 Push-Location "docs"
 try {
-    Invoke-Expression "$DoxyGen Doxyfile" 2>&1 | Out-Null
+    Invoke-Expression "$DoxyGen Doxyfile"
     Write-Host "Main documentation generated successfully"
 } catch {
     Write-Host "Failed to generate main documentation: $_"
@@ -182,12 +182,16 @@ New-Item -ItemType Directory -Path $tempDir | Out-Null
 Write-Host "Working in directory: $tempDir"
 
 # Clone documentation repository into temp directory so it's a sibling to other repos
-Write-Host "Cloning documentation repository as sibling..."
+Write-Host "Cloning documentation repository as sibling on branch: $currentBranch..."
 $docRepoPath = Join-Path $tempDir "documentation"
-git clone --depth 1 "https://github.com/51Degrees/documentation.git" $docRepoPath 2>&1 | Out-Null
+git clone --depth 1 --branch $currentBranch "https://github.com/51Degrees/documentation.git" $docRepoPath 2>&1 | Out-Null
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "Failed to clone documentation repository!"
-    exit 1
+    Write-Host "Failed to clone documentation repository on branch $currentBranch, trying main branch..."
+    git clone --depth 1 "https://github.com/51Degrees/documentation.git" $docRepoPath 2>&1 | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Failed to clone documentation repository!"
+        exit 1
+    }
 }
 
 # Clone and build documentation for each repository
@@ -207,7 +211,6 @@ foreach ($repoItem in $repositories) {
     }
 }
 
-
 # Clean up temporary directory
 if (Test-Path $tempDir) {
     Remove-Item $tempDir -Recurse -Force
@@ -217,6 +220,7 @@ Write-Host "`n========================================"
 Write-Host "Documentation generation complete!"
 Write-Host "Generated in: $OutputDir/"
 Write-Host "========================================"
+
 
 # Now checkout gh-pages branch and stage the generated documentation
 Write-Host "`n========================================"
@@ -264,7 +268,13 @@ if (!(Test-Path ".nojekyll")) {
 
 # Move the new documentation into place
 Write-Host "Moving new documentation to $Version"
-Move-Item $tempOutputPath $Version
+if (Test-Path $tempOutputPath) {
+    Move-Item $tempOutputPath $Version
+    Write-Host "Successfully moved documentation from $tempOutputPath to $Version"
+} else {
+    Write-Host "ERROR: Temporary documentation path not found: $tempOutputPath"
+    exit 1
+}
 
 # Stage all changes
 Write-Host "Staging documentation changes..."
