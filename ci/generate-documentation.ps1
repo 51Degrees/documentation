@@ -34,7 +34,8 @@
 #>
 param(
     [string]$Version = "4.5",
-    [string]$GitHubToken = ""
+    [string]$GitHubToken = "",
+    [switch]$DryRun = $false
 )
 
 $ErrorActionPreference = "Stop"
@@ -222,10 +223,9 @@ Write-Host "Generated in: $OutputDir/"
 Write-Host "========================================"
 
 
-# Now checkout gh-pages branch and stage the generated documentation
-Write-Host "`n========================================"
-Write-Host "Switching to gh-pages branch and staging changes..."
-Write-Host "========================================"
+# Store the original branch
+$originalBranch = git rev-parse --abbrev-ref HEAD
+Write-Host "Original branch: $originalBranch"
 
 # Move the generated documentation to a temporary location
 $tempOutputPath = "$OutputDir-new"
@@ -234,6 +234,10 @@ if (Test-Path $tempOutputPath) {
 }
 Write-Host "Moving documentation to temporary location..."
 Move-Item $OutputDir $tempOutputPath -Force
+
+Write-Host "`n========================================"
+Write-Host "Switching to gh-pages branch and staging changes..."
+Write-Host "========================================"
 
 # Check if gh-pages branch exists
 $branch = "gh-pages"
@@ -283,15 +287,55 @@ if (Test-Path $tempOutputPath) {
 Write-Host "Staging documentation changes..."
 git add $Version
 
+# Update gh-pages branch
 Write-Host "`n========================================"
-Write-Host "Documentation staged on gh-pages branch!"
+if ($DryRun) {
+    Write-Host "Previewing gh-pages commit (DRY RUN)..."
+} else {
+    Write-Host "Committing and pushing to gh-pages..."
+}
 Write-Host "========================================"
-Write-Host ""
-Write-Host "Changes are staged and ready. To commit and push:"
-Write-Host "  ./ci/update-gh-pages.ps1"
-Write-Host ""
-Write-Host "For dry run (preview changes):"
-Write-Host "  ./ci/update-gh-pages.ps1 -DryRun"
-Write-Host ""
-Write-Host "To return to original branch:"
-Write-Host "  git checkout $currentBranch"
+
+if ($DryRun) {
+    Write-Host "`n========================================"
+    Write-Host "DRY RUN MODE - No changes will be committed"
+    Write-Host "========================================"
+    
+    # Show what would be committed
+    Write-Host "`nStaged changes that would be committed:"
+    git diff --cached --stat
+    Write-Host ""
+    git status --short
+    
+    Write-Host "`nTo commit and push these changes, run without -DryRun flag"
+} else {
+    # Set commit message
+    $CommitMessage = "Update documentation for version $Version"
+    
+    # Commit the changes
+    Write-Host "Committing changes: $CommitMessage"
+    git commit -m $CommitMessage
+    
+    if ($LASTEXITCODE -eq 0) {
+        # Push to origin
+        Write-Host "Pushing to origin/gh-pages..."
+        git push origin gh-pages
+        
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "`nSuccessfully updated gh-pages branch!"
+        } else {
+            Write-Host "Failed to push to origin/gh-pages"
+            Write-Host "You may need to push manually with: git push origin gh-pages"
+        }
+    } else {
+        Write-Host "No changes to commit"
+    }
+}
+
+Write-Host "`n========================================"
+Write-Host "Documentation generation and gh-pages update complete!"
+Write-Host "========================================"
+
+# Return to original branch
+Write-Host "Returning to original branch: $originalBranch"
+git checkout $originalBranch
