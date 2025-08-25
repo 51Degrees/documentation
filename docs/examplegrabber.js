@@ -23,10 +23,6 @@ function updateLinks(project, divId) {
             // This is a relative link (e.g. "namespace_fifty_one_1_1_device_detection.html")
             // Convert it to point to the correct project API directory
             as[i].href = 'apis/' + project + '/' + href;
-        } else if (as[i].href.includes('/' + base + '/')) {
-            // Replace the local part of the URL with the correct repository part
-            // e.g. replace '/documentation/' with '/device-detection-cxx/'.
-            as[i].href = as[i].href.replace('/' + base + '/', '/' + project + '/');
         }
     }
 }
