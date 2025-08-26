@@ -155,7 +155,7 @@ Configure the pipeline to handle updates. See the [Data File Updates examples](@
 
 **Manual Updates**
 
-Download new data files from the [51Degrees Distributor](https://51degrees.com/developers/distributor) using your License Key.
+Download new data files from the [51Degrees Distributor](@ref Services_Distributor) using your License Key.
 
 ## Step 6: Optimize Performance
 
