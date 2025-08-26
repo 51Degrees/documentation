@@ -8,7 +8,7 @@ Version 4 is faster, has a smaller data file, and has an upgraded algorithm that
 Additionally, Version 4 has support for [Google's changes to the User-Agent](https://learnclienthints.com/) and the new 
 [User-Agent Client Hints](https://51degrees.com/blog/updates-to-user-agent-client-hints-version-4-4) HTTP request header.
 
-The steps to upgrade will vary depending on whether you are using our cloud or On-premise service.
+The steps to upgrade will vary depending on whether you are using our Cloud or On-premise service.
 
 <BR>
 
