@@ -214,7 +214,7 @@ Keep cloud access during migration:
 - Verify file permissions allow read access
 - Confirm data file downloaded successfully
 
-**License key issues**
+**License Key issues**
 - Ensure license is for On-premise (not cloud)
 - Check license hasn't expired
 - Verify product tier matches your data file
