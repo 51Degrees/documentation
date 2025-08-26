@@ -148,10 +148,10 @@ On-premise deployments need regular data file updates to detect new devices.
 
 **Automatic Updates (Recommended)**
 
-Configure the pipeline to handle updates:
-- [Update on Startup](@ref DeviceDetection_Examples_DataFileUpdates_UpdateOnStartup_OnPremiseHash)
-- [File System Watcher](@ref DeviceDetection_Examples_DataFileUpdates_FileSystemWatcher_OnPremiseHash)  
-- [Polling Interval](@ref DeviceDetection_Examples_DataFileUpdates_PollingInterval_OnPremiseHash)
+Configure the pipeline to handle updates. See the [Data File Updates examples](@ref DeviceDetection_DataFileUpdates) for comprehensive examples of:
+- Update on Startup
+- File System Watcher  
+- Polling Interval
 
 **Manual Updates**
 

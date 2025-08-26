@@ -4,7 +4,7 @@
 
 @subpage DeviceDetection_Examples_GettingStarted_Web_Index 
 
-@subpage DeviceDetection_Examples_DataFileUpdates_Index
+@subpage DeviceDetection_DataFileUpdates
 
 @subpage DeviceDetection_Examples_MatchMetrics_Index
 

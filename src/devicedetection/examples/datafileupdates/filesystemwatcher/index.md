@@ -1,3 +1,0 @@
-@page DeviceDetection_Examples_DataFileUpdates_FileSystemWatcher_Index File System Watcher
-
-@subpage DeviceDetection_Examples_DataFileUpdates_FileSystemWatcher_OnPremiseHash
