@@ -38,7 +38,7 @@ On-premise deployment works better when you need:
 
 Most 51Degrees packages already include both cloud and On-premise capabilities. You typically only need configuration changes.
 
-**.NET**
+<b>.NET</b>
 ```xml
 <!-- Most users already have this -->
 <PackageReference Include="FiftyOne.DeviceDetection" Version="4.x.x" />
