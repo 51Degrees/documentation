@@ -51,9 +51,8 @@ Combine IP Intelligence with [Device Detection](@ref DeviceDetection_Overview) f
 
 Choose what fits your stack:
 
-- **Cloud API:** No infrastructure headaches, always updated, pay-as-you-go.
 - **On-premise:** Maximum control, lightning speed, enterprise security.
-- **Hybrid:** The best of both worlds.
+- **Cloud API:** No infrastructure headaches, always updated, pay-as-you-go.
 
 [Compare integration options](@ref IpIntelligence_Quickstart)
 
@@ -64,17 +63,10 @@ Choose what fits your stack:
 
 Want to see how it works? Dive into our examples and hit the ground running:
 
-### 💡 Quick Start
-- [Quick Start Guide](@ref IpIntelligence_Quickstart) - Get up and running in minutes
-
-### Console Examples
-- [Console Examples Index](@ref IpIntelligence_Examples_GettingStarted_Console_Index) - Command-line examples
-
-### Web Integration Examples
-- [Web Integration Examples](@ref IpIntelligence_Examples_GettingStarted_Web_Index) - Web integration examples
-
-### All Examples
-- [Examples Index](@ref IpIntelligence_Examples_Index) - Browse all available examples
+- [Quick Start Guide](@ref IpIntelligence_Quickstart)
+- [Console Examples](@ref IpIntelligence_Examples_GettingStarted_Console_Index)
+- [Web Integration Examples](@ref IpIntelligence_Examples_GettingStarted_Web_Index)
+- [Examples Index](@ref IpIntelligence_Examples_Index)
 
 ---
 
