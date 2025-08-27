@@ -17,3 +17,7 @@
 @subpage DeviceDetection_Examples_Performance_Index
 
 @subpage DeviceDetection_Examples_TacLookup_Index
+
+## Combined Services
+
+For examples that combine Device Detection with IP Intelligence, see @ref IpIntelligence_Combined_Index

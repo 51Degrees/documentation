@@ -1,3 +1,5 @@
 @page IpIntelligence_Examples_GettingStarted_Web_Index Getting Started - Web
 
+@subpage IpIntelligence_Examples_GettingStarted_Web_Cloud
+
 @subpage IpIntelligence_Examples_GettingStarted_Web_OnPremise

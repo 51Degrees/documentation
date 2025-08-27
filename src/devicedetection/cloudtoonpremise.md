@@ -36,14 +36,14 @@ On-premise deployment works better when you need:
 
 ## Step 2: Update Dependencies
 
-Most 51Degrees packages already include both cloud and On-premise capabilities. You typically only need configuration changes.
+Most 51Degrees packages already include both Cloud and On-premise capabilities. You typically only need configuration changes.
 
 <b>.NET</b>
 ```xml
 <!-- Most users already have this -->
 <PackageReference Include="FiftyOne.DeviceDetection" Version="4.x.x" />
 
-<!-- Only if you had cloud-specific packages -->
+<!-- Only if you had Cloud-specific packages -->
 <!-- Remove: FiftyOne.DeviceDetection.Cloud -->
 <!-- Add: FiftyOne.DeviceDetection -->
 ```
@@ -70,7 +70,7 @@ npm install fiftyone.devicedetection
 
 ## Step 3: Update Configuration
 
-Replace your cloud configuration with file-based settings.
+Replace your Cloud configuration with file-based settings.
 
 **Before (Cloud):**
 ```json
@@ -134,7 +134,7 @@ var pipeline = new DeviceDetectionPipelineBuilder()
 - Monitor data file update failures
 
 **Property Access**
-- All properties are available locally (no cloud restrictions)
+- All properties are available locally (no Cloud restrictions)
 - No rate limiting on property requests
 - Consistent response times regardless of property count
 
@@ -176,7 +176,7 @@ See [Performance Examples](@ref DeviceDetection_Examples_Performance_OnPremiseHa
 
 ## Testing Your Migration
 
-1. **Compare Results** - Verify detection matches cloud results for test cases
+1. **Compare Results** - Verify detection matches Cloud results for test cases
 2. **Load Testing** - Confirm performance under expected traffic
 3. **Update Testing** - Ensure data file updates work without disruption
 4. **Failover Testing** - Test what happens if data file becomes unavailable
@@ -200,10 +200,10 @@ See [Performance Examples](@ref DeviceDetection_Examples_Performance_OnPremiseHa
 
 ## Planning Your Rollback
 
-Keep cloud access during migration:
+Keep Cloud access during migration:
 
-1. Maintain your cloud Resource Key
-2. Use feature flags to switch between cloud and On-premise
+1. Maintain your Cloud Resource Key
+2. Use feature flags to switch between Cloud and On-premise
 3. Run both implementations in parallel initially
 4. Gradually shift traffic to On-premise
 
@@ -215,7 +215,7 @@ Keep cloud access during migration:
 - Confirm data file downloaded successfully
 
 **License Key issues**
-- Ensure license is for On-premise (not cloud)
+- Ensure license is for On-premise (not Cloud)
 - Check license hasn't expired
 - Verify product tier matches your data file
 

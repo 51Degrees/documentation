@@ -10,3 +10,5 @@
 @subpage IpIntelligence_Features_Index
 
 @subpage IpIntelligence_Examples_Index
+
+@subpage IpIntelligence_Combined_Index
