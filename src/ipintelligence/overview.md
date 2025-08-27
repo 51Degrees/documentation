@@ -101,10 +101,6 @@ Detect click fraud, suspicious logins, and automated attacks by analyzing IP pat
 
 Enforce geographical restrictions for gambling, content licensing, or data privacy regulations like GDPR.
 
-### 🔌 Connection Intelligence
-
-Adapt interfaces and content quality based on connection type (cellular, corporate, broadband) for optimal performance.
-
 ### 🗺️ Reverse Geocoding
 
 Convert coordinates to human-readable addresses using our [Reverse Geocoding service](@ref ReverseGeocoding_Overview).
@@ -122,4 +118,4 @@ When you combine IP Intelligence with Device Detection, you get powerful insight
 | **Content Delivery** | Geographic location | Device capabilities | Select optimal CDN endpoint and media format |
 | **Advertising** | Location + ISP data | Device properties | Location-relevant ads with device-appropriate formats |
 | **Fraud Detection** | IP risk assessment | Device fingerprint | Identify suspicious device/location combinations |
-| **Analytics** | Connection type + location | Device capabilities | Enhanced user segmentation and behavior analysis |
+| **Analytics** | Geographic location | Device capabilities | Enhanced user segmentation and behavior analysis |

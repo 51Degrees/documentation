@@ -6,6 +6,21 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 
 ## Choose Your Integration
 
+### Cloud API
+**Best for:** Quick deployment, minimal infrastructure, always up-to-date data
+
+**Benefits:**
+- **No infrastructure** - No servers or data files to manage
+- **Always updated** - Latest IP intelligence data automatically
+- **Quick setup** - Get running in minutes with just an API key
+
+**Things to consider:**
+- **Internet dependency** - Requires network connectivity
+- **Latency** - Network round-trip time for each request
+- **Data privacy** - Processing occurs on 51Degrees infrastructure
+
+**Licensing:** Will require a [Resource Key](https://configure.51degrees.com) eventually, but for now [contact us](https://51degrees.com/contact-us) to obtain an enterprise IPI data file for testing
+
 ### On-premise Deployment
 **Best for:** High-performance, privacy-sensitive, or offline environments
 
@@ -22,6 +37,22 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 - **Update management** - Periodic data file updates needed for latest data
 
 **Licensing:** Requires a [License Key](https://51degrees.com/pricing)
+
+### Combined Device Detection + IP Intelligence
+**Best for:** Comprehensive user profiling and enhanced accuracy
+
+**Benefits:**
+- **Complete user context** - Combine location/network data with device characteristics
+- **Enhanced fraud detection** - Cross-reference device fingerprints with IP risk data
+- **Optimized content delivery** - Device capabilities + geographic location for perfect targeting
+- **Advanced analytics** - Rich user segmentation with both device and location dimensions
+
+**Things to consider:**
+- **Multiple engines** - Requires configuration of both Device Detection and IP Intelligence
+- **Data file management** - Need both device data files (.hash) and IP data files (.ipi) for On-premise
+- **Resource usage** - Combined memory and CPU usage for both engines
+
+**Licensing:** Requires licenses for both Device Detection and IP Intelligence services
 
 ## Language-Specific Integration
 
@@ -61,22 +92,26 @@ To get started with C++ device detection On-premise:
 
 @endsnippet
 @startsnippet{dotnet}
-### Standalone pipeline / off-line processing
+### Console Applications
 
 1. Install the [FiftyOne.IpIntelligence](https://www.nuget.org/packages/FiftyOne.IpIntelligence) package via Nuget.
-2. Follow the appropriate example from the options below:  
-  * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
+2. Choose your deployment option:
+   * [Cloud Example](@ref IpIntelligence_Examples_GettingStarted_Console_Cloud) - Uses 51Degrees Cloud API for processing
+   * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - Local processing with data files
+   * [Combined Example](@ref IpIntelligence_Combined_Console_OnPremise) - Mix IP Intelligence with Device Detection
 
-### ASP.NET Core integration.
+### Web Applications (ASP.NET Core)
 
 1. Install the [FiftyOne.IpIntelligence](https://www.nuget.org/packages/FiftyOne.IpIntelligence) and [FiftyOne.Pipeline.Web](https://www.nuget.org/packages/FiftyOne.Pipeline.Web) packages via Nuget.
-2. Follow the [web example](@ref PipelineApi_Examples_WebIntegration) to add the @Pipeline middleware.
-3. Configure the pipeline using the configuration from the appropriate example from the options below:
- * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
+2. Follow the [web integration guide](@ref PipelineApi_Examples_WebIntegration) to add the @Pipeline middleware.
+3. Choose your deployment option:
+   * [Cloud Web Example](@ref IpIntelligence_Examples_GettingStarted_Web_Cloud) - Uses 51Degrees Cloud API
+   * [On-premise Web Example](@ref IpIntelligence_Examples_GettingStarted_Web_OnPremise) - Local processing
+   * [Combined Web Example](@ref IpIntelligence_Combined_Web_OnPremise) - Mix IP Intelligence with Device Detection
 
 @endsnippet
 @startsnippet{java}
-To get started with Java IP Intelligence:
+### Console Applications
 
 1. Add the IP Intelligence dependency to your project:
    ```xml
@@ -86,8 +121,9 @@ To get started with Java IP Intelligence:
    </dependency>
    ```
    Check [Maven Central](https://search.maven.org/artifact/com.51degrees/ip-intelligence) for the latest version.
-2. Follow the appropriate example from the options below:
-   * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
+
+2. Choose your deployment option:
+   * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - Local processing with data files
 
 ### Web Integration
 
@@ -99,22 +135,24 @@ For web applications, add the web integration dependency:
 </dependency>
 ```
 
-Configure the pipeline using the configuration from the On-premise example above.
+Choose your deployment option:
+* [On-premise Web Example](@ref IpIntelligence_Examples_GettingStarted_Web_OnPremise) - Local processing
 
 @endsnippet
 @startsnippet{go}
-To get started with Go IP Intelligence:
+### Console Applications
 
 1. Install the IP Intelligence package:
    ```bash
    go get github.com/51Degrees/ip-intelligence-go/v4
    ```
-2. Follow the appropriate example from the options below:
-   * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - IP intelligence processing is performed locally using a data file that must be kept updated.
+2. Choose your deployment option:
+   * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - Local processing with data files
 
 ### Web Integration
 
-For web applications, you can integrate IP Intelligence into your HTTP handlers. See the On-premise example for implementation details.
+For web applications, you can integrate IP Intelligence into your HTTP handlers:
+* [On-premise Web Example](@ref IpIntelligence_Examples_GettingStarted_Web_OnPremise) - Local processing
 
 @endsnippet
 @endsnippets
