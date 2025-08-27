@@ -1,6 +1,6 @@
 var NAVTREEINDEX0 =
 {
-"../../documentation/4.4/index.html":[0],
+"/documentation/4.5/index.html":[0],
 "_asp_net_core_2_startup_8cs-example.html":[4,0],
 "_cloud_2_getting_started_2_program_8cs-example.html":[4,1],
 "_combining_services_2_program_8cs-example.html":[4,2],

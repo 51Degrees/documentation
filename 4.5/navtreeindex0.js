@@ -1,15 +1,7 @@
 var NAVTREEINDEX0 =
 {
 "_device_detection__cloud_to_on_premise.html":[1,6],
-"_device_detection__examples__data_file_updates__automatic.html":[1,4,2,3],
-"_device_detection__examples__data_file_updates__file_system_watcher__index.html":[1,4,2,0],
-"_device_detection__examples__data_file_updates__file_system_watcher__on_premise_hash.html":[1,4,2,0,0],
-"_device_detection__examples__data_file_updates__index.html":[1,4,2],
-"_device_detection__examples__data_file_updates__manual.html":[1,4,2,4],
-"_device_detection__examples__data_file_updates__polling_interval__index.html":[1,4,2,1],
-"_device_detection__examples__data_file_updates__polling_interval__on_premise_hash.html":[1,4,2,1,0],
-"_device_detection__examples__data_file_updates__update_on_startup__index.html":[1,4,2,2],
-"_device_detection__examples__data_file_updates__update_on_startup__on_premise_hash.html":[1,4,2,2,0],
+"_device_detection__data_file_updates.html":[1,4,2],
 "_device_detection__examples__getting_started__console__cloud.html":[1,4,0,0],
 "_device_detection__examples__getting_started__console__index.html":[1,4,0],
 "_device_detection__examples__getting_started__console__on_premise.html":[1,4,0,1],

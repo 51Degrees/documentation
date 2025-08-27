@@ -1,6 +1,6 @@
 var NAVTREEINDEX0 =
 {
-"../../documentation/4.4/index.html":[0],
+".html":[13,0],
 ".html":[13,0,0],
 ".html":[13,0,0,0],
 ".html":[13,0,0,0,0],
@@ -13,12 +13,12 @@ var NAVTREEINDEX0 =
 ".html":[13,0,0,3],
 ".html":[13,0,0,3,0],
 ".html":[13,0,0,3,1],
-".html":[13,0],
 ".html":[13,0,0,0,1],
 ".html":[13,0,0,1],
 ".html":[13,0,0,1,0],
 ".html":[13,0,0,1,0,0],
 ".html":[13,0,0,1,0,1],
+"/documentation/4.5/index.html":[0],
 "_getting_started_web_on_prem_8java-example.html":[14,3],
 "_metadata_on_prem_8java-example.html":[14,4],
 "_performance_benchmark_8java-example.html":[14,5],

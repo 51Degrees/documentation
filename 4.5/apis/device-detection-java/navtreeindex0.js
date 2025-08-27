@@ -1,8 +1,8 @@
 var NAVTREEINDEX0 =
 {
-"../../documentation/4.4/index.html":[0],
 ".html":[3,0],
 ".html":[3,0,0,0,0],
+".html":[3,0,0,1],
 ".html":[3,0,0,2],
 ".html":[3,0,0,2,0],
 ".html":[3,0,0,2,0,0],
@@ -10,7 +10,6 @@ var NAVTREEINDEX0 =
 ".html":[3,0,0,3],
 ".html":[3,0,0,3,0],
 ".html":[3,0,0,3,1],
-".html":[3,0,0,1],
 ".html":[3,0,0,1,0],
 ".html":[3,0,0,2,0,0,1],
 ".html":[3,0,0],
@@ -21,6 +20,7 @@ var NAVTREEINDEX0 =
 ".html":[3,0,0,0],
 ".html":[3,0,0,1,2],
 ".html":[3,0,0,0,1],
+"/documentation/4.5/index.html":[0],
 "_0Dexample-example.html":[4,0],
 "_getting_started_web_cloud_8java-example.html":[4,7],
 "_getting_started_web_on_prem_8java-example.html":[4,8],

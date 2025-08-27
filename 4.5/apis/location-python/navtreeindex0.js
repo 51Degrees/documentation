@@ -1,6 +1,6 @@
 var NAVTREEINDEX0 =
 {
-"../../documentation/4.4/index.html":[0],
+"/documentation/4.5/index.html":[0],
 "cloud_2gettingstarted_8py-example.html":[2,0],
 "cloud_2web_8py-example.html":[2,1],
 "examples.html":[2],

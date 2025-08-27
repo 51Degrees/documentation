@@ -23,7 +23,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-    [ "General Docs", "../../documentation/4.4/index.html", null ],
+    [ "General Docs", "/documentation/4.5/index.html", null ],
     [ "51Degrees Device Detection Engines - Device Detection", "md__home_runner_work_documentation_documentation_apis_device-detection-python_fiftyone_devicedetection_readme.html", null ],
     [ "51Degrees Device Detection Engines - Cloud", "md__home_runner_work_documentation_documentation_apis_device-detection-python_fiftyone_devicedetection_cloud_readme.html", null ],
     [ "51Degrees Device Detection Engines - On-Premise", "md__home_runner_work_documentation_documentation_apis_device-detection-python_fiftyone_devicedetection_onpremise_readme.html", null ],
@@ -43,7 +43,7 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-"../../documentation/4.4/index.html",
+"/documentation/4.5/index.html",
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#ad6bee6b43bd14ca77b9f3f06eba02231",
 "classtests_1_1test__cloudgettingstartedweb_1_1_cloud_getting_started_web_tests.html#accb005dbe094bfbf2c69b8c3be3607f6"
 ];

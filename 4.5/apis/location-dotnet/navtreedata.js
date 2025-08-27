@@ -23,7 +23,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-    [ "General Docs", "../../documentation/4.4/index.html", null ],
+    [ "General Docs", "/documentation/4.5/index.html", null ],
     [ "The MIT License (MIT)", "md__home_runner_work_documentation_documentation_apis_location-dotnet__examples__cloud__asp_net_1cc31f4246e8512a170ed2a814082ddb.html", null ],
     [ "51Degrees Geo-Location Engines", "md__home_runner_work_documentation_documentation_apis_location-dotnet__r_e_a_d_m_e.html", null ],
     [ "Classes", "annotated.html", "annotated" ],
@@ -36,7 +36,7 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-"../../documentation/4.4/index.html"
+"/documentation/4.5/index.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

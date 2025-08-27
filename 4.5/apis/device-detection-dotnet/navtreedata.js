@@ -23,7 +23,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-    [ "General Docs", "../../documentation/4.4/index.html", null ],
+    [ "General Docs", "/documentation/4.5/index.html", null ],
     [ "51Degrees Device Detection Engines", "md__home_runner_work_documentation_documentation_apis_device-detection-dotnet__r_e_a_d_m_e.html", null ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Examples", "examples.html", "examples" ]
@@ -35,7 +35,7 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-"../../documentation/4.4/index.html",
+"/documentation/4.5/index.html",
 "class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_completion_listener.html#a9c65d7b805dbd53b34432b6eb42ed7c1"
 ];
 

@@ -1,6 +1,6 @@
 var NAVTREEINDEX0 =
 {
-"../../documentation/4.4/index.html":[0],
+"/documentation/4.5/index.html":[0],
 "_example_framework_website_2_controllers_2_home_controller_8cs-example.html":[3,0],
 "_net_core_2_startup_8cs-example.html":[3,1],
 "_result_caching_2_program_8cs-example.html":[3,2],

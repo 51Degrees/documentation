@@ -1,6 +1,6 @@
 var NAVTREEINDEX0 =
 {
-"../../documentation/4.4/index.html":[0],
+"/documentation/4.5/index.html":[0],
 "_2home_2runner_2work_2documentation_2documentation_2apis_2ip-intelligence-cxx_2src_2common-cxx_2stored_binary_value_8h-example.html":[7,0],
 "_2home_2runner_2work_2documentation_2documentation_2apis_2ip-intelligence-cxx_2src_2common-cxx_2string_8h-example.html":[7,1],
 "_ip_intelligence_2_find_profiles_8c-example.html":[7,2],

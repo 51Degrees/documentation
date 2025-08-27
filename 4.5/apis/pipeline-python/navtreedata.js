@@ -23,7 +23,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-    [ "General Docs", "../../documentation/4.4/index.html", null ],
+    [ "General Docs", "/documentation/4.5/index.html", null ],
     [ "Cloud Request Engine", "md__home_runner_work_documentation_documentation_apis_pipeline-python_fiftyone_pipeline_cloudrequestengine_readme.html", null ],
     [ "Pipeline Core", "md__home_runner_work_documentation_documentation_apis_pipeline-python_fiftyone_pipeline_core_readme.html", null ],
     [ "Purpose", "md__home_runner_work_documentation_documentation_apis_pipeline-python_fiftyone_pipeline_core_srcb93d8b5d1da24295dbc2788e1b8bdf94.html", null ],
@@ -40,7 +40,7 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-"../../documentation/4.4/index.html",
+"/documentation/4.5/index.html",
 "classfiftyone__pipeline__engines_1_1basic__dictionary__cache_1_1_basic_dictionary_cache.html#a360361de26e1b7ce1e910fbafa6bcf11",
 "classtests_1_1test__javascriptbuilder_1_1_delayed_execution_engine3.html#a3b61466118438420966944571546beb9"
 ];

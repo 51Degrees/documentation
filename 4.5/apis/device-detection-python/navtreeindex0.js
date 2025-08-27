@@ -1,6 +1,6 @@
 var NAVTREEINDEX0 =
 {
-"../../documentation/4.4/index.html":[0],
+"/documentation/4.5/index.html":[0],
 "annotated.html":[10],
 "classfiftyone__devicedetection_1_1devicedetection__pipelinebuilder_1_1_device_detection_pipeline_builder.html":[10,2,0,0],
 "classfiftyone__devicedetection_1_1devicedetection__pipelinebuilder_1_1_device_detection_pipeline_builder.html#a237a2b26db3e30c8f7be8b2a56dcd2c9":[10,2,0,0,0],

@@ -23,7 +23,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-    [ "General Docs", "../../documentation/4.4/index.html", null ],
+    [ "General Docs", "/documentation/4.5/index.html", null ],
     [ "51Degrees Pipeline", "md__home_runner_work_documentation_documentation_apis_pipeline-java__r_e_a_d_m_e.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Classes", "annotated.html", "annotated" ],
@@ -36,7 +36,7 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-"../../documentation/4.4/index.html",
+".html",
 "classfiftyone_1_1pipeline_1_1core_1_1configuration_1_1_element_options.html#a424b9b1d5af125dc34fc55d8b84ae618",
 "classfiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration_default.html#a568e785b2718e73ed64bb9af488ef00f",
 "classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html#a9a6e62166e21d7255137def4376dc195",

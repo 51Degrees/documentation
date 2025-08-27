@@ -1,6 +1,6 @@
 var NAVTREEINDEX0 =
 {
-"../../documentation/4.4/index.html":[0],
+"/documentation/4.5/index.html":[0],
 "_cloud-_u_a_c_h_2_startup_8cs-example.html":[3,0],
 "_cloud_2_framework-_web_2_default_8aspx_8cs-example.html":[3,1],
 "_cloud_2_get_all_properties-_console_2_program_8cs-example.html":[3,2],

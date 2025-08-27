@@ -1,6 +1,6 @@
 var NAVTREEINDEX0 =
 {
-"../../documentation/4.4/index.html":[0],
+"/documentation/4.5/index.html":[0],
 "examples.html":[3],
 "group___fifty_one_degrees_config_device_detection.html":[2,1,1],
 "group___fifty_one_degrees_config_device_detection.html#ga71ee045fe278ba067a6370f1a9699cce":[2,1,1,3],

@@ -1,14 +1,13 @@
 var NAVTREEINDEX0 =
 {
-"../../documentation/4.4/index.html":[0],
 ".html":[2,0],
+".html":[2,0,0],
 ".html":[2,0,0,0,1],
 ".html":[2,0,0,3],
 ".html":[2,0,0,4],
 ".html":[2,0,0,4,0],
 ".html":[2,0,0,4,0,0],
 ".html":[2,0,0,4,0,0,0],
-".html":[2,0,0],
 ".html":[2,0,0,4,0,0,1],
 ".html":[2,0,0,4,0,1],
 ".html":[2,0,0,4,0,2],
@@ -17,6 +16,7 @@ var NAVTREEINDEX0 =
 ".html":[2,0,0,0,0],
 ".html":[2,0,0,2],
 ".html":[2,0,0,2,0],
+"/documentation/4.5/index.html":[0],
 "_combining_services_8java-example.html":[3,1],
 "annotated.html":[2],
 "classfiftyone_1_1geolocation_1_1_geo_location_cloud_pipeline_builder.html":[2,0,0,5],

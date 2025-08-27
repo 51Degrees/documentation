@@ -23,7 +23,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-    [ "General Docs", "../../documentation/4.4/index.html", null ],
+    [ "General Docs", "/documentation/4.5/index.html", null ],
     [ "51Degrees Geo-Location Engines", "md__home_runner_work_documentation_documentation_apis_location-php_readme.html", null ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Examples", "examples.html", "examples" ]
@@ -35,7 +35,7 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-"../../documentation/4.4/index.html"
+".html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -23,7 +23,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-    [ "General Docs", "../../documentation/4.4/index.html", null ],
+    [ "General Docs", "/documentation/4.5/index.html", null ],
     [ "API Specific CI Approach", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-cxx_src_common-cxx_ci__r_e_a_d_m_e.html", null ],
     [ "51Degrees Common Code Library", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-cxx_src_common-cxx__r_e_a_d_m_e.html", null ],
     [ "ip-graph-cxx", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-cxx_src_ip-graph-cxx__r_e_a_d_m_e.html", null ],
@@ -39,7 +39,7 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-"../../documentation/4.4/index.html",
+"/documentation/4.5/index.html",
 "group___fifty_one_degrees_overrides.html#gabc34bae373d5637d04024688715d2473",
 "group___fifty_one_degrees_synonyms.html#ga502bc07fe8da171df1ff40cdbad70f2d",
 "group___fifty_one_degrees_synonyms.html#gafc932f770d6de7d7b1c4f2c8f28c89f2",

@@ -1,7 +1,7 @@
 var NAVTREEINDEX0 =
 {
-"../../documentation/4.4/index.html":[0],
 ".html":[3,0],
+".html":[3,0,1],
 ".html":[3,0,2],
 ".html":[3,0,2,0],
 ".html":[3,0,2,2,1,1],
@@ -17,7 +17,7 @@ var NAVTREEINDEX0 =
 ".html":[3,0,2,3,6],
 ".html":[3,0,2,1,1],
 ".html":[3,0,2,3,6,0],
-".html":[3,0,1],
+".html":[3,0,1,0],
 ".html":[3,0,2,3,2],
 ".html":[3,0,2,3,7],
 ".html":[3,0,2,4],
@@ -29,7 +29,6 @@ var NAVTREEINDEX0 =
 ".html":[3,0,2,6,0],
 ".html":[3,0,2,6,1],
 ".html":[3,0,2,7],
-".html":[3,0,1,0],
 ".html":[3,0,2,8],
 ".html":[3,0,2,8,0],
 ".html":[3,0,2,8,0,0],
@@ -59,6 +58,7 @@ var NAVTREEINDEX0 =
 ".html":[3,0,1,1,0,1],
 ".html":[3,0,2,2,1],
 ".html":[3,0,2,2,1,0],
+"/documentation/4.5/index.html":[0],
 "annotated.html":[3],
 "classfiftyone_1_1caching_1_1_lru_cache_base.html":[3,0,0,4],
 "classfiftyone_1_1caching_1_1_lru_cache_base.html#a228c20efdf521ca150e8bbfbd1f02c16":[3,0,0,4,1],

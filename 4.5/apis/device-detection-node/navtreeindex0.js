@@ -1,6 +1,6 @@
 var NAVTREEINDEX0 =
 {
-"../../documentation/4.4/index.html":[0],
+"/documentation/4.5/index.html":[0],
 "annotated.html":[2],
 "class_component.html":[2,0],
 "class_component.html#abdf8cb8b5824cc3272c568c105080a4b":[2,0,1],

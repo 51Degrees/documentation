@@ -23,7 +23,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-    [ "General Docs", "../../documentation/4.4/index.html", null ],
+    [ "General Docs", "/documentation/4.5/index.html", null ],
     [ "API Specific CI Approach", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engieb049edf6682340f3492e3fc0c158000.html", null ],
     [ "<img src=\"https://51degrees.com/DesktopModules/FiftyOne/Distributor/Logo.ashx?utm_source=github&utm_medium=repository&utm_content=home&utm_campaign=c-open-source\" alt=\"51Degrees\" title=\"Data rewards the curious\"/> <strong>IP Intelligence Data Files</strong>", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engi6254aafd74b874e63765ce8ef8e9c5cb.html", null ],
     [ "51Degrees Ip Intelligence API", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engi45eead18251e49579d7302e9b292f349.html", null ],
@@ -46,7 +46,7 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-"../../documentation/4.4/index.html",
+".html",
 "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_component_meta_data_swig.html#a552dfd1b7911a53279e78bb5d8c0b006",
 "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_ip_intelligence_on_premise_engine_module_j_n_i.html#a389e21a12cb3eedaaf7da72b0f2fad3c",
 "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_ip_intelligence_on_premise_engine_module_j_n_i.html#ad8c4f7fe9d5a8beb87604b49e1c5b1b6",
