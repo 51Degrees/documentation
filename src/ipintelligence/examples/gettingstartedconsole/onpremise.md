@@ -18,5 +18,6 @@ You can mix and match elements from different examples in order to match your us
 @grabexample{ip-intelligence-cxx,_ip_intelligence_2_getting_started_8cpp,C++}
 @grabexample{ip-intelligence-dotnet,_on_premise_2_getting_started-_console_2_program_8cs,C#}
 @grabexample{ip-intelligence-java,console_2_getting_started_on_prem_8java,Java}
+@grabexample{ip-intelligence-go,examples_2onpremise_2getting_started_8go,Go}
 @grabbedexample
 @endsnippets
