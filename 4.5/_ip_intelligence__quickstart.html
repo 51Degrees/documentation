@@ -71,6 +71,19 @@ $(document).ready(function(){initNavTree('_ip_intelligence__quickstart.html','')
 <section class="g-docs__section"><h1 class="g-docs__section-heading">Getting Started with IP Intelligence</h1>
 <p>IP Intelligence provides geolocation, ISP, connection type, and network information from IP addresses. It helps enhance user experience, security, and content delivery.</p>
 <h2>Choose Your Integration</h2>
+<h3>Cloud API</h3>
+<p><b>Best for:</b> Quick deployment, minimal infrastructure, always up-to-date data</p>
+<p><b>Benefits:</b></p><ul>
+<li><b>No infrastructure</b> - No servers or data files to manage</li>
+<li><b>Always updated</b> - Latest IP intelligence data automatically</li>
+<li><b>Quick setup</b> - Get running in minutes with just an API key</li>
+</ul>
+<p><b>Things to consider:</b></p><ul>
+<li><b>Internet dependency</b> - Requires network connectivity</li>
+<li><b>Latency</b> - Network round-trip time for each request</li>
+<li><b>Data privacy</b> - Processing occurs on 51Degrees infrastructure</li>
+</ul>
+<p><b>Licensing:</b> Will require a <a href="https://configure.51degrees.com">Resource Key</a> eventually, but for now <a href="https://51degrees.com/contact-us">contact us</a> to obtain an enterprise IPI data file for testing</p>
 <h3>On-premise Deployment</h3>
 <p><b>Best for:</b> High-performance, privacy-sensitive, or offline environments</p>
 <p><b>Benefits:</b></p><ul>
@@ -86,6 +99,20 @@ $(document).ready(function(){initNavTree('_ip_intelligence__quickstart.html','')
 <li><b>Update management</b> - Periodic data file updates needed for latest data</li>
 </ul>
 <p><b>Licensing:</b> Requires a <a href="https://51degrees.com/pricing">License Key</a></p>
+<h3>Combined Device Detection + IP Intelligence</h3>
+<p><b>Best for:</b> Comprehensive user profiling and enhanced accuracy</p>
+<p><b>Benefits:</b></p><ul>
+<li><b>Complete user context</b> - Combine location/network data with device characteristics</li>
+<li><b>Enhanced fraud detection</b> - Cross-reference device fingerprints with IP risk data</li>
+<li><b>Optimized content delivery</b> - Device capabilities + geographic location for perfect targeting</li>
+<li><b>Advanced analytics</b> - Rich user segmentation with both device and location dimensions</li>
+</ul>
+<p><b>Things to consider:</b></p><ul>
+<li><b>Multiple engines</b> - Requires configuration of both Device Detection and IP Intelligence</li>
+<li><b>Data file management</b> - Need both device data files (.hash) and IP data files (.ipi) for On-premise</li>
+<li><b>Resource usage</b> - Combined memory and CPU usage for both engines</li>
+</ul>
+<p><b>Licensing:</b> Requires licenses for both Device Detection and IP Intelligence services</p>
 <h2>Language-Specific Integration</h2>
 <p>Select your language below for detailed setup instructions:</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'c')">C</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'go')">Go</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language. </div>   <div class="c-tabgroup__main" data-lang="c" style="display:none;">  C does not have a <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> implementation or the ability to use the cloud-based version of IP intelligence. To get started with C IP intelligence On-premise:</p>
@@ -106,43 +133,51 @@ $(document).ready(function(){initNavTree('_ip_intelligence__quickstart.html','')
 <li>Follow the linked example here: <a class="el" href="_ip_intelligence__examples__getting_started__console__on_premise.html">Getting Started</a>.</li>
 <li>(optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our <a href="https://51degrees.com/pricing">pricing page</a> for details.</li>
 </ol>
-<p> </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  </p><h3>Standalone pipeline / off-line processing</h3>
+<p> </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  </p><h3>Console Applications</h3>
 <ol type="1">
 <li>Install the <a href="https://www.nuget.org/packages/FiftyOne.IpIntelligence">FiftyOne.IpIntelligence</a> package via Nuget.</li>
-<li>Follow the appropriate example from the options below:<ul>
-<li><a class="el" href="_ip_intelligence__examples__getting_started__console__on_premise.html">On-premise Example</a> - IP intelligence processing is performed locally using a data file that must be kept updated.</li>
+<li>Choose your deployment option:<ul>
+<li><a class="el" href="_ip_intelligence__examples__getting_started__console__cloud.html">Cloud Example</a> - Uses 51Degrees Cloud API for processing</li>
+<li><a class="el" href="_ip_intelligence__examples__getting_started__console__on_premise.html">On-premise Example</a> - Local processing with data files</li>
+<li><a class="el" href="_ip_intelligence__combined__console__on_premise.html">Combined Example</a> - Mix IP Intelligence with Device Detection</li>
 </ul>
 </li>
 </ol>
-<h3>ASP.NET Core integration.</h3>
+<h3>Web Applications (ASP.NET Core)</h3>
 <ol type="1">
 <li>Install the <a href="https://www.nuget.org/packages/FiftyOne.IpIntelligence">FiftyOne.IpIntelligence</a> and <a href="https://www.nuget.org/packages/FiftyOne.Pipeline.Web">FiftyOne.Pipeline.Web</a> packages via Nuget.</li>
-<li>Follow the <a class="el" href="_pipeline_api__examples__web_integration.html">web example</a> to add the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> middleware.</li>
-<li>Configure the pipeline using the configuration from the appropriate example from the options below:<ul>
-<li><a class="el" href="_ip_intelligence__examples__getting_started__console__on_premise.html">On-premise Example</a> - IP intelligence processing is performed locally using a data file that must be kept updated.</li>
+<li>Follow the <a class="el" href="_pipeline_api__examples__web_integration.html">web integration guide</a> to add the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> middleware.</li>
+<li>Choose your deployment option:<ul>
+<li><a class="el" href="_ip_intelligence__examples__getting_started__web__cloud.html">Cloud Web Example</a> - Uses 51Degrees Cloud API</li>
+<li><a class="el" href="_ip_intelligence__examples__getting_started__web__on_premise.html">On-premise Web Example</a> - Local processing</li>
+<li><a class="el" href="_ip_intelligence__combined__web__on_premise.html">Combined Web Example</a> - Mix IP Intelligence with Device Detection</li>
 </ul>
 </li>
 </ol>
-<p> </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  To get started with Java IP Intelligence:</p>
+<p> </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  </p><h3>Console Applications</h3>
 <ol type="1">
 <li>Add the IP Intelligence dependency to your project: <div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;<span class="c-code__keywordtype">dependency</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">groupId</span>&gt;<span class="c-code__keyword">com.51degrees</span>&lt;/<span class="c-code__keywordtype">groupId</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">artifactId</span>&gt;<span class="c-code__keyword">ip-intelligence</span>&lt;/<span class="c-code__keywordtype">artifactId</span>&gt;</div><div class="c-code__line">&lt;/<span class="c-code__keywordtype">dependency</span>&gt;</div></div> Check <a href="https://search.maven.org/artifact/com.51degrees/ip-intelligence">Maven Central</a> for the latest version.</li>
-<li>Follow the appropriate example from the options below:<ul>
-<li><a class="el" href="_ip_intelligence__examples__getting_started__console__on_premise.html">On-premise Example</a> - IP intelligence processing is performed locally using a data file that must be kept updated.</li>
+<li>Choose your deployment option:<ul>
+<li><a class="el" href="_ip_intelligence__examples__getting_started__console__on_premise.html">On-premise Example</a> - Local processing with data files</li>
 </ul>
 </li>
 </ol>
 <h3>Web Integration</h3>
-<p>For web applications, add the web integration dependency: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;<span class="c-code__keywordtype">dependency</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">groupId</span>&gt;<span class="c-code__keyword">com.51degrees</span>&lt;/<span class="c-code__keywordtype">groupId</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">artifactId</span>&gt;<span class="c-code__keyword">pipeline.web</span>&lt;/<span class="c-code__keywordtype">artifactId</span>&gt;</div><div class="c-code__line">&lt;/<span class="c-code__keywordtype">dependency</span>&gt;</div></div><p>Configure the pipeline using the configuration from the On-premise example above.</p>
-<p> </div>   <div class="c-tabgroup__main" data-lang="go" style="display:none;">  To get started with Go IP Intelligence:</p>
+<p>For web applications, add the web integration dependency: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;<span class="c-code__keywordtype">dependency</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">groupId</span>&gt;<span class="c-code__keyword">com.51degrees</span>&lt;/<span class="c-code__keywordtype">groupId</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">artifactId</span>&gt;<span class="c-code__keyword">pipeline.web</span>&lt;/<span class="c-code__keywordtype">artifactId</span>&gt;</div><div class="c-code__line">&lt;/<span class="c-code__keywordtype">dependency</span>&gt;</div></div><p>Choose your deployment option:</p><ul>
+<li><a class="el" href="_ip_intelligence__examples__getting_started__web__on_premise.html">On-premise Web Example</a> - Local processing</li>
+</ul>
+<p> </div>   <div class="c-tabgroup__main" data-lang="go" style="display:none;">  </p><h3>Console Applications</h3>
 <ol type="1">
 <li>Install the IP Intelligence package: <div class="c-code__block c-code__block--outline"><div class="c-code__line">go get github.com/51Degrees/ip-intelligence-go/v4</div></div></li>
-<li>Follow the appropriate example from the options below:<ul>
-<li><a class="el" href="_ip_intelligence__examples__getting_started__console__on_premise.html">On-premise Example</a> - IP intelligence processing is performed locally using a data file that must be kept updated.</li>
+<li>Choose your deployment option:<ul>
+<li><a class="el" href="_ip_intelligence__examples__getting_started__console__on_premise.html">On-premise Example</a> - Local processing with data files</li>
 </ul>
 </li>
 </ol>
 <h3>Web Integration</h3>
-<p>For web applications, you can integrate IP Intelligence into your HTTP handlers. See the On-premise example for implementation details.</p>
+<p>For web applications, you can integrate IP Intelligence into your HTTP handlers:</p><ul>
+<li><a class="el" href="_ip_intelligence__examples__getting_started__web__on_premise.html">On-premise Web Example</a> - Local processing</li>
+</ul>
 <p> </div>   </div>  </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->

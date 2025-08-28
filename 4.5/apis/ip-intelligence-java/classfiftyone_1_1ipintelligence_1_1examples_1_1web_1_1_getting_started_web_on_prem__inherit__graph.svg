@@ -11,7 +11,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:title="This is the getting started Web/On&#45;Prem example showing use of the 51Degrees supplied filter which au...">
+<g id="a_node1"><a xlink:title="This example shows how to use 51Degrees On&#45;premise IP Intelligence to determine location and network ...">
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-30.5 200,-30.5 200,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">fiftyone.ipintelligence.examples.web.</text>
 <text text-anchor="middle" x="100" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">GettingStartedWebOnPrem</text>

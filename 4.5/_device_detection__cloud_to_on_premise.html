@@ -99,15 +99,15 @@ $(document).ready(function(){initNavTree('_device_detection__cloud_to_on_premise
 <li>Automatic data file updates included</li>
 </ul>
 <h2>Step 2: Update Dependencies</h2>
-<p>Most 51Degrees packages already include both cloud and On-premise capabilities. You typically only need configuration changes.</p>
-<p><b>.NET</b> </p><div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">&lt;!-- Most users already have this --&gt;</span></div><div class="c-code__line">&lt;<span class="c-code__keywordtype">PackageReference</span> <span class="c-code__keyword">Include</span>=<span class="c-code__stringliteral">&quot;FiftyOne.DeviceDetection&quot;</span> <span class="c-code__keyword">Version</span>=<span class="c-code__stringliteral">&quot;4.x.x&quot;</span> /&gt;</div><div class="c-code__line"></div><div class="c-code__line"><span class="c-code__comment">&lt;!-- Only if you had cloud-specific packages --&gt;</span></div><div class="c-code__line"><span class="c-code__comment">&lt;!-- Remove: FiftyOne.DeviceDetection.Cloud --&gt;</span></div><div class="c-code__line"><span class="c-code__comment">&lt;!-- Add: FiftyOne.DeviceDetection --&gt;</span></div></div><p><b>Java</b> </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;<span class="c-code__keywordtype">dependency</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">groupId</span>&gt;<span class="c-code__keyword">com.51degrees</span>&lt;/<span class="c-code__keywordtype">groupId</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">artifactId</span>&gt;<span class="c-code__keyword">device-detection</span>&lt;/<span class="c-code__keywordtype">artifactId</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">version</span>&gt;4.<span class="c-code__keyword">x.x</span>&lt;/<span class="c-code__keywordtype">version</span>&gt;</div><div class="c-code__line">&lt;/<span class="c-code__keywordtype">dependency</span>&gt;</div></div><p><b>Node.js</b> </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">npm install fiftyone.devicedetection</div></div><p><b>Other Languages</b></p><ul>
+<p>Most 51Degrees packages already include both Cloud and On-premise capabilities. You typically only need configuration changes.</p>
+<p><b>.NET</b> </p><div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">&lt;!-- Most users already have this --&gt;</span></div><div class="c-code__line">&lt;<span class="c-code__keywordtype">PackageReference</span> <span class="c-code__keyword">Include</span>=<span class="c-code__stringliteral">&quot;FiftyOne.DeviceDetection&quot;</span> <span class="c-code__keyword">Version</span>=<span class="c-code__stringliteral">&quot;4.x.x&quot;</span> /&gt;</div><div class="c-code__line"></div><div class="c-code__line"><span class="c-code__comment">&lt;!-- Only if you had Cloud-specific packages --&gt;</span></div><div class="c-code__line"><span class="c-code__comment">&lt;!-- Remove: FiftyOne.DeviceDetection.Cloud --&gt;</span></div><div class="c-code__line"><span class="c-code__comment">&lt;!-- Add: FiftyOne.DeviceDetection --&gt;</span></div></div><p><b>Java</b> </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;<span class="c-code__keywordtype">dependency</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">groupId</span>&gt;<span class="c-code__keyword">com.51degrees</span>&lt;/<span class="c-code__keywordtype">groupId</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">artifactId</span>&gt;<span class="c-code__keyword">device-detection</span>&lt;/<span class="c-code__keywordtype">artifactId</span>&gt;</div><div class="c-code__line">    &lt;<span class="c-code__keywordtype">version</span>&gt;4.<span class="c-code__keyword">x.x</span>&lt;/<span class="c-code__keywordtype">version</span>&gt;</div><div class="c-code__line">&lt;/<span class="c-code__keywordtype">dependency</span>&gt;</div></div><p><b>Node.js</b> </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">npm install fiftyone.devicedetection</div></div><p><b>Other Languages</b></p><ul>
 <li><b>C/C++</b>: <a href="https://github.com/51degrees/device-detection-cxx">device-detection-cxx</a></li>
 <li><b>Go</b>: <a href="https://github.com/51degrees/device-detection-go">device-detection-go</a></li>
 <li><b>PHP</b>: <a href="https://github.com/51degrees/device-detection-php-onpremise">device-detection-php-onpremise</a></li>
 <li><b>Python</b>: <code>pip install fiftyone-devicedetection-onpremise</code></li>
 </ul>
 <h2>Step 3: Update Configuration</h2>
-<p>Replace your cloud configuration with file-based settings.</p>
+<p>Replace your Cloud configuration with file-based settings.</p>
 <p><b>Before (Cloud):</b> </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div><div class="c-code__line">  &quot;Elements&quot;: [</div><div class="c-code__line">    {</div><div class="c-code__line">      &quot;elementKey&quot;: &quot;device&quot;,</div><div class="c-code__line">      &quot;elementParameters&quot;: {</div><div class="c-code__line">        &quot;cloudEndpoint&quot;: &quot;https://cloud.51degrees.com/api/v4&quot;,</div><div class="c-code__line">        &quot;resourceKey&quot;: &quot;YOUR_RESOURCE_KEY&quot;</div><div class="c-code__line">      }</div><div class="c-code__line">    }</div><div class="c-code__line">  ]</div><div class="c-code__line">}</div></div><p><b>After (On-premise):</b> </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div><div class="c-code__line">  &quot;Elements&quot;: [</div><div class="c-code__line">    {</div><div class="c-code__line">      &quot;elementKey&quot;: &quot;device&quot;, </div><div class="c-code__line">      &quot;elementParameters&quot;: {</div><div class="c-code__line">        &quot;dataFilePath&quot;: &quot;/path/to/51Degrees-LiteV4.1.hash&quot;,</div><div class="c-code__line">        &quot;performanceProfile&quot;: &quot;MaxPerformance&quot;,</div><div class="c-code__line">        &quot;licenseKey&quot;: &quot;YOUR_LICENSE_KEY&quot;,</div><div class="c-code__line">        &quot;autoUpdate&quot;: true,</div><div class="c-code__line">        &quot;updateOnStart&quot;: true,</div><div class="c-code__line">        &quot;fileSystemWatcher&quot;: true</div><div class="c-code__line">      }</div><div class="c-code__line">    }</div><div class="c-code__line">  ]</div><div class="c-code__line">}</div></div><h2>Step 4: Update Code</h2>
 <p>The Pipeline API keeps most code unchanged. Main differences:</p>
 <p><b>Pipeline Creation</b></p>
@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('_device_detection__cloud_to_on_premise
 <li>Monitor data file update failures</li>
 </ul>
 <p><b>Property Access</b></p><ul>
-<li>All properties are available locally (no cloud restrictions)</li>
+<li>All properties are available locally (no Cloud restrictions)</li>
 <li>No rate limiting on property requests</li>
 <li>Consistent response times regardless of property count</li>
 </ul>
@@ -152,7 +152,7 @@ $(document).ready(function(){initNavTree('_device_detection__cloud_to_on_premise
 <p>See <a class="el" href="_device_detection__examples__performance__on_premise_hash.html">Performance Examples</a> for benchmarking.</p>
 <h2>Testing Your Migration</h2>
 <ol type="1">
-<li><b>Compare Results</b> - Verify detection matches cloud results for test cases</li>
+<li><b>Compare Results</b> - Verify detection matches Cloud results for test cases</li>
 <li><b>Load Testing</b> - Confirm performance under expected traffic</li>
 <li><b>Update Testing</b> - Ensure data file updates work without disruption</li>
 <li><b>Failover Testing</b> - Test what happens if data file becomes unavailable</li>
@@ -174,10 +174,10 @@ $(document).ready(function(){initNavTree('_device_detection__cloud_to_on_premise
 <li>Use environment variables for configuration</li>
 </ul>
 <h2>Planning Your Rollback</h2>
-<p>Keep cloud access during migration:</p>
+<p>Keep Cloud access during migration:</p>
 <ol type="1">
-<li>Maintain your cloud Resource Key</li>
-<li>Use feature flags to switch between cloud and On-premise</li>
+<li>Maintain your Cloud Resource Key</li>
+<li>Use feature flags to switch between Cloud and On-premise</li>
 <li>Run both implementations in parallel initially</li>
 <li>Gradually shift traffic to On-premise</li>
 </ol>
@@ -188,7 +188,7 @@ $(document).ready(function(){initNavTree('_device_detection__cloud_to_on_premise
 <li>Confirm data file downloaded successfully</li>
 </ul>
 <p><b>License Key issues</b></p><ul>
-<li>Ensure license is for On-premise (not cloud)</li>
+<li>Ensure license is for On-premise (not Cloud)</li>
 <li>Check license hasn't expired</li>
 <li>Verify product tier matches your data file</li>
 </ul>

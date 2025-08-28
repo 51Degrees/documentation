@@ -66,19 +66,6 @@ $(document).ready(function(){initNavTree('_getting_started_web_on_prem_8java-exa
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <p>This example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-java-examples/blob/master/web/getting-started.onprem/src/main/java/fiftyone/ipintelligence/examples/web/GettingStartedWebOnPrem.java">GitHub</a>.</p>
-<p>
-<p>
-This example requires a local data file. The free 'Lite' data file can be acquired by
-pulling the git submodules under this repository (run `git submodule update --recursive`) 
-or from the <a href="https://github.com/51Degrees/device-detection-data">device-detection-data</a>
-GitHub repository.
-</p>
-<p>
-The Lite data file is only used for illustration, and has limited accuracy and capabilities.
-Find out about the more capable data files that are available on our 
-<a href="https://51degrees.com/pricing">pricing page</a>
-</p>
-</p>
 <h2>Overview</h2>
 <p>The <code>PipelineFilter</code> is used to intercept requests and perform IP Intelligence. The results will be stored in the HttpServletRequest object. The filter will also handle setting response headers (e.g. Accept-CH for User-Agent Client Hints) and serving requests for client-side JavaScript and JSON resources.</p>
 <p>The results of detection can be accessed by using a FlowDataProvider which is responsible for managing the lifecycle of the flowData - do NOT dispose </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">FlowData flowData = flowDataProvider.getFlowData(request);</div><div class="c-code__line">IPIntelligenceData device = flowData.get(IPIntelligenceData.class);</div><div class="c-code__line">...</div></div><p>Results can also be accessed in client-side code by using the <code>fod</code> object. Note that the global object name can be changed by using the setObjectName option on the <a href="//51degrees.com/pipeline-java/classfiftyone_1_1pipeline_1_1javascriptbuilder_1_1flowelements_1_1_java_script_builder_element_builder.html">JavaScriptBuilderElementBuilder</a></p>

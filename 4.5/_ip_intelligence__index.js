@@ -4,5 +4,6 @@ var _ip_intelligence__index =
     [ "IP Intelligence Quick Start", "_ip_intelligence__quickstart.html", null ],
     [ "IP Intelligence Algorithm", "_ip_intelligence__algorithm.html", null ],
     [ "IP Intelligence Features", null, "_ip_intelligence__features__index" ],
-    [ "IP Intelligence Examples", null, "_ip_intelligence__examples__index" ]
+    [ "IP Intelligence Examples", null, "_ip_intelligence__examples__index" ],
+    [ "Combined Device Detection + IP Intelligence", null, "_ip_intelligence__combined__index" ]
 ];
