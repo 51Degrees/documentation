@@ -13,7 +13,7 @@ For a comprehensive list of all available properties and their descriptions, see
 \endhtmlonly
 
 
-## Step 1: choose properties
+## Step 1: Choose properties
 
 To obtain a Resource Key, visit the [Cloud Configurator](https://configure.51degrees.com/). This will show the complete list of properties, broken down by category and by vendor. Choose whichever properties you need for the query you are planning.
 
@@ -23,11 +23,11 @@ For example, if you intend to look up latitude and longitude data to get a count
 
 You should choose as many properties as you need here; once the Resource Key is generated, its list of permitted properties cannot be changed.
 
-## Step 2: review configuration
+## Step 2: Review Configuration
 
 Some properties require a subscription to appear in query results, or for queries over a certain quota. The Review Configuration screen will inform you if a subscription License Key is required and allow you to secure your properties to specific domains, register for product updates, attach your new Resource Key to a subscription, and read and agree to the terms and conditions.
 
-## Step 3: implement
+## Step 3: Implement
 
 Finally your newly created Resource Key is available. The Implement screen shows code examples much like this documentation but with your new Resource Key in place, and allows you to copy the Resource Key itself from the Resource Key section. It is important that you record the Resource Key somewhere at this point; it is not possible to see a list of Resource Keys attached to an account, so once you have left Step 3 you cannot return to it.
 
