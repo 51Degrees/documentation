@@ -3,7 +3,7 @@
 # Introduction
 
 This example shows a very simple @flowelement which takes a date of birth
-and returns an star sign. Although a basic (and not all that useful) @flowelement, the
+and returns a star sign. Although a basic (and not all that useful) @flowelement, the
 example demonstrates how you can start to implement your own @flowelements.
 
 # Download example

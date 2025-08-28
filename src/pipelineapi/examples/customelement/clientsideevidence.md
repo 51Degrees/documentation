@@ -7,7 +7,7 @@ This example takes the very simple @flowelement described in the
 a JavaScript @property to use @clientsideevidence. 
 
 Instead of using @evidence which is already available, as the [simple flow element example](@ref PipelineApi_Examples_CustomElement_FlowElement)
-did, this example will send JavaScript to the a client to get the @evidence.
+did, this example will send JavaScript to the client to get the @evidence.
 
 # Download example
 
