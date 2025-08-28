@@ -71,24 +71,22 @@ IP intelligence.
 To get started with C IP intelligence On-premise:
 
 1. Clone the GitHub [repository](https://github.com/51degrees/ip-intelligence-cxx).
-2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
-3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-4. Follow the [installation instructions](https://github.com/51Degrees/ip-intelligence-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
-5. Follow the linked example here: [Getting Started](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise).
-6. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+2. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
+3. Follow the [installation instructions](https://github.com/51Degrees/ip-intelligence-cxx/blob/main/README%2Emd) to get set up with the project. 
+4. Follow the linked example here: [Getting Started](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise).
+5. To run the example, [contact us](https://51degrees.com/contact-us) to obtain an enterprise IPI data file.
 
 @endsnippet
 @startsnippet{cxx}
 C++ does not have a @Pipeline implementation or the ability to use the cloud-based version of 
-Ip intelligence.
-To get started with C++ device detection On-premise:
+IP intelligence.
+To get started with C++ IP intelligence On-premise:
 
 1. Clone the GitHub [repository](https://github.com/51degrees/ip-intelligence-cxx).
-2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
-3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-5. Follow the [installation instructions](https://github.com/51Degrees/ip-intelligence-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
-6. Follow the linked example here: [Getting Started](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise).
-7. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+2. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
+3. Follow the [installation instructions](https://github.com/51Degrees/ip-intelligence-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
+4. Follow the linked example here: [Getting Started](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise).
+5. To run the example, [contact us](https://51degrees.com/contact-us) to obtain an enterprise IPI data file.
 
 @endsnippet
 @startsnippet{dotnet}
