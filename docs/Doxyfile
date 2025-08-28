@@ -344,8 +344,8 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "Metadata=[Metadata](@ref PipelineApi_Concepts_MetaData_Index)" \
                          "MigrationGuide=[Migration Guide](@ref DeviceDetection_MigrationGuides_Index)" \
                          "MigrationGuides=[Migration Guides](@ref DeviceDetection_MigrationGuides_Index)" \
-                         "onpremiseengine=[on-premise engine](@ref PipelineApi_Concepts_FlowElements_OnPremiseEngine)" \
-                         "onpremiseengines=[on-premise engines](@ref PipelineApi_Concepts_FlowElements_OnPremiseEngine)" \
+                         "onpremiseengine=[On-premise engine](@ref PipelineApi_Concepts_FlowElements_OnPremiseEngine)" \
+                         "onpremiseengines=[On-premise engines](@ref PipelineApi_Concepts_FlowElements_OnPremiseEngine)" \
                          "Onpremiseengine=[On-premise engine](@ref PipelineApi_Concepts_FlowElements_OnPremiseEngine)" \
                          "Onpremiseengines=[On-premise engines](@ref PipelineApi_Concepts_FlowElements_OnPremiseEngine)" \
                          "parallel=[parallel](@ref PipelineApi_Features_ParallelExecution)" \

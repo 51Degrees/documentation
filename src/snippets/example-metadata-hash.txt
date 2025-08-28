@@ -1,7 +1,7 @@
 @htmlonly
 <p>
 This example shows how to retrieve property metadata from 51Degrees 
-on-premise device detection. 
+On-premise device detection. 
 This feature can be used to get information such as the category that 
 a property belongs to or the possible values a property can have. 
 (As of the current data file. If the data file is updated, 

@@ -1,6 +1,6 @@
 @htmlonly
 <p>
-This example shows how to use 51Degrees on-premise device detection in a web context to determine 
+This example shows how to use 51Degrees On-premise device detection in a web context to determine 
 details about a device based on its User-Agent and User-Agent Client Hint HTTP header values.
 </p>
 <p>
