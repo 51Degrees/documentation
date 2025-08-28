@@ -1,4 +1,4 @@
-@page PipelineApi_Examples_CombiningServices Combining Services
+@page ReverseGeocoding_Examples_CombiningServices Combined Device Detection + Reverse Geocoding
 
 # Introduction
 
