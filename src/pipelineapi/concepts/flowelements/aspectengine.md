@@ -2,9 +2,9 @@
 
 # Introduction
 
-An **aspect engine** builds on the @flowelement concept to introduce the ability to:
+An **Aspect Engine** builds on the @flowelement concept to introduce the ability to:
 * cache processing results
-* handle cases where a property has not been populated by an **aspect engine**, but it could be if certain configuration changes were made
+* handle cases where a property has not been populated by an **Aspect Engine**, but it could be if certain configuration changes were made
 * [lazily load] (@ref PipelineApi_Features_LazyLoading) values in the @flowdata
 
 In the same way a @flowelement can produce an @elementdata containing results of its processing, an 

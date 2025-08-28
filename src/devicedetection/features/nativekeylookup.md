@@ -13,14 +13,14 @@ See the
 for more technical details.
 
 Native key lookup is currently available in two forms:
-1. Requests to the 51Degrees cloud service, fully integrated into the Pipeline API.
+1. Requests to the 51Degrees Cloud Service, fully integrated into the Pipeline API.
 2. Using the 'TAC CSV' data file to create a local lookup solution based on SQL or some 
 other data query mechanism.
 
-# Cloud service
+# Cloud Service
 
-Requests to the cloud service can include a 'NativeModel' query parameter. As long as the [Resource Key](@term{ResourceKey}) 
-includes one or more 'hardware device' properties and the 'profiles' property, the cloud service will return a result set with 
+Requests to the Cloud Service can include a 'NativeModel' query parameter. As long as the [Resource Key](@term{ResourceKey}) 
+includes one or more 'hardware device' properties and the 'profiles' property, the Cloud Service will return a result set with 
 the details of any devices that match the supplied native model key.
 
 NOTE: The 'profiles' and property **MUST** be selected for native lookup to function.

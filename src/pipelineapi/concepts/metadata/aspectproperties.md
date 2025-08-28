@@ -4,7 +4,7 @@
 
 **Aspect properties** extend @elementproperties to add metadata relevant to @aspectengines.
 
-As @aspectengines consume external data from either a @datafile or [cloud service](@term{CloudService}), extra metadata
+As @aspectengines consume external data from either a @datafile or [Cloud Service](@term{CloudService}), extra metadata
 is included to indicate where the **property** is available.
 
 See the

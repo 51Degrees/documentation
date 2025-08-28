@@ -86,7 +86,7 @@ UA-CH offers several mechanisms for accessing values. This section explains our 
 - Use the UA-CH JavaScript API to retrieve values
 - See the 'non-integrated' section on the [UA-CH JavaScript page](@ref DeviceDetection_Features_UACH_Javascript)
 
-## Calling cloud service from client-side code
+## Calling Cloud Service from client-side code
 
 
 **Best performance:**
@@ -95,7 +95,7 @@ UA-CH offers several mechanisms for accessing values. This section explains our 
 
 **Alternative approach:**
 - Ensure your Resource Key includes the `JavascriptGetHighEntropyValues` property
-- This gathers values automatically and sends them to our cloud service
+- This gathers values automatically and sends them to our Cloud Service
 
 ---
 

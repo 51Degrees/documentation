@@ -27,7 +27,7 @@ If you are looking for User-Agent Client Hints support in the cloud, please foll
 ## V3 On-premise users <a href="#V3_On_Prem">#</a> @anchor V3_On_Prem
 
 If you wish to continue to use 51Degrees On-premise, you will need to purchase a License Key to access the Version 4 data files. Visit our [pricing](https://51degrees.com/pricing) page and
-select the suitable plan for your needs. Alternatively, you may wish to use our [cloud service](@ref V3_Cloud), which can be called from the server via our APIs.
+select the suitable plan for your needs. Alternatively, you may wish to use our [Cloud Service](@ref V3_Cloud), which can be called from the server via our APIs.
 
 Once you have received a License Key after signing up for a pricing plan, you can use the key to download a data file for On-premise implementations that contains all the properties. You can 
 [download the file manually](https://51degrees.com/developers/downloads) or set up [automatic data file updates](@ref PipelineApi_Features_AutomaticDatafileUpdates).
@@ -291,7 +291,7 @@ var pipeline = new DeviceDetectionPipelineBuilder()
 
 The supplied settings will be dependent on your old implementation:
 
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). Next, change the first line to `.UseCloud` and pass in the Resource Key you created.
+- If using the 51Degrees Cloud Service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). Next, change the first line to `.UseCloud` and pass in the Resource Key you created.
 - If using `MemoryFactory` rather that `StreamFactory` then change the performance profile to `MaxPerformance`.
 - If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionHashEngineBuilder`. The `SetCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
 - If you have auto updates disabled then remove the `SetDataUpdateLinceseKey` line and instead use `SetAutoUpdate(false)` and `SetUpdateOnStartup(false)`.
@@ -449,7 +449,7 @@ This file should follow the usual structure of a pipeline configuration file. Fo
 - **IMPORTANT:** `C:\\Absolute\\Path\\To\\Data\\File\\51Degrees-EnterpriseV4.1.hash` is an absolute path to the data file. **Please amend this entry accordingly to your configuration.**
 - Use the performance profile setting to control the trade-off between performance and memory. `LowMemory` is recommended if you're not sure. `MaxPerformance` uses the most memory but gives the best performance.
 - If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false` and `"DataUpdateOnStartup": false`
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this Resource Key to the Pipeline.
+- If using the 51Degrees Cloud Service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this Resource Key to the Pipeline.
 
 ```{json}
 {
@@ -593,7 +593,7 @@ Add a PipelineOptions section to your appsettings.json file and configure approp
 
 - Use the performance profile setting to control the trade-off between performance and memory. `LowMemory` is recommended if you're not sure. `MaxPerformance` uses the most memory but gives the best performance.
 - If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false` and `"DataUpdateOnStartup": false`
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this Resource Key to the Pipeline.
+- If using the 51Degrees Cloud Service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this Resource Key to the Pipeline.
 
 ```{json}
 "PipelineOptions": {
@@ -691,7 +691,7 @@ Pipeline pipeline = new DeviceDetectionPipelineBuilder()
 
 Settings will be dependent on your old implementation:
 
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). Next, change the first line to `.useCloud` and pass in the Resource Key you created.
+- If using the 51Degrees Cloud Service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). Next, change the first line to `.useCloud` and pass in the Resource Key you created.
 - If using `MemoryFactory` rather than `StreamFactory` then change the performance profile to `MaxPerformance`.
 - If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionCloudEngineBuilder` (cache is not available on hash engine). The `setCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
 - If you have auto updates disabled then remove the `setDataUpdateLincenseKey` line and instead use `setAutoUpdate(false)` and `setUpdateOnStartup(false)`
@@ -841,7 +841,7 @@ const pipeline = new DeviceDetectionCloudPipelineBuilder({
 
 Settings will be dependent on your old implementation:
 
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the Resource Key you created.
+- If using the 51Degrees Cloud Service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the Resource Key you created.
 - If you want to trade some performance for system memory then change the performance profile to `MaxPerformance`, `Balanced` or `LowMemory`
 - If you want the data file to be updated automatically then remove `autoUpdate: false` and add your License Key to the configuration. (Not available for free users)
 
@@ -930,7 +930,7 @@ pipeline = DeviceDetectionPipelineBuilder(
 
 Settings will be dependent on your old implementation:
 
-- If using the 51Degrees cloud service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the Resource Key you created.
+- If using the 51Degrees Cloud Service, you'll first need to use [the Configurator](https://configure.51degrees.com) to create a Resource Key (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the Resource Key you created.
 - If you want to trade some performance for system memory then change the performance profile to `MaxPerformance`, `Balanced` or `LowMemory`
 - If you want the data file to be updated automatically then remove `auto_update: false` and add your License Key to the configuration. (Not available for free users)
 

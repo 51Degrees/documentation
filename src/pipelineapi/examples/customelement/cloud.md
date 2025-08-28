@@ -4,11 +4,11 @@
 
 This example takes the very simple @flowelement described in the
 [simple flow element example](@ref PipelineApi_Examples_CustomElement_FlowElement),
-and delegates all the logic to a cloud service.
+and delegates all the logic to a Cloud Service.
 
 Instead of the data being stored locally and processing being carried out by the @flowelement
 directly, as demonstrated in the [simple flow element example](@ref PipelineApi_Examples_CustomElement_FlowElement),
-this example will call a cloud service to perform the required functionality.
+this example will call a Cloud Service to perform the required functionality.
 
 # Download example
 
@@ -198,4 +198,4 @@ With a date of birth of 18/12/1992, your star sign is Sagittarius.
 
 # Next steps
 
-The [Custom On-premise Engine](@ref PipelineApi_Examples_CustomElement_OnPremise) example shows you how to build an On-premise engine to perform the functionality that was executed by the **cloud engine** here.
+The [Custom On-premise Engine](@ref PipelineApi_Examples_CustomElement_OnPremise) example shows you how to build an On-premise Engine to perform the functionality that was executed by the **Cloud Engine** here.

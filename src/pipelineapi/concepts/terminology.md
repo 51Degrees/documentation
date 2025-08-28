@@ -63,7 +63,7 @@ optimizations can be made in lower level languages than compared to high level l
 
 # Resource Key <a href="#PipelineApi_Concepts_Terminology_ResourceKey">#</a> @anchor PipelineApi_Concepts_Terminology_ResourceKey
 
-A Resource Key is used by the 51Degrees cloud service as a shorthand for various parameters that can be sent 
+A Resource Key is used by the 51Degrees Cloud Service as a shorthand for various parameters that can be sent 
 as part of a request. For example, the properties that the user wishes to be populated in the response and
 any License Keys that allow access to more properties or a greater request allowance.
 

@@ -36,12 +36,12 @@ Make sure that one or more of the following properties are included with your
 - `SetHeaderPlatformAccept-CH`
 (The configurator will automatically add the ones relevant to the properties you have selected)
 
-If you are calling our cloud service via our Pipeline API, hosted on your servers, then you'll
+If you are calling our Cloud Service via our Pipeline API, hosted on your servers, then you'll
 also need to ensure the `Accept-CH` HTTP header is set using these values. See the 'On-premise' 
 section below for the two approaches to doing this, as well as a note on the `Critical-CH` header.
 
-If you are calling our cloud service directly from the client device, then you'll need to let 
-the browser know that it's okay to send the client hints to our cloud service. There are two 
+If you are calling our Cloud Service directly from the client device, then you'll need to let 
+the browser know that it's okay to send the client hints to our Cloud Service. There are two 
 ways to do this.
 
 ## Delegate-CH
@@ -140,7 +140,7 @@ This is because the 'high-entropy' UA-CH values are not sent to third-parties by
 In order to do this, you'll need to ask your customers to use the `Delegate-CH` HTML directive or
 the `Permissions-Policy` HTTP header.
 This will be similar to the changes described [above](@ref UACH_Headers_Cloud) for calls to 
-our cloud service. (In that instance, our cloud service is the third-party.)
+our Cloud Service. (In that instance, our Cloud Service is the third-party.)
 The difference being that you'll need to replace <pre>https://cloud.51degrees.com</pre> with 
 the domain for your service.
 

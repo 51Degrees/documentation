@@ -23,7 +23,7 @@ You provide coordinates, we return location details like:
 ## Cloud Service
 
 
-Reverse geocoding runs as a cloud service, so there's no local setup needed. We use high-quality location data from [OpenStreetMap](https://www.openstreetmap.org/) through our [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim)-based solution.
+Reverse geocoding runs as a Cloud Service, so there's no local setup needed. We use high-quality location data from [OpenStreetMap](https://www.openstreetmap.org/) through our [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim)-based solution.
 
 ---
 

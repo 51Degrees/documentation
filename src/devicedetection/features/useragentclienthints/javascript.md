@@ -9,7 +9,7 @@ This page explains how to use the JavaScript approach with our API.
 The [UA-CH headers page](@ref DeviceDetection_Features_UACH_Headers) explains the alternative.
 The [Overview page](@ref DeviceDetection_Features_UACH_Overview) includes advice if you're unsure which approach to take.
 
-Using the UA-CH JavaScript API is very simple if you are calling our cloud service directly. 
+Using the UA-CH JavaScript API is very simple if you are calling our Cloud Service directly. 
 See details below.
 
 Otherwise, if you are using one of our web integrations, you can use the 'Integrated' 
@@ -21,10 +21,10 @@ Firstly, ensure that the `JavascriptGetHighEntropyValues` property is selected w
 you create your Resource Key. This contains the JavaScript snippet to get the values from 
 the UA-CH API on the client device.
 
-If you are calling our cloud service directly from the client device, our solution will take care 
+If you are calling our Cloud Service directly from the client device, our solution will take care 
 of the rest.
 
-If you are calling our cloud service via our Pipeline API, hosted on your servers, then you'll
+If you are calling our Cloud Service via our Pipeline API, hosted on your servers, then you'll
 also need to get this snippet to the client device. See the 'On-premise' section below for
 the two approaches to doing this.
 
@@ -44,7 +44,7 @@ If you are using our [web integration](@ref PipelineApi_Features_WebIntegration)
 care of sending the snippet to the client device, getting the values back to the server and 
 passing them into our API.
 
-If you're using our cloud service, no other changes are needed.
+If you're using our Cloud Service, no other changes are needed.
 However, if you're using our On-premise solution, then you'll also need to modify your configuration 
 to include a new engine called `UachJsConversionEngine` to convert the result from the 
 JavaScript snippet to evidence values that can be used by the existing device detection engine.
@@ -104,7 +104,7 @@ if (navigator.userAgentData) {
 </pre>
 </div>
 
-If you're using our cloud service, no other changes are needed.
+If you're using our Cloud Service, no other changes are needed.
 However, if you're using On-premise solution, then you'll also need to modify your configuration 
 to include a new engine called `UachJsConversionEngine` to convert the base-64 json from the 
 JavaScript snippet above to evidence values that can be used by the existing device detection engine.

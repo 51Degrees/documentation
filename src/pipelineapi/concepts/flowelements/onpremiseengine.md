@@ -2,12 +2,12 @@
 
 # Introduction
 
-**On-premise engines** are a specialization of @aspectengine where additional data exists locally to
+**On-premise Engines** are a specialization of @aspectengine where additional data exists locally to
 the **engine**, either in memory or a data file. This is in contrast to a @cloudengine where data
 exists in a cloud service which is called by the **engine**. Having data that does not reside in the
 **engine** itself means that the same **engine** can be used with multiple data sets.
 
-An **On-premise engine** builds on the @aspectengine concept to introduce the ability to:
+An **On-premise Engine** builds on the @aspectengine concept to introduce the ability to:
 * load data either from memory or one or more data files
 * keep data files up to date
 
@@ -17,13 +17,13 @@ for more technical details.
 
 # Use cases
 
-An **On-premise engine** typically does not need to call external components when processing a request.
+An **On-premise Engine** typically does not need to call external components when processing a request.
 This makes it best suited to cases where performance is critical, and the supporting hardware implementation
-reflects this. To provide optimal performance, some **On-premise engines** can be configured to run 
+reflects this. To provide optimal performance, some **On-premise Engines** can be configured to run 
 with any data files held entirely in memory, reducing latency further.
 
 There are also situations where the security demands of a service make sending sensitive data to an
-external [cloud service](@term{CloudService}) problematic. Using an **On-premise engine** will address this issue.
+external [Cloud Service](@term{CloudService}) problematic. Using an **On-premise Engine** will address this issue.
 
 # Data files <a href="#PipelineApi_Concepts_Configuration_DataFiles">#</a> @anchor PipelineApi_Concepts_Configuration_DataFiles
 
@@ -54,5 +54,5 @@ the @dataupdateservice with the age of the data file, the time at which a new on
 
 ## Multiple files
 
-An **On-premise engine** can require more than one data file. Files can be individually registered with the @dataupdateservice, 
+An **On-premise Engine** can require more than one data file. Files can be individually registered with the @dataupdateservice, 
 which will handle each file according to its own metadata. This allows different data files to have distinct update configurations.

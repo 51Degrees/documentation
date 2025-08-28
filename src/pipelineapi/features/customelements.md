@@ -25,7 +25,7 @@ Each level has associated classes as described by the following table:
 | Element | Data | Metadata | Builder |
 |---|---|---|---| 
 |@Flowelement|@Elementdata|@Elementpropertymetadata|N/A|
-|@Aspectengine|@Aspectdata|@Aspectpropertymetadata|Aspect engine builder|
+|@Aspectengine|@Aspectdata|@Aspectpropertymetadata|Aspect Engine builder|
 |@Onpremiseengine|@Aspectdata|@Aspectpropertymetadata|On-premise aspect engine builder|
 |@Cloudengine|@Aspectdata|@Aspectpropertymetadata|Cloud engine builder|
 
