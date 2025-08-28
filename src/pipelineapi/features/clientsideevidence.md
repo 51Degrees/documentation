@@ -116,7 +116,7 @@ your customer privacy policy.
 
 If you are using the 51Degrees Cloud service, or would like to see an example
 of how to describe this in your service that incorporates client-side evidence,
-see our [Client Services Policy](https://51degrees.com/terms/client-services-privacy-policy/20240430).
+see our [Client Services Policy](https://51degrees.com/terms/client-services-privacy-policy).
 
 For efficiency, we store limited data in cookies or session storage.
 Anything prefixed `51D_` or `fod_` is related to 51Degrees **client-side evidence**
