@@ -10,7 +10,7 @@ This element will collect evidence values as they pass through,
 periodically sending them to 51Degrees for processing.
 <p>
 If you want to know more about usage sharing, and why you should 
-consider using it, see the usage sharing 
-<a href="http://51degrees.com/documentation/_features__usage_sharing.html">feature page</a>.
+consider using it, see the 
+<a href="/documentation/4.5/_pipeline_api__features__usage_sharing.html">Share Usage reference</a>.
 </p>
 @endhtmlonly
