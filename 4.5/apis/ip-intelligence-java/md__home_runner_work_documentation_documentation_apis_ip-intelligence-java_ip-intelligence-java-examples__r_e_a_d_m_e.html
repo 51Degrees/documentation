@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_documentation_doc
 <p>By default, the examples are configured to use the packages from Maven central. In order to produce and use local packages instead:</p>
 <ul>
 <li>Clone and make your changes to ip-intelligence-java</li>
-<li>Set the version of the device detection packages that we're going to create to 0.0.0: <code>mvn versions:set-property -Dproperty="project.version" "-DnewVersion=0.0.0"</code></li>
+<li>Set the version of the IP Intelligence packages that we're going to create to 0.0.0: <code>mvn versions:set-property -Dproperty="project.version" "-DnewVersion=0.0.0"</code></li>
 <li>Create and install the packages locally (skipping tests is needed): <code>mvn clean install [-DskipTests]</code></li>
 <li>Modify the POM for the examples to reference these new local packages. This can be done by editing the POM directly or by using the command line: <code>mvn versions:set-property -Dproperty="ip-intelligence.version" "-DnewVersion=0.0.0"</code></li>
 </ul>

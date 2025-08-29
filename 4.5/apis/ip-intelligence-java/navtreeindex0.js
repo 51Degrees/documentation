@@ -20,8 +20,6 @@ var NAVTREEINDEX0 =
 ".html":[13,0,0,1,0,1],
 "/documentation/4.5/index.html":[0],
 "_getting_started_web_on_prem_8java-example.html":[14,4],
-"_metadata_on_prem_8java-example.html":[14,5],
-"_performance_benchmark_8java-example.html":[14,6],
 "annotated.html":[13],
 "classfiftyone_1_1ipintelligence_1_1_enums.html":[13,0,0,4],
 "classfiftyone_1_1ipintelligence_1_1_i_p_intelligence_cloud_pipeline_builder.html":[13,0,0,5],
@@ -249,5 +247,7 @@ var NAVTREEINDEX0 =
 "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_component_meta_data_collection_swig.html#ae7d23ef39d1e708a573a9f86a7f8b571":[13,0,0,1,0,2,0,2,8],
 "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_component_meta_data_swig.html":[13,0,0,1,0,2,0,3],
 "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_component_meta_data_swig.html#a4347f583719e639754396f72c572602d":[13,0,0,1,0,2,0,3,3],
-"classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_component_meta_data_swig.html#a4b7750345ed147dc193c3042f85e7c29":[13,0,0,1,0,2,0,3,6]
+"classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_component_meta_data_swig.html#a4b7750345ed147dc193c3042f85e7c29":[13,0,0,1,0,2,0,3,6],
+"classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_component_meta_data_swig.html#a552dfd1b7911a53279e78bb5d8c0b006":[13,0,0,1,0,2,0,3,8],
+"classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_component_meta_data_swig.html#a6b9c3beaeaa2a2cdd4e0d01d5c614306":[13,0,0,1,0,2,0,3,1]
 };

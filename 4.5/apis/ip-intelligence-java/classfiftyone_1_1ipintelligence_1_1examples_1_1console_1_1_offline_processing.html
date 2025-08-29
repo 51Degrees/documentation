@@ -80,7 +80,7 @@ $(document).ready(function(){initNavTree('classfiftyone_1_1ipintelligence_1_1exa
   header.sec-ch-ua-mobile: '?0'
   header.sec-ch-ua-platform: '"Android"'
 </pre><p></code> </p>
-<p>We create a IP Intelligence pipeline to read the data and find out about the associated devices, we write this data to a YAML formatted output stream. </p>
+<p>We create a IP Intelligence pipeline to read the data and find out about the associated IP addresses, we write this data to a YAML formatted output stream. </p>
 <p>As well as explaining the basic operation of offline processing using the defaults, for advanced operation this example can be used to experiment with tuning IP Intelligence for performance and predictive power using Performance Profile, Graph and Difference and Drift settings. </p>
 </section></section>
 <!-- start ClassInheritanceGraph -->
@@ -151,11 +151,6 @@ Static Public Attributes</h2>
 <div class="g-table g-table--overflow">
 <table class="c-table c-table--members">
 <tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a265932e5828732fcdbbadf5a487bd884"><td class="c-table__cell">static&#160;final&#160;String<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><b>LITE_V_4_1_HASH</b>
-</div></td></tr>
 <!-- member dec start -->
 <!-- startMemberItem() -->
 <tr class="c-table__row memitem:a2785cb006a2bd19947701d5c15a6741f"><td class="c-table__cell">static&#160;final&#160;String<!-- insertMemberAlign -->
@@ -275,8 +270,8 @@ Static Public Attributes</h2>
 
 <p>Process a YAML representation of evidence - and create a YAML output containing the processed evidence. </p>
 <dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">dataFile</span> - the 51Degrees on premise data file containing information about devices </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">is</span> - an InputStream containing YAML documents - one per device </dd>
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">dataFile</span> - the 51Degrees on premise data file containing information about IP addresses </dd>
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">is</span> - an InputStream containing YAML documents - one per IP address </dd>
     <tr><dd class="c-list-definition__desc"><span class="b-text--red">os</span> - an OutputStream for the processed data </dd>
   </dd>
 </dl>
@@ -317,37 +312,6 @@ Static Public Attributes</h2>
 </div><!-- startIndent -->
 <div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=</div><div class="c-code__line">            dataDir + <span class="c-code__stringliteral">&quot;/evidence.yml&quot;</span></div></div><!-- endIndent -->
-
-</div>
-</div>
-</article>
-<article class="c-member">
-<a id="a265932e5828732fcdbbadf5a487bd884"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a265932e5828732fcdbbadf5a487bd884">&#9670;&nbsp;</a></span>LITE_V_4_1_HASH</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-<!-- startMemberDocName -->
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">final String fiftyone.ipintelligence.examples.console.OfflineProcessing.LITE_V_4_1_HASH<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
-            </tr>
-          </table>
-        </div>
-      </div>
-<!-- startLabels -->
-<div class="c-member__labels">
-<!-- writeLabel(static) -->
-<span class="c-label">static</span><!-- endLabels -->
-</div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=</div><div class="c-code__line">            dataDir + <span class="c-code__stringliteral">&quot;/51Degrees-LiteV41.ipi&quot;</span></div></div><!-- endIndent -->
 
 </div>
 </div>
