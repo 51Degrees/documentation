@@ -72,11 +72,11 @@ $(document).ready(function(){initNavTree('_device_detection__features__native_ke
 <p>A native key is a short string that identifies a mobile device model and is stored internally by such devices. This string is generally only available to code running with sufficient privileges on the user's device and is available for both <a href="https://developer.android.com/reference/android/os/Build#MODEL">Android</a> and <a href="https://gist.github.com/soapyigu/c99e1f45553070726f14c1bb0a54053b#file-machinename-swift">iOS</a> devices.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/device-detection-specification/pipeline-elements/hardware-profile-lookup-cloud.md#">Specification</a> for more technical details.</p>
 <p>Native key lookup is currently available in two forms:</p><ol type="1">
-<li>Requests to the 51Degrees cloud service, fully integrated into the Pipeline API.</li>
+<li>Requests to the 51Degrees Cloud Service, fully integrated into the Pipeline API.</li>
 <li>Using the 'TAC CSV' data file to create a local lookup solution based on SQL or some other data query mechanism.</li>
 </ol>
-<h1 class="g-docs__section-heading">Cloud service</h1>
-<p>Requests to the cloud service can include a 'NativeModel' query parameter. As long as the <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_ResourceKey">Resource Key</a> includes one or more 'hardware device' properties and the 'profiles' property, the cloud service will return a result set with the details of any devices that match the supplied native model key.</p>
+<h1 class="g-docs__section-heading">Cloud Service</h1>
+<p>Requests to the Cloud Service can include a 'NativeModel' query parameter. As long as the <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_ResourceKey">Resource Key</a> includes one or more 'hardware device' properties and the 'profiles' property, the Cloud Service will return a result set with the details of any devices that match the supplied native model key.</p>
 <p>NOTE: The 'profiles' and property <b>MUST</b> be selected for native lookup to function.</p>
 <p>For language specific details, see these <a class="el" href="_device_detection__examples__native_key_lookup__cloud.html">examples</a>.</p>
 <h1 class="g-docs__section-heading">Local lookup</h1>

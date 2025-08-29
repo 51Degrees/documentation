@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('cloud_2_getting_started_8java-example.
 <div class="g-docs__primary" id="primary">
 <p>Getting started example of using cloud geo-location.This example is available in full on <a href="https://github.com/51Degrees/location-java/blob/master/geo-location.shell.examples/src/main/java/fiftyone/geolocation/examples/cloud/GettingStarted.java">GitHub</a>.</p>
 <p>Required Maven Dependencies:</p><ul>
-<li>com.51degrees.geo-location</li>
+<li><a href="https://central.sonatype.com/artifact/com.51degrees/geo-location/">com.51degrees.geo-location</a></li>
 </ul>
 <ol type="1">
 <li>Build a new Pipeline to use the 51Degrees cloud service, with lazy loading configured to allow up to a second for a response from the service. <div class="c-code__block c-code__block--outline"><div class="c-code__line">Pipeline pipeline = <span class="c-code__keyword">new</span> GeoLocationPipelineBuilder(loggerFactory)</div><div class="c-code__line">    .useCloud(resourceKey, Enums.GeoLocationProvider.FiftyOneDegrees)</div><div class="c-code__line">    .useLazyLoading(1000)</div><div class="c-code__line">    .build();</div></div></li>

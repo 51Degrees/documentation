@@ -112,8 +112,8 @@ $(document).ready(function(){initNavTree('_combining_services_8java-example.html
 <div class="g-docs__primary" id="primary">
 <p>Getting started example of using 51Degrees geo-location alongside 51Degrees device detection.This example is available in full on <a href="https://github.com/51Degrees/location-java/blob/master/geo-location.shell.examples/src/main/java/fiftyone/geolocation/examples/CombiningServices.java">GitHub</a>.</p>
 <p>Required Maven Dependencies:</p><ul>
-<li>com.51degrees.geo-location</li>
-<li>com.51degrees.device-detection</li>
+<li><a href="https://central.sonatype.com/artifact/com.51degrees/geo-location/">com.51degrees.geo-location</a></li>
+<li><a href="https://central.sonatype.com/artifact/com.51degrees/device-detection/">com.51degrees.device-detection</a></li>
 </ul>
 <ol type="1">
 <li>Build new cloud-based geo-location, and device detection engines, along with the cloud request engine on which they rely. <div class="c-code__block c-code__block--outline"><div class="c-code__line">CloudRequestEngine cloudRequestEngine =</div><div class="c-code__line">    <span class="c-code__keyword">new</span> CloudRequestEngineBuilder(loggerFactory, httpClient)</div><div class="c-code__line">    .setResourceKey(resourceKey)</div><div class="c-code__line">    .build();</div><div class="c-code__line">AspectEngine deviceDetectionEngine =</div><div class="c-code__line">    <span class="c-code__keyword">new</span> DeviceDetectionCloudEngineBuilder(loggerFactory, httpClient, cloudRequestEngine)</div><div class="c-code__line">    .build();</div><div class="c-code__line">AspectEngine locationEngine =</div><div class="c-code__line">    <span class="c-code__keyword">new</span> GeoLocationCloudEngineBuilder(loggerFactory, cloudRequestEngine)</div><div class="c-code__line">    .build(Enums.GeoLocationProvider.FiftyOneDegrees);</div></div></li>

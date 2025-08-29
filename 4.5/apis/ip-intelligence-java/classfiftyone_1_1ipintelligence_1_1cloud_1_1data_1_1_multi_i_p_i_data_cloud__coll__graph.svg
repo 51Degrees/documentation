@@ -11,7 +11,7 @@
 <!-- Node3 -->
 <g id="node1" class="node">
 <title>Node3</title>
-<g id="a_node1"><a xlink:title="Encapsulates a list of IPIntelligenceData instances which can be returned by the 51Degrees cloud serv...">
+<g id="a_node1"><a xlink:title="Encapsulates a list of IPIntelligenceData instances which can be returned by the 51Degrees Cloud serv...">
 <polygon fill="#bfbfbf" stroke="black" points="188,-30 188,-60 367,-60 367,-30 188,-30"/>
 <text text-anchor="start" x="196" y="-48" font-family="Helvetica,sans-Serif" font-size="10.00">fiftyone.ipintelligence.cloud.data.</text>
 <text text-anchor="middle" x="277.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">MultiIPIDataCloud</text>
