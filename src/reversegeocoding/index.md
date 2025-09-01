@@ -6,3 +6,5 @@
 @subpage ReverseGeocoding_Quickstart
 
 @subpage ReverseGeocoding_Examples_Index
+
+@subpage ReverseGeocoding_Examples_CombiningServices

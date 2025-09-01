@@ -6,5 +6,3 @@
 @subpage ReverseGeocoding_Examples_ConfigureFromFile_51DegreesCloud
 
 @subpage ReverseGeocoding_Examples_WebIntegration_Examples
-
-@subpage ReverseGeocoding_Examples_CombiningServices
