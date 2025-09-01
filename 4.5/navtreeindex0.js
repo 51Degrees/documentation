@@ -126,7 +126,7 @@ var NAVTREEINDEX0 =
 "_product_summaries__feature_matrix.html":[6,1],
 "_product_summaries__index.html":[6],
 "_product_summaries__tested_versions.html":[6,2],
-"_reverse_geocoding__examples__combining_services.html":[3,2,3],
+"_reverse_geocoding__examples__combining_services.html":[3,3],
 "_reverse_geocoding__examples__configure_from_file_51_degrees_cloud.html":[3,2,1],
 "_reverse_geocoding__examples__getting_started_51_degrees_cloud.html":[3,2,0],
 "_reverse_geocoding__examples__index.html":[3,2],
