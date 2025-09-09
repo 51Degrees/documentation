@@ -43,7 +43,7 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 
 **Benefits:**
 - **Complete user context** - Combine location/network data with device characteristics
-- **Enhanced fraud detection** - Cross-reference device fingerprints with IP risk data
+- **Enhanced fraud detection** - Cross-reference device properties with IP risk data
 - **Optimized content delivery** - Device capabilities + geographic location for perfect targeting
 - **Advanced analytics** - Rich user segmentation with both device and location dimensions
 

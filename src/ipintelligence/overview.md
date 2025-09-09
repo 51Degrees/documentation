@@ -109,5 +109,5 @@ When you combine IP Intelligence with Device Detection, you get powerful insight
 | **Responsive Data** | Country | Desktop | Optimize country drop down list to select most likely country |
 | **Content Delivery** | Geographic location | Device capabilities | Select optimal CDN endpoint and media format |
 | **Advertising** | Location + ISP data | Device properties | Location-relevant ads with device-appropriate formats |
-| **Fraud Detection** | IP risk assessment | Device fingerprint | Identify suspicious device/location combinations |
+| **Fraud Detection** | IP risk assessment | Device properties | Identify suspicious device/location combinations |
 | **Analytics** | Geographic location | Device capabilities | Enhanced user segmentation and behavior analysis |
