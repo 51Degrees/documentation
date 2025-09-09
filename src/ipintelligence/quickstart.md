@@ -17,7 +17,7 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 **Things to consider:**
 - **Internet dependency** - Requires network connectivity
 - **Latency** - Network round-trip time for each request
-- **Data privacy** - Processing occurs on 51Degrees infrastructure
+- **Data processing** - Occurs on 51Degrees infrastructure
 
 **Licensing:** Will require a [Resource Key](https://configure.51degrees.com) eventually, but for now [contact us](https://51degrees.com/contact-us) to obtain an enterprise IPI data file for testing
 
@@ -25,8 +25,8 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 **Best for:** High-performance, privacy-sensitive, or offline environments
 
 **Benefits:**
-- **Ultra-low latency** - Sub-microsecond detection time with in-process deployment
-- **Complete privacy** - All processing stays within your infrastructure
+- **Ultra-low latency** - Sub-millisecond detection time with in-process deployment
+- **Data processing** - Stays within your infrastructure with optional usage sharing available
 - **High throughput** - Designed for high-load scenarios
 - **Offline capable** - No internet dependency for detection
 - **Full control** - Customize update schedules and deployment architecture
@@ -34,7 +34,7 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 **Things to consider:**
 - **Setup required** - Initial configuration and data file management
 - **Resource usage** - Uses local CPU/RAM (optimized but measurable)
-- **Update management** - Periodic data file updates needed for latest data
+- **Automatic update** - Daily automated updates without restarting the process
 
 **Licensing:** Requires a [License Key](https://51degrees.com/pricing)
 
