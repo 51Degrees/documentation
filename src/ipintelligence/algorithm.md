@@ -27,8 +27,8 @@ The physical data structure is extremely space efficient and performant when com
 The algorithm is implemented in C code for maximum portability and performance including in edge computing and network appliances. Key characteristics include;
 
 - **In-process** - all the data and compute operation resides in the same process delivering minimum latency and the best possible performance in practice.
-- **In-memory** - all data is loaded into memory for maximum performance Ideal for offline processing or highly parallelized environments.
-- **On-disk** - data is retained on disk for fastest start up performance. Ideal for server less and web environments.
+- **In-memory** - all data is loaded into memory for maximum performance. Ideal for offline processing or highly parallelized environments.
+- **On-disk** - data is retained on disk for fastest start up performance. Ideal for serverless and web environments.
 - **Simple** - high level language APIs make deployment simple for developers of all experience levels.
 - **Automatic Update** - data can be updated automatically without requiring a process restart.
 
