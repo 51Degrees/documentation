@@ -18,23 +18,30 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y powershell
           
-      - name: Generate API Documentation
+      - name: Generate Documentation
         run: |
           # Run our custom script to generate documentation for all API repos
-          pwsh ./ci/generate-documentation.ps1 -Version "4.5"
+          pwsh ./ci/generate-documentation.ps1 -Version "4.5" -GitHubToken ${{ secrets.ACCESS_TOKEN }} -GenerateOnly
           
-      - name: Upload API Documentation
+      - name: Upload Documentation
         uses: actions/upload-artifact@v4
         with:
-          name: api-documentation
-          path: 4.5/apis/
+          name: documentation
+          path: 4.5/
           
-  # Run the common workflow on each pull request
-  Generate_Documentation_Preview:
-    needs: Generate_API_Documentation
-    uses: 51Degrees/common-ci/.github/workflows/generate-documentation-preview.yml@main
-    with:
-      repo-name: ${{ github.event.repository.name }}
-      pull-request-id: ${{ github.event.number }}
-    secrets: 
-      token: ${{ secrets.ACCESS_TOKEN }}
+      - name: Comment PR with artifact link
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          script: |
+            const artifactUrl = `https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}#artifacts`;
+            const comment = `📚 **Documentation Preview Generated**
+            You can download the documentation artifact here:
+            🔗 [Download Documentation Artifact](${artifactUrl})`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
