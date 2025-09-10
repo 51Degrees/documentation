@@ -12,7 +12,7 @@ See the [IP Tester](https://51degrees.com/developers/developers/ip-tester) to co
 
 For those seeking to replace an existing IP solution, or run 51Degrees in parallel, we offer the legacy latitude and longitude properties together with a minimum (`AccuracyRadiusMin`) and maximum accuracy (`AccuracyRadiusMax`) radius. A circle.
 
-The minimum accuracy radius appears to correspond most closely to other solutions results and is the value that is recommended to use for comparison.
+The minimum accuracy radius appears to correspond most closely to other solutions' results and is the value that is recommended to use for comparison.
 
 See the [property dictionary](https://51degrees.com/developers/property-dictionary?item=Location%7CCoordinates%20Accuracy) for more information.
 
