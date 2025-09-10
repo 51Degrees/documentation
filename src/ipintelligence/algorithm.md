@@ -8,7 +8,7 @@
 
 ### Data Structure
 
-Vertexes are variable length bits forming lower and upper limits corresponding to bit positions in the target IP address.
+Vertices are variable length bits forming lower and upper limits corresponding to bit positions in the target IP address.
 
 Bits from the target IP address are evaluated against these limits to identify five possible edges.
 
