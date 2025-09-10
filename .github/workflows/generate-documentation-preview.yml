@@ -22,17 +22,31 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
-          # In PR context, we want to use the head branch (source branch of PR)
-          # GitHub checks out the merge commit in detached HEAD state
-          BRANCH_NAME="${{ github.head_ref }}"
-          if [ -z "$BRANCH_NAME" ]; then
-            # Fallback if not in PR context
-            BRANCH_NAME="${{ github.ref_name }}"
+          # For PR preview, we want:
+          # - Documentation repo: use PR branch (head_ref)
+          # - API repos: use base branch (base_ref) for stable API documentation
+          
+          # Get the PR branch and base branch
+          PR_BRANCH="${{ github.head_ref }}"
+          BASE_BRANCH="${{ github.base_ref }}"
+          
+          # Fallback if not in PR context
+          if [ -z "$PR_BRANCH" ]; then
+            PR_BRANCH="${{ github.ref_name }}"
           fi
-          echo "Using branch: $BRANCH_NAME"
+          if [ -z "$BASE_BRANCH" ]; then
+            BASE_BRANCH="${{ github.ref_name }}"
+          fi
+          
+          echo "Documentation repo using branch: $PR_BRANCH"
+          echo "API repos will use branch: $BASE_BRANCH"
           
           # Create a local branch reference so git rev-parse works correctly
-          git checkout -B "$BRANCH_NAME"
+          # This fixes the "HEAD" issue in GitHub Actions
+          git checkout -B "$PR_BRANCH"
+          
+          # Set environment variable for the script to use for API repos
+          export API_BRANCH="$BASE_BRANCH"
           
           # Run our custom script to generate documentation for all API repos
           pwsh ./ci/generate-documentation.ps1 -Version "4.5" -GenerateOnly

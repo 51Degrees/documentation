@@ -174,6 +174,13 @@ $repositories = @(
 $currentBranch = git rev-parse --abbrev-ref HEAD
 Write-Host "Current documentation branch: $currentBranch"
 
+# For API repos, use the API_BRANCH env var if set (for PR previews)
+# This allows using base branch for API repos while PR branch for docs
+$apiBranch = if ($env:API_BRANCH) { $env:API_BRANCH } else { $currentBranch }
+if ($apiBranch -ne $currentBranch) {
+    Write-Host "API repositories will use branch: $apiBranch"
+}
+
 # Set output directory based on version
 $OutputDir = Join-Path (Get-Location) $Version
 
@@ -235,12 +242,12 @@ foreach ($repoItem in $repositories) {
         $examplesRepo = $repoItem.examples
         
         # Call helper script for main+examples repo
-        & "$PSScriptRoot/generate-api-repo-documentation.ps1" -RepoName $mainRepo -TempDir $tempDir -Version $Version -CurrentBranch $currentBranch -CommonCiPath $commonCiPath -ExamplesRepo $examplesRepo -ShowDoxygenOutput:$ShowDoxygenOutput
+        & "$PSScriptRoot/generate-api-repo-documentation.ps1" -RepoName $mainRepo -TempDir $tempDir -Version $Version -CurrentBranch $apiBranch -CommonCiPath $commonCiPath -ExamplesRepo $examplesRepo -ShowDoxygenOutput:$ShowDoxygenOutput
     } else {
         $repo = $repoItem
         
         # Call helper script for standalone repo
-        & "$PSScriptRoot/generate-api-repo-documentation.ps1" -RepoName $repo -TempDir $tempDir -Version $Version -CurrentBranch $currentBranch -CommonCiPath $commonCiPath -ShowDoxygenOutput:$ShowDoxygenOutput
+        & "$PSScriptRoot/generate-api-repo-documentation.ps1" -RepoName $repo -TempDir $tempDir -Version $Version -CurrentBranch $apiBranch -CommonCiPath $commonCiPath -ShowDoxygenOutput:$ShowDoxygenOutput
     }
 }
 
