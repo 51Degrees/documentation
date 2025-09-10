@@ -15,7 +15,7 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 
 - **Network data:** ISP, organization, connection type
 - **Location data:** Country, region, city with probability weighting
-- **Ultra-low latency:** Sub-microsecond detection time with in-process deployment
+- **Ultra-low latency:** Sub-millisecond with in-process in-memory deployment
 - **Performance-critical ready:** Ideal for real-time servers, edge/load balancers, and high-load scenarios
 - **Deployment flexibility:** In-process by default, with optional out-of-process or separate server deployment
 
@@ -30,11 +30,11 @@ See [technical specification](https://github.com/51Degrees/specifications/blob/m
 
 ### Enhanced Coverage
 
-Network and location data sourced from multiple authoritative databases to provide comprehensive global coverage.
+Data sourced from aggregating real device usage and multiple authoritative databases to provide comprehensive global coverage.
 
-### Privacy Protection
+### Privacy Protections
 
-Coordinates are [randomized](@ref IpIntelligence_Features_Randomization) to protect user privacy while maintaining accuracy for practical applications.
+Coordinates returned from IP address are [randomized](@ref IpIntelligence_Features_Randomization) to ensure output data can never be considered personal data while maintaining accuracy for practical applications.
 
 ### Accuracy Weighting
 
@@ -42,7 +42,7 @@ Multiple data sources are [weighted](@ref IpIntelligence_Features_Weighting) to 
 
 ### Device Detection Integration
 
-Combine IP Intelligence with [Device Detection](@ref DeviceDetection_Overview) for comprehensive user profiling and enhanced accuracy.
+Combine IP Intelligence with [Device Detection](@ref DeviceDetection_Overview) for comprehensive optimization and enhanced accuracy.
 
 ---
 
@@ -105,9 +105,10 @@ Convert coordinates to human-readable addresses using our [Reverse Geocoding ser
 When you combine IP Intelligence with Device Detection, you get powerful insights:
 
 | Use Case | IP Intelligence | Device Detection | Enhanced Outcome |
-|----------|----------------|------------------|------------------|
-| **Responsive Design** | Mobile carrier detected | Desktop User-Agent | Optimize for mobile despite desktop UA |
+|----------|-----------------|------------------|------------------|
+| **Responsive Data** | Country | Desktop | Optimize country drop down list to select most likely country |
 | **Content Delivery** | Geographic location | Device capabilities | Select optimal CDN endpoint and media format |
 | **Advertising** | Location + ISP data | Device properties | Location-relevant ads with device-appropriate formats |
-| **Fraud Detection** | IP risk assessment | Device fingerprint | Identify suspicious device/location combinations |
+| **Fraud Detection** | IP risk assessment | Device properties | Identify suspicious device/location combinations |
+| **eCommerce** | Geographic location | NA | Compare address data to the reported device location |
 | **Analytics** | Geographic location | Device capabilities | Enhanced user segmentation and behavior analysis |

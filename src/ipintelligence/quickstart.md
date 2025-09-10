@@ -17,16 +17,16 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 **Things to consider:**
 - **Internet dependency** - Requires network connectivity
 - **Latency** - Network round-trip time for each request
-- **Data privacy** - Processing occurs on 51Degrees infrastructure
+- **Data processing** - Occurs on 51Degrees infrastructure
 
-**Licensing:** Will require a [Resource Key](https://configure.51degrees.com) eventually, but for now [contact us](https://51degrees.com/contact-us) to obtain an enterprise IPI data file for testing
+**Licensing:** Will require a [Resource Key](https://configure.51degrees.com) once launched. [Contact us](https://51degrees.com/contact-us) to start your IP Intelligence trial.
 
 ### On-premise Deployment
 **Best for:** High-performance, privacy-sensitive, or offline environments
 
 **Benefits:**
-- **Ultra-low latency** - Sub-microsecond detection time with in-process deployment
-- **Complete privacy** - All processing stays within your infrastructure
+- **Ultra-low latency** - Sub-millisecond detection time with in-process deployment
+- **Data processing** - Stays within your infrastructure with optional usage sharing available
 - **High throughput** - Designed for high-load scenarios
 - **Offline capable** - No internet dependency for detection
 - **Full control** - Customize update schedules and deployment architecture
@@ -34,7 +34,7 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 **Things to consider:**
 - **Setup required** - Initial configuration and data file management
 - **Resource usage** - Uses local CPU/RAM (optimized but measurable)
-- **Update management** - Periodic data file updates needed for latest data
+- **Automatic update** - Daily automated updates without restarting the process
 
 **Licensing:** Requires a [License Key](https://51degrees.com/pricing)
 
@@ -43,7 +43,7 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 
 **Benefits:**
 - **Complete user context** - Combine location/network data with device characteristics
-- **Enhanced fraud detection** - Cross-reference device fingerprints with IP risk data
+- **Enhanced fraud detection** - Cross-reference device properties with IP risk data
 - **Optimized content delivery** - Device capabilities + geographic location for perfect targeting
 - **Advanced analytics** - Rich user segmentation with both device and location dimensions
 

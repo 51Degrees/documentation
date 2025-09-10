@@ -1,5 +1,11 @@
 @page IpIntelligence_Features_Index IP Intelligence Features
 
+@subpage IpIntelligence_Features_Confidence
+
+@subpage IpIntelligence_Features_Area
+
+@subpage IpIntelligence_Features_Human
+
 @subpage IpIntelligence_Features_Weighting
 
 @subpage IpIntelligence_Features_Randomization

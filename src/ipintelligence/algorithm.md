@@ -2,37 +2,34 @@
 
 # IP Intelligence Algorithm
 
-51Degrees IP Intelligence uses a tree-based algorithm for IP address geolocation and network identification.
+51Degrees IP Intelligence uses a directed acyclic graph to identify geolocation and network from a IP v4 or v6 address.
 
 ## Core Algorithm Design
 
-### Tree Forest Data Structure
+### Data Structure
 
-The algorithm uses a **forest of trees** to efficiently evaluate IP addresses:
+Vertices are variable length bits forming lower and upper limits corresponding to bit positions in the target IP address.
 
-- **Nodes**: Fixed-width records with bit-packed data containing value, span index, and navigation flags
-- **Spans**: Define IP address ranges with variable bit lengths supporting both IPv4 (32-bit) and IPv6 (128-bit)
-- **Clusters**: Group nodes for efficient traversal with 256 span index mappings enabling binary search optimization
+Bits from the target IP address are evaluated against these limits to identify five possible edges.
 
-### Evaluation Process
+1. Less than the lower limit
+2. Equal to the lower limit
+3. Between the lower and upper limit
+4. Equal to the upper limit
+5. Greater than the upper limit
 
-The algorithm performs **bit-by-bit traversal** of IP addresses:
+When an edge is found that corresponds to a location or network profile a result is returned.
 
-1. **Initialization**: Position cursor at graph root entry
-2. **Bit processing**: Traverse IP address bits from most to least significant  
-3. **Span comparison**: Compare current IP bits against span limits
-4. **Navigation**: Select path based on comparison results (less than, equal, between, greater than)
-5. **Termination**: Continue until leaf node found or IP bits exhausted
+The physical data structure is extremely space efficient and performant when compared to previous data structures.
 
-### Performance Optimizations
+### Implementation
 
-- **Binary search** on clustered nodes for logarithmic complexity
-- **Bit manipulation** with efficient packed data structures
-- **Lazy loading** of spans and clusters to minimize memory usage
-- **Memory-efficient** collections with proper cleanup
+The algorithm is implemented in C code for maximum portability and performance including in edge computing and network appliances. Key characteristics include;
 
-## Technical Characteristics
+- **In-process** - all the data and compute operation resides in the same process delivering minimum latency and the best possible performance.
+- **In-memory** - all data is loaded into memory for maximum performance. Ideal for offline processing or highly parallelized environments.
+- **On-disk** - data is retained on disk for fastest start up performance. Ideal for serverless and web environments.
+- **Simple** - high-level language APIs make deployment simple for developers of all experience levels.
+- **Automatic Update** - data can be updated automatically without requiring a process restart.
 
-- **Variable-length spans** for optimal space utilization
-- **Comprehensive tracing** system for debugging and validation
-- **Support for both file and memory-based data sources**
+See the [C code](https://github.com/51Degrees/ip-graph-cxx) to find out more about the implementation.
