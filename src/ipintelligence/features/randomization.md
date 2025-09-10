@@ -6,5 +6,4 @@ Latitude and longitude values returned by the IP intelligence engine are randomi
 
 Randomization occurs in the data generation process. Values returned from a specific data file will always be the same for a given IP address. A different data file will have slightly different values returned for latitude and longitude given the same IP address.
 
-No other values are affected by this randomization. i.e. a value for the Town property will always be the town
-which the original coordinates indicate.
+No other values are affected by this randomization. i.e. a value for the Town property will always be the town which the original coordinates indicate.
