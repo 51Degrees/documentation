@@ -77,7 +77,7 @@ $(document).ready(function(){initNavTree('_ip_intelligence__overview.html','');}
 <ul>
 <li><b>Network data:</b> ISP, organization, connection type</li>
 <li><b>Location data:</b> Country, region, city with probability weighting</li>
-<li><b>Ultra-low latency:</b> Sub-microsecond detection time with in-process deployment</li>
+<li><b>Ultra-low latency:</b> Sub-millisecond with in-process in-memory deployment</li>
 <li><b>Performance-critical ready:</b> Ideal for real-time servers, edge/load balancers, and high-load scenarios</li>
 <li><b>Deployment flexibility:</b> In-process by default, with optional out-of-process or separate server deployment</li>
 </ul>
@@ -86,13 +86,13 @@ $(document).ready(function(){initNavTree('_ip_intelligence__overview.html','');}
 <hr/>
 <h2>Advanced Features</h2>
 <h3>Enhanced Coverage</h3>
-<p>Network and location data sourced from multiple authoritative databases to provide comprehensive global coverage.</p>
-<h3>Privacy Protection</h3>
-<p>Coordinates are <a class="el" href="_ip_intelligence__features__randomization.html">randomized</a> to protect user privacy while maintaining accuracy for practical applications.</p>
+<p>Data sourced from aggregating real device usage and multiple authoritative databases to provide comprehensive global coverage.</p>
+<h3>Privacy Protections</h3>
+<p>Coordinates returned from IP address are <a class="el" href="_ip_intelligence__features__randomization.html">randomized</a> to ensure output data can never be considered personal data while maintaining accuracy for practical applications.</p>
 <h3>Accuracy Weighting</h3>
 <p>Multiple data sources are <a class="el" href="_ip_intelligence__features__weighting.html">weighted</a> to provide the most accurate results possible.</p>
 <h3>Device Detection Integration</h3>
-<p>Combine IP Intelligence with <a class="el" href="_device_detection__overview.html">Device Detection</a> for comprehensive user profiling and enhanced accuracy.</p>
+<p>Combine IP Intelligence with <a class="el" href="_device_detection__overview.html">Device Detection</a> for comprehensive optimization and enhanced accuracy.</p>
 <hr/>
 <h2>Integration Options</h2>
 <p>Choose what fits your stack:</p>
@@ -131,13 +131,15 @@ $(document).ready(function(){initNavTree('_ip_intelligence__overview.html','');}
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Use Case  </td><td class="c-table__cell">IP Intelligence  </td><td class="c-table__cell">Device Detection  </td><td class="c-table__cell">Enhanced Outcome   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><b>Responsive Design</b>  </td><td class="c-table__cell">Mobile carrier detected  </td><td class="c-table__cell">Desktop User-Agent  </td><td class="c-table__cell">Optimize for mobile despite desktop UA   </td></tr>
+<td class="c-table__cell"><b>Responsive Data</b>  </td><td class="c-table__cell">Country  </td><td class="c-table__cell">Desktop  </td><td class="c-table__cell">Optimize country drop down list to select most likely country   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><b>Content Delivery</b>  </td><td class="c-table__cell">Geographic location  </td><td class="c-table__cell">Device capabilities  </td><td class="c-table__cell">Select optimal CDN endpoint and media format   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><b>Advertising</b>  </td><td class="c-table__cell">Location + ISP data  </td><td class="c-table__cell">Device properties  </td><td class="c-table__cell">Location-relevant ads with device-appropriate formats   </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><b>Fraud Detection</b>  </td><td class="c-table__cell">IP risk assessment  </td><td class="c-table__cell">Device fingerprint  </td><td class="c-table__cell">Identify suspicious device/location combinations   </td></tr>
+<td class="c-table__cell"><b>Fraud Detection</b>  </td><td class="c-table__cell">IP risk assessment  </td><td class="c-table__cell">Device properties  </td><td class="c-table__cell">Identify suspicious device/location combinations   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><b>eCommerce</b>  </td><td class="c-table__cell">Geographic location  </td><td class="c-table__cell">NA  </td><td class="c-table__cell">Compare address data to the reported device location   </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><b>Analytics</b>  </td><td class="c-table__cell">Geographic location  </td><td class="c-table__cell">Device capabilities  </td><td class="c-table__cell">Enhanced user segmentation and behavior analysis   </td></tr>
 </table>

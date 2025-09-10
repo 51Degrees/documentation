@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>51Degrees API Documentation: IP Intelligence Algorithm</title>
+<title>51Degrees API Documentation: Confidence</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,43 +56,30 @@
 	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
   <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('_ip_intelligence__algorithm.html','');});
+$(document).ready(function(){initNavTree('_ip_intelligence__features__confidence.html','');});
 /* @license-end */
 </script>
 <div id="doc-content" class="g-docs__content">
 <div class="PageDoc"><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__algorithm.html">IP Intelligence Algorithm</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__features__index.html">IP Intelligence Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__features__confidence.html">Confidence</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">IP Intelligence Algorithm </h2></div><!--header-->
+<h2 class="g-docs__page-title">Confidence </h2></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><h1 class="g-docs__section-heading">IP Intelligence Algorithm</h1>
-<p>51Degrees IP Intelligence uses a directed acyclic graph to identify geolocation and network from a IP v4 or v6 address.</p>
-<h2>Core Algorithm Design</h2>
-<h3>Data Structure</h3>
-<p>Vertices are variable length bits forming lower and upper limits corresponding to bit positions in the target IP address.</p>
-<p>Bits from the target IP address are evaluated against these limits to identify five possible edges.</p>
-<ol type="1">
-<li>Less than the lower limit</li>
-<li>Equal to the lower limit</li>
-<li>Between the lower and upper limit</li>
-<li>Equal to the upper limit</li>
-<li>Greater than the upper limit</li>
-</ol>
-<p>When an edge is found that corresponds to a location or network profile a result is returned.</p>
-<p>The physical data structure is extremely space efficient and performant when compared to previous data structures.</p>
-<h3>Implementation</h3>
-<p>The algorithm is implemented in C code for maximum portability and performance including in edge computing and network appliances. Key characteristics include;</p>
+<section class="g-docs__section"><h1 class="g-docs__section-heading">Overview</h1>
+<p>Many factors determine the reliability of IP Intelligence results. For example; a request from a data center that acts as a proxy for a very many countries might be completely useless for location identification.</p>
+<p>The <code>LocationConfidence</code> property should always be consulted before considering how to use the results. Three different values are provided; <code>High</code>, <code>Medium</code>, and <code>Low</code>.</p>
+<p>See the <a href="https://51degrees.com/developers/developers/ip-tester">IP Tester</a> to see how the <code>LocationConfidence</code> property varies for different IP addresses.</p>
+<h2>Values</h2>
+<p>Always check the value of <code>LocationConfidence</code> when determining how to use IP Intelligence results.</p>
 <ul>
-<li><b>In-process</b> - all the data and compute operation resides in the same process delivering minimum latency and the best possible performance.</li>
-<li><b>In-memory</b> - all data is loaded into memory for maximum performance. Ideal for offline processing or highly parallelized environments.</li>
-<li><b>On-disk</b> - data is retained on disk for fastest start up performance. Ideal for serverless and web environments.</li>
-<li><b>Simple</b> - high-level language APIs make deployment simple for developers of all experience levels.</li>
-<li><b>Automatic Update</b> - data can be updated automatically without requiring a process restart.</li>
+<li><b>High</b> confidence results can be relied upon and considered useful for all practical purposes.</li>
+<li><b>Medium</b> confidence results might be useful where the use case can tolerate a degree of inaccuracy.</li>
+<li><b>Low</b> or <b>Unknown</b> confidence results should be discarded when the results might be used to make decisions that have a consequences. Consider asking the user to share their location via device APIs such as GPS, or enter their postal address.</li>
 </ul>
-<p>See the <a href="https://github.com/51Degrees/ip-graph-cxx">C code</a> to find out more about the implementation. </p>
+<p>See the <a href="https://51degrees.com/developers/property-dictionary?item=Location%7CCoordinates%20Accuracy">property dictionary</a> for more information. </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
