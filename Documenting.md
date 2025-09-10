@@ -313,8 +313,8 @@ All terms should use the same format as the 51Degrees glossary, for capitals, hy
 ## Dependencies
 ### DoxyGen
 We use a customised build of DoxyGen.
-The source code is available from the [DoxyGen](https://51degrees.visualstudio.com/Documentation/_git/DoxyGen) repository. However, building from source can be [fiddly](https://www.doxygen.nl/manual/install.html).
-Pre-built binaries can be downloaded from Sharepoint for [Linux](https://51degrees.sharepoint.com/:u:/r/Product%20Team/doxygen-linux.zip?csf=1&web=1&e=fTWXlN) or [Windows](https://51degrees.sharepoint.com/:u:/r/Product%20Team/doxygen-win.zip?csf=1&web=1&e=T7MvWo).
+The source code is available from the [DoxyGen](https://github.com/51Degrees/doxygen) repository. However, building from source can be [fiddly](https://www.doxygen.nl/manual/install.html).
+Pre-built binaries can be downloaded from Sharepoint for [Linux](https://51degrees.sharepoint.com/:u:/r/Product%20Team/doxygen-linux.zip?csf=1&web=1&e=fTWXlN) or [Windows](https://51degrees.sharepoint.com/:u:/r/Product%20Team/doxygen-win.zip?csf=1&web=1&e=T7MvWo).  The Linux pre-buit binaries also live in the [Tools Repo](https://github.com/51Degrees/tools/tree/main/DoxyGen).  
 
 ### GraphVis
 In order for DoxyGen to generate nice diagrams, [GraphVis 2.38](https://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.msi) must be installed.
