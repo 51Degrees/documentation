@@ -19,7 +19,7 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 - **Latency** - Network round-trip time for each request
 - **Data processing** - Occurs on 51Degrees infrastructure
 
-**Licensing:** Will require a [Resource Key](https://configure.51degrees.com) eventually, but for now [contact us](https://51degrees.com/contact-us) to obtain an enterprise IPI data file for testing
+**Licensing:** Will require a [Resource Key](https://configure.51degrees.com) once launched. [Contact us](https://51degrees.com/contact-us) to start your IP Intelligence trial.
 
 ### On-premise Deployment
 **Best for:** High-performance, privacy-sensitive, or offline environments
