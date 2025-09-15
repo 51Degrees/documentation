@@ -6,7 +6,7 @@ Many factors determine the reliability of IP Intelligence results. For example; 
 
 The `LocationConfidence` property should always be consulted before considering how to use results. Three different values are provided; `High`, `Medium`, and `Low`.
 
-See the [IP Tester](https://51degrees.com/developers/developers/ip-tester) to see how the `LocationConfidence` results vary for different IP addresses.
+See the [IP Tester](https://51degrees.com/developers/ip-tester) to see how the `LocationConfidence` results vary for different IP addresses.
 
 ## Values
 
