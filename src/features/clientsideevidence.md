@@ -160,3 +160,27 @@ For more detailed, language-specific steps, see the
 examples such as the 
 [device detection examples](@ref Examples_DeviceDetection_GettingStarted_Web_Index)
 or [reverse geocoding examples](@ref Examples_ReverseGeocoding_WebIntegration_Examples).
+
+# Static and Quasi-Static Script Approaches
+
+## Policy context
+
+* Apple’s device identification changes are unannounced, frequent, and non-standardised.
+* Detection logic must evolve frequently to remain accurate.
+
+## Performance considerations
+
+* 51Degrees emphasises efficient detection.
+* A single universal test script is not practical or efficient.
+
+## Conceptual static approach
+
+* Explain how a customer might extract relevant JavaScript for specific iPhone groups from the current data file.
+* Recommend refreshing this script daily (or as frequently as possible) to align with 51Degrees’ data updates.
+* Emphasise that exact implementation varies by environment and cannot be provided as a one-size-fits-all solution.
+
+## Containment concept
+
+* Advise server-side script assembly.
+* When the client’s main script is requested, insert the necessary snippet dynamically at server level.
+* This avoids issuing an additional request while keeping the detection logic up to date.
