@@ -160,3 +160,32 @@ For more detailed, language-specific steps, see the
 examples such as the 
 [device detection examples](@ref DeviceDetection_Examples_GettingStarted_Web_Index)
 or [reverse geocoding examples](@ref ReverseGeocoding_Examples_WebIntegration_Examples).
+
+# Static and Quasi-Static Script Approaches
+
+## Implementation Details
+
+### Dynamic Scenario (default)
+We call the following mechanics a dynamic integration scenario and this is the default scenario used by 51Degrees. The client-side evidence collecting script is usually inserted into the page as a script tag like: <script src="<51degrees.core.js URL>" /> which has `src` attribute pointing at the URL which hosts that 51Degrees Pipeline that dynamically produces this 51degrees.core.js script.
+The script consists of the javascript snippet properties that actually do work on the client to collect the client side evidence.  These snippet-properties are retrieved from the data file on the server.  Thus the script is dynamically generated on every request and depends on the type of client (detected from initial evidence).
+
+Here are the details:
+
+1. JavaScript snippet properties that are later executed on the client are stored as part of the data file.  Device Detection Engine on the server retrieves them from the data file as normal properties as part of the detection results.  It is important to note that the values of these properties in the results (like any other properties) depend on the evidence initially provided - f.e. if User-Agent hints that the device is an iPhone, then `javascrpthardwareprofile` property will contain an iPhone-specific client-side code (that will detect the model more precisely upon execution).  If User-Agent signals that the client is a browser running on a macOS - `javascripthardwareprofile` property will contain a Mac-specific code.  There is a finite number of values for this property stored in the data file, but the data file updates daily and may update these JavaScript snippets as well.
+2. JSONBuilderElement and JavaScriptBuilderElement that are part of the Pipeline pack and insert these properties into the JavaScript template (https://github.com/51Degrees/javascript-templates) and produce a complete JavaScript that contains these client-side detection snippets.
+3. The `51degrees.core.js` JavaScript loads on the page and executes snippets one by one.
+4. Upon execution `javascripthardwareprofile` and other snippets store the the collected client-side evidence as `51D_` prefixed sessionStorage (or cookie) keys that can be sent as evidence on subsequent requests to your server or you can collect them otherwise on the client (in your JavaScript) in the callback you pass to `fod.complete`.  Usually you would be interested in the `51D_profileIds` key that allows to match the `profileIds` agains the data file and get detailed information on the device.  Please note that these `profileIds` need to be matched against the same data file that the `javascripthardwareprofile` snippet was retrieved from.
+
+### Semi-static Scenario
+
+Let's imagine you already have some script tag like <script src="<myscript.js URL>" /> integrated into yours or your customer's web page and you can not for some reason integrate another script tag that would fetch dynamic JavaScript as described above.  You would like to have the client-side evidence detection snippets incorporated as part of your already-integrated script.
+
+For this you will need to make your script dynamic to a certain extent and merge the 51Degrees-pipeline-generated script into your script.  You have to do so on every request passing the 51Degrees Pipeline all the HTTP header evidence you get when your script is fetched, because f.e. `javascripthardwareprofile` snippet will differ for iPhone, iPad and Mac.
+
+Alternatively you can pre-generate a short-lived cached variants of the 51Degrees-generated script for iPhone / iPad / Mac devices and then in your script decide which snippet to run.  This may be a semi-static (cached until the next data file update) solution. The most important thing is that the detected `51D_profileIds` are matched against the same data file that `javascripthardwareprofile` snippets were obtained from on the server.
+
+## Conceptual static approach
+
+* Explain how a customer might extract relevant JavaScript for specific iPhone groups from the current data file.
+* Recommend refreshing this script daily (or as frequently as possible) to align with 51Degrees’ data updates.
+* Emphasise that exact implementation varies by environment and cannot be provided as a one-size-fits-all solution.
