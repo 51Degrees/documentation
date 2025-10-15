@@ -168,7 +168,6 @@ or [reverse geocoding examples](@ref Examples_ReverseGeocoding_WebIntegration_Ex
 The default approach is a dynamic integration scenario, but semi-static and conceptual static methods can also be used depending on implementation constraints.
 
 ### Dynamic Scenario (Default)
-#### Description
 In a dynamic integration scenario, the client-side evidence collection script is generated dynamically for each request.
 This ensures that the JavaScript snippets used for detection are always specific to the client’s device or browser context.
 A typical integration example:
@@ -215,7 +214,6 @@ fod.complete(function() {
 
 ## Semi-Static Scenario
 
-#### Description
 If your environment already includes a static script (e.g., `<script src="<myscript.js URL>">`) and cannot add another dynamically generated one, a semi-static integration approach is recommended.
 This method merges 51Degrees-generated snippets into your existing script, allowing some dynamic behaviour while maintaining a mostly static setup.
 
