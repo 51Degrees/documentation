@@ -67,22 +67,6 @@ This profile id is then passed back to the server. When detection is performed, 
 that can be determined from the User-Agent is swapped for the profile that was passed from the 
 client-side code.
 
-# Server-side detection
-
-For customers that are unable to use dynamically generated JavaScript, we have a solution that uses 
-data gathered from static JavaScript to perform the detection server-side.
-
-This feature is currently only available for .NET. Examples are 
-[here](@ref Examples_DeviceDetection_AppleServerSide_Index).
-
-Note that data will still need to be gathered using client-side JavaScript. A snippet containing the JavaScript functions that will retrieve the necessary values from the client device are available from our [cloud service](https://cloud.51degrees.com/cdn/apple-functions.js).
-
-This will need to be integrated into your own infrastructure and the values it collects need to be passed back to the server so they can be supplied as evidence values to the API.
-
-This JavaScript may be updated with new Apple device detection mechanisms in future. These changes would need to be reflected in your own implementation.
-
-The engine that determines the Apple device on the server uses a JSON file, which can be automatically updated using the [normal mechanisms](@ref Features_AutomaticDatafileUpdates). This JSON file can also be downloaded from our [cloud service](https://cloud.51degrees.com/cdn/macintosh.data.json) as needed.
-
 # Further reading
 
 - This [table](@ref DeviceDetection_Features_AppleDeviceTable) contains a break down of exactly which iPhone and iPad models our solution can identify.
