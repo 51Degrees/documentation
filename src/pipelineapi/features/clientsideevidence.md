@@ -185,23 +185,23 @@ This script includes JavaScript snippets that perform client-side evidence colle
 * The final script differs depending on the detected client type.
 
 ### Snippet Retrieval and Integration
-* Snippet properties are stored within the 51Degrees data file.
+* JavaScript snippet properties are stored within the 51Degrees data file.
 * The Device Detection Engine retrieves these as part of the detection results.
 * Example:
-  * If the User-Agent indicates an iPhone, the `javascripthardwareprofile` property contains iPhone-specific code.
+  * If supplied User-Agent corresponds to an iPhone, the `javascripthardwareprofile` property contains iPhone-specific code.
   * If it indicates macOS, the property contains Mac-specific code.
 * These snippets are updated daily with the data file.
 
 ### Script Assembly
-* The JSONBuilderElement and JavaScriptBuilderElement (part of the 51Degrees @Pipeline) inject the snippet properties into a JavaScript template.
+* The `JSONBuilderElement` and `JavaScriptBuilderElement` (part of the 51Degrees @Pipeline) inject the snippet properties into a JavaScript template.
 * Templates are available at: (https://github.com/51Degrees/javascript-templates).
 * The result is the complete `51degrees.core.js` script.
 
 ### Client-Side Execution
 * The `51degrees.core.js` script executes each snippet sequentially in the client browser.
-* Snippets store collected evidence as session storage (or cookies) using `51D_` prefixes, for example:
+* Snippets store collected evidence in the session storage (or cookies) using `51D_` prefixes, for example:
   * `51D_profileIds`
-* This evidence can be sent to the server or accessed in client code through a callback such as:
+* The collected evidence will be sent to the server as property overrides and also received in the client code in a callback provided to a `fod.complete` function:
 ```js
 fod.complete(function() {
     // Handle collected evidence here
@@ -216,6 +216,8 @@ fod.complete(function() {
 
 If your environment already includes a static script (e.g., `<script src="<myscript.js URL>">`) and cannot add another dynamically generated one, a semi-static integration approach is recommended.
 This method merges 51Degrees-generated snippets into your existing script, allowing some dynamic behaviour while maintaining a mostly static setup.
+
+Please note the implementation of this approach is not part of the 51Degrees solution as it involves your custom system, thus you have to implement it yourself - we only give the general outline here.
 
 ### Implementation Options
 
@@ -232,8 +234,6 @@ This method merges 51Degrees-generated snippets into your existing script, allow
 * Always ensure that `51D_profileIds` are matched against the same data file from which snippets were derived.
 
 ## Conceptual Static Approach
-In some cases, a fully static integration may be necessary — for example, in restricted hosting environments, strict CDNs, or offline deployments.
-This approach trades flexibility for control and simplicity.
 
 ### Implementation Considerations
 * **Extraction** - Extract relevant JavaScript snippets (for specific device groups such as iPhones) directly from the current 51Degrees data file.
@@ -246,7 +246,6 @@ There is no one-size-fits-all static solution. Stale or outdated static scripts 
 | ------------- | ----------------- | ---------------- | ---------------- |
 | Dynamic (Default) | Fully dynamic per request | Real-time | Standard 51Degrees integration for dynamic or modern sites |
 | Semi-Static | Cached or merged dynamically | On data file update | When dynamic script loading is restricted |
-| Conceptual Static | Fully static (manually updated) | Daily or frequent manual refresh | Static environments or high-security contexts |
 
 ### Best Practices
 
