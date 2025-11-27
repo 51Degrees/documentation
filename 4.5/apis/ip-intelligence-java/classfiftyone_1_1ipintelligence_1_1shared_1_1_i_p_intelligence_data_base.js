@@ -3,7 +3,7 @@ var classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base =
     [ "IPIntelligenceDataBase", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a7a61b936b8285da14ceff3afa7db8445", null ],
     [ "getAccuracyRadiusMax", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#afbb05699ebd68b8fcc8de5421a867f29", null ],
     [ "getAccuracyRadiusMin", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#aa93fa155a68a7949a6621c6f40fae1c9", null ],
-    [ "getAreas", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#ab2e11ab813a6c2bacb66e9fd5687e153", null ],
+    [ "getAreas", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a36ad233a1710b62d797698a7499658f8", null ],
     [ "getAsn", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a853e872c01c3922af77af4ce3b4569eb", null ],
     [ "getAsnName", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a4c89bcdd758d25c5587465ca93ad7edd", null ],
     [ "getConnectionType", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#ae6f9a39894d7d062a7dd30135221f33a", null ],

@@ -2,7 +2,7 @@ var interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data =
 [
     [ "getAccuracyRadiusMax", "interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data.html#a279d3da6628174818163bb8909b5bab6", null ],
     [ "getAccuracyRadiusMin", "interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data.html#a3260a187f170c0603f2fdc4b51896ada", null ],
-    [ "getAreas", "interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data.html#af5785862ebefa438ad422b1ce247c8a1", null ],
+    [ "getAreas", "interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data.html#ad8c46a0ca9239bbccfbad07ac5241df0", null ],
     [ "getAsn", "interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data.html#a4966d248d61649db22dd39056f985d92", null ],
     [ "getAsnName", "interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data.html#acae2163e00103d36f44ef56258de09e1", null ],
     [ "getConnectionType", "interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data.html#a341cbaff8b236bee4f6fb8d645713d67", null ],

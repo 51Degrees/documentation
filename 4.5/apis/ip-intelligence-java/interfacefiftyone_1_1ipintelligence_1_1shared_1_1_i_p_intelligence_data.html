@@ -121,7 +121,7 @@ Public Member Functions</h2>
 <tr class="c-table__row memitem:a279d3da6628174818163bb8909b5bab6"><td class="c-table__cell">AspectPropertyValue&lt;&#160;Integer&#160;&gt;<!-- insertMemberAlign -->
 &#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data.html#a279d3da6628174818163bb8909b5bab6">getAccuracyRadiusMax</a> ()
 <!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a279d3da6628174818163bb8909b5bab6">Radius in kilometers of the circle centred around the most probable location that encompasses the entire area(s).  <a href="#a279d3da6628174818163bb8909b5bab6">More...</a><!-- endMemberDescription -->
+<div class="c-table__desc memdesc:a279d3da6628174818163bb8909b5bab6">Radius in kilometers of the circle centred around the most probable location that encompasses the entire area.  <a href="#a279d3da6628174818163bb8909b5bab6">More...</a><!-- endMemberDescription -->
 </div></td></tr>
 <!-- member dec start -->
 <!-- startMemberItem() -->
@@ -132,10 +132,10 @@ Public Member Functions</h2>
 </div></td></tr>
 <!-- member dec start -->
 <!-- startMemberItem() -->
-<tr class="c-table__row memitem:af5785862ebefa438ad422b1ce247c8a1"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data.html#af5785862ebefa438ad422b1ce247c8a1">getAreas</a> ()
+<tr class="c-table__row memitem:ad8c46a0ca9239bbccfbad07ac5241df0"><td class="c-table__cell">AspectPropertyValue&lt;&#160;WktString&#160;&gt;<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data.html#ad8c46a0ca9239bbccfbad07ac5241df0">getAreas</a> ()
 <!-- startMemberDescription -->
-<div class="c-table__desc memdesc:af5785862ebefa438ad422b1ce247c8a1">Any shapes associated with the location.  <a href="#af5785862ebefa438ad422b1ce247c8a1">More...</a><!-- endMemberDescription -->
+<div class="c-table__desc memdesc:ad8c46a0ca9239bbccfbad07ac5241df0">Any shapes associated with the location.  <a href="#ad8c46a0ca9239bbccfbad07ac5241df0">More...</a><!-- endMemberDescription -->
 </div></td></tr>
 <!-- member dec start -->
 <!-- startMemberItem() -->
@@ -511,8 +511,8 @@ AspectPropertyValue&lt;&#160;String&#160;&gt;<!-- insertMemberAlign -->
 </div><!-- startIndent -->
 <div class="c-member__body">
 
-<p>Radius in kilometers of the circle centred around the most probable location that encompasses the entire area(s). </p>
-<p>See Areas property. This will likely be a very large distance. It is recommend to use the AccuracyRadiusMin property. </p>
+<p>Radius in kilometers of the circle centred around the most probable location that encompasses the entire area. </p>
+<p>Where multiple areas are returned, this will only cover the area the most probable location is in. See Areas property. This will likely be a very large distance. It is recommend to use the AccuracyRadiusMin property. </p>
 
 <p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#afbb05699ebd68b8fcc8de5421a867f29">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
 <!-- endIndent -->
@@ -559,9 +559,9 @@ AspectPropertyValue&lt;&#160;String&#160;&gt;<!-- insertMemberAlign -->
 </div>
 </article>
 <article class="c-member">
-<a id="af5785862ebefa438ad422b1ce247c8a1"></a><!-- startMemberDoc -->
+<a id="ad8c46a0ca9239bbccfbad07ac5241df0"></a><!-- startMemberDoc -->
 
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af5785862ebefa438ad422b1ce247c8a1">&#9670;&nbsp;</a></span>getAreas()</h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad8c46a0ca9239bbccfbad07ac5241df0">&#9670;&nbsp;</a></span>getAreas()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -570,7 +570,7 @@ AspectPropertyValue&lt;&#160;String&#160;&gt;<!-- insertMemberAlign -->
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">AspectPropertyValue&lt;String&gt; fiftyone.ipintelligence.shared.IPIntelligenceData.getAreas <!-- endMemberDocName -->
+              <td class="c-table__cell">AspectPropertyValue&lt;WktString&gt; fiftyone.ipintelligence.shared.IPIntelligenceData.getAreas <!-- endMemberDocName -->
 </td>
 <!-- startParameterList -->
           <td>(</td>
@@ -590,7 +590,7 @@ AspectPropertyValue&lt;&#160;String&#160;&gt;<!-- insertMemberAlign -->
 <p>Any shapes associated with the location. </p>
 <p>Usually this is the area which the IP range covers. This is returned as a WKT String stored as a reduced format of WKB. </p>
 
-<p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#ab2e11ab813a6c2bacb66e9fd5687e153">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
+<p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a36ad233a1710b62d797698a7499658f8">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
 <!-- endIndent -->
 
 </div>
