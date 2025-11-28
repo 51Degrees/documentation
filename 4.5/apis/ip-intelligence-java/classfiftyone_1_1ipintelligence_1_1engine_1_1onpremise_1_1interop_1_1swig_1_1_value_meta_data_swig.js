@@ -7,6 +7,7 @@ var classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_
     [ "getDescription", "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_value_meta_data_swig.html#a41e49b49dd6df1f6171fe6afea70d5c8", null ],
     [ "getName", "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_value_meta_data_swig.html#af2e8459459a9a960b25555bc279285d8", null ],
     [ "getUrl", "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_value_meta_data_swig.html#ad57636e093538965063d132c77cfe934", null ],
+    [ "getUtf8ValueName", "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_value_meta_data_swig.html#a85f7c7355984b945c3b2be0d864a9f01", null ],
     [ "swigRelease", "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_value_meta_data_swig.html#a6d8c20f005c90d31faa89d8f995ca815", null ],
     [ "swigCMemOwn", "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_value_meta_data_swig.html#af470150701ba45ca4d1b6351b6095a4c", null ]
 ];
