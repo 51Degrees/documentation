@@ -4,6 +4,7 @@ var class_program =
     [ "Configuration", "class_program_1_1_configuration.html", "class_program_1_1_configuration" ],
     [ "Consumer", "class_program_1_1_consumer.html", "class_program_1_1_consumer" ],
     [ "Counter", "class_program_1_1_counter.html", "class_program_1_1_counter" ],
+    [ "Key", "class_program_1_1_key.html", "class_program_1_1_key" ],
     [ "KeyFactory", "class_program_1_1_key_factory.html", "class_program_1_1_key_factory" ],
     [ "Metric", "class_program_1_1_metric.html", "class_program_1_1_metric" ],
     [ "Result", "class_program_1_1_result.html", "class_program_1_1_result" ],
