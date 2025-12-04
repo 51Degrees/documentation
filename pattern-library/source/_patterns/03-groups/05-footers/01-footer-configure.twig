@@ -1,0 +1,12 @@
+{% extends "groups-footer" %}
+
+{% block content %}
+  {% include "groups-basket" %}
+  
+  <div class="g-footer__navigation">
+    <div class="g-footer__next">
+      {% include "components-select" with {'label': 'Review and accept our <a href="#" class="b-link">Cloud Terms</a>', 'id': 'terms'} %}
+      <a href="{{ detailsUrl }}" class="b-btn b-btn--large b-btn--disabled"><em>Next step:</em>&nbsp; <strong>Details</strong><img src="/images/icon-arrow-right-black.svg" class="b-btn__icon b-btn__icon--after" alt="Next"></a>
+    </div>
+  </div>
+{% endblock %}

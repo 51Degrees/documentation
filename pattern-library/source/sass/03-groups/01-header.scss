@@ -1,0 +1,46 @@
+.g-header {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  padding:size(-1) size(0);
+  @include respond-to(sm) {
+    padding:size(2) size(0);
+  }
+  &:before {
+    position:absolute;
+    top:0;
+    left:0px;
+    right:0px;
+    content:"";
+    display:block;
+    height:5px;
+    background:linear-gradient(to right, $colour-red, $colour-yellow);
+  }
+  &--docs {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid $colour-grey-light;
+    background-color: $colour-white;
+    margin-top: 0;
+    padding-top:size(2);
+  }
+  .c-brand {
+    // width:179px;
+    margin:0;
+    
+  }
+  .c-progress {
+    
+  }
+  .c-spacer {
+    display:none;
+    @include respond-to(xl) {
+      display:inline;
+    }
+  }
+}

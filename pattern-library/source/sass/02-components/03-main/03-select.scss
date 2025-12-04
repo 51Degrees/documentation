@@ -1,0 +1,56 @@
+.c-select {
+  position:relative;
+  cursor:pointer;
+  display:inline-flex;
+  &--stacked {
+    width: 100%;
+    margin-bottom: size(-1);
+  }
+}
+
+.c-select__input {
+  @include make-text-hidden();
+  &:checked~.c-select__label {
+    &:before {
+      background-image:url("/images/check-sm-on.svg");
+      .c-select--large & {
+        background-image:url("/images/check-lg-on.svg");
+      }
+    }
+  }
+}
+
+.c-select__label {
+  padding-left: size(4);
+  .c-select--large & {
+    padding-left: size(4);
+    line-height:30px;
+  }
+  &:before {
+    content:"";
+    display:inline-block;
+    background-image:url("/images/check-sm-off.svg");
+    width:20px;
+    height:20px;
+    .c-select--large & {
+      top:4px;
+      width:23px;
+      height:23px;
+      background-image:url("/images/check-lg-off.svg");
+    }
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center center;
+    position:absolute;
+    top:2px;
+    left:0;
+    cursor:pointer;
+  }
+}
+
+.c-select__text {
+  cursor:pointer;
+  &:hover {
+    color: darken( $colour-black, 10% )
+  }
+}

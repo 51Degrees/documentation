@@ -1,0 +1,10 @@
+<div class="c-filter is-openable">
+  <a href="#" class="c-filter__toggle">Filter<span> properties by vendor</span></a>
+  <div class="c-filter__content">
+    <ul class="c-filter__list">
+      {% for vendor in vendors %}
+      <li class="c-filter__item">{% include "components-select" with {'label': vendor.name, 'checked': true} %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

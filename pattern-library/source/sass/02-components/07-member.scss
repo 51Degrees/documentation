@@ -1,0 +1,83 @@
+.c-member {
+  margin-bottom: size(5);
+}
+
+.c-member__title {
+  @include scale('font-size', 2, $lg: 3);
+  padding: size(0) size(3) size(-7);
+  margin: 0;
+  display: inline-block;
+  background-color:$colour-white;
+  box-shadow:0 0 10px 0 rgba($colour-black, 0.1);
+  border-radius: $rounded $rounded 0 0;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    left: 0;
+    bottom: -6px;
+    background-color: $colour-white;
+  }
+}
+
+.c-member__anchor {
+  margin-right: size(-3);
+}
+
+.c-member__count {
+  font-size: size(0);
+  letter-spacing: 2px;
+  font-family: $font-family-code;
+  color: $colour-grey-dark;
+}
+
+.c-member__main {
+  display: block;
+  background-color:$colour-white;
+  box-shadow:0 0 10px 0 rgba($colour-black, 0.1);
+  border-radius: $rounded;
+  padding: 0;
+}
+
+.c-member__title + .c-member__main {
+  border-radius: 0 0 $rounded $rounded;
+}
+
+.c-member__head {
+  padding: size(0) size(3);
+  border-bottom: 3px solid $colour-grey-light;
+}
+
+.c-member__body {
+  padding: size(0) size(3) size(3);
+}
+
+.c-member__small {
+  font-size: size(-1);
+  margin-bottom: size(-5);
+  color: $colour-grey-darker;
+}
+
+.c-member__split {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow-x: auto;
+  @include respond-to(md) {
+    flex-direction: row;
+  }
+}
+.c-member__labels {
+  text-align: left;
+  @include respond-to(md) {
+    text-align: right;
+  }
+  .c-label {
+    display: inline-block;
+    @include respond-to(md) {
+      margin: 0 0 0 size(-10);
+    }
+  }
+}

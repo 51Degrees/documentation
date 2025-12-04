@@ -1,0 +1,14 @@
+@for $i from 0 through 30 {
+  $index: $i - 10;
+  .a-size-#{$index} {
+    width: size($index);
+    height: size($index);
+  }
+}
+
+@for $i from 0 through 30 {
+  $index: $i - 10;
+  .a-font-size-#{$index} {
+    font-size: size($index);
+  }
+}

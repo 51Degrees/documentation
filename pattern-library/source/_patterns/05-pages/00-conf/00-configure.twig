@@ -1,0 +1,10 @@
+{% extends "04-layouts/00-conf/00-conf-index" %}
+
+{% block main %}
+  {% include "groups-search" with {} %}
+  {% include "groups-options" with {} %}
+{% endblock %}
+
+{% block footer %}
+  {% include "groups-footer-configure" with {} %}
+{% endblock %}

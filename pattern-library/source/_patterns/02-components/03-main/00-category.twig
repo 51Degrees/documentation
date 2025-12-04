@@ -1,0 +1,7 @@
+<a href="#" class="c-category__link is-revealable">
+  {{ category.name|default('Lorem ipsum') }}
+  {% if category.count != "" %}
+    <span class="c-category__count c-category__count--selected"></span>
+    <span class="c-category__count">{{ category.count|default('20') }}</span>
+  {% endif %}
+</a>

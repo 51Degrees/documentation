@@ -1,0 +1,23 @@
+.c-category-header {
+  padding:size(-2) size(0);
+  background:$colour-grey-lighter;
+  @include respond-to(xl) {
+    display:none;
+  }
+}
+
+.c-category-header__link {
+  @include make-link();
+  font-weight:$font-weight-bold;
+  &:before {
+    content:"";
+    display:inline-block;
+    background-image:url("/images/icon-arrow-left-black.svg");
+    width:8px;
+    height:14px;
+    margin-right:size(-5);
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center center;
+  }
+}

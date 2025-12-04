@@ -1,0 +1,6 @@
+<span class="c-select {{ alternative ? 'c-select--alternative' }} {{ stacked ? 'c-select--stacked' }}{{ large ? 'c-select--large' }}">
+  <input type="checkbox" class="c-select__input is-selectable" id="customCheck{{ id }}{{ alternative ? '--alternative' }}" data-property="{{ option.name }}" {{ checked ? 'checked' }}>
+  <label class="c-select__label" for="customCheck{{ id }}{{ alternative ? '--alternative' }}">
+  	<span class="c-select__text">{{ label|default('Select this property') }}</span>
+  </label>
+</span>

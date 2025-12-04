@@ -1,0 +1,12 @@
+{% extends "groups-info" %}
+
+{% block content %}
+  <h2 class="g-info__title">Congratulations! You're all set.</h2>
+  
+  <h3 class="g-info__heading">Spread the word</h3>
+  {% include "components-card-share" with {} %}
+  
+  <h3 class="g-info__heading">Keep in touch (optional)</h3>
+  {% include "components-card-register" with {} %}
+  
+{% endblock %}

@@ -1,0 +1,16 @@
+.p-share {
+  
+  .c-progress {
+    display:none;
+  }
+  
+  .g-info {
+    padding:size(0) size(0)size(5) size(0);
+    @include respond-to(md) {
+      padding:size(7) 15%;
+    }
+    @include respond-to(xxl) {
+      padding:size(7) 25%;
+    }
+  }
+}

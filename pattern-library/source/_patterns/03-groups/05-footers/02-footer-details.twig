@@ -1,0 +1,12 @@
+{% extends "groups-footer" %}
+
+{% block content %}
+  <div class="g-footer__navigation">
+    <div class="g-footer__previous">
+      <a href="{{ configureUrl }}" class="b-btn b-btn--large b-btn--secondary"><img src="/images/icon-arrow-left-black.svg" class="b-btn__icon" alt="Previous"><em>Previous step:</em>&nbsp;<strong>Configure</strong></a>
+    </div>
+    <div class="g-footer__next">
+      <a href="{{ implementUrl }}" class="b-btn b-btn--large"><em>Next step:</em>&nbsp;<strong>Implement</strong><img src="/images/icon-arrow-right-black.svg" class="b-btn__icon b-btn__icon--after" alt="Next"></a>
+    </div>
+  </div>
+{% endblock %}

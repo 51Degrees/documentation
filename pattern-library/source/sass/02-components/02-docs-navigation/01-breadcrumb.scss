@@ -1,0 +1,25 @@
+.c-breadcrumb {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 size(5);
+  font-size: size(-1);
+}
+
+.c-breadcrumb__item {
+  display: inline;
+  margin-right: size(-9);
+  &:after {
+    content: "/";
+    margin-left: size(-7);
+  }
+  &:last-child {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.c-breadcrumb__link {
+  @include make-link-docs();
+  font-weight: $font-weight-regular;
+}
