@@ -1,0 +1,30 @@
+name: Build Documentation
+
+on:
+  workflow_dispatch:
+    inputs:
+      dryrun:
+        type: boolean
+        default: false
+  schedule:
+    - cron:  '0 4 * * *'
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+      - run: pwsh ci/generate-documentation.ps1
+
+      - id: changed
+        run: |
+          [[ -n $(git -C gh-pages status --porcelain | tee /dev/stderr) ]] && echo changed=true >> "$GITHUB_OUTPUT"
+      - if: steps.changed.outputs.changed == 'true' && !inputs.dryrun
+        working-directory: gh-pages
+        run: |
+          git add .
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m "Update documentation from $GITHUB_REF_NAME"
+          git push origin HEAD
+
