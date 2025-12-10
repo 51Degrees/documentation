@@ -102,7 +102,8 @@ var annotated =
             [ "IWeightedValue", "interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_i_weighted_value.html", "interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_i_weighted_value" ],
             [ "PropertyMatcher", "interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_property_matcher.html", "interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_property_matcher" ],
             [ "TryGetResult", "classfiftyone_1_1pipeline_1_1core_1_1data_1_1_try_get_result.html", "classfiftyone_1_1pipeline_1_1core_1_1data_1_1_try_get_result" ],
-            [ "WeightedValue", "classfiftyone_1_1pipeline_1_1core_1_1data_1_1_weighted_value.html", "classfiftyone_1_1pipeline_1_1core_1_1data_1_1_weighted_value" ]
+            [ "WeightedValue", "classfiftyone_1_1pipeline_1_1core_1_1data_1_1_weighted_value.html", "classfiftyone_1_1pipeline_1_1core_1_1data_1_1_weighted_value" ],
+            [ "WktString", "classfiftyone_1_1pipeline_1_1core_1_1data_1_1_wkt_string.html", "classfiftyone_1_1pipeline_1_1core_1_1data_1_1_wkt_string" ]
           ] ],
           [ "exceptions", null, [
             [ "EngineRefreshException", "classfiftyone_1_1pipeline_1_1core_1_1exceptions_1_1_engine_refresh_exception.html", "classfiftyone_1_1pipeline_1_1core_1_1exceptions_1_1_engine_refresh_exception" ],

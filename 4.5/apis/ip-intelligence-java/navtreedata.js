@@ -32,7 +32,6 @@ var NAVTREE =
     [ "ip-graph-cxx", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engiba2d67904a72560dc78b3278cbf28bca.html", null ],
     [ "API Specific CI/CD Approach", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence-java-examples_ci__r_e_a_d_m_e.html", null ],
     [ "Contributing", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence-java-52f5a04c7278b38c07f462b11dfc2890.html", null ],
-    [ "<img src=\"https://51degrees.com/DesktopModules/FiftyOne/Distributor/Logo.ashx?utm_source=github&utm_medium=repository&utm_content=home&utm_campaign=c-open-source\" alt=\"51Degrees\" title=\"Data rewards the curious\"/> <strong>IP Intelligence Data Files</strong>", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence-java-f45e25310d207e879c16b9c83571fd9c.html", null ],
     [ "51Degrees IP Intelligence Engines - Examples", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence-java-examples__r_e_a_d_m_e.html", null ],
     [ "51Degrees IP Intelligence Engines", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java__r_e_a_d_m_e.html", null ],
     [ "Deprecated List", "deprecated.html", null ],

@@ -1,0 +1,4 @@
+var namespace_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_exception_caching =
+[
+    [ "CachedException", "class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_exception_caching_1_1_cached_exception.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_exception_caching_1_1_cached_exception" ]
+];

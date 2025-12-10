@@ -4,6 +4,7 @@ var namespace_fifty_one_1_1_pipeline_1_1_core =
     [ "Configuration", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_configuration.html", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_configuration" ],
     [ "Data", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_data.html", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_data" ],
     [ "Exceptions", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions.html", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions" ],
+    [ "FailHandling", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling.html", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling" ],
     [ "FlowElements", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements.html", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements" ],
     [ "Services", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_services.html", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_services" ],
     [ "TypedMap", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_typed_map.html", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_typed_map" ],
