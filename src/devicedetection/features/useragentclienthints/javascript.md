@@ -39,48 +39,30 @@ in the results (all properties are included by default for On-premise).
 
 ## Integrated <a href="#UACH_Javascript_Integrated">#</a> @anchor UACH_Javascript_Integrated
 
-If you are using our [web integration](@ref PipelineApi_Features_WebIntegration) with 
-[client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) enabled, then this will take 
-care of sending the snippet to the client device, getting the values back to the server and 
+If you are using our [web integration](@ref PipelineApi_Features_WebIntegration) with
+[client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) enabled, then this will take
+care of sending the snippet to the client device, getting the values back to the server and
 passing them into our API.
 
-If you're using our Cloud Service, no other changes are needed.
-However, if you're using our On-premise solution, then you'll also need to modify your configuration 
-to include a new engine called `UachJsConversionEngine` to convert the result from the 
-JavaScript snippet to evidence values that can be used by the existing device detection engine.
-
-For example:
-
-```
-"PipelineOptions": {
-    "Elements": [
-        {
-            "BuilderName": "UachJsConversionEngine"
-        },
-        {
-            "BuilderName": "DeviceDetectionHashEngineBuilder",
-            "BuildParameters": {
-                ...
-            }
-        }
-    ]
-},
-```
+No additional configuration is required for either Cloud or On-premise solutions. The device
+detection engine natively processes the `getHighEntropyValues()` result when passed as evidence.
 
 ## Non-integrated <a href="#UACH_Javascript_NonIntegrated">#</a> @anchor UACH_Javascript_NonIntegrated
 
-If you don't want to, or can't, use the web integrations as described above, then you'll need to 
+If you don't want to, or can't, use the web integrations as described above, then you'll need to
 handle the steps of getting the values from the JavaScript API, transferring those to the server
 and adding them to the pipeline evidence values.
 
-This will require a good knowledge of your production environment and how communication works 
+This will require a good knowledge of your production environment and how communication works
 between your client and server side code.
 
 The following snippet demonstrates how to get the UA-CH values using JavaScript.
-The exact mechanism to get this value from the client device to your server will depend on your 
-infrastructure. Once there, it will need to be added to the @flowdata evidence:
+The exact mechanism to get this value from the client device to your server will depend on your
+infrastructure. Once there, it will need to be added to the @flowdata evidence using either the `query.` or `cookie.` prefix:
 
 ```
+flowData.AddEvidence("query.51D_GetHighEntropyValues", b64Uach);
+// or
 flowData.AddEvidence("cookie.51D_GetHighEntropyValues", b64Uach);
 ```
 
@@ -93,36 +75,74 @@ if (navigator.userAgentData) {
         "platform",
         "platformVersion",
         "fullVersionList"])
-    .then((ua) => { 
+    .then((ua) => {
         // Convert to base64-encoded JSON
-        // This string needs to be passed back to the server and added to evidence. E.g.
-        // flowData.AddEvidence("cookie.51D_GetHighEntropyValues", b64Uach);
-        var b64Uach = btoa(JSON.stringify(ua));        
+        // This string needs to be passed back to the server and added to evidence.
+        // Use either query. or cookie. prefix, e.g.:
+        // flowData.AddEvidence("query.51D_GetHighEntropyValues", b64Uach);
+        var b64Uach = btoa(JSON.stringify(ua));
     });
 }
 &lt;/script&gt;
 </pre>
 </div>
 
-If you're using our Cloud Service, no other changes are needed.
-However, if you're using On-premise solution, then you'll also need to modify your configuration 
-to include a new engine called `UachJsConversionEngine` to convert the base-64 json from the 
-JavaScript snippet above to evidence values that can be used by the existing device detection engine.
+No additional configuration is required for either Cloud or On-premise solutions. The device
+detection engine natively processes this evidence format, converting it to the equivalent
+`Sec-CH-UA-*` HTTP headers internally.
 
-For example:
+See the [Getting Started Console On-premise](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise)
+example for a complete demonstration of this approach.
+
+# Alternative Evidence Formats <a href="#UACH_Javascript_Alternatives">#</a> @anchor UACH_Javascript_Alternatives
+
+In addition to the `getHighEntropyValues()` JavaScript API result, the device detection engine
+supports the following alternative User-Agent Client Hints representations:
+
+## Structured User Agent (SUA) <a href="#UACH_Javascript_SUA">#</a> @anchor UACH_Javascript_SUA
+
+The [OpenRTB 2.6 specification](https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3229---object-useragent-) defines a Structured
+User Agent (`device.sua`) format for representing User-Agent Client Hints. This is commonly
+used in programmatic advertising and real-time bidding scenarios.
+
+If you receive UA-CH data in the SUA format, you can pass it directly to the device detection
+engine with the `query.` or `cookie.` prefix:
 
 ```
-"PipelineOptions": {
-    "Elements": [
-        {
-            "BuilderName": "UachJsConversionEngine"
-        },
-        {
-            "BuilderName": "DeviceDetectionHashEngineBuilder",
-            "BuildParameters": {
-                ...
-            }
-        }
-    ]
-},
+flowData.AddEvidence("query.51D_StructuredUserAgent", suaJsonString);
 ```
+
+The SUA format looks like this:
+
+```json
+{
+  "browsers": [
+    {"brand": "Chromium", "version": ["130", "0", "6723", "92"]},
+    {"brand": "Google Chrome", "version": ["130", "0", "6723", "92"]}
+  ],
+  "platform": {"brand": "macOS", "version": ["15", "1", "0"]},
+  "mobile": 0,
+  "model": "",
+  "architecture": "arm"
+}
+```
+
+For more details on OpenRTB integration, see the [OpenRTB Mappings](@ref DeviceDetection_OtherIntegrations_OpenRTBMappings) page.
+
+## Technical Details <a href="#UACH_Javascript_Technical">#</a> @anchor UACH_Javascript_Technical
+
+These alternative evidence formats (GHEV or SUA) are converted internally to the equivalent `Sec-CH-UA-*` HTTP
+headers before processing:
+
+- `Sec-CH-UA`
+- `Sec-CH-UA-Mobile`
+- `Sec-CH-UA-Platform`
+- `Sec-CH-UA-Model`
+- `Sec-CH-UA-Full-Version-List`
+- `Sec-CH-UA-Platform-Version`
+- `Sec-CH-UA-Arch`
+- `Sec-CH-UA-Bitness`
+
+The conversion happens natively in the device detection engine (in the C layer), making it
+efficient and seamless. This eliminates the need for any additional pipeline elements or
+pre-processing steps that were required in earlier versions.

@@ -19,16 +19,20 @@
 ## New Evidence Keys
 
 - Added support for alternative representations of User-Agent Client Hints via the following evidence keys (usable with `query.` and `cookie.` prefixes):
-  - `51d_gethighentropyvalues`: Base64-encoded JSON string from `JSON.stringify()` of the `getHighEntropyValues()` JavaScript call.
-  - `51d_structureduseragent`: Plain JSON string using the `device.sua` structure as defined in [OpenRTB 2.6](https://iabtechlab.com/standards/openrtb/).
-  
+  - `51D_GetHighEntropyValues`: Base64-encoded JSON string from `JSON.stringify()` of the `getHighEntropyValues()` JavaScript call.
+  - `51D_StructuredUserAgent`: Plain JSON string using the `device.sua` structure as defined in [OpenRTB 2.6](https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3229---object-useragent-).
+
   These keys are functionally equivalent to passing the following HTTP headers:
-  - `Sec-CH-UA`  
-  - `Sec-CH-UA-Mobile`  
-  - `Sec-CH-UA-Platform`  
-  - `Sec-CH-UA-Model`  
-  - `Sec-CH-UA-Full-Version-List`  
+  - `Sec-CH-UA`
+  - `Sec-CH-UA-Mobile`
+  - `Sec-CH-UA-Platform`
+  - `Sec-CH-UA-Model`
+  - `Sec-CH-UA-Full-Version-List`
   - `Sec-CH-UA-Platform-Version`
+
+  The conversion happens natively in the device detection engine, eliminating the need for
+  additional pipeline elements. See the [UA-CH JavaScript page](@ref DeviceDetection_Features_UACH_Javascript)
+  for detailed usage information.
 
 ## Results Serialization
 
