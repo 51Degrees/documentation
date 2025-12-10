@@ -1,6 +1,6 @@
-@page DeviceDetection_WhatsNewV45 What's New in Version 4.5 (Pre-release)
+@page DeviceDetection_WhatsNewV45 What's New in Version 4.5
 
-# What's New in Version 4.5 (Pre-release) of Device Detection
+# What's New in Version 4.5 of Device Detection
 
 ## Performance
 
