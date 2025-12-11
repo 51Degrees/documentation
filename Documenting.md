@@ -34,7 +34,7 @@ Each page must be declared with a ``@page`` tag giving it a unique identifier, a
 where the unique id is its location inside the documentation structure (this is just convention and does not affect the output), and the name of the page is a more friendly name.
 
 ### @subpage
-Each subpage must be declared in its parent page using the ``@subpage`` tag and the unique identifier of the 
+Each subpage must be declared in its parent page using the ``@subpage`` tag and the unique identifier of the
 subpage. For example, the `Pipeline` page lives under the `Core` page, so the `Core` page contains
 
 ``` md
@@ -173,7 +173,7 @@ digraph ExampleGraph {
     node [shape=record, fontname=Helvetica, fontsize=10];
     // Style the arrow labels
     edge [fontname=Helvetica, fontsize=10];
-    
+
     // Add two nodes
     Node1 [label=Node1, URL="@ref Node1_page"];
     Node1 [label=Node2, URL="@ref Node2_page"];
@@ -201,16 +201,16 @@ digraph ExampleGraph {
     node [shape=record, fontname=Helvetica, fontsize=10];
     // Style the arrow labels
     edge [fontname=Helvetica, fontsize=10];
-    
+
     // Add a node
     Node1 [label=Node1];
-    
+
     // Add a node group (name must start with "cluster")
     subgraph clusterParentNode {
         label="Parent Node";
         fontname=Helvetica;
         fontsize=10;
-        
+
         // Add two nested nodes
         Node2 [label=Node2];
         Node3 [label=Node3];
@@ -320,6 +320,6 @@ Pre-built binaries can be downloaded from Sharepoint for [Linux](https://51degre
 In order for DoxyGen to generate nice diagrams, [GraphVis 2.38](https://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.msi) must be installed.
 
 ### Pattern Lab
-The css used in all documentation comes from the pattern lab submodule.
+The css used in all documentation comes from the pattern-library subproject.
 
-To generate the `main.min.css` needed by the documentation, follow the installation instructions in the [PatternLab readme](patternlab/README.md) to generat the css, then run ``gulp minify-css`` to minify it. The minified css will now live in `patternlab/source/css`.
+To generate the `docs-*.css` files needed by the documentation, run the [build-pattern-library.ps1](ci/build-pattern-library.ps1) script. The generated files will overwrite the existing ones in `docs/`.
