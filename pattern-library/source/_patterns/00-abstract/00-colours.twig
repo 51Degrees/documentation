@@ -1,0 +1,11 @@
+<ul class="g-colours">
+{% for colour in colours %}
+  <li class="c-colour">
+    <span class="c-colour__swatch" style="background: {{ colour.value }}"></span>
+    <span class="c-colour__label">
+			{{ colour.name }} <br/>
+			{{ colour.value }}
+		</span>
+  </li>
+{% endfor %}
+<ul>

@@ -1,0 +1,9 @@
+<div class="l-index__content">
+  {% include "groups-header" with {} %}
+  <main class="g-main">
+  {% block main %}{% endblock %}
+  </main>
+  {% block footer %}
+    {% include "groups-footer" with {} %}
+  {% endblock %}
+</div>

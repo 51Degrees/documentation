@@ -1,0 +1,72 @@
+.c-option {
+  position:relative;
+  display:flex;
+  .c-select {
+    position:absolute;
+    left:size(0);
+    top:25%;
+    transform: translateY(-50%); 
+  }
+  .c-select__text {
+    @include make-text-hidden();
+  }
+}
+
+.c-option__link {
+  @include make-link-unstyled();
+  padding:size(0) size(0) size(0) size(7);
+  display:inline-flex;
+  justify-content:space-between;
+  width:100%;
+  &.is-active {
+    background-color:$colour-grey-lighter;
+    font-weight:$font-weight-bold;
+  }
+}
+
+.c-option__additional {
+  display:inline-flex;
+  align-items:center;
+}
+
+.c-option__vendor {
+  margin-left:size(-3);
+  display:inline-flex;
+  align-items:center;
+}
+.c-option__billable {
+  margin-left:size(-3);
+  display:inline-flex;
+  align-items:center;
+  span {
+    @include make-text-hidden();
+  }
+  &:before {
+    content:"";
+    display:inline-block;
+    width:8px;
+    height:14px;
+    background-image:url("/images/icon-feature-paid.svg");
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:contain;
+  }
+}
+.c-option__info {
+  margin-left:size(0);
+  display:inline-flex;
+  align-items:center;
+  span {
+    @include make-text-hidden();
+  }
+  &:before {
+    content:"";
+    display:inline-block;
+    width:3px;
+    height:12px;
+    background-image:url("/images/icon-feature-info.svg");
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:contain;
+  }
+}

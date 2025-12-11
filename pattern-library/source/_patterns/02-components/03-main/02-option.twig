@@ -1,0 +1,15 @@
+<div class="c-option">
+  {% include "components-select" with {'id': option.id, 'alternative': false, 'label': option.name, 'large': true} %}
+  <a href="" class="c-option__link is-revealable">
+    {{ option.name }}
+    <span class="c-option__additional">
+      {% if option.vendor != "" %}
+      <span class="c-option__vendor"><img src="/images/{{ option.vendorIcon }}" alt="{{ option.vendor }}" /></span>
+      {% endif %}
+      {% if option.billable == true %}
+      <span class="c-option__billable"><span>Billable</span></span>
+      {% endif %}
+      <span class="c-option__info"><span>Info</span></span>
+    </span>
+  </a>
+</div>

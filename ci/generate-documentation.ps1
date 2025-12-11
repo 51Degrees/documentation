@@ -19,7 +19,8 @@ Write-Host "::endgroup::"
 
 # This has to be done before building docs since docs depend on some of these sources
 Write-Host "::group::Cloning API docs"
-$ref = $env:GITHUB_BASE_REF ? $env:GITHUB_BASE_REF : $env:GITHUB_REF_NAME # use PR target branch if we're running in a PR
+# use PR target branch if we're running in a PR, or the current CI branch, or main
+$ref = $env:GITHUB_BASE_REF ? $env:GITHUB_BASE_REF : $env:GITHUB_REF_NAME ? $env:GITHUB_REF_NAME : 'main'
 $repoMap = & $PSScriptRoot/apis.ps1
 # repos have to be cloned here since they expect documentation repo to be two levels above them
 $apis = New-Item -Force -ItemType Directory "apis"

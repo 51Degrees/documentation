@@ -1,0 +1,15 @@
+{% extends "04-layouts/01-docs/00-docs-index" %}
+
+{% block header %}
+  <h1 class="g-docs__page-title">TestNamespace::TestClass Class Referencespan <span class="c-label">abstract</span></h1>
+{% endblock %}
+
+{% block main %}
+  
+    {% include "groups-docs-basic" with {} %}
+    {% include "groups-docs-directory" with {} %}
+    {% include "groups-docs-members" with {} %}
+    {% include "groups-docs-member-article" with {} %}
+    {% include "groups-docs-code" with {} %}
+    
+{% endblock %}

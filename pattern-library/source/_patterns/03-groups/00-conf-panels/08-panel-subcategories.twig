@@ -1,0 +1,15 @@
+{% extends "groups-panel" %}
+
+{% block width %}25{% endblock %}
+
+{% block content %}
+  {% include "components-category-header" with {'previous': 'All', 'current': category.name} %}
+  <ul class="g-panel__list">
+  {% for subCategory in subCategories %}
+    <li class="g-panel__item">
+      {% include "components-category" with {'category': subCategory} %}
+      {% include "groups-panel-options" with {} %}
+    </li>
+  {% endfor %}
+  </ul>
+{% endblock %}

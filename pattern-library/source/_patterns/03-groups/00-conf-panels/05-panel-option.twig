@@ -1,0 +1,8 @@
+{% extends "groups-panel" %}
+
+{% block width %}25{% endblock %}
+
+{% block content %}
+  {% include "components-category-header" with {'previous': subCategory.name, 'current': option.name} %}
+  {% include "groups-info-option" with {'option': option} %}
+{% endblock %}

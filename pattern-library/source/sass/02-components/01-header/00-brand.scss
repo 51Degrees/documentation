@@ -1,0 +1,35 @@
+.c-brand {
+  display:inline-flex;
+  flex-direction: column;
+  padding-top: 1px;
+  @include respond-to(md) {
+	  width:270px;
+  }
+  @include respond-to(lg) {
+	  width:50%;
+  }
+
+	.c-tagline {
+		display: none;
+		@include respond-to(md) {
+			display: inline-flex;
+			font-size: size(0);
+			font-weight: $font-weight-bold;
+	  }
+	}
+}
+
+.c-brand__link {
+  display:inline-flex;
+  align-items:center;
+}
+
+.c-brand__image {
+  display:inline-block;
+  width:70%;
+  height:auto;
+  @include respond-to(md) {
+	  width:250px;
+	  margin-bottom: size(-4);
+  }
+}

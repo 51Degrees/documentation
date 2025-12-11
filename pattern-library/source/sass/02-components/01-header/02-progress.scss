@@ -1,0 +1,61 @@
+.c-progress {
+  @include make-text-progress();
+  list-style:none;
+  align-self:flex-end;
+  padding-left:0;
+  display:inline-flex;
+  margin:0;
+  padding-bottom: 1px;
+}
+
+.c-progress__item {
+  display:inline;
+  position:relative;
+  line-height: 1; 
+  color:$colour-black;
+  font-weight:$font-weight-regular;
+  &:not(:first-child) {
+    padding-left:17px;
+    @include respond-to(md) {
+      padding-left:45px;
+    }
+    &:before {
+      content: "";
+      position:absolute;
+      top:50%;
+      left:7px;
+      width:2px;
+      @include respond-to(md) {
+        top:7px;
+        left:15px;
+        width:15px;
+      }
+      border-top:2px dotted $colour-black;
+    }
+  }
+}
+
+.c-progress__count {
+  @include scale('font-size', 1, $md: 0);
+}
+
+.c-progress__text {
+  display:none;
+  @include respond-to(md) {
+    display:inline;
+  }
+}
+
+.c-progress__link {
+  @include make-link-unstyled();
+  #{$states} {
+    color:$colour-black;
+  }
+  &--active {
+    color:$colour-black;
+    font-weight:$font-weight-bold;
+    .c-progress__count {
+      color:$colour-black;
+    }
+  }
+}

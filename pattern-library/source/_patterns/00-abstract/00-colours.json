@@ -1,0 +1,22 @@
+{
+  "colours": [
+    {"name":"$colour-black", "value":"#000000"},
+    {"name":"$colour-white", "value":"#FFFFFF"},
+    {"name":"$colour-grey-darker", "value":"#646060"},
+    {"name":"$colour-grey-dark", "value":"#9B9B9B"},
+    {"name":"$colour-grey", "value":"#BFBFBF"},
+    {"name":"$colour-grey-light", "value":"#EAEAEA"},
+    {"name":"$colour-grey-lighter", "value":"#F8F8F8"},
+    {"name":"$colour-lime-darker", "value":"#9BA90D"},
+    {"name":"$colour-lime-dark", "value":"#BAC82A"},
+    {"name":"$colour-lime", "value":"#CBDB2A"},
+    {"name":"$colour-lime-light", "value":"#DAED1A"},
+    {"name":"$colour-lime-lighter", "value":"#F9FBE9"},
+    {"name":"$colour-red", "value":"#CC2B27"},
+    {"name":"$colour-orange", "value":"#F5841F"},
+    {"name":"$colour-blue", "value":"#00AEEF"},
+    {"name":"$colour-yellow", "value":"#FFF200"},
+    {"name":"$colour-purple", "value":"#553AD5"},
+    {"name":"$colour-pink", "value":"#D737AB"}
+  ]
+}

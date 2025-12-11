@@ -1,0 +1,52 @@
+.c-outputs {
+  background-color: $colour-white;
+  border-radius: 0 0 $rounded $rounded;
+  border: 1px solid $colour-grey-light;
+  width: 100%;
+}
+
+.c-outputs__table {
+  border-collapse:collapse;
+  border-spacing:0;
+  margin: size(-2) size(-1) size(0) ;
+  thead {
+    @include make-text-hidden();
+  }
+  td {
+    padding:0 0 size(-5) 0;
+  }
+}
+
+.c-outputs__header {
+  display: flex;
+  background-color: $colour-grey-darker;
+  height: 34px;
+  align-items: center;
+  padding: 0 size(-1);
+  border-radius: $rounded $rounded 0 0;
+}
+
+.c-outputs__heading {
+  @include make-text-default();
+  font-weight: $font-weight-regular;
+  font-size: size(-1);
+  color: $colour-white;
+  line-height: 1;
+  margin: size(-2) 0;
+}
+
+.c-outputs__device {
+  width:100%;
+  color:$colour-grey-darker;
+}
+
+.c-outputs__example,
+.c-outputs__device {
+  font-size: size(-1);
+}
+
+.c-outputs__example {
+  color:$colour-grey-dark;
+  display: inline-table;
+  word-wrap: anywhere;
+}

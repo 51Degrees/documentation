@@ -1,0 +1,123 @@
+.c-card {
+  background-color:$colour-white;
+  padding:size(2);
+  margin-bottom:size(5);
+  border-radius:$rounded;
+  box-shadow:0 0 10px 0 rgba($colour-black, 0.1);
+}
+
+.c-card--highlight {
+  box-shadow:0 0 10px 0 rgba($colour-black, 0.1);
+}
+
+.c-card__heading {
+  margin-top:0;
+  @include make-text-default();
+  font-weight:$font-weight-regular;
+}
+
+.c-card__properties {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: size(-2);
+}
+
+.c-card__properties-list {
+  list-style:none;
+  padding-left:0;
+}
+
+.c-card__text {
+  margin-top: 0;
+}
+
+.c-card__item {
+  display:inline;
+  margin-right:size(0);
+}
+
+.c-card__property {
+  @include make-link-property();
+  display: inline-block;
+  &:before {
+    content:"×";
+    display:inline-block;
+    font-weight:$font-weight-bold;
+    margin-right:size(-5);
+  }
+}
+
+.c-card__footer {
+  display:flex;
+  justify-content:space-between;
+  flex-direction: column;
+}
+
+.c-card__more {
+  @include make-link();
+  text-transform: uppercase;
+  font-size: size(-1);
+  letter-spacing: 0.03rem;
+  color: $colour-grey-darker;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  margin-bottom: size(0);
+  &:after {
+    content:"";
+    display:inline-block;
+    width:12px;
+    height:9px;
+    margin-left:size(-4);
+    background-image:url("/images/icon-arrow-down-grey-darker.svg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center center;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: $colour-black;
+    text-decoration: none;
+    &:after {
+      background-image:url("/images/icon-arrow-down-black.svg");
+    }
+  }
+  &:active {
+    &:after {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.c-card__small-print {
+  margin-top: 0;
+  padding: size(0) size(-4);
+  a {
+    text-decoration: underline;
+    color: $colour-grey-darker;
+    &:hover {
+      color: $colour-black;
+    }
+  }
+}
+
+.c-card__remove {
+  display: inline-block;
+  font-size: size(-1);
+  border-radius:$rounded-more;
+  color: $colour-grey-dark;
+  background-color: $colour-grey-lighter;
+  padding: size(-8) size(-2);
+  text-decoration: none;
+  &:hover {
+    color: $colour-grey-darker;
+    background-color: $colour-grey-light;
+  }
+  &:before {
+    content:"×";
+    display:inline-block;
+    font-weight:$font-weight-bold;
+    margin-right:size(-5);
+  }
+}

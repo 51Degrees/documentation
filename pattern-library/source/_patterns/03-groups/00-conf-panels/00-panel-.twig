@@ -1,0 +1,11 @@
+<div class="g-panel g-panel--{% block width %}{% endblock %}">
+  {% block content %}
+    <ul class="g-panel__list">
+    {% for category in categories %}
+      <li class="g-panel__item">
+        {% include "components-category" with {'category': category} %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endblock content %}
+</div>

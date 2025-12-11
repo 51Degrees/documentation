@@ -1,0 +1,20 @@
+<ul class="g-sizes g-sizes--text">
+{% for size in '20' .. '-10' %}
+  <li class="c-size c-size--text {% if size in sizes %}c-size--active{% endif %}">
+    <p class="c-size__label a-font-size-{{ size }}">
+			Typography sizing
+		</p>
+  </li>
+{% endfor %}
+<ul>
+
+<ul class="g-sizes">
+{% for size in '-10' .. '20' %}
+  <li class="c-size {% if size in sizes %}c-size--active{% endif %}">
+    <div class="c-size__swatch a-size-{{ size }}"></div>
+    <p class="c-size__label">
+			$a-size-{{ size }}
+		</p>
+  </li>
+{% endfor %}
+<ul>

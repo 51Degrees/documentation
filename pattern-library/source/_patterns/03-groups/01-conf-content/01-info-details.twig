@@ -1,0 +1,19 @@
+{% extends "groups-info" %}
+
+{% block content %}
+  <h2 class="g-info__title">Add your details</h2>
+
+  <h3 class="g-info__heading">Vendor details</h3>
+  
+  {% include "components-card" with {'modifier': 'c-card--highlight'} %}
+  {% include "components-card" with {'modifier': 'c-card--highlight'} %}
+  
+  <h3 class="g-info__heading">Domains (optional)</h3>
+  
+  {% include "components-card-domains" with {} %}
+  
+  <h3 class="g-info__heading">Register your details</h3> 
+  
+  {% include "components-card-register" with {'':''} %}
+
+{% endblock %}

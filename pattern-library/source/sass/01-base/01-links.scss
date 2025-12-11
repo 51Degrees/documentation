@@ -1,0 +1,82 @@
+@mixin make-link {
+  transition:color 0.3s ease;
+  color:$colour-black;
+  text-decoration:underline;
+  #{$states} {
+    color:$colour-orange;
+    text-decoration:underline;
+  }
+  display:inline-flex;
+  align-items:center;
+  img {
+    margin:0 size(-3);
+  }
+}
+
+.b-link {
+  @include make-link();
+}
+
+@mixin make-link-property {
+  @include make-text-property-pill();
+  color:$colour-grey-dark;
+  border-bottom:2px dotted $colour-grey-light;
+  text-decoration:none;
+  #{$states} {
+    color:$colour-grey-darker;
+    border-bottom:2px dotted $colour-grey-darker;
+    text-decoration:none;
+  }
+}
+
+.b-link--property {
+  @include make-link-property();
+}
+
+@mixin make-link-dotted {
+  color:$colour-grey-dark;
+  border-bottom:2px dotted $colour-grey-light;
+  text-decoration:none;
+  #{$states} {
+    color:$colour-grey-darker;
+    border-bottom:2px dotted $colour-grey-darker;
+    text-decoration:none;
+  }
+}
+
+.b-link--dotted {
+  @include make-link-dotted();
+}
+
+
+@mixin make-link-unstyled {
+  color:inherit;
+  text-decoration:none;
+  #{$states} {
+    color:inherit;
+    text-decoration:none;
+  }
+}
+
+.b-link--unstyled {
+  @include make-link-unstyled();
+}
+
+@mixin make-link-docs {
+  transition:color 0.3s ease;
+  color:$colour-blue;
+  text-decoration:none;
+  font-weight: $font-weight-bold;
+  #{$states} {
+    text-decoration:underline;
+  }
+}
+
+.b-link--docs {
+  @include make-link-docs();
+}
+
+// Anchor link scroll offset for proper navigation
+a.anchor {
+  scroll-margin-top: 128px;
+}

@@ -1,0 +1,129 @@
+.c-table {
+  background-color: $colour-white;
+  border-collapse: collapse;
+  border-radius: $rounded;
+  margin-bottom: size(0);
+  a {
+    @include make-link-docs();
+  }
+  &--directory,
+  &--members,
+  &--invert {
+    .c-table__cell {
+      &:last-child {
+        width: 100%;
+      }
+    }
+  }
+  &--directory {
+    .c-table__cell {
+      padding-top: size(-3);
+      padding-bottom: size(-3);
+    }
+  }
+  &--members {
+  }
+  &--article {
+    width: auto;
+    margin-bottom: 0;
+    .c-table__cell {
+      padding: 0;
+      padding-right: size(-3);
+      border: none;
+      vertical-align: bottom;
+    }
+  }
+  &--invert {
+    background-color: $colour-grey-lighter;
+  }
+}
+
+.c-table__head {
+  .c-table__cell {
+    border-bottom: 3px solid $colour-grey-light;
+  }
+
+}
+
+.c-table__body {
+  .c-table__row {
+    &:last-child {
+      .c-table__cell {
+        border: none;
+      }
+    }
+  }
+}
+
+.c-table__row {
+  &--header {
+    .c-table__cell {
+      border: none;
+    }
+
+  }
+}
+
+.c-table__cell {
+  padding: size(-2) size(-5);
+  border: none;
+  border-bottom: 1px solid $colour-grey-light; 
+  vertical-align: top;
+  &:first-child {
+    padding-left: size(2);
+  }
+  &:last-child {
+    padding-right: size(2);
+  }
+  &--parent {
+    position: relative;
+  }
+  &--child {
+    padding-left: size(7);
+  }
+}
+
+.c-table__levels {
+  text-align: right;
+  font-size: size(-1);
+}
+
+.c-table__level {
+  padding: 0 0 0 size(-2);
+}
+
+.c-table__heading {
+  @include make-text-heading-3();
+}
+
+.c-table__desc {
+  a {
+    font-weight: $font-weight-regular !important;
+  }
+}
+
+.c-table__arrow {
+  position: absolute;
+  left: size(-2);
+  cursor: pointer;
+  &:before {
+    content: "";
+    background-image: url(icon-arrow-solid-right-mute.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    width: 6px;
+    height: 11px;
+    position: absolute;
+    left: 0;
+    top: 6px;
+    transform: rotate(0deg);
+  }
+
+  &--is-open {
+    &:before {
+      background-image: url(icon-arrow-solid-right-orange.svg);
+      transform: rotate(90deg);
+    }
+  }
+}

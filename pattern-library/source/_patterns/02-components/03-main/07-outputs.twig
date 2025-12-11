@@ -1,0 +1,23 @@
+<div class="c-outputs">
+  <div class="c-outputs__header">
+    <h3 class="c-outputs__heading">Outputs:</h3>
+  </div>
+  <table class="c-outputs__table">
+    <thead>
+      <tr>
+        <th>Device</th>
+        <th>Example response</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for example in option.examples|default(options[0].examples) %}
+      <tr>
+        <th class="c-outputs__device">{{ example.name }}:</th>
+      </tr>
+      <tr>
+        <td><span class="c-outputs__example">{{ example.value }}</span></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>

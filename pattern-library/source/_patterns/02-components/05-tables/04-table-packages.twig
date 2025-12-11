@@ -1,0 +1,17 @@
+<div class="g-table g-table--overflow">
+  <table class="c-table c-table--packages">
+    <thead class="">
+      <tr class="">
+        <th class="" colspan="2">51D Free (hobbyists & evaluations)</th>
+      </tr>
+    </thead>
+    <tbody class="">
+        {% for item in package %}
+      <tr class="">
+        <th class="">{{ item.property }}</th>
+        <td class="">{{ item.value }}</td>
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>

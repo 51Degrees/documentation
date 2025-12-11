@@ -1,0 +1,8 @@
+{% extends "groups-panel" %}
+
+{% block width %}75{% endblock %}
+
+{% block content %}
+  {% include "components-category-header" with {'previous': "Back", 'current': implementation.name} %}
+  {% include "groups-info-implement" with {} %}
+{% endblock %}

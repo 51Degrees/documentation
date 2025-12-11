@@ -1,0 +1,88 @@
+.c-code {
+  width: 100%;
+  text-align: right;
+  border: 1px solid $colour-grey-light;
+  border-radius:$rounded $rounded 0 0;
+  // border-radius:$rounded;
+  background-color: $colour-white;
+  border-bottom: 0px;
+  z-index: 1000;
+  @include respond-to(xl){
+    border: 1px solid $colour-grey-light;
+    border-right: 0px;
+    border-radius:$rounded 0 0 $rounded;
+  }
+}
+
+.c-code__header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background-color: $colour-grey-light;
+  padding: 0 0 0 size(0);
+  height: 34px;
+}
+
+.c-copy-clipboard {
+  margin-right: size(-1);
+  padding-left: size(-1);
+  display: flex;
+  border-left: solid 1px $colour-grey;
+}
+
+.c-code__heading {
+  @include make-text-heading-caps();
+  line-height: 1;
+  margin: size(-2) 0;
+}
+
+.c-code__copy {
+  @include make-link();
+  @include make-link-dotted();
+}
+
+.c-code__block {
+  @include make-text-code();
+  text-align: left;
+  background-color:$colour-white;
+  padding: size(0);
+  border-radius:$rounded;
+  display:block;
+  overflow: scroll;
+  @include respond-to(lg){
+    max-width: calc(100vw - 300px);
+    min-width: 75ch;
+  }
+  &--outline {
+    border: 1px solid $colour-grey-light;
+  }
+}
+
+.c-code__line {
+  white-space: pre;
+  word-wrap: break-word;
+}
+
+.c-code__keyword {
+  color: $colour-lime-darker ;
+}
+
+.c-code__keywordtype {
+  color: $colour-orange ;
+}
+
+.c-code__preprocessor {
+  color: $colour-red ;
+}
+
+.c-code__comment {
+  color: $colour-grey-dark ;
+}
+
+.c-code__stringliteral {
+  color: $colour-purple ;
+}
+
+.c-code__charliteral {
+  color: $colour-pink ;
+}

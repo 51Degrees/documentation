@@ -1,0 +1,27 @@
+<div class="l-index__content">
+  {% include "groups-header-docs" with {} %}
+  <main class="g-main">
+    
+    <div class="g-docs__sidenav">
+      {% include "components-sidenav" with {} %}
+    </div>
+    
+    <div class="g-docs__content">
+      <div class="g-docs__header">        
+        {% include "components-breadcrumb" with {} %}
+        {% block header %}{% endblock %}
+      </div>
+      <div class="g-docs__inner">
+        <div class="g-docs__primary">
+          {% block main %}{% endblock %}
+        </div>
+        <div class="g-docs__sidebar">
+          {% include "components-section-nav" with {} %}
+        </div>
+      </div>
+      {% include "groups-footer-docs" with {} %}
+    </div>
+
+  </main>
+    
+</div>

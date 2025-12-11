@@ -1,0 +1,118 @@
+.g-info {
+  padding:size(0) size(3) size(10);
+  height:100%;
+  overflow-y:scroll;
+  background-color:$colour-grey-lighter;
+  position:relative;
+  z-index:100;
+  flex-grow:1;
+  .g-panel--25 &,
+  .g-panel--50 &,
+  .g-panel--75 & {
+    background: linear-gradient(to right, $colour-grey-light 0, $colour-grey-lighter 5px, $colour-grey-lighter 100%);
+  }
+  .c-select {
+    margin-bottom:size(0);
+  }
+  .c-top-link {
+    position: fixed;
+    bottom: 105px;
+    right: size(2);
+    z-index: 9999;
+    @include respond-to(md){
+      bottom: 170px;
+    }
+  }
+}
+
+.g-info__header {
+  margin-bottom: size(-2);
+}
+
+.g-info__title {
+  @include make-text-heading-1();
+  margin-bottom:size(0);
+}
+
+.g-info__heading {
+  @include make-text-heading-2();
+  // margin-bottom:0px;
+  margin-bottom:size(-2);
+  display:flex;
+  justify-content:space-between;
+  .c-option__additional {
+    text-align:right;
+  }
+}
+
+.g-info__subheading {
+  @include make-text-heading-3();
+  margin-bottom:size(0);
+}
+
+.g-info__subiestheading {
+  @include make-text-heading-caps();
+}
+
+
+.g-info__by {
+  @include make-text-default();
+  font-weight:$font-weight-regular;
+  font-style:italic;
+  color:$colour-grey-dark;
+  margin-top:0;
+}
+
+.g-info__logo {
+  width:200px;
+  background-color:$colour-white;
+  padding:size(0);
+  img {
+    width:100%;
+    height:auto;
+    display:block;
+  }
+}
+
+.g-info__banner {
+  background:$colour-pink-light;
+  border: solid 1px $colour-pink;
+  padding:size(-3) size(0);
+  margin-bottom:size(0);
+  border-radius:$rounded;
+  display:flex;
+  align-items:center;
+  .c-option__billable {
+    margin-left:0;
+    margin-right:size(-3);
+  }
+}
+
+.g-info__description {
+  @include make-text-default();
+  margin-top:0;
+}
+
+.g-info__table {
+  border-collapse:collapse;
+  border-spacing:0;
+  width:100%;
+  margin-bottom:size(3);
+  thead {
+    @include make-text-hidden();
+  }
+  td {
+    padding:size(-5) 0;
+  }
+}
+
+.g-info__device {
+  width:100%;
+}
+
+.g-info__outputs {
+  background-color: $colour-white;
+}
+
+
+

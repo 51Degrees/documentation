@@ -1,0 +1,14 @@
+{% extends "groups-panel" %}
+
+{% block width %}25{% endblock %}
+
+{% block content %}
+  <ul class="g-panel__list">
+    {% for implementation in implementations %}
+      <li class="g-panel__item">
+        {% include "components-category" with {'category': implementation} %}
+        {% include "groups-panel-implement" with {} %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

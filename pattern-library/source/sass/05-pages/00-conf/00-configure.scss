@@ -1,0 +1,42 @@
+.p-configure {
+
+  .g-search {
+    z-index:1;
+  }
+  .c-outputs {
+    margin-bottom: 1vh;
+  }
+
+  .g-info {
+    @include respond-to(md) {
+      padding: size(2) size(10); 
+    }
+    @include respond-to(xl) {
+      padding: size(0) size(2); 
+    }
+  }
+  
+  .g-options {
+    z-index:0;
+  }
+  
+  .g-info__heading {
+    margin-bottom:0;
+  }
+  
+  .g-footer__next {
+    justify-content:space-between;
+    @include respond-to(md) {
+      justify-content:flex-end;
+    }
+    .b-btn {
+      margin-bottom:0;
+    }
+    .c-select {
+      margin-bottom:size(0);
+      @include respond-to(md) {
+        margin-bottom:0;
+      }
+    }
+  }
+}

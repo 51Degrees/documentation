@@ -1,0 +1,213 @@
+.l-docs-index {
+  background-color: $colour-grey-lighter;
+
+  .g-footer {
+    padding: size(0) 0;
+  }
+  
+  .g-main {
+    background-color: $colour-grey-lighter;
+  }
+
+  .g-docs__sidenav {
+    .c-sidenav {
+      margin-top: 125px;
+      @include respond-to(sm) {
+        margin-top: 88px;
+      }
+      @include respond-to(lg) {
+        margin-top: 0;
+        position: fixed;
+        top: 113px;
+        left: 0;
+        bottom: 0;
+        width: 320px;
+        height: calc(100vh - 57px - size(-2));
+        overflow-y: scroll;
+      }
+    }
+  }
+
+  .g-docs__content {
+    width: 100%;
+    padding: 20px 15px 0 15px;
+    @include respond-to(sm) {
+      padding: 32px 30px 0 30px;
+    }
+    @include respond-to(lg) {
+      padding: 32px 50px 0 370px;
+      margin-top: 88px;
+    }
+    @include respond-to(xxl) {
+      padding: 32px 50px 0 400px;
+    }
+  }
+
+  .g-docs__header {
+    width: 100%;
+    margin-bottom: size(3);
+    @include respond-to(xxl) {
+      margin-bottom: size(7);
+    }
+  }
+
+  .g-docs__inner {
+    display: flex;
+    flex-direction: column;
+    @include respond-to(xxl) {
+      flex-direction: row;
+    }
+  }
+
+  .g-docs__primary {
+    width: 100%;
+    order: 2;
+    @include respond-to(xxl) {
+      padding-right: 30px;
+      flex: 0 0 calc(100% - 300px);
+      max-width: calc(100% - 300px);
+      order: 1;
+    }
+    h1 {
+      @include make-text-heading-1();
+    }
+    h2 {
+      @include make-text-heading-2();
+    }
+    h3 {
+      @include make-text-heading-3();
+    }
+    code {
+      @include make-text-code-snip();
+    }
+    p, ul, ol {
+      margin: 0 0 size(0) 0;
+    }
+    a {
+      @include make-link-docs();
+    }
+    .image img {
+      max-width: 100%;
+    }
+  }
+
+  .g-docs__sidebar {
+    width: 100%;
+    order: 1;
+    @include respond-to(xxl) {
+      flex: 0 0 300px;
+      max-width: 300px;
+      order: 2;
+    }
+  }
+
+  .g-docs__page-title {
+    font-size: size(2);
+    @include respond-to(sm) {
+      font-size: size(3);
+    }
+    @include respond-to(xl) {
+      font-size: size(4);
+    }
+  }
+
+  .g-docs__section {
+    max-width: 850px;
+    margin-bottom: size(10);
+  }
+
+  .g-docs__section-heading {
+    font-size: size(1);
+    font-weight: $font-weight-bold;
+    margin: 0 0 size(2);
+    position: relative;
+    @include respond-to(lg) {
+      font-size: size(2);
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      left: -30px;
+      width: 5px;
+      height: 100%;
+      background-color: $colour-lime;
+    }
+  }
+
+  // Doxygen-generated image styling
+  .textblock .image img {
+    max-width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  // Table updates for documentation
+  .g-docs__primary {
+    .c-table {
+      tbody {
+        .c-table__row:last-child {
+          .c-table__cell {
+            border: none;
+          }
+        }
+        .c-table__row--heading {
+          .c-table__cell {
+            border-bottom: 3px solid $colour-grey-light;
+            @include make-text-heading-3();
+          }
+        }
+      }
+    }
+  }
+}
+
+// Search bar border styling
+.g-search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: solid 1px $colour-black;
+  border-radius: 28px;
+  padding: 2px;
+  margin: 0 size(-2) size(-1);
+
+  .c-search {
+    z-index: 1;
+    margin-right: size(0);
+    flex-grow: 1;
+
+    .b-form-group--with-icon .b-icon {
+      top: 10px;
+    }
+  }
+
+  .c-filter {
+    z-index: 0;
+    width: 150px;
+
+    @include respond-to(md) {
+      width: 250px;
+      margin-right: 4px;
+    }
+  }
+}
+
+// Tabbed code snippets styling
+.c-tabgroup {
+  margin-bottom: size(5);
+
+  .g-docs__primary {
+    padding: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  &__main {
+    display: block;
+    padding: size(1) size(1) size(1) size(1);
+    background-color: $colour-white;
+    box-shadow: $box-shadow-even;
+    border-radius: $rounded;
+    border-top-left-radius: 0;
+  }
+}

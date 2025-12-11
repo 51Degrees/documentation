@@ -1,0 +1,18 @@
+<article class="g-info">
+  {% block content %}
+    <header class="g-info__header">
+      <h2 class="g-info__title">Lorem ipsum</h2>
+      <h3 class="g-info__heading">Lorem ipsum</h3>
+      <h4 class="g-info__subheading">Lorem ipsum</h4>
+      <h5 class="g-info__by">By {{ vendor|default(vendors[0].name) }}</h5>
+    </header>
+    <div class="g-info__logo">
+      <img src="/images/{{ option.vendorLogo }}" alt="Alternative text" />
+    </div>
+    <p class="g-info__banner">Paid feature, use free for 30 days</p>
+    <p class="g-info__description">Nulla sodales quam at odio viverra rutrum. Praesent vestibulum felis ante, id rhoncus orci accumsan ut. Phasellus aliquam, felis ut bibendum congue, massa dui egestas urna, sed hendrerit eros augue venenatis neque. Aliquam risus metus, venenatis non vulputate a, suscipit feugiat dolor. Nulla ut sapien vel ligula dapibus pharetra. Suspendisse condimentum imperdiet eleifend. Aenean consectetur eget diam ac ultrices. Ut vitae venenatis dui, sed rhoncus nulla.</p>
+    <h3 class="g-info__subiestheading">Example output</h3>
+    {% include "components-table-outputs" with {'':''} %}
+    {% include "components-select" with {'id': option.id, 'alternative': true, 'label': 'Select this property'} %}
+  {% endblock %}
+</article>
