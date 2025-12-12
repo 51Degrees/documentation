@@ -82,13 +82,12 @@ $(document).ready(function(){initNavTree('_device_detection__features__u_a_c_h__
 <p>In either case, you need to ensure the <code>JavascriptGetHighEntropyValues</code> property is included in the results (all properties are included by default for On-premise).</p>
 <h2>Integrated <a href="#UACH_Javascript_Integrated">#</a><a class="anchor" id="UACH_Javascript_Integrated"></a></h2>
 <p>If you are using our <a class="el" href="_pipeline_api__features__web_integration.html">web integration</a> with <a class="el" href="_pipeline_api__features__client_side_evidence.html">client-side evidence</a> enabled, then this will take care of sending the snippet to the client device, getting the values back to the server and passing them into our API.</p>
-<p>If you're using our Cloud Service, no other changes are needed. However, if you're using our On-premise solution, then you'll also need to modify your configuration to include a new engine called <code>UachJsConversionEngine</code> to convert the result from the JavaScript snippet to evidence values that can be used by the existing device detection engine.</p>
-<p>For example:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">&quot;PipelineOptions&quot;: {</div><div class="c-code__line">    &quot;Elements&quot;: [</div><div class="c-code__line">        {</div><div class="c-code__line">            &quot;BuilderName&quot;: &quot;UachJsConversionEngine&quot;</div><div class="c-code__line">        },</div><div class="c-code__line">        {</div><div class="c-code__line">            &quot;BuilderName&quot;: &quot;DeviceDetectionHashEngineBuilder&quot;,</div><div class="c-code__line">            &quot;BuildParameters&quot;: {</div><div class="c-code__line">                ...</div><div class="c-code__line">            }</div><div class="c-code__line">        }</div><div class="c-code__line">    ]</div><div class="c-code__line">},</div></div><h2>Non-integrated <a href="#UACH_Javascript_NonIntegrated">#</a><a class="anchor" id="UACH_Javascript_NonIntegrated"></a></h2>
+<p>No additional configuration is required for either Cloud or On-premise solutions. The device detection engine natively processes the <code>getHighEntropyValues()</code> result when passed as evidence.</p>
+<h2>Non-integrated <a href="#UACH_Javascript_NonIntegrated">#</a><a class="anchor" id="UACH_Javascript_NonIntegrated"></a></h2>
 <p>If you don't want to, or can't, use the web integrations as described above, then you'll need to handle the steps of getting the values from the JavaScript API, transferring those to the server and adding them to the pipeline evidence values.</p>
 <p>This will require a good knowledge of your production environment and how communication works between your client and server side code.</p>
-<p>The following snippet demonstrates how to get the UA-CH values using JavaScript. The exact mechanism to get this value from the client device to your server will depend on your infrastructure. Once there, it will need to be added to the <a class="el" href="_pipeline_api__concepts__data__flow_data.html">flow data</a> evidence:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">flowData.AddEvidence(&quot;cookie.51D_GetHighEntropyValues&quot;, b64Uach);</div></div><div class="c-code__block c-code__block--outline"> <pre>
+<p>The following snippet demonstrates how to get the UA-CH values using JavaScript. The exact mechanism to get this value from the client device to your server will depend on your infrastructure. Once there, it will need to be added to the <a class="el" href="_pipeline_api__concepts__data__flow_data.html">flow data</a> evidence using either the <code>query.</code> or <code>cookie.</code> prefix:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">flowData.AddEvidence(&quot;query.51D_GetHighEntropyValues&quot;, b64Uach);</div><div class="c-code__line">// or</div><div class="c-code__line">flowData.AddEvidence(&quot;cookie.51D_GetHighEntropyValues&quot;, b64Uach);</div></div><div class="c-code__block c-code__block--outline"> <pre>
 &lt;script type="text/javascript"&gt;
 if (navigator.userAgentData) {
     navigator.userAgentData.getHighEntropyValues(
@@ -96,17 +95,38 @@ if (navigator.userAgentData) {
         "platform",
         "platformVersion",
         "fullVersionList"])
-    .then((ua) =&gt; { 
+    .then((ua) =&gt; {
         // Convert to base64-encoded JSON
-        // This string needs to be passed back to the server and added to evidence. E.g.
-        // flowData.AddEvidence("cookie.51D_GetHighEntropyValues", b64Uach);
-        var b64Uach = btoa(JSON.stringify(ua));        
+        // This string needs to be passed back to the server and added to evidence.
+        // Use either query. or cookie. prefix, e.g.:
+        // flowData.AddEvidence("query.51D_GetHighEntropyValues", b64Uach);
+        var b64Uach = btoa(JSON.stringify(ua));
     });
 }
 &lt;/script&gt;
-</pre> </div><p>If you're using our Cloud Service, no other changes are needed. However, if you're using On-premise solution, then you'll also need to modify your configuration to include a new engine called <code>UachJsConversionEngine</code> to convert the base-64 json from the JavaScript snippet above to evidence values that can be used by the existing device detection engine.</p>
-<p>For example:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">&quot;PipelineOptions&quot;: {</div><div class="c-code__line">    &quot;Elements&quot;: [</div><div class="c-code__line">        {</div><div class="c-code__line">            &quot;BuilderName&quot;: &quot;UachJsConversionEngine&quot;</div><div class="c-code__line">        },</div><div class="c-code__line">        {</div><div class="c-code__line">            &quot;BuilderName&quot;: &quot;DeviceDetectionHashEngineBuilder&quot;,</div><div class="c-code__line">            &quot;BuildParameters&quot;: {</div><div class="c-code__line">                ...</div><div class="c-code__line">            }</div><div class="c-code__line">        }</div><div class="c-code__line">    ]</div><div class="c-code__line">},</div></div> </section></div><!-- PageDoc -->
+</pre> </div><p>No additional configuration is required for either Cloud or On-premise solutions. The device detection engine natively processes this evidence format, converting it to the equivalent <code>Sec-CH-UA-*</code> HTTP headers internally.</p>
+<p>See the <a class="el" href="_device_detection__examples__getting_started__console__on_premise.html">Getting Started Console On-premise</a> example for a complete demonstration of this approach.</p>
+<h1 class="g-docs__section-heading">Alternative Evidence Formats <a href="#UACH_Javascript_Alternatives">#</a><a class="anchor" id="UACH_Javascript_Alternatives"></a></h1>
+<p>In addition to the <code>getHighEntropyValues()</code> JavaScript API result, the device detection engine supports the following alternative User-Agent Client Hints representations:</p>
+<h2>Structured User Agent (SUA) <a href="#UACH_Javascript_SUA">#</a><a class="anchor" id="UACH_Javascript_SUA"></a></h2>
+<p>The <a href="https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3229---object-useragent-">OpenRTB 2.6 specification</a> defines a Structured User Agent (<code>device.sua</code>) format for representing User-Agent Client Hints. This is commonly used in programmatic advertising and real-time bidding scenarios.</p>
+<p>If you receive UA-CH data in the SUA format, you can pass it directly to the device detection engine with the <code>query.</code> or <code>cookie.</code> prefix:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">flowData.AddEvidence(&quot;query.51D_StructuredUserAgent&quot;, suaJsonString);</div></div><p>The SUA format looks like this:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div><div class="c-code__line">  &quot;browsers&quot;: [</div><div class="c-code__line">    {&quot;brand&quot;: &quot;Chromium&quot;, &quot;version&quot;: [&quot;130&quot;, &quot;0&quot;, &quot;6723&quot;, &quot;92&quot;]},</div><div class="c-code__line">    {&quot;brand&quot;: &quot;Google Chrome&quot;, &quot;version&quot;: [&quot;130&quot;, &quot;0&quot;, &quot;6723&quot;, &quot;92&quot;]}</div><div class="c-code__line">  ],</div><div class="c-code__line">  &quot;platform&quot;: {&quot;brand&quot;: &quot;macOS&quot;, &quot;version&quot;: [&quot;15&quot;, &quot;1&quot;, &quot;0&quot;]},</div><div class="c-code__line">  &quot;mobile&quot;: 0,</div><div class="c-code__line">  &quot;model&quot;: &quot;&quot;,</div><div class="c-code__line">  &quot;architecture&quot;: &quot;arm&quot;</div><div class="c-code__line">}</div></div><p>For more details on OpenRTB integration, see the <a class="el" href="_device_detection__other_integrations__open_r_t_b_mappings.html">OpenRTB Mappings</a> page.</p>
+<h2>Technical Details <a href="#UACH_Javascript_Technical">#</a><a class="anchor" id="UACH_Javascript_Technical"></a></h2>
+<p>These alternative evidence formats (GHEV or SUA) are converted internally to the equivalent <code>Sec-CH-UA-*</code> HTTP headers before processing:</p>
+<ul>
+<li><code>Sec-CH-UA</code></li>
+<li><code>Sec-CH-UA-Mobile</code></li>
+<li><code>Sec-CH-UA-Platform</code></li>
+<li><code>Sec-CH-UA-Model</code></li>
+<li><code>Sec-CH-UA-Full-Version-List</code></li>
+<li><code>Sec-CH-UA-Platform-Version</code></li>
+<li><code>Sec-CH-UA-Arch</code></li>
+<li><code>Sec-CH-UA-Bitness</code></li>
+</ul>
+<p>The conversion happens natively in the device detection engine (in the C layer), making it efficient and seamless. This eliminates the need for any additional pipeline elements or pre-processing steps that were required in earlier versions. </p>
+</section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
 <!-- HTML footer for doxygen 1.8.15-->

@@ -88,8 +88,8 @@ $(document).ready(function(){initNavTree('_device_detection__whats_new_v45.html'
 <h2>New Evidence Keys</h2>
 <ul>
 <li><p class="startli">Added support for alternative representations of User-Agent Client Hints via the following evidence keys (usable with <code>query.</code> and <code>cookie.</code> prefixes):</p><ul>
-<li><code>51d_gethighentropyvalues</code>: Base64-encoded JSON string from <code>JSON.stringify()</code> of the <code>getHighEntropyValues()</code> JavaScript call.</li>
-<li><code>51d_structureduseragent</code>: Plain JSON string using the <code>device.sua</code> structure as defined in <a href="https://iabtechlab.com/standards/openrtb/">OpenRTB 2.6</a>.</li>
+<li><code>51D_GetHighEntropyValues</code>: Base64-encoded JSON string from <code>JSON.stringify()</code> of the <code>getHighEntropyValues()</code> JavaScript call.</li>
+<li><code>51D_StructuredUserAgent</code>: Plain JSON string using the <code>device.sua</code> structure as defined in <a href="https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3229---object-useragent-">OpenRTB 2.6</a>.</li>
 </ul>
 <p class="startli">These keys are functionally equivalent to passing the following HTTP headers:</p><ul>
 <li><code>Sec-CH-UA</code></li>
@@ -99,6 +99,7 @@ $(document).ready(function(){initNavTree('_device_detection__whats_new_v45.html'
 <li><code>Sec-CH-UA-Full-Version-List</code></li>
 <li><code>Sec-CH-UA-Platform-Version</code></li>
 </ul>
+<p class="startli">The conversion happens natively in the device detection engine, eliminating the need for additional pipeline elements. See the <a class="el" href="_device_detection__features__u_a_c_h__javascript.html">UA-CH JavaScript page</a> for detailed usage information.</p>
 </li>
 </ul>
 <h2>Results Serialization</h2>
