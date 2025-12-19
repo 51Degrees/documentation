@@ -36,6 +36,7 @@ var annotated =
             [ "OfflineProcessingTest", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_offline_processing_test.html", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_offline_processing_test" ],
             [ "PerformanceBenchmark", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_performance_benchmark.html", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_performance_benchmark" ],
             [ "PerformanceBenchmarkTest", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_performance_benchmark_test.html", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_performance_benchmark_test" ],
+            [ "ShareUsageExample", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_share_usage_example.html", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_share_usage_example" ],
             [ "TacCloud", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_tac_cloud.html", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_tac_cloud" ],
             [ "TacCloudTest", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_tac_cloud_test.html", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_tac_cloud_test" ],
             [ "UpdateDataFile", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_update_data_file.html", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_update_data_file" ],

@@ -1,5 +1,9 @@
 var NAVTREEINDEX5 =
 {
+"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a653eb755b51acb439da836f50e053fac":[3,0,0,3,4,70],
+"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a65659b8a588d069cb7292a1a59014bde":[3,0,0,3,4,171],
+"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a65e81c89957fd1a11f303810ef57c8ec":[3,0,0,3,4,233],
+"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a660469dbfee0f0426be1da73cbfecc94":[3,0,0,3,4,263],
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a6621e81bc150ab012d3ce615ac201bfd":[3,0,0,3,4,77],
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a6629a551baeaf518ce8b0afb60a73e55":[3,0,0,3,4,197],
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a666d4d265cba9ecc7cd472ff2b995fb8":[3,0,0,3,4,148],
@@ -245,9 +249,5 @@ var NAVTREEINDEX5 =
 "interfacefiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_1_1_solution.html#a77b0074d672bdb912ec919f181dec8dc":[3,0,0,1,0,0,2,3,1],
 "interfacefiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_1_1_solution.html#a941f835495317e4843d1200c457dc007":[3,0,0,1,0,0,2,3,0],
 "interfacefiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_1_1_solution.html#ac5cc8b687106f370f235e5ff41f39b5e":[3,0,0,1,0,0,2,3,2],
-"interfacefiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_reporting.html":[3,0,0,1,0,0,7],
-"interfacefiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_reporting.html#aab673660906e8dc4c2ad63436db4da60":[3,0,0,1,0,0,7,1],
-"interfacefiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1data_1_1_device_data_hash.html":[3,0,0,2,0,0,0,1],
-"interfacefiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1data_1_1_device_data_hash.html#ae4cf3de20407dfcc62f1d7c7ab8cf108":[3,0,0,2,0,0,0,1,0],
-"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html":[3,0,0,3,3]
+"interfacefiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_reporting.html":[3,0,0,1,0,0,7]
 };

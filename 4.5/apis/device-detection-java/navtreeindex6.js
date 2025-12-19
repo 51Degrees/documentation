@@ -1,5 +1,9 @@
 var NAVTREEINDEX6 =
 {
+"interfacefiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_reporting.html#aab673660906e8dc4c2ad63436db4da60":[3,0,0,1,0,0,7,1],
+"interfacefiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1data_1_1_device_data_hash.html":[3,0,0,2,0,0,0,1],
+"interfacefiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1data_1_1_device_data_hash.html#ae4cf3de20407dfcc62f1d7c7ab8cf108":[3,0,0,2,0,0,0,1,0],
+"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html":[3,0,0,3,3],
 "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a0146f19af8560825b1ac3143cb266fe5":[3,0,0,3,3,244],
 "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a0153565caa27dbdfc0ee8606aae09566":[3,0,0,3,3,8],
 "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a019990b47a4b965d98d0fede40696c41":[3,0,0,3,3,150],
@@ -245,9 +249,5 @@ var NAVTREEINDEX6 =
 "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae31ec01a321efebce103505f0e3787d8":[3,0,0,3,3,229],
 "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae364bbe5b17546b6342ebd09a501e267":[3,0,0,3,3,142],
 "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae3670c38e7cdf457c950602f97fc34e6":[3,0,0,3,3,161],
-"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae3956fc695da75166c25572e077a8e60":[3,0,0,3,3,75],
-"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae413d435ba666cdcfa1cd762fca9cb9e":[3,0,0,3,3,18],
-"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae47951db5e48822685077cd2a5744901":[3,0,0,3,3,254],
-"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae4a53414da61bf129b84435475d02c5b":[3,0,0,3,3,11],
-"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae50e9cb64e6d6cff6e0644fbb5fe1604":[3,0,0,3,3,58]
+"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae3956fc695da75166c25572e077a8e60":[3,0,0,3,3,75]
 };

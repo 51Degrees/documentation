@@ -1,5 +1,9 @@
 var NAVTREEINDEX7 =
 {
+"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae413d435ba666cdcfa1cd762fca9cb9e":[3,0,0,3,3,18],
+"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae47951db5e48822685077cd2a5744901":[3,0,0,3,3,254],
+"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae4a53414da61bf129b84435475d02c5b":[3,0,0,3,3,11],
+"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae50e9cb64e6d6cff6e0644fbb5fe1604":[3,0,0,3,3,58],
 "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae5575e33b3a1fe63acd8021dc9e4795a":[3,0,0,3,3,167],
 "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae5dc2976cdb8ae6712584fb0b3473d66":[3,0,0,3,3,273],
 "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae60df5d94c4d58a241cc9557f784983c":[3,0,0,3,3,49],

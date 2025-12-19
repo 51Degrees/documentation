@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_required_properties_config_swig.html#aed047a5ddadc62c7128849c4f1850c91":[3,0,0,2,0,0,2,0,23,0],
+"classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_required_properties_config_swig.html#aef82a5ce806e9d925ec5829f16aee5ea":[3,0,0,2,0,0,2,0,23,8],
+"classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_results_base_swig.html":[3,0,0,2,0,0,2,0,24],
+"classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_results_base_swig.html#a186d2cf3cd946e1cc970aacb115cfb93":[3,0,0,2,0,0,2,0,24,0],
 "classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_results_base_swig.html#a1d31edd49cd57451c899f471c138bf67":[3,0,0,2,0,0,2,0,24,21],
 "classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_results_base_swig.html#a377b1c3077c55053a23791658bf42a18":[3,0,0,2,0,0,2,0,24,23],
 "classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_results_base_swig.html#a3d12c32fcf03a67605d52806452bd959":[3,0,0,2,0,0,2,0,24,24],
@@ -245,9 +249,5 @@ var NAVTREEINDEX4 =
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a5d05a1067a843b5b814a20de294b981d":[3,0,0,3,4,210],
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a5f9d99a4d1c935c23d5b045d1441d1b0":[3,0,0,3,4,252],
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a5fd40101bcd9c42ddcefc35ff0cfa0c5":[3,0,0,3,4,275],
-"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a631e04d5ab2cb4176e83d64e9fffd755":[3,0,0,3,4,248],
-"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a653eb755b51acb439da836f50e053fac":[3,0,0,3,4,70],
-"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a65659b8a588d069cb7292a1a59014bde":[3,0,0,3,4,171],
-"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a65e81c89957fd1a11f303810ef57c8ec":[3,0,0,3,4,233],
-"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a660469dbfee0f0426be1da73cbfecc94":[3,0,0,3,4,263]
+"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a631e04d5ab2cb4176e83d64e9fffd755":[3,0,0,3,4,248]
 };

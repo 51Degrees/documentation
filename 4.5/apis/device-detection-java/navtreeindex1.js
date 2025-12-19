@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_key_helper.html#a32f66691611fcac8cae7eaec9dbc6bb4":[3,0,0,1,1,2,7],
+"classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_key_helper.html#a51cc067d931b65324ffec37f6ea43b6d":[3,0,0,1,1,2,4],
+"classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_key_helper.html#ab3650238d69a0c9ed813e0bab38c6a36":[3,0,0,1,1,2,2],
+"classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_key_helper.html#ab8a51f51f376cd2c25e1ecd41e9303ae":[3,0,0,1,1,2,5],
 "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_key_helper.html#ac1ac35c267e3f5747b7ccab60d84c4dd":[3,0,0,1,1,2,3],
 "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_key_helper.html#aef4271008064948dca5e7c34d39dccfd":[3,0,0,1,1,2,6],
 "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_property_helper.html":[3,0,0,1,1,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_config_base_swig.html#aa9b96909da7b1f8419807ef855d2dcf6":[3,0,0,2,0,0,2,0,4,5],
 "classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_config_base_swig.html#aaabb104bcb150b423cdbfe481d71913f":[3,0,0,2,0,0,2,0,4,7],
 "classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_config_base_swig.html#aab40e92c0087af3a788eeb025853bb06":[3,0,0,2,0,0,2,0,4,10],
-"classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_config_base_swig.html#aceee1fa7879437dca5a1825c9f689dd9":[3,0,0,2,0,0,2,0,4,1],
-"classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_config_base_swig.html#af3eb9520a27e59627fa300873791e2db":[3,0,0,2,0,0,2,0,4,2],
-"classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_config_base_swig.html#aff248a716261cc3c62e564f378d1f85e":[3,0,0,2,0,0,2,0,4,13],
-"classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_config_device_detection_swig.html":[3,0,0,2,0,0,2,0,5],
-"classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_config_device_detection_swig.html#a0276ecb69d4f268a614878ec6db0a01d":[3,0,0,2,0,0,2,0,5,7]
+"classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_config_base_swig.html#aceee1fa7879437dca5a1825c9f689dd9":[3,0,0,2,0,0,2,0,4,1]
 };
