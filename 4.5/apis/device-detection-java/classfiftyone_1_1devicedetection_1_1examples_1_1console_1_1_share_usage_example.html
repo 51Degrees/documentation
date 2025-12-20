@@ -81,9 +81,12 @@ Configure batch size (minimum entries per message) </li>
 Configure sampling rate (share percentage) </li>
 <li>
 Process evidence from a YAML file </li>
+<li>
+Add custom identifiers to track the data source </li>
 </ul>
 <p>This is useful for scenarios where you want to share usage data without performing device detection, or when you want fine-grained control over the share usage settings.</p>
 <p><b>Note on Client IP Address:</b> The client IP address is included in the shared evidence solely for deduplication purposes. This allows 51Degrees' machine learning algorithms to properly weight evidence coming from different sources versus repeated evidence from the same source. Without this, the training data could be skewed by over-representing certain device configurations.</p>
+<p><b>Identifying the Data Source (usage-from):</b> To help 51Degrees identify which customer or partner is sending usage data, you can add a custom "usage-from" header to the evidence. This is done by adding evidence with key</p><div class="c-code__block c-code__block--outline"><div class="c-code__line">header.usage-from </div></div><p> and your company/application name as the value. In the XML packet sent to 51Degrees, this appears as:</p><div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;header Name=<span class="c-code__stringliteral">&quot;usage-from&quot;</span>&gt;YourCompanyName&lt;/header&gt; </div></div><p> . Replace "YourCompanyName" in the <a class="el" href="">USAGE_FROM_VALUE</a> constant with your actual identifier before running this example.</p>
 </section></section>
 <!-- start ClassInheritanceGraph -->
 <section class="g-docs__section">
