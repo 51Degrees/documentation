@@ -1,0 +1,20 @@
+.c-table--packages {
+  font-size: size(-1);
+  thead {
+    font-size: size(2);
+  }
+  th {
+    }
+  td,
+  th {
+    padding: size(-4);
+    text-align: left;
+    vertical-align: top; 
+  }
+  tr {
+    &:nth-child(even) {
+      background-color: $colour-grey-lighter;
+    }
+  }
+}
+

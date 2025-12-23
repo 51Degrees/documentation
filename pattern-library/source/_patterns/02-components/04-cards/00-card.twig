@@ -1,0 +1,28 @@
+<article class="c-card {{ modifier }}">
+  {% block content %}
+  <header class="c-card__header">
+    <h3 class="c-card__heading">You’ve selected <em>3 × 51Degrees: Location</em> properties that require an API key to work.</h3>
+  </header>
+  <div class="b-form-group b-form-group--with-icon">
+    <img src="/images/icon-feature-vendor-51d.png" class="b-icon" alt="51 Degrees logo" />
+    <div class="b-input-group">
+      <input type="text" class="b-input b-input--block" id="input" placeholder="Enter your Google API key">
+      <button class="b-btn">Activate</button>
+    </div>
+  </div>
+  <div class="c-card__properties">
+  <ul class="c-card__properties-list">
+    <li class="c-card__item"><a href="#" class="c-card__property">BitsPerPixel</a></li>
+    <li class="c-card__item"><a href="#" class="c-card__property">BitsPerPixel</a></li>
+    <li class="c-card__item"><a href="#" class="c-card__property">BitsPerPixel</a></li>
+    <li class="c-card__item"><a href="#" class="c-card__property">BitsPerPixel</a></li>
+  <a href="#" class="c-card__remove">Remove all and close</a>
+  </ul></div>
+  <footer class="c-card__footer">
+    <a href="#" class="c-card__more">More information</a>
+    <p class="c-card__small-print">To obtain a product or API key for the features listed above, please visit the <a href="https://51degrees.com/products/store" target="_blank">51Degrees Store</a> or contact us at <a href="mailto:sales@51degrees.com?Subject=51Degrees%20Cloud%20Products">sales@51degrees.com</a>
+    </p>
+      {% include "components-table-packages" %}
+    </footer>
+  {% endblock %}
+</article>

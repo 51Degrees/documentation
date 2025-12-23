@@ -1,0 +1,10 @@
+.c-label {
+  font-size: size(-1);
+  font-weight: $font-weight-regular;
+  border: 1px solid $colour-lime;
+  color: $colour-lime-darker;
+  padding: 0px 5px;
+  border-radius: $rounded;
+  background-color: $colour-white;
+  margin: 0 size(-5) 0 0 ;
+}

@@ -1,0 +1,16 @@
+.p-implement {
+  .g-info {
+    padding:size(0) size(0) size(5) size(0);
+    @include respond-to(md) {
+      // padding:size(5);
+      padding: size(2) size(10); 
+    }
+    @include respond-to(xl) {
+      padding: size(4) size(6); 
+    }
+    @include respond-to(xl) {
+      padding: size(6) size(8); 
+    }
+  }
+  
+}

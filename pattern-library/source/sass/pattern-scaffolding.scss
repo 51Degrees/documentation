@@ -1,0 +1,63 @@
+/**
+ * This stylesheet is for styles you want to include only when displaying demo
+ * styles for grids, animations, color swatches, etc.
+ * These styles will not be your production CSS.
+ */
+
+.g-colours,
+.g-sizes {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.g-sizes--text {
+  display:block;
+}
+
+.c-colour,
+.c-size {
+  flex: auto;
+  padding: 0.3em;
+  margin: 0 0.5em 0.5em 0;
+  min-width: 5em;
+  max-width: 14em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.c-size--text {
+  border:0;
+  display:none;
+  padding:0;
+  margin:0;
+  max-width:100%;
+  &.c-size--active {
+    border:0;
+    display:block;
+  }
+}
+
+.c-size--active {
+  border: 1px solid #000;
+}
+
+.c-colour__swatch {
+  display: block;
+  height: 4em;
+  margin-bottom: 0.3em;
+  border-radius: 5px;
+}
+
+.c-size__swatch {
+  display: inline-block;
+  margin-bottom: 0.3em;
+  background-color:grey;
+}
+
+.c-colour__label,
+.c-size__label {
+  line-height: 1;
+}

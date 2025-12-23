@@ -1,0 +1,26 @@
+<article class="c-member">
+  <h3 class="c-member__title">
+    <a href="#" class="c-member__anchor">◆</a>articleHeading()
+    <span class="c-member__count">[2/2]</span>
+  </h3>
+  <div class="c-member__main">
+    <div class="c-member__head">
+      <div class="c-member__small">template < class T ></div>
+      <div class="c-member__split">
+        {% include "components-table-article" with {} %}
+        <div class="c-member__labels">
+          <span class="c-label">protected</span>
+          <span class="c-label">pure virtual</span>
+        </div>
+      </div>
+    </div>
+    <div class="c-member__body">
+      <p>A pure virtual method.</p>
+      <p>Implemented in <a href="">TestNamespace::TestInheritingClass</a>.</p>
+      <p>This is an --inverted table.</p>
+      {% include "components-table-invert" with {} %}
+      <p>A definition list.</p>
+      {% include "components-list-definition" with {} %}
+    </div>
+  </div>
+</article>

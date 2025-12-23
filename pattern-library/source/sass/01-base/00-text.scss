@@ -1,0 +1,172 @@
+@mixin make-text-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.b-text--hidden {
+  @include make-text-hidden();
+}
+
+@mixin make-text-default {
+  font-family:$font-family-default;
+  font-size:size(0);
+  color:$colour-black;
+}
+
+.b-text--default {
+  @include make-text-default();
+}
+
+@mixin make-text-count {
+  font-family:$font-family-default;
+  font-size:size(-2);
+  color:$colour-grey-dark;
+}
+
+.b-text--count {
+  @include make-text-count();
+}
+
+@mixin make-text-count-pill {
+  @include make-text-count();
+  border:1px solid $colour-lime-dark;
+  border-radius:$rounded-more;
+  padding:size(-13) size(-4);
+  color:$colour-black;
+  background-color:$colour-white;
+  display:inline;
+}
+
+.b-text--count-pill {
+  @include make-text-count-pill();
+}
+
+@mixin make-text-property-pill {
+  font-family:$font-family-default;
+  font-size:size(-1);
+  color:$colour-grey-darker;
+}
+
+.b-text--property-pill {
+  @include make-text-property-pill();
+}
+
+@mixin make-text-heading-1 {
+  font-family:$font-family-default;
+  font-weight:$font-weight-bold;
+  font-size:size(2);
+  color:$colour-black;
+  margin:0;
+}
+
+.b-text--heading-1 {
+  @include make-text-heading-1();
+}
+
+@mixin make-text-heading-2 {
+  font-family:$font-family-default;
+  font-weight:$font-weight-bold;
+  font-size:size(1);
+  color:$colour-black;
+  margin:0;
+}
+
+.b-text--heading-2 {
+  @include make-text-heading-2();
+}
+
+@mixin make-text-heading-3 {
+  font-family:$font-family-default;
+  font-weight:$font-weight-bold;
+  font-size:size(0);
+  color:$colour-black;
+  margin:0;
+}
+
+.b-text--heading-3 {
+  @include make-text-heading-3();
+}
+
+@mixin make-text-code {
+  font-family:$font-family-code;
+  font-size:size(-1);
+  color:$colour-grey-darker;
+}
+
+.b-text--code {
+  @include make-text-code();
+}
+
+@mixin make-text-code-snip {
+  @include make-text-code();
+  background-color: $colour-white;
+  border-radius: $rounded;
+  border: 1px solid $colour-grey-light;
+  padding: 0 size(-8);
+}
+
+.b-text--code-snip {
+  @include make-text-code-snip();
+}
+
+@mixin make-text-heading-caps {
+  font-family:$font-family-default;
+  font-size:size(-2);
+  color:$colour-black;
+  font-weight:$font-weight-regular;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+}
+
+.b-text--heading-caps {
+  @include make-text-heading-caps();
+}
+
+@mixin make-text-copyright {
+  font-family:$font-family-default;
+  font-size:size(-2);
+  color:$colour-black;
+}
+
+.b-text--copyright {
+  @include make-text-copyright();
+}
+
+@mixin make-text-progress {
+  font-family:$font-family-default;
+  @include scale('font-size', -1, $md: 0);
+  color:$colour-black;
+  letter-spacing:0.7px;
+  text-transform:uppercase;
+  font-weight:$font-weight-bold;
+}
+
+.b-text--progress {
+  @include make-text-progress();
+}
+
+@mixin make-text-red {
+  color: $colour-red;
+}
+
+.b-text--red {
+  @include make-text-red();
+}
+
+body {
+  @include make-text-default();
+  margin:0;
+  line-height:1.5;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}

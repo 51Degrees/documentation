@@ -1,0 +1,108 @@
+{
+  "configureUrl": "/patterns/05-pages-00-configure/05-pages-00-configure.html",
+  "detailsUrl": "/patterns/05-pages-01-details/05-pages-01-details.html",
+  "implementUrl": "/patterns/05-pages-02-implement/05-pages-02-implement.html",
+  "shareUrl": "/patterns/05-pages-03-share/05-pages-03-share.html",
+  "vendors": [
+    {"name": "Google"},
+    {"name": "Lorem"},
+    {"name": "Ipsum"}
+  ],
+  "implementations": [
+    {"name":"Client side", "count":""},
+    {"name":"Server side", "count":""},
+    {"name":"Another side", "count":""}
+  ],
+  "categories": [
+    {"name":"Location", "count":"15"},
+    {"name":"Device", "count":"109"},
+    {"name":"Operating System", "count":"21"},
+    {"name":"Web Browser", "count":"87"},
+    {"name":"Bots", "count":"2"}
+  ],
+  "subCategories": [
+    {"name":"Popular", "count":"15"},
+    {"name":"All", "count":"20"},
+    {"name":"Address", "count":"10"}
+  ],
+  "options": [
+    {
+      "id": "1",
+      "name":"BackCameraMegaPixels",
+      "vendor": "Google",
+      "vendorIcon":"icon-feature-vendor-google.png",
+      "vendorLogo":"logo-vendor-google.svg",
+      "billable":true,
+      "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis purus lorem, pulvinar sit amet diam id, laoreet dictum nunc. Nulla turpis tortor, consequat ut dolor vitae, luctus sodales mi. Duis eu est vel mauris rutrum porttitor. Duis tincidunt, ligula in aliquam dignissim, nunc justo ultrices nisi, et blandit neque lacus eget felis. Phasellus hendrerit ex vitae viverra ornare. Sed ut placerat metus. Vivamus tincidunt nisl eu auctor tempor. Nam condimentum tellus enim, at interdum dui tempus sed.",
+      "examples": [
+        {
+          "name": "iPhone X",
+          "value": "12MP"
+        },
+        {
+          "name": "Samsung Galaxy Tab",
+          "value": "application/java, application/java-archive, application/ogg, application/vnd.oma.dd+xml, application/vnd.oma.drm.content, application/vnd.oma.drm.message, application/vnd.oma.drm.rights+wbxml, application/vnd.oma.drm.rights+xml, application/vnd.wap.sic, application/vnd.wap.xhtml+xml, application/xhtml+xml, application/xml, audio/3gpp, audio/MP4A-ES, audio/MP4A-LATM, audio/aac, audio/amr, audio/amr-nb, audio/amr-wb, audio/amrnb, audio/amrwb, audio/imelody, audio/m4a, audio/mp4, audio/mpeg, audio/mpeg3, audio/mpg, audio/sp-midi, audio/wav, audio/wma, audio/x-mid, audio/x-midi, audio/x-mp3, audio/x-mpeg, audio/x-mpeg3, audio/x-mpg, image/bmp, image/gif, image/ico, image/jpeg, image/jpg, image/png, image/vnd.wap.wbmp, text/html, text/plain, text/vnd.sun.j2me.app-descriptor, text/x-vcard, text/xml, text/xsl, video/3gpp, video/3gpp2, video/H.263-1998, video/H.263-2000, video/H.264, video/MP4V-ES, video/mp4, video/mpeg4"
+        },
+        {
+          "name": "Pixel 2 XL",
+          "value": "48MP"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name":"CameraTypes",
+      "vendor":"",
+      "billable":false,
+      "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis purus lorem, pulvinar sit amet diam id, laoreet dictum nunc. Nulla turpis tortor, consequat ut dolor vitae, luctus sodales mi. Duis eu est vel mauris rutrum porttitor. Duis tincidunt, ligula in aliquam dignissim, nunc justo ultrices nisi, et blandit neque lacus eget felis.",
+      "example":"CameraTypes = '1'",
+      "example2":"CameraTypes = 'null'"
+    }
+  ],
+  "package": [
+    {
+      "property": "Platform",
+      "value": "On Premise "
+    },
+    {
+      "property": "Price",
+      "value": "Min $1,499/m or $14,999/yr"
+    },
+    {
+      "property": "Payment policy",
+      "value": "Credit card payment as default and automatic suspension for non payment after 30 days. Alternative payment options (Bank transfer, paypal) to be offered at additional admin fee tbd "
+    },
+    {
+      "property": "Renewal Policy",
+      "value": "Automatic contract renewal if not cancelled"
+    },
+    {
+      "property": "Allowances",
+      "value": "Genuine real time web requests only – no offline / batch analysis <allowed></allowed>"
+    },
+    {
+      "property": "Online T&Cs",
+      "value": "Mozilla Public Licence 2 (MPL2 "
+    },
+    {
+      "property": "No. of websites",
+      "value": "2.5m requests/mo"
+    },
+    {
+      "property": "No. of requests per month",
+      "value": "Unlimited "
+    },
+    {
+      "property": "Throttling",
+      "value": "100 requests/min "
+    },
+    {
+      "property": "Features",
+      "value": "51D Device Detection 51D Location, 51D TAC, 3rd Party Services option, 51D IPI & 51D Fraud"
+    },
+    {
+      "property": "Properties",
+      "value": "30 day trial only - All Properties – All Services, DD Basic Properties (79),Geo to Town, IPI to Town, Fraud to Good / Bad"
+    }   
+  ]
+}

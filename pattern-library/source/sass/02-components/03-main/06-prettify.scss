@@ -1,0 +1,48 @@
+/* SPAN elements with the classes below are added by prettyprint. */
+.pln { color: $colour-black; }  /* plain text */
+
+@media screen {
+  .str { color: $colour-blue; }  /* string content */
+  .kwd { color: $colour-red }  /* a keyword */
+  .com { color: $colour-grey-dark;}  /* a comment */
+  .typ { color: $colour-pink; }  /* a type name */
+  .lit { color: $colour-lime-darker; }  /* a literal value */
+  /* punctuation, lisp open bracket, lisp close bracket */
+  .pun, .opn, .clo { color: $colour-grey-darker; }
+  .tag { color: $colour-purple; }  /* a markup tag name */
+  .atn { color: $colour-orange; }  /* a markup attribute name */
+  .atv { color: $colour-lime-darker; }  /* a markup attribute value */
+  .dec, .var { color: $colour-orange }  /* a declaration; a variable name */
+  .fun { color: $colour-red; }  /* a function name */
+}
+
+/* Use higher contrast and text-weight for printable form. */
+@media print, projection {
+  .str { color: $colour-blue; }
+  .kwd { color: $colour-red; font-weight: bold }
+  .com { color: $colour-grey-dark; }
+  .typ { color: $colour-pink; font-weight: bold }
+  .lit { color: $colour-lime-darker; }
+  .pun, .opn, .clo { color: $colour-grey-darker; }
+  .tag { color: $colour-purple; font-weight: bold }
+  .atn { color: $colour-orange; }
+  .atv { color: $colour-lime-darker; }
+}
+
+/* Put a border around prettyprinted code snippets. */
+.prettyprint {
+  font-family: $font-family-code;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { 
+  margin-top: 0; 
+  margin-bottom: 0;
+
+  // default color for numbers
+  li {
+    color: $colour-grey;
+  }
+}

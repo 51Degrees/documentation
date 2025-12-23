@@ -1,0 +1,18 @@
+{% extends "components-card" %}
+
+{% block content %}
+
+  <p class="c-card__text">Register your email address to receive regular product updates, support and tips on how to make best use of your 51Degrees Cloud configuration.</p>
+  <p>I want to receive:</p>
+
+  {% include "components-select" with {'stacked':true ,'label': 'Product and maintenance updates'} %}
+  {% include "components-select" with {'stacked':true, 'label': 'Marketing'} %}
+
+  <div class="b-form-group">
+  	<label class="b-label" for="email">Enter your email address</label>
+	  <div class="b-input-group">
+	  	<input type="text" class="b-input" id="input" placeholder="">
+	    <button class="b-btn">Activate</button>
+	  </div>
+  </div>
+{% endblock %}

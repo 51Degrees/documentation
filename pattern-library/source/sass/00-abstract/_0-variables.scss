@@ -1,0 +1,28 @@
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1500px
+);
+
+$font-family-default: Arial, sans-serif;
+$font-family-code: Consolas, monospace;
+
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+$size-default: 16px;
+$size-scale: 1.2;
+
+$states: '&:active, &:hover, &:focus';
+
+$rounded: 5px;
+$rounded-more: 28px;
+
+$box-shadow-even: 1px 1px 6px 2px hsla(0, 18.2%, 12.9%, 0.16);
+$box-shadow-top-shallow: 0px -3px 5px 0px hsla(0, 18.2%, 12.9%, 0.1);
+$box-shadow-top-deep: 0px -3px 5px 0px hsla(0, 18.2%, 12.9%, 0.1);
+$box-shadow-inside-left: inset 6px 8px 12px 0px hsla(0, 0%, 0%, 0.12);
+
