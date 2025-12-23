@@ -19,6 +19,8 @@ Write-Host "::endgroup::"
 
 # This has to be done before building docs since docs depend on some of these sources
 Write-Host "::group::Cloning API docs"
+# We don't care about LFS files
+$env:GIT_LFS_SKIP_SMUDGE = 1
 # use PR target branch if we're running in a PR, or the current CI branch, or main
 $ref = $env:GITHUB_BASE_REF ? $env:GITHUB_BASE_REF : $env:GITHUB_REF_NAME ? $env:GITHUB_REF_NAME : 'main'
 $repoMap = & $PSScriptRoot/apis.ps1
