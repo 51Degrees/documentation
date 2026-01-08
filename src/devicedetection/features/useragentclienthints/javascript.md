@@ -97,41 +97,12 @@ example for a complete demonstration of this approach.
 # Alternative Evidence Formats <a href="#UACH_Javascript_Alternatives">#</a> @anchor UACH_Javascript_Alternatives
 
 In addition to the `getHighEntropyValues()` JavaScript API result, the device detection engine
-supports the following alternative User-Agent Client Hints representations:
-
-## Structured User Agent (SUA) <a href="#UACH_Javascript_SUA">#</a> @anchor UACH_Javascript_SUA
-
-The [OpenRTB 2.6 specification](https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3229---object-useragent-) defines a Structured
-User Agent (`device.sua`) format for representing User-Agent Client Hints. This is commonly
-used in programmatic advertising and real-time bidding scenarios.
-
-If you receive UA-CH data in the SUA format, you can pass it directly to the device detection
-engine with the `query.` or `cookie.` prefix:
-
-```
-flowData.AddEvidence("query.51D_StructuredUserAgent", suaJsonString);
-```
-
-The SUA format looks like this:
-
-```json
-{
-  "browsers": [
-    {"brand": "Chromium", "version": ["130", "0", "6723", "92"]},
-    {"brand": "Google Chrome", "version": ["130", "0", "6723", "92"]}
-  ],
-  "platform": {"brand": "macOS", "version": ["15", "1", "0"]},
-  "mobile": 0,
-  "model": "",
-  "architecture": "arm"
-}
-```
-
-For more details on OpenRTB integration, see the [OpenRTB Mappings](@ref DeviceDetection_OtherIntegrations_OpenRTBMappings) page.
+supports the [Structured User Agent (SUA)](@ref DeviceDetection_Features_UACH_SUA) format
+from the OpenRTB 2.6 specification, commonly used in programmatic advertising scenarios.
 
 ## Technical Details <a href="#UACH_Javascript_Technical">#</a> @anchor UACH_Javascript_Technical
 
-These alternative evidence formats (GHEV or SUA) are converted internally to the equivalent `Sec-CH-UA-*` HTTP
+The `getHighEntropyValues()` evidence is converted internally to the equivalent `Sec-CH-UA-*` HTTP
 headers before processing:
 
 - `Sec-CH-UA`
