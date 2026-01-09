@@ -2,9 +2,9 @@
 
 # Introduction 
 
-The RTB Project is an API specification for companies needing an open protocol for the automated trading of digital media across a broader range of platforms, devices, and advertising solutions. To aid those wishing to enhance the capture of device data, we've compiled a guide to map OpenRTB Object: Device fields to 51Degrees properties and values. The full Open RTB API Specification can be found [here](https://iabtechlab.com/wp-content/uploads/2022/04/OpenRTB-2-6_FINAL.pdf) with the Device Object specification in section 3.2.18 Device (page 28).
+The RTB Project is an API specification for companies needing an open protocol for the automated trading of digital media across a broader range of platforms, devices, and advertising solutions. To aid those wishing to enhance the capture of device data, we've compiled a guide to map OpenRTB Object: Device fields to 51Degrees properties and values. The full Open RTB API Specification can be found [here](https://iabtechlab.com/wp-content/uploads/2022/04/OpenRTB-2-6_FINAL.pdf) with the Device Object specification in section 3.2.18 Device (page 28) and Geo Object specification in section 3.2.19 (page 30).
 
-# OpenRTB API Mappings
+# OpenRTB API Device Mappings
 
 The following table lists the OpenRTB (3.2.18 Object: Device) field names, supported 51Degrees properties that contain equivalent data, alongside notes that may be helpful when mapping OpenRTB and 51Degrees values.
 
@@ -36,12 +36,25 @@ This table shows the mappings between OpenRTB Device Types (5.21) and 51Degrees 
 |6|Connected Device|Console, EReader, SmartWatch|
 |7|Set Top Box|MediaHub|
 
+# OpenRTB API Geo Mappings
+
+The following table lists the OpenRTB (3.2.19 Object: Geo) field names, supported 51Degrees properties that contain equivalent data, alongside notes that may be helpful when mapping OpenRTB and 51Degrees values.
+
+|OpenRTB property|OpenRTB Description|51Degrees property|51Degrees Comments|
+|---|---|---|---|
+|lat|Latitude from -90.0 to +90.0, where negative is south.|[Latitude](https://51degrees.com/developers/property-dictionary?item=Location%7CCoordinates%20Accuracy)||
+|lon|Longitude from -180.0 to +180.0, where negative is west.|[Longitude](https://51degrees.com/developers/property-dictionary?item=Location%7CCoordinates%20Accuracy)||
+|accuracy|Estimated location accuracy in meters; recommended when lat/lon are specified and derived from a device’s location services (i.e., type = 1). Note that this is the accuracy as reported from the device. Consult OS specific documentation (e.g., Android, iOS) for exact interpretation.|[AccuracyRadiusMin](https://51degrees.com/developers/property-dictionary?item=Location%7CCoordinates%20Accuracy)|AccuracyRadiusMax is in kilometers so a conversion should be applied.|
+|country|Country code using ISO-3166-1-alpha-3.|[CountryCode3](http://51degrees.com/developers/property-dictionary?item=Location%7CCountry%20Information)||
+|region|Region code using ISO-3166-2; 2-letter state code if USA.|[Iso31662Lvl4 and Iso31662Lvl4SubdivisionOnly](https://51degrees.com/developers/property-dictionary?item=Location%7CRegion%20Areas)|Where Country is USA, use the SubdivisionOnly as this is the 2 letter state code. For other countries, use Iso31662Lvl4.|
+|zip|ZIP or postal code.|[ZipCode](https://51degrees.com/developers/property-dictionary?item=Location%7CRegion%20Areas)||
+|utcoffset|Local time as the number +/- of minutes from UTC.|[TimeZoneOffset](https://51degrees.com/developers/property-dictionary?item=Location%7CTime%20Zone)||
+
 # Unsupported OpenRTB API Mappings
 Currently, the following fields are not directly supported by 51Degrees. Unless stated otherwise, this is because the value is unique to an individual device.
 
 |OpenRTB property|OpenRTB Description|Source|51Degrees Comments|
 |---|---|---|---|
-|geo|Location of the device assumed to be the user’s current location defined by a Geo object (Section 3.2.19).||[Contact Us](https://51degrees.com/contact-us)|
 |dnt|Standard “Do Not Track” flag as set in the header by the browser, where 0 = tracking is unrestricted, 1 = do not track||This data is not captured as it is unique to a device.|
 |lmt|“Limit Ad Tracking” signal commercially endorsed (e.g., iOS, Android), where 0 = tracking is unrestricted, 1 = tracking must be limited per commercial guidelines.||This data is not captured as it is unique to a device.|
 |ip|IPv4 address closest to device.|From HTTP requests.|[Contact Us](https://51degrees.com/contact-us)|
