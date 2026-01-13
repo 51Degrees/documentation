@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#acc36833782bc11c5cd265b631d819fa0":[10,5,3,16,24],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#acfb8855e15b588592b0a181815ae7b99":[10,5,3,16,31],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#ad40875eb0f69ceaa5d1c8866f7f2bab4":[10,5,3,16,8],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#ad6341ecc64f5227061e0aaa566ff6e5a":[10,5,3,16,21],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#ad6bee6b43bd14ca77b9f3f06eba02231":[10,5,3,16,14],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#addbe3a4796a0ead103bf48a2731a3d91":[10,5,3,16,29],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#addf26efab2c3ffc2b95ee476d974fab0":[10,5,3,16,11],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a7e441f64176b3648f30a05efb2653486":[10,8,2,0,3],
 "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a8e2bb03a663b4b3864ba3283d498f623":[10,8,2,0,6],
 "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#abc92385c1ef153c25daf8abf4165fe42":[10,8,2,0,2],
-"classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#ae2a8a5f2fd5eb7993c00141bd953c5d8":[10,8,2,0,0],
-"classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#af82a1e03a7b09c833efeb03fe9f81398":[10,8,2,0,5],
-"classtests_1_1test__cloudgettingstartedweb_1_1_cloud_getting_started_web_tests.html":[10,8,3,0],
-"classtests_1_1test__cloudgettingstartedweb_1_1_cloud_getting_started_web_tests.html#a3633310ea3a2735711af55e6bac3d6be":[10,8,3,0,1],
-"classtests_1_1test__cloudgettingstartedweb_1_1_cloud_getting_started_web_tests.html#a6dfba116dcc121e1acc5784ddd815a38":[10,8,3,0,0]
+"classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#ae2a8a5f2fd5eb7993c00141bd953c5d8":[10,8,2,0,0]
 };
