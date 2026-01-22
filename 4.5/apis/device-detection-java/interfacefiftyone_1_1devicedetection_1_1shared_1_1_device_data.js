@@ -92,6 +92,8 @@ var interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data =
     [ "getHardwareModel", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a4c1e44c80967b9ff7eab9f1bc70b5b80", null ],
     [ "getHardwareModelVariants", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a08378ae0cc16f104d0a6e55d9ac8037b", null ],
     [ "getHardwareName", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ab71643c03491587b8351dd991b5a85a1", null ],
+    [ "getHardwareNamePrefix", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#aec616f14242e76506068bfed0503cc96", null ],
+    [ "getHardwareNameVersion", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a46e1e9b835ae34ff2d801e1bb7921338", null ],
     [ "getHardwareProfileSource", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a49893ddc36a4dd06827cbe7afa2c1f50", null ],
     [ "getHardwareRank", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a2ec4afe0f66836026884f1eb42c5861b", null ],
     [ "getHardwareVendor", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a45da72b235197f482bd44894c1610d59", null ],
