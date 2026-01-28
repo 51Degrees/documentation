@@ -80,11 +80,11 @@ This section describes some of the most important, along with why they are usefu
 Any values marked with 'REQUIRED' must be included, or our backend systems will discard the data.
 
 - server.client-ip - REQUIRED - The IP address of the client that is connecting to the 
-  website/service. This is useful in order for us to evaluate the quality of the data. For an 
-  over-simplified example, large numbers of requests coming from a single IP are more likely to 
-  be bot or test traffic with spoofed details, which we do not want in our database.
-- header.user-agent - REQUIRED - The value from the HTTP Header 'User-Agent'. This is the primary 
-  means of device detection (before @uach began to supplant it)
+  website/service. This is needed to evaluate the quality of the data. For an over-simplified
+  example, large numbers of requests coming from a single IP are more likely to be bot or test
+  traffic with spoofed details, which are not as important to investigate.
+- header.user-agent - The value from the HTTP Header 'User-Agent'. This is the primary means of
+  device detection (before @uach began to supplant it).
 - header.usage-from - This is not from a real HTTP header, but is added to usage data by customers 
   in order for us to more easily identify where data is coming from. This can assist with 
   troubleshooting problems.
