@@ -4,6 +4,6 @@
 
 - @subpage ProductSummaries_FeatureMatrix
 
-- @subpage ProductSummaries_TestedVersions
-
 - @subpage ProductSummaries_OpenRTBMappings
+
+- @subpage ProductSummaries_TestedVersions
