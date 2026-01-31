@@ -753,7 +753,7 @@ void<!-- insertMemberAlign -->
 
 <p>The <a class="el" href="">DataUpdateService</a> has the ability to watch a data file on disk and automatically refresh the engine as soon as the file is updated. </p>
 <p>This setting enables/disables that feature. </p>
-<p>This feature works independently of <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_single_file_aspect_engine_builder_base.html#a835b48ac6e54fc6d6fa75ebffa210561">setAutoUpdate(boolean)</a>. You can enable file system watcher without enabling automatic updates if you want the engine to detect external file changes without polling for updates from the server. </p>
+<p>The <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_single_file_aspect_engine_builder_base.html#a835b48ac6e54fc6d6fa75ebffa210561">setAutoUpdate(boolean)</a> feature must also be enabled in order for the file system watcher to work. </p>
 <p>If the engine is built from a byte[] then this setting does nothing. </p>
 <p>Default is true </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
     <tr><dd class="c-list-definition__desc"><span class="b-text--red">enabled</span> - the cache configuration to use </dd>
