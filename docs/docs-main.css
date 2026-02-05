@@ -2408,11 +2408,18 @@ ol.linenums li {
 }
 
 .c-table__cell {
-  padding: 0.69444rem;
-  padding-left: 1.728rem;
+  padding: 0.69444rem 0.40188rem;
   border: none;
   border-bottom: 1px solid #EAEAEA;
   vertical-align: top;
+}
+
+.c-table__cell:first-child {
+  padding-left: 1.44rem;
+}
+
+.c-table__cell:last-child {
+  padding-right: 1.44rem;
 }
 
 .c-table__cell--parent {
@@ -2421,6 +2428,10 @@ ol.linenums li {
 
 .c-table__cell--child {
   padding-left: 3.58318rem;
+}
+
+.c-table__cell img {
+  max-width: 100%;
 }
 
 .c-table__levels {
@@ -2669,11 +2680,18 @@ ol.linenums li {
 }
 
 .c-table__cell {
-  padding: 0.69444rem;
-  padding-left: 1.728rem;
+  padding: 0.69444rem 0.40188rem;
   border: none;
   border-bottom: 1px solid #EAEAEA;
   vertical-align: top;
+}
+
+.c-table__cell:first-child {
+  padding-left: 1.44rem;
+}
+
+.c-table__cell:last-child {
+  padding-right: 1.44rem;
 }
 
 .c-table__cell--parent {
@@ -2682,6 +2700,10 @@ ol.linenums li {
 
 .c-table__cell--child {
   padding-left: 3.58318rem;
+}
+
+.c-table__cell img {
+  max-width: 100%;
 }
 
 .c-table__levels {
@@ -2978,8 +3000,8 @@ ol.linenums li {
 @media (min-width: 1501px) {
   .l-docs-index .g-docs__primary {
     padding-right: 30px;
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 calc(100% - 300px);
+    max-width: calc(100% - 300px);
     order: 1;
   }
 }
@@ -3018,9 +3040,8 @@ ol.linenums li {
   padding: 0 0.23257rem;
 }
 
-.l-docs-index .g-docs__primary p {
+.l-docs-index .g-docs__primary p, .l-docs-index .g-docs__primary ul, .l-docs-index .g-docs__primary ol {
   margin: 0 0 1rem 0;
-  max-width: 750px;
 }
 
 .l-docs-index .g-docs__primary a {
@@ -3032,6 +3053,10 @@ ol.linenums li {
 
 .l-docs-index .g-docs__primary a:active, .l-docs-index .g-docs__primary a:hover, .l-docs-index .g-docs__primary a:focus {
   text-decoration: underline;
+}
+
+.l-docs-index .g-docs__primary .image img {
+  max-width: 100%;
 }
 
 .l-docs-index .g-docs__sidebar {
@@ -3064,6 +3089,7 @@ ol.linenums li {
 }
 
 .l-docs-index .g-docs__section {
+  max-width: 850px;
   margin-bottom: 6.19174rem;
 }
 
@@ -3142,6 +3168,12 @@ ol.linenums li {
 
 .c-tabgroup {
   margin-bottom: 2.48832rem;
+}
+
+.c-tabgroup .g-docs__primary {
+  padding: 0;
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
 .c-tabgroup__main {
