@@ -14,7 +14,8 @@
 ## Property Retrieval
 
 - Added `propertyValueIndex` configuration option.  
-  When `true`, property values are indexed at startup for faster retrieval.
+  When `true`, property values are indexed at startup for faster retrieval.  
+  See [Property Indexing](@ref DeviceDetection_Features_PerformanceOptions) for more details.
 
 ## New Evidence Keys
 

@@ -31,18 +31,14 @@ The precise values associated with each template can be seen in the source code 
 
 # Evaluation graphs
 
-The hash data file includes two different 'graphs' that can be used when trying to find a match, [performance](@ref DeviceDetection_Hash_DataSetProduction_Performance) and [predictive](@ref DeviceDetection_Hash_DataSetProduction_Predictive).
+In version 4.5 and later, the device detection algorithm uses a single, unified predictive graph. Previously, it was possible to select between performance and predictive graphs, but these have been consolidated to provide the best balance of speed and accuracy.
 
-The performance graph is significantly faster than predictive, but is less tolerant of differences between the training data and the evaluated User-Agent.
+# Property Indexing {#faster-property-retrieval}
 
-This means that the performance graph is generally recommended when fast matching is the primary concern and the data file is regularly and frequently updated.
+A configuration option `propertyValueIndex` is available (introduced in version 4.5). 
+When enabled (set to `true`), the engine indexes property values at startup.
 
-In comparison, the predictive graph is recommended when getting an accurate match for every request is the primary concern, particularly when User-Agents are frequently encountered that are not in the training data.
-
-Note that if both graphs are enabled, performance will be used first. Predictive will only then be used if the algorithm fails to find a match with the performance graph.
-
-The default graph options are defined by the performance templates described above. At time of writing, all templates enable predictive and disable performance.
-This is done in order to maximize accuracy and ensure consistent device detection results between the profiles.
+This improves the speed of property retrieval, which is particularly beneficial for applications that need to access a large number of properties for each detection. It ensures more consistent performance in high-scale environments.
 
 # Restrict properties
 
