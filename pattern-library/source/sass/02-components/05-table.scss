@@ -81,6 +81,9 @@
   &--child {
     padding-left: size(7);
   }
+  img {
+    max-width: 100%;
+  }
 }
 
 .c-table__levels {
