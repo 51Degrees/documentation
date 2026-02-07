@@ -29,6 +29,7 @@ var NAVTREEINDEX0 =
 "_device_detection__features__index.html":[1,3],
 "_device_detection__features__native_key_lookup.html":[1,3,4],
 "_device_detection__features__performance_options.html":[1,3,5],
+"_device_detection__features__performance_options.html#faster-property-retrieval":[1,3,5,0],
 "_device_detection__features__tac_lookup.html":[1,3,6],
 "_device_detection__features__third_party_cookies.html":[1,3,7],
 "_device_detection__features__u_a_c_h__headers.html":[1,3,8,1],
