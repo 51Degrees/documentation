@@ -40,6 +40,7 @@ var interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data =
     [ "getCPUDesigner", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a791ded04790a2687893279fddf04e10b", null ],
     [ "getCPUMaximumFrequency", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a650bc02dae8fa85eeac99c4e2fc51b01", null ],
     [ "getCrawlerName", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a572e210fd8aa4edd5c5e540a5e1aee48", null ],
+    [ "getCrawlerProductTokens", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a9865e0eab23ddf281c3a63f115cea079", null ],
     [ "getCrawlerUsage", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a65d41f07c00b61117a129a35096306f4", null ],
     [ "getCssBackground", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a608882ecc1aaec934494e931550b11f9", null ],
     [ "getCssBorderImage", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a69d3104827c77adfe59d085bdc8805d8", null ],
