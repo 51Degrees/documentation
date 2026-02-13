@@ -4,6 +4,8 @@
 
 @subpage DeviceDetection_Features_ConcurrentProcessing
 
+@subpage DeviceDetection_Features_Crawlers
+
 @subpage DeviceDetection_Features_CsvDataFile
 
 @subpage DeviceDetection_Features_FalsePositiveControl
