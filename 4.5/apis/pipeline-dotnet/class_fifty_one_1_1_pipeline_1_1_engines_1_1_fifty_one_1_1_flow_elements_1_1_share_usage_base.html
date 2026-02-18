@@ -1163,7 +1163,7 @@ Properties</h2>
 </dl>
 <p>the blockedHttpHeaders, includedQueryStringParameters and ignoreDataEvidenceFilter parameters will be ignored. </p>
 <dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">failHandler</span> - The fail handler to use when failures occur while sending data. If null, a default WindowedFailHandler with ExponentialBackoffRecoveryStrategy will be created. </dd>
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">failHandler</span> - Obsolete. This parameter is no longer used. </dd>
   </dd>
 </dl>
 <dl class="c-list-definition"><dt class="c-list-definition__title">Exceptions</dt><dd class="c-list-definition__desc">
@@ -1462,9 +1462,7 @@ Properties</h2>
 <div class="c-member__body">
 
 <p>Attempt to send the data to the remote service. </p>
-<p>This only happens if there is not a task already running.</p>
-<p>If any error occurs while sending the data, then usage sharing is stopped. </p>
-<dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
+<p>This only happens if there is not a task already running. </p>
 <!-- endIndent -->
 
 </div>
