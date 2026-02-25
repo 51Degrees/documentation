@@ -21,7 +21,7 @@ Control what your content can be used for by checking the `CrawlerUsage` propert
 
 - **Archiving** Indicates that the crawler is used for archiving data and websites.
 
-- **Preview** Indicates that the crawler is used by platforms to create content previews.
+- **Preview** Indicates that the crawler is used to create content previews.
 
 - **Security** Indicates that the crawler is a security-focused web crawler that scans domains for vulnerabilities.
 
