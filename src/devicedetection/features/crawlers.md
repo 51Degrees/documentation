@@ -11,17 +11,17 @@ Control what your content can be used for by checking the `CrawlerUsage` propert
 
 - **Index** Indicates that the crawler is used to gather content for inclusion in an AI system’s internal index or retrieval database.
 
-- **Train** Indicates that the crawler is used to train or fine tune AI models.
+- **Train** Indicates that the crawler is used to train or fine-tune AI models.
 
 - **Input** Indicates that the crawler is used to collect content for input into AI models, including retrieval-augmented generation, grounding, or other use of the content to produce generative AI responses or search summaries.
 
 - **Search** Indicates that the crawler is used to build search indexes or search results.
 
-- **Monitor** Indicates that the crawler is used for monitoring websites. This crawling primarly involves regular visits to selected web pages to validate that they respond as expected.
+- **Monitor** Indicates that the crawler is used for monitoring websites. This crawling primarily involves regular visits to selected web pages to validate that they respond as expected.
 
 - **Archiving** Indicates that the crawler is used for archiving data and websites.
 
-- **Preview** Indicates that the crawler is used by social media platforms to create content previews.
+- **Preview** Indicates that the crawler is used by platforms to create content previews.
 
 - **Security** Indicates that the crawler is a security-focused web crawler that scans domains for vulnerabilities.
 
