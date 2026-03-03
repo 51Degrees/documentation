@@ -6,6 +6,8 @@
 
 @subpage IpIntelligence_Features_Human
 
+@subpage IpIntelligence_Features_Diversity
+
 @subpage IpIntelligence_Features_Weighting
 
 @subpage IpIntelligence_Features_Randomization
