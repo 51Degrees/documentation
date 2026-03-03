@@ -44,41 +44,41 @@ This helps to keep values for IPs like the example above low, where the majority
 
 The formula used to calculate diversity value for a single IP is:
 
-$$
+\f[
 D_{x} = \sum_p{min\left(\frac{C_p}{\bar{C_p}},1\right)}
-$$
-where each $p$ is a profile (e.g. `Windows 10`), $C_p$ is the number of events seen for that profile, and $\bar{C_p}$ is average value of $C_p$ for the IP.
+\f]
+where each \f$p\f$ is a profile (e.g. `Windows 10`), \f$C_p\f$ is the number of events seen for that profile, and \f$\bar{C_p}\f$ is average value of \f$C_p\f$ for the IP.
 
 This means that profiles with counts above the average are weighted more highly in the calculation than profiles with small contributions.
 
-The value for an IP range is then the average $D_x$:
+The value for an IP range is then the average \f$D_x\f$:
 
-$$
+\f[
 D = \frac{\sum_{x=0}^N{D_x}}{N}
-$$
+\f]
 or
-$$
+\f[
 D = \frac{\sum_{x=0}^N{\left(\sum_p{min\left(\frac{C_p}{\bar{C_p}},1\right)}\right)}}{N}
-$$
+\f]
 
-The actual values of $C_p$ are a weighted sample over time. So an event from today contributes $1$ to the count, but an event from $n$ days ago contributes $\frac{M-n}{M}$ where $M$ is the maximum number of days to include.
+The actual values of \f$C_p\f$ are a weighted sample over time. So an event from today contributes \f$1\f$ to the count, but an event from \f$n\f$ days ago contributes \f$\frac{M-n}{M}\f$ where \f$M\f$ is the maximum number of days to include.
 
-So $C_p$ can be expressed as:
+So \f$C_p\f$ can be expressed as:
 
-$$
+\f[
 C_p = \sum_i{\frac{M-n_i}{M}}
-$$
+\f]
 and
-$$
+\f[
 \bar{C_p} = \frac{\sum_{i,p}\frac{M_p - n_{i,p}}{M_p}}
 {N_p}
-$$
+\f]
 
-where the new part $N_p$ is the number of profiles
+where the new part \f$N_p\f$ is the number of profiles
 
 Meaning that the full equation is:
 
-$$
+\f[
 D = \frac
     {\sum_{x=0}^N
         \left( 
@@ -90,4 +90,5 @@ D = \frac
             , 1\right)
         \right)}
     {N}
-$$
+\f]
+
