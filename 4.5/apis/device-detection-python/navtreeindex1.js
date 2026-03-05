@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#ac63a0788d4a59670ae658c76f2330ccb":[10,5,3,16,28],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#ac703abc2dd9ac1bb967db3d387299287":[10,5,3,16,33],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#acc36833782bc11c5cd265b631d819fa0":[10,5,3,16,24],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#acfb8855e15b588592b0a181815ae7b99":[10,5,3,16,31],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#ad40875eb0f69ceaa5d1c8866f7f2bab4":[10,5,3,16,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a5abd4802200da66e04615920038a35be":[10,8,2,0,7],
 "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a7d3700dd362cd506de7e61de0f031269":[10,8,2,0,4],
 "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a7e441f64176b3648f30a05efb2653486":[10,8,2,0,3],
-"classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a8e2bb03a663b4b3864ba3283d498f623":[10,8,2,0,6],
-"classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#abc92385c1ef153c25daf8abf4165fe42":[10,8,2,0,2],
-"classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#ae2a8a5f2fd5eb7993c00141bd953c5d8":[10,8,2,0,0]
+"classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a8e2bb03a663b4b3864ba3283d498f623":[10,8,2,0,6]
 };

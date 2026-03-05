@@ -12,5 +12,6 @@ var examples =
     [ "onpremise/metadata_console.py", "onpremise_2metadata_console_8py-example.html", null ],
     [ "onpremise/offlineprocessing.py", "onpremise_2offlineprocessing_8py-example.html", null ],
     [ "onpremise/performance.py", "onpremise_2performance_8py-example.html", null ],
-    [ "onpremise/profile_metadata_console.py", "onpremise_2profile_metadata_console_8py-example.html", null ]
+    [ "onpremise/profile_metadata_console.py", "onpremise_2profile_metadata_console_8py-example.html", null ],
+    [ "onpremise/shareusage.py", "onpremise_2shareusage_8py-example.html", null ]
 ];

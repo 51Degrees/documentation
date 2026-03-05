@@ -1,0 +1,4 @@
+var namespacefiftyone__devicedetection__examples_1_1onpremise_1_1shareusage =
+[
+    [ "ShareUsageExample", "classfiftyone__devicedetection__examples_1_1onpremise_1_1shareusage_1_1_share_usage_example.html", "classfiftyone__devicedetection__examples_1_1onpremise_1_1shareusage_1_1_share_usage_example" ]
+];

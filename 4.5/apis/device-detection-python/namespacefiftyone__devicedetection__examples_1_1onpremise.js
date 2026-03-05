@@ -6,5 +6,6 @@ var namespacefiftyone__devicedetection__examples_1_1onpremise =
     [ "match_metrics", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1match__metrics.html", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1match__metrics" ],
     [ "metadata_console", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1metadata__console.html", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1metadata__console" ],
     [ "offlineprocessing", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1offlineprocessing.html", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1offlineprocessing" ],
-    [ "profile_metadata_console", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1profile__metadata__console.html", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1profile__metadata__console" ]
+    [ "profile_metadata_console", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1profile__metadata__console.html", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1profile__metadata__console" ],
+    [ "shareusage", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1shareusage.html", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1shareusage" ]
 ];

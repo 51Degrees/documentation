@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#abc92385c1ef153c25daf8abf4165fe42":[10,8,2,0,2],
+"classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#ae2a8a5f2fd5eb7993c00141bd953c5d8":[10,8,2,0,0],
 "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#af82a1e03a7b09c833efeb03fe9f81398":[10,8,2,0,5],
 "classtests_1_1test__cloudgettingstartedweb_1_1_cloud_getting_started_web_tests.html":[10,8,3,0],
 "classtests_1_1test__cloudgettingstartedweb_1_1_cloud_getting_started_web_tests.html#a3633310ea3a2735711af55e6bac3d6be":[10,8,3,0,1],
@@ -61,8 +63,8 @@ var NAVTREEINDEX2 =
 "classtests_1_1test__onpremisegettingstartedweb_1_1_on_premise_getting_started_web_tests.html#ae93b4e6e5f46b07b3b19aa99dbc10034":[10,8,6,0,3],
 "classtests_1_1test__properties_1_1_property_tests.html":[10,8,7,0],
 "classtests_1_1test__properties_1_1_property_tests.html#a21763f90e8a865eb6623cbae67659536":[10,8,7,0,2],
-"classtests_1_1test__properties_1_1_property_tests.html#a4bc4e260dd1a2ee1d40ddbfdc5feed9e":[10,8,7,0,0],
 "classtests_1_1test__properties_1_1_property_tests.html#a4bc4e260dd1a2ee1d40ddbfdc5feed9e":[10,8,7,0,1],
+"classtests_1_1test__properties_1_1_property_tests.html#a4bc4e260dd1a2ee1d40ddbfdc5feed9e":[10,8,7,0,0],
 "classtests_1_1test__properties_1_1_property_tests.html#a9c306002b4356c47ad3f84fc3b90d8d4":[10,8,7,0,3],
 "classtests_1_1test__properties_1_1_property_tests.html#a9c306002b4356c47ad3f84fc3b90d8d4":[10,8,7,0,4],
 "classtests_1_1test__swig_1_1_swig_tests.html":[10,8,8,0],
@@ -133,6 +135,7 @@ var NAVTREEINDEX2 =
 "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1metadata__console.html":[10,4,2,4],
 "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1offlineprocessing.html":[10,4,2,5],
 "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1profile__metadata__console.html":[10,4,2,6],
+"namespacefiftyone__devicedetection__examples_1_1onpremise_1_1shareusage.html":[10,4,2,7],
 "namespacefiftyone__devicedetection__onpremise.html":[10,5],
 "namespacefiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module.html":[10,5,3],
 "namespacefiftyone__devicedetection__onpremise_1_1devicedetection__datafile.html":[10,5,0],
@@ -160,5 +163,6 @@ var NAVTREEINDEX2 =
 "onpremise_2metadata_console_8py-example.html":[11,9],
 "onpremise_2offlineprocessing_8py-example.html":[11,10],
 "onpremise_2performance_8py-example.html":[11,11],
-"onpremise_2profile_metadata_console_8py-example.html":[11,12]
+"onpremise_2profile_metadata_console_8py-example.html":[11,12],
+"onpremise_2shareusage_8py-example.html":[11,13]
 };
