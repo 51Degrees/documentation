@@ -2,11 +2,11 @@
 
 # Overview
 
-Diversity properties are used to express the uniqueness of devices seen on a network. This can indicate the likelihood of a network being a residential network, or something like a VPN or hosting provider.
+Diversity properties are used to express how many different @profiles for a specific @component are seen within an IP range. This can be used to make various conclusions about what traffic from a certain range is likely to be. A diversity can relate to any @component, an example is `HardwareDiversity`, which is the number of different hardware profiles. This is different from the number of unique physical devices, as there could be 2 of the same model smartphone.
 
 Properties of this type have values between 0-10, where 0 indicates unknown, 1 is a low diversity, and 10 is high diversity.
 
-If, for an IP range, there is an average of 1 device per IP, then the diversity score would be 1. However, if there were 10 or more devices per IP, the score would be 10. This is a slight simplification, but is generally accurate. Details of the full calculation are in the [calculation](#calculation) section.
+If, for an IP range, there is an average of 1 profile per IP, then the diversity score would be 1. However, if there were 10 or more profiles per IP, the score would be 10. This is a slight simplification, but is generally accurate. Details of the full calculation are in the [calculation](#calculation) section.
 
 # Properties
 
@@ -14,9 +14,9 @@ There are 3 diversity properties in the IP Intelligence product:
 
 | Property | Description |
 | -------- | ----------- |
-| HardwareDiversity | Diversity of physical devices in an IP range e.g. `Samsung Galaxy 10`, `iPhone 16`. |
-| BrowserDiversity | Diversity of browsers in an IP range e.g. `Chrome 137`, `Edge 120`. |
-| PlatformDiversity | Diversity of OS platform in an IP range e.g. `Windows 10`, `Android 16`. |
+| HardwareDiversity | Diversity of hardware models in an IP range e.g. `Samsung Galaxy 10`, `iPhone 16`. |
+| BrowserDiversity | Diversity of browser (or app) name and version in an IP range e.g. `Chrome 137`, `Edge 120`. |
+| PlatformDiversity | Diversity of OS name and version in an IP range e.g. `Windows 10`, `Android 16`. |
 
 # Values
 
@@ -24,8 +24,8 @@ For a diversity property, the following values can be returned:
 
 | Value | Description |
 | ----- | ----------- |
-| `0`   | There are no recent web events in this IP range to give a score. |
-| `1`-`9` | This is the average number of unique profiles per IP in the IP range (after weighting events for age and consistency). |
+| `0`   | There are no recent web events in this IP range to calculate a score. |
+| `1`-`9` | This is the average number of unique profiles per IP in the IP range. |
 | `10`  | The average number of unique profiles per IP in the range is `10` or above. |
 
 The values are not the exact average number of unique profiles, as 2 forms of weighting are applied:
@@ -36,7 +36,7 @@ While an event from the current day is counted as 1 event, events from previous 
 This helps fill in data for ranges which see lower daily levels of traffic, while ensuring that profile changes across time do not affect the result.
 
 ### Consistency Weight
-If we see 1 device 1000 times for an IP, but another 5 device are seen only once each, this will not give a score of 6. This is because profiles where the count is below the average make a smaller contribution.
+If we see 1 profile 1000 times for an IP, but another 5 profiles are seen only once each, this will not give a score of 6. This is because profiles where the count is below the average make a smaller contribution.
 
 This helps to keep values for IPs like the example above low, where the majority of the events are for 1 profile. So values are a reflection of the distribution of traffic, not just the count.
 
