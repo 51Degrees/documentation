@@ -14,5 +14,7 @@ var class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_messages =
     [ "MessageShareUsageNoPipelines", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_messages.html#a85ee2f23062124238edb506b33c72d67", null ],
     [ "MessageShareUsageTooManyPipelines", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_messages.html#aadec47d7bb96400270adb7427b400907", null ],
     [ "MessageShareUsageUnexpectedFailure", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_messages.html#a9f548d15a78b561955e4e7a3935ca774", null ],
+    [ "PropertyKeyedCacheNotSupported", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_messages.html#a2a9d5bcd17762cea8a4f438405fa3a67", null ],
+    [ "PropertyKeyedMissingValue", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_messages.html#a16173889676d73befca5f4dc3ca2d3f6", null ],
     [ "ResourceManager", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_messages.html#aa035569aedd8cfcda4715cb096c486bf", null ]
 ];
