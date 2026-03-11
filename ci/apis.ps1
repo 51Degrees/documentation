@@ -19,7 +19,7 @@
     # IP Intelligence
     "ip-intelligence-cxx" = $null
     "ip-intelligence-dotnet" = "ip-intelligence-dotnet-examples"
-    "ip-intelligence-go" = "ip-intelligence-go-examples"
+    "ip-intelligence-go" = $null
     "ip-intelligence-java" = "ip-intelligence-java-examples"
 
     # Location
