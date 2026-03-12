@@ -7,5 +7,5 @@ var NAVTREEINDEX0 =
 "examples_2onpremise_2reload_from_file_8go-example.html":[2,3],
 "examples_2onpremise_2update_polling_interval_8go-example.html":[2,4],
 "md__home_runner_work_documentation_documentation_apis_ip-intelligence-go__r_e_a_d_m_e.html":[0],
-"md__home_runner_work_documentation_documentation_apis_ip-intelligence-go_ip-intelligence-go-examples__r_e_a_d_m_e.html":[1]
+"md__home_runner_work_documentation_documentation_apis_ip-intelligence-go_examples__r_e_a_d_m_e.html":[1]
 };

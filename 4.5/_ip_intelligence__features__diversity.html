@@ -20,12 +20,6 @@
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
   $(document).ready(initResizable);
 /* @license-end */</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
-});
-</script><script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="l-docs-index p-doxygen">
@@ -111,32 +105,39 @@ $(document).ready(function(){initNavTree('_ip_intelligence__features__diversity.
 <p>This helps to keep values for IPs like the example above low, where the majority of the events are for 1 profile. So values are a reflection of the distribution of traffic, not just the count.</p>
 <h1 class="g-docs__section-heading">Calculation</h1>
 <p>The formula used to calculate diversity value for a single IP is:</p>
-<p class="formulaDsp">
-\[ D_{x} = \sum_p{min\left(\frac{C_p}{\bar{C_p}},1\right)} \]
-</p>
-<p> where each \(p\) is a profile (e.g. <code>Windows 10</code>), \(C_p\) is the number of events seen for that profile, and \(\bar{C_p}\) is average value of \(C_p\) for the IP.</p>
+<div class="image">
+<object type="image/svg+xml" data="diversity-single.svg">diversity-single.svg</object>
+<div class="caption">
+diversity-single</div></div>
+<p>where each <code>p</code> is a profile (e.g. <code>Windows 10</code>), <code>Cp</code> is the number of events seen for that profile, and <code>C̅p</code> is average value of <code>Cp</code> for the IP.</p>
 <p>This means that profiles with counts above the average are weighted more highly in the calculation than profiles with small contributions.</p>
-<p>The value for an IP range is then the average \(D_x\):</p>
-<p class="formulaDsp">
-\[ D = \frac{\sum_{x=0}^N{D_x}}{N} \]
-</p>
-<p> or </p><p class="formulaDsp">
-\[ D = \frac{\sum_{x=0}^N{\left(\sum_p{min\left(\frac{C_p}{\bar{C_p}},1\right)}\right)}}{N} \]
-</p>
-<p>The actual values of \(C_p\) are a weighted sample over time. So an event from today contributes \(1\) to the count, but an event from \(n\) days ago contributes \(\frac{M-n}{M}\) where \(M\) is the maximum number of days to include.</p>
-<p>So \(C_p\) can be expressed as:</p>
-<p class="formulaDsp">
-\[ C_p = \sum_i{\frac{M-n_i}{M}} \]
-</p>
-<p> and </p><p class="formulaDsp">
-\[ \bar{C_p} = \frac{\sum_{i,p}\frac{M_p - n_{i,p}}{M_p}} {N_p} \]
-</p>
-<p>where the new part \(N_p\) is the number of profiles</p>
+<p>The value for an IP range is then the average Dx:</p>
+<div class="image">
+<object type="image/svg+xml" data="diversity-sum.svg">diversity-sum.svg</object>
+<div class="caption">
+diversity-sum</div></div>
+<p>or</p>
+<div class="image">
+<object type="image/svg+xml" data="diversity-range.svg">diversity-range.svg</object>
+<div class="caption">
+diversity-range</div></div>
+<p>The actual values of <code>Cp</code> are a weighted sample over time. So an event from today contributes <code>1</code> to the count, but an event from <code>n</code> days ago contributes <code>(M-n)/M</code> where <code>M</code> is the maximum number of days to include.</p>
+<p>So <code>Cp</code> can be expressed as:</p>
+<div class="image">
+<object type="image/svg+xml" data="count.svg">count.svg</object>
+<div class="caption">
+count</div></div>
+<p>and </p><div class="image">
+<object type="image/svg+xml" data="count-average.svg">count-average.svg</object>
+<div class="caption">
+count-average</div></div>
+<p>where the new part <code>Np</code> is the number of profiles</p>
 <p>Meaning that the full equation is:</p>
-<p class="formulaDsp">
-\[ D = \frac {\sum_{x=0}^N \left( \sum_p min\left(\frac {\sum_i\frac{M_p-n_{p,i}}{M_p}} {\frac {\sum_{i,p}\frac{M_p-n_{p,i}}{M_p}} {N_p}} , 1\right) \right)} {N} \]
-</p>
- </section></div><!-- PageDoc -->
+<div class="image">
+<object type="image/svg+xml" data="diversity-complete.svg">diversity-complete.svg</object>
+<div class="caption">
+diversity-complete</div></div>
+</section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->
 <!-- HTML footer for doxygen 1.8.15-->

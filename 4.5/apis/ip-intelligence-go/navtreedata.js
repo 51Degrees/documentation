@@ -24,7 +24,7 @@ for the JavaScript code in this file
 var NAVTREE =
 [
     [ "51Degrees IP Intelligence API", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-go__r_e_a_d_m_e.html", null ],
-    [ "51Degrees Ip Intelligence API", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-go_ip-intelligence-go-examples__r_e_a_d_m_e.html", null ],
+    [ "51Degrees Ip Intelligence API Examples", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-go_examples__r_e_a_d_m_e.html", null ],
     [ "Examples", "examples.html", "examples" ]
 ];
 
