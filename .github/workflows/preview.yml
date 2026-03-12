@@ -14,7 +14,7 @@ jobs:
           node-version: 10.x
       - run: pwsh ci/build-pattern-library.ps1
       - run: pwsh ci/generate-documentation.ps1
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: docs_${{ inputs.pull-request-id }}
           path: gh-pages/*
