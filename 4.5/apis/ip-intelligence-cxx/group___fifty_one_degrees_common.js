@@ -33,6 +33,7 @@ var group___fifty_one_degrees_common =
     [ "Threading", "group___fifty_one_degrees_threading.html", "group___fifty_one_degrees_threading" ],
     [ "Tree", "group___fifty_one_degrees_tree.html", "group___fifty_one_degrees_tree" ],
     [ "Values", "group___fifty_one_degrees_value.html", "group___fifty_one_degrees_value" ],
+    [ "Weighted Items", "group___fifty_one_degrees_weighted_item.html", "group___fifty_one_degrees_weighted_item" ],
     [ "fiftyoneDegreesEvidencePrefix", "group___fifty_one_degrees_common.html#ga1ff9010650f2716970e86c12c5a97a76", [
       [ "FIFTYONE_DEGREES_EVIDENCE_HTTP_HEADER_STRING", "group___fifty_one_degrees_common.html#gga1ff9010650f2716970e86c12c5a97a76a5bfdff3692f3fd3bb0506a7117e55402", null ],
       [ "FIFTYONE_DEGREES_EVIDENCE_HTTP_HEADER_IP_ADDRESSES", "group___fifty_one_degrees_common.html#gga1ff9010650f2716970e86c12c5a97a76a4422eb1064160f695cef887801bbd6e6", null ],

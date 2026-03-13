@@ -102,6 +102,26 @@ Structs</h2>
 <!-- end member list -->
 </tbody></table></div>
 <section class="g-docs__section">
+<!-- startMemberHeader -->
+<h2 class="g-docs__section-heading">
+<a name="define-members"></a>
+Macros</h2>
+<!-- endMemberHeader -->
+<!-- startMemberList -->
+<!-- start member list -->
+<div class="g-table g-table--overflow">
+<table class="c-table c-table--members">
+<tbody class="c-table__body">
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:ga63609b1397902230bcbef3dc3c53704a"><td class="c-table__cell">#define<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_value.html#ga63609b1397902230bcbef3dc3c53704a">FIFTYONE_DEGREES_VALUE_IS_MASKED</a>(v)&#160;&#160;&#160;(((v)-&gt;urlOffsetOrWeight &amp; 0xFFFF0000) == (int32_t)0xFF000000)
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:ga63609b1397902230bcbef3dc3c53704a">Macro to check if a Value's urlOffsetOrWeight field carries a masked weight.  <a href="#ga63609b1397902230bcbef3dc3c53704a">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- endMemberList -->
+<!-- end member list -->
+</tbody></table></div>
 </section>
 <section class="g-docs__section">
 </section>
@@ -183,6 +203,20 @@ Functions</h2>
 <!-- startMemberDescription -->
 <div class="c-table__desc memdesc:gaaed8a8b28a1e5550d128ad8be4e08698">Get index of the value for the requested name from the collection provided.  <a href="#gaaed8a8b28a1e5550d128ad8be4e08698">More...</a><!-- endMemberDescription -->
 </div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:ga0772ad866cafac5f6ac9b81f8774fd41"><td class="c-table__cell">bool<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_value.html#ga0772ad866cafac5f6ac9b81f8774fd41">fiftyoneDegreesValueIsWeighted</a> (const <a class="el" href="structfiftyone_degrees_value.html">fiftyoneDegreesValue</a> *value)
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:ga0772ad866cafac5f6ac9b81f8774fd41">Returns true if the value carries a masked weight.  <a href="#ga0772ad866cafac5f6ac9b81f8774fd41">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:ga70f3d5e252a5b7361fb91d658a5acbc0"><td class="c-table__cell">uint16_t<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_value.html#ga70f3d5e252a5b7361fb91d658a5acbc0">fiftyoneDegreesValueGetWeight</a> (const <a class="el" href="structfiftyone_degrees_value.html">fiftyoneDegreesValue</a> *value)
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:ga70f3d5e252a5b7361fb91d658a5acbc0">Gets the weight from a Value record as a uint16_t (0–65535), or 0 if the value is not weighted.  <a href="#ga70f3d5e252a5b7361fb91d658a5acbc0">More...</a><!-- endMemberDescription -->
+</div></td></tr>
 <!-- endMemberList -->
 <!-- end member list -->
 </tbody></table></div>
@@ -204,6 +238,48 @@ Functions</h2>
 <section class="g-docs__section">
 </section>
 <section class="g-docs__section">
+<h2 class="g-docs__section-heading">Macro Definition Documentation</h2>
+<!-- startMemberDocList -->
+<article class="c-member">
+<a id="ga63609b1397902230bcbef3dc3c53704a"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga63609b1397902230bcbef3dc3c53704a">&#9670;&nbsp;</a></span>FIFTYONE_DEGREES_VALUE_IS_MASKED</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_VALUE_IS_MASKED<!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startFirstParameterType -->
+          <td class="c-table__cell"><!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell">v<!-- endParameterName -->
+</td><td>)</td>
+          <td>&#160;&#160;&#160;(((v)-&gt;urlOffsetOrWeight &amp; 0xFFFF0000) == (int32_t)0xFF000000)<!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Macro to check if a Value's urlOffsetOrWeight field carries a masked weight. </p>
+<p>A value is weighted when (urlOffsetOrWeight &amp; 0xFFFF0000) == 0xFF000000. This is distinct from -1 (0xFFFFFFFF, "no URL" sentinel) and from valid non-negative URL offsets. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<!-- endMemberDocList -->
 <h2 class="g-docs__section-heading">Function Documentation</h2>
 <!-- startMemberDocList -->
 <article class="c-member">
@@ -1025,6 +1101,92 @@ Functions</h2>
 </div>
 </div>
 </article>
+<article class="c-member">
+<a id="ga70f3d5e252a5b7361fb91d658a5acbc0"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga70f3d5e252a5b7361fb91d658a5acbc0">&#9670;&nbsp;</a></span>fiftyoneDegreesValueGetWeight()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">uint16_t fiftyoneDegreesValueGetWeight <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startFirstParameterType -->
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_value.html">fiftyoneDegreesValue</a> *<!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><em>value</em><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Gets the weight from a Value record as a uint16_t (0–65535), or 0 if the value is not weighted. </p>
+<p>The weight is stored in the lower 2 bytes of urlOffsetOrWeight when the upper 2 bytes match the 0xFF00 mask. To convert to a proportion: (double)weight / UINT16_MAX </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">value</span> - the value to get the weight from </dd>
+  </dd>
+</dl>
+<dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the weight (0–65535 range), or 0 if not weighted </dd></dl>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
+<a id="ga0772ad866cafac5f6ac9b81f8774fd41"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga0772ad866cafac5f6ac9b81f8774fd41">&#9670;&nbsp;</a></span>fiftyoneDegreesValueIsWeighted()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool fiftyoneDegreesValueIsWeighted <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startFirstParameterType -->
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_value.html">fiftyoneDegreesValue</a> *<!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><em>value</em><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Returns true if the value carries a masked weight. </p>
+<p>A value is weighted when (urlOffsetOrWeight &amp; 0xFFFF0000) == 0xFF000000. This is distinct from -1 (0xFFFFFFFF, "no URL" sentinel) and from valid non-negative URL offsets. </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">value</span> - the value to check </dd>
+  </dd>
+</dl>
+<dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the value carries a masked weight, false otherwise </dd></dl>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
 <!-- endMemberDocList -->
 </section>
 <!--endtest-->
@@ -1034,6 +1196,7 @@ Functions</h2>
       <h5 class="c-section-nav__heading">On This Page</h5>
         <ul class="c-section-nav__list">
 <li class="c-section-nav__item"><a class="c-section-nav__link" href="#nested-classes">Structs</a></li>
+<li class="c-section-nav__item"><a class="c-section-nav__link" href="#define-members">Macros</a></li>
 <li class="c-section-nav__item"><a class="c-section-nav__link" href="#func-members">Functions</a></li>      </ul>
     </div>
   </div>

@@ -163,20 +163,6 @@ Structs</h2>
 <!-- member dec start -->
 <!-- startMemberItem() -->
 <tr class="c-table__row memitem:"><td class="c-table__cell">struct <!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_profile_percentage.html">fiftyoneDegreesProfilePercentage</a>
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:">The structure to hold a pair of result item and its percentage When getting values for a property from the result the values will be a list of potential matching items and their weights to indicate the proportion of this item for the matched IP range in our data.  <a href="structfiftyone_degrees_profile_percentage.html#details">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:"><td class="c-table__cell">struct <!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_ipi_list.html">fiftyoneDegreesIpiList</a>
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:">The structure which represents the list of values returned for the required property from the results.  <a href="structfiftyone_degrees_ipi_list.html#details">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:"><td class="c-table__cell">struct <!-- insertMemberAlign -->
 &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_result_ipi.html">fiftyoneDegreesResultIpi</a>
 <!-- startMemberDescription -->
 <div class="c-table__desc memdesc:">Singular IP address result returned by a detection process method.  <a href="structfiftyone_degrees_result_ipi.html#details">More...</a><!-- endMemberDescription -->
@@ -344,22 +330,6 @@ Macros</h2>
 </div></td></tr>
 <!-- member dec start -->
 <!-- startMemberItem() -->
-<tr class="c-table__row memitem:gaa5dc43a5c8ae1a79950ec7c181ad1a40"><td class="c-table__cell"><a id="gaa5dc43a5c8ae1a79950ec7c181ad1a40"></a>
-#define<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#gaa5dc43a5c8ae1a79950ec7c181ad1a40">IPI_LIST_RESIZE_FACTOR</a>&#160;&#160;&#160;1.5f
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:gaa5dc43a5c8ae1a79950ec7c181ad1a40">When the load factor in the list is reached the list will resize to this factor of the current capacity. <!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ga57ca5acabb15e5ed9b7655dc6f3ea7dd"><td class="c-table__cell"><a id="ga57ca5acabb15e5ed9b7655dc6f3ea7dd"></a>
-#define<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#ga57ca5acabb15e5ed9b7655dc6f3ea7dd">IPI_LIST_DEFAULT_LOAD_FACTOR</a>&#160;&#160;&#160;0.7f
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:ga57ca5acabb15e5ed9b7655dc6f3ea7dd">Default load factor for IP intelligence list. <!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
 <tr class="c-table__row memitem:gac3e4d2f164bcd8bcda4aa1fa76485de0"><td class="c-table__cell">#define<!-- insertMemberAlign -->
 &#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#gac3e4d2f164bcd8bcda4aa1fa76485de0">FIFTYONE_DEGREES_RESULTS_IPI_MEMBERS</a>
 <!-- startMemberDescription -->
@@ -387,6 +357,20 @@ Typedefs</h2>
 <div class="g-table g-table--overflow">
 <table class="c-table c-table--members">
 <tbody class="c-table__body">
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:gab5bc63cf3412ae1ed14e5897b0df44a0"><td class="c-table__cell">typedef&#160;<a class="el" href="structfiftyone_degrees_weighted_item.html">fiftyoneDegreesWeightedItem</a><!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#gab5bc63cf3412ae1ed14e5897b0df44a0">fiftyoneDegreesProfilePercentage</a>
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:gab5bc63cf3412ae1ed14e5897b0df44a0">Backward compatibility typedef for ProfilePercentage.  <a href="#gab5bc63cf3412ae1ed14e5897b0df44a0">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:ga580e2f58583e4dd4aa302f6176a7fb8e"><td class="c-table__cell">typedef&#160;<a class="el" href="structfiftyone_degrees_weighted_item_list.html">fiftyoneDegreesWeightedItemList</a><!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#ga580e2f58583e4dd4aa302f6176a7fb8e">fiftyoneDegreesIpiList</a>
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:ga580e2f58583e4dd4aa302f6176a7fb8e">Backward compatibility typedef for IpiList.  <a href="#ga580e2f58583e4dd4aa302f6176a7fb8e">More...</a><!-- endMemberDescription -->
+</div></td></tr>
 <!-- member dec start -->
 <!-- startMemberItem() -->
 <tr class="c-table__row memitem:gabd56ee9670edd8f9204236f5dc56cd2f"><td class="c-table__cell"><a id="gabd56ee9670edd8f9204236f5dc56cd2f"></a>
@@ -584,7 +568,7 @@ Functions</h2>
 </div></td></tr>
 <!-- member dec start -->
 <!-- startMemberItem() -->
-<tr class="c-table__row memitem:ga84f8fb0ff1200102cb04ce7444cb6134"><td class="c-table__cell">const&#160;<a class="el" href="structfiftyone_degrees_profile_percentage.html">fiftyoneDegreesProfilePercentage</a>&#160;*<!-- insertMemberAlign -->
+<tr class="c-table__row memitem:ga84f8fb0ff1200102cb04ce7444cb6134"><td class="c-table__cell">const&#160;<a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#gab5bc63cf3412ae1ed14e5897b0df44a0">fiftyoneDegreesProfilePercentage</a>&#160;*<!-- insertMemberAlign -->
 &#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#ga84f8fb0ff1200102cb04ce7444cb6134">fiftyoneDegreesResultsIpiGetValues</a> (<a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#gabd56ee9670edd8f9204236f5dc56cd2f">fiftyoneDegreesResultsIpi</a> *results, int requiredPropertyIndex, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)
 <!-- startMemberDescription -->
 <div class="c-table__desc memdesc:ga84f8fb0ff1200102cb04ce7444cb6134">Populates the list of values in the results instance with value structure instances associated with the required property index.  <a href="#ga84f8fb0ff1200102cb04ce7444cb6134">More...</a><!-- endMemberDescription -->
@@ -850,6 +834,67 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
 <b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> b; \</div><div class="c-code__line">    fiftyoneDegreesCollectionItem propertyItem; \</div><div class="c-code__line">    fiftyoneDegreesIpiList values;</div><div class="ttc" id="structfiftyone_degrees_results_base_html"><div class="ttname"><a href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a></div><div class="ttdoc">Base results structure which any processing results should extend.</div><div class="ttdef"><b>Definition:</b> results.h:98</div></div>
 </div>
 <p>Macro defining the common members of an Ipi result. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<!-- endMemberDocList -->
+<h2 class="g-docs__section-heading">Typedef Documentation</h2>
+<!-- startMemberDocList -->
+<article class="c-member">
+<a id="ga580e2f58583e4dd4aa302f6176a7fb8e"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga580e2f58583e4dd4aa302f6176a7fb8e">&#9670;&nbsp;</a></span>fiftyoneDegreesIpiList</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">typedef <a class="el" href="structfiftyone_degrees_weighted_item_list.html">fiftyoneDegreesWeightedItemList</a> <a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#ga580e2f58583e4dd4aa302f6176a7fb8e">fiftyoneDegreesIpiList</a><!-- endMemberDocName -->
+</td>
+<!-- endMemberDoc -->
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Backward compatibility typedef for IpiList. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>Use <a class="el" href="structfiftyone_degrees_weighted_item_list.html" title="A resizable list of weighted items.">fiftyoneDegreesWeightedItemList</a> instead. </dd></dl>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
+<a id="gab5bc63cf3412ae1ed14e5897b0df44a0"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gab5bc63cf3412ae1ed14e5897b0df44a0">&#9670;&nbsp;</a></span>fiftyoneDegreesProfilePercentage</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">typedef <a class="el" href="structfiftyone_degrees_weighted_item.html">fiftyoneDegreesWeightedItem</a> <a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#gab5bc63cf3412ae1ed14e5897b0df44a0">fiftyoneDegreesProfilePercentage</a><!-- endMemberDocName -->
+</td>
+<!-- endMemberDoc -->
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Backward compatibility typedef for ProfilePercentage. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Use <a class="el" href="structfiftyone_degrees_weighted_item.html" title="A weighted collection item.">fiftyoneDegreesWeightedItem</a> instead. </dd></dl>
 <!-- endIndent -->
 
 </div>
@@ -2550,8 +2595,9 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
     <tr><dd class="c-list-definition__desc"><span class="b-text--red">manager</span> - pointer to the resource manager which manages a IP Intelligence data set </dd>
   </dd>
 </dl>
-<dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">newly created results structure</dd></dl>
-<p>Allocates a results structure containing a reference to the IP Intelligence data set managed by the resource manager provided. </p>
+<dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">newly created results structure </dd></dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd class="c-list-definition__desc"><a class="el" href="_ip_intelligence_2_getting_started_8c-example.html#a5">IpIntelligence/GettingStarted.c</a>, and <a class="el" href="_ip_intelligence_2_offline_processing_8c-example.html#a5">IpIntelligence/OfflineProcessing.c</a>.</dd>
+</dl>
 <!-- endIndent -->
 
 </div>
@@ -3029,7 +3075,7 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_profile_percentage.html">fiftyoneDegreesProfilePercentage</a>* fiftyoneDegreesResultsIpiGetValues <!-- endMemberDocName -->
+              <td class="c-table__cell">const <a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#gab5bc63cf3412ae1ed14e5897b0df44a0">fiftyoneDegreesProfilePercentage</a>* fiftyoneDegreesResultsIpiGetValues <!-- endMemberDocName -->
 </td>
 <!-- startParameterList -->
           <td>(</td>

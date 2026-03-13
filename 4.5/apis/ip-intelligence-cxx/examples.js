@@ -13,6 +13,5 @@ var examples =
     [ "IpIntelligence/ReloadFromFile.cpp", "_ip_intelligence_2_reload_from_file_8cpp-example.html", null ],
     [ "IpIntelligence/ReloadFromMemory.c", "_ip_intelligence_2_reload_from_memory_8c-example.html", null ],
     [ "IpIntelligence/ReloadFromMemory.cpp", "_ip_intelligence_2_reload_from_memory_8cpp-example.html", null ],
-    [ "IpIntelligence/StronglyTyped.c", "_ip_intelligence_2_strongly_typed_8c-example.html", null ],
     [ "IpIntelligence/StronglyTyped.cpp", "_ip_intelligence_2_strongly_typed_8cpp-example.html", null ]
 ];

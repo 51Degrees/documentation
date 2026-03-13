@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>51Degrees IP Intelligence C/C++: fiftyoneDegreesProfilePercentage Struct Reference</title>
+<title>51Degrees IP Intelligence C/C++: fiftyoneDegreesWeightedItem Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -57,22 +57,22 @@
 	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
   <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('structfiftyone_degrees_profile_percentage.html','');});
+$(document).ready(function(){initNavTree('structfiftyone_degrees_weighted_item.html','');});
 /* @license-end */
 </script>
 <div id="doc-content" class="g-docs__content">
 <div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="structfiftyone_degrees_profile_percentage.html">fiftyoneDegreesProfilePercentage</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="structfiftyone_degrees_weighted_item.html">fiftyoneDegreesWeightedItem</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">fiftyoneDegreesProfilePercentage Struct Reference</h2><div class="c-breadcrumb"><ul class="c-breadcrumb"><li class="c-breadcrumb__item"><a class="el c-breadcrumb__link" href="group___fifty_one_degrees_ip_intelligence_api.html">IpIntelligence</a></li></ul></div></div><!--header-->
+<h2 class="g-docs__page-title">fiftyoneDegreesWeightedItem Struct Reference</h2><div class="c-breadcrumb"><ul class="c-breadcrumb"><li class="c-breadcrumb__item"><a class="el c-breadcrumb__link" href="group___fifty_one_degrees_common.html">Common</a></li><li class="c-breadcrumb__item"><a class="el c-breadcrumb__link" href="group___fifty_one_degrees_weighted_item.html">Weighted Items</a></li></ul></div></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section">
 <a name="details" id="details"></a><h2 class="g-docs__section-heading">Detailed Description</h2>
-<section class="g-docs__section"><p>The structure to hold a pair of result item and its percentage When getting values for a property from the result the values will be a list of potential matching items and their weights to indicate the proportion of this item for the matched IP range in our data. </p>
-<p>This structure represents an item in the list. </p>
+<section class="g-docs__section"><p>A weighted collection item. </p>
+<p>Represents a value retrieved from the dataset together with a weight indicating the proportion or confidence of this value (out of 65535^2). Used for profile-level weighting (from profile groups) where the weight indicates the proportion of the matched IP range attributable to this profile, or for value-level weighting stored in the Value record, or both. </p>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd class="c-list-definition__desc"><a class="el" href="_ip_intelligence_2_reload_from_file_8c-example.html#_a6">IpIntelligence/ReloadFromFile.c</a>, and <a class="el" href="_ip_intelligence_2_reload_from_memory_8c-example.html#_a6">IpIntelligence/ReloadFromMemory.c</a>.</dd>
 </dl>
 </section></section>
@@ -82,9 +82,9 @@ $(document).ready(function(){initNavTree('structfiftyone_degrees_profile_percent
 <!-- end ClassInheritanceGraph -->
 <section class="g-docs__section">
 <h2 class="g-docs__section-heading">
-Collaboration diagram for fiftyoneDegreesProfilePercentage:</h2>
+Collaboration diagram for fiftyoneDegreesWeightedItem:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structfiftyone_degrees_profile_percentage__coll__graph.svg" width="584" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structfiftyone_degrees_weighted_item__coll__graph.svg" width="563" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 </section>
@@ -118,19 +118,18 @@ Data Fields</h2>
 <tbody class="c-table__body">
 <!-- member dec start -->
 <!-- startMemberItem() -->
-<tr class="c-table__row memitem:aee14483e40a7166bd28bb21c687bd045"><td class="c-table__cell"><a id="aee14483e40a7166bd28bb21c687bd045"></a>
+<tr class="c-table__row memitem:a74e92a2a7e516a6c06abce4c038e39e4"><td class="c-table__cell"><a id="a74e92a2a7e516a6c06abce4c038e39e4"></a>
 <a class="el" href="structfiftyone_degrees_collection_item.html">fiftyoneDegreesCollectionItem</a><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_profile_percentage.html#aee14483e40a7166bd28bb21c687bd045">item</a>
+&#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_weighted_item.html#a74e92a2a7e516a6c06abce4c038e39e4">item</a>
 <!-- startMemberDescription -->
-<div class="c-table__desc memdesc:aee14483e40a7166bd28bb21c687bd045">A collection item which contains the value. <!-- endMemberDescription -->
+<div class="c-table__desc memdesc:a74e92a2a7e516a6c06abce4c038e39e4">The collection item containing the value. <!-- endMemberDescription -->
 </div></td></tr>
 <!-- member dec start -->
 <!-- startMemberItem() -->
-<tr class="c-table__row memitem:af53f54ddcf768fea67d4b0aec0d2ec6c"><td class="c-table__cell"><a id="af53f54ddcf768fea67d4b0aec0d2ec6c"></a>
-uint16_t<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_profile_percentage.html#af53f54ddcf768fea67d4b0aec0d2ec6c">rawWeighting</a>
+<tr class="c-table__row memitem:ab422067e9456e73a09a4f429f0f72d27"><td class="c-table__cell">uint32_t<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_weighted_item.html#ab422067e9456e73a09a4f429f0f72d27">rawWeighting</a>
 <!-- startMemberDescription -->
-<div class="c-table__desc memdesc:af53f54ddcf768fea67d4b0aec0d2ec6c">The proportion of the item in the returned values (out of 65535) <!-- endMemberDescription -->
+<div class="c-table__desc memdesc:ab422067e9456e73a09a4f429f0f72d27">Weight as uint32_t (0-65535^2, representing 0.0-1.0).  <a href="#ab422067e9456e73a09a4f429f0f72d27">More...</a><!-- endMemberDescription -->
 </div></td></tr>
 <!-- endMemberList -->
 <!-- end member list -->
@@ -183,9 +182,41 @@ uint16_t<!-- insertMemberAlign -->
 <!-- start MemberGroups -->
 <!-- end MemberGroups -->
 <section class="g-docs__section">
+<h2 class="g-docs__section-heading">Field Documentation</h2>
+<!-- startMemberDocList -->
+<article class="c-member">
+<a id="ab422067e9456e73a09a4f429f0f72d27"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab422067e9456e73a09a4f429f0f72d27">&#9670;&nbsp;</a></span>rawWeighting</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">uint32_t fiftyoneDegreesWeightedItem::rawWeighting<!-- endMemberDocName -->
+</td>
+<!-- endMemberDoc -->
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Weight as uint32_t (0-65535^2, representing 0.0-1.0). </p>
+<p>Final/effective weight after multiplying weights from both profile group (or "1") and value (or "1"). </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<!-- endMemberDocList -->
 </section>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/runner/work/documentation/documentation/apis/ip-intelligence-cxx/src/<a class="el" href="ipi_8h_source.html">ipi.h</a></li>
+<li>/home/runner/work/documentation/documentation/apis/ip-intelligence-cxx/src/common-cxx/<a class="el" href="weighted_item_8h_source.html">weightedItem.h</a></li>
 </ul>
 </div><!-- primary -->
   <div class="g-docs__sidebar">

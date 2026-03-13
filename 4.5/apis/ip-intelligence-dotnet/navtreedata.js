@@ -29,6 +29,7 @@ var NAVTREE =
     [ "API Specific CI Approach", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_inta77b6486230ebe2c4d65474255a1a750.html", null ],
     [ "51Degrees Common Code Library", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_int50d5de6fb61092e686320a7f6c771861.html", null ],
     [ "ip-graph-cxx", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_int8a2dd3b222839f0dfe83fb02a9e49d62.html", null ],
+    [ "Proposal: Support Weighted Values in the IPI Dataset (C Reader Side)", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_int3ac58e8507d70d8943096e15843f044e.html", null ],
     [ "51Degrees IP Intelligence Engines", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__r_e_a_d_m_e.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -53,8 +54,8 @@ var NAVTREEINDEX =
 [
 "_cloud_2_framework-_web_2_default_8aspx_8cs-example.html",
 "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_date.html#ae4afc6463c08dbcaffb0f3673fa35664",
-"class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_ip_intelligence_engine_module_p_i_n_v_o_k_e.html#a5503df534bcb03e799d6703750e9e135",
-"class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_ip_intelligence_engine_module_p_i_n_v_o_k_e.html#ae5edf0f886d820b3e7644bc6c73334f1",
+"class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_ip_intelligence_engine_module_p_i_n_v_o_k_e.html#a57ffaa4cc8f9c799b2e1d881438d0e8c",
+"class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_ip_intelligence_engine_module_p_i_n_v_o_k_e.html#ae67d7880b60038b3af4d08d3baf05681",
 "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_value_meta_data_collection_swig.html#a5ae05da32c120cb0aa07279a6b5ced67",
 "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_weighted_string_list_swig.html#ac0b5860e993cbffee1f6cbca6d0a1847",
 "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_getting_started_web_1_1_pages_1_1_index_model.html#abf21c4b01895a6e9d54797b776ea4e0e",

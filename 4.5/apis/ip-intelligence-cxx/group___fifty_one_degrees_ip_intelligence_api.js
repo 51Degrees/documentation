@@ -104,16 +104,6 @@ var group___fifty_one_degrees_ip_intelligence_api =
       [ "strings", "structfiftyone_degrees_data_set_ipi.html#abe1e5a40cb2661d88d0f5e8934a7cade", null ],
       [ "values", "structfiftyone_degrees_data_set_ipi.html#a1fa346234e114cac3efbc347faf45d64", null ]
     ] ],
-    [ "fiftyoneDegreesProfilePercentage", "structfiftyone_degrees_profile_percentage.html", [
-      [ "item", "structfiftyone_degrees_profile_percentage.html#aee14483e40a7166bd28bb21c687bd045", null ],
-      [ "rawWeighting", "structfiftyone_degrees_profile_percentage.html#af53f54ddcf768fea67d4b0aec0d2ec6c", null ]
-    ] ],
-    [ "fiftyoneDegreesIpiList", "structfiftyone_degrees_ipi_list.html", [
-      [ "capacity", "structfiftyone_degrees_ipi_list.html#a4e996dd7991921a6542cb2edd25426fb", null ],
-      [ "count", "structfiftyone_degrees_ipi_list.html#a72717a0b341e21dd540d5d85d238dbd4", null ],
-      [ "items", "structfiftyone_degrees_ipi_list.html#af9d4293feab78f7f641e0ca746360cda", null ],
-      [ "loadFactor", "structfiftyone_degrees_ipi_list.html#a3ae110f0b24239124e6b1529c18c6ac2", null ]
-    ] ],
     [ "fiftyoneDegreesResultIpi", "structfiftyone_degrees_result_ipi.html", [
       [ "graphResult", "structfiftyone_degrees_result_ipi.html#aadd08a1f62308a9cd28d14b956f9cbb2", null ],
       [ "targetIpAddress", "structfiftyone_degrees_result_ipi.html#a7dd26db10d0ddc3b235bfebdd7778ded", null ],
@@ -153,8 +143,8 @@ var group___fifty_one_degrees_ip_intelligence_api =
     [ "FIFTYONE_DEGREES_STRING_LOADED", "group___fifty_one_degrees_ip_intelligence_api.html#ga9005545cb664efec6c29c875f7e751e5", null ],
     [ "FIFTYONE_DEGREES_VALUE_CACHE_SIZE", "group___fifty_one_degrees_ip_intelligence_api.html#ga5509bb50c2e692cfeae9e8b467fc4fc9", null ],
     [ "FIFTYONE_DEGREES_VALUE_LOADED", "group___fifty_one_degrees_ip_intelligence_api.html#ga1ccfa59836996f5f57df0d9b085fa858", null ],
-    [ "IPI_LIST_DEFAULT_LOAD_FACTOR", "group___fifty_one_degrees_ip_intelligence_api.html#ga57ca5acabb15e5ed9b7655dc6f3ea7dd", null ],
-    [ "IPI_LIST_RESIZE_FACTOR", "group___fifty_one_degrees_ip_intelligence_api.html#gaa5dc43a5c8ae1a79950ec7c181ad1a40", null ],
+    [ "fiftyoneDegreesIpiList", "group___fifty_one_degrees_ip_intelligence_api.html#ga580e2f58583e4dd4aa302f6176a7fb8e", null ],
+    [ "fiftyoneDegreesProfilePercentage", "group___fifty_one_degrees_ip_intelligence_api.html#gab5bc63cf3412ae1ed14e5897b0df44a0", null ],
     [ "fiftyoneDegreesResultsIpi", "group___fifty_one_degrees_ip_intelligence_api.html#gabd56ee9670edd8f9204236f5dc56cd2f", null ],
     [ "FIFTYONE_DEGREES_IP_RANGE", "group___fifty_one_degrees_ip_intelligence_api.html#ga0f386c511289617c6347229d28e8c9b7", null ],
     [ "fiftyoneDegreesDataSetIpiGet", "group___fifty_one_degrees_ip_intelligence_api.html#gaff3b6d8d7f4c151889ffa37398ebf43f", null ],

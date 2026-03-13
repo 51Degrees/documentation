@@ -135,11 +135,10 @@ const&#160;int32_t<!-- insertMemberAlign -->
 </div></td></tr>
 <!-- member dec start -->
 <!-- startMemberItem() -->
-<tr class="c-table__row memitem:a0ac256571cae9b309fbee9c0771fd2f5"><td class="c-table__cell"><a id="a0ac256571cae9b309fbee9c0771fd2f5"></a>
-const&#160;int32_t<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_value.html#a0ac256571cae9b309fbee9c0771fd2f5">urlOffset</a>
+<tr class="c-table__row memitem:a4f520838cc59ced4e3d608c54cf1421c"><td class="c-table__cell">const&#160;int32_t<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_value.html#a4f520838cc59ced4e3d608c54cf1421c">urlOffsetOrWeight</a>
 <!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a0ac256571cae9b309fbee9c0771fd2f5">The offset in the strings structure to the value URL. <!-- endMemberDescription -->
+<div class="c-table__desc memdesc:a4f520838cc59ced4e3d608c54cf1421c">The offset in the strings structure to the value URL, or a masked weight if upper 2 bytes == 0xFF00 (i.e.  <a href="#a4f520838cc59ced4e3d608c54cf1421c">More...</a><!-- endMemberDescription -->
 </div></td></tr>
 <!-- endMemberList -->
 <!-- end member list -->
@@ -192,6 +191,38 @@ const&#160;int32_t<!-- insertMemberAlign -->
 <!-- start MemberGroups -->
 <!-- end MemberGroups -->
 <section class="g-docs__section">
+<h2 class="g-docs__section-heading">Field Documentation</h2>
+<!-- startMemberDocList -->
+<article class="c-member">
+<a id="a4f520838cc59ced4e3d608c54cf1421c"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4f520838cc59ced4e3d608c54cf1421c">&#9670;&nbsp;</a></span>urlOffsetOrWeight</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const int32_t fiftyoneDegreesValue::urlOffsetOrWeight<!-- endMemberDocName -->
+</td>
+<!-- endMemberDoc -->
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>The offset in the strings structure to the value URL, or a masked weight if upper 2 bytes == 0xFF00 (i.e. </p>
+<p>value has a form of <code>0xFF00****</code> where <code>****</code> are weight value bits). See <a class="el" href="group___fifty_one_degrees_value.html#ga0772ad866cafac5f6ac9b81f8774fd41" title="Returns true if the value carries a masked weight.">fiftyoneDegreesValueIsWeighted()</a>. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<!-- endMemberDocList -->
 </section>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/runner/work/documentation/documentation/apis/ip-intelligence-cxx/src/common-cxx/<a class="el" href="value_8h_source.html">value.h</a></li>

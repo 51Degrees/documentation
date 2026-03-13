@@ -30,6 +30,7 @@ var NAVTREE =
     [ "API Specific CI Approach", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engi78d748b70ac7aaafac9c4cf54b49ec4f.html", null ],
     [ "51Degrees Common Code Library", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engi1f2a0eefaced8c6f189b920a08f7c804.html", null ],
     [ "ip-graph-cxx", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engiba2d67904a72560dc78b3278cbf28bca.html", null ],
+    [ "Proposal: Support Weighted Values in the IPI Dataset (C Reader Side)", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engi285b18d7c014a2285c6d2525bcca50f2.html", null ],
     [ "API Specific CI/CD Approach", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence-java-examples_ci__r_e_a_d_m_e.html", null ],
     [ "Contributing", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence-java-52f5a04c7278b38c07f462b11dfc2890.html", null ],
     [ "51Degrees IP Intelligence Engines - Examples", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence-java-examples__r_e_a_d_m_e.html", null ],
@@ -47,8 +48,8 @@ var NAVTREEINDEX =
 [
 ".html",
 "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_component_meta_data_swig.html#a858630f4947e2c993d927a9ba39e45d5",
-"classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_ip_intelligence_on_premise_engine_module_j_n_i.html#a3944dfa78faa0cea875454bfdc0c5038",
-"classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_ip_intelligence_on_premise_engine_module_j_n_i.html#ad5231396df450ac4d41ace3f264e5d81",
+"classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_ip_intelligence_on_premise_engine_module_j_n_i.html#a3a2a8b0f6a52f5b24f9e6d62cd5e8e1b",
+"classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_ip_intelligence_on_premise_engine_module_j_n_i.html#ad416416c067aec3efb5ba7059669254f",
 "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_u_t_f8_string_swig.html#a8ca26c0ead3547b300700f46f871fe49",
 "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_weighted_u_t_f8_string_list_value_swig.html#a7328aeb5077b4f56ec35b84172bce0e9",
 "console_2_performance_benchmark_8java-example.html"
