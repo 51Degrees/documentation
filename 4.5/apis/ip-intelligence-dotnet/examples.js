@@ -19,6 +19,7 @@ var examples =
     [ "OnPremise/Mixed/GettingStarted-Web/Controllers/HomeController.cs", "_on_premise_2_mixed_2_getting_started-_web_2_controllers_2_home_controller_8cs-example.html", null ],
     [ "OnPremise/Mixed/GettingStarted-Web/Program.cs", "_on_premise_2_mixed_2_getting_started-_web_2_program_8cs-example.html", null ],
     [ "OnPremise/OfflineProcessing-Console/Program.cs", "_on_premise_2_offline_processing-_console_2_program_8cs-example.html", null ],
+    [ "OnPremise/Suspicious-Console/Program.cs", "_on_premise_2_suspicious-_console_2_program_8cs-example.html", null ],
     [ "OnPremise/UpdateDataFile-Console/Program.cs", "_on_premise_2_update_data_file-_console_2_program_8cs-example.html", null ],
     [ "Performance-Console/Program.cs", "_performance-_console_2_program_8cs-example.html", null ]
 ];

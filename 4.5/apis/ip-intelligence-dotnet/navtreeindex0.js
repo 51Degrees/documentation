@@ -19,8 +19,9 @@ var NAVTREEINDEX0 =
 "_on_premise_2_mixed_2_getting_started-_web_2_controllers_2_home_controller_8cs-example.html":[9,16],
 "_on_premise_2_mixed_2_getting_started-_web_2_program_8cs-example.html":[9,17],
 "_on_premise_2_offline_processing-_console_2_program_8cs-example.html":[9,18],
-"_on_premise_2_update_data_file-_console_2_program_8cs-example.html":[9,19],
-"_performance-_console_2_program_8cs-example.html":[9,20],
+"_on_premise_2_suspicious-_console_2_program_8cs-example.html":[9,19],
+"_on_premise_2_update_data_file-_console_2_program_8cs-example.html":[9,20],
+"_performance-_console_2_program_8cs-example.html":[9,21],
 "annotated.html":[8,0],
 "class_calculations.html":[8,0,2],
 "class_calculations.html#a893bfd8981a3cd36cd213706b1b5b561":[8,0,2,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_date.html#a3396fa8eb12e11258f2fb67ea4112fbf":[8,0,0,0,1,0,2,6,5],
 "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_date.html#a59f7d13bbb06267b87f20dd654961da4":[8,0,0,0,1,0,2,6,2],
 "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_date.html#a7901bd37ea5821fa32d8fd843996920c":[8,0,0,0,1,0,2,6,0],
-"class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_date.html#aa6fc1179272a6fdae8fd78b6d2752890":[8,0,0,0,1,0,2,6,1],
-"class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_date.html#adaf3e6fbac52956e5a9154370058e2c6":[8,0,0,0,1,0,2,6,4]
+"class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_date.html#aa6fc1179272a6fdae8fd78b6d2752890":[8,0,0,0,1,0,2,6,1]
 };

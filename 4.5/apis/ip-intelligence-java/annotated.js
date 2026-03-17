@@ -96,6 +96,7 @@ var annotated =
         ] ],
         [ "examples", null, [
           [ "console", null, [
+            [ "GettingStartedMixed", "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_mixed.html", "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_mixed" ],
             [ "GettingStartedOnPrem", "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_on_prem.html", "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_on_prem" ],
             [ "GettingStartedOnPremTest", "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_on_prem_test.html", "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_on_prem_test" ],
             [ "LoggerOutputStream", "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_logger_output_stream.html", "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_logger_output_stream" ],
@@ -117,9 +118,11 @@ var annotated =
           ] ],
           [ "web", null, [
             [ "EmbedJetty", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_embed_jetty.html", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_embed_jetty" ],
+            [ "GettingStartedWebMixed", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_getting_started_web_mixed.html", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_getting_started_web_mixed" ],
             [ "GettingStartedWebOnPrem", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_getting_started_web_on_prem.html", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_getting_started_web_on_prem" ],
             [ "GettingStartedWebOnPremTest", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_getting_started_web_on_prem_test.html", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_getting_started_web_on_prem_test" ],
-            [ "HtmlContentHelper", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_html_content_helper.html", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_html_content_helper" ]
+            [ "HtmlContentHelper", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_html_content_helper.html", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_html_content_helper" ],
+            [ "RealClientIpFilter", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_real_client_ip_filter.html", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_real_client_ip_filter" ]
           ] ]
         ] ],
         [ "shared", null, [
