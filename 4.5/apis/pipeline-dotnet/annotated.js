@@ -6,5 +6,8 @@ var annotated =
     [ "Examples", "namespace_examples.html", "namespace_examples" ],
     [ "FiftyOne", "namespace_fifty_one.html", "namespace_fifty_one" ],
     [ "GettingStarted", "namespace_getting_started.html", "namespace_getting_started" ],
-    [ "SimpleClientSideElement", "namespace_simple_client_side_element.html", "namespace_simple_client_side_element" ]
+    [ "SimpleClientSideElement", "namespace_simple_client_side_element.html", "namespace_simple_client_side_element" ],
+    [ "EvidenceCopyData", "class_evidence_copy_data.html", "class_evidence_copy_data" ],
+    [ "EvidenceCopyElement", "class_evidence_copy_element.html", "class_evidence_copy_element" ],
+    [ "TranslationEngineTests", "class_translation_engine_tests.html", "class_translation_engine_tests" ]
 ];

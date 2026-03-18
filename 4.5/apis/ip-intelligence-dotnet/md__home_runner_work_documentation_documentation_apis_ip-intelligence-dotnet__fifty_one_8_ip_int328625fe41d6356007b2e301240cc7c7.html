@@ -76,6 +76,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_documentation_doc
 <li>evidence files with lists of random IP addresses needed for some examples</li>
 <li>scripts to generate lists of random IP addresses like the above</li>
 <li>scripts to download 'Lite' IP Intelligence data file</li>
+<li>translation files to support translation engine and examples</li>
 </ul>
 <h2>Download Lite data file</h2>
 <h3>From Azure</h3>
@@ -109,8 +110,13 @@ $(document).ready(function(){initNavTree('md__home_runner_work_documentation_doc
 <p>Pre-generated test files containing 20,000 of random IPs.</p>
 <ul>
 <li>evidence.csv - Each line contains a single IP.</li>
-<li>evidence.yml - A multi-record yaml file where each line contains the HTTP header name and value as the key/value pair. Values may be wrapped in single quotes. </li>
+<li>evidence.yml - A multi-record yaml file where each line contains the HTTP header name and value as the key/value pair. Values may be wrapped in single quotes.</li>
 </ul>
+<h2>Translation</h2>
+<p>Folder containing yaml files for translation of country names into several target languages. This data is used in examples and by the translation engine.</p>
+<h3>Folder structure</h3>
+<p>|&ndash;Translations | |&ndash;Translation Source (e.g. "OSM") | | |&ndash; Translation File (e.g. "countries.fr_FR.yml")</p>
+<p>Each translation file contains key-value pairs of "English country name: country name in target language". </p>
 </section></div><!-- PageDoc -->
 </div><!-- primary -->
 </div><!-- inner-->

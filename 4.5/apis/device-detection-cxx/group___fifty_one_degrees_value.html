@@ -115,7 +115,7 @@ Macros</h2>
 <!-- member dec start -->
 <!-- startMemberItem() -->
 <tr class="c-table__row memitem:ga63609b1397902230bcbef3dc3c53704a"><td class="c-table__cell">#define<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_value.html#ga63609b1397902230bcbef3dc3c53704a">FIFTYONE_DEGREES_VALUE_IS_MASKED</a>(v)&#160;&#160;&#160;(((v)-&gt;urlOffsetOrWeight &amp; 0xFFFF0000) == (int32_t)0xFF000000)
+&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_value.html#ga63609b1397902230bcbef3dc3c53704a">FIFTYONE_DEGREES_VALUE_IS_MASKED</a>(v)&#160;&#160;&#160;((((uint32_t)((v)-&gt;urlOffsetOrWeight)) &amp; 0xFFFF0000u) == 0xFF000000u)
 <!-- startMemberDescription -->
 <div class="c-table__desc memdesc:ga63609b1397902230bcbef3dc3c53704a">Macro to check if a Value's urlOffsetOrWeight field carries a masked weight.  <a href="#ga63609b1397902230bcbef3dc3c53704a">More...</a><!-- endMemberDescription -->
 </div></td></tr>
@@ -262,7 +262,7 @@ Functions</h2>
 <!-- startParameterName -->
           <td class="c-table__cell">v<!-- endParameterName -->
 </td><td>)</td>
-          <td>&#160;&#160;&#160;(((v)-&gt;urlOffsetOrWeight &amp; 0xFFFF0000) == (int32_t)0xFF000000)<!-- endParameterList -->
+          <td>&#160;&#160;&#160;((((uint32_t)((v)-&gt;urlOffsetOrWeight)) &amp; 0xFFFF0000u) == 0xFF000000u)<!-- endParameterList -->
 </td>
         </tr>
 <!-- endMemberDoc -->

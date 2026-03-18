@@ -1,32 +1,38 @@
 <map id="FiftyOne.Pipeline.Core.FlowElements.FlowElementBase&lt; T, TMeta &gt;" name="FiftyOne.Pipeline.Core.FlowElements.FlowElementBase&lt; T, TMeta &gt;">
-<area shape="rect" id="node1" title="Abstract base class for Flow Elements." alt="" coords="595,464,799,520"/>
-<area shape="rect" id="node4" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base.html" title="Base class for 51Degrees aspect engines." alt="" coords="1122,78,1303,149"/>
-<area shape="rect" id="node12" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1103,173,1322,243"/>
-<area shape="rect" id="node14" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1083,267,1342,338"/>
-<area shape="rect" id="node16" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1081,362,1344,433"/>
-<area shape="rect" id="node17" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1089,457,1336,527"/>
-<area shape="rect" id="node22" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1092,551,1333,622"/>
-<area shape="rect" id="node24" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1079,646,1347,717"/>
-<area shape="rect" id="node26" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1089,741,1336,811"/>
-<area shape="rect" id="node29" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1095,841,1330,911"/>
-<area shape="rect" id="node2" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title=" " alt="" coords="347,479,545,505"/>
-<area shape="rect" id="node3" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="5,471,207,513"/>
-<area shape="rect" id="node5" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_on_premise_aspect_engine_base.html" title="Base class for 51Degrees on&#45;premise aspect engines." alt="" coords="1429,78,1650,149"/>
-<area shape="rect" id="node6" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_on_premise_aspect_engine_base.html" title=" " alt="" coords="1926,5,2274,61"/>
-<area shape="rect" id="node8" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_on_premise_aspect_engine_base.html" title=" " alt="" coords="1924,85,2276,141"/>
-<area shape="rect" id="node10" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_on_premise_aspect_engine_base.html" title=" " alt="" coords="1939,165,2261,221"/>
-<area shape="rect" id="node7" href="$class_examples_1_1_on_premise_engine_1_1_flow_elements_1_1_simple_on_premise_engine.html" title="[class] [constructor]" alt="" coords="2325,13,2604,54"/>
-<area shape="rect" id="node9" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_property_keyed_engine.html" title="Base class for engines that use an index of property values to profile ids to populate one or more pr..." alt="" coords="2349,85,2581,141"/>
-<area shape="rect" id="node11" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_fifty_one_on_premise_aspect_engine_base.html" title="51Degrees specific Engine base class." alt="" coords="2339,165,2590,221"/>
-<area shape="rect" id="node13" href="$class_fifty_one_1_1_pipeline_1_1_json_builder_1_1_flow_element_1_1_json_builder_element.html" title="The JsonBuilderElement takes accessible properties and adds the property key:values to the Json objec..." alt="" coords="1420,187,1659,229"/>
-<area shape="rect" id="node15" href="$class_fifty_one_1_1_pipeline_1_1_math_1_1_math_element.html" title=" " alt="" coords="1436,282,1643,323"/>
-<area shape="rect" id="node18" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_parallel_elements.html" title="ParallelElements executes it&#39;s child IFlowElement objects in parallel." alt="" coords="1439,350,1640,391"/>
-<area shape="rect" id="node19" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_sequence_element.html" title="Sequence element establishes session and sequence evidence in the pipeline." alt="" coords="1420,416,1659,472"/>
-<area shape="rect" id="node20" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_share_usage_base.html" title="Abstract base class for ShareUsage elements." alt="" coords="1396,497,1683,538"/>
-<area shape="rect" id="node21" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_share_usage_element.html" title="Flow element that sends usage data to 51Degrees for analysis." alt="" coords="1973,489,2227,545"/>
-<area shape="rect" id="node23" href="$class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_java_script_builder_element.html" title="JavaScript Builder Element generates a JavaScript include to be run on the client device." alt="" coords="1404,563,1675,619"/>
-<area shape="rect" id="node25" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_set_headers_element.html" title="This element is used to determine the values for HTTP headers that other elements in the pipeline wan..." alt="" coords="1414,649,1665,705"/>
-<area shape="rect" id="node27" href="$class_examples_1_1_client_side_evidence_1_1_shared_1_1_simple_client_side_element.html" title="[class] [constructor]" alt="" coords="1421,730,1657,771"/>
-<area shape="rect" id="node28" href="$class_examples_1_1_custom_flow_element_1_1_flow_elements_1_1_simple_flow_element.html" title="[class] [constructor]" alt="" coords="1415,795,1663,837"/>
-<area shape="rect" id="node30" href="$class_fifty_one_1_1_pipeline_1_1_ip_splitter_1_1_ip_splitter_element.html" title=" " alt="" coords="1440,861,1639,902"/>
+<area shape="rect" id="node1" title="Abstract base class for Flow Elements." alt="" coords="595,559,799,615"/>
+<area shape="rect" id="node4" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base.html" title="Base class for 51Degrees aspect engines." alt="" coords="1127,78,1308,149"/>
+<area shape="rect" id="node12" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1108,173,1327,243"/>
+<area shape="rect" id="node14" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1088,267,1347,338"/>
+<area shape="rect" id="node16" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1086,362,1349,433"/>
+<area shape="rect" id="node17" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1094,457,1341,527"/>
+<area shape="rect" id="node22" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1097,551,1338,622"/>
+<area shape="rect" id="node24" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1083,646,1351,717"/>
+<area shape="rect" id="node26" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1094,741,1341,811"/>
+<area shape="rect" id="node29" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1095,836,1340,892"/>
+<area shape="rect" id="node33" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1100,917,1335,987"/>
+<area shape="rect" id="node35" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="1079,1011,1356,1082"/>
+<area shape="rect" id="node2" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title=" " alt="" coords="347,573,545,600"/>
+<area shape="rect" id="node3" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="5,566,207,607"/>
+<area shape="rect" id="node5" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_on_premise_aspect_engine_base.html" title="Base class for 51Degrees on&#45;premise aspect engines." alt="" coords="1446,78,1667,149"/>
+<area shape="rect" id="node6" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_on_premise_aspect_engine_base.html" title=" " alt="" coords="1951,5,2299,61"/>
+<area shape="rect" id="node8" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_on_premise_aspect_engine_base.html" title=" " alt="" coords="1949,85,2301,141"/>
+<area shape="rect" id="node10" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_on_premise_aspect_engine_base.html" title=" " alt="" coords="1965,165,2286,221"/>
+<area shape="rect" id="node7" href="$class_examples_1_1_on_premise_engine_1_1_flow_elements_1_1_simple_on_premise_engine.html" title="[class] [constructor]" alt="" coords="2351,13,2629,54"/>
+<area shape="rect" id="node9" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_property_keyed_engine.html" title="Base class for engines that use an index of property values to profile ids to populate one or more pr..." alt="" coords="2374,85,2606,141"/>
+<area shape="rect" id="node11" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_fifty_one_on_premise_aspect_engine_base.html" title="51Degrees specific Engine base class." alt="" coords="2365,165,2615,221"/>
+<area shape="rect" id="node13" href="$class_fifty_one_1_1_pipeline_1_1_json_builder_1_1_flow_element_1_1_json_builder_element.html" title="The JsonBuilderElement takes accessible properties and adds the property key:values to the Json objec..." alt="" coords="1437,187,1676,229"/>
+<area shape="rect" id="node15" href="$class_fifty_one_1_1_pipeline_1_1_math_1_1_math_element.html" title=" " alt="" coords="1453,282,1660,323"/>
+<area shape="rect" id="node18" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_parallel_elements.html" title="ParallelElements executes it&#39;s child IFlowElement objects in parallel." alt="" coords="1456,351,1657,393"/>
+<area shape="rect" id="node19" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_sequence_element.html" title="Sequence element establishes session and sequence evidence in the pipeline." alt="" coords="1437,417,1676,473"/>
+<area shape="rect" id="node20" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_share_usage_base.html" title="Abstract base class for ShareUsage elements." alt="" coords="1413,498,1700,539"/>
+<area shape="rect" id="node21" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_share_usage_element.html" title="Flow element that sends usage data to 51Degrees for analysis." alt="" coords="1998,491,2253,547"/>
+<area shape="rect" id="node23" href="$class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_java_script_builder_element.html" title="JavaScript Builder Element generates a JavaScript include to be run on the client device." alt="" coords="1421,564,1692,620"/>
+<area shape="rect" id="node25" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_set_headers_element.html" title="This element is used to determine the values for HTTP headers that other elements in the pipeline wan..." alt="" coords="1431,651,1682,707"/>
+<area shape="rect" id="node27" href="$class_examples_1_1_client_side_evidence_1_1_shared_1_1_simple_client_side_element.html" title="[class] [constructor]" alt="" coords="1439,731,1675,773"/>
+<area shape="rect" id="node28" href="$class_examples_1_1_custom_flow_element_1_1_flow_elements_1_1_simple_flow_element.html" title="[class] [constructor]" alt="" coords="1433,797,1681,838"/>
+<area shape="rect" id="node30" href="$class_fifty_one_1_1_pipeline_1_1_translation_1_1_flow_elements_1_1_translation_engine_base.html" title="Flow element that translates values from a single source element and stores translated values under i..." alt="" coords="1405,862,1708,903"/>
+<area shape="rect" id="node31" href="$class_fifty_one_1_1_pipeline_1_1_translation_1_1_flow_elements_1_1_translation_engine_base.html" title=" " alt="" coords="1993,855,2258,911"/>
+<area shape="rect" id="node32" href="$class_fifty_one_1_1_pipeline_1_1_translation_1_1_flow_elements_1_1_translation_engine.html" title=" " alt="" coords="2373,862,2607,903"/>
+<area shape="rect" id="node34" href="$class_fifty_one_1_1_pipeline_1_1_ip_splitter_1_1_ip_splitter_element.html" title=" " alt="" coords="1457,931,1656,973"/>
+<area shape="rect" id="node36" href="$class_evidence_copy_element.html" title="Element that just copies the evidence into its element data." alt="" coords="1473,1033,1641,1060"/>
 </map>

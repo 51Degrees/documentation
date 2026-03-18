@@ -8,5 +8,6 @@ var namespace_fifty_one_1_1_pipeline =
     [ "JavaScriptBuilderElementTests", "namespace_fifty_one_1_1_pipeline_1_1_java_script_builder_element_tests.html", "namespace_fifty_one_1_1_pipeline_1_1_java_script_builder_element_tests" ],
     [ "JsonBuilder", "namespace_fifty_one_1_1_pipeline_1_1_json_builder.html", "namespace_fifty_one_1_1_pipeline_1_1_json_builder" ],
     [ "JsonBuilderElementTests", "namespace_fifty_one_1_1_pipeline_1_1_json_builder_element_tests.html", "namespace_fifty_one_1_1_pipeline_1_1_json_builder_element_tests" ],
-    [ "Math", "namespace_fifty_one_1_1_pipeline_1_1_math.html", "namespace_fifty_one_1_1_pipeline_1_1_math" ]
+    [ "Math", "namespace_fifty_one_1_1_pipeline_1_1_math.html", "namespace_fifty_one_1_1_pipeline_1_1_math" ],
+    [ "Translation", "namespace_fifty_one_1_1_pipeline_1_1_translation.html", "namespace_fifty_one_1_1_pipeline_1_1_translation" ]
 ];
