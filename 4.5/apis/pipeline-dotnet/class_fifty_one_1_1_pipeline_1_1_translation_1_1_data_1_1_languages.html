@@ -71,8 +71,7 @@ $(document).ready(function(){initNavTree('class_fifty_one_1_1_pipeline_1_1_trans
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section">
 <a name="details" id="details"></a><h2 class="g-docs__section-heading">Detailed Description</h2>
-<section class="g-docs__section"><p>Set of translators for one or more languages. </p>
-<p>Keys are the locale code e.g. "en_GB", "fr_FR", etc. and values are the translators for those languages. </p>
+<section class="g-docs__section"><p>Set of translators for one or more languages, with static utility methods for parsing Accept-Language headers and resolving language tags against available locales. </p>
 </section></section>
 <!-- start ClassInheritanceGraph -->
 <section class="g-docs__section">
@@ -106,10 +105,10 @@ Public Member Functions</h2>
 <tbody class="c-table__body">
 <!-- member dec start -->
 <!-- startMemberItem() -->
-<tr class="c-table__row memitem:aeb593090c17130e7356488d37159ac46"><td class="c-table__cell">void<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_translation_1_1_data_1_1_languages.html#aeb593090c17130e7356488d37159ac46">AddLanguage</a> (string language, <a class="el" href="class_fifty_one_1_1_pipeline_1_1_translation_1_1_data_1_1_translator.html">Translator</a> translator)
+<tr class="c-table__row memitem:a1d2dc6a7d62faa0e90522a6bc85cbce5"><td class="c-table__cell"><!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_translation_1_1_data_1_1_languages.html#a1d2dc6a7d62faa0e90522a6bc85cbce5">Languages</a> ()
 <!-- startMemberDescription -->
-<div class="c-table__desc memdesc:aeb593090c17130e7356488d37159ac46">Add a language and its translator to the set of languages.  <a href="#aeb593090c17130e7356488d37159ac46">More...</a><!-- endMemberDescription -->
+<div class="c-table__desc memdesc:a1d2dc6a7d62faa0e90522a6bc85cbce5">Constructor.  <a href="#a1d2dc6a7d62faa0e90522a6bc85cbce5">More...</a><!-- endMemberDescription -->
 </div></td></tr>
 <!-- member dec start -->
 <!-- startMemberItem() -->
@@ -117,6 +116,42 @@ Public Member Functions</h2>
 &#160;</td><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_translation_1_1_data_1_1_languages.html#a2bbc2327714ab28a4a0ecf39267ff6db">TryGetTranslator</a> (string language, out <a class="el" href="class_fifty_one_1_1_pipeline_1_1_translation_1_1_data_1_1_translator.html">Translator</a> translator)
 <!-- startMemberDescription -->
 <div class="c-table__desc memdesc:a2bbc2327714ab28a4a0ecf39267ff6db">Gets the translator for the specified language if it exists.  <a href="#a2bbc2327714ab28a4a0ecf39267ff6db">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:a39c3b9a5350d202accd50e8ec6ef4bfa"><td class="c-table__cell">bool<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_translation_1_1_data_1_1_languages.html#a39c3b9a5350d202accd50e8ec6ef4bfa">TryGetTranslator</a> (string language, out <a class="el" href="class_fifty_one_1_1_pipeline_1_1_translation_1_1_data_1_1_translator.html">Translator</a> translator, out string matchedLocale)
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:a39c3b9a5350d202accd50e8ec6ef4bfa">Gets the translator and matched locale for the specified language if it exists.  <a href="#a39c3b9a5350d202accd50e8ec6ef4bfa">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- endMemberList -->
+<!-- end member list -->
+</tbody></table></div>
+</section>
+<section class="g-docs__section">
+<!-- startMemberHeader -->
+<h2 class="g-docs__section-heading">
+<a name="pub-static-methods"></a>
+Static Public Member Functions</h2>
+<!-- endMemberHeader -->
+<!-- startMemberList -->
+<!-- start member list -->
+<div class="g-table g-table--overflow">
+<table class="c-table c-table--members">
+<tbody class="c-table__body">
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:a3dcd25f31ca989f94a6bea519d608a59"><td class="c-table__cell">static&#160;IEnumerable&lt;&#160;string&#160;&gt;<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_translation_1_1_data_1_1_languages.html#a3dcd25f31ca989f94a6bea519d608a59">ParseAcceptLanguage</a> (string acceptLanguage)
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:a3dcd25f31ca989f94a6bea519d608a59">Parses an Accept-Language header value (e.g.  <a href="#a3dcd25f31ca989f94a6bea519d608a59">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:a72ea98e426f63944442013adda406724"><td class="c-table__cell">static&#160;bool<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_translation_1_1_data_1_1_languages.html#a72ea98e426f63944442013adda406724">TryResolveLocale</a> (string acceptLanguage, IEnumerable&lt; string &gt; availableLocales, out string matchedLocale, string baseLanguage=&quot;en&quot;)
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:a72ea98e426f63944442013adda406724">Resolves an Accept-Language header value against a set of available locale keys, returning the best matching locale.  <a href="#a72ea98e426f63944442013adda406724">More...</a><!-- endMemberDescription -->
 </div></td></tr>
 <!-- endMemberList -->
 <!-- end member list -->
@@ -168,17 +203,15 @@ Public Member Functions</h2>
 </section>
 <section class="g-docs__section">
 </section>
-<section class="g-docs__section">
-</section>
 <!-- start MemberGroups -->
 <!-- end MemberGroups -->
 <section class="g-docs__section">
-<h2 class="g-docs__section-heading">Member Function Documentation</h2>
+<h2 class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <!-- startMemberDocList -->
 <article class="c-member">
-<a id="aeb593090c17130e7356488d37159ac46"></a><!-- startMemberDoc -->
+<a id="a1d2dc6a7d62faa0e90522a6bc85cbce5"></a><!-- startMemberDoc -->
 
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aeb593090c17130e7356488d37159ac46">&#9670;&nbsp;</a></span>AddLanguage()</h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1d2dc6a7d62faa0e90522a6bc85cbce5">&#9670;&nbsp;</a></span>Languages()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -187,31 +220,14 @@ Public Member Functions</h2>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">void FiftyOne.Pipeline.Translation.Data.Languages.AddLanguage <!-- endMemberDocName -->
+              <td class="c-table__cell">FiftyOne.Pipeline.Translation.Data.Languages.Languages <!-- endMemberDocName -->
 </td>
 <!-- startParameterList -->
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell">string<!-- endParameterType -->
-&#160;</td>
 <!-- startParameterName -->
-          <td class="c-table__cell"><em>language</em>, <!-- endParameterName -->
-</td>
-        </tr>
-<!-- startParameterType -->
-        <tr>
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_translation_1_1_data_1_1_translator.html">Translator</a><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>translator</em><!-- endParameterName -->
-&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
+          <td class="c-table__cell"><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
 </td>
         </tr>
 <!-- endMemberDoc -->
@@ -221,16 +237,59 @@ Public Member Functions</h2>
 </div><!-- startIndent -->
 <div class="c-member__body">
 
-<p>Add a language and its translator to the set of languages. </p>
+<p>Constructor. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<!-- endMemberDocList -->
+<h2 class="g-docs__section-heading">Member Function Documentation</h2>
+<!-- startMemberDocList -->
+<article class="c-member">
+<a id="a3dcd25f31ca989f94a6bea519d608a59"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3dcd25f31ca989f94a6bea519d608a59">&#9670;&nbsp;</a></span>ParseAcceptLanguage()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">static IEnumerable&lt;string&gt; FiftyOne.Pipeline.Translation.Data.Languages.ParseAcceptLanguage <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startFirstParameterType -->
+          <td class="c-table__cell">string<!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><em>acceptLanguage</em><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+<!-- startLabels -->
+<div class="c-member__labels">
+<!-- writeLabel(static) -->
+<span class="c-label">static</span><!-- endLabels -->
+</div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Parses an Accept-Language header value (e.g. </p>
+<p>"es,de-DE;q=0.8,en;q=0.5") into an ordered list of normalized language tags. Tags are ordered by quality (descending), with dashes replaced by underscores (e.g. "en-GB" becomes "en_GB"). </p>
 <dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">language</span> - Locale code for the language e.g. "en_GB", "fr_FR", etc. </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">translator</span> - <a class="el" href="class_fifty_one_1_1_pipeline_1_1_translation_1_1_data_1_1_translator.html" title="Translator used to translate values based on a set of translations.">Translator</a> for the language. </dd>
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">acceptLanguage</span> - The raw Accept-Language header value. </dd>
   </dd>
 </dl>
-<dl class="c-list-definition"><dt class="c-list-definition__title">Exceptions</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">ArgumentNullException</span> - </dd>
-  </dd>
-</dl>
+<dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">An ordered enumerable of normalized language tags, highest preference first. </dd></dl>
 <!-- endIndent -->
 
 </div>
@@ -239,7 +298,7 @@ Public Member Functions</h2>
 <article class="c-member">
 <a id="a2bbc2327714ab28a4a0ecf39267ff6db"></a><!-- startMemberDoc -->
 
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2bbc2327714ab28a4a0ecf39267ff6db">&#9670;&nbsp;</a></span>TryGetTranslator()</h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2bbc2327714ab28a4a0ecf39267ff6db">&#9670;&nbsp;</a></span>TryGetTranslator() <span class="c-member__count">[1/2]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -285,11 +344,168 @@ Public Member Functions</h2>
 <p>Gets the translator for the specified language if it exists. </p>
 <p>Returns true if it does, otherwise false. </p>
 <dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">language</span> - </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">translator</span> - </dd>
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">language</span> - A locale code (e.g. "fr_FR") or a full Accept-Language header value (e.g. "es,de-DE;q=0.8,en;q=0.5"). </dd>
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">translator</span> - The translator for the matched language, or null if not found. </dd>
   </dd>
 </dl>
 <dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
+<a id="a39c3b9a5350d202accd50e8ec6ef4bfa"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a39c3b9a5350d202accd50e8ec6ef4bfa">&#9670;&nbsp;</a></span>TryGetTranslator() <span class="c-member__count">[2/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool FiftyOne.Pipeline.Translation.Data.Languages.TryGetTranslator <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startFirstParameterType -->
+          <td class="c-table__cell">string<!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><em>language</em>, <!-- endParameterName -->
+</td>
+        </tr>
+<!-- startParameterType -->
+        <tr>
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">out <a class="el" href="class_fifty_one_1_1_pipeline_1_1_translation_1_1_data_1_1_translator.html">Translator</a><!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><em>translator</em>, <!-- endParameterName -->
+</td>
+        </tr>
+<!-- startParameterType -->
+        <tr>
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">out string<!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><em>matchedLocale</em><!-- endParameterName -->
+&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Gets the translator and matched locale for the specified language if it exists. </p>
+<p>Returns true if it does, otherwise false. </p>
+<dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">language</span> - A locale code (e.g. "fr_FR") or a full Accept-Language header value (e.g. "es,de-DE;q=0.8,en;q=0.5"). </dd>
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">translator</span> - The translator for the matched language, or null if not found. </dd>
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">matchedLocale</span> - The locale key that was matched (e.g. "fr_FR", "es_ES"), or null if no match was found. </dd>
+  </dd>
+</dl>
+<dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
+<a id="a72ea98e426f63944442013adda406724"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a72ea98e426f63944442013adda406724">&#9670;&nbsp;</a></span>TryResolveLocale()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">static bool FiftyOne.Pipeline.Translation.Data.Languages.TryResolveLocale <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startFirstParameterType -->
+          <td class="c-table__cell">string<!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><em>acceptLanguage</em>, <!-- endParameterName -->
+</td>
+        </tr>
+<!-- startParameterType -->
+        <tr>
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">IEnumerable&lt; string &gt;<!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><em>availableLocales</em>, <!-- endParameterName -->
+</td>
+        </tr>
+<!-- startParameterType -->
+        <tr>
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">out string<!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><em>matchedLocale</em>, <!-- endParameterName -->
+</td>
+        </tr>
+<!-- startParameterType -->
+        <tr>
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string<!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><em>baseLanguage</em> = <code>&quot;en&quot;</code><!-- endParameterName -->
+&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+<!-- startLabels -->
+<div class="c-member__labels">
+<!-- writeLabel(static) -->
+<span class="c-label">static</span><!-- endLabels -->
+</div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Resolves an Accept-Language header value against a set of available locale keys, returning the best matching locale. </p>
+<p>Handles both exact locale matches (e.g. "fr_FR") and 2-char language code fallbacks (e.g. "fr" matching "fr_FR").</p>
+<p>If the highest-priority language matches the <em>baseLanguage</em>  (default "en"), resolution stops immediately and returns false, since the source values are already in the base language and no translation is needed. This prevents falling through to a lower-priority language. </p>
+<dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">acceptLanguage</span> - The raw Accept-Language header value. </dd>
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">availableLocales</span> - The set of available locale keys (e.g. "fr_FR", "de_DE"). </dd>
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">matchedLocale</span> - The locale key that was matched, or null if no match was found. </dd>
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">baseLanguage</span> - The 2-char code of the base language that source values are already in. Defaults to "en". If the preferred language matches this, no translation is performed. </dd>
+  </dd>
+</dl>
+<dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">True if a matching locale was found, false otherwise. </dd></dl>
 <!-- endIndent -->
 
 </div>
@@ -303,6 +519,7 @@ Public Member Functions</h2>
       <h5 class="c-section-nav__heading">On This Page</h5>
         <ul class="c-section-nav__list">
 <li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-methods">Public Member Functions</a></li>
+<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-static-methods">Static Public Member Functions</a></li>
 <li class="c-section-nav__item"><a class="c-section-nav__link" href="class_fifty_one_1_1_pipeline_1_1_translation_1_1_data_1_1_languages-members.html">List of all members</a></li>    </div>
   </div>
 </div><!-- inner-->

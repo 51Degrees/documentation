@@ -6,6 +6,8 @@ var class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_getting_start
     [ "Country", null, null ],
     [ "CountryCode", null, null ],
     [ "CountryCode3", null, null ],
+    [ "CountryCodesGeographical", null, null ],
+    [ "CountryCodesPopulation", null, null ],
     [ "Engine", null, null ],
     [ "Evidence", null, null ],
     [ "FlowData", null, null ],

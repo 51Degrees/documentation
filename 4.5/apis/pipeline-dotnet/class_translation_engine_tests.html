@@ -110,6 +110,13 @@ Public Member Functions</h2>
 </div></td></tr>
 <!-- member dec start -->
 <!-- startMemberItem() -->
+<tr class="c-table__row memitem:acf8182a8d0876df28d381afa3e2b5504"><td class="c-table__cell">void<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_translation_engine_tests.html#acf8182a8d0876df28d381afa3e2b5504">HeaderFormats</a> (string header)
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:acf8182a8d0876df28d381afa3e2b5504">Test that different formats of the accept-language header are correctly parsed and the language extracted from them.  <a href="#acf8182a8d0876df28d381afa3e2b5504">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
 <tr class="c-table__row memitem:ad849d898c03ba6fb5c8b8b9a5cec576c"><td class="c-table__cell">void<!-- insertMemberAlign -->
 &#160;</td><td class="c-table__cell"><a class="el" href="class_translation_engine_tests.html#ad849d898c03ba6fb5c8b8b9a5cec576c">TranslateDifferentCase</a> ()
 <!-- startMemberDescription -->
@@ -233,6 +240,69 @@ Public Member Functions</h2>
 &#160;</td><td class="c-table__cell"><a class="el" href="class_translation_engine_tests.html#a664d009302e559dd9035ada85aad411e">TestChained</a> ()
 <!-- startMemberDescription -->
 <div class="c-table__desc memdesc:a664d009302e559dd9035ada85aad411e">Test that 2 translations can be chained.  <a href="#a664d009302e559dd9035ada85aad411e">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:a11fc40a818e9c5875aa86cd86c668fcf"><td class="c-table__cell">void<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_translation_engine_tests.html#a11fc40a818e9c5875aa86cd86c668fcf">EnglishPreferred_NoTranslation</a> ()
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:a11fc40a818e9c5875aa86cd86c668fcf">Test that when English is the preferred language in Accept-Language, the base translation engine passes through values unchanged (no translation), even when other languages with translators are present at lower priority.  <a href="#a11fc40a818e9c5875aa86cd86c668fcf">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:a20b4316035b26e1fba1574042249a665"><td class="c-table__cell">void<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_translation_engine_tests.html#a20b4316035b26e1fba1574042249a665">TryResolveLocale_EnglishPreferred_ReturnsFalse</a> ()
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:a20b4316035b26e1fba1574042249a665">Test that TryResolveLocale returns false when English is the preferred language, preventing fallthrough to lower-priority languages.  <a href="#a20b4316035b26e1fba1574042249a665">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:a5536c92104bc165b9ddd5cda51742483"><td class="c-table__cell">void<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_translation_engine_tests.html#a5536c92104bc165b9ddd5cda51742483">TryResolveLocale_FrenchPreferredOverEnglish</a> ()
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:a5536c92104bc165b9ddd5cda51742483">Test that TryResolveLocale still finds non-English languages when they are preferred over English.  <a href="#a5536c92104bc165b9ddd5cda51742483">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:af330a99472ff87e40f850b208aaa2d70"><td class="c-table__cell">void<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_translation_engine_tests.html#af330a99472ff87e40f850b208aaa2d70">TryGetTranslator_ReturnsMatchedLocale_ExactMatch</a> ()
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:af330a99472ff87e40f850b208aaa2d70">Test that TryGetTranslator with locale output returns the matched locale key for an exact locale match.  <a href="#af330a99472ff87e40f850b208aaa2d70">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:acb6b594ad1980ee19665b9bfe3ef7a59"><td class="c-table__cell">void<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_translation_engine_tests.html#acb6b594ad1980ee19665b9bfe3ef7a59">TryGetTranslator_ReturnsMatchedLocale_TwoCharCode</a> ()
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:acb6b594ad1980ee19665b9bfe3ef7a59">Test that TryGetTranslator with locale output returns the matched locale key when only a 2-char language code is provided.  <a href="#acb6b594ad1980ee19665b9bfe3ef7a59">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:aecae89e24cee4449f7753e03773dc36a"><td class="c-table__cell">void<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_translation_engine_tests.html#aecae89e24cee4449f7753e03773dc36a">TryGetTranslator_ReturnsMatchedLocale_AcceptLanguageHeader</a> ()
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:aecae89e24cee4449f7753e03773dc36a">Test that TryGetTranslator picks the highest-priority language from an Accept-Language header and returns its locale.  <a href="#aecae89e24cee4449f7753e03773dc36a">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:a26017cfbd4b07b820bf369dbb5edf014"><td class="c-table__cell">void<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_translation_engine_tests.html#a26017cfbd4b07b820bf369dbb5edf014">TryGetTranslator_PrefersHigherPriority_OverExactLocale</a> ()
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:a26017cfbd4b07b820bf369dbb5edf014">Test that TryGetTranslator respects preference order and picks the preferred language even when a lower-priority language has an exact locale match in the header.  <a href="#a26017cfbd4b07b820bf369dbb5edf014">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:a2ecb124ecdefb54125b28874008f6fe5"><td class="c-table__cell">void<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_translation_engine_tests.html#a2ecb124ecdefb54125b28874008f6fe5">TryGetTranslator_NoMatch_ReturnsNullLocale</a> ()
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:a2ecb124ecdefb54125b28874008f6fe5">Test that TryGetTranslator returns false and null locale when no matching language is found.  <a href="#a2ecb124ecdefb54125b28874008f6fe5">More...</a><!-- endMemberDescription -->
+</div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:aa121ba70e0b11dc28a932c56eda808b3"><td class="c-table__cell">void<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_translation_engine_tests.html#aa121ba70e0b11dc28a932c56eda808b3">TryGetTranslator_OriginalOverload_StillWorks</a> ()
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:aa121ba70e0b11dc28a932c56eda808b3">Test that the original TryGetTranslator overload (without locale) still works correctly after the refactoring.  <a href="#aa121ba70e0b11dc28a932c56eda808b3">More...</a><!-- endMemberDescription -->
 </div></td></tr>
 <!-- endMemberList -->
 <!-- end member list -->
@@ -371,6 +441,41 @@ Public Member Functions</h2>
 </div>
 </article>
 <article class="c-member">
+<a id="a11fc40a818e9c5875aa86cd86c668fcf"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a11fc40a818e9c5875aa86cd86c668fcf">&#9670;&nbsp;</a></span>EnglishPreferred_NoTranslation()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void TranslationEngineTests.EnglishPreferred_NoTranslation <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Test that when English is the preferred language in Accept-Language, the base translation engine passes through values unchanged (no translation), even when other languages with translators are present at lower priority. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
 <a id="a20629916d7571d0277f5ae6c9f90ec9b"></a><!-- startMemberDoc -->
 
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a20629916d7571d0277f5ae6c9f90ec9b">&#9670;&nbsp;</a></span>FixedLanguage()</h2>
@@ -401,6 +506,48 @@ Public Member Functions</h2>
 
 <p>Test that the translation engine correctly translates values when a fixed language is set. </p>
 <p>This test does not add a target language to the evidence, so will not work unless the language is taken from the fixed option. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
+<a id="acf8182a8d0876df28d381afa3e2b5504"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#acf8182a8d0876df28d381afa3e2b5504">&#9670;&nbsp;</a></span>HeaderFormats()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void TranslationEngineTests.HeaderFormats <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startFirstParameterType -->
+          <td class="c-table__cell">string<!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><em>header</em><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Test that different formats of the accept-language header are correctly parsed and the language extracted from them. </p>
+<dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">header</span> - </dd>
+  </dd>
+</dl>
 <!-- endIndent -->
 
 </div>
@@ -954,6 +1101,286 @@ Public Member Functions</h2>
 <div class="c-member__body">
 
 <p>Test tahat a weighted list of strings are correctly translated, and their weightings maintained. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
+<a id="a2ecb124ecdefb54125b28874008f6fe5"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2ecb124ecdefb54125b28874008f6fe5">&#9670;&nbsp;</a></span>TryGetTranslator_NoMatch_ReturnsNullLocale()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void TranslationEngineTests.TryGetTranslator_NoMatch_ReturnsNullLocale <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Test that TryGetTranslator returns false and null locale when no matching language is found. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
+<a id="aa121ba70e0b11dc28a932c56eda808b3"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa121ba70e0b11dc28a932c56eda808b3">&#9670;&nbsp;</a></span>TryGetTranslator_OriginalOverload_StillWorks()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void TranslationEngineTests.TryGetTranslator_OriginalOverload_StillWorks <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Test that the original TryGetTranslator overload (without locale) still works correctly after the refactoring. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
+<a id="a26017cfbd4b07b820bf369dbb5edf014"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a26017cfbd4b07b820bf369dbb5edf014">&#9670;&nbsp;</a></span>TryGetTranslator_PrefersHigherPriority_OverExactLocale()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void TranslationEngineTests.TryGetTranslator_PrefersHigherPriority_OverExactLocale <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Test that TryGetTranslator respects preference order and picks the preferred language even when a lower-priority language has an exact locale match in the header. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
+<a id="aecae89e24cee4449f7753e03773dc36a"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aecae89e24cee4449f7753e03773dc36a">&#9670;&nbsp;</a></span>TryGetTranslator_ReturnsMatchedLocale_AcceptLanguageHeader()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void TranslationEngineTests.TryGetTranslator_ReturnsMatchedLocale_AcceptLanguageHeader <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Test that TryGetTranslator picks the highest-priority language from an Accept-Language header and returns its locale. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
+<a id="af330a99472ff87e40f850b208aaa2d70"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af330a99472ff87e40f850b208aaa2d70">&#9670;&nbsp;</a></span>TryGetTranslator_ReturnsMatchedLocale_ExactMatch()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void TranslationEngineTests.TryGetTranslator_ReturnsMatchedLocale_ExactMatch <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Test that TryGetTranslator with locale output returns the matched locale key for an exact locale match. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
+<a id="acb6b594ad1980ee19665b9bfe3ef7a59"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#acb6b594ad1980ee19665b9bfe3ef7a59">&#9670;&nbsp;</a></span>TryGetTranslator_ReturnsMatchedLocale_TwoCharCode()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void TranslationEngineTests.TryGetTranslator_ReturnsMatchedLocale_TwoCharCode <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Test that TryGetTranslator with locale output returns the matched locale key when only a 2-char language code is provided. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
+<a id="a20b4316035b26e1fba1574042249a665"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a20b4316035b26e1fba1574042249a665">&#9670;&nbsp;</a></span>TryResolveLocale_EnglishPreferred_ReturnsFalse()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void TranslationEngineTests.TryResolveLocale_EnglishPreferred_ReturnsFalse <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Test that TryResolveLocale returns false when English is the preferred language, preventing fallthrough to lower-priority languages. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
+<a id="a5536c92104bc165b9ddd5cda51742483"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5536c92104bc165b9ddd5cda51742483">&#9670;&nbsp;</a></span>TryResolveLocale_FrenchPreferredOverEnglish()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void TranslationEngineTests.TryResolveLocale_FrenchPreferredOverEnglish <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Test that TryResolveLocale still finds non-English languages when they are preferred over English. </p>
 <!-- endIndent -->
 
 </div>
