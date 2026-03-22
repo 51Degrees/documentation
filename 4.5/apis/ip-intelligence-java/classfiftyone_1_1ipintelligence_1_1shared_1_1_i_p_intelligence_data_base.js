@@ -13,6 +13,8 @@ var classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base =
     [ "getCountry", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a6084050be941a94fd0111ceb80b54e59", null ],
     [ "getCountryCode", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a60937c8bf8157a9bb8a01738d1679e4f", null ],
     [ "getCountryCode3", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a6770b0e6a52e8a21f5a82565accebd98", null ],
+    [ "getCountryCodesGeographical", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#aa07d2a72cf35bfa670f549c9ee1fc323", null ],
+    [ "getCountryCodesPopulation", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a76806d1c8141bc7c4969c3505430bf06", null ],
     [ "getCounty", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a14ea741ce072d49de4a009e1f0b1d77d", null ],
     [ "getCurrencyCode", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a39b84928e3ef514bce7e0bddef27ed53", null ],
     [ "getDialCode", "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a9e37ef37f1879df33a9ce96252c9f7ef", null ],
