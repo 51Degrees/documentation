@@ -31,6 +31,6 @@ There are two weighting schemes available:
 
 - **Geographical** - Based on the geographical area coverage of an IP address' likely area. This is useful for location-based targeting where proximity matters.
 
-- **Population** - Based on population coverage. This considers the sum population attributed to different countries. This weighting tends to favor more densely populated areas / countries.
+- **Population** - Based on population coverage. This considers the sum population attributed to different countries. This weighting tends to favour more densely populated areas / countries.
 
 Choose the weighting that best fits your use case. For example, if an IP range were to be associated with two areas, one encompassing the UK and another encompassing Australia, `CountryCodesGeographical` would heavily favour Australia due to the larger land mass and `CountryCodesPopulation` would favour the UK due to a higher population count. 
