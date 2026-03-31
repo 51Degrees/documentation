@@ -30,7 +30,6 @@ var NAVTREE =
     [ "Services", null, "_services__index" ],
     [ "Pipeline API", null, "_pipeline_api__index" ],
     [ "Product Summaries", null, "_product_summaries__index" ],
-    [ "Countries", "_ip_intelligence__features__countries.html", null ],
     [ "Cloud API Documentation", "^https://cloud.51degrees.com/api-docs/index.html", null ]
 ];
 

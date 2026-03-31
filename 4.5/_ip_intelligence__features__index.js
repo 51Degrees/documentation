@@ -5,5 +5,6 @@ var _ip_intelligence__features__index =
     [ "Human", "_ip_intelligence__features__human.html", null ],
     [ "Diversity", "_ip_intelligence__features__diversity.html", null ],
     [ "Weighting", "_ip_intelligence__features__weighting.html", null ],
-    [ "Randomization", "_ip_intelligence__features__randomization.html", null ]
+    [ "Randomization", "_ip_intelligence__features__randomization.html", null ],
+    [ "Countries", "_ip_intelligence__features__countries.html", null ]
 ];
