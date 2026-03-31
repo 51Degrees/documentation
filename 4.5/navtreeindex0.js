@@ -74,6 +74,7 @@ var NAVTREEINDEX0 =
 "_ip_intelligence__examples__performance.html":[2,4,5],
 "_ip_intelligence__features__area.html":[2,3,1],
 "_ip_intelligence__features__confidence.html":[2,3,0],
+"_ip_intelligence__features__countries.html":[7],
 "_ip_intelligence__features__diversity.html":[2,3,3],
 "_ip_intelligence__features__human.html":[2,3,2],
 "_ip_intelligence__features__index.html":[2,3],
