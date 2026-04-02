@@ -14,6 +14,7 @@ var class_fifty_one_1_1_device_detection_1_1_examples_1_1_cloud_1_1_getting_star
     [ "PlatformName", null, null ],
     [ "PlatformVendor", null, null ],
     [ "PlatformVersion", null, null ],
+    [ "PriceBand", null, null ],
     [ "ResponseHeaders", null, null ],
     [ "ScreenHeight", null, null ],
     [ "ScreenWidth", null, null ]

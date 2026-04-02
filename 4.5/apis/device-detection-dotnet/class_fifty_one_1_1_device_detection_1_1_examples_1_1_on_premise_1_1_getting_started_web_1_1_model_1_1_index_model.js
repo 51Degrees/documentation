@@ -15,6 +15,7 @@ var class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_getting
     [ "PlatformName", null, null ],
     [ "PlatformVendor", null, null ],
     [ "PlatformVersion", null, null ],
+    [ "PriceBand", null, null ],
     [ "ResponseHeaders", null, null ],
     [ "ScreenHeight", null, null ],
     [ "ScreenWidth", null, null ]
