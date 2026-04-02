@@ -72,6 +72,7 @@ var NAVTREEINDEX0 =
 "_ip_intelligence__examples__metadata.html":[2,4,3],
 "_ip_intelligence__examples__offline_processing.html":[2,4,4],
 "_ip_intelligence__examples__performance.html":[2,4,5],
+"_ip_intelligence__examples__suspicious_i_p.html":[2,4,6],
 "_ip_intelligence__features__area.html":[2,3,1],
 "_ip_intelligence__features__confidence.html":[2,3,0],
 "_ip_intelligence__features__countries.html":[2,3,6],
