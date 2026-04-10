@@ -24,6 +24,7 @@ var interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data =
     [ "GetOrAdd< T >", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html#a188b903be044ad2e3347cfbdd1570311", null ],
     [ "GetWhere", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html#a9614c08082f98f4cf0854c77ed3e1fd4", null ],
     [ "Process", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html#a3b7c5afe9e552abacd57a7bc6abd325b", null ],
+    [ "TryGet", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html#a9f26642acd0b29a677aa8c8b3e9c0ee7", null ],
     [ "TryGetEvidence< T >", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html#a7fa77b0adeeaef9064275ea610f19ca6", null ],
     [ "TryGetValue< T >", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html#a9dfb8f2cc5b5998e9b8894631ef84cd3", null ],
     [ "Errors", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html#a3263388250333e60a44c7c1766275c52", null ],

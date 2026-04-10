@@ -26,6 +26,7 @@ var class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data =
     [ "GetOrAdd< T >", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#ab1a1997d0cebf30d01c173cc3b8f9de3", null ],
     [ "GetWhere", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a3a082b344c593582bdb73103844a4cf5", null ],
     [ "Process", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a001d0a3f48a25047d08a902dc011f69a", null ],
+    [ "TryGet", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#abd9f2e2fd54b589c7bfd8ffc723a433d", null ],
     [ "TryGetEvidence< T >", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#ac5b43e142e748a87b91397ee2c47d746", null ],
     [ "TryGetValue< T >", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#ab0bb847f85c6c73a8efd419adeeab4bc", null ],
     [ "Errors", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a4ed9211abbdb6445e869e18d5c6cff77", null ],
