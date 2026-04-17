@@ -7,6 +7,7 @@ var classtests_1_1test__onpremiseexamples_1_1_device_detection_example_tests =
     [ "test_onpremise_match_metrics", "classtests_1_1test__onpremiseexamples_1_1_device_detection_example_tests.html#a737a218d1a4178c891ab4169aaf8560c", null ],
     [ "test_onpremise_metadata_console", "classtests_1_1test__onpremiseexamples_1_1_device_detection_example_tests.html#ab6f3baaa4faf040e872c805eb99dd146", null ],
     [ "test_onpremise_offline_processing", "classtests_1_1test__onpremiseexamples_1_1_device_detection_example_tests.html#a20264718be1b94c0688864dd783023e6", null ],
+    [ "test_onpremise_offline_processing_with_tabs", "classtests_1_1test__onpremiseexamples_1_1_device_detection_example_tests.html#a45d93c32de835e6a3d433df6ce2d2bff", null ],
     [ "test_onpremise_performance", "classtests_1_1test__onpremiseexamples_1_1_device_detection_example_tests.html#a44d59d55a848300bf6771c8d8e7c866e", null ],
     [ "data_file", "classtests_1_1test__onpremiseexamples_1_1_device_detection_example_tests.html#a389c1c915340582d7687e46123316903", null ],
     [ "evidence_file", "classtests_1_1test__onpremiseexamples_1_1_device_detection_example_tests.html#a12cada688382c6fba948f14a4ede3f75", null ],
