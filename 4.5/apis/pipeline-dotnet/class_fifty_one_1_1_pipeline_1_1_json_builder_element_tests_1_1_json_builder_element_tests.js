@@ -21,7 +21,13 @@ var class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder
       [ "IPAddress", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#ab2ef68e86a46cc7beea6293d411a61f5a75421680cf281bbdcd7897f4506943b8", null ],
       [ "Weighted_IP", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#ab2ef68e86a46cc7beea6293d411a61f5ad59d8ed6ca65cb869c2db446ccbcaef7", null ],
       [ "APV_Weighted_IP", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#ab2ef68e86a46cc7beea6293d411a61f5aa3937b214b08350989097b639eb92368", null ],
-      [ "APV_Weighted_IP_List", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#ab2ef68e86a46cc7beea6293d411a61f5a3974ef4a595fcd9e5732beef6e011453", null ]
+      [ "APV_Weighted_IP_List", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#ab2ef68e86a46cc7beea6293d411a61f5a3974ef4a595fcd9e5732beef6e011453", null ],
+      [ "Lazy_String", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#ab2ef68e86a46cc7beea6293d411a61f5ad6084ee45ef1741ac0c376bf8e2797f8", null ],
+      [ "Lazy_String_List", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#ab2ef68e86a46cc7beea6293d411a61f5ae1abf7eb8bbbe38caa3c752b777cb0fb", null ],
+      [ "APV_Lazy_String", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#ab2ef68e86a46cc7beea6293d411a61f5a53d50011264289e8379b76b7f33257a3", null ],
+      [ "APV_Lazy_String_List", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#ab2ef68e86a46cc7beea6293d411a61f5a44b6d1cbc5411fd9898ad4ecdf42acf9", null ],
+      [ "Lazy_APV_String", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#ab2ef68e86a46cc7beea6293d411a61f5a6220e965b66aea79b0df34cd39fdebcc", null ],
+      [ "Lazy_APV_String_List", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#ab2ef68e86a46cc7beea6293d411a61f5a235501c0ab0c97488fdab3a790b91bf6", null ]
     ] ],
     [ "Init", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#ad907c1f2465bfdd3e3007731c66c5e59", null ],
     [ "JsonBuilder_DelayedExecution", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#aeb50eb2e588b08c516d520ed749bacfa", null ],
