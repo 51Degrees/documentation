@@ -56,20 +56,6 @@ The `tdl` value can be:
 
 Entries that are neither absolute URIs nor known macro ids are silently dropped, per the IETF-Robots TDL specification. If everything supplied is dropped, the engine falls back to the standard `Allow: /` wildcard block.
 
-# Engine Configuration
-
-The engine is built via `RobotsTxtEngineBuilder` and added to a Pipeline that also contains a `DeviceDetectionHashEngine` (the engine reads the crawler list out of the loaded device-detection data file at `AddPipeline` time).
-
-Builder parameters:
-
-| Parameter | Purpose |
-|-----------|---------|
-| `SetProperties` (inherited) | Restrict the engine output to a subset of `PlainText` / `AnnotatedText`. If unset, both are produced. |
-| `SetTdlSourceResolver(resolver)` | Replace the default `GitHubTdlSourceResolver` with a custom `ITdlSourceResolver`, or pass `null` to disable macro resolution entirely (e.g. for air-gapped deployments). |
-| `SetUserAgent(userAgent)` / `UseDefaultTdlSourceResolver(userAgent)` | Override the User-Agent that the default GitHub-backed resolver sends when refreshing macro source listings. GitHub rejects requests without a User-Agent. Pipeline configuration files can drive this via `BuildParameters`. |
-
-Properties advertised by the engine carry the data tier of the underlying device-detection data file, so `robotstxt.plaintext` and `robotstxt.annotatedtext` are only available when running against an Enterprise tier file (or higher) that contains the crawler properties.
-
 # Cloud Usage
 
 Robots.txt support has recently become available as part of 51Degrees Cloud. When enabled on a Resource Key, two additional steps make integration straightforward.
@@ -86,18 +72,18 @@ This returns the canonical list of usages available on your Resource Key tier �
 
 ## Calling the JSON endpoint
 
-To request a `robots.txt` from Cloud, hit the standard JSON endpoint with the appropriate `query.robotstxt.*` parameters. For example:
+To request a `robots.txt` from Cloud, call the standard JSON endpoint with the appropriate `query.robotstxt.*` parameters. For example:
 
 ```
-https://cloud.51degrees.com/api/v4/json?resource=<RESOURCE_KEY>&user-agent=iPhone&robotstxt.analytics=allow&robotstxt.tdl=MOW-SOCW,https://custom.url/tdl
+https://cloud.51degrees.com/api/v4/json?resource=<RESOURCE_KEY>&values=robotstxt.plaintext&robotstxt.analytics=allow&robotstxt.tdl=MOW-SOCW,https://custom.url/tdl
 ```
 
 In the example above:
 
-- `robotstxt.analytics=allow` whitelists every crawler whose `CrawlerUsage` includes `Analytics`. All other crawlers are emitted as explicit `Disallow:` blocks.
-- `robotstxt.tdl=MOW-SOCW,https://custom.url/tdl` sends two TDL entries to the wildcard `Allow:` block — the macro `MOW-SOCW` (resolved server-side to the latest published Movement for an Open Web Standard Online Content Wrapper terms URL) and a custom absolute URL of your own. Both are emitted in the order supplied.
+- `robotstxt.analytics=allow` allows every crawler whose `CrawlerUsage` includes `Analytics`. All other crawlers are omitted as explicit `Disallow:` blocks.
+- `robotstxt.tdl=MOW-SOCW,https://custom.url/tdl` adds two TDL entries to the wildcard `Allow:` block — the macro `MOW-SOCW` (resolved server-side to the latest published [Movement for an Open Web Standard](https://m4ow.uk/socw/) Online Content Wrapper terms URL) and a custom absolute URL of your own license agreement. Both are added in the order supplied.
 
-The response is a standard 51Degrees Cloud JSON document, with the generated text exposed under the `robotstxt` element:
+The response is a standard 51Degrees Cloud JSON document, with the generated text exposed under the `robotstxt` and `annotatedtext` element:
 
 ```json
 {
@@ -108,7 +94,23 @@ The response is a standard 51Degrees Cloud JSON document, with the generated tex
 }
 ```
 
-The Resource Key must include the `robotstxt.plaintext` and/or `robotstxt.annotatedtext` properties; pick whichever you intend to consume to keep the response small. Use the @ref Services_Configurator "Configurator" to enable them.
+The Resource Key must include the `robotstxt.plaintext` and/or `robotstxt.annotatedtext` properties or the values must be requested using the `values` parameter in the request. The `plaintext` value is intended for production use. The `annotatedtext` value is intended for internal use to understand why certain choices were made and provide context.
+
+Use the @ref Services_Configurator "Configurator" to include `robotstxt` and `annotatedtext` in the resource key response.
+
+# On Premise Engine Configuration
+
+The engine is built via `RobotsTxtEngineBuilder` and added to a Pipeline that also contains a `DeviceDetectionHashEngine` (the engine reads the crawler list out of the loaded device-detection data file at `AddPipeline` time).
+
+Builder parameters:
+
+| Parameter | Purpose |
+|-----------|---------|
+| `SetProperties` (inherited) | Restrict the engine output to a subset of `PlainText` / `AnnotatedText`. If unset, both are produced. |
+| `SetTdlSourceResolver(resolver)` | Replace the default `GitHubTdlSourceResolver` with a custom `ITdlSourceResolver`, or pass `null` to disable macro resolution entirely (e.g. for air-gapped deployments). |
+| `SetUserAgent(userAgent)` / `UseDefaultTdlSourceResolver(userAgent)` | Override the User-Agent that the default GitHub-backed resolver sends when refreshing macro source listings. GitHub rejects requests without a User-Agent. Pipeline configuration files can drive this via `BuildParameters`. |
+
+Properties advertised by the engine carry the data tier of the underlying device-detection data file, so `robotstxt.plaintext` and `robotstxt.annotatedtext` are only available when running against an Enterprise tier file (or higher) that contains the crawler properties.
 
 # See Also
 
