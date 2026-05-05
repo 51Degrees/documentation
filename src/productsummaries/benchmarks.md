@@ -1,10 +1,10 @@
 @page ProductSummaries_Benchmarks Benchmarks
 
-Precise benchmarking is a complex topic. The following results are intended 
-more as an illustration of the difference in performance between 
+Precise benchmarking is a complex topic. The following results are intended
+more as an illustration of the difference in performance between
 platforms and configurations than an in-depth exploration of performance.
 
-If performance is important to you then we highly recommend running 
+If performance is important to you then we highly recommend running
 your own profiling.
 
 These tests are run using a console performance example.
@@ -80,7 +80,7 @@ not be as good as a dedicated machine, as it's running on a GitHub runner, but g
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | C/C++         | ![dd-cxx](https://raw.githubusercontent.com/51Degrees/device-detection-cxx/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png)       | ![ip-cxx](https://raw.githubusercontent.com/51Degrees/ip-intelligence-cxx/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png)       |
 | .NET          | ![dd-dotnet](https://raw.githubusercontent.com/51Degrees/device-detection-dotnet/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png) | ![ip-dotnet](https://raw.githubusercontent.com/51Degrees/ip-intelligence-dotnet/gh-images/perf-graph-Ubuntu_x64_Release-DetectionsPerSecond-latest.png) |
-| Java          | ![dd-java](https://raw.githubusercontent.com/51Degrees/device-detection-java/gh-images/perf-graph-Ubuntu_Java_17-DetectionsPerSecond-latest.png)         | ![ip-java](https://raw.githubusercontent.com/51Degrees/ip-intelligence-java/gh-images/perf-graph-Ubuntu_Java_11-DetectionsPerSecond-latest.png)         |
+| Java          | ![dd-java](https://raw.githubusercontent.com/51Degrees/device-detection-java/gh-images/perf-graph-Ubuntu_Java_17-DetectionsPerSecond-latest.png)         | ![ip-java](https://raw.githubusercontent.com/51Degrees/ip-intelligence-java/gh-images/perf-graph-Ubuntu_Java_8-DetectionsPerSecond-latest.png)         |
 | Go            | ![dd-go](https://raw.githubusercontent.com/51Degrees/device-detection-go/gh-images/perf-graph-ubuntu-DetectionsPerSecond-latest.png)                     | ![ip-go](https://raw.githubusercontent.com/51Degrees/ip-intelligence-go/gh-images/perf-graph-ubuntu-latest-go-1.24-DetectionsPerSecond-latest.png)      |
 | Node.js       | ![dd-node](https://raw.githubusercontent.com/51Degrees/device-detection-node/gh-images/perf-graph-Ubuntu_Node_22-DetectionsPerSecond-latest.png)         |                                                                                                                                                         |
 | Python        | ![dd-python](https://raw.githubusercontent.com/51Degrees/device-detection-python/gh-images/perf-graph-Ubuntu_Python_3.13-DetectionsPerSecond-latest.png) |                                                                                                                                                         |
