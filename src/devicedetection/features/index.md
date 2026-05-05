@@ -14,6 +14,8 @@
 
 @subpage DeviceDetection_Features_PerformanceOptions
 
+@subpage DeviceDetection_Features_RobotsTxt
+
 @subpage DeviceDetection_Features_TacLookup
 
 @subpage DeviceDetection_Features_ThirdPartyCookies
