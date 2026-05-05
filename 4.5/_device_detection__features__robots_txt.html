@@ -95,7 +95,22 @@ $(document).ready(function(){initNavTree('_device_detection__features__robots_tx
 <li>A short macro id that the engine resolves to a current URL via a <code>ITdlSourceResolver</code>. The default resolver ships with one known macro, **<code>MOW-SOCW</code>**, which substitutes the latest version of the <a href="https://github.com/movementforanopenweb/terms-documents">Movement for an Open Web Standard Online Content Wrapper</a> terms document.</li>
 </ul>
 <p>Entries that are neither absolute URIs nor known macro ids are silently dropped, per the IETF-Robots TDL specification. If everything supplied is dropped, the engine falls back to the standard <code>Allow: /</code> wildcard block.</p>
-<h1 class="g-docs__section-heading">Engine Configuration</h1>
+<h1 class="g-docs__section-heading">Cloud Usage</h1>
+<p>Robots.txt support has recently become available as part of 51Degrees Cloud. When enabled on a Resource Key, two additional steps make integration straightforward.</p>
+<h2>Discovering the available CrawlerUsage values</h2>
+<p>Before deciding which <code>query.robotstxt.&lt;usage&gt;</code> parameters to send, fetch the full list of allowed <code>CrawlerUsage</code> values from the cloud metadata API:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">https://cloud.51degrees.com/api/metadata/values?propertyName=CrawlerUsage</div></div><p>This returns the canonical list of usages available on your Resource Key tier — use the value names verbatim (lower-cased) as the suffix of the evidence parameter.</p>
+<h2>Calling the JSON endpoint</h2>
+<p>To request a <code>robots.txt</code> from Cloud, call the standard JSON endpoint with the appropriate <code>query.robotstxt.*</code> parameters. For example:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">https://cloud.51degrees.com/api/v4/json?resource=&lt;RESOURCE_KEY&gt;&amp;values=robotstxt.plaintext&amp;robotstxt.analytics=allow&amp;robotstxt.tdl=MOW-SOCW,https://custom.url/tdl</div></div><p>In the example above:</p>
+<ul>
+<li><code>robotstxt.analytics=allow</code> allows every crawler whose <code>CrawlerUsage</code> includes <code>Analytics</code>. All other crawlers are omitted as explicit <code>Disallow:</code> blocks.</li>
+<li><code>robotstxt.tdl=MOW-SOCW,<a href="https://custom.url/tdl">https://custom.url/tdl</a></code> adds two TDL entries to the wildcard <code>Allow:</code> block — the macro <code>MOW-SOCW</code> (resolved server-side to the latest published <a href="https://m4ow.uk/socw/">Movement for an Open Web Standard</a> Online Content Wrapper terms URL) and a custom absolute URL of your own license agreement. Both are added in the order supplied.</li>
+</ul>
+<p>The response is a standard 51Degrees Cloud JSON document, with the generated text exposed under the <code>robotstxt</code> and <code>annotatedtext</code> element:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div><div class="c-code__line">  &quot;robotstxt&quot;: {</div><div class="c-code__line">    &quot;plaintext&quot;:     &quot;User-Agent: ExampleBot\nDisallow: /\n...&quot;,</div><div class="c-code__line">    &quot;annotatedtext&quot;: &quot;# N: ExampleBot\n# U: Train\nUser-Agent: ExampleBot\nDisallow: /\n...&quot;</div><div class="c-code__line">  }</div><div class="c-code__line">}</div></div><p>The Resource Key must include the <code>robotstxt.plaintext</code> and/or <code>robotstxt.annotatedtext</code> properties or the values must be requested using the <code>values</code> parameter in the request. The <code>plaintext</code> value is intended for production use. The <code>annotatedtext</code> value is intended for internal use to understand why certain choices were made and provide context.</p>
+<p>Use the <a class="el" href="_services__configurator.html">Configurator</a> to include <code>robotstxt</code> and <code>annotatedtext</code> in the resource key response.</p>
+<h1 class="g-docs__section-heading">On Premise Engine Configuration</h1>
 <p>The engine is built via <code>RobotsTxtEngineBuilder</code> and added to a Pipeline that also contains a <code>DeviceDetectionHashEngine</code> (the engine reads the crawler list out of the loaded device-detection data file at <code>AddPipeline</code> time).</p>
 <p>Builder parameters:</p>
 <div class="g-table g-table--overflow"><table class="c-table">
@@ -109,20 +124,6 @@ $(document).ready(function(){initNavTree('_device_detection__features__robots_tx
 <td class="c-table__cell"><code>SetUserAgent(userAgent)</code> / <code>UseDefaultTdlSourceResolver(userAgent)</code>  </td><td class="c-table__cell">Override the User-Agent that the default GitHub-backed resolver sends when refreshing macro source listings. GitHub rejects requests without a User-Agent. Pipeline configuration files can drive this via <code>BuildParameters</code>.   </td></tr>
 </table>
 </div><p>Properties advertised by the engine carry the data tier of the underlying device-detection data file, so <code>robotstxt.plaintext</code> and <code>robotstxt.annotatedtext</code> are only available when running against an Enterprise tier file (or higher) that contains the crawler properties.</p>
-<h1 class="g-docs__section-heading">Cloud Usage</h1>
-<p>Robots.txt support has recently become available as part of 51Degrees Cloud. When enabled on a Resource Key, two additional steps make integration straightforward.</p>
-<h2>Discovering the available CrawlerUsage values</h2>
-<p>Before deciding which <code>query.robotstxt.&lt;usage&gt;</code> parameters to send, fetch the full list of allowed <code>CrawlerUsage</code> values from the cloud metadata API:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">https://cloud.51degrees.com/api/metadata/values?propertyName=CrawlerUsage</div></div><p>This returns the canonical list of usages available on your Resource Key tier — use the value names verbatim (lower-cased) as the suffix of the evidence parameter.</p>
-<h2>Calling the JSON endpoint</h2>
-<p>To request a <code>robots.txt</code> from Cloud, hit the standard JSON endpoint with the appropriate <code>query.robotstxt.*</code> parameters. For example:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">https://cloud.51degrees.com/api/v4/json?resource=&lt;RESOURCE_KEY&gt;&amp;user-agent=iPhone&amp;robotstxt.analytics=allow&amp;robotstxt.tdl=MOW-SOCW,https://custom.url/tdl</div></div><p>In the example above:</p>
-<ul>
-<li><code>robotstxt.analytics=allow</code> whitelists every crawler whose <code>CrawlerUsage</code> includes <code>Analytics</code>. All other crawlers are emitted as explicit <code>Disallow:</code> blocks.</li>
-<li><code>robotstxt.tdl=MOW-SOCW,<a href="https://custom.url/tdl">https://custom.url/tdl</a></code> sends two TDL entries to the wildcard <code>Allow:</code> block — the macro <code>MOW-SOCW</code> (resolved server-side to the latest published Movement for an Open Web Standard Online Content Wrapper terms URL) and a custom absolute URL of your own. Both are emitted in the order supplied.</li>
-</ul>
-<p>The response is a standard 51Degrees Cloud JSON document, with the generated text exposed under the <code>robotstxt</code> element:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div><div class="c-code__line">  &quot;robotstxt&quot;: {</div><div class="c-code__line">    &quot;plaintext&quot;:     &quot;User-Agent: ExampleBot\nDisallow: /\n...&quot;,</div><div class="c-code__line">    &quot;annotatedtext&quot;: &quot;# N: ExampleBot\n# U: Train\nUser-Agent: ExampleBot\nDisallow: /\n...&quot;</div><div class="c-code__line">  }</div><div class="c-code__line">}</div></div><p>The Resource Key must include the <code>robotstxt.plaintext</code> and/or <code>robotstxt.annotatedtext</code> properties; pick whichever you intend to consume to keep the response small. Use the <a class="el" href="_services__configurator.html">Configurator</a> to enable them.</p>
 <h1 class="g-docs__section-heading">See Also</h1>
 <ul>
 <li><a class="el" href="_device_detection__features__crawlers.html">Crawlers</a> — <code>CrawlerUsage</code> value definitions.</li>
