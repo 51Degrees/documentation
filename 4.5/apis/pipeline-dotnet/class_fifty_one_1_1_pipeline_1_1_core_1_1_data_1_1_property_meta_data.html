@@ -510,7 +510,7 @@ Properties</h2>
 <div class="c-member__body">
 
 <p>The property type name. </p>
-<p>Note that this is the JSON type, not the c# type. For example, any list types will just have the type name 'Array'. </p>
+<p>Note that this is the JSON type, not the c# type. For example, most list types have the type name 'Array'; lists of IWeightedValue&lt;T&gt; are reported as 'Weighted&lt;T&gt;' (e.g. 'WeightedString', 'WeightedInt32') so the consumer can reconstruct the original generic shape. </p>
 <!-- endIndent -->
 
 </div>
