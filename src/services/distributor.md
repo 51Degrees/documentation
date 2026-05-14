@@ -19,9 +19,23 @@ for the file you need from there.
 | Parameter      | Description      | Possible values     |
 |---|---|---|
 | LicenseKeys    | Pipe-separated list of 51Degrees License Keys. You must have a valid License Key for the data file that you are trying to download. | N/A  |
-| Type           | The type of data file to download. Accepts either the string or id from the list of values. | <ul><li>12 or `BinaryV3` = V3.1 Pattern</li><li>13 or `BinaryV3Uncompressed` = V3.1 Pattern uncompressed</li><li>16 or `BinaryV32` = V3.2 Pattern</li><li>17 or `BinaryV32Uncompressed` = V3.2 Pattern uncompressed</li><li>18 or `BinaryV32UAT` = V3.2 Pattern file with a very limited set of data. Designed to support automated testing</li><li>19 or `TrieV32` = V3.2 Trie</li><li>20 or `HashTrieV34` = V3.4 Hash Trie</li><li>21 or `CSV` = CSV file containing a dump of the data for the devices, browsers, etc that are used to generate the data file</li><li>27 or `HashV41` = Hash V4.1</li></ul> |
-| Product        | The 51Degrees 'product' that the data file is part of. Accepts either the string or id from the list of values. | <ul><li>2 or `Premium` = The Premium V3 data file</li><li>4 or `Enterprise` = The Enterprise V3 data file</li><li>8 or `Lite` = The Lite V3 data file</li><li>15 or `TAC` = The TAC V3 data file</li><li>21 or `V4Free` = The free V4 data file</li><li>22 or `V4Enterprise` = The Enterprise V4 data file</li><li>23  or `V4TAC` = The TAC V4 data file</li></ul> |
+| Type           | The type of data file to download. Accepts either the string or id from the list of values. | <ul><li>12 or `BinaryV3` = V3.1 Pattern</li><li>13 or `BinaryV3Uncompressed` = V3.1 Pattern uncompressed</li><li>16 or `BinaryV32` = V3.2 Pattern</li><li>17 or `BinaryV32Uncompressed` = V3.2 Pattern uncompressed</li><li>18 or `BinaryV32UAT` = V3.2 Pattern file with a very limited set of data. Designed to support automated testing</li><li>19 or `TrieV32` = V3.2 Trie</li><li>20 or `HashTrieV34` = V3.4 Hash Trie</li><li>21 or `CSV` = CSV file containing a dump of the data for the devices, browsers, etc that are used to generate the data file</li><li>27 or `HashV41` = Hash V4.1</li><li>38 or `IPIV41` = V4 IP Intelligence data</li></ul> |
+| Product        | The 51Degrees 'product' that the data file is part of. Accepts either the string or id from the list of values. | <ul><li>2 or `Premium` = The Premium V3 data file</li><li>4 or `Enterprise` = The Enterprise V3 data file</li><li>8 or `Lite` = The Lite V3 data file</li><li>15 or `TAC` = The TAC V3 data file</li><li>21 or `V4Free` = The free V4 data file</li><li>22 or `V4Enterprise` = The Enterprise V4 data file</li><li>23  or `V4TAC` = The TAC V4 data file</li><li>25 or `IPIV4Enterprise` = The V4 IP Intelligence Enterprise data file</li></ul> |
 | Download       | Legacy - Has no effect | True/False          |
+
+### Common URL examples
+
+Replace `YOUR_LICENSE_KEY` with your actual License Key. The most frequently
+used combinations are:
+
+| Data file you want                | Example URL |
+|-----------------------------------|-------------|
+| Device Detection Enterprise (V4)  | `%https://distributor.51degrees.com/api/v2/download?LicenseKeys=YOUR_LICENSE_KEY&Type=HashV41&Product=V4Enterprise` |
+| TAC (V4)                          | `%https://distributor.51degrees.com/api/v2/download?LicenseKeys=YOUR_LICENSE_KEY&Type=HashV41&Product=V4TAC` |
+| IP Intelligence Enterprise (V4)   | `%https://distributor.51degrees.com/api/v2/download?LicenseKeys=YOUR_LICENSE_KEY&Type=IPIV41&Product=IPIV4Enterprise` |
+
+The numeric `Type`/`Product` ids from the tables above work too — e.g.
+`Type=27&Product=22` is equivalent to `Type=HashV41&Product=V4Enterprise`.
 
 ## HTTP headers
 
