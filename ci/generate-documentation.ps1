@@ -1,3 +1,7 @@
+param(
+    [string]$DestinationPrefix = ""
+)
+
 $ErrorActionPreference = "Stop"
 $PSNativeCommandUseErrorActionPreference = $true
 
@@ -58,8 +62,11 @@ foreach ($_ in $repoMap.GetEnumerator()) {
 Write-Host "::group::Checking out gh-pages"
 git fetch --force --depth 2 origin gh-pages:gh-pages
 git worktree add gh-pages # check out gh-pages as a worktree
-Remove-Item -Recurse -Force -ErrorAction SilentlyContinue gh-pages/$version
-Move-Item $version gh-pages/$version
+$destDir = if ($DestinationPrefix) { "gh-pages/$DestinationPrefix/$version" } else { "gh-pages/$version" }
+$destParent = Split-Path -Parent $destDir
+if (!(Test-Path $destParent)) { New-Item -ItemType Directory -Force $destParent | Out-Null }
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $destDir
+Move-Item $version $destDir
 Write-Host "::endgroup::"
 
 if (!(Test-Path "gh-pages/.nojekyll")) {

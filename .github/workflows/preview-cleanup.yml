@@ -1,0 +1,40 @@
+name: Cleanup Preview Documentation
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  Cleanup:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: gh-pages
+          fetch-depth: 2
+
+      - env:
+          PREVIEW_DIR: preview/PR-${{ github.event.pull_request.number }}
+        run: |
+          if [[ ! -d "$PREVIEW_DIR" ]]; then
+            echo "No preview to clean up at $PREVIEW_DIR."
+            exit 0
+          fi
+          rm -rf "$PREVIEW_DIR"
+          git add -- "$PREVIEW_DIR"
+          if git diff --cached --quiet; then
+            echo "Nothing staged after removal."
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m "Remove preview for PR #${{ github.event.pull_request.number }}"
+          for i in 1 2 3; do
+            git pull --rebase origin gh-pages && git push origin HEAD:gh-pages && exit 0
+            sleep $((i * 5))
+          done
+          echo "Failed to push cleanup after retries." >&2
+          exit 1

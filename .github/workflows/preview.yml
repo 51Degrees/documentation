@@ -7,16 +7,90 @@ on:
 jobs:
   Preview:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
           node-version: 10.x
+
+      - id: ctx
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "prefix=preview/PR-${{ github.event.pull_request.number }}" >> "$GITHUB_OUTPUT"
+            echo "name=PR-${{ github.event.pull_request.number }}" >> "$GITHUB_OUTPUT"
+            if [[ "${{ github.event.pull_request.head.repo.full_name }}" == "${{ github.repository }}" ]]; then
+              echo "can_publish=true" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            safe_branch="$(echo "${GITHUB_REF_NAME}" | tr '/' '-' | tr -cd '[:alnum:]-_.')"
+            echo "prefix=preview/branch-${safe_branch}" >> "$GITHUB_OUTPUT"
+            echo "name=branch-${safe_branch}" >> "$GITHUB_OUTPUT"
+            echo "can_publish=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - run: pwsh ci/build-pattern-library.ps1
-      - run: pwsh ci/generate-documentation.ps1
-      - uses: actions/upload-artifact@v7
+      - run: pwsh ci/generate-documentation.ps1 -DestinationPrefix "${{ steps.ctx.outputs.prefix }}"
+
+      - if: steps.ctx.outputs.can_publish == 'true'
+        working-directory: gh-pages
+        env:
+          PREVIEW_PREFIX: ${{ steps.ctx.outputs.prefix }}
+          PREVIEW_NAME: ${{ steps.ctx.outputs.name }}
+        run: |
+          git add -- "$PREVIEW_PREFIX"
+          if git diff --cached --quiet; then
+            echo "No preview changes to publish."
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m "Preview docs for ${PREVIEW_NAME}"
+          for i in 1 2 3; do
+            git pull --rebase origin gh-pages && git push origin HEAD:gh-pages && exit 0
+            sleep $((i * 5))
+          done
+          echo "Failed to push preview after retries." >&2
+          exit 1
+
+      - id: url
+        if: steps.ctx.outputs.can_publish == 'true'
+        shell: bash
+        env:
+          PREVIEW_PREFIX: ${{ steps.ctx.outputs.prefix }}
+        run: |
+          version=$(ls -t "gh-pages/$PREVIEW_PREFIX" 2>/dev/null | head -1)
+          if [[ -z "$version" ]]; then
+            echo "Could not determine version directory under gh-pages/$PREVIEW_PREFIX." >&2
+            exit 1
+          fi
+          echo "preview_url=https://51degrees.github.io/documentation/$PREVIEW_PREFIX/$version/" >> "$GITHUB_OUTPUT"
+
+      - if: steps.ctx.outputs.can_publish == 'true'
+        run: |
+          echo "Preview published at ${{ steps.url.outputs.preview_url }}" >> "$GITHUB_STEP_SUMMARY"
+
+      - if: steps.ctx.outputs.can_publish == 'true' && github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          PREVIEW_URL: ${{ steps.url.outputs.preview_url }}
+        run: |
+          if gh api --paginate "repos/$REPO/issues/$PR/comments" --jq '.[].body' | grep -q '<!-- preview-link -->'; then
+            echo "Preview comment already present; skipping."
+            exit 0
+          fi
+          body=$'<!-- preview-link -->\nDocumentation preview: '"$PREVIEW_URL"$'\n\nThis link updates with every push to this PR and is removed when the PR is closed.'
+          gh api "repos/$REPO/issues/$PR/comments" -f body="$body"
+
+      - if: steps.ctx.outputs.can_publish != 'true'
+        uses: actions/upload-artifact@v7
         with:
-          name: docs_${{ inputs.pull-request-id }}
-          path: gh-pages/*
+          name: docs_fork_${{ github.event.pull_request.number }}
+          path: gh-pages/${{ steps.ctx.outputs.prefix }}
           if-no-files-found: ignore
           include-hidden-files: true
