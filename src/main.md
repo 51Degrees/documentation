@@ -14,6 +14,7 @@ At 51Degrees, we turn every user interaction into a chance to learn, optimize, a
 - **Device Detection** - Detect 250+ device properties from HTTP headers and other signals to tailor every user experience.
 - **IP Intelligence** - Unlock geolocation, ISP, and network data from IP addresses for sharper insights and smarter decisions.
 - **Reverse Geocoding** - Transform latitude and longitude into real-world addresses, cities, and regions.
+- **Identifiers** - Generate privacy-aware signals (51DiD) and capture user marketing preferences (PMP) to feed downstream systems.
 - **Ultra-fast Performance** - Enjoy lightning-fast detection speeds thanks to in-process deployment.
 - **Privacy-first Architecture** - Prefer to keep your data close? Our On-premise options ensure full control and compliance.
 
@@ -45,6 +46,14 @@ Turn GPS coordinates into meaningful places. Bring real-world context to your di
 
 - [Overview](@ref ReverseGeocoding_Overview) - Map coordinates to addresses, cities, and regions
 - [Quick Start](@ref ReverseGeocoding_Quickstart) - Step-by-step implementation guide
+
+### Identifiers
+
+Signed, probabilistic device-bound identifiers (51DiD) and an embeddable preference widget (PMP) that feeds `id.usage` into 51DiD.
+
+- [Overview](@ref Identifiers_Overview) - How the pieces fit together
+- [51DiD](@ref Identifiers_51DiD) - Properties, `id.usage`, licensing
+- [PMP](@ref Identifiers_PMP) - Embeddable preference widget
 
 ### Client-Side Only
 
@@ -139,12 +148,14 @@ Everything you need to succeed:
 - [Device Detection](@ref DeviceDetection_Quickstart) - Cloud vs. On-premise
 - [IP Intelligence](@ref IpIntelligence_Quickstart) - Location and network data
 - [Reverse Geocoding](@ref ReverseGeocoding_Quickstart) - From coordinates to addresses
+- [Identifiers](@ref Identifiers_Overview) - 51DiD and PMP
 
 ### Deep Dives
 
 - [Device Detection Overview](@ref DeviceDetection_Overview)
 - [IP Intelligence Overview](@ref IpIntelligence_Overview)
 - [Reverse Geocoding Overview](@ref ReverseGeocoding_Overview)
+- [Identifiers Overview](@ref Identifiers_Overview)
 
 ### Advanced Topics
 
