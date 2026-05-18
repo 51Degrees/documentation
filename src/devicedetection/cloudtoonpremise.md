@@ -232,7 +232,7 @@ Keep Cloud access during migration:
 ## Next Steps
 
 1. Review [On-premise examples](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise)
-2. Set up [automatic data file updates](@ref DeviceDetection_Examples_DataFileUpdates_Index)
+2. Set up [automatic data file updates](@ref DeviceDetection_DataFileUpdates)
 3. Enable [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) for better accuracy
 4. Monitor [match metrics](@ref DeviceDetection_Examples_MatchMetrics_OnPremiseHash) for quality
 
