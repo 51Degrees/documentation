@@ -1,0 +1,12 @@
+<map id="PropertyTests" name="PropertyTests">
+<area shape="rect" id="node1" title=" " alt="" coords="1141,129,1252,156"/>
+<area shape="rect" id="node2" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="782,5,837,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="302,5,403,32"/>
+<area shape="rect" id="node4" href="$class_string_collection.html" title="String collection helper class, used by test classes to fetch." alt="" coords="747,56,872,83"/>
+<area shape="rect" id="node5" href="$structfiftyone_degrees_property.html" title="Property structure containing all the meta data relating to a property." alt="" coords="719,107,899,133"/>
+<area shape="rect" id="node6" href="$class_fixed_size_collection.html" title=" " alt="" coords="704,158,915,199"/>
+<area shape="rect" id="node7" href="$class_fixed_size_collection.html" title="Fixed size object collection helper class, used by test classes to fetch." alt="" coords="259,165,446,192"/>
+<area shape="rect" id="node8" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="243,295,463,321"/>
+<area shape="rect" id="node9" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="714,340,905,367"/>
+<area shape="rect" id="node10" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="5,295,161,321"/>
+</map>

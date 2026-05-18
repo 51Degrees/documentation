@@ -1,0 +1,5 @@
+var namespacefiftyone__pipeline__engines_1_1datafile__update__service =
+[
+    [ "DataFileUpdateService", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_data_file_update_service.html", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_data_file_update_service" ],
+    [ "UpdateStatus", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_update_status.html", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_update_status" ]
+];

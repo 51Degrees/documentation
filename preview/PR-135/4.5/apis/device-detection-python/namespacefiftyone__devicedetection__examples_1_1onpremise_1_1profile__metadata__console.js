@@ -1,0 +1,4 @@
+var namespacefiftyone__devicedetection__examples_1_1onpremise_1_1profile__metadata__console =
+[
+    [ "ProfileMetadataConsole", "classfiftyone__devicedetection__examples_1_1onpremise_1_1profile__metadata__console_1_1_profile_metadata_console.html", "classfiftyone__devicedetection__examples_1_1onpremise_1_1profile__metadata__console_1_1_profile_metadata_console" ]
+];

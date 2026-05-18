@@ -1,0 +1,7 @@
+<map id="FiftyOne.Pipeline.Core.FailHandling.Recovery.IRecoveryStrategy" name="FiftyOne.Pipeline.Core.FailHandling.Recovery.IRecoveryStrategy">
+<area shape="rect" id="node1" title="Controls when to suspend requests due to recent query failures." alt="" coords="5,130,272,171"/>
+<area shape="rect" id="node2" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_exponential_backoff_recovery_strategy.html" title="Implements exponential backoff where delay doubles after each consecutive failure." alt="" coords="325,5,597,61"/>
+<area shape="rect" id="node3" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_instant_recovery_strategy.html" title="Always allows to make new server call regardless of previous failures." alt="" coords="334,85,587,141"/>
+<area shape="rect" id="node4" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_no_recovery_strategy.html" title="Drops all server calls after first failure." alt="" coords="320,166,601,207"/>
+<area shape="rect" id="node5" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_simple_recovery_strategy.html" title="Disallows calling the server for RecoverySeconds." alt="" coords="334,232,587,288"/>
+</map>

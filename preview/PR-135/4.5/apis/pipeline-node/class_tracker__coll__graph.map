@@ -1,0 +1,4 @@
+<map id="Tracker" name="Tracker">
+<area shape="rect" id="node1" title="A tracker is an instance of datakeyed cache which, if a result is found in the cache,..." alt="" coords="38,80,106,107"/>
+<area shape="rect" id="node2" href="$class_data_keyed_cache.html" title="A simple cache getter that takes a cache key and returns an element if it is found in the cache." alt="" coords="5,5,139,32"/>
+</map>

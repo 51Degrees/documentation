@@ -1,0 +1,6 @@
+var namespace_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade =
+[
+    [ "IFailHandler", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade_1_1_i_fail_handler.html", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade_1_1_i_fail_handler" ],
+    [ "SimpleFailHandler", "class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade_1_1_simple_fail_handler.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade_1_1_simple_fail_handler" ],
+    [ "WindowedFailHandler", "class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade_1_1_windowed_fail_handler.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade_1_1_windowed_fail_handler" ]
+];

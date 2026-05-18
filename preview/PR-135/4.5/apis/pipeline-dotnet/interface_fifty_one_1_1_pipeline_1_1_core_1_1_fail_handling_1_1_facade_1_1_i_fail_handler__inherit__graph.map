@@ -1,0 +1,5 @@
+<map id="FiftyOne.Pipeline.Core.FailHandling.Facade.IFailHandler" name="FiftyOne.Pipeline.Core.FailHandling.Facade.IFailHandler">
+<area shape="rect" id="node1" title="Tracks failures and throttles requests." alt="" coords="5,39,216,80"/>
+<area shape="rect" id="node2" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade_1_1_simple_fail_handler.html" title="Tracks failures and throttles requests." alt="" coords="276,5,527,47"/>
+<area shape="rect" id="node3" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade_1_1_windowed_fail_handler.html" title="Tracks failures and throttles requests." alt="" coords="264,71,539,112"/>
+</map>

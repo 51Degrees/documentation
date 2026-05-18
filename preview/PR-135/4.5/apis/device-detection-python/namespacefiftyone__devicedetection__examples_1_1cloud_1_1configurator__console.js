@@ -1,0 +1,4 @@
+var namespacefiftyone__devicedetection__examples_1_1cloud_1_1configurator__console =
+[
+    [ "ConfiguratorConsole", "classfiftyone__devicedetection__examples_1_1cloud_1_1configurator__console_1_1_configurator_console.html", "classfiftyone__devicedetection__examples_1_1cloud_1_1configurator__console_1_1_configurator_console" ]
+];

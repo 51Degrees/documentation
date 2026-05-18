@@ -1,0 +1,4 @@
+<map id="FiftyOne.Pipeline.Core.FailHandling.Recovery.SimpleRecoveryStrategy" name="FiftyOne.Pipeline.Core.FailHandling.Recovery.SimpleRecoveryStrategy">
+<area shape="rect" id="node1" title="Disallows calling the server for RecoverySeconds." alt="" coords="5,80,259,136"/>
+<area shape="rect" id="node2" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_i_recovery_strategy.html" title="Controls when to suspend requests due to recent query failures." alt="" coords="61,5,203,32"/>
+</map>

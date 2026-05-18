@@ -1,0 +1,5 @@
+var namespacefiftyone__devicedetection__examples_1_1onpremise_1_1datafileupdate__console =
+[
+    [ "DataFileUpdateConsole", "classfiftyone__devicedetection__examples_1_1onpremise_1_1datafileupdate__console_1_1_data_file_update_console.html", "classfiftyone__devicedetection__examples_1_1onpremise_1_1datafileupdate__console_1_1_data_file_update_console" ],
+    [ "UpdateEvent", "classfiftyone__devicedetection__examples_1_1onpremise_1_1datafileupdate__console_1_1_update_event.html", "classfiftyone__devicedetection__examples_1_1onpremise_1_1datafileupdate__console_1_1_update_event" ]
+];

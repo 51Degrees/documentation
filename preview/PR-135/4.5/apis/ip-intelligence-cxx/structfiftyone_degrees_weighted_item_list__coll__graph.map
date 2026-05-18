@@ -1,0 +1,7 @@
+<map id="fiftyoneDegreesWeightedItemList" name="fiftyoneDegreesWeightedItemList">
+<area shape="rect" id="node1" title="A resizable list of weighted items." alt="" coords="5,276,244,303"/>
+<area shape="rect" id="node2" href="$structfiftyone_degrees_weighted_item.html" title="A weighted collection item." alt="" coords="17,185,233,212"/>
+<area shape="rect" id="node3" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="159,95,379,121"/>
+<area shape="rect" id="node4" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="257,185,448,212"/>
+<area shape="rect" id="node5" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="191,5,347,32"/>
+</map>

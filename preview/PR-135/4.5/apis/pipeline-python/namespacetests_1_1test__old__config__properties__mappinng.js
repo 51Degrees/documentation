@@ -1,0 +1,4 @@
+var namespacetests_1_1test__old__config__properties__mappinng =
+[
+    [ "OldConfigPropertiesMappingTest", "classtests_1_1test__old__config__properties__mappinng_1_1_old_config_properties_mapping_test.html", "classtests_1_1test__old__config__properties__mappinng_1_1_old_config_properties_mapping_test" ]
+];

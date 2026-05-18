@@ -1,0 +1,5 @@
+<map id="AspectDataDictionary" name="AspectDataDictionary">
+<area shape="rect" id="node1" title="Extension of elementDataDictionary which stores a {key,value} dictionary of elements like elementData..." alt="" coords="5,155,169,181"/>
+<area shape="rect" id="node2" href="$class_aspect_data.html" title="Extension of elementData which allows for a missing property service to be called when an accessed pr..." alt="" coords="39,80,136,107"/>
+<area shape="rect" id="node3" href="$class_element_data.html" title="Stores information created by a flowElement based on flowData." alt="" coords="34,5,141,32"/>
+</map>

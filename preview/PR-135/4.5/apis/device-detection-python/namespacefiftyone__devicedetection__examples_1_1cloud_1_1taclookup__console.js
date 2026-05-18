@@ -1,0 +1,4 @@
+var namespacefiftyone__devicedetection__examples_1_1cloud_1_1taclookup__console =
+[
+    [ "TacLookupConsole", "classfiftyone__devicedetection__examples_1_1cloud_1_1taclookup__console_1_1_tac_lookup_console.html", "classfiftyone__devicedetection__examples_1_1cloud_1_1taclookup__console_1_1_tac_lookup_console" ]
+];
