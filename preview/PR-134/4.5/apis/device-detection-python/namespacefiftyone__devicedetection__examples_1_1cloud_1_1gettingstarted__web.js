@@ -1,0 +1,4 @@
+var namespacefiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web =
+[
+    [ "app", "namespacefiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app.html", "namespacefiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app" ]
+];

@@ -1,0 +1,5 @@
+var namespace_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_scope =
+[
+    [ "AttemptScope", "class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_scope_1_1_attempt_scope.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_scope_1_1_attempt_scope" ],
+    [ "IAttemptScope", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_scope_1_1_i_attempt_scope.html", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_scope_1_1_i_attempt_scope" ]
+];

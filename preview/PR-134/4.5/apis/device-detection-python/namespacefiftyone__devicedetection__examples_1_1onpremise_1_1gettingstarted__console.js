@@ -1,0 +1,4 @@
+var namespacefiftyone__devicedetection__examples_1_1onpremise_1_1gettingstarted__console =
+[
+    [ "GettingStartedConsole", "classfiftyone__devicedetection__examples_1_1onpremise_1_1gettingstarted__console_1_1_getting_started_console.html", "classfiftyone__devicedetection__examples_1_1onpremise_1_1gettingstarted__console_1_1_getting_started_console" ]
+];

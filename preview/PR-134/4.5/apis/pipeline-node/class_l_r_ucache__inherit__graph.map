@@ -1,0 +1,4 @@
+<map id="LRUcache" name="LRUcache">
+<area shape="rect" id="node1" title="An instance of DataKeyed cache using a least recently used (LRU) method." alt="" coords="29,80,115,107"/>
+<area shape="rect" id="node2" href="$class_data_keyed_cache.html" title="A simple cache getter that takes a cache key and returns an element if it is found in the cache." alt="" coords="5,5,139,32"/>
+</map>

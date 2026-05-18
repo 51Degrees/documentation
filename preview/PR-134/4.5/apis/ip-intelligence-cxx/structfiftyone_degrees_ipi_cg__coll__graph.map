@@ -1,0 +1,10 @@
+<map id="fiftyoneDegreesIpiCg" name="fiftyoneDegreesIpiCg">
+<area shape="rect" id="node1" title="The information and a working collection to retrieve entries from the component graph." alt="" coords="1015,135,1173,161"/>
+<area shape="rect" id="node2" href="$structfiftyone_degrees_ipi_cg_info.html" title="Fixed width record in the collection where the record relates to a component and IP version." alt="" coords="680,89,863,116"/>
+<area shape="rect" id="node3" href="$structfiftyone_degrees_ipi_cg_member_node.html" title="Data structure used for the values collection." alt="" coords="337,40,584,67"/>
+<area shape="rect" id="node4" href="$structfiftyone_degrees_ipi_cg_member.html" title="DATA STRUCTURES." alt="" coords="5,32,217,59"/>
+<area shape="rect" id="node5" href="$structfiftyone_degrees_collection_header.html" title="Collection header structure which defines the size and location of the collection data." alt="" coords="16,98,207,139"/>
+<area shape="rect" id="node6" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="676,224,867,251"/>
+<area shape="rect" id="node7" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="984,269,1204,296"/>
+<area shape="rect" id="node8" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="693,315,849,341"/>
+</map>

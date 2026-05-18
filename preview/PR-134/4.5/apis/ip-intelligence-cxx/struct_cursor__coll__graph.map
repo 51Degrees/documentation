@@ -1,0 +1,18 @@
+<map id="Cursor" name="Cursor">
+<area shape="rect" id="node1" title=" " alt="" coords="1388,265,1452,292"/>
+<area shape="rect" id="node2" href="$structfiftyone_degrees_string_builder.html" title="String buffer for building strings with memory checks." alt="" coords="1003,97,1212,124"/>
+<area shape="rect" id="node3" href="$structfiftyone_degrees_collection_key_type.html" title="Explains to a collection how to properly extract the requested value." alt="" coords="1012,149,1203,190"/>
+<area shape="rect" id="node4" href="$structfiftyone_degrees_ipi_cg.html" title="The information and a working collection to retrieve entries from the component graph." alt="" coords="1028,215,1187,241"/>
+<area shape="rect" id="node5" href="$structfiftyone_degrees_ipi_cg_info.html" title="Fixed width record in the collection where the record relates to a component and IP version." alt="" coords="719,113,901,140"/>
+<area shape="rect" id="node6" href="$structfiftyone_degrees_ipi_cg_member_node.html" title="Data structure used for the values collection." alt="" coords="337,40,584,67"/>
+<area shape="rect" id="node7" href="$structfiftyone_degrees_ipi_cg_member.html" title="DATA STRUCTURES." alt="" coords="5,32,217,59"/>
+<area shape="rect" id="node8" href="$structfiftyone_degrees_collection_header.html" title="Collection header structure which defines the size and location of the collection data." alt="" coords="16,98,207,139"/>
+<area shape="rect" id="node9" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="365,244,556,271"/>
+<area shape="rect" id="node10" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="700,271,920,297"/>
+<area shape="rect" id="node15" href="$struct_cursor_1_1_cluster_wrapper.html" title=" " alt="" coords="1021,265,1194,292"/>
+<area shape="rect" id="node11" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="383,335,539,361"/>
+<area shape="rect" id="node12" href="$structfiftyone_degrees_exception.html" title="Structure used to represent a 51Degrees exception and passed into methods that might generate excepti..." alt="" coords="1013,316,1202,343"/>
+<area shape="rect" id="node13" href="$struct_span.html" title=" " alt="" coords="1080,367,1135,393"/>
+<area shape="rect" id="node14" href="$structfiftyone_degrees_ip_address.html" title="The structure to hold a IP Address in byte array format." alt="" coords="1013,417,1202,444"/>
+<area shape="rect" id="node16" href="$struct_cluster.html" title=" " alt="" coords="776,321,844,348"/>
+</map>

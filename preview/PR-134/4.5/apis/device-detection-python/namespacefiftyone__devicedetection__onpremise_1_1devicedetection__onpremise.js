@@ -1,0 +1,4 @@
+var namespacefiftyone__devicedetection__onpremise_1_1devicedetection__onpremise =
+[
+    [ "DeviceDetectionOnPremise", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise.html", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise" ]
+];

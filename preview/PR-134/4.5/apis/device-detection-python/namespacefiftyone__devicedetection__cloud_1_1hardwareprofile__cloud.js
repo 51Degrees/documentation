@@ -1,0 +1,4 @@
+var namespacefiftyone__devicedetection__cloud_1_1hardwareprofile__cloud =
+[
+    [ "HardwareProfileCloud", "classfiftyone__devicedetection__cloud_1_1hardwareprofile__cloud_1_1_hardware_profile_cloud.html", "classfiftyone__devicedetection__cloud_1_1hardwareprofile__cloud_1_1_hardware_profile_cloud" ]
+];
