@@ -97,6 +97,8 @@ $(document).ready(function(){initNavTree('_services__distributor.html','');});
 21 or <code>CSV</code> = CSV file containing a dump of the data for the devices, browsers, etc that are used to generate the data file</li>
 <li>
 27 or <code>HashV41</code> = Hash V4.1</li>
+<li>
+38 or <code>IPIV41</code> = V4 IP Intelligence data</li>
 </ul>
 </td></tr>
 <tr class="c-table__row">
@@ -115,12 +117,27 @@ $(document).ready(function(){initNavTree('_services__distributor.html','');});
 22 or <code>V4Enterprise</code> = The Enterprise V4 data file</li>
 <li>
 23 or <code>V4TAC</code> = The TAC V4 data file</li>
+<li>
+25 or <code>IPIV4Enterprise</code> = The V4 IP Intelligence Enterprise data file</li>
 </ul>
 </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Download  </td><td class="c-table__cell">Legacy - Has no effect  </td><td class="c-table__cell">True/False   </td></tr>
 </table>
-</div><h2>HTTP headers</h2>
+</div><h3>Common URL examples</h3>
+<p>Replace <code>YOUR_LICENSE_KEY</code> with your actual License Key. The most frequently used combinations are:</p>
+<div class="g-table g-table--overflow"><table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Data file you want  </td><td class="c-table__cell">Example URL   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">Device Detection Enterprise (V4)  </td><td class="c-table__cell"><code>https://distributor.51degrees.com/api/v2/download?LicenseKeys=YOUR_LICENSE_KEY&amp;Type=HashV41&amp;Product=V4Enterprise</code>   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">TAC (V4)  </td><td class="c-table__cell"><code>https://distributor.51degrees.com/api/v2/download?LicenseKeys=YOUR_LICENSE_KEY&amp;Type=HashV41&amp;Product=V4TAC</code>   </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">IP Intelligence Enterprise (V4)  </td><td class="c-table__cell"><code>https://distributor.51degrees.com/api/v2/download?LicenseKeys=YOUR_LICENSE_KEY&amp;Type=IPIV41&amp;Product=IPIV4Enterprise</code>   </td></tr>
+</table>
+</div><p>The numeric <code>Type</code>/<code>Product</code> ids from the tables above work too — e.g. <code>Type=27&amp;Product=22</code> is equivalent to <code>Type=HashV41&amp;Product=V4Enterprise</code>.</p>
+<h2>HTTP headers</h2>
 <h3>Response headers</h3>
 <p>The server will respond with a <code>Content-MD5</code> header. This contains the MD5 hash of the data file content. It can be used to verify the download by hashing the content and comparing the result with the value in this header.</p>
 <p>The server will also respond with a <code>Last-Modified</code> header. This contains the publish date of the data file that is being downloaded. This value should be used to populate the <code>If-Modified-Since</code> header on the next request (see request headers below).</p>
