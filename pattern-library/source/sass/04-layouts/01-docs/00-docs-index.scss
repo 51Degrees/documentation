@@ -103,6 +103,7 @@
 
   .g-docs__page-title {
     font-size: size(2);
+    margin: 0 0 size(3) 0;
     @include respond-to(sm) {
       font-size: size(3);
     }
