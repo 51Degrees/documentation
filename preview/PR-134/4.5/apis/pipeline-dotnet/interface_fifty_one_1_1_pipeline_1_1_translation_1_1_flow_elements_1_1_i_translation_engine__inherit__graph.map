@@ -1,6 +1,0 @@
-<map id="FiftyOne.Pipeline.Translation.FlowElements.ITranslationEngine" name="FiftyOne.Pipeline.Translation.FlowElements.ITranslationEngine">
-<area shape="rect" id="node1" title="Flow element that translates values from a single source element and stores translated values under i..." alt="" coords="13,215,251,256"/>
-<area shape="rect" id="node4" href="$class_fifty_one_1_1_pipeline_1_1_translation_1_1_flow_elements_1_1_translation_engine.html" title=" " alt="" coords="15,305,249,347"/>
-<area shape="rect" id="node2" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title=" " alt="" coords="5,124,259,165"/>
-<area shape="rect" id="node3" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="31,5,233,47"/>
-</map>

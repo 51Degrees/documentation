@@ -1,4 +1,0 @@
-var namespacefiftyone__devicedetection__examples_1_1onpremise_1_1gettingstarted__web_1_1app =
-[
-    [ "GettingStartedWeb", "classfiftyone__devicedetection__examples_1_1onpremise_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html", "classfiftyone__devicedetection__examples_1_1onpremise_1_1gettingstarted__web_1_1app_1_1_getting_started_web" ]
-];

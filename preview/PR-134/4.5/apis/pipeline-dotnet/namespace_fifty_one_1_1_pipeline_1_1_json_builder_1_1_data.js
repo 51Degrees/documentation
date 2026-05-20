@@ -1,5 +1,0 @@
-var namespace_fifty_one_1_1_pipeline_1_1_json_builder_1_1_data =
-[
-    [ "IJsonBuilderElementData", "interface_fifty_one_1_1_pipeline_1_1_json_builder_1_1_data_1_1_i_json_builder_element_data.html", "interface_fifty_one_1_1_pipeline_1_1_json_builder_1_1_data_1_1_i_json_builder_element_data" ],
-    [ "JsonBuilderElementData", "class_fifty_one_1_1_pipeline_1_1_json_builder_1_1_data_1_1_json_builder_element_data.html", "class_fifty_one_1_1_pipeline_1_1_json_builder_1_1_data_1_1_json_builder_element_data" ]
-];
