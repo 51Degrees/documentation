@@ -12,6 +12,16 @@
   .g-docs__sidenav {
     .c-sidenav {
       margin-top: 125px;
+      // Doxygen's resize.js sets an inline `height: <viewport - header>px` on
+      // this element every resize. That height is intended for the lg+
+      // fixed-sidebar layout (where the sidenav is position:fixed with its own
+      // scroll). At smaller breakpoints the sidenav is in normal document
+      // flow with overflow:visible, so that inline height becomes a clipping
+      // constraint and the nav-tree's <ul> overflows its parent and renders
+      // on top of the doc content below.
+      // Force auto height with !important so the sidenav grows to fit its
+      // content in normal flow, and the doc content sits cleanly beneath it.
+      height: auto !important;
       @include respond-to(sm) {
         margin-top: 88px;
       }
@@ -22,7 +32,9 @@
         left: 0;
         bottom: 0;
         width: 320px;
-        height: calc(100vh - 57px - size(-2));
+        // !important here also takes precedence over Doxygen's inline height
+        // (which happens to compute a similar value, but is fragile).
+        height: calc(100vh - 57px - size(-2)) !important;
         overflow-y: scroll;
       }
     }
