@@ -46,6 +46,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -x
+          touch .nojekyll
           git add .
           git -c user.name=Automation51D -c user.email=60396166+Automation51D@users.noreply.github.com commit --amend --no-edit --reset-author
           git push --force-with-lease || sleep 5 && git pull --rebase && git push --force-with-lease
