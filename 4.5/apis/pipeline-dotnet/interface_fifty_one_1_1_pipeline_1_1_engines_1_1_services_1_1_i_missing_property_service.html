@@ -6,6 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- Per-page meta description. FiftyOne.Pipeline.Engines.Services.IMissingPropertyService Interface Reference is Doxygen's page-level title
+     substitution (the same value used in <title> below) so each page
+     gets its own meta description rather than a project-wide blurb.
+     PROJECT_BRIEF is appended when set (most Doxyfiles set it) so the
+     summary surfaces the project scope alongside the page topic. -->
+<meta name="description" content="FiftyOne.Pipeline.Engines.Services.IMissingPropertyService Interface Reference - 51Degrees Pipeline for .NET - 51Degrees documentation."/>
 <title>51Degrees Pipeline .NET: FiftyOne.Pipeline.Engines.Services.IMissingPropertyService Interface Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -26,12 +32,24 @@
 <div class="l-index__content">
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
-  <h1 class="c-brand">
+  <!-- Brand block. Was previously <h1 class="c-brand">, but every
+       Doxygen page also emits its own page-level <h1> for the section
+       heading (e.g. <h1 class="g-docs__section-heading">), so the brand
+       h1 produced a second h1 per page. Semrush flagged ~220 of the
+       /documentation pages and ~4 /device-detection-java pages with
+       "Multiple h1 tags" on 2026-05-22 driven entirely by this template.
+       Demoting to a <div> with role="banner" keeps the masthead's
+       semantic role for screen readers (the original <h1> was being
+       used decoratively for the logo, not as the page heading) and
+       removes the duplicate h1 from every rendered page. CSS targets
+       the class, not the element, so the visual rendering is
+       unchanged. -->
+  <div class="c-brand" role="banner">
   <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" style="width:172px;"/></a>
   <span class="c-tagline">51Degrees Pipeline .NET
    &#160;<span id="projectnumber">4.5</span>
   </span>
-  </h1>
+  </div>
   <div id="projectalign" style="padding-left: 0.5em;">
    <div id="projectbrief">51Degrees Pipeline for .NET</div>
   </div>
@@ -124,6 +142,13 @@ Public Member Functions</h2>
 <!-- startMemberDescription -->
 <div class="c-table__desc memdesc:afda3bd166127d8a8e2e725b1cb45f44a">Get the reason that the specified property is not available in the results from the specified engines.  <a href="#afda3bd166127d8a8e2e725b1cb45f44a">More...</a><!-- endMemberDescription -->
 </div></td></tr>
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:af0553116133889f8722b3678880b8abc"><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_missing_property_result.html">MissingPropertyResult</a><!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_i_missing_property_service.html#af0553116133889f8722b3678880b8abc">GetMissingPropertyReason</a> (string propertyName, IReadOnlyList&lt; <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_i_aspect_engine.html">IAspectEngine</a> &gt; engines, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_data.html">IAspectData</a> aspectData)
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:af0553116133889f8722b3678880b8abc">Get the reason that the specified property is not available in the results from the specified engines, with access to the aspect data instance so that per-request state (e.g.  <a href="#af0553116133889f8722b3678880b8abc">More...</a><!-- endMemberDescription -->
+</div></td></tr>
 <!-- endMemberList -->
 <!-- end member list -->
 </tbody></table></div>
@@ -184,7 +209,7 @@ Public Member Functions</h2>
 <article class="c-member">
 <a id="aae0ad09477145d861277d1a481229269"></a><!-- startMemberDoc -->
 
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aae0ad09477145d861277d1a481229269">&#9670;&nbsp;</a></span>GetMissingPropertyReason() <span class="c-member__count">[1/2]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aae0ad09477145d861277d1a481229269">&#9670;&nbsp;</a></span>GetMissingPropertyReason() <span class="c-member__count">[1/3]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -244,7 +269,7 @@ Public Member Functions</h2>
 <article class="c-member">
 <a id="afda3bd166127d8a8e2e725b1cb45f44a"></a><!-- startMemberDoc -->
 
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afda3bd166127d8a8e2e725b1cb45f44a">&#9670;&nbsp;</a></span>GetMissingPropertyReason() <span class="c-member__count">[2/2]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afda3bd166127d8a8e2e725b1cb45f44a">&#9670;&nbsp;</a></span>GetMissingPropertyReason() <span class="c-member__count">[2/3]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -296,6 +321,79 @@ Public Member Functions</h2>
 <dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">A <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_missing_property_result.html" title="Details of why a property is not populated by an engine.">MissingPropertyResult</a> instance explaining why the property is not populated. </dd></dl>
 
 <p>Implemented in <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_missing_property_service.html#aae824d732d185107c603aa0151cf3bd1">FiftyOne.Pipeline.Engines.Services.MissingPropertyService</a>.</p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
+<article class="c-member">
+<a id="af0553116133889f8722b3678880b8abc"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af0553116133889f8722b3678880b8abc">&#9670;&nbsp;</a></span>GetMissingPropertyReason() <span class="c-member__count">[3/3]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_missing_property_result.html">MissingPropertyResult</a> FiftyOne.Pipeline.Engines.Services.IMissingPropertyService.GetMissingPropertyReason <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startFirstParameterType -->
+          <td class="c-table__cell">string<!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><em>propertyName</em>, <!-- endParameterName -->
+</td>
+        </tr>
+<!-- startParameterType -->
+        <tr>
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">IReadOnlyList&lt; <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_i_aspect_engine.html">IAspectEngine</a> &gt;<!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><em>engines</em>, <!-- endParameterName -->
+</td>
+        </tr>
+<!-- startParameterType -->
+        <tr>
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_data.html">IAspectData</a><!-- endParameterType -->
+&#160;</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><em>aspectData</em><!-- endParameterName -->
+&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Get the reason that the specified property is not available in the results from the specified engines, with access to the aspect data instance so that per-request state (e.g. </p>
+<p>a cloud-request-failed marker) can be considered. </p>
+<p>Cloud aspect data carries a per-request marker that flips when the upstream cloud call failed. The on-premise service ignores this overload's <em>aspectData</em>  argument; the cloud service uses it to short-circuit to <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_services.html#a021c8d64d8e29c9138e7c66b3a159d5cad84d0bf6c6d63a3a150158a042fbad6b" title="The property could not be populated because an upstream cloud request failed (for example,...">MissingPropertyReason.CloudRequestFailed</a> without mis-reporting via the standard engine-metadata heuristics. </p>
+<dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">propertyName</span> - The property name to check. </dd>
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">engines</span> - The engines that were expected to populate the property. </dd>
+    <tr><dd class="c-list-definition__desc"><span class="b-text--red">aspectData</span> - The aspect data instance the missing property was requested from. May be null if the caller has no per-request context. </dd>
+  </dd>
+</dl>
+<dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">A <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_missing_property_result.html" title="Details of why a property is not populated by an engine.">MissingPropertyResult</a> instance explaining why the property is not populated. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_missing_property_service.html#a65ad672d5dc287657080576edf4fd6d3">FiftyOne.Pipeline.Engines.Services.MissingPropertyService</a>.</p>
 <!-- endIndent -->
 
 </div>

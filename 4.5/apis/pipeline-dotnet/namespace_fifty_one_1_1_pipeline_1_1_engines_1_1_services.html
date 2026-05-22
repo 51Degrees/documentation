@@ -6,6 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- Per-page meta description. FiftyOne.Pipeline.Engines.Services Namespace Reference is Doxygen's page-level title
+     substitution (the same value used in <title> below) so each page
+     gets its own meta description rather than a project-wide blurb.
+     PROJECT_BRIEF is appended when set (most Doxyfiles set it) so the
+     summary surfaces the project scope alongside the page topic. -->
+<meta name="description" content="FiftyOne.Pipeline.Engines.Services Namespace Reference - 51Degrees Pipeline for .NET - 51Degrees documentation."/>
 <title>51Degrees Pipeline .NET: FiftyOne.Pipeline.Engines.Services Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -26,12 +32,24 @@
 <div class="l-index__content">
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
-  <h1 class="c-brand">
+  <!-- Brand block. Was previously <h1 class="c-brand">, but every
+       Doxygen page also emits its own page-level <h1> for the section
+       heading (e.g. <h1 class="g-docs__section-heading">), so the brand
+       h1 produced a second h1 per page. Semrush flagged ~220 of the
+       /documentation pages and ~4 /device-detection-java pages with
+       "Multiple h1 tags" on 2026-05-22 driven entirely by this template.
+       Demoting to a <div> with role="banner" keeps the masthead's
+       semantic role for screen readers (the original <h1> was being
+       used decoratively for the logo, not as the page heading) and
+       removes the duplicate h1 from every rendered page. CSS targets
+       the class, not the element, so the visual rendering is
+       unchanged. -->
+  <div class="c-brand" role="banner">
   <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" style="width:172px;"/></a>
   <span class="c-tagline">51Degrees Pipeline .NET
    &#160;<span id="projectnumber">4.5</span>
   </span>
-  </h1>
+  </div>
   <div id="projectalign" style="padding-left: 0.5em;">
    <div id="projectbrief">51Degrees Pipeline for .NET</div>
   </div>
@@ -169,7 +187,8 @@ Classes</h2>
 <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_services.html#a021c8d64d8e29c9138e7c66b3a159d5caaafbea6bb1b7af69c72ecb76e18a198e">MissingPropertyReason.PropertyNotAccessibleWithResourceKey</a>, 
 <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_services.html#a021c8d64d8e29c9138e7c66b3a159d5ca77c1c9100624f8d66462dbf72fe0fb1b">MissingPropertyReason.ProductNotAccessibleWithResourceKey</a>, 
 <br />
-&#160;&#160;<a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_services.html#a021c8d64d8e29c9138e7c66b3a159d5ca88183b946cc5f0e8c96b2e66e1c74a7e">MissingPropertyReason.Unknown</a>
+&#160;&#160;<a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_services.html#a021c8d64d8e29c9138e7c66b3a159d5cad84d0bf6c6d63a3a150158a042fbad6b">MissingPropertyReason.CloudRequestFailed</a>, 
+<a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_services.html#a021c8d64d8e29c9138e7c66b3a159d5ca88183b946cc5f0e8c96b2e66e1c74a7e">MissingPropertyReason.Unknown</a>
 <br />
  }
 <!-- startMemberDescription -->
@@ -293,6 +312,9 @@ Classes</h2>
 </td></tr>
 <tr class="c-table__row"><td class="c-table__cell"><a id="a021c8d64d8e29c9138e7c66b3a159d5ca77c1c9100624f8d66462dbf72fe0fb1b"></a>ProductNotAccessibleWithResourceKey&#160;</td><td class="c-table__cell"><p>51Degrees cloud engines use a 'resourceKey' to determine the properties that should be returned in the response. </p>
 <p>This reason indicates that the resource key does not include any properties for the requested engine. A new resource key will need to be created that does include the property before you will be able to access it. </p>
+</td></tr>
+<tr class="c-table__row"><td class="c-table__cell"><a id="a021c8d64d8e29c9138e7c66b3a159d5cad84d0bf6c6d63a3a150158a042fbad6b"></a>CloudRequestFailed&#160;</td><td class="c-table__cell"><p>The property could not be populated because an upstream cloud request failed (for example, the request to the 51Degrees cloud service timed out or returned an error). </p>
+<p>The property is available in the engine's metadata, so this is not a license/resource-key issue - the failure was transient and specific to this request. </p>
 </td></tr>
 <tr class="c-table__row"><td class="c-table__cell"><a id="a021c8d64d8e29c9138e7c66b3a159d5ca88183b946cc5f0e8c96b2e66e1c74a7e"></a>Unknown&#160;</td><td class="c-table__cell"><p>The reason for the property not being present could not be determined. </p>
 </td></tr>

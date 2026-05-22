@@ -6,6 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- Per-page meta description. Member List is Doxygen's page-level title
+     substitution (the same value used in <title> below) so each page
+     gets its own meta description rather than a project-wide blurb.
+     PROJECT_BRIEF is appended when set (most Doxyfiles set it) so the
+     summary surfaces the project scope alongside the page topic. -->
+<meta name="description" content="Member List - 51Degrees Pipeline for .NET - 51Degrees documentation."/>
 <title>51Degrees Pipeline .NET: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -26,12 +32,24 @@
 <div class="l-index__content">
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
-  <h1 class="c-brand">
+  <!-- Brand block. Was previously <h1 class="c-brand">, but every
+       Doxygen page also emits its own page-level <h1> for the section
+       heading (e.g. <h1 class="g-docs__section-heading">), so the brand
+       h1 produced a second h1 per page. Semrush flagged ~220 of the
+       /documentation pages and ~4 /device-detection-java pages with
+       "Multiple h1 tags" on 2026-05-22 driven entirely by this template.
+       Demoting to a <div> with role="banner" keeps the masthead's
+       semantic role for screen readers (the original <h1> was being
+       used decoratively for the logo, not as the page heading) and
+       removes the duplicate h1 from every rendered page. CSS targets
+       the class, not the element, so the visual rendering is
+       unchanged. -->
+  <div class="c-brand" role="banner">
   <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" style="width:172px;"/></a>
   <span class="c-tagline">51Degrees Pipeline .NET
    &#160;<span id="projectnumber">4.5</span>
   </span>
-  </h1>
+  </div>
   <div id="projectalign" style="padding-left: 0.5em;">
    <div id="projectbrief">51Degrees Pipeline for .NET</div>
   </div>
@@ -73,6 +91,7 @@ $(document).ready(function(){initNavTree('interface_fifty_one_1_1_pipeline_1_1_e
 <tbody class="c-table__body">
   <tr class="c-table__row"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_i_missing_property_service.html#aae0ad09477145d861277d1a481229269">GetMissingPropertyReason</a>(string propertyName, IAspectEngine engine)</td><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_i_missing_property_service.html">FiftyOne.Pipeline.Engines.Services.IMissingPropertyService</a></td><td class="c-table__cell"></td></tr>
   <tr class="c-table__row"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_i_missing_property_service.html#afda3bd166127d8a8e2e725b1cb45f44a">GetMissingPropertyReason</a>(string propertyName, IReadOnlyList&lt; IAspectEngine &gt; engines)</td><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_i_missing_property_service.html">FiftyOne.Pipeline.Engines.Services.IMissingPropertyService</a></td><td class="c-table__cell"></td></tr>
+  <tr class="c-table__row"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_i_missing_property_service.html#af0553116133889f8722b3678880b8abc">GetMissingPropertyReason</a>(string propertyName, IReadOnlyList&lt; IAspectEngine &gt; engines, IAspectData aspectData)</td><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_i_missing_property_service.html">FiftyOne.Pipeline.Engines.Services.IMissingPropertyService</a></td><td class="c-table__cell"></td></tr>
 </tbody></table></div></section>
 </div><!-- primary -->
 </div><!-- inner-->

@@ -6,6 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- Per-page meta description. FiftyOne.IpIntelligence.Engine.OnPremise.Data.IpDataOnPremise Class Reference is Doxygen's page-level title
+     substitution (the same value used in <title> below) so each page
+     gets its own meta description rather than a project-wide blurb.
+     PROJECT_BRIEF is appended when set (most Doxyfiles set it) so the
+     summary surfaces the project scope alongside the page topic. -->
+<meta name="description" content="FiftyOne.IpIntelligence.Engine.OnPremise.Data.IpDataOnPremise Class Reference - IP intelligence services for 51Degrees Pipeline - 51Degrees documentation."/>
 <title>51Degrees IP Intelligence .NET: FiftyOne.IpIntelligence.Engine.OnPremise.Data.IpDataOnPremise Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -26,12 +32,24 @@
 <div class="l-index__content">
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
-  <h1 class="c-brand">
+  <!-- Brand block. Was previously <h1 class="c-brand">, but every
+       Doxygen page also emits its own page-level <h1> for the section
+       heading (e.g. <h1 class="g-docs__section-heading">), so the brand
+       h1 produced a second h1 per page. Semrush flagged ~220 of the
+       /documentation pages and ~4 /device-detection-java pages with
+       "Multiple h1 tags" on 2026-05-22 driven entirely by this template.
+       Demoting to a <div> with role="banner" keeps the masthead's
+       semantic role for screen readers (the original <h1> was being
+       used decoratively for the logo, not as the page heading) and
+       removes the duplicate h1 from every rendered page. CSS targets
+       the class, not the element, so the visual rendering is
+       unchanged. -->
+  <div class="c-brand" role="banner">
   <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" style="width:172px;"/></a>
   <span class="c-tagline">51Degrees IP Intelligence .NET
    &#160;<span id="projectnumber">4.5</span>
   </span>
-  </h1>
+  </div>
   <div id="projectalign" style="padding-left: 0.5em;">
    <div id="projectbrief">IP intelligence services for 51Degrees Pipeline</div>
   </div>
@@ -115,6 +133,13 @@ Public Member Functions</h2>
 <div class="g-table g-table--overflow">
 <table class="c-table c-table--members">
 <tbody class="c-table__body">
+<!-- member dec start -->
+<!-- startMemberItem() -->
+<tr class="c-table__row memitem:add0881976cbf7240fd8928fd7ba83c49"><td class="c-table__cell">override&#160;IReadOnlyDictionary&lt;&#160;string,&#160;object&#160;&gt;<!-- insertMemberAlign -->
+&#160;</td><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_1_1_ip_data_on_premise.html#add0881976cbf7240fd8928fd7ba83c49">AsDictionary</a> ()
+<!-- startMemberDescription -->
+<div class="c-table__desc memdesc:add0881976cbf7240fd8928fd7ba83c49">Drops the Ip and IpV6 entries when the matching address is not in evidence.  <a href="#add0881976cbf7240fd8928fd7ba83c49">More...</a><!-- endMemberDescription -->
+</div></td></tr>
 <!-- member dec start -->
 <!-- startMemberItem() -->
 <tr class="c-table__row memitem:aec6152a95b37702e558800bb8069cbd8"><td class="c-table__cell">override&#160;IAspectPropertyValue&lt;&#160;IReadOnlyList&lt;&#160;string&#160;&gt;&#160;&gt;<!-- insertMemberAlign -->
@@ -282,6 +307,42 @@ override&#160;IAspectPropertyValue&lt;&#160;IReadOnlyList&lt;&#160;IWeightedValu
 <section class="g-docs__section">
 <h2 class="g-docs__section-heading">Member Function Documentation</h2>
 <!-- startMemberDocList -->
+<article class="c-member">
+<a id="add0881976cbf7240fd8928fd7ba83c49"></a><!-- startMemberDoc -->
+
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#add0881976cbf7240fd8928fd7ba83c49">&#9670;&nbsp;</a></span>AsDictionary()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<!-- startMemberDocName -->
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">override IReadOnlyDictionary&lt;string, object&gt; FiftyOne.IpIntelligence.Engine.OnPremise.Data.IpDataOnPremise.AsDictionary <!-- endMemberDocName -->
+</td>
+<!-- startParameterList -->
+          <td>(</td>
+<!-- startParameterName -->
+          <td class="c-table__cell"><!-- endParameterName -->
+</td><td>)</td>
+          <td><!-- endParameterList -->
+</td>
+        </tr>
+<!-- endMemberDoc -->
+          </table>
+        </div>
+      </div>
+</div><!-- startIndent -->
+<div class="c-member__body">
+
+<p>Drops the Ip and IpV6 entries when the matching address is not in evidence. </p>
+<p>Direct .NET accessors are unchanged. </p>
+<!-- endIndent -->
+
+</div>
+</div>
+</article>
 <article class="c-member">
 <a id="aec6152a95b37702e558800bb8069cbd8"></a><!-- startMemberDoc -->
 
