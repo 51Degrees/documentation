@@ -6,6 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen $doxygenversion"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!--BEGIN PROJECT_BRIEF--><meta name="description" content="$projectbrief - $projectname API documentation."/><!--END PROJECT_BRIEF-->
+<!--BEGIN !PROJECT_BRIEF--><!--BEGIN PROJECT_NAME--><meta name="description" content="$projectname API documentation."/><!--END PROJECT_NAME--><!--END !PROJECT_BRIEF-->
 <!--BEGIN PROJECT_NAME--><title>$projectname: $title</title><!--END PROJECT_NAME-->
 <!--BEGIN !PROJECT_NAME--><title>$title</title><!--END !PROJECT_NAME-->
 <link href="$relpath^tabs.css" rel="stylesheet" type="text/css"/>
@@ -26,7 +28,19 @@ $extrastylesheet
 
 <!--BEGIN TITLEAREA-->
 <div id="titlearea" class="g-header g-header--docs">
-  <h1 class="c-brand">
+  <!-- Brand block. Was previously <h1 class="c-brand">, but every
+       Doxygen page also emits its own page-level <h1> for the section
+       heading (e.g. <h1 class="g-docs__section-heading">), so the brand
+       h1 produced a second h1 per page. Semrush flagged ~220 of the
+       /documentation pages and ~4 /device-detection-java pages with
+       "Multiple h1 tags" on 2026-05-22 driven entirely by this template.
+       Demoting to a <div> with role="banner" keeps the masthead's
+       semantic role for screen readers (the original <h1> was being
+       used decoratively for the logo, not as the page heading) and
+       removes the duplicate h1 from every rendered page. CSS targets
+       the class, not the element, so the visual rendering is
+       unchanged. -->
+  <div class="c-brand" role="banner">
   <!--BEGIN PROJECT_LOGO-->
   <a id="projectlogo" href="$projecturl" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="$relpath^$projectlogo" style="width:172px;"/></a>
   <!--BEGIN PROJECT_NAME-->
@@ -34,7 +48,7 @@ $extrastylesheet
    <!--BEGIN PROJECT_NUMBER-->&#160;<span id="projectnumber">$projectnumber</span><!--END PROJECT_NUMBER-->
   </span>
   <!--END PROJECT_NAME-->
-  </h1>
+  </div>
   <!--END PROJECT_LOGO-->
   <div id="projectalign" style="padding-left: 0.5em;">
    <!--BEGIN PROJECT_BRIEF--><div id="projectbrief">$projectbrief</div><!--END PROJECT_BRIEF-->
