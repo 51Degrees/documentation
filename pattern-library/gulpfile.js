@@ -63,19 +63,23 @@ var browserSync = require('browser-sync').create();
 var gulp = require('gulp');
 // Allows run of php command from gulp
 var run = require('gulp-run');
-// Allows the compilation of scss files to css
-var sass = require('gulp-sass');
+// Allows the compilation of scss files to css. gulp-sass v5+ requires
+// the underlying sass compiler to be passed explicitly; we use Dart
+// Sass (the actively-maintained implementation) rather than the
+// deprecated node-sass that the v3 release pinned. Dropping node-sass
+// removes 60+ transitive vulnerabilities from the dependency tree
+// (see documentation#140).
+var sass = require('gulp-sass')(require('sass'));
 // Allows the importing of wildcard scss routes
 var sassGlob = require('gulp-sass-glob');
-// Allows the linting of scss files
-var sassLint = require('gulp-sass-lint');
 // Allows the building of sourcemaps
 var sourcemaps = require('gulp-sourcemaps');
 
 var cleanCSS = require('gulp-clean-css');
 var size = require('gulp-size');
 var rename = require('gulp-rename');
-var autoprefixer = require('gulp-autoprefixer');
+// gulp-autoprefixer 9.x is ESM-only; via CJS the function is on .default.
+var autoprefixer = require('gulp-autoprefixer').default;
 
 // Helper functions.
 
@@ -150,7 +154,7 @@ gulp.task('sass', function(){
 
 gulp.task('prefix-css', function(){
   return gulp.src(config.sass.destDir + '/main.css')
-    .pipe(autoprefixer('last 2 versions'))
+    .pipe(autoprefixer({ overrideBrowserslist: ['last 2 versions'] }))
     .pipe(gulp.dest(config.sass.destDir))
     .pipe(browserSync.stream());
 });
