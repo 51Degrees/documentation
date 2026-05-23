@@ -1,7 +1,3 @@
-param(
-    [string]$DestinationPrefix = ""
-)
-
 $ErrorActionPreference = "Stop"
 $PSNativeCommandUseErrorActionPreference = $true
 
@@ -62,13 +58,46 @@ foreach ($_ in $repoMap.GetEnumerator()) {
 Write-Host "::group::Checking out gh-pages"
 git fetch --force --depth 2 origin gh-pages:gh-pages
 git worktree add gh-pages # check out gh-pages as a worktree
-$destDir = if ($DestinationPrefix) { "gh-pages/$DestinationPrefix/$version" } else { "gh-pages/$version" }
-$destParent = Split-Path -Parent $destDir
-if (!(Test-Path $destParent)) { New-Item -ItemType Directory -Force $destParent | Out-Null }
-Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $destDir
-Move-Item $version $destDir
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue gh-pages/$version
+Move-Item $version gh-pages/$version
 Write-Host "::endgroup::"
 
 if (!(Test-Path "gh-pages/.nojekyll")) {
     '' > "gh-pages/.nojekyll"
 }
+
+# Mirror the current version's HTML at the unversioned path so links
+# like /documentation/_foo.html resolve directly without redirecting.
+# Each mirror gets <base href="/documentation/<version>/"> so relative
+# asset and nav refs still resolve into the versioned tree, and a
+# canonical link pointing back at the unversioned form so search
+# engines index that as the canonical URL.
+#
+# A .mirror-manifest at the gh-pages root records what we wrote so the
+# next run (after a version bump or a Doxygen page rename) cleans up
+# stale mirrors before recreating fresh ones.
+Write-Host "::group::Mirroring current-version HTML to unversioned root"
+$manifestPath = "gh-pages/.mirror-manifest"
+if (Test-Path $manifestPath) {
+    Get-Content $manifestPath | Where-Object { $_ } | ForEach-Object {
+        Remove-Item -Force -ErrorAction SilentlyContinue (Join-Path "gh-pages" $_)
+    }
+}
+$srcRoot = (Resolve-Path "gh-pages/$version").Path
+$baseTag = "<base href=`"/documentation/$version/`">"
+$mirrored = [System.Collections.Generic.List[string]]::new()
+Get-ChildItem -Recurse -File -Filter "*.html" -Path "gh-pages/$version" | ForEach-Object {
+    $rel = $_.FullName.Substring($srcRoot.Length + 1) -replace '\\', '/'
+    $dest = Join-Path "gh-pages" $rel
+    New-Item -ItemType Directory -Force (Split-Path $dest) | Out-Null
+    $content = Get-Content $_.FullName -Raw
+    $canonicalTag = "<link rel=`"canonical`" href=`"/documentation/$rel`">"
+    if ($content -notmatch '<base\s') {
+        $content = $content -replace '(<head[^>]*>)', "`$1`n  $baseTag`n  $canonicalTag"
+    }
+    Set-Content -Path $dest -Value $content -NoNewline
+    $mirrored.Add($rel)
+}
+Set-Content -Path $manifestPath -Value ($mirrored -join "`n")
+Write-Host "Mirrored $($mirrored.Count) HTML files to gh-pages root."
+Write-Host "::endgroup::"

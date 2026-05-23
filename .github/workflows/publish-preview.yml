@@ -1,0 +1,54 @@
+name: Publish Preview
+
+on:
+  workflow_dispatch:
+    inputs:
+      run-id:
+        type: string
+        required: true
+      head-branch:
+        type: string
+        required: true
+  workflow_run:
+    workflows: [Preview Documentation]
+    types: [completed]
+
+concurrency:
+  group: doc-preview-push
+  queue: max
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    permissions:
+      actions: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          repository: ${{ github.repository_owner }}/doc-preview
+          token: ${{ secrets.ACCESS_TOKEN }}
+      - id: dir
+        env:
+          BRANCH: ${{ github.event.workflow_run.head_branch || inputs.head-branch }}
+        run: dir=${BRANCH//[\/]/-}; rm -rf "$dir"; echo "dir=$dir" >> "$GITHUB_OUTPUT"
+      - uses: actions/download-artifact@v8
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }} # github.token won't work since artifact download is scoped even with permissions
+          run-id: ${{ github.event.workflow_run.id || inputs.run-id }}
+          name: docs_
+          path: ${{ steps.dir.outputs.dir }}
+      - name: Publish preview
+        env:
+          BRANCH: ${{ github.event.workflow_run.head_branch || inputs.head-branch }}
+          DIR: ${{ steps.dir.outputs.dir }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -x
+          touch .nojekyll
+          git add .
+          git -c user.name=Automation51D -c user.email=60396166+Automation51D@users.noreply.github.com commit --amend --no-edit --reset-author
+          git push --force-with-lease || sleep 5 && git pull --rebase && git push --force-with-lease
+          gh pr comment "$BRANCH" -R "$GITHUB_REPOSITORY" --edit-last --create-if-none --body \
+            "[Documentation preview](https://51degrees.github.io/doc-preview/$(printf '%s\n' "$DIR"/[0-9]*/ | sort -V | tail -n1)) 👀"
