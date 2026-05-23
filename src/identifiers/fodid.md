@@ -72,6 +72,16 @@ Response:
 
 Open the example value in the [51DiD inspector](https://51degrees.com/developers/51did-inspector?51did=AzUxZC5lcwBzGTMAJQAAAAHWTQAAr193zLwxDrchR2XHYmoTzJML7fAB60rimQeTd2WuHMPoQ4Bz56QhxhXoAynWyaAE8kWo8DO92y9LPLdatHSVaCdSioL7JaMg8S2DV36ehXIZc0HhdqteyARmOnRS7o8j) to unpack the OWID envelope, see the parsed flags, licenseId and 32-byte hash, and verify the ECDSA P-256 signature against the issuer's published public key.
 
+## 51DiD readers
+
+A 51DiD is a binary OWID envelope wrapping a 51Degrees payload. Unpacking the payload, comparing two 51DiDs, or verifying the signature in your own code needs a reader that understands both layers. 51Degrees publishes a reader per platform; pick whichever matches your stack.
+
+| Platform | Package          | Distribution                                           |
+|----------|------------------|--------------------------------------------------------|
+| .NET     | `FiftyOne.Did`   | <https://www.nuget.org/packages/FiftyOne.Did>          |
+
+Readers for other platforms are on the roadmap and will be added to this table as they are released.
+
 ## Comparing two 51DiDs
 
 A 51DiD is an OWID envelope wrapping a probabilistic identifier payload. Two responses for the same device + IP + usage will differ at the byte level because the envelope embeds a timestamp and signature each time. To decide whether two 51DiDs are identical, compare only the 32-byte hash inside the payload, never the full base64 value.
@@ -85,7 +95,7 @@ Two responses to the same device + IP + `id.usage=non-marketing`, returned a few
                               date differs                              signature differs further down
 ```
 
-Unpacked with the `FiftyOne.Did` NuGet (see [51Degrees/pipeline-dotnet#299](https://github.com/51Degrees/pipeline-dotnet/pull/299)):
+Unpacked with the [.NET reader](https://www.nuget.org/packages/FiftyOne.Did):
 
 ```csharp
 var a = new FodId(idprobglobalA);
@@ -106,7 +116,7 @@ Use `FodId.Hash` (32 bytes, SHA-256) as the cache / dedup key. The same hash mea
 A 51DiD recipient can optionally verify the signature before trusting the identifier. Two options:
 
 1. **Cloud endpoint.** Send the base64 value to the verification endpoint on the V4 cloud and get back a parsed payload only if the signature checks out. Simple, no key handling, but every call is metered against the Resource Key.
-2. **Local verification using the published public key.** Fetch 51Degrees' public ECDSA P-256 key once, cache it, and verify in-process for every received identifier. No metering. The `FiftyOne.Did` NuGet exposes the inherited `Owid.VerifyAsync` method that takes the public key PEM and returns a boolean -- see the package's `FodIdTests.cs` for a worked example.
+2. **Local verification using the published public key.** Fetch 51Degrees' public ECDSA P-256 key once, cache it, and verify in-process for every received identifier. No metering. Each platform reader (see *51DiD readers* above) exposes an in-process verify method that takes the public key PEM and returns a boolean. The .NET reader's method is the inherited `Owid.VerifyAsync`.
 
 In both cases, validation only confirms the identifier was created by 51Degrees and has not been tampered with. It does not certify that the device + IP + usage inputs were truthful: that trust lives in the operational contract with the issuing 51Degrees cloud, not in the signature.
 
