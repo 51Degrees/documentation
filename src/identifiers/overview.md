@@ -1,6 +1,6 @@
 @page Identifiers_Overview Overview
 
-51Degrees Identifiers are derived signals downstream systems can act on without seeing the raw inputs.
+**51DiD** (51Degrees Identifier) and **PMP** (Privacy Marketing Preference) are derived signals downstream systems can act on without seeing the raw inputs.
 
 - **51DiD** - signed, probabilistic ID derived from three inputs: the **Device ID** (a `Hardware-Platform-Browser-IsCrawler` tuple produced by Device Detection), the **client IP**, and the **usage purpose** (`non-marketing`, `standard`, or `personalized`) declared per request.
 - **PMP** - embeddable widget that captures a marketing preference (`standard` / `personalized`) suitable as `id.usage` input to 51DiD.
