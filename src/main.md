@@ -14,7 +14,7 @@ At 51Degrees, we turn every user interaction into a chance to learn, optimize, a
 - **Device Detection** - Detect 250+ device properties from HTTP headers and other signals to tailor every user experience.
 - **IP Intelligence** - Unlock geolocation, ISP, and network data from IP addresses for sharper insights and smarter decisions.
 - **Reverse Geocoding** - Transform latitude and longitude into real-world addresses, cities, and regions.
-- **Identifiers** - Generate privacy-aware signals (51DiD) and capture user marketing preferences (PMP) to feed downstream systems.
+- **Identifiers** - Generate privacy-aware signals (51Did) and capture user marketing preferences (PMP) to feed downstream systems.
 - **Ultra-fast Performance** - Enjoy lightning-fast detection speeds thanks to in-process deployment.
 - **Privacy-first Architecture** - Prefer to keep your data close? Our On-premise options ensure full control and compliance.
 
@@ -49,10 +49,10 @@ Turn GPS coordinates into meaningful places. Bring real-world context to your di
 
 ### Identifiers
 
-Signed, probabilistic device-bound identifiers (51DiD) and an embeddable preference widget (PMP) that feeds `id.usage` into 51DiD.
+Signed, probabilistic device-bound identifiers (51Did) and an embeddable preference widget (PMP) that feeds `id.usage` into 51Did.
 
 - [Overview](@ref Identifiers_Overview) - How the pieces fit together
-- [51DiD](@ref Identifiers_51DiD) - Properties, `id.usage`, licensing
+- [51Did](@ref Identifiers_51Did) - Properties, `id.usage`, licensing
 - [PMP](@ref Identifiers_PMP) - Embeddable preference widget
 
 ### Client-Side Only
@@ -148,7 +148,7 @@ Everything you need to succeed:
 - [Device Detection](@ref DeviceDetection_Quickstart) - Cloud vs. On-premise
 - [IP Intelligence](@ref IpIntelligence_Quickstart) - Location and network data
 - [Reverse Geocoding](@ref ReverseGeocoding_Quickstart) - From coordinates to addresses
-- [Identifiers](@ref Identifiers_Overview) - 51DiD and PMP
+- [Identifiers](@ref Identifiers_Overview) - 51Did and PMP
 
 ### Deep Dives
 

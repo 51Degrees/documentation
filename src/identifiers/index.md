@@ -2,6 +2,6 @@
 
 @subpage Identifiers_Overview
 
-@subpage Identifiers_51DiD
+@subpage Identifiers_51Did
 
 @subpage Identifiers_PMP
