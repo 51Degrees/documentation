@@ -6,7 +6,7 @@ A signed envelope, encoded as an <a href="https://github.com/SWAN-community/owid
 
 The two layers are distinct and the documentation below uses the words deliberately.
 
-- The **51Did** is the **identifier** -- the whole base64 OWID envelope (version, domain, date, payload, signature). It changes byte-for-byte every time the cloud issues one, even for the same inputs, because the date and signature change with each call.
+- The **51Did** is the **identifier**, the whole base64 OWID envelope (version, domain, date, payload, signature). It changes byte-for-byte every time the cloud issues one, even for the same inputs, because the date and signature change with each call.
 - The **probabilistic value** is one of the fields *inside* the payload (a 32-byte hash). It is stable across reissues for the same device + IP + usage: if two 51Dids were issued for the same inputs, their probabilistic values are equal even though the wrapping identifiers differ.
 
 Comparing two browsers means comparing the probabilistic values carried inside their identifiers, never the identifiers themselves. Calling either layer "the identifier" without qualification leads to incorrect comparisons; calling the inner field "the probabilistic identifier" is the same confusion in a different costume.
@@ -114,12 +114,12 @@ Unpacked with the [.NET reader](https://www.nuget.org/packages/FiftyOne.Did):
 var a = new FodId(idprobglobalA);
 var b = new FodId(idprobglobalB);
 
-// Wrapper bytes (Domain, Date, Signature) ARE different -- the
+// Wrapper bytes (Domain, Date, Signature) ARE different; the
 // identifier itself is not stable across reissues:
 Console.WriteLine(a.Date == b.Date);          // false
 Console.WriteLine(a.Signature.SequenceEqual(b.Signature)); // false
 
-// The probabilistic value inside the payload IS stable -- this is
+// The probabilistic value inside the payload IS stable; this is
 // what you actually compare:
 Console.WriteLine(a.Hash.SequenceEqual(b.Hash));           // true
 ```
