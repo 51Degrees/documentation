@@ -27,6 +27,7 @@ var NAVTREE =
     [ "Device Detection", null, "_device_detection__index" ],
     [ "IP Intelligence", null, "_ip_intelligence__index" ],
     [ "Reverse Geocoding", null, "_reverse_geocoding__index" ],
+    [ "Identifiers", null, "_identifiers__index" ],
     [ "Services", null, "_services__index" ],
     [ "Pipeline API", null, "_pipeline_api__index" ],
     [ "Product Summaries", null, "_product_summaries__index" ],
