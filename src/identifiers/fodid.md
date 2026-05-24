@@ -1,6 +1,15 @@
 @page Identifiers_51DiD 51DiD (51Degrees Identifier)
 
-A signed, probabilistic identifier encoded as an <a href="https://github.com/SWAN-community/owid/blob/main/explainer.md">OWID - Open Web ID</a>, the SWAN community schema that defines the binary layout, signature, and verification rules.
+A signed envelope, encoded as an <a href="https://github.com/SWAN-community/owid/blob/main/explainer.md">OWID - Open Web ID</a> (the SWAN community schema that defines the binary layout, signature, and verification rules), wrapping a **probabilistic value** that two recipients can compare to decide whether they have observed the same browser instance under the same usage purpose.
+
+## Terminology
+
+The two layers are distinct and the documentation below uses the words deliberately.
+
+- The **51DiD** is the **identifier** -- the whole base64 OWID envelope (version, domain, date, payload, signature). It changes byte-for-byte every time the cloud issues one, even for the same inputs, because the date and signature change with each call.
+- The **probabilistic value** is one of the fields *inside* the payload (a 32-byte hash). It is stable across reissues for the same device + IP + usage: if two 51DiDs were issued for the same inputs, their probabilistic values are equal even though the wrapping identifiers differ.
+
+Comparing two browsers means comparing the probabilistic values carried inside their identifiers, never the identifiers themselves. Calling either layer "the identifier" without qualification leads to incorrect comparisons; calling the inner field "the probabilistic identifier" is the same confusion in a different costume.
 
 Derived from three inputs:
 
@@ -26,7 +35,9 @@ The flags are hierarchical -- `personalized` implies `standard`, and `standard` 
 
 ## Properties
 
-| Property             | Scope                                          |
+Each property returns a full 51DiD identifier (the OWID envelope, signed). The probabilistic value inside has the scope described in the table.
+
+| Property             | Scope of the probabilistic value inside        |
 |----------------------|------------------------------------------------|
 | `fodid.idprobglobal` | Unique across all callers from device+network. |
 | `fodid.idproblic`    | Unique only across the caller's License Key.   |
@@ -74,7 +85,7 @@ Open the example value in the [51DiD inspector](https://51degrees.com/developers
 
 ## 51DiD readers
 
-A 51DiD is a binary OWID envelope wrapping a 51Degrees payload. Unpacking the payload, comparing two 51DiDs, or verifying the signature in your own code needs a reader that understands both layers. 51Degrees publishes a reader per platform; pick whichever matches your stack.
+A 51DiD is a binary OWID envelope wrapping a 51Degrees payload (see *Terminology* above for the wrapper-vs-value distinction). Unpacking the payload, comparing two 51DiDs, or verifying the signature in your own code needs a reader that understands both layers. 51Degrees publishes a reader per platform; pick whichever matches your stack.
 
 | Platform | Package          | Distribution                                           |
 |----------|------------------|--------------------------------------------------------|
@@ -84,7 +95,9 @@ Readers for other platforms are on the roadmap and will be added to this table a
 
 ## Comparing two 51DiDs
 
-A 51DiD is an OWID envelope wrapping a probabilistic identifier payload. Two responses for the same device + IP + usage will differ at the byte level because the envelope embeds a timestamp and signature each time. To decide whether two 51DiDs are identical, compare only the 32-byte hash inside the payload, never the full base64 value.
+Two 51DiDs issued for the same device + IP + usage will differ at the byte level because the envelope embeds a fresh timestamp and signature on each call. The byte-level difference is in the **identifier** (the wrapper); the **probabilistic value** carried inside is stable across reissues. To decide whether the two refer to the same browser instance, compare the probabilistic values, never the full base64 identifiers.
+
+The probabilistic value is one of the fields the reader exposes after parsing the payload (per platform, named `Hash` in .NET to reflect that it is a 32-byte SHA-256). Treat it as the cache / dedup key.
 
 Two responses to the same device + IP + `id.usage=non-marketing`, returned a few seconds apart:
 
@@ -101,15 +114,17 @@ Unpacked with the [.NET reader](https://www.nuget.org/packages/FiftyOne.Did):
 var a = new FodId(idprobglobalA);
 var b = new FodId(idprobglobalB);
 
-// Wrapper bytes (Domain, Date, Signature) ARE different:
+// Wrapper bytes (Domain, Date, Signature) ARE different -- the
+// identifier itself is not stable across reissues:
 Console.WriteLine(a.Date == b.Date);          // false
 Console.WriteLine(a.Signature.SequenceEqual(b.Signature)); // false
 
-// Payload hashes (the probabilistic identifier) ARE the same:
+// The probabilistic value inside the payload IS stable -- this is
+// what you actually compare:
 Console.WriteLine(a.Hash.SequenceEqual(b.Hash));           // true
 ```
 
-Use `FodId.Hash` (32 bytes, SHA-256) as the cache / dedup key. The same hash means the same 51DiD under the same usage policy on the same License Key (for `idproblic`) or across all callers (for `idprobglobal`).
+Use `FodId.Hash` (32 bytes, SHA-256, the probabilistic value) as the cache / dedup key. The same value means the same browser instance under the same usage policy on the same License Key (for `idproblic`) or across all callers (for `idprobglobal`).
 
 ## Validation
 
