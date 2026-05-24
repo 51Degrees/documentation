@@ -1,6 +1,6 @@
 @page Identifiers_PMP PMP (Preference Management Platform)
 
-Lightweight embeddable widget that asks the user for a marketing preference, stores it in `localStorage`, and invokes a publisher-defined continuation URL with that preference - typically the 51DiD generation endpoint. The chosen `standard` or `personalized` value is the `id.usage` input for @ref Identifiers_51DiD.
+Lightweight embeddable widget that asks the user for a marketing preference, stores it in `localStorage`, and invokes a publisher-defined continuation URL with that preference - typically the 51Did generation endpoint. The chosen `standard` or `personalized` value is the `id.usage` input for @ref Identifiers_51Did.
 
 ## Endpoint
 
@@ -57,7 +57,7 @@ The Alternative button (e.g. "Subscribe to remove ads") stores `standard` as the
 1. The script loads and reads any stored preference from `localStorage`.
 2. If none is stored, the dialog is shown.
 3. The user chooses; the preference is saved to `localStorage`.
-4. `data-action-url` is dispatched with `{preference}` substituted - this is the continuation that drives downstream behaviour (most commonly fetching `/api/v4/<KEY>.js?id.usage={preference}` so 51DiD data lands on the page). For `http(s)` URLs PMP injects `<script src="...">`; for `javascript:` URLs the code runs inline.
+4. `data-action-url` is dispatched with `{preference}` substituted - this is the continuation that drives downstream behaviour (most commonly fetching `/api/v4/<KEY>.js?id.usage={preference}` so 51Did data lands on the page). For `http(s)` URLs PMP injects `<script src="...">`; for `javascript:` URLs the code runs inline.
 
 On subsequent visits steps 2-3 are skipped: PMP reads the stored preference from `localStorage` and goes straight to step 4. So `data-action-url` fires on every page load, not just on the first user choice.
 
@@ -79,5 +79,5 @@ location.reload();
 
 ## Cross-references
 
-- @ref Identifiers_51DiD - how `id.usage` is consumed.
-- @ref DeviceDetection_OtherIntegrations_Prebid - downstream RTB enrichment that consumes the 51DiD.
+- @ref Identifiers_51Did - how `id.usage` is consumed.
+- @ref DeviceDetection_OtherIntegrations_Prebid - downstream RTB enrichment that consumes the 51Did.
