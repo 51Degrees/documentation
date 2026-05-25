@@ -105,8 +105,11 @@ Write-Host "::endgroup::"
 # Scan the freshly generated HTML for content-quality regressions
 # before it gets published. Companion to the Website-side
 # ContentValidator (postbuild/ContentValidator.cs); see
-# 51Degrees/documentation issue #151 for context. Warns only at the
-# moment; flip -FailOnFinding $true once the count is genuinely zero.
+# 51Degrees/documentation issue #151 for context. The 2026-05-25
+# scheduled build ran clean ("scanned 5150 pages, 0 content issues
+# found"), so the baseline is genuinely zero -- run with
+# -FailOnFinding from here on to break the build on any regression
+# rather than waiting for someone to spot the warning in the log.
 Write-Host "::group::Validating generated HTML"
-& "$PSScriptRoot/validate-html.ps1" -Path "gh-pages/$version"
+& "$PSScriptRoot/validate-html.ps1" -Path "gh-pages/$version" -FailOnFinding
 Write-Host "::endgroup::"
