@@ -101,3 +101,12 @@ Get-ChildItem -Recurse -File -Filter "*.html" -Path "gh-pages/$version" | ForEac
 Set-Content -Path $manifestPath -Value ($mirrored -join "`n")
 Write-Host "Mirrored $($mirrored.Count) HTML files to gh-pages root."
 Write-Host "::endgroup::"
+
+# Scan the freshly generated HTML for content-quality regressions
+# before it gets published. Companion to the Website-side
+# ContentValidator (postbuild/ContentValidator.cs); see
+# 51Degrees/documentation issue #151 for context. Warns only at the
+# moment; flip -FailOnFinding $true once the count is genuinely zero.
+Write-Host "::group::Validating generated HTML"
+& "$PSScriptRoot/validate-html.ps1" -Path "gh-pages/$version"
+Write-Host "::endgroup::"
