@@ -39,10 +39,10 @@ var NAVTREEINDEX =
 [
 "../../documentation/4.5/index.html",
 "group___fifty_one_degrees_hash_synonyms.html#ga5aec0f1332e2647f806320ef8490e955",
-"group___fifty_one_degrees_synonyms.html#ga0924e9db25b77fecc46a2792e648190a",
-"group___fifty_one_degrees_synonyms.html#gab6c5cdad1af61c921fed6d9246c100ba",
-"structfiftyone_degrees_collection.html#a08d1fda8ee86791d5194cb12fc7c6278",
-"structfiftyone_degrees_profile_offset.html#a9d58b38096c70274e507247746b0abc0"
+"group___fifty_one_degrees_synonyms.html#ga0735922c44e9ce8233515af3b56a0e91",
+"group___fifty_one_degrees_synonyms.html#gab51ec7b37a63713b8118c705fc03ff4c",
+"structfiftyone_degrees_cache_shard.html#ac4d45b247395a0cce948e8b62c19103d",
+"structfiftyone_degrees_profile.html#a46ee58b927f5ced78326ab8fafd4d482"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

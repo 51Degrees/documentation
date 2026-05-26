@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"structfiftyone_degrees_cache_shard.html#ac4d45b247395a0cce948e8b62c19103d":[3,1,1,1,7],
+"structfiftyone_degrees_cache_shard.html#ae215a1c13dd38e23ab862156f84697ae":[3,1,1,1,2],
+"structfiftyone_degrees_cache_shard.html#afa5f1e1c7323f3c2a0b85f0f3e77ee1b":[3,1,1,1,6],
+"structfiftyone_degrees_collection.html":[3,1,2,3],
 "structfiftyone_degrees_collection.html#a08d1fda8ee86791d5194cb12fc7c6278":[3,1,2,3,0],
 "structfiftyone_degrees_collection.html#a0df0146feccd079d879c17da909a17fc":[3,1,2,3,3],
 "structfiftyone_degrees_collection.html#a68dac68ee26528effa0a0f9f91bfb53b":[3,1,2,3,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX4 =
 "structfiftyone_degrees_pool_item.html#ad0a7957795889e1a221afa7c36d964e0":[3,1,21,0,0],
 "structfiftyone_degrees_pool_item.html#afd826a5d7999e0f65694a1b3a9520bf5":[3,1,21,0,1],
 "structfiftyone_degrees_profile.html":[3,1,22,0],
-"structfiftyone_degrees_profile.html#a46ee58b927f5ced78326ab8fafd4d482":[3,1,22,0,0],
-"structfiftyone_degrees_profile.html#a62508d300700187959b203ed019e1f15":[3,1,22,0,2],
-"structfiftyone_degrees_profile.html#aae9d44323c813f2befaccfdf4ac4ea24":[3,1,22,0,1],
-"structfiftyone_degrees_profile_offset.html":[3,1,22,1],
-"structfiftyone_degrees_profile_offset.html#a805d5eca2b681e5eef242543bed1f9fc":[3,1,22,1,0]
+"structfiftyone_degrees_profile.html#a3bdd7c2ee87dc55f5495d36ab0a63c80":[3,1,22,0,2]
 };

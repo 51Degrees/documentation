@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"structfiftyone_degrees_data_set_base.html#afb6fe7080fd386b7b4233ce5c87ce3c2":[6,0,8,0,0],
+"structfiftyone_degrees_data_set_ipi.html":[6,1,9],
+"structfiftyone_degrees_data_set_ipi.html#a16f0daebcf1c19201adc0bc7590a039e":[6,1,9,4],
+"structfiftyone_degrees_data_set_ipi.html#a1fa346234e114cac3efbc347faf45d64":[6,1,9,16],
 "structfiftyone_degrees_data_set_ipi.html#a3a862c9a8b85ea9f58a5c665dfdbb649":[6,1,9,8],
 "structfiftyone_degrees_data_set_ipi.html#a43cd33378587bf5971c08e0115628643":[6,1,9,10],
 "structfiftyone_degrees_data_set_ipi.html#a552e9e6022fd4c5572b8588b0b26aff9":[6,1,9,13],
@@ -159,8 +163,8 @@ var NAVTREEINDEX4 =
 "structfiftyone_degrees_pool_item.html#ad0a7957795889e1a221afa7c36d964e0":[6,0,21,0,0],
 "structfiftyone_degrees_pool_item.html#afd826a5d7999e0f65694a1b3a9520bf5":[6,0,21,0,1],
 "structfiftyone_degrees_profile.html":[6,0,22,0],
+"structfiftyone_degrees_profile.html#a3bdd7c2ee87dc55f5495d36ab0a63c80":[6,0,22,0,2],
 "structfiftyone_degrees_profile.html#a46ee58b927f5ced78326ab8fafd4d482":[6,0,22,0,0],
-"structfiftyone_degrees_profile.html#a62508d300700187959b203ed019e1f15":[6,0,22,0,2],
 "structfiftyone_degrees_profile.html#aae9d44323c813f2befaccfdf4ac4ea24":[6,0,22,0,1],
 "structfiftyone_degrees_profile_offset.html":[6,0,22,1],
 "structfiftyone_degrees_profile_offset.html#a805d5eca2b681e5eef242543bed1f9fc":[6,0,22,1,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX4 =
 "structfiftyone_degrees_tree_node.html#abee41f03e55ca10a28f824791f429094":[6,0,31,0,1],
 "structfiftyone_degrees_tree_node.html#ad70f0a83353a2219711bb67029e7f0e5":[6,0,31,0,5],
 "structfiftyone_degrees_tree_root.html":[6,0,31,1],
-"structfiftyone_degrees_tree_root.html#a35b4cd7e9a9a42beec53891a98477992":[6,0,31,1,0],
-"structfiftyone_degrees_tree_root.html#aeef0950047d7cd7ddf97328bc7252323":[6,0,31,1,1],
-"structfiftyone_degrees_value.html":[6,0,32,0],
-"structfiftyone_degrees_value.html#a4f520838cc59ced4e3d608c54cf1421c":[6,0,32,0,3],
-"structfiftyone_degrees_value.html#a745b37aba51f1f6eb4680201abd4b23c":[6,0,32,0,2]
+"structfiftyone_degrees_tree_root.html#a35b4cd7e9a9a42beec53891a98477992":[6,0,31,1,0]
 };

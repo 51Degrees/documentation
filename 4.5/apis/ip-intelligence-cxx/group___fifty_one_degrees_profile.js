@@ -3,7 +3,7 @@ var group___fifty_one_degrees_profile =
     [ "fiftyoneDegreesProfile", "structfiftyone_degrees_profile.html", [
       [ "componentIndex", "structfiftyone_degrees_profile.html#a46ee58b927f5ced78326ab8fafd4d482", null ],
       [ "profileId", "structfiftyone_degrees_profile.html#aae9d44323c813f2befaccfdf4ac4ea24", null ],
-      [ "valueCount", "structfiftyone_degrees_profile.html#a62508d300700187959b203ed019e1f15", null ]
+      [ "valueCount", "structfiftyone_degrees_profile.html#a3bdd7c2ee87dc55f5495d36ab0a63c80", null ]
     ] ],
     [ "fiftyoneDegreesProfileOffset", "structfiftyone_degrees_profile_offset.html", [
       [ "offset", "structfiftyone_degrees_profile_offset.html#a805d5eca2b681e5eef242543bed1f9fc", null ],
@@ -12,6 +12,7 @@ var group___fifty_one_degrees_profile =
     [ "fiftyoneDegreesProfileIterateMethod", "group___fifty_one_degrees_profile.html#ga3b3b294644686c4352c12e115aa4f962", null ],
     [ "fiftyoneDegreesProfileIterateValueIndexesMethod", "group___fifty_one_degrees_profile.html#ga72bba09697fa4cfe45c8bba64b6e98a7", null ],
     [ "fiftyoneDegreesProfileOffsetValueExtractor", "group___fifty_one_degrees_profile.html#gac40aefd8b4f84301690922192e5c28a5", null ],
+    [ "fiftyoneDegreesProfileValuesCountType", "group___fifty_one_degrees_profile.html#ga2c9c12c2fbafe102e1029fefd9365ba3", null ],
     [ "fiftyoneDegreesProfileGetByIndex", "group___fifty_one_degrees_profile.html#gae74dfe0de13a27417d62f84f0b4ca866", null ],
     [ "fiftyoneDegreesProfileGetByProfileId", "group___fifty_one_degrees_profile.html#gaeeb3316cd527b4c264c7f5a3d37248d9", null ],
     [ "fiftyoneDegreesProfileGetByProfileIdIndirect", "group___fifty_one_degrees_profile.html#ga1bb61958ad311b30f4277ab85c2db82e", null ],

@@ -1,5 +1,9 @@
 var NAVTREEINDEX5 =
 {
+"structfiftyone_degrees_tree_root.html#aeef0950047d7cd7ddf97328bc7252323":[6,0,31,1,1],
+"structfiftyone_degrees_value.html":[6,0,32,0],
+"structfiftyone_degrees_value.html#a4f520838cc59ced4e3d608c54cf1421c":[6,0,32,0,3],
+"structfiftyone_degrees_value.html#a745b37aba51f1f6eb4680201abd4b23c":[6,0,32,0,2],
 "structfiftyone_degrees_value.html#abc19ce808603379e6aaaafa0f1b7edf1":[6,0,32,0,1],
 "structfiftyone_degrees_value.html#acce0f19fa91c0aa79c60e05cd6f01b8a":[6,0,32,0,0],
 "structfiftyone_degrees_var_length_byte_array.html":[6,0,28,0],

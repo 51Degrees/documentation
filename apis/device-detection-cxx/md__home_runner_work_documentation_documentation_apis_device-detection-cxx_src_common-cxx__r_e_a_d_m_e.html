@@ -131,6 +131,13 @@ $(document).ready(function(){initNavTree('md__home_runner_work_documentation_doc
 <p>Exceptions are handled in the common library using the <code><a class="el" href="structfiftyone_degrees_exception.html" title="Structure used to represent a 51Degrees exception and passed into methods that might generate excepti...">fiftyoneDegreesException</a></code> structure. This logic can be disabled using the <code>FIFTYONE_DEGREES_EXCEPTIONS_DISABLED</code> directive, resulting in performance improvements.</p>
 <p>The options is enabled using the <code>FIFTYONE_DEGREES_EXCEPTIONS_DISABLED</code> compile flag, which can also be set through CMake using the <code>-DExceptionsDisabled=YES</code> option.</p>
 <p>WARNING: When exception handling is disabled, using the functionality in this library incorrectly can result in a segmentation fault instead of an exception being set.</p>
+<h3>ReducedFile</h3>
+<p>A reduced size data file has the following differences:</p><ul>
+<li><code>profileId</code> is removed from a <code><a class="el" href="structfiftyone_degrees_profile.html" title="Encapsulates a profile stored within a data set.">fiftyoneDegreesProfile</a></code>,</li>
+<li><code>fiftyoneDegreesProfile-&gt;valueCount</code> is 2 bytes instead of 4,</li>
+<li><code>descriptionOffset</code> is removed from <code><a class="el" href="structfiftyone_degrees_value.html" title="Value structure containing meta data relating to the value.">fiftyoneDegreesValue</a></code>.</li>
+</ul>
+<p>Enabling this option makes the API compatible with a reduced size 51Degrees data file. A few methods which use the removed fields cannot be implemented with this option, so an exception is set.</p>
 <h1 class="g-docs__section-heading">Tests</h1>
 <p>All unit, integration, and performance tests are built using the <a href="https://github.com/google/googletest">Google test framework</a>.</p>
 <h2>CMake</h2>
