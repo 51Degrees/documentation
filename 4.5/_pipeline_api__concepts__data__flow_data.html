@@ -66,13 +66,13 @@ $(document).ready(function(){initNavTree('_pipeline_api__concepts__data__flow_da
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__index.html">Types of Data</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__flow_data.html">Flow Data</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Flow Data </h2></div><!--header-->
+<h1 class="g-docs__page-title">Flow Data </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
+<section class="g-docs__section"><h2 class="g-docs__section-heading">Introduction</h2>
 <p><b>Flow data</b> is a container that encapsulates all the data related to a single <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> process request. This includes input and output data as well as metadata related to the processing such as the details of any errors that occurred.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#flow-data">Specification</a> for more technical details.</p>
-<h1 class="g-docs__section-heading">Data structure</h1>
+<h2 class="g-docs__section-heading">Data structure</h2>
 <p><b>Flow data</b> has several sub-containers that are used to segment the data that it contains:</p><ul>
 <li><a class="el" href="_pipeline_api__concepts__data__flow_data.html#PipelineApi_Concepts_Data_FlowData_Evidence">Evidence</a></li>
 <li><a class="el" href="_pipeline_api__concepts__data__flow_data.html#PipelineApi_Concepts_Data_FlowData_ElementData">Element data</a></li>
@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__concepts__data__flow_da
 <p>The errors collection stores the details of any errors that occur during processing. The language's default exception handling mechanism will be used to catch and record any exceptions that occur when a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow element</a> is processing. However, the processing of later <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow elements</a> will continue as normal.</p>
 <p>By default, once all <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow elements</a> have been processed, an exception will be thrown with details of any errors that have occurred.</p>
 <p>The <a class="el" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html">pipeline builder</a> has an option to modify this behavior so that exceptions are totally suppressed. In this situation, the caller is responsible for handling any exceptions by checking the errors collection after processing.</p>
-<h1 class="g-docs__section-heading">Lifecycle</h1>
+<h2 class="g-docs__section-heading">Lifecycle</h2>
 <h2>Creation</h2>
 <p><b>Flow data</b> is only ever created by a <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a>, when the <code>CreateFlowData</code> method is called. This allows the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> to create the <b>flow data</b> internal data structures using implementations that are most appropriate for the configuration of the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow elements</a> in the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a>.</p>
 <p>For example, thread-safe but slower data collections only need to be used if the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> is configured to execute <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">elements</a> in <a class="el" href="_pipeline_api__features__parallel_execution.html">parallel</a>.</p>

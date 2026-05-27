@@ -66,13 +66,13 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__error_handlin
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__index.html">API Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__error_handling.html">Error Handling</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Error Handling </h2></div><!--header-->
+<h1 class="g-docs__page-title">Error Handling </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
+<section class="g-docs__section"><h2 class="g-docs__section-heading">Introduction</h2>
 <p>The <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> can contain and number or configuration of <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow elements</a>, including custom third-party ones. As such, it must have a robust and consistent error handling solution.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/exception-handling.md#">Specification</a> for more technical details.</p>
-<h1 class="g-docs__section-heading">Approach</h1>
+<h2 class="g-docs__section-heading">Approach</h2>
 <p>Almost all languages have <code>try/catch</code> constructs, so these are used by the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> code when calling functions on flow elements.</p>
 <p>If the flow element code raises an error, it will be handled by the catch statement.</p>
 <p>Any error that occurs will be logged in the <code>Errors</code> section of the current <a class="el" href="_pipeline_api__concepts__data__flow_data.html">flow data</a>. The pipeline then proceeds to execution of the next <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow element</a>.</p>
@@ -81,12 +81,12 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__error_handlin
 <li>If the <a class="el" href="_pipeline_api__concepts__data__flow_data.html">flow data</a> contains any errors then an error will be raised using the standard language features.</li>
 <li>Execution will return to the caller of the <code>Process</code> function. Any errors will effectively be hidden/suppressed unless <a class="el" href="_pipeline_api__features__logging.html">logging</a> is configured or the <code>Errors</code> section of the <a class="el" href="_pipeline_api__concepts__data__flow_data.html">flow data</a> is checked by the caller.</li>
 </ol>
-<h1 class="g-docs__section-heading">Configuration</h1>
+<h2 class="g-docs__section-heading">Configuration</h2>
 <p>Error handling is configured using the 'SuppressProcessExceptions' setting. If set to <code>true</code>, errors are hidden/suppressed. If <code>false</code>, an error will be raised at the end of <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> execution.</p>
 <p>The default value is <code>false</code>. This is recommended for development/testing to highlight issues.</p>
 <p>When running the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> in production, we recommend setting this to <code>true</code> in order to prevent unexpected errors from crashing the application.</p>
 <p>As with all configuration settings, this can be set in code or via a <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> configuration file (see <a href="https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/Cloud/Framework-Web/App_Data/51Degrees.json#L41">.NET example</a>).</p>
-<h1 class="g-docs__section-heading">Testing the unhappy path scenarios</h1>
+<h2 class="g-docs__section-heading">Testing the unhappy path scenarios</h2>
 <p>In each integration there are dependencies that can fail, such as network connectivity, DNS, load balancers, web servers etc.</p>
 <p>This is especially true for scenarios relying on 51Degrees Cloud Service. There are several steps you need to take to ensure your integration is safe against such failures and won't crash in production.</p>
 <h2>Simulating the failure</h2>

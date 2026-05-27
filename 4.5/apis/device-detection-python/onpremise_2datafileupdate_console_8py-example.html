@@ -63,7 +63,7 @@ $(document).ready(function(){initNavTree('onpremise_2datafileupdate_console_8py-
 </script>
 <div id="doc-content" class="g-docs__content">
 <div class="g-docs__header">
-<h2 class="g-docs__page-title">onpremise/datafileupdate_console.py</h2></div><!--header-->
+<h1 class="g-docs__page-title">onpremise/datafileupdate_console.py</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <p>This example illustrates various parameters that can be adjusted when using the on-premise device detection engine, and controls when a new data file is sought and when it is loaded by the device detection software. Three main aspects are demonstrated:</p><ul>
@@ -73,14 +73,14 @@ $(document).ready(function(){initNavTree('onpremise_2datafileupdate_console_8py-
 </ul>
 <h2>License Key</h2>
 <p>In order to test this example you will need a 51Degrees Enterprise license which can be purchased from our <a href="//51degrees.com/pricing/annual">pricing page</a>. Look for our "Bigger" or "Biggest" options.</p>
-<h1 class="g-docs__section-heading">Data Files</h1>
+<h2 class="g-docs__section-heading">Data Files</h2>
 <p>You can find out more about data files, licenses etc. at our <a href="//51degrees.com/resources/faqs">FAQ page</a></p>
 <h2>Enterprise Data File</h2>
 <p>Enterprise (fully-featured) data files are typically released by 51Degrees four days a week (Mon-Thu) and on-premise deployments can fetch and download those files automatically. Equally, customers may choose to download the files themselves and move them into place to be detected by the 51Degrees filesystem watcher.</p>
 <h3>Manual Download</h3>
 <p>If you prefer to download files yourself, you may do so here: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a name="l00001"></a><span class="lineno">    1</span>&#160;https://distributor.51degrees.com/api/v2/download?LicenseKeys=&lt;your_license_key&gt;&amp;Type=27&amp;Download=<span class="c-code__keyword">True</span>&amp;Product=22</div></div><h2>Lite Data File</h2>
 <p>Lite data files (free-to-use, limited capabilities, no license key required) are created roughly once a month and cannot be updated using auto-update, they may be downloaded from <a href="https://github.com/51Degrees/device-detection-data">Github</a> and are included with source distributions of this software.</p>
-<h1 class="g-docs__section-heading">Update on Start-Up</h1>
+<h2 class="g-docs__section-heading">Update on Start-Up</h2>
 <p>You can configure the pipeline builder to download an Enterprise data file on start-up. </p><h2>Pre-Requisites</h2>
 <ul>
 <li>a license key</li>
@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('onpremise_2datafileupdate_console_8py-
 <li>a DataFileUpdateService must be supplied <div class="c-code__block c-code__block--outline"><div class="c-code__line"><a name="l00001"></a><span class="lineno">    1</span>&#160;    update_event = UpdateEvent()</div><div class="c-code__line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    update_service = DataFileUpdateService()</div><div class="c-code__line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    update_service.on_complete(<span class="c-code__keyword">lambda</span> status, file: update_event.set(status))</div><div class="c-code__line"><a name="l00004"></a><span class="lineno">    4</span>&#160;...</div><div class="c-code__line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    data_file_update_service = update_service,</div></div></li>
 <li>update on start-up must be specified, which will cause pipeline creation to block until a file is downloaded <div class="c-code__block c-code__block--outline"><div class="c-code__line"><a name="l00001"></a><span class="lineno">    1</span>&#160;update_on_start = <span class="c-code__keyword">True</span>,</div></div></li>
 </ul>
-<h1 class="g-docs__section-heading">File System Watcher</h1>
+<h2 class="g-docs__section-heading">File System Watcher</h2>
 <p>You can configure the pipeline builder to watch for changes to the currently loaded device detection data file, and to replace the file currently in use with the new one. This is useful, for example, if you wish to download and update the device detection file "manually" - i.e. you would download it then drop it into place with the same path as the currently loaded file. That location is checked periodically (by default every 30 mins) and this frequency can be configured.</p>
 <h2>Pre-Requisites</h2>
 <ul>
@@ -121,13 +121,13 @@ $(document).ready(function(){initNavTree('onpremise_2datafileupdate_console_8py-
 <li>Set the frequency in seconds that the pipeline should check for updates to data files. A recommended polling interval in a production environment is around 30 minutes. <div class="c-code__block c-code__block--outline"><div class="c-code__line"><a name="l00001"></a><span class="lineno">    1</span>&#160;polling_interval = (10*60),</div></div></li>
 <li>Set the max amount of time in seconds that should be added to the polling interval. This is useful in datacenter applications where multiple instances may be polling for updates at the same time. A recommended ammount in production environments is 600 seconds. <div class="c-code__block c-code__block--outline"><div class="c-code__line"><a name="l00001"></a><span class="lineno">    1</span>&#160;update_time_maximum_randomisation = (10*60),</div></div></li>
 </ul>
-<h1 class="g-docs__section-heading">Location</h1>
+<h2 class="g-docs__section-heading">Location</h2>
 <p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-python/blob/main/fiftyone_devicedetection_examples/fiftyone_devicedetection_examples/onpremise/datafileupdate_console.py">GitHub</a>.</p>
 <p>
 <p>This example requires a subscription to 51Degrees Device Data, a subscription can be acquired 
 from the 51Degrees <a href="https://51degrees.com/pricing">pricing page</a>.</p>
 </p>
-<h1 class="g-docs__section-heading">Required PyPi Dependencies:</h1>
+<h2 class="g-docs__section-heading">Required PyPi Dependencies:</h2>
 <ul>
 <li><a href="https://pypi.org/project/fiftyone-devicedetection/">fiftyone_devicedetection</a></li>
 </ul>

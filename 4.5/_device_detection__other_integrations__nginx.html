@@ -66,13 +66,13 @@ $(document).ready(function(){initNavTree('_device_detection__other_integrations_
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__other_integrations__index.html">Other Integrations</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__other_integrations__nginx.html">Nginx</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Nginx </h2></div><!--header-->
+<h1 class="g-docs__page-title">Nginx </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
-<p>We have also integrated our Device Detection to Nginx. This page describes in detail how you can install and use our module in your Nginx environment. </p><h1 class="g-docs__section-heading">Prerequisites</h1>
+<section class="g-docs__section"><h2 class="g-docs__section-heading">Introduction</h2>
+<p>We have also integrated our Device Detection to Nginx. This page describes in detail how you can install and use our module in your Nginx environment. </p><h2 class="g-docs__section-heading">Prerequisites</h2>
 <p>For the latest tested versions and tested platforms information, please refer to our <a class="el" href="_product_summaries__tested_versions.html">tested versions</a> page.</p>
-<h1 class="g-docs__section-heading">Installing</h1>
+<h2 class="g-docs__section-heading">Installing</h2>
 <p>If you haven’t already, you can obtain a copy of the latest version of the API <a href="https://github.com/51Degrees/device-detection-nginx">here</a>.</p>
 <p>To build the module only, run the following command. This will output to <code>ngx_http_51D_module.so</code> in the <code>build/modules</code> directory. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make module</div></div><p> <br />
 </p>
@@ -80,7 +80,7 @@ $(document).ready(function(){initNavTree('_device_detection__other_integrations_
 </p>
 <p>To build and link the module statically with Nginx, use the <code>STATIC_BUILD</code> variable. e.g., </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make install STATIC_BUILD=1</div></div><p> <br />
 </p>
-<p>Finally, run the 51Degrees tests with the default 51Degrees Lite data file included in the <code>device-detection-cxx\device-detection-data</code> directory. Make sure to build the module with <code>make install</code> command as the tests do not work on a static build. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make test</div></div><p>To run the 51Degrees together with the Nginx test suite, run the following command: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make test-full</div></div><p>These do not run all the required tests as some tests require properties that are not supported with the Lite version of the data file. To run all tests, obtain a data file that provides properties: JavascriptHardwareProfile, ScreenPixelsWidthJavascript, and ScreenPixelsWidth. Then, use the <code>FIFTYONEDEGREES_DATAFILE</code> variable to specify the file name to run the tests with. The new data file should be placed in the <code>device-detection-cxx\device-detection-data</code> folder and should have a different name to <code>51Degrees-LiteV4.1.hash</code>. If tests still fail, obtain a data file with any other properties used in the tests. Below is an example of running tests with a different data file named <code>51Degrees-EnterpriseV4.1.hash</code>: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make [test|test-full] FIFTYONEDEGREES_DATAFILE=51Degrees-EnterpriseV4.1.hash</div></div><h1 class="g-docs__section-heading">Configuring the Nginx API</h1>
+<p>Finally, run the 51Degrees tests with the default 51Degrees Lite data file included in the <code>device-detection-cxx\device-detection-data</code> directory. Make sure to build the module with <code>make install</code> command as the tests do not work on a static build. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make test</div></div><p>To run the 51Degrees together with the Nginx test suite, run the following command: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make test-full</div></div><p>These do not run all the required tests as some tests require properties that are not supported with the Lite version of the data file. To run all tests, obtain a data file that provides properties: JavascriptHardwareProfile, ScreenPixelsWidthJavascript, and ScreenPixelsWidth. Then, use the <code>FIFTYONEDEGREES_DATAFILE</code> variable to specify the file name to run the tests with. The new data file should be placed in the <code>device-detection-cxx\device-detection-data</code> folder and should have a different name to <code>51Degrees-LiteV4.1.hash</code>. If tests still fail, obtain a data file with any other properties used in the tests. Below is an example of running tests with a different data file named <code>51Degrees-EnterpriseV4.1.hash</code>: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make [test|test-full] FIFTYONEDEGREES_DATAFILE=51Degrees-EnterpriseV4.1.hash</div></div><h2 class="g-docs__section-heading">Configuring the Nginx API</h2>
 <p>Before you start performing any detections, you may wish to configure the detection.</p>
 <h2>Init Settings</h2>
 <p>Detection configuration directives.</p>
@@ -160,7 +160,7 @@ Default: 51D_set_resp_headers off<br />
 Context: main, server, location<br />
 Allow Client Hints to be set in response headers where it is applicable to the user agent (e.g. Chrome 89 or above) so that more evidence can be returned in subsequent requests, allowing more accurate detection. Value set in a block overwrites values set in precedent blocks (e.g. value set in <code>location</code> block will overwrite value set in <code>server</code> and <code>main</code> blocks). This will only be available from the 4.3.0 version onwards.   </td></tr>
 </table>
-</div><h1 class="g-docs__section-heading">New features</h1>
+</div><h2 class="g-docs__section-heading">New features</h2>
 <p>Following set of new features has been introduced in Nginx Device Detection V4 module:</p><ul>
 <li>Detection match metrics</li>
 <li>Javascript and property overrides</li>
@@ -175,7 +175,7 @@ Allow Client Hints to be set in response headers where it is applicable to the u
 <p>Nginx Device Detection V4 module supports <code>False Positives</code> features as described at <a class="el" href="_device_detection__features__false_positive_control.html">False Positives</a> via settings of directives <code>51D_drift</code>, <code>51D_difference</code>, and <code>51D_allow_unmatched</code>. When <code>AllowUnmatched</code> is set to <code>off</code>, if <code>HasValue</code> is <code>false</code>, a <code>NoMatch</code> will be returned. Else, if <code>AllowUnmatched</code> is set to <code>on</code>, when a match can not be found, default profile will be returned such as <code>Unknown</code>, <code>N/A</code>, or similar.</p>
 <h2>User-Agent Client Hint supports</h2>
 <p>User-Agent Client Hint was introduced by Google in Chrome, preventing traditional detection using User-Agents from performing accurate matches. In Nginx Device Detection V4 module, <code>51D_set_resp_headers</code> was implemented to allow Client Hint request headers to be set in responses so that more evidence is provided in subsequent requests, allowing better matches.</p>
-<h1 class="g-docs__section-heading">Other resources</h1>
+<h2 class="g-docs__section-heading">Other resources</h2>
 <p>More details can be found at:</p><ul>
 <li><a href="https://github.com/51Degrees/device-detection-nginx/blob/main/README%2Emd">README</a>.</li>
 <li><a href="/documentation/4.5/apis/device-detection-nginx/examples.html">Examples</a></li>

@@ -66,13 +66,13 @@ $(document).ready(function(){initNavTree('_device_detection__features__u_a_c_h__
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__index.html">Device Detection Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__u_a_c_h__index.html">User-Agent Client Hints</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__u_a_c_h__headers.html">HTTP Headers</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">HTTP Headers </h2></div><!--header-->
+<h1 class="g-docs__page-title">HTTP Headers </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
+<section class="g-docs__section"><h2 class="g-docs__section-heading">Introduction</h2>
 <p>User-Agent Client Hints (UA-CH) values can be obtained using HTTP headers or a <a href="https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API">JavaScript API</a>. This page explains how to use the HTTP headers approach with our API.</p>
 <p>The <a class="el" href="_device_detection__features__u_a_c_h__javascript.html">UA-CH JavaScript page</a> explains the alternative. The <a class="el" href="_device_detection__features__u_a_c_h__overview.html">Overview page</a> includes advice if you're unsure which approach to take.</p>
-<h1 class="g-docs__section-heading">Background</h1>
+<h2 class="g-docs__section-heading">Background</h2>
 <p>In the past, device detection worked primarily by examining the value of the User-Agent HTTP header. This header is always sent as part of the first request to a web server, meaning device information was available immediately on the server-side.</p>
 <p>With UA-CH, only a limited subset of information is sent as part of the first request. If the server wishes to know more, then it needs to set a HTTP header in the response to request the additional detail.</p>
 <p>The 51Degrees API will automatically determine the names and values of any response headers that need to be set based on the initial information.</p>

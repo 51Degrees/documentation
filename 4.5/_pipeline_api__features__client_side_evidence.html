@@ -66,10 +66,10 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__client_side_e
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__index.html">API Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__client_side_evidence.html">Client-side Evidence</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Client-side Evidence </h2></div><!--header-->
+<h1 class="g-docs__page-title">Client-side Evidence </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
+<section class="g-docs__section"><h2 class="g-docs__section-heading">Introduction</h2>
 <p><a class="el" href="_pipeline_api__concepts__data__evidence.html">Evidence</a> will usually be drawn from one of four places:</p>
 <ul>
 <li>HTTP headers</li>
@@ -79,7 +79,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__client_side_e
 </ul>
 <p>Any device making a request to a web site will include some of this information. For example, the User-Agent HTTP header is almost always populated as part of a request. In some cases though, additional <a class="el" href="_pipeline_api__concepts__data__evidence.html">evidence</a> providing more detail can be obtained from code running directly on the client device. In some cases, this may even be required. For example, this technique can be used to retrieve the latitude and longitude from devices that have this capability.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/web-integration.md#client-side-features">Specification</a> for more technical details.</p>
-<h1 class="g-docs__section-heading">Client-side data</h1>
+<h2 class="g-docs__section-heading">Client-side data</h2>
 <p>When using the client-side evidence integration, the first step is for the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> to produce a JSON representation of all the properties that have been populated by <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow elements</a>.</p>
 <p>Each property may also have some metadata associated with it in the form of another property or attribute. The naming convention of metadata properties is the related property name with a suffix. e.g.,</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&quot;device&quot;: {</div><div class="c-code__line">    &quot;javascript&quot;: &quot;&quot;,</div><div class="c-code__line">    &quot;javascriptdelayexecution&quot;: true</div><div class="c-code__line">}</div></div><p>List of suffixes:</p>
@@ -94,11 +94,11 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__client_side_e
 <td class="c-table__cell"><code>evidenceproperties</code>  </td><td class="c-table__cell">A list of JavaScript properties which need to be evaluated first before this property can be populated.   </td></tr>
 </table>
 </div><p>This JSON data is sent to the client along with some JavaScript that is used to handle updating that JSON payload with new property values determined from client-side evidence as well as provide easy access to the property values in client-side JavaScript code.</p>
-<h1 class="g-docs__section-heading">JavaScript properties</h1>
+<h2 class="g-docs__section-heading">JavaScript properties</h2>
 <p><a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html">Element properties</a> include a 'Type' property that indicates the type of the data represented by the property's values.</p>
 <p>JavaScript properties are simply properties that have their Type set to 'JavaScript'. The value of such a property should be a snippet of JavaScript code that, when run on the client device, will obtain some extra values from the device.</p>
 <p><a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html">Element properties</a> also include a 'DelayExecution' property which indicates if a 'JavaScript' property should not be executed on the client straight away and a 'EvidenceProperties' property which contains a list of JavaScript properties that, when executed, will obtain additional <a class="el" href="_pipeline_api__concepts__data__evidence.html">evidence</a> that can help in determining the value of this property.</p>
-<h1 class="g-docs__section-heading">How it works</h1>
+<h2 class="g-docs__section-heading">How it works</h2>
 <p>The JSON data management JavaScript will check for any properties of type 'JavaScript' and execute them on the client or if the 'DelayExecution' property is set to true then the 'JavaScript' will only be executed in response to some user action. There are then two possible mechanisms to get these extra values back to the server in order for them to be included in the evidence used by the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a>.</p>
 <ol type="1">
 <li>A background callback to the server yields updated JSON data that replaces the existing JSON payload.</li>
@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__client_side_e
 <h2>Storage Mechanism</h2>
 <p>By default, when using the 51Degrees Cloud service, values returned from client-side evidence processing are stored using <code>sessionStorage</code>. This avoids setting any cookies unless explicitly required. However, this behaviour can be changed by adding the <code>fod-js-enable-cookies=true</code> query parameter to the Resource Key URL. When set, this instructs the client-side script to use <code>cookies</code> instead of <code>sessionStorage</code> for storing data.</p>
 <p>For more details on this parameter and related options, see the <a href="https://cloud.51degrees.com/api-docs/index.html">Cloud API Documentation</a>.</p>
-<h1 class="g-docs__section-heading">Web integration</h1>
+<h2 class="g-docs__section-heading">Web integration</h2>
 <p>The <b>client-side evidence</b> feature requires multiple <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> components to operate together. There are <a class="el" href="_pipeline_api__features__web_integration.html">web integration</a> solutions for various web frameworks that handle most of the complexity for you.</p>
 <p>These solutions are generally enabled by default but do require some additional configuration in order to function. The implementations vary significantly based on the language and framework, but the core steps will involve the following:</p>
 <ul>
@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__client_side_e
 </ul>
 <p>(*) These tasks are handled automatically by the ASP.NET Core, Java MVC and Java Servlet integrations</p>
 <p>For more detailed, language-specific steps, see the <a class="el" href="_pipeline_api__examples__web_integration.html">web integration examples</a> or the engine-specific examples such as the <a class="el" href="_device_detection__examples__getting_started__web__index.html">device detection examples</a> or <a class="el" href="_reverse_geocoding__examples__web_integration__examples.html">reverse geocoding examples</a>.</p>
-<h1 class="g-docs__section-heading">Static and Quasi-Static Script Approaches</h1>
+<h2 class="g-docs__section-heading">Static and Quasi-Static Script Approaches</h2>
 <h2>Overview</h2>
 <p>51Degrees provides multiple ways to integrate device detection using client-side JavaScript evidence collection. The default approach is a dynamic integration scenario, but semi-static and conceptual static methods can also be used depending on implementation constraints.</p>
 <h3>Dynamic Scenario (Default)</h3>

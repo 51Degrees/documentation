@@ -67,15 +67,15 @@ $(document).ready(function(){initNavTree('md__home_runner_work_documentation_doc
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engi1f2a0eefaced8c6f189b920a08f7c804.html">51Degrees Common Code Library</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">51Degrees Common Code Library </h2></div><!--header-->
+<h1 class="g-docs__page-title">51Degrees Common Code Library </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><img src="https://51degrees.com/DesktopModules/FiftyOne/Distributor/Logo.ashx?utm_source=github&utm_medium=repository&utm_content=home&utm_campaign=c-open-source" alt="51Degrees" title="Data rewards the curious" class="inline"/>
  <b>51Degrees Common C Code</b></p>
 <p><a href="https://51degrees.com/device-detection-cxx/4.5/index.html" title="Reference documentation">Reference Documentation</a></p>
-<h1 class="g-docs__section-heading">Introduction</h1>
+<h2 class="g-docs__section-heading">Introduction</h2>
 <p>The 51Degrees Common Code Library groups common methods and structures used in 51Degrees APIs. This includes methods to stream from files, data sets, collections of items, arrays, memory management among other things. Anything which is not specific to a functional API is contained here as generic implementations which can be reused in multiple specific use cases.</p>
-<h1 class="g-docs__section-heading">Naming Conventions</h1>
+<h2 class="g-docs__section-heading">Naming Conventions</h2>
 <p>All public methods and structures are prefixed by <code>fiftyoneDegrees</code> then the name of the area they belong to, e.g. the <code>fiftyoneDegreesCollection</code> prefix indicates it exists in <code>collection.c/h</code>.</p>
 <p>The next part of a method name is the verb which describes what the method does, common terms are:</p>
 <div class="g-table g-table--overflow"><table class="c-table">
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_documentation_doc
 </table>
 </div><p>e.g. the <code>fiftyoneDegreesDataSetGet</code> returns a pointer to a data set which will need to be released with the <code>fiftyoneDegreesDataSetRelease</code> method.</p>
 <p>Finally, the optional last part completes the description of the method's use, e.g. <code>fiftyoneDegreesDataSetInitFromMemory</code> or <code>fiftyoneDegreesDataSetInitFromFile</code>.</p>
-<h1 class="g-docs__section-heading">Installing</h1>
+<h2 class="g-docs__section-heading">Installing</h2>
 <h2>Dependencies</h2>
 <p>When compiling on Linux, there is a dependency on <code>libatomic</code>. This is usually already present as part of the C libraries, and is included as part of GCC 5 and above. On other systems, can be installed with:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">sudo apt-get install libatomic1</div></div><h2>Using CMake</h2>
@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_documentation_doc
 <li><code>descriptionOffset</code> is removed from <code>fiftyoneDegreesValue</code>.</li>
 </ul>
 <p>Enabling this option makes the API compatible with a reduced size 51Degrees data file. A few methods which use the removed fields cannot be implemented with this option, so an exception is set.</p>
-<h1 class="g-docs__section-heading">Tests</h1>
+<h2 class="g-docs__section-heading">Tests</h2>
 <p>All unit, integration, and performance tests are built using the <a href="https://github.com/google/googletest">Google test framework</a>.</p>
 <h2>CMake</h2>
 <p>CMake automatically pulls in the latest Google Test from GitHub.</p>
@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_documentation_doc
 <h2>Visual Studio</h2>
 <p>Tests in the Visual Studio solution automatically install the GTest dependency via a NuGet package. However, in order for the tests to show up in the Visual Studio test explorer, the <a href="https://marketplace.visualstudio.com/items?itemName=VisualCPPTeam.TestAdapterforGoogleTest">Test Adapter for Google Test</a> extension must be installed.</p>
 <p>The VisualStudio solution includes <code>FiftyOne.Common.Tests</code>, which can be run through the standard Visual Studio test runner.</p>
-<h1 class="g-docs__section-heading">Referencing the library</h1>
+<h2 class="g-docs__section-heading">Referencing the library</h2>
 <h2>CMake</h2>
 <p>When building using CMake, static libraries are built in stages. These can be included in an executable just as they are in the examples. If these are included through a CMake file, the dependencies will be resolved automatically. However, if linking another way, all dependencies will need to be included from the <code>lib/</code> directory. For example, to use the Common C library, the <code>fiftyone-common-c</code> static library would need to be included, and for C++, <code>fiftyone-common-cxx</code> is needed in addition.</p>
 <h2>Visual Studio</h2>

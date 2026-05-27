@@ -66,14 +66,14 @@ $(document).ready(function(){initNavTree('_ip_intelligence__features__diversity.
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__features__index.html">IP Intelligence Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__features__diversity.html">Diversity</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Diversity </h2></div><!--header-->
+<h1 class="g-docs__page-title">Diversity </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><h1 class="g-docs__section-heading">Overview</h1>
+<section class="g-docs__section"><h2 class="g-docs__section-heading">Overview</h2>
 <p>Diversity properties are used to express how many different <a class="el" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles">profiles</a> for a specific <a class="el" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components">component</a> are seen within an IP range. This can be used to make various conclusions about what traffic from a certain range is likely to be. A diversity can relate to any <a class="el" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components">component</a>, an example is <code>HardwareDiversity</code>, which is the number of different hardware profiles. This is different from the number of unique physical devices, as there could be 2 of the same model smartphone.</p>
 <p>Properties of this type have values between 0-10, where 0 indicates unknown, 1 is a low diversity, and 10 is high diversity.</p>
 <p>If, for an IP range, there is an average of 1 profile per IP, then the diversity score would be 1. However, if there were 10 or more profiles per IP, the score would be 10. This is a slight simplification, but is generally accurate. Details of the full calculation are in the <a href="#calculation">calculation</a> section.</p>
-<h1 class="g-docs__section-heading">Properties</h1>
+<h2 class="g-docs__section-heading">Properties</h2>
 <p>There are 3 diversity properties in the IP Intelligence product:</p>
 <div class="g-table g-table--overflow"><table class="c-table">
 <tr class="c-table__row--heading">
@@ -85,7 +85,7 @@ $(document).ready(function(){initNavTree('_ip_intelligence__features__diversity.
 <tr class="c-table__row">
 <td class="c-table__cell">PlatformDiversity  </td><td class="c-table__cell">Diversity of OS name and version in an IP range e.g. <code>Windows 10</code>, <code>Android 16</code>.   </td></tr>
 </table>
-</div><h1 class="g-docs__section-heading">Values</h1>
+</div><h2 class="g-docs__section-heading">Values</h2>
 <p>For a diversity property, the following values can be returned:</p>
 <div class="g-table g-table--overflow"><table class="c-table">
 <tr class="c-table__row--heading">
@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('_ip_intelligence__features__diversity.
 <h3>Consistency Weight</h3>
 <p>If we see 1 profile 1000 times for an IP, but another 5 profiles are seen only once each, this will not give a score of 6. This is because profiles where the count is below the average make a smaller contribution.</p>
 <p>This helps to keep values for IPs like the example above low, where the majority of the events are for 1 profile. So values are a reflection of the distribution of traffic, not just the count.</p>
-<h1 class="g-docs__section-heading">Calculation</h1>
+<h2 class="g-docs__section-heading">Calculation</h2>
 <p>The formula used to calculate diversity value for a single IP is:</p>
 <div class="image">
 <object type="image/svg+xml" data="diversity-single.svg">diversity-single.svg</object>

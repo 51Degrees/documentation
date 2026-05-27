@@ -66,27 +66,27 @@ $(document).ready(function(){initNavTree('_device_detection__features__robots_tx
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__index.html">Device Detection Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__robots_txt.html">Robots.txt Generator</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Robots.txt Generator </h2></div><!--header-->
+<h1 class="g-docs__page-title">Robots.txt Generator </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
+<section class="g-docs__section"><h2 class="g-docs__section-heading">Introduction</h2>
 <p>A <code>robots.txt</code> file is a plain text file hosted at the root of a website (for example <code><a href="https://example.com/robots.txt">https://example.com/robots.txt</a></code>) that tells web crawlers which parts of the site they are or are not allowed to access. It follows the <a href="https://www.rfc-editor.org/rfc/rfc9309.html">Robots Exclusion Protocol</a>, where each block declares one or more <code>User-Agent</code> lines followed by <code>Allow:</code> and/or <code>Disallow:</code> directives that the named crawlers should respect.</p>
 <p>With the explosion of AI training crawlers, search bots, analytics agents, archival workers and security scanners, manually maintaining a <code>robots.txt</code> that correctly distinguishes between these uses is impractical. The crawler list changes constantly, individual operators ship multiple product tokens, and a single bot can serve more than one purpose.</p>
 <p>The <code>RobotsTxtEngine</code> shipped in the <a href="https://github.com/51Degrees/device-detection-dotnet/tree/main/FiftyOne.DeviceDetection.RobotsTxt">device-detection-dotnet</a> package solves this problem by generating a <code>robots.txt</code> document on demand from the up-to-date 51Degrees crawler dataset, driven by a small set of allow/disallow choices expressed in terms of <a class="el" href="_device_detection__features__crawlers.html">crawler usages</a> rather than individual user-agents.</p>
-<h1 class="g-docs__section-heading">Output Properties</h1>
+<h2 class="g-docs__section-heading">Output Properties</h2>
 <p>The engine produces two synthetic properties — they are not stored in any data file, they are computed at request time from the crawler dataset and the evidence supplied to the engine.</p>
 <h2>robotstxt.plaintext</h2>
 <p>A complete <code>robots.txt</code> document, ready to be served at the root of an arbitrary website. It contains one <code>User-Agent</code> / <code>Disallow: /</code> block per crawler whose usages are not in the allow set, followed by a wildcard <code>User-Agent: *</code> block that catches everything else.</p>
 <p>Hosting this string as the body of <code><a href="https://yoursite.com/robots.txt">https://yoursite.com/robots.txt</a></code> is a valid deployment.</p>
 <h2>robotstxt.annotatedtext</h2>
 <p>The same document as <code>robotstxt.plaintext</code>, but with comments added before each crawler block describing the crawler name, its declared usages and a reference URL where available. Useful for human review and documentation; not intended to be served verbatim, although it remains a valid <code>robots.txt</code> (lines starting with <code>#</code> are comments).</p>
-<h1 class="g-docs__section-heading">Input — Crawler Usages</h1>
+<h2 class="g-docs__section-heading">Input — Crawler Usages</h2>
 <p>The engine consumes evidence keyed by <a class="el" href="_device_detection__features__crawlers.html">crawler usage</a> values. For every <code>CrawlerUsage</code> value present in the loaded dataset, the engine accepts an evidence key of the form:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">query.robotstxt.&lt;usage&gt;</div></div><p>with a value of either <code>allow</code> or <code>disallow</code> (case-insensitive; <code>true</code>/<code>false</code>, <code>yes</code>/<code>no</code>, <code>enabled</code>/<code>disabled</code>, and <code>on</code>/<code>off</code> are also accepted as synonyms).</p>
 <p>For each crawler in the dataset, the engine checks whether <b>any</b> of that crawler's usages appears in the allow set. If so, the crawler is allowed by falling through to the wildcard catch-all block; otherwise the engine emits a dedicated <code>Disallow: /</code> block for every product token the crawler advertises.</p>
 <p>If the same usage is supplied as both <code>allow</code> and <code>disallow</code>, <code>disallow</code> wins.</p>
 <p>The full list of <code>CrawlerUsage</code> values — <code>Index</code>, <code>Train</code>, <code>Input</code>, <code>Search</code>, <code>Monitor</code>, <code>Archiving</code>, <code>Preview</code>, <code>Security</code>, <code>Analytics</code>, <code>Feed</code>, <code>Discovery</code> — is documented under <a class="el" href="_device_detection__features__crawlers.html">Crawlers</a>. Because the set is data-driven, querying the dataset directly is the way to discover the values currently supported. See <a href="#cloud-usage">Cloud Usage</a> below for the metadata endpoint.</p>
-<h1 class="g-docs__section-heading">Terms Document Locator (TDL)</h1>
+<h2 class="g-docs__section-heading">Terms Document Locator (TDL)</h2>
 <p>A Terms Document Locator (TDL) is a stable URL that points at the human-readable terms of use that crawlers in the wildcard <code>Allow:</code> block must comply with. When the engine receives the additional evidence key:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">query.robotstxt.tdl</div></div><p>the wildcard catch-all block at the bottom of the generated <code>robots.txt</code> is augmented with one <code>TDL:</code> line per supplied URI, each preceded by a <code># Terms &lt;url&gt;</code> comment. If no valid TDL URI is supplied the wildcard block is emitted as a plain <code>Allow: /</code>.</p>
 <p>The <code>tdl</code> value can be:</p>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('_device_detection__features__robots_tx
 <li>A short macro id that the engine resolves to a current URL via a <code>ITdlSourceResolver</code>. The default resolver ships with one known macro, **<code>MOW-SOCW</code>**, which substitutes the latest version of the <a href="https://github.com/movementforanopenweb/terms-documents">Movement for an Open Web Standard Online Content Wrapper</a> terms document.</li>
 </ul>
 <p>Entries that are neither absolute URIs nor known macro ids are silently dropped, per the IETF-Robots TDL specification. If everything supplied is dropped, the engine falls back to the standard <code>Allow: /</code> wildcard block.</p>
-<h1 class="g-docs__section-heading">Cloud Usage</h1>
+<h2 class="g-docs__section-heading">Cloud Usage</h2>
 <p>Robots.txt support has recently become available as part of 51Degrees Cloud. When enabled on a Resource Key, two additional steps make integration straightforward.</p>
 <h2>Discovering the available CrawlerUsage values</h2>
 <p>Before deciding which <code>query.robotstxt.&lt;usage&gt;</code> parameters to send, fetch the full list of allowed <code>CrawlerUsage</code> values from the cloud metadata API:</p>
@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('_device_detection__features__robots_tx
 <p>The response is a standard 51Degrees Cloud JSON document, with the generated text exposed under the <code>robotstxt</code> and <code>annotatedtext</code> element:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div><div class="c-code__line">  &quot;robotstxt&quot;: {</div><div class="c-code__line">    &quot;plaintext&quot;:     &quot;User-Agent: ExampleBot\nDisallow: /\n...&quot;,</div><div class="c-code__line">    &quot;annotatedtext&quot;: &quot;# N: ExampleBot\n# U: Train\nUser-Agent: ExampleBot\nDisallow: /\n...&quot;</div><div class="c-code__line">  }</div><div class="c-code__line">}</div></div><p>The Resource Key must include the <code>robotstxt.plaintext</code> and/or <code>robotstxt.annotatedtext</code> properties or the values must be requested using the <code>values</code> parameter in the request. The <code>plaintext</code> value is intended for production use. The <code>annotatedtext</code> value is intended for internal use to understand why certain choices were made and provide context.</p>
 <p>Use the <a class="el" href="_services__configurator.html">Configurator</a> to include <code>robotstxt</code> and <code>annotatedtext</code> in the resource key response.</p>
-<h1 class="g-docs__section-heading">On Premise Engine Configuration</h1>
+<h2 class="g-docs__section-heading">On Premise Engine Configuration</h2>
 <p>The engine is built via <code>RobotsTxtEngineBuilder</code> and added to a Pipeline that also contains a <code>DeviceDetectionHashEngine</code> (the engine reads the crawler list out of the loaded device-detection data file at <code>AddPipeline</code> time).</p>
 <p>Builder parameters:</p>
 <div class="g-table g-table--overflow"><table class="c-table">
@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('_device_detection__features__robots_tx
 <td class="c-table__cell"><code>SetUserAgent(userAgent)</code> / <code>UseDefaultTdlSourceResolver(userAgent)</code>  </td><td class="c-table__cell">Override the User-Agent that the default GitHub-backed resolver sends when refreshing macro source listings. GitHub rejects requests without a User-Agent. Pipeline configuration files can drive this via <code>BuildParameters</code>.   </td></tr>
 </table>
 </div><p>Properties advertised by the engine carry the data tier of the underlying device-detection data file, so <code>robotstxt.plaintext</code> and <code>robotstxt.annotatedtext</code> are only available when running against an Enterprise tier file (or higher) that contains the crawler properties.</p>
-<h1 class="g-docs__section-heading">See Also</h1>
+<h2 class="g-docs__section-heading">See Also</h2>
 <ul>
 <li><a class="el" href="_device_detection__features__crawlers.html">Crawlers</a> — <code>CrawlerUsage</code> value definitions.</li>
 <li><a href="https://51degrees.com/robots-txt">51Degrees Robots.txt generator</a> — hosted UI built on top of the same engine. </li>

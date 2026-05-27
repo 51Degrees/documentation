@@ -67,14 +67,14 @@ $(document).ready(function(){initNavTree('md__home_runner_work_documentation_doc
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="md__home_runner_work_documentation_documentation_apis_device-detection-cxx__r_e_a_d_m_e.html">51Degrees Device Detection API</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">51Degrees Device Detection API </h2></div><!--header-->
+<h1 class="g-docs__page-title">51Degrees Device Detection API </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><img src="https://51degrees.com/DesktopModules/FiftyOne/Distributor/Logo.ashx?utm_source=github&utm_medium=repository&utm_content=home&utm_campaign=c-open-source" alt="51Degrees" title="Data rewards the curious" class="inline"/>
  <b>Device Detection</b></p>
 <p><a href="https://51degrees.com/device-detection-cxx/modules.html">C Documentation</a> and the <a href="https://51degrees.com/device-detection-cxx/namespaces.html">C++ Documentation</a>.</p>
 <p>The 51Degrees device detection API is built on the 51Degrees <a href="https://github.com/51Degrees/common-cxx">common API</a>.</p>
-<h1 class="g-docs__section-heading">Pre-requisites</h1>
+<h2 class="g-docs__section-heading">Pre-requisites</h2>
 <h2>Data File</h2>
 <p>In order to perform device detection, you will need to use a 51Degrees data file. This repository includes a free, 'lite' file in the 'device-detection-data' sub-module that has a significantly reduced set of properties. To obtain a file with a more complete set of device properties see the <a href="https://51degrees.com/pricing">51Degrees website</a>. If you want to use the lite file, you will need to install <a href="https://git-lfs.github.com/">GitLFS</a>.</p>
 <p>For Linux: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">sudo apt-get install git-lfs</div><div class="c-code__line">git lfs install</div></div><p>Then, navigate to the device-detection-data directory and execute:</p>
@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_documentation_doc
 <li><a href="https://cmake.org/">CMake 3.24</a> or greater installed to build the project.</li>
 <li>A C++ compiler which supports C++17. The compiler and other build tools will be selected by CMake automatically based on your environment.</li>
 </ul>
-<h1 class="g-docs__section-heading">Installing</h1>
+<h2 class="g-docs__section-heading">Installing</h2>
 <h2>Using CMake</h2>
 <p>To build the make files required to build, open a <code>bash</code> or <code>Visual Studio Developer Command Prompt</code> terminal and run</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">mkdir build</div><div class="c-code__line">cd build</div><div class="c-code__line">cmake .. </div></div><p>Note: on an x64 Windows system, it is necessary to add <code>-A x64</code> as CMake will build a Win32 Solution by default.</p>
@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_documentation_doc
 <p>The standard configuration supports file based operation and multi threading.</p>
 <h2>Build Options</h2>
 <p>For build options, see <a href="https://github.com/51Degrees/common-cxx/blob/main/README.md#build-options">Common API</a>.</p>
-<h1 class="g-docs__section-heading">Tests</h1>
+<h2 class="g-docs__section-heading">Tests</h2>
 <p>All unit, integration, and performance tests are built using the <a href="https://github.com/google/googletest">Google test framework</a>.</p>
 <h2>CMake</h2>
 <p>CMake automatically pulls in the latest Google Test from GitHub.</p>
@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_documentation_doc
 <p>When the project files are generated for a non-MSVC compiler (gcc/clang) with <code>CMAKE_BUILD_TYPE=Debug</code> f.e. by running: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">cmake . -DCMAKE_BUILD_TYPE=Debug</div></div><p>the generated targets will contain code coverage instrumentation instructions to be added to the libraries with <code>-cov</code> suffix and <code>HashTests</code> target will be linked with them. During build time <code>*.gcno</code> and empty <code>*.gcda</code> files are generated.</p>
 <p>During the test run <code>*.gcda</code> files will be filled with coverage data.</p>
 <p>Install gcovr tool by running: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">pip3 install gcovr</div></div><p>For best results make sure you have at least version 7.2.</p>
-<p>The following command will generate a full coverage report: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">mkdir -p coverage; gcovr --html-detail -o coverage/coverage.html; open coverage/coverage.html</div></div><p>To check the summary run: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">gcovr -r . --print-summary</div></div><h1 class="g-docs__section-heading">Referencing the API</h1>
+<p>The following command will generate a full coverage report: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">mkdir -p coverage; gcovr --html-detail -o coverage/coverage.html; open coverage/coverage.html</div></div><p>To check the summary run: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">gcovr -r . --print-summary</div></div><h2 class="g-docs__section-heading">Referencing the API</h2>
 <h2>CMake</h2>
 <p>When building using CMake, static libraries are built in stages. These can be included in an executable just as they are in the examples. If these are included through a CMake file, the dependencies will be resolved automatically. However, if linking another way, all dependencies will need to be included from the <code>lib/</code> directory. For example, to use the Hash C API, the following static libraries would need to be included:</p><ul>
 <li><code>fiftyone-common-c</code></li>
@@ -143,7 +143,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_documentation_doc
 <p>The CMake project also builds a single shared library containing everything. This is named <code>fiftyone-device-detection-complete</code> and can be referenced by any C or C++ project.</p>
 <h2>Visual Studio</h2>
 <p>The Visual Studio solution contains static libraries which have all the dependencies set up correctly, so referencing these in a Visual Studio solution should be fairly self explanatory.</p>
-<h1 class="g-docs__section-heading">Examples</h1>
+<h2 class="g-docs__section-heading">Examples</h2>
 <p>There are several examples available, the source files can be found in the <code>examples/</code> folder. The examples are written in C or CPP.</p>
 <h3>Visual Studio</h3>
 <p>All the examples are available to run in the <code>VisualStudio/DeviceDetection.sln</code> solution.</p>

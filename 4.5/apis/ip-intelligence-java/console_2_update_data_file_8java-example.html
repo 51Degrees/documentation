@@ -63,7 +63,7 @@ $(document).ready(function(){initNavTree('console_2_update_data_file_8java-examp
 </script>
 <div id="doc-content" class="g-docs__content">
 <div class="g-docs__header">
-<h2 class="g-docs__page-title">console/UpdateDataFile.java</h2></div><!--header-->
+<h1 class="g-docs__page-title">console/UpdateDataFile.java</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <p>This example shows how to configure automatic data file updates for 51Degrees On-premise IP Intelligence.</p>
@@ -89,7 +89,7 @@ Daily auto-update </li>
 <ul>
 <li>the pipeline must be configured to use a temp file <div class="c-code__block c-code__block--outline"><div class="c-code__line">.useOnPremise(dataFilename, <span class="c-code__keyword">true</span>)</div></div></li>
 <li>a DataUpdateService must be supplied <div class="c-code__block c-code__block--outline"><div class="c-code__line">    UpdateCompletionListener completionListener = <span class="c-code__keyword">new</span> UpdateCompletionListener();</div><div class="c-code__line">    <span class="c-code__keywordflow">try</span> (DataUpdateService dataUpdateService = <span class="c-code__keyword">new</span> DataUpdateServiceDefault()) {</div><div class="c-code__line">        dataUpdateService.onUpdateComplete(completionListener);</div><div class="c-code__line">...</div><div class="c-code__line">    .setDataUpdateService(dataUpdateService)</div></div></li>
-<li>update on start-up must be specified, which will cause pipeline creation to block until a file is downloaded <div class="c-code__block c-code__block--outline"><div class="c-code__line">.setDataUpdateOnStartup(<span class="c-code__keyword">true</span>)</div></div> <h1 class="g-docs__section-heading">File System Watcher</h1>
+<li>update on start-up must be specified, which will cause pipeline creation to block until a file is downloaded <div class="c-code__block c-code__block--outline"><div class="c-code__line">.setDataUpdateOnStartup(<span class="c-code__keyword">true</span>)</div></div> <h2 class="g-docs__section-heading">File System Watcher</h2>
 </li>
 </ul>
 <p>You can configure the pipeline builder to watch for changes to the currently loaded IP Intelligence detection data file, and to replace the file currently in use with the new one. This is useful, for example, if you wish to download and update the IP Intelligence file "manually" - i.e. you would download it then drop it into place with the same path as the currently loaded file. That location is checked periodically (by default every 30 mins) and this frequency can be configured.</p>
@@ -116,7 +116,7 @@ Daily auto-update </li>
 <li>the pipeline must be configured to use a temp file <div class="c-code__block c-code__block--outline"><div class="c-code__line">.useOnPremise(dataFilename, <span class="c-code__keyword">true</span>)</div></div></li>
 <li>a DataUpdateService must be supplied <div class="c-code__block c-code__block--outline"><div class="c-code__line">    UpdateCompletionListener completionListener = <span class="c-code__keyword">new</span> UpdateCompletionListener();</div><div class="c-code__line">    <span class="c-code__keywordflow">try</span> (DataUpdateService dataUpdateService = <span class="c-code__keyword">new</span> DataUpdateServiceDefault()) {</div><div class="c-code__line">        dataUpdateService.onUpdateComplete(completionListener);</div><div class="c-code__line">...</div><div class="c-code__line">    .setDataUpdateService(dataUpdateService)</div></div></li>
 <li>Set the frequency in seconds that the pipeline should check for updates to data files. A recommended polling interval in a production environment is around 30 minutes. <div class="c-code__block c-code__block--outline"><div class="c-code__line">.setUpdatePollingInterval(30*60)</div></div></li>
-<li>Set the max amount of time in seconds that should be added to the polling interval. This is useful in datacenter applications where multiple instances may be polling for updates at the same time. A recommended ammount in production environments is 600 seconds. <div class="c-code__block c-code__block--outline"><div class="c-code__line">.setUpdateRandomisationMax(10*60)</div></div> <h1 class="g-docs__section-heading">Location</h1>
+<li>Set the max amount of time in seconds that should be added to the polling interval. This is useful in datacenter applications where multiple instances may be polling for updates at the same time. A recommended ammount in production environments is 600 seconds. <div class="c-code__block c-code__block--outline"><div class="c-code__line">.setUpdateRandomisationMax(10*60)</div></div> <h2 class="g-docs__section-heading">Location</h2>
 </li>
 </ul>
 <p>This example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-java-examples/blob/main/console/src/main/java/fiftyone/ipintelligence/examples/console/UpdateDataFile.java">GitHub</a>.</p>

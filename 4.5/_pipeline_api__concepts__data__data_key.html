@@ -66,16 +66,16 @@ $(document).ready(function(){initNavTree('_pipeline_api__concepts__data__data_ke
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__index.html">Types of Data</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__data_key.html">Data Key</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Data Key </h2></div><!--header-->
+<h1 class="g-docs__page-title">Data Key </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
+<section class="g-docs__section"><h2 class="g-docs__section-heading">Introduction</h2>
 <p>A <b>data key</b> is a multi-field key intended for use in <a class="el" href="_pipeline_api__features__result_caching.html">caching</a> and similar scenarios.</p>
-<h1 class="g-docs__section-heading">Internals</h1>
+<h2 class="g-docs__section-heading">Internals</h2>
 <p>Exact implementation details for <b>data key</b> may vary depending on language. However, in each case, the primary features are an integer hash code and a list of values in a specific order.</p>
 <p>The hash code is calculated when the <b>data key</b> is created. It can subsequently be used as an efficient method to identify if one <b>data key</b> instance may match with another.</p>
 <p>When a hash match occurs, each individual key field value should also be checked for equality between the keys to ensure a true match. This is necessary because the possibility space for a large number of keys with arbitrary value types is far larger than that of a 32-bit integer, so hash collisions can occur.</p>
-<h1 class="g-docs__section-heading">Usage example</h1>
+<h2 class="g-docs__section-heading">Usage example</h2>
 <p>A data key builder is used to construct <b>data keys</b> by specifying the details of the keys to be included. This will often be a subset of the evidence keys stored in a <a class="el" href="_pipeline_api__concepts__data__flow_data.html">flow data</a> instance. The diagram below shows an example <b>data key</b> being generated from the latitude and longitude values in an <a class="el" href="_pipeline_api__concepts__data__evidence.html">evidence</a> collection.</p>
 <p><div class="dotgraph">
 <iframe scrolling="no" frameborder="0" src="dot_datakey-evidence.svg" width="454" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>

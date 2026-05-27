@@ -66,22 +66,22 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__parallel_exec
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__index.html">API Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__parallel_execution.html">Parallel Execution</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Parallel Execution </h2></div><!--header-->
+<h1 class="g-docs__page-title">Parallel Execution </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
+<section class="g-docs__section"><h2 class="g-docs__section-heading">Introduction</h2>
 <p><b>Parallel execution</b> can refer to two or more <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow elements</a> whose processing is executed simultaneously within the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a>.</p>
 <p>It also refers to the ability of an individual <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow element</a> instance to process multiple requests simultaneously. For example, one <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> instance with one <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow element</a> being called from separate threads.</p>
 <p>Note, that some languages with <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> implementations do not have the built-in ability to handle <b>parallel execution</b>. For example, the PHP process runs in a single-thread, so <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow elements</a> cannot be configured to run in <b>parallel</b>.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/advanced-features/parallel-processing.md#">Specification</a> for more technical details.</p>
-<h1 class="g-docs__section-heading">Executing flow elements in parallel</h1>
+<h2 class="g-docs__section-heading">Executing flow elements in parallel</h2>
 <p>By default, <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow elements</a> are executed sequentially in the order they are added to the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a>. However, if the <a class="el" href="_product_summaries__feature_matrix.html">language supports it</a>, two or more <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow elements</a> can be executed in <b>parallel</b> within the overall sequential structure.</p>
 <p><div class="dotgraph">
 <iframe scrolling="no" frameborder="0" src="dot_pipeline-parallel-process.svg" width="498" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
 <p>In the example above, elements <b>E1</b> and <b>E2</b> will start their processing at the same time.</p>
 <p>Note that <b>parallel execution</b> is limited by the hardware the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> is running on. If the CPU only has two cores, then running four elements in parallel is unlikely to prove effective.</p>
-<h1 class="g-docs__section-heading">Calling the Pipeline from multiple threads</h1>
+<h2 class="g-docs__section-heading">Calling the Pipeline from multiple threads</h2>
 <p>The <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a> is able to handle concurrent process requests. However, the ability of a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow element</a> to also support this will depend on its individual implementation.</p>
 <p>All 51Degrees <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow elements</a> have been designed to function correctly in this scenario (assuming the <a class="el" href="_product_summaries__feature_matrix.html">language supports it</a>). </p>
 </section></div><!-- PageDoc -->

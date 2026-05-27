@@ -66,10 +66,10 @@ $(document).ready(function(){initNavTree('_device_detection__features__apple_det
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__index.html">Device Detection Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__apple_detection.html">Apple Model Detection</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Apple Model Detection </h2></div><!--header-->
+<h1 class="g-docs__page-title">Apple Model Detection </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><h1 class="g-docs__section-heading">Apple Model Detection</h1>
+<section class="g-docs__section"><h2 class="g-docs__section-heading">Apple Model Detection</h2>
 <p>Apple devices are unique in that their User-Agent strings do not include hardware model identifiers - unlike most Android devices. This means it's not possible to identify the exact iPhone/iPad model using only the HTTP request headers.</p>
 <p>To solve this, 51Degrees uses <b>client-side JavaScript</b> to gather additional evidence from the device, such as screen resolution and GPU model. This allows us to identify the precise Apple hardware model - including the specific iPhone/iPad generation. Even when the User-Agent string is generic.</p>
 <p>This feature is built into the <a class="el" href="_pipeline_api__features__client_side_evidence.html">client-side evidence</a> functionality, and is automatically enabled when the relevant property is included in your Resource Key.</p>

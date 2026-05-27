@@ -66,18 +66,18 @@ $(document).ready(function(){initNavTree('_services__cloud__resource_keys.html',
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_services__index.html">Services</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_services__cloud__index.html">Cloud Service</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_services__cloud__resource_keys.html">Resource Keys</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Resource Keys </h2></div><!--header-->
+<h1 class="g-docs__page-title">Resource Keys </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <section class="g-docs__section"><p>A Resource Key grants your code access to the 51Degrees Cloud APIs. A specific Resource Key has access to a particular set of properties which are chosen at key creation time and cannot be changed afterwards. The number of accesses authorized by a particular Resource Key is limited for free keys, or can be associated with your License Key and thus your account.</p>
 <p>To obtain a Resource Key, use the Cloud Configurator; instructions on how to use the Cloud Configurator to create a key while associating it with properties and your License Key are part of the <a class="el" href="_services__configurator.html">Configurator explanation</a>, which describes the process in detail.</p>
-<h1 class="g-docs__section-heading">Authorization errors</h1>
+<h2 class="g-docs__section-heading">Authorization errors</h2>
 <p>If you attempt to retrieve API values for which your Resource Key is not authorized, you may see errors similar to these:</p>
 <p><code>Property "country" not found in data for element "location". This is because your Resource Key does not include access to any properties under "location".</code></p>
 <p><code>Property "state" not found in data for element "location". This is because your Resource Key does not include access to this property. Properties that are included for this key under "location" are javascript, town, country.</code></p>
 <p>As mentioned, all properties that a key is authorized to access must be chosen at key creation time. If you create a key with access to the <code>javascript</code>, <code>town</code>, and <code>country</code> properties under <code>location</code>, for example, and then try to access the <code>state</code> property of a geolocation retrieved from the cloud APIs, you will see the second error, above. (If the key in question has access to <em>no</em> properties under <code>location</code>, you may see the first error instead.)</p>
 <p>A Resource Key cannot have its list of properties changed, but you can follow the <a class="el" href="_services__configurator.html">Configurator explanation</a> to create a new different Resource Key which does have access to the properties you need.</p>
-<h1 class="g-docs__section-heading">Failed to load aspect properties</h1>
+<h2 class="g-docs__section-heading">Failed to load aspect properties</h2>
 <p>If you attempt to create a cloud pipeline with properties for which your Resource Key is not authorized, you may see errors similar to these:</p>
 <ul>
 <li>Your Resource Key does not include access to any properties under the engine with key hardware that was added to the pipeline. For more details on Resource Keys, see our <a href="/documentation/4.5/_services__cloud__resource_keys.html">explainer</a>. Available engine data keys are: ['device']</li>

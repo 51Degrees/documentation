@@ -66,14 +66,14 @@ $(document).ready(function(){initNavTree('_device_detection__features__third_par
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__index.html">Device Detection Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__third_party_cookies.html">Third-Party Cookies Detection</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Third-Party Cookies Detection </h2></div><!--header-->
+<h1 class="g-docs__page-title">Third-Party Cookies Detection </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
+<section class="g-docs__section"><h2 class="g-docs__section-heading">Introduction</h2>
 <p>Third-party cookies are cookies set by a domain other than the one the user is currently visiting. Web browsers have been increasingly restricting third-party cookies due to privacy concerns, with many browsers now blocking them by default or planning to phase them out.</p>
 <p>For businesses that rely on third-party cookies for functionality such as cross-site tracking, personalization, or analytics, it is important to know whether a user's browser supports third-party cookies. This allows applications to adapt their behavior accordingly, such as falling back to alternative methods when third-party cookies are unavailable.</p>
 <p>51Degrees provides a lightweight, stateless mechanism to detect third-party cookie support as part of the cloud service.</p>
-<h1 class="g-docs__section-heading">How It Works</h1>
+<h2 class="g-docs__section-heading">How It Works</h2>
 <p>The detection mechanism relies on verifying whether the browser can send cookies to a third-party domain. This is achieved through generated <a class="el" href="_pipeline_api__features__client_side_evidence.html">client-side evidence</a> JavaScript that contains special detection snippets.</p>
 <h2>Two-Origin Architecture</h2>
 <p>The detection requires two distinct origins:</p>
@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('_device_detection__features__third_par
 <tr class="c-table__row">
 <td class="c-table__cell">Path  </td><td class="c-table__cell"><code>/</code>  </td><td class="c-table__cell">Available across all paths   </td></tr>
 </table>
-</div><h1 class="g-docs__section-heading">Properties</h1>
+</div><h2 class="g-docs__section-heading">Properties</h2>
 <p>The following properties are available after detection. On the client side, these properties can be retrieved in the callback passed to <code>fod.complete</code>:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">fod.complete(function(data) {</div><div class="c-code__line">  if (data.device.thirdpartycookiesenabled) {</div><div class="c-code__line">    console.log(&quot;Third-party cookies enabled: &quot; + data.device.thirdpartycookiesenabled);</div><div class="c-code__line">  }</div><div class="c-code__line">});</div></div><h2>ThirdPartyCookiesEnabled</h2>
 <p>A boolean value indicating whether third-party cookies are supported by the user's browser.</p>
@@ -122,14 +122,14 @@ $(document).ready(function(){initNavTree('_device_detection__features__third_par
 </table>
 </div><h2>ThirdPartyCookiesEnabledJavascript</h2>
 <p>A JavaScript snippet for client-side detection. This property is populated only when server-side detection was not conclusive (e.g., on the first request before the callback). When server-side detection succeeds, this property is empty, eliminating the need for additional client-side detection logic.</p>
-<h1 class="g-docs__section-heading">Integration</h1>
+<h2 class="g-docs__section-heading">Integration</h2>
 <p>Third-party cookies detection is automatically performed when using the 51Degrees <a class="el" href="_pipeline_api__features__client_side_evidence.html">client-side evidence</a> JavaScript integration.</p>
 <p><b>Note:</b> If you are using the 51Degrees Cloud service, you need to create a resource key that includes the <code>ThirdPartyCookiesEnabled</code> and <code>ThirdPartyCookiesEnabledJavascript</code> properties. Use the <a class="el" href="_services__configurator.html">Configurator</a> to create or update your resource key with these properties enabled.</p>
 <p>When the JavaScript is loaded and makes its callback to the cloud service, the detection happens transparently. The results are available in the response data alongside other device detection properties.</p>
 <h2>Custom Endpoint Configuration</h2>
 <p>By default, the detection snippet communicates with <code>cloud.51degrees.com</code>. If you are hosting your own 51Degrees cloud service or need to use a different endpoint, you can customize the third-party cookie detection endpoint by setting the <code>window.fodTpcEndpoint</code> global variable before loading the JavaScript:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;script&gt;</div><div class="c-code__line">  window.fodTpcEndpoint = &quot;https://your-custom-3pc-detection-endpoint&quot;;</div><div class="c-code__line">&lt;/script&gt;</div><div class="c-code__line">&lt;script src=&quot;51Degrees.core.js&quot;&gt;&lt;/script&gt;</div></div><p>This allows you to point the detection to your own hosted instance while maintaining the third-party cookie detection functionality.</p>
-<h1 class="g-docs__section-heading">Browser Support Considerations</h1>
+<h2 class="g-docs__section-heading">Browser Support Considerations</h2>
 <p>Modern browsers have varying levels of third-party cookie support:</p>
 <ul>
 <li><b>Safari</b>: Blocks third-party cookies by default via Intelligent Tracking Prevention (ITP).</li>

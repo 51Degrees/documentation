@@ -66,17 +66,17 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__usage_sharing
   <ul class="c-breadcrumb">
 <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__index.html">API Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__usage_sharing.html">Usage Sharing Feature</a></li>  </ul>
 </div>
-<h2 class="g-docs__page-title">Usage Sharing Feature </h2></div><!--header-->
+<h1 class="g-docs__page-title">Usage Sharing Feature </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section"><h1 class="g-docs__section-heading">Introduction</h1>
+<section class="g-docs__section"><h2 class="g-docs__section-heading">Introduction</h2>
 <p>Some of the services offered by 51Degrees benefit from <a class="el" href="_pipeline_api__concepts__data__evidence.html">evidence</a> (optionally) being sent back to 51Degrees data processing system from live installations of the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a>. We use this evidence to ensure that our data is up-to-date, comprehensive, and continues to provide accurate results.</p>
 <p>A specific set of evidence must be seen a number of times, from a number of sources to be deemed reliable enough to contribute to the data file.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/usage-sharing.md#">Specification</a> for more technical details.</p>
 <p><div class="dotgraph">
 <iframe scrolling="no" frameborder="0" src="dot_usagesharing.svg" width="503" height="324"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </p>
-<h1 class="g-docs__section-heading">How to enable usage sharing</h1>
+<h2 class="g-docs__section-heading">How to enable usage sharing</h2>
 <p><b>Usage sharing</b> is enabled by default if you are using a pipeline builder that is derived from a 51Degrees pipeline builder (for example, DeviceDetetctionPipelineBuilder or FiftyOnePipelineBuilder). To configure the <b>usage sharing</b> feature, please refer to our <a class="el" href="_pipeline_api__examples__usage_sharing.html">Usage Sharing Examples</a>.</p>
 <p>To enable <b>usage sharing</b> for low-level APIs such as C, Nginx, and Varnish, please refer to the <a class="el" href="_pipeline_api__features__usage_sharing.html#Low_Level_Usage_Sharing">Usage Sharing for low-level APIs section</a> further down this page.</p>
 <p>Please refer to the <a class="el" href="_pipeline_api__examples__usage_sharing.html">Usage Sharing Examples</a> section to check if <b>user sharing</b> is implemented for a particular language or API. To request an additional implementation of this feature, please <a href="https://51degrees.com/contact-us">get in touch</a>.</p>
@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__usage_sharing
 <h2>Repeated evidence <a href="#RepeatEvidence">#</a><a class="anchor" id="RepeatEvidence"></a></h2>
 <p>To avoid situations where the same <a class="el" href="_pipeline_api__concepts__data__evidence.html">evidence</a> is sent multiple times (for example, a single user visiting multiple pages on a website), we keep track of the <a class="el" href="_pipeline_api__concepts__data__evidence.html">evidence</a> that has been shared over a defined time period (maximum 20 minutes by default) and only share <a class="el" href="_pipeline_api__concepts__data__evidence.html">evidence</a> which is different to any already shared during the window.</p>
 <p>Note that the amount of <a class="el" href="_pipeline_api__concepts__data__evidence.html">evidence</a> tracked is also constrained based upon available memory. In high-traffic scenarios, this may mean that the time period covered by the <a class="el" href="_pipeline_api__concepts__data__evidence.html">evidence</a> in the tracker is much smaller than the configured maximum.</p>
-<h1 class="g-docs__section-heading">Configuration</h1>
+<h2 class="g-docs__section-heading">Configuration</h2>
 <p>The <b>usage sharing</b> feature is provided by a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html">flow element</a> that is added to the <a class="el" href="_pipeline_api__concepts__pipeline.html">Pipeline</a>. Certain <a class="el" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html">pipeline builders</a> will do this automatically. For example, the <a class="el" href="_device_detection__overview.html">device detection</a> <a class="el" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html">pipeline builder</a> will add the <b>usage sharing</b> element by default. This can be disabled using the SetShareUsage method on the builder.</p>
 <p>There are also several configuration options when building a <b>usage sharing</b> element. These can be used to control what is shared and how it is collected:</p>
 <h2>Evidence shared</h2>
