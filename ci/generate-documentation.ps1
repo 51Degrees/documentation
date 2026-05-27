@@ -110,17 +110,6 @@ Write-Host "::endgroup::"
 # found"), so the baseline is genuinely zero -- run with
 # -FailOnFinding from here on to break the build on any regression
 # rather than waiting for someone to spot the warning in the log.
-Write-Host "::group::Rebalancing heading hierarchy"
-# Doxygen emits the page title at h2.g-docs__page-title and every
-# section heading at h1.g-docs__section-heading, which Semrush
-# rule 104 ("Multiple H1 tags") flags. Promote the page-title h2
-# to h1 and demote each section-heading h1 to h2 before
-# validation. Idempotent: a future doxygen-template fix that
-# already emits the right hierarchy makes this a no-op rather
-# than introducing a regression. See documentation issue #154.
-& "$PSScriptRoot/rebalance-doc-headings.ps1" -Path "gh-pages/$version"
-Write-Host "::endgroup::"
-
 Write-Host "::group::Validating generated HTML"
 & "$PSScriptRoot/validate-html.ps1" -Path "gh-pages/$version" -FailOnFinding
 Write-Host "::endgroup::"
