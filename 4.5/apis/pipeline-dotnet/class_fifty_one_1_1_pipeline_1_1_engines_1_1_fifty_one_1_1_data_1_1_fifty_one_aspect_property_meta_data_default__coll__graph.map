@@ -1,0 +1,18 @@
+<map id="FiftyOne.Pipeline.Engines.FiftyOne.Data.FiftyOneAspectPropertyMetaDataDefault" name="FiftyOne.Pipeline.Engines.FiftyOne.Data.FiftyOneAspectPropertyMetaDataDefault">
+<area shape="rect" id="node1" title="Data class that contains meta&#45;data relating to a specific property." alt="" coords="937,251,1205,307"/>
+<area shape="rect" id="node2" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_aspect_property_meta_data.html" title="Meta&#45;data relating to properties that are populated by Aspect Engines." alt="" coords="578,52,763,79"/>
+<area shape="rect" id="node3" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_element_property_meta_data.html" title="Meta&#45;data relating to properties that are populated by Flow Elements." alt="" coords="275,5,470,32"/>
+<area shape="rect" id="node4" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_property_meta_data.html" title="Represents meta&#45;data relating to a property that is populated by a IFlowElement instance." alt="" coords="5,32,204,59"/>
+<area shape="rect" id="node5" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_property_meta_data.html" title="Represents meta&#45;data relating to a property that is populated by an IAspectEngine instance." alt="" coords="278,56,467,83"/>
+<area shape="rect" id="node6" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_i_fifty_one_aspect_property_meta_data.html" title="51Degrees specific meta data." alt="" coords="549,209,792,236"/>
+<area shape="rect" id="node7" title=" " alt="" coords="269,107,477,149"/>
+<area shape="rect" id="node8" title=" " alt="" coords="261,173,484,214"/>
+<area shape="rect" id="node9" title=" " alt="" coords="293,239,452,265"/>
+<area shape="rect" id="node10" title=" " alt="" coords="323,391,422,417"/>
+<area shape="rect" id="node11" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_i_value_meta_data.html" title="Meta data relating to a specific value within a data set." alt="" coords="561,302,780,343"/>
+<area shape="rect" id="node14" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_i_component_meta_data.html" title="Meta data relating to a component of an Engine&#39;s results e.g." alt="" coords="541,431,800,473"/>
+<area shape="rect" id="node12" title=" " alt="" coords="260,340,485,367"/>
+<area shape="rect" id="node13" title=" " alt="" coords="253,289,492,316"/>
+<area shape="rect" id="node15" title=" " alt="" coords="263,449,482,490"/>
+<area shape="rect" id="node16" title=" " alt="" coords="257,514,489,555"/>
+</map>
