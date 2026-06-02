@@ -1,0 +1,5 @@
+var _ip_intelligence__migration =
+[
+    [ "From IPInfo", "_ip_intelligence__migration__ip_info.html", null ],
+    [ "From MaxMind", "_ip_intelligence__migration__max_mind.html", null ]
+];
