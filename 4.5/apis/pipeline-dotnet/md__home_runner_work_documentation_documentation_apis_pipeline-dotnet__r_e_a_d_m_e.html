@@ -117,6 +117,18 @@ $(document).ready(function(){initNavTree('md__home_runner_work_documentation_doc
 <li>.NET Framework 4.6.2</li>
 </ul>
 <p>The <a href="https://51degrees.com/documentation/_info__tested_versions.html">tested versions</a> page shows the .NET versions that we currently test against. The software may run fine against other versions, but additional caution should be applied.</p>
+<h2>Strong naming</h2>
+<p>All NuGet packages published from this repository are strong-name signed so they can be referenced by strong-named consumer applications (notably .NET Framework hosts that enforce strong-name identity at assembly load).</p>
+<h3>How signing is wired</h3>
+<p>The same <code>51Degrees.publickey</code> file is committed at the root of each shipping repo. Signing is configured once via <a href="Directory.Build.props"><code>Directory.Build.props</code></a> and applies to every project:</p>
+<ul>
+<li><b>Local developer builds</b> use the <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/security#publicsign">PublicSign</a> pattern — the compiler stamps the public key into each assembly so it is identified as strong-named, but no cryptographic signature is produced. Only <code>51Degrees.publickey</code> (committed) is needed, so contributors can build and test without any secrets.</li>
+<li><b>Production builds (CI only)</b> receive the matching private <code>.snk</code> from a GitHub organization secret, so the assemblies in the published NuGet packages carry a real cryptographic signature.</li>
+</ul>
+<p>The same public key token appears on every <code><a class="el" href="namespace_fifty_one.html">FiftyOne</a>.*</code> DLL shipped from this repo and its upstream library repos (<code>caching-dotnet</code>, <code>common-dotnet</code>), so the dependency chain remains consistent under strong-name identity checks.</p>
+<h3>Why <code>vendor/Stubble/</code> exists</h3>
+<p>Strong-named assemblies can only reference other strong-named assemblies. <code><a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script_builder.html">FiftyOne.Pipeline.JavaScriptBuilder</a></code> depends on <a href="https://github.com/StubbleOrg/Stubble">Stubble.Core</a>, and the upstream NuGet package is not strong-named. A request to publish a strong-named build has been open in that project since December 2019 — see <a href="https://github.com/StubbleOrg/Stubble/issues/85">StubbleOrg/Stubble#85</a> — with no progress in over five years.</p>
+<p>Rather than wait, the Stubble source is vendored under <a href="vendor/Stubble/"><code>vendor/Stubble/</code></a> and built from source as a project reference. It inherits the strong-naming configuration from the repo root and ships strong-signed alongside our own assemblies. Stubble is MIT-licensed and the upstream copyright and licence notices are preserved unchanged in the vendored tree.</p>
 <h2>Solutions and projects</h2>
 <ul>
 <li><b><a class="el" href="namespace_fifty_one_1_1_pipeline.html">FiftyOne.Pipeline</a></b> - The core projects that comprise the Pipeline API.<ul>
