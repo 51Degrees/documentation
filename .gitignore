@@ -10,3 +10,7 @@
 4.4/
 4.5/
 docs/tagfile
+
+# CI tooling deps (terser for minifying Doxygen JS); package-lock.json
+# is committed so `npm ci` in the build workflow is reproducible.
+ci/node_modules/

@@ -102,6 +102,19 @@ Set-Content -Path $manifestPath -Value ($mirrored -join "`n")
 Write-Host "Mirrored $($mirrored.Count) HTML files to gh-pages root."
 Write-Host "::endgroup::"
 
+# Minify the Doxygen-emitted JS (jquery.js, navtree.js, dynsections.js,
+# search51.js, examplegrabber.js, testedversionsgrabber.js, ...) and
+# rewrite <script src="*.js"> in every generated page to load the
+# *.min.js sibling. Mirrors the docs-main.css / docs-main.min.css
+# convention already used for the stylesheet. Clears the Semrush rule
+# 135 ("unminified JavaScript and CSS files") findings on every
+# /documentation/* page on 51degrees.com.
+Write-Host "::group::Minifying Doxygen-emitted JS"
+Push-Location ci
+try { npm ci --omit=dev=false --no-audit --no-fund } finally { Pop-Location }
+node ci/minify-docs-assets.js gh-pages
+Write-Host "::endgroup::"
+
 # Scan the freshly generated HTML for content-quality regressions
 # before it gets published. Companion to the Website-side
 # ContentValidator (postbuild/ContentValidator.cs); see
