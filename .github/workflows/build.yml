@@ -9,6 +9,15 @@ on:
   schedule:
     - cron:  '0 4 * * *'
 
+# Serialise builds: only one Build Documentation run touches gh-pages at a
+# time. Two parallel dispatches previously raced on `git push origin HEAD`
+# and the loser of the race exited non-zero. The deployed gh-pages was
+# still correct because the winning run had already pushed, but the
+# losing run reported a workflow failure that masked the real outcome.
+concurrency:
+  group: build-documentation-gh-pages
+  cancel-in-progress: false
+
 jobs:
   Build:
     runs-on: ubuntu-latest
@@ -27,8 +36,19 @@ jobs:
           if [[ -n $(git -C gh-pages status --porcelain | tee /dev/stderr) ]]; then echo changed=true >> "$GITHUB_OUTPUT"; fi
       - if: steps.changed.outputs.changed == 'true' && !inputs.dryrun
         working-directory: gh-pages
+        # Retry the push if gh-pages moved underneath us between the local
+        # commit and the push: pull --rebase, replay, push again. Backs up
+        # the concurrency guard above for the case where the gh-pages
+        # branch is updated by something other than this workflow.
         run: |
           git add .
           git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m "Update documentation from $GITHUB_REF_NAME"
-          git push origin HEAD
-
+          for attempt in 1 2 3; do
+            if git push origin HEAD; then
+              exit 0
+            fi
+            echo "::warning::push attempt $attempt rejected; pulling --rebase and retrying"
+            git pull --rebase origin gh-pages
+          done
+          echo "::error::push to gh-pages failed after 3 attempts"
+          exit 1
