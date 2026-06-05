@@ -2,21 +2,17 @@
 // Minify every *.js and *.css under <root> in-place by generating a *.min.js
 // or *.min.css sibling, then rewrite <script src="*.js"> and
 // <link rel="stylesheet" href="*.css"> references in *.html so the pages
-// load the minified versions. Clears the Semrush rule 135 ("unminified
-// JavaScript and CSS files") findings on the /documentation/* pages of
-// 51degrees.com.
+// load the minified versions.
 //
 // Usage: node ci/minify-docs-assets.js <gh-pages-root>
 //
-// Skips: anything already named *.min.js / *.min.css (or *.min.<anything>.js
-// / *.min.<anything>.css), any file whose minified size is not smaller than
-// the source (rare but possible for tiny or already-minified files like
-// the doxygen-template tabs.css), and any non-.js / non-.css / non-.html
-// file. The original *.js / *.css is kept on disk so direct references
-// from external callers don't 404.
+// Skips: anything already named *.min.<ext>, any file whose minified size
+// is not smaller than the source, and any file other than *.js / *.css /
+// *.html. The original *.js / *.css is kept on disk so direct references
+// from external callers do not 404.
 //
-// Re-running is idempotent: existing .min.* siblings are overwritten with
-// the freshly minified content, HTML rewrites are no-ops the second time.
+// Idempotent: existing .min.* siblings are overwritten with the freshly
+// minified content, HTML rewrites are no-ops the second run.
 
 const { minify: terserMinify } = require('terser')
 const csso = require('csso')
