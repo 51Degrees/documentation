@@ -45,6 +45,44 @@ substitutions:
 already interpolated into `<title>` below), so each page gets its own
 description rather than a project-wide blurb.
 
+## Why the stylesheets come before the scripts and the inline `<style>` block
+
+The doxygen template used to emit `tabs.css` first, then every script
+(`jquery.js`, `dynsections.js`, `examplegrabber.js`,
+`testedversionsgrabber.js`, `search51.js`, the `$treeview` expansion of
+`resize.js` + `navtreedata.js` + `navtree.js` + inline `initResizable`),
+and only then the main `$stylesheet` (`docs-main.css`). The render-
+blocking scripts in the middle delayed the docs stylesheet by a full
+network round trip, so the page painted with only `tabs.css` applied
+and re-flowed once `docs-main.css` arrived.
+
+Reordering so all stylesheets (`tabs.css`, `$stylesheet`,
+`$extrastylesheet`) precede the scripts lets the browser preload-scan
+and request the docs stylesheet in parallel with `tabs.css`, and the
+scripts then block on a stylesheet that is already in flight or done.
+
+The inline `<style>` block reserves two layout boxes ahead of asset
+arrival to keep Cumulative Layout Shift near zero:
+
+- `.c-brand__image { aspect-ratio: 360/67 }` matches the natural
+  dimensions of `/img/logo.png` (the file the website proxy swaps in
+  for `logo-51Degrees-Docs.png` on 51degrees.com). The `<img>` element
+  also gets matching `width="360" height="67"` attributes for browsers
+  that honour the attribute-derived aspect ratio rather than the CSS
+  one. Without the reservation the masthead first paints with a zero-
+  height image box and snaps down ~35 px when the bytes arrive.
+- `.c-sidenav { min-height: 600px }` at viewports below 993px keeps
+  the sidenav placeholder tall enough that `navtree.js` filling in the
+  tree does not push the main content downwards. Above 993px
+  `docs-main.css` already pins `.c-sidenav` to `position: fixed`, so
+  no reservation is needed there.
+
+Both rules are inlined into every page rather than added to
+`docs-main.css` so they take effect on first paint, before the
+external stylesheet finishes loading. The CSS is hand-minified to a
+single line to keep the per-page byte cost minimal (the rationale
+lives here, not in the template, per the next section).
+
 ## Why these notes are not inline comments
 
 A prior version had this rationale as `<!-- ... -->` blocks inside
