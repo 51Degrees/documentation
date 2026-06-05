@@ -1,12 +1,17 @@
 var hierarchy =
 [
     [ "Program.AreaIndex", null, null ],
+    [ "AspectDataBase", null, [
+      [ "FiftyOne.IpIntelligence.Cloud.Data.CloudCountriesTranslationData", "class_fifty_one_1_1_ip_intelligence_1_1_cloud_1_1_data_1_1_cloud_countries_translation_data.html", null ]
+    ] ],
     [ "AspectEngineBuilderBase", null, [
+      [ "FiftyOne.IpIntelligence.Cloud.FlowElements.CloudCountriesTranslationEngineBuilder", "class_fifty_one_1_1_ip_intelligence_1_1_cloud_1_1_flow_elements_1_1_cloud_countries_translation_engine_builder.html", null ],
       [ "FiftyOne.IpIntelligence.Cloud.FlowElements.IpiCloudEngineBuilder", "class_fifty_one_1_1_ip_intelligence_1_1_cloud_1_1_flow_elements_1_1_ipi_cloud_engine_builder.html", null ]
     ] ],
     [ "FiftyOne.IpIntelligence.Examples.OnPremise.Performance.Program.BenchmarkResult", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_performance_1_1_program_1_1_benchmark_result.html", null ],
     [ "Calculations", "class_calculations.html", null ],
     [ "CloudAspectEngineBase", null, [
+      [ "FiftyOne.IpIntelligence.Cloud.FlowElements.CloudCountriesTranslationEngine", "class_fifty_one_1_1_ip_intelligence_1_1_cloud_1_1_flow_elements_1_1_cloud_countries_translation_engine.html", null ],
       [ "FiftyOne.IpIntelligence.Cloud.FlowElements.IpiCloudEngine", "class_fifty_one_1_1_ip_intelligence_1_1_cloud_1_1_flow_elements_1_1_ipi_cloud_engine.html", null ]
     ] ],
     [ "CloudPipelineBuilderBase", null, [
@@ -19,8 +24,8 @@ var hierarchy =
     ] ],
     [ "Program.Configuration", "class_program_1_1_configuration.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Constants", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants.html", null ],
-    [ "FiftyOne.IpIntelligence.Examples.Mixed.OnPremise.GettingStartedConsole.Constants", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_console_1_1_constants.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Mixed.Cloud.GettingStartedConsole.Constants", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_cloud_1_1_getting_started_console_1_1_constants.html", null ],
+    [ "FiftyOne.IpIntelligence.Examples.Mixed.OnPremise.GettingStartedConsole.Constants", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_console_1_1_constants.html", null ],
     [ "Program.Consumer", "class_program_1_1_consumer.html", null ],
     [ "Controller", null, [
       [ "FiftyOne.IpIntelligence.Examples.Cloud.GettingStartedWeb.Controllers.HomeController", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_getting_started_web_1_1_controllers_1_1_home_controller.html", null ],
@@ -35,10 +40,10 @@ var hierarchy =
     [ "FiftyOne.IpIntelligence.Examples.OnPremise.GettingStartedWeb.Model.EvidenceModel", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_model_1_1_evidence_model.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Mixed.OnPremise.GettingStartedWeb.Model.EvidenceModel", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_web_1_1_model_1_1_evidence_model.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Cloud.GettingStartedWeb.Model.EvidenceModel", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_getting_started_web_1_1_model_1_1_evidence_model.html", null ],
+    [ "FiftyOne.IpIntelligence.Examples.Cloud.Mixed.GettingStartedConsole.Program.Example", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_mixed_1_1_getting_started_console_1_1_program_1_1_example.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Mixed.OnPremise.GettingStartedConsole.Program.Example", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_console_1_1_program_1_1_example.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Cloud.GetAllProperties.Program.Example", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_get_all_properties_1_1_program_1_1_example.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Cloud.GettingStartedConsole.Program.Example", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_getting_started_console_1_1_program_1_1_example.html", null ],
-    [ "FiftyOne.IpIntelligence.Examples.Cloud.Mixed.GettingStartedConsole.Program.Example", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_mixed_1_1_getting_started_console_1_1_program_1_1_example.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.ExampleBase", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_example_base.html", [
       [ "FiftyOne.IpIntelligence.Examples.Cloud.Metadata.Program.Example", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_metadata_1_1_program_1_1_example.html", null ],
       [ "FiftyOne.IpIntelligence.Examples.OnPremise.GettingStartedConsole.Program.Example", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_console_1_1_program_1_1_example.html", null ],
@@ -71,6 +76,9 @@ var hierarchy =
     ] ],
     [ "FiftyOne.IpIntelligence.Engine.OnPremise.Wrappers.IConfigSwigWrapper", "interface_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_wrappers_1_1_i_config_swig_wrapper.html", [
       [ "FiftyOne.IpIntelligence.Engine.OnPremise.Wrappers.ConfigSwigWrapper", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_wrappers_1_1_config_swig_wrapper.html", null ]
+    ] ],
+    [ "ICountriesTranslationData", null, [
+      [ "FiftyOne.IpIntelligence.Cloud.Data.CloudCountriesTranslationData", "class_fifty_one_1_1_ip_intelligence_1_1_cloud_1_1_data_1_1_cloud_countries_translation_data.html", null ]
     ] ],
     [ "ICustomMarshaler", null, [
       [ "FiftyOne.IpIntelligence.Engine.OnPremise.Interop.UTF8Marshaler", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_u_t_f8_marshaler.html", null ]
@@ -205,8 +213,8 @@ var hierarchy =
       [ "FiftyOne.IpIntelligence.Engine.OnPremise.Data.ValueMetaData", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_1_1_value_meta_data.html", null ]
     ] ],
     [ "Program.KeyFactory", "class_program_1_1_key_factory.html", null ],
-    [ "FiftyOne.IpIntelligence.Engine.OnPremise.Messages", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_messages.html", null ],
     [ "FiftyOne.IpIntelligence.Messages", "class_fifty_one_1_1_ip_intelligence_1_1_messages.html", null ],
+    [ "FiftyOne.IpIntelligence.Engine.OnPremise.Messages", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_messages.html", null ],
     [ "OnPremiseIpiEngineBase", null, [
       [ "FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngine", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html", null ]
     ] ],
@@ -229,28 +237,28 @@ var hierarchy =
     [ "PrePackagedPipelineBuilderBase", null, [
       [ "FiftyOne.IpIntelligence.IpiOnPremisePipelineBuilder", "class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html", null ]
     ] ],
-    [ "FiftyOne.IpIntelligence.Examples.OnPremise.GettingStartedAPI.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_a_p_i_1_1_program.html", null ],
-    [ "FiftyOne.IpIntelligence.Examples.Mixed.Cloud.GettingStartedWeb.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_cloud_1_1_getting_started_web_1_1_program.html", null ],
+    [ "FiftyOne.IpIntelligence.Examples.Cloud.Mixed.GettingStartedConsole.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_mixed_1_1_getting_started_console_1_1_program.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Mixed.OnPremise.GettingStartedConsole.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_console_1_1_program.html", null ],
-    [ "FiftyOne.IpIntelligence.Examples.OnPremise.UpdateDataFile.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program.html", null ],
-    [ "FiftyOne.IpIntelligence.Examples.OnPremise.OfflineProcessing.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_offline_processing_1_1_program.html", null ],
+    [ "FiftyOne.IpIntelligence.Examples.Mixed.Cloud.GettingStartedWeb.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_cloud_1_1_getting_started_web_1_1_program.html", null ],
     [ "Program", "class_program.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.OnPremise.GettingStartedConsole.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_console_1_1_program.html", null ],
+    [ "FiftyOne.IpIntelligence.Examples.OnPremise.GettingStartedAPI.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_a_p_i_1_1_program.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.OnPremise.GettingStartedWeb.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_program.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.OnPremise.Metadata.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metadata_1_1_program.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.OnPremise.Performance.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_performance_1_1_program.html", null ],
+    [ "FiftyOne.IpIntelligence.Examples.Mixed.OnPremise.GettingStartedWeb.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_web_1_1_program.html", null ],
+    [ "FiftyOne.IpIntelligence.Examples.OnPremise.OfflineProcessing.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_offline_processing_1_1_program.html", null ],
+    [ "FiftyOne.IpIntelligence.Examples.OnPremise.UpdateDataFile.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Cloud.GetAllProperties.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_get_all_properties_1_1_program.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Cloud.GettingStartedConsole.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_getting_started_console_1_1_program.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Cloud.GettingStartedWeb.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_getting_started_web_1_1_program.html", null ],
-    [ "FiftyOne.IpIntelligence.Examples.Mixed.OnPremise.GettingStartedWeb.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_web_1_1_program.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Cloud.Metadata.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_metadata_1_1_program.html", null ],
-    [ "FiftyOne.IpIntelligence.Examples.Cloud.Mixed.GettingStartedConsole.Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_mixed_1_1_getting_started_console_1_1_program.html", null ],
     [ "Rectangle", "class_rectangle.html", null ],
     [ "Program.Result", "class_program_1_1_result.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.OnPremise.GettingStartedWeb.Startup", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_startup.html", null ],
+    [ "FiftyOne.IpIntelligence.Examples.Mixed.OnPremise.GettingStartedWeb.Startup", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_web_1_1_startup.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Mixed.Cloud.GettingStartedWeb.Startup", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_cloud_1_1_getting_started_web_1_1_startup.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Cloud.GettingStartedWeb.Startup", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_getting_started_web_1_1_startup.html", null ],
-    [ "FiftyOne.IpIntelligence.Examples.Mixed.OnPremise.GettingStartedWeb.Startup", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_web_1_1_startup.html", null ],
     [ "FiftyOne.IpIntelligence.Engine.OnPremise.Interop.IpIntelligenceEngineModulePINVOKE.SWIGExceptionHelper", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_ip_intelligence_en7e80aac7d8c4541b261dea223a50fb09.html", null ],
     [ "FiftyOne.IpIntelligence.Engine.OnPremise.Interop.IpIntelligenceEngineModulePINVOKE.SWIGPendingException", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_ip_intelligence_enc3293cb09d5f631669ae45ff4f1aeeb8.html", null ],
     [ "FiftyOne.IpIntelligence.Engine.OnPremise.Interop.IpIntelligenceEngineModulePINVOKE.SWIGStringHelper", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_ip_intelligence_en875ea5cefc8c7c14e9a9bf654dd43152.html", null ],
