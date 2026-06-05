@@ -86,20 +86,45 @@ if (Test-Path $manifestPath) {
 $srcRoot = (Resolve-Path "gh-pages/$version").Path
 $baseTag = "<base href=`"/documentation/$version/`">"
 $mirrored = [System.Collections.Generic.List[string]]::new()
+$canonicalsAdded = 0
 Get-ChildItem -Recurse -File -Filter "*.html" -Path "gh-pages/$version" | ForEach-Object {
     $rel = $_.FullName.Substring($srcRoot.Length + 1) -replace '\\', '/'
     $dest = Join-Path "gh-pages" $rel
     New-Item -ItemType Directory -Force (Split-Path $dest) | Out-Null
     $content = Get-Content $_.FullName -Raw
+
+    # Root-relative canonical pointing at the unversioned URL. Both the
+    # versioned source and the unversioned mirror canonicalise here, so
+    # search engines consolidate equity on /documentation/$rel and the
+    # same rendered HTML is portable across any host (production,
+    # staging, preview, localhost).
     $canonicalTag = "<link rel=`"canonical`" href=`"/documentation/$rel`">"
+
+    # Add canonical to the versioned source in place when it doesn't
+    # already have one (doxygen-generated pages don't ship one). The
+    # site's reverse proxy used to inject this at request time but
+    # pinned the rendered HTML to one host; doing it here once at
+    # build time keeps the output portable. See
+    # 51Degrees/Website#699 for the corresponding proxy-side change.
+    if ($content -notmatch '<link\s+rel=["'']?canonical') {
+        $content = $content -replace '(<head[^>]*>)', "`$1`n  $canonicalTag"
+        Set-Content -Path $_.FullName -Value $content -NoNewline
+        $canonicalsAdded++
+    }
+
+    # Mirror copy under the unversioned root. The mirror adds <base>
+    # so relative refs into versioned assets still resolve, and we
+    # ensure the canonical is present (carried over from the in-place
+    # update above, or copied in here for the rare file that already
+    # had a self-canonical).
     if ($content -notmatch '<base\s') {
-        $content = $content -replace '(<head[^>]*>)', "`$1`n  $baseTag`n  $canonicalTag"
+        $content = $content -replace '(<head[^>]*>)', "`$1`n  $baseTag"
     }
     Set-Content -Path $dest -Value $content -NoNewline
     $mirrored.Add($rel)
 }
 Set-Content -Path $manifestPath -Value ($mirrored -join "`n")
-Write-Host "Mirrored $($mirrored.Count) HTML files to gh-pages root."
+Write-Host "Mirrored $($mirrored.Count) HTML files to gh-pages root, added canonical to $canonicalsAdded versioned files."
 Write-Host "::endgroup::"
 
 # Minify the Doxygen-emitted JS (jquery.js, navtree.js, dynsections.js,
