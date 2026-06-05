@@ -71,7 +71,9 @@ if (!(Test-Path "gh-pages/.nojekyll")) {
 # Each mirror gets <base href="/documentation/<version>/"> so relative
 # asset and nav refs still resolve into the versioned tree, and a
 # canonical link pointing back at the unversioned form so search
-# engines index that as the canonical URL.
+# engines index that as the canonical URL. The same loop emits an
+# hreflang="en-US" alternate alongside the canonical so the locale
+# signal matches the rest of 51degrees.com (single-locale site).
 #
 # A .mirror-manifest at the gh-pages root records what we wrote so the
 # next run (after a version bump or a Doxygen page rename) cleans up
@@ -87,6 +89,7 @@ $srcRoot = (Resolve-Path "gh-pages/$version").Path
 $baseTag = "<base href=`"/documentation/$version/`">"
 $mirrored = [System.Collections.Generic.List[string]]::new()
 $canonicalsAdded = 0
+$hreflangsAdded = 0
 Get-ChildItem -Recurse -File -Filter "*.html" -Path "gh-pages/$version" | ForEach-Object {
     $rel = $_.FullName.Substring($srcRoot.Length + 1) -replace '\\', '/'
     $dest = Join-Path "gh-pages" $rel
@@ -100,6 +103,13 @@ Get-ChildItem -Recurse -File -Filter "*.html" -Path "gh-pages/$version" | ForEac
     # staging, preview, localhost).
     $canonicalTag = "<link rel=`"canonical`" href=`"/documentation/$rel`">"
 
+    # hreflang alternate sharing the canonical's href so both
+    # declarations resolve to the same URL. en-US matches the rest of
+    # 51degrees.com (single-locale site); the website-side hreflang on
+    # every non-doxygen page also emits en-US, so /documentation/* now
+    # carries the same locale signal as the surrounding site.
+    $hreflangTag = "<link rel=`"alternate`" hreflang=`"en-US`" href=`"/documentation/$rel`" />"
+
     # Add canonical to the versioned source in place when it doesn't
     # already have one (doxygen-generated pages don't ship one). The
     # site's reverse proxy used to inject this at request time but
@@ -110,6 +120,16 @@ Get-ChildItem -Recurse -File -Filter "*.html" -Path "gh-pages/$version" | ForEac
         $content = $content -replace '(<head[^>]*>)', "`$1`n  $canonicalTag"
         Set-Content -Path $_.FullName -Value $content -NoNewline
         $canonicalsAdded++
+    }
+
+    # Inject the hreflang alternate immediately after the canonical so
+    # the two declarations stay adjacent and obviously paired. Skip if
+    # the page already carries an hreflang (idempotent on re-runs and
+    # safe against a future template change that ships one).
+    if ($content -notmatch '<link\s+rel=["'']?alternate["'']?\s+hreflang=') {
+        $content = $content -replace '(<link\s+rel="canonical"\s+href="[^"]*">)', "`$1`n  $hreflangTag"
+        Set-Content -Path $_.FullName -Value $content -NoNewline
+        $hreflangsAdded++
     }
 
     # Mirror copy under the unversioned root. The mirror adds <base>
@@ -124,7 +144,7 @@ Get-ChildItem -Recurse -File -Filter "*.html" -Path "gh-pages/$version" | ForEac
     $mirrored.Add($rel)
 }
 Set-Content -Path $manifestPath -Value ($mirrored -join "`n")
-Write-Host "Mirrored $($mirrored.Count) HTML files to gh-pages root, added canonical to $canonicalsAdded versioned files."
+Write-Host "Mirrored $($mirrored.Count) HTML files to gh-pages root, added canonical to $canonicalsAdded versioned files, added hreflang to $hreflangsAdded versioned files."
 Write-Host "::endgroup::"
 
 # Minify the Doxygen-emitted JS (jquery.js, navtree.js, dynsections.js,
