@@ -1,8 +1,9 @@
 {
   "name": "ci-docs-tooling",
   "private": true,
-  "description": "Build-time tooling for the documentation pipeline (currently: terser for minifying Doxygen-emitted JS).",
+  "description": "Build-time tooling for the documentation pipeline (terser for Doxygen-emitted JS, csso for Doxygen-emitted CSS).",
   "dependencies": {
+    "csso": "^5.0.5",
     "terser": "^5.31.6"
   }
 }
