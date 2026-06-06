@@ -3,7 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <link rel="canonical" href="/documentation/_pipeline_api__features__automatic_datafile_updates.html">
-  <link rel="alternate" hreflang="en-US" href="/documentation/_pipeline_api__features__automatic_datafile_updates.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
@@ -105,7 +104,7 @@ $(document).ready(function(){initNavTree('_pipeline_api__features__automatic_dat
 <p>A server will often provide the MD5 hash of the <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html#PipelineApi_Concepts_Configuration_DataFiles">data file</a> which it has served in the <code>Content-MD5</code> response header. This can then be checked against that which was actually downloaded to ensure the integrity of the <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html#PipelineApi_Concepts_Configuration_DataFiles">data file</a>. By default this is usually enabled, however not all download servers support it.</p>
 <h2>Verify 'If-Modified-Since'</h2>
 <p>Unnecessary downloads can be prevented by providing the download server with an <code>If-Modified-Since</code> HTTP header. If this option is enabled (which it is by default for most <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html">On-premise Engines</a>) the <code>If-Modified-Since</code> header will be set to the date at which the current <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html#PipelineApi_Concepts_Configuration_DataFiles">data file</a> was last modified. If there is not a newer <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html#PipelineApi_Concepts_Configuration_DataFiles">data file</a> on the server then the service will not attempt to download a file.</p>
-<h1 class="g-docs__section-heading">Recommendations for large clusters <a href="#Large_Clusters">#</a><a class="anchor" id="Large_Clusters"></a></h1>
+<h2 class="g-docs__section-heading">Recommendations for large clusters <a href="#Large_Clusters">#</a><a class="anchor" id="Large_Clusters"></a></h2>
 <p>The <a class="el" href="_services__distributor.html">Distributor</a> API is limited in the number of requests it can service per day. This is enforced by each License Key being limited to a certain number of requests (max 100, although some Keys will have a lower threshold than this) in each 30-minute period.</p>
 <p>Environments that use large numbers of independent nodes can easily exceed this threshold if the automatic update functionality provided by the pipeline API is switched on.</p>
 <p>Instead, we recommend that a single machine (with secondaries as necessary for redundancy, etc.) is tasked with downloading the data file each day using curl or similar.</p>
