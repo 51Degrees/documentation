@@ -85,17 +85,26 @@ lives here, not in the template, per the next section).
 
 ## Why hreflang lives in the CI script, not the template
 
-The single hreflang declaration emitted on every doxygen page is
+The single hreflang declaration emitted on doxygen pages is
 `<link rel="alternate" hreflang="en-US" .../>`, matching the rest of
 51degrees.com (single-locale site; no x-default, no other locale).
 
-It is injected by `ci/generate-documentation.ps1` in the same mirror
-loop that injects the canonical, so both declarations share the same
-`/documentation/<rel>` href and stay adjacent in `<head>`. The
-template cannot construct that root-relative URL by itself (doxygen's
-`$relpath^` substitution is relative to the page being rendered, not
-to `/documentation/`), so doing it in the script is the only way to
-keep canonical and hreflang in agreement.
+It is injected by `ci/generate-documentation.ps1` after the canonical
+so both declarations share the same `/documentation/<rel>` href and
+stay adjacent in `<head>`. The template cannot construct that root-
+relative URL by itself (doxygen's `$relpath^` substitution is relative
+to the page being rendered, not to `/documentation/`), so doing it in
+the script is the only way to keep canonical and hreflang in agreement.
+
+The hreflang is emitted only on the unversioned mirror, never on the
+versioned source: the versioned source canonicals at a different URL
+(the unversioned one), so emitting a hreflang anchor at that different
+URL from the versioned page is the cross-URL mismatch Semrush flags as
+a hreflang conflict (rule 24) or an incorrect hreflang link (rule 25).
+The mirror is self-canonical, so it carries the locale signal cleanly.
+The mirror loop also gates the injection on the existing canonical href
+matching the mirror's own URL, so api-repo pages whose template sets a
+different consolidation target stay unmodified.
 
 ## Why these notes are not inline comments
 
