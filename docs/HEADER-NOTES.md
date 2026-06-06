@@ -83,6 +83,20 @@ external stylesheet finishes loading. The CSS is hand-minified to a
 single line to keep the per-page byte cost minimal (the rationale
 lives here, not in the template, per the next section).
 
+## Why hreflang lives in the CI script, not the template
+
+The single hreflang declaration emitted on every doxygen page is
+`<link rel="alternate" hreflang="en-US" .../>`, matching the rest of
+51degrees.com (single-locale site; no x-default, no other locale).
+
+It is injected by `ci/generate-documentation.ps1` in the same mirror
+loop that injects the canonical, so both declarations share the same
+`/documentation/<rel>` href and stay adjacent in `<head>`. The
+template cannot construct that root-relative URL by itself (doxygen's
+`$relpath^` substitution is relative to the page being rendered, not
+to `/documentation/`), so doing it in the script is the only way to
+keep canonical and hreflang in agreement.
+
 ## Why these notes are not inline comments
 
 A prior version had this rationale as `<!-- ... -->` blocks inside
