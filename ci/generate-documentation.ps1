@@ -71,9 +71,15 @@ if (!(Test-Path "gh-pages/.nojekyll")) {
 # Each mirror gets <base href="/documentation/<version>/"> so relative
 # asset and nav refs still resolve into the versioned tree, and a
 # canonical link pointing back at the unversioned form so search
-# engines index that as the canonical URL. The same loop emits an
-# hreflang="en-US" alternate alongside the canonical so the locale
-# signal matches the rest of 51degrees.com (single-locale site).
+# engines index that as the canonical URL.
+#
+# The hreflang="en-US" alternate is emitted only on the unversioned
+# mirror, never on the versioned source. The versioned URL canonicals
+# at a different URL (the unversioned one), so emitting a hreflang
+# anchor at that different URL from the versioned page is the cross-
+# URL mismatch Semrush flags as a hreflang conflict (rule 24) or an
+# incorrect hreflang link (rule 25). The mirror is self-canonical, so
+# it carries the locale signal cleanly.
 #
 # A .mirror-manifest at the gh-pages root records what we wrote so the
 # next run (after a version bump or a Doxygen page rename) cleans up
@@ -114,32 +120,46 @@ Get-ChildItem -Recurse -File -Filter "*.html" -Path "gh-pages/$version" | ForEac
     # already have one (doxygen-generated pages don't ship one). The
     # site's reverse proxy used to inject this at request time but
     # pinned the rendered HTML to one host; doing it here once at
-    # build time keeps the output portable. See
-    # 51Degrees/Website#699 for the corresponding proxy-side change.
+    # build time keeps the output portable.
     if ($content -notmatch '<link\s+rel=["'']?canonical') {
         $content = $content -replace '(<head[^>]*>)', "`$1`n  $canonicalTag"
         Set-Content -Path $_.FullName -Value $content -NoNewline
         $canonicalsAdded++
     }
 
-    # Inject the hreflang alternate immediately after the canonical so
-    # the two declarations stay adjacent and obviously paired. Skip if
-    # the page already carries an hreflang (idempotent on re-runs and
-    # safe against a future template change that ships one).
-    if ($content -notmatch '<link\s+rel=["'']?alternate["'']?\s+hreflang=') {
-        $content = $content -replace '(<link\s+rel="canonical"\s+href="[^"]*">)', "`$1`n  $hreflangTag"
-        Set-Content -Path $_.FullName -Value $content -NoNewline
-        $hreflangsAdded++
-    }
-
     # Mirror copy under the unversioned root. The mirror adds <base>
-    # so relative refs into versioned assets still resolve, and we
-    # ensure the canonical is present (carried over from the in-place
-    # update above, or copied in here for the rare file that already
-    # had a self-canonical).
+    # so relative refs into versioned assets still resolve, and the
+    # canonical is carried over from the in-place update above (or
+    # from the doxygen template for the rare file that already had
+    # a self-canonical).
     if ($content -notmatch '<base\s') {
         $content = $content -replace '(<head[^>]*>)', "`$1`n  $baseTag"
     }
+
+    # Inject the hreflang alternate into the mirror only, and only when
+    # the existing canonical on this page points at the mirror's own
+    # URL. Two conditions have to hold:
+    #   * The page does not already carry an hreflang (idempotent on
+    #     re-runs and safe against a future template change that ships
+    #     one).
+    #   * The canonical href equals /documentation/$rel (i.e. the
+    #     mirror's URL). Pages whose canonical points elsewhere -- e.g.
+    #     api-repo doxygen pages whose own template sets a different
+    #     consolidation target -- are not self-canonical and so must
+    #     not declare a hreflang anchor at a URL different from their
+    #     own.
+    $mirrorUrl = "/documentation/$rel"
+    $existingCanonical = $null
+    $canonicalMatch = [regex]::Match($content, '<link\s+rel="canonical"\s+href="([^"]+)"')
+    if ($canonicalMatch.Success) {
+        $existingCanonical = $canonicalMatch.Groups[1].Value
+    }
+    if ($existingCanonical -eq $mirrorUrl -and
+        $content -notmatch '<link\s+rel=["'']?alternate["'']?\s+hreflang=') {
+        $content = $content -replace '(<link\s+rel="canonical"\s+href="[^"]*">)', "`$1`n  $hreflangTag"
+        $hreflangsAdded++
+    }
+
     Set-Content -Path $dest -Value $content -NoNewline
     $mirrored.Add($rel)
 }
