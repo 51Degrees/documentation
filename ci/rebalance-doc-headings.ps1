@@ -14,14 +14,27 @@
     every one of them under /documentation/4.5/. See documentation
     issue #154 for the full investigation.
 
-    This script promotes the page-title h2 to h1 and demotes each
-    section-heading h1 to h2 by class. Class attributes (and any
-    other attributes on the tag) are preserved so existing CSS and
-    fragment links continue to work.
+    Three passes run in order:
+
+    1. Promote the page-title h2 to h1 by class
+       (`g-docs__page-title`).
+    2. Demote each section-heading h1 to h2 by class
+       (`g-docs__section-heading`).
+    3. Demote every remaining body-level h1 to h2 (Doxygen also
+       converts plain markdown `# Section Title` lines to <h1>
+       with no recognisable class, e.g.
+       `<h1><a class="anchor" id="..."></a> Title</h1>`).
+       The page-title h1 produced by pass 1 is preserved because
+       it carries `class="g-docs__page-title"`.
+
+    Class attributes (and any other attributes on the tag) are
+    preserved on every rewrite so existing CSS and fragment links
+    continue to work.
 
     The transform is idempotent: re-running on already-rebalanced
     HTML is a no-op because the class selectors no longer match
-    the original tag names.
+    the original tag names and the only remaining <h1> is the
+    page-title h1, which pass 3 skips.
 
 .PARAMETER Path
     Directory to walk recursively for *.html files. Mandatory.
@@ -59,11 +72,20 @@ if (-not (Test-Path $Path)) {
     throw "Path '$Path' does not exist."
 }
 
+# Catch-all opening-tag pattern for pass 3. Matches any <h1 ...>
+# regardless of attributes (or lack of). The body-h1 sweep below
+# inspects each match's attributes and skips the page-title h1
+# produced by pass 1.
+$bodyH1OpenPattern = '(?i)<h1(\b[^>]*)>'
+$pageTitleClassPattern = `
+    '(?i)class\s*=\s*(["''])[^"'']*\bg-docs__page-title\b[^"'']*\1'
+
 $resolved = (Resolve-Path $Path).Path
 $totalFiles = 0
 $changedFiles = 0
 $totalPageTitlePromotions = 0
 $totalSectionHeadingDemotions = 0
+$totalBodyH1Demotions = 0
 
 foreach ($file in Get-ChildItem -Path $resolved -Recurse -File -Filter '*.html') {
     $totalFiles++
@@ -74,20 +96,44 @@ foreach ($file in Get-ChildItem -Path $resolved -Recurse -File -Filter '*.html')
     # tags we rewrote in each file.
     $promotions = [regex]::Matches($original, $pageTitlePattern).Count
     $demotions = [regex]::Matches($original, $sectionHeadingPattern).Count
-    if ($promotions -eq 0 -and $demotions -eq 0) {
-        continue
-    }
 
     $rewritten = $original -replace `
         $pageTitlePattern, $pageTitleReplacement
     $rewritten = $rewritten -replace `
         $sectionHeadingPattern, $sectionHeadingReplacement
 
+    # Pass 3: demote any remaining body <h1> that is NOT the
+    # page-title h1 (which now carries `class="g-docs__page-title"`
+    # after pass 1). Doxygen converts plain markdown `# Title`
+    # lines to <h1> with no recognisable class, so the by-class
+    # passes above miss them. Walk the matches in reverse so
+    # earlier rewrites do not shift later indices, and rewrite
+    # the closing </h1> before the opening <h1 so the opening
+    # tag's stored Index stays valid.
+    $bodyMatches = [regex]::Matches($rewritten, $bodyH1OpenPattern)
+    $bodyDemotions = 0
+    for ($i = $bodyMatches.Count - 1; $i -ge 0; $i--) {
+        $m = $bodyMatches[$i]
+        $attrs = $m.Groups[1].Value
+        if ($attrs -match $pageTitleClassPattern) { continue }
+        $closeAt = $rewritten.IndexOf(
+            '</h1>', $m.Index + $m.Length,
+            [System.StringComparison]::OrdinalIgnoreCase)
+        if ($closeAt -lt 0) { continue }
+        # Replace closing tag first so the opening-tag index stays
+        # valid for the second Remove/Insert.
+        $rewritten = $rewritten.Remove($closeAt, 5).Insert($closeAt, '</h2>')
+        $rewritten = $rewritten.Remove($m.Index, $m.Length).Insert(
+            $m.Index, '<h2' + $attrs + '>')
+        $bodyDemotions++
+    }
+
     if ($rewritten -ne $original) {
         Set-Content -Path $file.FullName -Value $rewritten -NoNewline
         $changedFiles++
         $totalPageTitlePromotions += $promotions
         $totalSectionHeadingDemotions += $demotions
+        $totalBodyH1Demotions += $bodyDemotions
     }
 }
 
@@ -95,5 +141,6 @@ Write-Host (
     "rebalance-doc-headings: scanned $totalFiles files, " +
     "rewrote $changedFiles, " +
     "promoted $totalPageTitlePromotions page-title h2 -> h1, " +
-    "demoted $totalSectionHeadingDemotions section-heading h1 -> h2."
+    "demoted $totalSectionHeadingDemotions section-heading h1 -> h2, " +
+    "demoted $totalBodyH1Demotions body-level h1 -> h2."
 )

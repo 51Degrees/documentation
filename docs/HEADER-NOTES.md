@@ -106,6 +106,29 @@ The mirror loop also gates the injection on the existing canonical href
 matching the mirror's own URL, so api-repo pages whose template sets a
 different consolidation target stay unmodified.
 
+## Why heading rebalancing lives in a CI script, not the template
+
+Doxygen ships the page title at `<h2 class="g-docs__page-title">`
+and every section heading at `<h1 class="g-docs__section-heading">`,
+and also converts top-level markdown `# Section Title` lines to
+plain `<h1>` with no recognisable class. Each rendered page therefore
+carries N+1 `<h1>` tags and no `<h1>` for the actual page title,
+which Semrush rule 104 ("Multiple H1 tags") flags.
+
+`ci/rebalance-doc-headings.ps1` runs over the gh-pages tree after
+the mirror loop and rewrites three things by regex:
+
+1. Promote the page-title `<h2>` to `<h1>` by class.
+2. Demote every section-heading `<h1>` to `<h2>` by class.
+3. Demote any remaining body-level `<h1>` to `<h2>` (the
+   class-less ones doxygen emits for markdown section titles).
+   The page-title `<h1>` from pass 1 is preserved because it
+   carries `class="g-docs__page-title"`.
+
+Doing this in CI rather than patching the template lets the same
+rule apply uniformly across every API repo's doxygen output without
+needing each one to re-pull a template change.
+
 ## Why these notes are not inline comments
 
 A prior version had this rationale as `<!-- ... -->` blocks inside
