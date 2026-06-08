@@ -21,7 +21,7 @@ Two deployment models are covered:
   offline operation, predictable latency, or the highest request throughput.
   See @ref IpIntelligence_Examples_GettingStarted_Web_OnPremise.
 
-Both examples follow the same shape: configure a pipeline, register it with
+Both examples follow the same pattern: configure a pipeline, register it with
 the framework, hand it the request and read the detected properties off the
 result. Snippets are shown side by side for ASP.NET Core, Java, Node.js, PHP
 and Python so you can pick the language that matches your stack. For console

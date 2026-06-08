@@ -22,7 +22,7 @@ Two deployment models are covered:
   @ref DeviceDetection_Examples_GettingStarted_Console_OnPremise.
 
 Both examples are available in C#, Java, Node.js, PHP and Python with matching
-shape, so you can compare the same logic across languages. If you intend to
+pattern, so you can compare the same logic across languages. If you intend to
 deploy inside a web framework rather than a console, see
 @ref DeviceDetection_Examples_GettingStarted_Web_Index instead.
 

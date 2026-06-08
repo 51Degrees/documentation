@@ -19,6 +19,6 @@ On-premise Hash engine — Cloud performance is dominated by network round-trip
 and is not benchmarked here.
 
 The example ships for C, C# (.NET), Java, Node.js, and Python with matching
-shape, so the same workload can be measured across runtimes.
+pattern, so the same workload can be measured across runtimes.
 
 @subpage DeviceDetection_Examples_Performance_OnPremiseHash

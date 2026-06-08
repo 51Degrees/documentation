@@ -20,7 +20,7 @@ Two deployment models are covered:
   operation, predictable latency, or the highest request throughput. See
   @ref DeviceDetection_Examples_GettingStarted_Web_OnPremise.
 
-Both examples follow the same shape: configure a pipeline, register it with
+Both examples follow the same pattern: configure a pipeline, register it with
 the framework, and read the detected properties off the request. Each ships
 side-by-side snippets for ASP.NET Core, ASP.NET Framework, Java, Node.js, PHP
 and Python, so you can pick the language that matches your stack and skip the
