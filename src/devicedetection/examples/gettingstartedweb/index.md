@@ -22,10 +22,10 @@ Two deployment models are covered:
 
 Both examples follow the same pattern: configure a pipeline, register it with
 the framework, and read the detected properties off the request. Each ships
-side-by-side snippets for ASP.NET Core, ASP.NET Framework, Java, Node.js, PHP
-and Python, so you can pick the language that matches your stack and skip the
-rest. If you are evaluating which deployment model fits your use case first,
-see @ref DeviceDetection_CloudToOnPremise for a comparison.
+side-by-side snippets across every supported language and web framework, so
+you can pick the one that matches your stack and skip the rest. If you are
+evaluating which deployment model fits your use case first, see
+@ref DeviceDetection_CloudToOnPremise for a comparison.
 
 @subpage DeviceDetection_Examples_GettingStarted_Web_Cloud
 

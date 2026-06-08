@@ -21,8 +21,8 @@ Two deployment models are covered:
   when you need the lowest per-call latency. See
   @ref DeviceDetection_Examples_GettingStarted_Console_OnPremise.
 
-Both examples are available in C#, Java, Node.js, PHP and Python with matching
-pattern, so you can compare the same logic across languages. If you intend to
+Both examples are available across every supported language with a matching
+pattern, so the same logic can be compared side by side. If you intend to
 deploy inside a web framework rather than a console, see
 @ref DeviceDetection_Examples_GettingStarted_Web_Index instead.
 

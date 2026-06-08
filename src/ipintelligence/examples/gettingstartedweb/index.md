@@ -23,8 +23,8 @@ Two deployment models are covered:
 
 Both examples follow the same pattern: configure a pipeline, register it with
 the framework, hand it the request and read the detected properties off the
-result. Snippets are shown side by side for ASP.NET Core, Java, Node.js, PHP
-and Python so you can pick the language that matches your stack. For console
+result. Snippets are shown side by side across every supported language and
+web framework, so you can pick the one that matches your stack. For console
 or batch-style integrations, see @ref IpIntelligence_Examples_GettingStarted_Console_Index
 instead.
 

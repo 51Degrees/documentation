@@ -18,7 +18,7 @@ trade memory for throughput on your target hosts. The example covers the
 On-premise Hash engine — Cloud performance is dominated by network round-trip
 and is not benchmarked here.
 
-The example ships for C, C# (.NET), Java, Node.js, and Python with matching
-pattern, so the same workload can be measured across runtimes.
+The example ships across every supported language with a matching pattern, so
+the same workload can be measured across runtimes.
 
 @subpage DeviceDetection_Examples_Performance_OnPremiseHash

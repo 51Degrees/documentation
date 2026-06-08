@@ -22,8 +22,8 @@ Two deployment models are covered:
   restricted or when you need the lowest per-call latency. See
   @ref IpIntelligence_Examples_GettingStarted_Console_OnPremise.
 
-Both examples are available in C#, Java, Node.js, PHP and Python with matching
-pattern, so the same logic can be compared across languages. If you intend to
+Both examples are available across every supported language with a matching
+pattern, so the same logic can be compared side by side. If you intend to
 deploy inside a web framework rather than a console, see
 @ref IpIntelligence_Examples_GettingStarted_Web_Index instead.
 
