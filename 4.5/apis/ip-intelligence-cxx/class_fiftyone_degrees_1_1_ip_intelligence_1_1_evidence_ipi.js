@@ -1,0 +1,5 @@
+var class_fiftyone_degrees_1_1_ip_intelligence_1_1_evidence_ipi =
+[
+    [ "EvidenceIpi", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_evidence_ipi.html#a795a3934f9ec1b6e95f1ecd6aeb9c9e8", null ],
+    [ "isRelevant", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_evidence_ipi.html#a5f3fd50933c900d14d7e2fba3e4db70c", null ]
+];

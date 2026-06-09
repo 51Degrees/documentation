@@ -1,80 +1,84 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/apis/pipeline-python/classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html">
   <link rel="alternate" hreflang="en-US" href="/documentation/apis/pipeline-python/classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.15"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>51Degrees Pipeline Python: fiftyone_pipeline_core.evidence.Evidence Class Reference</title>
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="dynsections.min.js"></script>
-<script type="text/javascript" src="resize.min.js"></script>
+<script type="text/javascript" src="codefolding.min.js"></script>
+<script type="text/javascript" src="clipboard.min.js"></script>
 <script type="text/javascript" src="navtreedata.min.js"></script>
 <script type="text/javascript" src="navtree.min.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(initResizable);
-/* @license-end */</script>
+<script type="text/javascript" src="cookie.min.js"></script>
 <link href="search/search.min.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.min.js"></script>
 <script type="text/javascript" src="search/search.min.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="l-docs-index p-doxygen">
-<div class="l-index__content">
-<!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
-<div id="titlearea" class="g-header g-header--docs">
-  <h1 class="c-brand">
-  <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png"/></a>
-  <span class="c-tagline">51Degrees Pipeline Python
-   &#160;<span id="projectnumber">4.5</span>
-  </span>
-  </h1>
-  <div id="projectalign" style="padding-left: 0.5em;">
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="/documentation/4.5/index.html"><img alt="Logo" src="logo-51Degrees-Docs.png"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">51Degrees Pipeline Python<span id="projectnumber">&#160;4.5</span>
+   </div>
    <div id="projectbrief">51Degrees Pipeline for Python</div>
-  </div>
-  <div id="main-nav"></div>
-     <div class="g-search">
+  </td>
+    <td>  <div class="g-search">
     <div class="c-search is-openable">
     <form class="c-search__form">
       <div id="MSearchBox" class="b-form-group b-form-group--with-icon">
         <label for="inputSearch" class="b-text--hidden">Search</label>
         <img id="MSearchSelect" src="icon-search.svg" class="b-icon" alt="Search" 
-                 onmouseover="return searchBox.OnSearchSelectShow()"
-                 onmouseout="return searchBox.OnSearchSelectHide()"/>
-        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" id="inputSearch" placeholder="Type a class, namespace etc." aria-label="Search"
-                 onfocus="searchBox.OnSearchFieldFocus(true)" 
-                 onblur="searchBox.OnSearchFieldFocus(false)" 
-                 onkeyup="searchBox.OnSearchFieldChange(event)">
-         <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+             onmouseover="return searchBox.OnSearchSelectShow()"
+             onmouseout="return searchBox.OnSearchSelectHide()"/>
+        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" placeholder="Type a class, namespace etc." aria-label="Search"
+             onfocus="searchBox.OnSearchFieldFocus(true)" 
+             onblur="searchBox.OnSearchFieldFocus(false)" 
+             onkeyup="searchBox.OnSearchFieldChange(event)"/>
+        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
       </div>
     </form>
+    </div>
   </div>
-</div>
+</td>
+ </tr>
+ </tbody>
+</table>
 </div>
 <!-- end header part -->
-<main class="g-main">
-<!-- Generated by Doxygen 1.8.15 -->
+<!-- Generated by Doxygen 1.17.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search');
-/* @license-end */
+let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
-<!-- top -->
-	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
-  <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html','');});
-/* @license-end */
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div class="g-docs__sidenav">
+  <nav id="nav-tree-contents" class="c-sidenav">
+    <h4 class="c-sidenav__heading">Documentation</h4>
+    <div id="nav-sync" class="sync"></div>
+  </nav>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html','','classfiftyone__pipeline__core_1_1evidence_1_1_evidence-members'); });
 </script>
 <div id="doc-content" class="g-docs__content">
 <!-- window showing the filter options -->
@@ -86,596 +90,307 @@ $(document).ready(function(){initNavTree('classfiftyone__pipeline__core_1_1evide
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="g-docs__header">
-<div class="c-breadcrumb">
-  <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacefiftyone__pipeline__core.html">fiftyone_pipeline_core</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacefiftyone__pipeline__core_1_1evidence.html">evidence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html">Evidence</a></li>  </ul>
-</div>
-<h2 class="g-docs__page-title">fiftyone_pipeline_core.evidence.Evidence Class Reference</h2></div><!--header-->
+<h1 class="g-docs__page-title">fiftyone_pipeline_core.evidence.Evidence Class Reference</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section">
-</section>
-<!-- start ClassInheritanceGraph -->
-<section class="g-docs__section">
-</section>
-<!-- end ClassInheritanceGraph -->
-<section class="g-docs__section">
-</section>
-<!-- start MemberDeclStart -->
-<!-- startMemberSections -->
-<!-- end MemberDeclStart -->
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-methods"></a>
-Public Member Functions</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a7315b880f352b66626634084057da32e"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html#a7315b880f352b66626634084057da32e">__init__</a> (self, <a class="el" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html#afd34afcb4b2ece25d019d5aabe9c361e">flowdata</a>)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a7315b880f352b66626634084057da32e">Constructor for <a class="el" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html">Evidence</a> container on a FlowData.  <a href="#a7315b880f352b66626634084057da32e">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a8f5e8413d58b16a9cd50687941f4b4d4"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html#a8f5e8413d58b16a9cd50687941f4b4d4">add</a> (self, key, value)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a8f5e8413d58b16a9cd50687941f4b4d4">Add a single piece of evidence by its element and value.  <a href="#a8f5e8413d58b16a9cd50687941f4b4d4">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a68b9a7b072ca0e534f30d0dae0912b4c"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html#a68b9a7b072ca0e534f30d0dae0912b4c">add_from_dict</a> (self, evidence_dictionary)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a68b9a7b072ca0e534f30d0dae0912b4c">Helper function to set multiple pieces of evidence from a dict.  <a href="#a68b9a7b072ca0e534f30d0dae0912b4c">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a6c5415cae77b04873167620f926024e8"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html#a6c5415cae77b04873167620f926024e8">get</a> (self, key)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a6c5415cae77b04873167620f926024e8">Get a piece of evidence by key.  <a href="#a6c5415cae77b04873167620f926024e8">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a0af6c803af310e93796f4c54823ab5d2"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html#a0af6c803af310e93796f4c54823ab5d2">get_all</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a0af6c803af310e93796f4c54823ab5d2">Get all evidence.  <a href="#a0af6c803af310e93796f4c54823ab5d2">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a2d116bcae042e7c8ab970403e0c07332"><td class="c-table__cell">None<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html#a2d116bcae042e7c8ab970403e0c07332">filter</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a2d116bcae042e7c8ab970403e0c07332">Filter evidence using <code>filter_evidence_key</code> and <code>filter_evidence</code> methods of each FlowElement in the pipeline.  <a href="#a2d116bcae042e7c8ab970403e0c07332">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-attribs"></a>
-Public Attributes</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a862486fff71efd250b713ee4c14434d9"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html#a862486fff71efd250b713ee4c14434d9">evidence</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a86fa5405745445cdf19f1898be1197e8"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html#a86fa5405745445cdf19f1898be1197e8">evidence_filtered</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:afd34afcb4b2ece25d019d5aabe9c361e"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html#afd34afcb4b2ece25d019d5aabe9c361e">flowdata</a>
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<!-- start MemberGroups -->
-<!-- end MemberGroups -->
-<section class="g-docs__section">
-<h2 class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a7315b880f352b66626634084057da32e"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7315b880f352b66626634084057da32e">&#9670;&nbsp;</a></span>__init__()</h2>
+<table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a88d5dd1192f0b9e96c50061705876f14" id="r_a88d5dd1192f0b9e96c50061705876f14"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a88d5dd1192f0b9e96c50061705876f14">__init__</a> (self, flowdata)</td></tr>
+<tr class="c-table__row memdesc:a88d5dd1192f0b9e96c50061705876f14"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for <a class="el" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html">Evidence</a> container on a FlowData.  <br /></td></tr>
+<tr class="c-table__row memitem:a2a201fa0c86d85d438066eb6d195d919" id="r_a2a201fa0c86d85d438066eb6d195d919"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2a201fa0c86d85d438066eb6d195d919">add</a> (self, key, value)</td></tr>
+<tr class="c-table__row memdesc:a2a201fa0c86d85d438066eb6d195d919"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add a single piece of evidence by its element and value.  <br /></td></tr>
+<tr class="c-table__row memitem:aa0cce26292e75e702218470716ef941f" id="r_aa0cce26292e75e702218470716ef941f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aa0cce26292e75e702218470716ef941f">add_from_dict</a> (self, evidence_dictionary)</td></tr>
+<tr class="c-table__row memdesc:aa0cce26292e75e702218470716ef941f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Helper function to set multiple pieces of evidence from a dict.  <br /></td></tr>
+<tr class="c-table__row memitem:ad982cecc9b60ea9e2a775693dff0e1cf" id="r_ad982cecc9b60ea9e2a775693dff0e1cf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad982cecc9b60ea9e2a775693dff0e1cf">get</a> (self, key)</td></tr>
+<tr class="c-table__row memdesc:ad982cecc9b60ea9e2a775693dff0e1cf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a piece of evidence by key.  <br /></td></tr>
+<tr class="c-table__row memitem:ad5a8564c12f27339a0f1d097f077dc7d" id="r_ad5a8564c12f27339a0f1d097f077dc7d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad5a8564c12f27339a0f1d097f077dc7d">get_all</a> (self)</td></tr>
+<tr class="c-table__row memdesc:ad5a8564c12f27339a0f1d097f077dc7d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get all evidence.  <br /></td></tr>
+<tr class="c-table__row memitem:a2d116bcae042e7c8ab970403e0c07332" id="r_a2d116bcae042e7c8ab970403e0c07332"><td class="c-table__cell">None&#160;</td><td class="c-table__cell"><a class="el" href="#a2d116bcae042e7c8ab970403e0c07332">filter</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a2d116bcae042e7c8ab970403e0c07332"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter evidence using <code>filter_evidence_key</code> and <code>filter_evidence</code> methods of each FlowElement in the pipeline.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a982ecf2eb82aa66bba055ffe10050793" id="r_a982ecf2eb82aa66bba055ffe10050793"><td class="c-table__cell">dict&#160;</td><td class="c-table__cell"><a class="el" href="#a982ecf2eb82aa66bba055ffe10050793">evidence</a> = {}</td></tr>
+<tr class="c-table__row memitem:a0fbdff63e48b9f233d16103080c325f3" id="r_a0fbdff63e48b9f233d16103080c325f3"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a0fbdff63e48b9f233d16103080c325f3">evidence_filtered</a> = False</td></tr>
+<tr class="c-table__row memitem:afd34afcb4b2ece25d019d5aabe9c361e" id="r_afd34afcb4b2ece25d019d5aabe9c361e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#afd34afcb4b2ece25d019d5aabe9c361e">flowdata</a> = flowdata</td></tr>
+</table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
+<a id="a88d5dd1192f0b9e96c50061705876f14" name="a88d5dd1192f0b9e96c50061705876f14"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a88d5dd1192f0b9e96c50061705876f14">&#9670;&#160;</a></span>__init__()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.evidence.Evidence.__init__ <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.evidence.Evidence.__init__ </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>flowdata</em><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>flowdata</em></span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Constructor for <a class="el" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html">Evidence</a> container on a FlowData. </p>
-<p>@type flowdata: FlowData </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">flowdata</span> - Parent FlowData </dd>
+<p>@type flowdata: FlowData </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flowdata</td><td>Parent FlowData </td></tr>
+  </table>
   </dd>
 </dl>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Function Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a8f5e8413d58b16a9cd50687941f4b4d4"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8f5e8413d58b16a9cd50687941f4b4d4">&#9670;&nbsp;</a></span>add()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a2a201fa0c86d85d438066eb6d195d919" name="a2a201fa0c86d85d438066eb6d195d919"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2a201fa0c86d85d438066eb6d195d919">&#9670;&#160;</a></span>add()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.evidence.Evidence.add <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.evidence.Evidence.add </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>key</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>key</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>value</em><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>value</em></span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Add a single piece of evidence by its element and value. </p>
-<p>@type key: string </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">key</span> - a flowElement's datakey</dd>
+<p>@type key: string </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>a flowElement's datakey</td></tr>
+  </table>
   </dd>
 </dl>
-<p>@type value: mixed </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">value</span> - a piece of evidence </dd>
+<p>@type value: mixed </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>a piece of evidence </td></tr>
+  </table>
   </dd>
 </dl>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a68b9a7b072ca0e534f30d0dae0912b4c"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a68b9a7b072ca0e534f30d0dae0912b4c">&#9670;&nbsp;</a></span>add_from_dict()</h2>
+<a id="aa0cce26292e75e702218470716ef941f" name="aa0cce26292e75e702218470716ef941f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa0cce26292e75e702218470716ef941f">&#9670;&#160;</a></span>add_from_dict()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.evidence.Evidence.add_from_dict <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.evidence.Evidence.add_from_dict </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>evidence_dictionary</em><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>evidence_dictionary</em></span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Helper function to set multiple pieces of evidence from a dict. </p>
-<p>@type evidence_dictionary: dict </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">evidence_dictionary</span> - Dict of evidence </dd>
+<p>@type evidence_dictionary: dict </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">evidence_dictionary</td><td>Dict of evidence </td></tr>
+  </table>
   </dd>
 </dl>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a2d116bcae042e7c8ab970403e0c07332"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2d116bcae042e7c8ab970403e0c07332">&#9670;&nbsp;</a></span>filter()</h2>
+<a id="a2d116bcae042e7c8ab970403e0c07332" name="a2d116bcae042e7c8ab970403e0c07332"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2d116bcae042e7c8ab970403e0c07332">&#9670;&#160;</a></span>filter()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell"> None fiftyone_pipeline_core.evidence.Evidence.filter <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell"> None fiftyone_pipeline_core.evidence.Evidence.filter </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Filter evidence using <code>filter_evidence_key</code> and <code>filter_evidence</code> methods of each FlowElement in the pipeline. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a6c5415cae77b04873167620f926024e8"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6c5415cae77b04873167620f926024e8">&#9670;&nbsp;</a></span>get()</h2>
+<a id="ad982cecc9b60ea9e2a775693dff0e1cf" name="ad982cecc9b60ea9e2a775693dff0e1cf"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad982cecc9b60ea9e2a775693dff0e1cf">&#9670;&#160;</a></span>get()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.evidence.Evidence.get <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.evidence.Evidence.get </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>key</em><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>key</em></span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Get a piece of evidence by key. </p>
-<p>@type key: string </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">key</span> - A FlowElement's datakey</dd>
+<p>@type key: string </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>A FlowElement's datakey</td></tr>
+  </table>
   </dd>
 </dl>
-<p>@rtype: dict </p><dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: A piece of evidence </dd></dl>
-<!-- endIndent -->
+<p>@rtype: dict </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: A piece of evidence </dd></dl>
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a0af6c803af310e93796f4c54823ab5d2"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0af6c803af310e93796f4c54823ab5d2">&#9670;&nbsp;</a></span>get_all()</h2>
+<a id="ad5a8564c12f27339a0f1d097f077dc7d" name="ad5a8564c12f27339a0f1d097f077dc7d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad5a8564c12f27339a0f1d097f077dc7d">&#9670;&#160;</a></span>get_all()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.evidence.Evidence.get_all <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.evidence.Evidence.get_all </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Get all evidence. </p>
-<p>@rtype: dict </p><dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns everything in this <a class="el" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence.html#a862486fff71efd250b713ee4c14434d9">Evidence.evidence</a> </dd></dl>
-<!-- endIndent -->
+<p>@rtype: dict </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns everything in this <a class="el" href="#a982ecf2eb82aa66bba055ffe10050793">Evidence.evidence</a> </dd></dl>
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Data Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a862486fff71efd250b713ee4c14434d9"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a862486fff71efd250b713ee4c14434d9">&#9670;&nbsp;</a></span>evidence</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a982ecf2eb82aa66bba055ffe10050793" name="a982ecf2eb82aa66bba055ffe10050793"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a982ecf2eb82aa66bba055ffe10050793">&#9670;&#160;</a></span>evidence</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_core.evidence.Evidence.evidence<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">dict fiftyone_pipeline_core.evidence.Evidence.evidence = {}</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a86fa5405745445cdf19f1898be1197e8"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a86fa5405745445cdf19f1898be1197e8">&#9670;&nbsp;</a></span>evidence_filtered</h2>
+<a id="a0fbdff63e48b9f233d16103080c325f3" name="a0fbdff63e48b9f233d16103080c325f3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0fbdff63e48b9f233d16103080c325f3">&#9670;&#160;</a></span>evidence_filtered</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_core.evidence.Evidence.evidence_filtered<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">bool fiftyone_pipeline_core.evidence.Evidence.evidence_filtered = False</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="afd34afcb4b2ece25d019d5aabe9c361e"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afd34afcb4b2ece25d019d5aabe9c361e">&#9670;&nbsp;</a></span>flowdata</h2>
+<a id="afd34afcb4b2ece25d019d5aabe9c361e" name="afd34afcb4b2ece25d019d5aabe9c361e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afd34afcb4b2ece25d019d5aabe9c361e">&#9670;&#160;</a></span>flowdata</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_core.evidence.Evidence.flowdata<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_core.evidence.Evidence.flowdata = flowdata</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-</section>
 </div><!-- primary -->
-  <div class="g-docs__sidebar">
-    <div class="c-section-nav">
-      <h5 class="c-section-nav__heading">On This Page</h5>
-        <ul class="c-section-nav__list">
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-methods">Public Member Functions</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-attribs">Public Attributes</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="classfiftyone__pipeline__core_1_1evidence_1_1_evidence-members.html">List of all members</a></li>    </div>
-  </div>
-</div><!-- inner-->
+</div><!-- inner -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
     <p class="g-footer__copyright">Generated by
     <a href="http://www.doxygen.org/index.html">
-    <b>doxygen</b></a> 1.8.15
+    <b>doxygen</b></a> 1.17.0
   </p>
 </section>
 </div>

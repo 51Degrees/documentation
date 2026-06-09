@@ -1,5 +1,7 @@
 <map id="FiftyOne.IpIntelligence.Engine.OnPremise.Interop.MapStringStringSwig.MapStringStringSwigEnumerator" name="FiftyOne.IpIntelligence.Engine.OnPremise.Interop.MapStringStringSwig.MapStringStringSwigEnumerator">
-<area shape="rect" id="node1" title="Note that the IEnumerator documentation requires an InvalidOperationException to be thrown whenever t..." alt="" coords="321,31,589,101"/>
-<area shape="rect" id="node2" title=" " alt="" coords="44,5,235,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,71,273,141"/>
+<area shape="rect" id="Node000001" title="Note that the IEnumerator documentation requires an InvalidOperationException to be thrown whenever t..." alt="" coords="321,31,589,100"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="44,5,235,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="249,36,322,46,321,51,248,42"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,69,273,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="287,83,321,79,321,84,287,89"/>
 </map>

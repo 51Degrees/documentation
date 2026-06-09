@@ -1,12 +1,24 @@
 <map id="addState" name="addState">
-<area shape="rect" id="node1" title=" " alt="" coords="353,511,433,537"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_override_value_array.html" title="An array of properties and values to use when getting override values." alt="" coords="93,252,311,293"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_override_value.html" title="String value which should override the value for the property indicated by the required property inde..." alt="" coords="5,102,223,129"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="157,5,313,32"/>
-<area shape="rect" id="node9" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="247,102,467,129"/>
-<area shape="rect" id="node5" href="$structfiftyone_degrees_override_property_array.html" title="Array of items of type fiftyoneDegreesOverrideProperty used to easily access and track the size of th..." alt="" coords="429,407,665,448"/>
-<area shape="rect" id="node6" href="$structfiftyone_degrees_override_property.html" title="Index and pointer to a property which can be overridden." alt="" coords="479,317,715,344"/>
-<area shape="rect" id="node7" href="$structfiftyone_degrees_property_available.html" title="Used to access the property item quickly without the need to search." alt="" coords="494,200,734,227"/>
-<area shape="rect" id="node8" href="$structfiftyone_degrees_evidence_property_index_array.html" title="Array of items of type fiftyoneDegreesEvidencePropertyIndex used to easily access and track the size ..." alt="" coords="495,95,733,136"/>
-<area shape="rect" id="node10" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="159,200,349,227"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="541,549,621,575"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_override_property_array.html" title="Array of items of type fiftyoneDegreesOverrideProperty used to easily access and track the size of th..." alt="" coords="380,439,616,479"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="524,488,573,548,569,551,520,491"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_override_property.html" title="Index and pointer to a property which can be overridden." alt="" coords="357,343,593,368"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="483,381,496,438,491,439,478,382"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_property_available.html" title="Used to access the property item quickly without the need to search." alt="" coords="345,221,585,246"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="470,259,477,342,472,343,464,260"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="79,109,299,134"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="231,137,437,218,435,223,229,142"/>
+<area shape="rect" id="Node000007" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="5,221,196,246"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="128,142,112,153,99,167,94,180,93,194,99,220,94,221,88,194,89,179,94,164,108,149,125,138"/>
+<area shape="rect" id="Node000006" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="363,5,519,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="400,38,218,111,216,106,398,33"/>
+<area shape="rect" id="Node000010" href="$structfiftyone_degrees_override_value.html" title="String value which should override the value for the property indicated by the required property inde..." alt="" coords="585,109,803,134"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="483,33,666,106,664,111,481,38"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="131,211,157,186,173,159,183,133,188,135,178,161,161,190,134,215"/>
+<area shape="poly" id="edge7_Node000007_Node000007" title=" " alt="" coords="211,224,223,233,215,242,197,245,196,240,212,237,217,234,208,228"/>
+<area shape="rect" id="Node000008" href="$structfiftyone_degrees_evidence_property_index_array.html" title="Array of items of type fiftyoneDegreesEvidencePropertyIndex used to easily access and track the size ..." alt="" coords="323,101,561,141"/>
+<area shape="poly" id="edge9_Node000004_Node000008" title=" " alt="" coords="451,155,465,220,460,221,446,156"/>
+<area shape="rect" id="Node000009" href="$structfiftyone_degrees_override_value_array.html" title="An array of properties and values to use when getting override values." alt="" coords="569,279,787,319"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="681,332,679,374,672,424,658,477,634,527,621,541,606,551,603,547,617,537,629,524,653,475,667,423,674,373,676,332"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="694,148,682,279,677,278,689,148"/>
 </map>

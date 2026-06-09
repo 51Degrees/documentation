@@ -1,5 +1,7 @@
 <map id="fiftyone.pipeline.web.services.FiftyOneJSServiceCore.Default" name="fiftyone.pipeline.web.services.FiftyOneJSServiceCore.Default">
-<area shape="rect" id="node1" title="Default implementation of the FiftyOneJSServiceCore service." alt="" coords="475,39,695,80"/>
-<area shape="rect" id="node2" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_fifty_one_j_s_service_core.html" title="Service that provides the 51Degrees javascript when requested." alt="" coords="5,5,225,47"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core.html" title="Class that provides functionality for the &#39;Client side overrides&#39; feature." alt="" coords="5,71,225,112"/>
+<area shape="rect" id="Node000001" title="Default implementation of the FiftyOneJSServiceCore service." alt="" coords="479,37,699,77"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_fifty_one_j_s_service_core.html" title="Service that provides the 51Degrees javascript when requested." alt="" coords="5,5,225,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="240,31,479,47,478,53,239,36"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core.html" title="Class that provides functionality for the &#39;Client side overrides&#39; feature." alt="" coords="5,69,225,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,85,454,73,478,71,479,76,455,79,239,90"/>
 </map>

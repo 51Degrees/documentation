@@ -1,7 +1,9 @@
 <map id="FiftyOne.Pipeline.Engines.Caching.IFlowCache" name="FiftyOne.Pipeline.Engines.Caching.IFlowCache">
-<area shape="rect" id="node1" title="Represents a &#39;flow cache&#39; See the Specification" alt="" coords="15,305,206,347"/>
-<area shape="rect" id="node5" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_caching_1_1_default_flow_cache.html" title="The default &#39;flow cache&#39; implementation." alt="" coords="12,396,209,437"/>
-<area shape="rect" id="node2" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_caching_1_1_i_data_keyed_cache.html" title=" " alt="" coords="5,215,216,256"/>
-<area shape="rect" id="node3" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_caching_1_1_i_data_keyed_cache.html" title="Represents a put cache where the key is a IFlowData instance." alt="" coords="14,96,207,152"/>
-<area shape="rect" id="node4" title=" " alt="" coords="25,5,197,47"/>
+<area shape="rect" id="Node000001" title="Represents a &#39;flow cache&#39; See the Specification." alt="" coords="9,196,199,236"/>
+<area shape="rect" id="Node000004" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_caching_1_1_default_flow_cache.html" title="The default &#39;flow cache&#39; implementation." alt="" coords="5,284,203,324"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="107,250,107,284,101,284,101,250"/>
+<area shape="rect" id="Node000002" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_caching_1_1_i_data_keyed_cache-1-g.html" title="Represents a put cache where the key is a IFlowData instance." alt="" coords="7,93,201,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,162,107,196,101,196,101,162"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="18,5,190,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="107,59,107,93,101,93,101,59"/>
 </map>

@@ -1,8 +1,12 @@
 <map id="fiftyone.pipeline.engines.fiftyone.data.SetHeadersData" name="fiftyone.pipeline.engines.fiftyone.data.SetHeadersData">
-<area shape="rect" id="node1" title="[class] [constructor]" alt="" coords="77,276,349,317"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1pipeline_1_1core_1_1data_1_1_element_data_base.html" title="Base implementation of ElementData." alt="" coords="115,185,311,227"/>
-<area shape="rect" id="node3" href="$classfiftyone_1_1pipeline_1_1core_1_1data_1_1_data_base.html" title="This implementation of Data stores data values as key/value pairs in a Map where the key is a string ..." alt="" coords="225,95,421,136"/>
-<area shape="rect" id="node4" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values." alt="" coords="15,5,242,32"/>
-<area shape="rect" id="node6" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_data.html" title="Represents property values that have be determined by a specific FlowElement based on the supplied ev..." alt="" coords="5,95,201,136"/>
-<area shape="rect" id="node5" title=" " alt="" coords="290,5,357,32"/>
+<area shape="rect" id="Node000001" title="Data containing the result of SetHeadersElement." alt="" coords="77,255,349,295"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1core_1_1data_1_1_element_data_base.html" title="Base implementation of ElementData." alt="" coords="115,167,311,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,221,215,254,210,254,210,221"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1core_1_1data_1_1_data_base.html" title="This implementation of Data stores data values as key/value pairs in a Map where the key is a string ..." alt="" coords="5,79,201,119"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="140,125,190,164,187,169,137,129"/>
+<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values." alt="" coords="99,5,326,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="187,41,131,81,128,76,184,36"/>
+<area shape="rect" id="Node000005" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_data.html" title="Represents property values that have be determined by a specific FlowElement based on the supplied ev..." alt="" coords="225,79,421,119"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="242,36,298,76,295,81,239,41"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="289,129,239,169,236,164,286,125"/>
 </map>

@@ -1,7 +1,11 @@
 <map id="Engine" name="Engine">
-<area shape="rect" id="node1" title="An Engine is an extension of a FlowElement which adds options such as restricting to a subset of prop..." alt="" coords="177,80,243,107"/>
-<area shape="rect" id="node3" href="$class_cloud_engine.html" title="This is a template for all 51Degrees cloud engines." alt="" coords="5,155,108,181"/>
-<area shape="rect" id="node4" href="$class_cloud_request_engine.html" title=" " alt="" coords="132,155,288,181"/>
-<area shape="rect" id="node5" href="$class_share_usage.html" title="The ShareUsage element sends usage data to 51Degrees in zipped batches." alt="" coords="312,155,412,181"/>
-<area shape="rect" id="node2" href="$class_flow_element.html" title="A FlowElement is placed inside a pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="157,5,263,32"/>
+<area shape="rect" id="Node000001" title="An Engine is an extension of a FlowElement which adds options such as restricting to a subset of prop..." alt="" coords="177,79,243,104"/>
+<area shape="rect" id="Node000003" href="$class_cloud_engine.html" title="This is a template for all 51Degrees cloud engines." alt="" coords="5,152,108,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,112,83,154,81,149,172,107"/>
+<area shape="rect" id="Node000004" href="$class_cloud_request_engine.html" title=" " alt="" coords="132,152,288,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="213,118,213,152,207,152,207,118"/>
+<area shape="rect" id="Node000005" href="$class_share_usage.html" title="The ShareUsage element sends usage data to 51Degrees in zipped batches." alt="" coords="312,152,412,177"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="248,107,338,149,336,154,245,112"/>
+<area shape="rect" id="Node000002" href="$class_flow_element.html" title="A FlowElement is placed inside a pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="157,5,263,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,44,213,79,207,79,207,44"/>
 </map>

@@ -1,7 +1,11 @@
 <map id="CollectionTestFileVariable" name="CollectionTestFileVariable">
-<area shape="rect" id="node1" title=" " alt="" coords="5,304,195,331"/>
-<area shape="rect" id="node2" href="$class_collection_test_file.html" title=" " alt="" coords="32,229,168,256"/>
-<area shape="rect" id="node3" href="$class_collection_test.html" title=" " alt="" coords="43,155,157,181"/>
-<area shape="rect" id="node4" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="73,80,127,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="49,5,151,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,299,195,324"/>
+<area shape="rect" id="Node000002" href="$class_collection_test_file.html" title=" " alt="" coords="32,225,168,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,264,103,299,97,299,97,264"/>
+<area shape="rect" id="Node000003" href="$class_collection_test.html" title=" " alt="" coords="43,152,157,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,191,103,225,97,225,97,191"/>
+<area shape="rect" id="Node000004" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="73,79,127,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="103,118,103,152,97,152,97,118"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="49,5,151,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="103,44,103,79,97,79,97,44"/>
 </map>

@@ -1,0 +1,5 @@
+var class_fiftyone_degrees_1_1_common_1_1_invalid_property_exception =
+[
+    [ "InvalidPropertyException", "class_fiftyone_degrees_1_1_common_1_1_invalid_property_exception.html#a5ed5b06f8d1fd1b6ac07133d451f03db", null ],
+    [ "InvalidPropertyException", "class_fiftyone_degrees_1_1_common_1_1_invalid_property_exception.html#aa32ee0c1df89af62910a7313e341ac27", null ]
+];

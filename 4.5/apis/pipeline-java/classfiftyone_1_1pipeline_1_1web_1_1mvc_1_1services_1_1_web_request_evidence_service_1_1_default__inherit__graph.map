@@ -1,6 +1,10 @@
 <map id="fiftyone.pipeline.web.mvc.services.WebRequestEvidenceService.Default" name="fiftyone.pipeline.web.mvc.services.WebRequestEvidenceService.Default">
-<area shape="rect" id="node1" title=" " alt="" coords="633,39,896,80"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1pipeline_1_1web_1_1services_1_1_web_request_evidence_service_core_1_1_default.html" title="Default implementation of the WebRequestEvidenceServiceCore service." alt="" coords="293,5,585,47"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_web_request_evidence_service_core.html" title="Service used to populate the Evidence from a HttpServletRequest ready for it to be processed by the P..." alt="" coords="5,39,245,80"/>
-<area shape="rect" id="node4" href="$interfacefiftyone_1_1pipeline_1_1web_1_1mvc_1_1services_1_1_web_request_evidence_service.html" title="Spring framework service for the WebRequestEvidenceServiceCore." alt="" coords="313,71,565,112"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="633,37,896,77"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1web_1_1services_1_1_web_request_evidence_service_core_1_1_default.html" title="Default implementation of the WebRequestEvidenceServiceCore service." alt="" coords="293,5,585,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="599,38,634,42,633,47,599,44"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_web_request_evidence_service_core.html" title="Service used to populate the Evidence from a HttpServletRequest ready for it to be processed by the P..." alt="" coords="5,37,245,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="259,41,293,38,293,43,259,46"/>
+<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1pipeline_1_1web_1_1mvc_1_1services_1_1_web_request_evidence_service.html" title="Spring framework service for the WebRequestEvidenceServiceCore." alt="" coords="313,69,565,109"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="259,68,313,74,313,79,259,74"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="579,73,633,68,633,73,579,78"/>
 </map>

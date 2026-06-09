@@ -1,9 +1,16 @@
 <map id="StoredBinaryValues" name="StoredBinaryValues">
-<area shape="rect" id="node1" title=" " alt="" coords="616,76,765,103"/>
-<area shape="rect" id="node2" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="341,5,395,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="50,5,151,32"/>
-<area shape="rect" id="node4" href="$struct_stored_binary_values_1_1_file_props.html" title=" " alt="" coords="293,119,443,161"/>
-<area shape="rect" id="node5" href="$structfiftyone_degrees_collection_header.html" title="Collection header structure which defines the size and location of the collection data." alt="" coords="5,85,196,126"/>
-<area shape="rect" id="node6" href="$struct_file_collection_box.html" title=" " alt="" coords="301,185,435,212"/>
-<area shape="rect" id="node7" href="$structfiftyone_degrees_collection_config.html" title="Collection configuration structure which defines how the collection should be created by the create m..." alt="" coords="5,178,196,219"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="628,87,777,112"/>
+<area shape="rect" id="Node000002" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="345,5,399,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="413,20,502,33,605,57,676,84,674,89,603,62,501,39,412,25"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="50,5,151,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="166,15,345,15,345,21,166,21"/>
+<area shape="rect" id="Node000004" href="$struct_stored_binary_values_1_1_file_props.html" title=" " alt="" coords="297,126,447,166"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="460,135,604,117,643,109,644,115,604,122,461,140"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_collection_header.html" title="Collection header structure which defines the size and location of the collection data." alt="" coords="5,85,196,125"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="210,94,220,94,443,91,628,94,628,100,443,97,220,99,210,100"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="210,119,298,132,297,137,209,124"/>
+<area shape="rect" id="Node000006" href="$struct_file_collection_box.html" title=" " alt="" coords="305,221,439,247"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="453,244,490,245,528,242,567,235,603,221,635,197,661,167,681,136,693,111,698,113,685,138,665,170,639,201,605,226,568,240,529,248,490,250,453,249"/>
+<area shape="rect" id="Node000007" href="$structfiftyone_degrees_collection_config.html" title="Collection configuration structure which defines how the collection should be created by the create m..." alt="" coords="5,214,196,254"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="210,231,304,231,304,237,210,237"/>
 </map>

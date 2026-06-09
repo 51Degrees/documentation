@@ -1,11 +1,19 @@
 <map id="CollectionTest" name="CollectionTest">
-<area shape="rect" id="node1" title=" " alt="" coords="257,81,371,108"/>
-<area shape="rect" id="node4" href="$class_collection_test_file.html" title=" " alt="" coords="434,56,570,83"/>
-<area shape="rect" id="node7" href="$class_collection_test_memory.html" title=" " alt="" coords="419,107,585,133"/>
-<area shape="rect" id="node2" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="155,81,209,108"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,81,107,108"/>
-<area shape="rect" id="node5" href="$class_collection_test_file_fixed.html" title=" " alt="" coords="658,5,829,32"/>
-<area shape="rect" id="node6" href="$class_collection_test_file_variable.html" title=" " alt="" coords="649,56,838,83"/>
-<area shape="rect" id="node8" href="$class_collection_test_memory_fixed.html" title=" " alt="" coords="643,107,844,133"/>
-<area shape="rect" id="node9" href="$class_collection_test_memory_variable.html" title=" " alt="" coords="633,157,853,184"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="257,80,371,105"/>
+<area shape="rect" id="Node000004" href="$class_collection_test_file.html" title=" " alt="" coords="434,55,570,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="384,81,434,74,434,79,385,86"/>
+<area shape="rect" id="Node000007" href="$class_collection_test_memory.html" title=" " alt="" coords="419,104,585,129"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="385,99,419,103,418,109,384,104"/>
+<area shape="rect" id="Node000002" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="155,80,209,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,90,257,90,257,95,223,95"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,80,107,105"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="120,90,155,90,155,95,120,95"/>
+<area shape="rect" id="Node000005" href="$class_collection_test_file_fixed.html" title=" " alt="" coords="658,5,829,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="578,49,680,28,681,33,579,54"/>
+<area shape="rect" id="Node000006" href="$class_collection_test_file_variable.html" title=" " alt="" coords="649,55,838,80"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="584,65,648,65,648,70,584,70"/>
+<area shape="rect" id="Node000008" href="$class_collection_test_memory_fixed.html" title=" " alt="" coords="643,104,844,129"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="599,114,642,114,642,119,599,119"/>
+<area shape="rect" id="Node000009" href="$class_collection_test_memory_variable.html" title=" " alt="" coords="633,153,853,179"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="579,130,681,151,680,156,578,135"/>
 </map>

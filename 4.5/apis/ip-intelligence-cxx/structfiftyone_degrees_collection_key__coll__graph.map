@@ -1,5 +1,7 @@
 <map id="fiftyoneDegreesCollectionKey" name="fiftyoneDegreesCollectionKey">
-<area shape="rect" id="node1" title="Explains to a collection (or cache) what the consumer is looking for." alt="" coords="100,109,315,136"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_collection_key_type.html" title="Explains to a collection how to properly extract the requested value." alt="" coords="5,5,196,47"/>
-<area shape="rect" id="node3" href="$unionfiftyone_degrees_collection_index_or_offset.html" title="Location of the item within the Collection." alt="" coords="220,5,411,47"/>
+<area shape="rect" id="Node000001" title="Explains to a collection (or cache) what the consumer is looking for." alt="" coords="100,116,315,141"/>
+<area shape="rect" id="Node000002" href="$unionfiftyone_degrees_collection_index_or_offset.html" title="Location of the item within the Collection." alt="" coords="5,5,196,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,53,197,114,193,118,129,57"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_collection_key_type.html" title="Explains to a collection how to properly extract the requested value." alt="" coords="220,5,411,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="302,59,276,94,238,118,235,114,272,90,298,56"/>
 </map>

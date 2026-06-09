@@ -1,5 +1,7 @@
 <map id="tests.classes.stopflowdata.StopFlowData" name="tests.classes.stopflowdata.StopFlowData">
-<area shape="rect" id="node1" title=" " alt="" coords="33,169,232,211"/>
-<area shape="rect" id="node2" href="$classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="5,80,260,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="101,5,164,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="33,167,232,207"/>
+<area shape="rect" id="Node000002" href="$classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="5,79,260,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,133,135,166,130,166,130,133"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="101,5,164,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="135,44,135,79,130,79,130,44"/>
 </map>

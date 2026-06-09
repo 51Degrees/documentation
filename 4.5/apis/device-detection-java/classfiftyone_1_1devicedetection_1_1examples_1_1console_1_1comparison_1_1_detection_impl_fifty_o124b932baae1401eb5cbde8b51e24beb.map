@@ -1,7 +1,9 @@
 <map id="fiftyone.devicedetection.examples.console.comparison.DetectionImplFiftyOneDegrees.FiftyOneSolution" name="fiftyone.devicedetection.examples.console.comparison.DetectionImplFiftyOneDegrees.FiftyOneSolution">
-<area shape="rect" id="node1" title=" " alt="" coords="661,71,1047,112"/>
-<area shape="rect" id="node2" href="$interfacefiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_1_1_solution.html" title="The thing that actually does the detection." alt="" coords="171,5,556,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,13,121,39"/>
-<area shape="rect" id="node4" href="$classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_impl_fifty_one_degrees_1_1_fifty_one_config.html" title=" " alt="" coords="171,71,556,112"/>
-<area shape="rect" id="node5" title=" " alt="" coords="326,137,401,163"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="652,48,1037,88"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_1_1_solution.html" title="The thing that actually does the detection." alt="" coords="171,5,556,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="570,41,652,48,652,54,569,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,13,121,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="135,23,170,23,170,28,135,28"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_impl_fifty_one_degrees_1_1_fifty_one_config.html" title=" " alt="" coords="171,69,556,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="569,78,652,74,652,79,570,83"/>
 </map>

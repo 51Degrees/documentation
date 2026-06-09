@@ -10,5 +10,7 @@ var NAVTREEINDEX0 =
 "configure_from_file_8js-example.html":[2,1],
 "examples.html":[2],
 "getting_started_8js-example.html":[2,2],
+"index.html":[],
+"pages.html":[],
 "web_integration_8js-example.html":[2,3]
 };

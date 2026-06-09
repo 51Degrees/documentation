@@ -1,4 +1,5 @@
 <map id="fiftyone.devicedetection.cloud.flowelements.DeviceDetectionCloudEngineBuilder" name="fiftyone.devicedetection.cloud.flowelements.DeviceDetectionCloudEngineBuilder">
-<area shape="rect" id="node1" title="Builder for the DeviceDetectionCloudEngine." alt="" coords="329,27,644,69"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,281,91"/>
+<area shape="rect" id="Node000001" title="Builder for the DeviceDetectionCloudEngine." alt="" coords="333,13,648,53"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,285,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="299,30,333,30,333,35,299,35"/>
 </map>

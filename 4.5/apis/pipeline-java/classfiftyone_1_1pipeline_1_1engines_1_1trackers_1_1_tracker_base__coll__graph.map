@@ -1,9 +1,15 @@
 <map id="fiftyone.pipeline.engines.trackers.TrackerBase&lt; T &gt;" name="fiftyone.pipeline.engines.trackers.TrackerBase&lt; T &gt;">
-<area shape="rect" id="node1" title="The abstract base class for trackers." alt="" coords="1076,50,1319,91"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1pipeline_1_1engines_1_1caching_1_1_data_keyed_cache_base.html" title="Abstract base class for caches that use FlowData as the key." alt="" coords="805,5,1008,61"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1caching_1_1_data_keyed_cache.html" title="Represents a put cache where the key is a FlowData instance." alt="" coords="565,5,737,61"/>
-<area shape="rect" id="node4" href="$interfacefiftyone_1_1caching_1_1_put_cache.html" title="A cache that supports a thread safe put method for inserting to cache." alt="" coords="325,13,517,54"/>
-<area shape="rect" id="node5" href="$interfacefiftyone_1_1caching_1_1_cache.html" title="Base cache interface which declares only the get method and the types of key and value stored in the ..." alt="" coords="140,13,277,54"/>
-<area shape="rect" id="node6" title=" " alt="" coords="5,20,92,47"/>
-<area shape="rect" id="node7" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker.html" title="Represents a &#39;tracker&#39;." alt="" coords="785,86,1028,127"/>
+<area shape="rect" id="Node000001" title="The abstract base class for trackers." alt="" coords="1175,37,1417,77"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1engines_1_1caching_1_1_data_keyed_cache_base.html" title="Abstract base class for caches that use FlowData as the key." alt="" coords="885,5,1125,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1139,37,1175,41,1174,47,1138,43"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1caching_1_1_data_keyed_cache.html" title="Represents a put cache where the key is a FlowData instance." alt="" coords="596,5,836,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="849,23,885,23,885,28,849,28"/>
+<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1caching_1_1_put_cache.html" title="A cache that supports a thread safe put method for inserting to cache." alt="" coords="357,5,548,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="562,23,596,23,596,28,562,28"/>
+<area shape="rect" id="Node000005" href="$interfacefiftyone_1_1caching_1_1_cache.html" title="Base cache interface which declares only the get method and the types of key and value stored in the ..." alt="" coords="140,5,309,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="323,23,357,23,357,28,323,28"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,13,92,38"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="106,23,140,23,140,28,106,28"/>
+<area shape="rect" id="Node000007" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker.html" title="Represents a &#39;tracker&#39;." alt="" coords="884,69,1127,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1140,72,1174,68,1175,73,1140,77"/>
 </map>

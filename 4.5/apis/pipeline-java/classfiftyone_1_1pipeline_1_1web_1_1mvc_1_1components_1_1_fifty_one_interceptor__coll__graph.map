@@ -1,6 +1,9 @@
 <map id="fiftyone.pipeline.web.mvc.components.FiftyOneInterceptor" name="fiftyone.pipeline.web.mvc.components.FiftyOneInterceptor">
-<area shape="rect" id="node1" title="The 51Degrees middleware component." alt="" coords="5,185,284,227"/>
-<area shape="rect" id="node2" title=" " alt="" coords="26,89,221,115"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,..." alt="" coords="245,81,500,123"/>
-<area shape="rect" id="node4" title=" " alt="" coords="315,5,431,32"/>
+<area shape="rect" id="Node000001" title="The 51Degrees middleware component." alt="" coords="5,191,284,231"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="26,87,221,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,126,144,190,138,191,126,127"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,..." alt="" coords="245,80,500,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="322,128,185,193,183,188,319,124"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="315,5,431,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="375,44,375,80,370,80,370,44"/>
 </map>

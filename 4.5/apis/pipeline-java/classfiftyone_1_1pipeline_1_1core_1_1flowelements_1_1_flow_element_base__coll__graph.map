@@ -1,12 +1,21 @@
 <map id="fiftyone.pipeline.core.flowelements.FlowElementBase&lt; TData extends ElementData, TProperty extends ElementPropertyMetaData &gt;" name="fiftyone.pipeline.core.flowelements.FlowElementBase&lt; TData extends ElementData, TProperty extends ElementPropertyMetaData &gt;">
-<area shape="rect" id="node1" title="Provides a base class from which authors may create new FlowElements." alt="" coords="1492,137,1747,208"/>
-<area shape="rect" id="node2" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html" title=" " alt="" coords="1124,91,1379,132"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html" title="A component that processes a FlowData (by examining its evidence, or by examining data processed by o..." alt="" coords="593,69,931,125"/>
-<area shape="rect" id="node4" title=" " alt="" coords="321,81,437,107"/>
-<area shape="rect" id="node5" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_data.html" title="Represents property values that have be determined by a specific FlowElement based on the supplied ev..." alt="" coords="281,5,477,47"/>
-<area shape="rect" id="node6" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values." alt="" coords="5,13,232,39"/>
-<area shape="rect" id="node7" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data.html" title="Defines details of a property that can be returned by a FlowElement." alt="" coords="281,141,477,183"/>
-<area shape="rect" id="node8" href="$interfacefiftyone_1_1pipeline_1_1core_1_1typed_1_1_typed_key.html" title=" " alt="" coords="1149,211,1353,252"/>
-<area shape="rect" id="node9" href="$interfacefiftyone_1_1pipeline_1_1core_1_1typed_1_1_typed_key.html" title="Holds a name and a type to allow for type safe operations on named values." alt="" coords="660,211,864,252"/>
-<area shape="rect" id="node10" title=" " alt="" coords="1218,277,1285,303"/>
+<area shape="rect" id="Node000001" title="Provides a base class from which authors may create new FlowElements." alt="" coords="1504,107,1759,176"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html" title=" " alt="" coords="1132,96,1387,136"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1400,123,1504,130,1504,135,1400,128"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html" title="A component that processes a FlowData (by examining its evidence, or by examining data processed by o..." alt="" coords="597,73,935,127"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="948,103,1132,109,1132,115,948,109"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="321,85,437,110"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="451,95,597,96,597,102,451,100"/>
+<area shape="rect" id="Node000005" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_data.html" title="Represents property values that have be determined by a specific FlowElement based on the supplied ev..." alt="" coords="281,5,477,45"/>
+<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="491,23,664,25,888,34,1137,52,1387,81,1504,105,1503,110,1386,87,1136,57,888,40,664,31,491,28"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="484,46,502,49,610,70,609,75,501,55,483,51"/>
+<area shape="rect" id="Node000006" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values." alt="" coords="5,13,232,38"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="245,23,281,23,281,28,245,28"/>
+<area shape="rect" id="Node000007" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data.html" title="Defines details of a property that can be returned by a FlowElement." alt="" coords="281,149,477,189"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="491,165,1387,145,1504,142,1504,148,1387,151,491,170"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="490,147,613,125,614,130,491,152"/>
+<area shape="rect" id="Node000008" href="$interfacefiftyone_1_1pipeline_1_1core_1_1typed_1_1_typed_key.html" title=" " alt="" coords="1157,221,1361,261"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1375,240,1428,234,1479,223,1532,201,1579,174,1582,178,1534,206,1481,228,1428,239,1375,245"/>
+<area shape="rect" id="Node000009" href="$interfacefiftyone_1_1pipeline_1_1core_1_1typed_1_1_typed_key.html" title="Holds a name and a type to allow for type safe operations on named values." alt="" coords="664,221,868,261"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="882,239,1157,239,1157,244,882,244"/>
 </map>

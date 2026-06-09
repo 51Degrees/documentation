@@ -1,8 +1,14 @@
 <map id="fiftyone.devicedetection.cloud.flowelements.DeviceDataCloudInternal" name="fiftyone.devicedetection.cloud.flowelements.DeviceDataCloudInternal">
-<area shape="rect" id="node1" title="Internal implementation of the DeviceDataCloud interface." alt="" coords="732,39,1047,80"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html" title=" " alt="" coords="441,5,672,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="201,13,331,39"/>
-<area shape="rect" id="node4" href="$interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html" title="Interface exposing typed accessors for properties related to a device returned by a device detection ..." alt="" coords="151,67,381,108"/>
-<area shape="rect" id="node6" href="$interfacefiftyone_1_1devicedetection_1_1cloud_1_1data_1_1_device_data_cloud.html" title="Cloud specific interface for DeviceData." alt="" coords="429,71,684,112"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,74,103,101"/>
+<area shape="rect" id="Node000001" title="Internal implementation of the DeviceDataCloud interface." alt="" coords="732,37,1047,77"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html" title=" " alt="" coords="441,5,672,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="686,35,732,40,731,45,685,40"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="201,13,331,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="345,23,441,23,441,28,345,28"/>
+<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html" title="Interface exposing typed accessors for properties related to a device returned by a device detection ..." alt="" coords="151,65,381,105"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="376,60,459,43,460,48,377,65"/>
+<area shape="rect" id="Node000006" href="$interfacefiftyone_1_1devicedetection_1_1cloud_1_1data_1_1_device_data_cloud.html" title="Cloud specific interface for DeviceData." alt="" coords="429,69,684,109"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="395,84,429,85,429,90,395,90"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,73,103,98"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="116,83,150,83,150,88,116,88"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="697,73,732,70,732,75,698,78"/>
 </map>

@@ -1,6 +1,9 @@
 <map id="fiftyone.pipeline.engines.configuration.DataFileConfigurationBuilder" name="fiftyone.pipeline.engines.configuration.DataFileConfigurationBuilder">
-<area shape="rect" id="node1" title="Builder class for DataFileConfiguration instances." alt="" coords="1303,27,1577,69"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration_builder_base.html" title=" " alt="" coords="979,13,1253,83"/>
-<area shape="rect" id="node3" href="$classfiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration_builder_base.html" title="Builder class that is used to create instances of DataFileConfiguration objects." alt="" coords="381,5,720,91"/>
-<area shape="rect" id="node4" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration.html" title="Interface representing the configuration parameters controlling the automatic update checks for a spe..." alt="" coords="5,27,280,69"/>
+<area shape="rect" id="Node000001" title="Builder class for DataFileConfiguration instances." alt="" coords="1311,28,1585,68"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration_builder_base.html" title=" " alt="" coords="987,13,1261,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1275,45,1310,45,1310,51,1275,51"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration_builder_base.html" title="Builder class that is used to create instances of DataFileConfiguration objects." alt="" coords="385,6,724,90"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="737,45,986,45,986,51,737,51"/>
+<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration.html" title="Interface representing the configuration parameters controlling the automatic update checks for a spe..." alt="" coords="5,28,280,68"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="294,45,385,45,385,51,294,51"/>
 </map>

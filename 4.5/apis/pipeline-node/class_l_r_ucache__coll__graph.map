@@ -1,4 +1,5 @@
 <map id="LRUcache" name="LRUcache">
-<area shape="rect" id="node1" title="An instance of DataKeyed cache using a least recently used (LRU) method." alt="" coords="29,80,115,107"/>
-<area shape="rect" id="node2" href="$class_data_keyed_cache.html" title="A simple cache getter that takes a cache key and returns an element if it is found in the cache." alt="" coords="5,5,139,32"/>
+<area shape="rect" id="Node000001" title="An instance of DataKeyed cache using a least recently used (LRU) method." alt="" coords="29,79,115,104"/>
+<area shape="rect" id="Node000002" href="$class_data_keyed_cache.html" title="A simple cache getter that takes a cache key and returns an element if it is found in the cache." alt="" coords="5,5,139,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,44,75,79,69,79,69,44"/>
 </map>

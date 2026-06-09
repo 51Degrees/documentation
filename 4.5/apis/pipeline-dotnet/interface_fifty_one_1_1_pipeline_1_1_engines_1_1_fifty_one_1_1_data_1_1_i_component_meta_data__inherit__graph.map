@@ -1,7 +1,11 @@
 <map id="FiftyOne.Pipeline.Engines.FiftyOne.Data.IComponentMetaData" name="FiftyOne.Pipeline.Engines.FiftyOne.Data.IComponentMetaData">
-<area shape="rect" id="node1" title="Meta data relating to a component of an Engine&#39;s results e.g." alt="" coords="235,95,493,136"/>
-<area shape="rect" id="node5" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_component_meta_data_default.html" title="Data class that contains meta&#45;data relating to a specific component." alt="" coords="237,184,491,240"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,224,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="248,5,480,47"/>
-<area shape="rect" id="node4" title=" " alt="" coords="504,13,603,39"/>
+<area shape="rect" id="Node000001" title="Meta data relating to a component of an Engine&#39;s results e.g." alt="" coords="44,79,303,119"/>
+<area shape="rect" id="Node000005" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_component_meta_data_default.html" title="Data class that contains meta&#45;data relating to a specific component." alt="" coords="46,167,301,221"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="176,132,176,167,171,167,171,132"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,96,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,36,145,76,142,81,79,41"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="121,5,226,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,44,176,79,171,79,171,44"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="251,5,349,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="271,40,205,81,202,76,268,36"/>
 </map>

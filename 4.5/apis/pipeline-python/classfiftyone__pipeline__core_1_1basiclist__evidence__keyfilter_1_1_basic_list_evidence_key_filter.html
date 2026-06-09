@@ -1,78 +1,82 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
   <link rel="canonical" href="/documentation/apis/pipeline-python/classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.15"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>51Degrees Pipeline Python: fiftyone_pipeline_core.basiclist_evidence_keyfilter.BasicListEvidenceKeyFilter Class Reference</title>
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="dynsections.min.js"></script>
-<script type="text/javascript" src="resize.min.js"></script>
+<script type="text/javascript" src="codefolding.min.js"></script>
+<script type="text/javascript" src="clipboard.min.js"></script>
 <script type="text/javascript" src="navtreedata.min.js"></script>
 <script type="text/javascript" src="navtree.min.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(initResizable);
-/* @license-end */</script>
+<script type="text/javascript" src="cookie.min.js"></script>
 <link href="search/search.min.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.min.js"></script>
 <script type="text/javascript" src="search/search.min.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="l-docs-index p-doxygen">
-<div class="l-index__content">
-<!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
-<div id="titlearea" class="g-header g-header--docs">
-  <h2 class="c-brand">
-  <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png"/></a>
-  <span class="c-tagline">51Degrees Pipeline Python
-   &#160;<span id="projectnumber">4.5</span>
-  </span>
-  </h2>
-  <div id="projectalign" style="padding-left: 0.5em;">
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="/documentation/4.5/index.html"><img alt="Logo" src="logo-51Degrees-Docs.png"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">51Degrees Pipeline Python<span id="projectnumber">&#160;4.5</span>
+   </div>
    <div id="projectbrief">51Degrees Pipeline for Python</div>
-  </div>
-  <div id="main-nav"></div>
-     <div class="g-search">
+  </td>
+    <td>  <div class="g-search">
     <div class="c-search is-openable">
     <form class="c-search__form">
       <div id="MSearchBox" class="b-form-group b-form-group--with-icon">
         <label for="inputSearch" class="b-text--hidden">Search</label>
         <img id="MSearchSelect" src="icon-search.svg" class="b-icon" alt="Search" 
-                 onmouseover="return searchBox.OnSearchSelectShow()"
-                 onmouseout="return searchBox.OnSearchSelectHide()"/>
-        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" id="inputSearch" placeholder="Type a class, namespace etc." aria-label="Search"
-                 onfocus="searchBox.OnSearchFieldFocus(true)" 
-                 onblur="searchBox.OnSearchFieldFocus(false)" 
-                 onkeyup="searchBox.OnSearchFieldChange(event)">
-         <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+             onmouseover="return searchBox.OnSearchSelectShow()"
+             onmouseout="return searchBox.OnSearchSelectHide()"/>
+        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" placeholder="Type a class, namespace etc." aria-label="Search"
+             onfocus="searchBox.OnSearchFieldFocus(true)" 
+             onblur="searchBox.OnSearchFieldFocus(false)" 
+             onkeyup="searchBox.OnSearchFieldChange(event)"/>
+        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
       </div>
     </form>
+    </div>
   </div>
-</div>
+</td>
+ </tr>
+ </tbody>
+</table>
 </div>
 <!-- end header part -->
-<main class="g-main">
-<!-- Generated by Doxygen 1.8.15 -->
+<!-- Generated by Doxygen 1.17.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search');
-/* @license-end */
+let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
-<!-- top -->
-	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
-  <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter.html','');});
-/* @license-end */
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div class="g-docs__sidenav">
+  <nav id="nav-tree-contents" class="c-sidenav">
+    <h4 class="c-sidenav__heading">Documentation</h4>
+    <div id="nav-sync" class="sync"></div>
+  </nav>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter.html','','classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter-members'); });
 </script>
 <div id="doc-content" class="g-docs__content">
 <!-- window showing the filter options -->
@@ -84,330 +88,156 @@ $(document).ready(function(){initNavTree('classfiftyone__pipeline__core_1_1basic
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="g-docs__header">
-<div class="c-breadcrumb">
-  <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacefiftyone__pipeline__core.html">fiftyone_pipeline_core</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacefiftyone__pipeline__core_1_1basiclist__evidence__keyfilter.html">basiclist_evidence_keyfilter</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter.html">BasicListEvidenceKeyFilter</a></li>  </ul>
-</div>
 <h1 class="g-docs__page-title">fiftyone_pipeline_core.basiclist_evidence_keyfilter.BasicListEvidenceKeyFilter Class Reference</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section">
-<a name="details" id="details"></a><h2 class="g-docs__section-heading">Detailed Description</h2>
-<section class="g-docs__section"><p>An instance of EvidenceKeyFilter that uses a simple array of keys Evidence not using these keys is filtered out. </p>
-</section></section>
-<!-- start ClassInheritanceGraph -->
-<section class="g-docs__section">
-<h2 class="g-docs__section-heading">
+<a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
+<div class="textblock"><p>An instance of <a class="el" href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html" title="An EvidenceKeyFilter is attached to a FlowElement and is used to check if a specific evidence key is ...">EvidenceKeyFilter</a> that uses a simple array of keys Evidence not using these keys is filtered out. </p>
+</div><h2 class="g-docs__section-heading">
 Inheritance diagram for fiftyone_pipeline_core.basiclist_evidence_keyfilter.BasicListEvidenceKeyFilter:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter__inherit__graph.svg" width="890" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter__inherit__graph.svg" width="890" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-</section>
-<!-- end ClassInheritanceGraph -->
-<section class="g-docs__section">
 <h2 class="g-docs__section-heading">
 Collaboration diagram for fiftyone_pipeline_core.basiclist_evidence_keyfilter.BasicListEvidenceKeyFilter:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter__coll__graph.svg" width="279" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter__coll__graph.svg" width="279" height="154"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-</section>
-<!-- start MemberDeclStart -->
-<!-- startMemberSections -->
-<!-- end MemberDeclStart -->
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-methods"></a>
-Public Member Functions</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a0981a17a8eae4f9db6f65cb58402f4a9"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter.html#a0981a17a8eae4f9db6f65cb58402f4a9">__init__</a> (self, keys_list)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a0981a17a8eae4f9db6f65cb58402f4a9"><a class="el" href="classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter.html" title="An instance of EvidenceKeyFilter that uses a simple array of keys Evidence not using these keys is fi...">BasicListEvidenceKeyFilter</a> constructor.  <a href="#a0981a17a8eae4f9db6f65cb58402f4a9">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a4af1fd675b5606c78c5f46f60cfd8054"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter.html#a4af1fd675b5606c78c5f46f60cfd8054">filter_evidence_key</a> (self, key)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a4af1fd675b5606c78c5f46f60cfd8054">Check if an evidence key is present in a filter list.  <a href="#a4af1fd675b5606c78c5f46f60cfd8054">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- writeInheritedSectionTitle -->
-<tr class="c-table__row pub_methods_classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter"><td class="c-table__cell c-table__cell--parent" colspan="2" onclick="javascript:toggleInherit('pub_methods_classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter')"><span class="c-table__arrow c-table__arrow--is-open"></span><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html">fiftyone_pipeline_core.evidence_keyfilter.EvidenceKeyFilter</a></h3></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ac98488f4a5ed7d6c5e621ffed27e3ec3 inherit pub_methods_classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html#ac98488f4a5ed7d6c5e621ffed27e3ec3">filter_evidence</a> (self, evidence_key_object)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:ac98488f4a5ed7d6c5e621ffed27e3ec3 inherit pub_methods_classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter">Filter evidence from a dictionary of evidence keys/values.  <a href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html#ac98488f4a5ed7d6c5e621ffed27e3ec3">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-attribs"></a>
-Public Attributes</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a21ce0f107feba5ee5abae0ca2d4b19fe"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter.html#a21ce0f107feba5ee5abae0ca2d4b19fe">list</a>
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<!-- start MemberGroups -->
-<!-- end MemberGroups -->
-<section class="g-docs__section">
-<h2 class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a0981a17a8eae4f9db6f65cb58402f4a9"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0981a17a8eae4f9db6f65cb58402f4a9">&#9670;&nbsp;</a></span>__init__()</h2>
+<table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:aa2b1f6ac47f2342e4157dc0b41593137" id="r_aa2b1f6ac47f2342e4157dc0b41593137"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aa2b1f6ac47f2342e4157dc0b41593137">__init__</a> (self, keys_list)</td></tr>
+<tr class="c-table__row memdesc:aa2b1f6ac47f2342e4157dc0b41593137"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter.html" title="An instance of EvidenceKeyFilter that uses a simple array of keys Evidence not using these keys is fi...">BasicListEvidenceKeyFilter</a> constructor.  <br /></td></tr>
+<tr class="c-table__row memitem:aa8f71e0b01d4c93ca4ee41c598b21d40" id="r_aa8f71e0b01d4c93ca4ee41c598b21d40"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aa8f71e0b01d4c93ca4ee41c598b21d40">filter_evidence_key</a> (self, key)</td></tr>
+<tr class="c-table__row memdesc:aa8f71e0b01d4c93ca4ee41c598b21d40"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check if an evidence key is present in a filter list.  <br /></td></tr>
+<tr class="c-table__row inherit_header pub_methods_classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html">fiftyone_pipeline_core.evidence_keyfilter.EvidenceKeyFilter</a></h3></td></tr>
+<tr class="c-table__row memitem:a65e43d5c7d86f0e72db0147bae892a38 pub_methods_classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter" id="r_a65e43d5c7d86f0e72db0147bae892a38"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html#a65e43d5c7d86f0e72db0147bae892a38">filter_evidence</a> (self, evidence_key_object)</td></tr>
+<tr class="c-table__row memdesc:a65e43d5c7d86f0e72db0147bae892a38 pub_methods_classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter evidence from a dictionary of evidence keys/values.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a467770d42372e87ec85be649e9cf8c32" id="r_a467770d42372e87ec85be649e9cf8c32"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="#a467770d42372e87ec85be649e9cf8c32">list</a> = [item.lower() for item in keys_list]</td></tr>
+</table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
+<a id="aa2b1f6ac47f2342e4157dc0b41593137" name="aa2b1f6ac47f2342e4157dc0b41593137"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa2b1f6ac47f2342e4157dc0b41593137">&#9670;&#160;</a></span>__init__()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.basiclist_evidence_keyfilter.BasicListEvidenceKeyFilter.__init__ <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.basiclist_evidence_keyfilter.BasicListEvidenceKeyFilter.__init__ </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>keys_list</em><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>keys_list</em></span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p><a class="el" href="classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter.html" title="An instance of EvidenceKeyFilter that uses a simple array of keys Evidence not using these keys is fi...">BasicListEvidenceKeyFilter</a> constructor. </p>
-<p>@type keysList: dict </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">keysList</span> - a list of keys to keep. </dd>
+<p>@type keysList: dict </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keysList</td><td>a list of keys to keep. </td></tr>
+  </table>
   </dd>
 </dl>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Function Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a4af1fd675b5606c78c5f46f60cfd8054"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4af1fd675b5606c78c5f46f60cfd8054">&#9670;&nbsp;</a></span>filter_evidence_key()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="aa8f71e0b01d4c93ca4ee41c598b21d40" name="aa8f71e0b01d4c93ca4ee41c598b21d40"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa8f71e0b01d4c93ca4ee41c598b21d40">&#9670;&#160;</a></span>filter_evidence_key()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.basiclist_evidence_keyfilter.BasicListEvidenceKeyFilter.filter_evidence_key <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.basiclist_evidence_keyfilter.BasicListEvidenceKeyFilter.filter_evidence_key </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>key</em><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>key</em></span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Check if an evidence key is present in a filter list. </p>
-<p>@type key: string </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">key</span> - to check in the filter</dd>
+<p>@type key: string </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>to check in the filter</td></tr>
+  </table>
   </dd>
 </dl>
-<p>@rtype: bool </p><dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Is this key in the filter's keys list? </dd></dl>
+<p>@rtype: bool </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Is this key in the filter's keys list? </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html#a78a94a13df7bbd4591a6a0d92c21b143">fiftyone_pipeline_core.evidence_keyfilter.EvidenceKeyFilter</a>.</p>
+<p>Reimplemented from <a class="el" href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html#a8afc2a20b3626edf33367831df6b0595">fiftyone_pipeline_core.evidence_keyfilter.EvidenceKeyFilter</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classfiftyone__pipeline__engines__fiftyone_1_1share__usage__evidencekeyfilter_1_1_share_usage_evidence_key_filter.html#ac552e2ce23cf656c54cdedf5d19a4fb3">fiftyone_pipeline_engines_fiftyone.share_usage_evidencekeyfilter.ShareUsageEvidenceKeyFilter</a>.</p>
-<!-- endIndent -->
+<p>Reimplemented in <a class="el" href="classfiftyone__pipeline__engines__fiftyone_1_1share__usage__evidencekeyfilter_1_1_share_usage_evidence_key_filter.html#a5a6cc0d6b5127cf25d861bfd8ef5fedc">fiftyone_pipeline_engines_fiftyone.share_usage_evidencekeyfilter.ShareUsageEvidenceKeyFilter</a>.</p>
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Data Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a21ce0f107feba5ee5abae0ca2d4b19fe"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a21ce0f107feba5ee5abae0ca2d4b19fe">&#9670;&nbsp;</a></span>list</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a467770d42372e87ec85be649e9cf8c32" name="a467770d42372e87ec85be649e9cf8c32"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a467770d42372e87ec85be649e9cf8c32">&#9670;&#160;</a></span>list</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_core.basiclist_evidence_keyfilter.BasicListEvidenceKeyFilter.list<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">list fiftyone_pipeline_core.basiclist_evidence_keyfilter.BasicListEvidenceKeyFilter.list = [item.lower() for item in keys_list]</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-</section>
 </div><!-- primary -->
-  <div class="g-docs__sidebar">
-    <div class="c-section-nav">
-      <h5 class="c-section-nav__heading">On This Page</h5>
-        <ul class="c-section-nav__list">
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-methods">Public Member Functions</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-attribs">Public Attributes</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="classfiftyone__pipeline__core_1_1basiclist__evidence__keyfilter_1_1_basic_list_evidence_key_filter-members.html">List of all members</a></li>    </div>
-  </div>
-</div><!-- inner-->
+</div><!-- inner -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
     <p class="g-footer__copyright">Generated by
     <a href="http://www.doxygen.org/index.html">
-    <b>doxygen</b></a> 1.8.15
+    <b>doxygen</b></a> 1.17.0
   </p>
 </section>
 </div>

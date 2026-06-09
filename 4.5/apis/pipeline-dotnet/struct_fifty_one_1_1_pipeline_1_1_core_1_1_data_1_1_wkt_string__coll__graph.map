@@ -1,5 +1,6 @@
 <map id="FiftyOne.Pipeline.Core.Data.WktString" name="FiftyOne.Pipeline.Core.Data.WktString">
-<area shape="rect" id="node1" title=" " alt="" coords="93,80,298,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,191,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="215,5,373,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,79,211,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="63,5,153,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,44,103,78,98,79,97,44"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="119,44,118,79,113,78,114,44"/>
 </map>

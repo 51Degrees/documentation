@@ -1,0 +1,8 @@
+var class_fiftyone_degrees_1_1_common_1_1_date =
+[
+    [ "Date", "class_fiftyone_degrees_1_1_common_1_1_date.html#a4e59ed4ba66eec61c27460c5d09fa1bd", null ],
+    [ "Date", "class_fiftyone_degrees_1_1_common_1_1_date.html#a2bd0d50ff4f5b74aa935562811f120cc", null ],
+    [ "getDay", "class_fiftyone_degrees_1_1_common_1_1_date.html#a0f253815240e70f4c39cb93cc68bd3f4", null ],
+    [ "getMonth", "class_fiftyone_degrees_1_1_common_1_1_date.html#a332f6e3a2f6a40d73742b6dab7be0f64", null ],
+    [ "getYear", "class_fiftyone_degrees_1_1_common_1_1_date.html#a8b0869f34c2b38d108ab83ee2e770e5d", null ]
+];

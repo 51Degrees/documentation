@@ -1,0 +1,4 @@
+var class_fiftyone_degrees_1_1_common_1_1_fatal_exception =
+[
+    [ "FatalException", "class_fiftyone_degrees_1_1_common_1_1_fatal_exception.html#ac0e2aaa8b31301a7fdbb2d6b7b0db6b6", null ]
+];

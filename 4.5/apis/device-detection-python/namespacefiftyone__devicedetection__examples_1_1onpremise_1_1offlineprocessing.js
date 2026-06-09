@@ -1,4 +1,0 @@
-var namespacefiftyone__devicedetection__examples_1_1onpremise_1_1offlineprocessing =
-[
-    [ "OfflineProcessing", "classfiftyone__devicedetection__examples_1_1onpremise_1_1offlineprocessing_1_1_offline_processing.html", "classfiftyone__devicedetection__examples_1_1onpremise_1_1offlineprocessing_1_1_offline_processing" ]
-];

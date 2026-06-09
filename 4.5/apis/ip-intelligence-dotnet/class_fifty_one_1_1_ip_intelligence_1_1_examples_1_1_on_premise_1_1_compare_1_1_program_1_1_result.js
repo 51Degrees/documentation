@@ -1,0 +1,10 @@
+var class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result =
+[
+    [ "Confidence", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html#aa5aa7ab7fe22b6b556dea9443b672228", null ],
+    [ "Contains", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html#afd43b821308efd2df5dcfe5eef2d060b", null ],
+    [ "DistanceKms", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html#a50aba1b320fb324598ef1675bddf4c50", null ],
+    [ "Geometries", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html#a13d2fead71a2769873866fd8c36f87d6", null ],
+    [ "Latitude", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html#a0c5e6178e1d07a2741b02651d0b6178f", null ],
+    [ "Longitude", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html#a665f1ea8363346c77288914c84ef3da7", null ],
+    [ "SquareKms", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html#ab1581a75cdc8619ee8dd205b6bc8778b", null ]
+];

@@ -1,13 +1,25 @@
 <map id="EvidenceWithHeadersTest_MultipleHeaders" name="EvidenceWithHeadersTest_MultipleHeaders">
-<area shape="rect" id="node1" title=" " alt="" coords="372,379,563,420"/>
-<area shape="rect" id="node2" href="$class_evidence.html" title="Evidence test class used to test the functionality in evidence.c." alt="" coords="340,303,421,329"/>
-<area shape="rect" id="node3" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="335,206,389,233"/>
-<area shape="rect" id="node4" title=" " alt="" coords="238,102,339,129"/>
-<area shape="rect" id="node5" href="$class_headers_container.html" title=" " alt="" coords="573,206,711,233"/>
-<area shape="rect" id="node6" href="$class_string_collection.html" title="String collection helper class, used by test classes to fetch." alt="" coords="810,102,935,129"/>
-<area shape="rect" id="node7" href="$structfiftyone_degrees_header_array.html" title="Array of Headers which should always be ordered in ascending order of fullHeaderId." alt="" coords="364,102,571,129"/>
-<area shape="rect" id="node8" href="$structfiftyone_degrees_header_ptr_array.html" title="Array of header indexes." alt="" coords="595,95,785,136"/>
-<area shape="rect" id="node9" href="$structfiftyone_degrees_evidence_key_value_pair_array.html" title="Array of evidence key value pairs and a pointer to the next array if present or NULL of not present." alt="" coords="41,199,249,240"/>
-<area shape="rect" id="node10" href="$structfiftyone_degrees_evidence_key_value_pair.html" title="Evidence key value pair structure which combines the prefix, key and value." alt="" coords="6,95,214,136"/>
-<area shape="rect" id="node11" href="$structfiftyone_degrees_key_value_pair.html" title=" " alt="" coords="5,5,215,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="371,397,562,437"/>
+<area shape="rect" id="Node000002" href="$class_evidence.html" title="Evidence test class used to test the functionality in evidence.c." alt="" coords="294,323,375,348"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="366,353,437,395,434,400,364,357"/>
+<area shape="rect" id="Node000003" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="99,219,154,245"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="164,248,312,320,310,325,161,253"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,109,107,134"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="73,144,121,217,117,220,69,147"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_evidence_key_value_pair_array.html" title="Array of evidence key value pairs and a pointer to the next array if present or NULL of not present." alt="" coords="189,212,397,252"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="309,264,332,322,328,324,304,266"/>
+<area shape="rect" id="Node000006" href="$structfiftyone_degrees_evidence_key_value_pair.html" title="Evidence key value pair structure which combines the prefix, key and value." alt="" coords="131,101,339,141"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="254,152,285,210,281,213,249,155"/>
+<area shape="rect" id="Node000007" href="$structfiftyone_degrees_key_value_pair.html" title=" " alt="" coords="130,5,339,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="237,45,237,101,232,101,232,45"/>
+<area shape="rect" id="Node000008" href="$class_headers_container.html" title=" " alt="" coords="567,219,705,245"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="612,256,576,280,534,301,493,314,451,324,376,334,375,329,450,319,492,309,532,296,574,275,609,251"/>
+<area shape="rect" id="Node000009" href="$structfiftyone_degrees_header_array.html" title="Array of Headers which should always be ordered in ascending order of fullHeaderId." alt="" coords="363,109,570,134"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="469,148,469,397,464,397,464,148"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="498,139,619,217,617,221,495,144"/>
+<area shape="rect" id="Node000010" href="$structfiftyone_degrees_header_ptr_array.html" title="Array of header indexes." alt="" coords="594,101,785,141"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="672,154,665,166,642,220,638,218,660,164,667,152"/>
+<area shape="rect" id="Node000011" href="$class_string_collection.html" title="String collection helper class, used by test classes to fetch." alt="" coords="809,109,935,134"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="871,148,866,169,856,189,822,230,784,267,741,299,696,327,608,371,531,400,529,395,605,366,694,322,738,294,780,263,818,227,851,187,861,167,866,147"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="841,143,802,168,787,179,771,190,727,209,685,222,684,217,726,204,768,186,783,175,798,163,838,139"/>
 </map>

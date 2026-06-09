@@ -1,4 +1,5 @@
 <map id="fiftyone.pipeline.core.configuration.MapAdapter" name="fiftyone.pipeline.core.configuration.MapAdapter">
-<area shape="rect" id="node1" title="XML adapter used to unmarshal XML elements to a Map." alt="" coords="240,20,492,61"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,192,76"/>
+<area shape="rect" id="Node000001" title="XML adapter used to unmarshal XML elements to a Map." alt="" coords="5,93,257,133"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="38,5,225,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,59,134,93,129,93,129,59"/>
 </map>

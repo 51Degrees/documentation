@@ -1,7 +1,11 @@
 <map id="fiftyone.ipintelligence.engine.onpremise.interop.swig.MapStringStringSwig" name="fiftyone.ipintelligence.engine.onpremise.interop.swig.MapStringStringSwig">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,377,136"/>
-<area shape="rect" id="node4" href="$classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_evidence_base_swig.html" title=" " alt="" coords="5,184,377,225"/>
-<area shape="rect" id="node2" title=" " alt="" coords="24,5,193,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="217,13,333,39"/>
-<area shape="rect" id="node5" href="$classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_evidence_ipi_swig.html" title=" " alt="" coords="5,273,377,315"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,377,133"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_evidence_base_swig.html" title=" " alt="" coords="5,181,377,221"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="194,147,194,181,189,181,189,147"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="24,5,193,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,54,175,91,171,95,135,57"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="217,13,333,38"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="256,50,212,95,208,91,253,46"/>
+<area shape="rect" id="Node000005" href="$classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_evidence_ipi_swig.html" title=" " alt="" coords="5,269,377,309"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="194,235,194,269,189,269,189,235"/>
 </map>

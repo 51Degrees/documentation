@@ -1,8 +1,15 @@
 <map id="FiftyOne.Pipeline.Math.MathData" name="FiftyOne.Pipeline.Math.MathData">
-<area shape="rect" id="node1" title=" " alt="" coords="25,229,263,256"/>
-<area shape="rect" id="node2" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_element_data_base.html" title="This class stores property values that have been determined by a specific FlowElement based on the su..." alt="" coords="5,155,144,181"/>
-<area shape="rect" id="node3" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_data_base.html" title="This class stores data values as key/value pairs where the key is a string and the value can be any t..." alt="" coords="32,80,117,107"/>
-<area shape="rect" id="node4" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data.html" title="Represents property values" alt="" coords="107,5,165,32"/>
-<area shape="rect" id="node5" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_data.html" title="Represents property values that have been determined by a specific FlowElement based on the supplied ..." alt="" coords="142,80,253,107"/>
-<area shape="rect" id="node6" href="$interface_fifty_one_1_1_pipeline_1_1_math_1_1_i_math_data.html" title=" " alt="" coords="168,155,259,181"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="113,269,351,295"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_element_data_base.html" title="This class stores property values that have been determined by a specific FlowElement based on the su..." alt="" coords="5,181,211,221"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,227,215,267,212,271,148,231"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_data_base.html" title="This class stores data values as key/value pairs where the key is a string and the value can be any t..." alt="" coords="5,93,211,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,147,111,181,105,181,105,147"/>
+<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data.html" title="Represents property values." alt="" coords="120,5,325,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="188,56,135,95,132,91,185,52"/>
+<area shape="rect" id="Node000005" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_data.html" title="Represents property values that have been determined by a specific FlowElement based on the supplied ..." alt="" coords="235,93,440,133"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="261,52,314,91,310,95,257,56"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="275,141,159,184,157,179,274,136"/>
+<area shape="rect" id="Node000006" href="$interface_fifty_one_1_1_pipeline_1_1_math_1_1_i_math_data.html" title=" " alt="" coords="235,189,477,214"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="347,146,356,188,351,189,342,147"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="328,224,252,271,249,267,325,219"/>
 </map>

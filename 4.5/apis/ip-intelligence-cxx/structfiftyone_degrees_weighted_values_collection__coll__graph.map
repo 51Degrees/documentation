@@ -1,5 +1,7 @@
 <map id="fiftyoneDegreesWeightedValuesCollection" name="fiftyoneDegreesWeightedValuesCollection">
-<area shape="rect" id="node1" title="Collection of weighted values." alt="" coords="109,124,338,165"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_weighted_value_header.html" title="Header structure for all weighted value types." alt="" coords="5,5,228,47"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="252,13,408,39"/>
+<area shape="rect" id="Node000001" title="Collection of weighted values." alt="" coords="75,136,305,176"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="5,13,161,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,47,176,134,172,137,100,50"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_weighted_value_header.html" title="Header structure for all weighted value types." alt="" coords="185,5,408,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="282,58,243,114,217,138,214,134,239,110,278,55"/>
 </map>

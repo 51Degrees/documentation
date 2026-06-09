@@ -1,10 +1,20 @@
 <map id="PropValuesChunkContext" name="PropValuesChunkContext">
-<area shape="rect" id="node1" title="Context structure for populating a property values chunk." alt="" coords="512,276,699,303"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_weighted_item.html" title="A weighted collection item." alt="" coords="5,185,221,212"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="215,95,435,121"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="246,185,437,212"/>
-<area shape="rect" id="node5" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="314,5,470,32"/>
-<area shape="rect" id="node6" href="$struct_prop_values_chunk.html" title="Structure for a chunk of property values of the same type." alt="" coords="511,95,646,121"/>
-<area shape="rect" id="node7" href="$struct_prop_values_converter.html" title="Structure defining a converter for property values." alt="" coords="499,5,658,32"/>
-<area shape="rect" id="node8" href="$structfiftyone_degrees_exception.html" title="Structure used to represent a 51Degrees exception and passed into methods that might generate excepti..." alt="" coords="673,185,863,212"/>
+<area shape="rect" id="Node000001" title="Context structure for populating a property values chunk." alt="" coords="516,311,703,336"/>
+<area shape="rect" id="Node000002" href="$struct_prop_values_chunk.html" title="Structure for a chunk of property values of the same type." alt="" coords="514,101,649,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="587,140,610,310,605,311,582,141"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="317,5,473,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="431,35,559,99,557,104,429,39"/>
+<area shape="rect" id="Node000006" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="215,101,435,127"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="380,43,336,103,332,100,376,40"/>
+<area shape="rect" id="Node000004" href="$struct_prop_values_converter.html" title="Structure defining a converter for property values." alt="" coords="502,5,661,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="584,45,584,101,579,101,579,45"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_weighted_item.html" title="A weighted collection item." alt="" coords="5,206,221,231"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="183,232,554,308,553,313,182,237"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="279,134,232,153,177,182,133,208,130,203,175,177,230,148,277,129"/>
+<area shape="rect" id="Node000007" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="246,206,437,231"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="292,137,280,152,277,162,280,172,295,190,315,204,312,208,291,194,275,175,271,162,275,149,288,133"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="340,192,337,151,329,128,334,126,343,150,346,192"/>
+<area shape="poly" id="edge8_Node000007_Node000007" title=" " alt="" coords="452,209,463,218,455,227,437,231,436,226,453,222,458,219,449,214"/>
+<area shape="rect" id="Node000008" href="$structfiftyone_degrees_exception.html" title="Structure used to represent a 51Degrees exception and passed into methods that might generate excepti..." alt="" coords="681,206,871,231"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="747,241,630,313,627,308,744,237"/>
 </map>

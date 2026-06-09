@@ -1,80 +1,84 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/apis/pipeline-python/classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html">
   <link rel="alternate" hreflang="en-US" href="/documentation/apis/pipeline-python/classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.15"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>51Degrees Pipeline Python: fiftyone_pipeline_core.pipeline.Pipeline Class Reference</title>
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="dynsections.min.js"></script>
-<script type="text/javascript" src="resize.min.js"></script>
+<script type="text/javascript" src="codefolding.min.js"></script>
+<script type="text/javascript" src="clipboard.min.js"></script>
 <script type="text/javascript" src="navtreedata.min.js"></script>
 <script type="text/javascript" src="navtree.min.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(initResizable);
-/* @license-end */</script>
+<script type="text/javascript" src="cookie.min.js"></script>
 <link href="search/search.min.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.min.js"></script>
 <script type="text/javascript" src="search/search.min.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="l-docs-index p-doxygen">
-<div class="l-index__content">
-<!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
-<div id="titlearea" class="g-header g-header--docs">
-  <h1 class="c-brand">
-  <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png"/></a>
-  <span class="c-tagline">51Degrees Pipeline Python
-   &#160;<span id="projectnumber">4.5</span>
-  </span>
-  </h1>
-  <div id="projectalign" style="padding-left: 0.5em;">
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="/documentation/4.5/index.html"><img alt="Logo" src="logo-51Degrees-Docs.png"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">51Degrees Pipeline Python<span id="projectnumber">&#160;4.5</span>
+   </div>
    <div id="projectbrief">51Degrees Pipeline for Python</div>
-  </div>
-  <div id="main-nav"></div>
-     <div class="g-search">
+  </td>
+    <td>  <div class="g-search">
     <div class="c-search is-openable">
     <form class="c-search__form">
       <div id="MSearchBox" class="b-form-group b-form-group--with-icon">
         <label for="inputSearch" class="b-text--hidden">Search</label>
         <img id="MSearchSelect" src="icon-search.svg" class="b-icon" alt="Search" 
-                 onmouseover="return searchBox.OnSearchSelectShow()"
-                 onmouseout="return searchBox.OnSearchSelectHide()"/>
-        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" id="inputSearch" placeholder="Type a class, namespace etc." aria-label="Search"
-                 onfocus="searchBox.OnSearchFieldFocus(true)" 
-                 onblur="searchBox.OnSearchFieldFocus(false)" 
-                 onkeyup="searchBox.OnSearchFieldChange(event)">
-         <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+             onmouseover="return searchBox.OnSearchSelectShow()"
+             onmouseout="return searchBox.OnSearchSelectHide()"/>
+        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" placeholder="Type a class, namespace etc." aria-label="Search"
+             onfocus="searchBox.OnSearchFieldFocus(true)" 
+             onblur="searchBox.OnSearchFieldFocus(false)" 
+             onkeyup="searchBox.OnSearchFieldChange(event)"/>
+        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
       </div>
     </form>
+    </div>
   </div>
-</div>
+</td>
+ </tr>
+ </tbody>
+</table>
 </div>
 <!-- end header part -->
-<main class="g-main">
-<!-- Generated by Doxygen 1.8.15 -->
+<!-- Generated by Doxygen 1.17.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search');
-/* @license-end */
+let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
-<!-- top -->
-	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
-  <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html','');});
-/* @license-end */
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div class="g-docs__sidenav">
+  <nav id="nav-tree-contents" class="c-sidenav">
+    <h4 class="c-sidenav__heading">Documentation</h4>
+    <div id="nav-sync" class="sync"></div>
+  </nav>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html','','classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline-members'); });
 </script>
 <div id="doc-content" class="g-docs__content">
 <!-- window showing the filter options -->
@@ -86,743 +90,402 @@ $(document).ready(function(){initNavTree('classfiftyone__pipeline__core_1_1pipel
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="g-docs__header">
-<div class="c-breadcrumb">
-  <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacefiftyone__pipeline__core.html">fiftyone_pipeline_core</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacefiftyone__pipeline__core_1_1pipeline.html">pipeline</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html">Pipeline</a></li>  </ul>
-</div>
-<h2 class="g-docs__page-title">fiftyone_pipeline_core.pipeline.Pipeline Class Reference</h2></div><!--header-->
+<h1 class="g-docs__page-title">fiftyone_pipeline_core.pipeline.Pipeline Class Reference</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section">
-<a name="details" id="details"></a><h2 class="g-docs__section-heading">Detailed Description</h2>
-<section class="g-docs__section"><p><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu...">Pipeline</a> holding a list of FlowElements for processing, can create FlowData that will be passed through these, collecting ElementData Should be constructed through the PipelineBuilder class. </p>
-</section></section>
-<!-- start ClassInheritanceGraph -->
-<section class="g-docs__section">
-</section>
-<!-- end ClassInheritanceGraph -->
-<section class="g-docs__section">
-</section>
-<!-- start MemberDeclStart -->
-<!-- startMemberSections -->
-<!-- end MemberDeclStart -->
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-methods"></a>
-Public Member Functions</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a2409d9d70bb78a6f828e20a7ffcbdb8f"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#a2409d9d70bb78a6f828e20a7ffcbdb8f">__init__</a> (self, <a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#a916d75557df9bab95e0c6a785732b38b">flow_elements</a>, <a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#a5e24460a70e68a13a8ac4c5e7572cd88">logger</a>=<a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html">Logger</a>(), <a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#ab14fdeb1b2c4c3f437e3c380ce9b533e">suppress_process_exceptions</a>=False, <a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#a1bbed053f9884b5531e67ec2a108ae3a">data_file_update_service</a>=None)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a2409d9d70bb78a6f828e20a7ffcbdb8f"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu...">Pipeline</a> constructor.  <a href="#a2409d9d70bb78a6f828e20a7ffcbdb8f">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a3ef11f3658ae2cddbe80ec4f8736e18e"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#a3ef11f3658ae2cddbe80ec4f8736e18e">create_flowdata</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a3ef11f3658ae2cddbe80ec4f8736e18e">Create a FlowData based on what's in the pipeline.  <a href="#a3ef11f3658ae2cddbe80ec4f8736e18e">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:aac89f65689e78bb8784136f9cae84367"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#aac89f65689e78bb8784136f9cae84367">log</a> (self, level, message)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:aac89f65689e78bb8784136f9cae84367">Log a message using the <a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html#a355a6b26ab01d504e9737e4c25752837" title="Log a message.">Logger.log</a> of the pipeline's Logger.  <a href="#aac89f65689e78bb8784136f9cae84367">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a5a609c7109fd738361fdcdecf350ac1f"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#a5a609c7109fd738361fdcdecf350ac1f">get_element</a> (self, key)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a5a609c7109fd738361fdcdecf350ac1f">Get a flowElement by its name.  <a href="#a5a609c7109fd738361fdcdecf350ac1f">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ab462b864875f9a6aa6793911ec5f8881"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#ab462b864875f9a6aa6793911ec5f8881">element_not_found</a> (self, element, flowdata)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:ab462b864875f9a6aa6793911ec5f8881">Trigger error when an element cannot be found in the pipeline.  <a href="#ab462b864875f9a6aa6793911ec5f8881">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a4b8312169fe0fa082ebccd4872ddfc88"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#a4b8312169fe0fa082ebccd4872ddfc88">get_properties</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a4b8312169fe0fa082ebccd4872ddfc88">Get all properties of all flowElements in the pipeline.  <a href="#a4b8312169fe0fa082ebccd4872ddfc88">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-attribs"></a>
-Public Attributes</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a916d75557df9bab95e0c6a785732b38b"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#a916d75557df9bab95e0c6a785732b38b">flow_elements</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a5e24460a70e68a13a8ac4c5e7572cd88"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#a5e24460a70e68a13a8ac4c5e7572cd88">logger</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a971e0e1a31ddd89ee64885a9f909a325"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#a971e0e1a31ddd89ee64885a9f909a325">flow_elements_list</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:aa039c3c58982b54d3b782097f038354b"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#aa039c3c58982b54d3b782097f038354b">flow_elements_display_list</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ab14fdeb1b2c4c3f437e3c380ce9b533e"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#ab14fdeb1b2c4c3f437e3c380ce9b533e">suppress_process_exceptions</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a1bbed053f9884b5531e67ec2a108ae3a"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#a1bbed053f9884b5531e67ec2a108ae3a">data_file_update_service</a>
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<!-- start MemberGroups -->
-<!-- end MemberGroups -->
-<section class="g-docs__section">
-<h2 class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a2409d9d70bb78a6f828e20a7ffcbdb8f"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2409d9d70bb78a6f828e20a7ffcbdb8f">&#9670;&nbsp;</a></span>__init__()</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu...">Pipeline</a> holding a list of FlowElements for processing, can create <a class="el" href="classfiftyone__pipeline__core_1_1flowdata_1_1_flow_data.html" title="FlowData is created by a specific Pipeline It collects evidence set by the user It passes evidence to...">FlowData</a> that will be passed through these, collecting ElementData Should be constructed through the PipelineBuilder class. </p>
+</div><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:ab0150cc03939428c059b0e071ce5bc73" id="r_ab0150cc03939428c059b0e071ce5bc73"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab0150cc03939428c059b0e071ce5bc73">__init__</a> (self, flow_elements, logger=<a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html">Logger</a>(), suppress_process_exceptions=False, data_file_update_service=None)</td></tr>
+<tr class="c-table__row memdesc:ab0150cc03939428c059b0e071ce5bc73"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu...">Pipeline</a> constructor.  <br /></td></tr>
+<tr class="c-table__row memitem:ad15032be26f09b0cc8aac709466e818f" id="r_ad15032be26f09b0cc8aac709466e818f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad15032be26f09b0cc8aac709466e818f">create_flowdata</a> (self)</td></tr>
+<tr class="c-table__row memdesc:ad15032be26f09b0cc8aac709466e818f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Create a <a class="el" href="classfiftyone__pipeline__core_1_1flowdata_1_1_flow_data.html" title="FlowData is created by a specific Pipeline It collects evidence set by the user It passes evidence to...">FlowData</a> based on what's in the pipeline.  <br /></td></tr>
+<tr class="c-table__row memitem:a2d4c15751f34c2d141e8944679cac1a2" id="r_a2d4c15751f34c2d141e8944679cac1a2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2d4c15751f34c2d141e8944679cac1a2">log</a> (self, level, message)</td></tr>
+<tr class="c-table__row memdesc:a2d4c15751f34c2d141e8944679cac1a2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Log a message using the <a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html#a11ff69ef1f07387e196efbbbe64a9797" title="Log a message.">Logger.log</a> of the pipeline's <a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html" title="Logging for a Pipeline.">Logger</a>.  <br /></td></tr>
+<tr class="c-table__row memitem:a9c2cde8cf583d5fabb88ff08749d11c2" id="r_a9c2cde8cf583d5fabb88ff08749d11c2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9c2cde8cf583d5fabb88ff08749d11c2">get_element</a> (self, key)</td></tr>
+<tr class="c-table__row memdesc:a9c2cde8cf583d5fabb88ff08749d11c2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a flowElement by its name.  <br /></td></tr>
+<tr class="c-table__row memitem:ac619d490b8dfe2e8bcd409145aecd11d" id="r_ac619d490b8dfe2e8bcd409145aecd11d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac619d490b8dfe2e8bcd409145aecd11d">element_not_found</a> (self, element, flowdata)</td></tr>
+<tr class="c-table__row memdesc:ac619d490b8dfe2e8bcd409145aecd11d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Trigger error when an element cannot be found in the pipeline.  <br /></td></tr>
+<tr class="c-table__row memitem:a2422040d56f13426afb0211bb22642b0" id="r_a2422040d56f13426afb0211bb22642b0"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2422040d56f13426afb0211bb22642b0">get_properties</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a2422040d56f13426afb0211bb22642b0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get all properties of all flowElements in the pipeline.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a916d75557df9bab95e0c6a785732b38b" id="r_a916d75557df9bab95e0c6a785732b38b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a916d75557df9bab95e0c6a785732b38b">flow_elements</a> = flow_elements</td></tr>
+<tr class="c-table__row memitem:a5e24460a70e68a13a8ac4c5e7572cd88" id="r_a5e24460a70e68a13a8ac4c5e7572cd88"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5e24460a70e68a13a8ac4c5e7572cd88">logger</a> = logger</td></tr>
+<tr class="c-table__row memitem:af89b8a40b8740bac6a2c31bc88cdf9be" id="r_af89b8a40b8740bac6a2c31bc88cdf9be"><td class="c-table__cell">dict&#160;</td><td class="c-table__cell"><a class="el" href="#af89b8a40b8740bac6a2c31bc88cdf9be">flow_elements_list</a> = {}</td></tr>
+<tr class="c-table__row memitem:a34709d21e53c0ac1876f9d965fac5f95" id="r_a34709d21e53c0ac1876f9d965fac5f95"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="#a34709d21e53c0ac1876f9d965fac5f95">flow_elements_display_list</a> = []</td></tr>
+<tr class="c-table__row memitem:ab14fdeb1b2c4c3f437e3c380ce9b533e" id="r_ab14fdeb1b2c4c3f437e3c380ce9b533e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab14fdeb1b2c4c3f437e3c380ce9b533e">suppress_process_exceptions</a> = suppress_process_exceptions</td></tr>
+<tr class="c-table__row memitem:a1bbed053f9884b5531e67ec2a108ae3a" id="r_a1bbed053f9884b5531e67ec2a108ae3a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a1bbed053f9884b5531e67ec2a108ae3a">data_file_update_service</a> = data_file_update_service</td></tr>
+</table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
+<a id="ab0150cc03939428c059b0e071ce5bc73" name="ab0150cc03939428c059b0e071ce5bc73"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab0150cc03939428c059b0e071ce5bc73">&#9670;&#160;</a></span>__init__()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.pipeline.Pipeline.__init__ <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.__init__ </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>flow_elements</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>flow_elements</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>logger</em> = <code><a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html">Logger</a>()</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>logger</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html">Logger</a>()</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>suppress_process_exceptions</em> = <code>False</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>suppress_process_exceptions</em></span><span class="paramdefsep"> = </span><span class="paramdefval">False</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>data_file_update_service</em> = <code>None</code><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>data_file_update_service</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu...">Pipeline</a> constructor. </p>
-<p>@type flow_elements: list[FlowElement] </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">flow_elements</span> - A list of flowElements</dd>
+<p>@type flow_elements: list[FlowElement] </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flow_elements</td><td>A list of flowElements</td></tr>
+  </table>
   </dd>
 </dl>
-<p>@type logger: Logger </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">logger</span> - A logger to attach to the pipeline</dd>
+<p>@type logger: <a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html" title="Logging for a Pipeline.">Logger</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>A logger to attach to the pipeline</td></tr>
+  </table>
   </dd>
 </dl>
-<p>@type suppress_process_exceptions: boolean </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">suppress_process_exceptions</span> - If true then pipeline will suppress exceptions added to <a class="el" href="classfiftyone__pipeline__core_1_1flowdata_1_1_flow_data.html#afaed7900a94040c7468cf83cda5ecb31">FlowData.errors</a> otherwise will throw the exception occurred during the processing of first element.</dd>
+<p>@type suppress_process_exceptions: boolean </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suppress_process_exceptions</td><td>If true then pipeline will suppress exceptions added to <a class="el" href="classfiftyone__pipeline__core_1_1flowdata_1_1_flow_data.html#a764800393252d0d3185cef33fa0a288a">FlowData.errors</a> otherwise will throw the exception occurred during the processing of first element.</td></tr>
+  </table>
   </dd>
 </dl>
-<p>@rtype: <a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu...">Pipeline</a> </p><dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns a <a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu...">Pipeline</a> </dd></dl>
-<!-- endIndent -->
+<p>@rtype: <a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu...">Pipeline</a> </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns a <a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu...">Pipeline</a> </dd></dl>
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Function Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a3ef11f3658ae2cddbe80ec4f8736e18e"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3ef11f3658ae2cddbe80ec4f8736e18e">&#9670;&nbsp;</a></span>create_flowdata()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="ad15032be26f09b0cc8aac709466e818f" name="ad15032be26f09b0cc8aac709466e818f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad15032be26f09b0cc8aac709466e818f">&#9670;&#160;</a></span>create_flowdata()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.pipeline.Pipeline.create_flowdata <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.create_flowdata </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
-<p>Create a FlowData based on what's in the pipeline. </p>
-<p>@rtype: FlowData </p><dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Return a FlowData </dd></dl>
-<!-- endIndent -->
+<p>Create a <a class="el" href="classfiftyone__pipeline__core_1_1flowdata_1_1_flow_data.html" title="FlowData is created by a specific Pipeline It collects evidence set by the user It passes evidence to...">FlowData</a> based on what's in the pipeline. </p>
+<p>@rtype: <a class="el" href="classfiftyone__pipeline__core_1_1flowdata_1_1_flow_data.html" title="FlowData is created by a specific Pipeline It collects evidence set by the user It passes evidence to...">FlowData</a> </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Return a <a class="el" href="classfiftyone__pipeline__core_1_1flowdata_1_1_flow_data.html" title="FlowData is created by a specific Pipeline It collects evidence set by the user It passes evidence to...">FlowData</a> </dd></dl>
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="ab462b864875f9a6aa6793911ec5f8881"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab462b864875f9a6aa6793911ec5f8881">&#9670;&nbsp;</a></span>element_not_found()</h2>
+<a id="ac619d490b8dfe2e8bcd409145aecd11d" name="ac619d490b8dfe2e8bcd409145aecd11d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac619d490b8dfe2e8bcd409145aecd11d">&#9670;&#160;</a></span>element_not_found()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.pipeline.Pipeline.element_not_found <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.element_not_found </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>element</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>element</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>flowdata</em><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>flowdata</em></span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Trigger error when an element cannot be found in the pipeline. </p>
-<p>@type element: string </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">element</span> - name of flowelement @type flowdata: flowdata </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">element</span> - flowdata being processsed @rtype: Exception </dd>
+<p>@type element: string </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">element</td><td>name of flowelement @type flowdata: flowdata </td></tr>
+    <tr><td class="paramname">element</td><td>flowdata being processsed @rtype: Exception </td></tr>
+  </table>
   </dd>
 </dl>
-<dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns exception </dd></dl>
-<!-- endIndent -->
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns exception </dd></dl>
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a5a609c7109fd738361fdcdecf350ac1f"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5a609c7109fd738361fdcdecf350ac1f">&#9670;&nbsp;</a></span>get_element()</h2>
+<a id="a9c2cde8cf583d5fabb88ff08749d11c2" name="a9c2cde8cf583d5fabb88ff08749d11c2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9c2cde8cf583d5fabb88ff08749d11c2">&#9670;&#160;</a></span>get_element()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.pipeline.Pipeline.get_element <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.get_element </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>key</em><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>key</em></span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Get a flowElement by its name. </p>
-<p>@type key: string </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">key</span> - name of flowElement</dd>
+<p>@type key: string </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>name of flowElement</td></tr>
+  </table>
   </dd>
 </dl>
-<p>@rtype: FlowElement </p><dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns the FlowElement indicated </dd></dl>
-<!-- endIndent -->
+<p>@rtype: FlowElement </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns the FlowElement indicated </dd></dl>
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a4b8312169fe0fa082ebccd4872ddfc88"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4b8312169fe0fa082ebccd4872ddfc88">&#9670;&nbsp;</a></span>get_properties()</h2>
+<a id="a2422040d56f13426afb0211bb22642b0" name="a2422040d56f13426afb0211bb22642b0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2422040d56f13426afb0211bb22642b0">&#9670;&#160;</a></span>get_properties()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.pipeline.Pipeline.get_properties <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.get_properties </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Get all properties of all flowElements in the pipeline. </p>
-<p>@rtype: dict of {string : DataPropertyDictionary} </p><dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns dictionary of all properties in a pipeline keyed by each flowElement's FlowElement.datakey. </dd></dl>
-<!-- endIndent -->
+<p>@rtype: dict of {string : DataPropertyDictionary} </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns dictionary of all properties in a pipeline keyed by each flowElement's FlowElement.datakey. </dd></dl>
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="aac89f65689e78bb8784136f9cae84367"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aac89f65689e78bb8784136f9cae84367">&#9670;&nbsp;</a></span>log()</h2>
+<a id="a2d4c15751f34c2d141e8944679cac1a2" name="a2d4c15751f34c2d141e8944679cac1a2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2d4c15751f34c2d141e8944679cac1a2">&#9670;&#160;</a></span>log()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.pipeline.Pipeline.log <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.log </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>level</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>level</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>message</em><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>message</em></span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
-<p>Log a message using the <a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html#a355a6b26ab01d504e9737e4c25752837" title="Log a message.">Logger.log</a> of the pipeline's Logger. </p>
-<p>@type level: string </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">level</span> - level of log message</dd>
+<p>Log a message using the <a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html#a11ff69ef1f07387e196efbbbe64a9797" title="Log a message.">Logger.log</a> of the pipeline's <a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html" title="Logging for a Pipeline.">Logger</a>. </p>
+<p>@type level: string </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>level of log message</td></tr>
+  </table>
   </dd>
 </dl>
-<p>@type message: string </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">message</span> - Returns content of log message </dd>
+<p>@type message: string </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Returns content of log message </td></tr>
+  </table>
   </dd>
 </dl>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Data Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a1bbed053f9884b5531e67ec2a108ae3a"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1bbed053f9884b5531e67ec2a108ae3a">&#9670;&nbsp;</a></span>data_file_update_service</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a1bbed053f9884b5531e67ec2a108ae3a" name="a1bbed053f9884b5531e67ec2a108ae3a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1bbed053f9884b5531e67ec2a108ae3a">&#9670;&#160;</a></span>data_file_update_service</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.data_file_update_service<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.data_file_update_service = data_file_update_service</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a916d75557df9bab95e0c6a785732b38b"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a916d75557df9bab95e0c6a785732b38b">&#9670;&nbsp;</a></span>flow_elements</h2>
+<a id="a916d75557df9bab95e0c6a785732b38b" name="a916d75557df9bab95e0c6a785732b38b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a916d75557df9bab95e0c6a785732b38b">&#9670;&#160;</a></span>flow_elements</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.flow_elements<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.flow_elements = flow_elements</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="aa039c3c58982b54d3b782097f038354b"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa039c3c58982b54d3b782097f038354b">&#9670;&nbsp;</a></span>flow_elements_display_list</h2>
+<a id="a34709d21e53c0ac1876f9d965fac5f95" name="a34709d21e53c0ac1876f9d965fac5f95"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a34709d21e53c0ac1876f9d965fac5f95">&#9670;&#160;</a></span>flow_elements_display_list</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.flow_elements_display_list<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">list fiftyone_pipeline_core.pipeline.Pipeline.flow_elements_display_list = []</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a971e0e1a31ddd89ee64885a9f909a325"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a971e0e1a31ddd89ee64885a9f909a325">&#9670;&nbsp;</a></span>flow_elements_list</h2>
+<a id="af89b8a40b8740bac6a2c31bc88cdf9be" name="af89b8a40b8740bac6a2c31bc88cdf9be"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af89b8a40b8740bac6a2c31bc88cdf9be">&#9670;&#160;</a></span>flow_elements_list</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.flow_elements_list<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">dict fiftyone_pipeline_core.pipeline.Pipeline.flow_elements_list = {}</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a5e24460a70e68a13a8ac4c5e7572cd88"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5e24460a70e68a13a8ac4c5e7572cd88">&#9670;&nbsp;</a></span>logger</h2>
+<a id="a5e24460a70e68a13a8ac4c5e7572cd88" name="a5e24460a70e68a13a8ac4c5e7572cd88"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5e24460a70e68a13a8ac4c5e7572cd88">&#9670;&#160;</a></span>logger</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.logger<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.logger = logger</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="ab14fdeb1b2c4c3f437e3c380ce9b533e"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab14fdeb1b2c4c3f437e3c380ce9b533e">&#9670;&nbsp;</a></span>suppress_process_exceptions</h2>
+<a id="ab14fdeb1b2c4c3f437e3c380ce9b533e" name="ab14fdeb1b2c4c3f437e3c380ce9b533e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab14fdeb1b2c4c3f437e3c380ce9b533e">&#9670;&#160;</a></span>suppress_process_exceptions</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.suppress_process_exceptions<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.suppress_process_exceptions = suppress_process_exceptions</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-</section>
 </div><!-- primary -->
-  <div class="g-docs__sidebar">
-    <div class="c-section-nav">
-      <h5 class="c-section-nav__heading">On This Page</h5>
-        <ul class="c-section-nav__list">
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-methods">Public Member Functions</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-attribs">Public Attributes</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline-members.html">List of all members</a></li>    </div>
-  </div>
-</div><!-- inner-->
+</div><!-- inner -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
     <p class="g-footer__copyright">Generated by
     <a href="http://www.doxygen.org/index.html">
-    <b>doxygen</b></a> 1.8.15
+    <b>doxygen</b></a> 1.17.0
   </p>
 </section>
 </div>

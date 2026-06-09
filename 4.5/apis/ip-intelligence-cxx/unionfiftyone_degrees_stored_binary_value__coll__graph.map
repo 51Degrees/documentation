@@ -1,5 +1,7 @@
 <map id="fiftyoneDegreesStoredBinaryValue" name="fiftyoneDegreesStoredBinaryValue">
-<area shape="rect" id="node1" title="&quot;Packed&quot; value that can be present inside &quot;strings&quot; of dataset." alt="" coords="86,95,295,136"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_string.html" title=" " alt="" coords="5,5,168,32"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_float_internal.html" title="Struture that represents 51Degrees implementation, which encapsulate an array of 4 bytes." alt="" coords="192,5,400,32"/>
+<area shape="rect" id="Node000001" title="&quot;Packed&quot; value that can be present inside &quot;strings&quot; of dataset." alt="" coords="86,101,295,141"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_string.html" title=" " alt="" coords="5,5,168,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,39,173,99,169,103,107,42"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_float_internal.html" title="Struture that represents 51Degrees implementation, which encapsulate an array of 4 bytes." alt="" coords="192,5,400,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="276,42,212,103,209,99,272,39"/>
 </map>

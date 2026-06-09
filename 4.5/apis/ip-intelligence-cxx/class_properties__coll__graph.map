@@ -1,12 +1,23 @@
 <map id="Properties" name="Properties">
-<area shape="rect" id="node1" title="Properties test class used to test the functionality of properties.c." alt="" coords="127,395,215,421"/>
-<area shape="rect" id="node2" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="29,298,83,325"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,200,107,227"/>
-<area shape="rect" id="node4" href="$class_string_collection.html" title="String collection helper class, used by test classes to fetch." alt="" coords="108,298,233,325"/>
-<area shape="rect" id="node5" href="$structfiftyone_degrees_property_available_array.html" title="Array of items of type fiftyoneDegreesPropertyAvailable used to easily access and track the size of t..." alt="" coords="257,291,497,332"/>
-<area shape="rect" id="node6" href="$structfiftyone_degrees_property_available.html" title="Used to access the property item quickly without the need to search." alt="" coords="257,200,497,227"/>
-<area shape="rect" id="node7" href="$structfiftyone_degrees_evidence_property_index_array.html" title="Array of items of type fiftyoneDegreesEvidencePropertyIndex used to easily access and track the size ..." alt="" coords="238,95,477,136"/>
-<area shape="rect" id="node8" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="501,102,721,129"/>
-<area shape="rect" id="node9" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="562,200,753,227"/>
-<area shape="rect" id="node10" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="533,5,689,32"/>
+<area shape="rect" id="Node000001" title="Properties test class used to test the functionality of properties.c." alt="" coords="287,436,375,461"/>
+<area shape="rect" id="Node000002" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="135,333,190,358"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,363,313,434,310,438,192,368"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,221,107,246"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="79,255,153,331,149,334,75,258"/>
+<area shape="rect" id="Node000004" href="$class_string_collection.html" title="String collection helper class, used by test classes to fetch." alt="" coords="268,333,393,358"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="333,372,333,436,328,436,328,372"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_property_available_array.html" title="Array of items of type fiftyoneDegreesPropertyAvailable used to easily access and track the size of t..." alt="" coords="444,325,684,365"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="509,373,358,438,356,433,507,368"/>
+<area shape="rect" id="Node000006" href="$structfiftyone_degrees_property_available.html" title="Used to access the property item quickly without the need to search." alt="" coords="471,221,711,246"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="587,260,571,326,566,324,582,259"/>
+<area shape="rect" id="Node000007" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="205,109,425,134"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="357,137,563,218,561,223,355,142"/>
+<area shape="rect" id="Node000009" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="131,221,322,246"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="254,142,238,153,225,167,220,180,219,194,225,220,220,221,214,194,215,179,220,164,234,149,251,138"/>
+<area shape="rect" id="Node000008" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="237,5,393,31"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="317,45,317,109,312,109,312,45"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="257,211,283,186,299,159,309,133,314,135,304,161,287,190,260,215"/>
+<area shape="poly" id="edge9_Node000009_Node000009" title=" " alt="" coords="337,224,349,233,341,242,323,245,322,240,338,237,343,234,334,228"/>
+<area shape="rect" id="Node000010" href="$structfiftyone_degrees_evidence_property_index_array.html" title="Array of items of type fiftyoneDegreesEvidencePropertyIndex used to easily access and track the size ..." alt="" coords="471,101,710,141"/>
+<area shape="poly" id="edge11_Node000006_Node000010" title=" " alt="" coords="593,155,593,221,588,221,588,155"/>
 </map>

@@ -1,78 +1,82 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
   <link rel="canonical" href="/documentation/apis/pipeline-python/namespacefiftyone__pipeline__core_1_1web.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.15"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>51Degrees Pipeline Python: fiftyone_pipeline_core.web Namespace Reference</title>
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="dynsections.min.js"></script>
-<script type="text/javascript" src="resize.min.js"></script>
+<script type="text/javascript" src="codefolding.min.js"></script>
+<script type="text/javascript" src="clipboard.min.js"></script>
 <script type="text/javascript" src="navtreedata.min.js"></script>
 <script type="text/javascript" src="navtree.min.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(initResizable);
-/* @license-end */</script>
+<script type="text/javascript" src="cookie.min.js"></script>
 <link href="search/search.min.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.min.js"></script>
 <script type="text/javascript" src="search/search.min.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="l-docs-index p-doxygen">
-<div class="l-index__content">
-<!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
-<div id="titlearea" class="g-header g-header--docs">
-  <h2 class="c-brand">
-  <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png"/></a>
-  <span class="c-tagline">51Degrees Pipeline Python
-   &#160;<span id="projectnumber">4.5</span>
-  </span>
-  </h2>
-  <div id="projectalign" style="padding-left: 0.5em;">
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="/documentation/4.5/index.html"><img alt="Logo" src="logo-51Degrees-Docs.png"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">51Degrees Pipeline Python<span id="projectnumber">&#160;4.5</span>
+   </div>
    <div id="projectbrief">51Degrees Pipeline for Python</div>
-  </div>
-  <div id="main-nav"></div>
-     <div class="g-search">
+  </td>
+    <td>  <div class="g-search">
     <div class="c-search is-openable">
     <form class="c-search__form">
       <div id="MSearchBox" class="b-form-group b-form-group--with-icon">
         <label for="inputSearch" class="b-text--hidden">Search</label>
         <img id="MSearchSelect" src="icon-search.svg" class="b-icon" alt="Search" 
-                 onmouseover="return searchBox.OnSearchSelectShow()"
-                 onmouseout="return searchBox.OnSearchSelectHide()"/>
-        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" id="inputSearch" placeholder="Type a class, namespace etc." aria-label="Search"
-                 onfocus="searchBox.OnSearchFieldFocus(true)" 
-                 onblur="searchBox.OnSearchFieldFocus(false)" 
-                 onkeyup="searchBox.OnSearchFieldChange(event)">
-         <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+             onmouseover="return searchBox.OnSearchSelectShow()"
+             onmouseout="return searchBox.OnSearchSelectHide()"/>
+        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" placeholder="Type a class, namespace etc." aria-label="Search"
+             onfocus="searchBox.OnSearchFieldFocus(true)" 
+             onblur="searchBox.OnSearchFieldFocus(false)" 
+             onkeyup="searchBox.OnSearchFieldChange(event)"/>
+        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
       </div>
     </form>
+    </div>
   </div>
-</div>
+</td>
+ </tr>
+ </tbody>
+</table>
 </div>
 <!-- end header part -->
-<main class="g-main">
-<!-- Generated by Doxygen 1.8.15 -->
+<!-- Generated by Doxygen 1.17.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search');
-/* @license-end */
+let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
-<!-- top -->
-	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
-  <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('namespacefiftyone__pipeline__core_1_1web.html','');});
-/* @license-end */
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div class="g-docs__sidenav">
+  <nav id="nav-tree-contents" class="c-sidenav">
+    <h4 class="c-sidenav__heading">Documentation</h4>
+    <div id="nav-sync" class="sync"></div>
+  </nav>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacefiftyone__pipeline__core_1_1web.html','',''); });
 </script>
 <div id="doc-content" class="g-docs__content">
 <!-- window showing the filter options -->
@@ -84,155 +88,111 @@ $(document).ready(function(){initNavTree('namespacefiftyone__pipeline__core_1_1w
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="g-docs__header">
-<div class="c-breadcrumb">
-  <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacefiftyone__pipeline__core.html">fiftyone_pipeline_core</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacefiftyone__pipeline__core_1_1web.html">web</a></li>  </ul>
-</div>
 <h1 class="g-docs__page-title">fiftyone_pipeline_core.web Namespace Reference</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<!-- startMemberSections -->
-<!-- member dec start -->
-<!-- startMemberItem() -->
 <table class="c-table c-table--directory">
-<tr class="c-table__row memitem:ac7051dad3cd71d4b023a480e98fea755"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="namespacefiftyone__pipeline__core_1_1web.html#ac7051dad3cd71d4b023a480e98fea755">webevidence</a> (request)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:ac7051dad3cd71d4b023a480e98fea755">Get evidence from a web request (gets headers, cookies and query parameters)  <a href="#ac7051dad3cd71d4b023a480e98fea755">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:adccd7e0653f1045f5d438c8a8d790fdd"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="namespacefiftyone__pipeline__core_1_1web.html#adccd7e0653f1045f5d438c8a8d790fdd">set_response_header</a> (flowData, response)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:adccd7e0653f1045f5d438c8a8d790fdd">Set UACH response header in web response (sets Accept-CH header in response)  <a href="#adccd7e0653f1045f5d438c8a8d790fdd">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- endMemberSections -->
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="c-table__row memitem:a439e55aaa772b47745c514ded42fc1c3" id="r_a439e55aaa772b47745c514ded42fc1c3"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a439e55aaa772b47745c514ded42fc1c3">webevidence</a> (request)</td></tr>
+<tr class="c-table__row memdesc:a439e55aaa772b47745c514ded42fc1c3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get evidence from a web request (gets headers, cookies and query parameters).  <br /></td></tr>
+<tr class="c-table__row memitem:aa2aebd04f101460b511f7cb290fc19ce" id="r_aa2aebd04f101460b511f7cb290fc19ce"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aa2aebd04f101460b511f7cb290fc19ce">set_response_header</a> (flowData, response)</td></tr>
+<tr class="c-table__row memdesc:aa2aebd04f101460b511f7cb290fc19ce"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set UACH response header in web response (sets Accept-CH header in response).  <br /></td></tr>
 </table>
-<h2 class="g-docs__section-heading">Function Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="adccd7e0653f1045f5d438c8a8d790fdd"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adccd7e0653f1045f5d438c8a8d790fdd">&#9670;&nbsp;</a></span>set_response_header()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
+<a id="aa2aebd04f101460b511f7cb290fc19ce" name="aa2aebd04f101460b511f7cb290fc19ce"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa2aebd04f101460b511f7cb290fc19ce">&#9670;&#160;</a></span>set_response_header()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.web.set_response_header <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">set_response_header </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>flowData</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>flowData</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>response</em><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>response</em></span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
-<p>Set UACH response header in web response (sets Accept-CH header in response) </p>
-<p>@type response: Response </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">response</span> - A Response object </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">response_header_dict</span> - Dictionary containing response header key and values to be set @rtype response </dd>
+<p>Set UACH response header in web response (sets Accept-CH header in response). </p>
+<p>@type response: Response </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">response</td><td>A Response object </td></tr>
+    <tr><td class="paramname">response_header_dict</td><td>Dictionary containing response header key and values to be set @rtype response </td></tr>
+  </table>
   </dd>
 </dl>
-<dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">A response object containing headers with non null values in response </dd></dl>
-<!-- endIndent -->
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">A response object containing headers with non null values in response </dd></dl>
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="ac7051dad3cd71d4b023a480e98fea755"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac7051dad3cd71d4b023a480e98fea755">&#9670;&nbsp;</a></span>webevidence()</h2>
+<a id="a439e55aaa772b47745c514ded42fc1c3" name="a439e55aaa772b47745c514ded42fc1c3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a439e55aaa772b47745c514ded42fc1c3">&#9670;&#160;</a></span>webevidence()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.web.webevidence <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">webevidence </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>request</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>request</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
-<p>Get evidence from a web request (gets headers, cookies and query parameters) </p>
-<p>@type request: Request </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">request</span> - A Request object @rtype dict </dd>
+<p>Get evidence from a web request (gets headers, cookies and query parameters). </p>
+<p>@type request: Request </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>A Request object @rtype dict </td></tr>
+  </table>
   </dd>
 </dl>
-<dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">A dictionary of web evidence that can be using in flowdata.evidence.add_from_dict() </dd></dl>
-<!-- endIndent -->
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">A dictionary of web evidence that can be using in flowdata.evidence.add_from_dict() </dd></dl>
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
 </div><!-- primary -->
-  <div class="g-docs__sidebar">
-    <div class="c-section-nav">
-      <h5 class="c-section-nav__heading">On This Page</h5>
-        <ul class="c-section-nav__list">
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#func-members">Functions</a></li>    </div>
-  </div>
-</div><!-- inner-->
+</div><!-- inner -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
     <p class="g-footer__copyright">Generated by
     <a href="http://www.doxygen.org/index.html">
-    <b>doxygen</b></a> 1.8.15
+    <b>doxygen</b></a> 1.17.0
   </p>
 </section>
 </div>

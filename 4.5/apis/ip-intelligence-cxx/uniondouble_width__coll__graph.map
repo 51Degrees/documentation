@@ -1,5 +1,7 @@
 <map id="doubleWidth" name="doubleWidth">
-<area shape="rect" id="node1" title=" " alt="" coords="109,109,213,136"/>
-<area shape="rect" id="node2" href="$structtest_double_width.html" title=" " alt="" coords="5,13,136,39"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="161,5,343,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="135,116,239,141"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="5,5,188,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,54,179,114,175,118,121,57"/>
+<area shape="rect" id="Node000003" href="$structtest_double_width.html" title=" " alt="" coords="213,13,343,38"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="260,50,200,118,196,114,256,47"/>
 </map>

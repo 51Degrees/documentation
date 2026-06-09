@@ -1,4 +1,0 @@
-var namespace_examples_1_1_client_side_evidence_1_1_m_v_c_1_1_controllers =
-[
-    [ "HomeController", "class_examples_1_1_client_side_evidence_1_1_m_v_c_1_1_controllers_1_1_home_controller.html", "class_examples_1_1_client_side_evidence_1_1_m_v_c_1_1_controllers_1_1_home_controller" ]
-];

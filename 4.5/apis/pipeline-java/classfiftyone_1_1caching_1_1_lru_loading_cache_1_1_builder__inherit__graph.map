@@ -1,5 +1,7 @@
 <map id="fiftyone.caching.LruLoadingCache&lt; K, V &gt;.Builder" name="fiftyone.caching.LruLoadingCache&lt; K, V &gt;.Builder">
-<area shape="rect" id="node1" title="Implementation of CacheBuilder for LruLoadingCache caches." alt="" coords="13,169,213,211"/>
-<area shape="rect" id="node2" href="$interfacefiftyone_1_1caching_1_1_loading_cache_builder.html" title="Provides a method to build caches that implement LoadingCache." alt="" coords="23,80,203,121"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1caching_1_1_cache_builder.html" title="Builder interface used to build caches." alt="" coords="5,5,220,32"/>
+<area shape="rect" id="Node000001" title="Implementation of CacheBuilder for LruLoadingCache caches." alt="" coords="13,167,213,207"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1caching_1_1_loading_cache_builder.html" title="Provides a method to build caches that implement LoadingCache." alt="" coords="23,79,203,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,133,115,166,110,166,110,133"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1caching_1_1_cache_builder.html" title="Builder interface used to build caches." alt="" coords="5,5,220,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,44,115,79,110,79,110,44"/>
 </map>

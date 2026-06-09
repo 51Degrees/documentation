@@ -1,4 +1,9 @@
 <map id="FiftyOne.Pipeline.Engines.FlowElements.ICloudAspectEngine" name="FiftyOne.Pipeline.Engines.FlowElements.ICloudAspectEngine">
-<area shape="rect" id="node1" title="An interface for aspect engines that process responses from a cloud service." alt="" coords="5,80,252,121"/>
-<area shape="rect" id="node2" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_i_aspect_engine.html" title="Interface representing 51Degrees on&#45;premise aspect engines." alt="" coords="71,5,186,32"/>
+<area shape="rect" id="Node000001" title="An interface for aspect engines that process responses from a cloud service." alt="" coords="5,255,252,295"/>
+<area shape="rect" id="Node000002" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_i_aspect_engine.html" title="Interface representing 51Degrees on&#45;premise aspect engines." alt="" coords="23,167,234,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,221,131,254,126,254,126,221"/>
+<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="28,79,229,119"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="131,133,131,166,126,166,126,133"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="79,5,178,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="131,44,131,79,126,79,126,44"/>
 </map>

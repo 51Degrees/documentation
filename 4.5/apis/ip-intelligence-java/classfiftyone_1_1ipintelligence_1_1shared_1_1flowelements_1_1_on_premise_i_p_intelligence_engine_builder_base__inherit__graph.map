@@ -1,6 +1,9 @@
 <map id="fiftyone.ipintelligence.shared.flowelements.OnPremiseIPIntelligenceEngineBuilderBase&lt; TBuilder extends OnPremiseIPIntelligenceEngineBuilderBase&lt; TBuilder, TEngine, TEngine extends FiftyOneAspectEngine&lt;? extends AspectData, ? extends AspectPropertyMetaData &gt;" name="fiftyone.ipintelligence.shared.flowelements.OnPremiseIPIntelligenceEngineBuilderBase&lt; TBuilder extends OnPremiseIPIntelligenceEngineBuilderBase&lt; TBuilder, TEngine, TEngine extends FiftyOneAspectEngine&lt;? extends AspectData, ? extends AspectPropertyMetaData &gt;">
-<area shape="rect" id="node1" title="Base builder class for 51Degrees on&#45;premise IP Intelligence engines." alt="" coords="316,50,671,150"/>
-<area shape="rect" id="node3" href="$classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine_builder.html" title="Builder for the IPIntelligenceOnPremiseEngine." alt="" coords="932,5,1223,91"/>
-<area shape="rect" id="node4" href="$classfiftyone_1_1ipintelligence_1_1shared_1_1flowelements_1_1_on_premise_i_p_intelligence_engine_builder_base.html" title=" " alt="" coords="924,115,1231,186"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,57,267,143"/>
+<area shape="rect" id="Node000001" title="Base builder class for 51Degrees on&#45;premise IP Intelligence engines." alt="" coords="299,37,653,136"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine_builder.html" title="Builder for the IPIntelligenceOnPremiseEngine." alt="" coords="923,5,1303,75"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="667,64,677,63,922,46,922,52,678,68,667,69"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1ipintelligence_1_1shared_1_1flowelements_1_1_on_premise_i_p_intelligence_engine_builder_base.html" title=" " alt="" coords="959,99,1266,168"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="667,129,678,131,822,140,959,139,959,144,822,145,677,136,667,135"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,67,249,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,84,298,84,298,89,263,89"/>
 </map>

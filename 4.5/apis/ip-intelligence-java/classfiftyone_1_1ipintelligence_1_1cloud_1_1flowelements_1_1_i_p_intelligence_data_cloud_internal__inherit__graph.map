@@ -1,8 +1,14 @@
 <map id="fiftyone.ipintelligence.cloud.flowelements.IPIntelligenceDataCloudInternal" name="fiftyone.ipintelligence.cloud.flowelements.IPIntelligenceDataCloudInternal">
-<area shape="rect" id="node1" title="Internal implementation of the IPIntelligenceDataCloud interface." alt="" coords="700,39,999,80"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html" title=" " alt="" coords="425,5,640,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="193,13,323,39"/>
-<area shape="rect" id="node4" href="$interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data.html" title="Interface exposing typed accessors for properties related to an IP." alt="" coords="151,67,365,108"/>
-<area shape="rect" id="node6" href="$interfacefiftyone_1_1ipintelligence_1_1cloud_1_1data_1_1_i_p_intelligence_data_cloud.html" title="Cloud specific interface for IPIntelligenceData." alt="" coords="413,71,652,112"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,74,103,101"/>
+<area shape="rect" id="Node000001" title="Internal implementation of the IPIntelligenceDataCloud interface." alt="" coords="700,37,999,77"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html" title=" " alt="" coords="425,5,640,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="654,35,700,40,699,45,654,40"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="193,13,323,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="336,23,425,23,425,28,336,28"/>
+<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data.html" title="Interface exposing typed accessors for properties related to an IP." alt="" coords="151,65,365,105"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="363,60,440,43,441,48,364,65"/>
+<area shape="rect" id="Node000006" href="$interfacefiftyone_1_1ipintelligence_1_1cloud_1_1data_1_1_i_p_intelligence_data_cloud.html" title="Cloud specific interface for IPIntelligenceData." alt="" coords="413,69,652,109"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="379,84,413,85,413,90,379,90"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,73,103,98"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="117,83,151,83,151,88,117,88"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="666,73,699,70,700,75,666,79"/>
 </map>

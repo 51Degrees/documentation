@@ -1,6 +1,9 @@
 <map id="fiftyone.pipeline.web.services.PipelineResultServiceCore.Default" name="fiftyone.pipeline.web.services.PipelineResultServiceCore.Default">
-<area shape="rect" id="node1" title="Default implementation of the PipelineResultServiceCore service." alt="" coords="531,37,776,79"/>
-<area shape="rect" id="node2" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_pipeline_result_service_core.html" title="Service used to process web requests through the Pipeline." alt="" coords="188,5,408,47"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,..." alt="" coords="171,71,425,112"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,78,121,105"/>
+<area shape="rect" id="Node000001" title="Default implementation of the PipelineResultServiceCore service." alt="" coords="535,37,780,77"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_pipeline_result_service_core.html" title="Service used to process web requests through the Pipeline." alt="" coords="188,5,408,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="422,34,535,44,534,49,421,39"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,..." alt="" coords="171,69,425,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="439,77,510,71,534,68,535,74,511,76,440,82"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,77,121,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="135,87,170,87,170,92,135,92"/>
 </map>

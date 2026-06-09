@@ -1,6 +1,9 @@
 <map id="fiftyone_devicedetection_onpremise.DeviceDetectionHashEngineModule.ResultsHashSwig" name="fiftyone_devicedetection_onpremise.DeviceDetectionHashEngineModule.ResultsHashSwig">
-<area shape="rect" id="node1" title=" " alt="" coords="760,5,1003,61"/>
-<area shape="rect" id="node2" href="$classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_device_detection_swig.html" title=" " alt="" coords="407,5,712,61"/>
-<area shape="rect" id="node3" href="$classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_base_swig.html" title=" " alt="" coords="116,5,359,61"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,20,68,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="760,5,1003,60"/>
+<area shape="rect" id="Node000002" href="$classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_device_detection_swig.html" title=" " alt="" coords="407,5,712,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="726,30,760,30,760,35,726,35"/>
+<area shape="rect" id="Node000003" href="$classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_base_swig.html" title=" " alt="" coords="116,5,359,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="373,30,407,30,407,35,373,35"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,20,68,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="82,30,116,30,116,35,82,35"/>
 </map>

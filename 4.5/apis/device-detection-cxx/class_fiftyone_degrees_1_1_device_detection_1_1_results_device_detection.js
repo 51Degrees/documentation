@@ -1,0 +1,7 @@
+var class_fiftyone_degrees_1_1_device_detection_1_1_results_device_detection =
+[
+    [ "ResultsDeviceDetection", "class_fiftyone_degrees_1_1_device_detection_1_1_results_device_detection.html#aff5478d85ca01420b5a454d83be47d66", null ],
+    [ "getDeviceId", "class_fiftyone_degrees_1_1_device_detection_1_1_results_device_detection.html#a44f1c299236928df56502c61eb7b1c2e", null ],
+    [ "getUserAgent", "class_fiftyone_degrees_1_1_device_detection_1_1_results_device_detection.html#abdc6aeac81c82d147c63748e30b941f8", null ],
+    [ "getUserAgents", "class_fiftyone_degrees_1_1_device_detection_1_1_results_device_detection.html#a27af618ee35ed4b6bcb03c666789502b", null ]
+];

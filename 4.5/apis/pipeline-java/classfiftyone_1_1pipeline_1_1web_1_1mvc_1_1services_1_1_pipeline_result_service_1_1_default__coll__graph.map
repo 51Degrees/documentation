@@ -1,8 +1,14 @@
 <map id="fiftyone.pipeline.web.mvc.services.PipelineResultService.Default" name="fiftyone.pipeline.web.mvc.services.PipelineResultService.Default">
-<area shape="rect" id="node1" title=" " alt="" coords="832,39,1084,80"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1pipeline_1_1web_1_1services_1_1_pipeline_result_service_core_1_1_default.html" title="Default implementation of the PipelineResultServiceCore service." alt="" coords="534,71,779,112"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_pipeline_result_service_core.html" title="Service used to process web requests through the Pipeline." alt="" coords="188,7,408,48"/>
-<area shape="rect" id="node6" href="$interfacefiftyone_1_1pipeline_1_1web_1_1mvc_1_1services_1_1_pipeline_result_service.html" title="Spring framework service for the PipelineResultServiceCore." alt="" coords="531,5,783,47"/>
-<area shape="rect" id="node4" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,..." alt="" coords="171,73,425,115"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,81,121,107"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="836,39,1088,79"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1web_1_1services_1_1_pipeline_result_service_core_1_1_default.html" title="Default implementation of the PipelineResultServiceCore service." alt="" coords="538,69,783,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="797,73,836,69,836,74,797,78"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_pipeline_result_service_core.html" title="Service used to process web requests through the Pipeline." alt="" coords="188,12,408,52"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,49,538,67,537,73,421,54"/>
+<area shape="rect" id="Node000006" href="$interfacefiftyone_1_1pipeline_1_1web_1_1mvc_1_1services_1_1_pipeline_result_service.html" title="Spring framework service for the PipelineResultServiceCore." alt="" coords="535,5,787,45"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="422,27,534,25,534,30,422,32"/>
+<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,..." alt="" coords="171,81,425,121"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="439,99,511,97,538,96,538,101,511,103,440,104"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,89,121,114"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="135,99,170,99,170,104,135,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="801,38,836,42,835,47,800,43"/>
 </map>

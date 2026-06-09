@@ -1,8 +1,13 @@
 <map id="FiftyOne.Pipeline.Core.Exceptions.PipelineException" name="FiftyOne.Pipeline.Core.Exceptions.PipelineException">
-<area shape="rect" id="node1" title="Base class for all exceptions thrown by Pipeline API components" alt="" coords="140,104,385,145"/>
-<area shape="rect" id="node3" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_configuration_exception.html" title="Exception that is thrown when the configuration options provided to PipelineBuilder are invalid See t..." alt="" coords="457,5,703,47"/>
-<area shape="rect" id="node4" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_data_exception.html" title="Exception that can be thrown when the available data does not match that which is expected." alt="" coords="457,71,703,112"/>
-<area shape="rect" id="node5" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_temporarily_unavailable_exception.html" title="Indicates that pipeline refused to process Data.IFlowData based on the internal state of some flow el..." alt="" coords="433,136,727,177"/>
-<area shape="rect" id="node6" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_properties_not_yet_loaded_exception.html" title="Thrown by FlowElements.IFlowElement.Properties to indicate that properties are not available yet but ..." alt="" coords="457,201,703,243"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,111,92,138"/>
+<area shape="rect" id="Node000001" title="Base class for all exceptions thrown by Pipeline API components." alt="" coords="140,101,385,141"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_configuration_exception.html" title="Exception that is thrown when the configuration options provided to PipelineBuilder are invalid See t..." alt="" coords="457,5,703,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="323,94,433,55,478,43,479,48,434,60,325,99"/>
+<area shape="rect" id="Node000004" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_data_exception.html" title="Exception that can be thrown when the available data does not match that which is expected." alt="" coords="457,69,703,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="399,105,457,99,458,104,399,110"/>
+<area shape="rect" id="Node000005" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_temporarily_unavailable_exception.html" title="Indicates that pipeline refused to process Data.IFlowData based on the internal state of some flow el..." alt="" coords="433,133,727,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="400,132,433,136,433,141,399,138"/>
+<area shape="rect" id="Node000006" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_properties_not_yet_loaded_exception.html" title="Thrown by FlowElements.IFlowElement.Properties to indicate that properties are not available yet but ..." alt="" coords="457,197,703,237"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="325,144,434,183,479,195,478,200,433,188,323,149"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,109,92,134"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,119,140,119,140,124,106,124"/>
 </map>

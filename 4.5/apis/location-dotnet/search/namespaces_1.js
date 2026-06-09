@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['combiningservices',['CombiningServices',['../namespace_combining_services.html',1,'']]]
+  ['combiningservices_0',['CombiningServices',['../namespace_combining_services.html',1,'']]]
 ];

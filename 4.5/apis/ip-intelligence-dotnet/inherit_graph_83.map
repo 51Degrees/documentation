@@ -1,4 +1,19 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,13,195,39"/>
-<area shape="rect" id="node2" href="$class_fifty_one_1_1_ip_intelligence_1_1_ipi_cloud_pipeline_builder.html" title="Builder used to create pipelines with an cloud&#45;based IP intelligence engine." alt="" coords="243,5,416,47"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="44,20,209,45"/>
+<area shape="rect" id="Node000001" href="$class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_1_1_component_meta_data.html" title="Data class that contains meta&#45;data relating to a specific component." alt="" coords="309,5,563,60"/>
+<area shape="poly" id="edge45_Node000000_Node000001" title=" " alt="" coords="223,30,308,30,308,35,223,35"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="77,139,176,164"/>
+<area shape="poly" id="edge46_Node000002_Node000001" title=" " alt="" coords="189,144,219,136,247,124,261,111,270,98,279,83,294,69,316,58,318,62,298,74,283,87,274,100,265,115,249,128,220,141,190,149"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_1_1_profile_meta_data.html" title="Data class that contains meta&#45;data relating to a specific profile." alt="" coords="325,84,547,139"/>
+<area shape="poly" id="edge47_Node000002_Node000003" title=" " alt="" coords="190,141,325,123,325,128,190,146"/>
+<area shape="rect" id="Node000005" href="$class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_1_1_property_meta_data_ipi.html" title="Data class that contains meta&#45;data relating to a specific property." alt="" coords="319,163,553,217"/>
+<area shape="poly" id="edge48_Node000002_Node000005" title=" " alt="" coords="190,156,319,173,318,178,189,162"/>
+<area shape="rect" id="Node000007" href="$class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_1_1_value_meta_data.html" title="Data class that contains meta&#45;data relating to a specific value." alt="" coords="296,242,576,282"/>
+<area shape="poly" id="edge49_Node000002_Node000007" title=" " alt="" coords="190,153,220,160,249,173,265,187,274,201,283,215,297,228,322,240,320,244,295,232,279,218,270,204,261,190,247,178,219,166,189,158"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,188,248,213"/>
+<area shape="poly" id="edge50_Node000006_Node000005" title=" " alt="" coords="262,193,318,191,318,197,262,199"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="61,89,192,115"/>
+<area shape="poly" id="edge51_Node000004_Node000003" title=" " alt="" coords="206,102,325,105,325,111,206,107"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="63,249,190,275"/>
+<area shape="poly" id="edge52_Node000008_Node000007" title=" " alt="" coords="204,259,295,259,295,265,204,265"/>
 </map>

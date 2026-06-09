@@ -1,5 +1,7 @@
 <map id="fiftyoneDegreesIpiCgMemberNode" name="fiftyoneDegreesIpiCgMemberNode">
-<area shape="rect" id="node1" title="Data structure used for the values collection." alt="" coords="100,139,347,165"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_ipi_cg_member.html" title="DATA STRUCTURES." alt="" coords="5,13,217,39"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_collection_header.html" title="Collection header structure which defines the size and location of the collection data." alt="" coords="241,5,432,47"/>
+<area shape="rect" id="Node000001" title="Data structure used for the values collection." alt="" coords="89,156,336,181"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_collection_header.html" title="Collection header structure which defines the size and location of the collection data." alt="" coords="5,5,196,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,55,206,154,202,158,122,58"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_ipi_cg_member.html" title="DATA STRUCTURES." alt="" coords="220,13,432,38"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="317,52,294,92,263,134,233,158,230,154,259,130,290,89,312,49"/>
 </map>

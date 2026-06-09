@@ -1,6 +1,9 @@
 <map id="DataKeyedCache" name="DataKeyedCache">
-<area shape="rect" id="node1" title="A simple cache getter that takes a cache key and returns an element if it is found in the cache." alt="" coords="33,5,166,32"/>
-<area shape="rect" id="node2" href="$class_l_r_ucache.html" title="An instance of DataKeyed cache using a least recently used (LRU) method." alt="" coords="5,80,92,107"/>
-<area shape="rect" id="node3" href="$class_tracker.html" title="A tracker is an instance of datakeyed cache which, if a result is found in the cache,..." alt="" coords="116,80,184,107"/>
-<area shape="rect" id="node4" href="$class_share_usage_tracker.html" title="The ShareUsageTracker is used by the ShareUsageElement to determine whether to put evidence into a bu..." alt="" coords="77,155,223,181"/>
+<area shape="rect" id="Node000001" title="A simple cache getter that takes a cache key and returns an element if it is found in the cache." alt="" coords="33,5,166,31"/>
+<area shape="rect" id="Node000002" href="$class_l_r_ucache.html" title="An instance of DataKeyed cache using a least recently used (LRU) method." alt="" coords="5,79,92,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,44,59,80,55,77,81,41"/>
+<area shape="rect" id="Node000003" href="$class_tracker.html" title="A tracker is an instance of datakeyed cache which, if a result is found in the cache,..." alt="" coords="116,79,184,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="118,41,144,77,140,80,114,44"/>
+<area shape="rect" id="Node000004" href="$class_share_usage_tracker.html" title="The ShareUsageTracker is used by the ShareUsageElement to determine whether to put evidence into a bu..." alt="" coords="77,152,223,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="153,118,153,152,147,152,147,118"/>
 </map>

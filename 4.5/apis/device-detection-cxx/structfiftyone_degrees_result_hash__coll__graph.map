@@ -1,5 +1,8 @@
 <map id="fiftyoneDegreesResultHash" name="fiftyoneDegreesResultHash">
-<area shape="rect" id="node1" title="Singular User&#45;Agent result returned by a Hash process method." alt="" coords="170,109,369,136"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_graph_trace_node.html" title="Trace node structure used to trace the route taken when evaluating a graph." alt="" coords="5,13,237,39"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_result_user_agent.html" title="Singular User&#45;Agent result returned by a device detection process method." alt="" coords="319,5,515,47"/>
+<area shape="rect" id="Node000001" title="Singular User&#45;Agent result returned by a Hash process method." alt="" coords="28,116,227,141"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_result_user_agent.html" title="Singular User&#45;Agent result returned by a device detection process method." alt="" coords="5,5,201,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,58,127,115,122,117,108,60"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_graph_trace_node.html" title="Trace node structure used to trace the route taken when evaluating a graph." alt="" coords="226,13,458,38"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="307,46,153,118,151,113,305,41"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="473,17,485,25,477,33,459,37,458,31,474,28,479,26,470,21"/>
 </map>

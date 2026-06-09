@@ -1,7 +1,13 @@
 <map id="fiftyone.caching.LruLoadingCache&lt; K, V &gt;" name="fiftyone.caching.LruLoadingCache&lt; K, V &gt;">
-<area shape="rect" id="node1" title="Uses the LruCacheBase to implement the LoadingCache interface." alt="" coords="88,259,288,300"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1caching_1_1_lru_cache_base.html" title="This is a Least Recently Used (LRU) cache with multiple linked lists in place of the usual single lin..." alt="" coords="5,169,176,211"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1caching_1_1_cache.html" title="Base cache interface which declares only the get method and the types of key and value stored in the ..." alt="" coords="129,80,266,121"/>
-<area shape="rect" id="node5" href="$interfacefiftyone_1_1caching_1_1_loading_cache.html" title="Extension of general cache contract to provide for getting a value with a particular value loaded." alt="" coords="201,169,370,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="101,5,187,32"/>
+<area shape="rect" id="Node000001" title="Uses the LruCacheBase to implement the LoadingCache interface." alt="" coords="104,255,304,295"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1caching_1_1_lru_cache_base.html" title="This is a Least Recently Used (LRU) cache with multiple linked lists in place of the usual single lin..." alt="" coords="5,167,195,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,214,183,252,179,257,132,218"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1caching_1_1_cache.html" title="Base cache interface which declares only the get method and the types of key and value stored in the ..." alt="" coords="138,79,307,119"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="186,129,129,169,126,164,183,124"/>
+<area shape="rect" id="Node000005" href="$interfacefiftyone_1_1caching_1_1_loading_cache.html" title="Extension of general cache contract to provide for getting a value with a particular value loaded." alt="" coords="219,167,399,207"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="253,127,292,165,288,168,250,130"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="118,5,205,31"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="147,44,128,80,113,126,105,167,100,166,108,125,123,78,143,41"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="181,40,210,77,206,80,177,43"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="277,217,229,257,226,252,274,213"/>
 </map>

@@ -1,4 +1,0 @@
-var namespacefiftyone__devicedetection__examples_1_1cloud_1_1metadata__console =
-[
-    [ "MetaDataConsole", "classfiftyone__devicedetection__examples_1_1cloud_1_1metadata__console_1_1_meta_data_console.html", "classfiftyone__devicedetection__examples_1_1cloud_1_1metadata__console_1_1_meta_data_console" ]
-];

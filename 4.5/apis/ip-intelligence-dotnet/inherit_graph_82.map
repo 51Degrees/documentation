@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_pipeline_options_extensions.html" title=" " alt="" coords="5,5,268,47"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,111,31"/>
+<area shape="rect" id="Node000001" href="$class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_key.html" title="Key used for each metric." alt="" coords="159,23,459,63"/>
+<area shape="poly" id="edge42_Node000000_Node000001" title=" " alt="" coords="125,22,159,25,158,31,124,27"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html" title=" " alt="" coords="507,16,783,71"/>
+<area shape="poly" id="edge43_Node000001_Node000002" title=" " alt="" coords="472,41,507,41,507,46,472,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="13,55,103,80"/>
+<area shape="poly" id="edge44_Node000003_Node000001" title=" " alt="" coords="117,59,158,55,159,60,118,64"/>
 </map>

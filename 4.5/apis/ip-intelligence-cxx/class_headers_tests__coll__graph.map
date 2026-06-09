@@ -1,9 +1,16 @@
 <map id="HeadersTests" name="HeadersTests">
-<area shape="rect" id="node1" title="Header test class used to test the functionality of header.c using a string collection built from the..." alt="" coords="180,199,289,225"/>
-<area shape="rect" id="node2" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="81,109,135,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,13,107,39"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_header_array.html" title="Array of Headers which should always be ordered in ascending order of fullHeaderId." alt="" coords="131,13,338,39"/>
-<area shape="rect" id="node5" href="$class_headers_container.html" title=" " alt="" coords="336,109,475,136"/>
-<area shape="rect" id="node6" href="$class_string_collection.html" title="String collection helper class, used by test classes to fetch." alt="" coords="363,13,488,39"/>
-<area shape="rect" id="node7" href="$structfiftyone_degrees_header_ptr_array.html" title="Array of header indexes." alt="" coords="513,5,703,47"/>
+<area shape="rect" id="Node000001" title="Header test class used to test the functionality of header.c using a string collection built from the..." alt="" coords="180,212,289,237"/>
+<area shape="rect" id="Node000002" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="81,116,135,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,147,221,210,217,214,133,152"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,13,107,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="71,49,104,115,100,117,66,52"/>
+<area shape="rect" id="Node000004" href="$class_headers_container.html" title=" " alt="" coords="355,116,493,141"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="390,150,259,214,257,209,388,145"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_header_array.html" title="Array of Headers which should always be ordered in ascending order of fullHeaderId." alt="" coords="131,13,338,38"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="237,52,237,212,232,212,232,52"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="269,42,404,114,401,118,267,47"/>
+<area shape="rect" id="Node000006" href="$structfiftyone_degrees_header_ptr_array.html" title="Array of header indexes." alt="" coords="362,5,553,45"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="449,59,430,117,425,115,444,57"/>
+<area shape="rect" id="Node000007" href="$class_string_collection.html" title="String collection helper class, used by test classes to fetch." alt="" coords="577,13,703,38"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="620,49,591,73,556,94,521,108,486,118,485,113,520,103,553,90,588,68,617,45"/>
 </map>

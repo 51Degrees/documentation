@@ -1,9 +1,17 @@
 <map id="fiftyoneDegreesOverridePropertyArray" name="fiftyoneDegreesOverridePropertyArray">
-<area shape="rect" id="node1" title="Array of items of type fiftyoneDegreesOverrideProperty used to easily access and track the size of th..." alt="" coords="44,380,280,421"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_override_property.html" title="Index and pointer to a property which can be overridden." alt="" coords="44,291,280,317"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_property_available.html" title="Used to access the property item quickly without the need to search." alt="" coords="42,200,282,227"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_evidence_property_index_array.html" title="Array of items of type fiftyoneDegreesEvidencePropertyIndex used to easily access and track the size ..." alt="" coords="5,95,244,136"/>
-<area shape="rect" id="node5" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="268,102,488,129"/>
-<area shape="rect" id="node6" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="333,200,524,227"/>
-<area shape="rect" id="node7" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="300,5,456,32"/>
+<area shape="rect" id="Node000001" title="Array of items of type fiftyoneDegreesOverrideProperty used to easily access and track the size of th..." alt="" coords="347,421,583,461"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_override_property.html" title="Index and pointer to a property which can be overridden." alt="" coords="347,325,583,351"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="467,365,467,421,462,421,462,365"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_property_available.html" title="Used to access the property item quickly without the need to search." alt="" coords="345,221,585,246"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="467,260,467,325,462,325,462,260"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="79,109,299,134"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="231,137,437,218,435,223,229,142"/>
+<area shape="rect" id="Node000006" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="5,221,196,246"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="128,142,112,153,99,167,94,180,93,194,99,220,94,221,88,194,89,179,94,164,108,149,125,138"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="111,5,267,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="191,45,191,109,186,109,186,45"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="131,211,157,186,173,159,183,133,188,135,178,161,161,190,134,215"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="211,224,223,233,215,242,197,245,196,240,212,237,217,234,208,228"/>
+<area shape="rect" id="Node000007" href="$structfiftyone_degrees_evidence_property_index_array.html" title="Array of items of type fiftyoneDegreesEvidencePropertyIndex used to easily access and track the size ..." alt="" coords="345,101,584,141"/>
+<area shape="poly" id="edge8_Node000003_Node000007" title=" " alt="" coords="467,155,467,221,462,221,462,155"/>
 </map>

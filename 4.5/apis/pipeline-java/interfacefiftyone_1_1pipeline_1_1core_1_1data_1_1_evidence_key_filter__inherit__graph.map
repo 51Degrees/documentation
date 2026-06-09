@@ -1,7 +1,11 @@
 <map id="fiftyone.pipeline.core.data.EvidenceKeyFilter" name="fiftyone.pipeline.core.data.EvidenceKeyFilter">
-<area shape="rect" id="node1" title="Represents an object that filters evidence key names based on some criteria." alt="" coords="5,39,201,80"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter_whitelist.html" title="This evidence filter will only include keys that are on a whitelist that is specified at construction..." alt="" coords="287,5,483,47"/>
-<area shape="rect" id="node4" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_evidence_key_filter_share_usage.html" title="This filter is used by the ShareUsageElement." alt="" coords="249,71,521,112"/>
-<area shape="rect" id="node3" href="$classfiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter_aggregator.html" title="This implementation of EvidenceKeyFilter aggregates multiple other filters using a logical OR approac..." alt="" coords="600,5,811,47"/>
-<area shape="rect" id="node5" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_evidence_key_filter_share_usage_tracker.html" title="Wrapper for EvidenceKeyFilter for Share Usage, to be used with the ShareUsageTracker to excluded spec..." alt="" coords="569,71,841,112"/>
+<area shape="rect" id="Node000001" title="Represents an object that filters evidence key names based on some criteria." alt="" coords="5,37,201,77"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter_whitelist.html" title="This evidence filter will only include keys that are on a whitelist that is specified at construction..." alt="" coords="287,5,483,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,42,287,34,288,39,216,47"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_evidence_key_filter_share_usage.html" title="This filter is used by the ShareUsageElement." alt="" coords="249,69,521,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="215,67,249,71,249,77,215,73"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter_aggregator.html" title="This implementation of EvidenceKeyFilter aggregates multiple other filters using a logical OR approac..." alt="" coords="600,5,811,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="497,23,600,23,600,28,497,28"/>
+<area shape="rect" id="Node000005" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_evidence_key_filter_share_usage_tracker.html" title="Wrapper for EvidenceKeyFilter for Share Usage, to be used with the ShareUsageTracker to excluded spec..." alt="" coords="569,69,841,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="535,87,569,87,569,92,535,92"/>
 </map>

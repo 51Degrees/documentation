@@ -1,5 +1,7 @@
 <map id="FiftyoneDegrees::IpIntelligence::ValueMetaDataCollectionForProfileIpi" name="FiftyoneDegrees::IpIntelligence::ValueMetaDataCollectionForProfileIpi">
-<area shape="rect" id="node1" title="A collection of value meta data relating to a profile contained in an IP Intelligence engine." alt="" coords="5,199,277,240"/>
-<area shape="rect" id="node2" href="$class_fiftyone_degrees_1_1_ip_intelligence_1_1_value_meta_data_collection_base_ipi.html" title="A collection of all value meta data contained in an IP Intelligence engine." alt="" coords="20,109,263,151"/>
-<area shape="rect" id="node3" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title="A group of items accessible by index or key." alt="" coords="22,5,261,61"/>
+<area shape="rect" id="Node000001" title="A collection of value meta data relating to a profile contained in an IP Intelligence engine." alt="" coords="5,181,277,221"/>
+<area shape="rect" id="Node000002" href="$class_fiftyone_degrees_1_1_ip_intelligence_1_1_value_meta_data_collection_base_ipi.html" title="A collection of all value meta data contained in an IP Intelligence engine." alt="" coords="20,93,263,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,147,144,181,139,181,139,147"/>
+<area shape="rect" id="Node000003" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title="A group of items accessible by index or key." alt="" coords="44,5,239,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="144,59,144,93,139,93,139,59"/>
 </map>

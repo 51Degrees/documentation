@@ -1,0 +1,13 @@
+<map id="FiftyOne.Pipeline.Engines.Caching.DataKeyedCacheBase&lt; TValue &gt;" name="FiftyOne.Pipeline.Engines.Caching.DataKeyedCacheBase&lt; TValue &gt;">
+<area shape="rect" id="Node000001" title="Abstract base class for caches that use IFlowData as the key." alt="" coords="467,30,688,85"/>
+<area shape="rect" id="Node000004" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_caching_1_1_default_flow_cache.html" title="The default &#39;flow cache&#39; implementation." alt="" coords="753,5,950,45"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="701,40,752,34,753,40,702,45"/>
+<area shape="rect" id="Node000005" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_trackers_1_1_tracker_base-1-g.html" title="The abstract base class for trackers." alt="" coords="736,69,967,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="702,69,736,73,735,78,701,74"/>
+<area shape="rect" id="Node000002" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_caching_1_1_i_data_keyed_cache-1-g.html" title="Represents a put cache where the key is a IFlowData instance." alt="" coords="225,30,419,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="432,55,466,55,466,60,432,60"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,37,177,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="191,55,225,55,225,60,191,60"/>
+<area shape="rect" id="Node000006" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_trackers_1_1_share_usage_tracker.html" title="A tracker used by share usage to attempt to avoid repeatedly sending data relating to the same user s..." alt="" coords="1015,69,1276,109"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="981,87,1015,87,1015,92,981,92"/>
+</map>

@@ -1,11 +1,19 @@
 <map id="FiftyoneDegrees::Common::EntityMetaData&lt; K &gt;" name="FiftyoneDegrees::Common::EntityMetaData&lt; K &gt;">
-<area shape="rect" id="node1" title="Base class for any entity meta data." alt="" coords="5,104,200,145"/>
-<area shape="rect" id="node2" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="443,5,657,47"/>
-<area shape="rect" id="node4" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="407,71,693,112"/>
-<area shape="rect" id="node6" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="451,136,649,177"/>
-<area shape="rect" id="node8" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="453,201,647,243"/>
-<area shape="rect" id="node3" href="$class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation." alt="" coords="743,5,937,47"/>
-<area shape="rect" id="node5" href="$class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html" title="Meta data relating to a value populated by an engine implementation." alt="" coords="743,71,937,112"/>
-<area shape="rect" id="node7" href="$class_fiftyone_degrees_1_1_common_1_1_property_meta_data.html" title="Meta data relating to a property populated by an engine implementation." alt="" coords="743,136,937,177"/>
-<area shape="rect" id="node9" href="$class_fiftyone_degrees_1_1_common_1_1_component_meta_data.html" title="EntityMetaData relating to a component populated by an engine implementation." alt="" coords="743,201,937,243"/>
+<area shape="rect" id="Node000001" title="Base class for any entity meta data." alt="" coords="5,101,200,141"/>
+<area shape="rect" id="Node000002" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="457,5,651,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,94,223,72,344,47,456,31,457,37,345,52,225,77,162,99"/>
+<area shape="rect" id="Node000004" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="447,69,661,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="213,111,446,94,447,100,214,116"/>
+<area shape="rect" id="Node000006" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="455,133,653,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="214,138,224,139,344,147,455,150,455,156,344,152,224,144,213,143"/>
+<area shape="rect" id="Node000008" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="411,197,697,237"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="151,146,186,163,225,177,318,198,411,209,410,214,317,203,223,183,184,168,148,151"/>
+<area shape="rect" id="Node000003" href="$class_fiftyone_degrees_1_1_common_1_1_component_meta_data.html" title="EntityMetaData relating to a component populated by an engine implementation." alt="" coords="747,5,941,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="665,23,746,23,746,28,665,28"/>
+<area shape="rect" id="Node000005" href="$class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation." alt="" coords="747,69,941,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="675,87,746,87,746,92,675,92"/>
+<area shape="rect" id="Node000007" href="$class_fiftyone_degrees_1_1_common_1_1_property_meta_data.html" title="Meta data relating to a property populated by an engine implementation." alt="" coords="747,133,941,173"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="667,151,746,151,746,156,667,156"/>
+<area shape="rect" id="Node000009" href="$class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html" title="Meta data relating to a value populated by an engine implementation." alt="" coords="747,197,941,237"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="711,215,746,215,746,220,711,220"/>
 </map>

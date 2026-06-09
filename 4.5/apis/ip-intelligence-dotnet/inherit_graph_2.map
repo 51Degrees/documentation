@@ -1,5 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="36,5,165,32"/>
-<area shape="rect" id="node2" href="$class_fifty_one_1_1_ip_intelligence_1_1_cloud_1_1_data_1_1_cloud_countries_translation_data.html" title="Cloud counterpart of the on&#45;premise FiftyOne.IpIntelligence.Translation.Data.CountriesTranslationData..." alt="" coords="244,23,543,65"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,56,196,83"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,60,152,85"/>
+<area shape="rect" id="Node000001" href="$class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_worker.html" title="BackgroundService for running the Example." alt="" coords="200,5,487,60"/>
+<area shape="poly" id="edge5_Node000000_Node000001" title=" " alt="" coords="165,57,199,52,200,57,166,62"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_worker.html" title=" " alt="" coords="205,84,481,139"/>
+<area shape="poly" id="edge6_Node000000_Node000002" title=" " alt="" coords="166,83,205,88,205,94,165,88"/>
 </map>

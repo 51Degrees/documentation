@@ -1,78 +1,82 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
   <link rel="canonical" href="/documentation/apis/pipeline-python/classtests_1_1test__engines_1_1_example_aspect_engine.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.15"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>51Degrees Pipeline Python: tests.test_engines.ExampleAspectEngine Class Reference</title>
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="dynsections.min.js"></script>
-<script type="text/javascript" src="resize.min.js"></script>
+<script type="text/javascript" src="codefolding.min.js"></script>
+<script type="text/javascript" src="clipboard.min.js"></script>
 <script type="text/javascript" src="navtreedata.min.js"></script>
 <script type="text/javascript" src="navtree.min.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(initResizable);
-/* @license-end */</script>
+<script type="text/javascript" src="cookie.min.js"></script>
 <link href="search/search.min.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.min.js"></script>
 <script type="text/javascript" src="search/search.min.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="l-docs-index p-doxygen">
-<div class="l-index__content">
-<!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
-<div id="titlearea" class="g-header g-header--docs">
-  <h2 class="c-brand">
-  <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png"/></a>
-  <span class="c-tagline">51Degrees Pipeline Python
-   &#160;<span id="projectnumber">4.5</span>
-  </span>
-  </h2>
-  <div id="projectalign" style="padding-left: 0.5em;">
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="/documentation/4.5/index.html"><img alt="Logo" src="logo-51Degrees-Docs.png"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">51Degrees Pipeline Python<span id="projectnumber">&#160;4.5</span>
+   </div>
    <div id="projectbrief">51Degrees Pipeline for Python</div>
-  </div>
-  <div id="main-nav"></div>
-     <div class="g-search">
+  </td>
+    <td>  <div class="g-search">
     <div class="c-search is-openable">
     <form class="c-search__form">
       <div id="MSearchBox" class="b-form-group b-form-group--with-icon">
         <label for="inputSearch" class="b-text--hidden">Search</label>
         <img id="MSearchSelect" src="icon-search.svg" class="b-icon" alt="Search" 
-                 onmouseover="return searchBox.OnSearchSelectShow()"
-                 onmouseout="return searchBox.OnSearchSelectHide()"/>
-        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" id="inputSearch" placeholder="Type a class, namespace etc." aria-label="Search"
-                 onfocus="searchBox.OnSearchFieldFocus(true)" 
-                 onblur="searchBox.OnSearchFieldFocus(false)" 
-                 onkeyup="searchBox.OnSearchFieldChange(event)">
-         <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+             onmouseover="return searchBox.OnSearchSelectShow()"
+             onmouseout="return searchBox.OnSearchSelectHide()"/>
+        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" placeholder="Type a class, namespace etc." aria-label="Search"
+             onfocus="searchBox.OnSearchFieldFocus(true)" 
+             onblur="searchBox.OnSearchFieldFocus(false)" 
+             onkeyup="searchBox.OnSearchFieldChange(event)"/>
+        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
       </div>
     </form>
+    </div>
   </div>
-</div>
+</td>
+ </tr>
+ </tbody>
+</table>
 </div>
 <!-- end header part -->
-<main class="g-main">
-<!-- Generated by Doxygen 1.8.15 -->
+<!-- Generated by Doxygen 1.17.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search');
-/* @license-end */
+let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
-<!-- top -->
-	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
-  <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classtests_1_1test__engines_1_1_example_aspect_engine.html','');});
-/* @license-end */
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div class="g-docs__sidenav">
+  <nav id="nav-tree-contents" class="c-sidenav">
+    <h4 class="c-sidenav__heading">Documentation</h4>
+    <div id="nav-sync" class="sync"></div>
+  </nav>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classtests_1_1test__engines_1_1_example_aspect_engine.html','','classtests_1_1test__engines_1_1_example_aspect_engine-members'); });
 </script>
 <div id="doc-content" class="g-docs__content">
 <!-- window showing the filter options -->
@@ -84,499 +88,181 @@ $(document).ready(function(){initNavTree('classtests_1_1test__engines_1_1_exampl
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="g-docs__header">
-<div class="c-breadcrumb">
-  <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacetests.html">tests</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacetests_1_1test__engines.html">test_engines</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="classtests_1_1test__engines_1_1_example_aspect_engine.html">ExampleAspectEngine</a></li>  </ul>
-</div>
 <h1 class="g-docs__page-title">tests.test_engines.ExampleAspectEngine Class Reference</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section">
-</section>
-<!-- start ClassInheritanceGraph -->
-<section class="g-docs__section">
 <h2 class="g-docs__section-heading">
 Inheritance diagram for tests.test_engines.ExampleAspectEngine:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtests_1_1test__engines_1_1_example_aspect_engine__inherit__graph.svg" width="266" height="306"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classtests_1_1test__engines_1_1_example_aspect_engine__inherit__graph.svg" width="266" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-</section>
-<!-- end ClassInheritanceGraph -->
-<section class="g-docs__section">
 <h2 class="g-docs__section-heading">
 Collaboration diagram for tests.test_engines.ExampleAspectEngine:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtests_1_1test__engines_1_1_example_aspect_engine__coll__graph.svg" width="266" height="306"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classtests_1_1test__engines_1_1_example_aspect_engine__coll__graph.svg" width="266" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-</section>
-<!-- start MemberDeclStart -->
-<!-- startMemberSections -->
-<!-- end MemberDeclStart -->
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-methods"></a>
-Public Member Functions</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a2fedf1dd4aab5d8f0fde8a2942f5fb05"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__engines_1_1_example_aspect_engine.html#a2fedf1dd4aab5d8f0fde8a2942f5fb05">__init__</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a2fedf1dd4aab5d8f0fde8a2942f5fb05">List of Pipelines the FlowElement has been added to.  <a href="#a2fedf1dd4aab5d8f0fde8a2942f5fb05">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a804caa125381d80a50cbd1de3e2c812a"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__engines_1_1_example_aspect_engine.html#a804caa125381d80a50cbd1de3e2c812a">get_evidence_key_filter</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a804caa125381d80a50cbd1de3e2c812a">Filter FlowData evidence using the FlowElement's EvidenceKeyFilter.  <a href="#a804caa125381d80a50cbd1de3e2c812a">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ab7b32a32f7952c2d76c75764852a5c77"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__engines_1_1_example_aspect_engine.html#ab7b32a32f7952c2d76c75764852a5c77">process_internal</a> (self, flowdata)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:ab7b32a32f7952c2d76c75764852a5c77">The method behind FlowElement.Process - it is called by the <a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a1f815b37f5d5a7a1362308e2ba507951" title="Engine&#39;s core process function.">process()</a> function.  <a href="#ab7b32a32f7952c2d76c75764852a5c77">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- writeInheritedSectionTitle -->
-<tr class="c-table__row pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell c-table__cell--parent" colspan="2" onclick="javascript:toggleInherit('pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine')"><span class="c-table__arrow c-table__arrow--is-open"></span><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html">fiftyone_pipeline_engines.engine.Engine</a></h3></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a4505185bfe817e1d166bd2410ee2b9c6 inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a4505185bfe817e1d166bd2410ee2b9c6">__init__</a> (self, <a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a204eafca1dfafd1fbd3c6df369576c3f">data_file</a>=None)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a4505185bfe817e1d166bd2410ee2b9c6 inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine">Constructor for an engine.  <a href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a4505185bfe817e1d166bd2410ee2b9c6">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:aba2700b262b76c87c025ce97eb20c28f inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aba2700b262b76c87c025ce97eb20c28f">set_cache</a> (self, <a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a0396e4bed172e18cc6846bdd48d7252f">cache</a>)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:aba2700b262b76c87c025ce97eb20c28f inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine">Add a cache to an engine @type cashe: Cache.  <a href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aba2700b262b76c87c025ce97eb20c28f">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ab37698bb70ee3d4077482b3429e4c428 inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#ab37698bb70ee3d4077482b3429e4c428">set_restricted_properties</a> (self, properties_list)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:ab37698bb70ee3d4077482b3429e4c428 inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine">Add a subset of properties.  <a href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#ab37698bb70ee3d4077482b3429e4c428">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a14493d6d43a06e549b968d754ced561a inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a14493d6d43a06e549b968d754ced561a">in_cache</a> (self, flowdata)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a14493d6d43a06e549b968d754ced561a inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine">A method to check if a flowdata's evidence is in the cache.  <a href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a14493d6d43a06e549b968d754ced561a">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a58d9141a853af3cffd1b1d016b3c5747 inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a58d9141a853af3cffd1b1d016b3c5747">refresh</a> (self, identifier)
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a1f815b37f5d5a7a1362308e2ba507951 inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a1f815b37f5d5a7a1362308e2ba507951">process</a> (self, flowdata)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a1f815b37f5d5a7a1362308e2ba507951 inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html" title="An engine is an extension of the FlowElement class that adds extra functionality.">Engine</a>'s core process function.  <a href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a1f815b37f5d5a7a1362308e2ba507951">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a2b8f2b533098fbf2763abd374d8ae67f inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a2b8f2b533098fbf2763abd374d8ae67f">on_registration</a> (self, pipeline)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a2b8f2b533098fbf2763abd374d8ae67f inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine">Called when an engine is registered with a pipeline and if there is a data file, a data file update service is attached to the parent pipeline.  <a href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a2b8f2b533098fbf2763abd374d8ae67f">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a29bf1d1edb19b46cbe3ae64044f98ea5 inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a29bf1d1edb19b46cbe3ae64044f98ea5">register_data_file</a> (self, <a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a204eafca1dfafd1fbd3c6df369576c3f">data_file</a>)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a29bf1d1edb19b46cbe3ae64044f98ea5 inherit pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine">Register a data_file of the DataFile class with the engine @type data_file: DataFile.  <a href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a29bf1d1edb19b46cbe3ae64044f98ea5">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- writeInheritedSectionTitle -->
-<tr class="c-table__row pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell c-table__cell--parent" colspan="2" onclick="javascript:toggleInherit('pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element')"><span class="c-table__arrow c-table__arrow--is-open"></span><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html">fiftyone_pipeline_core.flowelement.FlowElement</a></h3></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a95d4caaac068d9df26f0df400a1827c4 inherit pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a95d4caaac068d9df26f0df400a1827c4">filter_evidence</a> (self, flowdata)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a95d4caaac068d9df26f0df400a1827c4 inherit pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element">Filter FlowData evidence using the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>'s EvidenceKeyFilter.  <a href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a95d4caaac068d9df26f0df400a1827c4">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a96d783019b254daf38d906cfe340af43 inherit pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a96d783019b254daf38d906cfe340af43">filter_evidence_key</a> (self, key)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a96d783019b254daf38d906cfe340af43 inherit pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element">Filter FlowData.evidence using the flowElement's EvidenceKeyFilter with the property key of evidence of interest.  <a href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a96d783019b254daf38d906cfe340af43">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a7c4f4aa790398aa8c84f1c501df97fd7 inherit pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a7c4f4aa790398aa8c84f1c501df97fd7">get_properties</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a7c4f4aa790398aa8c84f1c501df97fd7 inherit pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element">Get the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#ab042591090cfa7fca8a9ce7d6ee540f1">FlowElement.properties</a> of a <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>.  <a href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a7c4f4aa790398aa8c84f1c501df97fd7">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-attribs"></a>
-Public Attributes</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:aba76caae61eaad11345d751a3742a61b"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__engines_1_1_example_aspect_engine.html#aba76caae61eaad11345d751a3742a61b">datakey</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a304c7b3dc59560bb05a55b878a636257"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__engines_1_1_example_aspect_engine.html#a304c7b3dc59560bb05a55b878a636257">properties</a>
-</div></td></tr>
-<!-- writeInheritedSectionTitle -->
-<tr class="c-table__row pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell c-table__cell--parent" colspan="2" onclick="javascript:toggleInherit('pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine')"><span class="c-table__arrow c-table__arrow--is-open"></span><h3 class="c-table__heading">Public Attributes inherited from <a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html">fiftyone_pipeline_engines.engine.Engine</a></h3></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a204eafca1dfafd1fbd3c6df369576c3f inherit pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a204eafca1dfafd1fbd3c6df369576c3f">data_file</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a0396e4bed172e18cc6846bdd48d7252f inherit pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a0396e4bed172e18cc6846bdd48d7252f">cache</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a15dd701f65716016830617f3b48a888d inherit pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a15dd701f65716016830617f3b48a888d">restricted_properties</a>
-</div></td></tr>
-<!-- writeInheritedSectionTitle -->
-<tr class="c-table__row pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell c-table__cell--parent" colspan="2" onclick="javascript:toggleInherit('pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element')"><span class="c-table__arrow c-table__arrow--is-open"></span><h3 class="c-table__heading">Public Attributes inherited from <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html">fiftyone_pipeline_core.flowelement.FlowElement</a></h3></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ac798c1c95abdcd33911335ffdc99c565 inherit pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#ac798c1c95abdcd33911335ffdc99c565">pipelines</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ab042591090cfa7fca8a9ce7d6ee540f1 inherit pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#ab042591090cfa7fca8a9ce7d6ee540f1">properties</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:aa1da153fe3a11a82380fd3dc11b1ad06 inherit pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#aa1da153fe3a11a82380fd3dc11b1ad06">datakey</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:af09d4865136549a0d61033c6263d4565 inherit pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#af09d4865136549a0d61033c6263d4565">exclude_from_messages</a>
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<!-- start MemberGroups -->
-<!-- end MemberGroups -->
-<section class="g-docs__section">
-<h2 class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a2fedf1dd4aab5d8f0fde8a2942f5fb05"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2fedf1dd4aab5d8f0fde8a2942f5fb05">&#9670;&nbsp;</a></span>__init__()</h2>
+<table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a3eff4cd49417809496eae644b4749e1d" id="r_a3eff4cd49417809496eae644b4749e1d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3eff4cd49417809496eae644b4749e1d">__init__</a> (self)</td></tr>
+<tr class="c-table__row memitem:a8517f14507686fc813ad440fc998f5ad" id="r_a8517f14507686fc813ad440fc998f5ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8517f14507686fc813ad440fc998f5ad">get_evidence_key_filter</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a8517f14507686fc813ad440fc998f5ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData evidence using the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>'s EvidenceKeyFilter.  <br /></td></tr>
+<tr class="c-table__row memitem:ac879563782a3a849a21fc8bd60a6e872" id="r_ac879563782a3a849a21fc8bd60a6e872"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac879563782a3a849a21fc8bd60a6e872">process_internal</a> (self, flowdata)</td></tr>
+<tr class="c-table__row memdesc:ac879563782a3a849a21fc8bd60a6e872"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The method behind FlowElement.Process - it is called by the <a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a1753c81a9469244593de5ace9145c773" title="Engine&#39;s core process function.">process()</a> function.  <br /></td></tr>
+<tr class="c-table__row inherit_header pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html">fiftyone_pipeline_engines.engine.Engine</a></h3></td></tr>
+<tr class="c-table__row memitem:a0d5c73d6a07685aa5c6c0ff87383a3d8 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a0d5c73d6a07685aa5c6c0ff87383a3d8"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a0d5c73d6a07685aa5c6c0ff87383a3d8">__init__</a> (self, data_file=None)</td></tr>
+<tr class="c-table__row memdesc:a0d5c73d6a07685aa5c6c0ff87383a3d8 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for an engine.  <br /></td></tr>
+<tr class="c-table__row memitem:a8fca0a3a0537773bc14fa5b7ebf7279e pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a8fca0a3a0537773bc14fa5b7ebf7279e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a8fca0a3a0537773bc14fa5b7ebf7279e">set_cache</a> (self, cache)</td></tr>
+<tr class="c-table__row memdesc:a8fca0a3a0537773bc14fa5b7ebf7279e pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add a cache to an engine @type cashe: Cache.  <br /></td></tr>
+<tr class="c-table__row memitem:a590c7edef7b575fae02471b6f54dd2b4 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a590c7edef7b575fae02471b6f54dd2b4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a590c7edef7b575fae02471b6f54dd2b4">set_restricted_properties</a> (self, properties_list)</td></tr>
+<tr class="c-table__row memdesc:a590c7edef7b575fae02471b6f54dd2b4 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add a subset of properties.  <br /></td></tr>
+<tr class="c-table__row memitem:a9d186f20091539afd22a08f28f387805 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a9d186f20091539afd22a08f28f387805"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a9d186f20091539afd22a08f28f387805">in_cache</a> (self, flowdata)</td></tr>
+<tr class="c-table__row memdesc:a9d186f20091539afd22a08f28f387805 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A method to check if a flowdata's evidence is in the cache.  <br /></td></tr>
+<tr class="c-table__row memitem:a33b6757ea1c9e08cd1f1ae487cb47cb1 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a33b6757ea1c9e08cd1f1ae487cb47cb1"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a33b6757ea1c9e08cd1f1ae487cb47cb1">refresh</a> (self, identifier)</td></tr>
+<tr class="c-table__row memitem:a1753c81a9469244593de5ace9145c773 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a1753c81a9469244593de5ace9145c773"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a1753c81a9469244593de5ace9145c773">process</a> (self, flowdata)</td></tr>
+<tr class="c-table__row memdesc:a1753c81a9469244593de5ace9145c773 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html" title="An engine is an extension of the FlowElement class that adds extra functionality.">Engine</a>'s core process function.  <br /></td></tr>
+<tr class="c-table__row memitem:aaf9b874db8b7ca0424d769cfaa3d7f92 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_aaf9b874db8b7ca0424d769cfaa3d7f92"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aaf9b874db8b7ca0424d769cfaa3d7f92">on_registration</a> (self, pipeline)</td></tr>
+<tr class="c-table__row memdesc:aaf9b874db8b7ca0424d769cfaa3d7f92 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Called when an engine is registered with a pipeline and if there is a data file, a data file update service is attached to the parent pipeline.  <br /></td></tr>
+<tr class="c-table__row memitem:aea94d49344f58867c6bac6446b5768d1 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_aea94d49344f58867c6bac6446b5768d1"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aea94d49344f58867c6bac6446b5768d1">register_data_file</a> (self, data_file)</td></tr>
+<tr class="c-table__row memdesc:aea94d49344f58867c6bac6446b5768d1 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Register a data_file of the DataFile class with the engine @type data_file: DataFile.  <br /></td></tr>
+<tr class="c-table__row inherit_header pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html">fiftyone_pipeline_core.flowelement.FlowElement</a></h3></td></tr>
+<tr class="c-table__row memitem:a44bb0edd021c4c590564ab9213200bdb pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_a44bb0edd021c4c590564ab9213200bdb"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a44bb0edd021c4c590564ab9213200bdb">__init__</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a44bb0edd021c4c590564ab9213200bdb pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">List of Pipelines the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a> has been added to.  <br /></td></tr>
+<tr class="c-table__row memitem:ad870f1ebf5441d563b950d22f739d66e pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_ad870f1ebf5441d563b950d22f739d66e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#ad870f1ebf5441d563b950d22f739d66e">filter_evidence</a> (self, flowdata)</td></tr>
+<tr class="c-table__row memdesc:ad870f1ebf5441d563b950d22f739d66e pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData evidence using the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>'s <a class="el" href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html" title="An EvidenceKeyFilter is attached to a FlowElement and is used to check if a specific evidence key is ...">EvidenceKeyFilter</a>.  <br /></td></tr>
+<tr class="c-table__row memitem:abd27d7810ba73ae7f460e41f60a838a2 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_abd27d7810ba73ae7f460e41f60a838a2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#abd27d7810ba73ae7f460e41f60a838a2">filter_evidence_key</a> (self, key)</td></tr>
+<tr class="c-table__row memdesc:abd27d7810ba73ae7f460e41f60a838a2 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData.evidence using the flowElement's <a class="el" href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html" title="An EvidenceKeyFilter is attached to a FlowElement and is used to check if a specific evidence key is ...">EvidenceKeyFilter</a> with the property key of evidence of interest.  <br /></td></tr>
+<tr class="c-table__row memitem:a7a8ee50d64418ed21fba58d137071ac7 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_a7a8ee50d64418ed21fba58d137071ac7"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a7a8ee50d64418ed21fba58d137071ac7">get_properties</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a7a8ee50d64418ed21fba58d137071ac7 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#aab48c05219b1384dd62c6698c15d12d1">FlowElement.properties</a> of a <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-inherited" class="g-docs__section-heading"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="c-table__row inherit_header pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Attributes inherited from <a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html">fiftyone_pipeline_engines.engine.Engine</a></h3></td></tr>
+<tr class="c-table__row memitem:a204eafca1dfafd1fbd3c6df369576c3f pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a204eafca1dfafd1fbd3c6df369576c3f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a204eafca1dfafd1fbd3c6df369576c3f">data_file</a> = data_file</td></tr>
+<tr class="c-table__row memitem:a0396e4bed172e18cc6846bdd48d7252f pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a0396e4bed172e18cc6846bdd48d7252f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a0396e4bed172e18cc6846bdd48d7252f">cache</a> = cache</td></tr>
+<tr class="c-table__row memitem:a15dd701f65716016830617f3b48a888d pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a15dd701f65716016830617f3b48a888d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a15dd701f65716016830617f3b48a888d">restricted_properties</a> = properties_list</td></tr>
+<tr class="c-table__row inherit_header pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Attributes inherited from <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html">fiftyone_pipeline_core.flowelement.FlowElement</a></h3></td></tr>
+<tr class="c-table__row memitem:a3a1e41ed484fb4d31b9e77adce3f73a9 pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_a3a1e41ed484fb4d31b9e77adce3f73a9"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a3a1e41ed484fb4d31b9e77adce3f73a9">pipelines</a> = []</td></tr>
+<tr class="c-table__row memitem:aab48c05219b1384dd62c6698c15d12d1 pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_aab48c05219b1384dd62c6698c15d12d1"><td class="c-table__cell">dict&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#aab48c05219b1384dd62c6698c15d12d1">properties</a> = {}</td></tr>
+<tr class="c-table__row memitem:acbf86d9bb9d182d5836cbd6306b2993b pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_acbf86d9bb9d182d5836cbd6306b2993b"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#acbf86d9bb9d182d5836cbd6306b2993b">datakey</a> = &quot;&quot;</td></tr>
+<tr class="c-table__row memitem:aea6bda5777172fea996ec1c59fdb3247 pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_aea6bda5777172fea996ec1c59fdb3247"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#aea6bda5777172fea996ec1c59fdb3247">exclude_from_messages</a> = False</td></tr>
+<tr class="c-table__row inherit_header pro_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Member Functions inherited from <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html">fiftyone_pipeline_core.flowelement.FlowElement</a></h3></td></tr>
+<tr class="c-table__row memitem:a283875d1b4c1ad028d2ff63a9055945d pro_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_a283875d1b4c1ad028d2ff63a9055945d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a283875d1b4c1ad028d2ff63a9055945d">_log</a> (self, level, message)</td></tr>
+</table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
+<a id="a3eff4cd49417809496eae644b4749e1d" name="a3eff4cd49417809496eae644b4749e1d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3eff4cd49417809496eae644b4749e1d">&#9670;&#160;</a></span>__init__()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_engines.ExampleAspectEngine.__init__ <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_engines.ExampleAspectEngine.__init__ </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-
-<p>List of Pipelines the FlowElement has been added to. </p>
-
-<p>Reimplemented from <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#ad6741e7335df6f874a30f437b11863d4">fiftyone_pipeline_core.flowelement.FlowElement</a>.</p>
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Function Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a804caa125381d80a50cbd1de3e2c812a"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a804caa125381d80a50cbd1de3e2c812a">&#9670;&nbsp;</a></span>get_evidence_key_filter()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a8517f14507686fc813ad440fc998f5ad" name="a8517f14507686fc813ad440fc998f5ad"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8517f14507686fc813ad440fc998f5ad">&#9670;&#160;</a></span>get_evidence_key_filter()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_engines.ExampleAspectEngine.get_evidence_key_filter <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_engines.ExampleAspectEngine.get_evidence_key_filter </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
-<p>Filter FlowData evidence using the FlowElement's EvidenceKeyFilter. </p>
-<p>@rtype: EvidenceKeyFilter </p><dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns an EvidenceKeyFilter </dd></dl>
+<p>Filter FlowData evidence using the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>'s EvidenceKeyFilter. </p>
+<p>@rtype: EvidenceKeyFilter </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns an EvidenceKeyFilter </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#aa874eb239b20a384ec9586022dfe9dae">fiftyone_pipeline_core.flowelement.FlowElement</a>.</p>
-<!-- endIndent -->
+<p>Reimplemented from <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a9f6d0d676d9e46c751a330b758bf005a">fiftyone_pipeline_core.flowelement.FlowElement</a>.</p>
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="ab7b32a32f7952c2d76c75764852a5c77"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab7b32a32f7952c2d76c75764852a5c77">&#9670;&nbsp;</a></span>process_internal()</h2>
+<a id="ac879563782a3a849a21fc8bd60a6e872" name="ac879563782a3a849a21fc8bd60a6e872"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac879563782a3a849a21fc8bd60a6e872">&#9670;&#160;</a></span>process_internal()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_engines.ExampleAspectEngine.process_internal <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_engines.ExampleAspectEngine.process_internal </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>flowdata</em><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>flowdata</em></span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
-<p>The method behind FlowElement.Process - it is called by the <a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a1f815b37f5d5a7a1362308e2ba507951" title="Engine&#39;s core process function.">process()</a> function. </p>
+<p>The method behind FlowElement.Process - it is called by the <a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a1753c81a9469244593de5ace9145c773" title="Engine&#39;s core process function.">process()</a> function. </p>
 <p>It is usually overridden by specific flowElements to do their core work.</p>
-<p>@type flowdata: FlowData </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">flowdata</span> - FlowData to be processed</dd>
+<p>@type flowdata: FlowData </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flowdata</td><td>FlowData to be processed</td></tr>
+  </table>
   </dd>
 </dl>
-<p>@rtype: bool </p><dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns True </dd></dl>
+<p>@rtype: bool </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns True </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#ac7d0e42bb7612be4084fa83657fe5995">fiftyone_pipeline_core.flowelement.FlowElement</a>.</p>
-<!-- endIndent -->
-
-</div>
-</div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Data Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="aba76caae61eaad11345d751a3742a61b"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aba76caae61eaad11345d751a3742a61b">&#9670;&nbsp;</a></span>datakey</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-<!-- startMemberDocName -->
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">tests.test_engines.ExampleAspectEngine.datakey<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
-            </tr>
-          </table>
-        </div>
-      </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+<p>Reimplemented from <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a540ed3394206666a4bb903b4043a8e7e">fiftyone_pipeline_core.flowelement.FlowElement</a>.</p>
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a304c7b3dc59560bb05a55b878a636257"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a304c7b3dc59560bb05a55b878a636257">&#9670;&nbsp;</a></span>properties</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-<!-- startMemberDocName -->
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">tests.test_engines.ExampleAspectEngine.properties<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
-            </tr>
-          </table>
-        </div>
-      </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
-
-</div>
-</div>
-</article>
-<!-- endMemberDocList -->
-</section>
 </div><!-- primary -->
-  <div class="g-docs__sidebar">
-    <div class="c-section-nav">
-      <h5 class="c-section-nav__heading">On This Page</h5>
-        <ul class="c-section-nav__list">
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-methods">Public Member Functions</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-attribs">Public Attributes</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="classtests_1_1test__engines_1_1_example_aspect_engine-members.html">List of all members</a></li>    </div>
-  </div>
-</div><!-- inner-->
+</div><!-- inner -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
     <p class="g-footer__copyright">Generated by
     <a href="http://www.doxygen.org/index.html">
-    <b>doxygen</b></a> 1.8.15
+    <b>doxygen</b></a> 1.17.0
   </p>
 </section>
 </div>

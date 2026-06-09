@@ -1,5 +1,9 @@
 <map id="FiftyOne.Pipeline.Engines.FiftyOne.FlowElements.ISetHeadersElement" name="FiftyOne.Pipeline.Engines.FiftyOne.FlowElements.ISetHeadersElement">
-<area shape="rect" id="node1" title="An IFlowElement that collates responses from all engines that want to set headers in the HTTP respons..." alt="" coords="5,215,260,271"/>
-<area shape="rect" id="node2" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title=" " alt="" coords="6,124,259,165"/>
-<area shape="rect" id="node3" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="32,5,233,47"/>
+<area shape="rect" id="Node000001" title="An IFlowElement that collates responses from all engines that want to set headers in the HTTP respons..." alt="" coords="5,269,260,324"/>
+<area shape="rect" id="Node000002" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element-2-g.html" title="Generic interface that extends IFlowElement with the ability to return a ITypedKey&lt;T&gt; that will allow..." alt="" coords="31,167,234,221"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,235,135,269,130,269,130,235"/>
+<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="32,79,233,119"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="135,132,135,167,130,167,130,132"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="83,5,182,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="135,44,135,79,130,79,130,44"/>
 </map>

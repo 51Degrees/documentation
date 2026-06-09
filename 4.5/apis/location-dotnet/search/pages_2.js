@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['the_20mit_20license_20mit_0',['The MIT License (MIT)',['../md__2home_2runner_2work_2documentation_2documentation_2apis_2location-dotnet_2_examples_2_cloud_ecb6d204072463b0b1885958eaf7ed90.html',1,'']]]
+];

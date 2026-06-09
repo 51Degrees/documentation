@@ -1,6 +1,9 @@
 <map id="fiftyone.common.wrappers.data.BinaryWriter.WritableSeekable.Memory" name="fiftyone.common.wrappers.data.BinaryWriter.WritableSeekable.Memory">
-<area shape="rect" id="node1" title=" " alt="" coords="5,169,284,211"/>
-<area shape="rect" id="node2" title=" " alt="" coords="28,80,261,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="47,5,133,32"/>
-<area shape="rect" id="node4" title=" " alt="" coords="158,5,243,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,167,284,207"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1common_1_1wrappers_1_1data_1_1_binary_writer_1_1_writable_seekable.html" title=" " alt="" coords="28,79,261,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,133,147,166,142,166,142,133"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="47,5,133,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="108,40,134,77,129,80,104,43"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="158,5,243,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="187,43,160,80,156,77,182,40"/>
 </map>

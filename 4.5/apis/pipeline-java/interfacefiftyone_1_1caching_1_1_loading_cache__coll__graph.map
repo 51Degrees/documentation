@@ -1,5 +1,7 @@
 <map id="fiftyone.caching.LoadingCache&lt; K, V &gt;" name="fiftyone.caching.LoadingCache&lt; K, V &gt;">
-<area shape="rect" id="node1" title="Extension of general cache contract to provide for getting a value with a particular value loaded." alt="" coords="5,169,185,211"/>
-<area shape="rect" id="node2" href="$interfacefiftyone_1_1caching_1_1_cache.html" title="Base cache interface which declares only the get method and the types of key and value stored in the ..." alt="" coords="27,80,164,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="52,5,139,32"/>
+<area shape="rect" id="Node000001" title="Extension of general cache contract to provide for getting a value with a particular value loaded." alt="" coords="5,167,185,207"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1caching_1_1_cache.html" title="Base cache interface which declares only the get method and the types of key and value stored in the ..." alt="" coords="11,79,180,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,133,98,166,93,166,93,133"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="52,5,139,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,44,98,79,93,79,93,44"/>
 </map>

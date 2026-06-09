@@ -1,4 +1,5 @@
 <map id="fiftyone_pipeline_cloudrequestengine.cloudrequestexception.CloudRequestException" name="fiftyone_pipeline_cloudrequestengine.cloudrequestexception.CloudRequestException">
-<area shape="rect" id="node1" title="Exception that can be thrown when the available data does not match that which is expected." alt="" coords="5,80,427,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="173,5,259,32"/>
+<area shape="rect" id="Node000001" title="Exception that can be thrown when the available data does not match that which is expected." alt="" coords="5,79,427,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="173,5,259,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,44,219,79,213,79,213,44"/>
 </map>

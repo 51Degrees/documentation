@@ -1,5 +1,7 @@
 <map id="StoredBinaryValues" name="StoredBinaryValues">
-<area shape="rect" id="node1" title=" " alt="" coords="5,155,155,181"/>
-<area shape="rect" id="node2" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="53,80,107,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="29,5,131,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,152,155,177"/>
+<area shape="rect" id="Node000002" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="53,79,107,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,118,83,152,77,152,77,118"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="29,5,131,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,44,83,79,77,79,77,44"/>
 </map>

@@ -1,6 +1,9 @@
 <map id="fiftyone.pipeline.web.services.ClientsidePropertyServiceCore.Default" name="fiftyone.pipeline.web.services.ClientsidePropertyServiceCore.Default">
-<area shape="rect" id="node1" title="Default implementation of the ClientsidePropertyServiceCore interface." alt="" coords="531,37,803,79"/>
-<area shape="rect" id="node2" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core.html" title="Class that provides functionality for the &#39;Client side overrides&#39; feature." alt="" coords="188,5,408,47"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,..." alt="" coords="171,71,425,112"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,78,121,105"/>
+<area shape="rect" id="Node000001" title="Default implementation of the ClientsidePropertyServiceCore interface." alt="" coords="535,37,807,77"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core.html" title="Class that provides functionality for the &#39;Client side overrides&#39; feature." alt="" coords="188,5,408,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="422,33,535,43,534,48,422,39"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,..." alt="" coords="171,69,425,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="439,75,510,69,534,67,535,73,511,75,440,81"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,77,121,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="135,87,170,87,170,92,135,92"/>
 </map>

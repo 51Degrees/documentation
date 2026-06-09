@@ -1,6 +1,10 @@
 <map id="fiftyone.pipeline.web.services.PipelineResultServiceCore" name="fiftyone.pipeline.web.services.PipelineResultServiceCore">
-<area shape="rect" id="node1" title="Service used to process web requests through the Pipeline." alt="" coords="5,39,225,80"/>
-<area shape="rect" id="node2" href="$interfacefiftyone_1_1pipeline_1_1web_1_1mvc_1_1services_1_1_pipeline_result_service.html" title="Spring framework service for the PipelineResultServiceCore." alt="" coords="273,5,525,47"/>
-<area shape="rect" id="node4" href="$classfiftyone_1_1pipeline_1_1web_1_1services_1_1_pipeline_result_service_core_1_1_default.html" title="Default implementation of the PipelineResultServiceCore service." alt="" coords="277,71,522,112"/>
-<area shape="rect" id="node3" href="$classfiftyone_1_1pipeline_1_1web_1_1mvc_1_1services_1_1_pipeline_result_service_1_1_default.html" title=" " alt="" coords="573,39,825,80"/>
+<area shape="rect" id="Node000001" title="Service used to process web requests through the Pipeline." alt="" coords="5,37,225,77"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1web_1_1mvc_1_1services_1_1_pipeline_result_service.html" title="Spring framework service for the PipelineResultServiceCore." alt="" coords="273,5,525,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,41,273,37,273,42,239,46"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1pipeline_1_1web_1_1services_1_1_pipeline_result_service_core_1_1_default.html" title="Default implementation of the PipelineResultServiceCore service." alt="" coords="277,69,522,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="239,69,277,73,276,78,239,74"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1web_1_1mvc_1_1services_1_1_pipeline_result_service_1_1_default.html" title=" " alt="" coords="573,37,825,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="539,38,573,41,573,47,539,43"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="535,72,573,68,573,73,536,77"/>
 </map>

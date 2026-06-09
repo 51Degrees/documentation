@@ -1,78 +1,82 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
   <link rel="canonical" href="/documentation/apis/pipeline-python/classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.15"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>51Degrees Pipeline Python: fiftyone_pipeline_engines.aspectdata_dictionary.AspectDataDictionary Class Reference</title>
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="dynsections.min.js"></script>
-<script type="text/javascript" src="resize.min.js"></script>
+<script type="text/javascript" src="codefolding.min.js"></script>
+<script type="text/javascript" src="clipboard.min.js"></script>
 <script type="text/javascript" src="navtreedata.min.js"></script>
 <script type="text/javascript" src="navtree.min.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(initResizable);
-/* @license-end */</script>
+<script type="text/javascript" src="cookie.min.js"></script>
 <link href="search/search.min.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.min.js"></script>
 <script type="text/javascript" src="search/search.min.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="l-docs-index p-doxygen">
-<div class="l-index__content">
-<!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
-<div id="titlearea" class="g-header g-header--docs">
-  <h2 class="c-brand">
-  <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png"/></a>
-  <span class="c-tagline">51Degrees Pipeline Python
-   &#160;<span id="projectnumber">4.5</span>
-  </span>
-  </h2>
-  <div id="projectalign" style="padding-left: 0.5em;">
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="/documentation/4.5/index.html"><img alt="Logo" src="logo-51Degrees-Docs.png"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">51Degrees Pipeline Python<span id="projectnumber">&#160;4.5</span>
+   </div>
    <div id="projectbrief">51Degrees Pipeline for Python</div>
-  </div>
-  <div id="main-nav"></div>
-     <div class="g-search">
+  </td>
+    <td>  <div class="g-search">
     <div class="c-search is-openable">
     <form class="c-search__form">
       <div id="MSearchBox" class="b-form-group b-form-group--with-icon">
         <label for="inputSearch" class="b-text--hidden">Search</label>
         <img id="MSearchSelect" src="icon-search.svg" class="b-icon" alt="Search" 
-                 onmouseover="return searchBox.OnSearchSelectShow()"
-                 onmouseout="return searchBox.OnSearchSelectHide()"/>
-        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" id="inputSearch" placeholder="Type a class, namespace etc." aria-label="Search"
-                 onfocus="searchBox.OnSearchFieldFocus(true)" 
-                 onblur="searchBox.OnSearchFieldFocus(false)" 
-                 onkeyup="searchBox.OnSearchFieldChange(event)">
-         <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+             onmouseover="return searchBox.OnSearchSelectShow()"
+             onmouseout="return searchBox.OnSearchSelectHide()"/>
+        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" placeholder="Type a class, namespace etc." aria-label="Search"
+             onfocus="searchBox.OnSearchFieldFocus(true)" 
+             onblur="searchBox.OnSearchFieldFocus(false)" 
+             onkeyup="searchBox.OnSearchFieldChange(event)"/>
+        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
       </div>
     </form>
+    </div>
   </div>
-</div>
+</td>
+ </tr>
+ </tbody>
+</table>
 </div>
 <!-- end header part -->
-<main class="g-main">
-<!-- Generated by Doxygen 1.8.15 -->
+<!-- Generated by Doxygen 1.17.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search');
-/* @license-end */
+let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
-<!-- top -->
-	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
-  <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary.html','');});
-/* @license-end */
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div class="g-docs__sidenav">
+  <nav id="nav-tree-contents" class="c-sidenav">
+    <h4 class="c-sidenav__heading">Documentation</h4>
+    <div id="nav-sync" class="sync"></div>
+  </nav>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary.html','','classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary-members'); });
 </script>
 <div id="doc-content" class="g-docs__content">
 <!-- window showing the filter options -->
@@ -84,431 +88,206 @@ $(document).ready(function(){initNavTree('classfiftyone__pipeline__engines_1_1as
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="g-docs__header">
-<div class="c-breadcrumb">
-  <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacefiftyone__pipeline__engines.html">fiftyone_pipeline_engines</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacefiftyone__pipeline__engines_1_1aspectdata__dictionary.html">aspectdata_dictionary</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary.html">AspectDataDictionary</a></li>  </ul>
-</div>
 <h1 class="g-docs__page-title">fiftyone_pipeline_engines.aspectdata_dictionary.AspectDataDictionary Class Reference</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section">
-<a name="details" id="details"></a><h2 class="g-docs__section-heading">Detailed Description</h2>
-<section class="g-docs__section"><p><a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary.html" title="AspectDataDictionary class extension that stores content as dictionary.">AspectDataDictionary</a> class extension that stores content as dictionary. </p>
-</section></section>
-<!-- start ClassInheritanceGraph -->
-<section class="g-docs__section">
-<h2 class="g-docs__section-heading">
+<a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary.html" title="AspectDataDictionary class extension that stores content as dictionary.">AspectDataDictionary</a> class extension that stores content as dictionary. </p>
+</div><h2 class="g-docs__section-heading">
 Inheritance diagram for fiftyone_pipeline_engines.aspectdata_dictionary.AspectDataDictionary:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary__inherit__graph.svg" width="348" height="395"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary__inherit__graph.svg" width="348" height="388"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-</section>
-<!-- end ClassInheritanceGraph -->
-<section class="g-docs__section">
 <h2 class="g-docs__section-heading">
 Collaboration diagram for fiftyone_pipeline_engines.aspectdata_dictionary.AspectDataDictionary:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary__coll__graph.svg" width="279" height="306"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary__coll__graph.svg" width="279" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-</section>
-<!-- start MemberDeclStart -->
-<!-- startMemberSections -->
-<!-- end MemberDeclStart -->
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-methods"></a>
-Public Member Functions</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a9a7f5f5808ad7cd05110d99dc0e859bb"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary.html#a9a7f5f5808ad7cd05110d99dc0e859bb">__init__</a> (self, <a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#adf1e04d9bb8e0d862eff84be06cb13b5">flow_element</a>, <a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary.html#a6884638a2f70909cc2c20725112d5f72">contents</a>)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a9a7f5f5808ad7cd05110d99dc0e859bb">Constructor for element data dictionary.  <a href="#a9a7f5f5808ad7cd05110d99dc0e859bb">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a85c8b077acab1952e8eb4f78c2bc8d22"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary.html#a85c8b077acab1952e8eb4f78c2bc8d22">as_dictionary</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a85c8b077acab1952e8eb4f78c2bc8d22">Get the values contained in the aspectData instance as a dictionary of keys and values.  <a href="#a85c8b077acab1952e8eb4f78c2bc8d22">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a4f60ca034cc82ed9202fc67ce9488e35"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary.html#a4f60ca034cc82ed9202fc67ce9488e35">get_internal</a> (self, key)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a4f60ca034cc82ed9202fc67ce9488e35">getInternal = Internal getter for contents  <a href="#a4f60ca034cc82ed9202fc67ce9488e35">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- writeInheritedSectionTitle -->
-<tr class="c-table__row pub_methods_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data"><td class="c-table__cell c-table__cell--parent" colspan="2" onclick="javascript:toggleInherit('pub_methods_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data')"><span class="c-table__arrow c-table__arrow--is-open"></span><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data.html">fiftyone_pipeline_engines.aspectdata.AspectData</a></h3></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a78247a0aa5c306eebdea6d8c4d891112 inherit pub_methods_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data.html#a78247a0aa5c306eebdea6d8c4d891112">__init__</a> (self, <a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#adf1e04d9bb8e0d862eff84be06cb13b5">flow_element</a>)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a78247a0aa5c306eebdea6d8c4d891112 inherit pub_methods_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data">Constructor for element data Adds default missing property service if not available.  <a href="classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data.html#a78247a0aa5c306eebdea6d8c4d891112">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ad6a4839c5899f9f3a62ff5a3613e6e4f inherit pub_methods_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data.html#ad6a4839c5899f9f3a62ff5a3613e6e4f">get</a> (self, key)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:ad6a4839c5899f9f3a62ff5a3613e6e4f inherit pub_methods_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data">get - Get a value (unless in a flowElement's restrictedProperties list) If property not found, call the attached missing property service @type key: string  <a href="classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data.html#ad6a4839c5899f9f3a62ff5a3613e6e4f">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- writeInheritedSectionTitle -->
-<tr class="c-table__row pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data"><td class="c-table__cell c-table__cell--parent" colspan="2" onclick="javascript:toggleInherit('pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data')"><span class="c-table__arrow c-table__arrow--is-open"></span><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html">fiftyone_pipeline_core.elementdata.ElementData</a></h3></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a1a871ba49a6a789f74fc580f4e7943d8 inherit pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#a1a871ba49a6a789f74fc580f4e7943d8">__getattr__</a> (self, key)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a1a871ba49a6a789f74fc580f4e7943d8 inherit pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data">Magic getter for a property from the data Allowing user to write for example Data.IsMobile rather than Data.get("IsMobile)  <a href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#a1a871ba49a6a789f74fc580f4e7943d8">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ae1a5a7556bac1bcaaffe7bb0b255fb84 inherit pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#ae1a5a7556bac1bcaaffe7bb0b255fb84">__getitem__</a> (self, flow_element_key)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:ae1a5a7556bac1bcaaffe7bb0b255fb84 inherit pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data">Magic method in Python, which when used in a class, allows its instances to use the [] (indexer) operators.  <a href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#ae1a5a7556bac1bcaaffe7bb0b255fb84">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a6299448da3c4af40b58a8fc89e3ba7c3 inherit pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#a6299448da3c4af40b58a8fc89e3ba7c3">get_properties</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a6299448da3c4af40b58a8fc89e3ba7c3 inherit pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data">Proxy to the data's flowElement properties.  <a href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#a6299448da3c4af40b58a8fc89e3ba7c3">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-attribs"></a>
-Public Attributes</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a6884638a2f70909cc2c20725112d5f72"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary.html#a6884638a2f70909cc2c20725112d5f72">contents</a>
-</div></td></tr>
-<!-- writeInheritedSectionTitle -->
-<tr class="c-table__row pub_attribs_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data"><td class="c-table__cell c-table__cell--parent" colspan="2" onclick="javascript:toggleInherit('pub_attribs_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data')"><span class="c-table__arrow c-table__arrow--is-open"></span><h3 class="c-table__heading">Public Attributes inherited from <a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data.html">fiftyone_pipeline_engines.aspectdata.AspectData</a></h3></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ae4800f485585c7a277cc0f0949ca9baa inherit pub_attribs_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data.html#ae4800f485585c7a277cc0f0949ca9baa">missing_property_service</a>
-</div></td></tr>
-<!-- writeInheritedSectionTitle -->
-<tr class="c-table__row pub_attribs_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data"><td class="c-table__cell c-table__cell--parent" colspan="2" onclick="javascript:toggleInherit('pub_attribs_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data')"><span class="c-table__arrow c-table__arrow--is-open"></span><h3 class="c-table__heading">Public Attributes inherited from <a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html">fiftyone_pipeline_core.elementdata.ElementData</a></h3></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:adf1e04d9bb8e0d862eff84be06cb13b5 inherit pub_attribs_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#adf1e04d9bb8e0d862eff84be06cb13b5">flow_element</a>
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<!-- start MemberGroups -->
-<!-- end MemberGroups -->
-<section class="g-docs__section">
-<h2 class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a9a7f5f5808ad7cd05110d99dc0e859bb"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9a7f5f5808ad7cd05110d99dc0e859bb">&#9670;&nbsp;</a></span>__init__()</h2>
+<table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a5418dde640251a89ecedd79daa0fd2b5" id="r_a5418dde640251a89ecedd79daa0fd2b5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5418dde640251a89ecedd79daa0fd2b5">__init__</a> (self, flow_element, contents)</td></tr>
+<tr class="c-table__row memdesc:a5418dde640251a89ecedd79daa0fd2b5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for element data dictionary.  <br /></td></tr>
+<tr class="c-table__row memitem:a6ebc966c80ccc2fc919877ac03752eaf" id="r_a6ebc966c80ccc2fc919877ac03752eaf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6ebc966c80ccc2fc919877ac03752eaf">as_dictionary</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a6ebc966c80ccc2fc919877ac03752eaf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the values contained in the aspectData instance as a dictionary of keys and values.  <br /></td></tr>
+<tr class="c-table__row memitem:ae9347388e7109fd96b7c5e618ae088f3" id="r_ae9347388e7109fd96b7c5e618ae088f3"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae9347388e7109fd96b7c5e618ae088f3">get_internal</a> (self, key)</td></tr>
+<tr class="c-table__row memdesc:ae9347388e7109fd96b7c5e618ae088f3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">getInternal = Internal getter for contents  <br /></td></tr>
+<tr class="c-table__row inherit_header pub_methods_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data.html">fiftyone_pipeline_engines.aspectdata.AspectData</a></h3></td></tr>
+<tr class="c-table__row memitem:a7bce2f1aef6e5d892d9fcc28d029977d pub_methods_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data" id="r_a7bce2f1aef6e5d892d9fcc28d029977d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data.html#a7bce2f1aef6e5d892d9fcc28d029977d">__init__</a> (self, flow_element)</td></tr>
+<tr class="c-table__row memdesc:a7bce2f1aef6e5d892d9fcc28d029977d pub_methods_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for element data Adds default missing property service if not available.  <br /></td></tr>
+<tr class="c-table__row memitem:abb0f5112e01008ad1ff32507863579e7 pub_methods_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data" id="r_abb0f5112e01008ad1ff32507863579e7"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data.html#abb0f5112e01008ad1ff32507863579e7">get</a> (self, key)</td></tr>
+<tr class="c-table__row memdesc:abb0f5112e01008ad1ff32507863579e7 pub_methods_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data"><td class="c-table__cell">&#160;</td><td class="c-table__cell">get - Get a value (unless in a flowElement's restrictedProperties list) If property not found, call the attached missing property service @type key: string  <br /></td></tr>
+<tr class="c-table__row inherit_header pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html">fiftyone_pipeline_core.elementdata.ElementData</a></h3></td></tr>
+<tr class="c-table__row memitem:ae62a703cee15844f9d5faba253f50c71 pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data" id="r_ae62a703cee15844f9d5faba253f50c71"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#ae62a703cee15844f9d5faba253f50c71">__init__</a> (self, flow_element)</td></tr>
+<tr class="c-table__row memdesc:ae62a703cee15844f9d5faba253f50c71 pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for <a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html" title="Core ElementData class Stores information created by a FlowElement based on FlowData.">ElementData</a>.  <br /></td></tr>
+<tr class="c-table__row memitem:aea73f865064eed45686dbbf738d30640 pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data" id="r_aea73f865064eed45686dbbf738d30640"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#aea73f865064eed45686dbbf738d30640">__getattr__</a> (self, key)</td></tr>
+<tr class="c-table__row memdesc:aea73f865064eed45686dbbf738d30640 pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Magic getter for a property from the data Allowing user to write for example Data.IsMobile rather than Data.get("IsMobile).  <br /></td></tr>
+<tr class="c-table__row memitem:a6ac1af1b909b359a09c6fedb5b661c06 pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data" id="r_a6ac1af1b909b359a09c6fedb5b661c06"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#a6ac1af1b909b359a09c6fedb5b661c06">__getitem__</a> (self, flow_element_key)</td></tr>
+<tr class="c-table__row memdesc:a6ac1af1b909b359a09c6fedb5b661c06 pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Magic method in Python, which when used in a class, allows its instances to use the [] (indexer) operators.  <br /></td></tr>
+<tr class="c-table__row memitem:a6aefa2e00f521dd6f13fa6685b7c4b65 pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data" id="r_a6aefa2e00f521dd6f13fa6685b7c4b65"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#a6aefa2e00f521dd6f13fa6685b7c4b65">get_properties</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a6aefa2e00f521dd6f13fa6685b7c4b65 pub_methods_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Proxy to the data's flowElement properties.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a0ab1e2d8e34108eedc8a28a9a08b76f0" id="r_a0ab1e2d8e34108eedc8a28a9a08b76f0"><td class="c-table__cell">dict&#160;</td><td class="c-table__cell"><a class="el" href="#a0ab1e2d8e34108eedc8a28a9a08b76f0">contents</a> = {}</td></tr>
+<tr class="c-table__row inherit_header pub_attribs_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Attributes inherited from <a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data.html">fiftyone_pipeline_engines.aspectdata.AspectData</a></h3></td></tr>
+<tr class="c-table__row memitem:ae4800f485585c7a277cc0f0949ca9baa pub_attribs_classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data" id="r_ae4800f485585c7a277cc0f0949ca9baa"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1aspectdata_1_1_aspect_data.html#ae4800f485585c7a277cc0f0949ca9baa">missing_property_service</a> = <a class="el" href="classfiftyone__pipeline__engines_1_1missingproperty__service_1_1_missing_property_service.html">MissingPropertyService</a>()</td></tr>
+<tr class="c-table__row inherit_header pub_attribs_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Attributes inherited from <a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html">fiftyone_pipeline_core.elementdata.ElementData</a></h3></td></tr>
+<tr class="c-table__row memitem:adf1e04d9bb8e0d862eff84be06cb13b5 pub_attribs_classfiftyone__pipeline__core_1_1elementdata_1_1_element_data" id="r_adf1e04d9bb8e0d862eff84be06cb13b5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#adf1e04d9bb8e0d862eff84be06cb13b5">flow_element</a> = flow_element</td></tr>
+</table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
+<a id="a5418dde640251a89ecedd79daa0fd2b5" name="a5418dde640251a89ecedd79daa0fd2b5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5418dde640251a89ecedd79daa0fd2b5">&#9670;&#160;</a></span>__init__()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_engines.aspectdata_dictionary.AspectDataDictionary.__init__ <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.aspectdata_dictionary.AspectDataDictionary.__init__ </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>flow_element</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>flow_element</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>contents</em><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>contents</em></span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Constructor for element data dictionary. </p>
-<p>@type flow_element: FlowElement </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">flow_element</span> - @type contents: dict </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">contents</span> - </dd>
+<p>@type flow_element: FlowElement </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flow_element</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>@type contents: dict </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">contents</td><td></td></tr>
+  </table>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classfiftyone__pipeline__cloudrequestengine_1_1clouddata_1_1_cloud_data.html#a0bfda2b2129e54d7d8d9ac4ee83465b7">fiftyone_pipeline_cloudrequestengine.clouddata.CloudData</a>.</p>
-<!-- endIndent -->
-
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Function Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a85c8b077acab1952e8eb4f78c2bc8d22"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a85c8b077acab1952e8eb4f78c2bc8d22">&#9670;&nbsp;</a></span>as_dictionary()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a6ebc966c80ccc2fc919877ac03752eaf" name="a6ebc966c80ccc2fc919877ac03752eaf"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6ebc966c80ccc2fc919877ac03752eaf">&#9670;&#160;</a></span>as_dictionary()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_engines.aspectdata_dictionary.AspectDataDictionary.as_dictionary <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.aspectdata_dictionary.AspectDataDictionary.as_dictionary </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Get the values contained in the aspectData instance as a dictionary of keys and values. </p>
-<p>@rtype: dict </p><dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns the values contained in the aspectData instance as a dictionary of keys and values. </dd></dl>
-<!-- endIndent -->
+<p>@rtype: dict </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns the values contained in the aspectData instance as a dictionary of keys and values. </dd></dl>
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a4f60ca034cc82ed9202fc67ce9488e35"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4f60ca034cc82ed9202fc67ce9488e35">&#9670;&nbsp;</a></span>get_internal()</h2>
+<a id="ae9347388e7109fd96b7c5e618ae088f3" name="ae9347388e7109fd96b7c5e618ae088f3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae9347388e7109fd96b7c5e618ae088f3">&#9670;&#160;</a></span>get_internal()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_engines.aspectdata_dictionary.AspectDataDictionary.get_internal <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.aspectdata_dictionary.AspectDataDictionary.get_internal </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>key</em><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>key</em></span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>getInternal = Internal getter for contents </p>
-<p>@type key: string </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">key</span> - the key to get</dd>
+<p>@type key: string </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>the key to get</td></tr>
+  </table>
   </dd>
 </dl>
-<p>@rtype: dict </p><dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Internal getter for contents </dd></dl>
+<p>@rtype: dict </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Internal getter for contents </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#a0cd2f7b716c2ebf2ccc0cb6854f5d131">fiftyone_pipeline_core.elementdata.ElementData</a>.</p>
-<!-- endIndent -->
+<p>Reimplemented from <a class="el" href="classfiftyone__pipeline__core_1_1elementdata_1_1_element_data.html#a11bd5d0eb80a24d91a76eda4f7398403">fiftyone_pipeline_core.elementdata.ElementData</a>.</p>
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Data Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a6884638a2f70909cc2c20725112d5f72"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6884638a2f70909cc2c20725112d5f72">&#9670;&nbsp;</a></span>contents</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a0ab1e2d8e34108eedc8a28a9a08b76f0" name="a0ab1e2d8e34108eedc8a28a9a08b76f0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0ab1e2d8e34108eedc8a28a9a08b76f0">&#9670;&#160;</a></span>contents</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.aspectdata_dictionary.AspectDataDictionary.contents<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">dict fiftyone_pipeline_engines.aspectdata_dictionary.AspectDataDictionary.contents = {}</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-</section>
 </div><!-- primary -->
-  <div class="g-docs__sidebar">
-    <div class="c-section-nav">
-      <h5 class="c-section-nav__heading">On This Page</h5>
-        <ul class="c-section-nav__list">
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-methods">Public Member Functions</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-attribs">Public Attributes</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="classfiftyone__pipeline__engines_1_1aspectdata__dictionary_1_1_aspect_data_dictionary-members.html">List of all members</a></li>    </div>
-  </div>
-</div><!-- inner-->
+</div><!-- inner -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
     <p class="g-footer__copyright">Generated by
     <a href="http://www.doxygen.org/index.html">
-    <b>doxygen</b></a> 1.8.15
+    <b>doxygen</b></a> 1.17.0
   </p>
 </section>
 </div>

@@ -1,4 +1,5 @@
 <map id="FiftyOne.GeoLocation.Cloud.FlowElements.GeoLocationCloudEngineBuilder" name="FiftyOne.GeoLocation.Cloud.FlowElements.GeoLocationCloudEngineBuilder">
-<area shape="rect" id="node1" title="Fluent builder used to build a reverse geocoding engine that uses the 51Degrees cloud service." alt="" coords="5,109,285,165"/>
-<area shape="rect" id="node2" title=" " alt="" coords="21,5,270,61"/>
+<area shape="rect" id="Node000001" title="Fluent builder used to build a reverse geocoding engine that uses the 51Degrees cloud service." alt="" coords="5,108,285,163"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="21,5,270,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,74,148,108,143,108,143,74"/>
 </map>

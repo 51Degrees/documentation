@@ -1,0 +1,8 @@
+var class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_for_profile_hash =
+[
+    [ "ValueMetaDataCollectionForProfileHash", "class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_for_profile_hash.html#a6e50d6d8ad06fab0c7c7fcdf6627fca6", null ],
+    [ "~ValueMetaDataCollectionForProfileHash", "class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_for_profile_hash.html#aebe36fb5e6c3e9e948df73f38ad3fd89", null ],
+    [ "getByIndex", "class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_for_profile_hash.html#aa875a40c585e5de92116fdc203bc2e22", null ],
+    [ "getByKey", "class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_for_profile_hash.html#a00a955eebc8d686bfa57a9016347b083", null ],
+    [ "getSize", "class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_for_profile_hash.html#ad2adddbe01eba95a1c5a7ef1bb5520cb", null ]
+];

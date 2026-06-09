@@ -1,7 +1,11 @@
 <map id="FiftyOne.Pipeline.Core.FailHandling.Recovery.IRecoveryStrategy" name="FiftyOne.Pipeline.Core.FailHandling.Recovery.IRecoveryStrategy">
-<area shape="rect" id="node1" title="Controls when to suspend requests due to recent query failures." alt="" coords="5,130,272,171"/>
-<area shape="rect" id="node2" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_exponential_backoff_recovery_strategy.html" title="Implements exponential backoff where delay doubles after each consecutive failure." alt="" coords="325,5,597,61"/>
-<area shape="rect" id="node3" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_instant_recovery_strategy.html" title="Always allows to make new server call regardless of previous failures." alt="" coords="334,85,587,141"/>
-<area shape="rect" id="node4" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_no_recovery_strategy.html" title="Drops all server calls after first failure." alt="" coords="320,166,601,207"/>
-<area shape="rect" id="node5" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_simple_recovery_strategy.html" title="Disallows calling the server for RecoverySeconds." alt="" coords="334,232,587,288"/>
+<area shape="rect" id="Node000001" title="Controls when to suspend requests due to recent query failures." alt="" coords="5,127,272,167"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_exponential_backoff_recovery_strategy.html" title="Implements exponential backoff where delay doubles after each consecutive failure." alt="" coords="325,5,597,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,119,319,69,354,57,356,63,321,74,196,124"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_instant_recovery_strategy.html" title="Always allows to make new server call regardless of previous failures." alt="" coords="334,84,587,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="285,128,334,123,334,128,286,134"/>
+<area shape="rect" id="Node000004" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_no_recovery_strategy.html" title="Drops all server calls after first failure." alt="" coords="320,163,601,203"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="286,161,320,165,319,170,286,166"/>
+<area shape="rect" id="Node000005" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_simple_recovery_strategy.html" title="Disallows calling the server for RecoverySeconds." alt="" coords="334,228,587,283"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="203,170,321,213,361,225,359,230,319,218,201,175"/>
 </map>

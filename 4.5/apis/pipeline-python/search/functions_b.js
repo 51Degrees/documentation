@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['log',['log',['../classfiftyone__pipeline__core_1_1logger_1_1_logger.html#a355a6b26ab01d504e9737e4c25752837',1,'fiftyone_pipeline_core.logger.Logger.log()'],['../classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#aac89f65689e78bb8784136f9cae84367',1,'fiftyone_pipeline_core.pipeline.Pipeline.log()']]],
-  ['log_5finternal',['log_internal',['../classfiftyone__pipeline__core_1_1logger_1_1_logger.html#aa22d9120efa1e9ca5d2932b75d993b42',1,'fiftyone_pipeline_core.logger.Logger.log_internal()'],['../classtests_1_1classes_1_1memorylogger_1_1_memory_logger.html#ac802dbe84d3838c4b662cbdf113c7957',1,'tests.classes.memorylogger.MemoryLogger.log_internal()']]]
+  ['log_0',['log',['../classfiftyone__pipeline__core_1_1logger_1_1_logger.html#a11ff69ef1f07387e196efbbbe64a9797',1,'fiftyone_pipeline_core.logger.Logger.log()'],['../classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#a2d4c15751f34c2d141e8944679cac1a2',1,'fiftyone_pipeline_core.pipeline.Pipeline.log()']]],
+  ['log_5finternal_1',['log_internal',['../classfiftyone__pipeline__core_1_1logger_1_1_logger.html#ade14cf488eefc7fe5f98fc94a830a813',1,'fiftyone_pipeline_core.logger.Logger.log_internal()'],['../classtests_1_1classes_1_1memorylogger_1_1_memory_logger.html#aeedd2656775321d51984a056e1514e54',1,'tests.classes.memorylogger.MemoryLogger.log_internal()']]]
 ];

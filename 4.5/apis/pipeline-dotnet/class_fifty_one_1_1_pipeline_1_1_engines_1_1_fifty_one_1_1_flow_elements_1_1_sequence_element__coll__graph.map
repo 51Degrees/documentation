@@ -1,7 +1,11 @@
 <map id="FiftyOne.Pipeline.Engines.FiftyOne.FlowElements.SequenceElement" name="FiftyOne.Pipeline.Engines.FiftyOne.FlowElements.SequenceElement">
-<area shape="rect" id="node1" title="Sequence element establishes session and sequence evidence in the pipeline." alt="" coords="13,409,251,465"/>
-<area shape="rect" id="node2" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title=" " alt="" coords="5,319,259,360"/>
-<area shape="rect" id="node3" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base.html" title="Abstract base class for Flow Elements." alt="" coords="30,185,234,241"/>
-<area shape="rect" id="node4" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title=" " alt="" coords="33,109,231,136"/>
-<area shape="rect" id="node5" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="31,5,233,47"/>
+<area shape="rect" id="Node000001" title="Sequence element establishes session and sequence evidence in the pipeline." alt="" coords="5,372,244,427"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html" title="Abstract base class for Flow Elements." alt="" coords="23,269,227,324"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,338,127,372,122,372,122,338"/>
+<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element-2-g.html" title="Generic interface that extends IFlowElement with the ability to return a ITypedKey&lt;T&gt; that will allow..." alt="" coords="23,167,226,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="127,235,127,269,122,269,122,235"/>
+<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="24,79,225,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="127,132,127,167,122,167,122,132"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="75,5,174,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="127,44,127,79,122,79,122,44"/>
 </map>

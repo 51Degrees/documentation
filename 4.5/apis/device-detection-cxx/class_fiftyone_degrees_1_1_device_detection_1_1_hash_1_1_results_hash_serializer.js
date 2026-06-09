@@ -1,0 +1,5 @@
+var class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash_serializer =
+[
+    [ "ResultsHashSerializer", "class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash_serializer.html#a2c6d07264bdf9d8d43293c708816900f", null ],
+    [ "allValuesJson", "class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash_serializer.html#ab7e425f789a0c6b60971a110099586ba", null ]
+];

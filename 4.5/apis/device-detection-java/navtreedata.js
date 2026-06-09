@@ -1,33 +1,35 @@
 /*
-@ @licstart  The following is the entire license notice for the
-JavaScript code in this file.
+ @licstart  The following is the entire license notice for the JavaScript code in this file.
 
-Copyright (C) 1997-2017 by Dimitri van Heesch
+ The MIT License (MIT)
 
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
+ Copyright (C) 1997-2020 by Dimitri van Heesch
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
 
-You should have received a copy of the GNU General Public License along
-with this program; if not, write to the Free Software Foundation, Inc.,
-51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ The above copyright notice and this permission notice shall be included in all copies or
+ substantial portions of the Software.
 
-@licend  The above is the entire license notice
-for the JavaScript code in this file
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var NAVTREE =
 [
+  [ "51Degrees Device Detection Java", "index.html", [
     [ "General Docs", "/documentation/4.5/index.html", null ],
-    [ "51Degrees Device Detection Engines", "md__home_runner_work_documentation_documentation_apis_device-detection-java__r_e_a_d_m_e.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Examples", "examples.html", "examples" ]
+  ] ]
 ];
 
 var NAVTREEHIDEROOT = true;
@@ -36,15 +38,12 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-".html",
-"classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_key_helper.html#a32f66691611fcac8cae7eaec9dbc6bb4",
-"classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_config_base_swig.html#af3eb9520a27e59627fa300873791e2db",
-"classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_device_de6dc7d42b5c46861fa42942ae917a4c0d.html#ac47c600f8b091f5ca62fbea57bf54d62",
-"classfiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_required_properties_config_swig.html#aed047a5ddadc62c7128849c4f1850c91",
-"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a653eb755b51acb439da836f50e053fac",
-"interfacefiftyone_1_1devicedetection_1_1hash_1_1engine_1_1onpremise_1_1data_1_1_device_data_hash.html#ae4cf3de20407dfcc62f1d7c7ab8cf108",
-"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ae5575e33b3a1fe63acd8021dc9e4795a"
+"/documentation/4.5/index.html",
+"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a0d8644ea167c2489787a3ce5bc1d2f7c",
+"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#af711803f2f676529c4160e22717960f7",
+"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#aa8b842d5fab38e7da62253ecbc8cfff6"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+const SYNCONMSG = 'click to disable panel synchronization';
+const SYNCOFFMSG = 'click to enable panel synchronization';
+const LISTOFALLMEMBERS = 'List of all members';

@@ -1,8 +1,13 @@
 <map id="fiftyone.devicedetection.examples.console.comparison.Detection.Solution" name="fiftyone.devicedetection.examples.console.comparison.Detection.Solution">
-<area shape="rect" id="node1" title="The thing that actually does the detection." alt="" coords="169,104,555,145"/>
-<area shape="rect" id="node3" href="$classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_impl_brows_cap_1_1_brows_cap_solution.html" title=" " alt="" coords="603,5,988,47"/>
-<area shape="rect" id="node4" href="$classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_impl_device_atlas_1_1_device_atlas_solution.html" title=" " alt="" coords="603,71,988,112"/>
-<area shape="rect" id="node5" href="$classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_impl_fifty_oaec7e5673b492c0ca2de7c83bd849836.html" title=" " alt="" coords="603,136,988,177"/>
-<area shape="rect" id="node6" href="$classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_impl_scientia_mobile_1_1_wurfl_solution.html" title=" " alt="" coords="603,201,988,243"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,111,121,138"/>
+<area shape="rect" id="Node000001" title="The thing that actually does the detection." alt="" coords="169,101,555,141"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_impl_brows_cap_1_1_brows_cap_solution.html" title=" " alt="" coords="603,5,988,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="444,95,602,55,663,43,665,48,603,60,445,100"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_impl_device_atlas_1_1_device_atlas_solution.html" title=" " alt="" coords="603,69,988,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="568,103,602,101,603,106,568,109"/>
+<area shape="rect" id="Node000005" href="$classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_impl_fifty_oaec7e5673b492c0ca2de7c83bd849836.html" title=" " alt="" coords="603,133,988,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="568,134,603,136,602,142,568,139"/>
+<area shape="rect" id="Node000006" href="$classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_impl_scientia_mobile_1_1_wurfl_solution.html" title=" " alt="" coords="603,197,988,237"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="445,143,603,183,665,195,663,200,602,188,444,148"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,109,121,134"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,119,169,119,169,124,135,124"/>
 </map>

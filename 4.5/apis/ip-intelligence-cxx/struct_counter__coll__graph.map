@@ -1,6 +1,10 @@
 <map id="Counter" name="Counter">
-<area shape="rect" id="node1" title=" " alt="" coords="5,199,79,225"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="33,109,264,136"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="103,199,346,225"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="57,5,240,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,212,79,237"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="29,116,260,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,150,79,167,61,190,49,213,44,211,56,187,75,163,101,145"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="103,212,346,237"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="139,155,138,172,143,187,156,200,173,210,171,214,153,204,138,189,133,172,134,155"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="53,5,236,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="147,59,147,116,142,116,142,59"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="213,200,193,167,164,143,167,139,197,164,218,198"/>
 </map>

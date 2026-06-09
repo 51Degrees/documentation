@@ -1,6 +1,12 @@
 <map id="IndirectProfileSearch" name="IndirectProfileSearch">
-<area shape="rect" id="node1" title=" " alt="" coords="5,276,161,303"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="85,95,305,121"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="184,185,375,212"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="117,5,273,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,215,161,240"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="11,14,201,39"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,53,86,84,77,119,75,146,76,172,83,214,78,215,71,173,69,145,71,118,81,82,93,51"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="216,17,228,26,220,35,202,39,201,34,218,30,223,27,213,22"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="144,119,364,144"/>
+<area shape="poly" id="edge5_Node000003_Node000002" title=" " alt="" coords="107,53,110,74,120,93,136,106,156,116,154,121,133,111,116,96,105,76,102,54"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="223,153,106,217,103,212,220,148"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="234,110,194,74,164,56,134,42,136,37,166,51,197,70,237,106"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="349,14,505,39"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="398,49,275,121,272,116,395,44"/>
 </map>

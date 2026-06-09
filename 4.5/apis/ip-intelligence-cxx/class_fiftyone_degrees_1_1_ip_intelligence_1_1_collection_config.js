@@ -1,0 +1,12 @@
+var class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection_config =
+[
+    [ "CollectionConfig", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection_config.html#a4aa7386e1dba13d3ef4d51125a54a80c", null ],
+    [ "CollectionConfig", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection_config.html#a923aa524377f9ac3760a3277e54f57a0", null ],
+    [ "getCapacity", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection_config.html#ab48d5a07e479611012d78cecdb4ddb11", null ],
+    [ "getConcurrency", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection_config.html#af119730a81cd7464e1f846c9ab3bb2ad", null ],
+    [ "getConfig", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection_config.html#a14ad14d676608b468378b801da4f6e3d", null ],
+    [ "getLoaded", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection_config.html#a5b942c6b6b3f9eb66e54d19e09aa3ab2", null ],
+    [ "setCapacity", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection_config.html#a4a6f959912f6ee5061bef5478e402cd6", null ],
+    [ "setConcurrency", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection_config.html#aed82b94d51bfca983b92464dc04fe34f", null ],
+    [ "setLoaded", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection_config.html#afd57cf928498fe5809f7e6a0c311a220", null ]
+];

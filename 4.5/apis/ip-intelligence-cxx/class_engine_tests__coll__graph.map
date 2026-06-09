@@ -1,6 +1,9 @@
 <map id="EngineTests" name="EngineTests">
-<area shape="rect" id="node1" title=" " alt="" coords="81,185,180,212"/>
-<area shape="rect" id="node2" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="29,89,83,115"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,107,32"/>
-<area shape="rect" id="node4" href="$class_fiftyone_degrees_1_1_common_1_1_required_properties_config.html" title="C++ class wrapper for the fiftyoneDegreesPropertiesRequired structure." alt="" coords="108,81,303,123"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="81,191,180,216"/>
+<area shape="rect" id="Node000002" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="29,87,83,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,122,124,189,120,192,71,125"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,107,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="59,44,59,87,53,87,53,44"/>
+<area shape="rect" id="Node000004" href="$class_fiftyone_degrees_1_1_common_1_1_required_properties_config.html" title="C++ class wrapper for the fiftyoneDegreesPropertiesRequired structure." alt="" coords="108,80,303,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="185,133,141,192,137,189,181,130"/>
 </map>

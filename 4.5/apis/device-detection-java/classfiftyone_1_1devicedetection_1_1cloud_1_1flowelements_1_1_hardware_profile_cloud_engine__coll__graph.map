@@ -1,4 +1,5 @@
 <map id="fiftyone.devicedetection.cloud.flowelements.HardwareProfileCloudEngine" name="fiftyone.devicedetection.cloud.flowelements.HardwareProfileCloudEngine">
-<area shape="rect" id="node1" title="Engine that takes the JSON response from the CloudRequestEngine and uses it populate a MultiDeviceDat..." alt="" coords="353,27,668,69"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,305,91"/>
+<area shape="rect" id="Node000001" title="Engine that takes the JSON response from the CloudRequestEngine and uses it populate a MultiDeviceDat..." alt="" coords="5,108,320,148"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="53,5,272,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,74,165,108,160,108,160,74"/>
 </map>

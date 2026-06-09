@@ -1,5 +1,7 @@
 <map id="FiftyOne.Pipeline.Core.Data.EvidenceKeyFilterWhitelist" name="FiftyOne.Pipeline.Core.Data.EvidenceKeyFilterWhitelist">
-<area shape="rect" id="node1" title="This evidence filter will only include keys that are in a list that is specified at construction time..." alt="" coords="8,80,213,121"/>
-<area shape="rect" id="node3" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_evidence_key_filter_aggregator.html" title="This implementation of IEvidenceKeyFilter aggregates multiple other filters using a logical OR approa..." alt="" coords="5,169,216,211"/>
-<area shape="rect" id="node2" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_evidence_key_filter.html" title="Represents an object that filters evidence key names based on some criteria." alt="" coords="39,5,182,32"/>
+<area shape="rect" id="Node000001" title="This evidence filter will only include keys that are in a list that is specified at construction time..." alt="" coords="8,93,213,133"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_evidence_key_filter_aggregator.html" title="This implementation of IEvidenceKeyFilter aggregates multiple other filters using a logical OR approa..." alt="" coords="5,181,216,221"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="113,147,113,181,108,181,108,147"/>
+<area shape="rect" id="Node000002" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_evidence_key_filter.html" title="Represents an object that filters evidence key names based on some criteria." alt="" coords="8,5,213,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,59,113,93,108,93,108,59"/>
 </map>

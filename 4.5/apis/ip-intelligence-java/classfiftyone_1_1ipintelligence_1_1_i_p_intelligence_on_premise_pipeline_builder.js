@@ -16,6 +16,5 @@ var classfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_bui
     [ "setUpdatePollingInterval", "classfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_builder.html#a2cc49f29335d47da54e1ba1fc84c2cec", null ],
     [ "setUpdatePollingIntervalMillis", "classfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_builder.html#abbdc38b9f15b82d5782f089b657de8a6", null ],
     [ "setUpdateRandomisationMax", "classfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_builder.html#ae3855a1aafb73d384caab321e4d9813d", null ],
-    [ "setUpdateRandomisationMaxMillis", "classfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_builder.html#a743479aba033ce66f17ed9350505132f", null ],
-    [ "shareUsageEnabled", "classfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_builder.html#a99bcfd0a226de8e60dab8f9203d2d377", null ]
+    [ "setUpdateRandomisationMaxMillis", "classfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_builder.html#a743479aba033ce66f17ed9350505132f", null ]
 ];

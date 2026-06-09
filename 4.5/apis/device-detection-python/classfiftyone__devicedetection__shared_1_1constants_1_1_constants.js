@@ -1,6 +1,7 @@
 var classfiftyone__devicedetection__shared_1_1constants_1_1_constants =
 [
-    [ "EVIDENCE_NATIVE_MODEL_SUFFIX", "classfiftyone__devicedetection__shared_1_1constants_1_1_constants.html#aabd56b36e4499f23485b5692cc924767", null ],
+    [ "EVIDENCE_NATIVE_MODEL_SUFFIX", "classfiftyone__devicedetection__shared_1_1constants_1_1_constants.html#a683a32ffd40e74a9d74f6c2498d9d48f", null ],
+    [ "EVIDENCE_QUERY_NATIVE_MODEL_KEY", "classfiftyone__devicedetection__shared_1_1constants_1_1_constants.html#a10d228aac8f2154662d5f8de6dc201dd", null ],
     [ "EVIDENCE_QUERY_TAC_KEY", "classfiftyone__devicedetection__shared_1_1constants_1_1_constants.html#a81360fd06d5625f7c17bc2ae39c18b63", null ],
-    [ "EVIDENCE_TAC_SUFFIX", "classfiftyone__devicedetection__shared_1_1constants_1_1_constants.html#aadf173542990f3d48ac2dbd7d91807f1", null ]
+    [ "EVIDENCE_TAC_SUFFIX", "classfiftyone__devicedetection__shared_1_1constants_1_1_constants.html#a6a6628190a3534eec353d5b01e3db5e9", null ]
 ];

@@ -1,5 +1,7 @@
 <map id="FiftyoneDegrees::DeviceDetection::Hash::PropertyMetaDataCollectionForPropertyHash" name="FiftyoneDegrees::DeviceDetection::Hash::PropertyMetaDataCollectionForPropertyHash">
-<area shape="rect" id="node1" title=" " alt="" coords="5,215,280,271"/>
-<area shape="rect" id="node2" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title=" " alt="" coords="45,109,240,165"/>
-<area shape="rect" id="node3" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title="A group of items accessible by index or key." alt="" coords="45,5,240,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,220,280,275"/>
+<area shape="rect" id="Node000002" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title=" " alt="" coords="45,116,240,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,184,145,220,140,220,140,184"/>
+<area shape="rect" id="Node000003" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title="A group of items accessible by index or key." alt="" coords="45,5,240,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="145,60,145,116,140,116,140,60"/>
 </map>

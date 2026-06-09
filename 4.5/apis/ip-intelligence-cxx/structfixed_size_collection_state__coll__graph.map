@@ -1,6 +1,11 @@
 <map id="fixedSizeCollectionState" name="fixedSizeCollectionState">
-<area shape="rect" id="node1" title=" " alt="" coords="5,97,184,124"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="62,7,253,33"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="209,97,429,124"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="397,7,553,33"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,119,184,144"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="59,14,250,39"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,49,104,73,97,97,96,119,91,118,92,96,99,71,121,46"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="265,17,277,26,269,35,251,39,250,34,266,30,271,27,262,22"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="209,119,429,144"/>
+<area shape="poly" id="edge5_Node000003_Node000002" title=" " alt="" coords="169,50,184,73,204,93,229,106,256,116,254,121,227,111,201,97,180,76,164,53"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="305,108,294,90,278,74,245,55,210,42,212,37,248,50,282,70,298,87,310,105"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="398,14,554,39"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="448,49,338,121,335,116,445,45"/>
 </map>

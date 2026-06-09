@@ -1,5 +1,7 @@
 <map id="FiftyOne.IpIntelligence.Engine.OnPremise.Data.ProfileMetaData" name="FiftyOne.IpIntelligence.Engine.OnPremise.Data.ProfileMetaData">
-<area shape="rect" id="node1" title="Data class that contains meta&#45;data relating to a specific profile." alt="" coords="29,80,251,136"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,136,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="160,5,259,32"/>
+<area shape="rect" id="Node000001" title="Data class that contains meta&#45;data relating to a specific profile." alt="" coords="29,79,251,133"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,136,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,40,121,77,117,80,86,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="160,5,259,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,43,163,80,159,77,189,40"/>
 </map>

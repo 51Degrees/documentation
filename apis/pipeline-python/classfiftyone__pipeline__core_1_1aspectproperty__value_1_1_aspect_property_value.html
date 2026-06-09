@@ -1,80 +1,84 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/apis/pipeline-python/classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html">
   <link rel="alternate" hreflang="en-US" href="/documentation/apis/pipeline-python/classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.15"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>51Degrees Pipeline Python: fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue Class Reference</title>
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="dynsections.min.js"></script>
-<script type="text/javascript" src="resize.min.js"></script>
+<script type="text/javascript" src="codefolding.min.js"></script>
+<script type="text/javascript" src="clipboard.min.js"></script>
 <script type="text/javascript" src="navtreedata.min.js"></script>
 <script type="text/javascript" src="navtree.min.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(initResizable);
-/* @license-end */</script>
+<script type="text/javascript" src="cookie.min.js"></script>
 <link href="search/search.min.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.min.js"></script>
 <script type="text/javascript" src="search/search.min.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="l-docs-index p-doxygen">
-<div class="l-index__content">
-<!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
-<div id="titlearea" class="g-header g-header--docs">
-  <h1 class="c-brand">
-  <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png"/></a>
-  <span class="c-tagline">51Degrees Pipeline Python
-   &#160;<span id="projectnumber">4.5</span>
-  </span>
-  </h1>
-  <div id="projectalign" style="padding-left: 0.5em;">
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="/documentation/4.5/index.html"><img alt="Logo" src="logo-51Degrees-Docs.png"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">51Degrees Pipeline Python<span id="projectnumber">&#160;4.5</span>
+   </div>
    <div id="projectbrief">51Degrees Pipeline for Python</div>
-  </div>
-  <div id="main-nav"></div>
-     <div class="g-search">
+  </td>
+    <td>  <div class="g-search">
     <div class="c-search is-openable">
     <form class="c-search__form">
       <div id="MSearchBox" class="b-form-group b-form-group--with-icon">
         <label for="inputSearch" class="b-text--hidden">Search</label>
         <img id="MSearchSelect" src="icon-search.svg" class="b-icon" alt="Search" 
-                 onmouseover="return searchBox.OnSearchSelectShow()"
-                 onmouseout="return searchBox.OnSearchSelectHide()"/>
-        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" id="inputSearch" placeholder="Type a class, namespace etc." aria-label="Search"
-                 onfocus="searchBox.OnSearchFieldFocus(true)" 
-                 onblur="searchBox.OnSearchFieldFocus(false)" 
-                 onkeyup="searchBox.OnSearchFieldChange(event)">
-         <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+             onmouseover="return searchBox.OnSearchSelectShow()"
+             onmouseout="return searchBox.OnSearchSelectHide()"/>
+        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" placeholder="Type a class, namespace etc." aria-label="Search"
+             onfocus="searchBox.OnSearchFieldFocus(true)" 
+             onblur="searchBox.OnSearchFieldFocus(false)" 
+             onkeyup="searchBox.OnSearchFieldChange(event)"/>
+        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
       </div>
     </form>
+    </div>
   </div>
-</div>
+</td>
+ </tr>
+ </tbody>
+</table>
 </div>
 <!-- end header part -->
-<main class="g-main">
-<!-- Generated by Doxygen 1.8.15 -->
+<!-- Generated by Doxygen 1.17.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search');
-/* @license-end */
+let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
-<!-- top -->
-	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
-  <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html','');});
-/* @license-end */
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div class="g-docs__sidenav">
+  <nav id="nav-tree-contents" class="c-sidenav">
+    <h4 class="c-sidenav__heading">Documentation</h4>
+    <div id="nav-sync" class="sync"></div>
+  </nav>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html','','classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value-members'); });
 </script>
 <div id="doc-content" class="g-docs__content">
 <!-- window showing the filter options -->
@@ -86,406 +90,203 @@ $(document).ready(function(){initNavTree('classfiftyone__pipeline__core_1_1aspec
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="g-docs__header">
-<div class="c-breadcrumb">
-  <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacefiftyone__pipeline__core.html">fiftyone_pipeline_core</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacefiftyone__pipeline__core_1_1aspectproperty__value.html">aspectproperty_value</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html">AspectPropertyValue</a></li>  </ul>
-</div>
-<h2 class="g-docs__page-title">fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue Class Reference</h2></div><!--header-->
+<h1 class="g-docs__page-title">fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue Class Reference</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section">
-<a name="details" id="details"></a><h2 class="g-docs__section-heading">Detailed Description</h2>
-<section class="g-docs__section"><p>An <a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html" title="An AspectPropertyValue is a wrapper for a value It lets you check this wrapper has a value inside it ...">AspectPropertyValue</a> is a wrapper for a value It lets you check this wrapper has a value inside it If not value is set, a specific no value message is returned. </p>
-</section></section>
-<!-- start ClassInheritanceGraph -->
-<section class="g-docs__section">
-<h2 class="g-docs__section-heading">
+<a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
+<div class="textblock"><p>An <a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html" title="An AspectPropertyValue is a wrapper for a value It lets you check this wrapper has a value inside it ...">AspectPropertyValue</a> is a wrapper for a value It lets you check this wrapper has a value inside it If not value is set, a specific no value message is returned. </p>
+</div><h2 class="g-docs__section-heading">
 Inheritance diagram for fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value__inherit__graph.svg" width="278" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value__inherit__graph.svg" width="278" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-</section>
-<!-- end ClassInheritanceGraph -->
-<section class="g-docs__section">
 <h2 class="g-docs__section-heading">
 Collaboration diagram for fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value__coll__graph.svg" width="278" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value__coll__graph.svg" width="278" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-</section>
-<!-- start MemberDeclStart -->
-<!-- startMemberSections -->
-<!-- end MemberDeclStart -->
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-methods"></a>
-Public Member Functions</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:aaede5b904f0f62c0bc5508f164c344fa"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html#aaede5b904f0f62c0bc5508f164c344fa">__init__</a> (self, <a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html#aca7c68ca0ba35f0fc54ff1e0ad7ffabf">no_value_message</a>=None, <a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html#af3aa320262d74187d8a8b794ed73134f">value</a>=&quot;noValue&quot;)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:aaede5b904f0f62c0bc5508f164c344fa">Constructor for <a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html" title="An AspectPropertyValue is a wrapper for a value It lets you check this wrapper has a value inside it ...">AspectPropertyValue</a>.  <a href="#aaede5b904f0f62c0bc5508f164c344fa">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ad9cd193508cc4f79f1b7ea12b2ed15f5"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html#ad9cd193508cc4f79f1b7ea12b2ed15f5">has_value</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:ad9cd193508cc4f79f1b7ea12b2ed15f5">Check if the <a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html" title="An AspectPropertyValue is a wrapper for a value It lets you check this wrapper has a value inside it ...">AspectPropertyValue</a> wrapper has a value inside it.  <a href="#ad9cd193508cc4f79f1b7ea12b2ed15f5">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:af3aa320262d74187d8a8b794ed73134f"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html#af3aa320262d74187d8a8b794ed73134f">value</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:af3aa320262d74187d8a8b794ed73134f">Get the value out of the <a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html" title="An AspectPropertyValue is a wrapper for a value It lets you check this wrapper has a value inside it ...">AspectPropertyValue</a> wrapper Note that this will return an error (including no_value_message if set) if there is no value.  <a href="#af3aa320262d74187d8a8b794ed73134f">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:aca7c68ca0ba35f0fc54ff1e0ad7ffabf"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html#aca7c68ca0ba35f0fc54ff1e0ad7ffabf">no_value_message</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:aca7c68ca0ba35f0fc54ff1e0ad7ffabf">If there is no value, get the reason for there not being a value.  <a href="#aca7c68ca0ba35f0fc54ff1e0ad7ffabf">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-attribs"></a>
-Public Attributes</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ae91af16ce042cd80c1c1df03bee46639"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html#ae91af16ce042cd80c1c1df03bee46639">noValueMessage</a>
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<!-- start MemberGroups -->
-<!-- end MemberGroups -->
-<section class="g-docs__section">
-<h2 class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="aaede5b904f0f62c0bc5508f164c344fa"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aaede5b904f0f62c0bc5508f164c344fa">&#9670;&nbsp;</a></span>__init__()</h2>
+<table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:adbd62a5c80c75a6abc18a2ed8474c139" id="r_adbd62a5c80c75a6abc18a2ed8474c139"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#adbd62a5c80c75a6abc18a2ed8474c139">__init__</a> (self, no_value_message=None, value=&quot;noValue&quot;)</td></tr>
+<tr class="c-table__row memdesc:adbd62a5c80c75a6abc18a2ed8474c139"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for <a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html" title="An AspectPropertyValue is a wrapper for a value It lets you check this wrapper has a value inside it ...">AspectPropertyValue</a>.  <br /></td></tr>
+<tr class="c-table__row memitem:adb04b6fa3f211de24a1ca8325ffb9e71" id="r_adb04b6fa3f211de24a1ca8325ffb9e71"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#adb04b6fa3f211de24a1ca8325ffb9e71">has_value</a> (self)</td></tr>
+<tr class="c-table__row memdesc:adb04b6fa3f211de24a1ca8325ffb9e71"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check if the <a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html" title="An AspectPropertyValue is a wrapper for a value It lets you check this wrapper has a value inside it ...">AspectPropertyValue</a> wrapper has a value inside it.  <br /></td></tr>
+<tr class="c-table__row memitem:a839e7fe0cf09385da3a96fb8f1706891" id="r_a839e7fe0cf09385da3a96fb8f1706891"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a839e7fe0cf09385da3a96fb8f1706891">value</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a839e7fe0cf09385da3a96fb8f1706891"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value out of the <a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html" title="An AspectPropertyValue is a wrapper for a value It lets you check this wrapper has a value inside it ...">AspectPropertyValue</a> wrapper Note that this will return an error (including no_value_message if set) if there is no value.  <br /></td></tr>
+<tr class="c-table__row memitem:aaeff5e25c9d56f9c23cac7590a7e553b" id="r_aaeff5e25c9d56f9c23cac7590a7e553b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aaeff5e25c9d56f9c23cac7590a7e553b">no_value_message</a> (self)</td></tr>
+<tr class="c-table__row memdesc:aaeff5e25c9d56f9c23cac7590a7e553b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">If there is no value, get the reason for there not being a value.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:ae91af16ce042cd80c1c1df03bee46639" id="r_ae91af16ce042cd80c1c1df03bee46639"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae91af16ce042cd80c1c1df03bee46639">noValueMessage</a> = <a class="el" href="#aaeff5e25c9d56f9c23cac7590a7e553b">no_value_message</a></td></tr>
+</table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
+<a id="adbd62a5c80c75a6abc18a2ed8474c139" name="adbd62a5c80c75a6abc18a2ed8474c139"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adbd62a5c80c75a6abc18a2ed8474c139">&#9670;&#160;</a></span>__init__()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue.__init__ <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue.__init__ </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>no_value_message</em> = <code>None</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>no_value_message</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>value</em> = <code>&quot;noValue&quot;</code><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>value</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;noValue&quot;</span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Constructor for <a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html" title="An AspectPropertyValue is a wrapper for a value It lets you check this wrapper has a value inside it ...">AspectPropertyValue</a>. </p>
-<p>@type value: mixed </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">value</span> - the property value to store</dd>
+<p>@type value: mixed </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the property value to store</td></tr>
+  </table>
   </dd>
 </dl>
-<p>@type noValueMessage: string </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">noValueMessage</span> - if there is no value, the reason for there not being one </dd>
+<p>@type noValueMessage: string </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">noValueMessage</td><td>if there is no value, the reason for there not being one </td></tr>
+  </table>
   </dd>
 </dl>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Function Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="ad9cd193508cc4f79f1b7ea12b2ed15f5"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad9cd193508cc4f79f1b7ea12b2ed15f5">&#9670;&nbsp;</a></span>has_value()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="adb04b6fa3f211de24a1ca8325ffb9e71" name="adb04b6fa3f211de24a1ca8325ffb9e71"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adb04b6fa3f211de24a1ca8325ffb9e71">&#9670;&#160;</a></span>has_value()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue.has_value <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue.has_value </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Check if the <a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html" title="An AspectPropertyValue is a wrapper for a value It lets you check this wrapper has a value inside it ...">AspectPropertyValue</a> wrapper has a value inside it. </p>
-<p>@rtype bool </p><dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">whether there is a value </dd></dl>
-<!-- endIndent -->
+<p>@rtype bool </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">whether there is a value </dd></dl>
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="aca7c68ca0ba35f0fc54ff1e0ad7ffabf"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aca7c68ca0ba35f0fc54ff1e0ad7ffabf">&#9670;&nbsp;</a></span>no_value_message()</h2>
+<a id="aaeff5e25c9d56f9c23cac7590a7e553b" name="aaeff5e25c9d56f9c23cac7590a7e553b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aaeff5e25c9d56f9c23cac7590a7e553b">&#9670;&#160;</a></span>no_value_message()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue.no_value_message <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue.no_value_message </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>If there is no value, get the reason for there not being a value. </p>
-<p>@rtype string </p><dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the no value message </dd></dl>
-<!-- endIndent -->
+<p>@rtype string </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the no value message </dd></dl>
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="af3aa320262d74187d8a8b794ed73134f"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af3aa320262d74187d8a8b794ed73134f">&#9670;&nbsp;</a></span>value()</h2>
+<a id="a839e7fe0cf09385da3a96fb8f1706891" name="a839e7fe0cf09385da3a96fb8f1706891"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a839e7fe0cf09385da3a96fb8f1706891">&#9670;&#160;</a></span>value()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue.value <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue.value </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Get the value out of the <a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html" title="An AspectPropertyValue is a wrapper for a value It lets you check this wrapper has a value inside it ...">AspectPropertyValue</a> wrapper Note that this will return an error (including no_value_message if set) if there is no value. </p>
-<p>So check <a class="el" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value.html#ad9cd193508cc4f79f1b7ea12b2ed15f5" title="Check if the AspectPropertyValue wrapper has a value inside it.">has_value()</a> first to be sure.</p>
-<p>@rtype mixed </p><dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the stored value </dd></dl>
-<!-- endIndent -->
+<p>So check <a class="el" href="#adb04b6fa3f211de24a1ca8325ffb9e71" title="Check if the AspectPropertyValue wrapper has a value inside it.">has_value()</a> first to be sure.</p>
+<p>@rtype mixed </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the stored value </dd></dl>
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Data Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="ae91af16ce042cd80c1c1df03bee46639"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae91af16ce042cd80c1c1df03bee46639">&#9670;&nbsp;</a></span>noValueMessage</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="ae91af16ce042cd80c1c1df03bee46639" name="ae91af16ce042cd80c1c1df03bee46639"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae91af16ce042cd80c1c1df03bee46639">&#9670;&#160;</a></span>noValueMessage</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue.noValueMessage<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_core.aspectproperty_value.AspectPropertyValue.noValueMessage = <a class="el" href="#aaeff5e25c9d56f9c23cac7590a7e553b">no_value_message</a></td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-</section>
 </div><!-- primary -->
-  <div class="g-docs__sidebar">
-    <div class="c-section-nav">
-      <h5 class="c-section-nav__heading">On This Page</h5>
-        <ul class="c-section-nav__list">
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-methods">Public Member Functions</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-attribs">Public Attributes</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="classfiftyone__pipeline__core_1_1aspectproperty__value_1_1_aspect_property_value-members.html">List of all members</a></li>    </div>
-  </div>
-</div><!-- inner-->
+</div><!-- inner -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
     <p class="g-footer__copyright">Generated by
     <a href="http://www.doxygen.org/index.html">
-    <b>doxygen</b></a> 1.8.15
+    <b>doxygen</b></a> 1.17.0
   </p>
 </section>
 </div>

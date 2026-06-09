@@ -1,11 +1,16 @@
 var searchData=
 [
-  ['embedtomcat',['EmbedTomcat',['../classfiftyone_1_1geolocation_1_1web_1_1examples_1_1shared_1_1_embed_tomcat.html',1,'fiftyone::geolocation::web::examples::shared']]],
-  ['enums',['Enums',['../classfiftyone_1_1geolocation_1_1core_1_1_enums.html',1,'fiftyone::geolocation::core']]],
-  ['example',['Example',['../classfiftyone_1_1geolocation_1_1web_1_1examples_1_1servlet_1_1_example.html',1,'fiftyone::geolocation::web::examples::servlet']]],
-  ['examplebase',['ExampleBase',['../classfiftyone_1_1geolocation_1_1examples_1_1_example_base.html',1,'fiftyone::geolocation::examples']]],
-  ['examplecontroller',['ExampleController',['../classfiftyone_1_1geolocation_1_1web_1_1examples_1_1mvc_1_1controller_1_1_example_controller.html',1,'fiftyone::geolocation::web::examples::mvc::controller']]],
-  ['exampleinitializer',['ExampleInitializer',['../classfiftyone_1_1geolocation_1_1web_1_1examples_1_1mvc_1_1configuration_1_1_example_initializer.html',1,'fiftyone::geolocation::web::examples::mvc::configuration']]],
-  ['examplelauncher',['ExampleLauncher',['../classfiftyone_1_1geolocation_1_1web_1_1examples_1_1mvc_1_1_example_launcher.html',1,'fiftyone::geolocation::web::examples::mvc']]],
-  ['examplemvcconfig',['ExampleMvcConfig',['../classfiftyone_1_1geolocation_1_1web_1_1examples_1_1mvc_1_1configuration_1_1_example_mvc_config.html',1,'fiftyone::geolocation::web::examples::mvc::configuration']]]
+  ['geodata_0',['GeoData',['../interfacefiftyone_1_1geolocation_1_1core_1_1data_1_1_geo_data.html',1,'fiftyone::geolocation::core::data']]],
+  ['geodatadefault_1',['GeoDataDefault',['../classfiftyone_1_1geolocation_1_1core_1_1data_1_1_geo_data_default.html',1,'fiftyone::geolocation::core::data']]],
+  ['geoenginehelper_2',['GeoEngineHelper',['../classfiftyone_1_1geolocation_1_1core_1_1_geo_engine_helper.html',1,'fiftyone::geolocation::core']]],
+  ['geoevidence_3',['GeoEvidence',['../classfiftyone_1_1geolocation_1_1core_1_1data_1_1_geo_evidence.html',1,'fiftyone::geolocation::core::data']]],
+  ['geolocationcloudengine_4',['GeoLocationCloudEngine',['../classfiftyone_1_1geolocation_1_1flowelements_1_1_geo_location_cloud_engine.html',1,'fiftyone::geolocation::flowelements']]],
+  ['geolocationcloudenginebuilder_5',['GeoLocationCloudEngineBuilder',['../classfiftyone_1_1geolocation_1_1flowelements_1_1_geo_location_cloud_engine_builder.html',1,'fiftyone::geolocation::flowelements']]],
+  ['geolocationcloudpipelinebuilder_6',['GeoLocationCloudPipelineBuilder',['../classfiftyone_1_1geolocation_1_1_geo_location_cloud_pipeline_builder.html',1,'fiftyone::geolocation']]],
+  ['geolocationpipelinebuilder_7',['GeoLocationPipelineBuilder',['../classfiftyone_1_1geolocation_1_1_geo_location_pipeline_builder.html',1,'fiftyone.geolocation.GeoLocationPipelineBuilder'],['../classfiftyone_1_1geolocation_1_1_geo_location_pipeline_builder.html#a3bab141288ad44a55c8b6d063ecdc914',1,'fiftyone.geolocation.GeoLocationPipelineBuilder.GeoLocationPipelineBuilder(ILoggerFactory loggerFactory)'],['../classfiftyone_1_1geolocation_1_1_geo_location_pipeline_builder.html#a02b9a6e06ef3ede971c5b326442f2453',1,'fiftyone.geolocation.GeoLocationPipelineBuilder.GeoLocationPipelineBuilder(ILoggerFactory loggerFactory, HttpClient httpClient)']]],
+  ['geolocationprovider_8',['GeoLocationProvider',['../enumfiftyone_1_1geolocation_1_1core_1_1_enums_1_1_geo_location_provider.html',1,'fiftyone::geolocation::core::Enums']]],
+  ['geolookupresult_9',['GeoLookupResult',['../classfiftyone_1_1geolocation_1_1core_1_1_geo_engine_helper_1_1_geo_lookup_result.html',1,'fiftyone::geolocation::core::GeoEngineHelper']]],
+  ['geoserviceresponse_10',['geoServiceResponse',['../classfiftyone_1_1geolocation_1_1core_1_1_geo_engine_helper_1_1_geo_lookup_result.html#a71f8dc28c4ec86b6d90d626a02183b7c',1,'fiftyone::geolocation::core::GeoEngineHelper::GeoLookupResult']]],
+  ['getservletinfo_11',['getServletInfo',['../classfiftyone_1_1geolocation_1_1web_1_1examples_1_1servlet_1_1_example.html#a55beb4d0d9b63b9b54f574e629ef1355',1,'fiftyone::geolocation::web::examples::servlet::Example']]],
+  ['gettingstarted_12',['GettingStarted',['../classfiftyone_1_1geolocation_1_1examples_1_1cloud_1_1_getting_started.html',1,'fiftyone::geolocation::examples::cloud']]]
 ];

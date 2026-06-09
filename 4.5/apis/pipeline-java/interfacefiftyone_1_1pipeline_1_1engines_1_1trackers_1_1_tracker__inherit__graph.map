@@ -1,6 +1,9 @@
 <map id="fiftyone.pipeline.engines.trackers.Tracker" name="fiftyone.pipeline.engines.trackers.Tracker">
-<area shape="rect" id="node1" title="Represents a &#39;tracker&#39;." alt="" coords="5,60,248,101"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker_base.html" title="The abstract base class for trackers." alt="" coords="297,60,540,101"/>
-<area shape="rect" id="node3" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1trackers_1_1_share_usage_tracker.html" title="A tracker used by share usage to attempt to avoid repeatedly sending data relating to the same user s..." alt="" coords="667,5,882,76"/>
-<area shape="rect" id="node4" href="$classfiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker_base.html" title=" " alt="" coords="653,100,896,141"/>
+<area shape="rect" id="Node000001" title="Represents a &#39;tracker&#39;." alt="" coords="5,37,248,77"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker_base.html" title="The abstract base class for trackers." alt="" coords="297,37,540,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="262,55,297,55,297,60,262,60"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1trackers_1_1_share_usage_tracker.html" title="A tracker used by share usage to attempt to avoid repeatedly sending data relating to the same user s..." alt="" coords="657,5,952,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="554,43,657,35,657,40,554,49"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker_base.html" title=" " alt="" coords="683,69,926,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="554,70,564,71,683,80,683,85,564,76,553,75"/>
 </map>

@@ -1,80 +1,84 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/apis/pipeline-python/classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html">
   <link rel="alternate" hreflang="en-US" href="/documentation/apis/pipeline-python/classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.15"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>51Degrees Pipeline Python: fiftyone_pipeline_engines.datafile.DataFile Class Reference</title>
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="dynsections.min.js"></script>
-<script type="text/javascript" src="resize.min.js"></script>
+<script type="text/javascript" src="codefolding.min.js"></script>
+<script type="text/javascript" src="clipboard.min.js"></script>
 <script type="text/javascript" src="navtreedata.min.js"></script>
 <script type="text/javascript" src="navtree.min.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(initResizable);
-/* @license-end */</script>
+<script type="text/javascript" src="cookie.min.js"></script>
 <link href="search/search.min.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.min.js"></script>
 <script type="text/javascript" src="search/search.min.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="l-docs-index p-doxygen">
-<div class="l-index__content">
-<!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
-<div id="titlearea" class="g-header g-header--docs">
-  <h1 class="c-brand">
-  <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png"/></a>
-  <span class="c-tagline">51Degrees Pipeline Python
-   &#160;<span id="projectnumber">4.5</span>
-  </span>
-  </h1>
-  <div id="projectalign" style="padding-left: 0.5em;">
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="/documentation/4.5/index.html"><img alt="Logo" src="logo-51Degrees-Docs.png"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">51Degrees Pipeline Python<span id="projectnumber">&#160;4.5</span>
+   </div>
    <div id="projectbrief">51Degrees Pipeline for Python</div>
-  </div>
-  <div id="main-nav"></div>
-     <div class="g-search">
+  </td>
+    <td>  <div class="g-search">
     <div class="c-search is-openable">
     <form class="c-search__form">
       <div id="MSearchBox" class="b-form-group b-form-group--with-icon">
         <label for="inputSearch" class="b-text--hidden">Search</label>
         <img id="MSearchSelect" src="icon-search.svg" class="b-icon" alt="Search" 
-                 onmouseover="return searchBox.OnSearchSelectShow()"
-                 onmouseout="return searchBox.OnSearchSelectHide()"/>
-        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" id="inputSearch" placeholder="Type a class, namespace etc." aria-label="Search"
-                 onfocus="searchBox.OnSearchFieldFocus(true)" 
-                 onblur="searchBox.OnSearchFieldFocus(false)" 
-                 onkeyup="searchBox.OnSearchFieldChange(event)">
-         <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+             onmouseover="return searchBox.OnSearchSelectShow()"
+             onmouseout="return searchBox.OnSearchSelectHide()"/>
+        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" placeholder="Type a class, namespace etc." aria-label="Search"
+             onfocus="searchBox.OnSearchFieldFocus(true)" 
+             onblur="searchBox.OnSearchFieldFocus(false)" 
+             onkeyup="searchBox.OnSearchFieldChange(event)"/>
+        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
       </div>
     </form>
+    </div>
   </div>
-</div>
+</td>
+ </tr>
+ </tbody>
+</table>
 </div>
 <!-- end header part -->
-<main class="g-main">
-<!-- Generated by Doxygen 1.8.15 -->
+<!-- Generated by Doxygen 1.17.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search');
-/* @license-end */
+let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
-<!-- top -->
-	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
-  <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html','');});
-/* @license-end */
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div class="g-docs__sidenav">
+  <nav id="nav-tree-contents" class="c-sidenav">
+    <h4 class="c-sidenav__heading">Documentation</h4>
+    <div id="nav-sync" class="sync"></div>
+  </nav>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html','','classfiftyone__pipeline__engines_1_1datafile_1_1_data_file-members'); });
 </script>
 <div id="doc-content" class="g-docs__content">
 <!-- window showing the filter options -->
@@ -86,1178 +90,653 @@ $(document).ready(function(){initNavTree('classfiftyone__pipeline__engines_1_1da
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="g-docs__header">
-<div class="c-breadcrumb">
-  <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacefiftyone__pipeline__engines.html">fiftyone_pipeline_engines</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacefiftyone__pipeline__engines_1_1datafile.html">datafile</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html">DataFile</a></li>  </ul>
-</div>
-<h2 class="g-docs__page-title">fiftyone_pipeline_engines.datafile.DataFile Class Reference</h2></div><!--header-->
+<h1 class="g-docs__page-title">fiftyone_pipeline_engines.datafile.DataFile Class Reference</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section">
-<a name="details" id="details"></a><h2 class="g-docs__section-heading">Detailed Description</h2>
-<section class="g-docs__section"><p>A datafile used by a FlowElement / Engine to get calculate properties values. </p>
-</section></section>
-<!-- start ClassInheritanceGraph -->
-<section class="g-docs__section">
-</section>
-<!-- end ClassInheritanceGraph -->
-<section class="g-docs__section">
-</section>
-<!-- start MemberDeclStart -->
-<!-- startMemberSections -->
-<!-- end MemberDeclStart -->
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-methods"></a>
-Public Member Functions</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a5837f21a901a870b0e8b5ba7b309cbc2"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a5837f21a901a870b0e8b5ba7b309cbc2">__init__</a> (self, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a82ca065a77d617c61a9c246e3b48ff66">flow_element</a>, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#ae5def9ea433fb176060d9d8edcdc86b9">identifier</a>, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a8025a875e59491bc86c2e66cf24f3120">update_url_params</a>=None, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#af655cbf64cf9d72f649d292ed9d0ca8e">data</a>=None, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a9c35a6e557e86be92887c16a11705f90">path</a>=&quot;&quot;, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a5a3306a6cbee381041d5032442e22510">temp_directory</a>=tempfile.gettempdir(), <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#aba1d356b3ba6894f2e41a63edc2e0530">create_temp_copy</a>=True, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a019be0e6c9c23dae5e5a2b9a2f8536ff">auto_update</a>=True, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#ac0406bae7354b43da28dd8f9129cf3a9">file_system_watcher</a>=True, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a9d5903bdbba9e22e07e102bc9402ff65">polling_interval</a>=30, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#ae4aece2534f735cdd283d65486b0feef">update_time_maximum_randomisation</a>=10, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a6a36b03407d41df05d4fe38ecf53d3ef">verify_md5</a>=True, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a754591a520a8b8ff69df4be0514fd4b3">decompress</a>=True, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a612cdd4755bf23d92c4c39c3d5ad5bb2">download</a>=True, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a1cea575acfe1456ef7d88a824383938c">verify_if_modified_since</a>=True, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#adc86d5dfad48daf6385078303611a0ab">update_on_start</a>=False)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a5837f21a901a870b0e8b5ba7b309cbc2">Constructor for a <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html" title="A datafile used by a FlowElement / Engine to get calculate properties values.">DataFile</a>.  <a href="#a5837f21a901a870b0e8b5ba7b309cbc2">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:adf694ab7f02938cb5a464d06edefccd4"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#adf694ab7f02938cb5a464d06edefccd4">get_date_published</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:adf694ab7f02938cb5a464d06edefccd4">Function called to get the date the datafile was published.  <a href="#adf694ab7f02938cb5a464d06edefccd4">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:aff9a6e39c867a77f3e02c22ec4315a20"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#aff9a6e39c867a77f3e02c22ec4315a20">get_next_update</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:aff9a6e39c867a77f3e02c22ec4315a20">Function called to get the date of the next datafile version.  <a href="#aff9a6e39c867a77f3e02c22ec4315a20">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a7c553b6ad36f342f12815a4f1a1421e4"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a7c553b6ad36f342f12815a4f1a1421e4">refresh</a> (self, <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#ae5def9ea433fb176060d9d8edcdc86b9">identifier</a>)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a7c553b6ad36f342f12815a4f1a1421e4">Function called when datafile has been updated.  <a href="#a7c553b6ad36f342f12815a4f1a1421e4">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:aa63b7f3d738542ed1dbaa75532b69605"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#aa63b7f3d738542ed1dbaa75532b69605">get_update_url</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:aa63b7f3d738542ed1dbaa75532b69605">Internal function that constructs the url for the datafile update service to use from the result of get_url_formatter.  <a href="#aa63b7f3d738542ed1dbaa75532b69605">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a3f1c54c4be094971fe94f0b0666b3cd8"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a3f1c54c4be094971fe94f0b0666b3cd8">get_url_formatter</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a3f1c54c4be094971fe94f0b0666b3cd8">Function that constructs the url for the datafile update service to use.  <a href="#a3f1c54c4be094971fe94f0b0666b3cd8">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-attribs"></a>
-Public Attributes</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a82ca065a77d617c61a9c246e3b48ff66"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a82ca065a77d617c61a9c246e3b48ff66">flow_element</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ae5def9ea433fb176060d9d8edcdc86b9"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#ae5def9ea433fb176060d9d8edcdc86b9">identifier</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a8025a875e59491bc86c2e66cf24f3120"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a8025a875e59491bc86c2e66cf24f3120">update_url_params</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a5a3306a6cbee381041d5032442e22510"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a5a3306a6cbee381041d5032442e22510">temp_directory</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:aba1d356b3ba6894f2e41a63edc2e0530"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#aba1d356b3ba6894f2e41a63edc2e0530">create_temp_copy</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a019be0e6c9c23dae5e5a2b9a2f8536ff"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a019be0e6c9c23dae5e5a2b9a2f8536ff">auto_update</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ac0406bae7354b43da28dd8f9129cf3a9"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#ac0406bae7354b43da28dd8f9129cf3a9">file_system_watcher</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a9d5903bdbba9e22e07e102bc9402ff65"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a9d5903bdbba9e22e07e102bc9402ff65">polling_interval</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ae4aece2534f735cdd283d65486b0feef"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#ae4aece2534f735cdd283d65486b0feef">update_time_maximum_randomisation</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a6a36b03407d41df05d4fe38ecf53d3ef"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a6a36b03407d41df05d4fe38ecf53d3ef">verify_md5</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a754591a520a8b8ff69df4be0514fd4b3"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a754591a520a8b8ff69df4be0514fd4b3">decompress</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a612cdd4755bf23d92c4c39c3d5ad5bb2"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a612cdd4755bf23d92c4c39c3d5ad5bb2">download</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a1cea575acfe1456ef7d88a824383938c"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a1cea575acfe1456ef7d88a824383938c">verify_if_modified_since</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:adc86d5dfad48daf6385078303611a0ab"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#adc86d5dfad48daf6385078303611a0ab">update_on_start</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a7912fd3845dc22af724af7e910abb883"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a7912fd3845dc22af724af7e910abb883">updated_on_start</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:af655cbf64cf9d72f649d292ed9d0ca8e"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#af655cbf64cf9d72f649d292ed9d0ca8e">data</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a9c35a6e557e86be92887c16a11705f90"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a9c35a6e557e86be92887c16a11705f90">path</a>
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a84e34dd0d89abd2f30dcecc9f14cb3b8"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a84e34dd0d89abd2f30dcecc9f14cb3b8">updating</a>
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<!-- start MemberGroups -->
-<!-- end MemberGroups -->
-<section class="g-docs__section">
-<h2 class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a5837f21a901a870b0e8b5ba7b309cbc2"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5837f21a901a870b0e8b5ba7b309cbc2">&#9670;&nbsp;</a></span>__init__()</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
+<div class="textblock"><p>A datafile used by a FlowElement / Engine to get calculate properties values. </p>
+</div><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:abe56a83a30fa5fcb3e01dc960c00eea9" id="r_abe56a83a30fa5fcb3e01dc960c00eea9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#abe56a83a30fa5fcb3e01dc960c00eea9">__init__</a> (self, flow_element, identifier, update_url_params=None, data=None, path=&quot;&quot;, temp_directory=tempfile.gettempdir(), create_temp_copy=True, auto_update=True, file_system_watcher=True, polling_interval=30, update_time_maximum_randomisation=10, verify_md5=True, decompress=True, download=True, verify_if_modified_since=True, update_on_start=False)</td></tr>
+<tr class="c-table__row memdesc:abe56a83a30fa5fcb3e01dc960c00eea9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for a <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html" title="A datafile used by a FlowElement / Engine to get calculate properties values.">DataFile</a>.  <br /></td></tr>
+<tr class="c-table__row memitem:aee624f514878aa9716b5da1ed7d664e8" id="r_aee624f514878aa9716b5da1ed7d664e8"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aee624f514878aa9716b5da1ed7d664e8">get_date_published</a> (self)</td></tr>
+<tr class="c-table__row memdesc:aee624f514878aa9716b5da1ed7d664e8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function called to get the date the datafile was published.  <br /></td></tr>
+<tr class="c-table__row memitem:ad17b91ce60ee15c23b8f0c5294d6f59d" id="r_ad17b91ce60ee15c23b8f0c5294d6f59d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad17b91ce60ee15c23b8f0c5294d6f59d">get_next_update</a> (self)</td></tr>
+<tr class="c-table__row memdesc:ad17b91ce60ee15c23b8f0c5294d6f59d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function called to get the date of the next datafile version.  <br /></td></tr>
+<tr class="c-table__row memitem:a8b3fbf4aeaef9a99ed43dc8e68e3bcae" id="r_a8b3fbf4aeaef9a99ed43dc8e68e3bcae"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8b3fbf4aeaef9a99ed43dc8e68e3bcae">refresh</a> (self, identifier)</td></tr>
+<tr class="c-table__row memdesc:a8b3fbf4aeaef9a99ed43dc8e68e3bcae"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function called when datafile has been updated.  <br /></td></tr>
+<tr class="c-table__row memitem:a1e69c920d7bbcc7802c5adba1fdf473b" id="r_a1e69c920d7bbcc7802c5adba1fdf473b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a1e69c920d7bbcc7802c5adba1fdf473b">get_update_url</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a1e69c920d7bbcc7802c5adba1fdf473b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Internal function that constructs the url for the datafile update service to use from the result of get_url_formatter.  <br /></td></tr>
+<tr class="c-table__row memitem:a9323bf3324fa3189092cd88eeccaf297" id="r_a9323bf3324fa3189092cd88eeccaf297"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9323bf3324fa3189092cd88eeccaf297">get_url_formatter</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a9323bf3324fa3189092cd88eeccaf297"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function that constructs the url for the datafile update service to use.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a82ca065a77d617c61a9c246e3b48ff66" id="r_a82ca065a77d617c61a9c246e3b48ff66"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a82ca065a77d617c61a9c246e3b48ff66">flow_element</a> = flow_element</td></tr>
+<tr class="c-table__row memitem:ae5def9ea433fb176060d9d8edcdc86b9" id="r_ae5def9ea433fb176060d9d8edcdc86b9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae5def9ea433fb176060d9d8edcdc86b9">identifier</a> = identifier</td></tr>
+<tr class="c-table__row memitem:a8025a875e59491bc86c2e66cf24f3120" id="r_a8025a875e59491bc86c2e66cf24f3120"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8025a875e59491bc86c2e66cf24f3120">update_url_params</a> = update_url_params</td></tr>
+<tr class="c-table__row memitem:a5a3306a6cbee381041d5032442e22510" id="r_a5a3306a6cbee381041d5032442e22510"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5a3306a6cbee381041d5032442e22510">temp_directory</a> = temp_directory</td></tr>
+<tr class="c-table__row memitem:aba1d356b3ba6894f2e41a63edc2e0530" id="r_aba1d356b3ba6894f2e41a63edc2e0530"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aba1d356b3ba6894f2e41a63edc2e0530">create_temp_copy</a> = create_temp_copy</td></tr>
+<tr class="c-table__row memitem:a019be0e6c9c23dae5e5a2b9a2f8536ff" id="r_a019be0e6c9c23dae5e5a2b9a2f8536ff"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a019be0e6c9c23dae5e5a2b9a2f8536ff">auto_update</a> = auto_update</td></tr>
+<tr class="c-table__row memitem:ac0406bae7354b43da28dd8f9129cf3a9" id="r_ac0406bae7354b43da28dd8f9129cf3a9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac0406bae7354b43da28dd8f9129cf3a9">file_system_watcher</a> = file_system_watcher</td></tr>
+<tr class="c-table__row memitem:a9d5903bdbba9e22e07e102bc9402ff65" id="r_a9d5903bdbba9e22e07e102bc9402ff65"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9d5903bdbba9e22e07e102bc9402ff65">polling_interval</a> = polling_interval</td></tr>
+<tr class="c-table__row memitem:ae4aece2534f735cdd283d65486b0feef" id="r_ae4aece2534f735cdd283d65486b0feef"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae4aece2534f735cdd283d65486b0feef">update_time_maximum_randomisation</a> = update_time_maximum_randomisation</td></tr>
+<tr class="c-table__row memitem:a6a36b03407d41df05d4fe38ecf53d3ef" id="r_a6a36b03407d41df05d4fe38ecf53d3ef"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6a36b03407d41df05d4fe38ecf53d3ef">verify_md5</a> = verify_md5</td></tr>
+<tr class="c-table__row memitem:a754591a520a8b8ff69df4be0514fd4b3" id="r_a754591a520a8b8ff69df4be0514fd4b3"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a754591a520a8b8ff69df4be0514fd4b3">decompress</a> = decompress</td></tr>
+<tr class="c-table__row memitem:a612cdd4755bf23d92c4c39c3d5ad5bb2" id="r_a612cdd4755bf23d92c4c39c3d5ad5bb2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a612cdd4755bf23d92c4c39c3d5ad5bb2">download</a> = download</td></tr>
+<tr class="c-table__row memitem:a1cea575acfe1456ef7d88a824383938c" id="r_a1cea575acfe1456ef7d88a824383938c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a1cea575acfe1456ef7d88a824383938c">verify_if_modified_since</a> = verify_if_modified_since</td></tr>
+<tr class="c-table__row memitem:adc86d5dfad48daf6385078303611a0ab" id="r_adc86d5dfad48daf6385078303611a0ab"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#adc86d5dfad48daf6385078303611a0ab">update_on_start</a> = update_on_start</td></tr>
+<tr class="c-table__row memitem:a6e622d3f02aa95d9bc0d112cf9279aa0" id="r_a6e622d3f02aa95d9bc0d112cf9279aa0"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a6e622d3f02aa95d9bc0d112cf9279aa0">updated_on_start</a> = False</td></tr>
+<tr class="c-table__row memitem:af655cbf64cf9d72f649d292ed9d0ca8e" id="r_af655cbf64cf9d72f649d292ed9d0ca8e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af655cbf64cf9d72f649d292ed9d0ca8e">data</a> = data</td></tr>
+<tr class="c-table__row memitem:a9c35a6e557e86be92887c16a11705f90" id="r_a9c35a6e557e86be92887c16a11705f90"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9c35a6e557e86be92887c16a11705f90">path</a> = path</td></tr>
+<tr class="c-table__row memitem:a0e215ee0a25e8e4a415602dcf13080b1" id="r_a0e215ee0a25e8e4a415602dcf13080b1"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a0e215ee0a25e8e4a415602dcf13080b1">updating</a> = False</td></tr>
+</table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
+<a id="abe56a83a30fa5fcb3e01dc960c00eea9" name="abe56a83a30fa5fcb3e01dc960c00eea9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#abe56a83a30fa5fcb3e01dc960c00eea9">&#9670;&#160;</a></span>__init__()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_engines.datafile.DataFile.__init__ <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.__init__ </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>flow_element</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>flow_element</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>identifier</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>identifier</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>update_url_params</em> = <code>None</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>update_url_params</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>data</em> = <code>None</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>path</em> = <code>&quot;&quot;</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>path</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>temp_directory</em> = <code>tempfile.gettempdir()</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>temp_directory</em></span><span class="paramdefsep"> = </span><span class="paramdefval">tempfile.gettempdir()</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>create_temp_copy</em> = <code>True</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>create_temp_copy</em></span><span class="paramdefsep"> = </span><span class="paramdefval">True</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>auto_update</em> = <code>True</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>auto_update</em></span><span class="paramdefsep"> = </span><span class="paramdefval">True</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>file_system_watcher</em> = <code>True</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>file_system_watcher</em></span><span class="paramdefsep"> = </span><span class="paramdefval">True</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>polling_interval</em> = <code>30</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>polling_interval</em></span><span class="paramdefsep"> = </span><span class="paramdefval">30</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>update_time_maximum_randomisation</em> = <code>10</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>update_time_maximum_randomisation</em></span><span class="paramdefsep"> = </span><span class="paramdefval">10</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>verify_md5</em> = <code>True</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>verify_md5</em></span><span class="paramdefsep"> = </span><span class="paramdefval">True</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>decompress</em> = <code>True</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>decompress</em></span><span class="paramdefsep"> = </span><span class="paramdefval">True</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>download</em> = <code>True</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>download</em></span><span class="paramdefsep"> = </span><span class="paramdefval">True</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>verify_if_modified_since</em> = <code>True</code>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>verify_if_modified_since</em></span><span class="paramdefsep"> = </span><span class="paramdefval">True</span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>update_on_start</em> = <code>False</code><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>update_on_start</em></span><span class="paramdefsep"> = </span><span class="paramdefval">False</span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Constructor for a <a class="el" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html" title="A datafile used by a FlowElement / Engine to get calculate properties values.">DataFile</a>. </p>
-<p>@type flow_element: FlowElement </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">flow_element</span> - The FlowElement using the datafile @type identifier : string </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">identifier</span> - : Name of the datafile @type update_url_params: dict </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">update_url_params</span> - Dictionary containing parameters used to construct the datafile update url @type data: mixed </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">data</span> - Data to use in the datafile if kept in memory rather than file @type path: string </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">path</span> - path to the data file itself @type temp_directory: string </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">temp_directory</span> - temporary file location (defaults to the operating system defualt) @type create_temp_copy: bool </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">create_temp_copy</span> - whether to copy datafile to temporary location when updating @type auto_update: bool </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red"></span> - auto_update: whether to automatically update the datafile when required @type file_system_watcher: bool </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">file_system_watcher</span> - whether to check the datafile's path for changes and update the connected FlowElement's data automatically when the file is changed in the operating system @type polling_interval: int </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">polling_interval</span> - How often to poll for updates to the datafile (minutes) @type update_time_maximum_randomisation : int </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">update_time_maximum_randomisation</span> - : Maximum randomisation offset in seconds to polling time interval @type verify_md5 : bool </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">verify_md5</span> - : whether to check a 'content-md5' header in the data file update service against the datafile to verify its contents @type decompress: bool </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red"></span> - is the datafile gziped when returning from the update service? @type download: bool </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">download</span> - should the datafile be downloaded or stored in memory @type update_on_start : bool </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">update_on_start</span> - : When this is set to true the datafile is updated / downloaded immediately on initialisation. This is useful if no initial datafile is present. @type verify_if_modified_since : bool </dd>
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">verify_if_modified_since</span> - : whether to check an "If-Modified-Since" header on the update service against the last datafile update date </dd>
+<p>@type flow_element: FlowElement </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flow_element</td><td>The FlowElement using the datafile @type identifier : string </td></tr>
+    <tr><td class="paramname">identifier</td><td>: Name of the datafile @type update_url_params: dict </td></tr>
+    <tr><td class="paramname">update_url_params</td><td>Dictionary containing parameters used to construct the datafile update url @type data: mixed </td></tr>
+    <tr><td class="paramname">data</td><td>Data to use in the datafile if kept in memory rather than file @type path: string </td></tr>
+    <tr><td class="paramname">path</td><td>path to the data file itself @type temp_directory: string </td></tr>
+    <tr><td class="paramname">temp_directory</td><td>temporary file location (defaults to the operating system defualt) @type create_temp_copy: bool </td></tr>
+    <tr><td class="paramname">create_temp_copy</td><td>whether to copy datafile to temporary location when updating @type auto_update: bool </td></tr>
+    <tr><td class="paramname"></td><td>auto_update: whether to automatically update the datafile when required @type file_system_watcher: bool </td></tr>
+    <tr><td class="paramname">file_system_watcher</td><td>whether to check the datafile's path for changes and update the connected FlowElement's data automatically when the file is changed in the operating system @type polling_interval: int </td></tr>
+    <tr><td class="paramname">polling_interval</td><td>How often to poll for updates to the datafile (minutes) @type update_time_maximum_randomisation : int </td></tr>
+    <tr><td class="paramname">update_time_maximum_randomisation</td><td>: Maximum randomisation offset in seconds to polling time interval @type verify_md5 : bool </td></tr>
+    <tr><td class="paramname">verify_md5</td><td>: whether to check a 'content-md5' header in the data file update service against the datafile to verify its contents @type decompress: bool </td></tr>
+    <tr><td class="paramname"></td><td>is the datafile gziped when returning from the update service? @type download: bool </td></tr>
+    <tr><td class="paramname">download</td><td>should the datafile be downloaded or stored in memory @type update_on_start : bool </td></tr>
+    <tr><td class="paramname">update_on_start</td><td>: When this is set to true the datafile is updated / downloaded immediately on initialisation. This is useful if no initial datafile is present. @type verify_if_modified_since : bool </td></tr>
+    <tr><td class="paramname">verify_if_modified_since</td><td>: whether to check an "If-Modified-Since" header on the update service against the last datafile update date </td></tr>
+  </table>
   </dd>
 </dl>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Function Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="adf694ab7f02938cb5a464d06edefccd4"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adf694ab7f02938cb5a464d06edefccd4">&#9670;&nbsp;</a></span>get_date_published()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="aee624f514878aa9716b5da1ed7d664e8" name="aee624f514878aa9716b5da1ed7d664e8"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aee624f514878aa9716b5da1ed7d664e8">&#9670;&#160;</a></span>get_date_published()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_engines.datafile.DataFile.get_date_published <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.get_date_published </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Function called to get the date the datafile was published. </p>
-<dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">date: Date the datafile was published </dd></dl>
-<!-- endIndent -->
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">date: Date the datafile was published </dd></dl>
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="aff9a6e39c867a77f3e02c22ec4315a20"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aff9a6e39c867a77f3e02c22ec4315a20">&#9670;&nbsp;</a></span>get_next_update()</h2>
+<a id="ad17b91ce60ee15c23b8f0c5294d6f59d" name="ad17b91ce60ee15c23b8f0c5294d6f59d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad17b91ce60ee15c23b8f0c5294d6f59d">&#9670;&#160;</a></span>get_next_update()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_engines.datafile.DataFile.get_next_update <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.get_next_update </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Function called to get the date of the next datafile version. </p>
-<dl class="c-list-definition return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">date: Date of the next update </dd></dl>
-<!-- endIndent -->
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">date: Date of the next update </dd></dl>
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="aa63b7f3d738542ed1dbaa75532b69605"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa63b7f3d738542ed1dbaa75532b69605">&#9670;&nbsp;</a></span>get_update_url()</h2>
+<a id="a1e69c920d7bbcc7802c5adba1fdf473b" name="a1e69c920d7bbcc7802c5adba1fdf473b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1e69c920d7bbcc7802c5adba1fdf473b">&#9670;&#160;</a></span>get_update_url()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_engines.datafile.DataFile.get_update_url <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.get_update_url </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Internal function that constructs the url for the datafile update service to use from the result of get_url_formatter. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a3f1c54c4be094971fe94f0b0666b3cd8"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3f1c54c4be094971fe94f0b0666b3cd8">&#9670;&nbsp;</a></span>get_url_formatter()</h2>
+<a id="a9323bf3324fa3189092cd88eeccaf297" name="a9323bf3324fa3189092cd88eeccaf297"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9323bf3324fa3189092cd88eeccaf297">&#9670;&#160;</a></span>get_url_formatter()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_engines.datafile.DataFile.get_url_formatter <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.get_url_formatter </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Function that constructs the url for the datafile update service to use. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a7c553b6ad36f342f12815a4f1a1421e4"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7c553b6ad36f342f12815a4f1a1421e4">&#9670;&nbsp;</a></span>refresh()</h2>
+<a id="a8b3fbf4aeaef9a99ed43dc8e68e3bcae" name="a8b3fbf4aeaef9a99ed43dc8e68e3bcae"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8b3fbf4aeaef9a99ed43dc8e68e3bcae">&#9670;&#160;</a></span>refresh()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def fiftyone_pipeline_engines.datafile.DataFile.refresh <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.refresh </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em>, <!-- endParameterName -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
         </tr>
-<!-- startParameterType -->
-        <tr>
+        <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>identifier</em><!-- endParameterName -->
-&#160;</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>identifier</em></span>&#160;)</td>
         </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Function called when datafile has been updated. </p>
-<p>Defaults to a refresh method on the attached FlowElement @type identifier : string </p><dl class="c-list-definition"><dt class="c-list-definition__title">Parameters</dt><dd class="c-list-definition__desc">
-    <tr><dd class="c-list-definition__desc"><span class="b-text--red">identifier</span> - : identifier of the datafile </dd>
+<p>Defaults to a refresh method on the attached FlowElement @type identifier : string </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">identifier</td><td>: identifier of the datafile </td></tr>
+  </table>
   </dd>
 </dl>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Data Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a019be0e6c9c23dae5e5a2b9a2f8536ff"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a019be0e6c9c23dae5e5a2b9a2f8536ff">&#9670;&nbsp;</a></span>auto_update</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a019be0e6c9c23dae5e5a2b9a2f8536ff" name="a019be0e6c9c23dae5e5a2b9a2f8536ff"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a019be0e6c9c23dae5e5a2b9a2f8536ff">&#9670;&#160;</a></span>auto_update</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.auto_update<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.auto_update = auto_update</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="aba1d356b3ba6894f2e41a63edc2e0530"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aba1d356b3ba6894f2e41a63edc2e0530">&#9670;&nbsp;</a></span>create_temp_copy</h2>
+<a id="aba1d356b3ba6894f2e41a63edc2e0530" name="aba1d356b3ba6894f2e41a63edc2e0530"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aba1d356b3ba6894f2e41a63edc2e0530">&#9670;&#160;</a></span>create_temp_copy</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.create_temp_copy<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.create_temp_copy = create_temp_copy</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="af655cbf64cf9d72f649d292ed9d0ca8e"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af655cbf64cf9d72f649d292ed9d0ca8e">&#9670;&nbsp;</a></span>data</h2>
+<a id="af655cbf64cf9d72f649d292ed9d0ca8e" name="af655cbf64cf9d72f649d292ed9d0ca8e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af655cbf64cf9d72f649d292ed9d0ca8e">&#9670;&#160;</a></span>data</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.data<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.data = data</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a754591a520a8b8ff69df4be0514fd4b3"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a754591a520a8b8ff69df4be0514fd4b3">&#9670;&nbsp;</a></span>decompress</h2>
+<a id="a754591a520a8b8ff69df4be0514fd4b3" name="a754591a520a8b8ff69df4be0514fd4b3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a754591a520a8b8ff69df4be0514fd4b3">&#9670;&#160;</a></span>decompress</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.decompress<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.decompress = decompress</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a612cdd4755bf23d92c4c39c3d5ad5bb2"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a612cdd4755bf23d92c4c39c3d5ad5bb2">&#9670;&nbsp;</a></span>download</h2>
+<a id="a612cdd4755bf23d92c4c39c3d5ad5bb2" name="a612cdd4755bf23d92c4c39c3d5ad5bb2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a612cdd4755bf23d92c4c39c3d5ad5bb2">&#9670;&#160;</a></span>download</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.download<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.download = download</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="ac0406bae7354b43da28dd8f9129cf3a9"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac0406bae7354b43da28dd8f9129cf3a9">&#9670;&nbsp;</a></span>file_system_watcher</h2>
+<a id="ac0406bae7354b43da28dd8f9129cf3a9" name="ac0406bae7354b43da28dd8f9129cf3a9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac0406bae7354b43da28dd8f9129cf3a9">&#9670;&#160;</a></span>file_system_watcher</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.file_system_watcher<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.file_system_watcher = file_system_watcher</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a82ca065a77d617c61a9c246e3b48ff66"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a82ca065a77d617c61a9c246e3b48ff66">&#9670;&nbsp;</a></span>flow_element</h2>
+<a id="a82ca065a77d617c61a9c246e3b48ff66" name="a82ca065a77d617c61a9c246e3b48ff66"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a82ca065a77d617c61a9c246e3b48ff66">&#9670;&#160;</a></span>flow_element</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.flow_element<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.flow_element = flow_element</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="ae5def9ea433fb176060d9d8edcdc86b9"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae5def9ea433fb176060d9d8edcdc86b9">&#9670;&nbsp;</a></span>identifier</h2>
+<a id="ae5def9ea433fb176060d9d8edcdc86b9" name="ae5def9ea433fb176060d9d8edcdc86b9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae5def9ea433fb176060d9d8edcdc86b9">&#9670;&#160;</a></span>identifier</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.identifier<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.identifier = identifier</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a9c35a6e557e86be92887c16a11705f90"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9c35a6e557e86be92887c16a11705f90">&#9670;&nbsp;</a></span>path</h2>
+<a id="a9c35a6e557e86be92887c16a11705f90" name="a9c35a6e557e86be92887c16a11705f90"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9c35a6e557e86be92887c16a11705f90">&#9670;&#160;</a></span>path</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.path<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.path = path</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a9d5903bdbba9e22e07e102bc9402ff65"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9d5903bdbba9e22e07e102bc9402ff65">&#9670;&nbsp;</a></span>polling_interval</h2>
+<a id="a9d5903bdbba9e22e07e102bc9402ff65" name="a9d5903bdbba9e22e07e102bc9402ff65"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9d5903bdbba9e22e07e102bc9402ff65">&#9670;&#160;</a></span>polling_interval</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.polling_interval<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.polling_interval = polling_interval</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a5a3306a6cbee381041d5032442e22510"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5a3306a6cbee381041d5032442e22510">&#9670;&nbsp;</a></span>temp_directory</h2>
+<a id="a5a3306a6cbee381041d5032442e22510" name="a5a3306a6cbee381041d5032442e22510"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5a3306a6cbee381041d5032442e22510">&#9670;&#160;</a></span>temp_directory</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.temp_directory<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.temp_directory = temp_directory</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="adc86d5dfad48daf6385078303611a0ab"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adc86d5dfad48daf6385078303611a0ab">&#9670;&nbsp;</a></span>update_on_start</h2>
+<a id="adc86d5dfad48daf6385078303611a0ab" name="adc86d5dfad48daf6385078303611a0ab"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adc86d5dfad48daf6385078303611a0ab">&#9670;&#160;</a></span>update_on_start</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.update_on_start<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.update_on_start = update_on_start</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="ae4aece2534f735cdd283d65486b0feef"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae4aece2534f735cdd283d65486b0feef">&#9670;&nbsp;</a></span>update_time_maximum_randomisation</h2>
+<a id="ae4aece2534f735cdd283d65486b0feef" name="ae4aece2534f735cdd283d65486b0feef"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae4aece2534f735cdd283d65486b0feef">&#9670;&#160;</a></span>update_time_maximum_randomisation</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.update_time_maximum_randomisation<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.update_time_maximum_randomisation = update_time_maximum_randomisation</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a8025a875e59491bc86c2e66cf24f3120"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8025a875e59491bc86c2e66cf24f3120">&#9670;&nbsp;</a></span>update_url_params</h2>
+<a id="a8025a875e59491bc86c2e66cf24f3120" name="a8025a875e59491bc86c2e66cf24f3120"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8025a875e59491bc86c2e66cf24f3120">&#9670;&#160;</a></span>update_url_params</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.update_url_params<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.update_url_params = update_url_params</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a7912fd3845dc22af724af7e910abb883"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7912fd3845dc22af724af7e910abb883">&#9670;&nbsp;</a></span>updated_on_start</h2>
+<a id="a6e622d3f02aa95d9bc0d112cf9279aa0" name="a6e622d3f02aa95d9bc0d112cf9279aa0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6e622d3f02aa95d9bc0d112cf9279aa0">&#9670;&#160;</a></span>updated_on_start</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.updated_on_start<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">bool fiftyone_pipeline_engines.datafile.DataFile.updated_on_start = False</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a84e34dd0d89abd2f30dcecc9f14cb3b8"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a84e34dd0d89abd2f30dcecc9f14cb3b8">&#9670;&nbsp;</a></span>updating</h2>
+<a id="a0e215ee0a25e8e4a415602dcf13080b1" name="a0e215ee0a25e8e4a415602dcf13080b1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0e215ee0a25e8e4a415602dcf13080b1">&#9670;&#160;</a></span>updating</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.updating<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">bool fiftyone_pipeline_engines.datafile.DataFile.updating = False</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a1cea575acfe1456ef7d88a824383938c"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1cea575acfe1456ef7d88a824383938c">&#9670;&nbsp;</a></span>verify_if_modified_since</h2>
+<a id="a1cea575acfe1456ef7d88a824383938c" name="a1cea575acfe1456ef7d88a824383938c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1cea575acfe1456ef7d88a824383938c">&#9670;&#160;</a></span>verify_if_modified_since</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.verify_if_modified_since<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.verify_if_modified_since = verify_if_modified_since</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a6a36b03407d41df05d4fe38ecf53d3ef"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6a36b03407d41df05d4fe38ecf53d3ef">&#9670;&nbsp;</a></span>verify_md5</h2>
+<a id="a6a36b03407d41df05d4fe38ecf53d3ef" name="a6a36b03407d41df05d4fe38ecf53d3ef"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6a36b03407d41df05d4fe38ecf53d3ef">&#9670;&#160;</a></span>verify_md5</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.verify_md5<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile.DataFile.verify_md5 = verify_md5</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-</section>
 </div><!-- primary -->
-  <div class="g-docs__sidebar">
-    <div class="c-section-nav">
-      <h5 class="c-section-nav__heading">On This Page</h5>
-        <ul class="c-section-nav__list">
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-methods">Public Member Functions</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-attribs">Public Attributes</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="classfiftyone__pipeline__engines_1_1datafile_1_1_data_file-members.html">List of all members</a></li>    </div>
-  </div>
-</div><!-- inner-->
+</div><!-- inner -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
     <p class="g-footer__copyright">Generated by
     <a href="http://www.doxygen.org/index.html">
-    <b>doxygen</b></a> 1.8.15
+    <b>doxygen</b></a> 1.17.0
   </p>
 </section>
 </div>

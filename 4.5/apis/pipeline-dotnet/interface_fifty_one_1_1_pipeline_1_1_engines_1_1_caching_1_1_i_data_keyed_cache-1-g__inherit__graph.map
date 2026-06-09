@@ -1,0 +1,16 @@
+<map id="FiftyOne.Pipeline.Engines.Caching.IDataKeyedCache&lt; TValue &gt;" name="FiftyOne.Pipeline.Engines.Caching.IDataKeyedCache&lt; TValue &gt;">
+<area shape="rect" id="Node000001" title="Represents a put cache where the key is a IFlowData instance." alt="" coords="225,34,419,89"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_caching_1_1_data_keyed_cache_base-1-g.html" title="Abstract base class for caches that use IFlowData as the key." alt="" coords="467,70,688,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="432,74,467,79,466,84,432,79"/>
+<area shape="rect" id="Node000007" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_caching_1_1_i_flow_cache.html" title="Represents a &#39;flow cache&#39; See the Specification." alt="" coords="482,5,673,45"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="432,43,481,36,482,41,433,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,41,177,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,59,225,59,225,64,191,64"/>
+<area shape="rect" id="Node000004" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_caching_1_1_default_flow_cache.html" title="The default &#39;flow cache&#39; implementation." alt="" coords="753,9,950,49"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="701,64,769,47,770,52,702,69"/>
+<area shape="rect" id="Node000005" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_trackers_1_1_tracker_base-1-g.html" title="The abstract base class for trackers." alt="" coords="736,77,967,117"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="702,95,736,95,736,100,702,100"/>
+<area shape="rect" id="Node000006" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_trackers_1_1_share_usage_tracker.html" title="A tracker used by share usage to attempt to avoid repeatedly sending data relating to the same user s..." alt="" coords="1015,77,1276,117"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="981,95,1015,95,1015,100,981,100"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="686,24,752,25,752,31,686,30"/>
+</map>

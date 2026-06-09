@@ -1,6 +1,10 @@
 <map id="fiftyone.pipeline.web.mvc.services.ClientsidePropertyService.Default" name="fiftyone.pipeline.web.mvc.services.ClientsidePropertyService.Default">
-<area shape="rect" id="node1" title=" " alt="" coords="593,39,845,80"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core_1_1_default.html" title="Default implementation of the ClientsidePropertyServiceCore interface." alt="" coords="273,5,545,47"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core.html" title="Class that provides functionality for the &#39;Client side overrides&#39; feature." alt="" coords="5,39,225,80"/>
-<area shape="rect" id="node4" href="$interfacefiftyone_1_1pipeline_1_1web_1_1mvc_1_1services_1_1_clientside_property_service.html" title="Spring framework service for the ClientsidePropertyServiceCore." alt="" coords="283,71,535,112"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="593,37,845,77"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core_1_1_default.html" title="Default implementation of the ClientsidePropertyServiceCore interface." alt="" coords="273,5,545,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="559,38,593,42,593,47,559,43"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core.html" title="Class that provides functionality for the &#39;Client side overrides&#39; feature." alt="" coords="5,37,225,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="239,41,273,37,273,43,239,47"/>
+<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1pipeline_1_1web_1_1mvc_1_1services_1_1_clientside_property_service.html" title="Spring framework service for the ClientsidePropertyServiceCore." alt="" coords="283,69,535,109"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="239,68,283,73,283,78,239,73"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="549,72,593,68,593,73,549,78"/>
 </map>

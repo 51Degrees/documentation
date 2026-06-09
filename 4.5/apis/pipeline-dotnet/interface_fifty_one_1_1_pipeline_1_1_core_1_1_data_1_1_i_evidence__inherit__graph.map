@@ -1,5 +1,7 @@
 <map id="FiftyOne.Pipeline.Core.Data.IEvidence" name="FiftyOne.Pipeline.Core.Data.IEvidence">
-<area shape="rect" id="node1" title="Interface to the evidence that is passed in to a Pipeline as part of a FlowData object See the Specif..." alt="" coords="5,80,211,121"/>
-<area shape="rect" id="node3" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_evidence.html" title="This class contains the evidence that is passed in to a Pipeline as part of a FlowData object See the..." alt="" coords="5,169,211,211"/>
-<area shape="rect" id="node2" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data.html" title="Represents property values" alt="" coords="79,5,137,32"/>
+<area shape="rect" id="Node000001" title="Interface to the evidence that is passed in to a Pipeline as part of a FlowData object See the Specif..." alt="" coords="5,93,211,133"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_evidence.html" title="This class contains the evidence that is passed in to a Pipeline as part of a FlowData object See the..." alt="" coords="5,181,211,221"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="111,147,111,181,105,181,105,147"/>
+<area shape="rect" id="Node000002" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data.html" title="Represents property values." alt="" coords="5,5,211,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,59,111,93,105,93,105,59"/>
 </map>

@@ -1,80 +1,84 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/apis/pipeline-python/classtests_1_1test__usage_1_1_usage_tests.html">
   <link rel="alternate" hreflang="en-US" href="/documentation/apis/pipeline-python/classtests_1_1test__usage_1_1_usage_tests.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.15"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>51Degrees Pipeline Python: tests.test_usage.UsageTests Class Reference</title>
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="dynsections.min.js"></script>
-<script type="text/javascript" src="resize.min.js"></script>
+<script type="text/javascript" src="codefolding.min.js"></script>
+<script type="text/javascript" src="clipboard.min.js"></script>
 <script type="text/javascript" src="navtreedata.min.js"></script>
 <script type="text/javascript" src="navtree.min.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(initResizable);
-/* @license-end */</script>
+<script type="text/javascript" src="cookie.min.js"></script>
 <link href="search/search.min.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.min.js"></script>
 <script type="text/javascript" src="search/search.min.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="l-docs-index p-doxygen">
-<div class="l-index__content">
-<!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
-<div id="titlearea" class="g-header g-header--docs">
-  <h1 class="c-brand">
-  <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png"/></a>
-  <span class="c-tagline">51Degrees Pipeline Python
-   &#160;<span id="projectnumber">4.5</span>
-  </span>
-  </h1>
-  <div id="projectalign" style="padding-left: 0.5em;">
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="/documentation/4.5/index.html"><img alt="Logo" src="logo-51Degrees-Docs.png"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">51Degrees Pipeline Python<span id="projectnumber">&#160;4.5</span>
+   </div>
    <div id="projectbrief">51Degrees Pipeline for Python</div>
-  </div>
-  <div id="main-nav"></div>
-     <div class="g-search">
+  </td>
+    <td>  <div class="g-search">
     <div class="c-search is-openable">
     <form class="c-search__form">
       <div id="MSearchBox" class="b-form-group b-form-group--with-icon">
         <label for="inputSearch" class="b-text--hidden">Search</label>
         <img id="MSearchSelect" src="icon-search.svg" class="b-icon" alt="Search" 
-                 onmouseover="return searchBox.OnSearchSelectShow()"
-                 onmouseout="return searchBox.OnSearchSelectHide()"/>
-        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" id="inputSearch" placeholder="Type a class, namespace etc." aria-label="Search"
-                 onfocus="searchBox.OnSearchFieldFocus(true)" 
-                 onblur="searchBox.OnSearchFieldFocus(false)" 
-                 onkeyup="searchBox.OnSearchFieldChange(event)">
-         <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+             onmouseover="return searchBox.OnSearchSelectShow()"
+             onmouseout="return searchBox.OnSearchSelectHide()"/>
+        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" placeholder="Type a class, namespace etc." aria-label="Search"
+             onfocus="searchBox.OnSearchFieldFocus(true)" 
+             onblur="searchBox.OnSearchFieldFocus(false)" 
+             onkeyup="searchBox.OnSearchFieldChange(event)"/>
+        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
       </div>
     </form>
+    </div>
   </div>
-</div>
+</td>
+ </tr>
+ </tbody>
+</table>
 </div>
 <!-- end header part -->
-<main class="g-main">
-<!-- Generated by Doxygen 1.8.15 -->
+<!-- Generated by Doxygen 1.17.0 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search');
-/* @license-end */
+let searchBox = new SearchBox("searchBox", "search/",'.html');
 </script>
-<!-- top -->
-	<div class="g-docs__sidenav">																														         <nav id="nav-tree-contents" class="c-sidenav">																														     <h4 class="c-sidenav__heading">Documentation</h4>																									         <div id="nav-sync" class="sync"></div>
-  <ul class="c-sidenav__list">																														     </ul>																																				   </nav>    </div><script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classtests_1_1test__usage_1_1_usage_tests.html','');});
-/* @license-end */
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div class="g-docs__sidenav">
+  <nav id="nav-tree-contents" class="c-sidenav">
+    <h4 class="c-sidenav__heading">Documentation</h4>
+    <div id="nav-sync" class="sync"></div>
+  </nav>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classtests_1_1test__usage_1_1_usage_tests.html','','classtests_1_1test__usage_1_1_usage_tests-members'); });
 </script>
 <div id="doc-content" class="g-docs__content">
 <!-- window showing the filter options -->
@@ -86,1101 +90,579 @@ $(document).ready(function(){initNavTree('classtests_1_1test__usage_1_1_usage_te
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="g-docs__header">
-<div class="c-breadcrumb">
-  <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacetests.html">tests</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="namespacetests_1_1test__usage.html">test_usage</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="classtests_1_1test__usage_1_1_usage_tests.html">UsageTests</a></li>  </ul>
-</div>
-<h2 class="g-docs__page-title">tests.test_usage.UsageTests Class Reference</h2></div><!--header-->
+<h1 class="g-docs__page-title">tests.test_usage.UsageTests Class Reference</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<section class="g-docs__section">
-<a name="details" id="details"></a><h2 class="g-docs__section-heading">Detailed Description</h2>
-<section class="g-docs__section"><p>The Tests. </p>
-</section></section>
-<!-- start ClassInheritanceGraph -->
-<section class="g-docs__section">
-<h2 class="g-docs__section-heading">
+<a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
+<div class="textblock"><p>The Tests. </p>
+</div><h2 class="g-docs__section-heading">
 Inheritance diagram for tests.test_usage.UsageTests:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtests_1_1test__usage_1_1_usage_tests__inherit__graph.svg" width="218" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classtests_1_1test__usage_1_1_usage_tests__inherit__graph.svg" width="218" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-</section>
-<!-- end ClassInheritanceGraph -->
-<section class="g-docs__section">
 <h2 class="g-docs__section-heading">
 Collaboration diagram for tests.test_usage.UsageTests:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classtests_1_1test__usage_1_1_usage_tests__coll__graph.svg" width="218" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classtests_1_1test__usage_1_1_usage_tests__coll__graph.svg" width="218" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-</section>
-<!-- start MemberDeclStart -->
-<!-- startMemberSections -->
-<!-- end MemberDeclStart -->
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-methods"></a>
-Public Member Functions</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a48bd6f25de282296b30af17eb3c32fc7"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#a48bd6f25de282296b30af17eb3c32fc7">setUpClass</a> (cls)
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:abbae3c4685a36f1280f3d97a7a01cb04"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#abbae3c4685a36f1280f3d97a7a01cb04">setUp</a> (self)
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:aa9b873de7c6f1b760149c37ab552bd70"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#aa9b873de7c6f1b760149c37ab552bd70">tearDownClass</a> (cls)
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:af16b731d264bb97311ebbca02f03b32c"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#af16b731d264bb97311ebbca02f03b32c">startReceiver</a> (cls)
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a80b7a304b5b9156e3a105c5da7ee8f6e"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#a80b7a304b5b9156e3a105c5da7ee8f6e">stopReceiver</a> (cls)
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:adb238d9f2d217a1637d725a38bce4285"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#adb238d9f2d217a1637d725a38bce4285">waitForUsageThreads</a> (self)
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:aa611a664e8997f44be2287b3e9fb49b9"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#aa611a664e8997f44be2287b3e9fb49b9">test_data_received</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:aa611a664e8997f44be2287b3e9fb49b9">Check that data is received from the share usage element.  <a href="#aa611a664e8997f44be2287b3e9fb49b9">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a68fde0b3927b43e53da9803ceab535d1"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#a68fde0b3927b43e53da9803ceab535d1">test_data_correct</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a68fde0b3927b43e53da9803ceab535d1">Check that the data received from the share usage element is correct.  <a href="#a68fde0b3927b43e53da9803ceab535d1">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a91eaf2cc7a1a0337d54a734a0edacf56"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#a91eaf2cc7a1a0337d54a734a0edacf56">test_includes_header</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a91eaf2cc7a1a0337d54a734a0edacf56">Check that the data received from the share usage element contains the headers which were in the evidence.  <a href="#a91eaf2cc7a1a0337d54a734a0edacf56">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a7051cd44111d2c4b0ed8d4572a6a79d4"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#a7051cd44111d2c4b0ed8d4572a6a79d4">test_client_ip</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a7051cd44111d2c4b0ed8d4572a6a79d4">Check that the data received from the share usage element includes the client IP from the evidence.  <a href="#a7051cd44111d2c4b0ed8d4572a6a79d4">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:aca9bf9613ec66d68bb98fef05eec6949"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#aca9bf9613ec66d68bb98fef05eec6949">test_two_events_first</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:aca9bf9613ec66d68bb98fef05eec6949">Check that a single event is not sent when the requested package size is 2.  <a href="#aca9bf9613ec66d68bb98fef05eec6949">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a7cf0e361938ab02ede2a8e7bf306938e"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#a7cf0e361938ab02ede2a8e7bf306938e">test_two_events_second</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a7cf0e361938ab02ede2a8e7bf306938e">Check that a single event is not sent when the requested package size is 2.  <a href="#a7cf0e361938ab02ede2a8e7bf306938e">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a618a439f43fd6a072b73bddb03d00f40"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#a618a439f43fd6a072b73bddb03d00f40">test_ignore_headers</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a618a439f43fd6a072b73bddb03d00f40">Check that the share usage element respects the headerBlacklist.  <a href="#a618a439f43fd6a072b73bddb03d00f40">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a74f86b0e6688839950cab0a755df7d4e"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#a74f86b0e6688839950cab0a755df7d4e">test_queue_cleared</a> (self)
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a0784a4d1b2741a032b1b8ba612fb9b1d"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#a0784a4d1b2741a032b1b8ba612fb9b1d">test_session_and_sequence</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a0784a4d1b2741a032b1b8ba612fb9b1d">Check that session and sequence values are included.  <a href="#a0784a4d1b2741a032b1b8ba612fb9b1d">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a96f6063b8ddd6672cc1821036c5fb101"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#a96f6063b8ddd6672cc1821036c5fb101">test_invalid_char</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a96f6063b8ddd6672cc1821036c5fb101">Check that invalid characters are escaped correctly.  <a href="#a96f6063b8ddd6672cc1821036c5fb101">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:afcf6a114ec3a26260def4ee43cc871c0"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#afcf6a114ec3a26260def4ee43cc871c0">test_truncated_value</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:afcf6a114ec3a26260def4ee43cc871c0">Check that long values are truncated correctly.  <a href="#afcf6a114ec3a26260def4ee43cc871c0">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:ae320bc58a8afaedb849a1def8de85b60"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#ae320bc58a8afaedb849a1def8de85b60">test_send_more_than_once</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:ae320bc58a8afaedb849a1def8de85b60">Check that the queue of data is correctly reset, and used for the next set of requests.  <a href="#ae320bc58a8afaedb849a1def8de85b60">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a30da30b34d556d2d6aff18eaf8e09636"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#a30da30b34d556d2d6aff18eaf8e09636">test_low_percentage</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a30da30b34d556d2d6aff18eaf8e09636">Check that small portion sharing is done correctly.  <a href="#a30da30b34d556d2d6aff18eaf8e09636">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a91eaf2cc7a1a0337d54a734a0edacf56"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#a91eaf2cc7a1a0337d54a734a0edacf56">test_includes_header</a> (self)
-<!-- startMemberDescription -->
-<div class="c-table__desc memdesc:a91eaf2cc7a1a0337d54a734a0edacf56">Check that XML characters are escaped correctly.  <a href="#a91eaf2cc7a1a0337d54a734a0edacf56">More...</a><!-- endMemberDescription -->
-</div></td></tr>
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:aa1f1ed5948c12c85c9940153757a351e"><td class="c-table__cell">def<!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#aa1f1ed5948c12c85c9940153757a351e">test_zzz_timeout</a> (self)
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-<!-- startMemberHeader -->
-<h2 class="g-docs__section-heading">
-<a name="pub-attribs"></a>
-Public Attributes</h2>
-<!-- endMemberHeader -->
-<!-- startMemberList -->
-<!-- start member list -->
-<div class="g-table g-table--overflow">
-<table class="c-table c-table--members">
-<tbody class="c-table__body">
-<!-- member dec start -->
-<!-- startMemberItem() -->
-<tr class="c-table__row memitem:a65571a95c490494c4e07a7f65a183ff4"><td class="c-table__cell"><!-- insertMemberAlign -->
-&#160;</td><td class="c-table__cell"><a class="el" href="classtests_1_1test__usage_1_1_usage_tests.html#a65571a95c490494c4e07a7f65a183ff4">receiver</a>
-</div></td></tr>
-<!-- endMemberList -->
-<!-- end member list -->
-</tbody></table></div>
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<section class="g-docs__section">
-</section>
-<!-- start MemberGroups -->
-<!-- end MemberGroups -->
-<section class="g-docs__section">
-<h2 class="g-docs__section-heading">Member Function Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="abbae3c4685a36f1280f3d97a7a01cb04"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#abbae3c4685a36f1280f3d97a7a01cb04">&#9670;&nbsp;</a></span>setUp()</h2>
+<table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a7d35d750fbb961a8cb458127f9f959d6" id="r_a7d35d750fbb961a8cb458127f9f959d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7d35d750fbb961a8cb458127f9f959d6">setUpClass</a> (cls)</td></tr>
+<tr class="c-table__row memitem:a26a9fae8a5aed210736f59b029abc95b" id="r_a26a9fae8a5aed210736f59b029abc95b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a26a9fae8a5aed210736f59b029abc95b">setUp</a> (self)</td></tr>
+<tr class="c-table__row memitem:ac2574a83b9ecc679ef24abca68a61dbb" id="r_ac2574a83b9ecc679ef24abca68a61dbb"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac2574a83b9ecc679ef24abca68a61dbb">tearDownClass</a> (cls)</td></tr>
+<tr class="c-table__row memitem:a2ae972a67d3079a474009a40c91ae0f5" id="r_a2ae972a67d3079a474009a40c91ae0f5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2ae972a67d3079a474009a40c91ae0f5">startReceiver</a> (cls)</td></tr>
+<tr class="c-table__row memitem:a627112d250cb72ee805b0969f7e86d26" id="r_a627112d250cb72ee805b0969f7e86d26"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a627112d250cb72ee805b0969f7e86d26">stopReceiver</a> (cls)</td></tr>
+<tr class="c-table__row memitem:af3e3283d6e6b480f20c3863b01c2dc58" id="r_af3e3283d6e6b480f20c3863b01c2dc58"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af3e3283d6e6b480f20c3863b01c2dc58">waitForUsageThreads</a> (self)</td></tr>
+<tr class="c-table__row memitem:a865c7c1c8fdd5ef554341b7f9b9a48ad" id="r_a865c7c1c8fdd5ef554341b7f9b9a48ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a865c7c1c8fdd5ef554341b7f9b9a48ad">test_data_received</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a865c7c1c8fdd5ef554341b7f9b9a48ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that data is received from the share usage element.  <br /></td></tr>
+<tr class="c-table__row memitem:a6366d8d844bbc27bda3c5585e9fb9663" id="r_a6366d8d844bbc27bda3c5585e9fb9663"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6366d8d844bbc27bda3c5585e9fb9663">test_data_correct</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a6366d8d844bbc27bda3c5585e9fb9663"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the data received from the share usage element is correct.  <br /></td></tr>
+<tr class="c-table__row memitem:ab9b1f6e9de13b34d414866c7ee8c23d6" id="r_ab9b1f6e9de13b34d414866c7ee8c23d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab9b1f6e9de13b34d414866c7ee8c23d6">test_includes_header</a> (self)</td></tr>
+<tr class="c-table__row memdesc:ab9b1f6e9de13b34d414866c7ee8c23d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the data received from the share usage element contains the headers which were in the evidence.  <br /></td></tr>
+<tr class="c-table__row memitem:adc93615430e0518accc62c0ad62d3edd" id="r_adc93615430e0518accc62c0ad62d3edd"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#adc93615430e0518accc62c0ad62d3edd">test_client_ip</a> (self)</td></tr>
+<tr class="c-table__row memdesc:adc93615430e0518accc62c0ad62d3edd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the data received from the share usage element includes the client IP from the evidence.  <br /></td></tr>
+<tr class="c-table__row memitem:af159f600286e6505287e6f259e1203a9" id="r_af159f600286e6505287e6f259e1203a9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af159f600286e6505287e6f259e1203a9">test_two_events_first</a> (self)</td></tr>
+<tr class="c-table__row memdesc:af159f600286e6505287e6f259e1203a9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that a single event is not sent when the requested package size is 2.  <br /></td></tr>
+<tr class="c-table__row memitem:a2c88c19087e058d86c5b8a18dbe2d08e" id="r_a2c88c19087e058d86c5b8a18dbe2d08e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2c88c19087e058d86c5b8a18dbe2d08e">test_two_events_second</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a2c88c19087e058d86c5b8a18dbe2d08e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that a single event is not sent when the requested package size is 2.  <br /></td></tr>
+<tr class="c-table__row memitem:ac60e8ebc54505dbc1fbcef929c94b892" id="r_ac60e8ebc54505dbc1fbcef929c94b892"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac60e8ebc54505dbc1fbcef929c94b892">test_ignore_headers</a> (self)</td></tr>
+<tr class="c-table__row memdesc:ac60e8ebc54505dbc1fbcef929c94b892"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the share usage element respects the headerBlacklist.  <br /></td></tr>
+<tr class="c-table__row memitem:ab6a9a7204f1ae612f3a3147e229e9505" id="r_ab6a9a7204f1ae612f3a3147e229e9505"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab6a9a7204f1ae612f3a3147e229e9505">test_queue_cleared</a> (self)</td></tr>
+<tr class="c-table__row memitem:abbc4d0337969ff941691497167d3c05c" id="r_abbc4d0337969ff941691497167d3c05c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#abbc4d0337969ff941691497167d3c05c">test_session_and_sequence</a> (self)</td></tr>
+<tr class="c-table__row memdesc:abbc4d0337969ff941691497167d3c05c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that session and sequence values are included.  <br /></td></tr>
+<tr class="c-table__row memitem:a11261c7e49bb8bd487b94c68c112ed3a" id="r_a11261c7e49bb8bd487b94c68c112ed3a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a11261c7e49bb8bd487b94c68c112ed3a">test_invalid_char</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a11261c7e49bb8bd487b94c68c112ed3a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that invalid characters are escaped correctly.  <br /></td></tr>
+<tr class="c-table__row memitem:a849554cb193e64079f7b47ca097cc120" id="r_a849554cb193e64079f7b47ca097cc120"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a849554cb193e64079f7b47ca097cc120">test_truncated_value</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a849554cb193e64079f7b47ca097cc120"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that long values are truncated correctly.  <br /></td></tr>
+<tr class="c-table__row memitem:a469d86cb53ccea73c80a78d34f415be6" id="r_a469d86cb53ccea73c80a78d34f415be6"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a469d86cb53ccea73c80a78d34f415be6">test_send_more_than_once</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a469d86cb53ccea73c80a78d34f415be6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the queue of data is correctly reset, and used for the next set of requests.  <br /></td></tr>
+<tr class="c-table__row memitem:a01b274ced17975f62a69ad328c1b3078" id="r_a01b274ced17975f62a69ad328c1b3078"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a01b274ced17975f62a69ad328c1b3078">test_low_percentage</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a01b274ced17975f62a69ad328c1b3078"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that small portion sharing is done correctly.  <br /></td></tr>
+<tr class="c-table__row memitem:ab9b1f6e9de13b34d414866c7ee8c23d6" id="r_ab9b1f6e9de13b34d414866c7ee8c23d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab9b1f6e9de13b34d414866c7ee8c23d6">test_includes_header</a> (self)</td></tr>
+<tr class="c-table__row memdesc:ab9b1f6e9de13b34d414866c7ee8c23d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that XML characters are escaped correctly.  <br /></td></tr>
+<tr class="c-table__row memitem:a2339a41d886702c17048e6ac8475cabf" id="r_a2339a41d886702c17048e6ac8475cabf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2339a41d886702c17048e6ac8475cabf">test_zzz_timeout</a> (self)</td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a65571a95c490494c4e07a7f65a183ff4" id="r_a65571a95c490494c4e07a7f65a183ff4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a65571a95c490494c4e07a7f65a183ff4">receiver</a> = <a class="el" href="classtests_1_1test__usage_1_1_receiver_thread.html">ReceiverThread</a>(<a class="el" href="namespacetests_1_1test__usage.html#a8b8e18212c8dbe1ff466f3e864e0bf47">app</a>)</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a26a9fae8a5aed210736f59b029abc95b" name="a26a9fae8a5aed210736f59b029abc95b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a26a9fae8a5aed210736f59b029abc95b">&#9670;&#160;</a></span>setUp()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.setUp <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.setUp </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a48bd6f25de282296b30af17eb3c32fc7"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a48bd6f25de282296b30af17eb3c32fc7">&#9670;&nbsp;</a></span>setUpClass()</h2>
+<a id="a7d35d750fbb961a8cb458127f9f959d6" name="a7d35d750fbb961a8cb458127f9f959d6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7d35d750fbb961a8cb458127f9f959d6">&#9670;&#160;</a></span>setUpClass()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.setUpClass <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.setUpClass </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>cls</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>cls</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="af16b731d264bb97311ebbca02f03b32c"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af16b731d264bb97311ebbca02f03b32c">&#9670;&nbsp;</a></span>startReceiver()</h2>
+<a id="a2ae972a67d3079a474009a40c91ae0f5" name="a2ae972a67d3079a474009a40c91ae0f5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2ae972a67d3079a474009a40c91ae0f5">&#9670;&#160;</a></span>startReceiver()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.startReceiver <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.startReceiver </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>cls</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>cls</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a80b7a304b5b9156e3a105c5da7ee8f6e"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a80b7a304b5b9156e3a105c5da7ee8f6e">&#9670;&nbsp;</a></span>stopReceiver()</h2>
+<a id="a627112d250cb72ee805b0969f7e86d26" name="a627112d250cb72ee805b0969f7e86d26"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a627112d250cb72ee805b0969f7e86d26">&#9670;&#160;</a></span>stopReceiver()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.stopReceiver <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.stopReceiver </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>cls</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>cls</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="aa9b873de7c6f1b760149c37ab552bd70"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa9b873de7c6f1b760149c37ab552bd70">&#9670;&nbsp;</a></span>tearDownClass()</h2>
+<a id="ac2574a83b9ecc679ef24abca68a61dbb" name="ac2574a83b9ecc679ef24abca68a61dbb"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac2574a83b9ecc679ef24abca68a61dbb">&#9670;&#160;</a></span>tearDownClass()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.tearDownClass <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.tearDownClass </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>cls</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>cls</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a7051cd44111d2c4b0ed8d4572a6a79d4"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7051cd44111d2c4b0ed8d4572a6a79d4">&#9670;&nbsp;</a></span>test_client_ip()</h2>
+<a id="adc93615430e0518accc62c0ad62d3edd" name="adc93615430e0518accc62c0ad62d3edd"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adc93615430e0518accc62c0ad62d3edd">&#9670;&#160;</a></span>test_client_ip()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_client_ip <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_client_ip </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Check that the data received from the share usage element includes the client IP from the evidence. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a68fde0b3927b43e53da9803ceab535d1"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a68fde0b3927b43e53da9803ceab535d1">&#9670;&nbsp;</a></span>test_data_correct()</h2>
+<a id="a6366d8d844bbc27bda3c5585e9fb9663" name="a6366d8d844bbc27bda3c5585e9fb9663"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6366d8d844bbc27bda3c5585e9fb9663">&#9670;&#160;</a></span>test_data_correct()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_data_correct <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_data_correct </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Check that the data received from the share usage element is correct. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="aa611a664e8997f44be2287b3e9fb49b9"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa611a664e8997f44be2287b3e9fb49b9">&#9670;&nbsp;</a></span>test_data_received()</h2>
+<a id="a865c7c1c8fdd5ef554341b7f9b9a48ad" name="a865c7c1c8fdd5ef554341b7f9b9a48ad"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a865c7c1c8fdd5ef554341b7f9b9a48ad">&#9670;&#160;</a></span>test_data_received()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_data_received <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_data_received </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Check that data is received from the share usage element. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a618a439f43fd6a072b73bddb03d00f40"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a618a439f43fd6a072b73bddb03d00f40">&#9670;&nbsp;</a></span>test_ignore_headers()</h2>
+<a id="ac60e8ebc54505dbc1fbcef929c94b892" name="ac60e8ebc54505dbc1fbcef929c94b892"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac60e8ebc54505dbc1fbcef929c94b892">&#9670;&#160;</a></span>test_ignore_headers()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_ignore_headers <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_ignore_headers </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Check that the share usage element respects the headerBlacklist. </p>
 <p>When header names are added to the list, values for them should not be included in the data shared. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a91eaf2cc7a1a0337d54a734a0edacf56"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a91eaf2cc7a1a0337d54a734a0edacf56">&#9670;&nbsp;</a></span>test_includes_header() <span class="c-member__count">[1/2]</span></h2>
+<a id="ab9b1f6e9de13b34d414866c7ee8c23d6" name="ab9b1f6e9de13b34d414866c7ee8c23d6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab9b1f6e9de13b34d414866c7ee8c23d6">&#9670;&#160;</a></span>test_includes_header() <span class="c-member__count">[1/2]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_includes_header <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_includes_header </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-
-<p>Check that the data received from the share usage element contains the headers which were in the evidence. </p>
-<!-- endIndent -->
-
-</div>
-</div>
-</article>
-<article class="c-member">
-<a id="a91eaf2cc7a1a0337d54a734a0edacf56"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a91eaf2cc7a1a0337d54a734a0edacf56">&#9670;&nbsp;</a></span>test_includes_header() <span class="c-member__count">[2/2]</span></h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-<!-- startMemberDocName -->
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_includes_header <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
-          <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
-        </tr>
-<!-- endMemberDoc -->
-          </table>
-        </div>
-      </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Check that XML characters are escaped correctly. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a96f6063b8ddd6672cc1821036c5fb101"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a96f6063b8ddd6672cc1821036c5fb101">&#9670;&nbsp;</a></span>test_invalid_char()</h2>
+<a id="ab9b1f6e9de13b34d414866c7ee8c23d6" name="ab9b1f6e9de13b34d414866c7ee8c23d6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab9b1f6e9de13b34d414866c7ee8c23d6">&#9670;&#160;</a></span>test_includes_header() <span class="c-member__count">[2/2]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_invalid_char <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_includes_header </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
+
+<p>Check that the data received from the share usage element contains the headers which were in the evidence. </p>
+
+</div>
+</div>
+<a id="a11261c7e49bb8bd487b94c68c112ed3a" name="a11261c7e49bb8bd487b94c68c112ed3a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a11261c7e49bb8bd487b94c68c112ed3a">&#9670;&#160;</a></span>test_invalid_char()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_invalid_char </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
 
 <p>Check that invalid characters are escaped correctly. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a30da30b34d556d2d6aff18eaf8e09636"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a30da30b34d556d2d6aff18eaf8e09636">&#9670;&nbsp;</a></span>test_low_percentage()</h2>
+<a id="a01b274ced17975f62a69ad328c1b3078" name="a01b274ced17975f62a69ad328c1b3078"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a01b274ced17975f62a69ad328c1b3078">&#9670;&#160;</a></span>test_low_percentage()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_low_percentage <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_low_percentage </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Check that small portion sharing is done correctly. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a74f86b0e6688839950cab0a755df7d4e"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a74f86b0e6688839950cab0a755df7d4e">&#9670;&nbsp;</a></span>test_queue_cleared()</h2>
+<a id="ab6a9a7204f1ae612f3a3147e229e9505" name="ab6a9a7204f1ae612f3a3147e229e9505"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab6a9a7204f1ae612f3a3147e229e9505">&#9670;&#160;</a></span>test_queue_cleared()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_queue_cleared <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_queue_cleared </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="ae320bc58a8afaedb849a1def8de85b60"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae320bc58a8afaedb849a1def8de85b60">&#9670;&nbsp;</a></span>test_send_more_than_once()</h2>
+<a id="a469d86cb53ccea73c80a78d34f415be6" name="a469d86cb53ccea73c80a78d34f415be6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a469d86cb53ccea73c80a78d34f415be6">&#9670;&#160;</a></span>test_send_more_than_once()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_send_more_than_once <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_send_more_than_once </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Check that the queue of data is correctly reset, and used for the next set of requests. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a0784a4d1b2741a032b1b8ba612fb9b1d"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0784a4d1b2741a032b1b8ba612fb9b1d">&#9670;&nbsp;</a></span>test_session_and_sequence()</h2>
+<a id="abbc4d0337969ff941691497167d3c05c" name="abbc4d0337969ff941691497167d3c05c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#abbc4d0337969ff941691497167d3c05c">&#9670;&#160;</a></span>test_session_and_sequence()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_session_and_sequence <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_session_and_sequence </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Check that session and sequence values are included. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="afcf6a114ec3a26260def4ee43cc871c0"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afcf6a114ec3a26260def4ee43cc871c0">&#9670;&nbsp;</a></span>test_truncated_value()</h2>
+<a id="a849554cb193e64079f7b47ca097cc120" name="a849554cb193e64079f7b47ca097cc120"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a849554cb193e64079f7b47ca097cc120">&#9670;&#160;</a></span>test_truncated_value()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_truncated_value <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_truncated_value </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Check that long values are truncated correctly. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="aca9bf9613ec66d68bb98fef05eec6949"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aca9bf9613ec66d68bb98fef05eec6949">&#9670;&nbsp;</a></span>test_two_events_first()</h2>
+<a id="af159f600286e6505287e6f259e1203a9" name="af159f600286e6505287e6f259e1203a9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af159f600286e6505287e6f259e1203a9">&#9670;&#160;</a></span>test_two_events_first()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_two_events_first <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_two_events_first </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Check that a single event is not sent when the requested package size is 2. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="a7cf0e361938ab02ede2a8e7bf306938e"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7cf0e361938ab02ede2a8e7bf306938e">&#9670;&nbsp;</a></span>test_two_events_second()</h2>
+<a id="a2c88c19087e058d86c5b8a18dbe2d08e" name="a2c88c19087e058d86c5b8a18dbe2d08e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2c88c19087e058d86c5b8a18dbe2d08e">&#9670;&#160;</a></span>test_two_events_second()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_two_events_second <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_two_events_second </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
+</div><div class="c-member__body">
 
 <p>Check that a single event is not sent when the requested package size is 2. </p>
-<!-- endIndent -->
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="aa1f1ed5948c12c85c9940153757a351e"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa1f1ed5948c12c85c9940153757a351e">&#9670;&nbsp;</a></span>test_zzz_timeout()</h2>
+<a id="a2339a41d886702c17048e6ac8475cabf" name="a2339a41d886702c17048e6ac8475cabf"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2339a41d886702c17048e6ac8475cabf">&#9670;&#160;</a></span>test_zzz_timeout()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.test_zzz_timeout <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_zzz_timeout </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<article class="c-member">
-<a id="adb238d9f2d217a1637d725a38bce4285"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adb238d9f2d217a1637d725a38bce4285">&#9670;&nbsp;</a></span>waitForUsageThreads()</h2>
+<a id="af3e3283d6e6b480f20c3863b01c2dc58" name="af3e3283d6e6b480f20c3863b01c2dc58"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af3e3283d6e6b480f20c3863b01c2dc58">&#9670;&#160;</a></span>waitForUsageThreads()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">def tests.test_usage.UsageTests.waitForUsageThreads <!-- endMemberDocName -->
-</td>
-<!-- startParameterList -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.waitForUsageThreads </td>
           <td>(</td>
-<!-- startFirstParameterType -->
-          <td class="c-table__cell"><!-- endParameterType -->
-&#160;</td>
-<!-- startParameterName -->
-          <td class="c-table__cell"><em>self</em><!-- endParameterName -->
-</td><td>)</td>
-          <td><!-- endParameterList -->
-</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
         </tr>
-<!-- endMemberDoc -->
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-<h2 class="g-docs__section-heading">Member Data Documentation</h2>
-<!-- startMemberDocList -->
-<article class="c-member">
-<a id="a65571a95c490494c4e07a7f65a183ff4"></a><!-- startMemberDoc -->
-
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65571a95c490494c4e07a7f65a183ff4">&#9670;&nbsp;</a></span>receiver</h2>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a65571a95c490494c4e07a7f65a183ff4" name="a65571a95c490494c4e07a7f65a183ff4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65571a95c490494c4e07a7f65a183ff4">&#9670;&#160;</a></span>receiver</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<!-- startMemberDocName -->
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">tests.test_usage.UsageTests.receiver<!-- endMemberDocName -->
-</td>
-<!-- endMemberDoc -->
+              <td class="c-table__cell">tests.test_usage.UsageTests.receiver = <a class="el" href="classtests_1_1test__usage_1_1_receiver_thread.html">ReceiverThread</a>(<a class="el" href="namespacetests_1_1test__usage.html#a8b8e18212c8dbe1ff466f3e864e0bf47">app</a>)</td>
             </tr>
           </table>
         </div>
       </div>
-</div><!-- startIndent -->
-<div class="c-member__body">
-<!-- endIndent -->
+</div><div class="c-member__body">
 
 </div>
 </div>
-</article>
-<!-- endMemberDocList -->
-</section>
 </div><!-- primary -->
-  <div class="g-docs__sidebar">
-    <div class="c-section-nav">
-      <h5 class="c-section-nav__heading">On This Page</h5>
-        <ul class="c-section-nav__list">
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-methods">Public Member Functions</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="#pub-attribs">Public Attributes</a></li>
-<li class="c-section-nav__item"><a class="c-section-nav__link" href="classtests_1_1test__usage_1_1_usage_tests-members.html">List of all members</a></li>    </div>
-  </div>
-</div><!-- inner-->
+</div><!-- inner -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
     <p class="g-footer__copyright">Generated by
     <a href="http://www.doxygen.org/index.html">
-    <b>doxygen</b></a> 1.8.15
+    <b>doxygen</b></a> 1.17.0
   </p>
 </section>
 </div>

@@ -1,36 +1,31 @@
 /*
-@ @licstart  The following is the entire license notice for the
-JavaScript code in this file.
+ @licstart  The following is the entire license notice for the JavaScript code in this file.
 
-Copyright (C) 1997-2017 by Dimitri van Heesch
+ The MIT License (MIT)
 
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
+ Copyright (C) 1997-2020 by Dimitri van Heesch
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
 
-You should have received a copy of the GNU General Public License along
-with this program; if not, write to the Free Software Foundation, Inc.,
-51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ The above copyright notice and this permission notice shall be included in all copies or
+ substantial portions of the Software.
 
-@licend  The above is the entire license notice
-for the JavaScript code in this file
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var NAVTREE =
 [
-    [ "API Specific CI Approach", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_inte52c006b2bd2f424d294bbe13f380298.html", null ],
-    [ "<img src=\"https://51degrees.com/DesktopModules/FiftyOne/Distributor/Logo.ashx?utm_source=github&utm_medium=repository&utm_content=home&utm_campaign=c-open-source\" alt=\"51Degrees\" title=\"Data rewards the curious\"/> <strong>IP Intelligence Data Files</strong>", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_int328625fe41d6356007b2e301240cc7c7.html", null ],
-    [ "51Degrees Ip Intelligence API", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_int20cc440911b6f5219a76337566da63d9.html", null ],
-    [ "API Specific CI Approach", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_inta77b6486230ebe2c4d65474255a1a750.html", null ],
-    [ "51Degrees Common Code Library", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_int50d5de6fb61092e686320a7f6c771861.html", null ],
-    [ "ip-graph-cxx", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_int8a2dd3b222839f0dfe83fb02a9e49d62.html", null ],
-    [ "Proposal: Support Weighted Values in the IPI Dataset (C Reader Side)", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__fifty_one_8_ip_int3ac58e8507d70d8943096e15843f044e.html", null ],
-    [ "51Degrees IP Intelligence Engines", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-dotnet__r_e_a_d_m_e.html", null ],
+  [ "51Degrees IP Intelligence .NET", "index.html", [
+    [ "Proposal: Support Weighted Values in the IPI Dataset (C Reader Side)", "md__2home_2runner_2work_2documentation_2documentation_2apis_2ip-intelligence-dotnet_2_fifty_one_a06a85aee691049d3148640c58c3ac60.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -44,6 +39,7 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Examples", "examples.html", "examples" ]
+  ] ]
 ];
 
 var NAVTREEHIDEROOT = true;
@@ -53,15 +49,9 @@ var NAVTREEHIDESYNC = true;
 var NAVTREEINDEX =
 [
 "_cloud_2_framework-_web_2_default_8aspx_8cs-example.html",
-"class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_config_ipi_swig.html#a568cb59d60e1d0fe486d3171db68c93b",
-"class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_ip_intelligence_engine_module_p_i_n_v_o_k_e.html#a4cb0c7168b560ec8cd443fde6568df26",
-"class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_ip_intelligence_engine_module_p_i_n_v_o_k_e.html#ad96e50856e6039a6883d5aa32e292eb7",
-"class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_u_t_f8_string_swig.html#aed5faaf9459ace9ff61c4a541aae3d59",
-"class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_weighted_string_list_swig.html#a1eaedfe70bc42d5c8b710fb8bc8cc124",
-"class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_getting_started_web_1_1_model_1_1_index_model.html#a38d9cb2dc2290cffb8ee372987a0ad6e",
-"class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html#a772c252b195512b46c5cb9119586623c",
-"namespace_framework___web.html"
+"class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_console_1_1_program.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+const SYNCONMSG = 'click to disable panel synchronization';
+const SYNCOFFMSG = 'click to enable panel synchronization';
+const LISTOFALLMEMBERS = 'List of all members';

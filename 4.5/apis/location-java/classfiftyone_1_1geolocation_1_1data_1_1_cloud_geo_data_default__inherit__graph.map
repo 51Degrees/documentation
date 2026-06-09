@@ -1,8 +1,14 @@
 <map id="fiftyone.geolocation.data.CloudGeoDataDefault" name="fiftyone.geolocation.data.CloudGeoDataDefault">
-<area shape="rect" id="node1" title=" " alt="" coords="687,39,875,80"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1geolocation_1_1core_1_1data_1_1_geo_data_default.html" title=" " alt="" coords="419,5,639,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="196,13,325,39"/>
-<area shape="rect" id="node4" href="$interfacefiftyone_1_1geolocation_1_1core_1_1data_1_1_geo_data.html" title=" " alt="" coords="151,67,371,108"/>
-<area shape="rect" id="node6" href="$interfacefiftyone_1_1geolocation_1_1data_1_1_cloud_geo_data.html" title=" " alt="" coords="435,71,623,112"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,74,103,101"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="687,37,875,77"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1geolocation_1_1core_1_1data_1_1_geo_data_default.html" title=" " alt="" coords="419,5,639,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="653,38,687,43,686,48,652,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="196,13,325,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="339,23,418,23,418,28,339,28"/>
+<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1geolocation_1_1core_1_1data_1_1_geo_data.html" title=" " alt="" coords="151,65,371,105"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="363,60,438,43,439,48,364,65"/>
+<area shape="rect" id="Node000006" href="$interfacefiftyone_1_1geolocation_1_1data_1_1_cloud_geo_data.html" title=" " alt="" coords="435,69,623,109"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="384,85,435,85,434,91,384,90"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,73,103,98"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="117,83,151,83,151,88,117,88"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="636,73,686,67,687,72,636,78"/>
 </map>

@@ -1,3 +1,29 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_completion_listener.html" title="Helper class used to wait for data updates to complete and return the status of the update." alt="" coords="5,5,248,61"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,279,196,319"/>
+<area shape="rect" id="Node000001" href="$class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_u_t_f8_string_swig93f4cce6d61ca5f20ae6abf29399e8e6.html" title="Note that the IEnumerator documentation requires an InvalidOperationException to be thrown whenever t..." alt="" coords="271,193,546,247"/>
+<area shape="poly" id="edge25_Node000000_Node000001" title=" " alt="" coords="183,272,243,256,288,245,290,250,245,261,185,277"/>
+<area shape="rect" id="Node000005" href="$class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_vector_string_swig452eeae6ddefab7107be9b48b95f3874.html" title="Note that the IEnumerator documentation requires an InvalidOperationException to be thrown whenever t..." alt="" coords="268,271,549,326"/>
+<area shape="poly" id="edge26_Node000000_Node000005" title=" " alt="" coords="210,296,268,296,268,301,210,301"/>
+<area shape="rect" id="Node000006" href="$class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_weighted_bool_list687255ffcae427f162c49217e79891d5.html" title="Note that the IEnumerator documentation requires an InvalidOperationException to be thrown whenever t..." alt="" coords="244,350,573,405"/>
+<area shape="poly" id="edge27_Node000000_Node000006" title=" " alt="" coords="188,320,245,335,295,347,293,353,243,340,187,325"/>
+<area shape="rect" id="Node000007" href="$class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_weighted_double_li036fcb7432588bb1d64a85c15fd2bc88.html" title="Note that the IEnumerator documentation requires an InvalidOperationException to be thrown whenever t..." alt="" coords="265,429,552,499"/>
+<area shape="poly" id="edge28_Node000000_Node000007" title=" " alt="" coords="178,323,198,337,214,357,222,377,230,396,246,414,267,427,264,432,242,418,225,399,217,379,210,360,194,341,175,327"/>
+<area shape="rect" id="Node000008" href="$class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_weighted_int_list_9c276fa810f30b06c3cdc1b93ea2afab.html" title="Note that the IEnumerator documentation requires an InvalidOperationException to be thrown whenever t..." alt="" coords="256,523,561,578"/>
+<area shape="poly" id="edge29_Node000000_Node000008" title=" " alt="" coords="183,324,198,337,213,360,220,383,221,426,222,468,230,489,246,509,261,521,258,525,242,513,225,491,217,469,216,426,215,383,208,362,194,340,180,328"/>
+<area shape="rect" id="Node000009" href="$class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_weighted_string_liad3b5e00a7cb58314813a24440d0c1f5.html" title="Note that the IEnumerator documentation requires an InvalidOperationException to be thrown whenever t..." alt="" coords="273,5,544,75"/>
+<area shape="poly" id="edge30_Node000000_Node000009" title=" " alt="" coords="113,264,133,223,161,175,198,126,242,85,272,67,274,72,246,89,202,130,166,178,137,226,118,267"/>
+<area shape="rect" id="Node000010" href="$class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_weighted_u_t_f8_st865f5c639ab4fc06fc409320805505c2.html" title="Note that the IEnumerator documentation requires an InvalidOperationException to be thrown whenever t..." alt="" coords="266,99,551,168"/>
+<area shape="poly" id="edge31_Node000000_Node000010" title=" " alt="" coords="128,267,179,221,210,198,243,178,269,166,271,170,245,182,213,202,182,225,132,271"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,617,196,657"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_interop_1_1_map_string_string_afc829270b0fda0cf022c534f8fd28ee.html" title="Note that the IEnumerator documentation requires an InvalidOperationException to be thrown whenever t..." alt="" coords="275,603,543,672"/>
+<area shape="poly" id="edge32_Node000004_Node000003" title=" " alt="" coords="210,635,274,635,274,640,210,640"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,351,196,391"/>
+<area shape="poly" id="edge34_Node000002_Node000001" title=" " alt="" coords="174,342,194,329,209,311,217,293,225,274,242,257,270,241,272,246,246,261,230,277,222,295,214,314,198,333,177,346"/>
+<area shape="poly" id="edge35_Node000002_Node000005" title=" " alt="" coords="200,345,291,323,292,329,201,350"/>
+<area shape="poly" id="edge36_Node000002_Node000006" title=" " alt="" coords="210,370,244,371,244,376,209,376"/>
+<area shape="poly" id="edge37_Node000002_Node000007" title=" " alt="" coords="178,392,245,413,289,427,287,432,243,419,176,397"/>
+<area shape="poly" id="edge38_Node000002_Node000008" title=" " alt="" coords="127,400,177,456,210,484,245,508,272,521,269,526,243,513,206,489,174,460,123,403"/>
+<area shape="poly" id="edge39_Node000002_Node000009" title=" " alt="" coords="181,341,194,329,213,298,220,267,219,237,215,207,212,177,212,147,221,116,242,85,272,62,275,66,246,88,226,118,217,147,217,177,221,207,225,237,225,268,217,300,198,332,185,345"/>
+<area shape="poly" id="edge40_Node000002_Node000010" title=" " alt="" coords="179,342,194,329,207,310,214,292,216,254,219,216,227,197,242,178,264,161,267,165,246,182,232,200,224,217,221,254,219,293,212,312,198,332,183,346"/>
+<area shape="poly" id="edge33_Node000002_Node000003" title=" " alt="" coords="117,403,136,445,164,495,201,546,246,589,276,606,273,611,242,593,197,549,160,498,131,448,112,405"/>
 </map>

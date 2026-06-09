@@ -1,8 +1,13 @@
 <map id="Evidence" name="Evidence">
-<area shape="rect" id="node1" title="Evidence test class used to test the functionality in evidence.c." alt="" coords="257,78,339,105"/>
-<area shape="rect" id="node4" href="$class_evidence_with_headers_test___multiple_headers.html" title=" " alt="" coords="387,5,577,47"/>
-<area shape="rect" id="node5" href="$class_evidence_with_headers_test___no_header.html" title=" " alt="" coords="387,71,577,112"/>
-<area shape="rect" id="node6" href="$class_evidence_with_headers_test___single_header.html" title=" " alt="" coords="387,136,577,177"/>
-<area shape="rect" id="node2" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="155,78,209,105"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,78,107,105"/>
+<area shape="rect" id="Node000001" title="Evidence test class used to test the functionality in evidence.c." alt="" coords="257,77,339,102"/>
+<area shape="rect" id="Node000004" href="$class_evidence_with_headers_test___multiple_headers.html" title=" " alt="" coords="387,5,577,45"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="345,69,386,55,420,43,422,48,388,60,347,74"/>
+<area shape="rect" id="Node000005" href="$class_evidence_with_headers_test___no_header.html" title=" " alt="" coords="387,69,577,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="352,87,386,87,386,92,352,92"/>
+<area shape="rect" id="Node000006" href="$class_evidence_with_headers_test___single_header.html" title=" " alt="" coords="387,133,577,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="347,104,388,119,422,131,420,136,386,124,345,109"/>
+<area shape="rect" id="Node000002" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="155,77,209,102"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,87,257,87,257,92,223,92"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,77,107,102"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="120,87,155,87,155,92,120,92"/>
 </map>

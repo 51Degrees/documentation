@@ -1,5 +1,7 @@
 <map id="FiftyOne.Pipeline.Core.Data.Types.JavaScript" name="FiftyOne.Pipeline.Core.Data.Types.JavaScript">
-<area shape="rect" id="node1" title="JavaScript type which can be returned as a value by an ElementData." alt="" coords="83,80,289,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,177,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="201,5,360,32"/>
+<area shape="rect" id="Node000001" title="JavaScript type which can be returned as a value by an ElementData." alt="" coords="83,79,289,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,177,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,37,165,76,161,81,114,41"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="201,5,360,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="258,41,211,81,207,76,255,37"/>
 </map>

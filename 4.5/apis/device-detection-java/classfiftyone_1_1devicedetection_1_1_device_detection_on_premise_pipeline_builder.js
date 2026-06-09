@@ -21,6 +21,5 @@ var classfiftyone_1_1devicedetection_1_1_device_detection_on_premise_pipeline_bu
     [ "setUpdateRandomisationMax", "classfiftyone_1_1devicedetection_1_1_device_detection_on_premise_pipeline_builder.html#a1b95be4f5d9fd2b0256d25cd89c79713", null ],
     [ "setUpdateRandomisationMaxMillis", "classfiftyone_1_1devicedetection_1_1_device_detection_on_premise_pipeline_builder.html#aafac96ec610299dd1dd8c06a0f97148d", null ],
     [ "setUsePerformanceGraph", "classfiftyone_1_1devicedetection_1_1_device_detection_on_premise_pipeline_builder.html#ae644b1139533e7b5f515a1073a4b39b1", null ],
-    [ "setUsePredictiveGraph", "classfiftyone_1_1devicedetection_1_1_device_detection_on_premise_pipeline_builder.html#a2747548ad9fbb1b8a15e41480eb139f3", null ],
-    [ "shareUsageEnabled", "classfiftyone_1_1devicedetection_1_1_device_detection_on_premise_pipeline_builder.html#a37a718d60d81c21fb8f0a9dbff4af1b9", null ]
+    [ "setUsePredictiveGraph", "classfiftyone_1_1devicedetection_1_1_device_detection_on_premise_pipeline_builder.html#a2747548ad9fbb1b8a15e41480eb139f3", null ]
 ];

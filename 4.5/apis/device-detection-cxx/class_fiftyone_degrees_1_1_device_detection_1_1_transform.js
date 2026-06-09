@@ -1,0 +1,7 @@
+var class_fiftyone_degrees_1_1_device_detection_1_1_transform =
+[
+    [ "Transform", "class_fiftyone_degrees_1_1_device_detection_1_1_transform.html#aba69d9f92d8ce1ecf02b112b31a2079e", null ],
+    [ "fromBase64GHEV", "class_fiftyone_degrees_1_1_device_detection_1_1_transform.html#a463bd5f2eddf05ec9a2caba01e879214", null ],
+    [ "fromJsonGHEV", "class_fiftyone_degrees_1_1_device_detection_1_1_transform.html#a26dba1f01c797486ef34549a7bc09c8c", null ],
+    [ "fromSUA", "class_fiftyone_degrees_1_1_device_detection_1_1_transform.html#ace140e6f947f615148cdf345f45cf682", null ]
+];

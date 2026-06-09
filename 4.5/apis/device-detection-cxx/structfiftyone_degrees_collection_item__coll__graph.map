@@ -1,5 +1,9 @@
 <map id="fiftyoneDegreesCollectionItem" name="fiftyoneDegreesCollectionItem">
-<area shape="rect" id="node1" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="5,95,225,121"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="20,185,211,212"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="37,5,193,32"/>
+<area shape="rect" id="Node000001" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="5,101,225,127"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="20,206,211,231"/>
+<area shape="poly" id="edge4_Node000003_Node000001" title=" " alt="" coords="82,137,70,152,67,162,70,172,82,190,98,204,95,208,78,194,65,174,61,162,65,149,78,133"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="37,5,193,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,45,118,101,113,101,113,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,192,128,172,127,151,119,128,124,126,133,150,133,173,128,193"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="226,209,237,218,229,227,211,231,210,226,227,222,232,219,223,214"/>
 </map>

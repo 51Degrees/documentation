@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['warning',['Warning',['../class_fifty_one_1_1_geo_location_1_1_core_1_1_templates_1_1_java_script_resource_base.html#a8f6a910ad8fb7950fb58d1e13fd92493',1,'FiftyOne::GeoLocation::Core::Templates::JavaScriptResourceBase']]],
-  ['write',['Write',['../class_fifty_one_1_1_geo_location_1_1_core_1_1_templates_1_1_java_script_resource_base.html#a27f1ff67c6ad2fd154f3bfc3b5d7591b',1,'FiftyOne.GeoLocation.Core.Templates.JavaScriptResourceBase.Write(string textToAppend)'],['../class_fifty_one_1_1_geo_location_1_1_core_1_1_templates_1_1_java_script_resource_base.html#ab4e22c87e885d0b30ec32c3ab63e9ebf',1,'FiftyOne.GeoLocation.Core.Templates.JavaScriptResourceBase.Write(string format, params object[] args)']]],
-  ['writeline',['WriteLine',['../class_fifty_one_1_1_geo_location_1_1_core_1_1_templates_1_1_java_script_resource_base.html#a099e34e79a4657c947583e2108f19f28',1,'FiftyOne.GeoLocation.Core.Templates.JavaScriptResourceBase.WriteLine(string textToAppend)'],['../class_fifty_one_1_1_geo_location_1_1_core_1_1_templates_1_1_java_script_resource_base.html#a703af00ccc0bdc462250d7803d72dc0b',1,'FiftyOne.GeoLocation.Core.Templates.JavaScriptResourceBase.WriteLine(string format, params object[] args)']]]
+  ['zipcode_0',['ZipCode',['../class_fifty_one_1_1_geo_location_1_1_core_1_1_data_1_1_geo_data.html#a29a6327784bcd216b7d14731e55252c8',1,'FiftyOne.GeoLocation.Core.Data.GeoData.ZipCode'],['../interface_fifty_one_1_1_geo_location_1_1_core_1_1_data_1_1_i_geo_data.html#a1174a6be4c98d6e95066c7b780c1269c',1,'FiftyOne.GeoLocation.Core.Data.IGeoData.ZipCode']]],
+  ['zoom_1',['Zoom',['../class_fifty_one_1_1_geo_location_1_1_core_1_1_data_1_1_geo_evidence.html#ab23931625f66632315c18674a777033b',1,'FiftyOne::GeoLocation::Core::Data::GeoEvidence']]]
 ];

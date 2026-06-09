@@ -1,10 +1,22 @@
 <map id="fiftyoneDegreesCollectionFile" name="fiftyoneDegreesCollectionFile">
-<area shape="rect" id="node1" title="Type of collection where the collection is streamed from file." alt="" coords="148,276,361,303"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_file_pool.html" title="Stack of handles used to read data from a single source file." alt="" coords="5,185,181,212"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_pool.html" title="Pool of resources stored as items in a stack." alt="" coords="157,95,310,121"/>
-<area shape="rect" id="node5" href="$structfiftyone_degrees_pool_item.html" title="Pool item node in the stack of items." alt="" coords="206,185,389,212"/>
-<area shape="rect" id="node4" href="$unionfiftyone_degrees_pool_head.html" title="The head of the stack used for pop and push operations." alt="" coords="140,5,327,32"/>
-<area shape="rect" id="node6" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="413,185,603,212"/>
-<area shape="rect" id="node7" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="497,276,717,303"/>
-<area shape="rect" id="node8" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="747,185,903,212"/>
+<area shape="rect" id="Node000001" title="Type of collection where the collection is streamed from file." alt="" coords="365,311,578,336"/>
+<area shape="poly" id="edge12_Node000001_Node000001" title=" " alt="" coords="593,315,605,323,597,331,579,334,578,329,594,326,599,323,591,320"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="185,206,376,231"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="316,236,451,308,448,313,313,240"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="391,209,403,218,395,227,377,231,376,226,392,222,397,219,388,214"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="83,311,303,336"/>
+<area shape="poly" id="edge5_Node000003_Node000002" title=" " alt="" coords="276,245,267,267,253,288,238,302,221,313,218,308,235,298,249,285,263,265,272,243"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="185,297,186,279,192,263,212,242,236,229,239,234,215,247,196,265,191,280,190,297"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="5,206,161,231"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="104,240,148,285,178,308,174,313,144,289,100,244"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_file_pool.html" title="Stack of handles used to read data from a single source file." alt="" coords="525,206,701,231"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="587,242,489,313,486,308,584,237"/>
+<area shape="rect" id="Node000006" href="$structfiftyone_degrees_pool.html" title="Pool of resources stored as items in a stack." alt="" coords="665,101,819,127"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="718,137,697,153,628,208,625,204,694,149,714,133"/>
+<area shape="poly" id="edge11_Node000006_Node000006" title=" " alt="" coords="833,105,845,114,837,122,819,125,818,120,835,117,840,114,831,110"/>
+<area shape="rect" id="Node000007" href="$structfiftyone_degrees_pool_item.html" title="Pool item node in the stack of items." alt="" coords="725,206,908,231"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="774,133,789,149,806,178,816,205,811,206,801,180,785,152,770,137"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="770,202,754,190,741,175,735,150,737,127,742,127,740,149,746,172,757,186,773,197"/>
+<area shape="rect" id="Node000008" href="$unionfiftyone_degrees_pool_head.html" title="The head of the stack used for pop and push operations." alt="" coords="649,5,835,31"/>
+<area shape="poly" id="edge10_Node000006_Node000008" title=" " alt="" coords="745,45,745,101,739,101,739,45"/>
 </map>

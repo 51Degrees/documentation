@@ -1,10 +1,19 @@
 <map id="fiftyone.ipintelligence.shared.IPIntelligenceData" name="fiftyone.ipintelligence.shared.IPIntelligenceData">
-<area shape="rect" id="node1" title="Interface exposing typed accessors for properties related to an IP." alt="" coords="151,69,365,111"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1ipintelligence_1_1cloud_1_1data_1_1_i_p_intelligence_data_cloud.html" title="Cloud specific interface for IPIntelligenceData." alt="" coords="413,69,652,111"/>
-<area shape="rect" id="node5" href="$interfacefiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1data_1_1_i_p_intelligence_data_hash.html" title="On&#45;premise specific interface for IPIntelligenceData." alt="" coords="700,5,1021,47"/>
-<area shape="rect" id="node7" href="$classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html" title=" " alt="" coords="425,135,640,176"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,77,103,103"/>
-<area shape="rect" id="node4" href="$classfiftyone_1_1ipintelligence_1_1cloud_1_1flowelements_1_1_i_p_intelligence_data_cloud_internal.html" title="Internal implementation of the IPIntelligenceDataCloud interface." alt="" coords="711,71,1010,112"/>
-<area shape="rect" id="node6" href="$classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_data_hash_default.html" title="Internal implementation of the IPIntelligenceDataHash interface." alt="" coords="1069,71,1449,112"/>
-<area shape="rect" id="node8" href="$classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base_on_premise.html" title="Base class used for all 51Degrees on&#45;premise IP Intelligence results classes." alt="" coords="739,136,983,177"/>
+<area shape="rect" id="Node000001" title="Interface exposing typed accessors for properties related to an IP." alt="" coords="151,67,365,107"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1ipintelligence_1_1cloud_1_1data_1_1_i_p_intelligence_data_cloud.html" title="Cloud specific interface for IPIntelligenceData." alt="" coords="413,67,652,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="379,84,413,84,413,89,379,89"/>
+<area shape="rect" id="Node000005" href="$interfacefiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1data_1_1_i_p_intelligence_data_hash.html" title="On&#45;premise specific interface for IPIntelligenceData." alt="" coords="700,5,1021,45"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="358,61,413,52,560,37,700,28,700,33,560,42,414,57,359,67"/>
+<area shape="rect" id="Node000007" href="$classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html" title=" " alt="" coords="425,131,640,171"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="358,107,447,128,446,133,357,112"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,74,103,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,84,151,84,151,89,117,89"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1ipintelligence_1_1cloud_1_1flowelements_1_1_i_p_intelligence_data_cloud_internal.html" title="Internal implementation of the IPIntelligenceDataCloud interface." alt="" coords="711,69,1010,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="666,85,711,85,711,91,666,90"/>
+<area shape="rect" id="Node000006" href="$classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_data_hash_default.html" title="Internal implementation of the IPIntelligenceDataHash interface." alt="" coords="1069,69,1449,109"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1000,45,1135,67,1134,72,999,50"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="653,126,752,107,753,112,654,131"/>
+<area shape="rect" id="Node000008" href="$classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base_on_premise.html" title="Base class used for all 51Degrees on&#45;premise IP Intelligence results classes." alt="" coords="739,133,983,173"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="653,149,738,150,738,155,653,154"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="996,129,1134,107,1134,112,997,134"/>
 </map>

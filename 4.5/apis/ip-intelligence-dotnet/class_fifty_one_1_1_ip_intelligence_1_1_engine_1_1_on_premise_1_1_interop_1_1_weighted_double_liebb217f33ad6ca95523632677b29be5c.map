@@ -1,5 +1,7 @@
 <map id="FiftyOne.IpIntelligence.Engine.OnPremise.Interop.WeightedDoubleListSwig.WeightedDoubleListSwigEnumerator" name="FiftyOne.IpIntelligence.Engine.OnPremise.Interop.WeightedDoubleListSwig.WeightedDoubleListSwigEnumerator">
-<area shape="rect" id="node1" title="Note that the IEnumerator documentation requires an InvalidOperationException to be thrown whenever t..." alt="" coords="280,28,567,99"/>
-<area shape="rect" id="node2" title=" " alt="" coords="23,5,214,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,71,232,127"/>
+<area shape="rect" id="Node000001" title="Note that the IEnumerator documentation requires an InvalidOperationException to be thrown whenever t..." alt="" coords="64,93,351,163"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,196,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,53,173,91,170,95,129,57"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="220,5,411,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="287,57,246,95,242,91,283,53"/>
 </map>

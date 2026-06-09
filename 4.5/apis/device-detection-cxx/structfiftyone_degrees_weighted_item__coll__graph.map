@@ -1,6 +1,11 @@
 <map id="fiftyoneDegreesWeightedItem" name="fiftyoneDegreesWeightedItem">
-<area shape="rect" id="node1" title="A weighted collection item." alt="" coords="5,185,221,212"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="147,95,367,121"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="246,185,437,212"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="179,5,335,32"/>
+<area shape="rect" id="Node000001" title="A weighted collection item." alt="" coords="5,206,221,231"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="143,101,363,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,137,203,153,130,208,127,204,200,149,223,132"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="246,206,437,231"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="248,140,247,157,252,172,270,191,295,204,292,208,267,195,247,175,242,157,243,140"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="175,5,331,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="256,45,256,101,251,101,251,45"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="332,194,323,173,310,152,295,139,278,129,281,125,298,135,314,149,328,170,337,192"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="452,209,463,218,455,227,437,231,436,226,453,222,458,219,449,214"/>
 </map>

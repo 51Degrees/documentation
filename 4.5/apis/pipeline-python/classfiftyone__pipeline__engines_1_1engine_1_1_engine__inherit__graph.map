@@ -1,9 +1,15 @@
 <map id="fiftyone_pipeline_engines.engine.Engine" name="fiftyone_pipeline_engines.engine.Engine">
-<area shape="rect" id="node1" title="An engine is an extension of the FlowElement class that adds extra functionality." alt="" coords="419,104,659,145"/>
-<area shape="rect" id="node4" href="$classfiftyone__pipeline__cloudrequestengine_1_1cloudengine_1_1_cloud_engine.html" title="This is a template for all 51Degrees cloud engines." alt="" coords="731,5,1083,47"/>
-<area shape="rect" id="node5" href="$classfiftyone__pipeline__cloudrequestengine_1_1cloudrequestengine_1_1_cloud_request_engine.html" title=" " alt="" coords="707,71,1108,112"/>
-<area shape="rect" id="node6" href="$classfiftyone__pipeline__engines__fiftyone_1_1share__usage_1_1_share_usage.html" title=" " alt="" coords="784,136,1031,177"/>
-<area shape="rect" id="node7" href="$classtests_1_1test__engines_1_1_example_aspect_engine.html" title=" " alt="" coords="806,201,1009,243"/>
-<area shape="rect" id="node2" href="$classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="116,104,371,145"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,111,68,138"/>
+<area shape="rect" id="Node000001" title="An engine is an extension of the FlowElement class that adds extra functionality." alt="" coords="419,101,659,141"/>
+<area shape="rect" id="Node000004" href="$classfiftyone__pipeline__cloudrequestengine_1_1cloudengine_1_1_cloud_engine.html" title="This is a template for all 51Degrees cloud engines." alt="" coords="731,5,1083,45"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="596,93,649,73,706,55,758,43,759,48,707,60,651,78,598,98"/>
+<area shape="rect" id="Node000005" href="$classfiftyone__pipeline__cloudrequestengine_1_1cloudrequestengine_1_1_cloud_request_engine.html" title=" " alt="" coords="707,69,1108,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="672,107,706,104,706,109,672,112"/>
+<area shape="rect" id="Node000006" href="$classfiftyone__pipeline__engines__fiftyone_1_1share__usage_1_1_share_usage.html" title=" " alt="" coords="784,133,1031,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="673,130,784,140,783,145,672,136"/>
+<area shape="rect" id="Node000007" href="$classtests_1_1test__engines_1_1_example_aspect_engine.html" title=" " alt="" coords="806,197,1009,237"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="598,144,651,165,707,183,806,203,805,208,706,188,649,170,596,149"/>
+<area shape="rect" id="Node000002" href="$classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="116,101,371,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="384,119,418,119,418,124,384,124"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,109,68,134"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,119,116,119,116,124,81,124"/>
 </map>

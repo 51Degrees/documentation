@@ -1,0 +1,11 @@
+var class_fiftyone_degrees_1_1_common_1_1_status_code_exception =
+[
+    [ "StatusCodeException", "class_fiftyone_degrees_1_1_common_1_1_status_code_exception.html#a5e39daa6fc0d85a6fb90125137c233c8", null ],
+    [ "StatusCodeException", "class_fiftyone_degrees_1_1_common_1_1_status_code_exception.html#a9651d9ea9d8ab9d598d054613307be4b", null ],
+    [ "~StatusCodeException", "class_fiftyone_degrees_1_1_common_1_1_status_code_exception.html#a72ff73c0722c4e8d87fe487c78e82ed4", null ],
+    [ "StatusCodeException", "class_fiftyone_degrees_1_1_common_1_1_status_code_exception.html#a7f8898b79a8f52c268998c56617a1fa9", null ],
+    [ "getCode", "class_fiftyone_degrees_1_1_common_1_1_status_code_exception.html#a3cbe4fb34de795683bfb2f7b09430fe6", null ],
+    [ "what", "class_fiftyone_degrees_1_1_common_1_1_status_code_exception.html#ae6797fb556f84fb8776b2a8493e7e43a", null ],
+    [ "message", "class_fiftyone_degrees_1_1_common_1_1_status_code_exception.html#a668abd187a5e4fece3de53b54616ff74", null ],
+    [ "statusCode", "class_fiftyone_degrees_1_1_common_1_1_status_code_exception.html#a78f48ebab60454f73993aa333933f8f7", null ]
+];

@@ -1,6 +1,0 @@
-var classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_real_client_ip_filter =
-[
-    [ "destroy", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_real_client_ip_filter.html#a88d66fcf94ab3df2ef05bb5f5bd5e98a", null ],
-    [ "doFilter", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_real_client_ip_filter.html#a86effff8226b4603191b2bcd94f350ac", null ],
-    [ "init", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_real_client_ip_filter.html#af2d810888e67cba4e0463e83e9dcb38b", null ]
-];

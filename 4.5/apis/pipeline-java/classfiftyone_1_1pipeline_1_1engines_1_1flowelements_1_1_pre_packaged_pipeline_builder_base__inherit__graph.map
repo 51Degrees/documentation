@@ -1,7 +1,16 @@
-<map id="fiftyone.pipeline.engines.flowelements.PrePackagedPipelineBuilderBase&lt; TBuilder extends PrePackagedPipelineBuilderBase&lt; TBuilder &gt;" name="fiftyone.pipeline.engines.flowelements.PrePackagedPipelineBuilderBase&lt; TBuilder extends PrePackagedPipelineBuilderBase&lt; TBuilder &gt;">
-<area shape="rect" id="node1" title="Base class for pipeline builders that will produce a pipeline with specific flow elements." alt="" coords="531,37,861,107"/>
-<area shape="rect" id="node4" href="$classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_pre_packaged_pipeline_builder_base.html" title=" " alt="" coords="999,44,1277,100"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline_builder_base.html" title="Abstract base class for all Pipeline builders." alt="" coords="321,37,481,107"/>
-<area shape="rect" id="node3" href="$classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline_builder_base.html" title="Abstract base class for all Pipeline builders." alt="" coords="5,44,260,100"/>
-<area shape="rect" id="node5" href="$classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_cloud_pipeline_builder_base.html" title="Base class for pipeline builders that will produce a pipeline with specific flow elements." alt="" coords="1327,37,1605,107"/>
+<map id="fiftyone.pipeline.engines.flowelements.PrePackagedPipelineBuilderBase&lt; TBuilder extends PrePackagedPipelineBuilderBase&lt; TBuilder &gt; &gt;" name="fiftyone.pipeline.engines.flowelements.PrePackagedPipelineBuilderBase&lt; TBuilder extends PrePackagedPipelineBuilderBase&lt; TBuilder &gt; &gt;">
+<area shape="rect" id="Node000001" title="Base class for pipeline builders that will produce a pipeline with specific flow elements." alt="" coords="629,33,960,103"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_pre_packaged_pipeline_builder_base.html" title=" " alt="" coords="1101,27,1380,82"/>
+<area shape="poly" id="edge8_Node000004_Node000001" title=" " alt="" coords="973,29,984,28,1031,25,1078,28,1101,30,1101,35,1077,33,1031,31,984,33,974,34"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="974,60,1101,56,1101,61,974,65"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline_builder_base.html" title="Abstract base class for all Pipeline builders." alt="" coords="325,109,580,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="593,105,628,98,629,104,594,111"/>
+<area shape="rect" id="Node000005" href="$classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_pre_packaged_pipeline_builder_base.html" title="Base class for pipeline builders that will produce a pipeline with specific flow elements." alt="" coords="1521,73,1852,143"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="594,133,999,130,1497,117,1521,116,1521,122,1497,123,999,135,594,139"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline_builder_base.html" title="Abstract base class for all Pipeline builders." alt="" coords="5,109,260,163"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="274,133,325,133,325,139,274,139"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="104,93,114,85,133,82,148,84,159,90,165,99,165,109,159,109,159,100,155,94,147,89,133,87,116,90,107,97"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="1158,89,1078,109,1004,113,931,105,932,100,1004,108,1077,104,1157,84"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="1394,69,1498,81,1522,84,1521,90,1497,87,1394,74"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="1507,118,1404,109,1356,99,1311,85,1312,80,1357,94,1404,104,1508,113"/>
 </map>

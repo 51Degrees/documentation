@@ -1,12 +1,26 @@
 <map id="threadState" name="threadState">
-<area shape="rect" id="node1" title="State specific to a single thread." alt="" coords="1337,85,1435,111"/>
-<area shape="rect" id="node9" href="$structperformance_state.html" title="Single state containing everything needed for running and then reporting the performance tests." alt="" coords="1663,134,1801,161"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="889,177,1132,203"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="1271,306,1501,333"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="919,299,1102,340"/>
-<area shape="rect" id="node5" href="$structevidence_node.html" title=" " alt="" coords="953,66,1068,93"/>
-<area shape="rect" id="node6" href="$structfiftyone_degrees_evidence_key_value_pair_array.html" title="Array of evidence key value pairs and a pointer to the next array if present or NULL of not present." alt="" coords="595,59,803,100"/>
-<area shape="rect" id="node7" href="$structfiftyone_degrees_evidence_key_value_pair.html" title="Evidence key value pair structure which combines the prefix, key and value." alt="" coords="297,59,505,100"/>
-<area shape="rect" id="node8" href="$structfiftyone_degrees_key_value_pair.html" title=" " alt="" coords="5,66,215,93"/>
-<area shape="rect" id="node10" href="$structshared_string_node.html" title=" " alt="" coords="1317,255,1455,282"/>
+<area shape="rect" id="Node000001" title="State specific to a single thread." alt="" coords="620,453,719,479"/>
+<area shape="rect" id="Node000002" href="$structperformance_state.html" title="Single state containing everything needed for running and then reporting the performance tests." alt="" coords="463,569,601,595"/>
+<area shape="poly" id="edge8_Node000002_Node000001" title=" " alt="" coords="607,476,578,487,553,505,543,519,537,537,534,569,529,569,532,536,538,517,549,501,575,482,605,471"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="613,565,631,556,646,544,656,529,663,511,667,479,672,479,668,512,661,531,650,547,634,560,615,569"/>
+<area shape="rect" id="Node000003" href="$structshared_string_node.html" title=" " alt="" coords="5,453,144,479"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="130,480,374,543,479,567,478,572,373,548,129,485"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="159,456,167,459,171,466,163,475,145,479,144,473,160,470,165,466,164,463,157,461"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="363,330,605,355"/>
+<area shape="poly" id="edge14_Node000001_Node000004" title=" " alt="" coords="511,362,603,427,646,451,644,455,600,432,508,366"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="492,368,532,568,527,569,486,369"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="230,453,461,479"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="455,366,427,388,412,410,397,431,366,455,363,451,393,427,408,406,423,385,452,361"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="336,440,334,413,337,398,343,385,364,366,389,353,391,358,367,370,347,388,342,400,339,413,341,440"/>
+<area shape="rect" id="Node000006" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="155,323,338,363"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="246,376,249,403,259,428,274,441,293,451,290,456,271,446,255,431,243,404,241,376"/>
+<area shape="rect" id="Node000007" href="$structevidence_node.html" title=" " alt="" coords="629,330,744,355"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="686,369,674,454,668,453,680,369"/>
+<area shape="poly" id="edge13_Node000007_Node000007" title=" " alt="" coords="759,332,767,336,771,343,762,352,745,355,744,350,760,347,765,342,763,340,757,337"/>
+<area shape="rect" id="Node000008" href="$structfiftyone_degrees_evidence_key_value_pair_array.html" title="Array of evidence key value pairs and a pointer to the next array if present or NULL of not present." alt="" coords="583,212,791,252"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="689,266,689,329,684,329,684,266"/>
+<area shape="rect" id="Node000009" href="$structfiftyone_degrees_evidence_key_value_pair.html" title="Evidence key value pair structure which combines the prefix, key and value." alt="" coords="583,101,791,141"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="689,155,689,212,684,212,684,155"/>
+<area shape="rect" id="Node000010" href="$structfiftyone_degrees_key_value_pair.html" title=" " alt="" coords="582,5,791,31"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="689,45,689,101,684,101,684,45"/>
 </map>

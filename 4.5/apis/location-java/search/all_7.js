@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['performgeolookup',['performGeoLookup',['../classfiftyone_1_1geolocation_1_1core_1_1_geo_engine_helper.html#a31b376c1b6468c770e7117bb4d0c477e',1,'fiftyone::geolocation::core::GeoEngineHelper']]],
-  ['processrequest',['processRequest',['../classfiftyone_1_1geolocation_1_1web_1_1examples_1_1servlet_1_1_example.html#a512a34c561a29823c17e0aef5e57840f',1,'fiftyone::geolocation::web::examples::servlet::Example']]]
+  ['requestformatter_0',['RequestFormatter',['../interfacefiftyone_1_1geolocation_1_1core_1_1_request_formatter.html',1,'fiftyone::geolocation::core']]],
+  ['runservlet_1',['runServlet',['../classfiftyone_1_1geolocation_1_1web_1_1examples_1_1shared_1_1_embed_tomcat.html#a62dd5dfd43f6e1647b5430b31c6f9978',1,'fiftyone::geolocation::web::examples::shared::EmbedTomcat']]],
+  ['runwebapp_2',['runWebApp',['../classfiftyone_1_1geolocation_1_1web_1_1examples_1_1shared_1_1_embed_tomcat.html#aa20e50a6d4c4259bf1399ed5dd1d5084',1,'fiftyone::geolocation::web::examples::shared::EmbedTomcat']]]
 ];

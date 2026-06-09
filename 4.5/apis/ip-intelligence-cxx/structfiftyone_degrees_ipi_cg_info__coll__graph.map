@@ -1,6 +1,10 @@
 <map id="fiftyoneDegreesIpiCgInfo" name="fiftyoneDegreesIpiCgInfo">
-<area shape="rect" id="node1" title="Fixed width record in the collection where the record relates to a component and IP version." alt="" coords="160,245,343,272"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_ipi_cg_member_node.html" title="Data structure used for the values collection." alt="" coords="41,147,288,174"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_ipi_cg_member.html" title="DATA STRUCTURES." alt="" coords="5,13,217,39"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_collection_header.html" title="Collection header structure which defines the size and location of the collection data." alt="" coords="241,5,432,47"/>
+<area shape="rect" id="Node000001" title="Fixed width record in the collection where the record relates to a component and IP version." alt="" coords="31,289,213,315"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_collection_header.html" title="Collection header structure which defines the size and location of the collection data." alt="" coords="5,5,196,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,59,117,218,123,289,118,289,111,219,100,60"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_ipi_cg_member_node.html" title="Data structure used for the values collection." alt="" coords="203,175,449,200"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="140,51,250,130,311,172,308,177,247,134,136,56"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="294,209,144,292,141,287,292,204"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_ipi_cg_member.html" title="DATA STRUCTURES." alt="" coords="220,13,432,38"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="329,52,329,175,323,175,323,52"/>
 </map>

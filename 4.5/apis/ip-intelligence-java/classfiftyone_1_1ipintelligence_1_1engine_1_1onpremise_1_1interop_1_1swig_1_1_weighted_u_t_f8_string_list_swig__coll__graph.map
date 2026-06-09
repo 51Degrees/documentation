@@ -1,6 +1,9 @@
 <map id="fiftyone.ipintelligence.engine.onpremise.interop.swig.WeightedUTF8StringListSwig" name="fiftyone.ipintelligence.engine.onpremise.interop.swig.WeightedUTF8StringListSwig">
-<area shape="rect" id="node1" title=" " alt="" coords="153,95,525,136"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,257,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="281,13,397,39"/>
-<area shape="rect" id="node4" title=" " alt="" coords="421,13,543,39"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="305,63,677,103"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,257,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="271,45,366,60,365,65,270,50"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="73,70,189,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,80,305,80,305,85,203,85"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="42,119,221,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="234,115,345,100,345,105,235,121"/>
 </map>

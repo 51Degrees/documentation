@@ -1,6 +1,9 @@
 <map id="Strings" name="Strings">
-<area shape="rect" id="node1" title=" " alt="" coords="139,171,205,197"/>
-<area shape="rect" id="node2" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="29,81,83,108"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,107,32"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_string_builder.html" title="String buffer for building strings with memory checks." alt="" coords="107,81,317,108"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="139,176,205,201"/>
+<area shape="rect" id="Node000002" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="29,80,83,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,112,159,174,156,178,79,116"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,107,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="59,45,59,80,53,80,53,45"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_string_builder.html" title="String buffer for building strings with memory checks." alt="" coords="107,80,317,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="204,119,179,177,174,175,199,117"/>
 </map>

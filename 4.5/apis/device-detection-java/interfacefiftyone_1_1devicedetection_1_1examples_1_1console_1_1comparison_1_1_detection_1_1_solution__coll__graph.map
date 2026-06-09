@@ -1,4 +1,5 @@
 <map id="fiftyone.devicedetection.examples.console.comparison.Detection.Solution" name="fiftyone.devicedetection.examples.console.comparison.Detection.Solution">
-<area shape="rect" id="node1" title="The thing that actually does the detection." alt="" coords="5,80,391,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="140,5,256,32"/>
+<area shape="rect" id="Node000001" title="The thing that actually does the detection." alt="" coords="5,79,391,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="140,5,256,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,44,201,79,195,79,195,44"/>
 </map>

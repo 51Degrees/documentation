@@ -1,5 +1,11 @@
 <map id="FiftyOne.Pipeline.Engines.FiftyOne.FlowElements.IFiftyOneAspectEngine" name="FiftyOne.Pipeline.Engines.FiftyOne.FlowElements.IFiftyOneAspectEngine">
-<area shape="rect" id="node1" title="51Degrees specific Engine interface." alt="" coords="5,155,240,211"/>
-<area shape="rect" id="node2" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_i_on_premise_aspect_engine.html" title="Interface for an AspectEngine that processes evidence using one or more local data files." alt="" coords="30,80,215,107"/>
-<area shape="rect" id="node3" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_i_aspect_engine.html" title="Interface representing 51Degrees on&#45;premise aspect engines." alt="" coords="65,5,180,32"/>
+<area shape="rect" id="Node000001" title="51Degrees specific Engine interface." alt="" coords="29,343,263,397"/>
+<area shape="rect" id="Node000002" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_i_on_premise_aspect_engine.html" title="Interface for an AspectEngine that processes evidence using one or more local data files." alt="" coords="5,255,287,295"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,308,149,343,143,343,143,308"/>
+<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_i_aspect_engine.html" title="Interface representing 51Degrees on&#45;premise aspect engines." alt="" coords="41,167,251,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="149,221,149,254,143,254,143,221"/>
+<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="45,79,247,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="149,133,149,166,143,166,143,133"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="97,5,195,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="149,44,149,79,143,79,143,44"/>
 </map>

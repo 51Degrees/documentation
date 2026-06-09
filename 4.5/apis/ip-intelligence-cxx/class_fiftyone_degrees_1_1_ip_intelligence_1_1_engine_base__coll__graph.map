@@ -1,0 +1,9 @@
+<map id="FiftyoneDegrees::IpIntelligence::EngineBase" name="FiftyoneDegrees::IpIntelligence::EngineBase">
+<area shape="rect" id="Node000001" title="Encapsulates the engine class to be extended by engine implementations." alt="" coords="377,69,601,109"/>
+<area shape="rect" id="Node000002" href="$class_fiftyone_degrees_1_1_common_1_1_config_base.html" title="C++ class wrapper for the fiftyoneDegreesConfigBase configuration structure." alt="" coords="5,5,200,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,37,354,59,396,67,395,72,353,64,213,42"/>
+<area shape="rect" id="Node000003" href="$class_fiftyone_degrees_1_1_common_1_1_required_properties_config.html" title="C++ class wrapper for the fiftyoneDegreesPropertiesRequired structure." alt="" coords="5,69,200,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,87,377,87,377,92,214,92"/>
+<area shape="rect" id="Node000004" href="$class_fiftyone_degrees_1_1_common_1_1_meta_data.html" title="Contains meta data for the properties, values, profiles and components that exist within the engine i..." alt="" coords="5,133,200,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="213,136,353,115,395,107,396,112,354,120,214,142"/>
+</map>

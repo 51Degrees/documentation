@@ -1,5 +1,7 @@
 <map id="fiftyoneDegreesDataSetIpiHeader" name="fiftyoneDegreesDataSetIpiHeader">
-<area shape="rect" id="node1" title="DATA STRUCTURES." alt="" coords="85,256,279,297"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_date.html" title="Used to store the date when the dataset was produced and next date 51Degrees expect to provide a new ..." alt="" coords="5,13,161,39"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_collection_header.html" title="Collection header structure which defines the size and location of the collection data." alt="" coords="185,5,376,47"/>
+<area shape="rect" id="Node000001" title="DATA STRUCTURES." alt="" coords="85,316,279,356"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_date.html" title="Used to store the date when the dataset was produced and next date 51Degrees expect to provide a new ..." alt="" coords="5,13,161,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,51,169,291,177,315,172,317,163,293,88,52"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_collection_header.html" title="Collection header structure which defines the size and location of the collection data." alt="" coords="185,5,376,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="288,59,292,107,291,168,280,233,269,264,254,293,242,307,228,318,224,314,238,303,249,291,264,262,274,232,286,168,287,108,283,59"/>
 </map>

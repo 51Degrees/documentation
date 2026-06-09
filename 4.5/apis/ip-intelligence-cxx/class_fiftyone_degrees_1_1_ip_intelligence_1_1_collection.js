@@ -1,0 +1,8 @@
+var class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection =
+[
+    [ "~Collection", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection.html#a978293840fafbf032cdf3e3425a580cf", null ],
+    [ "Collection", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection.html#a3869a36686065773ddeda0dbf51856ff", null ],
+    [ "getByIndex", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection.html#a31f21148283745e6510fef4518e8e99b", null ],
+    [ "getByKey", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection.html#acca36b2904003abff57de9e9cebec28e", null ],
+    [ "getSize", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_collection.html#aaefe13ecc6899d9ff8717043a9d0caad", null ]
+];

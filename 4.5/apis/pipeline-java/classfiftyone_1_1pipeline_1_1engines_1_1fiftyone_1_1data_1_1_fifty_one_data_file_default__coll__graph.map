@@ -1,7 +1,12 @@
 <map id="fiftyone.pipeline.engines.fiftyone.data.FiftyOneDataFileDefault" name="fiftyone.pipeline.engines.fiftyone.data.FiftyOneDataFileDefault">
-<area shape="rect" id="node1" title="Default implementation of the FiftyOneDataFile interface." alt="" coords="727,39,999,80"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_engine_data_file_default.html" title="Default implementation of the AspectEngineDataFile interface." alt="" coords="433,5,652,47"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_engine_data_file.html" title="Interface for the details of a data file used by an Aspect engine." alt="" coords="140,39,359,80"/>
-<area shape="rect" id="node5" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_fifty_one_data_file.html" title="51Degrees specific data file." alt="" coords="407,71,679,112"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,46,92,73"/>
+<area shape="rect" id="Node000001" title="Default implementation of the FiftyOneDataFile interface." alt="" coords="727,37,999,77"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_engine_data_file_default.html" title="Default implementation of the AspectEngineDataFile interface." alt="" coords="433,5,652,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="666,35,727,41,726,46,666,40"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_engine_data_file.html" title="Interface for the details of a data file used by an Aspect engine." alt="" coords="140,37,359,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="372,41,433,35,433,40,373,47"/>
+<area shape="rect" id="Node000005" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_fifty_one_data_file.html" title="51Degrees specific data file." alt="" coords="407,69,679,109"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="373,68,407,72,406,77,372,73"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,45,92,70"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="106,55,140,55,140,60,106,60"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="692,72,726,68,727,74,693,77"/>
 </map>

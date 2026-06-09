@@ -1,4 +1,5 @@
 <map id="FiftyOne.Pipeline.Core.FlowElements.IPipeline" name="FiftyOne.Pipeline.Core.FlowElements.IPipeline">
-<area shape="rect" id="node1" title="The public interface for a Pipeline." alt="" coords="5,80,207,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="57,5,155,32"/>
+<area shape="rect" id="Node000001" title="The public interface for a Pipeline." alt="" coords="5,79,207,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="57,5,155,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,44,109,79,103,79,103,44"/>
 </map>

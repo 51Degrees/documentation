@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['homecontroller',['HomeController',['../class_asp_net_core_1_1_controllers_1_1_home_controller.html',1,'AspNetCore::Controllers']]],
-  ['httpclient',['HttpClient',['../class_fifty_one_1_1_geo_location_1_1_geo_location_pipeline_builder.html#a4f544749bc2843555b52f72dc15b9d79',1,'FiftyOne::GeoLocation::GeoLocationPipelineBuilder']]]
+  ['igeodata_0',['IGeoData',['../interface_fifty_one_1_1_geo_location_1_1_core_1_1_data_1_1_i_geo_data.html',1,'FiftyOne::GeoLocation::Core::Data']]],
+  ['ilocationenginebuilder_1',['ILocationEngineBuilder',['../interface_fifty_one_1_1_geo_location_1_1_core_1_1_flow_elements_1_1_i_location_engine_builder.html',1,'FiftyOne::GeoLocation::Core::FlowElements']]],
+  ['ilocationenginebuilder_2d1_2dg_2',['ILocationEngineBuilder-1-g',['../interface_fifty_one_1_1_geo_location_1_1_core_1_1_flow_elements_1_1_i_location_engine_builder-1-g.html',1,'FiftyOne::GeoLocation::Core::FlowElements']]],
+  ['ipaddress_3',['IpAddress',['../class_fifty_one_1_1_geo_location_1_1_core_1_1_data_1_1_geo_evidence.html#aeec12153dc2bd418c33abbeafb9ebcc8',1,'FiftyOne::GeoLocation::Core::Data::GeoEvidence']]]
 ];

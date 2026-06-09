@@ -1,7 +1,11 @@
 <map id="fiftyone.pipeline.engines.fiftyone.data.CollectionIterableCachedBase&lt; T &gt;" name="fiftyone.pipeline.engines.fiftyone.data.CollectionIterableCachedBase&lt; T &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="5,288,277,329"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_collection_iterable_base.html" title=" " alt="" coords="15,184,267,240"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_closeable_iterable.html" title="An iterable class which also implements auto&#45;closable." alt="" coords="32,80,251,136"/>
-<area shape="rect" id="node4" title=" " alt="" coords="18,5,129,32"/>
-<area shape="rect" id="node5" title=" " alt="" coords="153,5,269,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,255,277,295"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_collection_iterable_base.html" title=" " alt="" coords="5,167,277,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,221,144,254,139,254,139,221"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_closeable_iterable.html" title="An iterable class which also implements auto&#45;closable." alt="" coords="5,79,277,119"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="144,133,144,166,139,166,139,133"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="18,5,129,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,39,127,77,123,80,90,43"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="153,5,269,31"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="193,43,160,80,156,77,189,39"/>
 </map>

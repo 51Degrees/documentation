@@ -1,5 +1,7 @@
 <map id="fiftyone.pipeline.engines.fiftyone.data.CloseableIterable&lt; T &gt;" name="fiftyone.pipeline.engines.fiftyone.data.CloseableIterable&lt; T &gt;">
-<area shape="rect" id="node1" title="An iterable class which also implements auto&#45;closable." alt="" coords="5,80,277,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="18,5,129,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="153,5,269,32"/>
+<area shape="rect" id="Node000001" title="An iterable class which also implements auto&#45;closable." alt="" coords="5,79,277,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="18,5,129,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,39,127,77,123,80,90,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="153,5,269,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,43,160,80,156,77,189,39"/>
 </map>

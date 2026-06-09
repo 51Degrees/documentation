@@ -1,5 +1,7 @@
 <map id="fiftyoneDegreesConfigIpi" name="fiftyoneDegreesConfigIpi">
-<area shape="rect" id="node1" title="IP Intelligence specific configuration structure." alt="" coords="119,256,301,283"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_collection_config.html" title="Collection configuration structure which defines how the collection should be created by the create m..." alt="" coords="5,5,196,47"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_config_base.html" title="Base configuration structure containing common configuration options, and options that apply to struc..." alt="" coords="220,13,419,39"/>
+<area shape="rect" id="Node000001" title="IP Intelligence specific configuration structure." alt="" coords="123,316,305,341"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_config_base.html" title="Base configuration structure containing common configuration options, and options that apply to struc..." alt="" coords="5,13,204,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,50,212,315,207,317,111,52"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_collection_config.html" title="Collection configuration structure which defines how the collection should be created by the create m..." alt="" coords="228,5,419,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="314,59,221,316,216,315,309,57"/>
 </map>

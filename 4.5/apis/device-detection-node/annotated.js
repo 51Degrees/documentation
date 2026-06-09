@@ -9,7 +9,7 @@ var annotated =
     [ "DeviceDetectionOnPremise", "class_device_detection_on_premise.html", "class_device_detection_on_premise" ],
     [ "DeviceDetectionOnPremisePipelineBuilder", "class_device_detection_on_premise_pipeline_builder.html", "class_device_detection_on_premise_pipeline_builder" ],
     [ "DeviceDetectionPipelineBuilder", "class_device_detection_pipeline_builder.html", "class_device_detection_pipeline_builder" ],
-    [ "ExampleUtils", "class_example_utils.html", "class_example_utils" ],
+    [ "ExampleUtils", "class_example_utils.html", null ],
     [ "HardwareProfileCloudEngine", "class_hardware_profile_cloud_engine.html", "class_hardware_profile_cloud_engine" ],
     [ "OptionsExtension", "class_options_extension.html", "class_options_extension" ],
     [ "Profile", "class_profile.html", "class_profile" ],

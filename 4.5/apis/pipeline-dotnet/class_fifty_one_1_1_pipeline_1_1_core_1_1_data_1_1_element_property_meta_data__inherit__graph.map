@@ -1,6 +1,9 @@
 <map id="FiftyOne.Pipeline.Core.Data.ElementPropertyMetaData" name="FiftyOne.Pipeline.Core.Data.ElementPropertyMetaData">
-<area shape="rect" id="node1" title="Meta&#45;data relating to properties that are populated by Flow Elements." alt="" coords="37,80,242,121"/>
-<area shape="rect" id="node3" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_aspect_property_meta_data.html" title="Meta&#45;data relating to properties that are populated by Aspect Engines." alt="" coords="29,169,249,211"/>
-<area shape="rect" id="node2" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_property_meta_data.html" title="Represents meta&#45;data relating to a property that is populated by a IFlowElement instance." alt="" coords="40,5,239,32"/>
-<area shape="rect" id="node4" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_fifty_one_aspect_property_meta_data_default.html" title="Data class that contains meta&#45;data relating to a specific property." alt="" coords="5,259,273,315"/>
+<area shape="rect" id="Node000001" title="Meta&#45;data relating to properties that are populated by Flow Elements." alt="" coords="37,93,242,133"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_aspect_property_meta_data.html" title="Meta&#45;data relating to properties that are populated by Aspect Engines." alt="" coords="29,181,249,221"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,147,142,181,137,181,137,147"/>
+<area shape="rect" id="Node000002" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_property_meta_data.html" title="Represents meta&#45;data relating to a property that is populated by a IFlowElement instance." alt="" coords="37,5,242,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,59,142,93,137,93,137,59"/>
+<area shape="rect" id="Node000004" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_fifty_one_aspect_property_meta_data_default.html" title="Data class that contains meta&#45;data relating to a specific property." alt="" coords="5,269,273,324"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="142,235,142,269,137,269,137,235"/>
 </map>

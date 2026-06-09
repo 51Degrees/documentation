@@ -1,10 +1,17 @@
 <map id="FiftyOne.DeviceDetection.Examples.ExampleBase" name="FiftyOne.DeviceDetection.Examples.ExampleBase">
-<area shape="rect" id="node1" title=" " alt="" coords="5,253,197,294"/>
-<area shape="rect" id="node2" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_cloud_1_1_metadata_1_1_program_1_1_example.html" title=" " alt="" coords="263,5,519,61"/>
-<area shape="rect" id="node3" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_getting_started_console_1_1_program_1_1_example.html" title=" " alt="" coords="261,85,521,141"/>
-<area shape="rect" id="node4" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics_1_1_program_1_1_example.html" title=" " alt="" coords="262,165,519,221"/>
-<area shape="rect" id="node5" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_metadata_1_1_program_1_1_example.html" title=" " alt="" coords="245,245,536,301"/>
-<area shape="rect" id="node6" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_offline_processing_1_1_program_1_1_example.html" title=" " alt="" coords="249,325,532,381"/>
-<area shape="rect" id="node7" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_performance_1_1_program_1_1_example.html" title=" " alt="" coords="265,405,517,461"/>
-<area shape="rect" id="node8" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html" title=" " alt="" coords="255,485,526,541"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,249,197,289"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_cloud_1_1_metadata_1_1_program_1_1_example.html" title=" " alt="" coords="263,5,519,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,235,136,196,164,151,201,107,244,69,263,58,266,62,247,74,204,111,169,154,140,199,120,237"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_getting_started_console_1_1_program_1_1_example.html" title=" " alt="" coords="261,84,521,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,237,180,191,211,168,244,148,270,136,272,141,247,152,214,172,183,195,133,241"/>
+<area shape="rect" id="Node000004" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics_1_1_program_1_1_example.html" title=" " alt="" coords="262,163,519,217"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="186,242,245,226,286,215,287,220,246,231,188,247"/>
+<area shape="rect" id="Node000005" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_metadata_1_1_program_1_1_example.html" title=" " alt="" coords="245,241,536,296"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="211,266,245,266,245,271,211,271"/>
+<area shape="rect" id="Node000006" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_offline_processing_1_1_program_1_1_example.html" title=" " alt="" coords="249,320,532,375"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="190,290,290,317,289,322,188,295"/>
+<area shape="rect" id="Node000007" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_performance_1_1_program_1_1_example.html" title=" " alt="" coords="265,399,517,453"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="133,296,183,341,214,364,247,384,275,396,273,401,244,388,211,369,180,346,129,300"/>
+<area shape="rect" id="Node000008" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html" title=" " alt="" coords="255,477,526,532"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="120,300,141,338,169,382,205,426,247,462,269,475,266,480,244,467,201,429,165,385,136,341,115,302"/>
 </map>

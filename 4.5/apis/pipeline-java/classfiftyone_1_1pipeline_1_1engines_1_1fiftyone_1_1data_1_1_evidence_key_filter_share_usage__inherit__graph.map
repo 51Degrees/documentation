@@ -1,5 +1,7 @@
 <map id="fiftyone.pipeline.engines.fiftyone.data.EvidenceKeyFilterShareUsage" name="fiftyone.pipeline.engines.fiftyone.data.EvidenceKeyFilterShareUsage">
-<area shape="rect" id="node1" title="This filter is used by the ShareUsageElement." alt="" coords="5,95,277,136"/>
-<area shape="rect" id="node3" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_evidence_key_filter_share_usage_tracker.html" title="Wrapper for EvidenceKeyFilter for Share Usage, to be used with the ShareUsageTracker to excluded spec..." alt="" coords="5,184,277,225"/>
-<area shape="rect" id="node2" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html" title="Represents an object that filters evidence key names based on some criteria." alt="" coords="43,5,239,47"/>
+<area shape="rect" id="Node000001" title="This filter is used by the ShareUsageElement." alt="" coords="5,93,277,133"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_evidence_key_filter_share_usage_tracker.html" title="Wrapper for EvidenceKeyFilter for Share Usage, to be used with the ShareUsageTracker to excluded spec..." alt="" coords="5,181,277,221"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="144,147,144,181,139,181,139,147"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html" title="Represents an object that filters evidence key names based on some criteria." alt="" coords="43,5,239,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,59,144,93,139,93,139,59"/>
 </map>

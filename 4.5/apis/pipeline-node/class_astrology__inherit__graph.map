@@ -1,6 +1,8 @@
 <map id="Astrology" name="Astrology">
-<area shape="rect" id="node1" title="[class] [constructor]" alt="" coords="246,95,330,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,184,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="209,5,367,47"/>
-<area shape="rect" id="node4" title=" " alt="" coords="392,13,499,39"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="43,93,127,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,164,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,59,81,93,75,93,73,59"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="96,59,94,93,89,93,91,59"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="189,5,367,45"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="220,53,114,96,112,91,218,48"/>
 </map>

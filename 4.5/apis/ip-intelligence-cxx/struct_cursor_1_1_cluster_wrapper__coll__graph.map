@@ -1,7 +1,13 @@
 <map id="Cursor::ClusterWrapper" name="Cursor::ClusterWrapper">
-<area shape="rect" id="node1" title=" " alt="" coords="341,185,514,212"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="75,95,295,121"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="5,185,196,212"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="107,5,263,32"/>
-<area shape="rect" id="node5" href="$struct_cluster.html" title=" " alt="" coords="393,95,461,121"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,206,179,231"/>
+<area shape="rect" id="Node000002" href="$struct_cluster.html" title=" " alt="" coords="54,101,122,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,140,94,206,89,206,86,141"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="146,101,366,127"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="225,136,196,153,110,208,107,204,193,148,222,131"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="221,206,411,231"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="245,140,241,156,244,172,261,191,283,204,280,208,257,195,239,175,235,156,240,138"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="178,5,334,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="259,45,259,101,253,101,253,45"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="313,193,310,172,302,152,291,139,277,129,280,125,294,135,306,149,315,170,318,192"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="426,209,438,218,430,227,412,231,411,226,428,222,433,219,423,214"/>
 </map>

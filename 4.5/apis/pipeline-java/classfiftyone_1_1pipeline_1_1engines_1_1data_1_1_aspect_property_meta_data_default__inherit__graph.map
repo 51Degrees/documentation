@@ -1,7 +1,12 @@
 <map id="fiftyone.pipeline.engines.data.AspectPropertyMetaDataDefault" name="fiftyone.pipeline.engines.data.AspectPropertyMetaDataDefault">
-<area shape="rect" id="node1" title="Basic implementation of the AspectPropertyMetaData interface." alt="" coords="540,39,773,80"/>
-<area shape="rect" id="node5" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_fifty_one_aspect_property_meta_data_default.html" title=" " alt="" coords="821,39,1108,80"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data_default.html" title="Default implementation of the ElementPropertyMetaData interface." alt="" coords="249,5,492,47"/>
-<area shape="rect" id="node3" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data.html" title="Defines details of a property that can be returned by a FlowElement." alt="" coords="5,39,201,80"/>
-<area shape="rect" id="node4" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_property_meta_data.html" title="Holds details about a property that can be returned by an AspectEngine." alt="" coords="261,71,480,112"/>
+<area shape="rect" id="Node000001" title="Basic implementation of the AspectPropertyMetaData interface." alt="" coords="540,37,773,77"/>
+<area shape="rect" id="Node000005" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_fifty_one_aspect_property_meta_data_default.html" title=" " alt="" coords="821,37,1108,77"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="787,55,821,55,821,60,787,60"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data_default.html" title="Default implementation of the ElementPropertyMetaData interface." alt="" coords="249,5,492,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="506,38,540,42,540,47,505,43"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data.html" title="Defines details of a property that can be returned by a FlowElement." alt="" coords="5,37,201,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="215,41,249,37,249,43,215,47"/>
+<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_property_meta_data.html" title="Holds details about a property that can be returned by an AspectEngine." alt="" coords="261,69,480,109"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="215,68,262,74,261,79,214,73"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="493,73,540,68,540,73,494,78"/>
 </map>

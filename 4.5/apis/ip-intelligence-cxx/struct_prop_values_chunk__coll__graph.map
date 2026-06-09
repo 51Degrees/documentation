@@ -1,5 +1,7 @@
 <map id="PropValuesChunk" name="PropValuesChunk">
-<area shape="rect" id="node1" title="Structure for a chunk of property values of the same type." alt="" coords="108,95,243,121"/>
-<area shape="rect" id="node2" href="$struct_prop_values_converter.html" title="Structure defining a converter for property values." alt="" coords="5,5,164,32"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="188,5,344,32"/>
+<area shape="rect" id="Node000001" title="Structure for a chunk of property values of the same type." alt="" coords="107,101,241,127"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="5,5,161,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,39,165,99,161,103,102,43"/>
+<area shape="rect" id="Node000003" href="$struct_prop_values_converter.html" title="Structure defining a converter for property values." alt="" coords="185,5,344,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,43,187,103,183,99,242,39"/>
 </map>

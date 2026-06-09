@@ -1,6 +1,9 @@
 <map id="FiftyOne.DeviceDetection.Examples.IExampleWriter" name="FiftyOne.DeviceDetection.Examples.IExampleWriter">
-<area shape="rect" id="node1" title="Interface for writing example output." alt="" coords="152,39,344,80"/>
-<area shape="rect" id="node3" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_writer_csv.html" title="Simple writer to a text stream in CSV format." alt="" coords="396,5,607,47"/>
-<area shape="rect" id="node4" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_writer_yaml.html" title="Simple writer to a text stream in YAML format using YamlDotNet." alt="" coords="392,71,611,112"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,46,104,73"/>
+<area shape="rect" id="Node000001" title="Interface for writing example output." alt="" coords="152,37,344,77"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_writer_csv.html" title="Simple writer to a text stream in CSV format." alt="" coords="396,5,607,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="357,41,396,36,396,41,358,46"/>
+<area shape="rect" id="Node000004" href="$class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_writer_yaml.html" title="Simple writer to a text stream in YAML format using YamlDotNet." alt="" coords="392,69,611,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="358,68,392,73,391,78,357,74"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,45,104,70"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,55,152,55,152,60,118,60"/>
 </map>

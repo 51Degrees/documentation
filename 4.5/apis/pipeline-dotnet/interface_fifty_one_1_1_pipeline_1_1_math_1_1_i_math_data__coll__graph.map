@@ -1,5 +1,7 @@
 <map id="FiftyOne.Pipeline.Math.IMathData" name="FiftyOne.Pipeline.Math.IMathData">
-<area shape="rect" id="node1" title=" " alt="" coords="5,155,247,181"/>
-<area shape="rect" id="node2" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_data.html" title="Represents property values that have been determined by a specific FlowElement based on the supplied ..." alt="" coords="71,80,181,107"/>
-<area shape="rect" id="node3" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data.html" title="Represents property values" alt="" coords="97,5,155,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,181,247,207"/>
+<area shape="rect" id="Node000002" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_data.html" title="Represents property values that have been determined by a specific FlowElement based on the supplied ..." alt="" coords="23,93,229,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,147,129,181,123,181,123,147"/>
+<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data.html" title="Represents property values." alt="" coords="23,5,229,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="129,59,129,93,123,93,123,59"/>
 </map>

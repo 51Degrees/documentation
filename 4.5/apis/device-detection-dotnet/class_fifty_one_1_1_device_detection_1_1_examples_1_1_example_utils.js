@@ -1,10 +1,10 @@
 var class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils =
 [
-    [ "CheckDataFile", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a49f2746fef6e7cc7d8c9f1f3be367ead", null ],
     [ "CheckDataFile", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a5c18341ab0d1a3cf155b5c73ef744895", null ],
+    [ "CheckDataFile", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a49f2746fef6e7cc7d8c9f1f3be367ead", null ],
     [ "FindFile", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a54667c0d9989760b8cd9dcaac814c938", null ],
-    [ "GetDataFileInfo", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a86253a9e8a0f500d899eaf6e62d78ba8", null ],
     [ "GetDataFileInfo", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a3b8785c7519e536acc53f0dbb4e0735a", null ],
+    [ "GetDataFileInfo", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a86253a9e8a0f500d899eaf6e62d78ba8", null ],
     [ "GetKeyFromEnv", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a4de3aba4463a95479f277b870949e6ef", null ],
     [ "IsInvalidKey", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a8b6b280f86ab56779fbcc91c787b5a0c", null ],
     [ "LogDataFileInfo", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a2526d1ab2497da2389e173a47e13a3a3", null ],

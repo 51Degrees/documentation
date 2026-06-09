@@ -1,6 +1,11 @@
 <map id="fiftyoneDegreesList" name="fiftyoneDegreesList">
-<area shape="rect" id="node1" title="List structure which contains a list of collection items." alt="" coords="5,185,153,212"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="79,95,299,121"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="177,185,368,212"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="111,5,267,32"/>
+<area shape="rect" id="Node000001" title="List structure which contains a list of collection items." alt="" coords="5,206,153,231"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="75,101,295,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,136,128,153,104,181,88,207,83,204,100,178,124,149,148,131"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="177,206,368,231"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="179,140,178,157,183,172,202,191,226,204,224,208,198,195,178,175,173,157,174,140"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="107,5,263,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="187,45,187,101,182,101,182,45"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="264,194,255,173,241,152,227,139,210,129,213,125,230,135,245,149,259,170,268,192"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="383,209,395,218,387,227,369,231,368,226,384,222,389,219,380,214"/>
 </map>

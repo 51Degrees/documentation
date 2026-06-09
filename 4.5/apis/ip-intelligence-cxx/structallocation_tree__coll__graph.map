@@ -1,5 +1,9 @@
 <map id="allocationTree" name="allocationTree">
-<area shape="rect" id="node1" title=" " alt="" coords="5,118,119,145"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_tree_root.html" title="Tree root structure defining the beginning of the tree." alt="" coords="84,5,267,32"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_tree_node.html" title="Node structure defining a single node in the tree." alt="" coords="143,118,330,145"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,140,119,165"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_tree_root.html" title="Tree root structure defining the beginning of the tree." alt="" coords="80,5,263,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,40,117,57,101,78,87,101,69,141,64,138,82,98,96,75,113,53,134,36"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_tree_node.html" title="Node structure defining a single node in the tree." alt="" coords="143,140,330,165"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="167,44,164,70,170,96,189,120,214,138,211,142,186,124,165,98,159,71,161,44"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="230,127,221,92,205,56,184,33,188,29,210,53,226,90,235,126"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="300,136,338,139,351,144,357,153,350,162,334,168,287,168,287,163,333,162,347,158,351,153,348,148,337,144,300,142"/>
 </map>

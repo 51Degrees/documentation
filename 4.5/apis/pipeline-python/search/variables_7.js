@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['identifier',['identifier',['../classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#ae5def9ea433fb176060d9d8edcdc86b9',1,'fiftyone_pipeline_engines::datafile::DataFile']]],
-  ['interval',['interval',['../classfiftyone__pipeline__engines__fiftyone_1_1share__usage_1_1_share_usage.html#acf31f8ae068bfc305f434fec602fa06c',1,'fiftyone_pipeline_engines_fiftyone.share_usage.ShareUsage.interval()'],['../classfiftyone__pipeline__engines__fiftyone_1_1share__usage__tracker_1_1_share_usage_tracker.html#ab8041e211b3d2da95f433922ee1e9896',1,'fiftyone_pipeline_engines_fiftyone.share_usage_tracker.ShareUsageTracker.interval()']]],
-  ['invalidkey',['invalidKey',['../classconstants_1_1_constants.html#a0ac4832258a1d853fe926b88e6665f30',1,'constants::Constants']]],
-  ['invalidkeymessage',['invalidKeyMessage',['../classconstants_1_1_constants.html#a00b3f00302e9a4cdfdaa9d0f9900782c',1,'constants::Constants']]],
-  ['invalidkeymessagecomplete',['invalidKeyMessageComplete',['../classconstants_1_1_constants.html#a65185f6fa344c9a631d71ada476aa3cd',1,'constants::Constants']]],
-  ['invalidkeyresponse',['invalidKeyResponse',['../classconstants_1_1_constants.html#a44ed55f27b5e026b823304f4b0349403',1,'constants::Constants']]],
-  ['is_5fvalid_5fxml_5fchar',['IS_VALID_XML_CHAR',['../namespacefiftyone__pipeline__engines__fiftyone_1_1share__usage.html#aabe824f33c0a740d870c8a22889361a9',1,'fiftyone_pipeline_engines_fiftyone::share_usage']]]
+  ['identifier_0',['identifier',['../classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#ae5def9ea433fb176060d9d8edcdc86b9',1,'fiftyone_pipeline_engines::datafile::DataFile']]],
+  ['include_5fpackage_5fdata_1',['include_package_data',['../namespacesetup.html#a35139105b25ef46629d31888bad595d8',1,'setup']]],
+  ['install_5frequires_2',['install_requires',['../namespacesetup.html#abead4f26b530856f858f0d44c7cf2588',1,'setup']]],
+  ['interval_3',['interval',['../classfiftyone__pipeline__engines__fiftyone_1_1share__usage_1_1_share_usage.html#acf31f8ae068bfc305f434fec602fa06c',1,'fiftyone_pipeline_engines_fiftyone.share_usage.ShareUsage.interval'],['../classfiftyone__pipeline__engines__fiftyone_1_1share__usage__tracker_1_1_share_usage_tracker.html#ab8041e211b3d2da95f433922ee1e9896',1,'fiftyone_pipeline_engines_fiftyone.share_usage_tracker.ShareUsageTracker.interval']]],
+  ['invalidkey_4',['invalidKey',['../classconstants_1_1_constants.html#a88c316023a84aaa483eb1500d0cd5d55',1,'constants::Constants']]],
+  ['invalidkeymessage_5',['invalidKeyMessage',['../classconstants_1_1_constants.html#adf286df770891a0d46c9270d6928169c',1,'constants::Constants']]],
+  ['invalidkeymessagecomplete_6',['invalidKeyMessageComplete',['../classconstants_1_1_constants.html#a34709a5c6784c0012d52588e80f7b88f',1,'constants::Constants']]],
+  ['invalidkeyresponse_7',['invalidKeyResponse',['../classconstants_1_1_constants.html#ae2c18f49eb85c3d71911f4aa16aca8ca',1,'constants::Constants']]],
+  ['is_5fvalid_5fxml_5fchar_8',['IS_VALID_XML_CHAR',['../namespacefiftyone__pipeline__engines__fiftyone_1_1share__usage.html#a6aab743018cd09474de3840cea85069d',1,'fiftyone_pipeline_engines_fiftyone::share_usage']]]
 ];

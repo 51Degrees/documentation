@@ -1,43 +1,37 @@
 /*
-@ @licstart  The following is the entire license notice for the
-JavaScript code in this file.
+ @licstart  The following is the entire license notice for the JavaScript code in this file.
 
-Copyright (C) 1997-2017 by Dimitri van Heesch
+ The MIT License (MIT)
 
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
+ Copyright (C) 1997-2020 by Dimitri van Heesch
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
 
-You should have received a copy of the GNU General Public License along
-with this program; if not, write to the Free Software Foundation, Inc.,
-51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ The above copyright notice and this permission notice shall be included in all copies or
+ substantial portions of the Software.
 
-@licend  The above is the entire license notice
-for the JavaScript code in this file
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var NAVTREE =
 [
+  [ "51Degrees IP Intelligence Java", "index.html", [
     [ "General Docs", "/documentation/4.5/index.html", null ],
-    [ "API Specific CI Approach", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engieb049edf6682340f3492e3fc0c158000.html", null ],
-    [ "<img src=\"https://51degrees.com/DesktopModules/FiftyOne/Distributor/Logo.ashx?utm_source=github&utm_medium=repository&utm_content=home&utm_campaign=c-open-source\" alt=\"51Degrees\" title=\"Data rewards the curious\"/> <strong>IP Intelligence Data Files</strong>", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engi6254aafd74b874e63765ce8ef8e9c5cb.html", null ],
-    [ "51Degrees Ip Intelligence API", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engi45eead18251e49579d7302e9b292f349.html", null ],
-    [ "API Specific CI Approach", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engi78d748b70ac7aaafac9c4cf54b49ec4f.html", null ],
-    [ "51Degrees Common Code Library", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engi1f2a0eefaced8c6f189b920a08f7c804.html", null ],
-    [ "ip-graph-cxx", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engiba2d67904a72560dc78b3278cbf28bca.html", null ],
-    [ "Proposal: Support Weighted Values in the IPI Dataset (C Reader Side)", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence_8engi285b18d7c014a2285c6d2525bcca50f2.html", null ],
-    [ "API Specific CI/CD Approach", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence-java-examples_ci__r_e_a_d_m_e.html", null ],
-    [ "Contributing", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence-java-52f5a04c7278b38c07f462b11dfc2890.html", null ],
-    [ "51Degrees IP Intelligence Engines - Examples", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java_ip-intelligence-java-examples__r_e_a_d_m_e.html", null ],
-    [ "51Degrees IP Intelligence Engines", "md__home_runner_work_documentation_documentation_apis_ip-intelligence-java__r_e_a_d_m_e.html", null ],
+    [ "Proposal: Support Weighted Values in the IPI Dataset (C Reader Side)", "md__2home_2runner_2work_2documentation_2documentation_2apis_2ip-intelligence-java_2ip-intelligen5f19afee3c031775da38b18bd20e95f8.html", null ],
+    [ "Contributing", "md__2home_2runner_2work_2documentation_2documentation_2apis_2ip-intelligence-java_2ip-intelligenac518c474a7e33a0c906af984830efd3.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Examples", "examples.html", "examples" ]
+  ] ]
 ];
 
 var NAVTREEHIDEROOT = true;
@@ -46,14 +40,10 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-".html",
-"classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_component_meta_data_swig.html#a6b9c3beaeaa2a2cdd4e0d01d5c614306",
-"classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_ip_intelligence_on_premise_engine_module_j_n_i.html#a3945437e07981a20a83944ff7168a672",
-"classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_ip_intelligence_on_premise_engine_module_j_n_i.html#ad3c738f22d237d7a2eb473c4a78f77e0",
-"classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_u_t_f8_string_swig.html#a8125aef6982875d05e5c0069cb878650",
-"classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_weighted_u_t_f8_string_list_value_swig.html#a4ed4d61abc15ca77cf85af05062dc0d4",
-"classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base_on_premise.html#ae95605751bf31befce8bd3a025592ba2"
+"/documentation/4.5/index.html",
+"classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base_on_premise.html#a821e58bbdad5539949420652db7be1f4"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+const SYNCONMSG = 'click to disable panel synchronization';
+const SYNCOFFMSG = 'click to enable panel synchronization';
+const LISTOFALLMEMBERS = 'List of all members';

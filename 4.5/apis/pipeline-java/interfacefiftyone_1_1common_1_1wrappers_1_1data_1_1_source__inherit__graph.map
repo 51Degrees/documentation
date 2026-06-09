@@ -1,5 +1,7 @@
 <map id="fiftyone.common.wrappers.data.Source" name="fiftyone.common.wrappers.data.Source">
-<area shape="rect" id="node1" title=" " alt="" coords="5,39,239,80"/>
-<area shape="rect" id="node2" href="$classfiftyone_1_1common_1_1wrappers_1_1data_1_1direct_1_1_source_memory.html" title=" " alt="" coords="293,5,567,47"/>
-<area shape="rect" id="node3" href="$classfiftyone_1_1common_1_1wrappers_1_1data_1_1indirect_1_1_source_file.html" title=" " alt="" coords="287,71,573,112"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,37,239,77"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1common_1_1wrappers_1_1data_1_1direct_1_1_source_memory.html" title=" " alt="" coords="293,5,567,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,41,292,37,293,42,252,46"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1common_1_1wrappers_1_1data_1_1indirect_1_1_source_file.html" title=" " alt="" coords="287,69,573,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="253,68,287,72,286,77,252,74"/>
 </map>

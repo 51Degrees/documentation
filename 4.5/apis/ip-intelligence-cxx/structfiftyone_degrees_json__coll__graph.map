@@ -1,10 +1,20 @@
 <map id="fiftyoneDegreesJson" name="fiftyoneDegreesJson">
-<area shape="rect" id="node1" title="Structure used to populated a JSON string for all required properties and values." alt="" coords="905,160,1057,187"/>
-<area shape="rect" id="node2" href="$structfiftyone_degrees_list.html" title="List structure which contains a list of collection items." alt="" coords="609,5,757,32"/>
-<area shape="rect" id="node3" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="243,64,463,91"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="588,109,779,136"/>
-<area shape="rect" id="node5" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="5,64,161,91"/>
-<area shape="rect" id="node6" href="$structfiftyone_degrees_property.html" title="Property structure containing all the meta data relating to a property." alt="" coords="593,160,773,187"/>
-<area shape="rect" id="node7" href="$structfiftyone_degrees_string_builder.html" title="String buffer for building strings with memory checks." alt="" coords="579,211,788,237"/>
-<area shape="rect" id="node8" href="$structfiftyone_degrees_exception.html" title="Structure used to represent a 51Degrees exception and passed into methods that might generate excepti..." alt="" coords="589,261,778,288"/>
+<area shape="rect" id="Node000001" title="Structure used to populated a JSON string for all required properties and values." alt="" coords="968,103,1120,128"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_string_builder.html" title="String buffer for building strings with memory checks." alt="" coords="637,5,847,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="861,25,904,34,945,48,993,73,1029,100,1026,105,990,78,943,52,902,40,860,31"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="5,99,196,124"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,99,220,98,403,90,545,88,871,87,907,86,944,87,1003,100,1002,105,944,93,907,91,871,93,545,93,403,96,220,103,210,104"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="70,84,79,75,101,72,118,74,129,81,132,90,127,100,122,97,127,90,125,84,117,79,101,77,82,80,74,88"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="316,141,536,167"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="210,123,329,139,328,144,209,128"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="333,171,277,172,219,166,166,148,123,127,125,122,168,143,221,161,277,167,333,165"/>
+<area shape="rect" id="Node000007" href="$structfiftyone_degrees_list.html" title="List structure which contains a list of collection items." alt="" coords="668,107,816,132"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="549,138,667,125,668,130,550,143"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="23,205,179,231"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="192,210,291,195,345,181,392,164,393,169,346,186,293,201,193,215"/>
+<area shape="rect" id="Node000006" href="$structfiftyone_degrees_property.html" title="Property structure containing all the meta data relating to a property." alt="" coords="652,156,832,181"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="845,158,943,143,1007,125,1008,131,945,149,846,164"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="830,116,968,114,968,119,830,121"/>
+<area shape="rect" id="Node000008" href="$structfiftyone_degrees_exception.html" title="Structure used to represent a 51Degrees exception and passed into methods that might generate excepti..." alt="" coords="647,209,837,235"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="849,209,897,199,943,184,991,156,1027,126,1031,130,994,160,945,188,898,204,850,214"/>
 </map>

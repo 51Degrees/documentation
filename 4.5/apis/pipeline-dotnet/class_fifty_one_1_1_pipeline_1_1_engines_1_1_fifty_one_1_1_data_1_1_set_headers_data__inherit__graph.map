@@ -1,8 +1,15 @@
 <map id="FiftyOne.Pipeline.Engines.FiftyOne.Data.SetHeadersData" name="FiftyOne.Pipeline.Engines.FiftyOne.Data.SetHeadersData">
-<area shape="rect" id="node1" title="Element data instance for SetHeadersElement See the Specification" alt="" coords="44,229,265,271"/>
-<area shape="rect" id="node2" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_element_data_base.html" title="This class stores property values that have been determined by a specific FlowElement based on the su..." alt="" coords="5,155,144,181"/>
-<area shape="rect" id="node3" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_data_base.html" title="This class stores data values as key/value pairs where the key is a string and the value can be any t..." alt="" coords="32,80,117,107"/>
-<area shape="rect" id="node4" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data.html" title="Represents property values" alt="" coords="107,5,165,32"/>
-<area shape="rect" id="node5" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_data.html" title="Represents property values that have been determined by a specific FlowElement based on the supplied ..." alt="" coords="142,80,253,107"/>
-<area shape="rect" id="node6" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_i_set_headers_data.html" title="The IElementData interface for SetHeadersElement." alt="" coords="169,155,301,181"/>
+<area shape="rect" id="Node000001" title="Element data instance for SetHeadersElement See the Specification." alt="" coords="785,37,1007,77"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_element_data_base.html" title="This class stores property values that have been determined by a specific FlowElement based on the su..." alt="" coords="522,5,727,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="741,36,786,42,785,47,741,42"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_data_base.html" title="This class stores data values as key/value pairs where the key is a string and the value can be any t..." alt="" coords="259,5,464,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="478,23,522,23,522,28,478,28"/>
+<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data.html" title="Represents property values." alt="" coords="5,37,211,77"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="224,40,258,36,259,41,225,45"/>
+<area shape="rect" id="Node000005" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_data.html" title="Represents property values that have been determined by a specific FlowElement based on the supplied ..." alt="" coords="259,69,464,109"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="225,69,259,74,258,79,224,75"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="457,63,541,43,542,48,458,69"/>
+<area shape="rect" id="Node000006" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_i_set_headers_data.html" title="The IElementData interface for SetHeadersElement." alt="" coords="512,69,737,109"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="478,87,512,87,512,92,478,92"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="751,72,785,68,785,73,751,77"/>
 </map>

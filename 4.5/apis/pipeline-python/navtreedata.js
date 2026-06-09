@@ -1,37 +1,34 @@
 /*
-@ @licstart  The following is the entire license notice for the
-JavaScript code in this file.
+ @licstart  The following is the entire license notice for the JavaScript code in this file.
 
-Copyright (C) 1997-2017 by Dimitri van Heesch
+ The MIT License (MIT)
 
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
+ Copyright (C) 1997-2020 by Dimitri van Heesch
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
 
-You should have received a copy of the GNU General Public License along
-with this program; if not, write to the Free Software Foundation, Inc.,
-51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ The above copyright notice and this permission notice shall be included in all copies or
+ substantial portions of the Software.
 
-@licend  The above is the entire license notice
-for the JavaScript code in this file
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var NAVTREE =
 [
+  [ "51Degrees Pipeline Python", "index.html", [
     [ "General Docs", "/documentation/4.5/index.html", null ],
-    [ "Cloud Request Engine", "md__home_runner_work_documentation_documentation_apis_pipeline-python_fiftyone_pipeline_cloudrequestengine_readme.html", null ],
-    [ "Pipeline Core", "md__home_runner_work_documentation_documentation_apis_pipeline-python_fiftyone_pipeline_core_readme.html", null ],
-    [ "Purpose", "md__home_runner_work_documentation_documentation_apis_pipeline-python_fiftyone_pipeline_core_srcb93d8b5d1da24295dbc2788e1b8bdf94.html", null ],
-    [ "Pipeline Engines", "md__home_runner_work_documentation_documentation_apis_pipeline-python_fiftyone_pipeline_engines_readme.html", null ],
-    [ "Pipeline Engines Fiftyone", "md__home_runner_work_documentation_documentation_apis_pipeline-python_fiftyone_pipeline_engines_fiftyone_readme.html", null ],
-    [ "51Degrees Pipeline API", "md__home_runner_work_documentation_documentation_apis_pipeline-python_readme.html", null ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Examples", "examples.html", "examples" ]
+  ] ]
 ];
 
 var NAVTREEHIDEROOT = true;
@@ -41,9 +38,10 @@ var NAVTREEHIDESYNC = true;
 var NAVTREEINDEX =
 [
 "/documentation/4.5/index.html",
-"classfiftyone__pipeline__engines_1_1basic__dictionary__cache_1_1_basic_dictionary_cache.html#a360361de26e1b7ce1e910fbafa6bcf11",
-"classtests_1_1test__javascriptbuilder_1_1_delayed_execution_engine3.html#a3b61466118438420966944571546beb9"
+"classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a8025a875e59491bc86c2e66cf24f3120",
+"classtests_1_1test__usage_1_1_receiver_thread.html#a381dbf432a235068a608ea44f4126db8"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+const SYNCONMSG = 'click to disable panel synchronization';
+const SYNCOFFMSG = 'click to enable panel synchronization';
+const LISTOFALLMEMBERS = 'List of all members';

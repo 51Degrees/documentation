@@ -1,9 +1,17 @@
 <map id="Pool" name="Pool">
-<area shape="rect" id="node1" title="File test class used to test the functionality of file.c." alt="" coords="136,184,187,211"/>
-<area shape="rect" id="node2" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="29,95,83,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,107,32"/>
-<area shape="rect" id="node4" href="$structfiftyone_degrees_pool.html" title="Pool of resources stored as items in a stack." alt="" coords="247,95,401,121"/>
-<area shape="rect" id="node6" href="$structfiftyone_degrees_pool_item.html" title="Pool item node in the stack of items." alt="" coords="265,184,447,211"/>
-<area shape="rect" id="node5" href="$unionfiftyone_degrees_pool_head.html" title="The head of the stack used for pop and push operations." alt="" coords="231,5,417,32"/>
-<area shape="rect" id="node7" href="$structtest_resource.html" title=" " alt="" coords="108,95,215,121"/>
+<area shape="rect" id="Node000001" title="File test class used to test the functionality of file.c." alt="" coords="136,197,187,223"/>
+<area shape="rect" id="Node000002" href="$class_base.html" title="Base test class used to carry out memory leak checks." alt="" coords="29,101,83,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,134,150,195,147,199,77,138"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,107,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="59,45,59,101,53,101,53,45"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_pool.html" title="Pool of resources stored as items in a stack." alt="" coords="255,101,409,127"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="304,136,236,176,188,200,185,195,233,171,301,132"/>
+<area shape="poly" id="edge7_Node000004_Node000004" title=" " alt="" coords="423,105,435,114,427,122,409,125,408,120,425,117,430,114,421,110"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_pool_item.html" title="Pool item node in the stack of items." alt="" coords="274,197,457,223"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="328,140,327,157,330,172,339,185,350,195,346,199,335,188,326,174,322,157,323,140"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="370,184,372,167,368,152,360,139,348,129,352,125,364,136,373,150,377,167,376,184"/>
+<area shape="rect" id="Node000006" href="$unionfiftyone_degrees_pool_head.html" title="The head of the stack used for pop and push operations." alt="" coords="239,5,425,31"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="335,45,335,101,329,101,329,45"/>
+<area shape="rect" id="Node000007" href="$structtest_resource.html" title=" " alt="" coords="108,101,215,127"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="164,141,164,197,159,197,159,141"/>
 </map>

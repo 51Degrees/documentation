@@ -1,4 +1,5 @@
 <map id="DeviceDetectionMissingPropertyService" name="DeviceDetectionMissingPropertyService">
-<area shape="rect" id="node1" title="Instance of the MissingPropertyService class that checks if a property is available in the current da..." alt="" coords="5,80,240,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="35,5,210,32"/>
+<area shape="rect" id="Node000001" title="Instance of the MissingPropertyService class that checks if a property is available in the current da..." alt="" coords="5,79,240,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="35,5,210,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,44,125,79,120,79,120,44"/>
 </map>
