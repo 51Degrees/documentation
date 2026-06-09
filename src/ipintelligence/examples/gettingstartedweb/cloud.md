@@ -1,4 +1,4 @@
-@page IpIntelligence_Examples_GettingStarted_Web_Cloud Getting Started Web Cloud
+@page IpIntelligence_Examples_GettingStarted_Web_Cloud IP Intelligence Getting Started Web Cloud
 
 # Introduction
 
