@@ -8,7 +8,7 @@ We have also integrated our Device Detection to Varnish. This page details an ov
 For the latest tested versions and tested platforms information, please refer to our @testedversions page.
 
 # Installing
-If you haven’t already, you can obtain a copy of the latest version of the API [here](https://github.com/51Degrees/device-detection-varnish).
+If you haven’t already, you can obtain the latest version of the API from the [device-detection-varnish repository](https://github.com/51Degrees/device-detection-varnish).
 To install on a Linux system, run the following commands from the project's root directory.
 
 ```

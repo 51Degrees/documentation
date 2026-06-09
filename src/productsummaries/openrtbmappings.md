@@ -2,7 +2,7 @@
 
 # Introduction
 
-The RTB Project is an API specification for companies needing an open protocol for the automated trading of digital media across a broader range of platforms, devices, and advertising solutions. To aid those wishing to enhance the capture of device data, we've compiled a guide to map OpenRTB Object: Device and Geo fields to 51Degrees properties and values. The full Open RTB API Specification can be found [here](https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md) with the Device Object specification in section [3.2.18](https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3218---object-device-) and Geo Object specification in section [3.2.19](https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3219---object-geo-).
+The RTB Project is an API specification for companies needing an open protocol for the automated trading of digital media across a broader range of platforms, devices, and advertising solutions. To aid those wishing to enhance the capture of device data, we've compiled a guide to map OpenRTB Object: Device and Geo fields to 51Degrees properties and values. The full Open RTB API Specification can be found in [the OpenRTB 2.6 specification](https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md) with the Device Object specification in section [3.2.18](https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3218---object-device-) and Geo Object specification in section [3.2.19](https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3219---object-geo-).
 
 # OpenRTB API Device Mappings
 
