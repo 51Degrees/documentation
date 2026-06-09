@@ -1609,6 +1609,20 @@ DISABLE_INDEX          = YES
 
 GENERATE_TREEVIEW      = YES
 
+# If the HTML_INDEX_NOINDEX tag is set to YES then doxygen adds a
+# <meta name="robots" content="noindex,follow"> tag to the generated
+# navigation, index and helper pages (the tab indexes, the per-directory
+# reference pages, the graph legend and the crawler helper page). These thin,
+# link-only pages stay out of the search index while crawlers still follow
+# their links to the real documentation. The main page and ordinary
+# documentation pages are unaffected. Requires the 51Degrees DoxyGen build
+# that ships this option (see 51Degrees/doxygen#7); older builds ignore it
+# with a harmless warning.
+# The default value is: NO.
+# This tag requires that the tag GENERATE_HTML is set to YES.
+
+HTML_INDEX_NOINDEX     = YES
+
 # The HIDE_TREEVIEW_ROOT tag is used to remove the root node from the tree view.
 # When not hidden, the tree root will be PROJECT_NAME. If the tree root is set
 # to hidded then the tree will only contain tree defined in the layout.
