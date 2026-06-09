@@ -45,6 +45,90 @@ substitutions:
 already interpolated into `<title>` below), so each page gets its own
 description rather than a project-wide blurb.
 
+## Why the stylesheets come before the scripts and the inline `<style>` block
+
+The doxygen template used to emit `tabs.css` first, then every script
+(`jquery.js`, `dynsections.js`, `examplegrabber.js`,
+`testedversionsgrabber.js`, `search51.js`, the `$treeview` expansion of
+`resize.js` + `navtreedata.js` + `navtree.js` + inline `initResizable`),
+and only then the main `$stylesheet` (`docs-main.css`). The render-
+blocking scripts in the middle delayed the docs stylesheet by a full
+network round trip, so the page painted with only `tabs.css` applied
+and re-flowed once `docs-main.css` arrived.
+
+Reordering so all stylesheets (`tabs.css`, `$stylesheet`,
+`$extrastylesheet`) precede the scripts lets the browser preload-scan
+and request the docs stylesheet in parallel with `tabs.css`, and the
+scripts then block on a stylesheet that is already in flight or done.
+
+The inline `<style>` block reserves two layout boxes ahead of asset
+arrival to keep Cumulative Layout Shift near zero:
+
+- `.c-brand__image { aspect-ratio: 360/67 }` matches the natural
+  dimensions of `/img/logo.png` (the file the website proxy swaps in
+  for `logo-51Degrees-Docs.png` on 51degrees.com). The `<img>` element
+  also gets matching `width="360" height="67"` attributes for browsers
+  that honour the attribute-derived aspect ratio rather than the CSS
+  one. Without the reservation the masthead first paints with a zero-
+  height image box and snaps down ~35 px when the bytes arrive.
+- `.c-sidenav { min-height: 600px }` at viewports below 993px keeps
+  the sidenav placeholder tall enough that `navtree.js` filling in the
+  tree does not push the main content downwards. Above 993px
+  `docs-main.css` already pins `.c-sidenav` to `position: fixed`, so
+  no reservation is needed there.
+
+Both rules are inlined into every page rather than added to
+`docs-main.css` so they take effect on first paint, before the
+external stylesheet finishes loading. The CSS is hand-minified to a
+single line to keep the per-page byte cost minimal (the rationale
+lives here, not in the template, per the next section).
+
+## Why hreflang lives in the CI script, not the template
+
+The single hreflang declaration emitted on doxygen pages is
+`<link rel="alternate" hreflang="en-US" .../>`, matching the rest of
+51degrees.com (single-locale site; no x-default, no other locale).
+
+It is injected by `ci/generate-documentation.ps1` after the canonical
+so both declarations share the same `/documentation/<rel>` href and
+stay adjacent in `<head>`. The template cannot construct that root-
+relative URL by itself (doxygen's `$relpath^` substitution is relative
+to the page being rendered, not to `/documentation/`), so doing it in
+the script is the only way to keep canonical and hreflang in agreement.
+
+The hreflang is emitted only on the unversioned mirror, never on the
+versioned source: the versioned source canonicals at a different URL
+(the unversioned one), so emitting a hreflang anchor at that different
+URL from the versioned page is the cross-URL mismatch Semrush flags as
+a hreflang conflict (rule 24) or an incorrect hreflang link (rule 25).
+The mirror is self-canonical, so it carries the locale signal cleanly.
+The mirror loop also gates the injection on the existing canonical href
+matching the mirror's own URL, so api-repo pages whose template sets a
+different consolidation target stay unmodified.
+
+## Why heading rebalancing lives in a CI script, not the template
+
+Doxygen ships the page title at `<h2 class="g-docs__page-title">`
+and every section heading at `<h1 class="g-docs__section-heading">`,
+and also converts top-level markdown `# Section Title` lines to
+plain `<h1>` with no recognisable class. Each rendered page therefore
+carries N+1 `<h1>` tags and no `<h1>` for the actual page title,
+which Semrush rule 104 ("Multiple H1 tags") flags.
+
+`ci/rebalance-doc-headings.ps1` runs over the gh-pages tree after
+the mirror loop and rewrites three things by regex:
+
+1. Promote the page-title `<h2>` to `<h1>` by class.
+2. Demote every section-heading `<h1>` to `<h2>` by class.
+3. Demote any remaining body-level `<h1>` to `<h2>` (the
+   class-less ones doxygen emits for markdown section titles).
+   The page-title `<h1>` from pass 1 is preserved because it
+   carries `class="g-docs__page-title"`.
+
+Doing this in CI rather than patching the template lets the same
+rule apply uniformly across every API repo's doxygen output without
+needing each one to re-pull a template change.
+
 ## Why these notes are not inline comments
 
 A prior version had this rationale as `<!-- ... -->` blocks inside

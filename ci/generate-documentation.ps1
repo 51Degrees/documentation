@@ -73,6 +73,14 @@ if (!(Test-Path "gh-pages/.nojekyll")) {
 # canonical link pointing back at the unversioned form so search
 # engines index that as the canonical URL.
 #
+# The hreflang="en-US" alternate is emitted only on the unversioned
+# mirror, never on the versioned source. The versioned URL canonicals
+# at a different URL (the unversioned one), so emitting a hreflang
+# anchor at that different URL from the versioned page is the cross-
+# URL mismatch Semrush flags as a hreflang conflict (rule 24) or an
+# incorrect hreflang link (rule 25). The mirror is self-canonical, so
+# it carries the locale signal cleanly.
+#
 # A .mirror-manifest at the gh-pages root records what we wrote so the
 # next run (after a version bump or a Doxygen page rename) cleans up
 # stale mirrors before recreating fresh ones.
@@ -86,20 +94,90 @@ if (Test-Path $manifestPath) {
 $srcRoot = (Resolve-Path "gh-pages/$version").Path
 $baseTag = "<base href=`"/documentation/$version/`">"
 $mirrored = [System.Collections.Generic.List[string]]::new()
+$canonicalsAdded = 0
+$hreflangsAdded = 0
 Get-ChildItem -Recurse -File -Filter "*.html" -Path "gh-pages/$version" | ForEach-Object {
     $rel = $_.FullName.Substring($srcRoot.Length + 1) -replace '\\', '/'
     $dest = Join-Path "gh-pages" $rel
     New-Item -ItemType Directory -Force (Split-Path $dest) | Out-Null
     $content = Get-Content $_.FullName -Raw
+
+    # Root-relative canonical pointing at the unversioned URL. Both the
+    # versioned source and the unversioned mirror canonicalise here, so
+    # search engines consolidate equity on /documentation/$rel and the
+    # same rendered HTML is portable across any host (production,
+    # staging, preview, localhost).
     $canonicalTag = "<link rel=`"canonical`" href=`"/documentation/$rel`">"
-    if ($content -notmatch '<base\s') {
-        $content = $content -replace '(<head[^>]*>)', "`$1`n  $baseTag`n  $canonicalTag"
+
+    # hreflang alternate sharing the canonical's href so both
+    # declarations resolve to the same URL. en-US matches the rest of
+    # 51degrees.com (single-locale site); the website-side hreflang on
+    # every non-doxygen page also emits en-US, so /documentation/* now
+    # carries the same locale signal as the surrounding site.
+    $hreflangTag = "<link rel=`"alternate`" hreflang=`"en-US`" href=`"/documentation/$rel`" />"
+
+    # Add canonical to the versioned source in place when it doesn't
+    # already have one (doxygen-generated pages don't ship one). The
+    # site's reverse proxy used to inject this at request time but
+    # pinned the rendered HTML to one host; doing it here once at
+    # build time keeps the output portable.
+    if ($content -notmatch '<link\s+rel=["'']?canonical') {
+        $content = $content -replace '(<head[^>]*>)', "`$1`n  $canonicalTag"
+        Set-Content -Path $_.FullName -Value $content -NoNewline
+        $canonicalsAdded++
     }
+
+    # Mirror copy under the unversioned root. The mirror adds <base>
+    # so relative refs into versioned assets still resolve, and the
+    # canonical is carried over from the in-place update above (or
+    # from the doxygen template for the rare file that already had
+    # a self-canonical).
+    if ($content -notmatch '<base\s') {
+        $content = $content -replace '(<head[^>]*>)', "`$1`n  $baseTag"
+    }
+
+    # Inject the hreflang alternate into the mirror only, and only when
+    # the existing canonical on this page points at the mirror's own
+    # URL. Two conditions have to hold:
+    #   * The page does not already carry an hreflang (idempotent on
+    #     re-runs and safe against a future template change that ships
+    #     one).
+    #   * The canonical href equals /documentation/$rel (i.e. the
+    #     mirror's URL). Pages whose canonical points elsewhere -- e.g.
+    #     api-repo doxygen pages whose own template sets a different
+    #     consolidation target -- are not self-canonical and so must
+    #     not declare a hreflang anchor at a URL different from their
+    #     own.
+    $mirrorUrl = "/documentation/$rel"
+    $existingCanonical = $null
+    $canonicalMatch = [regex]::Match($content, '<link\s+rel="canonical"\s+href="([^"]+)"')
+    if ($canonicalMatch.Success) {
+        $existingCanonical = $canonicalMatch.Groups[1].Value
+    }
+    if ($existingCanonical -eq $mirrorUrl -and
+        $content -notmatch '<link\s+rel=["'']?alternate["'']?\s+hreflang=') {
+        $content = $content -replace '(<link\s+rel="canonical"\s+href="[^"]*">)', "`$1`n  $hreflangTag"
+        $hreflangsAdded++
+    }
+
     Set-Content -Path $dest -Value $content -NoNewline
     $mirrored.Add($rel)
 }
 Set-Content -Path $manifestPath -Value ($mirrored -join "`n")
-Write-Host "Mirrored $($mirrored.Count) HTML files to gh-pages root."
+Write-Host "Mirrored $($mirrored.Count) HTML files to gh-pages root, added canonical to $canonicalsAdded versioned files, added hreflang to $hreflangsAdded versioned files."
+Write-Host "::endgroup::"
+
+# Minify the Doxygen-emitted JS (jquery.js, navtree.js, dynsections.js,
+# search51.js, examplegrabber.js, testedversionsgrabber.js, ...) and
+# rewrite <script src="*.js"> in every generated page to load the
+# *.min.js sibling. Mirrors the docs-main.css / docs-main.min.css
+# convention already used for the stylesheet. Clears the Semrush rule
+# 135 ("unminified JavaScript and CSS files") findings on every
+# /documentation/* page on 51degrees.com.
+Write-Host "::group::Minifying Doxygen-emitted JS"
+Push-Location ci
+try { npm ci --omit=dev=false --no-audit --no-fund } finally { Pop-Location }
+node ci/minify-docs-assets.js gh-pages
 Write-Host "::endgroup::"
 
 # Scan the freshly generated HTML for content-quality regressions

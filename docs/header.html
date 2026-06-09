@@ -10,7 +10,11 @@
 <!--BEGIN !PROJECT_BRIEF--><!--BEGIN PROJECT_NAME--><meta name="description" content="$title - $projectname documentation."/><!--END PROJECT_NAME--><!--END !PROJECT_BRIEF-->
 <!--BEGIN PROJECT_NAME--><title>$projectname: $title</title><!--END PROJECT_NAME-->
 <!--BEGIN !PROJECT_NAME--><title>$title</title><!--END !PROJECT_NAME-->
+<!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="$relpath^tabs.css" rel="stylesheet" type="text/css"/>
+<link href="$relpath^$stylesheet" rel="stylesheet" type="text/css" />
+$extrastylesheet
+<style type="text/css">.c-brand__image{aspect-ratio:360/67}@media (max-width:992px){.l-docs-index .g-docs__sidenav .c-sidenav{min-height:600px}}</style>
 <script type="text/javascript" src="$relpath^jquery.js"></script>
 <script type="text/javascript" src="$relpath^dynsections.js"></script>
 <script type="text/javascript" src="$relpath^examplegrabber.js"></script>
@@ -19,8 +23,6 @@
 $treeview
 $search
 $mathjax
-<link href="$relpath^$stylesheet" rel="stylesheet" type="text/css" />
-$extrastylesheet
 </head>
 <body class="l-docs-index p-doxygen">
 <div class="l-index__content">
@@ -30,7 +32,7 @@ $extrastylesheet
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
   <!--BEGIN PROJECT_LOGO-->
-  <a id="projectlogo" href="$projecturl" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="$relpath^$projectlogo" style="width:172px;"/></a>
+  <a id="projectlogo" href="$projecturl" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="$relpath^$projectlogo" width="360" height="67" style="width:172px;height:auto;"/></a>
   <!--BEGIN PROJECT_NAME-->
   <span class="c-tagline">$projectname
    <!--BEGIN PROJECT_NUMBER-->&#160;<span id="projectnumber">$projectnumber</span><!--END PROJECT_NUMBER-->

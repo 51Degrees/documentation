@@ -10,4 +10,4 @@ We do this using a mixture of data points including the declarations made by the
 
 The `HumanProbability` property returns a value between `1` and `10`. The value is our assessment as to the likelihood that the provided IP address relates to a human, or not. `1` means it is very unlikely to be a human, `10` highly likely.
 
-See the [property dictionary](https://localhost:5002/developers/property-dictionary?item=Location%7CHuman%20Detection) for more information.
+See the [property dictionary](https://51degrees.com/developers/property-dictionary?item=Location%7CHuman%20Detection) for more information.
