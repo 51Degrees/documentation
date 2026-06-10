@@ -80,4 +80,4 @@ location.reload();
 ## Cross-references
 
 - @ref Identifiers_51Did - how `id.usage` is consumed.
-- @ref DeviceDetection_OtherIntegrations_Prebid - downstream RTB enrichment that consumes the 51Did.
+- @ref Integrations_Prebid - downstream RTB enrichment that consumes the 51Did.

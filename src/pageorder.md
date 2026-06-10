@@ -6,6 +6,8 @@
 
 @page Identifiers_Index Identifiers
 
+@page Integrations_Index Integrations
+
 @page Services_Index Services
 
 @page PipelineApi_Index Pipeline API
