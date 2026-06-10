@@ -16,9 +16,13 @@
       @include make-link-docs();
     }
     // The docs footer is a call to action rather than fine print, so it is
-    // centred and set a step larger than the default copyright text.
+    // centred (text-align above) and set noticeably larger than the default
+    // copyright text, stepping up again on wider screens so the CTA stands out.
     .g-footer__message {
-      font-size: size(0);
+      font-size: size(1);
+      @include respond-to(md) {
+        font-size: size(2);
+      }
     }
   }
 }
