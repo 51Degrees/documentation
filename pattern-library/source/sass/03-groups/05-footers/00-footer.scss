@@ -11,15 +11,16 @@
 
   &--docs {
     border-top: none;
-    text-align: center;
+    text-align: left;
     a {
       @include make-link-docs();
     }
-    // The docs footer is a call to action rather than fine print, so it is
-    // centred (text-align above) and set one step larger than the default
-    // copyright text.
+    // The docs footer is a call to action rather than fine print, so it is one
+    // step larger than the default copyright text and left-aligned with a
+    // comfortable left indent so it reads as a prompt, not flush-left fine print.
     .g-footer__message {
       font-size: size(1);
+      padding-left: size(4);
     }
   }
 }
