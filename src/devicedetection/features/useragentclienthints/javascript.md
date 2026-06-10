@@ -15,8 +15,7 @@ See details below.
 Otherwise, if you are using one of our web integrations, you can use the 'Integrated' 
 approach described below. If not, you'll need to use the 'non-integrated' approach instead.
 
-# Cloud <a href="#UACH_Javscript_Cloud">#</a> @anchor UACH_Javscript_Cloud
-
+# Cloud {#UACH_Javscript_Cloud}
 Firstly, ensure that the `JavascriptGetHighEntropyValues` property is selected when 
 you create your Resource Key. This contains the JavaScript snippet to get the values from 
 the UA-CH API on the client device.
@@ -28,8 +27,7 @@ If you are calling our Cloud Service via our Pipeline API, hosted on your server
 also need to get this snippet to the client device. See the 'On-premise' section below for
 the two approaches to doing this.
 
-# On-premise Pipeline API <a href="#UACH_Javscript_OnPrem">#</a> @anchor UACH_Javscript_OnPrem
-
+# On-premise Pipeline API {#UACH_Javscript_OnPrem}
 If you are using our Pipeline API on your server (either cloud or On-premise) then you'll
 need a way to get the necessary JavaScript to run on the client and get the values back
 to your server.
@@ -37,8 +35,7 @@ to your server.
 In either case, you need to ensure the `JavascriptGetHighEntropyValues` property is included 
 in the results (all properties are included by default for On-premise).
 
-## Integrated <a href="#UACH_Javascript_Integrated">#</a> @anchor UACH_Javascript_Integrated
-
+## Integrated {#UACH_Javascript_Integrated}
 If you are using our [web integration](@ref PipelineApi_Features_WebIntegration) with
 [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) enabled, then this will take
 care of sending the snippet to the client device, getting the values back to the server and
@@ -47,8 +44,7 @@ passing them into our API.
 No additional configuration is required for either Cloud or On-premise solutions. The device
 detection engine natively processes the `getHighEntropyValues()` result when passed as evidence.
 
-## Non-integrated <a href="#UACH_Javascript_NonIntegrated">#</a> @anchor UACH_Javascript_NonIntegrated
-
+## Non-integrated {#UACH_Javascript_NonIntegrated}
 If you don't want to, or can't, use the web integrations as described above, then you'll need to
 handle the steps of getting the values from the JavaScript API, transferring those to the server
 and adding them to the pipeline evidence values.
@@ -94,14 +90,12 @@ detection engine natively processes this evidence format, converting it to the e
 See the [Getting Started Console On-premise](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise)
 example for a complete demonstration of this approach.
 
-# Alternative Evidence Formats <a href="#UACH_Javascript_Alternatives">#</a> @anchor UACH_Javascript_Alternatives
-
+# Alternative Evidence Formats {#UACH_Javascript_Alternatives}
 In addition to the `getHighEntropyValues()` JavaScript API result, the device detection engine
 supports the [Structured User Agent (SUA)](@ref DeviceDetection_Features_UACH_SUA) format
 from the OpenRTB 2.6 specification, commonly used in programmatic advertising scenarios.
 
-## Technical Details <a href="#UACH_Javascript_Technical">#</a> @anchor UACH_Javascript_Technical
-
+## Technical Details {#UACH_Javascript_Technical}
 The `getHighEntropyValues()` evidence is converted internally to the equivalent `Sec-CH-UA-*` HTTP
 headers before processing:
 
