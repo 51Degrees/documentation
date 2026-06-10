@@ -106,36 +106,40 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <p>This helps to keep values for IPs like the example above low, where the majority of the events are for 1 profile. So values are a reflection of the distribution of traffic, not just the count.</p>
 <h2 class="doxsection" id="calculation">Calculation<a class="headerlink" href="#calculation" aria-label="Permalink to this section">🔗</a></h2>
 <p>The formula used to calculate diversity value for a single IP is:</p>
-<div class="image">
+<div class="c-equation" style="max-width: 184px;"></div><div class="c-equation" style="max-width: 184px;"><div class="image">
 <object type="image/svg+xml" data="diversity-single.svg" style="pointer-events: none;"></object>
 <div class="caption">
 diversity-single</div></div>
-    <p>where each <code>p</code> is a profile (e.g. <code>Windows 10</code>), <code>Cp</code> is the number of events seen for that profile, and <code>C̅p</code> is average value of <code>Cp</code> for the IP.</p>
+    </div><div class="c-equation" style="max-width: 184px;"></div><p>where each <code>p</code> is a profile (e.g. <code>Windows 10</code>), <code>Cp</code> is the number of events seen for that profile, and <code>C̅p</code> is average value of <code>Cp</code> for the IP.</p>
 <p>This means that profiles with counts above the average are weighted more highly in the calculation than profiles with small contributions.</p>
 <p>The value for an IP range is then the average Dx:</p>
-<div class="image">
+<div class="c-equation" style="max-width: 108px;"></div><div class="c-equation" style="max-width: 108px;"><div class="image">
 <object type="image/svg+xml" data="diversity-sum.svg" style="pointer-events: none;"></object>
 <div class="caption">
 diversity-sum</div></div>
-    <p>or</p>
-<div class="image">
+    </div><div class="c-equation" style="max-width: 108px;"></div><p>or</p>
+<div class="c-equation" style="max-width: 229px;"></div><div class="c-equation" style="max-width: 229px;"><div class="image">
 <object type="image/svg+xml" data="diversity-range.svg" style="pointer-events: none;"></object>
 <div class="caption">
 diversity-range</div></div>
-    <p>The actual values of <code>Cp</code> are a weighted sample over time. So an event from today contributes <code>1</code> to the count, but an event from <code>n</code> days ago contributes <code>(M-n)/M</code> where <code>M</code> is the maximum number of days to include.</p>
+    </div><div class="c-equation" style="max-width: 229px;"></div><p>The actual values of <code>Cp</code> are a weighted sample over time. So an event from today contributes <code>1</code> to the count, but an event from <code>n</code> days ago contributes <code>(M-n)/M</code> where <code>M</code> is the maximum number of days to include.</p>
 <p>So <code>Cp</code> can be expressed as:</p>
-<div class="image">
+<div class="c-equation" style="max-width: 127px;"></div><div class="c-equation" style="max-width: 127px;"><div class="image">
 <object type="image/svg+xml" data="count.svg" style="pointer-events: none;"></object>
 <div class="caption">
 count</div></div>
-    <p>and <img src="count-average.svg" alt="" style="pointer-events: none;" class="inline" title="count-average"/>    </p>
-<p>where the new part <code>Np</code> is the number of profiles</p>
+    </div><div class="c-equation" style="max-width: 127px;"></div><p>and</p>
+<div class="c-equation" style="max-width: 127px;"></div><div class="c-equation" style="max-width: 127px;"><div class="image">
+<object type="image/svg+xml" data="count-average.svg" style="pointer-events: none;"></object>
+<div class="caption">
+count-average</div></div>
+    </div><div class="c-equation" style="max-width: 127px;"></div><p>where the new part <code>Np</code> is the number of profiles</p>
 <p>Meaning that the full equation is:</p>
-<div class="image">
+<div class="c-equation" style="max-width: 294px;"></div><div class="c-equation" style="max-width: 294px;"><div class="image">
 <object type="image/svg+xml" data="diversity-complete.svg" style="pointer-events: none;"></object>
 <div class="caption">
 diversity-complete</div></div>
-     </div></div><!-- primary -->
+    </div><div class="c-equation" style="max-width: 294px;"></div> </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

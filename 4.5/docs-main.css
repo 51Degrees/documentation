@@ -2947,6 +2947,17 @@ ol.linenums li {
   margin: 0 auto;
   display: block;
 }
+.l-docs-index .c-equation {
+  margin: 2.0736rem 0;
+}
+.l-docs-index .c-equation img,
+.l-docs-index .c-equation object,
+.l-docs-index .c-equation svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
 .l-docs-index .g-docs__primary .c-table tbody .c-table__row:last-child .c-table__cell {
   border: none;
 }
