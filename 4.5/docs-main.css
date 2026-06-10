@@ -2676,7 +2676,12 @@ ol.linenums li {
   text-decoration: underline;
 }
 .g-footer--docs .g-footer__message {
-  font-size: 1rem;
+  font-size: 1.2rem;
+}
+@media (min-width: 769px) {
+  .g-footer--docs .g-footer__message {
+    font-size: 1.44rem;
+  }
 }
 
 .g-footer__message {
