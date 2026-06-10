@@ -91,64 +91,102 @@ if (Test-Path $manifestPath) {
         Remove-Item -Force -ErrorAction SilentlyContinue (Join-Path "gh-pages" $_)
     }
 }
+# Canonical documentation home. URLs below are emitted absolute against
+# this host rather than root-relative. This loop is the single place the
+# documentation HTML is normalised for the public site: the 51degrees.com
+# reverse proxy used to rewrite every page at request time (add lang, swap
+# the logo, absolutise canonical/hreflang, retarget the home link, fix
+# member-list titles). Doing it once here at build time removes that per-
+# request work and covers both these docs and every cloned API-repo
+# doxygen build under <version>/apis/* in one pass. A preview / gh-pages
+# build therefore carries production canonicals, which is intended: those
+# hosts must not be indexed as the canonical, and the website no longer
+# promotes hrefs per environment.
+$site = "https://51degrees.com"
 $srcRoot = (Resolve-Path "gh-pages/$version").Path
 $baseTag = "<base href=`"/documentation/$version/`">"
 $mirrored = [System.Collections.Generic.List[string]]::new()
 $canonicalsAdded = 0
 $hreflangsAdded = 0
+$normalised = 0
 Get-ChildItem -Recurse -File -Filter "*.html" -Path "gh-pages/$version" | ForEach-Object {
     $rel = $_.FullName.Substring($srcRoot.Length + 1) -replace '\\', '/'
     $dest = Join-Path "gh-pages" $rel
     New-Item -ItemType Directory -Force (Split-Path $dest) | Out-Null
     $content = Get-Content $_.FullName -Raw
+    $before = $content
 
-    # Root-relative canonical pointing at the unversioned URL. Both the
-    # versioned source and the unversioned mirror canonicalise here, so
-    # search engines consolidate equity on /documentation/$rel and the
-    # same rendered HTML is portable across any host (production,
-    # staging, preview, localhost).
-    $canonicalTag = "<link rel=`"canonical`" href=`"/documentation/$rel`">"
+    # --- HTML normalisation (formerly performed by the website proxy) ---
 
-    # hreflang alternate sharing the canonical's href so both
-    # declarations resolve to the same URL. en-US matches the rest of
-    # 51degrees.com (single-locale site); the website-side hreflang on
-    # every non-doxygen page also emits en-US, so /documentation/* now
-    # carries the same locale signal as the surrounding site.
-    $hreflangTag = "<link rel=`"alternate`" hreflang=`"en-US`" href=`"/documentation/$rel`" />"
+    # Document language: doxygen omits lang on <html>; add it once.
+    $content = $content -replace '(<html\b)(?![^>]*\blang=)', '$1 lang="en"'
+
+    # Brand logo: doxygen ships the docs logo, the site shows the shared
+    # brand logo whose request also serves as the analytics pixel when
+    # served from 51degrees.com. Absolute so it resolves on any host.
+    $content = $content -replace 'logo-51Degrees-Docs\.png', "$site/img/logo.png"
+
+    # Home link: doxygen points the logo / "Main Page" link at index.html
+    # (the docs index); send it to the site home instead.
+    $content = $content -replace 'href="index\.html"', "href=`"$site/`""
+
+    # Member-list titles: doxygen titles these pages "<Class> Member List";
+    # use the page's own H2 title (g-docs__page-title) when present.
+    $titleMatch = [regex]::Match($content, '<title>([^<]*Member List)</title>')
+    if ($titleMatch.Success) {
+        $h2 = [regex]::Match($content, '<h2[^>]*class="[^"]*g-docs__page-title[^"]*"[^>]*>(.*?)</h2>')
+        if ($h2.Success) {
+            $pageTitle = ($h2.Groups[1].Value -replace '<[^>]+>', '').Trim()
+            if ($pageTitle) {
+                $fixed = $titleMatch.Groups[1].Value -replace 'Member List', $pageTitle
+                $content = $content.Replace($titleMatch.Value, "<title>$fixed</title>")
+            }
+        }
+    }
+
+    # Absolute canonical pointing at the unversioned URL on the canonical
+    # documentation host. Both the versioned source and the unversioned
+    # mirror canonicalise here so search engines consolidate equity on one
+    # URL.
+    $canonicalTag = "<link rel=`"canonical`" href=`"$site/documentation/$rel`">"
+
+    # hreflang alternate sharing the canonical's href. en-US matches the
+    # single-locale site. Emitted only on the self-canonical mirror (see
+    # below) to avoid the cross-URL hreflang Semrush flags (rules 24/25).
+    $hreflangTag = "<link rel=`"alternate`" hreflang=`"en-US`" href=`"$site/documentation/$rel`" />"
 
     # Add canonical to the versioned source in place when it doesn't
-    # already have one (doxygen-generated pages don't ship one). The
-    # site's reverse proxy used to inject this at request time but
-    # pinned the rendered HTML to one host; doing it here once at
-    # build time keeps the output portable.
+    # already have one (doxygen-generated pages don't ship one).
     if ($content -notmatch '<link\s+rel=["'']?canonical') {
         $content = $content -replace '(<head[^>]*>)', "`$1`n  $canonicalTag"
-        Set-Content -Path $_.FullName -Value $content -NoNewline
         $canonicalsAdded++
     }
 
-    # Mirror copy under the unversioned root. The mirror adds <base>
-    # so relative refs into versioned assets still resolve, and the
-    # canonical is carried over from the in-place update above (or
-    # from the doxygen template for the rare file that already had
-    # a self-canonical).
+    # Persist the normalised + canonicalised versioned source when it
+    # changed. The guards above keep this idempotent across re-runs.
+    if ($content -ne $before) {
+        Set-Content -Path $_.FullName -Value $content -NoNewline
+        $normalised++
+    }
+
+    # Mirror copy under the unversioned root. The mirror adds <base> so
+    # relative refs into versioned assets still resolve. The base stays
+    # root-relative on purpose so assets resolve on whichever host serves
+    # the page.
     if ($content -notmatch '<base\s') {
         $content = $content -replace '(<head[^>]*>)', "`$1`n  $baseTag"
     }
 
-    # Inject the hreflang alternate into the mirror only, and only when
-    # the existing canonical on this page points at the mirror's own
-    # URL. Two conditions have to hold:
-    #   * The page does not already carry an hreflang (idempotent on
-    #     re-runs and safe against a future template change that ships
-    #     one).
-    #   * The canonical href equals /documentation/$rel (i.e. the
-    #     mirror's URL). Pages whose canonical points elsewhere -- e.g.
-    #     api-repo doxygen pages whose own template sets a different
-    #     consolidation target -- are not self-canonical and so must
-    #     not declare a hreflang anchor at a URL different from their
-    #     own.
-    $mirrorUrl = "/documentation/$rel"
+    # Inject the hreflang alternate into the mirror only, and only when the
+    # existing canonical on this page points at the mirror's own URL. Two
+    # conditions have to hold:
+    #   * The page does not already carry an hreflang (idempotent on re-runs
+    #     and safe against a future template change that ships one).
+    #   * The canonical href equals the mirror's URL. Pages whose canonical
+    #     points elsewhere -- e.g. api-repo doxygen pages whose own template
+    #     sets a different consolidation target -- are not self-canonical and
+    #     so must not declare a hreflang anchor at a different URL.
+    $mirrorUrl = "$site/documentation/$rel"
     $existingCanonical = $null
     $canonicalMatch = [regex]::Match($content, '<link\s+rel="canonical"\s+href="([^"]+)"')
     if ($canonicalMatch.Success) {
@@ -164,7 +202,7 @@ Get-ChildItem -Recurse -File -Filter "*.html" -Path "gh-pages/$version" | ForEac
     $mirrored.Add($rel)
 }
 Set-Content -Path $manifestPath -Value ($mirrored -join "`n")
-Write-Host "Mirrored $($mirrored.Count) HTML files to gh-pages root, added canonical to $canonicalsAdded versioned files, added hreflang to $hreflangsAdded versioned files."
+Write-Host "Mirrored $($mirrored.Count) HTML files, normalised $normalised, added canonical to $canonicalsAdded, hreflang to $hreflangsAdded."
 Write-Host "::endgroup::"
 
 # Minify the Doxygen-emitted JS (jquery.js, navtree.js, dynsections.js,
