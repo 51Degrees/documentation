@@ -157,6 +157,12 @@
       text-decoration: none;
       opacity: 0;
       transition: opacity 0.15s ease;
+      // The permalink glyph inherits the docs link styling, which underlines
+      // on hover/focus. Keep the glyph clean (no underline under the icon).
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
     }
     &:hover .headerlink,
     .headerlink:focus {
