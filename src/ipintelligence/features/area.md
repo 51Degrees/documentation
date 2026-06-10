@@ -6,7 +6,7 @@
 
 We also understand latitude and longitude coordinates and radiuses are the data points many users currently expect from legacy IP solutions.
 
-See the [IP Tester](https://51degrees.com/developers/developers/ip-tester) to compare the two options.
+See the [IP Tester](https://51degrees.com/developers/ip-tester) to compare the two options.
 
 ## Circles
 
