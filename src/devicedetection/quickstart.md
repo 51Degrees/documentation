@@ -6,8 +6,7 @@
 
 ## Choose Your Integration
 
-### Cloud Service <a href="#cloud-integration">#</a> @anchor cloud-integration
-**Best for:** Quick setup, minimal infrastructure, cost-effective scaling
+### Cloud Service {#cloud-integration}**Best for:** Quick setup, minimal infrastructure, cost-effective scaling
 
 **Benefits:**
 - **No setup needed** - No data files or local infrastructure required
@@ -24,8 +23,7 @@
 
 ---
 
-### On-premise Deployment <a href="#On-premise-integration">#</a> @anchor On-premise-integration
-**Best for:** High-performance, privacy-sensitive, or offline environments
+### On-premise Deployment {#On-premise-integration}**Best for:** High-performance, privacy-sensitive, or offline environments
 
 **Benefits:**
 - **Ultra-low latency** - Sub-microsecond detection time with in-process deployment
