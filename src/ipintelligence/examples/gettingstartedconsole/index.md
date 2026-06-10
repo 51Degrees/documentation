@@ -1,4 +1,4 @@
-@page IpIntelligence_Examples_GettingStarted_Console_Index Getting Started - Console (IP Intelligence)
+@page IpIntelligence_Examples_GettingStarted_Console_Index IP Intelligence Getting Started Console
 
 # Introduction
 

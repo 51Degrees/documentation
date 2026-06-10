@@ -1,4 +1,4 @@
-@page DeviceDetection_OtherIntegrations_OpenRTBMappings OpenRTB Mappings
+@page DeviceDetection_OtherIntegrations_OpenRTBMappings OpenRTB Mappings (Moved)
 
 # Location Changed
 

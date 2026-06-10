@@ -1,4 +1,4 @@
-@page IpIntelligence_Examples_GettingStarted_Console_OnPremise Getting Started Console On-premise
+@page IpIntelligence_Examples_GettingStarted_Console_OnPremise IP Intelligence Getting Started Console On-premise
 
 # Introduction
 
