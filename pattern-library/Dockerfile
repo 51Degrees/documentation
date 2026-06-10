@@ -1,6 +1,6 @@
 # To build the CSS files and put them in the local build dir use:
 #   docker build --output=build .
-FROM node:10 AS build
+FROM node:20 AS build
 WORKDIR /app
 COPY package*.json .
 RUN npm install

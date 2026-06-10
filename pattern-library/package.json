@@ -1,27 +1,30 @@
 {
   "name": "fod-pattern-library",
   "version": "1.0.0",
-  "description": "",
-  "author": "Daughter",
+  "description": "51Degrees documentation design system. SCSS compiled by gulp; previewed with Storybook.",
+  "author": "51Degrees",
   "license": "GPL-2.0",
   "devDependencies": {
-    "browser-sync": "^3.0.4",
+    "@storybook/addon-a11y": "^8.6.14",
+    "@storybook/html-vite": "^8.6.14",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-rename": "^2.0.0",
-    "gulp-run": "^1.7.1",
     "gulp-sass": "^5.1.0",
     "gulp-sass-glob": "^1.1.0",
     "gulp-size": "^4.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "normalize-scss": "^8.0.0",
     "normalize.css": "^8.0.1",
-    "sass": "^1.83.4"
+    "sass": "^1.83.4",
+    "storybook": "^8.6.14",
+    "vite": "^6.0.0"
   },
   "main": "index.js",
   "scripts": {
-    "install-pattern-lab-twig": "if [ ! -d pattern-lab ]; then composer create-project -n pattern-lab/edition-twig-standard pattern-lab && cd pattern-lab && composer require aleksip/plugin-data-transform && php core/console -c --set sourceDir=../source && php core/console -c --set twigAutoescape=0 && php core/console --generate && cd ..; fi",
-    "install-pattern-lab-tpl": "if [ ! -d pattern-lab ]; then composer create-project -n aleksip/edition-php-tpl pattern-lab && cd pattern-lab && php core/console -c --set sourceDir=../source && php core/console --generate && cd ..; fi"
+    "sass": "gulp sass",
+    "storybook": "gulp sass && storybook dev -p 6006",
+    "build-storybook": "gulp sass && storybook build -o storybook-static"
   }
 }
