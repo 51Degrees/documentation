@@ -177,6 +177,23 @@
     display: block;
   }
 
+  // Inline equation diagrams. The source SVGs carry a viewBox but no intrinsic
+  // width or height, so without a bound they stretch to fill the column. The
+  // wrapping element caps the rendered size (its max-width is set per equation
+  // alongside the markup) and the image scales to fit that box.
+  .c-equation {
+    margin: size(4) 0;
+
+    img,
+    object,
+    svg {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
   // Table updates for documentation
   .g-docs__primary {
     .c-table {
