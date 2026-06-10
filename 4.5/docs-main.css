@@ -2678,11 +2678,6 @@ ol.linenums li {
 .g-footer--docs .g-footer__message {
   font-size: 1.2rem;
 }
-@media (min-width: 769px) {
-  .g-footer--docs .g-footer__message {
-    font-size: 1.44rem;
-  }
-}
 
 .g-footer__message {
   font-family: Arial, sans-serif;
@@ -2934,6 +2929,11 @@ ol.linenums li {
   text-decoration: none;
   opacity: 0;
   transition: opacity 0.15s ease;
+}
+.l-docs-index .g-docs__section-heading .headerlink:hover, .l-docs-index .g-docs__section-heading .headerlink:focus,
+.l-docs-index .doxsection .headerlink:hover,
+.l-docs-index .doxsection .headerlink:focus {
+  text-decoration: none;
 }
 .l-docs-index .g-docs__section-heading:hover .headerlink,
 .l-docs-index .g-docs__section-heading .headerlink:focus,
