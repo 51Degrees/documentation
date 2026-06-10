@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <link rel="canonical" href="/documentation/_device_detection__other_integrations__nginx.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
@@ -26,7 +25,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -70,10 +69,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <h1 class="g-docs__page-title">Nginx </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Introduction</h2>
-<p>We have also integrated our Device Detection to Nginx. This page describes in detail how you can install and use our module in your Nginx environment. </p><h2 class="g-docs__section-heading">Prerequisites</h2>
+<div class="textblock"><h2 class="doxsection" id="introduction-29">Introduction<a class="headerlink" href="#introduction-29" aria-label="Permalink to this section">🔗</a></h2>
+<p>We have also integrated our Device Detection to Nginx. This page describes in detail how you can install and use our module in your Nginx environment. </p>
+<h2 class="doxsection" id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" aria-label="Permalink to this section">🔗</a></h2>
 <p>For the latest tested versions and tested platforms information, please refer to our <a class="el" href="_product_summaries__tested_versions.html" title="Tested Versions">tested versions</a> page.</p>
-<h2 class="g-docs__section-heading">Installing</h2>
+<h2 class="doxsection" id="installing">Installing<a class="headerlink" href="#installing" aria-label="Permalink to this section">🔗</a></h2>
 <p>If you haven’t already, you can obtain the latest version of the API from the <a href="https://github.com/51Degrees/device-detection-nginx">device-detection-nginx repository</a>.</p>
 <p>To build the module only, run the following command. This will output to <code>ngx_http_51D_module.so</code> in the <code>build/modules</code> directory. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make module</div>
 </div><!-- fragment --><p> <br  />
@@ -88,9 +88,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <p>Finally, run the 51Degrees tests with the default 51Degrees Lite data file included in the <code>device-detection-cxx\device-detection-data</code> directory. Make sure to build the module with <code>make install</code> command as the tests do not work on a static build. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make test</div>
 </div><!-- fragment --><p>To run the 51Degrees together with the Nginx test suite, run the following command: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make test-full</div>
 </div><!-- fragment --><p>These do not run all the required tests as some tests require properties that are not supported with the Lite version of the data file. To run all tests, obtain a data file that provides properties: JavascriptHardwareProfile, ScreenPixelsWidthJavascript, and ScreenPixelsWidth. Then, use the <code>FIFTYONEDEGREES_DATAFILE</code> variable to specify the file name to run the tests with. The new data file should be placed in the <code>device-detection-cxx\device-detection-data</code> folder and should have a different name to <code>51Degrees-LiteV4.1.hash</code>. If tests still fail, obtain a data file with any other properties used in the tests. Below is an example of running tests with a different data file named <code>51Degrees-EnterpriseV4.1.hash</code>: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make [test|test-full] FIFTYONEDEGREES_DATAFILE=51Degrees-EnterpriseV4.1.hash</div>
-</div><!-- fragment --><h2 class="g-docs__section-heading">Configuring the Nginx API</h2>
+</div><!-- fragment --><h2 class="doxsection" id="configuring-the-nginx-api">Configuring the Nginx API<a class="headerlink" href="#configuring-the-nginx-api" aria-label="Permalink to this section">🔗</a></h2>
 <p>Before you start performing any detections, you may wish to configure the detection.</p>
-<h2>Init Settings</h2>
+<h2 class="doxsection" id="init-settings">Init Settings<a class="headerlink" href="#init-settings" aria-label="Permalink to this section">🔗</a></h2>
 <p>Detection configuration directives.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -131,7 +131,7 @@ Default: 51D_value_separator ',';<br  />
 Context: main<br  />
 Specify the separator to be used in the value string returned from a detection. Each value in the returned result string corresponds to a requested property.  </td></tr>
 </table>
-<h2>Match settings</h2>
+<h2 class="doxsection" id="match-settings">Match settings<a class="headerlink" href="#match-settings" aria-label="Permalink to this section">🔗</a></h2>
 <p>Match directives.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -168,23 +168,23 @@ Default: 51D_set_resp_headers off<br  />
 Context: main, server, location<br  />
 Allow Client Hints to be set in response headers where it is applicable to the user agent (e.g. Chrome 89 or above) so that more evidence can be returned in subsequent requests, allowing more accurate detection. Value set in a block overwrites values set in precedent blocks (e.g. value set in <code>location</code> block will overwrite value set in <code>server</code> and <code>main</code> blocks). This will only be available from the 4.3.0 version onwards.  </td></tr>
 </table>
-<h2 class="g-docs__section-heading">New features</h2>
+<h2 class="doxsection" id="new-features">New features<a class="headerlink" href="#new-features" aria-label="Permalink to this section">🔗</a></h2>
 <p>Following set of new features has been introduced in Nginx Device Detection V4 module:</p><ul>
 <li>Detection match metrics</li>
 <li>Javascript and property overrides</li>
 <li>False Positive controls</li>
 <li>User-Agent Client Hint supports</li>
 </ul>
-<h2>Detection match metrics</h2>
+<h2 class="doxsection" id="detection-match-metrics">Detection match metrics<a class="headerlink" href="#detection-match-metrics" aria-label="Permalink to this section">🔗</a></h2>
 <p>This V3 functionality is extended with more options available in V4. These metrics can be used in the same way as the properties. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">51D_match_all x-metrics IsMobile,Iterations,Drift,Difference,Method,UserAgents,MatchedNodes,DeviceId;</div>
-</div><!-- fragment --><h2>Javascript and property overrides</h2>
+</div><!-- fragment --><h2 class="doxsection" id="javascript-and-property-overrides">Javascript and property overrides<a class="headerlink" href="#javascript-and-property-overrides" aria-label="Permalink to this section">🔗</a></h2>
 <p>Some certain properties might require further steps to obtain. For example, to determine ScreenPixelsWidth, users might need to execute the Javascript returned from ScreenPixelsWidthJavascript property in client User-Agents. In V4, we allow users to request the Javascript as static content via using <code>51D_get_javascript_single</code> and <code>51D_get_javascript_all</code> directives.</p>
 <p>Once the value has been obtained by executing the Javascript in client user agent, it can be added as evidence in the next request's cookie or query argument. 51Degrees module will override the returned value with what it found in the request.</p>
-<h2>False Positive Controls</h2>
+<h2 class="doxsection" id="false-positive-controls">False Positive Controls<a class="headerlink" href="#false-positive-controls" aria-label="Permalink to this section">🔗</a></h2>
 <p>Nginx Device Detection V4 module supports <code>False Positives</code> features as described at <a class="el" href="_device_detection__features__false_positive_control.html" title="False Positives">False Positives</a> via settings of directives <code>51D_drift</code>, <code>51D_difference</code>, and <code>51D_allow_unmatched</code>. When <code>AllowUnmatched</code> is set to <code>off</code>, if <code>HasValue</code> is <code>false</code>, a <code>NoMatch</code> will be returned. Else, if <code>AllowUnmatched</code> is set to <code>on</code>, when a match can not be found, default profile will be returned such as <code>Unknown</code>, <code>N/A</code>, or similar.</p>
-<h2>User-Agent Client Hint supports</h2>
+<h2 class="doxsection" id="user-agent-client-hint-supports">User-Agent Client Hint supports<a class="headerlink" href="#user-agent-client-hint-supports" aria-label="Permalink to this section">🔗</a></h2>
 <p>User-Agent Client Hint was introduced by Google in Chrome, preventing traditional detection using User-Agents from performing accurate matches. In Nginx Device Detection V4 module, <code>51D_set_resp_headers</code> was implemented to allow Client Hint request headers to be set in responses so that more evidence is provided in subsequent requests, allowing better matches.</p>
-<h2 class="g-docs__section-heading">Other resources</h2>
+<h2 class="doxsection" id="other-resources">Other resources<a class="headerlink" href="#other-resources" aria-label="Permalink to this section">🔗</a></h2>
 <p>More details can be found at:</p><ul>
 <li><a href="https://github.com/51Degrees/device-detection-nginx/blob/main/README%2Emd">README</a>.</li>
 <li><a href="/documentation/4.5/apis/device-detection-nginx/examples.html">Examples</a></li>
@@ -193,7 +193,13 @@ Allow Client Hints to be set in response headers where it is applicable to the u
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

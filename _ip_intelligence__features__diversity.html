@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/_ip_intelligence__features__diversity.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -72,11 +71,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <h1 class="g-docs__page-title">Diversity </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Overview</h2>
-<p>Diversity properties are used to express how many different <a class="el" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles" title="PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles">profiles</a> for a specific <a class="el" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components" title="PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components">component</a> are seen within an IP range. This can be used to make various conclusions about what traffic from a certain range is likely to be. A diversity can relate to any <a class="el" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components" title="PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components">component</a>, an example is <code>HardwareDiversity</code>, which is the number of different hardware profiles. This is different from the number of unique physical devices, as there could be 2 of the same model smartphone.</p>
+<div class="textblock"><h2 class="doxsection" id="overview-7">Overview<a class="headerlink" href="#overview-7" aria-label="Permalink to this section">🔗</a></h2>
+<p>Diversity properties are used to express how many different <a class="el" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles" title="Profiles">profiles</a> for a specific <a class="el" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components" title="Components">component</a> are seen within an IP range. This can be used to make various conclusions about what traffic from a certain range is likely to be. A diversity can relate to any <a class="el" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components" title="Components">component</a>, an example is <code>HardwareDiversity</code>, which is the number of different hardware profiles. This is different from the number of unique physical devices, as there could be 2 of the same model smartphone.</p>
 <p>Properties of this type have values between 0-10, where 0 indicates unknown, 1 is a low diversity, and 10 is high diversity.</p>
-<p>If, for an IP range, there is an average of 1 profile per IP, then the diversity score would be 1. However, if there were 10 or more profiles per IP, the score would be 10. This is a slight simplification, but is generally accurate. Details of the full calculation are in the calculationcalculation section.</p>
-<h2 class="g-docs__section-heading">Properties</h2>
+<p>If, for an IP range, there is an average of 1 profile per IP, then the diversity score would be 1. However, if there were 10 or more profiles per IP, the score would be 10. This is a slight simplification, but is generally accurate. Details of the full calculation are in the <a class="el" href="#calculation" title="Calculation">calculation</a>calculation section.</p>
+<h2 class="doxsection" id="properties-3">Properties<a class="headerlink" href="#properties-3" aria-label="Permalink to this section">🔗</a></h2>
 <p>There are 3 diversity properties in the IP Intelligence product:</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -88,7 +87,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell">PlatformDiversity  </td><td class="c-table__cell">Diversity of OS name and version in an IP range e.g. <code>Windows 10</code>, <code>Android 16</code>.  </td></tr>
 </table>
-<h2 class="g-docs__section-heading">Values</h2>
+<h2 class="doxsection" id="values-2">Values<a class="headerlink" href="#values-2" aria-label="Permalink to this section">🔗</a></h2>
 <p>For a diversity property, the following values can be returned:</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -101,13 +100,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <td class="c-table__cell"><code>10</code>  </td><td class="c-table__cell">The average number of unique profiles per IP in the range is <code>10</code> or above.  </td></tr>
 </table>
 <p>The values are not the exact average number of unique profiles, as 2 forms of weighting are applied:</p>
-<h3>Age Weight</h3>
+<h3 class="doxsection" id="age-weight">Age Weight<a class="headerlink" href="#age-weight" aria-label="Permalink to this section">🔗</a></h3>
 <p>While an event from the current day is counted as 1 event, events from previous days are also included when calculating the score. The older the event, the less it contributes.</p>
 <p>This helps fill in data for ranges which see lower daily levels of traffic, while ensuring that profile changes across time do not affect the result.</p>
-<h3>Consistency Weight</h3>
+<h3 class="doxsection" id="consistency-weight">Consistency Weight<a class="headerlink" href="#consistency-weight" aria-label="Permalink to this section">🔗</a></h3>
 <p>If we see 1 profile 1000 times for an IP, but another 5 profiles are seen only once each, this will not give a score of 6. This is because profiles where the count is below the average make a smaller contribution.</p>
 <p>This helps to keep values for IPs like the example above low, where the majority of the events are for 1 profile. So values are a reflection of the distribution of traffic, not just the count.</p>
-<h2 class="g-docs__section-heading">Calculation</h2>
+<h2 class="doxsection" id="calculation">Calculation<a class="headerlink" href="#calculation" aria-label="Permalink to this section">🔗</a></h2>
 <p>The formula used to calculate diversity value for a single IP is:</p>
 <div class="image">
 <object type="image/svg+xml" data="diversity-single.svg" style="pointer-events: none;"></object>
@@ -141,7 +140,13 @@ diversity-complete</div></div>
      </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

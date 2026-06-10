@@ -451,10 +451,12 @@ function initNavTree(toroot,relpath,allMembersFile) {
             showNode(o,node,index,hash); // retry with child node expanded
           });
         } else {
-          const rootBase = stripPath(o.toroot.replace(/\..+$/, ''));
-          if (rootBase=="index" || rootBase=="pages" || rootBase=="search") {
-            expandNode(o, n, true, false);
-          }
+          // Always expand the node the page landed on, so a top-level menu
+          // item whose link is its own index page reveals its children when
+          // clicked (previously only the index/pages/search roots expanded).
+          // expandNode no-ops for true leaf nodes because it is guarded by
+          // node.childrenData, so leaves are still only selected, not expanded.
+          expandNode(o, n, true, false);
           selectAndHighlight(hash,n);
         }
       }

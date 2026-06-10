@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/_pipeline_api__concepts__configuration__builders__build_from_configuration.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -72,13 +71,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h1 class="g-docs__page-title">Building from Configuration </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Introduction</h2>
+<div class="textblock"><h2 class="doxsection" id="introduction-43">Introduction<a class="headerlink" href="#introduction-43" aria-label="Permalink to this section">🔗</a></h2>
 <p>Rather than setting all build options and <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> explicitly in code form, it is often preferable to make the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> configurable without recompiling. A <a class="el" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html" title="Pipeline Builder">pipeline builder</a> allows this via its 'BuildFromConfiguration' method.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/pipeline-configuration.md#">Specification</a> for more technical details.</p>
-<h2 class="g-docs__section-heading">Usage</h2>
+<h2 class="doxsection" id="usage-2">Usage<a class="headerlink" href="#usage-2" aria-label="Permalink to this section">🔗</a></h2>
 <p>A configuration can be parsed manually from XML, JSON, or any other source and given to a <a class="el" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html" title="Pipeline Builder">pipeline builder</a>. Alternatively, in <a class="el" href="_pipeline_api__features__web_integration.html" title="Web Integration Feature">web integrations</a>, a configuration file is loaded automatically.</p>
 <p>Note, the possible format of the configuration file varies greatly between languages, with some languages having many options and others only having one. Where possible, we recommend using JSON as the simplest and most transferable configuration format; JSON is also supported by the PHP and Node.js bindings, where XML is not. In contrast, it should be noted that Java only supports XML configuration files.</p>
-<h2>Parsing XML</h2>
+<h2 class="doxsection" id="parsing-xml">Parsing XML<a class="headerlink" href="#parsing-xml" aria-label="Permalink to this section">🔗</a></h2>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language for an example of parsing XML.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">var config = <span class="c-code__keyword">new</span> ConfigurationBuilder()</div>
 <div class="c-code__line">    .AddXmlFile(<span class="c-code__stringliteral">&quot;configuration.xml&quot;</span>)</div>
 <div class="c-code__line">    .Build();</div>
@@ -95,7 +94,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">Pipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
 <div class="c-code__line">    .buildFromConfiguration(options);</div>
 </div><!-- fragment --><p>  </div>   </div> </p>
-<h2>Parsing JSON</h2>
+<h2 class="doxsection" id="parsing-json">Parsing JSON<a class="headerlink" href="#parsing-json" aria-label="Permalink to this section">🔗</a></h2>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language for an example of parsing JSON.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">var config = <span class="c-code__keyword">new</span> ConfigurationBuilder()</div>
 <div class="c-code__line">    .AddJsonFile(<span class="c-code__stringliteral">&quot;configuration.json&quot;</span>)</div>
 <div class="c-code__line">    .Build();</div>
@@ -113,9 +112,9 @@ $pipeline = $builder-&gt;buildFromConfig($configFile)-&gt;build();
 </pre><p>  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">const pipeline = new FiftyOneDegreesGeoLocation.GeoLocationPipelineBuilder({resourceKey:localResourceKey});</div>
 <div class="c-code__line">pipeline.buildFromConfigurationFile(configFilePath);</div>
 </div><!-- fragment --><p>  </div>   </div> </p>
-<h2 class="g-docs__section-heading">Example configuration</h2>
+<h2 class="doxsection" id="example-configuration">Example configuration<a class="headerlink" href="#example-configuration" aria-label="Permalink to this section">🔗</a></h2>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'XML')">XML</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'JSON')">JSON</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a file format to view an example configuration.  </div>   <div class="c-tabgroup__main" data-lang="XML" style="display:none;">  There is a sample file demonstrating all configuration options for Java on <a href="https://github.com/51Degrees/device-detection-java-examples/blob/main/web/getting-started.onprem/src/main/webapp/WEB-INF/51Degrees-OnPrem.xml">GitHub</a>.</p>
-<p>Configure a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> with a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> named 'MyElement' with a build parameter, and set the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> to <a class="el" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html#PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions" title="PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions">suppress process exceptions</a>. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;<span class="c-code__keywordtype">PipelineOptions</span>&gt;</div>
+<p>Configure a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> with a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> named 'MyElement' with a build parameter, and set the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> to <a class="el" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html#PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions" title="Suppress process exceptions">suppress process exceptions</a>. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;<span class="c-code__keywordtype">PipelineOptions</span>&gt;</div>
 <div class="c-code__line">    &lt;<span class="c-code__keywordtype">Elements</span>&gt;</div>
 <div class="c-code__line">        &lt;<span class="c-code__keywordtype">Element</span>&gt;</div>
 <div class="c-code__line">            &lt;<span class="c-code__keywordtype">BuilderName</span>&gt;<span class="c-code__keyword">MyElementBuilder</span>&lt;/<span class="c-code__keywordtype">BuilderName</span>&gt;</div>
@@ -128,7 +127,7 @@ $pipeline = $builder-&gt;buildFromConfig($configFile)-&gt;build();
 <div class="c-code__line">        &lt;<span class="c-code__keywordtype">SuppressProcessExceptions</span>&gt;<span class="c-code__keyword">true</span>&lt;/<span class="c-code__keywordtype">SuppressProcessExceptions</span>&gt;</div>
 <div class="c-code__line">    &lt;/<span class="c-code__keywordtype">BuildParameters</span>&gt;</div>
 <div class="c-code__line">&lt;/<span class="c-code__keywordtype">PipelineOptions</span>&gt;</div>
-</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="JSON" style="display:none;">  Configure a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> with a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> named 'MyElement' with a build parameter, and set the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> to <a class="el" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html#PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions" title="PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions">suppress process exceptions</a>.</p>
+</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="JSON" style="display:none;">  Configure a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> with a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> named 'MyElement' with a build parameter, and set the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> to <a class="el" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html#PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions" title="Suppress process exceptions">suppress process exceptions</a>.</p>
 <p>Note that for use in node.js, <code>BuilderName</code> and <code>BuilderParameters</code> should be replaced by <code>elementName</code> and <code>elementParameters</code>.</p>
 <p>There is a sample file demonstrating all configuration options for .NET on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/sample-configuration.json">GitHub</a>.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
@@ -147,32 +146,32 @@ $pipeline = $builder-&gt;buildFromConfig($configFile)-&gt;build();
 <div class="c-code__line">  }</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p>  </div>   </div> </p>
-<h2 class="g-docs__section-heading">Rules for building from a configuration file</h2>
+<h2 class="doxsection" id="rules-for-building-from-a-configuration-file">Rules for building from a configuration file<a class="headerlink" href="#rules-for-building-from-a-configuration-file" aria-label="Permalink to this section">🔗</a></h2>
 <p>The core <b>build from configuration</b> logic ultimately calls the same configuration methods, on the same builders as the developer does if they configure the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> in code.</p>
 <p>There are several rules that govern how a value in a configuration file is mapped to a builder or configuration method:</p>
-<h2>Element builder names</h2>
+<h2 class="doxsection" id="element-builder-names">Element builder names<a class="headerlink" href="#element-builder-names" aria-label="Permalink to this section">🔗</a></h2>
 <p>The element builder name is used to determine the <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> that we want to use. Each of the following is tried in turn to find a builder that matches the supplied name:</p>
 <ol type="1">
 <li>Case insensitive match on type name (e.g. 'MyElementBuilder' matches a type with that name).</li>
 <li>Case insensitive match on type name suffixed with 'builder' (e.g. 'MyElement' matches a type called 'MyElementBuilder').</li>
-<li>Where the language allows it, match on some <a class="el" href="#PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName" title="PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName">alternative name</a> for the builder.</li>
+<li>Where the language allows it, match on some <a class="el" href="#PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName" title="Alternative naming details">alternative name</a> for the builder.</li>
 </ol>
-<h2>Element build parameters</h2>
+<h2 class="doxsection" id="element-build-parameters">Element build parameters<a class="headerlink" href="#element-build-parameters" aria-label="Permalink to this section">🔗</a></h2>
 <p>The key value of each entry in the 'build parameters' list associated with each <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">element</a> is used to determine the method to call on the <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a>. Each of the following is tried in turn to find a method that matches the supplied name:</p>
 <ol type="1">
 <li>Case insensitive match on method name (e.g. 'SetCacheSize' matches a method with that name).</li>
 <li>Case insensitive match on method name prefixed with 'set' (e.g. 'CacheSize' matches a method called 'SetCacheSize').</li>
-<li>Where the language allows it, match on some <a class="el" href="#PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName" title="PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName">alternative name</a> for the method.</li>
+<li>Where the language allows it, match on some <a class="el" href="#PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName" title="Alternative naming details">alternative name</a> for the method.</li>
 </ol>
 <p>The value part of each entry in the 'build parameters' list is then passed to the matching method as a parameter. For strongly-types languages, this may also involve parsing a string value from the configuration into the required type.</p>
 <p>If there are any build parameters for which a method cannot be found, they will be used to set parameters on the 'Build' method once configuration is complete. In this case, a simple case-insensitive match is performed to determine the parameter value to set.</p>
-<h2>Pipeline build parameters</h2>
+<h2 class="doxsection" id="pipeline-build-parameters">Pipeline build parameters<a class="headerlink" href="#pipeline-build-parameters" aria-label="Permalink to this section">🔗</a></h2>
 <p><a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> build parameters work in the same way as element build parameters but they are used to call configuration methods on the <a class="el" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html" title="Pipeline Builder">pipeline builder</a> instead of the <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a>.</p>
 <p>See above for all the rules governing this.</p>
-<h2 id="PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName">Alternative naming details <a href="#PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName">#</a></h2>
+<h2 class="doxsection" id="PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName">Alternative naming details<a class="headerlink" href="#PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName" aria-label="Permalink to this section">🔗</a></h2>
 <p>Some languages have a mechanism for specifying alternative names for builders and methods. These can be used to match against supplied configuration options.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language for information of specifying an alternative name for element builders and configuration methods.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  The AlternateNameAttribute can be used to decorate <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> classes as well as configuration methods on an <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a>. This can be used to specify one or more other names to match on when building from configuration.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  The <code>ElementBuilder(alternateName)</code> attribute can be used to decorate <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> classes. This can be used to specify one or more other names to match when buiding from configuration.  </div>   </div> </p>
-<h2 class="g-docs__section-heading">Internals</h2>
+<h2 class="doxsection" id="internals">Internals<a class="headerlink" href="#internals" aria-label="Permalink to this section">🔗</a></h2>
 <p>The exact internal mechanics of the <b>builder</b> will depend on the language being used. Wherever possible, the rules for mapping are consistent between languages but this cannot always be achieved.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language for more details of the internals of <b>build from configuration</b>.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  In .NET, <a class="el" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html" title="Pipeline Builder">pipeline builder</a> relies on reflection to find the correct builder to build the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> required by the configuration. For this reason, it is necessary for the libraries that contain the <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builders</a> for each <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> to be loaded. This can be done in a number of ways:</p><ul>
 <li>loading the library by calling a method in code;</li>
@@ -189,7 +188,13 @@ $pipeline = $builder-&gt;buildFromConfig($configFile)-&gt;build();
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

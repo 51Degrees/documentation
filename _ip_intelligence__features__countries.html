@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/_ip_intelligence__features__countries.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -72,22 +71,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <h1 class="g-docs__page-title">Countries </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Overview</h2>
+<div class="textblock"><h2 class="doxsection" id="overview-6">Overview<a class="headerlink" href="#overview-6" aria-label="Permalink to this section">🔗</a></h2>
 <p>If an IP address is associated with an <code>Area</code>, this area can be broken down and associated with multiple countries. For example, an IP range may span a border region or serve multiple locations. In these cases, the IP intelligence engine returns possible country codes with weightings, ordered by descending probability.</p>
-<h2 class="g-docs__section-heading">Properties</h2>
+<h2 class="doxsection" id="properties-2">Properties<a class="headerlink" href="#properties-2" aria-label="Permalink to this section">🔗</a></h2>
 <p>The countries properties can be found under the <code>Countries Information</code> catagory on the <a href="https://51degrees.com/developers/property-dictionary?item=Location%7CCountries%20Information">property dictionary</a>.</p>
-<h2>Weighted Properties</h2>
+<h2 class="doxsection" id="weighted-properties">Weighted Properties<a class="headerlink" href="#weighted-properties" aria-label="Permalink to this section">🔗</a></h2>
 <p>The weighted properties (<code>CountryCodesGeographical</code>, <code>CountryCodesPopulation</code>, etc.) return the most likely countries based on available evidence. The weightings indicate the probability of each country being the correct match.</p>
-<h2>'All' Properties</h2>
+<h2 class="doxsection" id="all-properties">'All' Properties<a class="headerlink" href="#all-properties" aria-label="Permalink to this section">🔗</a></h2>
 <p>The 'All' properties (<code>CountryCodesGeographicalAll</code>, <code>CountryCodesPopulationAll</code>, etc.) return all possible country codes, not just the weighted ones. These are ordered by:</p>
 <ol type="1">
 <li>First, by their weighting descending (most likely first)</li>
 <li>Then, any remaining codes alphabetically</li>
 </ol>
 <p>This provides convenient access to the complete list of possible countries for an IP address, not just the most likely ones. As an example, this is effective for populating drop down lists on a webpage.</p>
-<h2>Country Names</h2>
+<h2 class="doxsection" id="country-names">Country Names<a class="headerlink" href="#country-names" aria-label="Permalink to this section">🔗</a></h2>
 <p>The country name properties (<code>CountryNamesGeographical</code>, etc.) provide the English names corresponding to the country codes. These are useful for display purposes or when you need human-readable output instead of ISO country codes.</p>
-<h2 class="g-docs__section-heading">Geographical vs Population Weighting</h2>
+<h2 class="doxsection" id="geographical-vs-population-weighting">Geographical vs Population Weighting<a class="headerlink" href="#geographical-vs-population-weighting" aria-label="Permalink to this section">🔗</a></h2>
 <p>There are two weighting schemes available:</p>
 <ul>
 <li><b>Geographical</b> - Based on the geographical area coverage of an IP address' likely area. This is useful for location-based targeting where proximity matters.</li>
@@ -97,7 +96,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

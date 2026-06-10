@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/_device_detection__features__performance_options.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -72,11 +71,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <h1 class="g-docs__page-title">Performance Options </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Introduction</h2>
+<div class="textblock"><h2 class="doxsection" id="introduction-18">Introduction<a class="headerlink" href="#introduction-18" aria-label="Permalink to this section">🔗</a></h2>
 <p>For device detection, as with many computing tasks, there are trade-offs to be made between the performance of the algorithm and memory usage, as well as performance vs adaptability.</p>
 <p>Rather than trying to solve this with a one-size-fits-all approach, our Device Detection API allows you to easily configure the solution to suit your requirements.</p>
 <p>Be aware that all these options only apply to the On-premise implementation. The cloud solution is inherently far more limited in the range of options you have to adjust performance.</p>
-<h2 class="g-docs__section-heading">Performance profile templates</h2>
+<h2 class="doxsection" id="performance-profile-templates">Performance profile templates<a class="headerlink" href="#performance-profile-templates" aria-label="Permalink to this section">🔗</a></h2>
 <p>At the low level, the Device Detection API uses various collections of data from the data file in order to perform detections. These collections may either be fully mapped into memory or accessed via highly optimized <a href="https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)">LRU caches</a>, with data being loaded from disk on a cache miss.</p>
 <p>The mechanism used to access the data, as well as the size of these caches, can be configured specifically. However, we have defined templates which we believe will cover the majority of scenarios.</p>
 <p>The exact method for specifying the template will vary by programing language. See the <a class="el" href="_device_detection__examples__performance__on_premise_hash.html" title="Performance Test On-premise Hash">performance examples</a> for a demonstration.</p>
@@ -94,19 +93,25 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <td class="c-table__cell">LowMemory  </td><td class="c-table__cell">Data always streamed from disk on-demand.  </td><td class="c-table__cell">Recommended when the lowest possible memory usage is more important than performance.  </td></tr>
 </table>
 <p>The precise values associated with each template can be seen in the source code on <a href="https://github.com/51Degrees/device-detection-cxx/blob/67503df045efb32e84eb59fe7e320772dd6475db/src/hash/hash.c#L177">GitHub</a>.</p>
-<h2 class="g-docs__section-heading">Evaluation graphs</h2>
+<h2 class="doxsection" id="evaluation-graphs">Evaluation graphs<a class="headerlink" href="#evaluation-graphs" aria-label="Permalink to this section">🔗</a></h2>
 <p>In version 4.5 and later, the device detection algorithm uses a single, unified predictive graph. Previously, it was possible to select between performance and predictive graphs, but these have been consolidated to provide the best balance of speed and accuracy.</p>
-<h2 class="g-docs__section-heading">Property Indexing</h2>
+<h2 class="doxsection" id="property-indexing">Property Indexing<a class="headerlink" href="#property-indexing" aria-label="Permalink to this section">🔗</a></h2>
 <p>A configuration option <code>propertyValueIndex</code> is available (introduced in version 4.5). When enabled (set to <code>true</code>), the engine indexes property values at startup.</p>
 <p>This improves the speed of property retrieval, which is particularly beneficial for applications that need to access a large number of properties for each detection. It ensures more consistent performance in high-scale environments.</p>
-<h2 class="g-docs__section-heading">Restrict properties</h2>
+<h2 class="doxsection" id="restrict-properties">Restrict properties<a class="headerlink" href="#restrict-properties" aria-label="Permalink to this section">🔗</a></h2>
 <p>When the device detection engine is created, you can specify exactly which properties you want to be populated in the result. By default, all properties are populated. By limiting the properties to only those that you're actually going to use, performance may be significantly improved.</p>
 <p>Internally, detection is actually performed separately for each <b>component</b> (The four components associated with device detection are hardware, operating system, browser, and crawler) This means that if you only want 'IsMobile' and 'HardwareName', which are both hardware properties, then the algorithm can skip the detection for operating system, browser, and crawler.</p>
 <p>As with all the performance options, we recommend experimenting to see what effect this has in your specific scenario. See the <a class="el" href="_device_detection__examples__performance__on_premise_hash.html" title="Performance Test On-premise Hash">performance examples</a> for a demonstration of how to specify the properties you want in your language of choice. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <link rel="canonical" href="/documentation/apis/ip-intelligence-java/md__2home_2runner_2work_2documentation_2documentation_2apis_2ip-intelligence-java_2ip-intelligen5f19afee3c031775da38b18bd20e95f8.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
@@ -26,7 +25,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees IP Intelligence Java
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -67,11 +66,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__2home_2run
 <h1 class="g-docs__page-title">Proposal: Support Weighted Values in the IPI Dataset (C Reader Side) </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Overview</h2>
+<div class="textblock"><h1>Overview</h1>
 <p>This document describes the implementation plan for reading <b>weighted values</b> in the IPI dataset on the C/C++ reader side. The approach follows the Pearl export-side design documented in <code>Pearl/WEIGHTED_VALUE_EXPORT_DESIGN.md</code>.</p>
 <p>The weight is stored in the <b>Value record</b> itself — the existing <code>urlOffset</code> field is repurposed as a dual-purpose <code>urlOffsetOrWeight</code> field. When the upper two bytes match the mask pattern <code>0xFF00</code>, the lower two bytes encode the weight as a <code>uint16_t</code> (0–65535, representing 0.0–1.0). When the mask is not present, the field is a URL offset or the legacy <code>-1</code> sentinel (existing behavior). Weighted properties use the existing <b>list property</b> mechanism (<code>isList = true</code>), with each (value, weight) pair being a separate Value record.</p>
 <p>This is a much simpler design than the previous proposal (which used a compound blob in the strings collection with a collection decorator). No decorator, no compound stored values, no sub-references within the strings collection.</p>
-<h2 class="g-docs__section-heading">Background</h2>
+<h1>Background</h1>
 <h2>Property Type System</h2>
 <p>Properties in the IPI dataset have two type descriptors:</p>
 <ul>
@@ -149,7 +148,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__2home_2run
 <h2>Value Data Sharing</h2>
 <p>Multiple Value records can share the same <code>nameOffset</code> pointing to a single interned string in the strings collection. "US" is stored once; Value records that differ only in weight all point to the same <code>nameOffset</code>. The strings collection does <b>not</b> grow with weight permutations — only the Values collection does.</p>
 <p>Value records themselves are also shared across profiles. If two profiles both have "US" with weight 3000, they reference the same Value record by index.</p>
-<h2 class="g-docs__section-heading">Binary Format Change</h2>
+<h1>Binary Format Change</h1>
 <h2>Current Value Binary Format</h2>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">[int16  propertyIndex]</div>
 <div class="c-code__line">[int32  nameOffset]          → offset into strings collection</div>
@@ -161,7 +160,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__2home_2run
 <div class="c-code__line">[int32  descriptionOffset]   → offset into strings collection (unchanged)</div>
 <div class="c-code__line">[int32  urlOffsetOrWeight]   → URL offset (or -1 for none), OR masked weight if upper 2 bytes == 0xFF00</div>
 </div><!-- fragment --><p>The last field becomes explicitly <b>signed</b> <code>int32_t</code>. Both are 4 bytes — binary compatible. When Pearl writes a weighted value, it packs the weight using the <code>0xFF00</code> mask: <code>(int32_t)((0xFF00 &lt;&lt; 16) | uint16_weight)</code>. The C reader detects the mask and extracts the lower 2 bytes.</p>
-<h2 class="g-docs__section-heading">Architecture Decisions</h2>
+<h1>Architecture Decisions</h1>
 <h2>Decision 1: Weight in the Value Record, Not Strings Collection</h2>
 <p>The weight lives in the Value's <code>urlOffsetOrWeight</code> field. The strings collection stores only the value data (string, int, float, etc.) — no compound blobs, no sub-references.</p>
 <p><b>Rationale:</b> Least risk, minimal structural change. Weight can be read from the Value record without consulting the property type. Works for any value type (string, int, double, etc.), not just strings.</p>
@@ -176,7 +175,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__2home_2run
 <p>The existing <code>ProfilePercentage</code> and <code>IpiList</code> types are generic containers for weighted collection items and should be named <code>WeightedItem</code> / <code>WeightedItemList</code>. They belong in <b>common-cxx</b> since they are general-purpose data structures.</p>
 <h2>Decision 4: Weighted Values Supported for Any Type</h2>
 <p>The <code>urlOffsetOrWeight</code> approach works for any value type — <code>WeightedString</code>, <code>WeightedInt</code>, <code>WeightedDouble</code>, etc. The <code>storedValueType</code> on the Property indicates whether values carry weights. The underlying stored data in the strings collection is the same type as the non-weighted variant (e.g., a <code>WeightedString</code> stores plain strings, a <code>WeightedInt</code> stores plain ints). The weight is orthogonal to the value data.</p>
-<h2 class="g-docs__section-heading">Type Renames</h2>
+<h1>Type Renames</h1>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Current Name  </td><td class="c-table__cell">New Name  </td><td class="c-table__cell">New Location  </td><td class="c-table__cell">Scope  </td></tr>
@@ -228,7 +227,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__2home_2run
 </ul>
 </li>
 </ul>
-<h2 class="g-docs__section-heading">Implementation Plan</h2>
+<h1>Implementation Plan</h1>
 <h2>Step 1: Rename <code>urlOffset</code> to <code>urlOffsetOrWeight</code> in Value Struct (common-cxx)</h2>
 <p><b><code>value.h</code></b> — Change the Value struct:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__preprocessor">#pragma pack(push, 2)</span></div>
@@ -498,7 +497,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__2home_2run
 <div class="c-code__line">            wv.getValue(), wv.getWeighting() * 100);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-</div><!-- fragment --><h2 class="g-docs__section-heading">Data Flow Diagram</h2>
+</div><!-- fragment --><h1>Data Flow Diagram</h1>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">                       DATA FILE</div>
 <div class="c-code__line">                  +------------------+</div>
 <div class="c-code__line">                  |  Values collection |</div>
@@ -571,14 +570,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__2home_2run
 <div class="c-code__line"> </div>
 <div class="c-code__line">Both produce the same output: a list of WeightedItem entries.</div>
 <div class="c-code__line">The C++ accessor doesn&#39;t know or care where the weight came from.</div>
-</div><!-- fragment --><h2 class="g-docs__section-heading">Package Cascade</h2>
+</div><!-- fragment --><h1>Package Cascade</h1>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">common-cxx (Steps 1-2, 5: Value struct change, WeightedItem types, type mapping)</div>
 <div class="c-code__line">  +-&gt; ip-intelligence-cxx (Steps 3-4, 6-8: consume types, update callback, C++ accessors, SWIG)</div>
 <div class="c-code__line">       +-&gt; ip-intelligence-dotnet (Step 9: submodule, SWIG copy, native rebuild, version bump)</div>
 <div class="c-code__line">       |    +-&gt; ip-intelligence-dotnet-examples (Step 11)</div>
 <div class="c-code__line">       +-&gt; ip-intelligence-java (Step 10: submodule, SWIG copy, native rebuild, version bump)</div>
 <div class="c-code__line">            +-&gt; ip-intelligence-java-examples (Step 11)</div>
-</div><!-- fragment --><h2 class="g-docs__section-heading">Memory Management</h2>
+</div><!-- fragment --><h1>Memory Management</h1>
 <h2>Simplified Memory Model</h2>
 <p>With the new approach, there are <b>no additional memory allocations</b> compared to non-weighted values:</p>
 <ul>
@@ -591,16 +590,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__2home_2run
 <p>The <code>WeightedItemList</code> allocates its array as before (for both weighted and profile-group values). No change there.</p>
 <h2>WeightedItem List Cleanup</h2>
 <p><code>WeightedItemListRelease</code> (formerly <code>releaseIpiList</code>) calls <code>COLLECTION_RELEASE</code> on each item. Since there is no decorator, all releases go directly to the strings collection. This is identical to the existing behavior.</p>
-<h2 class="g-docs__section-heading">Thread Safety</h2>
+<h1>Thread Safety</h1>
 <p>No changes. The Value struct is read-only (const fields). Reading <code>urlOffsetOrWeight</code> and checking its sign is thread-safe. The existing concurrent-read guarantees of collections apply unchanged.</p>
-<h2 class="g-docs__section-heading">Backward Compatibility</h2>
+<h1>Backward Compatibility</h1>
 <ul>
 <li><b>Existing data files</b> without weighted values: <code>urlOffsetOrWeight</code> is either a non-negative URL offset or <code>-1</code> ("no URL" sentinel). Neither matches the <code>0xFF00</code> mask. <code>ValueGetUrl</code> returns the URL (or NULL for <code>-1</code>) as before. <code>ValueIsWeighted</code> returns false. No behavioral change.</li>
 <li><b>New data files</b> with weighted values: <code>urlOffsetOrWeight</code> has the <code>0xFF00</code> mask in the upper 2 bytes. <code>ValueGetUrl</code> returns NULL. <code>ValueGetWeight</code> returns the <code>uint16_t</code> weight from the lower 2 bytes.</li>
 <li>The type renames (<code>ProfilePercentage</code> → <code>WeightedItem</code>, <code>IpiList</code> → <code>WeightedItemList</code>) are source-breaking at the C level, but these types are internal and absorbed by SWIG regeneration.</li>
 <li>The C++ accessor <code>getValuesAsWeightedStringList</code> returns the same <code>vector&lt;WeightedValue&lt;string&gt;&gt;</code> type regardless of weight source. No API change for consumers.</li>
 </ul>
-<h2 class="g-docs__section-heading">Comparison: Old vs New Approach</h2>
+<h1>Comparison: Old vs New Approach</h1>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Aspect  </td><td class="c-table__cell">Old (compound blob)  </td><td class="c-table__cell">New (urlOffsetOrWeight)  </td></tr>
@@ -623,12 +622,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__2home_2run
 <tr class="c-table__row">
 <td class="c-table__cell">Complexity  </td><td class="c-table__cell">High  </td><td class="c-table__cell">Low  </td></tr>
 </table>
-<h2 class="g-docs__section-heading">Related PRs / Issues</h2>
+<h1>Related PRs / Issues</h1>
 <ul>
 <li><b>Pearl design:</b> <code>Pearl/WEIGHTED_VALUE_EXPORT_DESIGN.md</code> — the export-side design this proposal follows</li>
 <li><b>common-metadata:</b> <code>ValueTypeEnum.WeightedString = 14</code> (and WeightedInt=15, WeightedDouble=16, etc.) already exist</li>
 </ul>
-<h2 class="g-docs__section-heading">Testing</h2>
+<h1>Testing</h1>
 <ul>
 <li><b>Value struct tests:</b> Verify <code>ValueIsWeighted</code> and <code>ValueGetWeight</code> for:<ul>
 <li>Masked weighted values (e.g., <code>0xFF002666</code> → <code>isMasked=true</code>, weight=9830)</li>
@@ -645,7 +644,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__2home_2run
 <li><b>Integration tests:</b> Using an enterprise <code>.ipi</code> file with weighted properties, verify end-to-end: query a weighted property → get weighted list → values and weights match expected data</li>
 <li><b>Backward compatibility:</b> Verify existing non-weighted data files work unchanged</li>
 </ul>
-<h2 class="g-docs__section-heading">Files Modified (Summary)</h2>
+<h1>Files Modified (Summary)</h1>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Repository  </td><td class="c-table__cell">File  </td><td class="c-table__cell">Change  </td></tr>
@@ -685,7 +684,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__2home_2run
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <link rel="canonical" href="/documentation/_pipeline_api__concepts__meta_data__element_properties.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
@@ -26,7 +25,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -70,30 +69,36 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h1 class="g-docs__page-title">Element Properties </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Introduction</h2>
+<div class="textblock"><h2 class="doxsection" id="introduction-59">Introduction<a class="headerlink" href="#introduction-59" aria-label="Permalink to this section">🔗</a></h2>
 <p><b>Element properties</b> refer to the individual <b>properties</b> whose values are populated in an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> by a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>.</p>
 <p>A <b>property's</b> unique identifier is its name, but it also has other metadata which describe it. The concept of a <b>property</b> is built up in a hierarchy, starting at an <b>element property</b>, which is then added to by inheriting <b>property</b> types.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/properties.md#property-metadata">Specification</a> for more technical details.</p>
-<h2 class="g-docs__section-heading">Name</h2>
+<h2 class="doxsection" id="name">Name<a class="headerlink" href="#name" aria-label="Permalink to this section">🔗</a></h2>
 <p>The name of the property uniquely identifies the <b>property</b> within a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>.</p>
-<h2 class="g-docs__section-heading">Element</h2>
+<h2 class="doxsection" id="element">Element<a class="headerlink" href="#element" aria-label="Permalink to this section">🔗</a></h2>
 <p>The <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> which the <b>property</b> belongs to. Although the <b>property's</b> name is unique within the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>, this does not prevent another <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> from containing a <b>property</b> with the same name. This, in combination with the name, uniquely identifies the <b>property</b> globally.</p>
-<h2 class="g-docs__section-heading">Category</h2>
+<h2 class="doxsection" id="category">Category<a class="headerlink" href="#category" aria-label="Permalink to this section">🔗</a></h2>
 <p>The category groups <b>element properties</b> sharing a similar theme. For example <code>FrontCameraMegaPixels</code> and <code>Has3DCamera</code> both belong to the <code>Camera</code> category.</p>
-<h2 class="g-docs__section-heading">Type</h2>
+<h2 class="doxsection" id="type">Type<a class="headerlink" href="#type" aria-label="Permalink to this section">🔗</a></h2>
 <p>The type of value which the <b>property</b> has e.g. <code>string</code> or <code>integer</code>. Note, this is only relevant for strongly typed languages.</p>
-<h2 class="g-docs__section-heading">Available</h2>
-<p>Available lets the user know whether the <b>property</b> is available in a certain configuration. This is not a constant, and depends on how the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> is built (e.g. what <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html#PipelineApi_Concepts_Configuration_DataFiles" title="PipelineApi_Concepts_Configuration_DataFiles">data file</a> is used).</p>
-<h2 class="g-docs__section-heading">Item properties</h2>
+<h2 class="doxsection" id="available">Available<a class="headerlink" href="#available" aria-label="Permalink to this section">🔗</a></h2>
+<p>Available lets the user know whether the <b>property</b> is available in a certain configuration. This is not a constant, and depends on how the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> is built (e.g. what <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html#PipelineApi_Concepts_Configuration_DataFiles" title="Data files">data file</a> is used).</p>
+<h2 class="doxsection" id="item-properties">Item properties<a class="headerlink" href="#item-properties" aria-label="Permalink to this section">🔗</a></h2>
 <p>This is only relevant where Type is a collection of complex objects. It contains a list of the <b>property</b> metadata for the items in the value for this <b>property</b>. For example, if this metadata instance represents a list of hardware devices, ItemProperties will contain a list of the metadata for <b>properties</b> available on each hardware device element within that list.</p>
-<h2 class="g-docs__section-heading">Delay execution</h2>
+<h2 class="doxsection" id="delay-execution">Delay execution<a class="headerlink" href="#delay-execution" aria-label="Permalink to this section">🔗</a></h2>
 <p>This is only relevant if the type of value is <code>JavaScript</code> and defaults to false. If set to true then the JavaScript in this <b>property</b> will not be executed automatically on the client device. This is used where executing the JavaScript would result in undesirable behavior. For example, attempting to access the location of the device will cause the browser to show a pop-up confirming if the user is happy to allow the website access to their location. In general, we don't want this to happen immediately when a user enters a website, but when they try to use a feature that requires location data (e.g. show restaurants near me).</p>
-<h2 class="g-docs__section-heading">Evidence properties</h2>
+<h2 class="doxsection" id="evidence-properties">Evidence properties<a class="headerlink" href="#evidence-properties" aria-label="Permalink to this section">🔗</a></h2>
 <p>Get the names of any JavaScript <b>properties</b> that, when executed, will obtain additional <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> that can help in determining the value of this <b>property</b>. For example, the <code>ScreenPixelsWidthJavascript</code> <b>property</b> will get the pixel width of the client-device's screen. This is used to update the <code>ScreenPixelsWidth</code> <b>property</b>. As such, <code>ScreenPixelsWidth</code> will have <code>ScreenPixelWidthJavascript</code> in its list of <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> <b>properties</b>. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

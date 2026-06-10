@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/apis/device-detection-dotnet/_on_premise_2_update_data_file-_console_2_program_8cs-example.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees Device Detection .NET
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -75,9 +74,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <li>Filesystem Watcher</li>
 <li>Daily auto-update</li>
 </ul>
-<h2 class="g-docs__section-heading">License Key</h2>
+<h1>License Key</h1>
 <p>In order to test this example you will need a 51Degrees Enterprise license which can be purchased from our <a href="https://51degrees.com/pricing">pricing page</a>.</p>
-<h2 class="g-docs__section-heading">Data Files</h2>
+<h1>Data Files</h1>
 <p>You can find out more about data files, licenses etc. at our <a href="https://51degrees.com/resources/faqs">FAQ page</a></p>
 <h2>Enterprise Data File</h2>
 <p>Enterprise (fully-featured) data files are typically released by 51Degrees five days a week (Mon-Fri) and on-premise deployments can fetch and download those files automatically. Equally, customers may choose to download the files themselves and move them into place to be detected by the 51Degrees filesystem watcher.</p>
@@ -85,7 +84,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <p>If you prefer to download files yourself, you may do so here: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">https:<span class="c-code__comment">//distributor.51degrees.com/api/v2/download?LicenseKeys=&lt;your_license_key&gt;&amp;Type=27&amp;Download=True&amp;Product=22</span></div>
 </div><!-- fragment --><h2>Lite Data File</h2>
 <p>Lite data files (free-to-use, limited capabilities, no license key required) are created roughly once a month and cannot be updated using auto-update, they may be downloaded from <a href="https://github.com/51Degrees/device-detection-data">Github</a> and are included with source distributions of this software.</p>
-<h2 class="g-docs__section-heading">Update on Start-Up</h2>
+<h1>Update on Start-Up</h1>
 <p>You can configure the pipeline builder to download an Enterprise data file on start-up.</p>
 <h2>Pre-Requisites</h2>
 <ul>
@@ -105,7 +104,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">         .setDataUpdateOnStartup(<span class="c-code__keyword">true</span>)</div>
 </div><!-- fragment --></li>
 </ul>
-<h2 class="g-docs__section-heading">File System Watcher</h2>
+<h1>File System Watcher</h1>
 <p>You can configure the pipeline builder to watch for changes to the currently loaded device detection data file, and to replace the file currently in use with the new one. This is useful, for example, if you wish to download and update the device detection file "manually" - i.e. you would download it then drop it into place with the same path as the currently loaded file.</p>
 <h2>Pre-Requisites</h2>
 <ul>
@@ -137,7 +136,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">       .SetUpdateRandomisationMax(10*60)</div>
 </div><!-- fragment --></li>
 </ul>
-<h2 class="g-docs__section-heading">Location</h2>
+<h1>Location</h1>
 <p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/blob/version/4.5/Examples/OnPremise/UpdateDataFile-Console/Program.cs">GitHub</a>.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">/* *********************************************************************</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * This Original Work is copyright of 51 Degrees Mobile Experts Limited.</span></div>
@@ -452,7 +451,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file.html">FiftyOne.DeviceDetection.Examples.OnPremise.UpdateDataFile</a></div><div class="ttdef"><b>Definition</b> CompletionListener.cs:28</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
-<!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

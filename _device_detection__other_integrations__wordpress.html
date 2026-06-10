@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/_device_detection__other_integrations__wordpress.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -72,18 +71,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <h1 class="g-docs__page-title">WordPress </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">51Degrees - Optimize by Device &amp; Location</h2>
+<div class="textblock"><h2 class="doxsection" id="autotoc_md51degrees---optimize-by-device--location">51Degrees - Optimize by Device &amp; Location<a class="headerlink" href="#autotoc_md51degrees---optimize-by-device--location" aria-label="Permalink to this section">🔗</a></h2>
 <p>Optimize your website for a range of devices and personalize your content based on your user’s location.</p>
 <p>Using real-time data, our plugin can optimize your website for users, based on device type and location. Upgrade your analytic reporting with a click of a button. Install from the WordPress plugin manager by searching for “51Degrees”.</p>
 <p> 
 <iframe src="https://player.vimeo.com/video/631017900?h=8e8c844804" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </p>
-<h2>After activation</h2>
+<h2 class="doxsection" id="after-activation">After activation<a class="headerlink" href="#after-activation" aria-label="Permalink to this section">🔗</a></h2>
 <ol type="1">
 <li>Visit the new <code>51Degrees</code> Settings menu.</li>
 <li>To start using this plugin, you will need to create a <code>Resource Key</code>. This enables access to the data you need via the 51Degrees Cloud service. You can create a <code>Resource Key</code> for free, using the <a href="https://configure.51degrees.com/">configurator</a> to select the properties you want.</li>
 </ol>
-<h2>Integration with Google Analytics</h2>
+<h2 class="doxsection" id="integration-with-google-analytics">Integration with Google Analytics<a class="headerlink" href="#integration-with-google-analytics" aria-label="Permalink to this section">🔗</a></h2>
 <ol type="1">
 <li>To integrate with Google Analytics, go to the <code>Google Analytics</code> tab and click <code>Log in with Google Analytics Account</code> button. Follow the steps and give the 51Degrees plugin the required permissions. Copy the provided Google Analytics <code>Access Code</code>.</li>
 <li>Enter the copied Code in the <code>Access Code</code> text field and click <code>Authenticate</code>. This will connect your Google Analytics account to the 51Degrees plugin.</li>
@@ -92,16 +91,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <li>Click <code>Save Changes</code>. This will prompt to the new Custom Dimensions screen where you can find all the Custom Dimensions available with the Resource Key.</li>
 <li>Click on <code>Enable Google Analytics Tracking</code> to enable tracking of all the Device Data Properties as Custom Dimensions.</li>
 </ol>
-<h2>Developer information and advanced features</h2>
+<h2 class="doxsection" id="developer-information-and-advanced-features">Developer information and advanced features<a class="headerlink" href="#developer-information-and-advanced-features" aria-label="Permalink to this section">🔗</a></h2>
 <p><em>Value replacement</em></p>
 <p>You can insert snippets into your pages that will be replaced with the corresponding value. For example, the text <code>{Pipeline::get("device", "browsername")}</code> would be replaced with <code>Chrome</code>, <code>Safari</code> and <code>Firefox</code>, etc, depending on the browser being used by the person visiting your site. To set this up, take the text from the 'Usage in Content' column on the 'Properties' tab of the plugin.</p>
 <p><em>Conditional blocks</em></p>
 <p>This feature allows you to show/hide content based on the property values supplied by the Pipeline API. To start, click 'add a new block' and select the <code>51Degrees conditional group block</code>. Select the block to display the configuration UI on the right-hand side. For example, you can configure the block to only appear if the hardware vendor property is 'Apple'.</p>
-<h2>Accessing properties in PHP code</h2>
+<h2 class="doxsection" id="accessing-properties-in-php-code">Accessing properties in PHP code<a class="headerlink" href="#accessing-properties-in-php-code" aria-label="Permalink to this section">🔗</a></h2>
 <p>To get a specific property, look it up on the available properties list and use the get() method specified.</p>
 <p><code>Pipeline::get("device", "ismobile")</code> You can also get a list of properties by category as an array.</p>
 <p><code>Pipeline::getCategory("Supported Media"))</code> The code snippet above will give you all the properties with <code>Supported Media</code> category included in the Resource Key.</p>
-<h2>JavaScript integration</h2>
+<h2 class="doxsection" id="javascript-integration">JavaScript integration<a class="headerlink" href="#javascript-integration" aria-label="Permalink to this section">🔗</a></h2>
 <p>The 51Degrees library exposes the same property values in JavaScript. These are accessed through the global <code>fod</code> object</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;script type=&quot;text/javascript&quot; &gt;</div>
 <div class="c-code__line">     window.onload = function() {</div>
@@ -111,7 +110,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">     }</div>
 <div class="c-code__line">&lt;/script&gt;</div>
 </div><!-- fragment --><p>In some cases, additional evidence needs to be gathered by running JavaScript on the client. This is mostly handled automatically by the plugin and the fod object. For specific examples, see the 'Location' and 'Apple device models' sections below.</p>
-<h2>Location</h2>
+<h2 class="doxsection" id="location">Location<a class="headerlink" href="#location" aria-label="Permalink to this section">🔗</a></h2>
 <p>Location works slightly differently to other properties. Currently, the address is determined from the location provided by the client's device. When this data is requested, a confirmation pop-up will appear. It is good practice to delay the appearance of this pop-up until the location is really needed. Otherwise, the user may not know why they are being asked for the information and is more likely to refuse. To facilitate this, the location data needs to be explicitly requested by adding some additional JavaScript. There are many ways to do this but for an example, we have gone with the simplest approach.</p>
 <p>Firstly, add a button to your page. Make sure to set a css class that we can use to identify this button and add an event to it.</p>
 <p>Next, add an HTML element and paste the following snippet of code into it:</p>
@@ -128,7 +127,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">&lt;/script&gt;</div>
 </div><!-- fragment --><p>Now, when the user clicks on the 'Use my location' button, the JavaScript that we pasted in will execute. This lets the global <code>fod</code> object know that we want access to the location data, which in turn causes the 'wants to know your location' confirmation pop-up to be displayed.</p>
 <p><b>Note:</b> On the first request, the server will not have the location information so the location properties will not have values. After the button is clicked, we need to make another request to the server for the location values to be populated. The content on the page can also be updated by using JavaScript, rather than waiting for the user to make a second request. This involves editing the JavaScript snippet above to update the page within the callback function that is passed to fod.complete.</p>
-<h2>Apple device models</h2>
+<h2 class="doxsection" id="apple-device-models">Apple device models<a class="headerlink" href="#apple-device-models" aria-label="Permalink to this section">🔗</a></h2>
 <p>Determining the exact model of Apple devices is more difficult that others. This is because Apple include limited information about the device hardware in the 'User-Agent' HTTP header that is sent to the webserver. To get around this problem, device detection uses JavaScript that runs directly on the client to gather some additional information. This can usually be used to determine the exact model of device and will at least narrow down the possibilities.</p>
 <p>The WordPress plugin will handle this for you automatically. However, be aware that, due to having to get additional data from the client, the model may be less clear on the first request than on subsequent requests. After the JavaScript runs on the client, a second request is made and the array of values would be significantly narrowed down.</p>
 <p><b>Note:</b> The content on the page can also be updated by using JavaScript, rather than waiting for the user to make a second request. The global <code>fod</code> object can be used to pass a callback that is executed when the updated values are available. For example:</p>
@@ -137,14 +136,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">       fod.complete(function(data) { /* access values here. e.g. data.device.hardwarename */ });</div>
 <div class="c-code__line">     };</div>
 <div class="c-code__line">&lt;/script&gt;</div>
-</div><!-- fragment --><h2>Manual installation using WordPress Plugin Manager</h2>
+</div><!-- fragment --><h2 class="doxsection" id="manual-installation-using-wordpress-plugin-manager">Manual installation using WordPress Plugin Manager<a class="headerlink" href="#manual-installation-using-wordpress-plugin-manager" aria-label="Permalink to this section">🔗</a></h2>
 <ol type="1">
 <li>Download <code>fiftyonedegrees</code> zip package from <a href="https://wordpress.org/plugins/wp-plugin-manager/">WordPress Plugin Manager</a>.</li>
 <li>Upload the entire <code>fiftyonedegrees</code> zip folder to the <code>/wp-content/plugins/</code> directory.</li>
 <li>Visit <code>Plugins</code>.</li>
 <li>Activate the 51Degrees plugin.</li>
 </ol>
-<h2>Manual installation using GitHub Repository</h2>
+<h2 class="doxsection" id="manual-installation-using-github-repository">Manual installation using GitHub Repository<a class="headerlink" href="#manual-installation-using-github-repository" aria-label="Permalink to this section">🔗</a></h2>
 <p>If you want to build the plugin yourself and install locally, you will need to follow these steps:</p>
 <ol type="1">
 <li>Clone the <a href="https://github.com/51Degrees/pipeline-wordpress/">51Degrees WordPress plugin repository</a>.</li>
@@ -157,7 +156,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

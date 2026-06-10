@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/_pipeline_api__features__asynchronous_execution.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -72,16 +71,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h1 class="g-docs__page-title">Asynchronous Execution </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Introduction</h2>
+<div class="textblock"><h2 class="doxsection" id="introduction-67">Introduction<a class="headerlink" href="#introduction-67" aria-label="Permalink to this section">🔗</a></h2>
 <p>In the context of the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>, <b>asynchronous execution</b> refers to the use of non-blocking processing. <a class="el" href="_pipeline_api__features__lazy_loading.html" title="Lazy Loading">Lazy loading</a> is closely related to this as it is effectively non-blocking processing for an individual <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a>. In contrast, <b>asynchronous execution</b> refers to non-blocking execution of the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> as a whole.</p>
-<h2 class="g-docs__section-heading">Language support</h2>
+<h2 class="doxsection" id="language-support-1">Language support<a class="headerlink" href="#language-support-1" aria-label="Permalink to this section">🔗</a></h2>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view details of <b>asynchronous execution</b> support for that language.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  .NET supports asynchronous code using the <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/">Task asynchronous programming model</a>. However, for .NET we have decided to implement a <a class="el" href="_pipeline_api__features__lazy_loading.html" title="Lazy Loading">lazy loading</a> feature instead of a fully asynchronous approach as we believe this gives better control to the developer.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  Java supports asynchronous code using the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html">CompletableFuture</a> class. For Java we have decided to implement a <a class="el" href="_pipeline_api__features__lazy_loading.html" title="Lazy Loading">lazy loading</a> feature instead of a fully asynchronous approach as we believe this gives better control to the developer.  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  PHP is single-threaded and does not support non-blocking execution out of the box. The <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> has no support for <b>asynchronous execution</b> nor <a class="el" href="_pipeline_api__features__lazy_loading.html" title="Lazy Loading">lazy loading</a> in PHP. <br  />
   </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  Node.js, being based on JavaScript is a fundamentally asynchronous language. As such, the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> will work in a non-blocking way by default through the use of promises.</p>
 <p>See the node documentation for more details about <a href="https://nodejs.org/de/docs/guides/blocking-vs-non-blocking/">blocking vs non-blocking calls</a>.  </div>  </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

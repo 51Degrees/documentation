@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <link rel="canonical" href="/documentation/_device_detection__whats_new_v45.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
@@ -26,7 +25,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -70,23 +69,23 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <h1 class="g-docs__page-title">What's New in Version 4.5 </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">What's New in Version 4.5 of Device Detection</h2>
-<h2>Performance</h2>
+<div class="textblock"><h2 class="doxsection" id="whats-new-in-version-45-of-device-detection">What's New in Version 4.5 of Device Detection<a class="headerlink" href="#whats-new-in-version-45-of-device-detection" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="performance">Performance<a class="headerlink" href="#performance" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li>Optimized processing of <a class="el" href="_device_detection__features__u_a_c_h__overview.html" title="UA-CH Overview">User-Agent Client Hints</a>, reducing lookup time.</li>
 </ul>
-<h2>Graph Selection</h2>
+<h2 class="doxsection" id="graph-selection">Graph Selection<a class="headerlink" href="#graph-selection" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li>Removed <code>usePerformanceGraph</code> and <code>usePredictiveGraph</code> configuration options. <br  />
  Detection now uses a single, unified predictive graph.</li>
 </ul>
-<h2>Property Retrieval</h2>
+<h2 class="doxsection" id="property-retrieval">Property Retrieval<a class="headerlink" href="#property-retrieval" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li>Added <code>propertyValueIndex</code> configuration option. <br  />
  When <code>true</code>, property values are indexed at startup for faster retrieval. <br  />
  See <a class="el" href="_device_detection__features__performance_options.html" title="Performance Options">Property Indexing</a> for more details.</li>
 </ul>
-<h2>New Evidence Keys</h2>
+<h2 class="doxsection" id="new-evidence-keys">New Evidence Keys<a class="headerlink" href="#new-evidence-keys" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li><p class="startli">Added support for alternative representations of User-Agent Client Hints via the following evidence keys (usable with <code>query.</code> and <code>cookie.</code> prefixes):</p><ul>
 <li><code>51D_GetHighEntropyValues</code>: Base64-encoded JSON string from <code>JSON.stringify()</code> of the <code>getHighEntropyValues()</code> JavaScript call.</li>
@@ -103,7 +102,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <p class="startli">The conversion happens natively in the device detection engine, eliminating the need for additional pipeline elements. See the <a class="el" href="_device_detection__features__u_a_c_h__javascript.html" title="JavaScript">UA-CH JavaScript page</a> for detailed usage information.</p>
 </li>
 </ul>
-<h2>Results Serialization</h2>
+<h2 class="doxsection" id="results-serialization">Results Serialization<a class="headerlink" href="#results-serialization" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li>Introduced <code>ResultsHashSerializer</code> service class. <br  />
  Enables retrieval of all detected property values as a single JSON-serialized string. <br  />
@@ -112,7 +111,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

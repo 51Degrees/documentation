@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/_services__distributor.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -74,7 +73,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__dis
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>The 51Degrees Distributor service is a client-facing cloud-based service which is used by the API to request the latest data files. You can also manually download files via the front end on our <a href="https://51degrees.com/developers/downloads/enhanced-device-data">website</a>, or by calling the Distributor web API directly using curl or similar.</p>
 <p>The URL is <code>https://distributor.51degrees.com/api/v2/download</code></p>
-<h2>Parameters</h2>
+<h2 class="doxsection" id="parameters">Parameters<a class="headerlink" href="#parameters" aria-label="Permalink to this section">🔗</a></h2>
 <p>Query string parameters are supplied as normal. For example: <code>https://distributor.51degrees.com/api/v2/download?LicenseKeys=ABC&amp;Type=27&amp;Product=23</code> If you're unsure what 'product' or 'type' values to use, check the download page on the <a href="https://51degrees.com/developers/downloads/enhanced-device-data">website</a> and copy the link for the file you need from there.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -128,7 +127,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__dis
 <tr class="c-table__row">
 <td class="c-table__cell">Download  </td><td class="c-table__cell">Legacy - Has no effect  </td><td class="c-table__cell">True/False  </td></tr>
 </table>
-<h3>Common URL examples</h3>
+<h3 class="doxsection" id="common-url-examples">Common URL examples<a class="headerlink" href="#common-url-examples" aria-label="Permalink to this section">🔗</a></h3>
 <p>Replace <code>YOUR_LICENSE_KEY</code> with your actual License Key. The most frequently used combinations are:</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -141,14 +140,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__dis
 <td class="c-table__cell">IP Intelligence Enterprise (V4)  </td><td class="c-table__cell"><code>https://distributor.51degrees.com/api/v2/download?LicenseKeys=YOUR_LICENSE_KEY&amp;Type=IPIV41&amp;Product=IPIV4Enterprise</code>  </td></tr>
 </table>
 <p>The numeric <code>Type</code>/<code>Product</code> ids from the tables above work too — e.g. <code>Type=27&amp;Product=22</code> is equivalent to <code>Type=HashV41&amp;Product=V4Enterprise</code>.</p>
-<h2>HTTP headers</h2>
-<h3>Response headers</h3>
+<h2 class="doxsection" id="http-headers">HTTP headers<a class="headerlink" href="#http-headers" aria-label="Permalink to this section">🔗</a></h2>
+<h3 class="doxsection" id="response-headers">Response headers<a class="headerlink" href="#response-headers" aria-label="Permalink to this section">🔗</a></h3>
 <p>The server will respond with a <code>Content-MD5</code> header. This contains the MD5 hash of the data file content. It can be used to verify the download by hashing the content and comparing the result with the value in this header.</p>
 <p>The server will also respond with a <code>Last-Modified</code> header. This contains the publish date of the data file that is being downloaded. This value should be used to populate the <code>If-Modified-Since</code> header on the next request (see request headers below).</p>
 <p>If returning a 429 status (see response codes below), the server will specify an <code>Retry-After</code> header. This is the minimum number of seconds to wait before the distributor will serve requests for this License Key.</p>
-<h3>Request headers</h3>
+<h3 class="doxsection" id="request-headers">Request headers<a class="headerlink" href="#request-headers" aria-label="Permalink to this section">🔗</a></h3>
 <p>The sender may supply an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since"><code>If-Modified-Since</code></a> header. If present, the Distributor will check the date supplied in the header against the publish date for the latest data file. If the data file is older or the same, the server will return HTTP status code 304. If the data file is newer, it will be returned, along with HTTP 200.</p>
-<h2>Response codes</h2>
+<h2 class="doxsection" id="response-codes">Response codes<a class="headerlink" href="#response-codes" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Response code  </td><td class="c-table__cell">Meaning + Notes  </td></tr>
@@ -178,7 +177,13 @@ You are over the threshold of requests per minute for this License Key. The serv
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

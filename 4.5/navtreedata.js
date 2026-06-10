@@ -25,11 +25,12 @@
 var NAVTREE =
 [
   [ "51Degrees API Documentation", "index.html", [
-    [ "Introduction", "index.html", null ],
+    [ "Introduction", "index.html", "index" ],
     [ "Device Detection", "_device_detection__index.html", "_device_detection__index" ],
     [ "IP Intelligence", "_ip_intelligence__index.html", "_ip_intelligence__index" ],
     [ "Reverse Geocoding", "_reverse_geocoding__index.html", "_reverse_geocoding__index" ],
     [ "Identifiers", "_identifiers__index.html", "_identifiers__index" ],
+    [ "Integrations", "_integrations__index.html", "_integrations__index" ],
     [ "Services", "_services__index.html", "_services__index" ],
     [ "Pipeline API", "_pipeline_api__index.html", "_pipeline_api__index" ],
     [ "Product Summaries", "_product_summaries__index.html", "_product_summaries__index" ],
@@ -43,7 +44,10 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-"_device_detection__cloud_to_on_premise.html"
+"_device_detection__cloud_to_on_premise.html",
+"_device_detection__overview.html#common-use-cases",
+"_pipeline_api__concepts__flow_elements__cloud_engine.html#internals-2",
+"_reverse_geocoding__overview.html#introduction-83"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/_pipeline_api__concepts__data__flow_data.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -72,31 +71,31 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h1 class="g-docs__page-title">Flow Data </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Introduction</h2>
+<div class="textblock"><h2 class="doxsection" id="introduction-52">Introduction<a class="headerlink" href="#introduction-52" aria-label="Permalink to this section">🔗</a></h2>
 <p><b>Flow data</b> is a container that encapsulates all the data related to a single <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> process request. This includes input and output data as well as metadata related to the processing such as the details of any errors that occurred.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#flow-data">Specification</a> for more technical details.</p>
-<h2 class="g-docs__section-heading">Data structure</h2>
+<h2 class="doxsection" id="data-structure-4">Data structure<a class="headerlink" href="#data-structure-4" aria-label="Permalink to this section">🔗</a></h2>
 <p><b>Flow data</b> has several sub-containers that are used to segment the data that it contains:</p><ul>
-<li><a class="el" href="#PipelineApi_Concepts_Data_FlowData_Evidence" title="PipelineApi_Concepts_Data_FlowData_Evidence">Evidence</a></li>
-<li><a class="el" href="#PipelineApi_Concepts_Data_FlowData_ElementData" title="PipelineApi_Concepts_Data_FlowData_ElementData">Element data</a></li>
-<li><a class="el" href="#PipelineApi_Concepts_Data_FlowData_Errors" title="PipelineApi_Concepts_Data_FlowData_Errors">Errors</a></li>
+<li><a class="el" href="#PipelineApi_Concepts_Data_FlowData_Evidence" title="Evidence">Evidence</a></li>
+<li><a class="el" href="#PipelineApi_Concepts_Data_FlowData_ElementData" title="Element data">Element data</a></li>
+<li><a class="el" href="#PipelineApi_Concepts_Data_FlowData_Errors" title="Errors">Errors</a></li>
 </ul>
-<h2 id="PipelineApi_Concepts_Data_FlowData_Evidence">Evidence <a href="#PipelineApi_Concepts_Data_FlowData_Evidence">#</a></h2>
+<h2 class="doxsection" id="PipelineApi_Concepts_Data_FlowData_Evidence">Evidence<a class="headerlink" href="#PipelineApi_Concepts_Data_FlowData_Evidence" aria-label="Permalink to this section">🔗</a></h2>
 <p>Before the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> is passed into the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>, input data is supplied. We refer to this data as '<a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a>'. The <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> can be set manually or automatically by using a <a class="el" href="_pipeline_api__features__web_integration.html" title="Web Integration Feature">web integration</a> package (where available) for your web framework of choice.</p>
 <p>Visit the <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> page for more details.</p>
-<h2 id="PipelineApi_Concepts_Data_FlowData_ElementData">Element data <a href="#PipelineApi_Concepts_Data_FlowData_ElementData">#</a></h2>
+<h2 class="doxsection" id="PipelineApi_Concepts_Data_FlowData_ElementData">Element data<a class="headerlink" href="#PipelineApi_Concepts_Data_FlowData_ElementData" aria-label="Permalink to this section">🔗</a></h2>
 <p>The responses from each <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> are stored in a key/value pair structure within <b>flow data</b>. In each case, <a class="el" href="_pipeline_api__concepts__data__element_data_key.html" title="Element Data Key">the key</a> is the string key of the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> and the value is an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> instance. The <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> structure is visible to each <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> so one <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">element</a> can use the result from another <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">element</a> in its processing.</p>
-<p>An example where this is required is the 51Degrees <a class="el" href="_pipeline_api__concepts__flow_elements__cloud_engine.html" title="Cloud Engine">Cloud Engines</a>. First, an <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">element</a> makes an HTTP request to the cloud and stores the JSON response in the <b>flow data</b>. Later, another <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">element</a> takes that JSON response and parses it to populate a strongly typed object with values for the specific <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_Aspect" title="PipelineApi_Concepts_Terminology_Aspect">aspect</a> it is concerned with.</p>
+<p>An example where this is required is the 51Degrees <a class="el" href="_pipeline_api__concepts__flow_elements__cloud_engine.html" title="Cloud Engine">Cloud Engines</a>. First, an <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">element</a> makes an HTTP request to the cloud and stores the JSON response in the <b>flow data</b>. Later, another <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">element</a> takes that JSON response and parses it to populate a strongly typed object with values for the specific <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_Aspect" title="Aspect">aspect</a> it is concerned with.</p>
 <p>Visit the <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> page for more details.</p>
-<h2 id="PipelineApi_Concepts_Data_FlowData_Errors">Errors <a href="#PipelineApi_Concepts_Data_FlowData_Errors">#</a></h2>
+<h2 class="doxsection" id="PipelineApi_Concepts_Data_FlowData_Errors">Errors<a class="headerlink" href="#PipelineApi_Concepts_Data_FlowData_Errors" aria-label="Permalink to this section">🔗</a></h2>
 <p>The errors collection stores the details of any errors that occur during processing. The language's default exception handling mechanism will be used to catch and record any exceptions that occur when a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> is processing. However, the processing of later <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> will continue as normal.</p>
 <p>By default, once all <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> have been processed, an exception will be thrown with details of any errors that have occurred.</p>
 <p>The <a class="el" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html" title="Pipeline Builder">pipeline builder</a> has an option to modify this behavior so that exceptions are totally suppressed. In this situation, the caller is responsible for handling any exceptions by checking the errors collection after processing.</p>
-<h2 class="g-docs__section-heading">Lifecycle</h2>
-<h2>Creation</h2>
+<h2 class="doxsection" id="lifecycle-2">Lifecycle<a class="headerlink" href="#lifecycle-2" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="creation">Creation<a class="headerlink" href="#creation" aria-label="Permalink to this section">🔗</a></h2>
 <p><b>Flow data</b> is only ever created by a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>, when the <code>CreateFlowData</code> method is called. This allows the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> to create the <b>flow data</b> internal data structures using implementations that are most appropriate for the configuration of the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> in the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>.</p>
 <p>For example, thread-safe but slower data collections only need to be used if the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> is configured to execute <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">elements</a> in <a class="el" href="_pipeline_api__features__parallel_execution.html" title="Parallel Execution">parallel</a>.</p>
-<h2>Disposal / Cleanup</h2>
+<h2 class="doxsection" id="disposal--cleanup">Disposal / Cleanup<a class="headerlink" href="#disposal--cleanup" aria-label="Permalink to this section">🔗</a></h2>
 <p><b>Flow data</b> disposal should be left up to the garbage collector. This ensures that any resource which may still be needed (e.g., if it has been cached) is freed at the correct point.</p>
 <p>There are exceptions where <b>Flow data</b> must be disposed immediately after it is no longer needed. This is because the garbage collector does not free the resource fast enough under high load and causes an out of memory exception. Two languages where this is required are Java and C#.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  In .NET, try-with-resource pattern is done as below. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">// Create the FlowData instance.</div>
@@ -112,7 +111,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">    ...</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p>  </div>   </div> </p>
-<h2 class="g-docs__section-heading" id="PipelineApi_Concepts_Data_FlowData_ThreadSafety">Thread-safety <a href="#PipelineApi_Concepts_Data_FlowData_ThreadSafety">#</a></h2>
+<h2 class="doxsection" id="PipelineApi_Concepts_Data_FlowData_ThreadSafety">Thread-safety<a class="headerlink" href="#PipelineApi_Concepts_Data_FlowData_ThreadSafety" aria-label="Permalink to this section">🔗</a></h2>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  In .NET, by default, the non-thread-safe <code>Dictionary</code> class is used for both <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> and <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a>.</p>
 <p>In both cases, this can be overridden to use another <code>IDictionary</code> implementation such as the thread-safe <code>ConcurrentDictionary</code>.</p>
 <p>The errors collection uses the List class. This is not thread-safe. As performance is less of an issue with this collection, a simple lock is used to synchronize items being added to the list.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  In Java, by default, the non-thread-safe <code>TreeMap</code> class is used for <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> and the thread-safe <code>ConcurrentSkipListMap</code> class for <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a>.</p>
@@ -120,7 +119,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

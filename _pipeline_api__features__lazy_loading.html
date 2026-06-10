@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/_pipeline_api__features__lazy_loading.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -72,19 +71,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h1 class="g-docs__page-title">Lazy Loading </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Introduction</h2>
+<div class="textblock"><h2 class="doxsection" id="introduction-73">Introduction<a class="headerlink" href="#introduction-73" aria-label="Permalink to this section">🔗</a></h2>
 <p>Lazy loading is a concept whereby an object is not loaded until it is actually needed. This can mean that it does not start loading until it is required, or it is loaded in the background so that there is no delay in the execution of other logic. The latter is usually preferable, as loading in the background often results in no waiting at all (i.e., by the time the object is needed, it has already been loaded).</p>
 <p>In the context of a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>, lazy loading refers to the way values are populated in an <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a>. Usually the default is to not lazily load them, so an <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a>'s processing does not finish until all values have been populated. When lazy loading is configured in an <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a>, values begin to load in another thread, and other processing can continue.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/advanced-features/lazy-loading.md#">Specification</a> for more technical details.</p>
-<h2 class="g-docs__section-heading">Caveats</h2>
+<h2 class="doxsection" id="caveats">Caveats<a class="headerlink" href="#caveats" aria-label="Permalink to this section">🔗</a></h2>
 <p>Getting an <a class="el" href="_pipeline_api__concepts__meta_data__aspect_properties.html" title="Aspect Properties">aspect property</a>'s value from an <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a> which has been lazily loaded has the added complexity of the value not yet being known. Consequently, an exception that would otherwise have occurred during the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>'s processing stage has now been deferred until the point at which a value is fetched. When lazy loading is enabled, this extra possibility of an error should be taken into consideration.</p>
-<h2 class="g-docs__section-heading">Configuration</h2>
+<h2 class="doxsection" id="configuration-4">Configuration<a class="headerlink" href="#configuration-4" aria-label="Permalink to this section">🔗</a></h2>
 <p>Lazy loading has two main configuration options.</p>
-<h2>Property timeout</h2>
+<h2 class="doxsection" id="property-timeout">Property timeout<a class="headerlink" href="#property-timeout" aria-label="Permalink to this section">🔗</a></h2>
 <p>As it is not known at the point of fetching an <a class="el" href="_pipeline_api__concepts__meta_data__aspect_properties.html" title="Aspect Properties">aspect property</a>'s value whether or not it has been populated, a timeout option is available. This is the time to wait for the value before throwing an exception.</p>
-<h2>Cancellation</h2>
+<h2 class="doxsection" id="cancellation">Cancellation<a class="headerlink" href="#cancellation" aria-label="Permalink to this section">🔗</a></h2>
 <p>In languages where it is possible, a 'cancellation token' can be provided. This is a means of canceling all processing which is still being carried out internally to the <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a>.</p>
-<h2 class="g-docs__section-heading">Implementation</h2>
+<h2 class="doxsection" id="implementation-1">Implementation<a class="headerlink" href="#implementation-1" aria-label="Permalink to this section">🔗</a></h2>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific implementation details.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  Lazy loading functionality in .NET is fulfilled by <code>Tasks</code>. An <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a>'s processing will be added to its <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a> as a new <code>Task</code> using its <code>AddProcessTask</code> method . Then when a value is requested from the <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a>, the <code>Task</code> is waited on by internal methods.</p>
 <p>The cancellation token in C# is the <code>CancellationToken</code> class from System.</p>
 <p>In the case where fetching a property times out, a <code>TimeoutException</code> is thrown, or if the token has been used to cancel processing, a <code>OperationCanceledException</code> is thrown.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  Lazy loading functionality in Java is fulfilled by the <code>Callable</code> class which returns a <code>Future</code>. An <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a>'s processing will be added to its <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a> as a new <code>Callable</code> using its <code>addProcessCallable</code> method. Then when a value is requested from the <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a>, the <code>Future</code> is waited on by internal methods.</p>
@@ -93,7 +92,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

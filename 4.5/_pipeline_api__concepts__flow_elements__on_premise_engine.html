@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <link rel="canonical" href="/documentation/_pipeline_api__concepts__flow_elements__on_premise_engine.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
@@ -26,7 +25,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -70,31 +69,37 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h1 class="g-docs__page-title">On-premise Engine </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Introduction</h2>
+<div class="textblock"><h2 class="doxsection" id="introduction-57">Introduction<a class="headerlink" href="#introduction-57" aria-label="Permalink to this section">🔗</a></h2>
 <p><b>On-premise Engines</b> are a specialization of <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> where additional data exists locally to the <b>engine</b>, either in memory or a data file. This is in contrast to a <a class="el" href="_pipeline_api__concepts__flow_elements__cloud_engine.html" title="Cloud Engine">Cloud Engine</a> where data exists in a cloud service which is called by the <b>engine</b>. Having data that does not reside in the <b>engine</b> itself means that the same <b>engine</b> can be used with multiple data sets.</p>
 <p>An <b>On-premise Engine</b> builds on the <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> concept to introduce the ability to:</p><ul>
 <li>load data either from memory or one or more data files</li>
 <li>keep data files up to date</li>
 </ul>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#On-premise-engines">Specification</a> for more technical details.</p>
-<h2 class="g-docs__section-heading">Use cases</h2>
+<h2 class="doxsection" id="use-cases-5">Use cases<a class="headerlink" href="#use-cases-5" aria-label="Permalink to this section">🔗</a></h2>
 <p>An <b>On-premise Engine</b> typically does not need to call external components when processing a request. This makes it best suited to cases where performance is critical, and the supporting hardware implementation reflects this. To provide optimal performance, some <b>On-premise Engines</b> can be configured to run with any data files held entirely in memory, reducing latency further.</p>
-<p>There are also situations where the security demands of a service make sending sensitive data to an external <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_CloudService" title="PipelineApi_Concepts_Terminology_CloudService">Cloud Service</a> problematic. Using an <b>On-premise Engine</b> will address this issue.</p>
-<h2 class="g-docs__section-heading" id="PipelineApi_Concepts_Configuration_DataFiles">Data files <a href="#PipelineApi_Concepts_Configuration_DataFiles">#</a></h2>
+<p>There are also situations where the security demands of a service make sending sensitive data to an external <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_CloudService" title="Cloud service">Cloud Service</a> problematic. Using an <b>On-premise Engine</b> will address this issue.</p>
+<h2 class="doxsection" id="PipelineApi_Concepts_Configuration_DataFiles">Data files<a class="headerlink" href="#PipelineApi_Concepts_Configuration_DataFiles" aria-label="Permalink to this section">🔗</a></h2>
 <p>An <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> can make use of one or more data files to carry out its processing. This is typically the case when an <b>engine</b> relies on data being updated, so the data is not stored statically in the <b>engine</b> itself.</p>
-<h2>Updates</h2>
+<h2 class="doxsection" id="updates">Updates<a class="headerlink" href="#updates" aria-label="Permalink to this section">🔗</a></h2>
 <p>To facilitate keeping the data up to date, an <b>engine</b> may be registered with the <a class="el" href="_pipeline_api__features__automatic_datafile_updates.html" title="Automatic Data File Updates">data update service</a>, to provide 'automatic updates'. Enabling this feature in an <b>engine</b> means that when it is added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>, it will be registered for updates, and the <a class="el" href="_pipeline_api__features__automatic_datafile_updates.html" title="Automatic Data File Updates">data update service</a> will refresh the data file automatically.</p>
 <p>An <b>engine's</b> data can also be refreshed manually by giving the <b>engine</b> either a new data file or memory location and requesting that it use that new data file or memory location. Depending on the <b>engine</b> implementation, refreshing the data in an <b>engine</b> may or may not require the engine to briefly stop serving requests. All 51Degrees <b>engines</b> have been designed so that processing will be uninterrupted by data updates.</p>
-<h2>Temporary data files</h2>
+<h2 class="doxsection" id="temporary-data-files">Temporary data files<a class="headerlink" href="#temporary-data-files" aria-label="Permalink to this section">🔗</a></h2>
 <p>An <b>engine</b> can optionally create a temporary copy of the data file to use. This is good practice when making use of the <a class="el" href="_pipeline_api__features__automatic_datafile_updates.html" title="Automatic Data File Updates">update functionality</a>, as an <b>engine</b> can be configured so that it streams data from the data file. When a temporary data file is used, the original data file cannot be updated because the <b>engine</b> will have a lock on the file.</p>
-<h2>Metadata</h2>
+<h2 class="doxsection" id="metadata-1">Metadata<a class="headerlink" href="#metadata-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>Each data file in an <b>engine</b> can contain metadata, some of which is used by the <a class="el" href="_pipeline_api__features__automatic_datafile_updates.html" title="Automatic Data File Updates">data update service</a>. This metadata can provide the <a class="el" href="_pipeline_api__features__automatic_datafile_updates.html" title="Automatic Data File Updates">data update service</a> with the age of the data file, the time at which a new one will be available, and the URL of where the new data file can be obtained.</p>
-<h2>Multiple files</h2>
+<h2 class="doxsection" id="multiple-files">Multiple files<a class="headerlink" href="#multiple-files" aria-label="Permalink to this section">🔗</a></h2>
 <p>An <b>On-premise Engine</b> can require more than one data file. Files can be individually registered with the <a class="el" href="_pipeline_api__features__automatic_datafile_updates.html" title="Automatic Data File Updates">data update service</a>, which will handle each file according to its own metadata. This allows different data files to have distinct update configurations. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

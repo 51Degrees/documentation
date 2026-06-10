@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <link rel="canonical" href="/documentation/_pipeline_api__concepts__flow_elements__aspect_engine.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
@@ -26,7 +25,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -70,7 +69,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h1 class="g-docs__page-title">Aspect Engine </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Introduction</h2>
+<div class="textblock"><h2 class="doxsection" id="introduction-53">Introduction<a class="headerlink" href="#introduction-53" aria-label="Permalink to this section">🔗</a></h2>
 <p>An <b>Aspect Engine</b> builds on the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> concept to introduce the ability to:</p><ul>
 <li>cache processing results</li>
 <li>handle cases where a property has not been populated by an <b>Aspect Engine</b>, but it could be if certain configuration changes were made</li>
@@ -78,22 +77,28 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 </ul>
 <p>In the same way a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> can produce an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> containing results of its processing, an <b>engine</b> can produce an <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a>. This builds on <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> to add some of the extra functionality listed above.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#aspect-engine">Specification</a> for more technical details.</p>
-<h2 class="g-docs__section-heading">Caching</h2>
+<h2 class="doxsection" id="caching">Caching<a class="headerlink" href="#caching" aria-label="Permalink to this section">🔗</a></h2>
 <p>For performance reasons, it may be desirable to add results <a class="el" href="_pipeline_api__features__result_caching.html" title="Result Caching">caching</a> to an <b>engine</b> which has a particularly large overhead for processing.</p>
 <p>Logic in an <b>engine</b> makes use of a cache passed at construction time to avoid doing any processing when a result has already been found for a certain set of <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a>. The key for this cache is a <a class="el" href="_pipeline_api__concepts__data__data_key.html" title="Data Key">data key</a> generated using the <a class="el" href="_pipeline_api__concepts__data__evidence_key_filter.html" title="Evidence Key Filter">evidence key filter</a> from the <b>engine</b>. This means that only <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> relevant to the <b>engine</b> is used in the key for the cache, making the cache more space-efficient.</p>
-<h2 class="g-docs__section-heading">Missing property handling</h2>
+<h2 class="doxsection" id="missing-property-handling">Missing property handling<a class="headerlink" href="#missing-property-handling" aria-label="Permalink to this section">🔗</a></h2>
 <p>An <b>engine</b> adds handling of cases where a value is requested for a <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">property</a> that is not available for some reason.</p>
-<p>Consider the case where an <b>engine</b> is set up with free data, and the user attempts to retrieve a value for an enterprise <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">property</a>. An error would be returned stating that the <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">property</a> was only available in an enterprise <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_DataTier" title="PipelineApi_Concepts_Terminology_DataTier">data tier</a>.</p>
+<p>Consider the case where an <b>engine</b> is set up with free data, and the user attempts to retrieve a value for an enterprise <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">property</a>. An error would be returned stating that the <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">property</a> was only available in an enterprise <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_DataTier" title="Data tier">data tier</a>.</p>
 <p>Consider another case where an <b>engine</b> has been built with specific <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">properties</a> included rather than the full set, and the user attempts to retrieve a value for a <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">property</a> which was not included. An error would be returned stating that the <b>engine</b> was not configured correctly to return values for that <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">property</a>.</p>
 <p>Both these cases are distinct from that, where the <b>engine</b> simply does not know what the <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">property</a> is, and cannot return values for it. So, it is important to distinguish between these scenarios, and be clear to the user about what they need to do to get access to the property they want.</p>
-<h2 class="g-docs__section-heading">Lazy loading</h2>
-<p>The <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a> produced by an <b>engine</b> can be returned before it has been completely populated. This means that the caller does not need to wait for processing to finish before carrying on with other things, and the processing will continue in the background. This is particularly useful in a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_WebServer" title="PipelineApi_Concepts_Terminology_WebServer">web server</a> where processing can start the instant a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_WebRequest" title="PipelineApi_Concepts_Terminology_WebRequest">web request</a> is received, and the <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_WebServer" title="PipelineApi_Concepts_Terminology_WebServer">server</a> can continue serving the page until it reaches a point where the result of the processing is needed.</p>
+<h2 class="doxsection" id="lazy-loading">Lazy loading<a class="headerlink" href="#lazy-loading" aria-label="Permalink to this section">🔗</a></h2>
+<p>The <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a> produced by an <b>engine</b> can be returned before it has been completely populated. This means that the caller does not need to wait for processing to finish before carrying on with other things, and the processing will continue in the background. This is particularly useful in a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_WebServer" title="Web server">web server</a> where processing can start the instant a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_WebRequest" title="Web request">web request</a> is received, and the <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_WebServer" title="Web server">server</a> can continue serving the page until it reaches a point where the result of the processing is needed.</p>
 <p>By default, <a class="el" href="_pipeline_api__features__lazy_loading.html" title="Lazy Loading">lazy loading</a> is not enabled but can be via the <b>engine's</b> builder.</p>
 <p>Please note that <a class="el" href="_pipeline_api__features__lazy_loading.html" title="Lazy Loading">lazy loading</a> is only available in a subset of languages. This is because it either is not possible, or doesn't make sense in some cases. For example, PHP is single threaded so <a class="el" href="_pipeline_api__features__lazy_loading.html" title="Lazy Loading">lazy loading</a> is not possible. The Node.js <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> is entirely <a class="el" href="_pipeline_api__features__asynchronous_execution.html" title="Asynchronous Execution">asynchronous</a> so a <a class="el" href="_pipeline_api__features__lazy_loading.html" title="Lazy Loading">lazy loading</a> capability is unnecessary. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

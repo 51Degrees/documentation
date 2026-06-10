@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/_ip_intelligence__migration__max_mind.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -74,7 +73,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>The mapping below uses MaxMind's <a href="https://dev.maxmind.com/geoip/docs/web-services/responses" rel="nofollow">GeoIP2 web service response schema</a> (Country, City, Insights, Enterprise, plus the standalone Anonymous IP, Connection Type, ISP and Domain databases). Nested fields are written in dot notation (<code>location.latitude</code>) to match MaxMind's documentation.</p>
 <p>Where a mapping is approximate, the <b>Notes</b> column calls it out. Where no equivalent exists, the cell is blank.</p>
-<h2 class="g-docs__section-heading">Continent, country, registered/represented country</h2>
+<h2 class="doxsection" id="continent-country-registeredrepresented-country">Continent, country, registered/represented country<a class="headerlink" href="#continent-country-registeredrepresented-country" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">MaxMind field  </td><td class="c-table__cell">51Degrees property  </td><td class="c-table__cell">Notes  </td></tr>
@@ -101,7 +100,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>represented_country.*</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">51Degrees does not separately model represented country (US military bases etc.).  </td></tr>
 </table>
-<h2 class="g-docs__section-heading">Subdivision (state / region)</h2>
+<h2 class="doxsection" id="subdivision-state--region">Subdivision (state / region)<a class="headerlink" href="#subdivision-state--region" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">MaxMind field  </td><td class="c-table__cell">51Degrees property  </td><td class="c-table__cell">Notes  </td></tr>
@@ -114,7 +113,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>subdivisions[0].geoname_id</code>  </td><td class="c-table__cell"></td><td class="c-table__cell"></td></tr>
 </table>
-<h2 class="g-docs__section-heading">City, postal, location</h2>
+<h2 class="doxsection" id="city-postal-location">City, postal, location<a class="headerlink" href="#city-postal-location" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">MaxMind field  </td><td class="c-table__cell">51Degrees property  </td><td class="c-table__cell">Notes  </td></tr>
@@ -145,7 +144,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 </table>
 <p><b>Coordinate randomization</b>: 51Degrees randomizes <code>Latitude</code> and <code>Longitude</code> within around 1 km of the true average location for the IP range. The randomization is applied during data file generation, so the value returned for a given IP address is stable across all lookups against the same data file and only changes when a new data file is published. This guarantees the coordinates cannot be classified as personal data. No other property is affected. See <a class="el" href="_ip_intelligence__features__randomization.html" title="Randomization">Randomization</a>.</p>
 <p><b>Location confidence</b>: 51Degrees rolls up location certainty into a single string-valued <code>LocationConfidence</code> property covering the town and country. Where MaxMind exposes a numeric <code>*.confidence</code> score on each geographic level (<code>country.confidence</code>, <code>city.confidence</code>, <code>subdivisions[0].confidence</code>, <code>postal.confidence</code>), the categorical 51Degrees equivalent is <code>LocationConfidence</code>, complemented by the numeric <code>AccuracyRadiusMax</code> and <code>AccuracyRadiusMin</code> properties for spatial precision. See the <a href="https://51degrees.com/developers/property-dictionary">property dictionary</a> for the set of possible values.</p>
-<h2 class="g-docs__section-heading">Traits (network and ASN)</h2>
+<h2 class="doxsection" id="traits-network-and-asn">Traits (network and ASN)<a class="headerlink" href="#traits-network-and-asn" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">MaxMind field  </td><td class="c-table__cell">51Degrees property  </td><td class="c-table__cell">Notes  </td></tr>
@@ -180,7 +179,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>traits.ip_risk_snapshot</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">Differs in semantics. <code>HumanProbability</code> is the closest signal. It returns confidence from 0 to 10 that traffic is from a human rather than hosting or automated infrastructure.  </td></tr>
 </table>
-<h2 class="g-docs__section-heading">Anonymizer (privacy / VPN)</h2>
+<h2 class="doxsection" id="anonymizer-privacy--vpn">Anonymizer (privacy / VPN)<a class="headerlink" href="#anonymizer-privacy--vpn" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">MaxMind field  </td><td class="c-table__cell">51Degrees property  </td><td class="c-table__cell">Notes  </td></tr>
@@ -203,7 +202,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>anonymizer.provider_name</code>  </td><td class="c-table__cell"></td><td class="c-table__cell"></td></tr>
 </table>
-<h2 class="g-docs__section-heading">Properties unique to 51Degrees</h2>
+<h2 class="doxsection" id="properties-unique-to-51degrees-1">Properties unique to 51Degrees<a class="headerlink" href="#properties-unique-to-51degrees-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>The following 51Degrees properties have no MaxMind equivalent. They are the additional context that drives <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">accuracy weighting</a>, <a class="el" href="_ip_intelligence__features__countries.html" title="Countries">country diversity</a> and bot detection.</p>
 <ul>
 <li><b>Weighted country lists</b>: <code>CountryCodesGeographical</code>, <code>CountryCodesPopulation</code>, and their <code>*All</code> and <code>*Translated</code> variants return every candidate country with weightings, not a single best-guess. See <a class="el" href="_ip_intelligence__features__countries.html" title="Countries">Countries</a>.</li>
@@ -215,7 +214,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

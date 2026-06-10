@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <link rel="canonical" href="/documentation/_pipeline_api__concepts__pipeline_basics.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
@@ -26,7 +25,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -70,16 +69,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h1 class="g-docs__page-title">Pipeline Basics </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">51Degrees Pipeline documentation</h2>
+<div class="textblock"><h2 class="doxsection" id="autotoc_md51degrees-pipeline-documentation">51Degrees Pipeline documentation<a class="headerlink" href="#autotoc_md51degrees-pipeline-documentation" aria-label="Permalink to this section">🔗</a></h2>
 <p>The Pipeline API has been created by 51Degrees to remove friction from the process of working with real-time data micro-services. It is the mechanism for delivering 51Degrees data services such as device detection but it is more than that.</p>
 <p>The Pipeline aggregates multiple different services from multiple vendors into a single, simple request. The plug-in based architecture makes it easy for new services to be added by third parties. You can also add your own custom elements, taking advantage of the features built into the Pipeline and allowing you to focus on your business logic.</p>
-<h2>Fundamentals</h2>
+<h2 class="doxsection" id="fundamentals">Fundamentals<a class="headerlink" href="#fundamentals" aria-label="Permalink to this section">🔗</a></h2>
 <p>Each <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> is defined by the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> that are added to it. Each <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> performs some data processing task.</p>
 <p>When a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> is created, the desired <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> are added to it and can be configured to run in sequence or in parallel as required (if the language supports <a class="el" href="_pipeline_api__features__parallel_execution.html" title="Parallel Execution">parallel execution</a>).</p>
 <p>Once created, a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> can then be used to create <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a>. This is a one-time-use construct that is used both to pass data to the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> for processing and to access the results.</p>
 <p>After the input data (<a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a>) has been added to the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a>, it is processed by the component <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> that make up the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>. Each <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> can add new values to the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a>, which can be retrieved once processing is complete.</p>
 <p>For a deeper understanding of the Pipeline concept, start with the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> page.</p>
-<h2>Key features</h2>
+<h2 class="doxsection" id="key-features">Key features<a class="headerlink" href="#key-features" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li>Seamless switching between On-premise data and cloud backed data services.</li>
 <li>Automatic updating of On-premise data files from a configurable central service, including in place updates to avoid the need to interrupt running processes.</li>
@@ -90,18 +89,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <li>Support for .NET, Java, PHP, and Node with more being added over time.</li>
 <li>Plug-in architecture supporting custom third party data services.</li>
 </ul>
-<h2>New to the Pipeline?</h2>
+<h2 class="doxsection" id="new-to-the-pipeline">New to the Pipeline?<a class="headerlink" href="#new-to-the-pipeline" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li>If you're migrating from the older 51Degrees Device Detection API then start with the <a class="el" href="_device_detection__upgradingto_v4.html" title="Upgrading to Version 4">version 3 migration guide</a>.</li>
 <li>New users should check the <a class="el" href="index.html" title="Introduction">introduction</a> guide for help getting up and running as soon as possible.</li>
 </ul>
-<h2>51Degrees data services</h2>
+<h2 class="doxsection" id="autotoc_md51degrees-data-services">51Degrees data services<a class="headerlink" href="#autotoc_md51degrees-data-services" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li><a class="el" href="_device_detection__overview.html" title="Device Detection Overview">Device Detection</a> - Detailed insight into the devices being used to access your content.</li>
 <li><a class="el" href="_reverse_geocoding__overview.html" title="Reverse Geocoding Overview">Reverse Geocoding</a> - Obtain accurate real-world data such as postal address from the user's location as reported by their smartphone or similar device.</li>
 <li><a class="el" href="_ip_intelligence__overview.html" title="IP Intelligence Overview">IP Intelligence</a> - Determine key information from the network path taken by the request such as mobile carrier or location.</li>
 </ul>
-<h2>Technical detail</h2>
+<h2 class="doxsection" id="technical-detail">Technical detail<a class="headerlink" href="#technical-detail" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li>Explore detailed technical documentation for each language supported by the Pipeline.</li>
 <li>Build a <a class="el" href="_pipeline_api__features__custom_elements.html" title="Custom Flow Elements">custom engine</a> to match your requirements.</li>
@@ -110,7 +109,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

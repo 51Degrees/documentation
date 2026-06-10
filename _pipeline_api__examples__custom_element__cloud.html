@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/_pipeline_api__examples__custom_element__cloud.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -72,15 +71,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h1 class="g-docs__page-title">Custom Cloud Engine </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Introduction</h2>
+<div class="textblock"><h2 class="doxsection" id="introduction-62">Introduction<a class="headerlink" href="#introduction-62" aria-label="Permalink to this section">🔗</a></h2>
 <p>This example takes the very simple <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> described in the <a class="el" href="_pipeline_api__examples__custom_element__flow_element.html" title="Simple Custom Flow Element">simple flow element example</a>, and delegates all the logic to a Cloud Service.</p>
 <p>Instead of the data being stored locally and processing being carried out by the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> directly, as demonstrated in the <a class="el" href="_pipeline_api__examples__custom_element__flow_element.html" title="Simple Custom Flow Element">simple flow element example</a>, this example will call a Cloud Service to perform the required functionality.</p>
-<h2 class="g-docs__section-heading">Download example</h2>
+<h2 class="doxsection" id="download-example-1">Download example<a class="headerlink" href="#download-example-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>The source code used in this example is available here:</p><ul>
 <li><a href="https://github.com/51Degrees/pipeline-dotnet/tree/master/Examples/CustomFlowElement/4.%20Cloud%20Engine">C# Visual Studio project</a></li>
 <li><a href="https://github.com/51Degrees/pipeline-java/tree/main/pipeline.developer-examples/pipeline.developer-examples.cloud-engine">Java project</a></li>
 </ul>
-<h2 class="g-docs__section-heading">Dependencies</h2>
+<h2 class="doxsection" id="dependencies-1">Dependencies<a class="headerlink" href="#dependencies-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>The <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> will need a dependency on the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> engines package, and cloud request engine package</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific dependencies.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  The dependencies needed for .NET are the <code>FiftyOne.Pipeline.Engines</code> and <code>FiftyOne.Pipeline.CloudRequestEngine</code> NuGet packages.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  The only dependency needed for Java is the <code>pipeline.core</code> Maven package from <code>com.51degrees</code>. To include this, add the following to the <code>&lt;dependencies&gt;</code> section of the project's <code>pom.xml</code>: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;<span class="c-code__keywordtype">dependency</span>&gt;</div>
 <div class="c-code__line">    &lt;<span class="c-code__keywordtype">groupId</span>&gt;<span class="c-code__keyword">com.51degrees</span>&lt;/<span class="c-code__keywordtype">groupId</span>&gt;</div>
@@ -93,7 +92,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">    &lt;<span class="c-code__keywordtype">version</span>&gt;4.2.0&lt;/<span class="c-code__keywordtype">version</span>&gt;</div>
 <div class="c-code__line">&lt;/<span class="c-code__keywordtype">dependency</span>&gt;</div>
 </div><!-- fragment --><p>  </div>   </div> </p>
-<h2 class="g-docs__section-heading">Data</h2>
+<h2 class="doxsection" id="data-1">Data<a class="headerlink" href="#data-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>The <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> implemented in the previous example can now be upgraded to implement an <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a>.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a> implementation.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  Instead of implementing <code>IElementData</code>, the <code>IStarSignData</code> will now implement <code>IAspectData</code> which extends <code>IElementData</code>.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">interface </span>IStarSignData : IAspectData</div>
@@ -145,7 +144,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p>Note that this concrete implementation of <code>StarSignData</code> sits in the same package as the <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a>, not the <code>StarSignData</code> interface, as it only needs to be accessible by the <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a>.  </div>   </div> </p>
-<h2 class="g-docs__section-heading">Aspect engine</h2>
+<h2 class="doxsection" id="aspect-engine">Aspect engine<a class="headerlink" href="#aspect-engine" aria-label="Permalink to this section">🔗</a></h2>
 <p>Now the actual <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> needs to be implemented. For this, the class from the <a class="el" href="_pipeline_api__examples__custom_element__flow_element.html" title="Simple Custom Flow Element">previous example</a> will now implement the <a class="el" href="_pipeline_api__concepts__flow_elements__cloud_engine.html" title="Cloud Engine">cloud aspect engine's</a> base class.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> implementation.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  First let's change the class to extend <code>CloudAspectEngineBase</code>. This has the type arguments of <code>IStarSignData</code> - the interface extending <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a> which will be added to the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a>, and <code>IAspectPropertyMetaData</code> - instead of <code>IElementPropertyMetaData</code>.</p>
 <p>The existing constructor needs to change to match the <code>CloudAspectEngineBase</code> class.</p>
@@ -288,9 +287,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p> </div>   </div> </p>
-<h2 class="g-docs__section-heading">Builder</h2>
+<h2 class="doxsection" id="builder-1">Builder<a class="headerlink" href="#builder-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>Now the <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> needs one final thing, an <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> to construct it. This needs to provide the <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> with a logger and an <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a> factory as in the previous example. However, it also now needs a cloud request <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a>.</p>
-<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> implementation.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  As this <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> is using a <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html#PipelineApi_Concepts_Configuration_DataFiles" title="PipelineApi_Concepts_Configuration_DataFiles">data file</a>, the builder can make use of the logic in the <code>CloudAspectEngineBuilderBase</code>.</p>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> implementation.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  As this <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> is using a <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html#PipelineApi_Concepts_Configuration_DataFiles" title="Data files">data file</a>, the builder can make use of the logic in the <code>CloudAspectEngineBuilderBase</code>.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>SimpleCloudEngineBuilder : CloudAspectEngineBuilderBase&lt;SimpleCloudEngineBuilder, SimpleCloudEngine&gt;</div>
 <div class="c-code__line">    {</div>
 <div class="c-code__line">        <span class="c-code__keyword">private</span> ILoggerFactory _loggerFactory;</div>
@@ -329,7 +328,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    }</div>
-</div><!-- fragment --><p> </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  As this <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> is using a <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html#PipelineApi_Concepts_Configuration_DataFiles" title="PipelineApi_Concepts_Configuration_DataFiles">data file</a>, the builder can make use of the logic in the <code>CloudAspectEngineBuilderBase</code>.</p>
+</div><!-- fragment --><p> </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  As this <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> is using a <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html#PipelineApi_Concepts_Configuration_DataFiles" title="Data files">data file</a>, the builder can make use of the logic in the <code>CloudAspectEngineBuilderBase</code>.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>SimpleCloudEngineBuilder</div>
 <div class="c-code__line">    <span class="c-code__keyword">extends</span> CloudAspectEngineBuilderBase&lt;</div>
 <div class="c-code__line">            SimpleCloudEngineBuilder,</div>
@@ -363,7 +362,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p> </div>   </div> </p>
-<h2 class="g-docs__section-heading">Usage</h2>
+<h2 class="doxsection" id="usage-7">Usage<a class="headerlink" href="#usage-7" aria-label="Permalink to this section">🔗</a></h2>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific usage.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  This new <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> can now be added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> along with a <code>CloudRequestEngine</code>, and used like:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">            <span class="c-code__comment">// Construct a cloud request engine using the example endpoint for</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// the example engine to use.</span></div>
@@ -425,12 +424,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">            }</div>
 </div><!-- fragment --><p>to give an output of: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">With a date of birth of 18/12/1992, your star sign is Sagittarius.</div>
 </div><!-- fragment --><p>  </div>   </div> </p>
-<h2 class="g-docs__section-heading">Next steps</h2>
+<h2 class="doxsection" id="next-steps-1">Next steps<a class="headerlink" href="#next-steps-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>The <a class="el" href="_pipeline_api__examples__custom_element__on_premise.html" title="Custom On-premise Engine">Custom On-premise Engine</a> example shows you how to build an On-premise Engine to perform the functionality that was executed by the <b>Cloud Engine</b> here. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

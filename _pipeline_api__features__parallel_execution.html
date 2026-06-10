@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/_pipeline_api__features__parallel_execution.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -72,24 +71,30 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h1 class="g-docs__page-title">Parallel Execution </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Introduction</h2>
+<div class="textblock"><h2 class="doxsection" id="introduction-75">Introduction<a class="headerlink" href="#introduction-75" aria-label="Permalink to this section">🔗</a></h2>
 <p><b>Parallel execution</b> can refer to two or more <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> whose processing is executed simultaneously within the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>.</p>
 <p>It also refers to the ability of an individual <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> instance to process multiple requests simultaneously. For example, one <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> instance with one <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> being called from separate threads.</p>
 <p>Note, that some languages with <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> implementations do not have the built-in ability to handle <b>parallel execution</b>. For example, the PHP process runs in a single-thread, so <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> cannot be configured to run in <b>parallel</b>.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/advanced-features/parallel-processing.md#">Specification</a> for more technical details.</p>
-<h2 class="g-docs__section-heading">Executing flow elements in parallel</h2>
+<h2 class="doxsection" id="executing-flow-elements-in-parallel">Executing flow elements in parallel<a class="headerlink" href="#executing-flow-elements-in-parallel" aria-label="Permalink to this section">🔗</a></h2>
 <p>By default, <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> are executed sequentially in the order they are added to the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>. However, if the <a class="el" href="_product_summaries__feature_matrix.html" title="Feature Matrix">language supports it</a>, two or more <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> can be executed in <b>parallel</b> within the overall sequential structure.</p>
 <div class="dotgraph">
 <iframe scrolling="no" loading="lazy" frameborder="0" src="dot_pipeline-parallel-process.gvdot_ff7c7d622ca432386c84edf0993e81aa.svg" width="498" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <p>In the example above, elements <b>E1</b> and <b>E2</b> will start their processing at the same time.</p>
 <p>Note that <b>parallel execution</b> is limited by the hardware the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> is running on. If the CPU only has two cores, then running four elements in parallel is unlikely to prove effective.</p>
-<h2 class="g-docs__section-heading">Calling the Pipeline from multiple threads</h2>
+<h2 class="doxsection" id="calling-the-pipeline-from-multiple-threads">Calling the Pipeline from multiple threads<a class="headerlink" href="#calling-the-pipeline-from-multiple-threads" aria-label="Permalink to this section">🔗</a></h2>
 <p>The <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> is able to handle concurrent process requests. However, the ability of a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> to also support this will depend on its individual implementation.</p>
 <p>All 51Degrees <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> have been designed to function correctly in this scenario (assuming the <a class="el" href="_product_summaries__feature_matrix.html" title="Feature Matrix">language supports it</a>). </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

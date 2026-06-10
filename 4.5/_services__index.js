@@ -1,6 +1,13 @@
 var _services__index =
 [
-    [ "Configurator (Cloud)", "_services__configurator.html", null ],
+    [ "Configurator (Cloud)", "_services__configurator.html", [
+      [ "Obtaining a Resource Key", "_services__configurator.html#obtaining-a-resource-key", [
+        [ "Step 1: Choose properties", "_services__configurator.html#step-1-choose-properties", null ],
+        [ "Step 2: Review Configuration", "_services__configurator.html#step-2-review-configuration", null ],
+        [ "Step 3: Implement", "_services__configurator.html#step-3-implement", null ]
+      ] ],
+      [ "Displaying details for an existing Resource Key", "_services__configurator.html#displaying-details-for-an-existing-resource-key", null ]
+    ] ],
     [ "Distributor (On-premise)", "_services__distributor.html", null ],
     [ "Cloud Service", "_services__cloud__index.html", "_services__cloud__index" ]
 ];

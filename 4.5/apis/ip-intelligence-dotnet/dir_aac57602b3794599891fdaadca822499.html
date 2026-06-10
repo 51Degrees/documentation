@@ -1,14 +1,14 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <link rel="canonical" href="/documentation/apis/ip-intelligence-dotnet/dir_aac57602b3794599891fdaadca822499.html">
+<meta name="robots" content="noindex,follow"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="/home/runner/work/documentation/documentation/apis/ip-intelligence-dotnet/FiftyOne.IpIntelligence.Engine.OnPremise/ip-intelligence-cxx Directory Reference - IP intelligence services for 51Degrees Pipeline - 51Degrees documentation."/>
-<title>51Degrees IP Intelligence .NET: /home/runner/work/documentation/documentation/apis/ip-intelligence-dotnet/FiftyOne.IpIntelligence.Engine.OnPremise/ip-intelligence-cxx Directory Reference</title>
+<meta name="description" content="ip-intelligence-cxx Directory Reference - IP intelligence services for 51Degrees Pipeline - 51Degrees documentation."/>
+<title>51Degrees IP Intelligence .NET: ip-intelligence-cxx Directory Reference</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -26,7 +26,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="/documentation/4.5/index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees IP Intelligence .NET
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -82,7 +82,7 @@ Directories</h2></td></tr>
 <div class="textblock"><p><img src="https://51degrees.com/img/logo.png?utm_source=github&amp;utm_medium=repository&amp;utm_campaign=c_open_source&amp;utm_content=readme_main" alt="51Degrees" title="Data rewards the curious" class="inline"/> <b>IP Intelligence in C</b></p>
 <p><a href="https://51degrees.com/ip-intelligence-cxx/4.1/modules.html">C Documentation</a> and the <a href="https://51degrees.com/ip-intelligence-cxx/4.1/namespaces.html">C++ Documentation</a>.</p>
 <p>The 51Degrees IP intelligence API is built on the 51Degrees <a href="https://github.com/51Degrees/common-cxx">common API</a>.</p>
-<h2 class="g-docs__section-heading">Pre-requisites</h2>
+<h1>Pre-requisites</h1>
 <h2>Data file</h2>
 <p>In order to perform IP intelligence, you will need to obtain a 51Degrees data file. Lite data file can be obtained for free as specified in the <a href="https://github.com/51Degrees/ip-intelligence-data/"><code>ip-intelligence-data/README</code></a>. To obtain an Enterprise data file please <a href="https://51degrees.com/contact-us">contact us</a>.</p>
 <p>By default, the downloaded data file has to be placed in the 'ip-intelligence-data' sub-folder of this repo for the tests and examples to work.</p>
@@ -92,12 +92,12 @@ Directories</h2></td></tr>
 </div><!-- fragment --><p>If you have already cloned the repository and want to fetch the sub modules, use:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">git submodule update --init --recursive</div>
 </div><!-- fragment --><p>If you have downloaded this repository as a zip file then these sub modules need to be downloaded separately as GitHub does not include them in the archive.</p>
-<h2 class="g-docs__section-heading">Build tools</h2>
+<h1>Build tools</h1>
 <h2>Windows</h2>
 <p>You will need either Visual Studio 2017/2019 or the <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">C++ Build Tools</a> installed. If you have Visual Studio Code, you'll still need to install the build tools from the link above.</p>
 <h2>Linux</h2>
 <p>You will need <a href="https://cmake.org/">CMake 3.10</a> or greater installed to build the project. In addition, you will need a C++ compiler which supports C++11. The compiler will and other build tools will be selected by CMake automatically based on your environment.</p>
-<h2 class="g-docs__section-heading">Installing</h2>
+<h1>Installing</h1>
 <h2>Using CMake</h2>
 <p>To build the make files required to build, open a <code>bash</code> or <code>Visual Studio Developer Command Prompt</code> terminal and run</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">mkdir build</div>
@@ -111,7 +111,7 @@ Directories</h2></td></tr>
 <p>Calling <code>CMake</code> in an MSVC environment (as described in the Using CMakeUsing CMake section) will produce a Visual Studio solution with projects for all libraries, examples, and tests. However, it is preferable to use the dedicated Visual Studio solution in the <code>VisualStudio/</code> directory. If the dedicated Visual Studio solution is used, re-targeting the solution might be required for VS2019 IDE.</p>
 <h2>Build Options</h2>
 <p>For build options, see <a href="https://github.com/51Degrees/common-cxx/blob/master/readme.md">Common API</a></p>
-<h2 class="g-docs__section-heading">Tests</h2>
+<h1>Tests</h1>
 <p>All unit, integration, and performance tests are built using the <a href="https://github.com/google/googletest">Google test framework</a>.</p>
 <h2>Testing with CMake</h2>
 <p>CMake automatically pulls in the latest Google Test from GitHub.</p>
@@ -122,7 +122,7 @@ Directories</h2></td></tr>
 <h2>Testing with Visual Studio</h2>
 <p>Tests in the Visual Studio solution automatically install the GTest dependency via a NuGet package. However, in order for the tests to show up in the Visual Studio test explorer, the <a href="https://marketplace.visualstudio.com/items?itemName=VisualCPPTeam.TestAdapterforGoogleTest">Test Adapter for Google Test</a> extension must be installed.</p>
 <p>The VisualStudio solution includes <code>FiftyOne.IpIntelligence.Tests</code>, which can be run through the standard Visual Studio test runner.</p>
-<h2 class="g-docs__section-heading">Referencing the API</h2>
+<h1>Referencing the API</h1>
 <h2>Adding references with CMake</h2>
 <p>When building using CMake, static libraries are built in stages. These can be included in an executable just as they are in the examples. If these are included through a CMake file, the dependencies will be resolved automatically. However, if linking another way, all dependencies will need to be included from the <code>lib/</code> directory. For example, to use the IP Intelligence C API, the following static libraries would need to be included:</p>
 <ul>
@@ -137,7 +137,7 @@ Directories</h2></td></tr>
 <p>The CMake project also builds a single shared library containing everything. This is named <code>fiftyone-ip-intelligence-complete</code> and can be referenced by any C or C++ project.</p>
 <h2>Adding references with Visual Studio</h2>
 <p>The Visual Studio solution contains static libraries which have all the dependencies set up correctly, so referencing these in a Visual Studio solution should be fairly self explanatory.</p>
-<h2 class="g-docs__section-heading"><a class="el" href="namespace_examples.html">Examples</a></h2>
+<h1><a class="el" href="namespace_examples.html">Examples</a></h1>
 <p>There are several examples available, the source files can be found in the <code>examples/</code> folder. The examples are written in C or CPP.</p>
 <h2>⚠️ Required files</h2>
 <p>See <code>ip-intelligence-data/README</code> (<a href="./ip-intelligence-data/README">local</a> / <a href="https://github.com/51Degrees/ip-intelligence-data/">GitHub</a>) on how to pull and/or generate necessary files.</p>
@@ -175,7 +175,6 @@ Directories</h2></td></tr>
 </div><!-- page-nav-contents -->
 </div><!-- page-nav-tree -->
 </div><!-- page-nav -->
-<!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

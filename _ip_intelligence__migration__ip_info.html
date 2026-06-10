@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/_ip_intelligence__migration__ip_info.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -74,7 +73,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>The mapping below is based on the <a href="https://ipinfo.io/developers" rel="nofollow">published IPInfo API documentation</a> across the Lite, Core, Plus and Enterprise tiers, plus the standalone ASN, Privacy Detection, Hosted Domains, Carrier and Company products. Tier availability is IPInfo's, not 51Degrees; every property listed in the right-hand column is available from 51Degrees in a single response when the data file supports it.</p>
 <p>Where a mapping is approximate, the <b>Notes</b> column calls it out. Where no equivalent exists, the cell is blank.</p>
-<h2 class="g-docs__section-heading">Geolocation and network</h2>
+<h2 class="doxsection" id="geolocation-and-network">Geolocation and network<a class="headerlink" href="#geolocation-and-network" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">IPInfo field  </td><td class="c-table__cell">51Degrees property  </td><td class="c-table__cell">Notes  </td></tr>
@@ -113,7 +112,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 </table>
 <p><b>Coordinate randomization</b>: 51Degrees randomizes <code>Latitude</code> and <code>Longitude</code> within around 1 km of the true average location for the IP range. The randomization is applied during data file generation, so the value returned for a given IP address is stable across all lookups against the same data file and only changes when a new data file is published. This guarantees the coordinates cannot be classified as personal data. No other property is affected. See <a class="el" href="_ip_intelligence__features__randomization.html" title="Randomization">Randomization</a>.</p>
 <p><b>Location confidence</b>: 51Degrees rolls up location certainty into a single string-valued <code>LocationConfidence</code> property covering the town and country. IPInfo's <code>radius</code> field expresses accuracy as a numeric kilometer figure; the closest categorical 51Degrees equivalent is <code>LocationConfidence</code>, which complements the numeric <code>AccuracyRadiusMax</code> and <code>AccuracyRadiusMin</code> properties. See the <a href="https://51degrees.com/developers/property-dictionary">property dictionary</a> for the set of possible values.</p>
-<h2 class="g-docs__section-heading">ASN product</h2>
+<h2 class="doxsection" id="asn-product">ASN product<a class="headerlink" href="#asn-product" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">IPInfo field  </td><td class="c-table__cell">51Degrees property  </td><td class="c-table__cell">Notes  </td></tr>
@@ -128,7 +127,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>type</code>  </td><td class="c-table__cell"><code>ConnectionType</code>  </td><td class="c-table__cell">Approximate. IPInfo classifies ASN types (ISP, hosting, business, education); 51Degrees classifies the connection itself.  </td></tr>
 </table>
-<h2 class="g-docs__section-heading">Privacy Detection</h2>
+<h2 class="doxsection" id="privacy-detection">Privacy Detection<a class="headerlink" href="#privacy-detection" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">IPInfo field  </td><td class="c-table__cell">51Degrees property  </td><td class="c-table__cell">Notes  </td></tr>
@@ -145,7 +144,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>service</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">No direct equivalent.  </td></tr>
 </table>
-<h2 class="g-docs__section-heading">Mobile carrier</h2>
+<h2 class="doxsection" id="mobile-carrier">Mobile carrier<a class="headerlink" href="#mobile-carrier" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">IPInfo field  </td><td class="c-table__cell">51Degrees property  </td><td class="c-table__cell">Notes  </td></tr>
@@ -158,7 +157,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>carrier.mnc</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">Mobile network code is not exposed as a separate property.  </td></tr>
 </table>
-<h2 class="g-docs__section-heading">Company, Hosted Domains, Abuse</h2>
+<h2 class="doxsection" id="company-hosted-domains-abuse">Company, Hosted Domains, Abuse<a class="headerlink" href="#company-hosted-domains-abuse" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">IPInfo field  </td><td class="c-table__cell">51Degrees property  </td><td class="c-table__cell">Notes  </td></tr>
@@ -173,7 +172,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>abuse.*</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">51Degrees does not return abuse contact details.  </td></tr>
 </table>
-<h2 class="g-docs__section-heading">Properties unique to 51Degrees</h2>
+<h2 class="doxsection" id="properties-unique-to-51degrees">Properties unique to 51Degrees<a class="headerlink" href="#properties-unique-to-51degrees" aria-label="Permalink to this section">🔗</a></h2>
 <p>The following 51Degrees properties have no IPInfo equivalent. They are the additional context that drives <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">accuracy weighting</a>, <a class="el" href="_ip_intelligence__features__countries.html" title="Countries">country diversity</a> and bot detection.</p>
 <ul>
 <li><b>Weighted country lists</b>: <code>CountryCodesGeographical</code>, <code>CountryCodesPopulation</code>, and their <code>*All</code> and <code>*Translated</code> variants return every candidate country with weightings, not a single best-guess. See <a class="el" href="_ip_intelligence__features__countries.html" title="Countries">Countries</a>.</li>
@@ -185,7 +184,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

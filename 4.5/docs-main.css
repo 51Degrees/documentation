@@ -2664,6 +2664,7 @@ ol.linenums li {
 }
 .g-footer--docs {
   border-top: none;
+  text-align: center;
 }
 .g-footer--docs a {
   transition: color 0.3s ease;
@@ -2673,6 +2674,9 @@ ol.linenums li {
 }
 .g-footer--docs a:active, .g-footer--docs a:hover, .g-footer--docs a:focus {
   text-decoration: underline;
+}
+.g-footer--docs .g-footer__message {
+  font-size: 1rem;
 }
 
 .g-footer__message {
@@ -2895,24 +2899,42 @@ ol.linenums li {
   max-width: 850px;
   margin-bottom: 6.1917364224rem;
 }
-.l-docs-index .g-docs__section-heading {
+.l-docs-index .g-docs__section-heading,
+.l-docs-index .doxsection {
   font-size: 1.2rem;
   font-weight: 700;
   margin: 0 0 1.44rem;
   position: relative;
 }
 @media (min-width: 993px) {
-  .l-docs-index .g-docs__section-heading {
+  .l-docs-index .g-docs__section-heading,
+  .l-docs-index .doxsection {
     font-size: 1.44rem;
   }
 }
-.l-docs-index .g-docs__section-heading:before {
+.l-docs-index .g-docs__section-heading:before,
+.l-docs-index .doxsection:before {
   content: "";
   position: absolute;
   left: -30px;
   width: 5px;
   height: 100%;
   background-color: #CBDB2A;
+}
+.l-docs-index .g-docs__section-heading .headerlink,
+.l-docs-index .doxsection .headerlink {
+  margin-left: 0.4822530864rem;
+  font-size: 0.7em;
+  vertical-align: middle;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.l-docs-index .g-docs__section-heading:hover .headerlink,
+.l-docs-index .g-docs__section-heading .headerlink:focus,
+.l-docs-index .doxsection:hover .headerlink,
+.l-docs-index .doxsection .headerlink:focus {
+  opacity: 1;
 }
 .l-docs-index .textblock .image img {
   max-width: 90%;

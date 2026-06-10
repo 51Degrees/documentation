@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/_pipeline_api__examples__custom_element__client_side_evidence.html">
@@ -28,7 +27,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -72,16 +71,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h1 class="g-docs__page-title">Custom Engine Using Client-Side Evidence </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Introduction</h2>
+<div class="textblock"><h2 class="doxsection" id="introduction-61">Introduction<a class="headerlink" href="#introduction-61" aria-label="Permalink to this section">🔗</a></h2>
 <p>This example takes the very simple <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> described in the <a class="el" href="_pipeline_api__examples__custom_element__flow_element.html" title="Simple Custom Flow Element">simple flow element example</a>, and adds a JavaScript <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">property</a> to use <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side Evidence">client-side evidence</a>.</p>
 <p>Instead of using <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> which is already available, as the <a class="el" href="_pipeline_api__examples__custom_element__flow_element.html" title="Simple Custom Flow Element">simple flow element example</a> did, this example will send JavaScript to the client to get the <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a>.</p>
-<h2 class="g-docs__section-heading">Download example</h2>
+<h2 class="doxsection" id="download-example">Download example<a class="headerlink" href="#download-example" aria-label="Permalink to this section">🔗</a></h2>
 <p>The source code used in this example is available here:</p><ul>
 <li><a href="https://github.com/51degrees/pipeline-dotnet">C# Visual Studio project</a></li>
 <li><a href="https://github.com/51degrees/pipeline-java">Java project</a></li>
 <li><a href="https://github.com/51degrees/pipeline-node">Node.js project</a></li>
 </ul>
-<h2 class="g-docs__section-heading">Dependencies</h2>
+<h2 class="doxsection" id="dependencies">Dependencies<a class="headerlink" href="#dependencies" aria-label="Permalink to this section">🔗</a></h2>
 <p>The <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> will need a dependency on the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> core package</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific dependencies.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  The only dependency needed for .NET is the <code>FiftyOne.Pipeline.Core</code> NuGet package.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  The only dependency needed for Java is the <code>pipeline.core</code> Maven package from <code>com.51degrees</code>. To include this, add the following to the <code>&lt;dependencies&gt;</code> section of the project's <code>pom.xml</code>: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;<span class="c-code__keywordtype">dependency</span>&gt;</div>
 <div class="c-code__line">    &lt;<span class="c-code__keywordtype">groupId</span>&gt;<span class="c-code__keyword">com.51degrees</span>&lt;/<span class="c-code__keywordtype">groupId</span>&gt;</div>
@@ -89,7 +88,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">    &lt;<span class="c-code__keywordtype">version</span>&gt;4.2.0&lt;/<span class="c-code__keywordtype">version</span>&gt;</div>
 <div class="c-code__line">&lt;/<span class="c-code__keywordtype">dependency</span>&gt;</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  Add a dependency to the <code>fiftyone.pipeline.core</code> NPM package to the package.json, and required it in the source with <code>require("fiftyone.pipeline.core")</code>.  </div>   </div> </p>
-<h2 class="g-docs__section-heading">Data</h2>
+<h2 class="doxsection" id="data">Data<a class="headerlink" href="#data" aria-label="Permalink to this section">🔗</a></h2>
 <p>The <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> being added to the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> by this <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> is a star sign. So this should have its own 'getter' in its <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a>. The additional <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">property</a> containing the JavaScript to get the date of birth is also added using the appropriate type.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> implementation.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  .NET supports interfaces, so the <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> should have a public interface and an internal concrete implementation with easy 'setters'.</p>
 <p>In this example, values for star sign and JavaScript are populated. So an interface <code>IStarSign</code> will extend <code>IElementData</code> to add a 'getter' for it.</p>
@@ -153,7 +152,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p>Note that this concrete implementation of <code>StarSignData</code> sits in the same package as the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>, not the <code>StarSignData</code> interface, as it only needs to be accessible by the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>.  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  Node's implementation of <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> does not require concrete getters for IDE autocompletion, so <code>elementDataDictionary</code> can be used.  </div>   </div> </p>
-<h2 class="g-docs__section-heading">JavaScript</h2>
+<h2 class="doxsection" id="javascript">JavaScript<a class="headerlink" href="#javascript" aria-label="Permalink to this section">🔗</a></h2>
 <p>The client-side JavaScript for this example will be fairly simple. It will create a popup asking the user to enter their date of birth. It will then store the date of birth in a cookie named 'date-of-birth' and reload the page with the new cookie present.</p>
 <p>The JavaScript to do this looks like: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">// Ask the user for their data of birth.</div>
 <div class="c-code__line">var dob = window.prompt(&#39;Enter your date of birth.&#39;,&#39;dd/mm/yyyy&#39;);</div>
@@ -163,7 +162,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">    // Reload the page with the new cookie.</div>
 <div class="c-code__line">    location.reload();</div>
 <div class="c-code__line">}</div>
-</div><!-- fragment --><h2 class="g-docs__section-heading">Flow element</h2>
+</div><!-- fragment --><h2 class="doxsection" id="flow-element">Flow element<a class="headerlink" href="#flow-element" aria-label="Permalink to this section">🔗</a></h2>
 <p>Now the actual <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> needs to be implemented. For this, the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>'s base class can be used which deals with most of the logic. The <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">element properties</a>, <a class="el" href="_pipeline_api__concepts__data__evidence_key_filter.html" title="Evidence Key Filter">evidence keys</a> and the processing are all that need implementing.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> implementation.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  First let's define a class which extends <code>FlowElementBase</code> (and partially implements <code>IFlowElement</code>). This has the type arguments of <code>IStarSignData</code> - the interface extending <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> which will be added to the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a>, and <code>IElementPropertyMetaData</code> - as we only need the standard metadata for <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">element properties</a>.</p>
 <p>This needs a constructor matching the <code>FlowElementBase</code> class. So it takes a logger, and an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> factory which will be used to construct an <code>IStarSignData</code>:</p>
@@ -651,7 +650,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">}</div>
 <div class="c-code__line"> </div>
 </div><!-- fragment --><p> </div>   </div> </p>
-<h2 class="g-docs__section-heading">Builder</h2>
+<h2 class="doxsection" id="builder">Builder<a class="headerlink" href="#builder" aria-label="Permalink to this section">🔗</a></h2>
 <p>Now the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> needs one final thing, an <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> to construct it. This only needs to provide the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> with a logger and an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> factory - as this example has no extra configuration options.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> implementation.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  The <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> has one important method, and that is <code>Build</code>. This returns a new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> which the <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> provides with a logger and an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> factory.</p>
 <p>The <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> factory is implemented in the <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> class to make use of the same logger factory.</p>
@@ -708,7 +707,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p> </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  The Node implementation does not use separate builder classes. Instead the options are provided by optional constructor parameters.  </div>   </div> </p>
-<h2 class="g-docs__section-heading">Usage</h2>
+<h2 class="doxsection" id="usage-6">Usage<a class="headerlink" href="#usage-6" aria-label="Permalink to this section">🔗</a></h2>
 <p>As this example gathers its <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> using client-side JavaScript, it will need to be run in a web environment. Using a <a class="el" href="_pipeline_api__features__web_integration.html" title="Web Integration Feature">web integration</a> will mean that the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> can be added, and the client-side JavaScript automatically run.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific usage.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  Using a ASP.NET Core project (full example included in the source), a <a class="el" href="_pipeline_api__concepts__configuration__builders__build_from_configuration.html" title="Building from Configuration">pipeline configuration</a> file can be added to the 'appsettings.json' to load the new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> and a 'JavaScriptBuilderElement' to include the client-side JavaScript: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
 <div class="c-code__line">  ...</div>
@@ -943,7 +942,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

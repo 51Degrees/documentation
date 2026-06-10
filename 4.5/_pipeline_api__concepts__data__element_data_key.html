@@ -1,6 +1,5 @@
-<!-- HTML header for doxygen 1.8.15-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <link rel="canonical" href="/documentation/_pipeline_api__concepts__data__element_data_key.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
@@ -26,7 +25,7 @@
 <!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
-  <a id="projectlogo" href="index.html" class="c-brand__link"><img class="c-brand__image" alt="Logo" src="logo-51Degrees-Docs.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
   <span class="c-tagline">51Degrees API Documentation
    &#160;<span id="projectnumber">4.5</span>
   </span>
@@ -70,26 +69,32 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h1 class="g-docs__page-title">Element Data Key </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="g-docs__section-heading">Introduction</h2>
+<div class="textblock"><h2 class="doxsection" id="introduction-49">Introduction<a class="headerlink" href="#introduction-49" aria-label="Permalink to this section">🔗</a></h2>
 <p><b>Element data key</b> is the key that is used to store and retrieve <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> within the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a>. Each <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> has a hard-coded key value.</p>
-<h2 class="g-docs__section-heading">Structure</h2>
+<h2 class="doxsection" id="structure">Structure<a class="headerlink" href="#structure" aria-label="Permalink to this section">🔗</a></h2>
 <p><b>Element data key</b> will always have a string name that is used as the key when storing the <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> within <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a>.</p>
 <p>In addition, in strongly-typed languages such as Java and C#, <b>element data key</b> will also contain the specific type of the <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> that it corresponds to. This allows the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> to return the <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> instance as the correct type.</p>
-<h2 class="g-docs__section-heading">Name conflicts</h2>
+<h2 class="doxsection" id="name-conflicts">Name conflicts<a class="headerlink" href="#name-conflicts" aria-label="Permalink to this section">🔗</a></h2>
 <p>The <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> does not require that each <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> has a unique <b>element data key</b>. In fact, it is sometimes desirable for this to be the case. However, care must be taken to ensure that conflicting key names do not cause unexpected behavior or errors.</p>
 <p>The <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> does not define what happens in the case of <b>element data key</b> conflicts. The handling of such conflicts is left up to individual <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a>. The <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> base functionality also does not specify what should happen. This is because <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> are not even required to create an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> instance at all.</p>
 <p>The <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> base class does explicitly allow conflicting key names, although it is still up to specific implementations to operate responsibly.</p>
-<h2>Name conflict example</h2>
+<h2 class="doxsection" id="name-conflict-example">Name conflict example<a class="headerlink" href="#name-conflict-example" aria-label="Permalink to this section">🔗</a></h2>
 <p>Consider a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> with two <a class="el" href="_device_detection__overview.html" title="Device Detection Overview">device detection</a> engines. One determines values relating to the device hardware. (i.e. manufacturer, screen information, CPU/GPU specs, etc.) The other determines values relating to the software platform or operating system running on the device. (i.e. software vendor, name, version, etc.)</p>
 <p>Each of these engines uses the same <b>element data key</b> as shown below:</p>
 <div class="dotgraph">
 <iframe scrolling="no" loading="lazy" frameborder="0" src="dot_elementdatakey-conflict-example.gvdot_dbb223707b3943d2288c8bf8e0c6e5a0.svg" width="703" height="151"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <p>At step 1, the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> enters the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> with no <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a>. At step 2, the Hardware <a class="el" href="_device_detection__overview.html" title="Device Detection Overview">device detection</a> engine has created the <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> and added it to <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> using the key 'device'. It will be populated with details of the device hardware but other values relating to the software platform will not have been set. The Platform/OS <a class="el" href="_device_detection__overview.html" title="Device Detection Overview">device detection</a> engine will see that an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> instance already exists in the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> for its <b>element data key</b>. Rather than creating a new one, it will take that instance and update it with values relating to the OS running on the device.</p>
-<p>Note that, as long as the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> has been <a class="el" href="_pipeline_api__concepts__data__flow_data.html#PipelineApi_Concepts_Data_FlowData_ThreadSafety" title="PipelineApi_Concepts_Data_FlowData_ThreadSafety">set up correctly</a> for it, this example will continue to work if the two engines are configured to run in <a class="el" href="_pipeline_api__features__parallel_execution.html" title="Parallel Execution">parallel</a>. </p>
+<p>Note that, as long as the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> has been <a class="el" href="_pipeline_api__concepts__data__flow_data.html#PipelineApi_Concepts_Data_FlowData_ThreadSafety" title="Thread-safety">set up correctly</a> for it, this example will continue to work if the two engines are configured to run in <a class="el" href="_pipeline_api__features__parallel_execution.html" title="Parallel Execution">parallel</a>. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
-<!-- HTML footer for doxygen 1.8.15-->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
   <!-- Generated by doxygen 1.17.0 -->

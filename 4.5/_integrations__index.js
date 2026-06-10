@@ -1,0 +1,31 @@
+var _integrations__index =
+[
+    [ "Prebid", "_integrations__prebid.html", [
+      [ "Prebid Integration", "_integrations__prebid.html#prebid-integration", [
+        [ "What the Integration Delivers", "_integrations__prebid.html#what-the-integration-delivers", null ],
+        [ "Implementation Options", "_integrations__prebid.html#implementation-options", [
+          [ "Client-Side: Prebid.js RTD Module", "_integrations__prebid.html#client-side-prebidjs-rtd-module", null ],
+          [ "Server-Side: Prebid Server (Java and Go)", "_integrations__prebid.html#server-side-prebid-server-java-and-go", null ]
+        ] ],
+        [ "Enrichment Streams", "_integrations__prebid.html#enrichment-streams", [
+          [ "Device Properties", "_integrations__prebid.html#device-properties", null ],
+          [ "51Did", "_integrations__prebid.html#autotoc_md51did", null ],
+          [ "IP Intelligence", "_integrations__prebid.html#ip-intelligence", null ]
+        ] ],
+        [ "Enriched Bid Request Examples", "_integrations__prebid.html#enriched-bid-request-examples", [
+          [ "Client-side (RTD module) - full enrichment", "_integrations__prebid.html#client-side-rtd-module---full-enrichment", null ],
+          [ "Server-side (Prebid Server) - device detection only", "_integrations__prebid.html#server-side-prebid-server---device-detection-only", null ]
+        ] ],
+        [ "Use Cases", "_integrations__prebid.html#use-cases-3", null ],
+        [ "💬 Support", "_integrations__prebid.html#autotoc_md-support", null ]
+      ] ]
+    ] ],
+    [ "OpenRTB Mappings", "_integrations__open_r_t_b_mappings.html", [
+      [ "Introduction", "_integrations__open_r_t_b_mappings.html#introduction-32", null ],
+      [ "OpenRTB API Device Mappings", "_integrations__open_r_t_b_mappings.html#openrtb-api-device-mappings", null ],
+      [ "OpenRTB Device Type Mappings <a href=\"#Integrations_OpenRTBMappings_DeviceType\">#</a>", "_integrations__open_r_t_b_mappings.html#openrtb-device-type-mappings-a-hrefintegrations_openrtbmappings_devicetypea-anchor-integrations_openrtbmappings_devicetype", null ],
+      [ "OpenRTB API Geo Mappings", "_integrations__open_r_t_b_mappings.html#openrtb-api-geo-mappings", null ],
+      [ "Unsupported OpenRTB API", "_integrations__open_r_t_b_mappings.html#unsupported-openrtb-api", null ],
+      [ "OpenRTB Property Values", "_integrations__open_r_t_b_mappings.html#openrtb-property-values", null ]
+    ] ]
+];
