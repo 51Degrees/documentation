@@ -87,7 +87,7 @@ Work in the language that suits you best. Our services are production-ready acro
 Tailor your setup for maximum performance:
 
 - [Nginx Module](https://github.com/51Degrees/device-detection-nginx) - integrate device detection at the edge
-- [Prebid Integration](@ref DeviceDetection_OtherIntegrations_Prebid) - boost programmatic advertising
+- [Prebid Integration](@ref Integrations_Prebid) - enrich OpenRTB bid requests
 - [UA Parser JS](https://github.com/51Degrees/ua-parser-js) - seamless cloud API integration
 - [Varnish Module](https://github.com/51Degrees/device-detection-varnish) - cache smarter, deliver faster
 
@@ -114,7 +114,7 @@ Spot suspicious device and location patterns, detect bots, and prevent account t
 
 ### 📊 Programmatic Advertising
 
-Device Detection + IP Intelligence + [Prebid Integration](@ref DeviceDetection_OtherIntegrations_Prebid) = better targeting.
+Device Detection + IP Intelligence + [Prebid Integration](@ref Integrations_Prebid) = better targeting.
 
 Enrich bid requests with precise device and location data for sharper targeting.
 
