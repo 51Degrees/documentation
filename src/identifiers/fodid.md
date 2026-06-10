@@ -45,7 +45,35 @@ Each property returns a full 51Did identifier (the OWID envelope, signed). The p
 ## Request inputs
 
 - **Evidence** - Device Detection evidence (User-Agent / UA-CH) AND client IP (`client-ip` query parameter, `client-ip` HTTP header, or the server-supplied client IP).
-- **Usage policy** - the `id.usage` value, one of `non-marketing` | `standard` | `personalized`. May be passed as a query parameter or HTTP request header.
+- **Usage policy** - the request's `id.usage` value. Supplied either directly or derived by the cloud from a consent string; see *Setting the usage policy* below.
+
+## Setting the usage policy
+
+The cloud accepts two ways to decide a request's `id.usage` value. Pick whichever matches where the consent decision is made; both resolve to one of the three values described under *Usage flags*.
+
+### Direct - your integration owns the mapping
+
+Your integration decides the value and tells the cloud what to do by passing an explicit `id.usage` (`non-marketing`, `standard` or `personalized`) as a query parameter or HTTP request header. You own the mapping from whatever preference or consent surface you use to one of these three values, and the cloud just acts on what you supply. This is the path @ref Identifiers_PMP takes: the widget captures the user's choice and fires the request with `id.usage` already set.
+
+### Derived from consent - the cloud maps a TCF or GPP string for you
+
+Instead of deciding the value yourself, pass the raw IAB consent string and let the cloud derive `id.usage` from the consented purposes. Two evidence parameters are accepted:
+
+- `tcstring` - an IAB TCF v2 TCString, from the PMP widget or any TCF-aware CMP.
+- `gpp` - an IAB GPP string. When a GPP string carries a decodable EU TCF v2 section it takes precedence over `tcstring`; a GPP string with no TCF section (for example a US-only string) is ignored and the cloud falls back to `tcstring`.
+
+The cloud parses the string and checks the consented purposes against the definitions below, adding the matching `id.usage`:
+
+| `id.usage`     | Required IAB TCF v2 purposes              |
+|----------------|-------------------------------------------|
+| `personalized` | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12     |
+| `standard`     | 1, 7, 8, 9, 10                            |
+
+`personalized` is tried first, then `standard`. If neither set is fully satisfied the cloud adds no `id.usage`, the `fodid.*` properties return a no-value reason, and no identifier is issued for advertising use the consent does not permit. Purposes 2, 7, 8, 9, 10 and 11 may be satisfied by a legitimate-interest bit as well as a consent bit; the remaining purposes (1, 3, 4, 5, 6, 12) require an explicit consent bit, because IAB Policy forbids claiming them under legitimate interest.
+
+This makes the cloud the single source of truth for translating consent into usage, so the same downstream works with any TCF-compatible upstream unchanged.
+
+**Direct intent always wins.** If `id.usage` is present on the request (query or header) the cloud uses it and ignores any `tcstring` or `gpp` - derivation runs only when no explicit value was supplied. Malformed consent strings are ignored rather than rejected.
 
 ## Usage policies and licensing
 
