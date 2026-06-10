@@ -170,15 +170,28 @@
     }
   }
 
-  // Doxygen-generated image styling. Cover <object> as well as <img>: SVG
-  // diagrams and equations are embedded as <object>, and now carry intrinsic
-  // width/height so they render at their natural (small) size rather than
-  // stretching to fill the column. The cap + centring keeps them tidy.
-  .textblock .image img,
-  .textblock .image object {
+  // Doxygen-generated image styling
+  .textblock .image img {
     max-width: 90%;
     margin: 0 auto;
     display: block;
+  }
+
+  // Inline equation diagrams. The source SVGs carry a viewBox but no intrinsic
+  // width or height, so without a bound they stretch to fill the column. The
+  // wrapping element caps the rendered size (its max-width is set per equation
+  // alongside the markup) and the image scales to fit that box.
+  .c-equation {
+    margin: size(-2) auto;
+
+    img,
+    object,
+    svg {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
   }
 
   // Table updates for documentation

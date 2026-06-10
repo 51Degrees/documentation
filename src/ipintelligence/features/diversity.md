@@ -44,7 +44,11 @@ This helps to keep values for IPs like the example above low, where the majority
 
 The formula used to calculate diversity value for a single IP is:
 
+<div class="c-equation" style="max-width: 184px;">
+
 ![diversity-single](images/diversity-single.svg)
+
+</div>
 
 where each `p` is a profile (e.g. `Windows 10`), `Cp` is the number of events seen for that profile, and `C̅p` is average value of `Cp` for the IP.
 
@@ -52,23 +56,44 @@ This means that profiles with counts above the average are weighted more highly 
 
 The value for an IP range is then the average Dx:
 
+<div class="c-equation" style="max-width: 108px;">
+
 ![diversity-sum](images/diversity-sum.svg)
+
+</div>
 
 or 
 
+<div class="c-equation" style="max-width: 229px;">
+
 ![diversity-range](images/diversity-range.svg)
+
+</div>
 
 The actual values of `Cp` are a weighted sample over time. So an event from today contributes `1` to the count, but an event from `n` days ago contributes `(M-n)/M` where `M` is the maximum number of days to include.
 
 So `Cp` can be expressed as:
 
+<div class="c-equation" style="max-width: 127px;">
+
 ![count](count.svg)
 
+</div>
+
 and
+
+<div class="c-equation" style="max-width: 127px;">
+
 ![count-average](images/count-average.svg)
+
+</div>
 
 where the new part `Np` is the number of profiles
 
 Meaning that the full equation is:
 
+<div class="c-equation" style="max-width: 294px;">
+
 ![diversity-complete](images/diversity-complete.svg)
+
+</div>
