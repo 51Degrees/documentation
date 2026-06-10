@@ -62,7 +62,7 @@ Instead of deciding the value yourself, pass the raw IAB consent string and let 
 - `tcstring` - an IAB TCF v2 TCString, from the PMP widget or any TCF-aware CMP.
 - `gpp` - an IAB GPP string. When a GPP string carries a decodable EU TCF v2 section it takes precedence over `tcstring`; a GPP string with no TCF section (for example a US-only string) is ignored and the cloud falls back to `tcstring`.
 
-The cloud parses the string and checks the consented purposes against the definitions below, adding the matching `id.usage`:
+The cloud parses the string and checks the consented [IAB TCF v2 purposes](https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/) against the definitions below, adding the matching `id.usage`:
 
 | `id.usage`     | Required IAB TCF v2 purposes              |
 |----------------|-------------------------------------------|
