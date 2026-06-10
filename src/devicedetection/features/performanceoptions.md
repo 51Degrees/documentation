@@ -33,7 +33,7 @@ The precise values associated with each template can be seen in the source code 
 
 In version 4.5 and later, the device detection algorithm uses a single, unified predictive graph. Previously, it was possible to select between performance and predictive graphs, but these have been consolidated to provide the best balance of speed and accuracy.
 
-# Property Indexing {#faster-property-retrieval}
+# Property Indexing
 
 A configuration option `propertyValueIndex` is available (introduced in version 4.5). 
 When enabled (set to `true`), the engine indexes property values at startup.
