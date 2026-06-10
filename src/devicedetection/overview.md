@@ -120,11 +120,11 @@ Speed things up. Optimize images, trim down content, or tweak features based on 
 
 ### 📊 Analytics and Business Intelligence
 
-Get a detailed picture of your audience's devices, browsers, and operating systems. Use the data to understand behavior, improve user journeys, or enhance programmatic ad analytics—especially with [Prebid integrations](@ref DeviceDetection_OtherIntegrations_Prebid).
+Get a detailed picture of your audience's devices, browsers, and operating systems. Use the data to understand behavior, improve user journeys, or enhance programmatic ad analytics, especially with [Prebid integrations](@ref Integrations_Prebid).
 
 ### 💰 Advertising and Monetization
 
-Run device-specific ad formats, fine-tune targeting, and optimize placements to boost revenue. Integrate with [Prebid](@ref DeviceDetection_OtherIntegrations_Prebid) to enrich bid requests and make programmatic smarter.
+Run device-specific ad formats, fine-tune targeting, and optimize placements to boost revenue. Integrate with [Prebid](@ref Integrations_Prebid) to enrich bid requests and make programmatic smarter.
 
 ### 🛡️ Security and Fraud Detection
 
