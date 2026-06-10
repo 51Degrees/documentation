@@ -150,7 +150,7 @@ Platforms:
 @endsnippet
 @startsnippet{rust}
 
-Not tested by 51Degrees but available to try [here](https://crates.io/crates/fiftyonedegrees).
+Not tested by 51Degrees.
 
 @endsnippet
 @endsnippets

@@ -1,4 +1,4 @@
-@page IpIntelligence_Examples_GettingStarted_Console_Cloud Getting Started Console Cloud
+@page IpIntelligence_Examples_GettingStarted_Console_Cloud IP Intelligence Getting Started Console Cloud
 
 # Introduction
 

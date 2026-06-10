@@ -1,4 +1,4 @@
-@page IpIntelligence_Examples_GettingStarted_Web_OnPremise Getting Started Web On-premise
+@page IpIntelligence_Examples_GettingStarted_Web_OnPremise IP Intelligence Getting Started Web On-premise
 
 # Introduction
 

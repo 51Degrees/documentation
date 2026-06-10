@@ -1,4 +1,4 @@
-@page IpIntelligence_Examples_GettingStarted_Web_Index Getting Started - Web (IP Intelligence)
+@page IpIntelligence_Examples_GettingStarted_Web_Index IP Intelligence Getting Started Web
 
 # Introduction
 

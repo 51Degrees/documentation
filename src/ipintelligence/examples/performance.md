@@ -1,4 +1,4 @@
-@page IpIntelligence_Examples_Performance Performance
+@page IpIntelligence_Examples_Performance IP Intelligence Performance
 
 @startsnippets
 @grabexample{ip-intelligence-cxx,_ip_intelligence_2_performance_8c,C}

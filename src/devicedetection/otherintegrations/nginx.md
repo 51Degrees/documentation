@@ -8,7 +8,7 @@ We have also integrated our Device Detection to Nginx. This page describes in de
 For the latest tested versions and tested platforms information, please refer to our @testedversions page.
 
 # Installing
-If you haven’t already, you can obtain a copy of the latest version of the API [here](https://github.com/51Degrees/device-detection-nginx).
+If you haven’t already, you can obtain the latest version of the API from the [device-detection-nginx repository](https://github.com/51Degrees/device-detection-nginx).
 
 To build the module only, run the following command. This will output to `ngx_http_51D_module.so` in the `build/modules` directory.
 ```

@@ -7,7 +7,7 @@ There are a couple methods to integrate the Cloud Service, but regardless of the
 # RESTful API
 
 
-In the most raw form Cloud Service is accessible via RESTful API that is documented [here](https://cloud.51degrees.com/api-docs/index.html).
+In the most raw form Cloud Service is accessible via a RESTful API, documented in the [Cloud REST API reference](https://cloud.51degrees.com/api-docs/index.html).
 
 ---
 

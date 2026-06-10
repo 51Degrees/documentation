@@ -129,7 +129,7 @@ The WordPress plugin will handle this for you automatically. However, be aware t
 
 If you want to build the plugin yourself and install locally, you will need to follow these steps:
 
-1.  Clone 51Degrees plugin GitHub repository from [here](https://github.com/51Degrees/pipeline-wordpress/).
+1.  Clone the [51Degrees WordPress plugin repository](https://github.com/51Degrees/pipeline-wordpress/).
 
 2.  Execute `composer install` in the `lib` directory.
 

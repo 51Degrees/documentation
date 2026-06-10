@@ -104,7 +104,7 @@ UA-CH offers several mechanisms for accessing values. This section explains our 
 ## How UA-CH works
 
 
-The authors of the proposal have created an [article](https://web.dev/user-agent-client-hints) covering how UA-CH works.
+The authors of the proposal have written [a web.dev guide to how UA-CH works](https://web.dev/user-agent-client-hints).
 
 51Degrees has [blogged extensively](https://51degrees.com/resources/blogs/tag/Client%20Hints) on the subject. We also have:
 

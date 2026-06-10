@@ -1,4 +1,4 @@
-@page IpIntelligence_Examples_OfflineProcessing Offline Processing
+@page IpIntelligence_Examples_OfflineProcessing IP Intelligence Offline Processing
 
 @startsnippets
 @grabexample{ip-intelligence-cxx,_ip_intelligence_2_offline_processing_8c,C}
