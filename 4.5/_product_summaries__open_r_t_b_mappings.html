@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_product_summa
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="g-docs__section-heading">Introduction</h2>
-<p>The RTB Project is an API specification for companies needing an open protocol for the automated trading of digital media across a broader range of platforms, devices, and advertising solutions. To aid those wishing to enhance the capture of device data, we've compiled a guide to map OpenRTB Object: Device and Geo fields to 51Degrees properties and values. The full Open RTB API Specification can be found <a href="https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md">here</a> with the Device Object specification in section <a href="https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3218---object-device-">3.2.18</a> and Geo Object specification in section <a href="https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3219---object-geo-">3.2.19</a>.</p>
+<p>The RTB Project is an API specification for companies needing an open protocol for the automated trading of digital media across a broader range of platforms, devices, and advertising solutions. To aid those wishing to enhance the capture of device data, we've compiled a guide to map OpenRTB Object: Device and Geo fields to 51Degrees properties and values. The full Open RTB API Specification can be found in <a href="https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md">the OpenRTB 2.6 specification</a> with the Device Object specification in section <a href="https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3218---object-device-">3.2.18</a> and Geo Object specification in section <a href="https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3219---object-geo-">3.2.19</a>.</p>
 <h2 class="g-docs__section-heading">OpenRTB API Device Mappings</h2>
 <p>The following table lists the OpenRTB (3.2.18 Object: Device) field names, supported 51Degrees properties that contain equivalent data, alongside notes that may be helpful when mapping OpenRTB and 51Degrees values.</p>
 <table class="c-table">
@@ -86,12 +86,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_product_summa
 See <a class="el" href="#DeviceDetection_OtherIntegrations_OpenRTBMappings_DeviceType" title="DeviceDetection_OtherIntegrations_OpenRTBMappings_DeviceType">OpenRTB Device Type Mappings</a> table below.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">make  </td><td class="c-table__cell">Device make (e.g., “Apple”)  </td><td class="c-table__cell"><a href="https://51degrees.com/developers/property-dictionary?item=Device%7CName">HardwareVendor</a>  </td><td class="c-table__cell">Indicates the name of the company that manufactures the device or primarily sells it, e.g. Samsung.<br  />
-<a href="https://51degrees.com/developers/documentation/open-rtb-mappings/hardware-vendors">List of Manufactures</a>.  </td></tr>
+The full set of vendor values is contained in the 51Degrees <a class="el" href="_device_detection__cloud_to_on_premise.html" title="Migrating from Cloud to On-premise">on-premise data file</a>.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">model  </td><td class="c-table__cell">Device model (e.g., “iPhone”)  </td><td class="c-table__cell"><a href="https://51degrees.com/developers/property-dictionary?item=Device%7CName">HardwareNamePrefix</a>  </td><td class="c-table__cell"></td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">os  </td><td class="c-table__cell">Device operating system (e.g., "iOS")  </td><td class="c-table__cell"><a href="https://51degrees.com/developers/property-dictionary?item=Operating%20System%7CName">PlatformName</a>  </td><td class="c-table__cell">Indicates the name of the operating system the device is using.<br  />
-<a href="https://51degrees.com/developers/documentation/open-rtb-mappings/platform-names">List of Operating Systems</a>.  </td></tr>
+The full set of platform values is contained in the 51Degrees <a class="el" href="_device_detection__cloud_to_on_premise.html" title="Migrating from Cloud to On-premise">on-premise data file</a>.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">osv  </td><td class="c-table__cell">Device operating system version (e.g., "3.1.2").  </td><td class="c-table__cell"><a href="https://51degrees.com/developers/property-dictionary?item=Operating%20System%7CName">PlatformVersion</a>  </td><td class="c-table__cell">Indicates the version or subversion of the software platform.  </td></tr>
 <tr class="c-table__row">
@@ -105,7 +105,7 @@ See <a class="el" href="#DeviceDetection_OtherIntegrations_OpenRTBMappings_Devic
 <tr class="c-table__row">
 <td class="c-table__cell">js  </td><td class="c-table__cell">Support for JavaScript, where 0 = no, 1 = yes.  </td><td class="c-table__cell"><a href="https://51degrees.com/developers/property-dictionary?item=Web%20Browser%20and%20Apps%7CJavascript">Javascript</a>  </td><td class="c-table__cell">Indicates if the browser supports JavaScript.  </td></tr>
 </table>
-<h2 class="g-docs__section-heading">OpenRTB Device Type Mappings <a href="#DeviceDetection_OtherIntegrations_OpenRTBMappings_DeviceType">#</a><a class="anchor" id="DeviceDetection_OtherIntegrations_OpenRTBMappings_DeviceType"></a></h2>
+<h2 class="g-docs__section-heading" id="DeviceDetection_OtherIntegrations_OpenRTBMappings_DeviceType">OpenRTB Device Type Mappings <a href="#DeviceDetection_OtherIntegrations_OpenRTBMappings_DeviceType">#</a></h2>
 <p>This table shows the mappings between OpenRTB Device Types (5.21) and 51Degrees <a href="https://51degrees.com/developers/property-dictionary?item=Device%7CDevice">DeviceType</a> Values.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -190,22 +190,15 @@ See <a class="el" href="#DeviceDetection_OtherIntegrations_OpenRTBMappings_Devic
 <td class="c-table__cell">ext  </td><td class="c-table__cell">Placeholder for exchange-specific extensions to OpenRTB.  </td><td class="c-table__cell" colspan="2">n/a  </td></tr>
 </table>
 <h2 class="g-docs__section-heading">OpenRTB Property Values</h2>
-<p>Below are several lists of values for use with OpenRTB, they are all open source Creative Commons licensed.</p>
-<ul>
-<li><a href="https://51degrees.com/developers/documentation/open-rtb-mappings/hardware-vendors">Hardware Vendors</a> - A list of popular consumer electronic manufactures who sell connected devices.</li>
-<li><a href="https://51degrees.com/developers/documentation/open-rtb-mappings/hardware-models">Hardware Models</a> - A list of popular consumer electronic model codes.</li>
-<li><a href="https://51degrees.com/developers/documentation/open-rtb-mappings/platform-names">Platform Names</a> - A list of popular operating system names. </li>
-</ul>
+<p>51Degrees no longer publishes standalone lists of hardware vendor, hardware model and platform name values. The complete, current set of these values is contained in the 51Degrees on-premise data file. See <a class="el" href="_device_detection__cloud_to_on_premise.html" title="Migrating from Cloud to On-premise">Migrating from Cloud to On-premise</a> for the on-premise data option. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.15-->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->
-    <p class="g-footer__copyright">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <b>doxygen</b></a> 1.17.0
-  </p>
+  <!-- Generated by doxygen 1.17.0 -->
+  <p class="g-footer__message">Have a data or developer question? <a href="https://51degrees.com/contact-us">Talk to our team for support</a>, or explore <a href="https://51degrees.com/pricing">pricing and plans</a>.</p>
 </section>
 </div>
 </main>
