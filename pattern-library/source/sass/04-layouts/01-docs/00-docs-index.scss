@@ -170,8 +170,12 @@
     }
   }
 
-  // Doxygen-generated image styling
-  .textblock .image img {
+  // Doxygen-generated image styling. Cover <object> as well as <img>: SVG
+  // diagrams and equations are embedded as <object>, and now carry intrinsic
+  // width/height so they render at their natural (small) size rather than
+  // stretching to fill the column. The cap + centring keeps them tidy.
+  .textblock .image img,
+  .textblock .image object {
     max-width: 90%;
     margin: 0 auto;
     display: block;
