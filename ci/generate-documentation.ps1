@@ -163,8 +163,35 @@ Get-ChildItem -Recurse -File -Filter "*.html" -Path "gh-pages/$version" | ForEac
     Set-Content -Path $dest -Value $content -NoNewline
     $mirrored.Add($rel)
 }
+
+# Mirror image assets to the unversioned root as well. The HTML mirror above
+# relies on <base href="/documentation/$version/"> so relative asset references
+# resolve back into the versioned tree, but a downstream host (the 51degrees.com
+# reverse proxy) does not always preserve <base>. Doxygen references content
+# images and SVG graphs by basename (e.g. diagrams embedded as
+# <object data="...svg">), so without the base they resolve to the unversioned
+# root and 404 -- the proxy then serves an HTML fallback, which the browser
+# cannot render as an image, so the diagram shows blank. Copy the image assets
+# up so the mirrored pages are self-contained regardless of <base>. Skip any
+# that already exist at the root (global theme/doxygen assets are placed there
+# separately) and record what we add so the stale-mirror cleanup at the top of
+# this step removes them on the next run.
+$assetExtensions = '.svg', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico'
+$assetsCopied = 0
+Get-ChildItem -Recurse -File -Path "gh-pages/$version" |
+    Where-Object { $assetExtensions -contains $_.Extension.ToLowerInvariant() } |
+    ForEach-Object {
+        $rel = $_.FullName.Substring($srcRoot.Length + 1) -replace '\\', '/'
+        $dest = Join-Path "gh-pages" $rel
+        if (-not (Test-Path $dest)) {
+            New-Item -ItemType Directory -Force (Split-Path $dest) | Out-Null
+            Copy-Item -Force $_.FullName $dest
+            $mirrored.Add($rel)
+            $assetsCopied++
+        }
+    }
 Set-Content -Path $manifestPath -Value ($mirrored -join "`n")
-Write-Host "Mirrored $($mirrored.Count) HTML files to gh-pages root, added canonical to $canonicalsAdded versioned files, added hreflang to $hreflangsAdded versioned files."
+Write-Host "Mirrored $($mirrored.Count - $assetsCopied) HTML files and $assetsCopied image assets to gh-pages root, added canonical to $canonicalsAdded versioned files, added hreflang to $hreflangsAdded versioned files."
 Write-Host "::endgroup::"
 
 # Minify the Doxygen-emitted JS (jquery.js, navtree.js, dynsections.js,
