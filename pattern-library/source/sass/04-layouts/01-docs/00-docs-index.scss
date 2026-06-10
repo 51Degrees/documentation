@@ -182,7 +182,7 @@
   // wrapping element caps the rendered size (its max-width is set per equation
   // alongside the markup) and the image scales to fit that box.
   .c-equation {
-    margin: size(-2) auto;
+    margin: size(-2) 0;
 
     img,
     object,
