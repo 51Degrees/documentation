@@ -6,7 +6,8 @@ $patternLibrary = "$PSScriptRoot/../pattern-library"
 Push-Location $patternLibrary
 try {
     npm install
-    npx gulp sass-change
+    # Compile the SCSS design system to CSS with Vite (gulp retired).
+    npm run build:css
 } finally {
     Pop-Location
 }

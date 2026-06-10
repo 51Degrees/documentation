@@ -1,6 +1,7 @@
-// The compiled design-system stylesheet (built by `gulp sass`). Importing it
-// here makes every story render with the real 51Degrees documentation styles.
-import '../source/css/docs-main.css';
+// The design system, compiled live by Storybook's Vite (with the glob-import
+// plugin). Importing the SCSS entry means every story renders with the real
+// 51Degrees documentation styles and hot-reloads on SCSS edits.
+import '../source/sass/docs-main.scss';
 
 /** @type { import('@storybook/html').Preview } */
 const preview = {

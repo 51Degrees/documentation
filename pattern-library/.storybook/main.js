@@ -4,10 +4,10 @@
  * Framework: @storybook/html-vite. Stories are plain HTML that exercise the
  * design-system CSS classes, so there is no component-framework lock-in.
  *
- * The SCSS is compiled to CSS by gulp (it relies on glob @imports that only
- * gulp-sass-glob resolves); Storybook imports the compiled docs-main.css in
- * preview.js. The `storybook`/`build-storybook` npm scripts run `gulp sass`
- * first so the CSS is fresh.
+ * Storybook's own Vite compiles the SCSS live (preview.js imports
+ * source/sass/docs-main.scss). vite-plugin-sass-glob-import resolves the glob
+ * @imports the entry relies on. The same Vite setup (vite.config.js) builds
+ * the docs CSS via `npm run build:css`.
  *
  * @type { import('@storybook/html-vite').StorybookConfig }
  */
@@ -17,6 +17,17 @@ const config = {
   framework: {
     name: '@storybook/html-vite',
     options: {},
+  },
+  async viteFinal(viteConfig) {
+    const { default: sassGlobImports } = await import('vite-plugin-sass-glob-import');
+    viteConfig.plugins = viteConfig.plugins || [];
+    viteConfig.plugins.push(sassGlobImports());
+    viteConfig.css = viteConfig.css || {};
+    viteConfig.css.preprocessorOptions = viteConfig.css.preprocessorOptions || {};
+    viteConfig.css.preprocessorOptions.scss = {
+      loadPaths: ['source/sass', 'node_modules/normalize.css'],
+    };
+    return viteConfig;
   },
 };
 
