@@ -37,8 +37,7 @@ We have examples that demonstrate UA-CH detection in various scenarios:
 
 ---
 
-# Support for detection from Client Hints <a href="#UACH_Support">#</a> @anchor UACH_Support
-
+# Support for detection from Client Hints {#UACH_Support}
 ## Current support
 
 
@@ -58,8 +57,7 @@ We added support for the UA-CH [JavaScript API](https://developer.mozilla.org/en
 
 ---
 
-# Guidance <a href="#UACH_Guidance">#</a> @anchor UACH_Guidance
-
+# Guidance {#UACH_Guidance}
 UA-CH offers several mechanisms for accessing values. This section explains our recommendations for different use-cases.
 
 ## On-premise API serving end-users directly
@@ -99,8 +97,7 @@ UA-CH offers several mechanisms for accessing values. This section explains our 
 
 ---
 
-# Background reading <a href="#UACH_Background">#</a> @anchor UACH_Background 
-
+# Background reading {#UACH_Background}
 ## How UA-CH works
 
 

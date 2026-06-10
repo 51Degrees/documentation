@@ -60,8 +60,7 @@ the generic Apple group profile with a more accurate one.
 - [Web Integration Example](@ref DeviceDetection_Examples_GettingStarted_Web_Index): See how to implement it with code samples
 - [51Degrees Blog - Apple](https://51degrees.com/resources/blogs/tag/Apple): Technical deep dives, case studies, and news we've produced relating to Apple
 
-## Detection Results for Apple Devices <a href="#detection-results">#</a> @anchor detection-results
-
+## Detection Results for Apple Devices {#detection-results}
 Apple has continually worked to homogenize any information that a website can get about a device, through JavaScript or any other means. For more information, take a look at our [Upgrade Apple Device](https://51degrees.com/blog/upgrade-apple-device-detection) blog. 
 
 Below we cover the detection results that are experienced for each iPhone, starting from the iPhone 3GS, when using Safari.
@@ -72,8 +71,7 @@ As we receive more data on Apple devices, this table will change. We will update
 
 For optimized viewing of the table, it is recommended you zoom out within your browser.
 
-### iPhones using browser in Mobile mode and in standard display mode <a href="#iphones_mobile_standard_mode">#</a> @anchor iphones_mobile_standard_mode
-
+### iPhones using browser in Mobile mode and in standard display mode {#iphones_mobile_standard_mode}
 |Device|Results|Percentage|
 |---|---|---|
 |iPhone Air|iPhone Air|100.00%|
@@ -126,8 +124,7 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 |iPhone 4|iPhone 4|100.00%|
 |iPhone 3GS|iPhone 3GS|100.00%|
 
-### iPhones using browser in Mobile mode and in zoomed display mode <a href="#iphones_mobile_zoom_mode">#</a> @anchor iphones_mobile_zoom_mode
-
+### iPhones using browser in Mobile mode and in zoomed display mode {#iphones_mobile_zoom_mode}
 This table is for display zoom, an iPhone accessibility feature. It is not the normal zoom operation in browsers. It is enabled in Settings > Display & Brightness > Display Zoom > Zoomed.
 
 |Device|Results|Percentage|
@@ -175,8 +172,7 @@ This table is for display zoom, an iPhone accessibility feature. It is not the n
 |iPhone 6 Plus|iPhone 6 Plus|100.00%|
 |iPhone 6|iPhone 6|100.00%|
 
-### iPhones using browser in Desktop mode <a href="#iphones_desktop_mode">#</a> @anchor iphones_desktop_mode
-
+### iPhones using browser in Desktop mode {#iphones_desktop_mode}
 |Device|Display Mode|Results|Percentage|
 |---|---|---|---|
 |iPhone Air|Standard|	iPhone Air|100.00%|

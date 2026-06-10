@@ -65,8 +65,9 @@ The inline `<style>` block reserves two layout boxes ahead of asset
 arrival to keep Cumulative Layout Shift near zero:
 
 - `.c-brand__image { aspect-ratio: 360/67 }` matches the natural
-  dimensions of `/img/logo.png` (the file the website proxy swaps in
-  for `logo-51Degrees-Docs.png` on 51degrees.com). The `<img>` element
+  dimensions of `https://51degrees.com/img/logo.png`, the brand logo the
+  masthead `<img>` now references directly (see the masthead section
+  below). The `<img>` element
   also gets matching `width="360" height="67"` attributes for browsers
   that honour the attribute-derived aspect ratio rather than the CSS
   one. Without the reservation the masthead first paints with a zero-
@@ -128,6 +129,34 @@ the mirror loop and rewrites three things by regex:
 Doing this in CI rather than patching the template lets the same
 rule apply uniformly across every API repo's doxygen output without
 needing each one to re-pull a template change.
+
+## Why `<html>` carries `lang="en"` and the masthead points at the website
+
+Two shapes are set directly in the template so DoxyGen emits them on
+every page (this header is the shared `HTML_HEADER` for every API repo's
+Doxyfile, so one change covers them all), removing the need for the
+51degrees.com reverse proxy to patch the rendered HTML at request time:
+
+- `<html ... lang="en">`. DoxyGen omits `lang`; declaring it once here
+  gives every page the document-language signal screen readers and
+  search engines expect. The proxy used to inject this per request.
+
+- The masthead links to the website and uses the shared brand logo:
+  `<a href="https://51degrees.com/">` wrapping
+  `<img src="https://51degrees.com/img/logo.png">`. The URLs are
+  absolute (not `$projecturl` / `$relpath^$projectlogo`) so they resolve
+  identically whether the page is served through the site or directly
+  from gh-pages, and the logo request doubles as the analytics pixel
+  when served from 51degrees.com. The proxy used to swap the logo and
+  rewrite the home link per request. DoxyGen's own "Main Page" nav links
+  stay relative, so in-docs navigation still points at the docs index
+  rather than the marketing home.
+
+Canonical, hreflang and the page-title/heading rebalancing stay in CI
+(see the sections above) because the template cannot construct those
+from DoxyGen substitutions; eliminating the proxy's remaining canonical
+/ hreflang / title rewrites needs a feature in the custom 51Degrees
+DoxyGen build, not a template change.
 
 ## Why these notes are not inline comments
 
