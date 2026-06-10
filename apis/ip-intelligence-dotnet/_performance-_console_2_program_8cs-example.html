@@ -137,9 +137,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance-_
 <div class="c-code__line">            <span class="c-code__keyword">public</span> <span class="c-code__keywordtype">long</span> GCCollections2 { <span class="c-code__keyword">get</span>; <span class="c-code__keyword">set</span>; }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment">// Only LowMemory is benchmarked: the IP Intelligence data file is multiple</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// gigabytes and must never be loaded entirely into memory, which is what the</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// MaxPerformance profile would do.</span></div>
 <div class="c-code__line">        <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> readonly PerformanceConfiguration[] _configs = <span class="c-code__keyword">new</span> PerformanceConfiguration[]</div>
 <div class="c-code__line">        {</div>
-<div class="c-code__line">            <span class="c-code__keyword">new</span> PerformanceConfiguration(PerformanceProfiles.MaxPerformance, <span class="c-code__keyword">false</span>),</div>
 <div class="c-code__line">            <span class="c-code__keyword">new</span> PerformanceConfiguration(PerformanceProfiles.LowMemory, <span class="c-code__keyword">false</span>),</div>
 <div class="c-code__line">        };</div>
 <div class="c-code__line"> </div>

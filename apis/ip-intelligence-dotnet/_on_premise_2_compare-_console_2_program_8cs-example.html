@@ -230,14 +230,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            <span class="c-code__comment">// Ensure that batch latency mode is always enabled.</span></div>
 <div class="c-code__line">            GCSettings.LatencyMode = GCLatencyMode.Batch;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment">// Build a new on-premise IP Intelligence engine with the max</span></div>
-<div class="c-code__line">            <span class="c-code__comment">// performance profile.</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// Build a new on-premise IP Intelligence engine with the LowMemory</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// profile so the large data file is paged from disk, not loaded into RAM.</span></div>
 <div class="c-code__line">            <span class="c-code__keyword">using </span>var ipiEngine = <span class="c-code__keyword">new</span> <a id="_a21" name="_a21"></a><a class="code hl_class" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder.html">IpiOnPremiseEngineBuilder</a>(loggerFactory)</div>
-<div class="c-code__line">                <span class="c-code__comment">// We use the max performance profile for optimal detection</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// speed in this example. See the documentation for more detail</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// on this and other configuration options.</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// LowMemory keeps the (multi-gigabyte) IP Intelligence data file on</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// disk rather than loading it entirely into memory. See the</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// documentation for more detail on this and other configuration options.</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html</span></div>
-<div class="c-code__line">                .<a id="a22" name="a22"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder_base-1-g.html#aec4bcd06dc0282d083a91e864a7501ed">SetPerformanceProfile</a>(PerformanceProfiles.MaxPerformance)</div>
+<div class="c-code__line">                .<a id="a22" name="a22"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder_base-1-g.html#aec4bcd06dc0282d083a91e864a7501ed">SetPerformanceProfile</a>(PerformanceProfiles.LowMemory)</div>
 <div class="c-code__line">                <span class="c-code__comment">// inhibit auto-update of the data file for this test</span></div>
 <div class="c-code__line">                .SetAutoUpdate(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                .SetDataFileSystemWatcher(<span class="c-code__keyword">false</span>)</div>

@@ -141,7 +141,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"> </div>
 <div class="c-code__line">                    <span class="c-code__comment">// Create IP Intelligence engine directly from scratch</span></div>
 <div class="c-code__line">                    var ipEngine = <span class="c-code__keyword">new</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder.html">IpiOnPremiseEngineBuilder</a>(loggerFactory, dataUpdateService)</div>
-<div class="c-code__line">                        .<a id="a1" name="a1"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder_base-1-g.html#aec4bcd06dc0282d083a91e864a7501ed">SetPerformanceProfile</a>(PerformanceProfiles.MaxPerformance)</div>
+<div class="c-code__line">                        <span class="c-code__comment">// LowMemory keeps the large IP Intelligence data file on disk</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// instead of loading it entirely into memory.</span></div>
+<div class="c-code__line">                        .<a id="a1" name="a1"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder_base-1-g.html#aec4bcd06dc0282d083a91e864a7501ed">SetPerformanceProfile</a>(PerformanceProfiles.LowMemory)</div>
 <div class="c-code__line">                        .SetAutoUpdate(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                        .SetDataFileSystemWatcher(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                        .Build(ipDataFile, <span class="c-code__keyword">false</span>);</div>

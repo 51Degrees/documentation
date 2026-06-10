@@ -125,12 +125,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            <span class="c-code__comment">// Note that we wrap the creation of a pipeline in a using to control its life cycle</span></div>
 <div class="c-code__line">            <span class="c-code__keyword">using</span> (var pipeline = <span class="c-code__keyword">new</span> IpiPipelineBuilder()</div>
 <div class="c-code__line">                .UseOnPremise(dataFile, <span class="c-code__keyword">null</span>, <span class="c-code__keyword">false</span>)</div>
-<div class="c-code__line">                <span class="c-code__comment">// We use the max performance profile for optimal detection speed in this</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// example. See the documentation for more detail on this and other</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// Use the LowMemory profile so the (multi-gigabyte) IP Intelligence</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// data file is paged from disk rather than loaded entirely into RAM.</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// See the documentation for more detail on this and other</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// configuration options.</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html</span></div>
-<div class="c-code__line">                .SetPerformanceProfile(PerformanceProfiles.MaxPerformance)</div>
+<div class="c-code__line">                .SetPerformanceProfile(PerformanceProfiles.LowMemory)</div>
 <div class="c-code__line">                <span class="c-code__comment">// inhibit sharing usage for this example, usually this should be set to &quot;true&quot;</span></div>
 <div class="c-code__line">                .SetShareUsage(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                <span class="c-code__comment">// inhibit auto-update of the data file for this test</span></div>
