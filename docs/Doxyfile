@@ -1626,6 +1626,13 @@ DISABLE_INDEX          = YES
 
 GENERATE_TREEVIEW      = YES
 
+# Disable the per-page outline panel. Doxygen defaults this to YES, which emits
+# an unstyled #page-nav block after the content; with the 51Degrees theme it is
+# not positioned as a sidebar, so it renders as a stray list of section links at
+# the bottom of the body. The left tree-view and breadcrumb already provide
+# navigation, so turn the outline panel off.
+PAGE_OUTLINE_PANEL     = NO
+
 # If the HTML_INDEX_NOINDEX tag is set to YES then doxygen adds a
 # <meta name="robots" content="noindex,follow"> tag to the generated
 # navigation, index and helper pages (the tab indexes, the per-directory
