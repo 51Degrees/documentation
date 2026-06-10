@@ -469,6 +469,23 @@ MARKDOWN_SUPPORT       = YES
 
 TOC_INCLUDE_HEADINGS   = 0
 
+# Generate GitHub-style, human-readable anchor ids for every Markdown heading
+# (for example "Data set production" -> #data-set-production). This puts a
+# stable, readable id on each heading so readers, support and tooling can
+# deep-link to a section, and is what the section-heading permalink links to.
+# Requires the 51Degrees DoxyGen build that emits the heading id and permalink.
+MARKDOWN_ID_STYLE      = GITHUB
+
+# Append a permalink (the 🔗 link emoji, class "headerlink") to each section
+# heading so readers, support and tooling can deep-link to a section. The
+# pattern library reveals it on hover. Requires the 51Degrees DoxyGen build
+# that ships this option.
+HTML_HEADING_PERMALINKS = YES
+
+# Render level-1 section headings as <h2> so each page keeps a single <h1>
+# (the page title). Requires the 51Degrees DoxyGen build that ships this option.
+HTML_DEMOTE_SECTION_H1 = YES
+
 # When enabled doxygen tries to link words that correspond to documented
 # classes, or namespaces to their corresponding documentation. Such a link can
 # be prevented in individual cases by putting a % sign in front of the word or
