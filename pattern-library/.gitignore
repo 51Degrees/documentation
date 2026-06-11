@@ -3,3 +3,7 @@
 node_modules
 /source/css/**
 !/source/css/.keep
+# Storybook static build output
+storybook-static
+# Retired PHP Pattern Lab (any leftover generated/vendored files)
+pattern-lab

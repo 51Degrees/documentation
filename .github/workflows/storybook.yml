@@ -1,0 +1,40 @@
+name: Build Storybook
+
+# Builds the pattern-library Storybook (the design-system preview that
+# replaced Pattern Lab). Validates it on every change and uploads the static
+# site as an artifact. Deploying it to a public URL is a follow-on decision:
+# the repo's gh-pages branch is already owned by the documentation site, so a
+# Storybook deploy would need its own path (e.g. /design-system/) or host.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'pattern-library/**'
+      - '.github/workflows/storybook.yml'
+  pull_request:
+    paths:
+      - 'pattern-library/**'
+      - '.github/workflows/storybook.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: pattern-library
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      # build-storybook runs `gulp sass` first, so the compiled CSS the
+      # stories import is fresh.
+      - run: npm run build-storybook
+      - uses: actions/upload-artifact@v4
+        with:
+          name: storybook-static
+          path: pattern-library/storybook-static
+          if-no-files-found: error

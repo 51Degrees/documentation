@@ -1,11 +1,11 @@
 # To build the CSS files and put them in the local build dir use:
 #   docker build --output=build .
-FROM node:10 AS build
+FROM node:20 AS build
 WORKDIR /app
 COPY package*.json .
 RUN npm install
 COPY . .
-RUN npx gulp sass-change
+RUN npm run build:css
 
 FROM scratch
 COPY --from=build /app/source/css/*.css /
