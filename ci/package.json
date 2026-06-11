@@ -4,6 +4,7 @@
   "description": "Build-time tooling for the documentation pipeline (terser for Doxygen-emitted JS, csso for Doxygen-emitted CSS).",
   "dependencies": {
     "csso": "^5.0.5",
+    "purgecss": "^7.0.2",
     "terser": "^5.31.6"
   }
 }

@@ -14,3 +14,7 @@ docs/tagfile
 # CI tooling deps (terser for minifying Doxygen JS); package-lock.json
 # is committed so `npm ci` in the build workflow is reproducible.
 ci/node_modules/
+
+# Build-time report from the PurgeCSS pass (ci/purge-docs-css.js); written
+# against generated output during the docs build, not a source artifact.
+ci/purge-docs-css.report.json

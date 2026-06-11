@@ -194,16 +194,30 @@ Set-Content -Path $manifestPath -Value ($mirrored -join "`n")
 Write-Host "Mirrored $($mirrored.Count - $assetsCopied) HTML files and $assetsCopied image assets to gh-pages root, added canonical to $canonicalsAdded versioned files, added hreflang to $hreflangsAdded versioned files."
 Write-Host "::endgroup::"
 
-# Minify the Doxygen-emitted JS (jquery.js, navtree.js, dynsections.js,
-# search51.js, examplegrabber.js, testedversionsgrabber.js, ...) and
-# rewrite <script src="*.js"> in every generated page to load the
-# *.min.js sibling. Mirrors the docs-main.css / docs-main.min.css
-# convention already used for the stylesheet. Clears the Semrush rule
-# 135 ("unminified JavaScript and CSS files") findings on every
-# /documentation/* page on 51degrees.com.
-Write-Host "::group::Minifying Doxygen-emitted JS"
+# Remove unused CSS selectors from the design-system stylesheet, scanning
+# the HTML Doxygen actually generated for this version. docs-main.css is
+# the full 51Degrees design system, but a /documentation/* page uses only
+# the chrome subset (header/footer/search/sidenav defined in the doxygen
+# templates) plus whatever the body markup references, so this drops the
+# unused remainder (configurator, demo and marketing components). Mirrors
+# the website's PurgeCSS pass (Website/website/scripts/purge-css.js). Runs
+# before the minify step below so csso minifies the already-purged
+# docs-main.css into docs-main.min.css. npm ci here installs the tooling
+# (purgecss, terser, csso) once for both this step and the minify step.
+Write-Host "::group::Removing unused CSS from docs-main.css"
 Push-Location ci
 try { npm ci --omit=dev=false --no-audit --no-fund } finally { Pop-Location }
+node ci/purge-docs-css.js "gh-pages/$version"
+Write-Host "::endgroup::"
+
+# Minify the purged docs-main.css and the Doxygen-emitted JS (jquery.js,
+# navtree.js, dynsections.js, search51.js, examplegrabber.js,
+# testedversionsgrabber.js, ...), then rewrite <script src="*.js"> and
+# <link href="*.css"> in every generated page to load the *.min.* sibling.
+# Clears the Semrush rule 135 ("unminified JavaScript and CSS files")
+# findings on every /documentation/* page on 51degrees.com. node_modules is
+# already installed by the purge step above.
+Write-Host "::group::Minifying Doxygen-emitted JS and CSS"
 node ci/minify-docs-assets.js gh-pages
 Write-Host "::endgroup::"
 
