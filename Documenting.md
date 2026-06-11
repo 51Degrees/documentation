@@ -320,7 +320,7 @@ Pre-built binaries can be downloaded from Sharepoint for [Linux](https://51degre
 In order for DoxyGen to generate nice diagrams, [GraphVis 2.38](https://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.msi) must be installed.
 
 ### Pattern library
-The CSS used in all documentation comes from the `pattern-library` subproject &mdash; a Storybook + Vite design system (it replaced the old Pattern Lab / Twig tooling).
+The CSS used in all documentation comes from the `pattern-library` subproject, a Storybook + Vite design system (it replaced the old Pattern Lab / Twig tooling).
 
 To generate the `docs-*.css` files needed by the documentation, run the [build-pattern-library.ps1](ci/build-pattern-library.ps1) script (it runs `npm run build:css`). The generated files overwrite the existing ones in `docs/`.
 
