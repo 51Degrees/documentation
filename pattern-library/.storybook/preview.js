@@ -1,7 +1,9 @@
 // The design system, compiled live by Storybook's Vite (with the glob-import
-// plugin). Importing the SCSS entry means every story renders with the real
-// 51Degrees documentation styles and hot-reloads on SCSS edits.
+// plugin). Both entries are imported so every pattern is styled: docs-main
+// covers the documentation surface (base, components, docs groups/layouts,
+// footers) and conf-main covers the configurator components/panels.
 import '../source/sass/docs-main.scss';
+import '../source/sass/conf-main.scss';
 
 /** @type { import('@storybook/html').Preview } */
 const preview = {
