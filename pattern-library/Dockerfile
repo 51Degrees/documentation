@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package*.json .
 RUN npm install
 COPY . .
-RUN npx gulp sass-change
+RUN npm run build:css
 
 FROM scratch
 COPY --from=build /app/source/css/*.css /
