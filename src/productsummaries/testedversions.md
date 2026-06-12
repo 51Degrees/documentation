@@ -63,6 +63,9 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
       grabTestedVersions("device-detection-node", "node-versions", [
           { title: "Node Version", getValue: d => d.LanguageVersion }
       ]);
+      grabTestedVersions("ip-intelligence-node", "ipi-node-versions", [
+          { title: "Node Version", getValue: d => d.LanguageVersion }
+      ]);
       grabTestedVersions("device-detection-go", "go-versions", [
           { title: "GoLang Version", getValue: d => d.LanguageVersion }
       ]);
@@ -110,7 +113,13 @@ If you have a configuration that is not covered, please [contact us](https://51d
 @endsnippet
 @startsnippet{node}
 These are automatically tested on [GitHub](https://github.com/51Degrees?q=node&type=all&language=&sort=).
+Testing targets the current Node.js LTS versions, the tables below are built from the
+CI configuration of each repository so they always reflect the versions currently tested.
+
+Device Detection:
 <div id="node-versions"></div>
+IP Intelligence:
+<div id="ipi-node-versions"></div>
 If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{python}
