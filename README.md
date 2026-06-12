@@ -1,4 +1,4 @@
-![51Degrees](https://51degrees.com/DesktopModules/FiftyOne/Distributor/Logo.ashx?utm_source=github&utm_medium=repository&utm_content=readme_main "Data rewards the curious") **Pipeline API Documentation**
+![51Degrees](https://51degrees.com/img/logo.png?utm_source=github&utm_medium=readme&utm_campaign=documentation&utm_content=readme.md&utm_term=top "Data rewards the curious") **Pipeline API Documentation**
 
 # Summary
 
