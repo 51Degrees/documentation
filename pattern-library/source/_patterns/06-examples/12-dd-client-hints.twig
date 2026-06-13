@@ -1,0 +1,21 @@
+<div class="c-eg-page">
+  <h2 class="c-eg-page__title">User-Agent Client Hints example</h2>
+  <p class="c-eg-page__lead">
+    By default the User-Agent, Sec-CH-UA and Sec-CH-UA-Mobile headers are sent. If the server
+    determines the browser supports client hints, it requests more by setting the Accept-CH
+    response header. Use the button below to make a second request that includes them.
+  </p>
+
+  <div class="c-eg-button-row">
+    <button class="b-btn" type="button">Make second request</button>
+  </div>
+
+  <h3 class="c-eg-page__heading">Evidence values used</h3>
+  {% include 'examples-evidence-table' %}
+
+  <h3 class="c-eg-page__heading">Detection results</h3>
+  <p class="c-eg-page__lead">The information below is determined using the client hints sent in the request.</p>
+  {% include 'examples-results-table' %}
+
+  {% if showMessage %}{% include 'examples-message' %}{% endif %}
+</div>

@@ -1,0 +1,47 @@
+<div class="c-eg-page">
+  <h2 class="c-eg-page__title">IP intelligence web integration example</h2>
+  <p class="c-eg-page__lead">
+    This example performs IP intelligence lookups using the Pipeline API in a simple
+    ASP.NET Core web project.
+  </p>
+
+  <div class="c-eg-alert">
+    WARNING: JavaScript is disabled in your browser.
+  </div>
+
+  {% include 'examples-ip-form' %}
+
+  <h3 class="c-eg-page__heading">Detection results</h3>
+  {% include 'examples-results-table-ip' %}
+
+  <h3 class="c-eg-page__heading">Evidence used</h3>
+  <p class="c-eg-legend">
+    Evidence was
+    <span class="c-eg-legend__swatch c-eg-legend__swatch--used">used</span>
+    /
+    <span class="c-eg-legend__swatch c-eg-legend__swatch--present">present</span>
+    for detection
+  </p>
+  <table class="c-eg-table">
+    <thead class="c-eg-table__head">
+      <tr class="c-eg-table__row">
+        <th class="c-eg-table__cell">Key</th>
+        <th class="c-eg-table__cell">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="c-eg-table__row c-eg-table__row--used">
+        <td class="c-eg-table__cell c-eg-table__cell--key">server.client-ip</td>
+        <td class="c-eg-table__cell">13.95.93.152</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="c-eg-page__heading">Response headers</h3>
+  {% include 'examples-headers-table' %}
+
+  <h3 class="c-eg-page__heading">Location map</h3>
+  {% include 'examples-map' %}
+
+  {% if showMessage %}{% include 'examples-message' %}{% endif %}
+</div>
