@@ -8,10 +8,29 @@ element styles (`01-base`), so an example app matches the docs out of the box.
 
 The example repos pull two built files (they do **not** consume Twig/SCSS):
 
-| Asset | Built from | Source after `npm run build:css` |
+| Asset | Built from | Local path after `npm run build:css` |
 |-------|-----------|----------------------------------|
 | `examples-main.css` (+ `.min`) | `source/sass/examples-main.scss` | `source/css/examples-main.css` |
 | `examples.js` (+ `.min`) | hand-written | `source/js/examples.js` |
+
+These are gitignored build outputs, so they are not committed to the repo.
+
+### Published location (GitHub Release)
+
+The built assets are published as **GitHub Release** assets on the documentation
+repo, tagged `examples-assets-v*`. Each `-examples` repo downloads a pinned
+version, for example:
+
+```
+https://github.com/51Degrees/documentation/releases/download/examples-assets-v1.0.0/examples-main.min.css
+https://github.com/51Degrees/documentation/releases/download/examples-assets-v1.0.0/examples.min.js
+```
+
+`examples-main.css` and `examples.js` (unminified) are attached to the same
+release. A new version is published by pushing an `examples-assets-vX.Y.Z` tag,
+or by running the **Publish example assets** workflow
+(`.github/workflows/publish-examples-assets.yml`), which builds the CSS/JS and
+attaches all four files to the release.
 
 Each `-examples` repo replaces its per-app `wwwroot/css/site.css` (and the
 inline view scripts) with these files and updates its markup to the class
