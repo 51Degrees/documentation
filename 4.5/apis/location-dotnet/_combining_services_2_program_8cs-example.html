@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_combining_ser
 <p>using 51Degrees reverse geocoding alongside 51Degrees device detection.</p>
 <p>using 51Degrees reverse geocoding alongside 51Degrees device detection.This example is available in full on <a href="https://github.com/51Degrees/location-dotnet/blob/master/Examples/CombiningServices/Program.cs">GitHub</a>.</p>
 <p>To run this example, you will need to create a <b>resource key</b>. The resource key is used as short-hand to store the particular set of properties you are interested in as well as any associated license keys that entitle you to increased request limits and/or paid-for properties.</p>
-<p>You can create a resource key using the 51Degrees <a href="https://configure.51degrees.com">Configurator</a>.</p>
+<p>You can create a resource key using the 51Degrees <a href="https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=location-dotnet&amp;utm_content=examples-combiningservices-program.cs&amp;utm_term=combiningservices">Configurator</a>.</p>
 <p>Required NuGet Dependencies:</p><ul>
 <li><a href="https://www.nuget.org/packages/FiftyOne.GeoLocation/">FiftyOne.GeoLocation</a></li>
 <li><a href="https://www.nuget.org/packages/FiftyOne.DeviceDetection/">FiftyOne.DeviceDetection</a></li>
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_combining_ser
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> Main(<span class="c-code__keywordtype">string</span>[] args)</div>
 <div class="c-code__line">        {</div>
-<div class="c-code__line">            <span class="c-code__comment">// Obtain a resource key for free at https://configure.51degrees.com</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// Obtain a resource key for free at https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=location-dotnet&amp;utm_content=examples-combiningservices-program.cs&amp;utm_term=main</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// Make sure to include the &#39;Country&#39; and &#39;IsMobile&#39; properties as</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// they are used by this example.</span></div>
 <div class="c-code__line">            <span class="c-code__keywordtype">string</span> resourceKey = args.Length &gt; 0 ? args[0] : <span class="c-code__stringliteral">&quot;!!YOUR_RESOURCE_KEY!!&quot;</span>;</div>
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_combining_ser
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> (resourceKey.StartsWith(<span class="c-code__stringliteral">&quot;!!&quot;</span>))</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                Console.WriteLine(<span class="c-code__stringliteral">&quot;You need to create a resource key at &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;https://configure.51degrees.com and paste it into this example.&quot;</span>);</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=location-dotnet&amp;utm_content=examples-combiningservices-program.cs&amp;utm_term=resource-key-required and paste it into this example.&quot;</span>);</div>
 <div class="c-code__line">                Console.WriteLine(<span class="c-code__stringliteral">&quot;Make sure to include the &#39;Country&#39; and &quot;</span> +</div>
 <div class="c-code__line">                    <span class="c-code__stringliteral">&quot;&#39;IsMobile&#39; properties as they are used by this example.&quot;</span>);</div>
 <div class="c-code__line">            }</div>

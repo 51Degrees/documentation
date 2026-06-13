@@ -291,14 +291,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">string</span> CheckDataFile(<span class="c-code__keywordtype">string</span> dataFile)</div>
 <div class="c-code__line">            {</div>
-<div class="c-code__line">                <span class="c-code__comment">// No filename specified use the default</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// No filename specified. Check the environment variables for an explicit</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// path, then search the folder hierarchy for the default file name.</span></div>
 <div class="c-code__line">                <span class="c-code__keywordflow">if</span> (dataFile == <span class="c-code__keyword">null</span>)</div>
 <div class="c-code__line">                {</div>
-<div class="c-code__line">                    dataFile = Constants.LITE_HASH_DATA_FILE_NAME;</div>
-<div class="c-code__line">                    Logger.LogWarning($<span class="c-code__stringliteral">&quot;No filename specified. Using default &#39;{dataFile}&#39;&quot;</span>);</div>
+<div class="c-code__line">                    Logger.LogWarning($<span class="c-code__stringliteral">&quot;No filename specified. Checking the &quot;</span> +</div>
+<div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;&#39;{Constants.DEVICE_DETECTION_DATA_FILE_ENV_VAR}&#39; environment &quot;</span> +</div>
+<div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;variable, then searching for the default &quot;</span> +</div>
+<div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;&#39;{Constants.LITE_HASH_DATA_FILE_NAME}&#39;&quot;</span>);</div>
+<div class="c-code__line">                    dataFile = ExampleUtils.FindDataFile(Constants.LITE_HASH_DATA_FILE_NAME);</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">                <span class="c-code__comment">// Work out where the data file is if we don&#39;t have an absolute path.</span></div>
-<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (dataFile != <span class="c-code__keyword">null</span> &amp;&amp; Path.IsPathRooted(dataFile) == <span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (Path.IsPathRooted(dataFile) == <span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    dataFile = ExampleUtils.FindFile(dataFile);</div>
 <div class="c-code__line">                }</div>

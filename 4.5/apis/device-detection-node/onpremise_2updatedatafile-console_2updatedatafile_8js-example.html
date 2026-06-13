@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2upd
 <li>Daily auto-update</li>
 </ul>
 <h2>License Key</h2>
-<p>In order to test this example you will need a 51Degrees Enterprise license which can be purchased from our <a href="//51degrees.com/pricing/annual">pricing page</a>. Look for our "Bigger" or "Biggest" options. </p><h1>Data Files</h1>
-<p>You can find out more about data files, licenses etc. at our (FAQ page)[//51degrees.com/resources/faqs] </p><h2>Enterprise Data File</h2>
+<p>In order to test this example you will need a 51Degrees Enterprise license which can be purchased from our <a href="https://51degrees.com/pricing/annual?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.onpremise-examples-onpremise-updatedatafile-console-updatedatafile.js&amp;utm_term=header">pricing page</a>. Look for our "Bigger" or "Biggest" options. </p><h1>Data Files</h1>
+<p>You can find out more about data files, licenses etc. at our (FAQ page)[<a href="https://51degrees.com/resources/faqs?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.onpremise-examples-onpremise-updatedatafile-console-updatedatafile.js&amp;utm_term=header">https://51degrees.com/resources/faqs?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.onpremise-examples-onpremise-updatedatafile-console-updatedatafile.js&amp;utm_term=header</a>] </p><h2>Enterprise Data File</h2>
 <p>Enterprise (fully-featured) data files are typically released by 51Degrees four days a week (Mon-Thu) and on-premise deployments can fetch and download those files automatically. Equally, customers may choose to download the files themselves and move them into place to be detected by the 51Degrees filesystem watcher. </p><h3>Manual Download</h3>
 <p>If you prefer to download files yourself, you may do so here: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">https:<span class="c-code__comment">//distributor.51degrees.com/api/v2/download?LicenseKeys=&lt;your_license_key&gt;&amp;Type=27&amp;Download=True&amp;Product=22</span></div>
 </div><!-- fragment --> <h2>Lite Data File</h2>
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2upd
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (!licenseKey || KeyUtils.isInvalidKey(licenseKey)) {</div>
 <div class="c-code__line">    console.error(<span class="c-code__stringliteral">&#39;In order to test this example you will need a 51Degrees Enterprise &#39;</span> +</div>
 <div class="c-code__line">      <span class="c-code__stringliteral">&#39;license which can be obtained on a trial basis or purchased from our\n&#39;</span> +</div>
-<div class="c-code__line">      <span class="c-code__stringliteral">&#39;pricing page http://51degrees.com/pricing. You must supply the license &#39;</span> +</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;pricing page https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.onpremise-examples-onpremise-updatedatafile-console-updatedatafile.js&amp;utm_term=enterprise-license-required. You must supply the license &#39;</span> +</div>
 <div class="c-code__line">      <span class="c-code__stringliteral">&#39;key as an argument to this program, or as an environment or system variable &#39;</span> +</div>
 <div class="c-code__line">      `named <span class="c-code__stringliteral">&#39;${UPDATE_EXAMPLE_LICENSE_KEY_NAME}&#39;</span>`);</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> Error(<span class="c-code__stringliteral">&#39;No license key available&#39;</span>);</div>
@@ -338,7 +338,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2upd
 <div class="c-code__line">    <span class="c-code__comment">// Enable automatic updates once the pipeline has started</span></div>
 <div class="c-code__line">    autoUpdate: <span class="c-code__keyword">true</span>,</div>
 <div class="c-code__line">    <span class="c-code__comment">// For automatic updates to work you will need to provide a license key.</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// A license key can be obtained with a subscription from https://51degrees.com/pricing</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// A license key can be obtained with a subscription from https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.onpremise-examples-onpremise-updatedatafile-console-updatedatafile.js&amp;utm_term=licencekeys</span></div>
 <div class="c-code__line">    licenceKeys: licenseKey,</div>
 <div class="c-code__line">    <span class="c-code__comment">// Enable update on startup, the auto update system</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// will be used to check for an update before the</span></div>

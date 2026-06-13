@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_mixed
 <li>How to retrieve device and IP intelligence results from a single pipeline</li>
 </ol>
 <p>This example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-dotnet-examples/blob/main/Examples/Cloud/Mixed/GettingStarted-Console/Program.cs">GitHub</a>.</p>
-<p>To run this example, create a Resource Key for free at <a href="https://configure.51degrees.com">https://configure.51degrees.com</a> and supply it via the appsettings.json file or the RESOURCE_KEY environment variable. By default the pipeline talks to cloud.51degrees.com; set 51D_CLOUD_ENDPOINT to point at a self-hosted Cloud service instead.</p>
+<p>To run this example, create a Resource Key for free at <a href="https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=ip-intelligence-dotnet-examples&amp;amp;utm_content=examples-cloud-mixed-gettingstarted-console-program.cs&amp;amp;utm_term=header">https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=ip-intelligence-dotnet-examples&amp;amp;utm_content=examples-cloud-mixed-gettingstarted-console-program.cs&amp;amp;utm_term=header</a> and supply it via the appsettings.json file or the 51DEGREES_RESOURCE_KEY environment variable. By default the pipeline talks to cloud.51degrees.com; set 51D_CLOUD_ENDPOINT to point at a self-hosted Cloud service instead.</p>
 <p>Required NuGet Dependencies:</p><ul>
 <li><a href="https://www.nuget.org/packages/FiftyOne.IpIntelligence/">FiftyOne.IpIntelligence</a></li>
 <li><a href="https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Json/">Microsoft.Extensions.Configuration.Json</a></li>
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_mixed
 <div class="c-code__line"> </div>
 <div class="c-code__line">                <span class="c-code__comment">// In this example, we use the FiftyOnePipelineBuilder and configure it from a file.</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// For more information about builders in general see the documentation at</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_concepts__configuration__builders__index.html</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-cloud-mixed-gettingstarted-console-program.cs&amp;utm_term=run</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                <span class="c-code__comment">// Create the pipeline using the service provider and the configured options.</span></div>
 <div class="c-code__line">                <span class="c-code__keyword">using</span> (var pipeline = <span class="c-code__keyword">new</span> FiftyOnePipelineBuilder(loggerFactory, serviceProvider)</div>
@@ -320,9 +320,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_mixed
 <div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;&#39;{ExampleUtils.CLOUD_RESOURCE_KEY_ENV_VAR}&#39;. The 51Degrees Cloud &quot;</span> +</div>
 <div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;service is accessed using a &#39;ResourceKey&#39;. For more information &quot;</span> +</div>
 <div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;see &quot;</span> +</div>
-<div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/_info__resource_keys.html. &quot;</span> +</div>
+<div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/_info__resource_keys.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-cloud-mixed-gettingstarted-console-program.cs&amp;utm_term=resource-key-required. &quot;</span> +</div>
 <div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;A resource key with the properties required by this example can be &quot;</span> +</div>
-<div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;created for free at https://configure.51degrees.com/1QWJwHxl. &quot;</span> +</div>
+<div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;created for free at https://configure.51degrees.com/1QWJwHxl?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-cloud-mixed-gettingstarted-console-program.cs&amp;utm_term=resource-key-required. &quot;</span> +</div>
 <div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;Once complete, populate the config file or environment variable &quot;</span> +</div>
 <div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;mentioned at the start of this message with the key.&quot;</span>);</div>
 <div class="c-code__line">                    }</div>
@@ -339,8 +339,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_mixed
 <div class="c-code__line">            <span class="c-code__comment">// Use the command line args to get the resource key if present.</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// Otherwise, get it from the environment variable.</span></div>
 <div class="c-code__line">            <span class="c-code__keywordtype">string</span> resourceKey = args.Length &gt; 0 ? args[0] :</div>
-<div class="c-code__line">                Environment.GetEnvironmentVariable(</div>
-<div class="c-code__line">                    ExampleUtils.CLOUD_RESOURCE_KEY_ENV_VAR);</div>
+<div class="c-code__line">                ExampleUtils.GetResourceKeyFromEnv();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Load the configuration file</span></div>
 <div class="c-code__line">            var config = <span class="c-code__keyword">new</span> ConfigurationBuilder()</div>

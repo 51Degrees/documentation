@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2userage
 <div class="c-code__line">let pipeline;</div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> setPipeline = (resourceKey) =&gt; {</div>
 <div class="c-code__line">  <span class="c-code__comment">// Create a new Device Detection pipeline and set the config.</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// You need to create a resource key at https://configure.51degrees.com</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// You need to create a resource key at https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-useragentclienthints-web-useragentclienthintsweb.js&amp;utm_term=setpipeline</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// and paste it into the code.</span></div>
 <div class="c-code__line">  pipeline = <span class="c-code__keyword">new</span> <a class="code hl_class" href="class_device_detection_cloud_pipeline_builder.html">DeviceDetectionCloudPipelineBuilder</a>({</div>
 <div class="c-code__line">    resourceKey</div>
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2userage
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> (myResourceKey === <span class="c-code__stringliteral">&#39;!!YOUR_RESOURCE_KEY!!&#39;</span> &amp;&amp;</div>
 <div class="c-code__line">  process.env.JEST_WORKER_ID === undefined) {</div>
 <div class="c-code__line">  console.log(<span class="c-code__stringliteral">&#39;You need to create a resource key at &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;https://configure.51degrees.com and paste it into the code, &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-useragentclienthints-web-useragentclienthintsweb.js&amp;utm_term=resource-key-required and paste it into the code, &#39;</span> +</div>
 <div class="c-code__line">        <span class="c-code__stringliteral">&#39;replacing !!YOUR_RESOURCE_KEY!!&#39;</span>);</div>
 <div class="c-code__line">} <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> http = require(<span class="c-code__stringliteral">&#39;http&#39;</span>);</div>
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2userage
 <div class="c-code__line">      <span class="c-code__comment">// requested. So set whatever headers are required by the browser in</span></div>
 <div class="c-code__line">      <span class="c-code__comment">// order to return the evidence needed by the pipeline.</span></div>
 <div class="c-code__line">      <span class="c-code__comment">// More info on this can be found at</span></div>
-<div class="c-code__line">      <span class="c-code__comment">// https://51degrees.com/blog/user-agent-client-hints</span></div>
+<div class="c-code__line">      <span class="c-code__comment">// https://51degrees.com/blog/user-agent-client-hints?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-useragentclienthints-web-useragentclienthintsweb.js&amp;utm_term=server</span></div>
 <div class="c-code__line">      core.Helpers.setResponseHeaders(res, flowData);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">      res.setHeader(<span class="c-code__stringliteral">&#39;Content-Type&#39;</span>, <span class="c-code__stringliteral">&#39;text/html&#39;</span>);</div>

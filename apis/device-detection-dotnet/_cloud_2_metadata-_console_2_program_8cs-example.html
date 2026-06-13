@@ -196,8 +196,7 @@ You can create a Resource Key using the 51Degrees
 <div class="c-code__line">            <span class="c-code__comment">// Use the command line args to get the resource key if present.</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// Otherwise, get it from the environment variable.</span></div>
 <div class="c-code__line">            <span class="c-code__keywordtype">string</span> resourceKey = args.Length &gt; 0 ? args[0] :</div>
-<div class="c-code__line">                Environment.GetEnvironmentVariable(</div>
-<div class="c-code__line">                    ExampleUtils.CLOUD_RESOURCE_KEY_ENV_VAR);</div>
+<div class="c-code__line">                ExampleUtils.GetResourceKeyFromEnv();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Configure a logger to output to the console.</span></div>
 <div class="c-code__line">            var loggerFactory = LoggerFactory.Create(b =&gt; b.AddConsole());</div>
@@ -210,8 +209,11 @@ You can create a Resource Key using the 51Degrees
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;&#39;{ExampleUtils.CLOUD_RESOURCE_KEY_ENV_VAR}&#39;. The 51Degrees cloud service is &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;accessed using a &#39;ResourceKey&#39;. For more information see &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/_info__resource_keys.html. &quot;</span> +</div>
-<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;A resource key with the properties required by this example can be &quot;</span> +</div>
-<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;created for free at https://configure.51degrees.com/1QWJwHxl. &quot;</span> +</div>
+<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;A free resource key can be created at &quot;</span> +</div>
+<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;https://configure.51degrees.com/Wkqxf3Bs and populates the free &quot;</span> +</div>
+<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;properties. With a paid subscription, a key created at &quot;</span> +</div>
+<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;https://configure.51degrees.com/hYzn3TV3 includes all the &quot;</span> +</div>
+<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;properties used by this example. &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;Once complete, supply the resource key as a command line argument or via &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;the environment variable mentioned at the start of this message.&quot;</span>);</div>
 <div class="c-code__line">            }</div>

@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <p>As well as explaining the basic operation of off line processing using the defaults, for advanced operation this example can be used to experiment with tuning IP Intelligence for performance and predictive power using Performance Profile, Graph and Difference and Drift settings.</p>
 <p>Evidence files can be obtained from the <a href="https://github.com/51Degrees/ip-intelligence-data">ip-intelligence-data repository</a>.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-dotnet-examples/blob/master/Examples/OnPremise/OfflineProcessing-Console/Program.cs">GitHub</a>.</p>
-<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us">contact us</a>.</p>
+<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=header">contact us</a>.</p>
 <p>Required NuGet Dependencies:</p><ul>
 <li><a href="https://www.nuget.org/packages/FiftyOne.IpIntelligence/">FiftyOne.IpIntelligence</a></li>
 <li><a href="https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console/">Microsoft.Extensions.Logging.Console</a></li>
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                var logger = loggerFactory.CreateLogger&lt;Program&gt;();</div>
 <div class="c-code__line">                <span class="c-code__comment">// In this example, we use the IpiPipelineBuilder and configure it</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// in code. For more information about builders in general see the documentation at</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_concepts__configuration__builders__index.html</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                <span class="c-code__comment">// Note that we wrap the creation of a pipeline in a using to control its life cycle</span></div>
 <div class="c-code__line">                <span class="c-code__keyword">using</span> (var pipeline = <span class="c-code__keyword">new</span> IpiPipelineBuilder(loggerFactory)</div>
@@ -141,8 +141,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                    <span class="c-code__comment">// data file is paged from disk rather than loaded entirely into RAM.</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// See the documentation for more detail on this and other</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// configuration options.</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
 <div class="c-code__line">                    .SetPerformanceProfile(PerformanceProfiles.LowMemory)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Inhibit sharing usage for this example.</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// In general, off line processing usage should NOT be shared back to 51Degrees.</span></div>
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                    <span class="c-code__comment">// in order to help us improve the detection, then</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// this additional data will need to be collected and included as evidence</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// to the Pipeline. See</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html#Low_Level_Usage_Sharing</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run#Low_Level_Usage_Sharing</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// for more details on this.</span></div>
 <div class="c-code__line">                    .SetShareUsage(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Inhibit auto-update of the data file for this example</span></div>
@@ -241,8 +241,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                <span class="c-code__comment">//</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// Note that the Lite data file is only used for illustration, and has limited accuracy</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// and capabilities. Find out about the Enterprise data file on our pricing page:</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/pricing</span></div>
-<div class="c-code__line">                <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.ExampleUtils.FindFile(Constants.ENTERPRISE_IPI_DATA_FILE_NAME);</div>
+<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=main</span></div>
+<div class="c-code__line">                <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.ExampleUtils.FindDataFile(Constants.ENTERPRISE_IPI_DATA_FILE_NAME);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            File.WriteAllText(<span class="c-code__stringliteral">&quot;OfflineProcessing_DataFileName.txt&quot;</span>, dataFile);</div>
 <div class="c-code__line"> </div>

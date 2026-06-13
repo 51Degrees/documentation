@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_getti
 <p>This example demonstrates how to use IP Intelligence with the 51Degrees Cloud service in a web application. The Cloud service provides up-to-date IP intelligence data without requiring local data files.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-dotnet-examples/blob/main/Examples/Cloud/GettingStarted-Web/Program.cs">GitHub</a>.</p>
 <p>Required setup:</p><ul>
-<li>Cloud resource key (get your free key at <a href="https://configure.51degrees.com">https://configure.51degrees.com</a>)</li>
+<li>Cloud resource key (get your free key at <a href="https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=ip-intelligence-dotnet-examples&amp;amp;utm_content=examples-cloud-gettingstarted-web-program.cs&amp;amp;utm_term=header">https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=ip-intelligence-dotnet-examples&amp;amp;utm_content=examples-cloud-gettingstarted-web-program.cs&amp;amp;utm_term=header</a>)</li>
 <li>Configure the resource key in appsettings.json or via environment variables</li>
 <li>Optionally, configure a custom endpoint URL for private Cloud services</li>
 </ul>
@@ -180,8 +180,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_getti
 <div class="c-code__line">                var resourceKeyConfigKey = $<span class="c-code__stringliteral">&quot;PipelineOptions:Elements:{cloudEngineIndex}&quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;:BuildParameters:ResourceKey&quot;</span>;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">                <span class="c-code__keywordtype">string</span> resourceKey = Environment.GetEnvironmentVariable(</div>
-<div class="c-code__line">                        ExampleUtils.CLOUD_RESOURCE_KEY_ENV_VAR);</div>
+<div class="c-code__line">                <span class="c-code__keywordtype">string</span> resourceKey = ExampleUtils.GetResourceKeyFromEnv();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrEmpty(resourceKey) == <span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                {</div>
@@ -194,9 +193,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_getti
 <div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;&#39;appsettings.json&#39; or the environment variable &quot;</span> +</div>
 <div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;&#39;{ExampleUtils.CLOUD_RESOURCE_KEY_ENV_VAR}&#39;. The 51Degrees Cloud &quot;</span> +</div>
 <div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;service is accessed using a &#39;ResourceKey&#39;. For more information &quot;</span> +</div>
-<div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;see https://51degrees.com/documentation/_info__resource_keys.html. &quot;</span> +</div>
+<div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;see https://51degrees.com/documentation/_info__resource_keys.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-cloud-gettingstarted-web-program.cs&amp;utm_term=resource-key-required. &quot;</span> +</div>
 <div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;A resource key with the properties required by this example can be &quot;</span> +</div>
-<div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;created for free at https://configure.51degrees.com/1QWJwHxl. &quot;</span> +</div>
+<div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;created for free at https://configure.51degrees.com/1QWJwHxl?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-cloud-gettingstarted-web-program.cs&amp;utm_term=resource-key-required. &quot;</span> +</div>
 <div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;Once complete, populate the config file or environment variable &quot;</span> +</div>
 <div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;mentioned at the start of this message with the key.&quot;</span>);</div>
 <div class="c-code__line">                }</div>

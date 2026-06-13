@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <li>How to retrieve IP Intelligence results in your web pages</li>
 </ol>
 <p>The source code for this example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-dotnet-examples/tree/master/Examples/OnPremise/Framework-Web">GitHub</a>.</p>
-<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us">contact us</a>.</p>
+<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-framework-web-default.aspx.cs&amp;utm_term=header">contact us</a>.</p>
 <p>Required NuGet Dependencies:</p><ul>
 <li><a href="https://www.nuget.org/packages/FiftyOne.IpIntelligence/">FiftyOne.IpIntelligence</a></li>
 <li><a href="https://www.nuget.org/packages/FiftyOne.Pipeline.Web/">FiftyOne.Pipeline.Web</a></li>
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 </div><!-- fragment --><h2>Configuration</h2>
 <p>By default, a 51Degrees.json file is used to supply the Pipeline configuration. For more details about the available options, check the relevant builder classes. For example, the CloudRequestEngineBuilder. The methods available on the builder are the same as those that will be available in the configuration file.</p>
 <p>Note that you will need to update the configuration with the complete path to a data file. The free 'lite' file is included with this repository under the path <code>ip-intelligence-data</code></p>
-<p>Alternatively, you can obtain a <a href="http://51degrees.com/pricing">license key</a> which can be used to download a data file from our <a href="https://51degrees.com/documentation/_info__distributor.html">Distributor</a> service.</p>
+<p>Alternatively, you can obtain a <a href="https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-framework-web-default.aspx.cs&amp;utm_term=header">license key</a> which can be used to download a data file from our <a href="https://51degrees.com/documentation/_info__distributor.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-framework-web-default.aspx.cs&amp;utm_term=header">Distributor</a> service.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">{  </div>
 <div class="c-code__line">  // For a sample configuration file demonstrating all available options, see </div>
 <div class="c-code__line">  // https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/sample-configuration.json</div>
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">        {</div>
 <div class="c-code__line">            <span class="c-code__comment">// Modify the configuration to a full path to the data file if the standard example is being used.</span></div>
 <div class="c-code__line">            var configFile = <span class="c-code__keyword">new</span> FileInfo(HttpContext.Current.Server.MapPath(<span class="c-code__stringliteral">&quot;~/App_Data/51Degrees.json&quot;</span>));</div>
-<div class="c-code__line">            var fullPath = ExampleUtils.FindFile(<span class="c-code__stringliteral">&quot;51Degrees-LiteV41.ipi&quot;</span>, configFile.Directory);</div>
+<div class="c-code__line">            var fullPath = ExampleUtils.FindDataFile(<span class="c-code__stringliteral">&quot;51Degrees-LiteV41.ipi&quot;</span>, configFile.Directory);</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> (String.IsNullOrEmpty(fullPath) == <span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                var config = File.ReadAllText(configFile.FullName);</div>
@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                WARNING: You are using the free &#39;Lite&#39; data file. This does not include the client-side</div>
 <div class="c-code__line">                evidence capabilities of the paid-for data file, so you will not see any additional</div>
 <div class="c-code__line">                data below. Find out about the Enterprise data file on our</div>
-<div class="c-code__line">                &lt;a href=&quot;https://51degrees.com/pricing&quot;&gt;pricing page&lt;/a&gt;.</div>
+<div class="c-code__line">                &lt;a href=&quot;https://51degrees.com/pricing?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=ip-intelligence-dotnet-examples&amp;amp;utm_content=examples-onpremise-framework-web-default.aspx&amp;amp;utm_term=response-headers&quot;&gt;pricing page&lt;/a&gt;.</div>
 <div class="c-code__line">            &lt;/div&gt;</div>
 <div class="c-code__line">        &lt;% } %&gt;</div>
 <div class="c-code__line">    &lt;/div&gt;   </div>

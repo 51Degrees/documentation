@@ -184,13 +184,32 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            var dataFileConfigKey = $<span class="c-code__stringliteral">&quot;PipelineOptions:Elements:{ipiEngineIndex}&quot;</span> +</div>
 <div class="c-code__line">                                    $<span class="c-code__stringliteral">&quot;:BuildParameters:DataFile&quot;</span>;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment">// Use the command line argument if provided, otherwise use the appsettings.json value.</span></div>
-<div class="c-code__line">            var dataFile = dataFileOverride ?? options.GetIpiDataFile();</div>
+<div class="c-code__line">            <span class="c-code__comment">// Use the command line argument if provided. Otherwise, an explicit data file</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// path supplied in an environment variable takes precedence over the value in</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// the configuration file. The aligned &#39;51DEGREES_IPI_PATH&#39; variable is checked</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// first, followed by the legacy &#39;IPINTELLIGENCEDATAFILE&#39; variable.</span></div>
+<div class="c-code__line">            var dataFile = dataFileOverride;</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(dataFile))</div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                dataFile = Environment.GetEnvironmentVariable(</div>
+<div class="c-code__line">                    <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.Constants.IP_INTELLIGENCE_DATA_FILE_ENV_VAR);</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(dataFile))</div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                dataFile = Environment.GetEnvironmentVariable(</div>
+<div class="c-code__line">                    <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.Constants.LEGACY_IP_INTELLIGENCE_DATA_FILE_ENV_VAR);</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(dataFile))</div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                dataFile = options.GetIpiDataFile();</div>
+<div class="c-code__line">            }</div>
 <div class="c-code__line">            var foundDataFile = <span class="c-code__keyword">false</span>;</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrEmpty(dataFile))</div>
 <div class="c-code__line">            {</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> Exception($<span class="c-code__stringliteral">&quot;A data file must be specified as a command line argument &quot;</span> +</div>
-<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;or in the appsettings.json file.&quot;</span>);</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> Exception($<span class="c-code__stringliteral">&quot;A data file must be specified as a command line &quot;</span> +</div>
+<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;argument, in the appsettings.json file, or in the &quot;</span> +</div>
+<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;&#39;{Examples.Constants.IP_INTELLIGENCE_DATA_FILE_ENV_VAR}&#39; environment &quot;</span> +</div>
+<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;variable.&quot;</span>);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">            <span class="c-code__comment">// The data file location provided in the configuration may be using an absolute or</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// relative path. If it is relative then search for a matching file using the </span></div>
@@ -277,7 +296,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">}</div>
 <div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_html"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngine</a></div><div class="ttdoc">IP intelligence engine.</div><div class="ttdef"><b>Definition</b> IpiOnPremiseEngine.cs:50</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants_html"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants.html">FiftyOne.IpIntelligence.Examples.Constants</a></div><div class="ttdef"><b>Definition</b> FiftyOne.IpIntelligence.Examples/Constants.cs:28</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants_html_ae57c252ee1e88e980e3699e63bdf9f12"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants.html#ae57c252ee1e88e980e3699e63bdf9f12">FiftyOne.IpIntelligence.Examples.Constants.AllUrls</a></div><div class="ttdeci">static string[] AllUrls</div><div class="ttdoc">The URLs that the web server should listen on.</div><div class="ttdef"><b>Definition</b> FiftyOne.IpIntelligence.Examples/Constants.cs:75</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants_html_ae57c252ee1e88e980e3699e63bdf9f12"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants.html#ae57c252ee1e88e980e3699e63bdf9f12">FiftyOne.IpIntelligence.Examples.Constants.AllUrls</a></div><div class="ttdeci">static string[] AllUrls</div><div class="ttdoc">The URLs that the web server should listen on.</div><div class="ttdef"><b>Definition</b> FiftyOne.IpIntelligence.Examples/Constants.cs:85</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_web_1_1_program_html_a93387ff8740a20e7fac4ed6f11f4a32b"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_web_1_1_program.html#a93387ff8740a20e7fac4ed6f11f4a32b">FiftyOne.IpIntelligence.Examples.Mixed.OnPremise.GettingStartedWeb.Program.Run</a></div><div class="ttdeci">static Task Run(string[] args, CancellationToken stopToken=default)</div><div class="ttdoc">Used by unit tests to run the example in an almost identical manner to a developer using the example.</div><div class="ttdef"><b>Definition</b> OnPremise/Mixed/GettingStarted-Web/Program.cs:76</div></div>
 <div class="ttc" id="anamespace_examples_html"><div class="ttname"><a href="namespace_examples.html">Examples</a></div><div class="ttdef"><b>Definition</b> Calculations.cs:31</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements.html">FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements</a></div><div class="ttdef"><b>Definition</b> IpiOnPremiseEngine.cs:43</div></div>

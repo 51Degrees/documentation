@@ -71,10 +71,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:ae7c8735d92534fd34cc34d8137eebb0d" id="r_ae7c8735d92534fd34cc34d8137eebb0d"><td class="c-table__cell">static&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#ae7c8735d92534fd34cc34d8137eebb0d">getResourceKey</a> (String legacyKeyName)</td></tr>
+<tr class="c-table__row memdesc:ae7c8735d92534fd34cc34d8137eebb0d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Obtain a resource key from an environment variable or a system property.  <br /></td></tr>
 <tr class="c-table__row memitem:a4fc189c83423c5bf673b723d9c636e08" id="r_a4fc189c83423c5bf673b723d9c636e08"><td class="c-table__cell">static&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a4fc189c83423c5bf673b723d9c636e08">getNamedKey</a> (String keyName)</td></tr>
 <tr class="c-table__row memdesc:a4fc189c83423c5bf673b723d9c636e08"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Obtain a key either from environment variable or from a property.  <br /></td></tr>
 <tr class="c-table__row memitem:a1abb747c8ab81cceb6cbcb704a2dc77a" id="r_a1abb747c8ab81cceb6cbcb704a2dc77a"><td class="c-table__cell">static&#160;boolean&#160;</td><td class="c-table__cell"><a class="el" href="#a1abb747c8ab81cceb6cbcb704a2dc77a">isInvalidKey</a> (String keyValue)</td></tr>
 <tr class="c-table__row memdesc:a1abb747c8ab81cceb6cbcb704a2dc77a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Evaluate whether a key might be valid.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a4d51df535b6c281ac6e5776d7f2f5cf8" id="r_a4d51df535b6c281ac6e5776d7f2f5cf8"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a4d51df535b6c281ac6e5776d7f2f5cf8">RESOURCE_KEY_ENV_VAR</a> = &quot;51DEGREES_RESOURCE_KEY&quot;</td></tr>
+<tr class="c-table__row memdesc:a4d51df535b6c281ac6e5776d7f2f5cf8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Name of the aligned environment variable or system property which supplies the resource key.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a4fc189c83423c5bf673b723d9c636e08" name="a4fc189c83423c5bf673b723d9c636e08"></a>
@@ -106,6 +113,44 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Obtain a key either from environment variable or from a property. </p>
 <p>Try resource key as env var, then as upper case env var, the system property </p>
+
+</div>
+</div>
+<a id="ae7c8735d92534fd34cc34d8137eebb0d" name="ae7c8735d92534fd34cc34d8137eebb0d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae7c8735d92534fd34cc34d8137eebb0d">&#9670;&#160;</a></span>getResourceKey()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">String fiftyone.ipintelligence.shared.testhelpers.KeyUtils.getResourceKey </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>legacyKeyName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Obtain a resource key from an environment variable or a system property. </p>
+<p>The aligned name <code><a class="el" href="#a4d51df535b6c281ac6e5776d7f2f5cf8">RESOURCE_KEY_ENV_VAR</a></code> is checked first and the supplied legacy name is checked second. Each name is looked up using <code><a class="el" href="#a4fc189c83423c5bf673b723d9c636e08">getNamedKey(String)</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">legacyKeyName</td><td>legacy name to try when the aligned name is not set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the resource key, or null if neither name is set </dd></dl>
 
 </div>
 </div>
@@ -144,6 +189,36 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">boolean </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a4d51df535b6c281ac6e5776d7f2f5cf8" name="a4d51df535b6c281ac6e5776d7f2f5cf8"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4d51df535b6c281ac6e5776d7f2f5cf8">&#9670;&#160;</a></span>RESOURCE_KEY_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final String fiftyone.ipintelligence.shared.testhelpers.KeyUtils.RESOURCE_KEY_ENV_VAR = &quot;51DEGREES_RESOURCE_KEY&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Name of the aligned environment variable or system property which supplies the resource key. </p>
+<p>This name is checked before any legacy name. </p>
 
 </div>
 </div>

@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud-_u_a_c_
 <p>This example demonstrates device detection using user-agent client hints in a real-world scenario. When a clint-hints-enabled user first visits a website, the server will recieve the sec-ch-ua and sec-ch-ua-mobile headers. Along with the user-agent. This information is then used to determine if the client supports user-agent client hints and request them if needed by setting the Accept-CH header in the response. Clicking the button below will cause a new request to be sent to the server, along with any additional headers that have been requested.  </p>
 <p>The source code for this example is available in full on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/tree/version/4.5/Examples/Legacy%20Web/Cloud-UACH">GitHub</a>.</p>
 <p>To use the cloud service you will need to create a <b>resource key</b>. The resource key is used as short-hand to store the particular set of properties you are interested in as well as any associated license keys that entitle you to increased request limits and/or paid-for properties.</p>
-<p>You can create a resource key using the 51Degrees <a href="https://configure.51degrees.com/X9F2f6Zm">Configurator</a>. The properties used in this example are: HardwareVendor, HardwareName, DeviceType PlatformVendor, PlatformName, PlatformVersion BrowserVendor, BrowserName, BrowserVersion SetHeaderBrowserAccept-CH, SetHeaderHardwareAccept-CH, SetHeaderPlatformAccept-CH</p>
+<p>You can create a free resource key using the 51Degrees <a href="https://configure.51degrees.com/Wkqxf3Bs">Configurator</a>. The properties used in this example are: HardwareVendor, HardwareName, DeviceType PlatformVendor, PlatformName, PlatformVersion BrowserVendor, BrowserName, BrowserVersion SetHeaderBrowserAccept-CH, SetHeaderHardwareAccept-CH, SetHeaderPlatformAccept-CH</p>
 <p>Required NuGet Dependencies:</p><ul>
 <li><a href="https://www.nuget.org/packages/Microsoft.AspNetCore.App/">Microsoft.AspNetCore.App</a></li>
 <li><a href="https://www.nuget.org/packages/FiftyOne.DeviceDetection/">FiftyOne.DeviceDetection</a></li>
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud-_u_a_c_
 <div class="c-code__line">                     resourceKey.ToString().StartsWith(<span class="c-code__stringliteral">&quot;!!&quot;</span>)))</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> Exception(<span class="c-code__stringliteral">&quot;You need to create a resource key at &quot;</span> +</div>
-<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;https://configure.51degrees.com/X9F2f6Zm and paste &quot;</span> +</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;https://configure.51degrees.com/Wkqxf3Bs and paste &quot;</span> +</div>
 <div class="c-code__line">                        <span class="c-code__stringliteral">&quot;it into the appsettings.json file in this example.&quot;</span>);</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>

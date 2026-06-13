@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="51Degrees Nginx Module Internals - A device detection module for Nginx - 51Degrees documentation."/>
-<title>51Degrees Device Detection Nginx: 51Degrees Nginx Module Internals</title>
+<meta name="description" content="51Degrees Device Detection Nginx Module - A device detection module for Nginx - 51Degrees documentation."/>
+<title>51Degrees Device Detection Nginx: 51Degrees Device Detection Nginx Module</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -63,11 +63,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__ngx__ht
 </script>
 <div id="doc-content" class="g-docs__content">
 <div class="g-docs__header">
-<h1 class="g-docs__page-title">51Degrees Nginx Module Internals </h1></div><!--header-->
+<h1 class="g-docs__page-title">51Degrees Device Detection Nginx Module </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"></div><table class="c-table c-table--directory">
+<div class="textblock"><p>Internals. </p>
+</div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-nested-classes" class="g-docs__section-heading"><a id="nested-classes" name="nested-classes"></a>
 Structs</h2></td></tr>
 <tr class="c-table__row memitem:ngx_5Fhttp_5F51D_5Fdata_5Fto_5Fset" id="r_ngx_5Fhttp_5F51D_5Fdata_5Fto_5Fset"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structngx__http__51_d__data__to__set__t.html">ngx_http_51D_data_to_set</a></td></tr>
@@ -188,6 +189,8 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:gad84d1f4188e1ad716720f037c5e60082"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Report the insufficient memory since memory allocation is a common activity.  <br /></td></tr>
 <tr class="c-table__row memitem:ga1ac7b6d1b57a3019f0092095038ba282" id="r_ga1ac7b6d1b57a3019f0092095038ba282"><td class="c-table__cell">static&#160;ConfigHash&#160;</td><td class="c-table__cell"><a class="el" href="#ga1ac7b6d1b57a3019f0092095038ba282">get_config_hash</a> (<a class="el" href="structngx__http__51_d__main__conf__t.html">ngx_http_51D_main_conf_t</a> *fdmcf)</td></tr>
 <tr class="c-table__row memdesc:ga1ac7b6d1b57a3019f0092095038ba282"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a <a class="elRef" href="../../device-detection-cxx/4.4/structfiftyone_degrees_config_hash.html">fiftyoneDegreesConfigHash</a> instance based on the main configuration.  <br /></td></tr>
+<tr class="c-table__row memitem:ga5f2bee378ca022e9dd669ef60f7f88ca" id="r_ga5f2bee378ca022e9dd669ef60f7f88ca"><td class="c-table__cell">static&#160;PropertiesRequired&#160;</td><td class="c-table__cell"><a class="el" href="#ga5f2bee378ca022e9dd669ef60f7f88ca">get_properties_hash</a> (<a class="el" href="structngx__http__51_d__main__conf__t.html">ngx_http_51D_main_conf_t</a> *fdmcf)</td></tr>
+<tr class="c-table__row memdesc:ga5f2bee378ca022e9dd669ef60f7f88ca"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a fiftyoneDegreesPropertiesRequired instance restricted to the properties named in the configuration directives, which are accumulated in the main configuration.  <br /></td></tr>
 <tr class="c-table__row memitem:ga8e9fa8338cada20952ccaafdcfa761f9" id="r_ga8e9fa8338cada20952ccaafdcfa761f9"><td class="c-table__cell">static&#160;ngx_int_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga8e9fa8338cada20952ccaafdcfa761f9">ngx_http_51D_post_conf</a> (ngx_conf_t *cf)</td></tr>
 <tr class="c-table__row memdesc:ga8e9fa8338cada20952ccaafdcfa761f9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Module post config.  <br /></td></tr>
 <tr class="c-table__row memitem:gaaa8febdf539cee13f63e363e9e5541b4" id="r_gaaa8febdf539cee13f63e363e9e5541b4"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#gaaa8febdf539cee13f63e363e9e5541b4">ngx_http_51D_init_match_conf</a> (<a class="el" href="structngx__http__51_d__match__conf__t.html">ngx_http_51D_match_conf_t</a> *matchConf)</td></tr>
@@ -512,12 +515,12 @@ static&#160;const&#160;char&#160;*const&#160;</td><td class="c-table__cell"><b>N
 </div><div class="c-member__body">
 
 <p>Add value function. </p>
-<p>Appends a string to a list separated by the delimiter specified with 51D_valueSeparator, or a comma by default. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Appends a string to a list separated by the delimiter specified with 51D_valueSeparator, or a comma by default. Values which do not fit in the remaining space are truncated. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">delimiter</td><td>to split values with. </td></tr>
     <tr><td class="paramname">val</td><td>the string to add to dst. </td></tr>
     <tr><td class="paramname">dst</td><td>the string to append the val to. </td></tr>
-    <tr><td class="paramname">length</td><td>the size remaining to append val to dst. </td></tr>
+    <tr><td class="paramname">length</td><td>the space remaining in dst, including the null terminator. </td></tr>
   </table>
   </dd>
 </dl>
@@ -775,6 +778,44 @@ static&#160;const&#160;char&#160;*const&#160;</td><td class="c-table__cell"><b>N
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the evidence </dd></dl>
+
+</div>
+</div>
+<a id="ga5f2bee378ca022e9dd669ef60f7f88ca" name="ga5f2bee378ca022e9dd669ef60f7f88ca"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga5f2bee378ca022e9dd669ef60f7f88ca">&#9670;&#160;</a></span>get_properties_hash()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">PropertiesRequired get_properties_hash </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structngx__http__51_d__main__conf__t.html">ngx_http_51D_main_conf_t</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>fdmcf</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Get a fiftyoneDegreesPropertiesRequired instance restricted to the properties named in the configuration directives, which are accumulated in the main configuration. </p>
+<p>Detection only evaluates the components which the required properties belong to, so initialising the data set with all of its properties makes every match considerably more expensive. All of the data file's properties are initialised when no data set properties are named, or when response headers are enabled, as the SetHeader properties used by 51D_set_resp_headers are discovered from the data file rather than named in directives. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fdmcf</td><td>main configuration </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">fiftyoneDegreesPropertiesRequired instance </dd></dl>
 
 </div>
 </div>
@@ -2910,17 +2951,17 @@ static&#160;const&#160;char&#160;*const&#160;</td><td class="c-table__cell"><b>N
 <div class="c-code__line">    <a class="code hl_function" href="#ga69107d313bb076e916dde12ad606af57">ngx_http_51D_exit_master</a>,      </div>
 <div class="c-code__line">    NGX_MODULE_V1_PADDING</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga1c8812c50f754b7f48922770e26b2dd9"><div class="ttname"><a href="#ga1c8812c50f754b7f48922770e26b2dd9">ngx_http_51D_exit_process</a></div><div class="ttdeci">void ngx_http_51D_exit_process(ngx_cycle_t *cycle)</div><div class="ttdoc">Exit process function.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:1452</div></div>
-<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga27b0da03ff7f25da84157213b7be5b4a"><div class="ttname"><a href="#ga27b0da03ff7f25da84157213b7be5b4a">ngx_http_51D_init_module</a></div><div class="ttdeci">static ngx_int_t ngx_http_51D_init_module(ngx_cycle_t *cycle)</div><div class="ttdoc">Init module function.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:879</div></div>
-<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga29a22a2cd1f6899dce6c8575fed6354d"><div class="ttname"><a href="#ga29a22a2cd1f6899dce6c8575fed6354d">ngx_http_51D_commands</a></div><div class="ttdeci">static ngx_command_t ngx_http_51D_commands[]</div><div class="ttdoc">Definitions of functions which can be called from the config file.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:1000</div></div>
-<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga3021f696a2c0a4d5b8fedac03cda3104"><div class="ttname"><a href="#ga3021f696a2c0a4d5b8fedac03cda3104">ngx_http_51D_init_process</a></div><div class="ttdeci">static ngx_int_t ngx_http_51D_init_process(ngx_cycle_t *cycle)</div><div class="ttdoc">Init process function.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:1410</div></div>
-<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga69107d313bb076e916dde12ad606af57"><div class="ttname"><a href="#ga69107d313bb076e916dde12ad606af57">ngx_http_51D_exit_master</a></div><div class="ttdeci">void ngx_http_51D_exit_master(ngx_cycle_t *cycle)</div><div class="ttdoc">Exit master process.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:1477</div></div>
-<div class="ttc" id="agroup__ngx__http__51_d__module_html_gabc974c21ea286e4b9941425f71726278"><div class="ttname"><a href="#gabc974c21ea286e4b9941425f71726278">ngx_http_51D_module_ctx</a></div><div class="ttdeci">static ngx_http_module_t ngx_http_51D_module_ctx</div><div class="ttdoc">Module context.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:1183</div></div>
+<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga1c8812c50f754b7f48922770e26b2dd9"><div class="ttname"><a href="#ga1c8812c50f754b7f48922770e26b2dd9">ngx_http_51D_exit_process</a></div><div class="ttdeci">void ngx_http_51D_exit_process(ngx_cycle_t *cycle)</div><div class="ttdoc">Exit process function.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:1485</div></div>
+<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga27b0da03ff7f25da84157213b7be5b4a"><div class="ttname"><a href="#ga27b0da03ff7f25da84157213b7be5b4a">ngx_http_51D_init_module</a></div><div class="ttdeci">static ngx_int_t ngx_http_51D_init_module(ngx_cycle_t *cycle)</div><div class="ttdoc">Init module function.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:912</div></div>
+<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga29a22a2cd1f6899dce6c8575fed6354d"><div class="ttname"><a href="#ga29a22a2cd1f6899dce6c8575fed6354d">ngx_http_51D_commands</a></div><div class="ttdeci">static ngx_command_t ngx_http_51D_commands[]</div><div class="ttdoc">Definitions of functions which can be called from the config file.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:1033</div></div>
+<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga3021f696a2c0a4d5b8fedac03cda3104"><div class="ttname"><a href="#ga3021f696a2c0a4d5b8fedac03cda3104">ngx_http_51D_init_process</a></div><div class="ttdeci">static ngx_int_t ngx_http_51D_init_process(ngx_cycle_t *cycle)</div><div class="ttdoc">Init process function.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:1443</div></div>
+<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga69107d313bb076e916dde12ad606af57"><div class="ttname"><a href="#ga69107d313bb076e916dde12ad606af57">ngx_http_51D_exit_master</a></div><div class="ttdeci">void ngx_http_51D_exit_master(ngx_cycle_t *cycle)</div><div class="ttdoc">Exit master process.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:1510</div></div>
+<div class="ttc" id="agroup__ngx__http__51_d__module_html_gabc974c21ea286e4b9941425f71726278"><div class="ttname"><a href="#gabc974c21ea286e4b9941425f71726278">ngx_http_51D_module_ctx</a></div><div class="ttdeci">static ngx_http_module_t ngx_http_51D_module_ctx</div><div class="ttdoc">Module context.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:1216</div></div>
 </div><!-- fragment -->
 <p>Global module declaration. </p>
 <p>Module definition.</p>
 <p>Set the module context, commands, type and init function. </p>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="hash_2config_8conf-example.html#_a0">hash/config.conf</a>, <a class="el" href="hash_2getting_started_8conf-example.html#_a0">hash/gettingStarted.conf</a>, <a class="el" href="hash_2js_example_2javascript_8conf-example.html#_a0">hash/jsExample/javascript.conf</a>, <a class="el" href="hash_2match_metrics_8conf-example.html#_a0">hash/matchMetrics.conf</a>, <a class="el" href="hash_2match_query_8conf-example.html#_a0">hash/matchQuery.conf</a>, and <a class="el" href="hash_2response_headers_2response_header_8conf-example.html#_a0">hash/responseHeaders/responseHeader.conf</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="hash_2config_8conf-example.html#_a0">hash/config.conf</a>, <a class="el" href="hash_2getting_started_8conf-example.html#_a0">hash/gettingStarted.conf</a>, <a class="el" href="hash_2js_example_2javascript_8conf-example.html#_a0">hash/jsExample/javascript.conf</a>, <a class="el" href="hash_2match_metrics_8conf-example.html#_a0">hash/matchMetrics.conf</a>, <a class="el" href="hash_2match_query_8conf-example.html#_a0">hash/matchQuery.conf</a>, <a class="el" href="hash_2response_headers_2response_header_8conf-example.html#_a0">hash/responseHeaders/responseHeader.conf</a>, and <a class="el" href="mixed_2getting_started_8conf-example.html#_a0">mixed/gettingStarted.conf</a>.</dd>
 </dl>
 
 </div>
@@ -2961,12 +3002,12 @@ static&#160;const&#160;char&#160;*const&#160;</td><td class="c-table__cell"><b>N
 <div class="c-code__line">    <a class="code hl_function" href="#ga464383cf8639aef93b0779206b4613c5">ngx_http_51D_create_loc_conf</a>,  </div>
 <div class="c-code__line">    <a class="code hl_function" href="#ga7666f8a0491af240787820497e021590">ngx_http_51D_merge_loc_conf</a>,   </div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga036cb41b9a4aae3732fc25cded383d4d"><div class="ttname"><a href="#ga036cb41b9a4aae3732fc25cded383d4d">ngx_http_51D_create_srv_conf</a></div><div class="ttdeci">static void * ngx_http_51D_create_srv_conf(ngx_conf_t *cf)</div><div class="ttdoc">Forward declaration of ngx_http_51D_create_srv_conf.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:680</div></div>
-<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga28b0aabb174c73b72e80ad5f9cd7e118"><div class="ttname"><a href="#ga28b0aabb174c73b72e80ad5f9cd7e118">ngx_http_51D_merge_srv_conf</a></div><div class="ttdeci">static char * ngx_http_51D_merge_srv_conf(ngx_conf_t *cf, void *parent, void *child)</div><div class="ttdoc">Forward declaration of ngx_http_51D_merge_srv_conf.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:716</div></div>
-<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga464383cf8639aef93b0779206b4613c5"><div class="ttname"><a href="#ga464383cf8639aef93b0779206b4613c5">ngx_http_51D_create_loc_conf</a></div><div class="ttdeci">static void * ngx_http_51D_create_loc_conf(ngx_conf_t *cf)</div><div class="ttdoc">Forward declaration of ngx_http_51D_create_loc_conf.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:662</div></div>
-<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga7666f8a0491af240787820497e021590"><div class="ttname"><a href="#ga7666f8a0491af240787820497e021590">ngx_http_51D_merge_loc_conf</a></div><div class="ttdeci">static char * ngx_http_51D_merge_loc_conf(ngx_conf_t *cf, void *parent, void *child)</div><div class="ttdoc">Forward declaration of ngx_http_51D_merge_loc_conf.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:697</div></div>
-<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga840799dbe09bf709088a0818ba45adec"><div class="ttname"><a href="#ga840799dbe09bf709088a0818ba45adec">ngx_http_51D_create_main_conf</a></div><div class="ttdeci">static void * ngx_http_51D_create_main_conf(ngx_conf_t *cf)</div><div class="ttdoc">Forward declaration of ngx_http_51D_create_main_conf.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:621</div></div>
-<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga8e9fa8338cada20952ccaafdcfa761f9"><div class="ttname"><a href="#ga8e9fa8338cada20952ccaafdcfa761f9">ngx_http_51D_post_conf</a></div><div class="ttdeci">static ngx_int_t ngx_http_51D_post_conf(ngx_conf_t *cf)</div><div class="ttdoc">Module post config.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:503</div></div>
+<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga036cb41b9a4aae3732fc25cded383d4d"><div class="ttname"><a href="#ga036cb41b9a4aae3732fc25cded383d4d">ngx_http_51D_create_srv_conf</a></div><div class="ttdeci">static void * ngx_http_51D_create_srv_conf(ngx_conf_t *cf)</div><div class="ttdoc">Forward declaration of ngx_http_51D_create_srv_conf.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:713</div></div>
+<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga28b0aabb174c73b72e80ad5f9cd7e118"><div class="ttname"><a href="#ga28b0aabb174c73b72e80ad5f9cd7e118">ngx_http_51D_merge_srv_conf</a></div><div class="ttdeci">static char * ngx_http_51D_merge_srv_conf(ngx_conf_t *cf, void *parent, void *child)</div><div class="ttdoc">Forward declaration of ngx_http_51D_merge_srv_conf.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:749</div></div>
+<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga464383cf8639aef93b0779206b4613c5"><div class="ttname"><a href="#ga464383cf8639aef93b0779206b4613c5">ngx_http_51D_create_loc_conf</a></div><div class="ttdeci">static void * ngx_http_51D_create_loc_conf(ngx_conf_t *cf)</div><div class="ttdoc">Forward declaration of ngx_http_51D_create_loc_conf.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:695</div></div>
+<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga7666f8a0491af240787820497e021590"><div class="ttname"><a href="#ga7666f8a0491af240787820497e021590">ngx_http_51D_merge_loc_conf</a></div><div class="ttdeci">static char * ngx_http_51D_merge_loc_conf(ngx_conf_t *cf, void *parent, void *child)</div><div class="ttdoc">Forward declaration of ngx_http_51D_merge_loc_conf.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:730</div></div>
+<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga840799dbe09bf709088a0818ba45adec"><div class="ttname"><a href="#ga840799dbe09bf709088a0818ba45adec">ngx_http_51D_create_main_conf</a></div><div class="ttdeci">static void * ngx_http_51D_create_main_conf(ngx_conf_t *cf)</div><div class="ttdoc">Forward declaration of ngx_http_51D_create_main_conf.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:653</div></div>
+<div class="ttc" id="agroup__ngx__http__51_d__module_html_ga8e9fa8338cada20952ccaafdcfa761f9"><div class="ttname"><a href="#ga8e9fa8338cada20952ccaafdcfa761f9">ngx_http_51D_post_conf</a></div><div class="ttdeci">static ngx_int_t ngx_http_51D_post_conf(ngx_conf_t *cf)</div><div class="ttdoc">Module post config.</div><div class="ttdef"><b>Definition</b> ngx_http_51D_module.c:531</div></div>
 </div><!-- fragment -->
 <p>Module context. </p>
 <p>Sets the configuration functions. </p>

@@ -353,11 +353,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">string</span> CheckDataFile(<span class="c-code__keywordtype">string</span> dataFile, ILogger logger)</div>
 <div class="c-code__line">            {</div>
-<div class="c-code__line">                <span class="c-code__comment">// No filename specified use the default</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// No filename specified. Check the environment variables for an explicit</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// path before falling back to the default file name.</span></div>
 <div class="c-code__line">                <span class="c-code__keywordflow">if</span> (dataFile == <span class="c-code__keyword">null</span>)</div>
 <div class="c-code__line">                {</div>
-<div class="c-code__line">                    dataFile = Constants.ENTERPRISE_HASH_DATA_FILE_NAME;</div>
-<div class="c-code__line">                    logger.LogWarning($<span class="c-code__stringliteral">&quot;No filename specified. Using default &#39;{dataFile}&#39;&quot;</span>);</div>
+<div class="c-code__line">                    dataFile = Environment.GetEnvironmentVariable(</div>
+<div class="c-code__line">                        Constants.DEVICE_DETECTION_DATA_FILE_ENV_VAR);</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(dataFile))</div>
+<div class="c-code__line">                    {</div>
+<div class="c-code__line">                        dataFile = Environment.GetEnvironmentVariable(</div>
+<div class="c-code__line">                            Constants.LEGACY_DEVICE_DETECTION_DATA_FILE_ENV_VAR);</div>
+<div class="c-code__line">                    }</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(dataFile))</div>
+<div class="c-code__line">                    {</div>
+<div class="c-code__line">                        dataFile = Constants.ENTERPRISE_HASH_DATA_FILE_NAME;</div>
+<div class="c-code__line">                        logger.LogWarning($<span class="c-code__stringliteral">&quot;No filename specified. Using default &#39;{dataFile}&#39;&quot;</span>);</div>
+<div class="c-code__line">                    }</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">                <span class="c-code__comment">// Work out where the data file is if we don&#39;t have an absolute path.</span></div>
 <div class="c-code__line">                <span class="c-code__keywordflow">if</span> (dataFile != <span class="c-code__keyword">null</span> &amp;&amp; Path.IsPathRooted(dataFile) == <span class="c-code__keyword">false</span>)</div>

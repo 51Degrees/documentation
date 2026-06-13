@@ -96,14 +96,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_frame
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">var deviceDetectionPipeline = WebPipeline.GetInstance();</div>
 </div><!-- fragment --><h2>Configuration</h2>
 <p>By default, a 51Degrees.json file is used to supply the Pipeline configuration. For more details about the available options, check the relevant builder classes. For example, the CloudRequestEngineBuilder. The methods available on the builder are the same as those that will be available in the configuration file.</p>
-<p>Note that you will need to create a 'resource key' using our <a href="https://configure.51degrees.com/1QWJwHxl">configurator</a> site in order to get this example to work. The previous link will pre-populate the key with the properties that are used in this example. See our <a href="/documentation/4.5/_services__configurator.html">documentation</a> for more detail on resource keys and the configurator site. Once created, the key will need to be copied into the configuration file:</p>
+<p>Note that you will need to create a 'resource key' using our <a href="https://configure.51degrees.com/Wkqxf3Bs">configurator</a> site in order to get this example to work. The previous link will pre-populate a free key with the free properties. A key created at <a href="https://configure.51degrees.com/hYzn3TV3">this link</a> with a paid subscription also includes the paid properties used by this example. See our <a href="/documentation/4.5/_services__configurator.html">documentation</a> for more detail on resource keys and the configurator site. Once created, the key will need to be copied into the configuration file:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
 <div class="c-code__line">  &quot;PipelineOptions&quot;: {</div>
 <div class="c-code__line">    &quot;Elements&quot;: [</div>
 <div class="c-code__line">      {</div>
 <div class="c-code__line">        &quot;BuilderName&quot;: &quot;CloudRequestEngine&quot;,</div>
-<div class="c-code__line">        // Obtain a resource key with the properties required to run this </div>
-<div class="c-code__line">        // example for free: https://configure.51degrees.com/1QWJwHxl</div>
+<div class="c-code__line">        // A free resource key created at https://configure.51degrees.com/Wkqxf3Bs</div>
+<div class="c-code__line">        // populates the free properties. A paid subscription key created at</div>
+<div class="c-code__line">        // https://configure.51degrees.com/hYzn3TV3 includes all the properties</div>
+<div class="c-code__line">        // used by this example.</div>
 <div class="c-code__line">        &quot;BuildParameters&quot;: {</div>
 <div class="c-code__line">          &quot;ResourceKey&quot;: &quot;!!ENTER_YOUR_RESOURCE_KEY_HERE!!&quot;,</div>
 <div class="c-code__line">          &quot;CloudRequestOrigin&quot;: &quot;51Degrees.example.com&quot;,</div>
@@ -209,7 +211,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_frame
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="anamespace_framework___web_html"><div class="ttname"><a href="namespace_framework___web.html">Framework_Web</a></div><div class="ttdef"><b>Definition</b> Cloud/Framework-Web/Default.aspx.cs:142</div></div>
+<div class="ttc" id="anamespace_framework___web_html"><div class="ttname"><a href="namespace_framework___web.html">Framework_Web</a></div><div class="ttdef"><b>Definition</b> Cloud/Framework-Web/Default.aspx.cs:143</div></div>
 </div><!-- fragment --><h2>Results</h2>
 <p>This example includes a simple demonstration page that shows how to access different values from the results. This page also demonstrates how to use client-side evidence to determine the model of Apple devices.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;%@ Page Language=&quot;C#&quot; AutoEventWireup=&quot;true&quot; CodeBehind=&quot;Default.aspx.cs&quot; Inherits=&quot;Framework_Web.Default&quot; %&gt;</div>

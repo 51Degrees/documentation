@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <li>How to retrieve the results</li>
 </ol>
 <p>This example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-dotnet-examples/blob/master/Examples/OnPremise/GettingStarted-Console/Program.cs">GitHub</a>.</p>
-<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us">contact us</a>.</p>
+<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-gettingstarted-console-program.cs&amp;utm_term=header">contact us</a>.</p>
 <p>Required NuGet Dependencies:</p><ul>
 <li><a href="https://www.nuget.org/packages/FiftyOne.IpIntelligence/">FiftyOne.IpIntelligence</a></li>
 </ul>
@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            <span class="c-code__comment">// Use the supplied path for the data file or find the lite file that is included</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// in the repository.</span></div>
 <div class="c-code__line">            var dataFile = args.Length &gt; 0 ? args[0] :</div>
-<div class="c-code__line">                <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.ExampleUtils.FindFile(Constants.ENTERPRISE_IPI_DATA_FILE_NAME);</div>
+<div class="c-code__line">                <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.ExampleUtils.FindDataFile(Constants.ENTERPRISE_IPI_DATA_FILE_NAME);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Configure a logger to output to the console.</span></div>
 <div class="c-code__line">            var loggerFactory = LoggerFactory.Create(b =&gt; b.AddConsole());</div>

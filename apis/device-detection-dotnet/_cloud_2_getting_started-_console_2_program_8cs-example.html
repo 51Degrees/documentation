@@ -170,15 +170,25 @@ You can create a Resource Key using the 51Degrees
 <div class="c-code__line">                <span class="c-code__keyword">using</span> (var pipeline = <span class="c-code__keyword">new</span> FiftyOnePipelineBuilder(loggerFactory, serviceProvider)</div>
 <div class="c-code__line">                    .BuildFromConfiguration(pipelineOptions))</div>
 <div class="c-code__line">                {</div>
+<div class="c-code__line">                    <span class="c-code__comment">// Track whether any of the requested properties are left</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// without a value.</span></div>
+<div class="c-code__line">                    <span class="c-code__keywordtype">bool</span> anyValueMissing = <span class="c-code__keyword">false</span>;</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Carry out some sample detections</span></div>
 <div class="c-code__line">                    <span class="c-code__keywordflow">foreach</span> (var values <span class="c-code__keywordflow">in</span> ExampleUtils.EvidenceValues)</div>
 <div class="c-code__line">                    {</div>
-<div class="c-code__line">                        AnalyseEvidence(values, pipeline, output);</div>
+<div class="c-code__line">                        anyValueMissing |= AnalyseEvidence(values, pipeline, output);</div>
+<div class="c-code__line">                    }</div>
+<div class="c-code__line">                    <span class="c-code__comment">// A missing value usually means the resource key does not</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// include the property, so show the common message</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// explaining how to get a key with more properties.</span></div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">if</span> (anyValueMissing)</div>
+<div class="c-code__line">                    {</div>
+<div class="c-code__line">                        output.WriteLine(ExampleUtils.PRICING_MESSAGE);</div>
 <div class="c-code__line">                    }</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">void</span> AnalyseEvidence(</div>
+<div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">bool</span> AnalyseEvidence(</div>
 <div class="c-code__line">                Dictionary&lt;string, object&gt; evidence,</div>
 <div class="c-code__line">                IPipeline pipeline,</div>
 <div class="c-code__line">                TextWriter output)</div>
@@ -220,16 +230,18 @@ You can create a Resource Key using the 51Degrees
 <div class="c-code__line">                    <span class="c-code__comment">// See the property dictionary at</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/developers/property-dictionary</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// for details of all available properties.</span></div>
-<div class="c-code__line">                    OutputValue(<span class="c-code__stringliteral">&quot;Mobile Device&quot;</span>, device.IsMobile, message);</div>
-<div class="c-code__line">                    OutputValue(<span class="c-code__stringliteral">&quot;Platform Name&quot;</span>, device.PlatformName, message);</div>
-<div class="c-code__line">                    OutputValue(<span class="c-code__stringliteral">&quot;Platform Version&quot;</span>, device.PlatformVersion, message);</div>
-<div class="c-code__line">                    OutputValue(<span class="c-code__stringliteral">&quot;Browser Name&quot;</span>, device.BrowserName, message);</div>
-<div class="c-code__line">                    OutputValue(<span class="c-code__stringliteral">&quot;Browser Version&quot;</span>, device.BrowserVersion, message);</div>
+<div class="c-code__line">                    <span class="c-code__keywordtype">bool</span> anyValueMissing = <span class="c-code__keyword">false</span>;</div>
+<div class="c-code__line">                    anyValueMissing |= OutputValue(<span class="c-code__stringliteral">&quot;Mobile Device&quot;</span>, device.IsMobile, message);</div>
+<div class="c-code__line">                    anyValueMissing |= OutputValue(<span class="c-code__stringliteral">&quot;Platform Name&quot;</span>, device.PlatformName, message);</div>
+<div class="c-code__line">                    anyValueMissing |= OutputValue(<span class="c-code__stringliteral">&quot;Platform Version&quot;</span>, device.PlatformVersion, message);</div>
+<div class="c-code__line">                    anyValueMissing |= OutputValue(<span class="c-code__stringliteral">&quot;Browser Name&quot;</span>, device.BrowserName, message);</div>
+<div class="c-code__line">                    anyValueMissing |= OutputValue(<span class="c-code__stringliteral">&quot;Browser Version&quot;</span>, device.BrowserVersion, message);</div>
 <div class="c-code__line">                    output.WriteLine(message.ToString());</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">return</span> anyValueMissing;</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">void</span> OutputValue(<span class="c-code__keywordtype">string</span> name,</div>
+<div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">bool</span> OutputValue(<span class="c-code__keywordtype">string</span> name,</div>
 <div class="c-code__line">                IAspectPropertyValue value,</div>
 <div class="c-code__line">                StringBuilder message)</div>
 <div class="c-code__line">            {</div>
@@ -241,6 +253,9 @@ You can create a Resource Key using the 51Degrees
 <div class="c-code__line">                message.AppendLine(value.HasValue ?</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;\t{name}: &quot;</span> + value.Value :</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;\t{name}: &quot;</span> + value.NoValueMessage);</div>
+<div class="c-code__line">                <span class="c-code__comment">// Tell the caller whether the property was left without a</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// value.</span></div>
+<div class="c-code__line">                <span class="c-code__keywordflow">return</span> value.HasValue == <span class="c-code__keyword">false</span>;</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"></div>
 <div class="c-code__line">            <span class="c-code__keyword">public</span> <span class="c-code__keywordtype">void</span> Run(PipelineOptions options, TextWriter output)</div>
@@ -274,8 +289,11 @@ You can create a Resource Key using the 51Degrees
 <div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;service is accessed using a &#39;ResourceKey&#39;. For more information &quot;</span> +</div>
 <div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;see &quot;</span> +</div>
 <div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/_info__resource_keys.html. &quot;</span> +</div>
-<div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;A resource key with the properties required by this example can be &quot;</span> +</div>
-<div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;created for free at https://configure.51degrees.com/1QWJwHxl. &quot;</span> +</div>
+<div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;A free resource key can be created at &quot;</span> +</div>
+<div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;https://configure.51degrees.com/Wkqxf3Bs and populates the free &quot;</span> +</div>
+<div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;properties. With a paid subscription, a key created at &quot;</span> +</div>
+<div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;https://configure.51degrees.com/hYzn3TV3 includes all the &quot;</span> +</div>
+<div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;properties used by this example. &quot;</span> +</div>
 <div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;Once complete, populate the config file or environment variable &quot;</span> +</div>
 <div class="c-code__line">                            $<span class="c-code__stringliteral">&quot;mentioned at the start of this message with the key.&quot;</span>);</div>
 <div class="c-code__line">                    }</div>
@@ -292,8 +310,7 @@ You can create a Resource Key using the 51Degrees
 <div class="c-code__line">            <span class="c-code__comment">// Use the command line args to get the resource key if present.</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// Otherwise, get it from the environment variable.</span></div>
 <div class="c-code__line">            <span class="c-code__keywordtype">string</span> resourceKey = args.Length &gt; 0 ? args[0] :</div>
-<div class="c-code__line">                Environment.GetEnvironmentVariable(</div>
-<div class="c-code__line">                    ExampleUtils.CLOUD_RESOURCE_KEY_ENV_VAR);</div>
+<div class="c-code__line">                ExampleUtils.GetResourceKeyFromEnv();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Load the configuration file</span></div>
 <div class="c-code__line">            var config = <span class="c-code__keyword">new</span> ConfigurationBuilder()</div>
