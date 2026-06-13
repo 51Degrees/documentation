@@ -1,0 +1,42 @@
+<div class="c-eg-page">
+  <h2 class="c-eg-page__title">Client-side only example</h2>
+  <p class="c-eg-page__lead">
+    Detection runs entirely client-side. The 51Degrees JavaScript collects evidence in the
+    browser and populates the results below once it completes, with no server-side rendering.
+  </p>
+
+  <div id="content">
+    <table class="c-eg-table">
+      <thead class="c-eg-table__head">
+        <tr class="c-eg-table__row">
+          <th class="c-eg-table__cell">Key</th>
+          <th class="c-eg-table__cell">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="c-eg-table__row c-eg-table__row--used">
+          <td class="c-eg-table__cell c-eg-table__cell--key">Hardware Name:</td>
+          <td class="c-eg-table__cell">iPhone</td>
+        </tr>
+        <tr class="c-eg-table__row c-eg-table__row--used">
+          <td class="c-eg-table__cell c-eg-table__cell--key">Platform:</td>
+          <td class="c-eg-table__cell">iOS 17.0</td>
+        </tr>
+        <tr class="c-eg-table__row c-eg-table__row--used">
+          <td class="c-eg-table__cell c-eg-table__cell--key">Browser:</td>
+          <td class="c-eg-table__cell">Mobile Safari 17</td>
+        </tr>
+        <tr class="c-eg-table__row c-eg-table__row--used">
+          <td class="c-eg-table__cell c-eg-table__cell--key">Screen width (pixels):</td>
+          <td class="c-eg-table__cell">390</td>
+        </tr>
+        <tr class="c-eg-table__row c-eg-table__row--used">
+          <td class="c-eg-table__cell c-eg-table__cell--key">Screen height (pixels):</td>
+          <td class="c-eg-table__cell">844</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  {% if showMessage %}{% include 'examples-message' %}{% endif %}
+</div>

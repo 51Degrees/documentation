@@ -1,0 +1,33 @@
+/**
+ * Bottom-of-page message. Mainly used to point the user at how to access the
+ * full set of properties when running on the free Lite data file or a default
+ * resource key. Neutral banner so the lime call-to-action stands out. Toggled
+ * per page by the `showMessage` flag in the view.
+ */
+
+.c-eg-message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: size(-1);
+  margin-top: size(4);
+  padding: size(0) size(1);
+  background: $colour-grey-lighter;
+  border: 1px solid $colour-grey-light;
+  border-radius: $rounded;
+
+  @include respond-to(md) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: size(1);
+  }
+}
+
+.c-eg-message__text {
+  margin: 0;
+}
+
+.c-eg-message__cta {
+  flex-shrink: 0;
+}

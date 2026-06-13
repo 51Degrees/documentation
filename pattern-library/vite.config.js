@@ -38,6 +38,7 @@ export default defineConfig({
         'docs-main': resolve(root, 'source/sass/docs-main.scss'),
         'main': resolve(root, 'source/sass/main.scss'),
         'conf-main': resolve(root, 'source/sass/conf-main.scss'),
+        'examples-main': resolve(root, 'source/sass/examples-main.scss'),
       },
       output: {
         assetFileNames: '[name][extname]',

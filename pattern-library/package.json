@@ -20,7 +20,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build:css": "vite build && esbuild source/css/docs-main.css --minify --outfile=source/css/docs-main.min.css && esbuild source/css/main.css --minify --outfile=source/css/main.min.css && esbuild source/css/conf-main.css --minify --outfile=source/css/conf-main.min.css",
+    "build:css": "vite build && esbuild source/css/docs-main.css --minify --outfile=source/css/docs-main.min.css && esbuild source/css/main.css --minify --outfile=source/css/main.min.css && esbuild source/css/conf-main.css --minify --outfile=source/css/conf-main.min.css && esbuild source/css/examples-main.css --minify --outfile=source/css/examples-main.min.css && esbuild source/js/examples.js --minify --outfile=source/js/examples.min.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -o storybook-static"
   }

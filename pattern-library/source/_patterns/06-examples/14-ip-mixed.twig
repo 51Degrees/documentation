@@ -1,0 +1,31 @@
+<div class="c-eg-page">
+  <h2 class="c-eg-page__title">Combined device detection and IP intelligence example</h2>
+  <p class="c-eg-page__lead">
+    This example performs both device detection and IP intelligence in a single pipeline,
+    processing both engines in parallel.
+  </p>
+
+  <div class="c-eg-alert">
+    WARNING: JavaScript is disabled in your browser. Client-side evidence collection will not work.
+  </div>
+
+  {% include 'examples-ip-form' %}
+
+  <div class="c-eg-columns">
+    <div>
+      <h3 class="c-eg-page__heading">Device detection results</h3>
+      {% include 'examples-results-table' %}
+    </div>
+    <div>
+      <h3 class="c-eg-page__heading">IP intelligence results</h3>
+      {% include 'examples-results-table-ip' %}
+    </div>
+  </div>
+
+  <details class="c-eg-details">
+    <summary>Evidence used</summary>
+    {% include 'examples-evidence-table' %}
+  </details>
+
+  {% if showMessage %}{% include 'examples-message' %}{% endif %}
+</div>

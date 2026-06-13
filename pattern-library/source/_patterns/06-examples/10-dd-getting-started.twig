@@ -1,0 +1,32 @@
+<div class="c-eg-page">
+  <h2 class="c-eg-page__title">Web integration example</h2>
+  <p class="c-eg-page__lead">
+    This example demonstrates the Pipeline API performing device detection in a simple
+    ASP.NET Core web project. It highlights automatic handling of the Accept-CH header and
+    client-side evidence collection for Apple models and screen size.
+  </p>
+
+  <div class="c-eg-alert">
+    WARNING: JavaScript is disabled in your browser. The client-side callback will not fire
+    and User-Agent Client Hints headers will not be sent.
+  </div>
+
+  <h3 class="c-eg-page__heading">Detection results</h3>
+  <p class="c-eg-page__lead">These values are determined by server-side device detection on the first request.</p>
+  {% include 'examples-results-table' %}
+
+  <h3 class="c-eg-page__heading">Evidence used</h3>
+  {% include 'examples-evidence-table' %}
+
+  <h3 class="c-eg-page__heading">Response headers</h3>
+  {% include 'examples-headers-table' %}
+
+  <h3 class="c-eg-page__heading">Client-side evidence and Apple models</h3>
+  <p class="c-eg-page__lead">
+    The values below are determined after a callback to the server with additional evidence
+    gathered by JavaScript on the client, including any requested client hints.
+  </p>
+  {% include 'examples-alert' %}
+
+  {% if showMessage %}{% include 'examples-message' %}{% endif %}
+</div>

@@ -1,0 +1,20 @@
+/**
+ * The Leaflet location map block used by the ip-intelligence examples. Hidden
+ * by default; examples.js (fodExamples.initLocationMap) reveals it when there
+ * is a polygon or coordinate to show.
+ */
+
+.c-eg-map {
+  margin: size(2) 0;
+}
+
+.c-eg-map__title {
+  @include make-text-heading-3();
+}
+
+.c-eg-map__canvas {
+  height: 400px;
+  width: 100%;
+  border: 1px solid $colour-grey-light;
+  border-radius: $rounded;
+}

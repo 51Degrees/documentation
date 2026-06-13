@@ -1,0 +1,20 @@
+/**
+ * Inline warning / notice used by the examples for the "JavaScript disabled",
+ * "Lite data file" and "no Accept-CH header" messages. Replaces the old
+ * `.example-alert` (a bare 2px solid red border) with the brand red on the
+ * design-system pink-light surface.
+ */
+
+.c-eg-alert {
+  @include make-text-default();
+  border: 1px solid $colour-red;
+  border-radius: $rounded;
+  background-color: $colour-pink-light;
+  padding: size(-1) size(0);
+  margin: size(1) 0;
+
+  a {
+    color: $colour-red;
+    font-weight: $font-weight-bold;
+  }
+}

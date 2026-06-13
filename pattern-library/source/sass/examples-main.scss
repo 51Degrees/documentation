@@ -1,0 +1,23 @@
+/**
+ * @file
+ * sass/examples-main.scss
+ *
+ * Build target for the SDK web examples ("pattern-library-examples").
+ *
+ * Mirrors docs-main.scss / conf-main.scss: it is a third entry compiled by
+ * Vite to source/css/examples-main.css. The 51Degrees example apps
+ * (device-detection-* and ip-intelligence-* "-examples" repos) consume the
+ * compiled examples-main.css together with source/js/examples.js.
+ *
+ * All colour, typography and background come from the documentation design
+ * system: this entry pulls in the same 00-abstract tokens and 01-base element
+ * styles used by the docs, then layers the example-only components on top.
+ */
+
+@import "normalize";
+
+@import '00-abstract/**/*.scss';
+
+@import '01-base/**/*.scss';
+
+@import '06-examples/**/*.scss';
