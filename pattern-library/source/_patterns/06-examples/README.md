@@ -51,7 +51,7 @@ contract below.
 | map `#map-section` / `#map` | `.c-eg-map` / `.c-eg-map__canvas` |
 | two-column results (mixed) | `.c-eg-columns` |
 | collapsible evidence | `.c-eg-details` (native `<details>`) |
-| bottom-of-page message | `.c-eg-message` / `.c-eg-message__text` / `.c-eg-message__cta` |
+| bottom-of-page message | `.c-eg-message` / `.c-eg-message__text` / `.c-eg-message__cta` (see [Message variants](#message-variants)) |
 
 ## Pages (one per web example type)
 
@@ -63,9 +63,47 @@ Composed pages in `Examples/Pages` show how a full example app renders:
 - `ip-getting-started` — IP lookup form, results, evidence, headers, location map.
 - `ip-mixed` — two-column device + IP results with a collapsible evidence panel.
 
-Every page ends with the `.c-eg-message` banner, rendered when the view sets `showMessage`
-to true (free Lite data file or default resource key). In a real example app, drive the
-flag from the data tier or resource key, for example `ShowMessage = engine.DataSourceTier == "Lite"`.
+Every page ends with the `.c-eg-message` banner, rendered only when a non-paid
+resource key or data file is in use. See [Message variants](#message-variants) below.
+
+## Message variants
+
+The banner has two copy variants, both linking to the Contact Us page
+(`https://51degrees.com/contact-us`) from an inline text link and a button. Show
+the banner **only** when a non-paid resource key or data file is in use.
+
+**Cloud (free-tier cloud examples — getting-started, client-only, client-hints, mixed).**
+Cross-sells on-premise. The paid-only cloud examples (TAC lookup, native model) do
+**not** show it.
+
+```html
+<div class="c-eg-message">
+  <p class="c-eg-message__text">Want to try on-premise? <a href="https://51degrees.com/contact-us">Contact us</a> to discuss requirements.</p>
+  <a class="b-btn c-eg-message__cta" href="https://51degrees.com/contact-us">Contact us</a>
+</div>
+```
+
+**On-premise (Lite data file).** Shown when the engine reports the Lite data tier.
+
+```html
+<div class="c-eg-message">
+  <p class="c-eg-message__text">Need more on-premise properties and features? <a href="https://51degrees.com/contact-us">Contact us</a> to explore the options.</p>
+  <a class="b-btn c-eg-message__cta" href="https://51degrees.com/contact-us">Contact us</a>
+</div>
+```
+
+Drive the flag from the engine, per SDK:
+
+| SDK | On-premise Lite check | Cloud free-tier examples |
+|-----|----------------------|--------------------------|
+| .NET | `engine.DataSourceTier == "Lite"` | show (getting-started / client-only / client-hints / mixed) |
+| Java | `engine.getDataSourceTier().equals("Lite")` | show |
+| Node | `engine.getProduct() === "Lite"` | show |
+| PHP | `$engine->engine->getProduct() === "Lite"` | show |
+| Python | `engine.engine.getProduct() == "Lite"` | show |
+
+There is no cloud "free vs paid" API, so the cloud banner is shown on the
+free-by-design cloud examples and omitted from the paid-only ones.
 
 ## JavaScript (`fodExamples`)
 

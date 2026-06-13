@@ -1,8 +1,9 @@
 /**
- * Bottom-of-page message. Mainly used to point the user at how to access the
- * full set of properties when running on the free Lite data file or a default
- * resource key. Neutral banner so the lime call-to-action stands out. Toggled
- * per page by the `showMessage` flag in the view.
+ * Bottom-of-page message, shown only when a non-paid resource key or data file
+ * is in use. Two copy variants (cloud free-tier vs Lite data file), both with an
+ * inline Contact Us link and a Contact Us button. Neutral banner so the lime
+ * call-to-action stands out. Toggled per page by the `showMessage` flag in the
+ * view; the wording is chosen by the `messageVariant` flag.
  */
 
 .c-eg-message {
