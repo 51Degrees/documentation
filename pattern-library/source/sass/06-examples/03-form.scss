@@ -1,0 +1,28 @@
+/**
+ * The IP address lookup form used by the ip-intelligence examples. The input
+ * and button reuse the design-system base styles (.b-input, .b-btn); this only
+ * provides the surrounding layout and spacing.
+ */
+
+.c-eg-form {
+  margin-bottom: size(2);
+}
+
+.c-eg-form__row {
+  display: flex;
+  flex-direction: column;
+
+  @include respond-to(md) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.c-eg-form .b-btn {
+  margin-top: size(-1);
+
+  @include respond-to(md) {
+    margin-top: 0;
+    margin-left: size(-1);
+  }
+}

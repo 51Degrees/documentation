@@ -1,0 +1,63 @@
+name: Publish example assets
+
+# Publishes the SDK web example assets (examples-main CSS and examples JS) from
+# the pattern library as GitHub Release assets, so the *-examples repos can
+# download a pinned version. These files are gitignored build outputs, so the
+# release is their distribution point.
+#
+# Publish a version by pushing a tag like `examples-assets-v1.0.0`, or run this
+# workflow manually with a tag input.
+
+on:
+  push:
+    tags:
+      - 'examples-assets-v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to create and release (e.g. examples-assets-v1.0.0)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build example assets
+        working-directory: pattern-library
+        run: |
+          npm ci
+          npm run build:css
+
+      - name: Publish release with assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            TAG="${{ inputs.tag }}"
+          else
+            TAG="${GITHUB_REF_NAME}"
+          fi
+          ASSETS=(
+            pattern-library/source/css/examples-main.css
+            pattern-library/source/css/examples-main.min.css
+            pattern-library/source/js/examples.js
+            pattern-library/source/js/examples.min.js
+          )
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "${ASSETS[@]}" --clobber
+          else
+            gh release create "$TAG" "${ASSETS[@]}" \
+              --target "$GITHUB_SHA" \
+              --title "Example assets $TAG" \
+              --notes "SDK web example assets (examples-main CSS and examples JS) for the *-examples repos. See pattern-library/source/_patterns/06-examples/README.md for the asset list and class contract."
+          fi

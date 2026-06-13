@@ -1,0 +1,31 @@
+/**
+ * Layout helpers used by the composed example pages: the two-column results
+ * grid (mixed device + IP example) and the collapsible evidence disclosure.
+ */
+
+.c-eg-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: size(2);
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.c-eg-details {
+  margin: size(1) 0 size(2);
+  border: 1px solid $colour-grey-light;
+  border-radius: $rounded;
+  padding: 0 size(0);
+
+  > summary {
+    cursor: pointer;
+    padding: size(-2) 0;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.c-eg-button-row {
+  margin: size(1) 0 size(2);
+}

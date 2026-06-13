@@ -1,0 +1,72 @@
+/**
+ * Key/value tables used across every web example: the detection-results table,
+ * the evidence table and the response-headers table.
+ *
+ * Row-state modifiers replace the old browser-default fills:
+ *   --used    evidence that was used in detection  (was .lightgreen)
+ *   --present evidence present but not used         (was .lightyellow)
+ *   --alt     neutral zebra striping for long lists
+ */
+
+.c-eg-table {
+  @include make-text-default();
+  width: 100%;
+  max-width: 800px;
+  font-size: size(-1);
+  background-color: $colour-white;
+  border-collapse: collapse;
+  margin-bottom: size(1);
+}
+
+.c-eg-table__head .c-eg-table__cell {
+  font-weight: $font-weight-bold;
+  border-bottom: 3px solid $colour-grey-light;
+}
+
+.c-eg-table__cell {
+  padding: size(-3) size(-2);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid $colour-grey-light;
+
+  &--key {
+    font-weight: $font-weight-bold;
+    white-space: nowrap;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: size(0);
+  }
+}
+
+.c-eg-table__row {
+  &--used {
+    background-color: $colour-lime-lighter;
+  }
+
+  &--present,
+  &--alt {
+    background-color: $colour-grey-lighter;
+  }
+}
+
+// The "used / present" key shown above the evidence table.
+.c-eg-legend {
+  font-size: size(-2);
+  color: $colour-grey-darker;
+  margin-bottom: size(-2);
+}
+
+.c-eg-legend__swatch {
+  padding: 0 size(-4);
+  border-radius: $rounded;
+
+  &--used {
+    background-color: $colour-lime-lighter;
+  }
+
+  &--present {
+    background-color: $colour-grey-lighter;
+  }
+}

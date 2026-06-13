@@ -1,0 +1,28 @@
+/**
+ * The example page shell. Centres the example content and applies the docs
+ * heading/lead typography so a bare example app matches the documentation.
+ */
+
+.c-eg-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: size(2) size(1);
+}
+
+.c-eg-page__title {
+  @include make-text-heading-2();
+}
+
+.c-eg-page__heading {
+  @include make-text-heading-3();
+  margin-top: size(3);
+}
+
+.c-eg-page__lead {
+  margin-bottom: size(2);
+}
+
+// A standalone block (results / evidence / headers / map) within the page.
+.c-eg-section {
+  margin-bottom: size(3);
+}
