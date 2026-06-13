@@ -1,11 +1,15 @@
 {# Bottom-of-page message shown only when a non-paid resource key or data file
-   is in use. Two variants:
-   - cloud     (default) on the free-tier cloud examples, cross-sells on-premise
-   - onpremise on the Lite data file examples, points at more properties/features
-   Both link to the Contact Us page (inline link + button). #}
+   is in use. Variants:
+   - cloud        (default) free-tier cloud examples, cross-sells on-premise
+   - onpremise    Lite data file examples, points at more properties/features
+   - onpremise-dd Lite data file device-detection examples, lists the paid
+                  data file benefits (daily updates, non-human ID, IP intelligence)
+   All link to the Contact Us page (inline link + button). #}
 {% set messageVariant = messageVariant|default('cloud') %}
 <div class="c-eg-message">
-  {% if messageVariant == 'onpremise' %}
+  {% if messageVariant == 'onpremise-dd' %}
+  <p class="c-eg-message__text">The paid data file adds daily automatic updates, non-human identification and IP intelligence. <a href="https://51degrees.com/contact-us">Contact us</a> to explore the options.</p>
+  {% elseif messageVariant == 'onpremise' %}
   <p class="c-eg-message__text">Need more on-premise properties and features? <a href="https://51degrees.com/contact-us">Contact us</a> to explore the options.</p>
   {% else %}
   <p class="c-eg-message__text">Want to try on-premise? <a href="https://51degrees.com/contact-us">Contact us</a> to discuss requirements.</p>

@@ -68,7 +68,7 @@ resource key or data file is in use. See [Message variants](#message-variants) b
 
 ## Message variants
 
-The banner has two copy variants, both linking to the Contact Us page
+The banner has three copy variants, all linking to the Contact Us page
 (`https://51degrees.com/contact-us`) from an inline text link and a button. Show
 the banner **only** when a non-paid resource key or data file is in use.
 
@@ -83,11 +83,20 @@ Cross-sells on-premise. The paid-only cloud examples (TAC lookup, native model) 
 </div>
 ```
 
-**On-premise (Lite data file).** Shown when the engine reports the Lite data tier.
+**On-premise (Lite data file).** Shown when the engine reports the Lite data tier. Generic wording used by the IP intelligence examples.
 
 ```html
 <div class="c-eg-message">
   <p class="c-eg-message__text">Need more on-premise properties and features? <a href="https://51degrees.com/contact-us">Contact us</a> to explore the options.</p>
+  <a class="b-btn c-eg-message__cta" href="https://51degrees.com/contact-us">Contact us</a>
+</div>
+```
+
+**On-premise device detection (Lite data file).** Same Lite trigger, but the device-detection examples list the paid data file benefits.
+
+```html
+<div class="c-eg-message">
+  <p class="c-eg-message__text">The paid data file adds daily automatic updates, non-human identification and IP intelligence. <a href="https://51degrees.com/contact-us">Contact us</a> to explore the options.</p>
   <a class="b-btn c-eg-message__cta" href="https://51degrees.com/contact-us">Contact us</a>
 </div>
 ```
@@ -104,6 +113,15 @@ Drive the flag from the engine, per SDK:
 
 There is no cloud "free vs paid" API, so the cloud banner is shown on the
 free-by-design cloud examples and omitted from the paid-only ones.
+
+## Data-file-age warning
+
+Separate from the upgrade banner, the on-premise examples show a stale-data-file
+warning (a `.c-eg-alert`) when the loaded data file is older than the age
+threshold. This is a distinct message from the upgrade banner and must remain. It
+renders as a warning at the **top of the page** — the first child inside
+`.c-eg-page`, before the page title — so it is seen before the (possibly stale)
+results below it.
 
 ## JavaScript (`fodExamples`)
 

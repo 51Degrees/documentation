@@ -19,9 +19,13 @@ IpMixed.storyName = "ip intelligence - mixed (device + ip)";
 export const DdGettingStartedCloudMessage = () => renderPattern("examples-dd-getting-started", { messageVariant: "cloud" });
 DdGettingStartedCloudMessage.storyName = "message - cloud free tier (try on-premise)";
 
-// On-premise Lite message (more properties/features) — shown on the Lite data file examples.
+// On-premise Lite message (more properties/features) — generic, used by the IP examples.
 export const IpGettingStartedOnPremMessage = () => renderPattern("examples-ip-getting-started", { messageVariant: "onpremise" });
 IpGettingStartedOnPremMessage.storyName = "message - on-premise Lite (more properties)";
+
+// On-premise Lite message listing the paid data file benefits — used by the device detection examples.
+export const DdGettingStartedOnPremMessage = () => renderPattern("examples-dd-getting-started", { messageVariant: "onpremise-dd" });
+DdGettingStartedOnPremMessage.storyName = "message - on-premise device detection (paid benefits)";
 
 // Same page with the message toggled off (paid data file / full resource key).
 export const DdGettingStartedPaid = () => renderPattern("examples-dd-getting-started", { showMessage: false });
