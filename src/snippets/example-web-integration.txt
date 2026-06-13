@@ -5,7 +5,7 @@ details about a device based on its User-Agent and User-Agent Client Hint HTTP h
 </p>
 <p>
 We demonstrate how to use the
-<a href="http://51degrees.com/documentation/_features__web_integration.html">web integration</a> 
+<a href="https://51degrees.com/documentation/_features__web_integration.html">web integration</a> 
 feature to:
 <ul>
   <li>Pass the required information from the web context to the pipeline API.</li>
