@@ -91,6 +91,9 @@ export function renderPattern(rawId, extra = {}) {
     // Example pages show the message by default (free Lite data file / default
     // resource key). Stories pass showMessage:false for the paid case.
     showMessage: true,
+    // Message variant: 'cloud' (free-tier cloud, cross-sell on-premise) or
+    // 'onpremise' (Lite data file, more properties/features). Stories override.
+    messageVariant: 'cloud',
   };
   const data = { ...baseline, ...(dataById[id] || {}), ...extra };
   try {
