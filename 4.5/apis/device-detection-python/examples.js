@@ -5,6 +5,7 @@ var examples =
     [ "cloud/metadata_console.py", "cloud_2metadata_console_8py-example.html", null ],
     [ "cloud/nativemodellookup_console.py", "cloud_2nativemodellookup_console_8py-example.html", null ],
     [ "cloud/taclookup_console.py", "cloud_2taclookup_console_8py-example.html", null ],
+    [ "cloud/useragentclienthints_web/app.py", "cloud_2useragentclienthints_web_2app_8py-example.html", null ],
     [ "onpremise/csv_profile_metadata.py", "onpremise_2csv_profile_metadata_8py-example.html", null ],
     [ "onpremise/datafileupdate_console.py", "onpremise_2datafileupdate_console_8py-example.html", null ],
     [ "onpremise/gettingstarted_console.py", "onpremise_2gettingstarted_console_8py-example.html", null ],
@@ -14,5 +15,6 @@ var examples =
     [ "onpremise/offlineprocessing.py", "onpremise_2offlineprocessing_8py-example.html", null ],
     [ "onpremise/performance.py", "onpremise_2performance_8py-example.html", null ],
     [ "onpremise/profile_metadata_console.py", "onpremise_2profile_metadata_console_8py-example.html", null ],
-    [ "onpremise/shareusage.py", "onpremise_2shareusage_8py-example.html", null ]
+    [ "onpremise/shareusage.py", "onpremise_2shareusage_8py-example.html", null ],
+    [ "onpremise/useragentclienthints_web/app.py", "onpremise_2useragentclienthints_web_2app_8py-example.html", null ]
 ];

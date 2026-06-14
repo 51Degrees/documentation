@@ -122,6 +122,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line"><span class="c-code__preprocessor">#define PASSES 1</span></div>
 <div class="c-code__line"><span class="c-code__preprocessor">#endif</span></div>
 <div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="c-code__line"><span class="c-code__preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__preprocessor">#include &quot;../../Base/ExampleBase.h&quot;</span></div>
@@ -519,8 +520,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    <a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#ga556b4dfadc53ec16baa29a33f59fe666">StatusCode</a> status = <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gaa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a>;</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">char</span> dataFilePath[<a id="_a48" name="_a48"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gafd3ee670ff4ed3f29a395abd2f0f3344">FILE_MAX_PATH</a>];</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">char</span> ipAddressFilePath[<a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gafd3ee670ff4ed3f29a395abd2f0f3344">FILE_MAX_PATH</a>];</div>
+<div class="c-code__line">    <span class="c-code__comment">// An explicit data file path can be supplied in the 51DEGREES_IPI_PATH</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// environment variable, otherwise the parent folder structure is searched.</span></div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* envDataFilePath = getenv(<span class="c-code__stringliteral">&quot;51DEGREES_IPI_PATH&quot;</span>);</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (argc &gt; 1) {</div>
 <div class="c-code__line">        strcpy(dataFilePath, argv[1]);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (envDataFilePath != NULL &amp;&amp; envDataFilePath[0] != <span class="c-code__charliteral">&#39;\0&#39;</span>) {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (strlen(envDataFilePath) &gt;= <span class="c-code__keyword">sizeof</span>(dataFilePath)) {</div>
+<div class="c-code__line">            status = <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga4921f9a186627faaebc505056ab7ed6e">INSUFFICIENT_MEMORY</a>;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">            strcpy(dataFilePath, envDataFilePath);</div>
+<div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">        status = <a id="a49" name="a49"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a>(</div>
@@ -622,7 +634,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="ttc" id="astructfiftyone_degrees_resource_manager_html"><div class="ttname"><a href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a></div><div class="ttdoc">Manager structure used to provide access to a shared and changing resource.</div><div class="ttdef"><b>Definition</b> resource.h:173</div></div>
 <div class="ttc" id="astructperformance_state_html"><div class="ttname"><a href="structperformance_state.html">performanceState</a></div><div class="ttdoc">Shared performance state.</div><div class="ttdef"><b>Definition</b> CachePerf.c:86</div></div>
 <div class="ttc" id="astructperformance_thread_state_html"><div class="ttname"><a href="structperformance_thread_state.html">performanceThreadState</a></div><div class="ttdoc">Individual thread performance state where all members are exclusively accessed by a single test threa...</div><div class="ttdef"><b>Definition</b> CachePerf.c:98</div></div>
-<div class="ttc" id="astructthread_state_html"><div class="ttname"><a href="structthread_state.html">threadState</a></div><div class="ttdoc">State specific to a single thread.</div><div class="ttdef"><b>Definition</b> Performance.c:137</div></div>
+<div class="ttc" id="astructthread_state_html"><div class="ttname"><a href="structthread_state.html">threadState</a></div><div class="ttdoc">State specific to a single thread.</div><div class="ttdef"><b>Definition</b> Performance.c:138</div></div>
 <div class="ttc" id="astructthread_state_html_a8e806850d1345f9bc7c571ebec248b6b"><div class="ttname"><a href="structthread_state.html#a8e806850d1345f9bc7c571ebec248b6b">threadState::manager</a></div><div class="ttdeci">ResourceManager * manager</div><div class="ttdoc">Pointer to the manager containing the data set.</div><div class="ttdef"><b>Definition</b> ReloadFromFile.c:149</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->

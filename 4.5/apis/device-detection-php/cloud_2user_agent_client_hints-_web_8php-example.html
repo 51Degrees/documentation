@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2user_ag
 <p>This example demonstrates device detection using user-agent client hints in a real-world scenario. When a clint-hints-enabled user first visits a website, the server will recieve the sec-ch-ua and sec-ch-ua-mobile headers. Along with the user-agent. This information is then used to determine if the client supports user-agent client hints and request them if needed by setting the Accept-CH header in the response. Clicking the button below will cause a new request to be sent to the server, along with any additional headers that have been requested.  </p>
 <p>This example shows how a simple device detection pipeline can be built that checks if a provided User-Agent is a mobile device</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-php/blob/master/examples/cloud/userAgentClientHints-Web.php">GitHub</a>.</p>
-<p>To run this example, you will need to create a <b>resource key</b>. The resource key is used as short-hand to store the particular set of properties you are interested in as well as any associated license keys that entitle you to increased request limits and/or paid-for properties. You can create a resource key using the 51Degrees <a href="https://configure.51degrees.com">Configurator</a>. Make sure to include required User Agent Client Hints Set Header properties which are in the following format, to get full * client-hints functionality. SetHeader[Component name][Response header name]</p>
+<p>To run this example, you will need to create a <b>resource key</b>. The resource key is used as short-hand to store the particular set of properties you are interested in as well as any associated license keys that entitle you to increased request limits and/or paid-for properties. You can create a resource key using the 51Degrees <a href="https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-php&amp;utm_content=examples-cloud-useragentclienthints-web.php&amp;utm_term=header">Configurator</a>. Make sure to include required User Agent Client Hints Set Header properties which are in the following format, to get full * client-hints functionality. SetHeader[Component name][Response header name]</p>
 <p>Expected output: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">User Agent Client Hints Example</div>
 <div class="c-code__line">Select the Use User Agent Client Hints button below, to use User Agent Client Hint headers in evidence <span class="c-code__keywordflow">for</span> device </div>
 <div class="c-code__line">detections.</div>
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2user_ag
 <div class="c-code__line">use <a id="_a0" name="_a0"></a><a class="code hl_class" href="classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_pipeline_builder.html">fiftyone\pipeline\devicedetection\DeviceDetectionPipelineBuilder</a>;</div>
 <div class="c-code__line">use <a id="_a1" name="_a1"></a><a class="code hl_class" href="classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1cloud_1_1classes_1_1_example_utils.html">fiftyone\pipeline\devicedetection\examples\cloud\classes\ExampleUtils</a>;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// We then create a pipeline with the builder. Create your own resource key for free at https://configure.51degrees.com.</span></div>
+<div class="c-code__line"><span class="c-code__comment">// We then create a pipeline with the builder. Create your own resource key for free at https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-php&amp;utm_content=examples-cloud-useragentclienthints-web.php&amp;utm_term=top.</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Check if there is a resource key in the environment variable or query parameter</span></div>
 <div class="c-code__line"><span class="c-code__comment">// and use it if there is one. You will need to switch this for your own resource key.</span></div>
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2user_ag
 <div class="c-code__line">    $message = <span class="c-code__stringliteral">&#39;No resource key specified in the environment variable or query parameter &#39;</span>;</div>
 <div class="c-code__line">    $message .= <span class="c-code__stringliteral">&quot;&#39;&quot;</span> . ExampleUtils::RESOURCE_KEY_ENV_VAR . <span class="c-code__stringliteral">&quot;&#39;.&quot;</span> . PHP_EOL;</div>
 <div class="c-code__line">    $message .= <span class="c-code__stringliteral">&#39;Create a resource key with the properties required by this example&#39;</span>;</div>
-<div class="c-code__line">    $message .= <span class="c-code__stringliteral">&#39;at https://configure.51degrees.com&#39;</span> . <span class="c-code__stringliteral">&#39;&lt;br/&gt;&#39;</span>;</div>
+<div class="c-code__line">    $message .= <span class="c-code__stringliteral">&#39;at https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-php&amp;utm_content=examples-cloud-useragentclienthints-web.php&amp;utm_term=resource-key-required&#39;</span> . <span class="c-code__stringliteral">&#39;&lt;br/&gt;&#39;</span>;</div>
 <div class="c-code__line">    $message .= <span class="c-code__stringliteral">&#39;Once complete, populate the environment variable or query parameter &#39;</span>;</div>
 <div class="c-code__line">    $message .= <span class="c-code__stringliteral">&#39;mentioned at the start of this message with the key.&#39;</span> . <span class="c-code__stringliteral">&#39;&lt;br/&gt;&#39;</span>;</div>
 <div class="c-code__line"> </div>
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2user_ag
 <div class="c-code__line"><span class="c-code__comment">// requested. So set whatever headers are required by the browser in</span></div>
 <div class="c-code__line"><span class="c-code__comment">// order to return the evidence needed by the pipeline.</span></div>
 <div class="c-code__line"><span class="c-code__comment">// More info on this can be found at</span></div>
-<div class="c-code__line"><span class="c-code__comment">// https://51degrees.com/blog/user-agent-client-hints</span></div>
+<div class="c-code__line"><span class="c-code__comment">// https://51degrees.com/blog/user-agent-client-hints?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-php&amp;utm_content=examples-cloud-useragentclienthints-web.php&amp;utm_term=top</span></div>
 <div class="c-code__line">Utils::setResponseHeader($flowData);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Generate the HTML</span></div>

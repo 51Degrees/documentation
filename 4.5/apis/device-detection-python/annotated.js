@@ -37,6 +37,11 @@ var annotated =
         ] ],
         [ "taclookup_console", "namespacefiftyone__devicedetection__examples_1_1cloud_1_1taclookup__console.html", [
           [ "TacLookupConsole", "classfiftyone__devicedetection__examples_1_1cloud_1_1taclookup__console_1_1_tac_lookup_console.html", "classfiftyone__devicedetection__examples_1_1cloud_1_1taclookup__console_1_1_tac_lookup_console" ]
+        ] ],
+        [ "useragentclienthints_web", "namespacefiftyone__devicedetection__examples_1_1cloud_1_1useragentclienthints__web.html", [
+          [ "app", "namespacefiftyone__devicedetection__examples_1_1cloud_1_1useragentclienthints__web_1_1app.html", [
+            [ "UserAgentClientHintsWeb", "classfiftyone__devicedetection__examples_1_1cloud_1_1useragentclienthints__web_1_1app_1_1_user_agent_client_hints_web.html", "classfiftyone__devicedetection__examples_1_1cloud_1_1useragentclienthints__web_1_1app_1_1_user_agent_client_hints_web" ]
+          ] ]
         ] ]
       ] ],
       [ "example_utils", "namespacefiftyone__devicedetection__examples_1_1example__utils.html", [
@@ -69,6 +74,11 @@ var annotated =
         ] ],
         [ "shareusage", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1shareusage.html", [
           [ "ShareUsageExample", "classfiftyone__devicedetection__examples_1_1onpremise_1_1shareusage_1_1_share_usage_example.html", "classfiftyone__devicedetection__examples_1_1onpremise_1_1shareusage_1_1_share_usage_example" ]
+        ] ],
+        [ "useragentclienthints_web", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1useragentclienthints__web.html", [
+          [ "app", "namespacefiftyone__devicedetection__examples_1_1onpremise_1_1useragentclienthints__web_1_1app.html", [
+            [ "UserAgentClientHintsWeb", "classfiftyone__devicedetection__examples_1_1onpremise_1_1useragentclienthints__web_1_1app_1_1_user_agent_client_hints_web.html", "classfiftyone__devicedetection__examples_1_1onpremise_1_1useragentclienthints__web_1_1app_1_1_user_agent_client_hints_web" ]
+          ] ]
         ] ]
       ] ]
     ] ],

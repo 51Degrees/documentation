@@ -90,6 +90,8 @@ static&#160;void&#160;</td><td class="c-table__cell"><b>cantFindDataFile</b> (St
 Static Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:ad902ce64cb85a95b86ea524c725a589f" id="r_ad902ce64cb85a95b86ea524c725a589f"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#ad902ce64cb85a95b86ea524c725a589f">ENTERPRISE_DATA_FILE_REL_PATH</a> = &quot;ip-intelligence-data/51Degrees-EnterpriseIpiV41.ipi&quot;</td></tr>
 <tr class="c-table__row memdesc:ad902ce64cb85a95b86ea524c725a589f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Relative path to the enterprise IP Intelligence data file from the examples repository root.  <br /></td></tr>
+<tr class="c-table__row memitem:af25ccc637b7ef01c469bc2f1b972e6d7" id="r_af25ccc637b7ef01c469bc2f1b972e6d7"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#af25ccc637b7ef01c469bc2f1b972e6d7">IPI_PATH_ENV_VAR</a> = &quot;51DEGREES_IPI_PATH&quot;</td></tr>
+<tr class="c-table__row memdesc:af25ccc637b7ef01c469bc2f1b972e6d7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Aligned name of the environment variable or system property which may hold an explicit path to the IP Intelligence data file.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="adad2e7d9b01160aea0b11520980c7727" name="adad2e7d9b01160aea0b11520980c7727"></a>
@@ -120,7 +122,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Tries to find the passed file, or if null a default file. </p>
-<p>Handles both absolute and relative paths. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Handles both absolute and relative paths. An absolute path supplied by the caller is used as is. Otherwise an explicit path supplied via the <code><a class="el" href="#af25ccc637b7ef01c469bc2f1b972e6d7">IPI_PATH_ENV_VAR</a></code> environment variable or system property is checked before the folder hierarchy is searched for the passed filename. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dataFilename</td><td>a filename to find (can be absolute or relative path) </td></tr>
   </table>
@@ -207,6 +209,35 @@ Static Public Attributes</h2></td></tr>
 
 <p>Relative path to the enterprise IP Intelligence data file from the examples repository root. </p>
 <p>This path is used by both console and web examples for testing. The data file is downloaded to this location by CI scripts. </p>
+
+</div>
+</div>
+<a id="af25ccc637b7ef01c469bc2f1b972e6d7" name="af25ccc637b7ef01c469bc2f1b972e6d7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af25ccc637b7ef01c469bc2f1b972e6d7">&#9670;&#160;</a></span>IPI_PATH_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final String fiftyone.ipintelligence.examples.shared.DataFileHelper.IPI_PATH_ENV_VAR = &quot;51DEGREES_IPI_PATH&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Aligned name of the environment variable or system property which may hold an explicit path to the IP Intelligence data file. </p>
+<p>This name is checked first, before any search of the project space. </p>
 
 </div>
 </div>

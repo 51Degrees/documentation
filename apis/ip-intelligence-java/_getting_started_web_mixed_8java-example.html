@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.common.testhelpers.LogbackHelper.configureLogback;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.DataFileHelper.ENTERPRISE_DATA_FILE_REL_PATH;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.DataFileHelper.IPI_PATH_ENV_VAR;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.PropertyHelper.*;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.pipeline.util.FileFinder.getFilePath;</div>
 <div class="c-code__line"></div>
@@ -166,7 +167,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">            System.setProperty(<span class="c-code__stringliteral">&quot;TestDataFile&quot;</span>, ipiPath);</div>
 <div class="c-code__line">            logger.info(<span class="c-code__stringliteral">&quot;Using IP Intelligence data file: {}&quot;</span>, ipiPath);</div>
 <div class="c-code__line">        } <span class="c-code__keywordflow">catch</span> (Exception e) {</div>
-<div class="c-code__line">            logger.warn(<span class="c-code__stringliteral">&quot;IP Intelligence data file not found at: {}&quot;</span>, ipiDataFile);</div>
+<div class="c-code__line">            logger.warn(<span class="c-code__stringliteral">&quot;IP Intelligence data file not found at: {}. &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;An explicit path can be supplied via the {} environment variable.&quot;</span>,</div>
+<div class="c-code__line">                    ipiDataFile, IPI_PATH_ENV_VAR);</div>
 <div class="c-code__line">            logger.warn(<span class="c-code__stringliteral">&quot;Will attempt to use default path from XML configuration&quot;</span>);</div>
 <div class="c-code__line">            logger.debug(<span class="c-code__stringliteral">&quot;Error finding IP Intelligence data file&quot;</span>, e);</div>
 <div class="c-code__line">        }</div>

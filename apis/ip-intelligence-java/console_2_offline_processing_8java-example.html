@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <p>As well as explaining the basic operation of offline processing using the defaults, for advanced operation this example can be used to experiment with tuning IP Intelligence for performance using Performance Profile settings.</p>
 <p>Evidence files can be obtained from the <a href="https://github.com/51Degrees/ip-intelligence-data">ip-intelligence-data repository</a>.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-java-examples/blob/main/console/src/main/java/fiftyone/ipintelligence/examples/console/OfflineProcessing.java">GitHub</a>.</p>
-<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us">contact us</a>.</p>
+<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-offlineprocessing.java&amp;utm_term=header">contact us</a>.</p>
 <p>Required Maven Dependencies:</p><ul>
 <li><a href="https://central.sonatype.com/artifact/com.51degrees/ip-intelligence">com.51degrees:ip-intelligence</a></li>
 </ul>
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <div class="c-code__line">    <span class="c-code__comment">// This 51degrees IP Intelligence data file (distributed with the source) needs to</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// be somewhere in the project space</span></div>
 <div class="c-code__line">    <span class="c-code__comment">//</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// For testing, contact us to obtain an enterprise data file: https://51degrees.com/contact-us</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// For testing, contact us to obtain an enterprise data file: https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-offlineprocessing.java&amp;utm_term=datadir</span></div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> String dataDir = <span class="c-code__stringliteral">&quot;ip-intelligence-data&quot;</span>;</div>
 <div class="c-code__line">    <span class="c-code__comment">// This 51degrees file of 20,000 examples (distributed with the source)</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// needs to be somewhere in the project space. Additional evidence files</span></div>
@@ -158,7 +158,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <div class="c-code__line">            detectionFile = DataFileHelper.getDataFileLocation(dataFile);</div>
 <div class="c-code__line">        } <span class="c-code__keywordflow">catch</span> (Exception e) {</div>
 <div class="c-code__line">            logger.error(<span class="c-code__stringliteral">&quot;Failed to find IP Intelligence data file at &#39;{}&#39;. &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;Please provide a valid path to an IP Intelligence data file (.ipi).&quot;</span>, dataFile);</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;Please provide a valid path to an IP Intelligence data file (.ipi). &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;An explicit path can be supplied via the {} environment variable.&quot;</span>,</div>
+<div class="c-code__line">                    dataFile, DataFileHelper.IPI_PATH_ENV_VAR);</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">throw</span> e;</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
@@ -268,7 +270,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <div class="c-code__line">                            <span class="c-code__stringliteral">&quot;limited properties and is of limited accuracy&quot;</span>);</div>
 <div class="c-code__line">                    logger.info(<span class="c-code__stringliteral">&quot;The example requires an Enterprise data file &quot;</span> +</div>
 <div class="c-code__line">                            <span class="c-code__stringliteral">&quot;to work fully. Find out about the Enterprise &quot;</span> +</div>
-<div class="c-code__line">                            <span class="c-code__stringliteral">&quot;data file here: https://51degrees.com/pricing&quot;</span>);</div>
+<div class="c-code__line">                            <span class="c-code__stringliteral">&quot;data file here: https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-offlineprocessing.java&amp;utm_term=enterprise-data-file&quot;</span>);</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>

@@ -1,5 +1,16 @@
 var NAVTREEINDEX1 =
 {
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a4006651e8cc4e138ed0c3938d449c08c":[1,3,3,2,18],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a4222d122f4feeba905a46e9bf5631e54":[1,3,3,2,34],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a4d6902f7c0b610d30b8701efa50e0e0e":[1,3,3,2,13],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a54cd92620cf5fe7f0d24a3d433a3e708":[1,3,3,2,14],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a55a5189d025837f7c62386b13c2bf0e8":[1,3,3,2,27],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a57cb2939ced1bce54b90aa1e4d572e40":[1,3,3,2,19],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a5f092996d8b5243af7944d3ec9b62c09":[1,3,3,2,12],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a5fb7616fdef341bacd58da0a37bbcfed":[1,3,3,2,10],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a64cadfe0fadc873299bc3d1d9fcee0ab":[1,3,3,2,30],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a66d7f0a477bc2d1b316dc1b4ad87c348":[1,3,3,2,8],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a6c33d63b7fb1595ac53f1f66f1851635":[1,3,3,2,22],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a7492898f70cf459da8614e8b210e1a84":[1,3,3,2,29],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a79dce31b2480ca9d93bbf17d1afed12d":[1,3,3,2,23],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a832e7df90a25120034277cc05e51497c":[1,3,3,2,20],
@@ -238,16 +249,5 @@ var NAVTREEINDEX1 =
 "classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a5b0bfd4cfadd9942f012666d1d070ec4":[1,6,0,0,15],
 "classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a64999fa14c63cdef92c70078c88ddaed":[1,6,0,0,6],
 "classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a7d92de8bbb3bd5ad6ef68921b4fd5eb3":[1,6,0,0,18],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a8ecc0d587a55ac7f54e80338d6eef9d4":[1,6,0,0,8],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a96e5bf9c1e0edb420f2e05a10184a61d":[1,6,0,0,10],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a9de014e1bceabc3ca8b26b1494bf8a95":[1,6,0,0,0],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a9fe819836ff2f25addc4d5b71530e44d":[1,6,0,0,12],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#aab5ee7591738dfa8727ef661db289e79":[1,6,0,0,16],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#abda01e7e7279c1699252b392ba984fa6":[1,6,0,0,9],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#ac05d361a40f9ea04c8781b48ce1dfdb7":[1,6,0,0,5],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#ad48cef3ed12ca9af5b159532da1aa49a":[1,6,0,0,19],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#ad6764d9318c39be94a1e921747e48155":[1,6,0,0,17],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#adec2953e6d66d5cb8d09cd389627a1e2":[1,6,0,0,11],
-"classtests_1_1test__cloud_1_1_device_detection_tests.html":[1,6,1,0],
-"classtests_1_1test__cloud_1_1_device_detection_tests.html#a0b9c46f01c774b239e3a1eee45f0a1c1":[1,6,1,0,7]
+"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a8ecc0d587a55ac7f54e80338d6eef9d4":[1,6,0,0,8]
 };

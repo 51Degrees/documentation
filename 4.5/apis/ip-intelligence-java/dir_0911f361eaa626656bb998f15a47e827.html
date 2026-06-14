@@ -73,8 +73,8 @@ Directories</h2></td></tr>
 <tr class="c-table__row memitem:ci" id="r_ci"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_3f2f6d3e6b6997f733a82f47e5b654d5.html">ci</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p><img src="https://51degrees.com/img/logo.png?utm_source=github&amp;utm_medium=repository&amp;utm_content=readme_main&amp;utm_campaign=java-open-source" alt="51Degrees" title="Data rewards the curious" class="inline"/> <b>Java IP Intelligence</b></p>
-<p><a href="https://51degrees.com/ip-intelligence-java/index.html?utm_source=github&amp;utm_medium=repository&amp;utm_content=documentation&amp;utm_campaign=java-open-source" title="developer documentation">Developer Documentation</a></p>
+<div class="textblock"><p><img src="https://51degrees.com/img/logo.png?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=readme.md&amp;utm_term=51degrees-ip-intelligence-engines-examples" alt="51Degrees" title="Data rewards the curious" class="inline"/> <b>Java IP Intelligence</b></p>
+<p><a href="https://51degrees.com/ip-intelligence-java/index.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=readme.md&amp;utm_term=51degrees-ip-intelligence-engines-examples" title="developer documentation">Developer Documentation</a></p>
 <h1>Introduction</h1>
 <p>These examples are not distributed as maven jars and need to be built by you.</p>
 <h1>Required Files</h1>
@@ -86,7 +86,13 @@ Directories</h2></td></tr>
 <div class="c-code__line">├── console/</div>
 <div class="c-code__line">├── web/</div>
 <div class="c-code__line">└── shared/</div>
-</div><!-- fragment --><p>This project contains sub-modules - <b>console</b>, giving examples that are intended to be run from the command line/console and <b>web</b>, illustrating use of 51Degrees Web/Servlet integration. There is also a <b>shared</b> sub-module containing various helpers for the examples.</p>
+</div><!-- fragment --><p>The examples locate the data file in the following order:</p>
+<ol type="1">
+<li>The <code>51DEGREES_IPI_PATH</code> environment variable or system property, which can be set to an explicit path to the data file.</li>
+<li>A search of the project folder hierarchy for the expected file name.</li>
+<li>The expected location <code>ip-intelligence-data/51Degrees-EnterpriseIpiV41.ipi</code> (the configuration files for the getting started examples fall back to the free Lite file <code>ip-intelligence-data/51Degrees-LiteV41.ipi</code>).</li>
+</ol>
+<p>This project contains sub-modules - <b>console</b>, giving examples that are intended to be run from the command line/console and <b>web</b>, illustrating use of 51Degrees Web/Servlet integration. There is also a <b>shared</b> sub-module containing various helpers for the examples.</p>
 <p>Among other things, the examples illustrate:</p><ul>
 <li>use of the fluent builder to configure a pipeline</li>
 <li>use of a configuration options file to configure a pipeline</li>
@@ -98,6 +104,13 @@ Directories</h2></td></tr>
 <p>The table below describes the examples available in this repository.</p>
 <h2>Cloud (coming soon)</h2>
 <p>Cloud examples will be added once the Cloud service for IP Intelligence becomes available.</p>
+<p>Cloud examples need a resource key. The key is read from the <code>51DEGREES_RESOURCE_KEY</code> environment variable or system property first. The legacy <code>TestResourceKey</code> name is still supported and is checked second.</p>
+<p>The cloud property tiers changed in May 2026. The examples and this documentation now reflect what is free and what needs a paid subscription.</p>
+<ul>
+<li>Free tier IP properties are Country, LocationConfidence, Ip and IpV6.</li>
+<li>Paid IP properties used by the examples are CountryCode, CountryCode3, Region, State, Town, TimeZoneOffset, RegisteredName, RegisteredOwner, RegisteredCountry, IpRangeStart, IpRangeEnd, Latitude, Longitude, Areas and AccuracyRadiusMin.</li>
+</ul>
+<p>A free resource key selecting the free tier properties can be created at <a href="https://configure.51degrees.com/Wkqxf3Bs?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=readme.md&amp;utm_term=cloud-coming-soon">https://configure.51degrees.com/Wkqxf3Bs?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=readme.md&amp;utm_term=cloud-coming-soon</a>. A resource key that also includes the paid properties used by the examples can be created at <a href="https://configure.51degrees.com/hYzn3TV3?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=readme.md&amp;utm_term=cloud-coming-soon">https://configure.51degrees.com/hYzn3TV3?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=readme.md&amp;utm_term=cloud-coming-soon</a>. See <a href="https://51degrees.com/pricing?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=readme.md&amp;utm_term=cloud-coming-soon">https://51degrees.com/pricing?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=readme.md&amp;utm_term=cloud-coming-soon</a> to get a paid subscription with more properties.</p>
 <h2>On-Premise</h2>
 <table class="c-table">
 <tr class="c-table__row--heading">

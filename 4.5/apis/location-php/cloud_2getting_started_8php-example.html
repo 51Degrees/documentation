@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="g-docs__primary" id="primary">
 <p>This example shows how a simple location pipeline can be built that looks up an address from longitude and latitude.</p>
 <p>This example shows how a simple location pipeline can be built that looks up an address from longitude and latitude This example is available in full on <a href="https://github.com/51Degrees/location-php/blob/main/examples/cloud/gettingstarted.php">GitHub</a>.</p>
-<p>To run this example, you will need to create a <b>resource key</b>. The resource key is used as short-hand to store the particular set of properties you are interested in as well as any associated license keys that entitle you to increased request limits and/or paid-for properties. You can create a resource key using the 51Degrees <a href="https://configure.51degrees.com/gGc3T5pT">Configurator</a>.</p>
+<p>To run this example, you will need to create a <b>resource key</b>. The resource key is used as short-hand to store the particular set of properties you are interested in as well as any associated license keys that entitle you to increased request limits and/or paid-for properties. You can create a resource key using the 51Degrees <a href="https://configure.51degrees.com/gGc3T5pT?utm_source=code&amp;utm_medium=example&amp;utm_campaign=location-php&amp;utm_content=examples-cloud-gettingstarted.php&amp;utm_term=header">Configurator</a>.</p>
 <p>This example uses the 'Country' property, which is pre-populated when creating a key using the link above.</p>
 <p>Expected output </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">Which country is the location [51.458048,-0.9822207999999999] in?</div>
 <div class="c-code__line">UK</div>
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line">    $message = <span class="c-code__stringliteral">&#39;No resource key specified in the environment variable &#39;</span>;</div>
 <div class="c-code__line">    $message .= <span class="c-code__charliteral">&#39;&quot;&#39;</span> . Constants::RESOURCE_KEY_ENV_VAR . <span class="c-code__charliteral">&#39;&quot;&#39;</span> . <span class="c-code__stringliteral">&#39;&lt;br/&gt;&#39;</span>;</div>
 <div class="c-code__line">    $message .= <span class="c-code__stringliteral">&#39;Create a resource key with the properties required by this example&#39;</span>;</div>
-<div class="c-code__line">    $message .= <span class="c-code__stringliteral">&#39;at https://configure.51degrees.com/gGc3T5pT&#39;</span> . <span class="c-code__stringliteral">&#39;&lt;br/&gt;&#39;</span>;</div>
+<div class="c-code__line">    $message .= <span class="c-code__stringliteral">&#39;at https://configure.51degrees.com/gGc3T5pT?utm_source=code&amp;utm_medium=example&amp;utm_campaign=location-php&amp;utm_content=examples-cloud-gettingstarted.php&amp;utm_term=resource-key-required&#39;</span> . <span class="c-code__stringliteral">&#39;&lt;br/&gt;&#39;</span>;</div>
 <div class="c-code__line">    $message .= <span class="c-code__stringliteral">&#39;Once complete, populate the environment variable &#39;</span>;</div>
 <div class="c-code__line">    $message .= <span class="c-code__stringliteral">&#39;mentioned at the start of this message with the key.&#39;</span> . <span class="c-code__stringliteral">&#39;&lt;br/&gt;&#39;</span>;</div>
 <div class="c-code__line">    echo $message;</div>
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line"><span class="c-code__comment">// * The location provider: &quot;digitalelement&quot; or &quot;fiftyonedegrees&quot; </span></div>
 <div class="c-code__line"><span class="c-code__comment">// (If digital element is used, you will need a resource key that allows you </span></div>
 <div class="c-code__line"><span class="c-code__comment">// access to the appropriate property. You can do this via the following</span></div>
-<div class="c-code__line"><span class="c-code__comment">// link https://configure.51degrees.com/QMWqcX9n)</span></div>
+<div class="c-code__line"><span class="c-code__comment">// link https://configure.51degrees.com/QMWqcX9n?utm_source=code&amp;utm_medium=example&amp;utm_campaign=location-php&amp;utm_content=examples-cloud-gettingstarted.php&amp;utm_term=top)</span></div>
 <div class="c-code__line">$settings = array(</div>
 <div class="c-code__line">    <span class="c-code__stringliteral">&quot;resourceKey&quot;</span> =&gt; $resourceKey,</div>
 <div class="c-code__line">    <span class="c-code__stringliteral">&quot;locationProvider&quot;</span> =&gt; <span class="c-code__stringliteral">&quot;fiftyonedegrees&quot;</span></div>

@@ -156,6 +156,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line"><span class="c-code__preprocessor">#endif</span></div>
 <div class="c-code__line"><span class="c-code__preprocessor">#endif</span></div>
 <div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__preprocessor">#include &quot;../../Base/ExampleBase.h&quot;</span></div>
 <div class="c-code__line"><span class="c-code__preprocessor">#include &quot;../../../src/ipi.h&quot;</span></div>
 <div class="c-code__line"><span class="c-code__preprocessor">#include &quot;../../../src/common-cxx/textfile.h&quot;</span></div>
@@ -340,11 +342,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    <span class="c-code__keywordtype">char</span> dataFilePath[<a id="_a40" name="_a40"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gafd3ee670ff4ed3f29a395abd2f0f3344">FILE_MAX_PATH</a>];</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">char</span> ipAddressFilePath[<a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gafd3ee670ff4ed3f29a395abd2f0f3344">FILE_MAX_PATH</a>];</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">char</span> outputFilePath[<a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gafd3ee670ff4ed3f29a395abd2f0f3344">FILE_MAX_PATH</a>];</div>
+<div class="c-code__line">    <span class="c-code__comment">// An explicit data file path can be supplied in the 51DEGREES_IPI_PATH</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// environment variable, otherwise the parent folder structure is searched.</span></div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* envDataFilePath = getenv(<span class="c-code__stringliteral">&quot;51DEGREES_IPI_PATH&quot;</span>);</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (argc &gt; 1) {</div>
 <div class="c-code__line">        strcpy(dataFilePath, argv[1]);</div>
 <div class="c-code__line">    }</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (envDataFilePath != NULL &amp;&amp; envDataFilePath[0] != <span class="c-code__charliteral">&#39;\0&#39;</span>) {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (strlen(envDataFilePath) &gt;= <span class="c-code__keyword">sizeof</span>(dataFilePath)) {</div>
+<div class="c-code__line">            status = <a id="_a41" name="_a41"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga4921f9a186627faaebc505056ab7ed6e">INSUFFICIENT_MEMORY</a>;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">            strcpy(dataFilePath, envDataFilePath);</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">    }</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        status = <a id="a41" name="a41"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a>(</div>
+<div class="c-code__line">        status = <a id="a42" name="a42"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a>(</div>
 <div class="c-code__line">            dataDir,</div>
 <div class="c-code__line">            dataFileName,</div>
 <div class="c-code__line">            dataFilePath,</div>
@@ -417,6 +430,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga246be0840df800ead0edc55949e2e92e"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga246be0840df800ead0edc55949e2e92e">PropertiesDefault</a></div><div class="ttdeci">#define PropertiesDefault</div><div class="ttdoc">Synonym for fiftyoneDegreesPropertiesDefault function.</div><div class="ttdef"><b>Definition</b> common-cxx/fiftyone.h:262</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga29a7b1eb8b59c26629548b1de83b473b"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga29a7b1eb8b59c26629548b1de83b473b">EXCEPTION_CREATE</a></div><div class="ttdeci">#define EXCEPTION_CREATE</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_EXCEPTION_CREATE macro.</div><div class="ttdef"><b>Definition</b> common-cxx/fiftyone.h:426</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga3002890a18e3a86e4078880f2b00bbad"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga3002890a18e3a86e4078880f2b00bbad">StatusGetMessage</a></div><div class="ttdeci">#define StatusGetMessage</div><div class="ttdoc">Synonym for fiftyoneDegreesStatusGetMessage function.</div><div class="ttdef"><b>Definition</b> common-cxx/fiftyone.h:287</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga4921f9a186627faaebc505056ab7ed6e"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga4921f9a186627faaebc505056ab7ed6e">INSUFFICIENT_MEMORY</a></div><div class="ttdeci">#define INSUFFICIENT_MEMORY</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_STATUS_INSUFFICIENT_MEMORY status code.</div><div class="ttdef"><b>Definition</b> common-cxx/fiftyone.h:462</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga556b4dfadc53ec16baa29a33f59fe666"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga556b4dfadc53ec16baa29a33f59fe666">StatusCode</a></div><div class="ttdeci">fiftyoneDegreesStatusCode StatusCode</div><div class="ttdoc">Synonym for fiftyoneDegreesStatusCode type.</div><div class="ttdef"><b>Definition</b> common-cxx/fiftyone.h:130</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga5ba06bcfd18437e9145833037dd7ecc9"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a></div><div class="ttdeci">#define FileGetPath</div><div class="ttdoc">Synonym for fiftyoneDegreesFileGetPath function.</div><div class="ttdef"><b>Definition</b> common-cxx/fiftyone.h:327</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga9abc642ddb7d2753731782c82b8afec1"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga9abc642ddb7d2753731782c82b8afec1">String</a></div><div class="ttdeci">fiftyoneDegreesString String</div><div class="ttdoc">Synonym for fiftyoneDegreesString type.</div><div class="ttdef"><b>Definition</b> common-cxx/fiftyone.h:153</div></div>
@@ -442,8 +456,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="ttc" id="astructfiftyone_degrees_property_available_array_html_a931e016a455f0ace924c2df65db6a54e"><div class="ttname"><a href="structfiftyone_degrees_property_available_array.html#a931e016a455f0ace924c2df65db6a54e">fiftyoneDegreesPropertyAvailableArray::count</a></div><div class="ttdeci">uint32_t count</div><div class="ttdoc">Number of used items.</div><div class="ttdef"><b>Definition</b> properties.h:165</div></div>
 <div class="ttc" id="astructfiftyone_degrees_property_available_array_html_ad5009b422ab3c6c4357b1836a86480fe"><div class="ttname"><a href="structfiftyone_degrees_property_available_array.html#ad5009b422ab3c6c4357b1836a86480fe">fiftyoneDegreesPropertyAvailableArray::items</a></div><div class="ttdeci">fiftyoneDegreesPropertyAvailable * items</div><div class="ttdoc">Pointer to the first item.</div><div class="ttdef"><b>Definition</b> properties.h:165</div></div>
 <div class="ttc" id="astructfiftyone_degrees_property_available_html_a6b9ef94044966ff6467dce839d793be9"><div class="ttname"><a href="structfiftyone_degrees_property_available.html#a6b9ef94044966ff6467dce839d793be9">fiftyoneDegreesPropertyAvailable::name</a></div><div class="ttdeci">fiftyoneDegreesCollectionItem name</div><div class="ttdoc">Name of the property from strings.</div><div class="ttdef"><b>Definition</b> properties.h:153</div></div>
-<div class="ttc" id="astructoffline_process_state_html"><div class="ttname"><a href="structoffline_process_state.html">offlineProcessState</a></div><div class="ttdoc">State used for the offline processing operation.</div><div class="ttdef"><b>Definition</b> OfflineProcessing.c:166</div></div>
-<div class="ttc" id="astructoffline_process_state_html_ac59cd53968a3418cd03c6be8b23545df"><div class="ttname"><a href="structoffline_process_state.html#ac59cd53968a3418cd03c6be8b23545df">offlineProcessState::results</a></div><div class="ttdeci">ResultsIpi * results</div><div class="ttdoc">The results used by the thread.</div><div class="ttdef"><b>Definition</b> OfflineProcessing.c:168</div></div>
+<div class="ttc" id="astructoffline_process_state_html"><div class="ttname"><a href="structoffline_process_state.html">offlineProcessState</a></div><div class="ttdoc">State used for the offline processing operation.</div><div class="ttdef"><b>Definition</b> OfflineProcessing.c:168</div></div>
+<div class="ttc" id="astructoffline_process_state_html_ac59cd53968a3418cd03c6be8b23545df"><div class="ttname"><a href="structoffline_process_state.html#ac59cd53968a3418cd03c6be8b23545df">offlineProcessState::results</a></div><div class="ttdeci">ResultsIpi * results</div><div class="ttdoc">The results used by the thread.</div><div class="ttdef"><b>Definition</b> OfflineProcessing.c:170</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

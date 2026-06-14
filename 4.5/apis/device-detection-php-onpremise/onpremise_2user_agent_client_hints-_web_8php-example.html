@@ -108,6 +108,32 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line">use fiftyone\pipeline\core\PipelineBuilder;</div>
 <div class="c-code__line">use fiftyone\pipeline\core\Utils;</div>
 <div class="c-code__line">use <a id="_a1" name="_a1"></a><a class="code hl_class" href="classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise.html">fiftyone\pipeline\devicedetection\DeviceDetectionOnPremise</a>;</div>
+<div class="c-code__line">use <a id="_a2" name="_a2"></a><a class="code hl_class" href="classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils.html">fiftyone\pipeline\devicedetection\examples\onpremise\classes\ExampleUtils</a>;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment">// The example is run as a router script for the PHP built-in server</span></div>
+<div class="c-code__line"><span class="c-code__comment">// (php -S localhost:3000 userAgentClientHints-Web.php), so every request,</span></div>
+<div class="c-code__line"><span class="c-code__comment">// including the shared CSS and JS assets, is routed here. Serve the</span></div>
+<div class="c-code__line"><span class="c-code__comment">// vendored pattern-library assets from the static directory before</span></div>
+<div class="c-code__line"><span class="c-code__comment">// running detection.</span></div>
+<div class="c-code__line">$assets = [</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&#39;/css/examples-main.min.css&#39;</span> =&gt; [<span class="c-code__stringliteral">&#39;static/css/examples-main.min.css&#39;</span>, <span class="c-code__stringliteral">&#39;text/css&#39;</span>],</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&#39;/js/examples.min.js&#39;</span> =&gt; [<span class="c-code__stringliteral">&#39;static/js/examples.min.js&#39;</span>, <span class="c-code__stringliteral">&#39;application/javascript&#39;</span>]</div>
+<div class="c-code__line">];</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">$requestPath = parse_url($_SERVER[<span class="c-code__stringliteral">&#39;REQUEST_URI&#39;</span>] ?? <span class="c-code__charliteral">&#39;/&#39;</span>, PHP_URL_PATH);</div>
+<div class="c-code__line"><span class="c-code__keywordflow">if</span> (isset($assets[$requestPath])) {</div>
+<div class="c-code__line">    [$relativePath, $contentType] = $assets[$requestPath];</div>
+<div class="c-code__line">    $assetFile = __DIR__ . <span class="c-code__charliteral">&#39;/&#39;</span> . $relativePath;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (is_file($assetFile)) {</div>
+<div class="c-code__line">        header(<span class="c-code__stringliteral">&#39;Content-Type: &#39;</span> . $contentType);</div>
+<div class="c-code__line">        echo file_get_contents($assetFile);</div>
+<div class="c-code__line">    } <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">        http_response_code(404);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span>;</div>
+<div class="c-code__line">}</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">$device = <span class="c-code__keyword">new</span> DeviceDetectionOnPremise();</div>
 <div class="c-code__line"> </div>
@@ -130,99 +156,135 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line"><span class="c-code__comment">// requested. So set whatever headers are required by the browser in</span></div>
 <div class="c-code__line"><span class="c-code__comment">// order to return the evidence needed by the pipeline.</span></div>
 <div class="c-code__line"><span class="c-code__comment">// More info on this can be found at</span></div>
-<div class="c-code__line"><span class="c-code__comment">// https://51degrees.com/blog/user-agent-client-hints</span></div>
+<div class="c-code__line"><span class="c-code__comment">// https://51degrees.com/blog/user-agent-client-hints?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-php-onpremise&amp;utm_content=examples-onpremise-useragentclienthints-web.php&amp;utm_term=top</span></div>
 <div class="c-code__line">Utils::setResponseHeader($flowData);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// Generate the HTML</span></div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;&lt;h2&gt;User Agent Client Hints Example&lt;/h2&gt;&#39;</span>;</div>
+<div class="c-code__line"><span class="c-code__comment">// Determine whether the free &#39;Lite&#39; data file is in use so that the</span></div>
+<div class="c-code__line"><span class="c-code__comment">// contact-us banner can be shown only on that tier.</span></div>
+<div class="c-code__line">$showContactUs = ExampleUtils::getDataFileTier($flowData-&gt;pipeline-&gt;getElement(<span class="c-code__stringliteral">&#39;device&#39;</span>)) === <span class="c-code__stringliteral">&#39;Lite&#39;</span>;</div>
+<div class="c-code__line">?&gt;</div>
+<div class="c-code__line">&lt;head&gt;</div>
+<div class="c-code__line">    &lt;title&gt;User-Agent Client Hints Example&lt;/title&gt;</div>
+<div class="c-code__line">    &lt;link rel=<span class="c-code__stringliteral">&quot;stylesheet&quot;</span> href=<span class="c-code__stringliteral">&quot;/css/examples-main.min.css&quot;</span> /&gt;</div>
+<div class="c-code__line">&lt;/head&gt;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&quot;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral"></span> </div>
-<div class="c-code__line"><span class="c-code__stringliteral">    &lt;p&gt;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    By default, the user-agent, sec-ch-ua and sec-ch-ua-mobile HTTP headers</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    are sent.</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    &lt;br /&gt;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    This means that on the first request, the server can determine the</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    browser from sec-ch-ua while other details must be derived from the</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    user-agent.</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    &lt;br /&gt;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    If the server determines that the browser supports client hints, then</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    it may request additional client hints headers by setting the</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    Accept-CH header in the response.</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    &lt;br /&gt;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    Select the &lt;strong&gt;Make second request&lt;/strong&gt; button below,</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    to use send another request to the server. This time, any</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    additional client hints headers that have been requested</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    will be included.</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    &lt;/p&gt;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral"></span> </div>
-<div class="c-code__line"><span class="c-code__stringliteral">&lt;button type=&#39;button&#39; onclick=&#39;redirect()&#39;&gt;Make second request&lt;/button&gt;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral"></span> </div>
-<div class="c-code__line"><span class="c-code__stringliteral">&lt;script&gt;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral"></span> </div>
-<div class="c-code__line"><span class="c-code__stringliteral">    // This script will run when button will be clicked and device detection request will again </span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    // be sent to the server with all additional client hints that was requested in the previous</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    // response by the server.</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    // Following sequence will be followed.</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    // 1. User will send the first request to the web server for detection.</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    // 2. Web Server will return the properties in response based on the headers sent in the request. Along </span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    // with the properties, it will also send a new header field Accept-CH in response indicating the additional</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    // evidence it needs. It builds the new response header using SetHeader[Component name]Accept-CH properties </span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    // where Component Name is the name of the component for which properties are required.</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    // 3. When \&quot;Make second request\&quot; button will be clicked, device detection request will again </span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    // be sent to the server with all additional client hints that was requested in the previous</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    // response by the server.</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    // 4. Web Server will return the properties based on the new User Agent CLient Hint headers </span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    // being used as evidence.</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral"></span> </div>
-<div class="c-code__line"><span class="c-code__stringliteral">    function redirect() {</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">        sessionStorage.reloadAfterPageLoad = true;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">        window.location.reload(true);</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">        }</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral"></span> </div>
-<div class="c-code__line"><span class="c-code__stringliteral">    window.onload = function () { </span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">        if ( sessionStorage.reloadAfterPageLoad ) {</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">        document.getElementById(&#39;description&#39;).innerHTML = &#39;&lt;p&gt;The information shown below is determined using &lt;strong&gt;User Agent Client Hints&lt;/strong&gt; that was sent in the request to obtain additional evidence. If no additional information appears then it may indicate an external problem such as &lt;strong&gt;User Agent Client Hints&lt;/strong&gt; being disabled in your browser.&lt;/p&gt;&#39;;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">        sessionStorage.reloadAfterPageLoad = false;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">        }</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">        else{</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">        document.getElementById(&#39;description&#39;).innerHTML = &#39;&lt;p&gt;The following values are determined by sever-side device detection on the first request.&lt;/p&gt;&#39;;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">        }</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    }</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral"></span> </div>
-<div class="c-code__line"><span class="c-code__stringliteral">&lt;/script&gt;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral"></span> </div>
-<div class="c-code__line"><span class="c-code__stringliteral">&lt;div id=\&quot;evidence\&quot;&gt;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    &lt;strong&gt;&lt;/br&gt;Evidence values used: &lt;/strong&gt;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">    &lt;table&gt;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">        &lt;tr&gt;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">            &lt;th&gt;Key&lt;/th&gt;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">            &lt;th&gt;Value&lt;/th&gt;</span></div>
-<div class="c-code__line"><span class="c-code__stringliteral">        &lt;/tr&gt;&quot;</span>;</div>
+<div class="c-code__line">&lt;div <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-page&quot;</span>&gt;</div>
+<div class="c-code__line">    &lt;h2 <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-page__title&quot;</span>&gt;User-Agent Client Hints example&lt;/h2&gt;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">$evidences = $pipeline-&gt;getElement(<span class="c-code__stringliteral">&#39;device&#39;</span>)-&gt;filterEvidence($flowData);</div>
-<div class="c-code__line"><span class="c-code__keywordflow">foreach</span> ($evidences as $key =&gt; $value) {</div>
-<div class="c-code__line">    echo <span class="c-code__stringliteral">&#39;&lt;tr&gt;&lt;td&gt;&#39;</span> . strval($key) . <span class="c-code__stringliteral">&#39;&lt;/td&gt;&#39;</span>;</div>
-<div class="c-code__line">    echo <span class="c-code__stringliteral">&#39;&lt;td&gt;&#39;</span> . strval($value) . <span class="c-code__stringliteral">&#39;&lt;/td&gt;&lt;/&gt;&#39;</span>;</div>
-<div class="c-code__line">}</div>
+<div class="c-code__line">    &lt;p <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-page__lead&quot;</span>&gt;</div>
+<div class="c-code__line">        By <span class="c-code__keywordflow">default</span>, the user-agent, sec-ch-ua and sec-ch-ua-mobile HTTP headers are sent.</div>
+<div class="c-code__line">        This means that on the first request, the server can determine the browser from</div>
+<div class="c-code__line">        sec-ch-ua <span class="c-code__keywordflow">while</span> other details must be derived from the user-agent.</div>
+<div class="c-code__line">    &lt;/p&gt;</div>
+<div class="c-code__line">    &lt;p <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-page__lead&quot;</span>&gt;</div>
+<div class="c-code__line">        If the server determines that the browser supports client hints, then it may request</div>
+<div class="c-code__line">        additional client hints headers by setting the Accept-CH header in the response.</div>
+<div class="c-code__line">        Select the &lt;strong&gt;Make second request&lt;/strong&gt; button below to send another request</div>
+<div class="c-code__line">        to the server. This time, any additional client hints headers that have been requested</div>
+<div class="c-code__line">        will be included.</div>
+<div class="c-code__line">    &lt;/p&gt;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;&lt;/table&gt;&#39;</span>;</div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;&lt;/div&gt;&#39;</span>;</div>
+<div class="c-code__line">    &lt;div <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-button-row&quot;</span>&gt;</div>
+<div class="c-code__line">        &lt;button type=<span class="c-code__stringliteral">&quot;button&quot;</span> <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;b-btn&quot;</span> onclick=<span class="c-code__stringliteral">&quot;redirect()&quot;</span>&gt;Make second request&lt;/button&gt;</div>
+<div class="c-code__line">    &lt;/div&gt;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;&lt;div id=description&gt;&lt;/div&gt;&#39;</span>;</div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;&lt;/br&gt;&lt;strong&gt;Detection results:&lt;/strong&gt;&lt;/br&gt;&#39;</span>;</div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;&lt;div id=&quot;content&quot;&gt;&#39;</span>;</div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&quot;&lt;p&gt;\n&quot;</span>;</div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;    Hardware Vendor: &#39;</span> . (isset($device-&gt;hardwarevendor) &amp;&amp; $device-&gt;hardwarevendor-&gt;hasValue ? $device-&gt;hardwarevendor-&gt;value : <span class="c-code__stringliteral">&#39;Unknown (&#39;</span> . (isset($device-&gt;hardwarevendor) ? $device-&gt;hardwarevendor-&gt;noValueMessage : <span class="c-code__stringliteral">&#39;property unavailable&#39;</span>) . <span class="c-code__charliteral">&#39;)&#39;</span>) . <span class="c-code__stringliteral">&quot;&lt;br /&gt;\n&quot;</span>;</div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;    Hardware Name: &#39;</span> . (isset($device-&gt;hardwarename) &amp;&amp; $device-&gt;hardwarename-&gt;hasValue ? implode(<span class="c-code__charliteral">&#39;,&#39;</span>, $device-&gt;hardwarename-&gt;value) : <span class="c-code__stringliteral">&#39;Unknown (&#39;</span> . (isset($device-&gt;hardwarename) ? $device-&gt;hardwarename-&gt;noValueMessage : <span class="c-code__stringliteral">&#39;property unavailable&#39;</span>) . <span class="c-code__stringliteral">&#39;)&#39;</span>) . <span class="c-code__stringliteral">&quot;&lt;br /&gt;\n&quot;</span>;</div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;    Device Type: &#39;</span> . (isset($device-&gt;devicetype) &amp;&amp; $device-&gt;devicetype-&gt;hasValue ? $device-&gt;devicetype-&gt;value : <span class="c-code__stringliteral">&#39;Unknown (&#39;</span> . (isset($device-&gt;devicetype) ? $device-&gt;devicetype-&gt;noValueMessage : <span class="c-code__stringliteral">&#39;property unavailable&#39;</span>) . <span class="c-code__charliteral">&#39;)&#39;</span>) . <span class="c-code__stringliteral">&quot;&lt;br /&gt;\n&quot;</span>;</div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;    Platform Vendor: &#39;</span> . (isset($device-&gt;platformvendor) &amp;&amp; $device-&gt;platformvendor-&gt;hasValue ? $device-&gt;platformvendor-&gt;value : <span class="c-code__stringliteral">&#39;Unknown (&#39;</span> . (isset($device-&gt;platformvendor) ? $device-&gt;platformvendor-&gt;noValueMessage : <span class="c-code__stringliteral">&#39;property unavailable&#39;</span>) . <span class="c-code__charliteral">&#39;)&#39;</span>) . <span class="c-code__stringliteral">&quot;&lt;br /&gt;\n&quot;</span>;</div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;    Platform Name: &#39;</span> . (isset($device-&gt;platformname) &amp;&amp; $device-&gt;platformname-&gt;hasValue ? $device-&gt;platformname-&gt;value : <span class="c-code__stringliteral">&#39;Unknown (&#39;</span> . (isset($device-&gt;platformname) ? $device-&gt;platformname-&gt;noValueMessage : <span class="c-code__stringliteral">&#39;property unavailable&#39;</span>) . <span class="c-code__charliteral">&#39;)&#39;</span>) . <span class="c-code__stringliteral">&quot;&lt;br /&gt;\n&quot;</span>;</div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;    Platform Version: &#39;</span> . (isset($device-&gt;platformversion) &amp;&amp; $device-&gt;platformversion-&gt;hasValue ? $device-&gt;platformversion-&gt;value : <span class="c-code__stringliteral">&#39;Unknown (&#39;</span> . (isset($device-&gt;platformversion) ? $device-&gt;platformversion-&gt;noValueMessage : <span class="c-code__stringliteral">&#39;property unavailable&#39;</span>) . <span class="c-code__charliteral">&#39;)&#39;</span>) . <span class="c-code__stringliteral">&quot;&lt;br /&gt;\n&quot;</span>;</div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;    Browser Vendor: &#39;</span> . (isset($device-&gt;browservendor) &amp;&amp; $device-&gt;browservendor-&gt;hasValue ? $device-&gt;browservendor-&gt;value : <span class="c-code__stringliteral">&#39;Unknown (&#39;</span> . (isset($device-&gt;browservendor) ? $device-&gt;browservendor-&gt;noValueMessage : <span class="c-code__stringliteral">&#39;property unavailable&#39;</span>) . <span class="c-code__charliteral">&#39;)&#39;</span>) . <span class="c-code__stringliteral">&quot;&lt;br /&gt;\n&quot;</span>;</div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;    Browser Name: &#39;</span> . (isset($device-&gt;browsername) &amp;&amp; $device-&gt;browsername-&gt;hasValue ? $device-&gt;browsername-&gt;value : <span class="c-code__stringliteral">&#39;Unknown (&#39;</span> . (isset($device-&gt;browsername) ? $device-&gt;browsername-&gt;noValueMessage : <span class="c-code__stringliteral">&#39;property unavailable&#39;</span>) . <span class="c-code__charliteral">&#39;)&#39;</span>) . <span class="c-code__stringliteral">&quot;&lt;br /&gt;\n&quot;</span>;</div>
-<div class="c-code__line">echo <span class="c-code__stringliteral">&#39;    Browser Version: &#39;</span> . (isset($device-&gt;browserversion) &amp;&amp; $device-&gt;browserversion-&gt;hasValue ? $device-&gt;browserversion-&gt;value : <span class="c-code__stringliteral">&#39;Unknown (&#39;</span> . (isset($device-&gt;browserversion) ? $device-&gt;browserversion-&gt;noValueMessage : <span class="c-code__stringliteral">&#39;property unavailable&#39;</span>) . <span class="c-code__charliteral">&#39;)&#39;</span>) . <span class="c-code__stringliteral">&quot;\n&quot;</span>;</div>
+<div class="c-code__line">    &lt;div <span class="c-code__keywordtype">id</span>=<span class="c-code__stringliteral">&quot;evidence&quot;</span>&gt;</div>
+<div class="c-code__line">        &lt;h3 <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-page__heading&quot;</span>&gt;Evidence values used&lt;/h3&gt;</div>
+<div class="c-code__line">        &lt;p <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-legend&quot;</span>&gt;</div>
+<div class="c-code__line">            Evidence was</div>
+<div class="c-code__line">            &lt;span <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-legend__swatch c-eg-legend__swatch--used&quot;</span>&gt;used&lt;/span&gt;</div>
+<div class="c-code__line">            /</div>
+<div class="c-code__line">            &lt;span <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-legend__swatch c-eg-legend__swatch--present&quot;</span>&gt;present&lt;/span&gt;</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">for</span> detection</div>
+<div class="c-code__line">        &lt;/p&gt;</div>
+<div class="c-code__line">        &lt;table <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table&quot;</span>&gt;</div>
+<div class="c-code__line">            &lt;thead <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__head&quot;</span>&gt;</div>
+<div class="c-code__line">                &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row&quot;</span>&gt;</div>
+<div class="c-code__line">                    &lt;th <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;Key&lt;/th&gt;</div>
+<div class="c-code__line">                    &lt;th <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;Value&lt;/th&gt;</div>
+<div class="c-code__line">                &lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;/thead&gt;</div>
+<div class="c-code__line">            &lt;tbody&gt;</div>
+<div class="c-code__line">                &lt;?php</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">foreach</span> ($flowData-&gt;evidence-&gt;getAll() as $key =&gt; $value) {</div>
+<div class="c-code__line">                        <span class="c-code__keywordflow">if</span> ($flowData-&gt;pipeline-&gt;getElement(<span class="c-code__stringliteral">&#39;device&#39;</span>)-&gt;getEvidenceKeyFilter()-&gt;filterEvidenceKey($key)) {</div>
+<div class="c-code__line">                            echo <span class="c-code__stringliteral">&quot;&lt;tr class=&#39;c-eg-table__row c-eg-table__row--used&#39;&gt;&quot;</span>;</div>
+<div class="c-code__line">                        } <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">                            echo <span class="c-code__stringliteral">&quot;&lt;tr class=&#39;c-eg-table__row c-eg-table__row--present&#39;&gt;&quot;</span>;</div>
+<div class="c-code__line">                        }</div>
+<div class="c-code__line">                        echo <span class="c-code__stringliteral">&#39;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;&#39;</span> . htmlspecialchars(strval($key)) . <span class="c-code__stringliteral">&#39;&lt;/td&gt;&#39;</span>;</div>
+<div class="c-code__line">                        echo <span class="c-code__stringliteral">&#39;&lt;td class=&quot;c-eg-table__cell&quot;&gt;&#39;</span> . htmlspecialchars(strval($value)) . <span class="c-code__stringliteral">&#39;&lt;/td&gt;&#39;</span>;</div>
+<div class="c-code__line">                        echo <span class="c-code__stringliteral">&#39;&lt;/tr&gt;&#39;</span>;</div>
+<div class="c-code__line">                    }</div>
+<div class="c-code__line">                ?&gt;</div>
+<div class="c-code__line">            &lt;/tbody&gt;</div>
+<div class="c-code__line">        &lt;/table&gt;</div>
+<div class="c-code__line">    &lt;/div&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    &lt;h3 <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-page__heading&quot;</span>&gt;Detection results&lt;/h3&gt;</div>
+<div class="c-code__line">    &lt;p <span class="c-code__keywordtype">id</span>=<span class="c-code__stringliteral">&quot;description&quot;</span> <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-page__lead&quot;</span>&gt;&lt;/p&gt;</div>
+<div class="c-code__line">    &lt;table <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table&quot;</span>&gt;</div>
+<div class="c-code__line">        &lt;thead <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__head&quot;</span>&gt;</div>
+<div class="c-code__line">            &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row&quot;</span>&gt;</div>
+<div class="c-code__line">                &lt;th <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;Key&lt;/th&gt;</div>
+<div class="c-code__line">                &lt;th <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;Value&lt;/th&gt;</div>
+<div class="c-code__line">            &lt;/tr&gt;</div>
+<div class="c-code__line">        &lt;/thead&gt;</div>
+<div class="c-code__line">        &lt;tbody&gt;</div>
+<div class="c-code__line">            &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row c-eg-table__row--alt&quot;</span>&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell c-eg-table__cell--key&quot;</span>&gt;Hardware Vendor:&lt;/td&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;&lt;?php echo htmlspecialchars(ExampleUtils::getHumanReadable($device, <span class="c-code__stringliteral">&#39;hardwarevendor&#39;</span>)); ?&gt;&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row&quot;</span>&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell c-eg-table__cell--key&quot;</span>&gt;Hardware Name:&lt;/td&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;&lt;?php echo htmlspecialchars(ExampleUtils::getHumanReadable($device, <span class="c-code__stringliteral">&#39;hardwarename&#39;</span>)); ?&gt;&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row c-eg-table__row--alt&quot;</span>&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell c-eg-table__cell--key&quot;</span>&gt;Device Type:&lt;/td&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;&lt;?php echo htmlspecialchars(ExampleUtils::getHumanReadable($device, <span class="c-code__stringliteral">&#39;devicetype&#39;</span>)); ?&gt;&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row&quot;</span>&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell c-eg-table__cell--key&quot;</span>&gt;Platform Vendor:&lt;/td&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;&lt;?php echo htmlspecialchars(ExampleUtils::getHumanReadable($device, <span class="c-code__stringliteral">&#39;platformvendor&#39;</span>)); ?&gt;&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row c-eg-table__row--alt&quot;</span>&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell c-eg-table__cell--key&quot;</span>&gt;Platform Name:&lt;/td&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;&lt;?php echo htmlspecialchars(ExampleUtils::getHumanReadable($device, <span class="c-code__stringliteral">&#39;platformname&#39;</span>)); ?&gt;&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row&quot;</span>&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell c-eg-table__cell--key&quot;</span>&gt;Platform Version:&lt;/td&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;&lt;?php echo htmlspecialchars(ExampleUtils::getHumanReadable($device, <span class="c-code__stringliteral">&#39;platformversion&#39;</span>)); ?&gt;&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row c-eg-table__row--alt&quot;</span>&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell c-eg-table__cell--key&quot;</span>&gt;Browser Vendor:&lt;/td&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;&lt;?php echo htmlspecialchars(ExampleUtils::getHumanReadable($device, <span class="c-code__stringliteral">&#39;browservendor&#39;</span>)); ?&gt;&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row&quot;</span>&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell c-eg-table__cell--key&quot;</span>&gt;Browser Name:&lt;/td&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;&lt;?php echo htmlspecialchars(ExampleUtils::getHumanReadable($device, <span class="c-code__stringliteral">&#39;browsername&#39;</span>)); ?&gt;&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row c-eg-table__row--alt&quot;</span>&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell c-eg-table__cell--key&quot;</span>&gt;Browser Version:&lt;/td&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;&lt;?php echo htmlspecialchars(ExampleUtils::getHumanReadable($device, <span class="c-code__stringliteral">&#39;browserversion&#39;</span>)); ?&gt;&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">        &lt;/tbody&gt;</div>
+<div class="c-code__line">    &lt;/table&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    &lt;?php <span class="c-code__keywordflow">if</span> ($showContactUs) { ?&gt;</div>
+<div class="c-code__line">    &lt;div <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-message&quot;</span>&gt;</div>
+<div class="c-code__line">      &lt;p <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-message__text&quot;</span>&gt;The paid data file adds daily automatic updates, non-human identification and IP intelligence. &lt;a href=<span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us&quot;</span>&gt;Contact us&lt;/a&gt; to explore the options.&lt;/p&gt;</div>
+<div class="c-code__line">      &lt;a <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;b-btn c-eg-message__cta&quot;</span> href=<span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us&quot;</span>&gt;Contact us&lt;/a&gt;</div>
+<div class="c-code__line">    &lt;/div&gt;</div>
+<div class="c-code__line">    &lt;?php } ?&gt;</div>
+<div class="c-code__line">&lt;/div&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;script&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// This script will run when button will be clicked and device detection request will again</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// be sent to the server with all additional client hints that was requested in the previous</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// response by the server.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// Following sequence will be followed.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// 1. User will send the first request to the web server for detection.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// 2. Web Server will return the properties in response based on the headers sent in the request. Along</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// with the properties, it will also send a new header field Accept-CH in response indicating the additional</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// evidence it needs. It builds the new response header using SetHeader[Component name]Accept-CH properties</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// where Component Name is the name of the component for which properties are required.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// 3. When &quot;Make second request&quot; button will be clicked, device detection request will again</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// be sent to the server with all additional client hints that was requested in the previous</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// response by the server.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// 4. Web Server will return the properties based on the new User Agent CLient Hint headers</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// being used as evidence.</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keyword">function</span> redirect() {</div>
+<div class="c-code__line">        sessionStorage.reloadAfterPageLoad = <span class="c-code__keyword">true</span>;</div>
+<div class="c-code__line">        window.location.reload(<span class="c-code__keyword">true</span>);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    window.onload = <span class="c-code__keyword">function</span> () {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (sessionStorage.reloadAfterPageLoad) {</div>
+<div class="c-code__line">            document.getElementById(<span class="c-code__stringliteral">&#39;description&#39;</span>).innerHTML = <span class="c-code__stringliteral">&#39;The information shown below is determined using &lt;strong&gt;User-Agent Client Hints&lt;/strong&gt; that was sent in the request to obtain additional evidence. If no additional information appears then it may indicate an external problem such as &lt;strong&gt;User-Agent Client Hints&lt;/strong&gt; being disabled in your browser.&#39;</span>;</div>
+<div class="c-code__line">            sessionStorage.reloadAfterPageLoad = <span class="c-code__keyword">false</span>;</div>
+<div class="c-code__line">        } <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">            document.getElementById(<span class="c-code__stringliteral">&#39;description&#39;</span>).innerHTML = <span class="c-code__stringliteral">&#39;The following values are determined by server-side device detection on the first request.&#39;</span>;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">    };</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;/script&gt;</div>
 <div class="ttc" id="aclassfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise_html"><div class="ttname"><a href="classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise.html">fiftyone\pipeline\devicedetection\DeviceDetectionOnPremise</a></div><div class="ttdef"><b>Definition</b> DeviceDetectionOnPremise.php:36</div></div>
+<div class="ttc" id="aclassfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils_html"><div class="ttname"><a href="classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils.html">fiftyone\pipeline\devicedetection\examples\onpremise\classes\ExampleUtils</a></div><div class="ttdef"><b>Definition</b> ExampleUtils.php:27</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

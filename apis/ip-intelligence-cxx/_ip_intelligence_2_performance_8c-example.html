@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line"><span class="c-code__comment"> * ********************************************************************* */</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="c-code__line"><span class="c-code__preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"> <span class="c-code__comment">// Include ExmapleBase.h before others as it includes Windows &#39;crtdbg.h&#39;</span></div>
@@ -793,6 +794,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    uint16_t numberOfThreads = DEFAULT_NUMBER_OF_THREADS;</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">int</span> iterations = DEFAULT_ITERATIONS;</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">char</span> *outFile = NULL;</div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *envDataFilePath = getenv(<span class="c-code__stringliteral">&quot;51DEGREES_IPI_PATH&quot;</span>);</div>
 <div class="c-code__line">    dataFilePath[0] = <span class="c-code__charliteral">&#39;\0&#39;</span>;</div>
 <div class="c-code__line">    evidenceFilePath[0] = <span class="c-code__charliteral">&#39;\0&#39;</span>;</div>
 <div class="c-code__line"> </div>
@@ -840,6 +842,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">        <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">            <span class="c-code__comment">// Do nothing, this is a value.</span></div>
 <div class="c-code__line">        }</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// An explicit data file path can be supplied in the 51DEGREES_IPI_PATH</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// environment variable, otherwise the parent folder structure is searched.</span></div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (strlen(dataFilePath) == 0 &amp;&amp;</div>
+<div class="c-code__line">        envDataFilePath != NULL &amp;&amp; envDataFilePath[0] != <span class="c-code__charliteral">&#39;\0&#39;</span>) {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (strlen(envDataFilePath) &gt;= <span class="c-code__keyword">sizeof</span>(dataFilePath)) {</div>
+<div class="c-code__line">            printf(<span class="c-code__stringliteral">&quot;The data file path in the 51DEGREES_IPI_PATH &quot;</span></div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;environment variable is too long.\n&quot;</span>);</div>
+<div class="c-code__line"><span class="c-code__preprocessor">#ifndef TEST</span></div>
+<div class="c-code__line">            fgetc(stdin);</div>
+<div class="c-code__line"><span class="c-code__preprocessor">#endif</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> 1;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        strcpy(dataFilePath, envDataFilePath);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (strlen(dataFilePath) == 0) {</div>
@@ -934,7 +951,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gaf31a20347d083f97ecfffc854487c2fc"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gaf31a20347d083f97ecfffc854487c2fc">EvidenceMapPrefix</a></div><div class="ttdeci">#define EvidenceMapPrefix</div><div class="ttdoc">Synonym for fiftyoneDegreesEvidenceMapPrefix function.</div><div class="ttdef"><b>Definition</b> common-cxx/fiftyone.h:315</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gafd3ee670ff4ed3f29a395abd2f0f3344"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gafd3ee670ff4ed3f29a395abd2f0f3344">FILE_MAX_PATH</a></div><div class="ttdeci">#define FILE_MAX_PATH</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_FILE_MAX_PATH macro.</div><div class="ttdef"><b>Definition</b> common-cxx/fiftyone.h:433</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_threading_html_ga73811e87d8e1da7f10bc3943591333ec"><div class="ttname"><a href="group___fifty_one_degrees_threading.html#ga73811e87d8e1da7f10bc3943591333ec">FIFTYONE_DEGREES_THREAD</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_THREAD</div><div class="ttdoc">A thread created with the FIFTYONE_DEGREES_THREAD_CREATE macro.</div><div class="ttdef"><b>Definition</b> threading.h:173</div></div>
-<div class="ttc" id="astructevidence_node_html"><div class="ttname"><a href="structevidence_node.html">evidenceNode</a></div><div class="ttdef"><b>Definition</b> Performance.c:112</div></div>
+<div class="ttc" id="astructevidence_node_html"><div class="ttname"><a href="structevidence_node.html">evidenceNode</a></div><div class="ttdef"><b>Definition</b> Performance.c:113</div></div>
 <div class="ttc" id="astructfiftyone_degrees_collection_config_html_af3dee101ea5b465a0a40f1899487e041"><div class="ttname"><a href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">fiftyoneDegreesCollectionConfig::concurrency</a></div><div class="ttdeci">uint16_t concurrency</div><div class="ttdoc">Expected number of concurrent requests, 1 or greater.</div><div class="ttdef"><b>Definition</b> collection.h:293</div></div>
 <div class="ttc" id="astructfiftyone_degrees_config_base_html_ad262b246482922758cce9ac0eec1460c"><div class="ttname"><a href="structfiftyone_degrees_config_base.html#ad262b246482922758cce9ac0eec1460c">fiftyoneDegreesConfigBase::allInMemory</a></div><div class="ttdeci">bool allInMemory</div><div class="ttdoc">True if the data file should be loaded entirely into continuous memory.</div><div class="ttdef"><b>Definition</b> config.h:50</div></div>
 <div class="ttc" id="astructfiftyone_degrees_config_ipi_html_a0d6715d257f229a245ed98af74dc687f"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#a0d6715d257f229a245ed98af74dc687f">fiftyoneDegreesConfigIpi::graph</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig graph</div><div class="ttdoc">Config for each graph.</div><div class="ttdef"><b>Definition</b> ipi.h:261</div></div>
@@ -973,10 +990,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="ttc" id="astructfiftyone_degrees_key_value_pair_html_ab1625b8fdbd007a8bd8839fd1a8b6e3f"><div class="ttname"><a href="structfiftyone_degrees_key_value_pair.html#ab1625b8fdbd007a8bd8839fd1a8b6e3f">fiftyoneDegreesKeyValuePair::valueLength</a></div><div class="ttdeci">size_t valueLength</div><div class="ttdoc">number of characters in value</div><div class="ttdef"><b>Definition</b> pair.h:33</div></div>
 <div class="ttc" id="astructfiftyone_degrees_properties_required_html_a7044785e8c67e2d208ba1010ec355d5c"><div class="ttname"><a href="structfiftyone_degrees_properties_required.html#a7044785e8c67e2d208ba1010ec355d5c">fiftyoneDegreesPropertiesRequired::string</a></div><div class="ttdeci">const char * string</div><div class="ttdoc">Separated list of required properties or NULL if all properties are required.</div><div class="ttdef"><b>Definition</b> properties.h:180</div></div>
 <div class="ttc" id="astructfiftyone_degrees_property_available_array_html_a931e016a455f0ace924c2df65db6a54e"><div class="ttname"><a href="structfiftyone_degrees_property_available_array.html#a931e016a455f0ace924c2df65db6a54e">fiftyoneDegreesPropertyAvailableArray::count</a></div><div class="ttdeci">uint32_t count</div><div class="ttdoc">Number of used items.</div><div class="ttdef"><b>Definition</b> properties.h:165</div></div>
-<div class="ttc" id="astructperformance_config_html"><div class="ttname"><a href="structperformance_config.html">performanceConfig</a></div><div class="ttdoc">Configuration to use when building the dataset for benchmarking.</div><div class="ttdef"><b>Definition</b> Performance.c:83</div></div>
+<div class="ttc" id="astructperformance_config_html"><div class="ttname"><a href="structperformance_config.html">performanceConfig</a></div><div class="ttdoc">Configuration to use when building the dataset for benchmarking.</div><div class="ttdef"><b>Definition</b> Performance.c:84</div></div>
 <div class="ttc" id="astructperformance_state_html"><div class="ttname"><a href="structperformance_state.html">performanceState</a></div><div class="ttdoc">Shared performance state.</div><div class="ttdef"><b>Definition</b> CachePerf.c:86</div></div>
-<div class="ttc" id="astructshared_string_node_html"><div class="ttname"><a href="structshared_string_node.html">sharedStringNode</a></div><div class="ttdef"><b>Definition</b> Performance.c:123</div></div>
-<div class="ttc" id="astructthread_state_html"><div class="ttname"><a href="structthread_state.html">threadState</a></div><div class="ttdoc">State specific to a single thread.</div><div class="ttdef"><b>Definition</b> Performance.c:137</div></div>
+<div class="ttc" id="astructshared_string_node_html"><div class="ttname"><a href="structshared_string_node.html">sharedStringNode</a></div><div class="ttdef"><b>Definition</b> Performance.c:124</div></div>
+<div class="ttc" id="astructthread_state_html"><div class="ttname"><a href="structthread_state.html">threadState</a></div><div class="ttdoc">State specific to a single thread.</div><div class="ttdef"><b>Definition</b> Performance.c:138</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

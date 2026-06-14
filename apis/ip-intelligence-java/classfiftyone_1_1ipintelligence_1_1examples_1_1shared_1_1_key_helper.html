@@ -89,6 +89,8 @@ static&#160;String&#160;</td><td class="c-table__cell"><b>getOrSetSuperResourceK
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a720c9d595f4bf78c210d5f92d317c26c" id="r_a720c9d595f4bf78c210d5f92d317c26c"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a720c9d595f4bf78c210d5f92d317c26c">RESOURCE_KEY_ENV_VAR</a> = &quot;51DEGREES_RESOURCE_KEY&quot;</td></tr>
+<tr class="c-table__row memdesc:a720c9d595f4bf78c210d5f92d317c26c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Aligned name of the environment variable or system property which may hold the resource key.  <br /></td></tr>
 <tr class="c-table__row memitem:aebc106742ae2470591b67a280b923e17" id="r_aebc106742ae2470591b67a280b923e17"><td class="c-table__cell"><a id="aebc106742ae2470591b67a280b923e17" name="aebc106742ae2470591b67a280b923e17"></a>
 static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>TEST_RESOURCE_KEY</b> = &quot;TestResourceKey&quot;</td></tr>
 </table>
@@ -135,7 +137,37 @@ static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>TEST_RESOUR
 </div><div class="c-member__body">
 
 <p>Obtain a resource key from the passed argument, from environment variable or from a property. </p>
-<p>Store as System Property TEST_RESOURCE_KEY </p>
+<p>The aligned <code><a class="el" href="#a720c9d595f4bf78c210d5f92d317c26c">RESOURCE_KEY_ENV_VAR</a></code> name is checked first, then the passed variable name. Store as System Property under the passed variable name. </p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a720c9d595f4bf78c210d5f92d317c26c" name="a720c9d595f4bf78c210d5f92d317c26c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a720c9d595f4bf78c210d5f92d317c26c">&#9670;&#160;</a></span>RESOURCE_KEY_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final String fiftyone.ipintelligence.examples.shared.KeyHelper.RESOURCE_KEY_ENV_VAR = &quot;51DEGREES_RESOURCE_KEY&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Aligned name of the environment variable or system property which may hold the resource key. </p>
+<p>This name is checked first, before the legacy <code><a class="el" href="">TEST_RESOURCE_KEY</a></code> name. </p>
 
 </div>
 </div>

@@ -172,7 +172,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line">            System.setProperty(<span class="c-code__stringliteral">&quot;TestDataFile&quot;</span>, ipiLocation);</div>
 <div class="c-code__line">        } <span class="c-code__keywordflow">catch</span> (Exception e) {</div>
 <div class="c-code__line">            logger.error(<span class="c-code__stringliteral">&quot;Failed to find IP Intelligence data file at &#39;{}&#39;. &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;Please provide a valid path to an IP Intelligence data file (.ipi).&quot;</span>, ipiDataFile);</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;Please provide a valid path to an IP Intelligence data file (.ipi). &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;An explicit path can be supplied via the {} environment variable.&quot;</span>,</div>
+<div class="c-code__line">                    ipiDataFile, DataFileHelper.IPI_PATH_ENV_VAR);</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">throw</span> e;</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
@@ -314,7 +316,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_mixed_html_a64b7ecf39bc4e99d05982e965dfc1639"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_mixed.html#a64b7ecf39bc4e99d05982e965dfc1639">fiftyone.ipintelligence.examples.console.GettingStartedMixed.setUpCombinedEvidence</a></div><div class="ttdeci">static List&lt; Map&lt; String, String &gt; &gt; setUpCombinedEvidence()</div><div class="ttdoc">Create combined evidence that includes both User-Agent (for device detection) and IP address (for IP ...</div><div class="ttdef"><b>Definition</b> GettingStartedMixed.java:166</div></div>
+<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_mixed_html_a64b7ecf39bc4e99d05982e965dfc1639"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_mixed.html#a64b7ecf39bc4e99d05982e965dfc1639">fiftyone.ipintelligence.examples.console.GettingStartedMixed.setUpCombinedEvidence</a></div><div class="ttdeci">static List&lt; Map&lt; String, String &gt; &gt; setUpCombinedEvidence()</div><div class="ttdoc">Create combined evidence that includes both User-Agent (for device detection) and IP address (for IP ...</div><div class="ttdef"><b>Definition</b> GettingStartedMixed.java:168</div></div>
 <div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_mixed_html_a720cb50d9f49d9bfc903b4877f6639bf"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_mixed.html#a720cb50d9f49d9bfc903b4877f6639bf">fiftyone.ipintelligence.examples.console.GettingStartedMixed.run</a></div><div class="ttdeci">static void run(String ddDataFile, String ipiDataFile, List&lt; Map&lt; String, String &gt; &gt; evidenceList, OutputStream outputStream)</div><div class="ttdoc">Run the example.</div><div class="ttdef"><b>Definition</b> GettingStartedMixed.java:107</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->

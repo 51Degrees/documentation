@@ -3,5 +3,6 @@ var classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper =
     [ "DatafileInfo", "classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper_1_1_datafile_info.html", null ],
     [ "getDataFileLocation", "classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper.html#adad2e7d9b01160aea0b11520980c7727", null ],
     [ "getEvidenceFile", "classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper.html#ac3d02f7917c7c4630ffa49d23e1c6cdc", null ],
-    [ "ENTERPRISE_DATA_FILE_REL_PATH", "classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper.html#ad902ce64cb85a95b86ea524c725a589f", null ]
+    [ "ENTERPRISE_DATA_FILE_REL_PATH", "classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper.html#ad902ce64cb85a95b86ea524c725a589f", null ],
+    [ "IPI_PATH_ENV_VAR", "classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper.html#af25ccc637b7ef01c469bc2f1b972e6d7", null ]
 ];

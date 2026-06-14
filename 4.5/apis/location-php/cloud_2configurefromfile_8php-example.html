@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2configu
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <p>This example shows how to configure a pipeline from a configuration file using the pipelinebuilder's buildFromConfig method.</p>
-<p>This example shows how to configure a pipeline from a configuration file using the pipelinebuilder's buildFromConfig method. This example is available in full on <a href="https://github.com/51Degrees/location-php/blob/master/examples/cloud/configurefromfile.php">GitHub</a>. To run this example, you will need to create a <b>resource key</b>. The resource key is used as short-hand to store the particular set of properties you are interested in as well as any associated license keys that entitle you to increased request limits and/or paid-for properties. You can create a resource key using the 51Degrees <a href="https://configure.51degrees.com/gGc3T5pT">Configurator</a>.</p>
+<p>This example shows how to configure a pipeline from a configuration file using the pipelinebuilder's buildFromConfig method. This example is available in full on <a href="https://github.com/51Degrees/location-php/blob/master/examples/cloud/configurefromfile.php">GitHub</a>. To run this example, you will need to create a <b>resource key</b>. The resource key is used as short-hand to store the particular set of properties you are interested in as well as any associated license keys that entitle you to increased request limits and/or paid-for properties. You can create a resource key using the 51Degrees <a href="https://configure.51degrees.com/gGc3T5pT?utm_source=code&amp;utm_medium=example&amp;utm_campaign=location-php&amp;utm_content=examples-cloud-configurefromfile.php&amp;utm_term=header">Configurator</a>.</p>
 <p>This example uses the 'Country' property, which is pre-populated when creating a key using the link above.</p>
 <p>The configuration file used here is:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">*{</div>
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2configu
 <div class="c-code__line">$resourceKey = $configFileJSON[<span class="c-code__stringliteral">&quot;PipelineOptions&quot;</span>][<span class="c-code__stringliteral">&quot;Elements&quot;</span>][0][<span class="c-code__stringliteral">&quot;BuildParameters&quot;</span>][<span class="c-code__stringliteral">&quot;resourceKey&quot;</span>];</div>
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> (substr($resourceKey, 0, 2) === <span class="c-code__stringliteral">&quot;!!&quot;</span>) {</div>
 <div class="c-code__line">    echo <span class="c-code__stringliteral">&quot;You need to create a resource key at &quot;</span> .</div>
-<div class="c-code__line">    <span class="c-code__stringliteral">&quot;https://configure.51degrees.com/gGc3T5pT and paste it into &quot;</span> . </div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;https://configure.51degrees.com/gGc3T5pT?utm_source=code&amp;utm_medium=example&amp;utm_campaign=location-php&amp;utm_content=examples-cloud-configurefromfile.php&amp;utm_term=resource-key-required and paste it into &quot;</span> . </div>
 <div class="c-code__line">    <span class="c-code__stringliteral">&quot;your config file, replacing !!YOUR_RESOURCE_KEY!!.&quot;</span>;</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">return</span>;</div>
 <div class="c-code__line">}</div>

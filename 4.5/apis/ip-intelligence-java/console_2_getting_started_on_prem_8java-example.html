@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <li>How to retrieve the results</li>
 </ol>
 <p>This example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-java-examples/blob/main/console/src/main/java/fiftyone/ipintelligence/examples/console/GettingStartedOnPrem.java">GitHub</a>.</p>
-<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us">contact us</a>.</p>
+<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-gettingstartedonprem.java&amp;utm_term=header">contact us</a>.</p>
 <p>Required Maven Dependencies:</p><ul>
 <li><a href="https://central.sonatype.com/artifact/com.51degrees/ip-intelligence">com.51degrees:ip-intelligence</a></li>
 </ul>
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line"><span class="c-code__comment">    For production use, you will eventually need to use a Distributor service and license key</span></div>
 <div class="c-code__line"><span class="c-code__comment">    to keep your data file updated.</span></div>
 <div class="c-code__line"><span class="c-code__comment">    </span></div>
-<div class="c-code__line"><span class="c-code__comment">    To obtain access to enterprise data files for hosting, please contact us: https://51degrees.com/contact-us */</span></div>
+<div class="c-code__line"><span class="c-code__comment">    To obtain access to enterprise data files for hosting, please contact us: https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-gettingstartedonprem.java&amp;utm_term=main */</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> main(String[] args) <span class="c-code__keywordflow">throws</span> Exception {</div>
 <div class="c-code__line">        configureLogback(getFilePath(<span class="c-code__stringliteral">&quot;logback.xml&quot;</span>));</div>
@@ -173,8 +173,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line">        } <span class="c-code__keywordflow">catch</span> (Exception e) {</div>
 <div class="c-code__line">            logger.error(<span class="c-code__stringliteral">&quot;Failed to find IP Intelligence data file at &#39;{}&#39;. &quot;</span> +</div>
 <div class="c-code__line">                    <span class="c-code__stringliteral">&quot;Please provide a valid path to an IP Intelligence data file (.ipi). &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;An explicit path can be supplied via the {} environment variable. &quot;</span> +</div>
 <div class="c-code__line">                    <span class="c-code__stringliteral">&quot;For testing, you can obtain an enterprise data file by contacting us at &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us&quot;</span>, dataFile);</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-gettingstartedonprem.java&amp;utm_term=data-file-not-found&quot;</span>,</div>
+<div class="c-code__line">                    dataFile, DataFileHelper.IPI_PATH_ENV_VAR);</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">throw</span> e;</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
@@ -182,7 +184,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line"><span class="c-code__comment">        options contained in the file &quot;gettingStartedOnPrem.xml&quot;.</span></div>
 <div class="c-code__line"><span class="c-code__comment"></span> </div>
 <div class="c-code__line"><span class="c-code__comment">        For more information about pipelines in general see the documentation at</span></div>
-<div class="c-code__line"><span class="c-code__comment">        http://51degrees.com/documentation/_concepts__configuration__builders__index.html</span></div>
+<div class="c-code__line"><span class="c-code__comment">        https://51degrees.com/documentation/_concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-gettingstartedonprem.java&amp;utm_term=run</span></div>
 <div class="c-code__line"><span class="c-code__comment"></span> </div>
 <div class="c-code__line"><span class="c-code__comment">        Note that we wrap the creation of a pipeline in a try/resources to control its lifecycle */</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// the configuration file is in the resources directory</span></div>
@@ -243,7 +245,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line">            IPIntelligenceData ipData = data.get(IPIntelligenceData.class);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">/* Display the results of the detection, which are called IP Intelligence properties. See the</span></div>
-<div class="c-code__line"><span class="c-code__comment">            property dictionary at https://51degrees.com/developers/property-dictionary for</span></div>
+<div class="c-code__line"><span class="c-code__comment">            property dictionary at https://51degrees.com/developers/property-dictionary?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-gettingstartedonprem.java&amp;utm_term=analyzeevidence for</span></div>
 <div class="c-code__line"><span class="c-code__comment">            details of all available properties. */</span></div>
 <div class="c-code__line">            </div>
 <div class="c-code__line">            <span class="c-code__comment">// Output all the properties using shared PropertyHelper methods</span></div>
