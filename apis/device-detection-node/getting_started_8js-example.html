@@ -115,6 +115,50 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line"><span class="c-code__keyword">const</span> compiledFunction =</div>
 <div class="c-code__line">  pug.compileFile(path.join(__dirname, <span class="c-code__stringliteral">&#39;/index.pug&#39;</span>));</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment">// Directory holding the shared pattern-library web-example assets</span></div>
+<div class="c-code__line"><span class="c-code__comment">// (examples-main.min.css and examples.min.js). These are served as static</span></div>
+<div class="c-code__line"><span class="c-code__comment">// files so the page can reference them with /css and /js URLs, in the same way</span></div>
+<div class="c-code__line"><span class="c-code__comment">// express.static or an ASP.NET wwwroot folder would expose them.</span></div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> publicDir = path.join(__dirname, <span class="c-code__stringliteral">&#39;/public&#39;</span>);</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment">// Map of file extensions to the content types used when serving static assets.</span></div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> staticContentTypes = {</div>
+<div class="c-code__line">  <span class="c-code__stringliteral">&#39;.css&#39;</span>: <span class="c-code__stringliteral">&#39;text/css&#39;</span>,</div>
+<div class="c-code__line">  <span class="c-code__stringliteral">&#39;.js&#39;</span>: <span class="c-code__stringliteral">&#39;text/javascript&#39;</span></div>
+<div class="c-code__line">};</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment">// Serve a file from the public directory. Returns true if the request was a</span></div>
+<div class="c-code__line"><span class="c-code__comment">// static asset request (whether or not the file was found) so the caller can</span></div>
+<div class="c-code__line"><span class="c-code__comment">// stop processing it as a detection request.</span></div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> tryServeStatic = (req, res) =&gt; {</div>
+<div class="c-code__line">  <span class="c-code__keyword">const</span> urlPath = req.url.split(<span class="c-code__charliteral">&#39;?&#39;</span>)[0];</div>
+<div class="c-code__line">  <span class="c-code__keywordflow">if</span> (!urlPath.startsWith(<span class="c-code__stringliteral">&#39;/css/&#39;</span>) &amp;&amp; !urlPath.startsWith(<span class="c-code__stringliteral">&#39;/js/&#39;</span>)) {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">false</span>;</div>
+<div class="c-code__line">  }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">  <span class="c-code__comment">// Resolve the requested path within the public directory and make sure it</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// cannot escape it.</span></div>
+<div class="c-code__line">  <span class="c-code__keyword">const</span> filePath = path.join(publicDir, urlPath);</div>
+<div class="c-code__line">  <span class="c-code__keywordflow">if</span> (!filePath.startsWith(publicDir)) {</div>
+<div class="c-code__line">    res.statusCode = 403;</div>
+<div class="c-code__line">    res.end();</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">true</span>;</div>
+<div class="c-code__line">  }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">  fs.readFile(filePath, <span class="c-code__keyword">function</span> (err, content) {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (err) {</div>
+<div class="c-code__line">      res.statusCode = 404;</div>
+<div class="c-code__line">      res.end();</div>
+<div class="c-code__line">      <span class="c-code__keywordflow">return</span>;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    res.statusCode = 200;</div>
+<div class="c-code__line">    res.setHeader(<span class="c-code__stringliteral">&#39;Content-Type&#39;</span>,</div>
+<div class="c-code__line">      staticContentTypes[path.extname(filePath)] || <span class="c-code__stringliteral">&#39;application/octet-stream&#39;</span>);</div>
+<div class="c-code__line">    res.end(content);</div>
+<div class="c-code__line">  });</div>
+<div class="c-code__line">  <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">true</span>;</div>
+<div class="c-code__line">};</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> core = require51(<span class="c-code__stringliteral">&#39;fiftyone.pipeline.core&#39;</span>);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> optionsExtension =</div>
@@ -167,6 +211,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> server = http.createServer((req, res) =&gt; {</div>
+<div class="c-code__line">  <span class="c-code__comment">// Serve the shared CSS/JS assets from the public directory. If this was a</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// static asset request then there is nothing more to do.</span></div>
+<div class="c-code__line">  <span class="c-code__keywordflow">if</span> (tryServeStatic(req, res)) {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span>;</div>
+<div class="c-code__line">  }</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// FlowData is a data structure that is used to convey</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// information required for detection and the results of the</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// detection through the pipeline.</span></div>

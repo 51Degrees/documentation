@@ -75,16 +75,108 @@ Static Public Member Functions</h2></td></tr>
 static&#160;void&#160;</td><td class="c-table__cell"><b>doResponseHeaders</b> (PrintWriter out, HttpServletResponse response)</td></tr>
 <tr class="c-table__row memitem:a2ccf4152ad594f882961ed53226e6e7a" id="r_a2ccf4152ad594f882961ed53226e6e7a"><td class="c-table__cell"><a id="a2ccf4152ad594f882961ed53226e6e7a" name="a2ccf4152ad594f882961ed53226e6e7a"></a>
 static&#160;void&#160;</td><td class="c-table__cell"><b>doEvidence</b> (PrintWriter out, HttpServletRequest request, FlowData flowData)</td></tr>
+<tr class="c-table__row memitem:ae45101cd727d5c91e5ad1d1991389d3f" id="r_ae45101cd727d5c91e5ad1d1991389d3f"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ae45101cd727d5c91e5ad1d1991389d3f">doDataFileAgeWarning</a> (PrintWriter out, FlowData flowData)</td></tr>
+<tr class="c-table__row memdesc:ae45101cd727d5c91e5ad1d1991389d3f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Helper to output a warning, intended to appear at the top of the page, when the on-premise data file is more than 28 days old, suggesting a more recent data file may be needed.  <br /></td></tr>
 <tr class="c-table__row memitem:abb44eb8adb1ac3793dd661657826b2d3" id="r_abb44eb8adb1ac3793dd661657826b2d3"><td class="c-table__cell"><a id="abb44eb8adb1ac3793dd661657826b2d3" name="abb44eb8adb1ac3793dd661657826b2d3"></a>
 static&#160;void&#160;</td><td class="c-table__cell"><b>doDeviceData</b> (PrintWriter out, <a class="el" href="interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html">DeviceData</a> device, FlowData flowData, String dataFileLocation)</td></tr>
 <tr class="c-table__row memitem:a6f977ff01f7603660401ce2bb1d2f113" id="r_a6f977ff01f7603660401ce2bb1d2f113"><td class="c-table__cell"><a id="a6f977ff01f7603660401ce2bb1d2f113" name="a6f977ff01f7603660401ce2bb1d2f113"></a>
 static&#160;void&#160;</td><td class="c-table__cell"><b>doUachInfo</b> (PrintWriter out)</td></tr>
-<tr class="c-table__row memitem:adede0825e013241f827405167dbfcc03" id="r_adede0825e013241f827405167dbfcc03"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#adede0825e013241f827405167dbfcc03">doLiteRubric</a> (PrintWriter out, FlowData flowData)</td></tr>
-<tr class="c-table__row memdesc:adede0825e013241f827405167dbfcc03"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Helper to output text about missing values and what to expect from the Lite file.  <br /></td></tr>
-<tr class="c-table__row memitem:a10c4c75575b29254c3359a51398346db" id="r_a10c4c75575b29254c3359a51398346db"><td class="c-table__cell"><a id="a10c4c75575b29254c3359a51398346db" name="a10c4c75575b29254c3359a51398346db"></a>
-static&#160;void&#160;</td><td class="c-table__cell"><b>doHtmlPostamble</b> (PrintWriter out)</td></tr>
+<tr class="c-table__row memitem:a9d08f99087d6268ad40c56adee45831b" id="r_a9d08f99087d6268ad40c56adee45831b"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a9d08f99087d6268ad40c56adee45831b">doContactUsMessage</a> (PrintWriter out, FlowData flowData)</td></tr>
+<tr class="c-table__row memdesc:a9d08f99087d6268ad40c56adee45831b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Helper to output a contact-us message banner as the final element inside the page container.  <br /></td></tr>
+<tr class="c-table__row memitem:a561f042c776d57fe240ee0060b00c309" id="r_a561f042c776d57fe240ee0060b00c309"><td class="c-table__cell"><a id="a561f042c776d57fe240ee0060b00c309" name="a561f042c776d57fe240ee0060b00c309"></a>
+static&#160;void&#160;</td><td class="c-table__cell"><b>doHtmlPostamble</b> (PrintWriter out, FlowData flowData)</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a9d08f99087d6268ad40c56adee45831b" name="a9d08f99087d6268ad40c56adee45831b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9d08f99087d6268ad40c56adee45831b">&#9670;&#160;</a></span>doContactUsMessage()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyone.devicedetection.examples.web.HtmlContentHelper.doContactUsMessage </td>
+          <td>(</td>
+          <td class="c-table__cell">PrintWriter</td>          <td class="c-table__cell"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">FlowData</td>          <td class="c-table__cell"><span class="paramname"><em>flowData</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Helper to output a contact-us message banner as the final element inside the page container. </p>
+<p>The variant is chosen from the engine in use: </p><ul>
+<li>
+Cloud engine: the cloud variant is shown unconditionally, as these cloud getting-started examples are free by design. </li>
+<li>
+On-premise engine: the on-premise variant is shown only when the engine reports the free 'Lite' data tier. </li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>the PrintWriter to write to </td></tr>
+    <tr><td class="paramname">flowData</td><td>the flowdata used to determine the engine and, for on-premise, the tier </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae45101cd727d5c91e5ad1d1991389d3f" name="ae45101cd727d5c91e5ad1d1991389d3f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae45101cd727d5c91e5ad1d1991389d3f">&#9670;&#160;</a></span>doDataFileAgeWarning()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyone.devicedetection.examples.web.HtmlContentHelper.doDataFileAgeWarning </td>
+          <td>(</td>
+          <td class="c-table__cell">PrintWriter</td>          <td class="c-table__cell"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">FlowData</td>          <td class="c-table__cell"><span class="paramname"><em>flowData</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Helper to output a warning, intended to appear at the top of the page, when the on-premise data file is more than 28 days old, suggesting a more recent data file may be needed. </p>
+<p>For the cloud engine (which has no local data file) this is a no-op. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>the PrintWriter to write to </td></tr>
+    <tr><td class="paramname">flowData</td><td>the flowdata used to determine the engine and the data file age </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac7ef0ce08258e0e1bcf60a5a591f0c56" name="ac7ef0ce08258e0e1bcf60a5a591f0c56"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac7ef0ce08258e0e1bcf60a5a591f0c56">&#9670;&#160;</a></span>doHtmlPreamble()</h2>
 
@@ -121,48 +213,6 @@ static&#160;void&#160;</td><td class="c-table__cell"><b>doHtmlPostamble</b> (Pri
   <table class="params">
     <tr><td class="paramname">out</td><td>the PrintWriter to write to </td></tr>
     <tr><td class="paramname">title</td><td>title of the page </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="adede0825e013241f827405167dbfcc03" name="adede0825e013241f827405167dbfcc03"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adede0825e013241f827405167dbfcc03">&#9670;&#160;</a></span>doLiteRubric()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">void fiftyone.devicedetection.examples.web.HtmlContentHelper.doLiteRubric </td>
-          <td>(</td>
-          <td class="c-table__cell">PrintWriter</td>          <td class="c-table__cell"><span class="paramname"><em>out</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">FlowData</td>          <td class="c-table__cell"><span class="paramname"><em>flowData</em></span>&#160;)</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="c-member__body">
-
-<p>Helper to output text about missing values and what to expect from the Lite file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">out</td><td>the PrintWriter to write to </td></tr>
-    <tr><td class="paramname">flowData</td><td>the flowdata to use to determine whether the message needs to be output </td></tr>
   </table>
   </dd>
 </dl>

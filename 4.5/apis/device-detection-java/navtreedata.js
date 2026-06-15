@@ -39,9 +39,9 @@ var NAVTREEHIDESYNC = true;
 var NAVTREEINDEX =
 [
 "/documentation/4.5/index.html",
-"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a0d8644ea167c2489787a3ce5bc1d2f7c",
-"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#af711803f2f676529c4160e22717960f7",
-"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#aa8b842d5fab38e7da62253ecbc8cfff6"
+"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a0ba5d58b5f3da344aec292e043e12a9d",
+"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#af691d86d3a0e600afbee5baaf5eca1bd",
+"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#aa81fbf38fa7995bb8557df72d521a915"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

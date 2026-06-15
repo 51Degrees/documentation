@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base_on_premise.html#a2438ed3936324fb6e48eafb7690c608e":[4,0,0,3,5,6],
 "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base_on_premise.html#a331c5d878e92f271080d0f214830c1fc":[4,0,0,3,5,5],
 "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base_on_premise.html#a5f2c1c082fdd8746d978ca4963415177":[4,0,0,3,5,1],
 "classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base_on_premise.html#a821e58bbdad5539949420652db7be1f4":[4,0,0,3,5,2],
@@ -32,6 +31,7 @@ var NAVTREEINDEX1 =
 "deprecated.html":[3],
 "enumfiftyone_1_1ipintelligence_1_1_enums_1_1_i_p_intelligence_algorithm.html":[4,0,0,4,0],
 "enumfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1_enums_1_1_match_methods.html":[4,0,0,1,0,3,0],
+"enumfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_html_content_helper_1_1_contact_message_variant.html":[4,0,0,2,2,4,0],
 "examples.html":[5],
 "index.html":[],
 "interfacefiftyone_1_1ipintelligence_1_1cloud_1_1data_1_1_i_p_intelligence_data_cloud.html":[4,0,0,0,0,0],

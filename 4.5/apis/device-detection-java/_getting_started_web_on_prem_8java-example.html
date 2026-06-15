@@ -161,6 +161,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">        <span class="c-code__keywordflow">try</span> (PrintWriter out = response.getWriter()) {</div>
 <div class="c-code__line">            doHtmlPreamble(out, <span class="c-code__stringliteral">&quot;Web Integration On-Premise Example&quot;</span>);</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__comment">// show the data-file-age warning, if applicable, at the top of the page</span></div>
+<div class="c-code__line">            doDataFileAgeWarning(out, flowData);</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// request main 51Degrees Client Side Script - this is automatically</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// served by inclusion of the PipelineFilter which intercepts the request</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// and serves dynamically generated JavaScript</span></div>
@@ -181,7 +184,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">            doStaticText(out, resourceBase + <span class="c-code__stringliteral">&quot;/WEB-INF/html/apple-detection.html&quot;</span>);</div>
 <div class="c-code__line">            doEvidence(out, request, flowData);</div>
 <div class="c-code__line">            doResponseHeaders(out, response);</div>
-<div class="c-code__line">            doHtmlPostamble(out);</div>
+<div class="c-code__line">            doHtmlPostamble(out, flowData);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"></div>
@@ -199,7 +202,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">}</div>
 <div class="c-code__line"></div>
 <div class="ttc" id="aclassfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem_html_a104af3a6def2e098ddd91fc93f5b78b5"><div class="ttname"><a href="classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem.html#a104af3a6def2e098ddd91fc93f5b78b5">fiftyone.devicedetection.examples.web.GettingStartedWebOnPrem.processRequest</a></div><div class="ttdeci">void processRequest(HttpServletRequest request, HttpServletResponse response)</div><div class="ttdef"><b>Definition</b> GettingStartedWebOnPrem.java:70</div></div>
-<div class="ttc" id="aclassfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem_html_a2289398b53fa454ee88c5bd1cd25ea58"><div class="ttname"><a href="classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem.html#a2289398b53fa454ee88c5bd1cd25ea58">fiftyone.devicedetection.examples.web.GettingStartedWebOnPrem.doGet</a></div><div class="ttdeci">void doGet(HttpServletRequest request, HttpServletResponse response)</div><div class="ttdoc">Handles the HTTP GET method.</div><div class="ttdef"><b>Definition</b> GettingStartedWebOnPrem.java:113</div></div>
+<div class="ttc" id="aclassfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem_html_a2289398b53fa454ee88c5bd1cd25ea58"><div class="ttname"><a href="classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem.html#a2289398b53fa454ee88c5bd1cd25ea58">fiftyone.devicedetection.examples.web.GettingStartedWebOnPrem.doGet</a></div><div class="ttdeci">void doGet(HttpServletRequest request, HttpServletResponse response)</div><div class="ttdoc">Handles the HTTP GET method.</div><div class="ttdef"><b>Definition</b> GettingStartedWebOnPrem.java:116</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

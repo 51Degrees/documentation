@@ -282,8 +282,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">                .replace(<span class="c-code__stringliteral">&quot;${HumanProbability}&quot;</span>,asIntegerProperty(tryGet(ipiData::getHumanProbability)))</div>
 <div class="c-code__line">                .replace(<span class="c-code__stringliteral">&quot;${HardwareDiversity}&quot;</span>,asIntegerProperty(tryGet(ipiData::getHardwareDiversity)))</div>
 <div class="c-code__line">        .replace(<span class="c-code__stringliteral">&quot;${BrowserDiversity}&quot;</span>,asIntegerProperty(tryGet(ipiData::getBrowserDiversity)))</div>
-<div class="c-code__line">                .replace(<span class="c-code__stringliteral">&quot;${PlatformDiversity}&quot;</span>,asIntegerProperty(tryGet(ipiData::getPlatformDiversity)));</div>
+<div class="c-code__line">                .replace(<span class="c-code__stringliteral">&quot;${PlatformDiversity}&quot;</span>,asIntegerProperty(tryGet(ipiData::getPlatformDiversity)))</div>
+<div class="c-code__line">            <span class="c-code__comment">// On-premise engines: only invite the user to contact us about more</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// properties and features when running against the free Lite tier.</span></div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${CONTACT_MESSAGE}&quot;</span>, HtmlContentHelper.getContactMessage(</div>
+<div class="c-code__line">                HtmlContentHelper.ContactMessageVariant.ON_PREMISE, isLiteDataFile(flowData)));</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">boolean</span> isLiteDataFile(FlowData flowData) {</div>
+<div class="c-code__line">        <a id="_a0" name="_a0"></a><a class="code hl_class" href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine.html">fiftyone.ipintelligence.engine.onpremise.flowelements.IPIntelligenceOnPremiseEngine</a> engine =</div>
+<div class="c-code__line">            flowData.getPipeline().getElement(</div>
+<div class="c-code__line">                fiftyone.ipintelligence.engine.onpremise.flowelements.IPIntelligenceOnPremiseEngine.class);</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> engine != <span class="c-code__keyword">null</span> &amp;&amp; engine.<a id="a1" name="a1"></a>getDataSourceTier().equals(<span class="c-code__stringliteral">&quot;Lite&quot;</span>);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> String buildEvidenceRows(FlowData flowData) {</div>
@@ -310,12 +321,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            } <span class="c-code__keywordflow">catch</span> (Exception e) { <span class="c-code__comment">/* ignore */</span> }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            String cssClass = wasUsed ? <span class="c-code__stringliteral">&quot;lightgreen&quot;</span> : <span class="c-code__stringliteral">&quot;lightyellow&quot;</span>;</div>
-<div class="c-code__line">            String keyDisplay = wasUsed ? <span class="c-code__stringliteral">&quot;&lt;b&gt;&quot;</span> + key + <span class="c-code__stringliteral">&quot;&lt;/b&gt;&quot;</span> : key;</div>
+<div class="c-code__line">            String rowClass = wasUsed ? <span class="c-code__stringliteral">&quot;c-eg-table__row--used&quot;</span> : <span class="c-code__stringliteral">&quot;c-eg-table__row--present&quot;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            evidenceRows.append(String.format(</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;&lt;tr class=\&quot;%s\&quot;&gt;&lt;td&gt;%s&lt;/td&gt;&lt;td&gt;%s&lt;/td&gt;&lt;/tr&gt;&quot;</span>,</div>
-<div class="c-code__line">                cssClass, keyDisplay, valueStr));</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;&lt;tr class=\&quot;c-eg-table__row %s\&quot;&gt;&quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;&lt;td class=\&quot;c-eg-table__cell c-eg-table__cell--key\&quot;&gt;%s&lt;/td&gt;&quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;&lt;td class=\&quot;c-eg-table__cell\&quot;&gt;%s&lt;/td&gt;&lt;/tr&gt;&quot;</span>,</div>
+<div class="c-code__line">                rowClass, key, valueStr));</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> evidenceRows.toString();</div>
@@ -352,6 +364,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
+<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine_html"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine.html">fiftyone.ipintelligence.engine.onpremise.flowelements.IPIntelligenceOnPremiseEngine</a></div><div class="ttdoc">On-premise IP Intelligence engine.</div><div class="ttdef"><b>Definition</b> IPIntelligenceOnPremiseEngine.java:55</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->
