@@ -158,8 +158,20 @@ Platforms:
 
 @endsnippet
 @startsnippet{rust}
+These are tested on [GitHub](https://github.com/51Degrees?q=rust&type=all&language=&sort=).
 
-Not tested by 51Degrees.
+Platforms:
+- Windows (windows-latest, x86_64)
+- Linux (ubuntu-latest, x86_64)
 
+Language Versions:
+- Rust stable (current)
+- Minimum supported Rust version: 1.94
+
+Targets:
+- Native (x86_64)
+- wasm32-wasip1 (the cloud and web crates, for edge runtimes such as Fastly Compute)
+
+If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @endsnippets
