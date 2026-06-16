@@ -1,13 +1,9 @@
 <map id="ConfigDeviceDetectionSwig" name="ConfigDeviceDetectionSwig">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,79,208,104"/>
 <area shape="rect" id="Node000003" href="$class_config_hash_swig.html" title=" " alt="" coords="43,152,170,177"/>
-<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="84,117,83,135,89,151,84,153,78,136,78,117"/>
-<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="101,118,102,152,97,152,95,118"/>
-<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="118,118,116,152,111,152,113,118"/>
-<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="135,117,136,136,130,153,125,151,131,135,130,117"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="101,118,102,152,97,152,95,118"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="118,118,116,152,111,152,113,118"/>
 <area shape="rect" id="Node000002" href="$class_config_base_swig.html" title=" " alt="" coords="43,5,170,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,44,83,62,89,78,84,79,78,62,78,44"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="101,44,102,78,97,79,95,45"/>
-<area shape="poly" id="edge3_Node000001_Node000002" title=" " alt="" coords="118,45,116,79,111,78,113,44"/>
-<area shape="poly" id="edge4_Node000001_Node000002" title=" " alt="" coords="135,44,136,62,130,79,125,78,131,62,130,44"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,44,102,78,97,79,95,45"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="118,45,116,79,111,78,113,44"/>
 </map>

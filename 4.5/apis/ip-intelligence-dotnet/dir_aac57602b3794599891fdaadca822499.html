@@ -79,13 +79,20 @@ Directories</h2></td></tr>
 <tr class="c-table__row memitem:ip-intelligence-data" id="r_ip-intelligence-data"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_b383555a96ecc6b499d8bf2ea753535d.html">ip-intelligence-data</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p><img src="https://51degrees.com/img/logo.png?utm_source=github&amp;utm_medium=repository&amp;utm_campaign=c_open_source&amp;utm_content=readme_main" alt="51Degrees" title="Data rewards the curious" class="inline"/> <b>IP Intelligence in C</b></p>
-<p><a href="https://51degrees.com/ip-intelligence-cxx/4.1/modules.html">C Documentation</a> and the <a href="https://51degrees.com/ip-intelligence-cxx/4.1/namespaces.html">C++ Documentation</a>.</p>
+<div class="textblock"><p><img src="https://51degrees.com/img/logo.png?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-cxx&amp;utm_content=readme.md&amp;utm_term=51degrees-ip-intelligence-api" alt="51Degrees" title="Data rewards the curious" class="inline"/> <b>IP Intelligence in C</b></p>
+<p><a href="https://51degrees.com/ip-intelligence-cxx/4.1/modules.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-cxx&amp;utm_content=readme.md&amp;utm_term=51degrees-ip-intelligence-api">C Documentation</a> and the <a href="https://51degrees.com/ip-intelligence-cxx/4.1/namespaces.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-cxx&amp;utm_content=readme.md&amp;utm_term=51degrees-ip-intelligence-api">C++ Documentation</a>.</p>
 <p>The 51Degrees IP intelligence API is built on the 51Degrees <a href="https://github.com/51Degrees/common-cxx">common API</a>.</p>
 <h1>Pre-requisites</h1>
 <h2>Data file</h2>
-<p>In order to perform IP intelligence, you will need to obtain a 51Degrees data file. Lite data file can be obtained for free as specified in the <a href="https://github.com/51Degrees/ip-intelligence-data/"><code>ip-intelligence-data/README</code></a>. To obtain an Enterprise data file please <a href="https://51degrees.com/contact-us">contact us</a>.</p>
+<p>In order to perform IP intelligence, you will need to obtain a 51Degrees data file. Lite data file can be obtained for free as specified in the <a href="https://github.com/51Degrees/ip-intelligence-data/"><code>ip-intelligence-data/README</code></a>. To obtain an Enterprise data file please <a href="https://51degrees.com/contact-us?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-cxx&amp;utm_content=readme.md&amp;utm_term=data-file">contact us</a>.</p>
 <p>By default, the downloaded data file has to be placed in the 'ip-intelligence-data' sub-folder of this repo for the tests and examples to work.</p>
+<p>The examples resolve the location of the data file in the following order:</p>
+<ol type="1">
+<li>A path supplied as a command line argument to the example.</li>
+<li>The <code>51DEGREES_IPI_PATH</code> environment variable containing an explicit path to the data file.</li>
+<li>A search of the parent folder structure for the expected file name in the 'ip-intelligence-data' folder, where the free 'Lite' data file is expected to be placed.</li>
+</ol>
+<p>Note that on Linux shells the <code>51DEGREES_IPI_PATH</code> variable name starts with a digit, so it must be set with the <code>env</code> command, for example <code>env 51DEGREES_IPI_PATH=/path/to/file.ipi ./GettingStarted</code>, rather than a plain <code>export</code>.</p>
 <h2>Fetching sub-modules</h2>
 <p>This repository has sub-modules that must be fetched. If cloning for the first time, use:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">git clone --recurse-submodules https://github.com/51Degrees/ip-intelligence-cxx.git</div>
