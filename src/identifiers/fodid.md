@@ -135,6 +135,14 @@ A 51Did recipient can optionally verify the signature before trusting the identi
 
 In both cases, validation only confirms the identifier was created by 51Degrees and has not been tampered with. It does not certify that the device + IP + usage inputs were truthful: that trust lives in the operational contract with the issuing 51Degrees cloud, not in the signature.
 
+### Fetching the public key for local verification
+
+Local verification (option 2 above) fetches the key from the OWID creator endpoint, `GET /owid/api/v3/creator`. The response carries the current signing key in `publicKeySPKI` (PEM).
+
+The signing key rotates daily, so a 51Did issued before the latest rotation was signed with an older key. To fetch the key that was current when a 51Did was created, pass its date: `GET /owid/api/v3/creator?date=<minutes>`. The `date` is the same value the OWID envelope carries in its Date field -- minutes since `2020-01-01T00:00:00Z` (see the [OWID explainer](https://github.com/SWAN-community/owid/blob/main/explainer.md), "Data Structure" section). The endpoint returns the signing key with the latest creation time on or before `date`; if `date` predates every known key it returns `404`, and a `date` that is not an unsigned 32-bit integer returns `400`.
+
+**Recommended workflow.** Cache the public key locally -- on the happy path you never send `date`. Only fall back to `?date=` when a cached key fails to verify a 51Did you hold: read the identifier's Date field and send it as `?date=<minutes>`, then cache the returned key. Even in the fallback case you send at most one extra request per key rotation.
+
 ## Use cases
 
 - **Marketing** - PMP captures the user's preference and feeds it as `id.usage`; the 51Did is consumed by Prebid / RTB enrichment. See @ref Identifiers_PMP and @ref Integrations_Prebid.
