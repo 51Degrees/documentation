@@ -88,6 +88,13 @@ Directories</h2></td></tr>
 <h2>Data file</h2>
 <p>In order to perform IP intelligence, you will need to obtain a 51Degrees data file. Lite data file can be obtained for free as specified in the <a href="https://github.com/51Degrees/ip-intelligence-data/"><code>ip-intelligence-data/README</code></a>. To obtain an Enterprise data file please <a href="https://51degrees.com/contact-us?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-cxx&amp;utm_content=readme.md&amp;utm_term=data-file">contact us</a>.</p>
 <p>By default, the downloaded data file has to be placed in the 'ip-intelligence-data' sub-folder of this repo for the tests and examples to work.</p>
+<p>The examples resolve the location of the data file in the following order:</p>
+<ol type="1">
+<li>A path supplied as a command line argument to the example.</li>
+<li>The <code>51DEGREES_IPI_PATH</code> environment variable containing an explicit path to the data file.</li>
+<li>A search of the parent folder structure for the expected file name in the 'ip-intelligence-data' folder, where the free 'Lite' data file is expected to be placed.</li>
+</ol>
+<p>Note that on Linux shells the <code>51DEGREES_IPI_PATH</code> variable name starts with a digit, so it must be set with the <code>env</code> command, for example <code>env 51DEGREES_IPI_PATH=/path/to/file.ipi ./GettingStarted</code>, rather than a plain <code>export</code>.</p>
 <h2>Fetching sub-modules</h2>
 <p>This repository has sub-modules that must be fetched. If cloning for the first time, use:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">git clone --recurse-submodules https://github.com/51Degrees/ip-intelligence-cxx.git</div>

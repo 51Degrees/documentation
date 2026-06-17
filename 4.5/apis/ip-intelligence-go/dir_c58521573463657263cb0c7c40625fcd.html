@@ -78,7 +78,37 @@ Directories</h2></td></tr>
 <tr class="c-table__row memitem:getting_5Fstarted_5Fconsole" id="r_getting_5Fstarted_5Fconsole"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_e31d157fc57e3cffe0f44537fee4237f.html">getting_started_console</a></td></tr>
 <tr class="c-table__row memitem:getting_5Fstarted_5Fweb" id="r_getting_5Fstarted_5Fweb"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_ca112d10cce21aebf05e920b1905d848.html">getting_started_web</a></td></tr>
 </table>
-</div><!-- primary -->
+<a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
+<div class="textblock"><p>The examples in this directory <b>intentionally combine two 51Degrees products</b>: <a href="https://github.com/51Degrees/device-detection-go">device-detection-go</a> and <a href="https://github.com/51Degrees/ip-intelligence-go">ip-intelligence-go</a>. References to "Device Detection", "User-Agent" and <code>.hash</code> data files here are deliberate — they belong to the device-detection half of each example.</p>
+<h1>A separate Go module</h1>
+<p>This directory is its own Go module (see <a href="go.mod">go.mod</a>). That keeps the <code>device-detection-go</code> dependency out of the root <code>ip-intelligence-go</code> module, so consumers of the IP Intelligence library do not pull in device detection. A <code>replace</code> directive points the IP Intelligence dependency at the enclosing repository, so these examples always build against the local source.</p>
+<p>Two consequences:</p>
+<ul>
+<li>Run and test the examples <b>from this directory</b>, not the repository root — <code>go run ./examples/mixed/...</code> and <code>go test ./examples/...</code> from the root do not reach into a nested module.</li>
+<li>This module is never published or tagged; it exists only for the examples.</li>
+</ul>
+<h1>Data files</h1>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Product  </td><td class="c-table__cell">Env variable  </td><td class="c-table__cell">Data file  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">IP Intelligence  </td><td class="c-table__cell"><code>DATA_FILE</code>  </td><td class="c-table__cell"><code>51Degrees-EnterpriseIpiV41.ipi</code> (or Lite equivalent)  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">Device Detection  </td><td class="c-table__cell"><code>DD_DATA_FILE</code>  </td><td class="c-table__cell">a <code>.hash</code> file, e.g. <code>51Degrees-LiteV4.1.hash</code> or <code>TAC-HashV41.hash</code>  </td></tr>
+</table>
+<p>See <a href="https://github.com/51Degrees/ip-intelligence-data">ip-intelligence-data</a> and <a href="https://github.com/51Degrees/device-detection-data">device-detection-data</a> for obtaining the files.</p>
+<h1>Running</h1>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">cd examples/mixed</div>
+<div class="c-code__line">DATA_FILE=../../51Degrees-EnterpriseIpiV41.ipi \</div>
+<div class="c-code__line">DD_DATA_FILE=../../51Degrees-LiteV4.1.hash \</div>
+<div class="c-code__line">go run ./getting_started_console</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"># or the web example, then: curl http://localhost:8080/</div>
+<div class="c-code__line">go run ./getting_started_web</div>
+</div><!-- fragment --><h1>Testing</h1>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">cd examples/mixed</div>
+<div class="c-code__line">go test ./...</div>
+</div><!-- fragment --> </div></div><!-- primary -->
 </div><!-- inner -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

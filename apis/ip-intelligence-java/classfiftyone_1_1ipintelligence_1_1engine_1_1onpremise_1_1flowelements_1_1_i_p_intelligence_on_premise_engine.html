@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>On-premise IP Intelligence engine. </p>
-<p>This engine takes User-Agents and other relevant HTTP headers and returns properties about the device which produced them e.g. DeviceType or ReleaseDate. </p><dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc"><a href="https://github.com/51Degrees/specifications/blob/main/ip-intelligence-specification/pipeline-elements/ip-intelligence-on-premise.md">Specification</a> </dd></dl>
+<p>This engine takes an IP address as evidence and returns properties about the network and location associated with it e.g. RegisteredName or CountryCode. </p><dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc"><a href="https://github.com/51Degrees/specifications/blob/main/ip-intelligence-specification/pipeline-elements/ip-intelligence-on-premise.md">Specification</a> </dd></dl>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_getting_started_web_mixed_8java-example.html#_a0">GettingStartedWebMixed.java</a>, and <a class="el" href="_getting_started_web_on_prem_8java-example.html#_a1">GettingStartedWebOnPrem.java</a>.</dd>
 </dl>
 </div><h2 class="g-docs__section-heading">
@@ -123,8 +123,8 @@ void&#160;</td><td class="c-table__cell"><b>setCache</b> (FlowCache cache)</td><
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="c-table__row memitem:a0291dfb9dd695401e253c403adaf6326" id="r_a0291dfb9dd695401e253c403adaf6326"><td class="c-table__cell"><a id="a0291dfb9dd695401e253c403adaf6326" name="a0291dfb9dd695401e253c403adaf6326"></a>
-void&#160;</td><td class="c-table__cell"><b>processEngine</b> (FlowData flowData, <a class="el" href="interfacefiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1data_1_1_i_p_intelligence_data_hash.html">IPIntelligenceDataHash</a> IPIData)</td></tr>
+<tr class="c-table__row memitem:a42d6ab83ded07f331133c1de72301b28" id="r_a42d6ab83ded07f331133c1de72301b28"><td class="c-table__cell"><a id="a42d6ab83ded07f331133c1de72301b28" name="a42d6ab83ded07f331133c1de72301b28"></a>
+void&#160;</td><td class="c-table__cell"><b>processEngine</b> (FlowData flowData, <a class="el" href="interfacefiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1data_1_1_i_p_intelligence_data_hash.html">IPIntelligenceDataHash</a> ipiData)</td></tr>
 <tr class="c-table__row memitem:ac9adc6f6e4cd021bae545ba59c58311d" id="r_ac9adc6f6e4cd021bae545ba59c58311d"><td class="c-table__cell"><a id="ac9adc6f6e4cd021bae545ba59c58311d" name="ac9adc6f6e4cd021bae545ba59c58311d"></a>
 void&#160;</td><td class="c-table__cell"><b>unmanagedResourcesCleanup</b> ()</td></tr>
 </table>

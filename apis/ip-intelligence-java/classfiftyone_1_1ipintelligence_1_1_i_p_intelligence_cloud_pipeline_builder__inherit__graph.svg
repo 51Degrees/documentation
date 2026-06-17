@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Builder used to create pipelines with an cloud&#45;based IP Intelligence engine.">
+<g id="a_Node000001"><a xlink:title="Builder used to create pipelines with a cloud&#45;based IP Intelligence engine.">
 <polygon fill="#999999" stroke="#666666" points="195,-30 11,-30 11,0 195,0 195,-30"/>
 <text text-anchor="start" x="19" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">fiftyone.ipintelligence.</text>
 <text text-anchor="middle" x="103" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">IPIntelligenceCloudPipelineBuilder</text>
