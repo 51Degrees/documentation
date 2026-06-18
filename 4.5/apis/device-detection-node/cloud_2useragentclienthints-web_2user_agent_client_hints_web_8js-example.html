@@ -158,6 +158,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2userage
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="class_device_detection_cloud_pipeline_builder.html">DeviceDetectionCloudPipelineBuilder</a> = require51(<span class="c-code__stringliteral">&#39;fiftyone.devicedetection.cloud&#39;</span>).DeviceDetectionCloudPipelineBuilder;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="class_example_utils.html">ExampleUtils</a> = require(path.join(__dirname, <span class="c-code__stringliteral">&#39;/../exampleUtils&#39;</span>));</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Helper function to read property values from flowData</span></div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> getValueHelper = (flowData, propertyKey) =&gt; {</div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> device = flowData.device;</div>
@@ -173,7 +175,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2userage
 <div class="c-code__line">  }</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">const</span> myResourceKey = process.env.RESOURCE_KEY || <span class="c-code__stringliteral">&#39;!!YOUR_RESOURCE_KEY!!&#39;</span>;</div>
+<div class="c-code__line"><span class="c-code__comment">// The aligned &#39;_51DEGREES_RESOURCE_KEY&#39; environment variable is checked</span></div>
+<div class="c-code__line"><span class="c-code__comment">// first, followed by the legacy &#39;RESOURCE_KEY&#39; variable.</span></div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> myResourceKey = <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.getResourceKeyFromEnv() || <span class="c-code__stringliteral">&#39;!!YOUR_RESOURCE_KEY!!&#39;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// We need &#39;server&#39; to be defined here so that, when this example</span></div>
 <div class="c-code__line"><span class="c-code__comment">// is executed as part of a unit test, the server can be closed</span></div>
@@ -184,8 +188,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2userage
 <div class="c-code__line">let pipeline;</div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> setPipeline = (resourceKey) =&gt; {</div>
 <div class="c-code__line">  <span class="c-code__comment">// Create a new Device Detection pipeline and set the config.</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// You need to create a resource key at https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-useragentclienthints-web-useragentclienthintsweb.js&amp;utm_term=setpipeline</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// and paste it into the code.</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// You need to create a resource key at</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// https://configure.51degrees.com/hYzn3TV3?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-useragentclienthints-web-useragentclienthintsweb.js&amp;utm_term=setpipeline</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// and paste it into the code. This example displays paid properties, so a</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// paid subscription is needed to populate them all.</span></div>
 <div class="c-code__line">  pipeline = <span class="c-code__keyword">new</span> <a class="code hl_class" href="class_device_detection_cloud_pipeline_builder.html">DeviceDetectionCloudPipelineBuilder</a>({</div>
 <div class="c-code__line">    resourceKey</div>
 <div class="c-code__line">  }).build();</div>
@@ -198,8 +204,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2userage
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> (myResourceKey === <span class="c-code__stringliteral">&#39;!!YOUR_RESOURCE_KEY!!&#39;</span> &amp;&amp;</div>
 <div class="c-code__line">  process.env.JEST_WORKER_ID === undefined) {</div>
 <div class="c-code__line">  console.log(<span class="c-code__stringliteral">&#39;You need to create a resource key at &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-useragentclienthints-web-useragentclienthintsweb.js&amp;utm_term=resource-key-required and paste it into the code, &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;replacing !!YOUR_RESOURCE_KEY!!&#39;</span>);</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;https://configure.51degrees.com/hYzn3TV3?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-useragentclienthints-web-useragentclienthintsweb.js&amp;utm_term=resource-key-required and paste it into the &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;code, replacing !!YOUR_RESOURCE_KEY!!. This example displays &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;paid properties, so a paid subscription is needed to populate &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;them all. See https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-useragentclienthints-web-useragentclienthintsweb.js&amp;utm_term=resource-key-required to get a paid &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;subscription with more properties.&#39;</span>);</div>
 <div class="c-code__line">} <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> http = require(<span class="c-code__stringliteral">&#39;http&#39;</span>);</div>
 <div class="c-code__line"> </div>
@@ -274,6 +283,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2userage
 <div class="c-code__line">  setPipeline</div>
 <div class="c-code__line">};</div>
 <div class="ttc" id="aclass_device_detection_cloud_pipeline_builder_html"><div class="ttname"><a href="class_device_detection_cloud_pipeline_builder.html">DeviceDetectionCloudPipelineBuilder</a></div><div class="ttdoc">Extension of pipelineBuilder class that allows for the quick generation of a device detection cloud p...</div><div class="ttdef"><b>Definition</b> deviceDetectionCloudPipelineBuilder.js:34</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:41</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

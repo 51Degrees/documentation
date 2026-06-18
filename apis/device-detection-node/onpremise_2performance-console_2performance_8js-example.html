@@ -142,8 +142,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2per
 <div class="c-code__line"><span class="c-code__keyword">const</span> UA_CSV = <span class="c-code__stringliteral">&#39;20000 User Agents.csv&#39;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> args = parser.parse_args();</div>
-<div class="c-code__line"><span class="c-code__keyword">const</span> datafile = args.datafile !== undefined ? args.datafile : <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a2" name="a2"></a>findFile(LITE_V_4_1_HASH);</div>
-<div class="c-code__line"><span class="c-code__keyword">const</span> uafile = args.evidence !== undefined ? args.evidence : <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.findFile(UA_CSV);</div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> datafile = args.datafile !== undefined ? args.datafile : <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a2" name="a2"></a>findDataFile(LITE_V_4_1_HASH);</div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> uafile = args.evidence !== undefined ? args.evidence : <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a3" name="a3"></a>findFile(UA_CSV);</div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> jsonoutput = args.jsonoutput;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Check if files exists</span></div>
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2per
 <div class="c-code__line">  processUA(userAgent, <span class="c-code__keyword">true</span>);</div>
 <div class="c-code__line">});</div>
 <div class="ttc" id="aclass_device_detection_on_premise_pipeline_builder_html"><div class="ttname"><a href="class_device_detection_on_premise_pipeline_builder.html">DeviceDetectionOnPremisePipelineBuilder</a></div><div class="ttdef"><b>Definition</b> deviceDetectionOnPremisePipelineBuilder.js:35</div></div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:36</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:41</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

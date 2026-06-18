@@ -41,6 +41,7 @@ var NAVTREEINDEX0 =
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise.html#a9f7e217f312c36ece3eb6d2f0582fd8e":[1,0,0,0,2,2],
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1_messages.html":[1,0,0,0,3],
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1_messages.html#a7d856e3fb580a7f9fdd261b8797126c0":[1,0,0,0,3,0],
+"classfiftyone_1_1pipeline_1_1devicedetection_1_1_messages.html#ae1c65b4b0597f52e054dcc1992882c30":[1,0,0,0,3,1],
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_data.html":[1,0,0,0,4],
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_helpers.html":[1,0,0,0,5],
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_helpers.html#a799514321b727a1d69cce0b971d98db6":[1,0,0,0,5,0],

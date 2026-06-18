@@ -158,17 +158,33 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line">  <span class="c-code__comment">// asking for the &#39;device&#39; data.</span></div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> device = data.device;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">  <span class="c-code__comment">// Track whether any property is left without a value, which is</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// usually because the resource key does not include the property.</span></div>
+<div class="c-code__line">  let anyValueMissing = <span class="c-code__keyword">false</span>;</div>
+<div class="c-code__line">  <span class="c-code__keyword">const</span> getValue = <span class="c-code__keyword">function</span> (propertyName) {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">try</span> {</div>
+<div class="c-code__line">      <span class="c-code__keyword">const</span> <span class="c-code__keyword">property</span> = device[propertyName];</div>
+<div class="c-code__line">      <span class="c-code__keywordflow">if</span> (!property || property.hasValue !== <span class="c-code__keyword">true</span>) {</div>
+<div class="c-code__line">        anyValueMissing = <span class="c-code__keyword">true</span>;</div>
+<div class="c-code__line">      }</div>
+<div class="c-code__line">    } <span class="c-code__keywordflow">catch</span> (e) {</div>
+<div class="c-code__line">      anyValueMissing = <span class="c-code__keyword">true</span>;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> <a class="code hl_class" href="class_data_extension.html">DataExtension</a>.<a id="a3" name="a3"></a><a class="code hl_function" href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">getValueHelper</a>(device, propertyName);</div>
+<div class="c-code__line">  };</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// Display the results of the detection, which are called</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// device properties. See the property dictionary at</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// https://51degrees.com/developers/property-dictionary?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-console-gettingstarted.js&amp;utm_term=analyse</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// for details of all available properties.</span></div>
-<div class="c-code__line">  message += outputValue(<span class="c-code__stringliteral">&#39;Mobile Device&#39;</span>, <a class="code hl_class" href="class_data_extension.html">DataExtension</a>.<a id="a3" name="a3"></a><a class="code hl_function" href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">getValueHelper</a>(device, <span class="c-code__stringliteral">&#39;ismobile&#39;</span>));</div>
-<div class="c-code__line">  message += outputValue(<span class="c-code__stringliteral">&#39;Platform Name&#39;</span>, <a class="code hl_class" href="class_data_extension.html">DataExtension</a>.<a class="code hl_function" href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">getValueHelper</a>(device, <span class="c-code__stringliteral">&#39;platformname&#39;</span>));</div>
-<div class="c-code__line">  message += outputValue(<span class="c-code__stringliteral">&#39;Platform Version&#39;</span>, <a class="code hl_class" href="class_data_extension.html">DataExtension</a>.<a class="code hl_function" href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">getValueHelper</a>(device, <span class="c-code__stringliteral">&#39;platformversion&#39;</span>));</div>
-<div class="c-code__line">  message += outputValue(<span class="c-code__stringliteral">&#39;Browser Name&#39;</span>, <a class="code hl_class" href="class_data_extension.html">DataExtension</a>.<a class="code hl_function" href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">getValueHelper</a>(device, <span class="c-code__stringliteral">&#39;browsername&#39;</span>));</div>
-<div class="c-code__line">  message += outputValue(<span class="c-code__stringliteral">&#39;Browser Version&#39;</span>, <a class="code hl_class" href="class_data_extension.html">DataExtension</a>.<a class="code hl_function" href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">getValueHelper</a>(device, <span class="c-code__stringliteral">&#39;browserversion&#39;</span>));</div>
+<div class="c-code__line">  message += outputValue(<span class="c-code__stringliteral">&#39;Mobile Device&#39;</span>, getValue(<span class="c-code__stringliteral">&#39;ismobile&#39;</span>));</div>
+<div class="c-code__line">  message += outputValue(<span class="c-code__stringliteral">&#39;Platform Name&#39;</span>, getValue(<span class="c-code__stringliteral">&#39;platformname&#39;</span>));</div>
+<div class="c-code__line">  message += outputValue(<span class="c-code__stringliteral">&#39;Platform Version&#39;</span>, getValue(<span class="c-code__stringliteral">&#39;platformversion&#39;</span>));</div>
+<div class="c-code__line">  message += outputValue(<span class="c-code__stringliteral">&#39;Browser Name&#39;</span>, getValue(<span class="c-code__stringliteral">&#39;browsername&#39;</span>));</div>
+<div class="c-code__line">  message += outputValue(<span class="c-code__stringliteral">&#39;Browser Version&#39;</span>, getValue(<span class="c-code__stringliteral">&#39;browserversion&#39;</span>));</div>
 <div class="c-code__line">  message += <span class="c-code__stringliteral">&#39;\n\n&#39;</span>;</div>
 <div class="c-code__line">  output.write(message);</div>
+<div class="c-code__line">  <span class="c-code__keywordflow">return</span> anyValueMissing;</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> run = async <span class="c-code__keyword">function</span> (options, output) {</div>
@@ -182,10 +198,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line">      <span class="c-code__stringliteral">&#39;service is accessed using a \&#39;ResourceKey\&#39;. For more information &#39;</span> +</div>
 <div class="c-code__line">      <span class="c-code__stringliteral">&#39;see &#39;</span> +</div>
 <div class="c-code__line">      <span class="c-code__stringliteral">&#39;https://51degrees.com/documentation/_info__resource_keys.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-console-gettingstarted.js&amp;utm_term=resource-key-required. &#39;</span> +</div>
-<div class="c-code__line">      <span class="c-code__stringliteral">&#39;A resource key with the properties required by this example can be &#39;</span> +</div>
-<div class="c-code__line">      <span class="c-code__stringliteral">&#39;created for free at https://configure.51degrees.com/g3gMZdPY?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-console-gettingstarted.js&amp;utm_term=resource-key-required. &#39;</span> +</div>
-<div class="c-code__line">      <span class="c-code__stringliteral">&#39;Once complete, populate the config file or environment variable &#39;</span> +</div>
-<div class="c-code__line">      <span class="c-code__stringliteral">&#39;mentioned at the start of this message with the key.&#39;</span></div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;A resource key with the free properties used by this example can &#39;</span> +</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;be created at https://configure.51degrees.com/Wkqxf3Bs?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-console-gettingstarted.js&amp;utm_term=resource-key-required. A free &#39;</span> +</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;key populates the free properties only, whilst a key created at &#39;</span> +</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;https://configure.51degrees.com/hYzn3TV3?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-console-gettingstarted.js&amp;utm_term=resource-key-required also includes the paid &#39;</span> +</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;properties this example displays. See &#39;</span> +</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-console-gettingstarted.js&amp;utm_term=resource-key-required to get a paid subscription with &#39;</span> +</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;more properties. Once complete, populate the config file or &#39;</span> +</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;environment variable mentioned at the start of this message &#39;</span> +</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;with the key.&#39;</span></div>
 <div class="c-code__line">    );</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">return</span>;</div>
 <div class="c-code__line">  }</div>
@@ -197,8 +218,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line">  pipeline.on(<span class="c-code__stringliteral">&#39;error&#39;</span>, console.error);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// carry out some sample detections</span></div>
+<div class="c-code__line">  let anyValueMissing = <span class="c-code__keyword">false</span>;</div>
 <div class="c-code__line">  <span class="c-code__keywordflow">for</span> (<span class="c-code__keyword">const</span> values of exampleConstants.defaultEvidenceValues) {</div>
-<div class="c-code__line">    await analyse(values, pipeline, output);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (await analyse(values, pipeline, output)) {</div>
+<div class="c-code__line">      anyValueMissing = <span class="c-code__keyword">true</span>;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">  }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">  <span class="c-code__comment">// If any property was left without a value then show the common</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// pricing message once after the results.</span></div>
+<div class="c-code__line">  <span class="c-code__keywordflow">if</span> (anyValueMissing) {</div>
+<div class="c-code__line">    output.write(<a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.PRICING_MESSAGE + <span class="c-code__charliteral">&#39;\n&#39;</span>);</div>
 <div class="c-code__line">  }</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
@@ -206,8 +236,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> (process.env.JEST_WORKER_ID === undefined) {</div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> args = process.argv.slice(2);</div>
 <div class="c-code__line">  <span class="c-code__comment">// Use the supplied resource key or try to obtain one</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// from the environment variable.</span></div>
-<div class="c-code__line">  <span class="c-code__keyword">const</span> resourceKey = args.length &gt; 0 ? args[0] : process.env[<a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.RESOURCE_KEY_ENV_VAR];</div>
+<div class="c-code__line">  <span class="c-code__comment">// from the environment variables.</span></div>
+<div class="c-code__line">  <span class="c-code__keyword">const</span> resourceKey = args.length &gt; 0 ? args[0] : <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.getResourceKeyFromEnv();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// Load the configuration from a config file to a JSON object.</span></div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> options = JSON.parse(fs.readFileSync(<span class="c-code__stringliteral">&#39;51d.json&#39;</span>), <span class="c-code__stringliteral">&#39;utf8&#39;</span>);</div>
@@ -225,7 +255,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line">};</div>
 <div class="ttc" id="aclass_data_extension_html"><div class="ttname"><a href="class_data_extension.html">DataExtension</a></div><div class="ttdef"><b>Definition</b> dataExtension.js:23</div></div>
 <div class="ttc" id="aclass_data_extension_html_a208dbc998aec51823620213f54daf71b"><div class="ttname"><a href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">DataExtension::getValueHelper</a></div><div class="ttdeci">static getValueHelper(elementData, propertyName)</div><div class="ttdoc">Helper function to read property values from flowData.</div><div class="ttdef"><b>Definition</b> dataExtension.js:31</div></div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:36</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:41</div></div>
 <div class="ttc" id="aclass_options_extension_html"><div class="ttname"><a href="class_options_extension.html">OptionsExtension</a></div><div class="ttdef"><b>Definition</b> optionsExtension.js:27</div></div>
 <div class="ttc" id="aclass_options_extension_html_a091ea0ec3e324fea319f746f4966698f"><div class="ttname"><a href="class_options_extension.html#a091ea0ec3e324fea319f746f4966698f">OptionsExtension::setResourceKey</a></div><div class="ttdeci">static setResourceKey(options, resourceKey)</div><div class="ttdoc">Set resource key.</div><div class="ttdef"><b>Definition</b> optionsExtension.js:120</div></div>
 <div class="ttc" id="aclass_options_extension_html_a8f39f520cce4cdb4a6ba0c5bf0d1fe33"><div class="ttname"><a href="class_options_extension.html#a8f39f520cce4cdb4a6ba0c5bf0d1fe33">OptionsExtension::getResourceKey</a></div><div class="ttdeci">static getResourceKey(options)</div><div class="ttdoc">Get resource Key.</div><div class="ttdef"><b>Definition</b> optionsExtension.js:105</div></div>

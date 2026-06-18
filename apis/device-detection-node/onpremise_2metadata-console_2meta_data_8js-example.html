@@ -255,9 +255,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2met
 <div class="c-code__line"><span class="c-code__comment">// Don&#39;t run the server if under TEST</span></div>
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> (process.env.JEST_WORKER_ID === undefined) {</div>
 <div class="c-code__line">  const args = process.argv.slice(2);</div>
-<div class="c-code__line">  <span class="c-code__comment">// Use the supplied path for the data file or find the lite</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// file that is included in the repository.</span></div>
-<div class="c-code__line">  const dataFile = args.length &gt; 0 ? args[0] : ExampleUtils.findFile(LITE_V_4_1_HASH);</div>
+<div class="c-code__line">  <span class="c-code__comment">// Use the supplied path for the data file, the &#39;_51DEGREES_DD_PATH&#39;</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// environment variable, or find the lite file that is included</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// in the repository.</span></div>
+<div class="c-code__line">  const dataFile = args.length &gt; 0 ? args[0] : ExampleUtils.findDataFile(LITE_V_4_1_HASH);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  if (dataFile !== undefined) {</div>
 <div class="c-code__line">    run(dataFile, process.stdout);</div>
@@ -275,7 +276,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2met
 <div class="c-code__line">  run</div>
 <div class="c-code__line">};</div>
 <div class="ttc" id="aclass_device_detection_on_premise_pipeline_builder_html"><div class="ttname"><a href="class_device_detection_on_premise_pipeline_builder.html">DeviceDetectionOnPremisePipelineBuilder</a></div><div class="ttdef"><b>Definition</b> deviceDetectionOnPremisePipelineBuilder.js:35</div></div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:36</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:41</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

@@ -165,16 +165,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line"><span class="c-code__keyword">const</span> dataExtension =</div>
 <div class="c-code__line">  require51(<span class="c-code__stringliteral">&#39;fiftyone.devicedetection.shared&#39;</span>).dataExtension;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">const</span> { DATA_FILE_AGE_WARNING, <a id="_a0" name="_a0"></a><a class="code hl_class" href="class_example_utils.html">ExampleUtils</a> } =</div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> { DATA_FILE_AGE_WARNING, DATA_FILE_PATH_ENV_VAR, <a id="_a0" name="_a0"></a><a class="code hl_class" href="class_example_utils.html">ExampleUtils</a> } =</div>
 <div class="c-code__line">  require(path.join(__dirname, <span class="c-code__stringliteral">&#39;/../exampleUtils&#39;</span>));</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Pipeline variable to be used</span></div>
 <div class="c-code__line">let pipeline;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> setPipeline = (options) =&gt; {</div>
+<div class="c-code__line">  <span class="c-code__comment">// An explicit data file path supplied in the &#39;_51DEGREES_DD_PATH&#39;</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// environment variable takes precedence over the value in the</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// configuration file.</span></div>
+<div class="c-code__line">  <span class="c-code__keyword">const</span> envDataFilePath = process.env[DATA_FILE_PATH_ENV_VAR];</div>
+<div class="c-code__line">  <span class="c-code__keywordflow">if</span> (envDataFilePath) {</div>
+<div class="c-code__line">    optionsExtension.setDataFilePath(options, envDataFilePath);</div>
+<div class="c-code__line">  }</div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> dataFilePath = optionsExtension.getDataFilePath(options);</div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (!dataFilePath) {</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">throw</span> <span class="c-code__stringliteral">&#39;A data file must be specified in the 51d.json file.&#39;</span>;</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">throw</span> <span class="c-code__stringliteral">&#39;A data file must be specified in the 51d.json file or the &#39;</span> +</div>
+<div class="c-code__line">      `<span class="c-code__stringliteral">&#39;${DATA_FILE_PATH_ENV_VAR}&#39;</span> environment variable.`;</div>
 <div class="c-code__line">  }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (!fs.existsSync(dataFilePath)) {</div>
@@ -297,7 +305,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line">  server,</div>
 <div class="c-code__line">  setPipeline</div>
 <div class="c-code__line">};</div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:36</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:41</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

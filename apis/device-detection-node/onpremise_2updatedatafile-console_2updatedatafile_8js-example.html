@@ -189,7 +189,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2upd
 <div class="c-code__line"><span class="c-code__keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="class_device_detection_on_premise_pipeline_builder.html">DeviceDetectionOnPremisePipelineBuilder</a> =</div>
 <div class="c-code__line">  require51(<span class="c-code__stringliteral">&#39;fiftyone.devicedetection.onpremise&#39;</span>).DeviceDetectionOnPremisePipelineBuilder;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="class_example_utils.html">ExampleUtils</a> = require(path.join(__dirname, <span class="c-code__stringliteral">&#39;/../exampleUtils&#39;</span>)).ExampleUtils;</div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> { <a id="_a1" name="_a1"></a><a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>, DATA_FILE_PATH_ENV_VAR } =</div>
+<div class="c-code__line">  require(path.join(__dirname, <span class="c-code__stringliteral">&#39;/../exampleUtils&#39;</span>));</div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> ExampleConstants = require51(<span class="c-code__stringliteral">&#39;fiftyone.devicedetection.shared&#39;</span>).exampleConstants;</div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> KeyUtils = require51(<span class="c-code__stringliteral">&#39;fiftyone.devicedetection.shared&#39;</span>).keyUtils;</div>
 <div class="c-code__line"></div>
@@ -227,7 +228,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2upd
 <div class="c-code__line">        <span class="c-code__stringliteral">&#39;start-up&#39;</span>);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">  }</div>
-<div class="c-code__line">  <span class="c-code__comment">// no filename specified use the default</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// no filename specified, check the environment variable for an</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// explicit path before falling back to the default</span></div>
+<div class="c-code__line">  <span class="c-code__keywordflow">if</span> (!dataFilePath) {</div>
+<div class="c-code__line">    dataFilePath = process.env[DATA_FILE_PATH_ENV_VAR];</div>
+<div class="c-code__line">  }</div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (!dataFilePath) {</div>
 <div class="c-code__line">    dataFilePath = DEFAULT_DATA_FILENAME;</div>
 <div class="c-code__line">    console.warn(`No filename specified. Using <span class="c-code__keywordflow">default</span> <span class="c-code__stringliteral">&#39;${dataFilePath}&#39;</span> which will be downloaded to ` +</div>
@@ -372,7 +377,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2upd
 <div class="c-code__line"> </div>
 <div class="c-code__line">module.exports = { run };</div>
 <div class="ttc" id="aclass_device_detection_on_premise_pipeline_builder_html"><div class="ttname"><a href="class_device_detection_on_premise_pipeline_builder.html">DeviceDetectionOnPremisePipelineBuilder</a></div><div class="ttdef"><b>Definition</b> deviceDetectionOnPremisePipelineBuilder.js:35</div></div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:36</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:41</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

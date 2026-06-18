@@ -75,6 +75,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 Data Fields</h2></td></tr>
 <tr class="c-table__row memitem:a7d856e3fb580a7f9fdd261b8797126c0" id="r_a7d856e3fb580a7f9fdd261b8797126c0"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a7d856e3fb580a7f9fdd261b8797126c0">CACHE_ERROR</a></td></tr>
 <tr class="c-table__row memdesc:a7d856e3fb580a7f9fdd261b8797126c0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Error message returned when a cache is configured for the on-premise engine.  <br /></td></tr>
+<tr class="c-table__row memitem:ae1c65b4b0597f52e054dcc1992882c30" id="r_ae1c65b4b0597f52e054dcc1992882c30"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ae1c65b4b0597f52e054dcc1992882c30">PERFORMANCE_PROFILE_ERROR</a></td></tr>
+<tr class="c-table__row memdesc:ae1c65b4b0597f52e054dcc1992882c30"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Error message returned when a performance profile other than MaxPerformance is configured for the on-premise engine.  <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Field Documentation</h2>
 <a id="a7d856e3fb580a7f9fdd261b8797126c0" name="a7d856e3fb580a7f9fdd261b8797126c0"></a>
@@ -99,6 +101,36 @@ Data Fields</h2></td></tr>
 <div class="c-code__line"><span class="c-code__stringliteral">&#39;cache.&#39;</span></div>
 </div><!-- fragment -->
 <p>Error message returned when a cache is configured for the on-premise engine. </p>
+
+</div>
+</div>
+<a id="ae1c65b4b0597f52e054dcc1992882c30" name="ae1c65b4b0597f52e054dcc1992882c30"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae1c65b4b0597f52e054dcc1992882c30">&#9670;&#160;</a></span>PERFORMANCE_PROFILE_ERROR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const fiftyone\pipeline\devicedetection\Messages::PERFORMANCE_PROFILE_ERROR</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                   =</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;The on-premise Hash engine for PHP can only run with the in-memory &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;&#39;MaxPerformance&#39; performance profile, but &#39;%s&#39; was configured. PHP is &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;typically run under a process manager (Apache MPM prefork, php-fpm) &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;that forks the worker process, and any other profile keeps the data &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;file open and shares those file handles across the fork, which &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;corrupts detection. Remove the &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;&#39;FiftyOneDegreesHashEngine.performance_profile&#39; setting, or set it to &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;&#39;MaxPerformance&#39;.&quot;</span></div>
+</div><!-- fragment -->
+<p>Error message returned when a performance profile other than MaxPerformance is configured for the on-premise engine. </p>
+<p>The placeholder is the profile that was configured. </p>
 
 </div>
 </div>
