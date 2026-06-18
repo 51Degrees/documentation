@@ -19,6 +19,16 @@ Derived from three inputs:
 
 51Dids are produced only by the cloud JSON endpoint when the Resource Key includes the relevant properties. **The 51Did is not available in the on-premise pipeline:** every identifier is signed with a private ECDSA P-256 key held only by 51Degrees' cloud service, so that recipients can verify authenticity without trusting the caller. An on-premise pipeline never holds the signing key and so cannot create a valid 51Did.
 
+## Identifier types
+
+The value inside the envelope comes in three types. Bits 6-7 of the payload flags byte (see *Payload layout* below) record which one a given 51Did carries.
+
+- **Probabilistic** - a 32-byte SHA-256 derived from the Device ID and the client IP. The same device on the same network produces the same value for every caller, with no inputs beyond the usual Device Detection evidence and `id.usage`. This is the value the rest of this page uses in its examples.
+- **Random** - a fresh, server-generated 16-byte GUID rather than a derived hash. The cloud neither stores nor echoes it, so it is not stable across calls: persist the returned 51Did (or its decoded GUID) on your side and stop requesting a new one once you have it. No inputs beyond `id.usage` are needed.
+- **Hashed Email** - a 32-byte SHA-256 of a caller-supplied email and a SWAN salt, `SHA-256(lowercase(trim(email)) || saltBytes)`. The same email and salt always produce the same value for every caller, which makes it interoperable with the SWAN SID concept. Requires the `id.email` and `id.salt` inputs described under *Request inputs*.
+
+Each type is offered in two scopes: **global** (one value across all callers) and **lic** (scoped to your License Key) -- see *Properties*.
+
 ## Usage flags
 
 The 51Did payload starts with a one-byte **flags** field that records which usage purposes the cloud was allowed to derive the identifier for. Three flags are currently defined:
@@ -35,17 +45,25 @@ The flags are hierarchical -- `personalized` implies `standard`, and `standard` 
 
 ## Properties
 
-Each property returns a full 51Did identifier (the OWID envelope, signed). The probabilistic value inside has the scope described in the table.
+Each property returns a full 51Did identifier (the OWID envelope, signed). The value inside -- its type and scope -- is described in the table.
 
-| Property             | Scope of the probabilistic value inside        |
-|----------------------|------------------------------------------------|
-| `fodid.idprobglobal` | Unique across all callers from device+network. |
-| `fodid.idproblic`    | Unique only across the caller's License Key.   |
+| Property             | Type          | Scope                                          |
+|----------------------|---------------|------------------------------------------------|
+| `fodid.idprobglobal` | Probabilistic | Unique across all callers from device+network. |
+| `fodid.idproblic`    | Probabilistic | Unique only across the caller's License Key.   |
+| `fodid.idrandglobal` | Random        | Unique across all callers.                      |
+| `fodid.idrandlic`    | Random        | Scoped to your License Key.                     |
+| `fodid.idhemglobal`  | Hashed Email  | Unique across all callers.                      |
+| `fodid.idhemlic`     | Hashed Email  | Scoped to your License Key.                     |
 
 ## Request inputs
 
 - **Evidence** - Device Detection evidence (User-Agent / UA-CH) AND client IP (`client-ip` query parameter, `client-ip` HTTP header, or the server-supplied client IP).
 - **Usage policy** - the `id.usage` value, one of `non-marketing` | `standard` | `personalized`. May be passed as a query parameter or HTTP request header.
+- **`id.email`** (Hashed Email only) - raw email address. The cloud trims and lowercases it; no other transforms.
+- **`id.salt`** (Hashed Email only) - URL-safe base64 of the 2-byte SWAN salt (4 nibbles encoding the 4x4 salt grid selection), e.g. `Npw`.
+
+If a Hashed Email property is requested without `id.email` or `id.salt`, the property is returned with a no-value reason naming the missing input; the supplied values are never echoed back. `id.email` is personal data: always call the cloud over HTTPS when supplying it. The raw value is used only to compute the hash -- it is not logged, not shared in usage statistics, and not retained.
 
 ## Usage policies and licensing
 
@@ -82,6 +100,25 @@ Response:
 ```
 
 Open the example value in the [51Did inspector](https://51degrees.com/developers/51did-inspector?51did=AzUxZC5lcwBzGTMAJQAAAAHWTQAAr193zLwxDrchR2XHYmoTzJML7fAB60rimQeTd2WuHMPoQ4Bz56QhxhXoAynWyaAE8kWo8DO92y9LPLdatHSVaCdSioL7JaMg8S2DV36ehXIZc0HhdqteyARmOnRS7o8j) to unpack the OWID envelope, see the parsed flags, licenseId and 32-byte hash, and verify the ECDSA P-256 signature against the issuer's published public key.
+
+## Payload layout
+
+The payload header is shared by every identifier type; bits 6-7 of the flags byte select the type and the length of the value that follows.
+
+| Offset | Length | Field                                                          |
+|--------|--------|----------------------------------------------------------------|
+| 0      | 1      | Flags: bits 0-2 usage tier, bits 6-7 identifier type           |
+| 1      | 4      | LicenseId (uint32, little-endian)                              |
+| 5      | 16/32  | Value: GUID (Random) or SHA-256 (Probabilistic, Hashed Email)  |
+
+| Bits 7-6 | Type          | Payload length |
+|----------|---------------|----------------|
+| `00`     | Probabilistic | 37             |
+| `01`     | Random        | 21             |
+| `10`     | Hashed Email  | 37             |
+| `11`     | Reserved      | --             |
+
+Identifiers issued before the type tag existed have bits 6-7 zeroed and decode as Probabilistic -- no migration is needed.
 
 ## 51Did readers
 
