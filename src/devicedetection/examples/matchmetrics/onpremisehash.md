@@ -14,5 +14,6 @@ This example shows how to view metrics associated with the results of processing
 @grabexample{device-detection-node,onpremise_2matchmetrics-console_2match_metrics_8js,Node.js}
 @grabexample{device-detection-nginx,hash_2match_metrics_8conf,Nginx}
 @grabexample{device-detection-python,onpremise_2match_metrics_8py,Python}
+@grabexample{rust,dd-onprem-match-metrics_8rs,Rust}
 @grabbedexample
 @endsnippets

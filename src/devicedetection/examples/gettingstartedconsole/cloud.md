@@ -20,5 +20,6 @@ You can mix and match elements from different examples in order to match your us
 @grabexample{device-detection-node,cloud_2gettingstarted-console_2getting_started_8js,Node.js}
 @grabexample{device-detection-php,cloud_2getting_started_console_8php,PHP}
 @grabexample{device-detection-python,cloud_2gettingstarted_console_8py,Python}
+@grabexample{rust,dd-cloud-getting-started_8rs,Rust}
 @grabbedexample
 @endsnippets

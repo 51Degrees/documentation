@@ -16,5 +16,6 @@ You can mix and match elements from different examples in order to match your us
 @startsnippets
 @grabexample{ip-intelligence-dotnet,_on_premise_2_getting_started-_web_2_startup_8cs,C# - ASP.NET Core}
 @grabexample{ip-intelligence-java,_getting_started_web_on_prem_8java,Java}
+@grabexample{rust,ipi-web-getting-started-onprem_8rs,Rust}
 @grabbedexample
 @endsnippets

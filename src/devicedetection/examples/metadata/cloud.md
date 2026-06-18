@@ -10,5 +10,6 @@ This example shows how to interrogate the metadata returned by the 51Degrees Clo
 @grabexample{device-detection-php,cloud_2metadata_console_8php,PHP}
 @grabexample{device-detection-node,cloud_2metadata-console_2meta_data_8js,Node.js}
 @grabexample{device-detection-python,cloud_2metadata_console_8py,Python}
+@grabexample{rust,dd-cloud-metadata_8rs,Rust}
 @grabbedexample
 @endsnippets
