@@ -44,7 +44,9 @@ var _device_detection__index =
           [ "Web servlet integration.", "_device_detection__quickstart.html#web-servlet-integration", null ],
           [ "Spring MVC integration.", "_device_detection__quickstart.html#spring-mvc-integration", null ],
           [ "Cloud", "_device_detection__quickstart.html#cloud", null ],
-          [ "On-premise", "_device_detection__quickstart.html#on-premise", null ]
+          [ "On-premise", "_device_detection__quickstart.html#on-premise", null ],
+          [ "Standalone pipeline / off-line processing", "_device_detection__quickstart.html#standalone-pipeline--off-line-processing-2", null ],
+          [ "Web integration (axum)", "_device_detection__quickstart.html#web-integration-axum", null ]
         ] ]
       ] ]
     ] ],

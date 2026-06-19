@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <p><b>Licensing:</b> Requires licenses for both Device Detection and IP Intelligence services</p>
 <h2 class="doxsection" id="language-specific-integration-1">Language-Specific Integration<a class="headerlink" href="#language-specific-integration-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>Select your language below for detailed setup instructions:</p>
-<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'c')">C</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'go')">Go</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language.  </div>   <div class="c-tabgroup__main" data-lang="c" style="display:none;">  C does not have a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> implementation or the ability to use the cloud-based version of IP intelligence. To get started with C IP intelligence On-premise:</p>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'c')">C</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'go')">Go</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'rust')">Rust</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language.  </div>   <div class="c-tabgroup__main" data-lang="c" style="display:none;">  C does not have a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> implementation or the ability to use the cloud-based version of IP intelligence. To get started with C IP intelligence On-premise:</p>
 <ol type="1">
 <li>Clone the GitHub <a href="https://github.com/51degrees/ip-intelligence-cxx">repository</a>.</li>
 <li>Ensure all submodules are checked out by running <code>git submodule update --init --recursive</code> in the repository.</li>
@@ -191,7 +191,20 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <p>For web applications, you can integrate IP Intelligence into your HTTP handlers:</p><ul>
 <li><a class="el" href="_ip_intelligence__examples__getting_started__web__on_premise.html" title="IP Intelligence Getting Started Web On-premise">On-premise Web Example</a> - Local processing</li>
 </ul>
-<p> </div>   </div>  </p>
+<p> </div>   <div class="c-tabgroup__main" data-lang="rust" style="display:none;">  </p>
+<h3 class="doxsection" id="console-applications-3">Console Applications<a class="headerlink" href="#console-applications-3" aria-label="Permalink to this section">🔗</a></h3>
+<ol type="1">
+<li>Add the <a href="https://crates.io/crates/fiftyone-ip-intelligence"><code>fiftyone-ip-intelligence</code></a> crate from crates.io (for example with <code>cargo add fiftyone-ip-intelligence</code>).</li>
+<li>Choose your deployment option:<ul>
+<li><a class="el" href="_ip_intelligence__examples__getting_started__console__on_premise.html" title="IP Intelligence Getting Started Console On-premise">On-premise Example</a> - Local processing with a data file.</li>
+<li><a class="el" href="_ip_intelligence__examples__getting_started__console__cloud.html" title="IP Intelligence Getting Started Console Cloud">Cloud Example</a> - The 51Degrees cloud service, no local data file.</li>
+</ul>
+</li>
+</ol>
+<h3 class="doxsection" id="web-integration-2">Web Integration<a class="headerlink" href="#web-integration-2" aria-label="Permalink to this section">🔗</a></h3>
+<p>For web applications, integrate IP Intelligence into your axum handlers:</p><ul>
+<li><a class="el" href="_ip_intelligence__examples__getting_started__web__on_premise.html" title="IP Intelligence Getting Started Web On-premise">On-premise Web Example</a> - Local processing.  </div>   </div>  </li>
+</ul>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

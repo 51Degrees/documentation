@@ -35,7 +35,9 @@ var _ip_intelligence__index =
           [ "Console Applications", "_ip_intelligence__quickstart.html#console-applications-1", null ],
           [ "Web Integration", "_ip_intelligence__quickstart.html#web-integration", null ],
           [ "Console Applications", "_ip_intelligence__quickstart.html#console-applications-2", null ],
-          [ "Web Integration", "_ip_intelligence__quickstart.html#web-integration-1", null ]
+          [ "Web Integration", "_ip_intelligence__quickstart.html#web-integration-1", null ],
+          [ "Console Applications", "_ip_intelligence__quickstart.html#console-applications-3", null ],
+          [ "Web Integration", "_ip_intelligence__quickstart.html#web-integration-2", null ]
         ] ]
       ] ]
     ] ],

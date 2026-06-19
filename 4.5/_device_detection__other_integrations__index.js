@@ -34,6 +34,9 @@ var _device_detection__other_integrations__index =
       [ "51Degrees - Optimize by Device &amp; Location", "_device_detection__other_integrations__wordpress.html#autotoc_md51degrees---optimize-by-device--location", [
         [ "After activation", "_device_detection__other_integrations__wordpress.html#after-activation", null ],
         [ "Integration with Google Analytics", "_device_detection__other_integrations__wordpress.html#integration-with-google-analytics", null ],
+        [ "Robots.txt and crawler control", "_device_detection__other_integrations__wordpress.html#robotstxt-and-crawler-control", null ],
+        [ "Suspicious activity detection", "_device_detection__other_integrations__wordpress.html#suspicious-activity-detection", null ],
+        [ "Preference Management Platform (PMP)", "_device_detection__other_integrations__wordpress.html#preference-management-platform-pmp", null ],
         [ "Developer information and advanced features", "_device_detection__other_integrations__wordpress.html#developer-information-and-advanced-features", null ],
         [ "Accessing properties in PHP code", "_device_detection__other_integrations__wordpress.html#accessing-properties-in-php-code", null ],
         [ "JavaScript integration", "_device_detection__other_integrations__wordpress.html#javascript-integration", null ],

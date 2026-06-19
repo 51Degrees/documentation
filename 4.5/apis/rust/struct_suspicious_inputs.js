@@ -1,0 +1,11 @@
+var struct_suspicious_inputs =
+[
+    [ "__pad0__", "struct_suspicious_inputs.html#a544d1bd2a20ea6a448e7e032632fd5e9", null ],
+    [ "browser_diversity", "struct_suspicious_inputs.html#adf3f5e240a41f8e395128446ae9aa7e9", null ],
+    [ "country", "struct_suspicious_inputs.html#afaa40483703d9de2e35d9abb2c20daf3", null ],
+    [ "hardware_diversity", "struct_suspicious_inputs.html#ae6e32b91bd3e2b3e9d6d6912a0d17ed3", null ],
+    [ "human_probability", "struct_suspicious_inputs.html#aa87fa1c249002a0b101e21c35fd8666f", null ],
+    [ "is_hosted", "struct_suspicious_inputs.html#aed085ed308289a81fee6a825de147084", null ],
+    [ "location_confidence", "struct_suspicious_inputs.html#ac44dbb28def0fc25d0293420186f948c", null ],
+    [ "registered_country", "struct_suspicious_inputs.html#a45b0dc829b566dd007687bd956fc5146", null ]
+];

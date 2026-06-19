@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"_device_detection__overview.html#autotoc_md-performance-optimization":[1,0,0,6,1],
+"_device_detection__overview.html#autotoc_md-quick-start":[1,0,0,5,0],
+"_device_detection__overview.html#autotoc_md-responsive-design-and-user-experience":[1,0,0,6,0],
 "_device_detection__overview.html#common-use-cases":[1,0,0,6],
 "_device_detection__overview.html#console-examples":[1,0,0,5,2],
 "_device_detection__overview.html#examples-and-getting-started":[1,0,0,5],
@@ -25,6 +28,8 @@ var NAVTREEINDEX1 =
 "_device_detection__quickstart.html#spring-mvc-integration":[1,1,0,3,4],
 "_device_detection__quickstart.html#standalone-pipeline--off-line-processing":[1,1,0,3,0],
 "_device_detection__quickstart.html#standalone-pipeline--off-line-processing-1":[1,1,0,3,2],
+"_device_detection__quickstart.html#standalone-pipeline--off-line-processing-2":[1,1,0,3,7],
+"_device_detection__quickstart.html#web-integration-axum":[1,1,0,3,8],
 "_device_detection__quickstart.html#web-servlet-integration":[1,1,0,3,3],
 "_device_detection__quickstart.html#which-integration-should-i-choose":[1,1,0,1],
 "_device_detection__upgradingto_v4.html":[1,7],
@@ -169,12 +174,14 @@ var NAVTREEINDEX1 =
 "_ip_intelligence__quickstart.html#console-applications":[2,1,0,1,0],
 "_ip_intelligence__quickstart.html#console-applications-1":[2,1,0,1,2],
 "_ip_intelligence__quickstart.html#console-applications-2":[2,1,0,1,4],
+"_ip_intelligence__quickstart.html#console-applications-3":[2,1,0,1,6],
 "_ip_intelligence__quickstart.html#getting-started-with-ip-intelligence":[2,1,0],
 "_ip_intelligence__quickstart.html#language-specific-integration-1":[2,1,0,1],
 "_ip_intelligence__quickstart.html#on-premise-deployment":[2,1,0,0,1],
 "_ip_intelligence__quickstart.html#web-applications-aspnet-core":[2,1,0,1,1],
 "_ip_intelligence__quickstart.html#web-integration":[2,1,0,1,3],
 "_ip_intelligence__quickstart.html#web-integration-1":[2,1,0,1,5],
+"_ip_intelligence__quickstart.html#web-integration-2":[2,1,0,1,7],
 "_pipeline_api__concepts__configuration__builders__build_from_configuration.html":[7,1,3,0,2],
 "_pipeline_api__concepts__configuration__builders__build_from_configuration.html#PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName":[7,1,3,0,2,3,3],
 "_pipeline_api__concepts__configuration__builders__build_from_configuration.html#element-build-parameters":[7,1,3,0,2,3,1],
@@ -242,12 +249,5 @@ var NAVTREEINDEX1 =
 "_pipeline_api__concepts__data__flow_data.html#disposal--cleanup":[7,1,1,0,2,1],
 "_pipeline_api__concepts__data__flow_data.html#introduction-52":[7,1,1,0,0],
 "_pipeline_api__concepts__data__flow_data.html#lifecycle-2":[7,1,1,0,2],
-"_pipeline_api__concepts__data__index.html":[7,1,1],
-"_pipeline_api__concepts__flow_elements__aspect_engine.html":[7,1,0,1],
-"_pipeline_api__concepts__flow_elements__aspect_engine.html#caching":[7,1,0,1,1],
-"_pipeline_api__concepts__flow_elements__aspect_engine.html#introduction-53":[7,1,0,1,0],
-"_pipeline_api__concepts__flow_elements__aspect_engine.html#lazy-loading":[7,1,0,1,3],
-"_pipeline_api__concepts__flow_elements__aspect_engine.html#missing-property-handling":[7,1,0,1,2],
-"_pipeline_api__concepts__flow_elements__cloud_engine.html":[7,1,0,2],
-"_pipeline_api__concepts__flow_elements__cloud_engine.html#autotoc_md51degrees-cloud-engines":[7,1,0,2,3]
+"_pipeline_api__concepts__data__index.html":[7,1,1]
 };

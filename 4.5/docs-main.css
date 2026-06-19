@@ -720,6 +720,7 @@ input[type=text] {
   text-align: left;
   background-color: #FFFFFF;
   padding: 1rem;
+  margin: 1rem 0;
   border-radius: 5px;
   display: block;
   overflow: scroll;

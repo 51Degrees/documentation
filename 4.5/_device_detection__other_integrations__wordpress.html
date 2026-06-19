@@ -82,14 +82,44 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 </ol>
 <h2 class="doxsection" id="integration-with-google-analytics">Integration with Google Analytics<a class="headerlink" href="#integration-with-google-analytics" aria-label="Permalink to this section">🔗</a></h2>
 <ol type="1">
-<li>To integrate with Google Analytics, go to the <code>Google Analytics</code> tab and click <code>Log in with Google Analytics Account</code> button. Follow the steps and give the 51Degrees plugin the required permissions. Copy the provided Google Analytics <code>Access Code</code>.</li>
-<li>Enter the copied Code in the <code>Access Code</code> text field and click <code>Authenticate</code>. This will connect your Google Analytics account to the 51Degrees plugin.</li>
-<li>After authentication, select your preferred profiles for which you want to enable Custom Dimensions Tracking via the <code>Google Analytics Property</code> dropdown.</li>
+<li>To integrate with Google Analytics, go to the <code>Google Analytics</code> tab and click <code>Connect Google Analytics</code>. Authorize the 51Degrees plugin on the Google consent screen. You are returned to the tab, which confirms the connection.</li>
+<li>Once connected, select your preferred properties for which you want to enable Custom Dimensions Tracking via the <code>Google Analytics Property</code> dropdown.</li>
 <li>Check <code>Send Page View</code> if you want to send Default Page View hits along with Custom Dimensions. It is only recommended if you have not already integrated with any other Google Analytics plugin to avoid data duplication.</li>
 <li>Click <code>Save Changes</code>. This will prompt to the new Custom Dimensions screen where you can find all the Custom Dimensions available with the Resource Key.</li>
 <li>Click on <code>Enable Google Analytics Tracking</code> to enable tracking of all the Device Data Properties as Custom Dimensions.</li>
 </ol>
-<h2 class="doxsection" id="developer-information-and-advanced-features">Developer information and advanced features<a class="headerlink" href="#developer-information-and-advanced-features" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="robotstxt-and-crawler-control">Robots.txt and crawler control<a class="headerlink" href="#robotstxt-and-crawler-control" aria-label="Permalink to this section">🔗</a></h2>
+<p>The <code>Robots.txt</code> tab lets you host a virtual <code>/robots.txt</code> file and, optionally, enforce crawler access in real time using 51Degrees crawler detection. Hosting the file is advisory only and does not consume cloud requests; enforcement uses live device detection and consumes one cloud request per page load, so enable it only when you want active bot blocking.</p>
+<ol type="1">
+<li><b>Enable Robots.txt Hosting</b> generates a virtual <code>/robots.txt</code> from your configured rules and the selected crawler categories. If a physical <code>robots.txt</code> file exists in your WordPress root, WordPress serves that file instead, so delete or rename it to use the virtual one.</li>
+<li><b>Enable Crawler Enforcement</b> turns on real-time detection and 302-redirects detected bots to your configured <code>Redirect URL</code> (leave it empty to deny access without redirecting). The <code>/robots.txt</code> file itself always stays reachable to crawlers regardless of the enforcement policy.</li>
+<li><b>Allowed Crawler Categories</b> lets crawlers in the selected categories through. Category-based enforcement requires the <code>CrawlerUsage</code> property in your Resource Key; without it, only path-based rules apply.</li>
+<li><b>Terms Document Locators (TDL)</b> add <code>TDL:</code> lines to the generated file, emitted at the end between the final wildcard <code>User-agent: *</code> line and its <code>Allow: /</code>. Each TDL points to an immutable legal document that defines the terms under which crawlers may access your site, following the proposed robots.txt extension described in the <a href="https://github.com/jwrosewell/data-labels/blob/main/IETF-Robots.md">data-labels IETF Robots proposal</a>. You can select standard TDLs (for example the MOW Standard Terms), which are maintained externally and checked daily for updated versions, or supply your own custom TDL URLs, one per line.</li>
+<li><b>Custom Top Entries</b> and <b>Custom Bottom Entries</b> let you prepend or append your own lines around the generated 51Degrees section.</li>
+</ol>
+<p>Crawler detection needs the <code>IsCrawler</code> and <code>CrawlerUsage</code> properties, and file generation from the cloud needs the <code>RobotsTxt</code> <code>PlainText</code> property. Create a key with these using the <a href="https://configure.51degrees.com/">configurator</a> if your key does not already include them.</p>
+<h2 class="doxsection" id="suspicious-activity-detection">Suspicious activity detection<a class="headerlink" href="#suspicious-activity-detection" aria-label="Permalink to this section">🔗</a></h2>
+<p>The <code>Suspicious</code> tab detects and blocks visitors who make too many requests in a short window. From the tab you can set the request threshold (<code>Number of requests</code>), the time window (<code>Within seconds</code>), and the <code>Redirect URL</code> that blocked visitors are sent to.</p>
+<p>When your Resource Key is working, detection runs in advanced mode and identifies visitors individually, even when they share a network. If the key is missing or invalid, it falls back to basic mode, where visitors that look identical to the site are grouped and blocked together.</p>
+<p>Advanced mode relies on a probabilistic identifier from your Resource Key - <code>IdProbLic</code> if present, otherwise <code>IdProbGlobal</code> (see <a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a>). These are generated with <code>id.usage=non-marketing</code>, so they do not require a license key or a specific product, but they do need to be present on the key. If your existing key does not include either property, create a new Resource Key that adds it using the <a href="https://configure.51degrees.com/">configurator</a>. Without these properties the plugin falls back to a hash of the visitor's IP address and User-Agent, which groups visitors that share a network.</p>
+<h2 class="doxsection" id="preference-management-platform-pmp">Preference Management Platform (PMP)<a class="headerlink" href="#preference-management-platform-pmp" aria-label="Permalink to this section">🔗</a></h2>
+<p>The <code>PMP</code> tab adds a 51Degrees consent popup to your public pages. Visitors choose <code>Standard</code>, <code>Personalized</code>, or a publisher-defined alternative (for example "Remove ads" or "Subscribe"). The choice is stored client-side in <code>localStorage</code> under the <code>__51d_pmp_pref</code> key - no cookies and no extra server round-trips - and PMP acts as the CMP by exposing the consent state through the IAB TCF API, so a separate consent manager is not needed. For the underlying concept and the cloud endpoint, see <a class="el" href="_identifiers__p_m_p.html" title="PMP (Preference Management Platform)">PMP (Preference Management Platform)</a>.</p>
+<p>Configure the popup from the <code>PMP</code> tab:</p>
+<ul>
+<li><b>Enable PMP</b> shows the popup on public pages.</li>
+<li><b>Alternative Button Label</b> and <b>Alternative Button URL</b> define the opt-out button and where it sends the visitor (typically a subscription, checkout, or paywall page). Both are required.</li>
+<li><b>Terms / Privacy URL</b> is linked from the popup and is required for a meaningful consent record.</li>
+<li><b>Brand Name</b> and <b>Brand Logo URL</b> set the branding shown in the popup. Replace the placeholder defaults with your own.</li>
+<li><b>Show Standard Marketing Option</b> shows the <code>Standard</code> choice alongside <code>Personalized</code> and the alternative button.</li>
+<li><b>TCF Vendor String</b> is the base IAB TCF v2 consent string onto which PMP overlays the visitor's purpose consents at runtime. The built-in default consents every vendor on the current IAB Global Vendor List; override it to restrict the vendor set.</li>
+</ul>
+<p>The popup works out of the box. To react to the visitor's choice, override the global callback on your page - the plugin ships a no-op default:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;script&gt;</div>
+<div class="c-code__line">window.onPMPCompletion = function (preference) {</div>
+<div class="c-code__line">    // preference is &#39;standard&#39; or &#39;personalized&#39;</div>
+<div class="c-code__line">};</div>
+<div class="c-code__line">&lt;/script&gt;</div>
+</div><!-- fragment --><h2 class="doxsection" id="developer-information-and-advanced-features">Developer information and advanced features<a class="headerlink" href="#developer-information-and-advanced-features" aria-label="Permalink to this section">🔗</a></h2>
 <p><em>Value replacement</em></p>
 <p>You can insert snippets into your pages that will be replaced with the corresponding value. For example, the text <code>{Pipeline::get("device", "browsername")}</code> would be replaced with <code>Chrome</code>, <code>Safari</code> and <code>Firefox</code>, etc, depending on the browser being used by the person visiting your site. To set this up, take the text from the 'Usage in Content' column on the 'Properties' tab of the plugin.</p>
 <p><em>Conditional blocks</em></p>

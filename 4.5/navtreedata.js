@@ -45,9 +45,9 @@ var NAVTREEHIDESYNC = true;
 var NAVTREEINDEX =
 [
 "_device_detection__cloud_to_on_premise.html",
-"_device_detection__overview.html#common-use-cases",
-"_pipeline_api__concepts__flow_elements__cloud_engine.html#internals-2",
-"_reverse_geocoding__overview.html#introduction-83"
+"_device_detection__overview.html#autotoc_md-performance-optimization",
+"_pipeline_api__concepts__flow_elements__aspect_engine.html",
+"_reverse_geocoding__overview.html#autotoc_md-compliance-and-geo-fencing"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -1,0 +1,5 @@
+var struct_benchmark_result =
+[
+    [ "__pad0__", "struct_benchmark_result.html#a2d58fe7689b53c261f41b6aaaecc42e5", null ],
+    [ "elapsed_ms", "struct_benchmark_result.html#a167e4646f98c572da77c1a972771b768", null ]
+];

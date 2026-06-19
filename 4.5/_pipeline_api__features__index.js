@@ -35,7 +35,7 @@ var _pipeline_api__features__index =
         [ "Privacy Policy", "_pipeline_api__features__client_side_evidence.html#privacy-policy", null ],
         [ "Storage Mechanism", "_pipeline_api__features__client_side_evidence.html#storage-mechanism", null ]
       ] ],
-      [ "Web integration", "_pipeline_api__features__client_side_evidence.html#web-integration-2", null ],
+      [ "Web integration", "_pipeline_api__features__client_side_evidence.html#web-integration-3", null ],
       [ "Static and Quasi-Static Script Approaches", "_pipeline_api__features__client_side_evidence.html#static-and-quasi-static-script-approaches", [
         [ "Overview", "_pipeline_api__features__client_side_evidence.html#overview-11", [
           [ "Dynamic Scenario (Default)", "_pipeline_api__features__client_side_evidence.html#dynamic-scenario-default", null ]
