@@ -28,6 +28,7 @@ The snippet below shows how to set this when creating the engine:
 @showsnippet{python,Python}
 @showsnippet{c,C}
 @showsnippet{cpp,C++}
+@showsnippet{rust,Rust}
 @defaultsnippet{Select a tab to view language specific information on setting the concurrency.}
 @startsnippet{dotnet}
 In code:
@@ -178,6 +179,20 @@ EngineHash *engine =
 	dataFilePath,
 	config,
 	properties);
+```
+@endsnippet
+@startsnippet{rust}
+In code:
+```{rust}
+use fiftyone_device_detection::{DeviceDetectionPipelineBuilder, PerformanceProfile};
+
+let pipeline = DeviceDetectionPipelineBuilder::on_premise(data_file)
+    // Set the performance profile
+    .performance_profile(PerformanceProfile::LowMemory)
+    // Set the expected concurrency (the number of threads that will share the
+    // pipeline); this sizes the data set's file-handle pool.
+    .concurrency(thread_count)
+    .build()?;
 ```
 @endsnippet
 @endsnippets

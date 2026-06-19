@@ -64,6 +64,7 @@ Select your language below for detailed setup instructions:
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
 @showsnippet{go,Go}
+@showsnippet{rust,Rust}
 @defaultsnippet{Select a language.}
 @startsnippet{c}
 C does not have a @Pipeline implementation or the ability to use the cloud-based version of 
@@ -152,5 +153,18 @@ Choose your deployment option:
 For web applications, you can integrate IP Intelligence into your HTTP handlers:
 * [On-premise Web Example](@ref IpIntelligence_Examples_GettingStarted_Web_OnPremise) - Local processing
 
+@endsnippet
+@startsnippet{rust}
+### Console Applications
+
+1. Add the [`fiftyone-ip-intelligence`](https://crates.io/crates/fiftyone-ip-intelligence) crate from crates.io (for example with `cargo add fiftyone-ip-intelligence`).
+2. Choose your deployment option:
+   * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - Local processing with a data file.
+   * [Cloud Example](@ref IpIntelligence_Examples_GettingStarted_Console_Cloud) - The 51Degrees cloud service, no local data file.
+
+### Web Integration
+
+For web applications, integrate IP Intelligence into your axum handlers:
+* [On-premise Web Example](@ref IpIntelligence_Examples_GettingStarted_Web_OnPremise) - Local processing.
 @endsnippet
 @endsnippets
