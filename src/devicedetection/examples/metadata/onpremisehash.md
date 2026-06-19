@@ -12,7 +12,7 @@ This example shows how to interrogate the metadata associated with the contents 
 @grabexample{device-detection-php-onpremise,onpremise_2metadata_console_8php,PHP}
 @grabexample{device-detection-node,onpremise_2metadata-console_2meta_data_8js,Node.js}
 @grabexample{device-detection-python,onpremise_2metadata_console_8py,Python}
-@grabexample{rust,dd-onprem-metadata_8rs,Rust}
+@grabexample{rust,dd-onprem-metadata,Rust}
 @startsnippet{c}
 Metadata is only available in C++ wrapper layer to provide a convenient way for higher level languages to access additional data to internal components of the Device Detection engine. C developer can access these information directly without a need for additional MetaData entities.
 @endsnippet

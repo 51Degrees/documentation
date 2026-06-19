@@ -24,7 +24,7 @@ You can mix and match elements from different examples in order to match your us
 @grabexample{device-detection-python,onpremise_2gettingstarted_console_8py,Python}
 @showsnippet{varnish,Varnish}
 @grabexample{device-detection-nginx,hash_2getting_started_8conf,Nginx}
-@grabexample{rust,dd-onprem-getting-started_8rs,Rust}
+@grabexample{rust,dd-onprem-getting-started,Rust}
 @grabbedexample
 @startsnippet{varnish}
 This example shows how to use 51Degrees On-premise device detection to determine details about a device based on its User-Agent and User-Agent Client Hint HTTP header values.

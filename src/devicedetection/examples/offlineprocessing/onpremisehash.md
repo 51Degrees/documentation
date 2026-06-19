@@ -12,7 +12,7 @@ This example shows how process data for later viewing using a Device Detection H
 @showsnippet{php,PHP}
 @grabexample{device-detection-node,onpremise_2offlineprocessing-console_2offline_processing_8js,Node.js}
 @grabexample{device-detection-python,onpremise_2offlineprocessing_8py,Python}
-@grabexample{rust,dd-onprem-offline-processing_8rs,Rust}
+@grabexample{rust,dd-onprem-offline-processing,Rust}
 @startsnippet{cpp}
 There is no offline (or batch) processing example for C++, see the C tab instead.
 @endsnippet

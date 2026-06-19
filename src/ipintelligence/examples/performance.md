@@ -5,6 +5,6 @@
 @grabexample{ip-intelligence-dotnet,_performance-_console_2_program_8cs,C#}
 @grabexample{ip-intelligence-java,_performance_benchmark_8java,Java}
 @grabexample{ip-intelligence-go,examples_2onpremise_2performance_8go,Go}
-@grabexample{rust,ipi-onprem-performance_8rs,Rust}
+@grabexample{rust,ipi-onprem-performance,Rust}
 @grabbedexample
 @endsnippets

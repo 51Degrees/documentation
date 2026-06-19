@@ -14,7 +14,7 @@ A [feature page](@ref DeviceDetection_Features_PerformanceOptions) is also avail
 @showsnippet{php,PHP}
 @grabexample{device-detection-node,onpremise_2performance-console_2performance_8js,Node.js}
 @grabexample{device-detection-python,onpremise_2performance_8py,Python}
-@grabexample{rust,dd-onprem-performance_8rs,Rust}
+@grabexample{rust,dd-onprem-performance,Rust}
 @grabbedexample
 @startsnippet{cpp}
 There is no performance example for C++, see the C tab instead.

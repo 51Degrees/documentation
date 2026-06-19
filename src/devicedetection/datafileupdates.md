@@ -18,6 +18,6 @@ The examples below demonstrate automatic update methods (File System Watcher, Po
 @grabexample{device-detection-node,onpremise_2automaticupdates_2update_on_start_up_8js,Node.js - Update On Startup}
 @grabexample{device-detection-python,onpremise_2datafileupdate_console_8py,Python}
 @grabexample{device-detection-php-onpremise,onpremise_2manual_data_update_8php,PHP - Manual Updates}
-@grabexample{rust,dd-onprem-update-data-file_8rs,Rust}
+@grabexample{rust,dd-onprem-update-data-file,Rust}
 @grabbedexample
 @endsnippets
