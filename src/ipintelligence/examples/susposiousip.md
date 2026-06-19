@@ -2,5 +2,6 @@
 
 @startsnippets
 @grabexample{ip-intelligence-dotnet,_on_premise_2_suspicious-_console_2_program_8cs,C#}
+@grabexample{rust,ipi-onprem-suspicious,Rust}
 @grabbedexample
 @endsnippets
