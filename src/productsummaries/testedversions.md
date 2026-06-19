@@ -162,14 +162,15 @@ These are tested on [GitHub](https://github.com/51Degrees?q=rust&type=all&langua
 
 Platforms:
 - Windows (windows-latest, x86_64)
-- Linux (ubuntu-latest, x86_64)
+- Linux (ubuntu-22.04 and ubuntu-24.04, x86_64)
+- macOS (macos-latest, Apple Silicon / arm64)
 
 Language Versions:
 - Rust stable (current)
 - Minimum supported Rust version: 1.94
 
 Targets:
-- Native (x86_64)
+- Native (x86_64 and Apple Silicon arm64)
 - wasm32-wasip1 (the cloud and web crates, for edge runtimes such as Fastly Compute)
 
 If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
