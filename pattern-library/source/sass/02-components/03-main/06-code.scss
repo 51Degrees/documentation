@@ -46,6 +46,9 @@
   text-align: left;
   background-color:$colour-white;
   padding: size(0);
+  // Vertical breathing room so code blocks are clearly separated from the
+  // surrounding prose, above and below.
+  margin: size(0) 0;
   border-radius:$rounded;
   display:block;
   overflow: scroll;
