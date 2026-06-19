@@ -69,7 +69,7 @@ The Resource Key provided in the request to the Cloud service was not recognized
 The Resource Key provided in the request to the Cloud service is not valid. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to create a new Resource Key.
 
 ### Resource Key required {#Resource_key_required}
-A Resource Key is required to access the 51Degrees Cloud service. This contains your property configuration, preferences and subscriptions. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to create a Resource Key.
+A Resource Key is required to access the 51Degrees Cloud service. This contains your property configuration, preferences and subscriptions. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to create a Resource Key. The key can be supplied as the `X-51D-Resource-Key` header, in the route, as the `resource=` query parameter, or as a `resource` form field. Alternatively, callers can authenticate with a License Key (`X-51D-License-Key`, `?license=`, or a `license` form field) together with a `values` list (see below).
 
 ### Sequence value invalid {#Sequence_value_invalid}
 The value for the `sequence` parameter could not be parsed to an integer, make sure that the `sequence` value is an integer. If the problem persists then please create a new issue on our [cloud-issues GitHub](https://github.com/51Degrees/cloud-issues/issues) repository.
@@ -85,3 +85,6 @@ The supplied License Key(s) do not contain any valid products for the 51Degrees 
 
 ### Trial period expired {#Trial_period_expired}
 Your trial period has expired. To keep using the Cloud service, please upgrade your subscription. See our [pricing page](https://51degrees.com/pricing) for details on subscriptions.
+
+### Values required for license-key call {#Values_required_for_license_key_call}
+This request authenticated with a License Key but did not list which properties to return. A bare License Key has no property list, so License-key callers must list the properties they want via `values`: the `X-51D-Values` header, the `?values=` query parameter, or a `values` form field. See the 51Degrees [Property Dictionary](https://51degrees.com/developers/property-dictionary) for the properties available on your license. Returns `400`.
