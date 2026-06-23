@@ -8,5 +8,6 @@ var class_pipeline_builder =
     [ "buildFromConfigurationFile", "class_pipeline_builder.html#ad1316d43292ccc9bca413869b19d90b5", null ],
     [ "constructor", "class_pipeline_builder.html#a211053ac59b60ed56e6bc297b9310003", null ],
     [ "getHttpElements", "class_pipeline_builder.html#a60d1b4a3822a700e4a7fa773c4da1d28", null ],
-    [ "getJavaScriptElements", "class_pipeline_builder.html#ae07b5241e36078037362e2c3152a8597", null ]
+    [ "getJavaScriptElements", "class_pipeline_builder.html#ae07b5241e36078037362e2c3152a8597", null ],
+    [ "getSuppressProcessExceptions", "class_pipeline_builder.html#abf27beea605a218b474a88e0ffaacf5a", null ]
 ];

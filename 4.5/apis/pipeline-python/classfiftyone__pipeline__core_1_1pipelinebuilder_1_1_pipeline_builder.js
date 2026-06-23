@@ -1,6 +1,7 @@
 var classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder =
 [
     [ "__init__", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#a5c26d46da177d7835afc36329f919c04", null ],
+    [ "_get_suppress_process_exceptions", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#a03b5e1580afa30e2ddd321cb274f6df5", null ],
     [ "_map_properties_names", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#a0c27880ec256456be084a4b35bdf4f78", null ],
     [ "add", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#aae8f68cc3ff751bc63457ae0ee5df653", null ],
     [ "add_logger", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#a076103d89b74dbf1ef0bc1490868da92", null ],
@@ -13,5 +14,6 @@ var classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder =
     [ "flow_elements", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#aa36afe690afcd86e9c03c89a6cb5a748", null ],
     [ "javascriptbuilder_settings", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#ac572743a7447e4a59a40410aa7669716", null ],
     [ "logger", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#a5a56e1d1f2a39364dc18ae41b5b50be7", null ],
+    [ "suppress_process_exceptions", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#aad532bbe2d7784e3011bcbdd06406c0c", null ],
     [ "use_setheader_properties", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#ac481cd14f8149bf6bc840152ff63bbb9", null ]
 ];

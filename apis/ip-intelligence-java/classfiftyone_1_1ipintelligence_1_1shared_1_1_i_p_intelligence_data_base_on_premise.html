@@ -207,6 +207,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:aa7bc669103f9b4031d3a086ece01e64c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value for the specified property as a <code><a class="el" href="">Double</a></code>.  <br /></td></tr>
 <tr class="c-table__row memitem:a2438ed3936324fb6e48eafb7690c608e" id="r_a2438ed3936324fb6e48eafb7690c608e"><td class="c-table__cell">abstract&#160;AspectPropertyValue&lt;&#160;JavaScript&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a2438ed3936324fb6e48eafb7690c608e">getValueAsJavaScript</a> (String propertyName)</td></tr>
 <tr class="c-table__row memdesc:a2438ed3936324fb6e48eafb7690c608e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value for the specified property as a <code><a class="el" href="">JavaScript</a></code>.  <br /></td></tr>
+<tr class="c-table__row memitem:a2d3f1f3467f509b46b8ea83709f0eaee" id="r_a2d3f1f3467f509b46b8ea83709f0eaee"><td class="c-table__cell">AspectPropertyValue&lt;&#160;Float&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a2d3f1f3467f509b46b8ea83709f0eaee">getValueAsFloat</a> (String propertyName)</td></tr>
+<tr class="c-table__row memdesc:a2d3f1f3467f509b46b8ea83709f0eaee"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value for the specified property as a <code><a class="el" href="">Float</a></code>.  <br /></td></tr>
+<tr class="c-table__row memitem:ac7a986f34a7dcacb791a0ce66b9ea2ca" id="r_ac7a986f34a7dcacb791a0ce66b9ea2ca"><td class="c-table__cell">AspectPropertyValue&lt;&#160;InetAddress&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ac7a986f34a7dcacb791a0ce66b9ea2ca">getValueAsIpAddress</a> (String propertyName)</td></tr>
+<tr class="c-table__row memdesc:ac7a986f34a7dcacb791a0ce66b9ea2ca"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value for the specified property as an <code><a class="el" href="">InetAddress</a></code>.  <br /></td></tr>
+<tr class="c-table__row memitem:acf9d1108d7313ed1c31587f11d081ecd" id="r_acf9d1108d7313ed1c31587f11d081ecd"><td class="c-table__cell">AspectPropertyValue&lt;&#160;WktString&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#acf9d1108d7313ed1c31587f11d081ecd">getValueAsWktString</a> (String propertyName)</td></tr>
+<tr class="c-table__row memdesc:acf9d1108d7313ed1c31587f11d081ecd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value for the specified property as a <code><a class="el" href="">WktString</a></code>.  <br /></td></tr>
 <tr class="c-table__row memitem:a821e58bbdad5539949420652db7be1f4" id="r_a821e58bbdad5539949420652db7be1f4"><td class="c-table__cell">Class&lt;?&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a821e58bbdad5539949420652db7be1f4">getPropertyType</a> (String propertyName)</td></tr>
 <tr class="c-table__row memdesc:a821e58bbdad5539949420652db7be1f4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the <code><a class="el" href="">Class</a></code> representing the type values a property contains from its name.  <br /></td></tr>
 <tr class="c-table__row inherit_header pro_methods_classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Member Functions inherited from <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a></h3></td></tr>
@@ -416,6 +422,44 @@ final&#160;Map&lt;&#160;Class&lt;?&gt;,&#160;Class&lt;?&gt;&#160;&gt;&#160;</td>
 
 </div>
 </div>
+<a id="a2d3f1f3467f509b46b8ea83709f0eaee" name="a2d3f1f3467f509b46b8ea83709f0eaee"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2d3f1f3467f509b46b8ea83709f0eaee">&#9670;&#160;</a></span>getValueAsFloat()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">AspectPropertyValue&lt; Float &gt; fiftyone.ipintelligence.shared.IPIntelligenceDataBaseOnPremise.getValueAsFloat </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Get the value for the specified property as a <code><a class="el" href="">Float</a></code>. </p>
+<p>Used for <code class="JavaDocCode">single</code> (32-bit float) properties such as Latitude/Longitude. The native engine exposes numeric values as doubles, so this is derived from <code><a class="el" href="#aa7bc669103f9b4031d3a086ece01e64c">getValueAsDouble(String)</a></code> rather than adding a new native binding or abstract method. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>name of the property to get the value for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">value as a float </dd></dl>
+
+</div>
+</div>
 <a id="a331c5d878e92f271080d0f214830c1fc" name="a331c5d878e92f271080d0f214830c1fc"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a331c5d878e92f271080d0f214830c1fc">&#9670;&#160;</a></span>getValueAsInteger()</h2>
 
@@ -453,6 +497,44 @@ final&#160;Map&lt;&#160;Class&lt;?&gt;,&#160;Class&lt;?&gt;&#160;&gt;&#160;</td>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">value a an integer </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_data_hash_default.html#a737af9b1fbe3368b618154a5a84f20ce">fiftyone.ipintelligence.engine.onpremise.flowelements.IPIntelligenceDataHashDefault</a>.</p>
+
+</div>
+</div>
+<a id="ac7a986f34a7dcacb791a0ce66b9ea2ca" name="ac7a986f34a7dcacb791a0ce66b9ea2ca"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac7a986f34a7dcacb791a0ce66b9ea2ca">&#9670;&#160;</a></span>getValueAsIpAddress()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">AspectPropertyValue&lt; InetAddress &gt; fiftyone.ipintelligence.shared.IPIntelligenceDataBaseOnPremise.getValueAsIpAddress </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Get the value for the specified property as an <code><a class="el" href="">InetAddress</a></code>. </p>
+<p>Used for <code class="JavaDocCode">ipaddress</code> properties (e.g. Ip, IpRangeStart/End). The native engine returns the address as its string form, so this parses that string with <code><a class="el" href="">InetAddress#getByName(String)</a></code> (which resolves an IP literal without performing a DNS lookup). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>name of the property to get the value for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">value as an InetAddress </dd></dl>
 
 </div>
 </div>
@@ -533,6 +615,44 @@ final&#160;Map&lt;&#160;Class&lt;?&gt;,&#160;Class&lt;?&gt;&#160;&gt;&#160;</td>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">value as a string </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_data_hash_default.html#a03ada7912903cea6fbc3017dad529b30">fiftyone.ipintelligence.engine.onpremise.flowelements.IPIntelligenceDataHashDefault</a>.</p>
+
+</div>
+</div>
+<a id="acf9d1108d7313ed1c31587f11d081ecd" name="acf9d1108d7313ed1c31587f11d081ecd"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#acf9d1108d7313ed1c31587f11d081ecd">&#9670;&#160;</a></span>getValueAsWktString()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">AspectPropertyValue&lt; WktString &gt; fiftyone.ipintelligence.shared.IPIntelligenceDataBaseOnPremise.getValueAsWktString </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Get the value for the specified property as a <code><a class="el" href="">WktString</a></code>. </p>
+<p>Used for <code class="JavaDocCode">wkb</code>/<code class="JavaDocCode">wkbr</code> geometry properties (e.g. Areas). The native engine returns the geometry as its WKT string form, which is wrapped in a <code><a class="el" href="">WktString</a></code> so the typed getter returns the declared type. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>name of the property to get the value for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">value as a WktString </dd></dl>
 
 </div>
 </div>

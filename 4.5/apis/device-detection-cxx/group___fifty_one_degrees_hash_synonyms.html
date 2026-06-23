@@ -102,9 +102,8 @@ Macros</h2></td></tr>
 <tr class="c-table__row memitem:gaef378eaba9b3f20b68efc4f30dc3cab7" id="r_gaef378eaba9b3f20b68efc4f30dc3cab7"><td class="c-table__cell"><a id="gaef378eaba9b3f20b68efc4f30dc3cab7" name="gaef378eaba9b3f20b68efc4f30dc3cab7"></a>
 #define&#160;</td><td class="c-table__cell"><b>HashGetDeviceIdFromResults</b>&#160;&#160;&#160;<a class="el" href="group___fifty_one_degrees_hash_api.html#ga6f9ebe94f8165686dc312b057ef2a142">fiftyoneDegreesHashGetDeviceIdFromResults</a></td></tr>
 <tr class="c-table__row memdesc:gaef378eaba9b3f20b68efc4f30dc3cab7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Synonym for <a class="el" href="group___fifty_one_degrees_hash_api.html#ga6f9ebe94f8165686dc312b057ef2a142" title="Get the device id string from the results provided.">fiftyoneDegreesHashGetDeviceIdFromResults</a> function. <br /></td></tr>
-<tr class="c-table__row memitem:ga6eee92bf88015e1e2caba34a2f4589d6" id="r_ga6eee92bf88015e1e2caba34a2f4589d6"><td class="c-table__cell"><a id="ga6eee92bf88015e1e2caba34a2f4589d6" name="ga6eee92bf88015e1e2caba34a2f4589d6"></a>
-#define&#160;</td><td class="c-table__cell"><b>ResultsHashCreate</b>&#160;&#160;&#160;<a class="el" href="group___fifty_one_degrees_hash_api.html#ga34dee7529cd62e98e8776de0be55bed4">fiftyoneDegreesResultsHashCreate</a></td></tr>
-<tr class="c-table__row memdesc:ga6eee92bf88015e1e2caba34a2f4589d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Synonym for <a class="el" href="group___fifty_one_degrees_hash_api.html#ga34dee7529cd62e98e8776de0be55bed4" title="Allocates a results structure containing a reference to the Hash data set managed by the resource man...">fiftyoneDegreesResultsHashCreate</a> function. <br /></td></tr>
+<tr class="c-table__row memitem:gacd8629256dd7e3c637dd4e5fe86e73d2" id="r_gacd8629256dd7e3c637dd4e5fe86e73d2"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gacd8629256dd7e3c637dd4e5fe86e73d2">ResultsHashCreate</a>(manager,  overridesCapacity)</td></tr>
+<tr class="c-table__row memdesc:gacd8629256dd7e3c637dd4e5fe86e73d2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Two argument convenience form of <a class="el" href="group___fifty_one_degrees_hash_api.html#ga8df380cd978f61179a709d5fb5e79bb0" title="Allocates a results structure containing a reference to the Hash data set managed by the resource man...">fiftyoneDegreesResultsHashCreate</a> that injects the deprecated userAgentCapacity as 0, so internal callers need not pass it.  <br /></td></tr>
 <tr class="c-table__row memitem:gaef12979129e46a5fd7ebb6be8867a88d" id="r_gaef12979129e46a5fd7ebb6be8867a88d"><td class="c-table__cell"><a id="gaef12979129e46a5fd7ebb6be8867a88d" name="gaef12979129e46a5fd7ebb6be8867a88d"></a>
 #define&#160;</td><td class="c-table__cell"><b>ResultsHashFree</b>&#160;&#160;&#160;<a class="el" href="group___fifty_one_degrees_hash_api.html#ga99fb766b6693218d56a4cc288be40eec">fiftyoneDegreesResultsHashFree</a></td></tr>
 <tr class="c-table__row memdesc:gaef12979129e46a5fd7ebb6be8867a88d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Synonym for <a class="el" href="group___fifty_one_degrees_hash_api.html#ga99fb766b6693218d56a4cc288be40eec" title="Frees the results structure created by the fiftyoneDegreesResultsHashCreate method.">fiftyoneDegreesResultsHashFree</a> function. <br /></td></tr>
@@ -238,6 +237,38 @@ typedef&#160;<a class="el" href="structfiftyone_degrees_graph_node_hash.html">fi
 typedef&#160;<a class="el" href="structfiftyone_degrees_graph_trace_node.html">fiftyoneDegreesGraphTraceNode</a>&#160;</td><td class="c-table__cell"><b>GraphTraceNode</b></td></tr>
 <tr class="c-table__row memdesc:ga338b3c3f96930afd1935e3e9d859bd59"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Synonym for <a class="el" href="structfiftyone_degrees_graph_trace_node.html" title="Trace node structure used to trace the route taken when evaluating a graph.">fiftyoneDegreesGraphTraceNode</a> type. <br /></td></tr>
 </table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="g-docs__section-heading">Macro Definition Documentation</h2>
+<a id="gacd8629256dd7e3c637dd4e5fe86e73d2" name="gacd8629256dd7e3c637dd4e5fe86e73d2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gacd8629256dd7e3c637dd4e5fe86e73d2">&#9670;&#160;</a></span>ResultsHashCreate</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define ResultsHashCreate</td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>manager</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>overridesCapacity</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_function" href="group___fifty_one_degrees_hash_api.html#ga8df380cd978f61179a709d5fb5e79bb0">fiftyoneDegreesResultsHashCreate</a>((manager), 0, (overridesCapacity))</div>
+<div class="ttc" id="agroup___fifty_one_degrees_hash_api_html_ga8df380cd978f61179a709d5fb5e79bb0"><div class="ttname"><a href="group___fifty_one_degrees_hash_api.html#ga8df380cd978f61179a709d5fb5e79bb0">fiftyoneDegreesResultsHashCreate</a></div><div class="ttdeci">fiftyoneDegreesResultsHash * fiftyoneDegreesResultsHashCreate(fiftyoneDegreesResourceManager *manager, uint32_t userAgentCapacity, uint32_t overridesCapacity)</div><div class="ttdoc">Allocates a results structure containing a reference to the Hash data set managed by the resource man...</div></div>
+</div><!-- fragment -->
+<p>Two argument convenience form of <a class="el" href="group___fifty_one_degrees_hash_api.html#ga8df380cd978f61179a709d5fb5e79bb0" title="Allocates a results structure containing a reference to the Hash data set managed by the resource man...">fiftyoneDegreesResultsHashCreate</a> that injects the deprecated userAgentCapacity as 0, so internal callers need not pass it. </p>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_getting_started_8c-example.html#a36">Hash/GettingStarted.c</a>, <a class="el" href="_hash_2_match_metrics_8c-example.html#a32">Hash/MatchMetrics.c</a>, <a class="el" href="_hash_2_offline_processing_8c-example.html#a36">Hash/OfflineProcessing.c</a>, <a class="el" href="_hash_2_performance_8c-example.html#a41">Hash/Performance.c</a>, <a class="el" href="_hash_2_reload_from_file_8c-example.html#a13">Hash/ReloadFromFile.c</a>, <a class="el" href="_hash_2_reload_from_memory_8c-example.html#a13">Hash/ReloadFromMemory.c</a>, and <a class="el" href="_hash_2_strongly_typed_8c-example.html#a41">Hash/StronglyTyped.c</a>.</dd>
+</dl>
+
+</div>
+</div>
 </div><!-- primary -->
 </div><!-- inner -->
 <div id="page-nav" class="page-nav-panel">

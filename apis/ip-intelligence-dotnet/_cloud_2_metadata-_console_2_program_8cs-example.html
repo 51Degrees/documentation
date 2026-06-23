@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_metad
 <p>In addition, the evidence keys that are accepted by the service are listed. These are the keys that, when added to the evidence collection in flow data, could have some impact on the result that is returned.</p>
 <p>Bear in mind that this is a list of ALL evidence keys accepted by all products offered by the cloud. If you are only using a single product (for example - device detection) then not all of these keys will be relevant.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-dotnet-examples/blob/main/Examples/Cloud/Metadata-Console/Program.cs">GitHub</a>.</p>
-<p>To run this example, create a Resource Key for free at <a href="https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=ip-intelligence-dotnet-examples&amp;amp;utm_content=examples-cloud-metadata-console-program.cs&amp;amp;utm_term=header">https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=ip-intelligence-dotnet-examples&amp;amp;utm_content=examples-cloud-metadata-console-program.cs&amp;amp;utm_term=header</a> and supply it as the first command-line argument or via the 51DEGREES_RESOURCE_KEY environment variable. By default the pipeline talks to cloud.51degrees.com; set 51D_CLOUD_ENDPOINT to point at a self-hosted Cloud service instead.</p>
+<p>To run this example, create a Resource Key for free at <a href="https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=ip-intelligence-dotnet-examples&amp;amp;utm_content=examples-cloud-metadata-console-program.cs&amp;amp;utm_term=header">https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=ip-intelligence-dotnet-examples&amp;amp;utm_content=examples-cloud-metadata-console-program.cs&amp;amp;utm_term=header</a> and supply it as the first command-line argument or via the _51DEGREES_RESOURCE_KEY environment variable. By default the pipeline talks to cloud.51degrees.com; set 51D_CLOUD_ENDPOINT to point at a self-hosted Cloud service instead.</p>
 <p>Required NuGet Dependencies:</p><ul>
 <li><a href="https://www.nuget.org/packages/FiftyOne.IpIntelligence/">FiftyOne.IpIntelligence</a></li>
 <li><a href="https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console/">Microsoft.Extensions.Logging.Console</a></li>
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_metad
 <div class="c-code__line">                <span class="c-code__keywordflow">foreach</span> (var property <span class="c-code__keywordflow">in</span> engine.Properties)</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Output some details about the property.</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// If we&#39;re outputting to console then we also add some formatting to make it </span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// If we&#39;re outputting to console then we also add some formatting to make it</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// more readable.</span></div>
 <div class="c-code__line">                    Console.ForegroundColor = ConsoleColor.White;</div>
 <div class="c-code__line">                    Console.BackgroundColor = ConsoleColor.DarkRed;</div>
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_metad
 <div class="c-code__line">                    Console.ResetColor();</div>
 <div class="c-code__line">                    var typeName = GetPrettyTypeName(</div>
 <div class="c-code__line">                        typeof(IAspectPropertyValue).IsAssignableFrom(property.Type)</div>
-<div class="c-code__line">                            ? property.Type.GenericTypeArguments[0] </div>
+<div class="c-code__line">                            ? property.Type.GenericTypeArguments[0]</div>
 <div class="c-code__line">                            : property.Type);</div>
 <div class="c-code__line">                    output.WriteLine($<span class="c-code__stringliteral">&quot;[Category: {property.Category}] ({typeName})&quot;</span>);</div>
 <div class="c-code__line">                }</div>

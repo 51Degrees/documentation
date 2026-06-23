@@ -1,6 +1,11 @@
 var classtests_1_1test__core_1_1_core_tests =
 [
     [ "test_build_from_config", "classtests_1_1test__core_1_1_core_tests.html#a4efe974a2f7644687fae1f7c5a908f9f", null ],
+    [ "test_suppress_process_exceptions_builder_setting", "classtests_1_1test__core_1_1_core_tests.html#acd6a05769c4062d23a51940f69707e43", null ],
+    [ "test_suppress_process_exceptions_default", "classtests_1_1test__core_1_1_core_tests.html#a525a44b76eb6f98cf9f1e8a7a5fb8409", null ],
+    [ "test_suppress_process_exceptions_from_config_build_parameters", "classtests_1_1test__core_1_1_core_tests.html#aa43d6e5d7727d7be091f25ff10204a41", null ],
+    [ "test_suppress_process_exceptions_from_config_default", "classtests_1_1test__core_1_1_core_tests.html#ac8d29994898d7e1ee5b9de9635c440bc", null ],
+    [ "test_suppress_process_exceptions_from_config_direct", "classtests_1_1test__core_1_1_core_tests.html#ab56e10ab054a6c90f7c7874182a6bb9b", null ],
     [ "testAPV", "classtests_1_1test__core_1_1_core_tests.html#ae84c5a74b5c490e27602f918cf7f84cd", null ],
     [ "testErrors", "classtests_1_1test__core_1_1_core_tests.html#aa37a40afa287a1d7811ae85331d812f8", null ],
     [ "testErrors_already_processed", "classtests_1_1test__core_1_1_core_tests.html#a0336e39bee17b247cd9519d9fbeeddf9", null ],

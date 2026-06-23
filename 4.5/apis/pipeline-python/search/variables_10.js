@@ -15,5 +15,5 @@ var searchData=
   ['share_5fusage_5fversion_12',['SHARE_USAGE_VERSION',['../namespacefiftyone__pipeline__engines__fiftyone_1_1share__usage.html#a7dfae609e26b32e35b7f18e8b11695ca',1,'fiftyone_pipeline_engines_fiftyone::share_usage']]],
   ['shareusageversion_13',['shareUsageVersion',['../namespacetests_1_1test__usage.html#a49d78c774d802ebad85958c1b7f35c1a',1,'tests::test_usage']]],
   ['stopped_14',['stopped',['../classfiftyone__pipeline__core_1_1flowdata_1_1_flow_data.html#a47b8d976cdf75a520e4e76f5671d8407',1,'fiftyone_pipeline_core::flowdata::FlowData']]],
-  ['suppress_5fprocess_5fexceptions_15',['suppress_process_exceptions',['../classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#ab14fdeb1b2c4c3f437e3c380ce9b533e',1,'fiftyone_pipeline_core::pipeline::Pipeline']]]
+  ['suppress_5fprocess_5fexceptions_15',['suppress_process_exceptions',['../classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#ab14fdeb1b2c4c3f437e3c380ce9b533e',1,'fiftyone_pipeline_core.pipeline.Pipeline.suppress_process_exceptions'],['../classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#aad532bbe2d7784e3011bcbdd06406c0c',1,'fiftyone_pipeline_core.pipelinebuilder.PipelineBuilder.suppress_process_exceptions']]]
 ];

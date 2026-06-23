@@ -45,5 +45,5 @@ var searchData=
   ['stopflowdata_2epy_42',['stopflowdata.py',['../stopflowdata_8py.html',1,'']]],
   ['stopped_43',['stopped',['../classfiftyone__pipeline__core_1_1flowdata_1_1_flow_data.html#a47b8d976cdf75a520e4e76f5671d8407',1,'fiftyone_pipeline_core::flowdata::FlowData']]],
   ['stopreceiver_44',['stopReceiver',['../classtests_1_1test__usage_1_1_usage_tests.html#a627112d250cb72ee805b0969f7e86d26',1,'tests::test_usage::UsageTests']]],
-  ['suppress_5fprocess_5fexceptions_45',['suppress_process_exceptions',['../classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#ab14fdeb1b2c4c3f437e3c380ce9b533e',1,'fiftyone_pipeline_core::pipeline::Pipeline']]]
+  ['suppress_5fprocess_5fexceptions_45',['suppress_process_exceptions',['../classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html#ab14fdeb1b2c4c3f437e3c380ce9b533e',1,'fiftyone_pipeline_core.pipeline.Pipeline.suppress_process_exceptions'],['../classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#aad532bbe2d7784e3011bcbdd06406c0c',1,'fiftyone_pipeline_core.pipelinebuilder.PipelineBuilder.suppress_process_exceptions']]]
 ];

@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fiftyone
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
 class FiftyoneDegrees::Common::Value&lt; T &gt;</div><p>Encapsulates a value returned an instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_results_base.html" title="Encapsulates the results of an engine&#39;s processing.">ResultsBase</a> for a specified property. </p>
 <p>An instance contains either the value, or the reason which there is no value.</p>
-<p>Before retrieving the value itself, its presence should first be checked using the <a class="el" href="#ac7831003d50002c31e78f5573cfc6e6c" title="Indicates whether or not a valid value has been returned by the ResultsBase instance.">hasValue()</a> method. The typed value can be returned either using the <a class="el" href="#ab796b2fc2a451c78e39d7029354dae84" title="Gets the value contained in the Value instance.">getValue()</a> method, or more simply, by dereferencing (similarly to an iterator). If there is no value, then an exception will be thrown.</p>
+<p>Before retrieving the value itself, its presence should first be checked using the <a class="el" href="#adfbfda8989b3f28a1a779b45a32b6cf2" title="Indicates whether or not a valid value has been returned by the ResultsBase instance.">hasValue()</a> method. The typed value can be returned either using the <a class="el" href="#a6a68e3a555ecb61563f345f8ea8cbf2f" title="Gets the value contained in the Value instance.">getValue()</a> method, or more simply, by dereferencing (similarly to an iterator). If there is no value, then an exception will be thrown.</p>
 <h2>Usage Example</h2>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">using namespace </span><a class="code hl_namespace" href="namespace_fiftyone_degrees_1_1_common.html">FiftyoneDegrees::Common</a>;</div>
 <div class="c-code__line"><a class="code hl_function" href="#a11980ff143c95bc2a542d1fa3c6ce0f8">Value&lt;string&gt;</a> value;</div>
@@ -84,7 +84,7 @@ class FiftyoneDegrees::Common::Value&lt; T &gt;</div><p>Encapsulates a value ret
 <div class="c-code__line">}</div>
 <div class="c-code__line"><span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Get the reason for the value being invalid</span></div>
-<div class="c-code__line">    <span class="c-code__keywordtype">string</span> message = value.<a class="code hl_function" href="#a155fdf390691e62d924ff9e9c07d225f">getNoValueMessage</a>();</div>
+<div class="c-code__line">    <span class="c-code__keywordtype">string</span> message = value.<a class="code hl_function" href="#a903c9dca8ceb92dbc18b2e548d422dc9">getNoValueMessage</a>();</div>
 <div class="c-code__line">    <span class="c-code__comment">// Do something with the message</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// ...</span></div>
 <div class="c-code__line">}</div>
@@ -98,7 +98,7 @@ class FiftyoneDegrees::Common::Value&lt; T &gt;</div><p>Encapsulates a value ret
 <div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *message = e.what();</div>
 <div class="c-code__line">}</div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_value_html_a11980ff143c95bc2a542d1fa3c6ce0f8"><div class="ttname"><a href="#a11980ff143c95bc2a542d1fa3c6ce0f8">FiftyoneDegrees::Common::Value::Value</a></div><div class="ttdeci">Value()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition</b> Value.hpp:84</div></div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_value_html_a155fdf390691e62d924ff9e9c07d225f"><div class="ttname"><a href="#a155fdf390691e62d924ff9e9c07d225f">FiftyoneDegrees::Common::Value::getNoValueMessage</a></div><div class="ttdeci">const char * getNoValueMessage()</div><div class="ttdoc">Gets a message explaining why there is no value.</div><div class="ttdef"><b>Definition</b> Value.hpp:119</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_value_html_a903c9dca8ceb92dbc18b2e548d422dc9"><div class="ttname"><a href="#a903c9dca8ceb92dbc18b2e548d422dc9">FiftyoneDegrees::Common::Value::getNoValueMessage</a></div><div class="ttdeci">const char * getNoValueMessage() const</div><div class="ttdoc">Gets a message explaining why there is no value.</div><div class="ttdef"><b>Definition</b> Value.hpp:119</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_common_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_common.html">FiftyoneDegrees::Common</a></div><div class="ttdoc">Shared classes.</div><div class="ttdef"><b>Definition</b> Collection.hpp:31</div></div>
 </div><!-- fragment --><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -114,25 +114,25 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="c-table__cell"><b>Value</b> ()</td></tr>
 <tr class="c-table__row memdesc:a11980ff143c95bc2a542d1fa3c6ce0f8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default constructor. <br /></td></tr>
 <tr id="pub-methods-1" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Value Methods</h3></td></tr>
-<tr class="c-table__row memitem:ac7831003d50002c31e78f5573cfc6e6c" id="r_ac7831003d50002c31e78f5573cfc6e6c"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ac7831003d50002c31e78f5573cfc6e6c">hasValue</a> ()</td></tr>
-<tr class="c-table__row memdesc:ac7831003d50002c31e78f5573cfc6e6c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Indicates whether or not a valid value has been returned by the <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_results_base.html" title="Encapsulates the results of an engine&#39;s processing.">ResultsBase</a> instance.  <br /></td></tr>
-<tr class="c-table__row memitem:a93325ac4a38c32d2094a202a7d9d613c" id="r_a93325ac4a38c32d2094a202a7d9d613c"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_results.html#gaef347b638495391733e5962b576321e6">fiftyoneDegreesResultsNoValueReason</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a93325ac4a38c32d2094a202a7d9d613c">getNoValueReason</a> ()</td></tr>
-<tr class="c-table__row memdesc:a93325ac4a38c32d2094a202a7d9d613c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Indicates the reason why valid values are not available.  <br /></td></tr>
-<tr class="c-table__row memitem:a155fdf390691e62d924ff9e9c07d225f" id="r_a155fdf390691e62d924ff9e9c07d225f"><td class="c-table__cell">const&#160;char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a155fdf390691e62d924ff9e9c07d225f">getNoValueMessage</a> ()</td></tr>
-<tr class="c-table__row memdesc:a155fdf390691e62d924ff9e9c07d225f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a message explaining why there is no value.  <br /></td></tr>
-<tr class="c-table__row memitem:ab796b2fc2a451c78e39d7029354dae84" id="r_ab796b2fc2a451c78e39d7029354dae84"><td class="c-table__cell">T&#160;</td><td class="c-table__cell"><a class="el" href="#ab796b2fc2a451c78e39d7029354dae84">getValue</a> ()</td></tr>
-<tr class="c-table__row memdesc:ab796b2fc2a451c78e39d7029354dae84"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the value contained in the <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html" title="Encapsulates a value returned an instance of ResultsBase for a specified property.">Value</a> instance.  <br /></td></tr>
+<tr class="c-table__row memitem:adfbfda8989b3f28a1a779b45a32b6cf2" id="r_adfbfda8989b3f28a1a779b45a32b6cf2"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#adfbfda8989b3f28a1a779b45a32b6cf2">hasValue</a> () const</td></tr>
+<tr class="c-table__row memdesc:adfbfda8989b3f28a1a779b45a32b6cf2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Indicates whether or not a valid value has been returned by the <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_results_base.html" title="Encapsulates the results of an engine&#39;s processing.">ResultsBase</a> instance.  <br /></td></tr>
+<tr class="c-table__row memitem:ad0972ed9b19e483772a352d4f0f906c8" id="r_ad0972ed9b19e483772a352d4f0f906c8"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_results.html#gaef347b638495391733e5962b576321e6">fiftyoneDegreesResultsNoValueReason</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ad0972ed9b19e483772a352d4f0f906c8">getNoValueReason</a> () const</td></tr>
+<tr class="c-table__row memdesc:ad0972ed9b19e483772a352d4f0f906c8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Indicates the reason why valid values are not available.  <br /></td></tr>
+<tr class="c-table__row memitem:a903c9dca8ceb92dbc18b2e548d422dc9" id="r_a903c9dca8ceb92dbc18b2e548d422dc9"><td class="c-table__cell">const&#160;char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a903c9dca8ceb92dbc18b2e548d422dc9">getNoValueMessage</a> () const</td></tr>
+<tr class="c-table__row memdesc:a903c9dca8ceb92dbc18b2e548d422dc9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a message explaining why there is no value.  <br /></td></tr>
+<tr class="c-table__row memitem:a6a68e3a555ecb61563f345f8ea8cbf2f" id="r_a6a68e3a555ecb61563f345f8ea8cbf2f"><td class="c-table__cell">T&#160;</td><td class="c-table__cell"><a class="el" href="#a6a68e3a555ecb61563f345f8ea8cbf2f">getValue</a> () const</td></tr>
+<tr class="c-table__row memdesc:a6a68e3a555ecb61563f345f8ea8cbf2f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the value contained in the <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html" title="Encapsulates a value returned an instance of ResultsBase for a specified property.">Value</a> instance.  <br /></td></tr>
 <tr class="c-table__row memitem:a1ffa6541c889a835e81454a68b620b53" id="r_a1ffa6541c889a835e81454a68b620b53"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a1ffa6541c889a835e81454a68b620b53">setValue</a> (T targetValue)</td></tr>
 <tr class="c-table__row memdesc:a1ffa6541c889a835e81454a68b620b53"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the value to be contained in the <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html" title="Encapsulates a value returned an instance of ResultsBase for a specified property.">Value</a> instance.  <br /></td></tr>
 <tr class="c-table__row memitem:afa25e192ba35c6baefc3ae990a3896de" id="r_afa25e192ba35c6baefc3ae990a3896de"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#afa25e192ba35c6baefc3ae990a3896de">setNoValueReason</a> (<a class="el" href="group___fifty_one_degrees_results.html#gaef347b638495391733e5962b576321e6">fiftyoneDegreesResultsNoValueReason</a> reason, const char *message)</td></tr>
 <tr class="c-table__row memdesc:afa25e192ba35c6baefc3ae990a3896de"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the reason there is no value available.  <br /></td></tr>
 <tr id="pub-methods-2" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Operators</h3></td></tr>
-<tr class="c-table__row memitem:ae3c2b359c22103a65120fb1bfa5453e2" id="r_ae3c2b359c22103a65120fb1bfa5453e2"><td class="c-table__cell">T&#160;</td><td class="c-table__cell"><a class="el" href="#ae3c2b359c22103a65120fb1bfa5453e2">operator*</a> ()</td></tr>
-<tr class="c-table__row memdesc:ae3c2b359c22103a65120fb1bfa5453e2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the value contained in the <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html" title="Encapsulates a value returned an instance of ResultsBase for a specified property.">Value</a> instance.  <br /></td></tr>
+<tr class="c-table__row memitem:ace46633dcd72ada94dd0a7c87a89b958" id="r_ace46633dcd72ada94dd0a7c87a89b958"><td class="c-table__cell">T&#160;</td><td class="c-table__cell"><a class="el" href="#ace46633dcd72ada94dd0a7c87a89b958">operator*</a> () const</td></tr>
+<tr class="c-table__row memdesc:ace46633dcd72ada94dd0a7c87a89b958"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the value contained in the <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html" title="Encapsulates a value returned an instance of ResultsBase for a specified property.">Value</a> instance.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
-<a id="a155fdf390691e62d924ff9e9c07d225f" name="a155fdf390691e62d924ff9e9c07d225f"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a155fdf390691e62d924ff9e9c07d225f">&#9670;&#160;</a></span>getNoValueMessage()</h2>
+<a id="a903c9dca8ceb92dbc18b2e548d422dc9" name="a903c9dca8ceb92dbc18b2e548d422dc9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a903c9dca8ceb92dbc18b2e548d422dc9">&#9670;&#160;</a></span>getNoValueMessage()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -148,7 +148,7 @@ template&lt;class T&gt; </div>
               <td class="c-table__cell">const char * <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a>&lt; T &gt;::getNoValueMessage </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
           </table>
         </div>
@@ -161,12 +161,12 @@ template&lt;class T&gt; </div>
 </div><div class="c-member__body">
 
 <p>Gets a message explaining why there is no value. </p>
-<p>Calling this if <a class="el" href="#ac7831003d50002c31e78f5573cfc6e6c" title="Indicates whether or not a valid value has been returned by the ResultsBase instance.">hasValue()</a> returned true will result in undefined behavior. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">message explaining the reason for the missing value </dd></dl>
+<p>Calling this if <a class="el" href="#adfbfda8989b3f28a1a779b45a32b6cf2" title="Indicates whether or not a valid value has been returned by the ResultsBase instance.">hasValue()</a> returned true will result in undefined behavior. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">message explaining the reason for the missing value </dd></dl>
 
 </div>
 </div>
-<a id="a93325ac4a38c32d2094a202a7d9d613c" name="a93325ac4a38c32d2094a202a7d9d613c"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a93325ac4a38c32d2094a202a7d9d613c">&#9670;&#160;</a></span>getNoValueReason()</h2>
+<a id="ad0972ed9b19e483772a352d4f0f906c8" name="ad0972ed9b19e483772a352d4f0f906c8"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad0972ed9b19e483772a352d4f0f906c8">&#9670;&#160;</a></span>getNoValueReason()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -182,7 +182,7 @@ template&lt;class T&gt; </div>
               <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_results.html#gaef347b638495391733e5962b576321e6">fiftyoneDegreesResultsNoValueReason</a> <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a>&lt; T &gt;::getNoValueReason </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
           </table>
         </div>
@@ -195,12 +195,12 @@ template&lt;class T&gt; </div>
 </div><div class="c-member__body">
 
 <p>Indicates the reason why valid values are not available. </p>
-<p>This can be called if <a class="el" href="#ac7831003d50002c31e78f5573cfc6e6c" title="Indicates whether or not a valid value has been returned by the ResultsBase instance.">hasValue()</a> returns false. For a more detailed message, call <a class="el" href="#a155fdf390691e62d924ff9e9c07d225f" title="Gets a message explaining why there is no value.">getNoValueMessage()</a>. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">enum indicating the reason for no valid values </dd></dl>
+<p>This can be called if <a class="el" href="#adfbfda8989b3f28a1a779b45a32b6cf2" title="Indicates whether or not a valid value has been returned by the ResultsBase instance.">hasValue()</a> returns false. For a more detailed message, call <a class="el" href="#a903c9dca8ceb92dbc18b2e548d422dc9" title="Gets a message explaining why there is no value.">getNoValueMessage()</a>. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">enum indicating the reason for no valid values </dd></dl>
 
 </div>
 </div>
-<a id="ab796b2fc2a451c78e39d7029354dae84" name="ab796b2fc2a451c78e39d7029354dae84"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab796b2fc2a451c78e39d7029354dae84">&#9670;&#160;</a></span>getValue()</h2>
+<a id="a6a68e3a555ecb61563f345f8ea8cbf2f" name="a6a68e3a555ecb61563f345f8ea8cbf2f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6a68e3a555ecb61563f345f8ea8cbf2f">&#9670;&#160;</a></span>getValue()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -216,7 +216,7 @@ template&lt;class T&gt; </div>
               <td class="c-table__cell">T <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a>&lt; T &gt;::getValue </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
           </table>
         </div>
@@ -229,12 +229,12 @@ template&lt;class T&gt; </div>
 </div><div class="c-member__body">
 
 <p>Gets the value contained in the <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html" title="Encapsulates a value returned an instance of ResultsBase for a specified property.">Value</a> instance. </p>
-<p>If there is no valid value, then an exception will be thrown. To prevent an exception, the <a class="el" href="#ac7831003d50002c31e78f5573cfc6e6c" title="Indicates whether or not a valid value has been returned by the ResultsBase instance.">hasValue()</a> method should be checked first. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">value </dd></dl>
+<p>If there is no valid value, then an exception will be thrown. To prevent an exception, the <a class="el" href="#adfbfda8989b3f28a1a779b45a32b6cf2" title="Indicates whether or not a valid value has been returned by the ResultsBase instance.">hasValue()</a> method should be checked first. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">value </dd></dl>
 
 </div>
 </div>
-<a id="ac7831003d50002c31e78f5573cfc6e6c" name="ac7831003d50002c31e78f5573cfc6e6c"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac7831003d50002c31e78f5573cfc6e6c">&#9670;&#160;</a></span>hasValue()</h2>
+<a id="adfbfda8989b3f28a1a779b45a32b6cf2" name="adfbfda8989b3f28a1a779b45a32b6cf2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adfbfda8989b3f28a1a779b45a32b6cf2">&#9670;&#160;</a></span>hasValue()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -250,7 +250,7 @@ template&lt;class T&gt; </div>
               <td class="c-table__cell">bool <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a>&lt; T &gt;::hasValue </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
           </table>
         </div>
@@ -267,8 +267,8 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="ae3c2b359c22103a65120fb1bfa5453e2" name="ae3c2b359c22103a65120fb1bfa5453e2"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae3c2b359c22103a65120fb1bfa5453e2">&#9670;&#160;</a></span>operator*()</h2>
+<a id="ace46633dcd72ada94dd0a7c87a89b958" name="ace46633dcd72ada94dd0a7c87a89b958"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ace46633dcd72ada94dd0a7c87a89b958">&#9670;&#160;</a></span>operator*()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -284,7 +284,7 @@ template&lt;class T&gt; </div>
               <td class="c-table__cell">T <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a>&lt; T &gt;::operator* </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
           </table>
         </div>
@@ -297,7 +297,7 @@ template&lt;class T&gt; </div>
 </div><div class="c-member__body">
 
 <p>Gets the value contained in the <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html" title="Encapsulates a value returned an instance of ResultsBase for a specified property.">Value</a> instance. </p>
-<p>If there is no valid value, then an exception will be thrown. To prevent an exception, the <a class="el" href="#ac7831003d50002c31e78f5573cfc6e6c" title="Indicates whether or not a valid value has been returned by the ResultsBase instance.">hasValue()</a> method should be checked first. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">value </dd></dl>
+<p>If there is no valid value, then an exception will be thrown. To prevent an exception, the <a class="el" href="#adfbfda8989b3f28a1a779b45a32b6cf2" title="Indicates whether or not a valid value has been returned by the ResultsBase instance.">hasValue()</a> method should be checked first. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">value </dd></dl>
 
 </div>
 </div>

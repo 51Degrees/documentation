@@ -140,10 +140,10 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:gaafa8ef1661a542e11c58093febf30180"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process a single User-Agent and populate the device offsets in the results structure.  <br /></td></tr>
 <tr class="c-table__row memitem:ga9ae4ad3ae5a84c78a96d8274b7dd8a72" id="r_ga9ae4ad3ae5a84c78a96d8274b7dd8a72"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#ga9ae4ad3ae5a84c78a96d8274b7dd8a72">fiftyoneDegreesResultsHashFromDeviceId</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, const char *deviceId, size_t deviceIdLength, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga9ae4ad3ae5a84c78a96d8274b7dd8a72"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process a single Device Id and populate the device offsets in the results structure.  <br /></td></tr>
-<tr class="c-table__row memitem:ga34dee7529cd62e98e8776de0be55bed4" id="r_ga34dee7529cd62e98e8776de0be55bed4"><td class="c-table__cell"><a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga34dee7529cd62e98e8776de0be55bed4">fiftyoneDegreesResultsHashCreate</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, uint32_t overridesCapacity)</td></tr>
-<tr class="c-table__row memdesc:ga34dee7529cd62e98e8776de0be55bed4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Allocates a results structure containing a reference to the Hash data set managed by the resource manager provided.  <br /></td></tr>
+<tr class="c-table__row memitem:ga8df380cd978f61179a709d5fb5e79bb0" id="r_ga8df380cd978f61179a709d5fb5e79bb0"><td class="c-table__cell"><a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga8df380cd978f61179a709d5fb5e79bb0">fiftyoneDegreesResultsHashCreate</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, uint32_t userAgentCapacity, uint32_t overridesCapacity)</td></tr>
+<tr class="c-table__row memdesc:ga8df380cd978f61179a709d5fb5e79bb0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Allocates a results structure containing a reference to the Hash data set managed by the resource manager provided.  <br /></td></tr>
 <tr class="c-table__row memitem:ga99fb766b6693218d56a4cc288be40eec" id="r_ga99fb766b6693218d56a4cc288be40eec"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ga99fb766b6693218d56a4cc288be40eec">fiftyoneDegreesResultsHashFree</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results)</td></tr>
-<tr class="c-table__row memdesc:ga99fb766b6693218d56a4cc288be40eec"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Frees the results structure created by the <a class="el" href="#ga34dee7529cd62e98e8776de0be55bed4" title="Allocates a results structure containing a reference to the Hash data set managed by the resource man...">fiftyoneDegreesResultsHashCreate</a> method.  <br /></td></tr>
+<tr class="c-table__row memdesc:ga99fb766b6693218d56a4cc288be40eec"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Frees the results structure created by the <a class="el" href="#ga8df380cd978f61179a709d5fb5e79bb0" title="Allocates a results structure containing a reference to the Hash data set managed by the resource man...">fiftyoneDegreesResultsHashCreate</a> method.  <br /></td></tr>
 <tr class="c-table__row memitem:ga7dcd26829a59efd8a093995d455b3649" id="r_ga7dcd26829a59efd8a093995d455b3649"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga7dcd26829a59efd8a093995d455b3649">fiftyoneDegreesResultsHashGetHasValues</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, int requiredPropertyIndex, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga7dcd26829a59efd8a093995d455b3649"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets whether or not the results provided contain valid values for the property index provided.  <br /></td></tr>
 <tr class="c-table__row memitem:ga0aa7f6226363731da49d84cacbe2a8df" id="r_ga0aa7f6226363731da49d84cacbe2a8df"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_results.html#gaef347b638495391733e5962b576321e6">fiftyoneDegreesResultsNoValueReason</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga0aa7f6226363731da49d84cacbe2a8df">fiftyoneDegreesResultsHashGetNoValueReason</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, int requiredPropertyIndex, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
@@ -883,8 +883,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga34dee7529cd62e98e8776de0be55bed4" name="ga34dee7529cd62e98e8776de0be55bed4"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga34dee7529cd62e98e8776de0be55bed4">&#9670;&#160;</a></span>fiftyoneDegreesResultsHashCreate()</h2>
+<a id="ga8df380cd978f61179a709d5fb5e79bb0" name="ga8df380cd978f61179a709d5fb5e79bb0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga8df380cd978f61179a709d5fb5e79bb0">&#9670;&#160;</a></span>fiftyoneDegreesResultsHashCreate()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -895,6 +895,11 @@ Variables</h2></td></tr>
               <td class="c-table__cell"><a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> * fiftyoneDegreesResultsHashCreate </td>
           <td>(</td>
           <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>manager</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>userAgentCapacity</em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
@@ -910,6 +915,7 @@ Variables</h2></td></tr>
 <p>The referenced data set will be kept active until the results structure is freed. The number of results allocated might be bigger to hold additional values returned from internal process. e.g. Client Hints support. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">manager</td><td>pointer to the resource manager which manages a Hash data set </td></tr>
+    <tr><td class="paramname">userAgentCapacity</td><td>deprecated and ignored. Retained only so that integrations built against the pre-4.5 API (e.g. the HAProxy 51degrees addon, which still passes it) continue to compile unchanged. Results are now sized by the number of components determined at initialisation. </td></tr>
     <tr><td class="paramname">overridesCapacity</td><td>number of properties that can be overridden, 0 to disable overrides </td></tr>
   </table>
   </dd>
@@ -939,7 +945,7 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Frees the results structure created by the <a class="el" href="#ga34dee7529cd62e98e8776de0be55bed4" title="Allocates a results structure containing a reference to the Hash data set managed by the resource man...">fiftyoneDegreesResultsHashCreate</a> method. </p>
+<p>Frees the results structure created by the <a class="el" href="#ga8df380cd978f61179a709d5fb5e79bb0" title="Allocates a results structure containing a reference to the Hash data set managed by the resource man...">fiftyoneDegreesResultsHashCreate</a> method. </p>
 <p>When freeing, the reference to the Hash data set resource is released. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>pointer to the results structure to release </td></tr>
