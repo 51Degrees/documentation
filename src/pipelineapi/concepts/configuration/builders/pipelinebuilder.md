@@ -63,6 +63,7 @@ preferable to make the @pipeline configurable without the need to recompile. For
 @showsnippet{java,Java}
 @showsnippet{php,PHP}
 @showsnippet{node,Node.js}
+@showsnippet{python,Python}
 @startsnippet{none,block}
 Select a language to view language specific usage example.
 @endsnippet
@@ -70,7 +71,7 @@ Select a language to view language specific usage example.
 ```{cs}
 IPipeline pipeline = new PipelineBuilder(loggerFactory)
     .SetAutoDisposeElements(true)
-    .SetSuppressProcessException(true)
+    .SetSuppressProcessExceptions(true)
     .AddFlowElement(element)
     .Build();
 ```
@@ -87,7 +88,7 @@ Pipeline pipeline = new PipelineBuilder(loggerFactory)
 @startsnippet{php}
 \verbatim
 use fiftyone\pipeline\core\PipelineBuilder;
-$builder = new PipelineBuilder();
+$builder = new PipelineBuilder(['suppressProcessExceptions' => true]);
 $builder->flowElements = [$element];
 $pipeline = $builder->build();
 \endverbatim
@@ -95,8 +96,14 @@ $pipeline = $builder->build();
 @startsnippet{node}
 ```js
 const PipelineBuilder = require('fiftyone.pipeline.core').PipelineBuilder;
-const pipeline = new PipelineBuilder();
+const pipeline = new PipelineBuilder({ suppressProcessExceptions: true });
 pipeline.flowElements.push(element);
 pipeline.build();
+```
+@endsnippet
+@startsnippet{python}
+```python
+from fiftyone_pipeline_core.pipelinebuilder import PipelineBuilder
+pipeline = PipelineBuilder({"suppress_process_exceptions": True}).add(element).build()
 ```
 @endsnippet
