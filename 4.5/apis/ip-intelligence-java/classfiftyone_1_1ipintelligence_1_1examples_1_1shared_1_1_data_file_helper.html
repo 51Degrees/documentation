@@ -73,6 +73,10 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:aa68e7e5b628b94c7234b9e42294abc16" id="r_aa68e7e5b628b94c7234b9e42294abc16"><td class="c-table__cell">static&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#aa68e7e5b628b94c7234b9e42294abc16">findAvailableDataFile</a> ()</td></tr>
+<tr class="c-table__row memdesc:aa68e7e5b628b94c7234b9e42294abc16"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Find the best IP Intelligence data file available, preferring the enterprise file, then the ASN file from the ip-intelligence-data submodule, then the Lite file.  <br /></td></tr>
+<tr class="c-table__row memitem:a24eb46db33ec76d5fb70c2efe302bc40" id="r_a24eb46db33ec76d5fb70c2efe302bc40"><td class="c-table__cell">static&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a24eb46db33ec76d5fb70c2efe302bc40">findAvailableDataFile</a> (String... candidates)</td></tr>
+<tr class="c-table__row memdesc:a24eb46db33ec76d5fb70c2efe302bc40"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Find the first of the passed candidate data files that can be resolved.  <br /></td></tr>
 <tr class="c-table__row memitem:aa1cb12aa53656a59898abffe4f3f14de" id="r_aa1cb12aa53656a59898abffe4f3f14de"><td class="c-table__cell"><a id="aa1cb12aa53656a59898abffe4f3f14de" name="aa1cb12aa53656a59898abffe4f3f14de"></a>
 static&#160;<a class="el" href="classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper_1_1_datafile_info.html">DatafileInfo</a>&#160;</td><td class="c-table__cell"><b>getDatafileMetaData</b> (String dataFileLocation)  throws Exception </td></tr>
 <tr class="c-table__row memitem:aa3f4734172328c2b9365c5719c5564e1" id="r_aa3f4734172328c2b9365c5719c5564e1"><td class="c-table__cell"><a id="aa3f4734172328c2b9365c5719c5564e1" name="aa3f4734172328c2b9365c5719c5564e1"></a>
@@ -88,10 +92,84 @@ static&#160;void&#160;</td><td class="c-table__cell"><b>cantFindDataFile</b> (St
 Static Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:ad902ce64cb85a95b86ea524c725a589f" id="r_ad902ce64cb85a95b86ea524c725a589f"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#ad902ce64cb85a95b86ea524c725a589f">ENTERPRISE_DATA_FILE_REL_PATH</a> = &quot;ip-intelligence-data/51Degrees-EnterpriseIpiV41.ipi&quot;</td></tr>
 <tr class="c-table__row memdesc:ad902ce64cb85a95b86ea524c725a589f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Relative path to the enterprise IP Intelligence data file from the examples repository root.  <br /></td></tr>
+<tr class="c-table__row memitem:a94355a32ceeaea9efc30069a45dcc17e" id="r_a94355a32ceeaea9efc30069a45dcc17e"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a94355a32ceeaea9efc30069a45dcc17e">LITE_DATA_FILE_REL_PATH</a> = &quot;ip-intelligence-data/51Degrees-LiteV41.ipi&quot;</td></tr>
+<tr class="c-table__row memdesc:a94355a32ceeaea9efc30069a45dcc17e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Relative path to the freely downloadable Lite IP Intelligence data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a279d850b285205908405d1309f2968af" id="r_a279d850b285205908405d1309f2968af"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a279d850b285205908405d1309f2968af">ASN_DATA_FILE_REL_PATH</a> = &quot;ip-intelligence-data/51Degrees-IPIV4AsnIpiV41.ipi&quot;</td></tr>
+<tr class="c-table__row memdesc:a279d850b285205908405d1309f2968af"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Relative path to the ASN IP Intelligence data file which is part of the ip-intelligence-data submodule.  <br /></td></tr>
 <tr class="c-table__row memitem:af25ccc637b7ef01c469bc2f1b972e6d7" id="r_af25ccc637b7ef01c469bc2f1b972e6d7"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#af25ccc637b7ef01c469bc2f1b972e6d7">IPI_PATH_ENV_VAR</a> = &quot;51DEGREES_IPI_PATH&quot;</td></tr>
 <tr class="c-table__row memdesc:af25ccc637b7ef01c469bc2f1b972e6d7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Aligned name of the environment variable or system property which may hold an explicit path to the IP Intelligence data file.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="aa68e7e5b628b94c7234b9e42294abc16" name="aa68e7e5b628b94c7234b9e42294abc16"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa68e7e5b628b94c7234b9e42294abc16">&#9670;&#160;</a></span>findAvailableDataFile() <span class="c-member__count">[1/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">String fiftyone.ipintelligence.examples.shared.DataFileHelper.findAvailableDataFile </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Find the best IP Intelligence data file available, preferring the enterprise file, then the ASN file from the ip-intelligence-data submodule, then the Lite file. </p>
+<p>Suitable for examples that work with whatever properties the data file contains, where any data file allows the example to run. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a resolved data file path, or null when none is available </dd></dl>
+
+</div>
+</div>
+<a id="a24eb46db33ec76d5fb70c2efe302bc40" name="a24eb46db33ec76d5fb70c2efe302bc40"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a24eb46db33ec76d5fb70c2efe302bc40">&#9670;&#160;</a></span>findAvailableDataFile() <span class="c-member__count">[2/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">String fiftyone.ipintelligence.examples.shared.DataFileHelper.findAvailableDataFile </td>
+          <td>(</td>
+          <td class="c-table__cell">String...</td>          <td class="c-table__cell"><span class="paramname"><em>candidates</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Find the first of the passed candidate data files that can be resolved. </p>
+<p>Examples that need particular properties can pass only the files containing them, for example the ASN file does not contain the RegisteredName property. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">candidates</td><td>relative paths to try in order of preference </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a resolved data file path, or null when none is available </dd></dl>
+
+</div>
+</div>
 <a id="adad2e7d9b01160aea0b11520980c7727" name="adad2e7d9b01160aea0b11520980c7727"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#adad2e7d9b01160aea0b11520980c7727">&#9670;&#160;</a></span>getDataFileLocation()</h2>
 
@@ -181,6 +259,35 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a279d850b285205908405d1309f2968af" name="a279d850b285205908405d1309f2968af"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a279d850b285205908405d1309f2968af">&#9670;&#160;</a></span>ASN_DATA_FILE_REL_PATH</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final String fiftyone.ipintelligence.examples.shared.DataFileHelper.ASN_DATA_FILE_REL_PATH = &quot;ip-intelligence-data/51Degrees-IPIV4AsnIpiV41.ipi&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Relative path to the ASN IP Intelligence data file which is part of the ip-intelligence-data submodule. </p>
+<p>It contains the Asn and AsnName properties. </p>
+
+</div>
+</div>
 <a id="ad902ce64cb85a95b86ea524c725a589f" name="ad902ce64cb85a95b86ea524c725a589f"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad902ce64cb85a95b86ea524c725a589f">&#9670;&#160;</a></span>ENTERPRISE_DATA_FILE_REL_PATH</h2>
 
@@ -236,6 +343,35 @@ Static Public Attributes</h2></td></tr>
 
 <p>Aligned name of the environment variable or system property which may hold an explicit path to the IP Intelligence data file. </p>
 <p>This name is checked first, before any search of the project space. </p>
+
+</div>
+</div>
+<a id="a94355a32ceeaea9efc30069a45dcc17e" name="a94355a32ceeaea9efc30069a45dcc17e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a94355a32ceeaea9efc30069a45dcc17e">&#9670;&#160;</a></span>LITE_DATA_FILE_REL_PATH</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final String fiftyone.ipintelligence.examples.shared.DataFileHelper.LITE_DATA_FILE_REL_PATH = &quot;ip-intelligence-data/51Degrees-LiteV41.ipi&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Relative path to the freely downloadable Lite IP Intelligence data file. </p>
+<p>Run ip-intelligence-data/get-lite-file-from-azure.ps1 (or .sh) to obtain it. It contains the RegisteredCountry, RegisteredName and RegisteredOwner properties. </p>
 
 </div>
 </div>

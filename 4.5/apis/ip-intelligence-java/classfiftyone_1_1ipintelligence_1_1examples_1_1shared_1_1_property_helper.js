@@ -6,6 +6,7 @@ var classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_property_helper =
     [ "asString", "classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_property_helper.html#a94f643ccc02b487136d71b4187a61dc3", null ],
     [ "asStringProperty", "classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_property_helper.html#a0a1384897c36638f262aabac956e03a4", null ],
     [ "asWktStringProperty", "classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_property_helper.html#ac363a379fd167b43f8f6e6305bba85ff", null ],
+    [ "firstValue", "classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_property_helper.html#ab4c30a99877b7bf465a35db7a7b04d13", null ],
     [ "tryGet", "classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_property_helper.html#a01867b0982dfd94e2990496246ced283", null ],
     [ "PRICING_MESSAGE", "classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_property_helper.html#a4b17e25fea3d000d19d6dff75b1eddb9", null ]
 ];

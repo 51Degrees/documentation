@@ -203,6 +203,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line">    }</div>
 <div class="c-code__line">  }</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">  <span class="c-code__comment">// &#39;suppressProcessExceptions&#39; is set to true in 51d.json</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// (PipelineOptions.BuildParameters) so a device-detection failure degrades</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// gracefully instead of failing the request. Use false while developing to</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// surface mistakes loudly. Errors are still logged via the &#39;error&#39; handler.</span></div>
 <div class="c-code__line">  pipeline = <span class="c-code__keyword">new</span> core.PipelineBuilder({</div>
 <div class="c-code__line">    <span class="c-code__comment">// Enable custom javascript builder</span></div>
 <div class="c-code__line">    addJavaScriptBuilder: <span class="c-code__keyword">true</span>,</div>

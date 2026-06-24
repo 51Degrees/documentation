@@ -135,7 +135,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2user_ag
 <div class="c-code__line">}</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">$builder = <span class="c-code__keyword">new</span> DeviceDetectionPipelineBuilder(array(</div>
-<div class="c-code__line">    <span class="c-code__stringliteral">&quot;resourceKey&quot;</span> =&gt; $resourceKey</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;resourceKey&quot;</span> =&gt; $resourceKey,</div>
+<div class="c-code__line">    <span class="c-code__comment">// Set to true so that if the underlying cloud service fails during request</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// processing the pipeline degrades gracefully instead of returning a 500.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// Use false while developing to surface mistakes loudly.</span></div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;suppressProcessExceptions&quot;</span> =&gt; <span class="c-code__keyword">true</span></div>
 <div class="c-code__line">));</div>
 <div class="c-code__line">$pipeline = $builder-&gt;build();</div>
 <div class="c-code__line"> </div>

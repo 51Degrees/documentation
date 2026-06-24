@@ -204,6 +204,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line">    <span class="c-code__stringliteral">&#39;with the key.&#39;</span>;</div>
 <div class="c-code__line">  }</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">  <span class="c-code__comment">// &#39;suppressProcessExceptions&#39; is set to true in 51d.json</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// (PipelineOptions.BuildParameters) so that if the underlying cloud service fails</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// during request processing the device-detection pipeline degrades gracefully</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// instead of returning a 500. Use false while developing to surface mistakes loudly.</span></div>
 <div class="c-code__line">  pipeline = <span class="c-code__keyword">new</span> core.PipelineBuilder({</div>
 <div class="c-code__line">    <span class="c-code__comment">// Enable custom javascript builder</span></div>
 <div class="c-code__line">    addJavaScriptBuilder: <span class="c-code__keyword">true</span>,</div>

@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">                                            IPIntelligenceData ipiData, String inputIp,</div>
 <div class="c-code__line">                                            FlowData flowData) {</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">template</span></div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${DATA_FILE_WARNING}&quot;</span>, <span class="c-code__stringliteral">&quot;&quot;</span>)</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${DATA_FILE_WARNING}&quot;</span>, HtmlContentHelper.getDataFileAgeWarning(flowData))</div>
 <div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${INPUT_IP_ADDRESS}&quot;</span>, inputIp != <span class="c-code__keyword">null</span> ? inputIp : <span class="c-code__stringliteral">&quot;&quot;</span>)</div>
 <div class="c-code__line">            <span class="c-code__comment">// Device Detection properties</span></div>
 <div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${HARDWARE_VENDOR}&quot;</span>, asString(tryGet(deviceData::getHardwareVendor)))</div>

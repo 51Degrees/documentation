@@ -80,8 +80,9 @@ Directories</h2></td></tr>
 <h1>Introduction</h1>
 <p>These examples are not distributed as maven jars and need to be built by you.</p>
 <h1>Required Files</h1>
-<p>See <a href="https://github.com/51Degrees/ip-intelligence-data/">ip-intelligence-data</a> repository for instructions on obtaining the necessary data files for on-premise detection.</p>
+<p>See <a href="https://github.com/51Degrees/ip-intelligence-data/">ip-intelligence-data</a> repository for instructions on obtaining the necessary data files for on-premise IP intelligence.</p>
 <p><b>IMPORTANT</b>: The enterprise IP Intelligence data file must be placed in the <code>ip-intelligence-data</code> directory at the root of this repository. The expected filename is <code>51Degrees-EnterpriseIpiV41.ipi</code>.</p>
+<p>Two free data files are also usable for many of the examples. The ASN file (<code>51Degrees-IPIV4AsnIpiV41.ipi</code>) is included in the <code>ip-intelligence-data</code> submodule, and the Lite file (<code>51Degrees-LiteV41.ipi</code>) can be downloaded by running <code>ip-intelligence-data/get-lite-file-from-azure.ps1</code> (or <code>.sh</code>). When the enterprise file is absent, the tests for examples that work with any data file fall back to the ASN file and then the Lite file. The OfflineProcessing and PerformanceBenchmark examples need the RegisteredName property, which the ASN file does not contain, so their tests fall back to the Lite file only. Tests for examples needing enterprise-only properties (Metrics, Compare and Suspicious) are skipped instead.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">ip-intelligence-java-examples/</div>
 <div class="c-code__line">├── ip-intelligence-data/</div>
 <div class="c-code__line">│   └── 51Degrees-EnterpriseIpiV41.ipi</div>
@@ -98,14 +99,27 @@ Directories</h2></td></tr>
 <p>Among other things, the examples illustrate:</p><ul>
 <li>use of the fluent builder to configure a pipeline</li>
 <li>use of a configuration options file to configure a pipeline</li>
+<li>use of the cloud IP intelligence service</li>
 <li>use of the on-premise IP intelligence service</li>
 <li>use of IP intelligence pipeline for offline processing tasks</li>
 <li>configuring IP intelligence trade-offs between speed and conserving memory</li>
 </ul>
 <h1>Examples</h1>
-<p>The table below describes the examples available in this repository.</p>
-<h2>Cloud (coming soon)</h2>
-<p>Cloud examples will be added once the Cloud service for IP Intelligence becomes available.</p>
+<p>The tables below describe the examples available in this repository.</p>
+<h2>Cloud</h2>
+<p>Cloud examples require a resource key, supplied via the <code>TestResourceKey</code> environment variable, system property, or command line argument. Resource keys for IP Intelligence are not yet generally available, so these examples can also be pointed at a custom hosted cloud endpoint using the <code>TestCloudEndPoint</code> environment variable or system property.</p>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Example  </td><td class="c-table__cell">Description  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">GettingStartedCloud (Console)  </td><td class="c-table__cell">How to use the 51Degrees cloud IP intelligence service to determine details about IP addresses.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">GettingStartedWebCloud (Web)  </td><td class="c-table__cell">How to use the 51Degrees cloud IP intelligence service to determine details about IP addresses as part of a simple Java servlet website.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">GetAllPropertiesCloud  </td><td class="c-table__cell">How to iterate over all properties returned by the cloud IP intelligence service for a given IP address.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">MetadataCloud  </td><td class="c-table__cell">How to access the meta-data that relates to the properties available from the cloud IP intelligence service.  </td></tr>
+</table>
 <p>Cloud examples need a resource key. The key is read from the <code>51DEGREES_RESOURCE_KEY</code> environment variable or system property first. The legacy <code>TestResourceKey</code> name is still supported and is checked second.</p>
 <p>The cloud property tiers changed in May 2026. The examples and this documentation now reflect what is free and what needs a paid subscription.</p>
 <ul>
@@ -122,13 +136,34 @@ Directories</h2></td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">GettingStartedWebOnPrem (Web)  </td><td class="c-table__cell">How to use the 51Degrees on-premise IP intelligence service to determine details about IP addresses as part of a simple Java servlet website.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">MetadataOnPrem  </td><td class="c-table__cell">How to access the meta-data that relates to the properties available in IP intelligence detection.  </td></tr>
+<td class="c-table__cell">MetadataOnPrem  </td><td class="c-table__cell">How to access the meta-data that relates to the properties available in IP intelligence.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">OfflineProcessing  </td><td class="c-table__cell">Example showing how to ingest a file containing IP addresses and perform IP intelligence detection against the entries.  </td></tr>
+<td class="c-table__cell">MetricsOnPrem  </td><td class="c-table__cell">How to access the metrics that relate to an IP address lookup, such as the area covered by the location returned.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">CompareOnPrem  </td><td class="c-table__cell">Compares the results of IP intelligence lookups across multiple data files or configurations for the same set of IP addresses.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">SuspiciousOnPrem  </td><td class="c-table__cell">How to use IP intelligence results to identify potentially suspicious traffic, using geometric calculations on the location areas returned.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">GettingStartedApi (Web)  </td><td class="c-table__cell">Hosts a local HTTP API mirroring the endpoints of the 51Degrees cloud service, backed by the on-premise engine. Cloud examples can be pointed at it as a custom endpoint.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">OfflineProcessing  </td><td class="c-table__cell">Example showing how to ingest a file containing IP addresses and perform IP intelligence processing against the entries.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">PerformanceBenchmark  </td><td class="c-table__cell">How to configure the various performance options and run some simple performance tests for IP intelligence.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">UpdateDataFile  </td><td class="c-table__cell">How to configure the Pipeline to automatically update the IP intelligence data file on startup. Also illustrates 'file watcher'. This will refresh the IP intelligence engine if the specified data file is updated on disk.  </td></tr>
+</table>
+<h2>Mixed</h2>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Example  </td><td class="c-table__cell">Description  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">GettingStartedMixed (Console)  </td><td class="c-table__cell">How to configure a pipeline from an XML options file that can target either the on-premise engine or the cloud service.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">GettingStartedCloudMixed (Console)  </td><td class="c-table__cell">How to configure a pipeline from an XML options file targeting the cloud service.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">GettingStartedWebMixed (Web)  </td><td class="c-table__cell">How to use an XML options file to configure IP intelligence in a Java servlet website.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">GettingStartedWebCloudMixed (Web)  </td><td class="c-table__cell">How to use an XML options file targeting the cloud service in a Java servlet website.  </td></tr>
 </table>
 <h1>Running Examples and Tests</h1>
 <p><b>IMPORTANT</b>: All examples and tests must be run from the repository root directory (<code>ip-intelligence-java-examples/</code>).</p>

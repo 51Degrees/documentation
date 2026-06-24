@@ -136,7 +136,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line"> </div>
 <div class="c-code__line">$device = <span class="c-code__keyword">new</span> DeviceDetectionOnPremise();</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">$builder = <span class="c-code__keyword">new</span> PipelineBuilder([]);</div>
+<div class="c-code__line"><span class="c-code__comment">// Set &#39;suppressProcessExceptions&#39; to true so that if device detection fails</span></div>
+<div class="c-code__line"><span class="c-code__comment">// while processing a request (for example a data file problem) the pipeline</span></div>
+<div class="c-code__line"><span class="c-code__comment">// degrades gracefully instead of returning a 500. Use false while developing.</span></div>
+<div class="c-code__line">$builder = <span class="c-code__keyword">new</span> PipelineBuilder([<span class="c-code__stringliteral">&#39;suppressProcessExceptions&#39;</span> =&gt; <span class="c-code__keyword">true</span>]);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">$pipeline = $builder-&gt;add($device)-&gt;build();</div>
 <div class="c-code__line"> </div>

@@ -76,6 +76,8 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a8b90fba990aa4256df94744371b9a681" id="r_a8b90fba990aa4256df94744371b9a681"><td class="c-table__cell">static&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a8b90fba990aa4256df94744371b9a681">getDataFileAgeWarning</a> (FlowData flowData)</td></tr>
+<tr class="c-table__row memdesc:a8b90fba990aa4256df94744371b9a681"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the stale-data-file warning shown at the top of the on-premise web example pages, mirroring the other 51Degrees examples.  <br /></td></tr>
 <tr class="c-table__row memitem:a40e2b63a39d3c514b57ca3b83984c296" id="r_a40e2b63a39d3c514b57ca3b83984c296"><td class="c-table__cell">static&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a40e2b63a39d3c514b57ca3b83984c296">getContactMessage</a> (<a class="el" href="enumfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_html_content_helper_1_1_contact_message_variant.html">ContactMessageVariant</a> variant, boolean show)</td></tr>
 <tr class="c-table__row memdesc:a40e2b63a39d3c514b57ca3b83984c296"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the contact-us message banner shown at the bottom of the web example pages.  <br /></td></tr>
 </table>
@@ -121,6 +123,45 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the banner markup, or an empty string when <code class="JavaDocCode">show</code> is false </dd></dl>
+
+</div>
+</div>
+<a id="a8b90fba990aa4256df94744371b9a681" name="a8b90fba990aa4256df94744371b9a681"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8b90fba990aa4256df94744371b9a681">&#9670;&#160;</a></span>getDataFileAgeWarning()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">String fiftyone.ipintelligence.examples.web.HtmlContentHelper.getDataFileAgeWarning </td>
+          <td>(</td>
+          <td class="c-table__cell">FlowData</td>          <td class="c-table__cell"><span class="paramname"><em>flowData</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Build the stale-data-file warning shown at the top of the on-premise web example pages, mirroring the other 51Degrees examples. </p>
+<p>The warning is only rendered when an on-premise engine is present and its data file is more than <code><a class="el" href="">DATA_FILE_AGE_WARNING_DAYS</a></code> days old. Cloud examples have no local data file, so they receive an empty string.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flowData</td><td>the flow data for the request, used to locate the on-premise engine and read its data file published date </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the warning markup, or an empty string when no warning is needed </dd></dl>
 
 </div>
 </div>

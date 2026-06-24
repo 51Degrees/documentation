@@ -195,7 +195,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2userage
 <div class="c-code__line">  <span class="c-code__comment">// and paste it into the code. This example displays paid properties, so a</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// paid subscription is needed to populate them all.</span></div>
 <div class="c-code__line">  pipeline = <span class="c-code__keyword">new</span> <a class="code hl_class" href="class_device_detection_cloud_pipeline_builder.html">DeviceDetectionCloudPipelineBuilder</a>({</div>
-<div class="c-code__line">    resourceKey</div>
+<div class="c-code__line">    resourceKey,</div>
+<div class="c-code__line">    <span class="c-code__comment">// Set to `true` so that if the underlying cloud service fails during request</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// processing the device-detection pipeline degrades gracefully instead of</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// returning a 500. Use `false` while developing to surface mistakes loudly.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// Errors are still logged via the pipeline &#39;error&#39; handler below.</span></div>
+<div class="c-code__line">    suppressProcessExceptions: <span class="c-code__keyword">true</span></div>
 <div class="c-code__line">  }).build();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// Logging of errors and other messages.</span></div>

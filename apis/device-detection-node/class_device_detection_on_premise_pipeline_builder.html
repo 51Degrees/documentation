@@ -143,6 +143,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">{boolean}</td><td>[options.createTempDataCopy] If true, the engine will create a copy of the data file in a temporary location rather than using the file provided directly. If not loading all data into memory, this is required for automatic data updates to occur. </td></tr>
     <tr><td class="paramname">{string}</td><td>[options.tempDataDir] The directory to use for the temporary data copy if 'createTempDataCopy' is set to true. </td></tr>
     <tr><td class="paramname">{DataFileUpdateService}</td><td>[options.dataFileUpdateService] Set DataFileUpdateService so the datafiles can receive automatic updates </td></tr>
+    <tr><td class="paramname">{boolean}</td><td>[options.suppressProcessExceptions] If false (the default) the first error thrown while processing is re-thrown from flowData.process(); if true, errors are stored on flowData.errors and emitted via the pipeline 'error' event instead, and process() resolves normally. Recommended true for web apps so a device-detection failure degrades gracefully instead of failing the request. </td></tr>
   </table>
   </dd>
 </dl>

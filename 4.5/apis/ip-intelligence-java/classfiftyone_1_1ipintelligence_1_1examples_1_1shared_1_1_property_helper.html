@@ -83,6 +83,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ac363a379fd167b43f8f6e6305bba85ff"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Helper to get the value of an IP Intelligence WktString property.  <br /></td></tr>
 <tr class="c-table__row memitem:a94f643ccc02b487136d71b4187a61dc3" id="r_a94f643ccc02b487136d71b4187a61dc3"><td class="c-table__cell">static&lt;&#160;T&#160;&gt;&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a94f643ccc02b487136d71b4187a61dc3">asString</a> (AspectPropertyValue&lt; T &gt; value)</td></tr>
 <tr class="c-table__row memdesc:a94f643ccc02b487136d71b4187a61dc3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Generic helper to get the value of a property as a string.  <br /></td></tr>
+<tr class="c-table__row memitem:ab4c30a99877b7bf465a35db7a7b04d13" id="r_ab4c30a99877b7bf465a35db7a7b04d13"><td class="c-table__cell">static&lt;&#160;T&#160;&gt;&#160;T&#160;</td><td class="c-table__cell"><a class="el" href="#ab4c30a99877b7bf465a35db7a7b04d13">firstValue</a> (AspectPropertyValue&lt; T &gt; property)</td></tr>
+<tr class="c-table__row memdesc:ab4c30a99877b7bf465a35db7a7b04d13"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Helper to get the first raw value of an IP Intelligence property.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -286,6 +288,45 @@ Static Public Attributes</h2></td></tr>
 
 <p>Helper to get the value of an IP Intelligence WktString property. </p>
 <p>Handles runtime List&lt;IWeightedValue&gt; values due to type erasure. </p>
+
+</div>
+</div>
+<a id="ab4c30a99877b7bf465a35db7a7b04d13" name="ab4c30a99877b7bf465a35db7a7b04d13"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab4c30a99877b7bf465a35db7a7b04d13">&#9670;&#160;</a></span>firstValue()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">static&lt; T &gt; T fiftyone.ipintelligence.examples.shared.PropertyHelper.firstValue </td>
+          <td>(</td>
+          <td class="c-table__cell">AspectPropertyValue&lt; T &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>property</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Helper to get the first raw value of an IP Intelligence property. </p>
+<p>Due to Java generics type erasure, the on-premise engine may return List&lt;IWeightedValue&lt;T&gt;&gt; even when the declared type is T. This method unwraps such values and returns the first one, which is useful when the typed value is needed for further calculation rather than for display. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">property</td><td>the property value </td></tr>
+    <tr><td class="paramname">&lt;T&gt;</td><td>the declared type of the property </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the first unwrapped value, or null when there is no value </dd></dl>
 
 </div>
 </div>

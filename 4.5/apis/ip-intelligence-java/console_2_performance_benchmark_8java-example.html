@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_perf
 <h1 class="g-docs__page-title">console/PerformanceBenchmark.java</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<p>This example demonstrates how to run a performance benchmark using the IP Intelligence On-premise API to see how fast detections can be performed.</p>
-<p>The example will process a list of IP addresses and output performance metrics including detection rate and processing time per IP address.</p>
+<p>This example demonstrates how to run a performance benchmark using the IP Intelligence On-premise API to see how fast IP address lookups can be performed.</p>
+<p>The example will process a list of IP addresses and output performance metrics including lookup rate and processing time per IP address.</p>
 <p>This can help you optimize your IP Intelligence configuration for your specific use case and understand the performance characteristics of different settings.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-java-examples/blob/main/console/src/main/java/fiftyone/ipintelligence/examples/console/PerformanceBenchmark.java">GitHub</a>.</p>
 <p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-performancebenchmark.java&amp;utm_term=header">contact us</a>.</p>
@@ -243,9 +243,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_perf
 <div class="c-code__line">        .setConcurrency(numberOfThreads);</div>
 <div class="c-code__line">        <span class="c-code__comment">// performance is improved by selecting only the properties you intend to use</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// Requesting properties from a single component</span></div>
-<div class="c-code__line">        <span class="c-code__comment">// reduces detection time compared with requesting properties from multiple components.</span></div>
-<div class="c-code__line">        <span class="c-code__comment">// If you don&#39;t specify any properties to detect, then all properties are detected,</span></div>
-<div class="c-code__line">        <span class="c-code__comment">// here we choose &quot;all properties&quot; by specifying none, or just &quot;isMobile&quot;</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// reduces processing time compared with requesting properties from multiple components.</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// If you don&#39;t specify any properties, then all properties are returned,</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// here we choose &quot;all properties&quot; by specifying none, or just &quot;RegisteredName&quot;</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (BooleanUtils.isFalse(config.allProperties)) {</div>
 <div class="c-code__line">            builder.setProperty(<span class="c-code__stringliteral">&quot;RegisteredName&quot;</span>);</div>
 <div class="c-code__line">        }</div>
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_perf
 <div class="c-code__line">            result.checkSum = 0;</div>
 <div class="c-code__line">            <span class="c-code__keywordtype">long</span> start = System.currentTimeMillis();</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">for</span> (Map&lt;String, String&gt; evidence : testList) {</div>
-<div class="c-code__line">                <span class="c-code__comment">// the benchmark is for detection time only</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// the benchmark is for processing time only</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                <span class="c-code__comment">// A try-with-resource block MUST be used for the</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// FlowData instance. This ensures that native resources</span></div>

@@ -68,13 +68,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>Provides an example of processing a YAML file containing evidence for IP Intelligence. </p>
-<p>There are 20,000 examples in the supplied file of evidence representing HTTP Headers. For example:</p>
+<p>There are 20,000 examples in the supplied file of evidence representing IP addresses. For example:</p>
 <p><code></p><pre>
-  header.user-agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36'
-  header.sec-ch-ua: '" Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"'
-  header.sec-ch-ua-full-version: '"98.0.4758.87"'
-  header.sec-ch-ua-mobile: '?0'
-  header.sec-ch-ua-platform: '"Android"'
+  server.client-ip: '96.235.219.216'
 </pre><p></code> </p>
 <p>We create a IP Intelligence pipeline to read the data and find out about the associated IP addresses, we write this data to a YAML formatted output stream. </p>
 <p>As well as explaining the basic operation of offline processing using the defaults, for advanced operation this example can be used to experiment with tuning IP Intelligence for performance using Performance Profile settings. </p>

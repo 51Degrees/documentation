@@ -218,10 +218,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line">                                        Pipeline pipeline,</div>
 <div class="c-code__line">                                        OutputStream out) <span class="c-code__keywordflow">throws</span> Exception {</div>
 <div class="c-code__line">        PrintWriter writer = <span class="c-code__keyword">new</span> PrintWriter(out);</div>
-<div class="c-code__line">        <span class="c-code__comment">/* FlowData is a data structure that is used to convey information required for detection</span></div>
-<div class="c-code__line"><span class="c-code__comment">        and the results of the detection through the pipeline. Information required for</span></div>
-<div class="c-code__line"><span class="c-code__comment">        detection is called &quot;evidence&quot; and usually consists of a number of HTTP Header field</span></div>
-<div class="c-code__line"><span class="c-code__comment">        values, in this case represented by a Map&lt;String, String&gt; of header name/value entries.</span></div>
+<div class="c-code__line">        <span class="c-code__comment">/* FlowData is a data structure that is used to convey information required for a lookup</span></div>
+<div class="c-code__line"><span class="c-code__comment">        and the results of the lookup through the pipeline. Information required for</span></div>
+<div class="c-code__line"><span class="c-code__comment">        a lookup is called &quot;evidence&quot;, for IP Intelligence this is an IP address, in this</span></div>
+<div class="c-code__line"><span class="c-code__comment">        case represented by a Map&lt;String, String&gt; of evidence key/value entries.</span></div>
 <div class="c-code__line"><span class="c-code__comment"></span> </div>
 <div class="c-code__line"><span class="c-code__comment">        FlowData is wrapped in a try/resources block in order to ensure that the unmanaged</span></div>
 <div class="c-code__line"><span class="c-code__comment">        resources allocated by the native IP Intelligence library are freed */</span></div>
@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line"><span class="c-code__comment">            result matching the &quot;IPIntelligenceData&quot; interface. */</span></div>
 <div class="c-code__line">            IPIntelligenceData ipData = data.get(IPIntelligenceData.class);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment">/* Display the results of the detection, which are called IP Intelligence properties. See the</span></div>
+<div class="c-code__line">            <span class="c-code__comment">/* Display the results of the lookup, which are called IP Intelligence properties. See the</span></div>
 <div class="c-code__line"><span class="c-code__comment">            property dictionary at https://51degrees.com/developers/property-dictionary?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-gettingstartedonprem.java&amp;utm_term=analyzeevidence for</span></div>
 <div class="c-code__line"><span class="c-code__comment">            details of all available properties. */</span></div>
 <div class="c-code__line">            </div>
