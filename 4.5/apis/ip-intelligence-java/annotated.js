@@ -136,7 +136,7 @@ var annotated =
             [ "PropertyHelperTest", "classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_property_helper_test.html", null ]
           ] ],
           [ "web", null, [
-            [ "EmbedJetty", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_embed_jetty.html", null ],
+            [ "EmbedJetty", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_embed_jetty.html", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_embed_jetty" ],
             [ "GettingStartedApi", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_getting_started_api.html", null ],
             [ "GettingStartedApiTest", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_getting_started_api_test.html", null ],
             [ "GettingStartedWebCloud", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_getting_started_web_cloud.html", "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_getting_started_web_cloud" ],

@@ -75,16 +75,13 @@ Directory dependency graph for ip-intelligence-data:</h2>
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><h1>Introduction</h1>
 <p>This repo allows to obtain data needed to run IP Intelligence examples:</p><ul>
-<li>a URL and script to download 'Lite' IP Intelligence data file</li>
 <li>evidence files with lists of random IP addresses needed for some examples</li>
 <li>scripts to generate lists of random IP addresses like the above</li>
 <li>scripts to download 'Lite' IP Intelligence data file</li>
 <li>translation files to support translation engine and examples</li>
 </ul>
 <h1>Download Lite data file</h1>
-<h2>From Azure</h2>
-<p>Either get it from the URL: <a href="https://51ddatafiles.blob.core.windows.net/enterpriseipi/51Degrees-LiteIpiV41.ipi.gz">https://51ddatafiles.blob.core.windows.net/enterpriseipi/51Degrees-LiteIpiV41.ipi.gz</a></p>
-<p>or run a script to download files from Azure.</p>
+<p>The Lite data file is too large to commit to this repository, so one of the scripts below downloads it from 51Degrees storage instead:</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Script  </td><td class="c-table__cell">Language  </td><td class="c-table__cell">OS  </td></tr>
@@ -93,6 +90,10 @@ Directory dependency graph for ip-intelligence-data:</h2>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>./get-lite-file-from-azure.sh</code>  </td><td class="c-table__cell">Shell  </td><td class="c-table__cell">Linux, macOS  </td></tr>
 </table>
+<p>Run the script from this directory, because the examples and tests look for the file here:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">cd ip-intelligence-data</div>
+<div class="c-code__line">./get-lite-file-from-azure.ps1</div>
+</div><!-- fragment --><p>The script downloads the archive as <code>51Degrees-LiteV41.ipi.gz</code> (about 230 MB), prints its MD5 hash and unpacks it to <code>51Degrees-LiteV41.ipi</code> (about 460 MB) in the directory it is run from. If the archive is already present the download is skipped and the existing archive is unpacked again. Pass <code>-Force</code> (PowerShell) or <code>-f</code> (shell) to download a fresh copy, for example when a new monthly data file has been published. The shell script needs <code>curl</code>, <code>gunzip</code> and <code>md5sum</code> (<code>md5</code> on macOS) to be available.</p>
 <h1>Files</h1>
 <h2><code>51Degrees-IPIV4AsnIpiV41.ipi</code></h2>
 <p>The on-premise IP Intelligence data file for Asn properties.</p>

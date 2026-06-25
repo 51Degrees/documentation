@@ -133,6 +133,10 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">    app = Flask(__name__)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">def </span><a class="code hl_namespace" href="namespacebuild.html">build</a>(self, config, logger):</div>
+<div class="c-code__line">        <span class="c-code__comment"># &#39;suppress_process_exceptions&#39; is set to True in config.json</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># (PipelineOptions.BuildParameters) so a device-detection failure degrades</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># gracefully instead of returning a 500 for every request. Use False while</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># developing to surface mistakes loudly.</span></div>
 <div class="c-code__line">        UserAgentClientHintsWeb.pipeline = PipelineBuilder().add_logger(logger).build_from_configuration(config)</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> self</div>
 <div class="c-code__line"> </div>

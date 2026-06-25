@@ -75,11 +75,92 @@ Static Public Member Functions</h2></td></tr>
 static&#160;void&#160;</td><td class="c-table__cell"><b>runWebApp</b> (String resourceBase, int port)  throws Exception </td></tr>
 <tr class="c-table__row memitem:a9ccb99c94891d4ec4feb736a3b6dba4b" id="r_a9ccb99c94891d4ec4feb736a3b6dba4b"><td class="c-table__cell"><a id="a9ccb99c94891d4ec4feb736a3b6dba4b" name="a9ccb99c94891d4ec4feb736a3b6dba4b"></a>
 static&#160;Server&#160;</td><td class="c-table__cell"><b>startWebApp</b> (String resourceBase, int port)  throws Exception </td></tr>
+<tr class="c-table__row memitem:ab650b9a17b58065207145365371f01b1" id="r_ab650b9a17b58065207145365371f01b1"><td class="c-table__cell">static&#160;int&#160;</td><td class="c-table__cell"><a class="el" href="#ab650b9a17b58065207145365371f01b1">boundPort</a> (Server server)</td></tr>
+<tr class="c-table__row memdesc:ab650b9a17b58065207145365371f01b1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns the local TCP port the server's first connector is actually listening on.  <br /></td></tr>
+<tr class="c-table__row memitem:a2429dcf54c30fbee3634ae1378dec2a3" id="r_a2429dcf54c30fbee3634ae1378dec2a3"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a2429dcf54c30fbee3634ae1378dec2a3">stopAndJoin</a> (Server server)  throws Exception </td></tr>
+<tr class="c-table__row memdesc:a2429dcf54c30fbee3634ae1378dec2a3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Stops the server and blocks until it has fully terminated, ensuring the listening socket is released before the method returns.  <br /></td></tr>
 <tr class="c-table__row memitem:a2d40d57b51da8b0963e31731cddd8eb1" id="r_a2d40d57b51da8b0963e31731cddd8eb1"><td class="c-table__cell"><a id="a2d40d57b51da8b0963e31731cddd8eb1" name="a2d40d57b51da8b0963e31731cddd8eb1"></a>
 static&#160;void&#160;</td><td class="c-table__cell"><b>runServlet</b> (String contextPath, int port, Class&lt;? extends Servlet &gt; servlet, Map&lt; String, String &gt; initParams)  throws Exception </td></tr>
 <tr class="c-table__row memitem:a95c741d2a8ef8db210d08a54c6a5a938" id="r_a95c741d2a8ef8db210d08a54c6a5a938"><td class="c-table__cell"><a id="a95c741d2a8ef8db210d08a54c6a5a938" name="a95c741d2a8ef8db210d08a54c6a5a938"></a>
 static&#160;Server&#160;</td><td class="c-table__cell"><b>startServlet</b> (String contextPath, int port, Class&lt;? extends Servlet &gt; servlet, Map&lt; String, String &gt; initParams)  throws Exception </td></tr>
 </table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="ab650b9a17b58065207145365371f01b1" name="ab650b9a17b58065207145365371f01b1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab650b9a17b58065207145365371f01b1">&#9670;&#160;</a></span>boundPort()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">int fiftyone.ipintelligence.examples.web.EmbedJetty.boundPort </td>
+          <td>(</td>
+          <td class="c-table__cell">Server</td>          <td class="c-table__cell"><span class="paramname"><em>server</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Returns the local TCP port the server's first connector is actually listening on. </p>
+<p>When the server is started with port <code class="JavaDocCode">0</code> the OS assigns a free ephemeral port; tests should read it back via this method rather than assuming a fixed port.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">server</td><td>a started Jetty server </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the bound local port </dd></dl>
+
+</div>
+</div>
+<a id="a2429dcf54c30fbee3634ae1378dec2a3" name="a2429dcf54c30fbee3634ae1378dec2a3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2429dcf54c30fbee3634ae1378dec2a3">&#9670;&#160;</a></span>stopAndJoin()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyone.ipintelligence.examples.web.EmbedJetty.stopAndJoin </td>
+          <td>(</td>
+          <td class="c-table__cell">Server</td>          <td class="c-table__cell"><span class="paramname"><em>server</em></span></td><td>)</td>
+          <td> throws Exception</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Stops the server and blocks until it has fully terminated, ensuring the listening socket is released before the method returns. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">server</td><td>the server to stop (ignored if null) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- primary -->
 </div><!-- inner -->
 <div id="page-nav" class="page-nav-panel">

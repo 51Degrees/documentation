@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <div class="g-docs__primary" id="primary">
 <p>Provides an example of processing a YAML file containing evidence for IP Intelligence. There are 20,000 examples in the supplied file of evidence representing IP addresses.</p>
 <p>We create an IP Intelligence pipeline to read the data and find out about the associated network information, we write this data to a YAML formatted output stream.</p>
+<p>This example demonstrates the integration in a simplified form. It intentionally outputs only a small subset of the available properties (the registered network details) to keep the illustration clear. Many more IP Intelligence properties can be enabled - refer to the <a href="https://51degrees.com/developers/property-dictionary?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-offlineprocessing.java&amp;utm_term=header">Property Dictionary</a> for the complete list. The commented-out <code>getPopulatedProperties</code> call further down shows how to output every populated property instead of the fixed subset.</p>
 <p>As well as explaining the basic operation of offline processing using the defaults, for advanced operation this example can be used to experiment with tuning IP Intelligence for performance using Performance Profile settings.</p>
 <p>Evidence files can be obtained from the <a href="https://github.com/51Degrees/ip-intelligence-data">ip-intelligence-data repository</a>.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-java-examples/blob/main/console/src/main/java/fiftyone/ipintelligence/examples/console/OfflineProcessing.java">GitHub</a>.</p>
@@ -244,12 +245,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <div class="c-code__line"><span class="c-code__comment">                          ---- use the IP Intelligence data - output to YAML in this case</span></div>
 <div class="c-code__line"><span class="c-code__comment">                         */</span></div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">                        <span class="c-code__comment">// This sample is intentionally minimal: for illustration it</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// outputs just a small subset of the available properties (the</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// registered network details below). Many more IP Intelligence</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// properties can be enabled - for the complete list, see the</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// property dictionary at</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// https://51degrees.com/developers/property-dictionary?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-offlineprocessing.java&amp;utm_term=run</span></div>
 <div class="c-code__line">                        Map&lt;String, ? super Object&gt; resultMap = <span class="c-code__keyword">new</span> HashMap&lt;&gt;();</div>
 <div class="c-code__line">                        resultMap.put(<span class="c-code__stringliteral">&quot;ip.RegisteredName&quot;</span>, asStringProperty(ipData.getRegisteredName()));</div>
 <div class="c-code__line">                        resultMap.put(<span class="c-code__stringliteral">&quot;ip.RegisteredOwner&quot;</span>, asStringProperty(ipData.getRegisteredOwner()));</div>
 <div class="c-code__line">                        resultMap.put(<span class="c-code__stringliteral">&quot;ip.RegisteredCountry&quot;</span>, asStringProperty(ipData.getRegisteredCountry()));</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">                        <span class="c-code__comment">// to look at all IP Intelligence properties use the following:</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// To output all populated IP Intelligence properties instead of</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// the fixed subset above, replace the three puts with the helper:</span></div>
 <div class="c-code__line">                        <span class="c-code__comment">// resultMap.putAll(getPopulatedProperties(ipData, &quot;ip.&quot;));</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                        <span class="c-code__comment">// write document to output stream as a YAML document</span></div>
@@ -295,7 +303,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <div class="c-code__line">                        e -&gt; ((AspectPropertyValue&lt;?&gt;)e.getValue()).getValue()));</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_offline_processing_html_a681ca39e099041f9a333f9258584f570"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_offline_processing.html#a681ca39e099041f9a333f9258584f570">fiftyone.ipintelligence.examples.console.OfflineProcessing.run</a></div><div class="ttdeci">static void run(String dataFile, InputStream is, OutputStream os)</div><div class="ttdoc">Process a YAML representation of evidence - and create a YAML output containing the processed evidenc...</div><div class="ttdef"><b>Definition</b> OfflineProcessing.java:122</div></div>
+<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_offline_processing_html_a681ca39e099041f9a333f9258584f570"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_offline_processing.html#a681ca39e099041f9a333f9258584f570">fiftyone.ipintelligence.examples.console.OfflineProcessing.run</a></div><div class="ttdeci">static void run(String dataFile, InputStream is, OutputStream os)</div><div class="ttdoc">Process a YAML representation of evidence - and create a YAML output containing the processed evidenc...</div><div class="ttdef"><b>Definition</b> OfflineProcessing.java:129</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

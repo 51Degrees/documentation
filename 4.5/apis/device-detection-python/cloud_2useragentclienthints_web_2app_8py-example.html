@@ -133,6 +133,10 @@ You can create a Resource Key using the 51Degrees
 <div class="c-code__line">        <span class="c-code__comment"># header use the SetHeaderBrowserAccept-CH property.</span></div>
 <div class="c-code__line">        pipeline_settings = {</div>
 <div class="c-code__line">            <span class="c-code__stringliteral">&quot;resource_key&quot;</span>: resource_key,</div>
+<div class="c-code__line">            <span class="c-code__comment"># Set to True so a device-detection failure degrades gracefully instead of</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># returning a 500 for every request. Use False while developing to surface</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># mistakes loudly. Errors are still recorded on flowdata.errors / the logger.</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;suppress_process_exceptions&quot;</span>: <span class="c-code__keyword">True</span>,</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        <span class="c-code__comment"># If a cloud endpoint is set in the environment, point the pipeline at it.</span></div>
 <div class="c-code__line">        cloud_endpoint = ExampleUtils.get_cloud_endpoint()</div>
