@@ -113,7 +113,10 @@ set the @pipeline to [suppress process exceptions](@ref PipelineApi_Concepts_Con
         </Element>
     </Elements>
     <BuildParameters>
-        <SuppressProcessExceptions>true</SuppressProcessExceptions>
+        <!-- Note: in Java the element name is singular, matching the
+             setSuppressProcessException builder method. In .NET it is the
+             plural SuppressProcessExceptions. -->
+        <SuppressProcessException>true</SuppressProcessException>
     </BuildParameters>
 </PipelineOptions>
 ```
@@ -122,7 +125,7 @@ set the @pipeline to [suppress process exceptions](@ref PipelineApi_Concepts_Con
 Configure a @pipeline with a @flowelement named 'MyElement' with a build parameter, and
 set the @pipeline to [suppress process exceptions](@ref PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions).
 
-Note that for use in node.js, `BuilderName` and `BuilderParameters` should be replaced by `elementName` and `elementParameters`.
+Note that for use in node.js, `BuilderName` and `BuildParameters` should be replaced by `elementName` and `elementParameters` for each element. The pipeline-level `BuildParameters` key is itself cased per language: `SuppressProcessExceptions` (.NET), `suppressProcessExceptions` (Node.js) and `suppress_process_exceptions` (Python). In Node.js and Python the setting is read from `PipelineOptions.BuildParameters`.
 
 There is a sample file demonstrating all configuration options for .NET on [GitHub](https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/sample-configuration.json).
 
