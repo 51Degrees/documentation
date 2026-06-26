@@ -89,9 +89,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h2 class="doxsection" id="building-from-a-configuration">Building from a configuration<a class="headerlink" href="#building-from-a-configuration" aria-label="Permalink to this section">🔗</a></h2>
 <p>Rather than setting all build options and <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> explicitly in code form, it is often preferable to make the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> configurable without the need to recompile. For more on this, see <a class="el" href="_pipeline_api__concepts__configuration__builders__build_from_configuration.html" title="Building from Configuration">Building from Configuration</a>.</p>
 <h2 class="doxsection" id="usage-4">Usage<a class="headerlink" href="#usage-4" aria-label="Permalink to this section">🔗</a></h2>
-<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view language specific usage example.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">IPipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view language specific usage example.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">IPipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
 <div class="c-code__line">    .SetAutoDisposeElements(<span class="c-code__keyword">true</span>)</div>
-<div class="c-code__line">    .SetSuppressProcessException(<span class="c-code__keyword">true</span>)</div>
+<div class="c-code__line">    .SetSuppressProcessExceptions(<span class="c-code__keyword">true</span>)</div>
 <div class="c-code__line">    .AddFlowElement(element)</div>
 <div class="c-code__line">    .Build();</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">Pipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
@@ -100,13 +100,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">    .addFlowElement(element)</div>
 <div class="c-code__line">    .build();</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  </p><pre class="fragment">use fiftyone\pipeline\core\PipelineBuilder;
-$builder = new PipelineBuilder();
+$builder = new PipelineBuilder(['suppressProcessExceptions' =&gt; true]);
 $builder-&gt;flowElements = [$element];
 $pipeline = $builder-&gt;build();
 </pre><p>  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">const PipelineBuilder = require(&#39;fiftyone.pipeline.core&#39;).PipelineBuilder;</div>
-<div class="c-code__line">const pipeline = new PipelineBuilder();</div>
+<div class="c-code__line">const pipeline = new PipelineBuilder({ suppressProcessExceptions: true });</div>
 <div class="c-code__line">pipeline.flowElements.push(element);</div>
 <div class="c-code__line">pipeline.build();</div>
+</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="python" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">from</span> fiftyone_pipeline_core.pipelinebuilder <span class="c-code__keyword">import</span> PipelineBuilder</div>
+<div class="c-code__line">pipeline = PipelineBuilder({<span class="c-code__stringliteral">&quot;suppress_process_exceptions&quot;</span>: <span class="c-code__keyword">True</span>}).add(element).build()</div>
 </div><!-- fragment --><p>  </div>  </p>
 </div></div><!-- primary -->
 </div><!-- inner -->

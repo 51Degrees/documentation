@@ -124,11 +124,14 @@ $pipeline = $builder-&gt;buildFromConfig($configFile)-&gt;build();
 <div class="c-code__line">        &lt;/<span class="c-code__keywordtype">Element</span>&gt;</div>
 <div class="c-code__line">    &lt;/<span class="c-code__keywordtype">Elements</span>&gt;</div>
 <div class="c-code__line">    &lt;<span class="c-code__keywordtype">BuildParameters</span>&gt;</div>
-<div class="c-code__line">        &lt;<span class="c-code__keywordtype">SuppressProcessExceptions</span>&gt;<span class="c-code__keyword">true</span>&lt;/<span class="c-code__keywordtype">SuppressProcessExceptions</span>&gt;</div>
+<div class="c-code__line">        <span class="c-code__comment">&lt;!-- Note: in Java the element name is singular, matching the</span></div>
+<div class="c-code__line"><span class="c-code__comment">             setSuppressProcessException builder method. In .NET it is the</span></div>
+<div class="c-code__line"><span class="c-code__comment">             plural SuppressProcessExceptions. --&gt;</span></div>
+<div class="c-code__line">        &lt;<span class="c-code__keywordtype">SuppressProcessException</span>&gt;<span class="c-code__keyword">true</span>&lt;/<span class="c-code__keywordtype">SuppressProcessException</span>&gt;</div>
 <div class="c-code__line">    &lt;/<span class="c-code__keywordtype">BuildParameters</span>&gt;</div>
 <div class="c-code__line">&lt;/<span class="c-code__keywordtype">PipelineOptions</span>&gt;</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="JSON" style="display:none;">  Configure a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> with a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> named 'MyElement' with a build parameter, and set the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> to <a class="el" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html#PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions" title="Suppress process exceptions">suppress process exceptions</a>.</p>
-<p>Note that for use in node.js, <code>BuilderName</code> and <code>BuilderParameters</code> should be replaced by <code>elementName</code> and <code>elementParameters</code>.</p>
+<p>Note that for use in node.js, <code>BuilderName</code> and <code>BuildParameters</code> should be replaced by <code>elementName</code> and <code>elementParameters</code> for each element. The pipeline-level <code>BuildParameters</code> key is itself cased per language: <code>SuppressProcessExceptions</code> (.NET), <code>suppressProcessExceptions</code> (Node.js) and <code>suppress_process_exceptions</code> (Python). In Node.js and Python the setting is read from <code>PipelineOptions.BuildParameters</code>.</p>
 <p>There is a sample file demonstrating all configuration options for .NET on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/sample-configuration.json">GitHub</a>.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
 <div class="c-code__line">  &quot;PipelineOptions&quot;: {</div>
