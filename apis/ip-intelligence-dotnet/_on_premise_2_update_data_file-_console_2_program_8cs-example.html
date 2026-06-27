@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <h1>Command Line Usage</h1>
 <p>The data file path is provided via the first command line argument. Here's how it works:</p>
 <ol type="1">
-<li>First argument: Data file path (optional - checks the _51DEGREES_IPI_PATH and legacy IPINTELLIGENCEDATAFILE environment variables, then defaults to Constants.ENTERPRISE_IPI_DATA_FILE_NAME)</li>
+<li>First argument: Data file path (optional - checks the 51DEGREES_IPI_PATH and legacy IPINTELLIGENCEDATAFILE environment variables, then defaults to Constants.ENTERPRISE_IPI_DATA_FILE_NAME)</li>
 <li>Second argument: License key (optional when using &ndash;data-update-url)</li>
 <li>Option: &ndash;data-update-url for custom URL</li>
 </ol>
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__preprocessor"># With data file path and custom URL (no license key needed)</span></div>
 <div class="c-code__line">./UpdateDataFile /path/to/datafile.ipi --data-update-url http:<span class="c-code__comment">//localhost:5225/download-ipi-gz</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__preprocessor"># With just custom URL (uses default data file name)</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor"># With just custom URL (uses default data file name)  </span></div>
 <div class="c-code__line">./UpdateDataFile --data-update-url http:<span class="c-code__comment">//localhost:5225/download-ipi-gz</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__preprocessor"># With license key (no custom URL)</span></div>
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"></div>
 <div class="c-code__line">            <span class="c-code__keyword">private</span> readonly CompletionListener _completionListener;</div>
 <div class="c-code__line"></div>
-<div class="c-code__line">            <span class="c-code__keyword">public</span> <a id="a4" name="a4"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html#a0398c7a00636938effa05191bfa761e2">Example</a>(<a class="code hl_class" href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_pipeline_builder.html">IpiPipelineBuilder</a> pipelineBuilder,</div>
+<div class="c-code__line">            <span class="c-code__keyword">public</span> <a id="a4" name="a4"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html#a0398c7a00636938effa05191bfa761e2">Example</a>(<a class="code hl_class" href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_pipeline_builder.html">IpiPipelineBuilder</a> pipelineBuilder, </div>
 <div class="c-code__line">                <a class="code hl_class" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder.html">IpiOnPremiseEngineBuilder</a> engineBuilder,</div>
 <div class="c-code__line">                CompletionListener completionListener,</div>
 <div class="c-code__line">                ILogger&lt;Example&gt; logger)</div>
@@ -295,16 +295,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                        <span class="c-code__comment">// between checks to see if the file has changed to 1 second.</span></div>
 <div class="c-code__line">                        <span class="c-code__comment">// By default, this is 30 mins.</span></div>
 <div class="c-code__line">                        .<a id="a10" name="a10"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html#a2dc73c500b5bcf1e58c94a0d9bcf878f">SetUpdatePollingInterval</a>(1);</div>
-<div class="c-code__line"> </div>
+<div class="c-code__line">                    </div>
 <div class="c-code__line">                    <span class="c-code__keywordflow">if</span> (dataUpdateUrl is not <span class="c-code__keyword">null</span>)</div>
 <div class="c-code__line">                    {</div>
 <div class="c-code__line">                        builder.SetDataUpdateUrl(dataUpdateUrl);</div>
 <div class="c-code__line">                        builder.SetDataUpdateVerifyMd5(<span class="c-code__keyword">false</span>);</div>
 <div class="c-code__line">                    }</div>
-<div class="c-code__line"> </div>
+<div class="c-code__line">                    </div>
 <div class="c-code__line">                    <span class="c-code__comment">// Build the pipeline.</span></div>
 <div class="c-code__line">                    <span class="c-code__keyword">using </span>var pipeline = builder.<a id="a11" name="a11"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html#aef31e941c2052b1633f6c742980a7f12">Build</a>();</div>
-<div class="c-code__line"> </div>
+<div class="c-code__line">                    </div>
 <div class="c-code__line">                    <span class="c-code__comment">// thread blocks till update checking is complete - or if there is an</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// exception we don&#39;t get this far</span></div>
 <div class="c-code__line">                    Logger.LogInformation(<span class="c-code__stringliteral">&quot;Update on start-up complete - status - &quot;</span> +</div>
@@ -415,7 +415,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                <span class="c-code__keywordflow">return</span> dataFile;</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
-<div class="c-code__line"> </div>
+<div class="c-code__line">        </div>
 <div class="c-code__line">        <span class="c-code__keyword">private</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">string</span> KEY_SUBMISSION_ALT_PATH = $<span class="c-code__stringliteral">&quot;as an environment variable named &#39;{Constants.LICENSE_KEY_ENV_VAR}&#39;&quot;</span>;</div>
 <div class="c-code__line">        <span class="c-code__keyword">private</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">string</span> KEY_SUBMISSION_PATHS = <span class="c-code__stringliteral">&quot;as the second command line argument to this program, or &quot;</span> + KEY_SUBMISSION_ALT_PATH;</div>
 <div class="c-code__line"></div>
@@ -456,13 +456,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            };</div>
 <div class="c-code__line">            dataUpdateUrl.Validators.Add(url =&gt;</div>
 <div class="c-code__line">            {</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">if</span>(url.Tokens.FirstOrDefault()?.Value is { } urlString</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span>(url.Tokens.FirstOrDefault()?.Value is { } urlString </div>
 <div class="c-code__line">                   &amp;&amp; !Uri.IsWellFormedUriString(urlString, UriKind.Absolute))</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    url.AddError($<span class="c-code__stringliteral">&quot;Value provided for &#39;{dataUpdateUrl.Name}&#39; is not a valid absolute URL.&quot;</span>);</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            });</div>
-<div class="c-code__line"> </div>
+<div class="c-code__line">            </div>
 <div class="c-code__line">            var rootCommand = <span class="c-code__keyword">new</span> RootCommand(<span class="c-code__stringliteral">&quot;Data file update sample.&quot;</span>);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            rootCommand.Arguments.Add(dataFile);</div>
@@ -474,30 +474,30 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                <span class="c-code__keywordtype">string</span> dataFilePath = parseResult.GetValue(dataFile)!;</div>
 <div class="c-code__line">                <span class="c-code__keywordtype">string</span>? licenseKeyValue = parseResult.GetValue(licenseKey);</div>
 <div class="c-code__line">                <span class="c-code__keywordtype">string</span>? dataUpdateUrlValue = parseResult.GetValue(dataUpdateUrl);</div>
-<div class="c-code__line"> </div>
+<div class="c-code__line">                </div>
 <div class="c-code__line">                <span class="c-code__comment">// Validate license key only if no custom data update URL is provided</span></div>
 <div class="c-code__line">                <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(licenseKeyValue))</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    licenseKeyValue = Environment.GetEnvironmentVariable(Constants.LICENSE_KEY_ENV_VAR);</div>
 <div class="c-code__line">                }</div>
-<div class="c-code__line"> </div>
+<div class="c-code__line">                </div>
 <div class="c-code__line">                <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(licenseKeyValue) &amp;&amp; <span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(dataUpdateUrlValue))</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    Console.Error.WriteLine(<span class="c-code__stringliteral">&quot;In order to test this example you will need a 51Degrees &quot;</span> +</div>
 <div class="c-code__line">                                          <span class="c-code__stringliteral">&quot;Enterprise license which can be obtained on a trial basis or purchased &quot;</span> +</div>
 <div class="c-code__line">                                          <span class="c-code__stringliteral">&quot;from our pricing page https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-updatedatafile-console-program.cs&amp;utm_term=license-key-or-update-url-required. You must supply the &quot;</span> +</div>
-<div class="c-code__line">                                          <span class="c-code__stringliteral">&quot;license key &quot;</span> + KEY_SUBMISSION_PATHS +</div>
+<div class="c-code__line">                                          <span class="c-code__stringliteral">&quot;license key &quot;</span> + KEY_SUBMISSION_PATHS + </div>
 <div class="c-code__line">                                          <span class="c-code__stringliteral">&quot;, or provide a custom data update URL using --data-update-url&quot;</span>);</div>
 <div class="c-code__line">                    <span class="c-code__keywordflow">return</span> 1;</div>
 <div class="c-code__line">                }</div>
-<div class="c-code__line"> </div>
+<div class="c-code__line">                </div>
 <div class="c-code__line">                <span class="c-code__comment">// Work out where the data file is if we don&#39;t have an absolute path.</span></div>
 <div class="c-code__line">                <span class="c-code__keywordflow">if</span> (!<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(dataFilePath) &amp;&amp; !Path.IsPathRooted(dataFilePath))</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    var fullPath = <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.ExampleUtils.FindFile(dataFilePath);</div>
 <div class="c-code__line">                    dataFilePath = fullPath ?? Path.Combine(Directory.GetCurrentDirectory(), dataFilePath);</div>
 <div class="c-code__line">                }</div>
-<div class="c-code__line"> </div>
+<div class="c-code__line">                </div>
 <div class="c-code__line">                Initialize(</div>
 <div class="c-code__line">                    dataFilePath,</div>
 <div class="c-code__line">                    licenseKeyValue!,</div>
@@ -520,7 +520,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                    .AddConsole()</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Only display messages @ warning or above.</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// Or info and above if the come from this example.</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// This filters out some messages from the Pipeline that would otherwise</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// This filters out some messages from the Pipeline that would otherwise </span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// make this example harder to follow.</span></div>
 <div class="c-code__line">                    .AddFilter((c, l) =&gt;</div>
 <div class="c-code__line">                        (l &gt;= LogLevel.Warning</div>

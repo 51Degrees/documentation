@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_mixed
 <li>How to retrieve device and IP intelligence results from a single pipeline</li>
 </ol>
 <p>This example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-dotnet-examples/blob/main/Examples/Cloud/Mixed/GettingStarted-Console/Program.cs">GitHub</a>.</p>
-<p>To run this example, create a Resource Key for free at <a href="https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=ip-intelligence-dotnet-examples&amp;amp;utm_content=examples-cloud-mixed-gettingstarted-console-program.cs&amp;amp;utm_term=header">https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=ip-intelligence-dotnet-examples&amp;amp;utm_content=examples-cloud-mixed-gettingstarted-console-program.cs&amp;amp;utm_term=header</a> and supply it via the appsettings.json file or the _51DEGREES_RESOURCE_KEY environment variable. By default the pipeline talks to cloud.51degrees.com; set 51D_CLOUD_ENDPOINT to point at a self-hosted Cloud service instead.</p>
+<p>To run this example, create a Resource Key for free at <a href="https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=ip-intelligence-dotnet-examples&amp;amp;utm_content=examples-cloud-mixed-gettingstarted-console-program.cs&amp;amp;utm_term=header">https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=ip-intelligence-dotnet-examples&amp;amp;utm_content=examples-cloud-mixed-gettingstarted-console-program.cs&amp;amp;utm_term=header</a> and supply it via the appsettings.json file or the 51DEGREES_RESOURCE_KEY environment variable. By default the pipeline talks to cloud.51degrees.com; set 51D_CLOUD_ENDPOINT to point at a self-hosted Cloud service instead.</p>
 <p>Required NuGet Dependencies:</p><ul>
 <li><a href="https://www.nuget.org/packages/FiftyOne.IpIntelligence/">FiftyOne.IpIntelligence</a></li>
 <li><a href="https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Json/">Microsoft.Extensions.Configuration.Json</a></li>
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_mixed
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">void</span> AnalyseEvidence(</div>
 <div class="c-code__line">                Dictionary&lt;string, object&gt; evidence,</div>
-<div class="c-code__line">                IPipeline pipeline,</div>
+<div class="c-code__line">                IPipeline pipeline, </div>
 <div class="c-code__line">                TextWriter output)</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                <span class="c-code__comment">// FlowData is used to convey information through the pipeline</span></div>
@@ -222,19 +222,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_mixed
 <div class="c-code__line">                    data.Process();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                    message = <span class="c-code__keyword">new</span> StringBuilder();</div>
-<div class="c-code__line"> </div>
+<div class="c-code__line">                    </div>
 <div class="c-code__line">                    <span class="c-code__comment">// Get Device Detection results</span></div>
 <div class="c-code__line">                    message.AppendLine(<span class="c-code__stringliteral">&quot;\nDevice Detection Results:&quot;</span>);</div>
 <div class="c-code__line">                    message.AppendLine(<span class="c-code__stringliteral">&quot;-&quot;</span> + <span class="c-code__keyword">new</span> <span class="c-code__keywordtype">string</span>(<span class="c-code__charliteral">&#39;-&#39;</span>, 24));</div>
 <div class="c-code__line">                    var device = data.Get&lt;IDeviceData&gt;();</div>
 <div class="c-code__line">                    OutputDeviceData(device, message);</div>
-<div class="c-code__line"> </div>
+<div class="c-code__line">                    </div>
 <div class="c-code__line">                    <span class="c-code__comment">// Get IP Intelligence results</span></div>
 <div class="c-code__line">                    message.AppendLine(<span class="c-code__stringliteral">&quot;\nIP Intelligence Results:&quot;</span>);</div>
 <div class="c-code__line">                    message.AppendLine(<span class="c-code__stringliteral">&quot;-&quot;</span> + <span class="c-code__keyword">new</span> <span class="c-code__keywordtype">string</span>(<span class="c-code__charliteral">&#39;-&#39;</span>, 23));</div>
 <div class="c-code__line">                    var ipData = data.Get&lt;IIpIntelligenceData&gt;();</div>
 <div class="c-code__line">                    OutputIpData(ipData, message);</div>
-<div class="c-code__line"> </div>
+<div class="c-code__line">                    </div>
 <div class="c-code__line">                    output.WriteLine(message.ToString());</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
@@ -301,14 +301,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_mixed
 <div class="c-code__line">                    <span class="c-code__comment">// Add an HttpClient instance. This is used for making requests to the</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// Cloud service.</span></div>
 <div class="c-code__line">                    .AddSingleton&lt;HttpClient&gt;()</div>
-<div class="c-code__line">                    <span class="c-code__comment">// Add the builders that will be needed to create the engines specified in the</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// Add the builders that will be needed to create the engines specified in the </span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// configuration file.</span></div>
 <div class="c-code__line">                    .AddSingleton&lt;CloudRequestEngineBuilder&gt;()</div>
 <div class="c-code__line">                    .AddSingleton&lt;<a id="_a0" name="_a0"></a><a class="code hl_class" href="class_fifty_one_1_1_ip_intelligence_1_1_cloud_1_1_flow_elements_1_1_ipi_cloud_engine_builder.html">IpiCloudEngineBuilder</a>&gt;()</div>
 <div class="c-code__line">                    .AddSingleton&lt;DeviceDetectionCloudEngineBuilder&gt;()</div>
 <div class="c-code__line">                    .BuildServiceProvider())</div>
 <div class="c-code__line">                {</div>
-<div class="c-code__line">                    <span class="c-code__comment">// Get the resource key setting from the config file.</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// Get the resource key setting from the config file. </span></div>
 <div class="c-code__line">                    var resourceKey = options.GetResourceKey();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                    <span class="c-code__comment">// If we don&#39;t have a resource key then log an error.</span></div>
@@ -353,13 +353,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_mixed
 <div class="c-code__line">            <span class="c-code__comment">// misnamed configuration keys.</span></div>
 <div class="c-code__line">            section.Bind(options, (o) =&gt; { o.ErrorOnUnknownConfiguration = <span class="c-code__keyword">true</span>; });</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment">// Get the resource key setting from the config file.</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// Get the resource key setting from the config file. </span></div>
 <div class="c-code__line">            var resourceKeyFromConfig = options.GetResourceKey();</div>
 <div class="c-code__line">            var configHasKey = <span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(resourceKeyFromConfig) == <span class="c-code__keyword">false</span> &amp;&amp;</div>
 <div class="c-code__line">                    resourceKeyFromConfig.StartsWith(<span class="c-code__stringliteral">&quot;!!&quot;</span>) == <span class="c-code__keyword">false</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// If no resource key is specified in the config file then override it with the key</span></div>
-<div class="c-code__line">            <span class="c-code__comment">// from the environment variable / command line.</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// from the environment variable / command line. </span></div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> (configHasKey == <span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                options.SetResourceKey(resourceKey);</div>
