@@ -70,6 +70,15 @@ GET /api/v4/json?resource=<RESOURCE_KEY>
     &id.usage=standard
 ```
 
+The resource key can also be sent as a header instead of in the URL:
+
+```
+GET /api/v4/json?user-agent=iPhone&client-ip=203.0.113.42&id.usage=standard
+X-51D-Resource-Key: <RESOURCE_KEY>
+```
+
+License-key-only callers (no resource key) must list the 51Did properties they want via `values`, e.g. `values=fodid.idprobglobal` (or `fodid.idproblic`), since they have no Resource Key with a baked-in property list (see @ref Services_Cloud_ResourceKeys).
+
 Response:
 
 ```json
