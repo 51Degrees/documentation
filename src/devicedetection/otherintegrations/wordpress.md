@@ -20,17 +20,65 @@ Using real-time data, our plugin can optimize your website for users, based on d
 
 ## Integration with Google Analytics
 
-1.  To integrate with Google Analytics, go to the `Google Analytics` tab and click `Log in with Google Analytics Account` button. Follow the steps and give the 51Degrees plugin the required permissions. Copy the provided Google Analytics `Access Code`.
+1.  To integrate with Google Analytics, go to the `Google Analytics` tab and click `Connect Google Analytics`. Authorize the 51Degrees plugin on the Google consent screen. You are returned to the tab, which confirms the connection.
 
-2.  Enter the copied Code in the `Access Code` text field and click `Authenticate`. This will connect your Google Analytics account to the 51Degrees plugin.
+2.  Once connected, select your preferred properties for which you want to enable Custom Dimensions Tracking via the `Google Analytics Property` dropdown.
 
-3.  After authentication, select your preferred profiles for which you want to enable Custom Dimensions Tracking via the `Google Analytics Property` dropdown.
+3.  Check `Send Page View` if you want to send Default Page View hits along with Custom Dimensions. It is only recommended if you have not already integrated with any other Google Analytics plugin to avoid data duplication.
 
-4.  Check `Send Page View` if you want to send Default Page View hits along with Custom Dimensions. It is only recommended if you have not already integrated with any other Google Analytics plugin to avoid data duplication.
+4.  Click `Save Changes`. This will prompt to the new Custom Dimensions screen where you can find all the Custom Dimensions available with the Resource Key.
 
-5.  Click `Save Changes`. This will prompt to the new Custom Dimensions screen where you can find all the Custom Dimensions available with the Resource Key.
+5.  Click on `Enable Google Analytics Tracking` to enable tracking of all the Device Data Properties as Custom Dimensions.
 
-6.  Click on `Enable Google Analytics Tracking` to enable tracking of all the Device Data Properties as Custom Dimensions.
+
+## Robots.txt and crawler control
+
+The `Robots.txt` tab lets you host a virtual `/robots.txt` file and, optionally, enforce crawler access in real time using 51Degrees crawler detection. Hosting the file is advisory only and does not consume cloud requests; enforcement uses live device detection and consumes one cloud request per page load, so enable it only when you want active bot blocking.
+
+1.  **Enable Robots.txt Hosting** generates a virtual `/robots.txt` from your configured rules and the selected crawler categories. If a physical `robots.txt` file exists in your WordPress root, WordPress serves that file instead, so delete or rename it to use the virtual one.
+
+2.  **Enable Crawler Enforcement** turns on real-time detection and 302-redirects detected bots to your configured `Redirect URL` (leave it empty to deny access without redirecting). The `/robots.txt` file itself always stays reachable to crawlers regardless of the enforcement policy.
+
+3.  **Allowed Crawler Categories** lets crawlers in the selected categories through. Category-based enforcement requires the `CrawlerUsage` property in your Resource Key; without it, only path-based rules apply.
+
+4.  **Terms Document Locators (TDL)** add `TDL:` lines to the generated file, emitted at the end between the final wildcard `User-agent: *` line and its `Allow: /`. Each TDL points to an immutable legal document that defines the terms under which crawlers may access your site, following the proposed robots.txt extension described in the <a href="https://github.com/jwrosewell/data-labels/blob/main/IETF-Robots.md">data-labels IETF Robots proposal</a>. You can select standard TDLs (for example the MOW Standard Terms), which are maintained externally and checked daily for updated versions, or supply your own custom TDL URLs, one per line.
+
+5.  **Custom Top Entries** and **Custom Bottom Entries** let you prepend or append your own lines around the generated 51Degrees section.
+
+Crawler detection needs the `IsCrawler` and `CrawlerUsage` properties, and file generation from the cloud needs the `RobotsTxt` `PlainText` property. Create a key with these using the <a href="https://configure.51degrees.com/">configurator</a> if your key does not already include them.
+
+
+## Suspicious activity detection
+
+The `Suspicious` tab detects and blocks visitors who make too many requests in a short window. From the tab you can set the request threshold (`Number of requests`), the time window (`Within seconds`), and the `Redirect URL` that blocked visitors are sent to.
+
+When your Resource Key is working, detection runs in advanced mode and identifies visitors individually, even when they share a network. If the key is missing or invalid, it falls back to basic mode, where visitors that look identical to the site are grouped and blocked together.
+
+Advanced mode relies on a probabilistic identifier from your Resource Key - `IdProbLic` if present, otherwise `IdProbGlobal` (see @ref Identifiers_51Did). These are generated with `id.usage=non-marketing`, so they do not require a license key or a specific product, but they do need to be present on the key. If your existing key does not include either property, create a new Resource Key that adds it using the <a href="https://configure.51degrees.com/">configurator</a>. Without these properties the plugin falls back to a hash of the visitor's IP address and User-Agent, which groups visitors that share a network.
+
+
+## Preference Management Platform (PMP)
+
+The `PMP` tab adds a 51Degrees consent popup to your public pages. Visitors choose `Standard`, `Personalized`, or a publisher-defined alternative (for example "Remove ads" or "Subscribe"). The choice is stored client-side in `localStorage` under the `__51d_pmp_pref` key - no cookies and no extra server round-trips - and PMP acts as the CMP by exposing the consent state through the IAB TCF API, so a separate consent manager is not needed. For the underlying concept and the cloud endpoint, see @ref Identifiers_PMP.
+
+Configure the popup from the `PMP` tab:
+
+-  **Enable PMP** shows the popup on public pages.
+-  **Alternative Button Label** and **Alternative Button URL** define the opt-out button and where it sends the visitor (typically a subscription, checkout, or paywall page). Both are required.
+-  **Terms / Privacy URL** is linked from the popup and is required for a meaningful consent record.
+-  **Brand Name** and **Brand Logo URL** set the branding shown in the popup. Replace the placeholder defaults with your own.
+-  **Show Standard Marketing Option** shows the `Standard` choice alongside `Personalized` and the alternative button.
+-  **TCF Vendor String** is the base IAB TCF v2 consent string onto which PMP overlays the visitor's purpose consents at runtime. The built-in default consents every vendor on the current IAB Global Vendor List; override it to restrict the vendor set.
+
+The popup works out of the box. To react to the visitor's choice, override the global callback on your page - the plugin ships a no-op default:
+
+```json
+<script>
+window.onPMPCompletion = function (preference) {
+    // preference is 'standard' or 'personalized'
+};
+</script>
+```
 
 
 ## Developer information and advanced features

@@ -76,6 +76,7 @@ Most programming languages support both integration models. Select your language
 @showsnippet{varnish,Varnish}
 @showsnippet{nginx,Nginx}
 @showsnippet{go,Go}
+@showsnippet{rust,Rust}
 @defaultsnippet{Select a language.}
 @startsnippet{c}
 C does not have a @Pipeline implementation or the ability to use the cloud-based version of 
@@ -208,4 +209,17 @@ To get started with Go device detection On-premise:
 5. Follow the linked example here: [Getting Started](https://github.com/51Degrees/device-detection-examples-go/blob/main/dd/getting_started/getting_started.go).
 6. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
+@endsnippet
+@startsnippet{rust}
+### Standalone pipeline / off-line processing
+
+1. Add the [`fiftyone-device-detection`](https://crates.io/crates/fiftyone-device-detection) crate from crates.io (for example with `cargo add fiftyone-device-detection`).
+2. Follow the appropriate example from the options below:
+  * [Cloud Example](@ref DeviceDetection_Examples_GettingStarted_Console_Cloud) - Negligible processing and memory overhead but slower due to Internet latency.
+  * [On-premise Example](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise) - Device detection processing is performed locally using a data file that must be kept updated.
+
+### Web integration (axum)
+
+1. Add the `fiftyone-device-detection`, `fiftyone-pipeline-web` and `fiftyone-pipeline-web-axum` crates.
+2. Follow the [web example](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise) to mount the pipeline in an axum application.
 @endsnippet
