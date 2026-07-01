@@ -2,6 +2,8 @@
 
 - @subpage Services_Cloud_Overview
 
+- @subpage Services_Cloud_SelfHostedDocker
+
 - @subpage Services_Cloud_ResourceKeys
 
 - @subpage Services_Cloud_ErrorMessages
