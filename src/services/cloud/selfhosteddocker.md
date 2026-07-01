@@ -37,6 +37,7 @@ image (see Updating).
 | `PROPERTIES_IP_INTELLIGENCE` | no | Comma-separated list of IP Intelligence properties to expose. Empty (default) = all entitled. |
 | `PROPERTIES` | no | Fully-qualified `aspect.property` allow-list (and default) for the per-request `values` selector. Requires the `CloudV5Bespoke` product on the license. |
 | `DISABLED_ELEMENTS` | no | Comma-separated list of pipeline elements to remove, e.g. `TacEngine,NativeEngine,RobotsTxtEngineBuilder`. |
+| `IPI_CONCURRENCY` | no | Number of concurrent handles in the IP Intelligence engine pool (an unsigned integer). Raise this when peak request rates trigger "Insufficient handles available in the pool" errors. Default = `128`. Invalid or zero values fall back to the default. |
 | `REGION_NAME` | no | Free-text region label returned in the `51D-Region` response header and from `/api/info`. |
 | `ASPNETCORE_URLS` | no | Override the in-container listen address/port (the image listens on `8080` by default). |
 | `PipelineOptions__Elements__DidOnPremiseEngineBuilder__BuildParameters__IdDomain` | no | The domain embedded and cryptographically signed into every generated 51Did. Defaults to `51d.es`. Override only if your 51Dids must be attributed to a different domain. |
