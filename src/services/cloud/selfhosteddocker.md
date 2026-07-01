@@ -12,25 +12,21 @@ documentation served by the running container at `/api-docs`.
 # Prerequisites
 
 - A container runtime (Docker, Podman, Kubernetes, …).
-- The `51degrees/cloud-private` container image, supplied by 51Degrees.
+- The `51degrees/cloud-private` container image, supplied by 51Degrees. The
+  image already contains the data files it needs (see Data Files below).
 - One or more 51Degrees **License Keys** that entitle the products you need.
-- The data file(s) for the products you use, supplied by 51Degrees:
-  - `TAC-HashV41.hash` - Device Detection
-  - `51Degrees-EnterpriseIpiV41.ipi` - IP Intelligence
 
 # Data Files
 
-The container reads its data files from `/app/data/assets`. Mount a host
-directory containing the files there:
+The data files are baked into the `51degrees/cloud-private` image at
+`/app/data/assets`, so you do not need to supply or mount anything:
 
-```
-/your/data/dir/
-├── TAC-HashV41.hash
-└── 51Degrees-EnterpriseIpiV41.ipi
-```
+- `TAC-HashV41.hash` - Device Detection
+- `51Degrees-EnterpriseIpiV41.ipi` - IP Intelligence
 
-Data files are not baked into the image - mounting them means you can update
-data without rebuilding. To refresh, replace the files and restart the container.
+51Degrees ships a new image daily, with refreshed data files as needed, and
+each image is tagged with its build date. To move to newer data, pull a newer
+image (see Updating).
 
 # Environment Variables
 
@@ -73,7 +69,6 @@ data without rebuilding. To refresh, replace the files and restart the container
 ```bash
 docker run -d --name 51d-cloud \
   -p 8080:8080 \
-  -v /your/data/dir:/app/data/assets:ro \
   -e LICENSE_KEYS=<your-license-key> \
   51degrees/cloud-private
 ```
@@ -99,5 +94,10 @@ Interactive API documentation is served at `http://localhost:8080/api-docs`.
 
 # Updating
 
-- **Data files** - replace the files in your mounted data directory and restart the container.
+Both the software and the data files ship inside the image, so updating either
+means moving to a newer image:
+
+- **Data files** - 51Degrees publishes a new `cloud-private` image daily, with
+  refreshed data files as needed. Pull the latest (date-tagged) image and
+  recreate the container to pick up newer data.
 - **Software** - pull a newer `51degrees/cloud-private` image and recreate the container.
