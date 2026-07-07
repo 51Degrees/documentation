@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Engines.FiftyOne.Data;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.Extensions.Logging;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span>System.Collections.Generic;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.IO;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.Linq;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.Text;</div>
@@ -172,16 +173,43 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"> </div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__comment">// The IP Intelligence data file can contain tens of millions of</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// profiles. Enumerating every one can take a long time.</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// To keep this example responsive, stop after this many profiles and</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// report the counts gathered so far.</span></div>
+<div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">long</span> MaxProfilesToCount = 50000;</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">void</span> OutputProfileDetails(<a class="code hl_class" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a> ddEngine, TextWriter output)</div>
 <div class="c-code__line">            {</div>
-<div class="c-code__line">                <span class="c-code__comment">// Group the profiles by component and then output the number of profiles </span></div>
-<div class="c-code__line">                <span class="c-code__comment">// for each component.</span></div>
-<div class="c-code__line">                var groups = ddEngine.<a id="a4" name="a4"></a><a class="code hl_property" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html#a7b3243e9f34192de82fb10edb6265843">Profiles</a>.GroupBy(p =&gt; p.Component.Name);</div>
+<div class="c-code__line">                <span class="c-code__comment">// Count the profiles per component in a single streaming pass,</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// stopping once the limit is reached.</span></div>
+<div class="c-code__line">                var countsByComponent = <span class="c-code__keyword">new</span> Dictionary&lt;string, long&gt;();</div>
+<div class="c-code__line">                <span class="c-code__keywordtype">long</span> total = 0;</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">foreach</span> (var profile <span class="c-code__keywordflow">in</span> ddEngine.<a id="a4" name="a4"></a><a class="code hl_property" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html#a7b3243e9f34192de82fb10edb6265843">Profiles</a>)</div>
+<div class="c-code__line">                {</div>
+<div class="c-code__line">                    var componentName = profile.Component.Name;</div>
+<div class="c-code__line">                    countsByComponent.TryGetValue(componentName, out var current);</div>
+<div class="c-code__line">                    countsByComponent[componentName] = current + 1;</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">if</span> (++total &gt;= MaxProfilesToCount)</div>
+<div class="c-code__line">                    {</div>
+<div class="c-code__line">                        <span class="c-code__keywordflow">break</span>;</div>
+<div class="c-code__line">                    }</div>
+<div class="c-code__line">                }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">                var limitReached = total &gt;= MaxProfilesToCount;</div>
 <div class="c-code__line">                output.WriteLine();</div>
 <div class="c-code__line">                output.WriteLine($<span class="c-code__stringliteral">&quot;Profile counts:&quot;</span>);</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">foreach</span> (var group <span class="c-code__keywordflow">in</span> groups)</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">foreach</span> (var entry <span class="c-code__keywordflow">in</span> countsByComponent)</div>
 <div class="c-code__line">                {</div>
-<div class="c-code__line">                    output.WriteLine($<span class="c-code__stringliteral">&quot;{group.Key} Profiles: {group.Count()}&quot;</span>);</div>
+<div class="c-code__line">                    <span class="c-code__comment">// When the limit was hit these are lower bounds, so flag them.</span></div>
+<div class="c-code__line">                    output.WriteLine(</div>
+<div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;{entry.Key} Profiles: {entry.Value}{(limitReached ? &quot;</span>+<span class="c-code__stringliteral">&quot; : &quot;</span><span class="c-code__stringliteral">&quot;)}&quot;</span>);</div>
+<div class="c-code__line">                }</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (limitReached)</div>
+<div class="c-code__line">                {</div>
+<div class="c-code__line">                    output.WriteLine(</div>
+<div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;(stopped after {MaxProfilesToCount} profiles to stay &quot;</span> +</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;responsive.&quot;</span>);</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
@@ -317,7 +345,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="ttc" id="anamespace_examples_html"><div class="ttname"><a href="namespace_examples.html">Examples</a></div><div class="ttdef"><b>Definition</b> Calculations.cs:31</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data.html">FiftyOne.IpIntelligence.Engine.OnPremise.Data</a></div><div class="ttdef"><b>Definition</b> CollectionExtensions.cs:29</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements.html">FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements</a></div><div class="ttdef"><b>Definition</b> IpiOnPremiseEngine.cs:38</div></div>
-<div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metadata_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metadata.html">FiftyOne.IpIntelligence.Examples.OnPremise.Metadata</a></div><div class="ttdef"><b>Definition</b> OnPremise/Metadata-Console/Program.cs:57</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metadata_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metadata.html">FiftyOne.IpIntelligence.Examples.OnPremise.Metadata</a></div><div class="ttdef"><b>Definition</b> OnPremise/Metadata-Console/Program.cs:58</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->
