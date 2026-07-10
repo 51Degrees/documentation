@@ -6,9 +6,11 @@ There are a couple methods to integrate the Cloud Service, but regardless of the
 
 # Authentication
 
-Supply a Resource Key in any of these places, checked in order (first match wins): **HTTP header** (`X-51D-Resource-Key`), **route** (`/api/v4/<resource_key>.json`), **query string** (`?resource=`), or **form body**. A License Key is supplied the same way but has no v4 route: **HTTP header** (`X-51D-License-Key`), **query string** (`?license=`), or **form body**.
+Supply a Resource Key in any of these places, checked in order (first match wins): **HTTP header** (`X-51D-Resource-Key`), **route** (`/api/v4/<resource_key>.json`), **query string** (`?resource=`), or **form body**. A License Key is supplied the same way but has no v4 route: **HTTP header** (`X-51D-License-Key`), **query string** (`?license=`), or **form body**. Form fields are only read from a `POST` request.
 
 A caller can also authenticate with a License Key alone (no Resource Key), in which case they must list the properties they want via the `values` parameter (`X-51D-Values` header, `?values=`, or a form field). See [Resource Keys](@ref Services_Cloud_ResourceKeys) for details.
+
+Every v4 response is cacheable only by the caller's own cache (`Cache-Control: private`). When a credential or the `values` list is supplied via an `X-51D-*` header rather than in the URL, the response is returned `Cache-Control: no-store` instead, since the header is not part of the URL a shared cache would key on.
 
 ---
 
