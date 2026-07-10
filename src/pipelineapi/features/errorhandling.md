@@ -32,6 +32,8 @@ When running the @Pipeline in production, we recommend setting this to `true` in
 
 As with all configuration settings, this can be set in code or via a @Pipeline configuration file (see [.NET example](https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/Cloud/Framework-Web/App_Data/51Degrees.json#L41)).
 
+The setting name follows each language's conventions: `SuppressProcessExceptions` in .NET, `setSuppressProcessException` / `<SuppressProcessException>` (singular) in Java, `suppressProcessExceptions` in Node.js, and `suppress_process_exceptions` in Python. In Node.js and Python it is read from the pipeline-level `PipelineOptions.BuildParameters` section of a configuration file. See [Pipeline Builder](@ref PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions) for per-language code and configuration examples.
+
 
 # Testing the unhappy path scenarios
 

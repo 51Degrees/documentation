@@ -10,5 +10,6 @@ This example shows how to use the TAC lookup capability of the 51Degrees Cloud s
 @grabexample{device-detection-node,cloud_2taclookup-console_2tac_lookup_8js,Node.js}
 @grabexample{device-detection-php,cloud_2tac_lookup_console_8php,PHP}
 @grabexample{device-detection-python,cloud_2taclookup_console_8py,Python}
+@grabexample{rust,dd-cloud-tac,Rust}
 @grabbedexample
 @endsnippets

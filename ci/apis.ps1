@@ -22,6 +22,11 @@
     "ip-intelligence-go" = $null
     "ip-intelligence-java" = "ip-intelligence-java-examples"
 
+    # Rust (Device Detection + IP Intelligence). The runnable examples live in
+    # the rust repo's own examples/ workspace, so there is no separate examples
+    # repository to clone.
+    "rust" = $null
+
     # Location
     "location-dotnet" = $null
     "location-java" = $null
