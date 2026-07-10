@@ -57,7 +57,7 @@ Beware: continuing to steps 2 or 3 will not edit the properties attached to your
 
 # License-key-only callers
 
-Most callers authenticate with a Resource Key, but you can also call the cloud with a License Key and no Resource Key. This suits server-to-server or verifier callers that do not want to create and manage Resource Keys.
+Most callers authenticate with a Resource Key, but you can also call the cloud with a License Key and no Resource Key. This suits server-to-server or verifier callers that do not want to create and manage Resource Keys. Only the json and js endpoints accept License-key-only requests; the other endpoints still require a Resource Key.
 
 A Resource Key carries a property list chosen at creation time. A bare License Key does not, so a License-key-only caller must list the properties they want via the `values` parameter, supplied in any of these places (header first, then query, then form):
 
@@ -66,6 +66,8 @@ A Resource Key carries a property list chosen at creation time. A bare License K
 - Form body: `values=device.ismobile,fodid.idprobglobal`
 
 The License Key itself follows the same order: the `X-51D-License-Key` header, then the `license` query parameter, then a `license` form field.
+
+The `X-51D-*` headers are intended for server-to-server callers: the cloud service does not answer CORS preflight requests for them, so browsers will not send them cross-origin.
 
 A License-key-only request with no `values` returns `400` and explains the requirement. See the [Property Dictionary](https://51degrees.com/developers/property-dictionary) for the properties available on your license.
 
