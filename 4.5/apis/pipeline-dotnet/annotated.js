@@ -94,6 +94,7 @@ var annotated =
             [ "EvidenceKeyFilterAggregator", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_evidence_key_filter_aggregator.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_evidence_key_filter_aggregator" ],
             [ "EvidenceKeyFilterWhitelist", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_evidence_key_filter_whitelist.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_evidence_key_filter_whitelist" ],
             [ "FlowData", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data" ],
+            [ "FlowDataExtensions", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data_extensions.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data_extensions" ],
             [ "FlowError", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_error.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_error" ],
             [ "IData", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data.html", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data" ],
             [ "IDataKeyBuilder", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data_key_builder.html", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data_key_builder" ],
@@ -143,13 +144,16 @@ var annotated =
           ] ],
           [ "FlowElements", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements.html", [
             [ "FlowElementBase&lt; T, TMeta &gt;", "class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g" ],
+            [ "IDeclaresUpstreamDependencies", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_declares_upstream_dependencies.html", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_declares_upstream_dependencies" ],
             [ "IFlowElement", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element" ],
             [ "IFlowElement&lt; T, TMeta &gt;", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element-2-g.html", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element-2-g" ],
             [ "IPipeline", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline" ],
             [ "IPipelineBuilderFromConfiguration", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline_builder_from_configuration.html", "interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline_builder_from_configuration" ],
             [ "Pipeline", "class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline" ],
             [ "PipelineBuilder", "class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder" ],
-            [ "PipelineBuilderBase&lt; T &gt;", "class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder_base-1-g.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder_base-1-g" ]
+            [ "PipelineBuilderBase&lt; T &gt;", "class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder_base-1-g.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder_base-1-g" ],
+            [ "PipelineCancellationExtensions", "class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_cancellation_extensions.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_cancellation_extensions" ],
+            [ "UpstreamDependencyExtensions", "class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_upstream_dependency_extensions.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_upstream_dependency_extensions" ]
           ] ],
           [ "Services", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_services.html", [
             [ "FiftyOneServiceProvider", "class_fifty_one_1_1_pipeline_1_1_core_1_1_services_1_1_fifty_one_service_provider.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_services_1_1_fifty_one_service_provider" ]

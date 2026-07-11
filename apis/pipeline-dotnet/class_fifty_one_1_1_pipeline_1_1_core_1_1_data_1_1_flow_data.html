@@ -84,6 +84,8 @@ Collaboration diagram for FiftyOne.Pipeline.Core.Data.FlowData:</h2>
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:aec591b51b8db029017f9b8681c343c76" id="r_aec591b51b8db029017f9b8681c343c76"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#aec591b51b8db029017f9b8681c343c76">SetStopToken</a> (CancellationToken stopToken)</td></tr>
+<tr class="c-table__row memdesc:aec591b51b8db029017f9b8681c343c76"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Stop processing this flow data when the supplied token is, or becomes, cancelled.  <br /></td></tr>
 <tr class="c-table__row memitem:ad4ca75297568a45140182d4f506f895b" id="r_ad4ca75297568a45140182d4f506f895b"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ad4ca75297568a45140182d4f506f895b">AddError</a> (Exception ex, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html">IFlowElement</a> flowElement)</td></tr>
 <tr class="c-table__row memdesc:ad4ca75297568a45140182d4f506f895b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Register an error that occurred while working with this instance.  <br /></td></tr>
 <tr class="c-table__row memitem:a84ebfd09a2674f12e09df0eae5a31f93" id="r_a84ebfd09a2674f12e09df0eae5a31f93"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a84ebfd09a2674f12e09df0eae5a31f93">AddError</a> (Exception ex, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html">IFlowElement</a> flowElement, bool shouldThrow, bool shouldLog)</td></tr>
@@ -163,6 +165,9 @@ Properties</h2></td></tr>
 <tr class="c-table__row memdesc:adef5b273bcb8c8b24548d8d8e55685b2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The pipeline that was used to create this <a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html" title="The FlowData class contains the data that is used within a pipeline.">FlowData</a> instance.  <br /></td></tr>
 <tr class="c-table__row memitem:a6e6293ee8a417ca86f01d147f951fb24" id="r_a6e6293ee8a417ca86f01d147f951fb24"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a6e6293ee8a417ca86f01d147f951fb24">Stop</a><code> [get, set]</code></td></tr>
 <tr class="c-table__row memdesc:a6e6293ee8a417ca86f01d147f951fb24"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A boolean flag that can be used to stop further elements from executing.  <br /></td></tr>
+<tr class="c-table__row memitem:a6b8e68fa542aee01fffd86da5165bcbb" id="r_a6b8e68fa542aee01fffd86da5165bcbb"><td class="c-table__cell"><a id="a6b8e68fa542aee01fffd86da5165bcbb" name="a6b8e68fa542aee01fffd86da5165bcbb"></a>
+CancellationToken&#160;</td><td class="c-table__cell"><b>StopToken</b><code> [get]</code></td></tr>
+<tr class="c-table__row memdesc:a6b8e68fa542aee01fffd86da5165bcbb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The token that is cancelled when processing of this flow data should stop. <br /></td></tr>
 <tr class="c-table__row memitem:a79986f2cbb232659e018b98e669641f8" id="r_a79986f2cbb232659e018b98e669641f8"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_evidence_key_filter.html">IEvidenceKeyFilter</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a79986f2cbb232659e018b98e669641f8">EvidenceKeyFilter</a><code> [get]</code></td></tr>
 <tr class="c-table__row memdesc:a79986f2cbb232659e018b98e669641f8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a filter that will only include the evidence keys that can be used by the elements within the pipeline that created this flow element.  <br /></td></tr>
 </table>
@@ -1121,6 +1126,36 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="aec591b51b8db029017f9b8681c343c76" name="aec591b51b8db029017f9b8681c343c76"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aec591b51b8db029017f9b8681c343c76">&#9670;&#160;</a></span>SetStopToken()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void FiftyOne.Pipeline.Core.Data.FlowData.SetStopToken </td>
+          <td>(</td>
+          <td class="c-table__cell">CancellationToken</td>          <td class="c-table__cell"><span class="paramname"><em>stopToken</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Stop processing this flow data when the supplied token is, or becomes, cancelled. </p>
+<p>Used to link an external cancellation source (for example an aborted web request) to this flow data. Calling this again replaces any previously linked token.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stopToken</td><td>The token that triggers the stop.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="abd9f2e2fd54b589c7bfd8ffc723a433d" name="abd9f2e2fd54b589c7bfd8ffc723a433d"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#abd9f2e2fd54b589c7bfd8ffc723a433d">&#9670;&#160;</a></span>TryGet()</h2>
 
@@ -1357,6 +1392,7 @@ Properties</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>A boolean flag that can be used to stop further elements from executing. </p>
+<p>Cancellation is one-way: setting it to <code>false</code> is a no-op. </p>
 
 <p>Implements <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html#aaa1d8e65b888b75e58ef8e276c2fbd13">FiftyOne.Pipeline.Core.Data.IFlowData</a>.</p>
 

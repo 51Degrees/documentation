@@ -84,6 +84,8 @@ Collaboration diagram for FiftyOne.Pipeline.Core.FlowElements.Pipeline:</h2>
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a47f406ae723aca5b4c0d8a5d25ec5a27" id="r_a47f406ae723aca5b4c0d8a5d25ec5a27"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a47f406ae723aca5b4c0d8a5d25ec5a27">CreateFlowData</a> ()</td></tr>
 <tr class="c-table__row memdesc:a47f406ae723aca5b4c0d8a5d25ec5a27"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Create a new IFlowData instance that will use this pipeline when processing.  <br /></td></tr>
+<tr class="c-table__row memitem:a00849a1929f04e53262b5c6144b5c9fe" id="r_a00849a1929f04e53262b5c6144b5c9fe"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a00849a1929f04e53262b5c6144b5c9fe">CreateFlowData</a> (CancellationToken cancellationToken)</td></tr>
+<tr class="c-table__row memdesc:a00849a1929f04e53262b5c6144b5c9fe"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Create a new flow data that stops processing when the supplied token is cancelled.  <br /></td></tr>
 <tr class="c-table__row memitem:a58bad895ef6c67e590e5372bbd3edfbb" id="r_a58bad895ef6c67e590e5372bbd3edfbb"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a58bad895ef6c67e590e5372bbd3edfbb">Process</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data)</td></tr>
 <tr class="c-table__row memdesc:a58bad895ef6c67e590e5372bbd3edfbb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process the given IFlowData using the IFlowElements in the pipeline.  <br /></td></tr>
 <tr class="c-table__row memitem:ad54e68e1503a732150b0c048ac137946" id="r_ad54e68e1503a732150b0c048ac137946"><td class="c-table__cell">TElement&#160;</td><td class="c-table__cell"><a class="el" href="#ad54e68e1503a732150b0c048ac137946">GetElement&lt; TElement &gt;</a> ()</td></tr>
@@ -118,7 +120,7 @@ Properties</h2></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a47f406ae723aca5b4c0d8a5d25ec5a27" name="a47f406ae723aca5b4c0d8a5d25ec5a27"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a47f406ae723aca5b4c0d8a5d25ec5a27">&#9670;&#160;</a></span>CreateFlowData()</h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a47f406ae723aca5b4c0d8a5d25ec5a27">&#9670;&#160;</a></span>CreateFlowData() <span class="c-member__count">[1/2]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -140,6 +142,35 @@ Properties</h2></td></tr>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
 
 <p>Implements <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html#a6adf8dd2a8f0435adb8bf9e857b922db">FiftyOne.Pipeline.Core.FlowElements.IPipeline</a>.</p>
+
+</div>
+</div>
+<a id="a00849a1929f04e53262b5c6144b5c9fe" name="a00849a1929f04e53262b5c6144b5c9fe"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a00849a1929f04e53262b5c6144b5c9fe">&#9670;&#160;</a></span>CreateFlowData() <span class="c-member__count">[2/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> FiftyOne.Pipeline.Core.FlowElements.Pipeline.CreateFlowData </td>
+          <td>(</td>
+          <td class="c-table__cell">CancellationToken</td>          <td class="c-table__cell"><span class="paramname"><em>cancellationToken</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Create a new flow data that stops processing when the supplied token is cancelled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cancellationToken</td><td>Token that cancels processing of the created flow data. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

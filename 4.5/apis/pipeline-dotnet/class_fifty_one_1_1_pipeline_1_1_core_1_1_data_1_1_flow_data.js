@@ -26,11 +26,13 @@ var class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data =
     [ "GetOrAdd< T >", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a0a0944e512013bf27d38d94cce114756", null ],
     [ "GetWhere", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a6a7e14227a2d99dca167e4356db65517", null ],
     [ "Process", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a001d0a3f48a25047d08a902dc011f69a", null ],
+    [ "SetStopToken", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#aec591b51b8db029017f9b8681c343c76", null ],
     [ "TryGet", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#abd9f2e2fd54b589c7bfd8ffc723a433d", null ],
     [ "TryGetEvidence< T >", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#ac5b43e142e748a87b91397ee2c47d746", null ],
     [ "TryGetValue< T >", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#ab0bb847f85c6c73a8efd419adeeab4bc", null ],
     [ "Errors", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a4ed9211abbdb6445e869e18d5c6cff77", null ],
     [ "EvidenceKeyFilter", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a79986f2cbb232659e018b98e669641f8", null ],
     [ "Pipeline", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#adef5b273bcb8c8b24548d8d8e55685b2", null ],
-    [ "Stop", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a6e6293ee8a417ca86f01d147f951fb24", null ]
+    [ "Stop", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a6e6293ee8a417ca86f01d147f951fb24", null ],
+    [ "StopToken", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a6b8e68fa542aee01fffd86da5165bcbb", null ]
 ];
