@@ -79,5 +79,6 @@ location.reload();
 
 ## Cross-references
 
-- @ref Identifiers_51Did - how `id.usage` is consumed.
+- @ref Identifiers_51Did - how `id.usage` is consumed. The widget maps the user's choice to an `id.usage` value itself (the *Direct* path under *Setting the usage policy*); a caller who would rather hand the cloud a raw TCF or GPP string and have it derive `id.usage` uses the *Derived from consent* path on the same page.
+- @ref DeviceDetection_OtherIntegrations_Prebid - downstream RTB enrichment that consumes the 51Did.
 - @ref Integrations_Prebid - downstream RTB enrichment that consumes the 51Did.

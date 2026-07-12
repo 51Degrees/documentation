@@ -19,6 +19,16 @@ Derived from three inputs:
 
 51Dids are produced only by the cloud JSON endpoint when the Resource Key includes the relevant properties. **The 51Did is not available in the on-premise pipeline:** every identifier is signed with a private ECDSA P-256 key held only by 51Degrees' cloud service, so that recipients can verify authenticity without trusting the caller. An on-premise pipeline never holds the signing key and so cannot create a valid 51Did.
 
+## Identifier types
+
+The value inside the envelope comes in three types. Bits 6-7 of the payload flags byte (see *Payload layout* below) record which one a given 51Did carries.
+
+- **Probabilistic** - a 32-byte SHA-256 derived from the Device ID and the client IP. The same device on the same network produces the same value for every caller, with no inputs beyond the usual Device Detection evidence and `id.usage`. This is the value the rest of this page uses in its examples.
+- **Random** - a fresh, server-generated 16-byte GUID rather than a derived hash. The cloud neither stores nor echoes it, so it is not stable across calls: persist the returned 51Did (or its decoded GUID) on your side and stop requesting a new one once you have it. No inputs beyond `id.usage` are needed.
+- **Hashed Email** - a 32-byte SHA-256 of a caller-supplied email and a SWAN salt, `SHA-256(lowercase(trim(email)) || saltBytes)`. The same email and salt always produce the same value for every caller, which makes it interoperable with the SWAN SID concept. Requires the `id.email` and `id.salt` inputs described under *Request inputs*.
+
+Each type is offered in two scopes: **global** (one value across all callers) and **lic** (scoped to your License Key), see *Properties*.
+
 ## Usage flags
 
 The 51Did payload starts with a one-byte **flags** field that records which usage purposes the cloud was allowed to derive the identifier for. Three flags are currently defined:
@@ -29,23 +39,59 @@ The 51Did payload starts with a one-byte **flags** field that records which usag
 | `standard`       | Standard advertising and audience measurement.                   |
 | `personalized`   | Personalised advertising and targeted content.                   |
 
-The flags are hierarchical -- `personalized` implies `standard`, and `standard` implies `non-marketing` mirroring the kind of consent tier a user dialog typically offers (a single tier per visitor that covers every use below it).
+The flags are hierarchical, `personalized` implies `standard`, and `standard` implies `non-marketing` mirroring the kind of consent tier a user dialog typically offers (a single tier per visitor that covers every use below it).
 
-**Only `non-marketing` global 51Dids are available in the free tier.** Issuing a 51Did for `standard` or `personalized` purposes requires a **Special license key** to be added to the Resource Key -- see *Usage policies and licensing* below.
+**Only `non-marketing` global 51Dids are available in the free tier.** Issuing a 51Did for `standard` or `personalized` purposes requires a **Special license key** to be added to the Resource Key, see *Usage policies and licensing* below.
 
 ## Properties
 
-Each property returns a full 51Did identifier (the OWID envelope, signed). The probabilistic value inside has the scope described in the table.
+Each property returns a full 51Did identifier (the OWID envelope, signed). The value inside (its type and scope) is described in the table.
 
-| Property             | Scope of the probabilistic value inside        |
-|----------------------|------------------------------------------------|
-| `fodid.idprobglobal` | Unique across all callers from device+network. |
-| `fodid.idproblic`    | Unique only across the caller's License Key.   |
+| Property             | Type          | Scope                                          |
+|----------------------|---------------|------------------------------------------------|
+| `fodid.idprobglobal` | Probabilistic | Unique across all callers from device+network. |
+| `fodid.idproblic`    | Probabilistic | Unique only across the caller's License Key.   |
+| `fodid.idrandglobal` | Random        | Unique across all callers.                     |
+| `fodid.idrandlic`    | Random        | Scoped to your License Key.                     |
+| `fodid.idhemglobal`  | Hashed Email  | Unique across all callers.                     |
+| `fodid.idhemlic`     | Hashed Email  | Scoped to your License Key.                     |
 
 ## Request inputs
 
 - **Evidence** - Device Detection evidence (User-Agent / UA-CH) AND client IP (`client-ip` query parameter, `client-ip` HTTP header, or the server-supplied client IP).
-- **Usage policy** - the `id.usage` value, one of `non-marketing` | `standard` | `personalized`. May be passed as a query parameter or HTTP request header.
+- **Usage policy** - the request's `id.usage` value. Supplied either directly or derived by the cloud from a consent string; see *Setting the usage policy* below.
+- **`id.email`** (Hashed Email only) - raw email address. The cloud trims and lowercases it; no other transforms.
+- **`id.salt`** (Hashed Email only) - URL-safe base64 of the 2-byte SWAN salt (4 nibbles encoding the 4x4 salt grid selection), e.g. `Npw`.
+
+If a Hashed Email property is requested without `id.email` or `id.salt`, the property is returned with a no-value reason naming the missing input; the supplied values are never echoed back. `id.email` is personal data: always call the cloud over HTTPS when supplying it. The raw value is used only to compute the hash; it is not logged, not shared in usage statistics, and not retained.
+
+## Setting the usage policy
+
+The cloud accepts two ways to decide a request's `id.usage` value. Pick whichever matches where the consent decision is made. The *Direct* path can set any of the three values described under *Usage flags*; the *Derived from consent* path only ever produces `standard` or `personalized` (or no value), never `non-marketing`.
+
+### Direct - your integration owns the mapping
+
+Your integration decides the value and tells the cloud what to do by passing an explicit `id.usage` (`non-marketing`, `standard` or `personalized`) as a query parameter or HTTP request header. You own the mapping from whatever preference or consent surface you use to one of these three values, and the cloud just acts on what you supply. This is the path @ref Identifiers_PMP takes: the widget captures the user's choice and fires the request with `id.usage` already set.
+
+### Derived from consent - the cloud maps a TCF or GPP string for you
+
+Instead of deciding the value yourself, pass the raw IAB consent string and let the cloud derive `id.usage` from the consented purposes. Two evidence parameters are accepted:
+
+- `tcstring` - an IAB TCF v2 TCString, from the PMP widget or any TCF-aware CMP.
+- `gpp` - an IAB GPP string. When a GPP string carries a decodable EU TCF v2 section it takes precedence over `tcstring`; a GPP string with no TCF section (for example a US-only string) is ignored and the cloud falls back to `tcstring`.
+
+The cloud parses the string and checks the consented [IAB TCF v2 purposes](https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/) against the definitions below, adding the matching `id.usage`:
+
+| `id.usage`     | Required IAB TCF v2 purposes              |
+|----------------|-------------------------------------------|
+| `personalized` | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12     |
+| `standard`     | 1, 7, 8, 9, 10                            |
+
+`personalized` is tried first, then `standard`. If neither set is fully satisfied the cloud adds no `id.usage`, the `fodid.*` properties return a no-value reason, and no identifier is issued for advertising use the consent does not permit. Purposes 2, 7, 8, 9, 10 and 11 may be satisfied by a legitimate-interest bit as well as a consent bit; the remaining purposes (1, 3, 4, 5, 6, 12) require an explicit consent bit, because IAB Policy forbids claiming them under legitimate interest.
+
+This makes the cloud the single source of truth for translating consent into usage, so the same downstream works with any TCF-compatible upstream unchanged.
+
+**Direct intent always wins.** If `id.usage` is present on the request (query or header) the cloud uses it and ignores any `tcstring` or `gpp`; derivation runs only when no explicit value was supplied. Malformed consent strings are ignored rather than rejected.
 
 ## Usage policies and licensing
 
@@ -70,6 +116,15 @@ GET /api/v4/json?resource=<RESOURCE_KEY>
     &id.usage=standard
 ```
 
+The resource key can also be sent as a header instead of in the URL:
+
+```
+GET /api/v4/json?user-agent=iPhone&client-ip=203.0.113.42&id.usage=standard
+X-51D-Resource-Key: <RESOURCE_KEY>
+```
+
+License-key-only callers (no resource key) must list the 51Did properties they want via `values`, e.g. `values=fodid.idprobglobal` (or `fodid.idproblic`), since they have no Resource Key with a baked-in property list (see @ref Services_Cloud_ResourceKeys).
+
 Response:
 
 ```json
@@ -82,6 +137,25 @@ Response:
 ```
 
 Open the example value in the [51Did inspector](https://51degrees.com/developers/51did-inspector?51did=AzUxZC5lcwBzGTMAJQAAAAHWTQAAr193zLwxDrchR2XHYmoTzJML7fAB60rimQeTd2WuHMPoQ4Bz56QhxhXoAynWyaAE8kWo8DO92y9LPLdatHSVaCdSioL7JaMg8S2DV36ehXIZc0HhdqteyARmOnRS7o8j) to unpack the OWID envelope, see the parsed flags, licenseId and 32-byte hash, and verify the ECDSA P-256 signature against the issuer's published public key.
+
+## Payload layout
+
+The payload header is shared by every identifier type; bits 6-7 of the flags byte select the type and the length of the value that follows.
+
+| Offset | Length | Field                                                          |
+|--------|--------|----------------------------------------------------------------|
+| 0      | 1      | Flags: bits 0-2 usage tier, bits 6-7 identifier type           |
+| 1      | 4      | LicenseId (uint32, little-endian)                              |
+| 5      | 16/32  | Value: GUID (Random) or SHA-256 (Probabilistic, Hashed Email)  |
+
+| Bits 7-6 | Type          | Payload length |
+|----------|---------------|----------------|
+| `00`     | Probabilistic | 37             |
+| `01`     | Random        | 21             |
+| `10`     | Hashed Email  | 37             |
+| `11`     | Reserved      | n/a            |
+
+Identifiers issued before the type tag existed have bits 6-7 zeroed and decode as Probabilistic. No migration is needed.
 
 ## 51Did readers
 
@@ -131,9 +205,51 @@ Use `FodId.Hash` (32 bytes, SHA-256, the probabilistic value) as the cache / ded
 A 51Did recipient can optionally verify the signature before trusting the identifier. Two options:
 
 1. **Cloud endpoint.** Send the base64 value to the verification endpoint on the V4 cloud and get back a parsed payload only if the signature checks out. Simple, no key handling, but every call is metered against the Resource Key.
-2. **Local verification using the published public key.** Fetch 51Degrees' public ECDSA P-256 key once, cache it, and verify in-process for every received identifier. No metering. Each platform reader (see *51Did readers* above) exposes an in-process verify method that takes the public key PEM and returns a boolean. The .NET reader's method is the inherited `Owid.VerifyAsync`.
+2. **Local verification using the published public key.** Fetch 51Degrees' public ECDSA P-256 key once, cache it, and verify in-process for every received identifier. Only the key fetches are metered, not the verifications themselves. Each platform reader (see *51Did readers* above) exposes an in-process verify method that takes the public key PEM and returns a boolean. The .NET reader's method is the inherited `Owid.VerifyAsync`.
 
 In both cases, validation only confirms the identifier was created by 51Degrees and has not been tampered with. It does not certify that the device + IP + usage inputs were truthful: that trust lives in the operational contract with the issuing 51Degrees cloud, not in the signature.
+
+### Fetching the public key for local verification
+
+Local verification (option 2 above) fetches the key from the OWID public-key endpoint:
+
+```
+GET /owid/api/v3/public-key?resource=<RESOURCE_KEY>
+```
+
+The response is the current signing key as SPKI PEM text. The creator endpoint, `GET /owid/api/v3/creator`, carries the same key in the `publicKeySPKI` field of a JSON body together with the creator identity. Use the `/owid/api/v3/...` paths for new integrations; `/v1` and `/v2` behave identically and keep working with the same credentials.
+
+Both endpoints require authentication and each successful call is metered against the supplied credential. Supply either a Resource Key or a License Key in any of these places (first match wins):
+
+- HTTP header: `X-51D-Resource-Key: <key>` or `X-51D-License-Key: <key>`
+- Query string: `?resource=<key>` or `?license=<key>`
+- Form body of a POST: `resource=<key>` or `license=<key>`
+
+A bare License Key is enough: these endpoints return a fixed payload, so the `values` rule for License-key-only json/js calls does not apply. A DSP that only verifies identifiers can therefore subscribe for a License Key alone and never open the Configurator. A request with no credential returns `401` with a plain-text body listing the options above.
+
+The signing key rotates weekly, so a 51Did issued before the latest rotation was signed with an older key. To fetch the key that was current when a 51Did was created, pass its date: `GET /owid/api/v3/public-key?date=<minutes>&resource=<RESOURCE_KEY>`. The `date` is the same value the OWID envelope carries in its Date field, minutes since `2020-01-01T00:00:00Z` (see the [OWID explainer](https://github.com/SWAN-community/owid/blob/main/explainer.md), "Data Structure" section). The endpoint returns the signing key with the latest creation time on or before `date`; if `date` predates every known key it returns `404`, and a `date` that is not an unsigned 32-bit integer returns `400`. The same `date` parameter works on `/creator`.
+
+**Recommended workflow.** Cache the public key locally. On the happy path you never send `date`. Only fall back to `?date=` when a cached key fails to verify a 51Did you hold: read the identifier's Date field and send it as `?date=<minutes>`, then cache the returned key. Even in the fallback case you send at most one extra request per key rotation.
+
+### Fetching every public key at once
+
+The OWID endpoints above return one key per request. A verifier that wants the whole set of signing keys (for example, to pre-load them and avoid calling out mid-verification) can pull them from the 51Did key endpoint:
+
+```
+GET https://cloud.51degrees.com/api/v4/id/key?resource=<RESOURCE_KEY>
+```
+
+The response is a JSON array, one entry per signing key:
+
+```json
+[
+  { "created": "2026-03-08T00:00:00.0000000Z", "publicKey": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----" }
+]
+```
+
+To fetch only the keys created since you last pulled, add an ISO 8601 UTC timestamp: `GET .../api/v4/id/key/datetime/2026-03-08T00:00:00Z?resource=<RESOURCE_KEY>`. The response then holds only keys created on or after that timestamp. This endpoint takes an ISO 8601 timestamp, not the minutes-since-2020 value that the OWID endpoints use. Like them it is authenticated and metered, but this one takes a Resource Key only.
+
+Use `/owid/api/v3/public-key?date=` to verify a single 51Did with the one key that signed it. Use `/api/v4/id/key` when you would rather cache the full set up front.
 
 ## Use cases
 
