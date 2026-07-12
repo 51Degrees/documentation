@@ -205,21 +205,35 @@ Use `FodId.Hash` (32 bytes, SHA-256, the probabilistic value) as the cache / ded
 A 51Did recipient can optionally verify the signature before trusting the identifier. Two options:
 
 1. **Cloud endpoint.** Send the base64 value to the verification endpoint on the V4 cloud and get back a parsed payload only if the signature checks out. Simple, no key handling, but every call is metered against the Resource Key.
-2. **Local verification using the published public key.** Fetch 51Degrees' public ECDSA P-256 key once, cache it, and verify in-process for every received identifier. No metering. Each platform reader (see *51Did readers* above) exposes an in-process verify method that takes the public key PEM and returns a boolean. The .NET reader's method is the inherited `Owid.VerifyAsync`.
+2. **Local verification using the published public key.** Fetch 51Degrees' public ECDSA P-256 key once, cache it, and verify in-process for every received identifier. Only the key fetches are metered, not the verifications themselves. Each platform reader (see *51Did readers* above) exposes an in-process verify method that takes the public key PEM and returns a boolean. The .NET reader's method is the inherited `Owid.VerifyAsync`.
 
 In both cases, validation only confirms the identifier was created by 51Degrees and has not been tampered with. It does not certify that the device + IP + usage inputs were truthful: that trust lives in the operational contract with the issuing 51Degrees cloud, not in the signature.
 
 ### Fetching the public key for local verification
 
-Local verification (option 2 above) fetches the key from the OWID creator endpoint, `GET /owid/api/v3/creator`. The response carries the current signing key in `publicKeySPKI` (PEM).
+Local verification (option 2 above) fetches the key from the OWID public-key endpoint:
 
-The signing key rotates weekly, so a 51Did issued before the latest rotation was signed with an older key. To fetch the key that was current when a 51Did was created, pass its date: `GET /owid/api/v3/creator?date=<minutes>`. The `date` is the same value the OWID envelope carries in its Date field, minutes since `2020-01-01T00:00:00Z` (see the [OWID explainer](https://github.com/SWAN-community/owid/blob/main/explainer.md), "Data Structure" section). The endpoint returns the signing key with the latest creation time on or before `date`; if `date` predates every known key it returns `404`, and a `date` that is not an unsigned 32-bit integer returns `400`.
+```
+GET /owid/api/v3/public-key?resource=<RESOURCE_KEY>
+```
+
+The response is the current signing key as SPKI PEM text. The creator endpoint, `GET /owid/api/v3/creator`, carries the same key in the `publicKeySPKI` field of a JSON body together with the creator identity. Use the `/owid/api/v3/...` paths for new integrations; `/v1` and `/v2` behave identically and keep working with the same credentials.
+
+Both endpoints require authentication and each successful call is metered against the supplied credential. Supply either a Resource Key or a License Key in any of these places (first match wins):
+
+- HTTP header: `X-51D-Resource-Key: <key>` or `X-51D-License-Key: <key>`
+- Query string: `?resource=<key>` or `?license=<key>`
+- Form body of a POST: `resource=<key>` or `license=<key>`
+
+A bare License Key is enough: these endpoints return a fixed payload, so the `values` rule for License-key-only json/js calls does not apply. A DSP that only verifies identifiers can therefore subscribe for a License Key alone and never open the Configurator. A request with no credential returns `401` with a plain-text body listing the options above.
+
+The signing key rotates weekly, so a 51Did issued before the latest rotation was signed with an older key. To fetch the key that was current when a 51Did was created, pass its date: `GET /owid/api/v3/public-key?date=<minutes>&resource=<RESOURCE_KEY>`. The `date` is the same value the OWID envelope carries in its Date field, minutes since `2020-01-01T00:00:00Z` (see the [OWID explainer](https://github.com/SWAN-community/owid/blob/main/explainer.md), "Data Structure" section). The endpoint returns the signing key with the latest creation time on or before `date`; if `date` predates every known key it returns `404`, and a `date` that is not an unsigned 32-bit integer returns `400`. The same `date` parameter works on `/creator`.
 
 **Recommended workflow.** Cache the public key locally. On the happy path you never send `date`. Only fall back to `?date=` when a cached key fails to verify a 51Did you hold: read the identifier's Date field and send it as `?date=<minutes>`, then cache the returned key. Even in the fallback case you send at most one extra request per key rotation.
 
 ### Fetching every public key at once
 
-The `/creator` endpoint above returns one key per request. A verifier that wants the whole set of signing keys (for example, to pre-load them and avoid calling out mid-verification) can pull them from the 51Did key endpoint:
+The OWID endpoints above return one key per request. A verifier that wants the whole set of signing keys (for example, to pre-load them and avoid calling out mid-verification) can pull them from the 51Did key endpoint:
 
 ```
 GET https://cloud.51degrees.com/api/v4/id/key?resource=<RESOURCE_KEY>
@@ -233,9 +247,9 @@ The response is a JSON array, one entry per signing key:
 ]
 ```
 
-To fetch only the keys created since you last pulled, add an ISO 8601 UTC timestamp: `GET .../api/v4/id/key/datetime/2026-03-08T00:00:00Z?resource=<RESOURCE_KEY>`. The response then holds only keys created on or after that timestamp. This endpoint takes an ISO 8601 timestamp, not the minutes-since-2020 value that `/creator?date=` uses. Unlike `/creator`, it needs a Resource Key and is metered.
+To fetch only the keys created since you last pulled, add an ISO 8601 UTC timestamp: `GET .../api/v4/id/key/datetime/2026-03-08T00:00:00Z?resource=<RESOURCE_KEY>`. The response then holds only keys created on or after that timestamp. This endpoint takes an ISO 8601 timestamp, not the minutes-since-2020 value that the OWID endpoints use. Like them it is authenticated and metered, but this one takes a Resource Key only.
 
-Use `/creator?date=` to verify a single 51Did with the one key that signed it. Use `/api/v4/id/key` when you would rather cache the full set up front.
+Use `/owid/api/v3/public-key?date=` to verify a single 51Did with the one key that signed it. Use `/api/v4/id/key` when you would rather cache the full set up front.
 
 ## Use cases
 

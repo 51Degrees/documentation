@@ -71,6 +71,9 @@ The Resource Key provided in the request to the Cloud service is not valid. Plea
 ### Resource Key required {#Resource_key_required}
 A Resource Key is required to access the 51Degrees Cloud service. This contains your property configuration, preferences and subscriptions. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to create a Resource Key. The key can be supplied as the `X-51D-Resource-Key` header, in the route, as the `resource=` query parameter, or as a `resource` form field. Alternatively, callers can authenticate with a License Key (`X-51D-License-Key`, `?license=`, or a `license` form field) together with a `values` list (see below).
 
+### Resource or license key required (OWID endpoints) {#Resource_or_license_key_required}
+The OWID `public-key` and `creator` endpoints (`/owid/api/v{1,2,3}/...`) require a Resource Key or a License Key. Returned as HTTP `401` with a plain-text body listing the accepted places: the `X-51D-Resource-Key` or `X-51D-License-Key` header, the `resource=` or `license=` query parameter, or a `resource`/`license` form field.
+
 ### Sequence value invalid {#Sequence_value_invalid}
 The value for the `sequence` parameter could not be parsed to an integer, make sure that the `sequence` value is an integer. If the problem persists then please create a new issue on our [cloud-issues GitHub](https://github.com/51Degrees/cloud-issues/issues) repository.
 
@@ -78,10 +81,10 @@ The value for the `sequence` parameter could not be parsed to an integer, make s
 The value for the `sequence` parameter could not found. If the `sequence` parameter has been provided in the request, make sure that the value in is an integer. Otherwise, please create a new issue on our [cloud-issues GitHub](https://github.com/51Degrees/cloud-issues/issues) repo.
 
 ### Signing key date malformed {#Signing_key_date_malformed}
-The `date` parameter on the OWID creator endpoint (`/owid/api/v3/creator?date=`) could not be parsed. It must be an unsigned 32-bit integer giving the number of minutes since `2020-01-01T00:00:00Z` (the OWID envelope's date encoding). Returned as HTTP `400`.
+The `date` parameter on the OWID public-key and creator endpoints (`/owid/api/v3/public-key?date=` and `/owid/api/v3/creator?date=`) could not be parsed. It must be an unsigned 32-bit integer giving the number of minutes since `2020-01-01T00:00:00Z` (the OWID envelope's date encoding). Returned as HTTP `400`.
 
 ### Signing key date too old {#Signing_key_date_too_old}
-The `date` supplied to the OWID creator endpoint predates the oldest signing key, so no key was active at that date. Returned as HTTP `404`. Supply a `date` that matches a 51Did you actually hold.
+The `date` supplied to the OWID public-key or creator endpoint predates the oldest signing key, so no key was active at that date. Returned as HTTP `404`. Supply a `date` that matches a 51Did you actually hold.
 
 ### Supplied Licenses do not contain any valid products {#Supplied_licenses_do_not_contain_any_valid_products}
 The supplied License Key(s) do not contain any valid products for the 51Degrees Cloud service. Check that you have access to the correct subscription by checking your sign-up email. To validate your License Key(s), visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com) and follow the steps to create a new Resource Key, providing your License Keys in the process. If the License Keys are not valid then please see our [pricing page](https://51degrees.com/pricing) for details on subscriptions for the Cloud service.

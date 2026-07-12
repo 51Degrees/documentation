@@ -57,7 +57,7 @@ Beware: continuing to steps 2 or 3 will not edit the properties attached to your
 
 # License-key-only callers
 
-Most callers authenticate with a Resource Key, but you can also call the cloud with a License Key and no Resource Key. This suits server-to-server or verifier callers that do not want to create and manage Resource Keys. Only the json and js endpoints accept License-key-only requests; the other endpoints still require a Resource Key.
+Most callers authenticate with a Resource Key, but you can also call the cloud with a License Key and no Resource Key. This suits server-to-server or verifier callers that do not want to create and manage Resource Keys. Only the json and js endpoints and the OWID public-key and creator endpoints accept License-key-only requests; the other endpoints still require a Resource Key.
 
 A Resource Key carries a property list chosen at creation time. A bare License Key does not, so a License-key-only caller must list the properties they want via the `values` parameter, supplied in any of these places (header first, then query, then form):
 
@@ -70,5 +70,7 @@ The License Key itself follows the same order: the `X-51D-License-Key` header, t
 The `X-51D-*` headers are intended for server-to-server callers: the cloud service does not answer CORS preflight requests for them, so browsers will not send them cross-origin.
 
 A License-key-only request with no `values` returns `400` and explains the requirement. See the [Property Dictionary](https://51degrees.com/developers/property-dictionary) for the properties available on your license.
+
+The OWID public-key and creator endpoints (`/owid/api/v{1,2,3}/public-key` and `/creator`) are a special case: they accept either a Resource Key or a bare License Key, with no `values` requirement, because their payload is fixed. Most other cloud endpoints expect a Resource Key. See @ref Identifiers_51Did for details.
 
 With a Resource Key, `values` is optional: it narrows the response to a subset of the key's baked-in properties, and omitting it returns them all. A License-key-only caller must supply it, since there is no baked-in list to fall back to.
