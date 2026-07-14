@@ -191,6 +191,7 @@ var annotated =
             [ "AspectEngineDataFile", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_aspect_engine_data_file.html", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_aspect_engine_data_file" ],
             [ "AspectPropertyMetaData", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_aspect_property_meta_data.html", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_aspect_property_meta_data" ],
             [ "AspectPropertyValue&lt; T &gt;", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_aspect_property_value-1-g.html", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_aspect_property_value-1-g" ],
+            [ "AspectPropertyValueExtensions", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_aspect_property_value_extensions.html", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_aspect_property_value_extensions" ],
             [ "IAspectData", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_data.html", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_data" ],
             [ "IAspectEngineDataFile", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_engine_data_file.html", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_engine_data_file" ],
             [ "IAspectPropertyMetaData", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_property_meta_data.html", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_property_meta_data" ],
