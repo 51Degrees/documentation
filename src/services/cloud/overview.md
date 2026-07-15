@@ -2,7 +2,7 @@
 
 There are a couple methods to integrate the Cloud Service, but regardless of the integration method you will need a credential: a [Resource Key](@ref Services_Cloud_ResourceKeys), or, on the json and js endpoints, a License Key for callers that manage their own property list.
 
-This page describes the hosted Cloud Service. The [Self-Hosted Docker](@ref Services_Cloud_SelfHostedDocker) image serves the same API from your own infrastructure and uses no Resource Keys at all: every request is authorized by the License Key(s) the container is started with.
+The [Self-Hosted Docker](@ref Services_Cloud_SelfHostedDocker) image serves the same API from your own infrastructure. It takes the same License Key, supplied once when the container starts rather than per request, and uses no Resource Keys.
 
 ---
 
