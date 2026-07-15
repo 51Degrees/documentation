@@ -5,6 +5,8 @@
 Here you'll find a list of DeviceAtlas properties and their 51Degrees equivalent. 
 Details of all available DeviceAtlas properties can be found on their website, whilst the [51Degrees property dictionary](https://51degrees.com/developers/property-dictionary) contains details of all our properties and their possible values.
 
+To see DeviceAtlas and 51Degrees detection running side by side, take a look at the [device detection comparison example](https://github.com/51Degrees/device-detection-java-examples/tree/main/console/src/main/java/fiftyone/devicedetection/examples/console/comparison) in our Java examples repository. It shows how the same User-Agent is processed by each provider, which makes the property equivalencies in the table below easier to follow.
+
 
 # Obsolete DeviceAtlas capabilities
 
