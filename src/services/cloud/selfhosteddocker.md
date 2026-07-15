@@ -1,19 +1,22 @@
 @page Services_Cloud_SelfHostedDocker Self-Hosted Docker
 
-The 51Degrees Private Cloud is a self-hosted Docker container that runs the
-51Degrees Cloud API entirely on your own infrastructure. It is **single-tenant**:
-every request is authorized by the License Key(s) you start the container with.
-There are no resource keys, and the container makes **no outbound calls** to
-51Degrees services - no usage sharing and no entitlement/billing lookups.
+The Self-Hosted Cloud Docker image runs the
+[51Degrees Cloud Service](@ref Services_Cloud_Overview) API entirely on your own
+infrastructure. It is **single-tenant**: every request is authorized by the
+License Key(s) you start the container with. There are no
+[resource keys](@ref Services_Cloud_ResourceKeys), and the container makes
+**no outbound calls** to 51Degrees services - no usage sharing and no
+entitlement/billing lookups.
 
 For the API itself (endpoints, evidence, response format), see the interactive
 documentation served by the running container at `/api-docs`.
 
 # Prerequisites
 
-- A container runtime (Docker, Podman, Kubernetes, …).
-- The `51degrees/cloud-private` container image, supplied by 51Degrees. The
-  image already contains the data files it needs (see Data Files below).
+- A container runtime (Docker, Podman, Kubernetes, etc.).
+- The `51degrees/cloud-private` container image. The image is distributed
+  privately: [contact us](https://51degrees.com/contact-us) to be granted access
+  to it. It already contains the data files it needs (see Data Files below).
 - One or more 51Degrees **License Keys** that entitle the products you need.
 
 # Data Files
@@ -21,8 +24,8 @@ documentation served by the running container at `/api-docs`.
 The data files are baked into the `51degrees/cloud-private` image at
 `/app/data/assets`, so you do not need to supply or mount anything:
 
-- `TAC-HashV41.hash` - Device Detection
-- `51Degrees-EnterpriseIpiV41.ipi` - IP Intelligence
+- `TAC-HashV41.hash` - @DeviceDetection
+- `51Degrees-EnterpriseIpiV41.ipi` - @IpIntelligence
 
 51Degrees ships a new image daily, with refreshed data files as needed, and
 each image is tagged with its build date. To move to newer data, pull a newer
@@ -33,14 +36,14 @@ image (see Updating).
 | Variable | Required | Description |
 | -------- | -------- | ----------- |
 | `LICENSE_KEYS` | **yes** | One or more 51Degrees License Keys (comma-separated). Determines the products and properties the container serves. |
-| `PROPERTIES_DEVICE_DETECTION` | no | Comma-separated list of Device Detection properties to expose. Empty (default) = all properties entitled by the license. |
-| `PROPERTIES_IP_INTELLIGENCE` | no | Comma-separated list of IP Intelligence properties to expose. Empty (default) = all entitled. |
+| `PROPERTIES_DEVICE_DETECTION` | no | Comma-separated list of @devicedetection properties to expose. Empty (default) = all properties entitled by the license. |
+| `PROPERTIES_IP_INTELLIGENCE` | no | Comma-separated list of @ipintelligence properties to expose. Empty (default) = all entitled. |
 | `PROPERTIES` | no | Fully-qualified `aspect.property` allow-list (and default) for the per-request `values` selector. Requires the `CloudV5Bespoke` product on the license. |
 | `DISABLED_ELEMENTS` | no | Comma-separated list of pipeline elements to remove, e.g. `TacEngine,NativeEngine,RobotsTxtEngineBuilder`. |
-| `IPI_CONCURRENCY` | no | Number of concurrent handles in the IP Intelligence engine pool (an unsigned integer). Raise this when peak request rates trigger "Insufficient handles available in the pool" errors. Default = `128`. Invalid or zero values fall back to the default. |
+| `IPI_CONCURRENCY` | no | Number of concurrent handles in the @ipintelligence engine pool (an unsigned integer). Raise this when peak request rates trigger "Insufficient handles available in the pool" errors. Default = `128`. Invalid or zero values fall back to the default. |
 | `REGION_NAME` | no | Free-text region label returned in the `51D-Region` response header and from `/api/info`. |
 | `ASPNETCORE_URLS` | no | Override the in-container listen address/port (the image listens on `8080` by default). |
-| `PipelineOptions__Elements__DidOnPremiseEngineBuilder__BuildParameters__IdDomain` | no | The domain embedded and cryptographically signed into every generated 51Did. Defaults to `51d.es`. Override only if your 51Dids must be attributed to a different domain. |
+| `PipelineOptions__Elements__DidOnPremiseEngineBuilder__BuildParameters__IdDomain` | no | The domain embedded and cryptographically signed into every generated [51Did](@ref Identifiers_51Did). Defaults to `51d.es`. Override only if your 51Dids must be attributed to a different domain. |
 | `PipelineOptions__Elements__CloudJavaScriptBuilderElement__BuildParameters__Host` | no | The host the generated client-side JavaScript calls back to. Default (unset) = the host the request arrived on (the forwarded `Host` header). Override only to force callbacks to a fixed host. |
 
 > **Note on the 51Did signing domain:** every 51Did the container generates is
@@ -67,7 +70,7 @@ image (see Updating).
 
 # Running
 
-```bash
+```{bash}
 docker run -d --name 51d-cloud \
   -p 8080:8080 \
   -e LICENSE_KEYS=<your-license-key> \
@@ -80,7 +83,7 @@ JavaScript callback host is derived from it (see the note above).
 
 # Verifying
 
-```bash
+```{bash}
 # Service version
 curl http://localhost:8080/api/info/version
 

@@ -1,6 +1,6 @@
 @page Services_Cloud_Overview Cloud Service Overview
 
-There are a couple methods to integrate the Cloud Service, but regardless of the integration method you will need a [Resource Key](@ref Services_Cloud_ResourceKeys).
+There are a couple methods to integrate the Cloud Service, but regardless of the integration method you will need a [Resource Key](@ref Services_Cloud_ResourceKeys). The exception is the [Self-Hosted Docker](@ref Services_Cloud_SelfHostedDocker) image, which you run on your own infrastructure and authorize with a License Key instead.
 
 ---
 
