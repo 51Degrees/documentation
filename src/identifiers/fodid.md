@@ -1,17 +1,17 @@
 @page Identifiers_51Did 51Did (51Degrees Identifier)
 
-A signed envelope, encoded as an <a href="https://github.com/SWAN-community/owid/blob/main/explainer.md">OWID - Open Web ID</a> (the SWAN community schema that defines the binary layout, signature, and verification rules), wrapping a **probabilistic value** that two recipients can compare to decide whether they have observed the same browser instance under the same usage purpose.
+A signed envelope, encoded as an <a href="https://github.com/SWAN-community/owid/blob/main/explainer.md">OWID - Open Web ID</a> (the SWAN community schema that defines the binary layout, signature, and verification rules), wrapping a **value** that two recipients can compare to decide whether they have observed the same browser instance under the same usage purpose. The value comes in three types - probabilistic, random, or hashed email - described under *Identifier types* below.
 
 ## Terminology
 
 The two layers are distinct and the documentation below uses the words deliberately.
 
 - The **51Did** is the **identifier**, the whole base64 OWID envelope (version, domain, date, payload, signature). It changes byte-for-byte every time the cloud issues one, even for the same inputs, because the date and signature change with each call.
-- The **probabilistic value** is one of the fields *inside* the payload (a 32-byte hash). It is stable across reissues for the same device + IP + usage: if two 51Dids were issued for the same inputs, their probabilistic values are equal even though the wrapping identifiers differ.
+- The **value** is one of the fields *inside* the payload (a 32-byte hash, or a 16-byte GUID for the Random type). For the Probabilistic and Hashed Email types it is stable across reissues for the same inputs: if two 51Dids were issued for the same inputs, their values are equal even though the wrapping identifiers differ. A Random value is generated fresh on every call and so is never stable.
 
-Comparing two browsers means comparing the probabilistic values carried inside their identifiers, never the identifiers themselves. Calling either layer "the identifier" without qualification leads to incorrect comparisons; calling the inner field "the probabilistic identifier" is the same confusion in a different costume.
+Comparing two browsers means comparing the values carried inside their identifiers, never the identifiers themselves. Calling either layer "the identifier" without qualification leads to incorrect comparisons; calling the inner field "the probabilistic identifier" is the same confusion in a different costume.
 
-Derived from three inputs:
+The **probabilistic** value - the type this page uses in its examples - is derived from three inputs:
 
 - The **Device ID** - a `Hardware-Platform-Browser-IsCrawler` tuple where each component is the profile ID assigned by Device Detection. See the [property dictionary](https://51degrees.com/developers/property-dictionary?item=Metrics%7CAll) for the `DeviceId` property and @ref DeviceDetection_Overview for how it is produced.
 - The **client IP** of the request.
@@ -24,8 +24,8 @@ Derived from three inputs:
 The value inside the envelope comes in three types. Bits 6-7 of the payload flags byte (see *Payload layout* below) record which one a given 51Did carries.
 
 - **Probabilistic** - a 32-byte SHA-256 derived from the Device ID and the client IP. The same device on the same network produces the same value for every caller, with no inputs beyond the usual Device Detection evidence and `id.usage`. This is the value the rest of this page uses in its examples.
-- **Random** - a fresh, server-generated 16-byte GUID rather than a derived hash. The cloud neither stores nor echoes it, so it is not stable across calls: persist the returned 51Did (or its decoded GUID) on your side and stop requesting a new one once you have it. No inputs beyond `id.usage` are needed.
-- **Hashed Email** - a 32-byte SHA-256 of a caller-supplied email and a SWAN salt, `SHA-256(lowercase(trim(email)) || saltBytes)`. The same email and salt always produce the same value for every caller, which makes it interoperable with the SWAN SID concept. Requires the `id.email` and `id.salt` inputs described under *Request inputs*.
+- **Random** - a fresh, server-generated 16-byte GUID rather than a derived hash. The cloud neither stores nor echoes it, so it is not stable across calls: persist the returned 51Did (or its decoded GUID) on your side and stop requesting a new one once you have it. No inputs beyond `id.usage` are needed. The global and lic properties are generated independently, so a single response carries a different GUID in each.
+- **Hashed Email** - a 32-byte SHA-256 of a caller-supplied email and a 2-byte salt, `SHA-256(lowercase(trim(email)) || saltBytes)`, where `saltBytes` is the decoded salt, not its base64 text. The same email and salt always produce the same value for every caller. Requires the `id.email` and `id.salt` inputs described under *Request inputs*.
 
 Each type is offered in two scopes: **global** (one value across all callers) and **lic** (scoped to your License Key), see *Properties*.
 
@@ -52,16 +52,16 @@ Each property returns a full 51Did identifier (the OWID envelope, signed). The v
 | `fodid.idprobglobal` | Probabilistic | Unique across all callers from device+network. |
 | `fodid.idproblic`    | Probabilistic | Unique only across the caller's License Key.   |
 | `fodid.idrandglobal` | Random        | Unique across all callers.                     |
-| `fodid.idrandlic`    | Random        | Scoped to your License Key.                     |
+| `fodid.idrandlic`    | Random        | Scoped to your License Key.                    |
 | `fodid.idhemglobal`  | Hashed Email  | Unique across all callers.                     |
-| `fodid.idhemlic`     | Hashed Email  | Scoped to your License Key.                     |
+| `fodid.idhemlic`     | Hashed Email  | Scoped to your License Key.                    |
 
 ## Request inputs
 
 - **Evidence** - Device Detection evidence (User-Agent / UA-CH) AND client IP (`client-ip` query parameter, `client-ip` HTTP header, or the server-supplied client IP).
 - **Usage policy** - the request's `id.usage` value. Supplied either directly or derived by the cloud from a consent string; see *Setting the usage policy* below.
 - **`id.email`** (Hashed Email only) - raw email address. The cloud trims and lowercases it; no other transforms.
-- **`id.salt`** (Hashed Email only) - URL-safe base64 of the 2-byte SWAN salt (4 nibbles encoding the 4x4 salt grid selection), e.g. `Npw`.
+- **`id.salt`** (Hashed Email only) - URL-safe base64 of a 2-byte salt, e.g. `Npw`. The cloud accepts the value only if it decodes to exactly two bytes.
 
 If a Hashed Email property is requested without `id.email` or `id.salt`, the property is returned with a no-value reason naming the missing input; the supplied values are never echoed back. `id.email` is personal data: always call the cloud over HTTPS when supplying it. The raw value is used only to compute the hash; it is not logged, not shared in usage statistics, and not retained.
 
@@ -148,12 +148,12 @@ The payload header is shared by every identifier type; bits 6-7 of the flags byt
 | 1      | 4      | LicenseId (uint32, little-endian)                              |
 | 5      | 16/32  | Value: GUID (Random) or SHA-256 (Probabilistic, Hashed Email)  |
 
-| Bits 7-6 | Type          | Payload length |
+| Bits 6-7 | Type          | Payload length |
 |----------|---------------|----------------|
 | `00`     | Probabilistic | 37             |
 | `01`     | Random        | 21             |
 | `10`     | Hashed Email  | 37             |
-| `11`     | Reserved      | n/a            |
+| `11`     | Unused        | n/a            |
 
 Identifiers issued before the type tag existed have bits 6-7 zeroed and decode as Probabilistic. No migration is needed.
 
@@ -218,6 +218,8 @@ GET /owid/api/v3/public-key?resource=<RESOURCE_KEY>
 ```
 
 The response is the current signing key as SPKI PEM text. The creator endpoint, `GET /owid/api/v3/creator`, carries the same key in the `publicKeySPKI` field of a JSON body together with the creator identity. Use the `/owid/api/v3/...` paths for new integrations; `/v1` and `/v2` behave identically and keep working with the same credentials.
+
+The signing keys exist in SPKI form only. The optional `format` parameter therefore accepts just `spki`; any other value returns `400`.
 
 Both endpoints require authentication and each successful call is metered against the supplied credential. Supply either a Resource Key or a License Key in any of these places (first match wins):
 
