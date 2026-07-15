@@ -1,6 +1,8 @@
 @page Services_Cloud_Overview Cloud Service Overview
 
-There are a couple methods to integrate the Cloud Service, but regardless of the integration method you will need a credential: a [Resource Key](@ref Services_Cloud_ResourceKeys), or, on the json and js endpoints, a License Key for callers that manage their own property list.
+The Cloud Service comes in two forms: the Cloud hosted by 51Degrees, which this page describes, and the [Self-Hosted Docker](@ref Services_Cloud_SelfHostedDocker) image, which serves the same API from your own infrastructure and authenticates with your License Key alone, supplied once when the container starts.
+
+There are a couple methods to integrate the hosted Cloud Service, but regardless of the integration method you will need a credential: a [Resource Key](@ref Services_Cloud_ResourceKeys), or, on the json and js endpoints, a License Key for callers that manage their own property list.
 
 ---
 
