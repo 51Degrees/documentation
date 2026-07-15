@@ -24,7 +24,7 @@ Derived from three inputs:
 The value inside the envelope comes in three types. Bits 6-7 of the payload flags byte (see *Payload layout* below) record which one a given 51Did carries.
 
 - **Probabilistic** - a 32-byte SHA-256 derived from the Device ID and the client IP. The same device on the same network produces the same value for every caller, with no inputs beyond the usual Device Detection evidence and `id.usage`. This is the value the rest of this page uses in its examples.
-- **Random** - a fresh, server-generated 16-byte GUID rather than a derived hash. The cloud neither stores nor echoes it, so it is not stable across calls: persist the returned 51Did (or its decoded GUID) on your side and stop requesting a new one once you have it. No inputs beyond `id.usage` are needed.
+- **Random** - a fresh, server-generated 16-byte GUID rather than a derived hash. The cloud neither stores nor echoes it, so it is not stable across calls. No inputs beyond `id.usage` are needed.
 - **Hashed Email** - a 32-byte SHA-256 of a caller-supplied email and a SWAN salt, `SHA-256(lowercase(trim(email)) || saltBytes)`. The same email and salt always produce the same value for every caller, which makes it interoperable with the SWAN SID concept. Requires the `id.email` and `id.salt` inputs described under *Request inputs*.
 
 Each type is offered in two scopes: **global** (one value across all callers) and **lic** (scoped to your License Key), see *Properties*.
@@ -52,9 +52,9 @@ Each property returns a full 51Did identifier (the OWID envelope, signed). The v
 | `fodid.idprobglobal` | Probabilistic | Unique across all callers from device+network. |
 | `fodid.idproblic`    | Probabilistic | Unique only across the caller's License Key.   |
 | `fodid.idrandglobal` | Random        | Unique across all callers.                     |
-| `fodid.idrandlic`    | Random        | Scoped to your License Key.                     |
+| `fodid.idrandlic`    | Random        | Unique only across the caller's License Key.   |
 | `fodid.idhemglobal`  | Hashed Email  | Unique across all callers.                     |
-| `fodid.idhemlic`     | Hashed Email  | Scoped to your License Key.                     |
+| `fodid.idhemlic`     | Hashed Email  | Unique only across the caller's License Key.   |
 
 ## Request inputs
 
@@ -63,11 +63,11 @@ Each property returns a full 51Did identifier (the OWID envelope, signed). The v
 - **`id.email`** (Hashed Email only) - raw email address. The cloud trims and lowercases it; no other transforms.
 - **`id.salt`** (Hashed Email only) - URL-safe base64 of the 2-byte SWAN salt (4 nibbles encoding the 4x4 salt grid selection), e.g. `Npw`.
 
-If a Hashed Email property is requested without `id.email` or `id.salt`, the property is returned with a no-value reason naming the missing input; the supplied values are never echoed back. `id.email` is personal data: always call the cloud over HTTPS when supplying it. The raw value is used only to compute the hash; it is not logged, not shared in usage statistics, and not retained.
+If a Hashed Email property is requested without `id.email` or `id.salt`, the property is returned with a no-value reason naming the missing input; the supplied values are never echoed back. The raw `id.email` value is used only to compute the hash; it is not logged, not shared in usage statistics, and not retained.
 
 ## Setting the usage policy
 
-The cloud accepts two ways to decide a request's `id.usage` value. Pick whichever matches where the consent decision is made. The *Direct* path can set any of the three values described under *Usage flags*; the *Derived from consent* path only ever produces `standard` or `personalized` (or no value), never `non-marketing`.
+The cloud accepts two ways to decide a request's `id.usage` value. The *Direct* path can set any of the three values described under *Usage flags*; the *Derived from consent* path only ever produces `standard` or `personalized` (or no value), never `non-marketing`.
 
 ### Direct - your integration owns the mapping
 
@@ -88,8 +88,6 @@ The cloud parses the string and checks the consented [IAB TCF v2 purposes](https
 | `standard`     | 1, 7, 8, 9, 10                            |
 
 `personalized` is tried first, then `standard`. If neither set is fully satisfied the cloud adds no `id.usage`, the `fodid.*` properties return a no-value reason, and no identifier is issued for advertising use the consent does not permit. Purposes 2, 7, 8, 9, 10 and 11 may be satisfied by a legitimate-interest bit as well as a consent bit; the remaining purposes (1, 3, 4, 5, 6, 12) require an explicit consent bit, because IAB Policy forbids claiming them under legitimate interest.
-
-This makes the cloud the single source of truth for translating consent into usage, so the same downstream works with any TCF-compatible upstream unchanged.
 
 **Direct intent always wins.** If `id.usage` is present on the request (query or header) the cloud uses it and ignores any `tcstring` or `gpp`; derivation runs only when no explicit value was supplied. Malformed consent strings are ignored rather than rejected.
 
@@ -139,14 +137,14 @@ The payload header is shared by every identifier type; bits 6-7 of the flags byt
 | 1      | 4      | LicenseId (uint32, little-endian)                              |
 | 5      | 16/32  | Value: GUID (Random) or SHA-256 (Probabilistic, Hashed Email)  |
 
-| Bits 7-6 | Type          | Payload length |
+| Bits 6-7 | Type          | Payload length |
 |----------|---------------|----------------|
 | `00`     | Probabilistic | 37             |
 | `01`     | Random        | 21             |
 | `10`     | Hashed Email  | 37             |
 | `11`     | Reserved      | n/a            |
 
-Identifiers issued before the type tag existed have bits 6-7 zeroed and decode as Probabilistic. No migration is needed.
+Identifiers issued before the type tag existed have bits 6-7 zeroed and decode as Probabilistic.
 
 ## 51Did readers
 
@@ -206,11 +204,9 @@ Local verification (option 2 above) fetches the key from the OWID creator endpoi
 
 The signing key rotates weekly, so a 51Did issued before the latest rotation was signed with an older key. To fetch the key that was current when a 51Did was created, pass its date: `GET /owid/api/v3/creator?date=<minutes>`. The `date` is the same value the OWID envelope carries in its Date field, minutes since `2020-01-01T00:00:00Z` (see the [OWID explainer](https://github.com/SWAN-community/owid/blob/main/explainer.md), "Data Structure" section). The endpoint returns the signing key with the latest creation time on or before `date`; if `date` predates every known key it returns `404`, and a `date` that is not an unsigned 32-bit integer returns `400`.
 
-**Recommended workflow.** Cache the public key locally. On the happy path you never send `date`. Only fall back to `?date=` when a cached key fails to verify a 51Did you hold: read the identifier's Date field and send it as `?date=<minutes>`, then cache the returned key. Even in the fallback case you send at most one extra request per key rotation.
-
 ### Fetching every public key at once
 
-The `/creator` endpoint above returns one key per request. A verifier that wants the whole set of signing keys (for example, to pre-load them and avoid calling out mid-verification) can pull them from the 51Did key endpoint:
+The `/creator` endpoint above returns one key per request. A verifier that wants the whole set of signing keys can pull them from the 51Did key endpoint:
 
 ```
 GET https://cloud.51degrees.com/api/v4/id/key?resource=<RESOURCE_KEY>
@@ -225,8 +221,6 @@ The response is a JSON array, one entry per signing key:
 ```
 
 To fetch only the keys created since you last pulled, add an ISO 8601 UTC timestamp: `GET .../api/v4/id/key/datetime/2026-03-08T00:00:00Z?resource=<RESOURCE_KEY>`. The response then holds only keys created on or after that timestamp. This endpoint takes an ISO 8601 timestamp, not the minutes-since-2020 value that `/creator?date=` uses. Unlike `/creator`, it needs a Resource Key and is metered.
-
-Use `/creator?date=` to verify a single 51Did with the one key that signed it. Use `/api/v4/id/key` when you would rather cache the full set up front.
 
 ## Use cases
 
