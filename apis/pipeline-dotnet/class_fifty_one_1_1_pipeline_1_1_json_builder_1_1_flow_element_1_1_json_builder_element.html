@@ -134,8 +134,8 @@ override&#160;void&#160;</td><td class="c-table__cell"><b>UnmanagedResourcesClea
 <tr class="c-table__row memdesc:aabd12420dbc648df2a74bdfa87f28349"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get all the properties.  <br /></td></tr>
 <tr class="c-table__row memitem:a32810d0c41af10b70d2f8be46edafe5a" id="r_a32810d0c41af10b70d2f8be46edafe5a"><td class="c-table__cell">virtual&#160;Dictionary&lt;&#160;string,&#160;object&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a32810d0c41af10b70d2f8be46edafe5a">GetValues</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> flowData, string dataPath, IReadOnlyDictionary&lt; string, object &gt; sourceData, <a class="el" href="class_fifty_one_1_1_pipeline_1_1_json_builder_1_1_flow_element_1_1_json_builder_element_1_1_pipeline_config.html">PipelineConfig</a> config)</td></tr>
 <tr class="c-table__row memdesc:a32810d0c41af10b70d2f8be46edafe5a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the names and values for all the JSON properties required to represent the given source data.  <br /></td></tr>
-<tr class="c-table__row memitem:a58cb15ac25515f56d7a23da02148b86a" id="r_a58cb15ac25515f56d7a23da02148b86a"><td class="c-table__cell">virtual&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a58cb15ac25515f56d7a23da02148b86a">AddJsonValuesForProperty</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> flowData, Dictionary&lt; string, object &gt; jsonValues, string dataPath, string name, object value, <a class="el" href="class_fifty_one_1_1_pipeline_1_1_json_builder_1_1_flow_element_1_1_json_builder_element_1_1_pipeline_config.html">PipelineConfig</a> config, bool includeValueDataOnly)</td></tr>
-<tr class="c-table__row memdesc:a58cb15ac25515f56d7a23da02148b86a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add entries to the supplied jsonValues dictionary to represent the supplied property name and value.  <br /></td></tr>
+<tr class="c-table__row memitem:ae0b89630fa9ac23e208c20cea8ebf32d" id="r_ae0b89630fa9ac23e208c20cea8ebf32d"><td class="c-table__cell">virtual&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ae0b89630fa9ac23e208c20cea8ebf32d">AddJsonValuesForProperty</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> flowData, IDictionary&lt; string, object &gt; jsonValues, string dataPath, string name, object value, <a class="el" href="class_fifty_one_1_1_pipeline_1_1_json_builder_1_1_flow_element_1_1_json_builder_element_1_1_pipeline_config.html">PipelineConfig</a> config, bool includeValueDataOnly)</td></tr>
+<tr class="c-table__row memdesc:ae0b89630fa9ac23e208c20cea8ebf32d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add entries to the supplied jsonValues dictionary to represent the supplied property name and value.  <br /></td></tr>
 <tr class="c-table__row memitem:a96342f3bf6b0003e8aeb2645d84f60eb" id="r_a96342f3bf6b0003e8aeb2645d84f60eb"><td class="c-table__cell">virtual&#160;IList&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a96342f3bf6b0003e8aeb2645d84f60eb">GetJavaScriptProperties</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data, IList&lt; string &gt; availableProperties)</td></tr>
 <tr class="c-table__row memdesc:a96342f3bf6b0003e8aeb2645d84f60eb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the names of all properties from the given IFlowData instance that have type '<a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a>'.  <br /></td></tr>
 <tr class="c-table__row inherit_header pro_methods_class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Member Functions inherited from <a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html">FiftyOne.Pipeline.Core.FlowElements.FlowElementBase&lt; T, TMeta &gt;</a></h3></td></tr>
@@ -277,8 +277,8 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 
 </div>
 </div>
-<a id="a58cb15ac25515f56d7a23da02148b86a" name="a58cb15ac25515f56d7a23da02148b86a"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a58cb15ac25515f56d7a23da02148b86a">&#9670;&#160;</a></span>AddJsonValuesForProperty()</h2>
+<a id="ae0b89630fa9ac23e208c20cea8ebf32d" name="ae0b89630fa9ac23e208c20cea8ebf32d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae0b89630fa9ac23e208c20cea8ebf32d">&#9670;&#160;</a></span>AddJsonValuesForProperty()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -296,7 +296,7 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">Dictionary&lt; string, object &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>jsonValues</em></span>, </td>
+          <td class="c-table__cell">IDictionary&lt; string, object &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>jsonValues</em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
