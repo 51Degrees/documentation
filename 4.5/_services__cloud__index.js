@@ -1,13 +1,23 @@
 var _services__cloud__index =
 [
     [ "Cloud Service Overview", "_services__cloud__overview.html", [
+      [ "Authentication", "_services__cloud__overview.html#authentication", null ],
       [ "RESTful API", "_services__cloud__overview.html#restful-api", null ],
       [ "Libraries", "_services__cloud__overview.html#libraries", null ]
+    ] ],
+    [ "Self-Hosted Docker", "_services__cloud__self_hosted_docker.html", [
+      [ "Prerequisites", "_services__cloud__self_hosted_docker.html#prerequisites-2", null ],
+      [ "Data Files", "_services__cloud__self_hosted_docker.html#data-files", null ],
+      [ "Environment Variables", "_services__cloud__self_hosted_docker.html#environment-variables", null ],
+      [ "Running", "_services__cloud__self_hosted_docker.html#running", null ],
+      [ "Verifying", "_services__cloud__self_hosted_docker.html#verifying", null ],
+      [ "Updating", "_services__cloud__self_hosted_docker.html#updating", null ]
     ] ],
     [ "Resource Keys", "_services__cloud__resource_keys.html", [
       [ "Authorization errors", "_services__cloud__resource_keys.html#authorization-errors", null ],
       [ "Failed to load aspect properties", "_services__cloud__resource_keys.html#failed-to-load-aspect-properties", null ],
-      [ "Seeing existing key authorized properties", "_services__cloud__resource_keys.html#Seeing_existing_key_authorized_properties", null ]
+      [ "Seeing existing key authorized properties", "_services__cloud__resource_keys.html#Seeing_existing_key_authorized_properties", null ],
+      [ "License-key-only callers", "_services__cloud__resource_keys.html#license-key-only-callers", null ]
     ] ],
     [ "Error Messages", "_services__cloud__error_messages.html", [
       [ "Cloud error response messages", "_services__cloud__error_messages.html#cloud-error-response-messages", null ]

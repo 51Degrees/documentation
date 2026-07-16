@@ -290,6 +290,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="c-code__line"> </div>
 <div class="c-code__line"># Web examples (cloud variant shown).</div>
 <div class="c-code__line">cargo run -p device-detection-examples --bin dd-web-getting-started-cloud</div>
+</div><!-- fragment --><h3>Browser (Selenium) tests</h3>
+<p>Browser-driven verification of the web examples comes from the shared <a href="https://github.com/51Degrees/selenium-api-tests">selenium-api-tests</a> suite, which every 51Degrees SDK reuses rather than maintaining its own browser automation. Its <code>Contract</code> category drives headless Chrome against a running example and checks that the page serves <code>51Degrees.core.js</code>, that client-side evidence flows back, and that the server renders a real detection result.</p>
+<p>CI runs it through <code>ci/run-integration-tests.ps1</code> (the org-standard script name every SDK repo uses), called from the Examples workflow: the script launches <code>dd-web-getting-started-cloud</code> against the local source tree, shallow-clones the suite as a sibling directory (it is deliberately not a submodule) and points it at the example with <code>EXAMPLE_URL</code>.</p>
+<p>To run it locally, check out <code>selenium-api-tests</code> as a sibling of this repo and let the suite launch the example itself through its <code>rust</code> descriptor:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">cd ../selenium-api-tests</div>
+<div class="c-code__line">export CLOUD_ROOT_URL=&quot;https://cloud.51degrees.com/&quot;</div>
+<div class="c-code__line">export PAID_RESOURCE_KEY=&quot;&lt;your resource key&gt;&quot;</div>
+<div class="c-code__line">export EXAMPLE_LANG=&quot;rust&quot;</div>
+<div class="c-code__line">dotnet test --filter TestCategory=Contract</div>
 </div><!-- fragment --><p>The <code>fodid</code> crate depends on the <a href="https://github.com/SWAN-community/owid-rust"><code>owid</code></a> crate (the OWID envelope library a 51Did is built on), consumed as a git dependency. A network connection is required the first time the dependency is fetched.</p>
 <h1>Editor and IDE setup</h1>
 <p>rust-analyzer drives code intelligence in any LSP editor (VS Code, Neovim, Helix, Zed), and the JetBrains RustRover IDE works out of the box.</p>

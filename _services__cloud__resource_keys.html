@@ -104,7 +104,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 </div><!-- fragment --><p>If you see any null reasons like <code>priceband is a paid feature. You need a licence key to retrieve data. Visit <a href="https://51degrees.com/pricing">https://51degrees.com/pricing</a> for details</code> then you do not have the required subscription to access the property. You can check the 51Degrees <a href="https://51degrees.com/developers/property-dictionary">Property Dictionary</a> to see what subscription is required.</p>
 <h2 class="doxsection" id="Seeing_existing_key_authorized_properties">Seeing existing key authorized properties<a class="headerlink" href="#Seeing_existing_key_authorized_properties" aria-label="Permalink to this section">🔗</a></h2>
 <p>Some of the error messages above will list the properties for which the used key is authorized, but you can also see the properties for a key you already have by constructing and visiting the URL <a href="https://configure.51degrees.com/YOUR_RESOURCE_KEY">https://configure.51degrees.com/YOUR_RESOURCE_KEY</a>. This will show Step 1 of the Configurator with the properties for this specific key already selected.</p>
-<p>Beware: continuing to steps 2 or 3 will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it will create a new Resource Key. </p>
+<p>Beware: continuing to steps 2 or 3 will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it will create a new Resource Key.</p>
+<h2 class="doxsection" id="license-key-only-callers">License-key-only callers<a class="headerlink" href="#license-key-only-callers" aria-label="Permalink to this section">🔗</a></h2>
+<p>Most callers authenticate with a Resource Key, but you can also call the cloud with a License Key and no Resource Key. This suits server-to-server or verifier callers that do not want to create and manage Resource Keys. Only the json and js endpoints accept License-key-only requests; the other endpoints still require a Resource Key.</p>
+<p>A Resource Key carries a property list chosen at creation time. A bare License Key does not, so a License-key-only caller must list the properties they want via the <code>values</code> parameter, supplied in any of these places (header first, then query, then form):</p>
+<ul>
+<li>Header: <code>X-51D-Values: device.ismobile,fodid.idprobglobal</code></li>
+<li>Query string: <code>?values=device.ismobile,fodid.idprobglobal</code></li>
+<li>Form body: <code>values=device.ismobile,fodid.idprobglobal</code></li>
+</ul>
+<p>The License Key itself follows the same order: the <code>X-51D-License-Key</code> header, then the <code>license</code> query parameter, then a <code>license</code> form field.</p>
+<p>The <code>X-51D-*</code> headers are intended for server-to-server callers: the cloud service does not answer CORS preflight requests for them, so browsers will not send them cross-origin.</p>
+<p>A License-key-only request with no <code>values</code> returns <code>400</code> and explains the requirement. See the <a href="https://51degrees.com/developers/property-dictionary">Property Dictionary</a> for the properties available on your license.</p>
+<p>With a Resource Key, <code>values</code> is optional: it narrows the response to a subset of the key's baked-in properties, and omitting it returns them all. A License-key-only caller must supply it, since there is no baked-in list to fall back to. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

@@ -86,6 +86,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <li>The <b>usage purpose</b> declared per request (see <em>Usage flags</em> below).</li>
 </ul>
 <p>51Dids are produced only by the cloud JSON endpoint when the Resource Key includes the relevant properties. <b>The 51Did is not available in the on-premise pipeline:</b> every identifier is signed with a private ECDSA P-256 key held only by 51Degrees' cloud service, so that recipients can verify authenticity without trusting the caller. An on-premise pipeline never holds the signing key and so cannot create a valid 51Did.</p>
+<h2 class="doxsection" id="identifier-types">Identifier types<a class="headerlink" href="#identifier-types" aria-label="Permalink to this section">🔗</a></h2>
+<p>The value inside the envelope comes in three types. Bits 6-7 of the payload flags byte (see <em>Payload layout</em> below) record which one a given 51Did carries.</p>
+<ul>
+<li><b>Probabilistic</b> - a 32-byte SHA-256 derived from the Device ID and the client IP. The same device on the same network produces the same value for every caller, with no inputs beyond the usual Device Detection evidence and <code>id.usage</code>. This is the value the rest of this page uses in its examples.</li>
+<li><b>Random</b> - a fresh, server-generated 16-byte GUID rather than a derived hash. The cloud neither stores nor echoes it, so it is not stable across calls. No inputs beyond <code>id.usage</code> are needed.</li>
+<li><b>Hashed Email</b> - a 32-byte SHA-256 of a caller-supplied email and a SWAN salt, <code>SHA-256(lowercase(trim(email)) || saltBytes)</code>. The same email and salt always produce the same value for every caller, which makes it interoperable with the SWAN SID concept. Requires the <code>id.email</code> and <code>id.salt</code> inputs described under <em>Request inputs</em>.</li>
+</ul>
+<p>Each type is offered in two scopes: <b>global</b> (one value across all callers) and <b>lic</b> (scoped to your License Key), see <em>Properties</em>.</p>
 <h2 class="doxsection" id="usage-flags">Usage flags<a class="headerlink" href="#usage-flags" aria-label="Permalink to this section">🔗</a></h2>
 <p>The 51Did payload starts with a one-byte <b>flags</b> field that records which usage purposes the cloud was allowed to derive the identifier for. Three flags are currently defined:</p>
 <table class="c-table">
@@ -98,23 +106,55 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <tr class="c-table__row">
 <td class="c-table__cell"><code>personalized</code>  </td><td class="c-table__cell">Personalised advertising and targeted content.  </td></tr>
 </table>
-<p>The flags are hierarchical &ndash; <code>personalized</code> implies <code>standard</code>, and <code>standard</code> implies <code>non-marketing</code> mirroring the kind of consent tier a user dialog typically offers (a single tier per visitor that covers every use below it).</p>
-<p><b>Only <code>non-marketing</code> global 51Dids are available in the free tier.</b> Issuing a 51Did for <code>standard</code> or <code>personalized</code> purposes requires a <b>Special license key</b> to be added to the Resource Key &ndash; see <em>Usage policies and licensing</em> below.</p>
+<p>The flags are hierarchical, <code>personalized</code> implies <code>standard</code>, and <code>standard</code> implies <code>non-marketing</code> mirroring the kind of consent tier a user dialog typically offers (a single tier per visitor that covers every use below it).</p>
+<p><b>Only <code>non-marketing</code> global 51Dids are available in the free tier.</b> Issuing a 51Did for <code>standard</code> or <code>personalized</code> purposes requires a <b>Special license key</b> to be added to the Resource Key, see <em>Usage policies and licensing</em> below.</p>
 <h2 class="doxsection" id="properties-1">Properties<a class="headerlink" href="#properties-1" aria-label="Permalink to this section">🔗</a></h2>
-<p>Each property returns a full 51Did identifier (the OWID envelope, signed). The probabilistic value inside has the scope described in the table.</p>
+<p>Each property returns a full 51Did identifier (the OWID envelope, signed). The value inside (its type and scope) is described in the table.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
-<td class="c-table__cell">Property  </td><td class="c-table__cell">Scope of the probabilistic value inside  </td></tr>
+<td class="c-table__cell">Property  </td><td class="c-table__cell">Type  </td><td class="c-table__cell">Scope  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>fodid.idprobglobal</code>  </td><td class="c-table__cell">Unique across all callers from device+network.  </td></tr>
+<td class="c-table__cell"><code>fodid.idprobglobal</code>  </td><td class="c-table__cell">Probabilistic  </td><td class="c-table__cell">Unique across all callers from device+network.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>fodid.idproblic</code>  </td><td class="c-table__cell">Unique only across the caller's License Key.  </td></tr>
+<td class="c-table__cell"><code>fodid.idproblic</code>  </td><td class="c-table__cell">Probabilistic  </td><td class="c-table__cell">Unique only across the caller's License Key.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>fodid.idrandglobal</code>  </td><td class="c-table__cell">Random  </td><td class="c-table__cell">Unique across all callers.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>fodid.idrandlic</code>  </td><td class="c-table__cell">Random  </td><td class="c-table__cell">Unique only across the caller's License Key.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>fodid.idhemglobal</code>  </td><td class="c-table__cell">Hashed Email  </td><td class="c-table__cell">Unique across all callers.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>fodid.idhemlic</code>  </td><td class="c-table__cell">Hashed Email  </td><td class="c-table__cell">Unique only across the caller's License Key.  </td></tr>
 </table>
 <h2 class="doxsection" id="request-inputs">Request inputs<a class="headerlink" href="#request-inputs" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li><b>Evidence</b> - Device Detection evidence (User-Agent / UA-CH) AND client IP (<code>client-ip</code> query parameter, <code>client-ip</code> HTTP header, or the server-supplied client IP).</li>
-<li><b>Usage policy</b> - the <code>id.usage</code> value, one of <code>non-marketing</code> | <code>standard</code> | <code>personalized</code>. May be passed as a query parameter or HTTP request header.</li>
+<li><b>Usage policy</b> - the request's <code>id.usage</code> value. Supplied either directly or derived by the cloud from a consent string; see <em>Setting the usage policy</em> below.</li>
+<li><b><code>id.email</code></b> (Hashed Email only) - raw email address. The cloud trims and lowercases it; no other transforms.</li>
+<li><b><code>id.salt</code></b> (Hashed Email only) - URL-safe base64 of the 2-byte SWAN salt (4 nibbles encoding the 4x4 salt grid selection), e.g. <code>Npw</code>.</li>
 </ul>
+<p>If a Hashed Email property is requested without <code>id.email</code> or <code>id.salt</code>, the property is returned with a no-value reason naming the missing input; the supplied values are never echoed back. The raw <code>id.email</code> value is used only to compute the hash; it is not logged, not shared in usage statistics, and not retained.</p>
+<h2 class="doxsection" id="setting-the-usage-policy">Setting the usage policy<a class="headerlink" href="#setting-the-usage-policy" aria-label="Permalink to this section">🔗</a></h2>
+<p>The cloud accepts two ways to decide a request's <code>id.usage</code> value. The <em>Direct</em> path can set any of the three values described under <em>Usage flags</em>; the <em>Derived from consent</em> path only ever produces <code>standard</code> or <code>personalized</code> (or no value), never <code>non-marketing</code>.</p>
+<h3 class="doxsection" id="direct---your-integration-owns-the-mapping">Direct - your integration owns the mapping<a class="headerlink" href="#direct---your-integration-owns-the-mapping" aria-label="Permalink to this section">🔗</a></h3>
+<p>Your integration decides the value and tells the cloud what to do by passing an explicit <code>id.usage</code> (<code>non-marketing</code>, <code>standard</code> or <code>personalized</code>) as a query parameter or HTTP request header. You own the mapping from whatever preference or consent surface you use to one of these three values, and the cloud just acts on what you supply. This is the path <a class="el" href="_identifiers__p_m_p.html" title="PMP (Preference Management Platform)">PMP (Preference Management Platform)</a> takes: the widget captures the user's choice and fires the request with <code>id.usage</code> already set.</p>
+<h3 class="doxsection" id="derived-from-consent---the-cloud-maps-a-tcf-or-gpp-string-for-you">Derived from consent - the cloud maps a TCF or GPP string for you<a class="headerlink" href="#derived-from-consent---the-cloud-maps-a-tcf-or-gpp-string-for-you" aria-label="Permalink to this section">🔗</a></h3>
+<p>Instead of deciding the value yourself, pass the raw IAB consent string and let the cloud derive <code>id.usage</code> from the consented purposes. Two evidence parameters are accepted:</p>
+<ul>
+<li><code>tcstring</code> - an IAB TCF v2 TCString, from the PMP widget or any TCF-aware CMP.</li>
+<li><code>gpp</code> - an IAB GPP string. When a GPP string carries a decodable EU TCF v2 section it takes precedence over <code>tcstring</code>; a GPP string with no TCF section (for example a US-only string) is ignored and the cloud falls back to <code>tcstring</code>.</li>
+</ul>
+<p>The cloud parses the string and checks the consented <a href="https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/">IAB TCF v2 purposes</a> against the definitions below, adding the matching <code>id.usage</code>:</p>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell"><code>id.usage</code>  </td><td class="c-table__cell">Required IAB TCF v2 purposes  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>personalized</code>  </td><td class="c-table__cell">1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>standard</code>  </td><td class="c-table__cell">1, 7, 8, 9, 10  </td></tr>
+</table>
+<p><code>personalized</code> is tried first, then <code>standard</code>. If neither set is fully satisfied the cloud adds no <code>id.usage</code>, the <code>fodid.*</code> properties return a no-value reason, and no identifier is issued for advertising use the consent does not permit. Purposes 2, 7, 8, 9, 10 and 11 may be satisfied by a legitimate-interest bit as well as a consent bit; the remaining purposes (1, 3, 4, 5, 6, 12) require an explicit consent bit, because IAB Policy forbids claiming them under legitimate interest.</p>
+<p><b>Direct intent always wins.</b> If <code>id.usage</code> is present on the request (query or header) the cloud uses it and ignores any <code>tcstring</code> or <code>gpp</code>; derivation runs only when no explicit value was supplied. Malformed consent strings are ignored rather than rejected.</p>
 <h2 class="doxsection" id="usage-policies-and-licensing">Usage policies and licensing<a class="headerlink" href="#usage-policies-and-licensing" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -134,7 +174,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <div class="c-code__line">    &amp;user-agent=iPhone</div>
 <div class="c-code__line">    &amp;client-ip=203.0.113.42</div>
 <div class="c-code__line">    &amp;id.usage=standard</div>
-</div><!-- fragment --><p>Response:</p>
+</div><!-- fragment --><p>The resource key can also be sent as a header instead of in the URL:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">GET /api/v4/json?user-agent=iPhone&amp;client-ip=203.0.113.42&amp;id.usage=standard</div>
+<div class="c-code__line">X-51D-Resource-Key: &lt;RESOURCE_KEY&gt;</div>
+</div><!-- fragment --><p>License-key-only callers (no resource key) must list the 51Did properties they want via <code>values</code>, e.g. <code>values=fodid.idprobglobal</code> (or <code>fodid.idproblic</code>), since they have no Resource Key with a baked-in property list (see <a class="el" href="_services__cloud__resource_keys.html" title="Resource Keys">Resource Keys</a>).</p>
+<p>Response:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
 <div class="c-code__line">  &quot;fodid&quot;: {</div>
 <div class="c-code__line">    &quot;idprobglobal&quot;: &quot;AzUxZC5lcwBzGTMAJQAAAAHWTQAAr193zLwxDrchR2XHYmoTzJML7fAB60rimQeTd2WuHMPoQ4Bz56QhxhXoAynWyaAE8kWo8DO92y9LPLdatHSVaCdSioL7JaMg8S2DV36ehXIZc0HhdqteyARmOnRS7o8j&quot;,</div>
@@ -142,6 +186,31 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <div class="c-code__line">  }</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p>Open the example value in the <a href="https://51degrees.com/developers/51did-inspector?51did=AzUxZC5lcwBzGTMAJQAAAAHWTQAAr193zLwxDrchR2XHYmoTzJML7fAB60rimQeTd2WuHMPoQ4Bz56QhxhXoAynWyaAE8kWo8DO92y9LPLdatHSVaCdSioL7JaMg8S2DV36ehXIZc0HhdqteyARmOnRS7o8j">51Did inspector</a> to unpack the OWID envelope, see the parsed flags, licenseId and 32-byte hash, and verify the ECDSA P-256 signature against the issuer's published public key.</p>
+<h2 class="doxsection" id="payload-layout">Payload layout<a class="headerlink" href="#payload-layout" aria-label="Permalink to this section">🔗</a></h2>
+<p>The payload header is shared by every identifier type; bits 6-7 of the flags byte select the type and the length of the value that follows.</p>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Offset  </td><td class="c-table__cell">Length  </td><td class="c-table__cell">Field  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">0  </td><td class="c-table__cell">1  </td><td class="c-table__cell">Flags: bits 0-2 usage tier, bits 6-7 identifier type  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">1  </td><td class="c-table__cell">4  </td><td class="c-table__cell">LicenseId (uint32, little-endian)  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">5  </td><td class="c-table__cell">16/32  </td><td class="c-table__cell">Value: GUID (Random) or SHA-256 (Probabilistic, Hashed Email)  </td></tr>
+</table>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Bits 6-7  </td><td class="c-table__cell">Type  </td><td class="c-table__cell">Payload length  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>00</code>  </td><td class="c-table__cell">Probabilistic  </td><td class="c-table__cell">37  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>01</code>  </td><td class="c-table__cell">Random  </td><td class="c-table__cell">21  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>10</code>  </td><td class="c-table__cell">Hashed Email  </td><td class="c-table__cell">37  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>11</code>  </td><td class="c-table__cell">Reserved  </td><td class="c-table__cell">n/a  </td></tr>
+</table>
+<p>Identifiers issued before the type tag existed have bits 6-7 zeroed and decode as Probabilistic.</p>
 <h2 class="doxsection" id="autotoc_md51did-readers">51Did readers<a class="headerlink" href="#autotoc_md51did-readers" aria-label="Permalink to this section">🔗</a></h2>
 <p>A 51Did is a binary OWID envelope wrapping a 51Degrees payload (see <em>Terminology</em> above for the wrapper-vs-value distinction). Unpacking the payload, comparing two 51Dids, or verifying the signature in your own code needs a reader that understands both layers. 51Degrees publishes a reader per platform; pick whichever matches your stack.</p>
 <table class="c-table">
@@ -179,6 +248,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <li><b>Local verification using the published public key.</b> Fetch 51Degrees' public ECDSA P-256 key once, cache it, and verify in-process for every received identifier. No metering. Each platform reader (see <em>51Did readers</em> above) exposes an in-process verify method that takes the public key PEM and returns a boolean. The .NET reader's method is the inherited <code>Owid.VerifyAsync</code>.</li>
 </ol>
 <p>In both cases, validation only confirms the identifier was created by 51Degrees and has not been tampered with. It does not certify that the device + IP + usage inputs were truthful: that trust lives in the operational contract with the issuing 51Degrees cloud, not in the signature.</p>
+<h3 class="doxsection" id="fetching-the-public-key-for-local-verification">Fetching the public key for local verification<a class="headerlink" href="#fetching-the-public-key-for-local-verification" aria-label="Permalink to this section">🔗</a></h3>
+<p>Local verification (option 2 above) fetches the key from the OWID creator endpoint, <code>GET /owid/api/v3/creator</code>. The response carries the current signing key in <code>publicKeySPKI</code> (PEM).</p>
+<p>The signing key rotates weekly, so a 51Did issued before the latest rotation was signed with an older key. To fetch the key that was current when a 51Did was created, pass its date: <code>GET /owid/api/v3/creator?date=&lt;minutes&gt;</code>. The <code>date</code> is the same value the OWID envelope carries in its Date field, minutes since <code>2020-01-01T00:00:00Z</code> (see the <a href="https://github.com/SWAN-community/owid/blob/main/explainer.md">OWID explainer</a>, "Data Structure" section). The endpoint returns the signing key with the latest creation time on or before <code>date</code>; if <code>date</code> predates every known key it returns <code>404</code>, and a <code>date</code> that is not an unsigned 32-bit integer returns <code>400</code>.</p>
+<h3 class="doxsection" id="fetching-every-public-key-at-once">Fetching every public key at once<a class="headerlink" href="#fetching-every-public-key-at-once" aria-label="Permalink to this section">🔗</a></h3>
+<p>The <code>/creator</code> endpoint above returns one key per request. A verifier that wants the whole set of signing keys can pull them from the 51Did key endpoint:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">GET https://cloud.51degrees.com/api/v4/id/key?resource=&lt;RESOURCE_KEY&gt;</div>
+</div><!-- fragment --><p>The response is a JSON array, one entry per signing key:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">[</div>
+<div class="c-code__line">  { &quot;created&quot;: &quot;2026-03-08T00:00:00.0000000Z&quot;, &quot;publicKey&quot;: &quot;-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----&quot; }</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment --><p>To fetch only the keys created since you last pulled, add an ISO 8601 UTC timestamp: <code>GET .../api/v4/id/key/datetime/2026-03-08T00:00:00Z?resource=&lt;RESOURCE_KEY&gt;</code>. The response then holds only keys created on or after that timestamp. This endpoint takes an ISO 8601 timestamp, not the minutes-since-2020 value that <code>/creator?date=</code> uses. Unlike <code>/creator</code>, it needs a Resource Key and is metered.</p>
 <h2 class="doxsection" id="use-cases-2">Use cases<a class="headerlink" href="#use-cases-2" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li><b>Marketing</b> - PMP captures the user's preference and feeds it as <code>id.usage</code>; the 51Did is consumed by Prebid / RTB enrichment. See <a class="el" href="_identifiers__p_m_p.html" title="PMP (Preference Management Platform)">PMP (Preference Management Platform)</a> and <a class="el" href="_integrations__prebid.html" title="Prebid">Prebid</a>.</li>
