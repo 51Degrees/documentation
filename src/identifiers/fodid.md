@@ -216,8 +216,10 @@ Because the check compares the identifier against the browser making the call, *
 There are three endpoints on the V4 cloud:
 
 - `GET`/`POST` `/api/v4/id/verify` returns `{ "valid": <bool> }`, the signature result only (unchanged).
-- `GET`/`POST` `/api/v4/id/verify-context` returns `{ "context": "verified" | "invalid" | "absent" | "indeterminate" }`, the context result only.
-- `GET`/`POST` `/api/v4/id/verify-full` returns both results, plus the `valid` boolean for callers that already read it: `{ "signature": "verified" | "invalid", "context": "…", "valid": <bool> }`.
+- `GET`/`POST` `/api/v4/id/verify-context` returns `{ "context": "verified" | "invalid" | "absent" | "indeterminate", "factors": { … } }`, the context result only.
+- `GET`/`POST` `/api/v4/id/verify-full` returns both results, plus the `valid` boolean for callers that already read it: `{ "signature": "verified" | "invalid", "context": "…", "factors": { … }, "valid": <bool> }`.
+
+All three require a Resource Key and are metered against it: a call with no Resource Key returns `401`, and one whose Resource Key lacks the entitlement returns `403`. A `license` parameter may add entitlement but is not an alternative to the Resource Key.
 
 The `context` result values:
 
@@ -228,13 +230,15 @@ The `context` result values:
 | `absent` | The 51Did carries no context to check, for example one created before the capability was enabled, or where the context could not be captured. |
 | `indeterminate` | The service could not evaluate the context; retry later. |
 
+An `invalid` or `indeterminate` result is accompanied by a `factors` object, a diagnostic breakdown across three independent factors named `transport`, `device` and `network`, each `verified`, `mismatch`, `unavailable` or `absent`. It is there to help you locate an integration problem (for example a call made from a server rather than the presenting browser shows `transport` and `device` as `mismatch`, the server having its own connection and device); treat the top-level `context` value as the result. The `factors` block is identical on the verify-context and verify-full endpoints.
+
 Read together with the signature, the three meaningful states are:
 
 | `signature` | `context` | Meaning |
 |-------------|-----------|---------|
 | `verified` | `verified` | Authentic identifier presented from its creation context. |
 | `verified` | `invalid` | Authentic identifier presented from a different context. A replay indicator (also what a legitimate backend caller verifying out of context sees, and the caller knows which situation it is in). |
-| `invalid` | `verified` | The envelope was tampered with or corrupted, but the presenter is on the device the identifier was created on. |
+| `invalid` | `verified` | The envelope's other fields were tampered with or corrupted, but the presenter is on the device the identifier was created on. Tampering the context data itself cannot forge this state: altering it breaks the context check, so a `verified` context is trustworthy even when the signature is not. |
 
 Local public-key verification (option 2 above) covers the signature only. The device-context check exists nowhere but the 51Degrees service, and is available self-hosted through the bespoke Docker solution for identifiers that deployment creates.
 
