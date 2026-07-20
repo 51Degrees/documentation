@@ -207,6 +207,43 @@ A 51Did recipient can optionally verify the signature before trusting the identi
 
 In both cases, validation only confirms the identifier was created by 51Degrees and has not been tampered with. It does not certify that the device + IP + usage inputs were truthful: that trust lives in the operational contract with the issuing 51Degrees cloud, not in the signature.
 
+### Verifying the creator context
+
+Signature verification (above) confirms an identifier is an authentic 51Degrees 51Did. A separate check, **creator context** verification (context for short), confirms the 51Did is being verified and used on the same device it was created on. The creator context is what the 51Degrees cloud, as the OWID creator, recorded about the device when it issued the identifier. It is evaluated entirely within the 51Degrees cloud service and is metered against the Resource Key.
+
+Because the check compares the identifier against the browser making the call, **it must be called from the browser presenting the identifier**. A server-side call reports the context as `invalid`, because the service evaluates the presenting connection. This is the most common integration mistake to avoid.
+
+There are three endpoints on the V4 cloud:
+
+- `GET`/`POST` `/api/v4/id/verify` returns `{ "valid": <bool> }`, the signature result only (unchanged).
+- `GET`/`POST` `/api/v4/id/verify-context` returns `{ "context": "verified" | "invalid" | "absent" | "indeterminate", "factors": { … } }`, the context result only.
+- `GET`/`POST` `/api/v4/id/verify-full` returns both results, plus the `valid` boolean for callers that already read it: `{ "signature": "verified" | "invalid", "context": "…", "factors": { … }, "valid": <bool> }`.
+
+All three require a Resource Key and are metered against it: a call with no Resource Key returns `401`, and one whose Resource Key lacks the entitlement returns `403`. A `license` parameter may add entitlement but is not an alternative to the Resource Key.
+
+The `context` result values:
+
+| Value | Meaning |
+|-------|---------|
+| `verified` | The 51Did is being verified from the same device it was created on. |
+| `invalid` | The 51Did is being verified from a different device or network. |
+| `absent` | The 51Did carries no context to check, for example one created before the capability was enabled, or where the context could not be captured. |
+| `indeterminate` | The service could not evaluate the context; retry later. |
+
+An `invalid` or `indeterminate` result is accompanied by a `factors` object, a diagnostic breakdown across three independent factors named `transport`, `device` and `network`, each `verified`, `mismatch`, `unavailable` or `absent`. It is there to help you locate an integration problem (for example a call made from a server rather than the presenting browser shows `transport` and `device` as `mismatch`, the server having its own connection and device); treat the top-level `context` value as the result. The `factors` block is identical on the verify-context and verify-full endpoints.
+
+Read together with the signature, the three meaningful states are:
+
+| `signature` | `context` | Meaning |
+|-------------|-----------|---------|
+| `verified` | `verified` | Authentic identifier presented from its creation context. |
+| `verified` | `invalid` | Authentic identifier presented from a different context. A replay indicator (also what a legitimate backend caller verifying out of context sees, and the caller knows which situation it is in). |
+| `invalid` | `verified` | The envelope's other fields were tampered with or corrupted, but the presenter is on the device the identifier was created on. Tampering the context data itself cannot forge this state: altering it breaks the context check, so a `verified` context is trustworthy even when the signature is not. |
+
+Local public-key verification (option 2 above) covers the signature only. The device-context check exists nowhere but the 51Degrees service, and is available self-hosted through the bespoke Docker solution for identifiers that deployment creates.
+
+A long-lived identifier that still verifies from its creation context is the strongest signal of a stable, real user, and age cannot be manufactured. This makes context verification well suited to a render-time check: place the 51Did from a bid request into the creative, verify it from the rendering browser, and a `context` of `invalid` means the paid impression rendered somewhere other than the browser the bid described. The call must come from the rendering browser and reads the JSON response cross-origin, so use a `fetch` (a plain script or pixel cannot read the body), then beacon the result to your own endpoint.
+
 ### Fetching the public key for local verification
 
 Local verification (option 2 above) fetches the key from the OWID creator endpoint, `GET /owid/api/v3/creator`. The response carries the current signing key in `publicKeySPKI` (PEM).
