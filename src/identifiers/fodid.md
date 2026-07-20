@@ -207,9 +207,9 @@ A 51Did recipient can optionally verify the signature before trusting the identi
 
 In both cases, validation only confirms the identifier was created by 51Degrees and has not been tampered with. It does not certify that the device + IP + usage inputs were truthful: that trust lives in the operational contract with the issuing 51Degrees cloud, not in the signature.
 
-### Verifying the device context
+### Verifying the creator context
 
-Signature verification (above) confirms an identifier is an authentic 51Degrees 51Did. A separate check, **context verification**, confirms the 51Did is being verified and used on the same device it was created on. It is evaluated entirely within the 51Degrees cloud service and is metered against the Resource Key.
+Signature verification (above) confirms an identifier is an authentic 51Degrees 51Did. A separate check, **creator context** verification (context for short), confirms the 51Did is being verified and used on the same device it was created on. The creator context is what the 51Degrees cloud, as the OWID creator, recorded about the device when it issued the identifier. It is evaluated entirely within the 51Degrees cloud service and is metered against the Resource Key.
 
 Because the check compares the identifier against the browser making the call, **it must be called from the browser presenting the identifier**. A server-side call reports the context as `invalid`, because the service evaluates the presenting connection. This is the most common integration mistake to avoid.
 
