@@ -142,6 +142,8 @@ var interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data =
     [ "getIsSmartWatch", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#abd228cb32f2f47bcd5f4ece44f5249ca", null ],
     [ "getIsTablet", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a1f361b85a3a3ed4b87924cf115667768", null ],
     [ "getIsTv", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a2130afaa56117a35c76bbb9a127e0053", null ],
+    [ "getIsVerifiediPhone", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ad8a4a105edec9c9dd28f2e4b36b7e4eb", null ],
+    [ "getIsVerifiediPhoneJavaScript", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ab7c2e0f3f286e2bbb23bd86475ef5636", null ],
     [ "getIsWebApp", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a3ef06cfc3855b06c996194f5a841a521", null ],
     [ "getIterations", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a6c7bb4590f2519b8a3d855dc6a5eeada", null ],
     [ "getJavascript", "interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a195ec522cd641f6814a3a46a52f967cc", null ],

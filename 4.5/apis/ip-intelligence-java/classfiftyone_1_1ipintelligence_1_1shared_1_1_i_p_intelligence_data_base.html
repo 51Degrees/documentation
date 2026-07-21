@@ -94,7 +94,7 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a7f0853d5216d0650862717808fbaeb2e" id="r_a7f0853d5216d0650862717808fbaeb2e"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a7f0853d5216d0650862717808fbaeb2e">getConnectionType</a> ()</td></tr>
 <tr class="c-table__row memdesc:a7f0853d5216d0650862717808fbaeb2e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Indicates the type of connection being used.  <br /></td></tr>
 <tr class="c-table__row memitem:a2a2881c0b6eaf2ad27461c2f8efc294f" id="r_a2a2881c0b6eaf2ad27461c2f8efc294f"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a2a2881c0b6eaf2ad27461c2f8efc294f">getContinentCode2</a> ()</td></tr>
-<tr class="c-table__row memdesc:a2a2881c0b6eaf2ad27461c2f8efc294f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The 3-character ISO 3166-1 continent code for the supplied location.  <br /></td></tr>
+<tr class="c-table__row memdesc:a2a2881c0b6eaf2ad27461c2f8efc294f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The 2-character ISO 3166-1 continent code for the supplied location.  <br /></td></tr>
 <tr class="c-table__row memitem:ab1ef42ae96e48529194487300c383dd6" id="r_ab1ef42ae96e48529194487300c383dd6"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ab1ef42ae96e48529194487300c383dd6">getContinentName</a> ()</td></tr>
 <tr class="c-table__row memdesc:ab1ef42ae96e48529194487300c383dd6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name of the continent the supplied location is in.  <br /></td></tr>
 <tr class="c-table__row memitem:a373bf93519943041cc249bb2ccab7656" id="r_a373bf93519943041cc249bb2ccab7656"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a373bf93519943041cc249bb2ccab7656">getCountry</a> ()</td></tr>
@@ -442,7 +442,7 @@ Protected Member Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>The 3-character ISO 3166-1 continent code for the supplied location. </p>
+<p>The 2-character ISO 3166-1 continent code for the supplied location. </p>
 
 <p>Implements <a class="el" href="interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data.html#ac43a15a96a913a4af24835585f952a04">fiftyone.ipintelligence.shared.IPIntelligenceData</a>.</p>
 
@@ -1483,6 +1483,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The offset from UTC in minutes in the supplied location, at the time that the value is produced. </p>
+<p>A value of -1 indicates unknown. </p>
 
 <p>Implements <a class="el" href="interfacefiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data.html#ab389ffcaf47d32940c84795fa55fdfc9">fiftyone.ipintelligence.shared.IPIntelligenceData</a>.</p>
 

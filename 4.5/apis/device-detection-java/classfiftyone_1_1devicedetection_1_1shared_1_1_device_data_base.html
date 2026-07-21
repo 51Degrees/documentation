@@ -363,6 +363,10 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a0d9328fb105d1637926dd3703b410ba1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Indicates if the device is primarily marketed as a tablet or phablet and has a screen size equal to or greater than 7 inches.  <br /></td></tr>
 <tr class="c-table__row memitem:ad32a455c738cb26eaf26ba292ab17f8b" id="r_ad32a455c738cb26eaf26ba292ab17f8b"><td class="c-table__cell">AspectPropertyValue&lt;&#160;Boolean&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ad32a455c738cb26eaf26ba292ab17f8b">getIsTv</a> ()</td></tr>
 <tr class="c-table__row memdesc:ad32a455c738cb26eaf26ba292ab17f8b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Indicates if the device is a TV running on a smart operating system e.g.  <br /></td></tr>
+<tr class="c-table__row memitem:a2083bee9e73c9c08fc1f6ffd0d91f1f2" id="r_a2083bee9e73c9c08fc1f6ffd0d91f1f2"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a2083bee9e73c9c08fc1f6ffd0d91f1f2">getIsVerifiediPhone</a> ()</td></tr>
+<tr class="c-table__row memdesc:a2083bee9e73c9c08fc1f6ffd0d91f1f2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Indicates whether the device is likely to be a genuine iPhone based on interrogation by JavaScript contained in the JavaScriptHardwareProfile property.  <br /></td></tr>
+<tr class="c-table__row memitem:ad6c8eddd93fe041796038628f82f18ce" id="r_ad6c8eddd93fe041796038628f82f18ce"><td class="c-table__cell">AspectPropertyValue&lt;&#160;JavaScript&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ad6c8eddd93fe041796038628f82f18ce">getIsVerifiediPhoneJavaScript</a> ()</td></tr>
+<tr class="c-table__row memdesc:ad6c8eddd93fe041796038628f82f18ce"><td class="c-table__cell">&#160;</td><td class="c-table__cell">JavaScript which overrides the IsVerifiediPhone property to report whether an iPhone is genuine.  <br /></td></tr>
 <tr class="c-table__row memitem:a1db1c6bfc1e6844ea340acd2b56415ba" id="r_a1db1c6bfc1e6844ea340acd2b56415ba"><td class="c-table__cell">AspectPropertyValue&lt;&#160;Boolean&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a1db1c6bfc1e6844ea340acd2b56415ba">getIsWebApp</a> ()</td></tr>
 <tr class="c-table__row memdesc:a1db1c6bfc1e6844ea340acd2b56415ba"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Indicates if the browser or app is being used to access a web page through a WebView.  <br /></td></tr>
 <tr class="c-table__row memitem:a166a220a3a0ab8ec778bcbd866b809f6" id="r_a166a220a3a0ab8ec778bcbd866b809f6"><td class="c-table__cell">AspectPropertyValue&lt;&#160;Integer&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a166a220a3a0ab8ec778bcbd866b809f6">getIterations</a> ()</td></tr>
@@ -4321,6 +4325,57 @@ Protected Member Functions</h2></td></tr>
 <p>Android. </p>
 
 <p>Implements <a class="el" href="interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#a2130afaa56117a35c76bbb9a127e0053">fiftyone.devicedetection.shared.DeviceData</a>.</p>
+
+</div>
+</div>
+<a id="a2083bee9e73c9c08fc1f6ffd0d91f1f2" name="a2083bee9e73c9c08fc1f6ffd0d91f1f2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2083bee9e73c9c08fc1f6ffd0d91f1f2">&#9670;&#160;</a></span>getIsVerifiediPhone()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">AspectPropertyValue&lt; String &gt; fiftyone.devicedetection.shared.DeviceDataBase.getIsVerifiediPhone </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Indicates whether the device is likely to be a genuine iPhone based on interrogation by JavaScript contained in the JavaScriptHardwareProfile property. </p>
+
+<p>Implements <a class="el" href="interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ad8a4a105edec9c9dd28f2e4b36b7e4eb">fiftyone.devicedetection.shared.DeviceData</a>.</p>
+
+</div>
+</div>
+<a id="ad6c8eddd93fe041796038628f82f18ce" name="ad6c8eddd93fe041796038628f82f18ce"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad6c8eddd93fe041796038628f82f18ce">&#9670;&#160;</a></span>getIsVerifiediPhoneJavaScript()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">AspectPropertyValue&lt; JavaScript &gt; fiftyone.devicedetection.shared.DeviceDataBase.getIsVerifiediPhoneJavaScript </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>JavaScript which overrides the IsVerifiediPhone property to report whether an iPhone is genuine. </p>
+<p>This is only used where the device is presenting as an iPhone with the evidence provided. Requires JavascriptHardwareProfile property. </p>
+
+<p>Implements <a class="el" href="interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#ab7c2e0f3f286e2bbb23bd86475ef5636">fiftyone.devicedetection.shared.DeviceData</a>.</p>
 
 </div>
 </div>

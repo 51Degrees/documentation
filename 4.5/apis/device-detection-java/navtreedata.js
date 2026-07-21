@@ -40,8 +40,8 @@ var NAVTREEINDEX =
 [
 "/documentation/4.5/index.html",
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a0ba5d58b5f3da344aec292e043e12a9d",
-"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#af691d86d3a0e600afbee5baaf5eca1bd",
-"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#aa81fbf38fa7995bb8557df72d521a915"
+"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#af568f8793355e99bd9fee3a6f1017637",
+"interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html#aa74db2c54fe22cadd434d1ed5d4349b0"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';
