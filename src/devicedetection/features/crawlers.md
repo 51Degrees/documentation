@@ -15,7 +15,7 @@ Control what your content can be used for by checking the `CrawlerUsage` propert
 
 - **Input** Indicates that the crawler is used to collect content for input into AI models, including retrieval-augmented generation, grounding, or other use of the content to produce generative AI responses or search summaries.
 
-- **Search** Indicates that the crawler is used to build search indexes or search results.
+- **Search** Indicates that the crawler is used to build search indexes and provide search results. Search does not include the AI uses covered by the Index and Input categories.
 
 - **Monitor** Indicates that the crawler is used for monitoring websites. This crawling primarily involves regular visits to selected web pages to validate that they respond as expected.
 
