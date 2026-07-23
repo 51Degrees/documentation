@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fifty_on
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_framework-_web_2_default_8aspx_8cs-example.html#_a0">OnPremise/Framework-Web/Default.aspx.cs</a>.</dd>
+<div class="textblock"><dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_framework-_web_2_default_8aspx_8cs-example.html#_a0">OnPremise/Framework-Web/Default.aspx.cs</a>, <a class="el" href="_on_premise_2_performance_multi_property-_console_2_program_8cs-example.html#_a2">OnPremise/PerformanceMultiProperty-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_performance_sweep-_console_2_program_8cs-example.html#_a2">OnPremise/PerformanceSweep-Console/Program.cs</a>.</dd>
 </dl>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -98,6 +98,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ad66ea95cdc39a6a151204c5e9b4c1fa5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the resource key from the environment.  <br /></td></tr>
 <tr class="c-table__row memitem:a32d6375bde2f3c7e955e7b5369cc14cb" id="r_a32d6375bde2f3c7e955e7b5369cc14cb"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a32d6375bde2f3c7e955e7b5369cc14cb">GetResourceKeyFromEnv</a> (Action&lt; string &gt; setValue)</td></tr>
 <tr class="c-table__row memdesc:a32d6375bde2f3c7e955e7b5369cc14cb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the resource key from the environment and run the action with the value, or an empty string if no resource key is set.  <br /></td></tr>
+<tr class="c-table__row memitem:aac81c1564fe514dd0cfaefd3ae7b00a0" id="r_aac81c1564fe514dd0cfaefd3ae7b00a0"><td class="c-table__cell">static&#160;List&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#aac81c1564fe514dd0cfaefd3ae7b00a0">DiscoverReadableScalarProperties</a> (IPipeline pipeline, Dictionary&lt; string, object &gt; sampleEvidence)</td></tr>
+<tr class="c-table__row memdesc:aac81c1564fe514dd0cfaefd3ae7b00a0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The scalar, non-metric 'device' properties that actually resolve against the loaded data file (Lite exposes far fewer than Enterprise).  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -201,6 +203,44 @@ static&#160;readonly&#160;List&lt;&#160;Dictionary&lt;&#160;string,&#160;object&
 
 </div>
 </div>
+<a id="aac81c1564fe514dd0cfaefd3ae7b00a0" name="aac81c1564fe514dd0cfaefd3ae7b00a0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aac81c1564fe514dd0cfaefd3ae7b00a0">&#9670;&#160;</a></span>DiscoverReadableScalarProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">List&lt; string &gt; FiftyOne.DeviceDetection.Examples.ExampleUtils.DiscoverReadableScalarProperties </td>
+          <td>(</td>
+          <td class="c-table__cell">IPipeline</td>          <td class="c-table__cell"><span class="paramname"><em>pipeline</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">Dictionary&lt; string, object &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>sampleEvidence</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The scalar, non-metric 'device' properties that actually resolve against the loaded data file (Lite exposes far fewer than Enterprise). </p>
+<p>Shared by the property-read performance examples so they measure the same set. </p>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_performance_multi_property-_console_2_program_8cs-example.html#a3">OnPremise/PerformanceMultiProperty-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_performance_sweep-_console_2_program_8cs-example.html#a3">OnPremise/PerformanceSweep-Console/Program.cs</a>.</dd>
+</dl>
+
+</div>
+</div>
 <a id="a98700d42bb8cbda8f7481a01b86c8996" name="a98700d42bb8cbda8f7481a01b86c8996"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a98700d42bb8cbda8f7481a01b86c8996">&#9670;&#160;</a></span>FindDataFile()</h2>
 
@@ -242,7 +282,7 @@ static&#160;readonly&#160;List&lt;&#160;Dictionary&lt;&#160;string,&#160;object&
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The path to the data file, or null if no file could be found. </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_framework-_web_2_default_8aspx_8cs-example.html#a1">OnPremise/Framework-Web/Default.aspx.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_framework-_web_2_default_8aspx_8cs-example.html#a1">OnPremise/Framework-Web/Default.aspx.cs</a>, <a class="el" href="_on_premise_2_performance_multi_property-_console_2_program_8cs-example.html#a5">OnPremise/PerformanceMultiProperty-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_performance_sweep-_console_2_program_8cs-example.html#a5">OnPremise/PerformanceSweep-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -288,6 +328,8 @@ static&#160;readonly&#160;List&lt;&#160;Dictionary&lt;&#160;string,&#160;object&
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_performance_multi_property-_console_2_program_8cs-example.html#a8">OnPremise/PerformanceMultiProperty-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_performance_sweep-_console_2_program_8cs-example.html#a8">OnPremise/PerformanceSweep-Console/Program.cs</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -646,6 +688,8 @@ static&#160;readonly&#160;List&lt;&#160;Dictionary&lt;&#160;string,&#160;object&
     <tr><td class="paramname">ArgumentException</td><td>If an invalid argument is passed. </td></tr>
   </table>
   </dd>
+</dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_performance_multi_property-_console_2_program_8cs-example.html#a4">OnPremise/PerformanceMultiProperty-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_performance_sweep-_console_2_program_8cs-example.html#a4">OnPremise/PerformanceSweep-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>

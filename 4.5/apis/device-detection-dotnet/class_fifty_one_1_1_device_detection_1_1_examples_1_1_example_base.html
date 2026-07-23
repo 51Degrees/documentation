@@ -66,12 +66,20 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fifty_on
 <h1 class="g-docs__page-title">FiftyOne.DeviceDetection.Examples.ExampleBase Class Reference</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<h2 class="g-docs__section-heading">
+<a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
+<div class="textblock"><dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_performance_multi_property-_console_2_program_8cs-example.html#_a0">OnPremise/PerformanceMultiProperty-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_performance_sweep-_console_2_program_8cs-example.html#_a0">OnPremise/PerformanceSweep-Console/Program.cs</a>.</dd>
+</dl>
+</div><h2 class="g-docs__section-heading">
 Inheritance diagram for FiftyOne.DeviceDetection.Examples.ExampleBase:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_base__inherit__graph.svg" width="542" height="538"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_base__inherit__graph.svg" width="542" height="695"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:af675239f1298a3562c01476d5368b580" id="r_af675239f1298a3562c01476d5368b580"><td class="c-table__cell">static&#160;List&lt;&#160;Dictionary&lt;&#160;string,&#160;object&#160;&gt;&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#af675239f1298a3562c01476d5368b580">ReadEvidence</a> (string evidenceFilePath, ILogger logger=null)</td></tr>
+<tr class="c-table__row memdesc:af675239f1298a3562c01476d5368b580"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read a YAML evidence file into a materialised list.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-static-methods" class="g-docs__section-heading"><a id="pro-static-methods" name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a71546d7d8621ca7a562b1d0a101cbd64" id="r_a71546d7d8621ca7a562b1d0a101cbd64"><td class="c-table__cell">static&#160;IEnumerable&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a71546d7d8621ca7a562b1d0a101cbd64">GetUserAgents</a> (string userAgentsFile, int count)</td></tr>
@@ -222,6 +230,44 @@ static&#160;void&#160;</td><td class="c-table__cell"><b>OutputException</b> (Exc
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">User-Agents that are effectively unique</dd></dl>
+
+</div>
+</div>
+<a id="af675239f1298a3562c01476d5368b580" name="af675239f1298a3562c01476d5368b580"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af675239f1298a3562c01476d5368b580">&#9670;&#160;</a></span>ReadEvidence()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">List&lt; Dictionary&lt; string, object &gt; &gt; FiftyOne.DeviceDetection.Examples.ExampleBase.ReadEvidence </td>
+          <td>(</td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>evidenceFilePath</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">ILogger</td>          <td class="c-table__cell"><span class="paramname"><em>logger</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Read a YAML evidence file into a materialised list. </p>
+<p>Exposed so the performance examples can load evidence without each re-declaring a wrapper around the protected GetEvidence reader. </p>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_performance_multi_property-_console_2_program_8cs-example.html#a1">OnPremise/PerformanceMultiProperty-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_performance_sweep-_console_2_program_8cs-example.html#a1">OnPremise/PerformanceSweep-Console/Program.cs</a>.</dd>
+</dl>
 
 </div>
 </div>

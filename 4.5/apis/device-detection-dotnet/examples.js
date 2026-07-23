@@ -17,5 +17,7 @@ var examples =
     [ "OnPremise/Metadata-Console/Program.cs", "_on_premise_2_metadata-_console_2_program_8cs-example.html", null ],
     [ "OnPremise/OfflineProcessing-Console/Program.cs", "_on_premise_2_offline_processing-_console_2_program_8cs-example.html", null ],
     [ "OnPremise/Performance-Console/Program.cs", "_on_premise_2_performance-_console_2_program_8cs-example.html", null ],
+    [ "OnPremise/PerformanceMultiProperty-Console/Program.cs", "_on_premise_2_performance_multi_property-_console_2_program_8cs-example.html", null ],
+    [ "OnPremise/PerformanceSweep-Console/Program.cs", "_on_premise_2_performance_sweep-_console_2_program_8cs-example.html", null ],
     [ "OnPremise/UpdateDataFile-Console/Program.cs", "_on_premise_2_update_data_file-_console_2_program_8cs-example.html", null ]
 ];

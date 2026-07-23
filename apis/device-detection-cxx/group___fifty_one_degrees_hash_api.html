@@ -1033,6 +1033,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Processes the evidence value pairs in the evidence collection and populates the result in the results structure. </p>
+<p>The result shape is a deterministic function of the data set, not of how many evidence pairs are supplied. One result item is produced per available component (results-&gt;count == componentsAvailableCount when every available component resolves from the evidence, as it does for a User-Agent). Adding a redundant, lower-precedence pair that resolves to the same value (for example both 'query.user-agent' and 'header.user-agent') therefore does not change the number or layout of result items. This is the single detection entry point; ResultsHashFromUserAgent is a thin wrapper over it.</p>
 <p>The 'query' and 'cookie' evidence key prefixes are used to get values which dynamically override values returned from device detection. 'query' prefixes are also used in preference to 'header' for HTTP header values that are provided by the application rather than the calling device. 'query.51D_deviceId' special evidence key has the highest priority and allows to retrieve the designated device by its 'deviceId'. 'deviceId' value is obtained as a property in the device detection results and may be stored and used later to retrieve the same device. In case provided 'query.51D_deviceId' value is invalid or does not match any device the other provided evidence will be considered. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>preallocated results structure to populate containing a pointer to an initialised resource manager </td></tr>
@@ -1078,7 +1079,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Process a single User-Agent and populate the device offsets in the results structure. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>This is a thin convenience wrapper: the User-Agent is wrapped in a single 'header.user-agent' evidence pair and passed to <a class="el" href="#gaa9985d6e6d57f8fda8781ff7d3da5717" title="Processes the evidence value pairs in the evidence collection and populates the result in the results...">fiftyoneDegreesResultsHashFromEvidence</a>, so the result shape is identical to processing the same User-Agent as evidence (one item per available component, not a single coalesced item). The userAgent string must remain valid for the lifetime of the results, as it is referenced, not copied. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>preallocated results structure to populate </td></tr>
     <tr><td class="paramname">userAgent</td><td>string to process </td></tr>

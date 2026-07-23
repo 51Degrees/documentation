@@ -102,6 +102,12 @@ var annotated =
               [ "PerformanceConfiguration", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_performance_1_1_performance_configuration.html", null ],
               [ "Program", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_performance_1_1_program.html", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_performance_1_1_program" ]
             ] ],
+            [ "PerformanceMultiProperty", "namespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_performance_multi_property.html", [
+              [ "Program", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_performance_multi_property_1_1_program.html", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_performance_multi_property_1_1_program" ]
+            ] ],
+            [ "PerformanceSweep", "namespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_performance_sweep.html", [
+              [ "Program", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_performance_sweep_1_1_program.html", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_performance_sweep_1_1_program" ]
+            ] ],
             [ "UpdateDataFile", "namespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file.html", [
               [ "CompletionListener", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_completion_listener.html", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_completion_listener" ],
               [ "Program", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program.html", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program" ]

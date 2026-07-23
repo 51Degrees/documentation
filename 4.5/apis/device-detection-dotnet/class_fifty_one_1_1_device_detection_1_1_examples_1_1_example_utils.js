@@ -2,6 +2,7 @@ var class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils =
 [
     [ "CheckDataFile", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a5c18341ab0d1a3cf155b5c73ef744895", null ],
     [ "CheckDataFile", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a49f2746fef6e7cc7d8c9f1f3be367ead", null ],
+    [ "DiscoverReadableScalarProperties", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#aac81c1564fe514dd0cfaefd3ae7b00a0", null ],
     [ "FindDataFile", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a98700d42bb8cbda8f7481a01b86c8996", null ],
     [ "FindFile", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a54667c0d9989760b8cd9dcaac814c938", null ],
     [ "GetDataFileInfo", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a3b8785c7519e536acc53f0dbb4e0735a", null ],
