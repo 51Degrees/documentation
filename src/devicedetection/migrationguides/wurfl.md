@@ -6,6 +6,8 @@ Here you'll find a list of ScientiaMobile's WURFL properties and values and the 
 
 Details of all available WURFL Capabilities can be found on ScientiaMobile's website, whilst the [51Degrees property dictionary](https://51degrees.com/developers/property-dictionary) contains details of all our properties and their possible values.
 
+To see how these equivalencies look in code, take a look at the [WURFL comparison implementation](https://github.com/51Degrees/device-detection-java-examples/blob/main/console/src/main/java/fiftyone/devicedetection/examples/console/comparison/DetectionImplScientiaMobile.java) in our Java examples repository, which maps WURFL capabilities onto their 51Degrees counterparts. It is a skeleton: the WURFL calls are commented out and untested, so you will need to uncomment them and add the WURFL dependencies to run it. Once working, register it in [`Comparer`](https://github.com/51Degrees/device-detection-java-examples/blob/main/console/src/main/java/fiftyone/devicedetection/examples/console/comparison/Comparer.java) to benchmark both providers side by side. Note that the comparison measures detection time rather than displaying capability values.
+
 # Obsolete WURFL capabilities
 
 WURFL was designed in 2001 when the web and mobile were very different to now. As such, the majority of the capabilities WURFL contains have not proven relevant to businesses who've migrated to 51Degrees. 
