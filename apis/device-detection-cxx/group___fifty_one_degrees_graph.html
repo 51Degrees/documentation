@@ -110,10 +110,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <div class="ttc" id="astructfiftyone_degrees_collection_html"><div class="ttname"><a href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a></div><div class="ttdoc">All the shared methods and fields required by file, memory and cached collections.</div><div class="ttdef"><b>Definition</b> collection.h:402</div></div>
 <div class="ttc" id="astructfiftyone_degrees_collection_item_html"><div class="ttname"><a href="structfiftyone_degrees_collection_item.html">fiftyoneDegreesCollectionItem</a></div><div class="ttdoc">Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish...</div><div class="ttdef"><b>Definition</b> collection.h:309</div></div>
 <div class="ttc" id="astructfiftyone_degrees_exception_html"><div class="ttname"><a href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a></div><div class="ttdoc">Structure used to represent a 51Degrees exception and passed into methods that might generate excepti...</div><div class="ttdef"><b>Definition</b> exceptions.h:111</div></div>
-<div class="ttc" id="astructfiftyone_degrees_graph_node_hash_html"><div class="ttname"><a href="structfiftyone_degrees_graph_node_hash.html">fiftyoneDegreesGraphNodeHash</a></div><div class="ttdoc">Hash record structure to compare to a substring hash.</div><div class="ttdef"><b>Definition</b> graph.h:128</div></div>
-<div class="ttc" id="astructfiftyone_degrees_graph_node_hash_html_a13425677c6d59f484bd94fb3cb72e386"><div class="ttname"><a href="structfiftyone_degrees_graph_node_hash.html#a13425677c6d59f484bd94fb3cb72e386">fiftyoneDegreesGraphNodeHash::nodeOffset</a></div><div class="ttdeci">int32_t nodeOffset</div><div class="ttdoc">Offset of the node to use if this hash code is a match.</div><div class="ttdef"><b>Definition</b> graph.h:130</div></div>
-<div class="ttc" id="astructfiftyone_degrees_graph_node_html"><div class="ttname"><a href="structfiftyone_degrees_graph_node.html">fiftyoneDegreesGraphNode</a></div><div class="ttdoc">Graph node structure used to construct the directed acyclic graph to search.</div><div class="ttdef"><b>Definition</b> graph.h:165</div></div>
-<div class="ttc" id="astructfiftyone_degrees_graph_node_html_a49805da57c85cc613bd82beeb457c0b5"><div class="ttname"><a href="structfiftyone_degrees_graph_node.html#a49805da57c85cc613bd82beeb457c0b5">fiftyoneDegreesGraphNode::unmatchedNodeOffset</a></div><div class="ttdeci">int32_t unmatchedNodeOffset</div><div class="ttdoc">Offset of the node to use if there is no matching hash record.</div><div class="ttdef"><b>Definition</b> graph.h:166</div></div>
+<div class="ttc" id="astructfiftyone_degrees_graph_node_hash_html"><div class="ttname"><a href="structfiftyone_degrees_graph_node_hash.html">fiftyoneDegreesGraphNodeHash</a></div><div class="ttdoc">Hash record structure to compare to a substring hash.</div><div class="ttdef"><b>Definition</b> graph.h:143</div></div>
+<div class="ttc" id="astructfiftyone_degrees_graph_node_hash_html_a13425677c6d59f484bd94fb3cb72e386"><div class="ttname"><a href="structfiftyone_degrees_graph_node_hash.html#a13425677c6d59f484bd94fb3cb72e386">fiftyoneDegreesGraphNodeHash::nodeOffset</a></div><div class="ttdeci">int32_t nodeOffset</div><div class="ttdoc">Offset of the node to use if this hash code is a match.</div><div class="ttdef"><b>Definition</b> graph.h:145</div></div>
+<div class="ttc" id="astructfiftyone_degrees_graph_node_html"><div class="ttname"><a href="structfiftyone_degrees_graph_node.html">fiftyoneDegreesGraphNode</a></div><div class="ttdoc">Graph node structure used to construct the directed acyclic graph to search.</div><div class="ttdef"><b>Definition</b> graph.h:180</div></div>
+<div class="ttc" id="astructfiftyone_degrees_graph_node_html_a49805da57c85cc613bd82beeb457c0b5"><div class="ttname"><a href="structfiftyone_degrees_graph_node.html#a49805da57c85cc613bd82beeb457c0b5">fiftyoneDegreesGraphNode::unmatchedNodeOffset</a></div><div class="ttdeci">int32_t unmatchedNodeOffset</div><div class="ttdoc">Offset of the node to use if there is no matching hash record.</div><div class="ttdef"><b>Definition</b> graph.h:181</div></div>
 </div><!-- fragment --><p>A leaf node is indicated by a negative value for the node offset (either in the unmatched node offset, or the matched hash). Instead of an explicit leaf node to terminate the graph, this negative value is used in order to save 4 bytes per node, and whole node per leaf of the graph.</p>
 <p>Once a leaf node is reached, the offset can be negated an used to retrieve whatever type of value the graph was built to store. Usually, this is an offset or index to an element in a collection.</p>
 <p><b>NOTE:</b> By convention, a node offset of zero also indicates a leaf node. This is permitted by ensuring the first node in a collection (the only node with an offset of 0) is a root node i.e. no other nodes will point to it by its offset.</p>
@@ -141,6 +141,11 @@ Structs</h2></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesGraphNode" id="r_fiftyoneDegreesGraphNode"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_graph_node.html">fiftyoneDegreesGraphNode</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Graph node structure used to construct the directed acyclic graph to search.  <a href="structfiftyone_degrees_graph_node.html#details">More...</a><br /></td></tr>
 </table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-define-members" class="g-docs__section-heading"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="c-table__row memitem:gae43395a60ef612048f8b228915f57e07" id="r_gae43395a60ef612048f8b228915f57e07"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gae43395a60ef612048f8b228915f57e07">FIFTYONE_DEGREES_GRAPH_NODE_IS_HASH_TABLE</a>(n)</td></tr>
+<tr class="c-table__row memdesc:gae43395a60ef612048f8b228915f57e07"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Determines whether the hash records of a node are laid out as a usable hash table, i.e.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:gabb138c6039ebdb12e7682626f7feaa89" id="r_gabb138c6039ebdb12e7682626f7feaa89"><td class="c-table__cell">void&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#gabb138c6039ebdb12e7682626f7feaa89">fiftyoneDegreesGraphNodeReadFromFile</a> (const <a class="el" href="structfiftyone_degrees_collection_file.html">fiftyoneDegreesCollectionFile</a> *file, const <a class="el" href="structfiftyone_degrees_collection_key.html">fiftyoneDegreesCollectionKey</a> *key, <a class="el" href="structfiftyone_degrees_data.html">fiftyoneDegreesData</a> *data, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
@@ -152,7 +157,7 @@ Functions</h2></td></tr>
 <tr class="c-table__row memitem:ga9532fe43531b05154b3a1ff1e856b069" id="r_ga9532fe43531b05154b3a1ff1e856b069"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_graph_node_hash.html">fiftyoneDegreesGraphNodeHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga9532fe43531b05154b3a1ff1e856b069">fiftyoneDegreesGraphGetMatchingHashFromListNodeSearch</a> (<a class="el" href="structfiftyone_degrees_graph_node.html">fiftyoneDegreesGraphNode</a> *node, uint32_t hash)</td></tr>
 <tr class="c-table__row memdesc:ga9532fe43531b05154b3a1ff1e856b069"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a matching hash record from a node where the hash records are stored as an ordered list by performing a binary search.  <br /></td></tr>
 <tr class="c-table__row memitem:gaa2bf66312c5d4744750b174777922b93" id="r_gaa2bf66312c5d4744750b174777922b93"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_graph_node_hash.html">fiftyoneDegreesGraphNodeHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#gaa2bf66312c5d4744750b174777922b93">fiftyoneDegreesGraphGetMatchingHashFromListNode</a> (<a class="el" href="structfiftyone_degrees_graph_node.html">fiftyoneDegreesGraphNode</a> *node, uint32_t hash)</td></tr>
-<tr class="c-table__row memdesc:gaa2bf66312c5d4744750b174777922b93"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a matching hash record from a node where the node has multiple hash records.  <br /></td></tr>
+<tr class="c-table__row memdesc:gaa2bf66312c5d4744750b174777922b93"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a matching hash record from a node where the node has multiple hash records, using the layout indicated by the modulo of the node.  <br /></td></tr>
 <tr class="c-table__row memitem:ga829c732db44840acb57b55e6defd2ac4" id="r_ga829c732db44840acb57b55e6defd2ac4"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_graph_node_hash.html">fiftyoneDegreesGraphNodeHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga829c732db44840acb57b55e6defd2ac4">fiftyoneDegreesGraphGetMatchingHashFromBinaryNode</a> (<a class="el" href="structfiftyone_degrees_graph_node.html">fiftyoneDegreesGraphNode</a> *node, uint32_t hash)</td></tr>
 <tr class="c-table__row memdesc:ga829c732db44840acb57b55e6defd2ac4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a matching hash record from a node where the node a single hash record.  <br /></td></tr>
 <tr class="c-table__row memitem:ga52de31643ad591462df4dfe7c5df9097" id="r_ga52de31643ad591462df4dfe7c5df9097"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_graph_node_hash.html">fiftyoneDegreesGraphNodeHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga52de31643ad591462df4dfe7c5df9097">fiftyoneDegreesGraphGetMatchingHashFromNode</a> (<a class="el" href="structfiftyone_degrees_graph_node.html">fiftyoneDegreesGraphNode</a> *node, uint32_t hash)</td></tr>
@@ -166,6 +171,38 @@ Functions</h2></td></tr>
 <tr class="c-table__row memitem:ga14873120b073756de0d4aad6933fc931" id="r_ga14873120b073756de0d4aad6933fc931"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#ga14873120b073756de0d4aad6933fc931">fiftyoneDegreesGraphTraceGet</a> (char *destination, size_t length, <a class="el" href="structfiftyone_degrees_graph_trace_node.html">fiftyoneDegreesGraphTraceNode</a> *route, const char *source)</td></tr>
 <tr class="c-table__row memdesc:ga14873120b073756de0d4aad6933fc931"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Writes a trace route in a readable format to a destination will the memory allocated, and returns the number of characters written to the destination.  <br /></td></tr>
 </table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="g-docs__section-heading">Macro Definition Documentation</h2>
+<a id="gae43395a60ef612048f8b228915f57e07" name="gae43395a60ef612048f8b228915f57e07"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gae43395a60ef612048f8b228915f57e07">&#9670;&#160;</a></span>FIFTYONE_DEGREES_GRAPH_NODE_IS_HASH_TABLE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_GRAPH_NODE_IS_HASH_TABLE</td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">((n)-&gt;modulo &gt; 0 &amp;&amp; (n)-&gt;modulo &lt;= (n)-&gt;hashesCount)</div>
+</div><!-- fragment -->
+<p>Determines whether the hash records of a node are laid out as a usable hash table, i.e. </p>
+<p>the modulo is positive and cannot produce an index beyond the end of the records. Nodes which are neither a hash table nor an ordered list (modulo of zero) hold values which cannot be evaluated safely, and are treated as containing no matching hash. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>pointer to the <a class="el" href="structfiftyone_degrees_graph_node.html" title="Graph node structure used to construct the directed acyclic graph to search.">fiftyoneDegreesGraphNode</a> to test </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if (hash % modulo) indexes a record of the node </dd></dl>
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
 <a id="ga829c732db44840acb57b55e6defd2ac4" name="ga829c732db44840acb57b55e6defd2ac4"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga829c732db44840acb57b55e6defd2ac4">&#9670;&#160;</a></span>fiftyoneDegreesGraphGetMatchingHashFromBinaryNode()</h2>
@@ -225,8 +262,8 @@ Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Gets a matching hash record from a node where the node has multiple hash records. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Gets a matching hash record from a node where the node has multiple hash records, using the layout indicated by the modulo of the node. </p>
+<p>Nodes which are neither a hash table nor an ordered list hold values which cannot be evaluated safely, and are treated as containing no matching hash. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">node</td><td>the node to search </td></tr>
     <tr><td class="paramname">hash</td><td>the hash code to search for </td></tr>
@@ -296,7 +333,7 @@ Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Gets a matching hash record from a node where the hash records are structured as a hash table. </p>
-<p>The value that index is set to can never be greater than the number of hashes. As such there is no need to perform a bounds check on index before using it with the array of hashes. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The node must be a usable hash table, i.e. <a class="el" href="#gae43395a60ef612048f8b228915f57e07" title="Determines whether the hash records of a node are laid out as a usable hash table,...">FIFTYONE_DEGREES_GRAPH_NODE_IS_HASH_TABLE</a> must be true for it. This guarantees that the index the hash is reduced to can never be greater than the number of hashes, so there is no need to perform a bounds check on the index before using it with the array of hashes. A hash of zero never matches, as a hash code of zero is reserved as a marker in this layout. See <a class="el" href="structfiftyone_degrees_graph_node_hash.html" title="Hash record structure to compare to a substring hash.">fiftyoneDegreesGraphNodeHash</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">node</td><td>the node to search </td></tr>
     <tr><td class="paramname">hash</td><td>the hash code to search for </td></tr>

@@ -89,10 +89,31 @@ int16_t&#160;</td><td class="c-table__cell"><b>lastIndex</b></td></tr>
 <tr class="c-table__row memitem:a3819ca20d6938ad435e89b8f00ff7bf5" id="r_a3819ca20d6938ad435e89b8f00ff7bf5"><td class="c-table__cell"><a id="a3819ca20d6938ad435e89b8f00ff7bf5" name="a3819ca20d6938ad435e89b8f00ff7bf5"></a>
 int32_t&#160;</td><td class="c-table__cell"><b>hashesCount</b></td></tr>
 <tr class="c-table__row memdesc:a3819ca20d6938ad435e89b8f00ff7bf5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of hash records in the node. <br /></td></tr>
-<tr class="c-table__row memitem:a64b31afc0879c1d5653dacdb5fe99159" id="r_a64b31afc0879c1d5653dacdb5fe99159"><td class="c-table__cell"><a id="a64b31afc0879c1d5653dacdb5fe99159" name="a64b31afc0879c1d5653dacdb5fe99159"></a>
-int32_t&#160;</td><td class="c-table__cell"><b>modulo</b></td></tr>
-<tr class="c-table__row memdesc:a64b31afc0879c1d5653dacdb5fe99159"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Modulo to use when the hashes are a hash table. <br /></td></tr>
+<tr class="c-table__row memitem:a64b31afc0879c1d5653dacdb5fe99159" id="r_a64b31afc0879c1d5653dacdb5fe99159"><td class="c-table__cell">int32_t&#160;</td><td class="c-table__cell"><a class="el" href="#a64b31afc0879c1d5653dacdb5fe99159">modulo</a></td></tr>
+<tr class="c-table__row memdesc:a64b31afc0879c1d5653dacdb5fe99159"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Modulo to use when the hashes are a hash table.  <br /></td></tr>
 </table>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Field Documentation</h2>
+<a id="a64b31afc0879c1d5653dacdb5fe99159" name="a64b31afc0879c1d5653dacdb5fe99159"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a64b31afc0879c1d5653dacdb5fe99159">&#9670;&#160;</a></span>modulo</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">int32_t fiftyoneDegreesGraphNode::modulo</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Modulo to use when the hashes are a hash table. </p>
+<p>Zero when the hash records are instead an ordered list to be searched. When positive, the first modulo records are the slots indexed by (hash % modulo) and the records from index modulo onwards hold the collision buckets, so a valid value never exceeds hashesCount. </p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="graph_8h_source.html">graph.h</a></li>
 </ul>

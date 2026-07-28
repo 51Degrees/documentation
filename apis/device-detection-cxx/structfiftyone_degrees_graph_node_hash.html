@@ -70,6 +70,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structfiftyone
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>Hash record structure to compare to a substring hash. </p>
+<p>In a node whose records are laid out as a hash table (see <a class="el" href="structfiftyone_degrees_graph_node.html#a64b31afc0879c1d5653dacdb5fe99159" title="Modulo to use when the hashes are a hash table.">fiftyoneDegreesGraphNode::modulo</a>) a hash code of zero is <b>reserved as a marker</b> and never identifies a stored hash code. Such a record is instead:</p><ul>
+<li>the head of a collision bucket, where nodeOffset is greater than zero and is an index into this node's own array of hash records rather than a node offset,</li>
+<li>an unused slot, where nodeOffset is zero or negative,</li>
+<li>or the terminator of a collision bucket.</li>
+</ul>
+<p>A substring which hashes to zero therefore cannot be matched in a hash table node. The ordered list and single record layouts do not use markers, so a hash code of zero is a genuine value in those. </p>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
