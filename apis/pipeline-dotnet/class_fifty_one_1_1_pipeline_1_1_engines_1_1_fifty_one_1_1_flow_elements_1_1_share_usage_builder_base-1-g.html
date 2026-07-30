@@ -478,7 +478,7 @@ double&#160;</td><td class="c-table__cell"><b>RecoveryMultiplier</b> = <a class=
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">evidenceFilter</td><td>Comma separated string containing entries in the format <div class="c-code__block c-code__block--outline"><div class="c-code__line">[evidenceKey]:[evidenceValue]</div>
-</div><!-- fragment -->. Any requests with evidence matching these entries will not be shared. </td></tr>
+</div><!-- fragment -->. Any requests with evidence matching these entries will not be shared. Whitespace around an entry and around a key is ignored. The value is taken verbatim from the first colon onwards, so it can itself contain colons. </td></tr>
   </table>
   </dd>
 </dl>
@@ -788,7 +788,7 @@ double&#160;</td><td class="c-table__cell"><b>RecoveryMultiplier</b> = <a class=
 </div><div class="c-member__body">
 
 <p>Configure the usage sharing element to share all evidence. </p>
-<p>This will override all the other evidence filtering settings.</p>
+<p>This will override the blocked header and included query string parameter settings.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">shareAll</td><td>If set to true then all evidence will be shared </td></tr>
