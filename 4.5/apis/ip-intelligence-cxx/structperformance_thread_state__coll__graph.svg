@@ -351,7 +351,7 @@
 <!-- Node16 -->
 <g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_Node000016"><a xlink:href="structfiftyone_degrees_result_ipi.html" target="_top" xlink:title="Singular IP address result returned by a detection process method.">
+<g id="a_Node000016"><a xlink:href="structfiftyone_degrees_result_ipi.html" target="_top" xlink:title="Singular IP address result returned by an IP address lookup method.">
 <polygon fill="white" stroke="#666666" points="679,-415 542,-415 542,-396 679,-396 679,-415"/>
 <text text-anchor="middle" x="610.5" y="-403" font-family="Helvetica,sans-Serif" font-size="10.00">fiftyoneDegreesResultIpi</text>
 </a>
