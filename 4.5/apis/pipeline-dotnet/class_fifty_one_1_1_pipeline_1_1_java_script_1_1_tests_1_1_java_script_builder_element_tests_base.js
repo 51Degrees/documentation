@@ -1,4 +1,5 @@
 var class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_java_script_builder_element_tests_base =
 [
-    [ "Configure", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_java_script_builder_element_tests_base.html#aa5b0a860d0763c914d38ea074a60a72d", null ]
+    [ "Configure", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_java_script_builder_element_tests_base.html#aa5b0a860d0763c914d38ea074a60a72d", null ],
+    [ "CreateConfiguredDriver", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_java_script_builder_element_tests_base.html#ad1c7f0f33490a0a6bdc0abf74990f325", null ]
 ];

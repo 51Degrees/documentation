@@ -81,14 +81,8 @@ Directory dependency graph for ci:</h2>
 </li>
 </ul>
 <p>The following secrets are required to run tests:</p><ul>
-<li><code>DEVICE_DETECTION_KEY</code> - <a href="https://51degrees.com/pricing?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-cxx&amp;utm_content=ci-readme.md&amp;utm_term=api-specific-ci-approach">license key</a> for downloading assets (TAC hashes file and TAC CSV data file)<ul>
-<li>Example: <code>V3RYL0NGR4ND0M57R1NG</code></li>
-</ul>
-</li>
-</ul>
-<p>The following secrets are optional:</p><ul>
-<li><code>DEVICE_DETECTION_URL</code> - URL for downloading the enterprise TAC hash file<ul>
-<li>Default: <code><a href="https://distributor.51degrees.com/api/v2/download?LicenseKeys=DEVICE_DETECTION_KEY">https://distributor.51degrees.com/api/v2/download?LicenseKeys=DEVICE_DETECTION_KEY</a>&amp;Type=HashV41&amp;Download=True&amp;Product=V4TAC</code></li>
+<li><code>IPI_DATA_FILE_URL</code> - <a href="https://51degrees.com/pricing?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=ip-intelligence-cxx&amp;utm_content=ci-readme.md&amp;utm_term=api-specific-ci-approach">URL</a> for downloading the enterprise IP Intelligence data file (<code>51Degrees-EnterpriseIpiV41.ipi</code>)<ul>
+<li>The workflows pass it to <code>ci/fetch-assets.ps1</code> as the <code>-IpIntelligenceUrl</code> parameter.</li>
 </ul>
 </li>
 </ul>
@@ -100,9 +94,8 @@ Directory dependency graph for ci:</h2>
 <h2>Build Options</h2>
 <p>For additional build options in this repo see <a href="https://github.com/51Degrees/common-ci/tree/main/cxx#readme">common-ci/cxx</a></p>
 <h1>Prerequisites</h1>
-<p>In addition to the <a href="https://github.com/51Degrees/common-ci#prerequisites">common prerequisites</a>, the following environment variables are required:</p><ul>
-<li>DEVICE_DETECTION_KEY - License key to download a data file for testing</li>
-<li>DEVICE_DETECTION_URL - Url to download the data file from (optional) </li>
+<p>In addition to the <a href="https://github.com/51Degrees/common-ci#prerequisites">common prerequisites</a>, the following is required to fetch the assets used by the tests:</p><ul>
+<li><code>IPI_DATA_FILE_URL</code> - Url to download the IP Intelligence data file from </li>
 </ul>
 </div></div><!-- primary -->
 </div><!-- inner -->
