@@ -49,7 +49,7 @@
       // table. Client side it is worth showing next to the server-rendered
       // one: the hardware and platform ids are resolved from JavaScript
       // evidence, so the two values differ whenever the client refines what
-      // the user agent claimed.
+      // the request headers claimed, the user agent and client hints alike.
       ['Device Id:', device.deviceid]
     ];
   }
