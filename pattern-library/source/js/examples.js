@@ -43,7 +43,14 @@
       ['Platform:', join(device.platformname, device.platformversion)],
       ['Browser:', join(device.browsername, device.browserversion)],
       ['Screen width (pixels):', device.screenpixelswidth],
-      ['Screen height (pixels):', device.screenpixelsheight]
+      ['Screen height (pixels):', device.screenpixelsheight],
+      // The device id is the hardware, platform, browser and crawler profile
+      // ids joined together, so it is the compact form of the rest of this
+      // table. Client side it is worth showing next to the server-rendered
+      // one: the hardware and platform ids are resolved from JavaScript
+      // evidence, so the two values differ whenever the client refines what
+      // the request headers claimed, the user agent and client hints alike.
+      ['Device Id:', device.deviceid]
     ];
   }
 
