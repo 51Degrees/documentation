@@ -41,7 +41,7 @@ image (see Updating).
 | `PROPERTIES` | no | Fully-qualified `aspect.property` allow-list (and default) for the per-request `values` selector. Requires the `CloudV5Bespoke` product on the license. |
 | `DISABLED_ELEMENTS` | no | Comma-separated list of pipeline elements to remove, e.g. `TacEngine,NativeEngine,RobotsTxtEngineBuilder`. |
 | `IPI_CONCURRENCY` | no | Number of concurrent handles in the @ipintelligence engine pool (an unsigned integer). Raise this when peak request rates trigger "Insufficient handles available in the pool" errors. Default = `128`. Invalid or zero values fall back to the default. |
-| `REGION_NAME` | no | Free-text region label returned in the `51D-Region` response header and from `/api/info`. |
+| `REGION_NAME` | no | Free-text region label returned in the `51D-Region` response header and from `/api/info`, and attached as the `region` label on exported telemetry (see Telemetry below). |
 | `ASPNETCORE_URLS` | no | Override the in-container listen address/port (the image listens on `8080` by default). |
 | `PipelineOptions__Elements__DidOnPremiseEngineBuilder__BuildParameters__IdDomain` | no | The domain embedded and cryptographically signed into every generated [51Did](@ref Identifiers_51Did). Defaults to `51d.es`. Override only if your 51Dids must be attributed to a different domain. |
 | `PipelineOptions__Elements__CloudJavaScriptBuilderElement__BuildParameters__Host` | no | The host the generated client-side JavaScript calls back to. Default (unset) = the host the request arrived on (the forwarded `Host` header). Override only to force callbacks to a fixed host. |
@@ -95,6 +95,54 @@ curl "http://localhost:8080/api/v4/json?user-agent=Mozilla/5.0%20(iPhone)&client
 ```
 
 Interactive API documentation is served at `http://localhost:8080/api-docs`.
+
+# Telemetry
+
+The container can push its own telemetry: metrics, logs and traces, each sent
+over OTLP HTTP. This is off by default, and nothing ever goes to 51Degrees:
+each signal is exported only when you enable the push and give that signal an
+endpoint URL of your own.
+
+- **Metrics** - request metrics from ASP.NET Core, and .NET runtime metrics
+  such as CPU, memory, GC and thread pool usage.
+- **Logs** - the service's log stream.
+- **Traces** - a trace per handled request, with unhandled exceptions recorded
+  on the span. Query string values are redacted from spans by default; see the
+  redaction variable below.
+
+Every signal carries `node`, `region` and `provider` resource labels taken from
+`INSTANCE_NAME`, `REGION_NAME` (see the table above) and `PROVIDER_NAME`, so
+containers in a fleet can be told apart at the backend.
+
+| Variable | Description |
+| -------- | ----------- |
+| `LogServices__OpenTelemetry__Enabled` | Master switch for the OTLP push. Defaults to `false`. |
+| `LogServices__OpenTelemetry__MetricsEndpoint` | OTLP HTTP ingest URL for metrics. Metrics are exported only when this is set. |
+| `LogServices__OpenTelemetry__LogsEndpoint` | OTLP HTTP ingest URL for logs. Logs are exported only when this is set. |
+| `LogServices__OpenTelemetry__TracesEndpoint` | OTLP HTTP ingest URL for traces. Traces are exported only when this is set. |
+| `LogServices__OpenTelemetry__Headers` | Headers sent with every OTLP export, as comma separated `key=value` pairs, e.g. `Authorization=Bearer <token>`. |
+| `LogServices__OpenTelemetry__TracesSampleRatio` | Fraction of requests traced, between 0 and 1. Defaults to 1, which traces every request. |
+| `OTEL_DOTNET_EXPERIMENTAL_ASPNETCORE_DISABLE_URL_QUERY_REDACTION` | Set to `true` to keep query string values in spans, so a caller's request can be reproduced from its trace. Redacted by default. |
+| `INSTANCE_NAME` | `node` label on the exported telemetry, also returned in the `51D-Instance` response header. Defaults to the machine name. |
+| `PROVIDER_NAME` | `provider` label on the exported telemetry, e.g. `hetzner`. No label is attached when unset. |
+
+Any backend that accepts OTLP over HTTP works. This example points the three
+signals at VictoriaMetrics, VictoriaLogs and VictoriaTraces:
+
+```{bash}
+docker run -d --name 51d-cloud \
+  -p 8080:8080 \
+  -e LICENSE_KEYS=<your-license-key> \
+  -e LogServices__OpenTelemetry__Enabled=true \
+  -e LogServices__OpenTelemetry__MetricsEndpoint=https://victoriametrics:8428/opentelemetry/v1/metrics \
+  -e LogServices__OpenTelemetry__LogsEndpoint=https://victorialogs:9428/insert/opentelemetry/v1/logs \
+  -e LogServices__OpenTelemetry__TracesEndpoint=https://victoriatraces:10428/insert/opentelemetry/v1/traces \
+  -e "LogServices__OpenTelemetry__Headers=Authorization=Bearer <token>" \
+  -e INSTANCE_NAME=node-1 \
+  -e REGION_NAME=eu \
+  -e PROVIDER_NAME=hetzner \
+  51degrees/cloud-private
+```
 
 # Updating
 
