@@ -139,6 +139,9 @@ var annotated_dup =
               [ "Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_program.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_program" ],
               [ "Startup", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_startup.html", null ]
             ] ],
+            [ "LocationAnalysis", "namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_location_analysis.html", [
+              [ "Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_location_analysis_1_1_program.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_location_analysis_1_1_program" ]
+            ] ],
             [ "Metadata", "namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metadata.html", [
               [ "Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metadata_1_1_program.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metadata_1_1_program" ]
             ] ],

@@ -12,6 +12,7 @@ var examples =
     [ "OnPremise/Framework-Web/Default.aspx.cs", "_on_premise_2_framework-_web_2_default_8aspx_8cs-example.html", null ],
     [ "OnPremise/GettingStarted-Console/Program.cs", "_on_premise_2_getting_started-_console_2_program_8cs-example.html", null ],
     [ "OnPremise/GettingStarted-Web/Startup.cs", "_on_premise_2_getting_started-_web_2_startup_8cs-example.html", null ],
+    [ "OnPremise/LocationAnalysis-Console/Program.cs", "_on_premise_2_location_analysis-_console_2_program_8cs-example.html", null ],
     [ "OnPremise/Metadata-Console/Program.cs", "_on_premise_2_metadata-_console_2_program_8cs-example.html", null ],
     [ "OnPremise/Metrics-Console/Program.cs", "_on_premise_2_metrics-_console_2_program_8cs-example.html", null ],
     [ "OnPremise/GettingStarted-API/Program.cs", "_on_premise_2_getting_started-_a_p_i_2_program_8cs-example.html", null ],

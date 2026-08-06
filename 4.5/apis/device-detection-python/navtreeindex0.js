@@ -21,10 +21,11 @@ var NAVTREEINDEX0 =
 "classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__console_1_1_getting_started_console.html#ad78397f9d7764ccff4e609dbdaf95c5d":[1,2,0,1,0,3],
 "classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__console_1_1_getting_started_console.html#af1e04b40ca9dc9c16f7316e055a1a835":[1,2,0,1,0,0],
 "classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html":[1,2,0,2,0,0],
-"classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#a09eb0000bfc7fbd6207a1e44b9d7a448":[1,2,0,2,0,0,4],
-"classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#a6f8ccdab8dcc9217430b275499c14b35":[1,2,0,2,0,0,2],
-"classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#a76ef0e44590d32e89e197225bbb5d7e1":[1,2,0,2,0,0,1],
-"classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#ab20eaa0e3c2e89e1dba1505c50b5330b":[1,2,0,2,0,0,3],
+"classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#a09eb0000bfc7fbd6207a1e44b9d7a448":[1,2,0,2,0,0,5],
+"classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#a16077d1e86cb8037b3f5578b2fc05281":[1,2,0,2,0,0,1],
+"classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#a6f8ccdab8dcc9217430b275499c14b35":[1,2,0,2,0,0,3],
+"classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#a76ef0e44590d32e89e197225bbb5d7e1":[1,2,0,2,0,0,2],
+"classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#ab20eaa0e3c2e89e1dba1505c50b5330b":[1,2,0,2,0,0,4],
 "classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#aee375253d6d8987b91a5f980e4a8429b":[1,2,0,2,0,0,0],
 "classfiftyone__devicedetection__examples_1_1cloud_1_1metadata__console_1_1_meta_data_console.html":[1,2,0,3,0],
 "classfiftyone__devicedetection__examples_1_1cloud_1_1metadata__console_1_1_meta_data_console.html#a8165bf536c07c8bb069a2ec3040bc2f4":[1,2,0,3,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a207b483d13c9da4c59208243cb15bd3a":[1,3,3,2,21],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a3168b16cef7a742a01400efff8bcee85":[1,3,3,2,2],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a331862a11994ae9b470900800fd9d17d":[1,3,3,2,7],
-"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a374ab3763ba204f2d80d96f44d71542e":[1,3,3,2,15],
-"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a3f13568d0d463e204aae4c2410e01d20":[1,3,3,2,32]
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a374ab3763ba204f2d80d96f44d71542e":[1,3,3,2,15]
 };

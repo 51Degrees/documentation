@@ -212,6 +212,36 @@ You can create a Resource Key using the 51Degrees
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> json.dumps(flowdata.jsonbundler.json)</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment"># Next we serve the client-side JavaScript from its own route. The other</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># Pipeline APIs ship a web integration that intercepts &#39;/51Degrees.core.js&#39;</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># for this, so the page can reference the script by that name. There is no</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># such integration for Flask, so the example wires up the route itself.</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__preprocessor">@staticmethod</span></div>
+<div class="c-code__line">    <span class="c-code__preprocessor">@app.route(&#39;/51Degrees.core.js&#39;)</span></div>
+<div class="c-code__line">    <span class="c-code__keyword">def </span>core_js():</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment"># Create the flowdata object for the JavaScript route</span></div>
+<div class="c-code__line">        flowdata = GettingStartedWeb.pipeline.create_flowdata()</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment"># Add any information from the request (headers, cookies and additional</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># client side provided information). Query parameters are included, so</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># the per-request &#39;fod-js-enable-cookies&#39; override is picked up here and</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># applied by the JavaScriptBuilder engine.</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        flowdata.evidence.add_from_dict(webevidence(request))</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment"># Process the flowdata</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        flowdata.process()</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment"># Return the JavaScript from the JavaScriptBuilder engine</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        response = make_response(flowdata.javascriptbuilder.javascript)</div>
+<div class="c-code__line">        response.headers[<span class="c-code__stringliteral">&quot;Content-Type&quot;</span>] = <span class="c-code__stringliteral">&quot;application/x-javascript&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> response</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment"># In the main route we dynamically update the screen&#39;s device property display</span></div>
 <div class="c-code__line">    <span class="c-code__comment"># using the above JSON route</span></div>
 <div class="c-code__line"> </div>

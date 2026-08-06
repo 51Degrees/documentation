@@ -93,8 +93,8 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="c-table__row memitem:a5067cba70ad05dd1e80342d99a0e7e74" id="r_a5067cba70ad05dd1e80342d99a0e7e74"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a5067cba70ad05dd1e80342d99a0e7e74">ProcessEngine</a> (IFlowData data, <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_cloud_1_1_data_1_1_ip_data_cloud.html">IpDataCloud</a> aspectData)</td></tr>
-<tr class="c-table__row memdesc:a5067cba70ad05dd1e80342d99a0e7e74"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Perform the processing for this engine:  <br /></td></tr>
+<tr class="c-table__row memitem:ad4d7fa3173e96dfefbfc02768be07395" id="r_ad4d7fa3173e96dfefbfc02768be07395"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ad4d7fa3173e96dfefbfc02768be07395">ProcessCloudEngine</a> (IFlowData data, <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_cloud_1_1_data_1_1_ip_data_cloud.html">IpDataCloud</a> aspectData, string json)</td></tr>
+<tr class="c-table__row memdesc:ad4d7fa3173e96dfefbfc02768be07395"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Perform the processing for this engine:  <br /></td></tr>
 <tr class="c-table__row memitem:ae18ae3df1c53d6d7c0638b024f86aef1" id="r_ae18ae3df1c53d6d7c0638b024f86aef1"><td class="c-table__cell">override&#160;Type&#160;</td><td class="c-table__cell"><a class="el" href="#ae18ae3df1c53d6d7c0638b024f86aef1">GetPropertyType</a> (PropertyMetaData propertyMetaData, Type parentObjectType)</td></tr>
 <tr class="c-table__row memdesc:ae18ae3df1c53d6d7c0638b024f86aef1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Try to get the type of a property from the information returned by the cloud service.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
@@ -186,8 +186,8 @@ override&#160;string&#160;</td><td class="c-table__cell"><b>ElementDataKey</b><c
 
 </div>
 </div>
-<a id="a5067cba70ad05dd1e80342d99a0e7e74" name="a5067cba70ad05dd1e80342d99a0e7e74"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5067cba70ad05dd1e80342d99a0e7e74">&#9670;&#160;</a></span>ProcessEngine()</h2>
+<a id="ad4d7fa3173e96dfefbfc02768be07395" name="ad4d7fa3173e96dfefbfc02768be07395"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad4d7fa3173e96dfefbfc02768be07395">&#9670;&#160;</a></span>ProcessCloudEngine()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -198,14 +198,19 @@ override&#160;string&#160;</td><td class="c-table__cell"><b>ElementDataKey</b><c
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">override void FiftyOne.IpIntelligence.Cloud.FlowElements.IpiCloudEngine.ProcessEngine </td>
+              <td class="c-table__cell">override void FiftyOne.IpIntelligence.Cloud.FlowElements.IpiCloudEngine.ProcessCloudEngine </td>
           <td>(</td>
           <td class="c-table__cell">IFlowData</td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_cloud_1_1_data_1_1_ip_data_cloud.html">IpDataCloud</a></td>          <td class="c-table__cell"><span class="paramname"><em>aspectData</em></span>&#160;)</td>
+          <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_cloud_1_1_data_1_1_ip_data_cloud.html">IpDataCloud</a></td>          <td class="c-table__cell"><span class="paramname"><em>aspectData</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>json</em></span>&#160;)</td>
         </tr>
           </table>
         </div>
@@ -219,14 +224,15 @@ override&#160;string&#160;</td><td class="c-table__cell"><b>ElementDataKey</b><c
 
 <p>Perform the processing for this engine: </p>
 <ol type="1">
-<li>Get the JSON data from the CloudRequestEngine response.</li>
-<li>Extract properties relevant to this engine.</li>
-<li>Deserialize JSON data to populate a IpDataCloud instance.</li>
+<li>Extract the "ip" section from the cloud JSON.</li>
+<li>Deserialize it to populate a IpDataCloud instance.</li>
 </ol>
+<p>The base CloudAspectEngineBase&lt;T&gt; handles fetching the JSON from the CloudRequestEngine, the missing-engine error and the empty-response (cloud request failed) case, then calls this method with the JSON.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>The IFlowData instance containing data for the current request. </td></tr>
     <tr><td class="paramname">aspectData</td><td>The IpDataCloud instance to populate with values. </td></tr>
+    <tr><td class="paramname">json</td><td>The JSON response from the CloudRequestEngine. </td></tr>
   </table>
   </dd>
 </dl>

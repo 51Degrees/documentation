@@ -1,6 +1,7 @@
 var classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web =
 [
     [ "build", "classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#aee375253d6d8987b91a5f980e4a8429b", null ],
+    [ "core_js", "classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#a16077d1e86cb8037b3f5578b2fc05281", null ],
     [ "jsonroute", "classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#a76ef0e44590d32e89e197225bbb5d7e1", null ],
     [ "run", "classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#a6f8ccdab8dcc9217430b275499c14b35", null ],
     [ "server", "classfiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__web_1_1app_1_1_getting_started_web.html#ab20eaa0e3c2e89e1dba1505c50b5330b", null ],
