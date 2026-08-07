@@ -25,7 +25,7 @@ The value inside the envelope comes in three types. Bits 6-7 of the payload flag
 
 - **Probabilistic** - a 32-byte SHA-256 derived from the Device ID and the client IP. The same device on the same network produces the same value for every caller, with no inputs beyond the usual Device Detection evidence and `id.usage`. This is the value the rest of this page uses in its examples.
 - **Random** - a fresh, server-generated 16-byte GUID rather than a derived hash. The cloud neither stores nor echoes it, so it is not stable across calls. No inputs beyond `id.usage` are needed.
-- **Hashed Email** - a 32-byte SHA-256 of a caller-supplied email and a SWAN salt, `SHA-256(lowercase(trim(email)) || saltBytes)`. The same email and salt always produce the same value for every caller, which makes it interoperable with the SWAN SID concept. Requires the `id.email` and `id.salt` inputs described under *Request inputs*.
+- **Hashed Email** - a 32-byte SHA-256 of a caller-supplied email and a 2-byte salt, `SHA-256(lowercase(trim(email)) || saltBytes)`. The same email and salt always produce the same value for every caller. Requires the `id.email` input described under *Request inputs*, with the salt taken from `id.salt` or falling back to a salt configured by 51Degrees.
 
 Each type is offered in two scopes: **global** (one value across all callers) and **lic** (scoped to your License Key), see *Properties*.
 
@@ -61,9 +61,9 @@ Each property returns a full 51Did identifier (the OWID envelope, signed). The v
 - **Evidence** - Device Detection evidence (User-Agent / UA-CH) AND client IP (`client-ip` query parameter, `client-ip` HTTP header, or the server-supplied client IP).
 - **Usage policy** - the request's `id.usage` value. Supplied either directly or derived by the cloud from a consent string; see *Setting the usage policy* below.
 - **`id.email`** (Hashed Email only) - raw email address. The cloud trims and lowercases it; no other transforms.
-- **`id.salt`** (Hashed Email only) - URL-safe base64 of the 2-byte SWAN salt (4 nibbles encoding the 4x4 salt grid selection), e.g. `Npw`.
+- **`id.salt`** (Hashed Email only) - URL-safe base64 of a 2-byte salt chosen by the caller, e.g. `Npw`. When the request does not supply one, a salt configured by 51Degrees is used instead.
 
-If a Hashed Email property is requested without `id.email` or `id.salt`, the property is returned with a no-value reason naming the missing input; the supplied values are never echoed back. The raw `id.email` value is used only to compute the hash; it is not logged, not shared in usage statistics, and not retained.
+If a Hashed Email property is requested without `id.email`, or with an `id.salt` value that is not valid URL-safe base64 of 2 bytes, the property is returned with a no-value reason naming the problem; an invalid salt is never silently replaced, as re-salting would hand the caller a different identifier with nothing to say why. The supplied values are never echoed back. The raw `id.email` value is used only to compute the hash; it is not logged, not shared in usage statistics, and not retained.
 
 ## Setting the usage policy
 
