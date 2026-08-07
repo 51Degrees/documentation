@@ -71,12 +71,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fifty_on
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="c-table__row memitem:aa339cf4aac10748eeba92eeb6bfce76c" id="r_aa339cf4aac10748eeba92eeb6bfce76c"><td class="c-table__cell"><a id="aa339cf4aac10748eeba92eeb6bfce76c" name="aa339cf4aac10748eeba92eeb6bfce76c"></a>
-static&#160;IEnumerable&lt;(string,&#160;string)&gt;&#160;</td><td class="c-table__cell"><b>ValidRanges</b> (this <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a> engine)</td></tr>
-<tr class="c-table__row memitem:a3c806564677fb2dd74bf49688f4ac655" id="r_a3c806564677fb2dd74bf49688f4ac655"><td class="c-table__cell">static&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a3c806564677fb2dd74bf49688f4ac655">TryGetNextAddress</a> (Span&lt; byte &gt; buffer)</td></tr>
-<tr class="c-table__row memdesc:a3c806564677fb2dd74bf49688f4ac655"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Increments the IP address in the buffer by 1.  <br /></td></tr>
-<tr class="c-table__row memitem:a5cd75cfab704a5663c242245711c3c9e" id="r_a5cd75cfab704a5663c242245711c3c9e"><td class="c-table__cell">static&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a5cd75cfab704a5663c242245711c3c9e">IpEquals</a> (ReadOnlySpan&lt; byte &gt; a, ReadOnlySpan&lt; byte &gt; b)</td></tr>
-<tr class="c-table__row memdesc:a5cd75cfab704a5663c242245711c3c9e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Compares two IP addresses represented as byte spans.  <br /></td></tr>
+<tr class="c-table__row memitem:a7c8dde388bbbf7b3ef0b9df6809da473" id="r_a7c8dde388bbbf7b3ef0b9df6809da473"><td class="c-table__cell">static&#160;IEnumerable&lt;(string,&#160;string)&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a7c8dde388bbbf7b3ef0b9df6809da473">ValidRanges</a> (this <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a> engine, double rangePercentage=1, int maxProfilesWithoutRange=0, ILogger logger=null)</td></tr>
+<tr class="c-table__row memdesc:a7c8dde388bbbf7b3ef0b9df6809da473"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">engine</td><td></td></tr>
+    <tr><td class="paramname">rangePercentage</td><td>Proportion of the ranges in the data file to return, where 1 is 100% and returns every range. </td></tr>
+  </table>
+  </dd>
+</dl>
+ <br /></td></tr>
+<tr class="c-table__row memitem:aec4cfc88770ccb20f13fd9f437c95482" id="r_aec4cfc88770ccb20f13fd9f437c95482"><td class="c-table__cell">static&#160;IEnumerable&lt;&#160;IPAddress&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#aec4cfc88770ccb20f13fd9f437c95482">Sample</a> (IPAddress startIp, IPAddress endIp, double samplePercentage, int maxSamplesPerRange, Random random)</td></tr>
+<tr class="c-table__row memdesc:aec4cfc88770ccb20f13fd9f437c95482"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns the IP addresses to include in the metrics for the inclusive range provided.  <br /></td></tr>
 <tr class="c-table__row memitem:a52104452e538d252bf6d512b93623ea7" id="r_a52104452e538d252bf6d512b93623ea7"><td class="c-table__cell">static&#160;IPAddress&#160;</td><td class="c-table__cell"><a class="el" href="#a52104452e538d252bf6d512b93623ea7">GetNextAddress</a> (this IPAddress ip)</td></tr>
 <tr class="c-table__row memdesc:a52104452e538d252bf6d512b93623ea7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the next address after this one.  <br /></td></tr>
 <tr class="c-table__row memitem:a42f9a23ea074368357434dd0d23f4581" id="r_a42f9a23ea074368357434dd0d23f4581"><td class="c-table__cell">static&#160;IPAddress&#160;</td><td class="c-table__cell"><a class="el" href="#a42f9a23ea074368357434dd0d23f4581">GetNextAddress</a> (this IPAddress ip, int ignoreBytes)</td></tr>
@@ -166,8 +171,8 @@ static&#160;IEnumerable&lt;(string,&#160;string)&gt;&#160;</td><td class="c-tabl
 
 </div>
 </div>
-<a id="a5cd75cfab704a5663c242245711c3c9e" name="a5cd75cfab704a5663c242245711c3c9e"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5cd75cfab704a5663c242245711c3c9e">&#9670;&#160;</a></span>IpEquals()</h2>
+<a id="aec4cfc88770ccb20f13fd9f437c95482" name="aec4cfc88770ccb20f13fd9f437c95482"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aec4cfc88770ccb20f13fd9f437c95482">&#9670;&#160;</a></span>Sample()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -178,14 +183,29 @@ static&#160;IEnumerable&lt;(string,&#160;string)&gt;&#160;</td><td class="c-tabl
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">bool FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Extensions.IpEquals </td>
+              <td class="c-table__cell">IEnumerable&lt; IPAddress &gt; FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Extensions.Sample </td>
           <td>(</td>
-          <td class="c-table__cell">ReadOnlySpan&lt; byte &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>a</em></span>, </td>
+          <td class="c-table__cell">IPAddress</td>          <td class="c-table__cell"><span class="paramname"><em>startIp</em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">ReadOnlySpan&lt; byte &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="c-table__cell">IPAddress</td>          <td class="c-table__cell"><span class="paramname"><em>endIp</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>samplePercentage</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>maxSamplesPerRange</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">Random</td>          <td class="c-table__cell"><span class="paramname"><em>random</em></span>&#160;)</td>
         </tr>
           </table>
         </div>
@@ -197,22 +217,26 @@ static&#160;IEnumerable&lt;(string,&#160;string)&gt;&#160;</td><td class="c-tabl
 </table>
 </div><div class="c-member__body">
 
-<p>Compares two IP addresses represented as byte spans. </p>
+<p>Returns the IP addresses to include in the metrics for the inclusive range provided. </p>
+<p>The addresses are drawn at random rather than by walking the range so that the work is proportional to the number of addresses wanted. An IPv6 range holds far too many addresses to visit each one, so a range walk would never finish however small the sample percentage was.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>First IP address bytes</td></tr>
-    <tr><td class="paramname">b</td><td>Second IP address bytes</td></tr>
+    <tr><td class="paramname">startIp</td><td>First address in the range.</td></tr>
+    <tr><td class="paramname">endIp</td><td>Last address in the range.</td></tr>
+    <tr><td class="paramname">samplePercentage</td><td>Proportion of the range to sample where 1 is 100%. At 1 or above every address in the range is returned. </td></tr>
+    <tr><td class="paramname">maxSamplesPerRange</td><td>Most addresses to return for the range. </td></tr>
+    <tr><td class="paramname">random</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">True if they are equal</dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_metrics-_console_2_program_8cs-example.html#a4">OnPremise/Metrics-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a3c806564677fb2dd74bf49688f4ac655" name="a3c806564677fb2dd74bf49688f4ac655"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3c806564677fb2dd74bf49688f4ac655">&#9670;&#160;</a></span>TryGetNextAddress()</h2>
+<a id="a7c8dde388bbbf7b3ef0b9df6809da473" name="a7c8dde388bbbf7b3ef0b9df6809da473"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7c8dde388bbbf7b3ef0b9df6809da473">&#9670;&#160;</a></span>ValidRanges()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -223,10 +247,24 @@ static&#160;IEnumerable&lt;(string,&#160;string)&gt;&#160;</td><td class="c-tabl
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">bool FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Extensions.TryGetNextAddress </td>
+              <td class="c-table__cell">IEnumerable&lt;(string, string)&gt; FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Extensions.ValidRanges </td>
           <td>(</td>
-          <td class="c-table__cell">Span&lt; byte &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>buffer</em></span></td><td>)</td>
+          <td class="c-table__cell">this <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a></td>          <td class="c-table__cell"><span class="paramname"><em>engine</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
           <td></td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>rangePercentage</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>maxProfilesWithoutRange</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">ILogger</td>          <td class="c-table__cell"><span class="paramname"><em>logger</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
         </tr>
           </table>
         </div>
@@ -238,15 +276,29 @@ static&#160;IEnumerable&lt;(string,&#160;string)&gt;&#160;</td><td class="c-tabl
 </table>
 </div><div class="c-member__body">
 
-<p>Increments the IP address in the buffer by 1. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">buffer</td><td>The IP address bytes to increment</td></tr>
+    <tr><td class="paramname">engine</td><td></td></tr>
+    <tr><td class="paramname">rangePercentage</td><td>Proportion of the ranges in the data file to return, where 1 is 100% and returns every range. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">True if successful, false if overflow (address was max value) </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_metrics-_console_2_program_8cs-example.html#a3">OnPremise/Metrics-Console/Program.cs</a>.</dd>
+</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxProfilesWithoutRange</td><td>Give up once this many profiles in a row have produced no range. Zero scans every profile in the data file.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The ranges sit together near the start of the file and are followed by a long run of profiles that carry none - measured on an enterprise file as 601,443 ranges within the first 603,531 profiles, then 993,628 more profiles yielding nothing. Scanning that run costs the majority of a complete pass and cannot add anything to the analysis.</p>
+<p>Only 2,088 profiles before the last range produced nothing, so any limit well above that cannot cut the scan short while ranges remain. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>Reports how far through the profiles the scan has got. Long runs of profiles carry no usable range, so without this the example looks like it has stopped whenever it is working through one of them. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_metrics-_console_2_program_8cs-example.html#a0">OnPremise/Metrics-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>

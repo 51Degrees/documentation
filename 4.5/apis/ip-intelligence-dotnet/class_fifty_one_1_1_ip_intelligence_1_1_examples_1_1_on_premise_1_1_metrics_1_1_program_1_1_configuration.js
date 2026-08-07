@@ -3,6 +3,10 @@ var class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_
     [ "Condition", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a695d835df61d71635a486ad64458ea40", null ],
     [ "DataFile", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a8ccbc28ac0701885c6cfc0d9060cf501", null ],
     [ "LoggerFactory", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a22ce7a895b4c1cd3cbe18548a57b277e", null ],
+    [ "MaxProfilesWithoutRange", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a04021517f4f39ff5cb3d37f13086eb77", null ],
+    [ "MaxSamplesPerRange", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#ac34474795589c75e4c8056e44160a3c7", null ],
     [ "Output", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#abad8e18c4a6edce1f1d3c702c1955753", null ],
+    [ "PerformanceProfile", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a4282e70b33e901e66ed4deb1eb86934b", null ],
+    [ "RangePercentage", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a314c3a1343cbd0688961af0f4d208b44", null ],
     [ "SamplePercentage", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#aa3136f36a35394ed24ee50f717e8ba92", null ]
 ];

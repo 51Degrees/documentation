@@ -273,6 +273,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line">                &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row c-eg-table__row--alt&quot;</span>&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell c-eg-table__cell--key&quot;</span>&gt;Browser Version:&lt;/td&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;&lt;?php $output(ExampleUtils::getHumanReadable($flowdata-&gt;device, <span class="c-code__stringliteral">&quot;browserversion&quot;</span>)); ?&gt;&lt;/td&gt;&lt;/tr&gt;</div>
 <div class="c-code__line">                &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row&quot;</span>&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell c-eg-table__cell--key&quot;</span>&gt;Screen width (pixels):&lt;/td&gt;&lt;td class=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;&lt;?php $output(ExampleUtils::getHumanReadable($flowdata-&gt;device, <span class="c-code__stringliteral">&quot;screenpixelswidth&quot;</span>)); ?&gt;&lt;/td&gt;&lt;/tr&gt;</div>
 <div class="c-code__line">                &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row c-eg-table__row--alt&quot;</span>&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell c-eg-table__cell--key&quot;</span>&gt;Screen height (pixels):&lt;/td&gt;&lt;td class=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;&lt;?php $output(ExampleUtils::getHumanReadable($flowdata-&gt;device, <span class="c-code__stringliteral">&quot;screenpixelsheight&quot;</span>)); ?&gt;&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">                &lt;tr <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__row&quot;</span>&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell c-eg-table__cell--key&quot;</span>&gt;Device Id:&lt;/td&gt;&lt;td <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-table__cell&quot;</span>&gt;&lt;?php $output(ExampleUtils::getHumanReadable($flowdata-&gt;device, <span class="c-code__stringliteral">&quot;deviceid&quot;</span>)); ?&gt;&lt;/td&gt;&lt;/tr&gt;</div>
 <div class="c-code__line">            &lt;/tbody&gt;</div>
 <div class="c-code__line">        &lt;/table&gt;</div>
 <div class="c-code__line"> </div>
@@ -312,8 +313,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line">&lt;/div&gt;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">&lt;!--</div>
-<div class="c-code__line">    This script is constructed by the fiftyone\pipeline\core package.</div>
-<div class="c-code__line">    It adds a JavaScript include <span class="c-code__keywordflow">for</span> 51Degrees.core.js.</div>
+<div class="c-code__line">    51Degrees.core.js is served by <span class="c-code__keyword">this</span> example from the same script that renders</div>
+<div class="c-code__line">    <span class="c-code__keyword">this</span> page, see GettingStartedWeb::processRequest.</div>
 <div class="c-code__line">    The 51Degrees pipeline will dynamically generate JavaScript, which includes a</div>
 <div class="c-code__line">    JSON representation of the contents of flow data.</div>
 <div class="c-code__line">    i.e. The results from device detection.</div>
@@ -330,11 +331,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line">    The shared examples.js helper subscribes to <span class="c-code__keyword">this</span> complete event and appends the</div>
 <div class="c-code__line">    refined client-side results into #content.</div>
 <div class="c-code__line">--&gt;</div>
-<div class="c-code__line">&lt;script&gt;</div>
-<div class="c-code__line">    &lt;?php</div>
-<div class="c-code__line">        $output($flowdata-&gt;javascriptbuilder-&gt;javascript);</div>
-<div class="c-code__line">    ?&gt;</div>
-<div class="c-code__line">&lt;/script&gt;</div>
+<div class="c-code__line">&lt;script src=<span class="c-code__stringliteral">&quot;/51Degrees.core.js&quot;</span>&gt;&lt;/script&gt;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">&lt;script&gt;</div>
 <div class="c-code__line">    &lt;?php</div>

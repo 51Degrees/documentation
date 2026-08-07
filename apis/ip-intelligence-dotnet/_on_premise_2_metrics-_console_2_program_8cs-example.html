@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="g-docs__primary" id="primary">
 <p>This example takes all public IP addresses and passes them to the IP Intelligence service, recording the average geographic area in square kilometers, the number of polygons that form the area, and the equivalent radius if the area can be represented as a circle.</p>
 <p>This example takes all public IP addresses and passes them to the IP Intelligence service, recording the average geographic area in square kilometers, the number of polygons that form the area, and the equivalent radius if the area can be represented as a circle.Depending on the available processor cores the example can take a long time to complete.</p>
-<p>The sample of IP addresses used in the metrics can be adjusted as a parameter.</p>
+<p>The sample used in the metrics can be adjusted with the sample percentage, the cap on the addresses taken from any one range, and the percentage of ranges to include, all supplied as command line parameters. The last of these is the most effective way to shorten a run.</p>
 <p>This example is primarily designed for those who are interested in verifying the published metrics associated with 51Degrees' IP intelligence service.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-dotnet-examples/blob/master/Examples/OnPremise/Metrics-Console/Program.cs">GitHub</a>.</p>
 <p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-metrics-console-program.cs&amp;utm_term=header">contact us</a>.</p>
@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.Net;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.Net.Sockets;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.Runtime;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span>System.Runtime.ExceptionServices;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.Threading;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.Threading.Channels;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.Threading.Tasks;</div>
@@ -131,21 +132,107 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">class </span>Extensions</div>
 <div class="c-code__line">{</div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> readonly TimeSpan _logScan = TimeSpan.FromSeconds(30);</div>
+<div class="c-code__line"></div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> IEnumerable&lt;(string, string)&gt;</div>
-<div class="c-code__line">        ValidRanges(<span class="c-code__keyword">this</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a> engine)</div>
+<div class="c-code__line">        <a id="a0" name="a0"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions.html#a7c8dde388bbbf7b3ef0b9df6809da473">ValidRanges</a>(</div>
+<div class="c-code__line">            <span class="c-code__keyword">this</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a> engine,</div>
+<div class="c-code__line">            <span class="c-code__keywordtype">double</span> rangePercentage = 1,</div>
+<div class="c-code__line">            <span class="c-code__keywordtype">int</span> maxProfilesWithoutRange = 0,</div>
+<div class="c-code__line">            ILogger logger = <span class="c-code__keyword">null</span>)</div>
 <div class="c-code__line">    {</div>
-<div class="c-code__line">        var network = engine.<a id="a1" name="a1"></a><a class="code hl_property" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html#a2119e21736f441391a5f9bdbc90ba007">Components</a>.Single(i =&gt;</div>
+<div class="c-code__line">        var network = engine.<a id="a2" name="a2"></a><a class="code hl_property" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html#a2119e21736f441391a5f9bdbc90ba007">Components</a>.Single(i =&gt;</div>
 <div class="c-code__line">            <span class="c-code__stringliteral">&quot;Network&quot;</span>.Equals(</div>
 <div class="c-code__line">                i.Name,</div>
 <div class="c-code__line">                StringComparison.InvariantCultureIgnoreCase));</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">foreach</span> (var profile <span class="c-code__keywordflow">in</span> engine.<a id="a2" name="a2"></a><a class="code hl_property" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html#a7b3243e9f34192de82fb10edb6265843">Profiles</a>)</div>
+<div class="c-code__line">        var random = <span class="c-code__keyword">new</span> Random();</div>
+<div class="c-code__line">        var scanned = 0;</div>
+<div class="c-code__line">        var found = 0;</div>
+<div class="c-code__line">        var sinceFound = 0;</div>
+<div class="c-code__line">        var nextLog = DateTime.UtcNow.Add(_logScan);</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">foreach</span> (var profile <span class="c-code__keywordflow">in</span> engine.<a id="a3" name="a3"></a><a class="code hl_property" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html#a7b3243e9f34192de82fb10edb6265843">Profiles</a>)</div>
 <div class="c-code__line">        {</div>
-<div class="c-code__line">            var range = GetRange(network, profile);</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (range.Item1 != <span class="c-code__keyword">null</span> &amp;&amp; range.Item2 != <span class="c-code__keyword">null</span>)</div>
+<div class="c-code__line">            scanned++;</div>
+<div class="c-code__line">            sinceFound++;</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (DateTime.UtcNow &gt;= nextLog)</div>
 <div class="c-code__line">            {</div>
-<div class="c-code__line">                yield <span class="c-code__keywordflow">return</span> range;</div>
+<div class="c-code__line">                logger?.LogInformation(</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;Scanned &#39;{0}&#39; profiles finding &#39;{1}&#39; ranges&quot;</span>,</div>
+<div class="c-code__line">                    scanned,</div>
+<div class="c-code__line">                    found);</div>
+<div class="c-code__line">                nextLog = DateTime.UtcNow.Add(_logScan);</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__comment">// Stop once the ranges have clearly run out. Only applied after a</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// range has been found so that a file which opens with a long run</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// of profiles carrying none is still scanned.</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (maxProfilesWithoutRange &gt; 0 &amp;&amp;</div>
+<div class="c-code__line">                found &gt; 0 &amp;&amp;</div>
+<div class="c-code__line">                sinceFound &gt; maxProfilesWithoutRange)</div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                profile.Dispose();</div>
+<div class="c-code__line">                logger?.LogInformation(</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;Stopped scanning after &#39;{0}&#39; profiles in a row produced &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;no range, having found &#39;{1}&#39; in &#39;{2}&#39; profiles&quot;</span>,</div>
+<div class="c-code__line">                    sinceFound,</div>
+<div class="c-code__line">                    found,</div>
+<div class="c-code__line">                    scanned);</div>
+<div class="c-code__line">                yield <span class="c-code__keywordflow">break</span>;</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__comment">// Decide whether to keep the profile before reading any of its</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// property values. Reading them costs around a hundred times more</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// than stepping over the profile (measured at 2,300 profiles a</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// second against 246,000 to enumerate them), so skipping here is</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// what makes a smaller sample of ranges actually run faster.</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (rangePercentage &lt; 1 &amp;&amp; random.NextDouble() &gt; rangePercentage)</div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                profile.Dispose();</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">continue</span>;</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__comment">// The enumeration yields more entries than the data file holds</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// profiles, and reading the values of one of the surplus entries</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// fails. Values are found by indexing the profile id into a</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// collection, and on the file this was written against that</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// collection holds 35,007,545 while the enumeration yields the</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// same number of entries - so every entry whose id is past it</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// fails, starting at index 1,602,768 with id 35,007,548 where the</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// one before it, id 35,007,525, reads cleanly.</span></div>
+<div class="c-code__line">            <span class="c-code__comment">//</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// The last entry that reads is therefore the last real profile,</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// and the ranges found up to it are the whole data file rather</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// than part of it. Stop there instead of letting the failure end</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// the run.</span></div>
+<div class="c-code__line">            (string, string) range = <span class="c-code__keywordflow">default</span>;</div>
+<div class="c-code__line">            Exception unreadable = <span class="c-code__keyword">null</span>;</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">try</span></div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                range = GetRange(network, profile);</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">catch</span> (Exception ex)</div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                unreadable = ex;</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">            profile.Dispose();</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (unreadable != <span class="c-code__keyword">null</span>)</div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                logger?.LogWarning(</div>
+<div class="c-code__line">                    unreadable,</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;Stopped scanning at profile &#39;{0}&#39;, whose values could &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;not be read. Found &#39;{1}&#39; ranges before it&quot;</span>,</div>
+<div class="c-code__line">                    scanned,</div>
+<div class="c-code__line">                    found);</div>
+<div class="c-code__line">                yield <span class="c-code__keywordflow">break</span>;</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (range.Item1 != <span class="c-code__keyword">null</span> &amp;&amp; range.Item2 != <span class="c-code__keyword">null</span>)</div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                found++;</div>
+<div class="c-code__line">                sinceFound = 0;</div>
+<div class="c-code__line">                yield <span class="c-code__keywordflow">return</span> range;</div>
+<div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
@@ -187,23 +274,90 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">null</span>;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"></div>
-<div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">bool</span> <a id="a3" name="a3"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions.html#a3c806564677fb2dd74bf49688f4ac655">TryGetNextAddress</a>(Span&lt;byte&gt; buffer)</div>
+<div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> IEnumerable&lt;IPAddress&gt; <a id="a4" name="a4"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions.html#aec4cfc88770ccb20f13fd9f437c95482">Sample</a>(</div>
+<div class="c-code__line">        IPAddress startIp,</div>
+<div class="c-code__line">        IPAddress endIp,</div>
+<div class="c-code__line">        <span class="c-code__keywordtype">double</span> samplePercentage,</div>
+<div class="c-code__line">        <span class="c-code__keywordtype">int</span> maxSamplesPerRange,</div>
+<div class="c-code__line">        Random random)</div>
 <div class="c-code__line">    {</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">for</span> (<span class="c-code__keywordtype">int</span> i = buffer.Length - 1; i &gt;= 0; i--)</div>
+<div class="c-code__line">        var ipv6 = startIp.AddressFamily != AddressFamily.InterNetwork;</div>
+<div class="c-code__line">        var start = ToUInt128(startIp);</div>
+<div class="c-code__line">        var end = ToUInt128(endIp);</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (end &lt; start)</div>
 <div class="c-code__line">        {</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (buffer[i] &lt; <span class="c-code__keywordtype">byte</span>.MaxValue)</div>
-<div class="c-code__line">            {</div>
-<div class="c-code__line">                buffer[i]++;</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">true</span>;</div>
-<div class="c-code__line">            }</div>
-<div class="c-code__line">            buffer[i] = 0;</div>
+<div class="c-code__line">            yield <span class="c-code__keywordflow">break</span>;</div>
 <div class="c-code__line">        }</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">false</span>; <span class="c-code__comment">// Overflow</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment">// The last offset from the start of the range. The range is inclusive</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// so it contains span + 1 addresses.</span></div>
+<div class="c-code__line">        var span = end - start;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment">// Return every address when a complete analysis is wanted.</span></div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (samplePercentage &gt;= 1)</div>
+<div class="c-code__line">        {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">for</span> (UInt128 offset = 0; offset &lt;= span; offset++)</div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                yield <span class="c-code__keywordflow">return</span> ToIpAddress(start + offset, ipv6);</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">            yield <span class="c-code__keywordflow">break</span>;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        var count = GetSampleCount(span, samplePercentage, maxSamplesPerRange);</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">for</span> (var i = 0; i &lt; count; i++)</div>
+<div class="c-code__line">        {</div>
+<div class="c-code__line">            yield <span class="c-code__keywordflow">return</span> ToIpAddress(start + NextOffset(random, span), ipv6);</div>
+<div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"></div>
-<div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">bool</span> <a id="a4" name="a4"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions.html#a5cd75cfab704a5663c242245711c3c9e">IpEquals</a>(ReadOnlySpan&lt;byte&gt; a, ReadOnlySpan&lt;byte&gt; b)</div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">int</span> GetSampleCount(</div>
+<div class="c-code__line">        UInt128 span,</div>
+<div class="c-code__line">        <span class="c-code__keywordtype">double</span> samplePercentage,</div>
+<div class="c-code__line">        <span class="c-code__keywordtype">int</span> maxSamplesPerRange)</div>
 <div class="c-code__line">    {</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">return</span> a.SequenceEqual(b);</div>
+<div class="c-code__line">        var count = ((double)span + 1) * samplePercentage;</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (count &gt;= maxSamplesPerRange)</div>
+<div class="c-code__line">        {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> maxSamplesPerRange;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> Math.Max(1, (<span class="c-code__keywordtype">int</span>)Math.Ceiling(count));</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> UInt128 NextOffset(Random random, UInt128 span)</div>
+<div class="c-code__line">    {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (span == 0)</div>
+<div class="c-code__line">        {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> 0;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        Span&lt;byte&gt; bytes = stackalloc <span class="c-code__keywordtype">byte</span>[16];</div>
+<div class="c-code__line">        random.NextBytes(bytes);</div>
+<div class="c-code__line">        var value = <span class="c-code__keyword">new</span> UInt128(</div>
+<div class="c-code__line">            BitConverter.ToUInt64(bytes[..8]),</div>
+<div class="c-code__line">            BitConverter.ToUInt64(bytes[8..]));</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> span == UInt128.MaxValue ? value : value % (span + 1);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> UInt128 ToUInt128(IPAddress ip)</div>
+<div class="c-code__line">    {</div>
+<div class="c-code__line">        Span&lt;byte&gt; bytes = stackalloc <span class="c-code__keywordtype">byte</span>[16];</div>
+<div class="c-code__line">        ip.TryWriteBytes(bytes, out var written);</div>
+<div class="c-code__line">        UInt128 value = 0;</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">for</span> (var i = 0; i &lt; written; i++)</div>
+<div class="c-code__line">        {</div>
+<div class="c-code__line">            value = (value &lt;&lt; 8) | bytes[i];</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> value;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> IPAddress ToIpAddress(UInt128 value, <span class="c-code__keywordtype">bool</span> ipv6)</div>
+<div class="c-code__line">    {</div>
+<div class="c-code__line">        Span&lt;byte&gt; bytes = stackalloc <span class="c-code__keywordtype">byte</span>[ipv6 ? 16 : 4];</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">for</span> (var i = bytes.Length - 1; i &gt;= 0; i--)</div>
+<div class="c-code__line">        {</div>
+<div class="c-code__line">            bytes[i] = (byte)value;</div>
+<div class="c-code__line">            value &gt;&gt;= 8;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">new</span> IPAddress(bytes);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"></div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> IPAddress <a id="a5" name="a5"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions.html#a52104452e538d252bf6d512b93623ea7">GetNextAddress</a>(<span class="c-code__keyword">this</span> IPAddress ip)</div>
@@ -266,6 +420,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> readonly TimeSpan _logBuild = TimeSpan.FromSeconds(30);</div>
 <div class="c-code__line"></div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">double</span> DEFAULT_SAMPLE_PERCENTAGE = 0.1;</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">int</span> DEFAULT_MAX_SAMPLES_PER_RANGE = 8;</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">double</span> DEFAULT_RANGE_PERCENTAGE = 1;</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">const</span> PerformanceProfiles DEFAULT_PERFORMANCE_PROFILE =</div>
+<div class="c-code__line">        PerformanceProfiles.MaxPerformance;</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">int</span> DEFAULT_MAX_PROFILES_WITHOUT_RANGE = 100_000;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>Counter</div>
 <div class="c-code__line">    {</div>
@@ -544,9 +707,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"></div>
 <div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keywordtype">double</span> <a id="a23" name="a23"></a><a class="code hl_variable" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#aa3136f36a35394ed24ee50f717e8ba92">SamplePercentage</a>;</div>
 <div class="c-code__line"></div>
-<div class="c-code__line">        <span class="c-code__keyword">public</span> ILoggerFactory <a id="a24" name="a24"></a><a class="code hl_variable" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a22ce7a895b4c1cd3cbe18548a57b277e">LoggerFactory</a>;</div>
+<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keywordtype">int</span> <a id="a24" name="a24"></a><a class="code hl_variable" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#ac34474795589c75e4c8056e44160a3c7">MaxSamplesPerRange</a>;</div>
 <div class="c-code__line"></div>
-<div class="c-code__line">        <span class="c-code__keyword">public</span> Func&lt;(string, string), <span class="c-code__keywordtype">bool</span>&gt; <a id="a25" name="a25"></a><a class="code hl_variable" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a695d835df61d71635a486ad64458ea40">Condition</a>;</div>
+<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keywordtype">double</span> <a id="a25" name="a25"></a><a class="code hl_variable" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a314c3a1343cbd0688961af0f4d208b44">RangePercentage</a>;</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keywordtype">int</span> <a id="a26" name="a26"></a><a class="code hl_variable" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a04021517f4f39ff5cb3d37f13086eb77">MaxProfilesWithoutRange</a>;</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">        <span class="c-code__keyword">public</span> PerformanceProfiles <a id="a27" name="a27"></a><a class="code hl_variable" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a4282e70b33e901e66ed4deb1eb86934b">PerformanceProfile</a>;</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">        <span class="c-code__keyword">public</span> ILoggerFactory <a id="a28" name="a28"></a><a class="code hl_variable" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a22ce7a895b4c1cd3cbe18548a57b277e">LoggerFactory</a>;</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">        <span class="c-code__keyword">public</span> Func&lt;(string, string), <span class="c-code__keywordtype">bool</span>&gt; <a id="a29" name="a29"></a><a class="code hl_variable" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a695d835df61d71635a486ad64458ea40">Condition</a>;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">sealed</span> <span class="c-code__keyword">class </span>Worker(</div>
@@ -557,24 +728,47 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">        <span class="c-code__keyword">protected</span> <span class="c-code__keyword">override</span> async Task ExecuteAsync(</div>
 <div class="c-code__line">            CancellationToken stoppingToken)</div>
 <div class="c-code__line">        {</div>
-<div class="c-code__line">            await Example.Run(</div>
-<div class="c-code__line">                configuration.DataFile,</div>
-<div class="c-code__line">                configuration.LoggerFactory,</div>
-<div class="c-code__line">                configuration.Output,</div>
-<div class="c-code__line">                configuration.SamplePercentage,</div>
-<div class="c-code__line">                configuration.Condition,</div>
-<div class="c-code__line">                stoppingToken);</div>
-<div class="c-code__line">            hostApplicationLifetime.StopApplication();</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">try</span></div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                await Example.Run(</div>
+<div class="c-code__line">                    configuration.DataFile,</div>
+<div class="c-code__line">                    configuration.LoggerFactory,</div>
+<div class="c-code__line">                    configuration.Output,</div>
+<div class="c-code__line">                    configuration.SamplePercentage,</div>
+<div class="c-code__line">                    configuration.MaxSamplesPerRange,</div>
+<div class="c-code__line">                    configuration.RangePercentage,</div>
+<div class="c-code__line">                    configuration.MaxProfilesWithoutRange,</div>
+<div class="c-code__line">                    configuration.PerformanceProfile,</div>
+<div class="c-code__line">                    configuration.Condition,</div>
+<div class="c-code__line">                    stoppingToken);</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">catch</span> (Exception ex)</div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                <span class="c-code__comment">// The metrics have already been written by this point. Report</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// the failure rather than leaving it unhandled, which would</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// end the process without the summary below.</span></div>
+<div class="c-code__line">                configuration.LoggerFactory</div>
+<div class="c-code__line">                    .CreateLogger&lt;Worker&gt;()</div>
+<div class="c-code__line">                    .LogError(ex, <span class="c-code__stringliteral">&quot;The metrics run did not complete&quot;</span>);</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">finally</span></div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                hostApplicationLifetime.StopApplication();</div>
+<div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>Example : ExampleBase</div>
 <div class="c-code__line">    {</div>
-<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> async Task <a id="a26" name="a26"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_example.html#a91daec2a4118ea123a877c57b2b572fe">Run</a>(</div>
+<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> async Task <a id="a30" name="a30"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_example.html#aa9e461690167354ddd7cc1c87512a3cf">Run</a>(</div>
 <div class="c-code__line">            <span class="c-code__keywordtype">string</span> dataFile,</div>
 <div class="c-code__line">            ILoggerFactory loggerFactory,</div>
 <div class="c-code__line">            TextWriter output,</div>
 <div class="c-code__line">            <span class="c-code__keywordtype">double</span> samplePercentage,</div>
+<div class="c-code__line">            <span class="c-code__keywordtype">int</span> maxSamplesPerRange,</div>
+<div class="c-code__line">            <span class="c-code__keywordtype">double</span> rangePercentage,</div>
+<div class="c-code__line">            <span class="c-code__keywordtype">int</span> maxProfilesWithoutRange,</div>
+<div class="c-code__line">            PerformanceProfiles performanceProfile,</div>
 <div class="c-code__line">            Func&lt;(<span class="c-code__keywordtype">string</span>, <span class="c-code__keywordtype">string</span>), <span class="c-code__keywordtype">bool</span>&gt; condition,</div>
 <div class="c-code__line">            CancellationToken stoppingToken,</div>
 <div class="c-code__line">            ILogger logger = <span class="c-code__keyword">null</span>)</div>
@@ -584,14 +778,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            <span class="c-code__comment">// Ensure that batch latency mode is always enabled.</span></div>
 <div class="c-code__line">            GCSettings.LatencyMode = GCLatencyMode.Batch;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment">// Build a new on-premise IP Intelligence engine with the LowMemory</span></div>
-<div class="c-code__line">            <span class="c-code__comment">// profile so the large data file is paged from disk, not loaded into RAM.</span></div>
-<div class="c-code__line">            <span class="c-code__keyword">using </span>var ipiEngine = <span class="c-code__keyword">new</span> <a id="_a27" name="_a27"></a><a class="code hl_class" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder.html">IpiOnPremiseEngineBuilder</a>(loggerFactory)</div>
-<div class="c-code__line">                <span class="c-code__comment">// LowMemory keeps the (multi-gigabyte) IP Intelligence data file on</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// disk rather than loading it entirely into memory. See the</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// documentation for more detail on this and other configuration options.</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-metrics-console-program.cs&amp;utm_term=run</span></div>
-<div class="c-code__line">                .<a id="a28" name="a28"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder_base-1-g.html#aec4bcd06dc0282d083a91e864a7501ed">SetPerformanceProfile</a>(PerformanceProfiles.LowMemory)</div>
+<div class="c-code__line">            <span class="c-code__comment">// Build a new on-premise IP Intelligence engine. See the</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// documentation for more detail on this and other configuration options.</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-metrics-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">            <span class="c-code__keyword">using </span>var ipiEngine = <span class="c-code__keyword">new</span> <a id="_a31" name="_a31"></a><a class="code hl_class" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder.html">IpiOnPremiseEngineBuilder</a>(loggerFactory)</div>
+<div class="c-code__line">                .<a id="a32" name="a32"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder_base-1-g.html#aec4bcd06dc0282d083a91e864a7501ed">SetPerformanceProfile</a>(performanceProfile)</div>
 <div class="c-code__line">                <span class="c-code__comment">// inhibit auto-update of the data file for this test</span></div>
 <div class="c-code__line">                .SetAutoUpdate(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                .SetDataFileSystemWatcher(<span class="c-code__keyword">false</span>)</div>
@@ -600,8 +791,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                .SetProperties(</div>
 <div class="c-code__line">                    typeof(Key).GetProperties().Select(i =&gt; i.Name).Concat(</div>
 <div class="c-code__line">                        AreaIndex.Properties).ToList())</div>
-<div class="c-code__line">                <span class="c-code__comment">// Optimize for the expected parallel workload.</span></div>
-<div class="c-code__line">                .<a id="a29" name="a29"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder_base-1-g.html#affa4b21ec07868988caec526480fb482">SetConcurrency</a>((ushort)Environment.ProcessorCount)</div>
+<div class="c-code__line">                <span class="c-code__comment">// Optimize for the expected parallel workload. One handle per</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// consumer, plus one for the producer, which reads profile</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// metadata from the same pool while the consumers are</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// querying. Sizing the pool to the consumers alone exhausts it</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// and fails the run with &quot;Insufficient handles available&quot;.</span></div>
+<div class="c-code__line">                .<a id="a33" name="a33"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder_base-1-g.html#affa4b21ec07868988caec526480fb482">SetConcurrency</a>((ushort)(Environment.ProcessorCount + 1))</div>
 <div class="c-code__line">                .Build(dataFile, <span class="c-code__keyword">false</span>);</div>
 <div class="c-code__line">            <span class="c-code__keyword">using </span>var pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
 <div class="c-code__line">                .AddFlowElement(ipiEngine)</div>
@@ -617,7 +812,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                dataFileTier,</div>
 <div class="c-code__line">                dataFilePublishDate);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            logger.LogInformation(<span class="c-code__stringliteral">&quot;Server GC: &#39;{0}&#39;&quot;</span>, GCSettings.IsServerGC);</div>
+<div class="c-code__line">            logger.LogInformation(</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;Server GC: &#39;{0}&#39;, performance profile: &#39;{1}&#39;&quot;</span>,</div>
+<div class="c-code__line">                GCSettings.IsServerGC,</div>
+<div class="c-code__line">                performanceProfile);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Create the data set structure to rapidly retrieve the data</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// needed to calculate the metrics and to determine the valid</span></div>
@@ -651,18 +849,23 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                factory,</div>
 <div class="c-code__line">                ranges,</div>
 <div class="c-code__line">                samplePercentage,</div>
+<div class="c-code__line">                maxSamplesPerRange,</div>
 <div class="c-code__line">                stoppingToken);</div>
 <div class="c-code__line">            logger.LogInformation(</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;Created &#39;{0}&#39; consumer processors sampling &#39;{1:P2}&#39; of IPs&quot;</span>,</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;Created &#39;{0}&#39; consumer processors sampling &#39;{1:P2}&#39; of IPs &quot;</span> +</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;up to &#39;{2}&#39; per range&quot;</span>,</div>
 <div class="c-code__line">                consumers.Length,</div>
-<div class="c-code__line">                samplePercentage);</div>
+<div class="c-code__line">                samplePercentage,</div>
+<div class="c-code__line">                maxSamplesPerRange);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Use the main thread as the producer adding ranges for the</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// consumers to process.</span></div>
-<div class="c-code__line">            AddRanges(</div>
+<div class="c-code__line">            var scanFailure = await AddRanges(</div>
 <div class="c-code__line">                ipiEngine,</div>
 <div class="c-code__line">                logger, </div>
 <div class="c-code__line">                ranges,</div>
+<div class="c-code__line">                rangePercentage,</div>
+<div class="c-code__line">                maxProfilesWithoutRange,</div>
 <div class="c-code__line">                condition,</div>
 <div class="c-code__line">                consumers,</div>
 <div class="c-code__line">                stoppingToken);</div>
@@ -693,6 +896,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            ExampleUtils.CheckDataFile(</div>
 <div class="c-code__line">                ipiEngine,</div>
 <div class="c-code__line">                loggerFactory.CreateLogger&lt;Program&gt;());</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__comment">// Report a scan that stopped early only now that the metrics it</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// did gather have been written out. The caller needs to know the</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// analysis does not cover the whole data file.</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (scanFailure != <span class="c-code__keyword">null</span>)</div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                ExceptionDispatchInfo.Capture(scanFailure).Throw();</div>
+<div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"></div>
 <div class="c-code__line">        <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> WriteToCsv(</div>
@@ -719,6 +930,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                KeyFactory factory,</div>
 <div class="c-code__line">                Channel&lt;(<span class="c-code__keywordtype">string</span>, <span class="c-code__keywordtype">string</span>)&gt; ranges,</div>
 <div class="c-code__line">                <span class="c-code__keywordtype">double</span> samplePercentage,</div>
+<div class="c-code__line">                <span class="c-code__keywordtype">int</span> maxSamplesPerRange,</div>
 <div class="c-code__line">                CancellationToken stoppingToken)</div>
 <div class="c-code__line">        {</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">return</span> [.. Enumerable.Range(</div>
@@ -733,15 +945,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                        ranges,</div>
 <div class="c-code__line">                        consumer,</div>
 <div class="c-code__line">                        samplePercentage,</div>
+<div class="c-code__line">                        maxSamplesPerRange,</div>
 <div class="c-code__line">                        stoppingToken);</div>
 <div class="c-code__line">                    <span class="c-code__keywordflow">return</span> consumer;</div>
 <div class="c-code__line">                })];</div>
 <div class="c-code__line">        }</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__keyword">private</span> async <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> AddRanges(</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">        <span class="c-code__keyword">private</span> async <span class="c-code__keyword">static</span> Task&lt;Exception&gt; AddRanges(</div>
 <div class="c-code__line">            <a class="code hl_class" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a> ipiEngine,</div>
 <div class="c-code__line">            ILogger logger,</div>
 <div class="c-code__line">            Channel&lt;(<span class="c-code__keywordtype">string</span>, <span class="c-code__keywordtype">string</span>)&gt; ranges,</div>
+<div class="c-code__line">            <span class="c-code__keywordtype">double</span> rangePercentage,</div>
+<div class="c-code__line">            <span class="c-code__keywordtype">int</span> maxProfilesWithoutRange,</div>
 <div class="c-code__line">            Func&lt;(<span class="c-code__keywordtype">string</span>, <span class="c-code__keywordtype">string</span>), <span class="c-code__keywordtype">bool</span>&gt; condition,</div>
 <div class="c-code__line">            Consumer[] consumers,</div>
 <div class="c-code__line">            CancellationToken stoppingToken)</div>
@@ -752,37 +967,59 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            var nextLog = lastLog.Add(_logBuild);</div>
 <div class="c-code__line">            var lastProcessorTime = process.TotalProcessorTime;</div>
 <div class="c-code__line">            var source = condition == <span class="c-code__keyword">null</span> ?</div>
-<div class="c-code__line">                ipiEngine.ValidRanges() :</div>
-<div class="c-code__line">                ipiEngine.ValidRanges().Where(i =&gt; condition(i));</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">foreach</span> (var range <span class="c-code__keywordflow">in</span> source.TakeWhile(_ =&gt; </div>
-<div class="c-code__line">                stoppingToken.IsCancellationRequested == <span class="c-code__keyword">false</span>))</div>
+<div class="c-code__line">                ipiEngine.ValidRanges(</div>
+<div class="c-code__line">                    rangePercentage, maxProfilesWithoutRange, logger) :</div>
+<div class="c-code__line">                ipiEngine.ValidRanges(</div>
+<div class="c-code__line">                    rangePercentage, maxProfilesWithoutRange, logger)</div>
+<div class="c-code__line">                    .Where(i =&gt; condition(i));</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">try</span></div>
 <div class="c-code__line">            {</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">try</span></div>
+<div class="c-code__line">                <span class="c-code__keywordflow">foreach</span> (var range <span class="c-code__keywordflow">in</span> source.TakeWhile(_ =&gt; </div>
+<div class="c-code__line">                    stoppingToken.IsCancellationRequested == <span class="c-code__keyword">false</span>))</div>
 <div class="c-code__line">                {</div>
-<div class="c-code__line">                    await ranges.Writer.WaitToWriteAsync(stoppingToken);</div>
-<div class="c-code__line">                    await ranges.Writer.WriteAsync(range, stoppingToken);</div>
-<div class="c-code__line">                    added++;</div>
-<div class="c-code__line">                    <span class="c-code__keywordflow">if</span> (DateTime.UtcNow &gt;= nextLog)</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">try</span></div>
 <div class="c-code__line">                    {</div>
-<div class="c-code__line">                        nextLog = Log(</div>
-<div class="c-code__line">                            logger, </div>
-<div class="c-code__line">                            ranges, </div>
-<div class="c-code__line">                            consumers, </div>
-<div class="c-code__line">                            process, </div>
-<div class="c-code__line">                            added, </div>
-<div class="c-code__line">                            ref lastLog,</div>
-<div class="c-code__line">                            ref lastProcessorTime, </div>
-<div class="c-code__line">                            range);</div>
+<div class="c-code__line">                        await ranges.Writer.WaitToWriteAsync(stoppingToken);</div>
+<div class="c-code__line">                        await ranges.Writer.WriteAsync(range, stoppingToken);</div>
+<div class="c-code__line">                        added++;</div>
+<div class="c-code__line">                        <span class="c-code__keywordflow">if</span> (DateTime.UtcNow &gt;= nextLog)</div>
+<div class="c-code__line">                        {</div>
+<div class="c-code__line">                            nextLog = Log(</div>
+<div class="c-code__line">                                logger, </div>
+<div class="c-code__line">                                ranges, </div>
+<div class="c-code__line">                                consumers, </div>
+<div class="c-code__line">                                process, </div>
+<div class="c-code__line">                                added, </div>
+<div class="c-code__line">                                ref lastLog,</div>
+<div class="c-code__line">                                ref lastProcessorTime, </div>
+<div class="c-code__line">                                range);</div>
+<div class="c-code__line">                        }</div>
+<div class="c-code__line">                    }</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">catch</span> (OperationCanceledException)</div>
+<div class="c-code__line">                    {</div>
+<div class="c-code__line">                        <span class="c-code__comment">// Do nothing and exit as if the ranges had been fully</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// consumed.</span></div>
 <div class="c-code__line">                    }</div>
 <div class="c-code__line">                }</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">catch</span> (OperationCanceledException)</div>
-<div class="c-code__line">                {</div>
-<div class="c-code__line">                    <span class="c-code__comment">// Do nothing and exit as if the ranges had been fully</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// consumed.</span></div>
-<div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
-<div class="c-code__line">            ranges.Writer.Complete();</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">catch</span> (Exception ex)</div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                <span class="c-code__comment">// The engine can fail part way through enumerating profiles.</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// Report it and finish with the ranges found so far - the</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// metrics gathered up to this point are still worth writing,</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// and this used to take the whole process down with it.</span></div>
+<div class="c-code__line">                logger.LogError(</div>
+<div class="c-code__line">                    ex,</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;Stopped looking for ranges after &#39;{0}&#39;&quot;</span>,</div>
+<div class="c-code__line">                    added);</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">return</span> ex;</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">finally</span></div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                ranges.Writer.Complete();</div>
+<div class="c-code__line">            }</div>
 <div class="c-code__line">            logger.LogInformation(<span class="c-code__stringliteral">&quot;Finished adding &#39;{0}&#39; ranges&quot;</span>, added);</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">null</span>;</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> DateTime Log(</div>
@@ -828,7 +1065,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                qps,</div>
 <div class="c-code__line">                process.Threads.Count,</div>
 <div class="c-code__line">                process.HandleCount,</div>
-<div class="c-code__line">                process.WorkingSet64 / 1000);</div>
+<div class="c-code__line">                process.WorkingSet64 / 1_000_000);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Reset the count of queries to IPI.</span></div>
 <div class="c-code__line">            <span class="c-code__keywordflow">foreach</span> (var consumer <span class="c-code__keywordflow">in</span> consumers)</div>
@@ -850,16 +1087,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                Channel&lt;(<span class="c-code__keywordtype">string</span>, <span class="c-code__keywordtype">string</span>)&gt; ranges,</div>
 <div class="c-code__line">                Consumer consumer,</div>
 <div class="c-code__line">                <span class="c-code__keywordtype">double</span> samplePercentage,</div>
+<div class="c-code__line">                <span class="c-code__keywordtype">int</span> maxSamplesPerRange,</div>
 <div class="c-code__line">                CancellationToken stoppingToken)</div>
 <div class="c-code__line">        {</div>
 <div class="c-code__line">            var random = <span class="c-code__keyword">new</span> Random();</div>
 <div class="c-code__line">            var groups = <span class="c-code__keyword">new</span> Dictionary&lt;Key, Metric&gt;();</div>
-<div class="c-code__line">            var buffer4a = <span class="c-code__keyword">new</span> <span class="c-code__keywordtype">byte</span>[4];</div>
-<div class="c-code__line">            var buffer4b = <span class="c-code__keyword">new</span> <span class="c-code__keywordtype">byte</span>[4];</div>
-<div class="c-code__line">            var buffer6a = <span class="c-code__keyword">new</span> <span class="c-code__keywordtype">byte</span>[16];</div>
-<div class="c-code__line">            var buffer6b = <span class="c-code__keyword">new</span> <span class="c-code__keywordtype">byte</span>[16];</div>
-<div class="c-code__line">            <span class="c-code__keywordtype">byte</span>[] currentIpBuffer;</div>
-<div class="c-code__line">            <span class="c-code__keywordtype">byte</span>[] currentEndBuffer;</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">try</span></div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                await <span class="c-code__keywordflow">foreach</span> (var range <span class="c-code__keywordflow">in</span> ranges.Reader.ReadAllAsync(</div>
@@ -869,51 +1101,29 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                    var startIp = IPAddress.Parse(range.Item1);</div>
 <div class="c-code__line">                    var endIp = IPAddress.Parse(range.Item2);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">                    <span class="c-code__comment">// Get a previously allocated byte array for this family.</span></div>
-<div class="c-code__line">                    <span class="c-code__keywordflow">switch</span> (startIp.AddressFamily)</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">foreach</span> (var ip <span class="c-code__keywordflow">in</span> Extensions.Sample(</div>
+<div class="c-code__line">                        startIp,</div>
+<div class="c-code__line">                        endIp,</div>
+<div class="c-code__line">                        samplePercentage,</div>
+<div class="c-code__line">                        maxSamplesPerRange,</div>
+<div class="c-code__line">                        random))</div>
 <div class="c-code__line">                    {</div>
-<div class="c-code__line">                        <span class="c-code__keywordflow">case</span> AddressFamily.InterNetwork:</div>
-<div class="c-code__line">                            currentIpBuffer = buffer4a;</div>
-<div class="c-code__line">                            currentEndBuffer = buffer4b;</div>
-<div class="c-code__line">                            <span class="c-code__keywordflow">break</span>;</div>
-<div class="c-code__line">                        <span class="c-code__keywordflow">default</span>:</div>
-<div class="c-code__line">                            currentIpBuffer = buffer6a;</div>
-<div class="c-code__line">                            currentEndBuffer = buffer6b;</div>
-<div class="c-code__line">                            <span class="c-code__keywordflow">break</span>;</div>
-<div class="c-code__line">                    }</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">                    <span class="c-code__comment">// Add the current range bytes to these buffers.</span></div>
-<div class="c-code__line">                    startIp.TryWriteBytes(currentIpBuffer, out _);</div>
-<div class="c-code__line">                    endIp.TryWriteBytes(currentEndBuffer, out _);</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">                    <span class="c-code__keywordflow">while</span> (!Extensions.IpEquals(</div>
-<div class="c-code__line">                        currentIpBuffer,</div>
-<div class="c-code__line">                        currentEndBuffer) &amp;&amp;</div>
-<div class="c-code__line">                        stoppingToken.IsCancellationRequested == <span class="c-code__keyword">false</span>)</div>
-<div class="c-code__line">                    {</div>
-<div class="c-code__line">                        <span class="c-code__keywordflow">if</span> (random.NextDouble() &lt;= samplePercentage)</div>
+<div class="c-code__line">                        <span class="c-code__keywordflow">if</span> (stoppingToken.IsCancellationRequested)</div>
 <div class="c-code__line">                        {</div>
-<div class="c-code__line">                            <span class="c-code__comment">// Only allocate IPAddress object when we</span></div>
-<div class="c-code__line">                            <span class="c-code__comment">// actually need to process it</span></div>
-<div class="c-code__line">                            var ip = <span class="c-code__keyword">new</span> IPAddress(currentIpBuffer);</div>
-<div class="c-code__line">                            ProcessIp(</div>
-<div class="c-code__line">                                pipeline,</div>
-<div class="c-code__line">                                dataSet,</div>
-<div class="c-code__line">                                groups,</div>
-<div class="c-code__line">                                factory,</div>
-<div class="c-code__line">                                ip);</div>
-<div class="c-code__line">                            consumer.Count++;</div>
+<div class="c-code__line">                            <span class="c-code__keywordflow">break</span>;</div>
 <div class="c-code__line">                        }</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">                        <span class="c-code__comment">// Increment to next IP address (operates on stack</span></div>
-<div class="c-code__line">                        <span class="c-code__comment">// buffer, no allocation)</span></div>
-<div class="c-code__line">                        <span class="c-code__keywordflow">if</span> (!Extensions.TryGetNextAddress(currentIpBuffer))</div>
-<div class="c-code__line">                            <span class="c-code__keywordflow">break</span>; <span class="c-code__comment">// Overflow, reached maximum IP</span></div>
+<div class="c-code__line">                        ProcessIp(</div>
+<div class="c-code__line">                            pipeline,</div>
+<div class="c-code__line">                            dataSet,</div>
+<div class="c-code__line">                            groups,</div>
+<div class="c-code__line">                            factory,</div>
+<div class="c-code__line">                            ip);</div>
+<div class="c-code__line">                        consumer.Count++;</div>
 <div class="c-code__line">                    }</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">catch</span> (OperationCanceledException) </div>
-<div class="c-code__line">            { </div>
+<div class="c-code__line">            <span class="c-code__keywordflow">catch</span> (OperationCanceledException)</div>
+<div class="c-code__line">            {</div>
 <div class="c-code__line">                <span class="c-code__comment">// Do nothing.</span></div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">return</span> groups;</div>
@@ -982,6 +1192,27 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            <span class="c-code__keywordtype">double</span>.Parse(args[2]) :</div>
 <div class="c-code__line">            DEFAULT_SAMPLE_PERCENTAGE;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment">// Get the cap on the addresses sampled from a single range, or use</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// the default.</span></div>
+<div class="c-code__line">        configuration.MaxSamplesPerRange = args.Length &gt; 3 ?</div>
+<div class="c-code__line">            <span class="c-code__keywordtype">int</span>.Parse(args[3]) :</div>
+<div class="c-code__line">            DEFAULT_MAX_SAMPLES_PER_RANGE;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment">// Get the percentage of ranges to include, or use the default.</span></div>
+<div class="c-code__line">        configuration.RangePercentage = args.Length &gt; 4 ?</div>
+<div class="c-code__line">            <span class="c-code__keywordtype">double</span>.Parse(args[4]) :</div>
+<div class="c-code__line">            DEFAULT_RANGE_PERCENTAGE;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment">// Get the point at which to give up scanning, or use the default.</span></div>
+<div class="c-code__line">        configuration.MaxProfilesWithoutRange = args.Length &gt; 6 ?</div>
+<div class="c-code__line">            <span class="c-code__keywordtype">int</span>.Parse(args[6]) :</div>
+<div class="c-code__line">            DEFAULT_MAX_PROFILES_WITHOUT_RANGE;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment">// Get the performance profile, or use the default.</span></div>
+<div class="c-code__line">        configuration.PerformanceProfile = args.Length &gt; 5 ?</div>
+<div class="c-code__line">            Enum.Parse&lt;PerformanceProfiles&gt;(args[5], <span class="c-code__keyword">true</span>) :</div>
+<div class="c-code__line">            DEFAULT_PERFORMANCE_PROFILE;</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// Only include IP addresses with periods in them. i.e. IPv4. There are</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// too many IPv6 addresses for the metrics example to complete in a </span></div>
 <div class="c-code__line">        <span class="c-code__comment">// short time frame.</span></div>
@@ -1007,6 +1238,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            var builder = Host.CreateApplicationBuilder([]);</div>
 <div class="c-code__line">            builder.Services.AddSingleton(configuration);</div>
 <div class="c-code__line">            builder.Services.AddHostedService&lt;Worker&gt;();</div>
+<div class="c-code__line">            <span class="c-code__comment">// Stopping the example is meant to write out the metrics gathered</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// so far. The default shutdown timeout is far too short for that,</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// and when it expires the host disposes the engine while the</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// worker is still using it, which loses the output and takes the</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// process down with it.</span></div>
+<div class="c-code__line">            builder.Services.Configure&lt;HostOptions&gt;(o =&gt;</div>
+<div class="c-code__line">                o.ShutdownTimeout = TimeSpan.FromMinutes(5));</div>
 <div class="c-code__line">            <span class="c-code__keyword">using </span>var host = builder.Build();</div>
 <div class="c-code__line">            host.Run();</div>
 <div class="c-code__line">        }</div>
@@ -1031,32 +1269,36 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_html"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngine</a></div><div class="ttdoc">IP intelligence engine.</div><div class="ttdef"><b>Definition</b> IpiOnPremiseEngine.cs:45</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_html_a2119e21736f441391a5f9bdbc90ba007"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html#a2119e21736f441391a5f9bdbc90ba007">FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngine.Components</a></div><div class="ttdeci">override IEnumerable&lt; IComponentMetaData &gt; Components</div><div class="ttdoc">Get the meta-data for components populated by this engine.</div><div class="ttdef"><b>Definition</b> IpiOnPremiseEngine.cs:153</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_html_a7b3243e9f34192de82fb10edb6265843"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html#a7b3243e9f34192de82fb10edb6265843">FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngine.Profiles</a></div><div class="ttdeci">override IEnumerable&lt; IProfileMetaData &gt; Profiles</div><div class="ttdoc">Get the meta-data for profiles that may be returned by this engine.</div><div class="ttdef"><b>Definition</b> IpiOnPremiseEngine.cs:136</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions_html_a3c806564677fb2dd74bf49688f4ac655"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions.html#a3c806564677fb2dd74bf49688f4ac655">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Extensions.TryGetNextAddress</a></div><div class="ttdeci">static bool TryGetNextAddress(Span&lt; byte &gt; buffer)</div><div class="ttdoc">Increments the IP address in the buffer by 1.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:144</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions_html_a52104452e538d252bf6d512b93623ea7"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions.html#a52104452e538d252bf6d512b93623ea7">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Extensions.GetNextAddress</a></div><div class="ttdeci">static IPAddress GetNextAddress(this IPAddress ip)</div><div class="ttdoc">Get the next address after this one.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:174</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions_html_a5cd75cfab704a5663c242245711c3c9e"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions.html#a5cd75cfab704a5663c242245711c3c9e">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Extensions.IpEquals</a></div><div class="ttdeci">static bool IpEquals(ReadOnlySpan&lt; byte &gt; a, ReadOnlySpan&lt; byte &gt; b)</div><div class="ttdoc">Compares two IP addresses represented as byte spans.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:164</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_area_index_html_a1b864d42f19f752513c27b8607f98412"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_area_index.html#a1b864d42f19f752513c27b8607f98412">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.AreaIndex.WktAreas</a></div><div class="ttdeci">IReadOnlyDictionary&lt; string, Result &gt; WktAreas</div><div class="ttdoc">Dictionary that takes WKT value and returns the geographic area in square kms and the number polygons...</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:545</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_area_index_html_ae01db09d0418ad1cf1b47b25bd1e859f"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_area_index.html#ae01db09d0418ad1cf1b47b25bd1e859f">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.AreaIndex.Properties</a></div><div class="ttdeci">static readonly string[] Properties</div><div class="ttdoc">Properties used by the Area index.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:539</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration_html_a22ce7a895b4c1cd3cbe18548a57b277e"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a22ce7a895b4c1cd3cbe18548a57b277e">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Configuration.LoggerFactory</a></div><div class="ttdeci">ILoggerFactory LoggerFactory</div><div class="ttdoc">Logger factory for reporting progress.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:613</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration_html_a695d835df61d71635a486ad64458ea40"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a695d835df61d71635a486ad64458ea40">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Configuration.Condition</a></div><div class="ttdeci">Func&lt;(string, string), bool &gt; Condition</div><div class="ttdoc">Function used to determine if an IP address range should be included.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:619</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration_html_a8ccbc28ac0701885c6cfc0d9060cf501"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a8ccbc28ac0701885c6cfc0d9060cf501">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Configuration.DataFile</a></div><div class="ttdeci">string DataFile</div><div class="ttdoc">IPI data file.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:598</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration_html_aa3136f36a35394ed24ee50f717e8ba92"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#aa3136f36a35394ed24ee50f717e8ba92">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Configuration.SamplePercentage</a></div><div class="ttdeci">double SamplePercentage</div><div class="ttdoc">Sample of IP addresses to sample for the metrics.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:608</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration_html_abad8e18c4a6edce1f1d3c702c1955753"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#abad8e18c4a6edce1f1d3c702c1955753">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Configuration.Output</a></div><div class="ttdeci">StreamWriter Output</div><div class="ttdoc">Stream to write the output to.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:603</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_consumer_html_a2d241ce22867acf70342f46569651589"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_consumer.html#a2d241ce22867acf70342f46569651589">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Consumer.Task</a></div><div class="ttdeci">Task&lt; IReadOnlyDictionary&lt; Key, Metric &gt; &gt; Task</div><div class="ttdoc">The task associated with the consumer.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:525</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_consumer_html_a96c1dee13df7f95016419f3ae4d15b9c"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_consumer.html#a96c1dee13df7f95016419f3ae4d15b9c">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Consumer.Count</a></div><div class="ttdeci">int Count</div><div class="ttdoc">The number of IP pipeline processes that have been completed in a given period of time.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:531</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_example_html_a91daec2a4118ea123a877c57b2b572fe"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_example.html#a91daec2a4118ea123a877c57b2b572fe">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Example.Run</a></div><div class="ttdeci">static async Task Run(string dataFile, ILoggerFactory loggerFactory, TextWriter output, double samplePercentage, Func&lt;(string, string), bool &gt; condition, CancellationToken stoppingToken, ILogger logger=null)</div><div class="ttdoc">Runs the example as a task.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:666</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_key_factory_html_aafc4095694294af9b09334f97b7e63f0"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_key_factory.html#aafc4095694294af9b09334f97b7e63f0">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.KeyFactory.Create</a></div><div class="ttdeci">Key Create(IIpIntelligenceData data)</div><div class="ttdoc">Returns the key for the data instance provided.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:484</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_a2536123203b79561e37892c7a0932985"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#a2536123203b79561e37892c7a0932985">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.TotalAreaKm</a></div><div class="ttdeci">long TotalAreaKm</div><div class="ttdoc">The total area in km squared of all IPs.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:275</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_a2fcaa3e2ad4e845f7eed3d89d5b42791"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#a2fcaa3e2ad4e845f7eed3d89d5b42791">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.IncrementPolygons</a></div><div class="ttdeci">void IncrementPolygons(int polygons)</div><div class="ttdoc">Increase the count of IP addresses with the number of polygons provided.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:343</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_a7344233f3d38bb961015808337910d8e"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#a7344233f3d38bb961015808337910d8e">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.AverageAreaKm</a></div><div class="ttdeci">long AverageAreaKm</div><div class="ttdoc">Average area in km squared for the IPs, or 0 if there is no area available.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:288</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_a773fd92452a29ed277bc3e846b8fb4eb"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#a773fd92452a29ed277bc3e846b8fb4eb">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.AveragePolygons</a></div><div class="ttdeci">double AveragePolygons</div><div class="ttdoc">Average number of polygons for the metric.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:304</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_ab72d17b60906ab12e51d8fe650c3f07f"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#ab72d17b60906ab12e51d8fe650c3f07f">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.EquivalentRadiusKm</a></div><div class="ttdeci">int EquivalentRadiusKm</div><div class="ttdoc">The radius that a circle would need to so that it covered the same area as the AverageAreaKm.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:296</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_ac25cb48a931d7814762aa1d670062b2f"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#ac25cb48a931d7814762aa1d670062b2f">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.Merge</a></div><div class="ttdeci">void Merge(Metric other)</div><div class="ttdoc">Merge the other metric instance with this one.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:359</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_ad28c3e67fd83858c85dc2500aced6666"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#ad28c3e67fd83858c85dc2500aced6666">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.AreaCount</a></div><div class="ttdeci">int AreaCount</div><div class="ttdoc">Number of areas included.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:281</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_ae717f0c35d700a5013ada6a6057e0438"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#ae717f0c35d700a5013ada6a6057e0438">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.IpCount</a></div><div class="ttdeci">int IpCount</div><div class="ttdoc">Number of IP addresses that relate to this metric.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:269</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions_html_a52104452e538d252bf6d512b93623ea7"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions.html#a52104452e538d252bf6d512b93623ea7">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Extensions.GetNextAddress</a></div><div class="ttdeci">static IPAddress GetNextAddress(this IPAddress ip)</div><div class="ttdoc">Get the next address after this one.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:371</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions_html_a7c8dde388bbbf7b3ef0b9df6809da473"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions.html#a7c8dde388bbbf7b3ef0b9df6809da473">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Extensions.ValidRanges</a></div><div class="ttdeci">static IEnumerable&lt;(string, string)&gt; ValidRanges(this IpiOnPremiseEngine engine, double rangePercentage=1, int maxProfilesWithoutRange=0, ILogger logger=null)</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:113</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions_html_aec4cfc88770ccb20f13fd9f437c95482"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions.html#aec4cfc88770ccb20f13fd9f437c95482">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Extensions.Sample</a></div><div class="ttdeci">static IEnumerable&lt; IPAddress &gt; Sample(IPAddress startIp, IPAddress endIp, double samplePercentage, int maxSamplesPerRange, Random random)</div><div class="ttdoc">Returns the IP addresses to include in the metrics for the inclusive range provided.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:272</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_area_index_html_a1b864d42f19f752513c27b8607f98412"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_area_index.html#a1b864d42f19f752513c27b8607f98412">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.AreaIndex.WktAreas</a></div><div class="ttdeci">IReadOnlyDictionary&lt; string, Result &gt; WktAreas</div><div class="ttdoc">Dictionary that takes WKT value and returns the geographic area in square kms and the number polygons...</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:792</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_area_index_html_ae01db09d0418ad1cf1b47b25bd1e859f"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_area_index.html#ae01db09d0418ad1cf1b47b25bd1e859f">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.AreaIndex.Properties</a></div><div class="ttdeci">static readonly string[] Properties</div><div class="ttdoc">Properties used by the Area index.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:786</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration_html_a04021517f4f39ff5cb3d37f13086eb77"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a04021517f4f39ff5cb3d37f13086eb77">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Configuration.MaxProfilesWithoutRange</a></div><div class="ttdeci">int MaxProfilesWithoutRange</div><div class="ttdoc">Give up scanning after this many profiles in a row with no range.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:870</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration_html_a22ce7a895b4c1cd3cbe18548a57b277e"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a22ce7a895b4c1cd3cbe18548a57b277e">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Configuration.LoggerFactory</a></div><div class="ttdeci">ILoggerFactory LoggerFactory</div><div class="ttdoc">Logger factory for reporting progress.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:880</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration_html_a314c3a1343cbd0688961af0f4d208b44"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a314c3a1343cbd0688961af0f4d208b44">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Configuration.RangePercentage</a></div><div class="ttdeci">double RangePercentage</div><div class="ttdoc">Percentage of the ranges in the data file to include.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:865</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration_html_a4282e70b33e901e66ed4deb1eb86934b"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a4282e70b33e901e66ed4deb1eb86934b">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Configuration.PerformanceProfile</a></div><div class="ttdeci">PerformanceProfiles PerformanceProfile</div><div class="ttdoc">Performance profile the engine is built with.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:875</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration_html_a695d835df61d71635a486ad64458ea40"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a695d835df61d71635a486ad64458ea40">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Configuration.Condition</a></div><div class="ttdeci">Func&lt;(string, string), bool &gt; Condition</div><div class="ttdoc">Function used to determine if an IP address range should be included.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:886</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration_html_a8ccbc28ac0701885c6cfc0d9060cf501"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a8ccbc28ac0701885c6cfc0d9060cf501">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Configuration.DataFile</a></div><div class="ttdeci">string DataFile</div><div class="ttdoc">IPI data file.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:845</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration_html_aa3136f36a35394ed24ee50f717e8ba92"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#aa3136f36a35394ed24ee50f717e8ba92">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Configuration.SamplePercentage</a></div><div class="ttdeci">double SamplePercentage</div><div class="ttdoc">Sample of IP addresses to sample for the metrics.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:855</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration_html_abad8e18c4a6edce1f1d3c702c1955753"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#abad8e18c4a6edce1f1d3c702c1955753">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Configuration.Output</a></div><div class="ttdeci">StreamWriter Output</div><div class="ttdoc">Stream to write the output to.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:850</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration_html_ac34474795589c75e4c8056e44160a3c7"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#ac34474795589c75e4c8056e44160a3c7">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Configuration.MaxSamplesPerRange</a></div><div class="ttdeci">int MaxSamplesPerRange</div><div class="ttdoc">Maximum number of IP addresses sampled from a single range.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:860</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_consumer_html_a2d241ce22867acf70342f46569651589"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_consumer.html#a2d241ce22867acf70342f46569651589">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Consumer.Task</a></div><div class="ttdeci">Task&lt; IReadOnlyDictionary&lt; Key, Metric &gt; &gt; Task</div><div class="ttdoc">The task associated with the consumer.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:772</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_consumer_html_a96c1dee13df7f95016419f3ae4d15b9c"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_consumer.html#a96c1dee13df7f95016419f3ae4d15b9c">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Consumer.Count</a></div><div class="ttdeci">int Count</div><div class="ttdoc">The number of IP pipeline processes that have been completed in a given period of time.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:778</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_example_html_aa9e461690167354ddd7cc1c87512a3cf"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_example.html#aa9e461690167354ddd7cc1c87512a3cf">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Example.Run</a></div><div class="ttdeci">static async Task Run(string dataFile, ILoggerFactory loggerFactory, TextWriter output, double samplePercentage, int maxSamplesPerRange, double rangePercentage, int maxProfilesWithoutRange, PerformanceProfiles performanceProfile, Func&lt;(string, string), bool &gt; condition, CancellationToken stoppingToken, ILogger logger=null)</div><div class="ttdoc">Runs the example as a task.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:970</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_key_factory_html_aafc4095694294af9b09334f97b7e63f0"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_key_factory.html#aafc4095694294af9b09334f97b7e63f0">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.KeyFactory.Create</a></div><div class="ttdeci">Key Create(IIpIntelligenceData data)</div><div class="ttdoc">Returns the key for the data instance provided.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:731</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_a2536123203b79561e37892c7a0932985"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#a2536123203b79561e37892c7a0932985">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.TotalAreaKm</a></div><div class="ttdeci">long TotalAreaKm</div><div class="ttdoc">The total area in km squared of all IPs.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:522</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_a2fcaa3e2ad4e845f7eed3d89d5b42791"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#a2fcaa3e2ad4e845f7eed3d89d5b42791">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.IncrementPolygons</a></div><div class="ttdeci">void IncrementPolygons(int polygons)</div><div class="ttdoc">Increase the count of IP addresses with the number of polygons provided.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:590</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_a7344233f3d38bb961015808337910d8e"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#a7344233f3d38bb961015808337910d8e">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.AverageAreaKm</a></div><div class="ttdeci">long AverageAreaKm</div><div class="ttdoc">Average area in km squared for the IPs, or 0 if there is no area available.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:535</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_a773fd92452a29ed277bc3e846b8fb4eb"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#a773fd92452a29ed277bc3e846b8fb4eb">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.AveragePolygons</a></div><div class="ttdeci">double AveragePolygons</div><div class="ttdoc">Average number of polygons for the metric.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:551</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_ab72d17b60906ab12e51d8fe650c3f07f"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#ab72d17b60906ab12e51d8fe650c3f07f">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.EquivalentRadiusKm</a></div><div class="ttdeci">int EquivalentRadiusKm</div><div class="ttdoc">The radius that a circle would need to so that it covered the same area as the AverageAreaKm.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:543</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_ac25cb48a931d7814762aa1d670062b2f"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#ac25cb48a931d7814762aa1d670062b2f">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.Merge</a></div><div class="ttdeci">void Merge(Metric other)</div><div class="ttdoc">Merge the other metric instance with this one.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:606</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_ad28c3e67fd83858c85dc2500aced6666"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#ad28c3e67fd83858c85dc2500aced6666">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.AreaCount</a></div><div class="ttdeci">int AreaCount</div><div class="ttdoc">Number of areas included.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:528</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric_html_ae717f0c35d700a5013ada6a6057e0438"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_metric.html#ae717f0c35d700a5013ada6a6057e0438">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.Metric.IpCount</a></div><div class="ttdeci">int IpCount</div><div class="ttdoc">Number of IP addresses that relate to this metric.</div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:516</div></div>
 <div class="ttc" id="anamespace_examples_1_1_on_premise_1_1_areas_html"><div class="ttname"><a href="namespace_examples_1_1_on_premise_1_1_areas.html">Examples.OnPremise.Areas</a></div><div class="ttdef"><b>Definition</b> Calculations.cs:31</div></div>
 <div class="ttc" id="anamespace_examples_html"><div class="ttname"><a href="namespace_examples.html">Examples</a></div><div class="ttdef"><b>Definition</b> Calculations.cs:31</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements.html">FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements</a></div><div class="ttdef"><b>Definition</b> IpiOnPremiseEngine.cs:38</div></div>
-<div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics.html">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics</a></div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:77</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics.html">FiftyOne.IpIntelligence.Examples.OnPremise.Metrics</a></div><div class="ttdef"><b>Definition</b> OnPremise/Metrics-Console/Program.cs:80</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->
