@@ -77,8 +77,68 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ab56fdb75880c1e60d51e26a192e01de3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether processing of this flow data should continue.  <br /></td></tr>
 <tr class="c-table__row memitem:af7eba60a567e9d1826f130b86f4f49ff" id="r_af7eba60a567e9d1826f130b86f4f49ff"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#af7eba60a567e9d1826f130b86f4f49ff">SetStopToken</a> (this <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data, CancellationToken stopToken)</td></tr>
 <tr class="c-table__row memdesc:af7eba60a567e9d1826f130b86f4f49ff"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Stop processing this flow data when the supplied token is, or becomes, cancelled.  <br /></td></tr>
+<tr class="c-table__row memitem:ac74cf728f7df3f139c27520a17205027" id="r_ac74cf728f7df3f139c27520a17205027"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ac74cf728f7df3f139c27520a17205027">AddWarning</a> (this <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data, string message, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html">IFlowElement</a> flowElement)</td></tr>
+<tr class="c-table__row memdesc:ac74cf728f7df3f139c27520a17205027"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Record a message for the caller about something that was wrong with the request but did not stop it being served, for example an evidence value that an element could not use.  <br /></td></tr>
+<tr class="c-table__row memitem:ad1539f00d9ff071292c1a3d8a4ecf677" id="r_ad1539f00d9ff071292c1a3d8a4ecf677"><td class="c-table__cell">static&#160;IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_warning.html">IFlowWarning</a>&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ad1539f00d9ff071292c1a3d8a4ecf677">GetWarnings</a> (this <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data)</td></tr>
+<tr class="c-table__row memdesc:ad1539f00d9ff071292c1a3d8a4ecf677"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The messages recorded by AddWarning(IFlowData, string, IFlowElement), in the order they were added.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="ac74cf728f7df3f139c27520a17205027" name="ac74cf728f7df3f139c27520a17205027"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac74cf728f7df3f139c27520a17205027">&#9670;&#160;</a></span>AddWarning()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void FiftyOne.Pipeline.Core.Data.FlowDataExtensions.AddWarning </td>
+          <td>(</td>
+          <td class="c-table__cell">this <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a></td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>message</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html">IFlowElement</a></td>          <td class="c-table__cell"><span class="paramname"><em>flowElement</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Record a message for the caller about something that was wrong with the request but did not stop it being served, for example an evidence value that an element could not use. </p>
+<p>A builder such as the JSON builder writes these into the response.</p>
+<p>This is the channel to use instead of IFlowData.AddError(Exception, IFlowElement) for a problem that should not fail the request. A non-empty errors collection makes the pipeline throw at the end of processing unless the host has set SuppressProcessExceptions, whatever the shouldThrow flag on the individual error says, which leaves such a host returning no payload at all. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The flow data to record the message on.</td></tr>
+    <tr><td class="paramname">message</td><td>The message for the caller.</td></tr>
+    <tr><td class="paramname">flowElement</td><td>The flow element the warning relates to, or null. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentNullException</td><td>Thrown if the supplied data or message is null. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a08855d33343ae2ce08913dc0f07df5c4" name="a08855d33343ae2ce08913dc0f07df5c4"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a08855d33343ae2ce08913dc0f07df5c4">&#9670;&#160;</a></span>GetStopToken()</h2>
 
@@ -115,6 +175,50 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The stop token for this flow data. For a concrete FlowData this is linked to the token supplied when the flow data was created. For any other IFlowData implementation it is a token whose state reflects the current value of IFlowData.Stop. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentNullException</td><td>Thrown if the supplied data is null. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad1539f00d9ff071292c1a3d8a4ecf677" name="ad1539f00d9ff071292c1a3d8a4ecf677"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad1539f00d9ff071292c1a3d8a4ecf677">&#9670;&#160;</a></span>GetWarnings()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">IReadOnlyList&lt; <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_warning.html">IFlowWarning</a> &gt; FiftyOne.Pipeline.Core.Data.FlowDataExtensions.GetWarnings </td>
+          <td>(</td>
+          <td class="c-table__cell">this <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a></td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The messages recorded by AddWarning(IFlowData, string, IFlowElement), in the order they were added. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The flow data to read the messages from.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The warnings, or an empty list if there are none or the flow data does not support them. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ArgumentNullException</td><td>Thrown if the supplied data is null. </td></tr>

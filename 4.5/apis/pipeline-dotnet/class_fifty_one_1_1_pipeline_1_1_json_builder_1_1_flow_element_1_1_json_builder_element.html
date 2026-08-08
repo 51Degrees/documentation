@@ -125,6 +125,8 @@ override&#160;void&#160;</td><td class="c-table__cell"><b>ManagedResourcesCleanu
 <tr class="c-table__row memdesc:a2be024ff3650a4d85b1cf90042d80a42"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the JSON.  <br /></td></tr>
 <tr class="c-table__row memitem:ae79bc4c7f3d951b08b854ab74bc82eaa" id="r_ae79bc4c7f3d951b08b854ab74bc82eaa"><td class="c-table__cell">virtual&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ae79bc4c7f3d951b08b854ab74bc82eaa">AddErrors</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data, Dictionary&lt; string, object &gt; allProperties)</td></tr>
 <tr class="c-table__row memdesc:ae79bc4c7f3d951b08b854ab74bc82eaa"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add any errors in the flow data object to the dictionary.  <br /></td></tr>
+<tr class="c-table__row memitem:a13fa6bbc24203363ad55cb2baa8f6d56" id="r_a13fa6bbc24203363ad55cb2baa8f6d56"><td class="c-table__cell">virtual&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a13fa6bbc24203363ad55cb2baa8f6d56">AddWarnings</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data, Dictionary&lt; string, object &gt; allProperties)</td></tr>
+<tr class="c-table__row memdesc:a13fa6bbc24203363ad55cb2baa8f6d56"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add any warnings in the flow data object to the dictionary.  <br /></td></tr>
 <tr class="c-table__row memitem:abc97f2a76e306b342a09c3070f779883" id="r_abc97f2a76e306b342a09c3070f779883"><td class="c-table__cell"><a id="abc97f2a76e306b342a09c3070f779883" name="abc97f2a76e306b342a09c3070f779883"></a>
 override&#160;void&#160;</td><td class="c-table__cell"><b>UnmanagedResourcesCleanup</b> ()</td></tr>
 <tr class="c-table__row memdesc:abc97f2a76e306b342a09c3070f779883"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Cleanup any unmanaged resources. <br /></td></tr>
@@ -347,6 +349,55 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ArgumentNullException</td><td>Thrown if required parameters are null </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a13fa6bbc24203363ad55cb2baa8f6d56" name="a13fa6bbc24203363ad55cb2baa8f6d56"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a13fa6bbc24203363ad55cb2baa8f6d56">&#9670;&#160;</a></span>AddWarnings()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">virtual void FiftyOne.Pipeline.JsonBuilder.FlowElement.JsonBuilderElement.AddWarnings </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a></td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">Dictionary&lt; string, object &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>allProperties</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Add any warnings in the flow data object to the dictionary. </p>
+<p>These tell the caller about something wrong with the request, such as an evidence value that could not be used, whilst still returning the rest of the data.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramname">allProperties</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentNullException</td><td>Thrown if one of the supplied parameters is null </td></tr>
   </table>
   </dd>
 </dl>

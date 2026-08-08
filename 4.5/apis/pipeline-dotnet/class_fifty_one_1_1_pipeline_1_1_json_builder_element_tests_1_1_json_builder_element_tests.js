@@ -13,8 +13,11 @@ var class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder
     [ "JsonBuilder_MultipleEvidenceProperties", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#a6cde3644edb8be306c879702e0d04928", null ],
     [ "JsonBuilder_NestedProperties", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#a5df104f248fd7c6eed6af2a4f79fdaad", null ],
     [ "JsonBuilder_NonEmptyFallback", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#acab680aefedeba503014707be771f4ae", null ],
+    [ "JsonBuilder_NoWarnings_NoEntryInJson", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#a7e9e32c7aa0844b131727fca334f6ab7", null ],
     [ "JsonBuilder_Serialization_PropertyValues", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#a3407551dc45d5f56b623ba1c0f48e8ba", null ],
     [ "JsonBuilder_Serialization_Text", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#a52977ad9f8ac761ccd3e319d6a5e507a", null ],
     [ "JsonBuilder_ValidJson", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#a539891de9a7417cfe3409c9ad3820cab", null ],
-    [ "JsonBuilder_VerifyErrorHandling", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#ae822b21dc23ed759aa74ad4f8d7b6262", null ]
+    [ "JsonBuilder_VerifyErrorHandling", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#ae822b21dc23ed759aa74ad4f8d7b6262", null ],
+    [ "JsonBuilder_Warnings_InJson", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#a72de1e2193d294d8ffd891aff1cc6b10", null ],
+    [ "JsonBuilder_Warnings_MergedWithSubclassEntry", "class_fifty_one_1_1_pipeline_1_1_json_builder_element_tests_1_1_json_builder_element_tests.html#aa76ab59cc562cff30a282adea59d1b3d", null ]
 ];

@@ -90,6 +90,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ad4ca75297568a45140182d4f506f895b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Register an error that occurred while working with this instance.  <br /></td></tr>
 <tr class="c-table__row memitem:a84ebfd09a2674f12e09df0eae5a31f93" id="r_a84ebfd09a2674f12e09df0eae5a31f93"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a84ebfd09a2674f12e09df0eae5a31f93">AddError</a> (Exception ex, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html">IFlowElement</a> flowElement, bool shouldThrow, bool shouldLog)</td></tr>
 <tr class="c-table__row memdesc:a84ebfd09a2674f12e09df0eae5a31f93"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Register an error that occurred while working with this instance.  <br /></td></tr>
+<tr class="c-table__row memitem:a6b312c4fc78ac824d8a7045468c327e6" id="r_a6b312c4fc78ac824d8a7045468c327e6"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a6b312c4fc78ac824d8a7045468c327e6">AddWarning</a> (string message, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html">IFlowElement</a> flowElement)</td></tr>
+<tr class="c-table__row memdesc:a6b312c4fc78ac824d8a7045468c327e6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Record a message for the caller about something that was wrong with the request but did not stop it being served.  <br /></td></tr>
 <tr class="c-table__row memitem:af8106a95180df092f186dc60d995a3d4" id="r_af8106a95180df092f186dc60d995a3d4"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_evidence.html">IEvidence</a>&#160;</td><td class="c-table__cell"><a class="el" href="#af8106a95180df092f186dc60d995a3d4">GetEvidence</a> ()</td></tr>
 <tr class="c-table__row memdesc:af8106a95180df092f186dc60d995a3d4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the IEvidence object that contains the input data for this instance.  <br /></td></tr>
 <tr class="c-table__row memitem:ac5b43e142e748a87b91397ee2c47d746" id="r_ac5b43e142e748a87b91397ee2c47d746"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ac5b43e142e748a87b91397ee2c47d746">TryGetEvidence&lt; T &gt;</a> (string key, out T value)</td></tr>
@@ -170,6 +172,8 @@ CancellationToken&#160;</td><td class="c-table__cell"><b>StopToken</b><code> [ge
 <tr class="c-table__row memdesc:a6b8e68fa542aee01fffd86da5165bcbb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The token that is cancelled when processing of this flow data should stop. <br /></td></tr>
 <tr class="c-table__row memitem:a79986f2cbb232659e018b98e669641f8" id="r_a79986f2cbb232659e018b98e669641f8"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_evidence_key_filter.html">IEvidenceKeyFilter</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a79986f2cbb232659e018b98e669641f8">EvidenceKeyFilter</a><code> [get]</code></td></tr>
 <tr class="c-table__row memdesc:a79986f2cbb232659e018b98e669641f8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a filter that will only include the evidence keys that can be used by the elements within the pipeline that created this flow element.  <br /></td></tr>
+<tr class="c-table__row memitem:a2bf0b49232c0ff457127b73972294c62" id="r_a2bf0b49232c0ff457127b73972294c62"><td class="c-table__cell">IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_warning.html">IFlowWarning</a>&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a2bf0b49232c0ff457127b73972294c62">Warnings</a><code> [get]</code></td></tr>
+<tr class="c-table__row memdesc:a2bf0b49232c0ff457127b73972294c62"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The warnings that have been recorded during processing, in the order they were added.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="ad4ca75297568a45140182d4f506f895b" name="ad4ca75297568a45140182d4f506f895b"></a>
@@ -332,6 +336,47 @@ CancellationToken&#160;</td><td class="c-table__cell"><b>StopToken</b><code> [ge
 </dl>
 
 <p>Implements <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html#a710321670959264647fa3c634bcd7933">FiftyOne.Pipeline.Core.Data.IFlowData</a>.</p>
+
+</div>
+</div>
+<a id="a6b312c4fc78ac824d8a7045468c327e6" name="a6b312c4fc78ac824d8a7045468c327e6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6b312c4fc78ac824d8a7045468c327e6">&#9670;&#160;</a></span>AddWarning()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void FiftyOne.Pipeline.Core.Data.FlowData.AddWarning </td>
+          <td>(</td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>message</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html">IFlowElement</a></td>          <td class="c-table__cell"><span class="paramname"><em>flowElement</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Record a message for the caller about something that was wrong with the request but did not stop it being served. </p>
+<p>Unlike AddError(Exception, IFlowElement) this never affects processing: the pipeline does not throw because a warning was recorded. Use it for a problem the caller should know about and can act on, such as an evidence value that could not be used. Safe to call from elements running concurrently. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The message for the caller.</td></tr>
+    <tr><td class="paramname">flowElement</td><td>The flow element the warning relates to, or null. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentNullException</td><td>Thrown if the supplied message is null. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1395,6 +1440,36 @@ CancellationToken&#160;</td><td class="c-table__cell"><b>StopToken</b><code> [ge
 <p>Cancellation is one-way: setting it to <code>false</code> is a no-op. </p>
 
 <p>Implements <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html#aaa1d8e65b888b75e58ef8e276c2fbd13">FiftyOne.Pipeline.Core.Data.IFlowData</a>.</p>
+
+</div>
+</div>
+<a id="a2bf0b49232c0ff457127b73972294c62" name="a2bf0b49232c0ff457127b73972294c62"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2bf0b49232c0ff457127b73972294c62">&#9670;&#160;</a></span>Warnings</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">IReadOnlyList&lt;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_warning.html">IFlowWarning</a>&gt; FiftyOne.Pipeline.Core.Data.FlowData.Warnings</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The warnings that have been recorded during processing, in the order they were added. </p>
+<p>Empty if there are none.</p>
+<p>A snapshot rather than the live collection, so that a caller reading this while a concurrent element is still adding cannot observe a partially written list. </p>
 
 </div>
 </div>

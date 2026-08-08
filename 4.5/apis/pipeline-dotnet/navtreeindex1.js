@@ -1,5 +1,13 @@
 var NAVTREEINDEX1 =
 {
+"class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade_1_1_windowed_fail_handler.html#a15847165f164af08417361c2eccfc888a9fced7d2ccc7de90cb602f37a9ff01d6":[1,4,0,0,4,1,2,0,4],
+"class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade_1_1_windowed_fail_handler.html#a15847165f164af08417361c2eccfc888aca024357af1446dadab85bd2fc3bdf63":[1,4,0,0,4,1,2,0,2],
+"class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade_1_1_windowed_fail_handler.html#a355efb378091bc4d1ba3a9d36b408280":[1,4,0,0,4,1,2,3],
+"class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade_1_1_windowed_fail_handler.html#a5fc10fcb97b87e34148022c1bf13868e":[1,4,0,0,4,1,2,1],
+"class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade_1_1_windowed_fail_handler.html#a92bcfa197de0ef59b3c3a120d1ec165d":[1,4,0,0,4,1,2,2],
+"class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_exponential_backoff_recovery_strategy.html":[1,4,0,0,4,2,0],
+"class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_exponential_backoff_recovery_strategy.html#a0d546c88defecfef74ad41d69f398dc6":[1,4,0,0,4,2,0,0],
+"class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_exponential_backoff_recovery_strategy.html#a27cf4a0b69f688e3517d3b17eb79832a":[1,4,0,0,4,2,0,3],
 "class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_exponential_backoff_recovery_strategy.html#a43733f22d48703474ca7804fcfbc7ca6":[1,4,0,0,4,2,0,2],
 "class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_exponential_backoff_recovery_strategy.html#a44f3a6385f47db5e438003399a110a27":[1,4,0,0,4,2,0,6],
 "class_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_exponential_backoff_recovery_strategy.html#a85642289013078d7cc371c06c3c8df9b":[1,4,0,0,4,2,0,5],
@@ -241,13 +249,5 @@ var NAVTREEINDEX1 =
 "class_fifty_one_1_1_pipeline_1_1_engines_1_1_exceptions_1_1_no_value_exception.html#a01a7750b92fe8db35bf745f09261a5ba":[1,4,0,1,3,1,1],
 "class_fifty_one_1_1_pipeline_1_1_engines_1_1_exceptions_1_1_no_value_exception.html#a331b61be8aab7d1c4d98de4043ced07b":[1,4,0,1,3,1,2],
 "class_fifty_one_1_1_pipeline_1_1_engines_1_1_exceptions_1_1_no_value_exception.html#ad2a7cdf5dbed378844df4a87fd426e0c":[1,4,0,1,3,1,0],
-"class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_configuration_1_1_fifty_one_data_file_configuration.html":[1,4,0,1,4,0,0],
-"class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_configuration_1_1_fifty_one_data_file_configuration.html#a397c7f2056ad38c9932d8f61424f8f2f":[1,4,0,1,4,0,0,0],
-"class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_configuration_1_1_fifty_one_data_file_configuration_builder.html":[1,4,0,1,4,0,1],
-"class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_configuration_1_1_fifty_one_data_file_configuration_builder.html#a27d2b21637e57503fb9d71bac3873372":[1,4,0,1,4,0,1,0],
-"class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html":[1,4,0,1,4,4],
-"class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#a0b5a33b4ff582198f2e7918162dff388":[1,4,0,1,4,4,2],
-"class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#a2187681470e11e2443f251a42f8df0e4":[1,4,0,1,4,4,11],
-"class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#a47d683a25bee49c23190cd17dd7af3d4":[1,4,0,1,4,4,3],
-"class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#a4b444dc0046b70cc5b20fc1ceeee9232":[1,4,0,1,4,4,7]
+"class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_configuration_1_1_fifty_one_data_file_configuration.html":[1,4,0,1,4,0,0]
 };

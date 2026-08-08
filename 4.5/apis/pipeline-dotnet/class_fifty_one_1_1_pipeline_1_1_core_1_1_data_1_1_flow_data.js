@@ -4,6 +4,7 @@ var class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data =
     [ "AddError", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a84ebfd09a2674f12e09df0eae5a31f93", null ],
     [ "AddEvidence", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a6a3bbe5cad2423bb08f7561e5ce30f2a", null ],
     [ "AddEvidence", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a5640e343aadfd525b4f1bbac1c8b930d", null ],
+    [ "AddWarning", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a6b312c4fc78ac824d8a7045468c327e6", null ],
     [ "Dispose", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a5056d01dae7f2c62229821f0a810b427", null ],
     [ "Dispose", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a9e2ff64b9599fdbf31499fba3bc266ef", null ],
     [ "ElementDataAsDictionary", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a4bdc5168f2fadafb08f95809d45ed6b6", null ],
@@ -34,5 +35,6 @@ var class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data =
     [ "EvidenceKeyFilter", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a79986f2cbb232659e018b98e669641f8", null ],
     [ "Pipeline", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#adef5b273bcb8c8b24548d8d8e55685b2", null ],
     [ "Stop", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a6e6293ee8a417ca86f01d147f951fb24", null ],
-    [ "StopToken", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a6b8e68fa542aee01fffd86da5165bcbb", null ]
+    [ "StopToken", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a6b8e68fa542aee01fffd86da5165bcbb", null ],
+    [ "Warnings", "class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_flow_data.html#a2bf0b49232c0ff457127b73972294c62", null ]
 ];
