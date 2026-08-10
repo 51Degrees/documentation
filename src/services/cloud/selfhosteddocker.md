@@ -107,8 +107,14 @@ endpoint URL of your own.
   such as CPU, memory, GC and thread pool usage.
 - **Logs** - the service's log stream.
 - **Traces** - a trace per handled request, with unhandled exceptions recorded
-  on the span. Query string values are redacted from spans by default; see the
-  redaction variable below.
+  on the span. A request that reaches pipeline processing also carries a
+  `pipeline.process` child span with the resource key and the request evidence
+  (headers, query values, client hints) as attributes, plus a client span for
+  every outbound HTTP call the service makes. Evidence values that carry an IP
+  address, an email address or hashing salt, a license key, or an
+  `Authorization`/`Cookie` header are always exported as `[redacted]`,
+  whatever the variables below say. Query string values on the server span are
+  redacted by default; see the redaction variable below.
 
 Every signal carries `node`, `region` and `provider` resource labels taken from
 `INSTANCE_NAME`, `REGION_NAME` (see the table above) and `PROVIDER_NAME`, so
@@ -122,6 +128,7 @@ containers in a fleet can be told apart at the backend.
 | `LogServices__OpenTelemetry__TracesEndpoint` | OTLP HTTP ingest URL for traces. Traces are exported only when this is set. |
 | `LogServices__OpenTelemetry__Headers` | Headers sent with every OTLP export, as comma separated `key=value` pairs, e.g. `Authorization=Bearer <token>`. |
 | `LogServices__OpenTelemetry__TracesSampleRatio` | Fraction of requests traced, between 0 and 1. Defaults to 1, which traces every request. |
+| `LogServices__OpenTelemetry__TracesIncludeEvidence` | Set to `false` to drop the request evidence attributes from `pipeline.process` spans, for installations that must not keep request data in traces. Defaults to `true`. The `[redacted]` values described above stay redacted either way. |
 | `OTEL_DOTNET_EXPERIMENTAL_ASPNETCORE_DISABLE_URL_QUERY_REDACTION` | Set to `true` to keep query string values in spans, so a caller's request can be reproduced from its trace. Redacted by default. |
 | `INSTANCE_NAME` | `node` label on the exported telemetry, also returned in the `51D-Instance` response header. Defaults to the machine name. |
 | `PROVIDER_NAME` | `provider` label on the exported telemetry, e.g. `hetzner`. No label is attached when unset. |
