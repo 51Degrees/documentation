@@ -127,7 +127,7 @@ containers in a fleet can be told apart at the backend.
 | `LogServices__OpenTelemetry__LogsEndpoint` | OTLP HTTP ingest URL for logs. Logs are exported only when this is set. |
 | `LogServices__OpenTelemetry__TracesEndpoint` | OTLP HTTP ingest URL for traces. Traces are exported only when this is set. |
 | `LogServices__OpenTelemetry__Headers` | Headers sent with every OTLP export, as comma separated `key=value` pairs, e.g. `Authorization=Bearer <token>`. |
-| `LogServices__OpenTelemetry__TracesSampleRatio` | Fraction of requests traced, between 0 and 1. Defaults to 1, which traces every request. |
+| `LogServices__OpenTelemetry__TracesSampleRatio` | Fraction of requests traced, between 0 and 1. Defaults to 1, which traces every request; keep it well below 1 in production, since sampling happens before the outcome of a request is known and the ratio is what bounds the volume of successful-request traces. |
 | `LogServices__OpenTelemetry__TracesIncludeEvidence` | Set to `false` to drop the request evidence attributes from `pipeline.process` spans, for installations that must not keep request data in traces. Defaults to `true`. The `[redacted]` values described above stay redacted either way. |
 | `OTEL_DOTNET_EXPERIMENTAL_ASPNETCORE_DISABLE_URL_QUERY_REDACTION` | Set to `true` to keep query string values in spans, so a caller's request can be reproduced from its trace. Redacted by default. |
 | `INSTANCE_NAME` | `node` label on the exported telemetry, also returned in the `51D-Instance` response header. Defaults to the machine name. |
