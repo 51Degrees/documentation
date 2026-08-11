@@ -120,7 +120,39 @@ const&#160;bool&#160;</td><td class="c-table__cell"><b>PIPELINE_BUILDER_DEFAULT_
 <tr class="c-table__row memitem:aba5c514627289559a2f9c85d5705cf0d" id="r_aba5c514627289559a2f9c85d5705cf0d"><td class="c-table__cell"><a id="aba5c514627289559a2f9c85d5705cf0d" name="aba5c514627289559a2f9c85d5705cf0d"></a>
 const&#160;bool&#160;</td><td class="c-table__cell"><b>PIPELINE_BUILDER_DEFAULT_AUTO_SUPRESS_PROCESS_EXCEPTIONS</b> = false</td></tr>
 <tr class="c-table__row memdesc:aba5c514627289559a2f9c85d5705cf0d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default value for the flag that controls whether the pipeline will allow exceptions from flow elements to bubble up to the caller, or be caught and logged. <br /></td></tr>
+<tr class="c-table__row memitem:ac44998336787544fa08fd78899ac3d36" id="r_ac44998336787544fa08fd78899ac3d36"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#ac44998336787544fa08fd78899ac3d36">TRACING_SOURCE_NAME</a> = &quot;FiftyOne.Pipeline&quot;</td></tr>
+<tr class="c-table__row memdesc:ac44998336787544fa08fd78899ac3d36"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name of the System.Diagnostics.ActivitySource that emits a tracing span for each flow element a pipeline processes.  <br /></td></tr>
 </table>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="ac44998336787544fa08fd78899ac3d36" name="ac44998336787544fa08fd78899ac3d36"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac44998336787544fa08fd78899ac3d36">&#9670;&#160;</a></span>TRACING_SOURCE_NAME</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const string FiftyOne.Pipeline.Core.Constants.TRACING_SOURCE_NAME = &quot;FiftyOne.Pipeline&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The name of the System.Diagnostics.ActivitySource that emits a tracing span for each flow element a pipeline processes. </p>
+<p>Register this name with an OpenTelemetry tracer (AddSource) to collect the spans; nothing is emitted otherwise. </p>
+
+</div>
+</div>
 </div><!-- primary -->
 </div><!-- inner -->
 <div id="page-nav" class="page-nav-panel">

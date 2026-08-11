@@ -14,5 +14,6 @@ var class_fifty_one_1_1_pipeline_1_1_core_1_1_constants =
     [ "EVIDENCE_USERAGENT", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html#a5c9cd6ec6905ebf4142f5f9ba923d717", null ],
     [ "PIPELINE_BUILDER_DEFAULT_AUTO_DISPOSE_ELEMENTS", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html#a0b0d736a2c1e00a446f0ef45a7b183bf", null ],
     [ "PIPELINE_BUILDER_DEFAULT_AUTO_SUPRESS_PROCESS_EXCEPTION", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html#ac1fe4c7a440b8f2abee9a94bfc94b34e", null ],
-    [ "PIPELINE_BUILDER_DEFAULT_AUTO_SUPRESS_PROCESS_EXCEPTIONS", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html#aba5c514627289559a2f9c85d5705cf0d", null ]
+    [ "PIPELINE_BUILDER_DEFAULT_AUTO_SUPRESS_PROCESS_EXCEPTIONS", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html#aba5c514627289559a2f9c85d5705cf0d", null ],
+    [ "TRACING_SOURCE_NAME", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html#ac44998336787544fa08fd78899ac3d36", null ]
 ];
