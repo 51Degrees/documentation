@@ -154,6 +154,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a65cc8e00bbf815e21a85b6a91f3906da" id="r_a65cc8e00bbf815e21a85b6a91f3906da"><td class="c-table__cell"><a id="a65cc8e00bbf815e21a85b6a91f3906da" name="a65cc8e00bbf815e21a85b6a91f3906da"></a>
 void&#160;</td><td class="c-table__cell"><b>cancel</b> ()</td></tr>
 <tr class="c-table__row memdesc:a65cc8e00bbf815e21a85b6a91f3906da"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Cancel the sending of usage data. <br /></td></tr>
+<tr class="c-table__row memitem:adaad6570ce93d4368e29581427f49ee3" id="r_adaad6570ce93d4368e29581427f49ee3"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="#adaad6570ce93d4368e29581427f49ee3">isStopping</a> ()</td></tr>
+<tr class="c-table__row memdesc:adaad6570ce93d4368e29581427f49ee3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns true once the element has started closing.  <br /></td></tr>
 <tr class="c-table__row memitem:a2789a15207b46dbfcf3e033d6de5c202" id="r_a2789a15207b46dbfcf3e033d6de5c202"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a2789a15207b46dbfcf3e033d6de5c202">managedResourcesCleanup</a> ()</td></tr>
 <tr class="c-table__row memdesc:a2789a15207b46dbfcf3e033d6de5c202"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Cleanup any managed resources that the element is using.  <br /></td></tr>
 <tr class="c-table__row memitem:a3adfba9ac88238e8d163bcb94b42b532" id="r_a3adfba9ac88238e8d163bcb94b42b532"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a3adfba9ac88238e8d163bcb94b42b532">unmanagedResourcesCleanup</a> ()</td></tr>
@@ -733,6 +735,38 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base.html">fiftyone.pipeline.core.flowelements.FlowElementBase&lt; TData extends ElementData, TProperty extends ElementPropertyMetaData &gt;</a>.</p>
+
+</div>
+</div>
+<a id="adaad6570ce93d4368e29581427f49ee3" name="adaad6570ce93d4368e29581427f49ee3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adaad6570ce93d4368e29581427f49ee3">&#9670;&#160;</a></span>isStopping()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">boolean fiftyone.pipeline.engines.fiftyone.flowelements.ShareUsageBase.isStopping </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Returns true once the element has started closing. </p>
+<p>A consumer that sees this must send everything that is queued, including a final batch that is smaller than <code><a class="el" href="#a8c20137efc0d2334f21d36e139ea8893">minEntriesPerMessage</a></code>. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the element is closing </dd></dl>
 
 </div>
 </div>

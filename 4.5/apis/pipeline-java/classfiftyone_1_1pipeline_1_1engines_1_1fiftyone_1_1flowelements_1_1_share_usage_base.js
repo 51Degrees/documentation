@@ -8,6 +8,7 @@ var classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_u
     [ "getEnginesVersion", "classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html#afea0f92bcd8959838ec98f6471a2a833", null ],
     [ "getFlowElements", "classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html#a317ad22bb1a0cda42633dc57df16a185", null ],
     [ "getHostAddress", "classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html#a82c20a3b794d3b7a161afbfb71bffee2", null ],
+    [ "isStopping", "classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html#adaad6570ce93d4368e29581427f49ee3", null ],
     [ "managedResourcesCleanup", "classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html#a2789a15207b46dbfcf3e033d6de5c202", null ],
     [ "processInternal", "classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html#ae32880885317b723959f79f4eb996163", null ],
     [ "setEnginesVersion", "classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html#a945625bdeaf7f29ac5f8931216519b77", null ],
