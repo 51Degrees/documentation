@@ -1,0 +1,49 @@
+/**
+ * Status text for an example that reports a check as passed, failed, or
+ * not judged. Added for the 51Did creator context example, which reports
+ * one outcome per factor and a single overall verdict, but written
+ * generally so any example reporting a pass or a fail uses the same
+ * three states rather than inventing its own colours inline.
+ *
+ * The three states are deliberately distinct from a plain red and green
+ * pair. A check that could not be judged on this connection is NOT a
+ * failure, so it is grey, and a verdict where some checks held and
+ * others did not is not the same as one where nothing held, so it is
+ * amber. An example that only ever passes or fails uses the first two
+ * and ignores the third.
+ */
+
+.c-eg-status {
+  @include make-text-default();
+  font-weight: $font-weight-bold;
+
+  /* Every committed check matched. */
+  &--pass {
+    color: $colour-lime-darker;
+  }
+
+  /* A check ran and did not match. */
+  &--fail {
+    color: $colour-red;
+  }
+
+  /* Some checks held and others did not, so the result is neither. */
+  &--part {
+    color: $colour-orange;
+  }
+
+  /* Nothing to judge: not observed, not committed, or still running.
+     Deliberately unweighted as well as grey, so a reader scanning the
+     column does not read an absence as an outcome. */
+  &--none {
+    color: $colour-grey-darker;
+    font-weight: $font-weight-regular;
+  }
+}
+
+/* A value shown verbatim, such as an identifier, which must wrap rather
+   than stretch the table it sits in. */
+.c-eg-value {
+  @include make-text-code();
+  word-break: break-all;
+}
