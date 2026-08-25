@@ -51,6 +51,17 @@
   }
 }
 
+// An action sitting in a table cell, such as a copy button beside each
+// row. A full size button forces the column wide enough to wrap its own
+// label, so this keeps the control to the row's height and stops the
+// label breaking across lines.
+.c-eg-table__action {
+  padding: size(-4) size(-2);
+  font-size: size(-2);
+  white-space: nowrap;
+  width: auto;
+}
+
 // The "used / present" key shown above the evidence table.
 .c-eg-legend {
   font-size: size(-2);
