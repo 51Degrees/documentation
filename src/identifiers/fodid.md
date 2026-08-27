@@ -207,11 +207,60 @@ A 51Did recipient can optionally verify the signature before trusting the identi
 
 In both cases, validation only confirms the identifier was created by 51Degrees and has not been tampered with. It does not certify that the device + IP + usage inputs were truthful: that trust lives in the operational contract with the issuing 51Degrees cloud, not in the signature.
 
+### Verifying the creator context
+
+Signature verification (above) confirms an identifier is an authentic 51Degrees 51Did. A separate check, **creator context** verification (context for short), confirms the 51Did is being presented from the browser and connection it was created on. The creator context is what the 51Degrees cloud, as the creator of the identifier, recorded about the creating request when it issued the identifier. It is checked only within the 51Degrees service, which alone holds the key the context is made under, and every check is metered against the Resource Key. Identifiers issued by the 51Degrees cloud carry a creator context from the release that introduces it, and an identifier created before that reports `nocontext`.
+
+The check is made in two steps, so that the answer never exists in the browser in a form the browser can read, alter or forge.
+
+![Two-step creator context verification](images/51did-two-step-verification.svg)
+
+- **Step one.** The page calls `verify-context` (or `verify-full`) from the visitor's browser with the 51Did and the page's [Resource Key](https://51degrees.com/documentation/4.4/_info__resource_keys.html), and receives `{ "result": "..." }`, an opaque sealed value. The call must come from the browser presenting the identifier, because the service compares the identifier against the connection making the call. It reads the JSON response cross-origin, so use a `fetch` rather than a script tag or a pixel.
+- The page passes the 51Did and the sealed result to your server as part of its normal request, for example with the form post or the purchase the identifier is being trusted for.
+- **Step two.** Your server calls `redeem` with the 51Did it holds, the sealed result, and a licence key of the account whose Resource Key made the verification (required wherever the account holds licence keys, and never placed in a page), and receives the verdict. Where the context is a `mismatch` it also receives a `factors` object naming which factor differed.
+
+Each verification produces a fresh sealed result that can be redeemed once, within ten seconds of the verification. A later attempt answers `expired`, a second attempt answers `replayed`, and a result presented with the wrong 51Did, licence key or challenge, or altered in any way, answers `unreadable` without saying which was wrong. Two fields describe the redemption itself, being `verifiedAt`, when the verification happened, and `secondsSinceVerified`, how long ago that was in whole seconds by the service's clock. A `challenge` value given at step one, for example your own transaction identifier, must be given again at step two, which ties the result to one transaction.
+
+The endpoints on the V4 cloud, all of which take the identifier as the `51did` parameter on the query string, in a form, or as the route `51did/<value>`:
+
+- `GET`/`POST` `/api/v4/id/verify` returns `{ "valid": <bool> }`, the signature result only (unchanged).
+- `GET`/`POST` `/api/v4/id/verify-context` returns `{ "result": "..." }`, a sealed context result.
+- `GET`/`POST` `/api/v4/id/verify-full` returns `{ "result": "..." }`, a sealed result that carries the signature result as well as the context result, so one call and one redemption give both.
+- `GET`/`POST` `/api/v4/id/redeem` takes `51did`, `result`, `license` and optionally `challenge`, and returns `{ "signature": "verified" | "invalid", "context": "...", "factors": { ... }, "verifiedAt": "...", "secondsSinceVerified": <int> }`.
+
+All four require a Resource Key and are metered against it. A call with no Resource Key, or whose Resource Key lacks the entitlement, returns `401`. A `license` parameter may add entitlement but is not an alternative to the Resource Key.
+
+The `context` result values:
+
+| Value | Meaning |
+|-------|---------|
+| `verified` | The 51Did is being presented from the browser and connection it was created on. |
+| `mismatch` | At least one factor of the presenting browser or connection differs from the one recorded at creation. `factors` says which. |
+| `nocontext` | The 51Did carries no creator context to check, for example one created before the capability was released, or by a deployment that has it switched off. |
+| `notcheckable` | The 51Did carries a creator context that this service cannot check, for example one made under a key this service does not hold, or in a newer format than this service understands. |
+
+`nocontext` and `notcheckable` are normal outcomes rather than errors. A self-hosted deployment that has the creator context switched off reports `nocontext` for every identifier it creates, and a service that predates the creator context does not offer `verify-context`, `verify-full` or `redeem` at all and answers `404` to them, which means the host does not support the creator context. An integration should treat both as "no context available" and fall back to the signature check.
+
+A `mismatch` is accompanied by a `factors` object, a breakdown across six independent factors named `transport`, `device`, `browser`, `browserip`, `connectionip` and `asn`, each `verified` or `mismatch`. It is there to help you locate an integration problem (for example a call made from a server rather than the presenting browser shows the transport, device and connection factors as `mismatch`, the server having its own connection and device); treat the top-level `context` value as the result. Nothing about what a factor is made of is exposed, only whether it matched.
+
+Read together with the signature, the states that matter are:
+
+| `signature` | `context` | Meaning |
+|-------------|-----------|---------|
+| `verified` | `verified` | Authentic identifier presented from its creation context. |
+| `verified` | `mismatch` | Authentic identifier presented from a different context. A replay indicator, and also what a legitimate backend caller verifying out of context sees, and that caller knows which situation it is in. |
+| `verified` | `nocontext` or `notcheckable` | Authentic identifier with no context this service can check. Rely on the signature alone. |
+| `invalid` | any | The envelope has been altered or corrupted. A creator context cannot be forged, because it is made under a key only 51Degrees holds, so a `verified` context on an `invalid` signature means the context data is intact and something else in the envelope is not. |
+
+Local public-key verification (option 2 above) covers the signature only. The creator context check exists nowhere but the 51Degrees service, and is available self-hosted through the bespoke Docker solution for identifiers that deployment creates.
+
+A long-lived identifier that still verifies from its creation context is the strongest signal of a stable, real user, and age cannot be manufactured. This makes context verification well suited to a render-time check: place the 51Did from a bid request into the creative, verify it from the rendering browser, send the 51Did and the sealed result to your own endpoint, and redeem them there. A `context` of `mismatch` means the paid impression rendered somewhere other than the browser the bid described.
+
 ### Fetching the public key for local verification
 
 Local verification (option 2 above) fetches the key from the OWID creator endpoint, `GET /owid/api/v3/creator`. The response carries the current signing key in `publicKeySPKI` (PEM).
 
-The signing key rotates weekly, so a 51Did issued before the latest rotation was signed with an older key. To fetch the key that was current when a 51Did was created, pass its date: `GET /owid/api/v3/creator?date=<minutes>`. The `date` is the same value the OWID envelope carries in its Date field, minutes since `2020-01-01T00:00:00Z` (see the [OWID explainer](https://github.com/SWAN-community/owid/blob/main/explainer.md), "Data Structure" section). The endpoint returns the signing key with the latest creation time on or before `date`; if `date` predates every known key it returns `404`, and a `date` that is not an unsigned 32-bit integer returns `400`.
+Signing keys belong to periods of a schedule, and a 51Did is signed with the key of the period its creation falls in, so a 51Did issued in an earlier period was signed with an earlier key. To fetch the key that was in force when a 51Did was created, pass its date: `GET /owid/api/v3/creator?date=<minutes>`. The `date` is the same value the OWID envelope carries in its Date field, minutes since `2020-01-01T00:00:00Z` (see the [OWID explainer](https://github.com/SWAN-community/owid/blob/main/explainer.md), "Data Structure" section). The endpoint returns the signing key whose period was in force at `date`; if `date` predates every known key it returns `404`, and a `date` that is not an unsigned 32-bit integer returns `400`.
 
 ### Fetching every public key at once
 
@@ -221,15 +270,15 @@ The `/creator` endpoint above returns one key per request. A verifier that wants
 GET https://cloud.51degrees.com/api/v4/id/key?resource=<RESOURCE_KEY>
 ```
 
-The response is a JSON array, one entry per signing key:
+The response is a JSON array, one entry per signing key, where `startsAt` is the start of the period the key signs for (it is in force from then until the next key's `startsAt`) and `created` is when the key was generated, which is always earlier because the schedule is generated ahead of time:
 
 ```json
 [
-  { "created": "2026-03-08T00:00:00.0000000Z", "publicKey": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----" }
+  { "startsAt": "2026-03-09T00:00:00.0000000Z", "created": "2026-03-08T04:00:00.0000000Z", "publicKey": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----" }
 ]
 ```
 
-To fetch only the keys created since you last pulled, add an ISO 8601 UTC timestamp: `GET .../api/v4/id/key/datetime/2026-03-08T00:00:00Z?resource=<RESOURCE_KEY>`. The response then holds only keys created on or after that timestamp. This endpoint takes an ISO 8601 timestamp, not the minutes-since-2020 value that `/creator?date=` uses. Unlike `/creator`, it needs a Resource Key and is metered.
+To fetch only the keys whose period starts on or after a moment, add an ISO 8601 UTC timestamp: `GET .../api/v4/id/key/datetime/2026-03-09T00:00:00Z?resource=<RESOURCE_KEY>`. The response then holds only keys whose `startsAt` is on or after that timestamp, which includes the keys scheduled for the coming weeks. This endpoint takes an ISO 8601 timestamp, not the minutes-since-2020 value that `/creator?date=` uses. Unlike `/creator`, it needs a Resource Key and is metered.
 
 ## Use cases
 
