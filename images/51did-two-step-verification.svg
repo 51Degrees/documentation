@@ -13,6 +13,7 @@
     .box { fill: #ffffff; stroke: #232628; stroke-width: 1.5; }
     .life { stroke: #919191; stroke-width: 1.5; stroke-dasharray: 6 5; }
     .msg { stroke: #232628; stroke-width: 1.5; fill: none; }
+    .label, .note, .step { paint-order: stroke; stroke: #ffffff; stroke-width: 6px; stroke-linejoin: round; }
   </style>
   <rect class="box" x="40" y="24" width="180" height="44" rx="4"/>
   <text class="head" x="130" y="52" text-anchor="middle">Visitor's browser</text>
