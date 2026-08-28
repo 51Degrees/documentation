@@ -230,6 +230,8 @@ Value Getters</h2></td></tr>
 <tr class="c-table__row memdesc:a534affd42391621cc4649d2384183829"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get an <a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_ip_address.html" title="A class which represents an IP address.">IpAddress</a> instance representation of the value associated with the required property name.  <br /></td></tr>
 <tr class="c-table__row memitem:a8557dd5e162ff17db009e61e676cb1b8" id="r_a8557dd5e162ff17db009e61e676cb1b8"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Common::Value</a>&lt;&#160;<a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_ip_address.html">IpIntelligence::IpAddress</a>&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a8557dd5e162ff17db009e61e676cb1b8">getValueAsIpAddress</a> (int requiredPropertyIndex)</td></tr>
 <tr class="c-table__row memdesc:a8557dd5e162ff17db009e61e676cb1b8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get an <a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_ip_address.html" title="A class which represents an IP address.">IpAddress</a> instance representation of the value associated with the required property index.  <br /></td></tr>
+<tr class="c-table__row memitem:ae055eddf321296467069a032b54f4e0c" id="r_ae055eddf321296467069a032b54f4e0c"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Common::Value</a>&lt;&#160;<a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_ip_address.html">IpIntelligence::IpAddress</a>&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ae055eddf321296467069a032b54f4e0c">getTargetIpAddress</a> ()</td></tr>
+<tr class="c-table__row memdesc:ae055eddf321296467069a032b54f4e0c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the IP address which the lookup actually resolved from the input.  <br /></td></tr>
 <tr class="c-table__row memitem:ada3f393120f32b582961632b16c3aa67" id="r_ada3f393120f32b582961632b16c3aa67"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ada3f393120f32b582961632b16c3aa67">getValuesInternal</a> (int requiredPropertyIndex, vector&lt; string &gt; &amp;values) override</td></tr>
 <tr class="c-table__row memdesc:ada3f393120f32b582961632b16c3aa67"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the values for the index in required properties and add them to the values vector supplied.  <br /></td></tr>
 <tr class="c-table__row memitem:ade94ba8e4a3174654878b6c3a3813ed8" id="r_ade94ba8e4a3174654878b6c3a3813ed8"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ade94ba8e4a3174654878b6c3a3813ed8">hasValuesInternal</a> (int requiredPropertyIndex) override</td></tr>
@@ -362,6 +364,30 @@ Additional Inherited Members</h2></td></tr>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">enum indicating the reason for values not being available </dd></dl>
 
 <p>Implements <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_results_base.html#a65e05668119ed3c95886871a3613e580">FiftyoneDegrees::Common::ResultsBase</a>.</p>
+
+</div>
+</div>
+<a id="ae055eddf321296467069a032b54f4e0c" name="ae055eddf321296467069a032b54f4e0c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae055eddf321296467069a032b54f4e0c">&#9670;&#160;</a></span>getTargetIpAddress()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Common::Value</a>&lt; <a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_ip_address.html">IpIntelligence::IpAddress</a> &gt; IpIntelligence::ResultsIpi::getTargetIpAddress </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the IP address which the lookup actually resolved from the input. </p>
+<p>When the results were built from evidence this is the value of the header that the native selection order picked, so a caller can echo the client IP consistently with the location properties beside it without mirroring that order itself. When the results were built from an IP address or an IP address string it is that address. If no result was produced, for example because the evidence held no usable IP address, then hasValue returns false with NoValueReason and its message. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the target IP address the lookup resolved </dd></dl>
 
 </div>
 </div>

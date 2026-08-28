@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fiftyone
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_required_properties_config_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_required_properties_config.html">FiftyoneDegrees::Common::RequiredPropertiesConfig</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesPropertiesRequired structure.</div><div class="ttdef"><b>Definition</b> RequiredPropertiesConfig.hpp:58</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_config_ipi_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_config_ipi.html">FiftyoneDegrees::IpIntelligence::ConfigIpi</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesConfigIpi configuration structure.</div><div class="ttdef"><b>Definition</b> ConfigIpi.hpp:66</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_engine_ipi_html_a42642d98f79128b18691e1a47def4754"><div class="ttname"><a href="#a42642d98f79128b18691e1a47def4754">FiftyoneDegrees::IpIntelligence::EngineIpi::EngineIpi</a></div><div class="ttdeci">EngineIpi(const char *fileName, ConfigIpi *config, RequiredPropertiesConfig *properties)</div><div class="ttdoc">Construct a new instance of the engine class with the configuration and properties provided.</div><div class="ttdef"><b>Definition</b> EngineIpi.cpp:31</div></div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_engine_ipi_html_aa97146951bce55b27d892bbd20c1bbe5"><div class="ttname"><a href="#aa97146951bce55b27d892bbd20c1bbe5">FiftyoneDegrees::IpIntelligence::EngineIpi::process</a></div><div class="ttdeci">ResultsIpi * process(EvidenceIpi *evidence)</div><div class="ttdoc">Processes the evidence provided and returns the results.</div><div class="ttdef"><b>Definition</b> EngineIpi.cpp:222</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_engine_ipi_html_aa97146951bce55b27d892bbd20c1bbe5"><div class="ttname"><a href="#aa97146951bce55b27d892bbd20c1bbe5">FiftyoneDegrees::IpIntelligence::EngineIpi::process</a></div><div class="ttdeci">ResultsIpi * process(EvidenceIpi *evidence)</div><div class="ttdoc">Processes the evidence provided and returns the results.</div><div class="ttdef"><b>Definition</b> EngineIpi.cpp:257</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_evidence_ipi_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_evidence_ipi.html">FiftyoneDegrees::IpIntelligence::EvidenceIpi</a></div><div class="ttdoc">IP Intelligence specific evidence class containing evidence to be processed by an IP intelligence eng...</div><div class="ttdef"><b>Definition</b> EvidenceIpi.hpp:63</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html">FiftyoneDegrees::IpIntelligence::ResultsIpi</a></div><div class="ttdoc">Encapsulates the results of an IP Intelligence engine&#39;s processing.</div><div class="ttdef"><b>Definition</b> ResultsIpi.hpp:73</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_common_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_common.html">FiftyoneDegrees::Common</a></div><div class="ttdoc">Shared classes.</div><div class="ttdef"><b>Definition</b> Collection.hpp:31</div></div>
@@ -195,6 +195,8 @@ virtual&#160;</td><td class="c-table__cell"><b>~EngineBase</b> ()</td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:ad4eabac225f1ed1edc5660739f91c1c8" id="r_ad4eabac225f1ed1edc5660739f91c1c8"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ad4eabac225f1ed1edc5660739f91c1c8">initHttpHeaderKeys</a> (<a class="el" href="group___fifty_one_degrees_headers.html#ga8742ecca65bb05ccfb68ae6e23afa6b0">fiftyoneDegreesHeaders</a> *uniqueHeaders) override</td></tr>
 <tr class="c-table__row memdesc:ad4eabac225f1ed1edc5660739f91c1c8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialise the header keys which are used by this engine.  <br /></td></tr>
+<tr class="c-table__row memitem:a0f95705be4a9856e12b522bd15bf91c2" id="r_a0f95705be4a9856e12b522bd15bf91c2"><td class="c-table__cell">vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a0f95705be4a9856e12b522bd15bf91c2">buildHttpHeaderKeys</a> (<a class="el" href="group___fifty_one_degrees_headers.html#ga8742ecca65bb05ccfb68ae6e23afa6b0">fiftyoneDegreesHeaders</a> *uniqueHeaders) const</td></tr>
+<tr class="c-table__row memdesc:a0f95705be4a9856e12b522bd15bf91c2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Derive the evidence keys for a set of unique headers without touching the engine's own key list, so that a refresh can compare the result against the keys already in use.  <br /></td></tr>
 <tr class="c-table__row inherit_header pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Member Functions inherited from <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html">FiftyoneDegrees::Common::EngineBase</a></h3></td></tr>
 <tr class="c-table__row memitem:a80de80b91275acba930d5d2b8da57f78 pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_a80de80b91275acba930d5d2b8da57f78"><td class="c-table__cell">virtual&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a80de80b91275acba930d5d2b8da57f78">appendValue</a> (stringstream &amp;stream, <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *strings, uint32_t offset, fiftyoneDegreesPropertyValueType storedValueType) const</td></tr>
 <tr class="c-table__row memdesc:a80de80b91275acba930d5d2b8da57f78 pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a string from a strings collection, and appends to a stream.  <br /></td></tr>
@@ -410,6 +412,44 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a0f95705be4a9856e12b522bd15bf91c2" name="a0f95705be4a9856e12b522bd15bf91c2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0f95705be4a9856e12b522bd15bf91c2">&#9670;&#160;</a></span>buildHttpHeaderKeys()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">vector&lt; string &gt; EngineIpi::buildHttpHeaderKeys </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_headers.html#ga8742ecca65bb05ccfb68ae6e23afa6b0">fiftyoneDegreesHeaders</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>uniqueHeaders</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Derive the evidence keys for a set of unique headers without touching the engine's own key list, so that a refresh can compare the result against the keys already in use. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uniqueHeaders</td><td>to get the keys from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the evidence keys for the headers, in header order </dd></dl>
+
+</div>
+</div>
 <a id="a63757c5daa87d7c6989fc5778955ddd0" name="a63757c5daa87d7c6989fc5778955ddd0"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a63757c5daa87d7c6989fc5778955ddd0">&#9670;&#160;</a></span>getDataFilePath()</h2>
 

@@ -4,6 +4,7 @@ var class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi =
     [ "~ResultsIpi", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html#a4dfd73da66fa7f672b0f7a828880d3a3", null ],
     [ "getNoValueMessageInternal", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html#a8db3ec0111805c80da09ae484e60b0c3", null ],
     [ "getNoValueReasonInternal", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html#a213358aad7f95dbc7a89813d55c8059e", null ],
+    [ "getTargetIpAddress", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html#ae055eddf321296467069a032b54f4e0c", null ],
     [ "getValueAsIpAddress", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html#a52f69467f8cb3c5db40e736bdc61c30f", null ],
     [ "getValueAsIpAddress", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html#a07d17de46874bcc053c2fee4595dc68e", null ],
     [ "getValueAsIpAddress", "class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html#a534affd42391621cc4649d2384183829", null ],
