@@ -274,11 +274,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">        CloudRequestData requestData = data.getFromElement(cloudRequestEngine);</div>
 <div class="c-code__line">        String json = requestData.getJsonResponse();</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__comment">// Extract data from json to the aspectData instance.</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// Extract data from json to the aspectData instance. A cloud</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// service answers only for the products the resource key covers,</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// so a response without the star sign product leaves the value</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// unset rather than failing the request, in the same way the</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// 51Degrees cloud engines report a property the key does not</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// cover as not available.</span></div>
 <div class="c-code__line">        JSONObject jsonObj = <span class="c-code__keyword">new</span> JSONObject(json);</div>
-<div class="c-code__line">        JSONObject deviceObj = jsonObj.getJSONObject(<span class="c-code__stringliteral">&quot;starsign&quot;</span>);</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">        starSignData.setStarSign(deviceObj.getString(<span class="c-code__stringliteral">&quot;starsign&quot;</span>));</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (jsonObj.has(<span class="c-code__stringliteral">&quot;starsign&quot;</span>)) {</div>
+<div class="c-code__line">            JSONObject starSignObj = jsonObj.getJSONObject(<span class="c-code__stringliteral">&quot;starsign&quot;</span>);</div>
+<div class="c-code__line">            starSignData.setStarSign(starSignObj.optString(<span class="c-code__stringliteral">&quot;starsign&quot;</span>, <span class="c-code__keyword">null</span>));</div>
+<div class="c-code__line">        } <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">            starSignData.setStarSign(<span class="c-code__keyword">null</span>);</div>
+<div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    @Override</div>
@@ -365,7 +373,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h2 class="doxsection" id="usage-7">Usage<a class="headerlink" href="#usage-7" aria-label="Permalink to this section">🔗</a></h2>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific usage.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  This new <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> can now be added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> along with a <code>CloudRequestEngine</code>, and used like:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">            <span class="c-code__comment">// Construct a cloud request engine using the example endpoint for</span></div>
-<div class="c-code__line">            <span class="c-code__comment">// the example engine to use.</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// the example engine to use. This endpoint is the star sign</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// example service built for this tutorial, not the 51Degrees</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// cloud, so it is fixed here. A cloud engine for a 51Degrees</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// product leaves the endpoint unset, and the builder then reads</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// it from FOD_CLOUD_API_URL, defaulting to</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// https://cloud.51degrees.com/api/v4/. A host other than</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// cloud.51degrees.com would be used to (a) use an on premise</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// web server, or (b) use a privately hosted version of the</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// 51Degrees cloud for performance reasons. This is the private</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// hosting option of the cloud service. Both run the same</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// service, so such an engine works unchanged against either.</span></div>
 <div class="c-code__line">            var cloudRequestEngine =</div>
 <div class="c-code__line">                <span class="c-code__keyword">new</span> CloudRequestEngineBuilder(_loggerFactory, <span class="c-code__keyword">new</span> HttpClient())</div>
 <div class="c-code__line">                .SetEndPoint(<span class="c-code__stringliteral">&quot;https://51degrees.com/starsign/api/&quot;</span>)</div>
@@ -394,10 +412,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">                $<span class="c-code__stringliteral">&quot;your star sign is {flowData.Get&lt;IStarSignData&gt;().StarSign}.&quot;</span>);</div>
 </div><!-- fragment --><p>to give an output of: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">With a date of birth of 18/12/1992, your star sign is Sagittarius.</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  This new <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> can now be added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> along with a <code>CloudRequestEngine</code>, and used like:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">            CloudRequestEngine cloudRequestEngine =</div>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">            <span class="c-code__comment">// The endpoint comes from FOD_CLOUD_API_URL when it is set, so</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// the example can be pointed at an on premise web server or a</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// privately hosted version of the 51Degrees cloud, and</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// otherwise at the star sign service it was written for.</span></div>
+<div class="c-code__line">            CloudRequestEngine cloudRequestEngine =</div>
 <div class="c-code__line">                <span class="c-code__keyword">new</span> CloudRequestEngineBuilder(loggerFactory, httpClient)</div>
-<div class="c-code__line">                    .setEndpoint(<span class="c-code__stringliteral">&quot;http://51degrees.com/starsign/api/&quot;</span>)</div>
-<div class="c-code__line">                    .setResourceKey(<span class="c-code__stringliteral">&quot;cloudexample&quot;</span>)</div>
+<div class="c-code__line">                    .setEndpoint(endpoint())</div>
+<div class="c-code__line">                    .setResourceKey(resourceKey())</div>
 <div class="c-code__line">                    .build();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            SimpleCloudEngine ageElement =</div>
@@ -417,10 +439,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">                    .addEvidence(<span class="c-code__stringliteral">&quot;cookie.date-of-birth&quot;</span>, dob)</div>
 <div class="c-code__line">                    .process();</div>
 <div class="c-code__line">    </div>
-<div class="c-code__line">                System.out.println(<span class="c-code__stringliteral">&quot;With a date of birth of &quot;</span> +</div>
-<div class="c-code__line">                    dob +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;, your star sign is &quot;</span> +</div>
-<div class="c-code__line">                    flowData.getFromElement(ageElement).getStarSign() + <span class="c-code__stringliteral">&quot;.&quot;</span>);</div>
+<div class="c-code__line">                String starSign =</div>
+<div class="c-code__line">                    flowData.getFromElement(ageElement).getStarSign();</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (starSign == <span class="c-code__keyword">null</span>) {</div>
+<div class="c-code__line">                    <span class="c-code__comment">// The service answered but offers no star sign</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// product, which is what the 51Degrees cloud says,</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// because star signs are only served by the example</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// service. The connection, the property and evidence</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// key negotiation and the request itself all worked.</span></div>
+<div class="c-code__line">                    System.out.println(<span class="c-code__stringliteral">&quot;The cloud service at &quot;</span> + endpoint()</div>
+<div class="c-code__line">                        + <span class="c-code__stringliteral">&quot; does not offer the star sign product, so no &quot;</span></div>
+<div class="c-code__line">                        + <span class="c-code__stringliteral">&quot;star sign is available for a date of birth of &quot;</span></div>
+<div class="c-code__line">                        + dob + <span class="c-code__stringliteral">&quot;.&quot;</span>);</div>
+<div class="c-code__line">                } <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">                    System.out.println(<span class="c-code__stringliteral">&quot;With a date of birth of &quot;</span> + dob</div>
+<div class="c-code__line">                        + <span class="c-code__stringliteral">&quot;, your star sign is &quot;</span> + starSign + <span class="c-code__stringliteral">&quot;.&quot;</span>);</div>
+<div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 </div><!-- fragment --><p>to give an output of: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">With a date of birth of 18/12/1992, your star sign is Sagittarius.</div>
 </div><!-- fragment --><p>  </div>   </div> </p>

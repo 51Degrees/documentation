@@ -125,6 +125,8 @@ Files</h2></td></tr>
 <li>A <code>Cloud Request Engine</code> which calls the 51Degrees cloud service to fetch properties and metadata about them based on a provided resource key. Get a resource key at <a href="https://configure.51degrees.com/?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=pipeline-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-readme.md&amp;utm_term=this-package-fiftyone_pipeline_cloudrequestengine">https://configure.51degrees.com/?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=pipeline-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-readme.md&amp;utm_term=this-package-fiftyone_pipeline_cloudrequestengine</a></li>
 <li>A <code>Cloud Engine</code> template which reads data from the Cloud Request Engine.</li>
 </ul>
+<h1>Pointing the engine at another host</h1>
+<p>The engine calls <code><a href="https://cloud.51degrees.com/api/v4/">https://cloud.51degrees.com/api/v4/</a></code> unless told otherwise. Set the <code>FOD_CLOUD_API_URL</code> environment variable, or pass <code>cloud_endpoint</code> in the engine settings, to the API base of another host including the <code>/api/v4/</code> segment. A host other than cloud.51degrees.com would be used to (a) use an on premise web server, or (b) use a privately hosted version of the 51Degrees cloud for performance reasons. This is the private hosting option of the cloud service, and both run the same service, so code written against one works unchanged against the other.</p>
 <p>It is used by the cloud versions of the following 51Degrees engines:</p>
 <ul>
 <li><a href="https://pypi.org/project/fiftyone-devicedetection/"><b>fiftyone_devicedetection</b></a> - Get details about the devices accessing your web page</li>
