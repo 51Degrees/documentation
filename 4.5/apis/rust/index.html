@@ -290,10 +290,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="c-code__line">cargo run -p device-detection-examples --bin dd-web-getting-started-cloud</div>
 </div><!-- fragment --><h3>Browser (Selenium) tests</h3>
 <p>Browser-driven verification of the web examples comes from the shared <a href="https://github.com/51Degrees/selenium-api-tests">selenium-api-tests</a> suite, which every 51Degrees SDK reuses rather than maintaining its own browser automation. Its <code>Contract</code> category drives headless Chrome against a running example and checks that the page serves <code>51Degrees.core.js</code>, that client-side evidence flows back, and that the server renders a real detection result.</p>
-<p>CI runs it through <code>ci/run-integration-tests.ps1</code> (the org-standard script name every SDK repo uses), called from the Examples workflow: the script launches <code>dd-web-getting-started-cloud</code> against the local source tree, shallow-clones the suite as a sibling directory (it is deliberately not a submodule) and points it at the example with <code>EXAMPLE_URL</code>.</p>
-<p>To run it locally, check out <code>selenium-api-tests</code> as a sibling of this repo and let the suite launch the example itself through its <code>rust</code> descriptor:</p>
+<p>CI does not run it here. The browser contract for this SDK runs in the <a href="https://github.com/51Degrees/cloud">cloud</a> repository, in the language matrix alongside the .NET, Java, Node, Python and PHP examples, against the container that run builds. It used to run here against the public cloud, which made this the only SDK testing production data rather than the code under review.</p>
+<p>To run it locally, check out <code>selenium-api-tests</code> as a sibling of this repo and let the suite launch the example itself through its <code>rust</code> descriptor. Point <code>CLOUD_ROOT_URL</code> at a cloud container rather than the public service, so the result reflects the code and data you are testing:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">cd ../selenium-api-tests</div>
-<div class="c-code__line">export CLOUD_ROOT_URL=&quot;https://cloud.51degrees.com/&quot;</div>
+<div class="c-code__line">export CLOUD_ROOT_URL=&quot;http://localhost:8080/&quot;   # a running cloud container</div>
 <div class="c-code__line">export PAID_RESOURCE_KEY=&quot;&lt;your resource key&gt;&quot;</div>
 <div class="c-code__line">export EXAMPLE_LANG=&quot;rust&quot;</div>
 <div class="c-code__line">dotnet test --filter TestCategory=Contract</div>
