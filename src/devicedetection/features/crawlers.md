@@ -37,6 +37,15 @@ Control what your content can be used for by checking the `CrawlerUsage` propert
 `IsArtificialIntelligence` is a boolean property designed to give you easy answers about AI crawling. If the crawler has a `CrawlerUsage` related to AI this will be TRUE.
 
 
+# Signed Agents
+
+`IsCrawler` and the other crawler properties tell you what an agent declares about itself. An @agentsignature tells you what an agent has proved. The two are used together.
+
+A crawler declares itself through its User-Agent header, and any other program can send the same header, so a declaration is a claim. Under the IETF Web Bot Auth protocol an agent instead signs its request with a private key and publishes the matching public key on its own site. That signature either checks out or it does not, and it cannot be produced without the private key, so `AgentSignature` is proof where `IsCrawler` is a claim.
+
+Only a handful of agents sign today, so most requests report the `Absent` status and an absent signature is never evidence against a request. See @ref PipelineApi_Features_AgentSignature for the properties, the statuses and how to add the feature to your @Pipeline.
+
+
 # Robots.txt
 
 We use these properties for our [Robots.txt generator](https://51degrees.com/robots-txt) so that you can allow or disallow crawlers by `CrawlerUsage`.
