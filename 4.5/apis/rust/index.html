@@ -271,7 +271,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="c-code__line"># Ok(())</div>
 <div class="c-code__line"># }</div>
 </div><!-- fragment --><h1>Building</h1>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">cargo build --workspace</div>
+<p>The <code>fodid</code> crate compiles the OWID library in from the <code>owid-rust</code> submodule, so place that source once per clone before building:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">git submodule update --init</div>
+<div class="c-code__line">pwsh ./ci/copy-owid-source.ps1</div>
+</div><!-- fragment --><div class="c-code__block c-code__block--outline"><div class="c-code__line">cargo build --workspace</div>
 <div class="c-code__line">cargo test --workspace --all-features</div>
 <div class="c-code__line">cargo doc --workspace --no-deps</div>
 </div><!-- fragment --><p>A cloud-only build that skips the native path:</p>
@@ -297,7 +300,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="c-code__line">export PAID_RESOURCE_KEY=&quot;&lt;your resource key&gt;&quot;</div>
 <div class="c-code__line">export EXAMPLE_LANG=&quot;rust&quot;</div>
 <div class="c-code__line">dotnet test --filter TestCategory=Contract</div>
-</div><!-- fragment --><p>The <code>fodid</code> crate depends on the <a href="https://github.com/SWAN-community/owid-rust"><code>owid</code></a> crate (the OWID envelope library a 51Did is built on), consumed as a git dependency. A network connection is required the first time the dependency is fetched.</p>
+</div><!-- fragment --><p>The <code>fodid</code> crate compiles the OWID envelope library (the library a 51Did is built on) into itself from the <code>owid-rust</code> submodule (<a href="https://github.com/51Degrees/owid-rust">https://github.com/51Degrees/owid-rust</a>), so no OWID crate has to exist on any registry. After cloning, run <code>git submodule update --init</code> and then <code>pwsh ./ci/copy-owid-source.ps1</code> (PowerShell 7, on any platform) to place the source under <code>fodid/src/owid</code>, which git ignores. Run the script again after moving the submodule to another commit.</p>
 <h1>Editor and IDE setup</h1>
 <p>rust-analyzer drives code intelligence in any LSP editor (VS Code, Neovim, Helix, Zed), and the JetBrains RustRover IDE works out of the box.</p>
 <p>For VS Code the workspace ships <code>.vscode/tasks.json</code> and <code>.vscode/launch.json</code>, and <code>.vscode/extensions.json</code> recommends the two extensions they rely on:</p>

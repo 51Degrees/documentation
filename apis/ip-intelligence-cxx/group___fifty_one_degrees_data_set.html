@@ -129,10 +129,10 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:gae08c9b55b5ce27e20b916a6be8492d1a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Releases a reference to a data set which has been fetched via the DataSetGet method.  <br /></td></tr>
 <tr class="c-table__row memitem:gaa123fd449857f5500fb5aaa6e20a498f" id="r_gaa123fd449857f5500fb5aaa6e20a498f"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gaa123fd449857f5500fb5aaa6e20a498f">fiftyoneDegreesDataSetFree</a> (<a class="el" href="structfiftyone_degrees_data_set_base.html">fiftyoneDegreesDataSetBase</a> *dataSet)</td></tr>
 <tr class="c-table__row memdesc:gaa123fd449857f5500fb5aaa6e20a498f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Closes the data set by freeing anything which has been initialised at creation.  <br /></td></tr>
-<tr class="c-table__row memitem:ga6876a826ea682fd90a29d3b6e10b4678" id="r_ga6876a826ea682fd90a29d3b6e10b4678"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga6876a826ea682fd90a29d3b6e10b4678">fiftyoneDegreesDataSetReloadManagerFromMemory</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, void *source, <a class="el" href="group___fifty_one_degrees_file.html#ga03afb3a21c9c17ffc67601df949c2017">fiftyoneDegreesFileOffset</a> length, size_t dataSetSize, <a class="el" href="#gab05e861cf101b0093e0cfae12c3a4643">fiftyoneDegreesDataSetInitFromMemoryMethod</a> initDataSet, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
-<tr class="c-table__row memdesc:ga6876a826ea682fd90a29d3b6e10b4678"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reload the data set being used by the resource manager using a data file loaded into contiguous memory.  <br /></td></tr>
-<tr class="c-table__row memitem:ga0afe2d82f4d115a79ef62cb2bea8f0d9" id="r_ga0afe2d82f4d115a79ef62cb2bea8f0d9"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga0afe2d82f4d115a79ef62cb2bea8f0d9">fiftyoneDegreesDataSetReloadManagerFromFile</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, const char *fileName, size_t dataSetSize, <a class="el" href="#gac149d8ba462b32a339ee202e1c707597">fiftyoneDegreesDataSetInitFromFileMethod</a> initDataSet, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
-<tr class="c-table__row memdesc:ga0afe2d82f4d115a79ef62cb2bea8f0d9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reload the data set being used by the resource manager using the data file location specified.  <br /></td></tr>
+<tr class="c-table__row memitem:ga77e496cea5bbdfa08cc23dd0bf0455c3" id="r_ga77e496cea5bbdfa08cc23dd0bf0455c3"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga77e496cea5bbdfa08cc23dd0bf0455c3">fiftyoneDegreesDataSetReloadManagerFromMemory</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, void *source, <a class="el" href="group___fifty_one_degrees_file.html#ga03afb3a21c9c17ffc67601df949c2017">fiftyoneDegreesFileOffset</a> length, size_t dataSetSize, <a class="el" href="#gab05e861cf101b0093e0cfae12c3a4643">fiftyoneDegreesDataSetInitFromMemoryMethod</a> initDataSet, void(*freeDataSet)(void *), <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga77e496cea5bbdfa08cc23dd0bf0455c3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reload the data set being used by the resource manager using a data file loaded into contiguous memory.  <br /></td></tr>
+<tr class="c-table__row memitem:ga5bfe3dee2933a6465ea4158641dc5aca" id="r_ga5bfe3dee2933a6465ea4158641dc5aca"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga5bfe3dee2933a6465ea4158641dc5aca">fiftyoneDegreesDataSetReloadManagerFromFile</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, const char *fileName, size_t dataSetSize, <a class="el" href="#gac149d8ba462b32a339ee202e1c707597">fiftyoneDegreesDataSetInitFromFileMethod</a> initDataSet, void(*freeDataSet)(void *), <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga5bfe3dee2933a6465ea4158641dc5aca"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reload the data set being used by the resource manager using the data file location specified.  <br /></td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="g-docs__section-heading">Macro Definition Documentation</h2>
 <a id="ga3c8054b6dca94f20c82d3b0e28c58931" name="ga3c8054b6dca94f20c82d3b0e28c58931"></a>
@@ -493,8 +493,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga0afe2d82f4d115a79ef62cb2bea8f0d9" name="ga0afe2d82f4d115a79ef62cb2bea8f0d9"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga0afe2d82f4d115a79ef62cb2bea8f0d9">&#9670;&#160;</a></span>fiftyoneDegreesDataSetReloadManagerFromFile()</h2>
+<a id="ga5bfe3dee2933a6465ea4158641dc5aca" name="ga5bfe3dee2933a6465ea4158641dc5aca"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga5bfe3dee2933a6465ea4158641dc5aca">&#9670;&#160;</a></span>fiftyoneDegreesDataSetReloadManagerFromFile()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -524,6 +524,11 @@ Functions</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
+          <td class="c-table__cell">void(*</td>          <td class="c-table__cell"><span class="paramname"><em>freeDataSet&#160;</em></span>)(void *), </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
           <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
         </tr>
           </table>
@@ -539,6 +544,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname">fileName</td><td>path to the new data file </td></tr>
     <tr><td class="paramname">dataSetSize</td><td>size of the data set structure to allocate for the new data set </td></tr>
     <tr><td class="paramname">initDataSet</td><td>init method used to initialise the new data set from the file provided </td></tr>
+    <tr><td class="paramname">freeDataSet</td><td>the engine's free method, called on the replacement data set if initialisation fails so a failed reload does not leak. Must be safe on a partially initialised data set, which every engine's free method is because its init method resets the pointers first </td></tr>
     <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
   </table>
   </dd>
@@ -547,8 +553,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga6876a826ea682fd90a29d3b6e10b4678" name="ga6876a826ea682fd90a29d3b6e10b4678"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga6876a826ea682fd90a29d3b6e10b4678">&#9670;&#160;</a></span>fiftyoneDegreesDataSetReloadManagerFromMemory()</h2>
+<a id="ga77e496cea5bbdfa08cc23dd0bf0455c3" name="ga77e496cea5bbdfa08cc23dd0bf0455c3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga77e496cea5bbdfa08cc23dd0bf0455c3">&#9670;&#160;</a></span>fiftyoneDegreesDataSetReloadManagerFromMemory()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -583,6 +589,11 @@ Functions</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
+          <td class="c-table__cell">void(*</td>          <td class="c-table__cell"><span class="paramname"><em>freeDataSet&#160;</em></span>)(void *), </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
           <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
         </tr>
           </table>
@@ -599,6 +610,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname">length</td><td>of the data in memory </td></tr>
     <tr><td class="paramname">dataSetSize</td><td>size of the data set structure to allocate for the new data set </td></tr>
     <tr><td class="paramname">initDataSet</td><td>init method used to initialise the new data set from the memory pointer provided </td></tr>
+    <tr><td class="paramname">freeDataSet</td><td>the engine's free method, called on the replacement data set if initialisation fails so a failed reload does not leak. Must be safe on a partially initialised data set, which every engine's free method is because its init method resets the pointers first </td></tr>
     <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
   </table>
   </dd>

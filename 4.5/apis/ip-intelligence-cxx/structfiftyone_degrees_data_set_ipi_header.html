@@ -101,8 +101,8 @@ const&#160;int32_t&#160;</td><td class="c-table__cell"><b>copyrightOffset</b></t
 <tr class="c-table__row memitem:aa9c9316c3e0b3ac08205578f41975680" id="r_aa9c9316c3e0b3ac08205578f41975680"><td class="c-table__cell"><a id="aa9c9316c3e0b3ac08205578f41975680" name="aa9c9316c3e0b3ac08205578f41975680"></a>
 const&#160;int16_t&#160;</td><td class="c-table__cell"><b>age</b></td></tr>
 <tr class="c-table__row memdesc:aa9c9316c3e0b3ac08205578f41975680"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Age of the data set format. <br /></td></tr>
-<tr class="c-table__row memitem:a70a50b53a2818d94a14148db994c7b2b" id="r_a70a50b53a2818d94a14148db994c7b2b"><td class="c-table__cell">const&#160;int32_t&#160;</td><td class="c-table__cell"><a class="el" href="#a70a50b53a2818d94a14148db994c7b2b">reserved</a></td></tr>
-<tr class="c-table__row memdesc:a70a50b53a2818d94a14148db994c7b2b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reserved.  <br /></td></tr>
+<tr class="c-table__row memitem:a42b05ebe3d5a7bc574c83a5eaf49c710" id="r_a42b05ebe3d5a7bc574c83a5eaf49c710"><td class="c-table__cell">const&#160;int32_t&#160;</td><td class="c-table__cell"><a class="el" href="#a42b05ebe3d5a7bc574c83a5eaf49c710">profilesOffsetShift</a></td></tr>
+<tr class="c-table__row memdesc:a42b05ebe3d5a7bc574c83a5eaf49c710"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of bits to shift a stored profile offset, or the profiles collection length, left to convert it to bytes.  <br /></td></tr>
 <tr class="c-table__row memitem:a70e2b6e1bd2d25cee70eb785f4e38456" id="r_a70e2b6e1bd2d25cee70eb785f4e38456"><td class="c-table__cell"><a id="a70e2b6e1bd2d25cee70eb785f4e38456" name="a70e2b6e1bd2d25cee70eb785f4e38456"></a>
 const&#160;int32_t&#160;</td><td class="c-table__cell"><b>nameOffset</b></td></tr>
 <tr class="c-table__row memdesc:a70e2b6e1bd2d25cee70eb785f4e38456"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Offset of the data file name in the strings collection. <br /></td></tr>
@@ -147,8 +147,8 @@ const&#160;<a class="el" href="structfiftyone_degrees_collection_header.html">fi
 <tr class="c-table__row memdesc:aea2fb6d46f4be1dd8406085ef3414a8a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Size and location of the profile offsets collection. <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Field Documentation</h2>
-<a id="a70a50b53a2818d94a14148db994c7b2b" name="a70a50b53a2818d94a14148db994c7b2b"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a70a50b53a2818d94a14148db994c7b2b">&#9670;&#160;</a></span>reserved</h2>
+<a id="a42b05ebe3d5a7bc574c83a5eaf49c710" name="a42b05ebe3d5a7bc574c83a5eaf49c710"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a42b05ebe3d5a7bc574c83a5eaf49c710">&#9670;&#160;</a></span>profilesOffsetShift</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -156,15 +156,15 @@ const&#160;<a class="el" href="structfiftyone_degrees_collection_header.html">fi
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const int32_t fiftyoneDegreesDataSetIpiHeader::reserved</td>
+              <td class="c-table__cell">const int32_t fiftyoneDegreesDataSetIpiHeader::profilesOffsetShift</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>Reserved. </p>
-<p>Retained so this structure matches the data file header layout. Not used by IP Intelligence. </p>
+<p>Number of bits to shift a stored profile offset, or the profiles collection length, left to convert it to bytes. </p>
+<p>Zero where profile offsets are byte positions. Occupies a previously reserved field always written as zero. </p>
 
 </div>
 </div>
