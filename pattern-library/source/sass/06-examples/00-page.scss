@@ -9,6 +9,26 @@
   padding: size(2) size(1);
 }
 
+/**
+ * A wider shell for an example that has to show two things beside each
+ * other, such as what a reader typed and what came back.
+ *
+ * 800px is a comfortable measure for reading a column of prose, which is
+ * what most examples are. It is far too narrow once a page puts two
+ * columns or a table of controls inside it, because the columns then
+ * halve it and every control in them collapses and truncates.
+ *
+ * The prose keeps the reading measure rather than stretching to the new
+ * width, so only the parts that need the room take it.
+ */
+.c-eg-page--wide {
+  max-width: 1400px;
+
+  > p {
+    max-width: 800px;
+  }
+}
+
 .c-eg-page__title {
   @include make-text-heading-2();
 }

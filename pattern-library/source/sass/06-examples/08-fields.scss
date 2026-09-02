@@ -1,0 +1,99 @@
+/**
+ * Fields for an example that takes input, rather than one that only
+ * shows what an engine returned.
+ *
+ * Almost every example we ship reports data and asks for nothing, so the
+ * system grew a rich set of ways to display a result and nothing for a
+ * reader to type into. An example that does take input was left composing
+ * .b-input with whatever it could find, which reads as a different
+ * control on the same page. These are the two fields such an example
+ * needs, being a single line control and a multi line editor, sharing one
+ * treatment so they look like a set.
+ */
+
+/**
+ * What both fields share on top of the design system input. The border
+ * softens and the corners round, so a field reads as an area to work in
+ * rather than as a bordered rectangle, and a focus ring says which field
+ * holds the caret.
+ *
+ * The ring is on :focus-visible, so a keyboard user gets it and a
+ * pointer user clicking straight into the field does not.
+ */
+@mixin make-example-field {
+  @include make-input();
+  border-color: $colour-grey-light;
+  border-radius: $rounded;
+  background-color: $colour-grey-lighter;
+
+  &:focus-visible {
+    outline: 2px solid $colour-blue;
+    outline-offset: 1px;
+    border-color: $colour-blue;
+  }
+}
+
+/**
+ * A single line control, being a text box or a list. Filling its
+ * container is not enough on its own, because a control in a narrow
+ * table column would collapse to the column and truncate what it holds,
+ * so it asks for a width the column has to give it.
+ */
+.c-eg-control {
+  @include make-example-field();
+  width: 100%;
+  min-width: size(11);
+}
+
+/**
+ * A row of controls that belong together, such as a label, a list to
+ * choose from and the button that acts on it.
+ *
+ * c-eg-button-row sets margins and nothing else, which is all a row of
+ * buttons needs, and it leaves a control filling the line on its own so
+ * the button beside it falls underneath. This lays the row out.
+ */
+.c-eg-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: size(0);
+  margin: size(1) 0 size(2);
+
+  /* A control in a row sizes to what it holds rather than filling the
+     line, which is the opposite of what it does in a table cell or a
+     column, so the row stays a row. */
+  .c-eg-control {
+    width: auto;
+  }
+}
+
+/**
+ * A multi line editor for something structured, such as a script, a
+ * configuration block or a request body. It adds to the single line
+ * control only what many lines need.
+ */
+.c-eg-editor {
+  @include make-example-field();
+  @include make-text-code();
+
+  width: 100%;
+  min-height: 340px;
+
+  /* make-input sets 1.2, which is right for one line of prose and too
+     tight for many lines of indented code. */
+  line-height: 1.5;
+
+  /* Only the height can be dragged. A reader widening one editor in a
+     two column layout would push the other out of the grid. */
+  resize: vertical;
+
+  /* The formats these examples show are indented two spaces, so a tab
+     that jumps eight columns makes pasted content look wrong. */
+  tab-size: 2;
+
+  /* Lines scroll sideways rather than wrap, because wrapping a
+     structured format hides the indentation that carries its meaning. */
+  white-space: pre;
+  overflow: auto;
+}
