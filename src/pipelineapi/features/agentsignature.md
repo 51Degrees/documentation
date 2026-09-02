@@ -242,6 +242,29 @@ trusting it:
 - No more than `SetMaxResponseBytes` is read from any response, so a
   request cannot point the element at an endless document.
 
+# How the element is verified {#AgentSignature_HowVerified}
+
+The element is checked against the standards and against the agents
+signing today, not only against its own fixtures.
+
+- The worked examples printed in
+  [RFC 9421](https://www.rfc-editor.org/rfc/rfc9421) itself are asserted
+  character for character against the signature base the element
+  rebuilds, so any drift from the standard fails a test.
+- The [structured field test suite](https://github.com/httpwg/structured-field-tests)
+  published by the HTTP working group, over a thousand cases, runs
+  against the header parsing and the strict serialisation.
+- The test vectors Cloudflare publishes in their
+  [web-bot-auth](https://github.com/cloudflare/web-bot-auth) project
+  verify, so the element agrees with their reference implementation.
+- Live interoperability tests fetch the key directories Cloudflare and
+  OpenAI publish for their real agents, read keys from them, and verify
+  a freshly signed request against Cloudflare's Web Bot Auth research
+  service, so the element is checked against the services on the wire,
+  not only against copies. These tests need the network, so the suite
+  runs them only when the environment variable
+  `FIFTYONE_AGENT_SIGNATURE_NETWORK_TESTS` is set to `1`.
+
 # What is not covered {#AgentSignature_NotCovered}
 
 - **Checking that a nonce is never reused is your job.** A signed request
