@@ -18,14 +18,73 @@
  * columns or a table of controls inside it, because the columns then
  * halve it and every control in them collapses and truncates.
  *
- * The prose keeps the reading measure rather than stretching to the new
- * width, so only the parts that need the room take it.
+ * Everything inside takes the full width. Prose that would otherwise run
+ * to an unreadable measure goes in c-eg-intro or c-eg-columns below,
+ * which divide the width into readable columns rather than leaving half
+ * the page empty.
  */
 .c-eg-page--wide {
   max-width: 1400px;
+}
+
+/**
+ * The notes an example opens with, laid across the width rather than
+ * stacked down the left of it.
+ *
+ * A wide page fits three columns of prose beside each other, so what an
+ * example has to say before it starts takes one band and the example
+ * itself is on screen without scrolling. Each column keeps a readable
+ * measure because the columns divide the width, rather than one
+ * paragraph stretching across all of it.
+ */
+.c-eg-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0 size(2);
+  margin-bottom: size(2);
+
+  @include respond-to(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include respond-to(xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   > p {
-    max-width: 800px;
+    margin-top: 0;
+  }
+}
+
+/**
+ * The head of an example, being the logo beside the title and the line
+ * that says what the example is for.
+ *
+ * The logo sits beside the words rather than above them, because a logo
+ * on its own line costs every reader the height of it before anything
+ * they came for.
+ */
+.c-eg-masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: size(0) size(3);
+  margin-bottom: size(2);
+
+  > img {
+    flex: 0 0 auto;
+  }
+
+  &__words {
+    flex: 1 1 20rem;
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
