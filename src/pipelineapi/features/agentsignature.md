@@ -69,7 +69,7 @@ See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/pipeline-elements/agent-signature-element.md#)
 for more technical details.
 
-# Properties
+# Properties {#AgentSignature_Properties}
 
 The element adds twelve properties. Every one of them can report that it has
 no value together with a message saying why, so a detail that was not sent
@@ -97,6 +97,18 @@ header points at one, or when you configure a registry of cards, see
 [Configuration](@ref AgentSignature_Configuration). No card is read by default, so the last
 three properties usually have no value with the message 'No agent card
 available'.
+
+Configured registries are read once for the life of the process, in the
+background, the first time a card could be used. A registry or card that
+cannot be fetched at that point is not tried again, so a fault at start
+up, for example a firewall blocking the request or the registry being
+briefly unreachable, leaves the three card properties without values
+until the process restarts, even once the fault has been dealt with.
+This is unlike the keys themselves, which are re-fetched and recover on
+their own, see [How keys are fetched and cached](@ref AgentSignature_Caching).
+The trade is deliberate because a card never changes the signature
+status, only the description reported alongside it, so a stale or
+missing card costs detail rather than correctness.
 
 # Statuses
 
@@ -154,7 +166,7 @@ defaults are chosen so that nothing needs to be set for it to work.
 | `SetFetchTimeout`               | 5 seconds                      | The time limit on one fetch of a key directory, a card or a registry.                                                                                    |
 | `SetClockSkew`                  | 60 seconds                     | The tolerance on `created` and `expires`, which allows for clocks that differ a little.                                                                  |
 | `SetMaxLifetime`                | zero, meaning no limit         | Rejects a signature valid for longer than this, reporting `Invalid` with the `Expired` reason. There is no limit by default because the protocol draft only recommends one, of 24 hours. |
-| `SetRegistry`                   | none                           | Adds a registry of agent cards, being a text document listing one card address per line. Call it more than once to add more than one registry.           |
+| `SetRegistry`                   | none                           | Adds a registry of agent cards, being a text document listing one card address per line. Call it more than once to add more than one registry. Registries are read once for the life of the process, so a read that fails for any reason is not retried until a restart, see [Agent cards](@ref AgentSignature_Properties). |
 | `SetAllowLegacySignatureAgent`  | true                           | Whether the older form of the `Signature-Agent` header, a bare quoted string rather than a list, is accepted.                                            |
 | `SetAllowInlineDirectory`       | false                          | Whether a key set carried inside the request in a `data:` URI is accepted. Leave this off wherever requests arrive from the public internet, and turn it on only where every caller is already trusted, such as a test harness. |
 | `SetMaxResponseBytes`           | 262,144                        | The most that is read from a key directory, agent card or registry response before the fetch is abandoned. The address fetched is chosen by whoever sent the request, so the size is held down. |
@@ -168,7 +180,7 @@ configuration file by naming the option without its `Set` prefix, in the
 same way as the other elements. The client is the exception because a
 configuration file holds text and a client cannot be written as text.
 
-# How keys are fetched and cached
+# How keys are fetched and cached {#AgentSignature_Caching}
 
 An agent's public keys live on the agent's own website, so 51Degrees has to
 fetch them. The first time a signed request arrives from an agent that this
