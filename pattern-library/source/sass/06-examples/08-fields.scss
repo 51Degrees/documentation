@@ -46,6 +46,31 @@
 }
 
 /**
+ * A table of fields, being one row for each thing a reader sets.
+ *
+ * Everything inside it is one size. The system sizes each piece for the
+ * place it usually appears, so a control carries the body size it needs
+ * standing alone in a form, and the code face is a step smaller because
+ * it usually sits inside running prose. Put the two in one row with
+ * ordinary cell text and a reader sees three sizes and reads three
+ * different things rather than one row.
+ *
+ * The control also loses its form padding, because a row of them is
+ * dense by nature and padding sized for a lone box makes the table tall
+ * enough to scroll for no reason.
+ */
+.c-eg-fields {
+  .c-eg-control,
+  .b-text--code {
+    font-size: inherit;
+  }
+
+  .c-eg-control {
+    padding: size(-3) size(-2);
+  }
+}
+
+/**
  * A row of controls that belong together, such as a label, a list to
  * choose from and the button that acts on it.
  *
