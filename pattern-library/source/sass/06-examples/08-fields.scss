@@ -80,6 +80,36 @@
 }
 
 /**
+ * Output printed exactly as something produced it, such as a message a
+ * caller would meet or a canonical form.
+ *
+ * It scrolls sideways rather than stretching what is around it. A long
+ * line inside a bare pre widens its container, and in a page laid out in
+ * columns that pushes everything else out of shape, which is worse than
+ * a scrollbar.
+ */
+.c-eg-pre {
+  @include make-text-code();
+  background-color: $colour-grey-lighter;
+  border-radius: $rounded;
+  padding: size(0);
+  margin: 0 0 size(2);
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/**
+ * The same block for output that is prose rather than structure, such as
+ * a message. Prose is easier to read wrapped, whilst something with
+ * meaningful indentation is not, which is why this is a choice rather
+ * than the default.
+ */
+.c-eg-pre--wrap {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/**
  * A row of controls that belong together, such as a label, a list to
  * choose from and the button that acts on it.
  *
