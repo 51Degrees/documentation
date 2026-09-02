@@ -68,6 +68,15 @@
   .c-eg-control {
     padding: size(-3) size(-2);
   }
+
+  /* A table aligns to the top, which is right where a cell holds a
+     paragraph and the row is as tall as the longest one. Here the tall
+     cells are controls, which centre what they hold, so a name aligned
+     to the top sits above the control beside it and nothing in the row
+     lines up. */
+  .c-eg-table__cell {
+    vertical-align: middle;
+  }
 }
 
 /**
