@@ -111,7 +111,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">          &quot;DataFileSystemWatcher&quot;: false,</div>
 <div class="c-code__line">          &quot;DataUpdateOnStartUp&quot;: false,</div>
 <div class="c-code__line">          // Explicitly include just the properties used by the example.</div>
-<div class="c-code__line">          &quot;Properties&quot;: &quot;HardwareVendor,HardwareModel,HardwareName,IsMobile,JavascriptGetHighEntropyValues,Promise,Fetch,DeviceType,PlatformVendor,PlatformName,PlatformVersion,BrowserVendor,BrowserName,BrowserVersion,ScreenPixelsWidth,ScreenPixelsHeight,JavascriptScreenPixelsWidth,JavascriptScreenPixelsHeight,JavascriptHardwareProfile&quot;</div>
+<div class="c-code__line">          // IsVisible and HasWebDriver are answered by the JavaScript held in</div>
+<div class="c-code__line">          // IsVisibleJavaScript and HasWebDriverJavaScript, so both halves of</div>
+<div class="c-code__line">          // each pair are listed. IsHeadless is read from the User-Agent.</div>
+<div class="c-code__line">          // These three are only in the Enterprise and TAC data files.</div>
+<div class="c-code__line">          &quot;Properties&quot;: &quot;HardwareVendor,HardwareModel,HardwareName,IsMobile,JavascriptGetHighEntropyValues,Promise,Fetch,DeviceType,PlatformVendor,PlatformName,PlatformVersion,BrowserVendor,BrowserName,BrowserVersion,ScreenPixelsWidth,ScreenPixelsHeight,JavascriptScreenPixelsWidth,JavascriptScreenPixelsHeight,JavascriptHardwareProfile,IsHeadless,IsVisible,IsVisibleJavaScript,HasWebDriver,HasWebDriverJavaScript&quot;</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">      },</div>
 <div class="c-code__line">      {</div>
@@ -337,6 +341,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row c-eg-table__row--alt&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Browser Version:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt; &lt;%= deviceData.TryGetValue(d =&gt; d.BrowserVersion.GetHumanReadable()) %&gt;&lt;/td&gt;&lt;/tr&gt;</div>
 <div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Screen width (pixels):&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt; &lt;%= deviceData.TryGetValue(d =&gt; d.ScreenPixelsWidth.GetHumanReadable()) %&gt;&lt;/td&gt;&lt;/tr&gt;</div>
 <div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row c-eg-table__row--alt&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Screen height (pixels):&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt; &lt;%= deviceData.TryGetValue(d =&gt; d.ScreenPixelsHeight.GetHumanReadable()) %&gt;&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Headless browser:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt; &lt;%= deviceData.GetHumanReadableByName(&quot;IsHeadless&quot;) %&gt;&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row c-eg-table__row--alt&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Has web driver:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt; &lt;%= deviceData.GetHumanReadableByName(&quot;HasWebDriver&quot;) %&gt;&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Window visible:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt; &lt;%= deviceData.GetHumanReadableByName(&quot;IsVisible&quot;) %&gt;&lt;/td&gt;&lt;/tr&gt;</div>
 <div class="c-code__line">                &lt;/tbody&gt;</div>
 <div class="c-code__line">            &lt;/table&gt;</div>
 <div class="c-code__line"> </div>

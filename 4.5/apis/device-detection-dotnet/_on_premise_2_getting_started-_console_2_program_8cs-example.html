@@ -245,6 +245,13 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">                    OutputValue(<span class="c-code__stringliteral">&quot;Browser Name&quot;</span>, device.BrowserName, message);</div>
 <div class="c-code__line">                    OutputValue(<span class="c-code__stringliteral">&quot;Browser Version&quot;</span>, device.BrowserVersion, message);</div>
 <div class="c-code__line">                    OutputValue(<span class="c-code__stringliteral">&quot;DeviceId&quot;</span>, device.DeviceId, message);</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">                    <span class="c-code__comment">// The generated IDeviceData interface does not expose these</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// three properties yet, so they are read by name.</span></div>
+<div class="c-code__line">                    OutputNamedValue(<span class="c-code__stringliteral">&quot;Headless Browser&quot;</span>, device, <span class="c-code__stringliteral">&quot;IsHeadless&quot;</span>, message);</div>
+<div class="c-code__line">                    OutputNamedValue(<span class="c-code__stringliteral">&quot;Has Web Driver&quot;</span>, device, <span class="c-code__stringliteral">&quot;HasWebDriver&quot;</span>, message);</div>
+<div class="c-code__line">                    OutputNamedValue(<span class="c-code__stringliteral">&quot;Window Visible&quot;</span>, device, <span class="c-code__stringliteral">&quot;IsVisible&quot;</span>, message);</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">                    message.AppendLine(<span class="c-code__stringliteral">&quot;Matched&quot;</span>);</div>
 <div class="c-code__line">                    <span class="c-code__keywordflow">foreach</span>(var entry <span class="c-code__keywordflow">in</span> device.UserAgents.Value)</div>
 <div class="c-code__line">                    {</div>
@@ -269,6 +276,15 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">                message.AppendLine(value.HasValue ?</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;\t{name}: &quot;</span> + value.Value :</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;\t{name}: &quot;</span> + value.NoValueMessage);</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">void</span> OutputNamedValue(<span class="c-code__keywordtype">string</span> name,</div>
+<div class="c-code__line">                IDeviceData device,</div>
+<div class="c-code__line">                <span class="c-code__keywordtype">string</span> propertyName,</div>
+<div class="c-code__line">                StringBuilder message)</div>
+<div class="c-code__line">            {</div>
+<div class="c-code__line">                message.AppendLine(</div>
+<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;\t{name}: &quot;</span> + device.GetHumanReadableByName(propertyName));</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>

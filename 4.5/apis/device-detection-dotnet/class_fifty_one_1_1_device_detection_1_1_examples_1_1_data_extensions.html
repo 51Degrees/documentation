@@ -77,6 +77,8 @@ Static Public Member Functions</h2></td></tr>
 static&#160;string&#160;</td><td class="c-table__cell"><b>GetHumanReadable</b> (this IAspectPropertyValue&lt; IReadOnlyList&lt; string &gt; &gt; apv)</td></tr>
 <tr class="c-table__row memitem:a6f0318a66d0a03c29242872bf32c1023" id="r_a6f0318a66d0a03c29242872bf32c1023"><td class="c-table__cell"><a id="a6f0318a66d0a03c29242872bf32c1023" name="a6f0318a66d0a03c29242872bf32c1023"></a>
 static&#160;string&#160;</td><td class="c-table__cell"><b>GetHumanReadable</b> (this IAspectPropertyValue&lt; int &gt; apv)</td></tr>
+<tr class="c-table__row memitem:aef8394da102f14353c736cdbd75841f4" id="r_aef8394da102f14353c736cdbd75841f4"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#aef8394da102f14353c736cdbd75841f4">GetHumanReadableByName&lt; T &gt;</a> (this T data, string propertyName)</td></tr>
+<tr class="c-table__row memdesc:aef8394da102f14353c736cdbd75841f4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a human-readable version of a property looked up by name rather than through the strongly typed IDeviceData interface.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a92d1106fb219c0812ff5d166ec5d7225" name="a92d1106fb219c0812ff5d166ec5d7225"></a>
@@ -115,6 +117,57 @@ static&#160;string&#160;</td><td class="c-table__cell"><b>GetHumanReadable</b> (
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
+
+</div>
+</div>
+<a id="aef8394da102f14353c736cdbd75841f4" name="aef8394da102f14353c736cdbd75841f4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aef8394da102f14353c736cdbd75841f4">&#9670;&#160;</a></span>GetHumanReadableByName&lt; T &gt;()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">string FiftyOne.DeviceDetection.Examples.DataExtensions.GetHumanReadableByName&lt; T &gt; </td>
+          <td>(</td>
+          <td class="c-table__cell">this T</td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Get a human-readable version of a property looked up by name rather than through the strongly typed IDeviceData interface. </p>
+<p>A property is present in the data file and in the cloud response before the generated interface is rebuilt to include it, so this is the only way for an example to display a newly added property. Behaves like GetHumanReadable(IAspectPropertyValue&lt;string&gt;), returning 'No value' and a reason when the property is absent or has no value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The element data to read the property from. </td></tr>
+    <tr><td class="paramname">propertyName</td><td>Name of the property, for example 'IsHeadless'. Matching is case insensitive because the dictionary keys differ in case between the on-premise and cloud engines. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="typeconstraint">
+<dl><dt><b>Type Constraints</b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>IElementData</em></td><td>&#160;</td></tr>
+</table>
+</dd>
+</dl>
+</div>
 
 </div>
 </div>
