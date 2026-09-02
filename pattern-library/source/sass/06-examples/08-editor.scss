@@ -1,0 +1,37 @@
+/**
+ * A multi line editor for an example that lets a reader type something
+ * structured and see what it does, such as a script, a configuration
+ * block or a request body.
+ *
+ * It reuses the design system input chrome and the documentation code
+ * face rather than inventing either, so an editor sits beside a .b-input
+ * in the same form without looking like a different control. What it adds
+ * is only what a single line input has no reason to carry: room to work
+ * in, a scrollbar rather than wrapped lines, a tab that lines up with the
+ * two space indent our formats use, and a grip to make the box taller.
+ *
+ * Lines are not wrapped. Wrapping a structured format hides the
+ * indentation that carries its meaning, so a long line scrolls sideways
+ * and stays readable as one line.
+ */
+
+.c-eg-editor {
+  @include make-input();
+  @include make-text-code();
+
+  width: 100%;
+  min-height: 340px;
+  background-color: $colour-grey-lighter;
+
+  /* Only the height can be dragged. A reader widening one editor in a
+     two column layout would push the other out of the grid. */
+  resize: vertical;
+
+  /* The formats these examples show are indented two spaces, so a tab
+     that jumps eight columns makes pasted content look wrong. */
+  tab-size: 2;
+
+  /* Long lines scroll rather than wrap, as above. */
+  white-space: pre;
+  overflow: auto;
+}
