@@ -1,0 +1,7 @@
+var class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_multiple_signature_tests =
+[
+    [ "FirstTaggedSignaturesOutcomeIsReportedWhenNoneVerifies", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_multiple_signature_tests.html#a7948a6ea55ed9730cc7a1c472ac9bae2", null ],
+    [ "OnlyTheFirstThreeTaggedSignaturesAreChecked", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_multiple_signature_tests.html#aede342b3d4432f5e02bec38d175fff2c", null ],
+    [ "SecondTaggedSignatureVerifiesWhenTheFirstDoesNot", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_multiple_signature_tests.html#a8d76980108771304e7cba28cb6a97525", null ],
+    [ "SignatureWithAnotherTagDoesNotStopTheTaggedOneVerifying", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_multiple_signature_tests.html#a9fd423930904314c9b015250d4d7914b", null ]
+];

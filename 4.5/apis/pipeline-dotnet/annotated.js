@@ -19,6 +19,12 @@ var annotated =
       ] ]
     ] ],
     [ "Examples", "namespace_examples.html", [
+      [ "AgentSignature", "namespace_examples_1_1_agent_signature.html", [
+        [ "AgentRequestSigner", "class_examples_1_1_agent_signature_1_1_agent_request_signer.html", "class_examples_1_1_agent_signature_1_1_agent_request_signer" ],
+        [ "ExampleKeyDirectoryHandler", "class_examples_1_1_agent_signature_1_1_example_key_directory_handler.html", "class_examples_1_1_agent_signature_1_1_example_key_directory_handler" ],
+        [ "Program", "class_examples_1_1_agent_signature_1_1_program.html", "class_examples_1_1_agent_signature_1_1_program" ],
+        [ "SignedRequestHeaders", "class_examples_1_1_agent_signature_1_1_signed_request_headers.html", "class_examples_1_1_agent_signature_1_1_signed_request_headers" ]
+      ] ],
       [ "ClientSideEvidence", "namespace_examples_1_1_client_side_evidence.html", [
         [ "MVC", "namespace_examples_1_1_client_side_evidence_1_1_m_v_c.html", [
           [ "Controllers", "namespace_examples_1_1_client_side_evidence_1_1_m_v_c_1_1_controllers.html", [
@@ -76,6 +82,61 @@ var annotated =
     ] ],
     [ "FiftyOne", "namespace_fifty_one.html", [
       [ "Pipeline", "namespace_fifty_one_1_1_pipeline.html", [
+        [ "AgentSignature", "namespace_fifty_one_1_1_pipeline_1_1_agent_signature.html", [
+          [ "Data", "namespace_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data.html", [
+            [ "AgentSignatureData", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_agent_signature_data.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_agent_signature_data" ],
+            [ "IAgentSignatureData", "interface_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_i_agent_signature_data.html", "interface_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_i_agent_signature_data" ]
+          ] ],
+          [ "FlowElement", "namespace_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element.html", [
+            [ "AgentSignatureConfiguration", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_configuration.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_configuration" ],
+            [ "AgentSignatureElement", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_element.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_element" ],
+            [ "AgentSignatureElementBuilder", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_element_builder.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_element_builder" ]
+          ] ],
+          [ "Tests", "namespace_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests.html", [
+            [ "Helpers", "namespace_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers.html", [
+              [ "AgentCardVector", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_agent_card_vector.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_agent_card_vector" ],
+              [ "DirectoryResponseVector", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_directory_response_vector.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_directory_response_vector" ],
+              [ "ElementHarness", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_element_harness.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_element_harness" ],
+              [ "FakeHttpHandler", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_fake_http_handler.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_fake_http_handler" ],
+              [ "FakeResponse", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_fake_response.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_fake_response" ],
+              [ "Fixtures", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_fixtures.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_fixtures" ],
+              [ "RegistryVector", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_registry_vector.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_registry_vector" ],
+              [ "RequestSigner", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_request_signer.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_request_signer" ],
+              [ "SignatureAgentVector", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_signature_agent_vector.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_signature_agent_vector" ],
+              [ "SignatureAgentVectorEntry", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_signature_agent_vector_entry.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_signature_agent_vector_entry" ],
+              [ "SignedRequest", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_signed_request.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_signed_request" ],
+              [ "SignedRequestVector", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_signed_request_vector.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_signed_request_vector" ],
+              [ "SigningOptions", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_signing_options.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_signing_options" ],
+              [ "ThumbprintVector", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_thumbprint_vector.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_thumbprint_vector" ],
+              [ "UnmeasuredContent", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_unmeasured_content.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_unmeasured_content" ]
+            ] ],
+            [ "Standard", "namespace_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard.html", [
+              [ "Helpers", "namespace_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_helpers.html", [
+                [ "StandardHarness", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_helpers_1_1_standard_harness.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_helpers_1_1_standard_harness" ]
+              ] ],
+              [ "AssemblyResolutionTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_assembly_resolution_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_assembly_resolution_tests" ],
+              [ "NewtonsoftJsonReadingTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_newtonsoft_json_reading_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_newtonsoft_json_reading_tests" ]
+            ] ],
+            [ "AgentCardTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_agent_card_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_agent_card_tests" ],
+            [ "AppendixBComponent", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_appendix_b_component.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_appendix_b_component" ],
+            [ "AppendixBVector", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_appendix_b_vector.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_appendix_b_vector" ],
+            [ "BuilderTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_builder_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_builder_tests" ],
+            [ "CacheTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_cache_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_cache_tests" ],
+            [ "DirectoryFetchSafetyTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_directory_fetch_safety_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_directory_fetch_safety_tests" ],
+            [ "EvidenceKeyFilterTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_evidence_key_filter_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_evidence_key_filter_tests" ],
+            [ "MultipleSignatureTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_multiple_signature_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_multiple_signature_tests" ],
+            [ "NetworkTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_network_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_network_tests" ],
+            [ "ParsingTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_parsing_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_parsing_tests" ],
+            [ "Rfc9421AppendixBTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_rfc9421_appendix_b_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_rfc9421_appendix_b_tests" ],
+            [ "SignatureTrustTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_signature_trust_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_signature_trust_tests" ],
+            [ "SmokeTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_smoke_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_smoke_tests" ],
+            [ "StructuredFieldConformanceTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_structured_field_conformance_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_structured_field_conformance_tests" ],
+            [ "StructuredFieldSerializationTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_structured_field_serialization_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_structured_field_serialization_tests" ],
+            [ "ThumbprintTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_thumbprint_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_thumbprint_tests" ],
+            [ "VerificationTests", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_verification_tests.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_verification_tests" ]
+          ] ],
+          [ "Constants", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants" ]
+        ] ],
         [ "Core", "namespace_fifty_one_1_1_pipeline_1_1_core.html", [
           [ "Attributes", "namespace_fifty_one_1_1_pipeline_1_1_core_1_1_attributes.html", [
             [ "AlternateNameAttribute", "class_fifty_one_1_1_pipeline_1_1_core_1_1_attributes_1_1_alternate_name_attribute.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_attributes_1_1_alternate_name_attribute" ],

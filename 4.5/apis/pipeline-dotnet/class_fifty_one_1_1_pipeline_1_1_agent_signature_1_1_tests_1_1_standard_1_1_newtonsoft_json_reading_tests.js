@@ -1,0 +1,14 @@
+var class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_newtonsoft_json_reading_tests =
+[
+    [ "AFetchedDirectoryParsesAndTheSignatureReadsVerified", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_newtonsoft_json_reading_tests.html#a4f35ea9b934c7b7e082b1fdcfbeebebe", null ],
+    [ "AKeyExpiryAsAStringBeforeTheSigningTimeIsEnforced", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_newtonsoft_json_reading_tests.html#a59ea8962ad6e673fda1ce39a4f28a165", null ],
+    [ "AKeyExpiryInMillisecondsBeforeTheSigningTimeIsEnforced", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_newtonsoft_json_reading_tests.html#a3d01f3d147ecb96573c1839fd2a97e76", null ],
+    [ "AKeyExpiryInSecondsBeforeTheSigningTimeIsEnforced", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_newtonsoft_json_reading_tests.html#a993917c9aab8853cc817308c200b3b88", null ],
+    [ "AKeyExpiryWithAFractionBeforeTheSigningTimeIsEnforced", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_newtonsoft_json_reading_tests.html#a817906e0ca31daff3972e1e8e567ccbd", null ],
+    [ "AKeyIdThatLooksLikeADateStaysAString", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_newtonsoft_json_reading_tests.html#a4298b53860261c05db2ec1a501ca9f19", null ],
+    [ "AMalformedDirectoryReadsUnverifiedRatherThanThrowing", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_newtonsoft_json_reading_tests.html#a6b43b01df98e81471a794fd0fa86d878", null ],
+    [ "AnAgentCardWithInlineKeysAndNestedFieldsIsRead", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_newtonsoft_json_reading_tests.html#a9aa2d3debad021325d23a16d161bc6a6", null ],
+    [ "KeyTimesAsMillisecondsAroundTheSigningTimeVerify", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_newtonsoft_json_reading_tests.html#aae9c0328aa58a06a1bffa93ff4933ea9", null ],
+    [ "KeyTimesAsSecondsAroundTheSigningTimeVerify", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_newtonsoft_json_reading_tests.html#ae3b6cf50a0ac03fdf38db428466d6f35", null ],
+    [ "KeyTimesAsStringsAroundTheSigningTimeVerify", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_standard_1_1_newtonsoft_json_reading_tests.html#ac422356a827bb5e038269f42ba4f7b55", null ]
+];

@@ -1,0 +1,15 @@
+<map id="FiftyOne.Pipeline.AgentSignature.Data.AgentSignatureData" name="FiftyOne.Pipeline.AgentSignature.Data.AgentSignatureData">
+<area shape="rect" id="Node000001" title="What the agent signature element found out about the signature an automated agent sent with its reque..." alt="" coords="800,37,1040,77"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_element_data_base.html" title="This class stores property values that have been determined by a specific FlowElement based on the su..." alt="" coords="529,5,735,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="748,36,800,41,799,47,748,41"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_data_base.html" title="This class stores data values as key/value pairs where the key is a string and the value can be any t..." alt="" coords="259,5,464,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="478,23,529,23,529,28,478,28"/>
+<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data.html" title="Represents property values." alt="" coords="5,37,211,77"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="224,40,258,36,259,41,225,45"/>
+<area shape="rect" id="Node000005" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_data.html" title="Represents property values that have been determined by a specific FlowElement based on the supplied ..." alt="" coords="259,69,464,109"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="225,69,259,74,258,79,224,75"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="459,63,546,43,548,48,461,69"/>
+<area shape="rect" id="Node000006" href="$interface_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_i_agent_signature_data.html" title="What the agent signature element found out about the signature an automated agent sent with its reque..." alt="" coords="512,69,752,109"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="478,87,512,87,512,92,478,92"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="765,72,800,68,800,73,766,77"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="FiftyOne.Pipeline.AgentSignature.Data.IAgentSignatureData" name="FiftyOne.Pipeline.AgentSignature.Data.IAgentSignatureData">
+<area shape="rect" id="Node000001" title="What the agent signature element found out about the signature an automated agent sent with its reque..." alt="" coords="5,181,245,221"/>
+<area shape="rect" id="Node000004" href="$class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_agent_signature_data.html" title="What the agent signature element found out about the signature an automated agent sent with its reque..." alt="" coords="5,269,245,309"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="128,235,128,269,123,269,123,235"/>
+<area shape="rect" id="Node000002" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_data.html" title="Represents property values that have been determined by a specific FlowElement based on the supplied ..." alt="" coords="23,93,228,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,147,128,181,123,181,123,147"/>
+<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data.html" title="Represents property values." alt="" coords="23,5,228,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="128,59,128,93,123,93,123,59"/>
+</map>
