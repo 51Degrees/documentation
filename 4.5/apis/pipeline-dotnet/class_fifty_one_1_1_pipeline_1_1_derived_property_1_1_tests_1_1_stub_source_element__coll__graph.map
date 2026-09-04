@@ -1,0 +1,11 @@
+<map id="FiftyOne.Pipeline.DerivedProperty.Tests.StubSourceElement" name="FiftyOne.Pipeline.DerivedProperty.Tests.StubSourceElement">
+<area shape="rect" id="Node000001" title="Element that publishes a fixed set of property values under an element data key chosen by the test." alt="" coords="5,372,248,412"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html" title="Abstract base class for Flow Elements." alt="" coords="25,269,229,324"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,338,129,372,124,372,124,338"/>
+<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element-2-g.html" title="Generic interface that extends IFlowElement with the ability to return a ITypedKey&lt;T&gt; that will allow..." alt="" coords="25,167,228,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="129,235,129,269,124,269,124,235"/>
+<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="26,79,227,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="129,132,129,167,124,167,124,132"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="77,5,176,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="129,44,129,79,124,79,124,44"/>
+</map>

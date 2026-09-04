@@ -1,0 +1,14 @@
+<map id="FiftyOne.Pipeline.DerivedProperty.FlowElements.DerivedPropertyElement" name="FiftyOne.Pipeline.DerivedProperty.FlowElements.DerivedPropertyElement">
+<area shape="rect" id="Node000001" title="Computes new properties from properties other elements have already put into the flow data,..." alt="" coords="931,45,1212,100"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html" title="Abstract base class for Flow Elements." alt="" coords="665,5,869,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="883,45,931,51,930,57,883,50"/>
+<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element-2-g.html" title="Generic interface that extends IFlowElement with the ability to return a ITypedKey&lt;T&gt; that will allow..." alt="" coords="401,45,604,100"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="617,53,665,45,665,51,618,58"/>
+<area shape="rect" id="Node000006" href="$interface_fifty_one_1_1_pipeline_1_1_derived_property_1_1_flow_elements_1_1_i_derived_property_element.html" title="An element that computes new properties from properties other elements have already put into the flow..." alt="" coords="652,84,883,139"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="618,87,652,92,651,97,617,92"/>
+<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="152,53,353,93"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="367,70,401,70,401,75,367,75"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,60,104,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="118,70,152,70,152,75,118,75"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="896,92,930,88,931,93,897,98"/>
+</map>

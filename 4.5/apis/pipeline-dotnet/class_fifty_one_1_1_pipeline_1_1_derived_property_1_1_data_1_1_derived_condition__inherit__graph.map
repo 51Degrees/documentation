@@ -1,0 +1,15 @@
+<map id="FiftyOne.Pipeline.DerivedProperty.Data.DerivedCondition" name="FiftyOne.Pipeline.DerivedProperty.Data.DerivedCondition">
+<area shape="rect" id="Node000001" title="A condition in a script, compiled into a small object that answers itself." alt="" coords="5,181,232,221"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_aggregate_comparison.html" title="Compares a count of checks against a whole number." alt="" coords="299,5,531,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,169,206,119,241,93,279,70,307,58,309,62,281,75,244,97,209,123,152,173"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_all.html" title="Holds where every listed condition holds, and is false as soon as one is false." alt="" coords="322,85,509,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,173,279,134,322,122,323,127,281,139,179,178"/>
+<area shape="rect" id="Node000004" href="$class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_any.html" title="Holds where at least one listed condition holds, and is true as soon as one is true." alt="" coords="320,149,511,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="245,184,320,176,320,182,246,190"/>
+<area shape="rect" id="Node000005" href="$class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_check_reference.html" title="Reuses the answer of a named check." alt="" coords="280,213,551,253"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="246,212,280,215,280,221,246,217"/>
+<area shape="rect" id="Node000006" href="$class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_comparison.html" title="Compares one source property against a literal." alt="" coords="294,277,537,317"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="179,224,281,262,323,274,322,279,279,267,177,229"/>
+<area shape="rect" id="Node000007" href="$class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_not.html" title="Turns true into false and false into true." alt="" coords="321,341,509,381"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="151,229,208,279,244,305,281,326,322,342,320,347,279,331,241,309,205,283,147,233"/>
+</map>

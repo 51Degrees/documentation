@@ -58,6 +58,16 @@ var annotated =
         ] ],
         [ "Program", "class_examples_1_1_custom_flow_element_1_1_program.html", "class_examples_1_1_custom_flow_element_1_1_program" ]
       ] ],
+      [ "DerivedProperty", "namespace_examples_1_1_derived_property.html", [
+        [ "Data", "namespace_examples_1_1_derived_property_1_1_data.html", [
+          [ "ISessionData", "interface_examples_1_1_derived_property_1_1_data_1_1_i_session_data.html", "interface_examples_1_1_derived_property_1_1_data_1_1_i_session_data" ]
+        ] ],
+        [ "FlowElements", "namespace_examples_1_1_derived_property_1_1_flow_elements.html", [
+          [ "SessionElement", "class_examples_1_1_derived_property_1_1_flow_elements_1_1_session_element.html", "class_examples_1_1_derived_property_1_1_flow_elements_1_1_session_element" ],
+          [ "SessionElementBuilder", "class_examples_1_1_derived_property_1_1_flow_elements_1_1_session_element_builder.html", "class_examples_1_1_derived_property_1_1_flow_elements_1_1_session_element_builder" ]
+        ] ],
+        [ "Program", "class_examples_1_1_derived_property_1_1_program.html", "class_examples_1_1_derived_property_1_1_program" ]
+      ] ],
       [ "Did", "namespace_examples_1_1_did.html", [
         [ "CreatorContextWeb", "namespace_examples_1_1_did_1_1_creator_context_web.html", [
           [ "RedeemRoute", "class_examples_1_1_did_1_1_creator_context_web_1_1_redeem_route.html", "class_examples_1_1_did_1_1_creator_context_web_1_1_redeem_route" ]
@@ -234,6 +244,62 @@ var annotated =
             [ "TypeNameHelper", "class_fifty_one_1_1_pipeline_1_1_core_1_1_utils_1_1_type_name_helper.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_utils_1_1_type_name_helper" ]
           ] ],
           [ "Constants", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants" ]
+        ] ],
+        [ "DerivedProperty", "namespace_fifty_one_1_1_pipeline_1_1_derived_property.html", [
+          [ "Data", "namespace_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data.html", [
+            [ "CompiledScript", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_compiled_script.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_compiled_script" ],
+            [ "DerivedAggregateComparison", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_aggregate_comparison.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_aggregate_comparison" ],
+            [ "DerivedAggregateValue", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_aggregate_value.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_aggregate_value" ],
+            [ "DerivedAll", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_all.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_all" ],
+            [ "DerivedAny", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_any.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_any" ],
+            [ "DerivedCheck", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_check.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_check" ],
+            [ "DerivedCheckReference", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_check_reference.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_check_reference" ],
+            [ "DerivedComparison", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_comparison.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_comparison" ],
+            [ "DerivedCondition", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_condition.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_condition" ],
+            [ "DerivedEvaluationContext", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_evaluation_context.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_evaluation_context" ],
+            [ "DerivedMapping", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_mapping.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_mapping" ],
+            [ "DerivedNode", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_node.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_node" ],
+            [ "DerivedNot", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_not.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_not" ],
+            [ "DerivedPropertyData", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_property_data.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_property_data" ],
+            [ "DerivedPropertyMetaData", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_property_meta_data.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_property_meta_data" ],
+            [ "DerivedRule", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_rule.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_rule" ],
+            [ "DerivedScalar", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_scalar.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_scalar" ],
+            [ "DerivedScript", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script" ],
+            [ "DerivedScriptFault", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script_fault.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script_fault" ],
+            [ "DerivedScriptParseException", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script_parse_exception.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script_parse_exception" ],
+            [ "DerivedScriptParser", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script_parser.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script_parser" ],
+            [ "DerivedScriptValidationException", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script_validation_exception.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script_validation_exception" ],
+            [ "DerivedScriptValidationResult", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script_validation_result.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script_validation_result" ],
+            [ "DerivedScriptValidator", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script_validator.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script_validator" ],
+            [ "DerivedScriptWriter", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script_writer.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_script_writer" ],
+            [ "DerivedSequence", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_sequence.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_sequence" ],
+            [ "DerivedSourceProperty", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_source_property.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_source_property" ],
+            [ "DerivedTrace", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_trace.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_trace" ],
+            [ "DerivedTracedCheck", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_traced_check.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_traced_check" ],
+            [ "DerivedTracedProperty", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_traced_property.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_traced_property" ],
+            [ "DerivedValueConverter", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_value_converter.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_value_converter" ],
+            [ "DerivedValueMetaData", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_value_meta_data.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_derived_value_meta_data" ],
+            [ "IDerivedPropertyData", "interface_fifty_one_1_1_pipeline_1_1_derived_property_1_1_data_1_1_i_derived_property_data.html", null ]
+          ] ],
+          [ "FlowElements", "namespace_fifty_one_1_1_pipeline_1_1_derived_property_1_1_flow_elements.html", [
+            [ "DerivedPropertyElement", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_flow_elements_1_1_derived_property_element.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_flow_elements_1_1_derived_property_element" ],
+            [ "DerivedPropertyElementBuilder", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_flow_elements_1_1_derived_property_element_builder.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_flow_elements_1_1_derived_property_element_builder" ],
+            [ "IDerivedPropertyElement", "interface_fifty_one_1_1_pipeline_1_1_derived_property_1_1_flow_elements_1_1_i_derived_property_element.html", "interface_fifty_one_1_1_pipeline_1_1_derived_property_1_1_flow_elements_1_1_i_derived_property_element" ]
+          ] ],
+          [ "Tests", "namespace_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests.html", [
+            [ "ConcurrencyAndPerformanceTests", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_concurrency_and_performance_tests.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_concurrency_and_performance_tests" ],
+            [ "ConformanceTests", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_conformance_tests.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_conformance_tests" ],
+            [ "DerivedPropertyElementTests", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_derived_property_element_tests.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_derived_property_element_tests" ],
+            [ "DerivedScriptParserTests", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_derived_script_parser_tests.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_derived_script_parser_tests" ],
+            [ "DerivedScriptValidatorTests", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_derived_script_validator_tests.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_derived_script_validator_tests" ],
+            [ "EvaluationTests", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_evaluation_tests.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_evaluation_tests" ],
+            [ "JsonBuilderIntegrationTests", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_json_builder_integration_tests.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_json_builder_integration_tests" ],
+            [ "OverrideTests", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_override_tests.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_override_tests" ],
+            [ "SlowSourceData", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_slow_source_data.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_slow_source_data" ],
+            [ "SlowSourceEngine", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_slow_source_engine.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_slow_source_engine" ],
+            [ "StubSourceData", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_source_data.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_source_data" ],
+            [ "StubSourceElement", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_source_element.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_source_element" ]
+          ] ]
         ] ],
         [ "Engines", "namespace_fifty_one_1_1_pipeline_1_1_engines.html", [
           [ "Caching", "namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_caching.html", [
