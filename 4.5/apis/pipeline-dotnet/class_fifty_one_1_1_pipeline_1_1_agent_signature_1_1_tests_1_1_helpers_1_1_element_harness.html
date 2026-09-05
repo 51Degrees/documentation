@@ -85,6 +85,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:afde5f64926fb041c68ab2a3af3198f42"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run a request that carries no signature at all.  <br /></td></tr>
 <tr class="c-table__row memitem:a6132238d85e61a53bad205f6ae370e0a" id="r_a6132238d85e61a53bad205f6ae370e0a"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_i_agent_signature_data.html">IAgentSignatureData</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a6132238d85e61a53bad205f6ae370e0a">ProcessSigned</a> (<a class="el" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_signed_request.html">SignedRequest</a> signed, string host=&quot;example.com&quot;, string scheme=&quot;https&quot;, CancellationToken stopToken=default)</td></tr>
 <tr class="c-table__row memdesc:a6132238d85e61a53bad205f6ae370e0a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run a signed request.  <br /></td></tr>
+<tr class="c-table__row memitem:aefcecb1f82268c707afb072b405b83df" id="r_aefcecb1f82268c707afb072b405b83df"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_i_agent_signature_data.html">IAgentSignatureData</a>&#160;</td><td class="c-table__cell"><a class="el" href="#aefcecb1f82268c707afb072b405b83df">ProcessSigned</a> (<a class="el" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_signed_request.html">SignedRequest</a> signed, IDictionary&lt; string, string &gt; extraEvidence, string host=&quot;example.com&quot;, string scheme=&quot;https&quot;, CancellationToken stopToken=default)</td></tr>
+<tr class="c-table__row memdesc:aefcecb1f82268c707afb072b405b83df"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run a signed request that carries evidence beyond the signature headers, such as the request line a web integration adds.  <br /></td></tr>
 <tr class="c-table__row memitem:a380e463ce84f20a840b1fcc53487f7d6" id="r_a380e463ce84f20a840b1fcc53487f7d6"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_i_agent_signature_data.html">IAgentSignatureData</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a380e463ce84f20a840b1fcc53487f7d6">ProcessVector</a> (<a class="el" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_signed_request_vector.html">SignedRequestVector</a> vector, CancellationToken stopToken=default)</td></tr>
 <tr class="c-table__row memdesc:a380e463ce84f20a840b1fcc53487f7d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run a request built from one of the standard's test vectors.  <br /></td></tr>
 <tr class="c-table__row memitem:a98484cc45c30cdc2ac7b777a197dd077" id="r_a98484cc45c30cdc2ac7b777a197dd077"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_i_agent_signature_data.html">IAgentSignatureData</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a98484cc45c30cdc2ac7b777a197dd077">Process</a> (IDictionary&lt; string, string &gt; evidence, CancellationToken stopToken=default)</td></tr>
@@ -289,8 +291,61 @@ int&#160;</td><td class="c-table__cell"><b>FetchCount</b><code> [get]</code></td
 
 </div>
 </div>
+<a id="aefcecb1f82268c707afb072b405b83df" name="aefcecb1f82268c707afb072b405b83df"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aefcecb1f82268c707afb072b405b83df">&#9670;&#160;</a></span>ProcessSigned() <span class="c-member__count">[1/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_i_agent_signature_data.html">IAgentSignatureData</a> FiftyOne.Pipeline.AgentSignature.Tests.Helpers.ElementHarness.ProcessSigned </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_signed_request.html">SignedRequest</a> signed</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">IDictionary&lt; string, string &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>extraEvidence</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>host</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;example.com&quot;</span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>scheme</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;https&quot;</span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">CancellationToken</td>          <td class="c-table__cell"><span class="paramname"><em>stopToken</em></span><span class="paramdefsep"> = </span><span class="paramdefval">default</span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Run a signed request that carries evidence beyond the signature headers, such as the request line a web integration adds. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">signed</td><td>The signature headers.</td></tr>
+    <tr><td class="paramname">extraEvidence</td><td><a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_evidence.html" title="This class contains the evidence that is passed in to a Pipeline as part of a FlowData object See the...">Evidence</a> to add beyond the signature headers, or null. </td></tr>
+    <tr><td class="paramname">host</td><td>The host header value.</td></tr>
+    <tr><td class="paramname">scheme</td><td>The protocol evidence value.</td></tr>
+    <tr><td class="paramname">stopToken</td><td>A token that says the request has been abandoned. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">What the element made of it.</dd></dl>
+
+</div>
+</div>
 <a id="a6132238d85e61a53bad205f6ae370e0a" name="a6132238d85e61a53bad205f6ae370e0a"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6132238d85e61a53bad205f6ae370e0a">&#9670;&#160;</a></span>ProcessSigned()</h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6132238d85e61a53bad205f6ae370e0a">&#9670;&#160;</a></span>ProcessSigned() <span class="c-member__count">[2/2]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">

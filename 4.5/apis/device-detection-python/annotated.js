@@ -150,6 +150,9 @@ var annotated =
       [ "test_cloud", "namespacetests_1_1test__cloud.html", [
         [ "DeviceDetectionTests", "classtests_1_1test__cloud_1_1_device_detection_tests.html", "classtests_1_1test__cloud_1_1_device_detection_tests" ]
       ] ],
+      [ "test_cloudexampleimports", "namespacetests_1_1test__cloudexampleimports.html", [
+        [ "CloudExampleImportTests", "classtests_1_1test__cloudexampleimports_1_1_cloud_example_import_tests.html", "classtests_1_1test__cloudexampleimports_1_1_cloud_example_import_tests" ]
+      ] ],
       [ "test_cloudexamples", "namespacetests_1_1test__cloudexamples.html", [
         [ "DeviceDetectionExampleTests", "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html", "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests" ]
       ] ],
@@ -158,6 +161,11 @@ var annotated =
       ] ],
       [ "test_devicedetection", "namespacetests_1_1test__devicedetection.html", [
         [ "DeviceDetectionTests", "classtests_1_1test__devicedetection_1_1_device_detection_tests.html", "classtests_1_1test__devicedetection_1_1_device_detection_tests" ]
+      ] ],
+      [ "test_hardwareprofile_cloud", "namespacetests_1_1test__hardwareprofile__cloud.html", [
+        [ "_FakeCloudElementData", "classtests_1_1test__hardwareprofile__cloud_1_1___fake_cloud_element_data.html", "classtests_1_1test__hardwareprofile__cloud_1_1___fake_cloud_element_data" ],
+        [ "_FakeFlowData", "classtests_1_1test__hardwareprofile__cloud_1_1___fake_flow_data.html", "classtests_1_1test__hardwareprofile__cloud_1_1___fake_flow_data" ],
+        [ "HardwareProfileCloudTests", "classtests_1_1test__hardwareprofile__cloud_1_1_hardware_profile_cloud_tests.html", "classtests_1_1test__hardwareprofile__cloud_1_1_hardware_profile_cloud_tests" ]
       ] ],
       [ "test_onpremiseexamples", "namespacetests_1_1test__onpremiseexamples.html", [
         [ "DeviceDetectionExampleTests", "classtests_1_1test__onpremiseexamples_1_1_device_detection_example_tests.html", "classtests_1_1test__onpremiseexamples_1_1_device_detection_example_tests" ]

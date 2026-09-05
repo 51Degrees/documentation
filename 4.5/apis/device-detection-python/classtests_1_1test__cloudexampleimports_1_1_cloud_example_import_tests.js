@@ -1,0 +1,4 @@
+var classtests_1_1test__cloudexampleimports_1_1_cloud_example_import_tests =
+[
+    [ "test_every_cloud_example_imports_without_the_onpremise_package", "classtests_1_1test__cloudexampleimports_1_1_cloud_example_import_tests.html#a36309d4fcd1b223fd5c6277db876743c", null ]
+];

@@ -91,6 +91,10 @@ int&#160;</td><td class="c-table__cell"><b>CacheSize</b> = <a class="el" href="c
 <tr class="c-table__row memdesc:a61b33ce7f2d930a90a96c8699a05ea75"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The longest a signature may be valid for.  <br /></td></tr>
 <tr class="c-table__row memitem:a59f40551ec6486faaf82eefbaa4a1cb7" id="r_a59f40551ec6486faaf82eefbaa4a1cb7"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a59f40551ec6486faaf82eefbaa4a1cb7">AllowLegacySignatureAgent</a><code> [get, set]</code></td></tr>
 <tr class="c-table__row memdesc:a59f40551ec6486faaf82eefbaa4a1cb7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True when the bare quoted string form of the 'Signature-Agent' header, which the earlier drafts used, is accepted.  <br /></td></tr>
+<tr class="c-table__row memitem:a7f01eda2b989c75d2de3847f4ecf1713" id="r_a7f01eda2b989c75d2de3847f4ecf1713"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a7f01eda2b989c75d2de3847f4ecf1713">TrustForwardedEvidence</a><code> [get, set]</code></td></tr>
+<tr class="c-table__row memdesc:a7f01eda2b989c75d2de3847f4ecf1713"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True when evidence under the 'query' prefix is trusted to describe the request that was signed.  <br /></td></tr>
+<tr class="c-table__row memitem:a504a08cd1355ac2b8c9d9f6e25b8c160" id="r_a504a08cd1355ac2b8c9d9f6e25b8c160"><td class="c-table__cell">string&#160;</td><td class="c-table__cell"><a class="el" href="#a504a08cd1355ac2b8c9d9f6e25b8c160">ReachabilityCheckUrl</a><code> [get, set]</code></td></tr>
+<tr class="c-table__row memdesc:a504a08cd1355ac2b8c9d9f6e25b8c160"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The address of a key directory to fetch once at start up, so that the log says whether this deployment can reach the keys agents publish at all.  <br /></td></tr>
 <tr class="c-table__row memitem:a76b5ceb15f4d86298676bc17a79a7b14" id="r_a76b5ceb15f4d86298676bc17a79a7b14"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a76b5ceb15f4d86298676bc17a79a7b14">AllowInlineDirectory</a><code> [get, set]</code></td></tr>
 <tr class="c-table__row memdesc:a76b5ceb15f4d86298676bc17a79a7b14"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True when a key set carried inline in a 'data:' URI is accepted.  <br /></td></tr>
 <tr class="c-table__row memitem:a95defe78603c1aec43f312f7973334d6" id="r_a95defe78603c1aec43f312f7973334d6"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a95defe78603c1aec43f312f7973334d6">MaxResponseBytes</a><code> [get, set]</code></td></tr>
@@ -129,7 +133,7 @@ int&#160;</td><td class="c-table__cell"><b>Concurrency</b> = Environment.Process
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=</div>
 <div class="c-code__line">            <a class="code hl_class" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html">Constants</a>.<a class="code hl_variable" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#adcd375a3516d2a851866ae3a0a9791a5">DEFAULT_ALLOW_INLINE_DIRECTORY</a></div>
 <div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html">FiftyOne.Pipeline.AgentSignature.Constants</a></div><div class="ttdoc">Static class containing the constants used by the agent signature element and helpful to callers of i...</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:36</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_adcd375a3516d2a851866ae3a0a9791a5"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#adcd375a3516d2a851866ae3a0a9791a5">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_ALLOW_INLINE_DIRECTORY</a></div><div class="ttdeci">const bool DEFAULT_ALLOW_INLINE_DIRECTORY</div><div class="ttdoc">The default for whether a key set carried inline in a &#39;data:&#39; URI is accepted.</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:443</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_adcd375a3516d2a851866ae3a0a9791a5"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#adcd375a3516d2a851866ae3a0a9791a5">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_ALLOW_INLINE_DIRECTORY</a></div><div class="ttdeci">const bool DEFAULT_ALLOW_INLINE_DIRECTORY</div><div class="ttdoc">The default for whether a key set carried inline in a &#39;data:&#39; URI is accepted.</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:473</div></div>
 </div><!-- fragment -->
 <p>True when a key set carried inline in a 'data:' URI is accepted. </p>
 <p>This is off by default, because such a key set is chosen by whoever sent the request rather than published at an address the agent controls. </p>
@@ -161,7 +165,7 @@ int&#160;</td><td class="c-table__cell"><b>Concurrency</b> = Environment.Process
 </div><div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=</div>
 <div class="c-code__line">            <a class="code hl_class" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html">Constants</a>.<a class="code hl_variable" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#ad2e29ce792845f71f94d548d520b4368">DEFAULT_ALLOW_LEGACY_SIGNATURE_AGENT</a></div>
-<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_ad2e29ce792845f71f94d548d520b4368"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#ad2e29ce792845f71f94d548d520b4368">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_ALLOW_LEGACY_SIGNATURE_AGENT</a></div><div class="ttdeci">const bool DEFAULT_ALLOW_LEGACY_SIGNATURE_AGENT</div><div class="ttdoc">The default for whether the bare quoted string form of the &#39;Signature-Agent&#39; header is accepted.</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:434</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_ad2e29ce792845f71f94d548d520b4368"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#ad2e29ce792845f71f94d548d520b4368">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_ALLOW_LEGACY_SIGNATURE_AGENT</a></div><div class="ttdeci">const bool DEFAULT_ALLOW_LEGACY_SIGNATURE_AGENT</div><div class="ttdoc">The default for whether the bare quoted string form of the &#39;Signature-Agent&#39; header is accepted.</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:464</div></div>
 </div><!-- fragment -->
 <p>True when the bare quoted string form of the 'Signature-Agent' header, which the earlier drafts used, is accepted. </p>
 
@@ -192,7 +196,7 @@ int&#160;</td><td class="c-table__cell"><b>Concurrency</b> = Environment.Process
 </div><div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=</div>
 <div class="c-code__line">            <a class="code hl_class" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html">Constants</a>.<a class="code hl_variable" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a8c901357cb849ff95462f59088c877e9">DEFAULT_CACHE_LIFETIME</a></div>
-<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_a8c901357cb849ff95462f59088c877e9"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a8c901357cb849ff95462f59088c877e9">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_CACHE_LIFETIME</a></div><div class="ttdeci">static readonly TimeSpan DEFAULT_CACHE_LIFETIME</div><div class="ttdoc">The default period a fetched key directory is reused for, which is the &#39;max-age&#39; the drafts recommend...</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:393</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_a8c901357cb849ff95462f59088c877e9"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a8c901357cb849ff95462f59088c877e9">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_CACHE_LIFETIME</a></div><div class="ttdeci">static readonly TimeSpan DEFAULT_CACHE_LIFETIME</div><div class="ttdoc">The default period a fetched key directory is reused for, which is the &#39;max-age&#39; the drafts recommend...</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:423</div></div>
 </div><!-- fragment -->
 <p>How long a fetched key directory is reused for. </p>
 
@@ -223,7 +227,7 @@ int&#160;</td><td class="c-table__cell"><b>Concurrency</b> = Environment.Process
 </div><div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=</div>
 <div class="c-code__line">            <a class="code hl_class" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html">Constants</a>.<a class="code hl_variable" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#ad0e9064ff563da7661e1d239fb1eab29">DEFAULT_CLOCK_SKEW</a></div>
-<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_ad0e9064ff563da7661e1d239fb1eab29"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#ad0e9064ff563da7661e1d239fb1eab29">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_CLOCK_SKEW</a></div><div class="ttdeci">static readonly TimeSpan DEFAULT_CLOCK_SKEW</div><div class="ttdoc">The default tolerance on the &#39;created&#39; and &#39;expires&#39; signature parameters, which allows for clocks th...</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:420</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_ad0e9064ff563da7661e1d239fb1eab29"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#ad0e9064ff563da7661e1d239fb1eab29">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_CLOCK_SKEW</a></div><div class="ttdeci">static readonly TimeSpan DEFAULT_CLOCK_SKEW</div><div class="ttdoc">The default tolerance on the &#39;created&#39; and &#39;expires&#39; signature parameters, which allows for clocks th...</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:450</div></div>
 </div><!-- fragment -->
 <p>The tolerance on the 'created' and 'expires' signature parameters, which allows for clocks that differ a little. </p>
 
@@ -254,7 +258,7 @@ int&#160;</td><td class="c-table__cell"><b>Concurrency</b> = Environment.Process
 </div><div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=</div>
 <div class="c-code__line">            <a class="code hl_class" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html">Constants</a>.<a class="code hl_variable" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a36e9e6a1df563afa29fecd651d28bb8b">DEFAULT_FETCH_TIMEOUT</a></div>
-<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_a36e9e6a1df563afa29fecd651d28bb8b"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a36e9e6a1df563afa29fecd651d28bb8b">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_FETCH_TIMEOUT</a></div><div class="ttdeci">static readonly TimeSpan DEFAULT_FETCH_TIMEOUT</div><div class="ttdoc">The default time limit on a single key directory fetch.</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:413</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_a36e9e6a1df563afa29fecd651d28bb8b"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a36e9e6a1df563afa29fecd651d28bb8b">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_FETCH_TIMEOUT</a></div><div class="ttdeci">static readonly TimeSpan DEFAULT_FETCH_TIMEOUT</div><div class="ttdoc">The default time limit on a single key directory fetch.</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:443</div></div>
 </div><!-- fragment -->
 <p>The time limit on a single key directory fetch. </p>
 
@@ -314,7 +318,7 @@ int&#160;</td><td class="c-table__cell"><b>Concurrency</b> = Environment.Process
 </div><div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=</div>
 <div class="c-code__line">            <a class="code hl_class" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html">Constants</a>.<a class="code hl_variable" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a1c69a3a9a7ee676a134dc02ea95f8808">DEFAULT_MAX_LIFETIME</a></div>
-<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_a1c69a3a9a7ee676a134dc02ea95f8808"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a1c69a3a9a7ee676a134dc02ea95f8808">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_MAX_LIFETIME</a></div><div class="ttdeci">static readonly TimeSpan DEFAULT_MAX_LIFETIME</div><div class="ttdoc">The default maximum lifetime of a signature.</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:427</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_a1c69a3a9a7ee676a134dc02ea95f8808"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a1c69a3a9a7ee676a134dc02ea95f8808">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_MAX_LIFETIME</a></div><div class="ttdeci">static readonly TimeSpan DEFAULT_MAX_LIFETIME</div><div class="ttdoc">The default maximum lifetime of a signature.</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:457</div></div>
 </div><!-- fragment -->
 <p>The longest a signature may be valid for. </p>
 <p>Zero, the default, places no limit, because the protocol draft only recommends one. </p>
@@ -346,7 +350,7 @@ int&#160;</td><td class="c-table__cell"><b>Concurrency</b> = Environment.Process
 </div><div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=</div>
 <div class="c-code__line">            <a class="code hl_class" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html">Constants</a>.<a class="code hl_variable" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a106cc12a2fed7860a9f439a65c419fd2">DEFAULT_MAX_RESPONSE_BYTES</a></div>
-<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_a106cc12a2fed7860a9f439a65c419fd2"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a106cc12a2fed7860a9f439a65c419fd2">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_MAX_RESPONSE_BYTES</a></div><div class="ttdeci">const int DEFAULT_MAX_RESPONSE_BYTES</div><div class="ttdoc">The default number of bytes read from a key directory, an agent card or a registry before the fetch i...</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:451</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_a106cc12a2fed7860a9f439a65c419fd2"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a106cc12a2fed7860a9f439a65c419fd2">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_MAX_RESPONSE_BYTES</a></div><div class="ttdeci">const int DEFAULT_MAX_RESPONSE_BYTES</div><div class="ttdoc">The default number of bytes read from a key directory, an agent card or a registry before the fetch i...</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:491</div></div>
 </div><!-- fragment -->
 <p>The number of bytes read from a fetched document before the fetch is abandoned. </p>
 
@@ -377,9 +381,73 @@ int&#160;</td><td class="c-table__cell"><b>Concurrency</b> = Environment.Process
 </div><div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=</div>
 <div class="c-code__line">            <a class="code hl_class" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html">Constants</a>.<a class="code hl_variable" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a0dbc1a662f689948d184fe27610e2ee4">DEFAULT_NEGATIVE_CACHE_LIFETIME</a></div>
-<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_a0dbc1a662f689948d184fe27610e2ee4"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a0dbc1a662f689948d184fe27610e2ee4">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_NEGATIVE_CACHE_LIFETIME</a></div><div class="ttdeci">static readonly TimeSpan DEFAULT_NEGATIVE_CACHE_LIFETIME</div><div class="ttdoc">The default period a failed fetch is remembered for, so an outage at one agent does not cause a fetch...</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:400</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_a0dbc1a662f689948d184fe27610e2ee4"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a0dbc1a662f689948d184fe27610e2ee4">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_NEGATIVE_CACHE_LIFETIME</a></div><div class="ttdeci">static readonly TimeSpan DEFAULT_NEGATIVE_CACHE_LIFETIME</div><div class="ttdoc">The default period a failed fetch is remembered for, so an outage at one agent does not cause a fetch...</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:430</div></div>
 </div><!-- fragment -->
 <p>How long a failed fetch is remembered for, so that an outage at one agent does not cause a fetch on every request. </p>
+
+</div>
+</div>
+<a id="a504a08cd1355ac2b8c9d9f6e25b8c160" name="a504a08cd1355ac2b8c9d9f6e25b8c160"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a504a08cd1355ac2b8c9d9f6e25b8c160">&#9670;&#160;</a></span>ReachabilityCheckUrl</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">string FiftyOne.Pipeline.AgentSignature.FlowElement.AgentSignatureConfiguration.ReachabilityCheckUrl</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The address of a key directory to fetch once at start up, so that the log says whether this deployment can reach the keys agents publish at all. </p>
+<p>Null, the default, means no check is made.</p>
+<p>A deployment with no outbound access answers every signed request Unverified, one request at a time, which reads as agents behaving oddly rather than as a deployment that cannot do the work. The check is made in the background, changes nothing about how requests are answered and never stops the element being built. </p>
+
+</div>
+</div>
+<a id="a7f01eda2b989c75d2de3847f4ecf1713" name="a7f01eda2b989c75d2de3847f4ecf1713"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7f01eda2b989c75d2de3847f4ecf1713">&#9670;&#160;</a></span>TrustForwardedEvidence</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool FiftyOne.Pipeline.AgentSignature.FlowElement.AgentSignatureConfiguration.TrustForwardedEvidence</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=</div>
+<div class="c-code__line">            <a class="code hl_class" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html">Constants</a>.<a class="code hl_variable" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a41f6f9eebb47a1704b0f5c874653d24b">DEFAULT_TRUST_FORWARDED_EVIDENCE</a></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_a41f6f9eebb47a1704b0f5c874653d24b"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#a41f6f9eebb47a1704b0f5c874653d24b">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_TRUST_FORWARDED_EVIDENCE</a></div><div class="ttdeci">const bool DEFAULT_TRUST_FORWARDED_EVIDENCE</div><div class="ttdoc">The default for whether evidence under the &#39;query&#39; prefix is trusted to describe the request that was...</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:483</div></div>
+</div><!-- fragment -->
+<p>True when evidence under the 'query' prefix is trusted to describe the request that was signed. </p>
+<p>This is off by default and must stay off anywhere a request can reach this <a class="el" href="namespace_fifty_one_1_1_pipeline.html">Pipeline</a> from a browser.</p>
+<p>A web integration turns query string parameters into evidence under the 'query' prefix, so with this on, a visitor could put a signature, a host and a path in the address bar and have the element check that instead of the request that actually arrived. A signature captured from a genuine agent on any site could then be replayed here and reported as Verified, which is exactly what covering the authority and the path is supposed to prevent. </p>
+<p>The only place it belongs is a service that receives evidence a caller's own <a class="el" href="namespace_fifty_one_1_1_pipeline.html">Pipeline</a> collected and forwarded, where the prefix has been taken off every key on the way, being the 51Degrees cloud service. Such a service knows it is in that position; the element cannot work it out from the evidence, because forwarded evidence and a typed query string are indistinguishable once they arrive. </p>
 
 </div>
 </div>
@@ -408,7 +476,7 @@ int&#160;</td><td class="c-table__cell"><b>Concurrency</b> = Environment.Process
 </div><div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=</div>
 <div class="c-code__line">            <a class="code hl_class" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html">Constants</a>.<a class="code hl_variable" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#acf50be99eb9ca4f546bab7470ba0a331">DEFAULT_WAIT_BUDGET</a></div>
-<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_acf50be99eb9ca4f546bab7470ba0a331"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#acf50be99eb9ca4f546bab7470ba0a331">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_WAIT_BUDGET</a></div><div class="ttdeci">static readonly TimeSpan DEFAULT_WAIT_BUDGET</div><div class="ttdoc">The default period a request waits for a key directory fetch before the status becomes Timeout.</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:407</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants_html_acf50be99eb9ca4f546bab7470ba0a331"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_constants.html#acf50be99eb9ca4f546bab7470ba0a331">FiftyOne.Pipeline.AgentSignature.Constants.DEFAULT_WAIT_BUDGET</a></div><div class="ttdeci">static readonly TimeSpan DEFAULT_WAIT_BUDGET</div><div class="ttdoc">The default period a request waits for a key directory fetch before the status becomes Timeout.</div><div class="ttdef"><b>Definition</b> FiftyOne.Pipeline.Elements/FiftyOne.Pipeline.AgentSignature/Constants.cs:437</div></div>
 </div><!-- fragment -->
 <p>How long a request waits for a key directory fetch before it reports the Timeout status. </p>
 

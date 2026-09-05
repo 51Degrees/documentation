@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a207b483d13c9da4c59208243cb15bd3a":[1,3,3,2,21],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a3168b16cef7a742a01400efff8bcee85":[1,3,3,2,2],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a331862a11994ae9b470900800fd9d17d":[1,3,3,2,7],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a374ab3763ba204f2d80d96f44d71542e":[1,3,3,2,15],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a3f13568d0d463e204aae4c2410e01d20":[1,3,3,2,32],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a4006651e8cc4e138ed0c3938d449c08c":[1,3,3,2,18],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a4222d122f4feeba905a46e9bf5631e54":[1,3,3,2,34],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a114062df66ea6090cebebaf1a4ca6f01":[1,6,0,0,4],
 "classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a24f00efc3c59efb6e0a714b3521926a1":[1,6,0,0,2],
 "classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a4589e8e035b07dff44a7e9010340a46e":[1,6,0,0,7],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a4e5516565bb87d63a02bf26a93d0c1f0":[1,6,0,0,1],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a4e580f9c7cbfd11b24580478dc194fb0":[1,6,0,0,14],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a5b0bfd4cfadd9942f012666d1d070ec4":[1,6,0,0,15],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a64999fa14c63cdef92c70078c88ddaed":[1,6,0,0,6],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a7d92de8bbb3bd5ad6ef68921b4fd5eb3":[1,6,0,0,18]
+"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a4e5516565bb87d63a02bf26a93d0c1f0":[1,6,0,0,1]
 };

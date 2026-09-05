@@ -94,19 +94,31 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a28684e356443e0e99bbac932e444db30"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the longest a signature may be valid for.  <br /></td></tr>
 <tr class="c-table__row memitem:a39278d3beba5c9c55c4cf20a3d73c556" id="r_a39278d3beba5c9c55c4cf20a3d73c556"><td class="c-table__cell"><a class="el" href="#a16129702e54e1492cc6d61108828df44">AgentSignatureElementBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a39278d3beba5c9c55c4cf20a3d73c556">SetRegistry</a> (string url)</td></tr>
 <tr class="c-table__row memdesc:a39278d3beba5c9c55c4cf20a3d73c556"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add a registry of agent cards, being a text document that lists one agent card URL per line.  <br /></td></tr>
+<tr class="c-table__row memitem:a86f6b447ad3627f4775ca75e00172cc1" id="r_a86f6b447ad3627f4775ca75e00172cc1"><td class="c-table__cell"><a class="el" href="#a16129702e54e1492cc6d61108828df44">AgentSignatureElementBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a86f6b447ad3627f4775ca75e00172cc1">SetTrustForwardedEvidence</a> (bool trust)</td></tr>
+<tr class="c-table__row memdesc:a86f6b447ad3627f4775ca75e00172cc1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set whether evidence under the 'query' prefix is trusted to describe the request that was signed.  <br /></td></tr>
+<tr class="c-table__row memitem:a540f962071b02c26919753a0af949700" id="r_a540f962071b02c26919753a0af949700"><td class="c-table__cell"><a class="el" href="#a16129702e54e1492cc6d61108828df44">AgentSignatureElementBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a540f962071b02c26919753a0af949700">SetReachabilityCheckUrl</a> (string url)</td></tr>
+<tr class="c-table__row memdesc:a540f962071b02c26919753a0af949700"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the address of a key directory to fetch once at start up, so that the log says whether this deployment can reach the keys agents publish at all.  <br /></td></tr>
 <tr class="c-table__row memitem:ade1b75a36850d11bbad956f146f930f8" id="r_ade1b75a36850d11bbad956f146f930f8"><td class="c-table__cell"><a class="el" href="#a16129702e54e1492cc6d61108828df44">AgentSignatureElementBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ade1b75a36850d11bbad956f146f930f8">SetAllowLegacySignatureAgent</a> (bool allow)</td></tr>
 <tr class="c-table__row memdesc:ade1b75a36850d11bbad956f146f930f8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set whether the bare quoted string form of the 'Signature-Agent' header, which the earlier drafts used, is accepted.  <br /></td></tr>
 <tr class="c-table__row memitem:a29edee8462510f0d31f29166c2e46c82" id="r_a29edee8462510f0d31f29166c2e46c82"><td class="c-table__cell"><a class="el" href="#a16129702e54e1492cc6d61108828df44">AgentSignatureElementBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a29edee8462510f0d31f29166c2e46c82">SetAllowInlineDirectory</a> (bool allow)</td></tr>
 <tr class="c-table__row memdesc:a29edee8462510f0d31f29166c2e46c82"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set whether a key set carried inline in a 'data:' URI is accepted.  <br /></td></tr>
 <tr class="c-table__row memitem:a547b36b0236662bb908af0433833c44a" id="r_a547b36b0236662bb908af0433833c44a"><td class="c-table__cell"><a class="el" href="#a16129702e54e1492cc6d61108828df44">AgentSignatureElementBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a547b36b0236662bb908af0433833c44a">SetMaxResponseBytes</a> (int bytes)</td></tr>
 <tr class="c-table__row memdesc:a547b36b0236662bb908af0433833c44a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set how many bytes are read from a key directory, an agent card or a registry before the fetch is abandoned.  <br /></td></tr>
-<tr class="c-table__row memitem:a9f173afa9786c8c44b652a330d963f45" id="r_a9f173afa9786c8c44b652a330d963f45"><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_element.html">AgentSignatureElement</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a9f173afa9786c8c44b652a330d963f45">Build</a> ()</td></tr>
-<tr class="c-table__row memdesc:a9f173afa9786c8c44b652a330d963f45"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the element.  <br /></td></tr>
+<tr class="c-table__row memitem:a16a736c85eab9c502ffa6551bd7e71f4" id="r_a16a736c85eab9c502ffa6551bd7e71f4"><td class="c-table__cell">virtual&#160;<a class="el" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_element.html">AgentSignatureElement</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a16a736c85eab9c502ffa6551bd7e71f4">Build</a> ()</td></tr>
+<tr class="c-table__row memdesc:a16a736c85eab9c502ffa6551bd7e71f4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the element.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a6614746417e7ceca7ae0070394adc268" id="r_a6614746417e7ceca7ae0070394adc268"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_i_agent_signature_data.html">IAgentSignatureData</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a6614746417e7ceca7ae0070394adc268">CreateData</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html">IPipeline</a> pipeline, FlowElementBase&lt; <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_i_agent_signature_data.html">IAgentSignatureData</a>, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_property_meta_data.html">IElementPropertyMetaData</a> &gt; element)</td></tr>
+<tr class="c-table__row memdesc:a6614746417e7ceca7ae0070394adc268"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Make this element's data.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-properties" class="g-docs__section-heading"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="c-table__row memitem:a14bb8843e4e2af73a21b190a69920bae" id="r_a14bb8843e4e2af73a21b190a69920bae"><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_configuration.html">AgentSignatureConfiguration</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a14bb8843e4e2af73a21b190a69920bae">Configuration</a><code> [get]</code></td></tr>
 <tr class="c-table__row memdesc:a14bb8843e4e2af73a21b190a69920bae"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The settings being built up.  <br /></td></tr>
+<tr class="c-table__row memitem:a71e2735d34e676ca55a44019f3b53b22" id="r_a71e2735d34e676ca55a44019f3b53b22"><td class="c-table__cell"><a id="a71e2735d34e676ca55a44019f3b53b22" name="a71e2735d34e676ca55a44019f3b53b22"></a>
+ILoggerFactory&#160;</td><td class="c-table__cell"><b>LoggerFactory</b><code> [get]</code></td></tr>
+<tr class="c-table__row memdesc:a71e2735d34e676ca55a44019f3b53b22"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The logger factory, so that a builder deriving from this one can make the loggers the element it builds needs. <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="a16129702e54e1492cc6d61108828df44" name="a16129702e54e1492cc6d61108828df44"></a>
@@ -145,16 +157,19 @@ Properties</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
-<a id="a9f173afa9786c8c44b652a330d963f45" name="a9f173afa9786c8c44b652a330d963f45"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9f173afa9786c8c44b652a330d963f45">&#9670;&#160;</a></span>Build()</h2>
+<a id="a16a736c85eab9c502ffa6551bd7e71f4" name="a16a736c85eab9c502ffa6551bd7e71f4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a16a736c85eab9c502ffa6551bd7e71f4">&#9670;&#160;</a></span>Build()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_element.html">AgentSignatureElement</a> FiftyOne.Pipeline.AgentSignature.FlowElement.AgentSignatureElementBuilder.Build </td>
+              <td class="c-table__cell">virtual <a class="el" href="class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_element.html">AgentSignatureElement</a> FiftyOne.Pipeline.AgentSignature.FlowElement.AgentSignatureElementBuilder.Build </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -162,12 +177,61 @@ Properties</h2></td></tr>
           </table>
         </div>
       </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="c-member__body">
 
 <p>Build the element. </p>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The element.</dd></dl>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_agent_signature_2_program_8cs-example.html#a6">AgentSignature/Program.cs</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="a6614746417e7ceca7ae0070394adc268" name="a6614746417e7ceca7ae0070394adc268"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6614746417e7ceca7ae0070394adc268">&#9670;&#160;</a></span>CreateData()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_i_agent_signature_data.html">IAgentSignatureData</a> FiftyOne.Pipeline.AgentSignature.FlowElement.AgentSignatureElementBuilder.CreateData </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html">IPipeline</a></td>          <td class="c-table__cell"><span class="paramname"><em>pipeline</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">FlowElementBase&lt; <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_data_1_1_i_agent_signature_data.html">IAgentSignatureData</a>, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_property_meta_data.html">IElementPropertyMetaData</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>element</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Make this element's data. </p>
+<p>A builder deriving from this one hands the same factory to whatever element it builds, so that the data type does not have to be repeated.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipeline</td><td>The pipeline the element sits in.</td></tr>
+    <tr><td class="paramname">element</td><td>The element.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The element data.</dd></dl>
 
 </div>
 </div>
@@ -488,6 +552,38 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a540f962071b02c26919753a0af949700" name="a540f962071b02c26919753a0af949700"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a540f962071b02c26919753a0af949700">&#9670;&#160;</a></span>SetReachabilityCheckUrl()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#a16129702e54e1492cc6d61108828df44">AgentSignatureElementBuilder</a> FiftyOne.Pipeline.AgentSignature.FlowElement.AgentSignatureElementBuilder.SetReachabilityCheckUrl </td>
+          <td>(</td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>url</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Set the address of a key directory to fetch once at start up, so that the log says whether this deployment can reach the keys agents publish at all. </p>
+<p>No check is made by default.</p>
+<p>A deployment with no outbound access answers every signed request Unverified, one request at a time, which reads as agents behaving oddly rather than as a deployment that cannot do the work. Point this at a directory that is expected to be reachable, and one line at start up says which it is. The check is made in the background, changes nothing about how requests are answered, and never stops the element being built, because an element that reached the network whilst being built would stop a site starting at all when the network was down. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>The address, or null for no check.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder.</dd></dl>
+
+</div>
+</div>
 <a id="a39278d3beba5c9c55c4cf20a3d73c556" name="a39278d3beba5c9c55c4cf20a3d73c556"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a39278d3beba5c9c55c4cf20a3d73c556">&#9670;&#160;</a></span>SetRegistry()</h2>
 
@@ -519,6 +615,39 @@ Properties</h2></td></tr>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder.</dd></dl>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_agent_signature_2_program_8cs-example.html#a7">AgentSignature/Program.cs</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="a86f6b447ad3627f4775ca75e00172cc1" name="a86f6b447ad3627f4775ca75e00172cc1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a86f6b447ad3627f4775ca75e00172cc1">&#9670;&#160;</a></span>SetTrustForwardedEvidence()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#a16129702e54e1492cc6d61108828df44">AgentSignatureElementBuilder</a> FiftyOne.Pipeline.AgentSignature.FlowElement.AgentSignatureElementBuilder.SetTrustForwardedEvidence </td>
+          <td>(</td>
+          <td class="c-table__cell">bool</td>          <td class="c-table__cell"><span class="paramname"><em>trust</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Set whether evidence under the 'query' prefix is trusted to describe the request that was signed. </p>
+<p>This is off by default and MUST stay off anywhere a request can reach this <a class="el" href="namespace_fifty_one_1_1_pipeline.html">Pipeline</a> from a browser.</p>
+<p>A web integration turns query string parameters into evidence under the 'query' prefix, so with this on, a visitor could put a signature, a host and a path in the address bar and have the element check those instead of the request that actually arrived. A signature captured from a genuine agent on any site could then be replayed and reported as Verified, which is exactly what covering the authority and the path is meant to prevent. </p>
+<p>The only place this belongs is a service that receives evidence a caller's own <a class="el" href="namespace_fifty_one_1_1_pipeline.html">Pipeline</a> collected and forwarded, with the prefix taken off every key on the way, being the 51Degrees cloud service. Such a service knows it is in that position. The element cannot work it out for itself, because forwarded evidence and a typed query string look the same once they have arrived. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">trust</td><td>True to trust forwarded evidence.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder.</dd></dl>
 
 </div>
 </div>

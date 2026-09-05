@@ -77,15 +77,36 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:a5d2ede326db6feca3bb1472694a49d41" id="r_a5d2ede326db6feca3bb1472694a49d41"><td class="c-table__cell">tuple&#160;</td><td class="c-table__cell"><a class="el" href="#a5d2ede326db6feca3bb1472694a49d41">mobile_ua</a></td></tr>
 <tr class="c-table__row memitem:a197beaf49c875c99db3f111cd9acd65c" id="r_a197beaf49c875c99db3f111cd9acd65c"><td class="c-table__cell">tuple&#160;</td><td class="c-table__cell"><a class="el" href="#a197beaf49c875c99db3f111cd9acd65c">chrome_ua</a></td></tr>
 <tr class="c-table__row memitem:a3ea193ebb650e524476a8674653e2a47" id="r_a3ea193ebb650e524476a8674653e2a47"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="#a3ea193ebb650e524476a8674653e2a47">exclude_properties</a> = [&quot;setheaderbrowseraccept-ch&quot;, &quot;setheaderplatformaccept-ch&quot;, &quot;setheaderhardwareaccept-ch&quot;]</td></tr>
-<tr class="c-table__row memitem:a7223ec0a5a47133b44d0766eab21a74a" id="r_a7223ec0a5a47133b44d0766eab21a74a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7223ec0a5a47133b44d0766eab21a74a">resource_key</a> = os.environ[&quot;resource_key&quot;]</td></tr>
+<tr class="c-table__row memitem:a1de1ddfc56217432c784a2b31519d44f" id="r_a1de1ddfc56217432c784a2b31519d44f"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a1de1ddfc56217432c784a2b31519d44f">RESOURCE_KEY_ENV_VAR</a> = &quot;_51DEGREES_RESOURCE_KEY&quot;</td></tr>
+<tr class="c-table__row memitem:aff79845bc1c049fe19420fb3329dca8a" id="r_aff79845bc1c049fe19420fb3329dca8a"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#aff79845bc1c049fe19420fb3329dca8a">LEGACY_RESOURCE_KEY_ENV_VAR</a> = &quot;resource_key&quot;</td></tr>
+<tr class="c-table__row memitem:a2dbab969524326f4770944f05c063dce" id="r_a2dbab969524326f4770944f05c063dce"><td class="c-table__cell">tuple&#160;</td><td class="c-table__cell"><a class="el" href="#a2dbab969524326f4770944f05c063dce">resource_key</a></td></tr>
+<tr class="c-table__row memitem:aca76185aee91e987c428472871457840" id="r_aca76185aee91e987c428472871457840"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aca76185aee91e987c428472871457840">allow_module_level</a></td></tr>
 <tr class="c-table__row memitem:a609cfc436dd3851508acfe9e83de615f" id="r_a609cfc436dd3851508acfe9e83de615f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a609cfc436dd3851508acfe9e83de615f">properties_list</a> = <a class="el" href="namespacefiftyone__devicedetection__shared_1_1utils.html#a108ae5635d7091694d1c930045b0aeaa">get_properties_from_header_file</a>(<a class="el" href="#a5a87f8cae5800b50fae2571312624c39">header_file_path</a>)</td></tr>
-<tr class="c-table__row memitem:a995f95be691316e0d8e22faf5961d888" id="r_a995f95be691316e0d8e22faf5961d888"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a995f95be691316e0d8e22faf5961d888">cloudRequestEngine</a> = CloudRequestEngine({&quot;resource_key&quot;: <a class="el" href="#a7223ec0a5a47133b44d0766eab21a74a">resource_key</a>})</td></tr>
+<tr class="c-table__row memitem:a995f95be691316e0d8e22faf5961d888" id="r_a995f95be691316e0d8e22faf5961d888"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a995f95be691316e0d8e22faf5961d888">cloudRequestEngine</a> = CloudRequestEngine({&quot;resource_key&quot;: <a class="el" href="#a2dbab969524326f4770944f05c063dce">resource_key</a>})</td></tr>
 <tr class="c-table__row memitem:a0f8c6753ae79e7e1d05fb158d91f246b" id="r_a0f8c6753ae79e7e1d05fb158d91f246b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a0f8c6753ae79e7e1d05fb158d91f246b">deviceDetectionCloudEngine</a> = <a class="el" href="classfiftyone__devicedetection__cloud_1_1devicedetection__cloud_1_1_device_detection_cloud.html">DeviceDetectionCloud</a>()</td></tr>
 <tr class="c-table__row memitem:a36dd4ab545fd07833f5bebc4827b6554" id="r_a36dd4ab545fd07833f5bebc4827b6554"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a36dd4ab545fd07833f5bebc4827b6554">pipeline</a></td></tr>
 <tr class="c-table__row memitem:ac5d0982fbb5268e9f5b8894d95cf4066" id="r_ac5d0982fbb5268e9f5b8894d95cf4066"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#ac5d0982fbb5268e9f5b8894d95cf4066">data_file</a> = &quot;./src/<a class="el" href="namespacefiftyone__devicedetection__onpremise.html">fiftyone_devicedetection_onpremise</a>/cxx/device-detection-data/51Degrees-LiteV4.1.hash&quot;</td></tr>
 <tr class="c-table__row memitem:add413f444f6906e5b6623d9ed6fd36d6" id="r_add413f444f6906e5b6623d9ed6fd36d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#add413f444f6906e5b6623d9ed6fd36d6">deviceDetectionOnPremiseEngine</a></td></tr>
 </table>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
+<a id="aca76185aee91e987c428472871457840" name="aca76185aee91e987c428472871457840"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aca76185aee91e987c428472871457840">&#9670;&#160;</a></span>allow_module_level</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_properties.allow_module_level</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="a197beaf49c875c99db3f111cd9acd65c" name="a197beaf49c875c99db3f111cd9acd65c"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a197beaf49c875c99db3f111cd9acd65c">&#9670;&#160;</a></span>chrome_ua</h2>
 
@@ -115,7 +136,7 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">tests.test_properties.cloudRequestEngine = CloudRequestEngine({&quot;resource_key&quot;: <a class="el" href="#a7223ec0a5a47133b44d0766eab21a74a">resource_key</a>})</td>
+              <td class="c-table__cell">tests.test_properties.cloudRequestEngine = CloudRequestEngine({&quot;resource_key&quot;: <a class="el" href="#a2dbab969524326f4770944f05c063dce">resource_key</a>})</td>
             </tr>
           </table>
         </div>
@@ -218,6 +239,24 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="aff79845bc1c049fe19420fb3329dca8a" name="aff79845bc1c049fe19420fb3329dca8a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aff79845bc1c049fe19420fb3329dca8a">&#9670;&#160;</a></span>LEGACY_RESOURCE_KEY_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str tests.test_properties.LEGACY_RESOURCE_KEY_ENV_VAR = &quot;resource_key&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="a5d2ede326db6feca3bb1472694a49d41" name="a5d2ede326db6feca3bb1472694a49d41"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5d2ede326db6feca3bb1472694a49d41">&#9670;&#160;</a></span>mobile_ua</h2>
 
@@ -280,8 +319,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a7223ec0a5a47133b44d0766eab21a74a" name="a7223ec0a5a47133b44d0766eab21a74a"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7223ec0a5a47133b44d0766eab21a74a">&#9670;&#160;</a></span>resource_key</h2>
+<a id="a2dbab969524326f4770944f05c063dce" name="a2dbab969524326f4770944f05c063dce"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2dbab969524326f4770944f05c063dce">&#9670;&#160;</a></span>resource_key</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -289,7 +328,27 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">tests.test_properties.resource_key = os.environ[&quot;resource_key&quot;]</td>
+              <td class="c-table__cell">tuple tests.test_properties.resource_key</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=  (os.environ.get(RESOURCE_KEY_ENV_VAR)</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">or</span> os.environ.get(LEGACY_RESOURCE_KEY_ENV_VAR))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1de1ddfc56217432c784a2b31519d44f" name="a1de1ddfc56217432c784a2b31519d44f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1de1ddfc56217432c784a2b31519d44f">&#9670;&#160;</a></span>RESOURCE_KEY_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str tests.test_properties.RESOURCE_KEY_ENV_VAR = &quot;_51DEGREES_RESOURCE_KEY&quot;</td>
             </tr>
           </table>
         </div>

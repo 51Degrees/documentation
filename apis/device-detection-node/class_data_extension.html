@@ -75,9 +75,88 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_data_ext
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a208dbc998aec51823620213f54daf71b" id="r_a208dbc998aec51823620213f54daf71b"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a208dbc998aec51823620213f54daf71b">getValueHelper</a> (elementData, propertyName)</td></tr>
-<tr class="c-table__row memdesc:a208dbc998aec51823620213f54daf71b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Helper function to read property values from flowData.  <br /></td></tr>
+<tr class="c-table__row memdesc:a208dbc998aec51823620213f54daf71b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Format a property value for display.  <br /></td></tr>
+<tr class="c-table__row memitem:a54a62e0b16b01cd60eb6efa9e4fb3a6a" id="r_a54a62e0b16b01cd60eb6efa9e4fb3a6a"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a54a62e0b16b01cd60eb6efa9e4fb3a6a">getProfilesHelper</a> (hardware)</td></tr>
+<tr class="c-table__row memdesc:a54a62e0b16b01cd60eb6efa9e4fb3a6a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the list of hardware profiles from the 'hardware' element data.  <br /></td></tr>
+<tr class="c-table__row memitem:a4cee5450584e7738b012a4430cf0385f" id="r_a4cee5450584e7738b012a4430cf0385f"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a4cee5450584e7738b012a4430cf0385f">getNoProfilesMessage</a> ()</td></tr>
+<tr class="c-table__row memdesc:a4cee5450584e7738b012a4430cf0385f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The line printed when a lookup returned no device profiles at all.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a4cee5450584e7738b012a4430cf0385f" name="a4cee5450584e7738b012a4430cf0385f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4cee5450584e7738b012a4430cf0385f">&#9670;&#160;</a></span>getNoProfilesMessage()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">DataExtension::getNoProfilesMessage </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The line printed when a lookup returned no device profiles at all. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{string} The message to print </dd></dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="cloud_2nativemodellookup-console_2native_model_lookup_8js-example.html#a4">cloud/nativemodellookup-console/nativeModelLookup.js</a>, and <a class="el" href="cloud_2taclookup-console_2tac_lookup_8js-example.html#a4">cloud/taclookup-console/tacLookup.js</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a54a62e0b16b01cd60eb6efa9e4fb3a6a" name="a54a62e0b16b01cd60eb6efa9e4fb3a6a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a54a62e0b16b01cd60eb6efa9e4fb3a6a">&#9670;&#160;</a></span>getProfilesHelper()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">DataExtension::getProfilesHelper </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>hardware</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Read the list of hardware profiles from the 'hardware' element data. </p>
+<p>An empty list is returned when the resource key has no access to the hardware aspect at all, because reading a property that is not there can raise rather than return an empty list.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{object}</td><td>hardware The 'hardware' element data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{Array} The profiles, or an empty array </dd></dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="cloud_2nativemodellookup-console_2native_model_lookup_8js-example.html#a3">cloud/nativemodellookup-console/nativeModelLookup.js</a>, and <a class="el" href="cloud_2taclookup-console_2tac_lookup_8js-example.html#a3">cloud/taclookup-console/tacLookup.js</a>.</dd>
+</dl>
+
+</div>
+</div>
 <a id="a208dbc998aec51823620213f54daf71b" name="a208dbc998aec51823620213f54daf71b"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a208dbc998aec51823620213f54daf71b">&#9670;&#160;</a></span>getValueHelper()</h2>
 
@@ -109,7 +188,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="c-member__body">
 
-<p>Helper function to read property values from flowData. </p>
+<p>Format a property value for display. </p>
+<p>A property can be unavailable for three reasons, and each one reads differently so the person running the example can tell them apart. The property may have a value, it may have no value with the cloud service giving a reason (most often that the resource key is not entitled to it), or it may not be in the results at all.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{object}</td><td>elementData Element data </td></tr>
@@ -117,8 +197,8 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{string} result string, either property value or error </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="cloud_2gettingstarted-console_2getting_started_8js-example.html#a3">cloud/gettingstarted-console/gettingStarted.js</a>, <a class="el" href="cloud_2gettingstarted-web_2getting_started_8js-example.html#a4">cloud/gettingstarted-web/gettingStarted.js</a>, <a class="el" href="cloud_2nativemodellookup-console_2native_model_lookup_8js-example.html#a3">cloud/nativemodellookup-console/nativeModelLookup.js</a>, <a class="el" href="cloud_2taclookup-console_2tac_lookup_8js-example.html#a3">cloud/taclookup-console/tacLookup.js</a>, <a class="el" href="onpremise_2gettingstarted-console_2getting_started_8js-example.html#a3">onpremise/gettingstarted-console/gettingStarted.js</a>, and <a class="el" href="onpremise_2offlineprocessing-console_2offline_processing_8js-example.html#a3">onpremise/offlineprocessing-console/offlineProcessing.js</a>.</dd>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{string} The value, or a line saying why there is none </dd></dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="cloud_2gettingstarted-console_2getting_started_8js-example.html#a3">cloud/gettingstarted-console/gettingStarted.js</a>, <a class="el" href="cloud_2gettingstarted-web_2getting_started_8js-example.html#a4">cloud/gettingstarted-web/gettingStarted.js</a>, <a class="el" href="cloud_2nativemodellookup-console_2native_model_lookup_8js-example.html#a5">cloud/nativemodellookup-console/nativeModelLookup.js</a>, <a class="el" href="cloud_2taclookup-console_2tac_lookup_8js-example.html#a5">cloud/taclookup-console/tacLookup.js</a>, <a class="el" href="onpremise_2gettingstarted-console_2getting_started_8js-example.html#a3">onpremise/gettingstarted-console/gettingStarted.js</a>, and <a class="el" href="onpremise_2offlineprocessing-console_2offline_processing_8js-example.html#a3">onpremise/offlineprocessing-console/offlineProcessing.js</a>.</dd>
 </dl>
 
 </div>

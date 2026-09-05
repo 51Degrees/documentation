@@ -137,7 +137,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2metadat
 <div class="c-code__line">  }).build();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> device = pipeline.getElement(<span class="c-code__stringliteral">&#39;device&#39;</span>);</div>
-<div class="c-code__line">  device.ready().then(<span class="c-code__keyword">function</span> () {</div>
+<div class="c-code__line">  <span class="c-code__comment">// The promise is returned so that run() does not resolve before the</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// properties have been written. Without the return, a failure here</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// becomes an unhandled rejection that the caller never sees.</span></div>
+<div class="c-code__line">  <span class="c-code__keywordflow">return</span> device.ready().then(<span class="c-code__keyword">function</span> () {</div>
 <div class="c-code__line">    outputProperties(device, output);</div>
 <div class="c-code__line">    <span class="c-code__comment">// We use the CloudRequestEngine to get evidence key details, rather than the</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// DeviceDetectionCloud.</span></div>

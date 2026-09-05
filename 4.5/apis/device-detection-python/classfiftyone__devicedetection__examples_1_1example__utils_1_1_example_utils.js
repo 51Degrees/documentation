@@ -8,6 +8,9 @@ var classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils
     [ "get_data_file_from_config", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a46063b6a2268b8290882fd87c6aed5e1", null ],
     [ "get_data_file_tier", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#ae1b61e878d801b9495207b309994e500", null ],
     [ "get_human_readable", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a30c81bf9bb3ad202d42ab1f0812f10d8", null ],
+    [ "get_missing_resource_key_message", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#ab624067f966c330094a3f46518ffe231", null ],
+    [ "get_no_profiles_message", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a22afc3b91762d4352fe09fadbbdf4614", null ],
+    [ "get_profiles", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a42c159df7df5abc0dde030acc4c62d31", null ],
     [ "get_resource_key", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a7e4f03ae295425ac814254c70eb707a9", null ],
     [ "get_resource_key_from_config", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a86ef2b8537d6494602aa16fe93375233", null ],
     [ "set_data_file_in_config", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a82c006d33afc7610303763fbb9dc84a5", null ],
@@ -15,5 +18,6 @@ var classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils
     [ "DATA_FILE_AGE_WARNING", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a6ee88046cddd830a21bea29583db4dbd", null ],
     [ "ENDPOINT_ENV_VAR", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#af919b8b681fe43c574cbeeb7b35815d7", null ],
     [ "FIND_FILES_TIMEOUT_S", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#aa409cfd626d64aaf5e6f68affcf985d5", null ],
+    [ "LEGACY_RESOURCE_KEY_ENV_VAR", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#ae77e98e744abca31aa19ca99497a5e6f", null ],
     [ "RESOURCE_KEY_ENV_VAR", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a2a034f0316ef9771e1c368416bee33e7", null ]
 ];

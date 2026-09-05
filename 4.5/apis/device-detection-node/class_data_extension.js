@@ -1,4 +1,6 @@
 var class_data_extension =
 [
+    [ "getNoProfilesMessage", "class_data_extension.html#a4cee5450584e7738b012a4430cf0385f", null ],
+    [ "getProfilesHelper", "class_data_extension.html#a54a62e0b16b01cd60eb6efa9e4fb3a6a", null ],
     [ "getValueHelper", "class_data_extension.html#a208dbc998aec51823620213f54daf71b", null ]
 ];

@@ -6,6 +6,7 @@ var class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_e
     [ "Process", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_element_harness.html#a98484cc45c30cdc2ac7b777a197dd077", null ],
     [ "ProcessAsDictionary", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_element_harness.html#a591ddc20ebe7cd47cb8fba9789d5682b", null ],
     [ "ProcessPlainRequest", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_element_harness.html#afde5f64926fb041c68ab2a3af3198f42", null ],
+    [ "ProcessSigned", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_element_harness.html#aefcecb1f82268c707afb072b405b83df", null ],
     [ "ProcessSigned", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_element_harness.html#a6132238d85e61a53bad205f6ae370e0a", null ],
     [ "ProcessVector", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_element_harness.html#a380e463ce84f20a840b1fcc53487f7d6", null ],
     [ "Element", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_tests_1_1_helpers_1_1_element_harness.html#a17ee9fd61ddee68f3cde81b70665261c", null ],

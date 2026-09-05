@@ -11,6 +11,8 @@ var class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_
     [ "MaxLifetime", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_configuration.html#a61b33ce7f2d930a90a96c8699a05ea75", null ],
     [ "MaxResponseBytes", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_configuration.html#a95defe78603c1aec43f312f7973334d6", null ],
     [ "NegativeCacheLifetime", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_configuration.html#a879a58edbf9f3de3b42f34cfc40192e2", null ],
+    [ "ReachabilityCheckUrl", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_configuration.html#a504a08cd1355ac2b8c9d9f6e25b8c160", null ],
     [ "Registries", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_configuration.html#a9867d68f944db944d5e901507f87e3b9", null ],
+    [ "TrustForwardedEvidence", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_configuration.html#a7f01eda2b989c75d2de3847f4ecf1713", null ],
     [ "WaitBudget", "class_fifty_one_1_1_pipeline_1_1_agent_signature_1_1_flow_element_1_1_agent_signature_configuration.html#ae7b03611cf65b733507bfd7004a0a226", null ]
 ];

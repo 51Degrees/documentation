@@ -76,7 +76,14 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a46063b6a2268b8290882fd87c6aed5e1" id="r_a46063b6a2268b8290882fd87c6aed5e1"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a46063b6a2268b8290882fd87c6aed5e1">get_data_file_from_config</a> (config)</td></tr>
 <tr class="c-table__row memitem:a82c006d33afc7610303763fbb9dc84a5" id="r_a82c006d33afc7610303763fbb9dc84a5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a82c006d33afc7610303763fbb9dc84a5">set_data_file_in_config</a> (config, file)</td></tr>
 <tr class="c-table__row memitem:a30c81bf9bb3ad202d42ab1f0812f10d8" id="r_a30c81bf9bb3ad202d42ab1f0812f10d8"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a30c81bf9bb3ad202d42ab1f0812f10d8">get_human_readable</a> (device, property)</td></tr>
+<tr class="c-table__row memdesc:a30c81bf9bb3ad202d42ab1f0812f10d8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Format a property value for display.  <br /></td></tr>
+<tr class="c-table__row memitem:a42c159df7df5abc0dde030acc4c62d31" id="r_a42c159df7df5abc0dde030acc4c62d31"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a42c159df7df5abc0dde030acc4c62d31">get_profiles</a> (hardware)</td></tr>
+<tr class="c-table__row memdesc:a42c159df7df5abc0dde030acc4c62d31"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the list of hardware profiles from the "hardware" element data.  <br /></td></tr>
+<tr class="c-table__row memitem:a22afc3b91762d4352fe09fadbbdf4614" id="r_a22afc3b91762d4352fe09fadbbdf4614"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a22afc3b91762d4352fe09fadbbdf4614">get_no_profiles_message</a> ()</td></tr>
+<tr class="c-table__row memdesc:a22afc3b91762d4352fe09fadbbdf4614"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The line printed when a lookup returned no device profiles at all.  <br /></td></tr>
 <tr class="c-table__row memitem:a7e4f03ae295425ac814254c70eb707a9" id="r_a7e4f03ae295425ac814254c70eb707a9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7e4f03ae295425ac814254c70eb707a9">get_resource_key</a> ()</td></tr>
+<tr class="c-table__row memitem:ab624067f966c330094a3f46518ffe231" id="r_ab624067f966c330094a3f46518ffe231"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab624067f966c330094a3f46518ffe231">get_missing_resource_key_message</a> ()</td></tr>
+<tr class="c-table__row memdesc:ab624067f966c330094a3f46518ffe231"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The message shown when no resource key is set, naming the variable that was wanted rather than leaving the reader to guess.  <br /></td></tr>
 <tr class="c-table__row memitem:ad50453966c7d0b7bac9536a8e73f9e5d" id="r_ad50453966c7d0b7bac9536a8e73f9e5d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad50453966c7d0b7bac9536a8e73f9e5d">get_cloud_endpoint</a> ()</td></tr>
 <tr class="c-table__row memitem:a04600f57e83dd95cf735fb954470cbea" id="r_a04600f57e83dd95cf735fb954470cbea"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a04600f57e83dd95cf735fb954470cbea">find_file</a> (file_name)</td></tr>
 <tr class="c-table__row memitem:a87e613b755d409576cb748b8d2b64444" id="r_a87e613b755d409576cb748b8d2b64444"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a87e613b755d409576cb748b8d2b64444">get_data_file_date</a> (engine)</td></tr>
@@ -88,7 +95,8 @@ Static Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:aa409cfd626d64aaf5e6f68affcf985d5" id="r_aa409cfd626d64aaf5e6f68affcf985d5"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#aa409cfd626d64aaf5e6f68affcf985d5">FIND_FILES_TIMEOUT_S</a> = 5</td></tr>
 <tr class="c-table__row memitem:a6ee88046cddd830a21bea29583db4dbd" id="r_a6ee88046cddd830a21bea29583db4dbd"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a6ee88046cddd830a21bea29583db4dbd">DATA_FILE_AGE_WARNING</a> = 30</td></tr>
-<tr class="c-table__row memitem:a2a034f0316ef9771e1c368416bee33e7" id="r_a2a034f0316ef9771e1c368416bee33e7"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a2a034f0316ef9771e1c368416bee33e7">RESOURCE_KEY_ENV_VAR</a> = &quot;resource_key&quot;</td></tr>
+<tr class="c-table__row memitem:a2a034f0316ef9771e1c368416bee33e7" id="r_a2a034f0316ef9771e1c368416bee33e7"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a2a034f0316ef9771e1c368416bee33e7">RESOURCE_KEY_ENV_VAR</a> = &quot;_51DEGREES_RESOURCE_KEY&quot;</td></tr>
+<tr class="c-table__row memitem:ae77e98e744abca31aa19ca99497a5e6f" id="r_ae77e98e744abca31aa19ca99497a5e6f"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#ae77e98e744abca31aa19ca99497a5e6f">LEGACY_RESOURCE_KEY_ENV_VAR</a> = &quot;resource_key&quot;</td></tr>
 <tr class="c-table__row memitem:af919b8b681fe43c574cbeeb7b35815d7" id="r_af919b8b681fe43c574cbeeb7b35815d7"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#af919b8b681fe43c574cbeeb7b35815d7">ENDPOINT_ENV_VAR</a> = &quot;cloud_endpoint&quot;</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
@@ -330,6 +338,103 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="c-member__body">
 
+<p>Format a property value for display. </p>
+<p>A property can be unavailable for three reasons, and each one reads differently so the person running the example can tell them apart. The property may have a value, it may have no value with the cloud service giving a reason (most often that the resource key is not entitled to it), or it may not be in the results at all. </p>
+
+</div>
+</div>
+<a id="ab624067f966c330094a3f46518ffe231" name="ab624067f966c330094a3f46518ffe231"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab624067f966c330094a3f46518ffe231">&#9670;&#160;</a></span>get_missing_resource_key_message()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_examples.example_utils.ExampleUtils.get_missing_resource_key_message </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The message shown when no resource key is set, naming the variable that was wanted rather than leaving the reader to guess. </p>
+
+</div>
+</div>
+<a id="a22afc3b91762d4352fe09fadbbdf4614" name="a22afc3b91762d4352fe09fadbbdf4614"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a22afc3b91762d4352fe09fadbbdf4614">&#9670;&#160;</a></span>get_no_profiles_message()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_examples.example_utils.ExampleUtils.get_no_profiles_message </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The line printed when a lookup returned no device profiles at all. </p>
+
+</div>
+</div>
+<a id="a42c159df7df5abc0dde030acc4c62d31" name="a42c159df7df5abc0dde030acc4c62d31"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a42c159df7df5abc0dde030acc4c62d31">&#9670;&#160;</a></span>get_profiles()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_examples.example_utils.ExampleUtils.get_profiles </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>hardware</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Read the list of hardware profiles from the "hardware" element data. </p>
+<p>An empty list is returned when the resource key has no access to the hardware aspect at all, because reading a property that is not there raises rather than returning an empty list. </p>
+
 </div>
 </div>
 <a id="a7e4f03ae295425ac814254c70eb707a9" name="a7e4f03ae295425ac814254c70eb707a9"></a>
@@ -535,6 +640,32 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae77e98e744abca31aa19ca99497a5e6f" name="ae77e98e744abca31aa19ca99497a5e6f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae77e98e744abca31aa19ca99497a5e6f">&#9670;&#160;</a></span>LEGACY_RESOURCE_KEY_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str fiftyone_devicedetection_examples.example_utils.ExampleUtils.LEGACY_RESOURCE_KEY_ENV_VAR = &quot;resource_key&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="a2a034f0316ef9771e1c368416bee33e7" name="a2a034f0316ef9771e1c368416bee33e7"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2a034f0316ef9771e1c368416bee33e7">&#9670;&#160;</a></span>RESOURCE_KEY_ENV_VAR</h2>
 
@@ -547,7 +678,7 @@ Static Public Attributes</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">str fiftyone_devicedetection_examples.example_utils.ExampleUtils.RESOURCE_KEY_ENV_VAR = &quot;resource_key&quot;</td>
+              <td class="c-table__cell">str fiftyone_devicedetection_examples.example_utils.ExampleUtils.RESOURCE_KEY_ENV_VAR = &quot;_51DEGREES_RESOURCE_KEY&quot;</td>
             </tr>
           </table>
         </div>

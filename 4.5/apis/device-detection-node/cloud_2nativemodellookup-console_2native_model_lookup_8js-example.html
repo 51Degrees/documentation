@@ -138,8 +138,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2nativem
 <div class="c-code__line">  <span class="c-code__comment">// the specified native model name.</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// The code in this example iterates through this array, outputting the</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// vendor and model of each matching device.</span></div>
-<div class="c-code__line">  flowData.hardware.profiles.forEach(profile =&gt; {</div>
-<div class="c-code__line">    <span class="c-code__keyword">const</span> hardwareVendor = <a class="code hl_class" href="class_data_extension.html">DataExtension</a>.<a id="a3" name="a3"></a><a class="code hl_function" href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">getValueHelper</a>(profile, <span class="c-code__stringliteral">&#39;hardwarevendor&#39;</span>);</div>
+<div class="c-code__line">  <span class="c-code__keyword">const</span> profiles = <a class="code hl_class" href="class_data_extension.html">DataExtension</a>.<a id="a3" name="a3"></a><a class="code hl_function" href="class_data_extension.html#a54a62e0b16b01cd60eb6efa9e4fb3a6a">getProfilesHelper</a>(flowData.hardware);</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">  <span class="c-code__keywordflow">if</span> (profiles.length === 0) {</div>
+<div class="c-code__line">    output.write(<a class="code hl_class" href="class_data_extension.html">DataExtension</a>.<a id="a4" name="a4"></a><a class="code hl_function" href="class_data_extension.html#a4cee5450584e7738b012a4430cf0385f">getNoProfilesMessage</a>());</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span>;</div>
+<div class="c-code__line">  }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">  profiles.forEach(profile =&gt; {</div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> hardwareVendor = <a class="code hl_class" href="class_data_extension.html">DataExtension</a>.<a id="a5" name="a5"></a><a class="code hl_function" href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">getValueHelper</a>(profile, <span class="c-code__stringliteral">&#39;hardwarevendor&#39;</span>);</div>
 <div class="c-code__line">    <span class="c-code__keyword">const</span> hardwareName = <a class="code hl_class" href="class_data_extension.html">DataExtension</a>.<a class="code hl_function" href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">getValueHelper</a>(profile, <span class="c-code__stringliteral">&#39;hardwarename&#39;</span>);</div>
 <div class="c-code__line">    <span class="c-code__keyword">const</span> hardwareModel = <a class="code hl_class" href="class_data_extension.html">DataExtension</a>.<a class="code hl_function" href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">getValueHelper</a>(profile, <span class="c-code__stringliteral">&#39;hardwaremodel&#39;</span>);</div>
 <div class="c-code__line"> </div>
@@ -217,9 +224,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2nativem
 <div class="c-code__line">  run</div>
 <div class="c-code__line">};</div>
 <div class="ttc" id="aclass_data_extension_html"><div class="ttname"><a href="class_data_extension.html">DataExtension</a></div><div class="ttdef"><b>Definition</b> dataExtension.js:23</div></div>
-<div class="ttc" id="aclass_data_extension_html_a208dbc998aec51823620213f54daf71b"><div class="ttname"><a href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">DataExtension::getValueHelper</a></div><div class="ttdeci">static getValueHelper(elementData, propertyName)</div><div class="ttdoc">Helper function to read property values from flowData.</div><div class="ttdef"><b>Definition</b> dataExtension.js:31</div></div>
+<div class="ttc" id="aclass_data_extension_html_a208dbc998aec51823620213f54daf71b"><div class="ttname"><a href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">DataExtension::getValueHelper</a></div><div class="ttdeci">static getValueHelper(elementData, propertyName)</div><div class="ttdoc">Format a property value for display.</div><div class="ttdef"><b>Definition</b> dataExtension.js:37</div></div>
+<div class="ttc" id="aclass_data_extension_html_a4cee5450584e7738b012a4430cf0385f"><div class="ttname"><a href="class_data_extension.html#a4cee5450584e7738b012a4430cf0385f">DataExtension::getNoProfilesMessage</a></div><div class="ttdeci">static getNoProfilesMessage()</div><div class="ttdoc">The line printed when a lookup returned no device profiles at all.</div><div class="ttdef"><b>Definition</b> dataExtension.js:102</div></div>
+<div class="ttc" id="aclass_data_extension_html_a54a62e0b16b01cd60eb6efa9e4fb3a6a"><div class="ttname"><a href="class_data_extension.html#a54a62e0b16b01cd60eb6efa9e4fb3a6a">DataExtension::getProfilesHelper</a></div><div class="ttdeci">static getProfilesHelper(hardware)</div><div class="ttdoc">Read the list of hardware profiles from the &#39;hardware&#39; element data.</div><div class="ttdef"><b>Definition</b> dataExtension.js:83</div></div>
 <div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:41</div></div>
-<div class="ttc" id="aclass_hardware_profile_cloud_engine_html"><div class="ttname"><a href="class_hardware_profile_cloud_engine.html">HardwareProfileCloudEngine</a></div><div class="ttdoc">This Cloud Aspect Engine enables the parsing of &#39;hardware profile&#39; responses from the 51Degrees cloud...</div><div class="ttdef"><b>Definition</b> hardwareProfileCloudEngine.js:36</div></div>
+<div class="ttc" id="aclass_hardware_profile_cloud_engine_html"><div class="ttname"><a href="class_hardware_profile_cloud_engine.html">HardwareProfileCloudEngine</a></div><div class="ttdoc">This Cloud Aspect Engine enables the parsing of &#39;hardware profile&#39; responses from the 51Degrees cloud...</div><div class="ttdef"><b>Definition</b> hardwareProfileCloudEngine.js:70</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

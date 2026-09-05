@@ -111,6 +111,13 @@ const&#160;string&#160;</td><td class="c-table__cell"><b>EVIDENCE_SESSION_KEY</b
 <tr class="c-table__row memitem:a2b3a7f6330ba79fe8763be9863940f24" id="r_a2b3a7f6330ba79fe8763be9863940f24"><td class="c-table__cell"><a id="a2b3a7f6330ba79fe8763be9863940f24" name="a2b3a7f6330ba79fe8763be9863940f24"></a>
 const&#160;string&#160;</td><td class="c-table__cell"><b>EVIDENCE_PROTOCOL</b> = <a class="el" href="#a11cdd5ca9524b18b0f00ee24b023198d">EVIDENCE_HTTPHEADER_PREFIX</a> + <a class="el" href="#ae1a0652744e57b67cbb759f4ae03d46c">EVIDENCE_SEPERATOR</a> + &quot;protocol&quot;</td></tr>
 <tr class="c-table__row memdesc:a2b3a7f6330ba79fe8763be9863940f24"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The complete key to be used when the 'Protocol' HTTP header is passed as evidence. <br /></td></tr>
+<tr class="c-table__row memitem:aeb93f3abcb5723fd3a6868a386e0ea08" id="r_aeb93f3abcb5723fd3a6868a386e0ea08"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#aeb93f3abcb5723fd3a6868a386e0ea08">EVIDENCE_REQUEST_METHOD_KEY</a> = <a class="el" href="#aac7c77fb25c20e5ef9d3d3e6dde09b7a">EVIDENCE_SERVER_PREFIX</a> + <a class="el" href="#ae1a0652744e57b67cbb759f4ae03d46c">EVIDENCE_SEPERATOR</a> + &quot;request-method&quot;</td></tr>
+<tr class="c-table__row memdesc:aeb93f3abcb5723fd3a6868a386e0ea08"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The complete key to be used when the HTTP method of the request is passed as evidence.  <br /></td></tr>
+<tr class="c-table__row memitem:a1d5f3e1d793b9092127690c768c5e84c" id="r_a1d5f3e1d793b9092127690c768c5e84c"><td class="c-table__cell"><a id="a1d5f3e1d793b9092127690c768c5e84c" name="a1d5f3e1d793b9092127690c768c5e84c"></a>
+const&#160;string&#160;</td><td class="c-table__cell"><b>EVIDENCE_REQUEST_PATH_KEY</b> = <a class="el" href="#aac7c77fb25c20e5ef9d3d3e6dde09b7a">EVIDENCE_SERVER_PREFIX</a> + <a class="el" href="#ae1a0652744e57b67cbb759f4ae03d46c">EVIDENCE_SEPERATOR</a> + &quot;request-path&quot;</td></tr>
+<tr class="c-table__row memdesc:a1d5f3e1d793b9092127690c768c5e84c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The complete key to be used when the path of the request is passed as evidence, exactly as the request carried it. <br /></td></tr>
+<tr class="c-table__row memitem:abb62558a2e3f3dbd1f5475fe53e192c3" id="r_abb62558a2e3f3dbd1f5475fe53e192c3"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#abb62558a2e3f3dbd1f5475fe53e192c3">EVIDENCE_REQUEST_QUERY_KEY</a> = <a class="el" href="#aac7c77fb25c20e5ef9d3d3e6dde09b7a">EVIDENCE_SERVER_PREFIX</a> + <a class="el" href="#ae1a0652744e57b67cbb759f4ae03d46c">EVIDENCE_SEPERATOR</a> + &quot;request-query&quot;</td></tr>
+<tr class="c-table__row memdesc:abb62558a2e3f3dbd1f5475fe53e192c3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The complete key to be used when the whole query string of the request is passed as evidence, exactly as the request carried it and without the leading question mark.  <br /></td></tr>
 <tr class="c-table__row memitem:a0b0d736a2c1e00a446f0ef45a7b183bf" id="r_a0b0d736a2c1e00a446f0ef45a7b183bf"><td class="c-table__cell"><a id="a0b0d736a2c1e00a446f0ef45a7b183bf" name="a0b0d736a2c1e00a446f0ef45a7b183bf"></a>
 const&#160;bool&#160;</td><td class="c-table__cell"><b>PIPELINE_BUILDER_DEFAULT_AUTO_DISPOSE_ELEMENTS</b> = true</td></tr>
 <tr class="c-table__row memdesc:a0b0d736a2c1e00a446f0ef45a7b183bf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default value for the flag that controls whether the pipeline will automatically dispose of its elements when it is disposed. <br /></td></tr>
@@ -124,6 +131,65 @@ const&#160;bool&#160;</td><td class="c-table__cell"><b>PIPELINE_BUILDER_DEFAULT_
 <tr class="c-table__row memdesc:ac44998336787544fa08fd78899ac3d36"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name of the System.Diagnostics.ActivitySource that emits a tracing span for each flow element a pipeline processes.  <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="aeb93f3abcb5723fd3a6868a386e0ea08" name="aeb93f3abcb5723fd3a6868a386e0ea08"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aeb93f3abcb5723fd3a6868a386e0ea08">&#9670;&#160;</a></span>EVIDENCE_REQUEST_METHOD_KEY</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const string FiftyOne.Pipeline.Core.Constants.EVIDENCE_REQUEST_METHOD_KEY = <a class="el" href="#aac7c77fb25c20e5ef9d3d3e6dde09b7a">EVIDENCE_SERVER_PREFIX</a> + <a class="el" href="#ae1a0652744e57b67cbb759f4ae03d46c">EVIDENCE_SEPERATOR</a> + &quot;request-method&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The complete key to be used when the HTTP method of the request is passed as evidence. </p>
+<p>This key and the two below carry the request line. The values MUST be exactly what the request carried, byte for byte, with no decoding and no normalisation, because they are used to rebuild the text an HTTP message signature was made over and one changed byte makes a valid signature read as invalid. See the Specification</p>
+<p>. </p>
+
+</div>
+</div>
+<a id="abb62558a2e3f3dbd1f5475fe53e192c3" name="abb62558a2e3f3dbd1f5475fe53e192c3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#abb62558a2e3f3dbd1f5475fe53e192c3">&#9670;&#160;</a></span>EVIDENCE_REQUEST_QUERY_KEY</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const string FiftyOne.Pipeline.Core.Constants.EVIDENCE_REQUEST_QUERY_KEY = <a class="el" href="#aac7c77fb25c20e5ef9d3d3e6dde09b7a">EVIDENCE_SERVER_PREFIX</a> + <a class="el" href="#ae1a0652744e57b67cbb759f4ae03d46c">EVIDENCE_SEPERATOR</a> + &quot;request-query&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The complete key to be used when the whole query string of the request is passed as evidence, exactly as the request carried it and without the leading question mark. </p>
+<p>The query string is carried whole here as well as split into 'query.' entries, because the split entries lose the ordering and the encoding of the original and so cannot rebuild it. An integration that supplies the request line supplies this key on every request, empty where the request carried no query string, so that a missing key always means the integration does not supply the request line rather than that the request had no query. </p>
+
+</div>
+</div>
 <a id="ac44998336787544fa08fd78899ac3d36" name="ac44998336787544fa08fd78899ac3d36"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac44998336787544fa08fd78899ac3d36">&#9670;&#160;</a></span>TRACING_SOURCE_NAME</h2>
 

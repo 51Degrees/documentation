@@ -1,5 +1,7 @@
 var classtests_1_1test__cloudexamples_1_1_device_detection_example_tests =
 [
+    [ "assert_device_lines_are_meaningful", "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#ab79cac282edc0a6419c041fa02f69cf9", null ],
+    [ "run_example", "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a9cd8a3178cdf66fe78d2e5885ba67a6a", null ],
     [ "setUp", "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a78cb4154f5ec00e203fd7374a5d60b43", null ],
     [ "test_cloud_configurator_console", "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a04ae5e4d64b878c6f2e82cb857c9e1ba", null ],
     [ "test_cloud_getting_started_console", "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a3ce60886bada579be5526cd7c3f24cd0", null ],
