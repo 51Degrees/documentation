@@ -30,7 +30,9 @@ Your subscription does not contain the products required to access location prop
 This error means that there are no properties that are offered by the Cloud service which can be accessed by the available products that are defined by your License Keys. The error will list the available products, cross-reference this with the mapping in the @ref Product_to_subscription_mapping "product to subscription mapping" and the [property dictionary](https://51degrees.com/developers/property-dictionary).
 
 ### Non-unique properties requested {#Non_unique_property_requested}
-A non-unique property has been requested; make sure that each property is only requested once and specify the property name in the format: `<product>.<property>` to avoid ambiguity, e.g., `device.ismobile` or `location.country`. This may occur when using the `values` parameter in requests to the Cloud service. Refer to the [cloud property metadata](https://cloud.51degrees.com/api/metadata/properties) for a list of valid properties IDs.
+A non-unique property has been requested. Make sure that each property is only requested once and give the property name as `<product>.<property>` to avoid ambiguity, for example `device.ismobile` or `location.country`. This may occur when using the `values` parameter in requests to the Cloud service. Refer to the [cloud property metadata](https://cloud.51degrees.com/api/metadata/properties) for a list of valid property names.
+
+A derived property can **only** be asked for by its qualified name, so `derived.HumanConfidence` rather than `HumanConfidence`. The service matches each requested name against its list of `element.property` names and drops a name it cannot match, so a request that asks for the bare name alone is answered with the @ref Properties_not_available_with_this_subscription "properties not available with this subscription" warning, which reads like an entitlement problem and is not one. See [Derived properties](@ref Services_Cloud_Overview).
 
 ### Only add-on product provided {#Only_add_on_product_provided}
 This product is an add-on to one of the plans outlined on the [pricing page](https://51degrees.com/pricing). The base subscription is licensed in a separate Licence Key. Ensure this Licence Key found in your sign-up email has been included when creating your Resource Key on the 51Degrees [Cloud Configurator](https://configure.51degrees.com/).
@@ -69,7 +71,7 @@ The Resource Key provided in the request to the Cloud service was not recognized
 The Resource Key provided in the request to the Cloud service is not valid. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to create a new Resource Key.
 
 ### Resource Key required {#Resource_key_required}
-A Resource Key is required to access the 51Degrees Cloud service. This contains your property configuration, preferences and subscriptions. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to create a Resource Key. The key can be supplied as the `X-51D-Resource-Key` header, in the route, as the `resource=` query parameter, or as a `resource` form field. On the json and js endpoints only, callers can instead authenticate with a License Key (`X-51D-License-Key`, `?license=`, or a `license` form field) together with a `values` list (see below). Every other endpoint requires a Resource Key, and returns this error for a License-key-only request.
+A Resource Key is required to access the 51Degrees Cloud service. This contains your property configuration, preferences and subscriptions. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to create a Resource Key. The key can be supplied as the `X-51D-Resource-Key` header, in the route, as the `resource=` query parameter, or as a `resource` form field. On the json and js endpoints, callers can instead authenticate with a License Key (`X-51D-License-Key`, `?license=`, or a `license` form field) together with a `values` list (see below). The OWID public key endpoint (`/owid/api/v3/public-key`) also accepts a License Key alone, and unlike json and js it needs no `values` list, because its payload is fixed. Every other endpoint requires a Resource Key, and returns this error for a License-key-only request.
 
 ### Sequence value invalid {#Sequence_value_invalid}
 The value for the `sequence` parameter could not be parsed to an integer, make sure that the `sequence` value is an integer. If the problem persists then please create a new issue on our [cloud-issues GitHub](https://github.com/51Degrees/cloud-issues/issues) repository.
@@ -78,10 +80,28 @@ The value for the `sequence` parameter could not be parsed to an integer, make s
 The value for the `sequence` parameter could not found. If the `sequence` parameter has been provided in the request, make sure that the value in is an integer. Otherwise, please create a new issue on our [cloud-issues GitHub](https://github.com/51Degrees/cloud-issues/issues) repo.
 
 ### Signing key date malformed {#Signing_key_date_malformed}
-The `date` parameter on the OWID creator endpoint (`/owid/api/v3/creator?date=`) could not be parsed. It must be an unsigned 32-bit integer giving the number of minutes since `2020-01-01T00:00:00Z` (the OWID envelope's date encoding). Returned as HTTP `400`.
+The `date` parameter on the OWID public key endpoint (`/owid/api/v3/public-key?date=`) could not be parsed. It must be an unsigned 32-bit integer giving the number of minutes since `2020-01-01T00:00:00Z` (the OWID envelope's date encoding). Returned as HTTP `400`.
 
 ### Signing key date too old {#Signing_key_date_too_old}
-The `date` supplied to the OWID creator endpoint predates the oldest signing key, so no key was active at that date. Returned as HTTP `404`.
+The `date` supplied to the OWID public key endpoint predates the oldest signing key, so no key was in force at that date. Returned as HTTP `404`.
+
+### Signing key format not served {#Signing_key_format_not_served}
+The `format` parameter on the OWID public key endpoint named an encoding this creator does not serve. The only value defined is `spki`, a Subject Public Key Info PEM, which is also what a request naming no format receives. `format=pkcs`, which clients built against the earlier plain text answer sent, is answered this way. Returned as HTTP `400`.
+
+### Licence Key used from a web browser {#Licence_key_used_from_a_web_browser}
+The request supplied a Licence Key and appears to have come from a web browser rather than from an API client. **The Licence Key has not been rejected and there is nothing wrong with it.** A key that is invalid, expired or out of quota is a different failure and reports itself as one.
+
+The request is refused to protect your account. A Licence Key identifies and bills your account, and a key used from a browser is readable by anyone who opens the page source or the network tab. Your [agreement with 51Degrees](https://51degrees.com/terms) requires you to safeguard the licensed materials, at clause 3.4.1, and not to use Licence Keys other than in accordance with that agreement, at clause 3.1.6.
+
+A Resource Key is never affected. A Resource Key is public by design and belongs in a page.
+
+There are three ways to resolve it.
+
+- Give your API client its own `User-Agent` naming your software rather than one copied from a browser. Where you need to pass an end user device through for detection, send it as the `user-agent` query parameter or the `X-Device-User-Agent` header, both of which this check ignores.
+- Set `ua-check=false` on the request, as a query parameter or a form field, if you are satisfied the key is not reachable from a browser.
+- Send the Licence Key in the `X-51D-License-Key` request header, which is never checked, because setting a header is a deliberate act by an API client.
+
+The check runs on the v4 endpoints and on the OWID endpoints under `/owid/api`, and never on the v1 API. It applies only to Licence Keys whose start date is on or after the date the deployment has configured for it, so existing keys are unaffected. Returned as HTTP `401`.
 
 ### Supplied Licenses do not contain any valid products {#Supplied_licenses_do_not_contain_any_valid_products}
 The supplied License Key(s) do not contain any valid products for the 51Degrees Cloud service. Check that you have access to the correct subscription by checking your sign-up email. To validate your License Key(s), visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com) and follow the steps to create a new Resource Key, providing your License Keys in the process. If the License Keys are not valid then please see our [pricing page](https://51degrees.com/pricing) for details on subscriptions for the Cloud service.
