@@ -57,7 +57,7 @@ Beware: continuing to steps 2 or 3 will not edit the properties attached to your
 
 # License-key-only callers
 
-Most callers authenticate with a Resource Key, but you can also call the cloud with a License Key and no Resource Key. This suits server-to-server or verifier callers that do not want to create and manage Resource Keys. Only the json and js endpoints accept License-key-only requests; the other endpoints still require a Resource Key.
+Most callers authenticate with a Resource Key, but you can also call the cloud with a License Key and no Resource Key. This suits server-to-server or verifier callers that do not want to create and manage Resource Keys. The json and js endpoints accept License-key-only requests, and so does the OWID public key endpoint (`/owid/api/v3/public-key`), which needs no `values` list because its payload is fixed. The other endpoints still require a Resource Key.
 
 A Resource Key carries a property list chosen at creation time. A bare License Key does not, so a License-key-only caller must list the properties they want via the `values` parameter, supplied in any of these places (header first, then query, then form):
 
@@ -67,7 +67,9 @@ A Resource Key carries a property list chosen at creation time. A bare License K
 
 The License Key itself follows the same order: the `X-51D-License-Key` header, then the `license` query parameter, then a `license` form field.
 
-The `X-51D-*` headers are intended for server-to-server callers: the cloud service does not answer CORS preflight requests for them, so browsers will not send them cross-origin.
+The `X-51D-*` headers are intended for server to server callers, and the cloud service does not answer CORS preflight requests for them, so browsers will not send them cross origin.
+
+A Licence Key belongs on a server and not in a page. A Licence Key identifies and bills your account, so a request that supplies one and looks like it came from a web browser can be refused with `401` on the v4 and OWID endpoints. A Resource Key is public by design and is never affected. Sending the Licence Key in the `X-51D-License-Key` header is one of the three ways past the check, because setting a header is a deliberate act by an API client. See [Licence Key used from a web browser](@ref Services_Cloud_ErrorMessages) for the other two.
 
 A License-key-only request with no `values` returns `400` and explains the requirement. See the [Property Dictionary](https://51degrees.com/developers/property-dictionary) for the properties available on your license.
 
