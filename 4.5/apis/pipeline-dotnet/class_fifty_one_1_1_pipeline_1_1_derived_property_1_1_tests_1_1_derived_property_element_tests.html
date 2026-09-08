@@ -101,6 +101,11 @@ void&#160;</td><td class="c-table__cell"><b>Builder_SetScriptFiles</b> ()</td></
 <tr class="c-table__row memitem:a014862851e3b4d82df502f967c154ddc" id="r_a014862851e3b4d82df502f967c154ddc"><td class="c-table__cell"><a id="a014862851e3b4d82df502f967c154ddc" name="a014862851e3b4d82df502f967c154ddc"></a>
 void&#160;</td><td class="c-table__cell"><b>Builder_BuildFromConfiguration</b> ()</td></tr>
 <tr class="c-table__row memdesc:a014862851e3b4d82df502f967c154ddc"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The element can be built from a real set of pipeline options, which is the path a customer's configuration file takes. <br /></td></tr>
+<tr class="c-table__row memitem:ab20b432dd8aa70424075d0ccb58ed0f2" id="r_ab20b432dd8aa70424075d0ccb58ed0f2"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ab20b432dd8aa70424075d0ccb58ed0f2">Builder_CreateElementOverrideReturnsSubclass</a> ()</td></tr>
+<tr class="c-table__row memdesc:ab20b432dd8aa70424075d0ccb58ed0f2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A host that has to decide for itself whether the element may run, or that has to tell the pipeline which properties the scripts read, needs an element of its own.  <br /></td></tr>
+<tr class="c-table__row memitem:ae99cb7837939e74a5dd83dc053833f73" id="r_ae99cb7837939e74a5dd83dc053833f73"><td class="c-table__cell"><a id="ae99cb7837939e74a5dd83dc053833f73" name="ae99cb7837939e74a5dd83dc053833f73"></a>
+void&#160;</td><td class="c-table__cell"><b>Builder_SubclassProcessesTheScriptsItWasBuiltWith</b> ()</td></tr>
+<tr class="c-table__row memdesc:ae99cb7837939e74a5dd83dc053833f73"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The subclass is a working element and not just the right type, so the scripts compiled by the base builder are the ones it runs. <br /></td></tr>
 <tr class="c-table__row memitem:aafe0e2f0fab2b05fc006083343b0c791" id="r_aafe0e2f0fab2b05fc006083343b0c791"><td class="c-table__cell"><a id="aafe0e2f0fab2b05fc006083343b0c791" name="aafe0e2f0fab2b05fc006083343b0c791"></a>
 void&#160;</td><td class="c-table__cell"><b>Builder_BuildWithNoScriptsFails</b> ()</td></tr>
 <tr class="c-table__row memdesc:aafe0e2f0fab2b05fc006083343b0c791"><td class="c-table__cell">&#160;</td><td class="c-table__cell">An element with no scripts has nothing to do, so building one is a mistake rather than a pipeline that quietly writes nothing. <br /></td></tr>
@@ -146,6 +151,30 @@ void&#160;</td><td class="c-table__cell"><b>Log_DebugWritesTheCanonicalJson</b> 
 <tr class="c-table__row memdesc:af4276daaa1524b2c0aa0787f80cb6c3b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">At debug level the compiled model is written as canonical JSON, so anyone holding the log can see what was evaluated without the file. <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="ab20b432dd8aa70424075d0ccb58ed0f2" name="ab20b432dd8aa70424075d0ccb58ed0f2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab20b432dd8aa70424075d0ccb58ed0f2">&#9670;&#160;</a></span>Builder_CreateElementOverrideReturnsSubclass()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void FiftyOne.Pipeline.DerivedProperty.Tests.DerivedPropertyElementTests.Builder_CreateElementOverrideReturnsSubclass </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>A host that has to decide for itself whether the element may run, or that has to tell the pipeline which properties the scripts read, needs an element of its own. </p>
+<p>Overriding the construction step gives it one without repeating the script loading or the validation. </p>
+
+</div>
+</div>
 <a id="a835d1227b1c26a1193e9544dd8850724" name="a835d1227b1c26a1193e9544dd8850724"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a835d1227b1c26a1193e9544dd8850724">&#9670;&#160;</a></span>Element_WaitsForALazilyLoadedSourceProperty()</h2>
 
