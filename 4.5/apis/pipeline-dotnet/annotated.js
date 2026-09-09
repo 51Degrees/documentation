@@ -300,7 +300,10 @@ var annotated =
             [ "SlowSourceData", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_slow_source_data.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_slow_source_data" ],
             [ "SlowSourceEngine", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_slow_source_engine.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_slow_source_engine" ],
             [ "StubSourceData", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_source_data.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_source_data" ],
-            [ "StubSourceElement", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_source_element.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_source_element" ]
+            [ "StubSourceElement", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_source_element.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_source_element" ],
+            [ "StubStringSourceData", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_string_source_data.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_string_source_data" ],
+            [ "StubStringSourceElement", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_string_source_element.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_string_source_element" ],
+            [ "ValuesAsStringTests", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_values_as_string_tests.html", "class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_values_as_string_tests" ]
           ] ]
         ] ],
         [ "Engines", "namespace_fifty_one_1_1_pipeline_1_1_engines.html", [
@@ -334,7 +337,8 @@ var annotated =
             [ "IAspectPropertyValue", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_property_value.html", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_property_value" ],
             [ "IAspectPropertyValue&lt; T &gt;", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_property_value-1-g.html", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_property_value-1-g" ],
             [ "IDataUpdateUrlFormatter", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_data_update_url_formatter.html", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_data_update_url_formatter" ],
-            [ "IMultiProfileData&lt; T &gt;", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_multi_profile_data-1-g.html", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_multi_profile_data-1-g" ]
+            [ "IMultiProfileData&lt; T &gt;", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_multi_profile_data-1-g.html", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_multi_profile_data-1-g" ],
+            [ "IProvidesValuesAsString", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_provides_values_as_string.html", "interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_provides_values_as_string" ]
           ] ],
           [ "Exceptions", "namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_exceptions.html", [
             [ "DataUpdateException", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_exceptions_1_1_data_update_exception.html", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_exceptions_1_1_data_update_exception" ],
