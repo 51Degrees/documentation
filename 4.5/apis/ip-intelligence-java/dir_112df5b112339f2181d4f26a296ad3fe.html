@@ -127,6 +127,26 @@ Directory dependency graph for ip-intelligence-data:</h2>
 <li>evidence.csv - Each line contains a single IP.</li>
 <li>evidence.yml - A multi-record yaml file where each line contains the HTTP header name and value as the key/value pair. Values may be wrapped in single quotes.</li>
 </ul>
+<h1>Tests</h1>
+<p>The download scripts are covered by a Pester 5 test suite:</p>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">File  </td><td class="c-table__cell">Role  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>ci/run-unit-tests.ps1</code>  </td><td class="c-table__cell">Entry point. Installs Pester if needed, runs the suite, and writes a NUnit XML report to <code>test-results/</code>.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>tests/check-dl-script.tests.ps1</code>  </td><td class="c-table__cell">Pester test suite with 8 test cases (4 per download script).  </td></tr>
+</table>
+<p>Run all tests (requires <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell">PowerShell</a>):</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">cd ip-intelligence-data</div>
+<div class="c-code__line">./ci/run-unit-tests.ps1</div>
+</div><!-- fragment --><p>Each test performs a <b>real download</b> from 51Degrees storage into an isolated temporary directory and verifies the archive is fetched, its printed MD5 matches a re-computed hash, and the file unpacks correctly. The test cases are:</p>
+<ul>
+<li><code>Downloads both files (no args)</code> - no flags (both Lite + Asn files)</li>
+<li><code>Downloads Lite only (-Lite)</code> - only the Lite file</li>
+<li><code>Downloads Asn only (-Asn)</code> - only the Asn file</li>
+<li><code>Forces re-download (-Force)</code> - pre-seeds dummy files then passes <code>-Force</code> to verify they are overwritten</li>
+</ul>
 <h1>Translation</h1>
 <p>Folder containing yaml files for translation of country names into several target languages. This data is used in examples and by the translation engine.</p>
 <h2>Folder structure</h2>
