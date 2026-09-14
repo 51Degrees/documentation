@@ -165,6 +165,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <td class="c-table__cell"><a href="examples/benches"><code>examples-benches</code></a>  </td><td class="c-table__cell">Criterion micro-benchmarks guarding the DD, IPI and JavaScript-builder throughput budgets.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">[<code>fodid</code>](fodid)  </td><td class="c-table__cell">Standalone reader for the 51Did (51Degrees Identifier) returned by the cloud, described in the <a href="https://51degrees.com/documentation/_identifiers__index.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=rust&amp;utm_content=readme.md&amp;utm_term=51did">identifiers documentation</a>. It parses the OWID envelope and is independent of the pipeline stack.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">[<code>fodid-client</code>](fodid-client)  </td><td class="c-table__cell">The server side of the 51Did two-step verification: fetches and caches the signing keys, verifies a signature offline or through the cloud, and redeems the sealed creator context result a browser relays, with the typed outcomes the other 51Did packages report. Builds without a network stack by default; the <code>reqwest-client</code> feature turns on the built-in transport.  </td></tr>
 </table>
 <h1>Feature notes</h1>
 <ul>
