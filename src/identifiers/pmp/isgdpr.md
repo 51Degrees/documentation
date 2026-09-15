@@ -7,13 +7,13 @@ Framework surface reports to the advertising code on your page.
 
 # Where the Value Comes From
 
-It is a derived property, which means the cloud works it out from other
+`IsGdpr` is a derived property, which means the cloud works it out from other
 values rather than reading it from a data file. The input is the country the
 request's IP address resolves to, and the answer is `true` for the European
 Economic Area, the United Kingdom and the French outermost regions, and
 `false` everywhere else, including an address that cannot be placed at all.
 
-**It is a default and not a determination.** The property's own published
+**The value is a default and not a determination.** The property's own published
 description says it is "a default for a caller that knows nothing about its
 own position, and not a determination, because the regulation also reaches
 an organisation by where it is established". A publisher established in the
@@ -62,10 +62,13 @@ tag is there it waits for that tag to run, which is on
 @ref Identifiers_PMP_Integration.
 
 Where the value cannot be had, the platform writes a warning to the console
-naming the reason, being either that `IsGdpr` is not in the response and
-should be added to the resource key, or that there is no client script
-object on the page, and leaves `gdprApplies` reporting `true`. Nothing else
-changes.
+naming the reason, and leaves `gdprApplies` reporting `true`. Nothing else
+changes. The reason is one of three.
+
+- `IsGdpr` is not in the response, so add it to the resource key.
+- `IsGdpr` is in the response with no value for this visitor, and the
+  cloud's reason is in `fod.derived.isgdprnullreason` on the page.
+- There is no client script object on the page.
 
 # The Dialog Is Shown Either Way
 

@@ -18,7 +18,7 @@ of them twice.
 | `data-alt-url` | Yes | none | What the alternative button does. An `http` or `https` URL navigates the page. A `javascript:` URL runs inline and the page stays where it is. |
 | `data-network-name` | When sharing | none | The name of the group your sites belong to. Required for the second card, because a visitor has to be told which sites an answer would apply to. Leaving it out turns sharing off with a warning. See @ref Identifiers_PMP_Sharing. |
 | `data-object-name` | No | `fod` | The name of the 51Degrees client script's page object, so the platform can find it. Leave it out unless your client script tag sets `fod-js-object-name` to something else. Every console message names whichever name is in force. |
-| `data-action-url` | No | none | A hook of your own, fired on every answer, with `{preference}` replaced by `standard`, `personalized` or `non-marketing`. An `http` or `https` URL is added as a script tag, a `javascript:` URL runs inline. Leaving it out writes a warning to the console and changes nothing else. |
+| `data-action-url` | No | none | A hook of your own, fired on every answer, with `{preference}` replaced by `standard`, `personalized` or `non-marketing`. An `http` or `https` URL is added as a script tag, a `javascript:` URL runs inline. Leaving it out means nothing is fired, and nothing else changes. |
 | `data-license-key` | No | none | Further licence keys, several separated by `+`, where your products need one on top of the resource key. Anyone reading the page can see it, exactly as they could when it sat on a URL. |
 | `data-brand-logo` | No | none | Your logo, shown in the dialog's header. |
 | `data-brand-icon` | No | a gear symbol | The round icon on the bubble the dialog collapses to. |
@@ -56,7 +56,7 @@ diagram whenever either value changes.
 
 # The Two URL Attributes
 
-They look alike and do different jobs.
+The two attributes look alike and do different jobs.
 
 | | `data-action-url` | `data-alt-url` |
 |---|---|---|
