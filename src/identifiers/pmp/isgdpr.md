@@ -13,10 +13,22 @@ request's IP address resolves to, and the answer is `true` for the European
 Economic Area, the United Kingdom and the French outermost regions, and
 `false` everywhere else, including an address that cannot be placed at all.
 
+**It is a default and not a determination.** The property's own published
+description says it is "a default for a caller that knows nothing about its
+own position, and not a determination, because the regulation also reaches
+an organisation by where it is established". A publisher established in the
+European Union is within scope while serving a visitor in the United States,
+and `IsGdpr` answers `false` for that visit. Where you know your own
+position, act on what you know.
+
 Two things have to be true for a page to have the value.
 
-1. Your resource key requests `IsGdpr` by name. Add it to the key with the
-   configurator like any other property.
+1. Your resource key requests the property. Add `IsGdpr` to the key with the
+   configurator like any other property. Where you list properties yourself
+   with `values` instead, give the qualified name, `derived.IsGdpr`, because
+   a derived property asked for by its bare name is dropped and answered
+   with a warning that reads like an entitlement problem and is not one. See
+   @ref Services_Cloud_Overview.
 2. The 51Degrees client script is on the page, because that is what brings
    the value into the browser.
 
