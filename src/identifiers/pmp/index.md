@@ -61,7 +61,7 @@ version 2, at <https://m4ow.uk/mtm/2.txt>. See
   page's values and asks the cloud for its answers, publishing them on a
   page object named `fod` by default. It listens for the platform's answer
   by itself, so you write no code to join the two. Where your page carries
-  no client script, the platform adds one. See
+  no client script tag, the platform adds one. See
   @ref Identifiers_PMP_Integration.
 - **The cloud**, which serves the loader, the bundle and the client script,
   holds a shared answer when the visitor agrees to share one, and creates
@@ -96,10 +96,12 @@ sequenceDiagram
         Note over Browser,Bundle: An answer that comes back shows no dialog, only the bubble
     end
 
-    alt The page carries no client script
+    alt The page carries no client script tag
         Bundle->>Page: Add the client script tag and log that it did
         Page->>Cloud: GET /api/v4/[resource key].js
         Cloud-->>Script: The client script
+    else A tag is there, whether or not it has run
+        Bundle->>Bundle: Wait for that tag and log that it is waiting
     end
 
     Note over Bundle,Script: The answer is announced on the window and held behind window.__51d_pmp.preference()
@@ -132,9 +134,10 @@ sequenceDiagram
    group's answer. That request carries the cloud's own cookie, which is a
    third party cookie, so it works only in browsers that allow one. When an
    answer comes back the visitor sees no dialog, only the bubble.
-4. Where the page carries no 51Degrees client script, the platform adds one
-   from the same cloud that served it, using the resource key it already
-   holds, and says so in the console.
+4. Where the page carries no 51Degrees client script tag, the platform adds
+   one from the same cloud that served it, using the resource key it already
+   holds, and says so in the console. Where a tag is there it waits for it,
+   run or not, and adds nothing.
 5. Any answer in force is announced on the window and is also available from
    `window.__51d_pmp.preference()`, which answers straight away.
 6. The client script reads whatever is available when it is built, registers

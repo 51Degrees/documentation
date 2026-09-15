@@ -66,12 +66,27 @@ the `IsGdpr` value that sets what its own Transparency and Consent Framework
 surface reports. Rather than keeping a second way of finding those out, it
 uses the one the client script already has.
 
-When it finds no client script object on the page, the platform builds the
-script's URL from the cloud that served the platform and the resource key it
-already holds, adds the tag as an asynchronous script in the page's head,
-and writes a line in the browser console saying the script was not present
-and that it is adding it, naming the object. The message never prints your
-resource key or your licence key.
+**A script is added only where the page carries no client script tag at
+all.** Where your page does carry one, the platform waits for that tag to
+run and adds nothing, however the two tags are ordered and whether or not
+either has run yet, and it says so in the console.
+
+```
+A client script tag is already on this page, so the platform is waiting for it to run rather than adding another. 'fod' will be read from it once it has.
+```
+
+The question is asked of the page rather than of the object, because a tag
+is in the page from the moment the browser has read it, whether it has run
+or not, while an object exists only once its script has run. Both tags are
+asynchronous, so an object that is not there yet says nothing about whether
+you wrote a tag. A tag written below the platform's tag counts too, because
+the platform looks again once the browser has finished reading the page.
+
+Only when the page really carries none does the platform build the script's
+URL from the cloud that served the platform and the resource key it already
+holds, add the tag as an asynchronous script, and write a line in the
+console saying that it did. That message never prints your resource key or
+your licence key.
 
 Where your content security policy names a nonce, the tag the platform adds
 carries the same nonce the platform's own tag has, so the policy is
@@ -83,15 +98,20 @@ Two things follow from that.
   its parameters.** The tag the platform adds carries the defaults. Your own
   tag can set the object name, turn cookies on with
   `fod-js-enable-cookies=true`, add a licence key, or sit wherever in the
-  page you want it. The platform sees your object and adds nothing.
+  page you want it. The platform waits for your tag and adds nothing.
 - **Load the client script once.** Loading it twice replaces the first
   instance and its state, and the script says so in the console. The
-  platform adds a tag only where there is no object at all, so it never
-  causes this.
+  platform never causes this, because a tag of your own is a tag it waits
+  for.
 
   ```
   51Degrees: fod already exists on this page. Loading the script twice replaces it. Load it once and call fod.refresh() to update.
   ```
+
+A tag that runs and leaves no object behind, which usually means the name on
+`data-object-name` and the name the script was built with disagree, is
+warned about and nothing is added. A second copy would run every round twice
+and create two identifiers, which is worse than the missing value.
 
 Where the platform can work out neither a cloud origin nor a resource key,
 which happens when a build is opened from disk rather than served, it writes

@@ -45,7 +45,8 @@ the platform reads from the client script,
 
 At start up the platform reads `derived.isgdpr` from the client script's
 object and sets `gdprApplies` on its own Framework surface from it. Where
-your page carries no client script, the platform adds one, which is on
+your page carries no client script tag, the platform adds one, and where a
+tag is there it waits for that tag to run, which is on
 @ref Identifiers_PMP_Integration.
 
 Where the value cannot be had, the platform writes a warning to the console

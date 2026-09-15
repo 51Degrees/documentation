@@ -64,8 +64,10 @@ fod.complete(function (data) {
 
 The value is measured once the client script has run the snippet that tests
 it, and before that it reports the likely answer for the browser. Where your
-page carries no client script the platform adds one so that it has this
-answer, which is described on @ref Identifiers_PMP_Integration.
+page carries no client script tag the platform adds one so that it has this
+answer, and where a tag is there it waits for that tag to run rather than
+adding a second copy, which is described on
+@ref Identifiers_PMP_Integration.
 
 Browsers that block third party cookies, which includes Safari and Firefox
 with their default settings, simply never show the second card.
