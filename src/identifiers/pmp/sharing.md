@@ -67,12 +67,12 @@ when the platform is built, it is the same on every page, and no attribute
 changes it.
 
 <!--
-For maintainers. The three seconds are the build constant
-thirdPartyCookieWaitMs in pmp/build-constants.yaml in the cloud repository,
+For maintainers. The three seconds are a build constant of the platform,
 compiled into every bundle as __ThirdPartyCookieWaitMs__, with the reason for
-the value written beside it. It is not configurable, on James Rosewell's
-decisions of 15 September 2026. Change this page, the configuration page and
-the load process diagram whenever that value changes.
+the value written beside it in the platform source. It is not configurable,
+on James Rosewell's decisions of 15 September 2026. Change this page, the
+configuration page and the load process diagram whenever that value
+changes.
 -->
 
 The wait is for that confirmation and nothing else. The second card never
@@ -195,11 +195,30 @@ checking which you are reading. See @ref Identifiers_PMP_IsGdpr.
 
 # Where the Answer Is Held
 
-When the visitor says the answer should apply across the group, the platform
-asks the cloud to hold it and, once the cloud confirms, removes the copy on
-this site. From then on every change the visitor makes, on this site or any
-other in the group, goes to the cloud. The table of where an answer lives is
-on @ref Identifiers_PMP_Preferences.
+The platform reads this site's own storage first and asks the cloud only
+where this site holds nothing, so a visitor who kept their answer to this
+site is never read from the group's store. When the visitor says the answer
+should apply across the group, the platform asks the cloud to hold it and,
+once the cloud confirms, removes the copy on this site, so from then on the
+shared value is the one that answers on every site in the group. A later
+change of answer goes to the shared store while sharing is on, and is kept
+in this site's storage instead only where the cloud refuses the write, which
+leaves the newer answer with this site rather than losing it. The table of
+where an answer lives is on @ref Identifiers_PMP_Preferences.
+
+**There is no way back through the dialog.** The second card is offered only
+to a visitor who has not already shared, so once a visitor has agreed to
+carry their answer across the group the card never comes back to ask again,
+and nothing else in the dialog turns sharing off. A visitor who wants their
+answer to stop being shared needs two things to happen.
+
+1. The third party cookie the group's store uses has to be cleared, which is
+   the `51D_PmpPreference_<code>` cookie described below. A visitor can clear
+   it in their browser, and your page can ask the cloud to remove it with the
+   `DELETE` call under *Letting a Visitor Start Again*.
+2. The question is then asked again on the next visit, the second card is
+   offered again, and answering **Only this site** keeps the answer to this
+   site alone.
 
 The cloud sets a cookie named `51D_PmpPreference_<code>` on its own domain.
 It carries one of the three values and nothing else, with no timestamp and

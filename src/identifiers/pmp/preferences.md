@@ -47,6 +47,11 @@ the platform waits, all set out on @ref Identifiers_PMP_Sharing. A write to the 
 is refused, or not confirmed within 1500 milliseconds, also leaves the answer
 in this site's `localStorage`.
 
+An answer that has moved to the cloud's cookie stays there, because the second
+card is offered only to a visitor who has not already shared. Clearing that
+cookie is what lets the visitor be asked again, which
+@ref Identifiers_PMP_Sharing sets out.
+
 The local key is `__51d_pmp_pref` and it holds a small JSON object, being
 the schema version, the answer and the time it was given in milliseconds.
 
@@ -68,6 +73,11 @@ localStorage.removeItem('__51d_pmp_pref');
 localStorage.removeItem('__51d_pmp_share_declined');
 location.reload();
 ```
+
+Both keys belong to this site, so removing them asks again only where the
+answer lives here, and where the answer moved to the group's shared store
+the cloud's cookie has to go as well, which @ref Identifiers_PMP_Sharing
+describes.
 
 Reopening the dialog does not need a reload. Call the platform's own method
 and the visitor gets the dialog back with their current answer shown.
