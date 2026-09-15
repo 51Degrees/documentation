@@ -67,11 +67,10 @@ own. It uses an ID chosen at random each day from IAB Europe's list of
 registered consent management platforms, writes that ID into the TC string,
 and reports the same ID through `__tcfapi`.
 
-The reason is that vendors, and the tags they put on your page, check the
-CMP ID in a TC string against that list. The TC string and vendor list
-formats specification says, in its
+The reason is that the CMP ID in a TC string is checked against that list.
+The TC string and vendor list formats specification says, in its
 [Global CMP List section](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20Consent%20string%20and%20vendor%20list%20formats%20v2.md#global-cmp-list-specification),
-that the list is how a vendor decides whether the CMP ID it finds in a
+that vendors use the list to decide whether the CMP ID they find in a
 string is valid, so a string that follows the technical specification but
 carries an ID that is not on the list is rejected. An ID taken from the
 list prevents that.
