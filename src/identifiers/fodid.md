@@ -110,6 +110,11 @@ unaffected.
 
 **A stated usage is read first.** Where `id.usage` is present on the request, as a query parameter or as a header, the cloud uses it and never examines a consent string sent beside it. Derivation runs only when no usage was stated. A malformed consent string is ignored rather than rejected, and the identifier records which of the two routes the usage came by, which is the signal source flag described under *Payload layout*.
 
+Each signal a page can carry has a page of its own, being
+@ref Identifiers_51Did_Tcf, @ref Identifiers_51Did_Gpp,
+@ref Identifiers_51Did_Gpc and @ref Identifiers_51Did_Pmp. They are listed
+under *In This Section* below.
+
 ## How the answer reaches the cloud from a browser page
 
 On a page carrying the 51Degrees client script, the script gathers the visitor's answer itself and sends it. **You write no code for this**, and you no longer reload the script with an answer in its URL.
@@ -428,6 +433,16 @@ metered.
 
 - **Marketing** - the PMP captures the visitor's answer, the client script sends it as `id.usage`, and the 51Did is consumed by Prebid and RTB enrichment. See @ref Identifiers_PMP and @ref Integrations_Prebid.
 - **Non-marketing** - the integrator sets `id.usage=non-marketing` server-side for fraud, bot or suspicious-activity detection (for example, the suspicious-activity module in the 51Degrees WordPress plugin). The identifier never leaves the customer environment.
+
+## In This Section
+
+@subpage Identifiers_51Did_Pmp
+
+@subpage Identifiers_51Did_Tcf
+
+@subpage Identifiers_51Did_Gpp
+
+@subpage Identifiers_51Did_Gpc
 
 ## Find Out More
 
