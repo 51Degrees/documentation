@@ -26,10 +26,11 @@ where nobody was asked produces no identifier at all.
 2. **The second card.** When the first answer was Standard or Personalized,
    and your settings allow it, a second card asks whether the answer should
    apply to the other sites in the group you named. It follows the first
-   card at once, except where the client script has not finished its first
-   round when the visitor answers, which nearly always means the platform
-   added the script itself. Then a waiting ring shows until the script
-   finishes or `data-timeout` passes. See @ref Identifiers_PMP_Sharing.
+   card at once, except where the platform does not yet know whether third
+   party cookies are available when the visitor answers. Then a waiting ring
+   shows while it waits for that one decision, for a short fixed time, and
+   it never waits for the 51Did. Where sharing is not configured there is no
+   second card and no wait. See @ref Identifiers_PMP_Sharing.
 3. **The bubble.** After answering, the dialog collapses to a small bubble
    in the corner. Clicking the bubble reopens the dialog so the visitor can
    change their answer whenever they like. A returning visitor whose answer
@@ -112,7 +113,7 @@ sequenceDiagram
     Script->>Cloud: First request, with the answer if there is one
     Cloud-->>Script: The snippets to run, and no 51Did without an answer
     Script->>Script: Run the snippets and keep their results
-    Script-->>Bundle: complete, carrying the third party cookie result
+    Script-->>Bundle: The third party cookie decision, from the first response that settles it
 
     Bundle-->>Browser: First card
     Browser->>Bundle: Standard, Personalized or the alternative
@@ -121,13 +122,13 @@ sequenceDiagram
         Script->>Script: refresh()
         Script->>Cloud: Request carrying the usage and every snippet result
         Cloud-->>Script: The 51Did, created after every other value
-    and The second card
-        alt complete had already been called, the case shown above
+    and The second card, only where sharing is configured
+        alt The third party cookie decision has already arrived, the case shown above
             Bundle-->>Browser: Second card, at once
-        else The client script has not called complete yet
-            Note over Bundle: Nearly always a script the platform added that is still finishing
-            Bundle-->>Browser: Waiting ring, for no longer than data-timeout
-            Script-->>Bundle: complete, carrying the third party cookie result
+        else Not known yet
+            Note over Bundle: Waits for that one decision and never for the 51Did
+            Bundle-->>Browser: Waiting ring, for a short fixed time
+            Script-->>Bundle: The third party cookie decision
             Bundle-->>Browser: Second card
         end
     end
@@ -157,20 +158,20 @@ sequenceDiagram
 6. The client script reads whatever is available when it is built, registers
    for the platform's event, makes its first request, and runs the snippets
    the cloud asks for. On the common path there is no answer yet, so that
-   first request creates no 51Did. When its round finishes it calls
-   `complete`, which is how the platform learns the third party cookie
-   result.
+   first request creates no 51Did. The platform learns the third party
+   cookie decision from the first of the script's responses that settles
+   it, which does not have to wait for the end of the round.
 7. The visitor answers the first card. The platform announces the answer.
 8. The client script hears the announcement and refreshes itself. That
    request carries the usage and every snippet result, so the 51Did is
    created after every other value is known.
-9. At the same moment the platform decides about the second card, and
-   nothing it does waits for that refresh or for the 51Did. Where the client
-   script has already called `complete`, which is the case above, the second
-   card follows the first at once. Where it has not, which nearly always
-   means the platform added the script and it is still finishing its first
-   round, the platform shows its waiting ring until `complete` arrives or
-   `data-timeout` passes, and then decides.
+9. At the same moment, and only where sharing is configured, the platform
+   decides about the second card. It needs one decision for that, being
+   whether third party cookies are available, and it never waits for the
+   refresh, the 51Did or `IsGdpr`. Where that decision has already arrived,
+   which is the case above, the second card follows the first at once.
+   Where it has not, the platform shows its waiting ring while it waits for
+   that decision alone, for a short fixed time, and then decides.
 10. If the visitor agrees to share, the platform writes the answer to the
     cloud and removes the copy held on this site, so there is one answer and
     never two.

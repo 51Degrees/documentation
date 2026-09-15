@@ -50,38 +50,66 @@ being answered, and clicking it goes back.
 
 ## When the Second Card Waits
 
-The second card follows the first at once, except in one case, and the
-reason is that the platform needs the third party cookie result at the
-moment the visitor answers the first card. That result arrives through the
-client script's `complete` callback. **Where the client script has not
-called `complete` yet when the visitor answers, the platform shows its
-waiting ring over the cards and waits for it**, for no longer than
-`data-timeout` milliseconds, and then decides. While it waits the cards are
-darkened and nothing on them can be pressed.
+The second card follows the first at once, except in one case. When the
+visitor answers the first card the platform needs one decision, being
+whether third party cookies are available, because that decides whether the
+second card is worth offering. **Where the client script has not delivered
+that decision yet, the platform shows its waiting ring over the cards and
+waits for it**, then decides. The wait is short and bounded by a fixed time
+set inside the platform, which a page cannot change. While it waits the
+cards are darkened and nothing on them can be pressed.
 
-That case nearly always means the platform added the client script itself,
-because the page carries no client script tag, and the script has not
-finished its first round by the time the visitor clicks. A page's own client
-script tag that is still finishing its first round at the click is waited
-for in the same way, because what the platform waits on is the missing
-answer and not who added the script. Putting the tag on the page yourself
-lets it start sooner, which makes the wait less likely.
+<!--
+For maintainers. The bound is the constant
+Config.THIRD_PARTY_COOKIE_DECISION_WAIT_MS in pmp/src/config.ts in the cloud
+repository. It is not configurable, on James Rosewell's instruction of
+15 September 2026, and its value is deliberately not given here, because
+it is a judgement that may change and nothing on a page can depend on it.
+-->
+
+The wait is for that decision and nothing else. The second card never waits
+for the 51Did, for the client script's refresh or for `IsGdpr`, which all
+carry on beside it.
+
+**It can only happen where your configuration uses third party cookies**,
+being `data-use-third-party-cookies` not set to `false` and
+`data-network-name` present. Where sharing is not configured there is no
+second card, so there is no decision to wait for, no ring and no wait.
+
+The decision is the answer the client script settles on, not the likely
+one it starts with. Its first response can carry only the likely status for
+the browser, and the measured answer follows once its snippet has tested the
+cookie, so a value can be present and still not be the decision. The
+decision arrives with the first response that settles it, even one in the
+middle of a round, so a round that is still going on to create the 51Did
+never holds the second card back.
+
+In practice the wait nearly always means the platform added the client
+script itself, because the page carries no client script tag, and the
+script has not measured the cookie by the time the visitor clicks. A page's
+own client script tag that has not measured it yet is waited for in the same
+way, because what the platform waits on is the missing decision and not who
+added the script. Putting the tag on the page yourself lets it start sooner,
+which makes the wait less likely.
 
 There is no wait wherever there is nothing to wait for.
 
-- The result is already known when the visitor answers.
-- The client script finished its round without the property, which is what
-  happens when your resource key does not carry `ThirdPartyCookiesEnabled`.
-  The result is then not known and never will be, so the card is offered at
-  once.
+- The decision has already arrived when the visitor answers, which is the
+  ordinary case.
+- Your resource key does not carry `ThirdPartyCookiesEnabled`, so no
+  decision is ever coming. The result is not known and the card is offered
+  at once.
+- The cloud has measured the cookie already, or has nothing to measure it
+  with, so there is no snippet left to run.
 - The client script can never answer, because it failed to load, ran and
   left no object behind, or the object name belongs to something else on
   the page. The card is offered at once.
 
-When the answer arrives during the wait the ring goes and the platform
-decides on it. When `data-timeout` passes first, the ring goes and the card
-is offered, as it is for any result that is not known. Reopening the dialog
-during the wait abandons it.
+When the decision arrives during the wait the ring goes and the platform
+decides on it. When the fixed time passes first, the ring goes and the
+platform decides from whatever it holds by then, the likely answer included,
+so a likely `'False'` still withholds the card and nothing at all offers it.
+Reopening the dialog during the wait abandons it.
 
 A write that the cloud refuses keeps the answer with this site, so the most
 an unknown result can cost a visitor is a question whose answer is then kept
