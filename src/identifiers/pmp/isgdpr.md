@@ -32,12 +32,15 @@ Two things have to be true for a page to have the value.
 2. The 51Degrees client script is on the page, because that is what brings
    the value into the browser.
 
-Read it from the page object once the client script's first round has
-finished.
+Read it from the page object with `onChange`, which is called each time the
+cloud's answers change, so a value that arrives in a later round reaches you
+as well.
 
 ```{js}
-fod.complete(function (data) {
-    console.log(data.derived.isgdpr); // true or false
+fod.onChange(function (data) {
+    if (data.derived) {
+        console.log(data.derived.isgdpr); // true or false
+    }
 });
 ```
 

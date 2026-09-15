@@ -170,15 +170,24 @@ still closes as it should.
 # What You Get Back
 
 The client script publishes the cloud's answers on the page object once it
-has them. Read them from your own code with the `complete` callback.
+has them. Read them from your own code with `onChange`, which is called
+each time those answers change.
 
 ```{js}
-fod.complete(function (data) {
+fod.onChange(function (data) {
     // The identifier, once an answer has been given and every
     // other value has been resolved.
-    console.log(data.fodid.idprobglobal);
+    if (data.fodid) {
+        console.log(data.fodid.idprobglobal);
+    }
 });
 ```
+
+Use `onChange` rather than `complete` for the identifier and for anything
+that arrives with it, because the identifier is created in a later round,
+on the request carrying the visitor's answer, and a `complete` callback
+registered after the first round has ended is called once, straight away,
+and never again.
 
 The 51Did section is present only when your resource key includes the 51Did
 properties. The part of the client script that gathers the visitor's answer

@@ -131,10 +131,17 @@ The 51Degrees client script already measures it and publishes it as
 it from there rather than probing on its own account.
 
 ```{js}
-fod.complete(function (data) {
-    console.log(data.device.thirdpartycookiesenabled);
+fod.onChange(function (data) {
+    if (data.device) {
+        console.log(data.device.thirdpartycookiesenabled);
+    }
 });
 ```
+
+`onChange` is called each time the cloud's answers change, so the tested
+result reaches you in whichever response carries it. A `complete` callback
+registered after the first round has ended is called once, straight away,
+and never again, so it can miss that result.
 
 The value is measured once the client script has run the snippet that tests
 it, and before that it reports the likely answer for the browser. Where your
@@ -168,7 +175,7 @@ Compare the text instead, and treat anything that is neither `'True'` nor
 `'False'` as not knowing rather than as a no.
 
 ```{js}
-fod.complete(function (data) {
+fod.onChange(function (data) {
     var said = data.device && data.device.thirdpartycookiesenabled;
     said = typeof said === 'string' ? said.trim().toLowerCase() : said;
     if (said === 'true') {

@@ -92,11 +92,12 @@ Data Protection Regulation applies, worked out by the cloud from the
 request's country. What it is and how to get it onto the page is on
 @ref Identifiers_PMP_IsGdpr.
 
-Read it from the client script's object once the first round has finished.
+Read it from the client script's object with `onChange`, which is called
+each time the cloud's answers change.
 
 ```{js}
-fod.complete(function (data) {
-    var applies = data.derived.isgdpr; // true, false, or absent
+fod.onChange(function (data) {
+    var applies = data.derived && data.derived.isgdpr; // true, false or absent
 });
 ```
 
