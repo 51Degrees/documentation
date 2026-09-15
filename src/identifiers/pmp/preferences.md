@@ -106,15 +106,15 @@ var answer = window.__51d_pmp && window.__51d_pmp.preference();
 // 'standard', 'personalized', 'non-marketing', or null when nobody has answered
 ```
 
-It answers from memory, straight away, with whatever the platform found when
-it started, this site's storage and the group's shared answer included. The
-object exists only once the bundle has loaded, so test for it.
+The getter answers from memory, straight away, with whatever the platform
+found when it started, this site's storage and the group's shared answer
+included. The object exists only once the bundle has loaded, so test for it.
 
 ## The Transparency and Consent Framework Surface
 
 The platform exposes a `window.__tcfapi` function, which is how advertising
 code on the page normally asks about consent, and it answers the standard
-`ping`, `addEventListener` and `removeEventListener` commands.
+`ping`, `getTCData`, `addEventListener` and `removeEventListener` commands.
 
 ```{js}
 __tcfapi('addEventListener', 2, function (tcData, success) {
