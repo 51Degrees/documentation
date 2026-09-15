@@ -67,6 +67,45 @@ it, and before that it reports the likely answer for the browser. Where your
 page carries no client script the platform adds one so that it has this
 answer, which is described on @ref Identifiers_PMP_Integration.
 
+## It Is a String, So Do Not Test It for Truth
+
+`device.thirdpartycookiesenabled` is a **string**, not a boolean. It carries
+`'True'` or `'False'`, and it can also carry `'Unknown'` or
+`'NotSupported'`, while the whole `device` section is absent when your
+resource key does not ask for the property. The property is declared a
+string in the device detection data, and the cloud lower cases the names of
+things in its JSON and never their values, so the capital letter is real.
+
+Every non-empty string is truthy in JavaScript, so this reads the wrong way
+round for a visitor whose browser blocks third party cookies.
+
+```{js}
+// Wrong. 'False' is a non-empty string, so this branch is taken.
+if (data.device.thirdpartycookiesenabled) { ... }
+```
+
+Compare the text instead, and treat anything that is neither `'True'` nor
+`'False'` as not knowing rather than as a no.
+
+```{js}
+fod.complete(function (data) {
+    var said = data.device && data.device.thirdpartycookiesenabled;
+    said = typeof said === 'string' ? said.trim().toLowerCase() : said;
+    if (said === 'true') {
+        // Third party cookies work.
+    } else if (said === 'false') {
+        // They do not.
+    } else {
+        // 'Unknown', 'NotSupported', or the property is not on the key.
+    }
+});
+```
+
+`derived.isgdpr` is the other way about. It is a real boolean, because the
+cloud works it out rather than reading it from the data file, so a plain
+truth test on that one is right. The two properties differ and it is worth
+checking which you are reading. See @ref Identifiers_PMP_IsGdpr.
+
 Browsers that block third party cookies, which includes Safari and Firefox
 with their default settings, simply never show the second card.
 

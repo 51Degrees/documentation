@@ -24,7 +24,7 @@ of them twice.
 | `data-brand-icon` | No | a gear symbol | The round icon on the bubble the dialog collapses to. |
 | `data-network-logo` | No | none | The group's logo, shown beside your own. |
 | `data-show-standard` | No | `false` | Set to `true` to offer Standard alongside Personalized and the alternative. |
-| `data-use-third-party-cookies` | No | `true` | Whether a visitor who chose Standard or Personalized may be offered the second card. Only the exact string `false` turns it off, so a typo leaves it on rather than quietly removing it. |
+| `data-use-third-party-cookies` | No | `true` | Whether a visitor who chose Standard or Personalized may be offered the second card. Only the exact string `false` turns it off, so a typo leaves it on rather than quietly removing it. The platform learns whether third party cookies work from the client script's `device.thirdpartycookiesenabled`, which is a string rather than a boolean, so read @ref Identifiers_PMP_Sharing before testing that value in code of your own. |
 | `data-timeout` | No | `1500` | Milliseconds allowed for the read of the group's shared answer when the page loads. Nothing else waits on it, and the two cards never wait on each other. A value that is not a positive whole number is warned about and ignored, and anything above 4500 is capped, because the probe cookie the check relies on lives five seconds. |
 
 A URL attribute that is neither a path nor an `http` or `https` address is

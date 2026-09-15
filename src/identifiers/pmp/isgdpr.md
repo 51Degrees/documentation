@@ -30,9 +30,16 @@ fod.complete(function (data) {
 ```
 
 `derived` is the section of the client script's response that holds
-properties the cloud worked out rather than looked up. The value is a
-boolean, and the whole section is absent when the key does not request the
-property.
+properties the cloud worked out rather than looked up. The value is a real
+boolean, `true` or `false`, so a plain truth test on it is right. The whole
+section is absent when the key does not request the property, so test that
+it is there before reading it.
+
+Do not carry that habit to the third party cookie result. The other value
+the platform reads from the client script,
+`device.thirdpartycookiesenabled`, is a **string** carrying `'True'` or
+`'False'`, so a plain truth test on that one is wrong. See
+@ref Identifiers_PMP_Sharing.
 
 # What the Platform Does With It
 
