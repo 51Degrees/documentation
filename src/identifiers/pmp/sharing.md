@@ -38,17 +38,53 @@ The second card is offered when all three of these hold.
    typo leaves it on rather than quietly removing it.
 2. The visitor answered Standard or Personalized on the first card. The
    alternative answer never leads to the second card.
-3. Third party cookies are known to work between the page and the cloud.
+3. The 51Degrees client script has not said that third party cookies are
+   blocked. A `'False'` withholds the card, and a `'True'` or a result that
+   is not known offers it. For the platform to have the result at all, your
+   resource key has to carry `ThirdPartyCookiesEnabled` and
+   `ThirdPartyCookiesEnabledJavaScript` beside it.
 
-**Nothing waits between the two cards.** The second card follows the first
-at once. The cards stack rather than replacing each other, so the answered
-first card collapses to its question and answer and stays on screen above
-the card being answered, and clicking it goes back.
+The cards stack rather than replacing each other, so the answered first card
+collapses to its question and answer and stays on screen above the card
+being answered, and clicking it goes back.
 
-Where the third party cookie result is not yet known when the visitor
-answers the first card, the second card is still offered. If the write then
-turns out to be impossible, the answer stays with this site, which is the
-same outcome as a refused write.
+## When the Second Card Waits
+
+The second card follows the first at once, except in one case, and the
+reason is that the platform needs the third party cookie result at the
+moment the visitor answers the first card. That result arrives through the
+client script's `complete` callback. **Where the client script has not
+called `complete` yet when the visitor answers, the platform shows its
+waiting ring over the cards and waits for it**, for no longer than
+`data-timeout` milliseconds, and then decides.
+
+That case nearly always means the platform added the client script itself,
+because the page carries no client script tag, and the script has not
+finished its first round by the time the visitor clicks. A page's own client
+script tag that is still finishing its first round at the click is waited
+for in the same way, because what the platform waits on is the missing
+answer and not who added the script. Putting the tag on the page yourself
+lets it start sooner, which makes the wait less likely.
+
+There is no wait wherever there is nothing to wait for.
+
+- The result is already known when the visitor answers.
+- The client script finished its round without the property, which is what
+  happens when your resource key does not carry `ThirdPartyCookiesEnabled`.
+  The result is then not known and never will be, so the card is offered at
+  once.
+- The client script can never answer, because it failed to load, ran and
+  left no object behind, or the object name belongs to something else on
+  the page. The card is offered at once.
+
+When the answer arrives during the wait the ring goes and the platform
+decides on it. When `data-timeout` passes first, the ring goes and the card
+is offered, as it is for any result that is not known. Reopening the dialog
+during the wait abandons it.
+
+A write that the cloud refuses keeps the answer with this site, so the most
+an unknown result can cost a visitor is a question whose answer is then kept
+in the other place.
 
 # How the Third Party Cookie Result Is Known
 
@@ -70,7 +106,8 @@ adding a second copy, which is described on
 @ref Identifiers_PMP_Integration.
 
 Browsers that block third party cookies, which includes Safari and Firefox
-with their default settings, simply never show the second card.
+with their default settings, answer `'False'` and never show the second
+card, provided your resource key carries the property.
 
 ## It Is a String, So Do Not Test It for Truth
 
