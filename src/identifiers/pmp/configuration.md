@@ -24,13 +24,35 @@ of them twice.
 | `data-brand-icon` | No | a gear symbol | The round icon on the bubble the dialog collapses to. |
 | `data-network-logo` | No | none | The group's logo, shown beside your own. |
 | `data-show-standard` | No | `false` | Set to `true` to offer Standard alongside Personalized and the alternative. |
-| `data-use-third-party-cookies` | No | `true` | Whether a visitor who chose Standard or Personalized may be offered the second card. Only the exact string `false` turns it off, so a typo leaves it on rather than quietly removing it. Turning it off, or leaving out `data-network-name`, means there is no second card and nothing ever waits between the cards. The platform learns whether third party cookies work from the client script's `device.thirdpartycookiesenabled`, which is a string rather than a boolean, so read @ref Identifiers_PMP_Sharing before testing that value in code of your own. |
-| `data-timeout` | No | `1500` | Milliseconds to wait for the cloud when the group's shared answer is read as the page loads and when a visitor's answer is written to it. It has nothing to do with the wait there can be between the two cards, which is short, fixed inside the platform and not something a page can set. See @ref Identifiers_PMP_Sharing. A value that is not a positive whole number is warned about and ignored, and anything above 4500 is capped, because a visitor whose site holds no answer is not shown the dialog until the shared read has answered or given up. |
+| `data-use-third-party-cookies` | No | `true` | Whether a visitor who chose Standard or Personalized may be offered the second card. Only the exact string `false` turns it off, so a typo leaves it on rather than quietly removing it. Where it is on and `data-network-name` is present, the second card is shown only where the client script confirms that third party cookies work, and where the client script is still testing the cookie when the first card is answered, the platform waits up to three seconds for that confirmation. Turning it off, or leaving out `data-network-name`, means there is no second card and nothing ever waits between the cards. The platform learns whether third party cookies work from the client script's `device.thirdpartycookiesenabled`, which is a string rather than a boolean, so read @ref Identifiers_PMP_Sharing before testing that value in code of your own. |
 
 A URL attribute that is neither a path nor an `http` or `https` address is
 refused and logged, so a `data:` or `vbscript:` URL never reaches the page.
 `data-alt-url` and `data-action-url` also accept `javascript:`, because
 running your own code inline is what they are for.
+
+# How Long the Platform Waits
+
+No attribute sets how long the platform waits. Both times are set once when
+the platform is built and are the same on every page.
+
+| What the platform waits for | For up to | When the time runs out |
+|---|---|---|
+| The cloud, when the group's shared answer is read at start up and when a visitor's answer is written to it | 1500 milliseconds | A read counts as no shared answer and the dialog is shown. A write counts as refused and the answer is kept with this site. |
+| The client script to confirm that third party cookies work, once the first card is answered, and only where sharing is configured and the cookie is still being tested | 3000 milliseconds (three seconds) | There is no second card and the answer stays with this site. See @ref Identifiers_PMP_Sharing. |
+
+A page that still sets `data-timeout` gets one warning in the console saying
+that the attribute is no longer read, and the attribute is ignored.
+
+<!--
+For maintainers. The two times are the build constants sharedStoreTimeoutMs
+and thirdPartyCookieWaitMs in pmp/build-constants.yaml in the cloud
+repository, compiled into every bundle as __SharedStoreTimeoutMs__ and
+__ThirdPartyCookieWaitMs__, with the reason for each value written beside
+it. The data-timeout attribute was removed on James Rosewell's decision of
+15 September 2026. Change this table, the sharing page and the load process
+diagram whenever either value changes.
+-->
 
 # The Two URL Attributes
 

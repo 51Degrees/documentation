@@ -37,9 +37,15 @@ and no stale copy to go wrong.
 
 | Third party cookies | The visitor's answer to the second card | Where the answer lives |
 |---|---|---|
-| Work | Use it across the group | The cloud's cookie only |
-| Work | Only this site | This site's `localStorage` only |
-| Do not work | Never asked | This site's `localStorage` only |
+| Confirmed to work | Use it across the group | The cloud's cookie only |
+| Confirmed to work | Only this site | This site's `localStorage` only |
+| Not confirmed | Never asked | This site's `localStorage` only |
+
+Not confirmed covers a browser that blocks third party cookies, a result that
+is not known, and a confirmation that did not arrive within the three seconds
+the platform waits, all set out on @ref Identifiers_PMP_Sharing. A write to the cloud that
+is refused, or not confirmed within 1500 milliseconds, also leaves the answer
+in this site's `localStorage`.
 
 The local key is `__51d_pmp_pref` and it holds a small JSON object, being
 the schema version, the answer and the time it was given in milliseconds.

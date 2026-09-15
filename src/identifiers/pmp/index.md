@@ -24,13 +24,14 @@ where nobody was asked produces no identifier at all.
    'Subscribe' or 'Remove ads'), and Standard when you turn Standard on.
    There is no close cross, so the only way past it is to answer it.
 2. **The second card.** When the first answer was Standard or Personalized,
-   and your settings allow it, a second card asks whether the answer should
-   apply to the other sites in the group you named. It follows the first
-   card at once, except where the platform does not yet know whether third
-   party cookies are available when the visitor answers. Then a waiting ring
-   shows while it waits for that one decision, for a short fixed time, and
-   it never waits for the 51Did. Where sharing is not configured there is no
-   second card and no wait. See @ref Identifiers_PMP_Sharing.
+   your settings allow sharing, and third party cookies are confirmed to work
+   in the visitor's browser, a second card asks whether the answer should
+   apply to the other sites in the group you named. Where the client script
+   is still testing the cookie when the visitor answers, a waiting ring shows
+   for up to three seconds, and if third party cookies are not confirmed in
+   that time there is no second card and the answer stays with this site.
+   The platform never waits for the 51Did. Where sharing is not configured
+   there is no second card and no wait. See @ref Identifiers_PMP_Sharing.
 3. **The bubble.** After answering, the dialog collapses to a small bubble
    in the corner. Clicking the bubble reopens the dialog so the visitor can
    change their answer whenever they like. A returning visitor whose answer
@@ -96,6 +97,7 @@ sequenceDiagram
     Bundle->>Bundle: Read this site's answer from local storage
     alt Nothing held for this site
         Bundle->>Cloud: GET /api/v4/pmp/pref, carrying the cloud's own cookie
+        Note over Bundle,Cloud: Waits up to 1500 milliseconds, and no reply by then counts as no answer
         Cloud-->>Bundle: The group's answer, or nothing
         Note over Browser,Bundle: An answer that comes back shows no dialog, only the bubble
     end
@@ -113,7 +115,7 @@ sequenceDiagram
     Script->>Cloud: First request, with the answer if there is one
     Cloud-->>Script: The snippets to run, and no 51Did without an answer
     Script->>Script: Run the snippets and keep their results
-    Script-->>Bundle: The third party cookie decision, from the first response that settles it
+    Script-->>Bundle: Whether third party cookies work, once the script has tested the cookie
 
     Bundle-->>Browser: First card
     Browser->>Bundle: Standard, Personalized or the alternative
@@ -123,19 +125,30 @@ sequenceDiagram
         Script->>Cloud: Request carrying the usage and every snippet result
         Cloud-->>Script: The 51Did, created after every other value
     and The second card, only where sharing is configured
-        alt The third party cookie decision has already arrived, the case shown above
+        alt Third party cookies already confirmed to work, the case shown above
             Bundle-->>Browser: Second card, at once
-        else Not known yet
-            Note over Bundle: Waits for that one decision and never for the 51Did
-            Bundle-->>Browser: Waiting ring, for a short fixed time
-            Script-->>Bundle: The third party cookie decision
-            Bundle-->>Browser: Second card
+        else Already known not to work, or never going to be tested
+            Bundle-->>Browser: No second card, and the answer stays with this site
+        else The script is still testing the cookie
+            Note over Bundle: Waits up to three seconds for that alone, never for the 51Did
+            Bundle-->>Browser: Waiting ring
+            alt Confirmed to work within three seconds
+                Script-->>Bundle: Third party cookies work
+                Bundle-->>Browser: Second card
+            else Not confirmed within three seconds
+                Bundle-->>Browser: No second card, and the answer stays with this site
+            end
         end
     end
 
     Browser->>Bundle: Use this answer across the group
     Bundle->>Cloud: POST /api/v4/pmp/pref
-    Cloud-->>Bundle: Stored, and the copy on this site is removed
+    alt The cloud confirms within 1500 milliseconds
+        Cloud-->>Bundle: Stored
+        Bundle->>Bundle: Remove the copy held on this site
+    else Refused, or no confirmation by then
+        Bundle->>Bundle: Keep the answer with this site
+    end
 
     Note over Page,Script: Either tag order works, because the bundle loads asynchronously
 ```
@@ -148,7 +161,9 @@ sequenceDiagram
 3. Finding none, and where you allow sharing, it asks the cloud for the
    group's answer. That request carries the cloud's own cookie, which is a
    third party cookie, so it works only in browsers that allow one. When an
-   answer comes back the visitor sees no dialog, only the bubble.
+   answer comes back the visitor sees no dialog, only the bubble. The
+   platform waits up to 1500 milliseconds for that reply, and a reply that
+   has not arrived by then counts as no answer, so the dialog is shown.
 4. Where the page carries no 51Degrees client script tag, the platform adds
    one from the same cloud that served it, using the resource key it already
    holds, and says so in the console. Where a tag is there it waits for it,
@@ -158,23 +173,29 @@ sequenceDiagram
 6. The client script reads whatever is available when it is built, registers
    for the platform's event, makes its first request, and runs the snippets
    the cloud asks for. On the common path there is no answer yet, so that
-   first request creates no 51Did. The platform learns the third party
-   cookie decision from the first of the script's responses that settles
-   it, which does not have to wait for the end of the round.
+   first request creates no 51Did. The platform learns whether third party
+   cookies work from the first of the script's responses that settles the
+   question, which does not have to wait for the end of the round.
 7. The visitor answers the first card. The platform announces the answer.
 8. The client script hears the announcement and refreshes itself. That
    request carries the usage and every snippet result, so the 51Did is
    created after every other value is known.
 9. At the same moment, and only where sharing is configured, the platform
-   decides about the second card. It needs one decision for that, being
-   whether third party cookies are available, and it never waits for the
-   refresh, the 51Did or `IsGdpr`. Where that decision has already arrived,
-   which is the case above, the second card follows the first at once.
-   Where it has not, the platform shows its waiting ring while it waits for
-   that decision alone, for a short fixed time, and then decides.
+   decides about the second card. The second card is shown only where third
+   party cookies are confirmed to work, and the platform never waits for the
+   refresh, the 51Did or `IsGdpr`. Where the client script has already
+   tested the cookie, which is the case above, the platform decides at once,
+   showing the second card where the cookie worked, and closing the dialog
+   with the answer kept by this site where it did not. Where the test is
+   still running, the platform shows its
+   waiting ring for up to three seconds. If third party cookies are
+   confirmed in that time the second card follows, and if they are not
+   there is no second card and the answer stays with this site.
 10. If the visitor agrees to share, the platform writes the answer to the
     cloud and removes the copy held on this site, so there is one answer and
-    never two.
+    never two. The platform waits up to 1500 milliseconds for the cloud to
+    confirm the write, and where the cloud refuses it or has not confirmed
+    it by then, the answer stays with this site.
 
 Either tag order works. The bundle is loaded asynchronously, so putting the
 platform's tag above or below the client script's tag changes nothing about

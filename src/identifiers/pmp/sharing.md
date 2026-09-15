@@ -38,11 +38,15 @@ The second card is offered when all three of these hold.
    typo leaves it on rather than quietly removing it.
 2. The visitor answered Standard or Personalized on the first card. The
    alternative answer never leads to the second card.
-3. The 51Degrees client script has not said that third party cookies are
-   blocked. A `'False'` withholds the card, and a `'True'` or a result that
-   is not known offers it. For the platform to have the result at all, your
-   resource key has to carry `ThirdPartyCookiesEnabled` and
-   `ThirdPartyCookiesEnabledJavaScript` beside it.
+3. Third party cookies are confirmed to work in the visitor's browser. The
+   51Degrees client script confirms them by testing the cookie, and only a
+   tested `'True'` counts. A `'False'`, a result that is not known, the
+   likely status the script starts with and no result at all each mean no
+   second card. For the platform to have a tested result, your resource key
+   has to carry `ThirdPartyCookiesEnabled` and
+   `ThirdPartyCookiesEnabledJavaScript` beside it, so a key missing either
+   one never shows the second card, and the console names the missing
+   property.
 
 The cards stack rather than replacing each other, so the answered first card
 collapses to its question and answer and stays on screen above the card
@@ -50,70 +54,75 @@ being answered, and clicking it goes back.
 
 ## When the Second Card Waits
 
-The second card follows the first at once, except in one case. When the
-visitor answers the first card the platform needs one decision, being
-whether third party cookies are available, because that decides whether the
-second card is worth offering. **Where the client script has not delivered
-that decision yet, the platform shows its waiting ring over the cards and
-waits for it**, then decides. The wait is short and bounded by a fixed time
-set inside the platform, which a page cannot change. While it waits the
-cards are darkened and nothing on them can be pressed.
+**When your configuration allows third party cookies and the browser may
+support them, the platform waits up to three seconds (3000 milliseconds)
+for the 51Degrees client script to confirm that third party cookies work.
+If they are not confirmed in that time, the second card is not shown and
+the answer stays with this site.**
+
+The three seconds start when the visitor answers the first card. The waiting
+ring covers the cards for as long as the wait lasts, and while it does the
+cards are darkened and nothing on them can be pressed. The time is set once
+when the platform is built, it is the same on every page, and no attribute
+changes it.
 
 <!--
-For maintainers. The bound is the constant
-Config.THIRD_PARTY_COOKIE_DECISION_WAIT_MS in pmp/src/config.ts in the cloud
-repository. It is not configurable, on James Rosewell's instruction of
-15 September 2026, and its value is deliberately not given here, because
-it is a judgement that may change and nothing on a page can depend on it.
+For maintainers. The three seconds are the build constant
+thirdPartyCookieWaitMs in pmp/build-constants.yaml in the cloud repository,
+compiled into every bundle as __ThirdPartyCookieWaitMs__, with the reason for
+the value written beside it. It is not configurable, on James Rosewell's
+decisions of 15 September 2026. Change this page, the configuration page and
+the load process diagram whenever that value changes.
 -->
 
-The wait is for that decision and nothing else. The second card never waits
-for the 51Did, for the client script's refresh or for `IsGdpr`, which all
-carry on beside it.
+The wait is for that confirmation and nothing else. The second card never
+waits for the 51Did, for the client script's refresh or for `IsGdpr`, which
+all carry on beside it.
 
 **It can only happen where your configuration uses third party cookies**,
 being `data-use-third-party-cookies` not set to `false` and
 `data-network-name` present. Where sharing is not configured there is no
-second card, so there is no decision to wait for, no ring and no wait.
+second card, so there is nothing to confirm, no ring and no wait.
 
-The decision is the answer the client script settles on, not the likely
-one it starts with. Its first response can carry only the likely status for
-the browser, and the measured answer follows once its snippet has tested the
-cookie, so a value can be present and still not be the decision. The
-decision arrives with the first response that settles it, even one in the
-middle of a round, so a round that is still going on to create the 51Did
-never holds the second card back.
+Only a tested result confirms anything. The client script's first response
+can carry only the likely status for the browser, beside the snippet that
+tests the cookie, and the tested result follows once that snippet has run,
+so a likely `'True'` is not a confirmation. The tested result arrives with
+the first response that carries it, even one in the middle of a round, so a
+round that is still going on to create the 51Did never holds the second card
+back.
 
 In practice the wait nearly always means the platform added the client
 script itself, because the page carries no client script tag, and the
-script has not measured the cookie by the time the visitor clicks. A page's
-own client script tag that has not measured it yet is waited for in the same
-way, because what the platform waits on is the missing decision and not who
+script has not tested the cookie by the time the visitor clicks. A page's
+own client script tag that has not tested it yet is waited for in the same
+way, because what the platform waits on is the missing result and not who
 added the script. Putting the tag on the page yourself lets it start sooner,
 which makes the wait less likely.
 
-There is no wait wherever there is nothing to wait for.
+Nothing waits where the question is already settled when the visitor answers
+the first card, and the platform decides at once.
 
-- The decision has already arrived when the visitor answers, which is the
-  ordinary case.
-- Your resource key does not carry `ThirdPartyCookiesEnabled`, so no
-  decision is ever coming. The result is not known and the card is offered
-  at once.
-- The cloud has measured the cookie already, or has nothing to measure it
-  with, so there is no snippet left to run.
-- The client script can never answer, because it failed to load, ran and
-  left no object behind, or the object name belongs to something else on
-  the page. The card is offered at once.
+- **The client script has already tested the cookie**, which is the ordinary
+  case. A tested `'True'` shows the second card straight away, and a tested
+  `'False'` means no second card.
+- **The device data says the browser cannot support third party cookies.**
+  There is no second card.
+- **Your resource key does not carry `ThirdPartyCookiesEnabled` or
+  `ThirdPartyCookiesEnabledJavaScript`**, so the cookie is never tested.
+  There is no second card, and the console names the missing property.
+- **The snippet that tests the cookie is held back until something asks for
+  it, or the client script's round ended without running it**, so no tested
+  result is coming. There is no second card.
+- **The client script can never answer**, because it failed to load, ran and
+  left no object behind, or the object name belongs to something else on the
+  page. There is no second card.
 
-When the decision arrives during the wait the ring goes and the platform
-decides on it. When the fixed time passes first, the ring goes and the
-platform decides from whatever it holds by then, the likely answer included,
-so a likely `'False'` still withholds the card and nothing at all offers it.
-Reopening the dialog during the wait abandons it.
-
-A write that the cloud refuses keeps the answer with this site, so the most
-an unknown result can cost a visitor is a question whose answer is then kept
-in the other place.
+When third party cookies are confirmed during the wait, the ring goes and the
+second card follows. When anything else settles the question during the
+wait, or the three seconds pass first, the ring goes, the dialog closes to
+the bubble and the answer stays with this site. Reopening the dialog during
+the wait abandons it.
 
 # How the Third Party Cookie Result Is Known
 
@@ -135,8 +144,8 @@ adding a second copy, which is described on
 @ref Identifiers_PMP_Integration.
 
 Browsers that block third party cookies, which includes Safari and Firefox
-with their default settings, answer `'False'` and never show the second
-card, provided your resource key carries the property.
+with their default settings, never show the second card, because the test
+never confirms that third party cookies work there.
 
 ## It Is a String, So Do Not Test It for Truth
 
@@ -229,6 +238,13 @@ competitor.
 A write or a delete that is refused answers 401 and says why. A read that is
 refused answers 200 with `{ "preference": null }`, so a caller who may not
 ask does not learn that there is something to ask for.
+
+The platform waits up to 1500 milliseconds for the cloud on each read and
+each write, and that time covers reading the reply as well as receiving it.
+A read with no reply by then is given up and counts as no shared answer, so
+the dialog is shown. A write with no confirmation by then counts as refused,
+and the answer is kept with this site instead. The time is set once when the
+platform is built and no attribute changes it.
 
 The endpoint is not metered. The key says who is asking rather than being
 billed for.

@@ -116,7 +116,9 @@ and create two identifiers, which is worse than the missing value.
 Where the platform can work out neither a cloud origin nor a resource key,
 which happens when a build is opened from disk rather than served, it writes
 a warning saying the third party cookie result and `IsGdpr` are unavailable
-and carries on. The dialog still works and the visitor is still asked.
+and carries on. The dialog still works and the visitor is still asked,
+although with nothing to confirm that third party cookies work there is no
+second card.
 
 # The Object Name
 
