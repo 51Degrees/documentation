@@ -98,5 +98,7 @@ at all, so the two paths never meet. See @ref Identifiers_PMP_CmpWiring.
   @ref Identifiers_PMP_Preferences
 - Look up any property, including this one:
   <https://51degrees.com/developers/property-dictionary>
-- Build or check a resource key: <https://configure.51degrees.com/>
+- Build or check a resource key from the ready made list:
+  <https://configure.51degrees.com/YldpCKbW>, and
+  @ref Configurator_SharedList "what the Configurator adds when it opens"
 - The Model Terms for Marketing, version 2: <https://m4ow.uk/mtm/2.txt>

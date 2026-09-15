@@ -106,4 +106,6 @@ data-action-url="javascript:pmpDone('{preference}')"
 - The identifier the answer leads to: @ref Identifiers_51Did
 - The parameters of the client script's own URL:
   <https://cloud.51degrees.com/api-docs/index.html>
-- Build or check a resource key: <https://configure.51degrees.com/>
+- Build or check a resource key from the ready made list:
+  <https://configure.51degrees.com/YldpCKbW>, and
+  @ref Configurator_SharedList "what the Configurator adds when it opens"

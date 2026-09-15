@@ -206,4 +206,6 @@ is included only for a key that carries them too, so a page whose key has no
   <https://github.com/51Degrees/javascript-templates>
 - The cloud endpoints, including every parameter of the client script's URL:
   <https://cloud.51degrees.com/api-docs/index.html>
-- Build or check a resource key: <https://configure.51degrees.com/>
+- Build or check a resource key from the ready made list:
+  <https://configure.51degrees.com/YldpCKbW>, and
+  @ref Configurator_SharedList "what the Configurator adds when it opens"

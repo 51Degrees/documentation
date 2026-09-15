@@ -89,6 +89,8 @@ reading anything into how few identifiers a site produces.
 - The Model Terms for Marketing explainer: <https://m4ow.uk/mtm>
 - The client script that carries the answer to the cloud:
   <https://github.com/51Degrees/javascript-templates>
-- Build or check a resource key: <https://configure.51degrees.com/>
+- Build or check a resource key from the ready made list:
+  <https://configure.51degrees.com/YldpCKbW>, and
+  @ref Configurator_SharedList "what the Configurator adds when it opens"
 - Ask us about the licence key the marketing usages need:
   <https://51degrees.com/contact-us>

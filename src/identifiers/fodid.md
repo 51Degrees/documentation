@@ -464,5 +464,5 @@ metered.
 - The OWID envelope the identifier is wrapped in: <https://github.com/SWAN-community/owid>
 - The client script that gathers the answer: <https://github.com/51Degrees/javascript-templates>
 - The .NET reader: <https://www.nuget.org/packages/FiftyOne.Did>
-- Build or check a Resource Key: <https://configure.51degrees.com/>
+- Build or check a Resource Key from the ready made list: <https://configure.51degrees.com/YldpCKbW>, and @ref Configurator_SharedList "what the Configurator adds when it opens"
 - Ask us about the licence key the marketing usages need: <https://51degrees.com/contact-us>

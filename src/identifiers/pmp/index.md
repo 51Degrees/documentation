@@ -234,7 +234,9 @@ built and listens for one arriving later.
   mean in contract: <https://m4ow.uk/mtm/2.txt>
 - The client script and the browser data it gathers:
   <https://github.com/51Degrees/javascript-templates>
-- Build or check a resource key: <https://configure.51degrees.com/>
+- Build or check a resource key from the ready made list:
+  <https://configure.51degrees.com/YldpCKbW>, and
+  @ref Configurator_SharedList "what the Configurator adds when it opens"
 - What each plan includes: <https://51degrees.com/pricing>
 - Ask us about the licence key the marketing usages need:
   <https://51degrees.com/contact-us>

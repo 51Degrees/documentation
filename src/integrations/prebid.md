@@ -26,7 +26,7 @@ Use this when you want the full enrichment set (device, 51Did, IP Intelligence) 
 
 **Setup:** [Prebid.js RTD Module Documentation](https://docs.prebid.org/dev-docs/modules/51DegreesRtdProvider.html)
 
-**Resource Key properties.** Generate the key with the [Cloud Configurator](https://configure.51degrees.com), and read @ref Configurator_SharedList "Starting from a shared list" first if you are starting from a published list of properties. To populate every field the RTD module writes, a key needs:
+**Resource Key properties.** Generate the key from the [ready made list](https://configure.51degrees.com/YldpCKbW), which opens the Configurator with these properties already chosen, and see @ref Configurator_SharedList "Starting from a shared list" for what the Configurator adds as the list opens. To populate every field the RTD module writes, a key needs:
 
 - **Device Detection** (`device.*`): `DeviceId`, `DeviceType`, `HardwareVendor`, `HardwareName`, `HardwareNamePrefix`, `HardwareNameVersion`, `HardwareModel`, `PlatformName`, `PlatformVersion`, `ScreenPixelsHeight`, `ScreenPixelsWidth`, `ScreenPixelsPhysicalHeight`, `ScreenPixelsPhysicalWidth`, `ScreenInchesHeight`, `ScreenInchesWidth`, `PixelRatio`, `ThirdPartyCookiesEnabled`.
 - **IP Intelligence** (`device.ip`, `device.ipv6`, `device.geo.*`): `Ip`, `IpV6`, `Latitude`, `Longitude`, `CountryCode3`, `Iso31662Lvl4`, `ZipCode`, `TimeZoneOffset`, `AccuracyRadiusMin`, `LocationConfidence`. `Ip` and `IpV6` are what the module writes to `device.ip` and `device.ipv6`, and the rest feed `device.geo.*` under the confidence rule described below.
