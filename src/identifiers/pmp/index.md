@@ -214,6 +214,8 @@ built and listens for one arriving later.
 
 @subpage Identifiers_PMP_CmpWiring
 
+@subpage Identifiers_PMP_CmpComparison
+
 @subpage Identifiers_PMP_Configuration
 
 @subpage Identifiers_PMP_Privacy
