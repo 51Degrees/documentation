@@ -140,6 +140,8 @@ is theirs and differs between vendors.
   @ref Identifiers_51Did
 - The platform for a site that does not run a consent management platform:
   @ref Identifiers_PMP
+- How the platform compares with a consent management platform, feature by
+  feature: @ref Identifiers_PMP_CmpComparison
 - Header bidding with the identifier: @ref Integrations_Prebid
 - How the client script gathers page values:
   @ref PipelineApi_Features_ClientSideEvidence

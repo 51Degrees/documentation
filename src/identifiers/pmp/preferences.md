@@ -175,6 +175,8 @@ of them is what the Model Terms say.
 - Carrying one answer across your sites: @ref Identifiers_PMP_Sharing
 - Running a consent management platform instead:
   @ref Identifiers_PMP_CmpWiring
+- How the platform compares with a consent management platform, feature by
+  feature: @ref Identifiers_PMP_CmpComparison
 - What to tell your visitors in your privacy notice:
   @ref Identifiers_PMP_Privacy
 - The Model Terms for Marketing, version 2: <https://m4ow.uk/mtm/2.txt>

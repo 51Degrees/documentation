@@ -45,7 +45,13 @@ where nobody was asked produces no identifier at all.
 | Standard | Frequency capping and measurement only | `standard` |
 | The alternative button | The visitor takes what you offer instead of marketing | `non-marketing` |
 
-All three are answers, and each one creates a 51Did carrying that usage.
+All three are answers, and each one creates a 51Did carrying that usage
+where the key in use is entitled to it. Standard and Personalized need the
+licence key the marketing usages require, and where the key does not carry
+it the dialog still asks the question, an answer of Standard or Personalized
+creates no identifier at all, and only the alternative answer creates one.
+See @ref Identifiers_51Did.
+
 The alternative button is not a refusal to answer and it is not a failure
 path. It records that the visitor declined marketing, which is worth
 knowing, because another site in the group can then offer its own
@@ -213,6 +219,8 @@ built and listens for one arriving later.
 @subpage Identifiers_PMP_IsGdpr
 
 @subpage Identifiers_PMP_CmpWiring
+
+@subpage Identifiers_PMP_CmpComparison
 
 @subpage Identifiers_PMP_Configuration
 
