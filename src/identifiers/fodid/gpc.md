@@ -10,7 +10,11 @@ ignores it.
 The usage of a 51Did comes from one of exactly two places, being an
 `id.usage` your integration states on the request or a Transparency and
 Consent Framework string the cloud reads a usage out of. Global Privacy
-Control is neither, so it sets no usage and changes none.
+Control is neither, so it sets no usage and changes none. Appendix 1 of the
+Model Terms for Marketing maps that framework's purposes onto the marketing
+usages and maps no other signal, so this one says nothing the usage values
+could be built from, the same position a Global Privacy Platform string is
+in on @ref Identifiers_51Did_Gpp.
 
 Three things follow.
 
@@ -39,8 +43,8 @@ Two ways to act on it, both entirely in your hands.
 
 - **Do not ask for the identifier.** A request that states no usage
   produces no 51Did, so leaving the usage off is all that is needed. On a
-  browser page the visitor is never asked the question, so nothing is
-  answered and nothing is created.
+  browser page a visitor who is not asked gives no answer, so the client
+  script sends no usage and nothing is created.
 - **State the usage you want.** Send `id.usage=non-marketing` and the
   identifier carries that usage, which covers analytics, fraud prevention
   and security only. A `non-marketing` identifier is provided under

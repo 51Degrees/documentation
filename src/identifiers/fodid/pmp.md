@@ -40,10 +40,13 @@ You write no code for this.
    produced, so the identifier is created after everything else about the
    page is known.
 
-The client script asks the platform first and a consent management platform
-second, and the cloud applies the same order when the request arrives. So a
-page carrying both sends the platform's answer, and the string that a
-consent management platform would have supplied is never examined. See
+The platform also serves a Transparency and Consent Framework surface of
+its own, so the client script can see both an answer and a string on the
+same page. The script asks the platform first and the framework second, and
+the cloud applies the same order when the request arrives, so the answer is
+what travels and the string beside it is never examined. That is why an
+identifier made on a page running this platform records a stated usage. The
+other order, where a string is all there is, is
 @ref Identifiers_51Did_Tcf.
 
 # The Identifier Says the Usage Was Stated
@@ -65,11 +68,11 @@ and licensing* on @ref Identifiers_51Did. `non-marketing` needs only the
 `fodid.*` properties on the key.
 
 **A key without that licence still shows the dialog and still asks the
-question.** What changes is the answer, because Personalized and Standard
-then produce no identifier, with the `fodid.*` properties coming back with a
-reason naming the missing product, while the alternative button produces a
-`non-marketing` identifier as usual. A key in that state is worth knowing
-about before you read anything into how few identifiers a site produces.
+question.** What changes is which answer produces an identifier.
+Personalized and Standard then produce none, with the `fodid.*` properties
+coming back with a reason naming the missing product, while the alternative
+button produces a `non-marketing` identifier as usual. Check the key before
+reading anything into how few identifiers a site produces.
 
 # Find Out More
 
