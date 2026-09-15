@@ -77,9 +77,10 @@ Two consequences are worth stating plainly.
   outcome.
 - **A string that grants too little produces no identifier either.** The
   cloud tries `personalized` first, then `standard`, and where neither set
-  of purposes is fully granted it adds no usage and the 51Did properties
-  come back with a reason rather than a value. The purpose sets are listed
-  under 'Setting the usage policy' on @ref Identifiers_51Did.
+  of purposes is fully granted it adds no usage, so the response carries no
+  `fodid` section at all, exactly as it does for a page whose platform has
+  not answered. The purpose sets, and what the cloud does with a string,
+  are on @ref Identifiers_51Did_Tcf.
 
 The identifier created this way records that the usage was derived from a
 consent string rather than stated directly, which is what the signal source
@@ -133,6 +134,8 @@ is theirs and differs between vendors.
 
 - What `IsGdpr` is and how to get it on the page:
   @ref Identifiers_PMP_IsGdpr
+- What the cloud does with a consent string, purpose by purpose:
+  @ref Identifiers_51Did_Tcf
 - The identifier, the usage values and how a consent string maps to one:
   @ref Identifiers_51Did
 - The platform for a site that does not run a consent management platform:

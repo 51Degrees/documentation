@@ -101,7 +101,7 @@ lists, is deliberately not required, because a special purpose carries no
 consent or objection signal in a TCString and a check on it could never
 fail.
 
-`personalized` is tried first, then `standard`. If neither set is fully satisfied the cloud adds no `id.usage`, the `fodid.*` properties return a no-value reason, and no identifier is issued for advertising use the consent does not permit. Purposes 2, 7, 8, 9, 10 and 11 may be satisfied by a legitimate interest
+`personalized` is tried first, then `standard`. If neither set is fully satisfied the cloud adds no `id.usage`, so nothing asks for an identifier and the response carries no `fodid` section at all, with no property, no reason and no warning. No identifier is issued for advertising use the consent does not permit. Purposes 2, 7, 8, 9, 10 and 11 may be satisfied by a legitimate interest
 bit as well as a consent bit. Within the two sets above that leaves 1, 3,
 4, 5 and 6 needing an explicit consent bit, because IAB Policy forbids
 claiming those under legitimate interest. Purposes 9, 10 and 12 are no
@@ -188,7 +188,7 @@ Three things follow.
 
 `non-marketing` 51Dids are provided under legitimate interest and must not leave the customer environment.
 
-If `id.usage` is omitted, or set to `standard` / `personalized` while the Resource Key lacks the Special license key, the `fodid.*` properties are returned with a no-value reason rather than throwing. Any value other than the three listed above is rejected as an invalid usage.
+If `id.usage` is omitted and no consent string supplies one, the response carries no `fodid` section at all, because a request that never declared a usage never asked for a 51Did. If `id.usage` is set to `standard` or `personalized` while the Resource Key lacks the Special license key, the `fodid.*` properties are returned with a no-value reason naming the missing product rather than throwing. Any value other than the three listed above is rejected as an invalid usage, and there the properties carry a reason and the response carries a warning, because the caller asked for a 51Did and did not get one.
 
 ## Example
 
