@@ -67,6 +67,9 @@ it, and before that it reports the likely answer for the browser. Where your
 page carries no client script the platform adds one so that it has this
 answer, which is described on @ref Identifiers_PMP_Integration.
 
+Browsers that block third party cookies, which includes Safari and Firefox
+with their default settings, simply never show the second card.
+
 ## It Is a String, So Do Not Test It for Truth
 
 `device.thirdpartycookiesenabled` is a **string**, not a boolean. It carries
@@ -105,9 +108,6 @@ fod.complete(function (data) {
 cloud works it out rather than reading it from the data file, so a plain
 truth test on that one is right. The two properties differ and it is worth
 checking which you are reading. See @ref Identifiers_PMP_IsGdpr.
-
-Browsers that block third party cookies, which includes Safari and Firefox
-with their default settings, simply never show the second card.
 
 # Where the Answer Is Held
 
