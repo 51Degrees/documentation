@@ -163,8 +163,8 @@ which replaces the first and warns in the console. Where the action URL
 names the cloud script and the object already exists, the platform skips it
 for that reason.
 
-Leaving `data-action-url` out means nothing is fired and nothing is written
-to the console. The answer is still stored, still announced, and the dialog
+Leaving `data-action-url` out writes a warning to the console and changes
+nothing else. The answer is still stored, still announced, and the dialog
 still closes as it should.
 
 # What You Get Back
