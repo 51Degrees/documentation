@@ -185,6 +185,15 @@ Three things follow.
 
 If `id.usage` is omitted, or set to `standard` / `personalized` while the Resource Key lacks the Special license key, the `fodid.*` properties are returned with a no-value reason rather than throwing. Any value other than the three listed above is rejected as an invalid usage.
 
+**So a key without the Special license key creates only `non-marketing`
+51Dids.** The Special license key is the licence key carrying the 51Did
+product, and where no licence key carrying that product reaches the cloud,
+on the Resource Key or beside it on the request, `id.usage=non-marketing`
+creates a 51Did as usual and `standard` or `personalized` create none at
+all. The @ref Identifiers_PMP asks the visitor the question whatever the
+key is entitled to, so on such a key only the alternative answer, which
+sends `non-marketing`, creates an identifier.
+
 ## Example
 
 ```
