@@ -158,6 +158,58 @@ from DoxyGen substitutions; eliminating the proxy's remaining canonical
 / hreflang / title rewrites needs a feature in the custom 51Degrees
 DoxyGen build, not a template change.
 
+## Why mermaid is served from this site and loaded only where it is needed
+
+A fenced mermaid block in a page is written out by Doxygen 1.17.0 as
+`<pre class="mermaid">` inside `<div class="mermaidgraph">`, and Doxygen
+renders nothing itself, so without a library on the page the block shows
+as a code listing. The first page to carry one is
+`src/identifiers/pmp/index.md`, whose load process diagram is a mermaid
+sequence, and the missing rendering was
+[#239](https://github.com/51Degrees/documentation/issues/239).
+
+**The library cannot come from a public content delivery network.**
+51degrees.com sends a Content-Security-Policy whose `script-src` is
+`'self'`, `https://*.archiebot.com`, `https://*.livewebinar.com`,
+`https://cloud.51degrees.com/`, `'unsafe-eval'` and `'unsafe-inline'`,
+read from the response headers of
+`https://51degrees.com/documentation/index.html` on 15 September 2026. A
+script from jsdelivr, cdnjs or unpkg is refused by the browser under that
+policy, so it would draw the diagram on the gh-pages preview, which sets
+no policy, and fail silently on the published site.
+
+So `mermaid.min.js` is held in this repository, copied into the output by
+`HTML_EXTRA_FILES`, and loaded from the page's own origin, which `'self'`
+allows. The file is the mermaid 11.17.2 bundle from
+`https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js`, which
+is one self-contained file with no dynamic imports, so nothing else has to
+be copied beside it. Mermaid is published under the MIT licence and the
+bundle carries its own licence notices. It is 3.5 MB on disk and about
+960 KB on the wire once compressed, which is why the loader in
+`header.html` looks for a diagram first and fetches nothing on a page
+without one. The build's minifier skips any file already named `*.min.js`,
+so the bundle passes through untouched.
+
+The loader waits for `DOMContentLoaded`, because the header runs before
+the body exists and there is nothing to look for yet, and then calls
+`mermaid.run()` rather than relying on `startOnLoad`, which fires on an
+event that has already passed by the time the script arrives. A diagram
+that fails to draw is left as the text of the block, which is the
+diagram's own source and is readable, so there is nothing to fall back to
+and nothing to report.
+
+Only this repository's Doxyfile copies the bundle. An API repository whose
+page carried a mermaid block would ask for a file its own output does not
+hold, and the block would stay a code listing, which is what happens
+today, so add `mermaid.min.js` to that repository's `HTML_EXTRA_FILES`
+when one of its pages needs a diagram.
+
+Checked on 15 September 2026 by building the site with Doxygen 1.17.0, the
+version CI downloads, and loading the generated page in Chromium. The
+diagram drew as one SVG of 1024 by 1401 pixels, a page with no diagram
+fetched the bundle zero times, and the diagram still drew when the
+response carried the Content-Security-Policy above.
+
 ## Why these notes are not inline comments
 
 A prior version had this rationale as `<!-- ... -->` blocks inside

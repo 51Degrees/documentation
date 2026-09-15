@@ -24,6 +24,33 @@ $extrastylesheet
 $treeview
 $search
 $mathjax
+<!-- Mermaid diagrams. See HEADER-NOTES.md for why the library is served
+     from this site and loaded only where a page carries a diagram. -->
+<script type="text/javascript">
+(function () {
+  var loadMermaid = function () {
+    if (!document.querySelector('pre.mermaid, div.mermaid')) { return; }
+    var script = document.createElement('script');
+    script.src = '$relpath^mermaid.min.js';
+    script.onload = function () {
+      try {
+        window.mermaid.initialize({ startOnLoad: false });
+        window.mermaid.run();
+      } catch (e) {
+        // A diagram that fails to draw stays as the text of the block,
+        // which is the diagram's own source and is readable, so there is
+        // nothing to fall back to and nothing to report.
+      }
+    };
+    document.head.appendChild(script);
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadMermaid);
+  } else {
+    loadMermaid();
+  }
+})();
+</script>
 </head>
 <body class="l-docs-index p-doxygen">
 <div class="l-index__content">

@@ -354,12 +354,6 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "PerformanceProfiles=[PerformanceProfiles](@ref DeviceDetection_Features_PerformanceOptions)" \
                          "Pipeline=[Pipeline](@ref PipelineApi_Concepts_Pipeline)" \
                          "pipeline=[Pipeline](@ref PipelineApi_Concepts_Pipeline)" \
-                         "pmp=[Preference Management Platform](@ref Identifiers_PMP)" \
-                         "Pmp=[Preference Management Platform](@ref Identifiers_PMP)" \
-                         "pmpsharing=[sharing an answer across your sites](@ref Identifiers_PMP_Sharing)" \
-                         "pmpprivacy=[privacy notice wording](@ref Identifiers_PMP_Privacy)" \
-                         "cmpwiring=[using a consent management platform](@ref Identifiers_PMP_CmpWiring)" \
-                         "fiftyonedid=[51Did](@ref Identifiers_51Did)" \
                          "pipelines=[Pipelines](@ref PipelineApi_Concepts_Pipeline)" \
                          "pipelinebuilder=[pipeline builder](@ref PipelineApi_Concepts_Configuration_Builders_PipelineBuilder)" \
                          "pipelinebuilders=[pipeline builders](@ref PipelineApi_Concepts_Configuration_Builders_PipelineBuilder)" \
@@ -1343,6 +1337,7 @@ HTML_EXTRA_FILES       = examplegrabber.js \
                          images/icon-arrow-solid-right-mute.svg \
                          images/icon-arrow-solid-right-orange.svg \
                          images/icon-search.svg \
+                         mermaid.min.js \
                          search51.js
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
