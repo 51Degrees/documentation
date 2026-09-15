@@ -4,7 +4,7 @@ A visitor who has answered on one of your websites should not have to answer
 again on the next one. The Preference Management Platform can offer to carry
 one answer across a group of sites you name, so the question is asked once.
 
-This is a feature of this platform. A site running a third party consent
+This is a feature of the PMP. A site running a third party consent
 management platform neither reads nor writes the shared answer and never
 sees the second card. Nothing stops another vendor implementing the same
 exchange, because the endpoint and the rules are described here.
@@ -42,7 +42,7 @@ The second card is offered when all three of these hold.
    51Degrees client script confirms them by testing the cookie, and only a
    tested `'True'` counts. A `'False'`, a result that is not known, the
    likely status the script starts with and no result at all each mean no
-   second card. For the platform to have a tested result, your resource key
+   second card. For the PMP to have a tested result, your resource key
    has to carry `ThirdPartyCookiesEnabled` and
    `ThirdPartyCookiesEnabledJavaScript` beside it, so a key missing either
    one never shows the second card, and the console names the missing
@@ -55,7 +55,7 @@ being answered, and clicking it goes back.
 ## When the Second Card Waits
 
 **When your configuration allows third party cookies and the browser may
-support them, the platform waits up to three seconds (3000 milliseconds)
+support them, the PMP waits up to three seconds (3000 milliseconds)
 for the 51Degrees client script to confirm that third party cookies work.
 If they are not confirmed in that time, the second card is not shown and
 the answer stays with this site.**
@@ -63,13 +63,13 @@ the answer stays with this site.**
 The three seconds start when the visitor answers the first card. The waiting
 ring covers the cards for as long as the wait lasts, and while it does the
 cards are darkened and nothing on them can be pressed. The time is set once
-when the platform is built, it is the same on every page, and no attribute
+when the PMP is built, it is the same on every page, and no attribute
 changes it.
 
 <!--
-For maintainers. The three seconds are a build constant of the platform,
+For maintainers. The three seconds are a build constant of the PMP,
 compiled into every bundle as __ThirdPartyCookieWaitMs__, with the reason for
-the value written beside it in the platform source. It is not configurable,
+the value written beside it in the PMP source. It is not configurable,
 on James Rosewell's decisions of 15 September 2026. Change this page, the
 configuration page and the load process diagram whenever that value
 changes.
@@ -92,16 +92,16 @@ the first response that carries it, even one in the middle of a round, so a
 round that is still going on to create the 51Did never holds the second card
 back.
 
-In practice the wait nearly always means the platform added the client
+In practice the wait nearly always means the PMP added the client
 script itself, because the page carries no client script tag, and the
 script has not tested the cookie by the time the visitor clicks. A page's
 own client script tag that has not tested it yet is waited for in the same
-way, because what the platform waits on is the missing result and not who
+way, because what the PMP waits on is the missing result and not who
 added the script. Putting the tag on the page yourself lets it start sooner,
 which makes the wait less likely.
 
 Nothing waits where the question is already settled when the visitor answers
-the first card, and the platform decides at once.
+the first card, and the PMP decides at once.
 
 - **The client script has already tested the cookie**, which is the ordinary
   case. A tested `'True'` shows the second card straight away, and a tested
@@ -127,7 +127,7 @@ the wait abandons it.
 # How the Third Party Cookie Result Is Known
 
 The 51Degrees client script already measures it and publishes it as
-`device.thirdpartycookiesenabled` on the page object, so the platform reads
+`device.thirdpartycookiesenabled` on the page object, so the PMP reads
 it from there rather than probing on its own account.
 
 ```{js}
@@ -145,7 +145,7 @@ and never again, so it can miss that result.
 
 The value is measured once the client script has run the snippet that tests
 it, and before that it reports the likely answer for the browser. Where your
-page carries no client script tag the platform adds one so that it has this
+page carries no client script tag the PMP adds one so that it has this
 answer, and where a tag is there it waits for that tag to run rather than
 adding a second copy, which is described on
 @ref Identifiers_PMP_Integration.
@@ -195,10 +195,10 @@ checking which you are reading. See @ref Identifiers_PMP_IsGdpr.
 
 # Where the Answer Is Held
 
-The platform reads this site's own storage first and asks the cloud only
+The PMP reads this site's own storage first and asks the cloud only
 where this site holds nothing, so a visitor who kept their answer to this
 site is never read from the group's store. When the visitor says the answer
-should apply across the group, the platform asks the cloud to hold it and,
+should apply across the group, the PMP asks the cloud to hold it and,
 once the cloud confirms, removes the copy on this site, so from then on the
 shared value is the one that answers on every site in the group. A later
 change of answer goes to the shared store while sharing is on, and is kept
@@ -236,7 +236,7 @@ licence key, so your visitors' answers are yours. Two points follow.
   page.** Register your domains on the key if you care, and you should.
 
 A page on your domain cannot read or write a cookie on the cloud's domain,
-so the platform goes through the cloud instead.
+so the PMP goes through the cloud instead.
 
 # The Shared Store Endpoint
 
@@ -265,19 +265,19 @@ A write or a delete that is refused answers 401 and says why. A read that is
 refused answers 200 with `{ "preference": null }`, so a caller who may not
 ask does not learn that there is something to ask for.
 
-The platform waits up to 1500 milliseconds for the cloud on each read and
+The PMP waits up to 1500 milliseconds for the cloud on each read and
 each write, and that time covers reading the reply as well as receiving it.
 A read with no reply by then is given up and counts as no shared answer, so
 the dialog is shown. A write with no confirmation by then counts as refused,
 and the answer is kept with this site instead. The time is set once when the
-platform is built and no attribute changes it.
+PMP is built and no attribute changes it.
 
 The endpoint is not metered. The key says who is asking rather than being
 billed for.
 
 ## Letting a Visitor Start Again
 
-The platform does not call `DELETE` and shows no button for it. Whether to
+The PMP does not call `DELETE` and shows no button for it. Whether to
 offer one, and what it looks like, is yours to decide.
 
 ```{js}
@@ -301,7 +301,7 @@ held, so calling it twice is not an error.
 - The three answers and where each is kept:
   @ref Identifiers_PMP_Preferences
 - Putting the two tags on the page: @ref Identifiers_PMP_Integration
-- Every attribute the platform reads: @ref Identifiers_PMP_Configuration
+- Every attribute the PMP reads: @ref Identifiers_PMP_Configuration
 - The identifier the answer leads to: @ref Identifiers_51Did
 - The Model Terms for Marketing, version 2: <https://m4ow.uk/mtm/2.txt>
 - The cloud endpoints: <https://cloud.51degrees.com/api-docs/index.html>

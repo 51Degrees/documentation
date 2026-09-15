@@ -51,20 +51,20 @@ section is absent when the key does not request the property, so test that
 it is there before reading it.
 
 Do not carry that habit to the third party cookie result. The other value
-the platform reads from the client script,
+the PMP reads from the client script,
 `device.thirdpartycookiesenabled`, is a **string** carrying `'True'` or
 `'False'`, so a plain truth test on that one is wrong. See
 @ref Identifiers_PMP_Sharing.
 
-# What the Platform Does With It
+# What the PMP Does With It
 
-At start up the platform reads `derived.isgdpr` from the client script's
+At start up the PMP reads `derived.isgdpr` from the client script's
 object and sets `gdprApplies` on its own Framework surface from it. Where
-your page carries no client script tag, the platform adds one, and where a
+your page carries no client script tag, the PMP adds one, and where a
 tag is there it waits for that tag to run, which is on
 @ref Identifiers_PMP_Integration.
 
-Where the value cannot be had, the platform writes a warning to the console
+Where the value cannot be had, the PMP writes a warning to the console
 naming the reason, and leaves `gdprApplies` reporting `true`. Nothing else
 changes. The reason is one of three.
 
@@ -76,7 +76,7 @@ changes. The reason is one of three.
 # The Dialog Is Shown Either Way
 
 **A `false` value does not stop the dialog and does not stop a 51Did being
-created.** The question the platform asks is not a request for consent under
+created.** The question the PMP asks is not a request for consent under
 the General Data Protection Regulation. It is the Model Terms for Marketing
 usage, which is a contractual question, and the answer is what a recipient
 of a 51Did is allowed to act on wherever the visitor is. `gdprApplies` is
