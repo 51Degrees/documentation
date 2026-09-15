@@ -54,7 +54,7 @@ script whatever the order of the tags, and both sides are built for that.
   the visitor just now, from this site's storage, or from the answer shared
   across your group.
 
-# When the Page Has No Client Script
+# When the Page Has No Client Script Tag
 
 The platform adds one. This is the normal, expected behaviour and it is a
 convenience, so that a publisher who wants the dialog and nothing else still
