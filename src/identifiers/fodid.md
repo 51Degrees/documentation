@@ -71,14 +71,15 @@ The cloud accepts two ways to decide a request's `id.usage` value. The *Direct* 
 
 ### Direct - your integration owns the mapping
 
-Your integration decides the value and tells the cloud what to do by passing an explicit `id.usage` (`non-marketing`, `standard` or `personalized`) as a query parameter or HTTP request header. You own the mapping from whatever preference or consent surface you use to one of these three values, and the cloud just acts on what you supply. This is the path @ref Identifiers_PMP takes: the widget captures the user's choice and fires the request with `id.usage` already set.
+Your integration decides the value and tells the cloud what to do by passing an explicit `id.usage` (`non-marketing`, `standard` or `personalized`) as a query parameter or HTTP request header. You own the mapping from whatever preference or consent surface you use to one of these three values, and the cloud just acts on what you supply. This is the path @ref Identifiers_PMP takes, where the visitor's answer reaches the cloud as a stated `id.usage`, and on a browser page it is the client script that sends it rather than your own code. See *How the answer reaches the cloud from a browser page* below.
 
-### Derived from consent - the cloud maps a TCF or GPP string for you
+### Derived from consent - the cloud maps a TCF string for you
 
-Instead of deciding the value yourself, pass the raw IAB consent string and let the cloud derive `id.usage` from the consented purposes. Two evidence parameters are accepted:
+Instead of deciding the value yourself, pass the raw IAB consent string and let the cloud derive `id.usage` from the consented purposes. One evidence parameter is accepted:
 
-- `tcstring` - an IAB TCF v2 TCString, from the PMP widget or any TCF-aware CMP.
-- `gpp` - an IAB GPP string. When a GPP string carries a decodable EU TCF v2 section it takes precedence over `tcstring`; a GPP string with no TCF section (for example a US-only string) is ignored and the cloud falls back to `tcstring`.
+- `tcstring` - an IAB TCF v2 TCString, from the PMP or any TCF-aware CMP.
+
+An IAB GPP string is not read, because the Model Terms for Marketing at <https://m4ow.uk/mtm/2.txt> do not map the Global Privacy Platform onto the usage values. A request whose only signal is a GPP string therefore produces no 51Did, whichever sections that string carries, and a TCF string sent beside one is read as usual. This is not a special case, it is the same position as a TCF string that grants too little for either usage, where the signal is real and simply does not say what the usage values say.
 
 The cloud parses the string and checks the consented [IAB TCF v2 purposes](https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/) against the definitions below, adding the matching `id.usage`:
 
@@ -89,7 +90,68 @@ The cloud parses the string and checks the consented [IAB TCF v2 purposes](https
 
 `personalized` is tried first, then `standard`. If neither set is fully satisfied the cloud adds no `id.usage`, the `fodid.*` properties return a no-value reason, and no identifier is issued for advertising use the consent does not permit. Purposes 2, 7, 8, 9, 10 and 11 may be satisfied by a legitimate-interest bit as well as a consent bit; the remaining purposes (1, 3, 4, 5, 6, 12) require an explicit consent bit, because IAB Policy forbids claiming them under legitimate interest.
 
-**Direct intent always wins.** If `id.usage` is present on the request (query or header) the cloud uses it and ignores any `tcstring` or `gpp`; derivation runs only when no explicit value was supplied. Malformed consent strings are ignored rather than rejected.
+**A stated usage is read first.** Where `id.usage` is present on the request, as a query parameter or as a header, the cloud uses it and never examines a consent string sent beside it. Derivation runs only when no usage was stated. A malformed consent string is ignored rather than rejected, and the identifier records which of the two routes the usage came by, which is the signal source flag described under *Payload layout*.
+
+## How the answer reaches the cloud from a browser page
+
+On a page carrying the 51Degrees client script, the script gathers the visitor's answer itself and sends it. **You write no code for this**, and you no longer reload the script with an answer in its URL.
+
+The block that does this is rendered into your script only when your Resource Key includes the `fodid.*` properties, so a key without them gets the script exactly as it was.
+
+### The two sources, in order
+
+1. **The 51Degrees Preference Management Platform**, if it is on the page. The script reads the answer in force through the platform's getter, listens for the platform's window event, and falls back to the platform's own stored answer. All three answers count, `non-marketing` included, and each is sent as a stated `id.usage`. See @ref Identifiers_PMP.
+2. **A Transparency and Consent Framework consent management platform**, through `window.__tcfapi`. The script registers a listener at construction and takes the string from a callback reporting `tcloaded` or `useractioncomplete`, sending it as `tcstring`. See @ref Identifiers_PMP_CmpWiring.
+
+The first source that has an answer wins and the rest are ignored, and the cloud applies the same order when the request arrives. A Global Privacy Platform string is never read by either side, because the Model Terms for Marketing at <https://m4ow.uk/mtm/2.txt> do not map it.
+
+The script never maps a consent string to a usage itself. That happens in the cloud, in one place, so the two can never drift apart.
+
+### The identifier is created last
+
+The common case is the late answer, where the visitor answers after the script has already loaded.
+
+1. The first request carries whatever was available when the script was built. On the common path that is no answer, so no 51Did is created and the response lists the snippets to run.
+2. The snippets run in the browser, and their results are kept alongside a record of what the request carried.
+3. The visitor answers. The script wakes up, sees an answer it did not have before, and makes one more request carrying the usage **and every snippet result**.
+4. The cloud creates the 51Did on that request, against a device it has finished resolving rather than against a header only guess.
+
+### `refresh()`
+
+`refresh()` is a method on the page object, beside `complete` and `onChange`, that sends the current inputs again.
+
+```{js}
+fod.refresh();
+```
+
+You rarely need it. The script calls it itself when a preference platform delivers an answer, which is the case it exists for. Call it yourself only when something your own page controls has changed what the next request should carry, for example an email address you supply for the Hashed Email identifier.
+
+What it does and does not do is worth knowing.
+
+- It does **not** run the snippets again. They read the device rather than the answer, so the stored results are sent as they are, which is exactly what makes the new request the one carrying everything.
+- It does nothing while a round is already in progress. The answer is carried by that round's own next request instead, and a request is made afterwards only where one is still needed.
+- It does nothing when nothing has changed since the last request.
+- It stops at the maximum number of exchanges the cloud allows for one page view, which is ten. At that point the page view is finished, because the cloud stops listing snippets at the same number, and a further call writes this line to the console and does nothing else. There is no way to raise it from the page.
+
+```
+51Degrees: the maximum of 10 iterations for this page view has been reached, refresh() does nothing.
+```
+
+### A Change of Answer
+
+A visitor who answers again produces a new request, a fresh 51Did carrying the new usage, and a call to any function registered with `onChange`.
+
+Two identifiers issued in one page view are never identical byte for byte, even for identical inputs, because the signature carries a fresh random value each time. The page object holds whichever response arrived last, so read the identifier after the refresh you made has completed.
+
+### The Record of What Was Sent
+
+The script keeps the inputs of its last request in session storage on your own origin, as a plain string, under the object's name followed by `_inputs`, which is `fod_inputs` unless you renamed the object. Its job is to make sure a stored answer is never reused for a different request. A different usage, consent string, salt, Resource Key or set of page values is a different request and produces a fresh one.
+
+Three things follow.
+
+- It is deliberately not hashed. A hash would be read as a privacy measure and it is not one. Session storage on your origin is reachable by you and by 51Degrees, being the joint controllers of it, and by nobody else.
+- Where your page supplies `id.email`, that value is part of the record. Say so in your privacy notice, which @ref Identifiers_PMP_Privacy covers.
+- Two 51Degrees integrations on one origin must use different object names, or each clears the other's record on every page view.
 
 ## Usage policies and licensing
 
@@ -140,11 +202,13 @@ Open the example value in the [51Did inspector](https://51degrees.com/developers
 
 The payload header is shared by every identifier type; bits 6-7 of the flags byte select the type and the length of the value that follows.
 
-| Offset | Length | Field                                                          |
-|--------|--------|----------------------------------------------------------------|
-| 0      | 1      | Flags: bits 0-2 usage tier, bits 6-7 identifier type           |
-| 1      | 4      | LicenseId (uint32, little-endian)                              |
-| 5      | 16/32  | Value: GUID (Random) or SHA-256 (Probabilistic, Hashed Email)  |
+| Offset | Length | Field                                                                                              |
+|--------|--------|----------------------------------------------------------------------------------------------------|
+| 0      | 1      | Flags: bits 0-2 usage tier, bit 3 signal source, bits 4-5 payload version, bits 6-7 identifier type |
+| 1      | 4      | LicenseId (uint32, little-endian)                                                                  |
+| 5      | 16/32  | Value: GUID (Random) or SHA-256 (Probabilistic, Hashed Email)                                      |
+
+**Bit 3 is the signal source.** It is set when the cloud derived the usage from a consent string, and clear when the caller stated the usage directly with `id.usage`. A 51Did created from an answer given to the @ref Identifiers_PMP therefore has the bit clear, and one created from a consent management platform's string has it set. It records where the answer came from and nothing about who the visitor is.
 
 | Bits 6-7 | Type          | Payload length |
 |----------|---------------|----------------|
@@ -233,5 +297,19 @@ To fetch only the keys created since you last pulled, add an ISO 8601 UTC timest
 
 ## Use cases
 
-- **Marketing** - PMP captures the user's preference and feeds it as `id.usage`; the 51Did is consumed by Prebid / RTB enrichment. See @ref Identifiers_PMP and @ref Integrations_Prebid.
+- **Marketing** - the PMP captures the visitor's answer, the client script sends it as `id.usage`, and the 51Did is consumed by Prebid and RTB enrichment. See @ref Identifiers_PMP and @ref Integrations_Prebid.
 - **Non-marketing** - the integrator sets `id.usage=non-marketing` server-side for fraud, bot or suspicious-activity detection (for example, the suspicious-activity module in the 51Degrees WordPress plugin). The identifier never leaves the customer environment.
+
+## Find Out More
+
+- Asking the visitor the question: @ref Identifiers_PMP
+- Running a consent management platform instead: @ref Identifiers_PMP_CmpWiring
+- What to tell your visitors: @ref Identifiers_PMP_Privacy
+- Passing the identifier into header bidding: @ref Integrations_Prebid
+- The Model Terms for Marketing, version 2, which bind every recipient: <https://m4ow.uk/mtm/2.txt>
+- The byte layout, written up in full: <https://github.com/51Degrees/specifications/tree/main/did-specification>
+- The OWID envelope the identifier is wrapped in: <https://github.com/SWAN-community/owid>
+- The client script that gathers the answer: <https://github.com/51Degrees/javascript-templates>
+- The .NET reader: <https://www.nuget.org/packages/FiftyOne.Did>
+- Build or check a Resource Key: <https://configure.51degrees.com/>
+- Ask us about the licence key the marketing usages need: <https://51degrees.com/contact-us>
