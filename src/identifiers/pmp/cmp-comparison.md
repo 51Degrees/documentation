@@ -52,13 +52,40 @@ page does not repeat it.
 | | A consent management platform under the Framework Policies | The Preference Management Platform |
 |---|---|---|
 | Who sets the policy | IAB Europe, through the Transparency and Consent Framework Policies. | The Model Terms for Marketing, version 2. The platform follows the framework's technical schema and not its Policies. |
-| Registration with IAB Europe | Required. IAB Europe's page for consent management platforms says that "CMPs must register to participate in the TCF", and a registered platform appears on the CMP list with a CMP ID of its own. | None. The platform is not registered and has no CMP ID of its own. On each page load it picks a registered id at random from the IAB Europe CMP list, which the build reads, writes that id into the TC string and reports the same id through `__tcfapi`. |
-| The question asked | The framework's purposes, special features and vendors, presented from the Global Vendor List, with consent and legitimate interest handled separately. | One question, in the visitor's own language, with up to three answers, being Personalized, Standard where you turn it on, and the alternative you configure. The purposes behind the two marketing answers are fixed by Appendix 1 of the Model Terms and the visitor does not pick among them. |
-| Refusal | A TC string that grants nothing is still a TC string, and the surface hands it out. | There is no close cross and no reject button. The alternative button records `non-marketing`, which is an answer and not a refusal. No TC string is built for it, and the surface answers `getTCData` and `addEventListener` with `success` false until the visitor chooses Standard or Personalized. |
-| Storage | The CMP API specification names no storage for the web. For apps it names `IABTCF_TCString` and `IABTCF_gdprApplies` in `NSUserDefaults` or `SharedPreferences`. | The answer, one of three words, in this site's `localStorage` under `__51d_pmp_pref`, or in the cloud's own cookie when the visitor agrees to share it across your group. The TC string is built in memory from that answer on every page load and is never written to a cookie or to storage. |
+| Registration with IAB Europe | Required. IAB Europe's page for consent management platforms says that "CMPs must register to participate in the TCF", and a registered platform appears on the CMP list with a CMP ID of its own. | None. The platform is not registered and has no CMP ID of its own. It uses an ID chosen at random each day from IAB Europe's list of registered consent management platforms, writes that ID into the TC string and reports the same ID through `__tcfapi`. *The CMP ID* below gives the reason. |
+| The question asked | Transparency and choices about the vendors the publisher has chosen to work with and the purposes each vendor wants to use, as IAB Europe's page for consent management platforms describes it. The Framework Policies say the choice on a purpose is to consent or to object, depending on the legal basis for the processing, and the CMP API specification says the Global Vendor List sets what must be disclosed to the visitor. | One question, in the visitor's own language, with up to three answers, being Personalized, Standard where you turn it on, and the alternative you configure. The purposes behind the two marketing answers are fixed by Appendix 1 of the Model Terms and the visitor does not pick among them. |
+| Refusal | IAB Europe says the framework lets a user grant or withhold consent and object to processing. The CMP API specification has the platform capture those choices in a TC string and answer the scripts calling it with that string whenever the user has confirmed their choices. | There is no close cross and no reject button. The alternative button records `non-marketing`, which is an answer and not a refusal. No TC string is built for it, and the surface answers `getTCData` and `addEventListener` with `success` false until the visitor chooses Standard or Personalized. |
+| Storage | Left to the platform. The TC string and vendor list formats specification, which the CMP API specification points to, says the storage used for a TC string is up to the consent management platform, cookie or not, and IAB Europe's page for consent management platforms says the same. In apps the CMP API specification names `IABTCF_TCString` and `IABTCF_gdprApplies`, among other keys, in `NSUserDefaults` or `SharedPreferences`. | The answer, one of three words, in this site's `localStorage` under `__51d_pmp_pref`, or in the cloud's own cookie when the visitor agrees to share it across your group. The TC string is built in memory from that answer on every page load and is never written to a cookie or to storage. |
 | The identifier created | None of its own. On a page running a consent management platform the 51Degrees client script sends the TC string to the cloud, which derives the usage from the purposes granted, and the 51Did records that with the signal source bit set. | Every answer, `non-marketing` included, reaches the cloud as a stated `id.usage`, sent by the 51Degrees client script, and the 51Did records that the usage was stated directly, so the signal source bit is clear. |
-| The legal basis of the answer | Consent obtained, or objections registered, under the General Data Protection Regulation and the ePrivacy Directive, which is what the framework exists to signal. | The Model Terms usage, which is a contract between the parties handling the identifier and not a consent under the Regulation. The dialog is shown whether or not the Regulation applies to the visit, and `gdprApplies` only changes what the surface reports. |
+| The legal basis of the answer | Consent or legitimate interests, which the Framework Policies name as the two lawful grounds under Article 6 of the General Data Protection Regulation that the framework supports. The CMP API specification has the platform obtain consent or register objections, and gives the framework's objective as helping everyone in the advertising chain comply with that Regulation and the ePrivacy Directive. | The Model Terms usage, which is a contract between the parties handling the identifier and not a consent under the Regulation. The dialog is shown whether or not the Regulation applies to the visit, and `gdprApplies` only changes what the surface reports. |
 | What a vendor on the page receives | The TC string and the `TCData` object through `__tcfapi`, carrying that vendor's own consent and legitimate interest signals as the user set them. | The same surface and the same string format. The purpose consents come from the visitor's answer, the legitimate interest bits are set for purposes 2, 7, 8, 9, 10 and 11, and every vendor signal, special feature and publisher field is copied from the string you supply in `data-tcf-vendor` exactly as you encoded it. The platform decides nothing per vendor. |
+
+# The CMP ID
+
+The platform is not registered with IAB Europe, so it has no CMP ID of its
+own. It uses an ID chosen at random each day from IAB Europe's list of
+registered consent management platforms, writes that ID into the TC string,
+and reports the same ID through `__tcfapi`.
+
+The reason is that vendors, and the tags they put on your page, check the
+CMP ID in a TC string against that list. The TC string and vendor list
+formats specification says, in its
+[Global CMP List section](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20Consent%20string%20and%20vendor%20list%20formats%20v2.md#global-cmp-list-specification),
+that the list is how a vendor decides whether the CMP ID it finds in a
+string is valid, so a string that follows the technical specification but
+carries an ID that is not on the list is rejected. An ID taken from the
+list prevents that.
+
+51Degrees would support a change by IAB Europe requiring consent management
+platforms to sign the TC string cryptographically, with the signer
+identified by a decentralised domain name tied to the operator, being a
+domain the operator controls rather than a number handed out from one
+central list. A receiver could then tell who made a string, instead of
+trusting an ID that anyone can copy. Every 51Did is already signed in that
+way. Each one is an OWID, a signed envelope naming the domain of the
+organisation that created it, and a receiver checks the signature against
+the public key that domain publishes. See @ref Identifiers_51Did and
+<https://github.com/SWAN-community/owid>.
 
 # Framework Features and How the Platform Implements Them
 
@@ -76,7 +103,7 @@ page does not repeat it.
 | Any other command | Refused with `success` false. |
 | Events | `tcloaded` when the string is ready, and again when `gdprApplies` changes. `useractioncomplete` on each answer. `cmpuishown` when the dialog is reopened while a string exists, so not on the first showing and not after the alternative answer. |
 | `gdprApplies` | Reported `true` until `IsGdpr` on the client script's object says otherwise, and a consumer already told `tcloaded` is told again with the corrected value. The dialog is shown either way. See @ref Identifiers_PMP_IsGdpr. |
-| CMP ID and CMP version | No id of its own. A registered id picked at random from the IAB Europe CMP list on each page load, written into the string and reported by the surface. `cmpVersion` is reported as 1 and the string's own version field is whatever `data-tcf-vendor` carries. |
+| CMP ID and CMP version | No ID of its own. An ID chosen at random each day from IAB Europe's list of registered consent management platforms, written into the string and reported by the surface, for the reason under *The CMP ID* above. `cmpVersion` is reported as 1 and the string's own version field is whatever `data-tcf-vendor` carries. |
 | Policy version and vendor list version | The `tcfPolicyVersion` and `vendorListVersion` read from the Global Vendor List when the bundle was built, reported by `ping` and `getTCData`. The string's own version fields are whatever `data-tcf-vendor` carries. |
 | The Global Vendor List | Not fetched at run time and not shown to the visitor. The build reads the list for the two version numbers and nothing else. |
 | Vendors | Not chosen by the platform. Vendor consents, vendor legitimate interests and any disclosed vendors segment are copied from `data-tcf-vendor` unchanged. You generate that string with the framework's own tools to match the vendors you have contracted. |
