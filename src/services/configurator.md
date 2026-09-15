@@ -37,6 +37,12 @@ Follow these three steps by visiting the configurator at [configure.51degrees.co
 
 Make a note of that Resource Key and then continue following the @introduction.
 
+# Starting from a shared list {#Configurator_SharedList}
+
+A link of the form `https://configure.51degrees.com/SHARED_LIST_ID` opens Step 1 with a set of properties already chosen, so you can start from a published selection instead of building one row by row. The link chooses properties and does not give you a key, so you still walk through Steps 2 and 3 to get one, and you can tick further properties or clear chosen ones before you do.
+
+The Configurator adds every chosen property's dependencies as the list opens, so the page can show more selected rows than the list named. `ip.LocationConfidence` is one example, because it depends on the location JavaScript collector, `location.JavaScript`, which the Configurator shows as **JavaScript (by lat/lon)** under the **Location** vendor, and the collector arrives selected alongside it. That collector puts a snippet in your JavaScript bundle that asks the browser for the visitor's latitude and longitude, which makes the browser prompt the visitor for their location, so read the selection before you generate. Clearing a property that others depended on leaves those others selected, so a list you trim is otherwise unharmed.
+
 # Displaying details for an existing Resource Key
 
 If you have a Resource Key and need to establish which properties it has access to, you can construct a URL https://configure.51degrees.com/YOUR_RESOURCE_KEY. This will show Step 1 of the Configurator with the properties for this specific key already selected.
