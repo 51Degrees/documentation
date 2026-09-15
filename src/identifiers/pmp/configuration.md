@@ -1,16 +1,22 @@
 @page Identifiers_PMP_Configuration Configuration Attributes
 
-Every setting is a `data-` attribute on the one `<script>` tag you write,
-the resource key included. The tag's URL names the loader and nothing else,
-so each setting is written in one place and read from one place. The loader
-copies your attributes onto the bundle it pulls in, so you never write any
-of them twice.
+Your resource key is the file name in the tag's URL,
+`/api/v4/pmp/YOUR-RESOURCE-KEY.js`, and it is read from there and from
+nowhere else. It is not an attribute and there is no `data-resource-key`.
+
+Every other setting is a `data-` attribute on the one `<script>` tag you
+write, so each setting is written in one place and read from one place. The
+loader copies your attributes onto the bundle it pulls in, so you never
+write any of them twice.
+
+Your key must be registered for the domain the page is served from. The
+request for the bundle is checked against the domains the key names, so a
+page on a domain the key does not cover is refused and no dialog appears.
 
 # The Attributes
 
 | Attribute | Required | Default | What it does |
 |---|---|---|---|
-| `data-resource-key` | Yes | none | The resource key the cloud knows you by. It must be registered for the domain the page is served from, or the request for the bundle is refused and no dialog appears. |
 | `data-tcf-vendor` | Yes | none | Your own Transparency and Consent Framework vendor string. The platform sets the purpose bits and the time fields from the visitor's answer and copies everything else through unchanged. A multi part string such as `core.disclosedvendors` is accepted and the trailing parts are preserved. |
 | `data-brand-name` | Yes | none | Your brand, shown in the dialog. |
 | `data-brand-terms-url` | Yes | none | Your privacy or terms page, linked from the dialog. |
@@ -84,8 +90,7 @@ data-action-url="javascript:pmpDone('{preference}')"
 # A Complete Tag
 
 ```{html}
-<script src="https://cloud.51degrees.com/api/v4/pmp"
-    data-resource-key="YOUR-RESOURCE-KEY"
+<script src="https://cloud.51degrees.com/api/v4/pmp/YOUR-RESOURCE-KEY.js"
     data-tcf-vendor="[YOUR TCF VENDOR STRING]"
     data-brand-name="Your Brand"
     data-brand-logo="https://yoursite.com/logo.svg"

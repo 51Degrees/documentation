@@ -96,7 +96,7 @@ sequenceDiagram
 
     Browser->>Page: Load the page
     Page->>Loader: Run the loader tag
-    Loader->>Cloud: GET /api/v4/pmp/[language]
+    Loader->>Cloud: GET /api/v4/pmp/[resource key]/[language]
     Cloud-->>Bundle: The bundle for this visitor's language
 
     Note over Bundle: init() starts here

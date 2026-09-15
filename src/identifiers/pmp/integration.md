@@ -13,9 +13,9 @@ is one where the General Data Protection Regulation applies.
 # The Two Tags
 
 ```{html}
-<!-- The Preference Management Platform. Every setting is an attribute. -->
-<script src="https://cloud.51degrees.com/api/v4/pmp"
-    data-resource-key="YOUR-RESOURCE-KEY"
+<!-- The Preference Management Platform. The resource key is the file
+     name and every other setting is an attribute. -->
+<script src="https://cloud.51degrees.com/api/v4/pmp/YOUR-RESOURCE-KEY.js"
     data-tcf-vendor="[YOUR TCF VENDOR STRING]"
     data-brand-name="Your Brand"
     data-brand-terms-url="https://yoursite.com/privacy"
@@ -29,10 +29,17 @@ is one where the General Data Protection Regulation applies.
 </script>
 ```
 
-The platform's own URL names the loader and carries nothing else. Every
-setting, the resource key included, is a `data-` attribute on the tag, so
-each setting is written once and read from one place. The full list is on
+The resource key is the file name in the PMP's own URL, which is the shape
+every other keyed request takes, and it is read from there and from nowhere
+else. Every other setting is a `data-` attribute on the tag, so each setting
+is written once and read from one place. The full list is on
 @ref Identifiers_PMP_Configuration.
+
+Up to 4.4.37 the key was the `data-resource-key` attribute and the URL was
+`/api/v4/pmp` with nothing after it. Neither is served now. Two places to
+write a key meant a page could carry one the cloud never saw, and the
+refusal that followed was invisible to the page, so a tag in the old shape
+is answered 404 on its first request instead.
 
 Your resource key must be registered for the domain the page is served
 from. The request for the platform's bundle is checked against the domains
@@ -131,8 +138,7 @@ optional `data-object-name` attribute. Leave the attribute out and `fod` is
 used, which is what almost every page wants.
 
 ```{html}
-<script src="https://cloud.51degrees.com/api/v4/pmp"
-    data-resource-key="YOUR-RESOURCE-KEY"
+<script src="https://cloud.51degrees.com/api/v4/pmp/YOUR-RESOURCE-KEY.js"
     data-object-name="fiftyone"
     ...>
 </script>
