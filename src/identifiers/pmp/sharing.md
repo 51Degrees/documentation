@@ -56,7 +56,8 @@ moment the visitor answers the first card. That result arrives through the
 client script's `complete` callback. **Where the client script has not
 called `complete` yet when the visitor answers, the platform shows its
 waiting ring over the cards and waits for it**, for no longer than
-`data-timeout` milliseconds, and then decides.
+`data-timeout` milliseconds, and then decides. While it waits the cards are
+darkened and nothing on them can be pressed.
 
 That case nearly always means the platform added the client script itself,
 because the page carries no client script tag, and the script has not
