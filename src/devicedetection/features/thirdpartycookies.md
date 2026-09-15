@@ -45,19 +45,20 @@ The detection cookie uses specific attributes required for cross-site delivery i
 
 # Properties
 
-The following properties are available after detection. On the client side, these properties can be retrieved in the callback passed to `fod.complete`:
+The following properties are available after detection. On the client side, these properties can be retrieved in the callback passed to `fod.onChange`, which is called each time the cloud's answers change, so the tested result reaches you in whichever response carries it:
 
 ```javascript
-fod.complete(function(data) {
-  if (data.device.thirdpartycookiesenabled) {
-    console.log("Third-party cookies enabled: " + data.device.thirdpartycookiesenabled);
+fod.onChange(function(data) {
+  var said = data.device && data.device.thirdpartycookiesenabled;
+  if (typeof said === "string") {
+    console.log("Third-party cookies enabled: " + said);
   }
 });
 ```
 
 ## ThirdPartyCookiesEnabled
 
-A boolean value indicating whether third-party cookies are supported by the user's browser.
+Text saying whether third-party cookies are supported by the user's browser. It is a string and not a boolean, so compare it with the values below rather than testing it for truth, because every non-empty string is truthy in JavaScript and `False` is a non-empty string.
 
 | Value | Meaning |
 |-------|---------|

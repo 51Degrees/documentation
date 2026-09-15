@@ -1337,6 +1337,7 @@ HTML_EXTRA_FILES       = examplegrabber.js \
                          images/icon-arrow-solid-right-mute.svg \
                          images/icon-arrow-solid-right-orange.svg \
                          images/icon-search.svg \
+                         mermaid.min.js \
                          search51.js
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
