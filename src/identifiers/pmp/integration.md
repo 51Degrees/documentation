@@ -68,9 +68,14 @@ uses the one the client script already has.
 
 When it finds no client script object on the page, the platform builds the
 script's URL from the cloud that served the platform and the resource key it
-already holds, adds the tag, and writes a line in the browser console saying
-the script was not present and that it is adding it, naming the object. The
-message never prints your resource key or your licence key.
+already holds, adds the tag as an asynchronous script in the page's head,
+and writes a line in the browser console saying the script was not present
+and that it is adding it, naming the object. The message never prints your
+resource key or your licence key.
+
+Where your content security policy names a nonce, the tag the platform adds
+carries the same nonce the platform's own tag has, so the policy is
+satisfied without being loosened.
 
 Two things follow from that.
 
