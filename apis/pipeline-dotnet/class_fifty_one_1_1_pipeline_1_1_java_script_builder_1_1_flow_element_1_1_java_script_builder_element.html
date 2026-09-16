@@ -106,6 +106,8 @@ Static Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:ad3a973974bcfbdc7319a79bd3e580450" id="r_ad3a973974bcfbdc7319a79bd3e580450"><td class="c-table__cell"><a id="ad3a973974bcfbdc7319a79bd3e580450" name="ad3a973974bcfbdc7319a79bd3e580450"></a>
 const&#160;string&#160;</td><td class="c-table__cell"><b>DEFAULT_ELEMENT_DATA_KEY</b> = &quot;javascriptbuilderelement&quot;</td></tr>
 <tr class="c-table__row memdesc:ad3a973974bcfbdc7319a79bd3e580450"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default element data key that will be used for this element. <br /></td></tr>
+<tr class="c-table__row memitem:a19c98c5579a420dcdcfa11a12daedfd4" id="r_a19c98c5579a420dcdcfa11a12daedfd4"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a19c98c5579a420dcdcfa11a12daedfd4">FODID_ELEMENT_DATA_KEY</a> = &quot;FODid&quot;</td></tr>
+<tr class="c-table__row memdesc:a19c98c5579a420dcdcfa11a12daedfd4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The element data key that both 51Did engines return.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -120,6 +122,8 @@ override&#160;void&#160;</td><td class="c-table__cell"><b>ManagedResourcesCleanu
 <tr class="c-table__row memdesc:a5183095be2e3c61712696639a377c2a8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the sequence evidence if it exists.  <br /></td></tr>
 <tr class="c-table__row memitem:a549a62753dda7faf1fa06f45283858e5" id="r_a549a62753dda7faf1fa06f45283858e5"><td class="c-table__cell">virtual&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a549a62753dda7faf1fa06f45283858e5">GetSessionId</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data)</td></tr>
 <tr class="c-table__row memdesc:a549a62753dda7faf1fa06f45283858e5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the session-id evidence if it exists.  <br /></td></tr>
+<tr class="c-table__row memitem:a8ccfc00de6415ce732b3de915f3333e2" id="r_a8ccfc00de6415ce732b3de915f3333e2"><td class="c-table__cell">virtual&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a8ccfc00de6415ce732b3de915f3333e2">RenderUserPrompt</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data)</td></tr>
+<tr class="c-table__row memdesc:a8ccfc00de6415ce732b3de915f3333e2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Decide whether the rendered script carries the block that asks the visitor's preference platform for an answer, which is what a 51Did is created from.  <br /></td></tr>
 <tr class="c-table__row memitem:ab58dd2940b3fa4046eca367be76a800b" id="r_ab58dd2940b3fa4046eca367be76a800b"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ab58dd2940b3fa4046eca367be76a800b">BuildJavaScript</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data, Func&lt; <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_data_1_1_i_java_script_builder_element_data.html">IJavaScriptBuilderElementData</a> &gt; javascriptBuilderElementDataProvider, string jsonObject, string sessionId, int sequence, bool supportsPromises, bool supportsFetch, string url, string parameters)</td></tr>
 <tr class="c-table__row memdesc:ab58dd2940b3fa4046eca367be76a800b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> content and add it to the supplied IFlowData instance.  <br /></td></tr>
 <tr class="c-table__row memitem:ad1149450ccccdd5449f1ddad6e1b2751" id="r_ad1149450ccccdd5449f1ddad6e1b2751"><td class="c-table__cell">Func&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_data_1_1_i_java_script_builder_element_data.html">IJavaScriptBuilderElementData</a>&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ad1149450ccccdd5449f1ddad6e1b2751">GetOrAddToData</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data)</td></tr>
@@ -809,6 +813,76 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a8ccfc00de6415ce732b3de915f3333e2" name="a8ccfc00de6415ce732b3de915f3333e2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8ccfc00de6415ce732b3de915f3333e2">&#9670;&#160;</a></span>RenderUserPrompt()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">virtual bool FiftyOne.Pipeline.JavaScriptBuilder.FlowElement.JavaScriptBuilderElement.RenderUserPrompt </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a></td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Decide whether the rendered script carries the block that asks the visitor's preference platform for an answer, which is what a 51Did is created from. </p>
+<p>The base renders the block when the pipeline holds a 51Did element offering at least one available property, because a pipeline that cannot return a 51Did has no use for the answer. A host that serves many callers from one pipeline, the cloud being the one that does, overrides this and tests the caller's entitlement per request instead. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The IFlowData for the request being served. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">True to render the block, false to leave it out. </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a19c98c5579a420dcdcfa11a12daedfd4" name="a19c98c5579a420dcdcfa11a12daedfd4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a19c98c5579a420dcdcfa11a12daedfd4">&#9670;&#160;</a></span>FODID_ELEMENT_DATA_KEY</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const string FiftyOne.Pipeline.JavaScriptBuilder.FlowElement.JavaScriptBuilderElement.FODID_ELEMENT_DATA_KEY = &quot;FODid&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The element data key that both 51Did engines return. </p>
+<p>It mirrors DidBaseEnginePropertiesBuilder.ComponentName in FiftyOne.Did.Core, which DidCloudEngine returns from its ElementDataKey and the on premise engine in the cloud repository returns as well. The value is copied here because this package must not take a dependency on the 51Did packages, and UserPromptHookTests asserts that the two are still equal.</p>
+<p>This is an element data key and not a property component, so the section a page sees in the JSON payload is this value lower cased, which is "fodid". The identifier that the id endpoints take is called "51did" and is a different thing. </p>
 
 </div>
 </div>

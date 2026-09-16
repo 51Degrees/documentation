@@ -79,6 +79,11 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a4ab3179f60ae45e4999b221e3e5e8149"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
 <tr class="c-table__row memitem:a904bb98a6c9282f79697e6426b4a3a29" id="r_a904bb98a6c9282f79697e6426b4a3a29"><td class="c-table__cell">Dictionary&lt;&#160;string,&#160;object&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a904bb98a6c9282f79697e6426b4a3a29">AsDictionary</a> ()</td></tr>
 <tr class="c-table__row memdesc:a904bb98a6c9282f79697e6426b4a3a29"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the parameters supplied to this class as a.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-properties" class="g-docs__section-heading"><a id="properties" name="properties"></a>
+Properties</h2></td></tr>
+<tr class="c-table__row memitem:a9a90043696e1730ed03da74ac92c9f88" id="r_a9a90043696e1730ed03da74ac92c9f88"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a9a90043696e1730ed03da74ac92c9f88">UserPrompt</a><code> [get, set]</code></td></tr>
+<tr class="c-table__row memdesc:a9a90043696e1730ed03da74ac92c9f88"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True to include the block that asks the visitor's preference platform for the answer that a 51Did is created from, false to leave that block out of the rendered script.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="ab5f46a95b9f63efe736152d585057b8e" name="ab5f46a95b9f63efe736152d585057b8e"></a>
@@ -283,6 +288,36 @@ Public Member Functions</h2></td></tr>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">Dictionary\&lt;string, <span class="c-code__keywordtype">object</span>\&gt;</div>
 </div><!-- fragment --><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">A new <div class="c-code__block c-code__block--outline"><div class="c-code__line">Dictionary\&lt;string, <span class="c-code__keywordtype">object</span>\&gt;</div>
 </div><!-- fragment --> containing the parameters passed to the constructor. </dd></dl>
+
+</div>
+</div>
+<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="g-docs__section-heading">Property Documentation</h2>
+<a id="a9a90043696e1730ed03da74ac92c9f88" name="a9a90043696e1730ed03da74ac92c9f88"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9a90043696e1730ed03da74ac92c9f88">&#9670;&#160;</a></span>UserPrompt</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool FiftyOne.Pipeline.JavaScriptBuilder.TemplateData.JavaScriptResource.UserPrompt</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>True to include the block that asks the visitor's preference platform for the answer that a 51Did is created from, false to leave that block out of the rendered script. </p>
+<p>This is settable rather than a constructor argument because the decision belongs to the element and is taken per request, so neither of the two constructors changes shape for the callers that already use them. </p>
 
 </div>
 </div>

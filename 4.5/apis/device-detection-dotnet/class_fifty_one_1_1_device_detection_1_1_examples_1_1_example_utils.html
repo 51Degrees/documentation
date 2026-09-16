@@ -72,6 +72,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fifty_on
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a672a2c346c911f27d5d4ea79a7a041bd" id="r_a672a2c346c911f27d5d4ea79a7a041bd"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a672a2c346c911f27d5d4ea79a7a041bd">ReportMissingProperties</a> (Exception exception, TextWriter output, string exampleNeeds, string configureUrl)</td></tr>
+<tr class="c-table__row memdesc:a672a2c346c911f27d5d4ea79a7a041bd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reports that the resource key in use does not carry the properties an example needs, in plain words rather than as an unhandled exception and a stack trace.  <br /></td></tr>
 <tr class="c-table__row memitem:ab10d4c619b5e6f2ffcef2f61acd0343e" id="r_ab10d4c619b5e6f2ffcef2f61acd0343e"><td class="c-table__cell">static&#160;<a class="el" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ab10d4c619b5e6f2ffcef2f61acd0343e">ParseOptions</a> (string[] args)</td></tr>
 <tr class="c-table__row memdesc:ab10d4c619b5e6f2ffcef2f61acd0343e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Parse the command line arguments passed to the example to get the common options.  <br /></td></tr>
 <tr class="c-table__row memitem:a54667c0d9989760b8cd9dcaac814c938" id="r_a54667c0d9989760b8cd9dcaac814c938"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a54667c0d9989760b8cd9dcaac814c938">FindFile</a> (string filename, DirectoryInfo dir=null)</td></tr>
@@ -95,7 +97,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a4de3aba4463a95479f277b870949e6ef" id="r_a4de3aba4463a95479f277b870949e6ef"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a4de3aba4463a95479f277b870949e6ef">GetKeyFromEnv</a> (string envVarName, Action&lt; string &gt; setValue)</td></tr>
 <tr class="c-table__row memdesc:a4de3aba4463a95479f277b870949e6ef"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Checks if an environment variable exists with the key name provided and then runs the action with the value, or an empty string if the key does not exist.  <br /></td></tr>
 <tr class="c-table__row memitem:ad66ea95cdc39a6a151204c5e9b4c1fa5" id="r_ad66ea95cdc39a6a151204c5e9b4c1fa5"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#ad66ea95cdc39a6a151204c5e9b4c1fa5">GetResourceKeyFromEnv</a> ()</td></tr>
-<tr class="c-table__row memdesc:ad66ea95cdc39a6a151204c5e9b4c1fa5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the resource key from the environment.  <br /></td></tr>
+<tr class="c-table__row memdesc:ad66ea95cdc39a6a151204c5e9b4c1fa5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the resource key from the environment, following the organisation's naming convention.  <br /></td></tr>
+<tr class="c-table__row memitem:a44a33aa8275c154489ff68e8d39f6666" id="r_a44a33aa8275c154489ff68e8d39f6666"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a44a33aa8275c154489ff68e8d39f6666">GetResourceKeyFromEnv</a> (out string envVarName)</td></tr>
+<tr class="c-table__row memdesc:a44a33aa8275c154489ff68e8d39f6666"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the resource key from the environment, reporting the name of the variable it came from.  <br /></td></tr>
 <tr class="c-table__row memitem:a32d6375bde2f3c7e955e7b5369cc14cb" id="r_a32d6375bde2f3c7e955e7b5369cc14cb"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a32d6375bde2f3c7e955e7b5369cc14cb">GetResourceKeyFromEnv</a> (Action&lt; string &gt; setValue)</td></tr>
 <tr class="c-table__row memdesc:a32d6375bde2f3c7e955e7b5369cc14cb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the resource key from the environment and run the action with the value, or an empty string if no resource key is set.  <br /></td></tr>
 <tr class="c-table__row memitem:aac81c1564fe514dd0cfaefd3ae7b00a0" id="r_aac81c1564fe514dd0cfaefd3ae7b00a0"><td class="c-table__cell">static&#160;List&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#aac81c1564fe514dd0cfaefd3ae7b00a0">DiscoverReadableScalarProperties</a> (IPipeline pipeline, Dictionary&lt; string, object &gt; sampleEvidence)</td></tr>
@@ -107,6 +111,8 @@ Static Public Attributes</h2></td></tr>
 <tr class="c-table__row memdesc:a3a1fd7c069d5b3b33014f1681b46e1eb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default environment variable key used to get the resource key to use when running cloud examples.  <br /></td></tr>
 <tr class="c-table__row memitem:ad45d2bff0a23e637a2ba4faca8ecbf7a" id="r_ad45d2bff0a23e637a2ba4faca8ecbf7a"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#ad45d2bff0a23e637a2ba4faca8ecbf7a">LEGACY_CLOUD_RESOURCE_KEY_ENV_VAR</a> = &quot;SUPER_RESOURCE_KEY&quot;</td></tr>
 <tr class="c-table__row memdesc:ad45d2bff0a23e637a2ba4faca8ecbf7a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The legacy environment variable key used to get the resource key to use when running cloud examples.  <br /></td></tr>
+<tr class="c-table__row memitem:ad46a843b1f03d4335c1ea32704765c37" id="r_ad46a843b1f03d4335c1ea32704765c37"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#ad46a843b1f03d4335c1ea32704765c37">CLOUD_RESOURCE_KEY_ENV_VAR_PREFIX</a></td></tr>
+<tr class="c-table__row memdesc:ad46a843b1f03d4335c1ea32704765c37"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The naming convention for resource key environment variables.  <br /></td></tr>
 <tr class="c-table__row memitem:a0d11707adb508296ad8ee9a7005306c7" id="r_a0d11707adb508296ad8ee9a7005306c7"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a0d11707adb508296ad8ee9a7005306c7">CLOUD_END_POINT_ENV_VAR</a> = &quot;51D_CLOUD_ENDPOINT&quot;</td></tr>
 <tr class="c-table__row memdesc:a0d11707adb508296ad8ee9a7005306c7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default environment variable key used to get the end point URL to use when running cloud examples.  <br /></td></tr>
 <tr class="c-table__row memitem:a747635d339e89b248d260961e53e450e" id="r_a747635d339e89b248d260961e53e450e"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a747635d339e89b248d260961e53e450e">PRICING_MESSAGE</a></td></tr>
@@ -117,6 +123,11 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
 <tr class="c-table__row memitem:a15060c0a9a0321bf26c3265d8e56f2db" id="r_a15060c0a9a0321bf26c3265d8e56f2db"><td class="c-table__cell"><a id="a15060c0a9a0321bf26c3265d8e56f2db" name="a15060c0a9a0321bf26c3265d8e56f2db"></a>
 static&#160;readonly&#160;List&lt;&#160;Dictionary&lt;&#160;string,&#160;object&#160;&gt;&#160;&gt;&#160;</td><td class="c-table__cell"><b>EvidenceValues</b></td></tr>
 <tr class="c-table__row memdesc:a15060c0a9a0321bf26c3265d8e56f2db"><td class="c-table__cell">&#160;</td><td class="c-table__cell">This collection contains the various input values that will be passed to the device detection algorithm when running examples. <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-properties" class="g-docs__section-heading"><a id="properties" name="properties"></a>
+Properties</h2></td></tr>
+<tr class="c-table__row memitem:a40ae71d09371bcaf5d115e238661b743" id="r_a40ae71d09371bcaf5d115e238661b743"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a40ae71d09371bcaf5d115e238661b743">CLOUD_RESOURCE_KEY_ENV_VAR_DESCRIPTION</a><code> [get]</code></td></tr>
+<tr class="c-table__row memdesc:a40ae71d09371bcaf5d115e238661b743"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Names the environment variables a resource key is read from, for use in a message telling somebody why an example or a test could not run.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a5c18341ab0d1a3cf155b5c73ef744895" name="a5c18341ab0d1a3cf155b5c73ef744895"></a>
@@ -455,7 +466,7 @@ static&#160;readonly&#160;List&lt;&#160;Dictionary&lt;&#160;string,&#160;object&
 </div>
 </div>
 <a id="ad66ea95cdc39a6a151204c5e9b4c1fa5" name="ad66ea95cdc39a6a151204c5e9b4c1fa5"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad66ea95cdc39a6a151204c5e9b4c1fa5">&#9670;&#160;</a></span>GetResourceKeyFromEnv() <span class="c-member__count">[1/2]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad66ea95cdc39a6a151204c5e9b4c1fa5">&#9670;&#160;</a></span>GetResourceKeyFromEnv() <span class="c-member__count">[1/3]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -481,14 +492,14 @@ static&#160;readonly&#160;List&lt;&#160;Dictionary&lt;&#160;string,&#160;object&
 </table>
 </div><div class="c-member__body">
 
-<p>Get the resource key from the environment. </p>
-<p>The aligned '_51DEGREES_RESOURCE_KEY' variable is checked first, followed by the legacy 'SUPER_RESOURCE_KEY' variable.</p>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The resource key, or null if neither environment variable is set. </dd></dl>
+<p>Get the resource key from the environment, following the organisation's naming convention. </p>
+<p>The exact '_51DEGREES_RESOURCE_KEY' variable is checked first, then the legacy 'SUPER_RESOURCE_KEY' variable, and finally any variable whose name begins with '_51DEGREES_RESOURCE_KEY', which is how per tier keys such as '_51DEGREES_RESOURCE_KEY_FREE' and '_51DEGREES_RESOURCE_KEY_PAID' reach a build. Tier variables are taken in name order so the same machine always picks the same one, and GetResourceKeyFromEnv(out string) reports which variable was used.</p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The resource key, or null if no matching environment variable is set. </dd></dl>
 
 </div>
 </div>
 <a id="a32d6375bde2f3c7e955e7b5369cc14cb" name="a32d6375bde2f3c7e955e7b5369cc14cb"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a32d6375bde2f3c7e955e7b5369cc14cb">&#9670;&#160;</a></span>GetResourceKeyFromEnv() <span class="c-member__count">[2/2]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a32d6375bde2f3c7e955e7b5369cc14cb">&#9670;&#160;</a></span>GetResourceKeyFromEnv() <span class="c-member__count">[2/3]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -515,13 +526,52 @@ static&#160;readonly&#160;List&lt;&#160;Dictionary&lt;&#160;string,&#160;object&
 </div><div class="c-member__body">
 
 <p>Get the resource key from the environment and run the action with the value, or an empty string if no resource key is set. </p>
-<p>The aligned '_51DEGREES_RESOURCE_KEY' variable is checked first, followed by the legacy 'SUPER_RESOURCE_KEY' variable.</p>
+<p>See GetResourceKeyFromEnv() for the order the variables are tried in.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">setValue</td><td></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a44a33aa8275c154489ff68e8d39f6666" name="a44a33aa8275c154489ff68e8d39f6666"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a44a33aa8275c154489ff68e8d39f6666">&#9670;&#160;</a></span>GetResourceKeyFromEnv() <span class="c-member__count">[3/3]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">string FiftyOne.DeviceDetection.Examples.ExampleUtils.GetResourceKeyFromEnv </td>
+          <td>(</td>
+          <td class="c-table__cell">out string</td>          <td class="c-table__cell"><span class="paramname"><em>envVarName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Get the resource key from the environment, reporting the name of the variable it came from. </p>
+<p>See GetResourceKeyFromEnv() for the order the variables are tried in.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">envVarName</td><td>Set to the name of the environment variable the key was read from, or null when no key was found. Callers use the name to tell somebody which variable supplied the key, which matters when a machine carries more than one tier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The resource key, or null if no matching environment variable is set. </dd></dl>
 
 </div>
 </div>
@@ -694,6 +744,62 @@ static&#160;readonly&#160;List&lt;&#160;Dictionary&lt;&#160;string,&#160;object&
 
 </div>
 </div>
+<a id="a672a2c346c911f27d5d4ea79a7a041bd" name="a672a2c346c911f27d5d4ea79a7a041bd"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a672a2c346c911f27d5d4ea79a7a041bd">&#9670;&#160;</a></span>ReportMissingProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void FiftyOne.DeviceDetection.Examples.ExampleUtils.ReportMissingProperties </td>
+          <td>(</td>
+          <td class="c-table__cell">Exception</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">TextWriter</td>          <td class="c-table__cell"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>exampleNeeds</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>configureUrl</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Reports that the resource key in use does not carry the properties an example needs, in plain words rather than as an unhandled exception and a stack trace. </p>
+<p>The cloud service refuses at start-up when a key carries none of the properties an engine needs, and refuses per property when a key carries some but not all of them. Neither is a fault in the example, it is a subscription that does not cover what the example asks for, so the person running it needs to be told which properties are missing and that a paid subscription supplies them. The caller decides the exit code, and it must not be zero, because an example that could not do its work has not succeeded. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exception</td><td>The exception the pipeline threw. </td></tr>
+    <tr><td class="paramname">output</td><td>Where to write the message. </td></tr>
+    <tr><td class="paramname">exampleNeeds</td><td>What this example needs, in words, for example "the 'hardware'
+properties returned by a TAC lookup". </td></tr>
+    <tr><td class="paramname">configureUrl</td><td>The configurator link to create a key with those properties. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
 <a id="a0d11707adb508296ad8ee9a7005306c7" name="a0d11707adb508296ad8ee9a7005306c7"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0d11707adb508296ad8ee9a7005306c7">&#9670;&#160;</a></span>CLOUD_END_POINT_ENV_VAR</h2>
@@ -750,6 +856,37 @@ static&#160;readonly&#160;List&lt;&#160;Dictionary&lt;&#160;string,&#160;object&
 
 <p>The default environment variable key used to get the resource key to use when running cloud examples. </p>
 <p>This aligned name is checked first, before any legacy variable names. </p>
+
+</div>
+</div>
+<a id="ad46a843b1f03d4335c1ea32704765c37" name="ad46a843b1f03d4335c1ea32704765c37"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad46a843b1f03d4335c1ea32704765c37">&#9670;&#160;</a></span>CLOUD_RESOURCE_KEY_ENV_VAR_PREFIX</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const string FiftyOne.DeviceDetection.Examples.ExampleUtils.CLOUD_RESOURCE_KEY_ENV_VAR_PREFIX</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                                  =</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;_51DEGREES_RESOURCE_KEY&quot;</span></div>
+</div><!-- fragment -->
+<p>The naming convention for resource key environment variables. </p>
+<p>The organisation's CI exports every secret whose name begins with this prefix, so one machine can carry several keys at once, one per subscription tier, for example '_51DEGREES_RESOURCE_KEY_FREE' and '_51DEGREES_RESOURCE_KEY_PAID'. Any variable matching the prefix is accepted when the exact CLOUD_RESOURCE_KEY_ENV_VAR name is not set. </p>
 
 </div>
 </div>
@@ -811,6 +948,36 @@ static&#160;readonly&#160;List&lt;&#160;Dictionary&lt;&#160;string,&#160;object&
 <div class="c-code__line"><span class="c-code__stringliteral">&quot;to get a paid subscription with more properties.&quot;</span></div>
 </div><!-- fragment -->
 <p>Message displayed when a resource key leaves some of the properties used by an example without values. </p>
+
+</div>
+</div>
+<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="g-docs__section-heading">Property Documentation</h2>
+<a id="a40ae71d09371bcaf5d115e238661b743" name="a40ae71d09371bcaf5d115e238661b743"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a40ae71d09371bcaf5d115e238661b743">&#9670;&#160;</a></span>CLOUD_RESOURCE_KEY_ENV_VAR_DESCRIPTION</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">string FiftyOne.DeviceDetection.Examples.ExampleUtils.CLOUD_RESOURCE_KEY_ENV_VAR_DESCRIPTION</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Names the environment variables a resource key is read from, for use in a message telling somebody why an example or a test could not run. </p>
+<p>Naming the variable is the point of such a message, because "no resource key" on its own does not say what to set. </p>
 
 </div>
 </div>

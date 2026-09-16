@@ -226,20 +226,41 @@ You can create a Resource Key using the 51Degrees
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> Main(<span class="c-code__keywordtype">string</span>[] args)</div>
 <div class="c-code__line">        {</div>
-<div class="c-code__line">            <span class="c-code__comment">// Obtain a resource key for free at https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-cloud-getallproperties-console-program.cs&amp;utm_term=main</span></div>
-<div class="c-code__line">            <span class="c-code__keywordtype">string</span> resourceKey = <span class="c-code__stringliteral">&quot;!!YOUR_RESOURCE_KEY!!&quot;</span>;</div>
+<div class="c-code__line">            <span class="c-code__comment">// Use the command line args to get the resource key if present.</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// Otherwise, get it from the environment, following the same</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// convention as the other cloud examples so that a key set once</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// works for all of them.</span></div>
+<div class="c-code__line">            <span class="c-code__keywordtype">string</span> resourceKeySource = <span class="c-code__keyword">null</span>;</div>
+<div class="c-code__line">            <span class="c-code__keywordtype">string</span> resourceKey = args.Length &gt; 0 ? args[0] :</div>
+<div class="c-code__line">                ExampleUtils.GetResourceKeyFromEnv(out resourceKeySource);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (resourceKey.StartsWith(<span class="c-code__stringliteral">&quot;!!&quot;</span>))</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(resourceKey))</div>
 <div class="c-code__line">            {</div>
-<div class="c-code__line">                Console.WriteLine(<span class="c-code__stringliteral">&quot;You need to create a resource key at &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-cloud-getallproperties-console-program.cs&amp;utm_term=resource-key-required and paste it into the code, &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;replacing !!YOUR_RESOURCE_KEY!!.&quot;</span>);</div>
-<div class="c-code__line">                Console.WriteLine(<span class="c-code__stringliteral">&quot;Make sure to include all the properties &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;that you want to see displayed by this example.&quot;</span>);</div>
-<div class="c-code__line"> </div>
+<div class="c-code__line">                Console.WriteLine(</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;No resource key was supplied. Pass one as the first &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;command line argument, or set one of these &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;environment variables: &quot;</span> +</div>
+<div class="c-code__line">                    ExampleUtils.CLOUD_RESOURCE_KEY_ENV_VAR_DESCRIPTION +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;.&quot;</span>);</div>
+<div class="c-code__line">                Console.WriteLine(</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;The 51Degrees cloud service is accessed with a &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;resource key. A free key can be created at &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;https://configure.51degrees.com/Wkqxf3Bs?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-cloud-getallproperties-console-program.cs&amp;utm_term=resource-key-required &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;and gives the free properties. With a paid &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;subscription, a key created at &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;https://configure.51degrees.com/hYzn3TV3?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-cloud-getallproperties-console-program.cs&amp;utm_term=resource-key-required &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;includes every property this example displays. Make &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;sure the key includes all the properties you want to &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;see.&quot;</span>);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">else</span></div>
 <div class="c-code__line">            {</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (args.Length == 0)</div>
+<div class="c-code__line">                {</div>
+<div class="c-code__line">                    Console.WriteLine(</div>
+<div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;Using the resource key from &quot;</span> +</div>
+<div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;&#39;{resourceKeySource}&#39;.&quot;</span>);</div>
+<div class="c-code__line">                }</div>
 <div class="c-code__line">                <span class="c-code__keyword">new</span> Example().Run(resourceKey);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"><span class="c-code__preprocessor">#if (DEBUG)</span></div>

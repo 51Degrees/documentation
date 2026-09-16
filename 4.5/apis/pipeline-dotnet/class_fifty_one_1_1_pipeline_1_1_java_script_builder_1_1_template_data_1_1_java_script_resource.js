@@ -2,5 +2,6 @@ var class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_template_data_1_1_j
 [
     [ "JavaScriptResource", "class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_template_data_1_1_java_script_resource.html#ab5f46a95b9f63efe736152d585057b8e", null ],
     [ "JavaScriptResource", "class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_template_data_1_1_java_script_resource.html#a4ab3179f60ae45e4999b221e3e5e8149", null ],
-    [ "AsDictionary", "class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_template_data_1_1_java_script_resource.html#a904bb98a6c9282f79697e6426b4a3a29", null ]
+    [ "AsDictionary", "class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_template_data_1_1_java_script_resource.html#a904bb98a6c9282f79697e6426b4a3a29", null ],
+    [ "UserPrompt", "class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_template_data_1_1_java_script_resource.html#a9a90043696e1730ed03da74ac92c9f88", null ]
 ];

@@ -916,7 +916,7 @@ Variables</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">manager</td><td>pointer to the resource manager which manages a Hash data set </td></tr>
     <tr><td class="paramname">userAgentCapacity</td><td>deprecated and ignored. Retained only so that integrations built against the pre-4.5 API (e.g. the HAProxy 51degrees addon, which still passes it) continue to compile unchanged. Results are now sized by the number of components determined at initialisation. </td></tr>
-    <tr><td class="paramname">overridesCapacity</td><td>number of properties that can be overridden, 0 to disable overrides </td></tr>
+    <tr><td class="paramname">overridesCapacity</td><td>0 to disable overrides, any other number to enable them. The list is sized at the number of properties the data set allows evidence to override, which is as many as a set of results can need, or at this number where that is larger, so a caller processing evidence does not have to work the size out for itself. </td></tr>
   </table>
   </dd>
 </dl>

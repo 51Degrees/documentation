@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structfiftyone
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>An array of properties and values to use when getting override values. </p>
-<p>Array of items of type <a class="el" href="structfiftyone_degrees_override_value.html" title="String value which should override the value for the property indicated by the required property inde...">fiftyoneDegreesOverrideValue</a> used to easily access and track the size of the array. </p>
+<p>The status member says whether every value offered to the array was stored, so that a caller which gave the array too little room can find that out without the request being worked on failing. Array of items of type <a class="el" href="structfiftyone_degrees_override_value.html" title="String value which should override the value for the property indicated by the required property inde...">fiftyoneDegreesOverrideValue</a> used to easily access and track the size of the array. </p>
 </div><h2 class="g-docs__section-heading">
 Collaboration diagram for fiftyoneDegreesOverrideValueArray:</h2>
 <div class="dyncontent">
@@ -85,12 +85,15 @@ uint32_t&#160;</td><td class="c-table__cell"><b>count</b></td></tr>
 <tr class="c-table__row memitem:a5aa7de9d612be54cf6ac69b6157eb513" id="r_a5aa7de9d612be54cf6ac69b6157eb513"><td class="c-table__cell"><a id="a5aa7de9d612be54cf6ac69b6157eb513" name="a5aa7de9d612be54cf6ac69b6157eb513"></a>
 uint32_t&#160;</td><td class="c-table__cell"><b>capacity</b></td></tr>
 <tr class="c-table__row memdesc:a5aa7de9d612be54cf6ac69b6157eb513"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of available items. <br /></td></tr>
-<tr class="c-table__row memitem:a09db5b741477cc5146349fa3db4491fd" id="r_a09db5b741477cc5146349fa3db4491fd"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_override_value.html">fiftyoneDegreesOverrideValue</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a09db5b741477cc5146349fa3db4491fd">items</a></td></tr>
-<tr class="c-table__row memdesc:a09db5b741477cc5146349fa3db4491fd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Pointer to the first item.  <br /></td></tr>
+<tr class="c-table__row memitem:a09db5b741477cc5146349fa3db4491fd" id="r_a09db5b741477cc5146349fa3db4491fd"><td class="c-table__cell"><a id="a09db5b741477cc5146349fa3db4491fd" name="a09db5b741477cc5146349fa3db4491fd"></a>
+<a class="el" href="structfiftyone_degrees_override_value.html">fiftyoneDegreesOverrideValue</a>&#160;*&#160;</td><td class="c-table__cell"><b>items</b></td></tr>
+<tr class="c-table__row memdesc:a09db5b741477cc5146349fa3db4491fd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Pointer to the first item. <br /></td></tr>
+<tr class="c-table__row memitem:ac903387a227e154eed4384dbde7da3b1" id="r_ac903387a227e154eed4384dbde7da3b1"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ac903387a227e154eed4384dbde7da3b1">status</a></td></tr>
+<tr class="c-table__row memdesc:ac903387a227e154eed4384dbde7da3b1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Success until a value cannot be stored, then insufficient capacity where the array was full, or insufficient memory where the value could not be copied.  <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Field Documentation</h2>
-<a id="a09db5b741477cc5146349fa3db4491fd" name="a09db5b741477cc5146349fa3db4491fd"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a09db5b741477cc5146349fa3db4491fd">&#9670;&#160;</a></span>items</h2>
+<a id="ac903387a227e154eed4384dbde7da3b1" name="ac903387a227e154eed4384dbde7da3b1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac903387a227e154eed4384dbde7da3b1">&#9670;&#160;</a></span>status</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -98,14 +101,14 @@ uint32_t&#160;</td><td class="c-table__cell"><b>capacity</b></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_override_value.html">fiftyoneDegreesOverrideValue</a>* fiftyoneDegreesOverrideValueArray::items</td>
+              <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> fiftyoneDegreesOverrideValueArray::status</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>Pointer to the first item. </p>
+<p>Success until a value cannot be stored, then insufficient capacity where the array was full, or insufficient memory where the value could not be copied. </p>
 <p>Add any members provided by the caller </p>
 
 </div>

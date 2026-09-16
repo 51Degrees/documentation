@@ -1,0 +1,28 @@
+var class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests =
+[
+    [ "AChangeOfAnswerAcrossTwoPageViewsInOneTab", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a05acff3415d98e60bd40c717ccee55b6", null ],
+    [ "AChangeOfAnswerOnOnePageProducesANewIdentifier", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a8ecf4c19391e683238f87097b457780d", null ],
+    [ "AFrameworkStringInTheUrlAndFromThePlatformIsSentOnce", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#aa5587b5d22aa6913105bcf404b1f372f", null ],
+    [ "AFrameworkStubThatNeverCallsBackIsNamedOnce", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#af4a034315c4cad24751ff5a0fa2e6eb2", null ],
+    [ "AFrameworkStubThatThrowsIsNamedOnceAndStopsNothing", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a1b08e7bea0f85898ebcb6de22d065e72", null ],
+    [ "AGlobalPrivacyPlatformStubIsNeverCalledAndSendsNothing", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a745581fb94f8b8bf9d914c6b962486c8", null ],
+    [ "ALateFrameworkAnswerProducesASecondRequestAndAnIdentifier", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a4abc55b1cae733891bcaceb483d29d0e", null ],
+    [ "AnAnswerArrivingDuringARoundIsCarriedByThatRound", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a04e2e1f4876a02b293f98e77304327b4", null ],
+    [ "AnAnswerHeldInTheKeyIsSentAsAUsage", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a5a7ac34af37970cfe88b4f0bbfab793f", null ],
+    [ "AnAnswerKnownAtConstructionWithNoSnippetIsStillSent", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a9a83096bdc7f6d2979f0395920bd6751", null ],
+    [ "AUsageInTheUrlAndInTheKeyIsSentOnce", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a05c046abe32f08a7eacfe31c7c02a5ff", null ],
+    [ "ChangingTheEvidenceObjectAndRefreshingSendsTheNewValue", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a5193d60657fe07878c9df190d126543b", null ],
+    [ "LoadingTheScriptTwiceWarnsOnceOnTheSecondLoad", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a176fd4af7131309690ac93c365115ab5", null ],
+    [ "NoAnswerYetWithAPlatformPresentIsServedFromTheCache", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#ad21fc5234b80d387348cc7125ce22dd1", null ],
+    [ "NoPlatformAtAllOnTheSecondPageClearsAndAsksAgain", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#acbd2665a2e78941435ffccc7f6d968bd", null ],
+    [ "NoPlatformWarnsOnceAndTheFirstRequestStillGoes", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a4865eb547c1900191ab0168069d406fa", null ],
+    [ "OneInputMovingOnItsOwnProducesAFreshRequest", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#ac15d754fe4eefb2284645055956d527b", null ],
+    [ "RefreshAtTheIterationCapSendsNothingAndSaysSo", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#ae7351f821d0cc365712b2102524db2f3", null ],
+    [ "RefreshSendsTheStoredValuesAndRunsNoSnippetAgain", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a785df5a45db3afdc16501b5d949f85e0", null ],
+    [ "RefreshWithUnchangedInputsMakesNoRequest", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#aa1c24f9eb46e2d022f0643fbb40b2133", null ],
+    [ "StandardThenTheAlternativeInOnePageView", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a15114ec0c4beaa68eef799e292908f03", null ],
+    [ "TheHardwareProfileSnippetFindingNothingStillSends", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#abfa78613fe4d6e90f5d2d5e549d0fdd2", null ],
+    [ "TheOrdinaryPageWithOneScriptAndNoPlatformStillWorks", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#a8baa3644909292c7c9bc49be56fb5e78", null ],
+    [ "ThePlatformsOwnAnswerWinsOverItsFrameworkSurface", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#ae1910671a9c00a905add06438cecedba", null ],
+    [ "TheRecordKeyIsFodInputsAndAFailedRefreshRemovesIt", "class_fifty_one_1_1_pipeline_1_1_java_script_1_1_tests_1_1_user_prompt_browser_tests.html#ad711d63d16fae08b1663c4ca91c46f74", null ]
+];

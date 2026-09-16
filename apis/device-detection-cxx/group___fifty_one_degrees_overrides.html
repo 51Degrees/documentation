@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <h2>Extraction</h2>
 <p>Override values are extracted from an evidence structure using the <a class="el" href="#gaa04892dbc317725d58003a4c817088ab" title="Extracts override values from evidence.">fiftyoneDegreesOverridesExtractFromEvidence</a> method. This looks through the items of evidence for any items which are overrides, then parses and adds them to the override values ready to be applied.</p>
 <h2>Add</h2>
-<p>Override values can also be added using the <a class="el" href="#gabc34bae373d5637d04024688715d2473" title="Add an value override to the override values array.">fiftyoneDegreesOverridesAdd</a> or <a class="el" href="#ga1d85ff025ddaff51048b6f910fb47cde" title="Adds values from the overrides data structure into the results.">fiftyoneDegreesOverrideValuesAdd</a> methods which add a single or multiple values respectively to the override values.</p>
+<p>Override values can also be added using the <a class="el" href="#gabc34bae373d5637d04024688715d2473" title="Add a value override to the override values array.">fiftyoneDegreesOverridesAdd</a> or <a class="el" href="#ga1d85ff025ddaff51048b6f910fb47cde" title="Adds values from the overrides data structure into the results.">fiftyoneDegreesOverrideValuesAdd</a> methods which add a single or multiple values respectively to the override values.</p>
 <h2>Free</h2>
 <p><a class="el" href="group___fifty_one_degrees_synonyms.html#gac33ed2a033290cebf9ec90809d9bdf90" title="Synonym for fiftyoneDegreesProperty type.">Property</a> and value overrides are freed using the <a class="el" href="#gab677a2241946c32ceb4aec2c596fff4a" title="Frees the resources used by the override properties.">fiftyoneDegreesOverridePropertiesFree</a> and <a class="el" href="#ga9593fb578203a899aabf51c6fdb11e5e" title="Frees the memory used for the override values.">fiftyoneDegreesOverrideValuesFree</a> methods. </p>
 </div><h2 class="g-docs__section-heading">
@@ -122,7 +122,7 @@ Functions</h2></td></tr>
 <tr class="c-table__row memitem:ga1d85ff025ddaff51048b6f910fb47cde" id="r_ga1d85ff025ddaff51048b6f910fb47cde"><td class="c-table__cell">uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga1d85ff025ddaff51048b6f910fb47cde">fiftyoneDegreesOverrideValuesAdd</a> (<a class="el" href="structfiftyone_degrees_override_value_array.html">fiftyoneDegreesOverrideValueArray</a> *values, uint32_t requiredPropertyIndex, <a class="el" href="structfiftyone_degrees_list.html">fiftyoneDegreesList</a> *list)</td></tr>
 <tr class="c-table__row memdesc:ga1d85ff025ddaff51048b6f910fb47cde"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Adds values from the overrides data structure into the results.  <br /></td></tr>
 <tr class="c-table__row memitem:gabc34bae373d5637d04024688715d2473" id="r_gabc34bae373d5637d04024688715d2473"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#gabc34bae373d5637d04024688715d2473">fiftyoneDegreesOverridesAdd</a> (<a class="el" href="structfiftyone_degrees_override_value_array.html">fiftyoneDegreesOverrideValueArray</a> *values, int requiredPropertyIndex, const char *value)</td></tr>
-<tr class="c-table__row memdesc:gabc34bae373d5637d04024688715d2473"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add an value override to the override values array.  <br /></td></tr>
+<tr class="c-table__row memdesc:gabc34bae373d5637d04024688715d2473"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add a value override to the override values array.  <br /></td></tr>
 <tr class="c-table__row memitem:ga80d1bf23ed362b468b1d0b88b839578c" id="r_ga80d1bf23ed362b468b1d0b88b839578c"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_string.html">fiftyoneDegreesString</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga80d1bf23ed362b468b1d0b88b839578c">fiftyoneDegreesOverrideValuesGetFirst</a> (<a class="el" href="structfiftyone_degrees_override_value_array.html">fiftyoneDegreesOverrideValueArray</a> *values, uint32_t requiredPropertyIndex, <a class="el" href="structfiftyone_degrees_collection_item.html">fiftyoneDegreesCollectionItem</a> *item)</td></tr>
 <tr class="c-table__row memdesc:ga80d1bf23ed362b468b1d0b88b839578c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns the first value for the required property index or NULL of no value exists for the property index.  <br /></td></tr>
 <tr class="c-table__row memitem:gaa27fb9881ed0ff19d376d719b7d0e589" id="r_gaa27fb9881ed0ff19d376d719b7d0e589"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#gaa27fb9881ed0ff19d376d719b7d0e589">fiftyoneDegreesOverridesGetOverridingRequiredPropertyIndex</a> (<a class="el" href="group___fifty_one_degrees_properties.html#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, uint32_t requiredPropertyIndex)</td></tr>
@@ -391,8 +391,8 @@ Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Add an value override to the override values array. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Add a value override to the override values array. </p>
+<p>Where the array already holds a value for the property the new value replaces it, which needs no free item and therefore works whether or not the array is full. Where the property is new to the array and the array is full nothing is stored, the values already held are left as they are, and the status of the array is set to insufficient capacity for the caller to read. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">values</td><td>the override values array to add the value to </td></tr>
     <tr><td class="paramname">requiredPropertyIndex</td><td>the index in the dataset's required properties of the property to override the value of </td></tr>
@@ -400,7 +400,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the value was added successfully </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the value was stored, otherwise false </dd></dl>
 
 </div>
 </div>
@@ -433,7 +433,7 @@ Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Extracts override values from evidence. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Every cookie and query item is read, including those that follow an item whose value could not be stored, because a later item can still replace a value the array already holds. Where a value could not be stored the status of the values array says so. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">properties</td><td>which can be overridden </td></tr>
     <tr><td class="paramname">values</td><td>array to populate with the override values </td></tr>
@@ -441,7 +441,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the number of override values which have been extracted </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the number of cookie and query evidence items read </dd></dl>
 
 </div>
 </div>
@@ -541,7 +541,7 @@ Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Creates a fresh array of override values with the given capacity. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>The capacity is the number of properties the array can hold a value for, so a caller working from evidence needs room for the values the evidence carries and for the empty value given to each JavaScript property that measures one of them. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">capacity</td><td>the number of values the array can contain </td></tr>
   </table>
@@ -641,7 +641,7 @@ Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Reset override array. </p>
-<p>All existing item memory will not be freed by reset with 0s. Remaining values will be reset to default except the allocateds size.. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>All existing item memory will not be freed by reset with 0s. Remaining values will be reset to default except the allocateds size. The status is returned to success, so a caller which resets the array between requests reads a status that relates to the current request only. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">values</td><td>to be reset </td></tr>
   </table>

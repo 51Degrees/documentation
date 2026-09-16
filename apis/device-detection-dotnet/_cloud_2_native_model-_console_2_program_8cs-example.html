@@ -112,7 +112,9 @@ You can create a Resource Key using the 51Degrees
 <div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.DeviceDetection.Cloud.Data;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.DeviceDetection.Cloud.FlowElements;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.CloudRequestEngine.FlowElements;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Core.Exceptions;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Core.FlowElements;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Engines;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.Extensions.Logging;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.IO;</div>
@@ -233,7 +235,38 @@ You can create a Resource Key using the 51Degrees
 <div class="c-code__line">            }</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">else</span></div>
 <div class="c-code__line">            {</div>
-<div class="c-code__line">                <span class="c-code__keyword">new</span> Example().Run(resourceKey, loggerFactory, Console.Out);</div>
+<div class="c-code__line">                <span class="c-code__comment">// A resource key without the &#39;hardware&#39; properties makes</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// the pipeline refuse at start-up. That is a subscription</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// that does not cover this example rather than a fault, so</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// it is reported plainly and the process still exits</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// non-zero, because the example did not do its work.</span></div>
+<div class="c-code__line">                <span class="c-code__keywordflow">try</span></div>
+<div class="c-code__line">                {</div>
+<div class="c-code__line">                    <span class="c-code__keyword">new</span> Example().Run(</div>
+<div class="c-code__line">                        resourceKey, loggerFactory, Console.Out);</div>
+<div class="c-code__line">                }</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">catch</span> (PipelineException exception)</div>
+<div class="c-code__line">                {</div>
+<div class="c-code__line">                    ExampleUtils.ReportMissingProperties(</div>
+<div class="c-code__line">                        exception,</div>
+<div class="c-code__line">                        Console.Out,</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;the &#39;hardware&#39; properties a native model lookup &quot;</span> +</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;returns, which need a paid subscription&quot;</span>,</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;https://configure.51degrees.com/hYzn3TV3?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-cloud-nativemodel-console-program.cs&amp;utm_term=resource-key-required&quot;</span>);</div>
+<div class="c-code__line">                    loggerFactory.Dispose();</div>
+<div class="c-code__line">                    Environment.Exit(1);</div>
+<div class="c-code__line">                }</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">catch</span> (PropertyMissingException exception)</div>
+<div class="c-code__line">                {</div>
+<div class="c-code__line">                    ExampleUtils.ReportMissingProperties(</div>
+<div class="c-code__line">                        exception,</div>
+<div class="c-code__line">                        Console.Out,</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;every &#39;hardware&#39; property this example displays, &quot;</span> +</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;which needs a paid subscription&quot;</span>,</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;https://configure.51degrees.com/hYzn3TV3?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-cloud-nativemodel-console-program.cs&amp;utm_term=resource-key-required&quot;</span>);</div>
+<div class="c-code__line">                    loggerFactory.Dispose();</div>
+<div class="c-code__line">                    Environment.Exit(1);</div>
+<div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Dispose the logger to ensure any messages get flushed</span></div>
@@ -241,7 +274,7 @@ You can create a Resource Key using the 51Degrees
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_examples_1_1_cloud_1_1_native_model_lookup_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_examples_1_1_cloud_1_1_native_model_lookup.html">FiftyOne.DeviceDetection.Examples.Cloud.NativeModelLookup</a></div><div class="ttdef"><b>Definition</b> Cloud/NativeModel-Console/Program.cs:51</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_examples_1_1_cloud_1_1_native_model_lookup_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_examples_1_1_cloud_1_1_native_model_lookup.html">FiftyOne.DeviceDetection.Examples.Cloud.NativeModelLookup</a></div><div class="ttdef"><b>Definition</b> Cloud/NativeModel-Console/Program.cs:53</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

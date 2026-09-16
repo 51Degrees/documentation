@@ -124,6 +124,15 @@ var annotated =
           [ "IExampleWriter", "interface_fifty_one_1_1_device_detection_1_1_examples_1_1_i_example_writer.html", "interface_fifty_one_1_1_device_detection_1_1_examples_1_1_i_example_writer" ],
           [ "PipelineOptionsExtensions", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_pipeline_options_extensions.html", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_pipeline_options_extensions" ]
         ] ]
+      ] ],
+      [ "Examples", "namespace_fifty_one_1_1_examples.html", [
+        [ "Cloud", "namespace_fifty_one_1_1_examples_1_1_cloud.html", [
+          [ "PmpWeb", "namespace_fifty_one_1_1_examples_1_1_cloud_1_1_pmp_web.html", [
+            [ "Pages", "class_fifty_one_1_1_examples_1_1_cloud_1_1_pmp_web_1_1_pages.html", "class_fifty_one_1_1_examples_1_1_cloud_1_1_pmp_web_1_1_pages" ],
+            [ "Program", "class_fifty_one_1_1_examples_1_1_cloud_1_1_pmp_web_1_1_program.html", "class_fifty_one_1_1_examples_1_1_cloud_1_1_pmp_web_1_1_program" ],
+            [ "Settings", "class_fifty_one_1_1_examples_1_1_cloud_1_1_pmp_web_1_1_settings.html", "class_fifty_one_1_1_examples_1_1_cloud_1_1_pmp_web_1_1_settings" ]
+          ] ]
+        ] ]
       ] ]
     ] ],
     [ "Framework_Web", "namespace_framework___web.html", [
