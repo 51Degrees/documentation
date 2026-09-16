@@ -61,7 +61,7 @@ script whatever the order of the tags, and both sides are built for that.
   the visitor just now, from this site's storage, or from the answer shared
   across your group.
 
-# When the Page Has No Client Script Tag
+# When the Page Has No Client Script
 
 The PMP adds one. This is the normal, expected behaviour and it is a
 convenience, so that a publisher who wants the dialog and nothing else still
@@ -73,52 +73,66 @@ the `IsGdpr` value that sets what its own Transparency and Consent Framework
 surface reports. Rather than keeping a second way of finding those out, it
 uses the one the client script already has.
 
-**A script is added only where the page carries no client script tag at
-all.** Where your page does carry one, the PMP waits for that tag to
-run and adds nothing, however the two tags are ordered and whether or not
-either has run yet, and it says so in the console.
+**The PMP looks for the client script's page object and for nothing else.**
+The object is `fod`, or the name `data-object-name` gives. Where the script
+came from decides nothing, so a client script served by another 51Degrees
+cloud, by a proxy of your own or from a bundle of your own making all
+count, because each of them leaves the object.
+
+A client script tag is ordinarily asynchronous, as the tag above is
+written, so it has usually not run when the PMP starts, and an object that
+is not there yet is not an object that is not coming. The PMP waits for one
+to appear, looking every 50 milliseconds, adds nothing while it waits, and
+says so in the console.
 
 ```
-A client script tag is already on this page, so the PMP is waiting for it to run rather than adding another. 'fod' will be read from it once it has.
+Waiting for the 51Degrees client script to leave 'fod' on this page before adding one, because a tag the page carries is ordinarily asynchronous and may not have run yet. The wait ends when the page has loaded, and after 5000 milliseconds at the latest.
 ```
 
-The question is asked of the page rather than of the object, because a tag
-is in the page from the moment the browser has read it, whether it has run
-or not, while an object exists only once its script has run. Both tags are
-asynchronous, so an object that is not there yet says nothing about whether
-you wrote a tag. A tag written below the PMP's tag counts too, because
-the PMP looks again once the browser has finished reading the page.
+The wait ends at the page's load event, by which time every tag the page's
+markup carries has run whatever address it names, and after five seconds
+at the latest on a page whose load event is very late or never comes.
+Where the page has already loaded when the PMP starts, nothing waits and
+the script is added straight away.
 
-Only when the page really carries none does the PMP build the script's
+Only when no object has appeared by then does the PMP build the script's
 URL from the cloud that served the PMP and the resource key it already
 holds, add the tag as an asynchronous script, and write a line in the
 console saying that it did. That message never prints your resource key or
 your licence key.
 
+```
+There is no client script object named 'fod' on this page, so the client script is being added from the cloud that served this one. Put the script tag on the page to decide for yourself where it sits and when it runs.
+```
+
 Where your content security policy names a nonce, the tag the PMP adds
 carries the same nonce the PMP's own tag has, so the policy is
 satisfied without being loosened.
 
-Two things follow from that.
+Three things follow from that.
 
 - **Put the client script tag on the page yourself when you want control of
   its parameters.** The tag the PMP adds carries the defaults. Your own
   tag can set the object name, turn cookies on with
   `fod-js-enable-cookies=true`, add a licence key, or sit wherever in the
-  page you want it. The PMP waits for your tag and adds nothing.
+  page you want it. The PMP finds its object and adds nothing, and the
+  sooner the object is there the sooner the second card can be offered,
+  which @ref Identifiers_PMP_Sharing explains.
 - **Load the client script once.** Loading it twice replaces the first
-  instance and its state, and the script says so in the console. The
-  PMP never causes this, because a tag of your own is a tag it waits
-  for.
+  instance and its state, and the script says so in the console. The PMP
+  never causes this on a page whose object is there by the time the page
+  has loaded, because it adds a script only where none has appeared by
+  then.
 
   ```
   51Degrees: fod already exists on this page. Loading the script twice replaces it. Load it once and call fod.refresh() to update.
   ```
 
-A tag that runs and leaves no object behind, which usually means the name on
-`data-object-name` and the name the script was built with disagree, is
-warned about and nothing is added. A second copy would run every round twice
-and create two identifiers, which is worse than the missing value.
+- **Keep `data-object-name` and `fod-js-object-name` the same.** The PMP
+  looks for the object under the name it was told, so where your own tag
+  was built with another name it finds nothing, adds a client script under
+  the name it was told once the page has loaded, and the page then runs
+  two client scripts and creates two identifiers.
 
 Where the PMP can work out neither a cloud origin nor a resource key,
 which happens when a build is opened from disk rather than served, it writes
@@ -166,8 +180,8 @@ It is no longer how the client script is loaded. The client script hears the
 answer through the PMP's event and refreshes itself, so pointing the
 action URL at the script's own URL would load a second copy of the script,
 which replaces the first and warns in the console. Where the action URL
-names the cloud script and the object already exists, the PMP skips it
-for that reason.
+names the cloud script and the client script's object is on the page or on
+its way, the PMP skips it and says so in the console.
 
 Leaving `data-action-url` out means nothing is fired and nothing is written
 to the console. The answer is still stored, still announced, and the dialog

@@ -6,9 +6,9 @@ records what a visitor consented to. The cloud reads that string, works out
 the usage of the @ref Identifiers_51Did from the purposes the string grants,
 and records inside the identifier that the usage came that way.
 
-Putting the platform and the 51Degrees client script on a page is
-@ref Identifiers_PMP_CmpWiring. This page is what the cloud does with the
-string once it arrives.
+Putting a consent management platform and the 51Degrees client script on
+a page is @ref Identifiers_PMP_CmpWiring. This page is what the cloud does
+with the string once it arrives.
 
 # Sending the String
 
@@ -120,7 +120,8 @@ See *Usage policies and licensing* on @ref Identifiers_51Did.
 - IAB Europe, the Framework Policies, which say which purposes may be
   claimed under legitimate interest:
   <https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/>
-- IAB Tech Lab, the TC string format and the platform API:
+- IAB Tech Lab, the TC string format and the consent management platform
+  API:
   <https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework>
 - The client script that gathers the string:
   <https://github.com/51Degrees/javascript-templates>

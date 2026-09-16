@@ -60,9 +60,9 @@ the PMP reads from the client script,
 
 At start up the PMP reads `derived.isgdpr` from the client script's
 object and sets `gdprApplies` on its own Framework surface from it. Where
-your page carries no client script tag, the PMP adds one, and where a
-tag is there it waits for that tag to run, which is on
-@ref Identifiers_PMP_Integration.
+no client script object appears on your page by the time it has loaded,
+the PMP adds a client script, and where one appears it reads that one,
+which is on @ref Identifiers_PMP_Integration.
 
 Where the value cannot be had, the PMP writes a warning to the console
 naming the reason, and leaves `gdprApplies` reporting `true`. Nothing else

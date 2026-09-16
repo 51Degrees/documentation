@@ -28,8 +28,9 @@ where nobody was asked produces no identifier at all.
    in the visitor's browser, a second card asks whether the answer should
    apply to the other sites in the group you named. Where the client script
    is still testing the cookie when the visitor answers, a waiting ring shows
-   for up to three seconds, and if third party cookies are not confirmed in
-   that time there is no second card and the answer stays with this site.
+   for up to three seconds from a client script being on the page, and if
+   third party cookies are not confirmed in that time there is no second
+   card and the answer stays with this site.
    The PMP never waits for the 51Did. Where sharing is not configured
    there is no second card and no wait. See @ref Identifiers_PMP_Sharing.
 3. **The bubble.** After answering, the dialog collapses to a small bubble
@@ -71,9 +72,9 @@ version 2, at <https://m4ow.uk/mtm/2.txt>. See
 - **The 51Degrees client script**, which is the script that gathers the
   page's values and asks the cloud for its answers, publishing them on a
   page object named `fod` by default. It listens for the PMP's answer
-  by itself, so you write no code to join the two. Where your page carries
-  no client script tag, the PMP adds one. See
-  @ref Identifiers_PMP_Integration.
+  by itself, so you write no code to join the two. Where no client script
+  object has appeared on your page by the time it has loaded, the PMP adds
+  a client script. See @ref Identifiers_PMP_Integration.
 - **The cloud**, which serves the loader, the bundle and the client script,
   holds a shared answer when the visitor agrees to share one, and creates
   the 51Did.
@@ -108,12 +109,12 @@ sequenceDiagram
         Note over Browser,Bundle: An answer that comes back shows no dialog, only the bubble
     end
 
-    alt The page carries no client script tag
+    alt The client script's object is on the page, or appears while the bundle waits for it
+        Bundle->>Bundle: Log that it is waiting for the object, then read the object once it appears
+    else No object by the time the page has loaded
         Bundle->>Page: Add the client script tag and log that it did
         Page->>Cloud: GET /api/v4/[resource key].js
         Cloud-->>Script: The client script
-    else A tag is there, whether or not it has run
-        Bundle->>Bundle: Wait for that tag and log that it is waiting
     end
 
     Note over Bundle,Script: The answer is announced on the window and held behind window.__51d_pmp.preference()
@@ -136,7 +137,7 @@ sequenceDiagram
         else Already known not to work, or never going to be tested
             Bundle-->>Browser: No second card, and the answer stays with this site
         else The script is still testing the cookie
-            Note over Bundle: Waits up to three seconds for that alone, never for the 51Did
+            Note over Bundle: Waits up to three seconds from a client script being on the page, for that alone and never for the 51Did
             Bundle-->>Browser: Waiting ring
             alt Confirmed to work within three seconds
                 Script-->>Bundle: Third party cookies work
@@ -170,10 +171,11 @@ sequenceDiagram
    answer comes back the visitor sees no dialog, only the bubble. The
    PMP waits up to 1500 milliseconds for that reply, and a reply that
    has not arrived by then counts as no answer, so the dialog is shown.
-4. Where the page carries no 51Degrees client script tag, the PMP adds
-   one from the same cloud that served it, using the resource key it already
-   holds, and says so in the console. Where a tag is there it waits for it,
-   run or not, and adds nothing.
+4. The PMP looks for the client script's page object, `fod` or the name
+   `data-object-name` gives, and waits for it to appear until the page has
+   loaded, saying so in the console. Where no object has appeared by then it
+   adds the client script from the same cloud that served it, using the
+   resource key it already holds, and says so in the console.
 5. Any answer in force is announced on the window and is also available from
    `window.__51d_pmp.preference()`, which answers straight away.
 6. The client script reads whatever is available when it is built, registers
@@ -193,10 +195,11 @@ sequenceDiagram
    tested the cookie, which is the case above, the PMP decides at once,
    showing the second card where the cookie worked, and closing the dialog
    with the answer kept by this site where it did not. Where the test is
-   still running, the PMP shows its
-   waiting ring for up to three seconds. If third party cookies are
-   confirmed in that time the second card follows, and if they are not
-   there is no second card and the answer stays with this site.
+   still running, the PMP shows its waiting ring for up to three seconds,
+   counted from the later of the answer and a client script being on the
+   page. If third party cookies are confirmed in that time the second card
+   follows, and if they are not there is no second card and the answer
+   stays with this site.
 10. If the visitor agrees to share, the PMP writes the answer to the
     cloud and removes the copy held on this site, so there is one answer and
     never two. The PMP waits up to 1500 milliseconds for the cloud to

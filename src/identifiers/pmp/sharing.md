@@ -60,7 +60,13 @@ for the 51Degrees client script to confirm that third party cookies work.
 If they are not confirmed in that time, the second card is not shown and
 the answer stays with this site.**
 
-The three seconds start when the visitor answers the first card. The waiting
+The three seconds start at the later of the visitor's answer and a client
+script being on the page, whether your own or one the PMP added, because
+nothing measures the cookie until one is there. On a page that already has
+a client script when the visitor answers, which is the ordinary case, that
+is the moment of the answer. On a page still loading it is when the script
+arrives, so the ring can be up for the wait for the script and then these
+three seconds, one after the other. The waiting
 ring covers the cards for as long as the wait lasts, and while it does the
 cards are darkened and nothing on them can be pressed. The time is set once
 when the PMP is built, it is the same on every page, and no attribute
@@ -93,8 +99,9 @@ round that is still going on to create the 51Did never holds the second card
 back.
 
 In practice the wait nearly always means the PMP added the client
-script itself, because the page carries no client script tag, and the
-script has not tested the cookie by the time the visitor clicks. A page's
+script itself, because no client script object had appeared by the time
+the page loaded, and the script has not tested the cookie by the time the
+visitor clicks. A page's
 own client script tag that has not tested it yet is waited for in the same
 way, because what the PMP waits on is the missing result and not who
 added the script. Putting the tag on the page yourself lets it start sooner,
@@ -144,11 +151,11 @@ registered after the first round has ended is called once, straight away,
 and never again, so it can miss that result.
 
 The value is measured once the client script has run the snippet that tests
-it, and before that it reports the likely answer for the browser. Where your
-page carries no client script tag the PMP adds one so that it has this
-answer, and where a tag is there it waits for that tag to run rather than
-adding a second copy, which is described on
-@ref Identifiers_PMP_Integration.
+it, and before that it reports the likely answer for the browser. Where no
+client script object appears on your page by the time it has loaded, the
+PMP adds a client script so that it has this answer, and where the object
+appears it reads that one rather than adding a second copy, which is
+described on @ref Identifiers_PMP_Integration.
 
 Browsers that block third party cookies, which includes Safari and Firefox
 with their default settings, never show the second card, because the test

@@ -93,7 +93,7 @@ the public key that domain publishes. See @ref Identifiers_51Did and
 | The `__tcfapi` stub that queues calls until the PMP loads | Implemented. Installed when the bundle runs. `ping` is answered at once and every other call is queued until the string is ready, then answered in order. |
 | The `__tcfapiLocator` frame | Implemented. A hidden frame of that name is added to the body, or on `DOMContentLoaded` where the body is not parsed yet, and never added twice. |
 | Cross frame calls by `postMessage` | Implemented. A `__tcfapiCall` message is passed to `__tcfapi` and answered with a `__tcfapiReturn` message carrying the same `callId`. |
-| `ping` | Implemented. Reports `cmpStatus`, `cmpLoaded`, `displayStatus`, `apiVersion` `2.3`, `cmpVersion` 1, `cmpId`, `gvlVersion`, `tcfPolicyVersion` and `gdprApplies`. |
+| `ping` | Implemented. Reports `cmpStatus`, `cmpLoaded`, `displayStatus`, `apiVersion` `2`, `cmpVersion` 1, `cmpId`, `gvlVersion`, `tcfPolicyVersion` and `gdprApplies`. |
 | `addEventListener` | Implemented. A listener registered once the string is ready is called at once with `tcloaded`. One registered before that is called when the string becomes ready, and not straight away with a loading status. |
 | `removeEventListener` | Implemented, and still answered after the alternative answer, so a listener registered earlier can be taken off. |
 | `getTCData` | Implemented, although the specification deprecated the command in version 2.2. The purpose consents come from the visitor's answer and every other field is decoded from the string. |
