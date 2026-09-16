@@ -23,6 +23,23 @@ Write-Host "::group::Cloning API docs"
 $env:GIT_LFS_SKIP_SMUDGE = 1
 # use PR target branch if we're running in a PR, or the current CI branch, or main
 $ref = $env:GITHUB_BASE_REF ? $env:GITHUB_BASE_REF : $env:GITHUB_REF_NAME ? $env:GITHUB_REF_NAME : 'main'
+
+# An API repo is cloned at $ref where it has a branch of that name, so a
+# documentation change can be previewed against the API change it describes.
+# Where it has no such branch, main is used. Without the fallback the clone
+# fails and the whole preview fails, which is what a documentation branch
+# raised against another documentation branch always hits, because the name
+# of a documentation branch means nothing in an API repo.
+function Resolve-Ref($url, $preferred) {
+    if ($preferred -eq 'main') {
+        return 'main'
+    }
+    # ls-remote exits 0 with no output where the branch is absent, so the
+    # emptiness of the output is the test rather than the exit code.
+    $found = git ls-remote --heads $url $preferred
+    return $found ? $preferred : 'main'
+}
+
 $repoMap = & $PSScriptRoot/apis.ps1
 # repos have to be cloned here since they expect documentation repo to be two levels above them
 $apis = New-Item -Force -ItemType Directory "apis"
@@ -30,10 +47,18 @@ $apis = New-Item -Force -ItemType Directory "apis"
 New-Item -ItemType SymbolicLink -Force -Target $PWD -Path $apis/documentation | Out-Null
 foreach ($_ in $repoMap.GetEnumerator()) {
     $repo, $examples = $_.Key, $_.Value
-    git clone -b $ref --depth=1 --recurse-submodules --shallow-submodules "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$repo.git" "$apis/$repo"
+    # Each repo is asked about on its own, because a branch can exist in one
+    # and not in the next, and an examples repo is a separate repo again.
+    $repoUrl = "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$repo.git"
+    $repoRef = Resolve-Ref $repoUrl $ref
+    Write-Host "$repo at $repoRef"
+    git clone -b $repoRef --depth=1 --recurse-submodules --shallow-submodules $repoUrl "$apis/$repo"
     if ($examples) {
         # clone examples inside their main repo
-        git clone -b $ref --depth=1 "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$examples.git" "$apis/$repo/$examples"
+        $examplesUrl = "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$examples.git"
+        $examplesRef = Resolve-Ref $examplesUrl $ref
+        Write-Host "$examples at $examplesRef"
+        git clone -b $examplesRef --depth=1 $examplesUrl "$apis/$repo/$examples"
     }
 }
 Write-Host "::endgroup::"
