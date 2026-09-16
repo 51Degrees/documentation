@@ -3,8 +3,8 @@
 <!--
 REVIEW PENDING. The draft wording on this page has been written by the
 engineering team and has not yet been reviewed by the 51Degrees team who
-handle customer data protection questions. An issue has been raised for
-that review on the 51Degrees Website repository. Do not present this page
+handle customer data protection questions. That review is tracked
+internally. Do not present this page
 as reviewed wording until that review has happened, and update this comment
 when it has.
 -->

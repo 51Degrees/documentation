@@ -6,16 +6,16 @@ Management Platform, which asks the visitor the question. The other is the
 for its answers, including the @ref Identifiers_51Did.
 
 You write no code to join the two. The client script listens for the
-platform's answer by itself, and the platform reads two values back from the
+PMP's answer by itself, and the PMP reads two values back from the
 client script, being whether third party cookies work and whether the visit
 is one where the General Data Protection Regulation applies.
 
 # The Two Tags
 
 ```{html}
-<!-- The Preference Management Platform. Every setting is an attribute. -->
-<script src="https://cloud.51degrees.com/api/v4/pmp"
-    data-resource-key="YOUR-RESOURCE-KEY"
+<!-- The Preference Management Platform. The resource key is the file
+     name and every other setting is an attribute. -->
+<script src="https://cloud.51degrees.com/api/v4/pmp/YOUR-RESOURCE-KEY.js"
     data-tcf-vendor="[YOUR TCF VENDOR STRING]"
     data-brand-name="Your Brand"
     data-brand-terms-url="https://yoursite.com/privacy"
@@ -29,13 +29,20 @@ is one where the General Data Protection Regulation applies.
 </script>
 ```
 
-The platform's own URL names the loader and carries nothing else. Every
-setting, the resource key included, is a `data-` attribute on the tag, so
-each setting is written once and read from one place. The full list is on
+The resource key is the file name in the PMP's own URL, which is the shape
+every other keyed request takes, and it is read from there and from nowhere
+else. Every other setting is a `data-` attribute on the tag, so each setting
+is written once and read from one place. The full list is on
 @ref Identifiers_PMP_Configuration.
 
+Up to 4.4.37 the key was the `data-resource-key` attribute and the URL was
+`/api/v4/pmp` with nothing after it. Neither is served now. Two places to
+write a key meant a page could carry one the cloud never saw, and the
+refusal that followed was invisible to the page, so a tag in the old shape
+is answered 404 on its first request instead.
+
 Your resource key must be registered for the domain the page is served
-from. The request for the platform's bundle is checked against the domains
+from. The request for the PMP's bundle is checked against the domains
 the key names, the same as every other keyed endpoint, so a page on a domain
 the key does not cover is refused and no dialog appears. A page that
 suppresses the `Referer` header, with `<meta name="referrer"
@@ -44,76 +51,90 @@ reason, because the check has nothing to compare.
 
 # Load Order Does Not Matter
 
-Put the two tags in whichever order suits your page. The platform's bundle
+Put the two tags in whichever order suits your page. The PMP's bundle
 is loaded asynchronously, so it can finish before or after the client
 script whatever the order of the tags, and both sides are built for that.
 
 - The client script takes any answer that is already in force when it is
-  built, and otherwise waits for the platform to announce one.
-- The platform announces every answer on the window, whether it came from
+  built, and otherwise waits for the PMP to announce one.
+- The PMP announces every answer on the window, whether it came from
   the visitor just now, from this site's storage, or from the answer shared
   across your group.
 
-# When the Page Has No Client Script Tag
+# When the Page Has No Client Script
 
-The platform adds one. This is the normal, expected behaviour and it is a
+The PMP adds one. This is the normal, expected behaviour and it is a
 convenience, so that a publisher who wants the dialog and nothing else still
 gets a working integration.
 
-The platform needs the client script for two things, being the third party
+The PMP needs the client script for two things, being the third party
 cookie result that decides whether the second card is worth offering, and
 the `IsGdpr` value that sets what its own Transparency and Consent Framework
 surface reports. Rather than keeping a second way of finding those out, it
 uses the one the client script already has.
 
-**A script is added only where the page carries no client script tag at
-all.** Where your page does carry one, the platform waits for that tag to
-run and adds nothing, however the two tags are ordered and whether or not
-either has run yet, and it says so in the console.
+**The PMP looks for the client script's page object and for nothing else.**
+The object is `fod`, or the name `data-object-name` gives. Where the script
+came from decides nothing, so a client script served by another 51Degrees
+cloud, by a proxy of your own or from a bundle of your own making all
+count, because each of them leaves the object.
+
+A client script tag is ordinarily asynchronous, as the tag above is
+written, so it has usually not run when the PMP starts, and an object that
+is not there yet is not an object that is not coming. The PMP waits for one
+to appear, looking every 50 milliseconds, adds nothing while it waits, and
+says so in the console.
 
 ```
-A client script tag is already on this page, so the platform is waiting for it to run rather than adding another. 'fod' will be read from it once it has.
+Waiting for the 51Degrees client script to leave 'fod' on this page before adding one, because a tag the page carries is ordinarily asynchronous and may not have run yet. The wait ends when the page has loaded, and after 5000 milliseconds at the latest.
 ```
 
-The question is asked of the page rather than of the object, because a tag
-is in the page from the moment the browser has read it, whether it has run
-or not, while an object exists only once its script has run. Both tags are
-asynchronous, so an object that is not there yet says nothing about whether
-you wrote a tag. A tag written below the platform's tag counts too, because
-the platform looks again once the browser has finished reading the page.
+The wait ends at the page's load event, by which time every tag the page's
+markup carries has run whatever address it names, and after five seconds
+at the latest on a page whose load event is very late or never comes.
+Where the page has already loaded when the PMP starts, nothing waits and
+the script is added straight away.
 
-Only when the page really carries none does the platform build the script's
-URL from the cloud that served the platform and the resource key it already
+Only when no object has appeared by then does the PMP build the script's
+URL from the cloud that served the PMP and the resource key it already
 holds, add the tag as an asynchronous script, and write a line in the
 console saying that it did. That message never prints your resource key or
 your licence key.
 
-Where your content security policy names a nonce, the tag the platform adds
-carries the same nonce the platform's own tag has, so the policy is
+```
+There is no client script object named 'fod' on this page, so the client script is being added from the cloud that served this one. Put the script tag on the page to decide for yourself where it sits and when it runs.
+```
+
+Where your content security policy names a nonce, the tag the PMP adds
+carries the same nonce the PMP's own tag has, so the policy is
 satisfied without being loosened.
 
-Two things follow from that.
+Three things follow from that.
 
 - **Put the client script tag on the page yourself when you want control of
-  its parameters.** The tag the platform adds carries the defaults. Your own
+  its parameters.** The tag the PMP adds carries the defaults. Your own
   tag can set the object name, turn cookies on with
   `fod-js-enable-cookies=true`, add a licence key, or sit wherever in the
-  page you want it. The platform waits for your tag and adds nothing.
+  page you want it. The PMP finds its object and adds nothing, and the
+  sooner the object is there the sooner the second card can be offered,
+  which @ref Identifiers_PMP_Sharing explains.
 - **Load the client script once.** Loading it twice replaces the first
-  instance and its state, and the script says so in the console. The
-  platform never causes this, because a tag of your own is a tag it waits
-  for.
+  instance and its state, and the script says so in the console. The PMP
+  never causes this on a page whose object is there by the time the page
+  has loaded, because it adds a script only where none has appeared by
+  then.
 
   ```
   51Degrees: fod already exists on this page. Loading the script twice replaces it. Load it once and call fod.refresh() to update.
   ```
 
-A tag that runs and leaves no object behind, which usually means the name on
-`data-object-name` and the name the script was built with disagree, is
-warned about and nothing is added. A second copy would run every round twice
-and create two identifiers, which is worse than the missing value.
+- **Keep `data-object-name` and `fod-js-object-name` the same.** The PMP
+  looks for the object under the name it was told, so where your own tag
+  was built with another name it finds nothing, adds a client script under
+  the name it was told once the page has loaded, and the page then runs
+  two client scripts and creates two identifiers.
 
-Where the platform can work out neither a cloud origin nor a resource key,
+Where the PMP can work out neither a cloud origin nor a resource key,
 which happens when a build is opened from disk rather than served, it writes
 a warning saying the third party cookie result and `IsGdpr` are unavailable
 and carries on. The dialog still works and the visitor is still asked,
@@ -126,13 +147,12 @@ The client script publishes everything it gets from the cloud on one page
 object. That object is named `fod` unless you name it something else with
 `fod-js-object-name` on the script's URL.
 
-The platform has to know the name to find the object, so tell it with the
+The PMP has to know the name to find the object, so tell it with the
 optional `data-object-name` attribute. Leave the attribute out and `fod` is
 used, which is what almost every page wants.
 
 ```{html}
-<script src="https://cloud.51degrees.com/api/v4/pmp"
-    data-resource-key="YOUR-RESOURCE-KEY"
+<script src="https://cloud.51degrees.com/api/v4/pmp/YOUR-RESOURCE-KEY.js"
     data-object-name="fiftyone"
     ...>
 </script>
@@ -142,7 +162,7 @@ used, which is what almost every page wants.
 </script>
 ```
 
-Every console message the platform writes names whichever object name is in
+Every console message the PMP writes names whichever object name is in
 force, so a page using a different name reads messages about that name and
 not about `fod`.
 
@@ -157,11 +177,11 @@ Use it for your own purposes, for example to tell your analytics that an
 answer was given.
 
 It is no longer how the client script is loaded. The client script hears the
-answer through the platform's event and refreshes itself, so pointing the
+answer through the PMP's event and refreshes itself, so pointing the
 action URL at the script's own URL would load a second copy of the script,
 which replaces the first and warns in the console. Where the action URL
-names the cloud script and the object already exists, the platform skips it
-for that reason.
+names the cloud script and the client script's object is on the page or on
+its way, the PMP skips it and says so in the console.
 
 Leaving `data-action-url` out means nothing is fired and nothing is written
 to the console. The answer is still stored, still announced, and the dialog
@@ -198,7 +218,7 @@ is included only for a key that carries them too, so a page whose key has no
 
 - What the three answers mean and how to read the one in force:
   @ref Identifiers_PMP_Preferences
-- Every attribute the platform reads: @ref Identifiers_PMP_Configuration
+- Every attribute the PMP reads: @ref Identifiers_PMP_Configuration
 - Sharing an answer across your sites: @ref Identifiers_PMP_Sharing
 - The identifier the answer leads to: @ref Identifiers_51Did
 - How the client script gathers page values: @ref PipelineApi_Features_ClientSideEvidence

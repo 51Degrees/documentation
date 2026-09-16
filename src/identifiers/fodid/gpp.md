@@ -10,7 +10,7 @@ The Global Privacy Platform is the IAB Tech Lab container that carries
 several consent signals in one string, one section per signal. The US
 Privacy string is the older signal written for the California Consumer
 Privacy Act, which IAB Tech Lab deprecated on 31 January 2024 and tells its
-users to replace with the platform.
+users to replace with the Global Privacy Platform.
 
 # What Happens to a Request Carrying One
 
@@ -41,11 +41,13 @@ Consent Framework's purposes onto standard marketing and personalized
 marketing, and maps no other signal, so a platform string can be a real
 signal and still say nothing a usage could be built from.
 
-This is not a special case for the platform. A framework string that grants
+This is not a special case for the Global Privacy Platform. A framework
+string that grants
 too little for either usage produces no identifier either, for the same
 reason, which is that the signal does not say what the usage values say.
 
-Mapping the platform needs a new version of the Model Terms and a cloud
+Mapping the Global Privacy Platform needs a new version of the Model Terms
+and a cloud
 release that reads it, so there is no setting on a resource key or a
 parameter on a request that turns this on.
 

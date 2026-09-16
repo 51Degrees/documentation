@@ -32,7 +32,8 @@ The 51Degrees client script reads your consent management platform through
   Every consent management platform ships one, and the Framework's own
   specification already requires it to be first on the page. The stub queues
   anything asked of it.
-- **The platform itself may load later.** That is the normal case and it
+- **The consent management platform itself may load later.** That is the
+  normal case and it
   works, because the stub holds the registration until the real
   implementation takes over and then calls back.
 - **A missing stub has no recovery on that page view.** The client script
@@ -138,9 +139,9 @@ is theirs and differs between vendors.
   @ref Identifiers_51Did_Tcf
 - The identifier, the usage values and how a consent string maps to one:
   @ref Identifiers_51Did
-- The platform for a site that does not run a consent management platform:
+- The PMP for a site that does not run a consent management platform:
   @ref Identifiers_PMP
-- How the platform compares with a consent management platform, feature by
+- How the PMP compares with a consent management platform, feature by
   feature: @ref Identifiers_PMP_CmpComparison
 - Header bidding with the identifier: @ref Integrations_Prebid
 - How the client script gathers page values:

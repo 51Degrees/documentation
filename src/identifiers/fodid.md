@@ -123,7 +123,7 @@ The block that does this is rendered into your script only when your Resource Ke
 
 ### The two sources, in order
 
-1. **The 51Degrees Preference Management Platform**, if it is on the page. The script reads the answer in force through the platform's getter, listens for the platform's window event, and falls back to the platform's own stored answer. All three answers count, `non-marketing` included, and each is sent as a stated `id.usage`. See @ref Identifiers_PMP.
+1. **The 51Degrees Preference Management Platform**, if it is on the page. The script reads the answer in force through the PMP's getter, listens for the PMP's window event, and falls back to the PMP's own stored answer. All three answers count, `non-marketing` included, and each is sent as a stated `id.usage`. See @ref Identifiers_PMP.
 2. **A Transparency and Consent Framework consent management platform**, through `window.__tcfapi`. The script registers a listener at construction and takes the string from a callback reporting `tcloaded` or `useractioncomplete`, sending it as `tcstring`. See @ref Identifiers_PMP_CmpWiring.
 
 The first source that has an answer wins and the rest are ignored, and the cloud applies the same order when the request arrives. A Global Privacy Platform string is never read by either side, because the Model Terms for Marketing at <https://m4ow.uk/mtm/2.txt> do not map it.

@@ -27,7 +27,7 @@ lets another site in your group offer its own alternative rather than asking
 a question the visitor has already answered.
 
 There is no fourth answer. The dialog has no close cross, so a visitor
-cannot leave the first card unanswered, and the platform never invents an
+cannot leave the first card unanswered, and the PMP never invents an
 answer on a visitor's behalf.
 
 # Where the Answer Is Kept
@@ -43,7 +43,7 @@ and no stale copy to go wrong.
 
 Not confirmed covers a browser that blocks third party cookies, a result that
 is not known, and a confirmation that did not arrive within the three seconds
-the platform waits, all set out on @ref Identifiers_PMP_Sharing. A write to the cloud that
+the PMP waits, all set out on @ref Identifiers_PMP_Sharing. A write to the cloud that
 is refused, or not confirmed within 1500 milliseconds, also leaves the answer
 in this site's `localStorage`.
 
@@ -79,7 +79,7 @@ answer lives here, and where the answer moved to the group's shared store
 the cloud's cookie has to go as well, which @ref Identifiers_PMP_Sharing
 describes.
 
-Reopening the dialog does not need a reload. Call the platform's own method
+Reopening the dialog does not need a reload. Call the PMP's own method
 and the visitor gets the dialog back with their current answer shown.
 
 ```{js}
@@ -89,7 +89,7 @@ window.__51d_pmp.open();
 # Reading the Answer From Your Page
 
 There are three ways in, and they exist because a page cannot know whether
-the platform's bundle has loaded yet.
+the PMP's bundle has loaded yet.
 
 ## The Window Event
 
@@ -105,7 +105,7 @@ window.addEventListener('51d-pmp-preference', function (e) {
 });
 ```
 
-Register the listener before the platform's tag if you can. The event fires
+Register the listener before the PMP's tag if you can. The event fires
 once per answer coming into force, so a listener registered afterwards can
 miss the announcement and should read the getter as well.
 
@@ -116,13 +116,13 @@ var answer = window.__51d_pmp && window.__51d_pmp.preference();
 // 'standard', 'personalized', 'non-marketing', or null when nobody has answered
 ```
 
-The getter answers from memory, straight away, with whatever the platform
+The getter answers from memory, straight away, with whatever the PMP
 found when it started, this site's storage and the group's shared answer
 included. The object exists only once the bundle has loaded, so test for it.
 
 ## The Transparency and Consent Framework Surface
 
-The platform exposes a `window.__tcfapi` function, which is how advertising
+The PMP exposes a `window.__tcfapi` function, which is how advertising
 code on the page normally asks about consent, and it answers the standard
 `ping`, `getTCData`, `addEventListener` and `removeEventListener` commands.
 
@@ -135,7 +135,7 @@ __tcfapi('addEventListener', 2, function (tcData, success) {
 ```
 
 The string it hands out is built from the vendor string you supply in
-`data-tcf-vendor`. The platform sets the purpose bits from the visitor's
+`data-tcf-vendor`. The PMP sets the purpose bits from the visitor's
 answer and the time fields, and copies everything else through unchanged,
 so a validator sees your own vendor set exactly as you encoded it.
 
@@ -147,13 +147,13 @@ so a validator sees your own vendor set exactly as you encoded it.
 After the alternative answer the surface answers `addEventListener` and
 `getTCData` with `success` false, and `ping` reports that no string is
 loaded. That is only the framework's way of describing an answer that grants
-no purposes, and it is not the platform failing and not the visitor
+no purposes, and it is not the PMP failing and not the visitor
 declining to answer. The 51Degrees client script never reads that as the
-answer, because it takes the answer from the platform itself, where
+answer, because it takes the answer from the PMP itself, where
 `non-marketing` is a value like any other. Choosing Standard or Personalized
 afterwards restores the full surface.
 
-# The Platform Is Not a Consent Management Platform
+# The PMP Is Not a Consent Management Platform
 
 The Preference Management Platform is a technically complete implementation
 of the Transparency and Consent Framework, and it deliberately does not
@@ -162,7 +162,7 @@ about the Model Terms usages.
 
 So a site that runs a consent management platform does not add this one.
 The two never share a page, they would fight over `window.__tcfapi`, and
-the platform stops with a console warning when it finds a foreign
+the PMP stops with a console warning when it finds a foreign
 `__tcfapi` already installed rather than replacing it. Where the Framework's
 Policies are what you need, run a consent management platform and wire the
 51Degrees client script to it instead, which is
@@ -171,7 +171,7 @@ Policies are what you need, run a consent management platform and wire the
 # Changing an Answer
 
 A visitor can reopen the dialog from the bubble at any time and answer
-differently. When they do, the platform announces the new answer, the
+differently. When they do, the PMP announces the new answer, the
 51Degrees client script asks the cloud again, and a fresh 51Did is created
 carrying the new usage. Page code registered through the client script's
 `onChange` callback is called with the new data. The identifier issued
@@ -185,7 +185,7 @@ of them is what the Model Terms say.
 - Carrying one answer across your sites: @ref Identifiers_PMP_Sharing
 - Running a consent management platform instead:
   @ref Identifiers_PMP_CmpWiring
-- How the platform compares with a consent management platform, feature by
+- How the PMP compares with a consent management platform, feature by
   feature: @ref Identifiers_PMP_CmpComparison
 - What to tell your visitors in your privacy notice:
   @ref Identifiers_PMP_Privacy
