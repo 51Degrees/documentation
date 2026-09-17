@@ -71,7 +71,7 @@ The cloud accepts two ways to decide a request's `id.usage` value. The *Direct* 
 
 ### Direct - your integration owns the mapping
 
-Your integration decides the value and tells the cloud what to do by passing an explicit `id.usage` (`non-marketing`, `standard` or `personalized`) as a query parameter or HTTP request header. You own the mapping from whatever preference or consent surface you use to one of these three values, and the cloud just acts on what you supply. This is the path @ref Identifiers_PMP takes: the widget captures the user's choice and fires the request with `id.usage` already set.
+Your integration decides the value and tells the cloud what to do by passing an explicit `id.usage` (`non-marketing`, `standard` or `personalized`) as a query parameter or HTTP request header. You own the mapping from whatever preference or consent surface you use to one of these three values, and the cloud just acts on what you supply. This is the path @ref Identifiers_PMP takes. PMP captures the user's choice and announces it on the page, and the 51Degrees client script hears it and sends it as `id.usage` on its next request.
 
 ### Derived from consent - the cloud maps a TCF or GPP string for you
 
