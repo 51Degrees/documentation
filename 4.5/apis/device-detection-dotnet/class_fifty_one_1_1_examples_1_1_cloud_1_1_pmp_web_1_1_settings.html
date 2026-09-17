@@ -93,7 +93,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="c-table__row memdesc:abc680c6049e4cf8bfbd11c9f73090d2c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name continuous integration sets a resource key carrying the 51Did product in, read only when RESOURCE_KEY_ENV_VAR is not set.  <br /></td></tr>
 <tr class="c-table__row memitem:a676d27f03285e32332cf0ff91e595112" id="r_a676d27f03285e32332cf0ff91e595112"><td class="c-table__cell"><a id="a676d27f03285e32332cf0ff91e595112" name="a676d27f03285e32332cf0ff91e595112"></a>
 const&#160;string&#160;</td><td class="c-table__cell"><b>CLOUD_ENDPOINT_ENV_VAR</b> = &quot;51DEGREES_CLOUD_ENDPOINT&quot;</td></tr>
-<tr class="c-table__row memdesc:a676d27f03285e32332cf0ff91e595112"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The cloud the pages load the platform and the client script from, and the pipeline asks. <br /></td></tr>
+<tr class="c-table__row memdesc:a676d27f03285e32332cf0ff91e595112"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The cloud the pages load the PMP and the client script from, and the pipeline asks. <br /></td></tr>
 <tr class="c-table__row memitem:a4f848b0b24643cd7400379dc2b2d0499" id="r_a4f848b0b24643cd7400379dc2b2d0499"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a4f848b0b24643cd7400379dc2b2d0499">DEFAULT_CLOUD_ENDPOINT</a></td></tr>
 <tr class="c-table__row memdesc:a4f848b0b24643cd7400379dc2b2d0499"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The cloud used when no endpoint variable is set.  <br /></td></tr>
 <tr class="c-table__row memitem:ab85ed83ceb2a6ec0beb858b010786038" id="r_ab85ed83ceb2a6ec0beb858b010786038"><td class="c-table__cell"><a id="ab85ed83ceb2a6ec0beb858b010786038" name="ab85ed83ceb2a6ec0beb858b010786038"></a>
@@ -136,7 +136,8 @@ string&#160;</td><td class="c-table__cell"><b>CloudEndpointVariable</b><code> [g
 </div><div class="c-member__body">
 
 <p>The placeholders a page under /cloud/ is filled with. </p>
-<p>The names are the ones in wwwroot/templates and README.md, and every language's copy of this demo fills the same ones. </p>
+<p>The names are the ones in wwwroot/templates and README.md, and every language's copy of this demo fills the same ones.</p>
+<p>RESOURCE_KEY and CLOUD_ENDPOINT are still filled although no template here uses them any longer, because the set of names is shared with the other languages' copies of this demo. Dropping them is a change to make in all of them at once. </p>
 
 </div>
 </div>
@@ -221,7 +222,7 @@ string&#160;</td><td class="c-table__cell"><b>CloudEndpointVariable</b><code> [g
 </div><div class="c-member__body">
 
 <p>The placeholders a page under /pipeline/ is filled with. </p>
-<p>The platform still comes from the cloud, and only the client script changes, being the one this demo's pipeline serves. </p>
+<p>The PMP still comes from the cloud, and only the client script changes, being the one this demo's pipeline serves. </p>
 
 </div>
 </div>

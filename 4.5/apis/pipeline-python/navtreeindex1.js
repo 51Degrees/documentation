@@ -235,8 +235,9 @@ var NAVTREEINDEX1 =
 "classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html#a06597787209062c40cf785121b7709a5":[1,8,6,6,4],
 "classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html#a09b238b81499e620905f32009883fb2b":[1,8,6,6,2],
 "classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html#a68d16e28faa12901420f44dc13e788aa":[1,8,6,6,0],
+"classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html#a909ebddff4cd9675c273c8efd539205c":[1,8,6,6,6],
 "classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html#a98a09ddd81a274c4618a2da68821e8a8":[1,8,6,6,1],
-"classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html#aa47ad5cb4c6ca093c7211efa09ef4f38":[1,8,6,6,6],
+"classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html#aa47ad5cb4c6ca093c7211efa09ef4f38":[1,8,6,6,7],
 "classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html#abbbbaccf0121e6a283cd82c6f966e950":[1,8,6,6,3],
 "classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html#afaffd91b172f39db68569b19906ae9d3":[1,8,6,6,5],
 "classtests_1_1test__javascriptbuilder_1_1_test_engine.html":[1,8,6,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "classtests_1_1test__old__config__properties__mappinng_1_1_old_config_properties_mapping_test.html":[1,8,7,0],
 "classtests_1_1test__old__config__properties__mappinng_1_1_old_config_properties_mapping_test.html#a0125cbe04b1d2598af7fd6b1bb268200":[1,8,7,0,0],
 "classtests_1_1test__old__config__properties__mappinng_1_1_old_config_properties_mapping_test.html#a32ada9c9cdb25270f7968985aa2d7764":[1,8,7,0,2],
-"classtests_1_1test__old__config__properties__mappinng_1_1_old_config_properties_mapping_test.html#a4dcd17c511d99e1c844d3584831812a9":[1,8,7,0,3],
-"classtests_1_1test__old__config__properties__mappinng_1_1_old_config_properties_mapping_test.html#a6e7470ae831b2ec729b001d9a94a670b":[1,8,7,0,1]
+"classtests_1_1test__old__config__properties__mappinng_1_1_old_config_properties_mapping_test.html#a4dcd17c511d99e1c844d3584831812a9":[1,8,7,0,3]
 };

@@ -6,5 +6,6 @@ var classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests =
     [ "testJavaScriptBuilder_Cookies", "classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html#abbbbaccf0121e6a283cd82c6f966e950", null ],
     [ "testJavaScriptBuilder_Minify", "classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html#a06597787209062c40cf785121b7709a5", null ],
     [ "testJSONBundler", "classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html#afaffd91b172f39db68569b19906ae9d3", null ],
+    [ "testParametersExcludeSessionIdAndSequence", "classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html#a909ebddff4cd9675c273c8efd539205c", null ],
     [ "testSequence", "classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html#aa47ad5cb4c6ca093c7211efa09ef4f38", null ]
 ];

@@ -118,6 +118,7 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:afaffd91b172f39db68569b19906ae9d3" id="r_afaffd91b172f39db68569b19906ae9d3"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#afaffd91b172f39db68569b19906ae9d3">testJSONBundler</a> (self)</td></tr>
 <tr class="c-table__row memitem:a06597787209062c40cf785121b7709a5" id="r_a06597787209062c40cf785121b7709a5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a06597787209062c40cf785121b7709a5">testJavaScriptBuilder_Minify</a> (self)</td></tr>
 <tr class="c-table__row memitem:aa47ad5cb4c6ca093c7211efa09ef4f38" id="r_aa47ad5cb4c6ca093c7211efa09ef4f38"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aa47ad5cb4c6ca093c7211efa09ef4f38">testSequence</a> (self)</td></tr>
+<tr class="c-table__row memitem:a909ebddff4cd9675c273c8efd539205c" id="r_a909ebddff4cd9675c273c8efd539205c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a909ebddff4cd9675c273c8efd539205c">testParametersExcludeSessionIdAndSequence</a> (self)</td></tr>
 <tr class="c-table__row memitem:a68d16e28faa12901420f44dc13e788aa" id="r_a68d16e28faa12901420f44dc13e788aa"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a68d16e28faa12901420f44dc13e788aa">test_jsonbundler_when_delayed_execution_false</a> (self)</td></tr>
 <tr class="c-table__row memitem:a09b238b81499e620905f32009883fb2b" id="r_a09b238b81499e620905f32009883fb2b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a09b238b81499e620905f32009883fb2b">test_jsonbundler_when_delayed_execution_true</a> (self)</td></tr>
 <tr class="c-table__row memitem:a98a09ddd81a274c4618a2da68821e8a8" id="r_a98a09ddd81a274c4618a2da68821e8a8"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a98a09ddd81a274c4618a2da68821e8a8">test_jsonbundler_when_delayed_execution_multiple</a> (self)</td></tr>
@@ -262,6 +263,33 @@ Public Member Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
+</div>
+</div>
+<a id="a909ebddff4cd9675c273c8efd539205c" name="a909ebddff4cd9675c273c8efd539205c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a909ebddff4cd9675c273c8efd539205c">&#9670;&#160;</a></span>testParametersExcludeSessionIdAndSequence()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_javascriptbuilder.JavaScriptBundlerTests.testParametersExcludeSessionIdAndSequence </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">The rendered script is not configured with the session id or the
+sequence. It appends both to its own request itself, after taking
+the record of that request's inputs which decides whether a later
+page view can be served from the cached response. A session id is
+different on every page view, so one named in the parameters would
+put a value in that record that can never match, the cache would be
+thrown away and the snippets would run again on every page.</pre> 
 </div>
 </div>
 <a id="aa47ad5cb4c6ca093c7211efa09ef4f38" name="aa47ad5cb4c6ca093c7211efa09ef4f38"></a>
