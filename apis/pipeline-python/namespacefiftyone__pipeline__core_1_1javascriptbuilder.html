@@ -109,11 +109,169 @@ Classes</h2></td></tr>
 <tr class="c-table__row memitem:JavascriptBuilderElement" id="r_JavascriptBuilderElement"><td class="c-table__cell">class &#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1javascriptbuilder_1_1_javascript_builder_element.html">JavascriptBuilderElement</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The JavaScriptBuilder aggregates JavaScript properties from FlowElements in the Pipeline.  <a href="classfiftyone__pipeline__core_1_1javascriptbuilder_1_1_javascript_builder_element.html#details">More...</a><br /></td></tr>
 </table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="c-table__row memitem:ab96a14bb9633134a1d1836cfa9b6891e" id="r_ab96a14bb9633134a1d1836cfa9b6891e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab96a14bb9633134a1d1836cfa9b6891e">parse_sequence</a> (value)</td></tr>
+<tr class="c-table__row memdesc:ab96a14bb9633134a1d1836cfa9b6891e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A sequence as a positive 32 bit integer.  <br /></td></tr>
+<tr class="c-table__row memitem:abfef78bafe50d5e02ca053662a8fbd76" id="r_abfef78bafe50d5e02ca053662a8fbd76"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#abfef78bafe50d5e02ca053662a8fbd76">get_sequence</a> (value)</td></tr>
+<tr class="c-table__row memdesc:abfef78bafe50d5e02ca053662a8fbd76"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The sequence to render into the script.  <br /></td></tr>
+<tr class="c-table__row memitem:a7bfb2b1b1cf56af72cc711f6975b8408" id="r_a7bfb2b1b1cf56af72cc711f6975b8408"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7bfb2b1b1cf56af72cc711f6975b8408">get_session_id</a> (value)</td></tr>
+<tr class="c-table__row memdesc:a7bfb2b1b1cf56af72cc711f6975b8408"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The session id to render into the script.  <br /></td></tr>
+<tr class="c-table__row memitem:ae6856072da2ce0cdd6c9888c3a654a73" id="r_ae6856072da2ce0cdd6c9888c3a654a73"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae6856072da2ce0cdd6c9888c3a654a73">url_encode</a> (value)</td></tr>
+<tr class="c-table__row memdesc:ae6856072da2ce0cdd6c9888c3a654a73"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Encode a parameter key or value the way the .NET builder does, with WebUtility.UrlEncode.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="c-table__row memitem:a5da6a69b1c55f463ee28ad833d5b34c8" id="r_a5da6a69b1c55f463ee28ad833d5b34c8"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="#a5da6a69b1c55f463ee28ad833d5b34c8">EXCLUDED_PARAMETERS</a> = [&quot;query.session-id&quot;, &quot;query.sequence&quot;]</td></tr>
+<tr class="c-table__row memitem:a35d417c4584f298b3e8c04e9422aa807" id="r_a35d417c4584f298b3e8c04e9422aa807"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a35d417c4584f298b3e8c04e9422aa807">DEFAULT_SEQUENCE</a> = 1</td></tr>
+<tr class="c-table__row memitem:aabb75c82466614d69b64a9c951180e6d" id="r_aabb75c82466614d69b64a9c951180e6d"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#aabb75c82466614d69b64a9c951180e6d">MAX_SEQUENCE</a> = 2 ** 31 - 1</td></tr>
+<tr class="c-table__row memitem:a3db2b0a0919e89c43af37330179c8719" id="r_a3db2b0a0919e89c43af37330179c8719"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3db2b0a0919e89c43af37330179c8719">MAX_SEQUENCE_DIGITS</a> = len(str(<a class="el" href="#aabb75c82466614d69b64a9c951180e6d">MAX_SEQUENCE</a>))</td></tr>
+<tr class="c-table__row memitem:ad5c0e58b0fdca832d0c7e4c85476afee" id="r_ad5c0e58b0fdca832d0c7e4c85476afee"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad5c0e58b0fdca832d0c7e4c85476afee">SEQUENCE_PATTERN</a> = re.compile(r&quot;[ \t\n\r\f\v]*\+?([0-9]+)[ \t\n\r\f\v]*&quot;)</td></tr>
+<tr class="c-table__row memitem:a26442becf42a0010d53d899563369d29" id="r_a26442becf42a0010d53d899563369d29"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a26442becf42a0010d53d899563369d29">SESSION_ID_PATTERN</a> = re.compile(r&quot;[A-Za-z0-9-]{1,64}&quot;)</td></tr>
 </table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
+<a id="abfef78bafe50d5e02ca053662a8fbd76" name="abfef78bafe50d5e02ca053662a8fbd76"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#abfef78bafe50d5e02ca053662a8fbd76">&#9670;&#160;</a></span>get_sequence()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">get_sequence </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The sequence to render into the script. </p>
+<p>The template writes the sequence as bare code (var sequence = ...;), so anything other than a whole number would stop the script parsing, or change what it does. A pipeline without a SequenceElement passes the query string's value, or nothing at all, straight through. As the pipeline specification says, a value that is not a positive 32 bit integer becomes 1.</p>
+<p>@type value: object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The query.sequence evidence, or None @rtype: int </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: The sequence to render </dd></dl>
+
+</div>
+</div>
+<a id="a7bfb2b1b1cf56af72cc711f6975b8408" name="a7bfb2b1b1cf56af72cc711f6975b8408"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7bfb2b1b1cf56af72cc711f6975b8408">&#9670;&#160;</a></span>get_session_id()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">get_session_id </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The session id to render into the script. </p>
+<p>The template writes the session id inside quotes without any escaping. As the pipeline specification says, a session id that is not 1 to 64 ASCII letters, digits and hyphens is rendered as an empty string, whether it came from the SequenceElement or from the query string.</p>
+<p>@type value: object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The query.session-id evidence, or None @rtype: str </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: The session id to render, or an empty string </dd></dl>
+
+</div>
+</div>
+<a id="ab96a14bb9633134a1d1836cfa9b6891e" name="ab96a14bb9633134a1d1836cfa9b6891e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab96a14bb9633134a1d1836cfa9b6891e">&#9670;&#160;</a></span>parse_sequence()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">parse_sequence </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>A sequence as a positive 32 bit integer. </p>
+<p>@type value: object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The query.sequence evidence, or None @rtype: int </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: The sequence, or None when the value is not a whole number from 1 to 2147483647. Any value at all can be passed, including one a page supplied, and none of them raises. </dd></dl>
+
+</div>
+</div>
+<a id="ae6856072da2ce0cdd6c9888c3a654a73" name="ae6856072da2ce0cdd6c9888c3a654a73"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae6856072da2ce0cdd6c9888c3a654a73">&#9670;&#160;</a></span>url_encode()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">url_encode </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Encode a parameter key or value the way the .NET builder does, with WebUtility.UrlEncode. </p>
+<p>A space becomes '+', letters, digits and "-_.!*()" are left alone, and everything else is percent encoded. The script joins the parameters into its request body without encoding them again, so an unencoded '&amp;' or '=' would split a value into extra fields.</p>
+<p>@type value: object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The key or value to encode @rtype: string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: The encoded text </dd></dl>
+
+</div>
+</div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
+<a id="a35d417c4584f298b3e8c04e9422aa807" name="a35d417c4584f298b3e8c04e9422aa807"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a35d417c4584f298b3e8c04e9422aa807">&#9670;&#160;</a></span>DEFAULT_SEQUENCE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">int fiftyone_pipeline_core.javascriptbuilder.DEFAULT_SEQUENCE = 1</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="a5da6a69b1c55f463ee28ad833d5b34c8" name="a5da6a69b1c55f463ee28ad833d5b34c8"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5da6a69b1c55f463ee28ad833d5b34c8">&#9670;&#160;</a></span>EXCLUDED_PARAMETERS</h2>
 
@@ -124,6 +282,78 @@ Variables</h2></td></tr>
           <table class="c-table c-table--article">
             <tr class="c-table__row">
               <td class="c-table__cell">list fiftyone_pipeline_core.javascriptbuilder.EXCLUDED_PARAMETERS = [&quot;query.session-id&quot;, &quot;query.sequence&quot;]</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="aabb75c82466614d69b64a9c951180e6d" name="aabb75c82466614d69b64a9c951180e6d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aabb75c82466614d69b64a9c951180e6d">&#9670;&#160;</a></span>MAX_SEQUENCE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">int fiftyone_pipeline_core.javascriptbuilder.MAX_SEQUENCE = 2 ** 31 - 1</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a3db2b0a0919e89c43af37330179c8719" name="a3db2b0a0919e89c43af37330179c8719"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3db2b0a0919e89c43af37330179c8719">&#9670;&#160;</a></span>MAX_SEQUENCE_DIGITS</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.javascriptbuilder.MAX_SEQUENCE_DIGITS = len(str(<a class="el" href="#aabb75c82466614d69b64a9c951180e6d">MAX_SEQUENCE</a>))</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ad5c0e58b0fdca832d0c7e4c85476afee" name="ad5c0e58b0fdca832d0c7e4c85476afee"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad5c0e58b0fdca832d0c7e4c85476afee">&#9670;&#160;</a></span>SEQUENCE_PATTERN</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.javascriptbuilder.SEQUENCE_PATTERN = re.compile(r&quot;[ \t\n\r\f\v]*\+?([0-9]+)[ \t\n\r\f\v]*&quot;)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a26442becf42a0010d53d899563369d29" name="a26442becf42a0010d53d899563369d29"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a26442becf42a0010d53d899563369d29">&#9670;&#160;</a></span>SESSION_ID_PATTERN</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.javascriptbuilder.SESSION_ID_PATTERN = re.compile(r&quot;[A-Za-z0-9-]{1,64}&quot;)</td>
             </tr>
           </table>
         </div>

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['receiverthread_0',['ReceiverThread',['../classtests_1_1test__usage_1_1_receiver_thread.html',1,'tests::test_usage']]],
-  ['replacedstring_1',['ReplacedString',['../classfiftyone__pipeline__engines__fiftyone_1_1share__usage_1_1_replaced_string.html',1,'fiftyone_pipeline_engines_fiftyone::share_usage']]],
-  ['requestclient_2',['RequestClient',['../classfiftyone__pipeline__cloudrequestengine_1_1requestclient_1_1_request_client.html',1,'fiftyone_pipeline_cloudrequestengine::requestclient']]]
+  ['pipeline_0',['Pipeline',['../classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html',1,'fiftyone_pipeline_core::pipeline']]],
+  ['pipelinebuilder_1',['PipelineBuilder',['../classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html',1,'fiftyone_pipeline_core::pipelinebuilder']]]
 ];

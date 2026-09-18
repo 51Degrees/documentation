@@ -326,13 +326,20 @@ bool&#160;</td><td class="c-table__cell"><b>Minify</b> = <a class="el" href="cla
 </div><div class="c-member__body">
 
 <p>The default name of the object instantiated by the client <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a>. </p>
+<p>Null means that no name is configured, so the default name, fod, is used. The element's constructor reads null the same way. Every other name has to be a valid identifier, the empty string included, because the name is written into the script as it is. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">objName</td><td></td></tr>
+    <tr><td class="paramname">objName</td><td>The name of the object, or null for the default name. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_configuration_exception.html" title="Exception that is thrown when the configuration options provided to PipelineBuilder are invalid See t...">PipelineConfigurationException</a></td><td>Thrown if <em>objName</em>  is not null and is not a valid <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

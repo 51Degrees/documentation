@@ -1,45 +1,47 @@
 <map id="Base" name="Base">
-<area shape="rect" id="Node000001" title="Base test class used to carry out memory leak checks." alt="" coords="155,493,209,519"/>
+<area shape="rect" id="Node000001" title="Base test class used to carry out memory leak checks." alt="" coords="155,519,209,544"/>
 <area shape="rect" id="Node000003" href="$class_cache_test.html" title="Unit tests for the cache implementation." alt="" coords="308,33,396,59"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,479,187,388,199,266,208,204,221,148,236,102,255,70,279,53,307,45,308,50,282,58,259,73,241,104,226,149,214,205,204,266,192,388,187,479"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,505,186,409,197,279,207,213,219,153,235,104,255,70,279,53,307,45,308,50,282,58,259,73,240,106,224,155,212,214,202,280,191,409,187,505"/>
 <area shape="rect" id="Node000004" href="$class_collection_test.html" title=" " alt="" coords="295,83,409,108"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="182,480,189,398,202,290,223,187,238,147,255,119,273,105,294,97,296,102,276,110,259,122,243,149,229,189,207,291,194,398,187,480"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="182,505,188,418,200,303,222,193,237,149,255,119,273,105,294,97,296,102,276,110,259,122,242,151,227,194,206,304,193,419,187,505"/>
 <area shape="rect" id="Node000011" href="$class_collection_test_file_variable_limits.html" title=" " alt="" coords="257,133,447,173"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="184,479,192,411,207,323,228,240,241,207,255,184,272,171,275,175,259,188,246,210,233,242,213,324,198,411,189,480"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="183,505,191,431,206,336,227,245,240,209,255,184,271,171,275,175,259,188,245,212,232,247,211,337,196,432,188,506"/>
 <area shape="rect" id="Node000012" href="$class_engine_tests.html" title=" " alt="" coords="303,197,401,223"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="180,479,182,428,192,362,201,327,215,293,232,261,256,233,277,219,302,211,303,216,280,224,259,237,237,264,219,296,206,329,197,363,187,428,185,480"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="184,505,193,440,208,360,229,284,241,254,255,233,277,219,302,211,303,216,279,223,259,237,246,257,234,286,213,361,198,441,189,505"/>
 <area shape="rect" id="Node000013" href="$class_evidence.html" title="Evidence test class used to test the functionality in evidence.c." alt="" coords="311,247,393,272"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="182,479,187,437,199,384,220,330,236,305,256,283,282,267,310,259,312,264,284,272,259,287,240,308,225,332,204,385,192,438,187,480"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="181,505,184,457,195,398,217,336,234,308,256,283,281,267,310,259,312,264,284,271,259,287,239,311,222,339,200,399,189,458,186,505"/>
 <area shape="rect" id="Node000017" href="$class_example_tests.html" title=" " alt="" coords="296,296,408,321"/>
-<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="185,479,193,446,206,406,227,366,256,332,274,320,295,312,297,317,277,325,259,336,231,369,211,408,198,447,190,480"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="183,504,189,466,202,420,223,373,238,351,256,332,274,320,295,312,297,317,277,324,259,336,242,354,228,375,207,422,195,467,188,505"/>
 <area shape="rect" id="Node000018" href="$class_file.html" title="File test class used to test the functionality of file.c." alt="" coords="329,345,375,371"/>
-<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="190,479,214,429,233,403,256,381,293,364,329,357,330,362,294,369,259,386,237,407,219,432,195,482"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="187,504,210,443,229,410,256,381,273,370,293,363,329,356,330,362,294,368,276,375,259,385,234,413,215,445,192,506"/>
 <area shape="rect" id="Node000019" href="$class_headers_tests.html" title="Header test class used to test the functionality of header.c using a string collection built from the..." alt="" coords="297,395,407,420"/>
-<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="200,480,225,454,256,430,296,414,298,419,259,435,228,458,204,484"/>
-<area shape="rect" id="Node000020" href="$class_json_tests.html" title=" " alt="" coords="311,444,393,469"/>
-<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="222,490,257,479,310,465,311,470,258,485,223,495"/>
-<area shape="rect" id="Node000021" href="$class_memory_leak.html" title="Memory Leak test class used to verify that the Base.cpp memory leak check functionality works as expe..." alt="" coords="299,493,405,519"/>
-<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="223,503,298,503,298,509,223,509"/>
-<area shape="rect" id="Node000022" href="$class_pool.html" title="File test class used to test the functionality of file.c." alt="" coords="327,543,377,568"/>
-<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="223,517,258,529,327,547,326,552,257,534,221,522"/>
-<area shape="rect" id="Node000023" href="$class_profile_tests.html" title=" " alt="" coords="304,592,400,617"/>
-<area shape="poly" id="edge22_Node000001_Node000023" title=" " alt="" coords="203,528,228,555,259,578,281,588,304,595,303,600,279,593,256,583,224,559,199,532"/>
-<area shape="rect" id="Node000024" href="$class_properties.html" title="Properties test class used to test the functionality of properties.c." alt="" coords="308,641,396,667"/>
-<area shape="poly" id="edge23_Node000001_Node000024" title=" " alt="" coords="194,530,218,581,237,606,259,628,283,640,308,647,307,653,281,645,256,632,232,610,214,583,189,533"/>
-<area shape="rect" id="Node000025" href="$class_property_tests.html" title=" " alt="" coords="297,691,407,716"/>
-<area shape="poly" id="edge24_Node000001_Node000025" title=" " alt="" coords="190,531,197,565,210,604,231,644,259,677,277,688,297,696,295,701,275,693,256,681,226,647,206,607,192,566,184,533"/>
-<area shape="rect" id="Node000026" href="$class_resource_manager.html" title=" " alt="" coords="283,740,421,765"/>
-<area shape="poly" id="edge25_Node000001_Node000026" title=" " alt="" coords="187,532,192,575,203,628,225,681,240,705,259,727,284,741,281,746,256,731,236,709,220,684,198,629,186,576,182,533"/>
-<area shape="rect" id="Node000027" href="$class_stored_binary_values.html" title=" " alt="" coords="277,789,427,815"/>
-<area shape="poly" id="edge26_Node000001_Node000027" title=" " alt="" coords="185,533,187,584,197,650,206,684,219,718,237,749,259,776,279,789,276,794,256,780,232,752,214,720,201,686,191,651,182,585,180,533"/>
-<area shape="rect" id="Node000028" href="$class_strings.html" title=" " alt="" coords="319,839,385,864"/>
-<area shape="poly" id="edge27_Node000001_Node000028" title=" " alt="" coords="189,532,197,601,211,689,232,772,245,804,259,826,272,835,287,842,319,849,318,854,285,847,269,840,255,829,240,807,227,774,206,690,192,602,183,533"/>
-<area shape="rect" id="Node000029" href="$class_threading.html" title=" " alt="" coords="309,888,395,913"/>
-<area shape="poly" id="edge28_Node000001_Node000029" title=" " alt="" coords="188,532,195,611,208,714,229,812,243,849,259,875,282,890,309,897,308,902,280,895,255,879,238,852,224,813,203,715,189,612,182,533"/>
-<area shape="rect" id="Node000030" href="$class_value_tests.html" title="Value test class used to test the functionality of Value.cpp." alt="" coords="307,937,397,963"/>
-<area shape="poly" id="edge29_Node000001_Node000030" title=" " alt="" coords="187,532,192,620,205,738,226,851,241,895,259,924,281,939,307,946,306,951,279,944,255,928,237,897,221,852,199,739,187,621,182,533"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,493,107,519"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,503,155,503,155,509,120,509"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="193,505,219,467,236,447,256,430,296,413,298,418,259,435,240,451,223,470,198,508"/>
+<area shape="rect" id="Node000020" href="$class_indices_tests.html" title="Builds a small data set where the index has entries that no profile writes." alt="" coords="301,444,403,469"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="209,508,256,480,300,464,302,469,258,484,212,513"/>
+<area shape="rect" id="Node000021" href="$class_json_tests.html" title=" " alt="" coords="311,493,393,519"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="222,523,310,509,311,515,223,528"/>
+<area shape="rect" id="Node000022" href="$class_memory_leak.html" title="Memory Leak test class used to verify that the Base.cpp memory leak check functionality works as expe..." alt="" coords="299,543,405,568"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="224,534,299,545,298,550,223,540"/>
+<area shape="rect" id="Node000023" href="$class_pool.html" title="File test class used to test the functionality of file.c." alt="" coords="327,592,377,617"/>
+<area shape="poly" id="edge22_Node000001_Node000023" title=" " alt="" coords="212,550,258,578,294,591,327,598,326,603,292,596,256,583,209,555"/>
+<area shape="rect" id="Node000024" href="$class_profile_tests.html" title=" " alt="" coords="304,641,400,667"/>
+<area shape="poly" id="edge23_Node000001_Node000024" title=" " alt="" coords="198,555,223,593,240,612,259,628,281,639,305,646,303,651,279,644,256,632,236,616,219,596,193,558"/>
+<area shape="rect" id="Node000025" href="$class_properties.html" title="Properties test class used to test the functionality of properties.c." alt="" coords="308,691,396,716"/>
+<area shape="poly" id="edge24_Node000001_Node000025" title=" " alt="" coords="192,556,214,618,234,650,259,677,282,690,308,697,307,703,280,695,256,681,229,653,210,620,187,558"/>
+<area shape="rect" id="Node000026" href="$class_property_tests.html" title=" " alt="" coords="297,740,407,765"/>
+<area shape="poly" id="edge25_Node000001_Node000026" title=" " alt="" coords="188,557,194,596,207,641,228,688,242,708,259,727,277,738,297,745,296,750,275,743,256,731,238,712,223,690,202,643,189,597,183,558"/>
+<area shape="rect" id="Node000027" href="$class_resource_manager.html" title=" " alt="" coords="283,789,421,815"/>
+<area shape="poly" id="edge26_Node000001_Node000027" title=" " alt="" coords="186,558,189,605,200,664,222,724,239,752,259,776,284,791,281,796,256,780,234,755,217,727,195,665,184,605,181,558"/>
+<area shape="rect" id="Node000028" href="$class_stored_binary_values.html" title=" " alt="" coords="277,839,427,864"/>
+<area shape="poly" id="edge27_Node000001_Node000028" title=" " alt="" coords="189,557,198,621,213,702,234,777,246,806,259,825,279,839,276,843,255,829,241,809,229,779,208,703,193,622,184,558"/>
+<area shape="rect" id="Node000029" href="$class_strings.html" title=" " alt="" coords="319,888,385,913"/>
+<area shape="poly" id="edge28_Node000001_Node000029" title=" " alt="" coords="188,557,196,631,210,727,231,817,244,851,259,875,272,885,287,892,319,898,318,903,285,897,269,889,255,878,239,854,226,818,205,728,190,632,183,558"/>
+<area shape="rect" id="Node000030" href="$class_threading.html" title=" " alt="" coords="309,937,395,963"/>
+<area shape="poly" id="edge29_Node000001_Node000030" title=" " alt="" coords="187,557,194,641,206,751,228,856,242,897,259,924,282,939,309,946,308,951,280,944,255,928,238,899,223,858,201,752,188,641,182,558"/>
+<area shape="rect" id="Node000031" href="$class_value_tests.html" title="Value test class used to test the functionality of Value.cpp." alt="" coords="307,987,397,1012"/>
+<area shape="poly" id="edge30_Node000001_Node000031" title=" " alt="" coords="187,557,191,650,203,775,213,838,225,895,240,942,259,974,281,988,307,995,306,1001,279,993,255,977,236,944,220,897,207,839,198,776,186,651,181,558"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,519,107,544"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,529,155,529,155,534,120,534"/>
 <area shape="rect" id="Node000005" href="$class_collection_test_file.html" title=" " alt="" coords="522,55,658,80"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="422,84,522,73,522,78,423,90"/>
 <area shape="rect" id="Node000008" href="$class_collection_test_memory.html" title=" " alt="" coords="507,104,673,129"/>

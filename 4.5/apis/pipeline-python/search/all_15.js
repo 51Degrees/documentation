@@ -10,9 +10,10 @@ var searchData=
   ['updatestatus_7',['UpdateStatus',['../classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_update_status.html',1,'fiftyone_pipeline_engines::datafile_update_service']]],
   ['updating_8',['updating',['../classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a0e215ee0a25e8e4a415602dcf13080b1',1,'fiftyone_pipeline_engines::datafile::DataFile']]],
   ['url_9',['url',['../namespacesetup.html#afc13124aa5c0124e84e1d965e3f4b0fb',1,'setup']]],
-  ['usagesharing_10',['usagesharing',['../namespaceusagesharing.html',1,'']]],
-  ['usagesharing_2epy_11',['usagesharing.py',['../usagesharing_8py.html',1,'']]],
-  ['usagetests_12',['UsageTests',['../classtests_1_1test__usage_1_1_usage_tests.html',1,'tests::test_usage']]],
-  ['use_5fsetheader_5fproperties_13',['use_setheader_properties',['../classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#ac481cd14f8149bf6bc840152ff63bbb9',1,'fiftyone_pipeline_core::pipelinebuilder::PipelineBuilder']]],
-  ['useragent_14',['userAgent',['../classconstants_1_1_constants.html#a2cbb615b796fbe3ff5aae1afe60bd1be',1,'constants::Constants']]]
+  ['url_5fencode_10',['url_encode',['../namespacefiftyone__pipeline__core_1_1javascriptbuilder.html#ae6856072da2ce0cdd6c9888c3a654a73',1,'fiftyone_pipeline_core::javascriptbuilder']]],
+  ['usagesharing_11',['usagesharing',['../namespaceusagesharing.html',1,'']]],
+  ['usagesharing_2epy_12',['usagesharing.py',['../usagesharing_8py.html',1,'']]],
+  ['usagetests_13',['UsageTests',['../classtests_1_1test__usage_1_1_usage_tests.html',1,'tests::test_usage']]],
+  ['use_5fsetheader_5fproperties_14',['use_setheader_properties',['../classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#ac481cd14f8149bf6bc840152ff63bbb9',1,'fiftyone_pipeline_core::pipelinebuilder::PipelineBuilder']]],
+  ['useragent_15',['userAgent',['../classconstants_1_1_constants.html#a2cbb615b796fbe3ff5aae1afe60bd1be',1,'constants::Constants']]]
 ];

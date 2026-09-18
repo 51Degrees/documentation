@@ -9,7 +9,7 @@ var searchData=
   ['accessiblesubpropertiesresponse_6',['accessibleSubPropertiesResponse',['../classconstants_1_1_constants.html#a8099b32ef0e7d90017c2241b7aea5cdc',1,'constants::Constants']]],
   ['add_5fjavascriptbuilder_7',['add_javaScriptbuilder',['../classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#a492867cf08d70629b08d6e40ef3ffa47',1,'fiftyone_pipeline_core::pipelinebuilder::PipelineBuilder']]],
   ['allowed_5flevels_8',['allowed_levels',['../classfiftyone__pipeline__core_1_1logger_1_1_logger.html#ad21fb761bb0d1151684bf348a2cab479',1,'fiftyone_pipeline_core::logger::Logger']]],
-  ['app_9',['app',['../namespaceexamples_1_1client__side__evidence__custom__flow__element.html#aa8b49d485f21910556e842a6d168f597',1,'examples.client_side_evidence_custom_flow_element.app'],['../namespacetests_1_1test__usage.html#a8b8e18212c8dbe1ff466f3e864e0bf47',1,'tests.test_usage.app']]],
+  ['app_9',['app',['../classtests_1_1test__web_1_1_web_evidence_tests.html#ab7d8cdeaf9c2b2facff3150fc989a4a5',1,'tests.test_web.WebEvidenceTests.app'],['../namespaceexamples_1_1client__side__evidence__custom__flow__element.html#aa8b49d485f21910556e842a6d168f597',1,'examples.client_side_evidence_custom_flow_element.app'],['../namespacetests_1_1test__usage.html#a8b8e18212c8dbe1ff466f3e864e0bf47',1,'tests.test_usage.app']]],
   ['author_10',['author',['../namespacesetup.html#a3a57a4772d418a06835249cbade0d86a',1,'setup']]],
   ['author_5femail_11',['author_email',['../namespacesetup.html#a5b08034343aa2be607722a8b315f3625',1,'setup']]],
   ['auto_5fupdate_12',['auto_update',['../classfiftyone__pipeline__engines_1_1datafile_1_1_data_file.html#a019be0e6c9c23dae5e5a2b9a2f8536ff',1,'fiftyone_pipeline_engines::datafile::DataFile']]],

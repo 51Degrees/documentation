@@ -10,6 +10,7 @@ var class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_ja
     [ "GetParameters", "class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_java_script_builder_element.html#a8de38b88f4481ae6e3f7da4d8aced3fd", null ],
     [ "GetSequence", "class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_java_script_builder_element.html#a5183095be2e3c61712696639a377c2a8", null ],
     [ "GetSessionId", "class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_java_script_builder_element.html#a549a62753dda7faf1fa06f45283858e5", null ],
+    [ "IsValidObjectName", "class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_java_script_builder_element.html#a0f30e8c49f2ad1df5238eacf4e40d27f", null ],
     [ "ManagedResourcesCleanup", "class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_java_script_builder_element.html#aefb6ba58d87ed5d53c1454ed0b03eb89", null ],
     [ "ProcessInternal", "class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_java_script_builder_element.html#ae8df11927ca24ecfd5be19084cbc49be", null ],
     [ "RenderUserPrompt", "class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_java_script_builder_element.html#a8ccfc00de6415ce732b3de915f3333e2", null ],

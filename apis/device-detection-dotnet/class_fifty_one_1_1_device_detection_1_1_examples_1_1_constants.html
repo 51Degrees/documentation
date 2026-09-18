@@ -86,10 +86,14 @@ const&#160;string&#160;</td><td class="c-table__cell"><b>YAML_EVIDENCE_FILE_NAME
 <tr class="c-table__row memitem:af9bc1fba577a4df202d0a53eff1aef70" id="r_af9bc1fba577a4df202d0a53eff1aef70"><td class="c-table__cell"><a id="af9bc1fba577a4df202d0a53eff1aef70" name="af9bc1fba577a4df202d0a53eff1aef70"></a>
 const&#160;string&#160;</td><td class="c-table__cell"><b>LICENSE_KEY_ENV_VAR</b> = &quot;DEVICEDETECTIONLICENSEKEY_DOTNET&quot;</td></tr>
 <tr class="c-table__row memdesc:af9bc1fba577a4df202d0a53eff1aef70"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Environment variable key for the license key file to use for the tests. <br /></td></tr>
+<tr class="c-table__row memitem:aad8082ca4cd563e97116b951a8081fc0" id="r_aad8082ca4cd563e97116b951a8081fc0"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#aad8082ca4cd563e97116b951a8081fc0">DD_PATH_ENV_VAR</a> = &quot;51DEGREES_DD_PATH&quot;</td></tr>
+<tr class="c-table__row memdesc:aad8082ca4cd563e97116b951a8081fc0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Environment variable key used to supply an explicit path to the device detection data file.  <br /></td></tr>
 <tr class="c-table__row memitem:a7a10a8dfe44a2527ece9fed46efedaaa" id="r_a7a10a8dfe44a2527ece9fed46efedaaa"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a7a10a8dfe44a2527ece9fed46efedaaa">DEVICE_DETECTION_DATA_FILE_ENV_VAR</a> = &quot;_51DEGREES_DD_PATH&quot;</td></tr>
 <tr class="c-table__row memdesc:a7a10a8dfe44a2527ece9fed46efedaaa"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Environment variable key used to supply an explicit path to the device detection data file.  <br /></td></tr>
 <tr class="c-table__row memitem:a39818b555457af430599e1ef0cba01b0" id="r_a39818b555457af430599e1ef0cba01b0"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a39818b555457af430599e1ef0cba01b0">LEGACY_DEVICE_DETECTION_DATA_FILE_ENV_VAR</a> = &quot;DEVICEDETECTIONDATAFILE&quot;</td></tr>
 <tr class="c-table__row memdesc:a39818b555457af430599e1ef0cba01b0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Legacy environment variable key used to supply an explicit path to the device detection data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a51370aa63b20a5cc8fe137e04e4a4211" id="r_a51370aa63b20a5cc8fe137e04e4a4211"><td class="c-table__cell">static&#160;readonly&#160;string[]&#160;</td><td class="c-table__cell"><a class="el" href="#a51370aa63b20a5cc8fe137e04e4a4211">DATA_FILE_ENV_VARS</a></td></tr>
+<tr class="c-table__row memdesc:a51370aa63b20a5cc8fe137e04e4a4211"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Every environment variable that can supply an explicit path to the device detection data file, in the order they are checked.  <br /></td></tr>
 <tr class="c-table__row memitem:aab22278e2ed48f64af572f6b1aa29d3e" id="r_aab22278e2ed48f64af572f6b1aa29d3e"><td class="c-table__cell"><a id="aab22278e2ed48f64af572f6b1aa29d3e" name="aab22278e2ed48f64af572f6b1aa29d3e"></a>
 const&#160;string&#160;</td><td class="c-table__cell"><b>EVIDENCE_FILE_ENV_VAR</b> = &quot;EVIDENCEFILE&quot;</td></tr>
 <tr class="c-table__row memdesc:aab22278e2ed48f64af572f6b1aa29d3e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Environment variable key for the evidence file to use for the tests. <br /></td></tr>
@@ -106,6 +110,72 @@ static&#160;string[]&#160;</td><td class="c-table__cell"><b>AllUrls</b><code> [g
 <tr class="c-table__row memdesc:a0c7e0a9c3350785aed6e447612f55595"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The URLs that the web server should listen on. <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a51370aa63b20a5cc8fe137e04e4a4211" name="a51370aa63b20a5cc8fe137e04e4a4211"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a51370aa63b20a5cc8fe137e04e4a4211">&#9670;&#160;</a></span>DATA_FILE_ENV_VARS</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">readonly string [] FiftyOne.DeviceDetection.Examples.Constants.DATA_FILE_ENV_VARS</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                                 = <span class="c-code__keyword">new</span> <span class="c-code__keywordtype">string</span>[]</div>
+<div class="c-code__line">{</div>
+<div class="c-code__line">    <a class="code hl_variable" href="#aad8082ca4cd563e97116b951a8081fc0">DD_PATH_ENV_VAR</a>,</div>
+<div class="c-code__line">    <a class="code hl_variable" href="#a7a10a8dfe44a2527ece9fed46efedaaa">DEVICE_DETECTION_DATA_FILE_ENV_VAR</a>,</div>
+<div class="c-code__line">    <a class="code hl_variable" href="#a39818b555457af430599e1ef0cba01b0">LEGACY_DEVICE_DETECTION_DATA_FILE_ENV_VAR</a></div>
+<div class="c-code__line">}</div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_constants_html_a39818b555457af430599e1ef0cba01b0"><div class="ttname"><a href="#a39818b555457af430599e1ef0cba01b0">FiftyOne.DeviceDetection.Examples.Constants.LEGACY_DEVICE_DETECTION_DATA_FILE_ENV_VAR</a></div><div class="ttdeci">const string LEGACY_DEVICE_DETECTION_DATA_FILE_ENV_VAR</div><div class="ttdoc">Legacy environment variable key used to supply an explicit path to the device detection data file.</div><div class="ttdef"><b>Definition</b> Constants.cs:72</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_constants_html_a7a10a8dfe44a2527ece9fed46efedaaa"><div class="ttname"><a href="#a7a10a8dfe44a2527ece9fed46efedaaa">FiftyOne.DeviceDetection.Examples.Constants.DEVICE_DETECTION_DATA_FILE_ENV_VAR</a></div><div class="ttdeci">const string DEVICE_DETECTION_DATA_FILE_ENV_VAR</div><div class="ttdoc">Environment variable key used to supply an explicit path to the device detection data file.</div><div class="ttdef"><b>Definition</b> Constants.cs:63</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_constants_html_aad8082ca4cd563e97116b951a8081fc0"><div class="ttname"><a href="#aad8082ca4cd563e97116b951a8081fc0">FiftyOne.DeviceDetection.Examples.Constants.DD_PATH_ENV_VAR</a></div><div class="ttdeci">const string DD_PATH_ENV_VAR</div><div class="ttdoc">Environment variable key used to supply an explicit path to the device detection data file.</div><div class="ttdef"><b>Definition</b> Constants.cs:55</div></div>
+</div><!-- fragment -->
+<p>Every environment variable that can supply an explicit path to the device detection data file, in the order they are checked. </p>
+
+</div>
+</div>
+<a id="aad8082ca4cd563e97116b951a8081fc0" name="aad8082ca4cd563e97116b951a8081fc0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aad8082ca4cd563e97116b951a8081fc0">&#9670;&#160;</a></span>DD_PATH_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const string FiftyOne.DeviceDetection.Examples.Constants.DD_PATH_ENV_VAR = &quot;51DEGREES_DD_PATH&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Environment variable key used to supply an explicit path to the device detection data file. </p>
+<p>This is the agreed 51Degrees runtime name and is checked before any other variable name. </p>
+
+</div>
+</div>
 <a id="a7a10a8dfe44a2527ece9fed46efedaaa" name="a7a10a8dfe44a2527ece9fed46efedaaa"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7a10a8dfe44a2527ece9fed46efedaaa">&#9670;&#160;</a></span>DEVICE_DETECTION_DATA_FILE_ENV_VAR</h2>
 
@@ -131,7 +201,7 @@ static&#160;string[]&#160;</td><td class="c-table__cell"><b>AllUrls</b><code> [g
 </div><div class="c-member__body">
 
 <p>Environment variable key used to supply an explicit path to the device detection data file. </p>
-<p>This aligned name is checked first, before any legacy variable names. </p>
+<p>Checked when DD_PATH_ENV_VAR is not set, and still set by the continuous integration scripts. </p>
 
 </div>
 </div>
@@ -160,7 +230,7 @@ static&#160;string[]&#160;</td><td class="c-table__cell"><b>AllUrls</b><code> [g
 </div><div class="c-member__body">
 
 <p>Legacy environment variable key used to supply an explicit path to the device detection data file. </p>
-<p>Retained for backwards compatibility and checked when DEVICE_DETECTION_DATA_FILE_ENV_VAR is not set. </p>
+<p>Retained for backwards compatibility and checked when neither DD_PATH_ENV_VAR nor DEVICE_DETECTION_DATA_FILE_ENV_VAR is set. </p>
 
 </div>
 </div>

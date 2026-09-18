@@ -7,6 +7,7 @@ var class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils =
     [ "FindFile", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a54667c0d9989760b8cd9dcaac814c938", null ],
     [ "GetDataFileInfo", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a3b8785c7519e536acc53f0dbb4e0735a", null ],
     [ "GetDataFileInfo", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a86253a9e8a0f500d899eaf6e62d78ba8", null ],
+    [ "GetDataFilePathFromEnv", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#ace6be8df88a95f56b3e37106851bcd37", null ],
     [ "GetKeyFromEnv", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a4de3aba4463a95479f277b870949e6ef", null ],
     [ "GetResourceKeyFromEnv", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#ad66ea95cdc39a6a151204c5e9b4c1fa5", null ],
     [ "GetResourceKeyFromEnv", "class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a32d6375bde2f3c7e955e7b5369cc14cb", null ],

@@ -16,7 +16,10 @@ var searchData=
   ['tests_3a_3atest_5fcore_13',['test_core',['../namespacetests_1_1test__core.html',1,'tests']]],
   ['tests_3a_3atest_5fengines_14',['test_engines',['../namespacetests_1_1test__engines.html',1,'tests']]],
   ['tests_3a_3atest_5fjavascriptbuilder_15',['test_javascriptbuilder',['../namespacetests_1_1test__javascriptbuilder.html',1,'tests']]],
-  ['tests_3a_3atest_5fold_5fconfig_5fproperties_5fmappinng_16',['test_old_config_properties_mappinng',['../namespacetests_1_1test__old__config__properties__mappinng.html',1,'tests']]],
-  ['tests_3a_3atest_5fsetheader_17',['test_setheader',['../namespacetests_1_1test__setheader.html',1,'tests']]],
-  ['tests_3a_3atest_5fusage_18',['test_usage',['../namespacetests_1_1test__usage.html',1,'tests']]]
+  ['tests_3a_3atest_5fjavascriptbuilder_5fsequence_16',['test_javascriptbuilder_sequence',['../namespacetests_1_1test__javascriptbuilder__sequence.html',1,'tests']]],
+  ['tests_3a_3atest_5fjavascriptbuilder_5fvariables_17',['test_javascriptbuilder_variables',['../namespacetests_1_1test__javascriptbuilder__variables.html',1,'tests']]],
+  ['tests_3a_3atest_5fold_5fconfig_5fproperties_5fmappinng_18',['test_old_config_properties_mappinng',['../namespacetests_1_1test__old__config__properties__mappinng.html',1,'tests']]],
+  ['tests_3a_3atest_5fsetheader_19',['test_setheader',['../namespacetests_1_1test__setheader.html',1,'tests']]],
+  ['tests_3a_3atest_5fusage_20',['test_usage',['../namespacetests_1_1test__usage.html',1,'tests']]],
+  ['tests_3a_3atest_5fweb_21',['test_web',['../namespacetests_1_1test__web.html',1,'tests']]]
 ];

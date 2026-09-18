@@ -82,7 +82,9 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a21da8c7fc30786306c85d27f428c6de7" id="r_a21da8c7fc30786306c85d27f428c6de7"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a21da8c7fc30786306c85d27f428c6de7">addObject</a> (evidenceObject)</td></tr>
 <tr class="c-table__row memdesc:a21da8c7fc30786306c85d27f428c6de7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add a piece of evidence to flowData as an object.  <br /></td></tr>
 <tr class="c-table__row memitem:a8c4c08fd2dafd990102cac7f6b08bed4" id="r_a8c4c08fd2dafd990102cac7f6b08bed4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8c4c08fd2dafd990102cac7f6b08bed4">addFromRequest</a> (request)</td></tr>
-<tr class="c-table__row memdesc:a8c4c08fd2dafd990102cac7f6b08bed4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add evidence to flowData from an HTTP request This helper automatically adds evidence: headers, cookies, protocol, IP and query params.  <br /></td></tr>
+<tr class="c-table__row memdesc:a8c4c08fd2dafd990102cac7f6b08bed4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add evidence to flowData from an HTTP request This helper automatically adds evidence: headers, cookies, protocol, IP, query params and, for a POST with a form body, the form values.  <br /></td></tr>
+<tr class="c-table__row memitem:ab244ada40f0ebe779a08031cab527f58" id="r_ab244ada40f0ebe779a08031cab527f58"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab244ada40f0ebe779a08031cab527f58">addFromRequestAsync</a> (request, maxFormBytes=1024 *1024)</td></tr>
+<tr class="c-table__row memdesc:ab244ada40f0ebe779a08031cab527f58"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add evidence to flowData from an HTTP request, first reading a form body from the request when it is a POST with a form body and nothing has read the body already.  <br /></td></tr>
 <tr class="c-table__row memitem:ad8792837190eba2baa7248c14cca1f6a" id="r_ad8792837190eba2baa7248c14cca1f6a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad8792837190eba2baa7248c14cca1f6a">get</a> (key)</td></tr>
 <tr class="c-table__row memdesc:ad8792837190eba2baa7248c14cca1f6a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a piece of evidence.  <br /></td></tr>
 <tr class="c-table__row memitem:ab168d68366b21a0b36940f3b65d303b8" id="r_ab168d68366b21a0b36940f3b65d303b8"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab168d68366b21a0b36940f3b65d303b8">getAll</a> ()</td></tr>
@@ -158,7 +160,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="c-member__body">
 
-<p>Add evidence to flowData from an HTTP request This helper automatically adds evidence: headers, cookies, protocol, IP and query params. </p>
+<p>Add evidence to flowData from an HTTP request This helper automatically adds evidence: headers, cookies, protocol, IP, query params and, for a POST with a form body, the form values. </p>
+<p>Form values are added as query evidence after the query string, so a form value replaces a query string value of the same name. They are read from request.body, which a framework's form parser sets, either as an object or as the body text. A plain <a class="el" href="class_node.html">Node</a> request has no request.body, so use addFromRequestAsync to read the body from the request instead. The 51Degrees client script sends its values in a form body, so without one or the other they never reach the pipeline.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{object}</td><td>request an HTTP request object </td></tr>
@@ -166,6 +169,50 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{<a class="el" href="class_evidence.html" title="Storage of evidence on a flowData object.">Evidence</a>} return updated evidence </dd></dl>
+
+</div>
+</div>
+<a id="ab244ada40f0ebe779a08031cab527f58" name="ab244ada40f0ebe779a08031cab527f58"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab244ada40f0ebe779a08031cab527f58">&#9670;&#160;</a></span>addFromRequestAsync()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">Evidence::addFromRequestAsync </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>maxFormBytes</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1024&#160;*&#160;1024</span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Add evidence to flowData from an HTTP request, first reading a form body from the request when it is a POST with a form body and nothing has read the body already. </p>
+<p>The body text is kept in request.body, and then addFromRequest adds the evidence. A body larger than maxFormBytes is not read and no form values are added.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{object}</td><td>request an HTTP request object </td></tr>
+    <tr><td class="paramname">{number}</td><td>[maxFormBytes] the largest form body read, one mebibyte unless given </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{Promise&lt;Evidence&gt;} the updated evidence </dd></dl>
 
 </div>
 </div>

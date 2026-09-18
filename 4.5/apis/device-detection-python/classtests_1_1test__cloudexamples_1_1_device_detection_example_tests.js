@@ -4,6 +4,7 @@ var classtests_1_1test__cloudexamples_1_1_device_detection_example_tests =
     [ "run_example", "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a9cd8a3178cdf66fe78d2e5885ba67a6a", null ],
     [ "setUp", "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a78cb4154f5ec00e203fd7374a5d60b43", null ],
     [ "test_cloud_configurator_console", "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a04ae5e4d64b878c6f2e82cb857c9e1ba", null ],
+    [ "test_cloud_failuretomatch", "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a4f4e40170e4485d775cf4fd9b009789c", null ],
     [ "test_cloud_getting_started_console", "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a3ce60886bada579be5526cd7c3f24cd0", null ],
     [ "test_cloud_metadata_console", "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#accd5c77daceb0f7140e1ac2a90ccc75d", null ],
     [ "test_cloud_nativemodellookup_console", "classtests_1_1test__cloudexamples_1_1_device_detection_example_tests.html#a087e9b96c4b7e325df08afac2d2441ac", null ],

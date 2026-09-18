@@ -193,6 +193,13 @@ var annotated =
         [ "DelayedExecutionEngine3", "classtests_1_1test__javascriptbuilder_1_1_delayed_execution_engine3.html", "classtests_1_1test__javascriptbuilder_1_1_delayed_execution_engine3" ],
         [ "JavaScriptBundlerTests", "classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests.html", "classtests_1_1test__javascriptbuilder_1_1_java_script_bundler_tests" ]
       ] ],
+      [ "test_javascriptbuilder_sequence", "namespacetests_1_1test__javascriptbuilder__sequence.html", [
+        [ "JavaScriptBuilderSequenceTests", "classtests_1_1test__javascriptbuilder__sequence_1_1_java_script_builder_sequence_tests.html", "classtests_1_1test__javascriptbuilder__sequence_1_1_java_script_builder_sequence_tests" ]
+      ] ],
+      [ "test_javascriptbuilder_variables", "namespacetests_1_1test__javascriptbuilder__variables.html", [
+        [ "_Captured", "classtests_1_1test__javascriptbuilder__variables_1_1___captured.html", "classtests_1_1test__javascriptbuilder__variables_1_1___captured" ],
+        [ "JavaScriptBuilderVariablesTests", "classtests_1_1test__javascriptbuilder__variables_1_1_java_script_builder_variables_tests.html", "classtests_1_1test__javascriptbuilder__variables_1_1_java_script_builder_variables_tests" ]
+      ] ],
       [ "test_old_config_properties_mappinng", "namespacetests_1_1test__old__config__properties__mappinng.html", [
         [ "OldConfigPropertiesMappingTest", "classtests_1_1test__old__config__properties__mappinng_1_1_old_config_properties_mapping_test.html", "classtests_1_1test__old__config__properties__mappinng_1_1_old_config_properties_mapping_test" ]
       ] ],
@@ -202,6 +209,9 @@ var annotated =
       [ "test_usage", "namespacetests_1_1test__usage.html", [
         [ "ReceiverThread", "classtests_1_1test__usage_1_1_receiver_thread.html", "classtests_1_1test__usage_1_1_receiver_thread" ],
         [ "UsageTests", "classtests_1_1test__usage_1_1_usage_tests.html", "classtests_1_1test__usage_1_1_usage_tests" ]
+      ] ],
+      [ "test_web", "namespacetests_1_1test__web.html", [
+        [ "WebEvidenceTests", "classtests_1_1test__web_1_1_web_evidence_tests.html", "classtests_1_1test__web_1_1_web_evidence_tests" ]
       ] ]
     ] ]
 ];

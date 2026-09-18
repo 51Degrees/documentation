@@ -80,6 +80,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ab10d4c619b5e6f2ffcef2f61acd0343e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Parse the command line arguments passed to the example to get the common options.  <br /></td></tr>
 <tr class="c-table__row memitem:a54667c0d9989760b8cd9dcaac814c938" id="r_a54667c0d9989760b8cd9dcaac814c938"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a54667c0d9989760b8cd9dcaac814c938">FindFile</a> (string filename, DirectoryInfo dir=null)</td></tr>
 <tr class="c-table__row memdesc:a54667c0d9989760b8cd9dcaac814c938"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Uses a background task to search for the specified filename within the working directory.  <br /></td></tr>
+<tr class="c-table__row memitem:ace6be8df88a95f56b3e37106851bcd37" id="r_ace6be8df88a95f56b3e37106851bcd37"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#ace6be8df88a95f56b3e37106851bcd37">GetDataFilePathFromEnv</a> ()</td></tr>
+<tr class="c-table__row memdesc:ace6be8df88a95f56b3e37106851bcd37"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get an explicit device detection data file path from the environment.  <br /></td></tr>
 <tr class="c-table__row memitem:a98700d42bb8cbda8f7481a01b86c8996" id="r_a98700d42bb8cbda8f7481a01b86c8996"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a98700d42bb8cbda8f7481a01b86c8996">FindDataFile</a> (string filename, DirectoryInfo dir=null)</td></tr>
 <tr class="c-table__row memdesc:a98700d42bb8cbda8f7481a01b86c8996"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the path to a device detection data file.  <br /></td></tr>
 <tr class="c-table__row memitem:a86253a9e8a0f500d899eaf6e62d78ba8" id="r_a86253a9e8a0f500d899eaf6e62d78ba8"><td class="c-table__cell">static&#160;<a class="el" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_data_file_info.html">DataFileInfo</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a86253a9e8a0f500d899eaf6e62d78ba8">GetDataFileInfo</a> (string dataFile, DeviceDetectionHashEngineBuilder engineBuilder)</td></tr>
@@ -286,7 +288,7 @@ Properties</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get the path to a device detection data file. </p>
-<p>The environment variables are checked first for an explicit path. The aligned variable named by Constants.DEVICE_DETECTION_DATA_FILE_ENV_VAR takes precedence over the legacy variable named by Constants.LEGACY_DEVICE_DETECTION_DATA_FILE_ENV_VAR. If neither is set, the folder hierarchy is searched for the supplied file name using FindFile(string, DirectoryInfo).</p>
+<p>The environment variables are checked first for an explicit path, using GetDataFilePathFromEnv. If none is set, the folder hierarchy is searched for the supplied file name using FindFile(string, DirectoryInfo).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>The data file name to search for when no environment variable supplies an explicit path. </td></tr>
@@ -422,6 +424,39 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ace6be8df88a95f56b3e37106851bcd37" name="ace6be8df88a95f56b3e37106851bcd37"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ace6be8df88a95f56b3e37106851bcd37">&#9670;&#160;</a></span>GetDataFilePathFromEnv()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">string FiftyOne.DeviceDetection.Examples.ExampleUtils.GetDataFilePathFromEnv </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Get an explicit device detection data file path from the environment. </p>
+<p>The variables named in Constants.DATA_FILE_ENV_VARS are checked in order and the first one with a value wins.</p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The path from the environment, or null if none of the variables is set. </dd></dl>
 
 </div>
 </div>

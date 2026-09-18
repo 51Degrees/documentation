@@ -92,6 +92,11 @@ Structs</h2></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesIndicesPropertyProfile" id="r_fiftyoneDegreesIndicesPropertyProfile"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_indices_property_profile.html">fiftyoneDegreesIndicesPropertyProfile</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Maps the profile index and the property index to the first value index of the profile for the property.  <a href="structfiftyone_degrees_indices_property_profile.html#details">More...</a><br /></td></tr>
 </table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-define-members" class="g-docs__section-heading"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="c-table__row memitem:gaf8777aa8a0f1a69bfcfab6a2071e84c5" id="r_gaf8777aa8a0f1a69bfcfab6a2071e84c5"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gaf8777aa8a0f1a69bfcfab6a2071e84c5">FIFTYONE_DEGREES_INDICES_NO_VALUE</a>&#160;&#160;&#160;UINT32_MAX</td></tr>
+<tr class="c-table__row memdesc:gaf8777aa8a0f1a69bfcfab6a2071e84c5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returned by fiftyoneDegreesIndicesPropertyProfileLookup, and held in every unused entry of the index, when the profile has no value for the property.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:ga9bba055a233b50639c1ef66677031be6" id="r_ga9bba055a233b50639c1ef66677031be6"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_indices_property_profile.html">fiftyoneDegreesIndicesPropertyProfile</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga9bba055a233b50639c1ef66677031be6">fiftyoneDegreesIndicesPropertyProfileCreate</a> (<a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *profiles, <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *profileOffsets, <a class="el" href="group___fifty_one_degrees_properties.html#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *values, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
@@ -99,8 +104,30 @@ Functions</h2></td></tr>
 <tr class="c-table__row memitem:gaebc74d34c21d2e7f14cf688ca292328e" id="r_gaebc74d34c21d2e7f14cf688ca292328e"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gaebc74d34c21d2e7f14cf688ca292328e">fiftyoneDegreesIndicesPropertyProfileFree</a> (<a class="el" href="structfiftyone_degrees_indices_property_profile.html">fiftyoneDegreesIndicesPropertyProfile</a> *index)</td></tr>
 <tr class="c-table__row memdesc:gaebc74d34c21d2e7f14cf688ca292328e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Frees an index previously created by fiftyoneDegreesIndicesPropertyProfileCreate.  <br /></td></tr>
 <tr class="c-table__row memitem:ga12429c5cf301b643f759e4c828ee6423" id="r_ga12429c5cf301b643f759e4c828ee6423"><td class="c-table__cell">uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga12429c5cf301b643f759e4c828ee6423">fiftyoneDegreesIndicesPropertyProfileLookup</a> (<a class="el" href="structfiftyone_degrees_indices_property_profile.html">fiftyoneDegreesIndicesPropertyProfile</a> *index, uint32_t profileId, uint32_t availablePropertyIndex)</td></tr>
-<tr class="c-table__row memdesc:ga12429c5cf301b643f759e4c828ee6423"><td class="c-table__cell">&#160;</td><td class="c-table__cell">For a given profile id and available property index returns the first value index, or null if a first index can not be determined from the index.  <br /></td></tr>
+<tr class="c-table__row memdesc:ga12429c5cf301b643f759e4c828ee6423"><td class="c-table__cell">&#160;</td><td class="c-table__cell">For a given profile id and available property index returns the first value index, or FIFTYONE_DEGREES_INDICES_NO_VALUE if the profile has no value for the property, the profile id is outside the range of the index, or the available property index is not one the index was created with.  <br /></td></tr>
 </table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="g-docs__section-heading">Macro Definition Documentation</h2>
+<a id="gaf8777aa8a0f1a69bfcfab6a2071e84c5" name="gaf8777aa8a0f1a69bfcfab6a2071e84c5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaf8777aa8a0f1a69bfcfab6a2071e84c5">&#9670;&#160;</a></span>FIFTYONE_DEGREES_INDICES_NO_VALUE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_INDICES_NO_VALUE&#160;&#160;&#160;UINT32_MAX</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Returned by fiftyoneDegreesIndicesPropertyProfileLookup, and held in every unused entry of the index, when the profile has no value for the property. </p>
+<p>This is the case for a profile id between the lowest and highest that is not in the data set, and for a property the profile has no values for. </p>
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
 <a id="ga9bba055a233b50639c1ef66677031be6" name="ga9bba055a233b50639c1ef66677031be6"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga9bba055a233b50639c1ef66677031be6">&#9670;&#160;</a></span>fiftyoneDegreesIndicesPropertyProfileCreate()</h2>
@@ -212,7 +239,7 @@ Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>For a given profile id and available property index returns the first value index, or null if a first index can not be determined from the index. </p>
+<p>For a given profile id and available property index returns the first value index, or FIFTYONE_DEGREES_INDICES_NO_VALUE if the profile has no value for the property, the profile id is outside the range of the index, or the available property index is not one the index was created with. </p>
 <p>The indexes relate to the collections for profiles, properties, and values provided to the fiftyoneDegreesIndicesPropertyProfileCreate method when the index was created. The availablePropertyIndex is not the index of all possible properties, but the index of the ones the data set was created expecting to return. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>from fiftyoneDegreesIndicesPropertyProfileCreate to use </td></tr>
@@ -221,7 +248,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the index in the list of values for the profile for the first value associated with the property </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the index in the list of values for the profile for the first value associated with the property, or FIFTYONE_DEGREES_INDICES_NO_VALUE </dd></dl>
 
 </div>
 </div>

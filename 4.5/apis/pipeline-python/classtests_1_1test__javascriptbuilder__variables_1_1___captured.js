@@ -1,0 +1,6 @@
+var classtests_1_1test__javascriptbuilder__variables_1_1___captured =
+[
+    [ "__init__", "classtests_1_1test__javascriptbuilder__variables_1_1___captured.html#ac405babd3ee4ad756ecf99cb513affc2", null ],
+    [ "render", "classtests_1_1test__javascriptbuilder__variables_1_1___captured.html#af526cf0c7377018c9de15622574f04ec", null ],
+    [ "variables", "classtests_1_1test__javascriptbuilder__variables_1_1___captured.html#a1c1447f7b91702de10d7c2b23ee057b3", null ]
+];

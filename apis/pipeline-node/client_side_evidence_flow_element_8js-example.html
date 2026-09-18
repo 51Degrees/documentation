@@ -240,10 +240,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('client_side_ev
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// Add any information from the request</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// (headers, cookies and additional client side</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// provided information)</span></div>
-<div class="c-code__line">  flowData.evidence.addFromRequest(req);</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">  flowData.process().then(<span class="c-code__keyword">function</span> () {</div>
+<div class="c-code__line">  <span class="c-code__comment">// provided information). The client side script sends its information</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// in a form body, so the asynchronous form reads that body as well.</span></div>
+<div class="c-code__line">  flowData.evidence.addFromRequestAsync(req).then(<span class="c-code__keyword">function</span> () {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> flowData.process();</div>
+<div class="c-code__line">  }).then(<span class="c-code__keyword">function</span> () {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Send back JSON if requesting it from the client side</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// via the JavaScriptBuilder</span></div>
 <div class="c-code__line"> </div>

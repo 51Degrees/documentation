@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a0eac0443f28a15c105852be4429e367a":[1,3,3,2,5],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a0eac0443f28a15c105852be4429e367a":[1,3,3,2,6],
+"classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a1f2f4a2269933f88651414905a89c1e0":[1,3,3,2,28],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a207b483d13c9da4c59208243cb15bd3a":[1,3,3,2,21],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a3168b16cef7a742a01400efff8bcee85":[1,3,3,2,2],
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a331862a11994ae9b470900800fd9d17d":[1,3,3,2,7],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html":[1,6,0,0],
 "classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a02df36f9c101b41d0e9042a160d414cc":[1,6,0,0,13],
 "classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a0d145d6fd7caf24f98301ceb2968ef55":[1,6,0,0,3],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a114062df66ea6090cebebaf1a4ca6f01":[1,6,0,0,4],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a24f00efc3c59efb6e0a714b3521926a1":[1,6,0,0,2],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a4589e8e035b07dff44a7e9010340a46e":[1,6,0,0,7],
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a4e5516565bb87d63a02bf26a93d0c1f0":[1,6,0,0,1]
+"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a114062df66ea6090cebebaf1a4ca6f01":[1,6,0,0,4]
 };

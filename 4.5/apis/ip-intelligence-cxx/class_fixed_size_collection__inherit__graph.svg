@@ -21,9 +21,9 @@
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:href="class_fixed_size_collection.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="491,-133 333,-133 333,-103 491,-103 491,-133"/>
-<text text-anchor="start" x="341" y="-121" font-family="Helvetica,sans-Serif" font-size="10.00">FixedSizeCollection</text>
-<text text-anchor="middle" x="412" y="-110" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; fiftyoneDegreesProperty &gt;</text>
+<polygon fill="white" stroke="#666666" points="483.5,-133 340.5,-133 340.5,-103 483.5,-103 483.5,-133"/>
+<text text-anchor="start" x="348.5" y="-121" font-family="Helvetica,sans-Serif" font-size="10.00">FixedSizeCollection</text>
+<text text-anchor="middle" x="412" y="-110" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; fiftyoneDegreesValue &gt;</text>
 </a>
 </g>
 </g>
@@ -31,19 +31,19 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="orange" stroke-dasharray="5,2" d="M115.9,-82.02C129.36,-85.3 144.21,-88.61 158,-91 216.21,-101.09 282.66,-108 332.84,-112.31"/>
+<path fill="none" stroke="orange" stroke-dasharray="5,2" d="M115.9,-82.02C129.36,-85.3 144.21,-88.61 158,-91 219.15,-101.6 289.39,-108.69 340.31,-112.94"/>
 <polygon fill="orange" stroke="orange" points="116.47,-78.56 105.92,-79.53 114.77,-85.35 116.47,-78.56"/>
 </a>
 </g>
-<text text-anchor="start" x="161" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey">&lt; fiftyoneDegreesProperty &gt;</text>
+<text text-anchor="start" x="169" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey">&lt; fiftyoneDegreesValue &gt;</text>
 </g>
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
 <g id="a_Node000003"><a xlink:href="class_fixed_size_collection.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="483.5,-85 340.5,-85 340.5,-55 483.5,-55 483.5,-85"/>
-<text text-anchor="start" x="348.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">FixedSizeCollection</text>
-<text text-anchor="middle" x="412" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; fiftyoneDegreesValue &gt;</text>
+<polygon fill="white" stroke="#666666" points="491,-85 333,-85 333,-55 491,-55 491,-85"/>
+<text text-anchor="start" x="341" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">FixedSizeCollection</text>
+<text text-anchor="middle" x="412" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; fiftyoneDegreesProperty &gt;</text>
 </a>
 </g>
 </g>
@@ -51,11 +51,11 @@
 <g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="orange" stroke-dasharray="5,2" d="M150.36,-70C207.9,-70 285.02,-70 340.42,-70"/>
+<path fill="none" stroke="orange" stroke-dasharray="5,2" d="M150.27,-70C205.28,-70 278.23,-70 332.97,-70"/>
 <polygon fill="orange" stroke="orange" points="150.21,-66.5 140.21,-70 150.21,-73.5 150.21,-66.5"/>
 </a>
 </g>
-<text text-anchor="start" x="169" y="-75.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey">&lt; fiftyoneDegreesValue &gt;</text>
+<text text-anchor="start" x="161" y="-75.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey">&lt; fiftyoneDegreesProperty &gt;</text>
 </g>
 <!-- Node4 -->
 <g id="Node000004" class="node">

@@ -171,7 +171,8 @@ var annotated =
         [ "DeviceDetectionExampleTests", "classtests_1_1test__onpremiseexamples_1_1_device_detection_example_tests.html", "classtests_1_1test__onpremiseexamples_1_1_device_detection_example_tests" ]
       ] ],
       [ "test_onpremisegettingstartedweb", "namespacetests_1_1test__onpremisegettingstartedweb.html", [
-        [ "OnPremiseGettingStartedWebTests", "classtests_1_1test__onpremisegettingstartedweb_1_1_on_premise_getting_started_web_tests.html", "classtests_1_1test__onpremisegettingstartedweb_1_1_on_premise_getting_started_web_tests" ]
+        [ "OnPremiseGettingStartedWebTests", "classtests_1_1test__onpremisegettingstartedweb_1_1_on_premise_getting_started_web_tests.html", "classtests_1_1test__onpremisegettingstartedweb_1_1_on_premise_getting_started_web_tests" ],
+        [ "OnPremiseGettingStartedWebConfigTests", "classtests_1_1test__onpremisegettingstartedweb_1_1_on_premise_getting_started_web_config_tests.html", "classtests_1_1test__onpremisegettingstartedweb_1_1_on_premise_getting_started_web_config_tests" ]
       ] ],
       [ "test_properties", "namespacetests_1_1test__properties.html", [
         [ "PropertyTests", "classtests_1_1test__properties_1_1_property_tests.html", "classtests_1_1test__properties_1_1_property_tests" ]

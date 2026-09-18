@@ -167,8 +167,10 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> self</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">def </span>run(self):</div>
-<div class="c-code__line">        </div>
-<div class="c-code__line">        GettingStartedWeb.app.run(port=5001)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment"># The port can be set with the PORT environment variable, as it can</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># for the cloud example, so the example can run next to other services.</span></div>
+<div class="c-code__line">        GettingStartedWeb.app.run(port=int(os.environ.get(<span class="c-code__stringliteral">&quot;PORT&quot;</span>, 5001)))</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment"># First we make a JSON route that will be called from the client side and will return</span></div>
 <div class="c-code__line">    <span class="c-code__comment"># a JSON encoded property database using any additional evidence provided by the client </span></div>
@@ -192,6 +194,36 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">        <span class="c-code__comment"># Return the JSON from the JSONBundler engine</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> json.dumps(flowdata.jsonbundler.json)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment"># Next we serve the client-side JavaScript from its own route. The other</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># Pipeline APIs ship a web integration that intercepts &#39;/51Degrees.core.js&#39;</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># for this, so the page can reference the script by that name. There is no</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># such integration for Flask, so the example wires up the route itself.</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__preprocessor">@staticmethod</span></div>
+<div class="c-code__line">    <span class="c-code__preprocessor">@app.route(&#39;/51Degrees.core.js&#39;)</span></div>
+<div class="c-code__line">    <span class="c-code__keyword">def </span>core_js():</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment"># Create the flowdata object for the JavaScript route</span></div>
+<div class="c-code__line">        flowdata = GettingStartedWeb.pipeline.create_flowdata()</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment"># Add any information from the request (headers, cookies and additional</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># client side provided information). Query parameters are included, so</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># the per-request &#39;fod-js-enable-cookies&#39; override is picked up here and</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># applied by the JavaScriptBuilder engine.</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        flowdata.evidence.add_from_dict(webevidence(request))</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment"># Process the flowdata</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        flowdata.process()</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment"># Return the JavaScript from the JavaScriptBuilder engine</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        response = make_response(flowdata.javascriptbuilder.javascript)</div>
+<div class="c-code__line">        response.headers[<span class="c-code__stringliteral">&quot;Content-Type&quot;</span>] = <span class="c-code__stringliteral">&quot;application/x-javascript&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> response</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment"># In the main route we dynamically update the screen&#39;s device property display</span></div>
 <div class="c-code__line">    <span class="c-code__comment"># using the above JSON route</span></div>
@@ -250,6 +282,19 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">        configFile = Path(__file__).resolve().parent.joinpath(<span class="c-code__stringliteral">&quot;config.json&quot;</span>).read_text()</div>
 <div class="c-code__line">        config = json.loads(configFile)</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment"># A data file named in the 51DEGREES_DD_PATH environment variable takes</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># the place of the one in config.json. This lets the example run</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># against a paid data file without editing the configuration.</span></div>
+<div class="c-code__line">        envDataFile = ExampleUtils.get_data_file_path()</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> envDataFile:</div>
+<div class="c-code__line">            envDataFile = os.path.abspath(envDataFile)</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> <span class="c-code__keywordflow">not</span> os.path.exists(envDataFile):</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">raise</span> Exception(<span class="c-code__stringliteral">&quot;The device detection data file &quot;</span> +</div>
+<div class="c-code__line">                    f<span class="c-code__stringliteral">&quot;&#39;{envDataFile}&#39; named in the environment variable &quot;</span> +</div>
+<div class="c-code__line">                    f<span class="c-code__stringliteral">&quot;&#39;{ExampleUtils.DATA_FILE_ENV_VAR}&#39; does not exist.&quot;</span>)</div>
+<div class="c-code__line">            ExampleUtils.set_data_file_in_config(config, envDataFile)</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> config</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">        dataFile = ExampleUtils.get_data_file_from_config(config)</div>
 <div class="c-code__line">        foundDataFile = <span class="c-code__keyword">False</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> <span class="c-code__keywordflow">not</span> dataFile:</div>
@@ -271,7 +316,8 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">                f<span class="c-code__stringliteral">&quot;&#39;{dataFile}&#39;. If using the lite file, then make sure the &quot;</span> +</div>
 <div class="c-code__line">                <span class="c-code__stringliteral">&quot;device-detection-data submodule has been updated by running &quot;</span> +</div>
 <div class="c-code__line">                <span class="c-code__stringliteral">&quot;`git submodule update --recursive`. Otherwise, ensure that the filename &quot;</span> +</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;is correct in config.json.&quot;</span>)</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;is correct in config.json, or set the environment variable &quot;</span> +</div>
+<div class="c-code__line">                f<span class="c-code__stringliteral">&quot;&#39;{ExampleUtils.DATA_FILE_ENV_VAR}&#39; to the path of the data file.&quot;</span>)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> config</div>
 <div class="c-code__line"> </div>

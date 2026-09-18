@@ -82,6 +82,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a7e4f03ae295425ac814254c70eb707a9" id="r_a7e4f03ae295425ac814254c70eb707a9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7e4f03ae295425ac814254c70eb707a9">get_resource_key</a> ()</td></tr>
 <tr class="c-table__row memitem:ab624067f966c330094a3f46518ffe231" id="r_ab624067f966c330094a3f46518ffe231"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab624067f966c330094a3f46518ffe231">get_missing_resource_key_message</a> ()</td></tr>
 <tr class="c-table__row memdesc:ab624067f966c330094a3f46518ffe231"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The message shown when no resource key is set, naming the variable that was wanted rather than leaving the reader to guess.  <br /></td></tr>
+<tr class="c-table__row memitem:ae523a7f870bae19cedcf076b12e58a27" id="r_ae523a7f870bae19cedcf076b12e58a27"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae523a7f870bae19cedcf076b12e58a27">get_data_file_path</a> ()</td></tr>
 <tr class="c-table__row memitem:ad50453966c7d0b7bac9536a8e73f9e5d" id="r_ad50453966c7d0b7bac9536a8e73f9e5d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad50453966c7d0b7bac9536a8e73f9e5d">get_cloud_endpoint</a> ()</td></tr>
 <tr class="c-table__row memitem:a04600f57e83dd95cf735fb954470cbea" id="r_a04600f57e83dd95cf735fb954470cbea"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a04600f57e83dd95cf735fb954470cbea">find_file</a> (file_name)</td></tr>
 <tr class="c-table__row memitem:a87e613b755d409576cb748b8d2b64444" id="r_a87e613b755d409576cb748b8d2b64444"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a87e613b755d409576cb748b8d2b64444">get_data_file_date</a> (engine)</td></tr>
@@ -96,6 +97,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:a2a034f0316ef9771e1c368416bee33e7" id="r_a2a034f0316ef9771e1c368416bee33e7"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a2a034f0316ef9771e1c368416bee33e7">RESOURCE_KEY_ENV_VAR</a> = &quot;_51DEGREES_RESOURCE_KEY&quot;</td></tr>
 <tr class="c-table__row memitem:ae77e98e744abca31aa19ca99497a5e6f" id="r_ae77e98e744abca31aa19ca99497a5e6f"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#ae77e98e744abca31aa19ca99497a5e6f">LEGACY_RESOURCE_KEY_ENV_VAR</a> = &quot;resource_key&quot;</td></tr>
 <tr class="c-table__row memitem:af919b8b681fe43c574cbeeb7b35815d7" id="r_af919b8b681fe43c574cbeeb7b35815d7"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#af919b8b681fe43c574cbeeb7b35815d7">ENDPOINT_ENV_VAR</a> = &quot;cloud_endpoint&quot;</td></tr>
+<tr class="c-table__row memitem:a5611baa235d7ab24a65923d032a8bd55" id="r_a5611baa235d7ab24a65923d032a8bd55"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a5611baa235d7ab24a65923d032a8bd55">DATA_FILE_ENV_VAR</a> = &quot;51DEGREES_DD_PATH&quot;</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a581c9595b1843b89ac561f8405a85d10" name="a581c9595b1843b89ac561f8405a85d10"></a>
@@ -262,6 +264,35 @@ Static Public Attributes</h2></td></tr>
               <td class="c-table__cell">fiftyone_devicedetection_examples.example_utils.ExampleUtils.get_data_file_from_config </td>
           <td>(</td>
           <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>config</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ae523a7f870bae19cedcf076b12e58a27" name="ae523a7f870bae19cedcf076b12e58a27"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae523a7f870bae19cedcf076b12e58a27">&#9670;&#160;</a></span>get_data_file_path()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_examples.example_utils.ExampleUtils.get_data_file_path </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
           </table>
@@ -573,6 +604,32 @@ Static Public Attributes</h2></td></tr>
           <table class="c-table c-table--article">
             <tr class="c-table__row">
               <td class="c-table__cell">int fiftyone_devicedetection_examples.example_utils.ExampleUtils.DATA_FILE_AGE_WARNING = 30</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a5611baa235d7ab24a65923d032a8bd55" name="a5611baa235d7ab24a65923d032a8bd55"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5611baa235d7ab24a65923d032a8bd55">&#9670;&#160;</a></span>DATA_FILE_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str fiftyone_devicedetection_examples.example_utils.ExampleUtils.DATA_FILE_ENV_VAR = &quot;51DEGREES_DD_PATH&quot;</td>
             </tr>
           </table>
         </div>
