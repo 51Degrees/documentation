@@ -67,6 +67,8 @@ The attributes PMP reads from its own `<script>` tag.
 | `data-action-url`              | No       | -       | A hook of your own, invoked on every answer. `{preference}` is replaced with `standard`, `personalized` or `non-marketing`. An `http(s)` URL is injected as `<script src>` and a `javascript:` URL runs inline. Leave it out and there is simply nothing to invoke, with the dialog saving the answer, activating `__tcfapi` and dismissing as usual. See *Where the action URL fits* below. |
 | `data-license-key`             | No       | -       | Additional licence key or keys, several separated by `+`, where your products need one on top of the resource key. Anyone reading the page source can see it, exactly as they could when it sat on the URL, so only put one here that you are content to publish. |
 | `data-brand-logo`              | No       | -       | URL to the publisher's logo, shown in the dialog header. |
+| `data-dialog-heading`          | No       | -       | Your own wording for the first card's heading, in place of the wording PMP ships for the visitor's language. Leave it out and the shipped wording stands. See *The dialog wording* below. |
+| `data-dialog-body`             | No       | -       | Your own wording for the paragraph under that heading, on the same terms as `data-dialog-heading`. |
 | `data-show-standard`           | No       | `false` | Set to the exact string `true` to offer the Standard option alongside Personalized and the Alternative button. |
 | `data-network-name`            | Only when sharing is on | - | The name of the group your sites belong to. The visitor is shown this name as the thing they would be sharing their answer with, so choose one they will already have seen on the sites themselves. It also settles which sites count as one group. See *Sharing an answer across sites* below. |
 | `data-network-logo`            | No       | -       | URL to the network's logo, shown in the dialog beside the publisher's own. |
@@ -74,6 +76,57 @@ The attributes PMP reads from its own `<script>` tag.
 | `data-object-name`             | No       | `fod`   | What the 51Degrees client script's object is called on this page, which is where the third party cookie result and the GDPR answer are read from. Set it only where the client script was built with the `fod-js-object-name` parameter, and set both to the same name. |
 
 `data-timeout` is no longer read. PMP waits a fixed 1500 milliseconds for the cloud when it reads the shared answer at start up and when it writes one, and no attribute changes that. A page that still sets `data-timeout` gets one console warning per page view, and the attribute can come off the tag.
+
+## The dialog wording
+
+PMP ships the dialog text in 24 languages and chooses one from the browser's own language list, so a visitor reading German is answered in German without you doing anything.
+
+`data-dialog-heading` and `data-dialog-body` replace the heading and the paragraph beneath it where the shipped wording does not suit you. Everything else on the card keeps the shipped text.
+
+### Giving the wording per language
+
+Writing the attribute once replaces that text for every language, which is usually wrong for a site with readers in more than one. Suffix the attribute with a language code to set the wording for that language alone.
+
+```html
+<script
+  src="https://cloud.51degrees.com/api/v4/pmp/YOUR-RESOURCE-KEY.js"
+  data-brand-name="Your Brand"
+  data-dialog-heading="Choose your marketing experience"
+  data-dialog-heading-fr-ca="Choisissez votre expérience marketing"
+  data-dialog-heading-fr="Choisissez votre expérience publicitaire">
+</script>
+```
+
+PMP reads three candidates in order and takes the first one that is present:
+
+1. the attribute suffixed with the whole code of the language it is running in, such as `data-dialog-heading-fr-ca`
+2. the attribute suffixed with the language on its own, such as `data-dialog-heading-fr`
+3. the attribute with no suffix, which is the fallback for every language that has no variant of its own
+
+Write none of the three and the shipped wording for that language stands, which is why leaving the attribute off altogether is the right thing to do wherever you are content with what PMP already says.
+
+The match ignores case, so `data-dialog-heading-FR` and `data-dialog-heading-fr` are the same attribute. A code with no region never matches a longer one, so a bundle running as `sw` does not pick up `data-dialog-heading-sw-ke`.
+
+An empty value is an answer rather than an absence, so `data-dialog-body=""` gives a blank paragraph instead of falling back to the shipped text.
+
+### Macros
+
+Any key written in square brackets is replaced when the card is drawn, and that applies to your own wording as much as to the text PMP ships.
+
+| Macro | Replaced with |
+|-------|---------------|
+| `[networkName]` | The value of `data-network-name`. The shipped text of the second card uses it, that being the card which asks whether the answer should apply across the group's sites. |
+| `[brandName]` | The value of `data-brand-name`. |
+| `[altName]` | The value of `data-alt-name`, which is the label on the alternative button. |
+| `[privacyPolicyLink]` | A link to `data-brand-terms-url`, with the link text in the visitor's own language. |
+
+So a heading written as `Welcome to [networkName]` reaches the visitor as "Welcome to Acme Media" wherever `data-network-name` is `Acme Media`. A key that does not exist is left exactly as you wrote it, brackets included, so a typo shows up on the card rather than quietly disappearing.
+
+Your wording is escaped before it is placed into the card, so markup written into one of these attributes is shown to the visitor as characters instead of becoming part of the page.
+
+### What you cannot reword
+
+The two descriptions behind "More information", which say what Standard and Personalized mean, are not open to being reworded. They are the Model Terms for Marketing wording and those same two words travel onwards as `id.usage`. Were one site able to reword them, two sites could send the same value meaning different things, and nothing reading the answer afterwards could tell the difference.
 
 ## Buttons and what each one stores
 
