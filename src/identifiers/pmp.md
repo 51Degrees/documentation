@@ -72,6 +72,7 @@ The attributes PMP reads from its own `<script>` tag.
 | `data-show-standard`           | No       | `false` | Set to the exact string `true` to offer the Standard option alongside Personalized and the Alternative button. |
 | `data-network-name`            | Only when sharing is on | - | The name of the group your sites belong to. The visitor is shown this name as the thing they would be sharing their answer with, so choose one they will already have seen on the sites themselves. It also settles which sites count as one group. See *Sharing an answer across sites* below. |
 | `data-network-logo`            | No       | -       | URL to the network's logo, shown in the dialog beside the publisher's own. |
+| `data-cookie-domain`           | No       | -       | The domain the `__mtm_pref` cookie is written on, for a site served under more than one name, for example `.example.com`. Leave it out and the cookie is scoped to the exact host the page was served from. See *The answer your own server can read* below. |
 | `data-use-third-party-cookies` | No       | `true`  | Whether a visitor who chose Standard or Personalized may be offered the second card, which shares the answer with the other sites in the group. Nothing but the exact string `false` turns it off, so a mistyped value leaves sharing running instead of switching it off without telling you. |
 | `data-object-name`             | No       | `fod`   | What the 51Degrees client script's object is called on this page, which is where the third party cookie result and the GDPR answer are read from. Set it only where the client script was built with the `fod-js-object-name` parameter, and set both to the same name. |
 
@@ -219,6 +220,36 @@ location.reload();
 ```
 
 Clicking the bubble reopens the dialog without clearing anything, so offer that route where the visitor simply wants to change their answer.
+
+Clearing this key does not leave the cookie below behind. PMP takes that off itself on the next page view once it finds no answer anywhere, so there is nothing else for you to remove.
+
+## The answer your own server can read
+
+A request carries cookies and not `localStorage`, so nothing above this point is visible to your own server, or to anything sitting in front of it. PMP therefore also writes a first party cookie on your domain:
+
+```
+__mtm_pref=personalized; Path=/; Max-Age=34560000; SameSite=Lax; Secure
+```
+
+The value is the bare word, one of `standard`, `personalized` or `non-marketing`, so whatever handles the request can act on it without knowing anything about PMP. The name has no 51Degrees in it deliberately, so that a platform other than this one can set the same cookie and be understood the same way.
+
+The alternative, being the visitor declining marketing, is written like the other two. A server that sees no cookie cannot tell a visitor who declined from one who was never asked, and those are not the same thing.
+
+`SameSite=Lax` because your server needs the cookie on the ordinary navigation that fetches the page. `Secure` is asked for on https only, since a browser refuses a secure cookie over plain http and drops it altogether. The life is 400 days, which is where Chrome caps a cookie and quietly shortens anything longer.
+
+### A site served under more than one name
+
+Set `data-cookie-domain` to the domain the cookie should cover, for example `.example.com`. Without it the cookie is scoped to the exact host, so a visitor answering on `www.example.com` is asked again on `example.com`, and the two answers can then disagree with nothing to say which of them came later.
+
+You write it rather than PMP working it out, because scoping a cookie to a whole site means knowing where the registrable part of a name begins and a browser does not tell a page that. A value that is not a domain is refused, and the cookie falls back to the exact host rather than the value reaching the header.
+
+Adding the attribute to a site whose visitors already hold the host-scoped cookie takes that one off before setting the wider one, so the older answer is not left beside the new one under the same name.
+
+### Which answer the cookie carries
+
+Where the answer is shared across sites, the cookie the cloud holds decides and this one mirrors it. Where there is no shared answer, which is a visitor who kept their choice to this site or a browser where third party cookies do not work, this one carries the answer on its own.
+
+It is taken off when there is no answer anywhere, so a visitor whose shared answer was cleared does not leave a cookie behind that your server goes on reading. It is not taken off merely because the cloud could not be reached, since being unable to ask is not the same as being told there is none.
 
 ## Browser requirement
 
