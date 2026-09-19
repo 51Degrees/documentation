@@ -294,6 +294,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            var truth = <span class="c-code__keyword">new</span> BlockingCollection&lt;Truth&gt;(</div>
 <div class="c-code__line">                Environment.ProcessorCount);</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__comment">// Stopped by the caller, or by a consumer that failed.</span></div>
+<div class="c-code__line">            <span class="c-code__keyword">using </span>var stopping = CancellationTokenSource</div>
+<div class="c-code__line">                .CreateLinkedTokenSource(stoppingToken);</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Create consumers that are used to add the result to the truth.</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// These run in parallel to ensure best performance as the IPI and </span></div>
 <div class="c-code__line">            <span class="c-code__comment">// area calculations can be time consuming compared to reading new</span></div>
@@ -301,14 +305,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            var consumers = CreateConsumers(</div>
 <div class="c-code__line">                pipeline,</div>
 <div class="c-code__line">                truth,</div>
-<div class="c-code__line">                stoppingToken);</div>
+<div class="c-code__line">                stopping);</div>
 <div class="c-code__line">            logger.LogInformation(</div>
 <div class="c-code__line">                <span class="c-code__stringliteral">&quot;Created &#39;{0}&#39; consumer processors&quot;</span>,</div>
 <div class="c-code__line">                consumers.Length);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Use the main thread as the producer adding truths for the</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// consumers to process.</span></div>
-<div class="c-code__line">            AddTruth(logger, source, truth, consumers, stoppingToken);</div>
+<div class="c-code__line">            AddTruth(logger, source, truth, consumers, stopping.Token);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Create the write for the destination output.</span></div>
 <div class="c-code__line">            <span class="c-code__keyword">using </span>var writer = <span class="c-code__keyword">new</span> CsvWriter(</div>
@@ -339,7 +343,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">        <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> Consumer[] CreateConsumers(</div>
 <div class="c-code__line">            IPipeline pipeline,</div>
 <div class="c-code__line">            BlockingCollection&lt;Truth&gt; truth,</div>
-<div class="c-code__line">            CancellationToken stoppingToken)</div>
+<div class="c-code__line">            CancellationTokenSource stopping)</div>
 <div class="c-code__line">        {</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">return</span> Enumerable.Range(</div>
 <div class="c-code__line">                0,</div>
@@ -347,10 +351,20 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    var consumer = <span class="c-code__keyword">new</span> Consumer();</div>
 <div class="c-code__line">                    consumer.Task = Task.Factory.StartNew(() =&gt;</div>
-<div class="c-code__line">                        ProcessTruth(</div>
-<div class="c-code__line">                            pipeline,</div>
-<div class="c-code__line">                            truth,</div>
-<div class="c-code__line">                            stoppingToken),</div>
+<div class="c-code__line">                        {</div>
+<div class="c-code__line">                            <span class="c-code__keywordflow">try</span></div>
+<div class="c-code__line">                            {</div>
+<div class="c-code__line">                                <span class="c-code__keywordflow">return</span> ProcessTruth(</div>
+<div class="c-code__line">                                    pipeline,</div>
+<div class="c-code__line">                                    truth,</div>
+<div class="c-code__line">                                    stopping.Token);</div>
+<div class="c-code__line">                            }</div>
+<div class="c-code__line">                            <span class="c-code__keywordflow">catch</span></div>
+<div class="c-code__line">                            {</div>
+<div class="c-code__line">                                stopping.Cancel();</div>
+<div class="c-code__line">                                <span class="c-code__keywordflow">throw</span>;</div>
+<div class="c-code__line">                            }</div>
+<div class="c-code__line">                        },</div>
 <div class="c-code__line">                        TaskCreationOptions.LongRunning);</div>
 <div class="c-code__line">                    <span class="c-code__keywordflow">return</span> consumer;</div>
 <div class="c-code__line">                }).ToArray();</div>
@@ -602,8 +616,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">        configuration.LoggerFactory.Dispose();</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="aclass_examples_1_1_on_premise_1_1_areas_1_1_calculations_html"><div class="ttname"><a href="class_examples_1_1_on_premise_1_1_areas_1_1_calculations.html">Examples.OnPremise.Areas.Calculations</a></div><div class="ttdoc">Used to work out the common values for areas in the examples.</div><div class="ttdef"><b>Definition</b> Calculations.cs:45</div></div>
-<div class="ttc" id="aclass_examples_1_1_on_premise_1_1_areas_1_1_calculations_html_ac5a4d9ae50e0a7c240a27d20bacd793d"><div class="ttname"><a href="class_examples_1_1_on_premise_1_1_areas_1_1_calculations.html#ac5a4d9ae50e0a7c240a27d20bacd793d">Examples.OnPremise.Areas.Calculations.GetAreas</a></div><div class="ttdeci">static Result GetAreas(string wkt, double latitude, double longitude)</div><div class="ttdoc">Returns the result for the WKT string, and geographic point.</div><div class="ttdef"><b>Definition</b> Calculations.cs:72</div></div>
+<div class="ttc" id="aclass_examples_1_1_on_premise_1_1_areas_1_1_calculations_html"><div class="ttname"><a href="class_examples_1_1_on_premise_1_1_areas_1_1_calculations.html">Examples.OnPremise.Areas.Calculations</a></div><div class="ttdoc">Used to work out the common values for areas in the examples.</div><div class="ttdef"><b>Definition</b> Calculations.cs:46</div></div>
+<div class="ttc" id="aclass_examples_1_1_on_premise_1_1_areas_1_1_calculations_html_ac5a4d9ae50e0a7c240a27d20bacd793d"><div class="ttname"><a href="class_examples_1_1_on_premise_1_1_areas_1_1_calculations.html#ac5a4d9ae50e0a7c240a27d20bacd793d">Examples.OnPremise.Areas.Calculations.GetAreas</a></div><div class="ttdeci">static Result GetAreas(string wkt, double latitude, double longitude)</div><div class="ttdoc">Returns the result for the WKT string, and geographic point.</div><div class="ttdef"><b>Definition</b> Calculations.cs:85</div></div>
 <div class="ttc" id="aclass_examples_1_1_on_premise_1_1_areas_1_1_result_html"><div class="ttname"><a href="class_examples_1_1_on_premise_1_1_areas_1_1_result.html">Examples.OnPremise.Areas.Result</a></div><div class="ttdoc">The result of an area calculation.</div><div class="ttdef"><b>Definition</b> Result.cs:35</div></div>
 <div class="ttc" id="aclass_examples_1_1_on_premise_1_1_areas_1_1_result_html_ad3c31fd120ccb851db58a6db6307b607"><div class="ttname"><a href="class_examples_1_1_on_premise_1_1_areas_1_1_result.html#ad3c31fd120ccb851db58a6db6307b607">Examples.OnPremise.Areas.Result.SquareKms</a></div><div class="ttdeci">int SquareKms</div><div class="ttdoc">Area in square kilometers rounded to nearest integer.</div><div class="ttdef"><b>Definition</b> Result.cs:40</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder_base-1-g_html_aec4bcd06dc0282d083a91e864a7501ed"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder_base-1-g.html#aec4bcd06dc0282d083a91e864a7501ed">FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngineBuilderBase-1-g.SetPerformanceProfile</a></div><div class="ttdeci">IpiOnPremiseEngineBuilderBase&lt; TEngine &gt; SetPerformanceProfile(string profileName)</div><div class="ttdoc">Set the performance profile to use when constructing the data set.</div><div class="ttdef"><b>Definition</b> IpiOnPremiseEngineBuilderBase.cs:122</div></div>
@@ -631,8 +645,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth_html_ab9615d2f1eb82d33c864baf246886024"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html#ab9615d2f1eb82d33c864baf246886024">FiftyOne.IpIntelligence.Examples.OnPremise.Compare.Program.Truth.AddressFamily</a></div><div class="ttdeci">string AddressFamily</div><div class="ttdoc">The version of the IP address.</div><div class="ttdef"><b>Definition</b> OnPremise/Compare-Console/Program.cs:140</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth_html_adc88aafc84ae86f40173357baddaf734"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html#adc88aafc84ae86f40173357baddaf734">FiftyOne.IpIntelligence.Examples.OnPremise.Compare.Program.Truth.Country</a></div><div class="ttdeci">string Country</div><div class="ttdoc">The country associated with the latitude and longitude.</div><div class="ttdef"><b>Definition</b> OnPremise/Compare-Console/Program.cs:150</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth_html_ae209b638a935c7de720954b467253edb"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html#ae209b638a935c7de720954b467253edb">FiftyOne.IpIntelligence.Examples.OnPremise.Compare.Program.Truth.DateTimeUtc</a></div><div class="ttdeci">DateTime DateTimeUtc</div><div class="ttdoc">The date and time in UTC of the observed truth.</div><div class="ttdef"><b>Definition</b> OnPremise/Compare-Console/Program.cs:120</div></div>
-<div class="ttc" id="anamespace_examples_1_1_on_premise_1_1_areas_html"><div class="ttname"><a href="namespace_examples_1_1_on_premise_1_1_areas.html">Examples.OnPremise.Areas</a></div><div class="ttdef"><b>Definition</b> Calculations.cs:31</div></div>
-<div class="ttc" id="anamespace_examples_html"><div class="ttname"><a href="namespace_examples.html">Examples</a></div><div class="ttdef"><b>Definition</b> Calculations.cs:31</div></div>
+<div class="ttc" id="anamespace_examples_1_1_on_premise_1_1_areas_html"><div class="ttname"><a href="namespace_examples_1_1_on_premise_1_1_areas.html">Examples.OnPremise.Areas</a></div><div class="ttdef"><b>Definition</b> Calculations.cs:32</div></div>
+<div class="ttc" id="anamespace_examples_html"><div class="ttname"><a href="namespace_examples.html">Examples</a></div><div class="ttdef"><b>Definition</b> Calculations.cs:32</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements.html">FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements</a></div><div class="ttdef"><b>Definition</b> IpiOnPremiseEngine.cs:38</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare.html">FiftyOne.IpIntelligence.Examples.OnPremise.Compare</a></div><div class="ttdef"><b>Definition</b> OnPremise/Compare-Console/Program.cs:101</div></div>
 </div><!-- fragment --> </div><!-- primary -->

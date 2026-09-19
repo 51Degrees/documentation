@@ -111,6 +111,8 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="c-table__row memitem:ab01b200520984746ed1bdad8772f537b" id="r_ab01b200520984746ed1bdad8772f537b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab01b200520984746ed1bdad8772f537b">is_valid_object_name</a> (name)</td></tr>
+<tr class="c-table__row memdesc:ab01b200520984746ed1bdad8772f537b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether a name can be used as the client side object's name.  <br /></td></tr>
 <tr class="c-table__row memitem:ab96a14bb9633134a1d1836cfa9b6891e" id="r_ab96a14bb9633134a1d1836cfa9b6891e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab96a14bb9633134a1d1836cfa9b6891e">parse_sequence</a> (value)</td></tr>
 <tr class="c-table__row memdesc:ab96a14bb9633134a1d1836cfa9b6891e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A sequence as a positive 32 bit integer.  <br /></td></tr>
 <tr class="c-table__row memitem:abfef78bafe50d5e02ca053662a8fbd76" id="r_abfef78bafe50d5e02ca053662a8fbd76"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#abfef78bafe50d5e02ca053662a8fbd76">get_sequence</a> (value)</td></tr>
@@ -123,6 +125,8 @@ Functions</h2></td></tr>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="c-table__row memitem:a5da6a69b1c55f463ee28ad833d5b34c8" id="r_a5da6a69b1c55f463ee28ad833d5b34c8"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="#a5da6a69b1c55f463ee28ad833d5b34c8">EXCLUDED_PARAMETERS</a> = [&quot;query.session-id&quot;, &quot;query.sequence&quot;]</td></tr>
+<tr class="c-table__row memitem:a7296281029dce40c9656d8ea7e0c4669" id="r_a7296281029dce40c9656d8ea7e0c4669"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7296281029dce40c9656d8ea7e0c4669">OBJECT_NAME_PATTERN</a> = re.compile(r&quot;[A-Za-z_$][A-Za-z0-9_$]*&quot;)</td></tr>
+<tr class="c-table__row memitem:a403ec987ba69fcc6b42d716631d67749" id="r_a403ec987ba69fcc6b42d716631d67749"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a403ec987ba69fcc6b42d716631d67749">RESERVED_WORDS</a></td></tr>
 <tr class="c-table__row memitem:a35d417c4584f298b3e8c04e9422aa807" id="r_a35d417c4584f298b3e8c04e9422aa807"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a35d417c4584f298b3e8c04e9422aa807">DEFAULT_SEQUENCE</a> = 1</td></tr>
 <tr class="c-table__row memitem:aabb75c82466614d69b64a9c951180e6d" id="r_aabb75c82466614d69b64a9c951180e6d"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#aabb75c82466614d69b64a9c951180e6d">MAX_SEQUENCE</a> = 2 ** 31 - 1</td></tr>
 <tr class="c-table__row memitem:a3db2b0a0919e89c43af37330179c8719" id="r_a3db2b0a0919e89c43af37330179c8719"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3db2b0a0919e89c43af37330179c8719">MAX_SEQUENCE_DIGITS</a> = len(str(<a class="el" href="#aabb75c82466614d69b64a9c951180e6d">MAX_SEQUENCE</a>))</td></tr>
@@ -189,6 +193,36 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: The session id to render, or an empty string </dd></dl>
+
+</div>
+</div>
+<a id="ab01b200520984746ed1bdad8772f537b" name="ab01b200520984746ed1bdad8772f537b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab01b200520984746ed1bdad8772f537b">&#9670;&#160;</a></span>is_valid_object_name()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">is_valid_object_name </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Whether a name can be used as the client side object's name. </p>
+<p>@type name: object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name to check @rtype: bool </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: True if the name is a JavaScript identifier made of ASCII letters, digits, '_' and '$' that does not start with a digit and is not one of RESERVED_WORDS </dd></dl>
 
 </div>
 </div>
@@ -324,6 +358,51 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
+</div>
+</div>
+<a id="a7296281029dce40c9656d8ea7e0c4669" name="a7296281029dce40c9656d8ea7e0c4669"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7296281029dce40c9656d8ea7e0c4669">&#9670;&#160;</a></span>OBJECT_NAME_PATTERN</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.javascriptbuilder.OBJECT_NAME_PATTERN = re.compile(r&quot;[A-Za-z_$][A-Za-z0-9_$]*&quot;)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a403ec987ba69fcc6b42d716631d67749" name="a403ec987ba69fcc6b42d716631d67749"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a403ec987ba69fcc6b42d716631d67749">&#9670;&#160;</a></span>RESERVED_WORDS</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.javascriptbuilder.RESERVED_WORDS</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=  frozenset([</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;await&quot;</span>, <span class="c-code__stringliteral">&quot;break&quot;</span>, <span class="c-code__stringliteral">&quot;case&quot;</span>, <span class="c-code__stringliteral">&quot;catch&quot;</span>, <span class="c-code__stringliteral">&quot;class&quot;</span>, <span class="c-code__stringliteral">&quot;const&quot;</span>, <span class="c-code__stringliteral">&quot;continue&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;debugger&quot;</span>, <span class="c-code__stringliteral">&quot;default&quot;</span>, <span class="c-code__stringliteral">&quot;delete&quot;</span>, <span class="c-code__stringliteral">&quot;do&quot;</span>, <span class="c-code__stringliteral">&quot;else&quot;</span>, <span class="c-code__stringliteral">&quot;enum&quot;</span>, <span class="c-code__stringliteral">&quot;export&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;extends&quot;</span>, <span class="c-code__stringliteral">&quot;false&quot;</span>, <span class="c-code__stringliteral">&quot;finally&quot;</span>, <span class="c-code__stringliteral">&quot;for&quot;</span>, <span class="c-code__stringliteral">&quot;function&quot;</span>, <span class="c-code__stringliteral">&quot;if&quot;</span>, <span class="c-code__stringliteral">&quot;implements&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;import&quot;</span>, <span class="c-code__stringliteral">&quot;in&quot;</span>, <span class="c-code__stringliteral">&quot;instanceof&quot;</span>, <span class="c-code__stringliteral">&quot;interface&quot;</span>, <span class="c-code__stringliteral">&quot;let&quot;</span>, <span class="c-code__stringliteral">&quot;new&quot;</span>, <span class="c-code__stringliteral">&quot;null&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;package&quot;</span>, <span class="c-code__stringliteral">&quot;private&quot;</span>, <span class="c-code__stringliteral">&quot;protected&quot;</span>, <span class="c-code__stringliteral">&quot;public&quot;</span>, <span class="c-code__stringliteral">&quot;return&quot;</span>, <span class="c-code__stringliteral">&quot;static&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;super&quot;</span>, <span class="c-code__stringliteral">&quot;switch&quot;</span>, <span class="c-code__stringliteral">&quot;this&quot;</span>, <span class="c-code__stringliteral">&quot;throw&quot;</span>, <span class="c-code__stringliteral">&quot;true&quot;</span>, <span class="c-code__stringliteral">&quot;try&quot;</span>, <span class="c-code__stringliteral">&quot;typeof&quot;</span>, <span class="c-code__stringliteral">&quot;var&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;void&quot;</span>, <span class="c-code__stringliteral">&quot;while&quot;</span>, <span class="c-code__stringliteral">&quot;with&quot;</span>, <span class="c-code__stringliteral">&quot;yield&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;Infinity&quot;</span>, <span class="c-code__stringliteral">&quot;NaN&quot;</span>, <span class="c-code__stringliteral">&quot;undefined&quot;</span>, <span class="c-code__stringliteral">&quot;fiftyoneDegreesManager&quot;</span>])</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad5c0e58b0fdca832d0c7e4c85476afee" name="ad5c0e58b0fdca832d0c7e4c85476afee"></a>

@@ -107,7 +107,7 @@ String&#160;</td><td class="c-table__cell"><b>protocol</b> = &quot;&quot;</td></
 <tr class="c-table__row memitem:ae3d1c98c3034ce22c836707270a8bbda" id="r_ae3d1c98c3034ce22c836707270a8bbda"><td class="c-table__cell"><a id="ae3d1c98c3034ce22c836707270a8bbda" name="ae3d1c98c3034ce22c836707270a8bbda"></a>
 String&#160;</td><td class="c-table__cell"><b>contextRoot</b> = &quot;&quot;</td></tr>
 <tr class="c-table__row memitem:a7776bc3a87eb1fbad1326f5ab46e0ea4" id="r_a7776bc3a87eb1fbad1326f5ab46e0ea4"><td class="c-table__cell"><a id="a7776bc3a87eb1fbad1326f5ab46e0ea4" name="a7776bc3a87eb1fbad1326f5ab46e0ea4"></a>
-String&#160;</td><td class="c-table__cell"><b>objName</b> = &quot;&quot;</td></tr>
+String&#160;</td><td class="c-table__cell"><b>objName</b> = Constants.DEFAULT_OBJECT_NAME</td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="ab42b16c6c4df8e025f974a602a15d6d3" name="ab42b16c6c4df8e025f974a602a15d6d3"></a>
@@ -307,13 +307,19 @@ String&#160;</td><td class="c-table__cell"><b>objName</b> = &quot;&quot;</td></t
 </div><div class="c-member__body">
 
 <p>The default name of the object instantiated by the client JavaScript. </p>
-<p>Default is "fod" </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Default is "fod". This can be overridden per request with the "query.fod-js-object-name" evidence, which is ignored with a warning when it is not a valid name. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">objName</td><td>the object name to use </td></tr>
+    <tr><td class="paramname">objName</td><td>the object name to use, which must be a valid JavaScript identifier that is not a reserved word. A null name leaves the default in place, as no name was configured </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">this builder </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">PipelineConfigurationException</td><td>if the name is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

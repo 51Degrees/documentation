@@ -4,6 +4,8 @@ var classfiftyone__pipeline__core_1_1constants_1_1_constants =
     [ "EVIDENCE_ENABLE_COOKIES", "classfiftyone__pipeline__core_1_1constants_1_1_constants.html#ac24cb23be8764266de95c140ff758830", null ],
     [ "EVIDENCE_ENABLE_COOKIES_SUFFIX", "classfiftyone__pipeline__core_1_1constants_1_1_constants.html#a716c2565f3a3a8ad417bea39d1e1105d", null ],
     [ "EVIDENCE_HTTPHEADER_PREFIX", "classfiftyone__pipeline__core_1_1constants_1_1_constants.html#aef9a2cdfa25cc30927ef35a7c8f24d07", null ],
+    [ "EVIDENCE_OBJECT_NAME", "classfiftyone__pipeline__core_1_1constants_1_1_constants.html#a1bb2826bc51641003496401399ec466c", null ],
+    [ "EVIDENCE_OBJECT_NAME_SUFFIX", "classfiftyone__pipeline__core_1_1constants_1_1_constants.html#a34c002a09de6649201075ce4741ebb58", null ],
     [ "EVIDENCE_QUERY_PREFIX", "classfiftyone__pipeline__core_1_1constants_1_1_constants.html#ac4fef0a2f2a1a14689cff0a770d0a758", null ],
     [ "EVIDENCE_SEPARATOR", "classfiftyone__pipeline__core_1_1constants_1_1_constants.html#a7c03c297611b6e810e2b0d0358b385f5", null ]
 ];

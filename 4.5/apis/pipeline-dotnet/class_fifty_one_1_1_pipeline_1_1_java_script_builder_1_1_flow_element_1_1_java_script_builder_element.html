@@ -734,13 +734,14 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 </div><div class="c-member__body">
 
 <p>Get the sequence evidence if it exists. </p>
+<p>The sequence is written into the script as a number, so anything other than a positive 32 bit integer, written as an integer or as a string of digits, gives 1. With no Sequence Element in the pipeline there is usually no sequence evidence, which also gives 1. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The sequence, which is always at least 1.</dd></dl>
 
 </div>
 </div>
@@ -772,13 +773,14 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 </div><div class="c-member__body">
 
 <p>Get the session-id evidence if it exists. </p>
+<p>The session id is written into the script inside quotes, so a session id that fails JavaScriptResource.IsValidSessionId(string) gives an empty string. This applies whether the Sequence Element created the session id or the request carried it. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The session id, or an empty string.</dd></dl>
 
 </div>
 </div>

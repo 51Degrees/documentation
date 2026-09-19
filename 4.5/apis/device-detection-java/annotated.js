@@ -63,7 +63,8 @@ var annotated =
             [ "GettingStartedWebCloud", "classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_cloud.html", "classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_cloud" ],
             [ "GettingStartedWebOnPrem", "classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem.html", "classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem" ],
             [ "GettingStartedWebOnPremTest", "classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem_test.html", null ],
-            [ "HtmlContentHelper", "classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_html_content_helper.html", "classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_html_content_helper" ]
+            [ "HtmlContentHelper", "classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_html_content_helper.html", "classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_html_content_helper" ],
+            [ "OnPremDataFileOptionTest", "classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_on_prem_data_file_option_test.html", null ]
           ] ]
         ] ],
         [ "hash", null, [

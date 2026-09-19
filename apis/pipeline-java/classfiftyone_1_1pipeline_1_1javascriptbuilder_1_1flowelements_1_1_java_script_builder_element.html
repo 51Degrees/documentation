@@ -134,6 +134,16 @@ void&#160;</td><td class="c-table__cell"><b>close</b> ()  throws Exception </td>
 <tr class="c-table__row memitem:a96dfad7107c88b5643e80847d5820863 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_a96dfad7107c88b5643e80847d5820863"><td class="c-table__cell">DataFactory&lt;&#160;TData&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a96dfad7107c88b5643e80847d5820863">getDataFactory</a> ()</td></tr>
 <tr class="c-table__row memdesc:a96dfad7107c88b5643e80847d5820863 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the factory used to create the element data instances that are populated by this flow element.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a71c7626b139cbfd582a4f93a8794345e" id="r_a71c7626b139cbfd582a4f93a8794345e"><td class="c-table__cell">static&#160;boolean&#160;</td><td class="c-table__cell"><a class="el" href="#a71c7626b139cbfd582a4f93a8794345e">isValidObjectName</a> (String name)</td></tr>
+<tr class="c-table__row memdesc:a71c7626b139cbfd582a4f93a8794345e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether a name can be used as the name of the object instantiated by the client <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1data_1_1types_1_1_java_script.html" title="A string containing JavaScript intended to be run on a client browser.">JavaScript</a>.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a81170facdb43175b045cad442429f248" id="r_a81170facdb43175b045cad442429f248"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a81170facdb43175b045cad442429f248">INVALID_OBJECT_NAME_MESSAGE</a></td></tr>
+<tr class="c-table__row memdesc:a81170facdb43175b045cad442429f248"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The message of the exception thrown when a configured object name is not valid.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a0ab807fe89ba221061b6708be9cc9b0c" id="r_a0ab807fe89ba221061b6708be9cc9b0c"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a0ab807fe89ba221061b6708be9cc9b0c">processInternal</a> (<a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a> data)  throws Exception </td></tr>
@@ -298,6 +308,12 @@ final&#160;Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">PipelineConfigurationException</td><td>if objName is not null and is not a valid <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1data_1_1types_1_1_java_script.html" title="A string containing JavaScript intended to be run on a client browser.">JavaScript</a> identifier, see <code><a class="el" href="#a71c7626b139cbfd582a4f93a8794345e">isValidObjectName</a></code>. A null name means the default name is used, as no name was configured, and an empty name is refused </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -368,6 +384,44 @@ final&#160;Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
 </div><div class="c-member__body">
 
 <p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base.html">fiftyone.pipeline.core.flowelements.FlowElementBase&lt; TData extends ElementData, TProperty extends ElementPropertyMetaData &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a71c7626b139cbfd582a4f93a8794345e" name="a71c7626b139cbfd582a4f93a8794345e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a71c7626b139cbfd582a4f93a8794345e">&#9670;&#160;</a></span>isValidObjectName()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">boolean fiftyone.pipeline.javascriptbuilder.flowelements.JavaScriptBuilderElement.isValidObjectName </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Whether a name can be used as the name of the object instantiated by the client <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1data_1_1types_1_1_java_script.html" title="A string containing JavaScript intended to be run on a client browser.">JavaScript</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>the requested name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the name is a valid <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1data_1_1types_1_1_java_script.html" title="A string containing JavaScript intended to be run on a client browser.">JavaScript</a> identifier and not a reserved word </dd></dl>
 
 </div>
 </div>
@@ -467,6 +521,38 @@ final&#160;Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
 <p>Cleanup any unmanaged resources that the element is using. </p>
 
 <p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base.html#af809db5ffd4e5dfdb5a2f051c8697770">fiftyone.pipeline.core.flowelements.FlowElementBase&lt; TData extends ElementData, TProperty extends ElementPropertyMetaData &gt;</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a81170facdb43175b045cad442429f248" name="a81170facdb43175b045cad442429f248"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a81170facdb43175b045cad442429f248">&#9670;&#160;</a></span>INVALID_OBJECT_NAME_MESSAGE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final String fiftyone.pipeline.javascriptbuilder.flowelements.JavaScriptBuilderElement.INVALID_OBJECT_NAME_MESSAGE</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                                   =</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;JavaScriptBuilder ObjectName is invalid. This must be a valid &quot;</span> +</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;JavaScript identifier that is not a reserved word.&quot;</span></div>
+</div><!-- fragment -->
+<p>The message of the exception thrown when a configured object name is not valid. </p>
 
 </div>
 </div>

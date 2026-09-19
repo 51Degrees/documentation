@@ -71,6 +71,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>This is the getting started Web/On-Prem example showing use of the 51Degrees supplied filter which automatically creates and configures a device detection pipeline. </p>
 <p>The configuration file for the pipeline is at src/main/webapp/WEB-INF/51Degrees-OnPrem.xml </p>
+<p>The data file is taken from the 51DEGREES_DD_PATH environment variable, then from TestDataFile (an environment variable or system property), and otherwise the free Lite file in device-detection-data is used. </p>
+<p>The server listens on port 8081 and stops when Enter is pressed. If the PORT environment variable is set, the server listens on that port instead and runs until the process is stopped, which is how automated tests start it. </p>
 </div><h2 class="g-docs__section-heading">
 Inheritance diagram for fiftyone.devicedetection.examples.web.GettingStartedWebOnPrem:</h2>
 <div class="dyncontent">

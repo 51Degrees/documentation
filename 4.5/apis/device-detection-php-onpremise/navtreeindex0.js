@@ -48,6 +48,7 @@ var NAVTREEINDEX0 =
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_helpers.html#a9474352f4d45e381c37ea83bc740cb39":[1,0,0,0,5,1],
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils.html":[1,0,0,0,0,0,0,0],
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils.html#a45d80c2604023eccc203e66e4106a3df":[1,0,0,0,0,0,0,0,0],
+"classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils.html#a525ef3f0cd30b796be38bade7ea452c2":[1,0,0,0,0,0,0,0,1],
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_getting_started_console.html":[1,0,0,0,0,0,0,1],
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_getting_started_console.html#abff48a49a6ff7ab09b36ae6092cfe94d":[1,0,0,0,0,0,0,1,0],
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_getting_started_web.html":[1,0,0,0,0,0,0,2],

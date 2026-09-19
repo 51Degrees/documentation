@@ -139,18 +139,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2failure
 <div class="c-code__line"><span class="c-code__comment">// Next we build the pipeline. We could additionally add extra engines and/or</span></div>
 <div class="c-code__line"><span class="c-code__comment">// flowElements here before building.</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// To stop having to construct the pipeline</span></div>
-<div class="c-code__line"><span class="c-code__comment">// and re-make cloud API requests used during construction on every page load,</span></div>
-<div class="c-code__line"><span class="c-code__comment">// we recommend caching the serialized pipeline to a database or disk.</span></div>
-<div class="c-code__line"><span class="c-code__comment">// Below we are using PHP&#39;s serialize and writing to a file if it doesn&#39;t exist</span></div>
+<div class="c-code__line"><span class="c-code__comment">// A site keeps the pipeline for the life of the process, or serializes it,</span></div>
+<div class="c-code__line"><span class="c-code__comment">// so that the cloud requests made while it is built are not made on every</span></div>
+<div class="c-code__line"><span class="c-code__comment">// page load. Anything kept that way has to be thrown away when the resource</span></div>
+<div class="c-code__line"><span class="c-code__comment">// key changes, because a pipeline carries the properties of the key it was</span></div>
+<div class="c-code__line"><span class="c-code__comment">// built with. This example builds it on every run, so the answer always</span></div>
+<div class="c-code__line"><span class="c-code__comment">// belongs to the key the example was given.</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">$serializedPipelineFile = __DIR__ . <span class="c-code__stringliteral">&quot;failure_to_match_pipeline.pipeline&quot;</span>;</div>
-<div class="c-code__line"><span class="c-code__keywordflow">if</span>(!file_exists($serializedPipelineFile)){</div>
-<div class="c-code__line">    $pipeline = $builder-&gt;build();</div>
-<div class="c-code__line">    file_put_contents($serializedPipelineFile, serialize($pipeline));</div>
-<div class="c-code__line">} <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">    $pipeline = unserialize(file_get_contents($serializedPipelineFile));</div>
-<div class="c-code__line">}</div>
+<div class="c-code__line">$pipeline = $builder-&gt;build();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Here we create a function that checks if a supplied User-Agent is a</span></div>
 <div class="c-code__line"><span class="c-code__comment">// mobile device</span></div>

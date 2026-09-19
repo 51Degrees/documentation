@@ -1,0 +1,6 @@
+var classtests_1_1test__javascriptbuilder__object__name_1_1_java_script_builder_object_name_setting_tests =
+[
+    [ "test_invalid_configured_name_is_refused", "classtests_1_1test__javascriptbuilder__object__name_1_1_java_script_builder_object_name_setting_tests.html#a8af6e536c1c6eb6a51a9590a37d38436", null ],
+    [ "test_name_not_configured_is_fod", "classtests_1_1test__javascriptbuilder__object__name_1_1_java_script_builder_object_name_setting_tests.html#adcc3a401d29f94fd9dfb15a4744d66f7", null ],
+    [ "test_valid_configured_name_is_accepted", "classtests_1_1test__javascriptbuilder__object__name_1_1_java_script_builder_object_name_setting_tests.html#acbb0c1db50735ece3e31bb506f3e96f6", null ]
+];

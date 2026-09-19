@@ -78,6 +78,11 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a904bb98a6c9282f79697e6426b4a3a29" id="r_a904bb98a6c9282f79697e6426b4a3a29"><td class="c-table__cell">Dictionary&lt;&#160;string,&#160;object&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a904bb98a6c9282f79697e6426b4a3a29">AsDictionary</a> ()</td></tr>
 <tr class="c-table__row memdesc:a904bb98a6c9282f79697e6426b4a3a29"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the parameters supplied to this class as a.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:accd7c8141379772ea25e57aeab2ac580" id="r_accd7c8141379772ea25e57aeab2ac580"><td class="c-table__cell">static&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#accd7c8141379772ea25e57aeab2ac580">IsValidSessionId</a> (string sessionId)</td></tr>
+<tr class="c-table__row memdesc:accd7c8141379772ea25e57aeab2ac580"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True if <em>sessionId</em>  can be written into the script, meaning it is 1 to 64 ASCII letters, digits and hyphens.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-properties" class="g-docs__section-heading"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="c-table__row memitem:a9a90043696e1730ed03da74ac92c9f88" id="r_a9a90043696e1730ed03da74ac92c9f88"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a9a90043696e1730ed03da74ac92c9f88">UserPrompt</a><code> [get, set]</code></td></tr>
@@ -158,8 +163,8 @@ Properties</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">objName</td><td>The name of the global-scope <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> object that will be created on the client-side by the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> produced by the template. </td></tr>
     <tr><td class="paramname">jsonObject</td><td>The JSON data payload to be inserted into the template. </td></tr>
-    <tr><td class="paramname">sessionId</td><td>The session Id to use in the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> response. </td></tr>
-    <tr><td class="paramname">sequence</td><td>The sequence value to use in the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> response. </td></tr>
+    <tr><td class="paramname">sessionId</td><td>The session Id to use in the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> response. A session id that fails IsValidSessionId(string) is written as an empty string. </td></tr>
+    <tr><td class="paramname">sequence</td><td>The sequence value to use in the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> response. A value less than 1 is written as 1. </td></tr>
     <tr><td class="paramname">supportsPromises</td><td>If true, the template will produce <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> that makes use of promises. If false, promises will not be used. </td></tr>
     <tr><td class="paramname">supportsFetch</td><td>If true, the template will produce <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> that makes use of the fetch API. Otherwise, the template will fall back to using XMLHttpRequest. </td></tr>
     <tr><td class="paramname">url</td><td>The complete URL to use for the callback mechanism described in remarks for this constructor. </td></tr>
@@ -247,8 +252,8 @@ Properties</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">objName</td><td>The name of the global-scope <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> object that will be created on the client-side by the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> produced by the template. </td></tr>
     <tr><td class="paramname">jsonObject</td><td>The JSON data payload to be inserted into the template. </td></tr>
-    <tr><td class="paramname">sessionId</td><td>The session Id to use in the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> response. </td></tr>
-    <tr><td class="paramname">sequence</td><td>The sequence value to use in the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> response. </td></tr>
+    <tr><td class="paramname">sessionId</td><td>The session Id to use in the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> response. A session id that fails IsValidSessionId(string) is written as an empty string. </td></tr>
+    <tr><td class="paramname">sequence</td><td>The sequence value to use in the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> response. A value less than 1 is written as 1. </td></tr>
     <tr><td class="paramname">supportsPromises</td><td>If true, the template will produce <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> that makes use of promises. If false, promises will not be used. </td></tr>
     <tr><td class="paramname">supportsFetch</td><td>If true, the template will produce <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> that makes use of the fetch API. Otherwise, the template will fall back to using XMLHttpRequest. </td></tr>
     <tr><td class="paramname">url</td><td>The complete URL to use for the callback mechanism described in remarks for this constructor. </td></tr>
@@ -286,6 +291,45 @@ Properties</h2></td></tr>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">Dictionary\&lt;string, <span class="c-code__keywordtype">object</span>\&gt;</div>
 </div><!-- fragment --><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">A new <div class="c-code__block c-code__block--outline"><div class="c-code__line">Dictionary\&lt;string, <span class="c-code__keywordtype">object</span>\&gt;</div>
 </div><!-- fragment --> containing the parameters passed to the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="accd7c8141379772ea25e57aeab2ac580" name="accd7c8141379772ea25e57aeab2ac580"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#accd7c8141379772ea25e57aeab2ac580">&#9670;&#160;</a></span>IsValidSessionId()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool FiftyOne.Pipeline.JavaScriptBuilder.TemplateData.JavaScriptResource.IsValidSessionId </td>
+          <td>(</td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>sessionId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>True if <em>sessionId</em>  can be written into the script, meaning it is 1 to 64 ASCII letters, digits and hyphens. </p>
+<p>Any other session id is written as an empty string.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sessionId</td><td>The session id to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">True if the session id is valid, otherwise false. </dd></dl>
 
 </div>
 </div>

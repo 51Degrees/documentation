@@ -192,7 +192,14 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 </li>
-<li>side object with the JavaScript properties in it ('fod' by default)</li>
+<li>side object with the JavaScript properties in it ('fod' when</li>
+<li>absent or None).</li>
+<li>This can be overridden per request with the</li>
+<li>"query.fod-js-object-name" evidence key. The name must be a</li>
+<li>JavaScript identifier (ASCII letters, digits, '_' and '$', not</li>
+<li>starting with a digit) and not a reserved word. An invalid</li>
+<li>configured name raises a ValueError, and an invalid requested name</li>
+<li>is ignored with a warning logged.</li>
 <li><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{string}</td><td>options.protocol The protocol ("http" or "https")</td></tr>

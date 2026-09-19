@@ -192,6 +192,7 @@ var NAVTREEINDEX0 =
 "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_update_data_file.html":[4,0,0,2,0,26],
 "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_update_data_file_test.html":[4,0,0,2,0,27],
 "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1areas_1_1_calculations.html":[4,0,0,2,0,0,0],
+"classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1areas_1_1_calculations.html#a04ec1757b4dbadb4b658c6641997308b":[4,0,0,2,0,0,0,2],
 "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1areas_1_1_calculations.html#a46d44091f22a0056b3a39fe957ee4f6d":[4,0,0,2,0,0,0,1],
 "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1areas_1_1_calculations.html#afa8e7cad0c02d2b4b3d1e9513a4d8961":[4,0,0,2,0,0,0,0],
 "classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1areas_1_1_calculations_test.html":[4,0,0,2,0,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_getting_started_web_on_prem.html#a02ec6f5b9f65e4408900dd01526a0b4c":[4,0,0,2,2,9,1],
 "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_getting_started_web_on_prem.html#a9142c727481c9a30a9a95b6b936441f5":[4,0,0,2,2,9,0],
 "classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_getting_started_web_on_prem_test.html":[4,0,0,2,2,10],
-"classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_html_content_helper.html":[4,0,0,2,2,11],
-"classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_html_content_helper.html#a40e2b63a39d3c514b57ca3b83984c296":[4,0,0,2,2,11,1]
+"classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_html_content_helper.html":[4,0,0,2,2,11]
 };
