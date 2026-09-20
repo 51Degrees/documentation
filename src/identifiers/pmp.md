@@ -62,8 +62,8 @@ The attributes PMP reads from its own `<script>` tag.
 | `data-tcf-vendor`              | Yes      | -       | Static TCF v2 consent string. The core segment on its own is enough, and multi-segment strings such as `core.disclosedvendors` are accepted, with trailing segments preserved as they were given. |
 | `data-brand-name`              | Yes      | -       | Brand shown in the dialog. |
 | `data-brand-terms-url`         | Yes      | -       | Link to the publisher's terms or privacy page. |
-| `data-alt-name`                | Yes      | -       | Label for the Alternative button, for example "Subscribe to remove ads". |
-| `data-alt-url`                 | Yes      | -       | What the Alternative button does. An `http(s)` URL navigates the page and a `javascript:` URL runs inline with no navigation. `{preference}` is not substituted here. |
+| `data-alt-name`                | Yes      | -       | Label for the Alternative button, for example "Subscribe to remove ads". Pressing it sets the visitor's Model Terms for Marketing preference to `non-marketing`, see Buttons and what each one stores below. |
+| `data-alt-url`                 | Yes      | -       | What the Alternative button does, after it has recorded `non-marketing` as the visitor's answer. An `http(s)` URL navigates the page and a `javascript:` URL runs inline with no navigation. `{preference}` is not substituted here. |
 | `data-action-url`              | No       | -       | A hook of your own, invoked on every answer. `{preference}` is replaced with `standard`, `personalized` or `non-marketing`. An `http(s)` URL is injected as `<script src>` and a `javascript:` URL runs inline. Leave it out and there is simply nothing to invoke, with the dialog saving the answer, activating `__tcfapi` and dismissing as usual. See *Where the action URL fits* below. |
 | `data-license-key`             | No       | -       | Additional licence key or keys, several separated by `+`, where your products need one on top of the resource key. Anyone reading the page source can see it, exactly as they could when it sat on the URL, so only put one here that you are content to publish. |
 | `data-brand-logo`              | No       | -       | URL to the publisher's logo, shown in the dialog header. |
@@ -127,7 +127,7 @@ Your wording is escaped before it is placed into the card, so markup written int
 
 ### What you cannot reword
 
-The two descriptions behind "More information", which say what Standard and Personalized mean, are not open to being reworded. They are the Model Terms for Marketing wording and those same two words travel onwards as `id.usage`. Were one site able to reword them, two sites could send the same value meaning different things, and nothing reading the answer afterwards could tell the difference.
+The two descriptions behind "More information", which say what Standard and Personalized mean, are not open to being reworded. They are the [Model Terms for Marketing](https://m4ow.uk/mtm/2.txt) wording and those same two words travel onwards as `id.usage`. Were one site able to reword them, two sites could send the same value meaning different things, and nothing reading the answer afterwards could tell the difference.
 
 ## Buttons and what each one stores
 
@@ -139,11 +139,11 @@ The two descriptions behind "More information", which say what Standard and Pers
 
 Each option explains itself behind a "More information" accordion. There is no close cross on the first dialog, so answering is the only way past it. Once answered, the dialog shrinks to a small bubble in the corner that opens it again, and later visits start at that bubble rather than the full dialog, so the visitor can change their answer whenever they like.
 
-The alternative button is the visitor declining marketing, so it stores `non-marketing`. It fires `data-action-url` with `id.usage=non-marketing`, then runs `data-alt-url`, where an `http(s)` URL navigates the page and a `javascript:` URL runs inline and leaves the visitor on your site.
+The alternative button sets the visitor's preference under the Model Terms for Marketing to `non-marketing`, the third of the three words those terms define beside `standard` and `personalized`, and that word travels every way the other two do. It is stored, written to the `__mtm_pref` cookie for your own server to read, announced on the window so the 51Degrees client script sends it as `id.usage=non-marketing` and the 51Did carries it, and substituted for `{preference}` in `data-action-url`. Then `data-alt-url` runs, where an `http(s)` URL navigates the page and a `javascript:` URL runs inline and leaves the visitor on your site.
 
 **The alternative button used to store `standard`, which said the visitor still accepted standard marketing tracking.** It stores `non-marketing` now, so that a publisher reading an answer shared from another site can tell a visitor who declined from one who accepted the lesser of the two kinds.
 
-No TCF consent string is built for `non-marketing`, because the visitor consented to nothing and so nothing is claimed. Whilst that answer stands, `__tcfapi` answers `ping` truthfully, still honours `removeEventListener`, and answers `getTCData` and `addEventListener` with `success: false`. A listener registered before the decline is told once, with `success: false`, that there is no longer any TC data. Choosing Standard or Personalized afterwards restores the full API.
+No TCF consent string is built for `non-marketing`, because under TCF the visitor consented to nothing and so nothing is claimed. The Model Terms answer and the TCF consent string are different things, being what the visitor asked for under a contract and a claim of consent, and a decline has the first without the second. Whilst that answer stands, `__tcfapi` answers `ping` truthfully, still honours `removeEventListener`, and answers `getTCData` and `addEventListener` with `success: false`. A listener registered before the decline is told once, with `success: false`, that there is no longer any TC data. Choosing Standard or Personalized afterwards restores the full API.
 
 ## `id.usage` mapping
 
@@ -231,7 +231,7 @@ A request carries cookies and not `localStorage`, so nothing above this point is
 __mtm_pref=personalized; Path=/; Max-Age=34560000; SameSite=Lax; Secure
 ```
 
-The value is the bare word, one of `standard`, `personalized` or `non-marketing`, so whatever handles the request can act on it without knowing anything about PMP. The name has no 51Degrees in it deliberately, so that a platform other than this one can set the same cookie and be understood the same way.
+The value is the bare word, one of `standard`, `personalized` or `non-marketing`, so whatever handles the request can act on it without knowing anything about PMP. The `mtm` in the name is the Model Terms for Marketing, under which the three words are defined. The name has no 51Degrees in it deliberately, so that a platform other than this one can set the same cookie and be understood the same way.
 
 The alternative, being the visitor declining marketing, is written like the other two. A server that sees no cookie cannot tell a visitor who declined from one who was never asked, and those are not the same thing.
 
