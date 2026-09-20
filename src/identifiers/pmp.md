@@ -237,6 +237,8 @@ The alternative, being the visitor declining marketing, is written like the othe
 
 `SameSite=Lax` because your server needs the cookie on the ordinary navigation that fetches the page. `Secure` is asked for on https only, since a browser refuses a secure cookie over plain http and drops it altogether. The life is 400 days, which is where Chrome caps a cookie and quietly shortens anything longer.
 
+It is never `HttpOnly`. PMP sets the cookie from the page and reads it back there, and a browser lets a script neither read nor replace a cookie carrying that flag, so a server that also writes `__mtm_pref` must leave the flag off or the visitor's next answer is silently lost. The cookie the cloud keeps on its own domain is the opposite, `HttpOnly` by design, because only the cloud reads it.
+
 ### A site served under more than one name
 
 Set `data-cookie-domain` to the domain the cookie should cover, for example `.example.com`. Without it the cookie is scoped to the exact host, so a visitor answering on `www.example.com` is asked again on `example.com`, and the two answers can then disagree with nothing to say which of them came later.
