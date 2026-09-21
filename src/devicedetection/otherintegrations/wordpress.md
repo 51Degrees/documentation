@@ -59,7 +59,7 @@ Advanced mode relies on a probabilistic identifier from your Resource Key - `IdP
 
 ## Preference Management Platform (PMP)
 
-The `PMP` tab adds a 51Degrees consent popup to your public pages. Visitors choose `Standard`, `Personalized`, or a publisher-defined alternative (for example "Remove ads" or "Subscribe"). The choice is stored client-side in `localStorage` under the `__51d_pmp_pref` key - no cookies and no extra server round-trips - and PMP acts as the CMP by exposing the consent state through the IAB TCF API, so a separate consent manager is not needed. For the underlying concept and the cloud endpoint, see @ref Identifiers_PMP.
+The `PMP` tab adds a 51Degrees consent popup to your public pages. Visitors choose `Standard`, `Personalized`, or a publisher-defined alternative (for example "Remove ads" or "Subscribe"). The choice is kept in a first party cookie on your own domain, `__mtm_pref`, holding one of `standard`, `personalized` or `non-marketing`. A cookie rather than browser storage, because a request carries cookies and carries nothing else PMP could write, so your own server, and anything in front of it, can act on the answer. It is never `HttpOnly`, because the page reads it back and replaces it when the visitor changes their mind. PMP also acts as the CMP by exposing the consent state through the IAB TCF API, so a separate consent manager is not needed. For the underlying concept and the cloud endpoint, see @ref Identifiers_PMP.
 
 Configure the popup from the `PMP` tab:
 
