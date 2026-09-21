@@ -7,9 +7,9 @@ A signed envelope, encoded as an <a href="https://github.com/SWAN-community/owid
 The two layers are distinct and the documentation below uses the words deliberately.
 
 - The **51Did** is the **identifier**, the whole base64 OWID envelope (version, domain, date, payload, signature). It changes byte-for-byte every time the cloud issues one, even for the same inputs, because the date and signature change with each call.
-- The **probabilistic value** is one of the fields *inside* the payload (a 32-byte hash). It is stable across reissues for the same device + IP + usage: if two 51Dids were issued for the same inputs, their probabilistic values are equal even though the wrapping identifiers differ.
+- The **probabilistic value** is one of the fields *inside* the payload (a 32-byte hash). It is stable across reissues for the same device + IP + usage, meaning that if two 51Dids were issued for the same inputs, their probabilistic values are equal even though the wrapping identifiers differ.
 
-Comparing two browsers means comparing the probabilistic values carried inside their identifiers, never the identifiers themselves. Calling either layer "the identifier" without qualification leads to incorrect comparisons; calling the inner field "the probabilistic identifier" is the same confusion in a different costume.
+Comparing two browsers means comparing the probabilistic values carried inside their identifiers, never the identifiers themselves. Calling either layer "the identifier" without qualification leads to incorrect comparisons, and calling the inner field "the probabilistic identifier" is the same confusion under another name.
 
 Derived from three inputs:
 
@@ -36,10 +36,10 @@ The 51Did payload starts with a one-byte **flags** field that records which usag
 | Flag             | Purpose                                                          |
 |------------------|------------------------------------------------------------------|
 | `non-marketing`  | Analytics, fraud prevention and security only.                   |
-| `standard`       | Standard advertising and audience measurement.                   |
-| `personalized`   | Personalised advertising and targeted content.                   |
+| `standard`       | Marketing and other content unrelated to your browsing history or interactions, such as content chosen by time, region and the page in view. |
+| `personalized`   | Marketing and other content related to your browsing history or interactions. |
 
-The flags are hierarchical, `personalized` implies `standard`, and `standard` implies `non-marketing` mirroring the kind of consent tier a user dialog typically offers (a single tier per visitor that covers every use below it).
+The flags are hierarchical, in that `personalized` implies `standard` and `standard` implies `non-marketing`, mirroring the kind of consent tier a user dialog typically offers (a single tier per visitor that covers every use below it).
 
 **Only `non-marketing` global 51Dids are available in the free tier.** Issuing a 51Did for `standard` or `personalized` purposes requires a **Special license key** to be added to the Resource Key, see *Usage policies and licensing* below.
 
@@ -59,37 +59,37 @@ Each property returns a full 51Did identifier (the OWID envelope, signed). The v
 ## Request inputs
 
 - **Evidence** - Device Detection evidence (User-Agent / UA-CH) AND client IP (`client-ip` query parameter, `client-ip` HTTP header, or the server-supplied client IP).
-- **Usage policy** - the request's `id.usage` value. Supplied either directly or derived by the cloud from a consent string; see *Setting the usage policy* below.
-- **`id.email`** (Hashed Email only) - raw email address. The cloud trims and lowercases it; no other transforms.
+- **Usage policy** - the request's `id.usage` value. Supplied either directly or derived by the cloud from a consent string, as described under *Setting the usage policy* below.
+- **`id.email`** (Hashed Email only) - raw email address. The cloud trims and lowercases it and applies no other transform.
 - **`id.salt`** (Hashed Email only) - URL-safe base64 of a 2-byte salt chosen by the caller, e.g. `Npw`. When the request does not supply one, a salt configured by 51Degrees is used instead.
 
-If a Hashed Email property is requested without `id.email`, or with an `id.salt` value that is not valid URL-safe base64 of 2 bytes, the property is returned with a no-value reason naming the problem; an invalid salt is never silently replaced, as re-salting would hand the caller a different identifier with nothing to say why. The supplied values are never echoed back. The raw `id.email` value is used only to compute the hash; it is not logged, not shared in usage statistics, and not retained.
+If a Hashed Email property is requested without `id.email`, or with an `id.salt` value that is not valid URL-safe base64 of 2 bytes, the property is returned with a no-value reason naming the problem. An invalid salt is never silently replaced, as re-salting would hand the caller a different identifier with nothing to say why. The supplied values are never echoed back. The raw `id.email` value is used only to compute the hash, and it is not logged, not shared in usage statistics, and not retained.
 
 ## Setting the usage policy
 
-The cloud accepts two ways to decide a request's `id.usage` value. The *Direct* path can set any of the three values described under *Usage flags*; the *Derived from consent* path only ever produces `standard` or `personalized` (or no value), never `non-marketing`.
+The cloud accepts two ways to decide a request's `id.usage` value. The *Direct* path can set any of the three values described under *Usage flags*, whereas the *Derived from consent* path only ever produces `standard` or `personalized` (or no value), never `non-marketing`.
 
 ### Direct - your integration owns the mapping
 
-Your integration decides the value and tells the cloud what to do by passing an explicit `id.usage` (`non-marketing`, `standard` or `personalized`) as a query parameter or HTTP request header. You own the mapping from whatever preference or consent surface you use to one of these three values, and the cloud just acts on what you supply. This is the path @ref Identifiers_PMP takes. PMP captures the user's choice and announces it on the page, and the 51Degrees client script hears it and sends it as `id.usage` on its next request.
+Your integration decides the value and tells the cloud what to do by passing an explicit `id.usage` (`non-marketing`, `standard` or `personalized`) as a query parameter or HTTP request header. You own the mapping from whatever preference or consent surface you use to one of these three values, and the cloud acts on what you supply. This is the path @ref Identifiers_PMP takes. PMP captures the user's choice and announces it on the page, and the 51Degrees client script hears it and sends it as `id.usage` on its next request.
 
 ### Derived from consent - the cloud maps a TCF or GPP string for you
 
 Instead of deciding the value yourself, pass the raw IAB consent string and let the cloud derive `id.usage` from the consented purposes. Two evidence parameters are accepted:
 
 - `tcstring` - an IAB TCF v2 TCString, from the PMP widget or any TCF-aware CMP.
-- `gpp` - an IAB GPP string. When a GPP string carries a decodable EU TCF v2 section it takes precedence over `tcstring`; a GPP string with no TCF section (for example a US-only string) is ignored and the cloud falls back to `tcstring`.
+- `gpp` - an IAB GPP string. When a GPP string carries a decodable EU TCF v2 section it takes precedence over `tcstring`, and a GPP string with no TCF section (for example a US-only string) is ignored and the cloud falls back to `tcstring`.
 
-The cloud parses the string and checks the consented [IAB TCF v2 purposes](https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/) against the definitions below, adding the matching `id.usage`:
+The cloud parses the string and checks the consented [IAB TCF v2 purposes](https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/) against the sets below, which are Appendix 1 of the [Model Terms for Marketing](https://m4ow.uk/mtm/2.txt), adding the matching `id.usage`:
 
 | `id.usage`     | Required IAB TCF v2 purposes              |
 |----------------|-------------------------------------------|
-| `personalized` | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12     |
-| `standard`     | 1, 7, 8, 9, 10                            |
+| `personalized` | 1, 2, 3, 4, 5, 6, 7, 8, 11                |
+| `standard`     | 1, 2, 7, 8, 11                            |
 
-`personalized` is tried first, then `standard`. If neither set is fully satisfied the cloud adds no `id.usage`, the `fodid.*` properties return a no-value reason, and no identifier is issued for advertising use the consent does not permit. Purposes 2, 7, 8, 9, 10 and 11 may be satisfied by a legitimate-interest bit as well as a consent bit; the remaining purposes (1, 3, 4, 5, 6, 12) require an explicit consent bit, because IAB Policy forbids claiming them under legitimate interest.
+`personalized` is tried first, then `standard`. If neither set is fully satisfied the cloud adds no `id.usage`, the `fodid.*` properties return a no-value reason, and no identifier is issued for advertising use the consent does not permit. Purposes 2, 7, 8 and 11 may be satisfied by a legitimate-interest bit as well as a consent bit, whereas purposes 1, 3, 4, 5 and 6 require an explicit consent bit, because IAB Policy forbids claiming them under legitimate interest.
 
-**Direct intent always wins.** If `id.usage` is present on the request (query or header) the cloud uses it and ignores any `tcstring` or `gpp`; derivation runs only when no explicit value was supplied. Malformed consent strings are ignored rather than rejected.
+**Direct intent always wins.** If `id.usage` is present on the request (query or header) the cloud uses it and ignores any `tcstring` or `gpp`, and derivation runs only when no explicit value was supplied. Malformed consent strings are ignored rather than rejected.
 
 ## Usage policies and licensing
 
@@ -138,7 +138,7 @@ Open the example value in the [51Did inspector](https://51degrees.com/developers
 
 ## Payload layout
 
-The payload header is shared by every identifier type; bits 6-7 of the flags byte select the type and the length of the value that follows.
+The payload header is shared by every identifier type, and bits 6-7 of the flags byte select the type and the length of the value that follows.
 
 | Offset | Length | Field                                                          |
 |--------|--------|----------------------------------------------------------------|
@@ -157,7 +157,7 @@ Identifiers issued before the type tag existed have bits 6-7 zeroed and decode a
 
 ## 51Did readers
 
-A 51Did is a binary OWID envelope wrapping a 51Degrees payload (see *Terminology* above for the wrapper-vs-value distinction). Unpacking the payload, comparing two 51Dids, or verifying the signature in your own code needs a reader that understands both layers. 51Degrees publishes a reader per platform; pick whichever matches your stack.
+A 51Did is a binary OWID envelope wrapping a 51Degrees payload (see *Terminology* above for the wrapper-vs-value distinction). Unpacking the payload, comparing two 51Dids, or verifying the signature in your own code needs a reader that understands both layers. 51Degrees publishes a reader per platform, so pick whichever matches your stack.
 
 | Platform | Package          | Distribution                                           |
 |----------|------------------|--------------------------------------------------------|
@@ -167,9 +167,9 @@ Readers for other platforms are on the roadmap and will be added to this table a
 
 ## Comparing two 51Dids
 
-Two 51Dids issued for the same device + IP + usage will differ at the byte level because the envelope embeds a fresh timestamp and signature on each call. The byte-level difference is in the **identifier** (the wrapper); the **probabilistic value** carried inside is stable across reissues. To decide whether the two refer to the same browser instance, compare the probabilistic values, never the full base64 identifiers.
+Two 51Dids issued for the same device + IP + usage will differ at the byte level because the envelope embeds a fresh timestamp and signature on each call. The byte-level difference is in the **identifier** (the wrapper), whereas the **probabilistic value** carried inside is stable across reissues. To decide whether the two refer to the same browser instance, compare the probabilistic values, never the full base64 identifiers.
 
-The probabilistic value is one of the fields the reader exposes after parsing the payload (per platform, named `Hash` in .NET to reflect that it is a 32-byte SHA-256). Treat it as the cache / dedup key.
+The probabilistic value is one of the fields the reader exposes after parsing the payload (per platform, named `Hash` in .NET to reflect that it is a 32-byte SHA-256). Treat it as the key for caching and for spotting duplicates.
 
 Two responses to the same device + IP + `id.usage=non-marketing`, returned a few seconds apart:
 
@@ -196,7 +196,7 @@ Console.WriteLine(a.Signature.SequenceEqual(b.Signature)); // false
 Console.WriteLine(a.Hash.SequenceEqual(b.Hash));           // true
 ```
 
-Use `FodId.Hash` (32 bytes, SHA-256, the probabilistic value) as the cache / dedup key. The same value means the same browser instance under the same usage policy on the same License Key (for `idproblic`) or across all callers (for `idprobglobal`).
+Use `FodId.Hash` (32 bytes, SHA-256, the probabilistic value) as the key for caching and for spotting duplicates. The same value means the same browser instance under the same usage policy on the same License Key (for `idproblic`) or across all callers (for `idprobglobal`).
 
 ## Validation
 
@@ -205,13 +205,13 @@ A 51Did recipient can optionally verify the signature before trusting the identi
 1. **Cloud endpoint.** Send the base64 value to the verification endpoint on the V4 cloud and get back a parsed payload only if the signature checks out. Simple, no key handling, but every call is metered against the Resource Key.
 2. **Local verification using the published public key.** Fetch 51Degrees' public ECDSA P-256 key once, cache it, and verify in-process for every received identifier. No metering. Each platform reader (see *51Did readers* above) exposes an in-process verify method that takes the public key PEM and returns a boolean. The .NET reader's method is the inherited `Owid.VerifyAsync`.
 
-In both cases, validation only confirms the identifier was created by 51Degrees and has not been tampered with. It does not certify that the device + IP + usage inputs were truthful: that trust lives in the operational contract with the issuing 51Degrees cloud, not in the signature.
+In both cases, validation only confirms the identifier was created by 51Degrees and has not been tampered with. It does not certify that the device + IP + usage inputs were truthful, because that trust lives in the operational contract with the issuing 51Degrees cloud, not in the signature.
 
 ### Fetching the public key for local verification
 
 Local verification (option 2 above) fetches the key from the OWID creator endpoint, `GET /owid/api/v3/creator`. The response carries the current signing key in `publicKeySPKI` (PEM).
 
-The signing key rotates weekly, so a 51Did issued before the latest rotation was signed with an older key. To fetch the key that was current when a 51Did was created, pass its date: `GET /owid/api/v3/creator?date=<minutes>`. The `date` is the same value the OWID envelope carries in its Date field, minutes since `2020-01-01T00:00:00Z` (see the [OWID explainer](https://github.com/SWAN-community/owid/blob/main/explainer.md), "Data Structure" section). The endpoint returns the signing key with the latest creation time on or before `date`; if `date` predates every known key it returns `404`, and a `date` that is not an unsigned 32-bit integer returns `400`.
+The signing key rotates weekly, so a 51Did issued before the latest rotation was signed with an older key. To fetch the key that was current when a 51Did was created, pass its date, as `GET /owid/api/v3/creator?date=<minutes>`. The `date` is the same value the OWID envelope carries in its Date field, minutes since `2020-01-01T00:00:00Z` (see the [OWID explainer](https://github.com/SWAN-community/owid/blob/main/explainer.md), "Data Structure" section). The endpoint returns the signing key with the latest creation time on or before `date`. If `date` predates every known key it returns `404`, and a `date` that is not an unsigned 32-bit integer returns `400`.
 
 ### Fetching every public key at once
 
@@ -229,9 +229,9 @@ The response is a JSON array, one entry per signing key:
 ]
 ```
 
-To fetch only the keys created since you last pulled, add an ISO 8601 UTC timestamp: `GET .../api/v4/id/key/datetime/2026-03-08T00:00:00Z?resource=<RESOURCE_KEY>`. The response then holds only keys created on or after that timestamp. This endpoint takes an ISO 8601 timestamp, not the minutes-since-2020 value that `/creator?date=` uses. Unlike `/creator`, it needs a Resource Key and is metered.
+To fetch only the keys created since you last pulled, add an ISO 8601 UTC timestamp, as `GET .../api/v4/id/key/datetime/2026-03-08T00:00:00Z?resource=<RESOURCE_KEY>`. The response then holds only keys created on or after that timestamp. This endpoint takes an ISO 8601 timestamp, not the minutes-since-2020 value that `/creator?date=` uses. Unlike `/creator`, it needs a Resource Key and is metered.
 
 ## Use cases
 
-- **Marketing** - PMP captures the user's preference and feeds it as `id.usage`; the 51Did is consumed by Prebid / RTB enrichment. See @ref Identifiers_PMP and @ref Integrations_Prebid.
+- **Marketing** - PMP captures the user's preference and feeds it as `id.usage`, and the 51Did is consumed by Prebid / RTB enrichment. See @ref Identifiers_PMP and @ref Integrations_Prebid.
 - **Non-marketing** - the integrator sets `id.usage=non-marketing` server-side for fraud, bot or suspicious-activity detection (for example, the suspicious-activity module in the 51Degrees WordPress plugin). The identifier never leaves the customer environment.
