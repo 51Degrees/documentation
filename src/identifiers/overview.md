@@ -14,6 +14,6 @@ User → PMP → preference → id.usage → 51Did → downstream
 ## Use one without the other when
 
 - **PMP alone** - you need to collect a user marketing preference and act on it directly (e.g. gate ad personalization, drive a paywall), without feeding it into 51Did.
-- **51Did alone** - `id.usage=non-marketing` (e.g. fraud or suspicious activity); the preference is set by the integrator, not the user.
+- **51Did alone** - `id.usage=non-marketing` (e.g. fraud or suspicious activity), where the preference is set by the integrator rather than the user.
 
 See @ref Identifiers_51Did and @ref Identifiers_PMP. 51Did depends on @ref DeviceDetection_Overview.
