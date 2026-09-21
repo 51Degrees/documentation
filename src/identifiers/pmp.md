@@ -204,6 +204,14 @@ A visitor who has answered on one website should not have to answer again on eve
 2. The visitor chose Standard or Personalized. The alternative, being the visitor declining marketing, never leads to the second card.
 3. The 51Degrees client script has confirmed that third party cookies work in this browser. The confirmation is `ThirdPartyCookiesEnabled` on the client script's object, so your resource key has to ask for @ref DeviceDetection_Features_ThirdPartyCookies. Once the first card is answered PMP allows 3000 milliseconds for that confirmation to arrive, and without it the second card is skipped and the answer stays with this site alone. A browser that blocks third party cookies, which includes Safari and Firefox, therefore never reaches the second card.
 
+### Nobody can join your group by naming it
+
+The name you give in `data-network-name` is public. It is in the markup of every site that uses it and the visitor is shown it on the second card, because they are being asked whether to share their answer with a group they recognise. So it is worth knowing what stops somebody else putting your group's name on their own site and reading your visitors' answers.
+
+The shared answer is held in a cookie on the 51Degrees domain, and its name is worked out from two things, being your group's name and the licence key behind the resource key the request came with. The licence key is looked up by the service on its own side and never reaches the browser, so the name cannot be worked out by anybody who does not hold your entitlement. Somebody using your group's name with their own resource key reaches a cookie of their own, and never yours. Nothing of theirs arrives in yours either.
+
+Within your own account the group name is what separates one audience from another, so use different names where two sets of sites should not share an answer, and the same name everywhere the answer should travel.
+
 ## Where the answer is kept
 
 PMP keeps nothing in `localStorage` or `sessionStorage`. On your side the answer lives in two first party cookies on your domain, both set from the page, both readable by script and neither ever `HttpOnly`:
