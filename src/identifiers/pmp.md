@@ -59,9 +59,10 @@ The attributes PMP reads from its own `<script>` tag.
 
 | Attribute                      | Required | Default | Purpose |
 |--------------------------------|----------|---------|---------|
-| `data-tcf-vendor`              | Yes      | -       | Static IAB Transparency and Consent Framework (TCF) v2 consent string. The core segment on its own is enough, and multi-segment strings such as `core.disclosedvendors` are accepted, with trailing segments preserved as they were given. |
+| `data-tcf-vendor`              | Yes      | -       | Static IAB Transparency and Consent Framework (TCF) v2 consent string, generated once with TCF tools with your vendor consents in it. PMP takes the core segment and rewrites only the purpose bits and the dates for each answer, so the string it publishes starts differently from the one you gave and ends the same, and multi-segment strings such as `core.disclosedvendors` are accepted with the trailing segments kept as given. **Leave it off and nothing warns you.** The dialog, the cookie, the event and the getter all work, and `getTCData` reports the right purposes with an empty `tcString`, so a check that reads purposes passes with no consent string behind it. |
 | `data-brand-name`              | Yes      | -       | Brand shown in the dialog. |
 | `data-brand-terms-url`         | Yes      | -       | Link to the publisher's terms or privacy page. |
+| `data-brand-icon`              | No       | -       | URL of the icon on the floating button the dialog collapses to. An SVG served from your own origin keeps the page free of outside requests. Without it a gear symbol is shown. |
 | `data-alt-name`                | Yes      | -       | Label for the Alternative button, for example "Subscribe to remove ads". Pressing it sets the visitor's Model Terms for Marketing preference to `non-marketing`. See *Buttons and what each one stores* below. |
 | `data-alt-url`                 | Yes      | -       | What the Alternative button does, after it has recorded `non-marketing` as the visitor's answer. An `http(s)` URL navigates the page and a `javascript:` URL runs inline with no navigation. `{preference}` is not substituted here. |
 | `data-action-url`              | No       | -       | A hook of your own, invoked on every answer. `{preference}` is replaced with `standard`, `personalized` or `non-marketing`. An `http(s)` URL is injected as `<script src>` and a `javascript:` URL runs inline. Leave it out and nothing is invoked, with the dialog saving the answer, activating `__tcfapi` and dismissing as usual. See *Where the action URL fits* below. |
@@ -200,7 +201,7 @@ On later visits steps 3 to 5 are skipped, the stored answer is announced and the
 
 A visitor who has answered on one website should not have to answer again on every other website in the same group. A second card asks whether the answer should be used elsewhere, and it is offered only where all three of these hold.
 
-1. `data-use-third-party-cookies` is left on, which is the default, and `data-network-name` names the group. Leaving the group unnamed turns sharing off, because a visitor cannot be asked to apply an answer across a group of sites without being told which group. Nothing is logged, and the rest of the dialog works as normal.
+1. `data-use-third-party-cookies` is left on, which is the default, and `data-network-name` names the group. Leaving the group unnamed turns sharing off, because a visitor cannot be asked to apply an answer across a group of sites without being told which group. Nothing is logged and nothing else changes, the tag loads, the dialog draws, the cookie is written and the event fires, so the only sign is that the second card never appears, which a publisher who has never seen the second card cannot notice. Check the attribute name before anything else.
 2. The visitor chose Standard or Personalized. The alternative, being the visitor declining marketing, never leads to the second card.
 3. The 51Degrees client script has confirmed that third party cookies work in this browser. The confirmation is `ThirdPartyCookiesEnabled` on the client script's object, so your resource key has to carry both properties described under @ref DeviceDetection_Features_ThirdPartyCookies. Once the first card is answered PMP allows 3000 milliseconds for that confirmation to arrive, and without it the second card is skipped and the answer stays with this site alone. A browser that blocks third party cookies, Safari among them, therefore never reaches the second card.
 
@@ -271,6 +272,55 @@ Adding the attribute to a site whose visitors already hold the host-scoped cooki
 Where the answer is shared across sites, which `__51d_pmp_share=shared` records, the cookie the cloud holds decides and this one mirrors it. Every page load then asks the cloud first, so a change the visitor makes on another of your sites arrives here, and where the cloud cannot be reached the mirror stands in for it. Where there is no shared answer, which is a visitor who kept their choice to this site or a browser where third party cookies do not work, this one carries the answer on its own and no request is made.
 
 The cookie is taken off when there is no answer anywhere, so a visitor whose shared answer was cleared does not leave a cookie behind that your server goes on reading, and the `shared` marker goes with it. The cookie is not taken off merely because the cloud could not be reached, since being unable to ask is not the same as being told there is none.
+
+## Opening the dialog from your page
+
+```javascript
+window.__51d_pmp.open();
+```
+
+That shows the dialog again, as it was on the first visit, and is what a "Change preferences" link in a footer calls. The bubble in the corner does the same thing, so the call is only needed for an entry point of your own. `window.__51d_pmp` carries two members, `open()` and `preference()`, and nothing else.
+
+### One copy on a page
+
+PMP stops, with a console warning and nothing rendered, when either of two things is already true as it starts. `window.__51d_pmp` exists, which is a second copy of the bundle, and two copies would give the visitor two dialogs and fire the action URL twice on every answer. Or `window.__tcfapi` exists and is not PMP's own, which is another consent management platform, and PMP and a consent management platform never share a page, because PMP is a complete Transparency and Consent Framework implementation of its own. Load the tag once, on a page that runs no other consent tool.
+
+## The consent surface
+
+The standard `__tcfapi` is available to ad tags and other scripts once the visitor has answered, or from the first moment where an answer was already held:
+
+```javascript
+__tcfapi('addEventListener', 2, function (tcData, success) {
+  // tcData.eventStatus is 'tcloaded' when a consent string is ready,
+  // 'cmpuishown' when the dialog is shown again, and
+  // 'useractioncomplete' when the visitor has just answered.
+  console.log(tcData.eventStatus, tcData.tcString);
+});
+```
+
+The consent string is the publisher's own from `data-tcf-vendor` with the purpose bits and the dates rewritten for the answer, so it starts differently from the string on the tag and ends the same, and the vendor consents in it are exactly what the publisher put there. The CMP id it reports is that of a consent management platform currently registered on the IAB Global CMP List, and a different one each UTC day, which is what PMP is meant to do rather than a stand-in for an id of its own. The id written into the consent string and the id `__tcfapi` reports are always the same value for a page, and a page left open past midnight keeps the one it loaded with.
+
+## Whether the regulation applies
+
+The consent surface reports `gdprApplies`, and PMP takes the answer from `IsGdpr` on the client script's object. That property is worked out from the visitor's country, true for the European Economic Area, the United Kingdom and the French outermost regions and false everywhere else, an address that cannot be placed included. It is a good default and not a determination, because the regulation also reaches a publisher by where the publisher is established, so a publisher established in the European Union is within scope while serving a visitor in the United States and this answers false for that request. A publisher who knows their own position should say so rather than take this.
+
+PMP depends on three properties from the client script, so ask for all three when you create the resource key. Where the key does not carry one of them PMP says so in the console once per page view, and everything else carries on working, so the console is the only place the gap shows.
+
+| Property | What is lost without it |
+|---|---|
+| `IsGdpr` | The consent surface reports that the regulation applies, for every visitor everywhere. |
+| `ThirdPartyCookiesEnabled` | Nothing can ever confirm that third party cookies work, so the second card is never offered. |
+| `ThirdPartyCookiesEnabledJavaScript` | Third party cookies are never measured, only guessed from the browser's name, and a guess confirms nothing, so the second card is never offered. |
+
+The dialog is shown either way. The question PMP asks is the Model Terms usage, which is a contract and not a consent under the regulation, so a false answer changes what the consent surface reports and changes nothing about what the visitor is asked.
+
+## Languages
+
+The loader picks the bundle's language from the visitor's own browser, matching the full tag first, then the language on its own, then falling back to `en-us`, so a browser asking for `de-AT` is served German and one asking for a language PMP does not have is served English. Where two files share a language the one that sorts first serves a request for the bare language, so `pt` is served Brazilian Portuguese, `es` European Spanish and `zh` Simplified Chinese. Languages written right to left are supported, and the only thing that changes for them is the writing direction the widget sets on its own container, never anything on your page. The two descriptions of Standard and Personalized are the Model Terms wording in every language, translated under legal review rather than as ordinary copy.
+
+## Caching
+
+The loader is cacheable by anybody for a day, because it is the same bytes for every caller and no request for it is counted. The bundle is cacheable only by the browser that asked for it, also for a day, because the bundle is the request that is counted. During development, a hard reload or disabling the cache in developer tools gets past both, and there are two scripts to get past, the loader and the bundle it pulled in.
 
 ## Browser requirement
 
