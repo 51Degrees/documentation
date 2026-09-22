@@ -69,15 +69,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <h1 class="g-docs__page-title">PMP (Preference Management Platform) </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><p>Lightweight embeddable widget that asks the user for a marketing preference, stores it in <code>localStorage</code>, and invokes a publisher-defined continuation URL with that preference - typically the 51Did generation endpoint. The chosen <code>standard</code> or <code>personalized</code> value is the <code>id.usage</code> input for <a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a>.</p>
-<h2 class="doxsection" id="endpoint">Endpoint<a class="headerlink" href="#endpoint" aria-label="Permalink to this section">🔗</a></h2>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">GET https://cloud.51degrees.com/api/v4/pmp?resource=&lt;RESOURCE_KEY&gt;</div>
-</div><!-- fragment --><p>Returns the minified locale-resolved bundle. Locale is picked from the <code>accept-language</code> query parameter or the <code>Accept-Language</code> header, falling back to <code>en-us</code>.</p>
+<div class="textblock"><p>PMP is a small embeddable widget that asks a visitor what kind of marketing they want, keeps the answer in a cookie on your domain and announces it on the page. The answer is one of <code>non-marketing</code>, <code>standard</code> or <code>personalized</code>, which are the three <code>id.usage</code> values <a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a> takes.</p>
+<h2 class="doxsection" id="endpoints">Endpoints<a class="headerlink" href="#endpoints" aria-label="Permalink to this section">🔗</a></h2>
+<p>A page view makes two requests. The tag on the page fetches the loader, and the loader works out which bundle the page needs and fetches that.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">GET https://cloud.51degrees.com/api/v4/pmp/&lt;RESOURCE_KEY&gt;.js</div>
+</div><!-- fragment --><p>That returns the loader, which is about a kilobyte and the same bytes for every caller. <b>The resource key is the file name in the URL and nothing else on this URL is read.</b> Every other setting is a <code>data-</code> attribute on the script tag, so each setting is written in one place and read from one place. Any query string a page adds here is ignored and is carried nowhere. This request is neither checked nor counted, so a visitor who leaves before the page settles costs nothing.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">GET https://cloud.51degrees.com/api/v4/pmp/&lt;RESOURCE_KEY&gt;/&lt;NAME&gt;</div>
+</div><!-- fragment --><p>That returns one built bundle, where <code>&lt;NAME&gt;</code> is a locale such as <code>en-us</code>, optionally followed by <code>-nosharing</code>. The loader picks the language from the visitor's own browser, matching the full tag first, then the language on its own, then falling back to <code>en-us</code>, so the language is decided in the browser rather than from a request header. Whether the bundle needs the sharing code comes from <code>data-use-third-party-cookies</code> and <code>data-network-name</code> on the tag. The loader adds <code>license=</code> where the tag carries <code>data-license-key</code>.</p>
+<p>The bundle is the request that is checked and counted, because it is what the visitor actually receives. <b>Your resource key must be registered for the domain the page is on.</b> The request is checked against the domains the key names, using the <code>Referer</code> header and falling back to <code>Origin</code>, the same as every other keyed endpoint, and a page on a domain the key does not cover is refused with 401 and no dialog appears. A page that suppresses the <code>Referer</code> header, with <code>&lt;meta name="referrer" content="no-referrer"&gt;</code> or an equivalent policy, is refused for the same reason, because the check has nothing to compare.</p>
+<p><b>An older form of this endpoint took the resource key as a query parameter, <code><a href="https://cloud.51degrees.com/api/v4/pmp?resource=">https://cloud.51degrees.com/api/v4/pmp?resource=</a>&lt;RESOURCE_KEY&gt;</code>. That address answers 404 now, so a page still carrying it fetches nothing and shows no dialog.</b> The key also has to be in the URL rather than on the tag, because <code>data-resource-key</code> is not read. Two places to write a key meant a page could carry one the cloud never saw, and the refusal that followed was invisible to the page.</p>
 <h2 class="doxsection" id="integration-1">Integration<a class="headerlink" href="#integration-1" aria-label="Permalink to this section">🔗</a></h2>
-<p>Add a single <code>&lt;script&gt;</code> tag to your page. The cloud endpoint selects the locale bundle from the request, so the same URL works for every language.</p>
+<p>Add one <code>&lt;script&gt;</code> tag to your page. The same URL works for every language.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;script</div>
-<div class="c-code__line">  src=&quot;https://cloud.51degrees.com/api/v4/pmp?resource=YOUR-RESOURCE-KEY&quot;</div>
-<div class="c-code__line">  data-action-url=&quot;https://cloud.51degrees.com/api/v4/YOUR-RESOURCE-KEY.js?id.usage={preference}&quot;</div>
+<div class="c-code__line">  src=&quot;https://cloud.51degrees.com/api/v4/pmp/YOUR-RESOURCE-KEY.js&quot;</div>
 <div class="c-code__line">  data-tcf-vendor=&quot;&lt;TCF v2 vendor string&gt;&quot;</div>
 <div class="c-code__line">  data-brand-name=&quot;Your Brand&quot;</div>
 <div class="c-code__line">  data-brand-terms-url=&quot;https://yoursite.com/privacy&quot;</div>
@@ -86,55 +90,229 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <div class="c-code__line">  data-brand-logo=&quot;https://yoursite.com/logo.svg&quot;</div>
 <div class="c-code__line">  data-show-standard=&quot;true&quot;&gt;</div>
 <div class="c-code__line">&lt;/script&gt;</div>
-</div><!-- fragment --><h2 class="doxsection" id="configuration-attributes">Configuration attributes<a class="headerlink" href="#configuration-attributes" aria-label="Permalink to this section">🔗</a></h2>
-<p>The full set of attributes the widget reads from its own <code>&lt;script&gt;</code> tag.</p>
+</div><!-- fragment --><h3 class="doxsection" id="the-51degrees-client-script-belongs-on-the-page-as-well">The 51Degrees client script belongs on the page as well<a class="headerlink" href="#the-51degrees-client-script-belongs-on-the-page-as-well" aria-label="Permalink to this section">🔗</a></h3>
+<p>PMP reads two things from the 51Degrees client script, being whether third party cookies work in this browser and whether the General Data Protection Regulation (GDPR) applies. The first decides whether the second card can be offered and the second is what PMP reports as <code>gdprApplies</code> through <code>__tcfapi</code>, the consent function that ad scripts call. Both come from properties on your resource key, <code>ThirdPartyCookiesEnabled</code> with <code>ThirdPartyCookiesEnabledJavaScript</code> and <code>IsGdpr</code>, so ask for those when you create the key and put the client script on the page too:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;script src=&quot;https://cloud.51degrees.com/api/v4/YOUR-RESOURCE-KEY.js&quot; async&gt;&lt;/script&gt;</div>
+</div><!-- fragment --><p>The two tags can go in either order and both can carry <code>async</code>, because the client script listens on the window for PMP's answer whilst PMP watches for the client script's object, which is <code>fod</code> unless <code>data-object-name</code> says otherwise. The object is the only thing PMP looks at, so it does not matter where the client script came from, and one served by a different 51Degrees cloud, by a proxy of your own or out of a bundle you built yourself all work the same way.</p>
+<p>An <code>async</code> tag has usually not run at the moment PMP starts, so an object that is not there yet is not an object that is never coming, and PMP waits for it instead of deciding straight away. The wait finishes once your page has loaded, since every tag written into the markup has had its turn by then, and it is capped at 5000 milliseconds for a page whose load event is very late. If nothing has appeared by the end of it, PMP loads the client script itself from the cloud that served PMP, using the resource key it already has, and says so in the console. Writing the tag yourself is still the better option, because then the placement and the timing are yours.</p>
+<p>Load the client script once. A second copy runs a second round and creates a second identifier, and the client script itself warns about it.</p>
+<h2 class="doxsection" id="configuration-attributes">Configuration attributes<a class="headerlink" href="#configuration-attributes" aria-label="Permalink to this section">🔗</a></h2>
+<p>The attributes PMP reads from its own <code>&lt;script&gt;</code> tag.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Attribute  </td><td class="c-table__cell">Required  </td><td class="c-table__cell">Default  </td><td class="c-table__cell">Purpose  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>data-action-url</code>  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">-  </td><td class="c-table__cell">URL invoked on every user choice. <code>{preference}</code> is replaced with <code>standard</code> or <code>personalized</code>. <code>http(s)</code> URLs are injected as <code>&lt;script src&gt;</code>; <code>javascript:</code> URLs run inline.  </td></tr>
+<td class="c-table__cell"><code>data-tcf-vendor</code>  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">-  </td><td class="c-table__cell">Static IAB Transparency and Consent Framework (TCF) v2 consent string, generated once with TCF tools with your vendor consents in it. PMP takes the core segment and rewrites only the purpose bits and the dates for each answer, so the string it publishes starts differently from the one you gave and ends the same, and multi-segment strings such as <code>core.disclosedvendors</code> are accepted with the trailing segments kept as given. <b>Leave it off and nothing warns you.</b> The dialog, the cookie, the event and the getter all work, and <code>getTCData</code> reports the right purposes with an empty <code>tcString</code>, so a check that reads purposes passes with no consent string behind it.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>data-tcf-vendor</code>  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">-  </td><td class="c-table__cell">Static TCF v2 consent string. Multi-segment strings (e.g. <code>core.disclosedvendors</code>) are accepted - trailing segments are preserved verbatim.  </td></tr>
+<td class="c-table__cell"><code>data-brand-name</code>  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">-  </td><td class="c-table__cell">Brand shown in the dialog.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>data-brand-name</code>  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">-  </td><td class="c-table__cell">Brand shown in the UI.  </td></tr>
+<td class="c-table__cell"><code>data-brand-terms-url</code>  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">-  </td><td class="c-table__cell">Link to the publisher's terms or privacy page.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>data-brand-terms-url</code>  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">-  </td><td class="c-table__cell">Link to the publisher's terms / privacy page.  </td></tr>
+<td class="c-table__cell"><code>data-brand-icon</code>  </td><td class="c-table__cell">No  </td><td class="c-table__cell">-  </td><td class="c-table__cell">URL of the icon on the floating button the dialog collapses to. An SVG served from your own origin keeps the page free of outside requests. Without it a gear symbol is shown.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>data-alt-name</code>  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">-  </td><td class="c-table__cell">Label for the Alternative button (e.g. "Subscribe to remove ads").  </td></tr>
+<td class="c-table__cell"><code>data-alt-name</code>  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">-  </td><td class="c-table__cell">Label for the Alternative button, for example "Subscribe to remove ads". Pressing it sets the visitor's Model Terms for Marketing preference to <code>non-marketing</code>. See <em>Buttons and what each one stores</em> below.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>data-alt-url</code>  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">-  </td><td class="c-table__cell">Destination of the Alternative button. <code>http(s)</code> URLs navigate the page; <code>javascript:</code> URLs run inline. <code>{preference}</code> is NOT substituted here.  </td></tr>
+<td class="c-table__cell"><code>data-alt-url</code>  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">-  </td><td class="c-table__cell">What the Alternative button does, after it has recorded <code>non-marketing</code> as the visitor's answer. An <code>http(s)</code> URL navigates the page and a <code>javascript:</code> URL runs inline with no navigation. <code>{preference}</code> is not substituted here.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>data-action-url</code>  </td><td class="c-table__cell">No  </td><td class="c-table__cell">-  </td><td class="c-table__cell">A hook of your own, invoked on every answer. <code>{preference}</code> is replaced with <code>standard</code>, <code>personalized</code> or <code>non-marketing</code>. An <code>http(s)</code> URL is injected as <code>&lt;script src&gt;</code> and a <code>javascript:</code> URL runs inline. Leave it out and nothing is invoked, with the dialog saving the answer, activating <code>__tcfapi</code> and dismissing as usual. See <em>Where the action URL fits</em> below.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>data-license-key</code>  </td><td class="c-table__cell">No  </td><td class="c-table__cell">-  </td><td class="c-table__cell">Additional license key or keys, several separated by <code>+</code>, where your products need one on top of the resource key. Anyone reading the page source can see it, exactly as they could when it sat on the URL, so only put one here that you are content to publish.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>data-brand-logo</code>  </td><td class="c-table__cell">No  </td><td class="c-table__cell">-  </td><td class="c-table__cell">URL to the publisher's logo, shown in the dialog header.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>data-show-standard</code>  </td><td class="c-table__cell">No  </td><td class="c-table__cell"><code>false</code>  </td><td class="c-table__cell">Set to <code>"true"</code> to add a Standard marketing button alongside Personalized and the Alternative button. When <code>false</code>, only Personalized and Alternative are shown.  </td></tr>
+<td class="c-table__cell"><code>data-dialog-heading</code>  </td><td class="c-table__cell">No  </td><td class="c-table__cell">-  </td><td class="c-table__cell">Your own wording for the first card's heading, in place of the wording PMP ships for the visitor's language. Leave it out and the shipped wording stands. See <em>The dialog wording</em> below.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>data-dialog-body</code>  </td><td class="c-table__cell">No  </td><td class="c-table__cell">-  </td><td class="c-table__cell">Your own wording for the paragraph under that heading, on the same terms as <code>data-dialog-heading</code>.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>data-show-standard</code>  </td><td class="c-table__cell">No  </td><td class="c-table__cell"><code>false</code>  </td><td class="c-table__cell">Set to the exact string <code>true</code> to offer the Standard option alongside Personalized and the Alternative button.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>data-network-name</code>  </td><td class="c-table__cell">Only when sharing is on  </td><td class="c-table__cell">-  </td><td class="c-table__cell">The name of the group your sites belong to. The visitor is shown this name as the thing they would be sharing their answer with, so choose one they will already have seen on the sites themselves. The name also settles which sites count as one group. See <em>Sharing an answer across sites</em> below.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>data-network-logo</code>  </td><td class="c-table__cell">No  </td><td class="c-table__cell">-  </td><td class="c-table__cell">URL to the network's logo, shown in the dialog beside the publisher's own.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>data-cookie-domain</code>  </td><td class="c-table__cell">No  </td><td class="c-table__cell">-  </td><td class="c-table__cell">The domain the <code>__mtm_pref</code> cookie is written on, for a site served under more than one name, for example <code>.example.com</code>. Leave it out and the cookie is scoped to the exact host the page was served from. See <em>The answer your own server can read</em> below.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>data-use-third-party-cookies</code>  </td><td class="c-table__cell">No  </td><td class="c-table__cell"><code>true</code>  </td><td class="c-table__cell">Whether a visitor who chose Standard or Personalized may be offered the second card, which shares the answer with the other sites in the group. Nothing but the exact string <code>false</code> turns it off, so a mistyped value leaves sharing running rather than silently switching it off.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>data-object-name</code>  </td><td class="c-table__cell">No  </td><td class="c-table__cell"><code>fod</code>  </td><td class="c-table__cell">What the 51Degrees client script's object is called on this page, which is where the third party cookie result and the GDPR answer are read from. Set it only where the client script was built with the <code>fod-js-object-name</code> parameter, and set both to the same name.  </td></tr>
 </table>
+<p><code>data-timeout</code> is no longer read. PMP waits a fixed 1500 milliseconds for the cloud when it reads the shared answer at start up and when it writes one, and no attribute changes that. A page that still sets <code>data-timeout</code> gets one console warning per page view, and the attribute can come off the tag.</p>
+<h2 class="doxsection" id="the-dialog-wording">The dialog wording<a class="headerlink" href="#the-dialog-wording" aria-label="Permalink to this section">🔗</a></h2>
+<p>PMP ships the dialog text in 24 languages and chooses one from the browser's own language list, so a visitor reading German is answered in German without you doing anything.</p>
+<p><code>data-dialog-heading</code> and <code>data-dialog-body</code> replace the heading and the paragraph beneath it where the shipped wording does not suit you. Everything else on the card keeps the shipped text.</p>
+<h3 class="doxsection" id="giving-the-wording-per-language">Giving the wording per language<a class="headerlink" href="#giving-the-wording-per-language" aria-label="Permalink to this section">🔗</a></h3>
+<p>Writing the attribute once replaces that text for every language, which is usually wrong for a site with readers in more than one. Suffix the attribute with a language code to set the wording for that language alone.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;script</div>
+<div class="c-code__line">  src=&quot;https://cloud.51degrees.com/api/v4/pmp/YOUR-RESOURCE-KEY.js&quot;</div>
+<div class="c-code__line">  data-brand-name=&quot;Your Brand&quot;</div>
+<div class="c-code__line">  data-dialog-heading=&quot;Choose your marketing experience&quot;</div>
+<div class="c-code__line">  data-dialog-heading-fr-ca=&quot;Choisissez votre expérience marketing&quot;</div>
+<div class="c-code__line">  data-dialog-heading-fr=&quot;Choisissez votre expérience publicitaire&quot;&gt;</div>
+<div class="c-code__line">&lt;/script&gt;</div>
+</div><!-- fragment --><p>PMP reads three candidates in order and takes the first one that is present:</p>
+<ol type="1">
+<li>the attribute suffixed with the whole code of the language it is running in, such as <code>data-dialog-heading-fr-ca</code></li>
+<li>the attribute suffixed with the language on its own, such as <code>data-dialog-heading-fr</code></li>
+<li>the attribute with no suffix, which is the fallback for every language that has no variant of its own</li>
+</ol>
+<p>Write none of the three and the shipped wording for that language stands.</p>
+<p>The match ignores case, so <code>data-dialog-heading-FR</code> and <code>data-dialog-heading-fr</code> are the same attribute. A code with no region never matches a longer one, so a bundle running as <code>sw</code> does not pick up <code>data-dialog-heading-sw-ke</code>.</p>
+<p>An empty value is an answer rather than an absence, so <code>data-dialog-body=""</code> gives a blank paragraph instead of falling back to the shipped text.</p>
+<h3 class="doxsection" id="macros">Macros<a class="headerlink" href="#macros" aria-label="Permalink to this section">🔗</a></h3>
+<p>Any key written in square brackets is replaced when the card is drawn, and that applies to your own wording as much as to the text PMP ships.</p>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Macro  </td><td class="c-table__cell">Replaced with  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>[networkName]</code>  </td><td class="c-table__cell">The value of <code>data-network-name</code>. The shipped text of the second card, which asks whether the answer should apply across the group's sites, uses it.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>[brandName]</code>  </td><td class="c-table__cell">The value of <code>data-brand-name</code>.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>[altName]</code>  </td><td class="c-table__cell">The value of <code>data-alt-name</code>, which is the label on the alternative button.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>[privacyPolicyLink]</code>  </td><td class="c-table__cell">A link to <code>data-brand-terms-url</code>, with the link text in the visitor's own language.  </td></tr>
+</table>
+<p>So a heading written as <code>Welcome to [networkName]</code> reaches the visitor as "Welcome to Acme Media" wherever <code>data-network-name</code> is <code>Acme Media</code>. A key that does not exist is left exactly as you wrote it, brackets included, so a typo shows up on the card rather than quietly disappearing.</p>
+<p>Your wording is escaped before it is placed into the card, so markup written into one of these attributes is shown to the visitor as characters instead of becoming part of the page.</p>
+<h3 class="doxsection" id="what-you-cannot-reword">What you cannot reword<a class="headerlink" href="#what-you-cannot-reword" aria-label="Permalink to this section">🔗</a></h3>
+<p>The two descriptions behind "More information", which say what Standard and Personalized mean, cannot be reworded. They are the <a href="https://m4ow.uk/mtm/2.txt">Model Terms for Marketing</a> wording and those same two words travel onwards as <code>id.usage</code>. Were one site able to reword them, two sites could send the same value meaning different things, and nothing reading the answer afterwards could tell the difference.</p>
+<h2 class="doxsection" id="buttons-and-what-each-one-stores">Buttons and what each one stores<a class="headerlink" href="#buttons-and-what-each-one-stores" aria-label="Permalink to this section">🔗</a></h2>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Button  </td><td class="c-table__cell">Shown  </td><td class="c-table__cell">Stores  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">Personalized  </td><td class="c-table__cell">Always  </td><td class="c-table__cell"><code>personalized</code>  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">The alternative, named by <code>data-alt-name</code>  </td><td class="c-table__cell">Always  </td><td class="c-table__cell"><code>non-marketing</code>  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">Standard  </td><td class="c-table__cell">Only with <code>data-show-standard="true"</code>  </td><td class="c-table__cell"><code>standard</code>  </td></tr>
+</table>
+<p>Each option has a description behind an expandable "More information" section. There is no close cross on the first dialog, so answering is the only way past it. Once answered, the dialog shrinks to a small bubble in the corner that opens it again, and later visits start at that bubble rather than the full dialog, so the visitor can change their answer whenever they like.</p>
+<p>The alternative button sets the visitor's preference under the Model Terms for Marketing to <code>non-marketing</code>, the third of the three words those terms define beside <code>standard</code> and <code>personalized</code>, and that word travels every way the other two do. It is written to the <code>__mtm_pref</code> cookie for your own server to read, announced on the window so the 51Degrees client script sends it as <code>id.usage=non-marketing</code> and the 51Did carries it, and substituted for <code>{preference}</code> in <code>data-action-url</code>. Then <code>data-alt-url</code> runs, where an <code>http(s)</code> URL navigates the page and a <code>javascript:</code> URL runs inline and leaves the visitor on your site.</p>
+<p><b>The alternative button used to store <code>standard</code>, which said the visitor still accepted standard marketing tracking.</b> It stores <code>non-marketing</code> now, so that a publisher reading an answer shared from another site can tell a visitor who declined from one who accepted the lesser of the two kinds.</p>
+<p>No TCF consent string is built for <code>non-marketing</code>, because under TCF the visitor consented to nothing and so nothing is claimed. The Model Terms answer and the TCF consent string are different things, being what the visitor asked for under a contract and a claim of consent, and a decline has the first without the second. Whilst that answer stands, <code>__tcfapi</code> answers <code>ping</code> truthfully, still honors <code>removeEventListener</code>, and answers <code>getTCData</code> and <code>addEventListener</code> with <code>success: false</code>. A listener registered before the decline is told once, with <code>success: false</code>, that there is no longer any TC data. Choosing Standard or Personalized afterwards restores the full API.</p>
 <h2 class="doxsection" id="idusage-mapping"><code>id.usage</code> mapping<a class="headerlink" href="#idusage-mapping" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Preference  </td><td class="c-table__cell">Meaning  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>standard</code>  </td><td class="c-table__cell">Frequency capping and measurement only.  </td></tr>
+<td class="c-table__cell"><code>non-marketing</code>  </td><td class="c-table__cell">Analytics, fraud prevention and security only.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>personalized</code>  </td><td class="c-table__cell">All marketing purposes including personalization.  </td></tr>
+<td class="c-table__cell"><code>standard</code>  </td><td class="c-table__cell">Marketing and other content unrelated to your browsing history or interactions, such as content chosen by time, region and the page in view.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>personalized</code>  </td><td class="c-table__cell">Marketing and other content related to your browsing history or interactions.  </td></tr>
 </table>
-<p>The Alternative button (e.g. "Subscribe to remove ads") stores <code>standard</code> as the preference, fires <code>data-action-url</code> with <code>id.usage=standard</code>, then runs <code>data-alt-url</code>: for an <code>http(s)</code> URL the page navigates to it; for a <code>javascript:</code> URL the code runs inline and the page stays on the publisher's site. Users who take this path avoid personalized advertising, but standard marketing tracking still applies.</p>
+<p>The question is asked whether or not your resource key carries the 51Did product, because the dialog, the answer, the window event and the consent surface work without it. The product decides what an answer produces rather than whether it can be given. <code>non-marketing</code> gets a 51Did whatever the license holds. <code>standard</code> and <code>personalized</code> are marketing usages, so the cloud issues no 51Did for either one unless the license behind the resource key carries the 51Did product, and where it does not the reason comes back in place of the identifier.</p>
+<h2 class="doxsection" id="how-the-answer-reaches-the-cloud">How the answer reaches the cloud<a class="headerlink" href="#how-the-answer-reaches-the-cloud" aria-label="Permalink to this section">🔗</a></h2>
+<p>Every answer is announced on the window, whichever path it came by, being a choice, the alternative button, an answer this site already held or one that came back from the shared store:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">window.addEventListener(&#39;51d-pmp-preference&#39;, function (event) {</div>
+<div class="c-code__line">  console.log(event.detail.preference); // standard | personalized | non-marketing</div>
+<div class="c-code__line">});</div>
+</div><!-- fragment --><p>The 51Degrees client script listens for that event itself and sends the answer to the cloud as <code>id.usage</code> on its next request, so a page carrying both needs no code of its own to join them.</p>
+<p>A script of yours that starts after PMP has loaded has missed the event, so it asks instead:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">window.__51d_pmp.preference(); // the value in force, or null</div>
+</div><!-- fragment --><p>The getter answers from memory rather than from storage, the shared store's answer included, and neither the event nor the getter writes anything to the browser.</p>
+<h3 class="doxsection" id="where-the-action-url-fits">Where the action URL fits<a class="headerlink" href="#where-the-action-url-fits" aria-label="Permalink to this section">🔗</a></h3>
+<p><code>data-action-url</code> is a hook for your own code, such as an analytics call, and it is not how the answer reaches the cloud:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">data-action-url=&quot;javascript:yourAnalytics(&#39;{preference}&#39;)&quot;</div>
+</div><!-- fragment --><p>It used to carry the client script's address with <code>id.usage={preference}</code> on it, which loaded that script again on every answer. The client script hears the answer for itself and refreshes now, so it does not need loading again, and an action URL naming the cloud is skipped with a console message where the client script's object is on the page or on its way.</p>
 <h2 class="doxsection" id="flow-1">Flow<a class="headerlink" href="#flow-1" aria-label="Permalink to this section">🔗</a></h2>
 <ol type="1">
-<li>The script loads and reads any stored preference from <code>localStorage</code>.</li>
-<li>If none is stored, the dialog is shown.</li>
-<li>The user chooses; the preference is saved to <code>localStorage</code>.</li>
-<li><code>data-action-url</code> is dispatched with <code>{preference}</code> substituted - this is the continuation that drives downstream behaviour (most commonly fetching <code>/api/v4/&lt;KEY&gt;.js?id.usage={preference}</code> so 51Did data lands on the page). For <code>http(s)</code> URLs PMP injects <code>&lt;script src="..."&gt;</code>; for <code>javascript:</code> URLs the code runs inline.</li>
+<li>The tag fetches the loader, and the loader fetches the bundle the page needs.</li>
+<li>The bundle reads the <code>__mtm_pref</code> and <code>__51d_pmp_share</code> cookies. An answer marked as shared is checked with the cloud, whose answer decides. An answer this site holds on its own is used without a request. Where this site holds nothing and the visitor has not declined sharing, the cloud is asked for an answer given on another of your sites.</li>
+<li>With no answer anywhere, the dialog is shown.</li>
+<li>The visitor answers. The answer is saved to the <code>__mtm_pref</code> cookie, announced on the window, and the dialog collapses to the bubble.</li>
+<li>Where the answer was Standard or Personalized and sharing applies, a second card asks whether the answer should be used on the group's other sites.</li>
+<li><code>data-action-url</code> fires where the tag carries one.</li>
 </ol>
-<p>On subsequent visits steps 2-3 are skipped: PMP reads the stored preference from <code>localStorage</code> and goes straight to step 4. So <code>data-action-url</code> fires on every page load, not just on the first user choice.</p>
-<h2 class="doxsection" id="localstorage">localStorage<a class="headerlink" href="#localstorage" aria-label="Permalink to this section">🔗</a></h2>
-<p>The preference is stored under the key <code>__51d_pmp_pref</code> as a JSON object of shape <code>{v, p, t}</code> - schema version, preference (<code>standard</code> or <code>personalized</code>), and a millisecond timestamp:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">{ &quot;v&quot;: 1, &quot;p&quot;: &quot;personalized&quot;, &quot;t&quot;: 1715980800000 }</div>
-</div><!-- fragment --><p>To re-prompt the user (e.g. a "Change preferences" footer link), remove this key and reload the page:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">localStorage.removeItem(&#39;__51d_pmp_pref&#39;);</div>
+<p>On later visits steps 3 to 5 are skipped, the stored answer is announced and the bubble is shown, so <code>data-action-url</code> fires on every page load rather than only on the first answer.</p>
+<h2 class="doxsection" id="sharing-an-answer-across-sites">Sharing an answer across sites<a class="headerlink" href="#sharing-an-answer-across-sites" aria-label="Permalink to this section">🔗</a></h2>
+<p>A visitor who has answered on one website should not have to answer again on every other website in the same group. A second card asks whether the answer should be used elsewhere, and it is offered only where all three of these hold.</p>
+<ol type="1">
+<li><code>data-use-third-party-cookies</code> is left on, which is the default, and <code>data-network-name</code> names the group. Leaving the group unnamed turns sharing off, because a visitor cannot be asked to apply an answer across a group of sites without being told which group. Nothing is logged and nothing else changes, the tag loads, the dialog draws, the cookie is written and the event fires, so the only sign is that the second card never appears, which a publisher who has never seen the second card cannot notice. Check the attribute name before anything else.</li>
+<li>The visitor chose Standard or Personalized. The alternative, being the visitor declining marketing, never leads to the second card.</li>
+<li>The 51Degrees client script has confirmed that third party cookies work in this browser. The confirmation is <code>ThirdPartyCookiesEnabled</code> on the client script's object, so your resource key has to carry both properties described under <a class="el" href="_device_detection__features__third_party_cookies.html" title="Third-Party Cookies Detection">Third-Party Cookies Detection</a>. Once the first card is answered PMP allows 3000 milliseconds for that confirmation to arrive, and without it the second card is skipped and the answer stays with this site alone. A browser that blocks third party cookies, Safari among them, therefore never reaches the second card.</li>
+</ol>
+<h3 class="doxsection" id="nobody-can-join-your-group-by-naming-it">Nobody can join your group by naming it<a class="headerlink" href="#nobody-can-join-your-group-by-naming-it" aria-label="Permalink to this section">🔗</a></h3>
+<p>The name you give in <code>data-network-name</code> is public. It is in the markup of every site that uses it and the visitor is shown it on the second card, because they are being asked whether to share their answer with a group they recognize. What stops somebody else putting your group's name on their own site and reading your visitors' answers is the license key behind your resource key.</p>
+<p>The shared answer is held in a cookie on the 51Degrees domain, and its name is worked out from two things, being your group's name and the license key behind the resource key the request came with. The license key is looked up by the service on its own side and never reaches the browser, so the name cannot be worked out by anybody who does not hold your license. Somebody using your group's name with their own resource key reaches a cookie of their own, and never yours. Nothing of theirs arrives in yours either.</p>
+<p>Your resource key is in the markup too. What stops that key being used from another site is the domain check described under <em>Endpoints</em>, which applies to reading and writing the shared answer as well as to fetching the bundle, so register your domains on the key. A key that names no domains is accepted from any page.</p>
+<p>Within your own account the group name is what separates one audience from another, so use different names where two sets of sites should not share an answer, and the same name everywhere the answer should travel.</p>
+<h2 class="doxsection" id="where-the-answer-is-kept">Where the answer is kept<a class="headerlink" href="#where-the-answer-is-kept" aria-label="Permalink to this section">🔗</a></h2>
+<p>PMP keeps nothing in <code>localStorage</code> or <code>sessionStorage</code>. On your side there are two first party cookies on your domain, both set from the page, both readable by script and neither ever <code>HttpOnly</code>:</p>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Cookie  </td><td class="c-table__cell">Value  </td><td class="c-table__cell">Meaning  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>__mtm_pref</code>  </td><td class="c-table__cell"><code>standard</code>, <code>personalized</code> or <code>non-marketing</code>  </td><td class="c-table__cell">The visitor's answer, and the only place this site keeps it. Described in full under <em>The answer your own server can read</em> below.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>__51d_pmp_share</code>  </td><td class="c-table__cell"><code>shared</code>  </td><td class="c-table__cell">The visitor agreed to use the answer across your group of sites, so the cookie the cloud holds decides and <code>__mtm_pref</code> mirrors it.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>__51d_pmp_share</code>  </td><td class="c-table__cell"><code>declined</code>  </td><td class="c-table__cell">The visitor said only this site, so the cloud is never asked for them here.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>__51d_pmp_share</code>  </td><td class="c-table__cell">absent  </td><td class="c-table__cell">The visitor has not been asked about sharing, and <code>__mtm_pref</code> is this site's own answer.  </td></tr>
+</table>
+<p>The second cookie is PMP's own bookkeeping and your server can ignore it. It exists because <code>__mtm_pref</code> is a bare word for other systems and servers to read, and once that word can be a mirror of a shared answer, the cookie on its own no longer says whether the cloud should be asked again.</p>
+<p>To ask the visitor again, for example from a "Change preferences" footer link, expire both cookies and reload the page:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">for (const name of [&#39;__mtm_pref&#39;, &#39;__51d_pmp_share&#39;]) {</div>
+<div class="c-code__line">  document.cookie = name + &#39;=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT&#39;;</div>
+<div class="c-code__line">}</div>
 <div class="c-code__line">location.reload();</div>
-</div><!-- fragment --><h2 class="doxsection" id="cross-references">Cross-references<a class="headerlink" href="#cross-references" aria-label="Permalink to this section">🔗</a></h2>
+</div><!-- fragment --><p>Add <code>Domain=</code> with the value of <code>data-cookie-domain</code> where you set that attribute, because a cookie written for a domain is expired only by a matching domain.</p>
+<p>Clicking the bubble reopens the dialog without clearing anything, so offer that route where the visitor wants to change their answer rather than start again.</p>
+<p>A browser still carrying the <code>__51d_pmp_pref</code> key that earlier versions kept in <code>localStorage</code> is treated as one that has not answered, so such a visitor is asked once more. PMP neither reads nor removes the old key.</p>
+<h2 class="doxsection" id="the-answer-your-own-server-can-read">The answer your own server can read<a class="headerlink" href="#the-answer-your-own-server-can-read" aria-label="Permalink to this section">🔗</a></h2>
+<p>A request carries cookies, so the answer is visible to your own server and to anything sitting in front of it. PMP writes it as a first party cookie on your domain:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">__mtm_pref=personalized; Path=/; Max-Age=34560000; SameSite=Lax; Secure</div>
+</div><!-- fragment --><p>The value is the bare word, one of <code>standard</code>, <code>personalized</code> or <code>non-marketing</code>, so whatever handles the request can act on it without knowing anything about PMP. The <code>mtm</code> in the name is the Model Terms for Marketing, under which the three words are defined. The name has no 51Degrees in it deliberately, so that a system other than PMP can set the same cookie and be understood the same way.</p>
+<p>The alternative, being the visitor declining marketing, is written like the other two. A server that sees no cookie cannot tell a visitor who declined from one who was never asked, and those are not the same thing.</p>
+<p><code>SameSite=Lax</code> is set because your server needs the cookie on the ordinary navigation that fetches the page. <code>Secure</code> is asked for on https only, since a browser refuses a secure cookie over plain http and drops it altogether. The life is 400 days, which is where Chrome caps a cookie and quietly shortens anything longer.</p>
+<p><code>__mtm_pref</code> is never <code>HttpOnly</code>. PMP sets the cookie from the page and reads it back there, and a browser lets a script neither read nor replace a cookie carrying that flag, so a server that also writes <code>__mtm_pref</code> must leave the flag off or the visitor's next answer is silently lost. The one cookie in this design that is <code>HttpOnly</code> is a different cookie on a different domain, the copy of a shared answer the cloud keeps on <code>cloud.51degrees.com</code> under a name derived from your account, and it carries the flag because only the cloud ever reads it. No page can see that cookie whatever the flag says, and nothing PMP writes on your domain carries it.</p>
+<h3 class="doxsection" id="a-site-served-under-more-than-one-name">A site served under more than one name<a class="headerlink" href="#a-site-served-under-more-than-one-name" aria-label="Permalink to this section">🔗</a></h3>
+<p>Set <code>data-cookie-domain</code> to the domain the cookie should cover, for example <code>.example.com</code>. Without it the cookie is scoped to the exact host, so a visitor answering on <code>www.example.com</code> is asked again on <code>example.com</code>, and the two answers can then disagree with nothing to say which of them came later.</p>
+<p>You write it rather than PMP working it out, because scoping a cookie to a whole site means knowing where the registrable part of a name begins and a browser does not tell a page that. A value that is not a domain is refused, and the cookie falls back to the exact host rather than the value reaching the header.</p>
+<p>Adding the attribute to a site whose visitors already hold the host-scoped cookie takes that one off before setting the wider one, so the older answer is not left beside the new one under the same name. Both cookies carry the attribute.</p>
+<h3 class="doxsection" id="which-answer-the-cookie-carries">Which answer the cookie carries<a class="headerlink" href="#which-answer-the-cookie-carries" aria-label="Permalink to this section">🔗</a></h3>
+<p>Where the answer is shared across sites, which <code>__51d_pmp_share=shared</code> records, the cookie the cloud holds decides and this one mirrors it. Every page load then asks the cloud first, so a change the visitor makes on another of your sites arrives here, and where the cloud cannot be reached the mirror stands in for it. Where there is no shared answer, which is a visitor who kept their choice to this site or a browser where third party cookies do not work, this one carries the answer on its own and no request is made.</p>
+<p>The cookie is taken off when there is no answer anywhere, so a visitor whose shared answer was cleared does not leave a cookie behind that your server goes on reading, and the <code>shared</code> marker goes with it. The cookie is not taken off merely because the cloud could not be reached, since being unable to ask is not the same as being told there is none.</p>
+<h2 class="doxsection" id="opening-the-dialog-from-your-page">Opening the dialog from your page<a class="headerlink" href="#opening-the-dialog-from-your-page" aria-label="Permalink to this section">🔗</a></h2>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">window.__51d_pmp.open();</div>
+</div><!-- fragment --><p>That shows the dialog again, as it was on the first visit, and is what a "Change preferences" link in a footer calls. The bubble in the corner does the same thing, so the call is only needed for an entry point of your own. <code>window.__51d_pmp</code> carries two members, <code>open()</code> and <code>preference()</code>, and nothing else.</p>
+<h3 class="doxsection" id="one-copy-on-a-page">One copy on a page<a class="headerlink" href="#one-copy-on-a-page" aria-label="Permalink to this section">🔗</a></h3>
+<p>PMP stops, with a console warning and nothing rendered, when either of two things is already true as it starts. <code>window.__51d_pmp</code> exists, which is a second copy of the bundle, and two copies would give the visitor two dialogs and fire the action URL twice on every answer. Or <code>window.__tcfapi</code> exists and is not PMP's own, which is another consent management platform, and PMP and a consent management platform never share a page, because PMP is a complete Transparency and Consent Framework implementation of its own. Load the tag once, on a page that runs no other consent tool.</p>
+<h2 class="doxsection" id="the-consent-surface">The consent surface<a class="headerlink" href="#the-consent-surface" aria-label="Permalink to this section">🔗</a></h2>
+<p>The standard <code>__tcfapi</code> is available to ad tags and other scripts once the visitor has answered, or from the first moment where an answer was already held:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">__tcfapi(&#39;addEventListener&#39;, 2, function (tcData, success) {</div>
+<div class="c-code__line">  // tcData.eventStatus is &#39;tcloaded&#39; when a consent string is ready,</div>
+<div class="c-code__line">  // &#39;cmpuishown&#39; when the dialog is shown again, and</div>
+<div class="c-code__line">  // &#39;useractioncomplete&#39; when the visitor has just answered.</div>
+<div class="c-code__line">  console.log(tcData.eventStatus, tcData.tcString);</div>
+<div class="c-code__line">});</div>
+</div><!-- fragment --><p>The consent string is the publisher's own from <code>data-tcf-vendor</code> with the purpose bits and the dates rewritten for the answer, so it starts differently from the string on the tag and ends the same, and the vendor consents in it are exactly what the publisher put there. The CMP id it reports is that of a consent management platform currently registered on the IAB Global CMP List, and a different one each UTC day, which is what PMP is meant to do rather than a stand-in for an id of its own. The id written into the consent string and the id <code>__tcfapi</code> reports are always the same value for a page, and a page left open past midnight keeps the one it loaded with.</p>
+<h2 class="doxsection" id="whether-the-regulation-applies">Whether the regulation applies<a class="headerlink" href="#whether-the-regulation-applies" aria-label="Permalink to this section">🔗</a></h2>
+<p>The consent surface reports <code>gdprApplies</code>, and PMP takes the answer from <code>IsGdpr</code> on the client script's object. That property is worked out from the visitor's country, true for the European Economic Area, the United Kingdom and the French outermost regions and false everywhere else, an address that cannot be placed included. It is a good default and not a determination, because the regulation also reaches a publisher by where the publisher is established, so a publisher established in the European Union is within scope while serving a visitor in the United States and this answers false for that request. A publisher who knows their own position should say so rather than take this.</p>
+<p>PMP depends on three properties from the client script, so ask for all three when you create the resource key. Where the key does not carry one of them PMP says so in the console once per page view, and everything else carries on working, so the console is the only place the gap shows.</p>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Property  </td><td class="c-table__cell">What is lost without it  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>IsGdpr</code>  </td><td class="c-table__cell">The consent surface reports that the regulation applies, for every visitor everywhere.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>ThirdPartyCookiesEnabled</code>  </td><td class="c-table__cell">Nothing can ever confirm that third party cookies work, so the second card is never offered.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>ThirdPartyCookiesEnabledJavaScript</code>  </td><td class="c-table__cell">Third party cookies are never measured, only guessed from the browser's name, and a guess confirms nothing, so the second card is never offered.  </td></tr>
+</table>
+<p>The dialog is shown either way. The question PMP asks is the Model Terms usage, which is a contract and not a consent under the regulation, so a false answer changes what the consent surface reports and changes nothing about what the visitor is asked.</p>
+<h2 class="doxsection" id="languages">Languages<a class="headerlink" href="#languages" aria-label="Permalink to this section">🔗</a></h2>
+<p>The loader picks the bundle's language from the visitor's own browser, matching the full tag first, then the language on its own, then falling back to <code>en-us</code>, so a browser asking for <code>de-AT</code> is served German and one asking for a language PMP does not have is served English. Where two files share a language the one that sorts first serves a request for the bare language, so <code>pt</code> is served Brazilian Portuguese, <code>es</code> European Spanish and <code>zh</code> Simplified Chinese. Languages written right to left are supported, and the only thing that changes for them is the writing direction the widget sets on its own container, never anything on your page. The two descriptions of Standard and Personalized are the Model Terms wording in every language, translated under legal review rather than as ordinary copy.</p>
+<h2 class="doxsection" id="caching">Caching<a class="headerlink" href="#caching" aria-label="Permalink to this section">🔗</a></h2>
+<p>The loader is cacheable by anybody for a day, because it is the same bytes for every caller and no request for it is counted. The bundle is cacheable only by the browser that asked for it, also for a day, because the bundle is the request that is counted. During development, a hard reload or disabling the cache in developer tools gets past both, and there are two scripts to get past, the loader and the bundle it pulled in.</p>
+<h2 class="doxsection" id="browser-requirement">Browser requirement<a class="headerlink" href="#browser-requirement" aria-label="Permalink to this section">🔗</a></h2>
+<p>The bundles are built to ES2020, the 2020 edition of the JavaScript standard, and are not converted for anything older, which covers every browser released since early 2020. Televisions, set-top boxes and games consoles are the ones to watch, as their browsers tend to lag well behind a phone bought at the same time and seldom get updated after the device ships, so check what such a device supports before deploying PMP to it.</p>
+<h2 class="doxsection" id="cross-references">Cross-references<a class="headerlink" href="#cross-references" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
-<li><a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a> - how <code>id.usage</code> is consumed. The widget maps the user's choice to an <code>id.usage</code> value itself (the <em>Direct</em> path under <em>Setting the usage policy</em>); a caller who would rather hand the cloud a raw TCF or GPP string and have it derive <code>id.usage</code> uses the <em>Derived from consent</em> path on the same page.</li>
+<li><a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a> - how <code>id.usage</code> is consumed. PMP maps the visitor's choice to an <code>id.usage</code> value itself (the <em>Direct</em> path under <em>Setting the usage policy</em>), and a caller who would rather hand the cloud a raw TCF or GPP string and have it derive <code>id.usage</code> uses the <em>Derived from consent</em> path on the same page.</li>
+<li><a class="el" href="_device_detection__features__third_party_cookies.html" title="Third-Party Cookies Detection">Third-Party Cookies Detection</a> - the client script result the second card depends on.</li>
 <li><a class="el" href="_integrations__prebid.html" title="Prebid">Prebid</a> - downstream RTB enrichment that consumes the 51Did. </li>
 </ul>
 </div></div><!-- primary -->
