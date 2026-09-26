@@ -110,6 +110,17 @@ Structs</h2></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesPropertiesRequired" id="r_fiftyoneDegreesPropertiesRequired"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Defines a set of properties which are required by a caller.  <a href="structfiftyone_degrees_properties_required.html#details">More...</a><br /></td></tr>
 </table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-define-members" class="g-docs__section-heading"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="c-table__row memitem:ga60068561f8c636b78121cc536b4d495d" id="r_ga60068561f8c636b78121cc536b4d495d"><td class="c-table__cell"><a id="ga60068561f8c636b78121cc536b4d495d" name="ga60068561f8c636b78121cc536b4d495d"></a>
+#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_COMPONENT_MASK_ALL</b>&#160;&#160;&#160;UINT32_MAX</td></tr>
+<tr class="c-table__row memdesc:ga60068561f8c636b78121cc536b4d495d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Mask with every component enabled. <br /></td></tr>
+<tr class="c-table__row memitem:ga737ebfe51582d29013e876cd1e318f54" id="r_ga737ebfe51582d29013e876cd1e318f54"><td class="c-table__cell"><a id="ga737ebfe51582d29013e876cd1e318f54" name="ga737ebfe51582d29013e876cd1e318f54"></a>
+#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_COMPONENT_MASK_BITS</b>&#160;&#160;&#160;32</td></tr>
+<tr class="c-table__row memdesc:ga737ebfe51582d29013e876cd1e318f54"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of components the mask can address. <br /></td></tr>
+<tr class="c-table__row memitem:gaec214f38c42dcf2555021307e793bce0" id="r_gaec214f38c42dcf2555021307e793bce0"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gaec214f38c42dcf2555021307e793bce0">FIFTYONE_DEGREES_COMPONENT_MASK_ENABLED</a>(mask,  i)</td></tr>
+<tr class="c-table__row memdesc:gaec214f38c42dcf2555021307e793bce0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True if component index i is enabled under the mask.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-typedef-members" class="g-docs__section-heading"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="c-table__row memitem:ga8a9bf33829bbb6ced6bfcd40cb987b83" id="r_ga8a9bf33829bbb6ced6bfcd40cb987b83"><td class="c-table__cell"><a id="ga8a9bf33829bbb6ced6bfcd40cb987b83" name="ga8a9bf33829bbb6ced6bfcd40cb987b83"></a>
@@ -138,6 +149,8 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ga8eb57bf92dbb4b63ec3ea081e5348be1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Maps the required property index to the index in the source data structure.  <br /></td></tr>
 <tr class="c-table__row memitem:ga1a886fe2de48e334a62451323edcd045" id="r_ga1a886fe2de48e334a62451323edcd045"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_string.html">fiftyoneDegreesString</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga1a886fe2de48e334a62451323edcd045">fiftyoneDegreesPropertiesGetNameFromRequiredIndex</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, int requiredPropertyIndex)</td></tr>
 <tr class="c-table__row memdesc:ga1a886fe2de48e334a62451323edcd045"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the name as a string from the required property index.  <br /></td></tr>
+<tr class="c-table__row memitem:ga90a281bd56dcffc692af0f041d2e623d" id="r_ga90a281bd56dcffc692af0f041d2e623d"><td class="c-table__cell">uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga90a281bd56dcffc692af0f041d2e623d">fiftyoneDegreesPropertiesGetComponentMask</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount)</td></tr>
+<tr class="c-table__row memdesc:ga90a281bd56dcffc692af0f041d2e623d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Builds the mask of components whose graphs a detection must evaluate from the required property indexes a caller will read.  <br /></td></tr>
 <tr class="c-table__row memitem:gab259fe23491d4a3ca8fa169600265c35" id="r_gab259fe23491d4a3ca8fa169600265c35"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#gab259fe23491d4a3ca8fa169600265c35">fiftyoneDegreesPropertiesIsSetHeaderAvailable</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available)</td></tr>
 <tr class="c-table__row memdesc:gab259fe23491d4a3ca8fa169600265c35"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check if the 'SetHeader' properties are included in the available required properties.  <br /></td></tr>
 <tr class="c-table__row memitem:gaf2a54e5938cbd505767930a64aba6fea" id="r_gaf2a54e5938cbd505767930a64aba6fea"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gaf2a54e5938cbd505767930a64aba6fea">fiftyoneDegreesPropertiesFree</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available)</td></tr>
@@ -148,6 +161,44 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:gafe718e9dd0c8b93c755337a6f17b2b60" id="r_gafe718e9dd0c8b93c755337a6f17b2b60"><td class="c-table__cell">EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a>&#160;</td><td class="c-table__cell"><a class="el" href="#gafe718e9dd0c8b93c755337a6f17b2b60">fiftyoneDegreesPropertiesDefault</a></td></tr>
 <tr class="c-table__row memdesc:gafe718e9dd0c8b93c755337a6f17b2b60"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default properties required to make all possible properties available.  <br /></td></tr>
 </table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="g-docs__section-heading">Macro Definition Documentation</h2>
+<a id="gaec214f38c42dcf2555021307e793bce0" name="gaec214f38c42dcf2555021307e793bce0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaec214f38c42dcf2555021307e793bce0">&#9670;&#160;</a></span>FIFTYONE_DEGREES_COMPONENT_MASK_ENABLED</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_COMPONENT_MASK_ENABLED</td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>mask</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>i</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">((uint32_t)(i) &gt;= <a class="code hl_define" href="#ga737ebfe51582d29013e876cd1e318f54">FIFTYONE_DEGREES_COMPONENT_MASK_BITS</a> || \</div>
+<div class="c-code__line">((mask) &amp; (1u &lt;&lt; (i))) != 0)</div>
+<div class="ttc" id="agroup___fifty_one_degrees_properties_html_ga737ebfe51582d29013e876cd1e318f54"><div class="ttname"><a href="#ga737ebfe51582d29013e876cd1e318f54">FIFTYONE_DEGREES_COMPONENT_MASK_BITS</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_COMPONENT_MASK_BITS</div><div class="ttdoc">Number of components the mask can address.</div><div class="ttdef"><b>Definition</b> properties.h:307</div></div>
+</div><!-- fragment -->
+<p>True if component index i is enabled under the mask. </p>
+<p>Components at index 32 and above are beyond the mask and are always enabled, so a data set with more than 32 components is filtered for the first 32 only and the shift never exceeds the width of the mask. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mask</td><td>the component mask </td></tr>
+    <tr><td class="paramname">i</td><td>component index </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="g-docs__section-heading">Typedef Documentation</h2>
 <a id="ga4fa1e4432a72eafbbb3e19eec1f1e6dd" name="ga4fa1e4432a72eafbbb3e19eec1f1e6dd"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga4fa1e4432a72eafbbb3e19eec1f1e6dd">&#9670;&#160;</a></span>fiftyoneDegreesEvidencePropertiesGetMethod</h2>
@@ -281,6 +332,47 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ga90a281bd56dcffc692af0f041d2e623d" name="ga90a281bd56dcffc692af0f041d2e623d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga90a281bd56dcffc692af0f041d2e623d">&#9670;&#160;</a></span>fiftyoneDegreesPropertiesGetComponentMask()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">uint32_t fiftyoneDegreesPropertiesGetComponentMask </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>available</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Builds the mask of components whose graphs a detection must evaluate from the required property indexes a caller will read. </p>
+<p>Bit i means component i, using the <a class="el" href="structcomponent_index.html" title="Used to represent the structure within a profile groups item.">componentIndex</a> recorded on each available property. The engine must record that index when it initialises its available components, as the Hash and IP intelligence engines do. Under an engine that does not, every property reads as component 0. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">available</td><td>the available properties of the data set </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexes</td><td>array of required property indexes, or NULL to enable every component </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>number of entries in the array. A negative count enables every component. Zero with a non NULL array enables none. Indexes outside the available properties are ignored, as are components at index 32 and above, which the mask cannot address. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the component mask </dd></dl>
 
 </div>
 </div>

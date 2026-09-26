@@ -86,6 +86,8 @@ Collaboration diagram for FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a0ba15c0e14991eef3f225298ce24bd84" id="r_a0ba15c0e14991eef3f225298ce24bd84"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a0ba15c0e14991eef3f225298ce24bd84">SetCache</a> (IFlowCache cache)</td></tr>
+<tr class="c-table__row memdesc:a0ba15c0e14991eef3f225298ce24bd84"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Sets the results cache, which an engine that filters graphs cannot have.  <br /></td></tr>
 <tr class="c-table__row memitem:a05b20e4b739ae46a2b5e5d7317247dfd" id="r_a05b20e4b739ae46a2b5e5d7317247dfd"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a05b20e4b739ae46a2b5e5d7317247dfd">RefreshData</a> (string dataFileIdentifier)</td></tr>
 <tr class="c-table__row memdesc:a05b20e4b739ae46a2b5e5d7317247dfd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Called when update data is available in order to get the engine to refresh it's internal data structures.  <br /></td></tr>
 <tr class="c-table__row memitem:a5cb7fa413bd2802b7f30852c2faf5d33" id="r_a5cb7fa413bd2802b7f30852c2faf5d33"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a5cb7fa413bd2802b7f30852c2faf5d33">RefreshData</a> (string dataFileIdentifier, Stream stream)</td></tr>
@@ -99,6 +101,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a0413a7c6994b34f7dfee60fa26a4a7a2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Construct a new instance of the IP intelligence engine.  <br /></td></tr>
 <tr class="c-table__row memitem:ae14a4a6eed137077995afa243a608298" id="r_ae14a4a6eed137077995afa243a608298"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ae14a4a6eed137077995afa243a608298">ProcessEngine</a> (IFlowData data, <a class="el" href="interface_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_1_1_i_ip_data_on_premise.html">IIpDataOnPremise</a> ipData)</td></tr>
 <tr class="c-table__row memdesc:ae14a4a6eed137077995afa243a608298"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Perform processing for this engine.  <br /></td></tr>
+<tr class="c-table__row memitem:a99e45f9ffdd70b993487fbcec39e9d2d" id="r_a99e45f9ffdd70b993487fbcec39e9d2d"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a99e45f9ffdd70b993487fbcec39e9d2d">ProcessEngine</a> (IFlowData data, <a class="el" href="interface_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_1_1_i_ip_data_on_premise.html">IIpDataOnPremise</a> ipData, int[] requiredPropertyIndexes)</td></tr>
+<tr class="c-table__row memdesc:a99e45f9ffdd70b993487fbcec39e9d2d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Perform processing for this engine evaluating only the graphs needed by the given required property indexes.  <br /></td></tr>
 <tr class="c-table__row memitem:ae1352f90cc3dc142c07b0c8c6f721499" id="r_ae1352f90cc3dc142c07b0c8c6f721499"><td class="c-table__cell"><a id="ae1352f90cc3dc142c07b0c8c6f721499" name="ae1352f90cc3dc142c07b0c8c6f721499"></a>
 override&#160;void&#160;</td><td class="c-table__cell"><b>UnmanagedResourcesCleanup</b> ()</td></tr>
 <tr class="c-table__row memdesc:ae1352f90cc3dc142c07b0c8c6f721499"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Dispose of any unmanaged resources. <br /></td></tr>
@@ -108,6 +112,10 @@ Properties</h2></td></tr>
 <tr class="c-table__row memitem:aef43a474129207a1e40884d077cf7c0f" id="r_aef43a474129207a1e40884d077cf7c0f"><td class="c-table__cell"><a id="aef43a474129207a1e40884d077cf7c0f" name="aef43a474129207a1e40884d077cf7c0f"></a>
 override&#160;string&#160;</td><td class="c-table__cell"><b>ElementDataKey</b><code> [get]</code></td></tr>
 <tr class="c-table__row memdesc:aef43a474129207a1e40884d077cf7c0f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The key to use for this element's data in a IFlowData instance. <br /></td></tr>
+<tr class="c-table__row memitem:afe685dd5cadfc8f29d623e7cd8cf331c" id="r_afe685dd5cadfc8f29d623e7cd8cf331c"><td class="c-table__cell">IReadOnlyDictionary&lt;&#160;string,&#160;int&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#afe685dd5cadfc8f29d623e7cd8cf331c">RequiredPropertyIndexes</a><code> [get]</code></td></tr>
+<tr class="c-table__row memdesc:afe685dd5cadfc8f29d623e7cd8cf331c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Property name to required property index for every property the engine was built with that the data file contains.  <br /></td></tr>
+<tr class="c-table__row memitem:a69fdd973dc7491c4720a389f041b52fd" id="r_a69fdd973dc7491c4720a389f041b52fd"><td class="c-table__cell">virtual&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a69fdd973dc7491c4720a389f041b52fd">FiltersGraphs</a><code> [get]</code></td></tr>
+<tr class="c-table__row memdesc:a69fdd973dc7491c4720a389f041b52fd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True for a subclass that calls the filtered ProcessEngine(IFlowData, IIpDataOnPremise, int[]).  <br /></td></tr>
 <tr class="c-table__row memitem:a40a263860e59a8bb2ce3dfeab9c65791" id="r_a40a263860e59a8bb2ce3dfeab9c65791"><td class="c-table__cell"><a id="a40a263860e59a8bb2ce3dfeab9c65791" name="a40a263860e59a8bb2ce3dfeab9c65791"></a>
 override&#160;IList&lt;&#160;IFiftyOneAspectPropertyMetaData&#160;&gt;&#160;</td><td class="c-table__cell"><b>Properties</b><code> [get]</code></td></tr>
 <tr class="c-table__row memdesc:a40a263860e59a8bb2ce3dfeab9c65791"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the meta-data for properties populated by this engine. <br /></td></tr>
@@ -215,7 +223,7 @@ override&#160;EventHandler&lt;&#160;EventArgs&#160;&gt;&#160;</td><td class="c-t
 </div>
 </div>
 <a id="ae14a4a6eed137077995afa243a608298" name="ae14a4a6eed137077995afa243a608298"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae14a4a6eed137077995afa243a608298">&#9670;&#160;</a></span>ProcessEngine()</h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae14a4a6eed137077995afa243a608298">&#9670;&#160;</a></span>ProcessEngine() <span class="c-member__count">[1/2]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -256,6 +264,62 @@ override&#160;EventHandler&lt;&#160;EventArgs&#160;&gt;&#160;</td><td class="c-t
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ArgumentNullException</td><td>Thrown if a required parameter is null </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a99e45f9ffdd70b993487fbcec39e9d2d" name="a99e45f9ffdd70b993487fbcec39e9d2d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a99e45f9ffdd70b993487fbcec39e9d2d">&#9670;&#160;</a></span>ProcessEngine() <span class="c-member__count">[2/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngine.ProcessEngine </td>
+          <td>(</td>
+          <td class="c-table__cell">IFlowData</td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_1_1_i_ip_data_on_premise.html">IIpDataOnPremise</a></td>          <td class="c-table__cell"><span class="paramname"><em>ipData</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int[]</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Perform processing for this engine evaluating only the graphs needed by the given required property indexes. </p>
+<p>This is for a subclass used by a service that knows, for every request, which properties it will read. Other callers have no need of it. The subclass must override FiltersGraphs to return true, which also stops a results cache from being set on it. A property whose graph was not evaluated has no value, with a message that reports a null profile. That is the caller's responsibility, since the caller said it would not read it. A property that is mandatory with a default value reads as that default instead, as it does for a component that produced no profile. The native mask is 32 bits, so a data file with more than 32 components is filtered for the first 32 only and the rest are always evaluated. That limit is accepted for performance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The IFlowData instance containing data for the current request. </td></tr>
+    <tr><td class="paramname">ipData</td><td>The IIpDataOnPremise instance to populate with property values </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexes</td><td>Indexes from RequiredPropertyIndexes for the properties that will be read. Null evaluates every graph. An empty array evaluates none. Indexes outside the required properties are ignored. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentNullException</td><td>Thrown if a required parameter is null </td></tr>
+    <tr><td class="paramname">InvalidOperationException</td><td>Thrown if <em>requiredPropertyIndexes</em>  is not null and FiltersGraphs is false. Without that declaration the engine could have a results cache, which would serve the filtered result to callers that need every property. </td></tr>
   </table>
   </dd>
 </dl>
@@ -327,6 +391,42 @@ override&#160;EventHandler&lt;&#160;EventArgs&#160;&gt;&#160;</td><td class="c-t
 
 </div>
 </div>
+<a id="a0ba15c0e14991eef3f225298ce24bd84" name="a0ba15c0e14991eef3f225298ce24bd84"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0ba15c0e14991eef3f225298ce24bd84">&#9670;&#160;</a></span>SetCache()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">override void FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngine.SetCache </td>
+          <td>(</td>
+          <td class="c-table__cell">IFlowCache</td>          <td class="c-table__cell"><span class="paramname"><em>cache</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Sets the results cache, which an engine that filters graphs cannot have. </p>
+<p>See FiltersGraphs.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cache</td><td>The cache.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvalidOperationException</td><td>Thrown if FiltersGraphs is true. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="g-docs__section-heading">Property Documentation</h2>
 <a id="a27a70a7ef4a0891f1e0ca7080029c7cd" name="a27a70a7ef4a0891f1e0ca7080029c7cd"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a27a70a7ef4a0891f1e0ca7080029c7cd">&#9670;&#160;</a></span>AutomaticUpdatesEnabled</h2>
@@ -385,6 +485,66 @@ override&#160;EventHandler&lt;&#160;EventArgs&#160;&gt;&#160;</td><td class="c-t
 <p>For example, 'Lite' or 'Enterprise' </p>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_mixed_2_getting_started-_web_2_controllers_2_home_controller_8cs-example.html#a2">OnPremise/Mixed/GettingStarted-Web/Controllers/HomeController.cs</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="a69fdd973dc7491c4720a389f041b52fd" name="a69fdd973dc7491c4720a389f041b52fd"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a69fdd973dc7491c4720a389f041b52fd">&#9670;&#160;</a></span>FiltersGraphs</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">virtual bool FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngine.FiltersGraphs</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>True for a subclass that calls the filtered ProcessEngine(IFlowData, IIpDataOnPremise, int[]). </p>
+<p>Such an engine cannot have a results cache, because the cache is keyed on evidence alone and would serve a result produced for fewer properties to a caller that needs more.</p>
+<p>The combination is refused in SetCache(IFlowCache), when the engine is configured, rather than when a request is processed. With lazy loading the pipeline caches the result before ProcessEngine runs, so a refusal made there would itself be cached and served to every later request with the same evidence, unfiltered ones included. </p>
+
+</div>
+</div>
+<a id="afe685dd5cadfc8f29d623e7cd8cf331c" name="afe685dd5cadfc8f29d623e7cd8cf331c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afe685dd5cadfc8f29d623e7cd8cf331c">&#9670;&#160;</a></span>RequiredPropertyIndexes</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">IReadOnlyDictionary&lt;string, int&gt; FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngine.RequiredPropertyIndexes</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Property name to required property index for every property the engine was built with that the data file contains. </p>
+<p>Pass the indexes of the properties that will be read to ProcessEngine(IFlowData, IIpDataOnPremise, int[]) so only the graphs those properties need are evaluated. Names are compared ignoring case.</p>
+<p>An index is a position in the data file's required properties, which are sorted by name, so a refresh that loads a data file which gains or loses a required property moves the indexes. The map is replaced after every refresh and before RefreshCompleted is raised, so an array of indexes stays valid for as long as this property returns the same instance. A request that runs while a refresh is completing can use the new data file with indexes from the old map. </p>
 
 </div>
 </div>

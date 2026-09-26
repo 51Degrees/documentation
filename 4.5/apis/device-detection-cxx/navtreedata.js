@@ -38,7 +38,7 @@ var NAVTREEHIDESYNC = true;
 var NAVTREEINDEX =
 [
 "../../documentation/4.5/index.html",
-"class_fiftyone_degrees_1_1_device_detection_1_1_config_device_detection.html#a26c7518ca738b9e9ece3b19e7276248b"
+"class_fiftyone_degrees_1_1_device_detection_1_1_config_device_detection.html#a2179b694d1558a5d23411759051f483f"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

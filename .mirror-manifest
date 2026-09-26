@@ -1140,6 +1140,7 @@ apis/ip-intelligence-cxx/structperformance_config.html
 apis/ip-intelligence-cxx/structperformance_state.html
 apis/ip-intelligence-cxx/structperformance_thread_state.html
 apis/ip-intelligence-cxx/structproperties_source.html
+apis/ip-intelligence-cxx/structresults_with_component_mask.html
 apis/ip-intelligence-cxx/structshared_state.html
 apis/ip-intelligence-cxx/structshared_string_node.html
 apis/ip-intelligence-cxx/structsize_counter.html
@@ -6101,6 +6102,7 @@ apis/ip-intelligence-cxx/structoffline_process_state__coll__graph.svg
 apis/ip-intelligence-cxx/structperformance_config__coll__graph.svg
 apis/ip-intelligence-cxx/structperformance_state__coll__graph.svg
 apis/ip-intelligence-cxx/structperformance_thread_state__coll__graph.svg
+apis/ip-intelligence-cxx/structresults_with_component_mask__coll__graph.svg
 apis/ip-intelligence-cxx/structshared_state__coll__graph.svg
 apis/ip-intelligence-cxx/structshared_string_node__coll__graph.svg
 apis/ip-intelligence-cxx/structstate_with_exception__coll__graph.svg

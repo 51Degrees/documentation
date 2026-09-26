@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fiftyone
 <div class="c-code__line"><span class="c-code__comment">// Delete the results and the engine</span></div>
 <div class="c-code__line"><span class="c-code__keyword">delete</span> results;</div>
 <div class="c-code__line"><span class="c-code__keyword">delete</span> engine;</div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_a4f72773e876f66ff0365214ab3c30dbb"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a4f72773e876f66ff0365214ab3c30dbb">FiftyoneDegrees::Common::EngineBase::config</a></div><div class="ttdeci">ConfigBase * config</div><div class="ttdoc">Pointer to the configuration used to build the engine.</div><div class="ttdef"><b>Definition</b> EngineBase.hpp:249</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_a4f72773e876f66ff0365214ab3c30dbb"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a4f72773e876f66ff0365214ab3c30dbb">FiftyoneDegrees::Common::EngineBase::config</a></div><div class="ttdeci">ConfigBase * config</div><div class="ttdoc">Pointer to the configuration used to build the engine.</div><div class="ttdef"><b>Definition</b> EngineBase.hpp:260</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_required_properties_config_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_required_properties_config.html">FiftyoneDegrees::Common::RequiredPropertiesConfig</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesPropertiesRequired structure.</div><div class="ttdef"><b>Definition</b> RequiredPropertiesConfig.hpp:58</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_evidence_device_detection_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_device_detection_1_1_evidence_device_detection.html">FiftyoneDegrees::DeviceDetection::EvidenceDeviceDetection</a></div><div class="ttdoc">Device detection specific evidence class containing evidence to be processed by a device detection en...</div><div class="ttdef"><b>Definition</b> EvidenceDeviceDetection.hpp:64</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_config_hash_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_config_hash.html">FiftyoneDegrees::DeviceDetection::Hash::ConfigHash</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesConfigHash configuration structure.</div><div class="ttdef"><b>Definition</b> ConfigHash.hpp:72</div></div>
@@ -147,6 +147,10 @@ Public Member Functions</h2></td></tr>
 <tr id="pub-methods-1" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Engine Methods</h3></td></tr>
 <tr class="c-table__row memitem:adf6dd1f88d1d90d84f2633739a6aa6db" id="r_adf6dd1f88d1d90d84f2633739a6aa6db"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">ResultsHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#adf6dd1f88d1d90d84f2633739a6aa6db">process</a> (<a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_evidence_device_detection.html">EvidenceDeviceDetection</a> *evidence) const</td></tr>
 <tr class="c-table__row memitem:a99edfbd855f0584c4e6686e1422b93f8" id="r_a99edfbd855f0584c4e6686e1422b93f8"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">ResultsHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a99edfbd855f0584c4e6686e1422b93f8">process</a> (const char *userAgent) const</td></tr>
+<tr class="c-table__row memitem:a01022ee06133383aa5d706250da465ec" id="r_a01022ee06133383aa5d706250da465ec"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">ResultsHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a01022ee06133383aa5d706250da465ec">process</a> (<a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_evidence_device_detection.html">EvidenceDeviceDetection</a> *evidence, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount) const</td></tr>
+<tr class="c-table__row memdesc:a01022ee06133383aa5d706250da465ec"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the evidence as process(EvidenceDeviceDetection*) but walks only the graphs needed by the required properties whose indexes are supplied.  <br /></td></tr>
+<tr class="c-table__row memitem:aebba3edfbe3d31756eb03273c207cc4b" id="r_aebba3edfbe3d31756eb03273c207cc4b"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">ResultsHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#aebba3edfbe3d31756eb03273c207cc4b">process</a> (const char *userAgent, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount) const</td></tr>
+<tr class="c-table__row memdesc:aebba3edfbe3d31756eb03273c207cc4b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the User-Agent as process(const char*) but walks only the graphs needed by the required properties whose indexes are supplied.  <br /></td></tr>
 <tr id="pub-methods-2" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Common::EngineBase Implementation</h3></td></tr>
 <tr class="c-table__row memitem:a282c7c2aa35daf19bad276b28967b2be" id="r_a282c7c2aa35daf19bad276b28967b2be"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a282c7c2aa35daf19bad276b28967b2be">refreshData</a> () const</td></tr>
 <tr class="c-table__row memdesc:a282c7c2aa35daf19bad276b28967b2be"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Refresh the data set from the original file location.  <br /></td></tr>
@@ -198,6 +202,8 @@ virtual&#160;</td><td class="c-table__cell"><b>~EngineBase</b> ()</td></tr>
 <tr class="c-table__row memdesc:a991361c390349351c92ee864efbeaa2d pub_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the URL to be used when updating the data file, or an empty string if this is not set.  <br /></td></tr>
 <tr class="c-table__row memitem:a1e59e75e19511dcecfd26b9c5eb23a40 pub_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_a1e59e75e19511dcecfd26b9c5eb23a40"><td class="c-table__cell">const&#160;vector&lt;&#160;string&#160;&gt;&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a1e59e75e19511dcecfd26b9c5eb23a40">getKeys</a> () const</td></tr>
 <tr class="c-table__row memdesc:a1e59e75e19511dcecfd26b9c5eb23a40 pub_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the list of keys which the engine accepts as evidence.  <br /></td></tr>
+<tr class="c-table__row memitem:a3291502af64573104ea4ce58f223cb1a pub_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_a3291502af64573104ea4ce58f223cb1a"><td class="c-table__cell">vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a3291502af64573104ea4ce58f223cb1a">getRequiredProperties</a> () const</td></tr>
+<tr class="c-table__row memdesc:a3291502af64573104ea4ce58f223cb1a pub_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the names of the required properties in required property index order, so position i in the vector is the index a caller passes for that property.  <br /></td></tr>
 <tr class="c-table__row memitem:a7bdcd813b923c9a6ec16ad804e10e40f pub_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_a7bdcd813b923c9a6ec16ad804e10e40f"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a7bdcd813b923c9a6ec16ad804e10e40f">getIsThreadSafe</a> () const</td></tr>
 <tr class="c-table__row memdesc:a7bdcd813b923c9a6ec16ad804e10e40f pub_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get whether or not the engine was compiled with thread-safe support.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
@@ -709,7 +715,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div>
 </div>
 <a id="a99edfbd855f0584c4e6686e1422b93f8" name="a99edfbd855f0584c4e6686e1422b93f8"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a99edfbd855f0584c4e6686e1422b93f8">&#9670;&#160;</a></span>process() <span class="c-member__count">[1/2]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a99edfbd855f0584c4e6686e1422b93f8">&#9670;&#160;</a></span>process() <span class="c-member__count">[1/4]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -731,8 +737,49 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 
 </div>
 </div>
+<a id="aebba3edfbe3d31756eb03273c207cc4b" name="aebba3edfbe3d31756eb03273c207cc4b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aebba3edfbe3d31756eb03273c207cc4b">&#9670;&#160;</a></span>process() <span class="c-member__count">[2/4]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">ResultsHash</a> * FiftyoneDegrees::DeviceDetection::Hash::EngineHash::process </td>
+          <td>(</td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>userAgent</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>&#160;) const</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Processes the User-Agent as process(const char*) but walks only the graphs needed by the required properties whose indexes are supplied. </p>
+<p>See the evidence overload for the rules. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userAgent</td><td>to process </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexes</td><td>the caller will read </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>entries in the array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">new results instance, owned by the caller </dd></dl>
+
+</div>
+</div>
 <a id="adf6dd1f88d1d90d84f2633739a6aa6db" name="adf6dd1f88d1d90d84f2633739a6aa6db"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adf6dd1f88d1d90d84f2633739a6aa6db">&#9670;&#160;</a></span>process() <span class="c-member__count">[2/2]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adf6dd1f88d1d90d84f2633739a6aa6db">&#9670;&#160;</a></span>process() <span class="c-member__count">[3/4]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -753,6 +800,47 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 <p></p>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_getting_started_8cpp-example.html#a4">Hash/GettingStarted.cpp</a>, <a class="el" href="_hash_2_match_metrics_8cpp-example.html#a5">Hash/MatchMetrics.cpp</a>, and <a class="el" href="_hash_2_strongly_typed_8cpp-example.html#a6">Hash/StronglyTyped.cpp</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="a01022ee06133383aa5d706250da465ec" name="a01022ee06133383aa5d706250da465ec"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a01022ee06133383aa5d706250da465ec">&#9670;&#160;</a></span>process() <span class="c-member__count">[4/4]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">ResultsHash</a> * FiftyoneDegrees::DeviceDetection::Hash::EngineHash::process </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_evidence_device_detection.html">EvidenceDeviceDetection</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>evidence</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>&#160;) const</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Processes the evidence as process(EvidenceDeviceDetection*) but walks only the graphs needed by the required properties whose indexes are supplied. </p>
+<p>NULL or a negative count walks every graph. A count of zero walks none. A property whose graph was not walked has no value with the NULL_PROFILE reason. The native mask is 32 bits, so components beyond index 31 are always walked. Indexes are positions in <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a3291502af64573104ea4ce58f223cb1a" title="Get the names of the required properties in required property index order, so position i in the vecto...">getRequiredProperties()</a>, which move when a refresh loads a data file that gains or loses a required property, so look them up again after a refresh. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">evidence</td><td>to process </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexes</td><td>the caller will read </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>entries in the array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">new results instance, owned by the caller </dd></dl>
 
 </div>
 </div>

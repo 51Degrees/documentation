@@ -107,6 +107,8 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a1cba4129354f7cef94b74ffb45833af3" id="r_a1cba4129354f7cef94b74ffb45833af3"><td class="c-table__cell">override&#160;TEngine&#160;</td><td class="c-table__cell"><a class="el" href="#a1cba4129354f7cef94b74ffb45833af3">NewEngine</a> (List&lt; string &gt; properties)</td></tr>
 <tr class="c-table__row memdesc:a1cba4129354f7cef94b74ffb45833af3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Called by the 'BuildEngine' method to handle creation of the engine instance.  <br /></td></tr>
+<tr class="c-table__row memitem:a3b5a658d6592a54202b606e05d5bff4a" id="r_a3b5a658d6592a54202b606e05d5bff4a"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a3b5a658d6592a54202b606e05d5bff4a">ConfigureEngine</a> (TEngine engine)</td></tr>
+<tr class="c-table__row memdesc:a3b5a658d6592a54202b606e05d5bff4a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Configures the engine as the base class does, disposing of it if configuration fails.  <br /></td></tr>
 <tr class="c-table__row memitem:a5e09a8432bdab2359b829a1d723a82d9" id="r_a5e09a8432bdab2359b829a1d723a82d9"><td class="c-table__cell">TEngine&#160;</td><td class="c-table__cell"><a class="el" href="#a5e09a8432bdab2359b829a1d723a82d9">CreateEngine</a> (ILoggerFactory loggerFactory, Func&lt; IPipeline, FlowElementBase&lt; <a class="el" href="interface_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_1_1_i_ip_data_on_premise.html">IIpDataOnPremise</a>, IFiftyOneAspectPropertyMetaData &gt;, <a class="el" href="interface_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_1_1_i_ip_data_on_premise.html">IIpDataOnPremise</a> &gt; deviceDataFactory, string tempDataFilePath)</td></tr>
 <tr class="c-table__row memdesc:a5e09a8432bdab2359b829a1d723a82d9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Overridden in the implementing class to create a new instance of TEngine with the constructor parameters provided.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
@@ -117,6 +119,44 @@ override&#160;string&#160;</td><td class="c-table__cell"><b>DefaultDataDownloadT
 <tr class="c-table__row memdesc:a60c6538b4d61b4e5425e62f53d2c35a8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the default value for the 'Type' parameter that is passed to the 51Degrees Distributor service when checking for updated data files. <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a3b5a658d6592a54202b606e05d5bff4a" name="a3b5a658d6592a54202b606e05d5bff4a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3b5a658d6592a54202b606e05d5bff4a">&#9670;&#160;</a></span>ConfigureEngine()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">override void FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngineBuilderBase&lt; TEngine &gt;.ConfigureEngine </td>
+          <td>(</td>
+          <td class="c-table__cell">TEngine</td>          <td class="c-table__cell"><span class="paramname"><em>engine</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Configures the engine as the base class does, disposing of it if configuration fails. </p>
+<p>By this point NewEngine(List&lt;string&gt;) has loaded the data file into the native engine, and a failed build never hands the engine to the caller, so nothing else could release that memory. The failure this guards against is IpiOnPremiseEngine.SetCache refusing a results cache for an engine that filters graphs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">engine</td><td>The engine to configure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a5e09a8432bdab2359b829a1d723a82d9" name="a5e09a8432bdab2359b829a1d723a82d9"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5e09a8432bdab2359b829a1d723a82d9">&#9670;&#160;</a></span>CreateEngine()</h2>
 

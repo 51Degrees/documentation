@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fiftyone
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_evidence_base_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_evidence_base.html">FiftyoneDegrees::Common::EvidenceBase</a></div><div class="ttdoc">Base evidence class containing evidence to be processed by an engine.</div><div class="ttdef"><b>Definition</b> EvidenceBase.hpp:67</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_required_properties_config_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_required_properties_config.html">FiftyoneDegrees::Common::RequiredPropertiesConfig</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesPropertiesRequired structure.</div><div class="ttdef"><b>Definition</b> RequiredPropertiesConfig.hpp:58</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_results_base_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_results_base.html">FiftyoneDegrees::Common::ResultsBase</a></div><div class="ttdoc">Encapsulates the results of an engine&#39;s processing.</div><div class="ttdef"><b>Definition</b> ResultsBase.hpp:82</div></div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_engine_base_html_a4f72773e876f66ff0365214ab3c30dbb"><div class="ttname"><a href="#a4f72773e876f66ff0365214ab3c30dbb">FiftyoneDegrees::IpIntelligence::EngineBase::config</a></div><div class="ttdeci">ConfigBase * config</div><div class="ttdoc">Pointer to the configuration used to build the engine.</div><div class="ttdef"><b>Definition</b> EngineBase.hpp:249</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_engine_base_html_a4f72773e876f66ff0365214ab3c30dbb"><div class="ttname"><a href="#a4f72773e876f66ff0365214ab3c30dbb">FiftyoneDegrees::IpIntelligence::EngineBase::config</a></div><div class="ttdeci">ConfigBase * config</div><div class="ttdoc">Pointer to the configuration used to build the engine.</div><div class="ttdef"><b>Definition</b> EngineBase.hpp:260</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_engine_base_html_ac74ae23c22c3aa9ea07852594d5bb277"><div class="ttname"><a href="#ac74ae23c22c3aa9ea07852594d5bb277">FiftyoneDegrees::IpIntelligence::EngineBase::EngineBase</a></div><div class="ttdeci">EngineBase(ConfigBase *config, RequiredPropertiesConfig *properties)</div><div class="ttdoc">Construct a new instance of the engine class with the configuration and properties provided.</div><div class="ttdef"><b>Definition</b> EngineBase.cpp:30</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_common_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_common.html">FiftyoneDegrees::Common</a></div><div class="ttdoc">Shared classes.</div><div class="ttdef"><b>Definition</b> Collection.hpp:31</div></div>
 </div><!-- fragment --> </div><h2 class="g-docs__section-heading">
@@ -153,6 +153,8 @@ virtual&#160;</td><td class="c-table__cell"><b>~EngineBase</b> ()</td></tr>
 <tr class="c-table__row memdesc:a0b90bc5bd83385b073547485cc706293"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the tier of the data set being used e.g.  <br /></td></tr>
 <tr class="c-table__row memitem:ad3ff1ec4a1598bbc686d26fa0a0f84df" id="r_ad3ff1ec4a1598bbc686d26fa0a0f84df"><td class="c-table__cell">const&#160;vector&lt;&#160;string&#160;&gt;&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ad3ff1ec4a1598bbc686d26fa0a0f84df">getKeys</a> () const</td></tr>
 <tr class="c-table__row memdesc:ad3ff1ec4a1598bbc686d26fa0a0f84df"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the list of keys which the engine accepts as evidence.  <br /></td></tr>
+<tr class="c-table__row memitem:aa6ed192265eedcec57b948906b1132b2" id="r_aa6ed192265eedcec57b948906b1132b2"><td class="c-table__cell">vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#aa6ed192265eedcec57b948906b1132b2">getRequiredProperties</a> () const</td></tr>
+<tr class="c-table__row memdesc:aa6ed192265eedcec57b948906b1132b2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the names of the required properties in required property index order, so position i in the vector is the index a caller passes for that property.  <br /></td></tr>
 <tr class="c-table__row memitem:a2c17211b344fa8058a2d960e633350d0" id="r_a2c17211b344fa8058a2d960e633350d0"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a2c17211b344fa8058a2d960e633350d0">getIsThreadSafe</a> () const</td></tr>
 <tr class="c-table__row memdesc:a2c17211b344fa8058a2d960e633350d0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get whether or not the engine was compiled with thread-safe support.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
@@ -622,6 +624,30 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 
 <p>Get the date at which the current data set was published. </p>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">data set published date </dd></dl>
+
+</div>
+</div>
+<a id="aa6ed192265eedcec57b948906b1132b2" name="aa6ed192265eedcec57b948906b1132b2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa6ed192265eedcec57b948906b1132b2">&#9670;&#160;</a></span>getRequiredProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">vector&lt; string &gt; EngineBase::getRequiredProperties </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the names of the required properties in required property index order, so position i in the vector is the index a caller passes for that property. </p>
+<p>The names come from the data file loaded and are sorted by name, so a refresh that loads a data file which gains or loses a required property moves the indexes of the properties after it. Call again after a refresh. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the required property names </dd></dl>
 
 </div>
 </div>

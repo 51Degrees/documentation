@@ -136,6 +136,10 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:gaa9985d6e6d57f8fda8781ff7d3da5717"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the evidence value pairs in the evidence collection and populates the result in the results structure.  <br /></td></tr>
 <tr class="c-table__row memitem:gaafa8ef1661a542e11c58093febf30180" id="r_gaafa8ef1661a542e11c58093febf30180"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gaafa8ef1661a542e11c58093febf30180">fiftyoneDegreesResultsHashFromUserAgent</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, const char *userAgent, size_t userAgentLength, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:gaafa8ef1661a542e11c58093febf30180"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process a single User-Agent and populate the device offsets in the results structure.  <br /></td></tr>
+<tr class="c-table__row memitem:gab50db0e415ba1b9984783ccdf2743c93" id="r_gab50db0e415ba1b9984783ccdf2743c93"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gab50db0e415ba1b9984783ccdf2743c93">fiftyoneDegreesResultsHashFromEvidenceForProperties</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, <a class="el" href="structfiftyone_degrees_evidence_key_value_pair_array.html">fiftyoneDegreesEvidenceKeyValuePairArray</a> *evidence, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:gab50db0e415ba1b9984783ccdf2743c93"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the evidence exactly as <a class="el" href="#gaa9985d6e6d57f8fda8781ff7d3da5717" title="Processes the evidence value pairs in the evidence collection and populates the result in the results...">fiftyoneDegreesResultsHashFromEvidence</a>, but walks only the graphs needed by the required properties whose indexes are supplied.  <br /></td></tr>
+<tr class="c-table__row memitem:gae311281af35423d2adf4cc0b3b10dfa6" id="r_gae311281af35423d2adf4cc0b3b10dfa6"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gae311281af35423d2adf4cc0b3b10dfa6">fiftyoneDegreesResultsHashFromUserAgentForProperties</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, const char *userAgent, size_t userAgentLength, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:gae311281af35423d2adf4cc0b3b10dfa6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the User-Agent exactly as <a class="el" href="#gaafa8ef1661a542e11c58093febf30180" title="Process a single User-Agent and populate the device offsets in the results structure.">fiftyoneDegreesResultsHashFromUserAgent</a>, but walks only the graphs needed by the required properties whose indexes are supplied.  <br /></td></tr>
 <tr class="c-table__row memitem:ga9ae4ad3ae5a84c78a96d8274b7dd8a72" id="r_ga9ae4ad3ae5a84c78a96d8274b7dd8a72"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#ga9ae4ad3ae5a84c78a96d8274b7dd8a72">fiftyoneDegreesResultsHashFromDeviceId</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, const char *deviceId, size_t deviceIdLength, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga9ae4ad3ae5a84c78a96d8274b7dd8a72"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process a single Device Id and populate the device offsets in the results structure.  <br /></td></tr>
 <tr class="c-table__row memitem:ga8df380cd978f61179a709d5fb5e79bb0" id="r_ga8df380cd978f61179a709d5fb5e79bb0"><td class="c-table__cell"><a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga8df380cd978f61179a709d5fb5e79bb0">fiftyoneDegreesResultsHashCreate</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, uint32_t userAgentCapacity, uint32_t overridesCapacity)</td></tr>
@@ -1043,6 +1047,61 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gab50db0e415ba1b9984783ccdf2743c93" name="gab50db0e415ba1b9984783ccdf2743c93"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gab50db0e415ba1b9984783ccdf2743c93">&#9670;&#160;</a></span>fiftyoneDegreesResultsHashFromEvidenceForProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyoneDegreesResultsHashFromEvidenceForProperties </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>results</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_evidence_key_value_pair_array.html">fiftyoneDegreesEvidenceKeyValuePairArray</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>evidence</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Processes the evidence exactly as <a class="el" href="#gaa9985d6e6d57f8fda8781ff7d3da5717" title="Processes the evidence value pairs in the evidence collection and populates the result in the results...">fiftyoneDegreesResultsHashFromEvidence</a>, but walks only the graphs needed by the required properties whose indexes are supplied. </p>
+<p>It is meant for a service that knows, for every request, which properties it will read. Other callers should use <a class="el" href="#gaa9985d6e6d57f8fda8781ff7d3da5717" title="Processes the evidence value pairs in the evidence collection and populates the result in the results...">fiftyoneDegreesResultsHashFromEvidence</a>.</p>
+<p>Results are built as for an unfiltered detection. A component whose graph was not walked still takes the result its evidence would have used, with no profile, so its properties report no value with the NULL_PROFILE reason, and it receives no default profile even when allowUnmatched is set. Values worked out across every result, such as the device id, the matched User-Agents and the match metrics, count that result as a component that matched nothing.</p>
+<p>The indexes are turned into a 32 bit mask, bit i meaning the graph for component i in componentsList. Components at index 32 and above are beyond the mask and are always walked, so a data file with more than 32 components is filtered for the first 32 only.</p>
+<p>An index is a position in the required properties of the data set the results use, which are sorted by name. A reloaded data file that gains or loses a required property moves the indexes of the properties after it, so look them up again after a reload, for example with <a class="el" href="group___fifty_one_degrees_properties.html#ga382d04480940ed108153d1090f08acb1" title="Gets the required property index in the list of all required properties from the name.">fiftyoneDegreesPropertiesGetRequiredPropertyIndexFromName</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">results</td><td>preallocated results structure to populate </td></tr>
+    <tr><td class="paramname">evidence</td><td>to process containing parsed or unparsed values </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexes</td><td>array of required property indexes the caller will read, or NULL to walk every graph </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>number of entries in the array. A negative count walks every graph. A count of zero with a non NULL array walks no graph. Indexes outside the required properties are ignored. </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="gaafa8ef1661a542e11c58093febf30180" name="gaafa8ef1661a542e11c58093febf30180"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaafa8ef1661a542e11c58093febf30180">&#9670;&#160;</a></span>fiftyoneDegreesResultsHashFromUserAgent()</h2>
 
@@ -1087,6 +1146,64 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8c-example.html#a7">Hash/MatchMetrics.c</a>, and <a class="el" href="_hash_2_strongly_typed_8c-example.html#a7">Hash/StronglyTyped.c</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="gae311281af35423d2adf4cc0b3b10dfa6" name="gae311281af35423d2adf4cc0b3b10dfa6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gae311281af35423d2adf4cc0b3b10dfa6">&#9670;&#160;</a></span>fiftyoneDegreesResultsHashFromUserAgentForProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyoneDegreesResultsHashFromUserAgentForProperties </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>results</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>userAgent</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t</td>          <td class="c-table__cell"><span class="paramname"><em>userAgentLength</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Processes the User-Agent exactly as <a class="el" href="#gaafa8ef1661a542e11c58093febf30180" title="Process a single User-Agent and populate the device offsets in the results structure.">fiftyoneDegreesResultsHashFromUserAgent</a>, but walks only the graphs needed by the required properties whose indexes are supplied. </p>
+<p>See <a class="el" href="#gab50db0e415ba1b9984783ccdf2743c93" title="Processes the evidence exactly as fiftyoneDegreesResultsHashFromEvidence, but walks only the graphs n...">fiftyoneDegreesResultsHashFromEvidenceForProperties</a> for the rules that apply to the indexes. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">results</td><td>preallocated results structure to populate </td></tr>
+    <tr><td class="paramname">userAgent</td><td>string to process </td></tr>
+    <tr><td class="paramname">userAgentLength</td><td>of the User-Agent string </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexes</td><td>array of required property indexes the caller will read, or NULL to walk every graph </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>number of entries in the array </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
 </dl>
 
 </div>

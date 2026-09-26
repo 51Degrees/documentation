@@ -220,6 +220,12 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ga9ad8bcfd156287bef1e2882d46fe1e4e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process a single IP Address and populate the IP range offset in the results structure.  <br /></td></tr>
 <tr class="c-table__row memitem:ga2bdc949628d1397e217e2a72ddc08725" id="r_ga2bdc949628d1397e217e2a72ddc08725"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ga2bdc949628d1397e217e2a72ddc08725">fiftyoneDegreesResultsIpiFromEvidence</a> (<a class="el" href="#gabd56ee9670edd8f9204236f5dc56cd2f">fiftyoneDegreesResultsIpi</a> *results, <a class="el" href="structfiftyone_degrees_evidence_key_value_pair_array.html">fiftyoneDegreesEvidenceKeyValuePairArray</a> *evidence, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga2bdc949628d1397e217e2a72ddc08725"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the evidence value pairs in the evidence collection and populates the result in the results structure.  <br /></td></tr>
+<tr class="c-table__row memitem:ga7bbf6124c5e9b39f8cdda6a2f3f435f5" id="r_ga7bbf6124c5e9b39f8cdda6a2f3f435f5"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ga7bbf6124c5e9b39f8cdda6a2f3f435f5">fiftyoneDegreesResultsIpiFromIpAddressForProperties</a> (<a class="el" href="#gabd56ee9670edd8f9204236f5dc56cd2f">fiftyoneDegreesResultsIpi</a> *results, const unsigned char *ipAddress, size_t ipAddressLength, <a class="el" href="group__fiftyone_degrees_ip.html#ga442c961cca3e822fd98ed0e7546eafd5">fiftyoneDegreesIpType</a> type, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga7bbf6124c5e9b39f8cdda6a2f3f435f5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the IP address exactly as <a class="el" href="#ga38eee4f47f6e28fd30e4ec61ccbef3c4" title="Process a single byte array format IP Address and populate the IP range offset in the results structu...">fiftyoneDegreesResultsIpiFromIpAddress</a>, but evaluates only the graphs needed by the required properties whose indexes are supplied.  <br /></td></tr>
+<tr class="c-table__row memitem:ga7288aee25c961e69c28788abe59bbb1c" id="r_ga7288aee25c961e69c28788abe59bbb1c"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ga7288aee25c961e69c28788abe59bbb1c">fiftyoneDegreesResultsIpiFromIpAddressStringForProperties</a> (<a class="el" href="#gabd56ee9670edd8f9204236f5dc56cd2f">fiftyoneDegreesResultsIpi</a> *results, const char *ipAddress, size_t ipAddressLength, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga7288aee25c961e69c28788abe59bbb1c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the IP address string exactly as <a class="el" href="#ga9ad8bcfd156287bef1e2882d46fe1e4e" title="Process a single IP Address and populate the IP range offset in the results structure.">fiftyoneDegreesResultsIpiFromIpAddressString</a>, but evaluates only the graphs needed by the required properties whose indexes are supplied.  <br /></td></tr>
+<tr class="c-table__row memitem:ga46955565e6daf4481571e932e487f939" id="r_ga46955565e6daf4481571e932e487f939"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ga46955565e6daf4481571e932e487f939">fiftyoneDegreesResultsIpiFromEvidenceForProperties</a> (<a class="el" href="#gabd56ee9670edd8f9204236f5dc56cd2f">fiftyoneDegreesResultsIpi</a> *results, <a class="el" href="structfiftyone_degrees_evidence_key_value_pair_array.html">fiftyoneDegreesEvidenceKeyValuePairArray</a> *evidence, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga46955565e6daf4481571e932e487f939"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the evidence exactly as <a class="el" href="#ga2bdc949628d1397e217e2a72ddc08725" title="Processes the evidence value pairs in the evidence collection and populates the result in the results...">fiftyoneDegreesResultsIpiFromEvidence</a>, but evaluates only the graphs needed by the required properties whose indexes are supplied.  <br /></td></tr>
 <tr class="c-table__row memitem:ga1f2841d4484d06573dcce27e4eeaefcb" id="r_ga1f2841d4484d06573dcce27e4eeaefcb"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga1f2841d4484d06573dcce27e4eeaefcb">fiftyoneDegreesResultsIpiGetHasValues</a> (<a class="el" href="#gabd56ee9670edd8f9204236f5dc56cd2f">fiftyoneDegreesResultsIpi</a> *results, int requiredPropertyIndex, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga1f2841d4484d06573dcce27e4eeaefcb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets whether or not the results provided contain valid values for the property index provided.  <br /></td></tr>
 <tr class="c-table__row memitem:gadd24332a9484acccefc91a855185c063" id="r_gadd24332a9484acccefc91a855185c063"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_results.html#gaef347b638495391733e5962b576321e6">fiftyoneDegreesResultsNoValueReason</a>&#160;</td><td class="c-table__cell"><a class="el" href="#gadd24332a9484acccefc91a855185c063">fiftyoneDegreesResultsIpiGetNoValueReason</a> (<a class="el" href="#gabd56ee9670edd8f9204236f5dc56cd2f">fiftyoneDegreesResultsIpi</a> *results, int requiredPropertyIndex, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
@@ -1468,6 +1474,58 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
 
 </div>
 </div>
+<a id="ga46955565e6daf4481571e932e487f939" name="ga46955565e6daf4481571e932e487f939"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga46955565e6daf4481571e932e487f939">&#9670;&#160;</a></span>fiftyoneDegreesResultsIpiFromEvidenceForProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyoneDegreesResultsIpiFromEvidenceForProperties </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="#gabd56ee9670edd8f9204236f5dc56cd2f">fiftyoneDegreesResultsIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>results</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_evidence_key_value_pair_array.html">fiftyoneDegreesEvidenceKeyValuePairArray</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>evidence</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Processes the evidence exactly as <a class="el" href="#ga2bdc949628d1397e217e2a72ddc08725" title="Processes the evidence value pairs in the evidence collection and populates the result in the results...">fiftyoneDegreesResultsIpiFromEvidence</a>, but evaluates only the graphs needed by the required properties whose indexes are supplied. </p>
+<p>See <a class="el" href="#ga7bbf6124c5e9b39f8cdda6a2f3f435f5" title="Processes the IP address exactly as fiftyoneDegreesResultsIpiFromIpAddress, but evaluates only the gr...">fiftyoneDegreesResultsIpiFromIpAddressForProperties</a> for the rules that apply to the indexes. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">results</td><td>preallocated results structure to populate containing a pointer to an initialised resource manager </td></tr>
+    <tr><td class="paramname">evidence</td><td>to process containing parsed or unparsed values </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexes</td><td>array of required property indexes the caller will read, or NULL to evaluate every graph </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>number of entries in the array </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ga38eee4f47f6e28fd30e4ec61ccbef3c4" name="ga38eee4f47f6e28fd30e4ec61ccbef3c4"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga38eee4f47f6e28fd30e4ec61ccbef3c4">&#9670;&#160;</a></span>fiftyoneDegreesResultsIpiFromIpAddress()</h2>
 
@@ -1520,6 +1578,73 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
 
 </div>
 </div>
+<a id="ga7bbf6124c5e9b39f8cdda6a2f3f435f5" name="ga7bbf6124c5e9b39f8cdda6a2f3f435f5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga7bbf6124c5e9b39f8cdda6a2f3f435f5">&#9670;&#160;</a></span>fiftyoneDegreesResultsIpiFromIpAddressForProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyoneDegreesResultsIpiFromIpAddressForProperties </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="#gabd56ee9670edd8f9204236f5dc56cd2f">fiftyoneDegreesResultsIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>results</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const unsigned char *</td>          <td class="c-table__cell"><span class="paramname"><em>ipAddress</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t</td>          <td class="c-table__cell"><span class="paramname"><em>ipAddressLength</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="group__fiftyone_degrees_ip.html#ga442c961cca3e822fd98ed0e7546eafd5">fiftyoneDegreesIpType</a></td>          <td class="c-table__cell"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Processes the IP address exactly as <a class="el" href="#ga38eee4f47f6e28fd30e4ec61ccbef3c4" title="Process a single byte array format IP Address and populate the IP range offset in the results structu...">fiftyoneDegreesResultsIpiFromIpAddress</a>, but evaluates only the graphs needed by the required properties whose indexes are supplied. </p>
+<p>It is meant for a service that knows, for every request, which properties it will read. Other callers should use <a class="el" href="#ga38eee4f47f6e28fd30e4ec61ccbef3c4" title="Process a single byte array format IP Address and populate the IP range offset in the results structu...">fiftyoneDegreesResultsIpiFromIpAddress</a>.</p>
+<p>The result shape is unchanged, one item per available component in component order. A component whose graph was not evaluated keeps a null profile offset, so its properties report no value with the NULL_PROFILE reason. A property that is mandatory with a default value reads as that default instead, as it does for a component that produced no profile.</p>
+<p>The indexes are turned into a 32 bit mask, bit i meaning the graph for component i in componentsList. Components at index 32 and above are beyond the mask and are always evaluated, so a data file with more than 32 components is filtered for the first 32 only.</p>
+<p>An index is a position in the required properties of the data set the results use, which are sorted by name. A reloaded data file that gains or loses a required property moves the indexes of the properties after it, so look them up again after a reload, for example with <a class="el" href="group___fifty_one_degrees_properties.html#ga382d04480940ed108153d1090f08acb1" title="Gets the required property index in the list of all required properties from the name.">fiftyoneDegreesPropertiesGetRequiredPropertyIndexFromName</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">results</td><td>preallocated results structure to populate </td></tr>
+    <tr><td class="paramname">ipAddress</td><td>byte array to process </td></tr>
+    <tr><td class="paramname">ipAddressLength</td><td>of the IP address byte array </td></tr>
+    <tr><td class="paramname">type</td><td>of the ip </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexes</td><td>array of required property indexes the caller will read, or NULL to evaluate every graph </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>number of entries in the array. A negative count evaluates every graph. A count of zero with a non NULL array evaluates no graph. Indexes outside the required properties are ignored. </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ga9ad8bcfd156287bef1e2882d46fe1e4e" name="ga9ad8bcfd156287bef1e2882d46fe1e4e"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga9ad8bcfd156287bef1e2882d46fe1e4e">&#9670;&#160;</a></span>fiftyoneDegreesResultsIpiFromIpAddressString()</h2>
 
@@ -1559,6 +1684,64 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
     <tr><td class="paramname">results</td><td>preallocated results structure to populate </td></tr>
     <tr><td class="paramname">ipAddress</td><td>string to process </td></tr>
     <tr><td class="paramname">ipAddressLength</td><td>of the ipAddress string </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga7288aee25c961e69c28788abe59bbb1c" name="ga7288aee25c961e69c28788abe59bbb1c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga7288aee25c961e69c28788abe59bbb1c">&#9670;&#160;</a></span>fiftyoneDegreesResultsIpiFromIpAddressStringForProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyoneDegreesResultsIpiFromIpAddressStringForProperties </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="#gabd56ee9670edd8f9204236f5dc56cd2f">fiftyoneDegreesResultsIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>results</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>ipAddress</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t</td>          <td class="c-table__cell"><span class="paramname"><em>ipAddressLength</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Processes the IP address string exactly as <a class="el" href="#ga9ad8bcfd156287bef1e2882d46fe1e4e" title="Process a single IP Address and populate the IP range offset in the results structure.">fiftyoneDegreesResultsIpiFromIpAddressString</a>, but evaluates only the graphs needed by the required properties whose indexes are supplied. </p>
+<p>See <a class="el" href="#ga7bbf6124c5e9b39f8cdda6a2f3f435f5" title="Processes the IP address exactly as fiftyoneDegreesResultsIpiFromIpAddress, but evaluates only the gr...">fiftyoneDegreesResultsIpiFromIpAddressForProperties</a> for the rules that apply to the indexes. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">results</td><td>preallocated results structure to populate </td></tr>
+    <tr><td class="paramname">ipAddress</td><td>string to process </td></tr>
+    <tr><td class="paramname">ipAddressLength</td><td>of the ipAddress string </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexes</td><td>array of required property indexes the caller will read, or NULL to evaluate every graph </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>number of entries in the array </td></tr>
     <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
   </table>
   </dd>

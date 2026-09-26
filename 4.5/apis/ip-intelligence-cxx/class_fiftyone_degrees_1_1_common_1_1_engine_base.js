@@ -14,6 +14,7 @@ var class_fiftyone_degrees_1_1_common_1_1_engine_base =
     [ "getMetaData", "class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a5fbbb729285e3670732ad354133a9c80", null ],
     [ "getProduct", "class_fiftyone_degrees_1_1_common_1_1_engine_base.html#aca5ec9996d7ce8e45d42a90451f55c4e", null ],
     [ "getPublishedTime", "class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a521430d313a5b27bea4636055d825007", null ],
+    [ "getRequiredProperties", "class_fiftyone_degrees_1_1_common_1_1_engine_base.html#aa6ed192265eedcec57b948906b1132b2", null ],
     [ "getType", "class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a913db61da89fba68af592261149979f1", null ],
     [ "getUpdateAvailableTime", "class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a94fc9a7a5d5551150ff217cc77bd9b82", null ],
     [ "initHttpHeaderKeys", "class_fiftyone_degrees_1_1_common_1_1_engine_base.html#ae1c8ae3cc964daa4f34ee41a076ecaec", null ],
