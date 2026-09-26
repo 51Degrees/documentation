@@ -54,6 +54,7 @@ Signed, probabilistic device-bound identifiers (51Did) and an embeddable prefere
 - [Overview](@ref Identifiers_Overview) - How the pieces fit together
 - [51Did](@ref Identifiers_51Did) - Properties, `id.usage`, licensing
 - [PMP](@ref Identifiers_PMP) - Embeddable preference widget
+- [ADI](@ref Identifiers_ADI) - Embeddable ad inspector that tells a visitor why an ad was served
 
 ### Client-Side Only
 
