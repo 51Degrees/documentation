@@ -177,8 +177,9 @@ A 51Did is a binary OWID envelope wrapping a 51Degrees payload (see *Terminology
 | Node.js  | `fiftyone.pipeline.did`           | <https://www.npmjs.com/package/fiftyone.pipeline.did>              |
 | Python   | `fiftyone-pipeline-did`           | <https://pypi.org/project/fiftyone-pipeline-did/>                  |
 | PHP      | `51degrees/fiftyone.pipeline.did` | <https://packagist.org/packages/51degrees/fiftyone.pipeline.did>   |
+| Rust     | `fodid-client`                    | <https://crates.io/crates/fodid-client>                            |
 
-Every reader exposes the same surface, set out in the [package surface](https://github.com/51Degrees/specifications/blob/main/did-specification/package-surface.md) part of the specification, which also defines it for Rust. A reader parses the payload and exposes the usage and whether it was stated directly, the type, the licence id, the match key and the address of the terms document the identifier was issued under, and it refuses a payload whose version it does not know, naming the version. Reading an identifier and verifying its signature are separate questions, and the signature is verified through the envelope's own reader against a public key. The byte offsets stay out of every package's public surface so that application code never reads the layout by hand. The .NET package is the reference implementation.
+Every reader exposes the same surface, set out in the [package surface](https://github.com/51Degrees/specifications/blob/main/did-specification/package-surface.md) part of the specification. A reader parses the payload and exposes the usage and whether it was stated directly, the type, the licence id, the match key and the address of the terms document the identifier was issued under, and it refuses a payload whose version it does not know, naming the version. Reading an identifier and verifying its signature are separate questions, and the signature is verified through the envelope's own reader against a public key. The byte offsets stay out of every package's public surface so that application code never reads the layout by hand. The .NET package is the reference implementation.
 
 ## Comparing two 51Dids
 
@@ -220,7 +221,7 @@ Two things about a 51Did can be checked. The signature says whether the identifi
 A 51Did recipient can verify the signature before trusting the identifier. Two options:
 
 1. **Cloud endpoint.** Send the base64 value to the verification endpoint on the V4 cloud and get back a parsed payload only if the signature checks out. Simple, no key handling, but every call is metered against the Resource Key.
-2. **Local verification using the published public key.** Fetch 51Degrees' public ECDSA P-256 key once, cache it, and verify in-process for every received identifier. No metering. Each platform reader (see *51Did readers* above) exposes an in-process verify method that takes the public key PEM and returns a boolean. The .NET reader's method is the inherited `Owid.VerifyAsync`.
+2. **Local verification using the published public keys.** Fetch the key list described under *Fetching the public keys* below, hold it, and verify in-process for every received identifier against the key in force when it was created. Fetching the list is metered, verifying against it is not. Each package (see *51Did readers* above) carries a client that fetches and holds the list and verifies the signature offline, so application code never handles a key.
 
 In both cases, signature validation only confirms the identifier was created by 51Degrees and has not been tampered with. It does not certify that the device + IP + usage inputs were truthful, because that trust lives in the operational contract with the issuing 51Degrees cloud, not in the signature.
 
@@ -257,13 +258,13 @@ The `context` values:
 | `invaliddate` | The identifier claims a creation date the scheme could not have produced, being in the future or before the creator context existed, so the identifier is fabricated and nothing is wrong with the service. |
 | `nocontext` | The 51Did carries no creator context to check, being one created before the creator context existed or by a deployment with it switched off. Normal rather than an error, and it says nothing about whether the identifier is genuine, which the signature answers on its own. |
 
-Where `context` is `mismatch`, or `misconfigured` with some factors compared, `factors` breaks the comparison down across nine independent factors named `transport`, `device`, `browserip`, `connectionip`, `asn`, `platformname`, `platformversion`, `browsername` and `browserversion`, each `verified`, `mismatch` or `misconfigured`. It is there to help you locate a problem and to weigh a mismatch. A call made from a server rather than the presenting browser, for example, shows the transport, device and connection factors as `mismatch`, the server having its own connection and device. Nothing about what a factor is made of is exposed, only whether it matched. Treat the top-level `context` value as the result.
+`factors` is sent where `context` is `mismatch`, where it is `misconfigured` with some factors compared, and whenever any factor is `notrecorded`, whatever the overall result. It breaks the comparison down across nine independent factors named `transport`, `device`, `browserip`, `connectionip`, `asn`, `platformname`, `platformversion`, `browsername` and `browserversion`, each `verified`, `mismatch`, `misconfigured` or `notrecorded`. `notrecorded` means the creator recorded no value for that factor, so nothing was compared and the factor took no part in `context`. An identifier created server to server reports it for `transport` and for anything else the caller could not supply, so a `context` of `verified` means every factor that was recorded matched, and `factors` shows how many that was. It is there to help you locate a problem and to weigh a mismatch. A call made from a server rather than the presenting browser, for example, shows the transport, device and connection factors as `mismatch`, the server having its own connection and device. Nothing about what a factor is made of is exposed, only whether it matched. Treat the top-level `context` value as the result.
 
 Read together with the signature:
 
 | `signature` | `context` | Meaning |
 |-------------|-----------|---------|
-| `verified` | `verified` | Authentic identifier presented from its creation context. |
+| `verified` | `verified` | Authentic identifier presented from its creation context. Where `factors` is present, the factors marked `notrecorded` took no part and the result rests on the others. |
 | `verified` | `mismatch` | Authentic identifier presented from a different context. What a replay looks like, and also what a legitimate server verifying out of context sees, and that server knows which situation it is in. |
 | `verified` | `nocontext` or `misconfigured` | Authentic identifier with no context this service could check. Rely on the signature alone. |
 | `invalid` | any | The envelope has been altered or corrupted. A creator context cannot be forged, because it is made under a key only 51Degrees holds, so a `verified` context on an `invalid` signature means the context data is intact and something else in the envelope is not. |
@@ -301,29 +302,32 @@ Local public-key verification (option 2 above) covers the signature only. The cr
 A long-lived identifier that still verifies from its creation context is the strongest signal of a stable, real user, and age cannot be manufactured. This makes context verification well suited to a render-time check. Place the 51Did from a bid request into the creative, verify it from the rendering browser, send the 51Did and the sealed result to your own endpoint, and redeem them there. A `context` of `mismatch` on an identifier made minutes earlier means the paid impression rendered somewhere other than the browser the bid described.
 
 
-### Fetching the public key for local verification
+### Fetching the public keys
 
-Local verification (option 2 above) fetches the key from the OWID creator endpoint, `GET /owid/api/v3/creator`. The response carries the current signing key in `publicKeySPKI` (PEM).
-
-Signing keys belong to periods of a schedule, and a 51Did is signed with the key of the period its creation falls in, so a 51Did issued in an earlier period was signed with an earlier key. To fetch the key that was in force when a 51Did was created, pass its date on every request, as `GET /owid/api/v3/creator?date=<minutes>`. The `date` is the same value the OWID envelope carries in its Date field, minutes since `2020-01-01T00:00:00Z` (see the [OWID explainer](https://github.com/SWAN-community/owid/blob/main/explainer.md), "Data Structure" section). The endpoint returns the signing key whose period was in force at `date`. If `date` predates every known key it returns `404`, and a `date` that is not an unsigned 32-bit integer returns `400`.
-
-### Fetching every public key at once
-
-The `/creator` endpoint above returns one key per request. A verifier that wants the whole set of signing keys can pull them from the 51Did key endpoint:
+Signing keys belong to periods of a schedule, and a 51Did is signed with the key of the period its creation falls in, so a 51Did issued in an earlier period was signed with an earlier key. The key list publishes every key whose period has started, plus the next key in the fifteen minutes before its start:
 
 ```
-GET https://cloud.51degrees.com/api/v4/id/key?resource=<RESOURCE_KEY>
+GET https://cloud.51degrees.com/api/v4/id/key/<RESOURCE_KEY>
 ```
 
-The response is a JSON array, one entry per signing key:
+A licence key alone also works, sent as `license`, and each call is metered. The response is a JSON array, one entry per key:
 
 ```json
 [
-  { "created": "2026-03-08T00:00:00.0000000Z", "publicKey": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----" }
+  {
+    "startsAt": "2026-03-09T00:00:00.0000000Z",
+    "endsAt": "2026-03-16T00:00:00.0000000Z",
+    "created": "2026-01-05T00:00:00.0000000Z",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----"
+  }
 ]
 ```
 
-To fetch only the keys created since you last pulled, add an ISO 8601 UTC timestamp, as `GET .../api/v4/id/key/datetime/2026-03-08T00:00:00Z?resource=<RESOURCE_KEY>`. The response then holds only keys created on or after that timestamp. This endpoint takes an ISO 8601 timestamp, not the minutes-since-2020 value that `/creator?date=` uses. Unlike `/creator`, it needs a Resource Key and is metered.
+A key is in force from `startsAt` until `endsAt`, the next key's start, which the newest entry carries although the next key is not published. A key may be replaced before its `endsAt` if it has to be. `created` is when the key was generated, which may be months before its start. To fetch only the keys starting at or after a moment, add an ISO 8601 timestamp, read as UTC, as `?datetime=2026-03-09T00:00:00Z`. The answer may be cached privately for up to 1800 seconds and never past the moment the next key is published, and a refusal is never cached.
+
+The client in each package (see *51Did readers* above) holds the list and applies the same rule. Every 51Did dated before the newest `endsAt` held is verified offline. A fetch is made only for an identifier dated at or after that `endsAt` less the fifteen minute allowance, at most once a minute, and the whole list is fetched again once it is a day old. Where the signature fails against every key held, the keys from the start of the one in force at the identifier's date are fetched once more before a failure is reported, because a key may have been replaced.
+
+The OWID endpoint `GET /owid/api/v3/public-key?date=<minutes>` returns one key, the one in force at `date`, as `{ "format": "spki", "publicKey": "...", "validFrom": "...", "validTo": "..." }`, where `validTo` is null for the newest key. The `date` is the value the OWID envelope carries in its Date field, minutes since `2020-01-01T00:00:00Z` (see the [OWID explainer](https://github.com/SWAN-community/owid/blob/main/explainer.md), "Data Structure" section), and omitting it returns the key in force now. A `date` before every key returns `404`, and one that is not an unsigned 32-bit integer returns `400`. It takes the same credentials as the key list and is metered.
 
 ## Use cases
 
