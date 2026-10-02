@@ -6,5 +6,6 @@ var class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_
     [ "DateTimeUtc", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html#ae209b638a935c7de720954b467253edb", null ],
     [ "Ip", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html#a6ae5b1b58cdd92ca62d0833281804ab5", null ],
     [ "Latitude", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html#a67159635e948cb693e32888a751e48d5", null ],
+    [ "LineNumber", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html#affbdf08abf4fc9afdd9c96efb1e59ea1", null ],
     [ "Longitude", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html#a2dee232361de01a3ce387e2ca275abab", null ]
 ];

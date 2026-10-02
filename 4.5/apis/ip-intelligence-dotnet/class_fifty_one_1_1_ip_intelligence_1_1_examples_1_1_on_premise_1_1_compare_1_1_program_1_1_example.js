@@ -1,6 +1,11 @@
 var class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_example =
 [
     [ "BuildEngine", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_example.html#a787b798104f8d78a3bc89e544e3db4c5", null ],
+    [ "Compare", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_example.html#a51889b8986955ff3310ddfa3e59d1bb5", null ],
+    [ "CreateConsumers", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_example.html#ae5a00152f1ad8ce5b645d192e918ceaa", null ],
+    [ "ProcessTruth", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_example.html#afe5e971ed83ec2427c3e2b2089c2b9ce", null ],
+    [ "ProduceAndConsume", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_example.html#a9cd60bd6fa9fd0888aa15c18194f0643", null ],
+    [ "ReadTruths", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_example.html#af644ca5c14e69f7e8fd1534ff134734e", null ],
     [ "Run", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_example.html#ac84f8d62bcb92024450beb91b3e88404", null ],
     [ "Run", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_example.html#a538eca34ccbb94ee9ba790938ce5446d", null ]
 ];

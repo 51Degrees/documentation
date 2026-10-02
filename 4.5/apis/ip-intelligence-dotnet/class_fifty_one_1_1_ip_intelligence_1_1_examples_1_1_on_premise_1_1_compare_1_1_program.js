@@ -1,6 +1,7 @@
 var class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program =
 [
     [ "Truth", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth" ],
+    [ "SkippedTruths", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_skipped_truths.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_skipped_truths" ],
     [ "Result", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result" ],
     [ "Output", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_output.html", null ],
     [ "Consumer", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_consumer.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_consumer" ],

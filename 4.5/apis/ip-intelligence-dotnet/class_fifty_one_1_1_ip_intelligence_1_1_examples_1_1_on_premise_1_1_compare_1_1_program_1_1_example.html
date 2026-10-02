@@ -87,6 +87,16 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a787b798104f8d78a3bc89e544e3db4c5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Builds the on-premise IP Intelligence engine used by the example.  <br /></td></tr>
 <tr class="c-table__row memitem:ac84f8d62bcb92024450beb91b3e88404" id="r_ac84f8d62bcb92024450beb91b3e88404"><td class="c-table__cell">static&#160;async&#160;Task&#160;</td><td class="c-table__cell"><a class="el" href="#ac84f8d62bcb92024450beb91b3e88404">Run</a> (<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a> ipiEngine, string csvTruthFile, TextWriter output, ILoggerFactory loggerFactory, CancellationToken stoppingToken, ILogger logger=null)</td></tr>
 <tr class="c-table__row memdesc:ac84f8d62bcb92024450beb91b3e88404"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Runs the <a class="el" href="namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare.html">Compare</a> console example against an already built engine.  <br /></td></tr>
+<tr class="c-table__row memitem:ae5a00152f1ad8ce5b645d192e918ceaa" id="r_ae5a00152f1ad8ce5b645d192e918ceaa"><td class="c-table__cell">static&#160;<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_consumer.html">Consumer</a>[]&#160;</td><td class="c-table__cell"><a class="el" href="#ae5a00152f1ad8ce5b645d192e918ceaa">CreateConsumers</a> (Func&lt; <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a>, <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html">Result</a> &gt; process, BlockingCollection&lt; <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a> &gt; truth, <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_skipped_truths.html">SkippedTruths</a> skipped, CancellationTokenSource stopping)</td></tr>
+<tr class="c-table__row memdesc:ae5a00152f1ad8ce5b645d192e918ceaa"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Create and start the consumers which will be waiting on the producer to start.  <br /></td></tr>
+<tr class="c-table__row memitem:a9cd60bd6fa9fd0888aa15c18194f0643" id="r_a9cd60bd6fa9fd0888aa15c18194f0643"><td class="c-table__cell">static&#160;async&#160;Task&#160;</td><td class="c-table__cell"><a class="el" href="#a9cd60bd6fa9fd0888aa15c18194f0643">ProduceAndConsume</a> (Action produce, BlockingCollection&lt; <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a> &gt; truth, <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_consumer.html">Consumer</a>[] consumers, CancellationTokenSource stopping)</td></tr>
+<tr class="c-table__row memdesc:a9cd60bd6fa9fd0888aa15c18194f0643"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Runs the producer, then waits for every consumer to stop before returning, whether the producer finished, failed or was stopped.  <br /></td></tr>
+<tr class="c-table__row memitem:af644ca5c14e69f7e8fd1534ff134734e" id="r_af644ca5c14e69f7e8fd1534ff134734e"><td class="c-table__cell">static&#160;IEnumerable&lt;&#160;<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a>&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#af644ca5c14e69f7e8fd1534ff134734e">ReadTruths</a> (CsvReader source, <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_skipped_truths.html">SkippedTruths</a> skipped)</td></tr>
+<tr class="c-table__row memdesc:af644ca5c14e69f7e8fd1534ff134734e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reads the truth records from the CSV source.  <br /></td></tr>
+<tr class="c-table__row memitem:afe5e971ed83ec2427c3e2b2089c2b9ce" id="r_afe5e971ed83ec2427c3e2b2089c2b9ce"><td class="c-table__cell">static&#160;IReadOnlyList&lt;&#160;<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_output.html">Output</a>&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#afe5e971ed83ec2427c3e2b2089c2b9ce">ProcessTruth</a> (Func&lt; <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a>, <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html">Result</a> &gt; process, BlockingCollection&lt; <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a> &gt; source, <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_skipped_truths.html">SkippedTruths</a> skipped, CancellationToken stoppingToken)</td></tr>
+<tr class="c-table__row memdesc:afe5e971ed83ec2427c3e2b2089c2b9ce"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the truths in the blocking collection until completed or stopped.  <br /></td></tr>
+<tr class="c-table__row memitem:a51889b8986955ff3310ddfa3e59d1bb5" id="r_a51889b8986955ff3310ddfa3e59d1bb5"><td class="c-table__cell">static&#160;<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html">Result</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a51889b8986955ff3310ddfa3e59d1bb5">Compare</a> (<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a> truth, double latitude, double longitude, string wkt, string confidence)</td></tr>
+<tr class="c-table__row memdesc:a51889b8986955ff3310ddfa3e59d1bb5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Compares the truth with the location and area returned for its IP address.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-inherited" class="g-docs__section-heading"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -145,7 +155,296 @@ ILoggerFactory, CancellationToken, ILogger) for each file. The caller is respons
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a21">OnPremise/Compare-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a22">OnPremise/Compare-Console/Program.cs</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a51889b8986955ff3310ddfa3e59d1bb5" name="a51889b8986955ff3310ddfa3e59d1bb5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a51889b8986955ff3310ddfa3e59d1bb5">&#9670;&#160;</a></span>Compare()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html">Result</a> FiftyOne.IpIntelligence.Examples.OnPremise.Compare.Program.Example.Compare </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a></td>          <td class="c-table__cell"><span class="paramname"><em>truth</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>latitude</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>longitude</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>wkt</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>confidence</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Compares the truth with the location and area returned for its IP address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">truth</td><td></td></tr>
+    <tr><td class="paramname">latitude</td><td>Returned for the IP address. </td></tr>
+    <tr><td class="paramname">longitude</td><td>Returned for the IP address. </td></tr>
+    <tr><td class="paramname">wkt</td><td>The area returned for the IP address in WKT format. </td></tr>
+    <tr><td class="paramname">confidence</td><td>Returned for the IP address, if any. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvalidDataException</td><td>The truth can not be compared, for example because the area is not a valid geometry. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae5a00152f1ad8ce5b645d192e918ceaa" name="ae5a00152f1ad8ce5b645d192e918ceaa"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae5a00152f1ad8ce5b645d192e918ceaa">&#9670;&#160;</a></span>CreateConsumers()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_consumer.html">Consumer</a>[] FiftyOne.IpIntelligence.Examples.OnPremise.Compare.Program.Example.CreateConsumers </td>
+          <td>(</td>
+          <td class="c-table__cell">Func&lt; <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a>, <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html">Result</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>process</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">BlockingCollection&lt; <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>truth</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_skipped_truths.html">SkippedTruths</a></td>          <td class="c-table__cell"><span class="paramname"><em>skipped</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">CancellationTokenSource</td>          <td class="c-table__cell"><span class="paramname"><em>stopping</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Create and start the consumers which will be waiting on the producer to start. </p>
+<p>The number of consumers matches the number of processor cores.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">process</td><td>Compares a single truth returning the result, or null if there is no result for the truth. </td></tr>
+    <tr><td class="paramname">truth</td><td></td></tr>
+    <tr><td class="paramname">skipped</td><td>Records the truths that could not be compared. </td></tr>
+    <tr><td class="paramname">stopping</td><td>Cancelled when a consumer fails so that the producer stops too. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
+
+</div>
+</div>
+<a id="afe5e971ed83ec2427c3e2b2089c2b9ce" name="afe5e971ed83ec2427c3e2b2089c2b9ce"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afe5e971ed83ec2427c3e2b2089c2b9ce">&#9670;&#160;</a></span>ProcessTruth()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">IReadOnlyList&lt; <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_output.html">Output</a> &gt; FiftyOne.IpIntelligence.Examples.OnPremise.Compare.Program.Example.ProcessTruth </td>
+          <td>(</td>
+          <td class="c-table__cell">Func&lt; <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a>, <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html">Result</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>process</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">BlockingCollection&lt; <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_skipped_truths.html">SkippedTruths</a></td>          <td class="c-table__cell"><span class="paramname"><em>skipped</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">CancellationToken</td>          <td class="c-table__cell"><span class="paramname"><em>stoppingToken</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Processes the truths in the blocking collection until completed or stopped. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">process</td><td>Compares a single truth returning the result, or null if there is no result for the truth. </td></tr>
+    <tr><td class="paramname">source</td><td></td></tr>
+    <tr><td class="paramname">skipped</td><td>Records the truths that could not be compared. </td></tr>
+    <tr><td class="paramname">stoppingToken</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">A list of the output results. </dd></dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a28">OnPremise/Compare-Console/Program.cs</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a9cd60bd6fa9fd0888aa15c18194f0643" name="a9cd60bd6fa9fd0888aa15c18194f0643"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9cd60bd6fa9fd0888aa15c18194f0643">&#9670;&#160;</a></span>ProduceAndConsume()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">async Task FiftyOne.IpIntelligence.Examples.OnPremise.Compare.Program.Example.ProduceAndConsume </td>
+          <td>(</td>
+          <td class="c-table__cell">Action</td>          <td class="c-table__cell"><span class="paramname"><em>produce</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">BlockingCollection&lt; <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>truth</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_consumer.html">Consumer</a>[]</td>          <td class="c-table__cell"><span class="paramname"><em>consumers</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">CancellationTokenSource</td>          <td class="c-table__cell"><span class="paramname"><em>stopping</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Runs the producer, then waits for every consumer to stop before returning, whether the producer finished, failed or was stopped. </p>
+<p>Returning while a consumer is still running would let the caller dispose the pipeline and the engine under it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">produce</td><td>Adds the truths to the collection. The collection is completed when it returns or throws. </td></tr>
+    <tr><td class="paramname">truth</td><td></td></tr>
+    <tr><td class="paramname">consumers</td><td></td></tr>
+    <tr><td class="paramname">stopping</td><td>Cancelled if the producer fails so that the consumers stop. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exception</td><td>The producer's failure once every consumer has stopped, otherwise the first consumer's failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a27">OnPremise/Compare-Console/Program.cs</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="af644ca5c14e69f7e8fd1534ff134734e" name="af644ca5c14e69f7e8fd1534ff134734e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af644ca5c14e69f7e8fd1534ff134734e">&#9670;&#160;</a></span>ReadTruths()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">IEnumerable&lt; <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a> &gt; FiftyOne.IpIntelligence.Examples.OnPremise.Compare.Program.Example.ReadTruths </td>
+          <td>(</td>
+          <td class="c-table__cell">CsvReader</td>          <td class="c-table__cell"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_skipped_truths.html">SkippedTruths</a></td>          <td class="c-table__cell"><span class="paramname"><em>skipped</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Reads the truth records from the CSV source. </p>
+<p>A record that can not be read, or is missing the values needed to compare it, is added to the skipped records and reading continues with the next line.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>CSV reader positioned before the header record. </td></tr>
+    <tr><td class="paramname">skipped</td><td>Records the truths that could not be read. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The truth records that can be compared. </dd></dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a29">OnPremise/Compare-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -282,7 +581,7 @@ ILoggerFactory, CancellationToken, ILogger) for each file. The caller is respons
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">Allow passing in of an external logger for automated comparison</dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a20">OnPremise/Compare-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a21">OnPremise/Compare-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>

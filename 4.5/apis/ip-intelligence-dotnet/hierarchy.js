@@ -189,6 +189,7 @@ var hierarchy =
     [ "Examples.OnPremise.Areas.Rectangle", "class_examples_1_1_on_premise_1_1_areas_1_1_rectangle.html", null ],
     [ "Examples.OnPremise.Areas.Result", "class_examples_1_1_on_premise_1_1_areas_1_1_result.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.OnPremise.Compare.Program.Result", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html", null ],
+    [ "FiftyOne.IpIntelligence.Examples.OnPremise.Compare.Program.SkippedTruths", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_skipped_truths.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Cloud.GettingStartedWeb.Startup", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_getting_started_web_1_1_startup.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Mixed.Cloud.GettingStartedWeb.Startup", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_cloud_1_1_getting_started_web_1_1_startup.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.Mixed.OnPremise.GettingStartedWeb.Startup", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_web_1_1_startup.html", null ],

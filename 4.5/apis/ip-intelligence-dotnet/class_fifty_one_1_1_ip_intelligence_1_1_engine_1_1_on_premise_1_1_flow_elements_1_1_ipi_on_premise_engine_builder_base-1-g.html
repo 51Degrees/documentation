@@ -102,13 +102,15 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:af90c4b070b99aad12b32f9e0639bdda1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the performance profile to use when constructing the data set.  <br /></td></tr>
 <tr class="c-table__row memitem:affa4b21ec07868988caec526480fb482" id="r_affa4b21ec07868988caec526480fb482"><td class="c-table__cell">override&#160;<a class="el" href="#a67695e28bb8a5312452e28fc99979d79">IpiOnPremiseEngineBuilderBase</a>&lt;&#160;TEngine&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#affa4b21ec07868988caec526480fb482">SetConcurrency</a> (ushort concurrency)</td></tr>
 <tr class="c-table__row memdesc:affa4b21ec07868988caec526480fb482"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the expected number of concurrent operations using the engine.  <br /></td></tr>
+<tr class="c-table__row memitem:afc168536c80cc87f1bc86ead394422d2" id="r_afc168536c80cc87f1bc86ead394422d2"><td class="c-table__cell">override&#160;<a class="el" href="#a67695e28bb8a5312452e28fc99979d79">IpiOnPremiseEngineBuilderBase</a>&lt;&#160;TEngine&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#afc168536c80cc87f1bc86ead394422d2">SetCache</a> (CacheConfiguration cacheConfig)</td></tr>
+<tr class="c-table__row memdesc:afc168536c80cc87f1bc86ead394422d2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Not supported, because this engine cannot have a results cache.  <br /></td></tr>
+<tr class="c-table__row memitem:a4837bc92b831bb417eb3890473161229" id="r_a4837bc92b831bb417eb3890473161229"><td class="c-table__cell">override&#160;<a class="el" href="#a67695e28bb8a5312452e28fc99979d79">IpiOnPremiseEngineBuilderBase</a>&lt;&#160;TEngine&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a4837bc92b831bb417eb3890473161229">SetCacheSize</a> (int cacheSize)</td></tr>
+<tr class="c-table__row memdesc:a4837bc92b831bb417eb3890473161229"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Not supported, because this engine cannot have a results cache.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a1cba4129354f7cef94b74ffb45833af3" id="r_a1cba4129354f7cef94b74ffb45833af3"><td class="c-table__cell">override&#160;TEngine&#160;</td><td class="c-table__cell"><a class="el" href="#a1cba4129354f7cef94b74ffb45833af3">NewEngine</a> (List&lt; string &gt; properties)</td></tr>
 <tr class="c-table__row memdesc:a1cba4129354f7cef94b74ffb45833af3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Called by the 'BuildEngine' method to handle creation of the engine instance.  <br /></td></tr>
-<tr class="c-table__row memitem:a3b5a658d6592a54202b606e05d5bff4a" id="r_a3b5a658d6592a54202b606e05d5bff4a"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a3b5a658d6592a54202b606e05d5bff4a">ConfigureEngine</a> (TEngine engine)</td></tr>
-<tr class="c-table__row memdesc:a3b5a658d6592a54202b606e05d5bff4a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Configures the engine as the base class does, disposing of it if configuration fails.  <br /></td></tr>
 <tr class="c-table__row memitem:a5e09a8432bdab2359b829a1d723a82d9" id="r_a5e09a8432bdab2359b829a1d723a82d9"><td class="c-table__cell">TEngine&#160;</td><td class="c-table__cell"><a class="el" href="#a5e09a8432bdab2359b829a1d723a82d9">CreateEngine</a> (ILoggerFactory loggerFactory, Func&lt; IPipeline, FlowElementBase&lt; <a class="el" href="interface_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_1_1_i_ip_data_on_premise.html">IIpDataOnPremise</a>, IFiftyOneAspectPropertyMetaData &gt;, <a class="el" href="interface_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_1_1_i_ip_data_on_premise.html">IIpDataOnPremise</a> &gt; deviceDataFactory, string tempDataFilePath)</td></tr>
 <tr class="c-table__row memdesc:a5e09a8432bdab2359b829a1d723a82d9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Overridden in the implementing class to create a new instance of TEngine with the constructor parameters provided.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
@@ -119,44 +121,6 @@ override&#160;string&#160;</td><td class="c-table__cell"><b>DefaultDataDownloadT
 <tr class="c-table__row memdesc:a60c6538b4d61b4e5425e62f53d2c35a8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the default value for the 'Type' parameter that is passed to the 51Degrees Distributor service when checking for updated data files. <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
-<a id="a3b5a658d6592a54202b606e05d5bff4a" name="a3b5a658d6592a54202b606e05d5bff4a"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3b5a658d6592a54202b606e05d5bff4a">&#9670;&#160;</a></span>ConfigureEngine()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">override void FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngineBuilderBase&lt; TEngine &gt;.ConfigureEngine </td>
-          <td>(</td>
-          <td class="c-table__cell">TEngine</td>          <td class="c-table__cell"><span class="paramname"><em>engine</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-          </table>
-        </div>
-      </div>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="c-member__body">
-
-<p>Configures the engine as the base class does, disposing of it if configuration fails. </p>
-<p>By this point NewEngine(List&lt;string&gt;) has loaded the data file into the native engine, and a failed build never hands the engine to the caller, so nothing else could release that memory. The failure this guards against is IpiOnPremiseEngine.SetCache refusing a results cache for an engine that filters graphs. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">engine</td><td>The engine to configure. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a5e09a8432bdab2359b829a1d723a82d9" name="a5e09a8432bdab2359b829a1d723a82d9"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5e09a8432bdab2359b829a1d723a82d9">&#9670;&#160;</a></span>CreateEngine()</h2>
 
@@ -307,6 +271,76 @@ override&#160;string&#160;</td><td class="c-table__cell"><b>DefaultDataDownloadT
 
 </div>
 </div>
+<a id="afc168536c80cc87f1bc86ead394422d2" name="afc168536c80cc87f1bc86ead394422d2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afc168536c80cc87f1bc86ead394422d2">&#9670;&#160;</a></span>SetCache()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">override <a class="el" href="#a67695e28bb8a5312452e28fc99979d79">IpiOnPremiseEngineBuilderBase</a>&lt; TEngine &gt; FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngineBuilderBase&lt; TEngine &gt;.SetCache </td>
+          <td>(</td>
+          <td class="c-table__cell">CacheConfiguration</td>          <td class="c-table__cell"><span class="paramname"><em>cacheConfig</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Not supported, because this engine cannot have a results cache. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cacheConfig</td><td>Not used.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NotSupportedException</td><td>Always thrown.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4837bc92b831bb417eb3890473161229" name="a4837bc92b831bb417eb3890473161229"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4837bc92b831bb417eb3890473161229">&#9670;&#160;</a></span>SetCacheSize()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">override <a class="el" href="#a67695e28bb8a5312452e28fc99979d79">IpiOnPremiseEngineBuilderBase</a>&lt; TEngine &gt; FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngineBuilderBase&lt; TEngine &gt;.SetCacheSize </td>
+          <td>(</td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>cacheSize</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Not supported, because this engine cannot have a results cache. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cacheSize</td><td>Not used.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NotSupportedException</td><td>Always thrown.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="affa4b21ec07868988caec526480fb482" name="affa4b21ec07868988caec526480fb482"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#affa4b21ec07868988caec526480fb482">&#9670;&#160;</a></span>SetConcurrency()</h2>
 
@@ -335,7 +369,7 @@ override&#160;string&#160;</td><td class="c-table__cell"><b>DefaultDataDownloadT
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder</dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a25">OnPremise/Compare-Console/Program.cs</a>, <a class="el" href="_on_premise_2_metrics-_console_2_program_8cs-example.html#a33">OnPremise/Metrics-Console/Program.cs</a>, and <a class="el" href="_performance-_console_2_program_8cs-example.html#a3">Performance-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a26">OnPremise/Compare-Console/Program.cs</a>, <a class="el" href="_on_premise_2_metrics-_console_2_program_8cs-example.html#a33">OnPremise/Metrics-Console/Program.cs</a>, and <a class="el" href="_performance-_console_2_program_8cs-example.html#a3">Performance-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -397,7 +431,7 @@ override&#160;string&#160;</td><td class="c-table__cell"><b>DefaultDataDownloadT
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder</dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a24">OnPremise/Compare-Console/Program.cs</a>, <a class="el" href="_on_premise_2_getting_started-_console_2_program_8cs-example.html#a1">OnPremise/GettingStarted-Console/Program.cs</a>, <a class="el" href="_on_premise_2_location_analysis-_console_2_program_8cs-example.html#a9">OnPremise/LocationAnalysis-Console/Program.cs</a>, <a class="el" href="_on_premise_2_metadata-_console_2_program_8cs-example.html#a1">OnPremise/Metadata-Console/Program.cs</a>, <a class="el" href="_on_premise_2_metrics-_console_2_program_8cs-example.html#a32">OnPremise/Metrics-Console/Program.cs</a>, <a class="el" href="_on_premise_2_mixed_2_getting_started-_console_2_program_8cs-example.html#a1">OnPremise/Mixed/GettingStarted-Console/Program.cs</a>, and <a class="el" href="_performance-_console_2_program_8cs-example.html#a2">Performance-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a25">OnPremise/Compare-Console/Program.cs</a>, <a class="el" href="_on_premise_2_getting_started-_console_2_program_8cs-example.html#a1">OnPremise/GettingStarted-Console/Program.cs</a>, <a class="el" href="_on_premise_2_location_analysis-_console_2_program_8cs-example.html#a9">OnPremise/LocationAnalysis-Console/Program.cs</a>, <a class="el" href="_on_premise_2_metadata-_console_2_program_8cs-example.html#a1">OnPremise/Metadata-Console/Program.cs</a>, <a class="el" href="_on_premise_2_metrics-_console_2_program_8cs-example.html#a32">OnPremise/Metrics-Console/Program.cs</a>, <a class="el" href="_on_premise_2_mixed_2_getting_started-_console_2_program_8cs-example.html#a1">OnPremise/Mixed/GettingStarted-Console/Program.cs</a>, and <a class="el" href="_performance-_console_2_program_8cs-example.html#a2">Performance-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
