@@ -100,6 +100,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a4d8c4bb8f9672ae7d946e350e3ac4bf7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Indicates the type of connection being used.  <br /></td></tr>
 <tr class="c-table__row memitem:ac43a15a96a913a4af24835585f952a04" id="r_ac43a15a96a913a4af24835585f952a04"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ac43a15a96a913a4af24835585f952a04">getContinentCode2</a> ()</td></tr>
 <tr class="c-table__row memdesc:ac43a15a96a913a4af24835585f952a04"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The 2-character ISO 3166-1 continent code for the supplied location.  <br /></td></tr>
+<tr class="c-table__row memitem:adf0b7651a3f8979e61dca35818573bb2" id="r_adf0b7651a3f8979e61dca35818573bb2"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#adf0b7651a3f8979e61dca35818573bb2">getContinentGeoNameId</a> ()</td></tr>
+<tr class="c-table__row memdesc:adf0b7651a3f8979e61dca35818573bb2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The GeoNames identifier of the continent associated with the supplied location.  <br /></td></tr>
 <tr class="c-table__row memitem:a2690672a4d8ff8bb37116c39a5565e66" id="r_a2690672a4d8ff8bb37116c39a5565e66"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a2690672a4d8ff8bb37116c39a5565e66">getContinentName</a> ()</td></tr>
 <tr class="c-table__row memdesc:a2690672a4d8ff8bb37116c39a5565e66"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name of the continent the supplied location is in.  <br /></td></tr>
 <tr class="c-table__row memitem:a54299daf69c1a776bdf9ebc82656cc57" id="r_a54299daf69c1a776bdf9ebc82656cc57"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a54299daf69c1a776bdf9ebc82656cc57">getCountry</a> ()</td></tr>
@@ -112,8 +114,14 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a308b3a296b27db485708de0dd1202f67"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A list of countries in ISO 3166-1 alpha-2 country code format that overlap with the area likely associated with the provided evidence, weighted and ordered by each country's proportion of the area.  <br /></td></tr>
 <tr class="c-table__row memitem:a845167f695b814ee695631ba8f2bb762" id="r_a845167f695b814ee695631ba8f2bb762"><td class="c-table__cell">AspectPropertyValue&lt;&#160;List&lt;&#160;IWeightedValue&lt;&#160;String&#160;&gt;&#160;&gt;&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a845167f695b814ee695631ba8f2bb762">getCountryCodesPopulation</a> ()</td></tr>
 <tr class="c-table__row memdesc:a845167f695b814ee695631ba8f2bb762"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A list of countries in ISO 3166-1 alpha-2 country code format that overlap with the area likely associated with the provided evidence, weighted and ordered by each country's proportion of the total population within the area.  <br /></td></tr>
+<tr class="c-table__row memitem:a6ebc43b76f954ef77d3351b8859e03aa" id="r_a6ebc43b76f954ef77d3351b8859e03aa"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a6ebc43b76f954ef77d3351b8859e03aa">getCountryGeoNameId</a> ()</td></tr>
+<tr class="c-table__row memdesc:a6ebc43b76f954ef77d3351b8859e03aa"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The GeoNames identifier of the country associated with the supplied location.  <br /></td></tr>
+<tr class="c-table__row memitem:ab84e4f8d3a1d393d5659119b4d0b2af7" id="r_ab84e4f8d3a1d393d5659119b4d0b2af7"><td class="c-table__cell">AspectPropertyValue&lt;&#160;List&lt;&#160;IWeightedValue&lt;&#160;String&#160;&gt;&#160;&gt;&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ab84e4f8d3a1d393d5659119b4d0b2af7">getCountryGeoNamesGeographical</a> ()</td></tr>
+<tr class="c-table__row memdesc:ab84e4f8d3a1d393d5659119b4d0b2af7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A list of GeoNames country identifiers that overlap within the area associated in the provided evidence.  <br /></td></tr>
 <tr class="c-table__row memitem:a9ae18e25f767116db428cedb431a4f27" id="r_a9ae18e25f767116db428cedb431a4f27"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a9ae18e25f767116db428cedb431a4f27">getCounty</a> ()</td></tr>
 <tr class="c-table__row memdesc:a9ae18e25f767116db428cedb431a4f27"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name of the county that the supplied location is in.  <br /></td></tr>
+<tr class="c-table__row memitem:af1f41e81ea0bfa4990c526b0b6941f77" id="r_af1f41e81ea0bfa4990c526b0b6941f77"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#af1f41e81ea0bfa4990c526b0b6941f77">getCountyGeoNameId</a> ()</td></tr>
+<tr class="c-table__row memdesc:af1f41e81ea0bfa4990c526b0b6941f77"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The GeoNames identifier of the county, a second-level administrative subdivision (admin2) associated with the supplied location.  <br /></td></tr>
 <tr class="c-table__row memitem:ab8a2c399ee5de1cfbf2b89ec964ef3a2" id="r_ab8a2c399ee5de1cfbf2b89ec964ef3a2"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ab8a2c399ee5de1cfbf2b89ec964ef3a2">getCurrencyCode</a> ()</td></tr>
 <tr class="c-table__row memdesc:ab8a2c399ee5de1cfbf2b89ec964ef3a2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The Alpha-3 ISO 4217 code of the currency associated with the supplied location.  <br /></td></tr>
 <tr class="c-table__row memitem:a1804cee2ca1b5abe02750310ea3bacaf" id="r_a1804cee2ca1b5abe02750310ea3bacaf"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a1804cee2ca1b5abe02750310ea3bacaf">getDialCode</a> ()</td></tr>
@@ -170,12 +178,18 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a4e85e3906061a8011ea6470431f9ee19"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name of the geographical region that the supplied location is in.  <br /></td></tr>
 <tr class="c-table__row memitem:a84c267377a13419b1596e2b5e4149eb7" id="r_a84c267377a13419b1596e2b5e4149eb7"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a84c267377a13419b1596e2b5e4149eb7">getRegisteredCountry</a> ()</td></tr>
 <tr class="c-table__row memdesc:a84c267377a13419b1596e2b5e4149eb7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Country code of the registered range.  <br /></td></tr>
+<tr class="c-table__row memitem:aedb556359f44a883905a6f37503d4a0a" id="r_aedb556359f44a883905a6f37503d4a0a"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#aedb556359f44a883905a6f37503d4a0a">getRegisteredCountryGeoNameId</a> ()</td></tr>
+<tr class="c-table__row memdesc:aedb556359f44a883905a6f37503d4a0a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The GeoNames identifier of the country in which the IP address range is registered.  <br /></td></tr>
 <tr class="c-table__row memitem:a1ea3a8345e88790371136b088db968fa" id="r_a1ea3a8345e88790371136b088db968fa"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a1ea3a8345e88790371136b088db968fa">getRegisteredName</a> ()</td></tr>
 <tr class="c-table__row memdesc:a1ea3a8345e88790371136b088db968fa"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Name of the IP range.  <br /></td></tr>
 <tr class="c-table__row memitem:a1fa8c3f6a8803498112445e217e9d656" id="r_a1fa8c3f6a8803498112445e217e9d656"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a1fa8c3f6a8803498112445e217e9d656">getRegisteredOwner</a> ()</td></tr>
 <tr class="c-table__row memdesc:a1fa8c3f6a8803498112445e217e9d656"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Registered owner of the range.  <br /></td></tr>
 <tr class="c-table__row memitem:a0f1dba951c7226e547750816fc9ed853" id="r_a0f1dba951c7226e547750816fc9ed853"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a0f1dba951c7226e547750816fc9ed853">getState</a> ()</td></tr>
 <tr class="c-table__row memdesc:a0f1dba951c7226e547750816fc9ed853"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name of the state that the supplied location is in.  <br /></td></tr>
+<tr class="c-table__row memitem:a237c18197afb126adc24d75667357f3e" id="r_a237c18197afb126adc24d75667357f3e"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a237c18197afb126adc24d75667357f3e">getStateGeoNameId</a> ()</td></tr>
+<tr class="c-table__row memdesc:a237c18197afb126adc24d75667357f3e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The GeoNames database identifier for the state (first-level administrative subdivision, admin1) that the supplied location is in.  <br /></td></tr>
+<tr class="c-table__row memitem:abe6d5016b5d22de2298942908c2a1a77" id="r_abe6d5016b5d22de2298942908c2a1a77"><td class="c-table__cell">AspectPropertyValue&lt;&#160;List&lt;&#160;IWeightedValue&lt;&#160;String&#160;&gt;&#160;&gt;&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#abe6d5016b5d22de2298942908c2a1a77">getStateGeoNamesGeographical</a> ()</td></tr>
+<tr class="c-table__row memdesc:abe6d5016b5d22de2298942908c2a1a77"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A list of GeoNames state identifiers, first-level administrative subdivisions (admin1) that overlap within the area associated in the provided evidence.  <br /></td></tr>
 <tr class="c-table__row memitem:a8174c12aab773896d99658208b961cc8" id="r_a8174c12aab773896d99658208b961cc8"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a8174c12aab773896d99658208b961cc8">getSuburb</a> ()</td></tr>
 <tr class="c-table__row memdesc:a8174c12aab773896d99658208b961cc8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name of the suburb that the supplied location is in.  <br /></td></tr>
 <tr class="c-table__row memitem:ac5550a967df0f7b2f34405bbf2706648" id="r_ac5550a967df0f7b2f34405bbf2706648"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ac5550a967df0f7b2f34405bbf2706648">getTimeZoneIana</a> ()</td></tr>
@@ -184,6 +198,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ab389ffcaf47d32940c84795fa55fdfc9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The offset from UTC in minutes in the supplied location, at the time that the value is produced.  <br /></td></tr>
 <tr class="c-table__row memitem:a1d71eb917e8c588850e782fd930cfce6" id="r_a1d71eb917e8c588850e782fd930cfce6"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a1d71eb917e8c588850e782fd930cfce6">getTown</a> ()</td></tr>
 <tr class="c-table__row memdesc:a1d71eb917e8c588850e782fd930cfce6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name of the town that the supplied location is in.  <br /></td></tr>
+<tr class="c-table__row memitem:a2f113c28654ac7ac3f2f0069bf8da7a0" id="r_a2f113c28654ac7ac3f2f0069bf8da7a0"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a2f113c28654ac7ac3f2f0069bf8da7a0">getTownGeoNameId</a> ()</td></tr>
+<tr class="c-table__row memdesc:a2f113c28654ac7ac3f2f0069bf8da7a0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The GeoNames identifier of the town or populated place nearest to the supplied location.  <br /></td></tr>
 <tr class="c-table__row memitem:acfa5ebd97b398c1323168a80e360856a" id="r_acfa5ebd97b398c1323168a80e360856a"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#acfa5ebd97b398c1323168a80e360856a">getZipCode</a> ()</td></tr>
 <tr class="c-table__row memdesc:acfa5ebd97b398c1323168a80e360856a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The zip or postal code that the supplied location falls under.  <br /></td></tr>
 </table>
@@ -396,6 +412,31 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="adf0b7651a3f8979e61dca35818573bb2" name="adf0b7651a3f8979e61dca35818573bb2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adf0b7651a3f8979e61dca35818573bb2">&#9670;&#160;</a></span>getContinentGeoNameId()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">AspectPropertyValue&lt; String &gt; fiftyone.ipintelligence.shared.IPIntelligenceData.getContinentGeoNameId </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The GeoNames identifier of the continent associated with the supplied location. </p>
+
+<p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a08508164cf12ea603903f441bd693da2">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
+
+</div>
+</div>
 <a id="a2690672a4d8ff8bb37116c39a5565e66" name="a2690672a4d8ff8bb37116c39a5565e66"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2690672a4d8ff8bb37116c39a5565e66">&#9670;&#160;</a></span>getContinentName()</h2>
 
@@ -548,6 +589,57 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6ebc43b76f954ef77d3351b8859e03aa" name="a6ebc43b76f954ef77d3351b8859e03aa"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6ebc43b76f954ef77d3351b8859e03aa">&#9670;&#160;</a></span>getCountryGeoNameId()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">AspectPropertyValue&lt; String &gt; fiftyone.ipintelligence.shared.IPIntelligenceData.getCountryGeoNameId </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The GeoNames identifier of the country associated with the supplied location. </p>
+
+<p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#ae12547078158c9d72c812d9d6f7c6f0d">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
+
+</div>
+</div>
+<a id="ab84e4f8d3a1d393d5659119b4d0b2af7" name="ab84e4f8d3a1d393d5659119b4d0b2af7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab84e4f8d3a1d393d5659119b4d0b2af7">&#9670;&#160;</a></span>getCountryGeoNamesGeographical()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">AspectPropertyValue&lt; List&lt; IWeightedValue&lt; String &gt; &gt; &gt; fiftyone.ipintelligence.shared.IPIntelligenceData.getCountryGeoNamesGeographical </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>A list of GeoNames country identifiers that overlap within the area associated in the provided evidence. </p>
+<p>Results are weighted and ordered by each country's proportion of the overlapping area. Areas that cannot be resolved will not contribute to the resulting data. </p>
+
+<p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a3a770707e920dde29f4852755f9322b7">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
+
+</div>
+</div>
 <a id="a9ae18e25f767116db428cedb431a4f27" name="a9ae18e25f767116db428cedb431a4f27"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9ae18e25f767116db428cedb431a4f27">&#9670;&#160;</a></span>getCounty()</h2>
 
@@ -571,6 +663,31 @@ Public Member Functions</h2></td></tr>
 <p>In this case, a county is defined as an administrative sub-section of a country or state. </p>
 
 <p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#aeb493fbe25f590d55571a0db26902ea7">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
+
+</div>
+</div>
+<a id="af1f41e81ea0bfa4990c526b0b6941f77" name="af1f41e81ea0bfa4990c526b0b6941f77"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af1f41e81ea0bfa4990c526b0b6941f77">&#9670;&#160;</a></span>getCountyGeoNameId()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">AspectPropertyValue&lt; String &gt; fiftyone.ipintelligence.shared.IPIntelligenceData.getCountyGeoNameId </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The GeoNames identifier of the county, a second-level administrative subdivision (admin2) associated with the supplied location. </p>
+
+<p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a1e0dcb5f90c66d4226ab9c10fd9e63f5">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
 
 </div>
 </div>
@@ -1291,6 +1408,31 @@ Unknown   Unknown confidence results should be treated in the same way as Low an
 
 </div>
 </div>
+<a id="aedb556359f44a883905a6f37503d4a0a" name="aedb556359f44a883905a6f37503d4a0a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aedb556359f44a883905a6f37503d4a0a">&#9670;&#160;</a></span>getRegisteredCountryGeoNameId()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">AspectPropertyValue&lt; String &gt; fiftyone.ipintelligence.shared.IPIntelligenceData.getRegisteredCountryGeoNameId </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The GeoNames identifier of the country in which the IP address range is registered. </p>
+
+<p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a546c12d5565a227ecaf0bfab65632f4b">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
+
+</div>
+</div>
 <a id="a1ea3a8345e88790371136b088db968fa" name="a1ea3a8345e88790371136b088db968fa"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1ea3a8345e88790371136b088db968fa">&#9670;&#160;</a></span>getRegisteredName()</h2>
 
@@ -1364,6 +1506,57 @@ Unknown   Unknown confidence results should be treated in the same way as Low an
 <p>The name of the state that the supplied location is in. </p>
 
 <p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#aabd97487ab012760a7ae7b97e574e85f">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
+
+</div>
+</div>
+<a id="a237c18197afb126adc24d75667357f3e" name="a237c18197afb126adc24d75667357f3e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a237c18197afb126adc24d75667357f3e">&#9670;&#160;</a></span>getStateGeoNameId()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">AspectPropertyValue&lt; String &gt; fiftyone.ipintelligence.shared.IPIntelligenceData.getStateGeoNameId </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The GeoNames database identifier for the state (first-level administrative subdivision, admin1) that the supplied location is in. </p>
+
+<p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a49bc29875fb218e75bf69870c54d9894">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
+
+</div>
+</div>
+<a id="abe6d5016b5d22de2298942908c2a1a77" name="abe6d5016b5d22de2298942908c2a1a77"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#abe6d5016b5d22de2298942908c2a1a77">&#9670;&#160;</a></span>getStateGeoNamesGeographical()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">AspectPropertyValue&lt; List&lt; IWeightedValue&lt; String &gt; &gt; &gt; fiftyone.ipintelligence.shared.IPIntelligenceData.getStateGeoNamesGeographical </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>A list of GeoNames state identifiers, first-level administrative subdivisions (admin1) that overlap within the area associated in the provided evidence. </p>
+<p>Results are weighted and ordered by each state's proportion of the overlapping area. Areas that cannot be resolved to the state level will not contribute to the resulting data. </p>
+
+<p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a2ee6ebc647435887e885941b2f1e3f5c">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
 
 </div>
 </div>
@@ -1465,6 +1658,31 @@ Unknown   Unknown confidence results should be treated in the same way as Low an
 <p>The name of the town that the supplied location is in. </p>
 
 <p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a3ca7ac107fe8f4b9f2e382209ae294d3">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
+
+</div>
+</div>
+<a id="a2f113c28654ac7ac3f2f0069bf8da7a0" name="a2f113c28654ac7ac3f2f0069bf8da7a0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2f113c28654ac7ac3f2f0069bf8da7a0">&#9670;&#160;</a></span>getTownGeoNameId()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">AspectPropertyValue&lt; String &gt; fiftyone.ipintelligence.shared.IPIntelligenceData.getTownGeoNameId </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The GeoNames identifier of the town or populated place nearest to the supplied location. </p>
+
+<p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#abb6e4d26aa379dd86bf2bdc45a04d324">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
 
 </div>
 </div>
