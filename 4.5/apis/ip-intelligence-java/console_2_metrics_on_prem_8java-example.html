@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_metr
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.core.data.FlowData;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.core.flowelements.Pipeline;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.Constants;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.fiftyone.data.CloseableIterable;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.fiftyone.data.ComponentMetaData;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.fiftyone.data.ProfileMetaData;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.fiftyone.data.ValueMetaData;</div>
@@ -407,10 +408,23 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_metr
 <div class="c-code__line">                                 <span class="c-code__keywordtype">int</span> maxRanges) <span class="c-code__keywordflow">throws</span> Exception {</div>
 <div class="c-code__line">        <span class="c-code__keywordtype">int</span> added = 0;</div>
 <div class="c-code__line">        <span class="c-code__comment">// Find the Network component which contains the range properties.</span></div>
+<div class="c-code__line">        <span class="c-code__comment">//</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// A try-with-resource block MUST be used for the collections of</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// metadata returned by the engine. Each one holds a reference to the</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// engine&#39;s data set until it is closed. If it is left open, closing</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// the pipeline cannot free the data set, and with the max performance</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// profile that is the whole data file held in memory until the</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// garbage collector happens to finalize the collection.</span></div>
 <div class="c-code__line">        ComponentMetaData network = <span class="c-code__keyword">null</span>;</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">for</span> (ComponentMetaData component : engine.getComponents()) {</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (<span class="c-code__stringliteral">&quot;Network&quot;</span>.equalsIgnoreCase(component.getName())) {</div>
-<div class="c-code__line">                network = component;</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">try</span> (CloseableIterable&lt;ComponentMetaData&gt; components =</div>
+<div class="c-code__line">                     engine.getComponents()) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">for</span> (ComponentMetaData component : components) {</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (network == <span class="c-code__keyword">null</span> &amp;&amp;</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;Network&quot;</span>.equalsIgnoreCase(component.getName())) {</div>
+<div class="c-code__line">                    network = component;</div>
+<div class="c-code__line">                } <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">                    component.close();</div>
+<div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (network == <span class="c-code__keyword">null</span>) {</div>
@@ -418,25 +432,31 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_metr
 <div class="c-code__line">                    <span class="c-code__stringliteral">&quot;An enterprise data file is needed for this example.&quot;</span>);</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">return</span> 0;</div>
 <div class="c-code__line">        }</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">for</span> (ProfileMetaData profile : engine.getProfiles()) {</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">try</span> {</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (network.equals(profile.getComponent()) &amp;&amp;</div>
-<div class="c-code__line">                        isRegisteredCountryValid(profile)) {</div>
-<div class="c-code__line">                    String start = getValue(profile, <span class="c-code__stringliteral">&quot;IpRangeStart&quot;</span>);</div>
-<div class="c-code__line">                    String end = getValue(profile, <span class="c-code__stringliteral">&quot;IpRangeEnd&quot;</span>);</div>
-<div class="c-code__line">                    <span class="c-code__keywordflow">if</span> (start != <span class="c-code__keyword">null</span> &amp;&amp; end != <span class="c-code__keyword">null</span>) {</div>
-<div class="c-code__line">                        String[] range = <span class="c-code__keyword">new</span> String[]{start, end};</div>
-<div class="c-code__line">                        <span class="c-code__keywordflow">if</span> (condition == <span class="c-code__keyword">null</span> || condition.test(range)) {</div>
-<div class="c-code__line">                            ranges.put(range);</div>
-<div class="c-code__line">                            added++;</div>
-<div class="c-code__line">                            <span class="c-code__keywordflow">if</span> (maxRanges &gt; 0 &amp;&amp; added &gt;= maxRanges) {</div>
-<div class="c-code__line">                                <span class="c-code__keywordflow">break</span>;</div>
+<div class="c-code__line">        <span class="c-code__comment">// The Network component is kept to compare each profile against, so</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// it is closed with the collection of profiles once that is done.</span></div>
+<div class="c-code__line">        <span class="c-code__keywordflow">try</span> (ComponentMetaData networkComponent = network;</div>
+<div class="c-code__line">             CloseableIterable&lt;ProfileMetaData&gt; profiles =</div>
+<div class="c-code__line">                     engine.getProfiles()) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">for</span> (ProfileMetaData profile : profiles) {</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">try</span> (ComponentMetaData component = profile.getComponent()) {</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">if</span> (networkComponent.equals(component) &amp;&amp;</div>
+<div class="c-code__line">                            isRegisteredCountryValid(profile)) {</div>
+<div class="c-code__line">                        String start = getValue(profile, <span class="c-code__stringliteral">&quot;IpRangeStart&quot;</span>);</div>
+<div class="c-code__line">                        String end = getValue(profile, <span class="c-code__stringliteral">&quot;IpRangeEnd&quot;</span>);</div>
+<div class="c-code__line">                        <span class="c-code__keywordflow">if</span> (start != <span class="c-code__keyword">null</span> &amp;&amp; end != <span class="c-code__keyword">null</span>) {</div>
+<div class="c-code__line">                            String[] range = <span class="c-code__keyword">new</span> String[]{start, end};</div>
+<div class="c-code__line">                            <span class="c-code__keywordflow">if</span> (condition == <span class="c-code__keyword">null</span> || condition.test(range)) {</div>
+<div class="c-code__line">                                ranges.put(range);</div>
+<div class="c-code__line">                                added++;</div>
+<div class="c-code__line">                                <span class="c-code__keywordflow">if</span> (maxRanges &gt; 0 &amp;&amp; added &gt;= maxRanges) {</div>
+<div class="c-code__line">                                    <span class="c-code__keywordflow">break</span>;</div>
+<div class="c-code__line">                                }</div>
 <div class="c-code__line">                            }</div>
 <div class="c-code__line">                        }</div>
 <div class="c-code__line">                    }</div>
+<div class="c-code__line">                } <span class="c-code__keywordflow">finally</span> {</div>
+<div class="c-code__line">                    profile.close();</div>
 <div class="c-code__line">                }</div>
-<div class="c-code__line">            } <span class="c-code__keywordflow">finally</span> {</div>
-<div class="c-code__line">                profile.close();</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> added;</div>
@@ -454,12 +474,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_metr
 <div class="c-code__line"></div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> String getValue(ProfileMetaData profile, String name)</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">throws</span> Exception {</div>
+<div class="c-code__line">        String result = <span class="c-code__keyword">null</span>;</div>
+<div class="c-code__line">        <span class="c-code__comment">// Every value is closed, not only the first, as each one wraps a</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// native object of its own.</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">for</span> (ValueMetaData value : profile.getValues(name)) {</div>
-<div class="c-code__line">            String result = value.getName();</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (result == <span class="c-code__keyword">null</span>) {</div>
+<div class="c-code__line">                result = value.getName();</div>
+<div class="c-code__line">            }</div>
 <div class="c-code__line">            value.close();</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">return</span> result;</div>
 <div class="c-code__line">        }</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">null</span>;</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> result;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"></div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> Map&lt;Key, Metric&gt; processRanges(</div>
@@ -625,9 +649,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_metr
 <div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_builder_html_a88caae5c89709f1b8726d8a878477e84"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_builder.html#a88caae5c89709f1b8726d8a878477e84">fiftyone.ipintelligence.IPIntelligenceOnPremisePipelineBuilder.build</a></div><div class="ttdeci">Pipeline build()</div><div class="ttdoc">Build and return a pipeline that can perform IP Intelligence.</div><div class="ttdef"><b>Definition</b> IPIntelligenceOnPremisePipelineBuilder.java:325</div></div>
 <div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_builder_html_aa6bf6401f31e617a21d6f801330f153a"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_builder.html#aa6bf6401f31e617a21d6f801330f153a">fiftyone.ipintelligence.IPIntelligenceOnPremisePipelineBuilder.setShareUsage</a></div><div class="ttdeci">IPIntelligenceOnPremisePipelineBuilder setShareUsage(boolean enabled)</div><div class="ttdoc">Set share usage enabled/disabled.</div><div class="ttdef"><b>Definition</b> IPIntelligenceOnPremisePipelineBuilder.java:112</div></div>
 <div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_builder_html_ab30a53dd8247ec1467e5a5cfc0ab8114"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_builder.html#ab30a53dd8247ec1467e5a5cfc0ab8114">fiftyone.ipintelligence.IPIntelligenceOnPremisePipelineBuilder.setPerformanceProfile</a></div><div class="ttdeci">IPIntelligenceOnPremisePipelineBuilder setPerformanceProfile(Constants.PerformanceProfiles profile)</div><div class="ttdoc">Set the performance profile for the IP Intelligence engine.</div><div class="ttdef"><b>Definition</b> IPIntelligenceOnPremisePipelineBuilder.java:247</div></div>
-<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_metrics_on_prem_html_a0f625403813417f392335531c4e0acc6"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_metrics_on_prem.html#a0f625403813417f392335531c4e0acc6">fiftyone.ipintelligence.examples.console.MetricsOnPrem.DEFAULT_OUTPUT_FILE</a></div><div class="ttdeci">static final String DEFAULT_OUTPUT_FILE</div><div class="ttdoc">Default name of the output file written to the working directory.</div><div class="ttdef"><b>Definition</b> MetricsOnPrem.java:115</div></div>
-<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_metrics_on_prem_html_a730d7262c3d16b2d7b4a77daa4f512d0"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_metrics_on_prem.html#a730d7262c3d16b2d7b4a77daa4f512d0">fiftyone.ipintelligence.examples.console.MetricsOnPrem.run</a></div><div class="ttdeci">static void run(String dataFile, double samplePercentage, int maxRanges, Predicate&lt; String[]&gt; condition, PrintWriter output)</div><div class="ttdoc">Run the example.</div><div class="ttdef"><b>Definition</b> MetricsOnPrem.java:318</div></div>
-<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_metrics_on_prem_html_ac33f2cac0d2668f365bb878c3009a259"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_metrics_on_prem.html#ac33f2cac0d2668f365bb878c3009a259">fiftyone.ipintelligence.examples.console.MetricsOnPrem.DEFAULT_SAMPLE_PERCENTAGE</a></div><div class="ttdeci">static final double DEFAULT_SAMPLE_PERCENTAGE</div><div class="ttdoc">The percentage of registered IP addresses to randomly include in the metrics sample.</div><div class="ttdef"><b>Definition</b> MetricsOnPrem.java:110</div></div>
+<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_metrics_on_prem_html_a0f625403813417f392335531c4e0acc6"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_metrics_on_prem.html#a0f625403813417f392335531c4e0acc6">fiftyone.ipintelligence.examples.console.MetricsOnPrem.DEFAULT_OUTPUT_FILE</a></div><div class="ttdeci">static final String DEFAULT_OUTPUT_FILE</div><div class="ttdoc">Default name of the output file written to the working directory.</div><div class="ttdef"><b>Definition</b> MetricsOnPrem.java:116</div></div>
+<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_metrics_on_prem_html_a730d7262c3d16b2d7b4a77daa4f512d0"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_metrics_on_prem.html#a730d7262c3d16b2d7b4a77daa4f512d0">fiftyone.ipintelligence.examples.console.MetricsOnPrem.run</a></div><div class="ttdeci">static void run(String dataFile, double samplePercentage, int maxRanges, Predicate&lt; String[]&gt; condition, PrintWriter output)</div><div class="ttdoc">Run the example.</div><div class="ttdef"><b>Definition</b> MetricsOnPrem.java:319</div></div>
+<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_metrics_on_prem_html_ac33f2cac0d2668f365bb878c3009a259"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_metrics_on_prem.html#ac33f2cac0d2668f365bb878c3009a259">fiftyone.ipintelligence.examples.console.MetricsOnPrem.DEFAULT_SAMPLE_PERCENTAGE</a></div><div class="ttdeci">static final double DEFAULT_SAMPLE_PERCENTAGE</div><div class="ttdoc">The percentage of registered IP addresses to randomly include in the metrics sample.</div><div class="ttdef"><b>Definition</b> MetricsOnPrem.java:111</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->
