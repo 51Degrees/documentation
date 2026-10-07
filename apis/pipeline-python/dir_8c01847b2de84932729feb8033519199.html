@@ -127,6 +127,27 @@ Files</h2></td></tr>
 <li>A <code>Cloud Request Engine</code> which calls the 51Degrees cloud service to fetch properties and metadata about them based on a provided resource key. Get a resource key at <a href="https://configure.51degrees.com/?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=pipeline-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-readme.md&amp;utm_term=this-package-fiftyone_pipeline_cloudrequestengine">https://configure.51degrees.com/?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=pipeline-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-readme.md&amp;utm_term=this-package-fiftyone_pipeline_cloudrequestengine</a></li>
 <li>A <code>Cloud Engine</code> template which reads data from the Cloud Request Engine.</li>
 </ul>
+<h1>Credentials</h1>
+<p>The engine authenticates with a resource key, a licence key, or both, set as <code>resource_key</code> and <code>license_key</code> in its settings. Which one is set decides whether <code>requested_properties</code>, the list of fully qualified property names to ask for, is also needed:</p>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell"><code>resource_key</code>  </td><td class="c-table__cell"><code>license_key</code>  </td><td class="c-table__cell"><code>requested_properties</code>  </td><td class="c-table__cell">Accepted  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">Yes  </td><td class="c-table__cell">No  </td><td class="c-table__cell">No  </td><td class="c-table__cell">Yes. The resource key states which properties it carries.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">Yes  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">No  </td><td class="c-table__cell">Yes. The licence key adds the products it grants.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">No  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">Yes. A licence key names no properties, so the list says which are wanted.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">No  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">No  </td><td class="c-table__cell">No. The service answers 400 to every such request.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">Yes  </td><td class="c-table__cell">Either  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">No. The service ignores the list while a resource key is present.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">No  </td><td class="c-table__cell">No  </td><td class="c-table__cell">Either  </td><td class="c-table__cell">No. There is nothing to authenticate with.  </td></tr>
+</table>
+<p>A combination that is not accepted raises <code>ValueError</code> when the engine is built, so a deployment sees one configuration error rather than a failure on every request. A value that is empty or only whitespace counts as absent, and each value is trimmed, so a key read from an environment variable with a trailing newline still works.</p>
+<p>A resource key is public by design, because it travels to the browser in a script URL. A caller that runs only on the server should use a licence key and name the properties it wants, so the credential stays on the server and each answer carries only what that caller needs. A licence key is sent in the body of every request, never in a URL. Where a request named properties and the answer left some out, the engine warns once that they are not covered by the licence key; the properties that came back are usable as normal.</p>
+<p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/pipeline-elements/cloud-request-engine.md#credentials">Credentials section of the cloud request engine specification</a> and the rules in <a href="src/fiftyone_pipeline_cloudrequestengine/cloudrequestengine.py"><code>cloudrequestengine.py</code></a>.</p>
 <h1>Pointing the engine at another host</h1>
 <p>The engine calls <code><a href="https://cloud.51degrees.com/api/v4/">https://cloud.51degrees.com/api/v4/</a></code> unless told otherwise. Set the <code>FOD_CLOUD_API_URL</code> environment variable, or pass <code>cloud_endpoint</code> in the engine settings, to the API base of another host including the <code>/api/v4/</code> segment. A host other than cloud.51degrees.com would be used to (a) use an on premise web server, or (b) use a privately hosted version of the 51Degrees cloud for performance reasons. This is the private hosting option of the cloud service, and both run the same service, so code written against one works unchanged against the other.</p>
 <p>It is used by the cloud versions of the following 51Degrees engines:</p>

@@ -179,6 +179,9 @@ var annotated =
       [ "test_core", "namespacetests_1_1test__core.html", [
         [ "CoreTests", "classtests_1_1test__core_1_1_core_tests.html", "classtests_1_1test__core_1_1_core_tests" ]
       ] ],
+      [ "test_credentials", "namespacetests_1_1test__credentials.html", [
+        [ "TestCredentials", "classtests_1_1test__credentials_1_1_test_credentials.html", "classtests_1_1test__credentials_1_1_test_credentials" ]
+      ] ],
       [ "test_engines", "namespacetests_1_1test__engines.html", [
         [ "TestCache", "classtests_1_1test__engines_1_1_test_cache.html", "classtests_1_1test__engines_1_1_test_cache" ],
         [ "ExampleAspectEngine", "classtests_1_1test__engines_1_1_example_aspect_engine.html", "classtests_1_1test__engines_1_1_example_aspect_engine" ],
@@ -203,6 +206,9 @@ var annotated =
       [ "test_javascriptbuilder_variables", "namespacetests_1_1test__javascriptbuilder__variables.html", [
         [ "_Captured", "classtests_1_1test__javascriptbuilder__variables_1_1___captured.html", "classtests_1_1test__javascriptbuilder__variables_1_1___captured" ],
         [ "JavaScriptBuilderVariablesTests", "classtests_1_1test__javascriptbuilder__variables_1_1_java_script_builder_variables_tests.html", "classtests_1_1test__javascriptbuilder__variables_1_1_java_script_builder_variables_tests" ]
+      ] ],
+      [ "test_licensekey_live", "namespacetests_1_1test__licensekey__live.html", [
+        [ "LicenseKeyLiveTests", "classtests_1_1test__licensekey__live_1_1_license_key_live_tests.html", "classtests_1_1test__licensekey__live_1_1_license_key_live_tests" ]
       ] ],
       [ "test_old_config_properties_mappinng", "namespacetests_1_1test__old__config__properties__mappinng.html", [
         [ "OldConfigPropertiesMappingTest", "classtests_1_1test__old__config__properties__mappinng_1_1_old_config_properties_mapping_test.html", "classtests_1_1test__old__config__properties__mappinng_1_1_old_config_properties_mapping_test" ]

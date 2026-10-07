@@ -117,6 +117,12 @@ Collaboration diagram for fiftyone_pipeline_cloudrequestengine.cloudrequestengin
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a6319bbe40ffde99663448ed1dc1d5c5d" id="r_a6319bbe40ffde99663448ed1dc1d5c5d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6319bbe40ffde99663448ed1dc1d5c5d">__init__</a> (self, settings={})</td></tr>
 <tr class="c-table__row memdesc:a6319bbe40ffde99663448ed1dc1d5c5d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for <a class="el" href="classfiftyone__pipeline__cloudrequestengine_1_1cloudrequestengine_1_1_cloud_request_engine.html">CloudRequestEngine</a>.  <br /></td></tr>
+<tr class="c-table__row memitem:a77250fe976901665813516aeb4c72340" id="r_a77250fe976901665813516aeb4c72340"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a77250fe976901665813516aeb4c72340">add_requested_properties</a> (self, names)</td></tr>
+<tr class="c-table__row memdesc:a77250fe976901665813516aeb4c72340"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add to the properties each request asks for, after the engine is built.  <br /></td></tr>
+<tr class="c-table__row memitem:aea634e6f7e9546b72104cc0ebe28489d" id="r_aea634e6f7e9546b72104cc0ebe28489d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aea634e6f7e9546b72104cc0ebe28489d">check_credentials</a> (self)</td></tr>
+<tr class="c-table__row memdesc:aea634e6f7e9546b72104cc0ebe28489d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Refuse a combination of resource key, licence key and requested properties that the cloud service would refuse on every request, so a deployment sees one configuration error when the engine is built rather than a failure on every request it serves.  <br /></td></tr>
+<tr class="c-table__row memitem:a03813c96b99cf0a6313d458605dd1072" id="r_a03813c96b99cf0a6313d458605dd1072"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a03813c96b99cf0a6313d458605dd1072">get_credentials</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a03813c96b99cf0a6313d458605dd1072"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The credentials to send with a request, as the keys the cloud service reads them from.  <br /></td></tr>
 <tr class="c-table__row memitem:a929fe52f5dca61ab31eb3f2fa78e3461" id="r_a929fe52f5dca61ab31eb3f2fa78e3461"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a929fe52f5dca61ab31eb3f2fa78e3461">flow_element_properties</a> (self)</td></tr>
 <tr class="c-table__row memitem:a55bfcd0d79fa83840923204d0580c89d" id="r_a55bfcd0d79fa83840923204d0580c89d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a55bfcd0d79fa83840923204d0580c89d">evidence_keys</a> (self)</td></tr>
 <tr class="c-table__row memitem:a772f4358872ac6297220ca6065852bce" id="r_a772f4358872ac6297220ca6065852bce"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a772f4358872ac6297220ca6065852bce">get_evidence_keys</a> (self)</td></tr>
@@ -131,6 +137,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ae521b889bb21b693cb18b2e0845ce9e4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">@type url: string  <br /></td></tr>
 <tr class="c-table__row memitem:a7991782fa963dccecc1a72f1ae123b90" id="r_a7991782fa963dccecc1a72f1ae123b90"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7991782fa963dccecc1a72f1ae123b90">process_internal</a> (self, flowdata)</td></tr>
 <tr class="c-table__row memdesc:a7991782fa963dccecc1a72f1ae123b90"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processing function for the <a class="el" href="classfiftyone__pipeline__cloudrequestengine_1_1cloudrequestengine_1_1_cloud_request_engine.html">CloudRequestEngine</a> Makes a request to the cloud service with the supplied resource key and evidence and returns a JSON object that is then parsed by cloud engines placed later in the pipeline.  <br /></td></tr>
+<tr class="c-table__row memitem:ab2e27371d745eb5931e95d3c3ac9fbaf" id="r_ab2e27371d745eb5931e95d3c3ac9fbaf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab2e27371d745eb5931e95d3c3ac9fbaf">report_properties_not_covered</a> (self, result)</td></tr>
+<tr class="c-table__row memdesc:ab2e27371d745eb5931e95d3c3ac9fbaf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Compare the properties a request asked for with the ones its answer carries, and warn once about any it left out.  <br /></td></tr>
 <tr class="c-table__row memitem:a3746b6392cfd2aeb46c17935ef44ab14" id="r_a3746b6392cfd2aeb46c17935ef44ab14"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3746b6392cfd2aeb46c17935ef44ab14">get_content</a> (self, flowData)</td></tr>
 <tr class="c-table__row memdesc:a3746b6392cfd2aeb46c17935ef44ab14"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Generate the Content to send in the POST request.  <br /></td></tr>
 <tr class="c-table__row memitem:a3366e9cb929501f9626a85118ac8dbd3" id="r_a3366e9cb929501f9626a85118ac8dbd3"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3366e9cb929501f9626a85118ac8dbd3">add_query_data</a> (self, query_data, all_evidence, evidence)</td></tr>
@@ -165,9 +173,19 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a7a8ee50d64418ed21fba58d137071ac7 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_a7a8ee50d64418ed21fba58d137071ac7"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a7a8ee50d64418ed21fba58d137071ac7">get_properties</a> (self)</td></tr>
 <tr class="c-table__row memdesc:a7a8ee50d64418ed21fba58d137071ac7 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#aab48c05219b1384dd62c6698c15d12d1">FlowElement.properties</a> of a <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a355b30f8005740ac2a428eb0277c307e" id="r_a355b30f8005740ac2a428eb0277c307e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a355b30f8005740ac2a428eb0277c307e">setting_text</a> (settings, name)</td></tr>
+<tr class="c-table__row memdesc:a355b30f8005740ac2a428eb0277c307e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A setting as trimmed text, or an empty string when it is missing, None or only whitespace.  <br /></td></tr>
+<tr class="c-table__row memitem:a388b2d1b1a37c00597d8301571f30b7d" id="r_a388b2d1b1a37c00597d8301571f30b7d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a388b2d1b1a37c00597d8301571f30b7d">setting_names</a> (settings, name)</td></tr>
+<tr class="c-table__row memdesc:a388b2d1b1a37c00597d8301571f30b7d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A setting holding property names, as a list of trimmed, non-empty, lower-cased names.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="c-table__row memitem:a70ebe2737467f5641c976da04ec8ed29" id="r_a70ebe2737467f5641c976da04ec8ed29"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a70ebe2737467f5641c976da04ec8ed29">resource_key</a> = settings[&quot;resource_key&quot;]</td></tr>
+<tr class="c-table__row memitem:a70ebe2737467f5641c976da04ec8ed29" id="r_a70ebe2737467f5641c976da04ec8ed29"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a70ebe2737467f5641c976da04ec8ed29">resource_key</a> = self.setting_text(settings, &quot;resource_key&quot;)</td></tr>
+<tr class="c-table__row memitem:ad72addc2dfdaa80adb42be92bcf87c01" id="r_ad72addc2dfdaa80adb42be92bcf87c01"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#ad72addc2dfdaa80adb42be92bcf87c01">license_key</a> = self.setting_text(settings, &quot;license_key&quot;)</td></tr>
+<tr class="c-table__row memitem:a03a4a49644a73a042077615e6fae5861" id="r_a03a4a49644a73a042077615e6fae5861"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a03a4a49644a73a042077615e6fae5861">requested_properties</a></td></tr>
+<tr class="c-table__row memitem:a386929d796d84b74e5d39a01680305dc" id="r_a386929d796d84b74e5d39a01680305dc"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a386929d796d84b74e5d39a01680305dc">reported_not_covered</a> = set()</td></tr>
 <tr class="c-table__row memitem:a709610fbe537f961a73818fb2e9ee148" id="r_a709610fbe537f961a73818fb2e9ee148"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a709610fbe537f961a73818fb2e9ee148">baseURL</a> = settings[&quot;cloud_endpoint&quot;]</td></tr>
 <tr class="c-table__row memitem:a68c883e92c639374db9029e8a2f5bfcc" id="r_a68c883e92c639374db9029e8a2f5bfcc"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a68c883e92c639374db9029e8a2f5bfcc">http_client</a> = settings[&quot;http_client&quot;]</td></tr>
 <tr class="c-table__row memitem:a7d31e7bdab27d8c1e11440e83d3165e6" id="r_a7d31e7bdab27d8c1e11440e83d3165e6"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7d31e7bdab27d8c1e11440e83d3165e6">cloud_request_origin</a> = settings[&quot;cloud_request_origin&quot;]</td></tr>
@@ -214,10 +232,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Constructor for <a class="el" href="classfiftyone__pipeline__cloudrequestengine_1_1cloudrequestengine_1_1_cloud_request_engine.html">CloudRequestEngine</a>. </p>
 <p>@type settings: dict </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">settings</td><td>Settings should contain a resource_key and optionally 1) a cloud_endpoint to overwrite the default baseurl 2) an cloud_request_origin to use when making requests </td></tr>
+    <tr><td class="paramname">settings</td><td>Settings should contain a resource_key or a license_key, and optionally 1) requested_properties, the fully qualified names of the properties to ask for, as a list or a comma separated string. Required with a license_key alone and refused with a resource_key, because the cloud service ignores the list whenever a resource key is present 2) a cloud_endpoint to overwrite the default baseurl 3) an cloud_request_origin to use when making requests</td></tr>
   </table>
   </dd>
 </dl>
+<p>See the Credentials section of the cloud request engine specification for the combinations that are accepted: <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/pipeline-elements/cloud-request-engine.md#credentials">https://github.com/51Degrees/specifications/blob/main/pipeline-specification/pipeline-elements/cloud-request-engine.md#credentials</a> </p>
 
 </div>
 </div>
@@ -264,6 +283,63 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a77250fe976901665813516aeb4c72340" name="a77250fe976901665813516aeb4c72340"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a77250fe976901665813516aeb4c72340">&#9670;&#160;</a></span>add_requested_properties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.add_requested_properties </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>names</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Add to the properties each request asks for, after the engine is built. </p>
+<p>The names are trimmed and lower-cased as the constructor does, so a name given in the case the documentation uses still matches the answer, and the credential rules are checked again, because a list only has meaning on a licence key alone and the constructor's check cannot see a list added later.</p>
+<p>@type names: list or string </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">names</td><td>the names to add, as a list or one comma separated string, each as "section.property" </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aea634e6f7e9546b72104cc0ebe28489d" name="aea634e6f7e9546b72104cc0ebe28489d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aea634e6f7e9546b72104cc0ebe28489d">&#9670;&#160;</a></span>check_credentials()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.check_credentials </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Refuse a combination of resource key, licence key and requested properties that the cloud service would refuse on every request, so a deployment sees one configuration error when the engine is built rather than a failure on every request it serves. </p>
 
 </div>
 </div>
@@ -342,6 +418,31 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Evidence Dictionary </dd></dl>
+
+</div>
+</div>
+<a id="a03813c96b99cf0a6313d458605dd1072" name="a03813c96b99cf0a6313d458605dd1072"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a03813c96b99cf0a6313d458605dd1072">&#9670;&#160;</a></span>get_credentials()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.get_credentials </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The credentials to send with a request, as the keys the cloud service reads them from. </p>
+<p>A key that is not set is left out.</p>
+<p>@rtype: dict </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns the credentials to send </dd></dl>
 
 </div>
 </div>
@@ -577,6 +678,112 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="ab2e27371d745eb5931e95d3c3ac9fbaf" name="ab2e27371d745eb5931e95d3c3ac9fbaf"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab2e27371d745eb5931e95d3c3ac9fbaf">&#9670;&#160;</a></span>report_properties_not_covered()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.report_properties_not_covered </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>result</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Compare the properties a request asked for with the ones its answer carries, and warn once about any it left out. </p>
+<p>The cloud service drops a property the licence key does not cover without naming it, whenever the request also asked for a property the key does cover, so the engine has to notice the difference itself. A property that is present but null counts as answered, because it carries a nullreason beside it saying why it has no value on this request, which is a different matter from entitlement. The answer cannot change while the key and the list stay the same, so each distinct list is reported once.</p>
+<p>@type result: string </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>the JSON text the cloud service answered with </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a388b2d1b1a37c00597d8301571f30b7d" name="a388b2d1b1a37c00597d8301571f30b7d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a388b2d1b1a37c00597d8301571f30b7d">&#9670;&#160;</a></span>setting_names()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.setting_names </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>settings</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>A setting holding property names, as a list of trimmed, non-empty, lower-cased names. </p>
+<p>The setting may be a list of names or one comma separated string, and a missing setting gives an empty list.</p>
+<p>The names are lower-cased because the cloud service lower-cases property names in its answer, so "Device.IsMobile" comes back as "ismobile" under "device". </p>
+
+</div>
+</div>
+<a id="a355b30f8005740ac2a428eb0277c307e" name="a355b30f8005740ac2a428eb0277c307e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a355b30f8005740ac2a428eb0277c307e">&#9670;&#160;</a></span>setting_text()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.setting_text </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>settings</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>A setting as trimmed text, or an empty string when it is missing, None or only whitespace. </p>
+
+</div>
+</div>
 <a id="adfb184d9e2ba362fb008b22bc8f2b8f5" name="adfb184d9e2ba362fb008b22bc8f2b8f5"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#adfb184d9e2ba362fb008b22bc8f2b8f5">&#9670;&#160;</a></span>validate_response()</h2>
 
@@ -689,6 +896,62 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="ad72addc2dfdaa80adb42be92bcf87c01" name="ad72addc2dfdaa80adb42be92bcf87c01"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad72addc2dfdaa80adb42be92bcf87c01">&#9670;&#160;</a></span>license_key</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.license_key = self.setting_text(settings, &quot;license_key&quot;)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a386929d796d84b74e5d39a01680305dc" name="a386929d796d84b74e5d39a01680305dc"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a386929d796d84b74e5d39a01680305dc">&#9670;&#160;</a></span>reported_not_covered</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.reported_not_covered = set()</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a03a4a49644a73a042077615e6fae5861" name="a03a4a49644a73a042077615e6fae5861"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a03a4a49644a73a042077615e6fae5861">&#9670;&#160;</a></span>requested_properties</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.requested_properties</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=  self.setting_names(</div>
+<div class="c-code__line">            settings, <span class="c-code__stringliteral">&quot;requested_properties&quot;</span>)</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a70ebe2737467f5641c976da04ec8ed29" name="a70ebe2737467f5641c976da04ec8ed29"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a70ebe2737467f5641c976da04ec8ed29">&#9670;&#160;</a></span>resource_key</h2>
 
@@ -698,7 +961,7 @@ Additional Inherited Members</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.resource_key = settings[&quot;resource_key&quot;]</td>
+              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.resource_key = self.setting_text(settings, &quot;resource_key&quot;)</td>
             </tr>
           </table>
         </div>
