@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dir_8c01847b2d
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-subdirs" class="g-docs__section-heading"><a id="subdirs" name="subdirs"></a>
 Directories</h2></td></tr>
+<tr class="c-table__row memitem:examples" id="r_examples"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_990954d5b18c41b68579d5c114eefad5.html">examples</a></td></tr>
 <tr class="c-table__row memitem:src" id="r_src"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_5ba0df43a2fab1694c5646f073101cab.html">src</a></td></tr>
 <tr class="c-table__row memitem:tests" id="r_tests"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_6a8ff35c9008c57d74872cdaa7df6f4c.html">tests</a></td></tr>
 </table><table class="c-table c-table--directory">
@@ -150,6 +151,9 @@ Files</h2></td></tr>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/pipeline-elements/cloud-request-engine.md#credentials">Credentials section of the cloud request engine specification</a> and the rules in <a href="src/fiftyone_pipeline_cloudrequestengine/cloudrequestengine.py"><code>cloudrequestengine.py</code></a>.</p>
 <h1>Pointing the engine at another host</h1>
 <p>The engine calls <code><a href="https://cloud.51degrees.com/api/v4/">https://cloud.51degrees.com/api/v4/</a></code> unless told otherwise. Set the <code>FOD_CLOUD_API_URL</code> environment variable, or pass <code>cloud_endpoint</code> in the engine settings, to the API base of another host including the <code>/api/v4/</code> segment. A host other than cloud.51degrees.com would be used to (a) use an on premise web server, or (b) use a privately hosted version of the 51Degrees cloud for performance reasons. This is the private hosting option of the cloud service, and both run the same service, so code written against one works unchanged against the other.</p>
+<h1>Examples</h1>
+<p>The <a class="el" href="dir_990954d5b18c41b68579d5c114eefad5.html" title="/home/runner/work/documentation/documentation/apis/pipeline-python/fiftyone_pipeline_cloudrequestengine/examples/readme.md">examples</a> folder holds examples that use this engine to get device detection and IP intelligence results from one request to the 51Degrees cloud service, with a resource key or a licence key. Its readme says how to run them.</p>
+<h1>Engines that use it</h1>
 <p>It is used by the cloud versions of the following 51Degrees engines:</p>
 <ul>
 <li><a href="https://pypi.org/project/fiftyone-devicedetection/"><b>fiftyone_devicedetection</b></a> - Get details about the devices accessing your web page</li>

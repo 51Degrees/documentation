@@ -8,5 +8,6 @@ var searchData=
   ['cloudrequestexception_5',['CloudRequestException',['../classfiftyone__pipeline__cloudrequestengine_1_1cloudrequestexception_1_1_cloud_request_exception.html',1,'fiftyone_pipeline_cloudrequestengine::cloudrequestexception']]],
   ['constants_6',['Constants',['../classconstants_1_1_constants.html',1,'constants.Constants'],['../classfiftyone__pipeline__cloudrequestengine_1_1constants_1_1_constants.html',1,'fiftyone_pipeline_cloudrequestengine.constants.Constants'],['../classfiftyone__pipeline__core_1_1constants_1_1_constants.html',1,'fiftyone_pipeline_core.constants.Constants'],['../classtests_1_1classes_1_1constants_1_1_constants.html',1,'tests.classes.constants.Constants']]],
   ['cookieengine_7',['CookieEngine',['../classtests_1_1test__javascriptbuilder_1_1_cookie_engine.html',1,'tests::test_javascriptbuilder']]],
-  ['coretests_8',['CoreTests',['../classtests_1_1test__core_1_1_core_tests.html',1,'tests::test_core']]]
+  ['coretests_8',['CoreTests',['../classtests_1_1test__core_1_1_core_tests.html',1,'tests::test_core']]],
+  ['countriestranslationcloud_9',['CountriesTranslationCloud',['../classfiftyone__pipeline__examples_1_1cloud_1_1engines_1_1_countries_translation_cloud.html',1,'fiftyone_pipeline_examples::cloud::engines']]]
 ];

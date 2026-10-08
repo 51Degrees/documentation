@@ -8,6 +8,5 @@ var classtests_1_1test__cloud_1_1_device_detection_tests =
     [ "test_missing_property_service_not_found_anywhere", "classtests_1_1test__cloud_1_1_device_detection_tests.html#aee48ce6e7855932bc22497c5f719f3f5", null ],
     [ "test_pipeline_builder_cloud_engine_init", "classtests_1_1test__cloud_1_1_device_detection_tests.html#a61fa4761ab52c50766afdb85205f311f", null ],
     [ "test_properties_cloud", "classtests_1_1test__cloud_1_1_device_detection_tests.html#ae8a2670f70523b9084f91e9d4e2614c6", null ],
-    [ "maxDiff", "classtests_1_1test__cloud_1_1_device_detection_tests.html#a0b9c46f01c774b239e3a1eee45f0a1c1", null ],
     [ "resource_key", "classtests_1_1test__cloud_1_1_device_detection_tests.html#a6321b4e60728784fe16a66abc4d3a67c", null ]
 ];

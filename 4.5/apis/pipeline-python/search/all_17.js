@@ -6,5 +6,8 @@ var searchData=
   ['web_2epy_3',['web.py',['../web_8py.html',1,'']]],
   ['webevidence_4',['webevidence',['../namespacefiftyone__pipeline__core_1_1web.html#a439e55aaa772b47745c514ded42fc1c3',1,'fiftyone_pipeline_core::web']]],
   ['webevidencetests_5',['WebEvidenceTests',['../classtests_1_1test__web_1_1_web_evidence_tests.html',1,'tests::test_web']]],
-  ['wrong_5fproperty_5fformat_6',['WRONG_PROPERTY_FORMAT',['../classfiftyone__pipeline__core_1_1messages_1_1_messages.html#a050ac54205b484bbb8633db2e41afe29',1,'fiftyone_pipeline_core::messages::Messages']]]
+  ['weighted_5fip_5fproperties_6',['WEIGHTED_IP_PROPERTIES',['../namespacefiftyone__pipeline__examples_1_1cloud_1_1mixed_1_1gettingstarted__web_1_1app.html#a4a3616dc7582cee6b49310644e68d0fa',1,'fiftyone_pipeline_examples::cloud::mixed::gettingstarted_web::app']]],
+  ['weighted_5frow_7',['weighted_row',['../namespacefiftyone__pipeline__examples_1_1cloud_1_1mixed_1_1gettingstarted__web_1_1app.html#aaaf405bbb0eea0fc0a1c89b01b2c6c34',1,'fiftyone_pipeline_examples::cloud::mixed::gettingstarted_web::app']]],
+  ['weightedcloudengine_8',['WeightedCloudEngine',['../classfiftyone__pipeline__examples_1_1cloud_1_1engines_1_1_weighted_cloud_engine.html',1,'fiftyone_pipeline_examples::cloud::engines']]],
+  ['wrong_5fproperty_5fformat_9',['WRONG_PROPERTY_FORMAT',['../classfiftyone__pipeline__core_1_1messages_1_1_messages.html#a050ac54205b484bbb8633db2e41afe29',1,'fiftyone_pipeline_core::messages::Messages']]]
 ];

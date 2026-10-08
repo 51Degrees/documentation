@@ -137,8 +137,33 @@ var annotated =
         [ "ShareUsageTracker", "classfiftyone__pipeline__engines__fiftyone_1_1share__usage__tracker_1_1_share_usage_tracker.html", "classfiftyone__pipeline__engines__fiftyone_1_1share__usage__tracker_1_1_share_usage_tracker" ]
       ] ]
     ] ],
+    [ "fiftyone_pipeline_examples", "namespacefiftyone__pipeline__examples.html", [
+      [ "cloud", "namespacefiftyone__pipeline__examples_1_1cloud.html", [
+        [ "engines", "namespacefiftyone__pipeline__examples_1_1cloud_1_1engines.html", [
+          [ "DeviceDetectionCloud", "classfiftyone__pipeline__examples_1_1cloud_1_1engines_1_1_device_detection_cloud.html", "classfiftyone__pipeline__examples_1_1cloud_1_1engines_1_1_device_detection_cloud" ],
+          [ "WeightedCloudEngine", "classfiftyone__pipeline__examples_1_1cloud_1_1engines_1_1_weighted_cloud_engine.html", "classfiftyone__pipeline__examples_1_1cloud_1_1engines_1_1_weighted_cloud_engine" ],
+          [ "IpIntelligenceCloud", "classfiftyone__pipeline__examples_1_1cloud_1_1engines_1_1_ip_intelligence_cloud.html", "classfiftyone__pipeline__examples_1_1cloud_1_1engines_1_1_ip_intelligence_cloud" ],
+          [ "CountriesTranslationCloud", "classfiftyone__pipeline__examples_1_1cloud_1_1engines_1_1_countries_translation_cloud.html", "classfiftyone__pipeline__examples_1_1cloud_1_1engines_1_1_countries_translation_cloud" ]
+        ] ],
+        [ "mixed", "namespacefiftyone__pipeline__examples_1_1cloud_1_1mixed.html", [
+          [ "gettingstarted_console", "namespacefiftyone__pipeline__examples_1_1cloud_1_1mixed_1_1gettingstarted__console.html", [
+            [ "GettingStartedConsole", "classfiftyone__pipeline__examples_1_1cloud_1_1mixed_1_1gettingstarted__console_1_1_getting_started_console.html", "classfiftyone__pipeline__examples_1_1cloud_1_1mixed_1_1gettingstarted__console_1_1_getting_started_console" ]
+          ] ]
+        ] ]
+      ] ],
+      [ "example_utils", "namespacefiftyone__pipeline__examples_1_1example__utils.html", [
+        [ "ExampleUtils", "classfiftyone__pipeline__examples_1_1example__utils_1_1_example_utils.html", "classfiftyone__pipeline__examples_1_1example__utils_1_1_example_utils" ]
+      ] ]
+    ] ],
     [ "mockrequestclient", "namespacemockrequestclient.html", [
       [ "MockRequestClient", "classmockrequestclient_1_1_mock_request_client.html", "classmockrequestclient_1_1_mock_request_client" ]
+    ] ],
+    [ "test_cloud_mixed_web_offline", "namespacetest__cloud__mixed__web__offline.html", [
+      [ "StubResponse", "classtest__cloud__mixed__web__offline_1_1_stub_response.html", "classtest__cloud__mixed__web__offline_1_1_stub_response" ],
+      [ "StubCloud", "classtest__cloud__mixed__web__offline_1_1_stub_cloud.html", "classtest__cloud__mixed__web__offline_1_1_stub_cloud" ]
+    ] ],
+    [ "test_example_utils", "namespacetest__example__utils.html", [
+      [ "Results", "classtest__example__utils_1_1_results.html", "classtest__example__utils_1_1_results" ]
     ] ],
     [ "tests", "namespacetests.html", [
       [ "classes", "namespacetests_1_1classes.html", [
