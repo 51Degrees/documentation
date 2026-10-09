@@ -2,6 +2,7 @@ var examples =
 [
     [ "/home/runner/work/documentation/documentation/apis/ip-intelligence-cxx/src/common-cxx/storedBinaryValue.h", "_2home_2runner_2work_2documentation_2documentation_2apis_2ip-intelligence-cxx_2src_2common-cxx_2stored_binary_value_8h-example.html", null ],
     [ "/home/runner/work/documentation/documentation/apis/ip-intelligence-cxx/src/common-cxx/string.h", "_2home_2runner_2work_2documentation_2documentation_2apis_2ip-intelligence-cxx_2src_2common-cxx_2string_8h-example.html", null ],
+    [ "IpIntelligence/CountryOverlap.c", "_ip_intelligence_2_country_overlap_8c-example.html", null ],
     [ "IpIntelligence/FindProfiles.c", "_ip_intelligence_2_find_profiles_8c-example.html", null ],
     [ "IpIntelligence/GettingStarted.c", "_ip_intelligence_2_getting_started_8c-example.html", null ],
     [ "IpIntelligence/OfflineProcessing.c", "_ip_intelligence_2_offline_processing_8c-example.html", null ],
