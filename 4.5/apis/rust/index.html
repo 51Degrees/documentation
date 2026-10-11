@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <tr class="c-table__row">
 <td class="c-table__cell">[<code>fiftyone-pipeline-core</code>](pipeline-core)  </td><td class="c-table__cell">FlowData, the FlowElement/Pipeline traits, immutable Evidence, ElementData, TypedKey, WeightedValue, errors and constants.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">[<code>fiftyone-caching</code>](caching)  </td><td class="c-table__cell">Sharded-LRU cache trait and the default implementation used to wrap an engine.  </td></tr>
+<td class="c-table__cell">[<code>fiftyone-caching</code>](caching)  </td><td class="c-table__cell">Sharded-LRU cache trait and the default implementation used to wrap an engine, and the loading cache that loads a missing value once over pluggable stores, for native and WebAssembly hosts, with optional stores for Fastly, Cloudflare and Spin and a tokio spawner.  </td></tr>
 </table>
 <h2>Engines and builders</h2>
 <table class="c-table">
@@ -159,6 +159,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <td class="c-table__cell"><a href="examples/ip-intelligence-examples"><code>ip-intelligence-examples</code></a>  </td><td class="c-table__cell">Runnable IP-intelligence examples (cloud, on-premise and web).  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><a href="examples/pipeline-examples"><code>pipeline-examples</code></a>  </td><td class="c-table__cell">Runnable pipeline examples: custom flow elements, caching, usage sharing and the combined-pipeline server-side examples.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><a href="examples/fodid-examples"><code>fodid-examples</code></a>  </td><td class="c-table__cell">Runnable 51Did examples: the creator context web demo, which verifies a 51Did from the browser and redeems the encrypted verdict on the server.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><a href="examples/benches"><code>examples-benches</code></a>  </td><td class="c-table__cell">Criterion micro-benchmarks guarding the DD, IPI and JavaScript-builder throughput budgets.  </td></tr>
 <tr class="c-table__row">
@@ -293,6 +295,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="c-code__line"> </div>
 <div class="c-code__line"># Web examples (cloud variant shown).</div>
 <div class="c-code__line">cargo run -p device-detection-examples --bin dd-web-getting-started-cloud</div>
+<div class="c-code__line">cargo run -p fodid-examples --bin fodid-web-creator-context</div>
+</div><!-- fragment --><p>Every cloud example calls the public 51Degrees cloud at <code><a href="https://cloud.51degrees.com/api/v4/">https://cloud.51degrees.com/api/v4/</a></code> unless <code>51DEGREES_CLOUD_ENDPOINT</code> names another host. A host other than cloud.51degrees.com would be used to (a) use an on premise web server, or (b) use a privately hosted version of the 51Degrees cloud for performance reasons. This is the private hosting option of the 51Degrees cloud service. Both run the same service as the public cloud, so the examples work unchanged. The variable is the same one the cloud request engine reads, so setting it once points every example at the same place, and the value is the API base including the <code>/api/v4/</code> segment.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">51DEGREES_CLOUD_ENDPOINT=http://localhost:8080/api/v4/ cargo run -p ip-intelligence-examples --bin ipi-cloud-getting-started</div>
 </div><!-- fragment --><h3>Browser (Selenium) tests</h3>
 <p>Browser-driven verification of the web examples comes from the shared <a href="https://github.com/51Degrees/selenium-api-tests">selenium-api-tests</a> suite, which every 51Degrees SDK reuses rather than maintaining its own browser automation. Its <code>Contract</code> category drives headless Chrome against a running example and checks that the page serves <code>51Degrees.core.js</code>, that client-side evidence flows back, and that the server renders a real detection result.</p>
 <p>CI runs it here in the <code>contract</code> job of the Examples workflow (<code>.github/workflows/examples.yml</code>), through <code>ci/run-browser-contract.ps1</code>, against both device detection web examples built from this checkout. The cloud example (<code>dd-web-getting-started-cloud</code>) talks to the public cloud with the bespoke resource key. The on-premise example (<code>dd-web-getting-started-onprem</code>) loads the TAC data file, because the Lite file has neither <code>DeviceType</code> nor the screen size JavaScript properties the contract checks. A test that fails, or that the suite skips as inconclusive, fails the job. Start it on any branch with <code>gh workflow <a class="el" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f" title="Run the cloud configurator example.">run</a> Examples --ref &lt;branch&gt;</code>. The cloud service also runs the cloud example against its own container, alongside the .NET, Java, Node, Python and PHP examples.</p>

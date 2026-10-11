@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-offl
 <div class="c-code__line">            <span class="c-code__keywordflow">break</span>;</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        let record = record.context(<span class="c-code__stringliteral">&quot;failed to parse an evidence record&quot;</span>)?;</div>
-<div class="c-code__line">        let result = <a class="code hl_function" href="dd-cloud-getting-started_8rs.html#a418da7fcd46be2042e5e4a5ad92c2a99">analyse_evidence</a>(&amp;pipeline, &amp;record)?;</div>
-<div class="c-code__line">        <a class="code hl_function" href="dd-onprem-offline-processing_8rs.html#ab9386b1eccda85c64718e788670e142f">write_record</a>(&amp;<a class="code hl_variable" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> output, &amp;result)?;</div>
+<div class="c-code__line">        let <a class="code hl_variable" href="fodid-web-creator-context_8rs.html#a71b4cb0e03b217e733bdef1a89459109">result</a> = <a class="code hl_function" href="dd-cloud-getting-started_8rs.html#a418da7fcd46be2042e5e4a5ad92c2a99">analyse_evidence</a>(&amp;pipeline, &amp;record)?;</div>
+<div class="c-code__line">        <a class="code hl_function" href="dd-onprem-offline-processing_8rs.html#ab9386b1eccda85c64718e788670e142f">write_record</a>(&amp;<a class="code hl_variable" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> output, &amp;<a class="code hl_variable" href="fodid-web-creator-context_8rs.html#a71b4cb0e03b217e733bdef1a89459109">result</a>)?;</div>
 <div class="c-code__line">        processed += 1;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>

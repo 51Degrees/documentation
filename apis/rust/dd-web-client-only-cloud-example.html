@@ -69,14 +69,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-web-client-
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>Device Detection web example: client-side-only cloud detection.</p>
-<p>There is no server-side detection and no 51Degrees pipeline on the server at all. The page loads the 51Degrees cloud resource script directly in the browser (<code>&lt;cloud-endpoint&gt;/api/v4/&lt;resource-key&gt;.js</code>), which performs detection client-side and raises the <code>complete</code> event. The shared <code>examples.min.js</code> helper subscribes to it and renders the results into the page.</p>
+<p>There is no server-side detection and no 51Degrees pipeline on the server at all. The page loads the 51Degrees cloud resource script directly in the browser (<code>&lt;cloud <a class="el" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad" title="An optional override for the cloud endpoint.">endpoint</a>&gt;&lt;resource-key&gt;.js</code>, the endpoint including <code>/api/v4/</code>), which performs detection client-side and raises the <code>complete</code> event. The shared <code>examples.min.js</code> helper subscribes to it and renders the results into the page.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>(options: <a class="code hl_struct" href="struct_options.html">Options</a>) -&gt; anyhow::Result&lt;()&gt; {</div>
 <div class="c-code__line">    let <a class="code hl_function" href="dd-web-getting-started-cloud_8rs.html#aa008b6165ad78b271beb1714f68596a1">runtime</a> = tokio::runtime::Builder::new_multi_thread()</div>
 <div class="c-code__line">        .enable_all()</div>
 <div class="c-code__line">        .build()</div>
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;building the tokio runtime&quot;</span>)?;</div>
 <div class="c-code__line">    <a class="code hl_function" href="dd-web-getting-started-cloud_8rs.html#aa008b6165ad78b271beb1714f68596a1">runtime</a>.block_on(async move {</div>
-<div class="c-code__line">        let app = <a class="code hl_function" href="dd-web-client-only-cloud_8rs.html#ab2468dfb2f751469fce1d5aebdf07bd5">build_app</a>(&amp;options.resource_key);</div>
+<div class="c-code__line">        let app = <a class="code hl_function" href="dd-web-client-only-cloud_8rs.html#a42853b52e8b4e16212d2713d4ce1d36b">build_app</a>(&amp;options.resource_key, options.endpoint.as_deref());</div>
 <div class="c-code__line">        let listener = tokio::net::TcpListener::bind(options.address)</div>
 <div class="c-code__line">            .await</div>
 <div class="c-code__line">            .with_context(|| format!(<span class="c-code__stringliteral">&quot;binding {}&quot;</span>, options.address))?;</div>

@@ -67,14 +67,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-web-client-
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-nested-classes" class="g-docs__section-heading"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="c-table__row memitem:PageState" id="r_PageState"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="struct_page_state.html">PageState</a></td></tr>
+<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">What the page handler needs, carried as the router state.  <a href="struct_page_state.html#details">More...</a><br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:ab2468dfb2f751469fce1d5aebdf07bd5" id="r_ab2468dfb2f751469fce1d5aebdf07bd5"><td class="c-table__cell">const&#160;pub&#160;pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab2468dfb2f751469fce1d5aebdf07bd5">build_app</a> (resource_key:&amp;str) -&gt; Router</td></tr>
-<tr class="c-table__row memdesc:ab2468dfb2f751469fce1d5aebdf07bd5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the client-only application router.  <br /></td></tr>
+<tr class="c-table__row memitem:a9176040dbc9b931546e77f04df6eee9f" id="r_a9176040dbc9b931546e77f04df6eee9f"><td class="c-table__cell">const&#160;<a class="el" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a9176040dbc9b931546e77f04df6eee9f">unwrap_or</a> (<a class="el" href="#ac73b5c8e47809b432a71238d14c8f830">DEFAULT_CLOUD_BASE</a>).trim_end_matches('/')) } pub struct <a class="el" href="struct_options.html">Options</a></td></tr>
+<tr class="c-table__row memdesc:a9176040dbc9b931546e77f04df6eee9f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> that drive [<code><a class="el" href="#a8d644587b49a1bca9eba622abbfaef16" title="Serve the page over TCP until interrupted.">run</a></code>].  <br /></td></tr>
+<tr class="c-table__row memitem:a42853b52e8b4e16212d2713d4ce1d36b" id="r_a42853b52e8b4e16212d2713d4ce1d36b"><td class="c-table__cell">struct&#160;<a class="el" href="struct_page_state.html">PageState</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a42853b52e8b4e16212d2713d4ce1d36b">build_app</a> (resource_key:&amp;str, endpoint:Option&lt;&amp;str &gt;) -&gt; Router</td></tr>
+<tr class="c-table__row memdesc:a42853b52e8b4e16212d2713d4ce1d36b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the client-only application router.  <br /></td></tr>
 <tr class="c-table__row memitem:a8d644587b49a1bca9eba622abbfaef16" id="r_a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8d644587b49a1bca9eba622abbfaef16">run</a> (options:Options) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Serve the page over TCP until interrupted.  <br /></td></tr>
-<tr class="c-table__row memitem:a58458ee53acb9add9f5f5cb874f29406" id="r_a58458ee53acb9add9f5f5cb874f29406"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a58458ee53acb9add9f5f5cb874f29406">home</a> (<a class="el" href="ipi-onprem-getting-started_8rs.html#a765d7f7e6be90ef9d21be14d1d5a52d8">State</a>(<a class="el" href="dd-cloud-configurator_8rs.html#a4c3d53cc817ab7f6a8e320b5f0e602a4">resource_key</a>):<a class="el" href="ipi-onprem-getting-started_8rs.html#a765d7f7e6be90ef9d21be14d1d5a52d8">State</a>&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;) -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
-<tr class="c-table__row memdesc:a58458ee53acb9add9f5f5cb874f29406"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The home-page handler: a client-only page whose <code>#content</code> region is filled by the cloud resource script and the shared callback.  <br /></td></tr>
+<tr class="c-table__row memitem:a3f627db30b7f2302862edb68c099167d" id="r_a3f627db30b7f2302862edb68c099167d"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a3f627db30b7f2302862edb68c099167d">home</a> (<a class="el" href="ipi-onprem-getting-started_8rs.html#a765d7f7e6be90ef9d21be14d1d5a52d8">State</a>(state):<a class="el" href="ipi-onprem-getting-started_8rs.html#a765d7f7e6be90ef9d21be14d1d5a52d8">State</a>&lt; <a class="el" href="struct_page_state.html">PageState</a> &gt;) -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
+<tr class="c-table__row memdesc:a3f627db30b7f2302862edb68c099167d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The home-page handler: a client-only page whose <code>#content</code> region is filled by the cloud resource script and the shared callback.  <br /></td></tr>
 <tr class="c-table__row memitem:a10397c317f477c2d5f6629f1d23f9b28" id="r_a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28">main</a> () -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memitem:afd999b7aa5523a56df70f70728e4434b" id="r_afd999b7aa5523a56df70f70728e4434b"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#afd999b7aa5523a56df70f70728e4434b">get</a> (app:Router, uri:&amp;str) -&gt; Response</td></tr>
 <tr class="c-table__row memitem:ac54be9a96a863c0e4cef3167495c7dea" id="r_ac54be9a96a863c0e4cef3167495c7dea"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac54be9a96a863c0e4cef3167495c7dea">body_string</a> (response:Response) -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td></tr>
@@ -83,10 +90,10 @@ Functions</h2></td></tr>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="c-table__row memitem:a1e696dc80104c89d86947a21c38136f1" id="r_a1e696dc80104c89d86947a21c38136f1"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#a1e696dc80104c89d86947a21c38136f1">web_support</a></td></tr>
-<tr class="c-table__row memitem:a51e8345488fe39d5d731b38a8d12c0e8" id="r_a51e8345488fe39d5d731b38a8d12c0e8"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a51e8345488fe39d5d731b38a8d12c0e8">CLOUD_RESOURCE_BASE</a></td></tr>
-<tr class="c-table__row memdesc:a51e8345488fe39d5d731b38a8d12c0e8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The public 51Degrees cloud base URL the resource script is loaded from.  <br /></td></tr>
-<tr class="c-table__row memitem:ab63d77a5151601f7592a3b3746609b1b" id="r_ab63d77a5151601f7592a3b3746609b1b"><td class="c-table__cell">const&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab63d77a5151601f7592a3b3746609b1b">address</a></td></tr>
-<tr class="c-table__row memdesc:ab63d77a5151601f7592a3b3746609b1b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The socket address the server binds to.  <br /></td></tr>
+<tr class="c-table__row memitem:ac73b5c8e47809b432a71238d14c8f830" id="r_ac73b5c8e47809b432a71238d14c8f830"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ac73b5c8e47809b432a71238d14c8f830">DEFAULT_CLOUD_BASE</a></td></tr>
+<tr class="c-table__row memdesc:ac73b5c8e47809b432a71238d14c8f830"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The public 51Degrees cloud API base the resource script is loaded from when <code>51DEGREES_CLOUD_ENDPOINT</code> is unset.  <br /></td></tr>
+<tr class="c-table__row memitem:ab69b5802bb0451b22597bdb046c0d871" id="r_ab69b5802bb0451b22597bdb046c0d871"><td class="c-table__cell"><a class="el" href="dd-cloud-configurator_8rs.html#a4c3d53cc817ab7f6a8e320b5f0e602a4">resource_key</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ab69b5802bb0451b22597bdb046c0d871">__pad0__</a></td></tr>
+<tr class="c-table__row memitem:add89c3b8f2139294e98d5d0df31d0207" id="r_add89c3b8f2139294e98d5d0df31d0207"><td class="c-table__cell"><a class="el" href="dd-cloud-configurator_8rs.html#a4c3d53cc817ab7f6a8e320b5f0e602a4">resource_key</a>&#160;</td><td class="c-table__cell"><a class="el" href="#add89c3b8f2139294e98d5d0df31d0207">cloud_base</a></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
@@ -111,8 +118,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab2468dfb2f751469fce1d5aebdf07bd5" name="ab2468dfb2f751469fce1d5aebdf07bd5"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab2468dfb2f751469fce1d5aebdf07bd5">&#9670;&#160;</a></span>build_app()</h2>
+<a id="a42853b52e8b4e16212d2713d4ce1d36b" name="a42853b52e8b4e16212d2713d4ce1d36b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a42853b52e8b4e16212d2713d4ce1d36b">&#9670;&#160;</a></span>build_app()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -120,10 +127,14 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const pub pub fn build_app </td>
+              <td class="c-table__cell">struct <a class="el" href="struct_page_state.html">PageState</a> build_app </td>
           <td>(</td>
-          <td class="c-table__cell">resource_key:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span></td><td>)</td>
-          <td> -&gt; Router</td>
+          <td class="c-table__cell">resource_key:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">endpoint:Option&lt;&amp;<a class="el" href="device-detection-examples_2src_2web__support_2mod_8rs.html#a59c09f4d2e77fa42c030902215658830">str</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Router</td>
         </tr>
           </table>
         </div>
@@ -131,7 +142,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Build the client-only application router. </p>
-<p>The server only serves a static page and the two vendored assets; all detection happens in the browser. The resource key is carried as router state so the page handler can build the resource-script URL. </p>
+<p>The server only serves a static page and the two vendored assets; all detection happens in the browser. The resource key is carried as router state so the page handler can build the resource-script URL, together with the cloud base it is loaded from. </p>
 
 </div>
 </div>
@@ -160,8 +171,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a58458ee53acb9add9f5f5cb874f29406" name="a58458ee53acb9add9f5f5cb874f29406"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a58458ee53acb9add9f5f5cb874f29406">&#9670;&#160;</a></span>home()</h2>
+<a id="a3f627db30b7f2302862edb68c099167d" name="a3f627db30b7f2302862edb68c099167d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3f627db30b7f2302862edb68c099167d">&#9670;&#160;</a></span>home()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -171,7 +182,7 @@ Variables</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">async fn home </td>
           <td>(</td>
-          <td class="c-table__cell"><a class="el" href="ipi-onprem-getting-started_8rs.html#a765d7f7e6be90ef9d21be14d1d5a52d8">State</a>(<a class="el" href="dd-cloud-configurator_8rs.html#a4c3d53cc817ab7f6a8e320b5f0e602a4">resource_key</a>):<a class="el" href="ipi-onprem-getting-started_8rs.html#a765d7f7e6be90ef9d21be14d1d5a52d8">State</a>&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="c-table__cell"><a class="el" href="ipi-onprem-getting-started_8rs.html#a765d7f7e6be90ef9d21be14d1d5a52d8">State</a>(state):<a class="el" href="ipi-onprem-getting-started_8rs.html#a765d7f7e6be90ef9d21be14d1d5a52d8">State</a>&lt; <a class="el" href="struct_page_state.html">PageState</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
           <td> -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
         </tr>
           </table>
@@ -248,9 +259,35 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a9176040dbc9b931546e77f04df6eee9f" name="a9176040dbc9b931546e77f04df6eee9f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9176040dbc9b931546e77f04df6eee9f">&#9670;&#160;</a></span>unwrap_or()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const <a class="el" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a> unwrap_or </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="#ac73b5c8e47809b432a71238d14c8f830">DEFAULT_CLOUD_BASE</a></td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> that drive [<code><a class="el" href="#a8d644587b49a1bca9eba622abbfaef16" title="Serve the page over TCP until interrupted.">run</a></code>]. </p>
+<p>The 51Degrees cloud resource key.</p>
+<p>An optional override for the cloud endpoint, read from <code>51DEGREES_CLOUD_ENDPOINT</code>. <code>None</code> selects the public cloud.</p>
+<p>The socket address the server binds to.</p>
+
+</div>
+</div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
-<a id="ab63d77a5151601f7592a3b3746609b1b" name="ab63d77a5151601f7592a3b3746609b1b"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab63d77a5151601f7592a3b3746609b1b">&#9670;&#160;</a></span>address</h2>
+<a id="ab69b5802bb0451b22597bdb046c0d871" name="ab69b5802bb0451b22597bdb046c0d871"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab69b5802bb0451b22597bdb046c0d871">&#9670;&#160;</a></span>__pad0__</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -258,19 +295,17 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const pub address</td>
+              <td class="c-table__cell"><a class="el" href="dd-cloud-configurator_8rs.html#a4c3d53cc817ab7f6a8e320b5f0e602a4">resource_key</a> __pad0__</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>The socket address the server binds to. </p>
-
 </div>
 </div>
-<a id="a51e8345488fe39d5d731b38a8d12c0e8" name="a51e8345488fe39d5d731b38a8d12c0e8"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a51e8345488fe39d5d731b38a8d12c0e8">&#9670;&#160;</a></span>CLOUD_RESOURCE_BASE</h2>
+<a id="add89c3b8f2139294e98d5d0df31d0207" name="add89c3b8f2139294e98d5d0df31d0207"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#add89c3b8f2139294e98d5d0df31d0207">&#9670;&#160;</a></span>cloud_base</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -278,15 +313,33 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const CLOUD_RESOURCE_BASE</td>
+              <td class="c-table__cell"><a class="el" href="dd-cloud-configurator_8rs.html#a4c3d53cc817ab7f6a8e320b5f0e602a4">resource_key</a> cloud_base</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>The public 51Degrees cloud base URL the resource script is loaded from. </p>
-<p>The resource script lives at <code>&lt;this&gt;/&lt;resource-key&gt;.js</code>. Mirrors the cloud request engine default endpoint. </p>
+</div>
+</div>
+<a id="ac73b5c8e47809b432a71238d14c8f830" name="ac73b5c8e47809b432a71238d14c8f830"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac73b5c8e47809b432a71238d14c8f830">&#9670;&#160;</a></span>DEFAULT_CLOUD_BASE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const DEFAULT_CLOUD_BASE</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The public 51Degrees cloud API base the resource script is loaded from when <code>51DEGREES_CLOUD_ENDPOINT</code> is unset. </p>
+<p>The resource script lives at <code>&lt;base&gt;&lt;resource-key&gt;.js</code>. Mirrors the cloud request engine default. </p>
 
 </div>
 </div>

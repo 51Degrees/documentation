@@ -41,6 +41,7 @@ var NAVTREE =
     [ "Getting Started Cloud (Device Detection, Web)", "dd-web-getting-started-cloud-example.html", null ],
     [ "Getting Started On-premise (Device Detection, Web)", "dd-web-getting-started-onprem-example.html", null ],
     [ "UA Client Hints (Device Detection, Web)", "dd-web-uach-example.html", null ],
+    [ "Creator Context (51Did, Web)", "fodid-web-creator-context-example.html", null ],
     [ "Get All Properties (IP Intelligence, Cloud)", "ipi-cloud-get-all-properties-example.html", null ],
     [ "Getting Started (IP Intelligence, Cloud)", "ipi-cloud-getting-started-example.html", null ],
     [ "Metadata (IP Intelligence, Cloud)", "ipi-cloud-metadata-example.html", null ],

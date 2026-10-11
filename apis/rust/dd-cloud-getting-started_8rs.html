@@ -88,7 +88,7 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:ad077fe45032964a9487eaaa44bf43aee" id="r_ad077fe45032964a9487eaaa44bf43aee"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ad077fe45032964a9487eaaa44bf43aee">PRICING_MESSAGE</a></td></tr>
 <tr class="c-table__row memdesc:ad077fe45032964a9487eaaa44bf43aee"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The pricing message printed when one of the requested properties came back without a value, which usually means the resource key does not include that property.  <br /></td></tr>
 <tr class="c-table__row memitem:a4f93ffc766c434682f8fcd1a067ff41f" id="r_a4f93ffc766c434682f8fcd1a067ff41f"><td class="c-table__cell">const&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a4f93ffc766c434682f8fcd1a067ff41f">endpoint</a></td></tr>
-<tr class="c-table__row memdesc:a4f93ffc766c434682f8fcd1a067ff41f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">An optional override for the cloud endpoint.  <br /></td></tr>
+<tr class="c-table__row memdesc:a4f93ffc766c434682f8fcd1a067ff41f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">An optional override for the cloud endpoint, read from <code>51DEGREES_CLOUD_ENDPOINT</code>.  <br /></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
@@ -265,8 +265,8 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>An optional override for the cloud endpoint. </p>
-<p>Left <code>None</code> for the public 51Degrees cloud, set by a test pointing at an alternative deployment. </p>
+<p>An optional override for the cloud endpoint, read from <code>51DEGREES_CLOUD_ENDPOINT</code>. </p>
+<p><code>None</code> leaves the choice to the cloud request engine, which reads the same variable and defaults to the public cloud. </p>
 
 </div>
 </div>
