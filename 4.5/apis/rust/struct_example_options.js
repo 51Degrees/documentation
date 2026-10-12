@@ -7,6 +7,7 @@ var struct_example_options =
     [ "ips", "struct_example_options.html#a83228972b80e1e38092cd7d41ec1ddde", null ],
     [ "ips", "struct_example_options.html#a83228972b80e1e38092cd7d41ec1ddde", null ],
     [ "iterations", "struct_example_options.html#a18347d64bffe73ee0257bab7d3a8572e", null ],
+    [ "json_output", "struct_example_options.html#a417292cd74bdae05aa5b67271a488bef", null ],
     [ "max_ips", "struct_example_options.html#a340387e33e57a8a550569f429d3a593b", null ],
     [ "max_records", "struct_example_options.html#a4891117f74dc9a8c32a5a8ef1b635e85", null ],
     [ "max_records", "struct_example_options.html#a673e30b79fd1e5c6df29a3cf0e9b09c5", null ],

@@ -74,25 +74,6 @@ Classes</h2></td></tr>
 <tr class="c-table__row memitem:ExampleOptions" id="r_ExampleOptions"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="struct_example_options.html">ExampleOptions</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> the example runs with.  <a href="struct_example_options.html#details">More...</a><br /></td></tr>
 </table><table class="c-table c-table--directory">
-<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="c-table__row memitem:a8d89ee9c2e74b56660b709b41f9dfa11" id="r_a8d89ee9c2e74b56660b709b41f9dfa11"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a8d89ee9c2e74b56660b709b41f9dfa11">run</a> (options:ExampleOptions) -&gt; Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:a8d89ee9c2e74b56660b709b41f9dfa11"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the on-premise performance benchmark.  <br /></td></tr>
-<tr class="c-table__row memitem:a843d1e419a83e50332d78beb8eb4d09c" id="r_a843d1e419a83e50332d78beb8eb4d09c"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a843d1e419a83e50332d78beb8eb4d09c">build_benchmark_pipeline</a> (data_file:&amp;PathBuf, profile:PerformanceProfile,) -&gt; Result&lt; Arc&lt; Pipeline &gt; &gt;</td></tr>
-<tr class="c-table__row memdesc:a843d1e419a83e50332d78beb8eb4d09c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the pipeline used for the benchmark: a single requested property and the supplied performance profile.  <br /></td></tr>
-<tr class="c-table__row memitem:a9ffc20a2dd73a8034d59ac019bd1b81c" id="r_a9ffc20a2dd73a8034d59ac019bd1b81c"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a9ffc20a2dd73a8034d59ac019bd1b81c">benchmark</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, user_agents:&amp;[<a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>], thread_count:usize, passes:usize,) -&gt; Result&lt; <a class="el" href="struct_benchmark_result.html">BenchmarkResult</a> &gt;</td></tr>
-<tr class="c-table__row memdesc:a9ffc20a2dd73a8034d59ac019bd1b81c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the benchmark: split the User-Agents across <code><a class="el" href="#a7d38f5ab07fe2293f1dafb4a9e7c64ab" title="How many worker threads run detections in parallel.">thread_count</a></code> worker threads, each running <code><a class="el" href="#ab7442d5a25ddaaca1542e22d0d91df88" title="How many times to cycle the loaded User-Agent list per thread.">passes</a></code> cycles over its slice, and accumulate the totals.  <br /></td></tr>
-<tr class="c-table__row memitem:a1113422a1591e197d5acc4faac9295cd" id="r_a1113422a1591e197d5acc4faac9295cd"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a1113422a1591e197d5acc4faac9295cd">report</a> (result:&amp;BenchmarkResult, thread_count:usize)</td></tr>
-<tr class="c-table__row memdesc:a1113422a1591e197d5acc4faac9295cd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print the benchmark figures: total detections, elapsed time, detections per second and the average time per detection.  <br /></td></tr>
-<tr class="c-table__row memitem:a01bad78a2e064066633f92863f1a5dbb" id="r_a01bad78a2e064066633f92863f1a5dbb"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a01bad78a2e064066633f92863f1a5dbb">load_user_agents</a> (path:&amp;PathBuf, max:usize) -&gt; Result&lt; Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt;</td></tr>
-<tr class="c-table__row memdesc:a01bad78a2e064066633f92863f1a5dbb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Load up to <code>max</code> User-Agents from a file, one per line.  <br /></td></tr>
-<tr class="c-table__row memitem:a1b3d059fb01eebcb623f5cdefa854a0a" id="r_a1b3d059fb01eebcb623f5cdefa854a0a"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a1b3d059fb01eebcb623f5cdefa854a0a">default_user_agents_file</a> () -&gt; Option&lt; PathBuf &gt;</td></tr>
-<tr class="c-table__row memdesc:a1b3d059fb01eebcb623f5cdefa854a0a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Locate the bundled User-Agent file, walking up the tree so it resolves from an IDE, the crate directory or CI.  <br /></td></tr>
-<tr class="c-table__row memitem:a685047298dbf9911e9f06a366e9b1bb4" id="r_a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a685047298dbf9911e9f06a366e9b1bb4">main</a> () -&gt; Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Resolve the data and evidence files then run the benchmark.  <br /></td></tr>
-<tr class="c-table__row memitem:a19499d1af805265d1f66dd6aab1f2303" id="r_a19499d1af805265d1f66dd6aab1f2303"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a19499d1af805265d1f66dd6aab1f2303">runs_against_the_lite_data_file</a> ()</td></tr>
-<tr class="c-table__row memdesc:a19499d1af805265d1f66dd6aab1f2303"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run a tiny benchmark against the Lite Hash file, skipping when an input is missing.  <br /></td></tr>
-</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="c-table__row memitem:ade2a062593ad6801517b830defa32d28" id="r_ade2a062593ad6801517b830defa32d28"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ade2a062593ad6801517b830defa32d28">USER_AGENTS_RELATIVE_PATH</a></td></tr>
@@ -101,6 +82,8 @@ Variables</h2></td></tr>
 <tr class="c-table__row memdesc:ab798c2e151673618ca772d4f0ee287fe"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The outcome of one benchmark run.  <br /></td></tr>
 <tr class="c-table__row memitem:ae62cc8bcb893a32a781a2ce4e71c9f38" id="r_ae62cc8bcb893a32a781a2ce4e71c9f38"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ae62cc8bcb893a32a781a2ce4e71c9f38">Duration</a></td></tr>
 <tr class="c-table__row memdesc:ae62cc8bcb893a32a781a2ce4e71c9f38"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The wall-clock time the timed phase took.  <br /></td></tr>
+<tr class="c-table__row memitem:ac372bee2e9471ed03bd65b69cd96d516" id="r_ac372bee2e9471ed03bd65b69cd96d516"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;detections_per_second&#160;self&#160;</td><td class="c-table__cell"><a class="el" href="#ac372bee2e9471ed03bd65b69cd96d516">f64</a></td></tr>
+<tr class="c-table__row memdesc:ac372bee2e9471ed03bd65b69cd96d516"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Detections per second across the timed phase, the headline throughput.  <br /></td></tr>
 <tr class="c-table__row memitem:ab533a800544facf05fd1c8e50f92099a" id="r_ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab533a800544facf05fd1c8e50f92099a">data_file</a></td></tr>
 <tr class="c-table__row memdesc:ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The path to the on-premise Hash data file the engine loads.  <br /></td></tr>
 <tr class="c-table__row memitem:a6b48acc6b586bbda884c356576c17449" id="r_a6b48acc6b586bbda884c356576c17449"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a6b48acc6b586bbda884c356576c17449">user_agents_file</a></td></tr>
@@ -111,223 +94,9 @@ Variables</h2></td></tr>
 <tr class="c-table__row memdesc:ab7442d5a25ddaaca1542e22d0d91df88"><td class="c-table__cell">&#160;</td><td class="c-table__cell">How many times to cycle the loaded User-Agent list per thread.  <br /></td></tr>
 <tr class="c-table__row memitem:aadd49bc02b69730f6b8bfa3c87ccf286" id="r_aadd49bc02b69730f6b8bfa3c87ccf286"><td class="c-table__cell">pub&#160;pub&#160;pub&#160;pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#aadd49bc02b69730f6b8bfa3c87ccf286">max_user_agents</a></td></tr>
 <tr class="c-table__row memdesc:aadd49bc02b69730f6b8bfa3c87ccf286"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The maximum number of User-Agents to load from the file.  <br /></td></tr>
-<tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
+<tr class="c-table__row memitem:aa245846aeec29710a80ded0f0027b273" id="r_aa245846aeec29710a80ded0f0027b273"><td class="c-table__cell">pub&#160;pub&#160;pub&#160;pub&#160;pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#aa245846aeec29710a80ded0f0027b273">json_output</a></td></tr>
+<tr class="c-table__row memdesc:aa245846aeec29710a80ded0f0027b273"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to write the results JSON the nightly performance graphs read, if anywhere.  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
-<a id="a9ffc20a2dd73a8034d59ac019bd1b81c" name="a9ffc20a2dd73a8034d59ac019bd1b81c"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9ffc20a2dd73a8034d59ac019bd1b81c">&#9670;&#160;</a></span>benchmark()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">fn benchmark </td>
-          <td>(</td>
-          <td class="c-table__cell">pipeline:&amp;Arc&lt; Pipeline &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">user_agents:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String], </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">thread_count:usize</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">passes:usize</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Result&lt; <a class="el" href="struct_benchmark_result.html">BenchmarkResult</a> &gt;</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Run the benchmark: split the User-Agents across <code><a class="el" href="#a7d38f5ab07fe2293f1dafb4a9e7c64ab" title="How many worker threads run detections in parallel.">thread_count</a></code> worker threads, each running <code><a class="el" href="#ab7442d5a25ddaaca1542e22d0d91df88" title="How many times to cycle the loaded User-Agent list per thread.">passes</a></code> cycles over its slice, and accumulate the totals. </p>
-
-</div>
-</div>
-<a id="a843d1e419a83e50332d78beb8eb4d09c" name="a843d1e419a83e50332d78beb8eb4d09c"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a843d1e419a83e50332d78beb8eb4d09c">&#9670;&#160;</a></span>build_benchmark_pipeline()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">fn build_benchmark_pipeline </td>
-          <td>(</td>
-          <td class="c-table__cell">data_file:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>PathBuf</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">profile:PerformanceProfile</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Result&lt; Arc&lt; Pipeline &gt; &gt;</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Build the pipeline used for the benchmark: a single requested property and the supplied performance profile. </p>
-
-</div>
-</div>
-<a id="a1b3d059fb01eebcb623f5cdefa854a0a" name="a1b3d059fb01eebcb623f5cdefa854a0a"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1b3d059fb01eebcb623f5cdefa854a0a">&#9670;&#160;</a></span>default_user_agents_file()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">fn default_user_agents_file </td>
-          <td>(</td>
-          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Option&lt; PathBuf &gt;</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Locate the bundled User-Agent file, walking up the tree so it resolves from an IDE, the crate directory or CI. </p>
-
-</div>
-</div>
-<a id="a01bad78a2e064066633f92863f1a5dbb" name="a01bad78a2e064066633f92863f1a5dbb"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a01bad78a2e064066633f92863f1a5dbb">&#9670;&#160;</a></span>load_user_agents()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">fn load_user_agents </td>
-          <td>(</td>
-          <td class="c-table__cell">path:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>PathBuf</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">max:usize</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Result&lt; Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt;</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Load up to <code>max</code> User-Agents from a file, one per line. </p>
-<p>The bundled "20000 User Agents.csv" has one User-Agent per line with no header and no embedded commas in practice, so a simple line read is sufficient and avoids pulling the CSV reader into the hot path. Blank lines are skipped. </p>
-
-</div>
-</div>
-<a id="a685047298dbf9911e9f06a366e9b1bb4" name="a685047298dbf9911e9f06a366e9b1bb4"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a685047298dbf9911e9f06a366e9b1bb4">&#9670;&#160;</a></span>main()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">fn main </td>
-          <td>(</td>
-          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Result&lt;()&gt;</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Resolve the data and evidence files then run the benchmark. </p>
-<p>The data and User-Agent files use the usual fallbacks. With either missing the example prints a clear message and exits successfully. </p>
-
-</div>
-</div>
-<a id="a1113422a1591e197d5acc4faac9295cd" name="a1113422a1591e197d5acc4faac9295cd"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1113422a1591e197d5acc4faac9295cd">&#9670;&#160;</a></span>report()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">fn report </td>
-          <td>(</td>
-          <td class="c-table__cell">result:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>BenchmarkResult</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">thread_count:usize</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Print the benchmark figures: total detections, elapsed time, detections per second and the average time per detection. </p>
-
-</div>
-</div>
-<a id="a8d89ee9c2e74b56660b709b41f9dfa11" name="a8d89ee9c2e74b56660b709b41f9dfa11"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8d89ee9c2e74b56660b709b41f9dfa11">&#9670;&#160;</a></span>run()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">pub struct <a class="el" href="struct_example_options.html">ExampleOptions</a> run </td>
-          <td>(</td>
-          <td class="c-table__cell">options:ExampleOptions</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Result&lt;()&gt;</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Run the on-premise performance benchmark. </p>
-<p>Loads a list of User-Agents, builds a single on-premise pipeline that requests only <code>IsMobile</code> (the fastest realistic configuration), warms it up, then runs many detections across several threads and reports detections per second. </p>
-
-</div>
-</div>
-<a id="a19499d1af805265d1f66dd6aab1f2303" name="a19499d1af805265d1f66dd6aab1f2303"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a19499d1af805265d1f66dd6aab1f2303">&#9670;&#160;</a></span>runs_against_the_lite_data_file()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">fn runs_against_the_lite_data_file </td>
-          <td>(</td>
-          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Run a tiny benchmark against the Lite Hash file, skipping when an input is missing. </p>
-<p>The detection counts and timing are exercised end to end; the loop is kept small so the test stays fast. </p>
-
-</div>
-</div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
 <a id="ab533a800544facf05fd1c8e50f92099a" name="ab533a800544facf05fd1c8e50f92099a"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab533a800544facf05fd1c8e50f92099a">&#9670;&#160;</a></span>data_file</h2>
@@ -366,6 +135,49 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The wall-clock time the timed phase took. </p>
+
+</div>
+</div>
+<a id="ac372bee2e9471ed03bd65b69cd96d516" name="ac372bee2e9471ed03bd65b69cd96d516"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac372bee2e9471ed03bd65b69cd96d516">&#9670;&#160;</a></span>f64</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="performance__results_8rs.html#aeeb4071ec4ab0849cbb8ec6e8c4869a6">higher_is_better</a> f64</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
+<div class="c-code__line">        let seconds = self.elapsed.as_secs_f64()</div>
+</div><!-- fragment -->
+<p>Detections per second across the timed phase, the headline throughput. </p>
+
+</div>
+</div>
+<a id="aa245846aeec29710a80ded0f0027b273" name="aa245846aeec29710a80ded0f0027b273"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa245846aeec29710a80ded0f0027b273">&#9670;&#160;</a></span>json_output</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub pub pub pub pub pub json_output</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where to write the results JSON the nightly performance graphs read, if anywhere. </p>
+<p>CI passes <code>--json-output &lt;path&gt;</code>; an interactive run leaves it unset and only reads the printed figures. </p>
 
 </div>
 </div>
@@ -409,26 +221,6 @@ Variables</h2></td></tr>
 <p>How many times to cycle the loaded User-Agent list per thread. </p>
 <p>A larger multiplier gives a steadier throughput figure. </p>
 
-</div>
-</div>
-<a id="ab60c545115f42f88c00b55f384f5ffc0" name="ab60c545115f42f88c00b55f384f5ffc0"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab60c545115f42f88c00b55f384f5ffc0">&#9670;&#160;</a></span>tests</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">mod tests</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
-<div class="c-code__line">    use super::*</div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="a7d38f5ab07fe2293f1dafb4a9e7c64ab" name="a7d38f5ab07fe2293f1dafb4a9e7c64ab"></a>

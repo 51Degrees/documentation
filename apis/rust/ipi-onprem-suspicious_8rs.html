@@ -86,13 +86,13 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ac10497ea1a8e7d45645db7ecb88335c8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the suspicious example against the supplied options, writing all output to <code>out</code>.  <br /></td></tr>
 <tr class="c-table__row memitem:a57732fbeeeb5564350d473ab596e01a3" id="r_a57732fbeeeb5564350d473ab596e01a3"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a57732fbeeeb5564350d473ab596e01a3">assess_ip</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, ip:&amp;str, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a57732fbeeeb5564350d473ab596e01a3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Assess one IP address and print the contributing values plus the verdict.  <br /></td></tr>
-<tr class="c-table__row memitem:a75bc210badf8344444c862160f5ff3aa" id="r_a75bc210badf8344444c862160f5ff3aa"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a75bc210badf8344444c862160f5ff3aa">is_suspicious</a> (inputs:&amp;SuspiciousInputs) -&gt; bool</td></tr>
+<tr class="c-table__row memitem:a75bc210badf8344444c862160f5ff3aa" id="r_a75bc210badf8344444c862160f5ff3aa"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a75bc210badf8344444c862160f5ff3aa">is_suspicious</a> (inputs:&amp;SuspiciousInputs) -&gt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a></td></tr>
 <tr class="c-table__row memdesc:a75bc210badf8344444c862160f5ff3aa"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The three-branch heuristic for deciding whether an IP looks suspicious.  <br /></td></tr>
 <tr class="c-table__row memitem:ab4f8aba90e17ec049d3efb4513510721" id="r_ab4f8aba90e17ec049d3efb4513510721"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab4f8aba90e17ec049d3efb4513510721">top_string</a> (ip_data:&amp;IpIntelligenceDataBase, name:&amp;str) -&gt; Option&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
 <tr class="c-table__row memdesc:ab4f8aba90e17ec049d3efb4513510721"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the most probable candidate of a weighted string property, or <code>None</code> when the property had no value (for example because the data tier does not carry it).  <br /></td></tr>
 <tr class="c-table__row memitem:a071371602e6e27c3693b993375af8d0f" id="r_a071371602e6e27c3693b993375af8d0f"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a071371602e6e27c3693b993375af8d0f">top_integer</a> (ip_data:&amp;IpIntelligenceDataBase, name:&amp;str) -&gt; i64</td></tr>
 <tr class="c-table__row memdesc:a071371602e6e27c3693b993375af8d0f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the most probable candidate of a weighted property as an integer.  <br /></td></tr>
-<tr class="c-table__row memitem:a231894cfd669047ec8a198a322c1d5b7" id="r_a231894cfd669047ec8a198a322c1d5b7"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a231894cfd669047ec8a198a322c1d5b7">top_bool</a> (ip_data:&amp;IpIntelligenceDataBase, name:&amp;str) -&gt; bool</td></tr>
+<tr class="c-table__row memitem:a231894cfd669047ec8a198a322c1d5b7" id="r_a231894cfd669047ec8a198a322c1d5b7"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a231894cfd669047ec8a198a322c1d5b7">top_bool</a> (ip_data:&amp;IpIntelligenceDataBase, name:&amp;str) -&gt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a></td></tr>
 <tr class="c-table__row memdesc:a231894cfd669047ec8a198a322c1d5b7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the most probable candidate of a weighted property as a boolean.  <br /></td></tr>
 <tr class="c-table__row memitem:a10397c317f477c2d5f6629f1d23f9b28" id="r_a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28">main</a> () -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the data file, then run the example, writing to standard output.  <br /></td></tr>
@@ -251,7 +251,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">fn is_suspicious </td>
           <td>(</td>
           <td class="c-table__cell">inputs:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>SuspiciousInputs</em></span></td><td>)</td>
-          <td> -&gt; bool</td>
+          <td> -&gt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a></td>
         </tr>
           </table>
         </div>
@@ -354,7 +354,7 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">name:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>&#160;) -&gt; bool</td>
+          <td class="c-table__cell">name:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>&#160;) -&gt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a></td>
         </tr>
           </table>
         </div>

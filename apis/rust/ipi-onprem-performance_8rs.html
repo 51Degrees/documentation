@@ -97,6 +97,8 @@ Variables</h2></td></tr>
 <tr class="c-table__row memdesc:af1c987534faed97a46bf28dae31c87f4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The maximum number of distinct IP addresses to load from the evidence file.  <br /></td></tr>
 <tr class="c-table__row memitem:ae61f56224b5a349188915cebc44a39b5" id="r_ae61f56224b5a349188915cebc44a39b5"><td class="c-table__cell">pub&#160;pub&#160;pub&#160;pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#ae61f56224b5a349188915cebc44a39b5">iterations</a></td></tr>
 <tr class="c-table__row memdesc:ae61f56224b5a349188915cebc44a39b5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">How many times each thread loops over the loaded IP set.  <br /></td></tr>
+<tr class="c-table__row memitem:aa245846aeec29710a80ded0f0027b273" id="r_aa245846aeec29710a80ded0f0027b273"><td class="c-table__cell">pub&#160;pub&#160;pub&#160;pub&#160;pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#aa245846aeec29710a80ded0f0027b273">json_output</a></td></tr>
+<tr class="c-table__row memdesc:aa245846aeec29710a80ded0f0027b273"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to write the results JSON the nightly performance graphs read, if anywhere.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
 <a id="aa0e1b39149ce843580024940e9889ed7" name="aa0e1b39149ce843580024940e9889ed7"></a>
@@ -233,6 +235,27 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>How many times each thread loops over the loaded IP set. </p>
+
+</div>
+</div>
+<a id="aa245846aeec29710a80ded0f0027b273" name="aa245846aeec29710a80ded0f0027b273"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa245846aeec29710a80ded0f0027b273">&#9670;&#160;</a></span>json_output</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub pub pub pub pub pub json_output</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where to write the results JSON the nightly performance graphs read, if anywhere. </p>
+<p>CI passes <code>--json-output &lt;path&gt;</code>; an interactive run leaves it unset and only reads the printed figures. </p>
 
 </div>
 </div>

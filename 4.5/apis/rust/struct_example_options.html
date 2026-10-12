@@ -107,6 +107,8 @@ Public Attributes</h2></td></tr>
 <tr class="c-table__row memdesc:af35bf333d00e0d1e25cd4a40e096a933"><td class="c-table__cell">&#160;</td><td class="c-table__cell">How many times to cycle the loaded User-Agent list per thread.  <br /></td></tr>
 <tr class="c-table__row memitem:a98f932a13efafc88c041833e4c690027" id="r_a98f932a13efafc88c041833e4c690027"><td class="c-table__cell">pub&#160;pub&#160;pub&#160;pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a98f932a13efafc88c041833e4c690027">max_user_agents</a>: usize</td></tr>
 <tr class="c-table__row memdesc:a98f932a13efafc88c041833e4c690027"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The maximum number of User-Agents to load from the file.  <br /></td></tr>
+<tr class="c-table__row memitem:a417292cd74bdae05aa5b67271a488bef" id="r_a417292cd74bdae05aa5b67271a488bef"><td class="c-table__cell">pub&#160;pub&#160;pub&#160;pub&#160;pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a417292cd74bdae05aa5b67271a488bef">json_output</a>: Option&lt;PathBuf&gt;</td></tr>
+<tr class="c-table__row memdesc:a417292cd74bdae05aa5b67271a488bef"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to write the results JSON the nightly performance graphs read, if anywhere.  <br /></td></tr>
 <tr class="c-table__row memitem:a3580f82a57e3072c78ae08ffe137a3e0" id="r_a3580f82a57e3072c78ae08ffe137a3e0"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a3580f82a57e3072c78ae08ffe137a3e0">profiles</a>: Vec&lt;PerformanceProfile&gt;</td></tr>
 <tr class="c-table__row memdesc:a3580f82a57e3072c78ae08ffe137a3e0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The performance profiles to compare results across.  <br /></td></tr>
 <tr class="c-table__row memitem:a83228972b80e1e38092cd7d41ec1ddde" id="r_a83228972b80e1e38092cd7d41ec1ddde"><td class="c-table__cell">pub&#160;pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a83228972b80e1e38092cd7d41ec1ddde">ips</a>: (<a class="el" href="#a8ac985865d2bf3b9c0c3e515c130d4b5">String</a></td></tr>
@@ -266,6 +268,27 @@ Public Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>How many times each thread loops over the loaded IP set. </p>
+
+</div>
+</div>
+<a id="a417292cd74bdae05aa5b67271a488bef" name="a417292cd74bdae05aa5b67271a488bef"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a417292cd74bdae05aa5b67271a488bef">&#9670;&#160;</a></span>json_output</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub pub pub pub pub pub ExampleOptions::json_output</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where to write the results JSON the nightly performance graphs read, if anywhere. </p>
+<p>CI passes <code>--json-output &lt;path&gt;</code>; an interactive run leaves it unset and only reads the printed figures. </p>
 
 </div>
 </div>

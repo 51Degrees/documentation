@@ -10,6 +10,7 @@ var annotated_dup =
     [ "OnPremiseStarSignEngine", "struct_on_premise_star_sign_engine.html", "struct_on_premise_star_sign_engine" ],
     [ "Options", "struct_options.html", "struct_options" ],
     [ "PageState", "struct_page_state.html", "struct_page_state" ],
+    [ "PerformanceResults", "struct_performance_results.html", "struct_performance_results" ],
     [ "RedeemQuery", "struct_redeem_query.html", "struct_redeem_query" ],
     [ "Sample", "struct_sample.html", "struct_sample" ],
     [ "SimpleClientSideElement", "struct_simple_client_side_element.html", "struct_simple_client_side_element" ],

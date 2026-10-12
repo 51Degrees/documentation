@@ -109,11 +109,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-per
 <div class="c-code__line">    <span class="c-code__comment">// into the headline numbers, so the benchmark measures steady state.</span></div>
 <div class="c-code__line">    writeln!(out)?;</div>
 <div class="c-code__line">    writeln!(out, <span class="c-code__stringliteral">&quot;Warming up ...&quot;</span>)?;</div>
-<div class="c-code__line">    let <a class="code hl_variable" href="dd-cloud-getting-started_8rs.html#a0f751db03e526b165039876c46a8930e">_</a> = <a class="code hl_function" href="dd-onprem-performance_8rs.html#a9ffc20a2dd73a8034d59ac019bd1b81c">benchmark</a>(&amp;pipeline, &amp;<a class="code hl_variable" href="ipi-onprem-compare_8rs.html#a794bef0d1dec0773ddb04f4cddb8dcf1">ips</a>, 1, options.iterations);</div>
+<div class="c-code__line">    let <a class="code hl_variable" href="dd-cloud-getting-started_8rs.html#a0f751db03e526b165039876c46a8930e">_</a> = benchmark(&amp;pipeline, &amp;<a class="code hl_variable" href="ipi-onprem-compare_8rs.html#a794bef0d1dec0773ddb04f4cddb8dcf1">ips</a>, 1, options.iterations);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    writeln!(out, <span class="c-code__stringliteral">&quot;Single-threaded pass ...&quot;</span>)?;</div>
-<div class="c-code__line">    let single = <a class="code hl_function" href="dd-onprem-performance_8rs.html#a9ffc20a2dd73a8034d59ac019bd1b81c">benchmark</a>(&amp;pipeline, &amp;<a class="code hl_variable" href="ipi-onprem-compare_8rs.html#a794bef0d1dec0773ddb04f4cddb8dcf1">ips</a>, 1, options.iterations);</div>
-<div class="c-code__line">    <a class="code hl_function" href="dd-onprem-performance_8rs.html#a1113422a1591e197d5acc4faac9295cd">report</a>(out, <span class="c-code__stringliteral">&quot;Single-threaded&quot;</span>, &amp;single, 1)?;</div>
+<div class="c-code__line">    let single = benchmark(&amp;pipeline, &amp;<a class="code hl_variable" href="ipi-onprem-compare_8rs.html#a794bef0d1dec0773ddb04f4cddb8dcf1">ips</a>, 1, options.iterations);</div>
+<div class="c-code__line">    report(out, <span class="c-code__stringliteral">&quot;Single-threaded&quot;</span>, &amp;single, 1)?;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    writeln!(out)?;</div>
 <div class="c-code__line">    writeln!(</div>
@@ -121,8 +121,29 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-per
 <div class="c-code__line">        <span class="c-code__stringliteral">&quot;Multi-threaded pass ({} threads) ...&quot;</span>,</div>
 <div class="c-code__line">        options.thread_count</div>
 <div class="c-code__line">    )?;</div>
-<div class="c-code__line">    let multi = <a class="code hl_function" href="dd-onprem-performance_8rs.html#a9ffc20a2dd73a8034d59ac019bd1b81c">benchmark</a>(&amp;pipeline, &amp;<a class="code hl_variable" href="ipi-onprem-compare_8rs.html#a794bef0d1dec0773ddb04f4cddb8dcf1">ips</a>, options.thread_count, options.iterations);</div>
-<div class="c-code__line">    <a class="code hl_function" href="dd-onprem-performance_8rs.html#a1113422a1591e197d5acc4faac9295cd">report</a>(out, <span class="c-code__stringliteral">&quot;Multi-threaded&quot;</span>, &amp;multi, options.thread_count)?;</div>
+<div class="c-code__line">    let multi = benchmark(&amp;pipeline, &amp;<a class="code hl_variable" href="ipi-onprem-compare_8rs.html#a794bef0d1dec0773ddb04f4cddb8dcf1">ips</a>, options.thread_count, options.iterations);</div>
+<div class="c-code__line">    report(out, <span class="c-code__stringliteral">&quot;Multi-threaded&quot;</span>, &amp;multi, options.thread_count)?;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// The nightly performance graphs read this file. The example writes it</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// itself so the figure does not depend on the wording or number formatting</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// of the printed report above, which is free to change. The multi-threaded</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// pass is the headline figure for the product, so it is the one published.</span></div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let Some(<a class="code hl_variable" href="dd-onprem-performance_8rs.html#aa245846aeec29710a80ded0f0027b273">json_output</a>) = &amp;options.json_output {</div>
+<div class="c-code__line">        let results = examples_shared::PerformanceResults::new()</div>
+<div class="c-code__line">            .higher_is_better(<span class="c-code__stringliteral">&quot;LookupsPerSecond&quot;</span>, multi.lookups_per_second())</div>
+<div class="c-code__line">            .lower_is_better(<span class="c-code__stringliteral">&quot;AvgMillisecsPerLookup&quot;</span>, multi.ms_per_lookup());</div>
+<div class="c-code__line">        results.write_to(<a class="code hl_variable" href="dd-onprem-performance_8rs.html#aa245846aeec29710a80ded0f0027b273">json_output</a>).with_context(|| {</div>
+<div class="c-code__line">            format!(</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;failed to write the performance results to &#39;{}&#39;&quot;</span>,</div>
+<div class="c-code__line">                <a class="code hl_variable" href="dd-onprem-performance_8rs.html#aa245846aeec29710a80ded0f0027b273">json_output</a>.display()</div>
+<div class="c-code__line">            )</div>
+<div class="c-code__line">        })?;</div>
+<div class="c-code__line">        writeln!(</div>
+<div class="c-code__line">            out,</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;Wrote performance results to &#39;{}&#39;.&quot;</span>,</div>
+<div class="c-code__line">            <a class="code hl_variable" href="dd-onprem-performance_8rs.html#aa245846aeec29710a80ded0f0027b273">json_output</a>.display()</div>
+<div class="c-code__line">        )?;</div>
+<div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    Ok(())</div>
 <div class="c-code__line">}</div>

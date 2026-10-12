@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-perf
 <div class="textblock"><p>On-premise performance-benchmark console example. See the descriptive block at the bottom of this file for the full write-up.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>(options: <a class="code hl_struct" href="struct_example_options.html">ExampleOptions</a>) -&gt; Result&lt;()&gt; {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Load the User-Agents to benchmark against.</span></div>
-<div class="c-code__line">    let user_agents = <a class="code hl_function" href="dd-onprem-performance_8rs.html#a01bad78a2e064066633f92863f1a5dbb">load_user_agents</a>(&amp;options.user_agents_file, options.max_user_agents)?;</div>
+<div class="c-code__line">    let user_agents = load_user_agents(&amp;options.user_agents_file, options.max_user_agents)?;</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> user_agents.is_empty() {</div>
 <div class="c-code__line">        anyhow::bail!(</div>
 <div class="c-code__line">            <span class="c-code__stringliteral">&quot;no User-Agents were loaded from &#39;{}&#39;&quot;</span>,</div>
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-perf
 <div class="c-code__line">    <span class="c-code__comment">// The InMemory profile loads the whole data set into memory for the fastest</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// detections. See the performance options documentation at the bottom for the</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// trade-offs between the profiles.</span></div>
-<div class="c-code__line">    let pipeline = <a class="code hl_function" href="dd-onprem-performance_8rs.html#a843d1e419a83e50332d78beb8eb4d09c">build_benchmark_pipeline</a>(&amp;options.data_file, PerformanceProfile::InMemory)?;</div>
+<div class="c-code__line">    let pipeline = build_benchmark_pipeline(&amp;options.data_file, PerformanceProfile::InMemory)?;</div>
 <div class="c-code__line">    device_detection_examples::print_data_file_warnings(</div>
 <div class="c-code__line">        &amp;options.data_file,</div>
 <div class="c-code__line">        PerformanceProfile::InMemory,</div>
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-perf
 <div class="c-code__line">    <span class="c-code__comment">// A warm-up pass primes the data set and the caches so the first detections</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// do not skew the timed figures.</span></div>
 <div class="c-code__line">    println!(<span class="c-code__stringliteral">&quot;Warming up ...&quot;</span>);</div>
-<div class="c-code__line">    let <a class="code hl_variable" href="dd-cloud-getting-started_8rs.html#a0f751db03e526b165039876c46a8930e">_</a> = <a class="code hl_function" href="dd-onprem-performance_8rs.html#a9ffc20a2dd73a8034d59ac019bd1b81c">benchmark</a>(&amp;pipeline, &amp;user_agents, options.thread_count, 1)?;</div>
+<div class="c-code__line">    let <a class="code hl_variable" href="dd-cloud-getting-started_8rs.html#a0f751db03e526b165039876c46a8930e">_</a> = benchmark(&amp;pipeline, &amp;user_agents, options.thread_count, 1)?;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    println!(</div>
 <div class="c-code__line">        <span class="c-code__stringliteral">&quot;Running {} pass(es) of {} detection(s) across {} thread(s) ...&quot;</span>,</div>
@@ -107,14 +107,30 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-perf
 <div class="c-code__line">        user_agents.len(),</div>
 <div class="c-code__line">        options.thread_count</div>
 <div class="c-code__line">    );</div>
-<div class="c-code__line">    let <a class="code hl_variable" href="fodid-web-creator-context_8rs.html#a71b4cb0e03b217e733bdef1a89459109">result</a> = <a class="code hl_function" href="dd-onprem-performance_8rs.html#a9ffc20a2dd73a8034d59ac019bd1b81c">benchmark</a>(</div>
+<div class="c-code__line">    let <a class="code hl_variable" href="fodid-web-creator-context_8rs.html#a71b4cb0e03b217e733bdef1a89459109">result</a> = benchmark(</div>
 <div class="c-code__line">        &amp;pipeline,</div>
 <div class="c-code__line">        &amp;user_agents,</div>
 <div class="c-code__line">        options.thread_count,</div>
 <div class="c-code__line">        options.passes,</div>
 <div class="c-code__line">    )?;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <a class="code hl_function" href="dd-onprem-performance_8rs.html#a1113422a1591e197d5acc4faac9295cd">report</a>(&amp;<a class="code hl_variable" href="fodid-web-creator-context_8rs.html#a71b4cb0e03b217e733bdef1a89459109">result</a>, options.thread_count);</div>
+<div class="c-code__line">    report(&amp;<a class="code hl_variable" href="fodid-web-creator-context_8rs.html#a71b4cb0e03b217e733bdef1a89459109">result</a>, options.thread_count);</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// The nightly performance graphs read this file. The example writes it</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// itself so the figure does not depend on the wording or number formatting</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// of the printed report above, which is free to change.</span></div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let Some(<a class="code hl_variable" href="dd-onprem-performance_8rs.html#aa245846aeec29710a80ded0f0027b273">json_output</a>) = &amp;options.json_output {</div>
+<div class="c-code__line">        let results = examples_shared::PerformanceResults::new()</div>
+<div class="c-code__line">            .higher_is_better(<span class="c-code__stringliteral">&quot;DetectionsPerSecond&quot;</span>, <a class="code hl_variable" href="fodid-web-creator-context_8rs.html#a71b4cb0e03b217e733bdef1a89459109">result</a>.detections_per_second())</div>
+<div class="c-code__line">            .lower_is_better(<span class="c-code__stringliteral">&quot;AvgMillisecsPerDetection&quot;</span>, <a class="code hl_variable" href="fodid-web-creator-context_8rs.html#a71b4cb0e03b217e733bdef1a89459109">result</a>.millisecs_per_detection());</div>
+<div class="c-code__line">        results.write_to(<a class="code hl_variable" href="dd-onprem-performance_8rs.html#aa245846aeec29710a80ded0f0027b273">json_output</a>).with_context(|| {</div>
+<div class="c-code__line">            format!(</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;failed to write the performance results to &#39;{}&#39;&quot;</span>,</div>
+<div class="c-code__line">                <a class="code hl_variable" href="dd-onprem-performance_8rs.html#aa245846aeec29710a80ded0f0027b273">json_output</a>.display()</div>
+<div class="c-code__line">            )</div>
+<div class="c-code__line">        })?;</div>
+<div class="c-code__line">        println!(<span class="c-code__stringliteral">&quot;Wrote performance results to &#39;{}&#39;.&quot;</span>, <a class="code hl_variable" href="dd-onprem-performance_8rs.html#aa245846aeec29710a80ded0f0027b273">json_output</a>.display());</div>
+<div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// This benchmark uses PerformanceProfile::InMemory. The other profiles</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// (HighPerformance, Balanced, Default, LowMemory) trade memory, load time and</span></div>

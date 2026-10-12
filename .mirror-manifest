@@ -3885,6 +3885,7 @@ apis/rust/ipi-web-getting-started-onprem-example.html
 apis/rust/javascript__builder__render_8rs.html
 apis/rust/keys_8rs.html
 apis/rust/pages.html
+apis/rust/performance__results_8rs.html
 apis/rust/pipeline-examples_2src_2lib_8rs.html
 apis/rust/properties_8rs.html
 apis/rust/ss-clientside_8rs.html
@@ -3912,6 +3913,8 @@ apis/rust/struct_options-members.html
 apis/rust/struct_options.html
 apis/rust/struct_page_state-members.html
 apis/rust/struct_page_state.html
+apis/rust/struct_performance_results-members.html
+apis/rust/struct_performance_results.html
 apis/rust/struct_redeem_query-members.html
 apis/rust/struct_redeem_query.html
 apis/rust/struct_sample-members.html
