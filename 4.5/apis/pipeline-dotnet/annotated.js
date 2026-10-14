@@ -504,6 +504,7 @@ var annotated =
           [ "Tests", "namespace_fifty_one_1_1_pipeline_1_1_translation_1_1_tests.html", [
             [ "EvidenceCopyData", "class_fifty_one_1_1_pipeline_1_1_translation_1_1_tests_1_1_evidence_copy_data.html", null ],
             [ "EvidenceCopyElement", "class_fifty_one_1_1_pipeline_1_1_translation_1_1_tests_1_1_evidence_copy_element.html", "class_fifty_one_1_1_pipeline_1_1_translation_1_1_tests_1_1_evidence_copy_element" ],
+            [ "MissingSourcePropertyTests", "class_fifty_one_1_1_pipeline_1_1_translation_1_1_tests_1_1_missing_source_property_tests.html", "class_fifty_one_1_1_pipeline_1_1_translation_1_1_tests_1_1_missing_source_property_tests" ],
             [ "TranslationEngineTests", "class_fifty_one_1_1_pipeline_1_1_translation_1_1_tests_1_1_translation_engine_tests.html", "class_fifty_one_1_1_pipeline_1_1_translation_1_1_tests_1_1_translation_engine_tests" ]
           ] ]
         ] ]

@@ -74,6 +74,11 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a7ec2abfe72c7e8bb7372984a3ab4463f" id="r_a7ec2abfe72c7e8bb7372984a3ab4463f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7ec2abfe72c7e8bb7372984a3ab4463f">TranslationProperty</a> (string source, string destination)</td></tr>
 <tr class="c-table__row memdesc:a7ec2abfe72c7e8bb7372984a3ab4463f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:ae1bd65247aae5543297f5d5cddb66e30" id="r_ae1bd65247aae5543297f5d5cddb66e30"><td class="c-table__cell">static&#160;<a class="el" href="#a7ec2abfe72c7e8bb7372984a3ab4463f">TranslationProperty</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ae1bd65247aae5543297f5d5cddb66e30">Create&lt; TDestination &gt;</a> (string source, string destination)</td></tr>
+<tr class="c-table__row memdesc:ae1bd65247aae5543297f5d5cddb66e30"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Creates a translation whose no-value placeholder is typed for the readers of the destination property.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-properties" class="g-docs__section-heading"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="c-table__row memitem:a78ac250327847454f8be15345579fbb0" id="r_a78ac250327847454f8be15345579fbb0"><td class="c-table__cell"><a id="a78ac250327847454f8be15345579fbb0" name="a78ac250327847454f8be15345579fbb0"></a>
@@ -82,6 +87,8 @@ string&#160;</td><td class="c-table__cell"><b>SourceProperty</b><code> [get, set
 <tr class="c-table__row memitem:a6e7e238b5a2384f6f54492d02d8e0831" id="r_a6e7e238b5a2384f6f54492d02d8e0831"><td class="c-table__cell"><a id="a6e7e238b5a2384f6f54492d02d8e0831" name="a6e7e238b5a2384f6f54492d02d8e0831"></a>
 string&#160;</td><td class="c-table__cell"><b>DestinationProperty</b><code> [get, set]</code></td></tr>
 <tr class="c-table__row memdesc:a6e7e238b5a2384f6f54492d02d8e0831"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Destination property name on translation engine data. <br /></td></tr>
+<tr class="c-table__row memitem:a8c283c45bc426093ac55b9b1dbb05604" id="r_a8c283c45bc426093ac55b9b1dbb05604"><td class="c-table__cell">Func&lt;&#160;string,&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_property_value.html">IAspectPropertyValue</a>&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a8c283c45bc426093ac55b9b1dbb05604">CreateNoValuePlaceholder</a><code> [get]</code></td></tr>
+<tr class="c-table__row memdesc:a8c283c45bc426093ac55b9b1dbb05604"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Creates the no-value placeholder stored against the destination property when the source property has no value.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="a7ec2abfe72c7e8bb7372984a3ab4463f" name="a7ec2abfe72c7e8bb7372984a3ab4463f"></a>
@@ -115,6 +122,86 @@ string&#160;</td><td class="c-table__cell"><b>DestinationProperty</b><code> [get
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="ae1bd65247aae5543297f5d5cddb66e30" name="ae1bd65247aae5543297f5d5cddb66e30"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae1bd65247aae5543297f5d5cddb66e30">&#9670;&#160;</a></span>Create&lt; TDestination &gt;()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#a7ec2abfe72c7e8bb7372984a3ab4463f">TranslationProperty</a> FiftyOne.Pipeline.Translation.Data.TranslationProperty.Create&lt; TDestination &gt; </td>
+          <td>(</td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>destination</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Creates a translation whose no-value placeholder is typed for the readers of the destination property. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TDestination</td><td>The value type readers of the destination property expect, i.e. the T of the IAspectPropertyValue&lt;T&gt; they read it as. When the source property has no value, the placeholder stored against the destination is created with this type so typed reads of the destination do not fail with an invalid cast. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>Source property name on the source element data. </td></tr>
+    <tr><td class="paramname">destination</td><td>Destination property name on translation engine data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">A new TranslationProperty. </dd></dl>
+
+</div>
+</div>
+<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="g-docs__section-heading">Property Documentation</h2>
+<a id="a8c283c45bc426093ac55b9b1dbb05604" name="a8c283c45bc426093ac55b9b1dbb05604"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8c283c45bc426093ac55b9b1dbb05604">&#9670;&#160;</a></span>CreateNoValuePlaceholder</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">Func&lt;string, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_property_value.html">IAspectPropertyValue</a>&gt; FiftyOne.Pipeline.Translation.Data.TranslationProperty.CreateNoValuePlaceholder</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Creates the no-value placeholder stored against the destination property when the source property has no value. </p>
+<p>The supplied string is the placeholder's no-value message. </p>
 
 </div>
 </div>

@@ -84,6 +84,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a4c74a5000206e63bf5bc84d1d9ed91ca"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the behavior of the translation engine when a translation is missing for a value.  <br /></td></tr>
 <tr class="c-table__row memitem:a803e24b1b5e760f29a669f687087061d" id="r_a803e24b1b5e760f29a669f687087061d"><td class="c-table__cell"><a class="el" href="#a4bbbb3225fbf98deb96c4deda8ab9f13">TranslationEngineBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a803e24b1b5e760f29a669f687087061d">AddTranslation</a> (string source, string destination)</td></tr>
 <tr class="c-table__row memdesc:a803e24b1b5e760f29a669f687087061d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add translated property.  <br /></td></tr>
+<tr class="c-table__row memitem:a96e56db949cedf7b2b3b509d03835090" id="r_a96e56db949cedf7b2b3b509d03835090"><td class="c-table__cell"><a class="el" href="#a4bbbb3225fbf98deb96c4deda8ab9f13">TranslationEngineBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a96e56db949cedf7b2b3b509d03835090">AddTranslation&lt; TDestination &gt;</a> (string source, string destination)</td></tr>
+<tr class="c-table__row memdesc:a96e56db949cedf7b2b3b509d03835090"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add translated property.  <br /></td></tr>
 <tr class="c-table__row memitem:aaabec38b23c82f40ac9cfe41c8786e3a" id="r_aaabec38b23c82f40ac9cfe41c8786e3a"><td class="c-table__cell"><a class="el" href="#a4bbbb3225fbf98deb96c4deda8ab9f13">TranslationEngineBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#aaabec38b23c82f40ac9cfe41c8786e3a">AddSource</a> (string filePath)</td></tr>
 <tr class="c-table__row memdesc:aaabec38b23c82f40ac9cfe41c8786e3a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add a source file containing translations.  <br /></td></tr>
 <tr class="c-table__row memitem:a5c178ae5af2d0895df997bc41e64d634" id="r_a5c178ae5af2d0895df997bc41e64d634"><td class="c-table__cell"><a class="el" href="#a4bbbb3225fbf98deb96c4deda8ab9f13">TranslationEngineBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a5c178ae5af2d0895df997bc41e64d634">AddSource</a> (string name, string source)</td></tr>
@@ -185,6 +187,48 @@ Public Member Functions</h2></td></tr>
 
 <p>Add translated property. </p>
 <p>This defines a translation from one property to another.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The key for the source property to translate. </td></tr>
+    <tr><td class="paramname">destination</td><td>The key to store the translated value under on the translation engine data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder. </dd></dl>
+
+</div>
+</div>
+<a id="a96e56db949cedf7b2b3b509d03835090" name="a96e56db949cedf7b2b3b509d03835090"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a96e56db949cedf7b2b3b509d03835090">&#9670;&#160;</a></span>AddTranslation&lt; TDestination &gt;()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#a4bbbb3225fbf98deb96c4deda8ab9f13">TranslationEngineBuilder</a> <a class="el" href="#a803e24b1b5e760f29a669f687087061d">FiftyOne.Pipeline.Translation.FlowElements.TranslationEngineBuilder.AddTranslation</a>&lt; TDestination &gt; </td>
+          <td>(</td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>destination</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Add translated property. </p>
+<p>This defines a translation from one property to another.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TDestination</td><td>The value type readers of the destination property expect. When the source property has no value, the no-value placeholder stored against the destination is created with this type so typed reads of the destination do not fail with an invalid cast. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">source</td><td>The key for the source property to translate. </td></tr>
