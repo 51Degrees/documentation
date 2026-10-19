@@ -221,6 +221,13 @@ Write-Host "::group::Minifying Doxygen-emitted JS and CSS"
 node ci/minify-docs-assets.js gh-pages
 Write-Host "::endgroup::"
 
+# Every page on gh-pages, archived versions included, loads the website's
+# analytics page script as docs/header.html writes it. This runs after the
+# minify step so the script's path is never rewritten to a .min.js file.
+Write-Host "::group::Adding the analytics page script"
+& "$PSScriptRoot/add-analytics-tag.ps1" -Path gh-pages
+Write-Host "::endgroup::"
+
 # Scan the freshly generated HTML for content-quality regressions
 # before it gets published. Companion to the Website-side
 # ContentValidator (postbuild/ContentValidator.cs); see

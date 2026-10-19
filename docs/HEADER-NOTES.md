@@ -178,6 +178,12 @@ site's own server. The browser never contacts an analytics service.
 Where the pages are served without the website, as on the GitHub Pages copy,
 the path does not exist, so nothing is loaded or sent.
 
+The build copies this tag onto every page on gh-pages whose head lacks it or
+carries a different one, using `ci/add-analytics-tag.ps1`. That covers the
+archived versions, which are not regenerated, and the pages DoxyGen writes
+without this header. Change the tag here and the next build carries the
+change to every page.
+
 ## Why these notes are not inline comments
 
 A prior version had this rationale as `<!-- ... -->` blocks inside
