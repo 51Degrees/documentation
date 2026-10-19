@@ -162,7 +162,7 @@ DoxyGen build, not a template change.
 
 Readers reach these pages through 51degrees.com, where the website serves
 each documentation page and also serves its analytics page script at
-`/api/events/client.js`. The root-relative path loads that script from
+`/api/v1/events/client.js`. The root-relative path loads that script from
 whichever site serves the page, so on 51degrees.com a documentation page
 view is recorded the same way as every other page on the site, through the
 site's own server. The browser never contacts an analytics service.
