@@ -158,6 +158,26 @@ from DoxyGen substitutions; eliminating the proxy's remaining canonical
 / hreflang / title rewrites needs a feature in the custom 51Degrees
 DoxyGen build, not a template change.
 
+## Why the analytics script has a root-relative path
+
+Readers reach these pages through 51degrees.com, where the website serves
+each documentation page and also serves its analytics page script at
+`/api/events/client.js`. The root-relative path loads that script from
+whichever site serves the page, so on 51degrees.com a documentation page
+view is recorded the same way as every other page on the site, through the
+site's own server. The browser never contacts an analytics service.
+
+- `data-pageview` has no value, so the page view takes the page's own
+  title, which the website has already corrected by the time the browser
+  reads it.
+- `data-fiftyone-analytics` marks the tag, so other page scripts can find it
+  before it has run.
+- Both attributes carry an empty value because the doctype is XHTML, which
+  requires one.
+
+Where the pages are served without the website, as on the GitHub Pages copy,
+the path does not exist, so nothing is loaded or sent.
+
 ## Why these notes are not inline comments
 
 A prior version had this rationale as `<!-- ... -->` blocks inside
