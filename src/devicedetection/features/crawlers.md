@@ -34,7 +34,15 @@ Control what your content can be used for by checking the `CrawlerUsage` propert
 
 # IsArtificialIntelligence
 
-`IsArtificialIntelligence` is a boolean property designed to give you easy answers about AI crawling. If the crawler has a `CrawlerUsage` related to AI this will be TRUE.
+`IsArtificialIntelligence` is a property designed to give you easy answers about AI crawling. If the crawler has a `CrawlerUsage` related to AI this will be True.
+
+- **True** The crawler is confirmed by the controller to be used to train artificial intelligence.
+
+- **False** The crawler is not used to train artificial intelligence. This may be based on the controller documentation or on the capabilities and purpose of the crawler. For crawlers which do not read website content it is assumed they cannot be used to train artificial intelligence.
+
+- **Unknown** It is not possible to determine whether the crawler is being used to train artificial intelligence.
+
+- **N/A** Not a crawler.
 
 
 # Robots.txt
