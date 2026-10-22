@@ -88,10 +88,10 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:a18eba5d96a653fc6c16bdae9c7f7d00f" id="r_a18eba5d96a653fc6c16bdae9c7f7d00f"><td class="c-table__cell">use&#160;base64::Engine&#160;as&#160;</td><td class="c-table__cell"><a class="el" href="#a18eba5d96a653fc6c16bdae9c7f7d00f">_</a></td></tr>
 <tr class="c-table__row memitem:a4cbb5b10944327f887b41fab8b4634d3" id="r_a4cbb5b10944327f887b41fab8b4634d3"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a4cbb5b10944327f887b41fab8b4634d3">RESOURCE_KEY_ENV_VAR</a></td></tr>
 <tr class="c-table__row memdesc:a4cbb5b10944327f887b41fab8b4634d3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The aligned resource-key environment variable, checked first.  <br /></td></tr>
-<tr class="c-table__row memitem:a78d4fe22a280f10ff3d5509b52f684fb" id="r_a78d4fe22a280f10ff3d5509b52f684fb"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a78d4fe22a280f10ff3d5509b52f684fb">CI_RESOURCE_KEY_PAID_ENV_VAR</a></td></tr>
-<tr class="c-table__row memdesc:a78d4fe22a280f10ff3d5509b52f684fb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The CI-exported paid-tier resource-key environment variable, checked second.  <br /></td></tr>
-<tr class="c-table__row memitem:addcd507d2cd05e56d1ba083a6e65c574" id="r_addcd507d2cd05e56d1ba083a6e65c574"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#addcd507d2cd05e56d1ba083a6e65c574">CI_RESOURCE_KEY_FREE_ENV_VAR</a></td></tr>
-<tr class="c-table__row memdesc:addcd507d2cd05e56d1ba083a6e65c574"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The CI-exported free-tier resource-key environment variable, checked last.  <br /></td></tr>
+<tr class="c-table__row memitem:ab0d7ccb46c03418e5d8d388b77be06a7" id="r_ab0d7ccb46c03418e5d8d388b77be06a7"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#ab0d7ccb46c03418e5d8d388b77be06a7">CI_RESOURCE_KEY_BESPOKE_ENV_VAR</a></td></tr>
+<tr class="c-table__row memdesc:ab0d7ccb46c03418e5d8d388b77be06a7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The CI-exported bespoke-tier resource-key environment variable, checked second.  <br /></td></tr>
+<tr class="c-table__row memitem:aef3f673a99e87709d1f7f4f69e2b6644" id="r_aef3f673a99e87709d1f7f4f69e2b6644"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#aef3f673a99e87709d1f7f4f69e2b6644">CI_RESOURCE_KEY_BASIC_ENV_VAR</a></td></tr>
+<tr class="c-table__row memdesc:aef3f673a99e87709d1f7f4f69e2b6644"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The CI-exported basic-tier resource-key environment variable, checked last.  <br /></td></tr>
 <tr class="c-table__row memitem:a201a49ae666fba599c084ae096e1527c" id="r_a201a49ae666fba599c084ae096e1527c"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a201a49ae666fba599c084ae096e1527c">RESOURCE_KEY_ENV_VARS</a></td></tr>
 <tr class="c-table__row memdesc:a201a49ae666fba599c084ae096e1527c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The order in which the resource-key environment variables are consulted.  <br /></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
@@ -344,8 +344,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="addcd507d2cd05e56d1ba083a6e65c574" name="addcd507d2cd05e56d1ba083a6e65c574"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#addcd507d2cd05e56d1ba083a6e65c574">&#9670;&#160;</a></span>CI_RESOURCE_KEY_FREE_ENV_VAR</h2>
+<a id="aef3f673a99e87709d1f7f4f69e2b6644" name="aef3f673a99e87709d1f7f4f69e2b6644"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aef3f673a99e87709d1f7f4f69e2b6644">&#9670;&#160;</a></span>CI_RESOURCE_KEY_BASIC_ENV_VAR</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -353,19 +353,19 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">pub const CI_RESOURCE_KEY_FREE_ENV_VAR</td>
+              <td class="c-table__cell">pub const CI_RESOURCE_KEY_BASIC_ENV_VAR</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>The CI-exported free-tier resource-key environment variable, checked last. </p>
+<p>The CI-exported basic-tier resource-key environment variable, checked last. </p>
 
 </div>
 </div>
-<a id="a78d4fe22a280f10ff3d5509b52f684fb" name="a78d4fe22a280f10ff3d5509b52f684fb"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a78d4fe22a280f10ff3d5509b52f684fb">&#9670;&#160;</a></span>CI_RESOURCE_KEY_PAID_ENV_VAR</h2>
+<a id="ab0d7ccb46c03418e5d8d388b77be06a7" name="ab0d7ccb46c03418e5d8d388b77be06a7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab0d7ccb46c03418e5d8d388b77be06a7">&#9670;&#160;</a></span>CI_RESOURCE_KEY_BESPOKE_ENV_VAR</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -373,15 +373,15 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">pub const CI_RESOURCE_KEY_PAID_ENV_VAR</td>
+              <td class="c-table__cell">pub const CI_RESOURCE_KEY_BESPOKE_ENV_VAR</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>The CI-exported paid-tier resource-key environment variable, checked second. </p>
-<p>Preferred over the free tier because a paid key is a superset: it grants the free-tier properties too, so every cloud example and test resolves a working key from it, whereas a free key would fail the paid-only examples. </p>
+<p>The CI-exported bespoke-tier resource-key environment variable, checked second. </p>
+<p>Preferred over the basic tier because a bespoke key is a superset: it grants the basic-tier properties too, so every cloud example and test resolves a working key from it, whereas a basic key would fail the paid-only examples. </p>
 
 </div>
 </div>
@@ -449,7 +449,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The order in which the resource-key environment variables are consulted. </p>
-<p>An explicit <code>51DEGREES_RESOURCE_KEY</code> wins, then the paid CI key (a superset of the free one), then the free CI key. The first variable set to a non-blank value supplies the key. </p>
+<p>An explicit <code>51DEGREES_RESOURCE_KEY</code> wins, then the bespoke CI key (a superset of the basic one), then the basic CI key. The first variable set to a non-blank value supplies the key. </p>
 
 </div>
 </div>
