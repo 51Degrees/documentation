@@ -22,6 +22,6 @@ The example ships across every supported language with a matching pattern, so
 the same workload can be measured across runtimes.
 
 Results we measured on seven machines are on the
-[Hardware benchmarks](@ref ProductSummaries_HardwareBenchmarks) page.
+[Benchmarks](@ref ProductSummaries_Benchmarks_Hardware) page.
 
 @subpage DeviceDetection_Examples_Performance_OnPremiseHash

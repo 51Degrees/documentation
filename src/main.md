@@ -163,7 +163,6 @@ Everything you need to succeed:
 - [Architecture concepts](@ref PipelineApi_Concepts_Index)
 - [Feature comparisons](@ref ProductSummaries_FeatureMatrix)
 - [Performance benchmarks](@ref ProductSummaries_Benchmarks)
-- [Hardware benchmarks](@ref ProductSummaries_HardwareBenchmarks)
 
 ---
 
