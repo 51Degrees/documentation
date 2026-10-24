@@ -63,8 +63,8 @@ Choose what fits your stack:
 
 Our patented [Hash Algorithm](@ref DeviceDetection_Hash) is built for performance and scale:
 
-- **Speed:** Processes over one million detections per second, per CPU core
-- **Ultra-low latency:** Delivers sub-microsecond detection times with in-process deployment
+- **Speed:** Over one million detections per second for `IsMobile` alone on an eight-core AWS Graviton3 instance, and over 11 million on a 128-core server, when the data file is loaded into memory (see the [hardware benchmarks](@ref ProductSummaries_HardwareBenchmarks))
+- **Low latency:** Each detection takes microseconds when the data file is in memory, and there is no network call
 - **Performance-critical ready:** Perfect for high-load servers, edge environments, and real-time systems
 - **Accuracy:** Maintains industry-leading accuracy across [250+ device properties](https://51degrees.com/developers/property-dictionary)
 - **Efficiency:** Keeps memory and bandwidth usage minimal
