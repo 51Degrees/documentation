@@ -1,22 +1,24 @@
 @page ProductSummaries_Benchmarks Benchmarks
 
-Precise benchmarking is a complex topic. The following results are intended
-more as an illustration of the difference in performance between
-platforms and configurations than an in-depth exploration of performance.
+The graphs on this page show the throughput of the console performance example
+in each language, from automated runs on GitHub hosted runners. Runners share
+hardware with other users, and the hardware can change from one run to the
+next. The graphs show trends over time. A change in a graph can come from the
+runner hardware as well as from the code, and none of the graphs shows the best
+throughput a machine can reach.
+
+For figures measured on known machines, all using the same data files and
+evidence, see [Hardware benchmarks](@ref ProductSummaries_HardwareBenchmarks).
 
 If performance is important to you then we highly recommend running
-your own profiling.
-
-These tests are run using a console performance example.
+your own profiling on the hardware you plan to use.
 <!--
 Evidence from the `Evidence Records` file in
 [device-detection-data](https://github.com/51Degrees/device-detection-data) is processed by the pipeline
 and the time taken measured.
 -->
-If language appropriate, multiple threads are used to run the tests.
+Where the language supports it, the tests use several threads.
 For technical details, see the example repositories on [GitHub](https://github.com/51Degrees?q=example).
-We run performance tests regularly on GitHub actions. The performance of this may
-not be as good as a dedicated machine, as it's running on a GitHub runner, but gives an indication of consistency.
 
 <!--
 # C/C++
