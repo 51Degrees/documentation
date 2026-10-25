@@ -1,0 +1,23 @@
+name: Weekly Package Update
+
+# Updates the npm packages listed in ci/update-packages.ps1 within the ranges
+# in each package.json, and opens a pull request when anything changes.
+on:
+  workflow_dispatch:
+    inputs:
+      dryrun:
+        type: boolean
+        default: false
+  schedule:
+    - cron: '0 6 * * 1'
+
+jobs:
+  PackageUpdate:
+    name: Weekly Package Update
+    uses: 51Degrees/common-ci/.github/workflows/nightly-package-update.yml@main
+    with:
+      repo-name: ${{ github.event.repository.name }}
+      org-name: ${{ github.event.repository.owner.login }}
+      dryrun: ${{ inputs.dryrun || false }}
+    secrets:
+      token: ${{ secrets.ACCESS_TOKEN }}
