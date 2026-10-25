@@ -2,7 +2,7 @@
 
 These examples measure how many lookups per second the IP Intelligence engine
 can make on your hardware. Our own results from five machines are in the
-[hardware benchmarks](@ref ProductSummaries_Benchmarks_Hardware_20260731).
+[hardware benchmarks](@ref ProductSummaries_Benchmarks_Hardware).
 
 @startsnippets
 @grabexample{ip-intelligence-cxx,_ip_intelligence_2_performance_8c,C}

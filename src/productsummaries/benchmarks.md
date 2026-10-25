@@ -7,7 +7,7 @@ platforms and configurations than an in-depth exploration of performance.
 - @subpage ProductSummaries_Benchmarks_Nightly - graphs from the performance
   example in each language, run on GitHub hosted runners as part of the
   nightly builds. They give an indication of consistency over time.
-- @subpage ProductSummaries_Benchmarks_Hardware_20260731 - results for
+- @subpage ProductSummaries_Benchmarks_Hardware - results for
   version 4.5.70 of the Device Detection C library on seven machines, from a
   desktop PC built in 2008 to a 128-core server, and version 4.5.34 of the IP
   Intelligence C library on five of them.

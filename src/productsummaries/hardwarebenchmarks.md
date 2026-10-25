@@ -1,9 +1,9 @@
-@page ProductSummaries_Benchmarks_Hardware_20260731 Hardware Benchmarks, 31 July 2026
+@page ProductSummaries_Benchmarks_Hardware Hardware Benchmarks
 
 These results are for version 4.5.70 of the Device Detection C library and
-version 4.5.34 of the IP Intelligence C library, measured on 31 July 2026. The
-[machines](@ref ProductSummaries_Benchmarks_Hardware_20260731_Machines) and
-[how we tested](@ref ProductSummaries_Benchmarks_Hardware_20260731_HowWeTested),
+version 4.5.34 of the IP Intelligence C library. The
+[machines](@ref ProductSummaries_Benchmarks_Hardware_Machines) and
+[how we tested](@ref ProductSummaries_Benchmarks_Hardware_HowWeTested),
 including what InMemory and Balanced mean, follow the results.
 
 # Device Detection
@@ -20,6 +20,8 @@ including what InMemory and Balanced mean, follow the results.
 | Raspberry Pi 4 Model B | 91,206 | 113,152 | 83,799 | 76,767 | 22,397 | 9,678 |
 | Desktop PC from 2008 | 66,240 | 104,594 | 75,791 | 61,373 | 16,148 | 9,278 |
 
+Measured on 31 July 2026.
+
 ## Balanced, detections per second
 
 | Machine | `IsMobile` | `PlatformName` | `BrowserName` | `IsCrawler` | One per component | Every property |
@@ -31,6 +33,8 @@ including what InMemory and Balanced mean, follow the results.
 | Mac mini (2018) | 145,968 | 134,552 | 84,041 | 140,662 | 27,676 | 1,568 |
 | Raspberry Pi 4 Model B | 35,871 | 42,699 | 21,204 | 40,980 | 6,760 | 306 |
 | Desktop PC from 2008 | 75,363 | 83,635 | 47,220 | 62,049 | 14,276 | 472 |
+
+Measured on 31 July 2026.
 
 The every-property column for Balanced comes from about 20,000 records rather
 than one million. Balanced is very slow when every property is requested, so if
@@ -54,6 +58,8 @@ and InMemory all six million.
 | Raspberry Pi 4 Model B | 1,067 | 743 | 95.8 | 7.4 |
 | Desktop PC from 2008 | 2,900 | 376 | n/a | 7.6 |
 
+Measured on 31 July 2026.
+
 # IP Intelligence
 
 ## InMemory, lookups per second
@@ -66,6 +72,8 @@ and InMemory all six million.
 | Mac mini (2020) | 2,352,278 | 4,806,364 | 884,235 | 559,059 | 209,876 |
 | Mac mini (2018) | 1,194,046 | 2,512,458 | 518,619 | 321,427 | 133,013 |
 
+Measured on 31 July 2026.
+
 ## Balanced, lookups per second
 
 | Machine | `RegisteredName` | `AsnName` | `Longitude` | All three | Every property |
@@ -75,6 +83,8 @@ and InMemory all six million.
 | AWS c6i.2xlarge | 1,230,586 | 1,512,510 | 789,145 | 282,252 | 9,713 |
 | Mac mini (2020) | 1,496,085 | 1,508,657 | 522,488 | 268,159 | 15,914 |
 | Mac mini (2018) | 890,080 | 1,093,366 | 404,271 | 135,130 | 5,465 |
+
+Measured on 31 July 2026.
 
 As with Device Detection, the Balanced every-property result comes from about
 20,000 records.
@@ -89,7 +99,9 @@ As with Device Detection, the Balanced every-property result comes from about
 | Mac mini (2020) | 2,893 | 726 | n/a | 2,413.1 |
 | Mac mini (2018) | 4,706 | 1,594 | n/a | 2,457.2 |
 
-# Machines {#ProductSummaries_Benchmarks_Hardware_20260731_Machines}
+Measured on 31 July 2026.
+
+# Machines {#ProductSummaries_Benchmarks_Hardware_Machines}
 
 | Machine | Processor | Cores (physical/logical) | Memory (GB) | Operating system | Compiler |
 |---|---|---|---:|---|---|
@@ -104,7 +116,7 @@ As with Device Detection, the Balanced every-property result comes from about
 Memory is the amount the operating system reported, in GB of 1,073,741,824
 bytes, except for the two AWS instances, which show the size of the instance.
 
-# How we tested {#ProductSummaries_Benchmarks_Hardware_20260731_HowWeTested}
+# How we tested {#ProductSummaries_Benchmarks_Hardware_HowWeTested}
 
 We ran the Device Detection C library on seven machines, from a 128-core server
 down to a desktop PC built in 2008, and the IP Intelligence C library on five

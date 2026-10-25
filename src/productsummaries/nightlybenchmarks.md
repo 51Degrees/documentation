@@ -20,4 +20,4 @@ see the example repositories on [GitHub](https://github.com/51Degrees?q=example)
 We run performance tests regularly on GitHub Actions. The performance of this
 may not be as good as a dedicated machine, as it's running on a GitHub runner,
 but gives an indication of consistency. Results from dedicated machines are in
-the [hardware benchmarks](@ref ProductSummaries_Benchmarks_Hardware_20260731).
+the [hardware benchmarks](@ref ProductSummaries_Benchmarks_Hardware).
