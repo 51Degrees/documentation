@@ -29,7 +29,7 @@ The table below explains the options, from fastest performance and highest memor
 
 The precise values associated with each template can be seen in the source code on [GitHub](https://github.com/51Degrees/device-detection-cxx/blob/67503df045efb32e84eb59fe7e320772dd6475db/src/hash/hash.c#L177).
 
-We measured throughput, startup time, and memory for Device Detection on seven machines, with the data file held in memory and with `Balanced`. The results are on the [Benchmarks](@ref ProductSummaries_Benchmarks_Hardware) page.
+We measured throughput, startup time, and memory for Device Detection on seven machines, with the data file held in memory and with `Balanced`. The results are in the [hardware benchmarks](@ref ProductSummaries_Benchmarks_Hardware_20260731).
 
 # Evaluation graphs
 
@@ -56,8 +56,8 @@ then the algorithm can skip the detection for operating system, browser, and cra
 
 For example, on an eight-core AWS Graviton3 instance with the data file held in memory, requesting
 only `IsMobile` gave 1,362,952 detections per second. One property from each of the four components
-gave 306,275, and every property gave 166,181. The [Benchmarks](@ref ProductSummaries_Benchmarks_Hardware)
-page has the same comparison for the other machines.
+gave 306,275, and every property gave 166,181. The [hardware benchmarks](@ref ProductSummaries_Benchmarks_Hardware_20260731)
+have the same comparison for the other machines.
 
 As with all the performance options, we recommend experimenting to see what effect this has in 
 your specific scenario. See the [performance examples](@ref DeviceDetection_Examples_Performance_OnPremiseHash)
