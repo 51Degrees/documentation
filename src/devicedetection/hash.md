@@ -3,7 +3,8 @@
 # Introduction
 During extensive analysis of hundreds of billions of web interactions over several years, we discovered that a smart method of identifying and hashing substrings within User-Agents could be used to produce an optimum data set that displays the following characteristics:
 
-- Speed: over 1 million detections per second for `IsMobile` alone on an eight-core AWS Graviton3 instance with the whole data file in memory, as measured in the [hardware benchmarks](@ref ProductSummaries_Benchmarks_Hardware).
+- Speed: over 1 million detections per second on an eight-core AWS Graviton3 instance with the whole data file in memory, as measured in the [hardware benchmarks](@ref ProductSummaries_Benchmarks_Hardware).
+- Fast startup: the whole data file loads into memory, ready to detect, in under 150 milliseconds on the same Graviton3 instance, which matters most where servers start and stop as demand changes.
 - Low Memory: memory overhead is reduced due to the use of hash values rather than the characters of the substrings.
 - Prediction: reasonable predictive capabilities when compared to a classic character based trie.
 

@@ -28,7 +28,8 @@
 **Benefits:**
 - **Low latency** - Microseconds per detection when the data file is held in memory, with no network call
 - **Complete privacy** - All processing stays within your infrastructure
-- **High throughput** - Over 1 million detections per second for `IsMobile` alone on an eight-core AWS Graviton3 instance, with the data file in memory ([measured results](@ref ProductSummaries_Benchmarks_Hardware))
+- **High throughput** - Over 1 million detections per second on an eight-core AWS Graviton3 instance, with the data file in memory ([measured results](@ref ProductSummaries_Benchmarks_Hardware))
+- **Fast startup** - Loads the data file into memory and is ready to detect in under 150 milliseconds on the same Graviton3 instance, which matters most where servers start and stop as demand changes
 - **Offline capable** - No internet dependency for detection
 - **Full control** - Customize update schedules and deployment architecture
 
