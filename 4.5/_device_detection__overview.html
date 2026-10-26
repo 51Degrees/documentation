@@ -106,8 +106,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <h2 class="doxsection" id="technical-foundation">Technical Foundation<a class="headerlink" href="#technical-foundation" aria-label="Permalink to this section">🔗</a></h2>
 <p>Our patented <a class="el" href="_device_detection__hash.html" title="Hash Algorithm">Hash Algorithm</a> is built for performance and scale:</p>
 <ul>
-<li><b>Speed:</b> Processes over one million detections per second, per CPU core</li>
-<li><b>Ultra-low latency:</b> Delivers sub-microsecond detection times with in-process deployment</li>
+<li><b>Speed:</b> Over one million detections per second on an eight-core AWS Graviton3 instance, and over 9 million on a 128-core server, when the data file is loaded into memory (see the <a class="el" href="_product_summaries__benchmarks__hardware.html" title="Hardware Benchmarks">hardware benchmarks</a>)</li>
+<li><b>Fast startup:</b> Loads the data file into memory and is ready to detect in under 150 milliseconds on the same Graviton3 instance, which matters most where servers start and stop as demand changes</li>
+<li><b>Low latency:</b> Each detection takes microseconds when the data file is in memory, and there is no network call</li>
 <li><b>Performance-critical ready:</b> Perfect for high-load servers, edge environments, and real-time systems</li>
 <li><b>Accuracy:</b> Maintains industry-leading accuracy across <a href="https://51degrees.com/developers/property-dictionary">250+ device properties</a></li>
 <li><b>Efficiency:</b> Keeps memory and bandwidth usage minimal</li>

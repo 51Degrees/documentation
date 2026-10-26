@@ -77,7 +77,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-web-gettin
 <div class="c-code__line">    <span class="c-code__comment">// panic.</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// No injected state on the live path: the builder fetches discovery from the</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// cloud as it builds.</span></div>
-<div class="c-code__line">    let app = <a class="code hl_function" href="dd-web-client-only-cloud_8rs.html#a42853b52e8b4e16212d2713d4ce1d36b">build_app</a>(&amp;options.resource_key, options.endpoint.as_deref(), None)?;</div>
+<div class="c-code__line">    let app = <a class="code hl_function" href="dd-web-client-only-cloud_8rs.html#a42853b52e8b4e16212d2713d4ce1d36b">build_app</a>(</div>
+<div class="c-code__line">        &amp;options.resource_key,</div>
+<div class="c-code__line">        options.endpoint.as_deref(),</div>
+<div class="c-code__line">        None,</div>
+<div class="c-code__line">        <span class="c-code__keyword">true</span>,</div>
+<div class="c-code__line">    )?;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    let <a class="code hl_function" href="dd-web-getting-started-cloud_8rs.html#aa008b6165ad78b271beb1714f68596a1">runtime</a> = tokio::runtime::Builder::new_multi_thread()</div>
 <div class="c-code__line">        .enable_all()</div>

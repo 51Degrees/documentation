@@ -74,9 +74,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-cloud-get-a
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> let Some(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a>) = options.endpoint {</div>
 <div class="c-code__line">        builder = builder.endpoint(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a>);</div>
 <div class="c-code__line">    }</div>
-<div class="c-code__line">    <span class="c-code__comment">// No ShareUsageElement: usage sharing is forbidden for console examples and</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// required only for web examples.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// Usage sharing is off because this is a console example, whose evidence</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// 51Degrees already holds. In normal operation leave it on, which is the</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// builder&#39;s default.</span></div>
 <div class="c-code__line">    let pipeline = builder</div>
+<div class="c-code__line">        .share_usage(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">        .build()</div>
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;failed to build the cloud device-detection pipeline&quot;</span>)?;</div>
 <div class="c-code__line"> </div>

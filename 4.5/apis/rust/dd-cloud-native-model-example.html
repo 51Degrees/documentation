@@ -87,13 +87,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-cloud-nativ
 <div class="c-code__line">    println!(<span class="c-code__stringliteral">&quot;----------------------------------------&quot;</span>);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// The native-model lookup uses the same dedicated hardware-profile cloud</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// engine as the TAC lookup. No ShareUsageElement: this is a console example.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// engine as the TAC lookup. Usage sharing is off because this is a console</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// example. In normal operation leave it on, which is the builder&#39;s default.</span></div>
 <div class="c-code__line">    let <a class="code hl_variable" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> builder =</div>
 <div class="c-code__line">        DeviceDetectionPipelineBuilder::cloud(options.resource_key).hardware_profile();</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> let Some(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a>) = options.endpoint {</div>
 <div class="c-code__line">        builder = builder.endpoint(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a>);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    let pipeline = builder</div>
+<div class="c-code__line">        .share_usage(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">        .build()</div>
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;failed to build the cloud hardware-profile pipeline&quot;</span>)?;</div>
 <div class="c-code__line"> </div>

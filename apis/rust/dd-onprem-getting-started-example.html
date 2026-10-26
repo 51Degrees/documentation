@@ -70,14 +70,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-gett
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>Builds an on-premise Device Detection pipeline and reads strongly-typed device properties (<code>IsMobile</code>, <code>PlatformName</code>, <code>BrowserName</code>, <code>DeviceId</code>) back from processed User-Agent evidence. The core of the example:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>(options: <a class="code hl_struct" href="struct_example_options.html">ExampleOptions</a>) -&gt; Result&lt;()&gt; {</div>
-<div class="c-code__line">    <span class="c-code__comment">// Build the on-premise pipeline. No ShareUsageElement is added: usage sharing</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// is forbidden for console examples and required only for web examples. A</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// production deployment should enable it with `.share_usage(true)`. Likewise</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// automatic data-file updates are off here; see the update-data-file example.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// Build the on-premise pipeline. Usage sharing is off because this is a</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// console example, whose evidence 51Degrees already holds. In normal</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// operation leave it on, which is the builder&#39;s default. Automatic</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// data-file updates are off too, so no licence key is needed; see the</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// update-data-file example for them.</span></div>
 <div class="c-code__line">    let pipeline = DeviceDetectionPipelineBuilder::on_premise(&amp;options.data_file)</div>
 <div class="c-code__line">        <span class="c-code__comment">// The low-memory profile streams data from disk on demand. It is enough</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// for this example; see the performance example for the trade-offs.</span></div>
 <div class="c-code__line">        .performance_profile(options.profile)</div>
+<div class="c-code__line">        .share_usage(<span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">        .auto_update(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">        .build()</div>
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;failed to build the on-premise device-detection pipeline&quot;</span>)?;</div>
 <div class="c-code__line"> </div>

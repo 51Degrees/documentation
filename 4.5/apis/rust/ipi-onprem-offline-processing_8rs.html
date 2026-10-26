@@ -257,7 +257,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Read up to <code><a class="el" href="#a0598609daf6a682e8b8a3c289e6ef5bc" title="The maximum number of records to process (the evidence file holds many).">max_records</a></code> evidence records from a multi-document YAML file. </p>
-<p>The IP-intelligence evidence file is a stream of <code>---</code>-separated single-key maps, for example <code>server.client-<a class="el" href="ipi-cloud-metadata_8rs.html#af7183ee99e5384a1c761315b219c7b2e">ip</a>: 1.2.3.4</code>. Each document is parsed into a generic [<code>serde_norway::Value</code>], then its string key/value pairs are pulled into an [<code><a class="el" href="#a65996ea862cba5ecbddd5fba780b5740" title="One evidence record read from the YAML file: client-IP key/value pairs.">EvidenceRecord</a></code>]. A document that is not a map (a blank or comment-only document parses to null) is skipped rather than failing the whole batch. </p>
+<p>The IP-intelligence evidence file is a stream of <code>---</code>-separated single-key maps, for example <code>server.client-<a class="el" href="ipi-cloud-metadata_8rs.html#a2471e68871ec580a162997ded52956ad">ip</a>: 1.2.3.4</code>. Each document is parsed into a generic [<code>serde_norway::Value</code>], then its string key/value pairs are pulled into an [<code><a class="el" href="#a65996ea862cba5ecbddd5fba780b5740" title="One evidence record read from the YAML file: client-IP key/value pairs.">EvidenceRecord</a></code>]. A document that is not a map (a blank or comment-only document parses to null) is skipped rather than failing the whole batch. </p>
 
 </div>
 </div>

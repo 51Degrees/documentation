@@ -76,8 +76,8 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:af8c65456a57ff8ba9484bfb0880c7ea4" id="r_af8c65456a57ff8ba9484bfb0880c7ea4"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_options.html">Options</a>&#160;</td><td class="c-table__cell"><a class="el" href="#af8c65456a57ff8ba9484bfb0880c7ea4">build_app</a> (resource_key:&amp;str, endpoint:Option&lt;&amp;str &gt;, state:Option&lt; CloudEngineState &gt;,) -&gt; anyhow::Result&lt; Router &gt;</td></tr>
-<tr class="c-table__row memdesc:af8c65456a57ff8ba9484bfb0880c7ea4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the cloud web application router, ready to serve.  <br /></td></tr>
+<tr class="c-table__row memitem:aebb369dc2458f1fd42fa324af7e14337" id="r_aebb369dc2458f1fd42fa324af7e14337"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_options.html">Options</a>&#160;</td><td class="c-table__cell"><a class="el" href="#aebb369dc2458f1fd42fa324af7e14337">build_app</a> (resource_key:&amp;str, endpoint:Option&lt;&amp;str &gt;, state:Option&lt; CloudEngineState &gt;, share_usage:bool,) -&gt; anyhow::Result&lt; Router &gt;</td></tr>
+<tr class="c-table__row memdesc:aebb369dc2458f1fd42fa324af7e14337"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the cloud web application router, ready to serve.  <br /></td></tr>
 <tr class="c-table__row memitem:a8d644587b49a1bca9eba622abbfaef16" id="r_a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8d644587b49a1bca9eba622abbfaef16">run</a> (options:Options) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Serve the example page over TCP until interrupted.  <br /></td></tr>
 <tr class="c-table__row memitem:a4bdb0e3cfaa0302fa9d6bf057dfa9c88" id="r_a4bdb0e3cfaa0302fa9d6bf057dfa9c88"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a4bdb0e3cfaa0302fa9d6bf057dfa9c88">home</a> (Query(params):Query&lt; std::collections::HashMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt;, result:FiftyOneResult,) -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
@@ -128,8 +128,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="af8c65456a57ff8ba9484bfb0880c7ea4" name="af8c65456a57ff8ba9484bfb0880c7ea4"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af8c65456a57ff8ba9484bfb0880c7ea4">&#9670;&#160;</a></span>build_app()</h2>
+<a id="aebb369dc2458f1fd42fa324af7e14337" name="aebb369dc2458f1fd42fa324af7e14337"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aebb369dc2458f1fd42fa324af7e14337">&#9670;&#160;</a></span>build_app()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -149,7 +149,12 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">state:Option&lt; CloudEngineState &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; anyhow::Result&lt; Router &gt;</td>
+          <td class="c-table__cell">state:Option&lt; CloudEngineState &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">share_usage:bool</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; anyhow::Result&lt; Router &gt;</td>
         </tr>
           </table>
         </div>
@@ -158,7 +163,8 @@ Variables</h2></td></tr>
 
 <p>Build the cloud web application router, ready to serve. </p>
 <p>The router carries the [<code>FiftyOneState</code>] through its middleware, so the two client-side endpoints and the home page all share one built pipeline. It is returned (rather than served) so the integration test can drive it in process with <code>tower::ServiceExt::oneshot</code> while [<code><a class="el" href="#a8d644587b49a1bca9eba622abbfaef16" title="Serve the example page over TCP until interrupted.">run</a></code>] serves it over TCP.</p>
-<p>The request engine resolves its discovery (the accepted evidence keys and the accessible properties) when it builds. Passing <code>Some(state)</code> supplies that discovery up front so the build does no cloud call, which the integration test uses to assemble the app offline. Passing <code>None</code> lets the builder fetch the discovery from the cloud, which is the live path the binary takes. </p>
+<p>The request engine resolves its discovery (the accepted evidence keys and the accessible properties) when it builds. Passing <code>Some(state)</code> supplies that discovery up front so the build does no cloud call, which the integration test uses to assemble the app offline. Passing <code>None</code> lets the builder fetch the discovery from the cloud, which is the live path the binary takes.</p>
+<p><code>share_usage</code> is true when the binary serves the page. The tests pass false, so a test run sends nothing to 51Degrees. </p>
 
 </div>
 </div>
@@ -186,7 +192,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Drive one GET request through a clone of the app and return the response. </p>
-<p>A clone is used (cloning a <code>Router</code> is cheap, sharing the same <code>Arc</code> elements) so the owning <code>app</code> the caller holds outlives the request. That matters because the cloud engine and the usage-sharing element wrap a blocking <code>reqwest</code> client whose backing runtime must not be dropped from inside an async context. Keeping the owning <code>app</code> in the synchronous test body ensures the final drop happens outside the runtime. </p>
+<p>A clone is used (cloning a <code>Router</code> is cheap, sharing the same <code>Arc</code> elements) so the owning <code>app</code> the caller holds outlives the request. That matters because the cloud engine, and the usage-sharing element when it is on, wrap a blocking <code>reqwest</code> client whose backing runtime must not be dropped from inside an async context. Keeping the owning <code>app</code> in the synchronous test body ensures the final drop happens outside the runtime. </p>
 
 </div>
 </div>

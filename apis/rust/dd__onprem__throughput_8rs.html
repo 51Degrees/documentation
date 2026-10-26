@@ -110,7 +110,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Build the on-premise pipeline the benchmark detects through. </p>
-<p><code>HighPerformance</code> holds the data set in memory for the fastest detections, which is what a throughput measurement wants, and a single requested property (<code>IsMobile</code>) keeps detection resolving one component, the fastest realistic configuration. No <code>ShareUsageElement</code> is added, as usage sharing is forbidden for console/offline tools and would add network work that has nothing to do with the figure being measured. A production web deployment should enable it with <code>.share_usage(true)</code>. </p>
+<p><code>HighPerformance</code> holds the data set in memory for the fastest detections, which is what a throughput measurement wants, and a single requested property (<code>IsMobile</code>) keeps detection resolving one component, the fastest realistic configuration. Usage sharing is turned off, as it is for console and off-line tools, because it would add work that has nothing to do with the figure being measured. In normal operation leave it on, which is the builder's default. </p>
 
 </div>
 </div>

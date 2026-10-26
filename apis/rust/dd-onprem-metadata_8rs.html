@@ -82,8 +82,8 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a7962d5989b4e5d6c359f2cda12ec99ea"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print the data file's publish date and data tier.  <br /></td></tr>
 <tr class="c-table__row memitem:a098ab95b3086acc4bc0f1bf89d49b7e7" id="r_a098ab95b3086acc4bc0f1bf89d49b7e7"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a098ab95b3086acc4bc0f1bf89d49b7e7">output_properties_by_component</a> (engine:&amp;impl AspectEngine)</td></tr>
 <tr class="c-table__row memdesc:a098ab95b3086acc4bc0f1bf89d49b7e7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print the available properties grouped by component (their category), with the value type and description of each.  <br /></td></tr>
-<tr class="c-table__row memitem:a12e52323707fb61c912b9ca609975759" id="r_a12e52323707fb61c912b9ca609975759"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a12e52323707fb61c912b9ca609975759">output_evidence_keys</a> (filter:&amp;dyn EvidenceKeyFilter)</td></tr>
-<tr class="c-table__row memdesc:a12e52323707fb61c912b9ca609975759"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print the evidence keys device detection accepts.  <br /></td></tr>
+<tr class="c-table__row memitem:a124e1f120bf5280a0e16a8f307a8a48a" id="r_a124e1f120bf5280a0e16a8f307a8a48a"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a124e1f120bf5280a0e16a8f307a8a48a">output_evidence_keys</a> (keys:&amp;[<a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>])</td></tr>
+<tr class="c-table__row memdesc:a124e1f120bf5280a0e16a8f307a8a48a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print the evidence keys device detection accepts.  <br /></td></tr>
 <tr class="c-table__row memitem:a6fcdc58603a2286f8d5ff499f3d9c995" id="r_a6fcdc58603a2286f8d5ff499f3d9c995"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a6fcdc58603a2286f8d5ff499f3d9c995">value_type_name</a> (value_type:PropertyValueType) -&gt; &amp;'static <a class="el" href="device-detection-examples_2src_2web__support_2mod_8rs.html#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
 <tr class="c-table__row memdesc:a6fcdc58603a2286f8d5ff499f3d9c995"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A short display name for a property value type, used in the metadata listing.  <br /></td></tr>
 <tr class="c-table__row memitem:a685047298dbf9911e9f06a366e9b1bb4" id="r_a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a685047298dbf9911e9f06a366e9b1bb4">main</a> () -&gt; Result&lt;()&gt;</td></tr>
@@ -148,8 +148,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a12e52323707fb61c912b9ca609975759" name="a12e52323707fb61c912b9ca609975759"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a12e52323707fb61c912b9ca609975759">&#9670;&#160;</a></span>output_evidence_keys()</h2>
+<a id="a124e1f120bf5280a0e16a8f307a8a48a" name="a124e1f120bf5280a0e16a8f307a8a48a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a124e1f120bf5280a0e16a8f307a8a48a">&#9670;&#160;</a></span>output_evidence_keys()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -159,7 +159,7 @@ Variables</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">fn output_evidence_keys </td>
           <td>(</td>
-          <td class="c-table__cell">filter:&amp;dyn</td>          <td class="c-table__cell"><span class="paramname"><em>EvidenceKeyFilter</em></span></td><td>)</td>
+          <td class="c-table__cell">keys:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String]</td><td>)</td>
           <td></td>
         </tr>
           </table>
@@ -168,7 +168,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Print the evidence keys device detection accepts. </p>
-<p>These are the keys that, when added to the evidence of a flow data, could affect the result. The engine advertises them through its evidence key filter. The filter is exposed as a trait object, so rather than relying on a concrete whitelist type the example probes the keys device detection is known to read. </p>
+<p>These are the keys that, when added to the evidence of a flow data, could affect the result. Each header the data file reads is accepted as a header and as a query value, the query form being for off-line processing. </p>
 
 </div>
 </div>

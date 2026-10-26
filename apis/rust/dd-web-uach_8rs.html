@@ -78,8 +78,8 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:af6e661aefde107874b83d472965d3203" id="r_af6e661aefde107874b83d472965d3203"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_options.html">Options</a>&#160;</td><td class="c-table__cell"><a class="el" href="#af6e661aefde107874b83d472965d3203">build_app</a> (data_file:&amp;std::path::Path) -&gt; anyhow::Result&lt; Router &gt;</td></tr>
-<tr class="c-table__row memdesc:af6e661aefde107874b83d472965d3203"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the UACH web application router.  <br /></td></tr>
+<tr class="c-table__row memitem:a596da3ec8226d4d1e9f6913946efc700" id="r_a596da3ec8226d4d1e9f6913946efc700"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_options.html">Options</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a596da3ec8226d4d1e9f6913946efc700">build_app</a> (data_file:&amp;std::path::Path, share_usage:bool) -&gt; anyhow::Result&lt; Router &gt;</td></tr>
+<tr class="c-table__row memdesc:a596da3ec8226d4d1e9f6913946efc700"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the UACH web application router.  <br /></td></tr>
 <tr class="c-table__row memitem:a8d644587b49a1bca9eba622abbfaef16" id="r_a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8d644587b49a1bca9eba622abbfaef16">run</a> (options:Options) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Serve the example page over TCP until interrupted.  <br /></td></tr>
 <tr class="c-table__row memitem:ab11b8dbcc6bd4a67b449a99b8ff3c6fe" id="r_ab11b8dbcc6bd4a67b449a99b8ff3c6fe"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab11b8dbcc6bd4a67b449a99b8ff3c6fe">home</a> (result:FiftyOneResult) -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
@@ -103,8 +103,8 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:a254a0da5c9d75181d6a2a0f68f63efcf" id="r_a254a0da5c9d75181d6a2a0f68f63efcf"><td class="c-table__cell">status&#160;</td><td class="c-table__cell"><a class="el" href="#a254a0da5c9d75181d6a2a0f68f63efcf">body</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
-<a id="af6e661aefde107874b83d472965d3203" name="af6e661aefde107874b83d472965d3203"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af6e661aefde107874b83d472965d3203">&#9670;&#160;</a></span>build_app()</h2>
+<a id="a596da3ec8226d4d1e9f6913946efc700" name="a596da3ec8226d4d1e9f6913946efc700"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a596da3ec8226d4d1e9f6913946efc700">&#9670;&#160;</a></span>build_app()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -114,8 +114,12 @@ Variables</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">pub struct <a class="el" href="struct_options.html">Options</a> build_app </td>
           <td>(</td>
-          <td class="c-table__cell">data_file:&amp;std::path::Path</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; anyhow::Result&lt; Router &gt;</td>
+          <td class="c-table__cell">data_file:&amp;std::path::Path</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">share_usage:bool</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; anyhow::Result&lt; Router &gt;</td>
         </tr>
           </table>
         </div>
@@ -123,7 +127,8 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Build the UACH web application router. </p>
-<p>The pipeline is on-premise so the UA-CH high-entropy decoder ([<code>UachJsConversionElement</code>]) is wired explicitly ahead of the Hash engine. The decoder turns a <code>getHighEntropyValues</code> blob into the <code>sec-ch-ua*</code> headers the engine consumes, which is the heart of this example. </p>
+<p>The pipeline is on-premise so the UA-CH high-entropy decoder ([<code>UachJsConversionElement</code>]) is wired explicitly ahead of the Hash engine. The decoder turns a <code>getHighEntropyValues</code> blob into the <code>sec-ch-ua*</code> headers the engine consumes, which is the heart of this example.</p>
+<p><code>share_usage</code> is true when the binary serves the page. The tests pass false, so a test run sends nothing to 51Degrees. </p>
 
 </div>
 </div>
@@ -151,7 +156,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Dispatch a request carrying a full UACH header set, so the example exercises the client-hints evidence path on the server side too. </p>
-<p>Driven from a <code>#[test]</code> (not <code>#[tokio::test]</code>): the share-usage element holds a blocking reqwest client whose drop must stay off the tokio worker threads, so the app is owned and dropped on the plain test thread. </p>
+<p>Driven from a <code>#[test]</code> (not <code>#[tokio::test]</code>): with usage sharing on, the app holds a blocking reqwest client whose drop must stay off the tokio worker threads, so the app is owned and dropped on the plain test thread. </p>
 
 </div>
 </div>

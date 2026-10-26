@@ -90,9 +90,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <hr  />
 <h3 class="doxsection" id="on-premise-deployment-on-premise-integrationbest-for-high-performance-privacy-sensitive-or-offline-environments">On-premise Deployment {#On-premise-integration}**Best for:** High-performance, privacy-sensitive, or offline environments<a class="headerlink" href="#on-premise-deployment-on-premise-integrationbest-for-high-performance-privacy-sensitive-or-offline-environments" aria-label="Permalink to this section">🔗</a></h3>
 <p><b>Benefits:</b></p><ul>
-<li><b>Ultra-low latency</b> - Sub-microsecond detection time with in-process deployment</li>
+<li><b>Low latency</b> - Microseconds per detection when the data file is held in memory, with no network call</li>
 <li><b>Complete privacy</b> - All processing stays within your infrastructure</li>
-<li><b>High throughput</b> - Over 1 million detections per second per CPU core</li>
+<li><b>High throughput</b> - Over 1 million detections per second on an eight-core AWS Graviton3 instance, with the data file in memory (<a class="el" href="_product_summaries__benchmarks__hardware.html" title="Hardware Benchmarks">measured results</a>)</li>
+<li><b>Fast startup</b> - Loads the data file into memory and is ready to detect in under 150 milliseconds on the same Graviton3 instance, which matters most where servers start and stop as demand changes</li>
 <li><b>Offline capable</b> - No internet dependency for detection</li>
 <li><b>Full control</b> - Customize update schedules and deployment architecture</li>
 </ul>
@@ -114,7 +115,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <tr class="c-table__row">
 <td class="c-table__cell"><b>High-traffic Web Servers</b>  </td><td class="c-table__cell">On-premise  </td><td class="c-table__cell">Maximum performance, cost efficiency at scale  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><b>Real-time Applications</b>  </td><td class="c-table__cell">On-premise  </td><td class="c-table__cell">Sub-microsecond latency requirements  </td></tr>
+<td class="c-table__cell"><b>Real-time Applications</b>  </td><td class="c-table__cell">On-premise  </td><td class="c-table__cell">Microsecond latency requirements  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><b>Edge/CDN Integration</b>  </td><td class="c-table__cell">On-premise  </td><td class="c-table__cell">Offline capability, minimal latency  </td></tr>
 <tr class="c-table__row">

@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-web-gettin
 <div class="c-code__line">    <span class="c-code__comment">// constructed, and tokio forbids dropping a runtime from inside another</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// runtime&#39;s async context, so doing this work outside block_on avoids that</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// panic.</span></div>
-<div class="c-code__line">    let (app, warnings) = <a class="code hl_function" href="dd-web-client-only-cloud_8rs.html#a42853b52e8b4e16212d2713d4ce1d36b">build_app</a>(&amp;options.data_file)?;</div>
+<div class="c-code__line">    let (app, warnings) = <a class="code hl_function" href="dd-web-client-only-cloud_8rs.html#a42853b52e8b4e16212d2713d4ce1d36b">build_app</a>(&amp;options.data_file, <span class="c-code__keyword">true</span>)?;</div>
 <div class="c-code__line">    <a class="code hl_function" href="dd-web-getting-started-onprem_8rs.html#a0ecdaa6c332af4e687f3bc109baa11a8">store_warnings</a>(warnings);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    let <a class="code hl_function" href="dd-web-getting-started-cloud_8rs.html#aa008b6165ad78b271beb1714f68596a1">runtime</a> = tokio::runtime::Builder::new_multi_thread()</div>

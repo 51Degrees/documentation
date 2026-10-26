@@ -170,8 +170,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 </table>
 <h1>Feature notes</h1>
 <ul>
-<li>The Device Detection and IP Intelligence facades both default to <code>["cloud", "on-premise"]</code>. A cloud-only application can disable the <code>on-premise</code> feature to drop the native FFI crates and build without a C toolchain.</li>
-<li>Usage sharing is optional and off by default, so a default build (and any on-premise/local deployment that does not opt in) sends nothing to 51Degrees. Enabling it takes two deliberate opt-ins: add the share-usage element (the facades expose <code>.share_usage(true)</code>), and enable the <code>fiftyone-pipeline-engines-fiftyone/share-usage-transport</code> Cargo feature, which compiles the built-in HTTP sender. With the element present but the feature off, the element still runs but its sender is a no-op, so no network connection to 51Degrees is made. The web examples switch both on to demonstrate the feature; the console examples leave it off. See the <a href="https://51degrees.com/documentation/_pipeline_api__features__usage_sharing.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=rust&amp;utm_content=readme.md&amp;utm_term=usage-sharing">usage sharing</a> documentation for what is shared, and the <code>fiftyone-pipeline-engines-fiftyone</code> crate docs for the feature detail.</li>
+<li>The Device Detection and IP Intelligence facades both default to <code>["cloud", "on-premise", "share-usage"]</code>. A cloud-only application can disable the <code>on-premise</code> feature to drop the native FFI crates and build without a C toolchain.</li>
+<li>Usage sharing is on by default in the facades' pipeline builders, as it is in the other languages. The default <code>share-usage</code> feature adds the share-usage element to both builders and compiles the built-in HTTP sender it posts with. A console or off-line tool turns it off, as the console examples do, with <code>.share_usage(false)</code> or by leaving out the feature. With the feature off, the builders leave usage sharing off unless <code>.share_usage(true)</code> is called, and the element's sender is a no-op unless the <code>fiftyone-pipeline-engines-fiftyone/share-usage-transport</code> feature is enabled, so no network connection to 51Degrees is made. See the <a href="https://51degrees.com/documentation/_pipeline_api__features__usage_sharing.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=rust&amp;utm_content=readme.md&amp;utm_term=usage-sharing">usage sharing</a> documentation for what is shared, and the <code>fiftyone-pipeline-engines-fiftyone</code> crate docs for the feature detail.</li>
+<li>Automatic data file updates are on by default in the facades' on-premise pipeline builders, as they are in .NET and Java. The pipeline owns a data update service that polls the 51Degrees Distributor every thirty minutes, staggered by up to ten minutes, with the licence keys given through <code>.data_update_license_keys(..)</code>, and that refreshes the engine when the data file changes on disk. The Distributor serves nothing without a licence key, so a build with polling on and no key fails with an error that says so, as it does in .NET, and a deployment of the free Lite file turns polling off with <code>.auto_update(false)</code>. <code>.file_system_watcher(false)</code> turns the watcher off, and <code>pipeline.resource::&lt;DataUpdateService&gt;()</code> reaches the service for a check on demand.</li>
 <li>JavaScript minification in <code>fiftyone-javascript-builder</code> is opt-in behind the <code>minify</code> feature and off by default. See ARCHITECTURE.md for why.</li>
 </ul>
 <h1>Quick start</h1>
@@ -202,6 +203,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="c-code__line"> </div>
 <div class="c-code__line">let pipeline = DeviceDetectionPipelineBuilder::on_premise(&quot;51Degrees-LiteV4.1.hash&quot;)</div>
 <div class="c-code__line">    .performance_profile(PerformanceProfile::HighPerformance)</div>
+<div class="c-code__line">    // Off because the free Lite file has no licence key for updates.</div>
+<div class="c-code__line">    .auto_update(false)</div>
 <div class="c-code__line">    .build()?;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">let mut data = pipeline.create_flow_data_with(</div>
@@ -240,6 +243,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="c-code__line">// data repository (see its README).</div>
 <div class="c-code__line">let pipeline = IpIntelligencePipelineBuilder::on_premise(&quot;51Degrees-IPIV4AsnIpiV41.ipi&quot;)</div>
 <div class="c-code__line">    .performance_profile(PerformanceProfile::HighPerformance)</div>
+<div class="c-code__line">    // Off because the free ASN file has no licence key for updates.</div>
+<div class="c-code__line">    .auto_update(false)</div>
 <div class="c-code__line">    .build()?;</div>
 </div><!-- fragment --><h2>axum web integration</h2>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">use std::net::SocketAddr;</div>
@@ -251,8 +256,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="c-code__line">use std::sync::Arc;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"># async fn run() -&gt; anyhow::Result&lt;()&gt; {</div>
-<div class="c-code__line">// Usage sharing is optional. This example switches it on to help improve</div>
-<div class="c-code__line">// 51Degrees data; a deployment can leave it off.</div>
+<div class="c-code__line">// Usage sharing is on by default, and is set here so the choice is visible.</div>
+<div class="c-code__line">// It helps improve 51Degrees data.</div>
 <div class="c-code__line">let pipeline = DeviceDetectionPipelineBuilder::cloud(&quot;YOUR_RESOURCE_KEY&quot;)</div>
 <div class="c-code__line">    .share_usage(true)</div>
 <div class="c-code__line">    .build()?;</div>

@@ -78,14 +78,14 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default options, using the best-available loadable data-file tier.  <br /></td></tr>
 <tr class="c-table__row memitem:a8ec87ce59a7730398990e6de32fb8cb4" id="r_a8ec87ce59a7730398990e6de32fb8cb4"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8ec87ce59a7730398990e6de32fb8cb4">for_tier</a> (<a class="el" href="data__paths_8rs.html#a29e87adf1760ab44a6a8d86c736658f8">tier:examples_shared::IpiTier</a>) -&gt; Option&lt; Self &gt;</td></tr>
 <tr class="c-table__row memdesc:a8ec87ce59a7730398990e6de32fb8cb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> pinned to a specific data-file tier.  <br /></td></tr>
-<tr class="c-table__row memitem:a640fa31895408e1ab16df8b32f9d16b4" id="r_a640fa31895408e1ab16df8b32f9d16b4"><td class="c-table__cell">const&#160;query&#160;<a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a>&#160;query&#160;<a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a>&#160;server&#160;<a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a>&#160;query&#160;true&#160;<a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a>&#160;server&#160;true&#160;<a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a>&#160;header&#160;user&#160;pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a640fa31895408e1ab16df8b32f9d16b4">run</a> (options:&amp;ExampleOptions, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:a640fa31895408e1ab16df8b32f9d16b4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the metadata example, writing all output to <code>out</code>.  <br /></td></tr>
+<tr class="c-table__row memitem:a72a494311da1d889b016fd2f0e734e7e" id="r_a72a494311da1d889b016fd2f0e734e7e"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a72a494311da1d889b016fd2f0e734e7e">run</a> (options:&amp;ExampleOptions, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:a72a494311da1d889b016fd2f0e734e7e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the metadata example, writing all output to <code>out</code>.  <br /></td></tr>
 <tr class="c-table__row memitem:af02254a493bd456e1adaaa49eba6db13" id="r_af02254a493bd456e1adaaa49eba6db13"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#af02254a493bd456e1adaaa49eba6db13">output_data_file_details</a> (engine:&amp;IpIntelligenceOnPremiseEngine, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:af02254a493bd456e1adaaa49eba6db13"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print the tier and publish date of the data file in use.  <br /></td></tr>
 <tr class="c-table__row memitem:ae8f6cdc30f9f2b51e278ee024d381f24" id="r_ae8f6cdc30f9f2b51e278ee024d381f24"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ae8f6cdc30f9f2b51e278ee024d381f24">output_property_details</a> (engine:&amp;IpIntelligenceOnPremiseEngine, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:ae8f6cdc30f9f2b51e278ee024d381f24"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print every property the engine populates, with its value type and (where known) description and the data tiers in which it carries a value.  <br /></td></tr>
 <tr class="c-table__row memitem:aad61df3c2080977853c1b70939fc64d6" id="r_aad61df3c2080977853c1b70939fc64d6"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aad61df3c2080977853c1b70939fc64d6">output_evidence_key_details</a> (engine:&amp;IpIntelligenceOnPremiseEngine, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:aad61df3c2080977853c1b70939fc64d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print the evidence keys the engine accepts, probing the advertised filter.  <br /></td></tr>
+<tr class="c-table__row memdesc:aad61df3c2080977853c1b70939fc64d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print the evidence keys the engine accepts, which its data file defines, in the order the engine tries them.  <br /></td></tr>
 <tr class="c-table__row memitem:a2fca267c69399b9b26d25a1fea0a8f50" id="r_a2fca267c69399b9b26d25a1fea0a8f50"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a2fca267c69399b9b26d25a1fea0a8f50">output_warnings</a> (engine:&amp;IpIntelligenceOnPremiseEngine, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a2fca267c69399b9b26d25a1fea0a8f50"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print any standard data-file warnings (an old or Lite-tier file).  <br /></td></tr>
 <tr class="c-table__row memitem:a10397c317f477c2d5f6629f1d23f9b28" id="r_a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28">main</a> () -&gt; anyhow::Result&lt;()&gt;</td></tr>
@@ -96,10 +96,6 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="c-table__row memitem:ab533a800544facf05fd1c8e50f92099a" id="r_ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab533a800544facf05fd1c8e50f92099a">data_file</a></td></tr>
 <tr class="c-table__row memdesc:ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The full path to the <code>.ipi</code> data file to open.  <br /></td></tr>
-<tr class="c-table__row memitem:acd8b2b3ecd42160bc7bd55b4474ef140" id="r_acd8b2b3ecd42160bc7bd55b4474ef140"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#acd8b2b3ecd42160bc7bd55b4474ef140">CANDIDATE_EVIDENCE_KEYS</a></td></tr>
-<tr class="c-table__row memdesc:acd8b2b3ecd42160bc7bd55b4474ef140"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The candidate evidence keys to probe when reporting what the engine accepts.  <br /></td></tr>
-<tr class="c-table__row memitem:af7183ee99e5384a1c761315b219c7b2e" id="r_af7183ee99e5384a1c761315b219c7b2e"><td class="c-table__cell">const&#160;query&#160;<a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a>&#160;</td><td class="c-table__cell"><a class="el" href="#af7183ee99e5384a1c761315b219c7b2e">ip</a></td></tr>
-<tr class="c-table__row memitem:a65445402443d68d03af0112d27a400fd" id="r_a65445402443d68d03af0112d27a400fd"><td class="c-table__cell">const&#160;query&#160;<a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a>&#160;query&#160;<a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a>&#160;server&#160;<a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a>&#160;query&#160;true&#160;<a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a>&#160;server&#160;true&#160;<a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a>&#160;header&#160;user&#160;</td><td class="c-table__cell"><a class="el" href="#a65445402443d68d03af0112d27a400fd">agent</a></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
@@ -244,7 +240,7 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Print the evidence keys the engine accepts, probing the advertised filter. </p>
+<p>Print the evidence keys the engine accepts, which its data file defines, in the order the engine tries them. </p>
 
 </div>
 </div>
@@ -302,8 +298,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a640fa31895408e1ab16df8b32f9d16b4" name="a640fa31895408e1ab16df8b32f9d16b4"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a640fa31895408e1ab16df8b32f9d16b4">&#9670;&#160;</a></span>run()</h2>
+<a id="a72a494311da1d889b016fd2f0e734e7e" name="a72a494311da1d889b016fd2f0e734e7e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a72a494311da1d889b016fd2f0e734e7e">&#9670;&#160;</a></span>run()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -311,7 +307,7 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const query <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> query <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> server <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> query true <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> server true <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> header user pub fn run </td>
+              <td class="c-table__cell">pub fn run </td>
           <td>(</td>
           <td class="c-table__cell">options:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>ExampleOptions</em></span>, </td>
         </tr>
@@ -331,45 +327,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
-<a id="a65445402443d68d03af0112d27a400fd" name="a65445402443d68d03af0112d27a400fd"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65445402443d68d03af0112d27a400fd">&#9670;&#160;</a></span>agent</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">const query <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> query <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> server <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> query true <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> server true <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> header user agent</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-</div>
-</div>
-<a id="acd8b2b3ecd42160bc7bd55b4474ef140" name="acd8b2b3ecd42160bc7bd55b4474ef140"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#acd8b2b3ecd42160bc7bd55b4474ef140">&#9670;&#160;</a></span>CANDIDATE_EVIDENCE_KEYS</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">const CANDIDATE_EVIDENCE_KEYS</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>The candidate evidence keys to probe when reporting what the engine accepts. </p>
-<p>IP Intelligence accepts the client IP under several keys (see the IP Intelligence specification). The engine advertises its set through an evidence-key filter, which is queried with each of these. </p>
-
-</div>
-</div>
 <a id="ab533a800544facf05fd1c8e50f92099a" name="ab533a800544facf05fd1c8e50f92099a"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab533a800544facf05fd1c8e50f92099a">&#9670;&#160;</a></span>data_file</h2>
 
@@ -387,24 +344,6 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The full path to the <code>.ipi</code> data file to open. </p>
-
-</div>
-</div>
-<a id="af7183ee99e5384a1c761315b219c7b2e" name="af7183ee99e5384a1c761315b219c7b2e"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af7183ee99e5384a1c761315b219c7b2e">&#9670;&#160;</a></span>ip</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">const query <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> query <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> server <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> query true <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> server true <a class="el" href="fodid-web-creator-context_8rs.html#a24c9862ac5f6607db5ac0195209a4755">client</a> ip</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
 
 </div>
 </div>

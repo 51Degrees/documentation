@@ -1,6 +1,6 @@
 var _product_summaries__index =
 [
-    [ "Benchmarks", "_product_summaries__benchmarks.html", null ],
+    [ "Benchmarks", "_product_summaries__benchmarks.html", "_product_summaries__benchmarks" ],
     [ "Feature Matrix", "_product_summaries__feature_matrix.html", [
       [ "Data services", "_product_summaries__feature_matrix.html#data-services", null ],
       [ "Web integrations and plugins", "_product_summaries__feature_matrix.html#web-integrations-and-plugins", null ],

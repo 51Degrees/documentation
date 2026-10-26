@@ -68,11 +68,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-offl
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>On-premise offline-processing console example. See the descriptive block at the bottom of this file for the full write-up.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>(options: <a class="code hl_struct" href="struct_example_options.html">ExampleOptions</a>) -&gt; Result&lt;()&gt; {</div>
-<div class="c-code__line">    <span class="c-code__comment">// Build the on-premise pipeline. No ShareUsageElement is added. In general,</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// off-line processing usage should NOT be shared back to 51Degrees: it lacks</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// the full evidence the processing back-end needs and would be discarded.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// Build the on-premise pipeline with usage sharing off. Off-line processing</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// should not share usage with 51Degrees, because it lacks the full evidence</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// the data back-end needs and would be discarded. In normal operation, on</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// a web server, leave usage sharing on, which is the builder&#39;s default.</span></div>
 <div class="c-code__line">    let pipeline = DeviceDetectionPipelineBuilder::on_premise(&amp;options.data_file)</div>
 <div class="c-code__line">        .performance_profile(PerformanceProfile::LowMemory)</div>
+<div class="c-code__line">        .share_usage(<span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">        <span class="c-code__comment">// Off so no licence key is needed.</span></div>
+<div class="c-code__line">        .auto_update(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">        .build()</div>
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;failed to build the on-premise device-detection pipeline&quot;</span>)?;</div>
 <div class="c-code__line"> </div>

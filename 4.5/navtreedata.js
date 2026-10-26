@@ -47,7 +47,7 @@ var NAVTREEINDEX =
 "_device_detection__cloud_to_on_premise.html",
 "_device_detection__overview.html#autotoc_md-performance-optimization",
 "_pipeline_api__concepts__flow_elements__aspect_engine.html",
-"_reverse_geocoding__overview.html#autotoc_md-compliance-and-geo-fencing"
+"_product_summaries__feature_matrix.html#pipeline-api-features"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

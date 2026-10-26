@@ -76,8 +76,8 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:a887bdadc0bdfd0621b21945f1e8c1bb6" id="r_a887bdadc0bdfd0621b21945f1e8c1bb6"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_options.html">Options</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a887bdadc0bdfd0621b21945f1e8c1bb6">build_app</a> (data_file:&amp;std::path::Path) -&gt; anyhow::Result&lt;(Router, Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;)&gt;</td></tr>
-<tr class="c-table__row memdesc:a887bdadc0bdfd0621b21945f1e8c1bb6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the on-premise web application router plus the data-file warnings.  <br /></td></tr>
+<tr class="c-table__row memitem:af7705fb1b146ccd9782c5f7c5673024e" id="r_af7705fb1b146ccd9782c5f7c5673024e"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_options.html">Options</a>&#160;</td><td class="c-table__cell"><a class="el" href="#af7705fb1b146ccd9782c5f7c5673024e">build_app</a> (data_file:&amp;std::path::Path, share_usage:bool,) -&gt; anyhow::Result&lt;(Router, Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;)&gt;</td></tr>
+<tr class="c-table__row memdesc:af7705fb1b146ccd9782c5f7c5673024e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the on-premise web application router plus the data-file warnings.  <br /></td></tr>
 <tr class="c-table__row memitem:a8d644587b49a1bca9eba622abbfaef16" id="r_a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8d644587b49a1bca9eba622abbfaef16">run</a> (options:Options) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Serve the example page over TCP until interrupted.  <br /></td></tr>
 <tr class="c-table__row memitem:a0ecdaa6c332af4e687f3bc109baa11a8" id="r_a0ecdaa6c332af4e687f3bc109baa11a8"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a0ecdaa6c332af4e687f3bc109baa11a8">store_warnings</a> (warnings:Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;)</td></tr>
@@ -107,8 +107,8 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:a254a0da5c9d75181d6a2a0f68f63efcf" id="r_a254a0da5c9d75181d6a2a0f68f63efcf"><td class="c-table__cell">status&#160;</td><td class="c-table__cell"><a class="el" href="#a254a0da5c9d75181d6a2a0f68f63efcf">body</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
-<a id="a887bdadc0bdfd0621b21945f1e8c1bb6" name="a887bdadc0bdfd0621b21945f1e8c1bb6"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a887bdadc0bdfd0621b21945f1e8c1bb6">&#9670;&#160;</a></span>build_app()</h2>
+<a id="af7705fb1b146ccd9782c5f7c5673024e" name="af7705fb1b146ccd9782c5f7c5673024e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af7705fb1b146ccd9782c5f7c5673024e">&#9670;&#160;</a></span>build_app()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -118,8 +118,12 @@ Variables</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">pub struct <a class="el" href="struct_options.html">Options</a> build_app </td>
           <td>(</td>
-          <td class="c-table__cell">data_file:&amp;std::path::Path</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; anyhow::Result&lt;(Router, Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;)&gt;</td>
+          <td class="c-table__cell">data_file:&amp;std::path::Path</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">share_usage:bool</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; anyhow::Result&lt;(Router, Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;)&gt;</td>
         </tr>
           </table>
         </div>
@@ -127,7 +131,8 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Build the on-premise web application router plus the data-file warnings. </p>
-<p>The Hash engine is built once so its data-file warnings (Lite tier, and over 28/30 days old) can be read with [<code>examples_shared::check_data_file</code>] and shown on the page, and the very same engine instance is then used as the application element of the web pipeline. </p>
+<p>The Hash engine is built once so its data-file warnings (Lite tier, and over 28/30 days old) can be read with [<code>examples_shared::check_data_file</code>] and shown on the page, and the very same engine instance is then used as the application element of the web pipeline.</p>
+<p><code>share_usage</code> is true when the binary serves the page. The tests pass false, so a test run sends nothing to 51Degrees. </p>
 
 </div>
 </div>
@@ -178,7 +183,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Dispatch one request and capture the response. </p>
-<p>Driven from a <code>#[test]</code> (not <code>#[tokio::test]</code>): the share-usage element holds a blocking reqwest client whose drop must not happen on a tokio worker thread, so the app is owned and dropped on the plain test thread around a <code>Runtime::block_on</code>. </p>
+<p>Driven from a <code>#[test]</code> (not <code>#[tokio::test]</code>): with usage sharing on, the app holds a blocking reqwest client whose drop must not happen on a tokio worker thread, so the app is owned and dropped on the plain test thread around a <code>Runtime::block_on</code>. </p>
 
 </div>
 </div>

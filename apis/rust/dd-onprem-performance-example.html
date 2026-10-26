@@ -86,7 +86,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-perf
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Build the benchmark pipeline. Requesting a single property keeps detection</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// as fast as possible, which is what a throughput benchmark wants to measure.</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// No ShareUsageElement is added (usage sharing is off for console examples).</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// Usage sharing is off because this is a console example. In normal</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// operation leave it on, which is the builder&#39;s default.</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// The InMemory profile loads the whole data set into memory for the fastest</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// detections. See the performance options documentation at the bottom for the</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// trade-offs between the profiles.</span></div>

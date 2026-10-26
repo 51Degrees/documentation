@@ -72,10 +72,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-matc
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>(options: <a class="code hl_struct" href="struct_example_options.html">ExampleOptions</a>) -&gt; Result&lt;()&gt; {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Build a pipeline that returns every property in the data tier. Requesting</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// no specific property loads them all, so every component is resolved and the</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// full DeviceId (all four profile ids) is produced. No ShareUsageElement is</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// added: usage sharing is forbidden for console examples.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// full DeviceId (all four profile ids) is produced. Usage sharing is off</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// because this is a console example. In normal operation leave it on,</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// which is the builder&#39;s default.</span></div>
 <div class="c-code__line">    let pipeline = DeviceDetectionPipelineBuilder::on_premise(&amp;options.data_file)</div>
 <div class="c-code__line">        .performance_profile(PerformanceProfile::LowMemory)</div>
+<div class="c-code__line">        .share_usage(<span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">        <span class="c-code__comment">// Off so no licence key is needed.</span></div>
+<div class="c-code__line">        .auto_update(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">        .build()</div>
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;failed to build the on-premise device-detection pipeline&quot;</span>)?;</div>
 <div class="c-code__line"> </div>
