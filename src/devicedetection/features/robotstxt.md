@@ -52,13 +52,13 @@ The `tdl` value can be:
 
 - A single absolute URI, e.g. `https://example.com/terms.txt`.
 - Multiple URIs, separated by `,` or `|`, e.g. `https://a.example/terms,https://b.example/terms`.
-- A short macro id that the engine resolves to a current URL via a `ITdlSourceResolver`. The default resolver ships with one known macro, **`MOW-SOCW`**, which substitutes the latest version of the [Movement for an Open Web Standard Online Content Wrapper](https://github.com/movementforanopenweb/terms-documents) terms document.
+- A short macro id that the engine resolves to a current URL via an `ITdlSourceResolver`. The default resolver ships with one known macro, **`MOW-SOCW`**, which substitutes the address of the latest version of the Movement for an Open Web [Search Only Contract](https://m4ow.uk/socw/), such as `https://m4ow.uk/socw/2.txt`.
 
 Entries that are neither absolute URIs nor known macro ids are silently dropped, per the IETF-Robots TDL specification. If everything supplied is dropped, the engine falls back to the standard `Allow: /` wildcard block.
 
 # Cloud Usage
 
-Robots.txt support has recently become available as part of 51Degrees Cloud. When enabled on a Resource Key, two additional steps make integration straightforward.
+Robots.txt is available from 51Degrees Cloud on the free plan. For a step by step guide to fetching the file and keeping it fresh, see @ref Services_Cloud_RobotsTxt. When the properties are enabled on a Resource Key, two additional steps make integration straightforward.
 
 ## Discovering the available CrawlerUsage values
 
@@ -75,15 +75,17 @@ This returns the canonical list of usages available on your Resource Key tier �
 To request a `robots.txt` from Cloud, call the standard JSON endpoint with the appropriate `query.robotstxt.*` parameters. For example:
 
 ```
-https://cloud.51degrees.com/api/v4/json?resource=<RESOURCE_KEY>&values=robotstxt.plaintext&robotstxt.analytics=allow&robotstxt.tdl=MOW-SOCW,https://custom.url/tdl
+https://cloud.51degrees.com/api/v4/json?resource=<RESOURCE_KEY>&values=robotstxt.plaintext&robotstxt.search=allow&robotstxt.analytics=allow&robotstxt.tdl=https://m4ow.uk/socw/2.txt,https://custom.url/tdl
 ```
 
 In the example above:
 
-- `robotstxt.analytics=allow` allows every crawler whose `CrawlerUsage` includes `Analytics`. All other crawlers are omitted as explicit `Disallow:` blocks.
-- `robotstxt.tdl=MOW-SOCW,https://custom.url/tdl` adds two TDL entries to the wildcard `Allow:` block — the macro `MOW-SOCW` (resolved server-side to the latest published [Movement for an Open Web Standard](https://m4ow.uk/socw/) Online Content Wrapper terms URL) and a custom absolute URL of your own license agreement. Both are added in the order supplied.
+- `robotstxt.search=allow` and `robotstxt.analytics=allow` allow every crawler whose `CrawlerUsage` includes `Search` or `Analytics`. Every other known crawler gets its own `Disallow:` block. Keep `search` in the allow set unless you intend to block search engines, because a request allowing only `analytics` blocks Googlebot.
+- `robotstxt.tdl=https://m4ow.uk/socw/2.txt,https://custom.url/tdl` adds two TDL entries to the wildcard `Allow:` block, version 2 of the Movement for an Open Web [Search Only Contract](https://m4ow.uk/socw/) and a custom absolute URL of your own license agreement, in the order supplied.
 
-The response is a standard 51Degrees Cloud JSON document, with the generated text exposed under the `robotstxt` and `annotatedtext` element:
+Send at least one `robotstxt.<usage>` parameter. A request without one returns no `robotstxt` element.
+
+The response is a standard 51Degrees Cloud JSON document, with the generated text in the `plaintext` and `annotatedtext` values of the `robotstxt` element:
 
 ```json
 {
@@ -94,9 +96,9 @@ The response is a standard 51Degrees Cloud JSON document, with the generated tex
 }
 ```
 
-The Resource Key must include the `robotstxt.plaintext` and/or `robotstxt.annotatedtext` properties or the values must be requested using the `values` parameter in the request. The `plaintext` value is intended for production use. The `annotatedtext` value is intended for internal use to understand why certain choices were made and provide context.
+The Resource Key must include the `robotstxt.plaintext` and/or `robotstxt.annotatedtext` properties. A License-key-only caller names them in the `values` parameter instead. The `plaintext` value is intended for production use. The `annotatedtext` value is intended for internal use to understand why certain choices were made and provide context.
 
-Use the @ref Services_Configurator "Configurator" to include `robotstxt` and `annotatedtext` in the resource key response.
+Create a Resource Key that includes `robotstxt.plaintext` and `robotstxt.annotatedtext` at [configure.51degrees.com](https://configure.51degrees.com). Leave its domain list empty when your server makes the request, because a key limited to domains refuses requests that come from anywhere else.
 
 # On Premise Engine Configuration
 
@@ -116,3 +118,4 @@ Properties advertised by the engine carry the data tier of the underlying device
 
 - @ref DeviceDetection_Features_Crawlers — `CrawlerUsage` value definitions.
 - [51Degrees Robots.txt generator](https://51degrees.com/robots-txt) — hosted UI built on top of the same engine.
+- @ref Services_Cloud_RobotsTxt, a step by step guide to getting a fresh robots.txt from the cloud on a schedule.
