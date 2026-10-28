@@ -3,7 +3,7 @@
 One free request to the 51Degrees cloud returns a complete robots.txt, with a `Disallow` block for every known crawler whose use you have not allowed. Run it daily and the file picks up new crawlers as we add them.
 
 ```
-curl -s "https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json?robotstxt.search=allow&robotstxt.tdl=https://m4ow.uk/socw/2.txt" \
+curl -s "https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json?robotstxt.search=allow&robotstxt.tdl=https://m4ow.uk/socw/3.txt" \
   | jq -r .robotstxt.plaintext > robots.txt
 ```
 
@@ -47,12 +47,12 @@ Send `robotstxt.tdl` with the address of the terms that apply to the crawlers yo
 
 ```
 User-Agent: *
-# Terms https://m4ow.uk/socw/2.txt
-TDL: https://m4ow.uk/socw/2.txt
+# Terms https://m4ow.uk/socw/3.txt
+TDL: https://m4ow.uk/socw/3.txt
 Allow: /
 ```
 
-The Movement for an Open Web publishes a free [Search Only Contract](https://m4ow.uk/socw/2.txt). It allows search indexing and human, non-commercial use. Any other use, AI training included, needs a deal with the site. Without one, the crawler's operator owes the site a fee, by default £500 for each article, image, or video. The [guide to the contract](https://m4ow.uk/socw/) explains the terms.
+The Movement for an Open Web publishes a free [Search Only Contract](https://m4ow.uk/socw/3.txt). It allows search indexing and human, non-commercial use. Any other use, AI training included, needs a deal with the site. Without one, the crawler's operator owes the site a fee for each article, image, or video, at the amount the site sets in its own terms. The [guide to the contract](https://m4ow.uk/socw/) gives the wording to add to your terms, the fee included.
 
 Link to a version that never changes once published, as in the example, so everyone can see which terms applied on the day. To give more than one address, separate them with commas. Crawlers that do not recognize the TDL line skip it.
 
@@ -70,7 +70,7 @@ set -eu
 KEY="YOUR_RESOURCE_KEY"
 DEST="/var/www/html/robots.txt"
 USES="search monitor archiving preview security analytics feed discovery"
-TERMS="https://m4ow.uk/socw/2.txt"
+TERMS="https://m4ow.uk/socw/3.txt"
 
 QUERY="robotstxt.tdl=$TERMS"
 for USE in $USES; do QUERY="$QUERY&robotstxt.$USE=allow"; done
@@ -99,7 +99,7 @@ $ErrorActionPreference = 'Stop'
 $key = 'YOUR_RESOURCE_KEY'
 $dest = 'C:\inetpub\wwwroot\robots.txt'
 $uses = 'search', 'monitor', 'archiving', 'preview', 'security', 'analytics', 'feed', 'discovery'
-$terms = 'https://m4ow.uk/socw/2.txt'
+$terms = 'https://m4ow.uk/socw/3.txt'
 
 $query = (@("robotstxt.tdl=$terms") + ($uses | ForEach-Object { "robotstxt.$_=allow" })) -join '&'
 $file = (Invoke-RestMethod "https://cloud.51degrees.com/api/v4/$key.json?$query").robotstxt.plaintext

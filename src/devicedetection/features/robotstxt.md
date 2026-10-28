@@ -52,7 +52,7 @@ The `tdl` value can be:
 
 - A single absolute URI, e.g. `https://example.com/terms.txt`.
 - Multiple URIs, separated by `,` or `|`, e.g. `https://a.example/terms,https://b.example/terms`.
-- A short macro id that the engine resolves to a current URL via an `ITdlSourceResolver`. The default resolver ships with one known macro, **`MOW-SOCW`**, which substitutes the address of the latest version of the Movement for an Open Web [Search Only Contract](https://m4ow.uk/socw/), such as `https://m4ow.uk/socw/2.txt`.
+- A short macro id that the engine resolves to a current URL via an `ITdlSourceResolver`. The default resolver ships with one known macro, **`MOW-SOCW`**, which substitutes the address of the latest version of the Movement for an Open Web [Search Only Contract](https://m4ow.uk/socw/), such as `https://m4ow.uk/socw/3.txt`.
 
 Entries that are neither absolute URIs nor known macro ids are silently dropped, per the IETF-Robots TDL specification. If everything supplied is dropped, the engine falls back to the standard `Allow: /` wildcard block.
 
@@ -75,13 +75,13 @@ This returns the canonical list of usages available on your Resource Key tier â€
 To request a `robots.txt` from Cloud, call the standard JSON endpoint with the appropriate `query.robotstxt.*` parameters. For example:
 
 ```
-https://cloud.51degrees.com/api/v4/json?resource=<RESOURCE_KEY>&values=robotstxt.plaintext&robotstxt.search=allow&robotstxt.analytics=allow&robotstxt.tdl=https://m4ow.uk/socw/2.txt,https://custom.url/tdl
+https://cloud.51degrees.com/api/v4/json?resource=<RESOURCE_KEY>&values=robotstxt.plaintext&robotstxt.search=allow&robotstxt.analytics=allow&robotstxt.tdl=https://m4ow.uk/socw/3.txt,https://custom.url/tdl
 ```
 
 In the example above:
 
 - `robotstxt.search=allow` and `robotstxt.analytics=allow` allow every crawler whose `CrawlerUsage` includes `Search` or `Analytics`. Every other known crawler gets its own `Disallow:` block. Keep `search` in the allow set unless you intend to block search engines, because a request allowing only `analytics` blocks Googlebot.
-- `robotstxt.tdl=https://m4ow.uk/socw/2.txt,https://custom.url/tdl` adds two TDL entries to the wildcard `Allow:` block, version 2 of the Movement for an Open Web [Search Only Contract](https://m4ow.uk/socw/) and a custom absolute URL of your own license agreement, in the order supplied.
+- `robotstxt.tdl=https://m4ow.uk/socw/3.txt,https://custom.url/tdl` adds two TDL entries to the wildcard `Allow:` block, version 3 of the Movement for an Open Web [Search Only Contract](https://m4ow.uk/socw/) and a custom absolute URL of your own license agreement, in the order supplied.
 
 Send at least one `robotstxt.<usage>` parameter. A request without one returns no `robotstxt` element.
 
