@@ -5,13 +5,14 @@
 | Language / Framework | <center>@DeviceDetection</center> | <center>@IpIntelligence</center>  | <center>@ReverseGeocoding</center> | <center>@Pipeline</center> |
 |----------------------|------------------|------------------|-------------------|-----------|
 | C/C++                | <center>On-premise only</center>  | <center>On-premise only</center>  |                   |           |
-| .NET                 | <center>@tick</center>            | <center>On-premise only</center>  | <center>Cloud only</center>        | <center>@tick</center>     |
-| Java                 | <center>@tick</center>            | <center>On-premise only</center>  | <center>Cloud only</center>        | <center>@tick</center>     |
+| .NET                 | <center>@tick</center>            | <center>@tick</center>            | <center>Cloud only</center>        | <center>@tick</center>     |
+| Java                 | <center>@tick</center>            | <center>@tick</center>            | <center>Cloud only</center>        | <center>@tick</center>     |
 | JavaScript           | <center>Cloud only</center>       |                  | <center>Cloud only</center>        |           |
 | Node.js              | <center>@tick</center>            |                  | <center>Cloud only</center>        | <center>@tick</center>     |
 | PHP                  | <center>@tick*</center>           |                  | <center>Cloud only</center>        | <center>@tick</center>     |
 | Python               | <center>@tick</center>            |                  | <center>Cloud only</center>        | <center>@tick</center>     |
 | Go                   | <center>On-premise only</center>  | <center>On-premise only</center>  |                   |           |
+| Rust                 | <center>@tick</center>            | <center>@tick</center>            |                   | <center>@tick</center>     |
 
 *On-premise not available through composer.<BR>
 
@@ -27,6 +28,7 @@
 | PHP                  | WordPress                    |
 | Python               | Flask                        |
 | Go                   | N/A                          |
+| Rust                 | axum                         |
 
 # Pipeline API Features
 
