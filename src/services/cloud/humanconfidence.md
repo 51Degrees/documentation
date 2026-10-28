@@ -117,7 +117,7 @@ import session from 'express-session';
 const CLOUD = 'https://cloud.51degrees.com/api/v4/';
 const KEY = process.env.RESOURCE_KEY;
 const KEEP_MS = 30 * 60 * 1000; // ask the cloud again after 30 minutes
-const TIMEOUT_MS = 2000; // 2 second limit, so a slow cloud cannot hang the shop
+const TIMEOUT_MS = 2000; // 2 second limit, so a slow cloud cannot hang the website
 const HOLDING_PAGE = readFileSync(new URL('holding.html', import.meta.url),
   'utf8').replace('RESOURCE_KEY', KEY);
 
@@ -220,7 +220,7 @@ RESOURCE_KEY=YOUR_RESOURCE_KEY php -S localhost:3000 index.php
 // A Human Confidence gate for PHP.
 const CLOUD = 'https://cloud.51degrees.com/api/v4/';
 const KEEP_SECONDS = 30 * 60; // ask the cloud again after 30 minutes
-const TIMEOUT_SECONDS = 2; // 2 second limit, so a slow cloud cannot hang the shop
+const TIMEOUT_SECONDS = 2; // 2 second limit, so a slow cloud cannot hang the website
 
 session_start();
 
@@ -363,7 +363,7 @@ from flask import Flask, abort, redirect, request, session
 CLOUD = 'https://cloud.51degrees.com/api/v4/'
 KEY = os.environ['RESOURCE_KEY']
 KEEP_SECONDS = 30 * 60  # ask the cloud again after 30 minutes
-TIMEOUT_SECONDS = 2  # 2 second limit, so a slow cloud cannot hang the shop
+TIMEOUT_SECONDS = 2  # 2 second limit, so a slow cloud cannot hang the website
 HOLDING_PAGE = (pathlib.Path(__file__).with_name('holding.html')
                 .read_text().replace('RESOURCE_KEY', KEY))
 HEADERS = None  # the request headers the cloud uses, read on the first check
