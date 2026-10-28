@@ -4,6 +4,8 @@ Scrapers copy your prices and product catalog to feed rival pricing algorithms. 
 
 You add a holding page and one server file, in Node.js, PHP, or Python. Your server needs no 51Degrees software, only a @ref Services_Cloud_ResourceKeys "Resource Key" and the 51Degrees cloud.
 
+To see how much of your traffic is people before you change what anyone sees, start with @ref Services_Cloud_HumanConfidenceAnalytics.
+
 # How it works
 
 1. The first time a visitor asks for a protected page, your server sends a small holding page instead. It runs the 51Degrees script, sends the script's values to your server, and reloads, so a person only sees it for a moment.
@@ -505,3 +507,4 @@ Start one of the servers with your key and try the following. The addresses are 
 - [Robots.txt generator](https://51degrees.com/robots-txt)
 - [Human Confidence in the property dictionary](https://51degrees.com/developers/property-dictionary?item=Derived%7CHuman%20Detection)
 - @ref Services_Cloud_ResourceKeys
+- @subpage Services_Cloud_HumanConfidenceAnalytics
