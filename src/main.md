@@ -48,7 +48,7 @@ How likely it is that a person, not a script, is viewing the page, from the 51De
 - [Overview](@ref HumanConfidence_Overview) - What the answers mean and how to use them
 - [Quick Start](@ref HumanConfidence_Quickstart) - From License Key to the first answer
 - [Deploy with the cloud](@ref Services_Cloud_HumanConfidence) - Decide what each visit gets on your server
-- [Google Analytics](@ref Services_Cloud_HumanConfidenceAnalytics) - Send Human Confidence to your reports
+- [Analytics](@ref HumanConfidence_Analytics) - Send Human Confidence to your reports, with [Google Analytics 4](@ref HumanConfidence_GoogleAnalytics) step by step
 
 ### Reverse Geocoding
 
