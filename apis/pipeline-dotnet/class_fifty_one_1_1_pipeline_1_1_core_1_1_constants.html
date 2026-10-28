@@ -111,6 +111,8 @@ const&#160;string&#160;</td><td class="c-table__cell"><b>EVIDENCE_SESSION_KEY</b
 <tr class="c-table__row memitem:a2b3a7f6330ba79fe8763be9863940f24" id="r_a2b3a7f6330ba79fe8763be9863940f24"><td class="c-table__cell"><a id="a2b3a7f6330ba79fe8763be9863940f24" name="a2b3a7f6330ba79fe8763be9863940f24"></a>
 const&#160;string&#160;</td><td class="c-table__cell"><b>EVIDENCE_PROTOCOL</b> = <a class="el" href="#a11cdd5ca9524b18b0f00ee24b023198d">EVIDENCE_HTTPHEADER_PREFIX</a> + <a class="el" href="#ae1a0652744e57b67cbb759f4ae03d46c">EVIDENCE_SEPERATOR</a> + &quot;protocol&quot;</td></tr>
 <tr class="c-table__row memdesc:a2b3a7f6330ba79fe8763be9863940f24"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The complete key to be used when the 'Protocol' HTTP header is passed as evidence. <br /></td></tr>
+<tr class="c-table__row memitem:a99865e2d607f563886abb9ad920356c9" id="r_a99865e2d607f563886abb9ad920356c9"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a99865e2d607f563886abb9ad920356c9">EVIDENCE_HOST_KEY</a> = <a class="el" href="#a11cdd5ca9524b18b0f00ee24b023198d">EVIDENCE_HTTPHEADER_PREFIX</a> + <a class="el" href="#ae1a0652744e57b67cbb759f4ae03d46c">EVIDENCE_SEPERATOR</a> + &quot;host&quot;</td></tr>
+<tr class="c-table__row memdesc:a99865e2d607f563886abb9ad920356c9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The complete key to be used when the 'Host' HTTP header is passed as evidence.  <br /></td></tr>
 <tr class="c-table__row memitem:aeb93f3abcb5723fd3a6868a386e0ea08" id="r_aeb93f3abcb5723fd3a6868a386e0ea08"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#aeb93f3abcb5723fd3a6868a386e0ea08">EVIDENCE_REQUEST_METHOD_KEY</a> = <a class="el" href="#aac7c77fb25c20e5ef9d3d3e6dde09b7a">EVIDENCE_SERVER_PREFIX</a> + <a class="el" href="#ae1a0652744e57b67cbb759f4ae03d46c">EVIDENCE_SEPERATOR</a> + &quot;request-method&quot;</td></tr>
 <tr class="c-table__row memdesc:aeb93f3abcb5723fd3a6868a386e0ea08"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The complete key to be used when the HTTP method of the request is passed as evidence.  <br /></td></tr>
 <tr class="c-table__row memitem:a1d5f3e1d793b9092127690c768c5e84c" id="r_a1d5f3e1d793b9092127690c768c5e84c"><td class="c-table__cell"><a id="a1d5f3e1d793b9092127690c768c5e84c" name="a1d5f3e1d793b9092127690c768c5e84c"></a>
@@ -131,6 +133,35 @@ const&#160;bool&#160;</td><td class="c-table__cell"><b>PIPELINE_BUILDER_DEFAULT_
 <tr class="c-table__row memdesc:ac44998336787544fa08fd78899ac3d36"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name of the System.Diagnostics.ActivitySource that emits a tracing span for each flow element a pipeline processes.  <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a99865e2d607f563886abb9ad920356c9" name="a99865e2d607f563886abb9ad920356c9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a99865e2d607f563886abb9ad920356c9">&#9670;&#160;</a></span>EVIDENCE_HOST_KEY</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const string FiftyOne.Pipeline.Core.Constants.EVIDENCE_HOST_KEY = <a class="el" href="#a11cdd5ca9524b18b0f00ee24b023198d">EVIDENCE_HTTPHEADER_PREFIX</a> + <a class="el" href="#ae1a0652744e57b67cbb759f4ae03d46c">EVIDENCE_SEPERATOR</a> + &quot;host&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The complete key to be used when the 'Host' HTTP header is passed as evidence. </p>
+<p>The one definition of this key; element constants alias it. Elements once spelled it 'header.Host' and 'header.host', and a whitelist built from their combined lists threw. See pipeline-dotnet#393. </p>
+
+</div>
+</div>
 <a id="aeb93f3abcb5723fd3a6868a386e0ea08" name="aeb93f3abcb5723fd3a6868a386e0ea08"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#aeb93f3abcb5723fd3a6868a386e0ea08">&#9670;&#160;</a></span>EVIDENCE_REQUEST_METHOD_KEY</h2>
 

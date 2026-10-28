@@ -87,9 +87,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-upda
 <div class="c-code__line">    let config = DataFileConfiguration::builder(&amp;options.data_file)</div>
 <div class="c-code__line">        <span class="c-code__comment">// Off so `build` does not block; see the startup section in the docs.</span></div>
 <div class="c-code__line">        .update_on_startup(<span class="c-code__keyword">false</span>)</div>
-<div class="c-code__line">        <span class="c-code__comment">// Watch the file on disk and reload when it is replaced.</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// Watch the file on disk and reload when it is replaced, while</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// automatic updates are on.</span></div>
 <div class="c-code__line">        .file_system_watcher_enabled(<span class="c-code__keyword">true</span>)</div>
-<div class="c-code__line">        <span class="c-code__comment">// Poll the distributor for a newer file on an interval.</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// Poll the distributor for a newer file on an interval. Automatic</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// updates are the master switch for polling and the watcher alike.</span></div>
 <div class="c-code__line">        .automatic_updates_enabled(options.license_key.is_some())</div>
 <div class="c-code__line">        <span class="c-code__comment">// A short interval purely so the example does not appear idle; a real</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// deployment uses around 30 minutes.</span></div>

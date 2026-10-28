@@ -140,6 +140,7 @@ IEqualityComparer&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell">
 </div><div class="c-member__body">
 
 <p>Add a child filter to this aggregator. </p>
+<p>A key already held keeps the earlier filter's order, unlike EvidenceKeyFilterWhitelist, which keeps the lowest. Left so to avoid changing precedence in existing pipelines. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filter</td><td>The filter to add. </td></tr>
