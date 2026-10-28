@@ -1,16 +1,16 @@
 @page Services_Cloud_HumanConfidence Add Human Confidence to your site
 
-Scrapers copy your prices and product catalog to feed rival pricing algorithms. Human Confidence lets your server tell people from scripts before it sends a product or price page, so shoppers get your prices and scrapers get turned away.
+Scrapers copy your prices and product catalog to feed rival pricing algorithms. Human Confidence lets your server check whether a person or a script is asking before it sends a product or price page.
 
-This page sets it up in four steps, with code to copy for Node.js, PHP, and Python. Your server needs no 51Degrees software, only a @ref Services_Cloud_ResourceKeys "Resource Key" and one call to the 51Degrees cloud each time it checks a visitor.
+You add a holding page and one server file, in Node.js, PHP, or Python. Your server needs no 51Degrees software, only a @ref Services_Cloud_ResourceKeys "Resource Key" and the 51Degrees cloud.
 
 # How it works
 
-1. The first time a visitor asks for a protected page, your server sends a small holding page instead. The holding page runs the 51Degrees script, sends the values the script stored back to your server, and reloads. A person sees the holding page for a moment.
-2. Your server asks the 51Degrees cloud for Human Confidence, passing on the visitor's request headers, IP address, and those values. The server keeps the answer for 30 minutes in the visitor's session, which is what your site remembers about one visitor between requests.
+1. The first time a visitor asks for a protected page, your server sends a small holding page instead. It runs the 51Degrees script, sends the script's values to your server, and reloads, so a person only sees it for a moment.
+2. Your server asks the 51Degrees cloud for Human Confidence, passing on the request headers the cloud uses, the visitor's IP address, and those values. The server keeps the answer in the visitor's session for 30 minutes.
 3. Your server decides what the visitor gets. High gets the page, Medium gets a challenge, and Low gets a page about licensing your data.
 
-Your server makes the decision, never the browser, because a browser can send anything.
+The decision is made on your server, because anything a browser sends could be forged.
 
 # Step 1. Create a Resource Key
 
@@ -22,13 +22,13 @@ Create a Resource Key at https://configure.51degrees.com with the License Key fr
 - `device.IsVisibleJavaScript`
 - `device.HasWebDriverJavaScript`
 
-A key made for this one job, with just these properties, keeps the holding page quick, because the holding page runs every script the key includes.
+Make a key for this job alone. The holding page runs every script on the key, and each extra property slows it down.
 
-Leave the key's list of domains empty. Your server calls the cloud with the same key, and a call from a server comes from no web page. A key limited to domains refuses that call with `401` and the message `This resource key is not authorised for the domain ''`. If you do limit the key to your domains, add an `Origin` header that names one of them, such as `Origin: https://www.example.com`, to your server's call.
+Leave the key's list of domains empty. Your server calls the cloud with the same key, and a server's call carries no `Origin` header. A key limited to domains refuses that call with `401` and the message `This resource key is not authorised for the domain ''`. If you do limit the key to your domains, add an `Origin` header that names one of them, such as `Origin: https://www.example.com`, to your server's call.
 
 A Resource Key is public, so it is safe in the holding page. Keep your License Key secret and off every page.
 
-To check the key, open `https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json` in a browser. The answer includes the lines below. Unknown is right here, because the 51Degrees script has not run yet.
+To check the key, open `https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json` in a browser. The answer includes the lines below. Unknown is expected at this point, as the 51Degrees script has not run yet.
 
 ```json
 "derived": {
@@ -79,21 +79,17 @@ Save this as `holding.html` next to your server code. The server code in step 3 
 ```
 
 - `fod-js-enable-cookies=true` asks the 51Degrees script to keep its values in cookies with names that start `51D_`. Without the parameter, the script keeps the values in session storage, which your server cannot read. See @ref PipelineApi_Features_ClientSideEvidence for more.
-- `fod.complete` runs `check` when the script has finished. `check` sends every `51D_` value to `/human-check` and then reloads the page.
-- If the script cannot load, or has not finished after three seconds, `check` runs anyway. Your server then decides with what it has.
 - A scraper that runs no JavaScript stays on the holding page and never sees your prices.
 
 # Step 3. Ask the cloud from your server and decide
 
-The server code does three jobs.
-
-1. It sends the holding page to any session it has not checked, with `Cache-Control: no-store` so that no cache keeps the holding page.
-2. When the holding page posts to `/human-check`, it asks the cloud. It posts a form to `https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json` with the visitor's headers, every `51D_` value, and the visitor's IP address as `client-ip`. It reads `derived.humanconfidence` from the JSON answer and keeps the answer in the session for 30 minutes.
+1. The server code sends the holding page to any session it has not checked, with `Cache-Control: no-store` so that no cache keeps the holding page.
+2. When the holding page posts to `/human-check`, the server asks the cloud. It posts a form to `https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json` with the visitor's headers, every `51D_` value, and the visitor's IP address as `client-ip`. It reads `derived.humanconfidence` from the JSON answer and keeps it in the session.
 3. For every later request to a protected page or API, it acts on the answer in the session.
 
-Three details matter.
+Watch for these when you adapt the code.
 
-- The server sends only the headers the cloud uses, as the 51Degrees SDKs do. Their names are the entries starting `header.` in the list at https://cloud.51degrees.com/api/v4/evidencekeys. Other headers, such as `Authorization`, stay on your server.
+- The server sends only the headers the cloud uses, as the 51Degrees SDKs do. Their names are the entries starting `header.` in the list at https://cloud.51degrees.com/api/v4/evidencekeys. Other headers, such as `Authorization`, stay on your server. The Node.js and Python examples read that list once when they start. The PHP example reads it on every check, because PHP keeps nothing between requests, so cache it if you check often.
 - The server sets `client-ip` last, so that a visitor's own `Client-IP` header cannot replace the address. If your site sits behind a load balancer or a CDN, make sure the address is the visitor's and not the load balancer's. Each example has a comment where this matters.
 - Node.js writes IPv4 addresses in the form `::ffff:203.0.113.7`. The Node.js code removes the `::ffff:` part before sending the address.
 
@@ -438,28 +434,28 @@ if __name__ == '__main__':
 | Answer | What it means | Product and price pages | Price APIs |
 | ------ | ------------- | ----------------------- | ---------- |
 | High | A person is reading the page. | Show the page. | Answer the call. |
-| Medium | Mixed signals. Could be a person, could be a script. | Challenge with a CAPTCHA, a sign-in, or a notice, [like ours](https://51degrees.com/suspicious). | Refuse with `403` until the visitor passes the challenge. |
+| Medium | It could be a person or a script. | Challenge with a CAPTCHA, a sign-in, or a notice, [like ours](https://51degrees.com/suspicious). | Refuse with `403` until the visitor passes the challenge. |
 | Low | Almost certainly no person is reading it. | Send the visitor to a page that says how to license your price data, [like ours](https://51degrees.com/ai-notice), and log the visit. | Refuse with `403` and log the call. |
 | Unknown | Not measured, for example because the script could not run. | Treat it as Medium. | Refuse with `403`. |
 
 The examples send Medium and Unknown to `/challenge` and Low to `/automated-access`, and the example price API refuses every session that is not High. Replace those two pages with your own. When a visitor passes your challenge, set the answer kept in the session to High so that the visitor can carry on.
 
-The gate holds search engine crawlers too, as it holds every session it has not checked. If your product pages must appear in search results, let genuine search engine crawlers skip the gate. [Google](https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests) and [Bing](https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26) explain how to check that a crawler really is theirs.
+Search engine crawlers get the holding page too, like any session the gate has not checked. If your product pages must appear in search results, let genuine search engine crawlers skip the gate. [Google](https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests) and [Bing](https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26) explain how to check that a crawler really is theirs.
 
 # Test it
 
-Start one of the servers with your key, then try these four things. The addresses are the same for all three servers.
+Start one of the servers with your key and try the following. The addresses are the same whichever server you run.
 
-1. Run `curl -i http://localhost:3000/products/1`. The answer is the holding page, because curl runs no JavaScript.
-2. Run `curl -i http://localhost:3000/api/prices/1`. The answer is `403 Forbidden`, because nothing has checked the session.
+1. Run `curl -i http://localhost:3000/products/1`. You get the holding page. curl runs no JavaScript, so it never gets further.
+2. Run `curl -i http://localhost:3000/api/prices/1`. The answer is `403 Forbidden`. Nothing has checked the session yet.
 3. Open http://localhost:3000/products/1 in your browser. After a moment the browser shows the challenge page. When you test on your own computer, expect Medium. On a public server, the same browser normally gets High and the product page.
 4. Open the same address in a headless browser, for example with Playwright. The browser reaches `/automated-access`, and the server logs a line that starts `Low:`.
 
 # Find out more
 
-- [Plans and prices](https://51degrees.com/pricing), including the Pro plan that Human Confidence needs.
-- [Bots and humans](https://51degrees.com/bots-and-humans), the 51Degrees services for telling people from automated traffic.
-- [How likely is your traffic to be from real humans?](https://51degrees.com/blog/how-to-detect-bot-traffic-and-charge-ai), on what each answer means and how to charge AI scrapers.
-- [Robots.txt generator](https://51degrees.com/robots-txt), which writes a robots.txt file for the uses you allow each crawler.
-- [Property dictionary](https://51degrees.com/developers/property-dictionary?item=Derived%7CHuman%20Detection), for the HumanConfidence property and its values.
-- @ref Services_Cloud_ResourceKeys, for more about keys.
+- [Plans and prices](https://51degrees.com/pricing)
+- [Bots and humans](https://51degrees.com/bots-and-humans)
+- [How likely is your traffic to be from real humans?](https://51degrees.com/blog/how-to-detect-bot-traffic-and-charge-ai), our post on what each answer means
+- [Robots.txt generator](https://51degrees.com/robots-txt)
+- [Human Confidence in the property dictionary](https://51degrees.com/developers/property-dictionary?item=Derived%7CHuman%20Detection)
+- @ref Services_Cloud_ResourceKeys
