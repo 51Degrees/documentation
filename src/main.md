@@ -13,6 +13,7 @@ At 51Degrees, we turn every user interaction into a chance to learn, optimize, a
 
 - **Device Detection** - Detect 250+ device properties from HTTP headers and other signals to tailor every user experience.
 - **IP Intelligence** - Unlock geolocation, ISP, and network data from IP addresses for sharper insights and smarter decisions.
+- **Human Confidence** - Rate every visit High, Medium, or Low by how likely it is that a person is viewing the page.
 - **Reverse Geocoding** - Transform latitude and longitude into real-world addresses, cities, and regions.
 - **Identifiers** - Generate privacy-aware signals (51Did) and capture user marketing preferences (PMP) to feed downstream systems.
 - **Ultra-fast Performance** - Enjoy lightning-fast detection speeds thanks to in-process deployment.
@@ -39,6 +40,15 @@ Tap into geolocation, ISP, and network insights. Perfect for fraud prevention, p
 
 - [Overview](@ref IpIntelligence_Overview) - Understand network data and location capabilities
 - [Quick Start](@ref IpIntelligence_Quickstart) - Integrate in minutes
+
+### Human Confidence
+
+How likely it is that a person, not a script, is viewing the page, from the 51Degrees cloud. Measure it in your analytics, or act on it from your server.
+
+- [Overview](@ref HumanConfidence_Overview) - What the answers mean and how to use them
+- [Quick Start](@ref HumanConfidence_Quickstart) - From License Key to the first answer
+- [Deploy with the cloud](@ref Services_Cloud_HumanConfidence) - Decide what each visit gets on your server
+- [Analytics](@ref HumanConfidence_Analytics) - Send Human Confidence to your reports, with [Google Analytics 4](@ref HumanConfidence_GoogleAnalytics) step by step
 
 ### Reverse Geocoding
 
@@ -147,6 +157,7 @@ Everything you need to succeed:
 
 - [Device Detection](@ref DeviceDetection_Quickstart) - Cloud vs. On-premise
 - [IP Intelligence](@ref IpIntelligence_Quickstart) - Location and network data
+- [Human Confidence](@ref HumanConfidence_Quickstart) - People or scripts
 - [Reverse Geocoding](@ref ReverseGeocoding_Quickstart) - From coordinates to addresses
 - [Identifiers](@ref Identifiers_Overview) - 51Did and PMP
 
@@ -154,6 +165,7 @@ Everything you need to succeed:
 
 - [Device Detection Overview](@ref DeviceDetection_Overview)
 - [IP Intelligence Overview](@ref IpIntelligence_Overview)
+- [Human Confidence Overview](@ref HumanConfidence_Overview)
 - [Reverse Geocoding Overview](@ref ReverseGeocoding_Overview)
 - [Identifiers Overview](@ref Identifiers_Overview)
 

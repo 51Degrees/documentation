@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="730" height="392" viewBox="0 0 730 392" role="img" aria-labelledby="t d">
+<title id="t">HumanConfidence by visit (Crawlers Removed)</title>
+<desc id="d">Monthly visits from May to September stacked by HumanConfidence. Low and Medium grow from July while High falls.</desc>
+<rect x="0.5" y="0.5" width="729" height="391" rx="8" fill="#FFFFFF" stroke="#E4E4E7"/>
+<text x="24" y="44" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#1F2328">HumanConfidence by visit (Crawlers Removed)</text>
+<line x1="64" y1="318.0" x2="708" y2="318.0" stroke="#C9CCD1" stroke-width="1"/>
+<text x="54" y="322.0" text-anchor="end" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#6B7280">0</text>
+<line x1="64" y1="270.0" x2="708" y2="270.0" stroke="#ECEDEF" stroke-width="1"/>
+<text x="54" y="274.0" text-anchor="end" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#6B7280">100k</text>
+<line x1="64" y1="222.0" x2="708" y2="222.0" stroke="#ECEDEF" stroke-width="1"/>
+<text x="54" y="226.0" text-anchor="end" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#6B7280">200k</text>
+<line x1="64" y1="174.0" x2="708" y2="174.0" stroke="#ECEDEF" stroke-width="1"/>
+<text x="54" y="178.0" text-anchor="end" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#6B7280">300k</text>
+<line x1="64" y1="126.0" x2="708" y2="126.0" stroke="#ECEDEF" stroke-width="1"/>
+<text x="54" y="130.0" text-anchor="end" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#6B7280">400k</text>
+<line x1="64" y1="78.0" x2="708" y2="78.0" stroke="#ECEDEF" stroke-width="1"/>
+<text x="54" y="82.0" text-anchor="end" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#6B7280">500k</text>
+<rect x="93.4" y="308.4" width="70" height="9.6" fill="#C8362F"><title>May: Low 19,955</title></rect>
+<rect x="93.4" y="291.5" width="70" height="17.0" fill="#E8A33D"><title>May: Medium 35,334</title></rect>
+<rect x="93.4" y="138.8" width="70" height="152.6" fill="#1E9E5A"><title>May: High 318,010</title></rect>
+<text x="128.4" y="340" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#4B5563">May</text>
+<rect x="222.2" y="308.7" width="70" height="9.3" fill="#C8362F"><title>June: Low 19,344</title></rect>
+<rect x="222.2" y="292.2" width="70" height="16.5" fill="#E8A33D"><title>June: Medium 34,351</title></rect>
+<rect x="222.2" y="140.5" width="70" height="151.7" fill="#1E9E5A"><title>June: High 316,140</title></rect>
+<text x="257.2" y="340" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#4B5563">June</text>
+<rect x="351.0" y="304.9" width="70" height="13.1" fill="#C8362F"><title>July: Low 27,279</title></rect>
+<rect x="351.0" y="285.4" width="70" height="19.6" fill="#E8A33D"><title>July: Medium 40,738</title></rect>
+<rect x="351.0" y="134.9" width="70" height="150.5" fill="#1E9E5A"><title>July: High 313,510</title></rect>
+<text x="386.0" y="340" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#4B5563">July</text>
+<rect x="479.8" y="293.0" width="70" height="25.0" fill="#C8362F"><title>August: Low 52,170</title></rect>
+<rect x="479.8" y="261.6" width="70" height="31.4" fill="#E8A33D"><title>August: Medium 65,349</title></rect>
+<rect x="479.8" y="126.1" width="70" height="135.5" fill="#1E9E5A"><title>August: High 282,208</title></rect>
+<text x="514.8" y="340" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#4B5563">August</text>
+<rect x="608.6" y="279.2" width="70" height="38.8" fill="#C8362F"><title>September: Low 80,923</title></rect>
+<rect x="608.6" y="234.9" width="70" height="44.2" fill="#E8A33D"><title>September: Medium 92,186</title></rect>
+<rect x="608.6" y="100.1" width="70" height="134.8" fill="#1E9E5A"><title>September: High 280,911</title></rect>
+<text x="643.6" y="340" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#4B5563">September</text>
+<circle cx="257.0" cy="362" r="5" fill="#C8362F"/>
+<text x="268.0" y="366.5" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">Low</text>
+<circle cx="331.0" cy="362" r="5" fill="#E8A33D"/>
+<text x="342.0" y="366.5" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">Medium</text>
+<circle cx="433.0" cy="362" r="5" fill="#1E9E5A"/>
+<text x="444.0" y="366.5" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">High</text>
+</svg>
