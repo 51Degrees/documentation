@@ -2,6 +2,8 @@
 
 @page IpIntelligence_Index IP Intelligence
 
+@page HumanConfidence_Index Human Confidence
+
 @page ReverseGeocoding_Index Reverse Geocoding
 
 @page Identifiers_Index Identifiers

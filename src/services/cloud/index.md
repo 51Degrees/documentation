@@ -6,6 +6,6 @@
 
 - @subpage Services_Cloud_ResourceKeys
 
-- @subpage Services_Cloud_HumanConfidence
+- @ref HumanConfidence_Index
 
 - @subpage Services_Cloud_ErrorMessages

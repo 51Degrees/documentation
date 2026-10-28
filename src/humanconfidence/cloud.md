@@ -1,10 +1,12 @@
-@page Services_Cloud_HumanConfidence Add Human Confidence to your site
+@page Services_Cloud_HumanConfidence Deploy Human Confidence with the cloud
 
-Scrapers copy your prices and product catalog to feed rival pricing algorithms. Human Confidence lets your server check whether a person or a script is asking before it sends a product or price page.
+This guide gates pages on Human Confidence. Your server checks whether a person or a script is asking before it sends a page, such as a product or price page, and decides what the visitor gets.
 
 You add a holding page and one server file, in Node.js, PHP, or Python. Your server needs no 51Degrees software, only a @ref Services_Cloud_ResourceKeys "Resource Key" and the 51Degrees cloud.
 
 To see how much of your traffic is people before you change what anyone sees, start with @ref Services_Cloud_HumanConfidenceAnalytics.
+
+**Get a License Key with Human Confidence:** [buy the Pro plan online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp). Human Confidence is in the Pro plan and above. [Compare plans](https://51degrees.com/pricing).
 
 # How it works
 
@@ -16,7 +18,7 @@ The decision is made on your server, because anything a browser sends could be f
 
 # Step 1. Create a Resource Key
 
-Human Confidence needs the Pro plan or above. See [plans and prices](https://51degrees.com/pricing). A key on the free plan cannot include it.
+Human Confidence needs the Pro plan or above, which you can [buy online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp). See [plans and prices](https://51degrees.com/pricing). A key on the free plan cannot include it.
 
 Create a Resource Key at https://configure.51degrees.com with the License Key from your plan, and choose these three properties.
 
@@ -507,4 +509,6 @@ Start one of the servers with your key and try the following. The addresses are 
 - [Robots.txt generator](https://51degrees.com/robots-txt)
 - [Human Confidence in the property dictionary](https://51degrees.com/developers/property-dictionary?item=Derived%7CHuman%20Detection)
 - @ref Services_Cloud_ResourceKeys
-- @subpage Services_Cloud_HumanConfidenceAnalytics
+- @ref Services_Cloud_HumanConfidenceAnalytics
+
+**Get a License Key with Human Confidence:** [buy the Pro plan online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp). Human Confidence is in the Pro plan and above. [Compare plans](https://51degrees.com/pricing).

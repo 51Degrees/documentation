@@ -4,6 +4,8 @@ Google Analytics 4 leaves out the crawlers on the IAB's list of known bots and c
 
 Send Human Confidence and the crawler properties to Google Analytics 4 as one event, register them as custom dimensions, and your reports separate people from crawlers and from agents that hide. Nothing changes for your visitors, so this is a good place to start before you add the gate in @ref Services_Cloud_HumanConfidence.
 
+**Get a License Key with Human Confidence:** [buy the Pro plan online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp). Human Confidence is in the Pro plan and above. [Compare plans](https://51degrees.com/pricing).
+
 # What to send
 
 | Property | What it tells you | Example values | Event parameter |
@@ -18,7 +20,7 @@ Each parameter name is the engine, then the property, in lower case. The [51Degr
 
 # Step 1. Create a Resource Key
 
-Human Confidence needs the Pro plan or above. See [plans and prices](https://51degrees.com/pricing).
+Human Confidence needs the Pro plan or above, which you can [buy online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp). See [plans and prices](https://51degrees.com/pricing).
 
 Create a Resource Key at https://configure.51degrees.com with the License Key from your plan, and choose these properties.
 
@@ -106,3 +108,5 @@ Google retired Universal Analytics in July 2024. The `custom_map` setting in our
 - [Human Confidence in the property dictionary](https://51degrees.com/developers/property-dictionary?item=Derived%7CHuman%20Detection)
 - @ref PipelineApi_Features_ClientSideEvidence, for how the 51Degrees script works in the browser
 - [Plans and prices](https://51degrees.com/pricing)
+
+**Get a License Key with Human Confidence:** [buy the Pro plan online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp). Human Confidence is in the Pro plan and above. [Compare plans](https://51degrees.com/pricing).
