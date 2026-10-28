@@ -89,11 +89,11 @@ Save this as `holding.html` next to your server code. The server code in step 3 
 
 Watch for these when you adapt the code.
 
-- The server sends only the headers the cloud uses, as the 51Degrees SDKs do. Their names are the entries starting `header.` in the list at https://cloud.51degrees.com/api/v4/evidencekeys. Other headers, such as `Authorization`, stay on your server. The Node.js and Python examples read that list once when they start. The PHP example reads it on every check, because PHP keeps nothing between requests, so cache it if you check often.
+- The server sends only the headers the cloud uses, as the 51Degrees SDKs do. Their names are the entries starting `header.` in the list at https://cloud.51degrees.com/api/v4/evidencekeys. Other headers, such as `Authorization`, stay on your server. The Node.js and Python examples read that list on their first check and keep it. The PHP example reads it on every check, because PHP keeps nothing between requests, so cache it if you check often.
 - The server sets `client-ip` last, so that a visitor's own `Client-IP` header cannot replace the address. If your site sits behind a load balancer or a CDN, make sure the address is the visitor's and not the load balancer's. Each example has a comment where this matters.
 - Node.js writes IPv4 addresses in the form `::ffff:203.0.113.7`. The Node.js code removes the `::ffff:` part before sending the address.
 
-If the cloud cannot be reached, the code records Unknown, which sends the visitor to your challenge. To let visitors through instead, record High when the call fails.
+If the cloud cannot answer, because of a network error, no answer within 2 seconds, or an error status, the server lets the visitor through for that one page and checks again on the next request. A short outage therefore never passes anyone for 30 minutes. An Unknown that the cloud does return is different, and gets your challenge as step 4 says. The example price API answers only sessions that are High, so it refuses calls until a check succeeds.
 
 @startsnippets
 @showsnippet{node,Node.js}
@@ -117,13 +117,20 @@ import session from 'express-session';
 const CLOUD = 'https://cloud.51degrees.com/api/v4/';
 const KEY = process.env.RESOURCE_KEY;
 const KEEP_MS = 30 * 60 * 1000; // ask the cloud again after 30 minutes
+const TIMEOUT_MS = 2000; // 2 second limit, so a slow cloud cannot hang the shop
 const HOLDING_PAGE = readFileSync(new URL('holding.html', import.meta.url),
   'utf8').replace('RESOURCE_KEY', KEY);
 
-// The request headers the cloud uses. Only these are sent.
-const HEADERS = new Set((await (await fetch(CLOUD + 'evidencekeys')).json())
-  .filter((key) => key.startsWith('header.'))
-  .map((key) => key.slice(7).toLowerCase()));
+// The request headers the cloud uses, read on the first check and kept.
+// Only these are sent.
+let headerNames;
+async function cloudHeaders() {
+  headerNames ??= new Set((await (await fetch(CLOUD + 'evidencekeys',
+    { signal: AbortSignal.timeout(TIMEOUT_MS) })).json())
+    .filter((key) => key.startsWith('header.'))
+    .map((key) => key.slice(7).toLowerCase()));
+  return headerNames;
+}
 
 const app = express();
 // Behind a load balancer or CDN, uncomment this so req.ip is the visitor.
@@ -135,26 +142,31 @@ app.use(session({
 
 // The holding page posts the 51D_ values here. Ask the cloud, keep the answer.
 app.post('/human-check', async (req, res) => {
-  const evidence = new URLSearchParams();
-  for (const [name, value] of Object.entries(req.headers)) {
-    if (HEADERS.has(name)) evidence.set(name, value);
-  }
-  for (const [name, value] of Object.entries(req.body ?? {})) {
-    if (name.startsWith('51D_')) evidence.set(name, value);
-  }
-  // Set last, so no header can replace it. Node writes IPv4 as ::ffff:a.b.c.d.
+  // Node writes IPv4 as ::ffff:a.b.c.d.
   const ip = req.ip.replace(/^::ffff:/, '');
-  evidence.set('client-ip', ip);
-  let answer = 'Unknown';
+  let answer;
   try {
+    const headers = await cloudHeaders();
+    const evidence = new URLSearchParams();
+    for (const [name, value] of Object.entries(req.headers)) {
+      if (headers.has(name)) evidence.set(name, value);
+    }
+    for (const [name, value] of Object.entries(req.body ?? {})) {
+      if (name.startsWith('51D_')) evidence.set(name, value);
+    }
+    evidence.set('client-ip', ip); // set last, so no header can replace it
     const response = await fetch(CLOUD + KEY + '.json', {
-      method: 'POST', body: evidence, signal: AbortSignal.timeout(5000)
+      method: 'POST', body: evidence, signal: AbortSignal.timeout(TIMEOUT_MS)
     });
     const json = await response.json();
-    if (!response.ok) console.error('51Degrees:', json.errors);
+    if (!response.ok) throw new Error(JSON.stringify(json.errors));
     answer = json.derived?.humanconfidence ?? 'Unknown';
   } catch (error) {
+    // The cloud could not answer. Let the visitor through once, and check
+    // again on the next request.
     console.error('51Degrees:', error.message);
+    req.session.human = { once: true };
+    return res.sendStatus(204);
   }
   if (answer === 'Low') console.log('Low:', ip, req.get('user-agent'));
   req.session.human = { answer, until: Date.now() + KEEP_MS };
@@ -164,6 +176,10 @@ app.post('/human-check', async (req, res) => {
 // Pages for people. Unchecked sessions get the holding page.
 function humansOnly(req, res, next) {
   const human = req.session.human;
+  if (human?.once) {
+    delete req.session.human; // checked again on the next request
+    return next();
+  }
   if (!human || human.until < Date.now()) {
     res.set('Cache-Control', 'no-store');
     return res.send(HOLDING_PAGE);
@@ -204,62 +220,80 @@ RESOURCE_KEY=YOUR_RESOURCE_KEY php -S localhost:3000 index.php
 // A Human Confidence gate for PHP.
 const CLOUD = 'https://cloud.51degrees.com/api/v4/';
 const KEEP_SECONDS = 30 * 60; // ask the cloud again after 30 minutes
+const TIMEOUT_SECONDS = 2; // 2 second limit, so a slow cloud cannot hang the shop
 
 session_start();
+
+// Calls the cloud. Returns the JSON answer, or null if the cloud could not
+// answer in time or answered with an error.
+function cloud(string $path, array $http = []): ?array
+{
+    $http['timeout'] = TIMEOUT_SECONDS;
+    $body = @file_get_contents(CLOUD . $path, false,
+        stream_context_create(['http' => $http]));
+    if ($body === false) {
+        error_log('51Degrees: ' . (error_get_last()['message'] ?? 'no answer'));
+        return null;
+    }
+    return json_decode($body, true);
+}
 
 // The holding page posts the 51D_ values here. Ask the cloud, keep the answer.
 function human_check(): void
 {
-    // The request headers the cloud uses. Only these are sent.
-    $headers = [];
-    $keys = json_decode(@file_get_contents(CLOUD . 'evidencekeys') ?: '[]');
-    foreach ($keys as $key) {
-        if (str_starts_with($key, 'header.')) {
-            $headers[strtolower(substr($key, 7))] = true;
-        }
-    }
-    $evidence = [];
-    foreach (getallheaders() as $name => $value) {
-        if (isset($headers[strtolower($name)])) {
-            $evidence[strtolower($name)] = $value;
-        }
-    }
-    foreach ($_POST as $name => $value) {
-        if (str_starts_with($name, '51D_')) {
-            $evidence[$name] = $value;
-        }
-    }
-    // Set last, so no header can replace it. Behind a load balancer or CDN,
-    // use the visitor's address it passes on, not REMOTE_ADDR.
+    // Behind a load balancer or CDN, use the visitor's address it passes on,
+    // not REMOTE_ADDR.
     $ip = preg_replace('/^::ffff:/', '', $_SERVER['REMOTE_ADDR']);
-    $evidence['client-ip'] = $ip;
-    $response = @file_get_contents(
-        CLOUD . getenv('RESOURCE_KEY') . '.json',
-        false,
-        stream_context_create(['http' => [
+    $json = null;
+    $keys = cloud('evidencekeys');
+    if ($keys !== null) {
+        // The request headers the cloud uses. Only these are sent.
+        $headers = [];
+        foreach ($keys as $key) {
+            if (str_starts_with($key, 'header.')) {
+                $headers[strtolower(substr($key, 7))] = true;
+            }
+        }
+        $evidence = [];
+        foreach (getallheaders() as $name => $value) {
+            if (isset($headers[strtolower($name)])) {
+                $evidence[strtolower($name)] = $value;
+            }
+        }
+        foreach ($_POST as $name => $value) {
+            if (str_starts_with($name, '51D_')) {
+                $evidence[$name] = $value;
+            }
+        }
+        $evidence['client-ip'] = $ip; // set last, so no header can replace it
+        $json = cloud(getenv('RESOURCE_KEY') . '.json', [
             'method' => 'POST',
             'header' => 'Content-Type: application/x-www-form-urlencoded',
             'content' => http_build_query($evidence),
-            'timeout' => 5,
-            'ignore_errors' => true,
-        ]])
-    );
-    $json = json_decode($response ?: '{}', true);
-    if (isset($json['errors'])) {
-        error_log('51Degrees: ' . implode(' ', $json['errors']));
+        ]);
+    }
+    http_response_code(204);
+    if ($json === null) {
+        // The cloud could not answer. Let the visitor through once, and check
+        // again on the next request.
+        $_SESSION['human'] = ['once' => true];
+        return;
     }
     $answer = $json['derived']['humanconfidence'] ?? 'Unknown';
     if ($answer === 'Low') {
         error_log("Low: $ip " . ($_SERVER['HTTP_USER_AGENT'] ?? ''));
     }
     $_SESSION['human'] = ['answer' => $answer, 'until' => time() + KEEP_SECONDS];
-    http_response_code(204);
 }
 
 // Pages for people. Unchecked sessions get the holding page.
 function humans_only(): void
 {
     $human = $_SESSION['human'] ?? null;
+    if (!empty($human['once'])) {
+        unset($_SESSION['human']); // checked again on the next request
+        return;
+    }
     if ($human === null || $human['until'] < time()) {
         header('Cache-Control: no-store');
         $page = file_get_contents(__DIR__ . '/holding.html');
@@ -280,8 +314,7 @@ function humans_only(): void
 function humans_only_api(): void
 {
     $human = $_SESSION['human'] ?? null;
-    if ($human === null || $human['answer'] !== 'High'
-        || $human['until'] < time()) {
+    if (($human['answer'] ?? null) !== 'High' || $human['until'] < time()) {
         http_response_code(403);
         exit;
     }
@@ -322,7 +355,6 @@ import json
 import os
 import pathlib
 import time
-import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -331,13 +363,10 @@ from flask import Flask, abort, redirect, request, session
 CLOUD = 'https://cloud.51degrees.com/api/v4/'
 KEY = os.environ['RESOURCE_KEY']
 KEEP_SECONDS = 30 * 60  # ask the cloud again after 30 minutes
+TIMEOUT_SECONDS = 2  # 2 second limit, so a slow cloud cannot hang the shop
 HOLDING_PAGE = (pathlib.Path(__file__).with_name('holding.html')
                 .read_text().replace('RESOURCE_KEY', KEY))
-
-# The request headers the cloud uses. Only these are sent.
-with urllib.request.urlopen(CLOUD + 'evidencekeys') as response:
-    HEADERS = {key[7:].lower() for key in json.load(response)
-               if key.startswith('header.')}
+HEADERS = None  # the request headers the cloud uses, read on the first check
 
 app = Flask(__name__)
 app.secret_key = os.environ['SECRET_KEY']
@@ -346,28 +375,42 @@ app.secret_key = os.environ['SECRET_KEY']
 # app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1)
 
 
+def cloud_headers():
+    """The request headers the cloud uses, read once and kept. Only these are
+    sent."""
+    global HEADERS
+    if HEADERS is None:
+        with urllib.request.urlopen(CLOUD + 'evidencekeys',
+                                    timeout=TIMEOUT_SECONDS) as response:
+            HEADERS = {key[7:].lower() for key in json.load(response)
+                       if key.startswith('header.')}
+    return HEADERS
+
+
 @app.post('/human-check')
 def human_check():
     """The holding page posts the 51D_ values here. Ask the cloud, keep the
     answer."""
-    evidence = {name.lower(): value for name, value in request.headers.items()
-                if name.lower() in HEADERS}
-    evidence.update({name: value for name, value in request.form.items()
-                     if name.startswith('51D_')})
-    # Set last, so no header can replace it.
     ip = request.remote_addr.removeprefix('::ffff:')
-    evidence['client-ip'] = ip
-    answer = 'Unknown'
     try:
+        headers = cloud_headers()
+        evidence = {name.lower(): value
+                    for name, value in request.headers.items()
+                    if name.lower() in headers}
+        evidence.update({name: value for name, value in request.form.items()
+                         if name.startswith('51D_')})
+        evidence['client-ip'] = ip  # set last, so no header can replace it
         body = urllib.parse.urlencode(evidence).encode()
         with urllib.request.urlopen(CLOUD + KEY + '.json', body,
-                                    timeout=5) as response:
+                                    timeout=TIMEOUT_SECONDS) as response:
             derived = json.load(response).get('derived', {})
-            answer = derived.get('humanconfidence', 'Unknown')
-    except urllib.error.HTTPError as error:
-        app.logger.error('51Degrees: %s', error.read().decode())
-    except OSError as error:
+        answer = derived.get('humanconfidence', 'Unknown')
+    except (OSError, ValueError) as error:
+        # The cloud could not answer. Let the visitor through once, and check
+        # again on the next request.
         app.logger.error('51Degrees: %s', error)
+        session['human'] = {'once': True}
+        return '', 204
     if answer == 'Low':
         app.logger.warning('Low: %s %s', ip, request.user_agent)
     session['human'] = {'answer': answer, 'until': time.time() + KEEP_SECONDS}
@@ -379,6 +422,9 @@ def humans_only(view):
     @functools.wraps(view)
     def gated(*args, **kwargs):
         human = session.get('human')
+        if human and human.get('once'):
+            session.pop('human')  # checked again on the next request
+            return view(*args, **kwargs)
         if not human or human['until'] < time.time():
             return HOLDING_PAGE, {'Cache-Control': 'no-store'}
         if human['answer'] == 'High':
@@ -394,7 +440,7 @@ def humans_only_api(view):
     @functools.wraps(view)
     def gated(*args, **kwargs):
         human = session.get('human')
-        if (human and human['answer'] == 'High'
+        if (human and human.get('answer') == 'High'
                 and human['until'] > time.time()):
             return view(*args, **kwargs)
         abort(403)
