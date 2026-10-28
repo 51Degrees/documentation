@@ -1,8 +1,8 @@
 var _reverse_geocoding__index =
 [
     [ "Reverse Geocoding Overview", "_reverse_geocoding__overview.html", [
-      [ "Introduction", "_reverse_geocoding__overview.html#introduction-83", [
-        [ "How It Works", "_reverse_geocoding__overview.html#how-it-works-5", null ],
+      [ "Introduction", "_reverse_geocoding__overview.html#introduction-84", [
+        [ "How It Works", "_reverse_geocoding__overview.html#how-it-works-6", null ],
         [ "Cloud Service", "_reverse_geocoding__overview.html#cloud-service-2", null ],
         [ "Common Use Cases", "_reverse_geocoding__overview.html#common-use-cases-3", [
           [ "🌍 Content Personalization", "_reverse_geocoding__overview.html#autotoc_md-content-personalization-1", null ],
@@ -30,6 +30,6 @@ var _reverse_geocoding__index =
     ] ],
     [ "Reverse Geocoding Examples", "_reverse_geocoding__examples__index.html", "_reverse_geocoding__examples__index" ],
     [ "Combined Device Detection + Reverse Geocoding", "_reverse_geocoding__examples__combining_services.html", [
-      [ "Introduction", "_reverse_geocoding__examples__combining_services.html#introduction-79", null ]
+      [ "Introduction", "_reverse_geocoding__examples__combining_services.html#introduction-80", null ]
     ] ]
 ];

@@ -28,6 +28,7 @@ var NAVTREE =
     [ "Introduction", "index.html", "index" ],
     [ "Device Detection", "_device_detection__index.html", "_device_detection__index" ],
     [ "IP Intelligence", "_ip_intelligence__index.html", "_ip_intelligence__index" ],
+    [ "Human Confidence", "_human_confidence__index.html", "_human_confidence__index" ],
     [ "Reverse Geocoding", "_reverse_geocoding__index.html", "_reverse_geocoding__index" ],
     [ "Identifiers", "_identifiers__index.html", "_identifiers__index" ],
     [ "Integrations", "_integrations__index.html", "_integrations__index" ],
@@ -46,8 +47,8 @@ var NAVTREEINDEX =
 [
 "_device_detection__cloud_to_on_premise.html",
 "_device_detection__overview.html#autotoc_md-performance-optimization",
-"_pipeline_api__concepts__flow_elements__aspect_engine.html",
-"_product_summaries__feature_matrix.html#pipeline-api-features"
+"_pipeline_api__concepts__data__element_data_key.html#name-conflict-example",
+"_pipeline_api__features__web_integration.html#features"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

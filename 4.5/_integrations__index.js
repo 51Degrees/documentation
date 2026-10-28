@@ -21,7 +21,7 @@ var _integrations__index =
       ] ]
     ] ],
     [ "OpenRTB Mappings", "_integrations__open_r_t_b_mappings.html", [
-      [ "Introduction", "_integrations__open_r_t_b_mappings.html#introduction-32", null ],
+      [ "Introduction", "_integrations__open_r_t_b_mappings.html#introduction-33", null ],
       [ "OpenRTB API Device Mappings", "_integrations__open_r_t_b_mappings.html#openrtb-api-device-mappings", null ],
       [ "OpenRTB Device Type Mappings <a href=\"#Integrations_OpenRTBMappings_DeviceType\">#</a>", "_integrations__open_r_t_b_mappings.html#openrtb-device-type-mappings-a-hrefintegrations_openrtbmappings_devicetypea-anchor-integrations_openrtbmappings_devicetype", null ],
       [ "OpenRTB API Geo Mappings", "_integrations__open_r_t_b_mappings.html#openrtb-api-geo-mappings", null ],

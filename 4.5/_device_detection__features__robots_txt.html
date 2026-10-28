@@ -95,32 +95,33 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <ul>
 <li>A single absolute URI, e.g. <code><a href="https://example.com/terms.txt">https://example.com/terms.txt</a></code>.</li>
 <li>Multiple URIs, separated by <code>,</code> or <code>|</code>, e.g. <code><a href="https://a.example/terms,https://b.example/terms">https://a.example/terms,https://b.example/terms</a></code>.</li>
-<li>A short macro id that the engine resolves to a current URL via a <code>ITdlSourceResolver</code>. The default resolver ships with one known macro, <b><code>MOW-SOCW</code></b>, which substitutes the latest version of the <a href="https://github.com/movementforanopenweb/terms-documents">Movement for an Open Web Standard Online Content Wrapper</a> terms document.</li>
+<li>A short macro id that the engine resolves to a current URL via an <code>ITdlSourceResolver</code>. The default resolver ships with one known macro, <b><code>MOW-SOCW</code></b>, which substitutes the address of the latest version of the Movement for an Open Web <a href="https://m4ow.uk/socw/">Search Only Contract</a>, such as <code><a href="https://m4ow.uk/socw/3.txt">https://m4ow.uk/socw/3.txt</a></code>.</li>
 </ul>
 <p>Entries that are neither absolute URIs nor known macro ids are silently dropped, per the IETF-Robots TDL specification. If everything supplied is dropped, the engine falls back to the standard <code>Allow: /</code> wildcard block.</p>
 <h2 class="doxsection" id="cloud-usage">Cloud Usage<a class="headerlink" href="#cloud-usage" aria-label="Permalink to this section">🔗</a></h2>
-<p>Robots.txt support has recently become available as part of 51Degrees Cloud. When enabled on a Resource Key, two additional steps make integration straightforward.</p>
+<p>Robots.txt is available from 51Degrees Cloud on the free plan. For a step by step guide to fetching the file and keeping it fresh, see <a class="el" href="_services__cloud__robots_txt.html" title="Get a fresh robots.txt from the cloud">Get a fresh robots.txt from the cloud</a>. When the properties are enabled on a Resource Key, two additional steps make integration straightforward.</p>
 <h2 class="doxsection" id="discovering-the-available-crawlerusage-values">Discovering the available CrawlerUsage values<a class="headerlink" href="#discovering-the-available-crawlerusage-values" aria-label="Permalink to this section">🔗</a></h2>
 <p>Before deciding which <code>query.robotstxt.&lt;usage&gt;</code> parameters to send, fetch the full list of allowed <code>CrawlerUsage</code> values from the cloud metadata API:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">https://cloud.51degrees.com/api/metadata/values?propertyName=CrawlerUsage</div>
 </div><!-- fragment --><p>This returns the canonical list of usages available on your Resource Key tier — use the value names verbatim (lower-cased) as the suffix of the evidence parameter.</p>
 <h2 class="doxsection" id="calling-the-json-endpoint">Calling the JSON endpoint<a class="headerlink" href="#calling-the-json-endpoint" aria-label="Permalink to this section">🔗</a></h2>
 <p>To request a <code>robots.txt</code> from Cloud, call the standard JSON endpoint with the appropriate <code>query.robotstxt.*</code> parameters. For example:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">https://cloud.51degrees.com/api/v4/json?resource=&lt;RESOURCE_KEY&gt;&amp;values=robotstxt.plaintext&amp;robotstxt.analytics=allow&amp;robotstxt.tdl=MOW-SOCW,https://custom.url/tdl</div>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">https://cloud.51degrees.com/api/v4/json?resource=&lt;RESOURCE_KEY&gt;&amp;values=robotstxt.plaintext&amp;robotstxt.search=allow&amp;robotstxt.analytics=allow&amp;robotstxt.tdl=https://m4ow.uk/socw/3.txt,https://custom.url/tdl</div>
 </div><!-- fragment --><p>In the example above:</p>
 <ul>
-<li><code>robotstxt.analytics=allow</code> allows every crawler whose <code>CrawlerUsage</code> includes <code>Analytics</code>. All other crawlers are omitted as explicit <code>Disallow:</code> blocks.</li>
-<li><code>robotstxt.tdl=MOW-SOCW,<a href="https://custom.url/tdl">https://custom.url/tdl</a></code> adds two TDL entries to the wildcard <code>Allow:</code> block — the macro <code>MOW-SOCW</code> (resolved server-side to the latest published <a href="https://m4ow.uk/socw/">Movement for an Open Web Standard</a> Online Content Wrapper terms URL) and a custom absolute URL of your own license agreement. Both are added in the order supplied.</li>
+<li><code>robotstxt.search=allow</code> and <code>robotstxt.analytics=allow</code> allow every crawler whose <code>CrawlerUsage</code> includes <code>Search</code> or <code>Analytics</code>. Every other known crawler gets its own <code>Disallow:</code> block. Keep <code>search</code> in the allow set unless you intend to block search engines, because a request allowing only <code>analytics</code> blocks Googlebot.</li>
+<li><code>robotstxt.tdl=<a href="https://m4ow.uk/socw/3.txt,https://custom.url/tdl">https://m4ow.uk/socw/3.txt,https://custom.url/tdl</a></code> adds two TDL entries to the wildcard <code>Allow:</code> block, version 3 of the Movement for an Open Web <a href="https://m4ow.uk/socw/">Search Only Contract</a> and a custom absolute URL of your own license agreement, in the order supplied.</li>
 </ul>
-<p>The response is a standard 51Degrees Cloud JSON document, with the generated text exposed under the <code>robotstxt</code> and <code>annotatedtext</code> element:</p>
+<p>Send at least one <code>robotstxt.&lt;usage&gt;</code> parameter. A request without one returns no <code>robotstxt</code> element.</p>
+<p>The response is a standard 51Degrees Cloud JSON document, with the generated text in the <code>plaintext</code> and <code>annotatedtext</code> values of the <code>robotstxt</code> element:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
 <div class="c-code__line">  &quot;robotstxt&quot;: {</div>
 <div class="c-code__line">    &quot;plaintext&quot;:     &quot;User-Agent: ExampleBot\nDisallow: /\n...&quot;,</div>
 <div class="c-code__line">    &quot;annotatedtext&quot;: &quot;# N: ExampleBot\n# U: Train\nUser-Agent: ExampleBot\nDisallow: /\n...&quot;</div>
 <div class="c-code__line">  }</div>
 <div class="c-code__line">}</div>
-</div><!-- fragment --><p>The Resource Key must include the <code>robotstxt.plaintext</code> and/or <code>robotstxt.annotatedtext</code> properties or the values must be requested using the <code>values</code> parameter in the request. The <code>plaintext</code> value is intended for production use. The <code>annotatedtext</code> value is intended for internal use to understand why certain choices were made and provide context.</p>
-<p>Use the <a class="el" href="_services__configurator.html" title="Configurator (Cloud)">Configurator</a> to include <code>robotstxt</code> and <code>annotatedtext</code> in the resource key response.</p>
+</div><!-- fragment --><p>The Resource Key must include the <code>robotstxt.plaintext</code> and/or <code>robotstxt.annotatedtext</code> properties. A License-key-only caller names them in the <code>values</code> parameter instead. The <code>plaintext</code> value is intended for production use. The <code>annotatedtext</code> value is intended for internal use to understand why certain choices were made and provide context.</p>
+<p>Create a Resource Key that includes <code>robotstxt.plaintext</code> and <code>robotstxt.annotatedtext</code> at <a href="https://configure.51degrees.com">configure.51degrees.com</a>. Leave its domain list empty when your server makes the request, because a key limited to domains refuses requests that come from anywhere else.</p>
 <h2 class="doxsection" id="on-premise-engine-configuration">On Premise Engine Configuration<a class="headerlink" href="#on-premise-engine-configuration" aria-label="Permalink to this section">🔗</a></h2>
 <p>The engine is built via <code>RobotsTxtEngineBuilder</code> and added to a Pipeline that also contains a <code>DeviceDetectionHashEngine</code> (the engine reads the crawler list out of the loaded device-detection data file at <code>AddPipeline</code> time).</p>
 <p>Builder parameters:</p>
@@ -138,7 +139,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <h2 class="doxsection" id="see-also">See Also<a class="headerlink" href="#see-also" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li><a class="el" href="_device_detection__features__crawlers.html" title="Crawlers">Crawlers</a> — <code>CrawlerUsage</code> value definitions.</li>
-<li><a href="https://51degrees.com/robots-txt">51Degrees Robots.txt generator</a> — hosted UI built on top of the same engine. </li>
+<li><a href="https://51degrees.com/robots-txt">51Degrees Robots.txt generator</a> — hosted UI built on top of the same engine.</li>
+<li><a class="el" href="_services__cloud__robots_txt.html" title="Get a fresh robots.txt from the cloud">Get a fresh robots.txt from the cloud</a>, a step by step guide to getting a fresh robots.txt from the cloud on a schedule. </li>
 </ul>
 </div></div><!-- primary -->
 </div><!-- inner -->

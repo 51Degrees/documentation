@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h1 class="g-docs__page-title">Client-side Evidence </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="doxsection" id="introduction-69">Introduction<a class="headerlink" href="#introduction-69" aria-label="Permalink to this section">🔗</a></h2>
+<div class="textblock"><h2 class="doxsection" id="introduction-70">Introduction<a class="headerlink" href="#introduction-70" aria-label="Permalink to this section">🔗</a></h2>
 <p><a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">Evidence</a> will usually be drawn from one of four places:</p>
 <ul>
 <li>HTTP headers</li>
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <p><a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">Element properties</a> include a 'Type' property that indicates the type of the data represented by the property's values.</p>
 <p>JavaScript properties are simply properties that have their Type set to 'JavaScript'. The value of such a property should be a snippet of JavaScript code that, when run on the client device, will obtain some extra values from the device.</p>
 <p><a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">Element properties</a> also include a 'DelayExecution' property which indicates if a 'JavaScript' property should not be executed on the client straight away and a 'EvidenceProperties' property which contains a list of JavaScript properties that, when executed, will obtain additional <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> that can help in determining the value of this property.</p>
-<h2 class="doxsection" id="how-it-works-4">How it works<a class="headerlink" href="#how-it-works-4" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="how-it-works-5">How it works<a class="headerlink" href="#how-it-works-5" aria-label="Permalink to this section">🔗</a></h2>
 <p>The JSON data management JavaScript will check for any properties of type 'JavaScript' and execute them on the client or if the 'DelayExecution' property is set to true then the 'JavaScript' will only be executed in response to some user action. There are then two possible mechanisms to get these extra values back to the server in order for them to be included in the evidence used by the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>.</p>
 <ol type="1">
 <li>A background callback to the server yields updated JSON data that replaces the existing JSON payload.</li>

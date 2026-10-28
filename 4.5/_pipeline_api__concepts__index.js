@@ -14,7 +14,7 @@ var _pipeline_api__concepts__index =
       ] ]
     ] ],
     [ "Pipeline", "_pipeline_api__concepts__pipeline.html", [
-      [ "Introduction", "_pipeline_api__concepts__pipeline.html#introduction-60", null ],
+      [ "Introduction", "_pipeline_api__concepts__pipeline.html#introduction-61", null ],
       [ "Creation", "_pipeline_api__concepts__pipeline.html#creation-2", null ],
       [ "Processing", "_pipeline_api__concepts__pipeline.html#processing-1", null ],
       [ "Public access", "_pipeline_api__concepts__pipeline.html#public-access", null ],

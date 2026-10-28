@@ -1,7 +1,7 @@
 var _pipeline_api__concepts__data__index =
 [
     [ "Flow Data", "_pipeline_api__concepts__data__flow_data.html", [
-      [ "Introduction", "_pipeline_api__concepts__data__flow_data.html#introduction-52", null ],
+      [ "Introduction", "_pipeline_api__concepts__data__flow_data.html#introduction-53", null ],
       [ "Data structure", "_pipeline_api__concepts__data__flow_data.html#data-structure-4", [
         [ "Evidence", "_pipeline_api__concepts__data__flow_data.html#PipelineApi_Concepts_Data_FlowData_Evidence", null ],
         [ "Element data", "_pipeline_api__concepts__data__flow_data.html#PipelineApi_Concepts_Data_FlowData_ElementData", null ],
@@ -14,35 +14,35 @@ var _pipeline_api__concepts__data__index =
       [ "Thread-safety", "_pipeline_api__concepts__data__flow_data.html#PipelineApi_Concepts_Data_FlowData_ThreadSafety", null ]
     ] ],
     [ "Aspect Data", "_pipeline_api__concepts__data__aspect_data.html", [
-      [ "Introduction", "_pipeline_api__concepts__data__aspect_data.html#introduction-46", null ]
+      [ "Introduction", "_pipeline_api__concepts__data__aspect_data.html#introduction-47", null ]
     ] ],
     [ "Element Data", "_pipeline_api__concepts__data__element_data.html", [
-      [ "Introduction", "_pipeline_api__concepts__data__element_data.html#introduction-48", null ],
+      [ "Introduction", "_pipeline_api__concepts__data__element_data.html#introduction-49", null ],
       [ "Data structure", "_pipeline_api__concepts__data__element_data.html#data-structure-2", null ],
       [ "Lifecycle", "_pipeline_api__concepts__data__element_data.html#lifecycle", null ],
       [ "Thread-safety", "_pipeline_api__concepts__data__element_data.html#thread-safety", null ]
     ] ],
     [ "Evidence", "_pipeline_api__concepts__data__evidence.html", [
-      [ "Introduction", "_pipeline_api__concepts__data__evidence.html#introduction-50", null ],
+      [ "Introduction", "_pipeline_api__concepts__data__evidence.html#introduction-51", null ],
       [ "Data structure", "_pipeline_api__concepts__data__evidence.html#data-structure-3", null ],
       [ "Lifecycle", "_pipeline_api__concepts__data__evidence.html#lifecycle-1", null ],
       [ "Thread-safety", "_pipeline_api__concepts__data__evidence.html#thread-safety-1", null ],
       [ "Client-side evidence", "_pipeline_api__concepts__data__evidence.html#client-side-evidence", null ]
     ] ],
     [ "Element Data Key", "_pipeline_api__concepts__data__element_data_key.html", [
-      [ "Introduction", "_pipeline_api__concepts__data__element_data_key.html#introduction-49", null ],
+      [ "Introduction", "_pipeline_api__concepts__data__element_data_key.html#introduction-50", null ],
       [ "Structure", "_pipeline_api__concepts__data__element_data_key.html#structure", null ],
       [ "Name conflicts", "_pipeline_api__concepts__data__element_data_key.html#name-conflicts", [
         [ "Name conflict example", "_pipeline_api__concepts__data__element_data_key.html#name-conflict-example", null ]
       ] ]
     ] ],
     [ "Data Key", "_pipeline_api__concepts__data__data_key.html", [
-      [ "Introduction", "_pipeline_api__concepts__data__data_key.html#introduction-47", null ],
+      [ "Introduction", "_pipeline_api__concepts__data__data_key.html#introduction-48", null ],
       [ "Internals", "_pipeline_api__concepts__data__data_key.html#internals-1", null ],
       [ "Usage example", "_pipeline_api__concepts__data__data_key.html#usage-example", null ]
     ] ],
     [ "Evidence Key Filter", "_pipeline_api__concepts__data__evidence_key_filter.html", [
-      [ "Introduction", "_pipeline_api__concepts__data__evidence_key_filter.html#introduction-51", null ],
+      [ "Introduction", "_pipeline_api__concepts__data__evidence_key_filter.html#introduction-52", null ],
       [ "Usage", "_pipeline_api__concepts__data__evidence_key_filter.html#usage-5", null ],
       [ "Implementations", "_pipeline_api__concepts__data__evidence_key_filter.html#implementations", [
         [ "Whitelist filter", "_pipeline_api__concepts__data__evidence_key_filter.html#whitelist-filter", null ],

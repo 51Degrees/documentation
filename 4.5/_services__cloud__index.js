@@ -5,6 +5,14 @@ var _services__cloud__index =
       [ "RESTful API", "_services__cloud__overview.html#restful-api", null ],
       [ "Libraries", "_services__cloud__overview.html#libraries", null ]
     ] ],
+    [ "Get a fresh robots.txt from the cloud", "_services__cloud__robots_txt.html", [
+      [ "Create a free Resource Key", "_services__cloud__robots_txt.html#create-a-free-resource-key", null ],
+      [ "Choose the uses you allow", "_services__cloud__robots_txt.html#choose-the-uses-you-allow", null ],
+      [ "Point crawlers at your terms", "_services__cloud__robots_txt.html#point-crawlers-at-your-terms", null ],
+      [ "Refresh it on a schedule", "_services__cloud__robots_txt.html#refresh-it-on-a-schedule", null ],
+      [ "What the cloud returns", "_services__cloud__robots_txt.html#what-the-cloud-returns", null ],
+      [ "Find out more", "_services__cloud__robots_txt.html#find-out-more-4", null ]
+    ] ],
     [ "Self-Hosted Docker", "_services__cloud__self_hosted_docker.html", [
       [ "Prerequisites", "_services__cloud__self_hosted_docker.html#prerequisites-2", null ],
       [ "Data Files", "_services__cloud__self_hosted_docker.html#data-files", null ],

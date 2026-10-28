@@ -1,8 +1,8 @@
 var _ip_intelligence__index =
 [
     [ "IP Intelligence Overview", "_ip_intelligence__overview.html", [
-      [ "Introduction", "_ip_intelligence__overview.html#introduction-42", [
-        [ "How it works", "_ip_intelligence__overview.html#how-it-works-3", null ],
+      [ "Introduction", "_ip_intelligence__overview.html#introduction-43", [
+        [ "How it works", "_ip_intelligence__overview.html#how-it-works-4", null ],
         [ "Advanced Features", "_ip_intelligence__overview.html#advanced-features", [
           [ "Enhanced Coverage", "_ip_intelligence__overview.html#enhanced-coverage", null ],
           [ "Privacy Protections", "_ip_intelligence__overview.html#privacy-protections", null ],
@@ -24,7 +24,7 @@ var _ip_intelligence__index =
     ] ],
     [ "IP Intelligence Quick Start", "_ip_intelligence__quickstart.html", [
       [ "Getting Started with IP Intelligence", "_ip_intelligence__quickstart.html#getting-started-with-ip-intelligence", [
-        [ "Choose Your Integration", "_ip_intelligence__quickstart.html#choose-your-integration-1", [
+        [ "Choose Your Integration", "_ip_intelligence__quickstart.html#choose-your-integration-2", [
           [ "Cloud API", "_ip_intelligence__quickstart.html#cloud-api", null ],
           [ "On-premise Deployment", "_ip_intelligence__quickstart.html#on-premise-deployment", null ],
           [ "Combined Device Detection + IP Intelligence", "_ip_intelligence__quickstart.html#combined-device-detection--ip-intelligence", null ]

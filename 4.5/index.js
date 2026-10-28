@@ -5,6 +5,7 @@ var index =
       [ "Get Started Fast", "index.html#get-started-fast", [
         [ "Device Detection", "index.html#device-detection", null ],
         [ "IP Intelligence", "index.html#ip-intelligence-1", null ],
+        [ "Human Confidence", "index.html#human-confidence", null ],
         [ "Reverse Geocoding", "index.html#reverse-geocoding", null ],
         [ "Identifiers", "index.html#identifiers", null ],
         [ "Client-Side Only", "index.html#client-side-only", null ]
