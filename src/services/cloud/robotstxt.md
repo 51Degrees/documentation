@@ -1,6 +1,6 @@
 @page Services_Cloud_RobotsTxt Get a fresh robots.txt from the cloud
 
-One request to the 51Degrees cloud returns a complete robots.txt, built from our list of known crawlers and what each one does with content. Run the request on a schedule and your file keeps up as new crawlers appear. AI crawlers stay blocked unless you allow them, and the last lines point every crawler at your terms. It is free.
+One free request to the 51Degrees cloud returns a complete robots.txt, with a `Disallow` block for every known crawler whose use you have not allowed. Run it daily and the file picks up new crawlers as we add them.
 
 ```
 curl -s "https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json?robotstxt.search=allow&robotstxt.tdl=https://m4ow.uk/socw/2.txt" \
@@ -15,7 +15,7 @@ Leave the key's domain list empty. Your server or build job makes the request, n
 
 # Choose the uses you allow
 
-Every crawler in our data is filed under one or more uses, which say what it does with your content. Send `robotstxt.<use>=allow` for each use you allow. A crawler with any allowed use is let in, and every other crawler we know gets its own `Disallow: /` block.
+We sort every crawler in our data by what it is used for, such as search or AI training. Send `robotstxt.<use>=allow` for each use you allow. A crawler with any allowed use is let in, and every other crawler we know gets its own `Disallow: /` block.
 
 | Use | What the crawler does |
 |-----|-----------------------|
@@ -33,7 +33,7 @@ Every crawler in our data is filed under one or more uses, which say what it doe
 
 The full definitions are on the @ref DeviceDetection_Features_Crawlers "Crawlers" page.
 
-Allow `search` unless you want to leave search engines. A request that allows only `analytics`, for example, blocks Googlebot. A request that allows nothing returns no robots.txt at all.
+Keep `search` in the list unless you want to drop out of search results. A request that allows only `analytics`, for example, blocks Googlebot. A request that allows nothing returns no robots.txt at all.
 
 To let in everything except AI training, AI answers, and AI indexes, send all eight of the other uses.
 
@@ -43,7 +43,7 @@ robotstxt.search=allow&robotstxt.monitor=allow&robotstxt.archiving=allow&robotst
 
 # Point crawlers at your terms
 
-Send `robotstxt.tdl` with the address of the terms that apply to the crawlers you let in. The file then ends with a Terms Document Locator (TDL) line, which tells crawlers where your terms are, and a comment with the same address for people.
+Send `robotstxt.tdl` with the address of the terms that apply to the crawlers you let in. The last block of the file then carries a Terms Document Locator (TDL) line, which gives crawlers the address of your terms. The comment above it repeats the address.
 
 ```
 User-Agent: *
@@ -52,15 +52,15 @@ TDL: https://m4ow.uk/socw/2.txt
 Allow: /
 ```
 
-The Movement for an Open Web publishes a free [Search Only Contract](https://m4ow.uk/socw/2.txt) that any website can adopt. It allows search indexing and human, non-commercial use. Any other use needs a deal, or a fee paid to the site. The [guide to the contract](https://m4ow.uk/socw/) explains the terms.
+The Movement for an Open Web publishes a free [Search Only Contract](https://m4ow.uk/socw/2.txt). It allows search indexing and human, non-commercial use. Any other use, AI training included, needs a deal with the site. Without one, the crawler's operator owes the site a fee, by default £500 for each article, image, or video. The [guide to the contract](https://m4ow.uk/socw/) explains the terms.
 
 Link to a version that never changes once published, as in the example, so everyone can see which terms applied on the day. To give more than one address, separate them with commas. Crawlers that do not recognize the TDL line skip it.
 
 # Refresh it on a schedule
 
-The cloud answers from our latest crawler data, so a scheduled request keeps your file current. Once a day is enough, and it uses a small part of the free plan's monthly requests.
+Once a day is plenty. That is about 30 of the 10,000 requests a month on the free plan.
 
-This script for Linux and macOS needs `curl` and `jq`. It writes the new file beside the old one and swaps it in only when the request worked and the file looks right, so a failed request leaves your current robots.txt in place.
+This script for Linux and macOS needs `curl` and `jq`.
 
 ```sh
 #!/bin/sh
