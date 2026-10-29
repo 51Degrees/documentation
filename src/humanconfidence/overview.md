@@ -23,11 +23,13 @@ To try it, follow the [Quick Start](@ref HumanConfidence_Quickstart).
 
 ---
 
-## Where to use it
+## Two ways to use it
 
-Most sites start in their analytics. Send Human Confidence as a custom dimension and you can see how much of your traffic is people. The steps for any analytics tool are in @ref HumanConfidence_Analytics, and there's a separate page for Google Analytics 4, @ref HumanConfidence_GoogleAnalytics.
+**Measure.** Send Human Confidence to your analytics as a custom dimension and your reports show how much of your traffic is people. Nothing changes for your visitors. The steps for any analytics tool are in @ref HumanConfidence_Analytics, and there's a separate page for Google Analytics 4, @ref HumanConfidence_GoogleAnalytics.
 
-When you want to act on it, do it on your server. Your server gets Human Confidence from the cloud before it sends a page and decides what to send. See @ref Services_Cloud_HumanConfidence for the code.
+**Act.** Your server gets Human Confidence from the cloud before it sends a page and decides what to send. See @ref Services_Cloud_HumanConfidence for the code.
+
+You can do either on its own, or measure first and act once you know your numbers.
 
 ---
 
