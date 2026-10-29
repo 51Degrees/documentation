@@ -63,10 +63,6 @@ Add HumanConfidence as a secondary dimension on any report, or build an explorat
 
 You don't need the code on WordPress. The free [51Degrees WordPress plugin](https://wordpress.org/plugins/51degrees-optimize-by-device-location/) connects to GA4 from its Google Analytics tab and tracks the properties on your Resource Key as custom dimensions. For that connection the key has to be limited to your domains. The steps are in @ref DeviceDetection_OtherIntegrations_Wordpress.
 
-# Universal Analytics
-
-Google retired Universal Analytics in July 2024. The `custom_map` setting in our 2019 guides, [How to: 51Degrees + Google Analytics](https://51degrees.com/blog/how-to-51degrees-google-analytics) and [How deep are you diving into Google Analytics?](https://51degrees.com/blog/how-deep-are-you-diving-into-google-analytics), stopped working then. Use this page instead.
-
 # Find out more
 
 - @ref HumanConfidence_Analytics, for any analytics tool
