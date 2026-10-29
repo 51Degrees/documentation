@@ -2,7 +2,7 @@
 
 # Getting Started with Human Confidence
 
-Human Confidence comes from the 51Degrees cloud only. There's no on-premise version.
+Human Confidence comes from the 51Degrees cloud service. It isn't in the on-premise data files.
 
 **Get a License Key with Human Confidence:** [buy the Pro plan online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp) for the cloud service, or [talk to us](https://51degrees.com/contact-us) about the Bespoke plan to run it on your own servers in a Docker container. [Compare plans](https://51degrees.com/pricing).
 
