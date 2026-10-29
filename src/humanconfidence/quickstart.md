@@ -2,9 +2,9 @@
 
 # Getting Started with Human Confidence
 
-Human Confidence comes from the 51Degrees cloud only. There's no on-premise version.
+Human Confidence comes from the 51Degrees cloud service. It isn't in the on-premise data files.
 
-**Get a License Key with Human Confidence:** [buy the Pro plan online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp), or [compare plans](https://51degrees.com/pricing).
+**Get a License Key with Human Confidence:** [buy the Pro plan online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp) for the cloud service, or [talk to us](https://51degrees.com/contact-us) about the Bespoke plan to run it on your own servers in a Docker container. [Compare plans](https://51degrees.com/pricing).
 
 ## Choose Your Integration
 
@@ -24,7 +24,7 @@ Human Confidence comes from the 51Degrees cloud only. There's no on-premise vers
 ---
 
 ### Server
-**Best for:** Product pages, prices and APIs that scrapers copy
+**Best for:** Deciding what each visit gets, for example a product page, an article, a listing, a form, or an API
 
 **Benefits:**
 - **Server-side decision** - The value goes from the cloud to your server, so a browser can't change it
@@ -67,4 +67,4 @@ Human Confidence comes from the 51Degrees cloud only. There's no on-premise vers
 - @ref PipelineApi_Features_ClientSideEvidence, for how the 51Degrees script works in the browser
 - [Human Confidence in the property dictionary](https://51degrees.com/developers/property-dictionary?item=Derived%7CHuman%20Detection)
 
-Human Confidence needs the Pro plan or above, which you can [buy online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp).
+Human Confidence needs the Pro plan, which you can [buy online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp), or the Bespoke plan for your own servers. Ask us about Bespoke through the [contact page](https://51degrees.com/contact-us).

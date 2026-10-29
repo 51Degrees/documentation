@@ -1,12 +1,12 @@
 @page Services_Cloud_HumanConfidence Deploy Human Confidence with the cloud
 
-This guide puts a gate in front of your product and price pages. Before your server sends one of those pages, it gets Human Confidence for the visitor from the 51Degrees cloud and decides what to send.
+This guide puts a gate in front of the pages you choose. Before your server sends one of them, it gets Human Confidence for the visitor from the 51Degrees cloud and decides what to send. The worked example gates a retailer's product pages and price API, and the same gate suits a publisher's articles, a listing site's search results, a sign-up form, or any API that serves one person at a time.
 
 You need a holding page, one server file in Node.js, PHP or Python, and a @ref Services_Cloud_ResourceKeys "Resource Key". There's no 51Degrees package to install on the server.
 
 If you'd rather see how much of your traffic is people before you change what anyone gets, start with @ref HumanConfidence_Analytics.
 
-**Get a License Key with Human Confidence:** [buy the Pro plan online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp), or [compare plans](https://51degrees.com/pricing).
+**Get a License Key with Human Confidence:** [buy the Pro plan online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp) for the cloud service, or [talk to us](https://51degrees.com/contact-us) about the Bespoke plan to run it on your own servers in a Docker container. [Compare plans](https://51degrees.com/pricing).
 
 # How it works
 
@@ -477,12 +477,22 @@ if __name__ == '__main__':
 
 # Step 4. Decide what each value gets
 
-| Value | What it means | Product and price pages | Price APIs |
-| ------ | ------------- | ----------------------- | ---------- |
+| Value | What it means | Pages | APIs |
+| ------ | ------------- | ----- | ---- |
 | High | A person is reading the page. | Show the page. | Answer the call. |
 | Medium | It could be a person or a script. | Challenge with a CAPTCHA, a sign-in, or a notice, [like ours](https://51degrees.com/suspicious). | Refuse with `403` until the visitor passes the challenge. |
-| Low | Almost certainly no person is reading it. | Send the visitor to a page that says how to license your price data, [like ours](https://51degrees.com/ai-notice), and log the visit. | Refuse with `403` and log the call. |
+| Low | Almost certainly no person is reading it. | Send the visitor to a page that says how to license your content or data, [like ours](https://51degrees.com/ai-notice), and log the visit. | Refuse with `403` and log the call. |
 | Unknown | Not measured, for example because the script could not run. | Treat it as Medium. | Refuse with `403`. |
+
+A Low visit is almost always software, so you can serve it something made for software rather than a page made for people. The examples refuse it, and these are the other treatments websites use, alone or together:
+
+- **The page without what you sell.** A retailer serves the product page without prices and stock, a listing site answers a search with no contact details, and a publisher serves the first paragraph of the article.
+- **Content for machines.** Serve the same content as Markdown or plain text instead of HTML, with no navigation, scripts, or ads, so an AI gets what it came for cheaply and your page for people stays as it is.
+- **Your licence terms.** Serve the terms the software has to accept to use your content, with a way to get a licence. Ours is [the AI notice](https://51degrees.com/ai-notice). The Movement for an Open Web's [Search Only Contract](https://m4ow.uk/socw/3.txt) is a published set of terms any website can adopt, and the [robots.txt generator](https://51degrees.com/robots-txt) writes a robots.txt that cites it.
+- **No ads.** Leave the ad slots empty, so nobody pays to show an ad to a script.
+- **A block.** Refuse with `403`, as the example API does, and log the visit.
+
+Whatever Low gets, send Medium somewhere a person can prove themselves, and let the search engines you want through by name.
 
 The examples send Medium and Unknown to `/challenge` and Low to `/automated-access`, and the example price API refuses every session that is not High. Replace those two pages with your own. When a visitor passes your challenge, set the cached value to High so they can carry on.
 
@@ -506,4 +516,4 @@ Start one of the servers with your key and try the following. The addresses are 
 - @ref Services_Cloud_ResourceKeys
 - @ref HumanConfidence_Analytics
 
-Human Confidence needs the Pro plan or above, which you can [buy online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp).
+Human Confidence needs the Pro plan, which you can [buy online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp), or the Bespoke plan for your own servers. Ask us about Bespoke through the [contact page](https://51degrees.com/contact-us).

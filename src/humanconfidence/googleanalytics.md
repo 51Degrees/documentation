@@ -4,7 +4,7 @@ Google Analytics 4 already filters some bot traffic. Google says GA4 automatical
 
 This page sends Human Confidence and the crawler properties to GA4 as one event, registered as custom dimensions. You can then filter bot traffic in Google Analytics yourself and compare human and bot traffic in any GA4 report. For other analytics tools, see @ref HumanConfidence_Analytics.
 
-**Get a License Key with Human Confidence:** [buy the Pro plan online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp), or [compare plans](https://51degrees.com/pricing).
+**Get a License Key with Human Confidence:** [buy the Pro plan online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp) for the cloud service, or [talk to us](https://51degrees.com/contact-us) about the Bespoke plan to run it on your own servers in a Docker container. [Compare plans](https://51degrees.com/pricing).
 
 # Step 1. Create a Resource Key
 
@@ -63,14 +63,10 @@ Add HumanConfidence as a secondary dimension on any report, or build an explorat
 
 You don't need the code on WordPress. The free [51Degrees WordPress plugin](https://wordpress.org/plugins/51degrees-optimize-by-device-location/) connects to GA4 from its Google Analytics tab and tracks the properties on your Resource Key as custom dimensions. For that connection the key has to be limited to your domains. The steps are in @ref DeviceDetection_OtherIntegrations_Wordpress.
 
-# Universal Analytics
-
-Google retired Universal Analytics in July 2024. The `custom_map` setting in our 2019 guides, [How to: 51Degrees + Google Analytics](https://51degrees.com/blog/how-to-51degrees-google-analytics) and [How deep are you diving into Google Analytics?](https://51degrees.com/blog/how-deep-are-you-diving-into-google-analytics), stopped working then. Use this page instead.
-
 # Find out more
 
 - @ref HumanConfidence_Analytics, for any analytics tool
 - @ref Services_Cloud_HumanConfidence, to act on the value on your server
 - [Human Confidence in the property dictionary](https://51degrees.com/developers/property-dictionary?item=Derived%7CHuman%20Detection)
 
-Human Confidence needs the Pro plan or above, which you can [buy online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp).
+Human Confidence needs the Pro plan, which you can [buy online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp), or the Bespoke plan for your own servers. Ask us about Bespoke through the [contact page](https://51degrees.com/contact-us).
