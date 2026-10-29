@@ -484,7 +484,15 @@ if __name__ == '__main__':
 | Low | Almost certainly no person is reading it. | Send the visitor to a page that says how to license your content or data, [like ours](https://51degrees.com/ai-notice), and log the visit. | Refuse with `403` and log the call. |
 | Unknown | Not measured, for example because the script could not run. | Treat it as Medium. | Refuse with `403`. |
 
-What Low gets depends on what you serve. A retailer might show the product page without prices and stock. A publisher might show the article's first paragraph and the licensing terms. A listing site might answer a search with no contact details. An advertising page might leave the ad slots empty, so nobody pays to show an ad to a script.
+A Low visit is almost always software, so you can serve it something made for software rather than a page made for people. The examples refuse it, and these are the other treatments websites use, alone or together:
+
+- **The page without what you sell.** A retailer serves the product page without prices and stock, a listing site answers a search with no contact details, and a publisher serves the first paragraph of the article.
+- **Content for machines.** Serve the same content as Markdown or plain text instead of HTML, with no navigation, scripts, or ads, so an AI gets what it came for cheaply and your page for people stays as it is.
+- **Your licence terms.** Serve the terms the software has to accept to use your content, with a way to get a licence. Ours is [the AI notice](https://51degrees.com/ai-notice). The Movement for an Open Web's [Search Only Contract](https://m4ow.uk/socw/3.txt) is a published set of terms any website can adopt, and the [robots.txt generator](https://51degrees.com/robots-txt) writes a robots.txt that cites it.
+- **No ads.** Leave the ad slots empty, so nobody pays to show an ad to a script.
+- **A block.** Refuse with `403`, as the example API does, and log the visit.
+
+Whatever Low gets, send Medium somewhere a person can prove themselves, and let the search engines you want through by name.
 
 The examples send Medium and Unknown to `/challenge` and Low to `/automated-access`, and the example price API refuses every session that is not High. Replace those two pages with your own. When a visitor passes your challenge, set the cached value to High so they can carry on.
 
