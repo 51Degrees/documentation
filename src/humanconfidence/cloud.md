@@ -1,6 +1,6 @@
 @page Services_Cloud_HumanConfidence Deploy Human Confidence with the cloud
 
-This guide puts a gate in front of your product and price pages. Before your server sends one of those pages, it gets Human Confidence for the visitor from the 51Degrees cloud and decides what to send.
+This guide puts a gate in front of the pages you choose. Before your server sends one of them, it gets Human Confidence for the visitor from the 51Degrees cloud and decides what to send. The worked example gates a retailer's product pages and price API, and the same gate suits a publisher's articles, a listing site's search results, a sign-up form, or any API that serves one person at a time.
 
 You need a holding page, one server file in Node.js, PHP or Python, and a @ref Services_Cloud_ResourceKeys "Resource Key". There's no 51Degrees package to install on the server.
 
@@ -477,12 +477,14 @@ if __name__ == '__main__':
 
 # Step 4. Decide what each value gets
 
-| Value | What it means | Product and price pages | Price APIs |
-| ------ | ------------- | ----------------------- | ---------- |
+| Value | What it means | Pages | APIs |
+| ------ | ------------- | ----- | ---- |
 | High | A person is reading the page. | Show the page. | Answer the call. |
 | Medium | It could be a person or a script. | Challenge with a CAPTCHA, a sign-in, or a notice, [like ours](https://51degrees.com/suspicious). | Refuse with `403` until the visitor passes the challenge. |
-| Low | Almost certainly no person is reading it. | Send the visitor to a page that says how to license your price data, [like ours](https://51degrees.com/ai-notice), and log the visit. | Refuse with `403` and log the call. |
+| Low | Almost certainly no person is reading it. | Send the visitor to a page that says how to license your content or data, [like ours](https://51degrees.com/ai-notice), and log the visit. | Refuse with `403` and log the call. |
 | Unknown | Not measured, for example because the script could not run. | Treat it as Medium. | Refuse with `403`. |
+
+What Low gets depends on what you serve. A retailer might show the product page without prices and stock. A publisher might show the article's first paragraph and the licensing terms. A listing site might answer a search with no contact details. An advertising page might leave the ad slots empty, so nobody pays to show an ad to a script.
 
 The examples send Medium and Unknown to `/challenge` and Low to `/automated-access`, and the example price API refuses every session that is not High. Replace those two pages with your own. When a visitor passes your challenge, set the cached value to High so they can carry on.
 

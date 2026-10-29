@@ -24,7 +24,7 @@ Human Confidence comes from the 51Degrees cloud only. There's no on-premise vers
 ---
 
 ### Server
-**Best for:** Product pages, prices and APIs that scrapers copy
+**Best for:** Deciding what each visit gets, for example a product page, an article, a listing, a form, or an API
 
 **Benefits:**
 - **Server-side decision** - The value goes from the cloud to your server, so a browser can't change it
