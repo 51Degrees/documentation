@@ -86,7 +86,7 @@ Regardless of which API you are migrating to, there are breaking changes and new
      =================================================================================== -->
 
 First, add the device detection libraries from the
-[GitHub repo](https://github.com/51degrees/device-detection-cxx). These can be included
+[GitHub repo](https://github.com/51Degrees/51degrees-cxx). These can be included
 using the Visual Studio projects, the CMake projects, or just the files themselves.
 
 The old (V3) device detection API used a single method to initialize a `fiftyoneDegreesProvider`.
@@ -181,7 +181,7 @@ and the data set with the `fiftyoneDegreesManagerFree` method.
      =================================================================================== -->
 
 First, add the device detection libraries from the
-[GitHub repo](https://github.com/51degrees/device-detection-cxx). These can be included
+[GitHub repo](https://github.com/51Degrees/51degrees-cxx). These can be included
 using the Visual Studio projects, the CMake projects, or just the files themselves.
 
 The old (V3) device detection API used a `Provider` class initialized with the path

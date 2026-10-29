@@ -32,4 +32,4 @@ The algorithm is implemented in C code for maximum portability and performance i
 - **Simple** - high-level language APIs make deployment simple for developers of all experience levels.
 - **Automatic Update** - data can be updated automatically without requiring a process restart.
 
-See the [C code](https://github.com/51Degrees/ip-graph-cxx) to find out more about the implementation.
+See the [C code](https://github.com/51Degrees/51degrees-cxx/tree/main/src/ipi/graph) to find out more about the implementation.

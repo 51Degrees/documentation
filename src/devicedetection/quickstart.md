@@ -84,10 +84,10 @@ C does not have a @Pipeline implementation or the ability to use the cloud-based
 Device Detection.
 To get started with C device detection On-premise:
 
-1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-cxx).
+1. Clone the GitHub [repository](https://github.com/51Degrees/51degrees-cxx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-4. Follow the [installation instructions](https://github.com/51Degrees/device-detection-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
+4. Follow the [installation instructions](https://github.com/51Degrees/51degrees-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
 5. Follow the linked example here: [Getting Started](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise).
 6. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
@@ -97,10 +97,10 @@ C++ does not have a @Pipeline implementation or the ability to use the cloud-bas
 Device Detection.
 To get started with C++ device detection On-premise:
 
-1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-cxx).
+1. Clone the GitHub [repository](https://github.com/51Degrees/51degrees-cxx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-5. Follow the [installation instructions](https://github.com/51Degrees/device-detection-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
+5. Follow the [installation instructions](https://github.com/51Degrees/51degrees-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
 6. Follow the linked example here: [Getting Started](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise).
 7. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
