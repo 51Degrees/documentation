@@ -71,9 +71,9 @@ C does not have a @Pipeline implementation or the ability to use the cloud-based
 IP intelligence.
 To get started with C IP intelligence On-premise:
 
-1. Clone the GitHub [repository](https://github.com/51degrees/ip-intelligence-cxx).
+1. Clone the GitHub [repository](https://github.com/51Degrees/51degrees-cxx).
 2. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-3. Follow the [installation instructions](https://github.com/51Degrees/ip-intelligence-cxx/blob/main/README%2Emd) to get set up with the project. 
+3. Follow the [installation instructions](https://github.com/51Degrees/51degrees-cxx/blob/main/README%2Emd) to get set up with the project.
 4. Follow the linked example here: [Getting Started](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise).
 5. To run the example, [contact us](https://51degrees.com/contact-us) to obtain an enterprise IPI data file.
 
@@ -83,9 +83,9 @@ C++ does not have a @Pipeline implementation or the ability to use the cloud-bas
 IP intelligence.
 To get started with C++ IP intelligence On-premise:
 
-1. Clone the GitHub [repository](https://github.com/51degrees/ip-intelligence-cxx).
+1. Clone the GitHub [repository](https://github.com/51Degrees/51degrees-cxx).
 2. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-3. Follow the [installation instructions](https://github.com/51Degrees/ip-intelligence-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
+3. Follow the [installation instructions](https://github.com/51Degrees/51degrees-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
 4. Follow the linked example here: [Getting Started](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise).
 5. To run the example, [contact us](https://51degrees.com/contact-us) to obtain an enterprise IPI data file.
 

@@ -29,11 +29,18 @@ $apis = New-Item -Force -ItemType Directory "apis"
 # some repos want documentation at the same level as them, in addition(!) to two levels above
 New-Item -ItemType SymbolicLink -Force -Target $PWD -Path $apis/documentation | Out-Null
 foreach ($_ in $repoMap.GetEnumerator()) {
-    $repo, $examples = $_.Key, $_.Value
-    git clone -b $ref --depth=1 --recurse-submodules --shallow-submodules "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$repo.git" "$apis/$repo"
-    if ($examples) {
+    $api, $source = $_.Key, $_.Value
+    if ($source -is [hashtable]) {
+        # a monorepo is cloned once, for the first of its APIs
+        if (!(Test-Path "$apis/$($source.Repo)")) {
+            git clone -b $ref --depth=1 --recurse-submodules --shallow-submodules "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$($source.Repo).git" "$apis/$($source.Repo)"
+        }
+        continue
+    }
+    git clone -b $ref --depth=1 --recurse-submodules --shallow-submodules "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$api.git" "$apis/$api"
+    if ($source) {
         # clone examples inside their main repo
-        git clone -b $ref --depth=1 "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$examples.git" "$apis/$repo/$examples"
+        git clone -b $ref --depth=1 "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$source.git" "$apis/$api/$source"
     }
 }
 Write-Host "::endgroup::"
@@ -46,12 +53,21 @@ Write-Host "::endgroup::"
 
 Write-Host "Generating API docs"
 foreach ($_ in $repoMap.GetEnumerator()) {
-    $repo, $examples = $_.Key, $_.Value
-    Write-Host "::group::Generating $repo docs$($examples ? " with examples ($examples)" : $null)"
-    Push-Location "$apis/$repo/docs"
+    $api, $source = $_.Key, $_.Value
+    if ($source -is [hashtable]) {
+        # a monorepo's Doxyfile writes its output next to itself
+        $docs = "$apis/$($source.Repo)/$($source.Docs)"
+        $output = "$docs/$version"
+        Write-Host "::group::Generating $api docs from $($source.Repo)/$($source.Docs)"
+    } else {
+        $docs = "$apis/$api/docs"
+        $output = "$apis/$api/$version"
+        Write-Host "::group::Generating $api docs$($source ? " with examples ($source)" : $null)"
+    }
+    Push-Location $docs
     try { & $doxygen } finally { Pop-Location }
-    $dest = New-Item -Force -ItemType Directory "$version/apis/$repo"
-    Move-Item $apis/$repo/$version/* $dest
+    $dest = New-Item -Force -ItemType Directory "$version/apis/$api"
+    Move-Item $output/* $dest
     Write-Host "::endgroup::"
 }
 

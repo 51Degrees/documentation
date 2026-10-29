@@ -47,9 +47,9 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
       grabTestedVersions("device-detection-nginx", "nginx-versions", [
           { title: "NGINX Version", getValue: (d) => d.NginxVersion }
       ]);
-      grabTestedVersions("device-detection-cxx", "cxx-versions", [
+      grabTestedVersions("51degrees-cxx", "cxx-versions", [
           { title: "Architecture", getValue: (d) => d.Arch }
-      ]);
+      ], "dd");
       grabTestedVersions("device-detection-java", "java-versions", [
           { title: "JDK", getValue: d => d.JavaSDKEnvVar.split("_")[2] },
           { title: "Architecture", getValue: d => d.JavaSDKEnvVar.split("_")[3].toLowerCase() }

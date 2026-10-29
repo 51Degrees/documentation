@@ -1,4 +1,6 @@
-# maps API repos to their examples (if any)
+# Maps each API, by the name its documentation is published under, to its
+# examples repository (if any). An API built from a folder of a monorepo names
+# the repository and the folder holding its Doxyfile instead.
 [ordered]@{
     # Pipeline
     "pipeline-dotnet" = $null
@@ -7,7 +9,7 @@
     "pipeline-python" = $null
 
     # Device Detection
-    "device-detection-cxx" = $null
+    "device-detection-cxx" = @{ Repo = "51degrees-cxx"; Docs = "docs/dd" }
     "device-detection-dotnet" = "device-detection-dotnet-examples"
     "device-detection-java" = "device-detection-java-examples"
     "device-detection-nginx" = $null
@@ -17,7 +19,7 @@
     "device-detection-python" = $null
 
     # IP Intelligence
-    "ip-intelligence-cxx" = $null
+    "ip-intelligence-cxx" = @{ Repo = "51degrees-cxx"; Docs = "docs/ipi" }
     "ip-intelligence-dotnet" = "ip-intelligence-dotnet-examples"
     "ip-intelligence-go" = $null
     "ip-intelligence-java" = "ip-intelligence-java-examples"
