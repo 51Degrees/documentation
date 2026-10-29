@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"_pipeline_api__concepts__data__element_data_key.html#name-conflict-example":[8,1,1,4,2,0],
 "_pipeline_api__concepts__data__element_data_key.html#name-conflicts":[8,1,1,4,2],
 "_pipeline_api__concepts__data__element_data_key.html#structure":[8,1,1,4,1],
 "_pipeline_api__concepts__data__evidence.html":[8,1,1,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "_pipeline_api__features__usage_sharing.html#shareusageurl":[8,2,10,3,6],
 "_pipeline_api__features__usage_sharing.html#timeouts":[8,2,10,3,2],
 "_pipeline_api__features__web_integration.html":[8,2,11],
-"_pipeline_api__features__web_integration.html#client-side-evidence-1":[8,2,11,3]
+"_pipeline_api__features__web_integration.html#client-side-evidence-1":[8,2,11,3],
+"_pipeline_api__features__web_integration.html#features":[8,2,11,1]
 };

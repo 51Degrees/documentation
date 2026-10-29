@@ -126,13 +126,18 @@ function getLinksSection(markdown) {
  * @param {string} divId id of the div to populate
  * @param {object} keys names and get functions for each testing dimension
  * e.g. { title: "Architecture", getValue: (d) => d.Arch }
+ * @param {string} product optional, for a repository holding several products,
+ * the product whose entries to show, matched against each entry's 'Products'
  */
-function grabTestedVersions(project, divId, keys) {
+function grabTestedVersions(project, divId, keys, product) {
     var optionsUrl = `https://raw.githubusercontent.com/51Degrees/${project}/main/ci/options.json`
     $.getJSON(optionsUrl, function(options) {
         var platforms = {};
 
         for (let i = 0; i < options.length; i++) {
+            if (product && !(options[i].Products || []).includes(product)) {
+                continue;
+            }
             var name = options[i].Image;
             if (Object.keys(platforms).indexOf(name) < 0) {
                 platforms[name] = [];

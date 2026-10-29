@@ -158,7 +158,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Find <code>name</code> by walking up from the current working directory. </p>
-<p><code>name</code> may be either a bare filename (for example <code>"51Degrees-LiteV4.1.hash"</code>) or a relative path (for example <code>"device-detection-cxx/device-detection-data/51Degrees-LiteV4.1.hash"</code>).</p>
+<p><code>name</code> may be either a bare filename (for example <code>"51Degrees-LiteV4.1.hash"</code>) or a relative path (for example <code>"cxx/device-detection-data/51Degrees-LiteV4.1.hash"</code>).</p>
 <p>Starting at the current working directory and climbing through up to [<code><a class="el" href="#ac097bb32773cfd245ca8c642ef0ba6dc" title="How many parent directories to climb before giving up.">MAX_PARENT_LEVELS</a></code>] ancestors, each ancestor is checked for <code>name</code>:</p>
 <ul>
 <li>If <code>name</code> contains a path separator it is treated as a relative path and joined directly onto the ancestor, so a known layout resolves in one <code>exists</code> check per ancestor.</li>
@@ -337,7 +337,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>How many subdirectory levels below each ancestor are scanned when <code>name</code> is a bare filename rather than a relative path. </p>
-<p>The example data files sit one or two directories below a common ancestor (for example <code>device-detection-cxx/device-detection-data/&lt;file&gt;</code>), so a shallow scan finds them without the cost of a full recursive descent of large sibling repositories. </p>
+<p>The example data files sit one or two directories below a common ancestor (for example <code>cxx/device-detection-data/&lt;file&gt;</code>), so a shallow scan finds them without the cost of a full recursive descent of large sibling repositories. </p>
 
 </div>
 </div>

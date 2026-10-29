@@ -11,7 +11,6 @@ var _human_confidence__analytics =
       [ "Step 3. Register the custom dimensions", "_human_confidence__google_analytics.html#step-3-register-the-custom-dimensions", null ],
       [ "Step 4. Build the reports", "_human_confidence__google_analytics.html#step-4-build-the-reports", null ],
       [ "WordPress", "_human_confidence__google_analytics.html#wordpress", null ],
-      [ "Universal Analytics", "_human_confidence__google_analytics.html#universal-analytics", null ],
       [ "Find out more", "_human_confidence__google_analytics.html#find-out-more-2", null ]
     ] ]
 ];

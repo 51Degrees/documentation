@@ -106,11 +106,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Crate  </td><td class="c-table__cell">Responsibility  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">[<code>fiftyone-common-sys</code>](common-sys)  </td><td class="c-table__cell">Raw FFI bindings to common-cxx: ResourceManager, Evidence, Exception, StatusCode and result buffers.  </td></tr>
+<td class="c-table__cell">[<code>fiftyone-common-sys</code>](common-sys)  </td><td class="c-table__cell">Raw FFI bindings to the 51Degrees common C library: ResourceManager, Evidence, Exception, StatusCode and result buffers.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">[<code>fiftyone-device-detection-sys</code>](device-detection-sys)  </td><td class="c-table__cell">Raw FFI bindings to the Hash device-detection ABI in device-detection-cxx, built on fiftyone-common-sys.  </td></tr>
+<td class="c-table__cell">[<code>fiftyone-device-detection-sys</code>](device-detection-sys)  </td><td class="c-table__cell">Raw FFI bindings to the Hash device-detection ABI in the 51Degrees C library, built on fiftyone-common-sys.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">[<code>fiftyone-ip-intelligence-sys</code>](ip-intelligence-sys)  </td><td class="c-table__cell">Raw FFI bindings to the Ipi ABI in ip-intelligence-cxx, including the weighted getters. Compiles its own common-cxx into an <code>ipi_*</code> symbol namespace so it can co-link with device-detection (see ARCHITECTURE.md).  </td></tr>
+<td class="c-table__cell">[<code>fiftyone-ip-intelligence-sys</code>](ip-intelligence-sys)  </td><td class="c-table__cell">Raw FFI bindings to the Ipi ABI in the 51Degrees C library, including the weighted getters. Compiles its own copy of the common C library into an <code>ipi_*</code> symbol namespace so it can co-link with device-detection (see ARCHITECTURE.md).  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">[<code>fiftyone-native</code>](native)  </td><td class="c-table__cell">Safe RAII wrapper over the native manager, results, evidence and exception types, shared by both products.  </td></tr>
 </table>

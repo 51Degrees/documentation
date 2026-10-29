@@ -1,7 +1,7 @@
 var examples =
 [
-    [ "/home/runner/work/documentation/documentation/apis/device-detection-cxx/src/common-cxx/storedBinaryValue.h", "_2home_2runner_2work_2documentation_2documentation_2apis_2device-detection-cxx_2src_2common-cxx_2stored_binary_value_8h-example.html", null ],
-    [ "/home/runner/work/documentation/documentation/apis/device-detection-cxx/src/common-cxx/string.h", "_2home_2runner_2work_2documentation_2documentation_2apis_2device-detection-cxx_2src_2common-cxx_2string_8h-example.html", null ],
+    [ "/home/runner/work/documentation/documentation/apis/51degrees-cxx/src/common/storedBinaryValue.h", "_2home_2runner_2work_2documentation_2documentation_2apis_251degrees-cxx_2src_2common_2stored_binary_value_8h-example.html", null ],
+    [ "/home/runner/work/documentation/documentation/apis/51degrees-cxx/src/common/string.h", "_2home_2runner_2work_2documentation_2documentation_2apis_251degrees-cxx_2src_2common_2string_8h-example.html", null ],
     [ "Hash/GettingStarted.cpp", "_hash_2_getting_started_8cpp-example.html", null ],
     [ "Hash/MatchMetrics.cpp", "_hash_2_match_metrics_8cpp-example.html", null ],
     [ "Hash/MetaData.cpp", "_hash_2_meta_data_8cpp-example.html", null ],

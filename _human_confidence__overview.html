@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_human_confide
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-32">Introduction<a class="headerlink" href="#introduction-32" aria-label="Permalink to this section">🔗</a></h2>
 <p>Human Confidence tells you how likely it is that a person is looking at the page. Every visit gets High, Medium or Low. If the 51Degrees script never ran in the browser, the value is Unknown.</p>
-<p>It comes from the 51Degrees cloud as the property <code>derived.HumanConfidence</code>, on the Pro plan and above.</p>
-<p><b>Get a License Key with Human Confidence:</b> <a href="https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&amp;conversion=SignUp">buy the Pro plan online</a>, or <a href="https://51degrees.com/pricing">compare plans</a>.</p>
+<p>It comes from the 51Degrees cloud as the property <code>derived.HumanConfidence</code>, on the Pro plan, our cloud service, and on the Bespoke plan for your own servers.</p>
+<p><b>Get a License Key with Human Confidence:</b> <a href="https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&amp;conversion=SignUp">buy the Pro plan online</a> for the cloud service, or <a href="https://51degrees.com/contact-us">talk to us</a> about the Bespoke plan to run it on your own servers in a Docker container. <a href="https://51degrees.com/pricing">Compare plans</a>.</p>
 <p>To try it, follow the <a class="el" href="_human_confidence__quickstart.html" title="Human Confidence Quick Start">Quick Start</a>.</p>
 <hr  />
 <h2 class="doxsection" id="the-values">The values<a class="headerlink" href="#the-values" aria-label="Permalink to this section">🔗</a></h2>
@@ -84,20 +84,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_human_confide
 <tr class="c-table__row">
 <td class="c-table__cell">High  </td><td class="c-table__cell">A person is reading the page.  </td><td class="c-table__cell">Let the request through.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Medium  </td><td class="c-table__cell">Mixed signals. Could be a person, could be a script.  </td><td class="c-table__cell">Serve the page, or challenge with a CAPTCHA or a sign-in before anything worth protecting.  </td></tr>
+<td class="c-table__cell">Medium  </td><td class="c-table__cell">Mixed signals. Could be a person, could be a script.  </td><td class="c-table__cell">Serve the page, or challenge with a CAPTCHA or a sign-in first.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Low  </td><td class="c-table__cell">Almost certainly no person is reading it.  </td><td class="c-table__cell">Refuse the request, or serve the page without prices and stock.  </td></tr>
+<td class="c-table__cell">Low  </td><td class="c-table__cell">Almost certainly no person is reading it.  </td><td class="c-table__cell">Refuse the request, or serve a version of the page made for machines.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Unknown  </td><td class="c-table__cell">Not measured, usually because the script didn't run.  </td><td class="c-table__cell">Treat it as Medium.  </td></tr>
 </table>
 <hr  />
-<h2 class="doxsection" id="where-to-use-it">Where to use it<a class="headerlink" href="#where-to-use-it" aria-label="Permalink to this section">🔗</a></h2>
-<p>Most sites start in their analytics. Send Human Confidence as a custom dimension and you can see how much of your traffic is people. The steps for any analytics tool are in <a class="el" href="_human_confidence__analytics.html" title="Human and bot traffic in your analytics">Human and bot traffic in your analytics</a>, and there's a separate page for Google Analytics 4, <a class="el" href="_human_confidence__google_analytics.html" title="Google Analytics 4 (GA4): human and bot traffic">Google Analytics 4 (GA4): human and bot traffic</a>.</p>
-<p>When you want to act on it, do it on your server. Your server gets Human Confidence from the cloud before it sends a page and decides what to send. See <a class="el" href="_services__cloud__human_confidence.html" title="Deploy Human Confidence with the cloud">Deploy Human Confidence with the cloud</a> for the code.</p>
+<h2 class="doxsection" id="two-ways-to-use-it">Two ways to use it<a class="headerlink" href="#two-ways-to-use-it" aria-label="Permalink to this section">🔗</a></h2>
+<p><b>Measure.</b> Send Human Confidence to your analytics as a custom dimension and your reports show how much of your traffic is people. Nothing changes for your visitors. The steps for any analytics tool are in <a class="el" href="_human_confidence__analytics.html" title="Human and bot traffic in your analytics">Human and bot traffic in your analytics</a>, and there's a separate page for Google Analytics 4, <a class="el" href="_human_confidence__google_analytics.html" title="Google Analytics 4 (GA4): human and bot traffic">Google Analytics 4 (GA4): human and bot traffic</a>.</p>
+<p><b>Act.</b> Your server gets Human Confidence from the cloud before it sends a page and decides what to send. See <a class="el" href="_services__cloud__human_confidence.html" title="Deploy Human Confidence with the cloud">Deploy Human Confidence with the cloud</a> for the code.</p>
+<p>You can do either on its own, or measure first and act once you know your numbers.</p>
 <hr  />
 <h2 class="doxsection" id="crawlers-that-say-what-they-are">Crawlers that say what they are<a class="headerlink" href="#crawlers-that-say-what-they-are" aria-label="Permalink to this section">🔗</a></h2>
 <p>Search engines and other crawlers that name themselves don't need Human Confidence. The crawler properties identify them by name and by what they use your content for, and those properties are on every plan, including the free one.</p>
-<p>Human Confidence needs the Pro plan or above, which you can <a href="https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&amp;conversion=SignUp">buy online</a>. </p>
+<p>Human Confidence needs the Pro plan, which you can <a href="https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&amp;conversion=SignUp">buy online</a>, or the Bespoke plan for your own servers. Ask us about Bespoke through the <a href="https://51degrees.com/contact-us">contact page</a>. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

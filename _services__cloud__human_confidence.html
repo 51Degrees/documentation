@@ -71,10 +71,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <h1 class="g-docs__page-title">Deploy Human Confidence with the cloud </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><p>This guide puts a gate in front of your product and price pages. Before your server sends one of those pages, it gets Human Confidence for the visitor from the 51Degrees cloud and decides what to send.</p>
+<div class="textblock"><p>This guide puts a gate in front of the pages you choose. Before your server sends one of them, it gets Human Confidence for the visitor from the 51Degrees cloud and decides what to send. The worked example gates a retailer's product pages and price API, and the same gate suits a publisher's articles, a listing site's search results, a sign-up form, or any API that serves one person at a time.</p>
 <p>You need a holding page, one server file in Node.js, PHP or Python, and a <a class="el" href="_services__cloud__resource_keys.html" title="Resource Keys">Resource Key</a>. There's no 51Degrees package to install on the server.</p>
 <p>If you'd rather see how much of your traffic is people before you change what anyone gets, start with <a class="el" href="_human_confidence__analytics.html" title="Human and bot traffic in your analytics">Human and bot traffic in your analytics</a>.</p>
-<p><b>Get a License Key with Human Confidence:</b> <a href="https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&amp;conversion=SignUp">buy the Pro plan online</a>, or <a href="https://51degrees.com/pricing">compare plans</a>.</p>
+<p><b>Get a License Key with Human Confidence:</b> <a href="https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&amp;conversion=SignUp">buy the Pro plan online</a> for the cloud service, or <a href="https://51degrees.com/contact-us">talk to us</a> about the Bespoke plan to run it on your own servers in a Docker container. <a href="https://51degrees.com/pricing">Compare plans</a>.</p>
 <h2 class="doxsection" id="how-it-works-3">How it works<a class="headerlink" href="#how-it-works-3" aria-label="Permalink to this section">🔗</a></h2>
 <ol type="1">
 <li>The first request for a protected page gets a small holding page instead. It runs the 51Degrees script, posts the script's values to your server and reloads. A person sees it for a moment.</li>
@@ -498,16 +498,25 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <h2 class="doxsection" id="step-4-decide-what-each-value-gets">Step 4. Decide what each value gets<a class="headerlink" href="#step-4-decide-what-each-value-gets" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
-<td class="c-table__cell">Value  </td><td class="c-table__cell">What it means  </td><td class="c-table__cell">Product and price pages  </td><td class="c-table__cell">Price APIs  </td></tr>
+<td class="c-table__cell">Value  </td><td class="c-table__cell">What it means  </td><td class="c-table__cell">Pages  </td><td class="c-table__cell">APIs  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">High  </td><td class="c-table__cell">A person is reading the page.  </td><td class="c-table__cell">Show the page.  </td><td class="c-table__cell">Answer the call.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Medium  </td><td class="c-table__cell">It could be a person or a script.  </td><td class="c-table__cell">Challenge with a CAPTCHA, a sign-in, or a notice, <a href="https://51degrees.com/suspicious">like ours</a>.  </td><td class="c-table__cell">Refuse with <code>403</code> until the visitor passes the challenge.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Low  </td><td class="c-table__cell">Almost certainly no person is reading it.  </td><td class="c-table__cell">Send the visitor to a page that says how to license your price data, <a href="https://51degrees.com/ai-notice">like ours</a>, and log the visit.  </td><td class="c-table__cell">Refuse with <code>403</code> and log the call.  </td></tr>
+<td class="c-table__cell">Low  </td><td class="c-table__cell">Almost certainly no person is reading it.  </td><td class="c-table__cell">Send the visitor to a page that says how to license your content or data, <a href="https://51degrees.com/ai-notice">like ours</a>, and log the visit.  </td><td class="c-table__cell">Refuse with <code>403</code> and log the call.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Unknown  </td><td class="c-table__cell">Not measured, for example because the script could not run.  </td><td class="c-table__cell">Treat it as Medium.  </td><td class="c-table__cell">Refuse with <code>403</code>.  </td></tr>
 </table>
+<p>A Low visit is almost always software, so you can serve it something made for software rather than a page made for people. The examples refuse it, and these are the other treatments websites use, alone or together:</p>
+<ul>
+<li><b>The page without what you sell.</b> A retailer serves the product page without prices and stock, a listing site answers a search with no contact details, and a publisher serves the first paragraph of the article.</li>
+<li><b>Content for machines.</b> Serve the same content as Markdown or plain text instead of HTML, with no navigation, scripts, or ads, so an AI gets what it came for cheaply and your page for people stays as it is.</li>
+<li><b>Your licence terms.</b> Serve the terms the software has to accept to use your content, with a way to get a licence. Ours is <a href="https://51degrees.com/ai-notice">the AI notice</a>. The Movement for an Open Web's <a href="https://m4ow.uk/socw/3.txt">Search Only Contract</a> is a published set of terms any website can adopt, and the <a href="https://51degrees.com/robots-txt">robots.txt generator</a> writes a robots.txt that cites it.</li>
+<li><b>No ads.</b> Leave the ad slots empty, so nobody pays to show an ad to a script.</li>
+<li><b>A block.</b> Refuse with <code>403</code>, as the example API does, and log the visit.</li>
+</ul>
+<p>Whatever Low gets, send Medium somewhere a person can prove themselves, and let the search engines you want through by name.</p>
 <p>The examples send Medium and Unknown to <code>/challenge</code> and Low to <code>/automated-access</code>, and the example price API refuses every session that is not High. Replace those two pages with your own. When a visitor passes your challenge, set the cached value to High so they can carry on.</p>
 <p>Search engine crawlers get the holding page too, like any session the gate has not checked. If your product pages must appear in search results, let genuine search engine crawlers skip the gate. <a href="https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests">Google</a> and <a href="https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26">Bing</a> explain how to check that a crawler really is theirs.</p>
 <h2 class="doxsection" id="test-it">Test it<a class="headerlink" href="#test-it" aria-label="Permalink to this section">🔗</a></h2>
@@ -527,7 +536,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <li><a class="el" href="_services__cloud__resource_keys.html" title="Resource Keys">Resource Keys</a></li>
 <li><a class="el" href="_human_confidence__analytics.html" title="Human and bot traffic in your analytics">Human and bot traffic in your analytics</a></li>
 </ul>
-<p>Human Confidence needs the Pro plan or above, which you can <a href="https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&amp;conversion=SignUp">buy online</a>. </p>
+<p>Human Confidence needs the Pro plan, which you can <a href="https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&amp;conversion=SignUp">buy online</a>, or the Bespoke plan for your own servers. Ask us about Bespoke through the <a href="https://51degrees.com/contact-us">contact page</a>. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

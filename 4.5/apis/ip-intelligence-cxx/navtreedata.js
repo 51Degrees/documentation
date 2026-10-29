@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "51Degrees IP Intelligence C/C++", "index.html", [
     [ "General Docs", "/documentation/4.5/index.html", null ],
+    [ "51Degrees Ip Intelligence API", "md__r_e_a_d_m_e.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "C++ Namespaces", "namespaces.html", "namespaces" ],
     [ "Examples", "examples.html", "examples" ]

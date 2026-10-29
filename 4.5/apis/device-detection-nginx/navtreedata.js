@@ -26,7 +26,6 @@ var NAVTREE =
 [
   [ "51Degrees Device Detection Nginx", "index.html", [
     [ "General Docs", "/documentation/4.5/index.html", null ],
-    [ "51Degrees Device Detection API", "../../device-detection-cxx/4.4/md__d_1_work_documentation_apis_device-detection-cxx__r_e_a_d_m_e.html", null ],
     [ "Examples", "examples.html", "examples" ]
   ] ]
 ];

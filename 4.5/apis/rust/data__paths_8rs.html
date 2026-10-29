@@ -101,9 +101,9 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:a1251f17f4edf0d528a56e7d85fdcbb4c" id="r_a1251f17f4edf0d528a56e7d85fdcbb4c"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a1251f17f4edf0d528a56e7d85fdcbb4c">IPI_PATH_ENV_VAR</a></td></tr>
 <tr class="c-table__row memdesc:a1251f17f4edf0d528a56e7d85fdcbb4c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The environment variable giving an explicit IP Intelligence data-file path.  <br /></td></tr>
 <tr class="c-table__row memitem:af405d3d5d691b8fc4bdcb71013f01d80" id="r_af405d3d5d691b8fc4bdcb71013f01d80"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#af405d3d5d691b8fc4bdcb71013f01d80">DD_LITE_RELATIVE_PATH</a></td></tr>
-<tr class="c-table__row memdesc:af405d3d5d691b8fc4bdcb71013f01d80"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The Lite Device Detection data file shipped in <code>device-detection-cxx</code>.  <br /></td></tr>
+<tr class="c-table__row memdesc:af405d3d5d691b8fc4bdcb71013f01d80"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The Lite Device Detection data file in the <code>cxx</code> submodule.  <br /></td></tr>
 <tr class="c-table__row memitem:af3d7a5db6b43a06357cf4daf62ff7dce" id="r_af3d7a5db6b43a06357cf4daf62ff7dce"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#af3d7a5db6b43a06357cf4daf62ff7dce">IPI_ASN_RELATIVE_PATH</a></td></tr>
-<tr class="c-table__row memdesc:af3d7a5db6b43a06357cf4daf62ff7dce"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The ASN IP Intelligence data file checked into the <code>ip-intelligence-data</code> repository (resolved through a sibling <code>ip-intelligence-cxx</code> checkout).  <br /></td></tr>
+<tr class="c-table__row memdesc:af3d7a5db6b43a06357cf4daf62ff7dce"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The ASN IP Intelligence data file checked into the <code>ip-intelligence-data</code> repository (resolved through the <code>cxx</code> submodule).  <br /></td></tr>
 <tr class="c-table__row memitem:a9d580bd798c07fd4ca3a668c4dd84317" id="r_a9d580bd798c07fd4ca3a668c4dd84317"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a9d580bd798c07fd4ca3a668c4dd84317">IPI_ENTERPRISE_FILE_NAME</a></td></tr>
 <tr class="c-table__row memdesc:a9d580bd798c07fd4ca3a668c4dd84317"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The Enterprise IP Intelligence data-file name on the Enterprise share.  <br /></td></tr>
 <tr class="c-table__row memitem:a380365aa8b70b2cbb9b64de4ca04719e" id="r_a380365aa8b70b2cbb9b64de4ca04719e"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a380365aa8b70b2cbb9b64de4ca04719e">IPI_ENTERPRISE_SHARE_ENV_VAR</a></td></tr>
@@ -160,7 +160,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Resolve the path to an on-premise Device Detection data file. </p>
-<p>Checks [<code><a class="el" href="#a3c1924144c6663a4394cdbcd8ed8c644" title="The environment variable giving an explicit Device Detection data-file path.">DD_PATH_ENV_VAR</a></code>] first and returns its value when set to a non-blank path. Otherwise walks up the directory tree with [<code>crate::find_file</code>] looking for [<code><a class="el" href="#af405d3d5d691b8fc4bdcb71013f01d80" title="The Lite Device Detection data file shipped in device-detection-cxx.">DD_LITE_RELATIVE_PATH</a></code>] in a sibling <code>device-detection-cxx</code> checkout. Returns <code>None</code> if neither is available. </p>
+<p>Checks [<code><a class="el" href="#a3c1924144c6663a4394cdbcd8ed8c644" title="The environment variable giving an explicit Device Detection data-file path.">DD_PATH_ENV_VAR</a></code>] first and returns its value when set to a non-blank path. Otherwise walks up the directory tree with [<code>crate::find_file</code>] looking for [<code><a class="el" href="#af405d3d5d691b8fc4bdcb71013f01d80" title="The Lite Device Detection data file in the cxx submodule.">DD_LITE_RELATIVE_PATH</a></code>] in the <code>cxx</code> submodule. Returns <code>None</code> if neither is available. </p>
 
 </div>
 </div>
@@ -274,7 +274,7 @@ Variables</h2></td></tr>
 <ul>
 <li>[<code>IpiTier::BestAvailable</code>] returns the latest Enterprise file from the configured share if it is reachable, and otherwise the ASN file.</li>
 <li>[<code>IpiTier::Enterprise</code>] returns the latest Enterprise file, or <code>None</code> when the share is unreachable.</li>
-<li>[<code>IpiTier::Asn</code>] returns the ASN file located in a sibling <code>ip-intelligence-cxx</code> checkout.</li>
+<li>[<code>IpiTier::Asn</code>] returns the ASN file located in the <code>cxx</code> submodule.</li>
 </ul>
 <p>Returns <code>None</code> when no file for the requested tier can be located. </p>
 
@@ -475,7 +475,7 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>The Lite Device Detection data file shipped in <code>device-detection-cxx</code>. </p>
+<p>The Lite Device Detection data file in the <code>cxx</code> submodule. </p>
 
 </div>
 </div>
@@ -562,7 +562,7 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>The ASN IP Intelligence data file checked into the <code>ip-intelligence-data</code> repository (resolved through a sibling <code>ip-intelligence-cxx</code> checkout). </p>
+<p>The ASN IP Intelligence data file checked into the <code>ip-intelligence-data</code> repository (resolved through the <code>cxx</code> submodule). </p>
 <p>As the data file committed to the repository it loads against the current native library and is the convenient default for quick tests and CI. A full IP Intelligence data file is obtained from the data repository (see its README) when richer properties are needed. </p>
 
 </div>

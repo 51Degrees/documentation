@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"_pipeline_api__features__web_integration.html#features":[8,2,11,1],
 "_pipeline_api__features__web_integration.html#implementations-1":[8,2,11,2],
 "_pipeline_api__features__web_integration.html#introduction-79":[8,2,11,0],
 "_pipeline_api__index.html":[8],

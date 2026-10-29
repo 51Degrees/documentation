@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_file.html" title="File test class used to test the functionality of file.c.">File</a> handle pool and simple file operations e.g. </p>
+<div class="textblock"><p>File handle pool and simple file operations e.g. </p>
 <p><code><a class="el" href="group___fifty_one_degrees_synonyms.html#ga50814027288d90b6762d7362f2b12a82" title="Synonym for fiftyoneDegreesFileOffset type.">FileOffset</a></code> offset types:</p>
 <p>copy and delete.</p>
 <h2>Introduction</h2>
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <p>Handles are retrieved from the pool via the <a class="el" href="#gacb61703589a06504f8e6b1e653baf700" title="Retrieves a read only open file handle from the pool.">fiftyoneDegreesFileHandleGet</a> method. The handle <b>MUST</b> be returned with the <a class="el" href="#ga597c3f2a4d837ae3317906686947d18b" title="Returns a handle previously retrieved via fiftyoneDegreesFileHandleGet back to the pool.">fiftyoneDegreesFileHandleRelease</a> method when it is finished with. The handle will always be open and ready for read only operation. The position of the handle within the source file cannot be assumed. If too many threads are accessing the pool simultaneously, meaning a handle cannot be secured, then a NULL pointer is returned.</p>
 <h2>Free</h2>
 <p>The handles are closed when the reader is released via the <a class="el" href="#gae1e78286866f6910b04fc1bc162ccc4b" title="Releases the file handles contained in the pool and frees any internal memory used by the pool.">fiftyoneDegreesFilePoolRelease</a> method. Any memory allocated by the implementation for the stack is freed.</p>
-<h2><a class="el" href="class_file.html" title="File test class used to test the functionality of file.c.">File</a> Operations</h2>
+<h2>File Operations</h2>
 <p>Common file operations can also be carried out using the methods defined here. The supported operations are:</p>
 <p><b>copy</b> : <a class="el" href="#ga82a46c70d2621fc09499dabd9055c9d4" title="Copy a file from one location to another.">fiftyoneDegreesFileCopy</a></p>
 <p><b>create directory</b> : <a class="el" href="#ga0d7e95bd942ef7ef7726a9ce3f716c31" title="Creates a directory with the specified path, and returns the result of the operation.">fiftyoneDegreesFileCreateDirectory</a></p>
@@ -155,7 +155,7 @@ Collaboration diagram for File:</h2>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-nested-classes" class="g-docs__section-heading"><a id="nested-classes" name="nested-classes"></a>
 Structs</h2></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesFileHandle" id="r_fiftyoneDegreesFileHandle"><td class="c-table__cell">union &#160;</td><td class="c-table__cell"><a class="el" href="unionfiftyone_degrees_file_handle.html">fiftyoneDegreesFileHandle</a></td></tr>
-<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_file.html" title="File test class used to test the functionality of file.c.">File</a> handle node in the stack of handles.  <a href="unionfiftyone_degrees_file_handle.html#details">More...</a><br /></td></tr>
+<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">File handle node in the stack of handles.  <a href="unionfiftyone_degrees_file_handle.html#details">More...</a><br /></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesFilePool" id="r_fiftyoneDegreesFilePool"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_file_pool.html">fiftyoneDegreesFilePool</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Stack of handles used to read data from a single source file.  <a href="structfiftyone_degrees_file_pool.html#details">More...</a><br /></td></tr>
 </table><table class="c-table c-table--directory">

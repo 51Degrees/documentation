@@ -3,7 +3,7 @@ var _human_confidence__index =
     [ "Human Confidence Overview", "_human_confidence__overview.html", [
       [ "Introduction", "_human_confidence__overview.html#introduction-32", [
         [ "The values", "_human_confidence__overview.html#the-values", null ],
-        [ "Where to use it", "_human_confidence__overview.html#where-to-use-it", null ],
+        [ "Two ways to use it", "_human_confidence__overview.html#two-ways-to-use-it", null ],
         [ "Crawlers that say what they are", "_human_confidence__overview.html#crawlers-that-say-what-they-are", null ]
       ] ]
     ] ],
