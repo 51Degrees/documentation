@@ -83,11 +83,11 @@ Collaboration diagram for fiftyone.ipintelligence.shared.IPIntelligenceData:</h2
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a0509919f2acde58b978e9a1338efdba5" id="r_a0509919f2acde58b978e9a1338efdba5"><td class="c-table__cell">AspectPropertyValue&lt;&#160;Integer&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a0509919f2acde58b978e9a1338efdba5">getAccuracyRadiusMax</a> ()</td></tr>
-<tr class="c-table__row memdesc:a0509919f2acde58b978e9a1338efdba5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Radius in kilometers of the circle centred around the most probable location that encompasses the entire area.  <br /></td></tr>
+<tr class="c-table__row memdesc:a0509919f2acde58b978e9a1338efdba5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Radius in kilometers of the circle centred around the most probable location that encompasses the entire area, measured against the trimmed area.  <br /></td></tr>
 <tr class="c-table__row memitem:a42a4f3dd4c5b48b414a6abd2043f61c4" id="r_a42a4f3dd4c5b48b414a6abd2043f61c4"><td class="c-table__cell">AspectPropertyValue&lt;&#160;Integer&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a42a4f3dd4c5b48b414a6abd2043f61c4">getAccuracyRadiusMin</a> ()</td></tr>
-<tr class="c-table__row memdesc:a42a4f3dd4c5b48b414a6abd2043f61c4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Radius in kilometers of the largest circle centred around the most probable location that fits within the area.  <br /></td></tr>
+<tr class="c-table__row memdesc:a42a4f3dd4c5b48b414a6abd2043f61c4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Radius in kilometers of the largest circle centred around the most probable location that fits within the area, measured against the trimmed area.  <br /></td></tr>
 <tr class="c-table__row memitem:a39a5afd3f3db1e4fc8dde3ac102b4349" id="r_a39a5afd3f3db1e4fc8dde3ac102b4349"><td class="c-table__cell">AspectPropertyValue&lt;&#160;WktString&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a39a5afd3f3db1e4fc8dde3ac102b4349">getAreas</a> ()</td></tr>
-<tr class="c-table__row memdesc:a39a5afd3f3db1e4fc8dde3ac102b4349"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Any shapes associated with the location.  <br /></td></tr>
+<tr class="c-table__row memdesc:a39a5afd3f3db1e4fc8dde3ac102b4349"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The area the IP range is likely to be in, trimmed to the land of the country the location is in, so it does not reach into neighbouring countries or over the sea.  <br /></td></tr>
 <tr class="c-table__row memitem:af263470a90683b9f9b79764132231a3f" id="r_af263470a90683b9f9b79764132231a3f"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#af263470a90683b9f9b79764132231a3f">getAsn</a> ()</td></tr>
 <tr class="c-table__row memdesc:af263470a90683b9f9b79764132231a3f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Autonomous System Number associated with the IP address.  <br /></td></tr>
 <tr class="c-table__row memitem:a49c34fd537318abc33755425563e9ad9" id="r_a49c34fd537318abc33755425563e9ad9"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a49c34fd537318abc33755425563e9ad9">getAsnName</a> ()</td></tr>
@@ -114,8 +114,6 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a845167f695b814ee695631ba8f2bb762"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A list of countries in ISO 3166-1 alpha-2 country code format that overlap with the area likely associated with the provided evidence, weighted and ordered by each country's proportion of the total population within the area.  <br /></td></tr>
 <tr class="c-table__row memitem:a6ebc43b76f954ef77d3351b8859e03aa" id="r_a6ebc43b76f954ef77d3351b8859e03aa"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a6ebc43b76f954ef77d3351b8859e03aa">getCountryGeoNameId</a> ()</td></tr>
 <tr class="c-table__row memdesc:a6ebc43b76f954ef77d3351b8859e03aa"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The GeoNames identifier of the country associated with the supplied location.  <br /></td></tr>
-<tr class="c-table__row memitem:ab84e4f8d3a1d393d5659119b4d0b2af7" id="r_ab84e4f8d3a1d393d5659119b4d0b2af7"><td class="c-table__cell">AspectPropertyValue&lt;&#160;List&lt;&#160;IWeightedValue&lt;&#160;String&#160;&gt;&#160;&gt;&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ab84e4f8d3a1d393d5659119b4d0b2af7">getCountryGeoNamesGeographical</a> ()</td></tr>
-<tr class="c-table__row memdesc:ab84e4f8d3a1d393d5659119b4d0b2af7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A list of GeoNames country identifiers that overlap within the area associated in the provided evidence.  <br /></td></tr>
 <tr class="c-table__row memitem:a9ae18e25f767116db428cedb431a4f27" id="r_a9ae18e25f767116db428cedb431a4f27"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a9ae18e25f767116db428cedb431a4f27">getCounty</a> ()</td></tr>
 <tr class="c-table__row memdesc:a9ae18e25f767116db428cedb431a4f27"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name of the county that the supplied location is in.  <br /></td></tr>
 <tr class="c-table__row memitem:af1f41e81ea0bfa4990c526b0b6941f77" id="r_af1f41e81ea0bfa4990c526b0b6941f77"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#af1f41e81ea0bfa4990c526b0b6941f77">getCountyGeoNameId</a> ()</td></tr>
@@ -186,8 +184,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a0f1dba951c7226e547750816fc9ed853"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name of the state that the supplied location is in.  <br /></td></tr>
 <tr class="c-table__row memitem:a237c18197afb126adc24d75667357f3e" id="r_a237c18197afb126adc24d75667357f3e"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a237c18197afb126adc24d75667357f3e">getStateGeoNameId</a> ()</td></tr>
 <tr class="c-table__row memdesc:a237c18197afb126adc24d75667357f3e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The GeoNames database identifier for the state (first-level administrative subdivision, admin1) that the supplied location is in.  <br /></td></tr>
-<tr class="c-table__row memitem:abe6d5016b5d22de2298942908c2a1a77" id="r_abe6d5016b5d22de2298942908c2a1a77"><td class="c-table__cell">AspectPropertyValue&lt;&#160;List&lt;&#160;IWeightedValue&lt;&#160;String&#160;&gt;&#160;&gt;&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#abe6d5016b5d22de2298942908c2a1a77">getStateGeoNamesGeographical</a> ()</td></tr>
-<tr class="c-table__row memdesc:abe6d5016b5d22de2298942908c2a1a77"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A list of GeoNames state identifiers, first-level administrative subdivisions (admin1) that overlap within the area associated in the provided evidence.  <br /></td></tr>
+<tr class="c-table__row memitem:a0f085f938be9390b2b39b30783187cff" id="r_a0f085f938be9390b2b39b30783187cff"><td class="c-table__cell">AspectPropertyValue&lt;&#160;List&lt;&#160;IWeightedValue&lt;&#160;String&#160;&gt;&#160;&gt;&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a0f085f938be9390b2b39b30783187cff">getStateGeoNameIdsGeographical</a> ()</td></tr>
+<tr class="c-table__row memdesc:a0f085f938be9390b2b39b30783187cff"><td class="c-table__cell">&#160;</td><td class="c-table__cell">GeoNames identifiers of the first-level administrative subdivisions (admin1) of the location's country that overlap the area associated with the supplied evidence, weighted and ordered by each subdivision's share of that area.  <br /></td></tr>
 <tr class="c-table__row memitem:a8174c12aab773896d99658208b961cc8" id="r_a8174c12aab773896d99658208b961cc8"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a8174c12aab773896d99658208b961cc8">getSuburb</a> ()</td></tr>
 <tr class="c-table__row memdesc:a8174c12aab773896d99658208b961cc8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name of the suburb that the supplied location is in.  <br /></td></tr>
 <tr class="c-table__row memitem:ac5550a967df0f7b2f34405bbf2706648" id="r_ac5550a967df0f7b2f34405bbf2706648"><td class="c-table__cell">AspectPropertyValue&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ac5550a967df0f7b2f34405bbf2706648">getTimeZoneIana</a> ()</td></tr>
@@ -221,8 +219,8 @@ Public Member Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Radius in kilometers of the circle centred around the most probable location that encompasses the entire area. </p>
-<p>Where multiple areas are returned, this will only cover the area the most probable location is in. See Areas property. This will likely be a very large distance. It is recommend to use the AccuracyRadiusMin property. </p>
+<p>Radius in kilometers of the circle centred around the most probable location that encompasses the entire area, measured against the trimmed area. </p>
+<p>Where multiple areas are returned, this will only cover the area the most probable location is in. See Areas property. This will likely be a very large distance. It is recommended to use the AccuracyRadiusMin property. </p>
 
 <p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#abbd0f297f76c73a3678acadc5071b601">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
 
@@ -247,7 +245,7 @@ Public Member Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Radius in kilometers of the largest circle centred around the most probable location that fits within the area. </p>
+<p>Radius in kilometers of the largest circle centred around the most probable location that fits within the area, measured against the trimmed area. </p>
 <p>Where multiple areas are returned, only the area that the most probable location falls within is considered. See Areas property. </p>
 
 <p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a4555bc8412abd71ceb2fcab21d9efa2b">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
@@ -273,8 +271,8 @@ Public Member Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Any shapes associated with the location. </p>
-<p>Usually this is the area which the IP range covers. This is returned as a WKT String stored as a reduced format of WKB.</p>
+<p>The area the IP range is likely to be in, trimmed to the land of the country the location is in, so it does not reach into neighbouring countries or over the sea. </p>
+<p>Returned as a WKT string stored as a reduced format of WKB.</p>
 <dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc"><a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">More information</a> </dd></dl>
 
 <p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#ad3004fcb04674530df1b5259efb5c203">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
@@ -612,32 +610,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab84e4f8d3a1d393d5659119b4d0b2af7" name="ab84e4f8d3a1d393d5659119b4d0b2af7"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab84e4f8d3a1d393d5659119b4d0b2af7">&#9670;&#160;</a></span>getCountryGeoNamesGeographical()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">AspectPropertyValue&lt; List&lt; IWeightedValue&lt; String &gt; &gt; &gt; fiftyone.ipintelligence.shared.IPIntelligenceData.getCountryGeoNamesGeographical </td>
-          <td>(</td>
-          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>A list of GeoNames country identifiers that overlap within the area associated in the provided evidence. </p>
-<p>Results are weighted and ordered by each country's proportion of the overlapping area. Areas that cannot be resolved will not contribute to the resulting data. </p>
-
-<p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a3a770707e920dde29f4852755f9322b7">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
-
-</div>
-</div>
 <a id="a9ae18e25f767116db428cedb431a4f27" name="a9ae18e25f767116db428cedb431a4f27"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9ae18e25f767116db428cedb431a4f27">&#9670;&#160;</a></span>getCounty()</h2>
 
@@ -684,6 +656,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The GeoNames identifier of the county, a second-level administrative subdivision (admin2) associated with the supplied location. </p>
+<p>Unknown where the nearest subdivision lies in a different country from the location. </p>
 
 <p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a1e0dcb5f90c66d4226ab9c10fd9e63f5">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
 
@@ -1527,13 +1500,14 @@ Unknown   Unknown confidence results should be treated in the same way as Low an
 </div><div class="c-member__body">
 
 <p>The GeoNames database identifier for the state (first-level administrative subdivision, admin1) that the supplied location is in. </p>
+<p>Unknown where the nearest subdivision lies in a different country from the location. </p>
 
 <p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a49bc29875fb218e75bf69870c54d9894">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
 
 </div>
 </div>
-<a id="abe6d5016b5d22de2298942908c2a1a77" name="abe6d5016b5d22de2298942908c2a1a77"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#abe6d5016b5d22de2298942908c2a1a77">&#9670;&#160;</a></span>getStateGeoNamesGeographical()</h2>
+<a id="a0f085f938be9390b2b39b30783187cff" name="a0f085f938be9390b2b39b30783187cff"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0f085f938be9390b2b39b30783187cff">&#9670;&#160;</a></span>getStateGeoNameIdsGeographical()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -1541,7 +1515,7 @@ Unknown   Unknown confidence results should be treated in the same way as Low an
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">AspectPropertyValue&lt; List&lt; IWeightedValue&lt; String &gt; &gt; &gt; fiftyone.ipintelligence.shared.IPIntelligenceData.getStateGeoNamesGeographical </td>
+              <td class="c-table__cell">AspectPropertyValue&lt; List&lt; IWeightedValue&lt; String &gt; &gt; &gt; fiftyone.ipintelligence.shared.IPIntelligenceData.getStateGeoNameIdsGeographical </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -1551,10 +1525,10 @@ Unknown   Unknown confidence results should be treated in the same way as Low an
       </div>
 </div><div class="c-member__body">
 
-<p>A list of GeoNames state identifiers, first-level administrative subdivisions (admin1) that overlap within the area associated in the provided evidence. </p>
-<p>Results are weighted and ordered by each state's proportion of the overlapping area. Areas that cannot be resolved to the state level will not contribute to the resulting data. </p>
+<p>GeoNames identifiers of the first-level administrative subdivisions (admin1) of the location's country that overlap the area associated with the supplied evidence, weighted and ordered by each subdivision's share of that area. </p>
+<p>Subdivisions covering less than 1% of the area are omitted, at most the 20 largest are returned, and the weights of those returned are scaled to sum to 100%. </p>
 
-<p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a2ee6ebc647435887e885941b2f1e3f5c">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
+<p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#a5fbf4ae60a90807a4a804fee3bda3085">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
 
 </div>
 </div>
@@ -1679,6 +1653,7 @@ Unknown   Unknown confidence results should be treated in the same way as Low an
 </div><div class="c-member__body">
 
 <p>The GeoNames identifier of the town or populated place nearest to the supplied location. </p>
+<p>Unknown where the nearest populated place lies in a different country from the location. </p>
 
 <p>Implemented in <a class="el" href="classfiftyone_1_1ipintelligence_1_1shared_1_1_i_p_intelligence_data_base.html#abb6e4d26aa379dd86bf2bdc45a04d324">fiftyone.ipintelligence.shared.IPIntelligenceDataBase</a>.</p>
 
