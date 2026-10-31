@@ -35,8 +35,10 @@
     background-position:center center;
     background-repeat:no-repeat;
     display:inline-block;
-    width:14px;
-    height:9px;
+    // Matched to the weight of the filter arrows above it, per the
+    // configurator pricing journey review of 22 July 2026.
+    width:18px;
+    height:12px;
     margin-right:size(0);
     .is-opened & {
       background-image:url("/images/icon-arrow-down-black.svg");
@@ -53,9 +55,21 @@
 .g-basket__content {
   height:0px;
   overflow:hidden;
+  // The panel is positioned at bottom:100% of the footer and grows upward,
+  // and .g-basket__status is positioned relative to it, so an unbounded
+  // panel both covers the option list and pushes its own collapse tab off
+  // the top of the viewport. Bounding the content box fixes both. The
+  // enclosing layout is fixed at 100vh and never body scrolls, so viewport
+  // units are safe here, as in the search dropdown. box-sizing keeps the
+  // padding inside the bound, there being no global border-box reset.
+  // Previously overflow:none, which is not a valid value and was discarded,
+  // so nothing ever scrolled. 51Degrees/configurator#68.
   .is-opened & {
     height:auto;
-    overflow:none;
+    max-height:30vh;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    box-sizing:border-box;
     padding:size(0) size(0) 0 0;
     box-shadow: $box-shadow-top-deep;
   }
