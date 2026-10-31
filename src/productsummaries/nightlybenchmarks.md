@@ -17,6 +17,12 @@ These tests are run using a console performance example. If language
 appropriate, multiple threads are used to run the tests. For technical details,
 see the example repositories on [GitHub](https://github.com/51Degrees?q=example).
 
+NGINX has no console example, so its figures come from requests through NGINX,
+each making one detection, with as many concurrent requests as the machine has
+processors, timed in the same way. They include NGINX's own request handling and
+the program making the requests, so look at their trend rather than comparing
+their values with the other rows.
+
 We run performance tests regularly on GitHub Actions. The performance of this
 may not be as good as a dedicated machine, as it's running on a GitHub runner,
 but gives an indication of consistency. Results from dedicated machines are in
