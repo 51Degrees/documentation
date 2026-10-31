@@ -258,6 +258,8 @@ TAB_SIZE               = 4
 
 ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "Antifraud=[Anti-fraud](@ref Fraud_Index)" \
+                         "agentsignature=[agent signature](@ref PipelineApi_Features_AgentSignature)" \
+                         "Agentsignature=[Agent signature](@ref PipelineApi_Features_AgentSignature)" \
                          "aspectdata=[aspect data](@ref PipelineApi_Concepts_Data_AspectData)" \
                          "Aspectdata=[Aspect data](@ref PipelineApi_Concepts_Data_AspectData)" \
                          "aspectengine=[Aspect Engine](@ref PipelineApi_Concepts_FlowElements_AspectEngine)" \

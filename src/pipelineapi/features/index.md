@@ -1,5 +1,7 @@
 @page PipelineApi_Features_Index API Features
 
+@subpage PipelineApi_Features_AgentSignature
+
 @subpage PipelineApi_Features_AsynchronousExecution
 
 @subpage PipelineApi_Features_AutomaticDatafileUpdates
