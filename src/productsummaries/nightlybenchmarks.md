@@ -10,7 +10,7 @@
 | Python        | ![dd-python](https://raw.githubusercontent.com/51Degrees/device-detection-python/gh-images/perf-graph-Ubuntu_Python_3.13-DetectionsPerSecond-latest.png) |                                                                                                                                                         |
 | Rust          | ![dd-rust](https://raw.githubusercontent.com/51Degrees/rust/gh-images/perf-graph-DeviceDetection-OnPremise-DetectionsPerSecond-latest.png)               | ![ip-rust](https://raw.githubusercontent.com/51Degrees/rust/gh-images/perf-graph-IpIntelligence-OnPremise-LookupsPerSecond-latest.png)                  |
 | NGINX         | ![dd-nginx](https://raw.githubusercontent.com/51Degrees/device-detection-nginx/gh-images/perf-graph-ubuntu-latest-DetectionsPerSecond-latest.png)        | ![ip-nginx](https://raw.githubusercontent.com/51Degrees/device-detection-nginx/gh-images/perf-graph-ubuntu-latest_IPI-DetectionsPerSecond-latest.png)   |
-| Varnish       | ![dd-varnish](https://raw.githubusercontent.com/51Degrees/51degrees-varnish/gh-images/perf-graph-ubuntu-24.04_DD-DetectionsPerSecond-latest.png)        | ![ip-varnish](https://raw.githubusercontent.com/51Degrees/51degrees-varnish/gh-images/perf-graph-ubuntu-24.04_IPI-DetectionsPerSecond-latest.png)   |
+| Varnish       | ![dd-varnish](https://raw.githubusercontent.com/51Degrees/51degrees-varnish/gh-images/perf-graph-ubuntu_DD-DetectionsPerSecond-latest.png)               | ![ip-varnish](https://raw.githubusercontent.com/51Degrees/51degrees-varnish/gh-images/perf-graph-ubuntu_IPI-DetectionsPerSecond-latest.png)             |
 
 # How we test
 
