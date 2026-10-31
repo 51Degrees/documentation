@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"_device_detection__overview.html#autotoc_md-mobile-app-development":[1,0,0,6,5],
 "_device_detection__overview.html#autotoc_md-performance-optimization":[1,0,0,6,1],
 "_device_detection__overview.html#autotoc_md-quick-start":[1,0,0,5,0],
 "_device_detection__overview.html#autotoc_md-responsive-design-and-user-experience":[1,0,0,6,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "_pipeline_api__concepts__data__element_data.html#lifecycle":[8,1,1,2,2],
 "_pipeline_api__concepts__data__element_data.html#thread-safety":[8,1,1,2,3],
 "_pipeline_api__concepts__data__element_data_key.html":[8,1,1,4],
-"_pipeline_api__concepts__data__element_data_key.html#introduction-50":[8,1,1,4,0],
-"_pipeline_api__concepts__data__element_data_key.html#name-conflict-example":[8,1,1,4,2,0]
+"_pipeline_api__concepts__data__element_data_key.html#introduction-50":[8,1,1,4,0]
 };

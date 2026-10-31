@@ -1,11 +1,21 @@
 var _pipeline_api__features__index =
 [
+    [ "Agent Signatures", "_pipeline_api__features__agent_signature.html", [
+      [ "Introduction", "_pipeline_api__features__agent_signature.html#introduction-68", null ],
+      [ "Properties", "_pipeline_api__features__agent_signature.html#AgentSignature_Properties", null ],
+      [ "Statuses", "_pipeline_api__features__agent_signature.html#statuses", null ],
+      [ "Configuration", "_pipeline_api__features__agent_signature.html#AgentSignature_Configuration", null ],
+      [ "How keys are fetched and cached", "_pipeline_api__features__agent_signature.html#AgentSignature_Caching", null ],
+      [ "How the element is verified", "_pipeline_api__features__agent_signature.html#AgentSignature_HowVerified", null ],
+      [ "What is not covered", "_pipeline_api__features__agent_signature.html#AgentSignature_NotCovered", null ],
+      [ "Example", "_pipeline_api__features__agent_signature.html#example-1", null ]
+    ] ],
     [ "Asynchronous Execution", "_pipeline_api__features__asynchronous_execution.html", [
-      [ "Introduction", "_pipeline_api__features__asynchronous_execution.html#introduction-68", null ],
+      [ "Introduction", "_pipeline_api__features__asynchronous_execution.html#introduction-69", null ],
       [ "Language support", "_pipeline_api__features__asynchronous_execution.html#language-support-1", null ]
     ] ],
     [ "Automatic Data File Updates", "_pipeline_api__features__automatic_datafile_updates.html", [
-      [ "Introduction", "_pipeline_api__features__automatic_datafile_updates.html#introduction-69", null ],
+      [ "Introduction", "_pipeline_api__features__automatic_datafile_updates.html#introduction-70", null ],
       [ "Registering for updates", "_pipeline_api__features__automatic_datafile_updates.html#registering-for-updates", null ],
       [ "Configuration", "_pipeline_api__features__automatic_datafile_updates.html#configuration-2", [
         [ "Data update URL", "_pipeline_api__features__automatic_datafile_updates.html#data-update-url", null ],
@@ -26,7 +36,7 @@ var _pipeline_api__features__index =
       ] ]
     ] ],
     [ "Client-side Evidence", "_pipeline_api__features__client_side_evidence.html", [
-      [ "Introduction", "_pipeline_api__features__client_side_evidence.html#introduction-70", null ],
+      [ "Introduction", "_pipeline_api__features__client_side_evidence.html#introduction-71", null ],
       [ "Client-side data", "_pipeline_api__features__client_side_evidence.html#client-side-data", null ],
       [ "JavaScript properties", "_pipeline_api__features__client_side_evidence.html#javascript-properties", null ],
       [ "How it works", "_pipeline_api__features__client_side_evidence.html#how-it-works-5", [
@@ -67,12 +77,12 @@ var _pipeline_api__features__index =
       ] ]
     ] ],
     [ "Custom Flow Elements", "_pipeline_api__features__custom_elements.html", [
-      [ "Introduction", "_pipeline_api__features__custom_elements.html#introduction-71", null ],
+      [ "Introduction", "_pipeline_api__features__custom_elements.html#introduction-72", null ],
       [ "Choosing the right classes to extend", "_pipeline_api__features__custom_elements.html#choosing-the-right-classes-to-extend", null ],
       [ "Examples", "_pipeline_api__features__custom_elements.html#examples-2", null ]
     ] ],
     [ "Error Handling", "_pipeline_api__features__error_handling.html", [
-      [ "Introduction", "_pipeline_api__features__error_handling.html#introduction-72", null ],
+      [ "Introduction", "_pipeline_api__features__error_handling.html#introduction-73", null ],
       [ "Approach", "_pipeline_api__features__error_handling.html#approach", null ],
       [ "Configuration", "_pipeline_api__features__error_handling.html#configuration-3", null ],
       [ "Testing the unhappy path scenarios", "_pipeline_api__features__error_handling.html#testing-the-unhappy-path-scenarios", [
@@ -81,11 +91,11 @@ var _pipeline_api__features__index =
       ] ]
     ] ],
     [ "Flexible Accessors", "_pipeline_api__features__flexible_accessors.html", [
-      [ "Introduction", "_pipeline_api__features__flexible_accessors.html#introduction-73", null ],
+      [ "Introduction", "_pipeline_api__features__flexible_accessors.html#introduction-74", null ],
       [ "Detail", "_pipeline_api__features__flexible_accessors.html#detail-1", null ]
     ] ],
     [ "Lazy Loading", "_pipeline_api__features__lazy_loading.html", [
-      [ "Introduction", "_pipeline_api__features__lazy_loading.html#introduction-74", null ],
+      [ "Introduction", "_pipeline_api__features__lazy_loading.html#introduction-75", null ],
       [ "Caveats", "_pipeline_api__features__lazy_loading.html#caveats", null ],
       [ "Configuration", "_pipeline_api__features__lazy_loading.html#configuration-4", [
         [ "Property timeout", "_pipeline_api__features__lazy_loading.html#property-timeout", null ],
@@ -94,21 +104,21 @@ var _pipeline_api__features__index =
       [ "Implementation", "_pipeline_api__features__lazy_loading.html#implementation-1", null ]
     ] ],
     [ "Logging", "_pipeline_api__features__logging.html", [
-      [ "Introduction", "_pipeline_api__features__logging.html#introduction-75", null ],
+      [ "Introduction", "_pipeline_api__features__logging.html#introduction-76", null ],
       [ "Configuration", "_pipeline_api__features__logging.html#configuration-5", null ]
     ] ],
     [ "Parallel Execution", "_pipeline_api__features__parallel_execution.html", [
-      [ "Introduction", "_pipeline_api__features__parallel_execution.html#introduction-76", null ],
+      [ "Introduction", "_pipeline_api__features__parallel_execution.html#introduction-77", null ],
       [ "Executing flow elements in parallel", "_pipeline_api__features__parallel_execution.html#executing-flow-elements-in-parallel", null ],
       [ "Calling the Pipeline from multiple threads", "_pipeline_api__features__parallel_execution.html#calling-the-pipeline-from-multiple-threads", null ]
     ] ],
     [ "Result Caching", "_pipeline_api__features__result_caching.html", [
-      [ "Introduction", "_pipeline_api__features__result_caching.html#introduction-77", null ],
+      [ "Introduction", "_pipeline_api__features__result_caching.html#introduction-78", null ],
       [ "Internals", "_pipeline_api__features__result_caching.html#internals-4", null ],
       [ "Configuration", "_pipeline_api__features__result_caching.html#configuration-6", null ]
     ] ],
     [ "Usage Sharing Feature", "_pipeline_api__features__usage_sharing.html", [
-      [ "Introduction", "_pipeline_api__features__usage_sharing.html#introduction-78", null ],
+      [ "Introduction", "_pipeline_api__features__usage_sharing.html#introduction-79", null ],
       [ "How to enable usage sharing", "_pipeline_api__features__usage_sharing.html#how-to-enable-usage-sharing", null ],
       [ "Internals", "_pipeline_api__features__usage_sharing.html#Internals", [
         [ "Repeated evidence", "_pipeline_api__features__usage_sharing.html#RepeatEvidence", null ]
@@ -127,7 +137,7 @@ var _pipeline_api__features__index =
       [ "Usage Sharing for low-level APIs", "_pipeline_api__features__usage_sharing.html#Low_Level_Usage_Sharing", null ]
     ] ],
     [ "Web Integration Feature", "_pipeline_api__features__web_integration.html", [
-      [ "Introduction", "_pipeline_api__features__web_integration.html#introduction-79", null ],
+      [ "Introduction", "_pipeline_api__features__web_integration.html#introduction-80", null ],
       [ "Features", "_pipeline_api__features__web_integration.html#features", null ],
       [ "Implementations", "_pipeline_api__features__web_integration.html#implementations-1", null ],
       [ "Client-side evidence", "_pipeline_api__features__web_integration.html#client-side-evidence-1", null ]

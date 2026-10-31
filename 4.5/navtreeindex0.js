@@ -69,7 +69,8 @@ var NAVTREEINDEX0 =
 "_device_detection__features__crawlers.html":[1,3,2],
 "_device_detection__features__crawlers.html#isartificialintelligence":[1,3,2,2],
 "_device_detection__features__crawlers.html#overview":[1,3,2,0],
-"_device_detection__features__crawlers.html#robotstxt":[1,3,2,3],
+"_device_detection__features__crawlers.html#robotstxt":[1,3,2,4],
+"_device_detection__features__crawlers.html#signed-agents":[1,3,2,3],
 "_device_detection__features__crawlers.html#values":[1,3,2,1],
 "_device_detection__features__csv_data_file.html":[1,3,3],
 "_device_detection__features__csv_data_file.html#how-do-i-get-it":[1,3,3,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "_device_detection__overview.html#autotoc_md-advertising-and-monetization":[1,0,0,6,3],
 "_device_detection__overview.html#autotoc_md-analytics-and-business-intelligence":[1,0,0,6,2],
 "_device_detection__overview.html#autotoc_md-content-delivery-and-media":[1,0,0,6,7],
-"_device_detection__overview.html#autotoc_md-cross-device-user-journeys":[1,0,0,6,6],
-"_device_detection__overview.html#autotoc_md-mobile-app-development":[1,0,0,6,5]
+"_device_detection__overview.html#autotoc_md-cross-device-user-journeys":[1,0,0,6,6]
 };

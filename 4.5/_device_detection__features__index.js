@@ -20,6 +20,7 @@ var _device_detection__features__index =
       [ "Overview", "_device_detection__features__crawlers.html#overview", null ],
       [ "Values", "_device_detection__features__crawlers.html#values", null ],
       [ "IsArtificialIntelligence", "_device_detection__features__crawlers.html#isartificialintelligence", null ],
+      [ "Signed Agents", "_device_detection__features__crawlers.html#signed-agents", null ],
       [ "Robots.txt", "_device_detection__features__crawlers.html#robotstxt", null ]
     ] ],
     [ "CSV Data File", "_device_detection__features__csv_data_file.html", [
