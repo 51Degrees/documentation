@@ -5,7 +5,7 @@
     # Pipeline
     "pipeline-dotnet" = $null
     "pipeline-java" = $null
-    "pipeline-node" = $null
+    "pipeline-node" = @{ Repo = "51degrees-node"; Docs = "pipeline/docs" }
     "pipeline-python" = $null
 
     # Device Detection
@@ -13,7 +13,7 @@
     "device-detection-dotnet" = "device-detection-dotnet-examples"
     "device-detection-java" = "device-detection-java-examples"
     "device-detection-nginx" = $null
-    "device-detection-node" = $null
+    "device-detection-node" = @{ Repo = "51degrees-node"; Docs = "device-detection/docs" }
     "device-detection-php" = $null
     "device-detection-php-onpremise" = $null
     "device-detection-python" = $null
@@ -23,6 +23,7 @@
     "ip-intelligence-dotnet" = "ip-intelligence-dotnet-examples"
     "ip-intelligence-go" = $null
     "ip-intelligence-java" = "ip-intelligence-java-examples"
+    "ip-intelligence-node" = @{ Repo = "51degrees-node"; Docs = "ip-intelligence/docs" }
 
     # Rust (Device Detection + IP Intelligence). The runnable examples live in
     # the rust repo's own examples/ workspace, so there is no separate examples
@@ -32,7 +33,7 @@
     # Location
     "location-dotnet" = $null
     "location-java" = $null
-    "location-node" = $null
+    "location-node" = @{ Repo = "51degrees-node"; Docs = "location/docs" }
     "location-php" = $null
     "location-python" = $null
 }

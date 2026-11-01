@@ -1048,11 +1048,11 @@ EXAMPLE_PATH           = ../src/snippets \
                          ../src/reversegeocoding/examples \
                          ../apis/pipeline-java/pipeline.developer-examples \
                          ../apis/pipeline-dotnet/Examples \
-                         ../apis/pipeline-node/fiftyone.pipeline.core/examples \
-                         ../apis/pipeline-node/fiftyone.pipeline.engines/examples \
+                         ../apis/51degrees-node/pipeline/fiftyone.pipeline.core/examples \
+                         ../apis/51degrees-node/pipeline/fiftyone.pipeline.engines/examples \
                          ../apis/pipeline-php-core/examples \
                          ../apis/device-detection-php/examples \
-                         ../apis/device-detection-node/fiftyone.devicedetection/examples
+                         ../apis/51degrees-node/device-detection/fiftyone.devicedetection/examples
 
 # If the value of the EXAMPLE_PATH tag contains directories, you can use the
 # EXAMPLE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp and
