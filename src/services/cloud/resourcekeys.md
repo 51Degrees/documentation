@@ -55,20 +55,30 @@ Some of the error messages above will list the properties for which the used key
 
 Beware: continuing to steps 2 or 3 will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it will create a new Resource Key. 
 
-# License-key-only callers
+# Resource Keys and License Keys {#Resource_keys_and_license_keys}
 
-Most callers authenticate with a Resource Key, but you can also call the cloud with a License Key and no Resource Key. This suits server-to-server or verifier callers that do not want to create and manage Resource Keys. Only the json and js endpoints accept License-key-only requests; the other endpoints still require a Resource Key.
+A request can carry a Resource Key, a License Key, or both, and each does a different job.
 
-A Resource Key carries a property list chosen at creation time. A bare License Key does not, so a License-key-only caller must list the properties they want via the `values` parameter, supplied in any of these places (header first, then query, then form):
+- **A Resource Key** authenticates the request and brings the properties and products set up on it. It is public, because it sits in the script tag of every page that uses it, and it can be restricted to named domains, which the service checks against the request's `Origin` or `Referer` header.
+- **A License Key** is a server's credential and never goes in a page. It suits server-to-server and verifier callers that do not want to create and manage Resource Keys.
+- **A License Key on its own** works on the routes a server calls, being json, js, accessible properties, the 51Did key, verify, verify context, verify full and redeem routes, and the OWID public-key route. On json and js it must name the properties wanted with `values`, because only a Resource Key carries a property list, and a request without `values` returns `400`. The other routes need no `values`, because they return the same fields every time.
+- **Both together** are treated as the Resource Key's request, including any domain restriction, and the License Key adds its products on top. A server whose Resource Key is restricted to named domains sends no `Origin`, so it is refused even when it also sends a valid License Key. Such a server should send its License Key alone.
+
+The service looks for each key in these places, in this order, and uses the first one it finds.
+
+1. The `X-51D-Resource-Key` or `X-51D-License-Key` header.
+2. The route, for a Resource Key only, as in `/api/v4/<resource_key>.json`.
+3. The query string, `?resource=` or `?license=`.
+4. The form body of a `POST`, `resource=` or `license=`.
+
+The `values` parameter is read in the same order, from the header, then the query string, then the form body.
 
 - Header: `X-51D-Values: device.ismobile,fodid.idprobglobal`
 - Query string: `?values=device.ismobile,fodid.idprobglobal`
 - Form body: `values=device.ismobile,fodid.idprobglobal`
 
-The License Key itself follows the same order: the `X-51D-License-Key` header, then the `license` query parameter, then a `license` form field.
+With a Resource Key, `values` adds the named properties to the ones the key already carries, and a property the license does not entitle is still withheld. Omit it to get the key's own set. See the [Property Dictionary](https://51degrees.com/developers/property-dictionary) for the properties available on your license.
 
-The `X-51D-*` headers are intended for server-to-server callers: the cloud service does not answer CORS preflight requests for them, so browsers will not send them cross-origin.
+A page on another domain may send the `X-51D-Resource-Key` and `X-51D-Values` headers, because the service answers the browser's CORS preflight for them. It refuses a preflight for `X-51D-License-Key`, because a License Key is never placed in a page.
 
-A License-key-only request with no `values` returns `400` and explains the requirement. See the [Property Dictionary](https://51degrees.com/developers/property-dictionary) for the properties available on your license.
-
-With a Resource Key, `values` is optional: it narrows the response to a subset of the key's baked-in properties, and omitting it returns them all. A License-key-only caller must supply it, since there is no baked-in list to fall back to.
+The 51Did redeem route needs the account's License Key where the account holds one, sent alone or beside the Resource Key, because the sealed result being redeemed is bound to that account.
