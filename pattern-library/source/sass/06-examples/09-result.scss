@@ -1,0 +1,65 @@
+/**
+ * The answer an example exists to give, at the weight that deserves.
+ *
+ * An example computes one thing, and everything else on its page is
+ * there to explain that one thing. So the answer is what a reader looks
+ * for first and what they come back to after every change they make.
+ * Reported at the size of ordinary body text it reads as one more
+ * paragraph among the paragraphs explaining it, and a reader has to hunt
+ * for the part they came for.
+ *
+ * Put this above whatever a reader changes rather than below it, so that
+ * changing something and seeing what it did takes no scrolling.
+ */
+
+.c-eg-result {
+  background-color: $colour-grey-lighter;
+  border-radius: $rounded;
+  padding: size(2) size(3);
+  margin: size(1) 0 size(3);
+}
+
+/* What the answer is the answer to, said quietly above it, because the
+   reader already knows and only needs reminding. */
+.c-eg-result__label {
+  @include make-text-heading-caps();
+  display: block;
+  margin: 0 0 size(-2);
+}
+
+/* The answer itself. It carries the code face because what an example
+   returns is a value rather than prose, and a size that makes it the
+   first thing on the page a reader sees. */
+.c-eg-result__value {
+  @include make-text-code();
+  font-size: size(7);
+  line-height: 1.1;
+  color: $colour-black;
+  margin: 0;
+
+  /* A value can be a long string, and stretching the panel to fit one
+     would push the page out of shape. */
+  word-break: break-word;
+}
+
+/* How the answer should be read, said quietly below it. */
+.c-eg-result__note {
+  margin: size(0) 0 0;
+}
+
+/**
+ * Where the example has no answer to give. The surface carries it rather
+ * than the value, because there is no value to colour, and a reader
+ * scanning for the answer needs to see at a glance that there is not
+ * one.
+ */
+.c-eg-result--none {
+  background-color: $colour-pink-light;
+  border: 1px solid $colour-red;
+
+  .c-eg-result__value {
+    @include make-text-default();
+    font-weight: $font-weight-bold;
+    color: $colour-red;
+  }
+}
