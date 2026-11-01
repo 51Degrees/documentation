@@ -60,10 +60,10 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
       grabTestedVersions("device-detection-python", "python-versions", [
           { title: "Python Version", getValue: d => d.LanguageVersion }
       ]);
-      grabTestedVersions("device-detection-node", "node-versions", [
+      grabTestedVersions("51degrees-node", "node-versions", [
           { title: "Node Version", getValue: d => d.LanguageVersion }
       ]);
-      grabTestedVersions("ip-intelligence-node", "ipi-node-versions", [
+      grabTestedVersions("51degrees-node", "ipi-node-versions", [
           { title: "Node Version", getValue: d => d.LanguageVersion }
       ]);
       grabTestedVersions("device-detection-go", "go-versions", [
