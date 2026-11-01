@@ -131,7 +131,7 @@ containers in a fleet can be told apart at the backend.
 | `LogServices__OpenTelemetry__TracesIncludeEvidence` | Set to `false` to drop the request evidence attributes from `pipeline.process` spans, for installations that must not keep request data in traces. Defaults to `true`. The `[redacted]` values described above stay redacted either way. |
 | `OTEL_DOTNET_EXPERIMENTAL_ASPNETCORE_DISABLE_URL_QUERY_REDACTION` | Set to `true` to keep query string values in spans, so a caller's request can be reproduced from its trace. Redacted by default. |
 | `INSTANCE_NAME` | `node` label on the exported telemetry, also returned in the `51D-Instance` response header. Defaults to the machine name. |
-| `PROVIDER_NAME` | `provider` label on the exported telemetry, e.g. `hetzner`. No label is attached when unset. |
+| `PROVIDER_NAME` | `provider` label on the exported telemetry, e.g. `my-cloud`. No label is attached when unset. |
 
 Any backend that accepts OTLP over HTTP works. This example points the three
 signals at VictoriaMetrics, VictoriaLogs and VictoriaTraces:
@@ -147,7 +147,7 @@ docker run -d --name 51d-cloud \
   -e "LogServices__OpenTelemetry__Headers=Authorization=Bearer <token>" \
   -e INSTANCE_NAME=node-1 \
   -e REGION_NAME=eu \
-  -e PROVIDER_NAME=hetzner \
+  -e PROVIDER_NAME=my-cloud \
   51degrees/cloud-private
 ```
 
