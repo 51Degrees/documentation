@@ -41,7 +41,7 @@ The 51Did payload starts with a one-byte **flags** field that records which usag
 
 The flags are hierarchical, in that `personalized` implies `standard` and `standard` implies `non-marketing`, mirroring the kind of consent tier a user dialog typically offers (a single tier per visitor that covers every use below it).
 
-**Only `non-marketing` global 51Dids are available in the free tier.** Issuing a 51Did for `standard` or `personalized` purposes requires a **Special license key** to be added to the Resource Key, see *Usage policies and licensing* below.
+**Only `non-marketing` global 51Dids are available in the free tier.** Issuing a 51Did for `standard` or `personalized` purposes needs a License Key that carries the 51Did product, added to the Resource Key or sent beside it, see *Usage policies and licensing* below.
 
 ## Properties
 
@@ -107,14 +107,14 @@ The cloud parses the string and checks the consented [IAB TCF v2 purposes](https
 | `id.usage`     | Requires                                |
 |----------------|-----------------------------------------|
 | `non-marketing`| `fodid.*` on the Resource Key only.     |
-| `standard`     | Special license key required.           |
-| `personalized` | Special license key required.           |
+| `standard`     | A License Key that carries the 51Did product. |
+| `personalized` | A License Key that carries the 51Did product. |
 
-`standard` and `personalized` 51Dids are issued under contractual Model Terms that govern how the data can be used once it leaves the cloud service, and are gated by Know Your Customer (KYC) checks before the Special license key is granted. Contact 51Degrees to apply.
+`standard` and `personalized` 51Dids are created under the [Model Terms for Marketing](https://m4ow.uk/mtm), the terms 51Degrees and the companies that send and receive a 51Did work to, and the 51Dids the cloud creates today carry [version 2](https://m4ow.uk/mtm/2.txt). 51Degrees grants the 51Did product on a License Key after its know your customer checks, so [contact 51Degrees](https://51degrees.com/contact-us) to apply.
 
 `non-marketing` 51Dids are provided under legitimate interest and must not leave the customer environment.
 
-If `id.usage` is omitted, or set to `standard` / `personalized` while the Resource Key lacks the Special license key, the `fodid.*` properties are returned with a no-value reason rather than throwing. Any value other than the three listed above is rejected as an invalid usage.
+If `id.usage` is omitted, or set to `standard` / `personalized` while the request carries no License Key with the 51Did product, the `fodid.*` properties are returned with a no-value reason rather than throwing. Any value other than the three listed above is rejected as an invalid usage.
 
 ## Example
 

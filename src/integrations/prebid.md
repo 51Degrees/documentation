@@ -30,7 +30,7 @@ Use this when you want the full enrichment set (device, 51Did, IP Intelligence) 
 
 - **Device Detection** (`device.*`): `DeviceId`, `DeviceType`, `HardwareVendor`, `HardwareName`, `HardwareNamePrefix`, `HardwareNameVersion`, `HardwareModel`, `PlatformName`, `PlatformVersion`, `ScreenPixelsHeight`, `ScreenPixelsWidth`, `ScreenPixelsPhysicalHeight`, `ScreenPixelsPhysicalWidth`, `ScreenInchesHeight`, `ScreenInchesWidth`, `PixelRatio`, `ThirdPartyCookiesEnabled`.
 - **IP Intelligence** (`device.ip`, `device.geo.*`): `Latitude`, `Longitude`, `CountryCode3`, `Iso31662Lvl4`, `ZipCode`, `TimeZoneOffset`, `AccuracyRadiusMin`, `LocationConfidence`.
-- **51Did** (`user.eids`): `IdProbLic`, `IdProbGlobal`. Issuing the 51Did for `standard` or `personalized` usage also requires a Special license key on the Resource Key (see the 51Did section below).
+- **51Did** (`user.eids`): `IdProbLic`, `IdProbGlobal`. Issuing the 51Did for `standard` or `personalized` usage also needs a License Key that carries the 51Did product (see the 51Did section below).
 
 ### Server-Side: Prebid Server (Java and Go)
 
@@ -82,7 +82,7 @@ The RTD module surfaces the 51Did in the OpenRTB 2.6 `user.eids` array as a sing
 - The two `uids` are the license-tier identifier (`idproblic`) and the global-tier identifier (`idprobglobal`), in that order.
 - `ext.tdl` is emitted only when a transparency-and-disclosure URL is configured (the `tdlUrl` module parameter); it is omitted otherwise.
 
-The 51Did is delivered by the RTD module only. Issuing it for `standard` or `personalized` usage purposes requires a Special license key on the Resource Key; the `non-marketing` purpose is available in the free tier. See @ref Identifiers_51Did for licensing and @ref Identifiers_PMP for capturing the user's marketing preference that feeds `id.usage`.
+The 51Did is delivered by the RTD module only. Issuing it for `standard` or `personalized` usage purposes needs a License Key that carries the 51Did product, and the `non-marketing` purpose is available in the free tier. See @ref Identifiers_51Did for licensing and @ref Identifiers_PMP for capturing the user's marketing preference that feeds `id.usage`.
 
 ### IP Intelligence
 
