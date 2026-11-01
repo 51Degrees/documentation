@@ -1071,7 +1071,7 @@ Further reads:
 <!-- ===================================================================================
      |                                    Varnish                                       |
      =================================================================================== -->
-Varnish module comes only with an On-premise version. You will need to get the On-premise version of the Varnish API from [GitHub](https://github.com/51Degrees/device-detection-varnish).
+Varnish module comes only with an On-premise version. You will need to get the On-premise version of the Varnish API from [GitHub](https://github.com/51Degrees/51degrees-varnish).
  
 The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file using 51Degrees @Distributor (License Key is required, check [pricing](https://51degrees.com/pricing) page) and be aware of the changes described below. 
  

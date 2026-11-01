@@ -57,7 +57,7 @@ A standard GA4 property allows 50 event-scoped custom dimensions. Expect the val
 
 # Step 4. Build the reports
 
-Add HumanConfidence as a secondary dimension on any report, or build an exploration around it. A conversion rate filtered to High counts people only. Break Medium and Low down by page to see which pages they visit and how that changes month to month. There are more report ideas in @ref HumanConfidence_Analytics.
+Add HumanConfidence as a secondary dimension on any report, or build an exploration around it. A conversion rate filtered to High covers the visits most likely to be people. Break Medium and Low down by page to see which pages they visit and how that changes month to month. There are more report ideas in @ref HumanConfidence_Analytics.
 
 # WordPress
 

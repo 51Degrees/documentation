@@ -28,7 +28,7 @@ The algorithm is implemented in C code for maximum portability and performance i
 
 - **In-process** - all the data and compute operation resides in the same process delivering minimum latency and the best possible performance.
 - **In-memory** - all data is loaded into memory for maximum performance. Ideal for offline processing or highly parallelized environments.
-- **On-disk** - data is retained on disk for fastest start up performance. Ideal for serverless and web environments.
+- **On-disk** - data is retained on disk for fastest start up performance. Ideal for serverless and web environments. With the default Balanced profile, naming the required properties holds what they read in memory and leaves what they do not read on disk, which makes lookups faster without using more memory.
 - **Simple** - high-level language APIs make deployment simple for developers of all experience levels.
 - **Automatic Update** - data can be updated automatically without requiring a process restart.
 

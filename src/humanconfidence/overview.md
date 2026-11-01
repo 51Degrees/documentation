@@ -16,7 +16,7 @@ To try it, follow the [Quick Start](@ref HumanConfidence_Quickstart).
 
 | Value | Meaning | What websites usually do |
 | ----- | ------- | ------------------------ |
-| High | A person is reading the page. | Let the request through. |
+| High | High confidence that a person is reading the page. | Let the request through. |
 | Medium | Mixed signals. Could be a person, could be a script. | Serve the page, or challenge with a CAPTCHA or a sign-in first. |
 | Low | Almost certainly no person is reading it. | Refuse the request, or serve a version of the page made for machines. |
 | Unknown | Not measured, usually because the script didn't run. | Treat it as Medium. |

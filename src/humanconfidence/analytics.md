@@ -53,7 +53,7 @@ What your tool calls a custom dimension varies. Matomo calls it a custom dimensi
 
 Put Human Confidence next to the reports you already read.
 
-- Filter conversions to High to get a conversion rate for people, and compare it with your overall rate.
+- Filter conversions to High to get a conversion rate for the visits most likely to be people, and compare it with your overall rate.
 - Chart Medium and Low by month and by page, alongside High.
 - Use CrawlerName, CrawlerUsage and IsArtificialIntelligence to see which crawlers read which pages, and whether they index, train or answer questions with them. Then set your robots.txt rules from what you see.
 

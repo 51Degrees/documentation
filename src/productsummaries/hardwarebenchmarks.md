@@ -151,7 +151,12 @@ Each library ran in two configurations:
   that keep the most used data in memory and leave the rest on disk. For IP
   Intelligence, Balanced still loads some parts of the data file fully into
   memory, including the text strings and the IP address graphs described in
-  [IP Intelligence Algorithm](@ref IpIntelligence_Algorithm). Each Balanced run
+  [IP Intelligence Algorithm](@ref IpIntelligence_Algorithm). From version
+  4.5.98, a caller who names required properties changes what that holds. The
+  strings and the graphs those properties do not read stay on disk, and the
+  memory that frees holds the values and profiles they do read, so lookups are
+  faster and memory does not rise. The figures on this page come from an earlier
+  version. Each Balanced run
   made an untimed warm-up pass over the same records it then timed, so the
   caches had already seen that traffic. We set the expected concurrency to the
   number of threads, as

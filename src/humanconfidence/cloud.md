@@ -479,7 +479,7 @@ if __name__ == '__main__':
 
 | Value | What it means | Pages | APIs |
 | ------ | ------------- | ----- | ---- |
-| High | A person is reading the page. | Show the page. | Answer the call. |
+| High | High confidence that a person is reading the page. | Show the page. | Answer the call. |
 | Medium | It could be a person or a script. | Challenge with a CAPTCHA, a sign-in, or a notice, [like ours](https://51degrees.com/suspicious). | Refuse with `403` until the visitor passes the challenge. |
 | Low | Almost certainly no person is reading it. | Send the visitor to a page that says how to license your content or data, [like ours](https://51degrees.com/ai-notice), and log the visit. | Refuse with `403` and log the call. |
 | Unknown | Not measured, for example because the script could not run. | Treat it as Medium. | Refuse with `403`. |
