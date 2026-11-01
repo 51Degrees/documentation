@@ -279,7 +279,7 @@ https://github.com/51Degrees/location-dotnet/blob/master/Examples/Cloud/GettingS
 https://github.com/51Degrees/location-java/blob/master/geo-location.shell.examples/src/main/java/fiftyone/geolocation/examples/cloud/GettingStarted.java
 @endsnippet
 @startsnippet{node}
-https://github.com/51Degrees/51degrees-node/blob/main/location-node/examples/gettingStarted.js
+https://github.com/51Degrees/51degrees-node/blob/main/location/examples/gettingStarted.js
 @endsnippet
 @startsnippet{php}
 https://github.com/51Degrees/location-php/blob/master/examples/cloud/gettingstarted.php
