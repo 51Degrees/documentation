@@ -112,7 +112,7 @@ The cloud parses the string and checks the consented [IAB TCF v2 purposes](https
 
 `standard` and `personalized` 51Dids are created under the [Model Terms for Marketing](https://m4ow.uk/mtm), the terms 51Degrees and the companies that send and receive a 51Did work to, and the 51Dids the cloud creates today carry [version 2](https://m4ow.uk/mtm/2.txt). 51Degrees grants the 51Did product on a License Key after its know your customer checks, so [contact 51Degrees](https://51degrees.com/contact-us) to apply.
 
-`non-marketing` 51Dids are provided under legitimate interest and must not leave the customer environment.
+`non-marketing` 51Dids are covered by the customer's agreement with 51Degrees under the published [General Terms and Conditions](https://51degrees.com/terms/general-terms-and-conditions/20261019) and [Cloud Services Terms](https://51degrees.com/terms/cloud-services-terms/20260323).
 
 If `id.usage` is omitted, or set to `standard` / `personalized` while the request carries no License Key with the 51Did product, the `fodid.*` properties are returned with a no-value reason rather than throwing. Any value other than the three listed above is rejected as an invalid usage.
 
