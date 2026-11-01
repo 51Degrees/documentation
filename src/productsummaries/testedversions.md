@@ -44,6 +44,10 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
 @htmlonly
 <script>
   $( document ).ready(function() {
+      grabTestedVersions("51degrees-varnish", "varnish-versions", [
+          { title: "Project", getValue: (d) => d.VinylVersion ? "Vinyl Cache" : "Varnish Cache" },
+          { title: "Version", getValue: (d) => d.VinylVersion || d.VarnishVersion }
+      ]);
       grabTestedVersions("device-detection-nginx", "nginx-versions", [
           { title: "NGINX Version", getValue: (d) => d.NginxVersion }
       ]);
@@ -133,15 +137,9 @@ These are automatically tested on [GitHub](https://github.com/51Degrees?q=go&typ
 If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{varnish}
-Language Versions:
-- Varnish 6.0.8
-
-Platforms:
-- Ubuntu 18.04
-  - 64-bit (x86_64)
-- Ubuntu 20.04
-  - 64-bit (x86_64)
-
+These are automatically tested on [GitHub](https://github.com/51Degrees/51degrees-varnish).
+<div id="varnish-versions"></div>
+If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{nginx}
 These are automatically tested on [GitHub](https://github.com/51Degrees?q=nginx&type=all&language=&sort=).
