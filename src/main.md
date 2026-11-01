@@ -99,7 +99,7 @@ Tailor your setup for maximum performance:
 - [Nginx Module](https://github.com/51Degrees/device-detection-nginx) - integrate device detection at the edge
 - [Prebid Integration](@ref Integrations_Prebid) - enrich OpenRTB bid requests
 - [UA Parser JS](https://github.com/51Degrees/ua-parser-js) - seamless cloud API integration
-- [Varnish Module](https://github.com/51Degrees/device-detection-varnish) - cache smarter, deliver faster
+- [Varnish Module](https://github.com/51Degrees/51degrees-varnish) - cache smarter, deliver faster
 
 Explore all our SDKs on [GitHub](https://github.com/51Degrees/).
 

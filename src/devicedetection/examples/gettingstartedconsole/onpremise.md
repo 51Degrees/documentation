@@ -29,7 +29,7 @@ You can mix and match elements from different examples in order to match your us
 @startsnippet{varnish}
 This example shows how to use 51Degrees On-premise device detection to determine details about a device based on its User-Agent and User-Agent Client Hint HTTP header values.
 
-This example is available in full on [GitHub](https://github.com/51Degrees/device-detection-varnish/blob/master/examples/hash/gettingStarted.vcl).
+This example is available in full on [GitHub](https://github.com/51Degrees/51degrees-varnish/blob/main/examples/hash/gettingStarted.vcl).
 
 @include{doc} example-require-datafile.txt
 
