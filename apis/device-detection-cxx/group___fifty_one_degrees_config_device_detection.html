@@ -97,12 +97,35 @@ Macros</h2></td></tr>
 <tr class="c-table__row memitem:ga96e1fb5f862ef6efa0df4961d02226d3" id="r_ga96e1fb5f862ef6efa0df4961d02226d3"><td class="c-table__cell"><a id="ga96e1fb5f862ef6efa0df4961d02226d3" name="ga96e1fb5f862ef6efa0df4961d02226d3"></a>
 #define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_UPDATE</b>&#160;&#160;&#160;<a class="el" href="#ga94b965c40134c5b00d18f8ac6caee7cf">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_UPDATE_DEFAULT</a></td></tr>
 <tr class="c-table__row memdesc:ga96e1fb5f862ef6efa0df4961d02226d3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Update matched User-Agent setting used in the default configuration macro #FIFTYONE_DEGREES_DEVICE_DETECTION_CONFIG_DEFAULT. <br /></td></tr>
+<tr class="c-table__row memitem:ga3cca997c788976e4fcd3474235a5e453" id="r_ga3cca997c788976e4fcd3474235a5e453"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga3cca997c788976e4fcd3474235a5e453">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_MAX_LENGTH</a>&#160;&#160;&#160;500</td></tr>
+<tr class="c-table__row memdesc:ga3cca997c788976e4fcd3474235a5e453"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default limit in bytes for maxMatchedUserAgentLength.  <br /></td></tr>
 <tr class="c-table__row memitem:ga16544cb3754411bfd9e188ad02080449" id="r_ga16544cb3754411bfd9e188ad02080449"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga16544cb3754411bfd9e188ad02080449">FIFTYONE_DEGREES_DEVICE_DETECTION_CONFIG_DEFAULT_WITH_INDEX</a></td></tr>
 <tr class="c-table__row memdesc:ga16544cb3754411bfd9e188ad02080449"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default value for the <a class="el" href="structfiftyone_degrees_config_device_detection.html" title="Device detection configuration structure containing device detection specific configuration options,...">fiftyoneDegreesConfigDeviceDetection</a> structure with index.  <br /></td></tr>
 <tr class="c-table__row memitem:gabb2b91dd08098717d4b67ae122b7fd23" id="r_gabb2b91dd08098717d4b67ae122b7fd23"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gabb2b91dd08098717d4b67ae122b7fd23">FIFTYONE_DEGREES_DEVICE_DETECTION_CONFIG_DEFAULT_NO_INDEX</a></td></tr>
 <tr class="c-table__row memdesc:gabb2b91dd08098717d4b67ae122b7fd23"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default value for the <a class="el" href="structfiftyone_degrees_config_device_detection.html" title="Device detection configuration structure containing device detection specific configuration options,...">fiftyoneDegreesConfigDeviceDetection</a> structure without index.  <br /></td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="g-docs__section-heading">Macro Definition Documentation</h2>
+<a id="ga3cca997c788976e4fcd3474235a5e453" name="ga3cca997c788976e4fcd3474235a5e453"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga3cca997c788976e4fcd3474235a5e453">&#9670;&#160;</a></span>FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_MAX_LENGTH</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_MAX_LENGTH&#160;&#160;&#160;500</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Default limit in bytes for maxMatchedUserAgentLength. </p>
+<p>No RFC or browser sets a limit on these headers. In the 20,000 evidence sample the longest pseudo header is 316 bytes and the longest User-Agent 331, with none over 500. A longer value is ignored, because in practice that does not happen. </p>
+
+</div>
+</div>
 <a id="gabb2b91dd08098717d4b67ae122b7fd23" name="gabb2b91dd08098717d4b67ae122b7fd23"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#gabb2b91dd08098717d4b67ae122b7fd23">&#9670;&#160;</a></span>FIFTYONE_DEGREES_DEVICE_DETECTION_CONFIG_DEFAULT_NO_INDEX</h2>
 
@@ -120,12 +143,13 @@ Macros</h2></td></tr>
 </div><div class="c-member__body">
 <b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_define" href="group___fifty_one_degrees_config.html#ga155d55a0bf732154d07e056fd58c5a87">FIFTYONE_DEGREES_CONFIG_DEFAULT_NO_INDEX</a>, \</div>
 <div class="c-code__line"><a class="code hl_define" href="#ga96e1fb5f862ef6efa0df4961d02226d3">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_UPDATE</a>, \</div>
-<div class="c-code__line">500, <span class="c-code__comment">/* Default to 500 characters for the matched User-Agent */</span> \</div>
+<div class="c-code__line"><a class="code hl_define" href="#ga3cca997c788976e4fcd3474235a5e453">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_MAX_LENGTH</a>, \</div>
 <div class="c-code__line"><a class="code hl_define" href="#gad5c8060686753be7030cb4eb251307fd">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_UNMATCHED</a>, \</div>
 <div class="c-code__line">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_SPECIAL_EVIDENCE</div>
-<div class="ttc" id="agroup___fifty_one_degrees_config_device_detection_html_ga96e1fb5f862ef6efa0df4961d02226d3"><div class="ttname"><a href="#ga96e1fb5f862ef6efa0df4961d02226d3">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_UPDATE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_UPDATE</div><div class="ttdoc">Update matched User-Agent setting used in the default configuration macro FIFTYONE_DEGREES_DEVICE_DET...</div><div class="ttdef"><b>Definition</b> config-dd.h:87</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_config_device_detection_html_gad5c8060686753be7030cb4eb251307fd"><div class="ttname"><a href="#gad5c8060686753be7030cb4eb251307fd">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_UNMATCHED</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_UNMATCHED</div><div class="ttdoc">Default value for allow unmatched used in the default configuration.</div><div class="ttdef"><b>Definition</b> config-dd.h:76</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_config_html_ga155d55a0bf732154d07e056fd58c5a87"><div class="ttname"><a href="group___fifty_one_degrees_config.html#ga155d55a0bf732154d07e056fd58c5a87">FIFTYONE_DEGREES_CONFIG_DEFAULT_NO_INDEX</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_CONFIG_DEFAULT_NO_INDEX</div><div class="ttdoc">Default value for the fiftyoneDegreesConfigBase structure without index.</div><div class="ttdef"><b>Definition</b> config.h:110</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_config_device_detection_html_ga3cca997c788976e4fcd3474235a5e453"><div class="ttname"><a href="#ga3cca997c788976e4fcd3474235a5e453">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_MAX_LENGTH</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_MAX_LENGTH</div><div class="ttdoc">Default limit in bytes for maxMatchedUserAgentLength.</div><div class="ttdef"><b>Definition</b> config-dd.h:106</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_config_device_detection_html_ga96e1fb5f862ef6efa0df4961d02226d3"><div class="ttname"><a href="#ga96e1fb5f862ef6efa0df4961d02226d3">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_UPDATE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_UPDATE</div><div class="ttdoc">Update matched User-Agent setting used in the default configuration macro FIFTYONE_DEGREES_DEVICE_DET...</div><div class="ttdef"><b>Definition</b> config-dd.h:97</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_config_device_detection_html_gad5c8060686753be7030cb4eb251307fd"><div class="ttname"><a href="#gad5c8060686753be7030cb4eb251307fd">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_UNMATCHED</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_UNMATCHED</div><div class="ttdoc">Default value for allow unmatched used in the default configuration.</div><div class="ttdef"><b>Definition</b> config-dd.h:86</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_config_html_ga155d55a0bf732154d07e056fd58c5a87"><div class="ttname"><a href="group___fifty_one_degrees_config.html#ga155d55a0bf732154d07e056fd58c5a87">FIFTYONE_DEGREES_CONFIG_DEFAULT_NO_INDEX</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_CONFIG_DEFAULT_NO_INDEX</div><div class="ttdoc">Default value for the fiftyoneDegreesConfigBase structure without index.</div><div class="ttdef"><b>Definition</b> config.h:114</div></div>
 </div><!-- fragment -->
 <p>Default value for the <a class="el" href="structfiftyone_degrees_config_device_detection.html" title="Device detection configuration structure containing device detection specific configuration options,...">fiftyoneDegreesConfigDeviceDetection</a> structure without index. </p>
 
@@ -148,10 +172,10 @@ Macros</h2></td></tr>
 </div><div class="c-member__body">
 <b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_define" href="group___fifty_one_degrees_config.html#gac159c2f53bd7f852b0c17ef41ed4297e">FIFTYONE_DEGREES_CONFIG_DEFAULT_WITH_INDEX</a>, \</div>
 <div class="c-code__line"><a class="code hl_define" href="#ga96e1fb5f862ef6efa0df4961d02226d3">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_UPDATE</a>, \</div>
-<div class="c-code__line">500, <span class="c-code__comment">/* Default to 500 characters for the matched User-Agent */</span> \</div>
+<div class="c-code__line"><a class="code hl_define" href="#ga3cca997c788976e4fcd3474235a5e453">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_MAX_LENGTH</a>, \</div>
 <div class="c-code__line"><a class="code hl_define" href="#gad5c8060686753be7030cb4eb251307fd">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_UNMATCHED</a>, \</div>
 <div class="c-code__line">FIFTYONE_DEGREES_CONFIG_DEVICE_DETECTION_DEFAULT_SPECIAL_EVIDENCE</div>
-<div class="ttc" id="agroup___fifty_one_degrees_config_html_gac159c2f53bd7f852b0c17ef41ed4297e"><div class="ttname"><a href="group___fifty_one_degrees_config.html#gac159c2f53bd7f852b0c17ef41ed4297e">FIFTYONE_DEGREES_CONFIG_DEFAULT_WITH_INDEX</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_CONFIG_DEFAULT_WITH_INDEX</div><div class="ttdoc">Default value for the fiftyoneDegreesConfigBase structure with index.</div><div class="ttdef"><b>Definition</b> config.h:97</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_config_html_gac159c2f53bd7f852b0c17ef41ed4297e"><div class="ttname"><a href="group___fifty_one_degrees_config.html#gac159c2f53bd7f852b0c17ef41ed4297e">FIFTYONE_DEGREES_CONFIG_DEFAULT_WITH_INDEX</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_CONFIG_DEFAULT_WITH_INDEX</div><div class="ttdoc">Default value for the fiftyoneDegreesConfigBase structure with index.</div><div class="ttdef"><b>Definition</b> config.h:101</div></div>
 </div><!-- fragment -->
 <p>Default value for the <a class="el" href="structfiftyone_degrees_config_device_detection.html" title="Device detection configuration structure containing device detection specific configuration options,...">fiftyoneDegreesConfigDeviceDetection</a> structure with index. </p>
 

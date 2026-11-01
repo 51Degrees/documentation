@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fiftyone
 <div class="c-code__line"><a class="code hl_class" href="class_fiftyone_degrees_1_1_device_detection_1_1_engine_device_detection.html">EngineDeviceDetection</a> *engine = <span class="c-code__keyword">new</span> <a class="code hl_class" href="class_fiftyone_degrees_1_1_device_detection_1_1_engine_device_detection.html">EngineDeviceDetection</a>(</div>
 <div class="c-code__line">    config,</div>
 <div class="c-code__line">    properties);</div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_required_properties_config_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_required_properties_config.html">FiftyoneDegrees::Common::RequiredPropertiesConfig</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesPropertiesRequired structure.</div><div class="ttdef"><b>Definition</b> RequiredPropertiesConfig.hpp:58</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_required_properties_config_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_required_properties_config.html">FiftyoneDegrees::Common::RequiredPropertiesConfig</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesPropertiesRequired structure.</div><div class="ttdef"><b>Definition</b> RequiredPropertiesConfig.hpp:59</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_config_device_detection_html_a2179b694d1558a5d23411759051f483f"><div class="ttname"><a href="#a2179b694d1558a5d23411759051f483f">FiftyoneDegrees::DeviceDetection::ConfigDeviceDetection::ConfigDeviceDetection</a></div><div class="ttdeci">ConfigDeviceDetection(fiftyoneDegreesConfigDeviceDetection *config)</div><div class="ttdoc">Constructs a new instance of the configuration with a reference to the C configuration provided.</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_engine_device_detection_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_device_detection_1_1_engine_device_detection.html">FiftyoneDegrees::DeviceDetection::EngineDeviceDetection</a></div><div class="ttdoc">Encapsulates the device detection engine class to be extended by device detection engine implementati...</div><div class="ttdef"><b>Definition</b> EngineDeviceDetection.hpp:84</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_device_detection_synonyms_html_ga61323825da3742fd57daa000ec3b589d"><div class="ttname"><a href="group___fifty_one_degrees_device_detection_synonyms.html#ga61323825da3742fd57daa000ec3b589d">ConfigDeviceDetection</a></div><div class="ttdeci">fiftyoneDegreesConfigDeviceDetection ConfigDeviceDetection</div><div class="ttdoc">Synonym for fiftyoneDegreesConfigDeviceDetection type.</div><div class="ttdef"><b>Definition</b> dd/fiftyone.h:51</div></div>
@@ -114,7 +114,7 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a9278b9f8ec15e84c0d594e84cce57cb9" id="r_a9278b9f8ec15e84c0d594e84cce57cb9"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a9278b9f8ec15e84c0d594e84cce57cb9">setUpdateMatchedUserAgent</a> (bool update)</td></tr>
 <tr class="c-table__row memdesc:a9278b9f8ec15e84c0d594e84cce57cb9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set whether or not the matched User-Agent should be constructed.  <br /></td></tr>
 <tr class="c-table__row memitem:a92231c831e2e9f02f669f78191b8993e" id="r_a92231c831e2e9f02f669f78191b8993e"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a92231c831e2e9f02f669f78191b8993e">setMaxMatchedUserAgentLength</a> (int length)</td></tr>
-<tr class="c-table__row memdesc:a92231c831e2e9f02f669f78191b8993e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the maximum length string to be allocated to the matched User-Agent.  <br /></td></tr>
+<tr class="c-table__row memdesc:a92231c831e2e9f02f669f78191b8993e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the limit in bytes on the length of a single header such as User-Agent, of a pseudo header including the separators between its values, and of the matched User-Agent.  <br /></td></tr>
 <tr class="c-table__row memitem:ae5891a037a3b04ef471ace29222874ba" id="r_ae5891a037a3b04ef471ace29222874ba"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ae5891a037a3b04ef471ace29222874ba">setAllowUnmatched</a> (bool allow)</td></tr>
 <tr class="c-table__row memdesc:ae5891a037a3b04ef471ace29222874ba"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set whether there should be at least one matched hash node (or substring) in order for the results to be considered valid.  <br /></td></tr>
 <tr class="c-table__row memitem:a639c1d3e2688c569ef1f087c149d6161" id="r_a639c1d3e2688c569ef1f087c149d6161"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a639c1d3e2688c569ef1f087c149d6161">setProcessSpecialEvidence</a> (bool process)</td></tr>
@@ -122,7 +122,7 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a26c7518ca738b9e9ece3b19e7276248b" id="r_a26c7518ca738b9e9ece3b19e7276248b"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a26c7518ca738b9e9ece3b19e7276248b">getUpdateMatchedUserAgent</a> ()</td></tr>
 <tr class="c-table__row memdesc:a26c7518ca738b9e9ece3b19e7276248b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets whether the characters matched during processing should be stored in results.  <br /></td></tr>
 <tr class="c-table__row memitem:a669c33bcb88392b3c2f629cd4f4e5d23" id="r_a669c33bcb88392b3c2f629cd4f4e5d23"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a669c33bcb88392b3c2f629cd4f4e5d23">getMaxMatchedUserAgentLength</a> ()</td></tr>
-<tr class="c-table__row memdesc:a669c33bcb88392b3c2f629cd4f4e5d23"><td class="c-table__cell">&#160;</td><td class="c-table__cell">If the matched User-Agent characters should be stored the maximum number which should be available.  <br /></td></tr>
+<tr class="c-table__row memdesc:a669c33bcb88392b3c2f629cd4f4e5d23"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the limit in bytes on the length of a single header, a pseudo header and the matched User-Agent, as described in <a class="el" href="#a92231c831e2e9f02f669f78191b8993e" title="Set the limit in bytes on the length of a single header such as User-Agent, of a pseudo header includ...">setMaxMatchedUserAgentLength</a>.  <br /></td></tr>
 <tr class="c-table__row memitem:ae40cb0983dd194ae694dfa46cd60b617" id="r_ae40cb0983dd194ae694dfa46cd60b617"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ae40cb0983dd194ae694dfa46cd60b617">getAllowUnmatched</a> ()</td></tr>
 <tr class="c-table__row memdesc:ae40cb0983dd194ae694dfa46cd60b617"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get whether there should be at least one matched hash node (or substring) in order for the results to be considered valid.  <br /></td></tr>
 <tr class="c-table__row memitem:adac0ce38067927ebc8c67e5359b288cf" id="r_adac0ce38067927ebc8c67e5359b288cf"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#adac0ce38067927ebc8c67e5359b288cf">getProcessSpecialEvidence</a> ()</td></tr>
@@ -230,8 +230,8 @@ virtual&#160;</td><td class="c-table__cell"><b>~ConfigBase</b> ()</td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>If the matched User-Agent characters should be stored the maximum number which should be available. </p>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the number of characters to store if enabled, otherwise 0. </dd></dl>
+<p>Get the limit in bytes on the length of a single header, a pseudo header and the matched User-Agent, as described in <a class="el" href="#a92231c831e2e9f02f669f78191b8993e" title="Set the limit in bytes on the length of a single header such as User-Agent, of a pseudo header includ...">setMaxMatchedUserAgentLength</a>. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the limit, whether or not the matched User-Agent is stored </dd></dl>
 
 </div>
 </div>
@@ -331,8 +331,8 @@ virtual&#160;</td><td class="c-table__cell"><b>~ConfigBase</b> ()</td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Set the maximum length string to be allocated to the matched User-Agent. </p>
-<p>This is only required if <a class="el" href="#a9278b9f8ec15e84c0d594e84cce57cb9" title="Set whether or not the matched User-Agent should be constructed.">setUpdateMatchedUserAgent</a> is set to true. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Set the limit in bytes on the length of a single header such as User-Agent, of a pseudo header including the separators between its values, and of the matched User-Agent. </p>
+<p>The working memory for a pseudo header is allocated from this value when a set of results is created, and detection does not grow it. A value longer than the limit is ignored and detection moves on to the next header. A direct User-Agent call over the limit gives the same results as evidence holding that value. The limit applies whether or not <a class="el" href="#a9278b9f8ec15e84c0d594e84cce57cb9" title="Set whether or not the matched User-Agent should be constructed.">setUpdateMatchedUserAgent</a> is true. The default is 500. To raise the limit set a larger value before the engine is created, which also raises the memory each set of results holds. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">length</td><td>to set </td></tr>
   </table>
@@ -387,7 +387,7 @@ virtual&#160;</td><td class="c-table__cell"><b>~ConfigBase</b> ()</td></tr>
 </div><div class="c-member__body">
 
 <p>Set whether or not the matched User-Agent should be constructed. </p>
-<p>This is usually only needed for debugging User-Agents. If this is set to true then <a class="el" href="#a92231c831e2e9f02f669f78191b8993e" title="Set the maximum length string to be allocated to the matched User-Agent.">setMaxMatchedUserAgentLength</a> must be used to provide the number of characters to record. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This is usually only needed for debugging User-Agents. If this is set to true then <a class="el" href="#a92231c831e2e9f02f669f78191b8993e" title="Set the limit in bytes on the length of a single header such as User-Agent, of a pseudo header includ...">setMaxMatchedUserAgentLength</a> must be used to provide the number of characters to record. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">update</td><td>should update the matched User-Agent </td></tr>
   </table>

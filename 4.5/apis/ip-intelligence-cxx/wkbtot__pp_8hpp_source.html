@@ -96,17 +96,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('wkbtot__pp_8hp
 <div class="c-code__line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="c-code__preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="c-code__line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="c-code__line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="c-code__keyword">namespace </span><a class="code hl_namespace" href="namespace_fiftyone_degrees_1_1_common.html">FiftyoneDegrees::Common</a> {</div>
-<div class="c-code__line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    fiftyoneDegreesWkbtotResult <a class="code hl_function" href="namespace_fiftyone_degrees_1_1_common.html#ad5cbee6553dca5ca0a086c40d2a5020f">writeWkbStringToStringStream</a>(</div>
-<div class="c-code__line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="c-code__keyword">const</span> fiftyoneDegreesVarLengthByteArray *wkbString,</div>
-<div class="c-code__line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        fiftyoneDegreesWkbtotReductionMode reductionMode,</div>
-<div class="c-code__line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        std::stringstream &amp;stream,</div>
-<div class="c-code__line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        uint8_t decimalPlaces,</div>
-<div class="c-code__line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        fiftyoneDegreesException *exception);</div>
-<div class="c-code__line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
-<div class="c-code__line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="c-code__line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="c-code__preprocessor">#endif </span><span class="c-code__comment">//FIFTYONE_DEGREES_WKBTOT_HPP_INCLUDED</span></div>
+<div class="c-code__line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>FIFTYONE_DEGREES_COMMON_CXX_BEGIN</div>
+<div class="c-code__line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    fiftyoneDegreesWkbtotResult <a class="code hl_function" href="namespace_fiftyone_degrees_1_1_common.html#ace2b1584b166946cdfad6bb3f1678e9a">writeWkbStringToStringStream</a>(</div>
+<div class="c-code__line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="c-code__keyword">const</span> fiftyoneDegreesVarLengthByteArray *wkbString,</div>
+<div class="c-code__line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        fiftyoneDegreesWkbtotReductionMode reductionMode,</div>
+<div class="c-code__line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        std::stringstream &amp;stream,</div>
+<div class="c-code__line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        uint8_t decimalPlaces,</div>
+<div class="c-code__line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        fiftyoneDegreesException *exception);</div>
+<div class="c-code__line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>FIFTYONE_DEGREES_COMMON_CXX_END</div>
+<div class="c-code__line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="c-code__line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="c-code__line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="c-code__preprocessor">#endif </span><span class="c-code__comment">//FIFTYONE_DEGREES_WKBTOT_HPP_INCLUDED</span></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_common_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_common.html">FiftyoneDegrees::Common</a></div><div class="ttdoc">Shared classes.</div><div class="ttdef"><b>Definition</b> Collection.hpp:31</div></div>
-<div class="ttc" id="anamespace_fiftyone_degrees_1_1_common_html_ad5cbee6553dca5ca0a086c40d2a5020f"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_common.html#ad5cbee6553dca5ca0a086c40d2a5020f">FiftyoneDegrees::Common::writeWkbStringToStringStream</a></div><div class="ttdeci">WkbtotResult writeWkbStringToStringStream(const VarLengthByteArray *const wkbString, WkbtotReductionMode reductionMode, std::stringstream &amp;stream, const uint8_t decimalPlaces, Exception *const exception)</div><div class="ttdoc">Converts WKB &quot;string&quot; to WKT string and pushes into a string stream.</div><div class="ttdef"><b>Definition</b> wkbtot_pp.cpp:36</div></div>
+<div class="ttc" id="anamespace_fiftyone_degrees_1_1_common_html_ace2b1584b166946cdfad6bb3f1678e9a"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_common.html#ace2b1584b166946cdfad6bb3f1678e9a">FiftyoneDegrees::Common::writeWkbStringToStringStream</a></div><div class="ttdeci">FIFTYONE_DEGREES_COMMON_CXX_BEGIN WkbtotResult writeWkbStringToStringStream(const VarLengthByteArray *const wkbString, WkbtotReductionMode reductionMode, std::stringstream &amp;stream, const uint8_t decimalPlaces, Exception *const exception)</div><div class="ttdoc">Converts WKB &quot;string&quot; to WKT string and pushes into a string stream.</div><div class="ttdef"><b>Definition</b> wkbtot_pp.cpp:36</div></div>
 </div><!-- fragment --></div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

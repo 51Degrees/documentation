@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <div class="c-code__line"><span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *fileName;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Initialise a file pool</span></div>
-<div class="c-code__line">fiftyoneDegreesStatus status = <a class="code hl_function" href="#ga0b9b6e35e4dc0f6196a07645204ed458">fiftyoneDegreesFilePoolInit</a>(</div>
+<div class="c-code__line">fiftyoneDegreesStatus status = fiftyoneDegreesFilePoolInit(</div>
 <div class="c-code__line">    &amp;filePool,</div>
 <div class="c-code__line">    fileName,</div>
 <div class="c-code__line">    1,</div>
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> (status == <a class="code hl_enumvalue" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4">FIFTYONE_DEGREES_STATUS_SUCCESS</a>) {</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Get a file handle from the pool</span></div>
-<div class="c-code__line">    <a class="code hl_union" href="unionfiftyone_degrees_file_handle.html">fiftyoneDegreesFileHandle</a> *handle = <a class="code hl_function" href="#gacb61703589a06504f8e6b1e653baf700">fiftyoneDegreesFileHandleGet</a>(</div>
+<div class="c-code__line">    <a class="code hl_union" href="unionfiftyone_degrees_file_handle.html">fiftyoneDegreesFileHandle</a> *handle = fiftyoneDegreesFileHandleGet(</div>
 <div class="c-code__line">        &amp;pool,</div>
 <div class="c-code__line">        exception);</div>
 <div class="c-code__line"> </div>
@@ -120,21 +120,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <div class="c-code__line">        <span class="c-code__comment">// ...</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// Release the file handle back to the pool</span></div>
-<div class="c-code__line">        <a class="code hl_function" href="#ga597c3f2a4d837ae3317906686947d18b">fiftyoneDegreesFileHandleRelease</a>(handle);</div>
+<div class="c-code__line">        fiftyoneDegreesFileHandleRelease(handle);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Release the file pool</span></div>
 <div class="c-code__line">    <a class="code hl_function" href="#gae1e78286866f6910b04fc1bc162ccc4b">fiftyoneDegreesFilePoolRelease</a>(&amp;pool);</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="agroup___fifty_one_degrees_exceptions_html_ga840c1eb91356648b93534dd99495c7dd"><div class="ttname"><a href="group___fifty_one_degrees_exceptions.html#ga840c1eb91356648b93534dd99495c7dd">FIFTYONE_DEGREES_EXCEPTION_OKAY</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_EXCEPTION_OKAY</div><div class="ttdoc">Macro used to check if there is no exception currently.</div><div class="ttdef"><b>Definition</b> exceptions.h:153</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_exceptions_html_gae78f9f100e8f25f01c57fd36e7a6aa18"><div class="ttname"><a href="group___fifty_one_degrees_exceptions.html#gae78f9f100e8f25f01c57fd36e7a6aa18">FIFTYONE_DEGREES_EXCEPTION_CREATE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_EXCEPTION_CREATE</div><div class="ttdoc">Macro used to create an exception.</div><div class="ttdef"><b>Definition</b> exceptions.h:196</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_file_html_ga0b9b6e35e4dc0f6196a07645204ed458"><div class="ttname"><a href="#ga0b9b6e35e4dc0f6196a07645204ed458">fiftyoneDegreesFilePoolInit</a></div><div class="ttdeci">fiftyoneDegreesStatusCode fiftyoneDegreesFilePoolInit(fiftyoneDegreesFilePool *filePool, const char *fileName, uint16_t concurrency, fiftyoneDegreesException *exception)</div><div class="ttdoc">Initialises the pool with a stack of open read only file handles all associated with the file name.</div><div class="ttdef"><b>Definition</b> file.c:1006</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_file_html_ga597c3f2a4d837ae3317906686947d18b"><div class="ttname"><a href="#ga597c3f2a4d837ae3317906686947d18b">fiftyoneDegreesFileHandleRelease</a></div><div class="ttdeci">void fiftyoneDegreesFileHandleRelease(fiftyoneDegreesFileHandle *handle)</div><div class="ttdoc">Returns a handle previously retrieved via fiftyoneDegreesFileHandleGet back to the pool.</div><div class="ttdef"><b>Definition</b> file.c:1044</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_file_html_gacb61703589a06504f8e6b1e653baf700"><div class="ttname"><a href="#gacb61703589a06504f8e6b1e653baf700">fiftyoneDegreesFileHandleGet</a></div><div class="ttdeci">fiftyoneDegreesFileHandle * fiftyoneDegreesFileHandleGet(fiftyoneDegreesFilePool *filePool, fiftyoneDegreesException *exception)</div><div class="ttdoc">Retrieves a read only open file handle from the pool.</div><div class="ttdef"><b>Definition</b> file.c:1038</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_file_html_gae1e78286866f6910b04fc1bc162ccc4b"><div class="ttname"><a href="#gae1e78286866f6910b04fc1bc162ccc4b">fiftyoneDegreesFilePoolRelease</a></div><div class="ttdeci">void fiftyoneDegreesFilePoolRelease(fiftyoneDegreesFilePool *filePool)</div><div class="ttdoc">Releases the file handles contained in the pool and frees any internal memory used by the pool.</div><div class="ttdef"><b>Definition</b> file.c:1048</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_status_html_gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4"><div class="ttname"><a href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4">FIFTYONE_DEGREES_STATUS_SUCCESS</a></div><div class="ttdeci">@ FIFTYONE_DEGREES_STATUS_SUCCESS</div><div class="ttdoc">All okay.</div><div class="ttdef"><b>Definition</b> status.h:78</div></div>
-<div class="ttc" id="astructfiftyone_degrees_file_pool_html"><div class="ttname"><a href="structfiftyone_degrees_file_pool.html">fiftyoneDegreesFilePool</a></div><div class="ttdoc">Stack of handles used to read data from a single source file.</div><div class="ttdef"><b>Definition</b> file.h:229</div></div>
-<div class="ttc" id="aunionfiftyone_degrees_file_handle_html"><div class="ttname"><a href="unionfiftyone_degrees_file_handle.html">fiftyoneDegreesFileHandle</a></div><div class="ttdoc">File handle node in the stack of handles.</div><div class="ttdef"><b>Definition</b> file.h:221</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_exceptions_html_ga840c1eb91356648b93534dd99495c7dd"><div class="ttname"><a href="group___fifty_one_degrees_exceptions.html#ga840c1eb91356648b93534dd99495c7dd">FIFTYONE_DEGREES_EXCEPTION_OKAY</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_EXCEPTION_OKAY</div><div class="ttdoc">Macro used to check if there is no exception currently.</div><div class="ttdef"><b>Definition</b> exceptions.h:157</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_exceptions_html_gae78f9f100e8f25f01c57fd36e7a6aa18"><div class="ttname"><a href="group___fifty_one_degrees_exceptions.html#gae78f9f100e8f25f01c57fd36e7a6aa18">FIFTYONE_DEGREES_EXCEPTION_CREATE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_EXCEPTION_CREATE</div><div class="ttdoc">Macro used to create an exception.</div><div class="ttdef"><b>Definition</b> exceptions.h:200</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_file_html_gae1e78286866f6910b04fc1bc162ccc4b"><div class="ttname"><a href="#gae1e78286866f6910b04fc1bc162ccc4b">fiftyoneDegreesFilePoolRelease</a></div><div class="ttdeci">void fiftyoneDegreesFilePoolRelease(fiftyoneDegreesFilePool *filePool)</div><div class="ttdoc">Releases the file handles contained in the pool and frees any internal memory used by the pool.</div><div class="ttdef"><b>Definition</b> file.c:1042</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_status_html_gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4"><div class="ttname"><a href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4">FIFTYONE_DEGREES_STATUS_SUCCESS</a></div><div class="ttdeci">@ FIFTYONE_DEGREES_STATUS_SUCCESS</div><div class="ttdoc">All okay.</div><div class="ttdef"><b>Definition</b> status.h:82</div></div>
+<div class="ttc" id="astructfiftyone_degrees_file_pool_html"><div class="ttname"><a href="structfiftyone_degrees_file_pool.html">fiftyoneDegreesFilePool</a></div><div class="ttdoc">Stack of handles used to read data from a single source file.</div><div class="ttdef"><b>Definition</b> file.h:233</div></div>
+<div class="ttc" id="aunionfiftyone_degrees_file_handle_html"><div class="ttname"><a href="unionfiftyone_degrees_file_handle.html">fiftyoneDegreesFileHandle</a></div><div class="ttdoc">File handle node in the stack of handles.</div><div class="ttdef"><b>Definition</b> file.h:225</div></div>
 </div><!-- fragment --><h2>Design</h2>
 <p>To improve performance in multi-threaded operation a non locking stack is used where a Compare and Swap (CAS) atomic operation is used to pop and push handles on and off the stack. The design was adapted from the following article (<a href="http://nullprogram.com/blog/2014/09/02/">http://nullprogram.com/blog/2014/09/02/</a>) which explains some of the challenges involved including the ABA problem (<a href="https://en.wikipedia.org/wiki/ABA_problem">https://en.wikipedia.org/wiki/ABA_problem</a>). It is for this reason the head structure is implemented as a union between the values and the exchange integer. Pointers are not used as the address space for the stack is continuous and always very small compared to the total addressable memory space.</p>
 <ul>
@@ -220,6 +217,8 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ga44a54074fb394d1f2745553a329fd413"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Resets the pool without releasing any resources.  <br /></td></tr>
 <tr class="c-table__row memitem:gaf1c6cdfbffb9530fec860f61727b72b8" id="r_gaf1c6cdfbffb9530fec860f61727b72b8"><td class="c-table__cell">const&#160;char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#gaf1c6cdfbffb9530fec860f61727b72b8">fiftyoneDegreesFileGetFileName</a> (const char *filePath)</td></tr>
 <tr class="c-table__row memdesc:gaf1c6cdfbffb9530fec860f61727b72b8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the last, file name, segment of the full file path.  <br /></td></tr>
+<tr class="c-table__row memitem:ga2da43a9132106e51cf5250c7ba28b689" id="r_ga2da43a9132106e51cf5250c7ba28b689"><td class="c-table__cell">const&#160;char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga2da43a9132106e51cf5250c7ba28b689">fiftyoneDegreesFileGetBaseName</a> (const char *path)</td></tr>
+<tr class="c-table__row memdesc:ga2da43a9132106e51cf5250c7ba28b689"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the name of the file after the last separator in the path.  <br /></td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="g-docs__section-heading">Macro Definition Documentation</h2>
 <a id="gaf3ee91aae926f0082ceb3bd0b291bee1" name="gaf3ee91aae926f0082ceb3bd0b291bee1"></a>
@@ -522,6 +521,36 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the number of matching files which have been successfully deleted </dd></dl>
+
+</div>
+</div>
+<a id="ga2da43a9132106e51cf5250c7ba28b689" name="ga2da43a9132106e51cf5250c7ba28b689"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga2da43a9132106e51cf5250c7ba28b689">&#9670;&#160;</a></span>fiftyoneDegreesFileGetBaseName()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const char * fiftyoneDegreesFileGetBaseName </td>
+          <td>(</td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the name of the file after the last separator in the path. </p>
+<p>A forward slash and a backslash both count as a separator. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>full path to the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the file name, or NULL if the path has no separator or ends with one. </dd></dl>
 
 </div>
 </div>

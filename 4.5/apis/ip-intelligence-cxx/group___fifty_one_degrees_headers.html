@@ -82,14 +82,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <div class="c-code__line"><span class="c-code__keywordtype">void</span> *state;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Create the headers structure</span></div>
-<div class="c-code__line"><a class="code hl_typedef" href="#ga8742ecca65bb05ccfb68ae6e23afa6b0">fiftyoneDegreesHeaders</a> *headers = <a class="code hl_function" href="#gab579fef40198592c010574c6bf920394">fiftyoneDegreesHeadersCreate</a>(</div>
+<div class="c-code__line"><a class="code hl_typedef" href="#ga8742ecca65bb05ccfb68ae6e23afa6b0">fiftyoneDegreesHeaders</a> *headers = fiftyoneDegreesHeadersCreate(</div>
 <div class="c-code__line">    <span class="c-code__keyword">false</span>,</div>
 <div class="c-code__line">    state,</div>
 <div class="c-code__line">    getHeaderId,</div>
 <div class="c-code__line">    exception);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Get the index of a header</span></div>
-<div class="c-code__line"><span class="c-code__keywordtype">int</span> index = <a class="code hl_function" href="#gaea092397f599134c43b9283e34df2bb0">fiftyoneDegreesHeaderGetIndex</a>(</div>
+<div class="c-code__line"><span class="c-code__keywordtype">int</span> index = fiftyoneDegreesHeaderGetIndex(</div>
 <div class="c-code__line">    headers,</div>
 <div class="c-code__line">    <span class="c-code__stringliteral">&quot;user-agent&quot;</span>,</div>
 <div class="c-code__line">    strlen(<span class="c-code__stringliteral">&quot;user-agent&quot;</span>));</div>
@@ -104,10 +104,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <div class="c-code__line"><span class="c-code__comment">// Free the headers structure</span></div>
 <div class="c-code__line"><a class="code hl_function" href="#ga543fc7c6ee493f25a4e98e4e4c433520">fiftyoneDegreesHeadersFree</a>(headers);</div>
 <div class="ttc" id="agroup___fifty_one_degrees_headers_html_ga543fc7c6ee493f25a4e98e4e4c433520"><div class="ttname"><a href="#ga543fc7c6ee493f25a4e98e4e4c433520">fiftyoneDegreesHeadersFree</a></div><div class="ttdeci">void fiftyoneDegreesHeadersFree(fiftyoneDegreesHeaders *headers)</div><div class="ttdoc">Frees the memory allocated by the fiftyoneDegreesHeadersCreate method.</div><div class="ttdef"><b>Definition</b> headers.c:610</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_headers_html_ga8742ecca65bb05ccfb68ae6e23afa6b0"><div class="ttname"><a href="#ga8742ecca65bb05ccfb68ae6e23afa6b0">fiftyoneDegreesHeaders</a></div><div class="ttdeci">fiftyoneDegreesHeaderArray fiftyoneDegreesHeaders</div><div class="ttdoc">Array of headers used to easily access and track the size of the array.</div><div class="ttdef"><b>Definition</b> headers.h:167</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_headers_html_ga8c00a3b6787776fa32b4ef770ad258c9"><div class="ttname"><a href="#ga8c00a3b6787776fa32b4ef770ad258c9">fiftyoneDegreesHeadersGetMethod</a></div><div class="ttdeci">long(* fiftyoneDegreesHeadersGetMethod)(void *state, uint32_t index, fiftyoneDegreesCollectionItem *nameItem)</div><div class="ttdoc">Gets the unique id and name of the header at the requested index.</div><div class="ttdef"><b>Definition</b> headers.h:178</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_headers_html_gab579fef40198592c010574c6bf920394"><div class="ttname"><a href="#gab579fef40198592c010574c6bf920394">fiftyoneDegreesHeadersCreate</a></div><div class="ttdeci">fiftyoneDegreesHeaders * fiftyoneDegreesHeadersCreate(bool expectUpperPrefixedHeaders, void *state, fiftyoneDegreesHeadersGetMethod get, fiftyoneDegreesException *exception)</div><div class="ttdoc">Creates a new headers instance configured with the unique HTTP names needed from evidence.</div><div class="ttdef"><b>Definition</b> headers.c:520</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_headers_html_gaea092397f599134c43b9283e34df2bb0"><div class="ttname"><a href="#gaea092397f599134c43b9283e34df2bb0">fiftyoneDegreesHeaderGetIndex</a></div><div class="ttdeci">int fiftyoneDegreesHeaderGetIndex(fiftyoneDegreesHeaders *headers, const char *httpHeaderName, size_t length)</div><div class="ttdoc">Provides the integer index of the HTTP header name, or -1 if there is no matching header.</div><div class="ttdef"><b>Definition</b> headers.c:564</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_headers_html_ga8742ecca65bb05ccfb68ae6e23afa6b0"><div class="ttname"><a href="#ga8742ecca65bb05ccfb68ae6e23afa6b0">fiftyoneDegreesHeaders</a></div><div class="ttdeci">fiftyoneDegreesHeaderArray fiftyoneDegreesHeaders</div><div class="ttdoc">Array of headers used to easily access and track the size of the array.</div><div class="ttdef"><b>Definition</b> headers.h:171</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_headers_html_ga8c00a3b6787776fa32b4ef770ad258c9"><div class="ttname"><a href="#ga8c00a3b6787776fa32b4ef770ad258c9">fiftyoneDegreesHeadersGetMethod</a></div><div class="ttdeci">long(* fiftyoneDegreesHeadersGetMethod)(void *state, uint32_t index, fiftyoneDegreesCollectionItem *nameItem)</div><div class="ttdoc">Gets the unique id and name of the header at the requested index.</div><div class="ttdef"><b>Definition</b> headers.h:182</div></div>
 </div><!-- fragment --> </div><h2 class="g-docs__section-heading">
 Collaboration diagram for Headers:</h2>
 <div class="dyncontent">

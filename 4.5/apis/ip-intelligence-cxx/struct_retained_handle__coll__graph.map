@@ -1,0 +1,10 @@
+<map id="RetainedHandle" name="RetainedHandle">
+<area shape="rect" id="Node000001" title="A handle and what keeps its memory allocated." alt="" coords="5,232,132,257"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="83,116,313,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,149,118,167,92,201,76,233,71,231,87,198,115,163,145,144"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="157,232,399,257"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="192,155,189,182,191,195,196,207,209,220,226,230,224,234,206,224,192,209,186,196,184,182,187,154"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="107,5,289,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,59,201,116,195,116,195,59"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="270,219,261,193,247,167,219,144,222,140,251,164,266,190,275,217"/>
+</map>

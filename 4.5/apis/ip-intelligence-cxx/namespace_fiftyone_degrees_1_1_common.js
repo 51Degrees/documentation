@@ -24,6 +24,6 @@ var namespace_fiftyone_degrees_1_1_common =
     [ "Value", "class_fiftyone_degrees_1_1_common_1_1_value.html", "class_fiftyone_degrees_1_1_common_1_1_value" ],
     [ "ValueMetaData", "class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html", "class_fiftyone_degrees_1_1_common_1_1_value_meta_data" ],
     [ "ValueMetaDataKey", "class_fiftyone_degrees_1_1_common_1_1_value_meta_data_key.html", "class_fiftyone_degrees_1_1_common_1_1_value_meta_data_key" ],
-    [ "writeStoredBinaryValueToStringStream", "namespace_fiftyone_degrees_1_1_common.html#aae9dc926a9b1a85c4ac8feeb739ea3ba", null ],
-    [ "writeWkbStringToStringStream", "namespace_fiftyone_degrees_1_1_common.html#ad5cbee6553dca5ca0a086c40d2a5020f", null ]
+    [ "writeStoredBinaryValueToStringStream", "namespace_fiftyone_degrees_1_1_common.html#a7e5e82f45d65fc6f1a983433c1a7dcbb", null ],
+    [ "writeWkbStringToStringStream", "namespace_fiftyone_degrees_1_1_common.html#ace2b1584b166946cdfad6bb3f1678e9a", null ]
 ];

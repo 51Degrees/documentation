@@ -112,6 +112,9 @@ Structs</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-define-members" class="g-docs__section-heading"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="c-table__row memitem:gafe8b176a1f05a93ae0a5a9e1365e3abe" id="r_gafe8b176a1f05a93ae0a5a9e1365e3abe"><td class="c-table__cell"><a id="gafe8b176a1f05a93ae0a5a9e1365e3abe" name="gafe8b176a1f05a93ae0a5a9e1365e3abe"></a>
+#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_PROPERTIES_SEPARATORS</b>&#160;&#160;&#160;&quot;|, &quot;</td></tr>
+<tr class="c-table__row memdesc:gafe8b176a1f05a93ae0a5a9e1365e3abe"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Characters which separate the names in a required properties string. <br /></td></tr>
 <tr class="c-table__row memitem:ga60068561f8c636b78121cc536b4d495d" id="r_ga60068561f8c636b78121cc536b4d495d"><td class="c-table__cell"><a id="ga60068561f8c636b78121cc536b4d495d" name="ga60068561f8c636b78121cc536b4d495d"></a>
 #define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_COMPONENT_MASK_ALL</b>&#160;&#160;&#160;UINT32_MAX</td></tr>
 <tr class="c-table__row memdesc:ga60068561f8c636b78121cc536b4d495d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Mask with every component enabled. <br /></td></tr>
@@ -186,7 +189,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 <b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">((uint32_t)(i) &gt;= <a class="code hl_define" href="#ga737ebfe51582d29013e876cd1e318f54">FIFTYONE_DEGREES_COMPONENT_MASK_BITS</a> || \</div>
 <div class="c-code__line">((mask) &amp; (1u &lt;&lt; (i))) != 0)</div>
-<div class="ttc" id="agroup___fifty_one_degrees_properties_html_ga737ebfe51582d29013e876cd1e318f54"><div class="ttname"><a href="#ga737ebfe51582d29013e876cd1e318f54">FIFTYONE_DEGREES_COMPONENT_MASK_BITS</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_COMPONENT_MASK_BITS</div><div class="ttdoc">Number of components the mask can address.</div><div class="ttdef"><b>Definition</b> properties.h:307</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_properties_html_ga737ebfe51582d29013e876cd1e318f54"><div class="ttname"><a href="#ga737ebfe51582d29013e876cd1e318f54">FIFTYONE_DEGREES_COMPONENT_MASK_BITS</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_COMPONENT_MASK_BITS</div><div class="ttdoc">Number of components the mask can address.</div><div class="ttdef"><b>Definition</b> properties.h:321</div></div>
 </div><!-- fragment -->
 <p>True if component index i is enabled under the mask. </p>
 <p>Components at index 32 and above are beyond the mask and are always enabled, so a data set with more than 32 components is filtered for the first 32 only and the shift never exceeds the width of the mask. </p><dl class="params"><dt>Parameters</dt><dd>
@@ -513,8 +516,6 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">0 based index of the property in the required properties or -1 if not available </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_strongly_typed_8c-example.html#a10">Hash/StronglyTyped.c</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -567,8 +568,6 @@ Variables</h2></td></tr>
 
 <p>The default properties required to make all possible properties available. </p>
 <p>Should be used to initialise a new instance of <a class="el" href="structfiftyone_degrees_properties_required.html" title="Defines a set of properties which are required by a caller.">fiftyoneDegreesPropertiesRequired</a>. </p>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8c-example.html#_a1">Hash/MatchMetrics.c</a>, and <a class="el" href="_hash_2_strongly_typed_8c-example.html#_a1">Hash/StronglyTyped.c</a>.</dd>
-</dl>
 
 </div>
 </div>

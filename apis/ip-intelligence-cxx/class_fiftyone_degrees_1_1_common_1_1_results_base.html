@@ -93,9 +93,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fiftyone
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Delete the results</span></div>
 <div class="c-code__line"><span class="c-code__keyword">delete</span> results;</div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_results_base_html_a0fb2fda069860d83ac844d0ac5da58c8"><div class="ttname"><a href="#a0fb2fda069860d83ac844d0ac5da58c8">FiftyoneDegrees::Common::ResultsBase::ResultsBase</a></div><div class="ttdeci">ResultsBase(fiftyoneDegreesResultsBase *results, shared_ptr&lt; fiftyoneDegreesResourceManager &gt; manager)</div><div class="ttdoc">Create a new instance of Results from the results structure provided.</div><div class="ttdef"><b>Definition</b> ResultsBase.cpp:29</div></div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_results_base_html_a270151dce9cdd9c27cce17240738f5bb"><div class="ttname"><a href="#a270151dce9cdd9c27cce17240738f5bb">FiftyoneDegrees::Common::ResultsBase::getValueAsString</a></div><div class="ttdeci">Value&lt; string &gt; getValueAsString(const char *propertyName)</div><div class="ttdoc">Get a string representation of the value associated with the required property name.</div><div class="ttdef"><b>Definition</b> ResultsBase.cpp:106</div></div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_results_base_html_a30352382efd0717e5482182a84d3eef9"><div class="ttname"><a href="#a30352382efd0717e5482182a84d3eef9">FiftyoneDegrees::Common::ResultsBase::getAvailableProperties</a></div><div class="ttdeci">int getAvailableProperties() const</div><div class="ttdoc">Get the number of available properties contained in the Results instance.</div><div class="ttdef"><b>Definition</b> ResultsBase.cpp:39</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_results_base_html_a0fb2fda069860d83ac844d0ac5da58c8"><div class="ttname"><a href="#a0fb2fda069860d83ac844d0ac5da58c8">FiftyoneDegrees::Common::ResultsBase::ResultsBase</a></div><div class="ttdeci">ResultsBase(fiftyoneDegreesResultsBase *results, shared_ptr&lt; fiftyoneDegreesResourceManager &gt; manager)</div><div class="ttdoc">Create a new instance of Results from the results structure provided.</div><div class="ttdef"><b>Definition</b> ResultsBase.cpp:54</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_results_base_html_a270151dce9cdd9c27cce17240738f5bb"><div class="ttname"><a href="#a270151dce9cdd9c27cce17240738f5bb">FiftyoneDegrees::Common::ResultsBase::getValueAsString</a></div><div class="ttdeci">Value&lt; string &gt; getValueAsString(const char *propertyName)</div><div class="ttdoc">Get a string representation of the value associated with the required property name.</div><div class="ttdef"><b>Definition</b> ResultsBase.cpp:131</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_results_base_html_a30352382efd0717e5482182a84d3eef9"><div class="ttname"><a href="#a30352382efd0717e5482182a84d3eef9">FiftyoneDegrees::Common::ResultsBase::getAvailableProperties</a></div><div class="ttdeci">int getAvailableProperties() const</div><div class="ttdoc">Get the number of available properties contained in the Results instance.</div><div class="ttdef"><b>Definition</b> ResultsBase.cpp:64</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_common_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_common.html">FiftyoneDegrees::Common</a></div><div class="ttdoc">Shared classes.</div><div class="ttdef"><b>Definition</b> Collection.hpp:31</div></div>
 </div><!-- fragment --> </div><h2 class="g-docs__section-heading">
 Inheritance diagram for FiftyoneDegrees::Common::ResultsBase:</h2>
@@ -166,6 +166,24 @@ virtual&#160;</td><td class="c-table__cell"><b>~ResultsBase</b> ()</td></tr>
 <tr class="c-table__row memdesc:ade9e858d608481fe0409416bc1336b93"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a double representation of the value associated with the required property name.  <br /></td></tr>
 <tr class="c-table__row memitem:a6fffe472a03bdd9fdce7b7fac2f927e2" id="r_a6fffe472a03bdd9fdce7b7fac2f927e2"><td class="c-table__cell">virtual&#160;<a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Value</a>&lt;&#160;double&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a6fffe472a03bdd9fdce7b7fac2f927e2">getValueAsDouble</a> (int requiredPropertyIndex)</td></tr>
 <tr class="c-table__row memdesc:a6fffe472a03bdd9fdce7b7fac2f927e2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a double representation of the value associated with the required property index.  <br /></td></tr>
+<tr class="c-table__row memitem:adcf042176abf4cc2b7b890e26f42b79c" id="r_adcf042176abf4cc2b7b890e26f42b79c"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Value</a>&lt;&#160;bool&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#adcf042176abf4cc2b7b890e26f42b79c">getValueAsStrictBool</a> (const char *propertyName)</td></tr>
+<tr class="c-table__row memdesc:adcf042176abf4cc2b7b890e26f42b79c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value as a boolean only if its text is "True" or "False".  <br /></td></tr>
+<tr class="c-table__row memitem:ae64048c7e90373c99c5797526ee9e005" id="r_ae64048c7e90373c99c5797526ee9e005"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Value</a>&lt;&#160;bool&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ae64048c7e90373c99c5797526ee9e005">getValueAsStrictBool</a> (const string &amp;propertyName)</td></tr>
+<tr class="c-table__row memdesc:ae64048c7e90373c99c5797526ee9e005"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value as a boolean only if its text is "True" or "False".     <br /></td></tr>
+<tr class="c-table__row memitem:ac72e0843579de1e429fa652fbd2c0eb8" id="r_ac72e0843579de1e429fa652fbd2c0eb8"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Value</a>&lt;&#160;bool&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ac72e0843579de1e429fa652fbd2c0eb8">getValueAsStrictBool</a> (int requiredPropertyIndex)</td></tr>
+<tr class="c-table__row memdesc:ac72e0843579de1e429fa652fbd2c0eb8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value as a boolean only if its text is "True" or "False".  <br /></td></tr>
+<tr class="c-table__row memitem:a7cc6be16d738a6c5fd4246e8dbc59306" id="r_a7cc6be16d738a6c5fd4246e8dbc59306"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Value</a>&lt;&#160;int&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a7cc6be16d738a6c5fd4246e8dbc59306">getValueAsStrictInteger</a> (const char *propertyName)</td></tr>
+<tr class="c-table__row memdesc:a7cc6be16d738a6c5fd4246e8dbc59306"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value as an integer only if all of its text is a whole number an int can hold.  <br /></td></tr>
+<tr class="c-table__row memitem:a640aab5454724b9b466a6512b81b1e94" id="r_a640aab5454724b9b466a6512b81b1e94"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Value</a>&lt;&#160;int&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a640aab5454724b9b466a6512b81b1e94">getValueAsStrictInteger</a> (const string &amp;propertyName)</td></tr>
+<tr class="c-table__row memdesc:a640aab5454724b9b466a6512b81b1e94"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value as an integer only if all of its text is a whole number an int can hold.     <br /></td></tr>
+<tr class="c-table__row memitem:a125fa90017f7b25f7896c6efafec7336" id="r_a125fa90017f7b25f7896c6efafec7336"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Value</a>&lt;&#160;int&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a125fa90017f7b25f7896c6efafec7336">getValueAsStrictInteger</a> (int requiredPropertyIndex)</td></tr>
+<tr class="c-table__row memdesc:a125fa90017f7b25f7896c6efafec7336"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value as an integer only if all of its text is a whole number an int can hold.  <br /></td></tr>
+<tr class="c-table__row memitem:a75fa84db6613fe8daca0842afa9a6158" id="r_a75fa84db6613fe8daca0842afa9a6158"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Value</a>&lt;&#160;double&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a75fa84db6613fe8daca0842afa9a6158">getValueAsStrictDouble</a> (const char *propertyName)</td></tr>
+<tr class="c-table__row memdesc:a75fa84db6613fe8daca0842afa9a6158"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value as a double only if all of its text is a finite number.  <br /></td></tr>
+<tr class="c-table__row memitem:a21741e55d2a74e7646681d88a3d53970" id="r_a21741e55d2a74e7646681d88a3d53970"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Value</a>&lt;&#160;double&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a21741e55d2a74e7646681d88a3d53970">getValueAsStrictDouble</a> (const string &amp;propertyName)</td></tr>
+<tr class="c-table__row memdesc:a21741e55d2a74e7646681d88a3d53970"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value as a double only if all of its text is a finite number.     <br /></td></tr>
+<tr class="c-table__row memitem:a17b3ebb29a8075342589c0b533d40dfa" id="r_a17b3ebb29a8075342589c0b533d40dfa"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Value</a>&lt;&#160;double&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a17b3ebb29a8075342589c0b533d40dfa">getValueAsStrictDouble</a> (int requiredPropertyIndex)</td></tr>
+<tr class="c-table__row memdesc:a17b3ebb29a8075342589c0b533d40dfa"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value as a double only if all of its text is a finite number.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -462,7 +480,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get a boolean representation of the value associated with the required property name. </p>
-<p>If the property name is not valid then false is returned. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the property name is not valid then false is returned. Stored text such as "Unknown" gives false with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#adcf042176abf4cc2b7b890e26f42b79c" title="Get the value as a boolean only if its text is &quot;True&quot; or &quot;False&quot;.">getValueAsStrictBool(const char*)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
   </table>
@@ -492,7 +510,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get a boolean representation of the value associated with the required property name. </p>
-<p>If the property name is not valid then false is returned. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the property name is not valid then false is returned. Stored text such as "Unknown" gives false with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#adcf042176abf4cc2b7b890e26f42b79c" title="Get the value as a boolean only if its text is &quot;True&quot; or &quot;False&quot;.">getValueAsStrictBool(const char*)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
   </table>
@@ -522,7 +540,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get a boolean representation of the value associated with the required property name. </p>
-<p>If the property name is not valid then false is returned. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the property name is not valid then false is returned. Stored text such as "Unknown" gives false with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#adcf042176abf4cc2b7b890e26f42b79c" title="Get the value as a boolean only if its text is &quot;True&quot; or &quot;False&quot;.">getValueAsStrictBool(const char*)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
   </table>
@@ -560,7 +578,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get a boolean representation of the value associated with the required property index. </p>
-<p>If the property index is not valid then false is returned. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the property index is not valid then false is returned. Stored text such as "Unknown" gives false with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#ac72e0843579de1e429fa652fbd2c0eb8" title="Get the value as a boolean only if its text is &quot;True&quot; or &quot;False&quot;.">getValueAsStrictBool(int)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">requiredPropertyIndex</td><td>in the required properties </td></tr>
   </table>
@@ -590,7 +608,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get a double representation of the value associated with the required property name. </p>
-<p>If the property name is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the property name is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. Stored text such as "Unknown" gives 0 with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#a75fa84db6613fe8daca0842afa9a6158" title="Get the value as a double only if all of its text is a finite number.">getValueAsStrictDouble(const char*)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
   </table>
@@ -620,7 +638,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get a double representation of the value associated with the required property name. </p>
-<p>If the property name is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the property name is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. Stored text such as "Unknown" gives 0 with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#a75fa84db6613fe8daca0842afa9a6158" title="Get the value as a double only if all of its text is a finite number.">getValueAsStrictDouble(const char*)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
   </table>
@@ -650,7 +668,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get a double representation of the value associated with the required property name. </p>
-<p>If the property name is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the property name is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. Stored text such as "Unknown" gives 0 with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#a75fa84db6613fe8daca0842afa9a6158" title="Get the value as a double only if all of its text is a finite number.">getValueAsStrictDouble(const char*)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
   </table>
@@ -688,7 +706,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get a double representation of the value associated with the required property index. </p>
-<p>If the property index is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the property index is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. Stored text such as "Unknown" gives 0 with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#a17b3ebb29a8075342589c0b533d40dfa" title="Get the value as a double only if all of its text is a finite number.">getValueAsStrictDouble(int)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">requiredPropertyIndex</td><td>in the required properties </td></tr>
   </table>
@@ -718,7 +736,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get an integer representation of the value associated with the required property name. </p>
-<p>If the property name is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the property name is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. Stored text such as "Unknown" gives 0 with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#a7cc6be16d738a6c5fd4246e8dbc59306" title="Get the value as an integer only if all of its text is a whole number an int can hold.">getValueAsStrictInteger(const char*)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
   </table>
@@ -748,7 +766,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get an integer representation of the value associated with the required property name. </p>
-<p>If the property name is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the property name is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. Stored text such as "Unknown" gives 0 with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#a7cc6be16d738a6c5fd4246e8dbc59306" title="Get the value as an integer only if all of its text is a whole number an int can hold.">getValueAsStrictInteger(const char*)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
   </table>
@@ -778,7 +796,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get an integer representation of the value associated with the required property name. </p>
-<p>If the property name is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the property name is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. Stored text such as "Unknown" gives 0 with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#a7cc6be16d738a6c5fd4246e8dbc59306" title="Get the value as an integer only if all of its text is a whole number an int can hold.">getValueAsStrictInteger(const char*)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
   </table>
@@ -816,13 +834,283 @@ Protected Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get an integer representation of the value associated with the required property index. </p>
-<p>If the property index is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the property index is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. Stored text such as "Unknown" gives 0 with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#a125fa90017f7b25f7896c6efafec7336" title="Get the value as an integer only if all of its text is a whole number an int can hold.">getValueAsStrictInteger(int)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">requiredPropertyIndex</td><td>in the required properties </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">an integer representation of the value for the property </dd></dl>
+
+</div>
+</div>
+<a id="adcf042176abf4cc2b7b890e26f42b79c" name="adcf042176abf4cc2b7b890e26f42b79c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adcf042176abf4cc2b7b890e26f42b79c">&#9670;&#160;</a></span>getValueAsStrictBool() <span class="c-member__count">[1/3]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a>&lt; bool &gt; ResultsBase::getValueAsStrictBool </td>
+          <td>(</td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the value as a boolean only if its text is "True" or "False". </p>
+<p>Any other text, such as "Unknown", gives no value, where <a class="el" href="#a11826c7bd567074ab94733cac5ae60ac" title="Get a boolean representation of the value associated with the required property name.">getValueAsBool(const char*)</a> gives false. This is the remedy until version 5, as that accessor keeps its behaviour for backwards compatibility. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the value, or the reason there is no value </dd></dl>
+
+</div>
+</div>
+<a id="ae64048c7e90373c99c5797526ee9e005" name="ae64048c7e90373c99c5797526ee9e005"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae64048c7e90373c99c5797526ee9e005">&#9670;&#160;</a></span>getValueAsStrictBool() <span class="c-member__count">[2/3]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a>&lt; bool &gt; ResultsBase::getValueAsStrictBool </td>
+          <td>(</td>
+          <td class="c-table__cell">const string &amp;</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the value as a boolean only if its text is "True" or "False".    </p>
+<p>Any other text, such as "Unknown", gives no value, where <a class="el" href="#a11826c7bd567074ab94733cac5ae60ac" title="Get a boolean representation of the value associated with the required property name.">getValueAsBool(const char*)</a> gives false. This is the remedy until version 5, as that accessor keeps its behaviour for backwards compatibility. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the value, or the reason there is no value    </dd></dl>
+
+</div>
+</div>
+<a id="ac72e0843579de1e429fa652fbd2c0eb8" name="ac72e0843579de1e429fa652fbd2c0eb8"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac72e0843579de1e429fa652fbd2c0eb8">&#9670;&#160;</a></span>getValueAsStrictBool() <span class="c-member__count">[3/3]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a>&lt; bool &gt; ResultsBase::getValueAsStrictBool </td>
+          <td>(</td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the value as a boolean only if its text is "True" or "False". </p>
+<p>Any other text, such as "Unknown", gives no value, where <a class="el" href="#a70fd230082c7fdb42be3e7e6d1f70aa2" title="Get a boolean representation of the value associated with the required property index.">getValueAsBool(int)</a> gives false. This is the remedy until version 5, as that accessor keeps its behaviour for backwards compatibility. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">requiredPropertyIndex</td><td>in the required properties </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the value, or the reason there is no value </dd></dl>
+
+</div>
+</div>
+<a id="a75fa84db6613fe8daca0842afa9a6158" name="a75fa84db6613fe8daca0842afa9a6158"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a75fa84db6613fe8daca0842afa9a6158">&#9670;&#160;</a></span>getValueAsStrictDouble() <span class="c-member__count">[1/3]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a>&lt; double &gt; ResultsBase::getValueAsStrictDouble </td>
+          <td>(</td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the value as a double only if all of its text is a finite number. </p>
+<p>Any other text, such as "Unknown", gives no value, where <a class="el" href="#a2ebad8b817dbb91f7bf765fd73f21242" title="Get a double representation of the value associated with the required property name.">getValueAsDouble(const char*)</a> gives 0. This is the remedy until version 5, as that accessor keeps its behaviour for backwards compatibility. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the value, or the reason there is no value </dd></dl>
+
+</div>
+</div>
+<a id="a21741e55d2a74e7646681d88a3d53970" name="a21741e55d2a74e7646681d88a3d53970"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a21741e55d2a74e7646681d88a3d53970">&#9670;&#160;</a></span>getValueAsStrictDouble() <span class="c-member__count">[2/3]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a>&lt; double &gt; ResultsBase::getValueAsStrictDouble </td>
+          <td>(</td>
+          <td class="c-table__cell">const string &amp;</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the value as a double only if all of its text is a finite number.    </p>
+<p>Any other text, such as "Unknown", gives no value, where <a class="el" href="#a2ebad8b817dbb91f7bf765fd73f21242" title="Get a double representation of the value associated with the required property name.">getValueAsDouble(const char*)</a> gives 0. This is the remedy until version 5, as that accessor keeps its behaviour for backwards compatibility. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the value, or the reason there is no value    </dd></dl>
+
+</div>
+</div>
+<a id="a17b3ebb29a8075342589c0b533d40dfa" name="a17b3ebb29a8075342589c0b533d40dfa"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a17b3ebb29a8075342589c0b533d40dfa">&#9670;&#160;</a></span>getValueAsStrictDouble() <span class="c-member__count">[3/3]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a>&lt; double &gt; ResultsBase::getValueAsStrictDouble </td>
+          <td>(</td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the value as a double only if all of its text is a finite number. </p>
+<p>Any other text, such as "Unknown", gives no value, where <a class="el" href="#a6fffe472a03bdd9fdce7b7fac2f927e2" title="Get a double representation of the value associated with the required property index.">getValueAsDouble(int)</a> gives 0. This is the remedy until version 5, as that accessor keeps its behaviour for backwards compatibility. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">requiredPropertyIndex</td><td>in the required properties </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the value, or the reason there is no value </dd></dl>
+
+</div>
+</div>
+<a id="a7cc6be16d738a6c5fd4246e8dbc59306" name="a7cc6be16d738a6c5fd4246e8dbc59306"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7cc6be16d738a6c5fd4246e8dbc59306">&#9670;&#160;</a></span>getValueAsStrictInteger() <span class="c-member__count">[1/3]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a>&lt; int &gt; ResultsBase::getValueAsStrictInteger </td>
+          <td>(</td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the value as an integer only if all of its text is a whole number an int can hold. </p>
+<p>Any other text, such as "Unknown", gives no value, where <a class="el" href="#aa9c83957c477b812f05fc39a14f4ab32" title="Get an integer representation of the value associated with the required property name.">getValueAsInteger(const char*)</a> gives 0. This is the remedy until version 5, as that accessor keeps its behaviour for backwards compatibility. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the value, or the reason there is no value </dd></dl>
+
+</div>
+</div>
+<a id="a640aab5454724b9b466a6512b81b1e94" name="a640aab5454724b9b466a6512b81b1e94"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a640aab5454724b9b466a6512b81b1e94">&#9670;&#160;</a></span>getValueAsStrictInteger() <span class="c-member__count">[2/3]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a>&lt; int &gt; ResultsBase::getValueAsStrictInteger </td>
+          <td>(</td>
+          <td class="c-table__cell">const string &amp;</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the value as an integer only if all of its text is a whole number an int can hold.    </p>
+<p>Any other text, such as "Unknown", gives no value, where <a class="el" href="#aa9c83957c477b812f05fc39a14f4ab32" title="Get an integer representation of the value associated with the required property name.">getValueAsInteger(const char*)</a> gives 0. This is the remedy until version 5, as that accessor keeps its behaviour for backwards compatibility. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the value, or the reason there is no value    </dd></dl>
+
+</div>
+</div>
+<a id="a125fa90017f7b25f7896c6efafec7336" name="a125fa90017f7b25f7896c6efafec7336"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a125fa90017f7b25f7896c6efafec7336">&#9670;&#160;</a></span>getValueAsStrictInteger() <span class="c-member__count">[3/3]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a>&lt; int &gt; ResultsBase::getValueAsStrictInteger </td>
+          <td>(</td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the value as an integer only if all of its text is a whole number an int can hold. </p>
+<p>Any other text, such as "Unknown", gives no value, where <a class="el" href="#ab459f0b76b2fba1771eb25fb6cd5f90e" title="Get an integer representation of the value associated with the required property index.">getValueAsInteger(int)</a> gives 0. This is the remedy until version 5, as that accessor keeps its behaviour for backwards compatibility. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">requiredPropertyIndex</td><td>in the required properties </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the value, or the reason there is no value </dd></dl>
 
 </div>
 </div>

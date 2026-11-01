@@ -90,30 +90,34 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('textfile_8h_so
 <div class="c-code__line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="c-code__line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="c-code__preprocessor">#ifndef FIFTYONE_DEGREES_TEXT_FILE_H_INCLUDED</span></div>
 <div class="c-code__line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="c-code__preprocessor">#define FIFTYONE_DEGREES_TEXT_FILE_H_INCLUDED</span></div>
-<div class="c-code__line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="c-code__line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="c-code__line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="c-code__preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="c-code__line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="c-code__preprocessor">#include &lt;ctype.h&gt;</span></div>
-<div class="c-code__line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="c-code__preprocessor">#include &quot;file.h&quot;</span></div>
-<div class="c-code__line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="c-code__preprocessor">#include &quot;common.h&quot;</span></div>
-<div class="c-code__line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
-<div class="c-code__line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>EXTERNAL <span class="c-code__keywordtype">void</span> <a class="code hl_function" href="group___fifty_one_degrees_text_file.html#ga97b937a5148c9cfdba8c327b930b236a">fiftyoneDegreesTextFileIterateWithLimit</a>(</div>
-<div class="c-code__line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *fileName, </div>
-<div class="c-code__line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="c-code__keywordtype">char</span> *buffer, </div>
-<div class="c-code__line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="c-code__keywordtype">int</span> length, </div>
-<div class="c-code__line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="c-code__keywordtype">int</span> limit,</div>
-<div class="c-code__line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="c-code__keywordtype">void</span> *state,</div>
-<div class="c-code__line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="c-code__keywordtype">void</span>(*callback)(<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>*, <span class="c-code__keywordtype">void</span>*));</div>
-<div class="c-code__line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
-<div class="c-code__line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>EXTERNAL <span class="c-code__keywordtype">void</span> <a class="code hl_function" href="group___fifty_one_degrees_text_file.html#gac2c74dcb5af7844a782d905d14507735">fiftyoneDegreesTextFileIterate</a>(</div>
-<div class="c-code__line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *fileName, </div>
-<div class="c-code__line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="c-code__keywordtype">char</span> *buffer, </div>
-<div class="c-code__line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="c-code__keywordtype">int</span> length, </div>
-<div class="c-code__line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="c-code__keywordtype">void</span> *state,</div>
-<div class="c-code__line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="c-code__keywordtype">void</span>(*callback)(<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>*, <span class="c-code__keywordtype">void</span>*));</div>
-<div class="c-code__line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
-<div class="c-code__line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="c-code__line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="c-code__preprocessor">#endif</span></div>
+<div class="c-code__line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="c-code__line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="c-code__preprocessor">#ifdef FIFTYONE_DEGREES_IPI_SYMBOLS</span></div>
+<div class="c-code__line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="c-code__preprocessor">#include &quot;ipiSymbols.h&quot;</span></div>
+<div class="c-code__line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="c-code__preprocessor">#endif</span></div>
+<div class="c-code__line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="c-code__line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="c-code__line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="c-code__preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="c-code__line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="c-code__preprocessor">#include &lt;ctype.h&gt;</span></div>
+<div class="c-code__line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="c-code__preprocessor">#include &quot;file.h&quot;</span></div>
+<div class="c-code__line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="c-code__preprocessor">#include &quot;common.h&quot;</span></div>
+<div class="c-code__line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="c-code__line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>EXTERNAL <span class="c-code__keywordtype">void</span> <a class="code hl_function" href="group___fifty_one_degrees_text_file.html#ga97b937a5148c9cfdba8c327b930b236a">fiftyoneDegreesTextFileIterateWithLimit</a>(</div>
+<div class="c-code__line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *fileName, </div>
+<div class="c-code__line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="c-code__keywordtype">char</span> *buffer, </div>
+<div class="c-code__line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="c-code__keywordtype">int</span> length, </div>
+<div class="c-code__line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="c-code__keywordtype">int</span> limit,</div>
+<div class="c-code__line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="c-code__keywordtype">void</span> *state,</div>
+<div class="c-code__line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="c-code__keywordtype">void</span>(*callback)(<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>*, <span class="c-code__keywordtype">void</span>*));</div>
+<div class="c-code__line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="c-code__line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>EXTERNAL <span class="c-code__keywordtype">void</span> <a class="code hl_function" href="group___fifty_one_degrees_text_file.html#gac2c74dcb5af7844a782d905d14507735">fiftyoneDegreesTextFileIterate</a>(</div>
+<div class="c-code__line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *fileName, </div>
+<div class="c-code__line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="c-code__keywordtype">char</span> *buffer, </div>
+<div class="c-code__line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="c-code__keywordtype">int</span> length, </div>
+<div class="c-code__line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="c-code__keywordtype">void</span> *state,</div>
+<div class="c-code__line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="c-code__keywordtype">void</span>(*callback)(<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>*, <span class="c-code__keywordtype">void</span>*));</div>
+<div class="c-code__line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="c-code__line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="c-code__line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="c-code__preprocessor">#endif</span></div>
 <div class="ttc" id="agroup___fifty_one_degrees_text_file_html_ga97b937a5148c9cfdba8c327b930b236a"><div class="ttname"><a href="group___fifty_one_degrees_text_file.html#ga97b937a5148c9cfdba8c327b930b236a">fiftyoneDegreesTextFileIterateWithLimit</a></div><div class="ttdeci">void fiftyoneDegreesTextFileIterateWithLimit(const char *fileName, char *buffer, int length, int limit, void *state, void(*callback)(const char *, void *))</div><div class="ttdoc">Iterates over all the lines in a text file up to the given limit number of line to read,...</div><div class="ttdef"><b>Definition</b> textfile.c:53</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_text_file_html_gac2c74dcb5af7844a782d905d14507735"><div class="ttname"><a href="group___fifty_one_degrees_text_file.html#gac2c74dcb5af7844a782d905d14507735">fiftyoneDegreesTextFileIterate</a></div><div class="ttdeci">void fiftyoneDegreesTextFileIterate(const char *fileName, char *buffer, int length, void *state, void(*callback)(const char *, void *))</div><div class="ttdoc">Iterates over all the lines in a text file calling the callback method with each line.</div><div class="ttdef"><b>Definition</b> textfile.c:104</div></div>
 </div><!-- fragment --></div><!-- primary -->

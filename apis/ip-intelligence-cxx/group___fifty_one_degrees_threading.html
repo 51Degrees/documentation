@@ -259,7 +259,7 @@ Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 <b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_define" href="#ga0c3b5a1ee9d321d5f494ff1ed71c771a">FIFTYONE_DEGREES_INTERLOCK_EXCHANGE</a>(d,e,c)</div>
-<div class="ttc" id="agroup___fifty_one_degrees_threading_html_ga0c3b5a1ee9d321d5f494ff1ed71c771a"><div class="ttname"><a href="#ga0c3b5a1ee9d321d5f494ff1ed71c771a">FIFTYONE_DEGREES_INTERLOCK_EXCHANGE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_INTERLOCK_EXCHANGE(d, e, c)</div><div class="ttdoc">Replaces the destination value with the exchange value, only if the destination value matched the com...</div><div class="ttdef"><b>Definition</b> threading.h:333</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_threading_html_ga0c3b5a1ee9d321d5f494ff1ed71c771a"><div class="ttname"><a href="#ga0c3b5a1ee9d321d5f494ff1ed71c771a">FIFTYONE_DEGREES_INTERLOCK_EXCHANGE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_INTERLOCK_EXCHANGE(d, e, c)</div><div class="ttdoc">Replaces the destination value with the exchange value, only if the destination value matched the com...</div><div class="ttdef"><b>Definition</b> threading.h:341</div></div>
 </div><!-- fragment -->
 <p>64 bit compare and swap. </p>
 <p>Replaces the destination value with the exchange value, only if the destination value matched the comparand. Returns the value of d before the swap. </p><dl class="params"><dt>Parameters</dt><dd>
@@ -307,7 +307,7 @@ Functions</h2></td></tr>
 <div class="c-code__line">    <span class="c-code__keyword">false</span>, \</div>
 <div class="c-code__line">    __ATOMIC_SEQ_CST, \</div>
 <div class="c-code__line">    __ATOMIC_SEQ_CST))</div>
-<div class="ttc" id="astructfiftyone_degrees_interlock_double_width_html"><div class="ttname"><a href="structfiftyone_degrees_interlock_double_width.html">fiftyoneDegreesInterlockDoubleWidth</a></div><div class="ttdoc">Double width (64 or 128 depending on the architecture) compare and exchange.</div><div class="ttdef"><b>Definition</b> threading.h:422</div></div>
+<div class="ttc" id="astructfiftyone_degrees_interlock_double_width_html"><div class="ttname"><a href="structfiftyone_degrees_interlock_double_width.html">fiftyoneDegreesInterlockDoubleWidth</a></div><div class="ttdoc">Double width (64 or 128 depending on the architecture) compare and exchange.</div><div class="ttdef"><b>Definition</b> threading.h:430</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -403,11 +403,10 @@ Functions</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
-<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_function" href="#gae8b7eda0e659010045819482e662dfe9">fiftyoneDegreesMutexClose</a>(&amp;m)</div>
-<div class="ttc" id="agroup___fifty_one_degrees_threading_html_gae8b7eda0e659010045819482e662dfe9"><div class="ttname"><a href="#gae8b7eda0e659010045819482e662dfe9">fiftyoneDegreesMutexClose</a></div><div class="ttdeci">void fiftyoneDegreesMutexClose(fiftyoneDegreesMutex *mutex)</div><div class="ttdoc">Closes the mutex passed to the method.</div><div class="ttdef"><b>Definition</b> threading.c:84</div></div>
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesMutexClose(&amp;m)</div>
 </div><!-- fragment -->
 <p>Frees the mutex at the pointer provided. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>A slim reader writer lock holds no resources, so there is nothing to free on Windows. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">m</td><td>mutex to close </td></tr>
   </table>
@@ -434,8 +433,7 @@ Functions</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
-<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_function" href="#ga412e363ad605956b5284fa8d2f718781">fiftyoneDegreesMutexCreate</a>(&amp;m)</div>
-<div class="ttc" id="agroup___fifty_one_degrees_threading_html_ga412e363ad605956b5284fa8d2f718781"><div class="ttname"><a href="#ga412e363ad605956b5284fa8d2f718781">fiftyoneDegreesMutexCreate</a></div><div class="ttdeci">void fiftyoneDegreesMutexCreate(fiftyoneDegreesMutex *mutex)</div><div class="ttdoc">GCC / PTHREAD SIGNAL IMPLEMENTATION - NOT USED BY WINDOWS.</div><div class="ttdef"><b>Definition</b> threading.c:76</div></div>
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesMutexCreate(&amp;m)</div>
 </div><!-- fragment -->
 <p>Creates a new mutex at the pointer provided. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -465,8 +463,7 @@ Functions</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
-<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_function" href="#gae9b9297537e98fe7dd09a1cfed63ab8e">fiftyoneDegreesMutexLock</a>(m)</div>
-<div class="ttc" id="agroup___fifty_one_degrees_threading_html_gae9b9297537e98fe7dd09a1cfed63ab8e"><div class="ttname"><a href="#gae9b9297537e98fe7dd09a1cfed63ab8e">fiftyoneDegreesMutexLock</a></div><div class="ttdeci">void fiftyoneDegreesMutexLock(fiftyoneDegreesMutex *mutex)</div><div class="ttdoc">Locks the mutex passed to the method.</div><div class="ttdef"><b>Definition</b> threading.c:88</div></div>
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesMutexLock(m)</div>
 </div><!-- fragment -->
 <p>Locks the mutex at the pointer provided. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -496,8 +493,7 @@ Functions</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
-<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_function" href="#ga125c38b52f4d76e8308ea051a112f682">fiftyoneDegreesMutexUnlock</a>(m)</div>
-<div class="ttc" id="agroup___fifty_one_degrees_threading_html_ga125c38b52f4d76e8308ea051a112f682"><div class="ttname"><a href="#ga125c38b52f4d76e8308ea051a112f682">fiftyoneDegreesMutexUnlock</a></div><div class="ttdeci">void fiftyoneDegreesMutexUnlock(fiftyoneDegreesMutex *mutex)</div><div class="ttdoc">Unlocks the mutex passed to the method.</div><div class="ttdef"><b>Definition</b> threading.c:92</div></div>
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesMutexUnlock(m)</div>
 </div><!-- fragment -->
 <p>Unlocks the mutex at the pointer provided. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -558,8 +554,7 @@ Functions</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
-<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_function" href="#ga1a1d53af240ba10b72a28688645856d5">fiftyoneDegreesSignalClose</a>(s)</div>
-<div class="ttc" id="agroup___fifty_one_degrees_threading_html_ga1a1d53af240ba10b72a28688645856d5"><div class="ttname"><a href="#ga1a1d53af240ba10b72a28688645856d5">fiftyoneDegreesSignalClose</a></div><div class="ttdeci">void fiftyoneDegreesSignalClose(fiftyoneDegreesSignal *signal)</div><div class="ttdoc">Closes the signal ensuring there is a lock on the signal before destroying the signal.</div><div class="ttdef"><b>Definition</b> threading.c:109</div></div>
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesSignalClose(s)</div>
 </div><!-- fragment -->
 <p>Frees the handle provided to the macro. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -620,8 +615,7 @@ Functions</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
-<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_function" href="#gab55914121bc181a55ca78756c65822cb">fiftyoneDegreesSignalSet</a>(s)</div>
-<div class="ttc" id="agroup___fifty_one_degrees_threading_html_gab55914121bc181a55ca78756c65822cb"><div class="ttname"><a href="#gab55914121bc181a55ca78756c65822cb">fiftyoneDegreesSignalSet</a></div><div class="ttdeci">void fiftyoneDegreesSignalSet(fiftyoneDegreesSignal *signal)</div><div class="ttdoc">If the signal has not been destroyed then sends a signal to a waiting thread that the signal has been...</div><div class="ttdef"><b>Definition</b> threading.c:116</div></div>
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesSignalSet(s)</div>
 </div><!-- fragment -->
 <p>Signals a thread waiting for the signal to proceed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -651,8 +645,7 @@ Functions</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
-<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_function" href="#gaa6cd4457f25cfa6621a529ff0857a217">fiftyoneDegreesSignalWait</a>(s)</div>
-<div class="ttc" id="agroup___fifty_one_degrees_threading_html_gaa6cd4457f25cfa6621a529ff0857a217"><div class="ttname"><a href="#gaa6cd4457f25cfa6621a529ff0857a217">fiftyoneDegreesSignalWait</a></div><div class="ttdeci">void fiftyoneDegreesSignalWait(fiftyoneDegreesSignal *signal)</div><div class="ttdoc">Wait for a signal to be set.</div><div class="ttdef"><b>Definition</b> threading.c:124</div></div>
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesSignalWait(s)</div>
 </div><!-- fragment -->
 <p>Waits for the signal to become set by another thread. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -789,7 +782,7 @@ Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>MUTEX AND THREADING MACROS. </p>
-<p><a class="el" href="group___fifty_one_degrees_synonyms.html#ga5698f901f6ede59c5ad7a254f2538163" title="Synonym for fiftyoneDegreesMutex type.">Mutex</a> used to synchronise access to data structures that could be used in parallel in a multi threaded environment. </p>
+<p><a class="el" href="group___fifty_one_degrees_synonyms.html#ga5698f901f6ede59c5ad7a254f2538163" title="Synonym for fiftyoneDegreesMutex type.">Mutex</a> used to synchronise access to data structures that could be used in parallel in a multi threaded environment. On Windows this is a slim reader writer lock taken only for exclusive access, which stays in user mode unless another thread holds it. The cache takes a lock for every item it hands out, so a lock that entered the kernel each time stops threads scaling. </p>
 
 </div>
 </div>

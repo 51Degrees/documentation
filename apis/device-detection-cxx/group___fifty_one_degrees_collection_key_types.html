@@ -231,11 +231,10 @@ static&#160;const&#160;<a class="el" href="structfiftyone_degrees_collection_key
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                                                              = {</div>
 <div class="c-code__line">    FIFTYONE_DEGREES_COLLECTION_ENTRY_TYPE_COMPONENT,</div>
 <div class="c-code__line">    <span class="c-code__keyword">sizeof</span>(<a class="code hl_struct" href="structfiftyone_degrees_component.html">fiftyoneDegreesComponent</a>) - <span class="c-code__keyword">sizeof</span>(<a class="code hl_struct" href="structfiftyone_degrees_component_key_value_pair.html">fiftyoneDegreesComponentKeyValuePair</a>),</div>
-<div class="c-code__line">    <a class="code hl_function" href="group___fifty_one_degrees_component.html#ga44efe1f4b5782dde8dc06a5c3f65970c">fiftyoneDegreesComponentGetFinalSize</a>,</div>
+<div class="c-code__line">    fiftyoneDegreesComponentGetFinalSize,</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="agroup___fifty_one_degrees_component_html_ga44efe1f4b5782dde8dc06a5c3f65970c"><div class="ttname"><a href="group___fifty_one_degrees_component.html#ga44efe1f4b5782dde8dc06a5c3f65970c">fiftyoneDegreesComponentGetFinalSize</a></div><div class="ttdeci">uint32_t fiftyoneDegreesComponentGetFinalSize(const void *initial, fiftyoneDegreesException *exception)</div><div class="ttdoc">Gets size of Component with trailing key-value pair.</div></div>
-<div class="ttc" id="astructfiftyone_degrees_component_html"><div class="ttname"><a href="structfiftyone_degrees_component.html">fiftyoneDegreesComponent</a></div><div class="ttdoc">A component of a data set.</div><div class="ttdef"><b>Definition</b> component.h:80</div></div>
-<div class="ttc" id="astructfiftyone_degrees_component_key_value_pair_html"><div class="ttname"><a href="structfiftyone_degrees_component_key_value_pair.html">fiftyoneDegreesComponentKeyValuePair</a></div><div class="ttdoc">Key value pair contained in each component.</div><div class="ttdef"><b>Definition</b> component.h:70</div></div>
+<div class="ttc" id="astructfiftyone_degrees_component_html"><div class="ttname"><a href="structfiftyone_degrees_component.html">fiftyoneDegreesComponent</a></div><div class="ttdoc">A component of a data set.</div><div class="ttdef"><b>Definition</b> component.h:84</div></div>
+<div class="ttc" id="astructfiftyone_degrees_component_key_value_pair_html"><div class="ttname"><a href="structfiftyone_degrees_component_key_value_pair.html">fiftyoneDegreesComponentKeyValuePair</a></div><div class="ttdoc">Key value pair contained in each component.</div><div class="ttdef"><b>Definition</b> component.h:74</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -298,7 +297,7 @@ static&#160;const&#160;<a class="el" href="structfiftyone_degrees_collection_key
 <div class="c-code__line">    <span class="c-code__keyword">sizeof</span>(<a class="code hl_typedef" href="group__fiftyone_degrees_float.html#ga36a872a36a2ba8ef7d595412a65c2442">fiftyoneDegreesFloat</a>),</div>
 <div class="c-code__line">    NULL,</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="agroup__fiftyone_degrees_float_html_ga36a872a36a2ba8ef7d595412a65c2442"><div class="ttname"><a href="group__fiftyone_degrees_float.html#ga36a872a36a2ba8ef7d595412a65c2442">fiftyoneDegreesFloat</a></div><div class="ttdeci">fiftyoneDegreesFloatInternal fiftyoneDegreesFloat</div><div class="ttdoc">For some compilers such as clang and Microsoft C or computers where the IEEE single precision standar...</div><div class="ttdef"><b>Definition</b> float.h:187</div></div>
+<div class="ttc" id="agroup__fiftyone_degrees_float_html_ga36a872a36a2ba8ef7d595412a65c2442"><div class="ttname"><a href="group__fiftyone_degrees_float.html#ga36a872a36a2ba8ef7d595412a65c2442">fiftyoneDegreesFloat</a></div><div class="ttdeci">fiftyoneDegreesFloatInternal fiftyoneDegreesFloat</div><div class="ttdoc">For some compilers such as clang and Microsoft C or computers where the IEEE single precision standar...</div><div class="ttdef"><b>Definition</b> float.h:191</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -390,10 +389,9 @@ static&#160;const&#160;<a class="el" href="structfiftyone_degrees_collection_key
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                                                            = {</div>
 <div class="c-code__line">    FIFTYONE_DEGREES_COLLECTION_ENTRY_TYPE_PROFILE,</div>
 <div class="c-code__line">    <span class="c-code__keyword">sizeof</span>(<a class="code hl_struct" href="structfiftyone_degrees_profile.html">fiftyoneDegreesProfile</a>),</div>
-<div class="c-code__line">    <a class="code hl_function" href="group___fifty_one_degrees_profile.html#ga7224c6dec8a86b50c5b0ff691f2fbacf">fiftyoneDegreesProfileGetFinalSize</a>,</div>
+<div class="c-code__line">    fiftyoneDegreesProfileGetFinalSize,</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="agroup___fifty_one_degrees_profile_html_ga7224c6dec8a86b50c5b0ff691f2fbacf"><div class="ttname"><a href="group___fifty_one_degrees_profile.html#ga7224c6dec8a86b50c5b0ff691f2fbacf">fiftyoneDegreesProfileGetFinalSize</a></div><div class="ttdeci">uint32_t fiftyoneDegreesProfileGetFinalSize(const void *initial, fiftyoneDegreesException *const exception)</div><div class="ttdoc">Gets size of Profile with trailing values.</div></div>
-<div class="ttc" id="astructfiftyone_degrees_profile_html"><div class="ttname"><a href="structfiftyone_degrees_profile.html">fiftyoneDegreesProfile</a></div><div class="ttdoc">Encapsulates a profile stored within a data set.</div><div class="ttdef"><b>Definition</b> profile.h:100</div></div>
+<div class="ttc" id="astructfiftyone_degrees_profile_html"><div class="ttname"><a href="structfiftyone_degrees_profile.html">fiftyoneDegreesProfile</a></div><div class="ttdoc">Encapsulates a profile stored within a data set.</div><div class="ttdef"><b>Definition</b> profile.h:104</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -425,7 +423,7 @@ static&#160;const&#160;<a class="el" href="structfiftyone_degrees_collection_key
 <div class="c-code__line">    <span class="c-code__keyword">sizeof</span>(<a class="code hl_struct" href="structfiftyone_degrees_profile_offset.html">fiftyoneDegreesProfileOffset</a>),</div>
 <div class="c-code__line">    NULL,</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="astructfiftyone_degrees_profile_offset_html"><div class="ttname"><a href="structfiftyone_degrees_profile_offset.html">fiftyoneDegreesProfileOffset</a></div><div class="ttdoc">Structure containing the unique id of the profile, and the offset needed to retrieve the actual profi...</div><div class="ttdef"><b>Definition</b> profile.h:119</div></div>
+<div class="ttc" id="astructfiftyone_degrees_profile_offset_html"><div class="ttname"><a href="structfiftyone_degrees_profile_offset.html">fiftyoneDegreesProfileOffset</a></div><div class="ttdoc">Structure containing the unique id of the profile, and the offset needed to retrieve the actual profi...</div><div class="ttdef"><b>Definition</b> profile.h:123</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -457,7 +455,7 @@ static&#160;const&#160;<a class="el" href="structfiftyone_degrees_collection_key
 <div class="c-code__line">    <span class="c-code__keyword">sizeof</span>(<a class="code hl_struct" href="structfiftyone_degrees_property.html">fiftyoneDegreesProperty</a>),</div>
 <div class="c-code__line">    NULL,</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="astructfiftyone_degrees_property_html"><div class="ttname"><a href="structfiftyone_degrees_property.html">fiftyoneDegreesProperty</a></div><div class="ttdoc">Property structure containing all the meta data relating to a property.</div><div class="ttdef"><b>Definition</b> property.h:71</div></div>
+<div class="ttc" id="astructfiftyone_degrees_property_html"><div class="ttname"><a href="structfiftyone_degrees_property.html">fiftyoneDegreesProperty</a></div><div class="ttdoc">Property structure containing all the meta data relating to a property.</div><div class="ttdef"><b>Definition</b> property.h:75</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -489,7 +487,7 @@ static&#160;const&#160;<a class="el" href="structfiftyone_degrees_collection_key
 <div class="c-code__line">    <span class="c-code__keyword">sizeof</span>(<a class="code hl_struct" href="structfiftyone_degrees_property_type_record.html">fiftyoneDegreesPropertyTypeRecord</a>),</div>
 <div class="c-code__line">    NULL,</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="astructfiftyone_degrees_property_type_record_html"><div class="ttname"><a href="structfiftyone_degrees_property_type_record.html">fiftyoneDegreesPropertyTypeRecord</a></div><div class="ttdoc">Property structure containing stored type of a property.</div><div class="ttdef"><b>Definition</b> property.h:106</div></div>
+<div class="ttc" id="astructfiftyone_degrees_property_type_record_html"><div class="ttname"><a href="structfiftyone_degrees_property_type_record.html">fiftyoneDegreesPropertyTypeRecord</a></div><div class="ttdoc">Property structure containing stored type of a property.</div><div class="ttdef"><b>Definition</b> property.h:110</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -519,9 +517,8 @@ static&#160;const&#160;<a class="el" href="structfiftyone_degrees_collection_key
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                                                           = {</div>
 <div class="c-code__line">    FIFTYONE_DEGREES_PROPERTY_VALUE_TYPE_STRING,</div>
 <div class="c-code__line">    <span class="c-code__keyword">sizeof</span>(uint16_t),</div>
-<div class="c-code__line">    <a class="code hl_function" href="group___fifty_one_degrees_string.html#ga8d9dccd66132de4dae6135cd823d5891">fiftyoneDegreesStringGetFinalSize</a>,</div>
+<div class="c-code__line">    fiftyoneDegreesStringGetFinalSize,</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="agroup___fifty_one_degrees_string_html_ga8d9dccd66132de4dae6135cd823d5891"><div class="ttname"><a href="group___fifty_one_degrees_string.html#ga8d9dccd66132de4dae6135cd823d5891">fiftyoneDegreesStringGetFinalSize</a></div><div class="ttdeci">uint32_t fiftyoneDegreesStringGetFinalSize(const void *initial, fiftyoneDegreesException *exception)</div><div class="ttdoc">Gets size of String with trailing characters.</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -584,7 +581,7 @@ static&#160;const&#160;<a class="el" href="structfiftyone_degrees_collection_key
 <div class="c-code__line">    <span class="c-code__keyword">sizeof</span>(<a class="code hl_struct" href="structfiftyone_degrees_value.html">fiftyoneDegreesValue</a>),</div>
 <div class="c-code__line">    NULL,</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="astructfiftyone_degrees_value_html"><div class="ttname"><a href="structfiftyone_degrees_value.html">fiftyoneDegreesValue</a></div><div class="ttdoc">Value structure containing meta data relating to the value.</div><div class="ttdef"><b>Definition</b> value.h:81</div></div>
+<div class="ttc" id="astructfiftyone_degrees_value_html"><div class="ttname"><a href="structfiftyone_degrees_value.html">fiftyoneDegreesValue</a></div><div class="ttdoc">Value structure containing meta data relating to the value.</div><div class="ttdef"><b>Definition</b> value.h:85</div></div>
 </div><!-- fragment -->
 </div>
 </div>

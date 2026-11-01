@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <p>This array is past to the fiftyoneDegreesIpiGraphEvaluate function along with the IP address and the id of the component required. The following code would be used to obtain the result for component id 1 and IP address 51.51.51.51.</p>
 <p><a class="el" href="group___fifty_one_degrees_synonyms.html#ga445536368cf748f73d502fd471b19e98" title="Synonym for fiftyoneDegreesException type.">Exception</a> exception; uint32_t result = 0; const char* ipAddress = "51.51.51.51"; <a class="el" href="group___fifty_one_degrees_synonyms.html#ga3d27dae403ca9c710843f613868aa9bf" title="Synonym for fiftyoneDegreesIpAddress type.">IpAddress</a> parsedIpAddress; parsedIpAddress.type = 0; if (IpAddressParse( ipAddress, ipAddress + sizeof(ipAddress), &amp;parsedIpAddress)) { result = fiftyoneDegreesIpiGraphEvaluate( wrapper-&gt;array, (byte)1, parsedIpAddress, <br  />
  &amp;exception); }</p>
-<p>The IP address is parsed from a string into a <a class="el" href="group___fifty_one_degrees_synonyms.html#ga3d27dae403ca9c710843f613868aa9bf" title="Synonym for fiftyoneDegreesIpAddress type.">IpAddress</a> instance using the common-cxx IP functions.</p>
+<p>The IP address is parsed from a string into a <a class="el" href="group___fifty_one_degrees_synonyms.html#ga3d27dae403ca9c710843f613868aa9bf" title="Synonym for fiftyoneDegreesIpAddress type.">IpAddress</a> instance using the common library IP functions.</p>
 <p>The array created must be freed with the fiftyoneDegreesIpiGraphFree method when finished with.</p>
 <h2>Note</h2>
 <p>The methods marked trace are for 51Degrees internal purposes and are not intended for production usage.</p>
@@ -184,6 +184,8 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ga4afa99c2ba1157770cc3445deeaa7b82"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Creates and initializes an array of graphs for the collection where the underlying data set is held in memory.  <br /></td></tr>
 <tr class="c-table__row memitem:ga36f0218ca99f8d341f384c024cf72830" id="r_ga36f0218ca99f8d341f384c024cf72830"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_ipi_cg_array.html">fiftyoneDegreesIpiCgArray</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga36f0218ca99f8d341f384c024cf72830">fiftyoneDegreesIpiGraphCreateFromFile</a> (<a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *collection, FILE *file, <a class="el" href="structfiftyone_degrees_file_pool.html">fiftyoneDegreesFilePool</a> *reader, const <a class="el" href="structfiftyone_degrees_collection_config.html">fiftyoneDegreesCollectionConfig</a> config, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga36f0218ca99f8d341f384c024cf72830"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Creates and initializes an array of graphs for the collection where the underlying data set is on the file system.  <br /></td></tr>
+<tr class="c-table__row memitem:gaf58802d4b26bb58ee6cee8766af93bfd" id="r_gaf58802d4b26bb58ee6cee8766af93bfd"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_ipi_cg_array.html">fiftyoneDegreesIpiCgArray</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#gaf58802d4b26bb58ee6cee8766af93bfd">fiftyoneDegreesIpiGraphCreateFromFileForComponents</a> (<a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *collection, FILE *file, <a class="el" href="structfiftyone_degrees_file_pool.html">fiftyoneDegreesFilePool</a> *reader, const <a class="el" href="structfiftyone_degrees_collection_config.html">fiftyoneDegreesCollectionConfig</a> config, const bool *requiredComponentIds, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:gaf58802d4b26bb58ee6cee8766af93bfd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Creates and initializes an array of graphs as fiftyoneDegreesIpiGraphCreateFromFile does, but only the graphs of the components flagged use the config.  <br /></td></tr>
 <tr class="c-table__row memitem:gafeea66d6d71cbd9da8f5192bbf1698a1" id="r_gafeea66d6d71cbd9da8f5192bbf1698a1"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_ipi_cg_result.html">fiftyoneDegreesIpiCgResult</a>&#160;</td><td class="c-table__cell"><a class="el" href="#gafeea66d6d71cbd9da8f5192bbf1698a1">fiftyoneDegreesIpiGraphEvaluate</a> (const <a class="el" href="structfiftyone_degrees_ipi_cg_array.html">fiftyoneDegreesIpiCgArray</a> *graphs, <a class="el" href="group___fifty_one_degrees_data.html#ga0c8186d9b9b7880309c27230bbb5e69d">byte</a> componentId, <a class="el" href="structfiftyone_degrees_ip_address.html">fiftyoneDegreesIpAddress</a> address, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:gafeea66d6d71cbd9da8f5192bbf1698a1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Obtains the profile index for the IP address and component id provided.  <br /></td></tr>
 <tr class="c-table__row memitem:gafe52c8ed055e6a9f0676e95ac6564848" id="r_gafe52c8ed055e6a9f0676e95ac6564848"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_ipi_cg_result.html">fiftyoneDegreesIpiCgResult</a>&#160;</td><td class="c-table__cell"><a class="el" href="#gafe52c8ed055e6a9f0676e95ac6564848">fiftyoneDegreesIpiGraphEvaluateTrace</a> (<a class="el" href="structfiftyone_degrees_ipi_cg_array.html">fiftyoneDegreesIpiCgArray</a> *graphs, <a class="el" href="group___fifty_one_degrees_data.html#ga0c8186d9b9b7880309c27230bbb5e69d">byte</a> componentId, <a class="el" href="structfiftyone_degrees_ip_address.html">fiftyoneDegreesIpAddress</a> address, char *buffer, int const length, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
@@ -340,12 +342,16 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
 </div><div class="c-member__body">
 <b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_struct" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> b; \</div>
 <div class="c-code__line"><a class="code hl_struct" href="structfiftyone_degrees_collection_item.html">fiftyoneDegreesCollectionItem</a> propertyItem; \</div>
-<div class="c-code__line"><a class="code hl_typedef" href="#ga580e2f58583e4dd4aa302f6176a7fb8e">fiftyoneDegreesIpiList</a> values;</div>
+<div class="c-code__line"><a class="code hl_typedef" href="#ga580e2f58583e4dd4aa302f6176a7fb8e">fiftyoneDegreesIpiList</a> values; \</div>
+<div class="c-code__line"><span class="c-code__keywordtype">byte</span>* hasValuesCache;  \</div>
+<div class="c-code__line">uint32_t hasValuesCacheCount;  \</div>
+<div class="c-code__line"><span class="c-code__keywordtype">byte</span>* keptProfiles;</div>
 <div class="ttc" id="agroup___fifty_one_degrees_ip_intelligence_api_html_ga580e2f58583e4dd4aa302f6176a7fb8e"><div class="ttname"><a href="#ga580e2f58583e4dd4aa302f6176a7fb8e">fiftyoneDegreesIpiList</a></div><div class="ttdeci">fiftyoneDegreesWeightedItemList fiftyoneDegreesIpiList</div><div class="ttdoc">Backward compatibility typedef for IpiList.</div><div class="ttdef"><b>Definition</b> ipi.h:329</div></div>
-<div class="ttc" id="astructfiftyone_degrees_collection_item_html"><div class="ttname"><a href="structfiftyone_degrees_collection_item.html">fiftyoneDegreesCollectionItem</a></div><div class="ttdoc">Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish...</div><div class="ttdef"><b>Definition</b> collection.h:311</div></div>
-<div class="ttc" id="astructfiftyone_degrees_results_base_html"><div class="ttname"><a href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a></div><div class="ttdoc">Base results structure which any processing results should extend.</div><div class="ttdef"><b>Definition</b> results.h:98</div></div>
+<div class="ttc" id="astructfiftyone_degrees_collection_item_html"><div class="ttname"><a href="structfiftyone_degrees_collection_item.html">fiftyoneDegreesCollectionItem</a></div><div class="ttdoc">Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish...</div><div class="ttdef"><b>Definition</b> collection.h:315</div></div>
+<div class="ttc" id="astructfiftyone_degrees_results_base_html"><div class="ttname"><a href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a></div><div class="ttdoc">Base results structure which any processing results should extend.</div><div class="ttdef"><b>Definition</b> results.h:102</div></div>
 </div><!-- fragment -->
 <p>Macro defining the common members of an Ipi result. </p>
+<p>Copies of profiles read through a cache, kept for \ the length of a lookup so that each property does not \ read the cache again. One slot for each result, or \ NULL if the profiles are not read through a cache. </p>
 
 </div>
 </div>
@@ -690,6 +696,65 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
     <tr><td class="paramname">file</td><td>for to the source data </td></tr>
     <tr><td class="paramname">reader</td><td>pool connected to the file </td></tr>
     <tr><td class="paramname">config</td><td>for the collections created for each graph </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a pointer to the newly allocated array, or null if the operation was not successful. </dd></dl>
+
+</div>
+</div>
+<a id="gaf58802d4b26bb58ee6cee8766af93bfd" name="gaf58802d4b26bb58ee6cee8766af93bfd"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaf58802d4b26bb58ee6cee8766af93bfd">&#9670;&#160;</a></span>fiftyoneDegreesIpiGraphCreateFromFileForComponents()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_ipi_cg_array.html">fiftyoneDegreesIpiCgArray</a> * fiftyoneDegreesIpiGraphCreateFromFileForComponents </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>collection</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">FILE *</td>          <td class="c-table__cell"><span class="paramname"><em>file</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_file_pool.html">fiftyoneDegreesFilePool</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>reader</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_collection_config.html">fiftyoneDegreesCollectionConfig</a></td>          <td class="c-table__cell"><span class="paramname"><em>config</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const bool *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredComponentIds</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Creates and initializes an array of graphs as fiftyoneDegreesIpiGraphCreateFromFile does, but only the graphs of the components flagged use the config. </p>
+<p>Every other graph reads from the file through the pool, so its data is not held in memory. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>of <a class="el" href="structfiftyone_degrees_ipi_cg_info.html" title="Fixed width record in the collection where the record relates to a component and IP version.">fiftyoneDegreesIpiCgInfo</a> records </td></tr>
+    <tr><td class="paramname">file</td><td>for to the source data </td></tr>
+    <tr><td class="paramname">reader</td><td>pool connected to the file </td></tr>
+    <tr><td class="paramname">config</td><td>for the collections of the graphs of the flagged components </td></tr>
+    <tr><td class="paramname">requiredComponentIds</td><td>256 flags indexed by component id, or NULL to use the config for every graph </td></tr>
     <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
   </table>
   </dd>
@@ -1213,7 +1278,7 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
     <tr><td class="paramname">config</td><td>configuration for the operation of the data set, or NULL if default configuration is required </td></tr>
     <tr><td class="paramname">properties</td><td>the properties that will be consumed from the data set, or NULL if all available properties in the IP Intelligence data file should be available for consumption </td></tr>
     <tr><td class="paramname">fileName</td><td>the full path to a file with read permission that contains the IP Intelligence data set </td></tr>
-    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. Holds the status if the data set could not be initialised, for example from a missing or rejected file, and the number returned then means nothing. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1400,8 +1465,6 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">newly created results structure </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_ip_intelligence_2_getting_started_8c-example.html#a6">IpIntelligence/GettingStarted.c</a>, and <a class="el" href="_ip_intelligence_2_offline_processing_8c-example.html#a6">IpIntelligence/OfflineProcessing.c</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -2038,7 +2101,8 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
 </div><div class="c-member__body">
 
 <p>Uses caching to balance memory usage and performance. </p>
-<p>A connection is maintained to the source data file to load data into caches when required. As the cache is loaded, memory will increase until the cache capacity is reached. The concurrency of each collection must be set to the maximum number of concurrent operations to optimize file reads. This is the default configuration. </p>
+<p>A connection is maintained to the source data file to load data into caches when required. As the cache is loaded, memory will increase until the cache capacity is reached. The concurrency of each collection must be set to the maximum number of concurrent operations to optimize file reads. This is the default configuration.</p>
+<p>The strings, the graphs, the profile offsets and the property types are held in memory. When the required properties name fewer properties than the data file has, the graphs of components with no required property stay on file, as do long stretches of strings that no required property reads. The memory that frees holds the values of the required properties, smallest first, the profile groups, the profiles of the components with a required property, smallest first, then a larger profile cache and part of the next component's profiles if at least half of them fit. The memory used does not rise above what naming nothing uses and the answers do not change. Anything not held reads from the file, which is slower and allocates memory. </p>
 
 </div>
 </div>

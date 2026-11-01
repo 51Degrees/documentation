@@ -40,8 +40,8 @@ var NAVTREEHIDESYNC = true;
 var NAVTREEINDEX =
 [
 "/documentation/4.5/index.html",
-"class_fiftyone_degrees_1_1_examples_1_1_ip_intelligence_1_1_example_base.html#a1751249a2a06a7ce882b82a096173374",
-"class_fiftyone_degrees_1_1_ip_intelligence_1_1_property_meta_data.html#a5e5574852820296f5e4b16b588b8a201"
+"class_fiftyone_degrees_1_1_common_1_1_value_meta_data_key.html",
+"class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data_collection_ipi.html#ad49f0ccc094b1b1f188ce98a971c406a"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -84,12 +84,15 @@ uint32_t&#160;</td><td class="c-table__cell"><b>count</b></td></tr>
 <tr class="c-table__row memitem:ab3a51079004c134ef5550adcbddf2c94" id="r_ab3a51079004c134ef5550adcbddf2c94"><td class="c-table__cell"><a id="ab3a51079004c134ef5550adcbddf2c94" name="ab3a51079004c134ef5550adcbddf2c94"></a>
 uint32_t&#160;</td><td class="c-table__cell"><b>capacity</b></td></tr>
 <tr class="c-table__row memdesc:ab3a51079004c134ef5550adcbddf2c94"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of available items. <br /></td></tr>
-<tr class="c-table__row memitem:ad5009b422ab3c6c4357b1836a86480fe" id="r_ad5009b422ab3c6c4357b1836a86480fe"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_property_available.html">fiftyoneDegreesPropertyAvailable</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ad5009b422ab3c6c4357b1836a86480fe">items</a></td></tr>
-<tr class="c-table__row memdesc:ad5009b422ab3c6c4357b1836a86480fe"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Pointer to the first item.  <br /></td></tr>
+<tr class="c-table__row memitem:ad5009b422ab3c6c4357b1836a86480fe" id="r_ad5009b422ab3c6c4357b1836a86480fe"><td class="c-table__cell"><a id="ad5009b422ab3c6c4357b1836a86480fe" name="ad5009b422ab3c6c4357b1836a86480fe"></a>
+<a class="el" href="structfiftyone_degrees_property_available.html">fiftyoneDegreesPropertyAvailable</a>&#160;*&#160;</td><td class="c-table__cell"><b>items</b></td></tr>
+<tr class="c-table__row memdesc:ad5009b422ab3c6c4357b1836a86480fe"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Pointer to the first item. <br /></td></tr>
+<tr class="c-table__row memitem:a376fc812677c8a4eee8412eda5f2568a" id="r_a376fc812677c8a4eee8412eda5f2568a"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a376fc812677c8a4eee8412eda5f2568a">allComponentsRequired</a></td></tr>
+<tr class="c-table__row memdesc:a376fc812677c8a4eee8412eda5f2568a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True if every component must be resolved whether or not it has an available property.  <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Field Documentation</h2>
-<a id="ad5009b422ab3c6c4357b1836a86480fe" name="ad5009b422ab3c6c4357b1836a86480fe"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad5009b422ab3c6c4357b1836a86480fe">&#9670;&#160;</a></span>items</h2>
+<a id="a376fc812677c8a4eee8412eda5f2568a" name="a376fc812677c8a4eee8412eda5f2568a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a376fc812677c8a4eee8412eda5f2568a">&#9670;&#160;</a></span>allComponentsRequired</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -97,15 +100,15 @@ uint32_t&#160;</td><td class="c-table__cell"><b>capacity</b></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_property_available.html">fiftyoneDegreesPropertyAvailable</a>* fiftyoneDegreesPropertyAvailableArray::items</td>
+              <td class="c-table__cell">bool fiftyoneDegreesPropertyAvailableArray::allComponentsRequired</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>Pointer to the first item. </p>
-<p>Add any members provided by the caller </p>
+<p>True if every component must be resolved whether or not it has an available property. </p>
+<p>Initialised to false and set by the engine. A list created from an existing list keeps the value, which carries it across a reload Add any members provided by the caller </p>
 
 </div>
 </div>

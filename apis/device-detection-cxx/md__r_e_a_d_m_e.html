@@ -95,6 +95,25 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <p>The CMake project also builds a single shared library containing everything. This is named <code>fiftyone-device-detection-complete</code> and can be referenced by any C or C++ project.</p>
 <h2>Visual Studio</h2>
 <p>The Visual Studio solution contains static libraries which have all the dependencies set up correctly, so referencing these in a Visual Studio solution should be fairly self explanatory.</p>
+<h1><a class="el" href="group___fifty_one_degrees_synonyms.html#gaead00debc1ea5066dfb07617645860c1" title="Synonym for fiftyoneDegreesHeader type.">Header</a> length limit</h1>
+<p>A pseudo header joins the values of several HTTP headers into one value, for example <code>Sec-CH-UA</code>, <code>Sec-CH-UA-Mobile</code>, <code>Sec-CH-UA-Platform</code> and <code>User-Agent</code>. The value is built in working memory that is allocated when a set of results is created, and detection does not grow that memory. A single header such as <code>User-Agent</code> has the same limit. A value longer than the limit is ignored. Detection moves on to the next header, no error is reported, and the result can rest on less detailed evidence. If no other header is usable, the results hold no match, as they do for evidence with no usable header. A direct call with a <code>User-Agent</code> over the limit gives the same results as evidence holding that value.</p>
+<p>The limit is <code>maxMatchedUserAgentLength</code> in the device detection configuration, which defaults to 500. It counts bytes, including one separator between each value of a pseudo header.</p>
+<p>To raise the limit, set a larger value before the data set is created:</p>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">API  </td><td class="c-table__cell">Setting  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">C  </td><td class="c-table__cell"><code>config.b.maxMatchedUserAgentLength</code> on the <code><a class="el" href="structfiftyone_degrees_config_hash.html" title="Hash specific configuration structure.">fiftyoneDegreesConfigHash</a></code> used to create the data set  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">C++  </td><td class="c-table__cell"><code>setMaxMatchedUserAgentLength</code> on the <code><a class="el" href="group___fifty_one_degrees_hash_synonyms.html#ga57af4ba244b4cebab0cf24de6d6d3008" title="Synonym for fiftyoneDegreesConfigHash type.">ConfigHash</a></code> used to create the engine  </td></tr>
+</table>
+<p>Each set of results then holds more memory, made up of:</p>
+<ul>
+<li>the limit plus one byte for pseudo headers</li>
+<li>twice the limit for transforming evidence</li>
+<li>the limit plus one byte for each component, only when <code>updateMatchedUserAgent</code> is true. Detection also overwrites this memory for each result it resets, so a larger limit adds to the time each detection takes</li>
+</ul>
+<p>The C examples create a set of results up front and use it for each detection. <code>EngineHash::process</code> in the C++ API creates a new set of results for each call, so there the memory is allocated once for each call, at the same fixed size.</p>
 <h1>Examples</h1>
 <p>There are several examples available, the source files can be found in the <a href="../../examples/dd"><code>examples/dd</code></a> folder. The examples are written in C or CPP.</p>
 <h3>Visual Studio</h3>

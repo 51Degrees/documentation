@@ -1057,6 +1057,7 @@ apis/device-detection-cxx/headers_8h_source.html
 apis/device-detection-cxx/index.html
 apis/device-detection-cxx/indices_8h_source.html
 apis/device-detection-cxx/ip_8h_source.html
+apis/device-detection-cxx/ipi_symbols_8h_source.html
 apis/device-detection-cxx/json_8h_source.html
 apis/device-detection-cxx/list_8h_source.html
 apis/device-detection-cxx/md__r_e_a_d_m_e.html
@@ -2215,6 +2216,7 @@ apis/ip-intelligence-cxx/ipi__weighted__results_8h.html
 apis/ip-intelligence-cxx/ipi_2_fiftyone_degrees_8hpp_source.html
 apis/ip-intelligence-cxx/ipi_2fiftyone_8h_source.html
 apis/ip-intelligence-cxx/ipi_8h_source.html
+apis/ip-intelligence-cxx/ipi_symbols_8h_source.html
 apis/ip-intelligence-cxx/json_8h_source.html
 apis/ip-intelligence-cxx/list_8h_source.html
 apis/ip-intelligence-cxx/md__r_e_a_d_m_e.html
@@ -2265,6 +2267,7 @@ apis/ip-intelligence-cxx/struct_prop_values_item_conversion_defaults.html
 apis/ip-intelligence-cxx/struct_prop_values.html
 apis/ip-intelligence-cxx/struct_raw_value_reader.html
 apis/ip-intelligence-cxx/struct_resolved.html
+apis/ip-intelligence-cxx/struct_retained_handle.html
 apis/ip-intelligence-cxx/struct_segment_key.html
 apis/ip-intelligence-cxx/struct_shared_blocks.html
 apis/ip-intelligence-cxx/struct_shared_state.html
@@ -2367,6 +2370,11 @@ apis/ip-intelligence-cxx/structfiftyone_degrees_weighted_value_header.html
 apis/ip-intelligence-cxx/structfiftyone_degrees_weighted_values_collection.html
 apis/ip-intelligence-cxx/structfiftyone_degrees_wkbtot_result.html
 apis/ip-intelligence-cxx/structfile_iterator_state.html
+apis/ip-intelligence-cxx/structheld_collection.html
+apis/ip-intelligence-cxx/structheld_plan.html
+apis/ip-intelligence-cxx/structheld_profile_run.html
+apis/ip-intelligence-cxx/structheld_range.html
+apis/ip-intelligence-cxx/structheld_strings_bucket.html
 apis/ip-intelligence-cxx/structin_memory_key_value.html
 apis/ip-intelligence-cxx/structmap.html
 apis/ip-intelligence-cxx/structmemory_state.html
@@ -6675,6 +6683,7 @@ apis/ip-intelligence-cxx/struct_prop_values__coll__graph.svg
 apis/ip-intelligence-cxx/struct_prop_values_chunk__coll__graph.svg
 apis/ip-intelligence-cxx/struct_prop_values_chunk_context__coll__graph.svg
 apis/ip-intelligence-cxx/struct_resolved__coll__graph.svg
+apis/ip-intelligence-cxx/struct_retained_handle__coll__graph.svg
 apis/ip-intelligence-cxx/struct_shared_state__coll__graph.svg
 apis/ip-intelligence-cxx/struct_string_converter_state__coll__graph.svg
 apis/ip-intelligence-cxx/struct_thread_state__coll__graph.svg
@@ -6736,6 +6745,8 @@ apis/ip-intelligence-cxx/structfiftyone_degrees_weighted_item__coll__graph.svg
 apis/ip-intelligence-cxx/structfiftyone_degrees_weighted_item_list__coll__graph.svg
 apis/ip-intelligence-cxx/structfiftyone_degrees_weighted_string__coll__graph.svg
 apis/ip-intelligence-cxx/structfiftyone_degrees_weighted_values_collection__coll__graph.svg
+apis/ip-intelligence-cxx/structheld_collection__coll__graph.svg
+apis/ip-intelligence-cxx/structheld_plan__coll__graph.svg
 apis/ip-intelligence-cxx/structin_memory_key_value__coll__graph.svg
 apis/ip-intelligence-cxx/structmap__inherit__graph.svg
 apis/ip-intelligence-cxx/structmemory_state__coll__graph.svg

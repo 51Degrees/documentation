@@ -83,7 +83,7 @@ Data Fields</h2></td></tr>
 bool&#160;</td><td class="c-table__cell"><b>updateMatchedUserAgent</b></td></tr>
 <tr class="c-table__row memdesc:acee39f8a3a01a5763741e765f9eca8c3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True if the detection should record the matched characters from the target User-Agent. <br /></td></tr>
 <tr class="c-table__row memitem:a0b53a886f1218119beda0712985fe3f9" id="r_a0b53a886f1218119beda0712985fe3f9"><td class="c-table__cell">size_t&#160;</td><td class="c-table__cell"><a class="el" href="#a0b53a886f1218119beda0712985fe3f9">maxMatchedUserAgentLength</a></td></tr>
-<tr class="c-table__row memdesc:a0b53a886f1218119beda0712985fe3f9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of characters to consider in the matched User-Agent.  <br /></td></tr>
+<tr class="c-table__row memdesc:a0b53a886f1218119beda0712985fe3f9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Limit in bytes on the length of a single header such as User-Agent, of a pseudo header including the separators between its values, and of the matched User-Agent.  <br /></td></tr>
 <tr class="c-table__row memitem:a1795c5dc70abf0e9d57413c713093f0c" id="r_a1795c5dc70abf0e9d57413c713093f0c"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a1795c5dc70abf0e9d57413c713093f0c">allowUnmatched</a></td></tr>
 <tr class="c-table__row memdesc:a1795c5dc70abf0e9d57413c713093f0c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True if there should be at least one matched node in order for the results to be considered valid.  <br /></td></tr>
 <tr class="c-table__row memitem:a4f9955e955f2449663aea927c5a46ccb" id="r_a4f9955e955f2449663aea927c5a46ccb"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a4f9955e955f2449663aea927c5a46ccb">processSpecialEvidence</a></td></tr>
@@ -127,8 +127,8 @@ bool&#160;</td><td class="c-table__cell"><b>updateMatchedUserAgent</b></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Number of characters to consider in the matched User-Agent. </p>
-<p>Ignored if updateMatchedUserAgent is false. </p>
+<p>Limit in bytes on the length of a single header such as User-Agent, of a pseudo header including the separators between its values, and of the matched User-Agent. </p>
+<p>The working memory for a pseudo header is allocated from this value when a set of results is created, and detection does not grow it. A value longer than the limit is ignored and detection moves on to the next header. A direct User-Agent call over the limit gives the same results as evidence holding that value. The limit applies whether or not updateMatchedUserAgent is true. To raise the limit set a larger value before the data set is created, which also raises the memory each set of results holds. </p>
 
 </div>
 </div>

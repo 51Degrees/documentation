@@ -84,6 +84,23 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <p>Note that on Linux shells the <code>51DEGREES_IPI_PATH</code> variable name starts with a digit, so it must be set with the <code>env</code> command, for example <code>env 51DEGREES_IPI_PATH=/path/to/file.ipi ./GettingStarted</code>, rather than a plain <code>export</code>.</p>
 <h1>Building and testing</h1>
 <p>Cloning, building with CMake or Visual Studio, and running the tests are the same for every product in this repository, and are described in the repository README.</p>
+<h1>Memory and the required properties</h1>
+<p>The Balanced configuration (<code><a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#ga2f4c9ccf90559af9006fd18ee8204e2a" title="Uses caching to balance memory usage and performance.">fiftyoneDegreesIpiBalancedConfig</a></code>, or <code>setBalanced()</code> in C++) holds the strings, the graphs, the profile offsets and the property types in memory, and reads values and profiles through caches. The C API uses it when no configuration is given.</p>
+<p>Naming the required properties is all it takes to get more from it. There is no other setting. When fewer properties are named than the data file has, the parts of the file they do not read stay on file:</p>
+<ul>
+<li>The graphs of components with no required property.</li>
+<li>Stretches of strings of at least 64 KiB that no required property reads. For example, the polygons of <code>Areas</code> stay on file unless <code>Areas</code> is named.</li>
+</ul>
+<p>The memory that frees is then spent, in this order, as far as it lasts:</p>
+<ol type="1">
+<li>The values of the required properties, smallest first.</li>
+<li>The profile groups.</li>
+<li>The profiles of the components with a required property, smallest first.</li>
+<li>A larger profile cache, then part of the next component's profiles if at least half of them fit.</li>
+</ol>
+<p>The memory used does not rise above what naming nothing uses, and the answers do not change. A caller who names nothing, or every property, gets the configuration as it is.</p>
+<p>Whatever is named, a profile read through a cache is read once for each lookup rather than once for each property, which uses 512 bytes for each component in each set of results.</p>
+<p>Anything not held reads from the file, so it still works, more slowly and allocating memory. That covers a direct graph call for a component with no required property, and meta data for what was not named. A property that was not named gives no value, as it does with every other configuration.</p>
 <h1>Referencing the API</h1>
 <h2>Adding references with CMake</h2>
 <p>When building using CMake, static libraries are built in stages. These can be included in an executable just as they are in the examples. If these are included through a CMake file, the dependencies will be resolved automatically. However, if linking another way, all dependencies will need to be included from the <code>lib/</code> directory. For example, to use the IP Intelligence C API, the following static libraries would need to be included:</p>
