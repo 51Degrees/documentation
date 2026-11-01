@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> http = require(<span class="c-code__stringliteral">&#39;http&#39;</span>);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">const</span> server = http.createServer((req, res) =&gt; {</div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> server = http.createServer(async (req, res) =&gt; {</div>
 <div class="c-code__line">  <span class="c-code__comment">// Serve the shared CSS/JS assets from the public directory. If this was a</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// static asset request then there is nothing more to do.</span></div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (tryServeStatic(req, res)) {</div>
@@ -217,8 +217,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line">  <span class="c-code__keyword">const</span> flowData = pipeline.createFlowData();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// Add any information from the request</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// (headers, cookies and additional client side provided information)</span></div>
-<div class="c-code__line">  flowData.evidence.addFromRequest(req);</div>
+<div class="c-code__line">  <span class="c-code__comment">// (headers, cookies and additional client side provided information,</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// which the client script sends as a posted form body).</span></div>
+<div class="c-code__line">  <span class="c-code__keywordflow">try</span> {</div>
+<div class="c-code__line">    await flowData.evidence.addFromRequestAsync(req);</div>
+<div class="c-code__line">  } <span class="c-code__keywordflow">catch</span> (e) {</div>
+<div class="c-code__line">    <span class="c-code__comment">// The client went away while posting, which must not stop the server.</span></div>
+<div class="c-code__line">    res.statusCode = 400;</div>
+<div class="c-code__line">    res.end();</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span>;</div>
+<div class="c-code__line">  }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  flowData.process().then(<span class="c-code__keyword">function</span> () {</div>
 <div class="c-code__line">    res.statusCode = 200;</div>

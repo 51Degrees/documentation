@@ -589,7 +589,7 @@ Variables</h2></td></tr>
     <tr><td class="paramname">manager</td><td>the resource manager to manager the share data set resource </td></tr>
     <tr><td class="paramname">config</td><td>configuration for the operation of the data set, or NULL if default detection configuration is required </td></tr>
     <tr><td class="paramname">properties</td><td>the properties that will be consumed from the data set, or NULL if all available properties in the Hash data file should be available for consumption </td></tr>
-    <tr><td class="paramname">memory</td><td>pointer to continuous memory containing the Hash data set </td></tr>
+    <tr><td class="paramname">memory</td><td>pointer to continuous memory containing the Hash data set. If the data set is not created the memory stays with the caller, even if the configuration says to free it </td></tr>
     <tr><td class="paramname">size</td><td>the number of bytes that make up the Hash data set </td></tr>
     <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
   </table>
@@ -697,7 +697,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set reload. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not reloaded correctly </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set reload. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not reloaded and the current one stays in use </dd></dl>
 
 </div>
 </div>
@@ -746,7 +746,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set reload. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not reloaded correctly </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set reload. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not reloaded and the current one stays in use </dd></dl>
 
 </div>
 </div>
@@ -783,7 +783,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set reload. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not reloaded correctly </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set reload. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not reloaded and the current one stays in use </dd></dl>
 
 </div>
 </div>
@@ -877,9 +877,9 @@ Variables</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">config</td><td>configuration for the operation of the data set, or NULL if default detection configuration is required </td></tr>
     <tr><td class="paramname">properties</td><td>the properties that will be consumed from the data set, or NULL if all available properties in the Hash data file should be available for consumption </td></tr>
-    <tr><td class="paramname">memory</td><td>pointer to continuous memory containing the Hash data set </td></tr>
+    <tr><td class="paramname">memory</td><td>pointer to continuous memory containing the Hash data set, which stays with the caller </td></tr>
     <tr><td class="paramname">size</td><td>the number of bytes that make up the Hash data set </td></tr>
-    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. Holds the status if the data set could not be initialised, for example from memory that is short or rejected, and the number returned then means nothing. </td></tr>
   </table>
   </dd>
 </dl>

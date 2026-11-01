@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line">  pipeline.on(<span class="c-code__stringliteral">&#39;error&#39;</span>, console.error);</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">const</span> server = http.createServer((req, res) =&gt; {</div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> server = http.createServer(async (req, res) =&gt; {</div>
 <div class="c-code__line">  <span class="c-code__comment">// Serve the shared CSS/JS assets from the public directory. If this was a</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// static asset request then there is nothing more to do.</span></div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (tryServeStatic(req, res)) {</div>
@@ -246,8 +246,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line">  <span class="c-code__comment">// Object of header name/value entries.</span></div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> flowData = pipeline.createFlowData();</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">  <span class="c-code__comment">// Extract required evidence from the Http request.</span></div>
-<div class="c-code__line">  flowData.evidence.addFromRequest(req);</div>
+<div class="c-code__line">  <span class="c-code__comment">// Extract required evidence from the Http request. The client script</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// sends the results of its snippets, the session id and the sequence as</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// a posted form body, so the body is read before the evidence is taken.</span></div>
+<div class="c-code__line">  <span class="c-code__keywordflow">try</span> {</div>
+<div class="c-code__line">    await flowData.evidence.addFromRequestAsync(req);</div>
+<div class="c-code__line">  } <span class="c-code__keywordflow">catch</span> (e) {</div>
+<div class="c-code__line">    <span class="c-code__comment">// The client went away while posting, which must not stop the server.</span></div>
+<div class="c-code__line">    res.statusCode = 400;</div>
+<div class="c-code__line">    res.end();</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span>;</div>
+<div class="c-code__line">  }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// Handle report from client side separately</span></div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (req.url.startsWith(<span class="c-code__stringliteral">&#39;/json&#39;</span>)) {</div>

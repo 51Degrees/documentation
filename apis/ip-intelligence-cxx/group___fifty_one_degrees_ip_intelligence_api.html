@@ -849,7 +849,7 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the index of the profile (or group) associated with the IP address. </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the index of the profile (or group) associated with the IP address, or <a class="el" href="#ga858684a770e4595ab7e8ed0d77aad0e4" title="Default value for fiftyoneDegreesIpiCgResult.">FIFTYONE_DEGREES_IPI_CG_RESULT_DEFAULT</a> if the IP address is below the lowest key in the graph, as no profile relates to it. </dd></dl>
 
 </div>
 </div>
@@ -908,7 +908,7 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the index of the profile (or group) associated with the IP address. </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the index of the profile (or group) associated with the IP address, or <a class="el" href="#ga858684a770e4595ab7e8ed0d77aad0e4" title="Default value for fiftyoneDegreesIpiCgResult.">FIFTYONE_DEGREES_IPI_CG_RESULT_DEFAULT</a> if the IP address is below the lowest key in the graph, as no profile relates to it. </dd></dl>
 
 </div>
 </div>
@@ -1043,7 +1043,7 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
     <tr><td class="paramname">manager</td><td>the resource manager to manager the share data set resource </td></tr>
     <tr><td class="paramname">config</td><td>configuration for the operation of the data set, or NULL if default configuration is required </td></tr>
     <tr><td class="paramname">properties</td><td>the properties that will be consumed from the data set, or NULL if all available properties in the IP intelligence data file should be available for consumption </td></tr>
-    <tr><td class="paramname">memory</td><td>pointer to continuous memory containing the IP Intelligence data set </td></tr>
+    <tr><td class="paramname">memory</td><td>pointer to continuous memory containing the IP Intelligence data set. If the data set is not created the memory stays with the caller, even if the configuration says to free it </td></tr>
     <tr><td class="paramname">size</td><td>the number of bytes that make up the IP Intelligence data set </td></tr>
     <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
   </table>
@@ -1151,7 +1151,7 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set reload. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not reloaded correctly </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set reload. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not reloaded and the current one stays in use </dd></dl>
 
 </div>
 </div>
@@ -1200,7 +1200,7 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set reload. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not reloaded correctly </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set reload. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not reloaded and the current one stays in use </dd></dl>
 
 </div>
 </div>
@@ -1237,7 +1237,7 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set reload. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not reloaded correctly </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set reload. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not reloaded and the current one stays in use </dd></dl>
 
 </div>
 </div>
@@ -1331,9 +1331,9 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
   <table class="params">
     <tr><td class="paramname">config</td><td>configuration for the operation of the data set, or NULL if default configuration is required </td></tr>
     <tr><td class="paramname">properties</td><td>the properties that will be consumed from the data set, or NULL if all available properties in the IP Intelligence data file should be available for consumption </td></tr>
-    <tr><td class="paramname">memory</td><td>pointer to continuous memory containing the IP intelligence data set </td></tr>
+    <tr><td class="paramname">memory</td><td>pointer to continuous memory containing the IP intelligence data set, which stays with the caller </td></tr>
     <tr><td class="paramname">size</td><td>the number of bytes that make up the IP intelligence data set </td></tr>
-    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. Holds the status if the data set could not be initialised, for example from memory that is short or rejected, and the number returned then means nothing. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1630,7 +1630,9 @@ EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_config_ipi.html">fi
 </div><div class="c-member__body">
 
 <p>Process a single byte array format IP Address and populate the IP range offset in the results structure. </p>
-<p>The result IP type will need to be checked to determined the version of IP being processed. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The result IP type will need to be checked to determined the version of IP being processed.</p>
+<p>An IPv4-mapped IPv6 address (::ffff:a.b.c.d) is processed as its IPv4 address, and the result's type and target address are those of the IPv4 address. This applies to every way of giving an address, including strings and evidence. An IPv4-embedded address from RFC 6052, such as 64:ff9b::a.b.c.d, stays an IPv6 address, because deriving the IPv4 address from it is the job of an address translator (RFC 6052 section 1.3). See <a href="https://github.com/51Degrees/specifications/blob/main/ip-intelligence-specification/pipeline-elements/ip-intelligence-on-premise.md#address-forms">https://github.com/51Degrees/specifications/blob/main/ip-intelligence-specification/pipeline-elements/ip-intelligence-on-premise.md#address-forms</a></p>
+<p>An address below the lowest key in a graph has no profile for that graph's component and no exception is set. A property of that component has no value with the reason <a class="el" href="group___fifty_one_degrees_results.html#ggaef347b638495391733e5962b576321e6ac048b82896b3e8d9adc056dc3afd4f96" title="The results contain a null profile for the required component.">FIFTYONE_DEGREES_RESULTS_NO_VALUE_REASON_NULL_PROFILE</a>, unless it is mandatory with a default value, in which case it reads as that default. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>preallocated results structure to populate </td></tr>
     <tr><td class="paramname">ipAddress</td><td>byte array to process </td></tr>

@@ -353,7 +353,7 @@ Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Replaces the resource with the new resource. </p>
-<p>If the existing resource is not being used it will be freed. Otherwise it is left to the decrement function to free the resource when the usage count is zero. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the existing resource is not being used it will be freed. Otherwise it is left to the decrement function to free the resource when the usage count is zero. The memory of the replaced handle itself, a few tens of bytes, is kept until the manager is freed, because a thread can still be reading it. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">manager</td><td>the resource manager to initialise with the resource </td></tr>
     <tr><td class="paramname">newResource</td><td>pointer to the resource which the manager should manage access to </td></tr>
