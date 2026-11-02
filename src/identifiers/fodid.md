@@ -84,12 +84,9 @@ The cloud accepts two ways to decide a request's `id.usage` value. The *Direct* 
 
 Your integration decides the value and tells the cloud what to do by passing an explicit `id.usage` (`non-marketing`, `standard` or `personalized`) as a query parameter or HTTP request header. You own the mapping from whatever preference or consent surface you use to one of these three values, and the cloud acts on what you supply. This is the path @ref Identifiers_PMP takes. PMP captures the user's choice and announces it on the page, and the 51Degrees client script hears it and sends it as `id.usage` on its next request.
 
-### Derived from consent - the cloud maps a TCF or GPP string for you
+### Derived from consent - the cloud maps a TCF string for you
 
-Instead of deciding the value yourself, pass the raw IAB consent string and let the cloud derive `id.usage` from the consented purposes. Two evidence parameters are accepted:
-
-- `tcstring` - an IAB TCF v2 TCString, from the PMP widget or any TCF-aware CMP.
-- `gpp` - an IAB GPP string. When a GPP string carries a decodable EU TCF v2 section it takes precedence over `tcstring`, and a GPP string with no TCF section (for example a US-only string) is ignored and the cloud falls back to `tcstring`.
+Instead of deciding the value yourself, pass the raw IAB TCF v2 TC string as `tcstring`, from PMP or any TCF-aware consent management platform, and let the cloud derive `id.usage` from the consented purposes. A Global Privacy Platform string is not read, because the Model Terms for Marketing do not map that platform. See @ref Identifiers_51Did_Gpp.
 
 The cloud parses the string and checks the consented [IAB TCF v2 purposes](https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/) against the sets below, which are Appendix 1 of the [Model Terms for Marketing](https://m4ow.uk/mtm/2.txt), adding the matching `id.usage`:
 
@@ -98,9 +95,9 @@ The cloud parses the string and checks the consented [IAB TCF v2 purposes](https
 | `personalized` | 1, 2, 3, 4, 5, 6, 7, 8, 11                |
 | `standard`     | 1, 2, 7, 8, 11                            |
 
-`personalized` is tried first, then `standard`. If neither set is fully satisfied the cloud adds no `id.usage`, the `fodid.*` properties return a no-value reason, and no identifier is issued for advertising use the consent does not permit. Purposes 2, 7, 8 and 11 may be satisfied by a legitimate-interest bit as well as a consent bit, whereas purposes 1, 3, 4, 5 and 6 require an explicit consent bit, because IAB Policy forbids claiming them under legitimate interest.
+`personalized` is tried first, then `standard`. If neither set is fully satisfied the cloud adds no `id.usage`, so the response carries no `fodid` section and no identifier is issued for advertising use the consent does not permit. Purposes 2, 7, 8 and 11 may be satisfied by a legitimate-interest bit as well as a consent bit, whereas purposes 1, 3, 4, 5 and 6 require an explicit consent bit, because IAB Policy forbids claiming them under legitimate interest.
 
-**Direct intent always wins.** If `id.usage` is present on the request (query or header) the cloud uses it and ignores any `tcstring` or `gpp`, and derivation runs only when no explicit value was supplied. Malformed consent strings are ignored rather than rejected.
+**Direct intent always wins.** If `id.usage` is present on the request (query or header) the cloud uses it and ignores any `tcstring`, and derivation runs only when no explicit value was supplied. Malformed consent strings are ignored rather than rejected.
 
 Each consent signal a request can carry has a page of its own:
 
@@ -121,7 +118,7 @@ Each consent signal a request can carry has a page of its own:
 
 `non-marketing` 51Dids are covered by the customer's agreement with 51Degrees under the published [General Terms and Conditions](https://51degrees.com/terms/general-terms-and-conditions/20261019) and [Cloud Services Terms](https://51degrees.com/terms/cloud-services-terms/20260323).
 
-If `id.usage` is omitted, or set to `standard` / `personalized` while the request carries no License Key with the 51Did product, the `fodid.*` properties are returned with a no-value reason rather than throwing. Any value other than the three listed above is rejected as an invalid usage.
+If `id.usage` is omitted the response carries no `fodid` section. If it is set to `standard` or `personalized` while the request carries no License Key with the 51Did product, the `fodid.*` properties are returned with a no-value reason rather than throwing. Any value other than the three listed above is rejected as an invalid usage.
 
 ## Example
 
@@ -156,20 +153,23 @@ Open the example value in the [51Did inspector](https://51degrees.com/developers
 
 ## Payload layout
 
-The payload header is shared by every identifier type, and bits 6-7 of the flags byte select the type and the length of the value that follows.
+The payload header is shared by every identifier type, and bits 6-7 of the flags byte select the type and the length of the Match Key that follows. The [identifier layout](https://github.com/51Degrees/specifications/blob/main/did-specification/identifier-layout.md) in the 51Did specification defines every field.
 
 | Offset | Length | Field                                                          |
 |--------|--------|----------------------------------------------------------------|
-| 0      | 1      | Flags: bits 0-2 usage tier, bits 6-7 identifier type           |
-| 1      | 4      | LicenseId (uint32, little-endian)                              |
-| 5      | 16/32  | Value: GUID (Random) or SHA-256 (Probabilistic, Hashed Email)  |
+| 0      | 1      | Flags: bits 0-2 usage tier, bit 3 set where the usage was worked out from another signal rather than stated, bits 4-5 layout version, bits 6-7 identifier type |
+| 1      | 4      | License Id, an encrypted value on an identifier that carries a creator context |
+| 5      | 16/32  | Match Key: GUID (Random) or SHA-256 (Probabilistic, Hashed Email) |
+| 21/37  | 1      | Terms, an index to the terms the identifier was created under, `0` for not stated and `1` for the [Model Terms for Marketing, version 2](https://m4ow.uk/mtm/2.txt) |
 
-| Bits 6-7 | Type          | Payload length |
-|----------|---------------|----------------|
-| `00`     | Probabilistic | 37             |
-| `01`     | Random        | 21             |
-| `10`     | Hashed Email  | 37             |
-| `11`     | Reserved      | n/a            |
+Bytes after the Terms carry a creator context section, whose contents belong to the issuer. A payload with no byte after the Match Key states no terms.
+
+| Bits 6-7 | Type          | Match Key length |
+|----------|---------------|------------------|
+| `00`     | Probabilistic | 32               |
+| `01`     | Random        | 16               |
+| `10`     | Hashed Email  | 32               |
+| `11`     | Reserved      | n/a              |
 
 Identifiers issued before the type tag existed have bits 6-7 zeroed and decode as Probabilistic.
 
