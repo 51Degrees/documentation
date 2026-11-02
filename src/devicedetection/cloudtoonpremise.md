@@ -9,7 +9,7 @@ This guide walks you through migrating from 51Degrees Cloud Device Detection to 
 On-premise deployment works better when you need:
 
 - **Faster response times** - No network call, and microseconds per detection when the data file is held in memory
-- **Data privacy** - All processing happens within your infrastructure  
+- **Processing on your servers** - All processing happens within your infrastructure  
 - **High-volume processing** - Handle millions of detections without API limits
 - **Offline capability** - No internet connection required
 - **Predictable costs** - Fixed licensing instead of per-request pricing

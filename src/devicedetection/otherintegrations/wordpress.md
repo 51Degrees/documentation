@@ -59,13 +59,13 @@ Advanced mode relies on a probabilistic identifier from your Resource Key - `IdP
 
 ## Preference Management Platform (PMP)
 
-The `PMP` tab adds a 51Degrees consent popup to your public pages. Visitors choose `Standard`, `Personalized`, or a publisher-defined alternative (for example "Remove ads" or "Subscribe"). The choice is kept in a first party cookie on your own domain, `__mtm_pref`, holding one of `standard`, `personalized` or `non-marketing`. The answer is a cookie rather than browser storage because a request carries cookies, and carries nothing else PMP could write, so your own server, and anything in front of it, can act on the answer. The cookie carries no `HttpOnly` flag, which would stop a script reading it, because the page reads it back and replaces it when the visitor changes their mind. PMP also acts as the consent management platform (CMP) by exposing the consent state through the IAB Transparency and Consent Framework (TCF) API, so a separate consent manager is not needed. For the underlying concept and the cloud endpoint, see @ref Identifiers_PMP.
+The `PMP` tab adds the 51Degrees marketing preference popup to your public pages. Visitors choose `Standard`, `Personalized`, or a publisher-defined alternative (for example "Remove ads" or "Subscribe"). The choice is kept in a first party cookie on your own domain, `__mtm_pref`, holding one of `standard`, `personalized` or `non-marketing`. The answer is a cookie rather than browser storage because a request carries cookies, and carries nothing else PMP could write, so your own server, and anything in front of it, can act on the answer. The cookie carries no `HttpOnly` flag, which would stop a script reading it, because the page reads it back and replaces it when the visitor changes their mind. PMP also acts as the consent management platform (CMP) by exposing the consent state through the IAB Transparency and Consent Framework (TCF) API, so a separate consent manager is not needed. For the underlying concept and the cloud endpoint, see @ref Identifiers_PMP.
 
 Configure the popup from the `PMP` tab:
 
 -  **Enable PMP** shows the popup on public pages.
 -  **Alternative Button Label** and **Alternative Button URL** define the opt-out button and where it sends the visitor (typically a subscription, checkout, or paywall page). Both are required.
--  **Terms / Privacy URL** is linked from the popup and is required for a meaningful consent record.
+-  **Terms / Privacy URL** is linked from the popup, so a visitor can read your terms before answering, and is required.
 -  **Brand Name** and **Brand Logo URL** set the branding shown in the popup. Replace the placeholder defaults with your own.
 -  **Show Standard Marketing Option** shows the `Standard` choice alongside `Personalized` and the alternative button.
 -  **TCF Vendor String** is the base IAB TCF v2 consent string onto which PMP overlays the visitor's purpose consents at runtime. The built-in default consents every vendor on the current IAB Global Vendor List; override it to restrict the vendor set.

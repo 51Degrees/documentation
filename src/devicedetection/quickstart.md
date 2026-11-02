@@ -23,11 +23,11 @@
 
 ---
 
-### On-premise Deployment {#On-premise-integration}**Best for:** High-performance, privacy-sensitive, or offline environments
+### On-premise Deployment {#On-premise-integration}**Best for:** High-performance, data-sensitive, or offline environments
 
 **Benefits:**
 - **Low latency** - Microseconds per detection when the data file is held in memory, with no network call
-- **Complete privacy** - All processing stays within your infrastructure
+- **Processing on your servers** - All processing stays within your infrastructure
 - **High throughput** - Over 1 million detections per second on an eight-core AWS Graviton3 instance, with the data file in memory ([measured results](@ref ProductSummaries_Benchmarks_Hardware))
 - **Fast startup** - Loads the data file into memory and is ready to detect in under 150 milliseconds on the same Graviton3 instance, which matters most where servers start and stop as demand changes
 - **Offline capable** - No internet dependency for detection
@@ -51,7 +51,7 @@
 | **High-traffic Web Servers** | On-premise | Maximum performance, cost efficiency at scale |
 | **Real-time Applications** | On-premise | Microsecond latency requirements |
 | **Edge/CDN Integration** | On-premise | Offline capability, minimal latency |
-| **Privacy-sensitive Applications** | On-premise | Data never leaves your infrastructure |
+| **Data-sensitive Applications** | On-premise | Processing stays within your infrastructure |
 | **Variable Traffic Patterns** | Cloud | Pay-as-you-go scaling |
 
 ---

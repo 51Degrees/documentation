@@ -42,7 +42,7 @@ Many Android User-Agents will consistently place the substrings associated with 
 
 # Data set production {#DeviceDetection_Hash_DataSetProduction}The production of the optimized data set is computationally intensive as training data is evaluated. However the resulting data set is small and fast for 51Degrees users. As only the relevant characters are evaluated and some tolerance for substrings drifting within the User-Agent can be allowed for, the predictive features of **Hash** are better than character based trie solutions.
 
-With the help of optional @usagesharing, anonymized real world data is fed back into the data set production. This is constant learning cycle where new data, unknown to the system, is processed using the knowledge the system already has to enhance the graphs it produces. Not just for the data it has already seen, but for data it expects to be seen.
+With the help of optional @usagesharing, real world data is fed back into the data set production. This is constant learning cycle where new data, unknown to the system, is processed using the knowledge the system already has to enhance the graphs it produces. Not just for the data it has already seen, but for data it expects to be seen.
 
 Graphs are constructed using a series of decision trees to determine the best structure for finding a result as fast as possible. The exact structure of the graphs contained in the **Hash** data set is determined using decision trees in a few different ways.
 

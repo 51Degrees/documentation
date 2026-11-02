@@ -56,7 +56,7 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
       ], "dd");
       grabTestedVersions("device-detection-java", "java-versions", [
           { title: "JDK", getValue: d => d.JavaSDKEnvVar.split("_")[2] },
-          { title: "Architecture", getValue: d => d.JavaSDKEnvVar.split("_")[3].toLowerCase() }
+          { title: "Architecture", getValue: d => d.Image.endsWith("-arm") ? "arm64" : d.JavaSDKEnvVar.split("_")[3].toLowerCase() }
       ]);
       grabTestedVersions("device-detection-dotnet", "dotnet-versions", [
           { title: "Architecture", getValue: d => d.Arch }
@@ -74,6 +74,9 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
           { title: "GoLang Version", getValue: d => d.LanguageVersion }
       ]);
       grabTestedVersions("device-detection-php", "php-versions", [
+          { title: "PHP Version", getValue: d => d.LanguageVersion }
+      ]);
+      grabTestedVersions("device-detection-php-onpremise", "php-onpremise-versions", [
           { title: "PHP Version", getValue: d => d.LanguageVersion }
       ]);
       grabTestedVersions("pipeline-wordpress", "wordpress-versions", [
@@ -116,6 +119,10 @@ If you have a configuration that is not covered, please [contact us](https://51d
 @endsnippet
 @startsnippet{php}
 These are automatically tested on [GitHub](https://github.com/51Degrees?q=php&type=all&language=&sort=).
+
+On-premise:
+<div id="php-onpremise-versions"></div>
+Cloud:
 <div id="php-versions"></div>
 If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
