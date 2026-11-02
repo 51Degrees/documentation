@@ -21,9 +21,9 @@ The attributes PMP reads from its own `<script>` tag.
 | `data-use-third-party-cookies` | No       | `true`  | Whether a visitor who chose Standard or Personalized may be offered the second card, which shares the answer with the other sites in the group. Nothing but the exact string `false` turns it off, so a mistyped value leaves sharing running rather than silently switching it off. |
 | `data-object-name`             | No       | `fod`   | What the 51Degrees client script's object is called on this page, which is where the third party cookie result and the GDPR answer are read from. Set it only where the client script was built with the `fod-js-object-name` parameter, and set both to the same name. |
 
-A License Key never goes on the page. The loader sends none, the bundle request refuses one with `400`, and a tag carrying `data-license-key` stops PMP from starting, with one console error saying so. Where your products need a License Key on top of the Resource Key, add the License Key to the Resource Key when you create it.
+A License Key never goes on the page. The loader sends none, the bundle request refuses one with `400`, and a script tag with the `data-license-key` attribute stops PMP from starting, with one console error saying so. Where your products need a License Key on top of the Resource Key, add the License Key to the Resource Key when you create it.
 
-PMP waits 1500 milliseconds for the cloud when it reads the shared answer at start up and when it writes one, and no attribute changes that. A tag carrying `data-timeout` gets one console warning per page view.
+PMP waits 1500 milliseconds for the cloud when it reads the shared answer at start up and when it writes one, and no attribute changes that. A script tag with a `data-timeout` attribute gets one console warning per page view.
 
 ## The dialog wording
 

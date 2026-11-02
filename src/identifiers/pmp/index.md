@@ -1,6 +1,6 @@
 @page Identifiers_PMP PMP (Preference Management Platform)
 
-PMP is a small embeddable widget that asks a visitor what kind of marketing they want, keeps the answer in a cookie on your domain and fires a browser event carrying it, which the 51Degrees client script listens for. The answer is one of `non-marketing`, `standard` or `personalized`, which are the three `id.usage` values @ref Identifiers_51Did takes.
+PMP is a small embeddable widget that asks a visitor what kind of marketing they want, keeps the answer in a cookie on your domain, and passes the answer to the 51Degrees client script, which sends the answer to the cloud. The answer is one of `non-marketing`, `standard` or `personalized`, which are the three `id.usage` values @ref Identifiers_51Did takes.
 
 ## Endpoints
 
@@ -20,7 +20,7 @@ That returns one built bundle, where `<NAME>` is a locale such as `en-us`, optio
 
 This is the request the cloud checks and counts. It is checked against the key's domains, as [the domains a Resource Key accepts](@ref Resource_key_domains) describes, so a page on a domain the key does not cover gets a `401` and no dialog. It counts as one of the key's monthly requests, so a page view where the dialog loads uses one request and a visitor who leaves before the bundle loads uses none.
 
-A License Key never goes on the page. The loader sends none, the bundle request refuses one with `400`, and a tag carrying `data-license-key` stops PMP from starting, with one console error saying so. Where your products need a License Key on top of the Resource Key, add the License Key to the Resource Key when you create it.
+A License Key never goes on the page. The loader sends none, the bundle request refuses one with `400`, and a script tag with the `data-license-key` attribute stops PMP from starting, with one console error saying so. Where your products need a License Key on top of the Resource Key, add the License Key to the Resource Key when you create it.
 
 ## The load process
 

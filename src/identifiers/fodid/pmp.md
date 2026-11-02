@@ -18,7 +18,7 @@ All three are answers, and each one creates a 51Did carrying that usage. The alt
 
 You write no code for this.
 
-1. The visitor answers the dialog. PMP stores the answer, fires it as the `51d-pmp-preference` event on the window and holds it behind `window.__51d_pmp.preference()`.
+1. The visitor answers the dialog. PMP stores the answer, fires the `51d-pmp-preference` event on the window, which includes the answer, and holds the answer behind `window.__51d_pmp.preference()`.
 2. The 51Degrees client script hears the event, or reads the getter where the answer was already in force when the script was built, and asks the cloud again.
 3. That request carries `id.usage` and every value the script's snippets produced, so the identifier is created after everything else about the page is known.
 

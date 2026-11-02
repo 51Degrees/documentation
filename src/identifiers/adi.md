@@ -43,7 +43,7 @@ Add one `<script>` tag to the page. The same URL works for every language.
 </script>
 ```
 
-Every attribute is optional. A tag carrying only the Resource Key gets the built-in sentence, the built-in template and the built-in timeout, and finds its ads by the `data-adi` attribute described under *Which elements carry an ad* below.
+Every attribute is optional. A tag that sets nothing but the Resource Key gets the built-in sentence, the built-in template and the built-in timeout, and finds its ads by the `data-adi` attribute described under *Which elements carry an ad* below.
 
 ### The 51Degrees client script
 
