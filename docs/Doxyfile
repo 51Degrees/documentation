@@ -282,7 +282,7 @@ ALIASES                = "antifraud=[anti-fraud](@ref Fraud_Index)" \
                          "cloudservice=[Cloud Service](@ref PipelineApi_Concepts_FlowElements_CloudEngine)" \
                          "combiningservices=[combining services](@ref ReverseGeocoding_Examples_CombiningServices)" \
                          "component=[component](@ref PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components)" \
-                         "configuratorexplanation=[Configurator explanation](@ref Services_Configurator)" \
+                         "configuratorexplanation=[Resource Key guide](@ref Services_Configurator)" \
                          "customengine=[custom engine](@ref PipelineApi_Features_CustomElements)" \
                          "customelement=[custom element](@ref PipelineApi_Features_CustomElements)" \
                          "customelements=[custom elements](@ref PipelineApi_Features_CustomElements)" \

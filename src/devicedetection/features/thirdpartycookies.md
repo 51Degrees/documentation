@@ -72,7 +72,7 @@ A JavaScript snippet for client-side detection. This property is populated only 
 
 Third-party cookies detection is automatically performed when using the 51Degrees @ref PipelineApi_Features_ClientSideEvidence "client-side evidence" JavaScript integration.
 
-**Note:** If you are using the 51Degrees Cloud service, you need to create a resource key that includes the `ThirdPartyCookiesEnabled` and `ThirdPartyCookiesEnabledJavascript` properties. Use the @ref Services_Configurator "Configurator" to create or update your resource key with these properties enabled.
+**Note:** If you are using the 51Degrees Cloud service, you need a Resource Key that includes the `ThirdPartyCookiesEnabled` and `ThirdPartyCookiesEnabledJavascript` properties. The @ref Services_Configurator "Resource Key guide" shows how to create one.
 
 When the JavaScript is loaded and makes its callback to the cloud service, the detection happens transparently. The results are available in the response data alongside other device detection properties.
 

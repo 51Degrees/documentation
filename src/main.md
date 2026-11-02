@@ -70,8 +70,8 @@ Signed, probabilistic device-bound identifiers (51Did) and an embeddable prefere
 
 Prefer a lightweight approach? Implement device detection directly in the browser - no server-side code needed.
 
-- [Cloud Configurator](https://configure.51degrees.com/) - Generate custom JavaScript snippets
-- [Setup Guide](@ref Services_Configurator) - Resource Key and integration steps
+- [configure.51degrees.com](https://configure.51degrees.com/) - Create a Resource Key and get the JavaScript snippet for it
+- [Resource Key guide](@ref Services_Configurator) - Creating a Resource Key step by step
 - [Cloud API Reference](https://cloud.51degrees.com/api-docs/index.html) - Complete HTTP API documentation
 
 ---

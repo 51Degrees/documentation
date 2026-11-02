@@ -26,7 +26,7 @@ Use this when you want the full enrichment set (device, 51Did, IP Intelligence) 
 
 **Setup:** [Prebid.js RTD Module Documentation](https://docs.prebid.org/dev-docs/modules/51DegreesRtdProvider.html)
 
-**Resource Key properties.** Generate the key with the [Cloud Configurator](https://configure.51degrees.com). To populate every field the RTD module writes, include:
+**Resource Key properties.** Create the key at [configure.51degrees.com](https://configure.51degrees.com). To populate every field the RTD module writes, include:
 
 - **Device Detection** (`device.*`): `DeviceId`, `DeviceType`, `HardwareVendor`, `HardwareName`, `HardwareNamePrefix`, `HardwareNameVersion`, `HardwareModel`, `PlatformName`, `PlatformVersion`, `ScreenPixelsHeight`, `ScreenPixelsWidth`, `ScreenPixelsPhysicalHeight`, `ScreenPixelsPhysicalWidth`, `ScreenInchesHeight`, `ScreenInchesWidth`, `PixelRatio`, `ThirdPartyCookiesEnabled`.
 - **IP Intelligence** (`device.ip`, `device.geo.*`): `Latitude`, `Longitude`, `CountryCode3`, `Iso31662Lvl4`, `ZipCode`, `TimeZoneOffset`, `AccuracyRadiusMin`, `LocationConfidence`.

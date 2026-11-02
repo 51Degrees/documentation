@@ -1,8 +1,6 @@
-@page Services_Configurator Configurator (Cloud)
+@page Services_Configurator Creating a Resource Key
 
-# Obtaining a Resource Key
-
-Access to API queries is controlled by a Resource Key, which is obtained from the [Cloud Configurator](https://configure.51degrees.com/).
+Access to the cloud service is controlled by a Resource Key, which you create at [configure.51degrees.com](https://configure.51degrees.com/).
 
 When a Resource Key is created, you choose the properties that it will return from queries, and once these are set they cannot be changed. However, it is possible to create more keys, each tied to whichever properties you choose.
 
@@ -15,9 +13,9 @@ For a comprehensive list of all available properties and their descriptions, see
 
 ## Step 1: Choose properties
 
-To obtain a Resource Key, visit the [Cloud Configurator](https://configure.51degrees.com/). This will show the complete list of properties, broken down by category and by vendor. Choose whichever properties you need for the query you are planning.
+Open [configure.51degrees.com](https://configure.51degrees.com/). It shows the complete list of properties, broken down by category and by vendor. Choose whichever properties you need for the query you are planning.
 
-For example, if you intend to look up latitude and longitude data to get a country, using 51Degrees as the vendor, then in the [Configurator](https://configure.51degrees.com/) you can find the **Country** property by choosing **Location** on the left, then **location** again, then ticking **Country** with the 51D logo. Clicking on that **Country** key shows a description: "Country By 51Degrees: The name of the country that the supplied location is in." Descriptions are there to help you understand what each property means and whether you want to include it in your queries.
+For example, if you intend to look up latitude and longitude data to get a country, using 51Degrees as the vendor, you can find the **Country** property by choosing **Location** on the left, then **location** again, then ticking **Country** with the 51D logo. Clicking on that **Country** key shows a description: "Country By 51Degrees: The name of the country that the supplied location is in." Descriptions are there to help you understand what each property means and whether you want to include it in your queries.
 
 ![](images/configurator-location-country.png)
 
@@ -33,13 +31,12 @@ Finally your newly created Resource Key is available. The Implement screen shows
 
 ![](images/configurator-implement-key.png)
 
-Follow these three steps by visiting the configurator at [configure.51degrees.com](https://configure.51degrees.com/) and obtaining a Resource Key from the Resource Key section in Step 3. 
+Follow these three steps at [configure.51degrees.com](https://configure.51degrees.com/) and take the Resource Key from the Resource Key section in Step 3.
 
 Make a note of that Resource Key and then continue following the @introduction.
 
 # Displaying details for an existing Resource Key
 
-If you have a Resource Key and need to establish which properties it has access to, you can construct a URL https://configure.51degrees.com/YOUR_RESOURCE_KEY. This will show Step 1 of the Configurator with the properties for this specific key already selected.
+If you have a Resource Key and need to establish which properties it has access to, you can construct a URL https://configure.51degrees.com/YOUR_RESOURCE_KEY. This will show Step 1 with the properties for this specific key already selected.
 
-Beware: do not continue to Steps 2 or 3. Doing this will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it wil create a new Resource Key.
-
+Beware: do not continue to Steps 2 or 3. Doing this will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it will create a new Resource Key.

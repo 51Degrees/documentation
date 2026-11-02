@@ -33,7 +33,7 @@ Make sure that one or more of the following properties are included with your
 - `SetHeaderBrowserAccept-CH`
 - `SetHeaderHardwareAccept-CH`
 - `SetHeaderPlatformAccept-CH`
-(The configurator will automatically add the ones relevant to the properties you have selected)
+(The ones relevant to the properties you have selected are added automatically when you create the key)
 
 If you are calling our Cloud Service via our Pipeline API, hosted on your servers, then you'll
 also need to ensure the `Accept-CH` HTTP header is set using these values. See the 'On-premise' 

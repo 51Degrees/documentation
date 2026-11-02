@@ -2,7 +2,7 @@
 
 A Resource Key grants your code access to the 51Degrees Cloud APIs. A specific Resource Key has access to a particular set of properties which are chosen at key creation time and cannot be changed afterwards. The number of accesses authorized by a particular Resource Key is limited for free keys, or can be associated with your License Key and thus your account.
 
-To obtain a Resource Key, use the Cloud Configurator; instructions on how to use the Cloud Configurator to create a key while associating it with properties and your License Key are part of the @configuratorexplanation, which describes the process in detail.
+To create a Resource Key, with its properties and your License Key, follow the @configuratorexplanation.
 
 # Authorization errors
 
@@ -51,7 +51,7 @@ your Resource Key: `%https://cloud.51degrees.com/api/v4/<resource_key>.json` (de
 If you see any null reasons like `priceband is a paid feature. You need a licence key to retrieve data. Visit https://51degrees.com/pricing for details` then you do not have the required subscription to access the property. You can check the 51Degrees [Property Dictionary](https://51degrees.com/developers/property-dictionary) to see what subscription is required.
 
 # Seeing existing key authorized properties {#Seeing_existing_key_authorized_properties}
-Some of the error messages above will list the properties for which the used key is authorized, but you can also see the properties for a key you already have by constructing and visiting the URL https://configure.51degrees.com/YOUR_RESOURCE_KEY. This will show Step 1 of the Configurator with the properties for this specific key already selected.
+Some of the error messages above will list the properties for which the used key is authorized, but you can also see the properties for a key you already have by constructing and visiting the URL https://configure.51degrees.com/YOUR_RESOURCE_KEY. This will show Step 1 with the properties for this specific key already selected.
 
 Beware: continuing to steps 2 or 3 will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it will create a new Resource Key. 
 

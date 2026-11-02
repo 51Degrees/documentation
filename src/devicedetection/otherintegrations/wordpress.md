@@ -15,7 +15,7 @@ Using real-time data, our plugin can optimize your website for users, based on d
 1.  Visit the new `51Degrees` Settings menu.
 
 2.  To start using this plugin, you will need to create a `Resource Key`. This enables access to the data you need via the 51Degrees Cloud service. You can 
-    create a `Resource Key` for free, using the [configurator](https://configure.51degrees.com/) to select the properties you want.
+    create a `Resource Key` for free, at [configure.51degrees.com](https://configure.51degrees.com/), selecting the properties you want.
 
 
 ## Integration with Google Analytics
@@ -45,7 +45,7 @@ The `Robots.txt` tab lets you host a virtual `/robots.txt` file and, optionally,
 
 5.  **Custom Top Entries** and **Custom Bottom Entries** let you prepend or append your own lines around the generated 51Degrees section.
 
-Crawler detection needs the `IsCrawler` and `CrawlerUsage` properties, and file generation from the cloud needs the `RobotsTxt` `PlainText` property. Create a key with these using the <a href="https://configure.51degrees.com/">configurator</a> if your key does not already include them.
+Crawler detection needs the `IsCrawler` and `CrawlerUsage` properties, and file generation from the cloud needs the `RobotsTxt` `PlainText` property. Create a key with these at <a href="https://configure.51degrees.com/">configure.51degrees.com</a> if your key does not already include them.
 
 
 ## Suspicious activity detection
@@ -54,7 +54,7 @@ The `Suspicious` tab detects and blocks visitors who make too many requests in a
 
 When your Resource Key is working, detection runs in advanced mode and identifies visitors individually, even when they share a network. If the key is missing or invalid, it falls back to basic mode, where visitors that look identical to the site are grouped and blocked together.
 
-Advanced mode relies on a probabilistic identifier from your Resource Key - `IdProbLic` if present, otherwise `IdProbGlobal` (see @ref Identifiers_51Did). These are generated with `id.usage=non-marketing`, so they do not require a license key or a specific product, but they do need to be present on the key. If your existing key does not include either property, create a new Resource Key that adds it using the <a href="https://configure.51degrees.com/">configurator</a>. Without these properties the plugin falls back to a hash of the visitor's IP address and User-Agent, which groups visitors that share a network.
+Advanced mode relies on a probabilistic identifier from your Resource Key - `IdProbLic` if present, otherwise `IdProbGlobal` (see @ref Identifiers_51Did). These are generated with `id.usage=non-marketing`, so they do not require a license key or a specific product, but they do need to be present on the key. If your existing key does not include either property, create a new Resource Key that adds it at <a href="https://configure.51degrees.com/">configure.51degrees.com</a>. Without these properties the plugin falls back to a hash of the visitor's IP address and User-Agent, which groups visitors that share a network.
 
 
 ## Preference Management Platform (PMP)
