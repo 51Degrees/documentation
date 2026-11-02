@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <p><code>AgentSignature</code> reports one of five values.</p>
 <ul>
 <li><b>Absent</b> The request carried no signature headers. This is the ordinary case and it is never evidence against a request.</li>
-<li><b>Invalid</b> The request carried a signature and something about the signature or the headers carrying it is wrong.</li>
+<li><b>Invalid</b> The request carried a signature, and the signature or one of its headers is wrong.</li>
 <li><b>Unverified</b> The request carried a signature that could not be checked. This is not evidence against the agent, because the agent may be signing correctly while its key cannot be reached.</li>
 <li><b>Timeout</b> The agent's key directory was still being fetched when the wait ran out. The fetch keeps running, so a later request from that agent finds the result.</li>
 <li><b>Verified</b> The signature checked out against a key the agent publishes.</li>

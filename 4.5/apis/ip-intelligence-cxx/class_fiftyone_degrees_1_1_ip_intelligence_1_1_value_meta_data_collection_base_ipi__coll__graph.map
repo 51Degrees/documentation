@@ -1,80 +1,84 @@
 <map id="FiftyoneDegrees::IpIntelligence::ValueMetaDataCollectionBaseIpi" name="FiftyoneDegrees::IpIntelligence::ValueMetaDataCollectionBaseIpi">
-<area shape="rect" id="Node000001" title="A collection of all value meta data contained in an IP Intelligence engine." alt="" coords="3160,916,3403,956"/>
-<area shape="rect" id="Node000002" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title="A group of items accessible by index or key." alt="" coords="2859,888,3053,928"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="3067,915,3160,923,3159,928,3067,920"/>
-<area shape="rect" id="Node000003" href="$structfiftyone_degrees_data_set_ipi.html" title="Data set structure containing all the components used for IP intelligence." alt="" coords="2859,953,3053,978"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="3066,954,3136,948,3160,946,3160,951,3136,953,3067,959"/>
-<area shape="rect" id="Node000004" href="$structfiftyone_degrees_data_set_ipi_base.html" title="Data set structure which contains the base dataset structure." alt="" coords="2497,507,2723,533"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="2690,534,2729,548,2769,567,2807,593,2837,627,2848,655,2851,693,2847,786,2844,877,2849,913,2861,938,2875,950,2872,954,2857,942,2844,914,2839,877,2842,785,2846,694,2843,656,2832,629,2803,597,2767,572,2727,553,2688,539"/>
-<area shape="rect" id="Node000005" href="$structfiftyone_degrees_data_set_base.html" title="Base data set structure which contains the &#39;must have&#39;s for all data sets." alt="" coords="2122,278,2331,303"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="2263,308,2589,505,2586,509,2260,313"/>
-<area shape="rect" id="Node000006" href="$structfiftyone_degrees_file_pool.html" title="Stack of handles used to read data from a single source file." alt="" coords="1710,163,1886,189"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1900,182,1989,195,2082,217,2151,246,2205,275,2203,280,2149,251,2081,223,1988,200,1899,187"/>
-<area shape="rect" id="Node000007" href="$structfiftyone_degrees_pool.html" title="Pool of resources stored as items in a stack." alt="" coords="1192,126,1345,151"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1311,154,1360,173,1416,188,1496,197,1576,197,1651,193,1717,186,1717,191,1652,198,1576,203,1495,202,1416,193,1359,179,1309,159"/>
-<area shape="poly" id="edge10_Node000007_Node000007" title=" " alt="" coords="1221,114,1225,108,1234,103,1269,99,1296,102,1312,108,1317,118,1308,128,1304,124,1311,117,1309,112,1295,107,1269,105,1236,108,1228,112,1225,117"/>
-<area shape="rect" id="Node000008" href="$structfiftyone_degrees_pool_item.html" title="Pool item node in the stack of items." alt="" coords="1707,87,1889,113"/>
-<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="1359,145,1499,150,1578,148,1656,140,1713,127,1763,110,1765,115,1715,132,1656,145,1578,153,1499,156,1359,150"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1693,103,1561,107,1416,117,1337,129,1336,123,1416,112,1561,102,1693,98"/>
-<area shape="rect" id="Node000009" href="$unionfiftyone_degrees_pool_head.html" title="The head of the stack used for pop and push operations." alt="" coords="693,126,880,151"/>
-<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="894,136,1192,136,1192,141,894,141"/>
-<area shape="rect" id="Node000010" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="1683,37,1913,62"/>
-<area shape="poly" id="edge11_Node000005_Node000010" title=" " alt="" coords="1887,63,1917,72,2083,160,2160,223,2215,276,2211,280,2156,227,2080,165,1915,77,1885,68"/>
-<area shape="rect" id="Node000012" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="2105,17,2348,42"/>
-<area shape="poly" id="edge14_Node000012_Node000010" title=" " alt="" coords="1903,33,1940,29,2105,25,2105,30,1940,35,1904,38"/>
-<area shape="rect" id="Node000011" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="1177,12,1360,52"/>
-<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="1374,33,1683,43,1682,48,1374,38"/>
-<area shape="poly" id="edge13_Node000010_Node000012" title=" " alt="" coords="2154,47,2082,57,1996,61,1913,60,1913,54,1996,56,2081,52,2153,42"/>
-<area shape="rect" id="Node000013" href="$structfiftyone_degrees_property_available_array.html" title="Array of items of type fiftyoneDegreesPropertyAvailable used to easily access and track the size of t..." alt="" coords="1416,331,1656,371"/>
-<area shape="poly" id="edge15_Node000005_Node000013" title=" " alt="" coords="1669,347,1789,343,1916,335,2043,319,2156,301,2157,306,2044,324,1916,340,1790,348,1670,352"/>
-<area shape="rect" id="Node000014" href="$structfiftyone_degrees_property_available.html" title="Used to access the property item quickly without the need to search." alt="" coords="667,338,907,363"/>
-<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="920,348,1416,348,1416,353,920,353"/>
-<area shape="rect" id="Node000021" href="$structfiftyone_degrees_override_property.html" title="Index and pointer to a property which can be overridden." alt="" coords="1151,257,1387,282"/>
-<area shape="poly" id="edge26_Node000021_Node000014" title=" " alt="" coords="863,333,930,320,1181,279,1182,285,931,325,864,338"/>
-<area shape="rect" id="Node000015" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="256,699,476,725"/>
-<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="391,688,769,361,772,365,394,692"/>
-<area shape="rect" id="Node000017" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="931,699,1121,725"/>
-<area shape="poly" id="edge21_Node000017_Node000015" title=" " alt="" coords="433,725,510,737,625,743,741,740,849,732,938,722,938,727,849,737,742,745,625,748,509,743,432,730"/>
-<area shape="rect" id="Node000029" href="$structfiftyone_degrees_list.html" title="List structure which contains a list of collection items." alt="" coords="952,818,1100,843"/>
-<area shape="poly" id="edge36_Node000029_Node000015" title=" " alt="" coords="403,729,453,752,510,772,630,798,751,814,862,823,952,827,952,832,861,828,750,819,629,803,509,777,451,757,401,733"/>
-<area shape="rect" id="Node000016" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="5,699,161,725"/>
-<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="175,709,256,709,256,715,175,715"/>
-<area shape="poly" id="edge34_Node000003_Node000017" title=" " alt="" coords="1100,694,1295,662,1415,649,1535,644,2612,644,2628,647,2645,655,2678,684,2710,726,2742,775,2804,873,2833,913,2860,938,2887,950,2884,955,2857,942,2829,916,2799,876,2738,778,2706,729,2674,688,2642,660,2627,652,2611,649,1535,649,1415,654,1296,667,1100,699"/>
-<area shape="poly" id="edge19_Node000015_Node000017" title=" " alt="" coords="917,715,476,715,476,709,917,709"/>
-<area shape="poly" id="edge20_Node000017_Node000017" title=" " alt="" coords="980,686,993,677,1026,673,1053,675,1069,681,1073,691,1065,701,1061,697,1068,690,1065,685,1051,680,1026,678,995,681,983,690"/>
-<area shape="rect" id="Node000031" href="$structfiftyone_degrees_ipi_cg.html" title="The information and a working collection to retrieve entries from the component graph." alt="" coords="2147,1027,2306,1053"/>
-<area shape="poly" id="edge44_Node000031_Node000017" title=" " alt="" coords="1130,724,1312,755,1551,804,1683,836,1818,872,1952,913,2082,959,2153,992,2207,1025,2205,1030,2150,997,2080,964,1951,918,1817,877,1682,841,1550,809,1311,760,1129,729"/>
-<area shape="rect" id="Node000018" href="$structfiftyone_degrees_evidence_property_index_array.html" title="Array of items of type fiftyoneDegreesEvidencePropertyIndex used to easily access and track the size ..." alt="" coords="247,331,485,371"/>
-<area shape="poly" id="edge22_Node000014_Node000018" title=" " alt="" coords="499,348,666,348,666,353,499,353"/>
-<area shape="rect" id="Node000019" href="$structfiftyone_degrees_header_array.html" title="Array of Headers which should always be ordered in ascending order of fullHeaderId." alt="" coords="1695,278,1901,303"/>
-<area shape="poly" id="edge23_Node000005_Node000019" title=" " alt="" coords="1915,288,2122,288,2122,293,1915,293"/>
-<area shape="rect" id="Node000020" href="$structfiftyone_degrees_override_property_array.html" title="Array of items of type fiftyoneDegreesOverrideProperty used to easily access and track the size of th..." alt="" coords="1680,213,1916,253"/>
-<area shape="poly" id="edge24_Node000005_Node000020" title=" " alt="" coords="1930,244,2082,263,2159,275,2158,281,2081,268,1929,249"/>
-<area shape="poly" id="edge25_Node000020_Node000021" title=" " alt="" coords="1401,258,1656,241,1679,240,1680,245,1656,247,1401,264"/>
-<area shape="rect" id="Node000022" href="$structfiftyone_degrees_indices_property_profile.html" title="Maps the profile index and the property index to the first value index of the profile for the propert..." alt="" coords="1685,399,1911,439"/>
-<area shape="poly" id="edge27_Node000005_Node000022" title=" " alt="" coords="1925,418,2003,409,2080,389,2120,370,2157,346,2211,301,2214,305,2160,351,2123,375,2082,395,2004,415,1926,423"/>
-<area shape="rect" id="Node000023" href="$structfiftyone_degrees_data_set_ipi_header.html" title="DATA STRUCTURES." alt="" coords="1172,1363,1365,1403"/>
-<area shape="poly" id="edge28_Node000003_Node000023" title=" " alt="" coords="1342,1356,1433,1330,1545,1304,1670,1283,1734,1277,1797,1275,2611,1275,2644,1272,2676,1264,2706,1252,2735,1237,2788,1196,2835,1148,2875,1097,2907,1049,2946,977,2951,980,2911,1051,2879,1100,2839,1152,2792,1200,2738,1241,2708,1257,2677,1269,2645,1277,2611,1280,1797,1280,1734,1282,1671,1288,1546,1309,1434,1335,1344,1361"/>
-<area shape="rect" id="Node000024" href="$structfiftyone_degrees_date.html" title="Used to store the date when the dataset was produced and next date 51Degrees expect to provide a new ..." alt="" coords="709,1443,865,1469"/>
-<area shape="poly" id="edge29_Node000023_Node000024" title=" " alt="" coords="879,1464,995,1467,1059,1463,1121,1452,1183,1429,1236,1400,1238,1405,1186,1434,1122,1457,1059,1468,995,1472,878,1469"/>
-<area shape="rect" id="Node000025" href="$structfiftyone_degrees_collection_header.html" title="Collection header structure which defines the size and location of the collection data." alt="" coords="691,1120,882,1160"/>
-<area shape="poly" id="edge30_Node000023_Node000025" title=" " alt="" coords="799,1172,815,1221,842,1279,881,1336,905,1360,932,1379,950,1386,973,1391,1034,1395,1172,1390,1172,1395,1034,1401,973,1396,948,1391,929,1384,901,1364,876,1339,837,1282,810,1223,794,1174"/>
-<area shape="rect" id="Node000032" href="$structfiftyone_degrees_ipi_cg_info.html" title="Fixed width record in the collection where the record relates to a component and IP version." alt="" coords="1707,1030,1889,1055"/>
-<area shape="poly" id="edge40_Node000032_Node000025" title=" " alt="" coords="896,1141,1124,1142,1258,1137,1392,1125,1493,1110,1592,1091,1750,1053,1751,1058,1593,1096,1493,1116,1392,1131,1259,1142,1124,1147,896,1147"/>
-<area shape="rect" id="Node000033" href="$structfiftyone_degrees_ipi_cg_member_node.html" title="Data structure used for the values collection." alt="" coords="1145,1027,1392,1053"/>
-<area shape="poly" id="edge42_Node000033_Node000025" title=" " alt="" coords="895,1115,1206,1050,1207,1055,896,1120"/>
-<area shape="rect" id="Node000026" href="$structfiftyone_degrees_config_ipi.html" title="IP Intelligence specific configuration structure." alt="" coords="2519,926,2701,951"/>
-<area shape="poly" id="edge31_Node000003_Node000026" title=" " alt="" coords="2715,944,2859,955,2859,961,2715,949"/>
-<area shape="rect" id="Node000027" href="$structfiftyone_degrees_config_base.html" title="Base configuration structure containing common configuration options, and options that apply to struc..." alt="" coords="2127,926,2326,951"/>
-<area shape="poly" id="edge32_Node000026_Node000027" title=" " alt="" coords="2340,938,2372,939,2473,939,2518,938,2518,943,2473,944,2372,944,2340,944"/>
-<area shape="rect" id="Node000028" href="$structfiftyone_degrees_collection_config.html" title="Collection configuration structure which defines how the collection should be created by the create m..." alt="" coords="2131,861,2322,901"/>
-<area shape="poly" id="edge33_Node000026_Node000028" title=" " alt="" coords="2336,895,2524,923,2524,929,2335,900"/>
-<area shape="poly" id="edge35_Node000003_Node000029" title=" " alt="" coords="1063,847,1145,887,1260,933,1326,954,1395,971,1465,982,1535,987,2611,987,2741,982,2859,973,2860,978,2741,988,2611,992,1535,992,1464,988,1393,976,1324,959,1258,938,1143,892,1061,852"/>
-<area shape="rect" id="Node000030" href="$structfiftyone_degrees_ipi_cg_array.html" title="An array of all the component graphs and collections available." alt="" coords="2513,1027,2707,1053"/>
-<area shape="poly" id="edge37_Node000003_Node000030" title=" " alt="" coords="2720,1043,2777,1039,2834,1028,2863,1018,2891,1004,2936,976,2939,980,2894,1008,2865,1022,2835,1033,2778,1044,2720,1048"/>
-<area shape="poly" id="edge38_Node000030_Node000031" title=" " alt="" coords="2320,1037,2513,1037,2513,1043,2320,1043"/>
-<area shape="poly" id="edge39_Node000031_Node000032" title=" " alt="" coords="1903,1040,2081,1039,2147,1038,2147,1043,2081,1044,1903,1045"/>
-<area shape="poly" id="edge41_Node000032_Node000033" title=" " alt="" coords="1406,1038,1706,1040,1706,1045,1406,1043"/>
-<area shape="rect" id="Node000034" href="$structfiftyone_degrees_ipi_cg_member.html" title="DATA STRUCTURES." alt="" coords="681,1027,893,1053"/>
-<area shape="poly" id="edge43_Node000033_Node000034" title=" " alt="" coords="907,1037,1145,1037,1145,1043,907,1043"/>
+<area shape="rect" id="Node000001" title="A collection of all value meta data contained in an IP Intelligence engine." alt="" coords="3068,749,3311,789"/>
+<area shape="rect" id="Node000002" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title="A group of items accessible by index or key." alt="" coords="2767,721,2961,761"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2975,748,3068,756,3067,762,2975,754"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_data_set_ipi.html" title="Data set structure containing all the components used for IP intelligence." alt="" coords="2767,786,2961,811"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="2974,789,3044,783,3068,780,3068,786,3044,788,2975,794"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_data_set_ipi_base.html" title="Data set structure which contains the base dataset structure." alt="" coords="2405,365,2631,390"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="2645,383,2699,402,2724,418,2745,438,2758,468,2762,508,2757,607,2752,705,2757,744,2769,772,2783,784,2780,788,2765,775,2751,746,2747,705,2752,607,2757,508,2753,469,2740,442,2721,422,2697,407,2643,388"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_data_set_base.html" title="Base data set structure which contains the &#39;must have&#39;s for all data sets." alt="" coords="2030,270,2239,295"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="2201,296,2466,362,2465,367,2200,301"/>
+<area shape="rect" id="Node000006" href="$structfiftyone_degrees_file_pool.html" title="Stack of handles used to read data from a single source file." alt="" coords="1618,210,1794,235"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1808,234,2043,267,2043,273,1807,239"/>
+<area shape="rect" id="Node000007" href="$structfiftyone_degrees_pool.html" title="Pool of resources stored as items in a stack." alt="" coords="1149,150,1303,175"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1272,178,1321,194,1374,207,1437,215,1501,220,1618,223,1618,228,1501,226,1436,221,1373,212,1319,199,1271,183"/>
+<area shape="poly" id="edge10_Node000007_Node000007" title=" " alt="" coords="1183,136,1195,127,1226,123,1251,126,1266,132,1270,142,1262,152,1258,148,1265,141,1262,136,1250,131,1226,129,1197,132,1186,140"/>
+<area shape="rect" id="Node000008" href="$structfiftyone_degrees_pool_item.html" title="Pool item node in the stack of items." alt="" coords="1615,95,1797,121"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="1316,170,1456,178,1519,175,1563,164,1570,158,1574,150,1578,140,1586,131,1613,118,1616,123,1590,135,1582,143,1579,152,1575,161,1565,169,1520,180,1456,184,1316,176"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1601,118,1374,141,1299,153,1298,147,1373,136,1601,113"/>
+<area shape="rect" id="Node000009" href="$unionfiftyone_degrees_pool_head.html" title="The head of the stack used for pop and push operations." alt="" coords="693,150,880,175"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="893,160,1149,160,1149,165,893,165"/>
+<area shape="rect" id="Node000010" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="1591,43,1821,69"/>
+<area shape="poly" id="edge11_Node000005_Node000010" title=" " alt="" coords="1789,69,1825,80,1849,92,1921,121,1953,134,1991,155,2031,184,2068,215,2123,268,2119,272,2065,219,2028,188,1988,160,1950,138,1919,126,1847,97,1823,85,1788,74"/>
+<area shape="rect" id="Node000012" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="2013,18,2256,43"/>
+<area shape="poly" id="edge14_Node000012_Node000010" title=" " alt="" coords="1835,62,1911,63,1989,59,2085,41,2086,46,1990,64,1912,68,1835,68"/>
+<area shape="rect" id="Node000011" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="1135,36,1317,76"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="1331,53,1591,53,1591,59,1331,59"/>
+<area shape="poly" id="edge13_Node000010_Node000012" title=" " alt="" coords="2000,30,1848,36,1774,46,1773,41,1848,31,2000,25"/>
+<area shape="rect" id="Node000013" href="$structfiftyone_degrees_property_available_array.html" title="Array of items of type fiftyoneDegreesPropertyAvailable used to easily access and track the size of t..." alt="" coords="1106,268,1346,308"/>
+<area shape="poly" id="edge15_Node000005_Node000013" title=" " alt="" coords="1360,285,2030,281,2030,286,1360,290"/>
+<area shape="rect" id="Node000014" href="$structfiftyone_degrees_property_available.html" title="Used to access the property item quickly without the need to search." alt="" coords="667,389,907,414"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="849,383,1147,305,1148,311,850,388"/>
+<area shape="rect" id="Node000023" href="$structfiftyone_degrees_override_property.html" title="Index and pointer to a property which can be overridden." alt="" coords="1108,389,1344,414"/>
+<area shape="poly" id="edge28_Node000023_Node000014" title=" " alt="" coords="920,399,1108,399,1108,404,920,404"/>
+<area shape="rect" id="Node000015" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="256,607,476,633"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="395,597,447,563,508,526,643,459,753,412,755,417,645,464,511,530,450,567,398,602"/>
+<area shape="rect" id="Node000017" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="1373,757,1564,782"/>
+<area shape="poly" id="edge21_Node000017_Node000015" title=" " alt="" coords="487,632,872,680,1350,747,1395,754,1395,759,1349,752,871,685,487,637"/>
+<area shape="rect" id="Node000031" href="$structfiftyone_degrees_list.html" title="List structure which contains a list of collection items." alt="" coords="931,494,1079,519"/>
+<area shape="poly" id="edge38_Node000031_Node000015" title=" " alt="" coords="451,602,932,517,933,522,452,608"/>
+<area shape="rect" id="Node000016" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="5,607,161,633"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="175,617,256,617,256,623,175,623"/>
+<area shape="poly" id="edge36_Node000003_Node000017" title=" " alt="" coords="1578,780,1780,801,2013,819,2224,823,2434,820,2767,803,2767,809,2434,825,2224,829,2013,824,1779,807,1577,785"/>
+<area shape="poly" id="edge19_Node000015_Node000017" title=" " alt="" coords="1360,773,1048,767,857,756,666,737,586,727,551,719,508,704,438,669,384,635,387,630,441,665,510,699,553,713,587,722,667,732,857,751,1048,762,1360,768"/>
+<area shape="poly" id="edge20_Node000017_Node000017" title=" " alt="" coords="1423,743,1435,734,1469,730,1495,732,1511,738,1516,748,1507,758,1503,755,1510,748,1508,742,1494,737,1469,735,1437,739,1426,748"/>
+<area shape="rect" id="Node000033" href="$structfiftyone_degrees_ipi_cg.html" title="The information and a working collection to retrieve entries from the component graph." alt="" coords="2055,911,2214,937"/>
+<area shape="poly" id="edge46_Node000033_Node000017" title=" " alt="" coords="1489,791,1540,856,1567,886,1589,903,1626,915,1677,923,1803,931,1938,931,2055,926,2055,932,1938,936,1802,937,1676,929,1625,920,1587,908,1563,890,1535,860,1485,795"/>
+<area shape="rect" id="Node000018" href="$structfiftyone_degrees_evidence_property_index_array.html" title="Array of items of type fiftyoneDegreesEvidencePropertyIndex used to easily access and track the size ..." alt="" coords="247,381,485,421"/>
+<area shape="poly" id="edge22_Node000014_Node000018" title=" " alt="" coords="499,399,666,399,666,404,499,404"/>
+<area shape="rect" id="Node000019" href="$structfiftyone_degrees_property_named.html" title="A property name the caller gave, in the place the caller gave it." alt="" coords="673,275,900,301"/>
+<area shape="poly" id="edge23_Node000013_Node000019" title=" " alt="" coords="914,285,1106,285,1106,291,914,291"/>
+<area shape="rect" id="Node000020" href="$structfiftyone_degrees_string.html" title=" " alt="" coords="285,275,447,301"/>
+<area shape="poly" id="edge24_Node000019_Node000020" title=" " alt="" coords="461,285,673,285,673,291,461,291"/>
+<area shape="rect" id="Node000021" href="$structfiftyone_degrees_header_array.html" title="Array of Headers which should always be ordered in ascending order of fullHeaderId." alt="" coords="1603,331,1809,357"/>
+<area shape="poly" id="edge25_Node000005_Node000021" title=" " alt="" coords="1823,339,1905,333,1989,321,2046,308,2096,293,2098,298,2047,313,1990,327,1905,338,1823,344"/>
+<area shape="rect" id="Node000022" href="$structfiftyone_degrees_override_property_array.html" title="Array of items of type fiftyoneDegreesOverrideProperty used to easily access and track the size of th..." alt="" coords="1588,381,1824,421"/>
+<area shape="poly" id="edge26_Node000005_Node000022" title=" " alt="" coords="1837,395,1913,384,1988,365,2026,350,2061,330,2116,293,2119,298,2064,335,2028,355,1990,371,1914,390,1838,400"/>
+<area shape="poly" id="edge27_Node000022_Node000023" title=" " alt="" coords="1358,399,1588,399,1588,404,1358,404"/>
+<area shape="rect" id="Node000024" href="$structfiftyone_degrees_indices_property_profile.html" title="Maps the profile index and the property index to the first value index of the profile for the propert..." alt="" coords="1593,145,1819,185"/>
+<area shape="poly" id="edge29_Node000005_Node000024" title=" " alt="" coords="1834,178,1912,193,1990,213,2057,240,2112,268,2109,272,2055,245,1989,219,1910,198,1833,184"/>
+<area shape="rect" id="Node000025" href="$structfiftyone_degrees_data_set_ipi_header.html" title="DATA STRUCTURES." alt="" coords="1129,1208,1323,1248"/>
+<area shape="poly" id="edge30_Node000003_Node000025" title=" " alt="" coords="1300,1201,1382,1178,1482,1155,1593,1137,1705,1129,2519,1129,2553,1126,2586,1118,2617,1105,2646,1088,2700,1045,2746,993,2786,939,2817,886,2855,811,2860,813,2822,889,2790,942,2751,997,2703,1049,2649,1093,2619,1110,2587,1123,2554,1132,2519,1135,1705,1135,1593,1142,1483,1160,1383,1183,1301,1206"/>
+<area shape="rect" id="Node000026" href="$structfiftyone_degrees_date.html" title="Used to store the date when the dataset was produced and next date 51Degrees expect to provide a new ..." alt="" coords="709,1289,865,1314"/>
+<area shape="poly" id="edge31_Node000025_Node000026" title=" " alt="" coords="879,1309,976,1310,1028,1306,1078,1297,1141,1274,1193,1246,1196,1250,1143,1279,1079,1303,1028,1311,976,1316,879,1314"/>
+<area shape="rect" id="Node000027" href="$structfiftyone_degrees_collection_header.html" title="Collection header structure which defines the size and location of the collection data." alt="" coords="691,965,882,1005"/>
+<area shape="poly" id="edge32_Node000025_Node000027" title=" " alt="" coords="799,1018,815,1067,842,1125,881,1181,905,1205,932,1224,957,1236,983,1245,1038,1253,1093,1252,1144,1245,1145,1251,1094,1257,1038,1258,982,1250,955,1241,929,1229,901,1209,876,1184,837,1127,810,1069,794,1019"/>
+<area shape="rect" id="Node000034" href="$structfiftyone_degrees_ipi_cg_info.html" title="Fixed width record in the collection where the record relates to a component and IP version." alt="" coords="1615,973,1797,998"/>
+<area shape="poly" id="edge42_Node000034_Node000027" title=" " alt="" coords="896,983,1615,983,1615,988,896,988"/>
+<area shape="rect" id="Node000035" href="$structfiftyone_degrees_ipi_cg_member_node.html" title="Data structure used for the values collection." alt="" coords="1103,873,1349,898"/>
+<area shape="poly" id="edge44_Node000035_Node000027" title=" " alt="" coords="888,960,1168,896,1169,901,890,965"/>
+<area shape="rect" id="Node000028" href="$structfiftyone_degrees_config_ipi.html" title="IP Intelligence specific configuration structure." alt="" coords="2427,750,2609,775"/>
+<area shape="poly" id="edge33_Node000003_Node000028" title=" " alt="" coords="2623,771,2767,786,2767,791,2623,776"/>
+<area shape="rect" id="Node000029" href="$structfiftyone_degrees_config_base.html" title="Base configuration structure containing common configuration options, and options that apply to struc..." alt="" coords="2035,497,2234,522"/>
+<area shape="poly" id="edge34_Node000028_Node000029" title=" " alt="" coords="2248,500,2317,509,2351,520,2383,536,2412,559,2437,587,2476,648,2502,706,2516,749,2511,751,2497,708,2471,650,2432,590,2408,563,2380,541,2349,525,2316,514,2247,505"/>
+<area shape="rect" id="Node000030" href="$structfiftyone_degrees_collection_config.html" title="Collection configuration structure which defines how the collection should be created by the create m..." alt="" coords="2039,547,2230,587"/>
+<area shape="poly" id="edge35_Node000028_Node000030" title=" " alt="" coords="2243,590,2258,604,2270,625,2274,646,2268,687,2264,706,2263,725,2268,742,2282,759,2304,774,2328,783,2355,788,2382,790,2435,784,2480,773,2481,778,2436,789,2382,795,2354,794,2327,789,2301,779,2278,763,2263,745,2258,725,2258,706,2263,686,2269,646,2265,626,2254,607,2240,594"/>
+<area shape="poly" id="edge37_Node000003_Node000031" title=" " alt="" coords="1092,490,1265,468,1366,459,1467,456,2520,456,2530,460,2543,469,2574,503,2648,605,2721,712,2749,751,2768,771,2794,784,2792,788,2765,775,2745,755,2716,715,2644,608,2569,506,2539,473,2528,464,2519,461,1467,461,1366,465,1265,473,1092,495"/>
+<area shape="rect" id="Node000032" href="$structfiftyone_degrees_ipi_cg_array.html" title="An array of all the component graphs and collections available." alt="" coords="2421,891,2615,917"/>
+<area shape="poly" id="edge39_Node000003_Node000032" title=" " alt="" coords="2628,897,2685,888,2742,872,2772,859,2801,842,2846,809,2849,814,2804,846,2775,863,2744,877,2686,893,2629,902"/>
+<area shape="poly" id="edge40_Node000032_Node000033" title=" " alt="" coords="2228,917,2421,906,2421,912,2228,922"/>
+<area shape="poly" id="edge41_Node000033_Node000034" title=" " alt="" coords="1811,981,1898,975,1989,963,2046,950,2096,934,2098,939,2047,955,1990,968,1898,980,1811,986"/>
+<area shape="poly" id="edge43_Node000034_Node000035" title=" " alt="" coords="1302,898,1645,970,1644,975,1301,904"/>
+<area shape="rect" id="Node000036" href="$structfiftyone_degrees_ipi_cg_member.html" title="DATA STRUCTURES." alt="" coords="681,873,893,898"/>
+<area shape="poly" id="edge45_Node000035_Node000036" title=" " alt="" coords="907,883,1103,883,1103,888,907,888"/>
 </map>

@@ -68,12 +68,27 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structfiftyone
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>Base results structure which any processing results should extend. </p>
-</div><table class="c-table c-table--directory">
+<p>It is used by one thread at a time, as the Threads section above describes. </p>
+</div><h2 class="g-docs__section-heading">
+Collaboration diagram for fiftyoneDegreesResultsBase:</h2>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="structfiftyone_degrees_results_base__coll__graph.svg" width="443" height="339"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="c-table__row memitem:acb1eb8a8fb245ea49299b19fd71fa1d5" id="r_acb1eb8a8fb245ea49299b19fd71fa1d5"><td class="c-table__cell"><a id="acb1eb8a8fb245ea49299b19fd71fa1d5" name="acb1eb8a8fb245ea49299b19fd71fa1d5"></a>
 void&#160;*&#160;</td><td class="c-table__cell"><b>dataSet</b></td></tr>
 <tr class="c-table__row memdesc:acb1eb8a8fb245ea49299b19fd71fa1d5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Pointer to the data set associated with the results. <br /></td></tr>
+<tr class="c-table__row memitem:a2b34ecc4648eac3b10a66f0f85669e22" id="r_a2b34ecc4648eac3b10a66f0f85669e22"><td class="c-table__cell"><a id="a2b34ecc4648eac3b10a66f0f85669e22" name="a2b34ecc4648eac3b10a66f0f85669e22"></a>
+<a class="el" href="group___fifty_one_degrees_results.html#gac5fedeeb80ccbb0693c80137031f6ce0">fiftyoneDegreesResultsEvaluateMethod</a>&#160;</td><td class="c-table__cell"><b>evaluate</b></td></tr>
+<tr class="c-table__row memdesc:a2b34ecc4648eac3b10a66f0f85669e22"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Walks one component's graph, or NULL if the results walk none on a read. <br /></td></tr>
+<tr class="c-table__row memitem:a0c8017b9cd6b5256c47af5cefd61f292" id="r_a0c8017b9cd6b5256c47af5cefd61f292"><td class="c-table__cell"><a id="a0c8017b9cd6b5256c47af5cefd61f292" name="a0c8017b9cd6b5256c47af5cefd61f292"></a>
+uint32_t&#160;</td><td class="c-table__cell"><b>pending</b> [<a class="el" href="group___fifty_one_degrees_results.html#ga3943d23da321175c74b48ecf27493359">FIFTYONE_DEGREES_RESULTS_PENDING_WORDS</a>]</td></tr>
+<tr class="c-table__row memdesc:a0c8017b9cd6b5256c47af5cefd61f292"><td class="c-table__cell">&#160;</td><td class="c-table__cell">One bit for each component whose graph is still to be walked. <br /></td></tr>
+<tr class="c-table__row memitem:a785428c5d1deb238b4fb7c3852c936e3" id="r_a785428c5d1deb238b4fb7c3852c936e3"><td class="c-table__cell"><a id="a785428c5d1deb238b4fb7c3852c936e3" name="a785428c5d1deb238b4fb7c3852c936e3"></a>
+<a class="el" href="structfiftyone_degrees_override_value_array.html">fiftyoneDegreesOverrideValueArray</a>&#160;*&#160;</td><td class="c-table__cell"><b>overrides</b></td></tr>
+<tr class="c-table__row memdesc:a785428c5d1deb238b4fb7c3852c936e3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Values from the evidence that override the values of properties, or NULL if the results hold none. <br /></td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="results_8h_source.html">results.h</a></li>

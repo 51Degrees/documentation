@@ -204,6 +204,8 @@ Files</h2></td></tr>
 <li><code>descriptionOffset</code> is removed from <code><a class="el" href="structfiftyone_degrees_value.html" title="Value structure containing meta data relating to the value.">fiftyoneDegreesValue</a></code>.</li>
 </ul>
 <p>Enabling this option makes the API compatible with a reduced size 51Degrees data file. A few methods which use the removed fields cannot be implemented with this option, so an exception is set.</p>
+<h1>Threads</h1>
+<p>A set of results is used by one thread at a time, because reading a value writes into the results. When the properties were named, populating the results walks every graph they need, and otherwise the first read of a property of a component walks the component's graph. Different sets of results can be used on different threads at once, and the resource manager they come from, or in C++ the engine, can be shared, unless the library is built with the NoThreadingNoThreading option.</p>
 <h1>Tests</h1>
 <p>The common tests are in <a href="../../test/common"><code>test/common</code></a>. They run as <code>CommonTests</code>, and again as <code>CommonTestsIpi</code> against the copy of the library that IP Intelligence uses. Turn off <code>FIFTYONE_COMMON_CXX_BUILD_TESTING</code> to skip both. Running tests and code coverage are described in the <a href="../../README.md#tests">repository README</a>.</p>
 <h1>Referencing the library</h1>

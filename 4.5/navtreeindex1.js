@@ -26,7 +26,7 @@ var NAVTREEINDEX1 =
 "_device_detection__quickstart.html#getting-started-with-device-detection":[1,1,0],
 "_device_detection__quickstart.html#language-specific-integration":[1,1,0,3],
 "_device_detection__quickstart.html#on-premise":[1,1,0,3,6],
-"_device_detection__quickstart.html#on-premise-deployment-on-premise-integrationbest-for-high-performance-privacy-sensitive-or-offline-environments":[1,1,0,0,1],
+"_device_detection__quickstart.html#on-premise-deployment-on-premise-integrationbest-for-high-performance-data-sensitive-or-offline-environments":[1,1,0,0,1],
 "_device_detection__quickstart.html#spring-mvc-integration":[1,1,0,3,4],
 "_device_detection__quickstart.html#standalone-pipeline--off-line-processing":[1,1,0,3,0],
 "_device_detection__quickstart.html#standalone-pipeline--off-line-processing-1":[1,1,0,3,2],

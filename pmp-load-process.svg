@@ -30,9 +30,9 @@
 
   <text class="step" x="110" y="96">Step one, loading</text>
   <line class="msg" x1="100" y1="122" x2="858" y2="122" marker-end="url(#arrow)"/>
-  <text class="label" x="480" y="115" text-anchor="middle">GET /api/v4/pmp/&lt;key&gt;.js, the loader, neither checked nor counted</text>
+  <text class="label" x="480" y="115" text-anchor="middle">GET /api/v4/pmp/&lt;key&gt;.js, the loader, not checked against the key's domains or counted</text>
   <line class="msg" x1="350" y1="160" x2="858" y2="160" marker-end="url(#arrow)"/>
-  <text class="label" x="605" y="153" text-anchor="middle">GET /api/v4/pmp/&lt;key&gt;/&lt;language&gt;, the bundle, checked and counted</text>
+  <text class="label" x="605" y="153" text-anchor="middle">GET /api/v4/pmp/&lt;key&gt;/&lt;language&gt;, the bundle, checked against the key's domains and counted</text>
   <line class="msg" x1="860" y1="196" x2="352" y2="196" marker-end="url(#arrow)"/>
   <text class="label" x="605" y="189" text-anchor="middle">The bundle for the visitor's language</text>
 

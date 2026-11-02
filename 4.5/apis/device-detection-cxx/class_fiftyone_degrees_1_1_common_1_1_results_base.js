@@ -2,6 +2,7 @@ var class_fiftyone_degrees_1_1_common_1_1_results_base =
 [
     [ "ResultsBase", "class_fiftyone_degrees_1_1_common_1_1_results_base.html#a6779204e6075f783d11c10cbe6fe3c0c", null ],
     [ "~ResultsBase", "class_fiftyone_degrees_1_1_common_1_1_results_base.html#ad273ca243c2bd7eb62488103f142715f", null ],
+    [ "allowedRequiredPropertyIndex", "class_fiftyone_degrees_1_1_common_1_1_results_base.html#a7e826aca1654e8871e98d1fa191b18ce", null ],
     [ "containsProperty", "class_fiftyone_degrees_1_1_common_1_1_results_base.html#a79a22d793e853518bc450a62183937c4", null ],
     [ "getAvailableProperties", "class_fiftyone_degrees_1_1_common_1_1_results_base.html#a86ee81bb4516175229911dbd907cc0c3", null ],
     [ "getNoValueMessageInternal", "class_fiftyone_degrees_1_1_common_1_1_results_base.html#a97a3ee5a2fda7f5b81ec816c9ce73e65", null ],

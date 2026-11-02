@@ -107,13 +107,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fiftyone
 <div class="c-code__line"><span class="c-code__comment">// Delete the results and the engine</span></div>
 <div class="c-code__line"><span class="c-code__keyword">delete</span> results;</div>
 <div class="c-code__line"><span class="c-code__keyword">delete</span> engine;</div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_a4f72773e876f66ff0365214ab3c30dbb"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a4f72773e876f66ff0365214ab3c30dbb">FiftyoneDegrees::Common::EngineBase::config</a></div><div class="ttdeci">ConfigBase * config</div><div class="ttdoc">Pointer to the configuration used to build the engine.</div><div class="ttdef"><b>Definition</b> EngineBase.hpp:261</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_a4f72773e876f66ff0365214ab3c30dbb"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a4f72773e876f66ff0365214ab3c30dbb">FiftyoneDegrees::Common::EngineBase::config</a></div><div class="ttdeci">ConfigBase * config</div><div class="ttdoc">Pointer to the configuration used to build the engine.</div><div class="ttdef"><b>Definition</b> EngineBase.hpp:262</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_required_properties_config_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_required_properties_config.html">FiftyoneDegrees::Common::RequiredPropertiesConfig</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesPropertiesRequired structure.</div><div class="ttdef"><b>Definition</b> RequiredPropertiesConfig.hpp:59</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_evidence_device_detection_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_device_detection_1_1_evidence_device_detection.html">FiftyoneDegrees::DeviceDetection::EvidenceDeviceDetection</a></div><div class="ttdoc">Device detection specific evidence class containing evidence to be processed by a device detection en...</div><div class="ttdef"><b>Definition</b> EvidenceDeviceDetection.hpp:64</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_config_hash_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_config_hash.html">FiftyoneDegrees::DeviceDetection::Hash::ConfigHash</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesConfigHash configuration structure.</div><div class="ttdef"><b>Definition</b> ConfigHash.hpp:72</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash_html_ac964cf4158f1ed7f949bb056421b5bad"><div class="ttname"><a href="#ac964cf4158f1ed7f949bb056421b5bad">FiftyoneDegrees::DeviceDetection::Hash::EngineHash::EngineHash</a></div><div class="ttdeci">EngineHash(const char *fileName, ConfigHash *config, RequiredPropertiesConfig *properties)</div><div class="ttdoc">Construct a new instance of the engine class with the configuration and properties provided.</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash_html_adf6dd1f88d1d90d84f2633739a6aa6db"><div class="ttname"><a href="#adf6dd1f88d1d90d84f2633739a6aa6db">FiftyoneDegrees::DeviceDetection::Hash::EngineHash::process</a></div><div class="ttdeci">ResultsHash * process(EvidenceDeviceDetection *evidence) const</div></div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">FiftyoneDegrees::DeviceDetection::Hash::ResultsHash</a></div><div class="ttdoc">Encapsulates the results of a Hash device detection engine&#39;s processing.</div><div class="ttdef"><b>Definition</b> ResultsHash.hpp:64</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">FiftyoneDegrees::DeviceDetection::Hash::ResultsHash</a></div><div class="ttdoc">Encapsulates the results of a Hash device detection engine&#39;s processing.</div><div class="ttdef"><b>Definition</b> ResultsHash.hpp:80</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_common_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_common.html">FiftyoneDegrees::Common</a></div><div class="ttdoc">Shared classes.</div><div class="ttdef"><b>Definition</b> Collection.hpp:31</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_device_detection_1_1_hash_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_device_detection_1_1_hash.html">FiftyoneDegrees::DeviceDetection::Hash</a></div><div class="ttdoc">Hash Device Detection specific classes.</div><div class="ttdef"><b>Definition</b> ComponentMetaDataBuilderHash.hpp:35</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_device_detection_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_device_detection.html">FiftyoneDegrees::DeviceDetection</a></div><div class="ttdoc">Device Detection specific classes.</div><div class="ttdef"><b>Definition</b> ComponentMetaDataBuilderHash.hpp:34</div></div>
@@ -145,10 +145,8 @@ Public Member Functions</h2></td></tr>
 <tr id="pub-methods-1" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Engine Methods</h3></td></tr>
 <tr class="c-table__row memitem:adf6dd1f88d1d90d84f2633739a6aa6db" id="r_adf6dd1f88d1d90d84f2633739a6aa6db"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">ResultsHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#adf6dd1f88d1d90d84f2633739a6aa6db">process</a> (<a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_evidence_device_detection.html">EvidenceDeviceDetection</a> *evidence) const</td></tr>
 <tr class="c-table__row memitem:a99edfbd855f0584c4e6686e1422b93f8" id="r_a99edfbd855f0584c4e6686e1422b93f8"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">ResultsHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a99edfbd855f0584c4e6686e1422b93f8">process</a> (const char *userAgent) const</td></tr>
-<tr class="c-table__row memitem:a01022ee06133383aa5d706250da465ec" id="r_a01022ee06133383aa5d706250da465ec"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">ResultsHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a01022ee06133383aa5d706250da465ec">process</a> (<a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_evidence_device_detection.html">EvidenceDeviceDetection</a> *evidence, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount) const</td></tr>
-<tr class="c-table__row memdesc:a01022ee06133383aa5d706250da465ec"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the evidence as process(EvidenceDeviceDetection*) but walks only the graphs needed by the required properties whose indexes are supplied.  <br /></td></tr>
-<tr class="c-table__row memitem:aebba3edfbe3d31756eb03273c207cc4b" id="r_aebba3edfbe3d31756eb03273c207cc4b"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">ResultsHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#aebba3edfbe3d31756eb03273c207cc4b">process</a> (const char *userAgent, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount) const</td></tr>
-<tr class="c-table__row memdesc:aebba3edfbe3d31756eb03273c207cc4b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the User-Agent as process(const char*) but walks only the graphs needed by the required properties whose indexes are supplied.  <br /></td></tr>
+<tr class="c-table__row memitem:ae6706dfe23a3955f9d974a7d3db087c6" id="r_ae6706dfe23a3955f9d974a7d3db087c6"><td class="c-table__cell">std::vector&lt;&#160;uint32_t&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ae6706dfe23a3955f9d974a7d3db087c6">getProfileIdsForPropertyValue</a> (const std::string &amp;propertyName, const std::string &amp;valueName) const</td></tr>
+<tr class="c-table__row memdesc:ae6706dfe23a3955f9d974a7d3db087c6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the ids of the profiles holding a value of a property, such as a NativeModel or a TAC, in the order of the data file, which is ascending profile id.  <br /></td></tr>
 <tr id="pub-methods-2" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Common::EngineBase Implementation</h3></td></tr>
 <tr class="c-table__row memitem:a282c7c2aa35daf19bad276b28967b2be" id="r_a282c7c2aa35daf19bad276b28967b2be"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a282c7c2aa35daf19bad276b28967b2be">refreshData</a> () const</td></tr>
 <tr class="c-table__row memdesc:a282c7c2aa35daf19bad276b28967b2be"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Refresh the data set from the original file location.  <br /></td></tr>
@@ -291,7 +289,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">config</td><td>used to build the engine </td></tr>
-    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results    The data set is constructed from the file provided. </td></tr>
+    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results, or null for every property    The data set is constructed from the file provided. </td></tr>
     <tr><td class="paramname">fileName</td><td>path to the file containing the data file to load </td></tr>
   </table>
   </dd>
@@ -331,7 +329,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">config</td><td>used to build the engine </td></tr>
-    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results    The data set is constructed from the file provided. </td></tr>
+    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results, or null for every property    The data set is constructed from the file provided. </td></tr>
     <tr><td class="paramname">fileName</td><td>path to the file containing the data file to load </td></tr>
   </table>
   </dd>
@@ -376,7 +374,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">config</td><td>used to build the engine </td></tr>
-    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results    The data set is constructed from data stored in memory described by the data and length parameters. </td></tr>
+    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results, or null for every property    The data set is constructed from data stored in memory described by the data and length parameters. </td></tr>
     <tr><td class="paramname">data</td><td>pointer to the memory containing the data set </td></tr>
     <tr><td class="paramname">length</td><td>size of the data in memory </td></tr>
   </table>
@@ -422,7 +420,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">config</td><td>used to build the engine </td></tr>
-    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results    The data set is constructed from data stored in memory described by the data and length parameters. </td></tr>
+    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results, or null for every property    The data set is constructed from data stored in memory described by the data and length parameters. </td></tr>
     <tr><td class="paramname">data</td><td>pointer to the memory containing the data set </td></tr>
     <tr><td class="paramname">length</td><td>size of the data in memory </td></tr>
   </table>
@@ -531,6 +529,41 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 <p>Pattern or <a class="el" href="namespace_fiftyone_degrees_1_1_device_detection_1_1_hash.html" title="Hash Device Detection specific classes.">Hash</a>. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">product name </dd></dl>
 
 <p>Implements <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#aca5ec9996d7ce8e45d42a90451f55c4e">FiftyoneDegrees::Common::EngineBase</a>.</p>
+
+</div>
+</div>
+<a id="ae6706dfe23a3955f9d974a7d3db087c6" name="ae6706dfe23a3955f9d974a7d3db087c6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae6706dfe23a3955f9d974a7d3db087c6">&#9670;&#160;</a></span>getProfileIdsForPropertyValue()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">std::vector&lt; uint32_t &gt; FiftyoneDegrees::DeviceDetection::Hash::EngineHash::getProfileIdsForPropertyValue </td>
+          <td>(</td>
+          <td class="c-table__cell">const std::string &amp;</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const std::string &amp;</td>          <td class="c-table__cell"><span class="paramname"><em>valueName</em></span>&#160;) const</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the ids of the profiles holding a value of a property, such as a NativeModel or a TAC, in the order of the data file, which is ascending profile id. </p>
+<p>A value held by several profiles gives all of them. Both names are matched exactly. For a property named with ConfigHash::setIndexedProperties the data set's index of profiles by value finds them. Otherwise every profile is read, which gives the same ids. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>name of the property </td></tr>
+    <tr><td class="paramname">valueName</td><td>name of the value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">ids of the profiles holding the value, which is empty when none does </dd></dl>
 
 </div>
 </div>
@@ -713,7 +746,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div>
 </div>
 <a id="a99edfbd855f0584c4e6686e1422b93f8" name="a99edfbd855f0584c4e6686e1422b93f8"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a99edfbd855f0584c4e6686e1422b93f8">&#9670;&#160;</a></span>process() <span class="c-member__count">[1/4]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a99edfbd855f0584c4e6686e1422b93f8">&#9670;&#160;</a></span>process() <span class="c-member__count">[1/2]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -735,49 +768,8 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 
 </div>
 </div>
-<a id="aebba3edfbe3d31756eb03273c207cc4b" name="aebba3edfbe3d31756eb03273c207cc4b"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aebba3edfbe3d31756eb03273c207cc4b">&#9670;&#160;</a></span>process() <span class="c-member__count">[2/4]</span></h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">ResultsHash</a> * FiftyoneDegrees::DeviceDetection::Hash::EngineHash::process </td>
-          <td>(</td>
-          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>userAgent</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>&#160;) const</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Processes the User-Agent as process(const char*) but walks only the graphs needed by the required properties whose indexes are supplied. </p>
-<p>See the evidence overload for the rules. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userAgent</td><td>to process </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexes</td><td>the caller will read </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>entries in the array </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">new results instance, owned by the caller </dd></dl>
-
-</div>
-</div>
 <a id="adf6dd1f88d1d90d84f2633739a6aa6db" name="adf6dd1f88d1d90d84f2633739a6aa6db"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adf6dd1f88d1d90d84f2633739a6aa6db">&#9670;&#160;</a></span>process() <span class="c-member__count">[3/4]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adf6dd1f88d1d90d84f2633739a6aa6db">&#9670;&#160;</a></span>process() <span class="c-member__count">[2/2]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -798,47 +790,6 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 <p></p>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_getting_started_8cpp-example.html#a4">Hash/GettingStarted.cpp</a>, <a class="el" href="_hash_2_match_metrics_8cpp-example.html#a5">Hash/MatchMetrics.cpp</a>, and <a class="el" href="_hash_2_strongly_typed_8cpp-example.html#a6">Hash/StronglyTyped.cpp</a>.</dd>
 </dl>
-
-</div>
-</div>
-<a id="a01022ee06133383aa5d706250da465ec" name="a01022ee06133383aa5d706250da465ec"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a01022ee06133383aa5d706250da465ec">&#9670;&#160;</a></span>process() <span class="c-member__count">[4/4]</span></h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">ResultsHash</a> * FiftyoneDegrees::DeviceDetection::Hash::EngineHash::process </td>
-          <td>(</td>
-          <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_evidence_device_detection.html">EvidenceDeviceDetection</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>evidence</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>&#160;) const</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Processes the evidence as process(EvidenceDeviceDetection*) but walks only the graphs needed by the required properties whose indexes are supplied. </p>
-<p>NULL or a negative count walks every graph. A count of zero walks none. A property whose graph was not walked has no value with the NULL_PROFILE reason. The native mask is 32 bits, so components beyond index 31 are always walked. Indexes are positions in <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a3291502af64573104ea4ce58f223cb1a" title="Get the names of the required properties in required property index order, so position i in the vecto...">getRequiredProperties()</a>, which move when a refresh loads a data file that gains or loses a required property, so look them up again after a refresh. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">evidence</td><td>to process </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexes</td><td>the caller will read </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>entries in the array </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">new results instance, owned by the caller </dd></dl>
 
 </div>
 </div>

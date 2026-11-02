@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <h1>Building and testing</h1>
 <p>Cloning, building with CMake or Visual Studio, and running the tests are the same for every product in this repository, and are described in the repository README.</p>
 <h1>Memory and the required properties</h1>
-<p>The Balanced configuration (<code><a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#ga2f4c9ccf90559af9006fd18ee8204e2a" title="Uses caching to balance memory usage and performance.">fiftyoneDegreesIpiBalancedConfig</a></code>, or <code>setBalanced()</code> in C++) holds the strings, the graphs, the profile offsets and the property types in memory, and reads values and profiles through caches. The C API uses it when no configuration is given.</p>
+<p>The Balanced configuration (<code><a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#ga2f4c9ccf90559af9006fd18ee8204e2a" title="Uses caching to balance memory usage and performance.">fiftyoneDegreesIpiBalancedConfig</a></code>, or <code>setBalanced()</code> in C++) holds the strings, the graphs, the profile offsets and the property types in memory, and reads values and profiles through caches of 50,000 values and 10,000 profiles. The C API uses it when no configuration is given.</p>
 <p>Naming the required properties is all it takes to get more from it. There is no other setting. When fewer properties are named than the data file has, the parts of the file they do not read stay on file:</p>
 <ul>
 <li>The graphs of components with no required property.</li>
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <li>The profiles of the components with a required property, smallest first.</li>
 <li>A larger profile cache, then part of the next component's profiles if at least half of them fit.</li>
 </ol>
-<p>The memory used does not rise above what naming nothing uses, and the answers do not change. A caller who names nothing, or every property, gets the configuration as it is.</p>
+<p>The memory used does not rise above what naming nothing uses, and the answers do not change. A caller who names nothing, or every property, gets the configuration as it is, with only the default value of each property held in memory. A lookup reads the default of each mandatory property its profile has no value for, so holding the defaults means those reads take no lock and read nothing from the file.</p>
 <p>Whatever is named, a profile read through a cache is read once for each lookup rather than once for each property, which uses 512 bytes for each component in each set of results.</p>
 <p>Anything not held reads from the file, so it still works, more slowly and allocating memory. That covers a direct graph call for a component with no required property, and meta data for what was not named. A property that was not named gives no value, as it does with every other configuration.</p>
 <h1>Address forms</h1>
@@ -104,6 +104,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <p>Every other IPv6 address is looked up as an IPv6 address, including those that hold an IPv4 address. An IPv4-embedded address from <a href="https://www.rfc-editor.org/rfc/rfc6052.html">RFC 6052</a>, such as <code>64:ff9b::a.b.c.d</code>, stays an IPv6 address, because deriving the IPv4 address from it is the job of an address translator (<a href="https://www.rfc-editor.org/rfc/rfc6052.html#section-1.3">RFC 6052 section 1.3</a>).</p>
 <p>An address below the lowest key in a graph has no profile for that graph's component. A property of that component then reads as its default if it is mandatory with a default value, and otherwise has no value.</p>
 <p>The <a href="https://github.com/51Degrees/specifications/blob/main/ip-intelligence-specification/pipeline-elements/ip-intelligence-on-premise.md#address-forms">IP Intelligence specification</a> sets out each form.</p>
+<h1>Reading values</h1>
+<p>When the properties were named, in C through the required properties and in C++ through the properties the engine is created with, looking up an address walks the graph of each component a named property belongs to, and no other, so no read walks a graph. When no properties were named, looking up an address walks no graph, and the graph of a component is walked the first time one of its properties is read. Either way the values are the same whatever is read first.</p>
+<h1>Threads</h1>
+<p>A set of results is used by one thread at a time, because reading a value writes into the results and, when no properties were named, the first read of a property of a component walks the component's graph. A program that looks up addresses on several threads uses a set of results for each thread. The resource manager, or in C++ the engine, can be shared by every thread, unless the library is built with the <code>NoThreading</code> option described in the <a href="../../src/common/README.md#nothreading">common library README</a>.</p>
 <h1>Referencing the API</h1>
 <h2>Adding references with CMake</h2>
 <p>When building using CMake, static libraries are built in stages. These can be included in an executable just as they are in the examples. If these are included through a CMake file, the dependencies will be resolved automatically. However, if linking another way, all dependencies will need to be included from the <code>lib/</code> directory. For example, to use the IP Intelligence C API, the following static libraries would need to be included:</p>

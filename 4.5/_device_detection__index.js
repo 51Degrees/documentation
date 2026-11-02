@@ -33,7 +33,7 @@ var _device_detection__index =
       [ "Getting Started with Device Detection", "_device_detection__quickstart.html#getting-started-with-device-detection", [
         [ "Choose Your Integration", "_device_detection__quickstart.html#choose-your-integration", [
           [ "Cloud Service {cloud-integration}**Best for:** Quick setup, minimal infrastructure, cost-effective scaling", "_device_detection__quickstart.html#cloud-service-cloud-integrationbest-for-quick-setup-minimal-infrastructure-cost-effective-scaling", null ],
-          [ "On-premise Deployment {On-premise-integration}**Best for:** High-performance, privacy-sensitive, or offline environments", "_device_detection__quickstart.html#on-premise-deployment-on-premise-integrationbest-for-high-performance-privacy-sensitive-or-offline-environments", null ]
+          [ "On-premise Deployment {On-premise-integration}**Best for:** High-performance, data-sensitive, or offline environments", "_device_detection__quickstart.html#on-premise-deployment-on-premise-integrationbest-for-high-performance-data-sensitive-or-offline-environments", null ]
         ] ],
         [ "Which Integration Should I Choose?", "_device_detection__quickstart.html#which-integration-should-i-choose", null ],
         [ "Enhanced Accuracy Options", "_device_detection__quickstart.html#enhanced-accuracy-options", null ],

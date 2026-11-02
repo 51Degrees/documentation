@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">    &amp;properties,</div>
 <div class="c-code__line">    dataFileLocation,</div>
 <div class="c-code__line">    exception);</div>
-</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="cpp" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">ConfigHash* config = <span class="c-code__keyword">new</span> ConfigHash();</div>
+</div><!-- fragment --><p>The resource manager can be shared by every thread. Each thread creates its own results with <code>ResultsHashCreate</code>, because reading a value writes into the results, so a set of results is used by one thread at a time.  </div>   <div class="c-tabgroup__main" data-lang="cpp" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">ConfigHash* config = <span class="c-code__keyword">new</span> ConfigHash();</div>
 <div class="c-code__line">config-&gt;setLowMemory();</div>
 <div class="c-code__line">config-&gt;setConcurrency(threadCount);</div>
 <div class="c-code__line"> </div>
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">    dataFilePath,</div>
 <div class="c-code__line">    config,</div>
 <div class="c-code__line">    properties);</div>
-</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="rust" style="display:none;">  In code: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">use fiftyone_device_detection::{DeviceDetectionPipelineBuilder, PerformanceProfile};</div>
+</div><!-- fragment --><p>The engine can be shared by every thread. Each call to <code>process</code> returns new results for the thread that made it, because reading a value writes into the results, so a set of results is used by one thread at a time.  </div>   <div class="c-tabgroup__main" data-lang="rust" style="display:none;">  In code: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">use fiftyone_device_detection::{DeviceDetectionPipelineBuilder, PerformanceProfile};</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">let pipeline = DeviceDetectionPipelineBuilder::on_premise(data_file)</div>
 <div class="c-code__line">    // Set the performance profile</div>

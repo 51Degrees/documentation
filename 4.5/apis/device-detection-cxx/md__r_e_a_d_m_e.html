@@ -112,6 +112,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <li>the limit plus one byte for each component, only when <code>updateMatchedUserAgent</code> is true. Detection also overwrites this memory for each result it resets, so a larger limit adds to the time each detection takes</li>
 </ul>
 <p>The C examples create a set of results up front and use it for each detection. <code>EngineHash::process</code> in the C++ API creates a new set of results for each call, so there the memory is allocated once for each call, at the same fixed size.</p>
+<h1>Reading values</h1>
+<p>When the properties were named, in C through the required properties and in C++ through the properties the engine is created with, populating a set of results walks the graph of each component a named property belongs to, and no other, so no read walks a graph and the results keep no copy of the evidence.</p>
+<p>When no properties were named, populating a set of results walks no graph. The results keep a copy of the evidence, and the graph of a component is walked the first time one of its properties is read, so a program that reads the properties of one component walks one graph. The copy is held in memory the results own, which grows to fit the largest evidence they are populated from.</p>
+<p>Either way the values are the same whatever is read first, and the evidence can be freed once the results are populated.</p>
+<p>The match metrics, such as the iterations and the drift, and the device id are worked out from every component, so reading them walks every graph not yet walked. The C++ API does this itself. A C caller that reads the result items directly calls <code><a class="el" href="group___fifty_one_degrees_results.html#ga177732d595216d311871951cf3a2856d" title="Walks every pending component in component order, stopping at the first walk that fails.">fiftyoneDegreesResultsEvaluateAll</a></code> first.</p>
+<h1>Threads</h1>
+<p>A set of results is used by one thread at a time, because reading a value writes into the results and, when no properties were named, the first read of a property of a component walks the component's graph. A program that detects on several threads uses a set of results for each thread. The resource manager, or in C++ the engine, can be shared by every thread, unless the library is built with the <code>NoThreading</code> option described in the <a href="../../src/common/README.md#nothreading">common library README</a>.</p>
 <h1>Examples</h1>
 <p>There are several examples available, the source files can be found in the <a href="../../examples/dd"><code>examples/dd</code></a> folder. The examples are written in C or CPP.</p>
 <h3>Visual Studio</h3>

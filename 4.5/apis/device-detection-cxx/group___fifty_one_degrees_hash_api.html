@@ -82,6 +82,8 @@ Structs</h2></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Hash specific configuration structure.  <a href="structfiftyone_degrees_config_hash.html#details">More...</a><br /></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesHashRootNodes" id="r_fiftyoneDegreesHashRootNodes"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_hash_root_nodes.html">fiftyoneDegreesHashRootNodes</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_synonyms.html#gaad0a959cad42d676f5184f89b6188f99" title="Synonym for fiftyoneDegreesData type.">Data</a> structure containing the root nodes for the combination of an evidence item and a component.  <a href="structfiftyone_degrees_hash_root_nodes.html#details">More...</a><br /></td></tr>
+<tr class="c-table__row memitem:fiftyoneDegreesHashValueProfiles" id="r_fiftyoneDegreesHashValueProfiles"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_hash_value_profiles.html">fiftyoneDegreesHashValueProfiles</a></td></tr>
+<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Index from each value of the properties named when the data set is initialised to the profiles holding it, so those profiles are found without reading every profile.  <a href="structfiftyone_degrees_hash_value_profiles.html#details">More...</a><br /></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesDataSetHash" id="r_fiftyoneDegreesDataSetHash"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_synonyms.html#gaad0a959cad42d676f5184f89b6188f99" title="Synonym for fiftyoneDegreesData type.">Data</a> set structure containing all the components used for detections.  <a href="structfiftyone_degrees_data_set_hash.html#details">More...</a><br /></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesResultHash" id="r_fiftyoneDegreesResultHash"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_result_hash.html">fiftyoneDegreesResultHash</a></td></tr>
@@ -105,9 +107,8 @@ Macros</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-typedef-members" class="g-docs__section-heading"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="c-table__row memitem:ga3a08e540ab36bec35d1939e9547e8c10" id="r_ga3a08e540ab36bec35d1939e9547e8c10"><td class="c-table__cell"><a id="ga3a08e540ab36bec35d1939e9547e8c10" name="ga3a08e540ab36bec35d1939e9547e8c10"></a>
-typedef&#160;<a class="el" href="structfiftyone_degrees_result_hash_array.html">fiftyoneDegreesResultHashArray</a>&#160;</td><td class="c-table__cell"><b>fiftyoneDegreesResultsHash</b></td></tr>
-<tr class="c-table__row memdesc:ga3a08e540ab36bec35d1939e9547e8c10"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Array of Hash results used to easily access and track the size of the array. <br /></td></tr>
+<tr class="c-table__row memitem:ga3a08e540ab36bec35d1939e9547e8c10" id="r_ga3a08e540ab36bec35d1939e9547e8c10"><td class="c-table__cell">typedef&#160;<a class="el" href="structfiftyone_degrees_result_hash_array.html">fiftyoneDegreesResultHashArray</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a></td></tr>
+<tr class="c-table__row memdesc:ga3a08e540ab36bec35d1939e9547e8c10"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Array of Hash results used to easily access and track the size of the array.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-enum-members" class="g-docs__section-heading"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -128,18 +129,18 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ga9a791cb95b9be08b7e2c61448a6a444a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">EXTERNAL METHODS.  <br /></td></tr>
 <tr class="c-table__row memitem:gabd7a393485064fd721a228f1ec798cb6" id="r_gabd7a393485064fd721a228f1ec798cb6"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#gabd7a393485064fd721a228f1ec798cb6">fiftyoneDegreesHashInitManagerFromFile</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, <a class="el" href="structfiftyone_degrees_config_hash.html">fiftyoneDegreesConfigHash</a> *config, <a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a> *properties, const char *fileName, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:gabd7a393485064fd721a228f1ec798cb6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialises the resource manager with a Hash data set resource populated from the Hash data file referred to by fileName.  <br /></td></tr>
+<tr class="c-table__row memitem:ga4824f45e85c9b60296f1935b0981cc4c" id="r_ga4824f45e85c9b60296f1935b0981cc4c"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga4824f45e85c9b60296f1935b0981cc4c">fiftyoneDegreesHashInitManagerFromFileWithIndexedProperties</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, <a class="el" href="structfiftyone_degrees_config_hash.html">fiftyoneDegreesConfigHash</a> *config, <a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a> *properties, const char *fileName, const char **indexedProperties, int indexedPropertiesCount, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga4824f45e85c9b60296f1935b0981cc4c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialises the resource manager as <a class="el" href="#gabd7a393485064fd721a228f1ec798cb6" title="Initialises the resource manager with a Hash data set resource populated from the Hash data file refe...">fiftyoneDegreesHashInitManagerFromFile</a> does, and indexes the profiles holding each value of the properties named, so that <a class="el" href="#gaaaa53287cc51ebbe063b814fb009e520" title="Iterates over the profiles in the data set calling the callback method for any profiles that contain ...">fiftyoneDegreesHashIterateProfilesForPropertyAndValue</a> and <a class="el" href="#ga1e658bcdbe4f50312b0d484729e4177e" title="Gets the ids of the profiles that contain the property and value provided.">fiftyoneDegreesHashGetProfileIdsForPropertyAndValue</a> find them without reading every profile.  <br /></td></tr>
 <tr class="c-table__row memitem:gaaaac2d4da943d905b3a38e8c87f31816" id="r_gaaaac2d4da943d905b3a38e8c87f31816"><td class="c-table__cell">size_t&#160;</td><td class="c-table__cell"><a class="el" href="#gaaaac2d4da943d905b3a38e8c87f31816">fiftyoneDegreesHashSizeManagerFromMemory</a> (<a class="el" href="structfiftyone_degrees_config_hash.html">fiftyoneDegreesConfigHash</a> *config, <a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a> *properties, void *memory, long size, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:gaaaac2d4da943d905b3a38e8c87f31816"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the total size in bytes which will be allocated when intialising a Hash resource and associated manager with the same parameters.  <br /></td></tr>
 <tr class="c-table__row memitem:ga9df1f278437581cfffe4cf1228d415d9" id="r_ga9df1f278437581cfffe4cf1228d415d9"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga9df1f278437581cfffe4cf1228d415d9">fiftyoneDegreesHashInitManagerFromMemory</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, <a class="el" href="structfiftyone_degrees_config_hash.html">fiftyoneDegreesConfigHash</a> *config, <a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a> *properties, void *memory, long size, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga9df1f278437581cfffe4cf1228d415d9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialises the resource manager with a Hash data set resource populated from the Hash data set pointed to by the memory parameter.  <br /></td></tr>
+<tr class="c-table__row memitem:ga5e4e4a5ac455600ef675fa75784feb7a" id="r_ga5e4e4a5ac455600ef675fa75784feb7a"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga5e4e4a5ac455600ef675fa75784feb7a">fiftyoneDegreesHashInitManagerFromMemoryWithIndexedProperties</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, <a class="el" href="structfiftyone_degrees_config_hash.html">fiftyoneDegreesConfigHash</a> *config, <a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a> *properties, void *memory, long size, const char **indexedProperties, int indexedPropertiesCount, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga5e4e4a5ac455600ef675fa75784feb7a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialises the resource manager as <a class="el" href="#ga9df1f278437581cfffe4cf1228d415d9" title="Initialises the resource manager with a Hash data set resource populated from the Hash data set point...">fiftyoneDegreesHashInitManagerFromMemory</a> does, and indexes the profiles holding each value of the properties named, as <a class="el" href="#ga4824f45e85c9b60296f1935b0981cc4c" title="Initialises the resource manager as fiftyoneDegreesHashInitManagerFromFile does, and indexes the prof...">fiftyoneDegreesHashInitManagerFromFileWithIndexedProperties</a> does.  <br /></td></tr>
 <tr class="c-table__row memitem:gaa9985d6e6d57f8fda8781ff7d3da5717" id="r_gaa9985d6e6d57f8fda8781ff7d3da5717"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gaa9985d6e6d57f8fda8781ff7d3da5717">fiftyoneDegreesResultsHashFromEvidence</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, <a class="el" href="structfiftyone_degrees_evidence_key_value_pair_array.html">fiftyoneDegreesEvidenceKeyValuePairArray</a> *evidence, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:gaa9985d6e6d57f8fda8781ff7d3da5717"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the evidence value pairs in the evidence collection and populates the result in the results structure.  <br /></td></tr>
 <tr class="c-table__row memitem:gaafa8ef1661a542e11c58093febf30180" id="r_gaafa8ef1661a542e11c58093febf30180"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gaafa8ef1661a542e11c58093febf30180">fiftyoneDegreesResultsHashFromUserAgent</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, const char *userAgent, size_t userAgentLength, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:gaafa8ef1661a542e11c58093febf30180"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process a single User-Agent and populate the device offsets in the results structure.  <br /></td></tr>
-<tr class="c-table__row memitem:gab50db0e415ba1b9984783ccdf2743c93" id="r_gab50db0e415ba1b9984783ccdf2743c93"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gab50db0e415ba1b9984783ccdf2743c93">fiftyoneDegreesResultsHashFromEvidenceForProperties</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, <a class="el" href="structfiftyone_degrees_evidence_key_value_pair_array.html">fiftyoneDegreesEvidenceKeyValuePairArray</a> *evidence, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
-<tr class="c-table__row memdesc:gab50db0e415ba1b9984783ccdf2743c93"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the evidence exactly as <a class="el" href="#gaa9985d6e6d57f8fda8781ff7d3da5717" title="Processes the evidence value pairs in the evidence collection and populates the result in the results...">fiftyoneDegreesResultsHashFromEvidence</a>, but walks only the graphs needed by the required properties whose indexes are supplied.  <br /></td></tr>
-<tr class="c-table__row memitem:gae311281af35423d2adf4cc0b3b10dfa6" id="r_gae311281af35423d2adf4cc0b3b10dfa6"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gae311281af35423d2adf4cc0b3b10dfa6">fiftyoneDegreesResultsHashFromUserAgentForProperties</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, const char *userAgent, size_t userAgentLength, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
-<tr class="c-table__row memdesc:gae311281af35423d2adf4cc0b3b10dfa6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the User-Agent exactly as <a class="el" href="#gaafa8ef1661a542e11c58093febf30180" title="Process a single User-Agent and populate the device offsets in the results structure.">fiftyoneDegreesResultsHashFromUserAgent</a>, but walks only the graphs needed by the required properties whose indexes are supplied.  <br /></td></tr>
 <tr class="c-table__row memitem:ga9ae4ad3ae5a84c78a96d8274b7dd8a72" id="r_ga9ae4ad3ae5a84c78a96d8274b7dd8a72"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#ga9ae4ad3ae5a84c78a96d8274b7dd8a72">fiftyoneDegreesResultsHashFromDeviceId</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, const char *deviceId, size_t deviceIdLength, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga9ae4ad3ae5a84c78a96d8274b7dd8a72"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process a single Device Id and populate the device offsets in the results structure.  <br /></td></tr>
 <tr class="c-table__row memitem:ga8df380cd978f61179a709d5fb5e79bb0" id="r_ga8df380cd978f61179a709d5fb5e79bb0"><td class="c-table__cell"><a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga8df380cd978f61179a709d5fb5e79bb0">fiftyoneDegreesResultsHashCreate</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, uint32_t userAgentCapacity, uint32_t overridesCapacity)</td></tr>
@@ -161,7 +162,7 @@ Functions</h2></td></tr>
 <tr class="c-table__row memitem:gac820b8f00b3922989a8a7665d5c82337" id="r_gac820b8f00b3922989a8a7665d5c82337"><td class="c-table__cell">size_t&#160;</td><td class="c-table__cell"><a class="el" href="#gac820b8f00b3922989a8a7665d5c82337">fiftyoneDegreesResultsHashGetValuesStringByRequiredPropertyIndex</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, const int requiredPropertyIndex, char *const buffer, size_t const length, char *const separator, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:gac820b8f00b3922989a8a7665d5c82337"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Sets the buffer the values associated in the results for the property name.  <br /></td></tr>
 <tr class="c-table__row memitem:ga505dbe7c3b79bb6397d577919f45f09c" id="r_ga505dbe7c3b79bb6397d577919f45f09c"><td class="c-table__cell">size_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga505dbe7c3b79bb6397d577919f45f09c">fiftyoneDegreesResultsHashGetValuesStringAllProperties</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, char *const buffer, size_t const length, char *const separator, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
-<tr class="c-table__row memdesc:ga505dbe7c3b79bb6397d577919f45f09c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Sets the buffer the values associated in the results for all the available properties where each line is the properties for the property at the corresponding index.  <br /></td></tr>
+<tr class="c-table__row memdesc:ga505dbe7c3b79bb6397d577919f45f09c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Sets the buffer to the values in the results of every required property index, one line for each index in order, so line i holds the values of the property at required property index i.  <br /></td></tr>
 <tr class="c-table__row memitem:ga720585710069180d81bdac0b34285859" id="r_ga720585710069180d81bdac0b34285859"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga720585710069180d81bdac0b34285859">fiftyoneDegreesHashReloadManagerFromOriginalFile</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga720585710069180d81bdac0b34285859"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reload the data set being used by the resource manager using the data file location which was used when the manager was created.  <br /></td></tr>
 <tr class="c-table__row memitem:ga2ec52f4c6ed4e5588245cb455494d058" id="r_ga2ec52f4c6ed4e5588245cb455494d058"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga2ec52f4c6ed4e5588245cb455494d058">fiftyoneDegreesHashReloadManagerFromFile</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, const char *fileName, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
@@ -174,6 +175,8 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ga6aad0803b393ace42b1b85d7ff5fa28a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Release the reference to a data set returned by the <a class="el" href="#ga5c07f06c61624d13d4a7b4fdcc715723" title="Gets a safe reference to the Hash data set from the resource manager.">fiftyoneDegreesDataSetHashGet</a> method.  <br /></td></tr>
 <tr class="c-table__row memitem:gaaaa53287cc51ebbe063b814fb009e520" id="r_gaaaa53287cc51ebbe063b814fb009e520"><td class="c-table__cell">uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#gaaaa53287cc51ebbe063b814fb009e520">fiftyoneDegreesHashIterateProfilesForPropertyAndValue</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, const char *propertyName, const char *valueName, void *state, <a class="el" href="group___fifty_one_degrees_profile.html#ga3b3b294644686c4352c12e115aa4f962">fiftyoneDegreesProfileIterateMethod</a> callback, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:gaaaa53287cc51ebbe063b814fb009e520"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Iterates over the profiles in the data set calling the callback method for any profiles that contain the property and value provided.  <br /></td></tr>
+<tr class="c-table__row memitem:ga1e658bcdbe4f50312b0d484729e4177e" id="r_ga1e658bcdbe4f50312b0d484729e4177e"><td class="c-table__cell">uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga1e658bcdbe4f50312b0d484729e4177e">fiftyoneDegreesHashGetProfileIdsForPropertyAndValue</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, const char *propertyName, const char *valueName, uint32_t *profileIds, uint32_t length, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga1e658bcdbe4f50312b0d484729e4177e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the ids of the profiles that contain the property and value provided.  <br /></td></tr>
 <tr class="c-table__row memitem:ga0e7aa1436ee51832107162ee39412311" id="r_ga0e7aa1436ee51832107162ee39412311"><td class="c-table__cell">char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga0e7aa1436ee51832107162ee39412311">fiftyoneDegreesHashGetDeviceIdFromResult</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, <a class="el" href="structfiftyone_degrees_result_hash.html">fiftyoneDegreesResultHash</a> *result, char *const buffer, size_t const length, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga0e7aa1436ee51832107162ee39412311"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the device id string from the single result provided.  <br /></td></tr>
 <tr class="c-table__row memitem:ga6f9ebe94f8165686dc312b057ef2a142" id="r_ga6f9ebe94f8165686dc312b057ef2a142"><td class="c-table__cell">char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga6f9ebe94f8165686dc312b057ef2a142">fiftyoneDegreesHashGetDeviceIdFromResults</a> (<a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *results, char *const buffer, size_t const length, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
@@ -280,13 +283,43 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 <b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_struct" href="structfiftyone_degrees_results_device_detection.html">fiftyoneDegreesResultsDeviceDetection</a> b;  \</div>
 <div class="c-code__line"><a class="code hl_struct" href="structfiftyone_degrees_collection_item.html">fiftyoneDegreesCollectionItem</a> propertyItem;  \</div>
-<div class="c-code__line"><a class="code hl_struct" href="structfiftyone_degrees_list.html">fiftyoneDegreesList</a> values;</div>
+<div class="c-code__line"><a class="code hl_struct" href="structfiftyone_degrees_list.html">fiftyoneDegreesList</a> values;  \</div>
+<div class="c-code__line"><a class="code hl_struct" href="structfiftyone_degrees_evidence_key_value_pair_array.html">fiftyoneDegreesEvidenceKeyValuePairArray</a> *<a class="code hl_struct" href="structevidence.html">evidence</a>;  \</div>
+<div class="c-code__line"><span class="c-code__keywordtype">size_t</span> evidenceBytes;  \</div>
+<div class="c-code__line"><span class="c-code__keywordtype">int</span> evidencePrefixes;  \</div>
+<div class="c-code__line"><span class="c-code__keywordtype">bool</span> profileIdsOverridden;</div>
+<div class="ttc" id="astructevidence_html"><div class="ttname"><a href="structevidence.html">evidence</a></div><div class="ttdef"><b>Definition</b> GettingStarted.c:67</div></div>
 <div class="ttc" id="astructfiftyone_degrees_collection_item_html"><div class="ttname"><a href="structfiftyone_degrees_collection_item.html">fiftyoneDegreesCollectionItem</a></div><div class="ttdoc">Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish...</div><div class="ttdef"><b>Definition</b> collection.h:315</div></div>
+<div class="ttc" id="astructfiftyone_degrees_evidence_key_value_pair_array_html"><div class="ttname"><a href="structfiftyone_degrees_evidence_key_value_pair_array.html">fiftyoneDegreesEvidenceKeyValuePairArray</a></div><div class="ttdoc">Array of evidence key value pairs and a pointer to the next array if present or NULL of not present.</div><div class="ttdef"><b>Definition</b> evidence.h:195</div></div>
 <div class="ttc" id="astructfiftyone_degrees_list_html"><div class="ttname"><a href="structfiftyone_degrees_list.html">fiftyoneDegreesList</a></div><div class="ttdoc">List structure which contains a list of collection items.</div><div class="ttdef"><b>Definition</b> list.h:116</div></div>
 <div class="ttc" id="astructfiftyone_degrees_results_device_detection_html"><div class="ttname"><a href="structfiftyone_degrees_results_device_detection.html">fiftyoneDegreesResultsDeviceDetection</a></div><div class="ttdoc">Device detection specific results structure which any device detection processing results should exte...</div><div class="ttdef"><b>Definition</b> results-dd.h:73</div></div>
 </div><!-- fragment -->
 <p>Macro defining the common members of a Hash result. </p>
-<p><a class="el" href="group___fifty_one_degrees_synonyms.html#gab382c4d5a85ca1836f14c3a9c01c23e3" title="Synonym for fiftyoneDegreesList type.">List</a> of value items when results are fetched </p>
+<p>True if the evidence overrode the profile of a component, so that a walk applies the overrides again </p>
+
+</div>
+</div>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="g-docs__section-heading">Typedef Documentation</h2>
+<a id="ga3a08e540ab36bec35d1939e9547e8c10" name="ga3a08e540ab36bec35d1939e9547e8c10"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga3a08e540ab36bec35d1939e9547e8c10">&#9670;&#160;</a></span>fiftyoneDegreesResultsHash</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">typedef <a class="el" href="structfiftyone_degrees_result_hash_array.html">fiftyoneDegreesResultHashArray</a> <a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Array of Hash results used to easily access and track the size of the array. </p>
+<p>The results are used by one thread at a time, because reading a value writes into the results, and when no properties were named the first read of a property of a component walks the component's graph. Different results can be used on different threads at once, and the resource manager can be shared, unless the library is compiled with FIFTYONE_DEGREES_NO_THREADING. </p>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8c-example.html#_a4">Hash/MatchMetrics.c</a>, and <a class="el" href="_hash_2_strongly_typed_8c-example.html#_a4">Hash/StronglyTyped.c</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -318,7 +351,7 @@ Variables</h2></td></tr>
 </tbody>
 </table>
 </div>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8c-example.html#_a11">Hash/MatchMetrics.c</a>, and <a class="el" href="_hash_2_match_metrics_8cpp-example.html#_a6">Hash/MatchMetrics.cpp</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8c-example.html#_a12">Hash/MatchMetrics.c</a>, and <a class="el" href="_hash_2_match_metrics_8cpp-example.html#_a6">Hash/MatchMetrics.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -422,7 +455,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get the device id string from the single result provided. </p>
-<p>This contains profile ids for all components, concatenated with the separator character '-'. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This contains profile ids for all components, concatenated with the separator character '-'. The result is read as it is, so call <a class="el" href="group___fifty_one_degrees_results.html#ga177732d595216d311871951cf3a2856d" title="Walks every pending component in component order, stopping at the first walk that fails.">fiftyoneDegreesResultsEvaluateAll</a> on the results it is from first. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dataSet</td><td>pointer to the data set used to get the result </td></tr>
     <tr><td class="paramname">result</td><td>pointer to the result to get the device id of </td></tr>
@@ -470,7 +503,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get the device id string from the results provided. </p>
-<p>This contains profile ids for all components, concatenated with the separator character '-'. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This contains profile ids for all components, concatenated with the separator character '-', so every graph not yet walked is walked first. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>pointer to the results to get the device id of </td></tr>
     <tr><td class="paramname">buffer</td><td>pointer to the memory to write the characters to </td></tr>
@@ -480,6 +513,65 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the destination pointer </dd></dl>
+
+</div>
+</div>
+<a id="ga1e658bcdbe4f50312b0d484729e4177e" name="ga1e658bcdbe4f50312b0d484729e4177e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga1e658bcdbe4f50312b0d484729e4177e">&#9670;&#160;</a></span>fiftyoneDegreesHashGetProfileIdsForPropertyAndValue()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">uint32_t fiftyoneDegreesHashGetProfileIdsForPropertyAndValue </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>manager</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>valueName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t *</td>          <td class="c-table__cell"><span class="paramname"><em>profileIds</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>length</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the ids of the profiles that contain the property and value provided. </p>
+<p>They are the profiles <a class="el" href="#gaaaa53287cc51ebbe063b814fb009e520" title="Iterates over the profiles in the data set calling the callback method for any profiles that contain ...">fiftyoneDegreesHashIterateProfilesForPropertyAndValue</a> iterates over, in the same order, found in the same way. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">manager</td><td>the resource manager containing a hash data set initialised by one of the Hash data set init methods </td></tr>
+    <tr><td class="paramname">propertyName</td><td>name of the property which the value relates to </td></tr>
+    <tr><td class="paramname">valueName</td><td>name of the property value which the profiles must contain </td></tr>
+    <tr><td class="paramname">profileIds</td><td>array to set the profile ids in, or NULL to count them </td></tr>
+    <tr><td class="paramname">length</td><td>number of ids the array can hold </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the number of profiles that contain the value. When this is more than length only the first length ids are set, so a larger array is needed for the rest. </dd></dl>
 
 </div>
 </div>
@@ -535,6 +627,71 @@ Variables</h2></td></tr>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set resource assign to the resource manager. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not created and the resource manager can not be used. </dd></dl>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8c-example.html#a3">Hash/MatchMetrics.c</a>, and <a class="el" href="_hash_2_strongly_typed_8c-example.html#a3">Hash/StronglyTyped.c</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="ga4824f45e85c9b60296f1935b0981cc4c" name="ga4824f45e85c9b60296f1935b0981cc4c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga4824f45e85c9b60296f1935b0981cc4c">&#9670;&#160;</a></span>fiftyoneDegreesHashInitManagerFromFileWithIndexedProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> fiftyoneDegreesHashInitManagerFromFileWithIndexedProperties </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>manager</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_config_hash.html">fiftyoneDegreesConfigHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>config</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>properties</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>fileName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const char **</td>          <td class="c-table__cell"><span class="paramname"><em>indexedProperties</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>indexedPropertiesCount</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Initialises the resource manager as <a class="el" href="#gabd7a393485064fd721a228f1ec798cb6" title="Initialises the resource manager with a Hash data set resource populated from the Hash data file refe...">fiftyoneDegreesHashInitManagerFromFile</a> does, and indexes the profiles holding each value of the properties named, so that <a class="el" href="#gaaaa53287cc51ebbe063b814fb009e520" title="Iterates over the profiles in the data set calling the callback method for any profiles that contain ...">fiftyoneDegreesHashIterateProfilesForPropertyAndValue</a> and <a class="el" href="#ga1e658bcdbe4f50312b0d484729e4177e" title="Gets the ids of the profiles that contain the property and value provided.">fiftyoneDegreesHashGetProfileIdsForPropertyAndValue</a> find them without reading every profile. </p>
+<p>A property is indexed whether or not it is required, and whatever the configuration. A reload indexes the same names again. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">manager</td><td>the resource manager to manage the shared data set resource </td></tr>
+    <tr><td class="paramname">config</td><td>configuration for the operation of the data set, or NULL if default detection configuration is required </td></tr>
+    <tr><td class="paramname">properties</td><td>the properties that will be consumed from the data set, or NULL if all available properties in the Hash data file should be available for consumption </td></tr>
+    <tr><td class="paramname">fileName</td><td>the full path to a file with read permission that contains the Hash data set </td></tr>
+    <tr><td class="paramname">indexedProperties</td><td>names of the properties to index, matched exactly, or NULL to index none. Null names and repeats are ignored, and a name the data file has no property of indexes nothing. The names are copied </td></tr>
+    <tr><td class="paramname">indexedPropertiesCount</td><td>number of names in indexedProperties </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set resource assigned to the resource manager. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not created and the resource manager can not be used. </dd></dl>
 
 </div>
 </div>
@@ -597,6 +754,77 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga5e4e4a5ac455600ef675fa75784feb7a" name="ga5e4e4a5ac455600ef675fa75784feb7a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga5e4e4a5ac455600ef675fa75784feb7a">&#9670;&#160;</a></span>fiftyoneDegreesHashInitManagerFromMemoryWithIndexedProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> fiftyoneDegreesHashInitManagerFromMemoryWithIndexedProperties </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>manager</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_config_hash.html">fiftyoneDegreesConfigHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>config</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>properties</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">void *</td>          <td class="c-table__cell"><span class="paramname"><em>memory</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">long</td>          <td class="c-table__cell"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const char **</td>          <td class="c-table__cell"><span class="paramname"><em>indexedProperties</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>indexedPropertiesCount</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Initialises the resource manager as <a class="el" href="#ga9df1f278437581cfffe4cf1228d415d9" title="Initialises the resource manager with a Hash data set resource populated from the Hash data set point...">fiftyoneDegreesHashInitManagerFromMemory</a> does, and indexes the profiles holding each value of the properties named, as <a class="el" href="#ga4824f45e85c9b60296f1935b0981cc4c" title="Initialises the resource manager as fiftyoneDegreesHashInitManagerFromFile does, and indexes the prof...">fiftyoneDegreesHashInitManagerFromFileWithIndexedProperties</a> does. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">manager</td><td>the resource manager to manage the shared data set resource </td></tr>
+    <tr><td class="paramname">config</td><td>configuration for the operation of the data set, or NULL if default detection configuration is required </td></tr>
+    <tr><td class="paramname">properties</td><td>the properties that will be consumed from the data set, or NULL if all available properties in the Hash data file should be available for consumption </td></tr>
+    <tr><td class="paramname">memory</td><td>pointer to continuous memory containing the Hash data set. If the data set is not created the memory stays with the caller, even if the configuration says to free it </td></tr>
+    <tr><td class="paramname">size</td><td>the number of bytes that make up the Hash data set </td></tr>
+    <tr><td class="paramname">indexedProperties</td><td>names of the properties to index, matched exactly, or NULL to index none. Null names and repeats are ignored, and a name the data file has no property of indexes nothing. The names are copied </td></tr>
+    <tr><td class="paramname">indexedPropertiesCount</td><td>number of names in indexedProperties </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status associated with the data set resource assigned to the resource manager. Any value other than <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> means the data set was not created and the resource manager can not be used. </dd></dl>
+
+</div>
+</div>
 <a id="gaaaa53287cc51ebbe063b814fb009e520" name="gaaaa53287cc51ebbe063b814fb009e520"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaaaa53287cc51ebbe063b814fb009e520">&#9670;&#160;</a></span>fiftyoneDegreesHashIterateProfilesForPropertyAndValue()</h2>
 
@@ -641,7 +869,8 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Iterates over the profiles in the data set calling the callback method for any profiles that contain the property and value provided. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>The profiles are iterated in the order of the data file, which is ascending profile id, and each one is passed to the callback whatever the callback returns. Both names are matched exactly.</p>
+<p>For a property named to index when the data set was initialised, with <a class="el" href="#ga4824f45e85c9b60296f1935b0981cc4c" title="Initialises the resource manager as fiftyoneDegreesHashInitManagerFromFile does, and indexes the prof...">fiftyoneDegreesHashInitManagerFromFileWithIndexedProperties</a> or <a class="el" href="#ga5e4e4a5ac455600ef675fa75784feb7a" title="Initialises the resource manager as fiftyoneDegreesHashInitManagerFromMemory does,...">fiftyoneDegreesHashInitManagerFromMemoryWithIndexedProperties</a>, an index finds the profiles. For any other property every profile is read. Both give the same profiles. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">manager</td><td>the resource manager containing a hash data set initialised by one of the Hash data set init methods </td></tr>
     <tr><td class="paramname">propertyName</td><td>name of the property which the value relates to </td></tr>
@@ -954,7 +1183,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8c-example.html#a15">Hash/MatchMetrics.c</a>, and <a class="el" href="_hash_2_strongly_typed_8c-example.html#a10">Hash/StronglyTyped.c</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8c-example.html#a16">Hash/MatchMetrics.c</a>, and <a class="el" href="_hash_2_strongly_typed_8c-example.html#a10">Hash/StronglyTyped.c</a>.</dd>
 </dl>
 
 </div>
@@ -993,7 +1222,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Process a single Device Id and populate the device offsets in the results structure. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Any component still to be walked from an earlier population of the results is walked first, so the device id's profiles replace what the walk sets. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>preallocated results structure to populate </td></tr>
     <tr><td class="paramname">deviceId</td><td>string to process </td></tr>
@@ -1036,65 +1265,11 @@ Variables</h2></td></tr>
 
 <p>Processes the evidence value pairs in the evidence collection and populates the result in the results structure. </p>
 <p>The result shape is a deterministic function of the data set, not of how many evidence pairs are supplied. One result item is produced per available component (results-&gt;count == componentsAvailableCount when every available component resolves from the evidence, as it does for a User-Agent). Adding a redundant, lower-precedence pair that resolves to the same value (for example both 'query.user-agent' and 'header.user-agent') therefore does not change the number or layout of result items. This is the single detection entry point; ResultsHashFromUserAgent is a thin wrapper over it.</p>
+<p>Each available component with evidence for one of its headers takes a result, in component order. When the caller named the properties the data set was created with, the graph of each of those components is walked here, so no read walks a graph and the results keep no copy of the evidence. Otherwise no graph is walked here. The evidence is copied into the results, and a component's graph is walked the first time one of its properties is read. A device id in the evidence sets every profile here, and profile overrides and default profiles are applied as they are once every graph has been walked, so the answers do not depend on what is read first. The evidence can be freed once this returns. Code that reads the result items directly, such as their match metrics, calls <a class="el" href="group___fifty_one_degrees_results.html#ga177732d595216d311871951cf3a2856d" title="Walks every pending component in component order, stopping at the first walk that fails.">fiftyoneDegreesResultsEvaluateAll</a> first.</p>
 <p>The 'query' and 'cookie' evidence key prefixes are used to get values which dynamically override values returned from device detection. 'query' prefixes are also used in preference to 'header' for HTTP header values that are provided by the application rather than the calling device. 'query.51D_deviceId' special evidence key has the highest priority and allows to retrieve the designated device by its 'deviceId'. 'deviceId' value is obtained as a property in the device detection results and may be stored and used later to retrieve the same device. In case provided 'query.51D_deviceId' value is invalid or does not match any device the other provided evidence will be considered. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>preallocated results structure to populate containing a pointer to an initialised resource manager </td></tr>
     <tr><td class="paramname">evidence</td><td>to process containing parsed or unparsed values </td></tr>
-    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="gab50db0e415ba1b9984783ccdf2743c93" name="gab50db0e415ba1b9984783ccdf2743c93"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gab50db0e415ba1b9984783ccdf2743c93">&#9670;&#160;</a></span>fiftyoneDegreesResultsHashFromEvidenceForProperties()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">void fiftyoneDegreesResultsHashFromEvidenceForProperties </td>
-          <td>(</td>
-          <td class="c-table__cell"><a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>results</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_evidence_key_value_pair_array.html">fiftyoneDegreesEvidenceKeyValuePairArray</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>evidence</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Processes the evidence exactly as <a class="el" href="#gaa9985d6e6d57f8fda8781ff7d3da5717" title="Processes the evidence value pairs in the evidence collection and populates the result in the results...">fiftyoneDegreesResultsHashFromEvidence</a>, but walks only the graphs needed by the required properties whose indexes are supplied. </p>
-<p>It is meant for a service that knows, for every request, which properties it will read. Other callers should use <a class="el" href="#gaa9985d6e6d57f8fda8781ff7d3da5717" title="Processes the evidence value pairs in the evidence collection and populates the result in the results...">fiftyoneDegreesResultsHashFromEvidence</a>.</p>
-<p>Results are built as for an unfiltered detection. A component whose graph was not walked still takes the result its evidence would have used, with no profile, so its properties report no value with the NULL_PROFILE reason, and it receives no default profile even when allowUnmatched is set. Values worked out across every result, such as the device id, the matched User-Agents and the match metrics, count that result as a component that matched nothing.</p>
-<p>The indexes are turned into a 32 bit mask, bit i meaning the graph for component i in componentsList. Components at index 32 and above are beyond the mask and are always walked, so a data file with more than 32 components is filtered for the first 32 only.</p>
-<p>An index is a position in the required properties of the data set the results use, which are sorted by name. A reloaded data file that gains or loses a required property moves the indexes of the properties after it, so look them up again after a reload, for example with <a class="el" href="group___fifty_one_degrees_properties.html#ga382d04480940ed108153d1090f08acb1" title="Gets the required property index in the list of all required properties from the name.">fiftyoneDegreesPropertiesGetRequiredPropertyIndexFromName</a>. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">results</td><td>preallocated results structure to populate </td></tr>
-    <tr><td class="paramname">evidence</td><td>to process containing parsed or unparsed values </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexes</td><td>array of required property indexes the caller will read, or NULL to walk every graph </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>number of entries in the array. A negative count walks every graph. A count of zero with a non NULL array walks no graph. Indexes outside the required properties are ignored. </td></tr>
     <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
   </table>
   </dd>
@@ -1136,7 +1311,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Process a single User-Agent and populate the device offsets in the results structure. </p>
-<p>This is a thin convenience wrapper: the User-Agent is wrapped in a single 'header.user-agent' evidence pair and passed to <a class="el" href="#gaa9985d6e6d57f8fda8781ff7d3da5717" title="Processes the evidence value pairs in the evidence collection and populates the result in the results...">fiftyoneDegreesResultsHashFromEvidence</a>, so the result shape is identical to processing the same User-Agent as evidence (one item per available component, not a single coalesced item). The userAgent string must remain valid for the lifetime of the results, as it is referenced, not copied. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This is a thin convenience wrapper: the User-Agent is wrapped in a single 'header.user-agent' evidence pair and passed to <a class="el" href="#gaa9985d6e6d57f8fda8781ff7d3da5717" title="Processes the evidence value pairs in the evidence collection and populates the result in the results...">fiftyoneDegreesResultsHashFromEvidence</a>, so the result shape is identical to processing the same User-Agent as evidence (one item per available component, not a single coalesced item). The User-Agent can be freed once this returns, as the results either walk every graph they need with it here or copy it. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>preallocated results structure to populate </td></tr>
     <tr><td class="paramname">userAgent</td><td>string to process </td></tr>
@@ -1146,64 +1321,6 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8c-example.html#a6">Hash/MatchMetrics.c</a>, and <a class="el" href="_hash_2_strongly_typed_8c-example.html#a6">Hash/StronglyTyped.c</a>.</dd>
-</dl>
-
-</div>
-</div>
-<a id="gae311281af35423d2adf4cc0b3b10dfa6" name="gae311281af35423d2adf4cc0b3b10dfa6"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gae311281af35423d2adf4cc0b3b10dfa6">&#9670;&#160;</a></span>fiftyoneDegreesResultsHashFromUserAgentForProperties()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">void fiftyoneDegreesResultsHashFromUserAgentForProperties </td>
-          <td>(</td>
-          <td class="c-table__cell"><a class="el" href="#ga3a08e540ab36bec35d1939e9547e8c10">fiftyoneDegreesResultsHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>results</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>userAgent</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">size_t</td>          <td class="c-table__cell"><span class="paramname"><em>userAgentLength</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Processes the User-Agent exactly as <a class="el" href="#gaafa8ef1661a542e11c58093febf30180" title="Process a single User-Agent and populate the device offsets in the results structure.">fiftyoneDegreesResultsHashFromUserAgent</a>, but walks only the graphs needed by the required properties whose indexes are supplied. </p>
-<p>See <a class="el" href="#gab50db0e415ba1b9984783ccdf2743c93" title="Processes the evidence exactly as fiftyoneDegreesResultsHashFromEvidence, but walks only the graphs n...">fiftyoneDegreesResultsHashFromEvidenceForProperties</a> for the rules that apply to the indexes. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">results</td><td>preallocated results structure to populate </td></tr>
-    <tr><td class="paramname">userAgent</td><td>string to process </td></tr>
-    <tr><td class="paramname">userAgentLength</td><td>of the User-Agent string </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexes</td><td>array of required property indexes the caller will read, or NULL to walk every graph </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>number of entries in the array </td></tr>
-    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
-  </table>
-  </dd>
 </dl>
 
 </div>
@@ -1237,10 +1354,10 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Gets whether or not the results provided contain valid values for the property index provided. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>When no properties were named, the first read of a property of a component walks the component's graph, unless the property has an override value or the evidence overrides the component's profile. A failure to read the graph from the data file is reported by that read, and the component is not walked again until the results are next populated, so its properties then read as if it had no profile. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>pointer to the results to check </td></tr>
-    <tr><td class="paramname">requiredPropertyIndex</td><td>index in the required properties of the property to check for values of </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names given when the data set was created, which a reload does not change. With no names given it is the index in the available properties, which a reload can change, so look it up from the name for each data set </td></tr>
     <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
   </table>
   </dd>
@@ -1278,10 +1395,10 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Gets the reason why a results does not contain valid values for a given property. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>When no properties were named, the first read of a property of a component walks the component's graph, unless the evidence overrides the component's profile. Then, when unmatched results are not allowed, every graph still to be walked is walked, as the reason depends on the results the walks of other components set. A failure to read a graph from the data file is reported by that read, and the component is not walked again until the results are next populated, so its properties then read as if it had no profile. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>pointer to the results to check </td></tr>
-    <tr><td class="paramname">requiredPropertyIndex</td><td>index in the required properties of the property to check for values of </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names given when the data set was created, which a reload does not change. With no names given it is the index in the available properties, which a reload can change, so look it up from the name for each data set </td></tr>
     <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
   </table>
   </dd>
@@ -1349,10 +1466,10 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Populates the list of values in the results instance with value structure instances associated with the required property index. </p>
-<p>When the results are released then the value items will be released. There is no need for the caller to release the collection item returned. The fiftyoneDegreesResultsHashGetValueString method should be used to get the string representation of the value. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>When the results are released then the value items will be released. There is no need for the caller to release the collection item returned. The fiftyoneDegreesResultsHashGetValueString method should be used to get the string representation of the value. When no properties were named, the first read of a property of a component walks the component's graph, unless the property has an override value or the evidence overrides the component's profile. A failure to read the graph from the data file is reported by that read, and the component is not walked again until the results are next populated, so its properties then read as if it had no profile. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>pointer to the results structure to release </td></tr>
-    <tr><td class="paramname">requiredPropertyIndex</td><td></td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names given when the data set was created, which a reload does not change. With no names given it is the index in the available properties, which a reload can change, so look it up from the name for each data set </td></tr>
     <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
   </table>
   </dd>
@@ -1397,7 +1514,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Sets the buffer to a JSON string that represents all the available properties and values in the results. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Each property is read as <a class="el" href="#gae51decce386dca8668afc2864d0f7a56" title="Populates the list of values in the results instance with value structure instances associated with t...">fiftyoneDegreesResultsHashGetValues</a> reads it, so when no properties were named the graph of each component is walked by the first read of one of its properties. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>pointer to the results structure to release </td></tr>
     <tr><td class="paramname">buffer</td><td>character buffer allocated by the caller </td></tr>
@@ -1507,8 +1624,8 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Sets the buffer the values associated in the results for all the available properties where each line is the properties for the property at the corresponding index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Sets the buffer to the values in the results of every required property index, one line for each index in order, so line i holds the values of the property at required property index i. </p>
+<p>The line of a property the data set does not have is empty. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>pointer to the results structure to release </td></tr>
     <tr><td class="paramname">buffer</td><td>character buffer allocated by the caller </td></tr>
@@ -1569,7 +1686,7 @@ Variables</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>pointer to the results structure to release </td></tr>
-    <tr><td class="paramname">requiredPropertyIndex</td><td>required property index of for the values </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names given when the data set was created, which a reload does not change. With no names given it is the index in the available properties, which a reload can change, so look it up from the name for each data set </td></tr>
     <tr><td class="paramname">buffer</td><td>character buffer allocated by the caller </td></tr>
     <tr><td class="paramname">length</td><td>of the character buffer </td></tr>
     <tr><td class="paramname">separator</td><td>string to be used to separate multiple values if available </td></tr>
@@ -1599,7 +1716,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Uses caching to balance memory usage and performance. </p>
-<p>A connection is maintained to the source data file to load data into caches when required. As the cache is loaded, memory will increase until the cache capacity is reached. The concurrency of each collection must be set to the maximum number of concurrent operations to optimize file reads. This is the default configuration. In this configuration, both the performance and predictive graphs are enabled, as performance is not as big of a concern in this configuration, so falling back to the more predictive graph if nothing is found on the first pass can be afforded. </p>
+<p>A connection is maintained to the source data file to load data into caches when required. As the cache is loaded, memory will increase until the cache capacity is reached. The components, maps, properties and root nodes are held in memory. The concurrency of each collection must be set to the maximum number of concurrent operations to optimize file reads. This is the default configuration. In this configuration, both the performance and predictive graphs are enabled, as performance is not as big of a concern in this configuration, so falling back to the more predictive graph if nothing is found on the first pass can be afforded. </p>
 
 </div>
 </div>

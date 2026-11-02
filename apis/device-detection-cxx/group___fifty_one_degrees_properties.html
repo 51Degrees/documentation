@@ -71,7 +71,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>Structures for properties which are available, or required. </p>
 <h2>Terms</h2>
-<p><b>Required <a class="el" href="group___fifty_one_degrees_synonyms.html#gac33ed2a033290cebf9ec90809d9bdf90" title="Synonym for fiftyoneDegreesProperty type.">Property</a> Index</b> : the 0 based index of the property in the list of required properties. Not the same as the property index.</p>
+<p><b>Required <a class="el" href="group___fifty_one_degrees_synonyms.html#gac33ed2a033290cebf9ec90809d9bdf90" title="Synonym for fiftyoneDegreesProperty type.">Property</a> Index</b> : the 0 based index of the property in the names the caller gave when the data set was created, which is the index every read by position takes. A reload does not change it. A name the data does not have keeps its index, and reads as a property the data set does not have. When the caller named no property, it is the index of the property in the list of available properties, which a reload can change.</p>
+<p><b>Available Index</b> : the 0 based index of the property in the list of available properties, which holds the properties the data has in ascending order of name. Not the same as the required property index when the caller named properties.</p>
 <p><b><a class="el" href="group___fifty_one_degrees_synonyms.html#gac33ed2a033290cebf9ec90809d9bdf90" title="Synonym for fiftyoneDegreesProperty type.">Property</a> Index</b> : the 0 based index of the property in the source used to create the required properties. Not the same as the required property index.</p>
 <p><b>Results</b> : the structure used to contain the data associated with the available required properties.</p>
 <p><b>Source</b> : the source of property names. Typically a call back method to return properties from the data structure used by the aspect engine.</p>
@@ -83,13 +84,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <ol type="1">
 <li>Separated string of property names. Valid separators include space, comma and pipe.</li>
 <li>An array of strings.</li>
-<li>Existing properties results from a previous creation operation. This method is used when a data set is being reloaded due to a change in the underlying data.</li>
+<li>Existing properties results from a previous creation operation. This method is used when a data set is being reloaded due to a change in the underlying data. The new results are created from the names the caller gave the first time, so a property the previous data did not have is available once the new data has it, and a caller that named no property gets every property of the new data.</li>
 </ol>
 <p>Creation also requires a method to retrieve the name of the properties from the underlying data source. A method pointer conforming to <a class="el" href="#ga28cd53614a9e57019eb816a827d34a68" title="Returns a string for the property at the index provided or NULL if there is no property available at ...">fiftyoneDegreesPropertiesGetMethod</a> must be provided to retrieve the property name string item for a given property index up to the maximum count. The call back is used to avoid any hard dependency between the data structure and the properties methods.</p>
 <p>Unlike standard collection item retrieval the properties methods will not know the underlying collection implement or reference from which the item was obtained from. Therefore the implementation of get MUST set the collection field of the collection item.</p>
-<p>Some, or all, of the required properties may not be present in the underlying data source. Any missing properties will be ignored in the results. The get name from required index method can be used to iterate over the available properties. The number of available properties after creation can be obtained from the count field of properties results.</p>
+<p>Some, or all, of the required properties may not be present in the underlying data source. A missing property is left out of the available properties, and keeps its required property index, which reads as a property the data set does not have. The number of required property indexes is given by <a class="el" href="#ga0ab71e725222d5f0a78596aef253ac37" title="Gets the number of required property indexes, which is the number of names the caller gave,...">fiftyoneDegreesPropertiesGetRequiredPropertyCount</a>, and the name at each by <a class="el" href="#ga1a886fe2de48e334a62451323edcd045" title="Gets the name as a string from the required property index.">fiftyoneDegreesPropertiesGetNameFromRequiredIndex</a>. The count field and the items of the results are the available properties, which are in available index order, so a caller pairing them with required property indexes reads the wrong properties.</p>
 <p>Whilst the property names can be provided as string(s) the property names referenced from the properties results are collection items from a strings collection. The properties methods are responsible for releasing the references to these strings when the properties results are freed.</p>
-<p>The resulting require properties index will be in ascending order of the property name a string. As such the ordered list can be used with a binary search (divide and conquer) to quickly determine the required property index from the property name.</p>
+<p>The available properties are in ascending order of the property name, so a binary search quickly finds a property from its name.</p>
 <h2>Free</h2>
 <p>When the properties results are finished with, the <a class="el" href="#gaf2a54e5938cbd505767930a64aba6fea" title="Frees the memory and resources used by the properties results previously created using the fiftyoneDe...">fiftyoneDegreesPropertiesFree</a> method must be used. This will also free the collection items used to reference the property name strings using the collection field of the item to obtain the source collection. This collection must have been set by the get method used at creation.</p>
 <h2>Operation</h2>
@@ -107,6 +108,8 @@ Structs</h2></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Array of items of type <a class="el" href="#ga8a9bf33829bbb6ced6bfcd40cb987b83" title="Index in the properties collection to a property which is required to get evidence for another proper...">fiftyoneDegreesEvidencePropertyIndex</a> used to easily access and track the size of the array.  <a href="structfiftyone_degrees_evidence_property_index_array.html#details">More...</a><br /></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesPropertyAvailable" id="r_fiftyoneDegreesPropertyAvailable"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_property_available.html">fiftyoneDegreesPropertyAvailable</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Used to access the property item quickly without the need to search.  <a href="structfiftyone_degrees_property_available.html#details">More...</a><br /></td></tr>
+<tr class="c-table__row memitem:fiftyoneDegreesPropertyNamed" id="r_fiftyoneDegreesPropertyNamed"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_property_named.html">fiftyoneDegreesPropertyNamed</a></td></tr>
+<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A property name the caller gave, in the place the caller gave it.  <a href="structfiftyone_degrees_property_named.html#details">More...</a><br /></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesPropertyAvailableArray" id="r_fiftyoneDegreesPropertyAvailableArray"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_property_available_array.html">fiftyoneDegreesPropertyAvailableArray</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Array of items of type <a class="el" href="structfiftyone_degrees_property_available.html" title="Used to access the property item quickly without the need to search.">fiftyoneDegreesPropertyAvailable</a> used to easily access and track the size of the array.  <a href="structfiftyone_degrees_property_available_array.html#details">More...</a><br /></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesPropertiesRequired" id="r_fiftyoneDegreesPropertiesRequired"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a></td></tr>
@@ -117,14 +120,9 @@ Macros</h2></td></tr>
 <tr class="c-table__row memitem:gafe8b176a1f05a93ae0a5a9e1365e3abe" id="r_gafe8b176a1f05a93ae0a5a9e1365e3abe"><td class="c-table__cell"><a id="gafe8b176a1f05a93ae0a5a9e1365e3abe" name="gafe8b176a1f05a93ae0a5a9e1365e3abe"></a>
 #define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_PROPERTIES_SEPARATORS</b>&#160;&#160;&#160;&quot;|, &quot;</td></tr>
 <tr class="c-table__row memdesc:gafe8b176a1f05a93ae0a5a9e1365e3abe"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Characters which separate the names in a required properties string. <br /></td></tr>
-<tr class="c-table__row memitem:ga60068561f8c636b78121cc536b4d495d" id="r_ga60068561f8c636b78121cc536b4d495d"><td class="c-table__cell"><a id="ga60068561f8c636b78121cc536b4d495d" name="ga60068561f8c636b78121cc536b4d495d"></a>
-#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_COMPONENT_MASK_ALL</b>&#160;&#160;&#160;UINT32_MAX</td></tr>
-<tr class="c-table__row memdesc:ga60068561f8c636b78121cc536b4d495d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Mask with every component enabled. <br /></td></tr>
-<tr class="c-table__row memitem:ga737ebfe51582d29013e876cd1e318f54" id="r_ga737ebfe51582d29013e876cd1e318f54"><td class="c-table__cell"><a id="ga737ebfe51582d29013e876cd1e318f54" name="ga737ebfe51582d29013e876cd1e318f54"></a>
-#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_COMPONENT_MASK_BITS</b>&#160;&#160;&#160;32</td></tr>
-<tr class="c-table__row memdesc:ga737ebfe51582d29013e876cd1e318f54"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of components the mask can address. <br /></td></tr>
-<tr class="c-table__row memitem:gaec214f38c42dcf2555021307e793bce0" id="r_gaec214f38c42dcf2555021307e793bce0"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gaec214f38c42dcf2555021307e793bce0">FIFTYONE_DEGREES_COMPONENT_MASK_ENABLED</a>(mask,  i)</td></tr>
-<tr class="c-table__row memdesc:gaec214f38c42dcf2555021307e793bce0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True if component index i is enabled under the mask.  <br /></td></tr>
+<tr class="c-table__row memitem:ga03b30c0e9db9adac3b925156d2cca8c2" id="r_ga03b30c0e9db9adac3b925156d2cca8c2"><td class="c-table__cell"><a id="ga03b30c0e9db9adac3b925156d2cca8c2" name="ga03b30c0e9db9adac3b925156d2cca8c2"></a>
+#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_PROPERTIES_INLINE</b>&#160;&#160;&#160;static inline</td></tr>
+<tr class="c-table__row memdesc:ga03b30c0e9db9adac3b925156d2cca8c2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The functions below are inline, so they add no name to the library. <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-typedef-members" class="g-docs__section-heading"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -149,13 +147,19 @@ Functions</h2></td></tr>
 <tr class="c-table__row memitem:ga9363499176e98b07807bbec1387da408" id="r_ga9363499176e98b07807bbec1387da408"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#ga9363499176e98b07807bbec1387da408">fiftyoneDegreesPropertiesGetPropertyIndexFromName</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, const char *propertyName)</td></tr>
 <tr class="c-table__row memdesc:ga9363499176e98b07807bbec1387da408"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the index of the property in the source data structure from the name.  <br /></td></tr>
 <tr class="c-table__row memitem:ga382d04480940ed108153d1090f08acb1" id="r_ga382d04480940ed108153d1090f08acb1"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#ga382d04480940ed108153d1090f08acb1">fiftyoneDegreesPropertiesGetRequiredPropertyIndexFromName</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, const char *propertyName)</td></tr>
-<tr class="c-table__row memdesc:ga382d04480940ed108153d1090f08acb1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the required property index in the list of all required properties from the name.  <br /></td></tr>
+<tr class="c-table__row memdesc:ga382d04480940ed108153d1090f08acb1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the required property index of the property named, which is its place in the names the caller gave, the first if the name was given more than once.  <br /></td></tr>
 <tr class="c-table__row memitem:ga8eb57bf92dbb4b63ec3ea081e5348be1" id="r_ga8eb57bf92dbb4b63ec3ea081e5348be1"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#ga8eb57bf92dbb4b63ec3ea081e5348be1">fiftyoneDegreesPropertiesGetPropertyIndexFromRequiredIndex</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, int requiredPropertyIndex)</td></tr>
 <tr class="c-table__row memdesc:ga8eb57bf92dbb4b63ec3ea081e5348be1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Maps the required property index to the index in the source data structure.  <br /></td></tr>
 <tr class="c-table__row memitem:ga1a886fe2de48e334a62451323edcd045" id="r_ga1a886fe2de48e334a62451323edcd045"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_string.html">fiftyoneDegreesString</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga1a886fe2de48e334a62451323edcd045">fiftyoneDegreesPropertiesGetNameFromRequiredIndex</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, int requiredPropertyIndex)</td></tr>
 <tr class="c-table__row memdesc:ga1a886fe2de48e334a62451323edcd045"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the name as a string from the required property index.  <br /></td></tr>
-<tr class="c-table__row memitem:ga90a281bd56dcffc692af0f041d2e623d" id="r_ga90a281bd56dcffc692af0f041d2e623d"><td class="c-table__cell">uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga90a281bd56dcffc692af0f041d2e623d">fiftyoneDegreesPropertiesGetComponentMask</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount)</td></tr>
-<tr class="c-table__row memdesc:ga90a281bd56dcffc692af0f041d2e623d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Builds the mask of components whose graphs a detection must evaluate from the required property indexes a caller will read.  <br /></td></tr>
+<tr class="c-table__row memitem:ga0ab71e725222d5f0a78596aef253ac37" id="r_ga0ab71e725222d5f0a78596aef253ac37"><td class="c-table__cell"><a class="el" href="#ga03b30c0e9db9adac3b925156d2cca8c2">FIFTYONE_DEGREES_PROPERTIES_INLINE</a>&#160;uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga0ab71e725222d5f0a78596aef253ac37">fiftyoneDegreesPropertiesGetRequiredPropertyCount</a> (const <a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available)</td></tr>
+<tr class="c-table__row memdesc:ga0ab71e725222d5f0a78596aef253ac37"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the number of required property indexes, which is the number of names the caller gave, or when the caller named no property, the number of available properties.  <br /></td></tr>
+<tr class="c-table__row memitem:ga53b9a0b4371bd07ae7ce64c480185ec2" id="r_ga53b9a0b4371bd07ae7ce64c480185ec2"><td class="c-table__cell"><a class="el" href="#ga03b30c0e9db9adac3b925156d2cca8c2">FIFTYONE_DEGREES_PROPERTIES_INLINE</a>&#160;int&#160;</td><td class="c-table__cell"><a class="el" href="#ga53b9a0b4371bd07ae7ce64c480185ec2">fiftyoneDegreesPropertiesGetAvailableIndex</a> (const <a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, int requiredPropertyIndex)</td></tr>
+<tr class="c-table__row memdesc:ga53b9a0b4371bd07ae7ce64c480185ec2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the available index of the property at the required property index.  <br /></td></tr>
+<tr class="c-table__row memitem:gaa001a2ce044140d9294b23c9fd762c47" id="r_gaa001a2ce044140d9294b23c9fd762c47"><td class="c-table__cell"><a class="el" href="#ga03b30c0e9db9adac3b925156d2cca8c2">FIFTYONE_DEGREES_PROPERTIES_INLINE</a>&#160;int&#160;</td><td class="c-table__cell"><a class="el" href="#gaa001a2ce044140d9294b23c9fd762c47">fiftyoneDegreesPropertiesGetAvailableIndexFromName</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, const char *propertyName)</td></tr>
+<tr class="c-table__row memdesc:gaa001a2ce044140d9294b23c9fd762c47"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the available index of the property named.  <br /></td></tr>
+<tr class="c-table__row memitem:ga6372b04abacdf9820ca7c4361a8d22b0" id="r_ga6372b04abacdf9820ca7c4361a8d22b0"><td class="c-table__cell"><a class="el" href="#ga03b30c0e9db9adac3b925156d2cca8c2">FIFTYONE_DEGREES_PROPERTIES_INLINE</a>&#160;int&#160;</td><td class="c-table__cell"><a class="el" href="#ga6372b04abacdf9820ca7c4361a8d22b0">fiftyoneDegreesPropertiesGetPropertyIndexFromAvailableIndex</a> (const <a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, int availableIndex)</td></tr>
+<tr class="c-table__row memdesc:ga6372b04abacdf9820ca7c4361a8d22b0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Maps the available index to the index in the source data structure.  <br /></td></tr>
 <tr class="c-table__row memitem:gab259fe23491d4a3ca8fa169600265c35" id="r_gab259fe23491d4a3ca8fa169600265c35"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#gab259fe23491d4a3ca8fa169600265c35">fiftyoneDegreesPropertiesIsSetHeaderAvailable</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available)</td></tr>
 <tr class="c-table__row memdesc:gab259fe23491d4a3ca8fa169600265c35"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check if the 'SetHeader' properties are included in the available required properties.  <br /></td></tr>
 <tr class="c-table__row memitem:gaf2a54e5938cbd505767930a64aba6fea" id="r_gaf2a54e5938cbd505767930a64aba6fea"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gaf2a54e5938cbd505767930a64aba6fea">fiftyoneDegreesPropertiesFree</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available)</td></tr>
@@ -166,44 +170,6 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:gafe718e9dd0c8b93c755337a6f17b2b60" id="r_gafe718e9dd0c8b93c755337a6f17b2b60"><td class="c-table__cell">EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a>&#160;</td><td class="c-table__cell"><a class="el" href="#gafe718e9dd0c8b93c755337a6f17b2b60">fiftyoneDegreesPropertiesDefault</a></td></tr>
 <tr class="c-table__row memdesc:gafe718e9dd0c8b93c755337a6f17b2b60"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default properties required to make all possible properties available.  <br /></td></tr>
 </table>
-<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="g-docs__section-heading">Macro Definition Documentation</h2>
-<a id="gaec214f38c42dcf2555021307e793bce0" name="gaec214f38c42dcf2555021307e793bce0"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaec214f38c42dcf2555021307e793bce0">&#9670;&#160;</a></span>FIFTYONE_DEGREES_COMPONENT_MASK_ENABLED</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">#define FIFTYONE_DEGREES_COMPONENT_MASK_ENABLED</td>
-          <td>(</td>
-          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>mask</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>i</em></span>&#160;)</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">((uint32_t)(i) &gt;= <a class="code hl_define" href="#ga737ebfe51582d29013e876cd1e318f54">FIFTYONE_DEGREES_COMPONENT_MASK_BITS</a> || \</div>
-<div class="c-code__line">((mask) &amp; (1u &lt;&lt; (i))) != 0)</div>
-<div class="ttc" id="agroup___fifty_one_degrees_properties_html_ga737ebfe51582d29013e876cd1e318f54"><div class="ttname"><a href="#ga737ebfe51582d29013e876cd1e318f54">FIFTYONE_DEGREES_COMPONENT_MASK_BITS</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_COMPONENT_MASK_BITS</div><div class="ttdoc">Number of components the mask can address.</div><div class="ttdef"><b>Definition</b> properties.h:321</div></div>
-</div><!-- fragment -->
-<p>True if component index i is enabled under the mask. </p>
-<p>Components at index 32 and above are beyond the mask and are always enabled, so a data set with more than 32 components is filtered for the first 32 only and the shift never exceeds the width of the mask. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mask</td><td>the component mask </td></tr>
-    <tr><td class="paramname">i</td><td>component index </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="g-docs__section-heading">Typedef Documentation</h2>
 <a id="ga4fa1e4432a72eafbbb3e19eec1f1e6dd" name="ga4fa1e4432a72eafbbb3e19eec1f1e6dd"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga4fa1e4432a72eafbbb3e19eec1f1e6dd">&#9670;&#160;</a></span>fiftyoneDegreesEvidencePropertiesGetMethod</h2>
@@ -298,9 +264,9 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Creates a properties result instance for use with future property operations. </p>
-<p>The resulting required properties will be provided in ascending order. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The available properties are in ascending order of name, and the required property index of each name given is its place among the names given. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">properties</td><td>required to be available as either a separated list of property names, an array of property names or an existing properties results structure from another data set. Valid separators include pipe, comma and space. The fields are evaluated in order of existing, array and then string. the first field with a value is used. </td></tr>
+    <tr><td class="paramname">properties</td><td>required to be available as either a separated list of property names, an array of property names or an existing properties results structure from another data set. Valid separators include pipe, comma and space, and a run of separators separates two names. The fields are evaluated in order of existing, array and then string. The first field with a value is used. Existing results give the names they were created with. </td></tr>
     <tr><td class="paramname">state</td><td>pointer to state used with the get method </td></tr>
     <tr><td class="paramname">getPropertyMethod</td><td>method used to return the property name from a string collection </td></tr>
     <tr><td class="paramname">getEvidencePropertiesMethod</td><td>method used to populate the evidence properties for a property </td></tr>
@@ -340,8 +306,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga90a281bd56dcffc692af0f041d2e623d" name="ga90a281bd56dcffc692af0f041d2e623d"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga90a281bd56dcffc692af0f041d2e623d">&#9670;&#160;</a></span>fiftyoneDegreesPropertiesGetComponentMask()</h2>
+<a id="ga53b9a0b4371bd07ae7ce64c480185ec2" name="ga53b9a0b4371bd07ae7ce64c480185ec2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga53b9a0b4371bd07ae7ce64c480185ec2">&#9670;&#160;</a></span>fiftyoneDegreesPropertiesGetAvailableIndex()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -349,35 +315,64 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">uint32_t fiftyoneDegreesPropertiesGetComponentMask </td>
+              <td class="c-table__cell"><a class="el" href="#ga03b30c0e9db9adac3b925156d2cca8c2">FIFTYONE_DEGREES_PROPERTIES_INLINE</a> int fiftyoneDegreesPropertiesGetAvailableIndex </td>
           <td>(</td>
-          <td class="c-table__cell"><a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>available</em></span>, </td>
+          <td class="c-table__cell">const <a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>available</em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>&#160;)</td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndex</em></span>&#160;)</td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>Builds the mask of components whose graphs a detection must evaluate from the required property indexes a caller will read. </p>
-<p>Bit i means component i, using the componentIndex recorded on each available property. The engine must record that index when it initialises its available components, as the Hash and IP intelligence engines do. Under an engine that does not, every property reads as component 0. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Gets the available index of the property at the required property index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">available</td><td>the available properties of the data set </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexes</td><td>array of required property indexes, or NULL to enable every component </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>number of entries in the array. A negative count enables every component. Zero with a non NULL array enables none. Indexes outside the available properties are ignored, as are components at index 32 and above, which the mask cannot address. </td></tr>
+    <tr><td class="paramname">available</td><td>properties instance </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the caller gave, or when the caller named no property, in the available properties </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the component mask </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">0 based available index, or -1 if the index is outside the names given or the data set does not have the property </dd></dl>
+
+</div>
+</div>
+<a id="gaa001a2ce044140d9294b23c9fd762c47" name="gaa001a2ce044140d9294b23c9fd762c47"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaa001a2ce044140d9294b23c9fd762c47">&#9670;&#160;</a></span>fiftyoneDegreesPropertiesGetAvailableIndexFromName()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#ga03b30c0e9db9adac3b925156d2cca8c2">FIFTYONE_DEGREES_PROPERTIES_INLINE</a> int fiftyoneDegreesPropertiesGetAvailableIndexFromName </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>available</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the available index of the property named. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">available</td><td>properties instance </td></tr>
+    <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">0 based available index, or -1 if the data set does not have the property </dd></dl>
 
 </div>
 </div>
@@ -405,14 +400,49 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Gets the name as a string from the required property index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>A property the data set does not have gives the name the caller gave. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">available</td><td>properties instance </td></tr>
-    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the required properties structure </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the caller gave, or when the caller named no property, in the available properties </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">string representation of the property </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">string representation of the property, or NULL if the index is outside the names given </dd></dl>
+
+</div>
+</div>
+<a id="ga6372b04abacdf9820ca7c4361a8d22b0" name="ga6372b04abacdf9820ca7c4361a8d22b0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga6372b04abacdf9820ca7c4361a8d22b0">&#9670;&#160;</a></span>fiftyoneDegreesPropertiesGetPropertyIndexFromAvailableIndex()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#ga03b30c0e9db9adac3b925156d2cca8c2">FIFTYONE_DEGREES_PROPERTIES_INLINE</a> int fiftyoneDegreesPropertiesGetPropertyIndexFromAvailableIndex </td>
+          <td>(</td>
+          <td class="c-table__cell">const <a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>available</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>availableIndex</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Maps the available index to the index in the source data structure. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">available</td><td>properties instance </td></tr>
+    <tr><td class="paramname">availableIndex</td><td>index of the property in the available properties </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">0 based index of the property in the source, or -1 if the index is outside the available properties </dd></dl>
 
 </div>
 </div>
@@ -478,11 +508,41 @@ Variables</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">available</td><td>properties instance </td></tr>
-    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the required properties structure </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the caller gave, or when the caller named no property, in the available properties </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">0 based index of the property in the source or -1 if not available </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">0 based index of the property in the source, or -1 if the index is outside the names given or the data set does not have the property </dd></dl>
+
+</div>
+</div>
+<a id="ga0ab71e725222d5f0a78596aef253ac37" name="ga0ab71e725222d5f0a78596aef253ac37"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga0ab71e725222d5f0a78596aef253ac37">&#9670;&#160;</a></span>fiftyoneDegreesPropertiesGetRequiredPropertyCount()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#ga03b30c0e9db9adac3b925156d2cca8c2">FIFTYONE_DEGREES_PROPERTIES_INLINE</a> uint32_t fiftyoneDegreesPropertiesGetRequiredPropertyCount </td>
+          <td>(</td>
+          <td class="c-table__cell">const <a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>available</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the number of required property indexes, which is the number of names the caller gave, or when the caller named no property, the number of available properties. </p>
+<p>Use it, rather than the count field, with <a class="el" href="#ga1a886fe2de48e334a62451323edcd045" title="Gets the name as a string from the required property index.">fiftyoneDegreesPropertiesGetNameFromRequiredIndex</a> and the reads that take a required property index. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">available</td><td>properties instance </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">number of required property indexes </dd></dl>
 
 </div>
 </div>
@@ -509,15 +569,15 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Gets the required property index in the list of all required properties from the name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Gets the required property index of the property named, which is its place in the names the caller gave, the first if the name was given more than once. </p>
+<p>When the caller named no property, it is the index of the property in the available properties. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">available</td><td>properties instance </td></tr>
     <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">0 based index of the property in the required properties or -1 if not available </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">0 based required property index, or -1 if the data set does not have the property </dd></dl>
 
 </div>
 </div>

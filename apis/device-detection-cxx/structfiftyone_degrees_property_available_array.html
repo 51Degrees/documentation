@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structfiftyone
 </div><h2 class="g-docs__section-heading">
 Collaboration diagram for fiftyoneDegreesPropertyAvailableArray:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="structfiftyone_degrees_property_available_array__coll__graph.svg" width="604" height="371"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="structfiftyone_degrees_property_available_array__coll__graph.svg" width="1254" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
@@ -89,6 +89,11 @@ uint32_t&#160;</td><td class="c-table__cell"><b>capacity</b></td></tr>
 <tr class="c-table__row memdesc:ad5009b422ab3c6c4357b1836a86480fe"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Pointer to the first item. <br /></td></tr>
 <tr class="c-table__row memitem:a376fc812677c8a4eee8412eda5f2568a" id="r_a376fc812677c8a4eee8412eda5f2568a"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a376fc812677c8a4eee8412eda5f2568a">allComponentsRequired</a></td></tr>
 <tr class="c-table__row memdesc:a376fc812677c8a4eee8412eda5f2568a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True if every component must be resolved whether or not it has an available property.  <br /></td></tr>
+<tr class="c-table__row memitem:a97da144d7d85b6fa907dcdc7cd41c4ac" id="r_a97da144d7d85b6fa907dcdc7cd41c4ac"><td class="c-table__cell"><a id="a97da144d7d85b6fa907dcdc7cd41c4ac" name="a97da144d7d85b6fa907dcdc7cd41c4ac"></a>
+uint32_t&#160;</td><td class="c-table__cell"><b>namedCount</b></td></tr>
+<tr class="c-table__row memdesc:a97da144d7d85b6fa907dcdc7cd41c4ac"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of names the caller gave, which is the number of required property indexes when the caller named properties. <br /></td></tr>
+<tr class="c-table__row memitem:a1756064d7ae4f9bc27e2d561550c3185" id="r_a1756064d7ae4f9bc27e2d561550c3185"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_property_named.html">fiftyoneDegreesPropertyNamed</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a1756064d7ae4f9bc27e2d561550c3185">named</a></td></tr>
+<tr class="c-table__row memdesc:a1756064d7ae4f9bc27e2d561550c3185"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The names the caller gave, in the caller's order, or NULL when the caller named no property.  <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Field Documentation</h2>
 <a id="a376fc812677c8a4eee8412eda5f2568a" name="a376fc812677c8a4eee8412eda5f2568a"></a>
@@ -108,7 +113,28 @@ uint32_t&#160;</td><td class="c-table__cell"><b>capacity</b></td></tr>
 </div><div class="c-member__body">
 
 <p>True if every component must be resolved whether or not it has an available property. </p>
-<p>Initialised to false and set by the engine. A list created from an existing list keeps the value, which carries it across a reload Add any members provided by the caller </p>
+<p>Initialised to false and set by the engine. A list created from an existing list keeps the value, which carries it across a reload </p>
+
+</div>
+</div>
+<a id="a1756064d7ae4f9bc27e2d561550c3185" name="a1756064d7ae4f9bc27e2d561550c3185"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1756064d7ae4f9bc27e2d561550c3185">&#9670;&#160;</a></span>named</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_property_named.html">fiftyoneDegreesPropertyNamed</a>* fiftyoneDegreesPropertyAvailableArray::named</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The names the caller gave, in the caller's order, or NULL when the caller named no property. </p>
+<p>A list created from an existing list is created from these names Add any members provided by the caller </p>
 
 </div>
 </div>

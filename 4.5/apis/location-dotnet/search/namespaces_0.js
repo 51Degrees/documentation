@@ -1,5 +1,0 @@
-var searchData=
-[
-  ['aspnetcore_0',['AspNetCore',['../namespace_asp_net_core.html',1,'']]],
-  ['aspnetcore_3a_3acontrollers_1',['Controllers',['../namespace_asp_net_core_1_1_controllers.html',1,'AspNetCore']]]
-];

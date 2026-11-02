@@ -134,7 +134,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">    userAgent,</div>
 <div class="c-code__line">    strlen(userAgent),</div>
 <div class="c-code__line">    exception);</div>
-</div><!-- fragment --><p>To get a value of a property in the old API, the <code>fiftyoneDegreesSetValues</code> and <code>fiftyoneDegreesGetString</code> methods were used. Using the new results structure, values of a property can be retrieved using the <code>fiftyoneDegreesResultsHashGetValueString</code> method.</p>
+</div><!-- fragment --><p>A set of results is used by one thread at a time, because reading a value writes into the results, so each thread creates its own. The resource manager can be shared by every thread.</p>
+<p>To get a value of a property in the old API, the <code>fiftyoneDegreesSetValues</code> and <code>fiftyoneDegreesGetString</code> methods were used. Using the new results structure, values of a property can be retrieved using the <code>fiftyoneDegreesResultsHashGetValueString</code> method.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesResultsPatternGetValuesString(</div>
 <div class="c-code__line">    results,</div>
 <div class="c-code__line">    propertyName,</div>
@@ -175,7 +176,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">evidence-&gt;operator[](<span class="c-code__stringliteral">&quot;header.User-Agent&quot;</span>) = userAgent;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">ResultsHash *results = engine-&gt;process(evidence);</div>
-</div><!-- fragment --><p>Getting values from a <code>ResultsHash</code> (or any class extending <code>ResultsBase</code>) instance is similar to the old API, however the values returned are slightly different. Values follow the nullable pattern. For example, rather than returning a boolean, the <code>results-&gt;getValueAsBool</code> method returns a <code>Value&lt;bool&gt;</code> type that has <code>hasValue()</code> and <code>getValue()</code> methods (in addition to a <code>*</code> operator which maps to the <code>getValue()</code> method). Calling <code>getValue()</code> on a property value that does not have a value will result in an exception. For more detail see the <a class="el" href="_device_detection__features__false_positive_control.html" title="False Positives">false positive control</a> feature page.</p>
+</div><!-- fragment --><p>A set of results is used by one thread at a time, because reading a value writes into the results. The engine can be shared by every thread, and each call to <code>process</code> returns new results for the thread that made it.</p>
+<p>Getting values from a <code>ResultsHash</code> (or any class extending <code>ResultsBase</code>) instance is similar to the old API, however the values returned are slightly different. Values follow the nullable pattern. For example, rather than returning a boolean, the <code>results-&gt;getValueAsBool</code> method returns a <code>Value&lt;bool&gt;</code> type that has <code>hasValue()</code> and <code>getValue()</code> methods (in addition to a <code>*</code> operator which maps to the <code>getValue()</code> method). Calling <code>getValue()</code> on a property value that does not have a value will result in an exception. For more detail see the <a class="el" href="_device_detection__features__false_positive_control.html" title="False Positives">false positive control</a> feature page.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">Value&lt;bool&gt; value = results-&gt;getValueAsBool(<span class="c-code__stringliteral">&quot;IsMobile&quot;</span>);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> (value.hasValue()) {</div>

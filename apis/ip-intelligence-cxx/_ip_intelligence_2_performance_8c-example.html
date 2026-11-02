@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <p>The example illustrates a "clock-time" benchmark for assessing IP address lookup speed.Using a YAML formatted evidence file - "evidence.yml" - supplied with the distribution or can be obtained from the <a href="https://github.com/51Degrees/ip-intelligence-data/blob/main/evidence.yml">data repository on Github</a>.</p>
 <p>It's important to understand the trade-offs between performance, memory usage and accuracy, that the 51Degrees pipeline configuration makes available, and this example shows a range of different configurations to illustrate the difference in performance.</p>
 <p>Requesting properties from a single component reduces lookup time compared with requesting properties from multiple components. If you don't specify any properties, then all properties are returned.</p>
+<p>The command line can choose one configuration, its required properties, whether each lookup reads nothing, the weighted values or the text of every required property, and how many times the evidence is processed. Run with &ndash;help to list the options.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-cxx/blob/main/examples/ipi/C/IpIntelligence/Performance.c">GitHub</a>.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">/* *********************************************************************</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * This Original Work is copyright of 51 Degrees Mobile Experts Limited.</span></div>
@@ -136,29 +137,61 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line"><span class="c-code__keyword">typedef</span> <span class="c-code__keyword">struct </span>performanceConfig_t {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Base configuration</span></div>
 <div class="c-code__line">    ConfigIpi *config;</div>
-<div class="c-code__line">    <span class="c-code__comment">// True if all properties should be initialized and fetched</span></div>
-<div class="c-code__line">    <span class="c-code__keywordtype">bool</span> allProperties;</div>
+<div class="c-code__line">    <span class="c-code__comment">// The required properties, or NULL for every property</span></div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *properties;</div>
 <div class="c-code__line">} <a id="_a0" name="_a0"></a><a class="code hl_struct" href="structperformance_config.html">performanceConfig</a>;</div>
 <div class="c-code__line"></div>
+<div class="c-code__line"><span class="c-code__keyword">typedef</span> <span class="c-code__keyword">enum</span> {</div>
+<div class="c-code__line">    READ_NONE, <span class="c-code__comment">// Nothing, so only the result is found</span></div>
+<div class="c-code__line">    READ_VALUES, <span class="c-code__comment">// The weighted values of every required property</span></div>
+<div class="c-code__line">    READ_TEXT <span class="c-code__comment">// The text of every required property, as other languages read it</span></div>
+<div class="c-code__line">} readMode;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">static</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* readModeNames[] = { <span class="c-code__stringliteral">&quot;none&quot;</span>, <span class="c-code__stringliteral">&quot;values&quot;</span>, <span class="c-code__stringliteral">&quot;text&quot;</span> };</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment">// Bytes of text each thread can hold for one property. A larger value is</span></div>
+<div class="c-code__line"><span class="c-code__comment">// still converted in full, and only the bytes that fit are written.</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor">#define TEXT_BUFFER_BYTES (1024 * 1024)</span></div>
+<div class="c-code__line"></div>
+<div class="c-code__line"><span class="c-code__keyword">typedef</span> <span class="c-code__keyword">struct </span>performanceSettings_t {</div>
+<div class="c-code__line">    <span class="c-code__comment">// The configuration to run, or NULL for every entry in performanceConfigs</span></div>
+<div class="c-code__line">    ConfigIpi *config;</div>
+<div class="c-code__line">    <span class="c-code__comment">// The required properties when a configuration is chosen, or NULL for all</span></div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *properties;</div>
+<div class="c-code__line">    <span class="c-code__comment">// What each lookup reads</span></div>
+<div class="c-code__line">    readMode read;</div>
+<div class="c-code__line">    <span class="c-code__comment">// Number of times each thread processes its evidence when timed</span></div>
+<div class="c-code__line">    <span class="c-code__keywordtype">int</span> passes;</div>
+<div class="c-code__line">    <span class="c-code__comment">// True to keep the concurrency of the configuration rather than setting</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// it to the number of threads</span></div>
+<div class="c-code__line">    <span class="c-code__keywordtype">bool</span> presetConcurrency;</div>
+<div class="c-code__line">    <span class="c-code__comment">// Cache sizes to use, such as &quot;values=50000,profiles=100000&quot;, where</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// &quot;memory&quot; in place of a size holds the collection in memory</span></div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *caches;</div>
+<div class="c-code__line">} <a id="_a1" name="_a1"></a><a class="code hl_struct" href="structperformance_settings.html">performanceSettings</a>;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">static</span> <a class="code hl_struct" href="structperformance_settings.html">performanceSettings</a> settings = {</div>
+<div class="c-code__line">    NULL, NULL, READ_VALUES, 1, <span class="c-code__keyword">false</span>, NULL };</div>
+<div class="c-code__line"></div>
 <div class="c-code__line"><a class="code hl_struct" href="structperformance_config.html">performanceConfig</a> performanceConfigs[] = {</div>
-<div class="c-code__line">    { &amp;IpiInMemoryConfig, <span class="c-code__keyword">false</span> },</div>
-<div class="c-code__line">    { &amp;IpiInMemoryConfig, <span class="c-code__keyword">true</span> },</div>
+<div class="c-code__line">    { &amp;IpiInMemoryConfig, <span class="c-code__stringliteral">&quot;RegisteredName&quot;</span> },</div>
+<div class="c-code__line">    { &amp;IpiInMemoryConfig, NULL },</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"></div>
-<div class="c-code__line"><span class="c-code__keyword">typedef</span> <span class="c-code__keyword">struct </span>evidence_node_t <a id="_a1" name="_a1"></a><a class="code hl_struct" href="structevidence_node.html">evidenceNode</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">typedef</span> <span class="c-code__keyword">struct </span>evidence_node_t <a id="_a2" name="_a2"></a><a class="code hl_struct" href="structevidence_node.html">evidenceNode</a>;</div>
 <div class="c-code__line"><span class="c-code__keyword">typedef</span> <span class="c-code__keyword">struct </span>evidence_node_t {</div>
-<div class="c-code__line">    <a id="a2" name="a2"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#ga1e4b0f1f8ac451a8e351175ddff4f9f0">EvidenceKeyValuePairArray</a>* array; <span class="c-code__comment">// evidence </span></div>
+<div class="c-code__line">    <a id="a3" name="a3"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#ga1e4b0f1f8ac451a8e351175ddff4f9f0">EvidenceKeyValuePairArray</a>* array; <span class="c-code__comment">// evidence </span></div>
 <div class="c-code__line">    evidenceNode* next; <span class="c-code__comment">// null if the end of the list</span></div>
 <div class="c-code__line">} <a class="code hl_struct" href="structevidence_node.html">evidenceNode</a>;</div>
 <div class="c-code__line"></div>
-<div class="c-code__line"><span class="c-code__keyword">typedef</span> <span class="c-code__keyword">struct </span>shared_string_node_t <a id="_a3" name="_a3"></a><a class="code hl_struct" href="structshared_string_node.html">sharedStringNode</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">typedef</span> <span class="c-code__keyword">struct </span>shared_string_node_t <a id="_a4" name="_a4"></a><a class="code hl_struct" href="structshared_string_node.html">sharedStringNode</a>;</div>
 <div class="c-code__line"><span class="c-code__keyword">typedef</span> <span class="c-code__keyword">struct </span>shared_string_node_t {</div>
 <div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* value;</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">size_t</span> length;</div>
 <div class="c-code__line">    sharedStringNode* next;</div>
 <div class="c-code__line">} <a class="code hl_struct" href="structshared_string_node.html">sharedStringNode</a>;</div>
 <div class="c-code__line"></div>
-<div class="c-code__line"><span class="c-code__keyword">typedef</span> <span class="c-code__keyword">struct </span>performanceState_t <a id="_a4" name="_a4"></a><a class="code hl_struct" href="structperformance_state.html">performanceState</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">typedef</span> <span class="c-code__keyword">struct </span>performanceState_t <a id="_a5" name="_a5"></a><a class="code hl_struct" href="structperformance_state.html">performanceState</a>;</div>
 <div class="c-code__line"></div>
 <div class="c-code__line"><span class="c-code__keyword">typedef</span> <span class="c-code__keyword">struct </span>threadState_t {</div>
 <div class="c-code__line">    <span class="c-code__comment">// The main state containing the dataset.</span></div>
@@ -172,7 +205,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    <span class="c-code__keywordtype">unsigned</span> <span class="c-code__keywordtype">long</span> <span class="c-code__keywordtype">long</span> checkSum;</div>
 <div class="c-code__line">    <span class="c-code__comment">// Number of ip intelligence iterations.</span></div>
 <div class="c-code__line">    <span class="c-code__keywordtype">unsigned</span> <span class="c-code__keywordtype">long</span> <span class="c-code__keywordtype">long</span> iterations;</div>
-<div class="c-code__line">} <a id="_a5" name="_a5"></a><a class="code hl_struct" href="structthread_state.html">threadState</a>;</div>
+<div class="c-code__line">    <span class="c-code__comment">// Number of times to process the evidence.</span></div>
+<div class="c-code__line">    <span class="c-code__keywordtype">int</span> passes;</div>
+<div class="c-code__line">} <a id="_a6" name="_a6"></a><a class="code hl_struct" href="structthread_state.html">threadState</a>;</div>
 <div class="c-code__line"></div>
 <div class="c-code__line"><span class="c-code__keyword">typedef</span> <span class="c-code__keyword">struct </span>performanceState_t {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Number of concurrent threads to benchmark</span></div>
@@ -192,9 +227,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    <span class="c-code__comment">// File pointer to write results to, usually null</span></div>
 <div class="c-code__line">    FILE* resultsOutput;</div>
 <div class="c-code__line">    <span class="c-code__comment">// Manager containing the dataset</span></div>
-<div class="c-code__line">    <a id="a6" name="a6"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#gac9a110952abdd1f1e0eb0c17e1a8b5c8">ResourceManager</a> manager;</div>
+<div class="c-code__line">    <a id="a7" name="a7"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#gac9a110952abdd1f1e0eb0c17e1a8b5c8">ResourceManager</a> manager;</div>
 <div class="c-code__line">    <span class="c-code__comment">// Running threads</span></div>
-<div class="c-code__line">    <a id="a7" name="a7"></a><a class="code hl_define" href="group___fifty_one_degrees_threading.html#ga73811e87d8e1da7f10bc3943591333ec">FIFTYONE_DEGREES_THREAD</a>* threads;</div>
+<div class="c-code__line">    <a id="a8" name="a8"></a><a class="code hl_define" href="group___fifty_one_degrees_threading.html#ga73811e87d8e1da7f10bc3943591333ec">FIFTYONE_DEGREES_THREAD</a>* threads;</div>
 <div class="c-code__line">    <span class="c-code__comment">// Time in millis to startup the ip intelligence component.</span></div>
 <div class="c-code__line">    <span class="c-code__keywordtype">double</span> startUpMillis;</div>
 <div class="c-code__line">    <span class="c-code__comment">// Number of property values retrieved for each iteration.</span></div>
@@ -212,17 +247,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line"><span class="c-code__keyword">static</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* getOrAddSharedString(</div>
 <div class="c-code__line">    <a class="code hl_struct" href="structperformance_state.html">performanceState</a>* perfState, </div>
 <div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* target) {</div>
-<div class="c-code__line">    <a class="code hl_struct" href="structshared_string_node.html">sharedStringNode</a>* node = perfState-&gt;<a id="a8" name="a8"></a>sharedStringFirst;</div>
+<div class="c-code__line">    <a class="code hl_struct" href="structshared_string_node.html">sharedStringNode</a>* node = perfState-&gt;<a id="a9" name="a9"></a>sharedStringFirst;</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">while</span> (node != NULL) {</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (strcmp(target, node-&gt;<a id="a9" name="a9"></a>value) == 0) {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (strcmp(target, node-&gt;<a id="a10" name="a10"></a>value) == 0) {</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">return</span> node-&gt;value;</div>
 <div class="c-code__line">        }</div>
-<div class="c-code__line">        node = node-&gt;<a id="a10" name="a10"></a>next;</div>
+<div class="c-code__line">        node = node-&gt;<a id="a11" name="a11"></a>next;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    </div>
 <div class="c-code__line">    <span class="c-code__comment">// Create a new node to add to the head of the list.</span></div>
 <div class="c-code__line">    <span class="c-code__keywordtype">size_t</span> length = strlen(target) + 1;</div>
-<div class="c-code__line">    node = (<a class="code hl_struct" href="structshared_string_node.html">sharedStringNode</a>*)<a id="a11" name="a11"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gac35c76ff5632479d21272251b078a1d4">Malloc</a>(<span class="c-code__keyword">sizeof</span>(<a class="code hl_struct" href="structshared_string_node.html">sharedStringNode</a>));</div>
+<div class="c-code__line">    node = (<a class="code hl_struct" href="structshared_string_node.html">sharedStringNode</a>*)<a id="a12" name="a12"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gac35c76ff5632479d21272251b078a1d4">Malloc</a>(<span class="c-code__keyword">sizeof</span>(<a class="code hl_struct" href="structshared_string_node.html">sharedStringNode</a>));</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (node == NULL) {</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> NULL;</div>
 <div class="c-code__line">    }</div>
@@ -238,7 +273,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    <span class="c-code__comment">// Add to the linked list or start a new linked list if this is the first.</span></div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (perfState-&gt;sharedStringFirst == NULL) {</div>
 <div class="c-code__line">        perfState-&gt;sharedStringFirst = node;</div>
-<div class="c-code__line">        perfState-&gt;<a id="a12" name="a12"></a>sharedStringLast = node;</div>
+<div class="c-code__line">        perfState-&gt;<a id="a13" name="a13"></a>sharedStringLast = node;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">        perfState-&gt;sharedStringLast-&gt;next = node;</div>
@@ -249,24 +284,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    <span class="c-code__keywordflow">return</span> node-&gt;value;</div>
 <div class="c-code__line">}</div>
 <div class="c-code__line"></div>
-<div class="c-code__line"><span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> storeEvidence(<a id="_a13" name="_a13"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#gaa148836f041dfc4fe0f2bd5eedc08dc6">KeyValuePair</a>* pairs, uint16_t size, <span class="c-code__keywordtype">void</span>* state) {</div>
-<div class="c-code__line">    <a id="_a14" name="_a14"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga29a7b1eb8b59c26629548b1de83b473b">EXCEPTION_CREATE</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> storeEvidence(<a id="_a14" name="_a14"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#gaa148836f041dfc4fe0f2bd5eedc08dc6">KeyValuePair</a>* pairs, uint16_t size, <span class="c-code__keywordtype">void</span>* state) {</div>
+<div class="c-code__line">    <a id="_a15" name="_a15"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga29a7b1eb8b59c26629548b1de83b473b">EXCEPTION_CREATE</a>;</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">char</span>* ptr;</div>
 <div class="c-code__line">    <a class="code hl_struct" href="structperformance_state.html">performanceState</a>* perfState = (<a class="code hl_struct" href="structperformance_state.html">performanceState</a>*)state;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Get the thread state to store this evidence against.</span></div>
-<div class="c-code__line">    <a class="code hl_struct" href="structthread_state.html">threadState</a>* <a class="code hl_struct" href="structthread_state.html">threadState</a> = perfState-&gt;<a id="a15" name="a15"></a>threadStates + perfState-&gt;<a id="a16" name="a16"></a>threadIndex;</div>
+<div class="c-code__line">    <a class="code hl_struct" href="structthread_state.html">threadState</a>* <a class="code hl_struct" href="structthread_state.html">threadState</a> = perfState-&gt;<a id="a16" name="a16"></a>threadStates + perfState-&gt;<a id="a17" name="a17"></a>threadIndex;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Allocate space for this node and the evidence.</span></div>
 <div class="c-code__line">    <a class="code hl_struct" href="structevidence_node.html">evidenceNode</a>* node = (<a class="code hl_struct" href="structevidence_node.html">evidenceNode</a>*)<a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gac35c76ff5632479d21272251b078a1d4">Malloc</a>(<span class="c-code__keyword">sizeof</span>(<a class="code hl_struct" href="structevidence_node.html">evidenceNode</a>));</div>
-<div class="c-code__line">    node-&gt;<a id="a17" name="a17"></a>next = NULL;</div>
-<div class="c-code__line">    <a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#ga1e4b0f1f8ac451a8e351175ddff4f9f0">EvidenceKeyValuePairArray</a>* evidence = <a id="a18" name="a18"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga324c123e74727b62612edeead5d0f6a6">EvidenceCreate</a>(size);</div>
-<div class="c-code__line">    node-&gt;<a id="a19" name="a19"></a>array = evidence;</div>
+<div class="c-code__line">    node-&gt;<a id="a18" name="a18"></a>next = NULL;</div>
+<div class="c-code__line">    <a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#ga1e4b0f1f8ac451a8e351175ddff4f9f0">EvidenceKeyValuePairArray</a>* evidence = <a id="a19" name="a19"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga324c123e74727b62612edeead5d0f6a6">EvidenceCreate</a>(size);</div>
+<div class="c-code__line">    node-&gt;<a id="a20" name="a20"></a>array = evidence;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Add the evidence node to the linked list of evidence nodes.</span></div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (<a class="code hl_struct" href="structthread_state.html">threadState</a>-&gt;<a id="a20" name="a20"></a>evidenceFirst == NULL) {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (<a class="code hl_struct" href="structthread_state.html">threadState</a>-&gt;<a id="a21" name="a21"></a>evidenceFirst == NULL) {</div>
 <div class="c-code__line">        <a class="code hl_struct" href="structthread_state.html">threadState</a>-&gt;evidenceFirst = node;</div>
-<div class="c-code__line">        <a class="code hl_struct" href="structthread_state.html">threadState</a>-&gt;<a id="a21" name="a21"></a>evidenceLast = node;</div>
+<div class="c-code__line">        <a class="code hl_struct" href="structthread_state.html">threadState</a>-&gt;<a id="a22" name="a22"></a>evidenceLast = node;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">        <a class="code hl_struct" href="structthread_state.html">threadState</a>-&gt;evidenceLast-&gt;next = node;</div>
@@ -277,24 +312,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    <span class="c-code__keywordflow">for</span> (uint32_t i = 0; i &lt; size; i++) {</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// Set prefix for the key.</span></div>
-<div class="c-code__line">        <a id="_a22" name="_a22"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#gaa8de545cf076e5f75d25883b56d8ec0a">EvidencePrefixMap</a>* prefix = <a id="a23" name="a23"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gaf31a20347d083f97ecfffc854487c2fc">EvidenceMapPrefix</a>(pairs[i].key);</div>
+<div class="c-code__line">        <a id="_a23" name="_a23"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#gaa8de545cf076e5f75d25883b56d8ec0a">EvidencePrefixMap</a>* prefix = <a id="a24" name="a24"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gaf31a20347d083f97ecfffc854487c2fc">EvidenceMapPrefix</a>(pairs[i].key);</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (prefix != NULL) {</div>
-<div class="c-code__line">            evidence-&gt;<a id="a24" name="a24"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a id="a25" name="a25"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a6ec74551ed0d5a2790ab5bdb9077d1cb">prefix</a> = prefix-&gt;<a id="a26" name="a26"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_prefix_map.html#a8cb7654e0cd2014834d7da1a9217a10d">prefixEnum</a>;</div>
+<div class="c-code__line">            evidence-&gt;<a id="a25" name="a25"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a id="a26" name="a26"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a6ec74551ed0d5a2790ab5bdb9077d1cb">prefix</a> = prefix-&gt;<a id="a27" name="a27"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_prefix_map.html#a8cb7654e0cd2014834d7da1a9217a10d">prefixEnum</a>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Get a shared string for the field name without the prefix and </span></div>
 <div class="c-code__line">            <span class="c-code__comment">// use this. Reduces memory consumption as there are only a limited</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// number of keys.</span></div>
-<div class="c-code__line">            evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a id="a27" name="a27"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a id="a28" name="a28"></a><a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#a46640c5ce3f89ad32686f1b86562b757">key</a> = getOrAddSharedString(</div>
+<div class="c-code__line">            evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a id="a28" name="a28"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a id="a29" name="a29"></a><a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#a46640c5ce3f89ad32686f1b86562b757">key</a> = getOrAddSharedString(</div>
 <div class="c-code__line">                perfState, </div>
-<div class="c-code__line">                pairs[i].key + prefix-&gt;<a id="a29" name="a29"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_prefix_map.html#ab97e3de2bca265436f4552ecae6d6c28">prefixLength</a>);</div>
+<div class="c-code__line">                pairs[i].key + prefix-&gt;<a id="a30" name="a30"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_prefix_map.html#ab97e3de2bca265436f4552ecae6d6c28">prefixLength</a>);</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> (evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#a46640c5ce3f89ad32686f1b86562b757">key</a> == NULL) {</div>
-<div class="c-code__line">                <a id="_a30" name="_a30"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga1d1a54ffb69cad881269379cc5af3f35">EXCEPTION_THROW</a></div>
+<div class="c-code__line">                <a id="_a31" name="_a31"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga1d1a54ffb69cad881269379cc5af3f35">EXCEPTION_THROW</a></div>
 <div class="c-code__line">            }</div>
-<div class="c-code__line">            evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a id="a31" name="a31"></a><a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#a05d2d95e26d4da54515813aaf42c32a2">keyLength</a> = </div>
+<div class="c-code__line">            evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a id="a32" name="a32"></a><a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#a05d2d95e26d4da54515813aaf42c32a2">keyLength</a> = </div>
 <div class="c-code__line">                strlen(evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#a46640c5ce3f89ad32686f1b86562b757">key</a>);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">            evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a6ec74551ed0d5a2790ab5bdb9077d1cb">prefix</a> = <a id="_a32" name="_a32"></a><a class="code hl_enumvalue" href="group___fifty_one_degrees_common.html#gga1ff9010650f2716970e86c12c5a97a76a61b6045bdab8eb5b4aca237971e00b9d">FIFTYONE_DEGREES_EVIDENCE_IGNORE</a>;</div>
+<div class="c-code__line">            evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a6ec74551ed0d5a2790ab5bdb9077d1cb">prefix</a> = <a id="_a33" name="_a33"></a><a class="code hl_enumvalue" href="group___fifty_one_degrees_common.html#gga1ff9010650f2716970e86c12c5a97a76a61b6045bdab8eb5b4aca237971e00b9d">FIFTYONE_DEGREES_EVIDENCE_IGNORE</a>;</div>
 <div class="c-code__line">            evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#a46640c5ce3f89ad32686f1b86562b757">key</a> = NULL;</div>
 <div class="c-code__line">            evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#a05d2d95e26d4da54515813aaf42c32a2">keyLength</a> = 0;</div>
 <div class="c-code__line">        }</div>
@@ -304,10 +339,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">        <span class="c-code__comment">// per record and a structure holding one entry per record, with no</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// memory saving. Always copy the value into its own memory, which is</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// freed after the test.</span></div>
-<div class="c-code__line">        evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a id="a33" name="a33"></a><a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#ab1625b8fdbd007a8bd8839fd1a8b6e3f">valueLength</a> =</div>
-<div class="c-code__line">            evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a id="a34" name="a34"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a34085517fec5048c7a1551e08f6c3433">parsedLength</a> =</div>
+<div class="c-code__line">        evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a id="a34" name="a34"></a><a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#ab1625b8fdbd007a8bd8839fd1a8b6e3f">valueLength</a> =</div>
+<div class="c-code__line">            evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a id="a35" name="a35"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a34085517fec5048c7a1551e08f6c3433">parsedLength</a> =</div>
 <div class="c-code__line">            strlen(pairs[i].value);</div>
-<div class="c-code__line">        evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a id="a35" name="a35"></a><a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#a51707019e68e09f713d963e02d1f4578">value</a> = (<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>*)<a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gac35c76ff5632479d21272251b078a1d4">Malloc</a>(</div>
+<div class="c-code__line">        evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a id="a36" name="a36"></a><a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#a51707019e68e09f713d963e02d1f4578">value</a> = (<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>*)<a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gac35c76ff5632479d21272251b078a1d4">Malloc</a>(</div>
 <div class="c-code__line">            <span class="c-code__keyword">sizeof</span>(<span class="c-code__keywordtype">char</span>) * (evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#ab1625b8fdbd007a8bd8839fd1a8b6e3f">valueLength</a> + 1));</div>
 <div class="c-code__line">        ptr = strncpy(</div>
 <div class="c-code__line">            (<span class="c-code__keywordtype">char</span>*)evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#a51707019e68e09f713d963e02d1f4578">value</a>,</div>
@@ -317,42 +352,33 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">            <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga1d1a54ffb69cad881269379cc5af3f35">EXCEPTION_THROW</a></div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        *(ptr + evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#ab1625b8fdbd007a8bd8839fd1a8b6e3f">valueLength</a>) = <span class="c-code__charliteral">&#39;\0&#39;</span>;</div>
-<div class="c-code__line">        evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a id="a36" name="a36"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#aa1a97f0df5d9b2af8d8df3374b599503">parsedValue</a> = evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#a51707019e68e09f713d963e02d1f4578">value</a>;</div>
+<div class="c-code__line">        evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a id="a37" name="a37"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#aa1a97f0df5d9b2af8d8df3374b599503">parsedValue</a> = evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a69fcd3978db523cc3b990e709c1172f5">item</a>.<a class="code hl_variable" href="structfiftyone_degrees_key_value_pair.html#a51707019e68e09f713d963e02d1f4578">value</a>;</div>
 <div class="c-code__line">    }</div>
-<div class="c-code__line">    evidence-&gt;<a id="a37" name="a37"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a5e057456d8a3fb66e79a8fd905d0d0cf">count</a> = size;</div>
+<div class="c-code__line">    evidence-&gt;<a id="a38" name="a38"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a5e057456d8a3fb66e79a8fd905d0d0cf">count</a> = size;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Set the maximum capacity needed in evidence if higher.</span></div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (size &gt; perfState-&gt;<a id="a38" name="a38"></a>maxEvidence) {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (size &gt; perfState-&gt;<a id="a39" name="a39"></a>maxEvidence) {</div>
 <div class="c-code__line">        perfState-&gt;maxEvidence = size;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Increment the total evidence count.</span></div>
-<div class="c-code__line">    perfState-&gt;<a id="a39" name="a39"></a>evidenceCount++;</div>
+<div class="c-code__line">    perfState-&gt;<a id="a40" name="a40"></a>evidenceCount++;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Increment the thread state index.</span></div>
 <div class="c-code__line">    perfState-&gt;threadIndex++;</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (perfState-&gt;threadIndex == perfState-&gt;<a id="a40" name="a40"></a>numberOfThreads) {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (perfState-&gt;threadIndex == perfState-&gt;<a id="a41" name="a41"></a>numberOfThreads) {</div>
 <div class="c-code__line">        perfState-&gt;threadIndex = 0;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
 <div class="c-code__line"></div>
-<div class="c-code__line"><span class="c-code__keywordtype">void</span> runPerformanceThread(<span class="c-code__keywordtype">void</span>* state) {</div>
+<div class="c-code__line"><span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> runPass(</div>
+<div class="c-code__line">    <a class="code hl_struct" href="structthread_state.html">threadState</a> *thisState,</div>
+<div class="c-code__line">    ResultsIpi *results,</div>
+<div class="c-code__line">    <a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#ga1e4b0f1f8ac451a8e351175ddff4f9f0">EvidenceKeyValuePairArray</a> *evidence,</div>
+<div class="c-code__line">    <span class="c-code__keywordtype">char</span> *text) {</div>
 <div class="c-code__line">    <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga29a7b1eb8b59c26629548b1de83b473b">EXCEPTION_CREATE</a>;</div>
-<div class="c-code__line">    <a id="_a41" name="_a41"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#ga9abc642ddb7d2753731782c82b8afec1">String</a>* value;</div>
-<div class="c-code__line">    <a class="code hl_struct" href="structthread_state.html">threadState</a> *thisState = (<a class="code hl_struct" href="structthread_state.html">threadState</a>*)state;</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">// Create an instance of results to access the returned values.</span></div>
-<div class="c-code__line">    ResultsIpi *results = ResultsIpiCreate(&amp;thisState-&gt;<a id="a42" name="a42"></a>mainState-&gt;<a id="a43" name="a43"></a>manager);</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">// Reference to the dataset.</span></div>
+<div class="c-code__line">    <a id="_a42" name="_a42"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#ga9abc642ddb7d2753731782c82b8afec1">String</a>* value;</div>
 <div class="c-code__line">    DataSetIpi* dataSet = (DataSetIpi*)results-&gt;b.dataSet;</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">// Thread specific evidence instance.</span></div>
-<div class="c-code__line">    <a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#ga1e4b0f1f8ac451a8e351175ddff4f9f0">EvidenceKeyValuePairArray</a>* evidence = <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga324c123e74727b62612edeead5d0f6a6">EvidenceCreate</a>(</div>
-<div class="c-code__line">        thisState-&gt;mainState-&gt;maxEvidence);</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">for</span> (uint32_t i = 0; i &lt; evidence-&gt;<a id="a44" name="a44"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#aa06e49e6cebbd4ff52efd5da07dc6d0b">capacity</a>; i++) {</div>
-<div class="c-code__line">        evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a id="a45" name="a45"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a83d207ba77d68de5326a0d8b2a05b367">header</a> = NULL;</div>
-<div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Execute the performance test moving through the linked list.</span></div>
 <div class="c-code__line">    <a class="code hl_struct" href="structevidence_node.html">evidenceNode</a>* node = thisState-&gt;evidenceFirst;</div>
@@ -378,13 +404,33 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">        <span class="c-code__comment">// Update the total number of lookups performed by the thread.</span></div>
 <div class="c-code__line">        thisState-&gt;iterations += results-&gt;count;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment">// With nothing to read, the number of results is the checksum.</span></div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (settings.read == READ_NONE) {</div>
+<div class="c-code__line">            thisState-&gt;checkSum += results-&gt;count;</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">continue</span>;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// Get the all properties from the results if this is part of the</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// performance evaluation.</span></div>
-<div class="c-code__line">        <span class="c-code__keywordflow">for</span> (uint32_t j = 0; j &lt; dataSet-&gt;b.b.available-&gt;count; j++) {</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (ResultsIpiGetValues(</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">for</span> (uint32_t j = 0;</div>
+<div class="c-code__line">            j &lt; <a id="a43" name="a43"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga5564dc6b848f9347ca42b68ad2091cf8">PropertiesGetRequiredPropertyCount</a>(dataSet-&gt;b.b.available);</div>
+<div class="c-code__line">            j++) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (text != NULL) {</div>
+<div class="c-code__line">                <span class="c-code__comment">// Increase the checksum with the length of the text.</span></div>
+<div class="c-code__line">                thisState-&gt;checkSum +=</div>
+<div class="c-code__line">                    ResultsIpiGetValuesStringByRequiredPropertyIndex(</div>
+<div class="c-code__line">                        results,</div>
+<div class="c-code__line">                        (<span class="c-code__keywordtype">int</span>)j,</div>
+<div class="c-code__line">                        text,</div>
+<div class="c-code__line">                        TEXT_BUFFER_BYTES,</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;|&quot;</span>,</div>
+<div class="c-code__line">                        exception);</div>
+<div class="c-code__line">                <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga1d1a54ffb69cad881269379cc5af3f35">EXCEPTION_THROW</a>;</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (ResultsIpiGetValues(</div>
 <div class="c-code__line">                results,</div>
 <div class="c-code__line">                j,</div>
-<div class="c-code__line">                exception) != NULL &amp;&amp; <a id="_a46" name="_a46"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga7ad7ecba8293409ee538458c83fbd23e">EXCEPTION_OKAY</a>) {</div>
+<div class="c-code__line">                exception) != NULL &amp;&amp; <a id="_a44" name="_a44"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga7ad7ecba8293409ee538458c83fbd23e">EXCEPTION_OKAY</a>) {</div>
 <div class="c-code__line">                value = (<a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#ga9abc642ddb7d2753731782c82b8afec1">String</a>*)results-&gt;values.items[0].item.data.ptr;</div>
 <div class="c-code__line">                <span class="c-code__keywordflow">if</span> (results-&gt;values.count &gt; 0 &amp;&amp; value != NULL) {</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Increase the checksum with the size of the string to</span></div>
@@ -394,20 +440,53 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
+<div class="c-code__line">}</div>
+<div class="c-code__line"></div>
+<div class="c-code__line"><span class="c-code__keywordtype">void</span> runPerformanceThread(<span class="c-code__keywordtype">void</span>* state) {</div>
+<div class="c-code__line">    <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga29a7b1eb8b59c26629548b1de83b473b">EXCEPTION_CREATE</a>;</div>
+<div class="c-code__line">    <a class="code hl_struct" href="structthread_state.html">threadState</a> *thisState = (<a class="code hl_struct" href="structthread_state.html">threadState</a>*)state;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <a id="a47" name="a47"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gac0d0435d95ea76ed3ee71c0348b3be81">EvidenceFree</a>(evidence);</div>
+<div class="c-code__line">    <span class="c-code__comment">// Create an instance of results to access the returned values.</span></div>
+<div class="c-code__line">    ResultsIpi *results = ResultsIpiCreate(&amp;thisState-&gt;<a id="a45" name="a45"></a>mainState-&gt;<a id="a46" name="a46"></a>manager);</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// Thread specific evidence instance.</span></div>
+<div class="c-code__line">    <a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#ga1e4b0f1f8ac451a8e351175ddff4f9f0">EvidenceKeyValuePairArray</a>* evidence = <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga324c123e74727b62612edeead5d0f6a6">EvidenceCreate</a>(</div>
+<div class="c-code__line">        thisState-&gt;mainState-&gt;maxEvidence);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">for</span> (uint32_t i = 0; i &lt; evidence-&gt;<a id="a47" name="a47"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#aa06e49e6cebbd4ff52efd5da07dc6d0b">capacity</a>; i++) {</div>
+<div class="c-code__line">        evidence-&gt;<a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">items</a>[i].<a id="a48" name="a48"></a><a class="code hl_variable" href="structfiftyone_degrees_evidence_key_value_pair.html#a83d207ba77d68de5326a0d8b2a05b367">header</a> = NULL;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// Text is read into a buffer for each thread, as other languages do.</span></div>
+<div class="c-code__line">    <span class="c-code__keywordtype">char</span>* text = NULL;</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (settings.read == READ_TEXT) {</div>
+<div class="c-code__line">        text = (<span class="c-code__keywordtype">char</span>*)<a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gac35c76ff5632479d21272251b078a1d4">Malloc</a>(TEXT_BUFFER_BYTES);</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (text == NULL) {</div>
+<div class="c-code__line">            <a id="a49" name="a49"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga778f0a000e8f736d47febcfb05586f44">EXCEPTION_SET</a>(<a id="_a50" name="_a50"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga4921f9a186627faaebc505056ab7ed6e">INSUFFICIENT_MEMORY</a>);</div>
+<div class="c-code__line">            <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga1d1a54ffb69cad881269379cc5af3f35">EXCEPTION_THROW</a>;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keywordflow">for</span> (<span class="c-code__keywordtype">int</span> pass = 0; pass &lt; thisState-&gt;<a id="a51" name="a51"></a>passes; pass++) {</div>
+<div class="c-code__line">        runPass(thisState, results, evidence, text);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (text != NULL) {</div>
+<div class="c-code__line">        <a id="a52" name="a52"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gae0ecd1fc988dbb64ff0232a001e090bf">Free</a>(text);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    <a id="a53" name="a53"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gac0d0435d95ea76ed3ee71c0348b3be81">EvidenceFree</a>(evidence);</div>
 <div class="c-code__line">    ResultsIpiFree(results);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (<a id="a48" name="a48"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga03649d9fd49fb4489d4728fb70fa404b">ThreadingGetIsThreadSafe</a>()) {</div>
-<div class="c-code__line">        <a id="_a49" name="_a49"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gae6cf42265fe26b84cec6c05b498a7b7c">THREAD_EXIT</a>;</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (<a id="a54" name="a54"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga03649d9fd49fb4489d4728fb70fa404b">ThreadingGetIsThreadSafe</a>()) {</div>
+<div class="c-code__line">        <a id="_a55" name="_a55"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gae6cf42265fe26b84cec6c05b498a7b7c">THREAD_EXIT</a>;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-<div class="c-code__line"><span class="c-code__keywordtype">double</span> runTests(<a class="code hl_struct" href="structperformance_state.html">performanceState</a> *state) {</div>
+<div class="c-code__line"><span class="c-code__keywordtype">double</span> runTests(<a class="code hl_struct" href="structperformance_state.html">performanceState</a> *state, <span class="c-code__keywordtype">int</span> passes) {</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Reset the checksums for all the thread states before running the tests.</span></div>
 <div class="c-code__line">    <span class="c-code__keywordflow">for</span> (<span class="c-code__keywordtype">int</span> i = 0; i &lt; state-&gt;numberOfThreads; i++) {</div>
 <div class="c-code__line">        state-&gt;threadStates[i].checkSum = 0;</div>
 <div class="c-code__line">        state-&gt;threadStates[i].iterations = 0;</div>
+<div class="c-code__line">        state-&gt;threadStates[i].passes = passes;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keywordtype">int</span> thread;</div>
@@ -419,16 +498,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// Create and start the threads.</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">for</span> (thread = 0; thread &lt; state-&gt;numberOfThreads; thread++) {</div>
-<div class="c-code__line">            <a id="a50" name="a50"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gaa519320c3a94b1baf8495a3c45686b01">THREAD_CREATE</a>(</div>
+<div class="c-code__line">            <a id="a56" name="a56"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gaa519320c3a94b1baf8495a3c45686b01">THREAD_CREATE</a>(</div>
 <div class="c-code__line">                state-&gt;threads[thread],</div>
-<div class="c-code__line">                (<a id="_a51" name="_a51"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gac3b1b7914c03617e93bcc720b3b63535">THREAD_ROUTINE</a>)&amp;runPerformanceThread,</div>
+<div class="c-code__line">                (<a id="_a57" name="_a57"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gac3b1b7914c03617e93bcc720b3b63535">THREAD_ROUTINE</a>)&amp;runPerformanceThread,</div>
 <div class="c-code__line">                &amp;state-&gt;threadStates[thread]);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// Wait for them to finish.</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">for</span> (thread = 0; thread &lt; state-&gt;numberOfThreads; thread++) {</div>
-<div class="c-code__line">            <a id="a52" name="a52"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga8780bffcae60e8593485d281e4914545">THREAD_JOIN</a>(state-&gt;threads[thread]);</div>
-<div class="c-code__line">            <a id="a53" name="a53"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gad09cd47e11c1d05e201237e0deadd1d2">THREAD_CLOSE</a>(state-&gt;threads[thread]);</div>
+<div class="c-code__line">            <a id="a58" name="a58"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga8780bffcae60e8593485d281e4914545">THREAD_JOIN</a>(state-&gt;threads[thread]);</div>
+<div class="c-code__line">            <a id="a59" name="a59"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gad09cd47e11c1d05e201237e0deadd1d2">THREAD_CLOSE</a>(state-&gt;threads[thread]);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">else</span> {</div>
@@ -450,10 +529,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// output the results from the benchmark to the console</span></div>
-<div class="c-code__line">    <span class="c-code__keywordtype">double</span> millisPerTest = state-&gt;elapsedMilliSeconds / (double)state-&gt;evidenceCount;</div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">int</span> lookups = state-&gt;evidenceCount * settings.passes;</div>
+<div class="c-code__line">    <span class="c-code__keywordtype">double</span> millisPerTest = state-&gt;elapsedMilliSeconds / (double)lookups;</div>
 <div class="c-code__line">    fprintf(state-&gt;output,</div>
 <div class="c-code__line">        <span class="c-code__stringliteral">&quot;%d lookups, Average ms per lookup: %f, Lookups per second: %.0lf\n&quot;</span>,</div>
-<div class="c-code__line">        state-&gt;evidenceCount,</div>
+<div class="c-code__line">        lookups,</div>
 <div class="c-code__line">        millisPerTest,</div>
 <div class="c-code__line">        round(1000.0 / millisPerTest));</div>
 <div class="c-code__line">    fprintf(state-&gt;output,</div>
@@ -475,35 +555,113 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
 <div class="c-code__line"></div>
+<div class="c-code__line"><span class="c-code__keyword">static</span> <a id="_a60" name="_a60"></a><a class="code hl_struct" href="structfiftyone_degrees_collection_config.html">fiftyoneDegreesCollectionConfig</a>* getCollectionConfig(</div>
+<div class="c-code__line">    ConfigIpi *config,</div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *name,</div>
+<div class="c-code__line">    <span class="c-code__keywordtype">size_t</span> length) {</div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keyword">struct </span>{</div>
+<div class="c-code__line">        <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *name;</div>
+<div class="c-code__line">        <a class="code hl_struct" href="structfiftyone_degrees_collection_config.html">fiftyoneDegreesCollectionConfig</a> *config;</div>
+<div class="c-code__line">    } items[] = {</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;strings&quot;</span>, &amp;config-&gt;<a id="a61" name="a61"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#aad06a53290f7ac8a08a393a3f6d9e676">strings</a> },</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;components&quot;</span>, &amp;config-&gt;<a id="a62" name="a62"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#a2e4fba12e06d21ce1e2177ada9496835">components</a> },</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;maps&quot;</span>, &amp;config-&gt;<a id="a63" name="a63"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#acfd6bebc0a1d46e83b2272fb7f2fe373">maps</a> },</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;properties&quot;</span>, &amp;config-&gt;<a id="a64" name="a64"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#acc29ddb134dfc526fc8f0c6ef09ce039">properties</a> },</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;values&quot;</span>, &amp;config-&gt;<a id="a65" name="a65"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#ab02bc4f15ac896e3f0ac1e8c676ef2fc">values</a> },</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;profiles&quot;</span>, &amp;config-&gt;<a id="a66" name="a66"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#aeadb0e7ead1a298a085a525530d63571">profiles</a> },</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;graphs&quot;</span>, &amp;config-&gt;<a id="a67" name="a67"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#a3b7f39c699808c56fdf5965b9d8a8528">graphs</a> },</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;profileGroups&quot;</span>, &amp;config-&gt;<a id="a68" name="a68"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#a75571c60c9ce8c3fc0fdf24cc222d828">profileGroups</a> },</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;profileOffsets&quot;</span>, &amp;config-&gt;<a id="a69" name="a69"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#acf10229723ecf8259873dedc47e27ff0">profileOffsets</a> },</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;propertyTypes&quot;</span>, &amp;config-&gt;<a id="a70" name="a70"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#a1158e4bdbdbdb39756266af8d6c85d42">propertyTypes</a> },</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;graph&quot;</span>, &amp;config-&gt;<a id="a71" name="a71"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#a0d6715d257f229a245ed98af74dc687f">graph</a> } };</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">for</span> (<span class="c-code__keywordtype">size_t</span> i = 0; i &lt; <span class="c-code__keyword">sizeof</span>(items) / <span class="c-code__keyword">sizeof</span>(items[0]); i++) {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (strlen(items[i].name) == length &amp;&amp;</div>
+<div class="c-code__line">            strncmp(items[i].name, name, length) == 0) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> items[i].config;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> NULL;</div>
+<div class="c-code__line">}</div>
+<div class="c-code__line"></div>
+<div class="c-code__line"><span class="c-code__keyword">static</span> <span class="c-code__keywordtype">bool</span> applyCaches(ConfigIpi *config, <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *caches) {</div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *next = caches;</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">while</span> (next != NULL &amp;&amp; *next != <span class="c-code__charliteral">&#39;\0&#39;</span>) {</div>
+<div class="c-code__line">        <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *equals = strchr(next, <span class="c-code__charliteral">&#39;=&#39;</span>);</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (equals == NULL) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">false</span>;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <a class="code hl_struct" href="structfiftyone_degrees_collection_config.html">fiftyoneDegreesCollectionConfig</a> *collection = getCollectionConfig(</div>
+<div class="c-code__line">            config,</div>
+<div class="c-code__line">            next,</div>
+<div class="c-code__line">            (<span class="c-code__keywordtype">size_t</span>)(equals - next));</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (collection == NULL) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">false</span>;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *value = equals + 1;</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (strncmp(value, <span class="c-code__stringliteral">&quot;memory&quot;</span>, 6) == 0) {</div>
+<div class="c-code__line">            collection-&gt;<a id="a72" name="a72"></a><a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#a27e1d26e19c546720209e64a3c57db60">loaded</a> = <span class="c-code__keyword">true</span>;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">            <span class="c-code__keywordtype">char</span> *end;</div>
+<div class="c-code__line">            <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">unsigned</span> <span class="c-code__keywordtype">long</span> capacity = strtoul(value, &amp;end, 10);</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (end == value) {</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">false</span>;</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">            collection-&gt;<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#a27e1d26e19c546720209e64a3c57db60">loaded</a> = <span class="c-code__keyword">false</span>;</div>
+<div class="c-code__line">            collection-&gt;<a id="a73" name="a73"></a><a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#a578801a37ca9f3dd4e4f17684f758a4d">capacity</a> = (uint32_t)capacity;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        next = strchr(value, <span class="c-code__charliteral">&#39;,&#39;</span>);</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (next != NULL) {</div>
+<div class="c-code__line">            next++;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">true</span>;</div>
+<div class="c-code__line">}</div>
+<div class="c-code__line"></div>
 <div class="c-code__line"><span class="c-code__keywordtype">void</span> executeBenchmark(</div>
 <div class="c-code__line">    <a class="code hl_struct" href="structperformance_state.html">performanceState</a> *state,</div>
 <div class="c-code__line">    <a class="code hl_struct" href="structperformance_config.html">performanceConfig</a> config) {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Make a local copy of the config as we&#39;re going to alter it a bit.</span></div>
-<div class="c-code__line">    ConfigIpi dataSetConfig = *config.<a id="a54" name="a54"></a>config;</div>
+<div class="c-code__line">    ConfigIpi dataSetConfig = *config.<a id="a74" name="a74"></a>config;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Output the name of the stock configuration before changing parameters.</span></div>
-<div class="c-code__line">    fprintf(state-&gt;output, </div>
+<div class="c-code__line">    fprintf(state-&gt;output,</div>
 <div class="c-code__line">        <span class="c-code__stringliteral">&quot;Benchmarking with profile: %s AllProperties: %s\n&quot;</span>,</div>
 <div class="c-code__line">        fiftyoneDegreesExampleGetConfigName(dataSetConfig),</div>
-<div class="c-code__line">        config.<a id="a55" name="a55"></a>allProperties ? <span class="c-code__stringliteral">&quot;True&quot;</span> : <span class="c-code__stringliteral">&quot;False&quot;</span>);</div>
+<div class="c-code__line">        config.<a id="a75" name="a75"></a>properties == NULL ? <span class="c-code__stringliteral">&quot;True&quot;</span> : <span class="c-code__stringliteral">&quot;False&quot;</span>);</div>
+<div class="c-code__line">    fprintf(state-&gt;output,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;Read: %s, Passes: %d, Concurrency: %s, Caches: %s\n&quot;</span>,</div>
+<div class="c-code__line">        readModeNames[settings.read],</div>
+<div class="c-code__line">        settings.passes,</div>
+<div class="c-code__line">        settings.presetConcurrency ? <span class="c-code__stringliteral">&quot;preset&quot;</span> : <span class="c-code__stringliteral">&quot;threads&quot;</span>,</div>
+<div class="c-code__line">        settings.caches == NULL ? <span class="c-code__stringliteral">&quot;preset&quot;</span> : settings.caches);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga29a7b1eb8b59c26629548b1de83b473b">EXCEPTION_CREATE</a>;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <a id="_a56" name="_a56"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#gad18b8b685dd62adf468d57ab172019fc">PropertiesRequired</a> properties = <a id="_a57" name="_a57"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga246be0840df800ead0edc55949e2e92e">PropertiesDefault</a>;</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (config.allProperties == <span class="c-code__keyword">false</span>) {</div>
-<div class="c-code__line">        properties.<a id="a58" name="a58"></a><a class="code hl_variable" href="structfiftyone_degrees_properties_required.html#a7044785e8c67e2d208ba1010ec355d5c">string</a> = <span class="c-code__stringliteral">&quot;RegisteredName&quot;</span>;</div>
+<div class="c-code__line">    <a id="_a76" name="_a76"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#gad18b8b685dd62adf468d57ab172019fc">PropertiesRequired</a> properties = <a id="_a77" name="_a77"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga246be0840df800ead0edc55949e2e92e">PropertiesDefault</a>;</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (config.properties != NULL) {</div>
+<div class="c-code__line">        properties.<a id="a78" name="a78"></a><a class="code hl_variable" href="structfiftyone_degrees_properties_required.html#a7044785e8c67e2d208ba1010ec355d5c">string</a> = config.properties;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    dataSetConfig.<a id="a59" name="a59"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#aad06a53290f7ac8a08a393a3f6d9e676">strings</a>.<a id="a60" name="a60"></a><a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
-<div class="c-code__line">    dataSetConfig.<a id="a61" name="a61"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#a2e4fba12e06d21ce1e2177ada9496835">components</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
-<div class="c-code__line">    dataSetConfig.<a id="a62" name="a62"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#acfd6bebc0a1d46e83b2272fb7f2fe373">maps</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
-<div class="c-code__line">    dataSetConfig.<a id="a63" name="a63"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#acc29ddb134dfc526fc8f0c6ef09ce039">properties</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
-<div class="c-code__line">    dataSetConfig.<a id="a64" name="a64"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#ab02bc4f15ac896e3f0ac1e8c676ef2fc">values</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
-<div class="c-code__line">    dataSetConfig.<a id="a65" name="a65"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#aeadb0e7ead1a298a085a525530d63571">profiles</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
-<div class="c-code__line">    dataSetConfig.<a id="a66" name="a66"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#a0d6715d257f229a245ed98af74dc687f">graph</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
-<div class="c-code__line">    dataSetConfig.<a id="a67" name="a67"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#a3b7f39c699808c56fdf5965b9d8a8528">graphs</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
-<div class="c-code__line">    dataSetConfig.<a id="a68" name="a68"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#a75571c60c9ce8c3fc0fdf24cc222d828">profileGroups</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
-<div class="c-code__line">    dataSetConfig.<a id="a69" name="a69"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#acf10229723ecf8259873dedc47e27ff0">profileOffsets</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (settings.presetConcurrency == <span class="c-code__keyword">false</span>) {</div>
+<div class="c-code__line">        dataSetConfig.<a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#aad06a53290f7ac8a08a393a3f6d9e676">strings</a>.<a id="a79" name="a79"></a><a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
+<div class="c-code__line">        dataSetConfig.<a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#a2e4fba12e06d21ce1e2177ada9496835">components</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
+<div class="c-code__line">        dataSetConfig.<a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#acfd6bebc0a1d46e83b2272fb7f2fe373">maps</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
+<div class="c-code__line">        dataSetConfig.<a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#acc29ddb134dfc526fc8f0c6ef09ce039">properties</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
+<div class="c-code__line">        dataSetConfig.<a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#ab02bc4f15ac896e3f0ac1e8c676ef2fc">values</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
+<div class="c-code__line">        dataSetConfig.<a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#aeadb0e7ead1a298a085a525530d63571">profiles</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
+<div class="c-code__line">        dataSetConfig.<a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#a0d6715d257f229a245ed98af74dc687f">graph</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
+<div class="c-code__line">        dataSetConfig.<a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#a3b7f39c699808c56fdf5965b9d8a8528">graphs</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
+<div class="c-code__line">        dataSetConfig.<a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#a75571c60c9ce8c3fc0fdf24cc222d828">profileGroups</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
+<div class="c-code__line">        dataSetConfig.<a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#acf10229723ecf8259873dedc47e27ff0">profileOffsets</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
+<div class="c-code__line">        dataSetConfig.<a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#a1158e4bdbdbdb39756266af8d6c85d42">propertyTypes</a>.<a class="code hl_variable" href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">concurrency</a> = state-&gt;numberOfThreads;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (applyCaches(&amp;dataSetConfig, settings.caches) == <span class="c-code__keyword">false</span>) {</div>
+<div class="c-code__line">        fprintf(state-&gt;output, <span class="c-code__stringliteral">&quot;The caches &#39;%s&#39; are not valid\n&quot;</span>,</div>
+<div class="c-code__line">            settings.caches);</div>
+<div class="c-code__line">        exitCode = 1;</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span>;</div>
+<div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    state-&gt;threads = (<a class="code hl_define" href="group___fifty_one_degrees_threading.html#ga73811e87d8e1da7f10bc3943591333ec">FIFTYONE_DEGREES_THREAD</a>*)</div>
 <div class="c-code__line">        <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gac35c76ff5632479d21272251b078a1d4">Malloc</a>(<span class="c-code__keyword">sizeof</span>(<a class="code hl_define" href="group___fifty_one_degrees_threading.html#ga73811e87d8e1da7f10bc3943591333ec">FIFTYONE_DEGREES_THREAD</a>) * state-&gt;numberOfThreads);</div>
@@ -513,16 +671,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    TIMER_CREATE;</div>
 <div class="c-code__line">    TIMER_START;</div>
 <div class="c-code__line">    </div>
-<div class="c-code__line">    <a id="_a70" name="_a70"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#ga556b4dfadc53ec16baa29a33f59fe666">StatusCode</a> status = IpiInitManagerFromFile(</div>
+<div class="c-code__line">    <a id="_a80" name="_a80"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#ga556b4dfadc53ec16baa29a33f59fe666">StatusCode</a> status = IpiInitManagerFromFile(</div>
 <div class="c-code__line">        &amp;state-&gt;manager,</div>
 <div class="c-code__line">        &amp;dataSetConfig,</div>
 <div class="c-code__line">        &amp;properties,</div>
 <div class="c-code__line">        state-&gt;dataFileLocation,</div>
 <div class="c-code__line">        exception);</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (status != <a id="_a71" name="_a71"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gaa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a>) {</div>
-<div class="c-code__line">        <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* message = <a id="a72" name="a72"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga3002890a18e3a86e4078880f2b00bbad">StatusGetMessage</a>(status, state-&gt;dataFileLocation);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (status != <a id="_a81" name="_a81"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gaa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a>) {</div>
+<div class="c-code__line">        <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* message = <a id="a82" name="a82"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga3002890a18e3a86e4078880f2b00bbad">StatusGetMessage</a>(status, state-&gt;dataFileLocation);</div>
 <div class="c-code__line">        fprintf(state-&gt;output, <span class="c-code__stringliteral">&quot;%s\n&quot;</span>, message);</div>
-<div class="c-code__line">        <a id="a73" name="a73"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gae0ecd1fc988dbb64ff0232a001e090bf">Free</a>((<span class="c-code__keywordtype">void</span>*)message);</div>
+<div class="c-code__line">        <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gae0ecd1fc988dbb64ff0232a001e090bf">Free</a>((<span class="c-code__keywordtype">void</span>*)message);</div>
 <div class="c-code__line">        <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gae0ecd1fc988dbb64ff0232a001e090bf">Free</a>(state-&gt;threads);</div>
 <div class="c-code__line">        exitCode = 1;</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span>;</div>
@@ -534,7 +692,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Check data file</span></div>
 <div class="c-code__line">    DataSetIpi* dataset = DataSetIpiGet(&amp;state-&gt;manager);</div>
-<div class="c-code__line">    state-&gt;availableProperties = dataset-&gt;<a id="a74" name="a74"></a><a class="code hl_variable" href="structfiftyone_degrees_data_set_ipi.html#ad52deae586ffdd6fbb1002891ba2c016">b</a>.<a id="a75" name="a75"></a><a class="code hl_variable" href="structfiftyone_degrees_data_set_ipi_base.html#a4a43833742ee8d3e83bf325a68fab225">b</a>.<a id="a76" name="a76"></a><a class="code hl_variable" href="structfiftyone_degrees_data_set_base.html#afb6fe7080fd386b7b4233ce5c87ce3c2">available</a>-&gt;<a id="a77" name="a77"></a><a class="code hl_variable" href="structfiftyone_degrees_property_available_array.html#a931e016a455f0ace924c2df65db6a54e">count</a>;</div>
+<div class="c-code__line">    state-&gt;availableProperties = <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga5564dc6b848f9347ca42b68ad2091cf8">PropertiesGetRequiredPropertyCount</a>(</div>
+<div class="c-code__line">        dataset-&gt;<a id="a83" name="a83"></a><a class="code hl_variable" href="structfiftyone_degrees_data_set_ipi.html#ad52deae586ffdd6fbb1002891ba2c016">b</a>.<a id="a84" name="a84"></a><a class="code hl_variable" href="structfiftyone_degrees_data_set_ipi_base.html#a4a43833742ee8d3e83bf325a68fab225">b</a>.<a id="a85" name="a85"></a><a class="code hl_variable" href="structfiftyone_degrees_data_set_base.html#afb6fe7080fd386b7b4233ce5c87ce3c2">available</a>);</div>
 <div class="c-code__line">    fiftyoneDegreesExampleCheckDataFile(dataset);</div>
 <div class="c-code__line">    DataSetIpiRelease(dataset);</div>
 <div class="c-code__line"> </div>
@@ -542,18 +701,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    <span class="c-code__comment">// The memory-only build holds the whole dataset in memory with no caches to</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// warm, so that warmup pass just doubles the work for no measurable benefit;</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// skip it there and only warm up the standard build, whose caches benefit.</span></div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (!<a id="a78" name="a78"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga1e09607f004644224a45bc6057393de6">CollectionGetIsMemoryOnly</a>()) {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (!<a id="a86" name="a86"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga1e09607f004644224a45bc6057393de6">CollectionGetIsMemoryOnly</a>()) {</div>
 <div class="c-code__line">        fprintf(state-&gt;output, <span class="c-code__stringliteral">&quot;Warming up\n&quot;</span>);</div>
-<div class="c-code__line">        runTests(state);</div>
+<div class="c-code__line">        runTests(state, 1);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    fprintf(state-&gt;output, <span class="c-code__stringliteral">&quot;Running\n&quot;</span>);</div>
-<div class="c-code__line">    state-&gt;elapsedMilliSeconds = runTests(state);</div>
+<div class="c-code__line">    fflush(state-&gt;output);</div>
+<div class="c-code__line">    state-&gt;elapsedMilliSeconds = runTests(state, settings.passes);</div>
 <div class="c-code__line">    fprintf(state-&gt;output,</div>
 <div class="c-code__line">        <span class="c-code__stringliteral">&quot;Finished - Execution time was %lf ms\n&quot;</span>,</div>
 <div class="c-code__line">        state-&gt;elapsedMilliSeconds);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <a id="a79" name="a79"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gac5094875841e9d95dc972014124ea765">ResourceManagerFree</a>(&amp;state-&gt;manager);</div>
+<div class="c-code__line">    <a id="a87" name="a87"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gac5094875841e9d95dc972014124ea765">ResourceManagerFree</a>(&amp;state-&gt;manager);</div>
 <div class="c-code__line">    <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gae0ecd1fc988dbb64ff0232a001e090bf">Free</a>(state-&gt;threads);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    doReport(state);</div>
@@ -655,7 +815,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    state.sharedStringFirst = NULL;</div>
 <div class="c-code__line">    state.sharedStringLast = NULL;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <a id="a80" name="a80"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga42842fea605fffe276f1733c41434955">YamlFileIterateWithLimit</a>(</div>
+<div class="c-code__line">    <a id="a88" name="a88"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga42842fea605fffe276f1733c41434955">YamlFileIterateWithLimit</a>(</div>
 <div class="c-code__line">        evidenceFilePath,</div>
 <div class="c-code__line">        buffer,</div>
 <div class="c-code__line">        <span class="c-code__keyword">sizeof</span>(buffer),</div>
@@ -675,21 +835,29 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">        fprintf(state.resultsOutput, <span class="c-code__stringliteral">&quot;{&quot;</span>);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">// Run the selected benchmarks using the evidence now in memory.</span></div>
-<div class="c-code__line">    <span class="c-code__keywordflow">for</span> (<span class="c-code__keywordtype">int</span> i = 0;</div>
-<div class="c-code__line">        i &lt; (int)(<span class="c-code__keyword">sizeof</span>(performanceConfigs) / <span class="c-code__keyword">sizeof</span>(<a class="code hl_struct" href="structperformance_config.html">performanceConfig</a>));</div>
-<div class="c-code__line">        i++) {</div>
+<div class="c-code__line">    <span class="c-code__comment">// The configuration chosen on the command line replaces the list.</span></div>
+<div class="c-code__line">    <a class="code hl_struct" href="structperformance_config.html">performanceConfig</a> chosen = { settings.config, settings.properties };</div>
+<div class="c-code__line">    <a class="code hl_struct" href="structperformance_config.html">performanceConfig</a> *configs = performanceConfigs;</div>
+<div class="c-code__line">    <span class="c-code__keywordtype">int</span> configsCount =</div>
+<div class="c-code__line">        (int)(<span class="c-code__keyword">sizeof</span>(performanceConfigs) / <span class="c-code__keyword">sizeof</span>(<a class="code hl_struct" href="structperformance_config.html">performanceConfig</a>));</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (settings.config != NULL) {</div>
+<div class="c-code__line">        configs = &amp;chosen;</div>
+<div class="c-code__line">        configsCount = 1;</div>
+<div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        <a class="code hl_struct" href="structperformance_config.html">performanceConfig</a> config = performanceConfigs[i];</div>
+<div class="c-code__line">    <span class="c-code__comment">// Run the selected benchmarks using the evidence now in memory.</span></div>
+<div class="c-code__line">    <span class="c-code__keywordflow">for</span> (<span class="c-code__keywordtype">int</span> i = 0; i &lt; configsCount; i++) {</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <a class="code hl_struct" href="structperformance_config.html">performanceConfig</a> config = configs[i];</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (<a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga1e09607f004644224a45bc6057393de6">CollectionGetIsMemoryOnly</a>() == <span class="c-code__keyword">false</span> ||</div>
-<div class="c-code__line">            config.config-&gt;<a id="a81" name="a81"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#add9c6bbb8263507d166535648de4da02">b</a>.<a id="a82" name="a82"></a><a class="code hl_variable" href="structfiftyone_degrees_config_base.html#ad262b246482922758cce9ac0eec1460c">allInMemory</a> == <span class="c-code__keyword">true</span>) {</div>
-<div class="c-code__line">            </div>
+<div class="c-code__line">            config.config-&gt;<a id="a89" name="a89"></a><a class="code hl_variable" href="structfiftyone_degrees_config_ipi.html#add9c6bbb8263507d166535648de4da02">b</a>.<a id="a90" name="a90"></a><a class="code hl_variable" href="structfiftyone_degrees_config_base.html#ad262b246482922758cce9ac0eec1460c">allInMemory</a> == <span class="c-code__keyword">true</span>) {</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> (state.resultsOutput != NULL) {</div>
 <div class="c-code__line">                fprintf(state.resultsOutput, <span class="c-code__stringliteral">&quot;%s\n\&quot;%s%s\&quot;: {\n&quot;</span>,</div>
 <div class="c-code__line">                    i &gt; 0 ? <span class="c-code__stringliteral">&quot;,&quot;</span> : <span class="c-code__stringliteral">&quot;&quot;</span>,</div>
 <div class="c-code__line">                    fiftyoneDegreesExampleGetConfigName(*(config.config)),</div>
-<div class="c-code__line">                    config.allProperties ? <span class="c-code__stringliteral">&quot;_All&quot;</span> : <span class="c-code__stringliteral">&quot;&quot;</span>);</div>
+<div class="c-code__line">                    config.properties == NULL ? <span class="c-code__stringliteral">&quot;_All&quot;</span> : <span class="c-code__stringliteral">&quot;&quot;</span>);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            executeBenchmark(&amp;state, config);</div>
@@ -719,12 +887,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line"><span class="c-code__keywordtype">void</span> fiftyoneDegreesExampleCPerformanceRun(ExampleParameters* params) {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Call the actual function.</span></div>
 <div class="c-code__line">    fiftyoneDegreesIpiPerformance(</div>
-<div class="c-code__line">        params-&gt;<a id="a83" name="a83"></a><a class="code hl_variable" href="structfiftyone_degrees_example_parameters.html#ab2d868e1e931ff57111d440c26a05986">dataFilePath</a>,</div>
-<div class="c-code__line">        params-&gt;<a id="a84" name="a84"></a><a class="code hl_variable" href="structfiftyone_degrees_example_parameters.html#ae5376e16c94cddcc504c02ebb20c1d9c">evidenceFilePath</a>,</div>
-<div class="c-code__line">        params-&gt;<a id="a85" name="a85"></a><a class="code hl_variable" href="structfiftyone_degrees_example_parameters.html#a26932e9c06e83c766c2ee7b75926ef82">numberOfThreads</a>,</div>
-<div class="c-code__line">        params-&gt;<a id="a86" name="a86"></a><a class="code hl_variable" href="structfiftyone_degrees_example_parameters.html#a86cc35ab72ff85b0c7bc52ff680837cf">iterations</a>,</div>
-<div class="c-code__line">        params-&gt;<a id="a87" name="a87"></a><a class="code hl_variable" href="structfiftyone_degrees_example_parameters.html#a7f93c24e8a094f0d9de9b4295c29ef89">output</a>,</div>
-<div class="c-code__line">        params-&gt;<a id="a88" name="a88"></a><a class="code hl_variable" href="structfiftyone_degrees_example_parameters.html#a6644541bf2630cf197db777e96f4dddb">resultsOutput</a>);</div>
+<div class="c-code__line">        params-&gt;<a id="a91" name="a91"></a><a class="code hl_variable" href="structfiftyone_degrees_example_parameters.html#ab2d868e1e931ff57111d440c26a05986">dataFilePath</a>,</div>
+<div class="c-code__line">        params-&gt;<a id="a92" name="a92"></a><a class="code hl_variable" href="structfiftyone_degrees_example_parameters.html#ae5376e16c94cddcc504c02ebb20c1d9c">evidenceFilePath</a>,</div>
+<div class="c-code__line">        params-&gt;<a id="a93" name="a93"></a><a class="code hl_variable" href="structfiftyone_degrees_example_parameters.html#a26932e9c06e83c766c2ee7b75926ef82">numberOfThreads</a>,</div>
+<div class="c-code__line">        params-&gt;<a id="a94" name="a94"></a><a class="code hl_variable" href="structfiftyone_degrees_example_parameters.html#a86cc35ab72ff85b0c7bc52ff680837cf">iterations</a>,</div>
+<div class="c-code__line">        params-&gt;<a id="a95" name="a95"></a><a class="code hl_variable" href="structfiftyone_degrees_example_parameters.html#a7f93c24e8a094f0d9de9b4295c29ef89">output</a>,</div>
+<div class="c-code__line">        params-&gt;<a id="a96" name="a96"></a><a class="code hl_variable" href="structfiftyone_degrees_example_parameters.html#a6644541bf2630cf197db777e96f4dddb">resultsOutput</a>);</div>
 <div class="c-code__line">}</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__preprocessor">#ifndef TEST</span></div>
@@ -739,6 +907,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line"><span class="c-code__preprocessor">#define JSON_OPTION_SHORT &quot;-j&quot;</span></div>
 <div class="c-code__line"><span class="c-code__preprocessor">#define ITERATIONS_OPTION &quot;--iterations&quot;</span></div>
 <div class="c-code__line"><span class="c-code__preprocessor">#define ITERATIONS_OPTION_SHORT &quot;-i&quot;</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor">#define PROFILE_OPTION &quot;--profile&quot;</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor">#define PROFILE_OPTION_SHORT &quot;-p&quot;</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor">#define PROPERTIES_OPTION &quot;--properties&quot;</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor">#define PROPERTIES_OPTION_SHORT &quot;-r&quot;</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor">#define READ_OPTION &quot;--read&quot;</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor">#define READ_OPTION_SHORT &quot;-e&quot;</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor">#define PASSES_OPTION &quot;--passes&quot;</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor">#define PASSES_OPTION_SHORT &quot;-n&quot;</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor">#define PRESET_CONCURRENCY_OPTION &quot;--preset-concurrency&quot;</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor">#define PRESET_CONCURRENCY_OPTION_SHORT &quot;-c&quot;</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor">#define CACHES_OPTION &quot;--caches&quot;</span></div>
+<div class="c-code__line"><span class="c-code__preprocessor">#define CACHES_OPTION_SHORT &quot;-k&quot;</span></div>
 <div class="c-code__line"><span class="c-code__preprocessor">#define HELP_OPTION &quot;--help&quot;</span></div>
 <div class="c-code__line"><span class="c-code__preprocessor">#define HELP_OPTION_SHORT &quot;-h&quot;</span></div>
 <div class="c-code__line"><span class="c-code__preprocessor">#define OPTION_PADDING(o) ((int)(30 - strlen(o)))</span></div>
@@ -751,13 +931,54 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    OPTION_MESSAGE(<span class="c-code__stringliteral">&quot;Number of threads to run in parallel&quot;</span>, THREAD_OPTION, THREAD_OPTION_SHORT);</div>
 <div class="c-code__line">    OPTION_MESSAGE(<span class="c-code__stringliteral">&quot;Number of iterations&quot;</span>, ITERATIONS_OPTION, ITERATIONS_OPTION_SHORT);</div>
 <div class="c-code__line">    OPTION_MESSAGE(<span class="c-code__stringliteral">&quot;Path to a file to output JSON format results to&quot;</span>, JSON_OPTION, JSON_OPTION_SHORT);</div>
+<div class="c-code__line">    OPTION_MESSAGE(<span class="c-code__stringliteral">&quot;One configuration to run, such as Balanced&quot;</span>,</div>
+<div class="c-code__line">        PROFILE_OPTION, PROFILE_OPTION_SHORT);</div>
+<div class="c-code__line">    OPTION_MESSAGE(<span class="c-code__stringliteral">&quot;Its required properties, or all for every property&quot;</span>,</div>
+<div class="c-code__line">        PROPERTIES_OPTION, PROPERTIES_OPTION_SHORT);</div>
+<div class="c-code__line">    OPTION_MESSAGE(<span class="c-code__stringliteral">&quot;What each lookup reads, which is none, values or text&quot;</span>,</div>
+<div class="c-code__line">        READ_OPTION, READ_OPTION_SHORT);</div>
+<div class="c-code__line">    OPTION_MESSAGE(<span class="c-code__stringliteral">&quot;Times each thread processes its evidence when timed&quot;</span>,</div>
+<div class="c-code__line">        PASSES_OPTION, PASSES_OPTION_SHORT);</div>
+<div class="c-code__line">    OPTION_MESSAGE(<span class="c-code__stringliteral">&quot;Keep the configuration&#39;s concurrency&quot;</span>,</div>
+<div class="c-code__line">        PRESET_CONCURRENCY_OPTION, PRESET_CONCURRENCY_OPTION_SHORT);</div>
+<div class="c-code__line">    OPTION_MESSAGE(<span class="c-code__stringliteral">&quot;Caches, such as values=50000,profileGroups=memory&quot;</span>,</div>
+<div class="c-code__line">        CACHES_OPTION, CACHES_OPTION_SHORT);</div>
 <div class="c-code__line">    OPTION_MESSAGE(<span class="c-code__stringliteral">&quot;Print this help&quot;</span>, HELP_OPTION, HELP_OPTION_SHORT);</div>
+<div class="c-code__line">}</div>
+<div class="c-code__line"></div>
+<div class="c-code__line"><span class="c-code__keyword">static</span> ConfigIpi* getConfigByName(<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *name) {</div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keyword">struct </span>{</div>
+<div class="c-code__line">        <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *name;</div>
+<div class="c-code__line">        ConfigIpi *config;</div>
+<div class="c-code__line">    } configs[] = {</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;InMemory&quot;</span>, &amp;IpiInMemoryConfig },</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;HighPerformance&quot;</span>, &amp;IpiHighPerformanceConfig },</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;LowMemory&quot;</span>, &amp;IpiLowMemoryConfig },</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;Balanced&quot;</span>, &amp;IpiBalancedConfig },</div>
+<div class="c-code__line">        { <span class="c-code__stringliteral">&quot;BalancedTemp&quot;</span>, &amp;IpiBalancedTempConfig } };</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">for</span> (<span class="c-code__keywordtype">size_t</span> i = 0; i &lt; <span class="c-code__keyword">sizeof</span>(configs) / <span class="c-code__keyword">sizeof</span>(configs[0]); i++) {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (strcmp(configs[i].name, name) == 0) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> configs[i].config;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> NULL;</div>
+<div class="c-code__line">}</div>
+<div class="c-code__line"></div>
+<div class="c-code__line"><span class="c-code__keyword">static</span> <span class="c-code__keywordtype">bool</span> getReadModeByName(<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *name, readMode *read) {</div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">int</span> count = (int)(<span class="c-code__keyword">sizeof</span>(readModeNames) / <span class="c-code__keyword">sizeof</span>(readModeNames[0]));</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">for</span> (<span class="c-code__keywordtype">int</span> i = 0; i &lt; count; i++) {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (strcmp(readModeNames[i], name) == 0) {</div>
+<div class="c-code__line">            *read = (readMode)i;</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">true</span>;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">false</span>;</div>
 <div class="c-code__line">}</div>
 <div class="c-code__line"></div>
 <div class="c-code__line"><span class="c-code__keywordtype">int</span> main(<span class="c-code__keywordtype">int</span> argc, <span class="c-code__keywordtype">char</span>* argv[]) {</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#ga556b4dfadc53ec16baa29a33f59fe666">StatusCode</a> status = <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gaa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a>;</div>
-<div class="c-code__line">    <span class="c-code__keywordtype">char</span> dataFilePath[<a id="_a89" name="_a89"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gafd3ee670ff4ed3f29a395abd2f0f3344">FILE_MAX_PATH</a>];</div>
+<div class="c-code__line">    <span class="c-code__keywordtype">char</span> dataFilePath[<a id="_a97" name="_a97"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gafd3ee670ff4ed3f29a395abd2f0f3344">FILE_MAX_PATH</a>];</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">char</span> evidenceFilePath[<a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gafd3ee670ff4ed3f29a395abd2f0f3344">FILE_MAX_PATH</a>];</div>
 <div class="c-code__line">    uint16_t numberOfThreads = DEFAULT_NUMBER_OF_THREADS;</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">int</span> iterations = DEFAULT_ITERATIONS;</div>
@@ -791,6 +1012,48 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">            strcmp(argv[i], ITERATIONS_OPTION_SHORT) == 0) {</div>
 <div class="c-code__line">            <span class="c-code__comment">// Set the iterations per thread</span></div>
 <div class="c-code__line">            iterations = atoi(argv[i + 1]);</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (strcmp(argv[i], PROFILE_OPTION) == 0 ||</div>
+<div class="c-code__line">            strcmp(argv[i], PROFILE_OPTION_SHORT) == 0) {</div>
+<div class="c-code__line">            <span class="c-code__comment">// Set the one configuration to run</span></div>
+<div class="c-code__line">            settings.config = getConfigByName(argv[i + 1]);</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (settings.config == NULL) {</div>
+<div class="c-code__line">                printf(<span class="c-code__stringliteral">&quot;The profile &#39;%s&#39; is not recognized.\n&quot;</span>, argv[i + 1]);</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">return</span> 1;</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (strcmp(argv[i], PROPERTIES_OPTION) == 0 ||</div>
+<div class="c-code__line">            strcmp(argv[i], PROPERTIES_OPTION_SHORT) == 0) {</div>
+<div class="c-code__line">            <span class="c-code__comment">// Set the required properties, where all names nothing</span></div>
+<div class="c-code__line">            settings.properties =</div>
+<div class="c-code__line">                strcmp(argv[i + 1], <span class="c-code__stringliteral">&quot;all&quot;</span>) == 0 ? NULL : argv[i + 1];</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (strcmp(argv[i], READ_OPTION) == 0 ||</div>
+<div class="c-code__line">            strcmp(argv[i], READ_OPTION_SHORT) == 0) {</div>
+<div class="c-code__line">            <span class="c-code__comment">// Set what each lookup reads</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (getReadModeByName(argv[i + 1], &amp;settings.read) == <span class="c-code__keyword">false</span>) {</div>
+<div class="c-code__line">                printf(<span class="c-code__stringliteral">&quot;The read &#39;%s&#39; is not recognized.\n&quot;</span>, argv[i + 1]);</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">return</span> 1;</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (strcmp(argv[i], PASSES_OPTION) == 0 ||</div>
+<div class="c-code__line">            strcmp(argv[i], PASSES_OPTION_SHORT) == 0) {</div>
+<div class="c-code__line">            <span class="c-code__comment">// Set the number of timed passes over the evidence</span></div>
+<div class="c-code__line">            settings.passes = atoi(argv[i + 1]);</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (settings.passes &lt; 1) {</div>
+<div class="c-code__line">                printf(<span class="c-code__stringliteral">&quot;The passes must be at least 1.\n&quot;</span>);</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">return</span> 1;</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (strcmp(argv[i], PRESET_CONCURRENCY_OPTION) == 0 ||</div>
+<div class="c-code__line">            strcmp(argv[i], PRESET_CONCURRENCY_OPTION_SHORT) == 0) {</div>
+<div class="c-code__line">            <span class="c-code__comment">// Keep the concurrency of the configuration</span></div>
+<div class="c-code__line">            settings.presetConcurrency = <span class="c-code__keyword">true</span>;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (strcmp(argv[i], CACHES_OPTION) == 0 ||</div>
+<div class="c-code__line">            strcmp(argv[i], CACHES_OPTION_SHORT) == 0) {</div>
+<div class="c-code__line">            <span class="c-code__comment">// Set the caches to use</span></div>
+<div class="c-code__line">            settings.caches = argv[i + 1];</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (strcmp(argv[i], HELP_OPTION) == 0 ||</div>
 <div class="c-code__line">            strcmp(argv[i], HELP_OPTION_SHORT) == 0) {</div>
@@ -828,7 +1091,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (strlen(dataFilePath) == 0) {</div>
-<div class="c-code__line">        status = <a id="a90" name="a90"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a>(</div>
+<div class="c-code__line">        status = <a id="a98" name="a98"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a>(</div>
 <div class="c-code__line">            dataDir,</div>
 <div class="c-code__line">            dataFileName,</div>
 <div class="c-code__line">            dataFilePath,</div>
@@ -889,53 +1152,60 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__preprocessor">#endif</span></div>
 <div class="ttc" id="agroup___fifty_one_degrees_common_html_gga1ff9010650f2716970e86c12c5a97a76a61b6045bdab8eb5b4aca237971e00b9d"><div class="ttname"><a href="group___fifty_one_degrees_common.html#gga1ff9010650f2716970e86c12c5a97a76a61b6045bdab8eb5b4aca237971e00b9d">FIFTYONE_DEGREES_EVIDENCE_IGNORE</a></div><div class="ttdeci">@ FIFTYONE_DEGREES_EVIDENCE_IGNORE</div><div class="ttdoc">The evidence is invalid and should be ignored.</div><div class="ttdef"><b>Definition</b> evidence.h:151</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga03649d9fd49fb4489d4728fb70fa404b"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga03649d9fd49fb4489d4728fb70fa404b">ThreadingGetIsThreadSafe</a></div><div class="ttdeci">#define ThreadingGetIsThreadSafe</div><div class="ttdoc">Synonym for fiftyoneDegreesThreadingGetIsThreadSafe function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:334</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga1d1a54ffb69cad881269379cc5af3f35"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga1d1a54ffb69cad881269379cc5af3f35">EXCEPTION_THROW</a></div><div class="ttdeci">#define EXCEPTION_THROW</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_EXCEPTION_THROW macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:434</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga1e09607f004644224a45bc6057393de6"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga1e09607f004644224a45bc6057393de6">CollectionGetIsMemoryOnly</a></div><div class="ttdeci">#define CollectionGetIsMemoryOnly</div><div class="ttdoc">Synonym for fiftyoneDegreesCollectionGetIsMemoryOnly function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:337</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga1e4b0f1f8ac451a8e351175ddff4f9f0"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga1e4b0f1f8ac451a8e351175ddff4f9f0">EvidenceKeyValuePairArray</a></div><div class="ttdeci">fiftyoneDegreesEvidenceKeyValuePairArray EvidenceKeyValuePairArray</div><div class="ttdoc">Synonym for fiftyoneDegreesEvidenceKeyValuePairArray type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:171</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga246be0840df800ead0edc55949e2e92e"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga246be0840df800ead0edc55949e2e92e">PropertiesDefault</a></div><div class="ttdeci">#define PropertiesDefault</div><div class="ttdoc">Synonym for fiftyoneDegreesPropertiesDefault function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:266</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga29a7b1eb8b59c26629548b1de83b473b"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga29a7b1eb8b59c26629548b1de83b473b">EXCEPTION_CREATE</a></div><div class="ttdeci">#define EXCEPTION_CREATE</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_EXCEPTION_CREATE macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:431</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga3002890a18e3a86e4078880f2b00bbad"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga3002890a18e3a86e4078880f2b00bbad">StatusGetMessage</a></div><div class="ttdeci">#define StatusGetMessage</div><div class="ttdoc">Synonym for fiftyoneDegreesStatusGetMessage function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:291</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga324c123e74727b62612edeead5d0f6a6"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga324c123e74727b62612edeead5d0f6a6">EvidenceCreate</a></div><div class="ttdeci">#define EvidenceCreate</div><div class="ttdoc">Synonym for fiftyoneDegreesEvidenceCreate function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:238</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga42842fea605fffe276f1733c41434955"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga42842fea605fffe276f1733c41434955">YamlFileIterateWithLimit</a></div><div class="ttdeci">#define YamlFileIterateWithLimit</div><div class="ttdoc">Synonym for fiftyoneDegreesYamlFileIterateWithLimit.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:384</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga03649d9fd49fb4489d4728fb70fa404b"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga03649d9fd49fb4489d4728fb70fa404b">ThreadingGetIsThreadSafe</a></div><div class="ttdeci">#define ThreadingGetIsThreadSafe</div><div class="ttdoc">Synonym for fiftyoneDegreesThreadingGetIsThreadSafe function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:339</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga1d1a54ffb69cad881269379cc5af3f35"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga1d1a54ffb69cad881269379cc5af3f35">EXCEPTION_THROW</a></div><div class="ttdeci">#define EXCEPTION_THROW</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_EXCEPTION_THROW macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:446</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga1e09607f004644224a45bc6057393de6"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga1e09607f004644224a45bc6057393de6">CollectionGetIsMemoryOnly</a></div><div class="ttdeci">#define CollectionGetIsMemoryOnly</div><div class="ttdoc">Synonym for fiftyoneDegreesCollectionGetIsMemoryOnly function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:342</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga1e4b0f1f8ac451a8e351175ddff4f9f0"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga1e4b0f1f8ac451a8e351175ddff4f9f0">EvidenceKeyValuePairArray</a></div><div class="ttdeci">fiftyoneDegreesEvidenceKeyValuePairArray EvidenceKeyValuePairArray</div><div class="ttdoc">Synonym for fiftyoneDegreesEvidenceKeyValuePairArray type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:172</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga246be0840df800ead0edc55949e2e92e"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga246be0840df800ead0edc55949e2e92e">PropertiesDefault</a></div><div class="ttdeci">#define PropertiesDefault</div><div class="ttdoc">Synonym for fiftyoneDegreesPropertiesDefault function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:268</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga29a7b1eb8b59c26629548b1de83b473b"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga29a7b1eb8b59c26629548b1de83b473b">EXCEPTION_CREATE</a></div><div class="ttdeci">#define EXCEPTION_CREATE</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_EXCEPTION_CREATE macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:443</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga3002890a18e3a86e4078880f2b00bbad"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga3002890a18e3a86e4078880f2b00bbad">StatusGetMessage</a></div><div class="ttdeci">#define StatusGetMessage</div><div class="ttdoc">Synonym for fiftyoneDegreesStatusGetMessage function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:293</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga324c123e74727b62612edeead5d0f6a6"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga324c123e74727b62612edeead5d0f6a6">EvidenceCreate</a></div><div class="ttdeci">#define EvidenceCreate</div><div class="ttdoc">Synonym for fiftyoneDegreesEvidenceCreate function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:240</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga42842fea605fffe276f1733c41434955"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga42842fea605fffe276f1733c41434955">YamlFileIterateWithLimit</a></div><div class="ttdeci">#define YamlFileIterateWithLimit</div><div class="ttdoc">Synonym for fiftyoneDegreesYamlFileIterateWithLimit.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:396</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga4921f9a186627faaebc505056ab7ed6e"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga4921f9a186627faaebc505056ab7ed6e">INSUFFICIENT_MEMORY</a></div><div class="ttdeci">#define INSUFFICIENT_MEMORY</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_STATUS_INSUFFICIENT_MEMORY status code.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:479</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga5564dc6b848f9347ca42b68ad2091cf8"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga5564dc6b848f9347ca42b68ad2091cf8">PropertiesGetRequiredPropertyCount</a></div><div class="ttdeci">#define PropertiesGetRequiredPropertyCount</div><div class="ttdoc">Synonym for fiftyoneDegreesPropertiesGetRequiredPropertyCount function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:327</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga556b4dfadc53ec16baa29a33f59fe666"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga556b4dfadc53ec16baa29a33f59fe666">StatusCode</a></div><div class="ttdeci">fiftyoneDegreesStatusCode StatusCode</div><div class="ttdoc">Synonym for fiftyoneDegreesStatusCode type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:134</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga5ba06bcfd18437e9145833037dd7ecc9"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a></div><div class="ttdeci">#define FileGetPath</div><div class="ttdoc">Synonym for fiftyoneDegreesFileGetPath function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:332</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga7ad7ecba8293409ee538458c83fbd23e"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga7ad7ecba8293409ee538458c83fbd23e">EXCEPTION_OKAY</a></div><div class="ttdeci">#define EXCEPTION_OKAY</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_EXCEPTION_OKAY macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:432</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga8780bffcae60e8593485d281e4914545"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga8780bffcae60e8593485d281e4914545">THREAD_JOIN</a></div><div class="ttdeci">#define THREAD_JOIN</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_THREAD_JOIN macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:445</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga9abc642ddb7d2753731782c82b8afec1"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga9abc642ddb7d2753731782c82b8afec1">String</a></div><div class="ttdeci">fiftyoneDegreesString String</div><div class="ttdoc">Synonym for fiftyoneDegreesString type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:157</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gaa148836f041dfc4fe0f2bd5eedc08dc6"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gaa148836f041dfc4fe0f2bd5eedc08dc6">KeyValuePair</a></div><div class="ttdeci">fiftyoneDegreesKeyValuePair KeyValuePair</div><div class="ttdoc">Synonym for fiftyoneDegreesKeyValuePair type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:191</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gaa519320c3a94b1baf8495a3c45686b01"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gaa519320c3a94b1baf8495a3c45686b01">THREAD_CREATE</a></div><div class="ttdeci">#define THREAD_CREATE</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_THREAD_CREATE macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:442</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga5ba06bcfd18437e9145833037dd7ecc9"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a></div><div class="ttdeci">#define FileGetPath</div><div class="ttdoc">Synonym for fiftyoneDegreesFileGetPath function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:337</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga778f0a000e8f736d47febcfb05586f44"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga778f0a000e8f736d47febcfb05586f44">EXCEPTION_SET</a></div><div class="ttdeci">#define EXCEPTION_SET</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_EXCEPTION_SET macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:441</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga7ad7ecba8293409ee538458c83fbd23e"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga7ad7ecba8293409ee538458c83fbd23e">EXCEPTION_OKAY</a></div><div class="ttdeci">#define EXCEPTION_OKAY</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_EXCEPTION_OKAY macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:444</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga8780bffcae60e8593485d281e4914545"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga8780bffcae60e8593485d281e4914545">THREAD_JOIN</a></div><div class="ttdeci">#define THREAD_JOIN</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_THREAD_JOIN macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:454</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga9abc642ddb7d2753731782c82b8afec1"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga9abc642ddb7d2753731782c82b8afec1">String</a></div><div class="ttdeci">fiftyoneDegreesString String</div><div class="ttdoc">Synonym for fiftyoneDegreesString type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:158</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gaa148836f041dfc4fe0f2bd5eedc08dc6"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gaa148836f041dfc4fe0f2bd5eedc08dc6">KeyValuePair</a></div><div class="ttdeci">fiftyoneDegreesKeyValuePair KeyValuePair</div><div class="ttdoc">Synonym for fiftyoneDegreesKeyValuePair type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:193</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gaa519320c3a94b1baf8495a3c45686b01"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gaa519320c3a94b1baf8495a3c45686b01">THREAD_CREATE</a></div><div class="ttdeci">#define THREAD_CREATE</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_THREAD_CREATE macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:451</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gaa8de545cf076e5f75d25883b56d8ec0a"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gaa8de545cf076e5f75d25883b56d8ec0a">EvidencePrefixMap</a></div><div class="ttdeci">fiftyoneDegreesEvidencePrefixMap EvidencePrefixMap</div><div class="ttdoc">Synonym for fiftyoneDegreesEvidencePrefixMap type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:139</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gaa90cac659d18e8ef6294c7ae337f6b58"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gaa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a></div><div class="ttdeci">#define SUCCESS</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_STATUS_SUCCESS status code.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:469</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gac0d0435d95ea76ed3ee71c0348b3be81"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gac0d0435d95ea76ed3ee71c0348b3be81">EvidenceFree</a></div><div class="ttdeci">#define EvidenceFree</div><div class="ttdoc">Synonym for fiftyoneDegreesEvidenceFree function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:239</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gac35c76ff5632479d21272251b078a1d4"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gac35c76ff5632479d21272251b078a1d4">Malloc</a></div><div class="ttdeci">#define Malloc</div><div class="ttdoc">Synonym for fiftyoneDegreesMalloc function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:261</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gac3b1b7914c03617e93bcc720b3b63535"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gac3b1b7914c03617e93bcc720b3b63535">THREAD_ROUTINE</a></div><div class="ttdeci">#define THREAD_ROUTINE</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_THREAD_ROUTINE macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:446</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gac5094875841e9d95dc972014124ea765"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gac5094875841e9d95dc972014124ea765">ResourceManagerFree</a></div><div class="ttdeci">#define ResourceManagerFree</div><div class="ttdoc">Synonym for fiftyoneDegreesResourceManagerFree function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:308</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gaa90cac659d18e8ef6294c7ae337f6b58"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gaa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a></div><div class="ttdeci">#define SUCCESS</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_STATUS_SUCCESS status code.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:478</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gac0d0435d95ea76ed3ee71c0348b3be81"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gac0d0435d95ea76ed3ee71c0348b3be81">EvidenceFree</a></div><div class="ttdeci">#define EvidenceFree</div><div class="ttdoc">Synonym for fiftyoneDegreesEvidenceFree function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:241</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gac35c76ff5632479d21272251b078a1d4"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gac35c76ff5632479d21272251b078a1d4">Malloc</a></div><div class="ttdeci">#define Malloc</div><div class="ttdoc">Synonym for fiftyoneDegreesMalloc function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:263</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gac3b1b7914c03617e93bcc720b3b63535"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gac3b1b7914c03617e93bcc720b3b63535">THREAD_ROUTINE</a></div><div class="ttdeci">#define THREAD_ROUTINE</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_THREAD_ROUTINE macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:455</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gac5094875841e9d95dc972014124ea765"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gac5094875841e9d95dc972014124ea765">ResourceManagerFree</a></div><div class="ttdeci">#define ResourceManagerFree</div><div class="ttdoc">Synonym for fiftyoneDegreesResourceManagerFree function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:310</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gac9a110952abdd1f1e0eb0c17e1a8b5c8"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gac9a110952abdd1f1e0eb0c17e1a8b5c8">ResourceManager</a></div><div class="ttdeci">fiftyoneDegreesResourceManager ResourceManager</div><div class="ttdoc">Synonym for fiftyoneDegreesResourceManager type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:137</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gad09cd47e11c1d05e201237e0deadd1d2"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gad09cd47e11c1d05e201237e0deadd1d2">THREAD_CLOSE</a></div><div class="ttdeci">#define THREAD_CLOSE</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_THREAD_CLOSE macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:443</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gad09cd47e11c1d05e201237e0deadd1d2"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gad09cd47e11c1d05e201237e0deadd1d2">THREAD_CLOSE</a></div><div class="ttdeci">#define THREAD_CLOSE</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_THREAD_CLOSE macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:452</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gad18b8b685dd62adf468d57ab172019fc"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gad18b8b685dd62adf468d57ab172019fc">PropertiesRequired</a></div><div class="ttdeci">fiftyoneDegreesPropertiesRequired PropertiesRequired</div><div class="ttdoc">Synonym for fiftyoneDegreesPropertiesRequired type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:135</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gae0ecd1fc988dbb64ff0232a001e090bf"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gae0ecd1fc988dbb64ff0232a001e090bf">Free</a></div><div class="ttdeci">#define Free</div><div class="ttdoc">Synonym for fiftyoneDegreesFree function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:263</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gae6cf42265fe26b84cec6c05b498a7b7c"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gae6cf42265fe26b84cec6c05b498a7b7c">THREAD_EXIT</a></div><div class="ttdeci">#define THREAD_EXIT</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_THREAD_EXIT macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:444</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gaf31a20347d083f97ecfffc854487c2fc"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gaf31a20347d083f97ecfffc854487c2fc">EvidenceMapPrefix</a></div><div class="ttdeci">#define EvidenceMapPrefix</div><div class="ttdoc">Synonym for fiftyoneDegreesEvidenceMapPrefix function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:319</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gafd3ee670ff4ed3f29a395abd2f0f3344"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gafd3ee670ff4ed3f29a395abd2f0f3344">FILE_MAX_PATH</a></div><div class="ttdeci">#define FILE_MAX_PATH</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_FILE_MAX_PATH macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:441</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gae0ecd1fc988dbb64ff0232a001e090bf"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gae0ecd1fc988dbb64ff0232a001e090bf">Free</a></div><div class="ttdeci">#define Free</div><div class="ttdoc">Synonym for fiftyoneDegreesFree function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:265</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gae6cf42265fe26b84cec6c05b498a7b7c"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gae6cf42265fe26b84cec6c05b498a7b7c">THREAD_EXIT</a></div><div class="ttdeci">#define THREAD_EXIT</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_THREAD_EXIT macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:453</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gaf31a20347d083f97ecfffc854487c2fc"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gaf31a20347d083f97ecfffc854487c2fc">EvidenceMapPrefix</a></div><div class="ttdeci">#define EvidenceMapPrefix</div><div class="ttdoc">Synonym for fiftyoneDegreesEvidenceMapPrefix function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:321</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gafd3ee670ff4ed3f29a395abd2f0f3344"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gafd3ee670ff4ed3f29a395abd2f0f3344">FILE_MAX_PATH</a></div><div class="ttdeci">#define FILE_MAX_PATH</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_FILE_MAX_PATH macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:450</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_threading_html_ga73811e87d8e1da7f10bc3943591333ec"><div class="ttname"><a href="group___fifty_one_degrees_threading.html#ga73811e87d8e1da7f10bc3943591333ec">FIFTYONE_DEGREES_THREAD</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_THREAD</div><div class="ttdoc">A thread created with the FIFTYONE_DEGREES_THREAD_CREATE macro.</div><div class="ttdef"><b>Definition</b> threading.h:180</div></div>
-<div class="ttc" id="astructevidence_node_html"><div class="ttname"><a href="structevidence_node.html">evidenceNode</a></div><div class="ttdef"><b>Definition</b> Performance.c:114</div></div>
+<div class="ttc" id="astructevidence_node_html"><div class="ttname"><a href="structevidence_node.html">evidenceNode</a></div><div class="ttdef"><b>Definition</b> Performance.c:158</div></div>
+<div class="ttc" id="astructfiftyone_degrees_collection_config_html"><div class="ttname"><a href="structfiftyone_degrees_collection_config.html">fiftyoneDegreesCollectionConfig</a></div><div class="ttdoc">Collection configuration structure which defines how the collection should be created by the create m...</div><div class="ttdef"><b>Definition</b> collection.h:295</div></div>
+<div class="ttc" id="astructfiftyone_degrees_collection_config_html_a27e1d26e19c546720209e64a3c57db60"><div class="ttname"><a href="structfiftyone_degrees_collection_config.html#a27e1d26e19c546720209e64a3c57db60">fiftyoneDegreesCollectionConfig::loaded</a></div><div class="ttdeci">bool loaded</div><div class="ttdoc">Collection is loaded entirely into memory.</div><div class="ttdef"><b>Definition</b> collection.h:296</div></div>
+<div class="ttc" id="astructfiftyone_degrees_collection_config_html_a578801a37ca9f3dd4e4f17684f758a4d"><div class="ttname"><a href="structfiftyone_degrees_collection_config.html#a578801a37ca9f3dd4e4f17684f758a4d">fiftyoneDegreesCollectionConfig::capacity</a></div><div class="ttdeci">uint32_t capacity</div><div class="ttdoc">Number of items the cache should store, 0 for no cache.</div><div class="ttdef"><b>Definition</b> collection.h:297</div></div>
 <div class="ttc" id="astructfiftyone_degrees_collection_config_html_af3dee101ea5b465a0a40f1899487e041"><div class="ttname"><a href="structfiftyone_degrees_collection_config.html#af3dee101ea5b465a0a40f1899487e041">fiftyoneDegreesCollectionConfig::concurrency</a></div><div class="ttdeci">uint16_t concurrency</div><div class="ttdoc">Expected number of concurrent requests, 1 or greater.</div><div class="ttdef"><b>Definition</b> collection.h:299</div></div>
 <div class="ttc" id="astructfiftyone_degrees_config_base_html_ad262b246482922758cce9ac0eec1460c"><div class="ttname"><a href="structfiftyone_degrees_config_base.html#ad262b246482922758cce9ac0eec1460c">fiftyoneDegreesConfigBase::allInMemory</a></div><div class="ttdeci">bool allInMemory</div><div class="ttdoc">True if the data file should be loaded entirely into continuous memory.</div><div class="ttdef"><b>Definition</b> config.h:54</div></div>
-<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_a0d6715d257f229a245ed98af74dc687f"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#a0d6715d257f229a245ed98af74dc687f">fiftyoneDegreesConfigIpi::graph</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig graph</div><div class="ttdoc">Config for each graph.</div><div class="ttdef"><b>Definition</b> ipi.h:264</div></div>
-<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_a2e4fba12e06d21ce1e2177ada9496835"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#a2e4fba12e06d21ce1e2177ada9496835">fiftyoneDegreesConfigIpi::components</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig components</div><div class="ttdoc">Components collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:249</div></div>
-<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_a3b7f39c699808c56fdf5965b9d8a8528"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#a3b7f39c699808c56fdf5965b9d8a8528">fiftyoneDegreesConfigIpi::graphs</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig graphs</div><div class="ttdoc">Graphs config.</div><div class="ttdef"><b>Definition</b> ipi.h:257</div></div>
-<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_a75571c60c9ce8c3fc0fdf24cc222d828"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#a75571c60c9ce8c3fc0fdf24cc222d828">fiftyoneDegreesConfigIpi::profileGroups</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig profileGroups</div><div class="ttdoc">profileGroups collection config</div><div class="ttdef"><b>Definition</b> ipi.h:258</div></div>
-<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_aad06a53290f7ac8a08a393a3f6d9e676"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#aad06a53290f7ac8a08a393a3f6d9e676">fiftyoneDegreesConfigIpi::strings</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig strings</div><div class="ttdoc">Strings collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:248</div></div>
-<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_ab02bc4f15ac896e3f0ac1e8c676ef2fc"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#ab02bc4f15ac896e3f0ac1e8c676ef2fc">fiftyoneDegreesConfigIpi::values</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig values</div><div class="ttdoc">Values collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:254</div></div>
-<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_acc29ddb134dfc526fc8f0c6ef09ce039"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#acc29ddb134dfc526fc8f0c6ef09ce039">fiftyoneDegreesConfigIpi::properties</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig properties</div><div class="ttdoc">Properties collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:252</div></div>
-<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_acf10229723ecf8259873dedc47e27ff0"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#acf10229723ecf8259873dedc47e27ff0">fiftyoneDegreesConfigIpi::profileOffsets</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig profileOffsets</div><div class="ttdoc">ProfileOffsets collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:260</div></div>
-<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_acfd6bebc0a1d46e83b2272fb7f2fe373"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#acfd6bebc0a1d46e83b2272fb7f2fe373">fiftyoneDegreesConfigIpi::maps</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig maps</div><div class="ttdoc">Maps collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:251</div></div>
-<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_add9c6bbb8263507d166535648de4da02"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#add9c6bbb8263507d166535648de4da02">fiftyoneDegreesConfigIpi::b</a></div><div class="ttdeci">fiftyoneDegreesConfigBase b</div><div class="ttdoc">Base configuration.</div><div class="ttdef"><b>Definition</b> ipi.h:247</div></div>
-<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_aeadb0e7ead1a298a085a525530d63571"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#aeadb0e7ead1a298a085a525530d63571">fiftyoneDegreesConfigIpi::profiles</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig profiles</div><div class="ttdoc">Profiles collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:255</div></div>
+<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_a0d6715d257f229a245ed98af74dc687f"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#a0d6715d257f229a245ed98af74dc687f">fiftyoneDegreesConfigIpi::graph</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig graph</div><div class="ttdoc">Config for each graph.</div><div class="ttdef"><b>Definition</b> ipi.h:266</div></div>
+<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_a1158e4bdbdbdb39756266af8d6c85d42"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#a1158e4bdbdbdb39756266af8d6c85d42">fiftyoneDegreesConfigIpi::propertyTypes</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig propertyTypes</div><div class="ttdoc">Property types collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:264</div></div>
+<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_a2e4fba12e06d21ce1e2177ada9496835"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#a2e4fba12e06d21ce1e2177ada9496835">fiftyoneDegreesConfigIpi::components</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig components</div><div class="ttdoc">Components collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:251</div></div>
+<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_a3b7f39c699808c56fdf5965b9d8a8528"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#a3b7f39c699808c56fdf5965b9d8a8528">fiftyoneDegreesConfigIpi::graphs</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig graphs</div><div class="ttdoc">Graphs config.</div><div class="ttdef"><b>Definition</b> ipi.h:259</div></div>
+<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_a75571c60c9ce8c3fc0fdf24cc222d828"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#a75571c60c9ce8c3fc0fdf24cc222d828">fiftyoneDegreesConfigIpi::profileGroups</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig profileGroups</div><div class="ttdoc">profileGroups collection config</div><div class="ttdef"><b>Definition</b> ipi.h:260</div></div>
+<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_aad06a53290f7ac8a08a393a3f6d9e676"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#aad06a53290f7ac8a08a393a3f6d9e676">fiftyoneDegreesConfigIpi::strings</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig strings</div><div class="ttdoc">Strings collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:250</div></div>
+<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_ab02bc4f15ac896e3f0ac1e8c676ef2fc"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#ab02bc4f15ac896e3f0ac1e8c676ef2fc">fiftyoneDegreesConfigIpi::values</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig values</div><div class="ttdoc">Values collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:256</div></div>
+<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_acc29ddb134dfc526fc8f0c6ef09ce039"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#acc29ddb134dfc526fc8f0c6ef09ce039">fiftyoneDegreesConfigIpi::properties</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig properties</div><div class="ttdoc">Properties collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:254</div></div>
+<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_acf10229723ecf8259873dedc47e27ff0"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#acf10229723ecf8259873dedc47e27ff0">fiftyoneDegreesConfigIpi::profileOffsets</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig profileOffsets</div><div class="ttdoc">ProfileOffsets collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:262</div></div>
+<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_acfd6bebc0a1d46e83b2272fb7f2fe373"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#acfd6bebc0a1d46e83b2272fb7f2fe373">fiftyoneDegreesConfigIpi::maps</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig maps</div><div class="ttdoc">Maps collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:253</div></div>
+<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_add9c6bbb8263507d166535648de4da02"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#add9c6bbb8263507d166535648de4da02">fiftyoneDegreesConfigIpi::b</a></div><div class="ttdeci">fiftyoneDegreesConfigBase b</div><div class="ttdoc">Base configuration.</div><div class="ttdef"><b>Definition</b> ipi.h:249</div></div>
+<div class="ttc" id="astructfiftyone_degrees_config_ipi_html_aeadb0e7ead1a298a085a525530d63571"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html#aeadb0e7ead1a298a085a525530d63571">fiftyoneDegreesConfigIpi::profiles</a></div><div class="ttdeci">fiftyoneDegreesCollectionConfig profiles</div><div class="ttdoc">Profiles collection config.</div><div class="ttdef"><b>Definition</b> ipi.h:257</div></div>
 <div class="ttc" id="astructfiftyone_degrees_data_set_base_html_afb6fe7080fd386b7b4233ce5c87ce3c2"><div class="ttname"><a href="structfiftyone_degrees_data_set_base.html#afb6fe7080fd386b7b4233ce5c87ce3c2">fiftyoneDegreesDataSetBase::available</a></div><div class="ttdeci">fiftyoneDegreesPropertiesAvailable * available</div><div class="ttdoc">Available properties.</div><div class="ttdef"><b>Definition</b> dataset.h:129</div></div>
-<div class="ttc" id="astructfiftyone_degrees_data_set_ipi_base_html_a4a43833742ee8d3e83bf325a68fab225"><div class="ttname"><a href="structfiftyone_degrees_data_set_ipi_base.html#a4a43833742ee8d3e83bf325a68fab225">fiftyoneDegreesDataSetIpiBase::b</a></div><div class="ttdeci">fiftyoneDegreesDataSetBase b</div><div class="ttdoc">Base structure members.</div><div class="ttdef"><b>Definition</b> ipi.h:274</div></div>
-<div class="ttc" id="astructfiftyone_degrees_data_set_ipi_html_ad52deae586ffdd6fbb1002891ba2c016"><div class="ttname"><a href="structfiftyone_degrees_data_set_ipi.html#ad52deae586ffdd6fbb1002891ba2c016">fiftyoneDegreesDataSetIpi::b</a></div><div class="ttdeci">fiftyoneDegreesDataSetIpiBase b</div><div class="ttdoc">Base data set.</div><div class="ttdef"><b>Definition</b> ipi.h:286</div></div>
+<div class="ttc" id="astructfiftyone_degrees_data_set_ipi_base_html_a4a43833742ee8d3e83bf325a68fab225"><div class="ttname"><a href="structfiftyone_degrees_data_set_ipi_base.html#a4a43833742ee8d3e83bf325a68fab225">fiftyoneDegreesDataSetIpiBase::b</a></div><div class="ttdeci">fiftyoneDegreesDataSetBase b</div><div class="ttdoc">Base structure members.</div><div class="ttdef"><b>Definition</b> ipi.h:276</div></div>
+<div class="ttc" id="astructfiftyone_degrees_data_set_ipi_html_ad52deae586ffdd6fbb1002891ba2c016"><div class="ttname"><a href="structfiftyone_degrees_data_set_ipi.html#ad52deae586ffdd6fbb1002891ba2c016">fiftyoneDegreesDataSetIpi::b</a></div><div class="ttdeci">fiftyoneDegreesDataSetIpiBase b</div><div class="ttdoc">Base data set.</div><div class="ttdef"><b>Definition</b> ipi.h:288</div></div>
 <div class="ttc" id="astructfiftyone_degrees_evidence_key_value_pair_array_html_a2a35c458ed1310319f88e03a132bade5"><div class="ttname"><a href="structfiftyone_degrees_evidence_key_value_pair_array.html#a2a35c458ed1310319f88e03a132bade5">fiftyoneDegreesEvidenceKeyValuePairArray::items</a></div><div class="ttdeci">fiftyoneDegreesEvidenceKeyValuePair * items</div><div class="ttdoc">Pointer to the first item.</div><div class="ttdef"><b>Definition</b> evidence.h:195</div></div>
 <div class="ttc" id="astructfiftyone_degrees_evidence_key_value_pair_array_html_a5e057456d8a3fb66e79a8fd905d0d0cf"><div class="ttname"><a href="structfiftyone_degrees_evidence_key_value_pair_array.html#a5e057456d8a3fb66e79a8fd905d0d0cf">fiftyoneDegreesEvidenceKeyValuePairArray::count</a></div><div class="ttdeci">uint32_t count</div><div class="ttdoc">Number of used items.</div><div class="ttdef"><b>Definition</b> evidence.h:195</div></div>
 <div class="ttc" id="astructfiftyone_degrees_evidence_key_value_pair_array_html_aa06e49e6cebbd4ff52efd5da07dc6d0b"><div class="ttname"><a href="structfiftyone_degrees_evidence_key_value_pair_array.html#aa06e49e6cebbd4ff52efd5da07dc6d0b">fiftyoneDegreesEvidenceKeyValuePairArray::capacity</a></div><div class="ttdeci">uint32_t capacity</div><div class="ttdoc">Number of available items.</div><div class="ttdef"><b>Definition</b> evidence.h:195</div></div>
@@ -946,22 +1216,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="ttc" id="astructfiftyone_degrees_evidence_key_value_pair_html_aa1a97f0df5d9b2af8d8df3374b599503"><div class="ttname"><a href="structfiftyone_degrees_evidence_key_value_pair.html#aa1a97f0df5d9b2af8d8df3374b599503">fiftyoneDegreesEvidenceKeyValuePair::parsedValue</a></div><div class="ttdeci">const void * parsedValue</div><div class="ttdoc">parsed value which may not be a string</div><div class="ttdef"><b>Definition</b> evidence.h:168</div></div>
 <div class="ttc" id="astructfiftyone_degrees_evidence_prefix_map_html_a8cb7654e0cd2014834d7da1a9217a10d"><div class="ttname"><a href="structfiftyone_degrees_evidence_prefix_map.html#a8cb7654e0cd2014834d7da1a9217a10d">fiftyoneDegreesEvidencePrefixMap::prefixEnum</a></div><div class="ttdeci">fiftyoneDegreesEvidencePrefix prefixEnum</div><div class="ttdoc">Enum value of prefix name.</div><div class="ttdef"><b>Definition</b> evidence.h:159</div></div>
 <div class="ttc" id="astructfiftyone_degrees_evidence_prefix_map_html_ab97e3de2bca265436f4552ecae6d6c28"><div class="ttname"><a href="structfiftyone_degrees_evidence_prefix_map.html#ab97e3de2bca265436f4552ecae6d6c28">fiftyoneDegreesEvidencePrefixMap::prefixLength</a></div><div class="ttdeci">size_t prefixLength</div><div class="ttdoc">Length of the prefix string.</div><div class="ttdef"><b>Definition</b> evidence.h:158</div></div>
-<div class="ttc" id="astructfiftyone_degrees_example_parameters_html_a26932e9c06e83c766c2ee7b75926ef82"><div class="ttname"><a href="structfiftyone_degrees_example_parameters.html#a26932e9c06e83c766c2ee7b75926ef82">fiftyoneDegreesExampleParameters::numberOfThreads</a></div><div class="ttdeci">uint16_t numberOfThreads</div><div class="ttdoc">Concurrent threads.</div><div class="ttdef"><b>Definition</b> ExampleBase.h:68</div></div>
-<div class="ttc" id="astructfiftyone_degrees_example_parameters_html_a6644541bf2630cf197db777e96f4dddb"><div class="ttname"><a href="structfiftyone_degrees_example_parameters.html#a6644541bf2630cf197db777e96f4dddb">fiftyoneDegreesExampleParameters::resultsOutput</a></div><div class="ttdeci">FILE * resultsOutput</div><div class="ttdoc">Output target for any results.</div><div class="ttdef"><b>Definition</b> ExampleBase.h:71</div></div>
-<div class="ttc" id="astructfiftyone_degrees_example_parameters_html_a7f93c24e8a094f0d9de9b4295c29ef89"><div class="ttname"><a href="structfiftyone_degrees_example_parameters.html#a7f93c24e8a094f0d9de9b4295c29ef89">fiftyoneDegreesExampleParameters::output</a></div><div class="ttdeci">FILE * output</div><div class="ttdoc">Output target for the example.</div><div class="ttdef"><b>Definition</b> ExampleBase.h:70</div></div>
-<div class="ttc" id="astructfiftyone_degrees_example_parameters_html_a86cc35ab72ff85b0c7bc52ff680837cf"><div class="ttname"><a href="structfiftyone_degrees_example_parameters.html#a86cc35ab72ff85b0c7bc52ff680837cf">fiftyoneDegreesExampleParameters::iterations</a></div><div class="ttdeci">int iterations</div><div class="ttdoc">Count of evidence per thread.</div><div class="ttdef"><b>Definition</b> ExampleBase.h:69</div></div>
-<div class="ttc" id="astructfiftyone_degrees_example_parameters_html_ab2d868e1e931ff57111d440c26a05986"><div class="ttname"><a href="structfiftyone_degrees_example_parameters.html#ab2d868e1e931ff57111d440c26a05986">fiftyoneDegreesExampleParameters::dataFilePath</a></div><div class="ttdeci">char * dataFilePath</div><div class="ttdoc">Path to a data file.</div><div class="ttdef"><b>Definition</b> ExampleBase.h:63</div></div>
-<div class="ttc" id="astructfiftyone_degrees_example_parameters_html_ae5376e16c94cddcc504c02ebb20c1d9c"><div class="ttname"><a href="structfiftyone_degrees_example_parameters.html#ae5376e16c94cddcc504c02ebb20c1d9c">fiftyoneDegreesExampleParameters::evidenceFilePath</a></div><div class="ttdeci">char * evidenceFilePath</div><div class="ttdoc">Path to a evidence file.</div><div class="ttdef"><b>Definition</b> ExampleBase.h:64</div></div>
+<div class="ttc" id="astructfiftyone_degrees_example_parameters_html_a26932e9c06e83c766c2ee7b75926ef82"><div class="ttname"><a href="structfiftyone_degrees_example_parameters.html#a26932e9c06e83c766c2ee7b75926ef82">fiftyoneDegreesExampleParameters::numberOfThreads</a></div><div class="ttdeci">uint16_t numberOfThreads</div><div class="ttdoc">Concurrent threads.</div><div class="ttdef"><b>Definition</b> ExampleBase.h:73</div></div>
+<div class="ttc" id="astructfiftyone_degrees_example_parameters_html_a6644541bf2630cf197db777e96f4dddb"><div class="ttname"><a href="structfiftyone_degrees_example_parameters.html#a6644541bf2630cf197db777e96f4dddb">fiftyoneDegreesExampleParameters::resultsOutput</a></div><div class="ttdeci">FILE * resultsOutput</div><div class="ttdoc">Output target for any results.</div><div class="ttdef"><b>Definition</b> ExampleBase.h:76</div></div>
+<div class="ttc" id="astructfiftyone_degrees_example_parameters_html_a7f93c24e8a094f0d9de9b4295c29ef89"><div class="ttname"><a href="structfiftyone_degrees_example_parameters.html#a7f93c24e8a094f0d9de9b4295c29ef89">fiftyoneDegreesExampleParameters::output</a></div><div class="ttdeci">FILE * output</div><div class="ttdoc">Output target for the example.</div><div class="ttdef"><b>Definition</b> ExampleBase.h:75</div></div>
+<div class="ttc" id="astructfiftyone_degrees_example_parameters_html_a86cc35ab72ff85b0c7bc52ff680837cf"><div class="ttname"><a href="structfiftyone_degrees_example_parameters.html#a86cc35ab72ff85b0c7bc52ff680837cf">fiftyoneDegreesExampleParameters::iterations</a></div><div class="ttdeci">int iterations</div><div class="ttdoc">Count of evidence per thread.</div><div class="ttdef"><b>Definition</b> ExampleBase.h:74</div></div>
+<div class="ttc" id="astructfiftyone_degrees_example_parameters_html_ab2d868e1e931ff57111d440c26a05986"><div class="ttname"><a href="structfiftyone_degrees_example_parameters.html#ab2d868e1e931ff57111d440c26a05986">fiftyoneDegreesExampleParameters::dataFilePath</a></div><div class="ttdeci">char * dataFilePath</div><div class="ttdoc">Path to a data file.</div><div class="ttdef"><b>Definition</b> ExampleBase.h:68</div></div>
+<div class="ttc" id="astructfiftyone_degrees_example_parameters_html_ae5376e16c94cddcc504c02ebb20c1d9c"><div class="ttname"><a href="structfiftyone_degrees_example_parameters.html#ae5376e16c94cddcc504c02ebb20c1d9c">fiftyoneDegreesExampleParameters::evidenceFilePath</a></div><div class="ttdeci">char * evidenceFilePath</div><div class="ttdoc">Path to a evidence file.</div><div class="ttdef"><b>Definition</b> ExampleBase.h:69</div></div>
 <div class="ttc" id="astructfiftyone_degrees_key_value_pair_html_a05d2d95e26d4da54515813aaf42c32a2"><div class="ttname"><a href="structfiftyone_degrees_key_value_pair.html#a05d2d95e26d4da54515813aaf42c32a2">fiftyoneDegreesKeyValuePair::keyLength</a></div><div class="ttdeci">size_t keyLength</div><div class="ttdoc">number of characters in key</div><div class="ttdef"><b>Definition</b> pair.h:35</div></div>
 <div class="ttc" id="astructfiftyone_degrees_key_value_pair_html_a46640c5ce3f89ad32686f1b86562b757"><div class="ttname"><a href="structfiftyone_degrees_key_value_pair.html#a46640c5ce3f89ad32686f1b86562b757">fiftyoneDegreesKeyValuePair::key</a></div><div class="ttdeci">const char * key</div><div class="ttdoc">pointer to the key string</div><div class="ttdef"><b>Definition</b> pair.h:34</div></div>
 <div class="ttc" id="astructfiftyone_degrees_key_value_pair_html_a51707019e68e09f713d963e02d1f4578"><div class="ttname"><a href="structfiftyone_degrees_key_value_pair.html#a51707019e68e09f713d963e02d1f4578">fiftyoneDegreesKeyValuePair::value</a></div><div class="ttdeci">const char * value</div><div class="ttdoc">pointer to the value string</div><div class="ttdef"><b>Definition</b> pair.h:36</div></div>
 <div class="ttc" id="astructfiftyone_degrees_key_value_pair_html_ab1625b8fdbd007a8bd8839fd1a8b6e3f"><div class="ttname"><a href="structfiftyone_degrees_key_value_pair.html#ab1625b8fdbd007a8bd8839fd1a8b6e3f">fiftyoneDegreesKeyValuePair::valueLength</a></div><div class="ttdeci">size_t valueLength</div><div class="ttdoc">number of characters in value</div><div class="ttdef"><b>Definition</b> pair.h:37</div></div>
-<div class="ttc" id="astructfiftyone_degrees_properties_required_html_a7044785e8c67e2d208ba1010ec355d5c"><div class="ttname"><a href="structfiftyone_degrees_properties_required.html#a7044785e8c67e2d208ba1010ec355d5c">fiftyoneDegreesPropertiesRequired::string</a></div><div class="ttdeci">const char * string</div><div class="ttdoc">Separated list of required properties or NULL if all properties are required.</div><div class="ttdef"><b>Definition</b> properties.h:200</div></div>
-<div class="ttc" id="astructfiftyone_degrees_property_available_array_html_a931e016a455f0ace924c2df65db6a54e"><div class="ttname"><a href="structfiftyone_degrees_property_available_array.html#a931e016a455f0ace924c2df65db6a54e">fiftyoneDegreesPropertyAvailableArray::count</a></div><div class="ttdeci">uint32_t count</div><div class="ttdoc">Number of used items.</div><div class="ttdef"><b>Definition</b> properties.h:181</div></div>
-<div class="ttc" id="astructperformance_config_html"><div class="ttname"><a href="structperformance_config.html">performanceConfig</a></div><div class="ttdoc">Configuration to use when building the dataset for benchmarking.</div><div class="ttdef"><b>Definition</b> Performance.c:84</div></div>
+<div class="ttc" id="astructfiftyone_degrees_properties_required_html_a7044785e8c67e2d208ba1010ec355d5c"><div class="ttname"><a href="structfiftyone_degrees_properties_required.html#a7044785e8c67e2d208ba1010ec355d5c">fiftyoneDegreesPropertiesRequired::string</a></div><div class="ttdeci">const char * string</div><div class="ttdoc">Separated list of required properties or NULL if all properties are required.</div><div class="ttdef"><b>Definition</b> properties.h:234</div></div>
+<div class="ttc" id="astructperformance_config_html"><div class="ttname"><a href="structperformance_config.html">performanceConfig</a></div><div class="ttdoc">Configuration to use when building the dataset for benchmarking.</div><div class="ttdef"><b>Definition</b> Performance.c:89</div></div>
+<div class="ttc" id="astructperformance_settings_html"><div class="ttname"><a href="structperformance_settings.html">performanceSettings</a></div><div class="ttdoc">Choices the command line can make.</div><div class="ttdef"><b>Definition</b> Performance.c:115</div></div>
 <div class="ttc" id="astructperformance_state_html"><div class="ttname"><a href="structperformance_state.html">performanceState</a></div><div class="ttdoc">Shared performance state.</div><div class="ttdef"><b>Definition</b> PerfIpi.c:114</div></div>
-<div class="ttc" id="astructshared_string_node_html"><div class="ttname"><a href="structshared_string_node.html">sharedStringNode</a></div><div class="ttdef"><b>Definition</b> Performance.c:125</div></div>
-<div class="ttc" id="astructthread_state_html"><div class="ttname"><a href="structthread_state.html">threadState</a></div><div class="ttdoc">State specific to a single thread.</div><div class="ttdef"><b>Definition</b> Performance.c:139</div></div>
+<div class="ttc" id="astructshared_string_node_html"><div class="ttname"><a href="structshared_string_node.html">sharedStringNode</a></div><div class="ttdef"><b>Definition</b> Performance.c:169</div></div>
+<div class="ttc" id="astructthread_state_html"><div class="ttname"><a href="structthread_state.html">threadState</a></div><div class="ttdoc">State specific to a single thread.</div><div class="ttdef"><b>Definition</b> Performance.c:183</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

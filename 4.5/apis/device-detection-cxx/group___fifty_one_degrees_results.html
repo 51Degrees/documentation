@@ -70,7 +70,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <div class="textblock"><p>Structure returned by an engine's process method(s), containing values. </p>
 <h2>Introduction</h2>
 <p>Results are the structure returned by an engine's process method(s) and contains the values for the properties in the engine. The base structure contains only the essential element of a data set, which is needed to return values. Any engine can extend this structure to add any additional elements which may be needed to format or return values.</p>
-<p>The data set pointer is a managed resource, meaning that while the results exist, the data set will not be freed by the resource manager. This ensures that values contained in the data set used for processing can always be returned. </p>
+<p>The data set pointer is a managed resource, meaning that while the results exist, the data set will not be freed by the resource manager. This ensures that values contained in the data set used for processing can always be returned.</p>
+<h2>First read</h2>
+<p>When the caller named the properties the data set was created with, populating the results walks the graph of each component they answer for, as <a class="el" href="#gae65f316d82058c98fd6bf2fa77ec7627" title="Returns true if populating the results walks the graph of each component they answer for,...">fiftyoneDegreesResultsWalkWhenPopulated</a> decides, and the call that populates them reports a walk that fails. Otherwise populating the results walks no graph. Each component the results answer for is marked pending, and the first read of one of its properties walks the component's graph against the data set the results hold. A component is walked at most once each time the results are populated, so a walk that fails is not repeated, and the component's properties then read as if it had no profile. Anything that depends on every component, such as a value made from all of them or the items of the results read directly, needs <a class="el" href="#ga177732d595216d311871951cf3a2856d" title="Walks every pending component in component order, stopping at the first walk that fails.">fiftyoneDegreesResultsEvaluateAll</a> first, which walks nothing when the results walked every graph as they were populated.</p>
+<h2>Overrides</h2>
+<p>Results can hold values from the evidence that override the values of properties. A read looks for one with <a class="el" href="#gaf8e7e6def01d1fb25f84731ce0df9e80" title="Adds the override values the results hold for the property to the list.">fiftyoneDegreesResultsGetOverrideValues</a> before it walks the property's component, so a property with an override value is read without walking the graph, and a component whose properties are only read from overrides is never walked.</p>
+<h2>Threads</h2>
+<p>A results structure is used by one thread at a time, because reading a value writes into the results, and when no properties were named the first read of a component's property walks the component's graph. Different results can be used on different threads at once, and the resource manager they come from can be shared, unless the library is compiled with FIFTYONE_DEGREES_NO_THREADING. </p>
 </div><h2 class="g-docs__section-heading">
 Collaboration diagram for Results:</h2>
 <div class="dyncontent">
@@ -81,6 +87,20 @@ Collaboration diagram for Results:</h2>
 Structs</h2></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesResultsBase" id="r_fiftyoneDegreesResultsBase"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Base results structure which any processing results should extend.  <a href="structfiftyone_degrees_results_base.html#details">More...</a><br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-define-members" class="g-docs__section-heading"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="c-table__row memitem:ga3943d23da321175c74b48ecf27493359" id="r_ga3943d23da321175c74b48ecf27493359"><td class="c-table__cell"><a id="ga3943d23da321175c74b48ecf27493359" name="ga3943d23da321175c74b48ecf27493359"></a>
+#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_RESULTS_PENDING_WORDS</b>&#160;&#160;&#160;8</td></tr>
+<tr class="c-table__row memdesc:ga3943d23da321175c74b48ecf27493359"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of 32 bit words holding one bit for each possible component index. <br /></td></tr>
+<tr class="c-table__row memitem:gae48d840aa24f1617bc76eb44369eb8fa" id="r_gae48d840aa24f1617bc76eb44369eb8fa"><td class="c-table__cell"><a id="gae48d840aa24f1617bc76eb44369eb8fa" name="gae48d840aa24f1617bc76eb44369eb8fa"></a>
+#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_RESULTS_INLINE</b>&#160;&#160;&#160;static inline</td></tr>
+<tr class="c-table__row memdesc:gae48d840aa24f1617bc76eb44369eb8fa"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Marks a function defined in this header, so that it adds no name to the libraries. <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-typedef-members" class="g-docs__section-heading"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="c-table__row memitem:gac5fedeeb80ccbb0693c80137031f6ce0" id="r_gac5fedeeb80ccbb0693c80137031f6ce0"><td class="c-table__cell">typedef&#160;void(*&#160;</td><td class="c-table__cell"><a class="el" href="#gac5fedeeb80ccbb0693c80137031f6ce0">fiftyoneDegreesResultsEvaluateMethod</a>) (struct fiftyone_degrees_results_base_t *results, <a class="el" href="group___fifty_one_degrees_data.html#ga0c8186d9b9b7880309c27230bbb5e69d">byte</a> componentIndex, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:gac5fedeeb80ccbb0693c80137031f6ce0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Walks the graph of one component for the results, setting what a read of the component's properties needs.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-enum-members" class="g-docs__section-heading"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -104,7 +124,50 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:gabad0157f7412fb2cbaf2351e09f10efa" id="r_gabad0157f7412fb2cbaf2351e09f10efa"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#gabad0157f7412fb2cbaf2351e09f10efa">fiftyoneDegreesResultsInit</a> (<a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> *results, void *dataSet)</td></tr>
 <tr class="c-table__row memdesc:gabad0157f7412fb2cbaf2351e09f10efa"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialise a set of results by setting the data set they are associated with.  <br /></td></tr>
+<tr class="c-table__row memitem:ga667907955d15fc85f935cccf4f9bf989" id="r_ga667907955d15fc85f935cccf4f9bf989"><td class="c-table__cell"><a class="el" href="#gae48d840aa24f1617bc76eb44369eb8fa">FIFTYONE_DEGREES_RESULTS_INLINE</a>&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ga667907955d15fc85f935cccf4f9bf989">fiftyoneDegreesResultsPendingClear</a> (<a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> *results)</td></tr>
+<tr class="c-table__row memdesc:ga667907955d15fc85f935cccf4f9bf989"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Marks every component as walked, before the results are populated again.  <br /></td></tr>
+<tr class="c-table__row memitem:gaf6fc3b4d6ee0436a1735d042f2ef3e82" id="r_gaf6fc3b4d6ee0436a1735d042f2ef3e82"><td class="c-table__cell"><a class="el" href="#gae48d840aa24f1617bc76eb44369eb8fa">FIFTYONE_DEGREES_RESULTS_INLINE</a>&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#gaf6fc3b4d6ee0436a1735d042f2ef3e82">fiftyoneDegreesResultsPendingSet</a> (<a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> *results, <a class="el" href="group___fifty_one_degrees_data.html#ga0c8186d9b9b7880309c27230bbb5e69d">byte</a> componentIndex)</td></tr>
+<tr class="c-table__row memdesc:gaf6fc3b4d6ee0436a1735d042f2ef3e82"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Marks the component as waiting for the first read of one of its properties.  <br /></td></tr>
+<tr class="c-table__row memitem:gae65f316d82058c98fd6bf2fa77ec7627" id="r_gae65f316d82058c98fd6bf2fa77ec7627"><td class="c-table__cell"><a class="el" href="#gae48d840aa24f1617bc76eb44369eb8fa">FIFTYONE_DEGREES_RESULTS_INLINE</a>&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#gae65f316d82058c98fd6bf2fa77ec7627">fiftyoneDegreesResultsWalkWhenPopulated</a> (const <a class="el" href="structfiftyone_degrees_data_set_base.html">fiftyoneDegreesDataSetBase</a> *dataSet)</td></tr>
+<tr class="c-table__row memdesc:gae65f316d82058c98fd6bf2fa77ec7627"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns true if populating the results walks the graph of each component they answer for, rather than leaving each walk to the first read of one of the component's properties.  <br /></td></tr>
+<tr class="c-table__row memitem:ga035933e5899e5047fec508d4f05bd34b" id="r_ga035933e5899e5047fec508d4f05bd34b"><td class="c-table__cell"><a class="el" href="#gae48d840aa24f1617bc76eb44369eb8fa">FIFTYONE_DEGREES_RESULTS_INLINE</a>&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ga035933e5899e5047fec508d4f05bd34b">fiftyoneDegreesResultsEvaluate</a> (<a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> *results, <a class="el" href="group___fifty_one_degrees_data.html#ga0c8186d9b9b7880309c27230bbb5e69d">byte</a> componentIndex, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga035933e5899e5047fec508d4f05bd34b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Walks the component's graph if it is pending, and marks it walked whether or not the walk succeeds, so a failed walk is not repeated.  <br /></td></tr>
+<tr class="c-table__row memitem:ga177732d595216d311871951cf3a2856d" id="r_ga177732d595216d311871951cf3a2856d"><td class="c-table__cell"><a class="el" href="#gae48d840aa24f1617bc76eb44369eb8fa">FIFTYONE_DEGREES_RESULTS_INLINE</a>&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ga177732d595216d311871951cf3a2856d">fiftyoneDegreesResultsEvaluateAll</a> (<a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> *results, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga177732d595216d311871951cf3a2856d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Walks every pending component in component order, stopping at the first walk that fails.  <br /></td></tr>
+<tr class="c-table__row memitem:ga98b4d7236d360ac1102566181801b0de" id="r_ga98b4d7236d360ac1102566181801b0de"><td class="c-table__cell"><a class="el" href="#gae48d840aa24f1617bc76eb44369eb8fa">FIFTYONE_DEGREES_RESULTS_INLINE</a>&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga98b4d7236d360ac1102566181801b0de">fiftyoneDegreesResultsHasOverrideValue</a> (<a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> *results, uint32_t availableIndex)</td></tr>
+<tr class="c-table__row memdesc:ga98b4d7236d360ac1102566181801b0de"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns true if the results hold an override value for the property, so that a read can answer without walking the property's component.  <br /></td></tr>
+<tr class="c-table__row memitem:gaf8e7e6def01d1fb25f84731ce0df9e80" id="r_gaf8e7e6def01d1fb25f84731ce0df9e80"><td class="c-table__cell"><a class="el" href="#gae48d840aa24f1617bc76eb44369eb8fa">FIFTYONE_DEGREES_RESULTS_INLINE</a>&#160;uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#gaf8e7e6def01d1fb25f84731ce0df9e80">fiftyoneDegreesResultsGetOverrideValues</a> (<a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> *results, uint32_t availableIndex, <a class="el" href="structfiftyone_degrees_list.html">fiftyoneDegreesList</a> *values)</td></tr>
+<tr class="c-table__row memdesc:gaf8e7e6def01d1fb25f84731ce0df9e80"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Adds the override values the results hold for the property to the list.  <br /></td></tr>
 </table>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="g-docs__section-heading">Typedef Documentation</h2>
+<a id="gac5fedeeb80ccbb0693c80137031f6ce0" name="gac5fedeeb80ccbb0693c80137031f6ce0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gac5fedeeb80ccbb0693c80137031f6ce0">&#9670;&#160;</a></span>fiftyoneDegreesResultsEvaluateMethod</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">typedef void(* fiftyoneDegreesResultsEvaluateMethod) (struct fiftyone_degrees_results_base_t *results, <a class="el" href="group___fifty_one_degrees_data.html#ga0c8186d9b9b7880309c27230bbb5e69d">byte</a> componentIndex, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Walks the graph of one component for the results, setting what a read of the component's properties needs. </p>
+<p>Each engine supplies its own walk. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">results</td><td>pointer to the results to walk the component for </td></tr>
+    <tr><td class="paramname">componentIndex</td><td>index of the component in the data set </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="g-docs__section-heading">Enumeration Type Documentation</h2>
 <a id="gaef347b638495391733e5962b576321e6" name="gaef347b638495391733e5962b576321e6"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaef347b638495391733e5962b576321e6">&#9670;&#160;</a></span>fiftyoneDegreesResultsNoValueReason</h2>
@@ -154,6 +217,158 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
+<a id="ga035933e5899e5047fec508d4f05bd34b" name="ga035933e5899e5047fec508d4f05bd34b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga035933e5899e5047fec508d4f05bd34b">&#9670;&#160;</a></span>fiftyoneDegreesResultsEvaluate()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#gae48d840aa24f1617bc76eb44369eb8fa">FIFTYONE_DEGREES_RESULTS_INLINE</a> void fiftyoneDegreesResultsEvaluate </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>results</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_data.html#ga0c8186d9b9b7880309c27230bbb5e69d">byte</a></td>          <td class="c-table__cell"><span class="paramname"><em>componentIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Walks the component's graph if it is pending, and marks it walked whether or not the walk succeeds, so a failed walk is not repeated. </p>
+<p>Called before a read of a property of the component. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">results</td><td>pointer to the results </td></tr>
+    <tr><td class="paramname">componentIndex</td><td>index of the component in the data set </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga177732d595216d311871951cf3a2856d" name="ga177732d595216d311871951cf3a2856d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga177732d595216d311871951cf3a2856d">&#9670;&#160;</a></span>fiftyoneDegreesResultsEvaluateAll()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#gae48d840aa24f1617bc76eb44369eb8fa">FIFTYONE_DEGREES_RESULTS_INLINE</a> void fiftyoneDegreesResultsEvaluateAll </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>results</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Walks every pending component in component order, stopping at the first walk that fails. </p>
+<p>Called before anything that depends on every component, such as a value made from all of them, or the items of the results read directly. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">results</td><td>pointer to the results </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8c-example.html#a7">Hash/MatchMetrics.c</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf8e7e6def01d1fb25f84731ce0df9e80" name="gaf8e7e6def01d1fb25f84731ce0df9e80"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaf8e7e6def01d1fb25f84731ce0df9e80">&#9670;&#160;</a></span>fiftyoneDegreesResultsGetOverrideValues()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#gae48d840aa24f1617bc76eb44369eb8fa">FIFTYONE_DEGREES_RESULTS_INLINE</a> uint32_t fiftyoneDegreesResultsGetOverrideValues </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>results</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>availableIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_list.html">fiftyoneDegreesList</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>values</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Adds the override values the results hold for the property to the list. </p>
+<p>Each read calls this before <a class="el" href="#ga035933e5899e5047fec508d4f05bd34b" title="Walks the component&#39;s graph if it is pending, and marks it walked whether or not the walk succeeds,...">fiftyoneDegreesResultsEvaluate</a>, so a property with an override value is read without walking its component. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">results</td><td>pointer to the results to get the values from </td></tr>
+    <tr><td class="paramname">availableIndex</td><td>index of the property in the available properties </td></tr>
+    <tr><td class="paramname">values</td><td>list to add the values to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the number of values added, which is zero if there is no override value for the property </dd></dl>
+
+</div>
+</div>
+<a id="ga98b4d7236d360ac1102566181801b0de" name="ga98b4d7236d360ac1102566181801b0de"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga98b4d7236d360ac1102566181801b0de">&#9670;&#160;</a></span>fiftyoneDegreesResultsHasOverrideValue()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#gae48d840aa24f1617bc76eb44369eb8fa">FIFTYONE_DEGREES_RESULTS_INLINE</a> bool fiftyoneDegreesResultsHasOverrideValue </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>results</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>availableIndex</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Returns true if the results hold an override value for the property, so that a read can answer without walking the property's component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">results</td><td>pointer to the results to check </td></tr>
+    <tr><td class="paramname">availableIndex</td><td>index of the property in the available properties </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if there is an override value for the property </dd></dl>
+
+</div>
+</div>
 <a id="gabad0157f7412fb2cbaf2351e09f10efa" name="gabad0157f7412fb2cbaf2351e09f10efa"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#gabad0157f7412fb2cbaf2351e09f10efa">&#9670;&#160;</a></span>fiftyoneDegreesResultsInit()</h2>
 
@@ -178,7 +393,7 @@ Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Initialise a set of results by setting the data set they are associated with. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>No component is pending, no walk is set and no override values are held. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>pointer to the results to initialise </td></tr>
     <tr><td class="paramname">dataSet</td><td>pointer to the data set which will be using the results </td></tr>
@@ -186,6 +401,99 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">pointer to the initialised results </dd></dl>
+
+</div>
+</div>
+<a id="ga667907955d15fc85f935cccf4f9bf989" name="ga667907955d15fc85f935cccf4f9bf989"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga667907955d15fc85f935cccf4f9bf989">&#9670;&#160;</a></span>fiftyoneDegreesResultsPendingClear()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#gae48d840aa24f1617bc76eb44369eb8fa">FIFTYONE_DEGREES_RESULTS_INLINE</a> void fiftyoneDegreesResultsPendingClear </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>results</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Marks every component as walked, before the results are populated again. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">results</td><td>pointer to the results </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf6fc3b4d6ee0436a1735d042f2ef3e82" name="gaf6fc3b4d6ee0436a1735d042f2ef3e82"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaf6fc3b4d6ee0436a1735d042f2ef3e82">&#9670;&#160;</a></span>fiftyoneDegreesResultsPendingSet()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#gae48d840aa24f1617bc76eb44369eb8fa">FIFTYONE_DEGREES_RESULTS_INLINE</a> void fiftyoneDegreesResultsPendingSet </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_results_base.html">fiftyoneDegreesResultsBase</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>results</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_data.html#ga0c8186d9b9b7880309c27230bbb5e69d">byte</a></td>          <td class="c-table__cell"><span class="paramname"><em>componentIndex</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Marks the component as waiting for the first read of one of its properties. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">results</td><td>pointer to the results </td></tr>
+    <tr><td class="paramname">componentIndex</td><td>index of the component in the data set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gae65f316d82058c98fd6bf2fa77ec7627" name="gae65f316d82058c98fd6bf2fa77ec7627"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gae65f316d82058c98fd6bf2fa77ec7627">&#9670;&#160;</a></span>fiftyoneDegreesResultsWalkWhenPopulated()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#gae48d840aa24f1617bc76eb44369eb8fa">FIFTYONE_DEGREES_RESULTS_INLINE</a> bool fiftyoneDegreesResultsWalkWhenPopulated </td>
+          <td>(</td>
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_data_set_base.html">fiftyoneDegreesDataSetBase</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Returns true if populating the results walks the graph of each component they answer for, rather than leaving each walk to the first read of one of the component's properties. </p>
+<p>That is when the caller named the properties the data set was created with, as every graph the results need is then known before anything is read. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>pointer to the data set the results are populated from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if populating the results walks the graphs </dd></dl>
 
 </div>
 </div>

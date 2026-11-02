@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi__weighted_
 </div><div class="textblock"><h2 class="g-docs__section-heading">
 Include dependency graph for ipi_weighted_results.c:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="ipi__weighted__results_8c__incl.svg" width="6030" height="1356"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="ipi__weighted__results_8c__incl.svg" width="6040" height="1356"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-nested-classes" class="g-docs__section-heading"><a id="nested-classes" name="nested-classes"></a>
@@ -287,10 +287,10 @@ Variables</h2></td></tr>
 
 <p>Gets a collection of weighted values from IP Intelligence results. </p>
 <p>This function extracts weighted values for specified properties from the results and returns them as a collection.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>When no properties were named, the first read of a property of a component walks the component's graph for the results. If the walk fails the exception is set, and the component is not walked again until the results are next populated, so later reads of its properties read as if it had no profile for the address. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>Pointer to the IP Intelligence results </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexes</td><td>Array of required property indexes to extract </td></tr>
+    <tr><td class="paramname">requiredPropertyIndexes</td><td>Array of required property indexes to extract, each the index of a property in the names given when the data set was created, as <a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#gaebab895558ae189ddd92949cb5c7a5e5" title="Populates the list of values in the results instance with value structure instances associated with t...">fiftyoneDegreesResultsIpiGetValues</a> takes. An index with no property in the data set gives no values. NULL extracts every index </td></tr>
     <tr><td class="paramname">requiredPropertyIndexesLength</td><td>Number of indexes in the requiredPropertyIndexes array </td></tr>
     <tr><td class="paramname">tempData</td><td>Temporary data structure for string conversion operations </td></tr>
     <tr><td class="paramname">exception</td><td>Pointer to an exception structure for error handling </td></tr>
@@ -330,7 +330,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_ip_intelligence_2_getting_started_8c-example.html#a31">IpIntelligence/GettingStarted.c</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_ip_intelligence_2_getting_started_8c-example.html#a32">IpIntelligence/GettingStarted.c</a>.</dd>
 </dl>
 
 </div>

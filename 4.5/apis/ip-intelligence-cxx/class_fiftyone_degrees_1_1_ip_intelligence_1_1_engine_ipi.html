@@ -110,13 +110,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fiftyone
 <div class="c-code__line"><span class="c-code__comment">// Delete the results and the engine</span></div>
 <div class="c-code__line"><span class="c-code__keyword">delete</span> results;</div>
 <div class="c-code__line"><span class="c-code__keyword">delete</span> engine;</div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_a4f72773e876f66ff0365214ab3c30dbb"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a4f72773e876f66ff0365214ab3c30dbb">FiftyoneDegrees::Common::EngineBase::config</a></div><div class="ttdeci">ConfigBase * config</div><div class="ttdoc">Pointer to the configuration used to build the engine.</div><div class="ttdef"><b>Definition</b> EngineBase.hpp:261</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_a4f72773e876f66ff0365214ab3c30dbb"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a4f72773e876f66ff0365214ab3c30dbb">FiftyoneDegrees::Common::EngineBase::config</a></div><div class="ttdeci">ConfigBase * config</div><div class="ttdoc">Pointer to the configuration used to build the engine.</div><div class="ttdef"><b>Definition</b> EngineBase.hpp:262</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_required_properties_config_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_required_properties_config.html">FiftyoneDegrees::Common::RequiredPropertiesConfig</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesPropertiesRequired structure.</div><div class="ttdef"><b>Definition</b> RequiredPropertiesConfig.hpp:59</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_config_ipi_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_config_ipi.html">FiftyoneDegrees::IpIntelligence::ConfigIpi</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesConfigIpi configuration structure.</div><div class="ttdef"><b>Definition</b> ConfigIpi.hpp:66</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_engine_ipi_html_a42642d98f79128b18691e1a47def4754"><div class="ttname"><a href="#a42642d98f79128b18691e1a47def4754">FiftyoneDegrees::IpIntelligence::EngineIpi::EngineIpi</a></div><div class="ttdeci">EngineIpi(const char *fileName, ConfigIpi *config, RequiredPropertiesConfig *properties)</div><div class="ttdoc">Construct a new instance of the engine class with the configuration and properties provided.</div><div class="ttdef"><b>Definition</b> EngineIpi.cpp:32</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_engine_ipi_html_aa97146951bce55b27d892bbd20c1bbe5"><div class="ttname"><a href="#aa97146951bce55b27d892bbd20c1bbe5">FiftyoneDegrees::IpIntelligence::EngineIpi::process</a></div><div class="ttdeci">ResultsIpi * process(EvidenceIpi *evidence)</div><div class="ttdoc">Processes the evidence provided and returns the results.</div><div class="ttdef"><b>Definition</b> EngineIpi.cpp:309</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_evidence_ipi_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_evidence_ipi.html">FiftyoneDegrees::IpIntelligence::EvidenceIpi</a></div><div class="ttdoc">IP Intelligence specific evidence class containing evidence to be processed by an IP intelligence eng...</div><div class="ttdef"><b>Definition</b> EvidenceIpi.hpp:63</div></div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html">FiftyoneDegrees::IpIntelligence::ResultsIpi</a></div><div class="ttdoc">Encapsulates the results of an IP Intelligence engine&#39;s processing.</div><div class="ttdef"><b>Definition</b> ResultsIpi.hpp:73</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html">FiftyoneDegrees::IpIntelligence::ResultsIpi</a></div><div class="ttdoc">Encapsulates the results of an IP Intelligence engine&#39;s processing.</div><div class="ttdef"><b>Definition</b> ResultsIpi.hpp:90</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_common_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_common.html">FiftyoneDegrees::Common</a></div><div class="ttdoc">Shared classes.</div><div class="ttdef"><b>Definition</b> Collection.hpp:31</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_ip_intelligence_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_ip_intelligence.html">FiftyoneDegrees::IpIntelligence</a></div><div class="ttdoc">IP intelligence specific classes.</div><div class="ttdef"><b>Definition</b> IpAddress.hpp:29</div></div>
 </div><!-- fragment --> <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_ip_intelligence_2_getting_started_8cpp-example.html#_a2">IpIntelligence/GettingStarted.cpp</a>, <a class="el" href="_ip_intelligence_2_meta_data_8cpp-example.html#_a2">IpIntelligence/MetaData.cpp</a>, and <a class="el" href="_ip_intelligence_2_strongly_typed_8cpp-example.html#_a2">IpIntelligence/StronglyTyped.cpp</a>.</dd>
@@ -150,12 +150,6 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a8097994465207c0ff80dfee62f59b91a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the IP address string provided and returns the results.  <br /></td></tr>
 <tr class="c-table__row memitem:a7b754ee6a0a1db9b716ab1d57a5a8f95" id="r_a7b754ee6a0a1db9b716ab1d57a5a8f95"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html">ResultsIpi</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a7b754ee6a0a1db9b716ab1d57a5a8f95">process</a> (unsigned char ipAddress[], long length, <a class="el" href="group__fiftyone_degrees_ip.html#ga442c961cca3e822fd98ed0e7546eafd5">fiftyoneDegreesIpType</a> type)</td></tr>
 <tr class="c-table__row memdesc:a7b754ee6a0a1db9b716ab1d57a5a8f95"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the raw IP address byte array and returns the results.  <br /></td></tr>
-<tr class="c-table__row memitem:a568c2511a142e4297d2f353291cfa643" id="r_a568c2511a142e4297d2f353291cfa643"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html">ResultsIpi</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a568c2511a142e4297d2f353291cfa643">process</a> (<a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_evidence_ipi.html">EvidenceIpi</a> *evidence, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount)</td></tr>
-<tr class="c-table__row memdesc:a568c2511a142e4297d2f353291cfa643"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the evidence as <a class="el" href="#aa97146951bce55b27d892bbd20c1bbe5" title="Processes the evidence provided and returns the results.">process(EvidenceIpi*)</a> but evaluates only the graphs needed by the required properties whose indexes are supplied.  <br /></td></tr>
-<tr class="c-table__row memitem:ac2489fdc9df2d319c5c3f9865cbcaa8d" id="r_ac2489fdc9df2d319c5c3f9865cbcaa8d"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html">ResultsIpi</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ac2489fdc9df2d319c5c3f9865cbcaa8d">process</a> (const char *ipAddress, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount)</td></tr>
-<tr class="c-table__row memdesc:ac2489fdc9df2d319c5c3f9865cbcaa8d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the IP address string as <a class="el" href="#a8097994465207c0ff80dfee62f59b91a" title="Processes the IP address string provided and returns the results.">process(const char*)</a> but evaluates only the graphs needed by the required properties whose indexes are supplied.  <br /></td></tr>
-<tr class="c-table__row memitem:a4bef517c5e19c930509fc6bc676e7bd9" id="r_a4bef517c5e19c930509fc6bc676e7bd9"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html">ResultsIpi</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a4bef517c5e19c930509fc6bc676e7bd9">process</a> (unsigned char ipAddress[], long length, <a class="el" href="group__fiftyone_degrees_ip.html#ga442c961cca3e822fd98ed0e7546eafd5">fiftyoneDegreesIpType</a> type, const int *requiredPropertyIndexes, int requiredPropertyIndexesCount)</td></tr>
-<tr class="c-table__row memdesc:a4bef517c5e19c930509fc6bc676e7bd9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processes the raw IP address byte array as <a class="el" href="#a7b754ee6a0a1db9b716ab1d57a5a8f95" title="Processes the raw IP address byte array and returns the results.">process(unsigned char[], long, fiftyoneDegreesIpType)</a> but evaluates only the graphs needed by the required properties whose indexes are supplied.  <br /></td></tr>
 <tr id="pub-methods-2" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Common::EngineBase Implementation</h3></td></tr>
 <tr class="c-table__row memitem:a1db21d1aeef2e30b8f5e3f87aa008866" id="r_a1db21d1aeef2e30b8f5e3f87aa008866"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a1db21d1aeef2e30b8f5e3f87aa008866">refreshData</a> () const override</td></tr>
 <tr class="c-table__row memdesc:a1db21d1aeef2e30b8f5e3f87aa008866"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Refresh the data set from the original file location.  <br /></td></tr>
@@ -279,7 +273,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">config</td><td>used to build the engine </td></tr>
-    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results    The data set is constructed from the file provided. </td></tr>
+    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results, or null for every property    The data set is constructed from the file provided. </td></tr>
     <tr><td class="paramname">fileName</td><td>path to the file containing the data file to load </td></tr>
   </table>
   </dd>
@@ -319,7 +313,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">config</td><td>used to build the engine </td></tr>
-    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results    The data set is constructed from the file provided. </td></tr>
+    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results, or null for every property    The data set is constructed from the file provided. </td></tr>
     <tr><td class="paramname">fileName</td><td>path to the file containing the data file to load </td></tr>
   </table>
   </dd>
@@ -364,7 +358,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">config</td><td>used to build the engine </td></tr>
-    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results    The data set is constructed from data stored in memory described by the data and length parameters. </td></tr>
+    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results, or null for every property    The data set is constructed from data stored in memory described by the data and length parameters. </td></tr>
     <tr><td class="paramname">data</td><td>pointer to the memory containing the data set </td></tr>
     <tr><td class="paramname">length</td><td>size of the data in memory </td></tr>
   </table>
@@ -410,7 +404,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">config</td><td>used to build the engine </td></tr>
-    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results    The data set is constructed from data stored in memory described by the data and length parameters. </td></tr>
+    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results, or null for every property    The data set is constructed from data stored in memory described by the data and length parameters. </td></tr>
     <tr><td class="paramname">data</td><td>pointer to the memory containing the data set </td></tr>
     <tr><td class="paramname">length</td><td>size of the data in memory </td></tr>
   </table>
@@ -695,7 +689,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div>
 </div>
 <a id="a8097994465207c0ff80dfee62f59b91a" name="a8097994465207c0ff80dfee62f59b91a"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8097994465207c0ff80dfee62f59b91a">&#9670;&#160;</a></span>process() <span class="c-member__count">[1/6]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8097994465207c0ff80dfee62f59b91a">&#9670;&#160;</a></span>process() <span class="c-member__count">[1/3]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -714,7 +708,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div><div class="c-member__body">
 
 <p>Processes the IP address string provided and returns the results. </p>
-<p>This will auto detect the type of IP being used </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This will auto detect the type of IP being used. With properties named, the graph of each component a named property belongs to is walked here, and otherwise no graph is walked until a property of its component is read. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ipAddress</td><td>the IP address string to process </td></tr>
   </table>
@@ -724,49 +718,8 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 
 </div>
 </div>
-<a id="ac2489fdc9df2d319c5c3f9865cbcaa8d" name="ac2489fdc9df2d319c5c3f9865cbcaa8d"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac2489fdc9df2d319c5c3f9865cbcaa8d">&#9670;&#160;</a></span>process() <span class="c-member__count">[2/6]</span></h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html">IpIntelligence::ResultsIpi</a> * EngineIpi::process </td>
-          <td>(</td>
-          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>ipAddress</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>&#160;)</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Processes the IP address string as <a class="el" href="#a8097994465207c0ff80dfee62f59b91a" title="Processes the IP address string provided and returns the results.">process(const char*)</a> but evaluates only the graphs needed by the required properties whose indexes are supplied. </p>
-<p>See the evidence overload for the rules. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ipAddress</td><td>the IP address string to process </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexes</td><td>the caller will read </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>entries in the array </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a new results instance, owned by the caller </dd></dl>
-
-</div>
-</div>
 <a id="aa97146951bce55b27d892bbd20c1bbe5" name="aa97146951bce55b27d892bbd20c1bbe5"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa97146951bce55b27d892bbd20c1bbe5">&#9670;&#160;</a></span>process() <span class="c-member__count">[3/6]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa97146951bce55b27d892bbd20c1bbe5">&#9670;&#160;</a></span>process() <span class="c-member__count">[2/3]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -785,7 +738,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div><div class="c-member__body">
 
 <p>Processes the evidence provided and returns the results. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>With properties named, the graph of each component a named property belongs to is walked here, and otherwise no graph is walked until a property of its component is read. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">evidence</td><td>to process. The keys in <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#ad3ff1ec4a1598bbc686d26fa0a0f84df" title="Get the list of keys which the engine accepts as evidence.">getKeys()</a> will be the only ones considered by the engine. </td></tr>
   </table>
@@ -797,49 +750,8 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 
 </div>
 </div>
-<a id="a568c2511a142e4297d2f353291cfa643" name="a568c2511a142e4297d2f353291cfa643"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a568c2511a142e4297d2f353291cfa643">&#9670;&#160;</a></span>process() <span class="c-member__count">[4/6]</span></h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html">IpIntelligence::ResultsIpi</a> * EngineIpi::process </td>
-          <td>(</td>
-          <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_evidence_ipi.html">IpIntelligence::EvidenceIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>evidence</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>&#160;)</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Processes the evidence as <a class="el" href="#aa97146951bce55b27d892bbd20c1bbe5" title="Processes the evidence provided and returns the results.">process(EvidenceIpi*)</a> but evaluates only the graphs needed by the required properties whose indexes are supplied. </p>
-<p>NULL or a negative count evaluates every graph. A count of zero evaluates none. A property whose graph was not evaluated has no value with the NULL_PROFILE reason, except that a property which is mandatory with a default value reads as that default. The native mask is 32 bits, so components beyond index 31 are always evaluated. Indexes are positions in <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#aa6ed192265eedcec57b948906b1132b2" title="Get the names of the required properties in required property index order, so position i in the vecto...">getRequiredProperties()</a>, which move when a refresh loads a data file that gains or loses a required property, so look them up again after a refresh. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">evidence</td><td>to process </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexes</td><td>the caller will read </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>entries in the array </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a new results instance, owned by the caller </dd></dl>
-
-</div>
-</div>
 <a id="a7b754ee6a0a1db9b716ab1d57a5a8f95" name="a7b754ee6a0a1db9b716ab1d57a5a8f95"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7b754ee6a0a1db9b716ab1d57a5a8f95">&#9670;&#160;</a></span>process() <span class="c-member__count">[5/6]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7b754ee6a0a1db9b716ab1d57a5a8f95">&#9670;&#160;</a></span>process() <span class="c-member__count">[3/3]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -867,7 +779,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div><div class="c-member__body">
 
 <p>Processes the raw IP address byte array and returns the results. </p>
-<p>This will rely on user input length and IP type to determine the amount of data that it need to process. If the data is provided is smaller than the expected size for the IP type (4 for ipv4 and 16 for ipv6) and incorrect format exception will be thrown. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This will rely on user input length and IP type to determine the amount of data that it need to process. If the data is provided is smaller than the expected size for the IP type (4 for ipv4 and 16 for ipv6) and incorrect format exception will be thrown. With properties named, the graph of each component a named property belongs to is walked here, and otherwise no graph is walked until a property of its component is read. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ipAddress</td><td>the IP address byte array to process </td></tr>
     <tr><td class="paramname">length</td><td>the size of the byte array </td></tr>
@@ -876,59 +788,6 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a new results instance with the value for all requested properties </dd></dl>
-
-</div>
-</div>
-<a id="a4bef517c5e19c930509fc6bc676e7bd9" name="a4bef517c5e19c930509fc6bc676e7bd9"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4bef517c5e19c930509fc6bc676e7bd9">&#9670;&#160;</a></span>process() <span class="c-member__count">[6/6]</span></h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_results_ipi.html">IpIntelligence::ResultsIpi</a> * EngineIpi::process </td>
-          <td>(</td>
-          <td class="c-table__cell">unsigned char</td>          <td class="c-table__cell"><span class="paramname"><em>ipAddress</em></span>[], </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">long</td>          <td class="c-table__cell"><span class="paramname"><em>length</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell"><a class="el" href="group__fiftyone_degrees_ip.html#ga442c961cca3e822fd98ed0e7546eafd5">fiftyoneDegreesIpType</a></td>          <td class="c-table__cell"><span class="paramname"><em>type</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">const int *</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexes</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndexesCount</em></span>&#160;)</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Processes the raw IP address byte array as <a class="el" href="#a7b754ee6a0a1db9b716ab1d57a5a8f95" title="Processes the raw IP address byte array and returns the results.">process(unsigned char[], long, fiftyoneDegreesIpType)</a> but evaluates only the graphs needed by the required properties whose indexes are supplied. </p>
-<p>See the evidence overload for the rules. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ipAddress</td><td>the IP address byte array to process </td></tr>
-    <tr><td class="paramname">length</td><td>the size of the byte array </td></tr>
-    <tr><td class="paramname">type</td><td>of the IP </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexes</td><td>the caller will read </td></tr>
-    <tr><td class="paramname">requiredPropertyIndexesCount</td><td>entries in the array </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a new results instance, owned by the caller </dd></dl>
 
 </div>
 </div>

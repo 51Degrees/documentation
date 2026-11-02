@@ -72,30 +72,33 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fiftyone
 <div class="textblock"><p>Encapsulates the results of an engine's processing. </p>
 <p>The class is constructed using an instance of a C <a class="el" href="structfiftyone_degrees_results_base.html" title="Base results structure which any processing results should extend.">fiftyoneDegreesResultsBase</a> structure which is then referenced to return associated values and metrics. Any memory used by the results is freed by the extending class.</p>
 <p>Values contained in a results instance can be returned as a string, or as a type specified by the method used to fetch the value. For example, the <a class="el" href="#a41bd2ae7d5a52f76e8ccefa01e5c7889" title="Get a boolean representation of the value associated with the required property index.">getValueAsBool(int)</a> method returns a value as a bool instead of a string representation.</p>
-<p>The key used to get the value for a property can be either the name of the property, or the index of the property in the required properties structure.</p>
+<p>The key used to get the value for a property can be either the name of the property, or its required property index, which is the index of the property in the names the engine was created with. A reload does not change it, and a property the data file lacks reads as a property the data set does not have. An engine that named no properties has no required property indexes, so its values are read by name.</p>
+<p>A results instance is used by one thread at a time, because reading a value writes into the results. An engine created naming its properties walks every graph the results need as it processes the evidence, and otherwise the first read of a component's property walks the component's graph. Different results instances can be used on different threads at once, and the engine that created them can be shared, when <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a7bdcd813b923c9a6ec16ad804e10e40f" title="Get whether or not the engine was compiled with thread-safe support.">EngineBase::getIsThreadSafe</a> is true.</p>
 <p>Results instances should only be created by a Engine.</p>
 <h2>Usage Example</h2>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">using namespace </span><a class="code hl_namespace" href="namespace_fiftyone_degrees_1_1_common.html">FiftyoneDegrees::Common</a>;</div>
 <div class="c-code__line"><a class="code hl_function" href="#a6779204e6075f783d11c10cbe6fe3c0c">ResultsBase</a> *results;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// Iterate over all property indexes</span></div>
-<div class="c-code__line"><span class="c-code__keywordflow">for</span> (<span class="c-code__keywordtype">int</span> i = 0; i &lt; results-&gt;<a class="code hl_function" href="#a86ee81bb4516175229911dbd907cc0c3">getAvailableProperties</a>(); i++) {</div>
+<div class="c-code__line"><span class="c-code__comment">// Iterate over the properties the data set has, by name</span></div>
+<div class="c-code__line"><span class="c-code__keywordflow">for</span> (<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">string</span> &amp;name : results-&gt;<a class="code hl_function" href="#acaa859eb54fb68446bc3df073501b326">getProperties</a>()) {</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Get the value for the property as a string</span></div>
-<div class="c-code__line">    <span class="c-code__keywordtype">string</span> value = *results-&gt;<a class="code hl_function" href="#ade7eec002846b4b436e4f34c32d06a80">getValueAsString</a>(i);</div>
+<div class="c-code__line">    <a class="code hl_class" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Value&lt;string&gt;</a> value = results-&gt;<a class="code hl_function" href="#ade7eec002846b4b436e4f34c32d06a80">getValueAsString</a>(name);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Do something with the value</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// ...</span></div>
 <div class="c-code__line">}</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// Or get a value using the name of the property</span></div>
-<div class="c-code__line"><span class="c-code__keywordtype">string</span> value = *results-&gt;<a class="code hl_function" href="#ade7eec002846b4b436e4f34c32d06a80">getValueAsString</a>(<span class="c-code__stringliteral">&quot;name of a property&quot;</span>);</div>
+<div class="c-code__line"><span class="c-code__comment">// Or, for an engine created with the names &quot;IsMobile,BrowserName&quot;,</span></div>
+<div class="c-code__line"><span class="c-code__comment">// get the value of BrowserName by its index in those names</span></div>
+<div class="c-code__line"><span class="c-code__keywordtype">string</span> value = *results-&gt;<a class="code hl_function" href="#ade7eec002846b4b436e4f34c32d06a80">getValueAsString</a>(1);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Delete the results</span></div>
 <div class="c-code__line"><span class="c-code__keyword">delete</span> results;</div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_results_base_html_a6779204e6075f783d11c10cbe6fe3c0c"><div class="ttname"><a href="#a6779204e6075f783d11c10cbe6fe3c0c">FiftyoneDegrees::Common::ResultsBase::ResultsBase</a></div><div class="ttdeci">ResultsBase(fiftyoneDegreesResultsBase *results, shared_ptr&lt; fiftyoneDegreesResourceManager &gt; manager)</div><div class="ttdoc">Create a new instance of Results from the results structure provided.</div></div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_results_base_html_a86ee81bb4516175229911dbd907cc0c3"><div class="ttname"><a href="#a86ee81bb4516175229911dbd907cc0c3">FiftyoneDegrees::Common::ResultsBase::getAvailableProperties</a></div><div class="ttdeci">int getAvailableProperties() const</div><div class="ttdoc">Get the number of available properties contained in the Results instance.</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_results_base_html_acaa859eb54fb68446bc3df073501b326"><div class="ttname"><a href="#acaa859eb54fb68446bc3df073501b326">FiftyoneDegrees::Common::ResultsBase::getProperties</a></div><div class="ttdeci">vector&lt; string &gt; getProperties() const</div><div class="ttdoc">Get the names of the properties the data set has, in ascending order.</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_results_base_html_ade7eec002846b4b436e4f34c32d06a80"><div class="ttname"><a href="#ade7eec002846b4b436e4f34c32d06a80">FiftyoneDegrees::Common::ResultsBase::getValueAsString</a></div><div class="ttdeci">Value&lt; string &gt; getValueAsString(const char *propertyName)</div><div class="ttdoc">Get a string representation of the value associated with the required property name.</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_value_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_value.html">FiftyoneDegrees::Common::Value</a></div><div class="ttdoc">Encapsulates a value returned an instance of ResultsBase for a specified property.</div><div class="ttdef"><b>Definition</b> Value.hpp:76</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_common_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_common.html">FiftyoneDegrees::Common</a></div><div class="ttdoc">Shared classes.</div><div class="ttdef"><b>Definition</b> Collection.hpp:31</div></div>
 </div><!-- fragment --> </div><h2 class="g-docs__section-heading">
 Inheritance diagram for FiftyoneDegrees::Common::ResultsBase:</h2>
@@ -105,7 +108,7 @@ Inheritance diagram for FiftyoneDegrees::Common::ResultsBase:</h2>
 <h2 class="g-docs__section-heading">
 Collaboration diagram for FiftyoneDegrees::Common::ResultsBase:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_fiftyone_degrees_1_1_common_1_1_results_base__coll__graph.svg" width="604" height="482"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_fiftyone_degrees_1_1_common_1_1_results_base__coll__graph.svg" width="1566" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
@@ -118,13 +121,13 @@ virtual&#160;</td><td class="c-table__cell"><b>~ResultsBase</b> ()</td></tr>
 <tr class="c-table__row memdesc:ad273ca243c2bd7eb62488103f142715f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Free any memory associated with the results and release any resource handles. <br /></td></tr>
 <tr id="pub-methods-1" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Available Properties</h3></td></tr>
 <tr class="c-table__row memitem:a86ee81bb4516175229911dbd907cc0c3" id="r_a86ee81bb4516175229911dbd907cc0c3"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a86ee81bb4516175229911dbd907cc0c3">getAvailableProperties</a> () const</td></tr>
-<tr class="c-table__row memdesc:a86ee81bb4516175229911dbd907cc0c3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the number of available properties contained in the Results instance.  <br /></td></tr>
+<tr class="c-table__row memdesc:a86ee81bb4516175229911dbd907cc0c3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the number of required property indexes, which is the number of names the engine was created with, including any the data file lacks.  <br /></td></tr>
 <tr class="c-table__row memitem:a79a22d793e853518bc450a62183937c4" id="r_a79a22d793e853518bc450a62183937c4"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a79a22d793e853518bc450a62183937c4">containsProperty</a> (const string &amp;propertyName) const</td></tr>
 <tr class="c-table__row memdesc:a79a22d793e853518bc450a62183937c4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get whether or not this results instance contains a value for the requested property.  <br /></td></tr>
 <tr class="c-table__row memitem:acaa859eb54fb68446bc3df073501b326" id="r_acaa859eb54fb68446bc3df073501b326"><td class="c-table__cell">vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#acaa859eb54fb68446bc3df073501b326">getProperties</a> () const</td></tr>
-<tr class="c-table__row memdesc:acaa859eb54fb68446bc3df073501b326"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the names of the properties which are available in the Results instance.  <br /></td></tr>
+<tr class="c-table__row memdesc:acaa859eb54fb68446bc3df073501b326"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the names of the properties the data set has, in ascending order.  <br /></td></tr>
 <tr class="c-table__row memitem:aa6ee2a5cc6508515104f972ceb926b5f" id="r_aa6ee2a5cc6508515104f972ceb926b5f"><td class="c-table__cell">string&#160;</td><td class="c-table__cell"><a class="el" href="#aa6ee2a5cc6508515104f972ceb926b5f">getPropertyName</a> (int requiredPropertyIndex) const</td></tr>
-<tr class="c-table__row memdesc:aa6ee2a5cc6508515104f972ceb926b5f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the name of the property at the require property index, or an empty string if the required property index is invalid.  <br /></td></tr>
+<tr class="c-table__row memdesc:aa6ee2a5cc6508515104f972ceb926b5f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the name of the property at the required property index, or an empty string if there is no property at the index.  <br /></td></tr>
 <tr id="pub-methods-2" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Value Getters</h3></td></tr>
 <tr class="c-table__row memitem:a61bf4c1fa136f6f66a82151796814681" id="r_a61bf4c1fa136f6f66a82151796814681"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html">Value</a>&lt;&#160;vector&lt;&#160;string&#160;&gt;&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a61bf4c1fa136f6f66a82151796814681">getValues</a> (const char *propertyName)</td></tr>
 <tr class="c-table__row memdesc:a61bf4c1fa136f6f66a82151796814681"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a vector with all values associated with the required property name.  <br /></td></tr>
@@ -188,7 +191,9 @@ virtual&#160;</td><td class="c-table__cell"><b>~ResultsBase</b> ()</td></tr>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:affd7db87f65fec3baa9d816cd919e889" id="r_affd7db87f65fec3baa9d816cd919e889"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#affd7db87f65fec3baa9d816cd919e889">getRequiredPropertyIndex</a> (const char *propertyName)</td></tr>
-<tr class="c-table__row memdesc:affd7db87f65fec3baa9d816cd919e889"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the index in the available properties for the property name provided.  <br /></td></tr>
+<tr class="c-table__row memdesc:affd7db87f65fec3baa9d816cd919e889"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the required property index of the property name provided.  <br /></td></tr>
+<tr class="c-table__row memitem:a7e826aca1654e8871e98d1fa191b18ce" id="r_a7e826aca1654e8871e98d1fa191b18ce"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a7e826aca1654e8871e98d1fa191b18ce">allowedRequiredPropertyIndex</a> (int requiredPropertyIndex) const</td></tr>
+<tr class="c-table__row memdesc:a7e826aca1654e8871e98d1fa191b18ce"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the index a read by required property index uses, which is the index given when the engine named its properties.  <br /></td></tr>
 <tr class="c-table__row memitem:a4579d88e18b86f8a53835c4c79a8bd69" id="r_a4579d88e18b86f8a53835c4c79a8bd69"><td class="c-table__cell">virtual&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a4579d88e18b86f8a53835c4c79a8bd69">getValuesInternal</a> (int requiredPropertyIndex, vector&lt; string &gt; &amp;values)=0</td></tr>
 <tr class="c-table__row memdesc:a4579d88e18b86f8a53835c4c79a8bd69"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the values for the index in required properties and add them to the values vector supplied.  <br /></td></tr>
 <tr class="c-table__row memitem:a0fc3583338a86485644276b65155707c" id="r_a0fc3583338a86485644276b65155707c"><td class="c-table__cell">virtual&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a0fc3583338a86485644276b65155707c">hasValuesInternal</a> (int requiredPropertyIndex)=0</td></tr>
@@ -240,6 +245,44 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a7e826aca1654e8871e98d1fa191b18ce" name="a7e826aca1654e8871e98d1fa191b18ce"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7e826aca1654e8871e98d1fa191b18ce">&#9670;&#160;</a></span>allowedRequiredPropertyIndex()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">int FiftyoneDegrees::Common::ResultsBase::allowedRequiredPropertyIndex </td>
+          <td>(</td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>requiredPropertyIndex</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Get the index a read by required property index uses, which is the index given when the engine named its properties. </p>
+<p>When it named none there are no required property indexes, so -1 is given, which reads as a property the data set does not have. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index given by the caller </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the index to read, or -1 </dd></dl>
+
+</div>
+</div>
 <a id="a79a22d793e853518bc450a62183937c4" name="a79a22d793e853518bc450a62183937c4"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a79a22d793e853518bc450a62183937c4">&#9670;&#160;</a></span>containsProperty()</h2>
 
@@ -289,8 +332,8 @@ Protected Attributes</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Get the number of available properties contained in the Results instance. </p>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the number of available properties </dd></dl>
+<p>Get the number of required property indexes, which is the number of names the engine was created with, including any the data file lacks. </p>
+<p>When the engine named no properties, it is the number of properties the data set has. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the number of required property indexes </dd></dl>
 
 </div>
 </div>
@@ -364,7 +407,7 @@ Protected Attributes</h2></td></tr>
 <p>Get the reason for values not being available. </p>
 <p>This is implemented by the extending class and is called when the hasValuesInternal method returns false. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">requiredPropertyIndex</td><td>index in the available properties </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>required property index of the property </td></tr>
   </table>
   </dd>
 </dl>
@@ -393,8 +436,8 @@ Protected Attributes</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Get the names of the properties which are available in the Results instance. </p>
-<p>The index of the property in the vector indicates its index in the Results instance, so a name's index can be used to fetch its corresponding value via a get method. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">vector containing the names of all available properties </dd></dl>
+<p>Get the names of the properties the data set has, in ascending order. </p>
+<p>A name's place in the vector is not its required property index when the engine named its properties, so read the values by name. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">vector containing the names of all available properties </dd></dl>
 
 </div>
 </div>
@@ -417,10 +460,10 @@ Protected Attributes</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Get the name of the property at the require property index, or an empty string if the required property index is invalid. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Get the name of the property at the required property index, or an empty string if there is no property at the index. </p>
+<p>A property the data file lacks gives the name the engine was created with. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">requiredPropertyIndex</td><td>of the property name required </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the engine was created with. When the engine named no properties there is no name, as there are no indexes </td></tr>
   </table>
   </dd>
 </dl>
@@ -455,7 +498,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="c-member__body">
 
-<p>Get the index in the available properties for the property name provided. </p>
+<p>Get the required property index of the property name provided. </p>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">0 based index or -1 if not found </dd></dl>
 
 </div>
@@ -582,7 +625,7 @@ Protected Attributes</h2></td></tr>
 <p>Get a boolean representation of the value associated with the required property index. </p>
 <p>If the property index is not valid then false is returned. Stored text such as "Unknown" gives false with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#a67079fcb2c18b9179269f5fe0e5eeaf2" title="Get the value as a boolean only if its text is &quot;True&quot; or &quot;False&quot;.">getValueAsStrictBool(int)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">requiredPropertyIndex</td><td>in the required properties </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the engine was created with. When the engine named no properties there is no value, with the invalid property reason, so read by name </td></tr>
   </table>
   </dd>
 </dl>
@@ -710,7 +753,7 @@ Protected Attributes</h2></td></tr>
 <p>Get a double representation of the value associated with the required property index. </p>
 <p>If the property index is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. Stored text such as "Unknown" gives 0 with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#af6c6b198c7ae2f440eaf0dd87a14a154" title="Get the value as a double only if all of its text is a finite number.">getValueAsStrictDouble(int)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">requiredPropertyIndex</td><td>in the required properties </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the engine was created with. When the engine named no properties there is no value, with the invalid property reason, so read by name </td></tr>
   </table>
   </dd>
 </dl>
@@ -838,7 +881,7 @@ Protected Attributes</h2></td></tr>
 <p>Get an integer representation of the value associated with the required property index. </p>
 <p>If the property index is not valid then 0 is returned. Using a property which returns non-numeric characters will result in unexpected behavior. Stored text such as "Unknown" gives 0 with a value, which is kept for backwards compatibility. The remedy until version 5 is <a class="el" href="#a38aaae97a017ab92085dd7728c9d86ee" title="Get the value as an integer only if all of its text is a whole number an int can hold.">getValueAsStrictInteger(int)</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">requiredPropertyIndex</td><td>in the required properties </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the engine was created with. When the engine named no properties there is no value, with the invalid property reason, so read by name </td></tr>
   </table>
   </dd>
 </dl>
@@ -928,7 +971,7 @@ Protected Attributes</h2></td></tr>
 <p>Get the value as a boolean only if its text is "True" or "False". </p>
 <p>Any other text, such as "Unknown", gives no value, where <a class="el" href="#a41bd2ae7d5a52f76e8ccefa01e5c7889" title="Get a boolean representation of the value associated with the required property index.">getValueAsBool(int)</a> gives false. This is the remedy until version 5, as that accessor keeps its behaviour for backwards compatibility. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">requiredPropertyIndex</td><td>in the required properties </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the engine was created with. When the engine named no properties there is no value, with the invalid property reason, so read by name </td></tr>
   </table>
   </dd>
 </dl>
@@ -1018,7 +1061,7 @@ Protected Attributes</h2></td></tr>
 <p>Get the value as a double only if all of its text is a finite number. </p>
 <p>Any other text, such as "Unknown", gives no value, where <a class="el" href="#ad139a7743a991446697db7c543856ec3" title="Get a double representation of the value associated with the required property index.">getValueAsDouble(int)</a> gives 0. This is the remedy until version 5, as that accessor keeps its behaviour for backwards compatibility. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">requiredPropertyIndex</td><td>in the required properties </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the engine was created with. When the engine named no properties there is no value, with the invalid property reason, so read by name </td></tr>
   </table>
   </dd>
 </dl>
@@ -1108,7 +1151,7 @@ Protected Attributes</h2></td></tr>
 <p>Get the value as an integer only if all of its text is a whole number an int can hold. </p>
 <p>Any other text, such as "Unknown", gives no value, where <a class="el" href="#a4af6d697bc06911bf342997511a0a3e8" title="Get an integer representation of the value associated with the required property index.">getValueAsInteger(int)</a> gives 0. This is the remedy until version 5, as that accessor keeps its behaviour for backwards compatibility. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">requiredPropertyIndex</td><td>in the required properties </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the engine was created with. When the engine named no properties there is no value, with the invalid property reason, so read by name </td></tr>
   </table>
   </dd>
 </dl>
@@ -1238,7 +1281,7 @@ Protected Attributes</h2></td></tr>
 <p>Get a string representation of the value associated with the required property index. </p>
 <p>If the index is not valid an empty string is returned. If the property relates to a list with more than one value then values are separated by '|' characters. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">requiredPropertyIndex</td><td>of the property required </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the engine was created with. When the engine named no properties there is no value, with the invalid property reason, so read by name </td></tr>
   </table>
   </dd>
 </dl>
@@ -1358,7 +1401,7 @@ Protected Attributes</h2></td></tr>
 <p>Get a vector with all values associated with the required property index. </p>
 <p>If the index is not valid an empty vector is returned. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">requiredPropertyIndex</td><td>of the property required </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the engine was created with. When the engine named no properties there is no value, with the invalid property reason, so read by name </td></tr>
   </table>
   </dd>
 </dl>
@@ -1400,7 +1443,7 @@ Protected Attributes</h2></td></tr>
 <p>Get the values for the index in required properties and add them to the values vector supplied. </p>
 <p>This is implemented by extending classes. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">requiredPropertyIndex</td><td>index in the available properties </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>required property index of the property </td></tr>
     <tr><td class="paramname">values</td><td>vector to populate with the values for the property </td></tr>
   </table>
   </dd>
@@ -1440,7 +1483,7 @@ Protected Attributes</h2></td></tr>
 <p>Get whether or not there are valid values available for the property identified by its index in the required properties. </p>
 <p>This is implemented by extending classes, and used when populating a <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value.html" title="Encapsulates a value returned an instance of ResultsBase for a specified property.">Value</a> instance to return. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">requiredPropertyIndex</td><td>index in the available properties </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>required property index of the property </td></tr>
   </table>
   </dd>
 </dl>

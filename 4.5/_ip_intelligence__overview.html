@@ -82,14 +82,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <li><b>Performance-critical ready:</b> Ideal for real-time servers, edge/load balancers, and high-load scenarios</li>
 <li><b>Deployment flexibility:</b> In-process by default, with optional out-of-process or separate server deployment</li>
 </ul>
-<p>Features include <a class="el" href="_ip_intelligence__features__randomization.html" title="Randomization">randomized coordinates</a> for privacy and <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">multiple result weighting</a> for accuracy.</p>
+<p>Features include <a class="el" href="_ip_intelligence__features__randomization.html" title="Randomization">randomized coordinates</a> and <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">weighted results</a>.</p>
 <p>See <a href="https://github.com/51Degrees/specifications/blob/main/ip-intelligence-specification/README%2Emd">technical specification</a> for details.</p>
 <hr  />
 <h2 class="doxsection" id="advanced-features">Advanced Features<a class="headerlink" href="#advanced-features" aria-label="Permalink to this section">🔗</a></h2>
 <h3 class="doxsection" id="enhanced-coverage">Enhanced Coverage<a class="headerlink" href="#enhanced-coverage" aria-label="Permalink to this section">🔗</a></h3>
 <p>Data sourced from aggregating real device usage and multiple authoritative databases to provide comprehensive global coverage.</p>
 <h3 class="doxsection" id="privacy-protections">Privacy Protections<a class="headerlink" href="#privacy-protections" aria-label="Permalink to this section">🔗</a></h3>
-<p>Coordinates returned from IP address are <a class="el" href="_ip_intelligence__features__randomization.html" title="Randomization">randomized</a> to ensure output data can never be considered personal data while maintaining accuracy for practical applications.</p>
+<p>Coordinates returned for an IP address are <a class="el" href="_ip_intelligence__features__randomization.html" title="Randomization">randomized</a> to within 1km of the original point, which keeps them accurate enough for practical applications.</p>
 <h3 class="doxsection" id="accuracy-weighting">Accuracy Weighting<a class="headerlink" href="#accuracy-weighting" aria-label="Permalink to this section">🔗</a></h3>
 <p>Multiple data sources are <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">weighted</a> to provide the most accurate results possible.</p>
 <h3 class="doxsection" id="device-detection-integration">Device Detection Integration<a class="headerlink" href="#device-detection-integration" aria-label="Permalink to this section">🔗</a></h3>
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <h3 class="doxsection" id="️-fraud-detection--security">🛡️ Fraud Detection &amp; Security<a class="headerlink" href="#️-fraud-detection--security" aria-label="Permalink to this section">🔗</a></h3>
 <p>Detect click fraud, suspicious logins, and automated attacks by analyzing IP patterns, locations, and device combinations.</p>
 <h3 class="doxsection" id="autotoc_md-compliance--geo-blocking">🚫 Compliance &amp; Geo-blocking<a class="headerlink" href="#autotoc_md-compliance--geo-blocking" aria-label="Permalink to this section">🔗</a></h3>
-<p>Enforce geographical restrictions for gambling, content licensing, or data privacy regulations like GDPR.</p>
+<p>Enforce geographical restrictions for gambling, content licensing, or data protection law such as GDPR.</p>
 <h3 class="doxsection" id="️-reverse-geocoding">🗺️ Reverse Geocoding<a class="headerlink" href="#️-reverse-geocoding" aria-label="Permalink to this section">🔗</a></h3>
 <p>Convert coordinates to human-readable addresses using our <a class="el" href="_reverse_geocoding__overview.html" title="Reverse Geocoding Overview">Reverse Geocoding service</a>.</p>
 <hr  />

@@ -89,12 +89,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fiftyone
 <div class="c-code__line"><span class="c-code__keyword">delete</span> results;</div>
 <div class="c-code__line"><span class="c-code__keyword">delete</span> engine;</div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_config_base_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_config_base.html">FiftyoneDegrees::Common::ConfigBase</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesConfigBase configuration structure.</div><div class="ttdef"><b>Definition</b> ConfigBase.hpp:61</div></div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_a4f72773e876f66ff0365214ab3c30dbb"><div class="ttname"><a href="#a4f72773e876f66ff0365214ab3c30dbb">FiftyoneDegrees::Common::EngineBase::config</a></div><div class="ttdeci">ConfigBase * config</div><div class="ttdoc">Pointer to the configuration used to build the engine.</div><div class="ttdef"><b>Definition</b> EngineBase.hpp:261</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_a4f72773e876f66ff0365214ab3c30dbb"><div class="ttname"><a href="#a4f72773e876f66ff0365214ab3c30dbb">FiftyoneDegrees::Common::EngineBase::config</a></div><div class="ttdeci">ConfigBase * config</div><div class="ttdoc">Pointer to the configuration used to build the engine.</div><div class="ttdef"><b>Definition</b> EngineBase.hpp:262</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_ac74ae23c22c3aa9ea07852594d5bb277"><div class="ttname"><a href="#ac74ae23c22c3aa9ea07852594d5bb277">FiftyoneDegrees::Common::EngineBase::EngineBase</a></div><div class="ttdeci">EngineBase(ConfigBase *config, RequiredPropertiesConfig *properties)</div><div class="ttdoc">Construct a new instance of the engine class with the configuration and properties provided.</div><div class="ttdef"><b>Definition</b> EngineBase.cpp:30</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_af48da459a4f1ac0960b1fab2ce51c46c"><div class="ttname"><a href="#af48da459a4f1ac0960b1fab2ce51c46c">FiftyoneDegrees::Common::EngineBase::processBase</a></div><div class="ttdeci">virtual ResultsBase * processBase(EvidenceBase *evidence) const =0</div><div class="ttdoc">Processes the evidence provided and returns the result.</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_evidence_base_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_evidence_base.html">FiftyoneDegrees::Common::EvidenceBase</a></div><div class="ttdoc">Base evidence class containing evidence to be processed by an engine.</div><div class="ttdef"><b>Definition</b> EvidenceBase.hpp:68</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_required_properties_config_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_required_properties_config.html">FiftyoneDegrees::Common::RequiredPropertiesConfig</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesPropertiesRequired structure.</div><div class="ttdef"><b>Definition</b> RequiredPropertiesConfig.hpp:59</div></div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_results_base_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_results_base.html">FiftyoneDegrees::Common::ResultsBase</a></div><div class="ttdoc">Encapsulates the results of an engine&#39;s processing.</div><div class="ttdef"><b>Definition</b> ResultsBase.hpp:83</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_results_base_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_results_base.html">FiftyoneDegrees::Common::ResultsBase</a></div><div class="ttdoc">Encapsulates the results of an engine&#39;s processing.</div><div class="ttdef"><b>Definition</b> ResultsBase.hpp:97</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_common_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_common.html">FiftyoneDegrees::Common</a></div><div class="ttdoc">Shared classes.</div><div class="ttdef"><b>Definition</b> Collection.hpp:31</div></div>
 </div><!-- fragment --> </div><h2 class="g-docs__section-heading">
 Inheritance diagram for FiftyoneDegrees::Common::EngineBase:</h2>
@@ -223,7 +223,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">config</td><td>used to build the engine </td></tr>
-    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results </td></tr>
+    <tr><td class="paramname">properties</td><td>the properties expected to be fetched from results, or null for every property </td></tr>
   </table>
   </dd>
 </dl>
@@ -656,7 +656,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div><div class="c-member__body">
 
 <p>Get the names of the required properties in required property index order, so position i in the vector is the index a caller passes for that property. </p>
-<p>The names come from the data file loaded and are sorted by name, so a refresh that loads a data file which gains or loses a required property moves the indexes of the properties after it. Call again after a refresh. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the required property names </dd></dl>
+<p>When the engine named its properties these are the names it was created with, in that order, and a refresh does not change them. When it named none, they are the names of every property the data file loaded has, sorted by name. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the required property names </dd></dl>
 
 </div>
 </div>
