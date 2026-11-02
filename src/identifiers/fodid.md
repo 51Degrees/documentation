@@ -102,6 +102,13 @@ The cloud parses the string and checks the consented [IAB TCF v2 purposes](https
 
 **Direct intent always wins.** If `id.usage` is present on the request (query or header) the cloud uses it and ignores any `tcstring` or `gpp`, and derivation runs only when no explicit value was supplied. Malformed consent strings are ignored rather than rejected.
 
+Each consent signal a request can carry has a page of its own:
+
+- @subpage Identifiers_51Did_Tcf
+- @subpage Identifiers_51Did_Gpp
+- @subpage Identifiers_51Did_Gpc
+- @subpage Identifiers_51Did_Pmp
+
 ## Usage policies and licensing
 
 | `id.usage`     | Requires                                |
