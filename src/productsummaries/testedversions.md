@@ -76,6 +76,9 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
       grabTestedVersions("device-detection-php", "php-versions", [
           { title: "PHP Version", getValue: d => d.LanguageVersion }
       ]);
+      grabTestedVersions("device-detection-php-onpremise", "php-onpremise-versions", [
+          { title: "PHP Version", getValue: d => d.LanguageVersion }
+      ]);
       grabTestedVersions("pipeline-wordpress", "wordpress-versions", [
           { title: "PHP Version", getValue: d => d.LanguageVersion }
       ]);
@@ -116,6 +119,10 @@ If you have a configuration that is not covered, please [contact us](https://51d
 @endsnippet
 @startsnippet{php}
 These are automatically tested on [GitHub](https://github.com/51Degrees?q=php&type=all&language=&sort=).
+
+On-premise:
+<div id="php-onpremise-versions"></div>
+Cloud:
 <div id="php-versions"></div>
 If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
