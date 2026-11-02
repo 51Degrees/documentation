@@ -16,7 +16,7 @@ The 51Degrees client script reads your consent management platform through `wind
 
 - **Your platform's stub must come before the 51Degrees script tag.** Every consent management platform ships one, and the TCF specification already requires it to be first on the page. The stub queues the registration.
 - **The consent management platform itself may load later.** That is the normal case, and it works because the stub holds the registration until the platform takes over and then calls back.
-- **A missing stub has no recovery on that page view.** Where nothing answers to `__tcfapi` as the client script starts, and PMP is not on the page either, the script waits until the page has loaded, or 5000 milliseconds at the most, and then writes one warning to the console. Nothing recovers it on that page view.
+- **A missing stub has no recovery on that page view.** Where nothing answers to `__tcfapi` as the client script starts, and PMP is not on the page either, the script writes one warning to the console as it starts. Nothing recovers it on that page view.
 
   ```
   51Degrees: no preference platform was found on this page. A platform's stub must precede this script. No 51Did will be created until a platform answers.
@@ -56,7 +56,7 @@ fod.onChange(function (data) {
 });
 ```
 
-The value is a boolean. The whole `derived` section is absent when your Resource Key does not ask for `IsGdpr`, so test for it rather than assuming it is there.
+The value is a boolean. `derived.isgdpr` is absent when your Resource Key does not ask for `IsGdpr`, so test for it rather than assuming it is there.
 
 **Your consent management platform's own setting always wins.** Whether to take `IsGdpr` or your platform's own way of deciding where GDPR applies is your decision, and the outcome is yours either way. Where you choose your platform's own detection, `IsGdpr` is not used. Passing it is a convenience rather than a requirement, and 51Degrees does not decide for you what your consent surface reports. For the call itself, use your platform's own documentation, because the method for saying whether GDPR applies belongs to each vendor and differs between them.
 

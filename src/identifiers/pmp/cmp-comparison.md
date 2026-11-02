@@ -54,7 +54,7 @@ The reason is that the CMP ID in a TC string is checked against that list. The T
 | `getVendorList` | Not implemented. Refused with `success` false. |
 | `getInAppTCData` | Not implemented. PMP runs on web pages. |
 | Any other command | Refused with `success` false. |
-| Events | `tcloaded` when the string is ready, and again when `gdprApplies` changes. `useractioncomplete` on each answer. `cmpuishown` when the dialog is reopened while a string exists, so not on the first showing and not after the alternative answer. |
+| Events | `tcloaded` when the string is ready, and again when `gdprApplies` changes. `useractioncomplete` on each marketing answer, and not on the alternative, which builds no string. `cmpuishown` when the dialog is reopened while a string exists, so not on the first showing and not after the alternative answer. |
 | `gdprApplies` | Reported `true` until `IsGdpr` on the client script's object says otherwise, and a consumer already told `tcloaded` is told again with the corrected value. The dialog is shown either way. See @ref Identifiers_PMP_IsGdpr. |
 | CMP ID and CMP version | No ID of its own. The ID of a consent management platform currently registered on IAB Europe's list, chosen by the UTC day, written into the string and reported by the surface, for the reason under *The CMP ID* above. `cmpVersion` is reported as 1, and the string's own version field is whatever `data-tcf-vendor` carries. |
 | Policy version and vendor list version | The `tcfPolicyVersion` and `vendorListVersion` the build read from the live Global Vendor List, reported by `ping` and `getTCData` and written into the string. Where the string in `data-tcf-vendor` already carries higher numbers, those are kept, because neither number ever goes down. |
