@@ -1,6 +1,11 @@
 @page Services_Cloud_ResourceKeys Resource Keys
 
-A Resource Key grants your code access to the 51Degrees Cloud APIs. A specific Resource Key has access to a particular set of properties which are chosen at key creation time and cannot be changed afterwards. The number of accesses authorized by a particular Resource Key is limited for free keys, or can be associated with your License Key and thus your account.
+The cloud service has two kinds of key, and they do different jobs.
+
+- **A License Key** comes with a subscription. It proves what you have paid for, it is secret, and it stays on your servers.
+- **A Resource Key** is created for free. It names the properties you want, it can have your License Keys attached to it, and it goes in your page or your code. Because the License Key is attached when the key is created, a page uses the Resource Key and never holds the License Key.
+
+A Resource Key has access to a particular set of properties which are chosen at creation time and cannot be changed afterwards. The number of requests a Resource Key may make each month is limited for a free key, and comes from your subscription where a License Key is attached.
 
 To create a Resource Key, with its properties and your License Key, follow the @configuratorexplanation.
 
@@ -57,7 +62,7 @@ Beware: continuing to steps 2 or 3 will not edit the properties attached to your
 
 # Resource Keys and License Keys {#Resource_keys_and_license_keys}
 
-A request can carry a Resource Key, a License Key, or both, and each does a different job.
+A request can carry a Resource Key, a License Key, or both.
 
 - **A Resource Key** authenticates the request and brings the properties and products set up on it. It is public, because it sits in the script tag of every page that uses it, and it can be restricted to named domains, which [the domains a Resource Key accepts](@ref Resource_key_domains) describes.
 - **A License Key** is a server's credential and never goes in a page. It suits server-to-server and verifier callers that do not want to create and manage Resource Keys.

@@ -1,6 +1,6 @@
 @page Services_Configurator Creating a Resource Key
 
-Access to the cloud service is controlled by a Resource Key, which you create at [configure.51degrees.com](https://configure.51degrees.com/).
+Access to the cloud service is controlled by a Resource Key, which you create for free at [configure.51degrees.com](https://configure.51degrees.com/). Paid properties and higher request limits come from a License Key, which comes with a subscription and is attached to the Resource Key when you create it, so the License Key itself never goes on a page. The difference between the two keys is set out on @ref Services_Cloud_ResourceKeys.
 
 When a Resource Key is created, you choose the properties that it will return from queries, and once these are set they cannot be changed. However, it is possible to create more keys, each tied to whichever properties you choose.
 
