@@ -72,11 +72,10 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 
 # Properties unique to 51Degrees
 
-The following 51Degrees properties have no IPInfo equivalent. They are the additional context that drives [accuracy weighting](@ref IpIntelligence_Features_Weighting), [country diversity](@ref IpIntelligence_Features_Countries) and bot detection.
+The following 51Degrees properties have no IPInfo equivalent. They are the additional context that drives [accuracy weighting](@ref IpIntelligence_Features_Weighting) and bot detection.
 
-- **Weighted country lists**: `CountryCodesGeographical`, `CountryCodesPopulation`, and their `*All` and `*Translated` variants return every candidate country with weightings, not a single best-guess. See [Countries](@ref IpIntelligence_Features_Countries).
 - **Diversity scores**: `BrowserDiversity`, `HardwareDiversity`, `PlatformDiversity` quantify how varied the traffic from an IP range is. See [Diversity](@ref IpIntelligence_Features_Diversity).
-- **GeoNames identifiers**: `ContinentGeoNameId`, `CountryGeoNameId`, `StateGeoNameId`, `StateGeoNameIdsGeographical`, `CountyGeoNameId` and `TownGeoNameId`.
+- **GeoNames identifiers**: `ContinentGeoNameId`, `CountryGeoNameId`, `StateGeoNameId`, `CountyGeoNameId` and `TownGeoNameId`, and `StateGeoNameIdsGeographical`, which lists each region of the location's country that the area overlaps, weighted by the region's share of the area. See [Weighting](@ref IpIntelligence_Features_Weighting).
 - **Finer places**: `County`, `Suburb`, and `Iso31662Lvl8` and `Iso31662Lvl8SubdivisionOnly`, the ISO 3166-2 code of the OpenStreetMap level 8 area the location is in.
 - **Area polygon**: `Areas` returns the area the IP range is likely to be in as a WKT string, trimmed to the land of the location's country so it does not reach into a neighboring country or over the sea.
 - **Country information**: `IsEu` says whether the country is in the European Union, with `CurrencyCode` (ISO 4217), `DialCode` (the ITU telephone country code) and `LanguageCode` (ISO 639).
