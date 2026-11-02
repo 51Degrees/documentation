@@ -5,7 +5,7 @@ The cloud service has two kinds of key, and they do different jobs.
 - **A License Key** comes with a subscription. It proves what you have paid for, it is secret, and it stays on your servers.
 - **A Resource Key** is created for free. It names the properties you want, it can have your License Keys attached to it, and it goes in your page or your code. Because the License Key is attached when the key is created, a page uses the Resource Key and never holds the License Key.
 
-A Resource Key has access to a particular set of properties which are chosen at creation time and cannot be changed afterwards. The number of requests a Resource Key may make each month is limited for a free key, and comes from your subscription where a License Key is attached.
+A Resource Key has access to a particular set of properties which are chosen at creation time and cannot be changed afterwards. The number of requests a Resource Key may make each month is limited for a free key, and comes from your subscription where a License Key is attached. Which calls count is on @ref Services_Cloud_Metering.
 
 To create a Resource Key, with its properties and your License Key, follow the @configuratorexplanation.
 

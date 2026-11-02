@@ -18,7 +18,7 @@ GET https://cloud.51degrees.com/api/v4/pmp/<RESOURCE_KEY>/<NAME>
 
 That returns one built bundle, where `<NAME>` is a locale such as `en-us`, optionally followed by `-nosharing`. The loader picks the language from the visitor's own browser, matching the full tag first, then the language on its own, then falling back to `en-us`, so the language is decided in the browser rather than from a request header. Whether the bundle needs the sharing code comes from `data-use-third-party-cookies` and `data-network-name` on the tag.
 
-This is the request the cloud checks and counts. It is checked against the key's domains, as [the domains a Resource Key accepts](@ref Resource_key_domains) describes, so a page on a domain the key does not cover gets a `401` and no dialog. It counts as one of the key's monthly requests, so a page view where the dialog loads uses one request and a visitor who leaves before the bundle loads uses none.
+This is the request the cloud checks and counts. It is checked against the key's domains, as [the domains a Resource Key accepts](@ref Resource_key_domains) describes, so a page on a domain the key does not cover gets a `401` and no dialog. It counts as one of the key's monthly requests, as @ref Services_Cloud_Metering sets out, so a page view where the dialog loads uses one request and a visitor who leaves before the bundle loads uses none.
 
 A License Key never goes on the page. The loader sends none, the bundle request refuses one with `400`, and a script tag with the `data-license-key` attribute stops PMP from starting, with one console error saying so. Where your products need a License Key on top of the Resource Key, add the License Key to the Resource Key when you create it.
 
