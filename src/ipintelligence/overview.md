@@ -32,7 +32,7 @@ See [technical specification](https://github.com/51Degrees/specifications/blob/m
 
 Data sourced from aggregating real device usage and multiple authoritative databases to provide comprehensive global coverage.
 
-### Randomized Coordinates
+### Privacy Protections
 
 Coordinates returned for an IP address are [randomized](@ref IpIntelligence_Features_Randomization) to within 1km of the original point, which keeps them accurate enough for practical applications.
 
