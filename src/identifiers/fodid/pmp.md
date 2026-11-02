@@ -12,7 +12,7 @@ PMP itself, being the tag, the dialog and the shared answer, is @ref Identifiers
 | Standard | `id.usage=standard` | Marketing and other content unrelated to the visitor's browsing history or interactions, such as content chosen by time, region and the page in view. |
 | The alternative button | `id.usage=non-marketing` | Analytics, fraud prevention and security only. |
 
-All three are answers, and each one creates a 51Did carrying that usage. The alternative button is not a refusal and not a failure path, so an identifier follows it like the other two. What the two marketing usages permit is set out in the Model Terms for Marketing, version 2, at <https://m4ow.uk/mtm/2.txt>, and the scheme behind them is explained at <https://m4ow.uk/mtm>. A `non-marketing` identifier is covered by your agreement with 51Degrees under the published [General Terms and Conditions](https://51degrees.com/terms/general-terms-and-conditions/20261019) and [Cloud Services Terms](https://51degrees.com/terms/cloud-services-terms/20260323).
+All three are answers, and each one creates a 51Did with that usage. The alternative button is not a refusal and not a failure path, so an identifier follows it like the other two. What the two marketing usages permit is set out in the Model Terms for Marketing, version 2, at <https://m4ow.uk/mtm/2.txt>, and the scheme behind them is explained at <https://m4ow.uk/mtm>. A `non-marketing` identifier is covered by your agreement with 51Degrees under the published [General Terms and Conditions](https://51degrees.com/terms/general-terms-and-conditions/20261019) and [Cloud Services Terms](https://51degrees.com/terms/cloud-services-terms/20260323).
 
 ## How the answer reaches the cloud
 

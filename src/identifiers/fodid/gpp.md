@@ -4,9 +4,9 @@ Neither a Global Privacy Platform string nor a US Privacy string is read when th
 
 The Global Privacy Platform is the IAB Tech Lab container that carries several consent signals in one string, one section per signal. The US Privacy string is the older signal written for the California Consumer Privacy Act, which IAB Tech Lab deprecated on 31 January 2024 and tells its users to replace with the Global Privacy Platform.
 
-## What happens to a request carrying one
+## What happens to a request with one
 
-A request whose only signal is one of these strings gets no usage from it. Nothing then asks for a 51Did, so the response carries no `fodid` section at all, being no property, no reason and no warning, which is exactly what a request carrying no signal gets. That holds for every section a Global Privacy Platform string can carry, the United States national section included, and under both of the names such a string travels under, being `gpp` and `gppstring`. The 51Degrees Prebid module sends it as `gppstring`.
+A request whose only consent signal is one of these strings gets no usage from the string, so the response has no `fodid` section at all, with no property, no reason and no warning, the same as a request with no signal. That holds for every section of a Global Privacy Platform string, the United States national section included, and whether the string is sent as `gpp` or `gppstring`.
 
 A TCF string sent beside one is read exactly as it is read on its own, so a page whose consent platform emits both keeps working. That reading is @ref Identifiers_51Did_Tcf.
 

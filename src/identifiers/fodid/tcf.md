@@ -34,7 +34,7 @@ Purposes 2, 7, 8 and 11 may be satisfied by a legitimate interest bit as well as
 
 ## A string that grants too little
 
-Where the purposes satisfy neither set, the cloud adds no usage. Nothing then asks for a 51Did, so the response carries no `fodid` section at all, being no property, no reason and no warning. A string the service cannot decode is ignored in the same way, and so is a request carrying no string.
+Where the purposes satisfy neither set, the cloud adds no usage, so the response has no `fodid` section at all, with no property, no reason and no warning. A string the service cannot decode is ignored in the same way, and so is a request with no string.
 
 The response is therefore the same whether the visitor granted too little, answered nothing or was never asked. On a browser page that shows as `fod.fodid` being absent, so test for it before reading an identifier out of it.
 

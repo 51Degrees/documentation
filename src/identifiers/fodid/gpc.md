@@ -6,8 +6,8 @@ Global Privacy Control is a signal a browser or an extension sends on the visito
 
 The usage of a 51Did comes from one of exactly two places, being an `id.usage` your integration states on the request or a Transparency and Consent Framework (TCF) string the cloud reads a usage out of. Global Privacy Control is neither, so it sets no usage and changes none. Appendix 1 of the Model Terms for Marketing maps the TCF purposes onto the marketing usages and maps no other signal, so this one says nothing the usage values could be built from, the same position a Global Privacy Platform string is in on @ref Identifiers_51Did_Gpp.
 
-- A request carrying the `Sec-GPC` header and nothing else creates no 51Did, because no usage was stated and none could be worked out. The response has no `fodid` section at all, which is what any request with no usage gets.
-- A request carrying the header beside a stated usage or a consent string creates exactly the identifier that usage or string calls for. The header neither blocks it nor changes it.
+- A request with the `Sec-GPC` header and nothing else creates no 51Did, because no usage was stated and none could be worked out. The response has no `fodid` section at all, which is what any request with no usage gets.
+- A request with the header beside a stated usage or a consent string creates exactly the identifier that usage or string calls for. The header neither blocks it nor changes it.
 - The value inside the identifier is the same either way. The header is not one of the inputs listed under *Request inputs* on @ref Identifiers_51Did, so it moves nothing.
 
 The 51Degrees client script does not read `navigator.globalPrivacyControl` either, and neither does PMP.
