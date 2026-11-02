@@ -10,6 +10,7 @@
 | Python        | ![dd-python](https://raw.githubusercontent.com/51Degrees/device-detection-python/gh-images/perf-graph-Ubuntu_Python_3.13-DetectionsPerSecond-latest.png) |                                                                                                                                                         |
 | Rust          | ![dd-rust](https://raw.githubusercontent.com/51Degrees/51degrees-rust/gh-images/perf-graph-DeviceDetection-OnPremise-DetectionsPerSecond-latest.png)               | ![ip-rust](https://raw.githubusercontent.com/51Degrees/51degrees-rust/gh-images/perf-graph-IpIntelligence-OnPremise-LookupsPerSecond-latest.png)                  |
 | NGINX         | ![dd-nginx](https://raw.githubusercontent.com/51Degrees/device-detection-nginx/gh-images/perf-graph-ubuntu-latest-DetectionsPerSecond-latest.png)        | ![ip-nginx](https://raw.githubusercontent.com/51Degrees/device-detection-nginx/gh-images/perf-graph-ubuntu-latest_IPI-DetectionsPerSecond-latest.png)   |
+| Varnish       | ![dd-varnish](https://raw.githubusercontent.com/51Degrees/51degrees-varnish/gh-images/perf-graph-ubuntu_DD-DetectionsPerSecond-latest.png)               | ![ip-varnish](https://raw.githubusercontent.com/51Degrees/51degrees-varnish/gh-images/perf-graph-ubuntu_IPI-DetectionsPerSecond-latest.png)             |
 
 # How we test
 
@@ -17,11 +18,11 @@ These tests are run using a console performance example. If language
 appropriate, multiple threads are used to run the tests. For technical details,
 see the example repositories on [GitHub](https://github.com/51Degrees?q=example).
 
-NGINX has no console example, so its figures come from requests through NGINX,
-each making one detection, with as many concurrent requests as the machine has
-processors, timed in the same way. They include NGINX's own request handling and
-the program making the requests, so look at their trend rather than comparing
-their values with the other rows.
+NGINX and Varnish have no console example, so their figures come from requests
+through NGINX or Varnish, each making one detection, with as many concurrent
+requests as the machine has processors, timed in the same way. They include the
+server's own request handling and the program making the requests, so look at
+their trend rather than comparing their values with the other rows.
 
 We run performance tests regularly on GitHub Actions. The performance of this
 may not be as good as a dedicated machine, as it's running on a GitHub runner,
