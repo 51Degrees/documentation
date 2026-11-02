@@ -119,6 +119,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>name</code>  </td><td class="c-table__cell"><code>AsnName</code>  </td><td class="c-table__cell"></td></tr>
 <tr class="c-table__row">
+<td class="c-table__cell"><code>country</code>  </td><td class="c-table__cell"><code>RegisteredCountry</code>  </td><td class="c-table__cell">Approximate. IPInfo gives the country the ASN is registered in, and 51Degrees the country the IP range is registered in. <code>RegisteredCountryGeoNameId</code> gives its GeoNames identifier.  </td></tr>
+<tr class="c-table__row">
 <td class="c-table__cell"><code>domain</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">No direct equivalent.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>route</code>  </td><td class="c-table__cell"><code>IpRangeStart</code> + <code>IpRangeEnd</code>  </td><td class="c-table__cell">IPInfo returns CIDR notation; 51Degrees returns explicit start and end addresses.  </td></tr>
@@ -171,13 +173,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <td class="c-table__cell"><code>abuse.*</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">51Degrees does not return abuse contact details.  </td></tr>
 </table>
 <h2 class="doxsection" id="properties-unique-to-51degrees">Properties unique to 51Degrees<a class="headerlink" href="#properties-unique-to-51degrees" aria-label="Permalink to this section">🔗</a></h2>
-<p>The following 51Degrees properties have no IPInfo equivalent. They are the additional context that drives <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">accuracy weighting</a>, <a class="el" href="_ip_intelligence__features__countries.html" title="Countries">country diversity</a> and bot detection.</p>
+<p>The following 51Degrees properties have no IPInfo equivalent. They are the additional context that drives <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">accuracy weighting</a> and bot detection.</p>
 <ul>
-<li><b>Weighted country lists</b>: <code>CountryCodesGeographical</code>, <code>CountryCodesPopulation</code>, and their <code>*All</code> and <code>*Translated</code> variants return every candidate country with weightings, not a single best-guess. See <a class="el" href="_ip_intelligence__features__countries.html" title="Countries">Countries</a>.</li>
 <li><b>Diversity scores</b>: <code>BrowserDiversity</code>, <code>HardwareDiversity</code>, <code>PlatformDiversity</code> quantify how varied the traffic from an IP range is. See <a class="el" href="_ip_intelligence__features__diversity.html" title="Diversity">Diversity</a>.</li>
-<li><b>Bot identification</b>: <code>IsCrawler</code>, <code>IsArtificialIntelligence</code>, <code>CrawlerName</code>, <code>CrawlerProductTokens</code>, <code>CrawlerUrl</code>, <code>CrawlerUsage</code>.</li>
+<li><b>GeoNames identifiers</b>: <code>ContinentGeoNameId</code>, <code>CountryGeoNameId</code>, <code>StateGeoNameId</code>, <code>CountyGeoNameId</code> and <code>TownGeoNameId</code>, and <code>StateGeoNameIdsGeographical</code>, which lists each region of the location's country that the area overlaps, weighted by the region's share of the area. See <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">Weighting</a>.</li>
+<li><b>Finer places</b>: <code>County</code>, <code>Suburb</code>, and <code>Iso31662Lvl8</code> and <code>Iso31662Lvl8SubdivisionOnly</code>, the ISO 3166-2 code of the OpenStreetMap level 8 area the location is in.</li>
+<li><b>Area polygon</b>: <code>Areas</code> returns the area the IP range is likely to be in as a WKT string, trimmed to the land of the location's country so it does not reach into a neighboring country or over the sea.</li>
+<li><b>Country information</b>: <code>IsEu</code> says whether the country is in the European Union, with <code>CurrencyCode</code> (ISO 4217), <code>DialCode</code> (the ITU telephone country code) and <code>LanguageCode</code> (ISO 639).</li>
+<li><b>Network</b>: <code>RegisteredName</code> is the name of the IP range, which is usually its owner, <code>IsPublicRouter</code> says whether the address belongs to a public router, and <code>IsBroadband</code> whether the connection is broadband, including DSL, cable, fiber and satellite.</li>
+<li><b>Bot identification</b>, from Device Detection: <code>IsCrawler</code>, <code>IsArtificialIntelligence</code>, <code>CrawlerName</code>, <code>CrawlerProductTokens</code>, <code>CrawlerUrl</code>, <code>CrawlerUsage</code>.</li>
 <li><b>Human probability</b>: <code>HumanProbability</code> returns a score from 0 to 10. See <a class="el" href="_ip_intelligence__features__human.html" title="Human">Human</a>.</li>
-<li><b>Probabilistic identifiers</b>: <code>IdProbGlobal</code>, <code>IdProbLic</code>. </li>
+<li><b>Probabilistic identifiers</b>, from 51Did: <code>IdProbGlobal</code>, <code>IdProbLic</code>. </li>
 </ul>
 </div></div><!-- primary -->
 </div><!-- inner -->

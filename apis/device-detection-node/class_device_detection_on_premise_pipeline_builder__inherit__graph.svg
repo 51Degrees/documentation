@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:title=" ">
+<g id="a_Node000002"><a target="_parent" xlink:href="../../pipeline-node/4.5/class_pipeline_builder.html" xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="120.5,-85 30.5,-85 30.5,-66 120.5,-66 120.5,-85"/>
 <text text-anchor="middle" x="75.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">PipelineBuilder</text>
 </a>

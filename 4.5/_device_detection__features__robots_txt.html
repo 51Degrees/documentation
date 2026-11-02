@@ -73,6 +73,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <p>A <code>robots.txt</code> file is a plain text file hosted at the root of a website (for example <code><a href="https://example.com/robots.txt">https://example.com/robots.txt</a></code>) that tells web crawlers which parts of the site they are or are not allowed to access. It follows the <a href="https://www.rfc-editor.org/rfc/rfc9309.html">Robots Exclusion Protocol</a>, where each block declares one or more <code>User-Agent</code> lines followed by <code>Allow:</code> and/or <code>Disallow:</code> directives that the named crawlers should respect.</p>
 <p>With the explosion of AI training crawlers, search bots, analytics agents, archival workers and security scanners, manually maintaining a <code>robots.txt</code> that correctly distinguishes between these uses is impractical. The crawler list changes constantly, individual operators ship multiple product tokens, and a single bot can serve more than one purpose.</p>
 <p>The <code>RobotsTxtEngine</code> shipped in the <a href="https://github.com/51Degrees/device-detection-dotnet/tree/main/FiftyOne.DeviceDetection.RobotsTxt">device-detection-dotnet</a> package solves this problem by generating a <code>robots.txt</code> document on demand from the up-to-date 51Degrees crawler dataset, driven by a small set of allow/disallow choices expressed in terms of <a class="el" href="_device_detection__features__crawlers.html" title="Crawlers">crawler usages</a> rather than individual user-agents.</p>
+<h2 class="doxsection" id="availability">Availability<a class="headerlink" href="#availability" aria-label="Permalink to this section">🔗</a></h2>
+<p>The on-premise <code>RobotsTxtEngine</code> is available in .NET only. It ships in the <a href="https://github.com/51Degrees/device-detection-dotnet/tree/main/FiftyOne.DeviceDetection.RobotsTxt">device-detection-dotnet</a> package, and there is no equivalent engine in the Java, C, C++, Go, Rust, PHP, Node or Python SDKs.</p>
+<p>Robots.txt generation is available from every language through 51Degrees Cloud, which is an HTTP call and needs no SDK at all. See <a class="el" href="#cloud-usage" title="Cloud Usage">Cloud Usage</a>Cloud Usage below. There is also a hosted generator at <a href="https://51degrees.com/robots-txt">51degrees.com/robots-txt</a> that produces a file to host, with no code involved.</p>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">How you use it  </td><td class="c-table__cell">Available in  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">On-premise engine  </td><td class="c-table__cell">.NET only  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">51Degrees Cloud  </td><td class="c-table__cell">Any language, over HTTP  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">Hosted generator  </td><td class="c-table__cell">No code required  </td></tr>
+</table>
 <h2 class="doxsection" id="output-properties">Output Properties<a class="headerlink" href="#output-properties" aria-label="Permalink to this section">🔗</a></h2>
 <p>The engine produces two synthetic properties — they are not stored in any data file, they are computed at request time from the crawler dataset and the evidence supplied to the engine.</p>
 <h2 class="doxsection" id="robotstxtplaintext">robotstxt.plaintext<a class="headerlink" href="#robotstxtplaintext" aria-label="Permalink to this section">🔗</a></h2>

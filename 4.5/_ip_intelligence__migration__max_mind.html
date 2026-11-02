@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>continent.names.{locale}</code>  </td><td class="c-table__cell"><code>ContinentName</code>  </td><td class="c-table__cell">51Degrees returns the English name; localized names are not exposed as separate properties.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>continent.geoname_id</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">51Degrees does not use GeoNames identifiers.  </td></tr>
+<td class="c-table__cell"><code>continent.geoname_id</code>  </td><td class="c-table__cell"><code>ContinentGeoNameId</code>  </td><td class="c-table__cell"></td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>country.iso_code</code>  </td><td class="c-table__cell"><code>CountryCode</code>  </td><td class="c-table__cell">Use <code>CountryCode3</code> for ISO 3166-1 alpha-3.  </td></tr>
 <tr class="c-table__row">
@@ -90,11 +90,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>country.confidence</code>  </td><td class="c-table__cell"><code>LocationConfidence</code>  </td><td class="c-table__cell">MaxMind exposes confidence per geographic level (country, city, subdivision, postal); 51Degrees rolls them up into a single string-valued <code>LocationConfidence</code>. See the note below the City/postal/location table.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>country.geoname_id</code>  </td><td class="c-table__cell"></td><td class="c-table__cell"></td></tr>
+<td class="c-table__cell"><code>country.geoname_id</code>  </td><td class="c-table__cell"><code>CountryGeoNameId</code>  </td><td class="c-table__cell"></td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>registered_country.iso_code</code>  </td><td class="c-table__cell"><code>RegisteredCountry</code>  </td><td class="c-table__cell"></td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>registered_country.names.{locale}</code>  </td><td class="c-table__cell"><code>RegisteredCountry</code>  </td><td class="c-table__cell">51Degrees returns the country only, not localized names.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>registered_country.geoname_id</code>  </td><td class="c-table__cell"><code>RegisteredCountryGeoNameId</code>  </td><td class="c-table__cell"></td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>represented_country.*</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">51Degrees does not separately model represented country (US military bases etc.).  </td></tr>
 </table>
@@ -109,7 +111,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>subdivisions[0].confidence</code>  </td><td class="c-table__cell"><code>LocationConfidence</code>  </td><td class="c-table__cell">See the note below the City/postal/location table.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>subdivisions[0].geoname_id</code>  </td><td class="c-table__cell"></td><td class="c-table__cell"></td></tr>
+<td class="c-table__cell"><code>subdivisions[0].geoname_id</code>  </td><td class="c-table__cell"><code>StateGeoNameId</code>  </td><td class="c-table__cell">Use <code>StateGeoNameIdsGeographical</code> for every first-level subdivision that the location's area overlaps, weighted by its share of that area.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>subdivisions[1].names.{locale}</code>  </td><td class="c-table__cell"><code>County</code>  </td><td class="c-table__cell">Approximate. MaxMind lists subdivisions from largest to smallest, and a second one, where MaxMind returns it, is nearest to the second-level administrative area that 51Degrees returns as <code>County</code>.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>subdivisions[1].geoname_id</code>  </td><td class="c-table__cell"><code>CountyGeoNameId</code>  </td><td class="c-table__cell">Approximate, as for the name.  </td></tr>
 </table>
 <h2 class="doxsection" id="city-postal-location">City, postal, location<a class="headerlink" href="#city-postal-location" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
@@ -120,7 +126,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>city.confidence</code>  </td><td class="c-table__cell"><code>LocationConfidence</code>  </td><td class="c-table__cell">See the note below this table.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>city.geoname_id</code>  </td><td class="c-table__cell"></td><td class="c-table__cell"></td></tr>
+<td class="c-table__cell"><code>city.geoname_id</code>  </td><td class="c-table__cell"><code>TownGeoNameId</code>  </td><td class="c-table__cell">51Degrees gives the town or populated place nearest the location.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>postal.code</code>  </td><td class="c-table__cell"><code>ZipCode</code>  </td><td class="c-table__cell"></td></tr>
 <tr class="c-table__row">
@@ -201,13 +207,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <td class="c-table__cell"><code>anonymizer.provider_name</code>  </td><td class="c-table__cell"></td><td class="c-table__cell"></td></tr>
 </table>
 <h2 class="doxsection" id="properties-unique-to-51degrees-1">Properties unique to 51Degrees<a class="headerlink" href="#properties-unique-to-51degrees-1" aria-label="Permalink to this section">🔗</a></h2>
-<p>The following 51Degrees properties have no MaxMind equivalent. They are the additional context that drives <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">accuracy weighting</a>, <a class="el" href="_ip_intelligence__features__countries.html" title="Countries">country diversity</a> and bot detection.</p>
+<p>The following 51Degrees properties have no MaxMind equivalent. They are the additional context that drives <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">accuracy weighting</a> and bot detection.</p>
 <ul>
-<li><b>Weighted country lists</b>: <code>CountryCodesGeographical</code>, <code>CountryCodesPopulation</code>, and their <code>*All</code> and <code>*Translated</code> variants return every candidate country with weightings, not a single best-guess. See <a class="el" href="_ip_intelligence__features__countries.html" title="Countries">Countries</a>.</li>
 <li><b>Diversity scores</b>: <code>BrowserDiversity</code>, <code>HardwareDiversity</code>, <code>PlatformDiversity</code> quantify how varied the traffic from an IP range is. See <a class="el" href="_ip_intelligence__features__diversity.html" title="Diversity">Diversity</a>.</li>
-<li><b>Bot identification</b>: <code>IsCrawler</code>, <code>IsArtificialIntelligence</code>, <code>CrawlerName</code>, <code>CrawlerProductTokens</code>, <code>CrawlerUrl</code>, <code>CrawlerUsage</code>.</li>
+<li><b>Finer places</b>: <code>Suburb</code>, and <code>Iso31662Lvl8</code> and <code>Iso31662Lvl8SubdivisionOnly</code>, the ISO 3166-2 code of the OpenStreetMap level 8 area the location is in.</li>
+<li><b>Area polygon</b>: <code>Areas</code> returns the area the IP range is likely to be in as a WKT string, trimmed to the land of the location's country so it does not reach into a neighboring country or over the sea.</li>
+<li><b>Country information</b>: <code>CurrencyCode</code> (ISO 4217), <code>DialCode</code> (the ITU telephone country code) and <code>LanguageCode</code> (ISO 639).</li>
+<li><b>Network</b>: <code>RegisteredName</code> is the name of the IP range, which is usually its owner, and <code>IsPublicRouter</code> says whether the address belongs to a public router.</li>
+<li><b>Bot identification</b>, from Device Detection: <code>IsCrawler</code>, <code>IsArtificialIntelligence</code>, <code>CrawlerName</code>, <code>CrawlerProductTokens</code>, <code>CrawlerUrl</code>, <code>CrawlerUsage</code>.</li>
 <li><b>Human probability</b>: <code>HumanProbability</code> returns a score from 0 to 10. See <a class="el" href="_ip_intelligence__features__human.html" title="Human">Human</a>.</li>
-<li><b>Probabilistic identifiers</b>: <code>IdProbGlobal</code>, <code>IdProbLic</code>. </li>
+<li><b>Probabilistic identifiers</b>, from 51Did: <code>IdProbGlobal</code>, <code>IdProbLic</code>. </li>
 </ul>
 </div></div><!-- primary -->
 </div><!-- inner -->

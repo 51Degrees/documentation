@@ -1085,7 +1085,12 @@ input[type=text] {
 }
 .g-footer--docs {
   border-top: none;
-  text-align: left;
+  text-align: center;
+}
+@media (min-width: 769px) {
+  .g-footer--docs {
+    text-align: left;
+  }
 }
 .g-footer--docs a {
   transition: color 0.3s ease;
@@ -1098,7 +1103,11 @@ input[type=text] {
 }
 .g-footer--docs .g-footer__message {
   font-size: 1.2rem;
-  padding-left: 2.0736rem;
+}
+@media (min-width: 769px) {
+  .g-footer--docs .g-footer__message {
+    padding-left: 2.0736rem;
+  }
 }
 
 .g-footer__message {

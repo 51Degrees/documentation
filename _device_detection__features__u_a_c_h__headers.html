@@ -80,10 +80,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <p>The 51Degrees API will automatically determine the names and values of any response headers that need to be set based on the initial information.</p>
 <p>When using the Pipeline web integration, most languages will automatically set the response headers for you as well. If not using a web integration, or your language does not support it, you will need to set the response headers manually.</p>
 <h2 class="doxsection" id="UACH_Headers_Cloud">Cloud<a class="headerlink" href="#UACH_Headers_Cloud" aria-label="Permalink to this section">🔗</a></h2>
-<p>Make sure that one or more of the following properties are included with your <a class="el" href="_services__configurator.html" title="Configurator (Cloud)">Resource Key</a>:</p><ul>
+<p>Make sure that one or more of the following properties are included with your <a class="el" href="_services__configurator.html" title="Creating a Resource Key">Resource Key</a>:</p><ul>
 <li><code>SetHeaderBrowserAccept-CH</code></li>
 <li><code>SetHeaderHardwareAccept-CH</code></li>
-<li><code>SetHeaderPlatformAccept-CH</code> (The configurator will automatically add the ones relevant to the properties you have selected)</li>
+<li><code>SetHeaderPlatformAccept-CH</code> (The ones relevant to the properties you have selected are added automatically when you create the key)</li>
 </ul>
 <p>If you are calling our Cloud Service via our Pipeline API, hosted on your servers, then you'll also need to ensure the <code>Accept-CH</code> HTTP header is set using these values. See the 'On-premise' section below for the two approaches to doing this, as well as a note on the <code>Critical-CH</code> header.</p>
 <p>If you are calling our Cloud Service directly from the client device, then you'll need to let the browser know that it's okay to send the client hints to our Cloud Service. There are two ways to do this.</p>

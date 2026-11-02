@@ -1,0 +1,26 @@
+var examples =
+[
+    [ "gettingStarted.js", "getting_started_8js-example.html", null ],
+    [ "cloud/getallproperties-console/getAllProperties.js", "cloud_2getallproperties-console_2get_all_properties_8js-example.html", null ],
+    [ "cloud/gettingstarted-console/gettingStarted.js", "cloud_2gettingstarted-console_2getting_started_8js-example.html", null ],
+    [ "cloud/gettingstarted-web/gettingStarted.js", "cloud_2gettingstarted-web_2getting_started_8js-example.html", null ],
+    [ "cloud/metadata-console/metaData.js", "cloud_2metadata-console_2meta_data_8js-example.html", null ],
+    [ "cloud/mixed/gettingstarted-console/gettingStarted.js", "cloud_2mixed_2gettingstarted-console_2getting_started_8js-example.html", null ],
+    [ "cloud/mixed/gettingstarted-web/gettingStarted.js", "cloud_2mixed_2gettingstarted-web_2getting_started_8js-example.html", null ],
+    [ "onpremise/automaticupdates/dataFileSystemWatcher.js", "onpremise_2automaticupdates_2data_file_system_watcher_8js-example.html", null ],
+    [ "onpremise/automaticupdates/updateOnStartUp.js", "onpremise_2automaticupdates_2update_on_start_up_8js-example.html", null ],
+    [ "onpremise/automaticupdates/updatePollingInterval.js", "onpremise_2automaticupdates_2update_polling_interval_8js-example.html", null ],
+    [ "onpremise/compare-console/compare.js", "onpremise_2compare-console_2compare_8js-example.html", null ],
+    [ "onpremise/country-translation-console/gettingStarted.js", "onpremise_2country-translation-console_2getting_started_8js-example.html", null ],
+    [ "onpremise/gettingstarted-console/gettingStarted.js", "onpremise_2gettingstarted-console_2getting_started_8js-example.html", null ],
+    [ "onpremise/gettingstarted-web/gettingStarted.js", "onpremise_2gettingstarted-web_2getting_started_8js-example.html", null ],
+    [ "onpremise/metadata-console/metaData.js", "onpremise_2metadata-console_2meta_data_8js-example.html", null ],
+    [ "onpremise/metrics-console/metrics.js", "onpremise_2metrics-console_2metrics_8js-example.html", null ],
+    [ "onpremise/mixed/gettingstarted-api/gettingStarted.js", "onpremise_2mixed_2gettingstarted-api_2getting_started_8js-example.html", null ],
+    [ "onpremise/mixed/gettingstarted-console/gettingStarted.js", "onpremise_2mixed_2gettingstarted-console_2getting_started_8js-example.html", null ],
+    [ "onpremise/mixed/gettingstarted-web/gettingStarted.js", "onpremise_2mixed_2gettingstarted-web_2getting_started_8js-example.html", null ],
+    [ "onpremise/offlineprocessing-console/offlineProcessing.js", "onpremise_2offlineprocessing-console_2offline_processing_8js-example.html", null ],
+    [ "onpremise/performance-console/performance.js", "onpremise_2performance-console_2performance_8js-example.html", null ],
+    [ "onpremise/suspicious-console/suspicious.js", "onpremise_2suspicious-console_2suspicious_8js-example.html", null ],
+    [ "onpremise/updatedatafile-console/updatedatafile.js", "onpremise_2updatedatafile-console_2updatedatafile_8js-example.html", null ]
+];

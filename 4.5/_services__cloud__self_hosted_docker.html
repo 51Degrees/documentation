@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <tr class="c-table__row">
 <td class="c-table__cell"><code>IPI_CONCURRENCY</code>  </td><td class="c-table__cell">no  </td><td class="c-table__cell">Number of concurrent handles in the <a class="el" href="_ip_intelligence__overview.html" title="IP Intelligence Overview">IP Intelligence</a> engine pool (an unsigned integer). Raise this when peak request rates trigger "Insufficient handles available in the pool" errors. Default = <code>128</code>. Invalid or zero values fall back to the default.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>REGION_NAME</code>  </td><td class="c-table__cell">no  </td><td class="c-table__cell">Free-text region label returned in the <code>51D-Region</code> response header and from <code>/api/info</code>.  </td></tr>
+<td class="c-table__cell"><code>REGION_NAME</code>  </td><td class="c-table__cell">no  </td><td class="c-table__cell">Free-text region label returned in the <code>51D-Region</code> response header and from <code>/api/info</code>, and attached as the <code>region</code> label on exported telemetry (see Telemetry below).  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>ASPNETCORE_URLS</code>  </td><td class="c-table__cell">no  </td><td class="c-table__cell">Override the in-container listen address/port (the image listens on <code>8080</code> by default).  </td></tr>
 <tr class="c-table__row">
@@ -134,7 +134,52 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <div class="c-code__line"># Device detection + IP intelligence</div>
 <div class="c-code__line">curl &quot;http://localhost:8080/api/v4/json?user-agent=Mozilla/5.0%20(iPhone)&amp;client-ip=2.125.160.216&quot;</div>
 </div><!-- fragment --><p>Interactive API documentation is served at <code><a href="http://localhost:8080/api-docs">http://localhost:8080/api-docs</a></code>.</p>
-<h2 class="doxsection" id="updating">Updating<a class="headerlink" href="#updating" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="telemetry">Telemetry<a class="headerlink" href="#telemetry" aria-label="Permalink to this section">🔗</a></h2>
+<p>The container can push its own telemetry: metrics, logs and traces, each sent over OTLP HTTP. This is off by default, and nothing ever goes to 51Degrees: each signal is exported only when you enable the push and give that signal an endpoint URL of your own.</p>
+<ul>
+<li><b>Metrics</b> - request metrics from ASP.NET Core, and .NET runtime metrics such as CPU, memory, GC and thread pool usage.</li>
+<li><b>Logs</b> - the service's log stream.</li>
+<li><b>Traces</b> - a trace per handled request, with unhandled exceptions recorded on the span. A request that reaches pipeline processing also carries a <code>pipeline.process</code> child span with the resource key and the request evidence (headers, query values, client hints) as attributes, plus a client span for every outbound HTTP call the service makes. Evidence values that carry an IP address, an email address or hashing salt, a license key, or an <code>Authorization</code>/<code>Cookie</code> header are always exported as <code>[redacted]</code>, whatever the variables below say. Query string values on the server span are redacted by default; see the redaction variable below.</li>
+</ul>
+<p>Every signal carries <code>node</code>, <code>region</code> and <code>provider</code> resource labels taken from <code>INSTANCE_NAME</code>, <code>REGION_NAME</code> (see the table above) and <code>PROVIDER_NAME</code>, so containers in a fleet can be told apart at the backend.</p>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Variable  </td><td class="c-table__cell">Description  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>LogServices__OpenTelemetry__Enabled</code>  </td><td class="c-table__cell">Master switch for the OTLP push. Defaults to <code>false</code>.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>LogServices__OpenTelemetry__MetricsEndpoint</code>  </td><td class="c-table__cell">OTLP HTTP ingest URL for metrics. Metrics are exported only when this is set.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>LogServices__OpenTelemetry__LogsEndpoint</code>  </td><td class="c-table__cell">OTLP HTTP ingest URL for logs. Logs are exported only when this is set.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>LogServices__OpenTelemetry__TracesEndpoint</code>  </td><td class="c-table__cell">OTLP HTTP ingest URL for traces. Traces are exported only when this is set.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>LogServices__OpenTelemetry__Headers</code>  </td><td class="c-table__cell">Headers sent with every OTLP export, as comma separated <code>key=value</code> pairs, e.g. <code>Authorization=Bearer &lt;token&gt;</code>.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>LogServices__OpenTelemetry__TracesSampleRatio</code>  </td><td class="c-table__cell">Fraction of requests traced, between 0 and 1. Defaults to 1, which traces every request; keep it well below 1 in production, since sampling happens before the outcome of a request is known and the ratio is what bounds the volume of successful-request traces.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>LogServices__OpenTelemetry__TracesIncludeEvidence</code>  </td><td class="c-table__cell">Set to <code>false</code> to drop the request evidence attributes from <code>pipeline.process</code> spans, for installations that must not keep request data in traces. Defaults to <code>true</code>. The <code>[redacted]</code> values described above stay redacted either way.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>OTEL_DOTNET_EXPERIMENTAL_ASPNETCORE_DISABLE_URL_QUERY_REDACTION</code>  </td><td class="c-table__cell">Set to <code>true</code> to keep query string values in spans, so a caller's request can be reproduced from its trace. Redacted by default.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>INSTANCE_NAME</code>  </td><td class="c-table__cell"><code>node</code> label on the exported telemetry, also returned in the <code>51D-Instance</code> response header. Defaults to the machine name.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>PROVIDER_NAME</code>  </td><td class="c-table__cell"><code>provider</code> label on the exported telemetry, e.g. <code>my-cloud</code>. No label is attached when unset.  </td></tr>
+</table>
+<p>Any backend that accepts OTLP over HTTP works. This example points the three signals at VictoriaMetrics, VictoriaLogs and VictoriaTraces:</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">docker run -d --name 51d-cloud \</div>
+<div class="c-code__line">  -p 8080:8080 \</div>
+<div class="c-code__line">  -e LICENSE_KEYS=&lt;your-license-key&gt; \</div>
+<div class="c-code__line">  -e LogServices__OpenTelemetry__Enabled=true \</div>
+<div class="c-code__line">  -e LogServices__OpenTelemetry__MetricsEndpoint=https://victoriametrics:8428/opentelemetry/v1/metrics \</div>
+<div class="c-code__line">  -e LogServices__OpenTelemetry__LogsEndpoint=https://victorialogs:9428/insert/opentelemetry/v1/logs \</div>
+<div class="c-code__line">  -e LogServices__OpenTelemetry__TracesEndpoint=https://victoriatraces:10428/insert/opentelemetry/v1/traces \</div>
+<div class="c-code__line">  -e &quot;LogServices__OpenTelemetry__Headers=Authorization=Bearer &lt;token&gt;&quot; \</div>
+<div class="c-code__line">  -e INSTANCE_NAME=node-1 \</div>
+<div class="c-code__line">  -e REGION_NAME=eu \</div>
+<div class="c-code__line">  -e PROVIDER_NAME=my-cloud \</div>
+<div class="c-code__line">  51degrees/cloud-private</div>
+</div><!-- fragment --><h2 class="doxsection" id="updating">Updating<a class="headerlink" href="#updating" aria-label="Permalink to this section">🔗</a></h2>
 <p>Both the software and the data files ship inside the image, so updating either means moving to a newer image:</p>
 <ul>
 <li><b>Data files</b> - 51Degrees publishes a new <code>cloud-private</code> image daily, with refreshed data files as needed. Pull the latest (date-tagged) image and recreate the container to pick up newer data.</li>

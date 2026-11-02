@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Configurator (Cloud) - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Configurator (Cloud)</title>
+<meta name="description" content="Creating a Resource Key - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Creating a Resource Key</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -64,21 +64,20 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__con
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_services__index.html">Services</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_services__configurator.html">Configurator (Cloud)</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_services__index.html">Services</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_services__configurator.html">Creating a Resource Key</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Configurator (Cloud) </h1></div><!--header-->
+<h1 class="g-docs__page-title">Creating a Resource Key </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="doxsection" id="obtaining-a-resource-key">Obtaining a Resource Key<a class="headerlink" href="#obtaining-a-resource-key" aria-label="Permalink to this section">🔗</a></h2>
-<p>Access to API queries is controlled by a Resource Key, which is obtained from the <a href="https://configure.51degrees.com/">Cloud Configurator</a>.</p>
+<div class="textblock"><p>Access to the cloud service is controlled by a Resource Key, which you create for free at <a href="https://configure.51degrees.com/">configure.51degrees.com</a>. Paid properties and higher request limits come from a License Key, which comes with a subscription and is attached to the Resource Key when you create it, so the License Key itself never goes on a page. The difference between the two keys is set out on <a class="el" href="_services__cloud__resource_keys.html" title="Resource Keys">Resource Keys</a>.</p>
 <p>When a Resource Key is created, you choose the properties that it will return from queries, and once these are set they cannot be changed. However, it is possible to create more keys, each tied to whichever properties you choose.</p>
 <p>For a comprehensive list of all available properties and their descriptions, see the <a href="https://51degrees.com/developers/property-dictionary">Property Dictionary</a>.</p>
 <p> 
 <iframe src="https://player.vimeo.com/video/769426655" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </p>
 <h2 class="doxsection" id="step-1-choose-properties">Step 1: Choose properties<a class="headerlink" href="#step-1-choose-properties" aria-label="Permalink to this section">🔗</a></h2>
-<p>To obtain a Resource Key, visit the <a href="https://configure.51degrees.com/">Cloud Configurator</a>. This will show the complete list of properties, broken down by category and by vendor. Choose whichever properties you need for the query you are planning.</p>
-<p>For example, if you intend to look up latitude and longitude data to get a country, using 51Degrees as the vendor, then in the <a href="https://configure.51degrees.com/">Configurator</a> you can find the <b>Country</b> property by choosing <b>Location</b> on the left, then <b>location</b> again, then ticking <b>Country</b> with the 51D logo. Clicking on that <b>Country</b> key shows a description: "Country By 51Degrees: The name of the country that the supplied location is in." Descriptions are there to help you understand what each property means and whether you want to include it in your queries.</p>
+<p>Open <a href="https://configure.51degrees.com/">configure.51degrees.com</a>. It shows the complete list of properties, broken down by category and by vendor. Choose whichever properties you need for the query you are planning.</p>
+<p>For example, if you intend to look up latitude and longitude data to get a country, using 51Degrees as the vendor, you can find the <b>Country</b> property by choosing <b>Location</b> on the left, then <b>location</b> again, then ticking <b>Country</b> with the 51D logo. Clicking on that <b>Country</b> key shows a description: "Country By 51Degrees: The name of the country that the supplied location is in." Descriptions are there to help you understand what each property means and whether you want to include it in your queries.</p>
 <div class="image">
 <img src="configurator-location-country.png" alt=""/>
 </div>
@@ -90,11 +89,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__con
 <div class="image">
 <img src="configurator-implement-key.png" alt=""/>
 </div>
-    <p>Follow these three steps by visiting the configurator at <a href="https://configure.51degrees.com/">configure.51degrees.com</a> and obtaining a Resource Key from the Resource Key section in Step 3.</p>
+    <p>Follow these three steps at <a href="https://configure.51degrees.com/">configure.51degrees.com</a> and take the Resource Key from the Resource Key section in Step 3.</p>
 <p>Make a note of that Resource Key and then continue following the <a class="el" href="index.html" title="Introduction">introduction</a>.</p>
 <h2 class="doxsection" id="displaying-details-for-an-existing-resource-key">Displaying details for an existing Resource Key<a class="headerlink" href="#displaying-details-for-an-existing-resource-key" aria-label="Permalink to this section">🔗</a></h2>
-<p>If you have a Resource Key and need to establish which properties it has access to, you can construct a URL <a href="https://configure.51degrees.com/YOUR_RESOURCE_KEY">https://configure.51degrees.com/YOUR_RESOURCE_KEY</a>. This will show Step 1 of the Configurator with the properties for this specific key already selected.</p>
-<p>Beware: do not continue to Steps 2 or 3. Doing this will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it wil create a new Resource Key. </p>
+<p>If you have a Resource Key and need to establish which properties it has access to, you can construct a URL <a href="https://configure.51degrees.com/YOUR_RESOURCE_KEY">https://configure.51degrees.com/YOUR_RESOURCE_KEY</a>. This will show Step 1 with the properties for this specific key already selected.</p>
+<p>Beware: do not continue to Steps 2 or 3. Doing this will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it will create a new Resource Key. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

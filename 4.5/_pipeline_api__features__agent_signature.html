@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <p>The element is checked against the standards and against the agents signing today, not only against its own fixtures.</p>
 <ul>
 <li>The worked examples printed in <a href="https://www.rfc-editor.org/rfc/rfc9421">RFC 9421</a> itself are asserted character for character against the signature base the element rebuilds, so any drift from the standard fails a test.</li>
-<li>The <a href="https://github.com/httpwg/structured-field-tests">structured field test suite</a> published by the HTTP working group, over a thousand cases, runs against the header parsing and the strict serialisation.</li>
+<li>The <a href="https://github.com/httpwg/structured-field-tests">structured field test suite</a> published by the HTTP working group, over a thousand cases, runs against the header parsing and the strict serialization.</li>
 <li>The test vectors Cloudflare publishes in their <a href="https://github.com/cloudflare/web-bot-auth">web-bot-auth</a> project verify, so the element agrees with their reference implementation.</li>
 <li>Live interoperability tests fetch the key directories Cloudflare and OpenAI publish for their real agents, read keys from them, and verify a freshly signed request against Cloudflare's Web Bot Auth research service, so the element is checked against the services on the wire, not only against copies. These tests need the network, so the suite runs them only when the environment variable <code>FIFTYONE_AGENT_SIGNATURE_NETWORK_TESTS</code> is set to <code>1</code>.</li>
 </ul>

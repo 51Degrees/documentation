@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <h1 class="g-docs__page-title">onpremise/useragentclienthints-web/userAgentClientHintsWeb.js</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-node/blob/master/fiftyone.devicedetection.onpremise/examples/onpremise/useragentclienthints-web/userAgentClientHintsWeb.js">GitHub</a>.</p>
-<p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-node/blob/master/fiftyone.devicedetection.onpremise/examples/onpremise/useragentclienthints-web/userAgentClientHintsWeb.js">GitHub</a>. Expected output:</p>
+<p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-node/blob/main/device-detection/fiftyone.devicedetection.onpremise/examples/onpremise/useragentclienthints-web/userAgentClientHintsWeb.js">GitHub</a>.</p>
+<p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-node/blob/main/device-detection/fiftyone.devicedetection.onpremise/examples/onpremise/useragentclienthints-web/userAgentClientHintsWeb.js">GitHub</a>. Expected output:</p>
 <p>User Agent Client Hints Example</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">Hardware Vendor: [...]</div>
 <div class="c-code__line">Hardware Name: [...]</div>
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line">  <span class="c-code__keywordflow">try</span> {</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">return</span> require(path.join(__dirname, <span class="c-code__stringliteral">&#39;/../../../node_modules/&#39;</span>, requestedPackage));</div>
 <div class="c-code__line">  } <span class="c-code__keywordflow">catch</span> (e) {</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">return</span> require(path.join(__dirname, <span class="c-code__stringliteral">&#39;/../../../../&#39;</span>, requestedPackage));</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> require(requestedPackage);</div>
 <div class="c-code__line">  }</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Load in a datafile</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">const</span> datafile = (process.env.directory || __dirname) + <span class="c-code__stringliteral">&#39;/../../../device-detection-cxx/device-detection-data/51Degrees-LiteV4.1.hash&#39;</span>;</div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> datafile = (process.env.directory || __dirname) + <span class="c-code__stringliteral">&#39;/../../../../../cxx/device-detection-data/51Degrees-LiteV4.1.hash&#39;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> (!fs.existsSync(datafile)) {</div>
 <div class="c-code__line">  console.error(<span class="c-code__stringliteral">&quot;The datafile required by this example is not present. Please ensure that the &#39;device-detection-data&#39; submodule has been fetched.&quot;</span>);</div>
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line">    <span class="c-code__comment">// requested. So set whatever headers are required by the browser in</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// order to return the evidence needed by the pipeline.</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// More info on this can be found at</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/blog/user-agent-client-hints?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.onpremise-examples-onpremise-useragentclienthints-web-useragentclienthintsweb.js&amp;utm_term=server</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/blog/user-agent-client-hints?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.devicedetection.onpremise-examples-onpremise-useragentclienthints-web-useragentclienthintsweb.js&amp;utm_term=server</span></div>
 <div class="c-code__line">    core.Helpers.setResponseHeaders(res, flowData);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    res.setHeader(<span class="c-code__stringliteral">&#39;Content-Type&#39;</span>, <span class="c-code__stringliteral">&#39;text/html&#39;</span>);</div>

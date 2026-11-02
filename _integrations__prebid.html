@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_integrations_
 <div class="textblock"><h2 class="doxsection" id="prebid-integration">Prebid Integration<a class="headerlink" href="#prebid-integration" aria-label="Permalink to this section">🔗</a></h2>
 <p>51Degrees enriches OpenRTB bid requests with three streams of data: <b>Device Detection</b> properties, the <b>51Did</b> probabilistic device identifier, and <b>IP Intelligence</b> location signals. Together they let buyers target and value impressions more accurately, and recognise the same device across requests without cookies.</p>
 <blockquote class="doxtable">
-<p><b>See it work.</b> The <a href="https://51degrees.com/developers/prebid-js-demo">interactive Prebid.js demo</a> fires contemporary device samples against random public IPs and shows the bid object populate live against cloud.51degrees.com. </p>
+<p><b>Try it.</b> To experiment with a simple Prebid OpenRTB transaction, use the <a href="https://51degrees.com/developers/prebid-js-demo">Prebid.js developer tool</a>. It runs a Prebid.js auction with the 51Degrees RTD module, for your own browser or a sample device, and shows the OpenRTB bid request before and after 51Degrees enriches it. </p>
 </blockquote>
 <h2 class="doxsection" id="what-the-integration-delivers">What the Integration Delivers<a class="headerlink" href="#what-the-integration-delivers" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
@@ -93,11 +93,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_integrations_
 <h3 class="doxsection" id="client-side-prebidjs-rtd-module">Client-Side: Prebid.js RTD Module<a class="headerlink" href="#client-side-prebidjs-rtd-module" aria-label="Permalink to this section">🔗</a></h3>
 <p>Use this when you want the full enrichment set (device, 51Did, IP Intelligence) and maximum device-detection accuracy. The module runs in the user's browser, can read JavaScript APIs for precise device identification (best for distinguishing Apple models), and calls cloud.51degrees.com to fetch the data.</p>
 <p><b>Setup:</b> <a href="https://docs.prebid.org/dev-docs/modules/51DegreesRtdProvider.html">Prebid.js RTD Module Documentation</a></p>
-<p><b>Resource Key properties.</b> Generate the key with the <a href="https://configure.51degrees.com">Cloud Configurator</a>. To populate every field the RTD module writes, include:</p>
+<p><b>Resource Key properties.</b> Create the key at <a href="https://configure.51degrees.com">configure.51degrees.com</a>. To populate every field the RTD module writes, include:</p>
 <ul>
 <li><b>Device Detection</b> (<code>device.*</code>): <code>DeviceId</code>, <code>DeviceType</code>, <code>HardwareVendor</code>, <code>HardwareName</code>, <code>HardwareNamePrefix</code>, <code>HardwareNameVersion</code>, <code>HardwareModel</code>, <code>PlatformName</code>, <code>PlatformVersion</code>, <code>ScreenPixelsHeight</code>, <code>ScreenPixelsWidth</code>, <code>ScreenPixelsPhysicalHeight</code>, <code>ScreenPixelsPhysicalWidth</code>, <code>ScreenInchesHeight</code>, <code>ScreenInchesWidth</code>, <code>PixelRatio</code>, <code>ThirdPartyCookiesEnabled</code>.</li>
 <li><b>IP Intelligence</b> (<code>device.ip</code>, <code>device.geo.*</code>): <code>Latitude</code>, <code>Longitude</code>, <code>CountryCode3</code>, <code>Iso31662Lvl4</code>, <code>ZipCode</code>, <code>TimeZoneOffset</code>, <code>AccuracyRadiusMin</code>, <code>LocationConfidence</code>.</li>
-<li><b>51Did</b> (<code>user.eids</code>): <code>IdProbLic</code>, <code>IdProbGlobal</code>. Issuing the 51Did for <code>standard</code> or <code>personalized</code> usage also requires a Special license key on the Resource Key (see the 51Did section below).</li>
+<li><b>51Did</b> (<code>user.eids</code>): <code>IdProbLic</code>, <code>IdProbGlobal</code>. Issuing the 51Did for <code>standard</code> or <code>personalized</code> usage also needs a License Key that carries the 51Did product (see the 51Did section below).</li>
 </ul>
 <h3 class="doxsection" id="server-side-prebid-server-java-and-go">Server-Side: Prebid Server (Java and Go)<a class="headerlink" href="#server-side-prebid-server-java-and-go" aria-label="Permalink to this section">🔗</a></h3>
 <p>Use this when you need faster response times or want to centralize detection logic. Prebid Server currently adds <b>device detection</b> properties only. Both the Java and Go implementations share a single Prebid.org module documentation page: <a href="https://docs.prebid.org/prebid-server/pbs-modules/51degrees-device-detection.html">Prebid Server 51Degrees Module Documentation</a></p>
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_integrations_
 <div class="c-code__line">          { &quot;id&quot;: &quot;AzUxZC5lcwBzGTMAJQAAAAHWTQ...&quot;, &quot;atype&quot;: 1 },</div>
 <div class="c-code__line">          { &quot;id&quot;: &quot;AzUxZC5lcwCxHzMAJQAAAAHWTQ...&quot;, &quot;atype&quot;: 1 }</div>
 <div class="c-code__line">        ],</div>
-<div class="c-code__line">        &quot;ext&quot;: { &quot;tdl&quot;: [&quot;https://tdl.51degrees.com/...&quot;] }</div>
+<div class="c-code__line">        &quot;ext&quot;: { &quot;tdl&quot;: [&quot;https://m4ow.uk/mtm/2.txt&quot;] }</div>
 <div class="c-code__line">      }</div>
 <div class="c-code__line">    ]</div>
 <div class="c-code__line">  }</div>
@@ -137,9 +137,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_integrations_
 </div><!-- fragment --><ul>
 <li><code>mm: 5</code> marks the match method as probabilistic.</li>
 <li>The two <code>uids</code> are the license-tier identifier (<code>idproblic</code>) and the global-tier identifier (<code>idprobglobal</code>), in that order.</li>
-<li><code>ext.tdl</code> is emitted only when a transparency-and-disclosure URL is configured (the <code>tdlUrl</code> module parameter); it is omitted otherwise.</li>
+<li><code>ext.tdl</code> names the <a href="https://m4ow.uk/mtm/2.txt">Model Terms for Marketing</a> on every entry, by the address of version 2, the version in force. When the <code>tdlUrl</code> module parameter is set, its address follows the Model Terms in the list.</li>
 </ul>
-<p>The 51Did is delivered by the RTD module only. Issuing it for <code>standard</code> or <code>personalized</code> usage purposes requires a Special license key on the Resource Key; the <code>non-marketing</code> purpose is available in the free tier. See <a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a> for licensing and <a class="el" href="_identifiers__p_m_p.html" title="PMP (Preference Management Platform)">PMP (Preference Management Platform)</a> for capturing the user's marketing preference that feeds <code>id.usage</code>.</p>
+<p>The 51Did is delivered by the RTD module only. Issuing it for <code>standard</code> or <code>personalized</code> usage purposes needs a License Key that carries the 51Did product, and the <code>non-marketing</code> purpose is available in the free tier. See <a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a> for licensing and <a class="el" href="_identifiers__p_m_p.html" title="PMP (Preference Management Platform)">PMP (Preference Management Platform)</a> for capturing the user's marketing preference that feeds <code>id.usage</code>.</p>
 <h3 class="doxsection" id="ip-intelligence">IP Intelligence<a class="headerlink" href="#ip-intelligence" aria-label="Permalink to this section">🔗</a></h3>
 <p>From the request IP the RTD module adds the IP address and, when confident, an approximate location to the <code>device</code> object:</p>
 <ul>
@@ -188,7 +188,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_integrations_
 <div class="c-code__line">        &quot;uids&quot;: [</div>
 <div class="c-code__line">          { &quot;id&quot;: &quot;AzUxZC5lcwBzGTMAJQAAAAHWTQ...&quot;, &quot;atype&quot;: 1 },</div>
 <div class="c-code__line">          { &quot;id&quot;: &quot;AzUxZC5lcwCxHzMAJQAAAAHWTQ...&quot;, &quot;atype&quot;: 1 }</div>
-<div class="c-code__line">        ]</div>
+<div class="c-code__line">        ],</div>
+<div class="c-code__line">        &quot;ext&quot;: { &quot;tdl&quot;: [&quot;https://m4ow.uk/mtm/2.txt&quot;] }</div>
 <div class="c-code__line">      }</div>
 <div class="c-code__line">    ]</div>
 <div class="c-code__line">  }</div>

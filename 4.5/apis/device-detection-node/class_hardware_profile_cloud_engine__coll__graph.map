@@ -1,5 +1,9 @@
 <map id="HardwareProfileCloudEngine" name="HardwareProfileCloudEngine">
-<area shape="rect" id="Node000001" title="This Cloud Aspect Engine enables the parsing of &#39;hardware profile&#39; responses from the 51Degrees cloud..." alt="" coords="5,79,212,104"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="57,5,160,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,44,111,79,106,79,106,44"/>
+<area shape="rect" id="Node000001" title="This Cloud Aspect Engine enables the parsing of &#39;hardware profile&#39; responses from the 51Degrees cloud..." alt="" coords="5,225,212,251"/>
+<area shape="rect" id="Node000002" href="/home/runner/work/documentation/documentation/apis/51degrees-node/pipeline/docs/tagfile$class_cloud_engine.html" title=" " alt="" coords="57,152,160,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,191,111,225,106,225,106,191"/>
+<area shape="rect" id="Node000003" href="/home/runner/work/documentation/documentation/apis/51degrees-node/pipeline/docs/tagfile$class_engine.html" title=" " alt="" coords="75,79,142,104"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,118,111,152,106,152,106,118"/>
+<area shape="rect" id="Node000004" href="/home/runner/work/documentation/documentation/apis/51degrees-node/pipeline/docs/tagfile$class_flow_element.html" title=" " alt="" coords="55,5,162,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="111,44,111,79,106,79,106,44"/>
 </map>

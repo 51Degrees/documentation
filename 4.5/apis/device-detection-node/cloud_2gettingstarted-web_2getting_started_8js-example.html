@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <h1 class="g-docs__page-title">cloud/gettingstarted-web/gettingStarted.js</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-node/blob/master/fiftyone.devicedetection.cloud/examples/cloud/gettingstarted-web/gettingStarted.js">GitHub</a>.</p>
-<p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-node/blob/master/fiftyone.devicedetection.cloud/examples/cloud/gettingstarted-web/gettingStarted.js">GitHub</a>. Required npm Dependencies:</p><ul>
+<p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-node/blob/main/device-detection/fiftyone.devicedetection.cloud/examples/cloud/gettingstarted-web/gettingStarted.js">GitHub</a>.</p>
+<p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-node/blob/main/device-detection/fiftyone.devicedetection.cloud/examples/cloud/gettingstarted-web/gettingStarted.js">GitHub</a>. Required npm Dependencies:</p><ul>
 <li><a href="https://www.npmjs.com/package/fiftyone.pipeline.cloudrequestengine">fiftyone.pipeline.cloudrequestengine</a></li>
 <li><a href="https://www.npmjs.com/package/fiftyone.pipeline.core">fiftyone.pipeline.core</a></li>
 <li><a href="https://www.npmjs.com/package/fiftyone.pipeline.engines">fiftyone.pipeline.engines</a></li>
@@ -75,10 +75,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <li><a href="https://www.npmjs.com/package/fiftyone.devicedetection.cloud">fiftyone.devicedetection.cloud</a></li>
 </ul>
 <h2>Overview</h2>
-<p>The <code>flowData.evidence.addFromRequestAsync(request)</code> is used to extract required evidence from a Http request, including the values the 51Degrees client script sends as a posted form body, which are only reached by reading the body. The <code>Helpers.setResponseHeaders(response, flowData)</code> from fiftyone.pipeline.core package is used to add extra headers to a Http response to request further evidence from the client. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">await flowData.evidence.addFromRequestAsync(request);</div>
+<p>The <code>flowData.evidence.addFromRequestAsync(request)</code> is used to extract required evidence from a Http request, including the values the 51Degrees client script sends as a posted form body, which are only reached by reading the body. The <code><a class="elRef" href="../../pipeline-node/4.5/class_helpers.html#a3155a15799e3249c574e7083755d9dbc">Helpers.setResponseHeaders(response, flowData)</a></code> from fiftyone.pipeline.core package is used to add extra headers to a Http response to request further evidence from the client. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">await flowData.evidence.addFromRequestAsync(request);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">core.Helpers.setResponseHeaders(response, flowData);</div>
-</div><!-- fragment --><p>The results of detection can be accessed by querying the <code>device</code> property of a FlowData object. This can then be used to interrogate the data. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">var flowData = pipeline.createFlowData();</div>
+</div><!-- fragment --><p>The results of detection can be accessed by querying the <code>device</code> property of a <a class="elRef" href="../../pipeline-node/4.5/class_flow_data.html">FlowData</a> object. This can then be used to interrogate the data. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">var flowData = pipeline.createFlowData();</div>
 <div class="c-code__line">var deviceData = pipeline.device;</div>
 <div class="c-code__line">var hardwareVendor = deviceData.hardwarevendor;</div>
 </div><!-- fragment --><p>Results can also be accessed in client-side code by using the <code>fod</code> object. See the <a href="/documentation/4.5/apis/pipeline-node/class_java_script_builder_element.html">JavaScriptBuilderElement</a> for details on available settings such as changing the <code>fod</code> name. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">window.onload = <span class="c-code__keyword">function</span> () {</div>
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line">  <span class="c-code__keywordflow">try</span> {</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">return</span> require(path.join(__dirname, <span class="c-code__stringliteral">&#39;/../../../node_modules/&#39;</span>, requestedPackage));</div>
 <div class="c-code__line">  } <span class="c-code__keywordflow">catch</span> (e) {</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">return</span> require(path.join(__dirname, <span class="c-code__stringliteral">&#39;/../../../../&#39;</span>, requestedPackage));</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> require(requestedPackage);</div>
 <div class="c-code__line">  }</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
@@ -194,13 +194,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line">    `<span class="c-code__stringliteral">&#39;${ExampleUtils.RESOURCE_KEY_ENV_VAR}&#39;</span>. The 51Degrees cloud ` +</div>
 <div class="c-code__line">    <span class="c-code__stringliteral">&#39;service is accessed using a \&#39;ResourceKey\&#39;. For more information &#39;</span> +</div>
 <div class="c-code__line">    <span class="c-code__stringliteral">&#39;see &#39;</span> +</div>
-<div class="c-code__line">    <span class="c-code__stringliteral">&#39;https://51degrees.com/documentation/_info__resource_keys.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-web-gettingstarted.js&amp;utm_term=resource-key-required. &#39;</span> +</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&#39;https://51degrees.com/documentation/_info__resource_keys.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-web-gettingstarted.js&amp;utm_term=resource-key-required. &#39;</span> +</div>
 <div class="c-code__line">    <span class="c-code__stringliteral">&#39;A resource key with the free properties used by this example can &#39;</span> +</div>
-<div class="c-code__line">    <span class="c-code__stringliteral">&#39;be created at https://configure.51degrees.com/Wkqxf3Bs?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-web-gettingstarted.js&amp;utm_term=resource-key-required. A free &#39;</span> +</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&#39;be created at https://configure.51degrees.com/Wkqxf3Bs?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-web-gettingstarted.js&amp;utm_term=resource-key-required. A free &#39;</span> +</div>
 <div class="c-code__line">    <span class="c-code__stringliteral">&#39;key populates the free properties only, whilst a key created at &#39;</span> +</div>
-<div class="c-code__line">    <span class="c-code__stringliteral">&#39;https://configure.51degrees.com/hYzn3TV3?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-web-gettingstarted.js&amp;utm_term=resource-key-required also includes the paid &#39;</span> +</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&#39;https://configure.51degrees.com/hYzn3TV3?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-web-gettingstarted.js&amp;utm_term=resource-key-required also includes the paid &#39;</span> +</div>
 <div class="c-code__line">    <span class="c-code__stringliteral">&#39;properties this example displays. See &#39;</span> +</div>
-<div class="c-code__line">    <span class="c-code__stringliteral">&#39;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-web-gettingstarted.js&amp;utm_term=resource-key-required to get a paid subscription with &#39;</span> +</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&#39;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-web-gettingstarted.js&amp;utm_term=resource-key-required to get a paid subscription with &#39;</span> +</div>
 <div class="c-code__line">    <span class="c-code__stringliteral">&#39;more properties. Once complete, populate the config file or &#39;</span> +</div>
 <div class="c-code__line">    <span class="c-code__stringliteral">&#39;environment variable mentioned at the start of this message &#39;</span> +</div>
 <div class="c-code__line">    <span class="c-code__stringliteral">&#39;with the key.&#39;</span>;</div>
@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line">      <span class="c-code__comment">// requested. So set whatever headers are required by the browser in</span></div>
 <div class="c-code__line">      <span class="c-code__comment">// order to return the evidence needed by the pipeline.</span></div>
 <div class="c-code__line">      <span class="c-code__comment">// More info on this can be found at</span></div>
-<div class="c-code__line">      <span class="c-code__comment">// https://51degrees.com/blog/user-agent-client-hints?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-web-gettingstarted.js&amp;utm_term=server</span></div>
+<div class="c-code__line">      <span class="c-code__comment">// https://51degrees.com/blog/user-agent-client-hints?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.devicedetection.cloud-examples-cloud-gettingstarted-web-gettingstarted.js&amp;utm_term=server</span></div>
 <div class="c-code__line">      core.Helpers.setResponseHeaders(res, flowData);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">      <span class="c-code__comment">// Obtain all used evidence</span></div>

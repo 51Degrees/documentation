@@ -1,0 +1,36 @@
+var _identifiers_51_did =
+[
+    [ "Transparency and Consent Framework strings", "_identifiers_51_did__tcf.html", [
+      [ "Terminology", "_identifiers_51_did.html#terminology-1", null ],
+      [ "Identifier types", "_identifiers_51_did.html#identifier-types", null ],
+      [ "Usage flags", "_identifiers_51_did.html#usage-flags", null ],
+      [ "Properties", "_identifiers_51_did.html#properties-1", null ],
+      [ "Request inputs", "_identifiers_51_did.html#request-inputs", null ],
+      [ "When the identifier is created", "_identifiers_51_did.html#when-the-identifier-is-created", null ],
+      [ "Setting the usage policy", "_identifiers_51_did.html#setting-the-usage-policy", [
+        [ "Direct - your integration owns the mapping", "_identifiers_51_did.html#direct---your-integration-owns-the-mapping", null ],
+        [ "Derived from consent - the cloud maps a TCF string for you", "_identifiers_51_did.html#derived-from-consent---the-cloud-maps-a-tcf-string-for-you", null ]
+      ] ],
+      [ "Usage policies and licensing", "_identifiers_51_did.html#usage-policies-and-licensing", null ],
+      [ "Example", "_identifiers_51_did.html#example", null ],
+      [ "Payload layout", "_identifiers_51_did.html#payload-layout", null ],
+      [ "51Did readers", "_identifiers_51_did.html#autotoc_md51did-readers", null ],
+      [ "Comparing two 51Dids", "_identifiers_51_did.html#comparing-two-51dids", null ],
+      [ "Validation", "_identifiers_51_did.html#validation", [
+        [ "Verifying the creator context", "_identifiers_51_did.html#verifying-the-creator-context", null ],
+        [ "Fetching the public keys", "_identifiers_51_did.html#fetching-the-public-keys", null ]
+      ] ],
+      [ "Use cases", "_identifiers_51_did.html#use-cases-2", [
+        [ "Sending the string", "_identifiers_51_did__tcf.html#sending-the-string", null ],
+        [ "The purposes each usage needs", "_identifiers_51_did__tcf.html#the-purposes-each-usage-needs", null ],
+        [ "A string that grants too little", "_identifiers_51_did__tcf.html#a-string-that-grants-too-little", null ],
+        [ "A stated usage wins", "_identifiers_51_did__tcf.html#a-stated-usage-wins", null ],
+        [ "What the identifier records", "_identifiers_51_did__tcf.html#what-the-identifier-records", null ],
+        [ "The License Key the marketing usages need", "_identifiers_51_did__tcf.html#the-license-key-the-marketing-usages-need", null ],
+        [ "Find out more", "_identifiers_51_did__tcf.html#find-out-more-7", null ]
+      ] ]
+    ] ],
+    [ "Global Privacy Platform and US Privacy strings", "_identifiers_51_did__gpp.html", null ],
+    [ "Global Privacy Control", "_identifiers_51_did__gpc.html", null ],
+    [ "The PMP answer", "_identifiers_51_did__pmp.html", null ]
+];

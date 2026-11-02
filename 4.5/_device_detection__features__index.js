@@ -51,6 +51,7 @@ var _device_detection__features__index =
     ] ],
     [ "Robots.txt Generator", "_device_detection__features__robots_txt.html", [
       [ "Introduction", "_device_detection__features__robots_txt.html#introduction-19", null ],
+      [ "Availability", "_device_detection__features__robots_txt.html#availability", null ],
       [ "Output Properties", "_device_detection__features__robots_txt.html#output-properties", [
         [ "robotstxt.plaintext", "_device_detection__features__robots_txt.html#robotstxtplaintext", null ],
         [ "robotstxt.annotatedtext", "_device_detection__features__robots_txt.html#robotstxtannotatedtext", null ]

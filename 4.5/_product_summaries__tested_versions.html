@@ -96,19 +96,23 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_product_summa
 <p>We automatically test and distribute binary packages for a limited list of platforms and architectures. In case the provided binary package does not run on your environment - you have to build the library from source for your specific platform and architecture. All 51Degrees language libraries provide instructions on building the library from source. F.e. see:</p>
 <ul>
 <li><a href="https://github.com/51Degrees/device-detection-dotnet?tab=readme-ov-file#build-from-source">Building Device Detection .NET library from source</a></li>
-<li><a href="https://github.com/51Degrees/device-detection-dotnet?tab=readme-ov-file#build-from-source">Building Device Detection Java library from source</a></li>
+<li><a href="https://github.com/51Degrees/device-detection-java?tab=readme-ov-file#build-and-install-from-source">Building Device Detection Java library from source</a></li>
 </ul>
 <h2 class="doxsection" id="automation">Automation<a class="headerlink" href="#automation" aria-label="Permalink to this section">🔗</a></h2>
 <p>The tests cover a wide array of scenarios and are available to view in our repositories on <a href="https://github.com/51Degrees">GitHub</a>. In general, we apply the following guidelines when deciding which platforms and versions to test against:</p><ul>
 <li>We use GitHub Actions with hosted runners, so we test against platforms that GitHub has <a href="https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources">hosted runners</a> for.</li>
 <li>We test against all versions of languages that are currently considered LTS versions.</li>
 </ul>
-<p>The tabs below show the specific platforms and versions that are currently tested as part of each release.</p>
+<p>The tabs below are built from each repository's CI configuration each time the page loads, so they show what is tested today. Under each table are links to the repository's latest release and to its test runs.</p>
 <p>If something is not tested here, and you believe it should be, please raise an issue via our <a href="https://github.com/51Degrees">GitHub</a> page. If you have a configuration that is not covered, <a href="https://51degrees.com/contact-us">contact us</a> and we will look into it.</p>
 <p> 
 <script>
   $( document ).ready(function() {
-      grabTestedVersions("device-detection-nginx", "nginx-versions", [
+      grabTestedVersions("51degrees-varnish", "varnish-versions", [
+          { title: "Project", getValue: (d) => d.VinylVersion ? "Vinyl Cache" : "Varnish Cache" },
+          { title: "Version", getValue: (d) => d.VinylVersion || d.VarnishVersion }
+      ], undefined, "publish.yml");
+      grabTestedVersions("51degrees-nginx", "nginx-versions", [
           { title: "NGINX Version", getValue: (d) => d.NginxVersion }
       ]);
       grabTestedVersions("51degrees-cxx", "cxx-versions", [
@@ -124,10 +128,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_product_summa
       grabTestedVersions("device-detection-python", "python-versions", [
           { title: "Python Version", getValue: d => d.LanguageVersion }
       ]);
-      grabTestedVersions("device-detection-node", "node-versions", [
+      grabTestedVersions("51degrees-node", "node-versions", [
           { title: "Node Version", getValue: d => d.LanguageVersion }
       ]);
-      grabTestedVersions("ip-intelligence-node", "ipi-node-versions", [
+      grabTestedVersions("51degrees-node", "ipi-node-versions", [
           { title: "Node Version", getValue: d => d.LanguageVersion }
       ]);
       grabTestedVersions("device-detection-go", "go-versions", [
@@ -136,40 +140,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_product_summa
       grabTestedVersions("device-detection-php", "php-versions", [
           { title: "PHP Version", getValue: d => d.LanguageVersion }
       ]);
+      grabTestedVersions("pipeline-wordpress", "wordpress-versions", [
+          { title: "PHP Version", getValue: d => d.LanguageVersion }
+      ]);
+      grabTestedVersions("51degrees-rust", "rust-versions", []);
   });
 </script>
 </p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cxx')">C/C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">.NET</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'go')">Go</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'varnish')">Varnish</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'nginx')">Nginx</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'wordpress')">Wordpress</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'rust')">Rust</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view the tested versions.  </div> </p>
 <p> <div class="c-tabgroup__main" data-lang="cxx" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=cxx&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="cxx-versions"></div><p> Windows includes Framework and Core. If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=dotnet&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="dotnet-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=java&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="java-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=php&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="php-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=node&amp;type=all&amp;language=&amp;sort=">GitHub</a>. Testing targets the current Node.js LTS versions, the tables below are built from the CI configuration of each repository so they always reflect the versions currently tested.</p>
-<p>Device Detection: </p><div id="node-versions"></div><p> IP Intelligence: </p><div id="ipi-node-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="python" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=python&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="python-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="go" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=go&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="go-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="varnish" style="display:none;">  Language Versions:</p><ul>
-<li>Varnish 6.0.8</li>
-</ul>
-<p>Platforms:</p><ul>
-<li>Ubuntu 18.04<ul>
-<li>64-bit (x86_64)</li>
-</ul>
-</li>
-<li>Ubuntu 20.04<ul>
-<li>64-bit (x86_64)</li>
-</ul>
-</li>
-</ul>
-<p> </div>   <div class="c-tabgroup__main" data-lang="nginx" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=nginx&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="nginx-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="wordpress" style="display:none;">  Language Versions:</p><ul>
-<li>Wordpress 5.9.2</li>
-</ul>
-<p>Platforms:</p><ul>
-<li>Ubuntu 18.04<ul>
-<li>PHP 5.6, 7.2, 7.3, 7.4</li>
-</ul>
-</li>
-</ul>
-<p> </div>   <div class="c-tabgroup__main" data-lang="rust" style="display:none;">  These are tested on <a href="https://github.com/51Degrees?q=rust&amp;type=all&amp;language=&amp;sort=">GitHub</a>.</p>
-<p>Platforms:</p><ul>
-<li>Windows (windows-latest, x86_64)</li>
-<li>Linux (ubuntu-22.04 and ubuntu-24.04, x86_64)</li>
-<li>macOS (macos-latest, Apple Silicon / arm64)</li>
-</ul>
-<p>Language Versions:</p><ul>
+<p>Device Detection: </p><div id="node-versions"></div><p> IP Intelligence: </p><div id="ipi-node-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="python" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=python&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="python-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="go" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees?q=go&amp;type=all&amp;language=&amp;sort=">GitHub</a>. </p><div id="go-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="varnish" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees/51degrees-varnish">GitHub</a>. </p><div id="varnish-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="nginx" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees/51degrees-nginx">GitHub</a>. </p><div id="nginx-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="wordpress" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees/pipeline-wordpress">GitHub</a>. </p><div id="wordpress-versions"></div><p> If you have a configuration that is not covered, please <a href="https://51degrees.com/contact-us">contact us</a>.  </div>   <div class="c-tabgroup__main" data-lang="rust" style="display:none;">  These are automatically tested on <a href="https://github.com/51Degrees/51degrees-rust">GitHub</a>. </p><div id="rust-versions"></div><p>Language Versions:</p><ul>
 <li>Rust stable (current)</li>
 <li>Minimum supported Rust version: 1.94</li>
 </ul>

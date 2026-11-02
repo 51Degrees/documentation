@@ -89,7 +89,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <li><b>Discovery</b> Indicates that the crawler is used to gain an understanding of the discoverability or search ranking of the crawled website or web page. Primarily relating to Search Engine Optimisation (SEO).</li>
 </ul>
 <h2 class="doxsection" id="isartificialintelligence">IsArtificialIntelligence<a class="headerlink" href="#isartificialintelligence" aria-label="Permalink to this section">🔗</a></h2>
-<p><code>IsArtificialIntelligence</code> is a boolean property designed to give you easy answers about AI crawling. If the crawler has a <code>CrawlerUsage</code> related to AI this will be TRUE.</p>
+<p><code>IsArtificialIntelligence</code> is a property designed to give you easy answers about AI crawling. If the crawler has a <code>CrawlerUsage</code> related to AI this will be True.</p>
+<ul>
+<li><b>True</b> The crawler is confirmed by the controller to be used to train artificial intelligence.</li>
+<li><b>False</b> The crawler is not used to train artificial intelligence. This may be based on the controller documentation or on the capabilities and purpose of the crawler. For crawlers which do not read website content it is assumed they cannot be used to train artificial intelligence.</li>
+<li><b>Unknown</b> It is not possible to determine whether the crawler is being used to train artificial intelligence.</li>
+<li><b>N/A</b> Not a crawler.</li>
+</ul>
 <h2 class="doxsection" id="signed-agents">Signed Agents<a class="headerlink" href="#signed-agents" aria-label="Permalink to this section">🔗</a></h2>
 <p><code>IsCrawler</code> and the other crawler properties tell you what an agent declares about itself. An <a class="el" href="_pipeline_api__features__agent_signature.html" title="Agent Signatures">agent signature</a> tells you what an agent has proved. The two are used together.</p>
 <p>A crawler declares itself through its User-Agent header, and any other program can send the same header, so a declaration is a claim. Under the IETF Web Bot Auth protocol an agent instead signs its request with a private key and publishes the matching public key on its own site. That signature either checks out or it does not, and it cannot be produced without the private key, so <code>AgentSignature</code> is proof where <code>IsCrawler</code> is a claim.</p>

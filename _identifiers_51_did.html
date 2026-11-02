@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <td class="c-table__cell"><code>personalized</code>  </td><td class="c-table__cell">Marketing and other content related to your browsing history or interactions.  </td></tr>
 </table>
 <p>The flags are hierarchical, in that <code>personalized</code> implies <code>standard</code> and <code>standard</code> implies <code>non-marketing</code>, mirroring the kind of consent tier a user dialog typically offers (a single tier per visitor that covers every use below it).</p>
-<p><b>Only <code>non-marketing</code> global 51Dids are available in the free tier.</b> Issuing a 51Did for <code>standard</code> or <code>personalized</code> purposes requires a <b>Special license key</b> to be added to the Resource Key, see <em>Usage policies and licensing</em> below.</p>
+<p><b>Only <code>non-marketing</code> global 51Dids are available in the free tier.</b> Issuing a 51Did for <code>standard</code> or <code>personalized</code> purposes needs a License Key that carries the 51Did product, added to the Resource Key or sent beside it, see <em>Usage policies and licensing</em> below.</p>
 <h2 class="doxsection" id="properties-1">Properties<a class="headerlink" href="#properties-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>Each property returns a full 51Did identifier (the OWID envelope, signed). The value inside (its type and scope) is described in the table.</p>
 <table class="c-table">
@@ -139,19 +139,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <p>So a request from a browser page that still owes any of those results creates nothing. The identifier properties come back with no value, and <code>fodid.idprobglobalnullreason</code>, or the reason property beside whichever identifier was asked for, says the page has not finished running its snippets, naming what is still to run and what to send. The client script's next request, carrying the results, is the one that creates the identifier, and the client script reports complete only after that. Two consequences follow.</p>
 <ul>
 <li>Wait for the client script's completion signal before reading the identifier or placing it anywhere. A header wrapper or auction library running on a fixed timer must give that signal enough time to arrive on a slow connection, or the first auction leaves without an identifier.</li>
-<li>A server calling the JSON endpoint on a visitor's behalf is not a browser page and is not held to this, as long as it names its own software in its <code>User-Agent</code> and passes the visitor's <code>User-Agent</code> as the <code>user-agent</code> parameter. A server that sends the visitor's <code>User-Agent</code> as its own request header is judged to be a browser page and is asked for snippet results it can never send. A server also needs a Resource Key that names no domains, or a licence key through a pipeline. A Resource Key locked to a domain is checked against the <code>Referer</code> header, falling back to <code>Origin</code>, and a server request carries neither, so it is refused, and the refusal is silent from the page's point of view because the page still serves and the data is simply absent. A key that names domains is for pages.</li>
+<li>A server calling the JSON endpoint on a visitor's behalf is not a browser page and is not held to this, as long as it names its own software in its <code>User-Agent</code> and passes the visitor's <code>User-Agent</code> as the <code>user-agent</code> parameter. A server that sends the visitor's <code>User-Agent</code> as its own request header is judged to be a browser page and is asked for snippet results it can never send. A server also needs a Resource Key that names no domains, or a License Key through a pipeline. A Resource Key locked to a domain is checked against the <code>Referer</code> header, falling back to <code>Origin</code>, and a server request carries neither, so it is refused, and the refusal is silent from the page's point of view because the page still serves and the data is simply absent. A key that names domains is for pages.</li>
 </ul>
 <p>The same rule applies to verifying the creator context, described under <em>Validation</em>, where a verification that carries none of what the page collected is answered with an error naming the values to send rather than a verdict.</p>
 <h2 class="doxsection" id="setting-the-usage-policy">Setting the usage policy<a class="headerlink" href="#setting-the-usage-policy" aria-label="Permalink to this section">🔗</a></h2>
 <p>The cloud accepts two ways to decide a request's <code>id.usage</code> value. The <em>Direct</em> path can set any of the three values described under <em>Usage flags</em>, whereas the <em>Derived from consent</em> path only ever produces <code>standard</code> or <code>personalized</code> (or no value), never <code>non-marketing</code>.</p>
 <h3 class="doxsection" id="direct---your-integration-owns-the-mapping">Direct - your integration owns the mapping<a class="headerlink" href="#direct---your-integration-owns-the-mapping" aria-label="Permalink to this section">🔗</a></h3>
-<p>Your integration decides the value and tells the cloud what to do by passing an explicit <code>id.usage</code> (<code>non-marketing</code>, <code>standard</code> or <code>personalized</code>) as a query parameter or HTTP request header. You own the mapping from whatever preference or consent surface you use to one of these three values, and the cloud acts on what you supply. This is the path <a class="el" href="_identifiers__p_m_p.html" title="PMP (Preference Management Platform)">PMP (Preference Management Platform)</a> takes. PMP captures the user's choice and announces it on the page, and the 51Degrees client script hears it and sends it as <code>id.usage</code> on its next request.</p>
-<h3 class="doxsection" id="derived-from-consent---the-cloud-maps-a-tcf-or-gpp-string-for-you">Derived from consent - the cloud maps a TCF or GPP string for you<a class="headerlink" href="#derived-from-consent---the-cloud-maps-a-tcf-or-gpp-string-for-you" aria-label="Permalink to this section">🔗</a></h3>
-<p>Instead of deciding the value yourself, pass the raw IAB consent string and let the cloud derive <code>id.usage</code> from the consented purposes. Two evidence parameters are accepted:</p>
-<ul>
-<li><code>tcstring</code> - an IAB TCF v2 TCString, from the PMP widget or any TCF-aware CMP.</li>
-<li><code>gpp</code> - an IAB GPP string. When a GPP string carries a decodable EU TCF v2 section it takes precedence over <code>tcstring</code>, and a GPP string with no TCF section (for example a US-only string) is ignored and the cloud falls back to <code>tcstring</code>.</li>
-</ul>
+<p>Your integration decides the value and tells the cloud what to do by passing an explicit <code>id.usage</code> (<code>non-marketing</code>, <code>standard</code> or <code>personalized</code>) as a query parameter or HTTP request header. You own the mapping from whatever preference or consent surface you use to one of these three values, and the cloud acts on what you supply. This is the path <a class="el" href="_identifiers__p_m_p.html" title="PMP (Preference Management Platform)">PMP (Preference Management Platform)</a> takes. PMP records the visitor's choice and passes the choice to the 51Degrees client script, which sends the choice to the cloud as <code>id.usage</code> on the script's next request.</p>
+<h3 class="doxsection" id="derived-from-consent---the-cloud-maps-a-tcf-string-for-you">Derived from consent - the cloud maps a TCF string for you<a class="headerlink" href="#derived-from-consent---the-cloud-maps-a-tcf-string-for-you" aria-label="Permalink to this section">🔗</a></h3>
+<p>Instead of deciding the value yourself, pass the raw IAB TCF v2 TC string as <code>tcstring</code>, from PMP or any TCF-aware consent management platform, and let the cloud derive <code>id.usage</code> from the consented purposes. A Global Privacy Platform string is not read, because the Model Terms for Marketing do not map that platform. See <a class="el" href="_identifiers_51_did__gpp.html" title="Global Privacy Platform and US Privacy strings">Global Privacy Platform and US Privacy strings</a>.</p>
 <p>The cloud parses the string and checks the consented <a href="https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/">IAB TCF v2 purposes</a> against the sets below, which are Appendix 1 of the <a href="https://m4ow.uk/mtm/2.txt">Model Terms for Marketing</a>, adding the matching <code>id.usage</code>:</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -161,8 +157,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <tr class="c-table__row">
 <td class="c-table__cell"><code>standard</code>  </td><td class="c-table__cell">1, 2, 7, 8, 11  </td></tr>
 </table>
-<p><code>personalized</code> is tried first, then <code>standard</code>. If neither set is fully satisfied the cloud adds no <code>id.usage</code>, the <code>fodid.*</code> properties return a no-value reason, and no identifier is issued for advertising use the consent does not permit. Purposes 2, 7, 8 and 11 may be satisfied by a legitimate-interest bit as well as a consent bit, whereas purposes 1, 3, 4, 5 and 6 require an explicit consent bit, because IAB Policy forbids claiming them under legitimate interest.</p>
-<p><b>Direct intent always wins.</b> If <code>id.usage</code> is present on the request (query or header) the cloud uses it and ignores any <code>tcstring</code> or <code>gpp</code>, and derivation runs only when no explicit value was supplied. Malformed consent strings are ignored rather than rejected.</p>
+<p><code>personalized</code> is tried first, then <code>standard</code>. If neither set is fully satisfied the cloud adds no <code>id.usage</code>, so the response carries no <code>fodid</code> section and no identifier is issued for advertising use the consent does not permit. Purposes 2, 7, 8 and 11 may be satisfied by a legitimate-interest bit as well as a consent bit, whereas purposes 1, 3, 4, 5 and 6 require an explicit consent bit, because IAB Policy forbids claiming them under legitimate interest.</p>
+<p><b>Direct intent always wins.</b> If <code>id.usage</code> is present on the request (query or header) the cloud uses it and ignores any <code>tcstring</code>, and derivation runs only when no explicit value was supplied. Malformed consent strings are ignored rather than rejected.</p>
+<p>Each consent signal a request can carry has a page of its own:</p>
+<ul>
+<li><a class="el" href="_identifiers_51_did__tcf.html" title="Transparency and Consent Framework strings">Transparency and Consent Framework strings</a></li>
+<li><a class="el" href="_identifiers_51_did__gpp.html" title="Global Privacy Platform and US Privacy strings">Global Privacy Platform and US Privacy strings</a></li>
+<li><a class="el" href="_identifiers_51_did__gpc.html" title="Global Privacy Control">Global Privacy Control</a></li>
+<li><a class="el" href="_identifiers_51_did__pmp.html" title="The PMP answer">The PMP answer</a></li>
+</ul>
 <h2 class="doxsection" id="usage-policies-and-licensing">Usage policies and licensing<a class="headerlink" href="#usage-policies-and-licensing" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -170,22 +173,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <tr class="c-table__row">
 <td class="c-table__cell"><code>non-marketing</code>  </td><td class="c-table__cell"><code>fodid.*</code> on the Resource Key only.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>standard</code>  </td><td class="c-table__cell">Special license key required.  </td></tr>
+<td class="c-table__cell"><code>standard</code>  </td><td class="c-table__cell">A License Key that carries the 51Did product.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>personalized</code>  </td><td class="c-table__cell">Special license key required.  </td></tr>
+<td class="c-table__cell"><code>personalized</code>  </td><td class="c-table__cell">A License Key that carries the 51Did product.  </td></tr>
 </table>
-<p><code>standard</code> and <code>personalized</code> 51Dids are issued under contractual Model Terms that govern how the data can be used once it leaves the cloud service, and are gated by Know Your Customer (KYC) checks before the Special license key is granted. Contact 51Degrees to apply.</p>
-<p><code>non-marketing</code> 51Dids are provided under legitimate interest and must not leave the customer environment.</p>
-<p>If <code>id.usage</code> is omitted, or set to <code>standard</code> / <code>personalized</code> while the Resource Key lacks the Special license key, the <code>fodid.*</code> properties are returned with a no-value reason rather than throwing. Any value other than the three listed above is rejected as an invalid usage.</p>
+<p><code>standard</code> and <code>personalized</code> 51Dids are created under the <a href="https://m4ow.uk/mtm">Model Terms for Marketing</a>, the terms 51Degrees and the companies that send and receive a 51Did work to, and the 51Dids the cloud creates today carry <a href="https://m4ow.uk/mtm/2.txt">version 2</a>. 51Degrees grants the 51Did product on a License Key after its know your customer checks, so <a href="https://51degrees.com/contact-us">contact 51Degrees</a> to apply.</p>
+<p><code>non-marketing</code> 51Dids are covered by the customer's agreement with 51Degrees under the published <a href="https://51degrees.com/terms/general-terms-and-conditions/20261019">General Terms and Conditions</a> and <a href="https://51degrees.com/terms/cloud-services-terms/20260323">Cloud Services Terms</a>.</p>
+<p>If <code>id.usage</code> is omitted the response carries no <code>fodid</code> section. If it is set to <code>standard</code> or <code>personalized</code> while the request carries no License Key with the 51Did product, the <code>fodid.*</code> properties are returned with a no-value reason rather than throwing. Any value other than the three listed above is rejected as an invalid usage.</p>
 <h2 class="doxsection" id="example">Example<a class="headerlink" href="#example" aria-label="Permalink to this section">🔗</a></h2>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">GET /api/v4/json?resource=&lt;RESOURCE_KEY&gt;</div>
 <div class="c-code__line">    &amp;user-agent=iPhone</div>
 <div class="c-code__line">    &amp;client-ip=203.0.113.42</div>
 <div class="c-code__line">    &amp;id.usage=standard</div>
-</div><!-- fragment --><p>The resource key can also be sent as a header instead of in the URL:</p>
+</div><!-- fragment --><p>The Resource Key can also be sent as a header instead of in the URL:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">GET /api/v4/json?user-agent=iPhone&amp;client-ip=203.0.113.42&amp;id.usage=standard</div>
 <div class="c-code__line">X-51D-Resource-Key: &lt;RESOURCE_KEY&gt;</div>
-</div><!-- fragment --><p>License-key-only callers (no resource key) must list the 51Did properties they want via <code>values</code>, e.g. <code>values=fodid.idprobglobal</code> (or <code>fodid.idproblic</code>), since they have no Resource Key with a baked-in property list (see <a class="el" href="_services__cloud__resource_keys.html" title="Resource Keys">Resource Keys</a>).</p>
+</div><!-- fragment --><p>License-key-only callers (no Resource Key) must list the 51Did properties they want via <code>values</code>, e.g. <code>values=fodid.idprobglobal</code> (or <code>fodid.idproblic</code>), since they have no Resource Key with a baked-in property list (see <a class="el" href="_services__cloud__resource_keys.html" title="Resource Keys">Resource Keys</a>).</p>
 <p>Response:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
 <div class="c-code__line">  &quot;fodid&quot;: {</div>
@@ -195,26 +198,29 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p>Open the example value in the <a href="https://51degrees.com/developers/51did-inspector?51did=AzUxZC5lcwBzGTMAJQAAAAHWTQAAr193zLwxDrchR2XHYmoTzJML7fAB60rimQeTd2WuHMPoQ4Bz56QhxhXoAynWyaAE8kWo8DO92y9LPLdatHSVaCdSioL7JaMg8S2DV36ehXIZc0HhdqteyARmOnRS7o8j">51Did inspector</a> to unpack the OWID envelope, see the parsed flags, licenseId and 32-byte hash, and verify the ECDSA P-256 signature against the issuer's published public key.</p>
 <h2 class="doxsection" id="payload-layout">Payload layout<a class="headerlink" href="#payload-layout" aria-label="Permalink to this section">🔗</a></h2>
-<p>The payload header is shared by every identifier type, and bits 6-7 of the flags byte select the type and the length of the value that follows.</p>
+<p>The payload header is shared by every identifier type, and bits 6-7 of the flags byte select the type and the length of the Match Key that follows. The <a href="https://github.com/51Degrees/specifications/blob/main/did-specification/identifier-layout.md">identifier layout</a> in the 51Did specification defines every field.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Offset  </td><td class="c-table__cell">Length  </td><td class="c-table__cell">Field  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">0  </td><td class="c-table__cell">1  </td><td class="c-table__cell">Flags: bits 0-2 usage tier, bits 6-7 identifier type  </td></tr>
+<td class="c-table__cell">0  </td><td class="c-table__cell">1  </td><td class="c-table__cell">Flags: bits 0-2 usage tier, bit 3 set where the usage was worked out from another signal rather than stated, bits 4-5 layout version, bits 6-7 identifier type  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">1  </td><td class="c-table__cell">4  </td><td class="c-table__cell">LicenseId (uint32, little-endian)  </td></tr>
+<td class="c-table__cell">1  </td><td class="c-table__cell">4  </td><td class="c-table__cell">License Id, an encrypted value on an identifier that carries a creator context  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">5  </td><td class="c-table__cell">16/32  </td><td class="c-table__cell">Value: GUID (Random) or SHA-256 (Probabilistic, Hashed Email)  </td></tr>
+<td class="c-table__cell">5  </td><td class="c-table__cell">16/32  </td><td class="c-table__cell">Match Key: GUID (Random) or SHA-256 (Probabilistic, Hashed Email)  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">21/37  </td><td class="c-table__cell">1  </td><td class="c-table__cell">Terms, an index to the terms the identifier was created under, <code>0</code> for not stated and <code>1</code> for the <a href="https://m4ow.uk/mtm/2.txt">Model Terms for Marketing, version 2</a>  </td></tr>
 </table>
+<p>Bytes after the Terms carry a creator context section, whose contents belong to the issuer. A payload with no byte after the Match Key states no terms.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
-<td class="c-table__cell">Bits 6-7  </td><td class="c-table__cell">Type  </td><td class="c-table__cell">Payload length  </td></tr>
+<td class="c-table__cell">Bits 6-7  </td><td class="c-table__cell">Type  </td><td class="c-table__cell">Match Key length  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>00</code>  </td><td class="c-table__cell">Probabilistic  </td><td class="c-table__cell">37  </td></tr>
+<td class="c-table__cell"><code>00</code>  </td><td class="c-table__cell">Probabilistic  </td><td class="c-table__cell">32  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>01</code>  </td><td class="c-table__cell">Random  </td><td class="c-table__cell">21  </td></tr>
+<td class="c-table__cell"><code>01</code>  </td><td class="c-table__cell">Random  </td><td class="c-table__cell">16  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>10</code>  </td><td class="c-table__cell">Hashed Email  </td><td class="c-table__cell">37  </td></tr>
+<td class="c-table__cell"><code>10</code>  </td><td class="c-table__cell">Hashed Email  </td><td class="c-table__cell">32  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>11</code>  </td><td class="c-table__cell">Reserved  </td><td class="c-table__cell">n/a  </td></tr>
 </table>
@@ -270,11 +276,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <h3 class="doxsection" id="verifying-the-creator-context">Verifying the creator context<a class="headerlink" href="#verifying-the-creator-context" aria-label="Permalink to this section">🔗</a></h3>
 <p>The creator context is what the 51Degrees cloud, as the creator of the identifier, recorded about the creating request when it issued the identifier. Verifying it confirms the 51Did is being presented from the browser and connection it was created on. It is checked only within the 51Degrees service, which alone holds the key the context is made under, and every check is metered against the Resource Key. Identifiers issued by the 51Degrees cloud carry a creator context from the release that introduced it, and one created before that, or by a self-hosted deployment with the creator context switched off, reports <code>nocontext</code>.</p>
 <p>The check is made in two steps, so that the verdict never exists in the browser in a form the browser can read, alter or forge.</p>
-<p><img src="images/51did-two-step-verification.svg" alt="Two-step creator context verification" style="pointer-events: none;" class="inline"/></p>
-<ul>
+<div class="image">
+<object type="image/svg+xml" data="51did-two-step-verification.svg" style="pointer-events: none;"></object>
+<div class="caption">
+Two-step creator context verification</div></div>
+    <ul>
 <li><b>Step one.</b> The page calls <code>verify-context</code> (or <code>verify-full</code>) from the visitor's browser with the 51Did and the page's Resource Key (see <a class="el" href="_services__cloud__resource_keys.html" title="Resource Keys">Resource Keys</a>), and receives <code>{ "result": "..." }</code>, an opaque sealed value and nothing else. The call must come from the browser presenting the identifier, because the service compares the identifier against the connection making the call, so use a <code>fetch</code> that reads the JSON response rather than a script tag or a pixel. The page may also pass a <code>challenge</code>, a single-use value your server issued for this transaction, which is folded into the result.</li>
 <li>The page passes the 51Did and the sealed result to your server as part of its normal request, for example with the form post or the purchase the identifier is being trusted for.</li>
-<li><b>Step two.</b> Your server calls <code>redeem</code> with the 51Did it holds, the sealed result, a licence key of the account whose Resource Key made the verification (required wherever the account holds licence keys, and never placed in a page) and, where a <code>challenge</code> was given at step one, the same value again, and receives the verdict.</li>
+<li><b>Step two.</b> Your server calls <code>redeem</code> with the 51Did it holds, the sealed result, a License Key of the account whose Resource Key made the verification (required wherever the account holds License Keys, and never placed in a page) and, where a <code>challenge</code> was given at step one, the same value again, and receives the verdict.</li>
 </ul>
 <p>The endpoints on the V4 cloud, all of which take the identifier as the <code>51did</code> parameter on the query string, in a form, or as the route <code>51did/&lt;value&gt;</code>:</p>
 <ul>
@@ -314,7 +323,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <tr class="c-table__row">
 <td class="c-table__cell"><code>invalid</code>  </td><td class="c-table__cell">any  </td><td class="c-table__cell">The envelope has been altered or corrupted. A creator context cannot be forged, because it is made under a key only 51Degrees holds, so a <code>verified</code> context on an <code>invalid</code> signature means the context data is intact and something else in the envelope is not.  </td></tr>
 </table>
-<p><b>The redemption itself.</b> A sealed result redeems once, within ten seconds of the verification, and each verification produces a fresh one. The window is the anti-replay window of TLS 1.3, which QUIC mandates (<a href="https://www.rfc-editor.org/rfc/rfc8446#section-8.3">RFC 8446 section 8.3</a>), so the trade-off between clock error, network variation and replay exposure has already been argued, and it is a constant of the service that cannot be widened by configuration. Every clock involved is a server clock, so the visitor's browser clock plays no part. In the genuine flow the two steps happen moments apart within one page transaction, so the window costs nothing. <code>verifiedAt</code> and <code>secondsSinceVerified</code> describe the verification you have just made and let your server apply a stricter rule of its own without any clock work. They say nothing about the identifier's age, which comes from the identifier itself.</p>
+<p><b>The redemption itself.</b> A sealed result redeems once, within ten seconds of the verification, and each verification produces a fresh one. The window is the anti-replay window of TLS 1.3, which QUIC mandates (<a href="https://www.rfc-editor.org/rfc/rfc8446#section-8.3">RFC 8446 section 8.3</a>), so the trade-off between clock error, network variation and replay exposure has already been argued, and it is a constant of the service that cannot be widened by configuration. Every clock involved is a server clock, so the visitor's browser clock plays no part. In the genuine flow the two steps happen moments apart within one page transaction, so the ten second window never gets in the way. <code>verifiedAt</code> and <code>secondsSinceVerified</code> describe the verification you have just made and let your server apply a stricter rule of its own without any clock work. They say nothing about the identifier's age, which comes from the identifier itself.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Response  </td><td class="c-table__cell">Meaning  </td><td class="c-table__cell">What to do  </td></tr>
@@ -323,7 +332,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <tr class="c-table__row">
 <td class="c-table__cell"><code>context</code> of <code>replayed</code>  </td><td class="c-table__cell">Already redeemed on this service instance  </td><td class="c-table__cell">Treat as unverified, because something presented the same result twice  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>context</code> of <code>unreadable</code>  </td><td class="c-table__cell">Not a result sealed for this 51Did, licence key and challenge, or altered  </td><td class="c-table__cell">Treat as unverified. The service does not say which was wrong  </td></tr>
+<td class="c-table__cell"><code>context</code> of <code>unreadable</code>  </td><td class="c-table__cell">Not a result sealed for this 51Did, License Key and challenge, or altered  </td><td class="c-table__cell">Treat as unverified. The service does not say which was wrong  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>unconfirmed</code> (HTTP 503)  </td><td class="c-table__cell">The instance could not confirm first use  </td><td class="c-table__cell">Retry, as it is neither a replay nor a forgery  </td></tr>
 <tr class="c-table__row">
@@ -353,7 +362,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <h3 class="doxsection" id="fetching-the-public-keys">Fetching the public keys<a class="headerlink" href="#fetching-the-public-keys" aria-label="Permalink to this section">🔗</a></h3>
 <p>Signing keys belong to periods of a schedule, and a 51Did is signed with the key of the period its creation falls in, so a 51Did issued in an earlier period was signed with an earlier key. The key list publishes every key whose period has started, plus the next key in the fifteen minutes before its start:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">GET https://cloud.51degrees.com/api/v4/id/key/&lt;RESOURCE_KEY&gt;</div>
-</div><!-- fragment --><p>A licence key alone also works, sent as <code>license</code>, and each call is metered. The response is a JSON array, one entry per key:</p>
+</div><!-- fragment --><p>A License Key alone also works, sent as <code>license</code>, and each call is metered. The response is a JSON array, one entry per key:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">[</div>
 <div class="c-code__line">  {</div>
 <div class="c-code__line">    &quot;startsAt&quot;: &quot;2026-03-09T00:00:00.0000000Z&quot;,</div>

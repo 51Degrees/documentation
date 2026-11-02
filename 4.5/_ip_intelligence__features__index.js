@@ -30,11 +30,6 @@ var _ip_intelligence__features__index =
     ] ],
     [ "Countries", "_ip_intelligence__features__countries.html", [
       [ "Overview", "_ip_intelligence__features__countries.html#overview-6", null ],
-      [ "Properties", "_ip_intelligence__features__countries.html#properties-2", [
-        [ "Weighted Properties", "_ip_intelligence__features__countries.html#weighted-properties", null ],
-        [ "'All' Properties", "_ip_intelligence__features__countries.html#all-properties", null ],
-        [ "Country Names", "_ip_intelligence__features__countries.html#country-names", null ]
-      ] ],
-      [ "Geographical vs Population Weighting", "_ip_intelligence__features__countries.html#geographical-vs-population-weighting", null ]
+      [ "Properties", "_ip_intelligence__features__countries.html#properties-2", null ]
     ] ]
 ];
