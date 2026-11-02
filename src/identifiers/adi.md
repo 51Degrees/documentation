@@ -12,15 +12,17 @@ A page view makes two requests for the widget. The tag on the page fetches the l
 GET https://cloud.51degrees.com/api/v4/adi/<RESOURCE_KEY>.js
 ```
 
-That returns the loader, which is about a kilobyte and the same bytes for every caller. **The resource key is the file name in the URL and nothing else on this URL is read.** Every other setting is a `data-` attribute on the script tag. This request is neither checked nor counted, so a visitor who leaves before the page settles costs nothing.
+That returns the loader, which is about a kilobyte and the same bytes for every caller. The cloud reads only the Resource Key from this address, which is the file name. A query string on it is ignored. Every other setting is a `data-` attribute on the script tag. The cloud does not check this request against the key's domains and does not count it against the key's monthly requests.
 
 ```
 GET https://cloud.51degrees.com/api/v4/adi/<RESOURCE_KEY>/<NAME>
 ```
 
-That returns one built bundle, where `<NAME>` is a locale such as `en-us`. The loader picks the language from the visitor's own browser, matching the full tag first, then the language on its own, then falling back to `en-us`, so the language is decided in the browser rather than from a request header. The loader adds `license=` where the tag carries `data-license-key`.
+That returns one built bundle, where `<NAME>` is a locale such as `en-us`. The loader picks the language from the visitor's own browser, matching the full tag first, then the language on its own, then falling back to `en-us`, so the language is decided in the browser rather than from a request header.
 
-The bundle is the request that is checked and counted, because it is what the visitor receives. **The resource key must be registered for the domain the page is on.** The request is checked against the domains the key names, the same as every other keyed endpoint, and a page on a domain the key does not cover is refused with 401 and no icon appears.
+This is the request the cloud checks and counts. It is checked against the key's domains, as [the domains a Resource Key accepts](@ref Resource_key_domains) describes, so a page on a domain the key does not cover gets a `401` and no icon. It counts as one of the key's monthly requests.
+
+A License Key never goes on the page, and the bundle request refuses one with `400`. Where your products need a License Key on top of the Resource Key, add the License Key to the Resource Key when you create it.
 
 ```
 GET https://cloud.51degrees.com/api/v4/id/key/<RESOURCE_KEY>
@@ -41,7 +43,7 @@ Add one `<script>` tag to the page. The same URL works for every language.
 </script>
 ```
 
-Every attribute is optional. A tag carrying only the resource key gets the built-in sentence, the built-in template and the built-in timeout, and finds its ads by the `data-adi` attribute described under *Which elements carry an ad* below.
+Every attribute is optional. A tag carrying only the Resource Key gets the built-in sentence, the built-in template and the built-in timeout, and finds its ads by the `data-adi` attribute described under *Which elements carry an ad* below.
 
 ### The 51Degrees client script
 
@@ -56,7 +58,6 @@ The attributes ADI reads from its own `<script>` tag.
 | `data-provider`      | No       | -       | The name of an object on `window`, dotted paths allowed, that names the page's ad containers and supplies each ad's identifiers and any extra data the template wants. See *The provider* below. Without it ADI finds containers by attribute and reads identifiers off them. The object is looked up each time it is needed, so a page that defines it after the tag has run is still answered. |
 | `data-template-url`  | No       | The built-in template | The address of the publisher's own pop-up template, in the template language described under *Templates* below. One URL per tag, so the publisher decides the template's language when they build the tag. Fetched once per page with a cross origin request and no credentials, so the host has to allow it, and a fetch that fails or times out falls back to the built-in template with one console line saying so. Only `http` and `https` addresses and paths on the same site are accepted. |
 | `data-timeout`       | No       | `3000`  | Milliseconds ADI waits for an ad's identifiers, for the public key and signature check, and for the provider's extra data, before giving up on that ad. See *The timeout* below. A value that is not a positive whole number keeps the default, with one console line saying so. |
-| `data-license-key`   | No       | -       | Additional license key or keys, several separated by `+`, where your products need one on top of the resource key. Anyone reading the page source can see it, so only put one here that you are content to publish. |
 
 The colors, the size and the position of the icon are not configurable.
 
@@ -183,24 +184,24 @@ One wait, `data-timeout`, covers everything an ad waits on: the provider's ident
 
 ## Verification
 
-Green means the identifier's signature verifies under a 51Degrees signing key and nothing more. The wording says "genuine", never "verified for this device". The creator context check described under @ref Identifiers_51Did, which says whether the identifier is being used where it was created, needs the publisher's server and costs two metered uses per identifier, so it is not what an icon on every ad does.
+Green means the identifier's signature verifies under a 51Degrees signing key and nothing more. The wording says "genuine", never "verified for this device". The creator context check described under @ref Identifiers_51Did, which says whether the identifier is being used where it was created, needs the publisher's server and counts two requests per identifier, so it is not what an icon on every ad does.
 
 The signature is checked in the browser with Web Crypto, against the public key in force when the identifier was created. Where the identifier's creation minute is within fifteen minutes of a key period boundary the neighboring key is tried as well, because the creator's clock and the key rollover are not the same clock. An identifier that does not read as a 51Did at all is invalid.
 
 ## Metering
 
-Two things cost a use of the resource key, and two things cost nothing.
+Of the four things ADI does for a page, two count against the Resource Key's monthly requests.
 
-- The loader costs nothing and is not checked. Any cache may hold it.
-- The bundle costs one use per page view, and is the request checked against the domains the key is registered for.
-- The public keys cost one use per call. ADI keeps the answer in the browser's `localStorage` under `__51d_adi_keys`, one entry per creator domain, and asks again only where it holds nothing for that domain or an identifier is dated after both the newest key it holds and the moment it last asked. That is once per browser per key period, rather than once per ad.
-- The signature check costs nothing, because it runs in the browser.
+- The loader is not checked and not counted. Any cache may hold it.
+- The bundle counts as one request per page view, and is the request checked against the key's domains.
+- The public keys count as one request per call. ADI keeps the answer in the browser's `localStorage` under `__51d_adi_keys`, one entry per creator domain, and asks again only where it holds nothing for that domain or an identifier is dated after both the newest key it holds and the moment it last asked. That is once per browser per key period, rather than once per ad.
+- The signature check is not a request, because it runs in the browser.
 
-Two ads carrying the same identifier on one page cost one check, because verdicts are kept per identifier for the page.
+Two ads carrying the same identifier on one page need one check, because verdicts are kept per identifier for the page.
 
-## Resource key requirements
+## Resource Key requirements
 
-The resource key needs nothing beyond what every keyed endpoint needs. It must be registered for the domain the page is on, because the bundle request and the key request are both checked against the domains the key names. No product is required for the public keys, because they are what any verifier of a 51Did reads. The 51Did product, described under @ref Identifiers_51Did, is what the page needs to create the identifiers ADI inspects, and that is a requirement of the client script rather than of ADI.
+The Resource Key needs no product for ADI. The bundle request and the public key request are both checked against the key's domains, as [the domains a Resource Key accepts](@ref Resource_key_domains) describes. No product is required for the public keys, because they are what any verifier of a 51Did reads. The 51Did product, described under @ref Identifiers_51Did, is what the page needs to create the identifiers ADI inspects, and that is a requirement of the client script rather than of ADI.
 
 ## Languages
 
@@ -208,7 +209,7 @@ ADI ships the visitor's text in the same 24 languages as PMP and chooses one fro
 
 ## Caching
 
-The loader is cacheable by anybody for a day, because it is the same bytes for every caller and no request for it is counted. The bundle is cacheable only by the browser that asked for it, also for a day, because the bundle is the request that is counted. During development, a hard reload or disabling the cache in developer tools gets past both.
+The loader is cacheable by anybody for a day, because it is the same bytes for every caller and no request for it is counted against the key's monthly requests. The bundle is cacheable only by the browser that asked for it, also for a day, because the bundle is the request that is counted. During development, a hard reload or disabling the cache in developer tools gets past both.
 
 ## One copy on a page
 

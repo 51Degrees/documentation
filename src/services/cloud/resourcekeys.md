@@ -59,7 +59,7 @@ Beware: continuing to steps 2 or 3 will not edit the properties attached to your
 
 A request can carry a Resource Key, a License Key, or both, and each does a different job.
 
-- **A Resource Key** authenticates the request and brings the properties and products set up on it. It is public, because it sits in the script tag of every page that uses it, and it can be restricted to named domains, which the service checks against the request's `Origin` or `Referer` header.
+- **A Resource Key** authenticates the request and brings the properties and products set up on it. It is public, because it sits in the script tag of every page that uses it, and it can be restricted to named domains, which [the domains a Resource Key accepts](@ref Resource_key_domains) describes.
 - **A License Key** is a server's credential and never goes in a page. It suits server-to-server and verifier callers that do not want to create and manage Resource Keys.
 - **A License Key on its own** works on the routes a server calls, being json, js, accessible properties, the 51Did key, verify, verify context, verify full and redeem routes, and the OWID public-key route. On json and js it must name the properties wanted with `values`, because only a Resource Key carries a property list, and a request without `values` returns `400`. The other routes need no `values`, because they return the same fields every time.
 - **Both together** are treated as the Resource Key's request, including any domain restriction, and the License Key adds its products on top. A server whose Resource Key is restricted to named domains sends no `Origin`, so it is refused even when it also sends a valid License Key. Such a server should send its License Key alone.
@@ -82,3 +82,12 @@ With a Resource Key, `values` adds the named properties to the ones the key alre
 A page on another domain may send the `X-51D-Resource-Key` and `X-51D-Values` headers, because the service answers the browser's CORS preflight for them. It refuses a preflight for `X-51D-License-Key`, because a License Key is never placed in a page.
 
 The 51Did redeem route needs the account's License Key where the account holds one, sent alone or beside the Resource Key, because the sealed result being redeemed is bound to that account.
+
+# The domains a Resource Key accepts {#Resource_key_domains}
+
+When you create a Resource Key you can name the domains it may be used from, or name none. The list cannot be changed afterwards, so a key for a new domain is a new key.
+
+- **A key that names no domains** is accepted from any page and any server. Anyone who reads the key out of your page can use it, and every request they make counts against your monthly requests, so name the domains on a key that goes in a page, and keep a key that names no domains for a server.
+- **A key that names domains** is accepted only from a request that says it came from one of them. The service reads the `Referer` header and, where there is none, the `Origin` header, and refuses any other request with `401` and a message naming the domain it rejected, which is [Resource Key not authorized on domain](@ref Resource_key_not_authorized_on_domain). A page that suppresses the `Referer` header, with `<meta name="referrer" content="no-referrer">` or an equivalent policy, sends neither header, so it is refused. A server sends neither header unless you add one, so a server uses a key that names no domains, sends an `Origin` header naming one of the key's domains, or sends its License Key alone as described above.
+
+The check is the same on every endpoint that takes a Resource Key.

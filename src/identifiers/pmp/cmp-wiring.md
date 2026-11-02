@@ -39,9 +39,7 @@ The 51Degrees client script reads your consent management platform through `wind
 
 You write no code for this. The client script registers with `__tcfapi('addEventListener', 2, ...)` and calls neither `ping` nor `getTCData`, which version 2.2 of the framework deprecates. It takes the string from a callback reporting `tcloaded` or `useractioncomplete`, sends it to the cloud as `tcstring`, and the cloud derives the usage from the purposes the string grants. Where the platform has not called back within ten seconds, the script writes a console message saying the call is treated as no answer, and nothing else changes.
 
-Two consequences are worth stating plainly.
-
-- **No string means no identifier.** Until your platform delivers one, the client script sends no answer, so no 51Did is created. A visitor who never answers your dialog produces no identifier at all, which is the intended outcome.
+- **No string means no identifier.** Until your platform delivers one, the client script sends no answer, so no 51Did is created. A visitor who never answers your dialog produces no identifier at all.
 - **A string that grants too little produces no identifier either.** The cloud tries `personalized` first, then `standard`, and where neither set of purposes is fully granted it adds no usage, so the response carries no `fodid` section at all, exactly as it does for a page whose platform has not answered. The purpose sets, and what the cloud does with a string, are on @ref Identifiers_51Did_Tcf.
 
 An identifier created this way records that its usage was derived rather than stated, in bit 3 of the flags byte. See *Payload layout* on @ref Identifiers_51Did.
@@ -58,9 +56,9 @@ fod.onChange(function (data) {
 });
 ```
 
-The value is a boolean. The whole `derived` section is absent when your resource key does not ask for `IsGdpr`, so test for it rather than assuming it is there.
+The value is a boolean. The whole `derived` section is absent when your Resource Key does not ask for `IsGdpr`, so test for it rather than assuming it is there.
 
-**Your consent management platform's own setting always wins.** Whether to take `IsGdpr` or your platform's own way of deciding where GDPR applies is your decision, and the outcome is yours either way. Where you choose your platform's own detection, `IsGdpr` is simply unused. Passing it is a convenience rather than a requirement, and 51Degrees does not decide for you what your consent surface reports. For the call itself, use your platform's own documentation, because the method for saying whether GDPR applies belongs to each vendor and differs between them.
+**Your consent management platform's own setting always wins.** Whether to take `IsGdpr` or your platform's own way of deciding where GDPR applies is your decision, and the outcome is yours either way. Where you choose your platform's own detection, `IsGdpr` is not used. Passing it is a convenience rather than a requirement, and 51Degrees does not decide for you what your consent surface reports. For the call itself, use your platform's own documentation, because the method for saying whether GDPR applies belongs to each vendor and differs between them.
 
 ## Find out more
 

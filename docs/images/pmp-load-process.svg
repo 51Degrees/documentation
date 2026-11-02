@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 800" role="img" aria-label="How PMP loads and answers. The page fetches the loader from the 51Degrees cloud, and the loader fetches the bundle for the visitor's language, which is the request that is checked against the resource key's domains and counted. The bundle reads the two PMP cookies and, where the answer is shared or none is held, asks the cloud for the group's answer. With no answer anywhere it shows the first card. The visitor's answer is saved to the __mtm_pref cookie and announced on the window, the 51Degrees client script hears it and sends it to the cloud as id.usage with its next request, and the cloud returns the 51Did. Where sharing is configured and third party cookies are confirmed, a second card offers to use the answer across the group, which the bundle stores with the cloud. On later visits the stored answer is announced and only the bubble is shown.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 800" role="img" aria-label="How PMP loads and answers. The page fetches the loader from the 51Degrees cloud, and the loader fetches the bundle for the visitor's language, which is the request that is checked against the Resource Key's domains and counted. The bundle reads the two PMP cookies and, where the answer is shared or none is held, asks the cloud for the group's answer. With no answer anywhere it shows the first card. The visitor's answer is saved to the __mtm_pref cookie and fired as the 51d-pmp-preference event on the window, which the 51Degrees client script hears and sends to the cloud as id.usage with its next request, and the cloud returns the 51Did. Where sharing is configured and third party cookies are confirmed, a second card offers to use the answer across the group, which the bundle stores with the cloud. On later visits the event fires with the stored answer and only the bubble is shown.">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#232628"/>
@@ -50,7 +50,7 @@
   <text class="label" x="225" y="427" text-anchor="middle">Personalized, Standard or the alternative</text>
 
   <text class="step" x="110" y="476">Step four, the answer reaches the cloud</text>
-  <text class="note" x="360" y="500">Saves __mtm_pref and announces 51d-pmp-preference on the window</text>
+  <text class="note" x="360" y="500">Saves __mtm_pref and fires 51d-pmp-preference on the window</text>
   <line class="msg" x1="350" y1="532" x2="608" y2="532" marker-end="url(#arrow)"/>
   <text class="label" x="480" y="525" text-anchor="middle">51d-pmp-preference</text>
   <line class="msg" x1="610" y1="568" x2="858" y2="568" marker-end="url(#arrow)"/>
@@ -66,5 +66,5 @@
   <line class="msg" x1="350" y1="740" x2="858" y2="740" marker-end="url(#arrow)"/>
   <text class="label" x="605" y="733" text-anchor="middle">POST /api/v4/pmp/pref</text>
 
-  <text class="note" x="480" y="788" text-anchor="middle">On later visits steps three to five are skipped. The stored answer is announced and only the bubble is shown.</text>
+  <text class="note" x="480" y="788" text-anchor="middle">On later visits steps three to five are skipped. The event fires with the stored answer and only the bubble is shown.</text>
 </svg>

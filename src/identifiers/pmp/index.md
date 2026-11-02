@@ -1,6 +1,6 @@
 @page Identifiers_PMP PMP (Preference Management Platform)
 
-PMP is a small embeddable widget that asks a visitor what kind of marketing they want, keeps the answer in a cookie on your domain and announces it on the page. The answer is one of `non-marketing`, `standard` or `personalized`, which are the three `id.usage` values @ref Identifiers_51Did takes.
+PMP is a small embeddable widget that asks a visitor what kind of marketing they want, keeps the answer in a cookie on your domain and fires a browser event carrying it, which the 51Degrees client script listens for. The answer is one of `non-marketing`, `standard` or `personalized`, which are the three `id.usage` values @ref Identifiers_51Did takes.
 
 ## Endpoints
 
@@ -10,17 +10,17 @@ A page view makes two requests. The tag on the page fetches the loader, and the 
 GET https://cloud.51degrees.com/api/v4/pmp/<RESOURCE_KEY>.js
 ```
 
-That returns the loader, which is about a kilobyte and the same bytes for every caller. **The resource key is the file name in the URL and nothing else on this URL is read.** Every other setting is a `data-` attribute on the script tag, so each setting is written in one place and read from one place. Any query string a page adds here is ignored and is carried nowhere. This request is neither checked nor counted, so a visitor who leaves before the page settles costs nothing.
+That returns the loader, which is about a kilobyte and the same bytes for every caller. The cloud reads only the Resource Key from this address, which is the file name. A query string on it is ignored. Every other setting is a `data-` attribute on the script tag. The cloud does not check this request against the key's domains and does not count it against the key's monthly requests.
 
 ```
 GET https://cloud.51degrees.com/api/v4/pmp/<RESOURCE_KEY>/<NAME>
 ```
 
-That returns one built bundle, where `<NAME>` is a locale such as `en-us`, optionally followed by `-nosharing`. The loader picks the language from the visitor's own browser, matching the full tag first, then the language on its own, then falling back to `en-us`, so the language is decided in the browser rather than from a request header. Whether the bundle needs the sharing code comes from `data-use-third-party-cookies` and `data-network-name` on the tag. The loader adds `license=` where the tag carries `data-license-key`.
+That returns one built bundle, where `<NAME>` is a locale such as `en-us`, optionally followed by `-nosharing`. The loader picks the language from the visitor's own browser, matching the full tag first, then the language on its own, then falling back to `en-us`, so the language is decided in the browser rather than from a request header. Whether the bundle needs the sharing code comes from `data-use-third-party-cookies` and `data-network-name` on the tag.
 
-The bundle is the request that is checked and counted, because it is what the visitor actually receives. **Your resource key must be registered for the domain the page is on.** The request is checked against the domains the key names, using the `Referer` header and falling back to `Origin`, the same as every other keyed endpoint, and a page on a domain the key does not cover is refused with 401 and no dialog appears. A page that suppresses the `Referer` header, with `<meta name="referrer" content="no-referrer">` or an equivalent policy, is refused for the same reason, because the check has nothing to compare.
+This is the request the cloud checks and counts. It is checked against the key's domains, as [the domains a Resource Key accepts](@ref Resource_key_domains) describes, so a page on a domain the key does not cover gets a `401` and no dialog. It counts as one of the key's monthly requests, so a page view where the dialog loads uses one request and a visitor who leaves before the bundle loads uses none.
 
-**An older form of this endpoint took the resource key as a query parameter, `https://cloud.51degrees.com/api/v4/pmp?resource=<RESOURCE_KEY>`. That address answers 404 now, so a page still carrying it fetches nothing and shows no dialog.** The key also has to be in the URL rather than on the tag, because `data-resource-key` is not read. Two places to write a key meant a page could carry one the cloud never saw, and the refusal that followed was invisible to the page.
+A License Key never goes on the page. The loader sends none, the bundle request refuses one with `400`, and a tag carrying `data-license-key` stops PMP from starting, with one console error saying so. Where your products need a License Key on top of the Resource Key, add the License Key to the Resource Key when you create it.
 
 ## The load process
 
@@ -29,11 +29,11 @@ The bundle is the request that is checked and counted, because it is what the vi
 1. The tag fetches the loader, and the loader fetches the bundle the page needs.
 2. The bundle reads the `__mtm_pref` and `__51d_pmp_share` cookies. An answer marked as shared is checked with the cloud, whose answer decides. An answer this site holds on its own is used without a request. Where this site holds nothing and the visitor has not declined sharing, the cloud is asked for an answer given on another of your sites.
 3. With no answer anywhere, the dialog is shown.
-4. The visitor answers. The answer is saved to the `__mtm_pref` cookie, announced on the window, and the dialog collapses to the bubble.
+4. The visitor answers. The answer is saved to the `__mtm_pref` cookie, the `51d-pmp-preference` event fires on the window, and the dialog collapses to the bubble.
 5. Where the answer was Standard or Personalized and sharing applies, a second card asks whether the answer should be used on the group's other sites.
 6. `data-action-url` fires where the tag carries one.
 
-On later visits steps 3 to 5 are skipped, the stored answer is announced and the bubble is shown, so `data-action-url` fires on every page load rather than only on the first answer.
+On later visits steps 3 to 5 are skipped. The event fires with the stored answer and the bubble is shown, so `data-action-url` fires on every page load rather than only on the first answer.
 
 ## In this section
 

@@ -18,8 +18,8 @@ All three are answers, and each one creates a 51Did carrying that usage. The alt
 
 You write no code for this.
 
-1. The visitor answers the dialog. PMP stores the answer, announces it on the window as a `51d-pmp-preference` event and holds it behind `window.__51d_pmp.preference()`.
-2. The 51Degrees client script hears the announcement, or reads the getter where the answer was already in force when the script was built, and asks the cloud again.
+1. The visitor answers the dialog. PMP stores the answer, fires it as the `51d-pmp-preference` event on the window and holds it behind `window.__51d_pmp.preference()`.
+2. The 51Degrees client script hears the event, or reads the getter where the answer was already in force when the script was built, and asks the cloud again.
 3. That request carries `id.usage` and every value the script's snippets produced, so the identifier is created after everything else about the page is known.
 
 PMP also serves a Transparency and Consent Framework (TCF) surface of its own, so the client script can see both an answer and a string on the same page. The script takes PMP's answer first and the framework's string second, and the cloud applies the same order when the request arrives, so the answer is what travels and the string beside it is never examined. That is why an identifier made on a page running PMP records a stated usage. The other order, where a string is all there is, is @ref Identifiers_51Did_Tcf.

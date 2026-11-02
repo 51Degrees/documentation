@@ -19,7 +19,7 @@ Add one `<script>` tag to your page. The same URL works for every language.
 
 ### The 51Degrees client script belongs on the page as well
 
-PMP reads two things from the 51Degrees client script, being whether third party cookies work in this browser and whether the General Data Protection Regulation (GDPR) applies. The first decides whether the second card can be offered and the second is what PMP reports as `gdprApplies` through `__tcfapi`, the consent function that ad scripts call. Both come from properties on your resource key, `ThirdPartyCookiesEnabled` with `ThirdPartyCookiesEnabledJavaScript` and `IsGdpr`, so ask for those when you create the key and put the client script on the page too:
+PMP reads two things from the 51Degrees client script, being whether third party cookies work in this browser and whether the General Data Protection Regulation (GDPR) applies. The first decides whether the second card can be offered and the second is what PMP reports as `gdprApplies` through `__tcfapi`, the consent function that ad scripts call. Both come from properties on your Resource Key, `ThirdPartyCookiesEnabled` with `ThirdPartyCookiesEnabledJavaScript` and `IsGdpr`, so ask for those when you create the key and put the client script on the page too:
 
 ```html
 <script src="https://cloud.51degrees.com/api/v4/YOUR-RESOURCE-KEY.js" async></script>
@@ -27,7 +27,7 @@ PMP reads two things from the 51Degrees client script, being whether third party
 
 The two tags can go in either order and both can carry `async`, because the client script listens on the window for PMP's answer whilst PMP watches for the client script's object, which is `fod` unless `data-object-name` says otherwise. The object is the only thing PMP looks at, so it does not matter where the client script came from, and one served by a different 51Degrees cloud, by a proxy of your own or out of a bundle you built yourself all work the same way.
 
-An `async` tag has usually not run at the moment PMP starts, so an object that is not there yet is not an object that is never coming, and PMP waits for it instead of deciding straight away. The wait finishes once your page has loaded, since every tag written into the markup has had its turn by then, and it is capped at 5000 milliseconds for a page whose load event is very late. If nothing has appeared by the end of it, PMP loads the client script itself from the cloud that served PMP, using the resource key it already has, and says so in the console. Writing the tag yourself is still the better option, because then the placement and the timing are yours.
+An `async` tag has usually not run at the moment PMP starts, so an object that is not there yet is not an object that is never coming, and PMP waits for it instead of deciding straight away. The wait finishes once your page has loaded, since every tag written into the markup has had its turn by then, and it is capped at 5000 milliseconds for a page whose load event is very late. If nothing has appeared by the end of it, PMP loads the client script itself from the cloud that served PMP, using the Resource Key it already has, and says so in the console. Writing the tag yourself is still the better option, because then the placement and the timing are yours.
 
 Load the client script once. A second copy runs a second round and creates a second identifier, and the client script itself warns about it.
 
@@ -45,7 +45,7 @@ PMP stops, with a console warning and nothing rendered, when either of two thing
 
 ## Caching
 
-The loader is cacheable by anybody for a day, because it is the same bytes for every caller and no request for it is counted. The bundle is cacheable only by the browser that asked for it, also for a day, because the bundle is the request that is counted. During development, a hard reload or disabling the cache in developer tools gets past both, and there are two scripts to get past, the loader and the bundle it pulled in.
+The loader is cacheable by anybody for a day, because it is the same bytes for every caller and no request for it is counted against the key's monthly requests. The bundle is cacheable only by the browser that asked for it, also for a day, because the bundle is the request that is counted. During development, a hard reload or disabling the cache in developer tools gets past both, and there are two scripts to get past, the loader and the bundle it pulled in.
 
 ## Browser requirement
 

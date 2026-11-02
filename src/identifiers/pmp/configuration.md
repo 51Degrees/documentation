@@ -11,7 +11,6 @@ The attributes PMP reads from its own `<script>` tag.
 | `data-alt-name`                | Yes      | -       | Label for the Alternative button, for example "Subscribe to remove ads". Pressing it sets the visitor's Model Terms for Marketing preference to `non-marketing`. See *Buttons and what each one stores* in @ref Identifiers_PMP_Preferences. |
 | `data-alt-url`                 | Yes      | -       | What the Alternative button does, after it has recorded `non-marketing` as the visitor's answer. An `http(s)` URL navigates the page and a `javascript:` URL runs inline with no navigation. `{preference}` is not substituted here. |
 | `data-action-url`              | No       | -       | A hook of your own, invoked on every answer. `{preference}` is replaced with `standard`, `personalized` or `non-marketing`. An `http(s)` URL is injected as `<script src>` and a `javascript:` URL runs inline. Leave it out and nothing is invoked, with the dialog saving the answer, activating `__tcfapi` and dismissing as usual. See *Where the action URL fits* in @ref Identifiers_PMP_Preferences. |
-| `data-license-key`             | No       | -       | Additional license key or keys, several separated by `+`, where your products need one on top of the resource key. Anyone reading the page source can see it, exactly as they could when it sat on the URL, so only put one here that you are content to publish. |
 | `data-brand-logo`              | No       | -       | URL to the publisher's logo, shown in the dialog header. |
 | `data-dialog-heading`          | No       | -       | Your own wording for the first card's heading, in place of the wording PMP ships for the visitor's language. Leave it out and the shipped wording stands. See *The dialog wording* below. |
 | `data-dialog-body`             | No       | -       | Your own wording for the paragraph under that heading, on the same terms as `data-dialog-heading`. |
@@ -22,7 +21,9 @@ The attributes PMP reads from its own `<script>` tag.
 | `data-use-third-party-cookies` | No       | `true`  | Whether a visitor who chose Standard or Personalized may be offered the second card, which shares the answer with the other sites in the group. Nothing but the exact string `false` turns it off, so a mistyped value leaves sharing running rather than silently switching it off. |
 | `data-object-name`             | No       | `fod`   | What the 51Degrees client script's object is called on this page, which is where the third party cookie result and the GDPR answer are read from. Set it only where the client script was built with the `fod-js-object-name` parameter, and set both to the same name. |
 
-`data-timeout` is no longer read. PMP waits a fixed 1500 milliseconds for the cloud when it reads the shared answer at start up and when it writes one, and no attribute changes that. A page that still sets `data-timeout` gets one console warning per page view, and the attribute can come off the tag.
+A License Key never goes on the page. The loader sends none, the bundle request refuses one with `400`, and a tag carrying `data-license-key` stops PMP from starting, with one console error saying so. Where your products need a License Key on top of the Resource Key, add the License Key to the Resource Key when you create it.
+
+PMP waits 1500 milliseconds for the cloud when it reads the shared answer at start up and when it writes one, and no attribute changes that. A tag carrying `data-timeout` gets one console warning per page view.
 
 ## The dialog wording
 

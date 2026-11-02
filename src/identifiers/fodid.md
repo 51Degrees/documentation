@@ -72,7 +72,7 @@ A 51Did is created against the device as the cloud has fully resolved it, and on
 So a request from a browser page that still owes any of those results creates nothing. The identifier properties come back with no value, and `fodid.idprobglobalnullreason`, or the reason property beside whichever identifier was asked for, says the page has not finished running its snippets, naming what is still to run and what to send. The client script's next request, carrying the results, is the one that creates the identifier, and the client script reports complete only after that. Two consequences follow.
 
 - Wait for the client script's completion signal before reading the identifier or placing it anywhere. A header wrapper or auction library running on a fixed timer must give that signal enough time to arrive on a slow connection, or the first auction leaves without an identifier.
-- A server calling the JSON endpoint on a visitor's behalf is not a browser page and is not held to this, as long as it names its own software in its `User-Agent` and passes the visitor's `User-Agent` as the `user-agent` parameter. A server that sends the visitor's `User-Agent` as its own request header is judged to be a browser page and is asked for snippet results it can never send. A server also needs a Resource Key that names no domains, or a licence key through a pipeline. A Resource Key locked to a domain is checked against the `Referer` header, falling back to `Origin`, and a server request carries neither, so it is refused, and the refusal is silent from the page's point of view because the page still serves and the data is simply absent. A key that names domains is for pages.
+- A server calling the JSON endpoint on a visitor's behalf is not a browser page and is not held to this, as long as it names its own software in its `User-Agent` and passes the visitor's `User-Agent` as the `user-agent` parameter. A server that sends the visitor's `User-Agent` as its own request header is judged to be a browser page and is asked for snippet results it can never send. A server also needs a Resource Key that names no domains, or a License Key through a pipeline. A Resource Key locked to a domain is checked against the `Referer` header, falling back to `Origin`, and a server request carries neither, so it is refused, and the refusal is silent from the page's point of view because the page still serves and the data is simply absent. A key that names domains is for pages.
 
 The same rule applies to verifying the creator context, described under *Validation*, where a verification that carries none of what the page collected is answered with an error naming the values to send rather than a verdict.
 
@@ -82,7 +82,7 @@ The cloud accepts two ways to decide a request's `id.usage` value. The *Direct* 
 
 ### Direct - your integration owns the mapping
 
-Your integration decides the value and tells the cloud what to do by passing an explicit `id.usage` (`non-marketing`, `standard` or `personalized`) as a query parameter or HTTP request header. You own the mapping from whatever preference or consent surface you use to one of these three values, and the cloud acts on what you supply. This is the path @ref Identifiers_PMP takes. PMP captures the user's choice and announces it on the page, and the 51Degrees client script hears it and sends it as `id.usage` on its next request.
+Your integration decides the value and tells the cloud what to do by passing an explicit `id.usage` (`non-marketing`, `standard` or `personalized`) as a query parameter or HTTP request header. You own the mapping from whatever preference or consent surface you use to one of these three values, and the cloud acts on what you supply. This is the path @ref Identifiers_PMP takes. PMP captures the visitor's choice and fires a browser event carrying it, which the 51Degrees client script hears and sends as `id.usage` on its next request.
 
 ### Derived from consent - the cloud maps a TCF string for you
 
@@ -129,14 +129,14 @@ GET /api/v4/json?resource=<RESOURCE_KEY>
     &id.usage=standard
 ```
 
-The resource key can also be sent as a header instead of in the URL:
+The Resource Key can also be sent as a header instead of in the URL:
 
 ```
 GET /api/v4/json?user-agent=iPhone&client-ip=203.0.113.42&id.usage=standard
 X-51D-Resource-Key: <RESOURCE_KEY>
 ```
 
-License-key-only callers (no resource key) must list the 51Did properties they want via `values`, e.g. `values=fodid.idprobglobal` (or `fodid.idproblic`), since they have no Resource Key with a baked-in property list (see @ref Services_Cloud_ResourceKeys).
+License-key-only callers (no Resource Key) must list the 51Did properties they want via `values`, e.g. `values=fodid.idprobglobal` (or `fodid.idproblic`), since they have no Resource Key with a baked-in property list (see @ref Services_Cloud_ResourceKeys).
 
 Response:
 
@@ -242,7 +242,7 @@ The check is made in two steps, so that the verdict never exists in the browser 
 
 - **Step one.** The page calls `verify-context` (or `verify-full`) from the visitor's browser with the 51Did and the page's Resource Key (see @ref Services_Cloud_ResourceKeys), and receives `{ "result": "..." }`, an opaque sealed value and nothing else. The call must come from the browser presenting the identifier, because the service compares the identifier against the connection making the call, so use a `fetch` that reads the JSON response rather than a script tag or a pixel. The page may also pass a `challenge`, a single-use value your server issued for this transaction, which is folded into the result.
 - The page passes the 51Did and the sealed result to your server as part of its normal request, for example with the form post or the purchase the identifier is being trusted for.
-- **Step two.** Your server calls `redeem` with the 51Did it holds, the sealed result, a licence key of the account whose Resource Key made the verification (required wherever the account holds licence keys, and never placed in a page) and, where a `challenge` was given at step one, the same value again, and receives the verdict.
+- **Step two.** Your server calls `redeem` with the 51Did it holds, the sealed result, a License Key of the account whose Resource Key made the verification (required wherever the account holds License Keys, and never placed in a page) and, where a `challenge` was given at step one, the same value again, and receives the verdict.
 
 The endpoints on the V4 cloud, all of which take the identifier as the `51did` parameter on the query string, in a form, or as the route `51did/<value>`:
 
@@ -282,7 +282,7 @@ Read together with the signature:
 | --- | --- | --- |
 | `context` of `expired`, with `verifiedAt` and `secondsSinceVerified` | Genuine but older than ten seconds | Treat as unverified, and if this recurs in a genuine flow redeem sooner after the page verifies |
 | `context` of `replayed` | Already redeemed on this service instance | Treat as unverified, because something presented the same result twice |
-| `context` of `unreadable` | Not a result sealed for this 51Did, licence key and challenge, or altered | Treat as unverified. The service does not say which was wrong |
+| `context` of `unreadable` | Not a result sealed for this 51Did, License Key and challenge, or altered | Treat as unverified. The service does not say which was wrong |
 | `unconfirmed` (HTTP 503) | The instance could not confirm first use | Retry, as it is neither a replay nor a forgery |
 | HTTP 400 naming the values to send, such as `51D_ProfileIds` | A page verified before sending what its scripts collected | Send the values the client script collected and verify again |
 | HTTP 400 naming a payload status | The 51Did is not a shape the scheme produces | Treat as unverified, and check what produced the value you sent |
@@ -317,7 +317,7 @@ Signing keys belong to periods of a schedule, and a 51Did is signed with the key
 GET https://cloud.51degrees.com/api/v4/id/key/<RESOURCE_KEY>
 ```
 
-A licence key alone also works, sent as `license`, and each call is metered. The response is a JSON array, one entry per key:
+A License Key alone also works, sent as `license`, and each call is metered. The response is a JSON array, one entry per key:
 
 ```json
 [

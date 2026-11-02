@@ -10,9 +10,9 @@
 
 Each option has a description behind an expandable "More information" section. There is no close cross on the first dialog, so answering is the only way past it. Once answered, the dialog shrinks to a small bubble in the corner that opens it again, and later visits start at that bubble rather than the full dialog, so the visitor can change their answer whenever they like.
 
-The alternative button sets the visitor's preference under the Model Terms for Marketing to `non-marketing`, the third of the three words those terms define beside `standard` and `personalized`, and that word travels every way the other two do. It is written to the `__mtm_pref` cookie for your own server to read, announced on the window so the 51Degrees client script sends it as `id.usage=non-marketing` and the 51Did carries it, and substituted for `{preference}` in `data-action-url`. Then `data-alt-url` runs, where an `http(s)` URL navigates the page and a `javascript:` URL runs inline and leaves the visitor on your site.
+The alternative button sets the visitor's preference under the Model Terms for Marketing to `non-marketing`, the third of the three words those terms define beside `standard` and `personalized`, and that word travels every way the other two do. It is written to the `__mtm_pref` cookie for your own server to read, fired as the `51d-pmp-preference` event on the window so the 51Degrees client script sends it as `id.usage=non-marketing` and the 51Did carries it, and substituted for `{preference}` in `data-action-url`. Then `data-alt-url` runs, where an `http(s)` URL navigates the page and a `javascript:` URL runs inline and leaves the visitor on your site.
 
-**The alternative button used to store `standard`, which said the visitor still accepted standard marketing tracking.** It stores `non-marketing` now, so that a publisher reading an answer shared from another site can tell a visitor who declined from one who accepted the lesser of the two kinds.
+The alternative button stores `non-marketing` rather than `standard`, so that a publisher reading an answer shared from another site can tell a visitor who declined from one who accepted the lesser of the two kinds.
 
 No TCF consent string is built for `non-marketing`, because under TCF the visitor consented to nothing and so nothing is claimed. The Model Terms answer and the TCF consent string are different things, being what the visitor asked for under a contract and a claim of consent, and a decline has the first without the second. Whilst that answer stands, `__tcfapi` answers `ping` truthfully, still honors `removeEventListener`, and answers `getTCData` and `addEventListener` with `success: false`. A listener registered before the decline is told once, with `success: false`, that there is no longer any TC data. Choosing Standard or Personalized afterwards restores the full API.
 
@@ -24,11 +24,11 @@ No TCF consent string is built for `non-marketing`, because under TCF the visito
 | `standard`      | Marketing and other content unrelated to your browsing history or interactions, such as content chosen by time, region and the page in view. |
 | `personalized`  | Marketing and other content related to your browsing history or interactions. |
 
-The question is asked whether or not your resource key carries the 51Did product, because the dialog, the answer, the window event and the consent surface work without it. The product decides what an answer produces rather than whether it can be given. `non-marketing` gets a 51Did whatever the license holds. `standard` and `personalized` are marketing usages, so the cloud issues no 51Did for either one unless the license behind the resource key carries the 51Did product, and where it does not the reason comes back in place of the identifier.
+The question is asked whether or not your Resource Key carries the 51Did product, because the dialog, the answer, the window event and the consent surface work without it. The product decides what an answer produces rather than whether it can be given. `non-marketing` gets a 51Did whatever the license holds. `standard` and `personalized` are marketing usages, so the cloud issues no 51Did for either one unless the license behind the Resource Key carries the 51Did product, and where it does not the reason comes back in place of the identifier.
 
 ## How the answer reaches the cloud
 
-Every answer is announced on the window, whichever path it came by, being a choice, the alternative button, an answer this site already held or one that came back from the shared store:
+Every answer fires the `51d-pmp-preference` event on the window, whichever path it came by, being a choice, the alternative button, an answer this site already held or one that came back from the shared store:
 
 ```javascript
 window.addEventListener('51d-pmp-preference', function (event) {
@@ -54,7 +54,7 @@ The getter answers from memory rather than from storage, the shared store's answ
 data-action-url="javascript:yourAnalytics('{preference}')"
 ```
 
-It used to carry the client script's address with `id.usage={preference}` on it, which loaded that script again on every answer. The client script hears the answer for itself and refreshes now, so it does not need loading again, and an action URL naming the cloud is skipped with a console message where the client script's object is on the page or on its way.
+Do not point it at the client script's address. The client script hears the answer for itself and refreshes, so it does not need loading again, and an action URL naming the cloud is skipped with a console message where the client script's object is on the page or on its way.
 
 ## Where the answer is kept
 
@@ -81,8 +81,6 @@ location.reload();
 Add `Domain=` with the value of `data-cookie-domain` where you set that attribute, because a cookie written for a domain is expired only by a matching domain.
 
 Clicking the bubble reopens the dialog without clearing anything, so offer that route where the visitor wants to change their answer rather than start again.
-
-A browser still carrying the `__51d_pmp_pref` key that earlier versions kept in `localStorage` is treated as one that has not answered, so such a visitor is asked once more. PMP neither reads nor removes the old key.
 
 ## The answer your own server can read
 
