@@ -213,7 +213,7 @@ The loader is cacheable by anybody for a day, because it is the same bytes for e
 
 ## One copy on a page
 
-ADI stops, with a console warning and nothing rendered, when `window.__51d_adi` already exists as it starts, which is a second copy of the bundle. Two copies would give every ad two icons and every tap two cards. Load the tag once. `window.__51d_adi` carries one member, `rescan()`, for a page whose provider names new slots after the page settled.
+ADI checks as it starts whether `window.__51d_adi` already exists, which means a second copy of the bundle is on the page. If so, ADI writes a console warning and renders nothing, because two copies would give every ad two icons and every tap two cards. Load the tag once. `window.__51d_adi` carries one member, `rescan()`, for a page whose provider names new slots after the page settled.
 
 ## Browser requirement
 

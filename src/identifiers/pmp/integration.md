@@ -41,7 +41,12 @@ That shows the dialog again, as it was on the first visit, and is what a "Change
 
 ### One copy on a page
 
-PMP stops, with a console warning and nothing rendered, when either of two things is already true as it starts. `window.__51d_pmp` exists, which is a second copy of the bundle, and two copies would give the visitor two dialogs and fire the action URL twice on every answer. Or `window.__tcfapi` exists and is not PMP's own, which is another consent management platform, and PMP and a consent management platform never share a page, because PMP is a complete Transparency and Consent Framework implementation of its own. Load the tag once, on a page that runs no other consent tool.
+PMP checks two things as it starts. If either is true, PMP writes a console warning and renders nothing.
+
+- `window.__51d_pmp` already exists. A second copy of the bundle is on the page. Two copies would give the visitor two dialogs and fire the action URL twice on every answer.
+- `window.__tcfapi` already exists and is not PMP's own. Another consent management platform is on the page. PMP is a complete Transparency and Consent Framework implementation of its own, so the two never share a page.
+
+Load the tag once, on a page that runs no other consent tool.
 
 ## Caching
 
