@@ -1,8 +1,13 @@
 @page Services_Cloud_ResourceKeys Resource Keys
 
-A Resource Key grants your code access to the 51Degrees Cloud APIs. A specific Resource Key has access to a particular set of properties which are chosen at key creation time and cannot be changed afterwards. The number of accesses authorized by a particular Resource Key is limited for free keys, or can be associated with your License Key and thus your account.
+The cloud service has two kinds of key, and they do different jobs.
 
-To obtain a Resource Key, use the Cloud Configurator; instructions on how to use the Cloud Configurator to create a key while associating it with properties and your License Key are part of the @configuratorexplanation, which describes the process in detail.
+- **A License Key** comes with a subscription. It proves what you have paid for, it is secret, and it stays on your servers.
+- **A Resource Key** is created for free. It names the properties you want, it can have your License Keys attached to it, and it goes in your page or your code. Because the License Key is attached when the key is created, a page uses the Resource Key and never holds the License Key.
+
+A Resource Key has access to a particular set of properties which are chosen at creation time and cannot be changed afterwards. The number of requests a Resource Key may make each month is limited for a free key, and comes from your subscription where a License Key is attached. Which calls count is on @ref Services_Cloud_Metering.
+
+To create a Resource Key, with its properties and your License Key, follow the @configuratorexplanation.
 
 # Authorization errors
 
@@ -51,24 +56,43 @@ your Resource Key: `%https://cloud.51degrees.com/api/v4/<resource_key>.json` (de
 If you see any null reasons like `priceband is a paid feature. You need a licence key to retrieve data. Visit https://51degrees.com/pricing for details` then you do not have the required subscription to access the property. You can check the 51Degrees [Property Dictionary](https://51degrees.com/developers/property-dictionary) to see what subscription is required.
 
 # Seeing existing key authorized properties {#Seeing_existing_key_authorized_properties}
-Some of the error messages above will list the properties for which the used key is authorized, but you can also see the properties for a key you already have by constructing and visiting the URL https://configure.51degrees.com/YOUR_RESOURCE_KEY. This will show Step 1 of the Configurator with the properties for this specific key already selected.
+Some of the error messages above will list the properties for which the used key is authorized, but you can also see the properties for a key you already have by constructing and visiting the URL https://configure.51degrees.com/YOUR_RESOURCE_KEY. This will show Step 1 with the properties for this specific key already selected.
 
 Beware: continuing to steps 2 or 3 will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it will create a new Resource Key. 
 
-# License-key-only callers
+# Resource Keys and License Keys {#Resource_keys_and_license_keys}
 
-Most callers authenticate with a Resource Key, but you can also call the cloud with a License Key and no Resource Key. This suits server-to-server or verifier callers that do not want to create and manage Resource Keys. Only the json and js endpoints accept License-key-only requests; the other endpoints still require a Resource Key.
+A request can carry a Resource Key, a License Key, or both.
 
-A Resource Key carries a property list chosen at creation time. A bare License Key does not, so a License-key-only caller must list the properties they want via the `values` parameter, supplied in any of these places (header first, then query, then form):
+- **A Resource Key** authenticates the request and brings the properties and products set up on it. It is public, because it sits in the script tag of every page that uses it, and it can be restricted to named domains, which [the domains a Resource Key accepts](@ref Resource_key_domains) describes.
+- **A License Key** is a server's credential and never goes in a page. It suits server-to-server and verifier callers that do not want to create and manage Resource Keys.
+- **A License Key on its own** works on the routes a server calls, being json, js, accessible properties, the 51Did key, verify, verify context, verify full and redeem routes, and the OWID public-key route. On json and js it must name the properties wanted with `values`, because only a Resource Key carries a property list, and a request without `values` returns `400`. The other routes need no `values`, because they return the same fields every time.
+- **Both together** are treated as the Resource Key's request, including any domain restriction, and the License Key adds its products on top. A server whose Resource Key is restricted to named domains sends no `Origin`, so it is refused even when it also sends a valid License Key. Such a server should send its License Key alone.
+
+The service looks for each key in these places, in this order, and uses the first one it finds.
+
+1. The `X-51D-Resource-Key` or `X-51D-License-Key` header.
+2. The route, for a Resource Key only, as in `/api/v4/<resource_key>.json`.
+3. The query string, `?resource=` or `?license=`.
+4. The form body of a `POST`, `resource=` or `license=`.
+
+The `values` parameter is read in the same order, from the header, then the query string, then the form body.
 
 - Header: `X-51D-Values: device.ismobile,fodid.idprobglobal`
 - Query string: `?values=device.ismobile,fodid.idprobglobal`
 - Form body: `values=device.ismobile,fodid.idprobglobal`
 
-The License Key itself follows the same order: the `X-51D-License-Key` header, then the `license` query parameter, then a `license` form field.
+With a Resource Key, `values` adds the named properties to the ones the key already carries, and a property the license does not entitle is still withheld. Omit it to get the key's own set. See the [Property Dictionary](https://51degrees.com/developers/property-dictionary) for the properties available on your license.
 
-The `X-51D-*` headers are intended for server-to-server callers: the cloud service does not answer CORS preflight requests for them, so browsers will not send them cross-origin.
+A page on another domain may send the `X-51D-Resource-Key` and `X-51D-Values` headers, because the service answers the browser's CORS preflight for them. It refuses a preflight for `X-51D-License-Key`, because a License Key is never placed in a page.
 
-A License-key-only request with no `values` returns `400` and explains the requirement. See the [Property Dictionary](https://51degrees.com/developers/property-dictionary) for the properties available on your license.
+The 51Did redeem route needs the account's License Key where the account holds one, sent alone or beside the Resource Key, because the sealed result being redeemed is bound to that account.
 
-With a Resource Key, `values` is optional: it narrows the response to a subset of the key's baked-in properties, and omitting it returns them all. A License-key-only caller must supply it, since there is no baked-in list to fall back to.
+# The domains a Resource Key accepts {#Resource_key_domains}
+
+When you create a Resource Key you can name the domains it may be used from, or name none. The list cannot be changed afterwards, so a key for a new domain is a new key.
+
+- **A key that names no domains** is accepted from any page and any server. Anyone who reads the key out of your page can use it, and every request they make counts against your monthly requests, so name the domains on a key that goes in a page, and keep a key that names no domains for a server.
+- **A key that names domains** is accepted only from a request that says it came from one of them. The service reads the `Referer` header and, where there is none, the `Origin` header, and refuses any other request with `401` and a message naming the domain it rejected, which is [Resource Key not authorized on domain](@ref Resource_key_not_authorized_on_domain). A page that suppresses the `Referer` header, with `<meta name="referrer" content="no-referrer">` or an equivalent policy, sends neither header, so it is refused. A server sends neither header unless you add one, so a server uses a key that names no domains, sends an `Origin` header naming one of the key's domains, or sends its License Key alone as described above.
+
+The check is the same on every endpoint that takes a Resource Key.

@@ -2,35 +2,15 @@
 
 # Overview
 
-If an IP address is associated with an `Area`, this area can be broken down and associated with multiple countries. For example, an IP range may span a border region or serve multiple locations. In these cases, the IP intelligence engine returns possible country codes with weightings, ordered by descending probability.
+IP Intelligence gives the country that the location of an IP address is in, and separately the country that the IP address range is registered in. The two can differ, because a range can be used outside the country it is registered in.
 
 # Properties
 
-The countries properties can be found under the `Countries Information` catagory on the [property dictionary](https://51degrees.com/developers/property-dictionary?item=Location%7CCountries%20Information). 
+The country properties can be found under the `Country Information` category on the [property dictionary](https://51degrees.com/developers/property-dictionary?item=Location%7CCountry%20Information).
 
-## Weighted Properties
+- `CountryCode` and `CountryCode3` are the ISO 3166-1 alpha-2 and alpha-3 codes of the country the location is in, and `Country` is the country's name.
+- `CountryGeoNameId` is the [GeoNames](https://www.geonames.org/) id of that country.
+- `IsEu` says whether the country is in the European Union, `CurrencyCode` is the ISO 4217 code of its currency, and `DialCode` is its international dialing code.
+- `RegisteredCountry` is the code of the country the IP address range is registered in, and `RegisteredCountryGeoNameId` is that country's GeoNames id.
 
-The weighted properties (`CountryCodesGeographical`, `CountryCodesPopulation`, etc.) return the most likely countries based on available evidence. The weightings indicate the probability of each country being the correct match.
-
-## 'All' Properties
-
-The 'All' properties (`CountryCodesGeographicalAll`, `CountryCodesPopulationAll`, etc.) return all possible country codes, not just the weighted ones. These are ordered by:
-
-1. First, by their weighting descending (most likely first)
-2. Then, any remaining codes alphabetically
-
-This provides convenient access to the complete list of possible countries for an IP address, not just the most likely ones. As an example, this is effective for populating drop down lists on a webpage. 
-
-## Country Names
-
-The country name properties (`CountryNamesGeographical`, etc.) provide the English names corresponding to the country codes. These are useful for display purposes or when you need human-readable output instead of ISO country codes.
-
-# Geographical vs Population Weighting
-
-There are two weighting schemes available:
-
-- **Geographical** - Based on the geographical area coverage of an IP address' likely area. This is useful for location-based targeting where proximity matters.
-
-- **Population** - Based on population coverage. This considers the sum population attributed to different countries. This weighting tends to favour more densely populated areas / countries.
-
-Choose the weighting that best fits your use case. For example, if an IP range were to be associated with two areas, one encompassing the UK and another encompassing Australia, `CountryCodesGeographical` would heavily favour Australia due to the larger land mass and `CountryCodesPopulation` would favour the UK due to a higher population count. 
+For the regions within the country, `StateGeoNameIdsGeographical` lists each one with its share of the area, as the [Weighting](@ref IpIntelligence_Features_Weighting) page describes.

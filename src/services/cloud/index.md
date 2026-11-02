@@ -8,6 +8,8 @@
 
 - @subpage Services_Cloud_ResourceKeys
 
+- @subpage Services_Cloud_Metering
+
 - @ref HumanConfidence_Index
 
 - @subpage Services_Cloud_ErrorMessages

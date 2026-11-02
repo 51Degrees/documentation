@@ -488,7 +488,7 @@ A Low visit is almost always software, so you can serve it something made for so
 
 - **The page without what you sell.** A retailer serves the product page without prices and stock, a listing site answers a search with no contact details, and a publisher serves the first paragraph of the article.
 - **Content for machines.** Serve the same content as Markdown or plain text instead of HTML, with no navigation, scripts, or ads, so an AI gets what it came for cheaply and your page for people stays as it is.
-- **Your licence terms.** Serve the terms the software has to accept to use your content, with a way to get a licence. Ours is [the AI notice](https://51degrees.com/ai-notice). The Movement for an Open Web's [Search Only Contract](https://m4ow.uk/socw/3.txt) is a published set of terms any website can adopt, and the [robots.txt generator](https://51degrees.com/robots-txt) writes a robots.txt that cites it.
+- **Your license terms.** Serve the terms the software has to accept to use your content, with a way to get a license. Ours is [the AI notice](https://51degrees.com/ai-notice). The Movement for an Open Web's [Search Only Contract](https://m4ow.uk/socw/3.txt) is a published set of terms any website can adopt, and the [robots.txt generator](https://51degrees.com/robots-txt) writes a robots.txt that cites it.
 - **No ads.** Leave the ad slots empty, so nobody pays to show an ad to a script.
 - **A block.** Refuse with `403`, as the example API does, and log the visit.
 

@@ -27,7 +27,7 @@ Of the operating systems, we target from the latest versions to the older versio
 We automatically test and distribute binary packages for a limited list of platforms and architectures.  In case the provided binary package does not run on your environment - you have to build the library from source for your specific platform and architecture. All 51Degrees language libraries provide instructions on building the library from source.  F.e. see:
 
 - [Building Device Detection .NET library from source](https://github.com/51Degrees/device-detection-dotnet?tab=readme-ov-file#build-from-source)
-- [Building Device Detection Java library from source](https://github.com/51Degrees/device-detection-dotnet?tab=readme-ov-file#build-from-source)
+- [Building Device Detection Java library from source](https://github.com/51Degrees/device-detection-java?tab=readme-ov-file#build-and-install-from-source)
 
 # Automation
 
@@ -36,7 +36,7 @@ In general, we apply the following guidelines when deciding which platforms and 
 - We use GitHub Actions with hosted runners, so we test against platforms that GitHub has [hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources) for.
 - We test against all versions of languages that are currently considered LTS versions.
 
-The tabs below show the specific platforms and versions that are currently tested as part of each release.
+The tabs below are built from each repository's CI configuration each time the page loads, so they show what is tested today. Under each table are links to the repository's latest release and to its test runs.
 
 If something is not tested here, and you believe it should be, please raise an issue via our [GitHub](https://github.com/51Degrees) page. If
 you have a configuration that is not covered, [contact us](https://51degrees.com/contact-us) and we will look into it.
@@ -44,7 +44,11 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
 @htmlonly
 <script>
   $( document ).ready(function() {
-      grabTestedVersions("device-detection-nginx", "nginx-versions", [
+      grabTestedVersions("51degrees-varnish", "varnish-versions", [
+          { title: "Project", getValue: (d) => d.VinylVersion ? "Vinyl Cache" : "Varnish Cache" },
+          { title: "Version", getValue: (d) => d.VinylVersion || d.VarnishVersion }
+      ], undefined, "publish.yml");
+      grabTestedVersions("51degrees-nginx", "nginx-versions", [
           { title: "NGINX Version", getValue: (d) => d.NginxVersion }
       ]);
       grabTestedVersions("51degrees-cxx", "cxx-versions", [
@@ -60,10 +64,10 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
       grabTestedVersions("device-detection-python", "python-versions", [
           { title: "Python Version", getValue: d => d.LanguageVersion }
       ]);
-      grabTestedVersions("device-detection-node", "node-versions", [
+      grabTestedVersions("51degrees-node", "node-versions", [
           { title: "Node Version", getValue: d => d.LanguageVersion }
       ]);
-      grabTestedVersions("ip-intelligence-node", "ipi-node-versions", [
+      grabTestedVersions("51degrees-node", "ipi-node-versions", [
           { title: "Node Version", getValue: d => d.LanguageVersion }
       ]);
       grabTestedVersions("device-detection-go", "go-versions", [
@@ -72,6 +76,10 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
       grabTestedVersions("device-detection-php", "php-versions", [
           { title: "PHP Version", getValue: d => d.LanguageVersion }
       ]);
+      grabTestedVersions("pipeline-wordpress", "wordpress-versions", [
+          { title: "PHP Version", getValue: d => d.LanguageVersion }
+      ]);
+      grabTestedVersions("51degrees-rust", "rust-versions", []);
   });
 </script>
 @endhtmlonly
@@ -133,37 +141,23 @@ These are automatically tested on [GitHub](https://github.com/51Degrees?q=go&typ
 If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{varnish}
-Language Versions:
-- Varnish 6.0.8
-
-Platforms:
-- Ubuntu 18.04
-  - 64-bit (x86_64)
-- Ubuntu 20.04
-  - 64-bit (x86_64)
-
+These are automatically tested on [GitHub](https://github.com/51Degrees/51degrees-varnish).
+<div id="varnish-versions"></div>
+If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{nginx}
-These are automatically tested on [GitHub](https://github.com/51Degrees?q=nginx&type=all&language=&sort=).
+These are automatically tested on [GitHub](https://github.com/51Degrees/51degrees-nginx).
 <div id="nginx-versions"></div>
 If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{wordpress}
-Language Versions:
-- Wordpress 5.9.2
-
-Platforms:
-- Ubuntu 18.04
-  - PHP 5.6, 7.2, 7.3, 7.4
-
+These are automatically tested on [GitHub](https://github.com/51Degrees/pipeline-wordpress).
+<div id="wordpress-versions"></div>
+If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{rust}
-These are tested on [GitHub](https://github.com/51Degrees?q=rust&type=all&language=&sort=).
-
-Platforms:
-- Windows (windows-latest, x86_64)
-- Linux (ubuntu-22.04 and ubuntu-24.04, x86_64)
-- macOS (macos-latest, Apple Silicon / arm64)
+These are automatically tested on [GitHub](https://github.com/51Degrees/51degrees-rust).
+<div id="rust-versions"></div>
 
 Language Versions:
 - Rust stable (current)

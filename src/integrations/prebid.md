@@ -4,7 +4,7 @@
 
 51Degrees enriches OpenRTB bid requests with three streams of data: **Device Detection** properties, the **51Did** probabilistic device identifier, and **IP Intelligence** location signals. Together they let buyers target and value impressions more accurately, and recognise the same device across requests without cookies.
 
-> **See it work.** The [interactive Prebid.js demo](https://51degrees.com/developers/prebid-js-demo) fires contemporary device samples against random public IPs and shows the bid object populate live against cloud.51degrees.com.
+> **Try it.** To experiment with a simple Prebid OpenRTB transaction, use the [Prebid.js developer tool](https://51degrees.com/developers/prebid-js-demo). It runs a Prebid.js auction with the 51Degrees RTD module, for your own browser or a sample device, and shows the OpenRTB bid request before and after 51Degrees enriches it.
 
 ## What the Integration Delivers
 
@@ -26,11 +26,11 @@ Use this when you want the full enrichment set (device, 51Did, IP Intelligence) 
 
 **Setup:** [Prebid.js RTD Module Documentation](https://docs.prebid.org/dev-docs/modules/51DegreesRtdProvider.html)
 
-**Resource Key properties.** Generate the key with the [Cloud Configurator](https://configure.51degrees.com). To populate every field the RTD module writes, include:
+**Resource Key properties.** Create the key at [configure.51degrees.com](https://configure.51degrees.com). To populate every field the RTD module writes, include:
 
 - **Device Detection** (`device.*`): `DeviceId`, `DeviceType`, `HardwareVendor`, `HardwareName`, `HardwareNamePrefix`, `HardwareNameVersion`, `HardwareModel`, `PlatformName`, `PlatformVersion`, `ScreenPixelsHeight`, `ScreenPixelsWidth`, `ScreenPixelsPhysicalHeight`, `ScreenPixelsPhysicalWidth`, `ScreenInchesHeight`, `ScreenInchesWidth`, `PixelRatio`, `ThirdPartyCookiesEnabled`.
 - **IP Intelligence** (`device.ip`, `device.geo.*`): `Latitude`, `Longitude`, `CountryCode3`, `Iso31662Lvl4`, `ZipCode`, `TimeZoneOffset`, `AccuracyRadiusMin`, `LocationConfidence`.
-- **51Did** (`user.eids`): `IdProbLic`, `IdProbGlobal`. Issuing the 51Did for `standard` or `personalized` usage also requires a Special license key on the Resource Key (see the 51Did section below).
+- **51Did** (`user.eids`): `IdProbLic`, `IdProbGlobal`. Issuing the 51Did for `standard` or `personalized` usage also needs a License Key that carries the 51Did product (see the 51Did section below).
 
 ### Server-Side: Prebid Server (Java and Go)
 
@@ -71,7 +71,7 @@ The RTD module surfaces the 51Did in the OpenRTB 2.6 `user.eids` array as a sing
           { "id": "AzUxZC5lcwBzGTMAJQAAAAHWTQ...", "atype": 1 },
           { "id": "AzUxZC5lcwCxHzMAJQAAAAHWTQ...", "atype": 1 }
         ],
-        "ext": { "tdl": ["https://tdl.51degrees.com/..."] }
+        "ext": { "tdl": ["https://m4ow.uk/mtm/2.txt"] }
       }
     ]
   }
@@ -80,9 +80,9 @@ The RTD module surfaces the 51Did in the OpenRTB 2.6 `user.eids` array as a sing
 
 - `mm: 5` marks the match method as probabilistic.
 - The two `uids` are the license-tier identifier (`idproblic`) and the global-tier identifier (`idprobglobal`), in that order.
-- `ext.tdl` is emitted only when a transparency-and-disclosure URL is configured (the `tdlUrl` module parameter); it is omitted otherwise.
+- `ext.tdl` names the [Model Terms for Marketing](https://m4ow.uk/mtm/2.txt) on every entry, by the address of version 2, the version in force. When the `tdlUrl` module parameter is set, its address follows the Model Terms in the list.
 
-The 51Did is delivered by the RTD module only. Issuing it for `standard` or `personalized` usage purposes requires a Special license key on the Resource Key; the `non-marketing` purpose is available in the free tier. See @ref Identifiers_51Did for licensing and @ref Identifiers_PMP for capturing the user's marketing preference that feeds `id.usage`.
+The 51Did is delivered by the RTD module only. Issuing it for `standard` or `personalized` usage purposes needs a License Key that carries the 51Did product, and the `non-marketing` purpose is available in the free tier. See @ref Identifiers_51Did for licensing and @ref Identifiers_PMP for capturing the user's marketing preference that feeds `id.usage`.
 
 ### IP Intelligence
 
@@ -137,7 +137,8 @@ This stream provides IP and geo only. Connection type, carrier/ISP, ASN, and MCC
         "uids": [
           { "id": "AzUxZC5lcwBzGTMAJQAAAAHWTQ...", "atype": 1 },
           { "id": "AzUxZC5lcwCxHzMAJQAAAAHWTQ...", "atype": 1 }
-        ]
+        ],
+        "ext": { "tdl": ["https://m4ow.uk/mtm/2.txt"] }
       }
     ]
   }

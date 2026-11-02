@@ -10,14 +10,15 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 |---------------|--------------------|-------|
 | `continent.code` | `ContinentCode2` | |
 | `continent.names.{locale}` | `ContinentName` | 51Degrees returns the English name; localized names are not exposed as separate properties. |
-| `continent.geoname_id` |  | 51Degrees does not use GeoNames identifiers. |
+| `continent.geoname_id` | `ContinentGeoNameId` |  |
 | `country.iso_code` | `CountryCode` | Use `CountryCode3` for ISO 3166-1 alpha-3. |
 | `country.names.{locale}` | `Country` | |
 | `country.is_in_european_union` | `IsEu` | |
 | `country.confidence` | `LocationConfidence` | MaxMind exposes confidence per geographic level (country, city, subdivision, postal); 51Degrees rolls them up into a single string-valued `LocationConfidence`. See the note below the City/postal/location table. |
-| `country.geoname_id` |  | |
+| `country.geoname_id` | `CountryGeoNameId` |  |
 | `registered_country.iso_code` | `RegisteredCountry` | |
 | `registered_country.names.{locale}` | `RegisteredCountry` | 51Degrees returns the country only, not localized names. |
+| `registered_country.geoname_id` | `RegisteredCountryGeoNameId` | |
 | `represented_country.*` |  | 51Degrees does not separately model represented country (US military bases etc.). |
 
 # Subdivision (state / region)
@@ -27,7 +28,9 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 | `subdivisions[0].iso_code` | `Iso31662Lvl4SubdivisionOnly` | Use `Iso31662Lvl4` for the `CC-SUB` form. |
 | `subdivisions[0].names.{locale}` | `State` or `Region` | `State` for the higher-level subdivision (US states, UK countries); `Region` for the next level down. |
 | `subdivisions[0].confidence` | `LocationConfidence` | See the note below the City/postal/location table. |
-| `subdivisions[0].geoname_id` |  | |
+| `subdivisions[0].geoname_id` | `StateGeoNameId` | Use `StateGeoNameIdsGeographical` for every first-level subdivision that the location's area overlaps, weighted by its share of that area. |
+| `subdivisions[1].names.{locale}` | `County` | Approximate. MaxMind lists subdivisions from largest to smallest, and a second one, where MaxMind returns it, is nearest to the second-level administrative area that 51Degrees returns as `County`. |
+| `subdivisions[1].geoname_id` | `CountyGeoNameId` | Approximate, as for the name. |
 
 # City, postal, location
 
@@ -35,7 +38,7 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 |---------------|--------------------|-------|
 | `city.names.{locale}` | `Town` | |
 | `city.confidence` | `LocationConfidence` | See the note below this table. |
-| `city.geoname_id` |  | |
+| `city.geoname_id` | `TownGeoNameId` | 51Degrees gives the town or populated place nearest the location. |
 | `postal.code` | `ZipCode` | |
 | `postal.confidence` | `LocationConfidence` | See the note below this table. |
 | `location.latitude` | `Latitude` | 51Degrees returns a single averaged value. See coordinate randomization note below. |
@@ -86,10 +89,13 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 
 # Properties unique to 51Degrees
 
-The following 51Degrees properties have no MaxMind equivalent. They are the additional context that drives [accuracy weighting](@ref IpIntelligence_Features_Weighting), [country diversity](@ref IpIntelligence_Features_Countries) and bot detection.
+The following 51Degrees properties have no MaxMind equivalent. They are the additional context that drives [accuracy weighting](@ref IpIntelligence_Features_Weighting) and bot detection.
 
-- **Weighted country lists**: `CountryCodesGeographical`, `CountryCodesPopulation`, and their `*All` and `*Translated` variants return every candidate country with weightings, not a single best-guess. See [Countries](@ref IpIntelligence_Features_Countries).
 - **Diversity scores**: `BrowserDiversity`, `HardwareDiversity`, `PlatformDiversity` quantify how varied the traffic from an IP range is. See [Diversity](@ref IpIntelligence_Features_Diversity).
-- **Bot identification**: `IsCrawler`, `IsArtificialIntelligence`, `CrawlerName`, `CrawlerProductTokens`, `CrawlerUrl`, `CrawlerUsage`.
+- **Finer places**: `Suburb`, and `Iso31662Lvl8` and `Iso31662Lvl8SubdivisionOnly`, the ISO 3166-2 code of the OpenStreetMap level 8 area the location is in.
+- **Area polygon**: `Areas` returns the area the IP range is likely to be in as a WKT string, trimmed to the land of the location's country so it does not reach into a neighboring country or over the sea.
+- **Country information**: `CurrencyCode` (ISO 4217), `DialCode` (the ITU telephone country code) and `LanguageCode` (ISO 639).
+- **Network**: `RegisteredName` is the name of the IP range, which is usually its owner, and `IsPublicRouter` says whether the address belongs to a public router.
+- **Bot identification**, from Device Detection: `IsCrawler`, `IsArtificialIntelligence`, `CrawlerName`, `CrawlerProductTokens`, `CrawlerUrl`, `CrawlerUsage`.
 - **Human probability**: `HumanProbability` returns a score from 0 to 10. See [Human](@ref IpIntelligence_Features_Human).
-- **Probabilistic identifiers**: `IdProbGlobal`, `IdProbLic`.
+- **Probabilistic identifiers**, from 51Did: `IdProbGlobal`, `IdProbLic`.

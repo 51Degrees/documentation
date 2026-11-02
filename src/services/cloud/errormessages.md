@@ -8,7 +8,7 @@ This page contains explainers for cloud error messages when using 51Degrees serv
 Continuous processing of unique User-Agents is limited. This is to limit the amount of offline processing that is performed using the 51Degrees Cloud service. You can resume making requests when the number of seconds in the `Retry-After` response header has elapsed. To find out more see the [cloud documentation](https://cloud.51degrees.com/api-docs/index.html)
 
 ### Evidence keys could not be determined {#Evidence_keys_could_not_be_determined}
-Evidence keys for this Resource Key could not be determined. This could be caused by an invalid Resource Key or due to a lack of subscription. Please see the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to generate a new Resource Key. If you require a License Key, visit our [pricing page](https://51degrees.com/pricing) to sign up for a 51Degrees Cloud subscription.
+Evidence keys for this Resource Key could not be determined. This could be caused by an invalid Resource Key or due to a lack of subscription. Please see [configure.51degrees.com](https://configure.51degrees.com/) to generate a new Resource Key. If you require a License Key, visit our [pricing page](https://51degrees.com/pricing) to sign up for a 51Degrees Cloud subscription.
 
 ### Internal server errors {#Internal_server_error}
 There is an issue with the Cloud service. Check the @servicestatuspage for current outages.
@@ -33,7 +33,7 @@ This error means that there are no properties that are offered by the Cloud serv
 A non-unique property has been requested; make sure that each property is only requested once and specify the property name in the format: `<product>.<property>` to avoid ambiguity, e.g., `device.ismobile` or `location.country`. This may occur when using the `values` parameter in requests to the Cloud service. Refer to the [cloud property metadata](https://cloud.51degrees.com/api/metadata/properties) for a list of valid properties IDs.
 
 ### Only add-on product provided {#Only_add_on_product_provided}
-This product is an add-on to one of the plans outlined on the [pricing page](https://51degrees.com/pricing). The base subscription is licensed in a separate Licence Key. Ensure this Licence Key found in your sign-up email has been included when creating your Resource Key on the 51Degrees [Cloud Configurator](https://configure.51degrees.com/).
+This product is an add-on to one of the plans outlined on the [pricing page](https://51degrees.com/pricing). The base subscription is licensed in a separate Licence Key. Ensure this Licence Key found in your sign-up email has been included when creating your Resource Key on [configure.51degrees.com](https://configure.51degrees.com/).
 
 ### Product to subscription mapping {#Product_to_subscription_mapping}
 Some error messages from the 51Degrees Cloud service may list the products that are available in the request or the products that are required to resolve the error. These map to a subscriptions references on the @pricing page and the [property dictionary](https://51degrees.com/developers/property-dictionary).
@@ -60,16 +60,19 @@ Your request limit has been reached for the provided Resource Key. To keep using
 There was an error when getting the details for the Resource Key provided in the request. If the problem persists then please create a new issue on our [cloud-issues GitHub](https://github.com/51Degrees/cloud-issues/issues) repository.
 
 ### Resource Key not authorized on domain {#Resource_key_not_authorized_on_domain}
-This Resource Key is not authorized for use with the Referer or Origin domain. See the original error message for the disallowed domain. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to update the permitted domains for your Resource Key. If using one of the native pipeline APIs, you can use the `CloudRequestOrigin` setting in the Pipeline or Cloud Request Engine builder to specify the origin. Note that, as with all engine builder methods, this can also be specified in the configuration file.
+This Resource Key is not authorized for use with the Referer or Origin domain. See the original error message for the disallowed domain. A Resource Key's domains cannot be changed once it is created, so create a new Resource Key that includes the domain at [configure.51degrees.com](https://configure.51degrees.com/). A server whose Resource Key is restricted to named domains sends no `Origin`, so it gets this error even when it also sends a License Key, and it should send the License Key alone. See [the domains a Resource Key accepts](@ref Resource_key_domains). If using one of the native pipeline APIs, you can use the `CloudRequestOrigin` setting in the Pipeline or Cloud Request Engine builder to specify the origin. Note that, as with all engine builder methods, this can also be specified in the configuration file.
 
 ### Resource Key not recognized {#Resource_key_not_recognized}
-The Resource Key provided in the request to the Cloud service was not recognized. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to get a new Resource Key.
+The Resource Key provided in the request to the Cloud service was not recognized. Please visit [configure.51degrees.com](https://configure.51degrees.com/) to get a new Resource Key.
 
 ### Resource Key not valid {#Resource_key_not_valid}
-The Resource Key provided in the request to the Cloud service is not valid. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to create a new Resource Key.
+The Resource Key provided in the request to the Cloud service is not valid. Please visit [configure.51degrees.com](https://configure.51degrees.com/) to create a new Resource Key.
 
 ### Resource Key required {#Resource_key_required}
-A Resource Key is required to access the 51Degrees Cloud service. This contains your property configuration, preferences and subscriptions. Please visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com/) to create a Resource Key. The key can be supplied as the `X-51D-Resource-Key` header, in the route, as the `resource=` query parameter, or as a `resource` form field. On the json and js endpoints only, callers can instead authenticate with a License Key (`X-51D-License-Key`, `?license=`, or a `license` form field) together with a `values` list (see below). Every other endpoint requires a Resource Key, and returns this error for a License-key-only request.
+A Resource Key is required to access the 51Degrees Cloud service. This contains your property configuration, preferences and subscriptions. Please visit [configure.51degrees.com](https://configure.51degrees.com/) to create a Resource Key. The key can be supplied as the `X-51D-Resource-Key` header, in the route, as the `resource=` query parameter, or as a `resource` form field. Routes that a server calls also accept a License Key alone (`X-51D-License-Key`, `?license=`, or a `license` form field), and on json and js that needs a `values` list (see below). See [Resource Keys](@ref Services_Cloud_ResourceKeys) for which routes take each key.
+
+### Resource or License Key required {#Resource_or_license_key_required}
+The OWID public-key endpoint, `/owid/api/v3/public-key`, needs a Resource Key or a License Key, and returns `401` without one. Its plain-text answer lists the places to supply one, being the `X-51D-Resource-Key` or `X-51D-License-Key` header, the `resource=` or `license=` query parameter, or a `resource` or `license` form field. A License Key alone is enough, with no `values` list, because the endpoint always returns the same fields.
 
 ### Sequence value invalid {#Sequence_value_invalid}
 The value for the `sequence` parameter could not be parsed to an integer, make sure that the `sequence` value is an integer. If the problem persists then please create a new issue on our [cloud-issues GitHub](https://github.com/51Degrees/cloud-issues/issues) repository.
@@ -78,13 +81,13 @@ The value for the `sequence` parameter could not be parsed to an integer, make s
 The value for the `sequence` parameter could not found. If the `sequence` parameter has been provided in the request, make sure that the value in is an integer. Otherwise, please create a new issue on our [cloud-issues GitHub](https://github.com/51Degrees/cloud-issues/issues) repo.
 
 ### Signing key date malformed {#Signing_key_date_malformed}
-The `date` parameter on the OWID creator endpoint (`/owid/api/v3/creator?date=`) could not be parsed. It must be an unsigned 32-bit integer giving the number of minutes since `2020-01-01T00:00:00Z` (the OWID envelope's date encoding). Returned as HTTP `400`.
+The `date` parameter on the OWID public-key endpoint (`/owid/api/v3/public-key?date=`) could not be parsed. It must be an unsigned 32-bit integer giving the number of minutes since `2020-01-01T00:00:00Z` (the OWID envelope's date encoding). Returned as HTTP `400`.
 
 ### Signing key date too old {#Signing_key_date_too_old}
-The `date` supplied to the OWID creator endpoint predates the oldest signing key, so no key was active at that date. Returned as HTTP `404`.
+The `date` supplied to the OWID public-key endpoint predates the oldest signing key, so no key was active at that date. Returned as HTTP `404`.
 
 ### Supplied Licenses do not contain any valid products {#Supplied_licenses_do_not_contain_any_valid_products}
-The supplied License Key(s) do not contain any valid products for the 51Degrees Cloud service. Check that you have access to the correct subscription by checking your sign-up email. To validate your License Key(s), visit the 51Degrees [Cloud Configurator](https://configure.51degrees.com) and follow the steps to create a new Resource Key, providing your License Keys in the process. If the License Keys are not valid then please see our [pricing page](https://51degrees.com/pricing) for details on subscriptions for the Cloud service.
+The supplied License Key(s) do not contain any valid products for the 51Degrees Cloud service. Check that you have access to the correct subscription by checking your sign-up email. To validate your License Key(s), visit [configure.51degrees.com](https://configure.51degrees.com) and follow the steps to create a new Resource Key, providing your License Keys in the process. If the License Keys are not valid then please see our [pricing page](https://51degrees.com/pricing) for details on subscriptions for the Cloud service.
 
 ### There are no valid products {#There_are_no_valid_products}
 The supplied License Key(s) do not contain any valid products for the 51Degrees Cloud service. Check that you have access to the correct subscription by checking your sign-up email. Otherwise, please see our [pricing page](https://51degrees.com/pricing) for details.

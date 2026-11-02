@@ -253,7 +253,7 @@ signing today, not only against its own fixtures.
   rebuilds, so any drift from the standard fails a test.
 - The [structured field test suite](https://github.com/httpwg/structured-field-tests)
   published by the HTTP working group, over a thousand cases, runs
-  against the header parsing and the strict serialisation.
+  against the header parsing and the strict serialization.
 - The test vectors Cloudflare publishes in their
   [web-bot-auth](https://github.com/cloudflare/web-bot-auth) project
   verify, so the element agrees with their reference implementation.

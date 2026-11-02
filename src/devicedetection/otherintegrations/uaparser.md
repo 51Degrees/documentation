@@ -30,7 +30,7 @@ The packages are available via:
 ### Creating a Resource Key
 
 Before integrating 51Degrees UAParser, you need to register and configure a 51Degrees Resource Key using the 
-[Cloud Configurator](https://configure.51degrees.com/). The Configurator tool allows you to choose the device 
+[configure.51degrees.com](https://configure.51degrees.com/), where you choose the device 
 properties you would like to get as a result of the call to UAParser. Follow the @configuratorexplanation for 
 more detail on how to create a Resource Key. 
 

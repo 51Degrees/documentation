@@ -64,13 +64,14 @@ Signed, probabilistic device-bound identifiers (51Did) and an embeddable prefere
 - [Overview](@ref Identifiers_Overview) - How the pieces fit together
 - [51Did](@ref Identifiers_51Did) - Properties, `id.usage`, licensing
 - [PMP](@ref Identifiers_PMP) - Embeddable preference widget
+- [ADI](@ref Identifiers_ADI) - Embeddable ad inspector that tells a visitor why an ad was served
 
 ### Client-Side Only
 
 Prefer a lightweight approach? Implement device detection directly in the browser - no server-side code needed.
 
-- [Cloud Configurator](https://configure.51degrees.com/) - Generate custom JavaScript snippets
-- [Setup Guide](@ref Services_Configurator) - Resource Key and integration steps
+- [configure.51degrees.com](https://configure.51degrees.com/) - Create a Resource Key and get the JavaScript snippet for it
+- [Resource Key guide](@ref Services_Configurator) - Creating a Resource Key step by step
 - [Cloud API Reference](https://cloud.51degrees.com/api-docs/index.html) - Complete HTTP API documentation
 
 ---
@@ -85,7 +86,7 @@ Work in the language that suits you best. Our services are production-ready acro
 | .NET (C#) | [device-detection-dotnet](https://github.com/51Degrees/device-detection-dotnet) | [ip-intelligence-dotnet](https://github.com/51Degrees/ip-intelligence-dotnet) |
 | Java | [device-detection-java](https://github.com/51Degrees/device-detection-java) | [ip-intelligence-java](https://github.com/51Degrees/ip-intelligence-java) |
 | Go | [device-detection-go](https://github.com/51Degrees/device-detection-go) | [ip-intelligence-go](https://github.com/51Degrees/ip-intelligence-go) |
-| Node.js | [device-detection-node](https://github.com/51Degrees/device-detection-node) | - |
+| Node.js | [device-detection-node](https://github.com/51Degrees/51degrees-node/tree/main/device-detection) | [ip-intelligence-node](https://github.com/51Degrees/51degrees-node/tree/main/ip-intelligence) |
 | Python | [device-detection-python](https://github.com/51Degrees/device-detection-python) | - |
 | PHP | [device-detection-php](https://github.com/51Degrees/device-detection-php) | - |
 

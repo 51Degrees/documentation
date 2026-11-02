@@ -8,6 +8,25 @@ With the explosion of AI training crawlers, search bots, analytics agents, archi
 
 The `RobotsTxtEngine` shipped in the [device-detection-dotnet](https://github.com/51Degrees/device-detection-dotnet/tree/main/FiftyOne.DeviceDetection.RobotsTxt) package solves this problem by generating a `robots.txt` document on demand from the up-to-date 51Degrees crawler dataset, driven by a small set of allow/disallow choices expressed in terms of [crawler usages](@ref DeviceDetection_Features_Crawlers) rather than individual user-agents.
 
+# Availability
+
+The on-premise `RobotsTxtEngine` is available in .NET only. It ships in
+the [device-detection-dotnet](https://github.com/51Degrees/device-detection-dotnet/tree/main/FiftyOne.DeviceDetection.RobotsTxt)
+package, and there is no equivalent engine in the Java, C, C++, Go,
+Rust, PHP, Node or Python SDKs.
+
+Robots.txt generation is available from every language through
+51Degrees Cloud, which is an HTTP call and needs no SDK at all. See
+[Cloud Usage](#cloud-usage) below. There is also a hosted generator at
+[51degrees.com/robots-txt](https://51degrees.com/robots-txt) that
+produces a file to host, with no code involved.
+
+| How you use it | Available in |
+| --- | --- |
+| On-premise engine | .NET only |
+| 51Degrees Cloud | Any language, over HTTP |
+| Hosted generator | No code required |
+
 # Output Properties
 
 The engine produces two synthetic properties — they are not stored in any data file, they are computed at request time from the crawler dataset and the evidence supplied to the engine.
