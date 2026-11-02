@@ -27,7 +27,7 @@ Of the operating systems, we target from the latest versions to the older versio
 We automatically test and distribute binary packages for a limited list of platforms and architectures.  In case the provided binary package does not run on your environment - you have to build the library from source for your specific platform and architecture. All 51Degrees language libraries provide instructions on building the library from source.  F.e. see:
 
 - [Building Device Detection .NET library from source](https://github.com/51Degrees/device-detection-dotnet?tab=readme-ov-file#build-from-source)
-- [Building Device Detection Java library from source](https://github.com/51Degrees/device-detection-java?tab=readme-ov-file#build-and-install-from-source)
+- [Building Device Detection Java library from source](https://github.com/51Degrees/51degrees-java/tree/main/device-detection#build-and-install-from-source)
 
 # Automation
 
@@ -54,7 +54,7 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
       grabTestedVersions("51degrees-cxx", "cxx-versions", [
           { title: "Architecture", getValue: (d) => d.Arch }
       ], "dd");
-      grabTestedVersions("device-detection-java", "java-versions", [
+      grabTestedVersions("51degrees-java", "java-versions", [
           { title: "JDK", getValue: d => d.JavaSDKEnvVar.split("_")[2] },
           { title: "Architecture", getValue: d => d.JavaSDKEnvVar.split("_")[3].toLowerCase() }
       ]);
