@@ -70,7 +70,7 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
       grabTestedVersions("51degrees-node", "ipi-node-versions", [
           { title: "Node Version", getValue: d => d.LanguageVersion }
       ]);
-      grabTestedVersions("device-detection-go", "go-versions", [
+      grabTestedVersions("51degrees-go", "go-versions", [
           { title: "GoLang Version", getValue: d => d.LanguageVersion }
       ]);
       grabTestedVersions("device-detection-php", "php-versions", [

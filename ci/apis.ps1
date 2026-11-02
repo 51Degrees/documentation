@@ -21,7 +21,7 @@
     # IP Intelligence
     "ip-intelligence-cxx" = @{ Repo = "51degrees-cxx"; Docs = "docs/ipi" }
     "ip-intelligence-dotnet" = "ip-intelligence-dotnet-examples"
-    "ip-intelligence-go" = $null
+    "ip-intelligence-go" = @{ Repo = "51degrees-go"; Docs = "ip-intelligence/docs" }
     "ip-intelligence-java" = "ip-intelligence-java-examples"
     "ip-intelligence-node" = @{ Repo = "51degrees-node"; Docs = "ip-intelligence/docs" }
 
