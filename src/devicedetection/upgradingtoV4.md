@@ -136,6 +136,10 @@ fiftyoneDegreesResultsHashFromUserAgent(
     exception);
 ```
 
+A set of results is used by one thread at a time, because reading a value
+writes into the results, so each thread creates its own. The resource manager
+can be shared by every thread.
+
 To get a value of a property in the old API, the `fiftyoneDegreesSetValues` and
 `fiftyoneDegreesGetString` methods were used. Using the new results structure,
 values of a property can be retrieved using the `fiftyoneDegreesResultsHashGetValueString`
@@ -222,6 +226,10 @@ evidence->operator[]("header.User-Agent") = userAgent;
 
 ResultsHash *results = engine->process(evidence);
 ```
+
+A set of results is used by one thread at a time, because reading a value
+writes into the results. The engine can be shared by every thread, and each
+call to `process` returns new results for the thread that made it.
 
 Getting values from a `ResultsHash` (or any class extending `ResultsBase`) instance is similar
 to the old API, however the values returned are slightly different. Values follow the nullable

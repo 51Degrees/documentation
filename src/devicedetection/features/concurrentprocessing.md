@@ -167,6 +167,10 @@ StatusCode status = HashInitManagerFromFile(
     dataFileLocation,
     exception);
 ```
+
+The resource manager can be shared by every thread. Each thread creates its
+own results with `ResultsHashCreate`, because reading a value writes into the
+results, so a set of results is used by one thread at a time.
 @endsnippet
 @startsnippet{cpp}
 ```{cpp}
@@ -180,6 +184,10 @@ EngineHash *engine =
 	config,
 	properties);
 ```
+
+The engine can be shared by every thread. Each call to `process` returns new
+results for the thread that made it, because reading a value writes into the
+results, so a set of results is used by one thread at a time.
 @endsnippet
 @startsnippet{rust}
 In code:
