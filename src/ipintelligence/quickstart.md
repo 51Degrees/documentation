@@ -22,7 +22,7 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 **Licensing:** Will require a [Resource Key](https://configure.51degrees.com) once launched. [Contact us](https://51degrees.com/contact-us) to start your IP Intelligence trial.
 
 ### On-premise Deployment
-**Best for:** High-performance, privacy-sensitive, or offline environments
+**Best for:** High-performance, data-sensitive, or offline environments
 
 **Benefits:**
 - **Ultra-low latency** - Sub-millisecond detection time with in-process deployment

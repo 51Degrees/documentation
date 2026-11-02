@@ -44,7 +44,7 @@ Understand where your traffic comes from. Map user behavior to specific cities, 
 
 ### 🚫 Compliance and Geo-fencing
 
-Enforce geographic restrictions for content licensing, gambling regulations, or data privacy laws.
+Enforce geographic restrictions for content licensing, gambling regulations, or data protection laws.
 
 ### 🆘 Emergency Services
 

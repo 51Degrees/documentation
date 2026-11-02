@@ -15,9 +15,9 @@ At 51Degrees, we turn every user interaction into a chance to learn, optimize, a
 - **IP Intelligence** - Unlock geolocation, ISP, and network data from IP addresses for sharper insights and smarter decisions.
 - **Human Confidence** - Rate every visit High, Medium, or Low by how likely it is that a person is viewing the page.
 - **Reverse Geocoding** - Transform latitude and longitude into real-world addresses, cities, and regions.
-- **Identifiers** - Generate privacy-aware signals (51Did) and capture user marketing preferences (PMP) to feed downstream systems.
+- **Identifiers** - Generate 51Dids, identifiers that name the terms they were created under, and capture user marketing preferences (PMP) to feed downstream systems.
 - **Ultra-fast Performance** - Enjoy lightning-fast detection speeds thanks to in-process deployment.
-- **Privacy-first Architecture** - Prefer to keep your data close? Our On-premise options ensure full control and compliance.
+- **On-premise Options** - Prefer to keep your data close? Our on-premise options run entirely on your own servers.
 
 ---
 

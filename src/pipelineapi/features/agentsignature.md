@@ -116,8 +116,8 @@ missing card costs detail rather than correctness.
 
 - **Absent** The request carried no signature headers. This is the ordinary
   case and it is never evidence against a request.
-- **Invalid** The request carried a signature and something about the
-  signature or the headers carrying it is wrong.
+- **Invalid** The request carried a signature, and the signature or one
+  of its headers is wrong.
 - **Unverified** The request carried a signature that could not be checked.
   This is not evidence against the agent, because the agent may be signing
   correctly while its key cannot be reached.

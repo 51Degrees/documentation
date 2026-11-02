@@ -19,7 +19,7 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 - **Performance-critical ready:** Ideal for real-time servers, edge/load balancers, and high-load scenarios
 - **Deployment flexibility:** In-process by default, with optional out-of-process or separate server deployment
 
-Features include [randomized coordinates](@ref IpIntelligence_Features_Randomization) for privacy and [multiple result weighting](@ref IpIntelligence_Features_Weighting) for accuracy.
+Features include [randomized coordinates](@ref IpIntelligence_Features_Randomization) and [weighted results](@ref IpIntelligence_Features_Weighting).
 
 See [technical specification](https://github.com/51Degrees/specifications/blob/main/ip-intelligence-specification/README%2Emd) for details.
 
@@ -32,9 +32,9 @@ See [technical specification](https://github.com/51Degrees/specifications/blob/m
 
 Data sourced from aggregating real device usage and multiple authoritative databases to provide comprehensive global coverage.
 
-### Privacy Protections
+### Randomized Coordinates
 
-Coordinates returned from IP address are [randomized](@ref IpIntelligence_Features_Randomization) to ensure output data can never be considered personal data while maintaining accuracy for practical applications.
+Coordinates returned for an IP address are [randomized](@ref IpIntelligence_Features_Randomization) to within 1km of the original point, which keeps them accurate enough for practical applications.
 
 ### Accuracy Weighting
 
@@ -91,7 +91,7 @@ Detect click fraud, suspicious logins, and automated attacks by analyzing IP pat
 
 ### 🚫 Compliance & Geo-blocking
 
-Enforce geographical restrictions for gambling, content licensing, or data privacy regulations like GDPR.
+Enforce geographical restrictions for gambling, content licensing, or data protection law such as GDPR.
 
 ### 🗺️ Reverse Geocoding
 
