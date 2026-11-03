@@ -88,7 +88,7 @@ Work in the language that suits you best. Our services are production-ready acro
 | Go | [device-detection-go](https://github.com/51Degrees/device-detection-go) | [ip-intelligence-go](https://github.com/51Degrees/ip-intelligence-go) |
 | Node.js | [device-detection-node](https://github.com/51Degrees/51degrees-node/tree/main/device-detection) | [ip-intelligence-node](https://github.com/51Degrees/51degrees-node/tree/main/ip-intelligence) |
 | Python | [device-detection-python](https://github.com/51Degrees/device-detection-python) | - |
-| PHP | [device-detection-php](https://github.com/51Degrees/device-detection-php) | - |
+| PHP | [device-detection-php](https://github.com/51Degrees/51degrees-php/tree/main/device-detection) | - |
 
 ---
 

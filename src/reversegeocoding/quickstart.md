@@ -282,7 +282,7 @@ https://github.com/51Degrees/location-java/blob/master/geo-location.shell.exampl
 https://github.com/51Degrees/51degrees-node/blob/main/location/examples/gettingStarted.js
 @endsnippet
 @startsnippet{php}
-https://github.com/51Degrees/location-php/blob/master/examples/cloud/gettingstarted.php
+https://github.com/51Degrees/51degrees-php/blob/main/location/examples/cloud/gettingstarted.php
 @endsnippet
 @startsnippet{python}
 https://github.com/51Degrees/location-python/blob/master/examples/cloud/gettingstarted.py
