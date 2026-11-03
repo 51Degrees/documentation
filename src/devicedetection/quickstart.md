@@ -165,7 +165,7 @@ This implementation of device detection makes use of 51Degrees' Cloud Service. I
 ### On-premise
 
 Device detection processing is performed locally using a data file that must be kept updated.
-Due to the restrictions imposed by Composer and Packagist, we cannot supply the On-premise Engines through the usual package management ecosystem. Instead, you'll need to clone the [repository](https://github.com/51Degrees/device-detection-php-onpremise) from GitHub and follow the instructions there in order to build and use the On-premise implementation.
+Due to the restrictions imposed by Composer and Packagist, we cannot supply the On-premise Engines through the usual package management ecosystem. Instead, you'll need to clone the [repository](https://github.com/51Degrees/51degrees-php/tree/main/device-detection/onpremise) from GitHub and follow the instructions there in order to build and use the On-premise implementation.
 
 @endsnippet
 @startsnippet{python}

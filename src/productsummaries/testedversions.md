@@ -73,10 +73,10 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
       grabTestedVersions("device-detection-go", "go-versions", [
           { title: "GoLang Version", getValue: d => d.LanguageVersion }
       ]);
-      grabTestedVersions("device-detection-php", "php-versions", [
+      grabTestedVersions("51degrees-php", "php-versions", [
           { title: "PHP Version", getValue: d => d.LanguageVersion }
       ]);
-      grabTestedVersions("device-detection-php-onpremise", "php-onpremise-versions", [
+      grabTestedVersions("51degrees-php", "php-onpremise-versions", [
           { title: "PHP Version", getValue: d => d.LanguageVersion }
       ]);
       grabTestedVersions("pipeline-wordpress", "wordpress-versions", [

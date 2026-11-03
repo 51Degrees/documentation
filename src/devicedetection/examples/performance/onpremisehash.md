@@ -20,6 +20,6 @@ A [feature page](@ref DeviceDetection_Features_PerformanceOptions) is also avail
 There is no performance example for C++, see the C tab instead.
 @endsnippet
 @startsnippet{php}
-The PHP device-detection On-premise repository includes a modified version of ApacheBench along with benchmarking script tool. Details of how to run this can be found in the [GitHub Readme](https://github.com/51Degrees/device-detection-php-onpremise#performance)
+The PHP device-detection On-premise repository includes a modified version of ApacheBench along with benchmarking script tool. Details of how to run this can be found in the [GitHub Readme](https://github.com/51Degrees/51degrees-php/tree/main/device-detection/onpremise#performance)
 @endsnippet
 @endsnippets

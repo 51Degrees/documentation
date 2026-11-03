@@ -6,6 +6,7 @@
     "pipeline-dotnet" = $null
     "pipeline-java" = $null
     "pipeline-node" = @{ Repo = "51degrees-node"; Docs = "pipeline/docs" }
+    "pipeline-php" = @{ Repo = "51degrees-php"; Docs = "docs" }
     "pipeline-python" = $null
 
     # Device Detection
@@ -14,8 +15,8 @@
     "device-detection-java" = "device-detection-java-examples"
     "device-detection-nginx" = $null
     "device-detection-node" = @{ Repo = "51degrees-node"; Docs = "device-detection/docs" }
-    "device-detection-php" = $null
-    "device-detection-php-onpremise" = $null
+    "device-detection-php" = @{ Repo = "51degrees-php"; Docs = "device-detection/cloud/docs" }
+    "device-detection-php-onpremise" = @{ Repo = "51degrees-php"; Docs = "device-detection/onpremise/docs" }
     "device-detection-python" = $null
 
     # IP Intelligence
@@ -34,6 +35,6 @@
     "location-dotnet" = $null
     "location-java" = $null
     "location-node" = @{ Repo = "51degrees-node"; Docs = "location/docs" }
-    "location-php" = $null
+    "location-php" = @{ Repo = "51degrees-php"; Docs = "location/docs" }
     "location-python" = $null
 }
