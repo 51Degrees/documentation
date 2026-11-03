@@ -975,7 +975,7 @@ if (device.ismobile.has_value():
 <!-- ===================================================================================
      |                                      PHP                                        |
      =================================================================================== -->
-If you currently use an On-premise data file with PHP then you will need to get the On-premise version of the PHP API from [GitHub](https://github.com/51Degrees/device-detection-php-onpremise).
+If you currently use an On-premise data file with PHP then you will need to get the On-premise version of the PHP API from [GitHub](https://github.com/51Degrees/51degrees-php/tree/main/device-detection/onpremise).
 <!--TODO: Add complete steps for On-premise PHP.-->
 If you use the cloud version then you can install the fiftyone.devicedetection package from composer.
 

@@ -48,7 +48,7 @@ How likely it is that a person, not a script, is viewing the page, from the 51De
 - [Overview](@ref HumanConfidence_Overview) - What the answers mean and how to use them
 - [Quick Start](@ref HumanConfidence_Quickstart) - From License Key to the first answer
 - [Deploy with the cloud](@ref Services_Cloud_HumanConfidence) - Decide what each visit gets on your server
-- [Analytics](@ref HumanConfidence_Analytics) - Send Human Confidence to your reports, with [Google Analytics 4](@ref HumanConfidence_GoogleAnalytics) step by step
+- [Analytics](@ref HumanConfidence_Analytics) - Send Human Confidence to your reports, with [Google Analytics 4](@ref Integrations_GoogleAnalytics) step by step
 
 ### Reverse Geocoding
 
@@ -88,7 +88,7 @@ Work in the language that suits you best. Our services are production-ready acro
 | Go | [device-detection-go](https://github.com/51Degrees/device-detection-go) | [ip-intelligence-go](https://github.com/51Degrees/ip-intelligence-go) |
 | Node.js | [device-detection-node](https://github.com/51Degrees/51degrees-node/tree/main/device-detection) | [ip-intelligence-node](https://github.com/51Degrees/51degrees-node/tree/main/ip-intelligence) |
 | Python | [device-detection-python](https://github.com/51Degrees/device-detection-python) | - |
-| PHP | [device-detection-php](https://github.com/51Degrees/device-detection-php) | - |
+| PHP | [device-detection-php](https://github.com/51Degrees/51degrees-php/tree/main/device-detection) | - |
 
 ---
 
@@ -98,6 +98,7 @@ Work in the language that suits you best. Our services are production-ready acro
 Tailor your setup for maximum performance:
 
 - [Nginx Module](https://github.com/51Degrees/device-detection-nginx) - integrate device detection at the edge
+- [Google Analytics 4](@ref Integrations_GoogleAnalytics) - send device, location, crawler and Human Confidence properties to your reports
 - [Prebid Integration](@ref Integrations_Prebid) - enrich OpenRTB bid requests
 - [UA Parser JS](https://github.com/51Degrees/ua-parser-js) - seamless cloud API integration
 - [Varnish Module](https://github.com/51Degrees/51degrees-varnish) - cache smarter, deliver faster
