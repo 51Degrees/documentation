@@ -6,12 +6,12 @@ A `robots.txt` file is a plain text file hosted at the root of a website (for ex
 
 With the explosion of AI training crawlers, search bots, analytics agents, archival workers and security scanners, manually maintaining a `robots.txt` that correctly distinguishes between these uses is impractical. The crawler list changes constantly, individual operators ship multiple product tokens, and a single bot can serve more than one purpose.
 
-The `RobotsTxtEngine` shipped in the [device-detection-dotnet](https://github.com/51Degrees/device-detection-dotnet/tree/main/FiftyOne.DeviceDetection.RobotsTxt) package solves this problem by generating a `robots.txt` document on demand from the up-to-date 51Degrees crawler dataset, driven by a small set of allow/disallow choices expressed in terms of [crawler usages](@ref DeviceDetection_Features_Crawlers) rather than individual user-agents.
+The `RobotsTxtEngine` shipped in the [device-detection-dotnet](https://github.com/51Degrees/51degrees-dotnet/tree/main/device-detection/RobotsTxt) package solves this problem by generating a `robots.txt` document on demand from the up-to-date 51Degrees crawler dataset, driven by a small set of allow/disallow choices expressed in terms of [crawler usages](@ref DeviceDetection_Features_Crawlers) rather than individual user-agents.
 
 # Availability
 
 The on-premise `RobotsTxtEngine` is available in .NET only. It ships in
-the [device-detection-dotnet](https://github.com/51Degrees/device-detection-dotnet/tree/main/FiftyOne.DeviceDetection.RobotsTxt)
+the [device-detection-dotnet](https://github.com/51Degrees/51degrees-dotnet/tree/main/device-detection/RobotsTxt)
 package, and there is no equivalent engine in the Java, C, C++, Go,
 Rust, PHP, Node or Python SDKs.
 

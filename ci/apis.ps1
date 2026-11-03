@@ -3,14 +3,14 @@
 # the repository and the folder holding its Doxyfile instead.
 [ordered]@{
     # Pipeline
-    "pipeline-dotnet" = $null
+    "pipeline-dotnet" = @{ Repo = "51degrees-dotnet"; Docs = "pipeline/docs" }
     "pipeline-java" = $null
     "pipeline-node" = @{ Repo = "51degrees-node"; Docs = "pipeline/docs" }
     "pipeline-python" = $null
 
     # Device Detection
     "device-detection-cxx" = @{ Repo = "51degrees-cxx"; Docs = "docs/dd" }
-    "device-detection-dotnet" = "device-detection-dotnet-examples"
+    "device-detection-dotnet" = @{ Repo = "51degrees-dotnet"; Docs = "device-detection/docs" }
     "device-detection-java" = "device-detection-java-examples"
     "device-detection-nginx" = $null
     "device-detection-node" = @{ Repo = "51degrees-node"; Docs = "device-detection/docs" }
@@ -20,7 +20,7 @@
 
     # IP Intelligence
     "ip-intelligence-cxx" = @{ Repo = "51degrees-cxx"; Docs = "docs/ipi" }
-    "ip-intelligence-dotnet" = "ip-intelligence-dotnet-examples"
+    "ip-intelligence-dotnet" = @{ Repo = "51degrees-dotnet"; Docs = "ip-intelligence/docs" }
     "ip-intelligence-go" = $null
     "ip-intelligence-java" = "ip-intelligence-java-examples"
     "ip-intelligence-node" = @{ Repo = "51degrees-node"; Docs = "ip-intelligence/docs" }
@@ -31,7 +31,7 @@
     "rust" = $null
 
     # Location
-    "location-dotnet" = $null
+    "location-dotnet" = @{ Repo = "51degrees-dotnet"; Docs = "location/docs" }
     "location-java" = $null
     "location-node" = @{ Repo = "51degrees-node"; Docs = "location/docs" }
     "location-php" = $null
