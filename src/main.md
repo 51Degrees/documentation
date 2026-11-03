@@ -87,7 +87,7 @@ Work in the language that suits you best. Our services are production-ready acro
 | Java | [device-detection-java](https://github.com/51Degrees/51degrees-java/tree/main/device-detection) | [ip-intelligence-java](https://github.com/51Degrees/51degrees-java/tree/main/ip-intelligence) |
 | Go | [device-detection-go](https://github.com/51Degrees/51degrees-go/tree/main/device-detection) | [ip-intelligence-go](https://github.com/51Degrees/51degrees-go/tree/main/ip-intelligence) |
 | Node.js | [device-detection-node](https://github.com/51Degrees/51degrees-node/tree/main/device-detection) | [ip-intelligence-node](https://github.com/51Degrees/51degrees-node/tree/main/ip-intelligence) |
-| Python | [device-detection-python](https://github.com/51Degrees/device-detection-python) | - |
+| Python | [device-detection-python](https://github.com/51Degrees/51degrees-python/tree/main/device-detection) | - |
 | PHP | [device-detection-php](https://github.com/51Degrees/51degrees-php/tree/main/device-detection) | - |
 
 ---
@@ -97,7 +97,7 @@ Work in the language that suits you best. Our services are production-ready acro
 
 Tailor your setup for maximum performance:
 
-- [Nginx Module](https://github.com/51Degrees/device-detection-nginx) - integrate device detection at the edge
+- [Nginx Module](https://github.com/51Degrees/51degrees-nginx) - integrate device detection at the edge
 - [Google Analytics 4](@ref Integrations_GoogleAnalytics) - send device, location, crawler and Human Confidence properties to your reports
 - [Prebid Integration](@ref Integrations_Prebid) - enrich OpenRTB bid requests
 - [UA Parser JS](https://github.com/51Degrees/ua-parser-js) - seamless cloud API integration

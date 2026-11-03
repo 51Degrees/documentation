@@ -127,9 +127,9 @@ each test once.
 ## Libraries and data
 
 We built the C libraries from the public repositories, at version
-[4.5.70](https://github.com/51Degrees/device-detection-cxx/tree/4.5.70) for
+[4.5.70](https://github.com/51Degrees/51degrees-cxx/tree/16a1a10ddeab2223c5f08fd5fbad99ffe79e3ce1) for
 Device Detection and
-[4.5.34](https://github.com/51Degrees/ip-intelligence-cxx/tree/4.5.34) for IP
+[4.5.34](https://github.com/51Degrees/51degrees-cxx/tree/7b4724bc80602d053f7aa0190e4c9a91e9281116) for IP
 Intelligence. Each machine compiled its own Release build with `-O3`. The build
 script also adds `-march=native`, dropping it if the compiler rejects it. The
 machines table lists each compiler.
