@@ -190,7 +190,7 @@ To get started with Varnish device detection On-premise:
 Nginx does not have a @Pipeline implementation or the ability to use the cloud-based version of Device Detection.
 To get started with Nginx device detection On-premise:
 
-1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-nginx).
+1. Clone the GitHub [repository](https://github.com/51degrees/51degrees-nginx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
 4. Follow the [installation instructions](@ref DeviceDetection_OtherIntegrations_Nginx) to get set up with the project.
