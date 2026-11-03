@@ -212,6 +212,30 @@ Set-Content -Path $manifestPath -Value ($mirrored -join "`n")
 Write-Host "Mirrored $($mirrored.Count - $assetsCopied) HTML files and $assetsCopied image assets to gh-pages root, added canonical to $canonicalsAdded versioned files, added hreflang to $hreflangsAdded versioned files."
 Write-Host "::endgroup::"
 
+# Earlier versions stay published for readers on older releases, but are
+# kept out of search so results lead to the current version. The preview
+# folder is a leftover copy of the documentation and is kept out too. Only
+# pages with no robots meta tag are changed, so the step can run on every
+# build.
+Write-Host "::group::Marking earlier versions noindex"
+$noindexTag = '<meta name="robots" content="noindex">'
+$headTag = [regex]'(<head(\s[^>]*)?>)'
+$noindexAdded = 0
+Get-ChildItem -Directory -Path gh-pages |
+    Where-Object { ($_.Name -match '^\d+\.\d+$' -and $_.Name -ne $version) -or $_.Name -eq 'preview' } |
+    ForEach-Object {
+        Get-ChildItem -Recurse -File -Filter "*.html" -Path $_.FullName | ForEach-Object {
+            $content = Get-Content $_.FullName -Raw
+            if ($content -notmatch '<meta\s+name=["'']?robots' -and $headTag.IsMatch($content)) {
+                $content = $headTag.Replace($content, "`$1`n  $noindexTag", 1)
+                Set-Content -Path $_.FullName -Value $content -NoNewline
+                $noindexAdded++
+            }
+        }
+    }
+Write-Host "Added noindex to $noindexAdded pages of earlier versions and the preview folder."
+Write-Host "::endgroup::"
+
 # Remove unused CSS selectors from the design-system stylesheet, scanning
 # the HTML Doxygen actually generated for this version. docs-main.css is
 # the full 51Degrees design system, but a /documentation/* page uses only
