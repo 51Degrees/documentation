@@ -47,7 +47,7 @@ What your tool calls a custom dimension varies. Matomo calls it a custom dimensi
 </script>
 ```
 
-4. Hand `values` to whatever call your tool uses for custom dimensions or event properties. For GA4 that's one `gtag` event, and @ref HumanConfidence_GoogleAnalytics walks through it.
+4. Hand `values` to whatever call your tool uses for custom dimensions or event properties. For GA4 that's one `gtag` event, and @ref Integrations_GoogleAnalytics walks through it.
 
 # What to look at
 

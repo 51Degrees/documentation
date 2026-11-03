@@ -19,7 +19,7 @@ Human Confidence comes from the 51Degrees cloud service. It isn't in the on-prem
 - **Reports only** - Visitors aren't stopped or challenged
 - **JavaScript only** - Crawlers that don't run JavaScript don't fire your tag either
 
-**Guide:** @ref HumanConfidence_Analytics, with @ref HumanConfidence_GoogleAnalytics for GA4
+**Guide:** @ref HumanConfidence_Analytics, with @ref Integrations_GoogleAnalytics for GA4
 
 ---
 
