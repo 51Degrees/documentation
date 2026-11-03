@@ -67,7 +67,7 @@ Plenty of crawlers don't run JavaScript. They never reach your tag, so your anal
 
 # Find out more
 
-- @subpage HumanConfidence_GoogleAnalytics
+- @ref Integrations_GoogleAnalytics, to send Human Confidence and the other 51Degrees properties to your GA4 reports
 - @ref Services_Cloud_HumanConfidence, to act on the value on your server
 - @ref PipelineApi_Features_ClientSideEvidence, for how the 51Degrees script works in the browser
 - [Human Confidence in the property dictionary](https://51degrees.com/developers/property-dictionary?item=Derived%7CHuman%20Detection)
