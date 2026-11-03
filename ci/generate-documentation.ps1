@@ -23,6 +23,13 @@ Write-Host "::group::Cloning API docs"
 $env:GIT_LFS_SKIP_SMUDGE = 1
 # use PR target branch if we're running in a PR, or the current CI branch, or main
 $ref = $env:GITHUB_BASE_REF ? $env:GITHUB_BASE_REF : $env:GITHUB_REF_NAME ? $env:GITHUB_REF_NAME : 'main'
+# Not every API repository has that branch, rc in particular, so a repository
+# without it is cloned at its default branch.
+function Get-BranchArgs([string]$repo) {
+    $heads = git ls-remote --heads "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$repo.git" $ref
+    if ($heads) { return @('-b', $ref) }
+    return @()
+}
 $repoMap = & $PSScriptRoot/apis.ps1
 # repos have to be cloned here since they expect documentation repo to be two levels above them
 $apis = New-Item -Force -ItemType Directory "apis"
@@ -33,14 +40,17 @@ foreach ($_ in $repoMap.GetEnumerator()) {
     if ($source -is [hashtable]) {
         # a monorepo is cloned once, for the first of its APIs
         if (!(Test-Path "$apis/$($source.Repo)")) {
-            git clone -b $ref --depth=1 --recurse-submodules --shallow-submodules "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$($source.Repo).git" "$apis/$($source.Repo)"
+            $branch = Get-BranchArgs $source.Repo
+            git clone @branch --depth=1 --recurse-submodules --shallow-submodules "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$($source.Repo).git" "$apis/$($source.Repo)"
         }
         continue
     }
-    git clone -b $ref --depth=1 --recurse-submodules --shallow-submodules "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$api.git" "$apis/$api"
+    $branch = Get-BranchArgs $api
+    git clone @branch --depth=1 --recurse-submodules --shallow-submodules "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$api.git" "$apis/$api"
     if ($source) {
         # clone examples inside their main repo
-        git clone -b $ref --depth=1 "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$source.git" "$apis/$api/$source"
+        $branch = Get-BranchArgs $source
+        git clone @branch --depth=1 "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$source.git" "$apis/$api/$source"
     }
 }
 Write-Host "::endgroup::"
