@@ -61,7 +61,7 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
       grabTestedVersions("51degrees-dotnet", "dotnet-versions", [
           { title: "Architecture", getValue: d => d.Arch }
       ]);
-      grabTestedVersions("device-detection-python", "python-versions", [
+      grabTestedVersions("51degrees-python", "python-versions", [
           { title: "Python Version", getValue: d => d.LanguageVersion }
       ]);
       grabTestedVersions("51degrees-node", "node-versions", [

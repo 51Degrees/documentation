@@ -285,7 +285,7 @@ https://github.com/51Degrees/51degrees-node/blob/main/location/examples/gettingS
 https://github.com/51Degrees/51degrees-php/blob/main/location/examples/cloud/gettingstarted.php
 @endsnippet
 @startsnippet{python}
-https://github.com/51Degrees/location-python/blob/master/examples/cloud/gettingstarted.py
+https://github.com/51Degrees/51degrees-python/blob/main/location/examples/cloud/gettingstarted.py
 @endsnippet
 
 # Troubleshooting
