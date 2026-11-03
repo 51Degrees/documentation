@@ -273,7 +273,7 @@ Find complete working code examples on GitHub for each language:
 @defaultsnippet{Select a language.}
 
 @startsnippet{dotnet}
-https://github.com/51Degrees/location-dotnet/blob/master/Examples/Cloud/GettingStarted/Program.cs
+https://github.com/51Degrees/51degrees-dotnet/blob/main/location/Examples/Cloud/GettingStarted/Program.cs
 @endsnippet
 @startsnippet{java}
 https://github.com/51Degrees/location-java/blob/master/geo-location.shell.examples/src/main/java/fiftyone/geolocation/examples/cloud/GettingStarted.java
