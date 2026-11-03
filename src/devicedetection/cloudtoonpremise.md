@@ -64,7 +64,7 @@ npm install fiftyone.devicedetection
 
 **Other Languages**
 - **C/C++**: [51degrees-cxx](https://github.com/51Degrees/51degrees-cxx)
-- **Go**: [device-detection-go](https://github.com/51degrees/device-detection-go)  
+- **Go**: [device-detection-go](https://github.com/51Degrees/51degrees-go/tree/main/device-detection)  
 - **PHP**: [device-detection-php-onpremise](https://github.com/51Degrees/51degrees-php/tree/main/device-detection/onpremise)
 - **Python**: `pip install fiftyone-devicedetection-onpremise`
 

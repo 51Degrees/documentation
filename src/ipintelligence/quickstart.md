@@ -143,7 +143,7 @@ Choose your deployment option:
 
 1. Install the IP Intelligence package:
    ```bash
-   go get github.com/51Degrees/ip-intelligence-go/v4
+   go get github.com/51Degrees/51degrees-go/ip-intelligence/v4
    ```
 2. Choose your deployment option:
    * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - Local processing with data files
