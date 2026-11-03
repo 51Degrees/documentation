@@ -25,7 +25,7 @@ To try it, follow the [Quick Start](@ref HumanConfidence_Quickstart).
 
 ## Two ways to use it
 
-**Measure.** Send Human Confidence to your analytics as a custom dimension and your reports show how much of your traffic is people. Nothing changes for your visitors. The steps for any analytics tool are in @ref HumanConfidence_Analytics, and there's a separate page for Google Analytics 4, @ref HumanConfidence_GoogleAnalytics.
+**Measure.** Send Human Confidence to your analytics as a custom dimension and your reports show how much of your traffic is people. Nothing changes for your visitors. The steps for any analytics tool are in @ref HumanConfidence_Analytics, and there's a separate page for Google Analytics 4, @ref Integrations_GoogleAnalytics.
 
 **Act.** Your server gets Human Confidence from the cloud before it sends a page and decides what to send. See @ref Services_Cloud_HumanConfidence for the code.
 

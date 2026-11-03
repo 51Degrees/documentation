@@ -7,3 +7,5 @@
 @subpage Services_Cloud_HumanConfidence
 
 @subpage HumanConfidence_Analytics
+
+@subpage HumanConfidence_GoogleAnalytics
