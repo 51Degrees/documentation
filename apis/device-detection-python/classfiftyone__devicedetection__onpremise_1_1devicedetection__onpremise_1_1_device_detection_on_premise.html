@@ -90,6 +90,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a8b1c092e0c3e7ce90b55a1deca67fdfe" id="r_a8b1c092e0c3e7ce90b55a1deca67fdfe"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8b1c092e0c3e7ce90b55a1deca67fdfe">get_metric_properties</a> (self)</td></tr>
 <tr class="c-table__row memitem:a25c45a8b0d8e535d6adeda2ed8b11910" id="r_a25c45a8b0d8e535d6adeda2ed8b11910"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a25c45a8b0d8e535d6adeda2ed8b11910">get_evidence_key_filter</a> (self)</td></tr>
 <tr class="c-table__row memdesc:a25c45a8b0d8e535d6adeda2ed8b11910"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns evidence key filter for the on premise engine.  <br /></td></tr>
+<tr class="c-table__row memitem:a5e815ddacaab5b1893f7e034ad0d04d3" id="r_a5e815ddacaab5b1893f7e034ad0d04d3"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5e815ddacaab5b1893f7e034ad0d04d3">set_cache</a> (self, cache)</td></tr>
+<tr class="c-table__row memdesc:a5e815ddacaab5b1893f7e034ad0d04d3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Not supported.  <br /></td></tr>
 <tr class="c-table__row memitem:a9ed4133a0ca324ce5f4c78c200e3a2be" id="r_a9ed4133a0ca324ce5f4c78c200e3a2be"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9ed4133a0ca324ce5f4c78c200e3a2be">on_registration</a> (self, pipeline)</td></tr>
 <tr class="c-table__row memdesc:a9ed4133a0ca324ce5f4c78c200e3a2be"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function called after the engine is registered with a pipeline the engine base class registers the datafile but we also need to initialise the SWIG wrapper so call self.init_engine() here after the datafile is registered.  <br /></td></tr>
 <tr class="c-table__row memitem:aab872dbde97c42a6a921fcaee3923968" id="r_aab872dbde97c42a6a921fcaee3923968"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aab872dbde97c42a6a921fcaee3923968">process_internal</a> (self, flow_data)</td></tr>
@@ -440,6 +442,34 @@ Public Attributes</h2></td></tr>
 
 <p>Internal process method of the Device Detection On Premise engine Gets properties through the SWIG wrapper and stores them in a <a class="el" href="classfiftyone__devicedetection__onpremise_1_1swig__data_1_1_swig_data.html" title="Extention of AspectData made for retrieving results created by the SWIG wrapper of the On Premise Dev...">SwigData</a> extension of the ElementData class. </p>
 <p>Each property value (or lack of) is returned in an AspectPropertyData wrapper from the core Pipeline library. </p>
+
+</div>
+</div>
+<a id="a5e815ddacaab5b1893f7e034ad0d04d3" name="a5e815ddacaab5b1893f7e034ad0d04d3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5e815ddacaab5b1893f7e034ad0d04d3">&#9670;&#160;</a></span>set_cache()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_onpremise.devicedetection_onpremise.DeviceDetectionOnPremise.set_cache </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>cache</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Not supported. </p>
+<p>Results read from native memory, which is not safe to share between requests through a cache. </p>
 
 </div>
 </div>

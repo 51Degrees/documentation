@@ -1,71 +1,58 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
   <link rel="canonical" href="/documentation/apis/pipeline-python/cloud_2mixed_2gettingstarted_web_2app_8py-example.html">
   <link rel="alternate" hreflang="en-US" href="/documentation/apis/pipeline-python/cloud_2mixed_2gettingstarted_web_2app_8py-example.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="cloud/mixed/gettingstarted_web/app.py - 51Degrees Pipeline for Python - 51Degrees documentation."/>
 <title>51Degrees Pipeline Python: cloud/mixed/gettingstarted_web/app.py</title>
+<!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="clipboard.min.js"></script>
+<link href="docs-main.min.css" rel="stylesheet" type="text/css" />
+<style type="text/css">.c-brand__image{aspect-ratio:360/67}@media (max-width:992px){.l-docs-index .g-docs__sidenav .c-sidenav{min-height:600px}}</style>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="examplegrabber.min.js"></script>
+<script type="text/javascript" src="testedversionsgrabber.min.js"></script>
+<script type="text/javascript" src="search51.min.js"></script>
 <script type="text/javascript" src="navtreedata.min.js"></script>
 <script type="text/javascript" src="navtree.min.js"></script>
 <script type="text/javascript" src="cookie.min.js"></script>
-<link href="search/search.min.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.min.js"></script>
-<script type="text/javascript" src="search/search.min.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-mermaid.initialize({ startOnLoad: true, theme: theme });
-</script>
-<link href="docs-main.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-<div id="titlearea">
-<table cellspacing="0" cellpadding="0">
- <tbody>
- <tr id="projectrow">
-  <td id="projectlogo"><a href="/documentation/4.5/index.html"><img alt="Logo" src="logo-51Degrees-Docs.png"/></a></td>
-  <td id="projectalign">
-   <div id="projectname">51Degrees Pipeline Python<span id="projectnumber">&#160;4.5</span>
-   </div>
+<body class="l-docs-index p-doxygen">
+<div class="l-index__content">
+<!--div id="top"--><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea" class="g-header g-header--docs">
+  <div class="c-brand" role="banner">
+  <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
+  <span class="c-tagline">51Degrees Pipeline Python
+   &#160;<span id="projectnumber">4.5</span>
+  </span>
+  </div>
+  <div id="projectalign" style="padding-left: 0.5em;">
    <div id="projectbrief">51Degrees Pipeline for Python</div>
-  </td>
-    <td>  <div class="g-search">
-    <div class="c-search is-openable">
+  </div>
+  <div id="main-nav"></div>
+  <section class="g-search">
+    <div class="c-search is-openable" id="searchOpenable">
     <form class="c-search__form">
-      <div id="MSearchBox" class="b-form-group b-form-group--with-icon">
+      <div class="b-form-group b-form-group--with-icon">
         <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img id="MSearchSelect" src="icon-search.svg" class="b-icon" alt="Search" 
-             onmouseover="return searchBox.OnSearchSelectShow()"
-             onmouseout="return searchBox.OnSearchSelectHide()"/>
-        <input type="text" id="MSearchField" autocomplete="off" class="c-search__input" placeholder="Type a class, namespace etc." aria-label="Search"
-             onfocus="searchBox.OnSearchFieldFocus(true)" 
-             onblur="searchBox.OnSearchFieldFocus(false)" 
-             onkeyup="searchBox.OnSearchFieldChange(event)"/>
-        <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+        <img src="icon-search.svg" class="b-icon" alt="Search" />
+        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
       </div>
     </form>
+    <div class="c-search__content" id="searchContent">
     </div>
-  </div>
-</td>
- </tr>
- </tbody>
-</table>
+  </div> 
+  </section>
 </div>
 <!-- end header part -->
+<main class="g-main">
 <!-- Generated by Doxygen 1.17.0 -->
-<script type="text/javascript">
-let searchBox = new SearchBox("searchBox", "search/",'.html');
-</script>
 </div><!-- top -->
 <div class="g-docs__sidenav">
   <nav id="nav-tree-contents" class="c-sidenav">
@@ -77,27 +64,6 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2mixed_2gettingstarted_web_2app_8py-example.html','',''); });
 </script>
 <div id="doc-content" class="g-docs__content">
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<div id="MSearchResults">
-<div class="SRPage">
-<div id="SRIndex">
-<div id="SRResults"></div>
-<div class="SRStatus" id="Loading">Loading...</div>
-<div class="SRStatus" id="Searching">Searching...</div>
-<div class="SRStatus" id="NoMatches">No Matches</div>
-</div>
-</div>
-</div>
-</div>
-
 <div class="g-docs__header">
 <h1 class="g-docs__page-title">cloud/mixed/gettingstarted_web/app.py</h1></div><!--header-->
 <div class="g-docs__inner">
@@ -111,7 +77,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2mixed_2
 <p>A licence key can be used on its own instead, by setting the _51DEGREES_LICENSE_KEY environment variable to it. A licence key carries no list of properties, so the example asks the cloud service for exactly the properties the page shows. A licence key identifies an account, so it stays on this server. The page and its script only ever talk to this server, never to the cloud service.</p>
 <p>The pipeline talks to cloud.51degrees.com unless the cloud_endpoint or FOD_CLOUD_API_URL environment variable names another cloud service. A resource key limited to particular domains needs one of them in the cloud_request_origin environment variable.</p>
 <p>Run it from the examples folder, once the requirements there are installed, with </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">python -m <a class="code hl_namespace" href="namespacefiftyone__pipeline__examples_1_1cloud_1_1mixed_1_1gettingstarted__web.html">fiftyone_pipeline_examples.cloud.mixed.gettingstarted_web</a></div>
-<div class="ttc" id="anamespacefiftyone__pipeline__examples_1_1cloud_1_1mixed_1_1gettingstarted__web_html"><div class="ttname"><a href="namespacefiftyone__pipeline__examples_1_1cloud_1_1mixed_1_1gettingstarted__web.html">fiftyone_pipeline_examples.cloud.mixed.gettingstarted_web</a></div><div class="ttdef"><b>Definition</b> __init__.py:1</div></div>
+<div class="ttc" id="anamespacefiftyone__pipeline__examples_1_1cloud_1_1mixed_1_1gettingstarted__web_html"><div class="ttname"><a href="namespacefiftyone__pipeline__examples_1_1cloud_1_1mixed_1_1gettingstarted__web.html">fiftyone_pipeline_examples.cloud.mixed.gettingstarted_web</a></div><div class="ttdef"><b>Definition</b> fiftyone_pipeline_cloudrequestengine/examples/src/fiftyone_pipeline_examples/cloud/mixed/gettingstarted_web/__init__.py:1</div></div>
 </div><!-- fragment --><p> and open <a href="http://localhost:5000">http://localhost:5000</a>, or the port named by the PORT environment variable. Use the form on the page, or add ?client-ip=8.8.8.8 to the address, to look up an IP address other than your own.</p>
 <p>Results are also available to the page's own JavaScript through the <code>fod</code> object, which the client-side script creates. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">fod.complete(function (data) {</div>
 <div class="c-code__line">    alert(data.device.browsername + &quot; in &quot; + data.ip.country);</div>

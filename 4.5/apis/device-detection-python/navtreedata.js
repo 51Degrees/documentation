@@ -39,7 +39,7 @@ var NAVTREEINDEX =
 [
 "/documentation/4.5/index.html",
 "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_map_string_string_swig.html#a0eac0443f28a15c105852be4429e367a",
-"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a24f00efc3c59efb6e0a714b3521926a1"
+"classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html#a114062df66ea6090cebebaf1a4ca6f01"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

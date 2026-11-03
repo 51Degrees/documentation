@@ -7,6 +7,7 @@ var classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_
     [ "init_engine", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise.html#a64f284c7c9fd78e0cd4462f9abdefc2a", null ],
     [ "on_registration", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise.html#a9ed4133a0ca324ce5f4c78c200e3a2be", null ],
     [ "process_internal", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise.html#aab872dbde97c42a6a921fcaee3923968", null ],
+    [ "set_cache", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise.html#a5e815ddacaab5b1893f7e034ad0d04d3", null ],
     [ "config", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise.html#accfb54a5f90dc638a6a8eb330fb1e46e", null ],
     [ "data", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise.html#a8943bf999dda804f0577f56ff427eff9", null ],
     [ "data_file_path", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise.html#a9c50259381b6a3539c2b31a482f9b52a", null ],

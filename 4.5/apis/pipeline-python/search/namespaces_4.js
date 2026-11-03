@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['mockrequestclient_0',['mockrequestclient',['../namespacemockrequestclient.html',1,'']]]
-];

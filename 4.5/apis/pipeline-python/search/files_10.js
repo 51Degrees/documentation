@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['usagesharing_2epy_0',['usagesharing.py',['../usagesharing_8py.html',1,'']]]
-];

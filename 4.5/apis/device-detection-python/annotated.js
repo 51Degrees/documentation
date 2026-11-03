@@ -160,7 +160,8 @@ var annotated =
         [ "CloudGettingStartedWebTests", "classtests_1_1test__cloudgettingstartedweb_1_1_cloud_getting_started_web_tests.html", "classtests_1_1test__cloudgettingstartedweb_1_1_cloud_getting_started_web_tests" ]
       ] ],
       [ "test_devicedetection", "namespacetests_1_1test__devicedetection.html", [
-        [ "DeviceDetectionTests", "classtests_1_1test__devicedetection_1_1_device_detection_tests.html", "classtests_1_1test__devicedetection_1_1_device_detection_tests" ]
+        [ "DeviceDetectionTests", "classtests_1_1test__devicedetection_1_1_device_detection_tests.html", "classtests_1_1test__devicedetection_1_1_device_detection_tests" ],
+        [ "DeviceDetectionCacheTests", "classtests_1_1test__devicedetection_1_1_device_detection_cache_tests.html", "classtests_1_1test__devicedetection_1_1_device_detection_cache_tests" ]
       ] ],
       [ "test_hardwareprofile_cloud", "namespacetests_1_1test__hardwareprofile__cloud.html", [
         [ "_FakeCloudElementData", "classtests_1_1test__hardwareprofile__cloud_1_1___fake_cloud_element_data.html", "classtests_1_1test__hardwareprofile__cloud_1_1___fake_cloud_element_data" ],
