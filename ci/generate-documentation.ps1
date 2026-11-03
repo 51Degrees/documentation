@@ -86,8 +86,8 @@ if (!(Test-Path "gh-pages/.nojekyll")) {
 # like /documentation/_foo.html resolve directly without redirecting.
 # Each mirror gets <base href="/documentation/<version>/"> so relative
 # asset and nav refs still resolve into the versioned tree, and a
-# canonical link pointing back at the unversioned form so search
-# engines index that as the canonical URL.
+# canonical link to the unversioned form on 51degrees.com so search
+# engines index that address.
 #
 # The hreflang="en-US" alternate is emitted only on the unversioned
 # mirror, never on the versioned source. The versioned URL canonicals
@@ -109,6 +109,10 @@ if (Test-Path $manifestPath) {
 }
 $srcRoot = (Resolve-Path "gh-pages/$version").Path
 $baseTag = "<base href=`"/documentation/$version/`">"
+# The documentation is indexed on 51degrees.com. The same pages are also
+# served from 51degrees.github.io and from previews, so every canonical
+# and hreflang link names the full 51degrees.com address.
+$siteUrl = "https://51degrees.com"
 $mirrored = [System.Collections.Generic.List[string]]::new()
 $canonicalsAdded = 0
 $hreflangsAdded = 0
@@ -118,29 +122,27 @@ Get-ChildItem -Recurse -File -Filter "*.html" -Path "gh-pages/$version" | ForEac
     New-Item -ItemType Directory -Force (Split-Path $dest) | Out-Null
     $content = Get-Content $_.FullName -Raw
 
-    # Root-relative canonical pointing at the unversioned URL. Both the
+    # Canonical pointing at the unversioned URL on 51degrees.com. Both the
     # versioned source and the unversioned mirror canonicalise here, so
-    # search engines consolidate equity on /documentation/$rel and the
-    # same rendered HTML is portable across any host (production,
-    # staging, preview, localhost).
-    $canonicalTag = "<link rel=`"canonical`" href=`"/documentation/$rel`">"
+    # search engines consolidate on that address whichever host served
+    # the page.
+    $canonicalTag = "<link rel=`"canonical`" href=`"$siteUrl/documentation/$rel`">"
 
-    # hreflang alternate sharing the canonical's href so both
-    # declarations resolve to the same URL. en-US matches the rest of
-    # 51degrees.com (single-locale site); the website-side hreflang on
-    # every non-doxygen page also emits en-US, so /documentation/* now
-    # carries the same locale signal as the surrounding site.
-    $hreflangTag = "<link rel=`"alternate`" hreflang=`"en-US`" href=`"/documentation/$rel`" />"
+    # hreflang alternate sharing the canonical's href, in en-US like the
+    # rest of 51degrees.com.
+    $hreflangTag = "<link rel=`"alternate`" hreflang=`"en-US`" href=`"$siteUrl/documentation/$rel`" />"
 
-    # Add canonical to the versioned source in place when it doesn't
-    # already have one (doxygen-generated pages don't ship one). The
-    # site's reverse proxy used to inject this at request time but
-    # pinned the rendered HTML to one host; doing it here once at
-    # build time keeps the output portable.
+    # Add the canonical to the versioned source in place, as Doxygen pages
+    # ship none, and give a root-relative canonical from a page template
+    # the full address.
     if ($content -notmatch '<link\s+rel=["'']?canonical') {
         $content = $content -replace '(<head[^>]*>)', "`$1`n  $canonicalTag"
         Set-Content -Path $_.FullName -Value $content -NoNewline
         $canonicalsAdded++
+    }
+    elseif ($content -match '<link\s+rel="canonical"\s+href="/') {
+        $content = $content -replace '(<link\s+rel="canonical"\s+href=")/', "`$1$siteUrl/"
+        Set-Content -Path $_.FullName -Value $content -NoNewline
     }
 
     # Mirror copy under the unversioned root. The mirror adds <base>
@@ -158,13 +160,13 @@ Get-ChildItem -Recurse -File -Filter "*.html" -Path "gh-pages/$version" | ForEac
     #   * The page does not already carry an hreflang (idempotent on
     #     re-runs and safe against a future template change that ships
     #     one).
-    #   * The canonical href equals /documentation/$rel (i.e. the
-    #     mirror's URL). Pages whose canonical points elsewhere -- e.g.
+    #   * The canonical href equals $siteUrl/documentation/$rel (i.e.
+    #     the mirror's URL). Pages whose canonical points elsewhere -- e.g.
     #     api-repo doxygen pages whose own template sets a different
     #     consolidation target -- are not self-canonical and so must
     #     not declare a hreflang anchor at a URL different from their
     #     own.
-    $mirrorUrl = "/documentation/$rel"
+    $mirrorUrl = "$siteUrl/documentation/$rel"
     $existingCanonical = $null
     $canonicalMatch = [regex]::Match($content, '<link\s+rel="canonical"\s+href="([^"]+)"')
     if ($canonicalMatch.Success) {
@@ -208,6 +210,30 @@ Get-ChildItem -Recurse -File -Path "gh-pages/$version" |
     }
 Set-Content -Path $manifestPath -Value ($mirrored -join "`n")
 Write-Host "Mirrored $($mirrored.Count - $assetsCopied) HTML files and $assetsCopied image assets to gh-pages root, added canonical to $canonicalsAdded versioned files, added hreflang to $hreflangsAdded versioned files."
+Write-Host "::endgroup::"
+
+# Earlier versions stay published for readers on older releases, but are
+# kept out of search so results lead to the current version. The preview
+# folder is a leftover copy of the documentation and is kept out too. Only
+# pages with no robots meta tag are changed, so the step can run on every
+# build.
+Write-Host "::group::Marking earlier versions noindex"
+$noindexTag = '<meta name="robots" content="noindex">'
+$headTag = [regex]'(<head(\s[^>]*)?>)'
+$noindexAdded = 0
+Get-ChildItem -Directory -Path gh-pages |
+    Where-Object { ($_.Name -match '^\d+\.\d+$' -and $_.Name -ne $version) -or $_.Name -eq 'preview' } |
+    ForEach-Object {
+        Get-ChildItem -Recurse -File -Filter "*.html" -Path $_.FullName | ForEach-Object {
+            $content = Get-Content $_.FullName -Raw
+            if ($content -notmatch '<meta\s+name=["'']?robots' -and $headTag.IsMatch($content)) {
+                $content = $headTag.Replace($content, "`$1`n  $noindexTag", 1)
+                Set-Content -Path $_.FullName -Value $content -NoNewline
+                $noindexAdded++
+            }
+        }
+    }
+Write-Host "Added noindex to $noindexAdded pages of earlier versions and the preview folder."
 Write-Host "::endgroup::"
 
 # Remove unused CSS selectors from the design-system stylesheet, scanning
