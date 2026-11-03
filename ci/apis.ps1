@@ -4,7 +4,7 @@
 [ordered]@{
     # Pipeline
     "pipeline-dotnet" = @{ Repo = "51degrees-dotnet"; Docs = "pipeline/docs" }
-    "pipeline-java" = $null
+    "pipeline-java" = @{ Repo = "51degrees-java"; Docs = "pipeline/docs" }
     "pipeline-node" = @{ Repo = "51degrees-node"; Docs = "pipeline/docs" }
     "pipeline-php" = @{ Repo = "51degrees-php"; Docs = "docs" }
     "pipeline-python" = @{ Repo = "51degrees-python"; Docs = "pipeline/docs" }
@@ -12,7 +12,7 @@
     # Device Detection
     "device-detection-cxx" = @{ Repo = "51degrees-cxx"; Docs = "docs/dd" }
     "device-detection-dotnet" = @{ Repo = "51degrees-dotnet"; Docs = "device-detection/docs" }
-    "device-detection-java" = "device-detection-java-examples"
+    "device-detection-java" = @{ Repo = "51degrees-java"; Docs = "device-detection/docs" }
     "device-detection-nginx" = $null
     "device-detection-node" = @{ Repo = "51degrees-node"; Docs = "device-detection/docs" }
     "device-detection-php" = @{ Repo = "51degrees-php"; Docs = "device-detection/cloud/docs" }
@@ -23,7 +23,7 @@
     "ip-intelligence-cxx" = @{ Repo = "51degrees-cxx"; Docs = "docs/ipi" }
     "ip-intelligence-dotnet" = @{ Repo = "51degrees-dotnet"; Docs = "ip-intelligence/docs" }
     "ip-intelligence-go" = @{ Repo = "51degrees-go"; Docs = "ip-intelligence/docs" }
-    "ip-intelligence-java" = "ip-intelligence-java-examples"
+    "ip-intelligence-java" = @{ Repo = "51degrees-java"; Docs = "ip-intelligence/docs" }
     "ip-intelligence-node" = @{ Repo = "51degrees-node"; Docs = "ip-intelligence/docs" }
 
     # Rust (Device Detection + IP Intelligence). The runnable examples live in
@@ -33,7 +33,7 @@
 
     # Location
     "location-dotnet" = @{ Repo = "51degrees-dotnet"; Docs = "location/docs" }
-    "location-java" = $null
+    "location-java" = @{ Repo = "51degrees-java"; Docs = "location/docs" }
     "location-node" = @{ Repo = "51degrees-node"; Docs = "location/docs" }
     "location-php" = @{ Repo = "51degrees-php"; Docs = "location/docs" }
     "location-python" = @{ Repo = "51degrees-python"; Docs = "location/docs" }

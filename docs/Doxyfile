@@ -1046,7 +1046,7 @@ EXAMPLE_PATH           = ../src/snippets \
                          ../src/devicedetection/examples \
                          ../src/ipintelligence/examples \
                          ../src/reversegeocoding/examples \
-                         ../apis/pipeline-java/pipeline.developer-examples \
+                         ../apis/51degrees-java/pipeline/pipeline.developer-examples \
                          ../apis/51degrees-dotnet/pipeline/Examples \
                          ../apis/51degrees-node/pipeline/fiftyone.pipeline.core/examples \
                          ../apis/51degrees-node/pipeline/fiftyone.pipeline.engines/examples \
