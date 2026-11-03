@@ -98,7 +98,7 @@ pipeline.buildFromConfigurationFile(configFilePath);
 @showsnippet{JSON}
 @defaultsnippet{Select a file format to view an example configuration.}
 @startsnippet{XML}
-There is a sample file demonstrating all configuration options for Java on [GitHub](https://github.com/51Degrees/device-detection-java-examples/blob/main/web/getting-started.onprem/src/main/webapp/WEB-INF/51Degrees-OnPrem.xml).
+There is a sample file demonstrating all configuration options for Java on [GitHub](https://github.com/51Degrees/51degrees-java/blob/main/examples/device-detection/web/getting-started.onprem/src/main/webapp/WEB-INF/51Degrees-OnPrem.xml).
 
 Configure a @pipeline with a @flowelement named 'MyElement' with a build parameter, and
 set the @pipeline to [suppress process exceptions](@ref PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions).
@@ -127,7 +127,7 @@ set the @pipeline to [suppress process exceptions](@ref PipelineApi_Concepts_Con
 
 Note that for use in node.js, `BuilderName` and `BuildParameters` should be replaced by `elementName` and `elementParameters` for each element. The pipeline-level `BuildParameters` key is itself cased per language: `SuppressProcessExceptions` (.NET), `suppressProcessExceptions` (Node.js) and `suppress_process_exceptions` (Python). In Node.js and Python the setting is read from `PipelineOptions.BuildParameters`.
 
-There is a sample file demonstrating all configuration options for .NET on [GitHub](https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/sample-configuration.json).
+There is a sample file demonstrating all configuration options for .NET on [GitHub](https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/sample-configuration.json).
 
 ```{js}
 {

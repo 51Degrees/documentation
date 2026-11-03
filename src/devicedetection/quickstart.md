@@ -165,7 +165,7 @@ This implementation of device detection makes use of 51Degrees' Cloud Service. I
 ### On-premise
 
 Device detection processing is performed locally using a data file that must be kept updated.
-Due to the restrictions imposed by Composer and Packagist, we cannot supply the On-premise Engines through the usual package management ecosystem. Instead, you'll need to clone the [repository](https://github.com/51Degrees/device-detection-php-onpremise) from GitHub and follow the instructions there in order to build and use the On-premise implementation.
+Due to the restrictions imposed by Composer and Packagist, we cannot supply the On-premise Engines through the usual package management ecosystem. Instead, you'll need to clone the [repository](https://github.com/51Degrees/51degrees-php/tree/main/device-detection/onpremise) from GitHub and follow the instructions there in order to build and use the On-premise implementation.
 
 @endsnippet
 @startsnippet{python}
@@ -190,7 +190,7 @@ To get started with Varnish device detection On-premise:
 Nginx does not have a @Pipeline implementation or the ability to use the cloud-based version of Device Detection.
 To get started with Nginx device detection On-premise:
 
-1. Clone the GitHub [repository](https://github.com/51degrees/device-detection-nginx).
+1. Clone the GitHub [repository](https://github.com/51degrees/51degrees-nginx).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
 4. Follow the [installation instructions](@ref DeviceDetection_OtherIntegrations_Nginx) to get set up with the project.
@@ -200,14 +200,14 @@ To get started with Nginx device detection On-premise:
 @endsnippet
 @startsnippet{go}
 Currently, we have a light set of device detection features for Go users to try and evaluate the capability of 51Degrees device detection. Documentation for Go can be found via the following GitHub repositories:
-[device-detection-go](https://github.com/51Degrees/device-detection-go#readme), [device-detection-examples-go](https://github.com/51Degrees/device-detection-examples-go#readme).
+[device-detection-go](https://github.com/51Degrees/51degrees-go/tree/main/device-detection#readme), [device-detection-examples-go](https://github.com/51Degrees/51degrees-go/tree/main/examples/device-detection#readme).
 To get started with Go device detection On-premise:
 
-1. Clone the GitHub [repository](https://github.com/51Degrees/device-detection-go).
+1. Clone the GitHub [repository](https://github.com/51Degrees/51degrees-go).
 2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
 3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-4. Follow the [installation instructions](https://github.com/51Degrees/device-detection-go#build-and-usage) to get set up with the project.
-5. Follow the linked example here: [Getting Started](https://github.com/51Degrees/device-detection-examples-go/blob/main/dd/getting_started/getting_started.go).
+4. Follow the [installation instructions](https://github.com/51Degrees/51degrees-go/tree/main/device-detection#build-and-usage) to get set up with the project.
+5. Follow the linked example here: [Getting Started](https://github.com/51Degrees/51degrees-go/blob/main/examples/device-detection/dd/getting_started/getting_started.go).
 6. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet

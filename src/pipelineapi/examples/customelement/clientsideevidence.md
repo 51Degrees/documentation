@@ -12,8 +12,8 @@ did, this example will send JavaScript to the client to get the @evidence.
 # Download example
 
 The source code used in this example is available here:
-- [C# Visual Studio project](https://github.com/51degrees/pipeline-dotnet)
-- [Java project](https://github.com/51degrees/pipeline-java)
+- [C# Visual Studio project](https://github.com/51Degrees/51degrees-dotnet/tree/main/pipeline)
+- [Java project](https://github.com/51Degrees/51degrees-java/tree/main/pipeline)
 - [Node.js project](https://github.com/51Degrees/51degrees-node/tree/main/pipeline)
 
 # Dependencies

@@ -8,7 +8,7 @@ We have also integrated our Device Detection to Nginx. This page describes in de
 For the latest tested versions and tested platforms information, please refer to our @testedversions page.
 
 # Installing
-If you haven’t already, you can obtain the latest version of the API from the [device-detection-nginx repository](https://github.com/51Degrees/device-detection-nginx).
+If you haven’t already, you can obtain the latest version of the API from the [51degrees-nginx repository](https://github.com/51Degrees/51degrees-nginx).
 
 To build the module only, run the following command. This will output to `ngx_http_51D_module.so` in the `build/modules` directory.
 ```
@@ -103,6 +103,6 @@ User-Agent Client Hint was introduced by Google in Chrome, preventing traditiona
 
 # Other resources
 More details can be found at:
-- [README](https://github.com/51Degrees/device-detection-nginx/blob/main/README%2Emd).
+- [README](https://github.com/51Degrees/51degrees-nginx/blob/main/README%2Emd).
 - [Examples](/documentation/4.5/apis/device-detection-nginx/examples.html)
 - [Migrations](@ref DeviceDetection_UpgradingtoV4)

@@ -27,7 +27,7 @@ The table below explains the options, from fastest performance and highest memor
 |Balanced (Default)|Data accessed via caches; some caches are smaller than the high performance template. However, there is enough space that the most commonly accessed items are retained in memory. As such, loading from the disk is still relatively uncommon (assuming a typical web server workload). |Fine for generic workloads where there is no extreme memory or performance requirement. |
 |LowMemory|Data always streamed from disk on-demand. | Recommended when the lowest possible memory usage is more important than performance. |
 
-The precise values associated with each template can be seen in the source code on [GitHub](https://github.com/51Degrees/device-detection-cxx/blob/67503df045efb32e84eb59fe7e320772dd6475db/src/hash/hash.c#L177).
+The precise values associated with each template can be seen in the source code on [GitHub](https://github.com/51Degrees/51degrees-cxx/blob/67503df045efb32e84eb59fe7e320772dd6475db/src/hash/hash.c#L177).
 
 We measured throughput, startup time, and memory for Device Detection on seven machines, with the data file held in memory and with `Balanced`. The results are in the [hardware benchmarks](@ref ProductSummaries_Benchmarks_Hardware).
 

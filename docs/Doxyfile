@@ -1046,12 +1046,12 @@ EXAMPLE_PATH           = ../src/snippets \
                          ../src/devicedetection/examples \
                          ../src/ipintelligence/examples \
                          ../src/reversegeocoding/examples \
-                         ../apis/pipeline-java/pipeline.developer-examples \
-                         ../apis/pipeline-dotnet/Examples \
+                         ../apis/51degrees-java/pipeline/pipeline.developer-examples \
+                         ../apis/51degrees-dotnet/pipeline/Examples \
                          ../apis/51degrees-node/pipeline/fiftyone.pipeline.core/examples \
                          ../apis/51degrees-node/pipeline/fiftyone.pipeline.engines/examples \
-                         ../apis/pipeline-php-core/examples \
-                         ../apis/device-detection-php/examples \
+                         ../apis/51degrees-php/pipeline/core/examples \
+                         ../apis/51degrees-php/device-detection/cloud/examples \
                          ../apis/51degrees-node/device-detection/fiftyone.devicedetection/examples
 
 # If the value of the EXAMPLE_PATH tag contains directories, you can use the

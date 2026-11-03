@@ -273,19 +273,19 @@ Find complete working code examples on GitHub for each language:
 @defaultsnippet{Select a language.}
 
 @startsnippet{dotnet}
-https://github.com/51Degrees/location-dotnet/blob/master/Examples/Cloud/GettingStarted/Program.cs
+https://github.com/51Degrees/51degrees-dotnet/blob/main/location/Examples/Cloud/GettingStarted/Program.cs
 @endsnippet
 @startsnippet{java}
-https://github.com/51Degrees/location-java/blob/master/geo-location.shell.examples/src/main/java/fiftyone/geolocation/examples/cloud/GettingStarted.java
+https://github.com/51Degrees/51degrees-java/blob/main/location/geo-location.shell.examples/src/main/java/fiftyone/geolocation/examples/cloud/GettingStarted.java
 @endsnippet
 @startsnippet{node}
 https://github.com/51Degrees/51degrees-node/blob/main/location/examples/gettingStarted.js
 @endsnippet
 @startsnippet{php}
-https://github.com/51Degrees/location-php/blob/master/examples/cloud/gettingstarted.php
+https://github.com/51Degrees/51degrees-php/blob/main/location/examples/cloud/gettingstarted.php
 @endsnippet
 @startsnippet{python}
-https://github.com/51Degrees/location-python/blob/master/examples/cloud/gettingstarted.py
+https://github.com/51Degrees/51degrees-python/blob/main/location/examples/cloud/gettingstarted.py
 @endsnippet
 
 # Troubleshooting
