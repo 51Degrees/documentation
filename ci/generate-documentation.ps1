@@ -26,6 +26,8 @@ $ref = $env:GITHUB_BASE_REF ? $env:GITHUB_BASE_REF : $env:GITHUB_REF_NAME ? $env
 # Not every API repository has that branch, rc in particular, so a repository
 # without it is cloned at its default branch.
 function Get-BranchArgs([string]$repo) {
+    # Preview only, not for merging: build 51degrees-python from its Doxyfile change.
+    if ($repo -eq '51degrees-python') { return @('-b', 'docs/doxyfiles-documentation-build-layout') }
     $heads = git ls-remote --heads "https://github.com/$env:GITHUB_REPOSITORY_OWNER/$repo.git" $ref
     if ($heads) { return @('-b', $ref) }
     return @()
