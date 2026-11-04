@@ -26,7 +26,7 @@ On-premise deployment works better when you need:
 ## Step 1: Get License and Data File
 
 **For testing:**
-- Download the free Lite data file from [GitHub](https://github.com/51degrees/device-detection-data)
+- Download the free Lite data file with the scripts in the [data](https://github.com/51Degrees/data) repository on GitHub
 - No License Key required, but limited device properties
 
 **For production:**
