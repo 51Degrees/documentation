@@ -1,0 +1,7 @@
+<map id="fiftyone\pipeline\did\NotSupportedException" name="fiftyone\pipeline\did\NotSupportedException">
+<area shape="rect" id="Node000001" title="The host answering does not offer the creator context (the redeem endpoint answered 404)." alt="" coords="5,167,184,207"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1did_1_1_cloud_exception.html" title="The cloud answered with a status the client does not turn into a result." alt="" coords="19,79,170,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,133,97,166,92,166,92,133"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="24,5,165,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="97,44,97,79,92,79,92,44"/>
+</map>

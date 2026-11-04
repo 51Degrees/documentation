@@ -1,5 +1,7 @@
 <map id="fiftyone.devicedetection.DeviceDetectionOnPremisePipelineBuilder" name="fiftyone.devicedetection.DeviceDetectionOnPremisePipelineBuilder">
-<area shape="rect" id="Node000001" title="Builder used to create pipelines with an on&#45;premise device detection engine." alt="" coords="5,108,259,163"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="8,5,256,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,74,135,108,129,108,129,74"/>
+<area shape="rect" id="Node000001" title="Builder used to create pipelines with an on&#45;premise device detection engine." alt="" coords="599,13,852,67"/>
+<area shape="rect" id="Node000002" href="/home/runner/work/documentation/documentation/apis/51degrees-java/pipeline/docs/tagfile$classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_pre_packaged_pipeline_builder_base.html" title=" " alt="" coords="308,5,551,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="564,37,598,37,598,43,564,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,13,260,67"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="274,37,308,37,308,43,274,43"/>
 </map>

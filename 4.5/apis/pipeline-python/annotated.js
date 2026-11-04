@@ -207,6 +207,12 @@ var annotated =
       [ "test_credentials", "namespacetests_1_1test__credentials.html", [
         [ "TestCredentials", "classtests_1_1test__credentials_1_1_test_credentials.html", "classtests_1_1test__credentials_1_1_test_credentials" ]
       ] ],
+      [ "test_datafile_update_service", "namespacetests_1_1test__datafile__update__service.html", [
+        [ "RecordingPipeline", "classtests_1_1test__datafile__update__service_1_1_recording_pipeline.html", "classtests_1_1test__datafile__update__service_1_1_recording_pipeline" ],
+        [ "StandInDataFile", "classtests_1_1test__datafile__update__service_1_1_stand_in_data_file.html", "classtests_1_1test__datafile__update__service_1_1_stand_in_data_file" ],
+        [ "ScheduledCheck", "classtests_1_1test__datafile__update__service_1_1_scheduled_check.html", "classtests_1_1test__datafile__update__service_1_1_scheduled_check" ],
+        [ "FileSystemWatcherTests", "classtests_1_1test__datafile__update__service_1_1_file_system_watcher_tests.html", "classtests_1_1test__datafile__update__service_1_1_file_system_watcher_tests" ]
+      ] ],
       [ "test_engines", "namespacetests_1_1test__engines.html", [
         [ "TestCache", "classtests_1_1test__engines_1_1_test_cache.html", "classtests_1_1test__engines_1_1_test_cache" ],
         [ "ExampleAspectEngine", "classtests_1_1test__engines_1_1_example_aspect_engine.html", "classtests_1_1test__engines_1_1_example_aspect_engine" ],

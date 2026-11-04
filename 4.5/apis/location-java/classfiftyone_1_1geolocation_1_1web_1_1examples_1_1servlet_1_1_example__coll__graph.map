@@ -1,5 +1,7 @@
 <map id="fiftyone.geolocation.web.examples.servlet.Example" name="fiftyone.geolocation.web.examples.servlet.Example">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,79,308,119"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="109,5,205,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,44,159,79,154,79,154,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="6,116,309,156"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,13,101,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,46,141,114,137,118,72,50"/>
+<area shape="rect" id="Node000003" href="/home/runner/work/documentation/documentation/apis/51degrees-java/pipeline/docs/tagfile$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_flow_data_provider_core.html" title=" " alt="" coords="126,5,399,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,57,178,118,174,114,233,54"/>
 </map>

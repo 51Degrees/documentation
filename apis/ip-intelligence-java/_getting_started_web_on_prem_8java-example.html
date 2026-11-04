@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
-  <link rel="canonical" href="/documentation/apis/ip-intelligence-java/_getting_started_web_on_prem_8java-example.html">
-  <link rel="alternate" hreflang="en-US" href="/documentation/apis/ip-intelligence-java/_getting_started_web_on_prem_8java-example.html" />
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/ip-intelligence-java/_getting_started_web_on_prem_8java-example.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/ip-intelligence-java/_getting_started_web_on_prem_8java-example.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <li>How to retrieve the results in your web application</li>
 </ol>
 <p>This example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-java-examples/blob/master/web/getting-started.onprem/src/main/java/fiftyone/ipintelligence/examples/web/GettingStartedWebOnPrem.java">GitHub</a>.</p>
-<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-java-examples&amp;utm_content=web-getting-started.onprem-src-main-java-fiftyone-ipintelligence-examples-web-gettingstartedwebonprem.java&amp;utm_term=header">contact us</a>.</p>
+<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=web-getting-started.onprem-src-main-java-fiftyone-ipintelligence-examples-web-gettingstartedwebonprem.java&amp;utm_term=header">contact us</a>.</p>
 <p>Required Maven Dependencies:</p><ul>
 <li><a href="https://central.sonatype.com/artifact/com.51degrees/ip-intelligence">com.51degrees:ip-intelligence</a></li>
 <li><a href="https://central.sonatype.com/artifact/com.51degrees/pipeline-web">com.51degrees:pipeline-web</a></li>
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> String getResourceBase() {</div>
 <div class="c-code__line">        <span class="c-code__comment">// Use the unique pipeline config file to locate this example&#39;s webapp directory.</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// Cannot use &quot;WEB-INF/web.xml&quot; because FileFinder may find another example&#39;s web.xml.</span></div>
-<div class="c-code__line">        java.io.File configXml = getFilePath(<span class="c-code__stringliteral">&quot;WEB-INF/51Degrees-OnPrem.xml&quot;</span>);</div>
+<div class="c-code__line">        java.io.File configXml = getFilePath(<span class="c-code__stringliteral">&quot;examples/ip-intelligence/web/getting-started.onprem/src/main/webapp/WEB-INF/51Degrees-OnPrem.xml&quot;</span>);</div>
 <div class="c-code__line">        <span class="c-code__comment">// 51Degrees-OnPrem.xml is in WEB-INF/, so parent is webapp directory</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> configXml.getParentFile().getParent();</div>
 <div class="c-code__line">    }</div>

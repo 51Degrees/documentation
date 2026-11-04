@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
-  <link rel="canonical" href="/documentation/apis/device-detection-java/_metadata_cloud_8java-example.html">
-  <link rel="alternate" hreflang="en-US" href="/documentation/apis/device-detection-java/_metadata_cloud_8java-example.html" />
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-java/_metadata_cloud_8java-example.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/device-detection-java/_metadata_cloud_8java-example.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -153,14 +153,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_metadata_clou
 <div class="c-code__line">        <span class="c-code__comment">// the meta-data.</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// If you already have a pipeline and just want to get a reference to the engine </span></div>
 <div class="c-code__line">        <span class="c-code__comment">// then you can use `var engine = pipeline.GetElement&lt;DeviceDetectionHashEngine&gt;();`</span></div>
-<div class="c-code__line">        <span class="c-code__keywordflow">try</span> (Pipeline pipeline = <span class="c-code__keyword">new</span> DeviceDetectionPipelineBuilder(LoggerFactory.getILoggerFactory())</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">try</span> (Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> = <span class="c-code__keyword">new</span> DeviceDetectionPipelineBuilder(LoggerFactory.getILoggerFactory())</div>
 <div class="c-code__line">                .useCloud(resourceKey)</div>
 <div class="c-code__line">                .build()) {</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            PrintWriter writer = <span class="c-code__keyword">new</span> PrintWriter(output);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            logger.info(<span class="c-code__stringliteral">&quot;Listing Properties&quot;</span>);</div>
-<div class="c-code__line">            outputProperties(pipeline.getElement(DeviceDetectionCloudEngine.class), writer);</div>
+<div class="c-code__line">            outputProperties(<a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.getElement(DeviceDetectionCloudEngine.class), writer);</div>
 <div class="c-code__line">            writer.println();</div>
 <div class="c-code__line">            writer.flush();</div>
 <div class="c-code__line"> </div>
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_metadata_clou
 <div class="c-code__line">            <span class="c-code__comment">// The CloudRequestEngine is actually taking the evidence values and passing</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// them to the cloud, so that&#39;s the engine we want the keys from.</span></div>
 <div class="c-code__line">            logger.info(<span class="c-code__stringliteral">&quot;Listing Evidence Key Details&quot;</span>);</div>
-<div class="c-code__line">            outputEvidenceKeyDetails(pipeline.getElement(CloudRequestEngine.class), writer);</div>
+<div class="c-code__line">            outputEvidenceKeyDetails(<a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.getElement(CloudRequestEngine.class), writer);</div>
 <div class="c-code__line">            writer.println();</div>
 <div class="c-code__line">            writer.flush();</div>
 <div class="c-code__line">        }</div>
@@ -217,6 +217,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_metadata_clou
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
 <div class="c-code__line"></div>
+<div class="ttc" id="aclasspipeline_1_1developerexamples_1_1usagesharing_1_1_main_html"><div class="ttname"><a href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a></div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

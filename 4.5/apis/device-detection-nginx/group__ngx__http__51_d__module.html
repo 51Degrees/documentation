@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/device-detection-nginx/group__ngx__http__51_d__module.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-nginx/group__ngx__http__51_d__module.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -221,8 +221,8 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:gab3f2afe91ca532284993c87b329d9378"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Search headers function.  <br /></td></tr>
 <tr class="c-table__row memitem:ga3f375617f71f4b74bf1f2bf50b74d485" id="r_ga3f375617f71f4b74bf1f2bf50b74d485"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ga3f375617f71f4b74bf1f2bf50b74d485">add_value</a> (char *delimiter, char *val, char *dst, size_t length)</td></tr>
 <tr class="c-table__row memdesc:ga3f375617f71f4b74bf1f2bf50b74d485"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add value function.  <br /></td></tr>
-<tr class="c-table__row memitem:ga1dc21d37d5fa7b49e83b0965bef7051b" id="r_ga1dc21d37d5fa7b49e83b0965bef7051b"><td class="c-table__cell">static&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga1dc21d37d5fa7b49e83b0965bef7051b">is_metadata</a> (char *val)</td></tr>
-<tr class="c-table__row memdesc:ga1dc21d37d5fa7b49e83b0965bef7051b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check if a property being requested is a meta data property.  <br /></td></tr>
+<tr class="c-table__row memitem:ga3ec4ed91806e5cff2e017b0c639c1d8f" id="r_ga3ec4ed91806e5cff2e017b0c639c1d8f"><td class="c-table__cell">static&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga3ec4ed91806e5cff2e017b0c639c1d8f">is_metadata</a> (const char *val)</td></tr>
+<tr class="c-table__row memdesc:ga3ec4ed91806e5cff2e017b0c639c1d8f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check if a property being requested is a meta data property.  <br /></td></tr>
 <tr class="c-table__row memitem:ga59326469abdf52da8ece7bb9420839a5" id="r_ga59326469abdf52da8ece7bb9420839a5"><td class="c-table__cell">static&#160;ngx_str_t&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga59326469abdf52da8ece7bb9420839a5">empty_string</a> (ngx_http_request_t *r)</td></tr>
 <tr class="c-table__row memdesc:ga59326469abdf52da8ece7bb9420839a5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Create an empty ngx string from the http request pool.  <br /></td></tr>
 <tr class="c-table__row memitem:ga79a1e8c73558cf03f61fae1725f0d8a2" id="r_ga79a1e8c73558cf03f61fae1725f0d8a2"><td class="c-table__cell">static&#160;ngx_str_t&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga79a1e8c73558cf03f61fae1725f0d8a2">get_evidence_from_query_string_base</a> (ngx_http_request_t *r, ngx_str_t *variableName)</td></tr>
@@ -1073,8 +1073,8 @@ static&#160;const&#160;char&#160;*const&#160;</td><td class="c-table__cell"><b>N
 
 </div>
 </div>
-<a id="ga1dc21d37d5fa7b49e83b0965bef7051b" name="ga1dc21d37d5fa7b49e83b0965bef7051b"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga1dc21d37d5fa7b49e83b0965bef7051b">&#9670;&#160;</a></span>is_metadata()</h2>
+<a id="ga3ec4ed91806e5cff2e017b0c639c1d8f" name="ga3ec4ed91806e5cff2e017b0c639c1d8f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga3ec4ed91806e5cff2e017b0c639c1d8f">&#9670;&#160;</a></span>is_metadata()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -1087,7 +1087,7 @@ static&#160;const&#160;char&#160;*const&#160;</td><td class="c-table__cell"><b>N
             <tr class="c-table__row">
               <td class="c-table__cell">bool is_metadata </td>
           <td>(</td>
-          <td class="c-table__cell">char *</td>          <td class="c-table__cell"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>val</em></span></td><td>)</td>
           <td></td>
         </tr>
           </table>

@@ -1,0 +1,37 @@
+<map id="fiftyone\pipeline\core\FlowElement" name="fiftyone\pipeline\core\FlowElement">
+<area shape="rect" id="Node000001" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="5,133,164,173"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1core_1_1_javascript_builder_element.html" title="The JavaScriptBuilder aggregates JavaScript properties from FlowElements in the Pipeline." alt="" coords="212,5,403,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,122,160,88,211,55,237,43,239,48,213,60,163,92,120,126"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1core_1_1_json_bundler_element.html" title="The JSONBundler aggregates all properties from FlowElements into a JSON object It is used for retriev..." alt="" coords="228,69,387,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,127,236,107,238,112,169,132"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1pipeline_1_1core_1_1_sequence_element.html" title="The SequenceElement stores session data regarding requests for client side JavaScript from the JavaSc..." alt="" coords="228,133,387,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="178,151,228,151,228,156,178,156"/>
+<area shape="rect" id="Node000005" href="$classfiftyone_1_1pipeline_1_1core_1_1_set_header_element.html" title="Set response headers element class." alt="" coords="228,197,387,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="169,175,238,195,236,200,167,180"/>
+<area shape="rect" id="Node000006" href="$classfiftyone_1_1pipeline_1_1engines_1_1_engine.html" title="An engine is an extension of the Pipeline Core flowElement class It allows for a cache,..." alt="" coords="216,261,399,301"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="120,180,163,215,213,247,239,259,237,264,211,252,160,219,116,185"/>
+<area shape="rect" id="Node000007" href="$classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_request_engine.html" title=" " alt="" coords="451,133,709,173"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="393,253,401,247,416,232,424,216,433,199,449,183,472,171,474,176,452,187,437,202,429,218,420,235,404,251,396,257"/>
+<area shape="rect" id="Node000008" href="$classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise.html" title=" " alt="" coords="463,197,697,237"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="406,256,494,235,495,240,407,261"/>
+<area shape="rect" id="Node000009" href="$classfiftyone_1_1pipeline_1_1engines_1_1_cloud_engine_base.html" title="Intermediary between Engine and CloudEngine classes." alt="" coords="489,261,671,301"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="412,279,488,279,488,284,412,284"/>
+<area shape="rect" id="Node000015" href="$classfiftyone_1_1pipeline_1_1ipintelligence_1_1_ip_intelligence_on_premise.html" title="The on&#45;premise IP intelligence engine uses a local data file (.ipi) to generate a set of properties a..." alt="" coords="471,325,689,365"/>
+<area shape="poly" id="edge14_Node000006_Node000015" title=" " alt="" coords="407,302,495,323,494,328,406,307"/>
+<area shape="rect" id="Node000016" href="$classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine.html" title="Generic translation engine." alt="" coords="479,389,681,429"/>
+<area shape="poly" id="edge15_Node000006_Node000016" title=" " alt="" coords="345,308,394,343,452,375,484,387,482,392,450,380,391,347,342,312"/>
+<area shape="rect" id="Node000010" href="$classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_engine.html" title="This is a template for all 51Degrees cloud engines." alt="" coords="777,261,1036,301"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="685,279,777,279,777,284,685,284"/>
+<area shape="rect" id="Node000011" href="$classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_cloud.html" title=" " alt="" coords="1104,165,1339,205"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="979,255,1103,215,1144,203,1146,208,1105,220,980,260"/>
+<area shape="rect" id="Node000012" href="$classfiftyone_1_1pipeline_1_1devicedetection_1_1_hardware_profile_cloud.html" title=" " alt="" coords="1104,229,1339,269"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="1050,264,1103,259,1104,264,1050,269"/>
+<area shape="rect" id="Node000013" href="$classfiftyone_1_1pipeline_1_1geolocation_1_1_geo_location_cloud.html" title=" " alt="" coords="1118,293,1325,333"/>
+<area shape="poly" id="edge12_Node000010_Node000013" title=" " alt="" coords="1050,293,1118,300,1118,306,1049,299"/>
+<area shape="rect" id="Node000014" href="$classfiftyone_1_1pipeline_1_1ipintelligence_1_1_ip_intelligence_cloud.html" title="The IP intelligence cloud engine requires the 51Degrees CloudRequestEngine to be placed in a pipeline..." alt="" coords="1112,357,1331,397"/>
+<area shape="poly" id="edge13_Node000010_Node000014" title=" " alt="" coords="980,303,1105,343,1146,355,1144,360,1103,348,979,308"/>
+<area shape="rect" id="Node000017" href="$classfiftyone_1_1pipeline_1_1ipintelligence_1_1translation_1_1_countries_translation_engine.html" title="Engine 2: translates the weighted English country names from Engine 1 into the browser language,..." alt="" coords="768,357,1045,397"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="694,396,768,388,768,394,695,401"/>
+<area shape="rect" id="Node000018" href="$classfiftyone_1_1pipeline_1_1ipintelligence_1_1translation_1_1_country_code_translation_engine.html" title="Engine 1: translates the weighted ISO country codes emitted by the IP intelligence engine (CountryCod..." alt="" coords="757,421,1056,461"/>
+<area shape="poly" id="edge17_Node000016_Node000018" title=" " alt="" coords="695,418,757,424,757,429,694,423"/>
+</map>

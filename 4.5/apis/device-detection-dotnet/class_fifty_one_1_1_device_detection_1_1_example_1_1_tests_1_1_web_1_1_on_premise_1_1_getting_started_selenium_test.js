@@ -1,0 +1,6 @@
+var class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_on_premise_1_1_getting_started_selenium_test =
+[
+    [ "GettingStartedSeleniumTest", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_on_premise_1_1_getting_started_selenium_test.html#abd1bd3d799120568370aa9048f5f4c9c", null ],
+    [ "VerifyExample_HasWebDriver_And_IsVisible_Set_By_JavaScript", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_on_premise_1_1_getting_started_selenium_test.html#a101ab5d84f926f62f507f71d3f24c94a", null ],
+    [ "VerifyExample_IsHeadless_Is_Reported_On_First_Request", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_on_premise_1_1_getting_started_selenium_test.html#a20544e17d758b3d282d725d34afbec21", null ]
+];

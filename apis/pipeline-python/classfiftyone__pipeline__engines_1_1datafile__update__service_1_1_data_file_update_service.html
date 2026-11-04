@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
-  <link rel="canonical" href="/documentation/apis/pipeline-python/classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_data_file_update_service.html">
-  <link rel="alternate" hreflang="en-US" href="/documentation/apis/pipeline-python/classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_data_file_update_service.html" />
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/pipeline-python/classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_data_file_update_service.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/pipeline-python/classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_data_file_update_service.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -92,6 +92,10 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:a8f954ed53e523bf0f14e169592304889" id="r_a8f954ed53e523bf0f14e169592304889"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8f954ed53e523bf0f14e169592304889">pipeline</a> = pipeline</td></tr>
 <tr class="c-table__row memitem:a0d94cb6a9c25829875ef0ad76b6b769b" id="r_a0d94cb6a9c25829875ef0ad76b6b769b"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="#a0d94cb6a9c25829875ef0ad76b6b769b">on_complete_methods</a> = []</td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a1b18297532dcc727619b8a1811d422dc" id="r_a1b18297532dcc727619b8a1811d422dc"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a1b18297532dcc727619b8a1811d422dc">FILE_SYSTEM_WATCHER_INTERVAL_SECONDS</a> = 10</td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="aad7e6c9bdf9284ef32e644b40fa8a5b7" name="aad7e6c9bdf9284ef32e644b40fa8a5b7"></a>
@@ -306,7 +310,7 @@ Public Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Check for local changes to a datafile. </p>
-<p>Used by the file system watcher @type data_file: DataFile </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Used by the file system watcher. A refresh that fails is logged, and reported with AUTO_UPDATE_REFRESH_FAILED as on the update route. The next check is scheduled whatever happens, so that a later file is still picked up. @type data_file: DataFile </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data_file</td><td>Datafile to check updates for </td></tr>
   </table>
@@ -349,6 +353,32 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a1b18297532dcc727619b8a1811d422dc" name="a1b18297532dcc727619b8a1811d422dc"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1b18297532dcc727619b8a1811d422dc">&#9670;&#160;</a></span>FILE_SYSTEM_WATCHER_INTERVAL_SECONDS</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">int fiftyone_pipeline_engines.datafile_update_service.DataFileUpdateService.FILE_SYSTEM_WATCHER_INTERVAL_SECONDS = 10</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="a0d94cb6a9c25829875ef0ad76b6b769b" name="a0d94cb6a9c25829875ef0ad76b6b769b"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0d94cb6a9c25829875ef0ad76b6b769b">&#9670;&#160;</a></span>on_complete_methods</h2>
 

@@ -2,11 +2,6 @@ var NAVTREEINDEX0 =
 {
 "/documentation/4.5/index.html":[0],
 "annotated.html":[1],
-"classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_cloud.html":[1,0,0,0,1],
-"classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_pipeline_builder.html":[1,0,0,0,2],
-"classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_pipeline_builder.html#acad4a985480a570d77003ab7d2658881":[1,0,0,0,2,0],
-"classfiftyone_1_1pipeline_1_1devicedetection_1_1_hardware_profile_cloud.html":[1,0,0,0,3],
-"classfiftyone_1_1pipeline_1_1devicedetection_1_1_hardware_profile_cloud.html#a683cfb4be42ffafa4a25698eefbb189f":[1,0,0,0,3,0],
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1cloud_1_1classes_1_1_example_utils.html":[1,0,0,0,0,0,0,0],
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1cloud_1_1classes_1_1_example_utils.html#a0eaa82ca1b031fde0f61630a597ec8e2":[1,0,0,0,0,0,0,0,1],
 "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1cloud_1_1classes_1_1_example_utils.html#a36f70ead1cd931b2f4e6a09e2438e4e8":[1,0,0,0,0,0,0,0,0],

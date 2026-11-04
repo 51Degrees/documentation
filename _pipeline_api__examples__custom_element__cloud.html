@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
-  <link rel="canonical" href="/documentation/_pipeline_api__examples__custom_element__cloud.html">
-  <link rel="alternate" hreflang="en-US" href="/documentation/_pipeline_api__examples__custom_element__cloud.html" />
+  <link rel="canonical" href="https://51degrees.com/documentation/_pipeline_api__examples__custom_element__cloud.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/_pipeline_api__examples__custom_element__cloud.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <p>Instead of the data being stored locally and processing being carried out by the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> directly, as demonstrated in the <a class="el" href="_pipeline_api__examples__custom_element__flow_element.html" title="Simple Custom Flow Element">simple flow element example</a>, this example will call a Cloud Service to perform the required functionality.</p>
 <h2 class="doxsection" id="download-example-1">Download example<a class="headerlink" href="#download-example-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>The source code used in this example is available here:</p><ul>
-<li><a href="https://github.com/51Degrees/pipeline-dotnet/tree/master/Examples/CustomFlowElement/4.%20Cloud%20Engine">C# Visual Studio project</a></li>
-<li><a href="https://github.com/51Degrees/pipeline-java/tree/main/pipeline.developer-examples/pipeline.developer-examples.cloud-engine">Java project</a></li>
+<li><a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/pipeline/Examples/CustomFlowElement/4.%20Cloud%20Engine">C# Visual Studio project</a></li>
+<li><a href="https://github.com/51Degrees/51degrees-java/tree/main/pipeline/pipeline.developer-examples/pipeline.developer-examples.cloud-engine">Java project</a></li>
 </ul>
 <h2 class="doxsection" id="dependencies-1">Dependencies<a class="headerlink" href="#dependencies-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>The <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> will need a dependency on the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> engines package, and cloud request engine package</p>
@@ -388,6 +388,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">                <span class="c-code__keyword">new</span> CloudRequestEngineBuilder(_loggerFactory, <span class="c-code__keyword">new</span> HttpClient())</div>
 <div class="c-code__line">                .SetEndPoint(<span class="c-code__stringliteral">&quot;https://51degrees.com/starsign/api/&quot;</span>)</div>
 <div class="c-code__line">                .SetResourceKey(<span class="c-code__stringliteral">&quot;cloudexample&quot;</span>)</div>
+<div class="c-code__line">                <span class="c-code__comment">// The default of 2 seconds is short for a first request from</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// a machine that has not yet connected to the endpoint.</span></div>
+<div class="c-code__line">                .SetTimeOutSeconds(10)</div>
 <div class="c-code__line">                .Build();</div>
 <div class="c-code__line">            <span class="c-code__comment">// Construct the example engine.</span></div>
 <div class="c-code__line">            var starSignEngine =</div>

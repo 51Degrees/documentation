@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/device-detection-java/console_2_tac_cloud_8java-example.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-java/console_2_tac_cloud_8java-example.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_tac_
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <p>This example shows how to use the 51Degrees Cloud service to look up the details of a device based on a given 'TAC'. More background information on TACs can be found through various online sources such as <a href="https://en.wikipedia.org/wiki/Type_Allocation_Code">Wikipedia</a>.</p>
-<p>Unlike other examples, use of this example requires a license key which can be purchased from our <a href="https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-java-examples&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-taccloud.java&amp;utm_term=top">pricing page</a>. Once this is done, a resource key with the properties required by this example can be created <a href="https://configure.51degrees.com/QKyYH5XT?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-java-examples&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-taccloud.java&amp;utm_term=top">here</a>.</p>
+<p>Unlike other examples, use of this example requires a license key which can be purchased from our <a href="https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-taccloud.java&amp;utm_term=top">pricing page</a>. Once this is done, a resource key with the properties required by this example can be created <a href="https://configure.51degrees.com/QKyYH5XT?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-taccloud.java&amp;utm_term=top">here</a>.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-java-examples/blob/master/console/src/main/java/fiftyone/devicedetection/examples/console/TacCloud.java">GitHub</a>.</p>
 <p> 
  <p>
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_tac_
 <div class="c-code__line">        <span class="c-code__comment">// For a demonstration of how to do this in code instead, see the</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// NativeModelLookup example.</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// For more information about builders in general see the documentation at</span></div>
-<div class="c-code__line">        <span class="c-code__comment">// https://51degrees.com/documentation/_concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-java-examples&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-taccloud.java&amp;utm_term=run</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// https://51degrees.com/documentation/_concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-taccloud.java&amp;utm_term=run</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// the configuration file is in the resources directory</span></div>
 <div class="c-code__line">        File optionsFile = getFilePath(<span class="c-code__stringliteral">&quot;tacCloud.xml&quot;</span>);</div>
@@ -165,18 +165,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_tac_
 <div class="c-code__line"> </div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Create the pipeline using the service provider and the configured options.</span></div>
-<div class="c-code__line">            <span class="c-code__keywordflow">try</span> (Pipeline pipeline = <span class="c-code__keyword">new</span> FiftyOnePipelineBuilder()</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">try</span> (Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> = <span class="c-code__keyword">new</span> FiftyOnePipelineBuilder()</div>
 <div class="c-code__line">                    .buildFromConfiguration(pipelineOptions)) {</div>
 <div class="c-code__line">                <span class="c-code__comment">// Pass a TAC into the pipeline and list the matching devices.</span></div>
-<div class="c-code__line">                analyseTac(TAC_1, pipeline, writer);</div>
-<div class="c-code__line">                analyseTac(TAC_2, pipeline, writer);</div>
+<div class="c-code__line">                analyseTac(TAC_1, <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>, writer);</div>
+<div class="c-code__line">                analyseTac(TAC_2, <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>, writer);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> analyseTac(String tac, Pipeline pipeline, PrintWriter output) <span class="c-code__keywordflow">throws</span> Exception {</div>
+<div class="c-code__line">    <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> analyseTac(String tac, Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>, PrintWriter output) <span class="c-code__keywordflow">throws</span> Exception {</div>
 <div class="c-code__line">        <span class="c-code__comment">// Create the FlowData instance.</span></div>
-<div class="c-code__line">        <span class="c-code__keywordflow">try</span> (FlowData data = pipeline.createFlowData()) {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">try</span> (FlowData data = <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.createFlowData()) {</div>
 <div class="c-code__line">            <span class="c-code__comment">// Add the TAC as evidence.</span></div>
 <div class="c-code__line">            data.addEvidence(Constants.EVIDENCE_QUERY_TAC_KEY, tac);</div>
 <div class="c-code__line">            <span class="c-code__comment">// Process the supplied evidence.</span></div>
@@ -198,6 +198,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_tac_
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
+<div class="ttc" id="aclasspipeline_1_1developerexamples_1_1usagesharing_1_1_main_html"><div class="ttname"><a href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a></div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

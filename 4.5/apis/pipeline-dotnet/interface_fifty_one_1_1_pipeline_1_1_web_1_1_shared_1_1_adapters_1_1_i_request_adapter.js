@@ -1,0 +1,4 @@
+var interface_fifty_one_1_1_pipeline_1_1_web_1_1_shared_1_1_adapters_1_1_i_request_adapter =
+[
+    [ "GetHeaderValue", "interface_fifty_one_1_1_pipeline_1_1_web_1_1_shared_1_1_adapters_1_1_i_request_adapter.html#a231d96178bba0cd20ea7db340d6f8a3c", null ]
+];

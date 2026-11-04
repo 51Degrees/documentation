@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/location-java/_combining_services_8java-example.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/location-java/_combining_services_8java-example.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -132,19 +132,20 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_combining_ser
 <div class="c-code__line">    <span class="c-code__keyword">new</span> GeoLocationCloudEngineBuilder(loggerFactory, cloudRequestEngine)</div>
 <div class="c-code__line">    .build(Enums.GeoLocationProvider.FiftyOneDegrees);</div>
 </div><!-- fragment --></li>
-<li>Build a new Pipeline containing the engines which were just created. <div class="c-code__block c-code__block--outline"><div class="c-code__line">Pipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
+<li>Build a new Pipeline containing the engines which were just created. <div class="c-code__block c-code__block--outline"><div class="c-code__line">Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
 <div class="c-code__line">    .addFlowElement(cloudRequestEngine)</div>
 <div class="c-code__line">    .addFlowElement(deviceDetectionEngine)</div>
 <div class="c-code__line">    .addFlowElement(locationEngine)</div>
 <div class="c-code__line">    .build();</div>
+<div class="ttc" id="aclasspipeline_1_1developerexamples_1_1usagesharing_1_1_main_html"><div class="ttname"><a href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a></div></div>
 </div><!-- fragment --></li>
 </ol>
-<p>Note that while the cloud request engine must be run before the others, the device detection and geo-location engines can be run in parallel. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">Pipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
+<p>Note that while the cloud request engine must be run before the others, the device detection and geo-location engines can be run in parallel. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
 <div class="c-code__line">    .addFlowElement(cloudRequestEngine)</div>
 <div class="c-code__line">    .addFlowElementsParallel(<span class="c-code__keyword">new</span> FlowElement[]{deviceDetectionEngine, locationEngine})</div>
 <div class="c-code__line">    .build();</div>
 </div><!-- fragment --><ol type="1">
-<li>Create a new FlowData instance ready to be populated with evidence for the Pipeline. <div class="c-code__block c-code__block--outline"><div class="c-code__line">FlowData data = pipeline.createFlowData();</div>
+<li>Create a new FlowData instance ready to be populated with evidence for the Pipeline. <div class="c-code__block c-code__block--outline"><div class="c-code__line">FlowData data = <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.createFlowData();</div>
 </div><!-- fragment --></li>
 <li>Process a longitude, latitude and User-Agent to retrieve the values associated with with the location and device for the selected properties. <div class="c-code__block c-code__block--outline"><div class="c-code__line">data</div>
 <div class="c-code__line">    .addEvidence(EVIDENCE_HEADER_USERAGENT_KEY, userAgent)</div>
@@ -217,14 +218,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_combining_ser
 <div class="c-code__line">            <span class="c-code__stringliteral">&quot;/11D167 Safari/9537.53&quot;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> main(String[] args) <span class="c-code__keywordflow">throws</span> Exception {</div>
-<div class="c-code__line">        <span class="c-code__comment">// Obtain a resource key for free at https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=location-java&amp;utm_content=geo-location.shell.examples-src-main-java-fiftyone-geolocation-examples-combiningservices.java&amp;utm_term=main</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// Obtain a resource key for free at https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=geo-location.shell.examples-src-main-java-fiftyone-geolocation-examples-combiningservices.java&amp;utm_term=main</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// Make sure to include the &#39;Country&#39; and &#39;IsMobile&#39; properties as they</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// are used by this example.</span></div>
 <div class="c-code__line">        String resourceKey = <span class="c-code__stringliteral">&quot;!!Your resource license key!!&quot;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (resourceKey.startsWith(<span class="c-code__stringliteral">&quot;!!&quot;</span>)) {</div>
 <div class="c-code__line">            System.out.println(<span class="c-code__stringliteral">&quot;You need to create a resource key at &quot;</span> +</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=location-java&amp;utm_content=geo-location.shell.examples-src-main-java-fiftyone-geolocation-examples-combiningservices.java&amp;utm_term=resource-key-required and paste it into this example.&quot;</span>);</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=geo-location.shell.examples-src-main-java-fiftyone-geolocation-examples-combiningservices.java&amp;utm_term=resource-key-required and paste it into this example.&quot;</span>);</div>
 <div class="c-code__line">            System.out.println(<span class="c-code__stringliteral">&quot;Make sure to include the &#39;Country&#39; and &quot;</span> +</div>
 <div class="c-code__line">                <span class="c-code__stringliteral">&quot;&#39;IsMobile&#39; properties as they are used by this example.&quot;</span>);</div>
 <div class="c-code__line">        }</div>
@@ -240,14 +241,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_combining_ser
 <div class="c-code__line">                <span class="c-code__keyword">new</span> GeoLocationCloudEngineBuilder(loggerFactory)</div>
 <div class="c-code__line">                .build(Enums.GeoLocationProvider.FiftyOneDegrees);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            Pipeline pipeline =</div>
+<div class="c-code__line">            Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> =</div>
 <div class="c-code__line">                <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
 <div class="c-code__line">                .addFlowElement(cloudRequestEngine)</div>
 <div class="c-code__line">                .addFlowElement(deviceDetectionEngine)</div>
 <div class="c-code__line">                .addFlowElement(locationEngine)</div>
 <div class="c-code__line">                .build();</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keywordflow">try</span> (FlowData flowData = pipeline.createFlowData()) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">try</span> (FlowData flowData = <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.createFlowData()) {</div>
 <div class="c-code__line">                flowData</div>
 <div class="c-code__line">                    .addEvidence(EVIDENCE_HEADER_USERAGENT_KEY, mobileUserAgent)</div>
 <div class="c-code__line">                    .addEvidence(EVIDENCE_GEO_LAT_PARAM_KEY, <span class="c-code__stringliteral">&quot;51.458048&quot;</span>)</div>
@@ -265,7 +266,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_combining_ser
 <div class="c-code__line">                System.out.println(<span class="c-code__stringliteral">&quot;Country: &quot;</span> + country.toString());</div>
 <div class="c-code__line">                System.out.println(<span class="c-code__stringliteral">&quot;IsMobile: &quot;</span> + isMobile.toString());</div>
 <div class="c-code__line">            }</div>
-<div class="c-code__line">            pipeline.close();</div>
+<div class="c-code__line">            <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.close();</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>

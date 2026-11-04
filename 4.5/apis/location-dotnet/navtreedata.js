@@ -26,7 +26,7 @@ var NAVTREE =
 [
   [ "51Degrees Geo-Location .NET", "index.html", [
     [ "General Docs", "/documentation/4.5/index.html", null ],
-    [ "The MIT License (MIT)", "md__2home_2runner_2work_2documentation_2documentation_2apis_2location-dotnet_2_examples_2_cloud_ecb6d204072463b0b1885958eaf7ed90.html", null ],
+    [ "The MIT License (MIT)", "md__2home_2runner_2work_2documentation_2documentation_2apis_251degrees-dotnet_2location_2_exampl9c47a06b8adc67351a541f9898b4b280.html", null ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Examples", "examples.html", "examples" ]
   ] ]

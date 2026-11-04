@@ -1,0 +1,22 @@
+<map id="FiftyOne.Pipeline.CloudRequestEngine.FlowElements.CloudRequestEngine" name="FiftyOne.Pipeline.CloudRequestEngine.FlowElements.CloudRequestEngine">
+<area shape="rect" id="Node000001" title="Engine that makes requests to the 51Degrees cloud service." alt="" coords="1227,45,1483,100"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g.html" title="Base class for 51Degrees aspect engines." alt="" coords="929,5,1168,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1182,47,1227,53,1226,59,1181,53"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html" title="Abstract base class for Flow Elements." alt="" coords="663,5,867,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="881,30,929,30,929,35,881,35"/>
+<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element-2-g.html" title="Generic interface that extends IFlowElement with the ability to return a ITypedKey&lt;T&gt; that will allow..." alt="" coords="405,12,608,67"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="622,34,663,33,663,38,622,39"/>
+<area shape="rect" id="Node000007" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_i_aspect_engine-2-g.html" title="Interface representing 51Degrees on&#45;premise aspect engines." alt="" coords="660,84,871,139"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="620,68,667,81,666,87,618,73"/>
+<area shape="rect" id="Node000005" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="152,55,353,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="366,57,405,51,405,56,367,62"/>
+<area shape="rect" id="Node000008" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_i_aspect_engine.html" title="Interface representing 51Degrees on&#45;premise aspect engines." alt="" coords="401,91,612,131"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="367,89,401,94,401,99,366,94"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,63,104,88"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="118,73,152,73,152,78,118,78"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="877,78,949,58,950,63,878,83"/>
+<area shape="rect" id="Node000009" href="$interface_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_i_cloud_request_engine.html" title="The interface for CloudRequestEngine See the Specification." alt="" coords="919,84,1179,139"/>
+<area shape="poly" id="edge11_Node000009_Node000007" title=" " alt="" coords="884,109,919,109,919,114,884,114"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="626,109,660,109,660,114,626,114"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="1192,91,1226,86,1227,92,1193,96"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="fiftyone\pipeline\core\ElementDataDictionary" name="fiftyone\pipeline\core\ElementDataDictionary">
+<area shape="rect" id="Node000001" title="An extension of ElementData with dictionary object storage / lookup." alt="" coords="5,205,184,245"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1core_1_1_element_data.html" title="Stores information created by a FlowElement based on FlowData." alt="" coords="15,116,174,156"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,170,97,205,92,205,92,170"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="15,5,174,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="97,59,97,116,92,116,92,59"/>
+</map>

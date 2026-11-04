@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/device-detection-dotnet/_on_premise_2_update_data_file-_console_2_program_8cs-example.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-dotnet/_on_premise_2_update_data_file-_console_2_program_8cs-example.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -73,9 +73,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <li>Daily auto-update</li>
 </ul>
 <h1>License Key</h1>
-<p>In order to test this example you will need a 51Degrees Enterprise license which can be purchased from our <a href="https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-updatedatafile-console-program.cs&amp;utm_term=header">pricing page</a>.</p>
+<p>In order to test this example you will need a 51Degrees Enterprise license which can be purchased from our <a href="https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-updatedatafile-console-program.cs&amp;utm_term=header">pricing page</a>.</p>
 <h1>Data Files</h1>
-<p>You can find out more about data files, licenses etc. at our <a href="https://51degrees.com/resources/faqs?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-updatedatafile-console-program.cs&amp;utm_term=header">FAQ page</a></p>
+<p>You can find out more about data files, licenses etc. at our <a href="https://51degrees.com/resources/faqs?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-updatedatafile-console-program.cs&amp;utm_term=header">FAQ page</a></p>
 <h2>Enterprise Data File</h2>
 <p>Enterprise (fully-featured) data files are typically released by 51Degrees five days a week (Mon-Fri) and on-premise deployments can fetch and download those files automatically. Equally, customers may choose to download the files themselves and move them into place to be detected by the 51Degrees filesystem watcher.</p>
 <h3>Manual Download</h3>
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 </div><!-- fragment --></li>
 </ul>
 <h1>Location</h1>
-<p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/blob/version/4.5/Examples/OnPremise/UpdateDataFile-Console/Program.cs">GitHub</a>.</p>
+<p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/4.5/Examples/OnPremise/UpdateDataFile-Console/Program.cs">GitHub</a>.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">/* *********************************************************************</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * This Original Work is copyright of 51 Degrees Mobile Experts Limited.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * Copyright 2026 51 Degrees Mobile Experts Limited, Davidson House,</span></div>
@@ -158,8 +158,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"><span class="c-code__comment"> * such notice(s) shall fulfill the requirements of that article.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * ********************************************************************* */</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Engines.Services;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements.html">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_services.html">FiftyOne.Pipeline.Engines.Services</a>;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.Extensions.DependencyInjection;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.Extensions.Logging;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System;</div>
@@ -170,18 +170,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">{</div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>Program</div>
 <div class="c-code__line">    {</div>
-<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>Example : ExampleBase</div>
+<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_example.html">Example</a> : ExampleBase</div>
 <div class="c-code__line">        {</div>
-<div class="c-code__line">            <span class="c-code__keyword">public</span> DeviceDetectionPipelineBuilder <a id="a0" name="a0"></a><a class="code hl_property" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html#a4d47068929eed40034dc8f0fe608beed">PipelineBuilder</a> { <span class="c-code__keyword">get</span>; <span class="c-code__keyword">private</span> <span class="c-code__keyword">set</span>; }</div>
-<div class="c-code__line">            <span class="c-code__keyword">public</span> DeviceDetectionHashEngineBuilder <a id="a1" name="a1"></a><a class="code hl_property" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html#a4bc9cd9ff7edb58e0858f5a43be79a82">EngineBuilder</a> { <span class="c-code__keyword">get</span>; <span class="c-code__keyword">private</span> <span class="c-code__keyword">set</span>; }</div>
+<div class="c-code__line">            <span class="c-code__keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder.html">DeviceDetectionPipelineBuilder</a> <a id="a1" name="a1"></a><a class="code hl_property" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html#a4d47068929eed40034dc8f0fe608beed">PipelineBuilder</a> { <span class="c-code__keyword">get</span>; <span class="c-code__keyword">private</span> <span class="c-code__keyword">set</span>; }</div>
+<div class="c-code__line">            <span class="c-code__keyword">public</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_deff5fc5dbd6983671e3e11d8a01321166.html">DeviceDetectionHashEngineBuilder</a> <a id="a3" name="a3"></a><a class="code hl_property" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html#a4bc9cd9ff7edb58e0858f5a43be79a82">EngineBuilder</a> { <span class="c-code__keyword">get</span>; <span class="c-code__keyword">private</span> <span class="c-code__keyword">set</span>; }</div>
 <div class="c-code__line">            <span class="c-code__keyword">public</span> ILogger&lt;Example&gt; Logger { <span class="c-code__keyword">get</span>; <span class="c-code__keyword">private</span> <span class="c-code__keyword">set</span>; }</div>
 <div class="c-code__line"></div>
 <div class="c-code__line">            <span class="c-code__keyword">private</span> TimeSpan _updateTimeout = <span class="c-code__keyword">new</span> TimeSpan(0, 0, 20);</div>
 <div class="c-code__line"></div>
 <div class="c-code__line">            <span class="c-code__keyword">private</span> CompletionListener CompletionListener;</div>
 <div class="c-code__line"></div>
-<div class="c-code__line">            <span class="c-code__keyword">public</span> <a id="a2" name="a2"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html#a0181f34c8792d54852cd95efebe3a35d">Example</a>(DeviceDetectionPipelineBuilder pipelineBuilder, </div>
-<div class="c-code__line">                DeviceDetectionHashEngineBuilder engineBuilder,</div>
+<div class="c-code__line">            <span class="c-code__keyword">public</span> <a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_example.html">Example</a>(<a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder.html">DeviceDetectionPipelineBuilder</a> pipelineBuilder, </div>
+<div class="c-code__line">                <a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_deff5fc5dbd6983671e3e11d8a01321166.html">DeviceDetectionHashEngineBuilder</a> engineBuilder,</div>
 <div class="c-code__line">                CompletionListener completionListener,</div>
 <div class="c-code__line">                ILogger&lt;Example&gt; logger)</div>
 <div class="c-code__line">            {</div>
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                Logger = logger;</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"></div>
-<div class="c-code__line">            <span class="c-code__keyword">public</span> <span class="c-code__keywordtype">void</span> <a id="a3" name="a3"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html#a47ae2930aa9226fd8c0a81a435619363">Run</a>(<span class="c-code__keywordtype">string</span> dataFile, <span class="c-code__keywordtype">string</span> licenseKey, <span class="c-code__keywordtype">bool</span> interactive)</div>
+<div class="c-code__line">            <span class="c-code__keyword">public</span> <span class="c-code__keywordtype">void</span> <a id="a4" name="a4"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html#a47ae2930aa9226fd8c0a81a435619363">Run</a>(<span class="c-code__keywordtype">string</span> dataFile, <span class="c-code__keywordtype">string</span> licenseKey, <span class="c-code__keywordtype">bool</span> interactive)</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                Logger.LogInformation(<span class="c-code__stringliteral">&quot;Starting example&quot;</span>);</div>
 <div class="c-code__line"> </div>
@@ -250,8 +250,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                        <span class="c-code__comment">// file to a temporary file (createTempDataCopy parameter == true).</span></div>
 <div class="c-code__line">                        <span class="c-code__comment">//</span></div>
 <div class="c-code__line">                        <span class="c-code__comment">// For automatic updates to work you will also need to provide a license key.</span></div>
-<div class="c-code__line">                        <span class="c-code__comment">// A license key can be obtained with a subscription from https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-updatedatafile-console-program.cs&amp;utm_term=run</span></div>
-<div class="c-code__line">                        .UseOnPremise(dataFile, licenseKey, <span class="c-code__keyword">true</span>)</div>
+<div class="c-code__line">                        <span class="c-code__comment">// A license key can be obtained with a subscription from https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-updatedatafile-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                        .<a id="a5" name="a5"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder.html#a9385d426782d4521a0f15877c9c19ab8">UseOnPremise</a>(dataFile, licenseKey, <span class="c-code__keyword">true</span>)</div>
 <div class="c-code__line">                        <span class="c-code__comment">// Enable update on startup, the auto update system</span></div>
 <div class="c-code__line">                        <span class="c-code__comment">// will be used to check for an update before the</span></div>
 <div class="c-code__line">                        <span class="c-code__comment">// device detection engine is created. This will block</span></div>
@@ -274,8 +274,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                        Logger.LogInformation(<span class="c-code__stringliteral">&quot;Update on start-up complete - status - &quot;</span> +</div>
 <div class="c-code__line">                            CompletionListener.Result.Status);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">                        <span class="c-code__keywordflow">if</span> (CompletionListener.Result.Status == AutoUpdateStatus.AUTO_UPDATE_SUCCESS ||</div>
-<div class="c-code__line">                            CompletionListener.Result.Status == AutoUpdateStatus.AUTO_UPDATE_NOT_NEEDED)</div>
+<div class="c-code__line">                        <span class="c-code__keywordflow">if</span> (CompletionListener.Result.Status == <a id="_a6" name="_a6"></a><a class="code hl_enumerationRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_services.html#a4aa046e8af23a2d3b1ba050acd6c4eb4">AutoUpdateStatus</a>.AUTO_UPDATE_SUCCESS ||</div>
+<div class="c-code__line">                            CompletionListener.Result.Status == <a class="code hl_enumerationRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_services.html#a4aa046e8af23a2d3b1ba050acd6c4eb4">AutoUpdateStatus</a>.AUTO_UPDATE_NOT_NEEDED)</div>
 <div class="c-code__line">                        {</div>
 <div class="c-code__line">                            Logger.LogInformation(<span class="c-code__stringliteral">&quot;Modifying downloaded file to trigger reload ... &quot;</span> +</div>
 <div class="c-code__line">                                                  <span class="c-code__stringliteral">&quot;please wait for that to complete&quot;</span>);</div>
@@ -316,9 +316,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                        Logger.LogInformation(<span class="c-code__stringliteral">&quot;Finished Example&quot;</span>);</div>
 <div class="c-code__line">                    }</div>
 <div class="c-code__line">                }</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">catch</span> (Pipeline.Engines.Exceptions.DataUpdateException ex)</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">catch</span> (<a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline.html">Pipeline</a>.<a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html">Engines</a>.<a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_exceptions.html">Exceptions</a>.<a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_engines_1_1_exceptions_1_1_data_update_exception.html">DataUpdateException</a> ex)</div>
 <div class="c-code__line">                {</div>
-<div class="c-code__line">                    <span class="c-code__keywordflow">if</span> (ex.Status != AutoUpdateStatus.AUTO_UPDATE_ERR_429_TOO_MANY_ATTEMPTS)</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">if</span> (ex.Status != <a class="code hl_enumerationRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_services.html#a4aa046e8af23a2d3b1ba050acd6c4eb4">AutoUpdateStatus</a>.AUTO_UPDATE_ERR_429_TOO_MANY_ATTEMPTS)</div>
 <div class="c-code__line">                    {</div>
 <div class="c-code__line">                        <span class="c-code__keywordflow">throw</span>;</div>
 <div class="c-code__line">                    }</div>
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                <span class="c-code__keywordflow">if</span> (licenseKey == <span class="c-code__keyword">null</span>)</div>
 <div class="c-code__line">                {</div>
-<div class="c-code__line">                    licenseKey = Environment.GetEnvironmentVariable(Constants.LICENSE_KEY_ENV_VAR);</div>
+<div class="c-code__line">                    licenseKey = Environment.GetEnvironmentVariable(<a id="_a7" name="_a7"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_engines_1_1_constants.html">Constants</a>.LICENSE_KEY_ENV_VAR);</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">                <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">string</span> keySubmissionPaths = <span class="c-code__stringliteral">&quot;as the second command line argument to this program, or as &quot;</span> +</div>
 <div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;an environment variable named &#39;{Constants.LICENSE_KEY_ENV_VAR}&#39;&quot;</span>;</div>
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    logger.LogError(<span class="c-code__stringliteral">&quot;In order to test this example you will need a 51Degrees &quot;</span> +</div>
 <div class="c-code__line">                        <span class="c-code__stringliteral">&quot;Enterprise license which can be obtained on a trial basis or purchased &quot;</span> +</div>
-<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;from our pricing page https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-updatedatafile-console-program.cs&amp;utm_term=license-key-required. You must supply the &quot;</span> +</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;from our pricing page https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-updatedatafile-console-program.cs&amp;utm_term=license-key-required. You must supply the &quot;</span> +</div>
 <div class="c-code__line">                        <span class="c-code__stringliteral">&quot;license key &quot;</span> + keySubmissionPaths);</div>
 <div class="c-code__line">                    <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> ArgumentException(<span class="c-code__stringliteral">&quot;No license key available&quot;</span>, nameof(licenseKey));</div>
 <div class="c-code__line">                }</div>
@@ -360,7 +360,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                    dataFile = ExampleUtils.GetDataFilePathFromEnv();</div>
 <div class="c-code__line">                    <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(dataFile))</div>
 <div class="c-code__line">                    {</div>
-<div class="c-code__line">                        dataFile = Constants.ENTERPRISE_HASH_DATA_FILE_NAME;</div>
+<div class="c-code__line">                        dataFile = <a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_engines_1_1_constants.html">Constants</a>.ENTERPRISE_HASH_DATA_FILE_NAME;</div>
 <div class="c-code__line">                        logger.LogWarning($<span class="c-code__stringliteral">&quot;No filename specified. Using default &#39;{dataFile}&#39;&quot;</span>);</div>
 <div class="c-code__line">                    }</div>
 <div class="c-code__line">                }</div>
@@ -432,26 +432,39 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                <span class="c-code__comment">// data update end point.</span></div>
 <div class="c-code__line">                .AddSingleton&lt;HttpClient&gt;()</div>
 <div class="c-code__line">                <span class="c-code__comment">// We want to use the standard data update service</span></div>
-<div class="c-code__line">                .AddSingleton&lt;IDataUpdateService, DataUpdateService&gt;()</div>
+<div class="c-code__line">                .AddSingleton&lt;<a id="_a8" name="_a8"></a><a class="code hl_interfaceRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_i_data_update_service.html">IDataUpdateService</a>, <a id="_a9" name="_a9"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_data_update_service.html">DataUpdateService</a>&gt;()</div>
 <div class="c-code__line">                <span class="c-code__comment">// Add the builders we&#39;re going to need.</span></div>
 <div class="c-code__line">                .AddTransient&lt;DeviceDetectionPipelineBuilder&gt;()</div>
-<div class="c-code__line">                .AddTransient&lt;DeviceDetectionHashEngineBuilder&gt;()</div>
+<div class="c-code__line">                .AddTransient&lt;<a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_deff5fc5dbd6983671e3e11d8a01321166.html">DeviceDetectionHashEngineBuilder</a>&gt;()</div>
 <div class="c-code__line">                <span class="c-code__comment">// Add example classes.</span></div>
 <div class="c-code__line">                .AddSingleton&lt;Example&gt;()</div>
 <div class="c-code__line">                .AddSingleton&lt;CompletionListener&gt;()</div>
 <div class="c-code__line">                .BuildServiceProvider())</div>
 <div class="c-code__line">            {</div>
-<div class="c-code__line">                var example = serviceProvider.GetRequiredService&lt;Example&gt;();</div>
+<div class="c-code__line">                var example = serviceProvider.GetRequiredService&lt;<a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_example.html">Example</a>&gt;();</div>
 <div class="c-code__line">                example.Run(dataFile, licenseKey, interactive);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example_html_a0181f34c8792d54852cd95efebe3a35d"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html#a0181f34c8792d54852cd95efebe3a35d">FiftyOne.DeviceDetection.Examples.OnPremise.UpdateDataFile.Program.Example.Example</a></div><div class="ttdeci">Example(DeviceDetectionPipelineBuilder pipelineBuilder, DeviceDetectionHashEngineBuilder engineBuilder, CompletionListener completionListener, ILogger&lt; Example &gt; logger)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> OnPremise/UpdateDataFile-Console/Program.cs:180</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder.html">FiftyOne.DeviceDetection.DeviceDetectionPipelineBuilder</a></div><div class="ttdoc">Builder used to create a Pipeline with a device detection engine.</div><div class="ttdef"><b>Definition</b> DeviceDetectionPipelineBuilder.cs:35</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder_html_a9385d426782d4521a0f15877c9c19ab8"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder.html#a9385d426782d4521a0f15877c9c19ab8">FiftyOne.DeviceDetection.DeviceDetectionPipelineBuilder.UseOnPremise</a></div><div class="ttdeci">DeviceDetectionOnPremisePipelineBuilder UseOnPremise(string datafile, bool createTempDataCopy)</div><div class="ttdoc">Use a 51Degrees on-premise device detection engine to perform device detection.</div><div class="ttdef"><b>Definition</b> DeviceDetectionPipelineBuilder.cs:161</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example_html_a47ae2930aa9226fd8c0a81a435619363"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html#a47ae2930aa9226fd8c0a81a435619363">FiftyOne.DeviceDetection.Examples.OnPremise.UpdateDataFile.Program.Example.Run</a></div><div class="ttdeci">void Run(string dataFile, string licenseKey, bool interactive)</div><div class="ttdoc">Run the example.</div><div class="ttdef"><b>Definition</b> OnPremise/UpdateDataFile-Console/Program.cs:205</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example_html_a4bc9cd9ff7edb58e0858f5a43be79a82"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html#a4bc9cd9ff7edb58e0858f5a43be79a82">FiftyOne.DeviceDetection.Examples.OnPremise.UpdateDataFile.Program.Example.EngineBuilder</a></div><div class="ttdeci">DeviceDetectionHashEngineBuilder EngineBuilder</div><div class="ttdoc">Builder used to create an on-premise device detection engine.</div><div class="ttdef"><b>Definition</b> OnPremise/UpdateDataFile-Console/Program.cs:150</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example_html_a4d47068929eed40034dc8f0fe608beed"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_1_1_program_1_1_example.html#a4d47068929eed40034dc8f0fe608beed">FiftyOne.DeviceDetection.Examples.OnPremise.UpdateDataFile.Program.Example.PipelineBuilder</a></div><div class="ttdeci">DeviceDetectionPipelineBuilder PipelineBuilder</div><div class="ttdoc">Builder used to create a Pipeline instance.</div><div class="ttdef"><b>Definition</b> OnPremise/UpdateDataFile-Console/Program.cs:146</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_deff5fc5dbd6983671e3e11d8a01321166_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_deff5fc5dbd6983671e3e11d8a01321166.html">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements.DeviceDetectionHashEngineBuilder</a></div><div class="ttdoc">Complete builder implementation for creating on premise DeviceDetectionHashEngine engines.</div><div class="ttdef"><b>Definition</b> DeviceDetectionHashEngineBuilder.cs:38</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_engines_1_1_constants_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_engines_1_1_constants.html">FiftyOne::Pipeline::Engines::Constants</a></div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_engines_1_1_exceptions_1_1_data_update_exception_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_engines_1_1_exceptions_1_1_data_update_exception.html">FiftyOne::Pipeline::Engines::Exceptions::DataUpdateException</a></div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_data_update_service_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_data_update_service.html">FiftyOne::Pipeline::Engines::Services::DataUpdateService</a></div></div>
+<div class="ttc" id="ainterface_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_i_data_update_service_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_i_data_update_service.html">FiftyOne::Pipeline::Engines::Services::IDataUpdateService</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_example_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_example.html">FiftyOne.DeviceDetection.Example</a></div><div class="ttdef"><b>Definition</b> PmpWebTemplateTests.cs:32</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_update_data_file.html">FiftyOne.DeviceDetection.Examples.OnPremise.UpdateDataFile</a></div><div class="ttdef"><b>Definition</b> CompletionListener.cs:28</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements.html">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements</a></div><div class="ttdef"><b>Definition</b> DeviceDetectionHashEngine.cs:39</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_1_1_exceptions_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_exceptions.html">FiftyOne::Pipeline::Engines::Exceptions</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_1_1_services_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_services.html">FiftyOne::Pipeline::Engines::Services</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_1_1_services_html_a4aa046e8af23a2d3b1ba050acd6c4eb4"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_services.html#a4aa046e8af23a2d3b1ba050acd6c4eb4">FiftyOne::Pipeline::Engines::Services::AutoUpdateStatus</a></div><div class="ttdeci">AutoUpdateStatus</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html">FiftyOne::Pipeline::Engines</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline.html">FiftyOne::Pipeline</a></div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

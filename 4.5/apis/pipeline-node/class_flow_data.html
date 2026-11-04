@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/pipeline-node/class_flow_data.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/pipeline-node/class_flow_data.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -309,7 +309,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Processes the flowData (running the process methods on all connected). </p>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{Promise} result of processing </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{Promise} result of processing. Once processing has finished, the promise rejects with an AggregateError holding every error recorded in flowData.errors, unless the pipeline suppresses process exceptions. </dd></dl>
 
 </div>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/location-java/classfiftyone_1_1geolocation_1_1core_1_1_geo_engine_helper.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/location-java/classfiftyone_1_1geolocation_1_1core_1_1_geo_engine_helper.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -125,8 +125,8 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="c-table__row memitem:a31b376c1b6468c770e7117bb4d0c477e" id="r_a31b376c1b6468c770e7117bb4d0c477e"><td class="c-table__cell">static&#160;<a class="el" href="classfiftyone_1_1geolocation_1_1core_1_1_geo_engine_helper_1_1_geo_lookup_result.html">GeoLookupResult</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a31b376c1b6468c770e7117bb4d0c477e">performGeoLookup</a> (FlowData data, HttpClient webClient, <a class="el" href="interfacefiftyone_1_1geolocation_1_1core_1_1_request_formatter.html">RequestFormatter</a> requestFormatter)  throws IOException </td></tr>
-<tr class="c-table__row memdesc:a31b376c1b6468c770e7117bb4d0c477e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Use evidence from the specified FlowData instance to construct a query.  <br /></td></tr>
+<tr class="c-table__row memitem:a31b376c1b6468c770e7117bb4d0c477e" id="r_a31b376c1b6468c770e7117bb4d0c477e"><td class="c-table__cell">static&#160;<a class="el" href="classfiftyone_1_1geolocation_1_1core_1_1_geo_engine_helper_1_1_geo_lookup_result.html">GeoLookupResult</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a31b376c1b6468c770e7117bb4d0c477e">performGeoLookup</a> (<a class="elRef" href="../../pipeline-java/4.4/interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a> data, <a class="elRef" href="../../pipeline-java/4.4/interfacefiftyone_1_1pipeline_1_1engines_1_1services_1_1_http_client.html">HttpClient</a> webClient, <a class="el" href="interfacefiftyone_1_1geolocation_1_1core_1_1_request_formatter.html">RequestFormatter</a> requestFormatter)  throws IOException </td></tr>
+<tr class="c-table__row memdesc:a31b376c1b6468c770e7117bb4d0c477e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Use evidence from the specified <a class="elRef" href="../../pipeline-java/4.4/interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a> instance to construct a query.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a31b376c1b6468c770e7117bb4d0c477e" name="a31b376c1b6468c770e7117bb4d0c477e"></a>
@@ -143,12 +143,12 @@ Static Public Member Functions</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell"><a class="el" href="classfiftyone_1_1geolocation_1_1core_1_1_geo_engine_helper_1_1_geo_lookup_result.html">GeoLookupResult</a> fiftyone.geolocation.core.GeoEngineHelper.performGeoLookup </td>
           <td>(</td>
-          <td class="c-table__cell">FlowData</td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span>, </td>
+          <td class="c-table__cell"><a class="elRef" href="../../pipeline-java/4.4/interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">HttpClient</td>          <td class="c-table__cell"><span class="paramname"><em>webClient</em></span>, </td>
+          <td class="c-table__cell"><a class="elRef" href="../../pipeline-java/4.4/interfacefiftyone_1_1pipeline_1_1engines_1_1services_1_1_http_client.html">HttpClient</a></td>          <td class="c-table__cell"><span class="paramname"><em>webClient</em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
@@ -165,16 +165,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="c-member__body">
 
-<p>Use evidence from the specified FlowData instance to construct a query. </p>
+<p>Use evidence from the specified <a class="elRef" href="../../pipeline-java/4.4/interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a> instance to construct a query. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>the flow data to process </td></tr>
-    <tr><td class="paramname">webClient</td><td>the HttpClient to use when making a request to the geo-location service. </td></tr>
+    <tr><td class="paramname">webClient</td><td>the <a class="elRef" href="../../pipeline-java/4.4/interfacefiftyone_1_1pipeline_1_1engines_1_1services_1_1_http_client.html">HttpClient</a> to use when making a request to the geo-location service. </td></tr>
     <tr><td class="paramname">requestFormatter</td><td>a formatter that will create a URL that can be used to query a web service based on the supplied <a class="el" href="classfiftyone_1_1geolocation_1_1core_1_1data_1_1_geo_evidence.html">GeoEvidence</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">A new <a class="el" href="classfiftyone_1_1geolocation_1_1core_1_1_geo_engine_helper_1_1_geo_lookup_result.html" title="The result of a call to performGeoLookup.">GeoLookupResult</a> instance. If the supplied FlowData contains the required evidence then this will contain the raw response from the web service. If not, it will contain the JavaScript to run on the client device in order to supply the required evidence. </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">A new <a class="el" href="classfiftyone_1_1geolocation_1_1core_1_1_geo_engine_helper_1_1_geo_lookup_result.html" title="The result of a call to performGeoLookup.">GeoLookupResult</a> instance. If the supplied <a class="elRef" href="../../pipeline-java/4.4/interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a> contains the required evidence then this will contain the raw response from the web service. If not, it will contain the <a class="elRef" href="../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1core_1_1data_1_1types_1_1_java_script.html">JavaScript</a> to run on the client device in order to supply the required evidence. </dd></dl>
 
 </div>
 </div>

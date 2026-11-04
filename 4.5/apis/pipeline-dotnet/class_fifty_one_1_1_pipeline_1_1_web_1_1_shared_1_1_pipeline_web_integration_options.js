@@ -1,0 +1,7 @@
+var class_fifty_one_1_1_pipeline_1_1_web_1_1_shared_1_1_pipeline_web_integration_options =
+[
+    [ "PipelineWebIntegrationOptions", "class_fifty_one_1_1_pipeline_1_1_web_1_1_shared_1_1_pipeline_web_integration_options.html#a650af77780f45551933dbf5285384fac", null ],
+    [ "ClientSideEvidenceEnabled", "class_fifty_one_1_1_pipeline_1_1_web_1_1_shared_1_1_pipeline_web_integration_options.html#ad6849437e0299dd6decd543e77874123", null ],
+    [ "UseAsyncScript", "class_fifty_one_1_1_pipeline_1_1_web_1_1_shared_1_1_pipeline_web_integration_options.html#a0bf4ca32a05937122510d26bf91ffaac", null ],
+    [ "UseSetHeaderProperties", "class_fifty_one_1_1_pipeline_1_1_web_1_1_shared_1_1_pipeline_web_integration_options.html#a7e4a74cc8e70d52ddf6990acd4e61ff2", null ]
+];

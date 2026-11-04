@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/_product_summaries__tested_versions.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/_product_summaries__tested_versions.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -95,8 +95,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_product_summa
 <h2 class="doxsection" id="building-from-source">Building from source<a class="headerlink" href="#building-from-source" aria-label="Permalink to this section">🔗</a></h2>
 <p>We automatically test and distribute binary packages for a limited list of platforms and architectures. In case the provided binary package does not run on your environment - you have to build the library from source for your specific platform and architecture. All 51Degrees language libraries provide instructions on building the library from source. F.e. see:</p>
 <ul>
-<li><a href="https://github.com/51Degrees/device-detection-dotnet?tab=readme-ov-file#build-from-source">Building Device Detection .NET library from source</a></li>
-<li><a href="https://github.com/51Degrees/device-detection-java?tab=readme-ov-file#build-and-install-from-source">Building Device Detection Java library from source</a></li>
+<li><a href="https://github.com/51Degrees/51degrees-dotnet/blob/main/device-detection/README.md#build-from-source">Building Device Detection .NET library from source</a></li>
+<li><a href="https://github.com/51Degrees/51degrees-java/tree/main/device-detection#build-and-install-from-source">Building Device Detection Java library from source</a></li>
 </ul>
 <h2 class="doxsection" id="automation">Automation<a class="headerlink" href="#automation" aria-label="Permalink to this section">🔗</a></h2>
 <p>The tests cover a wide array of scenarios and are available to view in our repositories on <a href="https://github.com/51Degrees">GitHub</a>. In general, we apply the following guidelines when deciding which platforms and versions to test against:</p><ul>
@@ -118,14 +118,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_product_summa
       grabTestedVersions("51degrees-cxx", "cxx-versions", [
           { title: "Architecture", getValue: (d) => d.Arch }
       ], "dd");
-      grabTestedVersions("device-detection-java", "java-versions", [
+      grabTestedVersions("51degrees-java", "java-versions", [
           { title: "JDK", getValue: d => d.JavaSDKEnvVar.split("_")[2] },
           { title: "Architecture", getValue: d => d.Image.endsWith("-arm") ? "arm64" : d.JavaSDKEnvVar.split("_")[3].toLowerCase() }
       ]);
-      grabTestedVersions("device-detection-dotnet", "dotnet-versions", [
+      grabTestedVersions("51degrees-dotnet", "dotnet-versions", [
           { title: "Architecture", getValue: d => d.Arch }
       ]);
-      grabTestedVersions("device-detection-python", "python-versions", [
+      grabTestedVersions("51degrees-python", "python-versions", [
           { title: "Python Version", getValue: d => d.LanguageVersion }
       ]);
       grabTestedVersions("51degrees-node", "node-versions", [
@@ -134,13 +134,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_product_summa
       grabTestedVersions("51degrees-node", "ipi-node-versions", [
           { title: "Node Version", getValue: d => d.LanguageVersion }
       ]);
-      grabTestedVersions("device-detection-go", "go-versions", [
+      grabTestedVersions("51degrees-go", "go-versions", [
           { title: "GoLang Version", getValue: d => d.LanguageVersion }
       ]);
-      grabTestedVersions("device-detection-php", "php-versions", [
+      grabTestedVersions("51degrees-php", "php-versions", [
           { title: "PHP Version", getValue: d => d.LanguageVersion }
       ]);
-      grabTestedVersions("device-detection-php-onpremise", "php-onpremise-versions", [
+      grabTestedVersions("51degrees-php", "php-onpremise-versions", [
           { title: "PHP Version", getValue: d => d.LanguageVersion }
       ]);
       grabTestedVersions("pipeline-wordpress", "wordpress-versions", [

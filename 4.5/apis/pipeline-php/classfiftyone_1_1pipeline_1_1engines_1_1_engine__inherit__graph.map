@@ -1,0 +1,29 @@
+<map id="fiftyone\pipeline\engines\Engine" name="fiftyone\pipeline\engines\Engine">
+<area shape="rect" id="Node000001" title="An engine is an extension of the Pipeline Core flowElement class It allows for a cache,..." alt="" coords="212,133,395,173"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_request_engine.html" title=" " alt="" coords="443,5,701,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="337,122,385,87,442,55,473,43,475,48,444,60,388,92,340,127"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise.html" title=" " alt="" coords="455,69,689,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="401,127,487,107,488,112,402,133"/>
+<area shape="rect" id="Node000005" href="$classfiftyone_1_1pipeline_1_1engines_1_1_cloud_engine_base.html" title="Intermediary between Engine and CloudEngine classes." alt="" coords="481,133,663,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="408,151,480,151,480,156,408,156"/>
+<area shape="rect" id="Node000011" href="$classfiftyone_1_1pipeline_1_1ipintelligence_1_1_ip_intelligence_on_premise.html" title="The on&#45;premise IP intelligence engine uses a local data file (.ipi) to generate a set of properties a..." alt="" coords="463,197,681,237"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="402,174,488,195,487,200,401,179"/>
+<area shape="rect" id="Node000012" href="$classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine.html" title="Generic translation engine." alt="" coords="471,261,673,301"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="340,180,388,215,444,247,475,259,473,264,442,252,385,219,337,184"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="5,133,164,173"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,151,212,151,212,156,178,156"/>
+<area shape="rect" id="Node000006" href="$classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_engine.html" title="This is a template for all 51Degrees cloud engines." alt="" coords="769,133,1028,173"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="677,151,769,151,769,156,677,156"/>
+<area shape="rect" id="Node000007" href="$classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_cloud.html" title=" " alt="" coords="1096,37,1331,77"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="971,127,1095,87,1136,75,1138,80,1097,92,972,132"/>
+<area shape="rect" id="Node000008" href="$classfiftyone_1_1pipeline_1_1devicedetection_1_1_hardware_profile_cloud.html" title=" " alt="" coords="1096,101,1331,141"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="1042,136,1095,131,1096,136,1042,141"/>
+<area shape="rect" id="Node000009" href="$classfiftyone_1_1pipeline_1_1geolocation_1_1_geo_location_cloud.html" title=" " alt="" coords="1110,165,1317,205"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="1042,165,1110,172,1110,178,1041,171"/>
+<area shape="rect" id="Node000010" href="$classfiftyone_1_1pipeline_1_1ipintelligence_1_1_ip_intelligence_cloud.html" title="The IP intelligence cloud engine requires the 51Degrees CloudRequestEngine to be placed in a pipeline..." alt="" coords="1104,229,1323,269"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="972,175,1097,215,1138,227,1136,232,1095,220,971,180"/>
+<area shape="rect" id="Node000013" href="$classfiftyone_1_1pipeline_1_1ipintelligence_1_1translation_1_1_countries_translation_engine.html" title="Engine 2: translates the weighted English country names from Engine 1 into the browser language,..." alt="" coords="760,229,1037,269"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="686,268,760,260,760,266,687,273"/>
+<area shape="rect" id="Node000014" href="$classfiftyone_1_1pipeline_1_1ipintelligence_1_1translation_1_1_country_code_translation_engine.html" title="Engine 1: translates the weighted ISO country codes emitted by the IP intelligence engine (CountryCod..." alt="" coords="749,293,1048,333"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="687,290,749,296,749,301,686,295"/>
+</map>

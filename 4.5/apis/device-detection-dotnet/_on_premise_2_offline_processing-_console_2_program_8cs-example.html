@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/device-detection-dotnet/_on_premise_2_offline_processing-_console_2_program_8cs-example.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-dotnet/_on_premise_2_offline_processing-_console_2_program_8cs-example.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">header.sec-ch-ua-platform: <span class="c-code__stringliteral">&#39;&quot;Android&quot;&#39;</span></div>
 </div><!-- fragment --><p>We create a device detection pipeline to read the data and find out about the associated device, we write this data to a YAML or CSV formatted output stream.</p>
 <p>As well as explaining the basic operation of off line processing using the defaults, for advanced operation this example can be used to experiment with tuning device detection for performance and predictive power using Performance Profile, Difference, and Drift settings.</p>
-<p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/blob/version/4.5/Examples/OnPremise/OfflineProcessing-Console/Program.cs">GitHub</a>.</p>
+<p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/4.5/Examples/OnPremise/OfflineProcessing-Console/Program.cs">GitHub</a>.</p>
 <p> 
     <p>
     This example requires a local data file. The free 'Lite' data file can be acquired by
@@ -119,8 +119,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Ignore Spelling: Yaml</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Core.FlowElements;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Engines;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements.html">FiftyOne.Pipeline.Core.FlowElements</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html">FiftyOne.Pipeline.Engines</a>;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.Extensions.Logging;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.Collections.Generic;</div>
@@ -139,12 +139,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                TextReader evidenceYaml,</div>
 <div class="c-code__line">                ILoggerFactory loggerFactory,</div>
 <div class="c-code__line">                IExampleWriter writer,</div>
-<div class="c-code__line">                PerformanceProfiles profile = PerformanceProfiles.LowMemory)</div>
+<div class="c-code__line">                <a id="_a1" name="_a1"></a><a class="code hl_enumerationRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html#a7e8161b9ca37059040ff754ba3e668f1">PerformanceProfiles</a> profile = <a class="code hl_enumerationRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html#a7e8161b9ca37059040ff754ba3e668f1">PerformanceProfiles</a>.LowMemory)</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                var logger = loggerFactory.CreateLogger&lt;Program&gt;();</div>
 <div class="c-code__line">                <span class="c-code__comment">// In this example, we use the DeviceDetectionPipelineBuilder and configure it</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// in code. For more information about builders in general see the documentation at</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                <span class="c-code__comment">// Note that we wrap the creation of a pipeline in a using to control its life cycle</span></div>
 <div class="c-code__line">                <span class="c-code__keyword">using</span> (var pipeline = <span class="c-code__keyword">new</span> DeviceDetectionPipelineBuilder(loggerFactory)</div>
@@ -152,9 +152,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                    <span class="c-code__comment">// We use the low memory profile as its performance is sufficient for this</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// example. See the documentation for more detail on this and other</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// configuration options:</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_device_detection__features__performance_options.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_device_detection__features__performance_options.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
 <div class="c-code__line">                    .SetPerformanceProfile(profile)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Inhibit sharing usage for this example.</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// In general, off line processing usage should NOT be shared back to 51Degrees.</span></div>
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                    <span class="c-code__comment">// in order to help us improve detection of new devices/browsers/etc, then</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// this additional data will need to be collected and included as evidence</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// to the Pipeline. See</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run#Low_Level_Usage_Sharing</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run#Low_Level_Usage_Sharing</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// for more details on this.</span></div>
 <div class="c-code__line">                    .SetShareUsage(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Inhibit auto-update of the data file for this example</span></div>
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                    .SetDataFileSystemWatcher(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                    .Build())</div>
 <div class="c-code__line">                {</div>
-<div class="c-code__line">                    <span class="c-code__keywordflow">foreach</span> (var evidence <span class="c-code__keywordflow">in</span> <a id="a1" name="a1"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_base.html#aee66c61f673df1339530560dda6f907d">GetEvidence</a>(evidenceYaml, logger))</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">foreach</span> (var evidence <span class="c-code__keywordflow">in</span> <a id="a2" name="a2"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_base.html#aee66c61f673df1339530560dda6f907d">GetEvidence</a>(evidenceYaml, logger))</div>
 <div class="c-code__line">                    {</div>
 <div class="c-code__line">                        <span class="c-code__comment">// Pass the record to the pipeline as evidence and</span></div>
 <div class="c-code__line">                        <span class="c-code__comment">// return the result as a dictionary.</span></div>
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"></div>
 <div class="c-code__line">            <span class="c-code__keyword">private</span> Dictionary&lt;string, string&gt; AnalyseEvidence(</div>
 <div class="c-code__line">                Dictionary&lt;string, object&gt; evidence,</div>
-<div class="c-code__line">                IPipeline pipeline)</div>
+<div class="c-code__line">                <a id="_a3" name="_a3"></a><a class="code hl_interfaceRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html">IPipeline</a> pipeline)</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                <span class="c-code__comment">// FlowData is a data structure that is used to convey information required for</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// detection and the results of the detection through the pipeline.</span></div>
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                <span class="c-code__comment">//</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// FlowData is wrapped in a using block in order to ensure that the unmanaged</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// resources allocated by the native device detection library are freed</span></div>
-<div class="c-code__line">                <span class="c-code__keyword">using</span> (var data = pipeline.CreateFlowData())</div>
+<div class="c-code__line">                <span class="c-code__keyword">using</span> (var data = pipeline.<a id="a4" name="a4"></a><a class="code hl_functionRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html#a6adf8dd2a8f0435adb8bf9e857b922db">CreateFlowData</a>())</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Add the evidence values to the flow data</span></div>
 <div class="c-code__line">                    data.AddEvidence(evidence);</div>
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"> </div>
 <div class="c-code__line">                    <span class="c-code__comment">// Other fields can easily be added when available in the source data file.</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// The following could be uncommented when used with a paid for Enterprise</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// data file. See https://51degrees.com/developers/property-dictionary?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=analyseevidence</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// data file. See https://51degrees.com/developers/property-dictionary?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=analyseevidence</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// for a full list of available properties.</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                    <span class="c-code__comment">//output.Add(&quot;device.hardwarevendor&quot;, device.HardwareVendor.GetHumanReadable());</span></div>
@@ -261,13 +261,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                <span class="c-code__comment">//</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// Note that the Lite data file contains a more limited set of properties than the</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// Enterprise data file. Find out about the Enterprise data file on our pricing page:</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=main</span></div>
-<div class="c-code__line">                ExampleUtils.FindDataFile(Constants.LITE_HASH_DATA_FILE_NAME);</div>
+<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=main</span></div>
+<div class="c-code__line">                ExampleUtils.FindDataFile(<a id="_a5" name="_a5"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html">Constants</a>.LITE_HASH_DATA_FILE_NAME);</div>
 <div class="c-code__line">            <span class="c-code__comment">// Do the same for the yaml evidence file.</span></div>
 <div class="c-code__line">            var evidenceFile = args.Length &gt; 1 ? args[1] :</div>
 <div class="c-code__line">                <span class="c-code__comment">// This file contains the 20,000 most commonly seen combinations of header values </span></div>
 <div class="c-code__line">                <span class="c-code__comment">// that are relevant to device detection. For example, User-Agent and UA-CH headers.</span></div>
-<div class="c-code__line">                ExampleUtils.FindFile(Constants.YAML_EVIDENCE_FILE_NAME);</div>
+<div class="c-code__line">                ExampleUtils.FindFile(<a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html">Constants</a>.YAML_EVIDENCE_FILE_NAME);</div>
 <div class="c-code__line">            <span class="c-code__comment">// Finally, get the location for the output file. Use the same location as the</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// evidence if a path is not supplied on the command line.</span></div>
 <div class="c-code__line">            var outputFile = args.Length &gt; 2 ? args[2] :</div>
@@ -306,7 +306,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">}</div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_example_base_html_aee66c61f673df1339530560dda6f907d"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_base.html#aee66c61f673df1339530560dda6f907d">FiftyOne.DeviceDetection.Examples.ExampleBase.GetEvidence</a></div><div class="ttdeci">static IEnumerable&lt; Dictionary&lt; string, object &gt; &gt; GetEvidence(TextReader evidenceReader, ILogger logger=null)</div><div class="ttdoc">Read the specified yaml-formatted stream and return evidence collections.</div><div class="ttdef"><b>Definition</b> ExampleBase.cs:105</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_offline_processing_1_1_program_1_1_example_html_a5f6cbfa9d39b0fe5b34f76ccf667683a"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_offline_processing_1_1_program_1_1_example.html#a5f6cbfa9d39b0fe5b34f76ccf667683a">FiftyOne.DeviceDetection.Examples.OnPremise.OfflineProcessing.Program.Example.Run</a></div><div class="ttdeci">void Run(string dataFile, TextReader evidenceYaml, ILoggerFactory loggerFactory, IExampleWriter writer, PerformanceProfiles profile=PerformanceProfiles.LowMemory)</div><div class="ttdoc">Process a YAML representation of evidence - and create a YAML output containing the processed evidenc...</div><div class="ttdef"><b>Definition</b> OnPremise/OfflineProcessing-Console/Program.cs:92</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_core_1_1_constants_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html">FiftyOne::Pipeline::Core::Constants</a></div></div>
+<div class="ttc" id="ainterface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html">FiftyOne::Pipeline::Core::FlowElements::IPipeline</a></div></div>
+<div class="ttc" id="ainterface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline_html_a6adf8dd2a8f0435adb8bf9e857b922db"><div class="ttname"><a href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html#a6adf8dd2a8f0435adb8bf9e857b922db">FiftyOne::Pipeline::Core::FlowElements::IPipeline::CreateFlowData</a></div><div class="ttdeci">IFlowData CreateFlowData()</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_offline_processing_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_offline_processing.html">FiftyOne.DeviceDetection.Examples.OnPremise.OfflineProcessing</a></div><div class="ttdef"><b>Definition</b> OnPremise/OfflineProcessing-Console/Program.cs:67</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements.html">FiftyOne::Pipeline::Core::FlowElements</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html">FiftyOne::Pipeline::Engines</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_html_a7e8161b9ca37059040ff754ba3e668f1"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html#a7e8161b9ca37059040ff754ba3e668f1">FiftyOne::Pipeline::Engines::PerformanceProfiles</a></div><div class="ttdeci">PerformanceProfiles</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

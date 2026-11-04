@@ -25,14 +25,13 @@
 var NAVTREE =
 [
   [ "51Degrees IP Intelligence .NET", "index.html", [
-    [ "Proposal: Support Weighted Values in the IPI Dataset (C Reader Side)", "md__2home_2runner_2work_2documentation_2documentation_2apis_2ip-intelligence-dotnet_2_fifty_one_a06a85aee691049d3148640c58c3ac60.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Properties", "functions_prop.html", null ],
         [ "Events", "functions_evnt.html", null ]
@@ -49,7 +48,8 @@ var NAVTREEHIDESYNC = true;
 var NAVTREEINDEX =
 [
 "_cloud_2_framework-_web_2_default_8aspx_8cs-example.html",
-"class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_example_utils.html#a9459f4d52849ecfe1e105c96c708dc8f"
+"class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants.html#a28bc635971f8655500cf40ddf139a031",
+"functions_func_d.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -59,6 +59,7 @@ var annotated =
                 [ "ResultsBaseSwig", "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_results_base_swig.html", null ],
                 [ "ResultsIpiSwig", "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_results_ipi_swig.html", null ],
                 [ "StringValueSwig", "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_string_value_swig.html", null ],
+                [ "SWIGTYPE_p_unsigned_char", "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_s_w_i_g_t_y_p_e__p__unsigned__char.html", null ],
                 [ "UTF8StringSwig", "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_u_t_f8_string_swig.html", null ],
                 [ "UTF8StringValueSwig", "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_u_t_f8_string_value_swig.html", null ],
                 [ "ValueMetaDataCollectionSwig", "classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1interop_1_1swig_1_1_value_meta_data_collection_swig.html", null ],

@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
-  <link rel="canonical" href="/documentation/apis/ip-intelligence-dotnet/_on_premise_2_getting_started-_web_2_startup_8cs-example.html">
-  <link rel="alternate" hreflang="en-US" href="/documentation/apis/ip-intelligence-dotnet/_on_premise_2_getting_started-_web_2_startup_8cs-example.html" />
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/ip-intelligence-dotnet/_on_premise_2_getting_started-_web_2_startup_8cs-example.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/ip-intelligence-dotnet/_on_premise_2_getting_started-_web_2_startup_8cs-example.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <li>How evidence from the web request is automatically passed to the Pipeline</li>
 <li>How to retrieve the results in your web application</li>
 </ol>
-<p>The source code for this example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-dotnet-examples/tree/master/Examples/OnPremise/GettingStarted-Web">GitHub</a>.</p>
-<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-onpremise-gettingstarted-web-startup.cs&amp;utm_term=header">contact us</a>.</p>
+<p>The source code for this example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/examples/ip-intelligence/OnPremise/GettingStarted-Web">GitHub</a>.</p>
+<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-gettingstarted-web-startup.cs&amp;utm_term=header">contact us</a>.</p>
 <p>Required NuGet Dependencies:</p><ul>
 <li><a href="https://www.nuget.org/packages/Microsoft.AspNetCore.App/">Microsoft.AspNetCore.App</a></li>
 <li><a href="https://www.nuget.org/packages/FiftyOne.IpIntelligence/">FiftyOne.IpIntelligence</a></li>
@@ -100,14 +100,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">  },</div>
 <div class="c-code__line">  &quot;AllowedHosts&quot;: &quot;*&quot;,</div>
 <div class="c-code__line">  // For a sample configuration file demonstrating all available options, see </div>
-<div class="c-code__line">  // https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/sample-configuration.json</div>
+<div class="c-code__line">  // https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/sample-configuration.json</div>
 <div class="c-code__line">  &quot;PipelineOptions&quot;: {</div>
 <div class="c-code__line">    &quot;Elements&quot;: [</div>
 <div class="c-code__line">      {</div>
 <div class="c-code__line">        &quot;BuilderName&quot;: &quot;IpiOnPremiseEngineBuilder&quot;,</div>
 <div class="c-code__line">        &quot;BuildParameters&quot;: {</div>
 <div class="c-code__line">          //Make sure this data file is in the ip-intelligence-data directory</div>
-<div class="c-code__line">          &quot;DataFile&quot;: &quot;../../../ip-intelligence-data/51Degrees-EnterpriseIpiV41.ipi&quot;,</div>
+<div class="c-code__line">          &quot;DataFile&quot;: &quot;51Degrees-EnterpriseIpiV41.ipi&quot;,</div>
 <div class="c-code__line">          &quot;CreateTempDataCopy&quot;: false,</div>
 <div class="c-code__line">          &quot;AutoUpdate&quot;: false,</div>
 <div class="c-code__line">          &quot;PerformanceProfile&quot;: &quot;LowMemory&quot;,</div>

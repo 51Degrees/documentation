@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
-  <link rel="canonical" href="/documentation/apis/ip-intelligence-dotnet/_cloud_2_getting_started-_web_2_startup_8cs-example.html">
-  <link rel="alternate" hreflang="en-US" href="/documentation/apis/ip-intelligence-dotnet/_cloud_2_getting_started-_web_2_startup_8cs-example.html" />
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/ip-intelligence-dotnet/_cloud_2_getting_started-_web_2_startup_8cs-example.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/ip-intelligence-dotnet/_cloud_2_getting_started-_web_2_startup_8cs-example.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_getti
 <li>How the PipelineFilter automatically processes requests and makes results available</li>
 <li>How to retrieve IP Intelligence results in your web application</li>
 </ol>
-<p>The source code for this example is available in full on <a href="https://github.com/51Degrees/ip-intelligence-dotnet-examples/tree/main/Examples/Cloud/GettingStarted-Web">GitHub</a>.</p>
+<p>The source code for this example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/examples/ip-intelligence/Cloud/GettingStarted-Web">GitHub</a>.</p>
 <p>To run this example, you will eventually need to create a Resource Key, but for now you should use the GettingStarted-API example - just run it and point this example to its custom endpoint to simulate a custom hosted Cloud service. Resource Key is used as shorthand to store the particular set of properties you are interested in as well as any associated License Keys that entitle you to increased request limits and/or paid-for properties, but it is not yet available for IP Intelligence.</p>
 <p>Required NuGet Dependencies:</p><ul>
 <li><a href="https://www.nuget.org/packages/Microsoft.AspNetCore.App/">Microsoft.AspNetCore.App</a></li>
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_getti
 </div><!-- fragment --><p>The results of detection can be accessed by adding a dependency on IFlowDataProvider. This can then be used to interrogate the data. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">var flowData = _provider.GetFlowData();</div>
 <div class="c-code__line">var deviceData = flowData.Get&lt;IDeviceData&gt;();</div>
 <div class="c-code__line">var hardwareVendor = deviceData.HardwareVendor;</div>
-</div><!-- fragment --><p>Results can also be accessed in client-side code by using the <code>fod</code> object. See the <a href="https://51degrees.com/pipeline-dotnet/class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_java_script_builder_element_builder.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=ip-intelligence-dotnet-examples&amp;utm_content=examples-cloud-gettingstarted-web-startup.cs&amp;utm_term=header">JavaScriptBuilderElementBuilder</a> for details on available settings such as changing the <code>fod</code> name. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">window.onload = function () {</div>
+</div><!-- fragment --><p>Results can also be accessed in client-side code by using the <code>fod</code> object. See the <a href="https://51degrees.com/pipeline-dotnet/class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_java_script_builder_element_builder.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-cloud-gettingstarted-web-startup.cs&amp;utm_term=header">JavaScriptBuilderElementBuilder</a> for details on available settings such as changing the <code>fod</code> name. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">window.onload = function () {</div>
 <div class="c-code__line">    fod.complete(function(data) {</div>
 <div class="c-code__line">        var hardwareName = data.device.hardwarename;</div>
 <div class="c-code__line">        alert(hardwareName.join(&quot;, &quot;));</div>

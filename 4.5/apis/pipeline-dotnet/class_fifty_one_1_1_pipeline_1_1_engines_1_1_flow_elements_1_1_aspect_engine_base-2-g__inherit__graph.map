@@ -1,27 +1,29 @@
 <map id="FiftyOne.Pipeline.Engines.FlowElements.AspectEngineBase&lt; T, TMeta &gt;" name="FiftyOne.Pipeline.Engines.FlowElements.AspectEngineBase&lt; T, TMeta &gt;">
-<area shape="rect" id="Node000001" title="Base class for 51Degrees aspect engines." alt="" coords="919,70,1157,125"/>
-<area shape="rect" id="Node000008" href="$class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_slow_source_engine.html" title="An aspect engine that takes a while to produce its value, so that a pipeline configured for lazy load..." alt="" coords="1227,5,1461,45"/>
-<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="1167,64,1257,43,1259,48,1168,69"/>
-<area shape="rect" id="Node000009" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_property_keyed_engine-2-g.html" title="Base class for engines that use an index of property values to profile ids to populate one or more pr..." alt="" coords="1228,70,1460,125"/>
-<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="1171,95,1228,95,1228,100,1171,100"/>
-<area shape="rect" id="Node000010" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_on_premise_aspect_engine_base-2-g.html" title="Base class for 51Degrees on&#45;premise aspect engines." alt="" coords="1205,149,1483,203"/>
-<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1159,126,1238,146,1236,151,1157,131"/>
-<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html" title="Abstract base class for Flow Elements." alt="" coords="663,30,867,85"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="881,72,919,77,918,82,881,77"/>
-<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element-2-g.html" title="Generic interface that extends IFlowElement with the ability to return a ITypedKey&lt;T&gt; that will allow..." alt="" coords="405,37,608,91"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="622,58,663,57,663,63,622,64"/>
-<area shape="rect" id="Node000006" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_i_aspect_engine-2-g.html" title="Interface representing 51Degrees on&#45;premise aspect engines." alt="" coords="660,109,871,163"/>
-<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="620,93,667,106,666,111,618,98"/>
-<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="152,80,353,120"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="366,81,405,76,405,81,367,87"/>
-<area shape="rect" id="Node000007" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_i_aspect_engine.html" title="Interface representing 51Degrees on&#45;premise aspect engines." alt="" coords="401,116,612,156"/>
-<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="367,113,401,118,401,124,366,119"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="5,87,104,113"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="118,97,152,97,152,103,118,103"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="884,117,918,112,919,117,884,122"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="626,133,660,133,660,139,626,139"/>
-<area shape="rect" id="Node000011" href="$class_examples_1_1_on_premise_engine_1_1_flow_elements_1_1_simple_on_premise_engine.html" title=" " alt="" coords="1531,120,1809,160"/>
-<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="1496,157,1530,153,1530,158,1496,162"/>
-<area shape="rect" id="Node000012" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_fifty_one_on_premise_aspect_engine_base-1-g.html" title="51Degrees specific Engine base class." alt="" coords="1545,185,1795,239"/>
-<area shape="poly" id="edge13_Node000010_Node000012" title=" " alt="" coords="1497,190,1545,196,1544,201,1496,195"/>
+<area shape="rect" id="Node000001" title="Base class for 51Degrees aspect engines." alt="" coords="919,124,1157,179"/>
+<area shape="rect" id="Node000008" href="$class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_aspect_engine_base-1-g.html" title="Base class for 51Degrees cloud aspect engines." alt="" coords="1205,5,1496,60"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="1101,115,1204,69,1238,57,1240,63,1206,74,1103,120"/>
+<area shape="rect" id="Node000010" href="$class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine.html" title="Engine that makes requests to the 51Degrees cloud service." alt="" coords="1223,84,1479,139"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1171,132,1222,125,1223,130,1171,137"/>
+<area shape="rect" id="Node000011" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_property_keyed_engine-2-g.html" title="Base class for engines that use an index of property values to profile ids to populate one or more pr..." alt="" coords="1235,163,1467,217"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="1172,165,1235,173,1234,178,1171,170"/>
+<area shape="rect" id="Node000012" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_on_premise_aspect_engine_base-2-g.html" title="Base class for 51Degrees on&#45;premise aspect engines." alt="" coords="1212,241,1489,296"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="1104,182,1206,228,1240,239,1238,244,1204,232,1102,187"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html" title="Abstract base class for Flow Elements." alt="" coords="663,84,867,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="881,126,919,131,918,136,881,131"/>
+<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element-2-g.html" title="Generic interface that extends IFlowElement with the ability to return a ITypedKey&lt;T&gt; that will allow..." alt="" coords="405,91,608,145"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="622,112,663,111,663,117,622,118"/>
+<area shape="rect" id="Node000006" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_i_aspect_engine-2-g.html" title="Interface representing 51Degrees on&#45;premise aspect engines." alt="" coords="660,163,871,217"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="620,147,667,160,666,165,618,152"/>
+<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="152,134,353,174"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="366,135,405,130,405,135,367,141"/>
+<area shape="rect" id="Node000007" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_i_aspect_engine.html" title="Interface representing 51Degrees on&#45;premise aspect engines." alt="" coords="401,170,612,210"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="367,167,401,172,401,178,366,173"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,141,104,167"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="118,151,152,151,152,157,118,157"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="884,171,918,166,919,171,884,176"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="626,187,660,187,660,193,626,193"/>
+<area shape="rect" id="Node000009" href="$class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_property_keyed_cloud_engine_base-2-g.html" title="A specialised type of CloudAspectEngineBase&lt;T&gt; that has functionality to support returning a list of ..." alt="" coords="1544,5,1805,60"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="1510,30,1544,30,1544,35,1510,35"/>
+<area shape="rect" id="Node000013" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_fifty_one_on_premise_aspect_engine_base-1-g.html" title="51Degrees specific Engine base class." alt="" coords="1549,241,1800,296"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="1503,266,1549,266,1549,271,1503,271"/>
 </map>

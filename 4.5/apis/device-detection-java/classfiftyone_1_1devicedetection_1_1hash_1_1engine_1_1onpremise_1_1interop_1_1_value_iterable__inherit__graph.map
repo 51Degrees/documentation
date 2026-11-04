@@ -1,5 +1,7 @@
 <map id="fiftyone.devicedetection.hash.engine.onpremise.interop.ValueIterable" name="fiftyone.devicedetection.hash.engine.onpremise.interop.ValueIterable">
-<area shape="rect" id="Node000001" title="Class which adds the Iterable and AutoCloseable interfaces to a native collection representing ValueM..." alt="" coords="5,93,395,133"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="115,5,285,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,59,203,93,197,93,197,59"/>
+<area shape="rect" id="Node000001" title="Class which adds the Iterable and AutoCloseable interfaces to a native collection representing ValueM..." alt="" coords="5,196,395,236"/>
+<area shape="rect" id="Node000002" href="/home/runner/work/documentation/documentation/apis/51degrees-java/pipeline/docs/tagfile$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_collection_iterable_base.html" title=" " alt="" coords="93,93,307,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,162,203,196,197,196,197,162"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="64,5,336,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="203,59,203,93,197,93,197,59"/>
 </map>

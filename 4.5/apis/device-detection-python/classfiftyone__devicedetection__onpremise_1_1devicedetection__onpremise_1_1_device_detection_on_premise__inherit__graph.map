@@ -1,5 +1,7 @@
 <map id="fiftyone_devicedetection_onpremise.devicedetection_onpremise.DeviceDetectionOnPremise" name="fiftyone_devicedetection_onpremise.devicedetection_onpremise.DeviceDetectionOnPremise">
-<area shape="rect" id="Node000001" title="The Device Detection On Premise engine uses a datafile to generate a list of properties about a devic..." alt="" coords="5,79,287,133"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="113,5,179,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,44,149,79,143,79,143,44"/>
+<area shape="rect" id="Node000001" title="The Device Detection On Premise engine uses a datafile to generate a list of properties about a devic..." alt="" coords="5,181,287,236"/>
+<area shape="rect" id="Node000002" href="/home/runner/work/documentation/documentation/apis/51degrees-python/pipeline/docs/tagfile$classfiftyone__pipeline__engines_1_1engine_1_1_engine.html" title=" " alt="" coords="52,93,240,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,147,149,181,143,181,143,147"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="19,5,273,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="149,59,149,93,143,93,143,59"/>
 </map>

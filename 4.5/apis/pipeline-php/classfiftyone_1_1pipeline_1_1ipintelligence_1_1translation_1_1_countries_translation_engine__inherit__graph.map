@@ -1,0 +1,9 @@
+<map id="fiftyone\pipeline\ipintelligence\translation\CountriesTranslationEngine" name="fiftyone\pipeline\ipintelligence\translation\CountriesTranslationEngine">
+<area shape="rect" id="Node000001" title="Engine 2: translates the weighted English country names from Engine 1 into the browser language,..." alt="" coords="5,269,283,309"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine.html" title="Generic translation engine." alt="" coords="43,181,245,221"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,235,147,269,141,269,141,235"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1engines_1_1_engine.html" title="An engine is an extension of the Pipeline Core flowElement class It allows for a cache,..." alt="" coords="53,93,235,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="147,147,147,181,141,181,141,147"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="65,5,223,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="147,59,147,93,141,93,141,59"/>
+</map>

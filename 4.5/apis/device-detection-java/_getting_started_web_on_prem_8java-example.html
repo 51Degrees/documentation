@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/device-detection-java/_getting_started_web_on_prem_8java-example.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-java/_getting_started_web_on_prem_8java-example.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line"></div>
 <div class="c-code__line"><span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>GettingStartedWebOnPrem <span class="c-code__keyword">extends</span> HttpServlet {</div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> <span class="c-code__keywordtype">long</span> serialVersionUID = 1734154705981153540L;</div>
-<div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> String resourceBase = <span class="c-code__stringliteral">&quot;web/getting-started.onprem/src/main/webapp&quot;</span>;</div>
+<div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> String resourceBase = <span class="c-code__stringliteral">&quot;examples/device-detection/web/getting-started.onprem/src/main/webapp&quot;</span>;</div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> Logger logger = LoggerFactory.getLogger(GettingStartedWebOnPrem.class);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> main(String[] args) <span class="c-code__keywordflow">throws</span> Exception {</div>
@@ -147,10 +147,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (portEnv != <span class="c-code__keyword">null</span>) {</div>
 <div class="c-code__line">            <span class="c-code__comment">// Automated runs (e.g. the unified Selenium suite) inject a port and have no</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// interactive stdin, so keep the server alive by joining it instead of waiting on Enter.</span></div>
-<div class="c-code__line">            EmbedJetty.startWebApp(resourceBase, Integer.parseInt(portEnv)).join();</div>
+<div class="c-code__line">            EmbedJetty.startWebApp(getFilePath(resourceBase).getAbsolutePath(), Integer.parseInt(portEnv)).join();</div>
 <div class="c-code__line">        } <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">            <span class="c-code__comment">// start Jetty with this WebApp</span></div>
-<div class="c-code__line">            EmbedJetty.runWebApp(resourceBase, 8081);</div>
+<div class="c-code__line">            EmbedJetty.runWebApp(getFilePath(resourceBase).getAbsolutePath(), 8081);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>

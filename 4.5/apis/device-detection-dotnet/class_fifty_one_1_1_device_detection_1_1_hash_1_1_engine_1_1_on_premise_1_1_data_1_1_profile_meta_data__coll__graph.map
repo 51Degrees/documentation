@@ -1,0 +1,21 @@
+<map id="FiftyOne.DeviceDetection.Hash.Engine.OnPremise.Data.ProfileMetaData" name="FiftyOne.DeviceDetection.Hash.Engine.OnPremise.Data.ProfileMetaData">
+<area shape="rect" id="Node000001" title="Data class that contains meta&#45;data relating to a specific profile." alt="" coords="864,106,1123,161"/>
+<area shape="rect" id="Node000002" href="/home/runner/work/documentation/documentation/apis/51degrees-dotnet/pipeline/docs/tagfile$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_i_profile_meta_data.html" title=" " alt="" coords="527,21,706,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="720,68,872,103,871,109,719,74"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="567,99,666,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="680,113,864,123,864,129,679,118"/>
+<area shape="rect" id="Node000004" href="$class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html" title="Hash device detection engine." alt="" coords="477,149,756,203"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="770,158,840,151,864,148,864,153,840,156,770,164"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="23,5,265,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="245,46,283,55,333,62,373,64,412,72,455,95,464,105,468,116,471,125,479,134,499,146,496,151,476,138,467,128,463,117,459,108,452,99,410,77,372,70,332,67,282,60,244,51"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="20,70,268,125"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="282,117,454,145,477,149,477,155,453,151,281,122"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="20,149,268,203"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="282,173,477,173,477,179,282,179"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="5,227,283,282"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="296,227,453,201,477,197,477,203,454,207,297,233"/>
+<area shape="rect" id="Node000009" href="$class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_interop_1_1_profile_meta_data_swig.html" title=" " alt="" coords="501,259,733,314"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="697,252,924,158,926,163,699,257"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="49,306,239,331"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="253,309,500,292,501,297,254,314"/>
+</map>

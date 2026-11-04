@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/_device_detection__upgradingto_v4.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/_device_detection__upgradingto_v4.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -648,7 +648,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 </div><!-- fragment --><p>Becomes:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keywordflow">if</span> (device.ismobile.has_value():</div>
 <div class="c-code__line">  isMobile = device.ismobile.value()</div>
-</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">    If you currently use an On-premise data file with PHP then you will need to get the On-premise version of the PHP API from <a href="https://github.com/51Degrees/device-detection-php-onpremise">GitHub</a>.</p>
+</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">    If you currently use an On-premise data file with PHP then you will need to get the On-premise version of the PHP API from <a href="https://github.com/51Degrees/51degrees-php/tree/main/device-detection/onpremise">GitHub</a>.</p>
 <p>If you use the cloud version then you can install the fiftyone.devicedetection package from composer.</p>
 <p>With the V3 API, a provider could be created with something like this:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">$provider = FiftyOneDegreesPatternV3::provider_get();</div>
@@ -675,7 +675,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keywordflow">if</span>($device-&gt;get(<span class="c-code__stringliteral">&quot;ismobile&quot;</span>)-&gt;hasValue) {</div>
 <div class="c-code__line">    $isMobile = $device-&gt;get(<span class="c-code__stringliteral">&quot;ismobile&quot;</span>).value;</div>
 <div class="c-code__line">}</div>
-</div><!-- fragment --><p> </div>   <div class="c-tabgroup__main" data-lang="nginx" style="display:none;">    Nginx module comes only with an On-premise version, you will need to get the On-premise version of the Nginx API from <a href="https://github.com/51Degrees/device-detection-nginx">GitHub</a>.</p>
+</div><!-- fragment --><p> </div>   <div class="c-tabgroup__main" data-lang="nginx" style="display:none;">    Nginx module comes only with an On-premise version, you will need to get the On-premise version of the Nginx API from <a href="https://github.com/51Degrees/51degrees-nginx">GitHub</a>.</p>
 <p>The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file using 51Degrees <a class="el" href="_services__distributor.html" title="Distributor (On-premise)">Distributor</a> (License Key is required, check <a href="https://51degrees.com/pricing">pricing</a> page) and be aware of the changes described below.</p>
 <p>Removed in V4:</p><ul>
 <li>V4 version supports only one method of detection which is Hash.<ul>

@@ -1,0 +1,17 @@
+var classfiftyone_1_1pipeline_1_1did_1_1_did_client =
+[
+    [ "__construct", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#aaa34bca60ab41f5b30baccca72286b6c", null ],
+    [ "getEndpoint", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#aeaedf9e1e5691e7ab9c081024682a531", null ],
+    [ "getResourceKey", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a45abef35fb8e5b46bf51ac62f171024f", null ],
+    [ "hasLicenceKey", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a6290a40129b3b928d9ead43ea8ae86f2", null ],
+    [ "publicKeyFor", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a678ed2c2fdaaf97005be23b3c3a3248a", null ],
+    [ "publicKeys", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a2f0aa3f4d3fd0b4d1e343026db6cc30d", null ],
+    [ "redeem", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a3f1833a4715501019e464d908fbda0bc", null ],
+    [ "verify", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#aef3b02ce406984f70ef5b65491a78496", null ],
+    [ "verifySignature", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a15833a4a5f160ed2b944c91abad5ac0a", null ],
+    [ "verifySignatureDetailed", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#afa7ecf3cd5cd58e264f49361abcb2f76", null ],
+    [ "DEFAULT_ENDPOINT", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a0993c822c446c6a757ac98842cd0555f", null ],
+    [ "ENDPOINT_VARIABLE", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a2c0e75f0dc9277013f8b5f72a4c4c8b0", null ],
+    [ "KEY_LIST_MAX_AGE_SECONDS", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a1c5eed34c7702159880489797dc3f531", null ],
+    [ "PACKAGE_NAME", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a5860fc9e82696628f4bd11e6d5ab7af2", null ]
+];

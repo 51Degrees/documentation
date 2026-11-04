@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
-  <link rel="canonical" href="/documentation/apis/device-detection-dotnet/_on_premise_2_metadata-_console_2_program_8cs-example.html">
-  <link rel="alternate" hreflang="en-US" href="/documentation/apis/device-detection-dotnet/_on_premise_2_metadata-_console_2_program_8cs-example.html" />
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-dotnet/_on_premise_2_metadata-_console_2_program_8cs-example.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/device-detection-dotnet/_on_premise_2_metadata-_console_2_program_8cs-example.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 </ul>
 <p>The example will output each component in turn, with a list of the properties associated with each component. Some of the possible values for each property are also displayed. There are too many profiles to display, so we just list the number of profiles for each component.</p>
 <p>Finally, the evidence keys that are accepted by device detection are listed. These are the keys that, when added to the evidence collection in flow data, could have some impact on the result returned by device detection.</p>
-<p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/blob/version/4.5/Examples/OnPremise/Metadata-Console/Program.cs">GitHub</a>.</p>
+<p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/4.5/Examples/OnPremise/Metadata-Console/Program.cs">GitHub</a>.</p>
 <p> 
 <p>
 This example requires a local data file. The free 'Lite' data file can be acquired by
@@ -117,10 +117,10 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line"><span class="c-code__comment"> * such notice(s) shall fulfill the requirements of that article.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * ********************************************************************* */</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Core.Data;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Engines;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Engines.FiftyOne.Data;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements.html">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_core_1_1_data.html">FiftyOne.Pipeline.Core.Data</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html">FiftyOne.Pipeline.Engines</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data.html">FiftyOne.Pipeline.Engines.FiftyOne.Data</a>;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.Extensions.Logging;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.IO;</div>
@@ -131,26 +131,26 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">{</div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>Program</div>
 <div class="c-code__line">    {</div>
-<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>Example : ExampleBase</div>
+<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_example.html">Example</a> : ExampleBase</div>
 <div class="c-code__line">        {</div>
 <div class="c-code__line">            <span class="c-code__keyword">public</span> <span class="c-code__keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_metadata_1_1_program_1_1_example.html#aeb222e47755e7e6cecfaf2e71226469a">Run</a>(</div>
 <div class="c-code__line">                <span class="c-code__keywordtype">string</span> dataFile,</div>
 <div class="c-code__line">                ILoggerFactory loggerFactory,</div>
 <div class="c-code__line">                TextWriter output,</div>
-<div class="c-code__line">                PerformanceProfiles profile = PerformanceProfiles.LowMemory)</div>
+<div class="c-code__line">                <a id="_a1" name="_a1"></a><a class="code hl_enumerationRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html#a7e8161b9ca37059040ff754ba3e668f1">PerformanceProfiles</a> profile = <a class="code hl_enumerationRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html#a7e8161b9ca37059040ff754ba3e668f1">PerformanceProfiles</a>.LowMemory)</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                <span class="c-code__comment">// Build a new on-premise Hash engine with the low memory performance profile.</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// Note that there is no need to construct a complete pipeline in order to access</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// the meta-data.</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// If you already have a pipeline and just want to get a reference to the engine </span></div>
 <div class="c-code__line">                <span class="c-code__comment">// then you can use `var engine = pipeline.GetElement&lt;DeviceDetectionHashEngine&gt;();`</span></div>
-<div class="c-code__line">                <span class="c-code__keyword">using</span> (var ddEngine = <span class="c-code__keyword">new</span> DeviceDetectionHashEngineBuilder(loggerFactory)</div>
+<div class="c-code__line">                <span class="c-code__keyword">using</span> (var ddEngine = <span class="c-code__keyword">new</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_deff5fc5dbd6983671e3e11d8a01321166.html">DeviceDetectionHashEngineBuilder</a>(loggerFactory)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// We use the low memory profile as its performance is sufficient for this</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// example. See the documentation for more detail on this and other</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// configuration options:</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_device_detection__features__performance_options.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-metadata-console-program.cs&amp;utm_term=run</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-metadata-console-program.cs&amp;utm_term=run</span></div>
-<div class="c-code__line">                    .SetPerformanceProfile(profile)</div>
+<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_device_detection__features__performance_options.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-metadata-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-metadata-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                    .<a id="a3" name="a3"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_def4d5a2feae03307c84f0f267559cf5bd.html#a301aa43e2b0458baf9791bcb593399ba">SetPerformanceProfile</a>(profile)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// inhibit auto-update of the data file for this test</span></div>
 <div class="c-code__line">                    .SetAutoUpdate(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                    .SetDataFileSystemWatcher(<span class="c-code__keyword">false</span>)</div>
@@ -165,14 +165,14 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">void</span> OutputEvidenceKeyDetails(DeviceDetectionHashEngine ddEngine, TextWriter output)</div>
+<div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">void</span> OutputEvidenceKeyDetails(<a id="_a4" name="_a4"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html">DeviceDetectionHashEngine</a> ddEngine, TextWriter output)</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                output.WriteLine();</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">if</span>(typeof(EvidenceKeyFilterWhitelist).IsAssignableFrom(ddEngine.EvidenceKeyFilter.GetType()))</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span>(typeof(<a id="_a5" name="_a5"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_evidence_key_filter_whitelist.html">EvidenceKeyFilterWhitelist</a>).IsAssignableFrom(ddEngine.<a id="a6" name="a6"></a><a class="code hl_property" href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html#a247686d55d86f3da89865cd51b6d0bb7">EvidenceKeyFilter</a>.GetType()))</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    <span class="c-code__comment">// If the evidence key filter extends EvidenceKeyFilterWhitelist then we can</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// display a list of accepted keys.</span></div>
-<div class="c-code__line">                    var filter = ddEngine.EvidenceKeyFilter as EvidenceKeyFilterWhitelist;</div>
+<div class="c-code__line">                    var filter = ddEngine.EvidenceKeyFilter as <a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_evidence_key_filter_whitelist.html">EvidenceKeyFilterWhitelist</a>;</div>
 <div class="c-code__line">                    output.WriteLine($<span class="c-code__stringliteral">&quot;Accepted evidence keys:&quot;</span>);</div>
 <div class="c-code__line">                    <span class="c-code__keywordflow">foreach</span> (var entry <span class="c-code__keywordflow">in</span> filter.Whitelist)</div>
 <div class="c-code__line">                    {</div>
@@ -188,17 +188,17 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;filter.Include(string) to see if a particular key will be included &quot;</span> +</div>
 <div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;or not.&quot;</span>);</div>
 <div class="c-code__line">                    output.WriteLine($<span class="c-code__stringliteral">&quot;For example, header.user-agent is &quot;</span> +</div>
-<div class="c-code__line">                        (ddEngine.EvidenceKeyFilter.Include(<span class="c-code__stringliteral">&quot;header.user-agent&quot;</span>) ? <span class="c-code__stringliteral">&quot;&quot;</span> : <span class="c-code__stringliteral">&quot;not &quot;</span>) +</div>
+<div class="c-code__line">                        (ddEngine.<a class="code hl_property" href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html#a247686d55d86f3da89865cd51b6d0bb7">EvidenceKeyFilter</a>.Include(<span class="c-code__stringliteral">&quot;header.user-agent&quot;</span>) ? <span class="c-code__stringliteral">&quot;&quot;</span> : <span class="c-code__stringliteral">&quot;not &quot;</span>) +</div>
 <div class="c-code__line">                        <span class="c-code__stringliteral">&quot;accepted.&quot;</span>);</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">void</span> OutputProfileDetails(DeviceDetectionHashEngine ddEngine, TextWriter output)</div>
+<div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">void</span> OutputProfileDetails(<a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html">DeviceDetectionHashEngine</a> ddEngine, TextWriter output)</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                <span class="c-code__comment">// Group the profiles by component and then output the number of profiles </span></div>
 <div class="c-code__line">                <span class="c-code__comment">// for each component.</span></div>
-<div class="c-code__line">                var groups = ddEngine.Profiles.GroupBy(p =&gt; p.Component.Name);</div>
+<div class="c-code__line">                var groups = ddEngine.<a id="a7" name="a7"></a><a class="code hl_property" href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html#aad36db099005179482df660ace6912e3">Profiles</a>.GroupBy(p =&gt; p.Component.Name);</div>
 <div class="c-code__line">                output.WriteLine();</div>
 <div class="c-code__line">                output.WriteLine($<span class="c-code__stringliteral">&quot;Profile counts:&quot;</span>);</div>
 <div class="c-code__line">                <span class="c-code__keywordflow">foreach</span> (var group <span class="c-code__keywordflow">in</span> groups)</div>
@@ -207,9 +207,9 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">void</span> OutputComponents(DeviceDetectionHashEngine ddEngine, TextWriter output)</div>
+<div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">void</span> OutputComponents(<a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html">DeviceDetectionHashEngine</a> ddEngine, TextWriter output)</div>
 <div class="c-code__line">            {</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">foreach</span> (var component <span class="c-code__keywordflow">in</span> ddEngine.Components)</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">foreach</span> (var component <span class="c-code__keywordflow">in</span> ddEngine.<a id="a8" name="a8"></a><a class="code hl_property" href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html#a524cecee75d2f327e609634f62a33a7b">Components</a>)</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Output the component name as well as a list of all the associated properties.</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// If we&#39;re outputting to console then we also add some formatting to make it </span></div>
@@ -224,7 +224,7 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">void</span> OutputProperties(IComponentMetaData component, TextWriter output)</div>
+<div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">void</span> OutputProperties(<a id="_a9" name="_a9"></a><a class="code hl_interfaceRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_i_component_meta_data.html">IComponentMetaData</a> component, TextWriter output)</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                <span class="c-code__keywordflow">foreach</span> (var property <span class="c-code__keywordflow">in</span> component.Properties)</div>
 <div class="c-code__line">                {</div>
@@ -288,8 +288,8 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">                <span class="c-code__comment">//</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// Note that the Lite data file contains a more limited set of properties than the</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// Enterprise data file. Find out about the Enterprise data file on our pricing page:</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-metadata-console-program.cs&amp;utm_term=main</span></div>
-<div class="c-code__line">                ExampleUtils.FindDataFile(Constants.LITE_HASH_DATA_FILE_NAME);</div>
+<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-metadata-console-program.cs&amp;utm_term=main</span></div>
+<div class="c-code__line">                ExampleUtils.FindDataFile(<a id="_a10" name="_a10"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html">Constants</a>.LITE_HASH_DATA_FILE_NAME);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Configure a logger to output to the console.</span></div>
 <div class="c-code__line">            var loggerFactory = LoggerFactory.Create(b =&gt; b.AddConsole());</div>
@@ -297,7 +297,7 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> (dataFile != <span class="c-code__keyword">null</span>)</div>
 <div class="c-code__line">            {</div>
-<div class="c-code__line">                <span class="c-code__keyword">new</span> Example().Run(dataFile, loggerFactory, Console.Out);</div>
+<div class="c-code__line">                <span class="c-code__keyword">new</span> <a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_example.html">Example</a>().Run(dataFile, loggerFactory, Console.Out);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">else</span></div>
 <div class="c-code__line">            {</div>
@@ -314,7 +314,22 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_metadata_1_1_program_1_1_example_html_aeb222e47755e7e6cecfaf2e71226469a"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_metadata_1_1_program_1_1_example.html#aeb222e47755e7e6cecfaf2e71226469a">FiftyOne.DeviceDetection.Examples.OnPremise.Metadata.Program.Example.Run</a></div><div class="ttdeci">void Run(string dataFile, ILoggerFactory loggerFactory, TextWriter output, PerformanceProfiles profile=PerformanceProfiles.LowMemory)</div><div class="ttdoc">Extracts the metadata from the data file via the engine.</div><div class="ttdef"><b>Definition</b> OnPremise/Metadata-Console/Program.cs:85</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_def4d5a2feae03307c84f0f267559cf5bd_html_a301aa43e2b0458baf9791bcb593399ba"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_def4d5a2feae03307c84f0f267559cf5bd.html#a301aa43e2b0458baf9791bcb593399ba">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements.DeviceDetectionHashEngineBuilderBase-1-g.SetPerformanceProfile</a></div><div class="ttdeci">DeviceDetectionHashEngineBuilderBase&lt; TEngine &gt; SetPerformanceProfile(string profileName)</div><div class="ttdoc">Set the performance profile to use when constructing the data set.</div><div class="ttdef"><b>Definition</b> DeviceDetectionHashEngineBuilderBase.cs:271</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_deff5fc5dbd6983671e3e11d8a01321166_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_deff5fc5dbd6983671e3e11d8a01321166.html">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements.DeviceDetectionHashEngineBuilder</a></div><div class="ttdoc">Complete builder implementation for creating on premise DeviceDetectionHashEngine engines.</div><div class="ttdef"><b>Definition</b> DeviceDetectionHashEngineBuilder.cs:38</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements.DeviceDetectionHashEngine</a></div><div class="ttdoc">Hash device detection engine.</div><div class="ttdef"><b>Definition</b> DeviceDetectionHashEngine.cs:48</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine_html_a247686d55d86f3da89865cd51b6d0bb7"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html#a247686d55d86f3da89865cd51b6d0bb7">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements.DeviceDetectionHashEngine.EvidenceKeyFilter</a></div><div class="ttdeci">override IEvidenceKeyFilter EvidenceKeyFilter</div><div class="ttdoc">A filter that defines the evidence that this engine can make use of.</div><div class="ttdef"><b>Definition</b> DeviceDetectionHashEngine.cs:278</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine_html_a524cecee75d2f327e609634f62a33a7b"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html#a524cecee75d2f327e609634f62a33a7b">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements.DeviceDetectionHashEngine.Components</a></div><div class="ttdeci">override IEnumerable&lt; IComponentMetaData &gt; Components</div><div class="ttdoc">Get the meta-data for components populated by this engine.</div><div class="ttdef"><b>Definition</b> DeviceDetectionHashEngine.cs:237</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine_html_aad36db099005179482df660ace6912e3"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html#aad36db099005179482df660ace6912e3">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements.DeviceDetectionHashEngine.Profiles</a></div><div class="ttdeci">override IEnumerable&lt; IProfileMetaData &gt; Profiles</div><div class="ttdoc">Get the meta-data for profiles that may be returned by this engine.</div><div class="ttdef"><b>Definition</b> DeviceDetectionHashEngine.cs:220</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_core_1_1_constants_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html">FiftyOne::Pipeline::Core::Constants</a></div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_evidence_key_filter_whitelist_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_evidence_key_filter_whitelist.html">FiftyOne::Pipeline::Core::Data::EvidenceKeyFilterWhitelist</a></div></div>
+<div class="ttc" id="ainterface_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_i_component_meta_data_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_i_component_meta_data.html">FiftyOne::Pipeline::Engines::FiftyOne::Data::IComponentMetaData</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_example_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_example.html">FiftyOne.DeviceDetection.Example</a></div><div class="ttdef"><b>Definition</b> PmpWebTemplateTests.cs:32</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_metadata_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_metadata.html">FiftyOne.DeviceDetection.Examples.OnPremise.Metadata</a></div><div class="ttdef"><b>Definition</b> OnPremise/Metadata-Console/Program.cs:64</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements.html">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements</a></div><div class="ttdef"><b>Definition</b> DeviceDetectionHashEngine.cs:39</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_core_1_1_data_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_core_1_1_data.html">FiftyOne::Pipeline::Core::Data</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data.html">FiftyOne::Pipeline::Engines::FiftyOne::Data</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html">FiftyOne::Pipeline::Engines</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_html_a7e8161b9ca37059040ff754ba3e668f1"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html#a7e8161b9ca37059040ff754ba3e668f1">FiftyOne::Pipeline::Engines::PerformanceProfiles</a></div><div class="ttdeci">PerformanceProfiles</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

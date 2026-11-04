@@ -8,6 +8,9 @@ var classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_m
     [ "getValueAsBool", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_base_swig.html#a4a0b81262b8c42e32050e72d78705a1e", null ],
     [ "getValueAsDouble", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_base_swig.html#afd56a3b8d37149d9c6dc6f3946df810e", null ],
     [ "getValueAsInteger", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_base_swig.html#a097b9f9518013c1d6e4c9ced51bcbf1c", null ],
+    [ "getValueAsStrictBool", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_base_swig.html#a12364ecbb12ec81a338752c0b5711da1", null ],
+    [ "getValueAsStrictDouble", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_base_swig.html#a3a68fe4a34ff08a3592839c953b6c901", null ],
+    [ "getValueAsStrictInteger", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_base_swig.html#aedcaca28a10d9b06d81bef865560811f", null ],
     [ "getValueAsString", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_base_swig.html#a1a5747fb5e43d93f257aaac3b31ab289", null ],
     [ "getValues", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_base_swig.html#a49bd972107280b6784e3919f7dfcbed9", null ],
     [ "thisown", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_base_swig.html#ab6fabb1c228286b6a1a726e1e34fe60c", null ]

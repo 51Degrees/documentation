@@ -10,7 +10,7 @@ var annotated =
     [ "CombiningServices", "namespace_combining_services.html", [
       [ "Program", "class_combining_services_1_1_program.html", "class_combining_services_1_1_program" ]
     ] ],
-    [ "FiftyOne", "namespace_fifty_one.html", [
+    [ "FiftyOne", null, [
       [ "GeoLocation", "namespace_fifty_one_1_1_geo_location.html", [
         [ "Cloud", "namespace_fifty_one_1_1_geo_location_1_1_cloud.html", [
           [ "FlowElements", "namespace_fifty_one_1_1_geo_location_1_1_cloud_1_1_flow_elements.html", [

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/device-detection-php-onpremise/onpremise_2user_agent_client_hints-_web_8php-example.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-php-onpremise/onpremise_2user_agent_client_hints-_web_8php-example.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -104,10 +104,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line"> </div>
 <div class="c-code__line">require __DIR__ . <span class="c-code__stringliteral">&#39;/../../vendor/autoload.php&#39;</span>;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">use fiftyone\pipeline\core\PipelineBuilder;</div>
-<div class="c-code__line">use fiftyone\pipeline\core\Utils;</div>
-<div class="c-code__line">use <a id="_a1" name="_a1"></a><a class="code hl_class" href="classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise.html">fiftyone\pipeline\devicedetection\DeviceDetectionOnPremise</a>;</div>
-<div class="c-code__line">use <a id="_a2" name="_a2"></a><a class="code hl_class" href="classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils.html">fiftyone\pipeline\devicedetection\examples\onpremise\classes\ExampleUtils</a>;</div>
+<div class="c-code__line">use <a id="_a1" name="_a1"></a><a class="code hl_classRef" href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html">fiftyone\pipeline\core\PipelineBuilder</a>;</div>
+<div class="c-code__line">use <a id="_a2" name="_a2"></a><a class="code hl_classRef" href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1core_1_1_utils.html">fiftyone\pipeline\core\Utils</a>;</div>
+<div class="c-code__line">use <a id="_a3" name="_a3"></a><a class="code hl_classRef" href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise.html">fiftyone\pipeline\devicedetection\DeviceDetectionOnPremise</a>;</div>
+<div class="c-code__line">use <a id="_a4" name="_a4"></a><a class="code hl_class" href="classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils.html">fiftyone\pipeline\devicedetection\examples\onpremise\classes\ExampleUtils</a>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// The example is run as a router script for the PHP built-in server</span></div>
 <div class="c-code__line"><span class="c-code__comment">// (php -S localhost:3000 userAgentClientHints-Web.php), so every request,</span></div>
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line"><span class="c-code__comment">// requested. So set whatever headers are required by the browser in</span></div>
 <div class="c-code__line"><span class="c-code__comment">// order to return the evidence needed by the pipeline.</span></div>
 <div class="c-code__line"><span class="c-code__comment">// More info on this can be found at</span></div>
-<div class="c-code__line"><span class="c-code__comment">// https://51degrees.com/blog/user-agent-client-hints?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-php-onpremise&amp;utm_content=examples-onpremise-useragentclienthints-web.php&amp;utm_term=top</span></div>
+<div class="c-code__line"><span class="c-code__comment">// https://51degrees.com/blog/user-agent-client-hints?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-php&amp;utm_content=examples-onpremise-useragentclienthints-web.php&amp;utm_term=top</span></div>
 <div class="c-code__line">Utils::setResponseHeader($flowData);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Determine whether the free &#39;Lite&#39; data file is in use so that the</span></div>
@@ -247,8 +247,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line"> </div>
 <div class="c-code__line">    &lt;?php <span class="c-code__keywordflow">if</span> ($showContactUs) { ?&gt;</div>
 <div class="c-code__line">    &lt;div <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-message&quot;</span>&gt;</div>
-<div class="c-code__line">      &lt;p <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-message__text&quot;</span>&gt;The paid data file adds daily automatic updates, non-human identification and IP intelligence. &lt;a href=<span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-php-onpremise&amp;utm_content=examples-onpremise-useragentclienthints-web.php&amp;utm_term=paid-data-file&quot;</span>&gt;Contact us&lt;/a&gt; to explore the options.&lt;/p&gt;</div>
-<div class="c-code__line">      &lt;a <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;b-btn c-eg-message__cta&quot;</span> href=<span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-php-onpremise&amp;utm_content=examples-onpremise-useragentclienthints-web.php&amp;utm_term=paid-data-file&quot;</span>&gt;Contact us&lt;/a&gt;</div>
+<div class="c-code__line">      &lt;p <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;c-eg-message__text&quot;</span>&gt;The paid data file adds daily automatic updates, non-human identification and IP intelligence. &lt;a href=<span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-php&amp;utm_content=examples-onpremise-useragentclienthints-web.php&amp;utm_term=paid-data-file&quot;</span>&gt;Contact us&lt;/a&gt; to explore the options.&lt;/p&gt;</div>
+<div class="c-code__line">      &lt;a <span class="c-code__keyword">class</span>=<span class="c-code__stringliteral">&quot;b-btn c-eg-message__cta&quot;</span> href=<span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-php&amp;utm_content=examples-onpremise-useragentclienthints-web.php&amp;utm_term=paid-data-file&quot;</span>&gt;Contact us&lt;/a&gt;</div>
 <div class="c-code__line">    &lt;/div&gt;</div>
 <div class="c-code__line">    &lt;?php } ?&gt;</div>
 <div class="c-code__line">&lt;/div&gt;</div>
@@ -285,7 +285,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line">    };</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">&lt;/script&gt;</div>
-<div class="ttc" id="aclassfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise_html"><div class="ttname"><a href="classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise.html">fiftyone\pipeline\devicedetection\DeviceDetectionOnPremise</a></div><div class="ttdef"><b>Definition</b> DeviceDetectionOnPremise.php:36</div></div>
+<div class="ttc" id="aclassfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder_html"><div class="ttname"><a href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html">fiftyone\pipeline::core::PipelineBuilder</a></div></div>
+<div class="ttc" id="aclassfiftyone_1_1pipeline_1_1core_1_1_utils_html"><div class="ttname"><a href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1core_1_1_utils.html">fiftyone\pipeline::core::Utils</a></div></div>
+<div class="ttc" id="aclassfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise_html"><div class="ttname"><a href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise.html">fiftyone\pipeline\devicedetection::DeviceDetectionOnPremise</a></div></div>
 <div class="ttc" id="aclassfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils_html"><div class="ttname"><a href="classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils.html">fiftyone\pipeline\devicedetection\examples\onpremise\classes\ExampleUtils</a></div><div class="ttdef"><b>Definition</b> ExampleUtils.php:27</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->

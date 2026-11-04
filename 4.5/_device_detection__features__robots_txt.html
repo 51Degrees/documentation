@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/_device_detection__features__robots_txt.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/_device_detection__features__robots_txt.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -72,9 +72,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="textblock"><h2 class="doxsection" id="introduction-19">Introduction<a class="headerlink" href="#introduction-19" aria-label="Permalink to this section">🔗</a></h2>
 <p>A <code>robots.txt</code> file is a plain text file hosted at the root of a website (for example <code><a href="https://example.com/robots.txt">https://example.com/robots.txt</a></code>) that tells web crawlers which parts of the site they are or are not allowed to access. It follows the <a href="https://www.rfc-editor.org/rfc/rfc9309.html">Robots Exclusion Protocol</a>, where each block declares one or more <code>User-Agent</code> lines followed by <code>Allow:</code> and/or <code>Disallow:</code> directives that the named crawlers should respect.</p>
 <p>With the explosion of AI training crawlers, search bots, analytics agents, archival workers and security scanners, manually maintaining a <code>robots.txt</code> that correctly distinguishes between these uses is impractical. The crawler list changes constantly, individual operators ship multiple product tokens, and a single bot can serve more than one purpose.</p>
-<p>The <code>RobotsTxtEngine</code> shipped in the <a href="https://github.com/51Degrees/device-detection-dotnet/tree/main/FiftyOne.DeviceDetection.RobotsTxt">device-detection-dotnet</a> package solves this problem by generating a <code>robots.txt</code> document on demand from the up-to-date 51Degrees crawler dataset, driven by a small set of allow/disallow choices expressed in terms of <a class="el" href="_device_detection__features__crawlers.html" title="Crawlers">crawler usages</a> rather than individual user-agents.</p>
+<p>The <code>RobotsTxtEngine</code> shipped in the <a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/device-detection/RobotsTxt">device-detection-dotnet</a> package solves this problem by generating a <code>robots.txt</code> document on demand from the up-to-date 51Degrees crawler dataset, driven by a small set of allow/disallow choices expressed in terms of <a class="el" href="_device_detection__features__crawlers.html" title="Crawlers">crawler usages</a> rather than individual user-agents.</p>
 <h2 class="doxsection" id="availability">Availability<a class="headerlink" href="#availability" aria-label="Permalink to this section">🔗</a></h2>
-<p>The on-premise <code>RobotsTxtEngine</code> is available in .NET only. It ships in the <a href="https://github.com/51Degrees/device-detection-dotnet/tree/main/FiftyOne.DeviceDetection.RobotsTxt">device-detection-dotnet</a> package, and there is no equivalent engine in the Java, C, C++, Go, Rust, PHP, Node or Python SDKs.</p>
+<p>The on-premise <code>RobotsTxtEngine</code> is available in .NET only. It ships in the <a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/device-detection/RobotsTxt">device-detection-dotnet</a> package, and there is no equivalent engine in the Java, C, C++, Go, Rust, PHP, Node or Python SDKs.</p>
 <p>Robots.txt generation is available from every language through 51Degrees Cloud, which is an HTTP call and needs no SDK at all. See <a class="el" href="#cloud-usage" title="Cloud Usage">Cloud Usage</a>Cloud Usage below. There is also a hosted generator at <a href="https://51degrees.com/robots-txt">51degrees.com/robots-txt</a> that produces a file to host, with no code involved.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">

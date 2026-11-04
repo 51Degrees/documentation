@@ -1,0 +1,11 @@
+<map id="fiftyone\pipeline\engines\AspectData" name="fiftyone\pipeline\engines\AspectData">
+<area shape="rect" id="Node000001" title=" " alt="" coords="212,69,395,109"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_data.html" title=" " alt="" coords="443,5,677,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="397,63,479,43,480,48,398,69"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1pipeline_1_1engines_1_1_aspect_data_dictionary.html" title="AspectData class extension that stores content as an array Similar to ElementDataDictionary in the Pi..." alt="" coords="469,69,651,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="409,87,468,87,468,92,409,92"/>
+<area shape="rect" id="Node000005" href="$classfiftyone_1_1pipeline_1_1ipintelligence_1_1_swig_data.html" title="Extension of AspectData for retrieving results created by the SWIG wrapper of the on&#45;premise IP intel..." alt="" coords="451,133,669,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="398,110,480,131,479,136,397,115"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1core_1_1_element_data.html" title="Stores information created by a FlowElement based on FlowData." alt="" coords="5,69,164,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,87,212,87,212,92,178,92"/>
+</map>

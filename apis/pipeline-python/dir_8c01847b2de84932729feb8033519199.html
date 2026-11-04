@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
-  <link rel="canonical" href="/documentation/apis/pipeline-python/dir_8c01847b2de84932729feb8033519199.html">
-  <link rel="alternate" hreflang="en-US" href="/documentation/apis/pipeline-python/dir_8c01847b2de84932729feb8033519199.html" />
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/pipeline-python/dir_8c01847b2de84932729feb8033519199.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/pipeline-python/dir_8c01847b2de84932729feb8033519199.html" />
 <meta name="robots" content="noindex,follow"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
@@ -81,8 +81,8 @@ Files</h2></td></tr>
 <tr class="c-table__row memitem:setup_2Epy" id="r_setup_2Epy"><td class="c-table__cell"><span class="icondoc"><div class="doc-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="fiftyone__pipeline__cloudrequestengine_2setup_8py.html">setup.py</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p><img src="https://51degrees.com/img/logo.png?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=pipeline-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-readme.md&amp;utm_term=cloud-request-engine" alt="51Degrees" title="Data rewards the curious" class="inline"/> <b>Python Pipeline Cloud Request Engine</b></p>
-<p><a href="https://51degrees.com/pipeline-python/index.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=pipeline-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-readme.md&amp;utm_term=cloud-request-engine" title="Developer Documentation">Developer Documentation</a></p>
+<div class="textblock"><p><img src="https://51degrees.com/img/logo.png?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-readme.md&amp;utm_term=cloud-request-engine" alt="51Degrees" title="Data rewards the curious" class="inline"/> <b>Python Pipeline Cloud Request Engine</b></p>
+<p><a href="https://51degrees.com/pipeline-python/index.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-readme.md&amp;utm_term=cloud-request-engine" title="Developer Documentation">Developer Documentation</a></p>
 <h1>Introduction</h1>
 <p>The Pipeline is a generic web request intelligence and data processing solution with the ability to add a range of 51Degrees and/or custom plug ins (Engines)</p>
 <h1>Requirements</h1>
@@ -92,7 +92,7 @@ Files</h2></td></tr>
 <h1>This package <a class="el" href="namespacefiftyone__pipeline__cloudrequestengine.html">fiftyone_pipeline_cloudrequestengine</a></h1>
 <p>This package uses the <code>engines</code> class created by the <code>fiftyone-pipeline-engines</code>. It makes available:</p>
 <ul>
-<li>A <code>Cloud Request Engine</code> which calls the 51Degrees cloud service to fetch properties and metadata about them based on a provided resource key. Get a resource key at <a href="https://configure.51degrees.com/?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=pipeline-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-readme.md&amp;utm_term=this-package-fiftyone_pipeline_cloudrequestengine">https://configure.51degrees.com/?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=pipeline-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-readme.md&amp;utm_term=this-package-fiftyone_pipeline_cloudrequestengine</a></li>
+<li>A <code>Cloud Request Engine</code> which calls the 51Degrees cloud service to fetch properties and metadata about them based on a provided resource key. Get a resource key at <a href="https://configure.51degrees.com/?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-readme.md&amp;utm_term=this-package-fiftyone_pipeline_cloudrequestengine">https://configure.51degrees.com/?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-readme.md&amp;utm_term=this-package-fiftyone_pipeline_cloudrequestengine</a></li>
 <li>A <code>Cloud Engine</code> template which reads data from the Cloud Request Engine.</li>
 </ul>
 <h1>Credentials</h1>
@@ -119,7 +119,7 @@ Files</h2></td></tr>
 <h1>Pointing the engine at another host</h1>
 <p>The engine calls <code><a href="https://cloud.51degrees.com/api/v4/">https://cloud.51degrees.com/api/v4/</a></code> unless told otherwise. Set the <code>FOD_CLOUD_API_URL</code> environment variable, or pass <code>cloud_endpoint</code> in the engine settings, to the API base of another host including the <code>/api/v4/</code> segment. A host other than cloud.51degrees.com would be used to (a) use an on premise web server, or (b) use a privately hosted version of the 51Degrees cloud for performance reasons. This is the private hosting option of the cloud service, and both run the same service, so code written against one works unchanged against the other.</p>
 <h1>Examples</h1>
-<p>The <a class="el" href="dir_990954d5b18c41b68579d5c114eefad5.html" title="/home/runner/work/documentation/documentation/apis/pipeline-python/fiftyone_pipeline_cloudrequestengine/examples/readme.md">examples</a> folder holds examples that use this engine to get device detection and IP intelligence results from one request to the 51Degrees cloud service, with a resource key or a licence key. Its readme says how to run them.</p>
+<p>The <a class="el" href="dir_990954d5b18c41b68579d5c114eefad5.html" title="/home/runner/work/documentation/documentation/apis/51degrees-python/pipeline/fiftyone_pipeline_cloudrequestengine/examples/readme.md">examples</a> folder holds examples that use this engine to get device detection and IP intelligence results from one request to the 51Degrees cloud service, with a resource key or a licence key. Its readme says how to run them.</p>
 <h1>Engines that use it</h1>
 <p>It is used by the cloud versions of the following 51Degrees engines:</p>
 <ul>

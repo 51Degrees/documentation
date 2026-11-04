@@ -1,0 +1,6 @@
+var classfiftyone_1_1pipeline_1_1ipintelligence_1_1translation_1_1_translation_paths =
+[
+    [ "loadAllCountries", "classfiftyone_1_1pipeline_1_1ipintelligence_1_1translation_1_1_translation_paths.html#ab8ce62151418b82cbd93a6e326f802ae", null ],
+    [ "loadCountriesLocaleMaps", "classfiftyone_1_1pipeline_1_1ipintelligence_1_1translation_1_1_translation_paths.html#a6652e24aaad48823403c4e5913d2989a", null ],
+    [ "resolveTranslationsDir", "classfiftyone_1_1pipeline_1_1ipintelligence_1_1translation_1_1_translation_paths.html#aa62f70c76694d116e2c8a8a5ad6306a2", null ]
+];

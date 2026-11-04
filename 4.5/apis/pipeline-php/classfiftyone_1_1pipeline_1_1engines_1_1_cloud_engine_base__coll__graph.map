@@ -1,0 +1,7 @@
+<map id="fiftyone\pipeline\engines\CloudEngineBase" name="fiftyone\pipeline\engines\CloudEngineBase">
+<area shape="rect" id="Node000001" title="Intermediary between Engine and CloudEngine classes." alt="" coords="5,181,188,221"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1engines_1_1_engine.html" title="An engine is an extension of the Pipeline Core flowElement class It allows for a cache,..." alt="" coords="5,93,188,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,147,99,181,94,181,94,147"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="17,5,176,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,59,99,93,94,93,94,59"/>
+</map>

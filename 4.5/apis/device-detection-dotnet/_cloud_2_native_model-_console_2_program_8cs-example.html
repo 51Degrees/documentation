@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/device-detection-dotnet/_cloud_2_native_model-_console_2_program_8cs-example.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-dotnet/_cloud_2_native_model-_console_2_program_8cs-example.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_nativ
 <div class="g-docs__primary" id="primary">
 <p>This example shows how to use the 51Degrees Cloud service to lookup the details of a device based on a given 'native model name'.</p>
 <p>This example shows how to use the 51Degrees Cloud service to lookup the details of a device based on a given 'native model name'. Native model name is a string of characters that are returned from a query to the device's OS. There are different mechanisms to get native model names for <a href="https://developer.android.com/reference/android/os/Build#MODEL">Android devices</a> and <a href="https://gist.github.com/soapyigu/c99e1f45553070726f14c1bb0a54053b#file-machinename-swift">iOS devices</a></p>
-<p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/blob/version/4.5/Examples/Cloud/NativeModel-Console/Program.cs">GitHub</a>.</p>
+<p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/4.5/Examples/Cloud/NativeModel-Console/Program.cs">GitHub</a>.</p>
 <p> 
 <p>
 To run this example, you will need to create a <strong>Resource Key</strong>.
@@ -107,12 +107,12 @@ You can create a Resource Key at
 <div class="c-code__line"><span class="c-code__comment"> * such notice(s) shall fulfill the requirements of that article.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * ********************************************************************* */</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.DeviceDetection.Cloud.Data;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.DeviceDetection.Cloud.FlowElements;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.CloudRequestEngine.FlowElements;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Core.Exceptions;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Core.FlowElements;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Engines;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_cloud_1_1_data.html">FiftyOne.DeviceDetection.Cloud.Data</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements.html">FiftyOne.DeviceDetection.Cloud.FlowElements</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements.html">FiftyOne.Pipeline.CloudRequestEngine.FlowElements</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions.html">FiftyOne.Pipeline.Core.Exceptions</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements.html">FiftyOne.Pipeline.Core.FlowElements</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html">FiftyOne.Pipeline.Engines</a>;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.Extensions.Logging;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.IO;</div>
@@ -122,7 +122,7 @@ You can create a Resource Key at
 <div class="c-code__line">{</div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>Program</div>
 <div class="c-code__line">    {</div>
-<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>Example</div>
+<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_example.html">Example</a></div>
 <div class="c-code__line">        {</div>
 <div class="c-code__line">            <span class="c-code__comment">// Example values to use when looking up device details from native model names.</span></div>
 <div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">string</span> _nativeModel1 = <span class="c-code__stringliteral">&quot;SC-03L&quot;</span>;</div>
@@ -146,9 +146,9 @@ You can create a Resource Key at
 <div class="c-code__line">                <span class="c-code__comment">// This example creates the pipeline and engines in code. For a demonstration</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// of how to do this using a configuration file instead, see the TacLookup example.</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// For more information about builders in general see the documentation at</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-cloud-nativemodel-console-program.cs&amp;utm_term=run</span></div>
-<div class="c-code__line">                var cloudRequestEngineBuilder = <span class="c-code__keyword">new</span> CloudRequestEngineBuilder(loggerFactory, httpClient)</div>
-<div class="c-code__line">                    .SetResourceKey(resourceKey);</div>
+<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-cloud-nativemodel-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                var cloudRequestEngineBuilder = <span class="c-code__keyword">new</span> <a id="_a0" name="_a0"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html">CloudRequestEngineBuilder</a>(loggerFactory, httpClient)</div>
+<div class="c-code__line">                    .<a id="a1" name="a1"></a><a class="code hl_functionRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html#a6d1adde56e228898b0f45ad2b0e7024c">SetResourceKey</a>(resourceKey);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                <span class="c-code__comment">// If a cloud endpoint has been provided then set the</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// cloud pipeline endpoint. </span></div>
@@ -161,10 +161,10 @@ You can create a Resource Key at
 <div class="c-code__line">                <span class="c-code__keyword">using</span> (var cloudEngine = cloudRequestEngineBuilder.Build())</div>
 <div class="c-code__line">                <span class="c-code__comment">// Create the hardware profile engine to process the response from the</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// request engine.</span></div>
-<div class="c-code__line">                <span class="c-code__keyword">using</span> (var propertyKeyedEngine = <span class="c-code__keyword">new</span> HardwareProfileCloudEngineBuilder(loggerFactory)</div>
-<div class="c-code__line">                    .Build())</div>
+<div class="c-code__line">                <span class="c-code__keyword">using</span> (var propertyKeyedEngine = <span class="c-code__keyword">new</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements_1_1_hardware_profile_cloud_engine_builder.html">HardwareProfileCloudEngineBuilder</a>(loggerFactory)</div>
+<div class="c-code__line">                    .<a id="a3" name="a3"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements_1_1_hardware_profile_cloud_engine_builder.html#a87f1833399b86bfc89074118ae722008">Build</a>())</div>
 <div class="c-code__line">                <span class="c-code__comment">// Create the pipeline using the engines.</span></div>
-<div class="c-code__line">                <span class="c-code__keyword">using</span> (var pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
+<div class="c-code__line">                <span class="c-code__keyword">using</span> (var pipeline = <span class="c-code__keyword">new</span> <a id="_a4" name="_a4"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder.html">PipelineBuilder</a>(loggerFactory)</div>
 <div class="c-code__line">                    .AddFlowElement(cloudEngine)</div>
 <div class="c-code__line">                    .AddFlowElement(propertyKeyedEngine)</div>
 <div class="c-code__line">                    .Build())</div>
@@ -176,18 +176,18 @@ You can create a Resource Key at
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> AnalyseNativeModel(<span class="c-code__keywordtype">string</span> nativemodel, IPipeline pipeline, TextWriter output)</div>
+<div class="c-code__line">            <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> AnalyseNativeModel(<span class="c-code__keywordtype">string</span> nativemodel, <a id="_a5" name="_a5"></a><a class="code hl_interfaceRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html">IPipeline</a> pipeline, TextWriter output)</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                <span class="c-code__comment">// Create the FlowData instance. This is wrapped in a using block to ensure </span></div>
 <div class="c-code__line">                <span class="c-code__comment">// resources are disposed correctly.</span></div>
-<div class="c-code__line">                <span class="c-code__keyword">using</span> (var data = pipeline.CreateFlowData())</div>
+<div class="c-code__line">                <span class="c-code__keyword">using</span> (var data = pipeline.<a id="a6" name="a6"></a><a class="code hl_functionRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html#a6adf8dd2a8f0435adb8bf9e857b922db">CreateFlowData</a>())</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Add the native model key as evidence.</span></div>
 <div class="c-code__line">                    data.AddEvidence(Shared.Constants.EVIDENCE_QUERY_NATIVE_MODEL_KEY, nativemodel);</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Process the supplied evidence.</span></div>
 <div class="c-code__line">                    data.Process();</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Get result data from the flow data.</span></div>
-<div class="c-code__line">                    var result = data.Get&lt;MultiDeviceDataCloud&gt;();</div>
+<div class="c-code__line">                    var result = data.Get&lt;<a id="_a7" name="_a7"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_cloud_1_1_data_1_1_multi_device_data_cloud.html">MultiDeviceDataCloud</a>&gt;();</div>
 <div class="c-code__line">                    output.WriteLine($<span class="c-code__stringliteral">&quot;Which devices are associated with the &quot;</span> +</div>
 <div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;native model name &#39;{nativemodel}&#39;?&quot;</span>);</div>
 <div class="c-code__line">                    <span class="c-code__comment">// The &#39;MultiDeviceDataCloud&#39; object contains one or more instances</span></div>
@@ -222,12 +222,12 @@ You can create a Resource Key at
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;environment variable &#39;{ExampleUtils.CLOUD_RESOURCE_KEY_ENV_VAR}&#39;. &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;The 51Degrees cloud service is accessed using a &#39;ResourceKey&#39;. &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;For more information &quot;</span> +</div>
-<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;see https://51degrees.com/documentation/_info__resource_keys.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-cloud-nativemodel-console-program.cs&amp;utm_term=resource-key-required. &quot;</span> +</div>
+<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;see https://51degrees.com/documentation/_info__resource_keys.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-cloud-nativemodel-console-program.cs&amp;utm_term=resource-key-required. &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;Native model lookup requires a paid subscription. See &quot;</span> +</div>
-<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-cloud-nativemodel-console-program.cs&amp;utm_term=resource-key-required to get a paid subscription with more &quot;</span> +</div>
+<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-cloud-nativemodel-console-program.cs&amp;utm_term=resource-key-required to get a paid subscription with more &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;properties. Once subscribed, a resource &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;key with the properties required by this example can be created at &quot;</span> +</div>
-<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;https://configure.51degrees.com/hYzn3TV3?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-cloud-nativemodel-console-program.cs&amp;utm_term=resource-key-required. You can now populate the &quot;</span> +</div>
+<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;https://configure.51degrees.com/hYzn3TV3?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-cloud-nativemodel-console-program.cs&amp;utm_term=resource-key-required. You can now populate the &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;environment variable mentioned at the start of this message with the &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;resource key or pass it as the first argument on the command line.&quot;</span>);</div>
 <div class="c-code__line">            }</div>
@@ -240,28 +240,28 @@ You can create a Resource Key at
 <div class="c-code__line">                <span class="c-code__comment">// non-zero, because the example did not do its work.</span></div>
 <div class="c-code__line">                <span class="c-code__keywordflow">try</span></div>
 <div class="c-code__line">                {</div>
-<div class="c-code__line">                    <span class="c-code__keyword">new</span> Example().Run(</div>
+<div class="c-code__line">                    <span class="c-code__keyword">new</span> <a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_example.html">Example</a>().Run(</div>
 <div class="c-code__line">                        resourceKey, loggerFactory, Console.Out);</div>
 <div class="c-code__line">                }</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">catch</span> (PipelineException exception)</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">catch</span> (<a id="_a8" name="_a8"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_exception.html">PipelineException</a> exception)</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    ExampleUtils.ReportMissingProperties(</div>
 <div class="c-code__line">                        exception,</div>
 <div class="c-code__line">                        Console.Out,</div>
 <div class="c-code__line">                        <span class="c-code__stringliteral">&quot;the &#39;hardware&#39; properties a native model lookup &quot;</span> +</div>
 <div class="c-code__line">                        <span class="c-code__stringliteral">&quot;returns, which need a paid subscription&quot;</span>,</div>
-<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;https://configure.51degrees.com/hYzn3TV3?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-cloud-nativemodel-console-program.cs&amp;utm_term=resource-key-required&quot;</span>);</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;https://configure.51degrees.com/hYzn3TV3?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-cloud-nativemodel-console-program.cs&amp;utm_term=resource-key-required&quot;</span>);</div>
 <div class="c-code__line">                    loggerFactory.Dispose();</div>
 <div class="c-code__line">                    Environment.Exit(1);</div>
 <div class="c-code__line">                }</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">catch</span> (PropertyMissingException exception)</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">catch</span> (<a id="_a9" name="_a9"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_engines_1_1_property_missing_exception.html">PropertyMissingException</a> exception)</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    ExampleUtils.ReportMissingProperties(</div>
 <div class="c-code__line">                        exception,</div>
 <div class="c-code__line">                        Console.Out,</div>
 <div class="c-code__line">                        <span class="c-code__stringliteral">&quot;every &#39;hardware&#39; property this example displays, &quot;</span> +</div>
 <div class="c-code__line">                        <span class="c-code__stringliteral">&quot;which needs a paid subscription&quot;</span>,</div>
-<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;https://configure.51degrees.com/hYzn3TV3?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-cloud-nativemodel-console-program.cs&amp;utm_term=resource-key-required&quot;</span>);</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;https://configure.51degrees.com/hYzn3TV3?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-cloud-nativemodel-console-program.cs&amp;utm_term=resource-key-required&quot;</span>);</div>
 <div class="c-code__line">                    loggerFactory.Dispose();</div>
 <div class="c-code__line">                    Environment.Exit(1);</div>
 <div class="c-code__line">                }</div>
@@ -272,7 +272,24 @@ You can create a Resource Key at
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_cloud_1_1_data_1_1_multi_device_data_cloud_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_cloud_1_1_data_1_1_multi_device_data_cloud.html">FiftyOne.DeviceDetection.Cloud.Data.MultiDeviceDataCloud</a></div><div class="ttdoc">A data class that is used to access details of cloud responses that contain multiple device data reco...</div><div class="ttdef"><b>Definition</b> MultiDeviceDataCloud.cs:38</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements_1_1_hardware_profile_cloud_engine_builder_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements_1_1_hardware_profile_cloud_engine_builder.html">FiftyOne.DeviceDetection.Cloud.FlowElements.HardwareProfileCloudEngineBuilder</a></div><div class="ttdoc">Fluent builder used to create a cloud-based engine that can return multiple hardware profiles from a ...</div><div class="ttdef"><b>Definition</b> HardwareProfileCloudEngineBuilder.cs:41</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements_1_1_hardware_profile_cloud_engine_builder_html_a87f1833399b86bfc89074118ae722008"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements_1_1_hardware_profile_cloud_engine_builder.html#a87f1833399b86bfc89074118ae722008">FiftyOne.DeviceDetection.Cloud.FlowElements.HardwareProfileCloudEngineBuilder.Build</a></div><div class="ttdeci">HardwareProfileCloudEngine Build()</div><div class="ttdoc">Build a new engine using the configured values.</div><div class="ttdef"><b>Definition</b> HardwareProfileCloudEngineBuilder.cs:63</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html">FiftyOne::Pipeline::CloudRequestEngine::FlowElements::CloudRequestEngineBuilder</a></div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder_html_a6d1adde56e228898b0f45ad2b0e7024c"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html#a6d1adde56e228898b0f45ad2b0e7024c">FiftyOne::Pipeline::CloudRequestEngine::FlowElements::CloudRequestEngineBuilder::SetResourceKey</a></div><div class="ttdeci">CloudRequestEngineBuilder SetResourceKey(string resourceKey)</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_exception_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_exception.html">FiftyOne::Pipeline::Core::Exceptions::PipelineException</a></div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder.html">FiftyOne::Pipeline::Core::FlowElements::PipelineBuilder</a></div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_engines_1_1_property_missing_exception_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_engines_1_1_property_missing_exception.html">FiftyOne::Pipeline::Engines::PropertyMissingException</a></div></div>
+<div class="ttc" id="ainterface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html">FiftyOne::Pipeline::Core::FlowElements::IPipeline</a></div></div>
+<div class="ttc" id="ainterface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline_html_a6adf8dd2a8f0435adb8bf9e857b922db"><div class="ttname"><a href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html#a6adf8dd2a8f0435adb8bf9e857b922db">FiftyOne::Pipeline::Core::FlowElements::IPipeline::CreateFlowData</a></div><div class="ttdeci">IFlowData CreateFlowData()</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_cloud_1_1_data_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_cloud_1_1_data.html">FiftyOne.DeviceDetection.Cloud.Data</a></div><div class="ttdef"><b>Definition</b> DeviceDataCloud.cs:32</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements.html">FiftyOne.DeviceDetection.Cloud.FlowElements</a></div><div class="ttdef"><b>Definition</b> DeviceDetectionCloudEngine.cs:36</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_example_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_example.html">FiftyOne.DeviceDetection.Example</a></div><div class="ttdef"><b>Definition</b> PmpWebTemplateTests.cs:32</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_examples_1_1_cloud_1_1_native_model_lookup_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_examples_1_1_cloud_1_1_native_model_lookup.html">FiftyOne.DeviceDetection.Examples.Cloud.NativeModelLookup</a></div><div class="ttdef"><b>Definition</b> Cloud/NativeModel-Console/Program.cs:53</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements.html">FiftyOne::Pipeline::CloudRequestEngine::FlowElements</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions.html">FiftyOne::Pipeline::Core::Exceptions</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements.html">FiftyOne::Pipeline::Core::FlowElements</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html">FiftyOne::Pipeline::Engines</a></div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

@@ -14,7 +14,7 @@ var _human_confidence__index =
           [ "Server", "_human_confidence__quickstart.html#server", null ]
         ] ],
         [ "Quick start", "_human_confidence__quickstart.html#quick-start", null ],
-        [ "Find out more", "_human_confidence__quickstart.html#find-out-more-3", null ]
+        [ "Find out more", "_human_confidence__quickstart.html#find-out-more-2", null ]
       ] ]
     ] ],
     [ "Deploy Human Confidence with the cloud", "_services__cloud__human_confidence.html", [
@@ -26,5 +26,14 @@ var _human_confidence__index =
       [ "Test it", "_services__cloud__human_confidence.html#test-it", null ],
       [ "Find out more", "_services__cloud__human_confidence.html#find-out-more-1", null ]
     ] ],
-    [ "Human and bot traffic in your analytics", "_human_confidence__analytics.html", "_human_confidence__analytics" ]
+    [ "Human and bot traffic in your analytics", "_human_confidence__analytics.html", [
+      [ "What to send", "_human_confidence__analytics.html#what-to-send", null ],
+      [ "Get the values into the page", "_human_confidence__analytics.html#get-the-values-into-the-page", null ],
+      [ "What to look at", "_human_confidence__analytics.html#what-to-look-at", null ],
+      [ "Crawlers that never run the page", "_human_confidence__analytics.html#crawlers-that-never-run-the-page", null ],
+      [ "Find out more", "_human_confidence__analytics.html#find-out-more", null ]
+    ] ],
+    [ "Google Analytics 4 (Moved)", "_human_confidence__google_analytics.html", [
+      [ "Location Changed", "_human_confidence__google_analytics.html#location-changed-2", null ]
+    ] ]
 ];

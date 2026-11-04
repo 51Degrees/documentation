@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/location-java/classfiftyone_1_1geolocation_1_1core_1_1_constants.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/location-java/classfiftyone_1_1geolocation_1_1core_1_1_constants.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -114,6 +114,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <h1 class="g-docs__page-title">fiftyone.geolocation.core.Constants Class Reference</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
+<h2 class="g-docs__section-heading">
+Collaboration diagram for fiftyone.geolocation.core.Constants:</h2>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classfiftyone_1_1geolocation_1_1core_1_1_constants__coll__graph.svg" width="319" height="162"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -133,7 +138,7 @@ static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>EVIDENCE_GE
 static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>EVIDENCE_GEO_LAT_PARAM_KEY</b> = &quot;query.&quot; + EVIDENCE_GEO_LAT_COOKIE_NAME</td></tr>
 <tr class="c-table__row memitem:ae739bf9f0cab6f089f759fbfa826da7b" id="r_ae739bf9f0cab6f089f759fbfa826da7b"><td class="c-table__cell"><a id="ae739bf9f0cab6f089f759fbfa826da7b" name="ae739bf9f0cab6f089f759fbfa826da7b"></a>
 static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>EVIDENCE_GEO_LON_PARAM_KEY</b> = &quot;query.&quot; + EVIDENCE_GEO_LON_COOKIE_NAME</td></tr>
-<tr class="c-table__row memitem:a4cf71d4ec7489b4afe80d55c69877127" id="r_a4cf71d4ec7489b4afe80d55c69877127"><td class="c-table__cell">static&#160;final&#160;EvidenceKeyFilter&#160;</td><td class="c-table__cell"><a class="el" href="#a4cf71d4ec7489b4afe80d55c69877127">DefaultGeoEvidenceKeyFilter</a></td></tr>
+<tr class="c-table__row memitem:a4cf71d4ec7489b4afe80d55c69877127" id="r_a4cf71d4ec7489b4afe80d55c69877127"><td class="c-table__cell">static&#160;final&#160;<a class="elRef" href="../../pipeline-java/4.4/interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html">EvidenceKeyFilter</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a4cf71d4ec7489b4afe80d55c69877127">DefaultGeoEvidenceKeyFilter</a></td></tr>
 <tr class="c-table__row memitem:a27617ed5bdcb9a47e725734674b51583" id="r_a27617ed5bdcb9a47e725734674b51583"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a27617ed5bdcb9a47e725734674b51583">NO_EVIDENCE_MESSAGE</a></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
@@ -149,7 +154,7 @@ static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>EVIDENCE_GE
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">final EvidenceKeyFilter fiftyone.geolocation.core.Constants.DefaultGeoEvidenceKeyFilter</td>
+              <td class="c-table__cell">final <a class="elRef" href="../../pipeline-java/4.4/interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html">EvidenceKeyFilter</a> fiftyone.geolocation.core.Constants.DefaultGeoEvidenceKeyFilter</td>
             </tr>
           </table>
         </div>
@@ -161,7 +166,7 @@ static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>EVIDENCE_GE
 </table>
 </div><div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                                              =</div>
-<div class="c-code__line"><span class="c-code__keyword">new</span> EvidenceKeyFilterWhitelist(Arrays.asList(</div>
+<div class="c-code__line"><span class="c-code__keyword">new</span> <a class="code hl_classRef" href="../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter_whitelist.html">EvidenceKeyFilterWhitelist</a>(Arrays.asList(</div>
 <div class="c-code__line">        fiftyone.pipeline.core.Constants.EVIDENCE_CLIENTIP_KEY,</div>
 <div class="c-code__line">        <a class="code hl_class" href="classfiftyone_1_1geolocation_1_1core_1_1_constants.html">Constants</a>.EVIDENCE_GEO_LAT_KEY,</div>
 <div class="c-code__line">        <a class="code hl_class" href="classfiftyone_1_1geolocation_1_1core_1_1_constants.html">Constants</a>.EVIDENCE_GEO_LON_KEY,</div>
@@ -171,6 +176,7 @@ static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>EVIDENCE_GE
 <div class="c-code__line">        <a class="code hl_class" href="classfiftyone_1_1geolocation_1_1core_1_1_constants.html">Constants</a>.EVIDENCE_GEO_LON_PARAM_KEY),</div>
 <div class="c-code__line">    String.CASE_INSENSITIVE_ORDER)</div>
 <div class="ttc" id="aclassfiftyone_1_1geolocation_1_1core_1_1_constants_html"><div class="ttname"><a href="classfiftyone_1_1geolocation_1_1core_1_1_constants.html">fiftyone.geolocation.core.Constants</a></div><div class="ttdef"><b>Definition</b> Constants.java:30</div></div>
+<div class="ttc" id="aclassfiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter_whitelist_html"><div class="ttname"><a href="../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter_whitelist.html">fiftyone::pipeline::core::data::EvidenceKeyFilterWhitelist</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -1,14 +1,20 @@
 <map id="fiftyone.devicedetection.cloud.flowelements.DeviceDataCloudInternal" name="fiftyone.devicedetection.cloud.flowelements.DeviceDataCloudInternal">
-<area shape="rect" id="Node000001" title="Internal implementation of the DeviceDataCloud interface." alt="" coords="732,37,1047,77"/>
-<area shape="rect" id="Node000002" href="$classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html" title=" " alt="" coords="441,5,672,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="686,35,732,40,731,45,685,40"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="201,13,331,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="345,23,441,23,441,28,345,28"/>
-<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html" title="Interface exposing typed accessors for properties related to a device returned by a device detection ..." alt="" coords="151,65,381,105"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="376,60,459,43,460,48,377,65"/>
-<area shape="rect" id="Node000006" href="$interfacefiftyone_1_1devicedetection_1_1cloud_1_1data_1_1_device_data_cloud.html" title="Cloud specific interface for DeviceData." alt="" coords="429,69,684,109"/>
-<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="395,84,429,85,429,90,395,90"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="5,73,103,98"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="116,83,150,83,150,88,116,88"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="697,73,732,70,732,75,698,78"/>
+<area shape="rect" id="Node000001" title="Internal implementation of the DeviceDataCloud interface." alt="" coords="1100,101,1415,141"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html" title=" " alt="" coords="809,69,1040,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1054,99,1100,104,1099,109,1053,104"/>
+<area shape="rect" id="Node000003" href="/home/runner/work/documentation/documentation/apis/51degrees-java/pipeline/docs/tagfile$classfiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_data_base.html" title=" " alt="" coords="516,69,749,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="763,87,809,87,809,92,763,92"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="261,5,457,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="459,46,547,67,546,72,458,51"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="249,69,468,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="482,87,516,87,516,92,482,92"/>
+<area shape="rect" id="Node000006" href="$interfacefiftyone_1_1devicedetection_1_1shared_1_1_device_data.html" title="Interface exposing typed accessors for properties related to a device returned by a device detection ..." alt="" coords="517,133,748,173"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="737,128,832,107,833,112,738,133"/>
+<area shape="rect" id="Node000009" href="$interfacefiftyone_1_1devicedetection_1_1cloud_1_1data_1_1_device_data_cloud.html" title="Cloud specific interface for DeviceData." alt="" coords="797,133,1052,173"/>
+<area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="762,151,797,151,797,156,762,156"/>
+<area shape="rect" id="Node000007" href="/home/runner/work/documentation/documentation/apis/51degrees-java/pipeline/docs/tagfile$interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_data.html" title=" " alt="" coords="258,133,459,173"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="473,151,517,151,517,156,473,156"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="5,133,201,173"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="215,151,258,151,258,156,215,156"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1065,137,1100,134,1100,139,1066,142"/>
 </map>

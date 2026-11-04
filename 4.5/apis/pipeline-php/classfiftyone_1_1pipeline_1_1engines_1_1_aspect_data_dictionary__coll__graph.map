@@ -1,0 +1,11 @@
+<map id="fiftyone\pipeline\engines\AspectDataDictionary" name="fiftyone\pipeline\engines\AspectDataDictionary">
+<area shape="rect" id="Node000001" title="AspectData class extension that stores content as an array Similar to ElementDataDictionary in the Pi..." alt="" coords="943,51,1125,91"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1engines_1_1_aspect_data.html" title=" " alt="" coords="711,51,893,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="908,68,942,68,942,73,908,73"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1core_1_1_element_data.html" title="Stores information created by a FlowElement based on FlowData." alt="" coords="321,8,480,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="494,35,687,55,711,57,710,63,686,60,494,40"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="5,8,164,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="178,25,321,25,321,31,178,31"/>
+<area shape="rect" id="Node000005" href="$classfiftyone_1_1pipeline_1_1engines_1_1_missing_property_service.html" title="A missing property service runs when a property is not available in the aspectData." alt="" coords="309,72,492,112"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="506,86,687,77,710,76,711,81,687,83,506,91"/>
+</map>

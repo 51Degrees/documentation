@@ -27,7 +27,7 @@ var _identifiers_51_did =
         [ "A stated usage wins", "_identifiers_51_did__tcf.html#a-stated-usage-wins", null ],
         [ "What the identifier records", "_identifiers_51_did__tcf.html#what-the-identifier-records", null ],
         [ "The License Key the marketing usages need", "_identifiers_51_did__tcf.html#the-license-key-the-marketing-usages-need", null ],
-        [ "Find out more", "_identifiers_51_did__tcf.html#find-out-more-7", null ]
+        [ "Find out more", "_identifiers_51_did__tcf.html#find-out-more-6", null ]
       ] ]
     ] ],
     [ "Global Privacy Platform and US Privacy strings", "_identifiers_51_did__gpp.html", null ],

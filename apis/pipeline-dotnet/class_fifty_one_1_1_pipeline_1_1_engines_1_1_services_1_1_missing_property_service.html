@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
-  <link rel="canonical" href="/documentation/apis/pipeline-dotnet/class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_missing_property_service.html">
-  <link rel="alternate" hreflang="en-US" href="/documentation/apis/pipeline-dotnet/class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_missing_property_service.html" />
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/pipeline-dotnet/class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_missing_property_service.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/pipeline-dotnet/class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_missing_property_service.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -71,11 +71,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fifty_on
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>Service that determines the reason for a property not being populated by an engine. </p>
 <p>See the Specification</p>
-<p>Cloud-specific behaviour that depends on per-request state — such as reporting MissingPropertyReason.CloudRequestFailed when the upstream cloud request failed for the request that produced the aspect data — is added by the cloud-specific subclass <code>MissingPropertyServiceCloud</code> in the CloudRequestEngine package. </p>
+<p>Cloud-specific behaviour that depends on per-request state — such as reporting MissingPropertyReason.CloudRequestFailed when the upstream cloud request failed for the request that produced the aspect data — is added by the cloud-specific subclass <code>MissingPropertyServiceCloud</code> in the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_cloud_request_engine.html">CloudRequestEngine</a> package. </p>
 </div><h2 class="g-docs__section-heading">
 Inheritance diagram for FiftyOne.Pipeline.Engines.Services.MissingPropertyService:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_missing_property_service__inherit__graph.svg" width="250" height="242"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_missing_property_service__inherit__graph.svg" width="899" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <h2 class="g-docs__section-heading">
 Collaboration diagram for FiftyOne.Pipeline.Engines.Services.MissingPropertyService:</h2>
@@ -250,6 +250,8 @@ static&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1
 <p>Get the reason that the specified property is not available in the results from the specified engines, with access to the aspect data instance so that per-request state (e.g.a cloud-request-failed marker) can be considered.Cloud aspect data carries a per-request marker that flips when the upstream cloud call failed. The on-premise service ignores this overload's <em>aspectData</em>  argument; the cloud service uses it to short-circuit to MissingPropertyReason.CloudRequestFailed without mis-reporting via the standard engine-metadata heuristics.  </p>
 
 <p>Implements <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_i_missing_property_service.html#af0553116133889f8722b3678880b8abc">FiftyOne.Pipeline.Engines.Services.IMissingPropertyService</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_services_1_1_missing_property_service_cloud.html#ad993e839e8f5cb34c95940e3c83a7479">FiftyOne.Pipeline.CloudRequestEngine.Services.MissingPropertyServiceCloud</a>.</p>
 
 </div>
 </div>

@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
-  <link rel="canonical" href="/documentation/apis/device-detection-nginx/hash_2js_example_2javascript_8conf-example.html">
-  <link rel="alternate" hreflang="en-US" href="/documentation/apis/device-detection-nginx/hash_2js_example_2javascript_8conf-example.html" />
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-nginx/hash_2js_example_2javascript_8conf-example.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/device-detection-nginx/hash_2js_example_2javascript_8conf-example.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('hash_2js_examp
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <p>This example shows how to return Javascript to obtain further evidence for 51Degrees' on-premise device detection in Nginx.</p>
-<p>This example shows how to return Javascript to obtain further evidence for 51Degrees' on-premise device detection in Nginx. This example is available in full on <a href="https://github.com/51Degrees/device-detection-nginx/blob/master/examples/hash/jsExample/javascript.conf">GitHub</a>.</p>
+<p>This example shows how to return Javascript to obtain further evidence for 51Degrees' on-premise device detection in Nginx. This example is available in full on <a href="https://github.com/51Degrees/51degrees-nginx/blob/main/examples/hash/jsExample/javascript.conf">GitHub</a>.</p>
 <p> 
 <p>
 This example requires a local data file. The free 'Lite' data file can be acquired by
@@ -83,14 +83,14 @@ Find out about the more capable data files that are available on our
 <a href="https://51degrees.com/pricing">pricing page</a>
 </p>
   </p>
-<p>Properties required for this example are not included in the free Lite file, so a data file that includes ScreenPixelsWidth and ScreenPixelsWidthJavascript need to be obtained from <a href="https://configure.51degrees.com/?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-nginx&amp;utm_content=examples-hash-jsexample-javascript.conf&amp;utm_term=top">configurator</a>.</p>
+<p>Properties required for this example are not included in the free Lite file, so a data file that includes ScreenPixelsWidth and ScreenPixelsWidthJavascript need to be obtained from <a href="https://configure.51degrees.com/?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-nginx&amp;utm_content=examples-hash-jsexample-javascript.conf&amp;utm_term=top">configurator</a>.</p>
 <p>Before using the example, update the followings:</p><ul>
 <li>Remove this 'how to' guide block.</li>
 <li>Update the file path specifed in <code>51D_file_path</code> with the actual file path.</li>
 <li>Replace the nginx.conf with this file or run Nginx with <code>-c</code> option pointing to this file.</li>
 <li>Create a static file <code>overrides</code> in the Nginx <code>document_root</code>.</li>
 </ul>
-<p>In a Linux environment, once Nginx has started, open the <a href="https://github.com/51Degrees/device-detection-nginx/blob/master/examples/hash/jsExample/index.html">index.html</a> in a browser.</p>
+<p>In a Linux environment, once Nginx has started, open the <a href="https://github.com/51Degrees/51degrees-nginx/blob/main/examples/hash/jsExample/index.html">index.html</a> in a browser.</p>
 <p>The <code>index.html</code> send a request to the <code>/51D.js</code> endpoint to obtain the javascript and execute it as below: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;script src=<span class="c-code__stringliteral">&quot;http://localhost:8888/51D.js&quot;</span>&gt;&lt;/script&gt;</div>
 </div><!-- fragment --><p> Then use the obtained screen pixels width to send back to the <code>/overrides</code> endpoint. The full details can be seen in the <code>index.html</code>.</p>
 <p>The Javascript can be seen by running the below command. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">$ curl localhost:8080/51D.js -A <span class="c-code__stringliteral">&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 7_1 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobile/11D167 Safari/9537.53&quot;</span></div>

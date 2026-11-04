@@ -108,6 +108,7 @@ var annotated =
         [ "PropertyMetaDataSwig", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_property_meta_data_swig.html", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_property_meta_data_swig" ],
         [ "ComponentMetaDataSwig", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_component_meta_data_swig.html", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_component_meta_data_swig" ],
         [ "ProfileMetaDataSwig", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_profile_meta_data_swig.html", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_profile_meta_data_swig" ],
+        [ "UTF8StringSwig", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_u_t_f8_string_swig.html", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_u_t_f8_string_swig" ],
         [ "ValueMetaDataKeySwig", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_value_meta_data_key_swig.html", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_value_meta_data_key_swig" ],
         [ "ValueMetaDataSwig", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_value_meta_data_swig.html", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_value_meta_data_swig" ],
         [ "ComponentMetaDataCollectionSwig", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_component_meta_data_collection_swig.html", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_component_meta_data_collection_swig" ],
@@ -125,7 +126,9 @@ var annotated =
         [ "ResultsHashSwig", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_hash_swig.html", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_hash_swig" ],
         [ "CollectionConfigSwig", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_collection_config_swig.html", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_collection_config_swig" ],
         [ "ConfigHashSwig", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_config_hash_swig.html", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_config_hash_swig" ],
-        [ "EngineHashSwig", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_hash_swig.html", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_hash_swig" ]
+        [ "EngineHashSwig", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_hash_swig.html", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_hash_swig" ],
+        [ "ResultsHashSerializer", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_hash_serializer.html", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_results_hash_serializer" ],
+        [ "Transform", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_transform.html", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_transform" ]
       ] ],
       [ "swig_data", "namespacefiftyone__devicedetection__onpremise_1_1swig__data.html", [
         [ "OnPremiseMissingPropertyService", "classfiftyone__devicedetection__onpremise_1_1swig__data_1_1_on_premise_missing_property_service.html", "classfiftyone__devicedetection__onpremise_1_1swig__data_1_1_on_premise_missing_property_service" ],
@@ -143,7 +146,7 @@ var annotated =
     [ "setup", "namespacesetup.html", [
       [ "NoSuffixBuilder", "classsetup_1_1_no_suffix_builder.html", "classsetup_1_1_no_suffix_builder" ]
     ] ],
-    [ "tests", "namespacetests.html", [
+    [ "tests", null, [
       [ "test_automatic_data_file_updates", "namespacetests_1_1test__automatic__data__file__updates.html", [
         [ "DeviceDetectionTests", "classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests.html", "classtests_1_1test__automatic__data__file__updates_1_1_device_detection_tests" ]
       ] ],

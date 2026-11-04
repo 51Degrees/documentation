@@ -1,0 +1,4 @@
+var class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_on_premise_1_1_client_hints_integrated_test =
+[
+    [ "VerifyExample", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_on_premise_1_1_client_hints_integrated_test.html#a46ca6ad72a19cc425711f560054a041f", null ]
+];

@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"_ip_intelligence__quickstart.html#language-specific-integration-1":[2,1,0,1],
+"_ip_intelligence__quickstart.html#on-premise-deployment":[2,1,0,0,1],
+"_ip_intelligence__quickstart.html#web-applications-aspnet-core":[2,1,0,1,1],
 "_ip_intelligence__quickstart.html#web-integration":[2,1,0,1,3],
 "_ip_intelligence__quickstart.html#web-integration-1":[2,1,0,1,5],
 "_ip_intelligence__quickstart.html#web-integration-2":[2,1,0,1,7],
@@ -246,8 +249,5 @@ var NAVTREEINDEX2 =
 "_pipeline_api__features__client_side_evidence.html#script-assembly":[8,2,3,5,1,2],
 "_pipeline_api__features__client_side_evidence.html#security":[8,2,3,5,3,9],
 "_pipeline_api__features__client_side_evidence.html#semi-static-scenario":[8,2,3,5,2],
-"_pipeline_api__features__client_side_evidence.html#snippet-retrieval-and-integration":[8,2,3,5,1,1],
-"_pipeline_api__features__client_side_evidence.html#static-and-quasi-static-script-approaches":[8,2,3,5],
-"_pipeline_api__features__client_side_evidence.html#storage-mechanism":[8,2,3,3,3],
-"_pipeline_api__features__client_side_evidence.html#synchronization":[8,2,3,5,3,3]
+"_pipeline_api__features__client_side_evidence.html#snippet-retrieval-and-integration":[8,2,3,5,1,1]
 };

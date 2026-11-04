@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/device-detection-python/onpremise_2datafileupdate_console_8py-example.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-python/onpremise_2datafileupdate_console_8py-example.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -73,9 +73,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2dat
 <li>Daily auto-update</li>
 </ul>
 <h2>License Key</h2>
-<p>In order to test this example you will need a 51Degrees Enterprise license which can be purchased from our <a href="https://51degrees.com/pricing/annual?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=top">pricing page</a>. Look for our "Bigger" or "Biggest" options.</p>
+<p>In order to test this example you will need a 51Degrees Enterprise license which can be purchased from our <a href="https://51degrees.com/pricing/annual?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=top">pricing page</a>. Look for our "Bigger" or "Biggest" options.</p>
 <h1>Data Files</h1>
-<p>You can find out more about data files, licenses etc. at our <a href="https://51degrees.com/resources/faqs?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=top">FAQ page</a></p>
+<p>You can find out more about data files, licenses etc. at our <a href="https://51degrees.com/resources/faqs?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=top">FAQ page</a></p>
 <h2>Enterprise Data File</h2>
 <p>Enterprise (fully-featured) data files are typically released by 51Degrees four days a week (Mon-Thu) and on-premise deployments can fetch and download those files automatically. Equally, customers may choose to download the files themselves and move them into place to be detected by the 51Degrees filesystem watcher.</p>
 <h3>Manual Download</h3>
@@ -188,10 +188,10 @@ from the 51Degrees <a href="https://51degrees.com/pricing">pricing page</a>.</p>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__devicedetection_1_1devicedetection__pipelinebuilder.html">fiftyone_devicedetection.devicedetection_pipelinebuilder</a> <span class="c-code__keyword">import</span> DeviceDetectionPipelineBuilder</div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__devicedetection__examples_1_1example__utils.html">fiftyone_devicedetection_examples.example_utils</a> <span class="c-code__keyword">import</span> ExampleUtils</div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__devicedetection__shared_1_1key__utils.html">fiftyone_devicedetection_shared.key_utils</a> <span class="c-code__keyword">import</span> KeyUtils</div>
-<div class="c-code__line"><span class="c-code__keyword">from</span> fiftyone_pipeline_core.logger <span class="c-code__keyword">import</span> Logger</div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespaceRef" href="../pipeline-python/namespacefiftyone__pipeline__core_1_1logger.html">fiftyone_pipeline_core.logger</a> <span class="c-code__keyword">import</span> Logger</div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__devicedetection__shared_1_1example__constants.html">fiftyone_devicedetection_shared.example_constants</a> <span class="c-code__keyword">import</span> ENTERPRISE_DATAFILE_NAME</div>
-<div class="c-code__line"><span class="c-code__keyword">from</span> fiftyone_pipeline_engines.datafile_update_service <span class="c-code__keyword">import</span> DataFileUpdateService</div>
-<div class="c-code__line"><span class="c-code__keyword">from</span> fiftyone_pipeline_engines.datafile_update_service <span class="c-code__keyword">import</span> UpdateStatus</div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespaceRef" href="../pipeline-python/namespacefiftyone__pipeline__engines_1_1datafile__update__service.html">fiftyone_pipeline_engines.datafile_update_service</a> <span class="c-code__keyword">import</span> DataFileUpdateService</div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespaceRef" href="../pipeline-python/namespacefiftyone__pipeline__engines_1_1datafile__update__service.html">fiftyone_pipeline_engines.datafile_update_service</a> <span class="c-code__keyword">import</span> UpdateStatus</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">UPDATE_EXAMPLE_LICENSE_KEY_NAME = <span class="c-code__stringliteral">&quot;license_key&quot;</span></div>
 <div class="c-code__line">DEFAULT_DATA_FILENAME = os.path.expanduser(<span class="c-code__stringliteral">&quot;~&quot;</span>) + os.path.sep +  ENTERPRISE_DATAFILE_NAME</div>
@@ -222,7 +222,7 @@ from the 51Degrees <a href="https://51degrees.com/pricing">pricing page</a>.</p>
 <div class="c-code__line">            logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>,</div>
 <div class="c-code__line">                <span class="c-code__stringliteral">&quot;In order to test this example you will need a 51Degrees Enterprise &quot;</span></div>
 <div class="c-code__line">                <span class="c-code__stringliteral">&quot;license which can be obtained on a trial basis or purchased from our\n&quot;</span></div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;pricing page https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=license-key-required. You must supply the license &quot;</span></div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;pricing page https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=license-key-required. You must supply the license &quot;</span></div>
 <div class="c-code__line">                <span class="c-code__stringliteral">&quot;key as an argument to this program, or as an environment or system variable &quot;</span></div>
 <div class="c-code__line">                f<span class="c-code__stringliteral">&quot;named &#39;{UPDATE_EXAMPLE_LICENSE_KEY_NAME}&#39;&quot;</span>)</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">raise</span> Exception(<span class="c-code__stringliteral">&quot;No license key available&quot;</span>)</div>
@@ -304,7 +304,7 @@ from the 51Degrees <a href="https://51degrees.com/pricing">pricing page</a>.</p>
 <div class="c-code__line">            <span class="c-code__comment"># to notify when update complete</span></div>
 <div class="c-code__line">            data_file_update_service = update_service,</div>
 <div class="c-code__line">            <span class="c-code__comment"># For automatic updates to work you will need to provide a license key.</span></div>
-<div class="c-code__line">            <span class="c-code__comment"># A license key can be obtained with a subscription from https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=run</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># A license key can be obtained with a subscription from https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=run</span></div>
 <div class="c-code__line">            licence_keys = license_key,</div>
 <div class="c-code__line">            <span class="c-code__comment"># Enable update on startup, the auto update system</span></div>
 <div class="c-code__line">            <span class="c-code__comment"># will be used to check for an update before the</span></div>
@@ -376,6 +376,8 @@ from the 51Degrees <a href="https://51degrees.com/pricing">pricing page</a>.</p>
 <div class="ttc" id="anamespacefiftyone__devicedetection__examples_1_1example__utils_html"><div class="ttname"><a href="namespacefiftyone__devicedetection__examples_1_1example__utils.html">fiftyone_devicedetection_examples.example_utils</a></div><div class="ttdef"><b>Definition</b> example_utils.py:1</div></div>
 <div class="ttc" id="anamespacefiftyone__devicedetection__shared_1_1example__constants_html"><div class="ttname"><a href="namespacefiftyone__devicedetection__shared_1_1example__constants.html">fiftyone_devicedetection_shared.example_constants</a></div><div class="ttdef"><b>Definition</b> example_constants.py:1</div></div>
 <div class="ttc" id="anamespacefiftyone__devicedetection__shared_1_1key__utils_html"><div class="ttname"><a href="namespacefiftyone__devicedetection__shared_1_1key__utils.html">fiftyone_devicedetection_shared.key_utils</a></div><div class="ttdef"><b>Definition</b> key_utils.py:1</div></div>
+<div class="ttc" id="anamespacefiftyone__pipeline__core_1_1logger_html"><div class="ttname"><a href="../pipeline-python/namespacefiftyone__pipeline__core_1_1logger.html">fiftyone_pipeline_core::logger</a></div></div>
+<div class="ttc" id="anamespacefiftyone__pipeline__engines_1_1datafile__update__service_html"><div class="ttname"><a href="../pipeline-python/namespacefiftyone__pipeline__engines_1_1datafile__update__service.html">fiftyone_pipeline_engines::datafile_update_service</a></div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

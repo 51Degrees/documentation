@@ -1,0 +1,6 @@
+var class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_parameters =
+[
+    [ "BROWSER_ACCEPT_CH", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_parameters.html#afe85a05f6ea9b9f0dff445a0f762c4e5", null ],
+    [ "AllUrlsData", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_parameters.html#a4fd8df45afa0de54a4ca5b807d38a16a", null ],
+    [ "HttpsUrlsData", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_parameters.html#ae295c224fbf23c71d335d27f9ff672b5", null ]
+];

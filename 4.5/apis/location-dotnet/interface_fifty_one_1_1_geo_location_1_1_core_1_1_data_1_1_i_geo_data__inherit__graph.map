@@ -1,9 +1,11 @@
 <map id="FiftyOne.GeoLocation.Core.Data.IGeoData" name="FiftyOne.GeoLocation.Core.Data.IGeoData">
-<area shape="rect" id="Node000001" title="Represents an object that contains postal address information." alt="" coords="9,79,208,119"/>
-<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_geo_location_1_1_core_1_1_data_1_1_geo_data.html" title="Data class that contains postal address information." alt="" coords="9,167,208,207"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="111,133,111,166,106,166,106,133"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="58,5,159,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,44,111,79,106,79,106,44"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="5,255,212,295"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="111,221,111,254,106,254,106,221"/>
+<area shape="rect" id="Node000001" title="Represents an object that contains postal address information." alt="" coords="9,181,208,221"/>
+<area shape="rect" id="Node000004" href="$class_fifty_one_1_1_geo_location_1_1_core_1_1_data_1_1_geo_data.html" title="Data class that contains postal address information." alt="" coords="9,269,208,309"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="111,235,111,269,106,269,106,235"/>
+<area shape="rect" id="Node000002" href="/home/runner/work/documentation/documentation/apis/51degrees-dotnet/pipeline/docs/tagfile$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_data.html" title=" " alt="" coords="5,93,212,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,147,111,181,106,181,106,147"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="6,5,211,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,59,111,93,106,93,106,59"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,357,212,397"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="111,323,111,357,106,357,106,323"/>
 </map>

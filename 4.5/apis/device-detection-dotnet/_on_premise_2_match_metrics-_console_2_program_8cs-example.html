@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/device-detection-dotnet/_on_premise_2_match_metrics-_console_2_program_8cs-example.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-dotnet/_on_premise_2_match_metrics-_console_2_program_8cs-example.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <p>The example illustrates the various metrics that can be obtained about the device detection process, for example, the degree of certainty about the result. Running the example outputs those properties and values..</p>
 <p>The example also illustrates controlling properties that are returned from the detection process - reducing the number of components required to return the properties requested reduces the overall time taken.</p>
 <p>There is a <a href="/documentation/4.5/_device_detection__hash.html#DeviceDetection_Hash_DataSetProduction">discussion</a> of metrics and data set production on our web site. See also the <a href="/documentation/4.5/_device_detection__features__performance_options.html">performance options</a> page.</p>
-<p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/blob/version/4.5/Examples/OnPremise/MatchMetrics-Console/Program.cs">GitHub</a>.</p>
+<p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/4.5/Examples/OnPremise/MatchMetrics-Console/Program.cs">GitHub</a>.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">/* *********************************************************************</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * This Original Work is copyright of 51 Degrees Mobile Experts Limited.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * Copyright 2026 51 Degrees Mobile Experts Limited, Davidson House,</span></div>
@@ -93,10 +93,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"><span class="c-code__comment"> * such notice(s) shall fulfill the requirements of that article.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * ********************************************************************* */</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Core.Exceptions;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Engines.Data;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Engines.FiftyOne.Data;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements.html">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions.html">FiftyOne.Pipeline.Core.Exceptions</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_data.html">FiftyOne.Pipeline.Engines.Data</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data.html">FiftyOne.Pipeline.Engines.FiftyOne.Data</a>;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.Extensions.DependencyInjection;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.Extensions.Logging;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System;</div>
@@ -109,13 +109,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">{</div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>Program</div>
 <div class="c-code__line">    {</div>
-<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>Example : ExampleBase</div>
+<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_example.html">Example</a> : ExampleBase</div>
 <div class="c-code__line">        {</div>
-<div class="c-code__line">            <span class="c-code__keyword">public</span> DeviceDetectionPipelineBuilder <a id="a0" name="a0"></a><a class="code hl_property" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics_1_1_program_1_1_example.html#a464d91859f68f8ee38c2cdecaf008e3c">PipelineBuilder</a> { <span class="c-code__keyword">get</span>; <span class="c-code__keyword">private</span> <span class="c-code__keyword">set</span>; }</div>
+<div class="c-code__line">            <span class="c-code__keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder.html">DeviceDetectionPipelineBuilder</a> <a id="a1" name="a1"></a><a class="code hl_property" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics_1_1_program_1_1_example.html#a464d91859f68f8ee38c2cdecaf008e3c">PipelineBuilder</a> { <span class="c-code__keyword">get</span>; <span class="c-code__keyword">private</span> <span class="c-code__keyword">set</span>; }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__keyword">public</span> ILogger&lt;Example&gt; Logger { <span class="c-code__keyword">get</span>; <span class="c-code__keyword">private</span> <span class="c-code__keyword">set</span>; }</div>
 <div class="c-code__line"></div>
-<div class="c-code__line">            <span class="c-code__keyword">public</span> <a id="a1" name="a1"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics_1_1_program_1_1_example.html#af53dbdae321646d771481f21b69e3052">Example</a>(DeviceDetectionPipelineBuilder pipelineBuilder,</div>
+<div class="c-code__line">            <span class="c-code__keyword">public</span> <a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_example.html">Example</a>(<a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder.html">DeviceDetectionPipelineBuilder</a> pipelineBuilder,</div>
 <div class="c-code__line">                ILogger&lt;Example&gt; logger)</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                <a class="code hl_property" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics_1_1_program_1_1_example.html#a464d91859f68f8ee38c2cdecaf008e3c">PipelineBuilder</a> = pipelineBuilder;</div>
@@ -132,15 +132,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                <span class="c-code__comment">// automatic updates.</span></div>
 <div class="c-code__line">                <span class="c-code__keyword">using</span> (var pipeline = <a class="code hl_property" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics_1_1_program_1_1_example.html#a464d91859f68f8ee38c2cdecaf008e3c">PipelineBuilder</a></div>
 <div class="c-code__line">                    <span class="c-code__comment">// We pass a null license key as we don&#39;t need to do any data file updates.</span></div>
-<div class="c-code__line">                    .UseOnPremise(dataFile, <span class="c-code__keyword">null</span>, <span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">                    .<a id="a3" name="a3"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder.html#a9385d426782d4521a0f15877c9c19ab8">UseOnPremise</a>(dataFile, <span class="c-code__keyword">null</span>, <span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Disable share usage for this example.</span></div>
 <div class="c-code__line">                    .SetShareUsage(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Prefer low memory profile where all data streamed from disk on-demand.</span></div>
-<div class="c-code__line">                    .SetPerformanceProfile(Pipeline.Engines.PerformanceProfiles.LowMemory)</div>
+<div class="c-code__line">                    .SetPerformanceProfile(<a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline.html">Pipeline</a>.<a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html">Engines</a>.PerformanceProfiles.LowMemory)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Disable all data file update mechanisms</span></div>
-<div class="c-code__line">                    .SetDataUpdateOnStartUp(<span class="c-code__keyword">false</span>)</div>
-<div class="c-code__line">                    .SetAutoUpdate(<span class="c-code__keyword">false</span>)</div>
-<div class="c-code__line">                    .SetDataFileSystemWatcher(<span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">                    .<a id="a4" name="a4"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#aee59d01daf4934fb9b793cae879a3cc0">SetDataUpdateOnStartUp</a>(<span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">                    .<a id="a5" name="a5"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#aa4ba15d3d8ca2c4ff3e5874426ffc01e">SetAutoUpdate</a>(<span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">                    .<a id="a6" name="a6"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#aace4e9dfafc668c70659fc1c67906f78">SetDataFileSystemWatcher</a>(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// You can improve matching performance by specifying only those</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// properties you wish to use. If you don&#39;t specify any properties</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// you will get all those available in the data file tier that</span></div>
@@ -148,23 +148,23 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                    <span class="c-code__comment">// Since we are specifying properties here, we will only see</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// those properties, along with the match metric properties</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// in the output.</span></div>
-<div class="c-code__line">                    .SetProperty(<span class="c-code__stringliteral">&quot;IsMobile&quot;</span>)</div>
+<div class="c-code__line">                    .<a id="a7" name="a7"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#a1fc6354fcdf1e5784f2a02a86be01491">SetProperty</a>(<span class="c-code__stringliteral">&quot;IsMobile&quot;</span>)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Uncomment BrowserName to include Browser component profile ID</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// in the device ID value.</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">//.SetProperty(&quot;BrowserName&quot;)</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// If using the full on-premise data file this property will be</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// present in the data file. See https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-matchmetrics-console-program.cs&amp;utm_term=run</span></div>
-<div class="c-code__line">                    .SetProperty(<span class="c-code__stringliteral">&quot;HardwareName&quot;</span>)</div>
+<div class="c-code__line">                    <span class="c-code__comment">// present in the data file. See https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-matchmetrics-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                    .<a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#a1fc6354fcdf1e5784f2a02a86be01491">SetProperty</a>(<span class="c-code__stringliteral">&quot;HardwareName&quot;</span>)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Only use the predictive graph to better handle variances</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// between the training data and the target User-Agent string.</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// For a more detailed description of predictive graphs, see</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// /documentation/4.5/_device_detection__hash.html#DeviceDetection_Hash_DataSetProduction_Predictive</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// For more information on performance graphs, see</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// /documentation/4.5/_device_detection__hash.html#DeviceDetection_Hash_DataSetProduction_Performance</span></div>
-<div class="c-code__line">                    .SetUsePredictiveGraph(<span class="c-code__keyword">true</span>)</div>
-<div class="c-code__line">                    .SetUsePerformanceGraph(<span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">                    .<a id="a8" name="a8"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#a72ec5cf1c887b48609d0cc8578810bb4">SetUsePredictiveGraph</a>(<span class="c-code__keyword">true</span>)</div>
+<div class="c-code__line">                    .<a id="a9" name="a9"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#a92c42b1344286fbd92c507e33018d235">SetUsePerformanceGraph</a>(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// build the pipeline</span></div>
-<div class="c-code__line">                    .Build())</div>
+<div class="c-code__line">                    .<a id="a10" name="a10"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#a7bcf8506fc3720bccf1fa261a10a3312">Build</a>())</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    ExampleUtils.CheckDataFile(pipeline, Logger);</div>
 <div class="c-code__line"> </div>
@@ -203,13 +203,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                                    <span class="c-code__stringliteral">&quot;name ---&quot;</span>);</div>
 <div class="c-code__line">                            output.WriteLine(<span class="c-code__stringliteral">&quot;For a discussion of what the match properties mean, see: &quot;</span> +</div>
 <div class="c-code__line">                                    <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/4.5/_device_detection__hash&quot;</span> +</div>
-<div class="c-code__line">                                    <span class="c-code__stringliteral">&quot;.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-matchmetrics-console-program.cs&amp;utm_term=run#DeviceDetection_Hash_DataSetProduction\n&quot;</span>);</div>
+<div class="c-code__line">                                    <span class="c-code__stringliteral">&quot;.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-matchmetrics-console-program.cs&amp;utm_term=run#DeviceDetection_Hash_DataSetProduction\n&quot;</span>);</div>
 <div class="c-code__line">                            </div>
 <div class="c-code__line">                            <span class="c-code__comment">// get the properties available from the DeviceDetection engine</span></div>
 <div class="c-code__line">                            <span class="c-code__comment">// which has the key &quot;device&quot;. For the sake of illustration we will</span></div>
 <div class="c-code__line">                            <span class="c-code__comment">// retrieve it indirectly.</span></div>
 <div class="c-code__line">                            var hashEngineElementKey = pipeline</div>
-<div class="c-code__line">                                .GetElement&lt;DeviceDetectionHashEngine&gt;().ElementDataKey;</div>
+<div class="c-code__line">                                .GetElement&lt;<a id="_a11" name="_a11"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html">DeviceDetectionHashEngine</a>&gt;().ElementDataKey;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                            <span class="c-code__comment">// retrieve the available properties from the hash engine. The properties</span></div>
 <div class="c-code__line">                            <span class="c-code__comment">// available depends on</span></div>
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                            <span class="c-code__comment">// Match metric properties are not allocated to a component, so we will</span></div>
 <div class="c-code__line">                            <span class="c-code__comment">// add a key &quot;MatchMetric&quot;</span></div>
 <div class="c-code__line">                            var componentMap = availableProperties</div>
-<div class="c-code__line">                                .Select(p =&gt; p.Value as IFiftyOneAspectPropertyMetaData)</div>
+<div class="c-code__line">                                .Select(p =&gt; p.Value as <a id="_a12" name="_a12"></a><a class="code hl_interfaceRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_i_fifty_one_aspect_property_meta_data.html">IFiftyOneAspectPropertyMetaData</a>)</div>
 <div class="c-code__line">                                <span class="c-code__comment">// We&#39;ve already handled the matched user agents property above.</span></div>
 <div class="c-code__line">                                .Where(p =&gt; p != <span class="c-code__keyword">null</span> &amp;&amp; p.Name != <span class="c-code__stringliteral">&quot;UserAgents&quot;</span>)</div>
 <div class="c-code__line">                                .GroupBy(p =&gt; p.Component?.Name ?? <span class="c-code__stringliteral">&quot;MatchMetric&quot;</span>);</div>
@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"> </div>
 <div class="c-code__line">                                    <span class="c-code__comment">// output property names, values and descriptions. Some property</span></div>
 <div class="c-code__line">                                    <span class="c-code__comment">// values are lists so we need to handle those differently</span></div>
-<div class="c-code__line">                                    <span class="c-code__keywordflow">if</span> (value is IAspectPropertyValue&lt;IReadOnlyList&lt;string&gt;&gt; listValue)</div>
+<div class="c-code__line">                                    <span class="c-code__keywordflow">if</span> (value is <a id="_a13" name="_a13"></a><a class="code hl_interfaceRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_property_value.html">IAspectPropertyValue</a>&lt;IReadOnlyList&lt;string&gt;&gt; listValue)</div>
 <div class="c-code__line">                                    {</div>
 <div class="c-code__line">                                        <span class="c-code__keywordflow">if</span> (listValue.HasValue)</div>
 <div class="c-code__line">                                        {</div>
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                                                $<span class="c-code__stringliteral">&quot;No value ({listValue.NoValueMessage})&quot;</span>);</div>
 <div class="c-code__line">                                        }</div>
 <div class="c-code__line">                                    }</div>
-<div class="c-code__line">                                    <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (value is IAspectPropertyValue apv)</div>
+<div class="c-code__line">                                    <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (value is <a class="code hl_interfaceRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_property_value.html">IAspectPropertyValue</a> apv)</div>
 <div class="c-code__line">                                    {</div>
 <div class="c-code__line">                                        output.WriteLine($<span class="c-code__stringliteral">&quot;\t{propertyName.PadRight(24)}: &quot;</span> +</div>
 <div class="c-code__line">                                            $<span class="c-code__stringliteral">&quot;{(apv.HasValue ? apv.Value.ToString() : apv.NoValueMessage)}&quot;</span>);</div>
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;&#39;{Constants.DD_PATH_ENV_VAR}&#39; environment &quot;</span> +</div>
 <div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;variable, then searching for the default &quot;</span> +</div>
 <div class="c-code__line">                        $<span class="c-code__stringliteral">&quot;&#39;{Constants.LITE_HASH_DATA_FILE_NAME}&#39;&quot;</span>);</div>
-<div class="c-code__line">                    dataFile = ExampleUtils.FindDataFile(Constants.LITE_HASH_DATA_FILE_NAME);</div>
+<div class="c-code__line">                    dataFile = ExampleUtils.FindDataFile(<a id="_a14" name="_a14"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html">Constants</a>.LITE_HASH_DATA_FILE_NAME);</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">                <span class="c-code__comment">// Work out where the data file is if we don&#39;t have an absolute path.</span></div>
 <div class="c-code__line">                <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (Path.IsPathRooted(dataFile) == <span class="c-code__keyword">false</span>)</div>
@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                        <span class="c-code__stringliteral">&quot;If using the default &#39;lite&#39; data file, make sure that git lfs is &quot;</span> +</div>
 <div class="c-code__line">                        <span class="c-code__stringliteral">&quot;installed and that the device-detection-data submodule has been &quot;</span> +</div>
 <div class="c-code__line">                        <span class="c-code__stringliteral">&quot;updated by running `git submodule update --recursive`.&quot;</span>);</div>
-<div class="c-code__line">                    <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> PipelineConfigurationException($<span class="c-code__stringliteral">&quot;Data file &#39;{dataFile}&#39; not found&quot;</span>);</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> <a id="_a15" name="_a15"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_configuration_exception.html">PipelineConfigurationException</a>($<span class="c-code__stringliteral">&quot;Data file &#39;{dataFile}&#39; not found&quot;</span>);</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                <span class="c-code__keywordflow">return</span> dataFile;</div>
@@ -336,22 +336,42 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                <span class="c-code__comment">// Make sure we&#39;re logging to the console.</span></div>
 <div class="c-code__line">                .AddLogging(l =&gt; l.AddConsole())</div>
 <div class="c-code__line">                <span class="c-code__comment">// Add the builders we&#39;re going to need.</span></div>
-<div class="c-code__line">                .AddTransient&lt;DeviceDetectionPipelineBuilder&gt;()</div>
+<div class="c-code__line">                .AddTransient&lt;<a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder.html">DeviceDetectionPipelineBuilder</a>&gt;()</div>
 <div class="c-code__line">                <span class="c-code__comment">// Add example classes.</span></div>
 <div class="c-code__line">                .AddSingleton&lt;Example&gt;()</div>
 <div class="c-code__line">                .BuildServiceProvider())</div>
 <div class="c-code__line">            {</div>
-<div class="c-code__line">                var example = serviceProvider.GetRequiredService&lt;Example&gt;();</div>
+<div class="c-code__line">                var example = serviceProvider.GetRequiredService&lt;<a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_example.html">Example</a>&gt;();</div>
 <div class="c-code__line">                example.Run(dataFile, ExampleUtils.EvidenceValues.Skip(2).Take(1), output);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">}</div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder_html_a1fc6354fcdf1e5784f2a02a86be01491"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#a1fc6354fcdf1e5784f2a02a86be01491">FiftyOne.DeviceDetection.DeviceDetectionOnPremisePipelineBuilder.SetProperty</a></div><div class="ttdeci">DeviceDetectionOnPremisePipelineBuilder SetProperty(string property)</div><div class="ttdoc">Add the specified property as one to be returned when performing device detection.</div><div class="ttdef"><b>Definition</b> DeviceDetectionOnPremisePipelineBuilder.cs:243</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder_html_a72ec5cf1c887b48609d0cc8578810bb4"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#a72ec5cf1c887b48609d0cc8578810bb4">FiftyOne.DeviceDetection.DeviceDetectionOnPremisePipelineBuilder.SetUsePredictiveGraph</a></div><div class="ttdeci">DeviceDetectionOnPremisePipelineBuilder SetUsePredictiveGraph(bool use)</div><div class="ttdoc">Specify if the &#39;predictive&#39; evaluation graph should be used or not.</div><div class="ttdef"><b>Definition</b> DeviceDetectionOnPremisePipelineBuilder.cs:573</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder_html_a7bcf8506fc3720bccf1fa261a10a3312"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#a7bcf8506fc3720bccf1fa261a10a3312">FiftyOne.DeviceDetection.DeviceDetectionOnPremisePipelineBuilder.Build</a></div><div class="ttdeci">override IPipeline Build()</div><div class="ttdoc">Build and return a pipeline that can perform device detection.</div><div class="ttdef"><b>Definition</b> DeviceDetectionOnPremisePipelineBuilder.cs:600</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder_html_a92c42b1344286fbd92c507e33018d235"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#a92c42b1344286fbd92c507e33018d235">FiftyOne.DeviceDetection.DeviceDetectionOnPremisePipelineBuilder.SetUsePerformanceGraph</a></div><div class="ttdeci">DeviceDetectionOnPremisePipelineBuilder SetUsePerformanceGraph(bool use)</div><div class="ttdoc">Specify if the &#39;performance&#39; evaluation graph should be used or not.</div><div class="ttdef"><b>Definition</b> DeviceDetectionOnPremisePipelineBuilder.cs:548</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder_html_aa4ba15d3d8ca2c4ff3e5874426ffc01e"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#aa4ba15d3d8ca2c4ff3e5874426ffc01e">FiftyOne.DeviceDetection.DeviceDetectionOnPremisePipelineBuilder.SetAutoUpdate</a></div><div class="ttdeci">DeviceDetectionOnPremisePipelineBuilder SetAutoUpdate(bool enabled)</div><div class="ttdoc">Enable/Disable auto update.</div><div class="ttdef"><b>Definition</b> DeviceDetectionOnPremisePipelineBuilder.cs:277</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder_html_aace4e9dfafc668c70659fc1c67906f78"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#aace4e9dfafc668c70659fc1c67906f78">FiftyOne.DeviceDetection.DeviceDetectionOnPremisePipelineBuilder.SetDataFileSystemWatcher</a></div><div class="ttdeci">DeviceDetectionOnPremisePipelineBuilder SetDataFileSystemWatcher(bool enabled)</div><div class="ttdoc">The DataUpdateService has the ability to watch a file on disk and refresh the engine as soon as that ...</div><div class="ttdef"><b>Definition</b> DeviceDetectionOnPremisePipelineBuilder.cs:590</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder_html_aee59d01daf4934fb9b793cae879a3cc0"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_device_detection_on_premise_pipeline_builder.html#aee59d01daf4934fb9b793cae879a3cc0">FiftyOne.DeviceDetection.DeviceDetectionOnPremisePipelineBuilder.SetDataUpdateOnStartUp</a></div><div class="ttdeci">DeviceDetectionOnPremisePipelineBuilder SetDataUpdateOnStartUp(bool enabled)</div><div class="ttdoc">Enable/Disable update on startup.</div><div class="ttdef"><b>Definition</b> DeviceDetectionOnPremisePipelineBuilder.cs:298</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder.html">FiftyOne.DeviceDetection.DeviceDetectionPipelineBuilder</a></div><div class="ttdoc">Builder used to create a Pipeline with a device detection engine.</div><div class="ttdef"><b>Definition</b> DeviceDetectionPipelineBuilder.cs:35</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder_html_a9385d426782d4521a0f15877c9c19ab8"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder.html#a9385d426782d4521a0f15877c9c19ab8">FiftyOne.DeviceDetection.DeviceDetectionPipelineBuilder.UseOnPremise</a></div><div class="ttdeci">DeviceDetectionOnPremisePipelineBuilder UseOnPremise(string datafile, bool createTempDataCopy)</div><div class="ttdoc">Use a 51Degrees on-premise device detection engine to perform device detection.</div><div class="ttdef"><b>Definition</b> DeviceDetectionPipelineBuilder.cs:161</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics_1_1_program_1_1_example_html_a464d91859f68f8ee38c2cdecaf008e3c"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics_1_1_program_1_1_example.html#a464d91859f68f8ee38c2cdecaf008e3c">FiftyOne.DeviceDetection.Examples.OnPremise.MatchMetrics.Program.Example.PipelineBuilder</a></div><div class="ttdeci">DeviceDetectionPipelineBuilder PipelineBuilder</div><div class="ttdoc">Builder used to create a Pipeline instance.</div><div class="ttdef"><b>Definition</b> OnPremise/MatchMetrics-Console/Program.cs:63</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics_1_1_program_1_1_example_html_aa8d808159124bd038e5e1aecf659dd7e"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics_1_1_program_1_1_example.html#aa8d808159124bd038e5e1aecf659dd7e">FiftyOne.DeviceDetection.Examples.OnPremise.MatchMetrics.Program.Example.Run</a></div><div class="ttdeci">void Run(string dataFile, IEnumerable&lt; Dictionary&lt; string, object &gt; &gt; evidenceList, TextWriter output)</div><div class="ttdoc">Run the example.</div><div class="ttdef"><b>Definition</b> OnPremise/MatchMetrics-Console/Program.cs:95</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics_1_1_program_1_1_example_html_af53dbdae321646d771481f21b69e3052"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics_1_1_program_1_1_example.html#af53dbdae321646d771481f21b69e3052">FiftyOne.DeviceDetection.Examples.OnPremise.MatchMetrics.Program.Example.Example</a></div><div class="ttdeci">Example(DeviceDetectionPipelineBuilder pipelineBuilder, ILogger&lt; Example &gt; logger)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> OnPremise/MatchMetrics-Console/Program.cs:74</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements.DeviceDetectionHashEngine</a></div><div class="ttdoc">Hash device detection engine.</div><div class="ttdef"><b>Definition</b> DeviceDetectionHashEngine.cs:48</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_core_1_1_constants_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html">FiftyOne::Pipeline::Core::Constants</a></div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_configuration_exception_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_configuration_exception.html">FiftyOne::Pipeline::Core::Exceptions::PipelineConfigurationException</a></div></div>
+<div class="ttc" id="ainterface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_property_value_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_property_value.html">FiftyOne::Pipeline::Engines::Data::IAspectPropertyValue</a></div></div>
+<div class="ttc" id="ainterface_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_i_fifty_one_aspect_property_meta_data_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_i_fifty_one_aspect_property_meta_data.html">FiftyOne::Pipeline::Engines::FiftyOne::Data::IFiftyOneAspectPropertyMetaData</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_example_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_example.html">FiftyOne.DeviceDetection.Example</a></div><div class="ttdef"><b>Definition</b> PmpWebTemplateTests.cs:32</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_match_metrics.html">FiftyOne.DeviceDetection.Examples.OnPremise.MatchMetrics</a></div><div class="ttdef"><b>Definition</b> OnPremise/MatchMetrics-Console/Program.cs:55</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements.html">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements</a></div><div class="ttdef"><b>Definition</b> DeviceDetectionHashEngine.cs:39</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions.html">FiftyOne::Pipeline::Core::Exceptions</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_1_1_data_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_data.html">FiftyOne::Pipeline::Engines::Data</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data.html">FiftyOne::Pipeline::Engines::FiftyOne::Data</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html">FiftyOne::Pipeline::Engines</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline.html">FiftyOne::Pipeline</a></div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

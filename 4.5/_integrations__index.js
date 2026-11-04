@@ -1,5 +1,14 @@
 var _integrations__index =
 [
+    [ "Google Analytics 4 (GA4)", "_integrations__google_analytics.html", [
+      [ "The properties", "_integrations__google_analytics.html#the-properties", null ],
+      [ "Step 1. Create a Resource Key", "_integrations__google_analytics.html#step-1-create-a-resource-key-1", null ],
+      [ "Step 2. Send one event to GA4", "_integrations__google_analytics.html#step-2-send-one-event-to-ga4", null ],
+      [ "Step 3. Register the custom dimensions", "_integrations__google_analytics.html#step-3-register-the-custom-dimensions", null ],
+      [ "Step 4. Build the reports", "_integrations__google_analytics.html#step-4-build-the-reports", null ],
+      [ "WordPress", "_integrations__google_analytics.html#wordpress", null ],
+      [ "Find out more", "_integrations__google_analytics.html#find-out-more-9", null ]
+    ] ],
     [ "Prebid", "_integrations__prebid.html", [
       [ "Prebid Integration", "_integrations__prebid.html#prebid-integration", [
         [ "What the Integration Delivers", "_integrations__prebid.html#what-the-integration-delivers", null ],

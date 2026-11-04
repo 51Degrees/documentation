@@ -1,0 +1,7 @@
+<map id="fiftyone\pipeline\ipintelligence\IpIntelligenceOnPremise" name="fiftyone\pipeline\ipintelligence\IpIntelligenceOnPremise">
+<area shape="rect" id="Node000001" title="The on&#45;premise IP intelligence engine uses a local data file (.ipi) to generate a set of properties a..." alt="" coords="5,181,224,221"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1engines_1_1_engine.html" title="An engine is an extension of the Pipeline Core flowElement class It allows for a cache,..." alt="" coords="23,93,206,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,147,117,181,112,181,112,147"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="35,5,194,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="117,59,117,93,112,93,112,59"/>
+</map>

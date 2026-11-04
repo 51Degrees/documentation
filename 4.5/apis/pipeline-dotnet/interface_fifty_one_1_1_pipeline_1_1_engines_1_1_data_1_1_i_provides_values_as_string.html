@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/pipeline-dotnet/interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_provides_values_as_string.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/pipeline-dotnet/interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_provides_values_as_string.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -68,15 +68,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('interface_fift
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>Element data that can hand back a property's value as the string it was stored as, rather than as the type the property declares. </p>
-<p>A typed accessor has to answer in its own type, so a stored value that is not one of that type's values has to become something. A Bool property storing "Unknown" answers False, and the caller cannot tell that from a stored "False". Device detection does exactly this for the properties the 51Degrees <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> fills in, where "Unknown" means the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> has not run, so a request that nobody has measured reads as one that was measured and found negative. </p>
+<p>A typed accessor has to answer in its own type, so a stored value that is not one of that type's values has to become something. A Bool property storing "Unknown" answers False, and the caller cannot tell that from a stored "False". Device detection does exactly this for the properties the 51Degrees JavaScript fills in, where "Unknown" means the JavaScript has not run, so a request that nobody has measured reads as one that was measured and found negative. </p>
 <p>This offers the stored string alongside the typed accessor rather than instead of it. Callers that want the declared type carry on unchanged, and a caller that needs to tell "not measured" from "measured false" can ask for the string and decide for itself. </p>
 <p>The value is still wrapped in an IAspectPropertyValue&lt;T&gt;, so a property that is genuinely absent, or that this request is not entitled to, is reported the same way it would be through any other accessor. </p>
-</div><h2 class="g-docs__section-heading">
-Inheritance diagram for FiftyOne.Pipeline.Engines.Data.IProvidesValuesAsString:</h2>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_provides_values_as_string__inherit__graph.svg" width="270" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="c-table c-table--directory">
+</div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a3b2a99c376232c2b7deaa2430505a6c2" id="r_a3b2a99c376232c2b7deaa2430505a6c2"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_data_1_1_i_aspect_property_value.html">IAspectPropertyValue</a>&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a3b2a99c376232c2b7deaa2430505a6c2">GetValueAsString</a> (string propertyName)</td></tr>
@@ -110,8 +105,6 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The stored value as a string, or a value with no value where the property could not be read on this request. </dd></dl>
-
-<p>Implemented in <a class="el" href="class_fifty_one_1_1_pipeline_1_1_derived_property_1_1_tests_1_1_stub_string_source_data.html#a8e346a99cc7731c13da45d9d4f528da0">FiftyOne.Pipeline.DerivedProperty.Tests.StubStringSourceData</a>.</p>
 
 </div>
 </div>

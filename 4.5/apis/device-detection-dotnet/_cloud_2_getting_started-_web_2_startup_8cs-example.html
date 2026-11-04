@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/device-detection-dotnet/_cloud_2_getting_started-_web_2_startup_8cs-example.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-dotnet/_cloud_2_getting_started-_web_2_startup_8cs-example.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_getti
 <h1 class="g-docs__page-title">Cloud/GettingStarted-Web/Startup.cs</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<p>The source code for this example is available in full on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/tree/version/4.5/Examples/Cloud/GettingStarted-Web">GitHub</a>.</p>
-<p>The source code for this example is available in full on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/tree/version/4.5/Examples/Cloud/GettingStarted-Web">GitHub</a>.    
+<p>The source code for this example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/examples/device-detection/4.5/Examples/Cloud/GettingStarted-Web">GitHub</a>.</p>
+<p>The source code for this example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/examples/device-detection/4.5/Examples/Cloud/GettingStarted-Web">GitHub</a>.    
     <p>
     To run this example, you will need to create a <strong>Resource Key</strong>.
     The Resource Key is used as shorthand to store the particular set of
@@ -133,8 +133,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_getti
 <div class="c-code__line"><span class="c-code__comment"> * such notice(s) shall fulfill the requirements of that article.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * ********************************************************************* */</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.DeviceDetection.Cloud.FlowElements;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.CloudRequestEngine.FlowElements;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements.html">FiftyOne.DeviceDetection.Cloud.FlowElements</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements.html">FiftyOne.Pipeline.CloudRequestEngine.FlowElements</a>;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.AspNetCore.Builder;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.AspNetCore.Hosting;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.AspNetCore.Http;</div>
@@ -170,8 +170,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_getti
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Add the cloud request and device detection engine builder to services so that the</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// system can find the builders when it needs to.</span></div>
-<div class="c-code__line">            services.AddSingleton&lt;CloudRequestEngineBuilder&gt;();</div>
-<div class="c-code__line">            services.AddSingleton&lt;DeviceDetectionCloudEngineBuilder&gt;();</div>
+<div class="c-code__line">            services.AddSingleton&lt;<a id="_a0" name="_a0"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html">CloudRequestEngineBuilder</a>&gt;();</div>
+<div class="c-code__line">            services.AddSingleton&lt;<a id="_a1" name="_a1"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements_1_1_device_detection_cloud_engine_builder.html">DeviceDetectionCloudEngineBuilder</a>&gt;();</div>
 <div class="c-code__line">            <span class="c-code__comment">// Configure the services needed by device detection and create the 51Degrees Pipeline</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// instance that will be used to process requests.</span></div>
 <div class="c-code__line">            services.AddFiftyOne(Configuration);</div>
@@ -228,7 +228,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_getti
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements_1_1_device_detection_cloud_engine_builder_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements_1_1_device_detection_cloud_engine_builder.html">FiftyOne.DeviceDetection.Cloud.FlowElements.DeviceDetectionCloudEngineBuilder</a></div><div class="ttdoc">Fluent builder used to create a cloud-based device detection engine.</div><div class="ttdef"><b>Definition</b> DeviceDetectionCloudEngineBuilder.cs:40</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html">FiftyOne::Pipeline::CloudRequestEngine::FlowElements::CloudRequestEngineBuilder</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements.html">FiftyOne.DeviceDetection.Cloud.FlowElements</a></div><div class="ttdef"><b>Definition</b> DeviceDetectionCloudEngine.cs:36</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_examples_1_1_cloud_1_1_getting_started_web_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_examples_1_1_cloud_1_1_getting_started_web.html">FiftyOne.DeviceDetection.Examples.Cloud.GettingStartedWeb</a></div><div class="ttdef"><b>Definition</b> Model.cs:26</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements.html">FiftyOne::Pipeline::CloudRequestEngine::FlowElements</a></div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

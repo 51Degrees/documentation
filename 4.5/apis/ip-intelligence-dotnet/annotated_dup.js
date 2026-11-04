@@ -47,6 +47,23 @@ var annotated_dup =
             ] ]
           ] ]
         ] ],
+        [ "Example", "namespace_fifty_one_1_1_ip_intelligence_1_1_example.html", [
+          [ "Tests", "namespace_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests.html", [
+            [ "Cloud", "namespace_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud.html", [
+              [ "TestCloudExamples", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_test_cloud_examples.html", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_test_cloud_examples" ],
+              [ "TestCloudMixedWebExample", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_test_cloud_mixed_web_example.html", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_test_cloud_mixed_web_example" ],
+              [ "TestCloudWebExample", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_test_cloud_web_example.html", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_test_cloud_web_example" ]
+            ] ],
+            [ "OnPremise", "namespace_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise.html", [
+              [ "TestAreas", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_areas.html", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_areas" ],
+              [ "TestCategories", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_categories.html", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_categories" ],
+              [ "TestCompareBadTruths", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_compare_bad_truths.html", null ],
+              [ "TestCompareOddIps", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_compare_odd_ips.html", null ],
+              [ "TestExamples", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_examples.html", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_examples" ],
+              [ "TestGettingStartedOnPremise", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_getting_started_on_premise.html", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_getting_started_on_premise" ]
+            ] ]
+          ] ]
+        ] ],
         [ "Examples", "namespace_fifty_one_1_1_ip_intelligence_1_1_examples.html", [
           [ "Cloud", "namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud.html", [
             [ "GetAllProperties", "namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_cloud_1_1_get_all_properties.html", [
@@ -120,6 +137,10 @@ var annotated_dup =
               [ "Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program" ]
             ] ],
             [ "GettingStartedAPI", "namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_a_p_i.html", [
+              [ "Tests", "namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_a_p_i_1_1_tests.html", [
+                [ "LocalMockingTest", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_a_p_i_1_1_tests_1_1_local_mocking_test.html", null ],
+                [ "NativeEngineLoadTests", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_a_p_i_1_1_te238a80fcffcee3327327f931f4b856bf.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_a_p_i_1_1_te238a80fcffcee3327327f931f4b856bf" ]
+              ] ],
               [ "Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_a_p_i_1_1_program.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_a_p_i_1_1_program" ]
             ] ],
             [ "GettingStartedConsole", "namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_console.html", [

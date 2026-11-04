@@ -47,8 +47,8 @@ var NAVTREEINDEX =
 [
 "_device_detection__cloud_to_on_premise.html",
 "_device_detection__overview.html#autotoc_md-cross-device-user-journeys",
-"_ip_intelligence__quickstart.html#web-integration",
-"_pipeline_api__features__client_side_evidence.html#testing"
+"_ip_intelligence__quickstart.html#language-specific-integration-1",
+"_pipeline_api__features__client_side_evidence.html#static-and-quasi-static-script-approaches"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -6,8 +6,5 @@ var classfiftyone__devicedetection__onpremise_1_1devicedetection__datafile_1_1_d
     [ "get_url_formatter", "classfiftyone__devicedetection__onpremise_1_1devicedetection__datafile_1_1_device_detection_data_file.html#a401dbbf4e5c25a45ffae03cc8c1f9607", null ],
     [ "refresh", "classfiftyone__devicedetection__onpremise_1_1devicedetection__datafile_1_1_device_detection_data_file.html#a599f3fa427d1c3e4bf7667e952e0da63", null ],
     [ "swig_date_to_date", "classfiftyone__devicedetection__onpremise_1_1devicedetection__datafile_1_1_device_detection_data_file.html#a23db8053431fa8c70f550c6a3d260e75", null ],
-    [ "_data_update_use_url_formatter", "classfiftyone__devicedetection__onpremise_1_1devicedetection__datafile_1_1_device_detection_data_file.html#ab938149e25eb2451d292b24a60b5d469", null ],
-    [ "data", "classfiftyone__devicedetection__onpremise_1_1devicedetection__datafile_1_1_device_detection_data_file.html#af88fa6d360646bbf853cc0c4ab8cfeca", null ],
-    [ "download", "classfiftyone__devicedetection__onpremise_1_1devicedetection__datafile_1_1_device_detection_data_file.html#a46902881a106b90d2a5c926cf131af57", null ],
-    [ "flow_element", "classfiftyone__devicedetection__onpremise_1_1devicedetection__datafile_1_1_device_detection_data_file.html#a6a0a1165e44f4968604ab9ec48b8e3cd", null ]
+    [ "_data_update_use_url_formatter", "classfiftyone__devicedetection__onpremise_1_1devicedetection__datafile_1_1_device_detection_data_file.html#ab938149e25eb2451d292b24a60b5d469", null ]
 ];

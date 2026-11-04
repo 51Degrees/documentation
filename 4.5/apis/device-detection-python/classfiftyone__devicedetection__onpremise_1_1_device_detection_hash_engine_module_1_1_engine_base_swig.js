@@ -10,6 +10,7 @@ var classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_m
     [ "getMetaData", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_base_swig.html#ad3dffbded678f0249ffdcdd9c647b502", null ],
     [ "getProduct", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_base_swig.html#a2506fc4a430671a3e31afba8803d7a56", null ],
     [ "getPublishedTime", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_base_swig.html#a6852f895514678b830a8c02db3bc2c27", null ],
+    [ "getRequiredProperties", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_base_swig.html#a5c2a5ef7e8093dba508150dd8244ae93", null ],
     [ "getType", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_base_swig.html#a9a5e35805523931ba7076c8ba5f96a81", null ],
     [ "getUpdateAvailableTime", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_base_swig.html#ad6e0e6935e3a5f83f285368ef53d59bb", null ],
     [ "processBase", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_base_swig.html#aed57dac5951e5a4b4d92328e77434e6a", null ],

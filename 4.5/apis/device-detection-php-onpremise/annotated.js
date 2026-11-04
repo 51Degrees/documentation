@@ -13,12 +13,7 @@ var annotated =
                 [ "MetaDataConsole", "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_meta_data_console.html", "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_meta_data_console" ]
               ] ]
             ] ]
-          ] ],
-          [ "Constants", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_constants.html", null ],
-          [ "DeviceDetectionOnPremise", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise.html", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise" ],
-          [ "Messages", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_messages.html", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_messages" ],
-          [ "SwigData", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_data.html", null ],
-          [ "SwigHelpers", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_helpers.html", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_helpers" ]
+          ] ]
         ] ]
       ] ]
     ] ],

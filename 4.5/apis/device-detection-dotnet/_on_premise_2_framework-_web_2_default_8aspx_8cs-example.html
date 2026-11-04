@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/device-detection-dotnet/_on_premise_2_framework-_web_2_default_8aspx_8cs-example.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-dotnet/_on_premise_2_framework-_web_2_default_8aspx_8cs-example.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <p>This example demonstrates how to use the cloud-based device detection API in a .NET Framework website.</p>
-<p>This example demonstrates how to use the cloud-based device detection API in a .NET Framework website. The source code for this example is available in full on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/tree/version/4.5/Examples/OnPremise/Framework-Web">GitHub</a>.</p>
+<p>This example demonstrates how to use the cloud-based device detection API in a .NET Framework website. The source code for this example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/examples/device-detection/4.5/Examples/OnPremise/Framework-Web">GitHub</a>.</p>
 <p> 
     <p>
     This example requires a local data file. The free 'Lite' data file can be acquired by
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <li><a href="https://www.nuget.org/packages/FiftyOne.Pipeline.Web/">FiftyOne.Pipeline.Web</a></li>
 </ul>
 <h2>Overview</h2>
-<p>The FiftyOne.Pipeline.Web package includes an IHttpModule implementation called 'PipelineModule'. This is inserted into the start of the ASP.NET processing pipeline so that it can intercept the request and perform device detection.</p>
+<p>The <a class="elRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_web.html">FiftyOne.Pipeline.Web</a> package includes an IHttpModule implementation called 'PipelineModule'. This is inserted into the start of the ASP.NET processing pipeline so that it can intercept the request and perform device detection.</p>
 <p>The module replaces the default <code>HttpCapabilitiesBase.BrowserCapabilitiesProvider</code> with a 51Degrees version. This means that when values are requested (e.g. Request.Browser.IsMobileDevice), we can intercept that request and supply a result from our device detection.</p>
 <p>If you require access to properties and features that are not available through <code>BrowserCapabilitiesProvider</code>, you will need to cast browser capabilities to our <code>PipelineCapabilities</code> class in order to access the <code>IFlowData</code> instance directly:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">var flowData = ((PipelineCapabilities)Request.Browser).FlowData;</div>
@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">var deviceDetectionPipeline = WebPipeline.GetInstance();</div>
 </div><!-- fragment --><h2>Configuration</h2>
 <p>By default, a 51Degrees.json file is used to supply the Pipeline configuration. For more details about the available options, check the relevant builder classes. For example, the CloudRequestEngineBuilder. The methods available on the builder are the same as those that will be available in the configuration file.</p>
-<p>Note that you will need to update the configuration with the complete path to a data file. The free 'lite' file is included with this repository under the path <code><a class="el" href="namespace_fifty_one_1_1_device_detection.html">FiftyOne.DeviceDetection</a>\device-detection-cxx\device-detection-data</code> Alternatively, you can obtain a <a href="https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=device-detection-dotnet-examples&amp;utm_content=examples-onpremise-framework-web-default.aspx.cs&amp;utm_term=header">license key</a> which can be used to download a data file from our <a href="/documentation/4.5/_services__distributor.html">Distributor</a> service.</p>
+<p>Note that you will need to update the configuration with the complete path to a data file. The free 'lite' file is included with this repository under the path <code><a class="el" href="namespace_fifty_one_1_1_device_detection.html">FiftyOne.DeviceDetection</a>\device-detection-cxx\device-detection-data</code> Alternatively, you can obtain a <a href="https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-framework-web-default.aspx.cs&amp;utm_term=header">license key</a> which can be used to download a data file from our <a href="/documentation/4.5/_services__distributor.html">Distributor</a> service.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">{  </div>
 <div class="c-code__line">  // For a sample configuration file demonstrating all available options, see </div>
-<div class="c-code__line">  // https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/sample-configuration.json</div>
+<div class="c-code__line">  // https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/sample-configuration.json</div>
 <div class="c-code__line">  &quot;PipelineOptions&quot;: {</div>
 <div class="c-code__line">    &quot;Elements&quot;: [</div>
 <div class="c-code__line">      {</div>
@@ -188,10 +188,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"><span class="c-code__comment"> * ********************************************************************* */</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_examples.html">FiftyOne.DeviceDetection.Examples</a>;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Engines.FiftyOne.FlowElements;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.JavaScriptBuilder.FlowElement;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.JsonBuilder.FlowElement;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements.html">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements.html">FiftyOne.Pipeline.Engines.FiftyOne.FlowElements</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element.html">FiftyOne.Pipeline.JavaScriptBuilder.FlowElement</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_json_builder_1_1_flow_element.html">FiftyOne.Pipeline.JsonBuilder.FlowElement</a>;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.IO;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.Web;</div>
@@ -218,16 +218,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            <span class="c-code__comment">// Make sure the assemblies that are needed by the pipeline are loaded into the app domain.</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// This is needed in order from BuildFromConfiguration to be able to find the relevant builder types when</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// using reflection.</span></div>
-<div class="c-code__line">            AppDomain.CurrentDomain.Load(typeof(DeviceDetectionHashEngine).Assembly.GetName());</div>
-<div class="c-code__line">            AppDomain.CurrentDomain.Load(typeof(JavaScriptBuilderElement).Assembly.GetName());</div>
-<div class="c-code__line">            AppDomain.CurrentDomain.Load(typeof(JsonBuilderElement).Assembly.GetName());</div>
-<div class="c-code__line">            AppDomain.CurrentDomain.Load(typeof(SequenceElementBuilder).Assembly.GetName());</div>
+<div class="c-code__line">            AppDomain.CurrentDomain.Load(typeof(<a id="_a2" name="_a2"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html">DeviceDetectionHashEngine</a>).Assembly.GetName());</div>
+<div class="c-code__line">            AppDomain.CurrentDomain.Load(typeof(<a id="_a3" name="_a3"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_java_script_builder_element.html">JavaScriptBuilderElement</a>).Assembly.GetName());</div>
+<div class="c-code__line">            AppDomain.CurrentDomain.Load(typeof(<a id="_a4" name="_a4"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_json_builder_1_1_flow_element_1_1_json_builder_element.html">JsonBuilderElement</a>).Assembly.GetName());</div>
+<div class="c-code__line">            AppDomain.CurrentDomain.Load(typeof(<a id="_a5" name="_a5"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_sequence_element_builder.html">SequenceElementBuilder</a>).Assembly.GetName());</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html">FiftyOne.DeviceDetection.Examples.ExampleUtils</a></div><div class="ttdef"><b>Definition</b> ExampleUtils.cs:38</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils_html_a98700d42bb8cbda8f7481a01b86c8996"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a98700d42bb8cbda8f7481a01b86c8996">FiftyOne.DeviceDetection.Examples.ExampleUtils.FindDataFile</a></div><div class="ttdeci">static string FindDataFile(string filename, DirectoryInfo dir=null)</div><div class="ttdoc">Get the path to a device detection data file.</div><div class="ttdef"><b>Definition</b> ExampleUtils.cs:297</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements.DeviceDetectionHashEngine</a></div><div class="ttdoc">Hash device detection engine.</div><div class="ttdef"><b>Definition</b> DeviceDetectionHashEngine.cs:48</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_sequence_element_builder_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_sequence_element_builder.html">FiftyOne::Pipeline::Engines::FiftyOne::FlowElements::SequenceElementBuilder</a></div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_java_script_builder_element_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_1_1_java_script_builder_element.html">FiftyOne::Pipeline::JavaScriptBuilder::FlowElement::JavaScriptBuilderElement</a></div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_json_builder_1_1_flow_element_1_1_json_builder_element_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_json_builder_1_1_flow_element_1_1_json_builder_element.html">FiftyOne::Pipeline::JsonBuilder::FlowElement::JsonBuilderElement</a></div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_examples_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_examples.html">FiftyOne.DeviceDetection.Examples</a></div><div class="ttdef"><b>Definition</b> Cloud/Configurator-Console/Program.cs:48</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements.html">FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements</a></div><div class="ttdef"><b>Definition</b> DeviceDetectionHashEngine.cs:39</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements.html">FiftyOne::Pipeline::Engines::FiftyOne::FlowElements</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_flow_element.html">FiftyOne::Pipeline::JavaScriptBuilder::FlowElement</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_json_builder_1_1_flow_element_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_json_builder_1_1_flow_element.html">FiftyOne::Pipeline::JsonBuilder::FlowElement</a></div></div>
 <div class="ttc" id="anamespace_framework___web_html"><div class="ttname"><a href="namespace_framework___web.html">Framework_Web</a></div><div class="ttdef"><b>Definition</b> Cloud/Framework-Web/Default.aspx.cs:143</div></div>
 </div><!-- fragment --><h2>Results</h2>
 <p>This example includes a simple demonstration page that shows how to access different values from the results. This page also demonstrates how to use client-side evidence to determine the model of Apple devices.</p>
@@ -434,8 +442,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"> </div>
 <div class="c-code__line">        &lt;% if (engine.DataSourceTier == &quot;Lite&quot;) { %&gt;</div>
 <div class="c-code__line">            &lt;div class=&quot;c-eg-message&quot;&gt;</div>
-<div class="c-code__line">              &lt;p class=&quot;c-eg-message__text&quot;&gt;The paid data file adds daily automatic updates, non-human identification and IP intelligence. &lt;a href=&quot;https://51degrees.com/contact-us?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=device-detection-dotnet-examples&amp;amp;utm_content=examples-onpremise-framework-web-default.aspx&amp;amp;utm_term=paid-data-file&quot;&gt;Contact us&lt;/a&gt; to explore the options.&lt;/p&gt;</div>
-<div class="c-code__line">              &lt;a class=&quot;b-btn c-eg-message__cta&quot; href=&quot;https://51degrees.com/contact-us?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=device-detection-dotnet-examples&amp;amp;utm_content=examples-onpremise-framework-web-default.aspx&amp;amp;utm_term=paid-data-file&quot;&gt;Contact us&lt;/a&gt;</div>
+<div class="c-code__line">              &lt;p class=&quot;c-eg-message__text&quot;&gt;The paid data file adds daily automatic updates, non-human identification and IP intelligence. &lt;a href=&quot;https://51degrees.com/contact-us?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=examples-onpremise-framework-web-default.aspx&amp;amp;utm_term=paid-data-file&quot;&gt;Contact us&lt;/a&gt; to explore the options.&lt;/p&gt;</div>
+<div class="c-code__line">              &lt;a class=&quot;b-btn c-eg-message__cta&quot; href=&quot;https://51degrees.com/contact-us?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=examples-onpremise-framework-web-default.aspx&amp;amp;utm_term=paid-data-file&quot;&gt;Contact us&lt;/a&gt;</div>
 <div class="c-code__line">            &lt;/div&gt;</div>
 <div class="c-code__line">        &lt;% } %&gt;</div>
 <div class="c-code__line">    &lt;/div&gt;</div>

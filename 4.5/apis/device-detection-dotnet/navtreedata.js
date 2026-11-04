@@ -37,7 +37,9 @@ var NAVTREEHIDESYNC = true;
 
 var NAVTREEINDEX =
 [
-"/documentation/4.5/index.html"
+"/documentation/4.5/index.html",
+"class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html#aab22278e2ed48f64af572f6b1aa29d3e",
+"class_fifty_one_1_1_examples_1_1_cloud_1_1_pmp_web_1_1_settings.html#abc680c6049e4cf8bfbd11c9f73090d2c"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

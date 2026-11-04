@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
-  <link rel="canonical" href="/documentation/apis/device-detection-dotnet/_on_premise_2_performance_sweep-_console_2_program_8cs-example.html">
-  <link rel="alternate" hreflang="en-US" href="/documentation/apis/device-detection-dotnet/_on_premise_2_performance_sweep-_console_2_program_8cs-example.html" />
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-dotnet/_on_premise_2_performance_sweep-_console_2_program_8cs-example.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/device-detection-dotnet/_on_premise_2_performance_sweep-_console_2_program_8cs-example.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <p>The result shows how end-to-end throughput depends on how many properties an integration reads per detection: detection-dominated and read-insensitive at low N, read-dominated at high N. That makes it a useful tool for evaluating property-read performance changes (device-detection-dotnet#524), whose effect is per-read and so only shows in the top-line number once reads make up a meaningful share of the work. N = 0 is a pure-detection control point.</p>
 <p>N may exceed the number of distinct properties: the read loop cycles the property list, so the higher sweep points (2x and 4x the property count) drive the read share towards 100% and expose the asymptotic per-read cost.</p>
 <p>Run with an optional data file and evidence file: dotnet run &ndash; [-d dataFile] [-u evidenceFile]</p>
-<p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-dotnet-examples/blob/main/Examples/OnPremise/PerformanceSweep-Console/Program.cs">GitHub</a>.</p>
+<p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/OnPremise/PerformanceSweep-Console/Program.cs">GitHub</a>.</p>
 <p> 
 <p>
 This example requires a local data file. The free 'Lite' data file can be acquired by
@@ -110,8 +110,8 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line"><span class="c-code__comment"> * ********************************************************************* */</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_examples.html">FiftyOne.DeviceDetection.Examples</a>;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Core.FlowElements;</div>
-<div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Engines;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements.html">FiftyOne.Pipeline.Core.FlowElements</a>;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html">FiftyOne.Pipeline.Engines</a>;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.Extensions.Logging;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>System.Collections.Generic;</div>
@@ -127,7 +127,7 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">        <span class="c-code__keyword">private</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">int</span> DEFAULT_THREAD_COUNT = 4;</div>
 <div class="c-code__line">        <span class="c-code__keyword">private</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">int</span> REPEATS = 3; <span class="c-code__comment">// per N, report the median to damp noise</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>Example : <a id="_a0" name="_a0"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_base.html">ExampleBase</a></div>
+<div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_example.html">Example</a> : <a id="_a0" name="_a0"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_base.html">ExampleBase</a></div>
 <div class="c-code__line">        {</div>
 <div class="c-code__line">            <span class="c-code__keyword">public</span> <span class="c-code__keywordtype">void</span> Run(</div>
 <div class="c-code__line">                <span class="c-code__keywordtype">string</span> dataFile,</div>
@@ -136,17 +136,17 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">                <span class="c-code__keywordtype">int</span> threadCount)</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                <span class="c-code__keyword">using</span> (var loggerFactory = LoggerFactory.Create(b =&gt; { }))</div>
-<div class="c-code__line">                <span class="c-code__keyword">using</span> (var pipeline = <span class="c-code__keyword">new</span> DeviceDetectionPipelineBuilder(loggerFactory)</div>
+<div class="c-code__line">                <span class="c-code__keyword">using</span> (var pipeline = <span class="c-code__keyword">new</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder.html">DeviceDetectionPipelineBuilder</a>(loggerFactory)</div>
 <div class="c-code__line">                    .UseOnPremise(dataFile, <span class="c-code__keyword">null</span>, <span class="c-code__keyword">false</span>)</div>
-<div class="c-code__line">                    .SetPerformanceProfile(PerformanceProfiles.MaxPerformance)</div>
+<div class="c-code__line">                    .SetPerformanceProfile(<a id="_a2" name="_a2"></a><a class="code hl_enumerationRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html#a7e8161b9ca37059040ff754ba3e668f1">PerformanceProfiles</a>.MaxPerformance)</div>
 <div class="c-code__line">                    .SetShareUsage(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                    .SetAutoUpdate(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                    .SetDataUpdateOnStartUp(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                    .SetDataFileSystemWatcher(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                    .Build())</div>
 <div class="c-code__line">                {</div>
-<div class="c-code__line">                    var evidence = <a id="a1" name="a1"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_base.html#af675239f1298a3562c01476d5368b580">ReadEvidence</a>(evidenceFile);</div>
-<div class="c-code__line">                    var properties = <a id="_a2" name="_a2"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html">ExampleUtils</a>.<a id="a3" name="a3"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#aac81c1564fe514dd0cfaefd3ae7b00a0">DiscoverReadableScalarProperties</a>(</div>
+<div class="c-code__line">                    var evidence = <a id="a3" name="a3"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_base.html#af675239f1298a3562c01476d5368b580">ReadEvidence</a>(evidenceFile);</div>
+<div class="c-code__line">                    var properties = <a id="_a4" name="_a4"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html">ExampleUtils</a>.<a id="a5" name="a5"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#aac81c1564fe514dd0cfaefd3ae7b00a0">DiscoverReadableScalarProperties</a>(</div>
 <div class="c-code__line">                        pipeline, evidence[0]);</div>
 <div class="c-code__line">                    <span class="c-code__keywordflow">if</span> (properties.Count == 0)</div>
 <div class="c-code__line">                    {</div>
@@ -195,7 +195,7 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">            }</div>
 <div class="c-code__line"></div>
 <div class="c-code__line">            <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">double</span> Benchmark(</div>
-<div class="c-code__line">                IPipeline pipeline,</div>
+<div class="c-code__line">                <a id="_a6" name="_a6"></a><a class="code hl_interfaceRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html">IPipeline</a> pipeline,</div>
 <div class="c-code__line">                List&lt;Dictionary&lt;string, object&gt;&gt; evidence,</div>
 <div class="c-code__line">                List&lt;string&gt; properties,</div>
 <div class="c-code__line">                <span class="c-code__keywordtype">int</span> readCount,</div>
@@ -212,7 +212,7 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">                    (values, loopState, local) =&gt;</div>
 <div class="c-code__line">                    {</div>
 <div class="c-code__line">                        var sw = Stopwatch.StartNew();</div>
-<div class="c-code__line">                        <span class="c-code__keyword">using</span> (var data = pipeline.CreateFlowData())</div>
+<div class="c-code__line">                        <span class="c-code__keyword">using</span> (var data = pipeline.<a id="a7" name="a7"></a><a class="code hl_functionRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html#a6adf8dd2a8f0435adb8bf9e857b922db">CreateFlowData</a>())</div>
 <div class="c-code__line">                        {</div>
 <div class="c-code__line">                            data.AddEvidence(values).Process();</div>
 <div class="c-code__line">                            var device = data.Get&lt;IDeviceData&gt;();</div>
@@ -244,13 +244,13 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> Main(<span class="c-code__keywordtype">string</span>[] args)</div>
 <div class="c-code__line">        {</div>
-<div class="c-code__line">            var options = <a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html">ExampleUtils</a>.<a id="a4" name="a4"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#ab10d4c619b5e6f2ffcef2f61acd0343e">ParseOptions</a>(args);</div>
+<div class="c-code__line">            var options = <a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html">ExampleUtils</a>.<a id="a8" name="a8"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#ab10d4c619b5e6f2ffcef2f61acd0343e">ParseOptions</a>(args);</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> (options == <span class="c-code__keyword">null</span>) { <span class="c-code__keywordflow">return</span>; }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            var dataFile = options.DataFilePath ??</div>
-<div class="c-code__line">                <a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html">ExampleUtils</a>.<a id="a5" name="a5"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a98700d42bb8cbda8f7481a01b86c8996">FindDataFile</a>(<a id="_a6" name="_a6"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html">Constants</a>.<a id="a7" name="a7"></a><a class="code hl_variable" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html#a84de8f6901c19f98b605a7d2239ce2ef">LITE_HASH_DATA_FILE_NAME</a>);</div>
+<div class="c-code__line">                <a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html">ExampleUtils</a>.<a id="a9" name="a9"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a98700d42bb8cbda8f7481a01b86c8996">FindDataFile</a>(<a id="_a10" name="_a10"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html">Constants</a>.<a id="a11" name="a11"></a><a class="code hl_variable" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html#a84de8f6901c19f98b605a7d2239ce2ef">LITE_HASH_DATA_FILE_NAME</a>);</div>
 <div class="c-code__line">            var evidenceFile = options.EvidenceFile ??</div>
-<div class="c-code__line">                <a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html">ExampleUtils</a>.<a id="a8" name="a8"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a54667c0d9989760b8cd9dcaac814c938">FindFile</a>(<a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html">Constants</a>.<a id="a9" name="a9"></a><a class="code hl_variable" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html#a8d6db076ff69ec5d55c170103aac727d">YAML_EVIDENCE_FILE_NAME</a>);</div>
+<div class="c-code__line">                <a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html">ExampleUtils</a>.<a id="a12" name="a12"></a><a class="code hl_function" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a54667c0d9989760b8cd9dcaac814c938">FindFile</a>(<a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html">Constants</a>.<a id="a13" name="a13"></a><a class="code hl_variable" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html#a8d6db076ff69ec5d55c170103aac727d">YAML_EVIDENCE_FILE_NAME</a>);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(dataFile) || File.Exists(dataFile) == <span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">            {</div>
@@ -266,13 +266,14 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">                <span class="c-code__keywordflow">return</span>;</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keyword">new</span> Example().Run(dataFile, evidenceFile, Console.Out, DEFAULT_THREAD_COUNT);</div>
+<div class="c-code__line">            <span class="c-code__keyword">new</span> <a class="code hl_namespace" href="namespace_fifty_one_1_1_device_detection_1_1_example.html">Example</a>().Run(dataFile, evidenceFile, Console.Out, DEFAULT_THREAD_COUNT);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_constants_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html">FiftyOne.DeviceDetection.Examples.Constants</a></div><div class="ttdef"><b>Definition</b> Constants.cs:28</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_constants_html_a84de8f6901c19f98b605a7d2239ce2ef"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html#a84de8f6901c19f98b605a7d2239ce2ef">FiftyOne.DeviceDetection.Examples.Constants.LITE_HASH_DATA_FILE_NAME</a></div><div class="ttdeci">const string LITE_HASH_DATA_FILE_NAME</div><div class="ttdoc">The default name of the free &#39;lite&#39; device detection data file.</div><div class="ttdef"><b>Definition</b> Constants.cs:37</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_constants_html_a8d6db076ff69ec5d55c170103aac727d"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html#a8d6db076ff69ec5d55c170103aac727d">FiftyOne.DeviceDetection.Examples.Constants.YAML_EVIDENCE_FILE_NAME</a></div><div class="ttdeci">const string YAML_EVIDENCE_FILE_NAME</div><div class="ttdoc">Name of the file to use for the test evidence.</div><div class="ttdef"><b>Definition</b> Constants.cs:42</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_device_detection_pipeline_builder.html">FiftyOne.DeviceDetection.DeviceDetectionPipelineBuilder</a></div><div class="ttdoc">Builder used to create a Pipeline with a device detection engine.</div><div class="ttdef"><b>Definition</b> DeviceDetectionPipelineBuilder.cs:35</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_constants_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html">FiftyOne.DeviceDetection.Examples.Constants</a></div><div class="ttdef"><b>Definition</b> examples/device-detection/ExampleBase/Constants.cs:30</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_constants_html_a84de8f6901c19f98b605a7d2239ce2ef"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html#a84de8f6901c19f98b605a7d2239ce2ef">FiftyOne.DeviceDetection.Examples.Constants.LITE_HASH_DATA_FILE_NAME</a></div><div class="ttdeci">const string LITE_HASH_DATA_FILE_NAME</div><div class="ttdoc">The default name of the free &#39;lite&#39; device detection data file.</div><div class="ttdef"><b>Definition</b> examples/device-detection/ExampleBase/Constants.cs:39</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_constants_html_a8d6db076ff69ec5d55c170103aac727d"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_constants.html#a8d6db076ff69ec5d55c170103aac727d">FiftyOne.DeviceDetection.Examples.Constants.YAML_EVIDENCE_FILE_NAME</a></div><div class="ttdeci">const string YAML_EVIDENCE_FILE_NAME</div><div class="ttdoc">Name of the file to use for the test evidence.</div><div class="ttdef"><b>Definition</b> examples/device-detection/ExampleBase/Constants.cs:44</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_example_base_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_base.html">FiftyOne.DeviceDetection.Examples.ExampleBase</a></div><div class="ttdef"><b>Definition</b> ExampleBase.cs:36</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_example_base_html_af675239f1298a3562c01476d5368b580"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_base.html#af675239f1298a3562c01476d5368b580">FiftyOne.DeviceDetection.Examples.ExampleBase.ReadEvidence</a></div><div class="ttdeci">static List&lt; Dictionary&lt; string, object &gt; &gt; ReadEvidence(string evidenceFilePath, ILogger logger=null)</div><div class="ttdoc">Read a YAML evidence file into a materialised list.</div><div class="ttdef"><b>Definition</b> ExampleBase.cs:156</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils_html"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html">FiftyOne.DeviceDetection.Examples.ExampleUtils</a></div><div class="ttdef"><b>Definition</b> ExampleUtils.cs:38</div></div>
@@ -280,8 +281,14 @@ Find out about the more capable data files that are available on our
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils_html_a98700d42bb8cbda8f7481a01b86c8996"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#a98700d42bb8cbda8f7481a01b86c8996">FiftyOne.DeviceDetection.Examples.ExampleUtils.FindDataFile</a></div><div class="ttdeci">static string FindDataFile(string filename, DirectoryInfo dir=null)</div><div class="ttdoc">Get the path to a device detection data file.</div><div class="ttdef"><b>Definition</b> ExampleUtils.cs:297</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils_html_aac81c1564fe514dd0cfaefd3ae7b00a0"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#aac81c1564fe514dd0cfaefd3ae7b00a0">FiftyOne.DeviceDetection.Examples.ExampleUtils.DiscoverReadableScalarProperties</a></div><div class="ttdeci">static List&lt; string &gt; DiscoverReadableScalarProperties(IPipeline pipeline, Dictionary&lt; string, object &gt; sampleEvidence)</div><div class="ttdoc">The scalar, non-metric &#39;device&#39; properties that actually resolve against the loaded data file (Lite e...</div><div class="ttdef"><b>Definition</b> ExampleUtils.cs:665</div></div>
 <div class="ttc" id="aclass_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils_html_ab10d4c619b5e6f2ffcef2f61acd0343e"><div class="ttname"><a href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_utils.html#ab10d4c619b5e6f2ffcef2f61acd0343e">FiftyOne.DeviceDetection.Examples.ExampleUtils.ParseOptions</a></div><div class="ttdeci">static ExampleOptions ParseOptions(string[] args)</div><div class="ttdoc">Parse the command line arguments passed to the example to get the common options.</div><div class="ttdef"><b>Definition</b> ExampleUtils.cs:194</div></div>
+<div class="ttc" id="ainterface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html">FiftyOne::Pipeline::Core::FlowElements::IPipeline</a></div></div>
+<div class="ttc" id="ainterface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline_html_a6adf8dd2a8f0435adb8bf9e857b922db"><div class="ttname"><a href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html#a6adf8dd2a8f0435adb8bf9e857b922db">FiftyOne::Pipeline::Core::FlowElements::IPipeline::CreateFlowData</a></div><div class="ttdeci">IFlowData CreateFlowData()</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_example_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_example.html">FiftyOne.DeviceDetection.Example</a></div><div class="ttdef"><b>Definition</b> PmpWebTemplateTests.cs:32</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_performance_sweep_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_examples_1_1_on_premise_1_1_performance_sweep.html">FiftyOne.DeviceDetection.Examples.OnPremise.PerformanceSweep</a></div><div class="ttdef"><b>Definition</b> OnPremise/PerformanceSweep-Console/Program.cs:64</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_device_detection_1_1_examples_html"><div class="ttname"><a href="namespace_fifty_one_1_1_device_detection_1_1_examples.html">FiftyOne.DeviceDetection.Examples</a></div><div class="ttdef"><b>Definition</b> Cloud/Configurator-Console/Program.cs:48</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements.html">FiftyOne::Pipeline::Core::FlowElements</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html">FiftyOne::Pipeline::Engines</a></div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_html_a7e8161b9ca37059040ff754ba3e668f1"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html#a7e8161b9ca37059040ff754ba3e668f1">FiftyOne::Pipeline::Engines::PerformanceProfiles</a></div><div class="ttdeci">PerformanceProfiles</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

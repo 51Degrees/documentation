@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/device-detection-nginx/ipi_2getting_started_8conf-example.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-nginx/ipi_2getting_started_8conf-example.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi_2getting_s
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <p>This example shows how to quickly start using 51Degrees' on-premise IP intelligence in Nginx.</p>
-<p>This example shows how to quickly start using 51Degrees' on-premise IP intelligence in Nginx. This example is available in full on <a href="https://github.com/51Degrees/device-detection-nginx/blob/master/examples/ipi/gettingStarted.conf">GitHub</a>.</p>
+<p>This example shows how to quickly start using 51Degrees' on-premise IP intelligence in Nginx. This example is available in full on <a href="https://github.com/51Degrees/51degrees-nginx/blob/main/examples/ipi/gettingStarted.conf">GitHub</a>.</p>
 <p>This example uses the AsnName property which is available in the 51Degrees-IPIV4AsnIpiV41.ipi data file included in the ip-intelligence-data sub-module. When using a data file with a fuller set of properties, such as the Lite or Enterprise files, properties like RegisteredName, RegisteredCountry and RegisteredOwner can be requested in the same way.</p>
 <p>When running on a local machine the client IP address reported by Nginx is a loopback or private network address, which has no useful IP intelligence associated with it. The second match below therefore reads a real IP address from the client_ip query string argument via the $arg_client_ip variable, overriding the reported client IP address for that match. This is the mechanism used by the tests. In production the variable argument can be omitted, as in the first match below, so the client IP address is used directly.</p>
 <p>Before using the example, update the followings:</p><ul>

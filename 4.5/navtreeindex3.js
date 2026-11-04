@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"_pipeline_api__features__client_side_evidence.html#static-and-quasi-static-script-approaches":[8,2,3,5],
+"_pipeline_api__features__client_side_evidence.html#storage-mechanism":[8,2,3,3,3],
+"_pipeline_api__features__client_side_evidence.html#synchronization":[8,2,3,5,3,3],
 "_pipeline_api__features__client_side_evidence.html#testing":[8,2,3,5,3,8],
 "_pipeline_api__features__client_side_evidence.html#version-control":[8,2,3,5,3,6],
 "_pipeline_api__features__client_side_evidence.html#web-integration-3":[8,2,3,4],
@@ -84,7 +87,7 @@ var NAVTREEINDEX3 =
 "_product_summaries__feature_matrix.html#web-integrations-and-plugins":[9,1,1],
 "_product_summaries__index.html":[9],
 "_product_summaries__open_r_t_b_mappings.html":[9,2],
-"_product_summaries__open_r_t_b_mappings.html#location-changed-2":[9,2,0],
+"_product_summaries__open_r_t_b_mappings.html#location-changed-3":[9,2,0],
 "_product_summaries__tested_versions.html":[9,3],
 "_product_summaries__tested_versions.html#automation":[9,3,0],
 "_reverse_geocoding__examples__combining_services.html":[4,3],

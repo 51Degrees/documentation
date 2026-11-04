@@ -1,0 +1,5 @@
+<map id="fiftyone\pipeline\core\Pipeline" name="fiftyone\pipeline\core\Pipeline">
+<area shape="rect" id="Node000001" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu..." alt="" coords="5,116,164,156"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1core_1_1_logger.html" title="Logging for a Pipeline." alt="" coords="5,5,164,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,59,87,116,82,116,82,59"/>
+</map>

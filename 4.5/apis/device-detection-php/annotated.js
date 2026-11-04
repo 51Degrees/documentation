@@ -14,10 +14,7 @@ var annotated =
                 [ "TacLookupConsole", "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1cloud_1_1classes_1_1_tac_lookup_console.html", null ]
               ] ]
             ] ]
-          ] ],
-          [ "DeviceDetectionCloud", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_cloud.html", null ],
-          [ "DeviceDetectionPipelineBuilder", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_pipeline_builder.html", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_pipeline_builder" ],
-          [ "HardwareProfileCloud", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_hardware_profile_cloud.html", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_hardware_profile_cloud" ]
+          ] ]
         ] ]
       ] ]
     ] ]

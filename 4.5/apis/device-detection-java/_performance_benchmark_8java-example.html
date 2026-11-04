@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="/documentation/apis/device-detection-java/_performance_benchmark_8java-example.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-java/_performance_benchmark_8java-example.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance_b
 <div class="c-code__line">                config.performanceGraph,</div>
 <div class="c-code__line">                config.predictiveGraph);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        Pipeline pipeline = <span class="c-code__keyword">null</span>;</div>
+<div class="c-code__line">        Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> = <span class="c-code__keyword">null</span>;</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">try</span> {</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> (configureFromDisk) {</div>
 <div class="c-code__line">                logger.info(<span class="c-code__stringliteral">&quot;Load from disk&quot;</span>);</div>
@@ -229,9 +229,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance_b
 <div class="c-code__line">                        .useOnPremise(dataFileLocation, <span class="c-code__keyword">false</span>);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                setPipelinePerformanceProperties(builder, config);</div>
-<div class="c-code__line">                pipeline = builder.build();</div>
+<div class="c-code__line">                <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> = builder.build();</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">                DataFileHelper.logDataFileInfo(pipeline.getElement(DeviceDetectionHashEngine.class));</div>
+<div class="c-code__line">                DataFileHelper.logDataFileInfo(<a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.getElement(DeviceDetectionHashEngine.class));</div>
 <div class="c-code__line">            } <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">                logger.info(<span class="c-code__stringliteral">&quot;Load memory from {}&quot;</span>, dataFileLocation);</div>
 <div class="c-code__line">                <span class="c-code__keywordtype">byte</span>[] fileContent = Files.readAllBytes(<span class="c-code__keyword">new</span> File(dataFileLocation).toPath());</div>
@@ -243,21 +243,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance_b
 <div class="c-code__line">                        .useOnPremise(fileContent);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                setPipelinePerformanceProperties(builder, config);</div>
-<div class="c-code__line">                pipeline = builder.build();</div>
+<div class="c-code__line">                <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> = builder.build();</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// run the benchmarks twice, once to warm up the JVM</span></div>
 <div class="c-code__line">            logger.info(<span class="c-code__stringliteral">&quot;Warming up&quot;</span>);</div>
-<div class="c-code__line">            runTests(pipeline);</div>
+<div class="c-code__line">            runTests(<a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>);</div>
 <div class="c-code__line">            System.gc();</div>
 <div class="c-code__line">            Thread.sleep(300);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            logger.info(<span class="c-code__stringliteral">&quot;Running&quot;</span>);</div>
-<div class="c-code__line">            <span class="c-code__keywordtype">long</span> executionTime = runTests(pipeline);</div>
+<div class="c-code__line">            <span class="c-code__keywordtype">long</span> executionTime = runTests(<a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>);</div>
 <div class="c-code__line">            logger.info(<span class="c-code__stringliteral">&quot;Finished - Execution time was {} ms&quot;</span>, executionTime);</div>
 <div class="c-code__line">        } <span class="c-code__keywordflow">finally</span> {</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (Objects.nonNull(pipeline)) {</div>
-<div class="c-code__line">                pipeline.close();</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (Objects.nonNull(<a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>)) {</div>
+<div class="c-code__line">                <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.close();</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        doReport();</div>
@@ -313,12 +313,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance_b
 <div class="c-code__line">        writer.println();</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"></div>
-<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">long</span> runTests(Pipeline pipeline) <span class="c-code__keywordflow">throws</span> Exception {</div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">long</span> runTests(Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>) <span class="c-code__keywordflow">throws</span> Exception {</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// create a list of callables</span></div>
 <div class="c-code__line">        List&lt;Callable&lt;BenchmarkResult&gt;&gt; callables = <span class="c-code__keyword">new</span> ArrayList&lt;&gt;();</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">for</span> (<span class="c-code__keywordtype">int</span> i = 0; i &lt; numberOfThreads; i++) {</div>
-<div class="c-code__line">            callables.add(<span class="c-code__keyword">new</span> BenchmarkRunnable(pipeline, evidence));</div>
+<div class="c-code__line">            callables.add(<span class="c-code__keyword">new</span> BenchmarkRunnable(<a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>, evidence));</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        <span class="c-code__comment">// start multiple threads in a fixed pool</span></div>
 <div class="c-code__line">        ExecutorService service = Executors.newFixedThreadPool(numberOfThreads);</div>
@@ -340,12 +340,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance_b
 <div class="c-code__line">        <span class="c-code__comment">// the benchmark that is being executed</span></div>
 <div class="c-code__line">        <span class="c-code__keyword">private</span> <span class="c-code__keyword">final</span> BenchmarkResult result;</div>
 <div class="c-code__line">        <span class="c-code__keyword">private</span> <span class="c-code__keyword">final</span> List&lt;Map&lt;String, String&gt;&gt; testList;</div>
-<div class="c-code__line">        <span class="c-code__keyword">private</span> <span class="c-code__keyword">final</span> Pipeline pipeline;</div>
+<div class="c-code__line">        <span class="c-code__keyword">private</span> <span class="c-code__keyword">final</span> Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        BenchmarkRunnable(Pipeline pipeline, List&lt;Map&lt;String, String&gt;&gt; evidence) {</div>
+<div class="c-code__line">        BenchmarkRunnable(Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>, List&lt;Map&lt;String, String&gt;&gt; evidence) {</div>
 <div class="c-code__line">            this.testList = evidence;</div>
 <div class="c-code__line">            <span class="c-code__comment">// initialise the benchmark variables</span></div>
-<div class="c-code__line">            this.pipeline = pipeline;</div>
+<div class="c-code__line">            this.pipeline = <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>;</div>
 <div class="c-code__line">            this.result = <span class="c-code__keyword">new</span> BenchmarkResult();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            result.elapsedMillis = 0;</div>
@@ -364,7 +364,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance_b
 <div class="c-code__line">                <span class="c-code__comment">// A try-with-resource block MUST be used for the</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// FlowData instance. This ensures that native resources</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// created by the device detection engine are freed.</span></div>
-<div class="c-code__line">                <span class="c-code__keywordflow">try</span> (FlowData flowData = pipeline.createFlowData()) {</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">try</span> (FlowData flowData = <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.createFlowData()) {</div>
 <div class="c-code__line">                    flowData</div>
 <div class="c-code__line">                            .addEvidence(evidence)</div>
 <div class="c-code__line">                            .process();</div>
@@ -428,6 +428,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance_b
 <div class="c-code__line"></div>
 <div class="c-code__line"> </div>
 <div class="ttc" id="aclassfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_performance_benchmark_html_ae3d542b8df722282a50952e8df88ef17"><div class="ttname"><a href="classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_performance_benchmark.html#ae3d542b8df722282a50952e8df88ef17">fiftyone.devicedetection.examples.console.PerformanceBenchmark.runBenchmarks</a></div><div class="ttdeci">void runBenchmarks(PerformanceConfiguration[] performanceConfigurations, String dataFilename, String evidenceFilename, int numberOfThreads, PrintWriter writer)</div><div class="ttdoc">Runs benchmarks for various configurations.</div><div class="ttdef"><b>Definition</b> PerformanceBenchmark.java:107</div></div>
+<div class="ttc" id="aclasspipeline_1_1developerexamples_1_1usagesharing_1_1_main_html"><div class="ttname"><a href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a></div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

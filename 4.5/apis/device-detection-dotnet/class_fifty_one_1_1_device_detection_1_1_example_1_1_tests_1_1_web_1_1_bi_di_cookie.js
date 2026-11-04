@@ -1,0 +1,5 @@
+var class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_bi_di_cookie =
+[
+    [ "Name", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_bi_di_cookie.html#a7b4ffedd36e2538cab61d4cbb10e4b32", null ],
+    [ "Value", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_bi_di_cookie.html#a39881cb08953780a7dd452b9b11cef3a", null ]
+];

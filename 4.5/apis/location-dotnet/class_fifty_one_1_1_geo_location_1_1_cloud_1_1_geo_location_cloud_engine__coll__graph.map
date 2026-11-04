@@ -1,5 +1,9 @@
 <map id="FiftyOne.GeoLocation.Cloud.GeoLocationCloudEngine" name="FiftyOne.GeoLocation.Cloud.GeoLocationCloudEngine">
-<area shape="rect" id="Node000001" title="Reverse geocoding engine that uses the 51Degrees cloud service." alt="" coords="5,93,212,133"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="19,5,198,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,59,111,93,106,93,106,59"/>
+<area shape="rect" id="Node000001" title="Reverse geocoding engine that uses the 51Degrees cloud service." alt="" coords="559,49,765,89"/>
+<area shape="rect" id="Node000002" href="/home/runner/work/documentation/documentation/apis/51degrees-dotnet/pipeline/docs/tagfile$class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_aspect_engine_base-1-g.html" title=" " alt="" coords="300,34,511,103"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="524,66,558,66,558,71,524,71"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="9,5,248,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="262,47,300,52,300,58,261,53"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,85,252,125"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="265,84,299,80,300,85,266,89"/>
 </map>

@@ -1,0 +1,7 @@
+<map id="fiftyone\pipeline\engines\DataKeyedCache" name="fiftyone\pipeline\engines\DataKeyedCache">
+<area shape="rect" id="Node000001" title="A simple cache class which has a get and set method Can be added to an engine to cache its results fo..." alt="" coords="108,5,291,45"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1engines_1_1_session_cache.html" title="An extension of the cache class that stores a cache in a user&#39;s session if PHP sessions are active." alt="" coords="5,93,188,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,56,121,95,118,91,164,52"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1engines_1_1_tracker.html" title="The tracker class extends the cache class with a track method that checks if a key is in the cache an..." alt="" coords="212,93,395,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,52,282,91,279,95,231,56"/>
+</map>

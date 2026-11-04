@@ -1,0 +1,4 @@
+var class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_getting_started_test_base_2_g =
+[
+    [ "VerifyExample_Returns_Status_Code_200", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_getting_started_test_base-2-g.html#a384583a3eaec4867559f5e19aaf22f48", null ]
+];

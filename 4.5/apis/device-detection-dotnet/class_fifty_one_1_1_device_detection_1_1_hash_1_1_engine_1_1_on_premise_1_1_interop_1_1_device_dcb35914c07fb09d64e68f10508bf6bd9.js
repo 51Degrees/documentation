@@ -1,0 +1,6 @@
+var class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_interop_1_1_device_dcb35914c07fb09d64e68f10508bf6bd9 =
+[
+    [ "SWIGExceptionHelper", "class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_interop_1_1_device_d75abb59ed9409b5d3a5b327dc8a52fcc.html", null ],
+    [ "SWIGPendingException", "class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_interop_1_1_device_d5062d448a939dd2808aaf893a816c64c.html", null ],
+    [ "SWIGStringHelper", "class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_interop_1_1_device_d103bf0a40aa135ed2625e539913b531e.html", null ]
+];

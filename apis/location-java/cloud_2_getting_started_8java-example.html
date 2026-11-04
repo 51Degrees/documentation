@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
-  <link rel="canonical" href="/documentation/apis/location-java/cloud_2_getting_started_8java-example.html">
-  <link rel="alternate" hreflang="en-US" href="/documentation/apis/location-java/cloud_2_getting_started_8java-example.html" />
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/location-java/cloud_2_getting_started_8java-example.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/location-java/cloud_2_getting_started_8java-example.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -122,12 +122,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2_gettin
 <li><a href="https://central.sonatype.com/artifact/com.51degrees/geo-location/">com.51degrees.geo-location</a></li>
 </ul>
 <ol type="1">
-<li>Build a new Pipeline to use the 51Degrees cloud service, with lazy loading configured to allow up to a second for a response from the service. <div class="c-code__block c-code__block--outline"><div class="c-code__line">Pipeline pipeline = <span class="c-code__keyword">new</span> GeoLocationPipelineBuilder(loggerFactory)</div>
+<li>Build a new Pipeline to use the 51Degrees cloud service, with lazy loading configured to allow up to a second for a response from the service. <div class="c-code__block c-code__block--outline"><div class="c-code__line">Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> = <span class="c-code__keyword">new</span> GeoLocationPipelineBuilder(loggerFactory)</div>
 <div class="c-code__line">    .useCloud(resourceKey, Enums.GeoLocationProvider.FiftyOneDegrees)</div>
 <div class="c-code__line">    .useLazyLoading(1000)</div>
 <div class="c-code__line">    .build();</div>
+<div class="ttc" id="aclasspipeline_1_1developerexamples_1_1usagesharing_1_1_main_html"><div class="ttname"><a href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a></div></div>
 </div><!-- fragment --></li>
-<li>Create a new FlowData instance ready to be populated with evidence for the Pipeline. <div class="c-code__block c-code__block--outline"><div class="c-code__line">FlowData data = pipeline.createFlowData();</div>
+<li>Create a new FlowData instance ready to be populated with evidence for the Pipeline. <div class="c-code__block c-code__block--outline"><div class="c-code__line">FlowData data = <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.createFlowData();</div>
 </div><!-- fragment --></li>
 <li>Process a longitude and latitude to retrieve the values associated with with the location for the selected properties. <div class="c-code__block c-code__block--outline"><div class="c-code__line">data</div>
 <div class="c-code__line">    .addEvidence(EVIDENCE_GEO_LAT_PARAM_KEY, <span class="c-code__stringliteral">&quot;51.458048&quot;</span>)</div>
@@ -181,25 +182,25 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2_gettin
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> ILoggerFactory loggerFactory = LoggerFactory.getILoggerFactory();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> main(String[] args) <span class="c-code__keywordflow">throws</span> Exception {</div>
-<div class="c-code__line">        <span class="c-code__comment">// Obtain a resource key for free at https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=location-java&amp;utm_content=geo-location.shell.examples-src-main-java-fiftyone-geolocation-examples-cloud-gettingstarted.java&amp;utm_term=main</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// Obtain a resource key for free at https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=geo-location.shell.examples-src-main-java-fiftyone-geolocation-examples-cloud-gettingstarted.java&amp;utm_term=main</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// Make sure to include the &#39;Country&#39; property as it is used by this example.</span></div>
 <div class="c-code__line">        String resourceKey = <span class="c-code__stringliteral">&quot;!!Your resource license key!!&quot;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (resourceKey.startsWith(<span class="c-code__stringliteral">&quot;!!&quot;</span>)) {</div>
 <div class="c-code__line">            System.out.println(<span class="c-code__stringliteral">&quot;You need to create a resource key at &quot;</span> +</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=location-java&amp;utm_content=geo-location.shell.examples-src-main-java-fiftyone-geolocation-examples-cloud-gettingstarted.java&amp;utm_term=resource-key-required and paste it into this example.&quot;</span>);</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=geo-location.shell.examples-src-main-java-fiftyone-geolocation-examples-cloud-gettingstarted.java&amp;utm_term=resource-key-required and paste it into this example.&quot;</span>);</div>
 <div class="c-code__line">            System.out.println(<span class="c-code__stringliteral">&quot;Make sure to include the &#39;Country&#39; &quot;</span> +</div>
 <div class="c-code__line">                <span class="c-code__stringliteral">&quot;property as it is used by this example.&quot;</span>);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">            Pipeline pipeline = <span class="c-code__keyword">new</span> GeoLocationPipelineBuilder(loggerFactory)</div>
+<div class="c-code__line">            Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> = <span class="c-code__keyword">new</span> GeoLocationPipelineBuilder(loggerFactory)</div>
 <div class="c-code__line">                .useCloud(resourceKey, Enums.GeoLocationProvider.FiftyOneDegrees)</div>
 <div class="c-code__line">                .setEndPoint(<span class="c-code__stringliteral">&quot;https://cloud.51degrees.com/api/v4&quot;</span>)</div>
 <div class="c-code__line">                .useLazyLoading(1000)</div>
 <div class="c-code__line">                .setAutoCloseElements(<span class="c-code__keyword">true</span>)</div>
 <div class="c-code__line">                .build();</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keywordflow">try</span> (FlowData flowData = pipeline.createFlowData()) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">try</span> (FlowData flowData = <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.createFlowData()) {</div>
 <div class="c-code__line">                flowData.addEvidence(EVIDENCE_GEO_LAT_PARAM_KEY, <span class="c-code__stringliteral">&quot;51.458048&quot;</span>)</div>
 <div class="c-code__line">                    .addEvidence(EVIDENCE_GEO_LON_PARAM_KEY, <span class="c-code__stringliteral">&quot;-0.9822207999999999&quot;</span>)</div>
 <div class="c-code__line">                    .process();</div>
@@ -216,7 +217,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2_gettin
 <div class="c-code__line"> </div>
 <div class="c-code__line">                System.out.println(flowData.get(GeoData.class).getRegion());</div>
 <div class="c-code__line">            }          </div>
-<div class="c-code__line">            pipeline.close();</div>
+<div class="c-code__line">            <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.close();</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>

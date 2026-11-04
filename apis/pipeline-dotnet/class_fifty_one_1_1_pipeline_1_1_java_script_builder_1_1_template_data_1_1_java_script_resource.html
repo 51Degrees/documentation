@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
-  <link rel="canonical" href="/documentation/apis/pipeline-dotnet/class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_template_data_1_1_java_script_resource.html">
-  <link rel="alternate" hreflang="en-US" href="/documentation/apis/pipeline-dotnet/class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_template_data_1_1_java_script_resource.html" />
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/pipeline-dotnet/class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_template_data_1_1_java_script_resource.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/pipeline-dotnet/class_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_template_data_1_1_java_script_resource.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fifty_on
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p>A helper class that packages the parameters required by the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> mustache template into the required format. </p>
+<div class="textblock"><p>A helper class that packages the parameters required by the JavaScript mustache template into the required format. </p>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -160,20 +160,20 @@ Properties</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Constructor. </p>
-<p>The callback mechanism is a feature that allows the client-side data to be updated in the background when any properties that contain <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> code have been executed on the client and therefore, new evidence is available. </p>
+<p>The callback mechanism is a feature that allows the client-side data to be updated in the background when any properties that contain JavaScript code have been executed on the client and therefore, new evidence is available. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">objName</td><td>The name of the global-scope <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> object that will be created on the client-side by the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> produced by the template. </td></tr>
+    <tr><td class="paramname">objName</td><td>The name of the global-scope JavaScript object that will be created on the client-side by the JavaScript produced by the template. </td></tr>
     <tr><td class="paramname">jsonObject</td><td>The JSON data payload to be inserted into the template. </td></tr>
-    <tr><td class="paramname">sessionId</td><td>The session Id to use in the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> response. A session id that fails IsValidSessionId(string) is written as an empty string. </td></tr>
-    <tr><td class="paramname">sequence</td><td>The sequence value to use in the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> response. A value less than 1 is written as 1. </td></tr>
-    <tr><td class="paramname">supportsPromises</td><td>If true, the template will produce <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> that makes use of promises. If false, promises will not be used. </td></tr>
-    <tr><td class="paramname">supportsFetch</td><td>If true, the template will produce <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> that makes use of the fetch API. Otherwise, the template will fall back to using XMLHttpRequest. </td></tr>
+    <tr><td class="paramname">sessionId</td><td>The session Id to use in the JavaScript response. A session id that fails IsValidSessionId(string) is written as an empty string. </td></tr>
+    <tr><td class="paramname">sequence</td><td>The sequence value to use in the JavaScript response. A value less than 1 is written as 1. </td></tr>
+    <tr><td class="paramname">supportsPromises</td><td>If true, the template will produce JavaScript that makes use of promises. If false, promises will not be used. </td></tr>
+    <tr><td class="paramname">supportsFetch</td><td>If true, the template will produce JavaScript that makes use of the fetch API. Otherwise, the template will fall back to using XMLHttpRequest. </td></tr>
     <tr><td class="paramname">url</td><td>The complete URL to use for the callback mechanism described in remarks for this constructor. </td></tr>
     <tr><td class="paramname">parameters</td><td>The parameters to append to the call-back URL. </td></tr>
-    <tr><td class="paramname">enableCookies</td><td>If false, any cookies created by <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> properties that execute on the client-side and that start with '51D_' will be deleted automatically. </td></tr>
+    <tr><td class="paramname">enableCookies</td><td>If false, any cookies created by JavaScript properties that execute on the client-side and that start with '51D_' will be deleted automatically. </td></tr>
     <tr><td class="paramname">updateEnabled</td><td>True to use the callback mechanism that is described in remarks for this constructor. False to disable that mechanism. In this case, a second request must be initiated by the user in order for the server to access the additional evidence gathered by client-side code. </td></tr>
-    <tr><td class="paramname">hasDelayedProperties</td><td>True to include support for <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> properties that are not executed immediately when the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> is loaded. </td></tr>
+    <tr><td class="paramname">hasDelayedProperties</td><td>True to include support for JavaScript properties that are not executed immediately when the JavaScript is loaded. </td></tr>
   </table>
   </dd>
 </dl>
@@ -249,20 +249,20 @@ Properties</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Constructor. </p>
-<p>The callback mechanism is a feature that allows the client-side data to be updated in the background when any properties that contain <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> code have been executed on the client and therefore, new evidence is available. </p>
+<p>The callback mechanism is a feature that allows the client-side data to be updated in the background when any properties that contain JavaScript code have been executed on the client and therefore, new evidence is available. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">objName</td><td>The name of the global-scope <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> object that will be created on the client-side by the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> produced by the template. </td></tr>
+    <tr><td class="paramname">objName</td><td>The name of the global-scope JavaScript object that will be created on the client-side by the JavaScript produced by the template. </td></tr>
     <tr><td class="paramname">jsonObject</td><td>The JSON data payload to be inserted into the template. </td></tr>
-    <tr><td class="paramname">sessionId</td><td>The session Id to use in the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> response. A session id that fails IsValidSessionId(string) is written as an empty string. </td></tr>
-    <tr><td class="paramname">sequence</td><td>The sequence value to use in the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> response. A value less than 1 is written as 1. </td></tr>
-    <tr><td class="paramname">supportsPromises</td><td>If true, the template will produce <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> that makes use of promises. If false, promises will not be used. </td></tr>
-    <tr><td class="paramname">supportsFetch</td><td>If true, the template will produce <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> that makes use of the fetch API. Otherwise, the template will fall back to using XMLHttpRequest. </td></tr>
+    <tr><td class="paramname">sessionId</td><td>The session Id to use in the JavaScript response. A session id that fails IsValidSessionId(string) is written as an empty string. </td></tr>
+    <tr><td class="paramname">sequence</td><td>The sequence value to use in the JavaScript response. A value less than 1 is written as 1. </td></tr>
+    <tr><td class="paramname">supportsPromises</td><td>If true, the template will produce JavaScript that makes use of promises. If false, promises will not be used. </td></tr>
+    <tr><td class="paramname">supportsFetch</td><td>If true, the template will produce JavaScript that makes use of the fetch API. Otherwise, the template will fall back to using XMLHttpRequest. </td></tr>
     <tr><td class="paramname">url</td><td>The complete URL to use for the callback mechanism described in remarks for this constructor. </td></tr>
     <tr><td class="paramname">parameters</td><td>The parameters to append to the call-back URL. </td></tr>
-    <tr><td class="paramname">enableCookies</td><td>If false, any cookies created by <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> properties that execute on the client-side and that start with '51D_' will be deleted automatically. </td></tr>
+    <tr><td class="paramname">enableCookies</td><td>If false, any cookies created by JavaScript properties that execute on the client-side and that start with '51D_' will be deleted automatically. </td></tr>
     <tr><td class="paramname">updateEnabled</td><td>True to use the callback mechanism that is described in remarks for this constructor. False to disable that mechanism. In this case, a second request must be initiated by the user in order for the server to access the additional evidence gathered by client-side code. </td></tr>
-    <tr><td class="paramname">hasDelayedProperties</td><td>True to include support for <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> properties that are not executed immediately when the <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_java_script.html">JavaScript</a> is loaded. </td></tr>
+    <tr><td class="paramname">hasDelayedProperties</td><td>True to include support for JavaScript properties that are not executed immediately when the JavaScript is loaded. </td></tr>
   </table>
   </dd>
 </dl>

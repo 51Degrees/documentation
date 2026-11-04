@@ -1,0 +1,5 @@
+var interface_fifty_one_1_1_pipeline_1_1_web_1_1_shared_1_1_services_1_1_i_clientside_property_service =
+[
+    [ "ServeJavascript", "interface_fifty_one_1_1_pipeline_1_1_web_1_1_shared_1_1_services_1_1_i_clientside_property_service.html#a4bea7f84d29b03b9d4c675d91c6003e7", null ],
+    [ "ServeJson", "interface_fifty_one_1_1_pipeline_1_1_web_1_1_shared_1_1_services_1_1_i_clientside_property_service.html#aeb70c3810b019e51223cefe461479640", null ]
+];

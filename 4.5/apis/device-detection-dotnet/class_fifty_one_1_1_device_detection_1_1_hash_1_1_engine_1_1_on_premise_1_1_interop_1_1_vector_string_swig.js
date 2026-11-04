@@ -1,0 +1,4 @@
+var class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_interop_1_1_vector_string_swig =
+[
+    [ "VectorStringSwigEnumerator", "class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_interop_1_1_vector_s9a2bd8ed0db617d6a28aadc4c153bebd.html", null ]
+];
