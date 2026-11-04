@@ -22,7 +22,7 @@ Requests to the Cloud Service can include a 'TAC' query parameter. As long as th
 includes one or more 'hardware device' properties and the 'profiles', and 'TAC' property, the Cloud Service will
 return a result set with the details of any devices that match the supplied TAC.
 
-NOTE: The 'profiles' and 'TAC' properties ***MUST** be selected for TAC lookup to function.
+NOTE: The 'profiles' property ***MUST** be selected for TAC lookup to function.
 
 For language specific details, see these [examples](@ref DeviceDetection_Examples_TacLookup_Cloud). 
 

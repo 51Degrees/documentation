@@ -23,7 +23,7 @@ Requests to the Cloud Service can include a 'NativeModel' query parameter. As lo
 includes one or more 'hardware device' properties and the 'profiles' property, the Cloud Service will return a result set with 
 the details of any devices that match the supplied native model key.
 
-NOTE: The 'profiles' and property **MUST** be selected for native lookup to function.
+NOTE: The 'profiles' property **MUST** be selected for native lookup to function.
 
 For language specific details, see these [examples](@ref DeviceDetection_Examples_NativeKeyLookup_Cloud). 
 
