@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#ae8db83da6ae2547d2a26d397a6f3d66a":[2,0,0,3,4,84],
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#aea9197a8838b7c882bfd0c756c5ad864":[2,0,0,3,4,95],
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#aeae7b21635c40689be5e585eafe46827":[2,0,0,3,4,130],
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#aec1bb6b42f76fc600c87dd789f05d3ce":[2,0,0,3,4,32],
@@ -51,6 +50,7 @@ var NAVTREEINDEX2 =
 "console_2_getting_started_cloud_8java-example.html":[3,0],
 "console_2_getting_started_on_prem_8java-example.html":[3,1],
 "console_2_match_metrics_8java-example.html":[3,2],
+"console_2_native_model_cloud_8java-example.html":[3,5],
 "console_2_offline_processing_8java-example.html":[3,6],
 "console_2_tac_cloud_8java-example.html":[3,8],
 "console_2_update_data_file_8java-example.html":[3,9],

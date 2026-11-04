@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2mixed_2
 <p>This example uses device detection and IP intelligence from the 51Degrees cloud service within a single Flask web application.</p>
 <p>This example uses device detection and IP intelligence from the 51Degrees cloud service within a single Flask web application. It shows device detection from the User-Agent and User-Agent Client Hints, the location and network of an IP address, the list of countries translated by the cloud service, and client-side evidence refining the device results.</p>
 <p>Each time the pipeline processes a request, one request to the cloud service returns the results of every engine in it.</p>
-<p>This example is available in full on <a href="https://github.com/51Degrees/pipeline-python/blob/main/fiftyone_pipeline_cloudrequestengine/examples/src/fiftyone_pipeline_examples/cloud/mixed/gettingstarted_web/app.py">GitHub</a>.</p>
+<p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-python/blob/main/pipeline/fiftyone_pipeline_cloudrequestengine/examples/src/fiftyone_pipeline_examples/cloud/mixed/gettingstarted_web/app.py">GitHub</a>.</p>
 <p>To run this example you need a resource key or a licence key.</p>
 <p>A resource key carries the list of properties it returns. Create one carrying device detection and IP intelligence properties for free at <a href="https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-examples-src-fiftyone_pipeline_examples-cloud-mixed-gettingstarted_web-app.py&amp;utm_term=header">https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-examples-src-fiftyone_pipeline_examples-cloud-mixed-gettingstarted_web-app.py&amp;utm_term=header</a> and set the _51DEGREES_RESOURCE_KEY environment variable to it, or pass it as the first argument.</p>
 <p>A licence key can be used on its own instead, by setting the _51DEGREES_LICENSE_KEY environment variable to it. A licence key carries no list of properties, so the example asks the cloud service for exactly the properties the page shows. A licence key identifies an account, so it stays on this server. The page and its script only ever talk to this server, never to the cloud service.</p>
@@ -84,7 +84,426 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2mixed_2
 <li><a href="https://pypi.org/project/fiftyone-pipeline-cloudrequestengine/">fiftyone_pipeline_cloudrequestengine</a></li>
 <li><a href="https://pypi.org/project/flask/">flask</a></li>
 </ul>
-<div class="c-code__block c-code__block--outline"></div><!-- fragment --> </div><!-- primary -->
+<div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment"># *********************************************************************</span></div>
+<div class="c-code__line"><span class="c-code__comment"># This Original Work is copyright of 51 Degrees Mobile Experts Limited.</span></div>
+<div class="c-code__line"><span class="c-code__comment"># Copyright 2026 51 Degrees Mobile Experts Limited, Davidson House,</span></div>
+<div class="c-code__line"><span class="c-code__comment"># Forbury Square, Reading, Berkshire, United Kingdom RG1 3EU.</span></div>
+<div class="c-code__line"><span class="c-code__comment">#</span></div>
+<div class="c-code__line"><span class="c-code__comment"># This Original Work is licensed under the European Union Public Licence</span></div>
+<div class="c-code__line"><span class="c-code__comment"># (EUPL) v.1.2 and is subject to its terms as set out below.</span></div>
+<div class="c-code__line"><span class="c-code__comment">#</span></div>
+<div class="c-code__line"><span class="c-code__comment"># If a copy of the EUPL was not distributed with this file, You can obtain</span></div>
+<div class="c-code__line"><span class="c-code__comment"># one at https://opensource.org/licenses/EUPL-1.2.</span></div>
+<div class="c-code__line"><span class="c-code__comment">#</span></div>
+<div class="c-code__line"><span class="c-code__comment"># The &#39;Compatible Licences&#39; set out in the Appendix to the EUPL (as may be</span></div>
+<div class="c-code__line"><span class="c-code__comment"># amended by the European Commission) shall be deemed incompatible for</span></div>
+<div class="c-code__line"><span class="c-code__comment"># the purposes of the Work and the provisions of the compatibility</span></div>
+<div class="c-code__line"><span class="c-code__comment"># clause in Article 5 of the EUPL shall not apply.</span></div>
+<div class="c-code__line"><span class="c-code__comment">#</span></div>
+<div class="c-code__line"><span class="c-code__comment"># If using the Work as, or as part of, a network application, by</span></div>
+<div class="c-code__line"><span class="c-code__comment"># including the attribution notice(s) required under Article 5 of the EUPL</span></div>
+<div class="c-code__line"><span class="c-code__comment"># in the end user terms of the application under an appropriate heading,</span></div>
+<div class="c-code__line"><span class="c-code__comment"># such notice(s) shall fulfill the requirements of that article.</span></div>
+<div class="c-code__line"><span class="c-code__comment"># *********************************************************************</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> json</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> os</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> sys</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> flask <span class="c-code__keyword">import</span> Flask, make_response, render_template, request</div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> werkzeug.middleware.proxy_fix <span class="c-code__keyword">import</span> ProxyFix</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__pipeline__cloudrequestengine_1_1cloudrequestexception.html">fiftyone_pipeline_cloudrequestengine.cloudrequestexception</a> <span class="c-code__keyword">import</span> (</div>
+<div class="c-code__line">    CloudRequestException)</div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__pipeline__core_1_1logger.html">fiftyone_pipeline_core.logger</a> <span class="c-code__keyword">import</span> Logger</div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__pipeline__core_1_1web.html">fiftyone_pipeline_core.web</a> <span class="c-code__keyword">import</span> set_response_header, webevidence</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__pipeline__examples_1_1cloud_1_1engines.html">fiftyone_pipeline_examples.cloud.engines</a> <span class="c-code__keyword">import</span> (</div>
+<div class="c-code__line">    CountriesTranslationCloud, DeviceDetectionCloud, IpIntelligenceCloud)</div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__pipeline__examples_1_1cloud_1_1mixed_1_1pipeline.html">fiftyone_pipeline_examples.cloud.mixed.pipeline</a> <span class="c-code__keyword">import</span> build_pipeline</div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__pipeline__examples_1_1example__utils.html">fiftyone_pipeline_examples.example_utils</a> <span class="c-code__keyword">import</span> ExampleUtils</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment"># The device detection properties the page shows, as label and property</span></div>
+<div class="c-code__line"><span class="c-code__comment"># name. The browser tests every language&#39;s example shares read the &quot;Device</span></div>
+<div class="c-code__line"><span class="c-code__comment"># Type:&quot; and &quot;Device Id:&quot; rows, so those labels stay as they are.</span></div>
+<div class="c-code__line">DEVICE_PROPERTIES = [</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Hardware Vendor:&quot;</span>, <span class="c-code__stringliteral">&quot;hardwarevendor&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Hardware Name:&quot;</span>, <span class="c-code__stringliteral">&quot;hardwarename&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Device Type:&quot;</span>, <span class="c-code__stringliteral">&quot;devicetype&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Platform Vendor:&quot;</span>, <span class="c-code__stringliteral">&quot;platformvendor&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Platform Name:&quot;</span>, <span class="c-code__stringliteral">&quot;platformname&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Platform Version:&quot;</span>, <span class="c-code__stringliteral">&quot;platformversion&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Browser Vendor:&quot;</span>, <span class="c-code__stringliteral">&quot;browservendor&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Browser Name:&quot;</span>, <span class="c-code__stringliteral">&quot;browsername&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Browser Version:&quot;</span>, <span class="c-code__stringliteral">&quot;browserversion&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Screen width (pixels):&quot;</span>, <span class="c-code__stringliteral">&quot;screenpixelswidth&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Screen height (pixels):&quot;</span>, <span class="c-code__stringliteral">&quot;screenpixelsheight&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Device Id:&quot;</span>, <span class="c-code__stringliteral">&quot;deviceid&quot;</span>),</div>
+<div class="c-code__line">]</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment"># The IP intelligence properties the page shows as text, as label, property</span></div>
+<div class="c-code__line"><span class="c-code__comment"># name and the number of decimal places to show a number to.</span></div>
+<div class="c-code__line">IP_PROPERTIES = [</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Registered Name:&quot;</span>, <span class="c-code__stringliteral">&quot;registeredname&quot;</span>, <span class="c-code__keywordtype">None</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Registered Owner:&quot;</span>, <span class="c-code__stringliteral">&quot;registeredowner&quot;</span>, <span class="c-code__keywordtype">None</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Registered Country:&quot;</span>, <span class="c-code__stringliteral">&quot;registeredcountry&quot;</span>, <span class="c-code__keywordtype">None</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;IP Range Start:&quot;</span>, <span class="c-code__stringliteral">&quot;iprangestart&quot;</span>, <span class="c-code__keywordtype">None</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;IP Range End:&quot;</span>, <span class="c-code__stringliteral">&quot;iprangeend&quot;</span>, <span class="c-code__keywordtype">None</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Country:&quot;</span>, <span class="c-code__stringliteral">&quot;country&quot;</span>, <span class="c-code__keywordtype">None</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Country Code:&quot;</span>, <span class="c-code__stringliteral">&quot;countrycode&quot;</span>, <span class="c-code__keywordtype">None</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Country Code 3:&quot;</span>, <span class="c-code__stringliteral">&quot;countrycode3&quot;</span>, <span class="c-code__keywordtype">None</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Region:&quot;</span>, <span class="c-code__stringliteral">&quot;region&quot;</span>, <span class="c-code__keywordtype">None</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;State:&quot;</span>, <span class="c-code__stringliteral">&quot;state&quot;</span>, <span class="c-code__keywordtype">None</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Town:&quot;</span>, <span class="c-code__stringliteral">&quot;town&quot;</span>, <span class="c-code__keywordtype">None</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Latitude:&quot;</span>, <span class="c-code__stringliteral">&quot;latitude&quot;</span>, 4),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Longitude:&quot;</span>, <span class="c-code__stringliteral">&quot;longitude&quot;</span>, 4),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Areas:&quot;</span>, <span class="c-code__stringliteral">&quot;areas&quot;</span>, <span class="c-code__keywordtype">None</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Accuracy Radius:&quot;</span>, <span class="c-code__stringliteral">&quot;accuracyradiusmin&quot;</span>, <span class="c-code__keywordtype">None</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Time Zone Offset:&quot;</span>, <span class="c-code__stringliteral">&quot;timezoneoffset&quot;</span>, <span class="c-code__keywordtype">None</span>),</div>
+<div class="c-code__line">]</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment"># The weighted IP intelligence properties, each shown as a list of values</span></div>
+<div class="c-code__line"><span class="c-code__comment"># with their weightings.</span></div>
+<div class="c-code__line">WEIGHTED_IP_PROPERTIES = [</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Country Codes Geographical:&quot;</span>, <span class="c-code__stringliteral">&quot;countrycodesgeographical&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Country Codes Population:&quot;</span>, <span class="c-code__stringliteral">&quot;countrycodespopulation&quot;</span>),</div>
+<div class="c-code__line">]</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment"># The lists the country choice is built from. The code at a position in the</span></div>
+<div class="c-code__line"><span class="c-code__comment"># first names the same country as the translated name at that position in</span></div>
+<div class="c-code__line"><span class="c-code__comment"># the second.</span></div>
+<div class="c-code__line">COUNTRY_CODES_PROPERTY = <span class="c-code__stringliteral">&quot;countrycodesgeographicalall&quot;</span></div>
+<div class="c-code__line">COUNTRY_NAMES_PROPERTY = <span class="c-code__stringliteral">&quot;countrynamesgeographicalalltranslated&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment"># Evidence values longer than this are shortened on the page.</span></div>
+<div class="c-code__line">EVIDENCE_DISPLAY_LENGTH = 100</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">def </span>values():</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;&quot;&quot;!</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    The properties the page shows, as the cloud service names them. A</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    request made with a licence key asks for these.</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> (</div>
+<div class="c-code__line">        ExampleUtils.name_values(</div>
+<div class="c-code__line">            DeviceDetectionCloud.DATA_KEY,</div>
+<div class="c-code__line">            [name <span class="c-code__keywordflow">for</span> _, name <span class="c-code__keywordflow">in</span> DEVICE_PROPERTIES]) +</div>
+<div class="c-code__line">        ExampleUtils.name_values(</div>
+<div class="c-code__line">            IpIntelligenceCloud.DATA_KEY,</div>
+<div class="c-code__line">            [name <span class="c-code__keywordflow">for</span> _, name, _ <span class="c-code__keywordflow">in</span> IP_PROPERTIES] +</div>
+<div class="c-code__line">            [name <span class="c-code__keywordflow">for</span> _, name <span class="c-code__keywordflow">in</span> WEIGHTED_IP_PROPERTIES]) +</div>
+<div class="c-code__line">        ExampleUtils.name_values(</div>
+<div class="c-code__line">            CountriesTranslationCloud.DATA_KEY,</div>
+<div class="c-code__line">            [COUNTRY_CODES_PROPERTY, COUNTRY_NAMES_PROPERTY]))</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">def </span>create_pipeline(logger, resource_key=None, license_key=None,</div>
+<div class="c-code__line">                    cloud_endpoint=None, cloud_request_origin=None):</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;&quot;&quot;!</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    Create the pipeline. A cloud request engine makes one request to the</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    cloud service each time flow data is processed, and the engines after</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    it read the IP intelligence, translated country names and device</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    detection results from the answer. The PipelineBuilder adds the</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    elements that write the client-side JavaScript and set the response</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    headers.</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral"></span> </div>
+<div class="c-code__line"><span class="c-code__stringliteral">    The key in use has to carry device detection or IP intelligence</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    properties. The page shows as unknown whatever the key does not carry,</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    and shows no country list without the translated country names.</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    pipeline_settings = {</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;javascript_builder_settings&quot;</span>: {</div>
+<div class="c-code__line">            <span class="c-code__comment"># The client-side script posts the evidence it gathers to this</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># route of the example, which answers with refined results.</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;endpoint&quot;</span>: <span class="c-code__stringliteral">&quot;/json&quot;</span>,</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;minify&quot;</span>: <span class="c-code__keyword">True</span>,</div>
+<div class="c-code__line">            <span class="c-code__comment"># Store the client-side results as cookies, so later requests</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># carry them to the server and server-side detection uses them,</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># for example to tell the precise model of an Apple device.</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;enable_cookies&quot;</span>: <span class="c-code__keyword">True</span>,</div>
+<div class="c-code__line">        },</div>
+<div class="c-code__line">        <span class="c-code__comment"># Record a processing failure in the flow data instead of raising</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># it, so the page still renders. Set to False while developing to</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># see failures straight away.</span></div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;suppress_process_exceptions&quot;</span>: <span class="c-code__keyword">True</span>,</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> build_pipeline(</div>
+<div class="c-code__line">        logger,</div>
+<div class="c-code__line">        values(),</div>
+<div class="c-code__line">        resource_key=resource_key,</div>
+<div class="c-code__line">        license_key=license_key,</div>
+<div class="c-code__line">        cloud_endpoint=cloud_endpoint,</div>
+<div class="c-code__line">        cloud_request_origin=cloud_request_origin,</div>
+<div class="c-code__line">        pipeline_settings=pipeline_settings,</div>
+<div class="c-code__line">        <span class="c-code__comment"># The page runs the client-side script, so a licence key also asks</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># for the properties that script needs.</span></div>
+<div class="c-code__line">        client_side=<span class="c-code__keyword">True</span>)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">def </span>create_app(pipeline):</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;&quot;&quot;!</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    Create the Flask application that serves the example page, the</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    client-side script and the client-side callback.</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment"># Serve the files in the static folder from the root, so the stylesheet</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># is at /css and the script at /js, as in the examples for the other</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># languages.</span></div>
+<div class="c-code__line">    app = Flask(__name__, static_url_path=<span class="c-code__stringliteral">&quot;&quot;</span>)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment"># Take the visitor&#39;s address from the X-Forwarded-For header a reverse</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># proxy adds (for example ngrok, a load balancer or nginx), so IP</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># intelligence looks up the visitor rather than the proxy. Only do this</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># when a proxy you control sits in front of the application, as anyone</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># else can set the header to any address.</span></div>
+<div class="c-code__line">    app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keyword">def </span>process():</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        flowdata = pipeline.create_flowdata()</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment"># Add the evidence from the request, being its headers, cookies,</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># query parameters and client address, along with any form fields</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># the client-side script posts.</span></div>
+<div class="c-code__line">        flowdata.evidence.add_from_dict(webevidence(request))</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        flowdata.process()</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> flowdata</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__preprocessor">@app.route(&quot;/&quot;)</span></div>
+<div class="c-code__line">    <span class="c-code__keyword">def </span>index():</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        flowdata = process()</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        response = make_response()</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment"># Some browsers only send User-Agent Client Hints that are asked for,</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># so set the Accept-CH header the results call for. More about this</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># at https://51degrees.com/blog/user-agent-client-hints?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-examples-src-fiftyone_pipeline_examples-cloud-mixed-gettingstarted_web-app.py&amp;utm_term=index</span></div>
+<div class="c-code__line">        set_response_header(flowdata, response)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        response.set_data(render_template(</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;index.html&quot;</span>, **page_model(flowdata)))</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> response</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment"># The other Pipeline APIs ship web integrations that serve the</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># client-side script at &#39;/51Degrees.core.js&#39;, so the page refers to it by</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># that name. There is no such integration for Flask, so the example adds</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># the route itself.</span></div>
+<div class="c-code__line">    <span class="c-code__preprocessor">@app.route(&quot;/51Degrees.core.js&quot;)</span></div>
+<div class="c-code__line">    <span class="c-code__keyword">def </span>core_js():</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        flowdata = process()</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        response = make_response(flowdata.javascriptbuilder.javascript)</div>
+<div class="c-code__line">        response.headers[<span class="c-code__stringliteral">&quot;Content-Type&quot;</span>] = <span class="c-code__stringliteral">&quot;application/x-javascript&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> response</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment"># The client-side script posts the evidence it gathers here, and gets</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># back the results of processing it as JSON.</span></div>
+<div class="c-code__line">    <span class="c-code__preprocessor">@app.route(&quot;/json&quot;, methods=[&quot;POST&quot;])</span></div>
+<div class="c-code__line">    <span class="c-code__keyword">def </span>json_results():</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        flowdata = process()</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> app.response_class(</div>
+<div class="c-code__line">            json.dumps(flowdata.jsonbundler.json),</div>
+<div class="c-code__line">            mimetype=<span class="c-code__stringliteral">&quot;application/json&quot;</span>)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> app</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">def </span>page_model(flowdata):</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;&quot;&quot;!</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    The values the page template shows.</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    device = ExampleUtils.get_element(flowdata, DeviceDetectionCloud.DATA_KEY)</div>
+<div class="c-code__line">    ip = ExampleUtils.get_element(flowdata, IpIntelligenceCloud.DATA_KEY)</div>
+<div class="c-code__line">    countries = ExampleUtils.get_element(</div>
+<div class="c-code__line">        flowdata, CountriesTranslationCloud.DATA_KEY)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment"># Look up the address the visitor typed into the form, or else the</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># visitor&#39;s own address.</span></div>
+<div class="c-code__line">    client_ip = request.args.get(<span class="c-code__stringliteral">&quot;client-ip&quot;</span>, <span class="c-code__stringliteral">&quot;&quot;</span>).strip()</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> client_ip:</div>
+<div class="c-code__line">        lookup_ip = client_ip</div>
+<div class="c-code__line">        ip_message = f<span class="c-code__stringliteral">&quot;Showing location data for: {client_ip}&quot;</span></div>
+<div class="c-code__line">    <span class="c-code__keywordflow">else</span>:</div>
+<div class="c-code__line">        lookup_ip = request.remote_addr</div>
+<div class="c-code__line">        ip_message = <span class="c-code__stringliteral">&quot;Showing location data for your IP address&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    device_message = <span class="c-code__keywordtype">None</span></div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> device <span class="c-code__keywordflow">is</span> <span class="c-code__keywordflow">not</span> <span class="c-code__keywordtype">None</span>:</div>
+<div class="c-code__line">        device_message = (</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;You are using &quot;</span></div>
+<div class="c-code__line">            f<span class="c-code__stringliteral">&quot;{ExampleUtils.get_value_or_unknown(device, &#39;browsername&#39;)} on &quot;</span></div>
+<div class="c-code__line">            f<span class="c-code__stringliteral">&quot;{ExampleUtils.get_value_or_unknown(device, &#39;platformname&#39;)} &quot;</span></div>
+<div class="c-code__line">            f<span class="c-code__stringliteral">&quot;({ExampleUtils.get_value_or_unknown(device, &#39;devicetype&#39;)})&quot;</span>)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment"># A cell shows &quot;Unknown&quot; for a property with no value, whatever the</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># reason, which keeps the tables easy to read. The console example</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># prints the reason.</span></div>
+<div class="c-code__line">    ip_rows = [</div>
+<div class="c-code__line">        ip_row(label,</div>
+<div class="c-code__line">               text=ExampleUtils.get_value_or_unknown(ip, name, decimals))</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">for</span> label, name, decimals <span class="c-code__keywordflow">in</span> IP_PROPERTIES]</div>
+<div class="c-code__line">    ip_rows += [</div>
+<div class="c-code__line">        weighted_row(label, ip, name)</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">for</span> label, name <span class="c-code__keywordflow">in</span> WEIGHTED_IP_PROPERTIES]</div>
+<div class="c-code__line">    ip_rows.append(ip_row(</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;Countries (geographical):&quot;</span>, options=country_options(countries)))</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> {</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;device_message&quot;</span>: device_message,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;device_rows&quot;</span>: [</div>
+<div class="c-code__line">            (label, ExampleUtils.get_value_or_unknown(device, name))</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">for</span> label, name <span class="c-code__keywordflow">in</span> DEVICE_PROPERTIES],</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;ip_message&quot;</span>: ip_message,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;lookup_ip&quot;</span>: lookup_ip,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;ip_rows&quot;</span>: ip_rows,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;evidence_rows&quot;</span>: evidence_rows(flowdata),</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">def </span>ip_row(label, text=None, entries=None, options=None, not_found=False):</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;&quot;&quot;!</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    One row of the IP intelligence table. The template shows whichever of</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    text, the entries of a weighted property and the country options the</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    row holds. It says so when the results do not include a weighted</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    property, and when the list of country options is empty.</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> {</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;label&quot;</span>: label,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;text&quot;</span>: text,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;entries&quot;</span>: entries,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;options&quot;</span>: options,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;not_found&quot;</span>: not_found,</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">def </span>weighted_row(label, element_data, property_name):</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;&quot;&quot;!</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    The row for a weighted property, holding its entries as (value,</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    percentage) pairs when it has a value, and the reason the cloud service</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    gave when it has none.</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    value = ExampleUtils.get_value(element_data, property_name)</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> value <span class="c-code__keywordflow">is</span> <span class="c-code__keywordtype">None</span>:</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> ip_row(label, not_found=<span class="c-code__keyword">True</span>)</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> <span class="c-code__keywordflow">not</span> value.has_value():</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> ip_row(label, text=value.no_value_message() <span class="c-code__keywordflow">or</span> <span class="c-code__stringliteral">&quot;(no value)&quot;</span>)</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> ip_row(label, entries=[</div>
+<div class="c-code__line">        (item.get(<span class="c-code__stringliteral">&quot;value&quot;</span>), ExampleUtils.as_percentage(item[<span class="c-code__stringliteral">&quot;weighting&quot;</span>]))</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">for</span> item <span class="c-code__keywordflow">in</span> value.value()</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> isinstance(item, dict) <span class="c-code__keywordflow">and</span> <span class="c-code__stringliteral">&quot;weighting&quot;</span> <span class="c-code__keywordflow">in</span> item])</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">def </span>country_options(countries):</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;&quot;&quot;!</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    Every country as a (code, translated name) pair, in the order of the</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    country code list, or an empty list when the cloud service returned no</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    list. The code and name lists are aligned by position.</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    codes = ExampleUtils.get_value(countries, COUNTRY_CODES_PROPERTY)</div>
+<div class="c-code__line">    names = ExampleUtils.get_value(countries, COUNTRY_NAMES_PROPERTY)</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (codes <span class="c-code__keywordflow">is</span> <span class="c-code__keywordtype">None</span> <span class="c-code__keywordflow">or</span> names <span class="c-code__keywordflow">is</span> <span class="c-code__keywordtype">None</span> <span class="c-code__keywordflow">or</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">not</span> codes.has_value() <span class="c-code__keywordflow">or</span> <span class="c-code__keywordflow">not</span> names.has_value()):</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> []</div>
+<div class="c-code__line">    codes, names = codes.value(), names.value()</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> <span class="c-code__keywordflow">not</span> codes <span class="c-code__keywordflow">or</span> len(codes) != len(names):</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> []</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> list(zip(codes, names))</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">def </span>evidence_rows(flowdata):</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;&quot;&quot;!</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    The evidence the request supplied, as key and value pairs, with long</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    values shortened.</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    rows = []</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">for</span> key, value <span class="c-code__keywordflow">in</span> flowdata.evidence.get_all().items():</div>
+<div class="c-code__line">        text = str(value)</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> len(text) &gt; EVIDENCE_DISPLAY_LENGTH:</div>
+<div class="c-code__line">            text = text[:EVIDENCE_DISPLAY_LENGTH] + <span class="c-code__stringliteral">&quot;...&quot;</span></div>
+<div class="c-code__line">        rows.append((key, text))</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> rows</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">def </span>main(argv):</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment"># A resource key given on the command line is used as it is. Otherwise</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># the keys come from the environment, where a licence key is used in</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># place of a resource key.</span></div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> len(argv) &gt; 0:</div>
+<div class="c-code__line">        resource_key, license_key = argv[0], <span class="c-code__stringliteral">&quot;&quot;</span></div>
+<div class="c-code__line">    <span class="c-code__keywordflow">else</span>:</div>
+<div class="c-code__line">        resource_key = ExampleUtils.get_resource_key()</div>
+<div class="c-code__line">        license_key = ExampleUtils.get_license_key()</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment"># Configure a logger to output to the console.</span></div>
+<div class="c-code__line">    logger = Logger(min_level=<span class="c-code__stringliteral">&quot;info&quot;</span>)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> <span class="c-code__keywordflow">not</span> (resource_key <span class="c-code__keywordflow">or</span> license_key):</div>
+<div class="c-code__line">        logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>,</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;No key specified in the environment variable &quot;</span></div>
+<div class="c-code__line">            f<span class="c-code__stringliteral">&quot;&#39;{ExampleUtils.RESOURCE_KEY_ENV_VAR}&#39; or &quot;</span></div>
+<div class="c-code__line">            f<span class="c-code__stringliteral">&quot;&#39;{ExampleUtils.LICENSE_KEY_ENV_VAR}&#39;. The 51Degrees cloud &quot;</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;service is accessed using a resource key or a licence key. For &quot;</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;more information see &quot;</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/_services__cloud__resource_keys.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-examples-src-fiftyone_pipeline_examples-cloud-mixed-gettingstarted_web-app.py&amp;utm_term=resource-key-required. &quot;</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;A resource key carrying the device detection and IP &quot;</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;intelligence properties this example uses can be created for &quot;</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;free at &quot;</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_pipeline_cloudrequestengine-examples-src-fiftyone_pipeline_examples-cloud-mixed-gettingstarted_web-app.py&amp;utm_term=resource-key-required. &quot;</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;Once complete, set the first environment variable named at &quot;</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;the start of this message to the key.&quot;</span>)</div>
+<div class="c-code__line">        sys.exit(1)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keywordflow">try</span>:</div>
+<div class="c-code__line">        pipeline = create_pipeline(</div>
+<div class="c-code__line">            logger, resource_key, license_key,</div>
+<div class="c-code__line">            ExampleUtils.get_cloud_endpoint(),</div>
+<div class="c-code__line">            ExampleUtils.get_cloud_request_origin())</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">except</span> (ValueError, CloudRequestException) <span class="c-code__keyword">as</span> error:</div>
+<div class="c-code__line">        <span class="c-code__comment"># The key carries nothing the example shows, or the cloud service</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># refused it, for example because the key is limited to domains</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># that do not include the origin sent.</span></div>
+<div class="c-code__line">        logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>, str(error))</div>
+<div class="c-code__line">        sys.exit(1)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    create_app(pipeline).run(port=int(os.environ.get(<span class="c-code__stringliteral">&quot;PORT&quot;</span>, 5000)))</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keywordflow">if</span> __name__ == <span class="c-code__stringliteral">&quot;__main__&quot;</span>:</div>
+<div class="c-code__line">    main(sys.argv[1:])</div>
+<div class="ttc" id="anamespacefiftyone__pipeline__cloudrequestengine_1_1cloudrequestexception_html"><div class="ttname"><a href="namespacefiftyone__pipeline__cloudrequestengine_1_1cloudrequestexception.html">fiftyone_pipeline_cloudrequestengine.cloudrequestexception</a></div><div class="ttdef"><b>Definition</b> cloudrequestexception.py:1</div></div>
+<div class="ttc" id="anamespacefiftyone__pipeline__core_1_1logger_html"><div class="ttname"><a href="namespacefiftyone__pipeline__core_1_1logger.html">fiftyone_pipeline_core.logger</a></div><div class="ttdef"><b>Definition</b> logger.py:1</div></div>
+<div class="ttc" id="anamespacefiftyone__pipeline__core_1_1web_html"><div class="ttname"><a href="namespacefiftyone__pipeline__core_1_1web.html">fiftyone_pipeline_core.web</a></div><div class="ttdef"><b>Definition</b> web.py:1</div></div>
+<div class="ttc" id="anamespacefiftyone__pipeline__examples_1_1cloud_1_1engines_html"><div class="ttname"><a href="namespacefiftyone__pipeline__examples_1_1cloud_1_1engines.html">fiftyone_pipeline_examples.cloud.engines</a></div><div class="ttdoc">The cloud engines the mixed examples add to a pipeline.</div><div class="ttdef"><b>Definition</b> engines.py:1</div></div>
+<div class="ttc" id="anamespacefiftyone__pipeline__examples_1_1cloud_1_1mixed_1_1pipeline_html"><div class="ttname"><a href="namespacefiftyone__pipeline__examples_1_1cloud_1_1mixed_1_1pipeline.html">fiftyone_pipeline_examples.cloud.mixed.pipeline</a></div><div class="ttdoc">Builds the pipeline the mixed examples share.</div><div class="ttdef"><b>Definition</b> fiftyone_pipeline_cloudrequestengine/examples/src/fiftyone_pipeline_examples/cloud/mixed/pipeline.py:1</div></div>
+<div class="ttc" id="anamespacefiftyone__pipeline__examples_1_1example__utils_html"><div class="ttname"><a href="namespacefiftyone__pipeline__examples_1_1example__utils.html">fiftyone_pipeline_examples.example_utils</a></div><div class="ttdoc">Helpers shared by the examples, for reading their settings from the environment and for turning prope...</div><div class="ttdef"><b>Definition</b> example_utils.py:1</div></div>
+</div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->

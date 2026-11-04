@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "51Degrees Rust", "index.html", [
+    [ "51Degrees Device Detection and IP Intelligence for Rust", "index.html", null ],
     [ "Configurator (Device Detection, Cloud)", "dd-cloud-configurator-example.html", null ],
     [ "Get All Properties (Device Detection, Cloud)", "dd-cloud-get-all-properties-example.html", null ],
     [ "Getting Started (Device Detection, Cloud)", "dd-cloud-getting-started-example.html", null ],

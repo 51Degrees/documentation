@@ -1,7 +1,6 @@
 var NAVTREEINDEX0 =
 {
 "/documentation/4.5/index.html":[0],
-"_0dexample-example.html":[3,5],
 "_getting_started_web_cloud_8java-example.html":[3,10],
 "_getting_started_web_on_prem_8java-example.html":[3,11],
 "_metadata_cloud_8java-example.html":[3,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a084dd5a84bdebf55a12672b1cc20db0b":[2,0,0,3,4,45],
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a08e98353bc66d6e78c453e81b21f5880":[2,0,0,3,4,58],
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a0aeec9c2fe428dc1c907a38f24b87ebc":[2,0,0,3,4,291],
-"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a0af0cc47b7542d215f071c1251795af6":[2,0,0,3,4,73]
+"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a0af0cc47b7542d215f071c1251795af6":[2,0,0,3,4,73],
+"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a0ba0697c908dd0d95adffe7c9e909280":[2,0,0,3,4,49]
 };

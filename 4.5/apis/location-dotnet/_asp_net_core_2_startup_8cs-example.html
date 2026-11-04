@@ -66,13 +66,99 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_asp_net_core_
 <h1 class="g-docs__page-title">AspNetCore/Startup.cs</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
+<p> 
+<p>
+This example demonstrates how to get location information from the device
+that a user is using to access a website. 
+In addition, JavaScript is used to update the page with postal address details 
+for this location.
+</p>
+<p>
+This works by using the <a href="/documentation/4.5/_pipeline_api__features__client_side_evidence.html">client-side evidence</a> 
+feature of the Pipeline.
+Briefly, properties containing JavaScript snippets are populated by engines 
+in the Pipeline and these are then bundled together into a single JavaScript 
+block by the 'JsonBuilder' and 'JavaScriptBuilder' elements.
+This JavaScript is then used to obtain the additional evidence from the 
+client (in this case, latitude and longitude) and pass it back to the server. 
+The Pipeline running on the server then processes this evidence to 
+populate a new JSON result object that is returned to the client.
+</p>
+</p>
+<p> 
+<p>
+This example demonstrates how to get location information from the device
+that a user is using to access a website. 
+In addition, JavaScript is used to update the page with postal address details 
+for this location.
+</p>
+<p>
+This works by using the <a href="/documentation/4.5/_pipeline_api__features__client_side_evidence.html">client-side evidence</a> 
+feature of the Pipeline.
+Briefly, properties containing JavaScript snippets are populated by engines 
+in the Pipeline and these are then bundled together into a single JavaScript 
+block by the 'JsonBuilder' and 'JavaScriptBuilder' elements.
+This JavaScript is then used to obtain the additional evidence from the 
+client (in this case, latitude and longitude) and pass it back to the server. 
+The Pipeline running on the server then processes this evidence to 
+populate a new JSON result object that is returned to the client.
+</p>
+  </p>
 <p>The source code for this example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/location/Examples/Cloud/AspNetCore">GitHub</a>.</p>
-<p>The source code for this example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/location/Examples/Cloud/AspNetCore">GitHub</a>.Required NuGet Dependencies:</p><ul>
+<p> 
+<p>
+To run this example, you will need to create a <strong>Resource Key</strong>.
+The Resource Key is used as shorthand to store the particular set of
+properties you are interested in as well as any associated License Keys
+that entitle you to increased request limits and/or paid-for properties.
+</p>
+<p>
+You can create a Resource Key at
+<a href="https://configure.51degrees.com">configure.51degrees.com</a>.
+</p>
+  </p>
+<p>Required NuGet Dependencies:</p><ul>
 <li><a href="https://www.nuget.org/packages/FiftyOne.GeoLocation/">FiftyOne.GeoLocation</a></li>
 <li><a href="https://www.nuget.org/packages/FiftyOne.Pipeline.Web/">FiftyOne.Pipeline.Web</a></li>
 </ul>
 <h2>Configuration</h2>
-<div class="c-code__block c-code__block--outline"> </div><!-- fragment --><h2>Controller</h2>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
+<div class="c-code__line">  &quot;Logging&quot;: {</div>
+<div class="c-code__line">    &quot;LogLevel&quot;: {</div>
+<div class="c-code__line">      &quot;Default&quot;: &quot;Information&quot;,</div>
+<div class="c-code__line">      &quot;Microsoft&quot;: &quot;Warning&quot;,</div>
+<div class="c-code__line">      &quot;Microsoft.Hosting.Lifetime&quot;: &quot;Information&quot;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">  },</div>
+<div class="c-code__line">  &quot;AllowedHosts&quot;: &quot;*&quot;,</div>
+<div class="c-code__line">  &quot;PipelineOptions&quot;: {</div>
+<div class="c-code__line">    &quot;Elements&quot;: [</div>
+<div class="c-code__line">      {</div>
+<div class="c-code__line">        &quot;BuilderName&quot;: &quot;CloudRequestEngine&quot;,</div>
+<div class="c-code__line">        &quot;BuildParameters&quot;: {</div>
+<div class="c-code__line">          // Obtain a resource key with the properties required to test this </div>
+<div class="c-code__line">          // example for free: https://configure.51degrees.com/v399y42f?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-cloud-aspnetcore-appsettings.json&amp;utm_term=buildparameters</div>
+<div class="c-code__line">          // The properties used in this example are:</div>
+<div class="c-code__line">          // Country, State, County, Town, JavaScript</div>
+<div class="c-code__line">          &quot;ResourceKey&quot;: &quot;!!ENTER_YOUR_RESOURCE_KEY_HERE!!&quot;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">      },</div>
+<div class="c-code__line">      {</div>
+<div class="c-code__line">        &quot;BuilderName&quot;: &quot;GeoLocationCloudEngine&quot;,</div>
+<div class="c-code__line">        &quot;BuildParameters&quot;: {</div>
+<div class="c-code__line">          &quot;GeoLocationProvider&quot;: &quot;FiftyOneDegrees&quot;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">      }</div>
+<div class="c-code__line">    ]</div>
+<div class="c-code__line">  },</div>
+<div class="c-code__line">  &quot;PipelineWebIntegrationOptions&quot;: {</div>
+<div class="c-code__line">    // Both these options default to true anyway.</div>
+<div class="c-code__line">    // They are specified here for illustrative purposes.</div>
+<div class="c-code__line">    &quot;ClientSideEvidenceEnabled&quot;: &quot;true&quot;,</div>
+<div class="c-code__line">    &quot;UseAsyncScript&quot;: &quot;true&quot;</div>
+<div class="c-code__line">  }</div>
+<div class="c-code__line">}</div>
+</div><!-- fragment --><h2>Controller</h2>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">/* *********************************************************************</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * This Original Work is copyright of 51 Degrees Mobile Experts Limited.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * Copyright 2026 51 Degrees Mobile Experts Limited, Davidson House,</span></div>
@@ -129,7 +215,112 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_asp_net_core_
 <div class="ttc" id="anamespace_fifty_one_1_1_geo_location_1_1_core_1_1_data_html"><div class="ttname"><a href="namespace_fifty_one_1_1_geo_location_1_1_core_1_1_data.html">FiftyOne.GeoLocation.Core.Data</a></div><div class="ttdef"><b>Definition</b> GeoDataBase.cs:36</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_web_1_1_services_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_web_1_1_services.html">FiftyOne::Pipeline::Web::Services</a></div></div>
 </div><!-- fragment --><h2>View</h2>
-<div class="c-code__block c-code__block--outline"></div><!-- fragment --><h2>Startup</h2>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">@* *********************************************************************</div>
+<div class="c-code__line"> * This Original Work is copyright of 51 Degrees Mobile Experts Limited.</div>
+<div class="c-code__line"> * Copyright 2026 51 Degrees Mobile Experts Limited, Davidson House,</div>
+<div class="c-code__line"> * Forbury Square, Reading, Berkshire, United Kingdom RG1 3EU.</div>
+<div class="c-code__line"> *</div>
+<div class="c-code__line"> * This Original Work is licensed under the European Union Public Licence</div>
+<div class="c-code__line"> * (EUPL) v.1.2 and is subject to its terms as set out below.</div>
+<div class="c-code__line"> *</div>
+<div class="c-code__line"> * If a copy of the EUPL was not distributed with this file, You can obtain</div>
+<div class="c-code__line"> * one at https://opensource.org/licenses/EUPL-1.2.</div>
+<div class="c-code__line"> *</div>
+<div class="c-code__line"> * The &#39;Compatible Licences&#39; set out in the Appendix to the EUPL (as may be</div>
+<div class="c-code__line"> * amended by the European Commission) shall be deemed incompatible for</div>
+<div class="c-code__line"> * the purposes of the Work and the provisions of the compatibility</div>
+<div class="c-code__line"> * clause in Article 5 of the EUPL shall not apply.</div>
+<div class="c-code__line"> *</div>
+<div class="c-code__line"> * If using the Work as, or as part of, a network application, by</div>
+<div class="c-code__line"> * including the attribution notice(s) required under Article 5 of the EUPL</div>
+<div class="c-code__line"> * in the end user terms of the application under an appropriate heading,</div>
+<div class="c-code__line"> * such notice(s) shall fulfill the requirements of that article.</div>
+<div class="c-code__line"> * ********************************************************************* *@</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">@model FiftyOne.GeoLocation.Core.Data.IGeoData</div>
+<div class="c-code__line">@{</div>
+<div class="c-code__line">    ViewData[&quot;Title&quot;] = &quot;Location example&quot;;</div>
+<div class="c-code__line">    var country = Model.Country;</div>
+<div class="c-code__line">    var state = Model.State;</div>
+<div class="c-code__line">    var county = Model.County;</div>
+<div class="c-code__line">    var town = Model.Town;</div>
+<div class="c-code__line">}</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;h2&gt;Example&lt;/h2&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;div id=&quot;content&quot;&gt;</div>
+<div class="c-code__line">    &lt;p&gt;</div>
+<div class="c-code__line">        The following values are determined sever-side on the first request.</div>
+<div class="c-code__line">        As the server has no location information to work from, these </div>
+<div class="c-code__line">        values will all be unknown:</div>
+<div class="c-code__line">    &lt;/p&gt;</div>
+<div class="c-code__line">    &lt;dl&gt;</div>
+<div class="c-code__line">        &lt;dt&gt;&lt;strong&gt;Country&lt;/strong&gt;&lt;/dt&gt;</div>
+<div class="c-code__line">        &lt;dv&gt;@(country.HasValue ? country.Value : $&quot;Unknown ({country.NoValueMessage})&quot;)&lt;/dv&gt;</div>
+<div class="c-code__line">        &lt;dt&gt;&lt;strong&gt;State&lt;/strong&gt;&lt;/dt&gt;</div>
+<div class="c-code__line">        &lt;dv&gt;@(state.HasValue ? state.Value : $&quot;Unknown ({state.NoValueMessage})&quot;)&lt;/dv&gt;</div>
+<div class="c-code__line">        &lt;dt&gt;&lt;strong&gt;County&lt;/strong&gt;&lt;/dt&gt;</div>
+<div class="c-code__line">        &lt;dv&gt;@(county.HasValue ? county.Value : $&quot;Unknown ({county.NoValueMessage})&quot;)&lt;/dv&gt;</div>
+<div class="c-code__line">        &lt;dt&gt;&lt;strong&gt;Town/City&lt;/strong&gt;&lt;/dt&gt;</div>
+<div class="c-code__line">        &lt;dv&gt;@(town.HasValue ? town.Value : $&quot;Unknown ({town.NoValueMessage})&quot;)&lt;/dv&gt;</div>
+<div class="c-code__line">    &lt;/dl&gt;</div>
+<div class="c-code__line">    &lt;p&gt;</div>
+<div class="c-code__line">        When the button below is clicked, JavaScript running on the client-side will be used to obtain additional evidence (i.e. the location information from the device). If no additional information appears then it may indicate an external problem such as JavaScript being disabled in your browser.</div>
+<div class="c-code__line">    &lt;/p&gt;</div>
+<div class="c-code__line">    &lt;p&gt;</div>
+<div class="c-code__line">        Note that the accuracy of the information is dependent on the accuracy of the location data returned by your device. Any device that lacks GPS is likely to return a highly inaccurate result. Among devices with GPS, some have a significantly lower margin of error than others.</div>
+<div class="c-code__line">    &lt;/p&gt;</div>
+<div class="c-code__line">    &lt;button type=&quot;button&quot; onclick=&quot;buttonClicked()&quot;&gt;Use my location&lt;/button&gt;</div>
+<div class="c-code__line">&lt;/div&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">@await Component.InvokeAsync(&quot;FiftyOneJS&quot;)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;script&gt;</div>
+<div class="c-code__line">    buttonClicked = function () {</div>
+<div class="c-code__line">        // This function will fire when the JSON data object is updated</div>
+<div class="c-code__line">        // with information from the server.</div>
+<div class="c-code__line">        // The sequence is:</div>
+<div class="c-code__line">        // 1. Response contains JavaScript property &#39;JavaScript&#39;. This is not executed immediately on the client as it will prompt the user to allow access to location.</div>
+<div class="c-code__line">        // 2. When the button is clicked, the fod.complete function is called, passing &#39;location&#39; as the second parameter. This lets the code know that we want to execute</div>
+<div class="c-code__line">        // any JavaScript needed to obtain the location data that is needed to determine the user&#39;s postal address details.</div>
+<div class="c-code__line">        // 3. The execution of the location JavaScript triggers a background callback to the webserver that includes the new evidence (i.e. lat/lon).</div>
+<div class="c-code__line">        // 4. The web server responds with new JSON data that contains the updated property values based on the new evidence.</div>
+<div class="c-code__line">        // 5. The JavaScript integrates the new JSON data and fires the &#39;complete&#39; callback function below, which then displays the results.</div>
+<div class="c-code__line">        fod.complete(function (data) {</div>
+<div class="c-code__line">            let fieldValues = [];</div>
+<div class="c-code__line">            if (data.location) {</div>
+<div class="c-code__line">                fieldValues.push([&quot;Country&quot;, data.location.country]);</div>
+<div class="c-code__line">                fieldValues.push([&quot;State&quot;, data.location.state]);</div>
+<div class="c-code__line">                fieldValues.push([&quot;County&quot;, data.location.country]);</div>
+<div class="c-code__line">                fieldValues.push([&quot;Town/City&quot;, data.location.town]);</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">            else {</div>
+<div class="c-code__line">                fieldValue.push([&quot;Location data is empty. This probably means that something has gone wrong with the JavaScript evaluation.&quot;, &quot;&quot;])</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">            displayValues(fieldValues);</div>
+<div class="c-code__line">        }, &#39;location&#39;);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    function displayValues(fieldValues) {</div>
+<div class="c-code__line">        var list = document.createElement(&quot;dl&quot;);</div>
+<div class="c-code__line">        fieldValues.forEach(function (entry) {</div>
+<div class="c-code__line">            var name = document.createElement(&quot;dt&quot;);</div>
+<div class="c-code__line">            var value = document.createElement(&#39;dv&#39;);</div>
+<div class="c-code__line">            var bold = document.createElement(&#39;strong&#39;);</div>
+<div class="c-code__line">            var fieldname = document.createTextNode(entry[0]);</div>
+<div class="c-code__line">            var fieldvalue = document.createTextNode(entry[1]);</div>
+<div class="c-code__line">            bold.appendChild(fieldname);</div>
+<div class="c-code__line">            name.appendChild(bold);</div>
+<div class="c-code__line">            value.appendChild(fieldvalue);</div>
+<div class="c-code__line">            list.appendChild(name);</div>
+<div class="c-code__line">            list.appendChild(value);</div>
+<div class="c-code__line">        });</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        var element = document.getElementById(&quot;content&quot;);</div>
+<div class="c-code__line">        element.appendChild(list);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">&lt;/script&gt;</div>
+</div><!-- fragment --><h2>Startup</h2>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">/* *********************************************************************</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * This Original Work is copyright of 51 Degrees Mobile Experts Limited.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * Copyright 2026 51 Degrees Mobile Experts Limited, Davidson House,</span></div>

@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud-_u_a_c_
 <div class="g-docs__primary" id="primary">
 <p>This example demonstrates device detection using user-agent client hints in a real-world scenario.</p>
 <p>This example demonstrates device detection using user-agent client hints in a real-world scenario. When a clint-hints-enabled user first visits a website, the server will recieve the sec-ch-ua and sec-ch-ua-mobile headers. Along with the user-agent. This information is then used to determine if the client supports user-agent client hints and request them if needed by setting the Accept-CH header in the response. Clicking the button below will cause a new request to be sent to the server, along with any additional headers that have been requested.  </p>
-<p>The source code for this example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/examples/device-detection/4.5/Examples/Legacy%20Web/Cloud-UACH">GitHub</a>.</p>
+<p>The source code for this example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/examples/device-detection/Legacy%20Web/Cloud-UACH">GitHub</a>.</p>
 <p>To use the cloud service you will need to create a <b>resource key</b>. The resource key is used as short-hand to store the particular set of properties you are interested in as well as any associated license keys that entitle you to increased request limits and/or paid-for properties.</p>
 <p>You can create a free resource key using the 51Degrees <a href="https://configure.51degrees.com/Wkqxf3Bs?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-legacy-web-cloud-uach-startup.cs&amp;utm_term=header">Configurator</a>. The properties used in this example are: HardwareVendor, HardwareName, DeviceType PlatformVendor, PlatformName, PlatformVersion BrowserVendor, BrowserName, BrowserVersion SetHeaderBrowserAccept-CH, SetHeaderHardwareAccept-CH, SetHeaderPlatformAccept-CH</p>
 <p>Required NuGet Dependencies:</p><ul>
@@ -145,8 +145,200 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud-_u_a_c_
 </div><!-- fragment --></li>
 </ol>
 <h2>Controller</h2>
-<div class="c-code__block c-code__block--outline"></div><!-- fragment --><h2>View</h2>
-<div class="c-code__block c-code__block--outline"></div><!-- fragment --><h2>Startup</h2>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">/* *********************************************************************</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * This Original Work is copyright of 51 Degrees Mobile Experts Limited.</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * Copyright 2026 51 Degrees Mobile Experts Limited, Davidson House,</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * Forbury Square, Reading, Berkshire, United Kingdom RG1 3EU.</span></div>
+<div class="c-code__line"><span class="c-code__comment"> *</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * This Original Work is licensed under the European Union Public Licence</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * (EUPL) v.1.2 and is subject to its terms as set out below.</span></div>
+<div class="c-code__line"><span class="c-code__comment"> *</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * If a copy of the EUPL was not distributed with this file, You can obtain</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * one at https://opensource.org/licenses/EUPL-1.2.</span></div>
+<div class="c-code__line"><span class="c-code__comment"> *</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * The &#39;Compatible Licences&#39; set out in the Appendix to the EUPL (as may be</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * amended by the European Commission) shall be deemed incompatible for</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * the purposes of the Work and the provisions of the compatibility</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * clause in Article 5 of the EUPL shall not apply.</span></div>
+<div class="c-code__line"><span class="c-code__comment"> *</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * If using the Work as, or as part of, a network application, by</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * including the attribution notice(s) required under Article 5 of the EUPL</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * in the end user terms of the application under an appropriate heading,</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * such notice(s) shall fulfill the requirements of that article.</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * ********************************************************************* */</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.AspNetCore.Mvc;</div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespaceRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_web_1_1_services.html">FiftyOne.Pipeline.Web.Services</a>;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">namespace </span><a class="code hl_namespace" href="namespace_cloud___client___hints___net_core__31_1_1_controllers.html">Cloud_Client_Hints_NetCore_31.Controllers</a></div>
+<div class="c-code__line">{</div>
+<div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>HomeController : Controller</div>
+<div class="c-code__line">    {</div>
+<div class="c-code__line">        <span class="c-code__keyword">private</span> <a id="_a0" name="_a0"></a><a class="code hl_interfaceRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_web_1_1_services_1_1_i_flow_data_provider.html">IFlowDataProvider</a> _flow;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__keyword">public</span> HomeController(<a class="code hl_interfaceRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_web_1_1_services_1_1_i_flow_data_provider.html">IFlowDataProvider</a> flow)</div>
+<div class="c-code__line">        {</div>
+<div class="c-code__line">            _flow = flow;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__keyword">public</span> IActionResult Index()</div>
+<div class="c-code__line">        {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> View(_flow.<a id="a1" name="a1"></a><a class="code hl_functionRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_web_1_1_services_1_1_i_flow_data_provider.html#a490f8b75b90a1565cacf9425f46f2e47">GetFlowData</a>());</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">}</div>
+<div class="ttc" id="ainterface_fifty_one_1_1_pipeline_1_1_web_1_1_services_1_1_i_flow_data_provider_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_web_1_1_services_1_1_i_flow_data_provider.html">FiftyOne::Pipeline::Web::Services::IFlowDataProvider</a></div></div>
+<div class="ttc" id="ainterface_fifty_one_1_1_pipeline_1_1_web_1_1_services_1_1_i_flow_data_provider_html_a490f8b75b90a1565cacf9425f46f2e47"><div class="ttname"><a href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_web_1_1_services_1_1_i_flow_data_provider.html#a490f8b75b90a1565cacf9425f46f2e47">FiftyOne::Pipeline::Web::Services::IFlowDataProvider::GetFlowData</a></div><div class="ttdeci">IFlowData GetFlowData()</div></div>
+<div class="ttc" id="anamespace_cloud___client___hints___net_core__31_1_1_controllers_html"><div class="ttname"><a href="namespace_cloud___client___hints___net_core__31_1_1_controllers.html">Cloud_Client_Hints_NetCore_31.Controllers</a></div><div class="ttdef"><b>Definition</b> Legacy Web/Cloud-UACH/Controllers/HomeController.cs:27</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_web_1_1_services_html"><div class="ttname"><a href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_web_1_1_services.html">FiftyOne::Pipeline::Web::Services</a></div></div>
+</div><!-- fragment --><h2>View</h2>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">@* *********************************************************************</div>
+<div class="c-code__line"> * This Original Work is copyright of 51 Degrees Mobile Experts Limited.</div>
+<div class="c-code__line"> * Copyright 2026 51 Degrees Mobile Experts Limited, Davidson House,</div>
+<div class="c-code__line"> * Forbury Square, Reading, Berkshire, United Kingdom RG1 3EU.</div>
+<div class="c-code__line"> *</div>
+<div class="c-code__line"> * This Original Work is licensed under the European Union Public Licence</div>
+<div class="c-code__line"> * (EUPL) v.1.2 and is subject to its terms as set out below.</div>
+<div class="c-code__line"> *</div>
+<div class="c-code__line"> * If a copy of the EUPL was not distributed with this file, You can obtain</div>
+<div class="c-code__line"> * one at https://opensource.org/licenses/EUPL-1.2.</div>
+<div class="c-code__line"> *</div>
+<div class="c-code__line"> * The &#39;Compatible Licences&#39; set out in the Appendix to the EUPL (as may be</div>
+<div class="c-code__line"> * amended by the European Commission) shall be deemed incompatible for</div>
+<div class="c-code__line"> * the purposes of the Work and the provisions of the compatibility</div>
+<div class="c-code__line"> * clause in Article 5 of the EUPL shall not apply.</div>
+<div class="c-code__line"> *</div>
+<div class="c-code__line"> * If using the Work as, or as part of, a network application, by</div>
+<div class="c-code__line"> * including the attribution notice(s) required under Article 5 of the EUPL</div>
+<div class="c-code__line"> * in the end user terms of the application under an appropriate heading,</div>
+<div class="c-code__line"> * such notice(s) shall fulfill the requirements of that article.</div>
+<div class="c-code__line"> * ********************************************************************* *@</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">@model FiftyOne.Pipeline.Core.Data.IFlowData</div>
+<div class="c-code__line">@{</div>
+<div class="c-code__line">    ViewData[&quot;Title&quot;] = &quot;User Agent Client Hints Example&quot;;</div>
+<div class="c-code__line">    var deviceData = Model.Get&lt;FiftyOne.DeviceDetection.IDeviceData&gt;();</div>
+<div class="c-code__line">    var hardwareVendor = deviceData.HardwareVendor;</div>
+<div class="c-code__line">    var hardwareName = deviceData.HardwareName;</div>
+<div class="c-code__line">    var deviceType = deviceData.DeviceType;</div>
+<div class="c-code__line">    var platformVendor = deviceData.PlatformVendor;</div>
+<div class="c-code__line">    var platformName = deviceData.PlatformName;</div>
+<div class="c-code__line">    var platformVersion = deviceData.PlatformVersion;</div>
+<div class="c-code__line">    var browserVendor = deviceData.BrowserVendor;</div>
+<div class="c-code__line">    var browserName = deviceData.BrowserName;</div>
+<div class="c-code__line">    var browserVersion = deviceData.BrowserVersion;</div>
+<div class="c-code__line">    var engine = Model.Pipeline.GetElement&lt;FiftyOne.Pipeline.CloudRequestEngine.FlowElements.CloudRequestEngine&gt;();</div>
+<div class="c-code__line">}</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;link rel=&quot;stylesheet&quot; href=&quot;~/css/examples-main.min.css&quot; /&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;div class=&quot;c-eg-page&quot;&gt;</div>
+<div class="c-code__line">&lt;h2 class=&quot;c-eg-page__title&quot;&gt;User Agent Client Hints Example&lt;/h2&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;p class=&quot;c-eg-page__lead&quot;&gt;</div>
+<div class="c-code__line">    By default, the user-agent, sec-ch-ua and sec-ch-ua-mobile HTTP headers</div>
+<div class="c-code__line">    are sent.</div>
+<div class="c-code__line">    &lt;br /&gt;</div>
+<div class="c-code__line">    This means that on the first request, the server can determine the</div>
+<div class="c-code__line">    browser from sec-ch-ua while other details must be derived from the</div>
+<div class="c-code__line">    user-agent.</div>
+<div class="c-code__line">    &lt;br /&gt;</div>
+<div class="c-code__line">    If the server determines that the browser supports client hints, then</div>
+<div class="c-code__line">    it may request additional client hints headers by setting the</div>
+<div class="c-code__line">    Accept-CH header in the response.</div>
+<div class="c-code__line">    &lt;br /&gt;</div>
+<div class="c-code__line">    Select the &lt;strong&gt;Make second request&lt;/strong&gt; button below,</div>
+<div class="c-code__line">    to use send another request to the server. This time, any</div>
+<div class="c-code__line">    additional client hints headers that have been requested</div>
+<div class="c-code__line">    will be included.</div>
+<div class="c-code__line">&lt;/p&gt;</div>
+<div class="c-code__line">&lt;button type=&quot;button&quot; class=&quot;b-btn&quot; onclick=&quot;redirect()&quot;&gt;Make second request&lt;/button&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;script&gt;</div>
+<div class="c-code__line">    // This script will run when button will be clicked and device detection request will again</div>
+<div class="c-code__line">    // be sent to the server with all additional client hints that was requested in the previous</div>
+<div class="c-code__line">    // response by the server.</div>
+<div class="c-code__line">    // Following sequence will be followed.</div>
+<div class="c-code__line">    // 1. User will send the first request to the web server for detection.</div>
+<div class="c-code__line">    // 2. Web Server will return the properties in response based on the headers sent in the request. Along</div>
+<div class="c-code__line">    // with the properties, it will also send a new header field Accept-CH in response indicating the additional</div>
+<div class="c-code__line">    // evidence it needs. It builds the new response header using SetHeader[Component name]Accept-CH properties</div>
+<div class="c-code__line">    // where Component Name is the name of the component for which properties are required.</div>
+<div class="c-code__line">    // 3. When &quot;Use User Agent Client Hints&quot; button will be clicked, device detection request will again</div>
+<div class="c-code__line">    // be sent to the server with all additional client hints that was requested in the previous</div>
+<div class="c-code__line">    // response by the server.</div>
+<div class="c-code__line">    // 4. Web Server will return the properties based on the new User Agent Client Hint headers</div>
+<div class="c-code__line">    // being used as evidence.</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    function redirect() {</div>
+<div class="c-code__line">        sessionStorage.reloadAfterPageLoad = true;</div>
+<div class="c-code__line">        window.location.reload(true);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    window.onload = function () {</div>
+<div class="c-code__line">        if (sessionStorage.reloadAfterPageLoad) {</div>
+<div class="c-code__line">            document.getElementById(&#39;description&#39;).innerHTML = &quot;&lt;p&gt;The information shown below is determined using &lt;strong&gt;User Agent Client Hints&lt;/strong&gt; that was sent in the request to obtain additional evidence. If no additional evidence appears in the table above, then it may indicate an external problem such as &lt;strong&gt;User Agent Client Hints&lt;/strong&gt; being disabled or unsupported by your browser.&lt;/p&gt;&quot;;</div>
+<div class="c-code__line">            sessionStorage.reloadAfterPageLoad = false;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        else {</div>
+<div class="c-code__line">            document.getElementById(&#39;description&#39;).innerHTML = &quot;&lt;p&gt;The following values are determined by sever-side device detection on the first request.&lt;/p&gt;&quot;;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">&lt;/script&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;div id=&quot;evidence&quot;&gt;</div>
+<div class="c-code__line">    &lt;h3 class=&quot;c-eg-page__heading&quot;&gt;Evidence values used&lt;/h3&gt;</div>
+<div class="c-code__line">    &lt;table class=&quot;c-eg-table&quot;&gt;</div>
+<div class="c-code__line">        &lt;thead class=&quot;c-eg-table__head&quot;&gt;</div>
+<div class="c-code__line">            &lt;tr class=&quot;c-eg-table__row&quot;&gt;</div>
+<div class="c-code__line">                &lt;th class=&quot;c-eg-table__cell&quot;&gt;Key&lt;/th&gt;</div>
+<div class="c-code__line">                &lt;th class=&quot;c-eg-table__cell&quot;&gt;Value&lt;/th&gt;</div>
+<div class="c-code__line">            &lt;/tr&gt;</div>
+<div class="c-code__line">        &lt;/thead&gt;</div>
+<div class="c-code__line">        &lt;tbody&gt;</div>
+<div class="c-code__line">        @foreach (var entry in Model.GetEvidence().AsDictionary()</div>
+<div class="c-code__line">          .Where(e =&gt; engine.EvidenceKeyFilter.Include(e.Key)))</div>
+<div class="c-code__line">        {</div>
+<div class="c-code__line">            &lt;tr class=&quot;c-eg-table__row c-eg-table__row--used&quot;&gt;</div>
+<div class="c-code__line">                &lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;@(entry.Key)&lt;/td&gt;</div>
+<div class="c-code__line">                &lt;td class=&quot;c-eg-table__cell&quot;&gt;@(entry.Value)&lt;/td&gt;</div>
+<div class="c-code__line">            &lt;/tr&gt;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        &lt;/tbody&gt;</div>
+<div class="c-code__line">    &lt;/table&gt;</div>
+<div class="c-code__line">&lt;/div&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;div id=&quot;description&quot;&gt;&lt;/div&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;div id=&quot;content&quot;&gt;</div>
+<div class="c-code__line">    &lt;h3 class=&quot;c-eg-page__heading&quot;&gt;Detection results&lt;/h3&gt;</div>
+<div class="c-code__line">    &lt;table class=&quot;c-eg-table&quot;&gt;</div>
+<div class="c-code__line">        &lt;thead class=&quot;c-eg-table__head&quot;&gt;</div>
+<div class="c-code__line">            &lt;tr class=&quot;c-eg-table__row&quot;&gt;</div>
+<div class="c-code__line">                &lt;th class=&quot;c-eg-table__cell&quot;&gt;Key&lt;/th&gt;</div>
+<div class="c-code__line">                &lt;th class=&quot;c-eg-table__cell&quot;&gt;Value&lt;/th&gt;</div>
+<div class="c-code__line">            &lt;/tr&gt;</div>
+<div class="c-code__line">        &lt;/thead&gt;</div>
+<div class="c-code__line">        &lt;tbody&gt;</div>
+<div class="c-code__line">            &lt;tr class=&quot;c-eg-table__row c-eg-table__row--alt&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Hardware Vendor:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;@(hardwareVendor.HasValue ? hardwareVendor.Value : $&quot;Unknown ({hardwareVendor.NoValueMessage})&quot;)&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr class=&quot;c-eg-table__row&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Hardware Name:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;@(hardwareName.HasValue ? string.Join(&quot;, &quot;, hardwareName.Value) : $&quot;Unknown ({hardwareName.NoValueMessage})&quot;)&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr class=&quot;c-eg-table__row c-eg-table__row--alt&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Device Type:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;@(deviceType.HasValue ? deviceType.Value : $&quot;Unknown ({deviceType.NoValueMessage})&quot;)&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr class=&quot;c-eg-table__row&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Platform Vendor:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;@(platformVendor.HasValue ? platformVendor.Value : $&quot;Unknown ({platformVendor.NoValueMessage})&quot;)&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr class=&quot;c-eg-table__row c-eg-table__row--alt&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Platform Name:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;@(platformName.HasValue ? platformName.Value : $&quot;Unknown ({platformName.NoValueMessage})&quot;)&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr class=&quot;c-eg-table__row&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Platform Version:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;@(platformVersion.HasValue ? platformVersion.Value : $&quot;Unknown ({platformVersion.NoValueMessage})&quot;)&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr class=&quot;c-eg-table__row c-eg-table__row--alt&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Browser Vendor:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;@(browserVendor.HasValue ? browserVendor.Value : $&quot;Unknown ({browserVendor.NoValueMessage})&quot;)&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr class=&quot;c-eg-table__row&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Browser Name:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;@(browserName.HasValue ? browserName.Value : $&quot;Unknown ({browserName.NoValueMessage})&quot;)&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;tr class=&quot;c-eg-table__row c-eg-table__row--alt&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Browser Version:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;@(browserVersion.HasValue ? browserVersion.Value : $&quot;Unknown ({browserVersion.NoValueMessage})&quot;)&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">        &lt;/tbody&gt;</div>
+<div class="c-code__line">    &lt;/table&gt;</div>
+<div class="c-code__line">&lt;/div&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;div class=&quot;c-eg-message&quot;&gt;</div>
+<div class="c-code__line">  &lt;p class=&quot;c-eg-message__text&quot;&gt;Want to try on-premise? &lt;a href=&quot;https://51degrees.com/contact-us?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=examples-legacy-web-cloud-uach-views-home-index.cshtml&amp;amp;utm_term=try-on-premise&quot;&gt;Contact us&lt;/a&gt; to discuss requirements.&lt;/p&gt;</div>
+<div class="c-code__line">  &lt;a class=&quot;b-btn c-eg-message__cta&quot; href=&quot;https://51degrees.com/contact-us?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=examples-legacy-web-cloud-uach-views-home-index.cshtml&amp;amp;utm_term=try-on-premise&quot;&gt;Contact us&lt;/a&gt;</div>
+<div class="c-code__line">&lt;/div&gt;</div>
+<div class="c-code__line">&lt;/div&gt;</div>
+</div><!-- fragment --><h2>Startup</h2>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">/* *********************************************************************</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * This Original Work is copyright of 51 Degrees Mobile Experts Limited.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * Copyright 2026 51 Degrees Mobile Experts Limited, Davidson House,</span></div>
@@ -220,14 +412,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud-_u_a_c_
 <div class="c-code__line">            <span class="c-code__comment">// if the resource key has been set to a new value so we can</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// warn the user if it has not.</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// --------------------------------------------------------------</span></div>
-<div class="c-code__line">            var options = <span class="c-code__keyword">new</span> <a id="_a0" name="_a0"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_configuration_1_1_pipeline_options.html">PipelineOptions</a>();</div>
+<div class="c-code__line">            var options = <span class="c-code__keyword">new</span> <a id="_a2" name="_a2"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_configuration_1_1_pipeline_options.html">PipelineOptions</a>();</div>
 <div class="c-code__line">            var section = Configuration.GetRequiredSection(<span class="c-code__stringliteral">&quot;PipelineOptions&quot;</span>);</div>
 <div class="c-code__line">            <span class="c-code__comment">// Use the &#39;ErrorOnUnknownConfiguration&#39; option to warn us if we&#39;ve got any</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// misnamed configuration keys.</span></div>
 <div class="c-code__line">            section.Bind(options, (o) =&gt; { o.ErrorOnUnknownConfiguration = <span class="c-code__keyword">true</span>; });</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            var cloudConfig = options.Elements.Where(e =&gt;</div>
-<div class="c-code__line">                e.BuilderName.Contains(nameof(<a id="_a1" name="_a1"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine.html">CloudRequestEngine</a>),</div>
+<div class="c-code__line">                e.BuilderName.Contains(nameof(<a id="_a3" name="_a3"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine.html">CloudRequestEngine</a>),</div>
 <div class="c-code__line">                    StringComparison.OrdinalIgnoreCase));</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> (cloudConfig.Count() &gt; 0)</div>
 <div class="c-code__line">            {</div>
@@ -253,8 +445,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud-_u_a_c_
 <div class="c-code__line"> </div>
 <div class="c-code__line">            services.AddMvc();</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            services.AddSingleton&lt;<a id="_a2" name="_a2"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements_1_1_device_detection_cloud_engine_builder.html">DeviceDetectionCloudEngineBuilder</a>&gt;();</div>
-<div class="c-code__line">            services.AddSingleton&lt;<a id="_a3" name="_a3"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html">CloudRequestEngineBuilder</a>&gt;();</div>
+<div class="c-code__line">            services.AddSingleton&lt;<a id="_a4" name="_a4"></a><a class="code hl_class" href="class_fifty_one_1_1_device_detection_1_1_cloud_1_1_flow_elements_1_1_device_detection_cloud_engine_builder.html">DeviceDetectionCloudEngineBuilder</a>&gt;();</div>
+<div class="c-code__line">            services.AddSingleton&lt;<a id="_a5" name="_a5"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html">CloudRequestEngineBuilder</a>&gt;();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            services.AddFiftyOne(Configuration);</div>
 <div class="c-code__line">        }</div>

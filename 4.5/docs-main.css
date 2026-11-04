@@ -386,6 +386,32 @@ input[type=text] {
   appearance: none;
 }
 
+.b-label {
+  color: #646060;
+  font-size: 0.8333333333rem;
+  margin-bottom: 0.4822530864rem;
+  width: 100%;
+}
+
+.b-input {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  color: #252525;
+  border: solid 1px #646060;
+  padding: 0.8333333333rem;
+  line-height: 1.2;
+}
+.b-form-group--with-icon .b-input {
+  padding-left: 46px;
+}
+.b-input::placeholder {
+  color: #BFBFBF;
+  opacity: 1;
+}
+.b-input {
+  width: 100%;
+}
+
 .b-form-group {
   display: flex;
   flex-direction: column;

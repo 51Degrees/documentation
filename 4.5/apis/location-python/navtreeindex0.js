@@ -1,9 +1,13 @@
 var NAVTREEINDEX0 =
 {
 "/documentation/4.5/index.html":[0],
-"cloud_2gettingstarted_8py-example.html":[1,0],
-"cloud_2web_8py-example.html":[1,1],
-"examples.html":[1],
+"annotated.html":[1],
+"classfiftyone__location_1_1location__cloud_1_1_location_cloud.html":[1,0,0,0],
+"classfiftyone__location_1_1location__cloud_1_1_location_cloud.html#a9c73874f0d4719a9bdd3f71142ec0349":[1,0,0,0,0],
+"classfiftyone__location_1_1location__pipelinebuilder_1_1_location_pipeline_builder.html":[1,0,1,0],
+"cloud_2gettingstarted_8py-example.html":[2,0],
+"cloud_2web_8py-example.html":[2,1],
+"examples.html":[2],
 "index.html":[],
 "pages.html":[]
 };

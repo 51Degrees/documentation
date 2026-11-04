@@ -1,7 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants.html#a28bc635971f8655500cf40ddf139a031":[0,0,1,0,3,3,5],
-"class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants.html#a486372e302dcbdaace2d9f8c0ee11c8e":[0,0,1,0,3,3,8],
 "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants.html#a4f35f9ae08cbf43ee9df4aaa7912c206":[0,0,1,0,3,3,4],
 "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants.html#a597a46ebf359d012e2c2c35ffc2fc766":[0,0,1,0,3,3,6],
 "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants.html#a9027dd7238c8f0e053fa2a67584e400b":[0,0,1,0,3,3,2],
@@ -151,8 +149,9 @@ var NAVTREEINDEX1 =
 "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_extensions.html#aec4cfc88770ccb20f13fd9f437c95482":[0,0,1,0,3,2,6,0,2],
 "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program.html":[0,0,1,0,3,2,6,1],
 "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_area_index.html":[0,0,1,0,3,2,6,1,5],
-"class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_area_index.html#a1b864d42f19f752513c27b8607f98412":[0,0,1,0,3,2,6,1,5,1],
-"class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_area_index.html#ae01db09d0418ad1cf1b47b25bd1e859f":[0,0,1,0,3,2,6,1,5,0],
+"class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_area_index.html#a048d0dfc6305c767644f79ad8fbf4f8e":[0,0,1,0,3,2,6,1,5,2],
+"class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_area_index.html#a140f55ad65012702f9fa3d168ca903b3":[0,0,1,0,3,2,6,1,5,0],
+"class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_area_index.html#ae01db09d0418ad1cf1b47b25bd1e859f":[0,0,1,0,3,2,6,1,5,1],
 "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html":[0,0,1,0,3,2,6,1,6],
 "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a04021517f4f39ff5cb3d37f13086eb77":[0,0,1,0,3,2,6,1,6,3],
 "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_configuration.html#a22ce7a895b4c1cd3cbe18548a57b277e":[0,0,1,0,3,2,6,1,6,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "functions_func.html":[0,3,1],
 "functions_func.html":[0,3,1,0],
 "functions_func_b.html":[0,3,1,1],
-"functions_func_c.html":[0,3,1,2]
+"functions_func_c.html":[0,3,1,2],
+"functions_func_d.html":[0,3,1,3]
 };

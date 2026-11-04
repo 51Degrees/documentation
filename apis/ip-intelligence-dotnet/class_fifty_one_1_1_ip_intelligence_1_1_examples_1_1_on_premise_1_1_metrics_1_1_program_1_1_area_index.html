@@ -73,18 +73,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fifty_on
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a6a992eaf291a6b6b7e22eeb74c4211ee" id="r_a6a992eaf291a6b6b7e22eeb74c4211ee"><td class="c-table__cell"><a id="a6a992eaf291a6b6b7e22eeb74c4211ee" name="a6a992eaf291a6b6b7e22eeb74c4211ee"></a>
 &#160;</td><td class="c-table__cell"><b>AreaIndex</b> (IFiftyOneAspectPropertyMetaData property, ILogger logger, CancellationToken stoppingToken)</td></tr>
-</table><table class="c-table c-table--directory">
-<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="c-table__row memitem:a1b864d42f19f752513c27b8607f98412" id="r_a1b864d42f19f752513c27b8607f98412"><td class="c-table__cell"><a id="a1b864d42f19f752513c27b8607f98412" name="a1b864d42f19f752513c27b8607f98412"></a>
-IReadOnlyDictionary&lt;&#160;string,&#160;<a class="el" href="class_examples_1_1_on_premise_1_1_areas_1_1_result.html">Result</a>&#160;&gt;&#160;</td><td class="c-table__cell"><b>WktAreas</b></td></tr>
-<tr class="c-table__row memdesc:a1b864d42f19f752513c27b8607f98412"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Dictionary that takes WKT value and returns the geographic area in square kms and the number polygons that form the area. <br /></td></tr>
+<tr class="c-table__row memitem:a140f55ad65012702f9fa3d168ca903b3" id="r_a140f55ad65012702f9fa3d168ca903b3"><td class="c-table__cell"><a id="a140f55ad65012702f9fa3d168ca903b3" name="a140f55ad65012702f9fa3d168ca903b3"></a>
+bool&#160;</td><td class="c-table__cell"><b>TryGetValue</b> (string wkt, out <a class="el" href="class_examples_1_1_on_premise_1_1_areas_1_1_result.html">Result</a> value)</td></tr>
+<tr class="c-table__row memdesc:a140f55ad65012702f9fa3d168ca903b3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the area for the WKT value, working it out the first time it is asked for. <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:ae01db09d0418ad1cf1b47b25bd1e859f" id="r_ae01db09d0418ad1cf1b47b25bd1e859f"><td class="c-table__cell"><a id="ae01db09d0418ad1cf1b47b25bd1e859f" name="ae01db09d0418ad1cf1b47b25bd1e859f"></a>
 static&#160;readonly&#160;string[]&#160;</td><td class="c-table__cell"><b>Properties</b> = [&quot;Areas&quot;]</td></tr>
 <tr class="c-table__row memdesc:ae01db09d0418ad1cf1b47b25bd1e859f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Properties used by the Area index. <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-properties" class="g-docs__section-heading"><a id="properties" name="properties"></a>
+Properties</h2></td></tr>
+<tr class="c-table__row memitem:a048d0dfc6305c767644f79ad8fbf4f8e" id="r_a048d0dfc6305c767644f79ad8fbf4f8e"><td class="c-table__cell"><a id="a048d0dfc6305c767644f79ad8fbf4f8e" name="a048d0dfc6305c767644f79ad8fbf4f8e"></a>
+int&#160;</td><td class="c-table__cell"><b>Count</b><code> [get]</code></td></tr>
+<tr class="c-table__row memdesc:a048d0dfc6305c767644f79ad8fbf4f8e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The number of areas worked out so far. <br /></td></tr>
 </table>
 </div><!-- primary -->
 </div><!-- inner -->

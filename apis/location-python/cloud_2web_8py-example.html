@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2web_8py
 <div class="g-docs__primary" id="primary">
 <p>This example is designed to output location data using the client-side evidence feature of the pipeline.</p>
 <p>This example is designed to output location data using the client-side evidence feature of the pipeline.This example uses the client-side evidence feature of the Pipeline to get location information from the client. This information is used to populate properties containing JavaScript snippets, which are then bundled together into a single JavaScript block by the 'JsonBundler' and 'JavaScriptBuilder' elements. This JavaScript is then used to obtain the additional evidence from the client and pass it back to the server. The Pipeline running on the server then processes this evidence to populate a new JSON result object that is returned to the client.</p>
-<p>This example is available in full on <a href="https://github.com/51Degrees/location-python/blob/main/examples/cloud/web.py">GitHub</a></p>
+<p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-python/blob/main/location/examples/cloud/web.py">GitHub</a></p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment"># *********************************************************************</span></div>
 <div class="c-code__line"><span class="c-code__comment"># This Original Work is copyright of 51 Degrees Mobile Experts Limited.</span></div>
 <div class="c-code__line"><span class="c-code__comment"># Copyright 2026 51 Degrees Mobile Experts Limited, Davidson House,</span></div>
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2web_8py
 <div class="c-code__line"> </div>
 <div class="c-code__line"></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">from</span> fiftyone_location.location_pipelinebuilder <span class="c-code__keyword">import</span> LocationPipelineBuilder</div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__location_1_1location__pipelinebuilder.html">fiftyone_location.location_pipelinebuilder</a> <span class="c-code__keyword">import</span> LocationPipelineBuilder</div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespaceRef" href="../pipeline-python/namespacefiftyone__pipeline__core_1_1web.html">fiftyone_pipeline_core.web</a> <span class="c-code__keyword">import</span> webevidence</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> json</div>
 <div class="c-code__line"> </div>
@@ -220,6 +220,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2web_8py
 <div class="c-code__line"><span class="c-code__stringliteral">        &quot;&quot;&quot;</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> output</div>
+<div class="ttc" id="anamespacefiftyone__location_1_1location__pipelinebuilder_html"><div class="ttname"><a href="namespacefiftyone__location_1_1location__pipelinebuilder.html">fiftyone_location.location_pipelinebuilder</a></div><div class="ttdef"><b>Definition</b> location_pipelinebuilder.py:1</div></div>
 <div class="ttc" id="anamespacefiftyone__pipeline__core_1_1web_html"><div class="ttname"><a href="../pipeline-python/namespacefiftyone__pipeline__core_1_1web.html">fiftyone_pipeline_core::web</a></div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->

@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <p>This example demonstrates how a User-Agent Client Hints (UACH) round trip works with the 51Degrees on-premise device detection API. By default the user-agent, sec-ch-ua and sec-ch-ua-mobile HTTP headers are sent. If device detection determines that the browser supports client hints then it requests additional client hints headers by setting the Accept-CH header in the response. Selecting the "Make second
 request" button reloads the page so those additional headers are included as evidence.</p>
 <p>The pipeline is configured with the required UACH properties that follow the format SetHeader[Component name][Response header name], e.g. for browser, platform and hardware component properties to be set in the Accept-CH response header include SetHeaderBrowserAccept-CH, SetHeaderPlatformAccept-CH and SetHeaderHardwareAccept-CH properties respectively.</p>
-<p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-python/blob/main/fiftyone_devicedetection_examples/fiftyone_devicedetection_examples/onpremise/useragentclienthints_web/app.py">GitHub</a>.</p>
+<p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-python/blob/main/device-detection/fiftyone_devicedetection_examples/src/fiftyone_devicedetection_examples/onpremise/useragentclienthints_web/app.py">GitHub</a>.</p>
 <p> 
 <p>
 This example requires a local data file. The free 'Lite' data file can be acquired by
@@ -89,7 +89,144 @@ Find out about the more capable data files that are available on our
 <li><a href="https://pypi.org/project/flask/">flask</a></li>
 </ul>
 <h2>View</h2>
-<div class="c-code__block c-code__block--outline"></div><!-- fragment --><h2>App</h2>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">{#</div>
+<div class="c-code__line">    *********************************************************************</div>
+<div class="c-code__line">    * This Original Work is copyright of 51 Degrees Mobile Experts Limited.</div>
+<div class="c-code__line">    * Copyright 2026 51 Degrees Mobile Experts Limited, Davidson House,</div>
+<div class="c-code__line">    * Forbury Square, Reading, Berkshire, United Kingdom RG1 3EU.</div>
+<div class="c-code__line">    *</div>
+<div class="c-code__line">    * This Original Work is licensed under the European Union Public Licence (EUPL)</div>
+<div class="c-code__line">    * v.1.2 and is subject to its terms as set out below.</div>
+<div class="c-code__line">    *</div>
+<div class="c-code__line">    * If a copy of the EUPL was not distributed with this file, You can obtain</div>
+<div class="c-code__line">    * one at https://opensource.org/licenses/EUPL-1.2.</div>
+<div class="c-code__line">    *</div>
+<div class="c-code__line">    * The &#39;Compatible Licences&#39; set out in the Appendix to the EUPL (as may be</div>
+<div class="c-code__line">    * amended by the European Commission) shall be deemed incompatible for</div>
+<div class="c-code__line">    * the purposes of the Work and the provisions of the compatibility</div>
+<div class="c-code__line">    * clause in Article 5 of the EUPL shall not apply.</div>
+<div class="c-code__line">    *</div>
+<div class="c-code__line">    * If using the Work as, or as part of, a network application, by</div>
+<div class="c-code__line">    * including the attribution notice(s) required under Article 5 of the EUPL</div>
+<div class="c-code__line">    * in the end user terms of the application under an appropriate heading,</div>
+<div class="c-code__line">    * such notice(s) shall fulfill the requirements of that article.</div>
+<div class="c-code__line">    * ********************************************************************* #}</div>
+<div class="c-code__line">&lt;head&gt;</div>
+<div class="c-code__line">    &lt;title&gt;User-Agent Client Hints Example&lt;/title&gt;</div>
+<div class="c-code__line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ url_for(&#39;static&#39;, filename=&#39;css/examples-main.min.css&#39;) }}&quot;&gt;</div>
+<div class="c-code__line">&lt;/head&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;div class=&quot;c-eg-page&quot;&gt;</div>
+<div class="c-code__line">    &lt;h2 class=&quot;c-eg-page__title&quot;&gt;User-Agent Client Hints example&lt;/h2&gt;</div>
+<div class="c-code__line">    &lt;p class=&quot;c-eg-page__lead&quot;&gt;</div>
+<div class="c-code__line">        By default, the user-agent, sec-ch-ua and sec-ch-ua-mobile HTTP headers are sent. This means</div>
+<div class="c-code__line">        that on the first request, the server can determine the browser from sec-ch-ua while other</div>
+<div class="c-code__line">        details must be derived from the user-agent. If the server determines that the browser supports</div>
+<div class="c-code__line">        client hints, then it may request additional client hints headers by setting the Accept-CH</div>
+<div class="c-code__line">        header in the response.</div>
+<div class="c-code__line">    &lt;/p&gt;</div>
+<div class="c-code__line">    &lt;p class=&quot;c-eg-page__lead&quot;&gt;</div>
+<div class="c-code__line">        Select the &lt;strong&gt;Make second request&lt;/strong&gt; button below to send another request to the</div>
+<div class="c-code__line">        server. This time, any additional client hints headers that have been requested will be included</div>
+<div class="c-code__line">        as evidence.</div>
+<div class="c-code__line">    &lt;/p&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    &lt;div class=&quot;c-eg-button-row&quot;&gt;</div>
+<div class="c-code__line">        &lt;button type=&quot;button&quot; class=&quot;b-btn&quot; onclick=&quot;redirect()&quot;&gt;Make second request&lt;/button&gt;</div>
+<div class="c-code__line">    &lt;/div&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    &lt;div id=&quot;content&quot;&gt;</div>
+<div class="c-code__line">        &lt;h3 class=&quot;c-eg-page__heading&quot;&gt;Evidence values used&lt;/h3&gt;</div>
+<div class="c-code__line">        &lt;p class=&quot;c-eg-legend&quot;&gt;</div>
+<div class="c-code__line">            Evidence was</div>
+<div class="c-code__line">            &lt;span class=&quot;c-eg-legend__swatch c-eg-legend__swatch--used&quot;&gt;used&lt;/span&gt;</div>
+<div class="c-code__line">            /</div>
+<div class="c-code__line">            &lt;span class=&quot;c-eg-legend__swatch c-eg-legend__swatch--present&quot;&gt;present&lt;/span&gt;</div>
+<div class="c-code__line">            for detection</div>
+<div class="c-code__line">        &lt;/p&gt;</div>
+<div class="c-code__line">        &lt;table class=&quot;c-eg-table&quot;&gt;</div>
+<div class="c-code__line">            &lt;thead class=&quot;c-eg-table__head&quot;&gt;</div>
+<div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row&quot;&gt;</div>
+<div class="c-code__line">                    &lt;th class=&quot;c-eg-table__cell&quot;&gt;Key&lt;/th&gt;</div>
+<div class="c-code__line">                    &lt;th class=&quot;c-eg-table__cell&quot;&gt;Value&lt;/th&gt;</div>
+<div class="c-code__line">                &lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;/thead&gt;</div>
+<div class="c-code__line">            &lt;tbody&gt;</div>
+<div class="c-code__line">                {% for key, value in data.evidence.get_all().items() %}</div>
+<div class="c-code__line">                    {% if data.pipeline.get_element(&quot;device&quot;).get_evidence_key_filter().filter_evidence_key(key) %}</div>
+<div class="c-code__line">                        &lt;tr class=&quot;c-eg-table__row c-eg-table__row--used&quot;&gt;</div>
+<div class="c-code__line">                    {% else %}</div>
+<div class="c-code__line">                        &lt;tr class=&quot;c-eg-table__row c-eg-table__row--present&quot;&gt;</div>
+<div class="c-code__line">                    {% endif %}</div>
+<div class="c-code__line">                        &lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;{{ key }}&lt;/td&gt;</div>
+<div class="c-code__line">                        &lt;td class=&quot;c-eg-table__cell&quot;&gt;{{ value }}&lt;/td&gt;</div>
+<div class="c-code__line">                    &lt;/tr&gt;</div>
+<div class="c-code__line">                {% endfor %}</div>
+<div class="c-code__line">            &lt;/tbody&gt;</div>
+<div class="c-code__line">        &lt;/table&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        &lt;div id=&quot;description&quot;&gt;&lt;/div&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        &lt;h3 class=&quot;c-eg-page__heading&quot;&gt;Detection results&lt;/h3&gt;</div>
+<div class="c-code__line">        &lt;table class=&quot;c-eg-table&quot;&gt;</div>
+<div class="c-code__line">            &lt;thead class=&quot;c-eg-table__head&quot;&gt;</div>
+<div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row&quot;&gt;</div>
+<div class="c-code__line">                    &lt;th class=&quot;c-eg-table__cell&quot;&gt;Key&lt;/th&gt;</div>
+<div class="c-code__line">                    &lt;th class=&quot;c-eg-table__cell&quot;&gt;Value&lt;/th&gt;</div>
+<div class="c-code__line">                &lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;/thead&gt;</div>
+<div class="c-code__line">            &lt;tbody&gt;</div>
+<div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row c-eg-table__row--alt&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Hardware Vendor:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;{{ utils.get_human_readable(data.device, &quot;hardwarevendor&quot;) }}&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Hardware Name:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;{{ utils.get_human_readable(data.device, &quot;hardwarename&quot;) }}&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row c-eg-table__row--alt&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Device Type:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;{{ utils.get_human_readable(data.device, &quot;devicetype&quot;) }}&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Platform Vendor:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;{{ utils.get_human_readable(data.device, &quot;platformvendor&quot;) }}&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row c-eg-table__row--alt&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Platform Name:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;{{ utils.get_human_readable(data.device, &quot;platformname&quot;) }}&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Platform Version:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;{{ utils.get_human_readable(data.device, &quot;platformversion&quot;) }}&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row c-eg-table__row--alt&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Browser Vendor:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;{{ utils.get_human_readable(data.device, &quot;browservendor&quot;) }}&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Browser Name:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;{{ utils.get_human_readable(data.device, &quot;browsername&quot;) }}&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">                &lt;tr class=&quot;c-eg-table__row c-eg-table__row--alt&quot;&gt;&lt;td class=&quot;c-eg-table__cell c-eg-table__cell--key&quot;&gt;Browser Version:&lt;/td&gt;&lt;td class=&quot;c-eg-table__cell&quot;&gt;{{ utils.get_human_readable(data.device, &quot;browserversion&quot;) }}&lt;/td&gt;&lt;/tr&gt;</div>
+<div class="c-code__line">            &lt;/tbody&gt;</div>
+<div class="c-code__line">        &lt;/table&gt;</div>
+<div class="c-code__line">    &lt;/div&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    {% if utils.get_data_file_tier(data.pipeline.get_element(&quot;device&quot;)) == &quot;Lite&quot; %}</div>
+<div class="c-code__line">        &lt;div class=&quot;c-eg-message&quot;&gt;&lt;p class=&quot;c-eg-message__text&quot;&gt;The paid data file adds daily automatic updates, non-human identification and IP intelligence. &lt;a href=&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-useragentclienthints_web-templates-index.html&amp;utm_term=paid-data-file&quot;&gt;Contact us&lt;/a&gt; to explore the options.&lt;/p&gt;&lt;a class=&quot;b-btn c-eg-message__cta&quot; href=&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-useragentclienthints_web-templates-index.html&amp;utm_term=paid-data-file&quot;&gt;Contact us&lt;/a&gt;&lt;/div&gt;</div>
+<div class="c-code__line">    {% endif %}</div>
+<div class="c-code__line">&lt;/div&gt;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">&lt;script&gt;</div>
+<div class="c-code__line">    // This script runs when the &quot;Make second request&quot; button is clicked and a device</div>
+<div class="c-code__line">    // detection request is sent to the server again with all the additional client hints</div>
+<div class="c-code__line">    // that were requested in the previous response by the server.</div>
+<div class="c-code__line">    // The following sequence is followed:</div>
+<div class="c-code__line">    // 1. The user sends the first request to the web server for detection.</div>
+<div class="c-code__line">    // 2. The web server returns the properties in the response based on the headers sent</div>
+<div class="c-code__line">    //    in the request. Along with the properties, it also sends a new Accept-CH header in</div>
+<div class="c-code__line">    //    the response indicating the additional evidence it needs. It builds the new</div>
+<div class="c-code__line">    //    response header using SetHeader[Component name]Accept-CH properties where Component</div>
+<div class="c-code__line">    //    Name is the name of the component for which properties are required.</div>
+<div class="c-code__line">    // 3. When the &quot;Make second request&quot; button is clicked, the device detection request is</div>
+<div class="c-code__line">    //    sent to the server again with all the additional client hints that were requested</div>
+<div class="c-code__line">    //    in the previous response by the server.</div>
+<div class="c-code__line">    // 4. The web server returns the properties based on the new User-Agent Client Hint</div>
+<div class="c-code__line">    //    headers being used as evidence.</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    function redirect() {</div>
+<div class="c-code__line">        sessionStorage.reloadAfterPageLoad = true;</div>
+<div class="c-code__line">        window.location.reload(true);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    window.onload = function () {</div>
+<div class="c-code__line">        if (sessionStorage.reloadAfterPageLoad) {</div>
+<div class="c-code__line">            document.getElementById(&#39;description&#39;).innerHTML = &quot;&lt;p class=\&quot;c-eg-page__lead\&quot;&gt;The information shown below is determined using &lt;strong&gt;User-Agent Client Hints&lt;/strong&gt; that were sent in the request to obtain additional evidence. If no additional information appears then it may indicate an external problem such as &lt;strong&gt;User-Agent Client Hints&lt;/strong&gt; being disabled in your browser.&lt;/p&gt;&quot;;</div>
+<div class="c-code__line">            sessionStorage.reloadAfterPageLoad = false;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        else {</div>
+<div class="c-code__line">            document.getElementById(&#39;description&#39;).innerHTML = &quot;&lt;p class=\&quot;c-eg-page__lead\&quot;&gt;The following values are determined by server-side device detection on the first request.&lt;/p&gt;&quot;;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">    };</div>
+<div class="c-code__line">&lt;/script&gt;</div>
+</div><!-- fragment --><h2>App</h2>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment"># *********************************************************************</span></div>
 <div class="c-code__line"><span class="c-code__comment"># This Original Work is copyright of 51 Degrees Mobile Experts Limited.</span></div>
 <div class="c-code__line"><span class="c-code__comment"># Copyright 2026 51 Degrees Mobile Experts Limited, Davidson House,</span></div>

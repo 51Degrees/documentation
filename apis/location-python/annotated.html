@@ -1,13 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-java/_0dexample-example.html">
+  <base href="/documentation/4.5/">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/location-python/annotated.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/location-python/annotated.html" />
+<meta name="robots" content="noindex,follow"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="@example - Device detection services for 51Degrees Pipeline - 51Degrees documentation."/>
-<title>51Degrees Device Detection Java: @example</title>
+<meta name="description" content="Classes - Reverse Geo-Location services for 51Degrees Pipeline - 51Degrees documentation."/>
+<title>51Degrees Location Python: Classes</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -26,12 +29,12 @@
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
   <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
-  <span class="c-tagline">51Degrees Device Detection Java
+  <span class="c-tagline">51Degrees Location Python
    &#160;<span id="projectnumber">4.5</span>
   </span>
   </div>
   <div id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectbrief">Device detection services for 51Degrees Pipeline</div>
+   <div id="projectbrief">Reverse Geo-Location services for 51Degrees Pipeline</div>
   </div>
   <div id="main-nav"></div>
   <section class="g-search">
@@ -59,18 +62,23 @@
   </nav>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('_0dexample-example.html','',''); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('annotated.html','',''); });
 </script>
 <div id="doc-content" class="g-docs__content">
 <div class="g-docs__header">
-<h1 class="g-docs__page-title">@example</h1></div><!--header-->
+<h1 class="g-docs__page-title">Classes</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<p>This example shows how to use the 51Degrees Cloud service to look up the details of a device based on a given 'native model name'. Native model name is a string of characters that are returned from a query to the device's OS.</p>
-<p>There are different mechanisms to get native model names for <a href="https://developer.android.com/reference/android/os/Build#MODEL">Android devices</a> and <a href="https://gist.github.com/soapyigu/c99e1f45553070726f14c1bb0a54053b#file-machinename-swift">iOS devices</a></p>
-<p>Unlike other examples, use of this example requires a license key which can be purchased from <a href="https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-nativemodelcloud.java&amp;utm_term=top">our pricing page</a>. Once this is done, a resource key with the properties required by this example can be created at <a href="https://configure.51degrees.com/QKyYH5XT?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-nativemodelcloud.java&amp;utm_term=top">here</a>.</p>
-<p>This example is available in full on <a href="https://github.com/51Degrees/device-detection-java-examples/blob/master/console/src/main/java/fiftyone/devicedetection/examples/console/NativeModelCloud.java">GitHub</a>.</p>
-<div class="c-code__block c-code__block--outline"></div><!-- fragment --> </div><!-- primary -->
+<div class="textblock">51Degrees Python classes. These contain the interfaces and logic of the geo-location engines.</div><div class="directory">
+<table class="directory">
+<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">N</span></span><b>fiftyone_location</b></td><td class="desc"></td></tr>
+<tr id="row_0_0_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">N</span></span><b>location_cloud</b></td><td class="desc"></td></tr>
+<tr id="row_0_0_0_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classfiftyone__location_1_1location__cloud_1_1_location_cloud.html" target="_self">LocationCloud</a></td><td class="desc">The location cloud engine requires the 51Degrees cloudRequestEngine to be placed in a pipeline before it </td></tr>
+<tr id="row_0_1_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">N</span></span><b>location_pipelinebuilder</b></td><td class="desc"></td></tr>
+<tr id="row_0_1_0_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classfiftyone__location_1_1location__pipelinebuilder_1_1_location_pipeline_builder.html" target="_self">LocationPipelineBuilder</a></td><td class="desc">The Location Pipeline Builder allows you to easily Construct a pipeline containing the location cloud engine </td></tr>
+</table>
+</div><!-- directory -->
+</div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->
 <section id="nav-path" class="g-footer g-footer--docs"><!-- id is needed for treeview function! -->

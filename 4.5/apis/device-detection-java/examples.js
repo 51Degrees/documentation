@@ -5,7 +5,7 @@ var examples =
     [ "console/MatchMetrics.java", "console_2_match_metrics_8java-example.html", null ],
     [ "MetadataCloud.java", "_metadata_cloud_8java-example.html", null ],
     [ "MetadataOnPrem.java", "_metadata_on_prem_8java-example.html", null ],
-    [ "console/NativeModel.java", "_0dexample-example.html", null ],
+    [ "console/NativeModelCloud.java", "console_2_native_model_cloud_8java-example.html", null ],
     [ "console/OfflineProcessing.java", "console_2_offline_processing_8java-example.html", null ],
     [ "PerformanceBenchmark.java", "_performance_benchmark_8java-example.html", null ],
     [ "console/TacCloud.java", "console_2_tac_cloud_8java-example.html", null ],

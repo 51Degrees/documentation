@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "51Degrees Location Python", "index.html", [
     [ "General Docs", "/documentation/4.5/index.html", null ],
+    [ "Classes", "annotated.html", "annotated" ],
     [ "Examples", "examples.html", "examples" ]
   ] ]
 ];
