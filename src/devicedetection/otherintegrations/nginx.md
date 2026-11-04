@@ -32,7 +32,7 @@ make install STATIC_BUILD=1
 ```
 <br>
 
-Finally, run the 51Degrees tests with the default 51Degrees Lite data file included in the `device-detection-cxx\device-detection-data` directory. Make sure to build the module with `make install` command as the tests do not work on a static build.
+Finally, run the 51Degrees tests with the default 51Degrees Lite data file, which the tests read from the `cxx/data/device-detection` folder. Download it first by running `sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash` from the repository root. The script is part of the [data](https://github.com/51Degrees/data) repository, which the `cxx` submodule includes at `cxx/data`. Make sure to build the module with `make install` command as the tests do not work on a static build.
 ```
 make test
 ```
@@ -42,9 +42,9 @@ To run the 51Degrees together with the Nginx test suite, run the following comma
 make test-full
 ```
 
-These do not run all the required tests as some tests require properties that are not supported with the Lite version of the data file. To run all tests, obtain a data file that provides properties: JavascriptHardwareProfile, ScreenPixelsWidthJavascript, and ScreenPixelsWidth. Then, use the `FIFTYONEDEGREES_DATAFILE` variable to specify the file name to run the tests with. The new data file should be placed in the `device-detection-cxx\device-detection-data` folder and should have a different name to `51Degrees-LiteV4.1.hash`. If tests still fail, obtain a data file with any other properties used in the tests. Below is an example of running tests with a different data file named `51Degrees-EnterpriseV4.1.hash`:
+These do not run all the required tests as some tests require properties that are not supported with the Lite version of the data file. To run all tests, obtain a data file that provides properties: JavascriptHardwareProfile, ScreenPixelsWidthJavascript, and ScreenPixelsWidth. Then, use the `51DEGREES_DD_PATH` variable to give the path of the data file to run the tests with. If tests still fail, obtain a data file with any other properties used in the tests. Below is an example of running tests with a different data file named `51Degrees-EnterpriseV4.1.hash`:
 ```
-make [test|test-full] FIFTYONEDEGREES_DATAFILE=51Degrees-EnterpriseV4.1.hash
+make [test|test-full] 51DEGREES_DD_PATH=/path/to/51Degrees-EnterpriseV4.1.hash
 ```
 
 # Configuring the Nginx API

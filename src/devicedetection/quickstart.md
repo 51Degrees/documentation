@@ -84,12 +84,11 @@ C does not have a @Pipeline implementation or the ability to use the cloud-based
 Device Detection.
 To get started with C device detection On-premise:
 
-1. Clone the GitHub [repository](https://github.com/51Degrees/51degrees-cxx).
-2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
-3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-4. Follow the [installation instructions](https://github.com/51Degrees/51degrees-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
-5. Follow the linked example here: [Getting Started](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise).
-6. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+1. Clone the GitHub [repository](https://github.com/51Degrees/51degrees-cxx) with its submodules by running `git clone --recurse-submodules https://github.com/51Degrees/51degrees-cxx.git`. In a clone you already have, run `git submodule update --init --recursive` instead.
+2. Download the free Lite data file by running `sh data/get-data-files.sh 51Degrees-LiteV4.1.hash` from the repository root, or `./data/get-data-files.ps1 51Degrees-LiteV4.1.hash` in PowerShell. The scripts are part of the [data](https://github.com/51Degrees/data) repository, which is the `data` submodule. The examples also download the file themselves when it is missing.
+3. Follow the [installation instructions](https://github.com/51Degrees/51degrees-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
+4. Follow the linked example here: [Getting Started](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise).
+5. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{cxx}
@@ -97,12 +96,11 @@ C++ does not have a @Pipeline implementation or the ability to use the cloud-bas
 Device Detection.
 To get started with C++ device detection On-premise:
 
-1. Clone the GitHub [repository](https://github.com/51Degrees/51degrees-cxx).
-2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
-3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-5. Follow the [installation instructions](https://github.com/51Degrees/51degrees-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
-6. Follow the linked example here: [Getting Started](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise).
-7. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+1. Clone the GitHub [repository](https://github.com/51Degrees/51degrees-cxx) with its submodules by running `git clone --recurse-submodules https://github.com/51Degrees/51degrees-cxx.git`. In a clone you already have, run `git submodule update --init --recursive` instead.
+2. Download the free Lite data file by running `sh data/get-data-files.sh 51Degrees-LiteV4.1.hash` from the repository root, or `./data/get-data-files.ps1 51Degrees-LiteV4.1.hash` in PowerShell. The scripts are part of the [data](https://github.com/51Degrees/data) repository, which is the `data` submodule. The examples also download the file themselves when it is missing.
+3. Follow the [installation instructions](https://github.com/51Degrees/51degrees-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
+4. Follow the linked example here: [Getting Started](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise).
+5. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{dotnet}
@@ -178,24 +176,22 @@ Due to the restrictions imposed by Composer and Packagist, we cannot supply the 
 Varnish does not have a @Pipeline implementation or the ability to use the cloud-based version of Device Detection.
 To get started with Varnish device detection On-premise:
 
-1. Clone the GitHub [repository](https://github.com/51degrees/51degrees-varnish).
-2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
-3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-4. Follow the [installation instructions](@ref DeviceDetection_OtherIntegrations_Varnish) to get set up with the project.
-5. Follow the linked example here: [Getting Started](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise).
-6. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+1. Clone the GitHub [repository](https://github.com/51degrees/51degrees-varnish) with its submodules by running `git clone --recurse-submodules https://github.com/51Degrees/51degrees-varnish.git`. In a clone you already have, run `git submodule update --init --recursive` instead.
+2. Download the free Lite data file, and the free Asn data file that the IP Intelligence tests use, by running `sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash 51Degrees-IPIV4AsnIpiV41.ipi` from the repository root. The script is part of the [data](https://github.com/51Degrees/data) repository, which the `cxx` submodule includes at `cxx/data`.
+3. Follow the [installation instructions](@ref DeviceDetection_OtherIntegrations_Varnish) to get set up with the project.
+4. Follow the linked example here: [Getting Started](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise).
+5. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{nginx}
 Nginx does not have a @Pipeline implementation or the ability to use the cloud-based version of Device Detection.
 To get started with Nginx device detection On-premise:
 
-1. Clone the GitHub [repository](https://github.com/51degrees/51degrees-nginx).
-2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
-3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-4. Follow the [installation instructions](@ref DeviceDetection_OtherIntegrations_Nginx) to get set up with the project.
-5. Follow the linked example here: [Getting Started](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise).
-6. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+1. Clone the GitHub [repository](https://github.com/51degrees/51degrees-nginx) with its submodules by running `git clone --recurse-submodules https://github.com/51Degrees/51degrees-nginx.git`. In a clone you already have, run `git submodule update --init --recursive` instead.
+2. Download the free Lite data file by running `sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash` from the repository root. The script is part of the [data](https://github.com/51Degrees/data) repository, which the `cxx` submodule includes at `cxx/data`.
+3. Follow the [installation instructions](@ref DeviceDetection_OtherIntegrations_Nginx) to get set up with the project.
+4. Follow the linked example here: [Getting Started](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise).
+5. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{go}
@@ -203,12 +199,11 @@ Currently, we have a light set of device detection features for Go users to try 
 [device-detection-go](https://github.com/51Degrees/51degrees-go/tree/main/device-detection#readme), [device-detection-examples-go](https://github.com/51Degrees/51degrees-go/tree/main/examples/device-detection#readme).
 To get started with Go device detection On-premise:
 
-1. Clone the GitHub [repository](https://github.com/51Degrees/51degrees-go).
-2. Ensure you have [Git LFS](https://git-lfs.github.com/) installed. The device data files are large binary files that can cause problems if stored in a Git repository directly, so Git LFS is used.
-3. Ensure all submodules are checked out by running `git submodule update --init --recursive` in the repository.
-4. Follow the [installation instructions](https://github.com/51Degrees/51degrees-go/tree/main/device-detection#build-and-usage) to get set up with the project.
-5. Follow the linked example here: [Getting Started](https://github.com/51Degrees/51degrees-go/blob/main/examples/device-detection/dd/getting_started/getting_started.go).
-6. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+1. Clone the GitHub [repository](https://github.com/51Degrees/51degrees-go) with its submodules by running `git clone --recurse-submodules https://github.com/51Degrees/51degrees-go.git`. In a clone you already have, run `git submodule update --init --recursive` instead.
+2. Download the free Lite data file by running `sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash` from the repository root, or `./cxx/data/get-data-files.ps1 51Degrees-LiteV4.1.hash` in PowerShell. The scripts are part of the [data](https://github.com/51Degrees/data) repository, which the `cxx` submodule includes at `cxx/data`.
+3. Follow the [installation instructions](https://github.com/51Degrees/51degrees-go/tree/main/device-detection#build-and-usage) to get set up with the project.
+4. Follow the linked example here: [Getting Started](https://github.com/51Degrees/51degrees-go/blob/main/examples/device-detection/dd/getting_started/getting_started.go).
+5. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{rust}
