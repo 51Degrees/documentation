@@ -104,7 +104,7 @@ class MemoryLogger extends Logger
 {
     public $log = [];
 
-    public function logInternal($log)
+    public function logInternal(array $log): void
     {
 
             $this->log[] = $log;
@@ -123,7 +123,7 @@ $logger = new MemoryLogger("info"); // Pass in the minimum log level to the cons
 
 $pipelineBuilder = new PipelineBuilder();
 
-$pipelineBuilder->addLogger($this->logger);
+$pipelineBuilder->addLogger($logger);
 
 // Then add elements and build the Pipeline as usual
 
@@ -167,7 +167,7 @@ Pass your logger to the PipelineBuilder when creating the Pipeline:
 
 from fiftyone_pipeline_core.pipelinebuilder import PipelineBuilder
 
-logger = MemoryLogger('info') // Pass in the minimum log level to the constructor
+logger = MemoryLogger('info')  # Pass in the minimum log level to the constructor
 
 pipeline = (PipelineBuilder())\
             .add_logger(logger)\

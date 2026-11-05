@@ -1,6 +1,6 @@
 @page Services_Cloud_RobotsTxt Get a fresh robots.txt from the cloud
 
-One free request to the 51Degrees cloud returns a complete robots.txt, with a `Disallow` block for every known crawler whose use you have not allowed. Run it daily and the file picks up new crawlers as we add them.
+One free request to the 51Degrees cloud returns a complete robots.txt, with a `Disallow` block for every known crawler that has none of the uses you allow. Fetch a new file daily to pick up the crawlers we add.
 
 ```
 curl -s "https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json?robotstxt.search=allow&robotstxt.tdl=https://m4ow.uk/socw/3.txt" \
@@ -33,9 +33,9 @@ We sort every crawler in our data by what it is used for, such as search or AI t
 
 The full definitions are on the @ref DeviceDetection_Features_Crawlers "Crawlers" page.
 
-Keep `search` in the list unless you want to drop out of search results. A request that allows only `analytics`, for example, blocks Googlebot. A request that allows nothing returns no robots.txt at all.
+Keep `search` in the list unless you want to drop out of search results. A request that allows only `analytics`, for example, blocks Googlebot. A request with no `robotstxt.<use>` parameter returns no robots.txt at all, and a request that only disallows uses returns a robots.txt that blocks every crawler we know.
 
-To let in everything except AI training, AI answers, and AI indexes, send all eight of the other uses.
+To block crawlers whose only uses are AI training, AI answers, and AI indexes, send all eight of the other uses. A request with those eight uses also blocks every crawler with no use on record, and still lets in a crawler that has one of the eight uses as well as an AI use, such as Googlebot.
 
 ```
 robotstxt.search=allow&robotstxt.monitor=allow&robotstxt.archiving=allow&robotstxt.preview=allow&robotstxt.security=allow&robotstxt.analytics=allow&robotstxt.feed=allow&robotstxt.discovery=allow
@@ -52,7 +52,7 @@ TDL: https://m4ow.uk/socw/3.txt
 Allow: /
 ```
 
-The Movement for an Open Web publishes a free [Search Only Contract](https://m4ow.uk/socw/3.txt). It allows search indexing and human, non-commercial use. Any other use, AI training included, needs a deal with the site. Without one, the crawler's operator owes the site a fee for each article, image, or video, at the amount the site sets in its own terms. The [guide to the contract](https://m4ow.uk/socw/) gives the wording to add to your terms, the fee included.
+The Movement for an Open Web publishes a free [Search Only Contract](https://m4ow.uk/socw/3.txt). It allows search indexing and personal, non-commercial use. Any other use, AI training included, needs a deal with the site. Without one, the crawler's operator owes the site a fee for each article, image, video, or other item the crawler accesses, at the amount the site sets in its own terms. The [guide to the contract](https://m4ow.uk/socw/) gives the wording to add to your terms, the fee included.
 
 Link to a version that never changes once published, as in the example, so everyone can see which terms applied on the day. To give more than one address, separate them with commas. Crawlers that do not recognize the TDL line skip it.
 

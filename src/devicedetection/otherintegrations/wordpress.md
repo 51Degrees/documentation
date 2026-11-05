@@ -20,9 +20,9 @@ Our plugin uses device and location data to help you adapt your website and anal
 
 ## Integration with Google Analytics
 
-1.  To integrate with Google Analytics, go to the `Google Analytics` tab and click `Connect Google Analytics`. Authorize the 51Degrees plugin on the Google consent screen. You are returned to the tab, which confirms the connection.
+1.  The plugin works with Google Analytics 4 (GA4). Your Resource Key must have your site's domain added to it, or the connection is refused. If your key does not, create a new key with the domain at [configure.51degrees.com](https://configure.51degrees.com/). Then go to the `Google Analytics` tab and click `Connect Google Analytics`. Authorize the 51Degrees plugin on the Google consent screen. You are returned to the tab, which confirms the connection.
 
-2.  Once connected, select your preferred properties for which you want to enable Custom Dimensions Tracking via the `Google Analytics Property` dropdown.
+2.  Once connected, select the GA4 property that receives the Custom Dimensions from the `Analytics Account/Property` dropdown.
 
 3.  Check `Send Page View` if you want to send Default Page View hits along with Custom Dimensions. It is only recommended if you have not already integrated with any other Google Analytics plugin to avoid data duplication.
 
@@ -45,16 +45,16 @@ The `Robots.txt` tab lets you host a virtual `/robots.txt` file and, optionally,
 
 5.  **Custom Top Entries** and **Custom Bottom Entries** let you prepend or append your own lines around the generated 51Degrees section.
 
-Crawler detection needs the `IsCrawler` and `CrawlerUsage` properties, and file generation from the cloud needs the `RobotsTxt` `PlainText` property. Create a key with these at <a href="https://configure.51degrees.com/">configure.51degrees.com</a> if your key does not already include them.
+Crawler detection needs the `IsCrawler` and `CrawlerUsage` properties, and file generation from the cloud needs the `robotstxt.plaintext` property. Create a key with these at <a href="https://configure.51degrees.com/">configure.51degrees.com</a> if your key does not already include them.
 
 
 ## Suspicious activity detection
 
 The `Suspicious` tab detects and blocks visitors who make too many requests in a short window. From the tab you can set the request threshold (`Number of requests`), the time window (`Within seconds`), and the `Redirect URL` that blocked visitors are sent to.
 
-When your Resource Key is working, detection runs in advanced mode and identifies visitors individually, even when they share a network. If the key is missing or invalid, it falls back to basic mode, where visitors that look identical to the site are grouped and blocked together.
+When your Resource Key is working, detection runs in advanced mode and counts requests by each visitor's 51Did, which can tell apart visitors who share a network. If the key is missing or invalid, it falls back to basic mode, where visitors with the same IP address and User-Agent are grouped and blocked together.
 
-Advanced mode relies on a probabilistic identifier from your Resource Key - `IdProbLic` if present, otherwise `IdProbGlobal` (see @ref Identifiers_51Did). These are generated with `id.usage=non-marketing`, so they do not require a license key or a specific product, but they do need to be present on the key. If your existing key does not include either property, create a new Resource Key that adds it at <a href="https://configure.51degrees.com/">configure.51degrees.com</a>. Without these properties the plugin falls back to a hash of the visitor's IP address and User-Agent, which groups visitors that share a network.
+Advanced mode relies on a probabilistic identifier from your Resource Key, which is `IdProbLic` if present, otherwise `IdProbGlobal` (see @ref Identifiers_51Did). These are generated with `id.usage=non-marketing`, so they do not require a License Key or a specific product, but they do need to be present on the key. If your existing key does not include either property, create a new Resource Key that adds it at <a href="https://configure.51degrees.com/">configure.51degrees.com</a>. Without these properties the plugin falls back to a hash of the visitor's IP address and User-Agent, which groups visitors who share both the IP address and the User-Agent.
 
 
 ## Preference Management Platform (PMP)
@@ -68,7 +68,7 @@ Configure the popup from the `PMP` tab:
 -  **Terms / Privacy URL** is linked from the popup, so a visitor can read your terms before answering, and is required.
 -  **Brand Name** and **Brand Logo URL** set the branding shown in the popup. Replace the placeholder defaults with your own.
 -  **Show Standard Marketing Option** shows the `Standard` choice alongside `Personalized` and the alternative button.
--  **TCF Vendor String** is the base IAB TCF v2 consent string onto which PMP overlays the visitor's purpose consents at runtime. The built-in default consents every vendor on the current IAB Global Vendor List; override it to restrict the vendor set.
+-  **TCF Vendor String** is the base IAB TCF v2 consent string onto which PMP overlays the visitor's purpose consents at runtime. The built-in default gives consent to every vendor that asks for it on one fixed version of the IAB Global Vendor List, so vendors added to the list after that version are not included. Override it to restrict the vendor set or to cover a later version of the list.
 
 The popup works out of the box. To react to the visitor's choice, override the global callback on your page - the plugin ships a no-op default:
 
@@ -99,7 +99,7 @@ To get a specific property, look it up on the available properties list and use 
 `Pipeline::get("device", "ismobile")`
 You can also get a list of properties by category as an array.
 
-`Pipeline::getCategory("Supported Media"))`
+`Pipeline::getCategory("Supported Media")`
 The code snippet above will give you all the properties with `Supported Media` category included in the Resource Key.
 
 ## JavaScript integration
@@ -162,11 +162,11 @@ The WordPress plugin will handle this for you automatically. However, be aware t
 </script>
 ```
 
-## Manual installation using WordPress Plugin Manager
+## Manual installation from the WordPress plugin directory
 
-1. Download `fiftyonedegrees` zip package from [WordPress Plugin Manager](https://wordpress.org/plugins/wp-plugin-manager/).
+1. Download the plugin zip file from the [51Degrees plugin page](https://wordpress.org/plugins/51degrees-optimize-by-device-location/) in the WordPress plugin directory.
 
-2. Upload the entire `fiftyonedegrees` zip folder to the `/wp-content/plugins/` directory.
+2. Unzip it and upload the `51degrees-optimize-by-device-location` folder to the `/wp-content/plugins/` directory.
 
 3. Visit `Plugins`.
 
@@ -188,4 +188,4 @@ If you want to build the plugin yourself and install locally, you will need to f
 5.  Activate the 51Degrees plugin.
 
 
-This plugin is free and provided without warranty of any kind. Use it at your own risk; 51Degrees is not responsible for any improper use of this plugin, nor for any damage it might cause to your site. Always backup all your data before installing a new plugin.
+This plugin is free and licensed under the [European Union Public Licence (EUPL) v1.2](https://opensource.org/licenses/EUPL-1.2), which provides it without warranty and limits the liability of 51Degrees. Always back up your data before installing a new plugin.

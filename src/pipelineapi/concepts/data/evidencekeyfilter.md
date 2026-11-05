@@ -43,13 +43,12 @@ It will include anything that meets the following criteria:
 
 1. Any HTTP header.
 2. Any cookie with a name that starts with '51D_'.
-3. A user session cookie.
+3. A user session cookie, in .NET and Java. It is used only to tell user sessions apart when session tracking is turned on, and it is never sent to 51Degrees.
 4. Any evidence that is not a header, cookie or query string parameter.
 
 Configuration options allow this to be tuned to meet your requirements:
 
 1. A blacklist of HTTP header names to exclude from sharing can be supplied.
-2. Sharing of user session cookies can be disabled and the name of the cookie
-  is customizable. (This will default to the appropriate cookie for the language, 
-  for example the ASP.NET session cookie in .NET)
+2. In .NET and Java, session tracking can be turned on and the name of the session cookie
+  can be changed. (The default is the ASP.NET session cookie in .NET and `JSESSIONID` in Java.)
 3. A whitelist of query string parameters to share can be supplied.

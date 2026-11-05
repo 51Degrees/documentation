@@ -24,7 +24,7 @@ The table shows how each example configures the pipeline. You can combine elemen
 @grabexample{rust,dd-onprem-getting-started,Rust}
 @grabbedexample
 @startsnippet{varnish}
-This example shows how to use 51Degrees On-premise device detection to determine details about a device based on its User-Agent and User-Agent Client Hint HTTP header values.
+This example shows how to use 51Degrees On-premise device detection to determine details about a device based on its User-Agent HTTP header value. To use User-Agent Client Hints as well, call `match_all` instead of `match_single`.
 
 This example is available in full on [GitHub](https://github.com/51Degrees/51degrees-varnish/blob/main/examples/hash/gettingStarted.vcl).
 

@@ -17,7 +17,7 @@ Derived from three inputs:
 - The **client IP** of the request.
 - The **usage purpose** declared per request (see *Usage flags* below).
 
-51Dids are produced only by the cloud JSON endpoint when the Resource Key includes the relevant properties. **The 51Did is not available in the on-premise pipeline:** every identifier is signed with a private ECDSA P-256 key held only by 51Degrees' cloud service, so that recipients can verify authenticity without trusting the caller. An on-premise pipeline never holds the signing key and so cannot create a valid 51Did.
+51Dids are created only by the 51Degrees cloud service, or by the self-hosted Docker container 51Degrees provides to Bespoke customers, for a request that asks for the 51Did properties, either through a Resource Key that includes them or, where only a License Key is sent, by naming them with `values` (see *Example* below). **The 51Did is not available in the on-premise pipeline:** every identifier is signed with a private ECDSA P-256 key that only the 51Degrees cloud service and that container hold, so that recipients can verify authenticity without trusting the caller. An on-premise pipeline never holds the signing key and so cannot create a valid 51Did.
 
 ## Identifier types
 
@@ -67,7 +67,7 @@ If a Hashed Email property is requested without `id.email`, or with an `id.salt`
 
 ## When the identifier is created
 
-A 51Did is created against the device as the cloud has fully resolved it, and on a web page part of that resolution comes from scripts the page runs. An iPhone's request headers name only the generic model and a script names the exact one, and a Chromium browser keeps details out of its headers that a script can read. The 51Degrees client script runs those scripts and sends what they collected with its next request.
+A 51Did is created against the device as the cloud has fully resolved it, and on a web page part of that resolution comes from scripts the page runs. An iPhone's request headers name only the generic model, and a script narrows that to one model or a group of models. A Chromium browser keeps details out of its headers that a script can read. The 51Degrees client script runs those scripts and sends what they collected with its next request.
 
 So a request from a browser page that still owes any of those results creates nothing. The identifier properties come back with no value, and `fodid.idprobglobalnullreason`, or the reason property beside whichever identifier was asked for, says the page has not finished running its snippets, naming what is still to run and what to send. The client script's next request, carrying the results, is the one that creates the identifier, and the client script reports complete only after that. Two consequences follow.
 
@@ -114,7 +114,7 @@ Each consent signal a request can carry has a page of its own:
 | `standard`     | A License Key that carries the 51Did product. |
 | `personalized` | A License Key that carries the 51Did product. |
 
-`standard` and `personalized` 51Dids are created under the [Model Terms for Marketing](https://m4ow.uk/mtm), the terms 51Degrees and the companies that send and receive a 51Did work to, and the 51Dids the cloud creates today carry [version 2](https://m4ow.uk/mtm/2.txt). 51Degrees grants the 51Did product on a License Key after its know your customer checks, so [contact 51Degrees](https://51degrees.com/contact-us) to apply.
+`standard` and `personalized` 51Dids are created under the Model Terms for Marketing, the terms 51Degrees and the companies that send and receive a 51Did work to. The 51Dids the cloud creates today carry [version 2](https://m4ow.uk/mtm/2.txt), and the scheme behind it is explained at <https://m4ow.uk/mtm>. 51Degrees grants the 51Did product on a License Key after its know your customer checks, so [contact 51Degrees](https://51degrees.com/contact-us) to apply.
 
 `non-marketing` 51Dids are covered by the customer's agreement with 51Degrees under the published [General Terms and Conditions](https://51degrees.com/terms/general-terms-and-conditions/20261019) and [Cloud Services Terms](https://51degrees.com/terms/cloud-services-terms/20260323).
 
@@ -192,7 +192,7 @@ Every reader exposes the same surface, set out in the [package surface](https://
 
 Two 51Dids issued for the same device + IP + usage will differ at the byte level because the envelope embeds a fresh timestamp and signature on each call. The byte-level difference is in the **identifier** (the wrapper), whereas the **match key** carried inside is stable across reissues. To decide whether the two refer to the same browser instance, compare the match keys, never the full base64 identifiers.
 
-The match key is one of the fields the reader exposes after parsing the payload, as `MatchKey` in every language. Treat it as the key for caching and for spotting duplicates.
+The match key is one of the fields the reader exposes after parsing the payload, named in each language's own style, being `MatchKey` in .NET, `getMatchKey()` in Java and PHP, `matchKey` in Node.js, `match_key` in Python, and `match_key()` in Rust. Treat it as the key for caching and for spotting duplicates.
 
 Two responses to the same device + IP + `id.usage=non-marketing`, returned a few seconds apart:
 
@@ -219,7 +219,7 @@ Console.WriteLine(a.Signature.SequenceEqual(b.Signature)); // false
 Console.WriteLine(a.MatchKey.SequenceEqual(b.MatchKey));   // true
 ```
 
-Use `FodId.MatchKey` (32 bytes for the probabilistic and hashed email types) as the key for caching and for spotting duplicates. The same value means the same browser instance under the same usage policy on the same License Key (for `idproblic`) or across all callers (for `idprobglobal`).
+Use `FodId.MatchKey` (32 bytes for the probabilistic and hashed email types, 16 for the random types) as the key for caching and for spotting duplicates. For the probabilistic types the same value means the two identifiers were made from the same inputs, and so probably for the same browser, on the same License Key (for `idproblic`) or across all callers (for `idprobglobal`). For the hashed email types it means the same email address and salt, which says nothing about the browser. A random match key is new on every call, so it never repeats.
 
 ## Validation
 
@@ -227,7 +227,7 @@ Two things about a 51Did can be checked. The signature says whether the identifi
 
 A 51Did recipient can verify the signature before trusting the identifier. Two options:
 
-1. **Cloud endpoint.** Send the base64 value to the verification endpoint on the V4 cloud and get back a parsed payload only if the signature checks out. Simple, no key handling, but every call is metered against the Resource Key.
+1. **Cloud endpoint.** Send the base64 value to `/api/v4/id/verify` on the V4 cloud, described under *Verifying the creator context* below, and get back `{ "valid": true }` only if the signature checks out. Simple, with no public keys to handle, but every call is metered.
 2. **Local verification using the published public keys.** Fetch the key list described under *Fetching the public keys* below, hold it, and verify in-process for every received identifier against the key in force when it was created. Fetching the list is metered, verifying against it is not. Each package (see *51Did readers* above) carries a client that fetches and holds the list and verifies the signature offline, so application code never handles a key.
 
 In both cases, signature validation only confirms the identifier was created by 51Degrees and has not been tampered with. It does not certify that the device + IP + usage inputs were truthful, because that trust lives in the operational contract with the issuing 51Degrees cloud, not in the signature.
@@ -276,7 +276,7 @@ Read together with the signature:
 | `verified` | `nocontext` or `misconfigured` | Authentic identifier with no context this service could check. Rely on the signature alone. |
 | `invalid` | any | The envelope has been altered or corrupted. A creator context cannot be forged, because it is made under a key only 51Degrees holds, so a `verified` context on an `invalid` signature means the context data is intact and something else in the envelope is not. |
 
-**The redemption itself.** A sealed result redeems once, within ten seconds of the verification, and each verification produces a fresh one. The window is the anti-replay window of TLS 1.3, which QUIC mandates ([RFC 8446 section 8.3](https://www.rfc-editor.org/rfc/rfc8446#section-8.3)), so the trade-off between clock error, network variation and replay exposure has already been argued, and it is a constant of the service that cannot be widened by configuration. Every clock involved is a server clock, so the visitor's browser clock plays no part. In the genuine flow the two steps happen moments apart within one page transaction, so the ten second window never gets in the way. `verifiedAt` and `secondsSinceVerified` describe the verification you have just made and let your server apply a stricter rule of its own without any clock work. They say nothing about the identifier's age, which comes from the identifier itself.
+**The redemption itself.** A sealed result redeems once, within ten seconds of the verification, and each verification produces a fresh one. The window follows TLS 1.3, which for clients on the Internet calls for windows on the order of ten seconds to account for errors in clocks and variations in measurements ([RFC 9846 section 8.3](https://www.rfc-editor.org/rfc/rfc9846#section-8.3)), and QUIC requires the TLS 1.3 replay protections ([RFC 9001 section 9.2](https://www.rfc-editor.org/rfc/rfc9001#section-9.2)), so the trade-off between clock error, network variation, and replay exposure has already been argued. The window is a constant of the service that cannot be widened by configuration. Every clock involved is a server clock, so the visitor's browser clock plays no part. In the genuine flow the two steps happen moments apart within one page transaction, so a page that verifies just before it sends the result to your server is well inside the window. `verifiedAt` and `secondsSinceVerified` describe the verification you have just made and let your server apply a stricter rule of its own without any clock work. They say nothing about the identifier's age, which comes from the identifier itself.
 
 | Response | Meaning | What to do |
 | --- | --- | --- |
@@ -295,7 +295,7 @@ The record of redemptions is held in memory per service instance rather than acr
 
 | Age of the 51Did | What a mismatch suggests |
 | --- | --- |
-| Seconds to minutes | Treat seriously. The visitor has not moved network, no relay has rotated and no browser has updated in that time, so the likeliest explanation is that the identifier is being presented from somewhere other than where it was created. |
+| Seconds to minutes | Treat seriously. So soon after creation the visitor is unlikely to have moved network, a relay to have rotated, or a browser to have updated, so the likeliest explanation is that the identifier is being presented from somewhere other than where it was created. |
 | Hours to a day | Worth weight. A relay rotation or a new address is possible, a browser upgrade unlikely. |
 | Days to weeks | Weak on its own. Address changes and browser upgrades are both routine over this span. |
 | A month or more | Expect mismatches. A verified context after this long is a strong positive, whereas a mismatch is close to uninformative on its own. |
@@ -306,7 +306,7 @@ Match your response to what you are about to do rather than to the verdict alone
 
 Local public-key verification (option 2 above) covers the signature only. The creator context check exists nowhere but the 51Degrees service, and is available self-hosted through the bespoke Docker solution for identifiers that deployment creates. A self-hosted instance running without TLS capture still serves the whole flow for identifiers created and verified on that same instance, which is intended for local testing, and reports through its health check that it is not capturing, so the fault reaches whoever runs the deployment rather than the caller.
 
-A long-lived identifier that still verifies from its creation context is the strongest signal of a stable, real user, and age cannot be manufactured. This makes context verification well suited to a render-time check. Place the 51Did from a bid request into the creative, verify it from the rendering browser, send the 51Did and the sealed result to your own endpoint, and redeem them there. A `context` of `mismatch` on an identifier made minutes earlier means the paid impression rendered somewhere other than the browser the bid described.
+A long-lived identifier that still verifies from its creation context is a strong sign of a stable browser and connection, and its age cannot be faked, because the creation time is covered by the signature. This makes context verification well suited to a render-time check. Place the 51Did from a bid request into the creative, verify it from the rendering browser, send the 51Did and the sealed result to your own endpoint, and redeem them there. A `context` of `mismatch` on an identifier made minutes earlier suggests the paid impression rendered somewhere other than the browser the bid described.
 
 
 ### Fetching the public keys
@@ -339,4 +339,4 @@ The OWID endpoint `GET /owid/api/v3/public-key?date=<minutes>` returns one key, 
 ## Use cases
 
 - **Marketing** - PMP captures the user's preference and feeds it as `id.usage`, and the 51Did is consumed by Prebid / RTB enrichment. See @ref Identifiers_PMP and @ref Integrations_Prebid.
-- **Non-marketing** - the integrator sets `id.usage=non-marketing` server-side for fraud, bot or suspicious-activity detection (for example, the suspicious-activity module in the 51Degrees WordPress plugin). The identifier never leaves the customer environment.
+- **Non-marketing** - the integrator sets `id.usage=non-marketing` server-side for fraud, bot, or suspicious-activity detection (for example, the suspicious-activity module in the 51Degrees WordPress plugin, which keeps the identifier on the site's own server to count each visitor's requests).

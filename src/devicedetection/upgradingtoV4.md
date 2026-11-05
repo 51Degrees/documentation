@@ -23,8 +23,8 @@ If you are looking for User-Agent Client Hints support in the cloud, please foll
 <BR>
 
 ## V3 on-premise users {#V3_On_Prem}
-If you wish to continue to use 51Degrees On-premise, you will need to purchase a License Key to access the Version 4 data files. Visit our [pricing](https://51degrees.com/pricing) page and
-select the suitable plan for your needs. Alternatively, you may wish to use our [Cloud Service](@ref V3_Cloud), which can be called from the server via our APIs.
+If you wish to continue to use 51Degrees On-premise, the free Lite data file needs no License Key, but it has fewer properties and is updated monthly. Data files with every property need a License Key from the Bespoke plan, which you can ask about on our [pricing](https://51degrees.com/pricing) page.
+Alternatively, you may wish to use our [Cloud Service](@ref V3_Cloud), which can be called from the server via our APIs.
 
 Once you have received a License Key after signing up for a pricing plan, you can use the key to download a data file for On-premise implementations that contains all the properties. You can 
 [download the file manually](https://51degrees.com/developers/downloads) or set up [automatic data file updates](@ref PipelineApi_Features_AutomaticDatafileUpdates).
@@ -122,7 +122,7 @@ fiftyoneDegreesStatusCode status =
 V3 calls `fiftyoneDegreesMatch` with a workset from the provider. In V4, create a results structure and pass it to `fiftyoneDegreesResultsHashFromUserAgent`.
 
 ```{c}
-fiftyoneDegreesResultsHash *result =
+fiftyoneDegreesResultsHash *results =
     fiftyoneDegreesResultsHashCreate(&manager, 1, 0);
 
 fiftyoneDegreesResultsHashFromUserAgent(
@@ -138,11 +138,11 @@ can be shared by every thread.
 
 To get a value of a property in the old API, the `fiftyoneDegreesSetValues` and
 `fiftyoneDegreesGetString` methods were used. Using the new results structure,
-values of a property can be retrieved using the `fiftyoneDegreesResultsHashGetValueString`
+values of a property can be retrieved using the `fiftyoneDegreesResultsHashGetValuesString`
 method.
 
 ```{c}
-fiftyoneDegreesResultsPatternGetValuesString(
+fiftyoneDegreesResultsHashGetValuesString(
     results,
     propertyName,
     valueBuffer,
@@ -252,7 +252,7 @@ destructors.
 delete results;
 delete evidence;
 delete engine;
-delete config
+delete config;
 ```
 
 @endsnippet
@@ -294,7 +294,7 @@ The supplied settings will be dependent on your old implementation:
 - If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [configure.51degrees.com](https://configure.51degrees.com) (this will only take a few minutes and does not require any payment). Next, change the first line to `.UseCloud` and pass in the Resource Key you created.
 - If using `MemoryFactory` rather than `StreamFactory`, change the performance profile to `MaxPerformance`.
 - If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionHashEngineBuilder`. The `SetCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
-- If you have auto updates disabled then remove the `SetDataUpdateLinceseKey` line and instead use `SetAutoUpdate(false)` and `SetUpdateOnStartup(false)`.
+- If you have auto updates disabled then remove the `SetDataUpdateLicenseKey` line and instead use `SetAutoUpdate(false)` and `SetDataUpdateOnStartUp(false)`.
 
 Regardless of the details above, a configuration file can be used instead:
 
@@ -639,6 +639,15 @@ The device properties can then be accessed in the corresponding view. For exampl
 @model FiftyOne.DeviceDetection.IDeviceData
 @{
     ViewData["Title"] = "Device detection example";
+    var hardwareVendor = Model.HardwareVendor;
+    var hardwareName = Model.HardwareName;
+    var deviceType = Model.DeviceType;
+    var platformVendor = Model.PlatformVendor;
+    var platformName = Model.PlatformName;
+    var platformVersion = Model.PlatformVersion;
+    var browserVendor = Model.BrowserVendor;
+    var browserName = Model.BrowserName;
+    var browserVersion = Model.BrowserVersion;
 }
 
 <h2>Example</h2>
@@ -694,18 +703,18 @@ Settings will be dependent on your old implementation:
 - If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [configure.51degrees.com](https://configure.51degrees.com) (this will only take a few minutes and does not require any payment). Next, change the first line to `.useCloud` and pass in the Resource Key you created.
 - If using `MemoryFactory` rather than `StreamFactory` then change the performance profile to `MaxPerformance`.
 - If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionCloudEngineBuilder` (cache is not available on hash engine). The `setCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
-- If you have auto updates disabled then remove the `setDataUpdateLincenseKey` line and instead use `setAutoUpdate(false)` and `setUpdateOnStartup(false)`
+- If you have auto updates disabled then remove the `setDataUpdateLicenseKey` line and instead use `setAutoUpdate(false)` and `setDataUpdateOnStartup(false)`.
 
 Regardless of the details above, a configuration file can be used instead:
 
 ```{java}
 // Create the configuration object
-File file = new File("yourconfiguration.xml").getFile());
+File file = new File("yourconfiguration.xml");
 PipelineOptions pipelineOptions = PipelineOptionsFactory.getOptionsFromFile(file);
 
 // Create a simple pipeline to access the engine with.
 Pipeline pipeline = new FiftyOnePipelineBuilder()
-    .buildFromConfiguration(options);
+    .buildFromConfiguration(pipelineOptions);
 ```
 
 The XML configuration file for the same setup as above (On-premise, low memory, auto updates enabled) would look like this:
@@ -773,7 +782,7 @@ try(FlowData data = pipeline.createFlowData()){
 
 Finally, the way that data is accessed has also changed in several ways.
 1. Values can now be accessed by strongly typed properties rather than having to remember 'magic strings' (although magic string accessors still work as well).
-2. Many properties follow the nullable pattern. For example, rather than returning a boolean, the 'IsMobile' property returns a wrapper type that has 'hasValue' and 'value' accessors. Calling '.gertValue' on a property that does not have a value will result in an exception. For more detail see the @falsepositivecontrol feature page.
+2. Many properties follow the nullable pattern. For example, rather than returning a boolean, the 'IsMobile' property returns a wrapper type that has 'hasValue()' and 'getValue()' methods. Calling 'getValue()' on a property that does not have a value will result in an exception. For more detail see the @falsepositivecontrol feature page.
 
 As an example:
 
@@ -784,7 +793,7 @@ boolean isMobile = match.getValues("IsMobile").ToBoolean();
 becomes:
 
 ```{java}
-if(device.getIsMobile().hasValue) {
+if(device.getIsMobile().hasValue()) {
     boolean isMobile = device.getIsMobile().getValue();
 }
 ```
@@ -944,11 +953,12 @@ match = provider.getMatch(userAgent)
 In the new API, this is slightly more complicated as it needs to deal with the potential for different types of data in and out.
 
 ```{python}
-// 1. Create a 'FlowData' instance from the Pipeline. This is used to pass data in and access results.
+# 1. Create a 'FlowData' instance from the Pipeline. This is used to pass data in and access results.
 flowData = pipeline.create_flowdata()
-// 2. Add 'evidence' to the FlowData and process it. In this case, we are adding a User-Agent HTTP header.
+# 2. Add 'evidence' to the FlowData and process it. In this case, we are adding a User-Agent HTTP header.
 flowData.evidence.add("header.user-agent", userAgent)
-// 3. The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.
+flowData.process()
+# 3. The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.
 device = flowData.device
 ```
 
@@ -963,7 +973,7 @@ match.getValues('IsMobile')
 Becomes:
 
 ```{python}
-if (device.ismobile.has_value():
+if device.ismobile.has_value():
   isMobile = device.ismobile.value()
 ```
 @endsnippet
@@ -999,15 +1009,15 @@ $match = $provider->getMatch($mobileUserAgent);
 
 In the new API, this is slightly more complicated as it needs to deal with the potential for different types of data in and out.
 
-```{node}
+```{php}
 // 1. Create a 'FlowData' instance from the Pipeline. This is used to pass data in and access results.
 $flowData = $deviceDetectionPipeline->createFlowData();
 // 2. Add 'evidence' to the FlowData. In this case, we are adding a User-Agent HTTP header.
-$flowData->evidence->set("header.user-agent", userAgent);
+$flowData->evidence->set("header.user-agent", $userAgent);
 // 3. Process the evidence.
 $pipelineResult = $flowData->process();
 // 4. The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.
-$device = $pipelineResult->get("device")
+$device = $pipelineResult->get("device");
 ```
 
 Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found. For more detail on this see the @falsepositivecontrol feature page.
@@ -1022,7 +1032,7 @@ Becomes:
 
 ```{php}
 if($device->get("ismobile")->hasValue) {
-    $isMobile = $device->get("ismobile").value;
+    $isMobile = $device->get("ismobile")->value;
 }
 ```
 
@@ -1053,8 +1063,7 @@ New in V4:
 - `51D_drift`
 - `51D_difference`
 - `51D_allow_unmatched`
-- `51D_use_performance_graph`
-- `51D_use_predictive_graph`
+- `51D_use_performance_graph` and `51D_use_predictive_graph`. Since version 4.5 the performance graph is the same as the predictive graph, so these directives no longer change the detection results.
 - `51D_get_javascript_single`
 - `51D_get_javascript_all`
 - `51D_set_resp_headers`

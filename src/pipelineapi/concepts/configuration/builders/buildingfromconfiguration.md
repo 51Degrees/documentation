@@ -252,9 +252,9 @@ PHP will load elements named in `BuilderName` as if they were specified in a `us
 
 @endsnippet
 @startsnippet{node}
-Node will load elements named in `ElementName` as if they were specified in a `require` statement, so for example:
+Node will load elements named in `elementName` as if they were specified in a `require` statement, so for example:
 
-"ElementName": "fiftyone.pipeline.cloudrequestengine"
+"elementName": "fiftyone.pipeline.cloudrequestengine/cloudRequestEngine"
 @endsnippet
 @endsnippets
 

@@ -12,7 +12,7 @@ On-premise deployment works better when you need:
 - **Processing on your servers** - All processing happens within your infrastructure  
 - **High-volume processing** - Handle millions of detections without API limits
 - **Offline capability** - No internet connection required
-- **Predictable costs** - Fixed licensing instead of per-request pricing
+- **Predictable costs** - The Bespoke plan has no monthly request allowance, so the fee does not depend on traffic
 
 ## Migration steps
 
@@ -30,7 +30,7 @@ On-premise deployment works better when you need:
 - No License Key required, but limited device properties
 
 **For production:**
-- [Contact 51Degrees](https://51degrees.com/contact-us) to purchase an Enterprise license
+- [Contact 51Degrees](https://51degrees.com/contact-us) to purchase the Bespoke plan, the only paid plan that includes on-premise use
 - Includes full data file with all device properties
 - Automatic data file updates included
 
@@ -134,9 +134,9 @@ var pipeline = new DeviceDetectionPipelineBuilder()
 - Monitor data file update failures
 
 **Property Access**
-- All properties are available locally (no Cloud restrictions)
+- The properties available locally depend on your data file
 - No rate limiting on property requests
-- Consistent response times regardless of property count
+- Response times depend on the properties you request
 
 For complete examples:
 - [On-premise Console Examples](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise)
@@ -162,7 +162,7 @@ Download new data files from the [51Degrees Distributor](@ref Services_Distribut
 **Choose Performance Profile**
 
 - **MaxPerformance** - Fastest detection, uses more memory (recommended)
-- **HighPerformance** - Good balance of speed and memory
+- **HighPerformance** - Uses about as much memory as MaxPerformance, so it is generally not recommended
 - **LowMemory** - Slowest but minimal memory usage
 - **Balanced** - Default middle ground
 
@@ -225,7 +225,7 @@ Keep Cloud access during migration:
 - Review [performance examples](@ref DeviceDetection_Examples_Performance_OnPremiseHash)
 
 **Memory usage too high**
-- Switch to HighPerformance or LowMemory profile
+- Switch to the Balanced or LowMemory profile
 - Consider out-of-process deployment
 - Monitor memory usage patterns
 

@@ -42,14 +42,14 @@ These settings are used in the vcl_init and should only be set once.
 |fiftyonedegrees.set_drift                |0             |Set the drift value to allow sub strings to be matched in a wider range of character positions.|
 |fiftyonedegrees.set_difference           |0             |Set the difference value to allow User-Agents which are slightly different to what is expected.|
 |fiftyonedegrees.set_allow_unmatched      |NO            |Set whether the unmatched node should be used. `NO` means if there are no matched results, an empty string will be returned for the required property. A default string will be returned if `YES` is set.|
-|fiftyonedegrees.set_use_performance_graph|YES           |Set whether performance optimized graph should be used|
+|fiftyonedegrees.set_use_performance_graph|NO            |Set whether performance optimized graph should be used. Deprecated since version 4.5. The performance graph is now an alias of the predictive graph, so this setting does not change the results.|
 |fiftyonedegrees.set_use_predictive_graph |YES           |Set whether predictive optimized graph should be used|
 |fiftyonedegrees.set_max_concurrency      |0             |Set the expected concurrent requests that will be handled|
 |fiftyonedegrees.set_delimiter            |“,”           |Set the delimiter to separate values with|
 |fiftyonedegrees.set_properties           |All properties|Set the properties to initialize|
 
 ## Match settings
-These settings are valid in vcl_rev and vcl_deliver methods, and any number can be set.
+These settings are valid in client-side subroutines, such as vcl_recv and vcl_deliver, and any number can be set.
 
 |Setting|Description|
 |---|---|

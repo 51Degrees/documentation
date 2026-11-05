@@ -14,8 +14,8 @@ may have internal caches for various reasons, these are separate to the @Pipelin
 
 In the .NET API, @aspectengines can be configured to flag whether an instance of
 @Aspectdata has originated from the cache or from processing of the engine. For example, 
-if CacheHitOrMiss is set to true then the CacheHit value will be set to true
-on the @Aspectdata. The primary use case for this is to validate in testing 
+if `CacheHitOrMiss` is set to true, then `CacheHit` is true on @aspectdata that came
+from the cache and false on @aspectdata that the engine produced. The primary use case for this is to validate in testing 
 whether a cache hit or miss has occurred.
 
 See the

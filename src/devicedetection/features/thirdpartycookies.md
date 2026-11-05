@@ -2,9 +2,9 @@
 
 # Introduction
 
-Third-party cookies are cookies set by a domain other than the one the user is currently visiting. Web browsers have been increasingly restricting third-party cookies due to privacy concerns, with many browsers now blocking them by default or planning to phase them out.
+Third-party cookies are set by a site other than the one the user is visiting. Whether a browser accepts them depends on the browser, its version, and the user's settings.
 
-For businesses that rely on third-party cookies for functionality such as cross-site tracking, personalization, or analytics, it is important to know whether a user's browser supports third-party cookies. This allows applications to adapt their behavior accordingly, such as falling back to alternative methods when third-party cookies are unavailable.
+If your application uses third-party cookies, for example for advertising, analytics, or sign-in, check whether the visitor's browser accepts them so that you can switch to an alternative when it does not.
 
 51Degrees provides a lightweight, stateless mechanism to detect third-party cookie support as part of the cloud service.
 
@@ -78,7 +78,7 @@ After the JavaScript callback to the cloud service, the response includes the co
 
 ## Custom endpoint configuration
 
-By default, the detection snippet communicates with `cloud.51degrees.com`. If you are hosting your own 51Degrees cloud service or need to use a different endpoint, you can customize the third-party cookie detection endpoint by setting the `window.fodTpcEndpoint` global variable before loading the JavaScript:
+By default, the detection snippet calls `https://cloud.51degrees.com/api/v4/3pc`. If you host the cloud service yourself (see @ref Services_Cloud_SelfHostedDocker) or need to use a different endpoint, put the endpoint on a different domain from your pages, not on a subdomain of your own site. A browser treats a cookie from your own site as a first-party cookie, so the check would report third-party cookies as enabled even when the browser blocks them. Then set the `window.fodTpcEndpoint` global variable to the full address of the endpoint before loading the JavaScript:
 
 ```html
 <script>
@@ -95,7 +95,7 @@ Modern browsers have varying levels of third-party cookie support:
 
 - **Safari**: Blocks third-party cookies by default via Intelligent Tracking Prevention (ITP).
 - **Firefox**: Blocks third-party tracking cookies by default via Enhanced Tracking Protection (ETP).
-- **Chrome**: Planning to phase out third-party cookies (check current status as this is evolving). Note that Chrome Incognito mode blocks third-party cookies by default.
+- **Chrome**: Google no longer plans to phase out third-party cookies, and users can block them in Chrome's settings. Chrome Incognito mode blocks third-party cookies by default.
 - **Edge**: Follows similar patterns to Chrome with configurable tracking prevention levels.
 
 This detection feature allows your application to adapt to the user's actual browser configuration rather than relying on browser identification alone.

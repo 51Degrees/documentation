@@ -52,13 +52,13 @@ Lazy loading functionality in .NET is fulfilled by `Tasks`. An @aspectengine's p
 added to its @aspectdata as a new `Task` using its `AddProcessTask` method. Then when a value is
 requested from the @aspectdata, the `Task` is waited on by internal methods.
 
-The cancellation token in C# is the `CancellationToken` class from System.
+The cancellation token in C# is the `CancellationToken` struct from `System.Threading`.
 
 In the case where fetching a property times out, a `TimeoutException` is thrown, or if the token has
 been used to cancel processing, an `OperationCanceledException` is thrown.
 @endsnippet
 @startsnippet{java}
-Lazy loading functionality in Java is fulfilled by the `Callable` class which returns a `Future`. An
+Lazy loading functionality in Java is fulfilled by the `Callable` interface. Each `Callable` is submitted to an executor, which returns a `Future`. An
 @aspectengine's processing will be added to its @aspectdata as a new `Callable` using its `addProcessCallable`
 method. Then when a value is requested from the @aspectdata, the `Future` is waited on by internal methods.
 

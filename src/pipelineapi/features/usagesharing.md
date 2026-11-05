@@ -18,7 +18,7 @@ for more technical details.
 
 # How to enable usage sharing
 
-**Usage sharing** is enabled by default if you are using a pipeline builder that is derived from a 51Degrees pipeline builder (for example, DeviceDetetctionPipelineBuilder or FiftyOnePipelineBuilder). To configure the **usage sharing** feature, please refer to our @ref PipelineApi_Examples_UsageSharing.
+**Usage sharing** is enabled by default when you build an on-premise @pipeline with a 51Degrees pipeline builder, for example DeviceDetectionPipelineBuilder, or with FiftyOnePipelineBuilder in .NET and Java. The cloud pipeline builders do not add it. To configure the **usage sharing** feature, please refer to our @ref PipelineApi_Examples_UsageSharing.
 
 To enable **usage sharing** for low-level APIs such as C, Nginx, and Varnish, please refer to the [Usage Sharing for low-level APIs section](@ref Low_Level_Usage_Sharing) further down this page. 
 
@@ -100,71 +100,61 @@ ensure these values are added to evidence manually. The snippet below illustrate
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
 @showsnippet{node,Node.js}
-@showsnippet{php,PHP}
 @showsnippet{python,Python}
-@defaultsnippet{Select a tab to view language specific information on configuring **logging**}
+@defaultsnippet{Select a language to see how to add this evidence.}
 @startsnippet{dotnet}
 ```{cs}
-data.AddEvidence(“header.user-agent”, [User-Agent HTTP header])
-  .AddEvidence(“server.client-ip”, [source IP address of client connection])
+// userAgent, clientIp, host and secChUaMobile hold values taken from the request.
+data.AddEvidence("header.user-agent", userAgent)
+  .AddEvidence("server.client-ip", clientIp)
   // The website root e.g. 51degrees.com
-  .AddEvidence(“header.host”, [Host HTTP header])
+  .AddEvidence("header.host", host)
   // Provide simple name to allow 51Degrees to identify source of usage data
-  .AddEvidence(“header.usage-from”, [Business name])
+  .AddEvidence("header.usage-from", "Your business name")
   // Repeat for each user-agent client hints header (sec-ch-ua, sec-ch-ua-full-version-list, sec-ch-ua-platform, etc)
-  .AddEvidence(“header.sec-ch-ua-mobile”, [Sec-CH-UA-Mobile HTTP header])
+  .AddEvidence("header.sec-ch-ua-mobile", secChUaMobile)
   .Process();
 ```
 @endsnippet
 @startsnippet{java}
 ```{java}
-data.addEvidence(“header.user-agent”, [User-Agent HTTP header])
-  .addEvidence(“server.client-ip”, [source IP address of client connection])
+// userAgent, clientIp, host and secChUaMobile hold values taken from the request.
+data.addEvidence("header.user-agent", userAgent)
+  .addEvidence("server.client-ip", clientIp)
   // The website root e.g. 51degrees.com
-  .addEvidence(“header.host”, [Host HTTP header])
+  .addEvidence("header.host", host)
   // Provide simple name to allow 51Degrees to identify source of usage data
-  .addEvidence(“header.usage-from”, [Business name])
+  .addEvidence("header.usage-from", "Your business name")
   // Repeat for each user-agent client hints header (sec-ch-ua, sec-ch-ua-full-version-list, sec-ch-ua-platform, etc)
-  .addEvidence(“header.sec-ch-ua-mobile”, [Sec-CH-UA-Mobile HTTP header])
+  .addEvidence("header.sec-ch-ua-mobile", secChUaMobile)
   .process();
 ```
 @endsnippet
 @startsnippet{node}
 ```{js}
-data.evidence.add(“header.user-agent”, [User-Agent HTTP header]);
-data.evidence.add(“server.client-ip”, [source IP address of client connection]);
+// userAgent, clientIp, host and secChUaMobile hold values taken from the request.
+data.evidence.add("header.user-agent", userAgent);
+data.evidence.add("server.client-ip", clientIp);
 // The website root e.g. 51degrees.com
-data.evidence.add(“header.host”, [Host HTTP header]);
+data.evidence.add("header.host", host);
 // Provide simple name to allow 51Degrees to identify source of usage data
-data.evidence.add(“header.usage-from”, [Business name]);
+data.evidence.add("header.usage-from", "Your business name");
 // Repeat for each user-agent client hints header (sec-ch-ua, sec-ch-ua-full-version-list, sec-ch-ua-platform, etc)
-data.evidence.add(“header.sec-ch-ua-mobile”, [Sec-CH-UA-Mobile HTTP header]);
+data.evidence.add("header.sec-ch-ua-mobile", secChUaMobile);
 data.process();
 ```
 @endsnippet
-@startsnippet{php}
-```{php}
-$data->evidence->set(“header.user-agent”, [User-Agent HTTP header]);
-$data->evidence->set(“server.client-ip” => [source IP address of client connection]);
-// The website root e.g. 51degrees.com
-$data->evidence->set(“header.host” => [Host HTTP header]);
-// Provide simple name to allow 51Degrees to identify source of usage data
-$data->evidence->set(“header.usage-from” => [Business name]);
-// Repeat for each user-agent client hints header (sec-ch-ua, sec-ch-ua-full-version-list, sec-ch-ua-platform, etc)
-$data->evidence->set(“header.sec-ch-ua-mobile” => [Sec-CH-UA-Mobile HTTP header]);
-$data->process();
-```
-@endsnippet
 @startsnippet{python}
-```{js}
-data.evidence.add(“header.user-agent”, [User-Agent HTTP header])
-data.evidence.add(“server.client-ip”, [source IP address of client connection])
+```{python}
+# user_agent, client_ip, host and sec_ch_ua_mobile hold values taken from the request.
+data.evidence.add("header.user-agent", user_agent)
+data.evidence.add("server.client-ip", client_ip)
 # The website root e.g. 51degrees.com
-data.evidence.add(“header.host”, [Host HTTP header])
+data.evidence.add("header.host", host)
 # Provide simple name to allow 51Degrees to identify source of usage data
-data.evidence.add(“header.usage-from”, [Business name])
+data.evidence.add("header.usage-from", "Your business name")
 # Repeat for each user-agent client hints header (sec-ch-ua, sec-ch-ua-full-version-list, sec-ch-ua-platform, etc)
-data.evidence.add(“header.sec-ch-ua-mobile”, [Sec-CH-UA-Mobile HTTP header])
+data.evidence.add("header.sec-ch-ua-mobile", sec_ch_ua_mobile)
 data.process()
 ```
 @endsnippet
@@ -221,11 +211,15 @@ a request. For example:
 ```
 ---
 header.User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 15_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1
+header.Host: www.example.com
+server.client-ip: 203.0.113.10
 ---
 header.Sec-CH-UA-Mobile: ?0
 header.Sec-CH-UA-Platform: '"Windows"'
 header.Sec-CH-UA: '" Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"'
 header.User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36
+header.Host: www.example.com
+server.client-ip: 198.51.100.24
 ...
 ```
 
@@ -234,7 +228,7 @@ As a minimum, the values below MUST be present for each record. If not, the reco
 will be discarded by our backend processing system.
 
 ```
-header.user-agent [The value of the User-Agent HTTP header]
+header.user-agent: [The value of the User-Agent HTTP header]
 header.host: [The value of the Host HTTP header]
 server.client-ip: [The source public IP that is making the request to your server]
 ```
@@ -246,7 +240,7 @@ example, the following changes will need to be made to the example:
 
 1. Configure the input stream to take the output stream that is producing the YAML formatted data.
 2. Device detection is not needed, only usage sharing, so replace the `DeviceDetectionPipelineBuilder` with `FiftyOnePipelineBuilder` and remove all the builder options that are no longer valid.
-3. Configure the `setShareUsage` option to true.
+3. Make sure usage sharing is turned on, with `SetShareUsage(true)` in .NET or `setShareUsage(true)` in Java.
 4. Remove the code to get the device detection result and write an output file.
 
 This code should now be able to consume the output from the low-level code and send the usage data 

@@ -63,9 +63,9 @@ is configured to execute @elements in @parallel.
 
 ## Disposal and cleanup
 
-**Flow data** disposal should be left up to the garbage collector. This ensures that any resource which may still be needed (e.g., if it has been cached) is freed at the correct point.
+Dispose of **flow data** as soon as it is no longer needed. **Flow data** can hold native resources, such as the results of an on-premise engine, and under high load the garbage collector may not free them fast enough, which can cause an out-of-memory error.
 
-There are exceptions where **Flow data** must be disposed immediately after it is no longer needed. This is because the garbage collector does not free the resource fast enough under high load and causes an out of memory exception. Two languages where this is required are Java and C#.
+In C# use a `using` block and in Java a try-with-resources block, as shown below. In Python use a `with` statement, and in PHP call `close()`. Node.js has no disposal method, so leave **flow data** to the garbage collector.
 
 @startsnippets
 @showsnippet{dotnet,C#}

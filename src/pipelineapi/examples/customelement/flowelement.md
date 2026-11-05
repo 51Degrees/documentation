@@ -267,16 +267,6 @@ This new @flowelement can now be added to a @pipeline and used like:
 
 To print the star sign of the user.
 @endsnippet
-@startsnippet{java}
-This new @flowelement can now be added to a @pipeline and used like:
-
-@snippet "pipeline.developer-examples.flowelement/src/main/java/pipeline/developerexamples/flowelement/Main.java" usage
-
-to give an output of:
-```{bash}
-With a date of birth of 18/12/1992, your star sign is Sagittarius.
-```
-@endsnippet
 @endsnippets
 
 # Next steps

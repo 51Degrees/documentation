@@ -62,6 +62,6 @@ they try to use a feature that requires location data (e.g. show restaurants nea
 
 Get the names of any JavaScript **properties** that, when executed, will obtain additional 
 @evidence that can help in determining the value of this **property**.
-For example, the ``ScreenPixelsWidthJavascript`` **property** will get the pixel width of the client-device's screen.
+For example, the ``ScreenPixelsWidthJavaScript`` **property** will get the pixel width of the client-device's screen.
 This is used to update the ``ScreenPixelsWidth`` **property**. As such, ``ScreenPixelsWidth`` will have 
-``ScreenPixelWidthJavascript`` in its list of @evidence **properties**.
+``ScreenPixelsWidthJavaScript`` in its list of @evidence **properties**.

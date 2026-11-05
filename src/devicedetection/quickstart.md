@@ -14,7 +14,7 @@
 - **No setup needed** - No data files or local infrastructure required
 - **Always updated** - Latest device data without manual updates
 - **Minimal resources** - Very low CPU/RAM usage on your servers
-- **Pay-as-you-go** - Cost scales with usage
+- **Plans by request volume** - Monthly or yearly plans sized by the number of requests a month
 - **Global availability** - Multiple data centers for low latency
 
 **Things to consider:**
@@ -42,7 +42,7 @@
 - **Resource usage** - Uses local CPU/RAM (optimized but measurable)
 - **Update management** - Periodic data file updates needed for latest devices ([automatic updates available](@ref PipelineApi_Features_AutomaticDatafileUpdates))
 
-**Licensing:** Requires a [License Key](https://51degrees.com/pricing)
+**Licensing:** The free Lite data file needs no License Key. Paid data files require a [License Key](https://51degrees.com/pricing).
 
 ---
 

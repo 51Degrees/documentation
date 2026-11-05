@@ -44,11 +44,11 @@ Understand where your traffic comes from. Map user behavior to specific cities, 
 
 ### 🚫 Geographical restrictions
 
-Enforce geographic restrictions for content licensing, gambling regulations, or data protection laws.
+Find the country or region of a location the visitor shares, and apply the rules of that place, such as for content licensing, gambling, or data protection law.
 
-### 🆘 Emergency services
+### 🚚 Delivery services
 
-Convert GPS coordinates into actionable addresses for emergency response or delivery services.
+Convert GPS coordinates into addresses for delivery services.
 
 ---
 

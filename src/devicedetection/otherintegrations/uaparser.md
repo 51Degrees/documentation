@@ -168,10 +168,7 @@ Here is what we need to change to migrate this to use 51Degrees UAParser:
             https.createServer(options, async function (req, res) { 
             // note the await keyword and parameters 
                 let result = await UAParser("your Resource Key", req.headers); 
-                res.end("
-51Degrees:
-" + JSON.stringify(result, null, ' ') + "
-                ");
+                res.end("51Degrees: " + JSON.stringify(result, null, ' '));
             })
             .listen(443, '0.0.0.0');
 ```
@@ -202,16 +199,14 @@ Client Hints if it did not send them on the first attempt, so it starts another 
         // note the await keyword and parameters 
         let result = await UAParser("your Resource Key", req.headers); 
  
-        ch = 'Sec-CH-UA, Sec-CH-UA-Arch, Sec-CH-Bitness, Sec-CH-UA-Full-Version, \ 
-        Sec-CH-UA-Full-Version-List, Sec-CH-UA-Mobile, Sec-CH-UA-Model, \ 
-        Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version, Sec-CH-UA-WoW64' 
+        const ch = 'Sec-CH-UA, Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, ' +
+            'Sec-CH-UA-Full-Version-List, Sec-CH-UA-Mobile, Sec-CH-UA-Model, ' +
+            'Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version, Sec-CH-UA-WoW64'
  
         res.setHeader('Critical-CH',ch) 
         res.setHeader('Accept-CH', ch) 
  
-        res.end("
-51Degrees:
-" + JSON.stringify(result, null, ' ') + ""); 
+        res.end("51Degrees: " + JSON.stringify(result, null, ' ')); 
         }) 
         .listen(443, '0.0.0.0'); 
 ```

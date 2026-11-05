@@ -50,7 +50,7 @@ Use the Type Allocation Code (TAC) from an IMEI number to identify a mobile devi
 
 Choose what fits your stack:
 
-- **Cloud API:** No infrastructure headaches, always updated, pay-as-you-go.
+- **Cloud API:** No infrastructure headaches, always updated, with plans sized by monthly requests.
 - **On-premise:** Run detection on your own servers.
 - **Hybrid:** Combine cloud and on-premise deployment.
 
@@ -137,7 +137,7 @@ Identify Progressive Web Apps (PWAs), check feature support, and tailor mobile e
 
 ### 🔄 Cross-device user journeys
 
-Track users across smartphones, tablets, and desktops for seamless omnichannel experiences.
+Identify whether each visit comes from a smartphone, tablet, or desktop, so each step of a journey works on the device in use.
 
 ### 🎬 Content delivery and media
 

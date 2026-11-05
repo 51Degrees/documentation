@@ -210,9 +210,7 @@ is also true of post processing usage like retrieving results from the
 @flowdata. 
 Retrieving a [lazily loaded](@ref PipelineApi_Features_LazyLoading) result requires the @flowelement that created it to load the value. An error occurs if the **Pipeline** has already disposed of that @flowelement.
 
-While not a necessity, it is good practice to dispose of each 
-@flowdata produced by the **Pipeline** once
-it is finished with.
+Dispose of each @flowdata produced by the **Pipeline** as soon as it is no longer needed, so that any native resources it holds, such as the results of an on-premise engine, are released promptly rather than when the garbage collector next runs.
 
 
 <!--(TODO description on why memory management matters for languages that usually don't have to worry about it)-->

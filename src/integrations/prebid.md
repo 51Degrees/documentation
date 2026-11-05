@@ -2,7 +2,7 @@
 
 # Prebid integration
 
-51Degrees enriches OpenRTB bid requests with three streams of data: **Device Detection** properties, the **51Did** probabilistic device identifier, and **IP Intelligence** location signals. Together they let buyers target and value impressions more accurately, and recognise the same device across requests without cookies.
+51Degrees adds three kinds of data to OpenRTB bid requests: **Device Detection** properties, the **51Did** probabilistic device identifier, and **IP Intelligence** location data. Buyers can use this data to target and value impressions, and to recognize the same device across requests without cookies.
 
 > **Try it.** To experiment with a simple Prebid OpenRTB transaction, use the [Prebid.js developer tool](https://51degrees.com/developers/prebid-js-demo). It runs a Prebid.js auction with the 51Degrees RTD module, for your own browser or a sample device, and shows the OpenRTB bid request before and after 51Degrees enriches it.
 

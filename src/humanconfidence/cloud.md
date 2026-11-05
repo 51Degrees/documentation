@@ -18,7 +18,7 @@ If you'd rather see how much of your traffic is people before you change what an
 
 [Create a Resource Key from this link](https://configure.51degrees.com/AQRVdgJ-fPDE5gU130g). It opens with the properties Human Confidence needs already ticked. Add the License Key from your plan. A free License Key won't work, because Human Confidence starts at Pro.
 
-Don't add other properties to this key, as each one adds a script to the holding page and slows it down.
+Don't add other properties to this key. Some properties carry a script of their own that the holding page has to run, and each of those slows it down.
 
 Leave the domain list empty. The server calls the cloud with the same key, and a server request has no `Origin` header, so a key limited to domains fails with `401` and `This resource key is not authorised for the domain ''`. If you want the limit anyway, send an `Origin` header naming one of your domains on the server's request, for example `Origin: https://www.example.com`.
 
@@ -91,7 +91,7 @@ Things to check when you adapt the code:
 - The server sets `client-ip` last. A visitor's own `Client-IP` header can't then replace the address. If your site sits behind a load balancer or a CDN, make sure the address is the visitor's and not the load balancer's. Each example has a comment where this matters.
 - Node.js writes IPv4 addresses in the form `::ffff:203.0.113.7`. The Node.js code removes the `::ffff:` part before sending the address.
 
-If the cloud can't be reached, takes longer than 2 seconds or returns an error status, the server lets the visitor through for that page and tries again on the next request. If the cloud does respond but with Unknown, the visitor gets your challenge (step 4). The example price API only answers sessions that are High, so it refuses calls until a check has worked.
+If the cloud can't be reached, takes longer than 2 seconds to answer a request, or returns an error status, the server lets the visitor through for that page and tries again on the next request. A check that also reads the evidence key list makes two requests, each with its own 2 second limit. If the cloud does respond but with Unknown, the visitor gets your challenge (step 4). The example price API only answers sessions that are High, so it refuses calls until a check has worked.
 
 <!-- Internal note: these code samples move to the examples in the language repositories next week. Replace them with links to those examples then. -->
 
@@ -487,7 +487,7 @@ if __name__ == '__main__':
 A Low visit is almost always software, so you can serve it something made for software rather than a page made for people. The examples refuse it, and these are the other treatments websites use, alone or together:
 
 - **The page without what you sell.** A retailer serves the product page without prices and stock, a listing site answers a search with no contact details, and a publisher serves the first paragraph of the article.
-- **Content for machines.** Serve the same content as Markdown or plain text instead of HTML, with no navigation, scripts, or ads, so an AI gets what it came for cheaply and your page for people stays as it is.
+- **Content for machines.** Serve the same content as Markdown or plain text instead of HTML, with no navigation, scripts, or ads, so software gets what it came for cheaply and your page for people stays as it is.
 - **Your license terms.** Serve the terms the software has to accept to use your content, with a way to get a license. Ours is [the AI notice](https://51degrees.com/ai-notice). The Movement for an Open Web's [Search Only Contract](https://m4ow.uk/socw/3.txt) is a published set of terms any website can adopt, and the [robots.txt generator](https://51degrees.com/robots-txt) writes a robots.txt that cites it.
 - **No ads.** Leave the ad slots empty, so nobody pays to show an ad to a script.
 - **A block.** Refuse with `403`, as the example API does, and log the visit.

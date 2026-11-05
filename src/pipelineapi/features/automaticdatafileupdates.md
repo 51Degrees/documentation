@@ -61,8 +61,9 @@ update is expected, then the @dataupdateservice will not check for updates at al
 In large clusters of servers, it is beneficial to stagger an update. If all servers download a new @datafile and
 refresh at the same time, a service's overall performance can be affected. To prevent this, the randomization option
 enables a random time interval to be added to the time at which the new @datafile is downloaded. For example, if there
-are 10 servers, and a full download and refresh takes around 10 seconds, it is sensible to set the randomization to
-above 10 seconds. In this case, there should only be one server updating at any one time.
+are 10 servers and a full download and refresh takes around 10 seconds, a randomization of 10 seconds still has all 10 servers
+updating at the 10 second mark. A randomization of several minutes spreads the updates out so that few of them overlap.
+Because the delay is random, randomization reduces the overlap but cannot guarantee that only one server updates at a time.
 
 ## URL formatter {#PipelineApi_Features_AutomaticDatafileUpdates_UrlFormatter}
 Where an @onpremiseengine needs to download a @datafile from a URL which is not constant, a URL formatter is used.
@@ -101,10 +102,10 @@ is enabled (which it is by default for most @onpremiseengines) the `If-Modified-
 current @datafile was last modified. If there is not a newer @datafile on the server then the service will not attempt to download a file.
 
 # Recommendations for large clusters {#Large_Clusters}
-The @Distributor API is limited in the number of requests it can 
-service per day. This is enforced by each License Key being limited to a certain number of 
-requests (max 100, although some Keys will have a lower threshold than this) in each 
-30-minute period.
+The @Distributor API limits how often each License Key can download a data file. Each License Key can
+download a data file a set number of times in any 30-minute period, and the number depends on the license.
+Once a key reaches its limit, further requests receive HTTP status 429 with a `Retry-After` header until
+30 minutes have passed since its last download.
 
 Environments that use large numbers of independent nodes can easily exceed this threshold 
 if the automatic update functionality provided by the pipeline API is switched on.
@@ -133,8 +134,8 @@ gives you more control over when updates happen.
 
 In addition, we would only recommend using this setup with the 'MaxPerformance' 
 [performance option](@ref DeviceDetection_Features_PerformanceOptions) enabled.
-Other options will stream data from the data file as needed, which will be relatively 
-slow and bandwidth-heavy. 
+The Balanced and LowMemory options read data from the data file as needed, which is relatively
+slow and bandwidth-heavy when the file is in a shared network location.
 
 ## Push data file to nodes
 

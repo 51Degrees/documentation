@@ -33,7 +33,7 @@ PMP ships the dialog text in 24 languages and chooses one from the browser's own
 
 ### Giving the wording per language
 
-Writing the attribute once replaces that text for every language, which is usually wrong for a site with readers in more than one. Suffix the attribute with a language code to set the wording for that language alone.
+An attribute with no language suffix replaces that text in every language, which is usually wrong for a site with readers in more than one. Suffix the attribute with a language code to set the wording for that language alone.
 
 ```html
 <script
