@@ -47,14 +47,12 @@ the authority has to be rebuilt from those two before the signature can be
 checked. The @webintegration adds every header automatically.
 
 The standards behind this feature are the IETF Web Bot Auth protocol draft,
-[draft-ietf-webbotauth-httpsig-protocol-00](https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/),
-with its companion drafts for the
-[key directory](https://datatracker.ietf.org/doc/html/draft-meunier-webbotauth-httpsig-directory)
-and the
-[agent card](https://datatracker.ietf.org/doc/html/draft-meunier-webbotauth-registry-03),
+[draft-ietf-webbotauth-httpsig-protocol-01](https://datatracker.ietf.org/doc/html/draft-ietf-webbotauth-httpsig-protocol-01),
+which also defines the key directory, with its companion draft for the
+[agent card](https://datatracker.ietf.org/doc/html/draft-meunier-webbotauth-registry-04),
 built on
 [RFC 9421](https://datatracker.ietf.org/doc/html/rfc9421) for HTTP message
-signatures and [RFC 8941](https://datatracker.ietf.org/doc/html/rfc8941) for
+signatures and [RFC 9651](https://datatracker.ietf.org/doc/html/rfc9651) for
 the header syntax.
 
 See the
@@ -213,8 +211,8 @@ The address the keys are fetched from also comes from the request, so the
 element checks an address before making a request to it rather than
 trusting it:
 
-- Keys are only ever fetched over HTTPS. The protocol draft permits plain
-  HTTP and 51Degrees does not, because a key fetched over plain HTTP proves
+- Keys are only ever fetched over HTTPS, as the protocol draft requires
+  of a key directory, because a key fetched over plain HTTP proves
   nothing about who published it.
 - An address carrying user information before an `@`, or written as an IP
   address in a range that only appears inside a network, such as a

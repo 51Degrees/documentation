@@ -1,6 +1,6 @@
 @page Identifiers_51Did_Gpc Global Privacy Control
 
-Global Privacy Control is a signal a browser or an extension sends on the visitor's behalf, as the `Sec-GPC` request header and as `navigator.globalPrivacyControl` on the page. It asks a business not to sell or share the visitor's personal information. From 1 January 2027 California requires browser makers to offer the setting (AB 566), so the share of visits that send the signal will rise.
+Global Privacy Control is a signal a browser or an extension sends on the visitor's behalf, as the `Sec-GPC` request header and as `navigator.globalPrivacyControl` on the page. It asks a business not to sell or share the visitor's personal information. From January 1, 2027, California requires browser makers to offer the setting (AB 566), so the share of visits that send the signal will rise.
 
 A publisher using PMP and the 51Did under the Model Terms for Marketing meets the signal by design, and still asks every visitor how they want to be marketed to. Nothing in the integration changes for a visitor who sends the signal, and the cloud does not read it.
 

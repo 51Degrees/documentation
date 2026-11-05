@@ -73,7 +73,7 @@ IPipeline pipeline = new PipelineBuilder(loggerFactory)
 \verbatim
 use fiftyone\pipeline\core\PipelineBuilder;
 $builder = new PipelineBuilder();
-$pipeline = $builder->buildFromConfig($configFile)->build();
+$pipeline = $builder->buildFromConfig($configFile);
 \endverbatim
 @endsnippet
 @startsnippet{node}

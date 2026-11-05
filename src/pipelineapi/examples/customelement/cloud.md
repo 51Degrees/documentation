@@ -33,12 +33,12 @@ To include them, add the following to the `<dependencies>` section of the projec
 <dependency>
     <groupId>com.51degrees</groupId>
     <artifactId>pipeline.cloudrequestengine</artifactId>
-    <version>4.2.0</version>
+    <version>4.5.128</version>
 </dependency>
 <dependency>
     <groupId>com.51degrees</groupId>
     <artifactId>pipeline.engines</artifactId>
-    <version>4.2.0</version>
+    <version>4.5.128</version>
 </dependency>
 ```
 @endsnippet

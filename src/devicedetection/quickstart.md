@@ -56,7 +56,7 @@
 | **Real-time Applications** | On-premise | Microsecond latency requirements |
 | **Edge/CDN Integration** | On-premise | Offline capability, minimal latency |
 | **Data-sensitive Applications** | On-premise | Processing stays within your infrastructure |
-| **Variable Traffic Patterns** | Cloud | Pay-as-you-go scaling |
+| **Variable Traffic Patterns** | Cloud | No servers of your own to scale, and plans are sized by requests a month |
 
 ---
 
@@ -92,7 +92,7 @@ To get started with C device detection On-premise:
 2. Download the free Lite data file by running `sh data/get-data-files.sh 51Degrees-LiteV4.1.hash` from the repository root, or `./data/get-data-files.ps1 51Degrees-LiteV4.1.hash` in PowerShell. The scripts are part of the [data](https://github.com/51Degrees/data) repository, which is the `data` submodule. The examples also download the file themselves when it is missing.
 3. Follow the [installation instructions](https://github.com/51Degrees/51degrees-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
 4. Follow the linked example here: [Getting Started](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise).
-5. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+5. (optional) For a data file with more devices and properties, [contact 51Degrees](https://51degrees.com/contact-us) about the Bespoke plan, the only paid plan that includes on-premise use. See our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{cxx}
@@ -104,7 +104,7 @@ To get started with C++ device detection On-premise:
 2. Download the free Lite data file by running `sh data/get-data-files.sh 51Degrees-LiteV4.1.hash` from the repository root, or `./data/get-data-files.ps1 51Degrees-LiteV4.1.hash` in PowerShell. The scripts are part of the [data](https://github.com/51Degrees/data) repository, which is the `data` submodule. The examples also download the file themselves when it is missing.
 3. Follow the [installation instructions](https://github.com/51Degrees/51degrees-cxx/blob/main/README%2Emd) to get set up with the project. <!-- TODO use ref and tagfile so this is not hardcoded -->
 4. Follow the linked example here: [Getting Started](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise).
-5. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+5. (optional) For a data file with more devices and properties, [contact 51Degrees](https://51degrees.com/contact-us) about the Bespoke plan, the only paid plan that includes on-premise use. See our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{dotnet}
@@ -184,7 +184,7 @@ To get started with Varnish device detection On-premise:
 2. Download the free Lite data file, and the free Asn data file that the IP Intelligence tests use, by running `sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash 51Degrees-IPIV4AsnIpiV41.ipi` from the repository root. The script is part of the [data](https://github.com/51Degrees/data) repository, which the `cxx` submodule includes at `cxx/data`.
 3. Follow the [installation instructions](@ref DeviceDetection_OtherIntegrations_Varnish) to get set up with the project.
 4. Follow the linked example here: [Getting Started](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise).
-5. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+5. (optional) For a data file with more devices and properties, [contact 51Degrees](https://51degrees.com/contact-us) about the Bespoke plan, the only paid plan that includes on-premise use. See our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{nginx}
@@ -195,7 +195,7 @@ To get started with Nginx device detection On-premise:
 2. Download the free Lite data file by running `sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash` from the repository root. The script is part of the [data](https://github.com/51Degrees/data) repository, which the `cxx` submodule includes at `cxx/data`.
 3. Follow the [installation instructions](@ref DeviceDetection_OtherIntegrations_Nginx) to get set up with the project.
 4. Follow the linked example here: [Getting Started](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise).
-5. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+5. (optional) For a data file with more devices and properties, [contact 51Degrees](https://51degrees.com/contact-us) about the Bespoke plan, the only paid plan that includes on-premise use. See our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{go}
@@ -207,7 +207,7 @@ To get started with Go device detection On-premise:
 2. Download the free Lite data file by running `sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash` from the repository root, or `./cxx/data/get-data-files.ps1 51Degrees-LiteV4.1.hash` in PowerShell. The scripts are part of the [data](https://github.com/51Degrees/data) repository, which the `cxx` submodule includes at `cxx/data`.
 3. Follow the [installation instructions](https://github.com/51Degrees/51degrees-go/tree/main/device-detection#build-and-usage) to get set up with the project.
 4. Follow the linked example here: [Getting Started](https://github.com/51Degrees/51degrees-go/blob/main/examples/device-detection/dd/getting_started/getting_started.go).
-5. (optional) Obtain a License Key by purchasing a subscription and download a data file with access to more devices and properties, see our [pricing page](https://51degrees.com/pricing) for details.
+5. (optional) For a data file with more devices and properties, [contact 51Degrees](https://51degrees.com/contact-us) about the Bespoke plan, the only paid plan that includes on-premise use. See our [pricing page](https://51degrees.com/pricing) for details.
 
 @endsnippet
 @startsnippet{rust}

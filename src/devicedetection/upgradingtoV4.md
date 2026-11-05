@@ -172,7 +172,7 @@ fiftyoneDegreesResultsHashFromEvidence(
 ```
 
 Once finished, the results are released using the `fiftyoneDegreesResultsHashFree` method,
-and the data set with the `fiftyoneDegreesManagerFree` method.
+and the data set with the `fiftyoneDegreesResourceManagerFree` method.
 
 @endsnippet
 @startsnippet{cpp}
@@ -274,7 +274,7 @@ The precise details would depend on:
 - Other DataSet creation options being used.
 
 ```{cs}
-DataSet dataSet = StreamFactory.Create(fileName, false)
+DataSet dataSet = StreamFactory.Create(fileName, false);
 Provider provider = new Provider(dataSet);   
 ```
 
@@ -286,7 +286,7 @@ var pipeline = new DeviceDetectionPipelineBuilder()
   .UseOnPremise(dataFile, true)
   .SetPerformanceProfile(PerformanceProfiles.LowMemory)
   .SetDataUpdateLicenseKey("yourkey")
-  .Build()
+  .Build();
 ```
 
 The supplied settings will be dependent on your old implementation:
@@ -312,7 +312,7 @@ config.Bind("PipelineOptions", options);
 
 // Create the pipeline using the options object
 var pipeline = new FiftyOnePipelineBuilder()
-    .BuildFromConfiguration(options)
+    .BuildFromConfiguration(options);
 ```
 
 The JSON configuration file for the same setup as above (on premise, low memory, auto updates enabled) would look like this:
@@ -962,7 +962,7 @@ flowData.process()
 device = flowData.device
 ```
 
-Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found. For more detail on this see the @falsepositivecontrol feature page.
+Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'has_value()' method that is used to indicate when no match has been found. For more detail on this see the @falsepositivecontrol feature page.
 
 As an example:
 

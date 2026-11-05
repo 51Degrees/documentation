@@ -43,7 +43,7 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 | `postal.confidence` | `LocationConfidence` | See the note below this table. |
 | `location.latitude` | `Latitude` | 51Degrees returns a single averaged value. See coordinate randomization note below. |
 | `location.longitude` | `Longitude` | 51Degrees returns a single averaged value. See coordinate randomization note below. |
-| `location.accuracy_radius` | `AccuracyRadiusMax` | Use `AccuracyRadiusMin` for the inner-bound radius. See the `LocationConfidence` note below for the categorical confidence signal that complements these radii. |
+| `location.accuracy_radius` | `AccuracyRadiusMin` | 51Degrees recommends `AccuracyRadiusMin` when comparing with other solutions. `AccuracyRadiusMax` is the radius of the circle that covers the whole area. See the `LocationConfidence` note below for the categorical confidence signal that complements these radii. |
 | `location.time_zone` | `TimeZoneIana` | `TimeZoneOffset` gives UTC offset separately. |
 | `location.metro_code` |  | Deprecated by MaxMind; no 51Degrees equivalent. |
 | `location.average_income` |  | No equivalent. |

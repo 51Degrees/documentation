@@ -201,7 +201,7 @@ fod.complete(function() {
 ```
 
 ### Profile matching
-* The collected `51D_profileIds` values must be matched against the same data file used to generate the snippets.
+* The collected `51D_ProfileIds` values must be matched against the same data file used to generate the snippets.
 * This ensures accurate and consistent device identification.
 
 ## Semi-static scenario
@@ -223,7 +223,7 @@ You must implement this integration in your own system. The steps below are an o
 * Pre-generate and cache short-lived variants of the 51Degrees-generated script for device groups (e.g., iPhone, iPad, Mac).
 * Your script can decide which cached snippet to load based on basic client-side conditions.
 * Cached variants should be refreshed whenever the data file updates.
-* Always ensure that `51D_profileIds` are matched against the same data file from which snippets were derived.
+* Always ensure that `51D_ProfileIds` are matched against the same data file from which snippets were derived.
 
 ## Conceptual static approach
 
@@ -257,12 +257,12 @@ There is no one-size-fits-all static solution. Stale or outdated static scripts 
 * This helps debug inconsistencies between collected evidence and device matching.
 
 ### Fallback handling
-* Implement fallback logic for cases where no `51D_profileIds` are available (e.g., script blocked, or execution failed).
+* Implement fallback logic for cases where no `51D_ProfileIds` are available (e.g., script blocked, or execution failed).
 * Fallback can use baseline server-side detection or cached evidence.
 
 ### Testing
 * Test across major device types (mobile, tablet, desktop) to ensure snippets behave correctly in different environments.
-* Validate that the evidence collection keys (e.g., `51D_profileIds`) are properly populated in storage and transmitted.
+* Validate that the evidence collection keys (e.g., `51D_ProfileIds`) are properly populated in storage and transmitted.
 
 ### Security
 * Avoid exposing sensitive internal URLs or raw data file paths in the browser.

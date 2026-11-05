@@ -74,7 +74,7 @@ This feature can also be useful in predicting new devices which have not yet bee
 ## Difference
 The difference tolerance allows for User-Agents where some characters differ slightly from what is expected. For example, if a new Android version is released that is not contained in the data set, it can be identified.
 
-Take the example User-Agent (assuming we are using a performance graph) for a known browser version which contains the substring `Android 4.0.4`, and an unknown version containing the substring `Android 4.0.5`. Due to the nature of the chosen **hash** algorithm, the hashes of the two substrings vary proportionally to the difference in ASCII value of the last character. This means that if the difference is set to one, the unknown substring will be allowed as a match for the known Android version.
+Take the example User-Agent for a known browser version which contains the substring `Android 4.0.4`, and an unknown version containing the substring `Android 4.0.5`. Due to the nature of the chosen **hash** algorithm, the hashes of the two substrings vary proportionally to the difference in ASCII value of the last character. This means that if the difference is set to one, the unknown substring will be allowed as a match for the known Android version.
 
 # The algorithm in action {#Device_Detection_Hash_InAction}
 

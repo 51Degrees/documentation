@@ -8,8 +8,8 @@
 
 ## Graph selection
 
-- Removed `usePerformanceGraph` and `usePredictiveGraph` configuration options.  
-  Detection now uses a single, unified predictive graph.
+- The data files now point the performance graph at the predictive graph, so detection uses a single predictive graph.  
+  The `usePerformanceGraph` and `usePredictiveGraph` configuration options remain, but they no longer change the results. At least one of them must be `true`.
 
 ## Property retrieval
 

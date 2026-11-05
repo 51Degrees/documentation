@@ -62,12 +62,12 @@ Currently, the following fields are not directly supported by 51Degrees. Unless 
 |---|---|---|---|
 |dnt|Standard “Do Not Track” flag as set in the header by the browser, where 0 = tracking is unrestricted, 1 = do not track||Not provided, because the flag comes from the browser's settings rather than from the device.|
 |lmt|“Limit Ad Tracking” signal commercially endorsed (e.g., iOS, Android), where 0 = tracking is unrestricted, 1 = tracking must be limited per commercial guidelines.||This data is not captured as it is unique to a device.|
-|geofetch|Indicates if the geolocation API will be available to JavaScript code running in the banner, where 0 = no, 1 = yes.||This data is not captured as it is unique to a device.|
+|geofetch|Indicates if the geolocation API will be available to JavaScript code running in the banner, where 0 = no, 1 = yes.||Not mapped. [GeoLocation](https://51degrees.com/developers/property-dictionary?item=Web%20Browser%20and%20Apps%7CGps) says whether the browser supports a feature to acquire the geographical location, which is not the same, because browsers block that feature in a frame from another origin unless the page allows the frame to use the feature.|
 |flashver|Version of Flash supported by the browser.||Not mapped as legacy property.|
 |language|Browser language using ISO-639-1-alpha-2.|Accept-Language field from HTTP header.|This data is not captured as it is unique to a device.|
-|carrier|Carrier or ISP (e.g., “VERIZON”) using exchange curated string names which should be published to bidders a priori.||[Contact Us](https://51degrees.com/contact-us)|
-|mccmnc|Mobile carrier as the concatenated MCC-MNC code (e.g., “310-005” identifies Verizon Wireless CDMA in the USA).||[Contact Us](https://51degrees.com/contact-us)|
-|connectiontype|Network connection type. Refer to List 5.22.||[Contact Us](https://51degrees.com/contact-us)|
+|carrier|Carrier or ISP (e.g., “VERIZON”) using exchange curated string names which should be published to bidders a priori.||Not mapped, because OpenRTB expects names the exchange chooses. [AsnName](https://51degrees.com/developers/property-dictionary?item=Asn%7CAsn) gives the name registered to the Autonomous System Number of the IP address, and [Carrier](https://51degrees.com/developers/property-dictionary?item=Device%7CName) gives the carrier a device is sold through when it is sold on a single carrier.|
+|mccmnc|Mobile carrier as the concatenated MCC-MNC code (e.g., “310-005” identifies Verizon Wireless CDMA in the USA).||Not mapped. [Mcc](https://51degrees.com/developers/property-dictionary?item=Mcc%7CMcc) gives the mobile country code of the network the device is connected to, found from its IP address, whereas `mccmnc` describes the SIM and also needs the network code.|
+|connectiontype|Network connection type. Refer to List 5.22.||Not mapped, because the values differ. [ConnectionType](https://51degrees.com/developers/property-dictionary?item=Location%7CConnection%20Type) returns Broadband, Cellular, or Hosting and Anonymous, while the OpenRTB list names Ethernet, Wi-Fi, and each generation of mobile network.|
 |ifa|ID sanctioned for advertiser use in the clear (i.e., not hashed).|||
 |didsha1|Hardware device ID (e.g., IMEI); hashed via SHA1.|||
 |didmd5|Hardware device ID (e.g., IMEI); hashed via MD5.|||

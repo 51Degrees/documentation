@@ -26,8 +26,8 @@ The detection requires two distinct origins:
 3. When the third-party endpoint receives the initial request, it sets a detection cookie: `51D_ThirdPartyCookiesEnabled=true` with `SameSite=None; Secure` attributes.
 4. If the browser supports third-party cookies, it stores the cookie.
 5. The JavaScript makes a subsequent callback request to Origin B with credentials.
-6. If the cookie was stored and sent with the callback, the server detects it and sets `ThirdPartyCookiesEnabled` to `True` in the response.
-7. If the cookie was not sent (third-party cookies blocked), the server sets `ThirdPartyCookiesEnabled` to `False`.
+6. The endpoint answers `{"status": true}` when the cookie came back with the request and `{"status": false}` when it did not. The JavaScript asks twice before it treats the cookie as blocked.
+7. The JavaScript records the answer as `51D_ThirdPartyCookiesEnabled`, set to `True`, `False`, or `Unknown` when the endpoint could not be reached, and sends that value as evidence with the callback, so `ThirdPartyCookiesEnabled` takes the same value.
 
 The key point is that regardless of where the JavaScript is served from, the detection snippet inside always communicates with a third-party domain to test cross-origin cookie behavior.
 
@@ -57,14 +57,17 @@ fod.complete(function(data) {
 
 ## ThirdPartyCookiesEnabled
 
-A boolean value indicating whether third-party cookies are supported by the user's browser.
+A string value indicating whether third-party cookies are enabled in the user's browser. Until the JavaScript in `ThirdPartyCookiesEnabledJavaScript` has run, the value is the likely status for the browser.
 
 | Value | Meaning |
 |-------|---------|
-| `True` | Third-party cookies are enabled and working |
-| `False` | Third-party cookies are blocked or unavailable |
+| `True` | Third-party cookies are enabled, and the JavaScript has confirmed it |
+| `False` | Third-party cookies are not enabled, and the JavaScript has confirmed it |
+| `ProbablyTrue` | Third-party cookies are enabled by default for this browser, and the JavaScript has not confirmed it |
+| `ProbablyFalse` | Third-party cookies are not enabled by default for this browser, and the JavaScript has not confirmed it |
+| `Unknown` | The status is not known, either for this browser by default or because the JavaScript could not complete its check |
 
-## ThirdPartyCookiesEnabledJavascript
+## ThirdPartyCookiesEnabledJavaScript
 
 A JavaScript snippet for client-side detection. This property is populated only when server-side detection was not conclusive (e.g., on the first request before the callback). When server-side detection succeeds, this property is empty, eliminating the need for additional client-side detection logic.
 
@@ -72,7 +75,7 @@ A JavaScript snippet for client-side detection. This property is populated only 
 
 Third-party cookies detection is automatically performed when using the 51Degrees @ref PipelineApi_Features_ClientSideEvidence "client-side evidence" JavaScript integration.
 
-**Note:** If you are using the 51Degrees Cloud service, you need a Resource Key that includes the `ThirdPartyCookiesEnabled` and `ThirdPartyCookiesEnabledJavascript` properties. The @ref Services_Configurator "Resource Key guide" shows how to create one.
+**Note:** If you are using the 51Degrees Cloud service, you need a Resource Key that includes the `ThirdPartyCookiesEnabled` and `ThirdPartyCookiesEnabledJavaScript` properties. The @ref Services_Configurator "Resource Key guide" shows how to create one.
 
 After the JavaScript callback to the cloud service, the response includes the cookie detection result alongside the other device detection properties.
 

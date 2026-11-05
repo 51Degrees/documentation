@@ -33,15 +33,15 @@ Our plugin uses device and location data to help you adapt your website and anal
 
 ## Robots.txt and crawler control
 
-The `Robots.txt` tab lets you host a virtual `/robots.txt` file and, optionally, enforce crawler access in real time using 51Degrees crawler detection. Hosting the file is advisory only and does not consume cloud requests; enforcement uses live device detection and consumes one cloud request per page load, so enable it only when you want active bot blocking.
+The `Robots.txt` tab lets you host a virtual `/robots.txt` file and, optionally, enforce crawler access in real time using 51Degrees crawler detection. Hosting the file is advisory only. The plugin fetches the file from the cloud when you save the tab and once a day after that, and serves the stored copy in between, so serving the file uses no cloud requests. Enforcement uses live device detection and consumes one cloud request per page load, so enable it only when you want active bot blocking.
 
 1.  **Enable Robots.txt Hosting** generates a virtual `/robots.txt` from your configured rules and the selected crawler categories. If a physical `robots.txt` file exists in your WordPress root, WordPress serves that file instead, so delete or rename it to use the virtual one.
 
 2.  **Enable Crawler Enforcement** turns on real-time detection and 302-redirects detected bots to your configured `Redirect URL` (leave it empty to deny access without redirecting). The `/robots.txt` file itself always stays reachable to crawlers regardless of the enforcement policy.
 
-3.  **Allowed Crawler Categories** lets crawlers in the selected categories through. Category-based enforcement requires the `CrawlerUsage` property in your Resource Key; without it, only path-based rules apply.
+3.  **Allowed Crawler Categories** lets crawlers in the selected categories through. Category-based enforcement requires the `CrawlerUsage` property in your Resource Key. Without `CrawlerUsage`, the plugin neither blocks nor redirects any crawler, and only the rules in the hosted `robots.txt` file apply.
 
-4.  **Terms Document Locators (TDL)** add `TDL:` lines to the generated file, emitted at the end between the final wildcard `User-agent: *` line and its `Allow: /`. Each TDL points to an immutable legal document that defines the terms under which crawlers may access your site, following the proposed robots.txt extension described in the <a href="https://github.com/jwrosewell/data-labels/blob/main/IETF-Robots.md">data-labels IETF Robots proposal</a>. You can select standard TDLs (for example the MOW Standard Terms), which are maintained externally and checked daily for updated versions, or supply your own custom TDL URLs, one per line.
+4.  **Terms Document Locators (TDL)** add `TDL:` lines to the generated file, emitted at the end between the final wildcard `User-agent: *` line and its `Allow: /`. Each TDL points to an immutable legal document that defines the terms under which crawlers may access your site, following the proposed robots.txt extension described in the <a href="https://github.com/jwrosewell/data-labels/blob/main/IETF-Robots.md">data-labels IETF Robots proposal</a>. You can select standard TDLs (currently the MOW Search Only Terms Web, SOCW), which are maintained externally and checked daily for updated versions, or supply your own custom TDL URLs, one per line.
 
 5.  **Custom Top Entries** and **Custom Bottom Entries** let you prepend or append your own lines around the generated 51Degrees section.
 

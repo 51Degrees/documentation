@@ -10,7 +10,7 @@
 | JavaScript           | <center>Cloud only</center>       |                  | <center>Cloud only</center>        |           |
 | Node.js              | <center>@tick</center>            | <center>@tick</center>            | <center>Cloud only</center>        | <center>@tick</center>     |
 | PHP                  | <center>@tick*</center>           |                  | <center>Cloud only</center>        | <center>@tick</center>     |
-| Python               | <center>@tick</center>            |                  | <center>Cloud only</center>        | <center>@tick</center>     |
+| Python               | <center>@tick</center>            | <center>@tick</center>            | <center>Cloud only</center>        | <center>@tick</center>     |
 | Go                   | <center>On-premise only</center>  | <center>On-premise only</center>  |                   |           |
 | Rust                 | <center>@tick</center>            | <center>@tick</center>            |                   | <center>@tick</center>     |
 

@@ -93,7 +93,7 @@ Here is an example of a basic logger that stores its logs in an array.
 The log object passed to the overridden logInternal function is an associative array that contains:
 
 * time - Y-m-d H:i:s format timestamp
-* level - one of "trace", "debug", "information", "warning", "error", "critical"
+* level - one of "trace", "debug", "info", "warning", "error", "critical"
 * message - the message
 
 ```{php}
@@ -138,8 +138,8 @@ Here is an example of a basic logger that stores its logs in a list.
 
 The log object passed to the overridden log_internal function is a dictionary that contains:
 
-* time - Y-m-d H:i:s format timestamp
-* level - one of "trace", "debug", "information", "warning", "error", "critical"
+* time - timestamp in the format `%Y-%m-%d, %H:%M:%S`
+* level - one of "debug", "info", "warning", "error", "critical"
 * message - the message
 
 ```{python}

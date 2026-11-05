@@ -44,7 +44,10 @@ It will include anything that meets the following criteria:
 1. Any HTTP header.
 2. Any cookie with a name that starts with '51D_'.
 3. A user session cookie, in .NET and Java. It is used only to tell user sessions apart when session tracking is turned on, and it is never sent to 51Degrees.
-4. Any evidence that is not a header, cookie or query string parameter.
+4. Any session value with a name that starts with '51D_'.
+5. Any evidence that is not a header, cookie, session value or query string parameter.
+
+In .NET, evidence named `id.email`, `id.salt`, `request-query` or `request-path` is never shared, whatever its prefix and however the filter is configured.
 
 Configuration options allow this to be tuned to meet your requirements:
 

@@ -34,8 +34,6 @@ To check the key, open `https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.jso
 
 # Step 2. Add the holding page
 
-<!-- Internal note: these code samples move to the examples in the language repositories next week. Replace them with links to those examples then. -->
-
 Save this as `holding.html` next to your server code. The server code in step 3 puts your Resource Key in place of `RESOURCE_KEY`.
 
 ```html
@@ -92,8 +90,6 @@ Things to check when you adapt the code:
 - Node.js writes IPv4 addresses in the form `::ffff:203.0.113.7`. The Node.js code removes the `::ffff:` part before sending the address.
 
 If the cloud can't be reached, takes longer than 2 seconds to answer a request, or returns an error status, the server lets the visitor through for that page and tries again on the next request. A check that also reads the evidence key list makes two requests, each with its own 2 second limit. If the cloud does respond but with Unknown, the visitor gets your challenge (step 4). The example price API only answers sessions that are High, so it refuses calls until a check has worked.
-
-<!-- Internal note: these code samples move to the examples in the language repositories next week. Replace them with links to those examples then. -->
 
 @startsnippets
 @showsnippet{node,Node.js}

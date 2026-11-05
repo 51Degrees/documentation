@@ -5,7 +5,7 @@
 The Performance examples measure how fast the 51Degrees @devicedetection engine
 processes evidence (User-Agents and [User-Agent Client Hints](@ref DeviceDetection_Features_UACH_Overview))
 on your own hardware. They run a tight loop over a fixed set of User-Agent
-strings, count detections per second, and report mean and p99 latencies, so you
+strings, count detections per second, and report the mean time per detection, so you
 can size capacity, validate tuning changes, and compare deployment models on
 the platform you actually run.
 

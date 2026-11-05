@@ -193,7 +193,7 @@ The signature is checked in the browser with Web Crypto, against the public key 
 Of the four things ADI does for a page, two count against the Resource Key's monthly requests.
 
 - The loader is not checked and not counted. Any cache may hold it.
-- The bundle counts as one request per page view, and is the request checked against the key's domains.
+- The bundle counts as one request per download, and is the request checked against the key's domains. A browser can keep the bundle for a day, so later page views in that browser can reuse it without a new request.
 - The public keys count as one request per call. ADI checks signatures with the client in the 51Did package, one for each creator domain on the page, which fetches the key list when the page first needs it and again only under the rules in *Fetching the public keys* on @ref Identifiers_51Did. Between page views the browser's own cache keeps the list for up to 1800 seconds, and never past the moment the next key is published, so a browser asks about once every half hour for each creator domain, rather than once per ad.
 - The signature check is not a request, because it runs in the browser.
 
