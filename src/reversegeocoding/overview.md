@@ -1,4 +1,4 @@
-@page ReverseGeocoding_Overview Reverse Geocoding Overview
+@page ReverseGeocoding_Overview Reverse Geocoding overview
 
 # Introduction
 
@@ -8,7 +8,7 @@ Reverse geocoding turns GPS coordinates into real places. Give us a latitude and
 
 ---
 
-## How It Works
+## How it works
 
 
 Provide coordinates to receive location details such as:
@@ -27,18 +27,18 @@ Reverse geocoding runs as a Cloud Service, so there's no local setup needed. We 
 
 ---
 
-## Common Use Cases
+## Common use cases
 
 
-### 🌍 Content Personalization
+### 🌍 Content personalization
 
 Turn user coordinates into local content. Show nearby stores, local weather, or region-specific offers.
 
-### 📝 Address Completion
+### 📝 Address completion
 
 Help users fill out forms by converting their GPS location into a full address automatically.
 
-### 📊 Analytics and Insights
+### 📊 Analytics and insights
 
 Understand where your traffic comes from. Map user behavior to specific cities, regions, or countries.
 
@@ -46,13 +46,13 @@ Understand where your traffic comes from. Map user behavior to specific cities, 
 
 Enforce geographic restrictions for content licensing, gambling regulations, or data protection laws.
 
-### 🆘 Emergency Services
+### 🆘 Emergency services
 
 Convert GPS coordinates into actionable addresses for emergency response or delivery services.
 
 ---
 
-## Getting Started
+## Getting started
 
 
 Choose a quick start or example:

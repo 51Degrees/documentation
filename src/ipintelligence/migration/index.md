@@ -1,4 +1,4 @@
-@page IpIntelligence_Migration Migration Guide
+@page IpIntelligence_Migration Migration guide
 
 The pages below map other providers' response fields to 51Degrees properties. A field mapping does not guarantee equivalent results. Providers may define properties, location precision, and weighting differently.
 

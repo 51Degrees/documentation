@@ -86,12 +86,12 @@ detection engine natively processes this evidence format, converting it to the e
 See the [Getting Started Console On-premise](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise)
 example for a complete demonstration of this approach.
 
-# Alternative Evidence Formats {#UACH_Javascript_Alternatives}
+# Alternative evidence formats {#UACH_Javascript_Alternatives}
 In addition to the `getHighEntropyValues()` JavaScript API result, the device detection engine
 supports the [Structured User Agent (SUA)](@ref DeviceDetection_Features_UACH_SUA) format
 from the OpenRTB 2.6 specification, commonly used in programmatic advertising scenarios.
 
-## Technical Details {#UACH_Javascript_Technical}
+## Technical details {#UACH_Javascript_Technical}
 The `getHighEntropyValues()` evidence is converted internally to the equivalent `Sec-CH-UA-*` HTTP
 headers before processing:
 

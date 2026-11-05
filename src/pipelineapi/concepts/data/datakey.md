@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_Data_DataKey Data Key
+@page PipelineApi_Concepts_Data_DataKey Data key
 
 # Introduction
 

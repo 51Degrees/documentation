@@ -45,7 +45,7 @@ Control what your content can be used for by checking the `CrawlerUsage` propert
 - **N/A** Not a crawler.
 
 
-# Signed Agents
+# Signed agents
 
 `IsCrawler` and the other crawler properties tell you what an agent declares about itself. An @agentsignature tells you what an agent has proved. The two are used together.
 

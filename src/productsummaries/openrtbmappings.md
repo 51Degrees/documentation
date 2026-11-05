@@ -1,4 +1,4 @@
-@page ProductSummaries_OpenRTBMappings OpenRTB Mappings (Moved)
+@page ProductSummaries_OpenRTBMappings OpenRTB mappings (moved)
 
 # OpenRTB mappings
 

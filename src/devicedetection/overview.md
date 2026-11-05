@@ -1,4 +1,4 @@
-@page DeviceDetection_Overview Device Detection Overview
+@page DeviceDetection_Overview Device Detection overview
 
 # Introduction
 
@@ -8,7 +8,7 @@ Device Detection identifies the device, operating system, and browser making a r
 
 ---
 
-## How It Works
+## How it works
 
 
 Our patented [Hash algorithm](@ref DeviceDetection_Hash) uses the User-Agent and other HTTP headers to identify devices. The sections below explain its capabilities and common use cases.
@@ -22,7 +22,7 @@ Dig deeper in our [technical spec](https://github.com/51Degrees/specifications/b
 
 ---
 
-## Advanced Capabilities
+## Advanced capabilities
 
 
 ### Apple Device Detection
@@ -37,7 +37,7 @@ We support User-Agent Client Hints to identify devices when Chromium browsers re
 
 [Learn more about User-Agent Client Hints](@ref DeviceDetection_Features_UACH_Overview)
 
-### TAC Lookup
+### TAC lookup
 
 Use the Type Allocation Code (TAC) from an IMEI number to identify a mobile device.
 
@@ -58,7 +58,7 @@ Choose what fits your stack:
 
 ---
 
-## Technical Foundation
+## Technical foundation
 
 
 Our patented [Hash Algorithm](@ref DeviceDetection_Hash) is built for performance and scale:
@@ -85,60 +85,60 @@ Use our migration guides to compare properties and features when moving from 51D
 
 ---
 
-## Examples and Getting Started
+## Examples and getting started
 
 
 Choose an example for your application type and deployment:
 
-### 💡 Quick Start
+### 💡 Quick start
 - [Quick Start Guide](@ref DeviceDetection_Quickstart) - Get started in minutes
 
-### Web Integration Examples
+### Web integration examples
 - [Web Examples Index](@ref DeviceDetection_Examples_GettingStarted_Web_Index) - Web integrations, Cloud or On-premise
 - [Cloud Web Integration](@ref DeviceDetection_Examples_GettingStarted_Web_Cloud) - Cloud API examples
 - [On-premise Web Integration](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise) - On-premise examples
 
-### Console Examples
+### Console examples
 - [Console Examples Index](@ref DeviceDetection_Examples_GettingStarted_Console_Index) - Command-line examples
 - [Cloud Console Examples](@ref DeviceDetection_Examples_GettingStarted_Console_Cloud) - Cloud API on the console
 - [On-premise Console Examples](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise) - On-premise console setups
 
-### All Examples
+### All examples
 - [Examples Index](@ref DeviceDetection_Examples_Index) - Browse all our examples in one place
 
 ---
 
-## Common Use Cases
+## Common use cases
 
 
-### 📱 Responsive Design and User Experience
+### 📱 Responsive design and user experience
 
 Detect screen size, device type, and input methods to serve layouts and navigation that feel just right on any device.
 
-### ⚡ Performance Optimization
+### ⚡ Performance optimization
 
 Speed things up. Optimize images, trim down content, or tweak features based on device capabilities and network conditions.
 
-### 📊 Analytics and Business Intelligence
+### 📊 Analytics and business intelligence
 
 Get a detailed picture of your audience's devices, browsers, and operating systems. Use the data to understand behavior, improve user journeys, or enhance programmatic ad analytics, especially with [Prebid integrations](@ref Integrations_Prebid).
 
-### 💰 Advertising and Monetization
+### 💰 Advertising and monetization
 
 Run device-specific ad formats, fine-tune targeting, and optimize placements to boost revenue. Integrate with [Prebid](@ref Integrations_Prebid) to enrich bid requests and make programmatic smarter.
 
-### 🛡️ Security and Fraud Detection
+### 🛡️ Security and fraud detection
 
 Spot suspicious traffic and potential threats using device characteristics and behavioral signals.
 
-### 📲 Mobile App Development
+### 📲 Mobile app development
 
 Identify Progressive Web Apps (PWAs), check feature support, and tailor mobile experiences that feel native.
 
-### 🔄 Cross-Device User Journeys
+### 🔄 Cross-device user journeys
 
 Track users across smartphones, tablets, and desktops for seamless omnichannel experiences.
 
-### 🎬 Content Delivery and Media
+### 🎬 Content delivery and media
 
 Detect codecs, screen resolutions, and bandwidth conditions to deliver streaming media without hiccups.

@@ -1,14 +1,14 @@
-@page ReverseGeocoding_Quickstart Reverse Geocoding Quick Start
+@page ReverseGeocoding_Quickstart Reverse Geocoding quick start
 
-# Getting Started with Reverse Geocoding
+# Getting started with Reverse Geocoding
 
 Reverse geocoding converts latitude and longitude to location details such as countries, cities, and addresses. Follow these steps to set it up.
 
-## Step 1: Get Your Resource Key
+## Step 1: Get your Resource Key
 
 You'll need a Resource Key to access our reverse geocoding service. Follow the @configuratorexplanation to create one. Make sure your Resource Key includes at least the Country field.
 
-## Step 2: Install the Library
+## Step 2: Install the library
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -34,7 +34,7 @@ Install the [fiftyone-location](https://pypi.org/project/fiftyone-location/) pac
 @endsnippet
 
 
-## Step 3: Set Up Your Pipeline
+## Step 3: Set up your pipeline
 
 The pipeline is how you connect to 51Degrees APIs (learn more in @pipelinebasics and @pipeline). Use the Resource Key you created in step 1.
 
@@ -101,7 +101,7 @@ pipeline = LocationPipelineBuilder({"resourceKey": resourceKey}).build()
 ```
 @endsnippet
 
-## Step 4: Add Your Coordinates
+## Step 4: Add your coordinates
 
 You need to provide latitude and longitude coordinates (called @evidence). Use these specific keys:
 
@@ -161,7 +161,7 @@ fd.evidence.add("query.51D_Pos_longitude", longitude)
 ```
 @endsnippet
 
-## Step 5: Run the Query
+## Step 5: Run the query
 
 Call `process()` to start the reverse geocoding lookup.
 
@@ -197,7 +197,7 @@ fd.process()
 ```
 @endsnippet
 
-## Step 6: Get Your Results
+## Step 6: Get your results
 
 Your results are in the `flowData` object (not returned from `process()`). Each property has a `hasValue` boolean. If it's populated, `hasValue` is true and `value` contains the result. If not, `hasValue` is false and you'll find why in the null reason property.
 
@@ -292,13 +292,13 @@ https://github.com/51Degrees/51degrees-python/blob/main/location/examples/cloud/
 
 Having issues? Here are common problems and fixes:
 
-## Resource Key Problems
+## Resource Key problems
 
 **"Resource Key not found" error:** Your Resource Key is invalid. Create a new one with the properties you need.
 
 **Properties missing from results:** Your Resource Key might not have access to location properties. Check what your key can access at https://configure.51degrees.com/YOUR_RESOURCE_KEY or create a new key with the right permissions.
 
-## Wrong Evidence Keys
+## Wrong evidence keys
 
 If you get an error about missing evidence, check you're using the correct keys:
 

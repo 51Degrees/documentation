@@ -1,4 +1,4 @@
-@page PipelineApi_Features_CustomElements Custom Flow Elements
+@page PipelineApi_Features_CustomElements Custom flow elements
 
 # Introduction
 

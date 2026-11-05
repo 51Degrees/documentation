@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_ConcurrentProcessing Concurrent Processing
+@page DeviceDetection_Features_ConcurrentProcessing Concurrent processing
 
 # Introduction
 

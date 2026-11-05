@@ -6,7 +6,7 @@ Device, network, and location data from web requests
 
 Use 51Degrees to detect devices and retrieve location and network data from web requests.
 
-## What We Do
+## What we do
 
 
 Our services include:
@@ -66,7 +66,7 @@ Signed, probabilistic device-bound identifiers (51Did) and an embeddable prefere
 - [PMP](@ref Identifiers_PMP) - Embeddable preference widget
 - [ADI](@ref Identifiers_ADI) - Embeddable ad inspector that tells a visitor why an ad was served
 
-### Client-Side Only
+### Client-side only
 
 Run device detection directly in the browser without server-side code.
 
@@ -76,7 +76,7 @@ Run device detection directly in the browser without server-side code.
 
 ---
 
-## Language Support
+## Language support
 
 
 Use the following libraries to integrate Device Detection and IP Intelligence:
@@ -92,7 +92,7 @@ Use the following libraries to integrate Device Detection and IP Intelligence:
 
 ---
 
-## Specialized Integrations
+## Specialized integrations
 
 
 Tailor your setup for maximum performance:
@@ -107,12 +107,12 @@ Explore all our SDKs on [GitHub](https://github.com/51Degrees/).
 
 ---
 
-## Common Use Cases
+## Common use cases
 
 
 Here's how you can combine our services for real-world results:
 
-### 🎯 Enhanced User Experience
+### 🎯 Enhanced user experience
 
 Device Detection + IP Intelligence = spot-on content delivery.
 
@@ -124,13 +124,13 @@ Combine Device Detection and IP Intelligence to assess device and location patte
 
 Spot suspicious device and location patterns, detect bots, and prevent account takeovers.
 
-### 📊 Programmatic Advertising
+### 📊 Programmatic advertising
 
 Device Detection + IP Intelligence + [Prebid Integration](@ref Integrations_Prebid) = better targeting.
 
 Enrich bid requests with precise device and location data for sharper targeting.
 
-### 📈 Advanced Analytics
+### 📈 Advanced analytics
 
 Combine Device Detection and IP Intelligence to segment audiences by device and location.
 
@@ -142,7 +142,7 @@ IP Intelligence + Reverse Geocoding = smarter, compliant experiences.
 
 Enable GDPR compliance, local content licensing, and location-based personalization.
 
-### ⚡ Performance Optimization
+### ⚡ Performance optimization
 
 Device Detection + IP Intelligence = faster, smarter websites.
 
@@ -150,12 +150,12 @@ Serve optimized images, adjust content for connection speeds, and choose the bes
 
 ---
 
-## Documentation Hub
+## Documentation hub
 
 
 Everything you need to succeed:
 
-### 💡 Quick Starts
+### 💡 Quick starts
 
 - [Device Detection](@ref DeviceDetection_Quickstart) - Cloud vs. On-premise
 - [IP Intelligence](@ref IpIntelligence_Quickstart) - Location and network data
@@ -171,7 +171,7 @@ Everything you need to succeed:
 - [Reverse Geocoding Overview](@ref ReverseGeocoding_Overview)
 - [Identifiers Overview](@ref Identifiers_Overview)
 
-### Advanced Topics
+### Advanced topics
 
 - [Pipeline API features](@ref PipelineApi_Features_Index)
 - [Architecture concepts](@ref PipelineApi_Concepts_Index)
@@ -180,7 +180,7 @@ Everything you need to succeed:
 
 ---
 
-## 💬 Get Support
+## 💬 Get support
 
 
 We're here to help every step of the way:

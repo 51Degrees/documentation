@@ -1,10 +1,10 @@
-@page DeviceDetection_Quickstart Device Detection Quick Start
+@page DeviceDetection_Quickstart Device Detection quick start
 
-# Getting Started with Device Detection
+# Getting started with Device Detection
 
 51Degrees Device Detection offers two integration options. Each has different benefits to match your needs:
 
-## Choose Your Integration
+## Choose your integration
 
 ### Cloud service {#cloud-integration}
 
@@ -46,7 +46,7 @@
 
 ---
 
-## Which Integration Should I Choose?
+## Which integration should I choose?
 
 | **Use Case** | **Recommended** | **Why** |
 |--------------|-----------------|----------|
@@ -60,13 +60,13 @@
 
 ---
 
-## Enhanced Accuracy Options
+## Enhanced accuracy options
 
 For more accurate results (especially for identifying specific iPhone/iPad models), consider enabling [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) collection.
 
 ---
 
-## Language-Specific Integration
+## Language-specific integration
 
 Most programming languages support both integration models. Select your language below for detailed setup instructions:
 

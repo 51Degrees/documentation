@@ -1,4 +1,4 @@
-@page PipelineApi_Features_ParallelExecution Parallel Execution
+@page PipelineApi_Features_ParallelExecution Parallel execution
 
 # Introduction
 

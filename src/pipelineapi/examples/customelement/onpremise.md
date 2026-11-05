@@ -1,4 +1,4 @@
-@page PipelineApi_Examples_CustomElement_OnPremise Custom On-premise Engine
+@page PipelineApi_Examples_CustomElement_OnPremise Custom on-premise engine
 
 # Introduction
 

@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_FlowElements_FlowElement Flow Element
+@page PipelineApi_Concepts_FlowElements_FlowElement Flow element
 
 # Introduction
 

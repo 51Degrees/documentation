@@ -1,4 +1,4 @@
-@page PipelineApi_Examples_CustomElement_FlowElement Simple Custom Flow Element
+@page PipelineApi_Examples_CustomElement_FlowElement Simple custom flow element
 
 # Introduction
 

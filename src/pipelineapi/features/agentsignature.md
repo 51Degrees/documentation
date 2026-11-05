@@ -1,4 +1,4 @@
-@page PipelineApi_Features_AgentSignature Agent Signatures
+@page PipelineApi_Features_AgentSignature Agent signatures
 
 # Introduction
 

@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_FlowElements_CloudEngine Cloud Engine
+@page PipelineApi_Concepts_FlowElements_CloudEngine Cloud engine
 
 # Introduction
 
@@ -35,7 +35,7 @@ populated from a request to the [Cloud Service](@term{CloudService}).
 Typically, a **Cloud Engine** does not carry out processing itself. Instead, its processing consists of sending
 a call to a [Cloud Service](@term{CloudService}) and interpreting the result.
 
-# 51Degrees Cloud Engines
+# 51Degrees cloud engines
 
 The functionality of all @aspectengines that make use of the 51Degrees cloud is split into two 
 separate @aspectengines.

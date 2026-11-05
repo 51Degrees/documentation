@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_Configuration_Builders_PipelineBuilder Pipeline Builder
+@page PipelineApi_Concepts_Configuration_Builders_PipelineBuilder Pipeline builder
 
 # Introduction
 
@@ -17,7 +17,7 @@ for more technical details.
 
 # Options
 
-## Auto dispose Elements
+## Auto dispose elements
 
 By default, when a @pipeline is disposed of, the @flowelements which it
 contained will still exist and will need to be disposed of at some point.

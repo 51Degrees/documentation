@@ -1,6 +1,6 @@
-@page DeviceDetection_Features_AppleDetection Apple Model Detection
+@page DeviceDetection_Features_AppleDetection Apple model detection
 
-# Apple Model Detection
+# Apple model detection
 
 Apple devices are unique in that their User-Agent strings do not include hardware model
 identifiers - unlike most Android devices.
@@ -59,7 +59,7 @@ the generic Apple group profile with a more accurate one.
 - [Web Integration Example](@ref DeviceDetection_Examples_GettingStarted_Web_Index): See how to implement it with code samples
 - [51Degrees Blog - Apple](https://51degrees.com/resources/blogs/tag/Apple): Technical deep dives, case studies, and news we've produced relating to Apple
 
-## Detection Results for Apple Devices {#detection-results}
+## Detection results for Apple devices {#detection-results}
 Apple has continually worked to homogenize any information that a website can get about a device, through JavaScript or any other means. For more information, take a look at our [Upgrade Apple Device](https://51degrees.com/blog/upgrade-apple-device-detection) blog. 
 
 Below we cover the detection results that are experienced for each iPhone, starting from the iPhone 3GS, when using Safari.

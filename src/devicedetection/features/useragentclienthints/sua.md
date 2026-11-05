@@ -15,7 +15,7 @@ engine with the `query.` or `cookie.` prefix:
 flowData.AddEvidence("query.51D_StructuredUserAgent", suaJsonString);
 ```
 
-# SUA Format
+# SUA format
 
 The SUA format looks like this:
 
@@ -32,7 +32,7 @@ The SUA format looks like this:
 }
 ```
 
-# Technical Details
+# Technical details
 
 The SUA format is converted internally to the equivalent `Sec-CH-UA-*` HTTP
 headers before processing:
@@ -48,7 +48,7 @@ headers before processing:
 
 The device detection engine converts SUA evidence in its C layer. You do not need additional pipeline elements or preprocessing steps.
 
-# Related Pages
+# Related pages
 
 For more details on OpenRTB integration, see the [OpenRTB Mappings](@ref DeviceDetection_OtherIntegrations_OpenRTBMappings) page.
 

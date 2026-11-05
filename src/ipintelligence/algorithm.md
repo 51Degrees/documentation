@@ -1,12 +1,12 @@
-@page IpIntelligence_Algorithm IP Intelligence Algorithm
+@page IpIntelligence_Algorithm IP Intelligence algorithm
 
-# IP Intelligence Algorithm
+# IP Intelligence algorithm
 
 51Degrees IP Intelligence uses a directed acyclic graph to identify location and network information from an IPv4 or IPv6 address.
 
-## Core Algorithm Design
+## Core algorithm design
 
-### Data Structure
+### Data structure
 
 Vertices are variable length bits forming lower and upper limits corresponding to bit positions in the target IP address.
 

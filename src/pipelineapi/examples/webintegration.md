@@ -1,4 +1,4 @@
-@page PipelineApi_Examples_WebIntegration Web Integration Examples
+@page PipelineApi_Examples_WebIntegration Web integration examples
 
 # Introduction
 

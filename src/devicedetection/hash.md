@@ -1,4 +1,4 @@
-@page DeviceDetection_Hash Hash Algorithm
+@page DeviceDetection_Hash Hash algorithm
 
 # Introduction
 The Hash algorithm identifies and hashes substrings in User-Agents to produce a data set with the following characteristics:

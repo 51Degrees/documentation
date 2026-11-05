@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_FalsePositiveControl False Positives
+@page DeviceDetection_Features_FalsePositiveControl False positives
 
 # Introduction
 
@@ -16,7 +16,7 @@ Each language implements this differently but in all cases, there will be some f
 
 The detail associated with this exception will explain why the property does not have a specified value.
 
-# No Match Found
+# No match found
 
 In some cases, the device detection algorithm can fail to find any match at all for the supplied evidence.
 
@@ -26,7 +26,7 @@ If `AllowUnmatched` is true then the default @profile will be returned.
 
 The default @profile has specific values for properties but they may be incorrect. For example, the default hardware profile has `IsMobile = false`. In reality, if no match was found then we have no idea if the device is a mobile device or not.
 
-# Bad Match
+# Bad match
 
 The `Difference` value is used to measure how different a potential match is from the supplied evidence.
 The `Drift` value measures how far a matching substring is from its expected position.

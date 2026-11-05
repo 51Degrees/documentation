@@ -1,11 +1,11 @@
-@page DeviceDetection_Features_CsvDataFile CSV Data File
+@page DeviceDetection_Features_CsvDataFile CSV data file
 
 # Overview
 
 As well as providing device detection, we also offer access to a CSV version of our data.
 This includes all property values for all profiles (hardware, platform, browser, and crawler). It does not include any information to help determine device details from User-Agent or UA-CH values.
 
-# Use Cases
+# Use cases
 
 Use this data to look up device details by a key such as a TAC or a model name returned by a native app.
 

@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_MetaData_AspectProperties Aspect Properties
+@page PipelineApi_Concepts_MetaData_AspectProperties Aspect properties
 
 # Introduction
 

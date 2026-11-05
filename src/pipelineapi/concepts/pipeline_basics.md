@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_PipelineBasics Pipeline Basics
+@page PipelineApi_Concepts_PipelineBasics Pipeline basics
 
 # 51Degrees Pipeline documentation
 

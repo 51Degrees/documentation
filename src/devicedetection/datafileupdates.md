@@ -1,4 +1,4 @@
-@page DeviceDetection_DataFileUpdates Data File Updates
+@page DeviceDetection_DataFileUpdates Data file updates
 
 # Introduction
 

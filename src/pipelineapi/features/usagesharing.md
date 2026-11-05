@@ -1,4 +1,4 @@
-@page PipelineApi_Features_UsageSharing Usage Sharing Feature
+@page PipelineApi_Features_UsageSharing Usage sharing feature
 
 # Introduction
 
@@ -205,7 +205,7 @@ The maximum time period which @evidence is stored for the purpose of filtering
 
 The target destination for **usage sharing** data. The default is https://devices-v4.51degrees.com/new.ashx. 
 
-# Usage Sharing for low-level APIs {#Low_Level_Usage_Sharing}
+# Usage sharing for low-level APIs {#Low_Level_Usage_Sharing}
 The low-level device detection APIs such as C, Nginx, and Varnish do not support **usage sharing** 
 out of the box. However, some customers using these technologies still want to share usage with 
 us in order to help us improve the accuracy of results.

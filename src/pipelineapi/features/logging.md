@@ -132,7 +132,7 @@ $pipelineBuilder->addLogger($this->logger);
 @endsnippet
 @startsnippet{python}
 
-The python pipeline implementation includes a Logger class that can be used to record events that take place in the pipeline.
+The Python pipeline implementation includes a Logger class that can be used to record events that take place in the pipeline.
 
 Here is an example of a basic logger that stores its logs in a list.
 

@@ -1,6 +1,6 @@
-@page DeviceDetection_UpgradingtoV4 Upgrading to Version 4
+@page DeviceDetection_UpgradingtoV4 Upgrading to version 4
 
-# Upgrading to 51Degrees Version 4
+# Upgrading to 51Degrees version 4
 
 This guide details how current Version 3 customers of 51Degrees can upgrade to Version 4.
 
@@ -22,7 +22,7 @@ If you are looking for User-Agent Client Hints support in the cloud, please foll
 
 <BR>
 
-## V3 On-premise users {#V3_On_Prem}
+## V3 on-premise users {#V3_On_Prem}
 If you wish to continue to use 51Degrees On-premise, you will need to purchase a License Key to access the Version 4 data files. Visit our [pricing](https://51degrees.com/pricing) page and
 select the suitable plan for your needs. Alternatively, you may wish to use our [Cloud Service](@ref V3_Cloud), which can be called from the server via our APIs.
 
@@ -52,7 +52,7 @@ intended deployment method, programming language, and environment configuration 
 
 <BR>
 
-# Migration Guides {#migration-guides}
+# Migration guides {#migration-guides}
 This section describes the detailed steps for migrating from the previous 51Degrees Device detection API to either version 4 of that API or to the @Pipeline API where it is available.
 In either case, there are breaking changes so this guide should be followed carefully to ensure no problems arise.
 
@@ -62,7 +62,7 @@ The language that you are using is the most important factor in determining what
 For some languages and frameworks, such as C, Nginx, or Varnish, there is no @Pipeline API so you will be migrating directly to version 4 of the Device Detection API.
 For other languages such as Java or .NET, you will be migrating from a pure device detection installation to the @Pipeline API with a device detection plugin.
 
-## Language-Specific Migration Steps
+## Language-specific migration steps
 
 Regardless of which API you are migrating to, there are breaking changes and new features to be aware of. See the following section for detail on the changes needed for your language of choice.
 
@@ -909,7 +909,7 @@ if(device.ismobile.hasValue) {
 <!-- ===================================================================================
      |                                      Python                                     |
      =================================================================================== -->
-First, add the fiftyone_devicedetection package from PyPi.
+First, add the fiftyone_devicedetection package from PyPI.
 
 With the V3 API, a provider could be created with something like this:
 

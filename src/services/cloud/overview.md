@@ -1,4 +1,4 @@
-@page Services_Cloud_Overview Cloud Service Overview
+@page Services_Cloud_Overview Cloud Service overview
 
 The Cloud Service comes in two forms: the Cloud hosted by 51Degrees, which this page describes, and the [Self-Hosted Docker](@ref Services_Cloud_SelfHostedDocker) image, which serves the same API from your own infrastructure and authenticates with your License Key alone, supplied once when the container starts.
 

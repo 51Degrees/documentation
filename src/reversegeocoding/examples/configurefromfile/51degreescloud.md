@@ -1,4 +1,4 @@
-@page ReverseGeocoding_Examples_ConfigureFromFile_51DegreesCloud Reverse Geocoding Configuration File
+@page ReverseGeocoding_Examples_ConfigureFromFile_51DegreesCloud Reverse Geocoding configuration file
 
 # Introduction
 

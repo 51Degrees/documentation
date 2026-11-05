@@ -1,4 +1,4 @@
-@page ProductSummaries_Benchmarks_Nightly Nightly Benchmarks
+@page ProductSummaries_Benchmarks_Nightly Nightly benchmarks
 
 | API / Product | <center>Device Detection</center>                                                                                                                        | <center>IP Intelligence</center>                                                                                                                        |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|

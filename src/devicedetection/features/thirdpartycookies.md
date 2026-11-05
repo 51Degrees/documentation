@@ -8,18 +8,18 @@ For businesses that rely on third-party cookies for functionality such as cross-
 
 51Degrees provides a lightweight, stateless mechanism to detect third-party cookie support as part of the cloud service.
 
-# How It Works
+# How it works
 
 The generated @ref PipelineApi_Features_ClientSideEvidence "client-side evidence" JavaScript checks whether the browser can send a cookie to a third-party domain.
 
-## Two-Origin Architecture
+## Two-origin architecture
 
 The detection requires two distinct origins:
 
 1. **Origin A** - The customer's website (e.g., `example.com`)
 2. **Origin B** - The third-party detection endpoint (e.g., `cloud.51degrees.com`)
 
-## Detection Flow
+## Detection flow
 
 1. The user's page on Origin A includes the 51Degrees @ref PipelineApi_Features_ClientSideEvidence "client-side evidence" JavaScript. This JavaScript can be served from either Origin A (first-party) or Origin B (third-party) - the serving location does not affect the detection.
 2. The JavaScript contains a detection snippet that always makes a request to the third-party endpoint (Origin B) to check cookie support.
@@ -31,7 +31,7 @@ The detection requires two distinct origins:
 
 The key point is that regardless of where the JavaScript is served from, the detection snippet inside always communicates with a third-party domain to test cross-origin cookie behavior.
 
-## Cookie Attributes
+## Cookie attributes
 
 The detection cookie uses specific attributes required for cross-site delivery in modern browsers:
 
@@ -76,7 +76,7 @@ Third-party cookies detection is automatically performed when using the 51Degree
 
 After the JavaScript callback to the cloud service, the response includes the cookie detection result alongside the other device detection properties.
 
-## Custom Endpoint Configuration
+## Custom endpoint configuration
 
 By default, the detection snippet communicates with `cloud.51degrees.com`. If you are hosting your own 51Degrees cloud service or need to use a different endpoint, you can customize the third-party cookie detection endpoint by setting the `window.fodTpcEndpoint` global variable before loading the JavaScript:
 
@@ -89,7 +89,7 @@ By default, the detection snippet communicates with `cloud.51degrees.com`. If yo
 
 This allows you to point the detection to your own hosted instance while maintaining the third-party cookie detection functionality.
 
-# Browser Support Considerations
+# Browser support considerations
 
 Modern browsers have varying levels of third-party cookie support:
 

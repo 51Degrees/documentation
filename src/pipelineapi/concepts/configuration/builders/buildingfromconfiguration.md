@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration Building from Configuration
+@page PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration Building from configuration
 
 # Introduction
 

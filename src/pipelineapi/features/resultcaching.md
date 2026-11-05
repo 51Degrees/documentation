@@ -1,4 +1,4 @@
-@page PipelineApi_Features_ResultCaching Result Caching
+@page PipelineApi_Features_ResultCaching Result caching
 
 # Introduction
 

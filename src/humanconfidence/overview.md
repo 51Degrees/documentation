@@ -1,4 +1,4 @@
-@page HumanConfidence_Overview Human Confidence Overview
+@page HumanConfidence_Overview Human Confidence overview
 
 # Introduction
 

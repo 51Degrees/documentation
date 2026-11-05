@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_PerformanceOptions Performance Options
+@page DeviceDetection_Features_PerformanceOptions Performance options
 
 # Introduction
 
@@ -34,7 +34,7 @@ We measured throughput, startup time, and memory for Device Detection on seven m
 
 In version 4.5 and later, device detection uses a single predictive graph.
 
-# Property Indexing
+# Property indexing
 
 A configuration option `propertyValueIndex` is available (introduced in version 4.5). 
 When enabled (set to `true`), the engine indexes property values at startup.

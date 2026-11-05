@@ -1,4 +1,4 @@
-@page Services_Cloud_ErrorMessages Error Messages
+@page Services_Cloud_ErrorMessages Error messages
 
 # Cloud error response messages
 

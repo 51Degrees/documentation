@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_Configuration_Builders_ElementBuilder Element Builder
+@page PipelineApi_Concepts_Configuration_Builders_ElementBuilder Element builder
 
 # Introduction
 

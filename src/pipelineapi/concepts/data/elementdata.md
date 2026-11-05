@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_Data_ElementData Element Data
+@page PipelineApi_Concepts_Data_ElementData Element data
 
 # Introduction
 

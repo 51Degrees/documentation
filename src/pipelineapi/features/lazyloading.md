@@ -1,4 +1,4 @@
-@page PipelineApi_Features_LazyLoading Lazy Loading
+@page PipelineApi_Features_LazyLoading Lazy loading
 
 # Introduction
 

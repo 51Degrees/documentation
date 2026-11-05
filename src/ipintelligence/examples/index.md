@@ -1,4 +1,4 @@
-@page IpIntelligence_Examples_Index IP Intelligence Examples
+@page IpIntelligence_Examples_Index IP Intelligence examples
 
 @subpage IpIntelligence_Examples_GettingStarted_Console_Index 
 

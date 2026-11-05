@@ -21,7 +21,7 @@ For example, if you intend to look up latitude and longitude data to get a count
 
 Choose the properties you need before generating the Resource Key. You cannot change its property list later.
 
-## Step 2: Review Configuration
+## Step 2: Review configuration
 
 Some properties require a subscription to appear in query results, or for queries over a certain quota. The Review Configuration screen will inform you if a subscription License Key is required and allow you to secure your properties to specific domains, register for product updates, attach your new Resource Key to a subscription, and read and agree to the terms and conditions.
 

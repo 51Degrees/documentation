@@ -1,4 +1,4 @@
-@page ReverseGeocoding_Examples_WebIntegration_Examples Reverse Geocoding Web Integration Examples
+@page ReverseGeocoding_Examples_WebIntegration_Examples Reverse Geocoding web integration examples
 
 # Introduction
 

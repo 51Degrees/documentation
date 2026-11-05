@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_UACH_Headers HTTP Headers
+@page DeviceDetection_Features_UACH_Headers HTTP headers
 
 # Introduction
 
@@ -118,7 +118,7 @@ Critical-CH: sec-ch-ua-arch, sec-ch-ua-full-version, sec-ch-ua-full-version-list
 Accept-CH:  sec-ch-ua-arch, sec-ch-ua-full-version, sec-ch-ua-full-version-list, sec-ch-ua-model, sec-ch-ua-platform, sec-ch-ua-platform-version
 ```
 
-## B2B Service Supplier {#UACH_Http_Headers_BtoB}
+## B2B service supplier {#UACH_Http_Headers_BtoB}
 If your service receives requests as a third party, ask your customers to configure their websites so that browsers can send UA-CH values to your service.
 This is because the 'high-entropy' UA-CH values are not sent to third-parties by default.
 

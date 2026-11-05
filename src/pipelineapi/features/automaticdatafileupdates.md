@@ -1,4 +1,4 @@
-@page PipelineApi_Features_AutomaticDatafileUpdates Automatic Data File Updates
+@page PipelineApi_Features_AutomaticDatafileUpdates Automatic data file updates
 
 # Introduction
 

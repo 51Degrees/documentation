@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_Data_AspectData Aspect Data
+@page PipelineApi_Concepts_Data_AspectData Aspect data
 
 # Introduction
 

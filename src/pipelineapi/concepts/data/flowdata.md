@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_Data_FlowData Flow Data
+@page PipelineApi_Concepts_Data_FlowData Flow data
 
 # Introduction
 

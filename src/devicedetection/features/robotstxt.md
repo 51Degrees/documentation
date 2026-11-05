@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_RobotsTxt Robots.txt Generator
+@page DeviceDetection_Features_RobotsTxt Robots.txt generator
 
 # Introduction
 
@@ -27,7 +27,7 @@ produces a file to host, with no code involved.
 | 51Degrees Cloud | Any language, over HTTP |
 | Hosted generator | No code required |
 
-# Output Properties
+# Output properties
 
 The engine computes two output properties at request time from the crawler data set and supplied evidence. These properties are not stored in a data file.
 
@@ -57,7 +57,7 @@ If the same usage is supplied as both `allow` and `disallow`, `disallow` wins.
 
 The [Crawlers](@ref DeviceDetection_Features_Crawlers) page describes `Index`, `Train`, `Input`, `Search`, `Monitor`, `Archiving`, `Preview`, `Security`, `Analytics`, `Feed`, and `Discovery`. Query the data set for the currently supported `CrawlerUsage` values, as shown under [Cloud Usage](#cloud-usage).
 
-# Terms Document Locator (TDL)
+# Terms document locator (TDL)
 
 A Terms Document Locator (TDL) is a stable URL that points at the human-readable terms of use that crawlers in the wildcard `Allow:` block must comply with. When the engine receives the additional evidence key:
 
@@ -75,7 +75,7 @@ The `tdl` value can be:
 
 Entries that are neither absolute URIs nor known macro ids are silently dropped, per the IETF-Robots TDL specification. If everything supplied is dropped, the engine falls back to the standard `Allow: /` wildcard block.
 
-# Cloud Usage
+# Cloud usage
 
 Robots.txt is available from 51Degrees Cloud on the free plan. For a step by step guide to fetching the file and keeping it fresh, see @ref Services_Cloud_RobotsTxt. When the properties are enabled on a Resource Key, two additional steps make integration straightforward.
 
@@ -133,7 +133,7 @@ Builder parameters:
 
 Properties advertised by the engine carry the data tier of the underlying device-detection data file, so `robotstxt.plaintext` and `robotstxt.annotatedtext` are only available when running against an Enterprise tier file (or higher) that contains the crawler properties.
 
-# See Also
+# See also
 
 - @ref DeviceDetection_Features_Crawlers for `CrawlerUsage` value definitions.
 - [51Degrees Robots.txt generator](https://51degrees.com/robots-txt), a hosted interface for the same engine.

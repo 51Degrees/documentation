@@ -1,4 +1,4 @@
-@page DeviceDetection_OtherIntegrations_Index Other Integrations
+@page DeviceDetection_OtherIntegrations_Index Other integrations
 
 @subpage DeviceDetection_OtherIntegrations_Prebid
 

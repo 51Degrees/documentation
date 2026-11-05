@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_UACH_Overview UA-CH Overview
+@page DeviceDetection_Features_UACH_Overview UA-CH overview
 
 # Introduction
 

@@ -1,4 +1,4 @@
-@page ProductSummaries_TestedVersions Tested Versions
+@page ProductSummaries_TestedVersions Tested versions
 
 Our code base has been tested on the following CPU architectures:
 
@@ -165,7 +165,7 @@ If you have a configuration that is not covered, please [contact us](https://51d
 These are automatically tested on [GitHub](https://github.com/51Degrees/51degrees-rust).
 <div id="rust-versions"></div>
 
-Language Versions:
+Language versions:
 - Rust stable (current)
 - Minimum supported Rust version: 1.94
 

@@ -1,4 +1,4 @@
-@page PipelineApi_Features_ErrorHandling Error Handling
+@page PipelineApi_Features_ErrorHandling Error handling
 
 # Introduction
 

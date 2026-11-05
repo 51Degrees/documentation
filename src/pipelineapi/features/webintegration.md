@@ -1,4 +1,4 @@
-@page PipelineApi_Features_WebIntegration Web Integration Feature
+@page PipelineApi_Features_WebIntegration Web integration feature
 
 # Introduction
 

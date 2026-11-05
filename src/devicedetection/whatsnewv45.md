@@ -6,12 +6,12 @@
 
 - Optimized processing of @useragentclienthints, reducing lookup time.
 
-## Graph Selection
+## Graph selection
 
 - Removed `usePerformanceGraph` and `usePredictiveGraph` configuration options.  
   Detection now uses a single, unified predictive graph.
 
-## Property Retrieval
+## Property retrieval
 
 - Added `propertyValueIndex` configuration option.  
   When `true`, property values are indexed at startup for faster retrieval.  
@@ -35,7 +35,7 @@
   additional pipeline elements. See the [UA-CH JavaScript page](@ref DeviceDetection_Features_UACH_Javascript)
   for detailed usage information.
 
-## Results Serialization
+## Results serialization
 
 - Introduced `ResultsHashSerializer` service class.  
   Enables retrieval of all detected property values as a single JSON-serialized string.  

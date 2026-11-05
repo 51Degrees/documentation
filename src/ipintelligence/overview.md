@@ -1,4 +1,4 @@
-@page IpIntelligence_Overview IP Intelligence Overview
+@page IpIntelligence_Overview IP Intelligence overview
 
 # Introduction
 
@@ -25,7 +25,7 @@ See [technical specification](https://github.com/51Degrees/specifications/blob/m
 
 ---
 
-## Advanced Features
+## Advanced features
 
 
 ### Coverage
@@ -40,13 +40,13 @@ Coordinates returned for an IP address are [randomized](@ref IpIntelligence_Feat
 
 Use [weighted results](@ref IpIntelligence_Features_Weighting) to interpret location precision.
 
-### Device Detection Integration
+### Device Detection integration
 
 Combine IP Intelligence with [Device Detection](@ref DeviceDetection_Overview) to use network, location, and device data together.
 
 ---
 
-## Integration Options
+## Integration options
 
 
 Choose what fits your stack:
@@ -58,7 +58,7 @@ Choose what fits your stack:
 
 ---
 
-## Examples and Getting Started
+## Examples and getting started
 
 
 Choose a quick start or an example for your application:
@@ -70,18 +70,18 @@ Choose a quick start or an example for your application:
 
 ---
 
-## Common Use Cases
+## Common use cases
 
 
-### 🎯 Targeted Advertising
+### 🎯 Targeted advertising
 
 Deliver location and device-appropriate advertising based on IP geolocation combined with device characteristics.
 
-### 🌍 Content Personalization
+### 🌍 Content personalization
 
 Serve location-relevant content (news, language, pricing) while adapting to device capabilities and connection quality.
 
-### ⚡ Performance Optimization
+### ⚡ Performance optimization
 
 Anticipate network characteristics based on ISP and connection type to optimize content delivery and user experience.
 

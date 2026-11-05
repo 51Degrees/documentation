@@ -87,13 +87,13 @@ This V3 functionality is extended with more options available in V4. These metri
 51D_match_all x-metrics IsMobile,Iterations,Drift,Difference,Method,UserAgents,MatchedNodes,DeviceId;
 ```
 
-## Javascript and property overrides
+## JavaScript and property overrides
 
 Some properties require JavaScript to run in the browser. For example, run the JavaScript from ScreenPixelsWidthJavascript to obtain ScreenPixelsWidth. Use `51D_get_javascript_single` or `51D_get_javascript_all` to serve the JavaScript as response content.
 
 Once the value has been obtained by executing the Javascript in client user agent, it can be added as evidence in the next request's cookie or query argument. 51Degrees module will override the returned value with what it found in the request.
 
-## False Positive Controls
+## False positive controls
 
 Nginx Device Detection V4 module supports `False Positives` features as described at [False Positives](@ref DeviceDetection_Features_FalsePositiveControl) via settings of directives `51D_drift`, `51D_difference`, and `51D_allow_unmatched`. When `AllowUnmatched` is set to `off`, if `HasValue` is `false`, a `NoMatch` will be returned. Else, if `AllowUnmatched` is set to `on`, when a match can not be found, default profile will be returned such as `Unknown`, `N/A`, or similar.
 

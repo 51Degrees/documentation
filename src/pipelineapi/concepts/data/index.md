@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_Data_Index Types of Data
+@page PipelineApi_Concepts_Data_Index Types of data
 
 @subpage PipelineApi_Concepts_Data_FlowData
 

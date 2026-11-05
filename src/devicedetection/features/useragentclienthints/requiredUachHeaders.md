@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_UACH_RequiredUachHeaders Required UA-CH Headers
+@page DeviceDetection_Features_UACH_RequiredUachHeaders Required UA-CH headers
 
 # Overview
 

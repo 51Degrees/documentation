@@ -1,4 +1,4 @@
-@page PipelineApi_Examples_Index Pipeline API Examples
+@page PipelineApi_Examples_Index Pipeline API examples
 
 
 @subpage PipelineApi_Examples_CustomElement_Index

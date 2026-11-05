@@ -1,4 +1,4 @@
-@page PipelineApi_Features_FlexibleAccessors Flexible Accessors
+@page PipelineApi_Features_FlexibleAccessors Flexible accessors
 
 # Introduction
 

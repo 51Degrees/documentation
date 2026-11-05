@@ -1,4 +1,4 @@
-@page PipelineApi_Features_ClientSideEvidence Client-side Evidence
+@page PipelineApi_Features_ClientSideEvidence Client-side evidence
 
 # Introduction
 
@@ -115,7 +115,7 @@ For efficiency, we store limited data in cookies or session storage.
 Anything prefixed `51D_` or `fod_` is related to 51Degrees **client-side evidence**
 handling and is used solely for the purpose of enabling this technical feature.
 
-## Storage Mechanism
+## Storage mechanism
 
 By default, when using the 51Degrees Cloud service, values returned from client-side
 evidence processing are stored using `sessionStorage`. This avoids setting any
@@ -160,7 +160,7 @@ or [reverse geocoding examples](@ref ReverseGeocoding_Examples_WebIntegration_Ex
 51Degrees provides multiple ways to integrate device detection using client-side JavaScript evidence collection.
 The default approach is a dynamic integration scenario, but semi-static and conceptual static methods can also be used depending on implementation constraints.
 
-### Dynamic Scenario (Default)
+### Dynamic scenario (default)
 In a dynamic integration scenario, the client-side evidence collection script is generated dynamically for each request.
 This ensures that the JavaScript snippets used for detection are always specific to the client’s device or browser context.
 A typical integration example:
@@ -170,14 +170,14 @@ A typical integration example:
 The `src` attribute points to a 51Degrees client-side evidence endpoint that dynamically produces the `51degrees.core.js` script.
 This script includes JavaScript snippets that perform client-side evidence collection.
 
-## Process Overview
+## Process overview
 
-### Dynamic Generation
+### Dynamic generation
 * The script is generated for every request based on initial evidence (e.g., User-Agent).
 * JavaScript snippet properties are retrieved from the data file on the server.
 * The final script differs depending on the detected client type.
 
-### Snippet Retrieval and Integration
+### Snippet retrieval and integration
 * JavaScript snippet properties are stored within the 51Degrees data file.
 * The Device Detection Engine retrieves these as part of the detection results.
 * Example:
@@ -185,12 +185,12 @@ This script includes JavaScript snippets that perform client-side evidence colle
   * If it indicates macOS, the property contains Mac-specific code.
 * These snippets are updated daily with the data file.
 
-### Script Assembly
+### Script assembly
 * The `JSONBuilderElement` and `JavaScriptBuilderElement` (part of the 51Degrees @Pipeline) inject the snippet properties into a JavaScript template.
 * Templates are in the [javascript-templates](https://github.com/51Degrees/javascript-templates) repository.
 * The result is the complete `51degrees.core.js` script.
 
-### Client-Side Execution
+### Client-side execution
 * The `51degrees.core.js` script executes each snippet sequentially in the client browser.
 * Snippets store collected evidence in the session storage (or cookies) using `51D_` prefixes, for example:
   * `51D_profileIds`
@@ -201,18 +201,18 @@ fod.complete(function() {
 });
 ```
 
-### Profile Matching
+### Profile matching
 * The collected `51D_profileIds` values must be matched against the same data file used to generate the snippets.
 * This ensures accurate and consistent device identification.
 
-## Semi-Static Scenario
+## Semi-static scenario
 
 If your environment already includes a static script (e.g., `<script src="<myscript.js URL>">`) and cannot add another dynamically generated one, a semi-static integration approach is recommended.
 This method merges 51Degrees-generated snippets into your existing script, allowing some dynamic behavior while maintaining a mostly static setup.
 
 You must implement this integration in your own system. The steps below are an outline.
 
-### Implementation Options
+### Implementation options
 
 ### Option 1, dynamic merge per request
 * Modify your existing script to be generated dynamically on your server.
@@ -226,38 +226,38 @@ You must implement this integration in your own system. The steps below are an o
 * Cached variants should be refreshed whenever the data file updates.
 * Always ensure that `51D_profileIds` are matched against the same data file from which snippets were derived.
 
-## Conceptual Static Approach
+## Conceptual static approach
 
-### Implementation Considerations
+### Implementation considerations
 * **Extraction** - Extract relevant JavaScript snippets (for specific device groups such as iPhones) directly from the current 51Degrees data file.
 * **Maintenance** - Refresh static scripts daily or as frequently as possible to remain synchronized with data file updates.
 * **Customization** - Implementation details depend on your environment.
 There is no one-size-fits-all static solution. Stale or outdated static scripts can lead to incorrect device identification.
 
-### Comparison Summary
+### Comparison summary
 | Approach Type | Script Generation | Update Frequency | Typical Use Case |
 | ------------- | ----------------- | ---------------- | ---------------- |
 | Dynamic (Default) | Fully dynamic per request | Real-time | Standard 51Degrees integration for dynamic or modern sites |
 | Semi-Static | Cached or merged dynamically | On data file update | When dynamic script loading is restricted |
 
-### Best Practices
+### Best practices
 
 ### Synchronization
 * Always ensure that the client-side snippets and server-side data file originate from the same data file version. Mismatched versions can cause inaccurate device matching or inconsistent detection results.
 
-### Data File Updates
+### Data file updates
 * Refresh your data file and any cached or static snippets daily (or as frequently as your infrastructure allows).
 * Automate the refresh process wherever possible to prevent stale results.
 
-### Caching Strategy
+### Caching strategy
 * For semi-static scenarios, limit cache lifetime to no longer than the data file update cycle.
 * If using a CDN, configure cache invalidation or revalidation logic based on the 51Degrees data update frequency.
 
-### Version Control
+### Version control
 * Keep a record of the data file version or timestamp used to generate each JavaScript snippet.
 * This helps debug inconsistencies between collected evidence and device matching.
 
-### Fallback Handling
+### Fallback handling
 * Implement fallback logic for cases where no `51D_profileIds` are available (e.g., script blocked, or execution failed).
 * Fallback can use baseline server-side detection or cached evidence.
 
