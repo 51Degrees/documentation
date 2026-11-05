@@ -82,15 +82,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2sha
 <p><b>Identifying the Data Source (usage-from):</b> To help 51Degrees identify which customer or partner is sending usage data, you can add a custom "usage-from" header to the evidence. This is done by adding evidence with key <code>header.usage-from</code> and your company/application name as the value. In the XML packet sent to 51Degrees, this appears as: <code>&lt;header Name="usage-from"&gt;YourCompanyName&lt;/header&gt;</code>. Replace "YourCompanyName" in the <code>USAGE_FROM_VALUE</code> constant with your actual identifier before running this example.</p>
 <p> 
 <p>
-This example requires a local data file. The free 'Lite' data file can be acquired by
-pulling the git submodules under this repository (run `git submodule update --recursive`) 
-or from the <a href="https://github.com/51Degrees/device-detection-data">device-detection-data</a>
-GitHub repository.
+This example requires a local data file. The free 'Lite' data file can be downloaded with the
+scripts in the <a href="https://github.com/51Degrees/data">data</a> GitHub repository, which
+this repository includes at <code>cxx/data</code>. Fetch the submodules by running
+<code>git submodule update --init --recursive</code>, then run
+<code>sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash</code> from the repository root,
+which saves the file as <code>cxx/data/device-detection/51Degrees-LiteV4.1.hash</code>.
 </p>
 <p>
 The Lite data file is only used for illustration, and has limited accuracy and capabilities.
 Find out about the more capable data files that are available on our 
-<a href="https://51degrees.com/pricing">pricing page</a>
+<a href="https://51degrees.com/pricing">pricing page</a>.
 </p>
   </p>
 <p>Required PyPi Dependencies:</p><ul>
@@ -196,46 +198,51 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">        <span class="c-code__comment"># Build a pipeline with only the ShareUsage element</span></div>
 <div class="c-code__line">        pipeline = PipelineBuilder().add(share_usage_element).<a class="code hl_namespace" href="namespacebuild.html">build</a>()</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        print(<span class="c-code__stringliteral">&quot;Pipeline built successfully with ShareUsage element&quot;</span>)</div>
+<div class="c-code__line">        <span class="c-code__comment"># The pipeline is closed at the end of the with block, which waits</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># for any usage data being sent and then stops the threads that send</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># it.</span></div>
+<div class="c-code__line">        <span class="c-code__keyword">with</span> pipeline:</div>
+<div class="c-code__line">            print(<span class="c-code__stringliteral">&quot;Pipeline built successfully with ShareUsage element&quot;</span>)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__comment"># Load YAML evidence</span></div>
-<div class="c-code__line">        yaml = YAML()</div>
-<div class="c-code__line">        yaml_data = yaml.load_all(evidence_yaml)</div>
+<div class="c-code__line">            <span class="c-code__comment"># Load YAML evidence</span></div>
+<div class="c-code__line">            yaml = YAML()</div>
+<div class="c-code__line">            yaml_data = yaml.load_all(evidence_yaml)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__comment"># Process evidence records</span></div>
-<div class="c-code__line">        count = 0</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">for</span> evidence <span class="c-code__keywordflow">in</span> yaml_data:</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> count &gt;= RECORDS_TO_PROCESS:</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">break</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># Process evidence records</span></div>
+<div class="c-code__line">            count = 0</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">for</span> evidence <span class="c-code__keywordflow">in</span> yaml_data:</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> count &gt;= RECORDS_TO_PROCESS:</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">break</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment"># Filter to only header.* entries</span></div>
-<div class="c-code__line">            data = filter_evidence(</div>
-<div class="c-code__line">                {k: str(v) <span class="c-code__keywordflow">for</span> k, v <span class="c-code__keywordflow">in</span> evidence.items()},</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;header.&quot;</span>)</div>
+<div class="c-code__line">                <span class="c-code__comment"># Filter to only header.* entries</span></div>
+<div class="c-code__line">                data = filter_evidence(</div>
+<div class="c-code__line">                    {k: str(v) <span class="c-code__keywordflow">for</span> k, v <span class="c-code__keywordflow">in</span> evidence.items()},</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;header.&quot;</span>)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment"># Add a client IP address to the evidence for deduplication purposes</span></div>
-<div class="c-code__line">            <span class="c-code__comment"># (see class-level note). In a real web application, this would come</span></div>
-<div class="c-code__line">            <span class="c-code__comment"># from the request (e.g., REMOTE_ADDR or X-Forwarded-For header)</span></div>
-<div class="c-code__line">            data[EVIDENCE_CLIENTIP_KEY] = generate_random_ip()</div>
+<div class="c-code__line">                <span class="c-code__comment"># Add a client IP address to the evidence for deduplication purposes</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># (see class-level note). In a real web application, this would come</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># from the request (e.g., REMOTE_ADDR or X-Forwarded-For header)</span></div>
+<div class="c-code__line">                data[EVIDENCE_CLIENTIP_KEY] = generate_random_ip()</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment"># Add the usage-from identifier so 51Degrees knows the source of this data.</span></div>
-<div class="c-code__line">            <span class="c-code__comment"># This appears as &lt;header Name=&quot;usage-from&quot;&gt;YourCompanyName&lt;/header&gt; in the XML.</span></div>
-<div class="c-code__line">            data[EVIDENCE_USAGE_FROM_KEY] = USAGE_FROM_VALUE</div>
+<div class="c-code__line">                <span class="c-code__comment"># Add the usage-from identifier so 51Degrees knows the source of this data.</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># This appears as &lt;header Name=&quot;usage-from&quot;&gt;YourCompanyName&lt;/header&gt; in the XML.</span></div>
+<div class="c-code__line">                data[EVIDENCE_USAGE_FROM_KEY] = USAGE_FROM_VALUE</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment"># Create flow data and process</span></div>
-<div class="c-code__line">            flow_data = pipeline.create_flowdata()</div>
-<div class="c-code__line">            flow_data.evidence.add_from_dict(data)</div>
-<div class="c-code__line">            flow_data.process()</div>
+<div class="c-code__line">                <span class="c-code__comment"># Create flow data and process. The with statement closes it</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># once it has been processed.</span></div>
+<div class="c-code__line">                <span class="c-code__keyword">with</span> pipeline.create_flowdata() <span class="c-code__keyword">as</span> flow_data:</div>
+<div class="c-code__line">                    flow_data.evidence.add_from_dict(data)</div>
+<div class="c-code__line">                    flow_data.process()</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            count += 1</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> count % 10 == 0:</div>
-<div class="c-code__line">                print(f<span class="c-code__stringliteral">&quot;Processed {count} records&quot;</span>)</div>
+<div class="c-code__line">                count += 1</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> count % 10 == 0:</div>
+<div class="c-code__line">                    print(f<span class="c-code__stringliteral">&quot;Processed {count} records&quot;</span>)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        print(f<span class="c-code__stringliteral">&quot;Finished processing {count} records&quot;</span>)</div>
-<div class="c-code__line">        print(<span class="c-code__stringliteral">&quot;Waiting for share usage to complete sending...&quot;</span>)</div>
+<div class="c-code__line">            print(f<span class="c-code__stringliteral">&quot;Finished processing {count} records&quot;</span>)</div>
+<div class="c-code__line">            print(<span class="c-code__stringliteral">&quot;Waiting for share usage to complete sending...&quot;</span>)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__comment"># Give the background thread time to send any remaining data</span></div>
-<div class="c-code__line">        time.sleep(5)</div>
+<div class="c-code__line">            <span class="c-code__comment"># Give the background thread time to send any remaining data</span></div>
+<div class="c-code__line">            time.sleep(5)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        print(<span class="c-code__stringliteral">&quot;Done!&quot;</span>)</div>
 <div class="c-code__line"> </div>
@@ -250,8 +257,9 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">            ShareUsageExample().run(input)</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">else</span>:</div>
 <div class="c-code__line">        print(<span class="c-code__stringliteral">&quot;ERROR: Failed to find the evidence file. Make sure the &quot;</span></div>
-<div class="c-code__line">            <span class="c-code__stringliteral">&quot;device-detection-data submodule has been updated by running &quot;</span></div>
-<div class="c-code__line">            <span class="c-code__stringliteral">&quot;`git submodule update --recursive`.&quot;</span>)</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;data submodule is there, by running &quot;</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;`git submodule update --init --recursive`, and run this &quot;</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;example again to download the file.&quot;</span>)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> __name__ == <span class="c-code__stringliteral">&quot;__main__&quot;</span>:</div>

@@ -274,11 +274,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line">            if err != nil {</div>
 <div class="c-code__line">                log.Fatalf(&quot;Failed to create engine: %v&quot;, err)</div>
 <div class="c-code__line">            }</div>
+<div class="c-code__line">            <span class="c-code__comment">// Stopping the engine frees its data set. Deferring the call</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// stops it however this function returns.</span></div>
+<div class="c-code__line">            defer engine.Stop()</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Run example</span></div>
 <div class="c-code__line">            runGettingStarted(engine)</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">            engine.Stop()</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            return nil</div>
 <div class="c-code__line">        })</div>

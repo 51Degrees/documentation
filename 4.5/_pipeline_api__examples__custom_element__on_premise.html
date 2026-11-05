@@ -816,8 +816,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">                .SetAutoUpdate(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                .SetDataFileSystemWatcher(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                .Build(<span class="c-code__stringliteral">&quot;starsigns.csv&quot;</span>, <span class="c-code__keyword">false</span>);</div>
-<div class="c-code__line">            <span class="c-code__comment">// Construct the pipeline with the example engine.</span></div>
-<div class="c-code__line">            var pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(_loggerFactory)</div>
+<div class="c-code__line">            <span class="c-code__comment">// Construct the pipeline with the example engine. Disposing the</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// pipeline also disposes the engine.</span></div>
+<div class="c-code__line">            <span class="c-code__keyword">using </span>var pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(_loggerFactory)</div>
 <div class="c-code__line">                .AddFlowElement(starSignEngine)</div>
 <div class="c-code__line">                .Build();</div>
 <div class="c-code__line"> </div>
@@ -842,22 +843,26 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">                        Main.class.getClassLoader().getResource(<span class="c-code__stringliteral">&quot;starsigns.csv&quot;</span>).getPath(),</div>
 <div class="c-code__line">                        <span class="c-code__keyword">false</span>);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            Pipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
+<div class="c-code__line">            <span class="c-code__comment">// The pipeline closes the engine, and with it the data file,</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// when it is closed.</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">try</span> (Pipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
 <div class="c-code__line">                .addFlowElement(starSignEngine)</div>
-<div class="c-code__line">                .build();</div>
-<div class="c-code__line">            Calendar dob = Calendar.getInstance();</div>
-<div class="c-code__line">            dob.set(1992, Calendar.DECEMBER, 18);</div>
+<div class="c-code__line">                .setAutoCloseElements(<span class="c-code__keyword">true</span>)</div>
+<div class="c-code__line">                .build()) {</div>
+<div class="c-code__line">                Calendar dob = Calendar.getInstance();</div>
+<div class="c-code__line">                dob.set(1992, Calendar.DECEMBER, 18);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keywordflow">try</span> (FlowData flowData = pipeline.createFlowData()) {</div>
-<div class="c-code__line">                flowData</div>
-<div class="c-code__line">                    .addEvidence(<span class="c-code__stringliteral">&quot;date-of-birth&quot;</span>, dob.getTime())</div>
-<div class="c-code__line">                    .process();</div>
-<div class="c-code__line">    </div>
-<div class="c-code__line">                System.out.println(<span class="c-code__stringliteral">&quot;With a date of birth of &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__keyword">new</span> SimpleDateFormat(<span class="c-code__stringliteral">&quot;yyyy/MM/dd&quot;</span>).format(dob.getTime()) +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;, your star sign is &quot;</span> +</div>
-<div class="c-code__line">                    flowData.getFromElement(starSignEngine).getStarSign() + </div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;.&quot;</span>);</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">try</span> (FlowData flowData = pipeline.createFlowData()) {</div>
+<div class="c-code__line">                    flowData</div>
+<div class="c-code__line">                        .addEvidence(<span class="c-code__stringliteral">&quot;date-of-birth&quot;</span>, dob.getTime())</div>
+<div class="c-code__line">                        .process();</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">                    System.out.println(<span class="c-code__stringliteral">&quot;With a date of birth of &quot;</span> +</div>
+<div class="c-code__line">                        <span class="c-code__keyword">new</span> SimpleDateFormat(<span class="c-code__stringliteral">&quot;yyyy/MM/dd&quot;</span>).format(dob.getTime()) +</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;, your star sign is &quot;</span> +</div>
+<div class="c-code__line">                        flowData.getFromElement(starSignEngine).getStarSign() +</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;.&quot;</span>);</div>
+<div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 </div><!-- fragment --><p>to give an output of: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">With a date of birth of 18/12/1992, your star sign is Sagittarius.</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  This new <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> can now be added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> and used like:</p>

@@ -126,13 +126,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_u_a_c_h-manua
 <div class="c-code__line">    ...</div>
 <div class="c-code__line">   <span class="c-code__keyword">public</span> IActionResult Index()</div>
 <div class="c-code__line">   {</div>
-<div class="c-code__line">       <span class="c-code__keyword">using</span> (var flowData = _pipeline.CreateFlowData())</div>
-<div class="c-code__line">       {</div>
-<div class="c-code__line">           _evidenceService.AddEvidenceFromRequest(flowData, Request);</div>
-<div class="c-code__line">           flowData.Process();</div>
-<div class="c-code__line">           SetHeaderService.SetHeaders(Response.HttpContext, flowData);</div>
-<div class="c-code__line">           <span class="c-code__keywordflow">return</span> View(flowData);</div>
-<div class="c-code__line">       }</div>
+<div class="c-code__line">       var flowData = _pipeline.CreateFlowData();</div>
+<div class="c-code__line">       <span class="c-code__comment">// Disposed when the response is sent, after the view has</span></div>
+<div class="c-code__line">       <span class="c-code__comment">// read it.</span></div>
+<div class="c-code__line">       HttpContext.Response.RegisterForDispose(flowData);</div>
+<div class="c-code__line">       _evidenceService.AddEvidenceFromRequest(flowData, Request);</div>
+<div class="c-code__line">       flowData.Process();</div>
+<div class="c-code__line">       SetHeaderService.SetHeaders(Response.HttpContext, flowData);</div>
+<div class="c-code__line">       <span class="c-code__keywordflow">return</span> View(flowData);</div>
 <div class="c-code__line">   }</div>
 <div class="c-code__line">    ...</div>
 </div><!-- fragment --></li>

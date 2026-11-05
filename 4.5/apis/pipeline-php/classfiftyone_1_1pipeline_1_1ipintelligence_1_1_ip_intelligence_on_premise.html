@@ -88,6 +88,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a1a32df46822205fe136c1a617114ad80"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The accepted evidence keys (query.client-ip, server.client-ip, query.client-ip-51d, ...).  <br /></td></tr>
 <tr class="c-table__row memitem:a66b436bd98f75a7f5e7fb34b52c2a2f5" id="r_a66b436bd98f75a7f5e7fb34b52c2a2f5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a66b436bd98f75a7f5e7fb34b52c2a2f5">processInternal</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData)</td></tr>
 <tr class="c-table__row memdesc:a66b436bd98f75a7f5e7fb34b52c2a2f5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process FlowData - this is process function is usually overridden by specific FlowElements to do their core work.  <br /></td></tr>
+<tr class="c-table__row memitem:a4635a43af198130dff37c74d85ff7d75" id="r_a4635a43af198130dff37c74d85ff7d75"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a4635a43af198130dff37c74d85ff7d75">close</a> ()</td></tr>
+<tr class="c-table__row memdesc:a4635a43af198130dff37c74d85ff7d75"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Release the native engine this element built from its dataFile setting.  <br /></td></tr>
 <tr class="c-table__row memitem:a66a3d28cfc043e8f6d7fb75b933ac7b6" id="r_a66a3d28cfc043e8f6d7fb75b933ac7b6"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a66a3d28cfc043e8f6d7fb75b933ac7b6">setCache</a> (?<a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_data_keyed_cache.html">DataKeyedCache</a> $cache)</td></tr>
 <tr class="c-table__row memdesc:a66a3d28cfc043e8f6d7fb75b933ac7b6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The on-premise engine manages its own internal cache and does not support an external cache.  <br /></td></tr>
 <tr class="c-table__row memitem:a9fb95f4005c82b63659d4666bc114456" id="r_a9fb95f4005c82b63659d4666bc114456"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9fb95f4005c82b63659d4666bc114456">refreshData</a> (?string $fileName=null)</td></tr>
@@ -174,6 +176,30 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a4635a43af198130dff37c74d85ff7d75" name="a4635a43af198130dff37c74d85ff7d75"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4635a43af198130dff37c74d85ff7d75">&#9670;&#160;</a></span>close()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\ipintelligence\IpIntelligenceOnPremise::close </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Release the native engine this element built from its dataFile setting. </p>
+<p>Its data is freed once no results read from it are still held, so close every FlowData it processed as well. The shared global engine belongs to the extension and stays loaded. Closing the Pipeline closes the element. </p>
+
+</div>
+</div>
 <a id="a1a32df46822205fe136c1a617114ad80" name="a1a32df46822205fe136c1a617114ad80"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1a32df46822205fe136c1a617114ad80">&#9670;&#160;</a></span>getEvidenceKeyFilter()</h2>
 

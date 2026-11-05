@@ -185,10 +185,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line">        IPIntelligenceCloudEngine ipIntelligenceEngine =</div>
 <div class="c-code__line">                <span class="c-code__keyword">new</span> IPIntelligenceCloudEngineBuilder(loggerFactory).build();</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment">// The engines are not closed anywhere else, so the pipeline is asked</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// to close them when it is closed.</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">try</span> (Pipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
 <div class="c-code__line">                .addFlowElement(cloudRequestEngine)</div>
 <div class="c-code__line">                .addFlowElement(deviceDetectionEngine)</div>
 <div class="c-code__line">                .addFlowElement(ipIntelligenceEngine)</div>
+<div class="c-code__line">                .setAutoCloseElements(<span class="c-code__keyword">true</span>)</div>
 <div class="c-code__line">                .build()) {</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// carry out some sample detections</span></div>

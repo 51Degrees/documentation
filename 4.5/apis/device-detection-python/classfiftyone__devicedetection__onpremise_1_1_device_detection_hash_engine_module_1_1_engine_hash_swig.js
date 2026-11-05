@@ -3,6 +3,7 @@ var classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_m
     [ "__init__", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_hash_swig.html#a732e06f980e7640e4a69766f3936c871", null ],
     [ "getDataFilePath", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_hash_swig.html#abb823db0b2027f219ce3f2a44b7db324", null ],
     [ "getDataFileTempPath", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_hash_swig.html#a1e88fab7dd210ef7961f61bb1023a988", null ],
+    [ "getProfileIdsForPropertyValue", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_hash_swig.html#a17f3490c07304098129b2e5b6890883d", null ],
     [ "getPublishedTime", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_hash_swig.html#a81e7c0316b5084ca498c8440aab62cac", null ],
     [ "getUpdateAvailableTime", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_hash_swig.html#a4907b37142f29d2d3cc66ad71275b435", null ],
     [ "process", "classfiftyone__devicedetection__onpremise_1_1_device_detection_hash_engine_module_1_1_engine_hash_swig.html#ac59448dbd7505ca761076ff478e31acb", null ],

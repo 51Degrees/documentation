@@ -132,10 +132,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_combining_ser
 <div class="c-code__line">    <span class="c-code__keyword">new</span> GeoLocationCloudEngineBuilder(loggerFactory, cloudRequestEngine)</div>
 <div class="c-code__line">    .build(Enums.GeoLocationProvider.FiftyOneDegrees);</div>
 </div><!-- fragment --></li>
-<li>Build a new Pipeline containing the engines which were just created. <div class="c-code__block c-code__block--outline"><div class="c-code__line">Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
+<li>Build a new Pipeline containing the engines which were just created, and ask it to close them when it is closed. <div class="c-code__block c-code__block--outline"><div class="c-code__line">Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
 <div class="c-code__line">    .addFlowElement(cloudRequestEngine)</div>
 <div class="c-code__line">    .addFlowElement(deviceDetectionEngine)</div>
 <div class="c-code__line">    .addFlowElement(locationEngine)</div>
+<div class="c-code__line">    .setAutoCloseElements(<span class="c-code__keyword">true</span>)</div>
 <div class="c-code__line">    .build();</div>
 <div class="ttc" id="aclasspipeline_1_1developerexamples_1_1usagesharing_1_1_main_html"><div class="ttname"><a href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a></div></div>
 </div><!-- fragment --></li>
@@ -145,7 +146,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_combining_ser
 <div class="c-code__line">    .addFlowElementsParallel(<span class="c-code__keyword">new</span> FlowElement[]{deviceDetectionEngine, locationEngine})</div>
 <div class="c-code__line">    .build();</div>
 </div><!-- fragment --><ol type="1">
-<li>Create a new FlowData instance ready to be populated with evidence for the Pipeline. <div class="c-code__block c-code__block--outline"><div class="c-code__line">FlowData data = <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.createFlowData();</div>
+<li>Create a new FlowData instance ready to be populated with evidence for the Pipeline, in a try-with-resources block so that it is closed when it is finished with. <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keywordflow">try</span> (FlowData data = <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.createFlowData()) {</div>
 </div><!-- fragment --></li>
 <li>Process a longitude, latitude and User-Agent to retrieve the values associated with with the location and device for the selected properties. <div class="c-code__block c-code__block--outline"><div class="c-code__line">data</div>
 <div class="c-code__line">    .addEvidence(EVIDENCE_HEADER_USERAGENT_KEY, userAgent)</div>
@@ -241,14 +242,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_combining_ser
 <div class="c-code__line">                <span class="c-code__keyword">new</span> GeoLocationCloudEngineBuilder(loggerFactory)</div>
 <div class="c-code__line">                .build(Enums.GeoLocationProvider.FiftyOneDegrees);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> =</div>
+<div class="c-code__line">            <span class="c-code__comment">// The engines are not closed anywhere else, so the pipeline is</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// asked to close them when it is closed.</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">try</span> (Pipeline <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> =</div>
 <div class="c-code__line">                <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
 <div class="c-code__line">                .addFlowElement(cloudRequestEngine)</div>
 <div class="c-code__line">                .addFlowElement(deviceDetectionEngine)</div>
 <div class="c-code__line">                .addFlowElement(locationEngine)</div>
+<div class="c-code__line">                .setAutoCloseElements(<span class="c-code__keyword">true</span>)</div>
 <div class="c-code__line">                .build();</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keywordflow">try</span> (FlowData flowData = <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.createFlowData()) {</div>
+<div class="c-code__line">                FlowData flowData = <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.createFlowData()) {</div>
 <div class="c-code__line">                flowData</div>
 <div class="c-code__line">                    .addEvidence(EVIDENCE_HEADER_USERAGENT_KEY, mobileUserAgent)</div>
 <div class="c-code__line">                    .addEvidence(EVIDENCE_GEO_LAT_PARAM_KEY, <span class="c-code__stringliteral">&quot;51.458048&quot;</span>)</div>
@@ -266,7 +269,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_combining_ser
 <div class="c-code__line">                System.out.println(<span class="c-code__stringliteral">&quot;Country: &quot;</span> + country.toString());</div>
 <div class="c-code__line">                System.out.println(<span class="c-code__stringliteral">&quot;IsMobile: &quot;</span> + isMobile.toString());</div>
 <div class="c-code__line">            }</div>
-<div class="c-code__line">            <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.close();</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>

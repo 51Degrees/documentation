@@ -88,8 +88,57 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a18c45eeed255ff79fdf8de1cabbf6142" id="r_a18c45eeed255ff79fdf8de1cabbf6142"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a18c45eeed255ff79fdf8de1cabbf6142">test_url_has_one_slash_between_host_and_endpoint</a> (self)</td></tr>
 <tr class="c-table__row memitem:a560ef2ddb49542547a27f77401bded2b" id="r_a560ef2ddb49542547a27f77401bded2b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a560ef2ddb49542547a27f77401bded2b">test_parameter_name_holding_a_dot_is_kept_whole</a> (self)</td></tr>
 <tr class="c-table__row memitem:a4a4a7fdd1c0eb53ea70769dfbf58bb9f" id="r_a4a4a7fdd1c0eb53ea70769dfbf58bb9f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a4a4a7fdd1c0eb53ea70769dfbf58bb9f">test_url_keeps_a_query_string_given_in_the_endpoint</a> (self)</td></tr>
+<tr class="c-table__row memitem:adc5e62ad06a9c25dc26e2447be6e966a" id="r_adc5e62ad06a9c25dc26e2447be6e966a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#adc5e62ad06a9c25dc26e2447be6e966a">test_refused_url_is_left_out_and_logged_once</a> (self)</td></tr>
+<tr class="c-table__row memitem:afff892de98ebb7432da6817639f2cc85" id="r_afff892de98ebb7432da6817639f2cc85"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#afff892de98ebb7432da6817639f2cc85">test_refused_url_is_logged_on_one_line</a> (self)</td></tr>
+<tr class="c-table__row memitem:a2acf77da388c58dc41aa9b75db5e5b68" id="r_a2acf77da388c58dc41aa9b75db5e5b68"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2acf77da388c58dc41aa9b75db5e5b68">test_blank_host_gives_no_callback_and_is_not_logged</a> (self)</td></tr>
+<tr class="c-table__row memitem:a42d0cea3327159370d04757c6a540c5b" id="r_a42d0cea3327159370d04757c6a540c5b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a42d0cea3327159370d04757c6a540c5b">test_host_from_the_request_is_written_as_checked</a> (self)</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a2acf77da388c58dc41aa9b75db5e5b68" name="a2acf77da388c58dc41aa9b75db5e5b68"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2acf77da388c58dc41aa9b75db5e5b68">&#9670;&#160;</a></span>test_blank_host_gives_no_callback_and_is_not_logged()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_javascriptbuilder_variables.JavaScriptBuilderVariablesTests.test_blank_host_gives_no_callback_and_is_not_logged </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">A host made only of whitespace is not set, so the script has no
+callback and nothing is logged.</pre> 
+</div>
+</div>
+<a id="a42d0cea3327159370d04757c6a540c5b" name="a42d0cea3327159370d04757c6a540c5b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a42d0cea3327159370d04757c6a540c5b">&#9670;&#160;</a></span>test_host_from_the_request_is_written_as_checked()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_javascriptbuilder_variables.JavaScriptBuilderVariablesTests.test_host_from_the_request_is_written_as_checked </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">A host from the request reaches the script as the check writes
+it, in lower case and with anything that could end the string the
+script holds it in percent-encoded.</pre> 
+</div>
+</div>
 <a id="a560ef2ddb49542547a27f77401bded2b" name="a560ef2ddb49542547a27f77401bded2b"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a560ef2ddb49542547a27f77401bded2b">&#9670;&#160;</a></span>test_parameter_name_holding_a_dot_is_kept_whole()</h2>
 
@@ -177,6 +226,51 @@ between the parts, so the rendered script is the same text.</pre>
 </div><div class="c-member__body">
 <pre class="fragment">Both are appended by the script itself, after it takes the record
 of a request's inputs.</pre> 
+</div>
+</div>
+<a id="adc5e62ad06a9c25dc26e2447be6e966a" name="adc5e62ad06a9c25dc26e2447be6e966a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adc5e62ad06a9c25dc26e2447be6e966a">&#9670;&#160;</a></span>test_refused_url_is_left_out_and_logged_once()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_javascriptbuilder_variables.JavaScriptBuilderVariablesTests.test_refused_url_is_left_out_and_logged_once </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">A host the check refuses gives a script with no callback, and the
+refusal is logged as an error the first time only, whatever the
+requests in between.</pre> 
+</div>
+</div>
+<a id="afff892de98ebb7432da6817639f2cc85" name="afff892de98ebb7432da6817639f2cc85"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afff892de98ebb7432da6817639f2cc85">&#9670;&#160;</a></span>test_refused_url_is_logged_on_one_line()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_javascriptbuilder_variables.JavaScriptBuilderVariablesTests.test_refused_url_is_logged_on_one_line </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">The URL is quoted and escaped in the log, so a line break in it
+cannot start a new log line.</pre> 
 </div>
 </div>
 <a id="ab86540b432dbbcd91ce0d1374866a087" name="ab86540b432dbbcd91ce0d1374866a087"></a>

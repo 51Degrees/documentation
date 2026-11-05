@@ -73,10 +73,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="c-table__row memitem:ab0150cc03939428c059b0e071ce5bc73" id="r_ab0150cc03939428c059b0e071ce5bc73"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab0150cc03939428c059b0e071ce5bc73">__init__</a> (self, flow_elements, logger=<a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html">Logger</a>(), suppress_process_exceptions=False, data_file_update_service=None)</td></tr>
-<tr class="c-table__row memdesc:ab0150cc03939428c059b0e071ce5bc73"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu...">Pipeline</a> constructor.  <br /></td></tr>
+<tr class="c-table__row memitem:ac03265436696ab34c94e388185cb0052" id="r_ac03265436696ab34c94e388185cb0052"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac03265436696ab34c94e388185cb0052">__init__</a> (self, flow_elements, logger=<a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html">Logger</a>(), suppress_process_exceptions=False, data_file_update_service=None, auto_close_elements=True)</td></tr>
+<tr class="c-table__row memdesc:ac03265436696ab34c94e388185cb0052"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu...">Pipeline</a> constructor.  <br /></td></tr>
 <tr class="c-table__row memitem:ad15032be26f09b0cc8aac709466e818f" id="r_ad15032be26f09b0cc8aac709466e818f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad15032be26f09b0cc8aac709466e818f">create_flowdata</a> (self)</td></tr>
 <tr class="c-table__row memdesc:ad15032be26f09b0cc8aac709466e818f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Create a <a class="el" href="classfiftyone__pipeline__core_1_1flowdata_1_1_flow_data.html" title="FlowData is created by a specific Pipeline It collects evidence set by the user It passes evidence to...">FlowData</a> based on what's in the pipeline.  <br /></td></tr>
+<tr class="c-table__row memitem:a194cc6337491d5cbbe06c7011043df6f" id="r_a194cc6337491d5cbbe06c7011043df6f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a194cc6337491d5cbbe06c7011043df6f">close</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a194cc6337491d5cbbe06c7011043df6f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Close the flow elements, which releases the native data they hold and stops the updates of their data files, unless the pipeline was built with auto_close_elements set to false.  <br /></td></tr>
+<tr class="c-table__row memitem:a3149fbbd81d77078daa6f15d11d726d9" id="r_a3149fbbd81d77078daa6f15d11d726d9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3149fbbd81d77078daa6f15d11d726d9">__enter__</a> (self)</td></tr>
+<tr class="c-table__row memitem:a6771ffc06db0f444d78914dc5f26f9b4" id="r_a6771ffc06db0f444d78914dc5f26f9b4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6771ffc06db0f444d78914dc5f26f9b4">__exit__</a> (self, exc_type, exc_value, exc_traceback)</td></tr>
 <tr class="c-table__row memitem:a2d4c15751f34c2d141e8944679cac1a2" id="r_a2d4c15751f34c2d141e8944679cac1a2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2d4c15751f34c2d141e8944679cac1a2">log</a> (self, level, message)</td></tr>
 <tr class="c-table__row memdesc:a2d4c15751f34c2d141e8944679cac1a2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Log a message using the <a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html#a11ff69ef1f07387e196efbbbe64a9797" title="Log a message.">Logger.log</a> of the pipeline's <a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html" title="Logging for a Pipeline.">Logger</a>.  <br /></td></tr>
 <tr class="c-table__row memitem:a9c2cde8cf583d5fabb88ff08749d11c2" id="r_a9c2cde8cf583d5fabb88ff08749d11c2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9c2cde8cf583d5fabb88ff08749d11c2">get_element</a> (self, key)</td></tr>
@@ -93,11 +97,12 @@ Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:af89b8a40b8740bac6a2c31bc88cdf9be" id="r_af89b8a40b8740bac6a2c31bc88cdf9be"><td class="c-table__cell">dict&#160;</td><td class="c-table__cell"><a class="el" href="#af89b8a40b8740bac6a2c31bc88cdf9be">flow_elements_list</a> = {}</td></tr>
 <tr class="c-table__row memitem:a34709d21e53c0ac1876f9d965fac5f95" id="r_a34709d21e53c0ac1876f9d965fac5f95"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="#a34709d21e53c0ac1876f9d965fac5f95">flow_elements_display_list</a> = []</td></tr>
 <tr class="c-table__row memitem:ab14fdeb1b2c4c3f437e3c380ce9b533e" id="r_ab14fdeb1b2c4c3f437e3c380ce9b533e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab14fdeb1b2c4c3f437e3c380ce9b533e">suppress_process_exceptions</a> = suppress_process_exceptions</td></tr>
+<tr class="c-table__row memitem:af61ecd67540abecf5ed0bddac810cac4" id="r_af61ecd67540abecf5ed0bddac810cac4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af61ecd67540abecf5ed0bddac810cac4">auto_close_elements</a> = auto_close_elements</td></tr>
 <tr class="c-table__row memitem:a1bbed053f9884b5531e67ec2a108ae3a" id="r_a1bbed053f9884b5531e67ec2a108ae3a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a1bbed053f9884b5531e67ec2a108ae3a">data_file_update_service</a> = data_file_update_service</td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
-<a id="ab0150cc03939428c059b0e071ce5bc73" name="ab0150cc03939428c059b0e071ce5bc73"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab0150cc03939428c059b0e071ce5bc73">&#9670;&#160;</a></span>__init__()</h2>
+<a id="ac03265436696ab34c94e388185cb0052" name="ac03265436696ab34c94e388185cb0052"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac03265436696ab34c94e388185cb0052">&#9670;&#160;</a></span>__init__()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -127,7 +132,12 @@ Public Attributes</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>data_file_update_service</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>&#160;)</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>data_file_update_service</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>auto_close_elements</em></span><span class="paramdefsep"> = </span><span class="paramdefval">True</span>&#160;)</td>
         </tr>
           </table>
         </div>
@@ -153,11 +163,98 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<p>@type auto_close_elements: boolean </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">auto_close_elements</td><td>If true, the default, closing the pipeline closes its flow elements. Set it to false when the elements are shared with another pipeline, and close each element once every pipeline using it is finished with.</td></tr>
+  </table>
+  </dd>
+</dl>
 <p>@rtype: <a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu...">Pipeline</a> </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns a <a class="el" href="classfiftyone__pipeline__core_1_1pipeline_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu...">Pipeline</a> </dd></dl>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a3149fbbd81d77078daa6f15d11d726d9" name="a3149fbbd81d77078daa6f15d11d726d9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3149fbbd81d77078daa6f15d11d726d9">&#9670;&#160;</a></span>__enter__()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.__enter__ </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a6771ffc06db0f444d78914dc5f26f9b4" name="a6771ffc06db0f444d78914dc5f26f9b4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6771ffc06db0f444d78914dc5f26f9b4">&#9670;&#160;</a></span>__exit__()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.__exit__ </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>exc_type</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>exc_value</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>exc_traceback</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a194cc6337491d5cbbe06c7011043df6f" name="a194cc6337491d5cbbe06c7011043df6f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a194cc6337491d5cbbe06c7011043df6f">&#9670;&#160;</a></span>close()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.close </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Close the flow elements, which releases the native data they hold and stops the updates of their data files, unless the pipeline was built with auto_close_elements set to false. </p>
+<p>Use a with statement so that this happens when the pipeline is finished with.</p>
+<p><a class="el" href="classfiftyone__pipeline__core_1_1flowdata_1_1_flow_data.html" title="FlowData is created by a specific Pipeline It collects evidence set by the user It passes evidence to...">FlowData</a> created by the pipeline are not closed by it. Close each one as well, because the results it holds keep the engine's data in memory until they are released. </p>
+
+</div>
+</div>
 <a id="ad15032be26f09b0cc8aac709466e818f" name="ad15032be26f09b0cc8aac709466e818f"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad15032be26f09b0cc8aac709466e818f">&#9670;&#160;</a></span>create_flowdata()</h2>
 
@@ -325,6 +422,24 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="af61ecd67540abecf5ed0bddac810cac4" name="af61ecd67540abecf5ed0bddac810cac4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af61ecd67540abecf5ed0bddac810cac4">&#9670;&#160;</a></span>auto_close_elements</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.pipeline.Pipeline.auto_close_elements = auto_close_elements</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="a1bbed053f9884b5531e67ec2a108ae3a" name="a1bbed053f9884b5531e67ec2a108ae3a"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1bbed053f9884b5531e67ec2a108ae3a">&#9670;&#160;</a></span>data_file_update_service</h2>
 

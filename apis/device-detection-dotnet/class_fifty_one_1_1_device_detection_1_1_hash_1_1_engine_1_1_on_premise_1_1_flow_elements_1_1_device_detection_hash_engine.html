@@ -81,7 +81,7 @@ Inheritance diagram for FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowEleme
 <h2 class="g-docs__section-heading">
 Collaboration diagram for FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements.DeviceDetectionHashEngine:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_deec385ec465ec95c2403ddcb34e281902.svg" width="762" height="288"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_deec385ec465ec95c2403ddcb34e281902.svg" width="910" height="288"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
@@ -101,9 +101,11 @@ Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a4ac91ee29b7a896dd45fa43adf3ac45b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Construct a new instance of DeviceDetectionHashEngine from DeviceDetectionHashEngineBuilderBase&lt;T&gt; builder.  <br /></td></tr>
 <tr class="c-table__row memitem:aa95a1830cc0c5aa7389b316113790dee" id="r_aa95a1830cc0c5aa7389b316113790dee"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#aa95a1830cc0c5aa7389b316113790dee">ProcessEngine</a> (<a class="elRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data, <a class="el" href="interface_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_data_1_1_i_device_data_hash.html">IDeviceDataHash</a> deviceData)</td></tr>
 <tr class="c-table__row memdesc:aa95a1830cc0c5aa7389b316113790dee"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Perform processing for this engine.  <br /></td></tr>
-<tr class="c-table__row memitem:a9f208c075b694c05205d7ae3e93927ae" id="r_a9f208c075b694c05205d7ae3e93927ae"><td class="c-table__cell"><a id="a9f208c075b694c05205d7ae3e93927ae" name="a9f208c075b694c05205d7ae3e93927ae"></a>
-override&#160;void&#160;</td><td class="c-table__cell"><b>UnmanagedResourcesCleanup</b> ()</td></tr>
-<tr class="c-table__row memdesc:a9f208c075b694c05205d7ae3e93927ae"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Dispose of any unmanaged resources. <br /></td></tr>
+<tr class="c-table__row memitem:a3eb61fe29300e9c6caf0341295ef81bb" id="r_a3eb61fe29300e9c6caf0341295ef81bb"><td class="c-table__cell"><a id="a3eb61fe29300e9c6caf0341295ef81bb" name="a3eb61fe29300e9c6caf0341295ef81bb"></a>
+override&#160;void&#160;</td><td class="c-table__cell"><b>ManagedResourcesCleanup</b> ()</td></tr>
+<tr class="c-table__row memdesc:a3eb61fe29300e9c6caf0341295ef81bb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Dispose of the property and component meta data, which own native copies of their entries. <br /></td></tr>
+<tr class="c-table__row memitem:a9f208c075b694c05205d7ae3e93927ae" id="r_a9f208c075b694c05205d7ae3e93927ae"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a9f208c075b694c05205d7ae3e93927ae">UnmanagedResourcesCleanup</a> ()</td></tr>
+<tr class="c-table__row memdesc:a9f208c075b694c05205d7ae3e93927ae"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Dispose of the native engine, then the configuration it was built with.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-properties" class="g-docs__section-heading"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -363,6 +365,38 @@ override&#160;EventHandler&lt;&#160;EventArgs&#160;&gt;&#160;</td><td class="c-t
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a9f208c075b694c05205d7ae3e93927ae" name="a9f208c075b694c05205d7ae3e93927ae"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9f208c075b694c05205d7ae3e93927ae">&#9670;&#160;</a></span>UnmanagedResourcesCleanup()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">override void FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements.DeviceDetectionHashEngine.UnmanagedResourcesCleanup </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Dispose of the native engine, then the configuration it was built with. </p>
+<p>The data set is freed when the last results that refer to it are freed, which is when their flow data is disposed. </p>
 
 </div>
 </div>

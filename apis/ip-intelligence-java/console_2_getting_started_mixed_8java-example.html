@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line"><span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>GettingStartedMixed {</div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> Logger logger = LoggerFactory.getLogger(GettingStartedMixed.class);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> String DD_DATA_FILE_DEFAULT = <span class="c-code__stringliteral">&quot;device-detection-data/51Degrees-LiteV4.1.hash&quot;</span>;</div>
+<div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> String DD_DATA_FILE_DEFAULT = <span class="c-code__stringliteral">&quot;device-detection/51Degrees-LiteV4.1.hash&quot;</span>;</div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> String IPI_DATA_FILE_DEFAULT = DataFileHelper.ENTERPRISE_DATA_FILE_REL_PATH;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> main(String[] args) <span class="c-code__keywordflow">throws</span> Exception {</div>
@@ -310,11 +310,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (Files.exists(relativePath)) {</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">return</span> relativePath.toAbsolutePath().toString();</div>
 <div class="c-code__line">        }</div>
-<div class="c-code__line">        <span class="c-code__comment">// Try FileFinder (searches within project directory)</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// Search within the project directory, downloading the free Lite</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// file if it is missing</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">try</span> {</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">return</span> getFilePath(dataFile).getAbsolutePath();</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> DataFileHelper.findDataFile(dataFile).getAbsolutePath();</div>
 <div class="c-code__line">        } <span class="c-code__keywordflow">catch</span> (Exception e) {</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> IOException(<span class="c-code__stringliteral">&quot;Data file not found: &quot;</span> + dataFile);</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> IOException(<span class="c-code__stringliteral">&quot;Data file not found: &quot;</span> + dataFile, e);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>

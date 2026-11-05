@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <p>The example illustrates a "clock-time" benchmark for assessing IP address lookup speed.</p>
-<p>The example illustrates a "clock-time" benchmark for assessing IP address lookup speed.Using a YAML formatted evidence file - "evidence.yml" - supplied with the distribution or can be obtained from the <a href="https://github.com/51Degrees/ip-intelligence-data/blob/main/evidence.yml">data repository on Github</a>.</p>
+<p>The example illustrates a "clock-time" benchmark for assessing IP address lookup speed.Using a YAML formatted evidence file - "evidence.yml" - from the <a href="https://github.com/51Degrees/data/blob/main/ip-intelligence/evidence.yml">data repository on GitHub</a>.</p>
 <p>It's important to understand the trade-offs between performance, memory usage and accuracy, that the 51Degrees pipeline configuration makes available, and this example shows a range of different configurations to illustrate the difference in performance.</p>
 <p>Requesting properties from a single component reduces lookup time compared with requesting properties from multiple components. If you don't specify any properties, then all properties are returned.</p>
 <p>The command line can choose one configuration, its required properties, whether each lookup reads nothing, the weighted values or the text of every required property, and how many times the evidence is processed. Run with &ndash;help to list the options.</p>
@@ -116,10 +116,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line"><span class="c-code__preprocessor">#define MAX_EVIDENCE 20</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// The ip intelligence data folder from the sub module with lite ip intel data.</span></div>
-<div class="c-code__line"><span class="c-code__keyword">static</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* dataDir = <span class="c-code__stringliteral">&quot;ip-intelligence-data&quot;</span>;</div>
+<div class="c-code__line"><span class="c-code__keyword">static</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* dataDir = <span class="c-code__stringliteral">&quot;data/ip-intelligence&quot;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// In this example, by default, the 51degrees &quot;Lite&quot; file needs to be in the</span></div>
-<div class="c-code__line"><span class="c-code__comment">// ip-intelligence-data,</span></div>
+<div class="c-code__line"><span class="c-code__comment">// data/ip-intelligence folder, and is downloaded there when it is missing,</span></div>
 <div class="c-code__line"><span class="c-code__comment">// or you may specify another file as a command line parameter.</span></div>
 <div class="c-code__line"><span class="c-code__comment">//</span></div>
 <div class="c-code__line"><span class="c-code__comment">// Note that the Lite data file is only used for illustration, and has</span></div>
@@ -1091,16 +1091,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (strlen(dataFilePath) == 0) {</div>
-<div class="c-code__line">        status = <a id="a98" name="a98"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a>(</div>
+<div class="c-code__line">        status = fiftyoneDegreesExampleGetFilePath(</div>
 <div class="c-code__line">            dataDir,</div>
 <div class="c-code__line">            dataFileName,</div>
 <div class="c-code__line">            dataFilePath,</div>
 <div class="c-code__line">            <span class="c-code__keyword">sizeof</span>(dataFilePath));</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (status != <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gaa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a>) {</div>
 <div class="c-code__line">            printf((<span class="c-code__stringliteral">&quot;Failed to find an ip intelligence &quot;</span></div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;data file. Make sure the ip-intelligence-data &quot;</span></div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;submodule has been updated by running &quot;</span></div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;`git submodule update --recursive`\n&quot;</span>));</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;data file. Make sure the data submodule is there, &quot;</span></div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;by running `git submodule update --init data`, and &quot;</span></div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;run this example again to download the file.\n&quot;</span>));</div>
 <div class="c-code__line"><span class="c-code__preprocessor">#ifndef TEST</span></div>
 <div class="c-code__line">            fgetc(stdin);</div>
 <div class="c-code__line"><span class="c-code__preprocessor">#endif</span></div>
@@ -1109,16 +1109,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (strlen(evidenceFilePath) == 0) {</div>
-<div class="c-code__line">        status = <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a>(</div>
+<div class="c-code__line">        status = fiftyoneDegreesExampleGetFilePath(</div>
 <div class="c-code__line">            dataDir,</div>
 <div class="c-code__line">            evidenceFileName,</div>
 <div class="c-code__line">            evidenceFilePath,</div>
 <div class="c-code__line">            <span class="c-code__keyword">sizeof</span>(evidenceFilePath));</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (status != <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gaa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a>) {</div>
 <div class="c-code__line">            printf((<span class="c-code__stringliteral">&quot;Failed to find an ip intelligence &quot;</span></div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;evidence file. Make sure the ip-intelligence-data &quot;</span></div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;submodule has been updated by running &quot;</span></div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;`git submodule update --recursive`\n&quot;</span>));</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;evidence file. Make sure the data submodule is there &quot;</span></div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;by running `git submodule update --init data`.\n&quot;</span>));</div>
 <div class="c-code__line"><span class="c-code__preprocessor">#ifndef TEST</span></div>
 <div class="c-code__line">            fgetc(stdin);</div>
 <div class="c-code__line"><span class="c-code__preprocessor">#endif</span></div>
@@ -1164,7 +1163,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga4921f9a186627faaebc505056ab7ed6e"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga4921f9a186627faaebc505056ab7ed6e">INSUFFICIENT_MEMORY</a></div><div class="ttdeci">#define INSUFFICIENT_MEMORY</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_STATUS_INSUFFICIENT_MEMORY status code.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:479</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga5564dc6b848f9347ca42b68ad2091cf8"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga5564dc6b848f9347ca42b68ad2091cf8">PropertiesGetRequiredPropertyCount</a></div><div class="ttdeci">#define PropertiesGetRequiredPropertyCount</div><div class="ttdoc">Synonym for fiftyoneDegreesPropertiesGetRequiredPropertyCount function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:327</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga556b4dfadc53ec16baa29a33f59fe666"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga556b4dfadc53ec16baa29a33f59fe666">StatusCode</a></div><div class="ttdeci">fiftyoneDegreesStatusCode StatusCode</div><div class="ttdoc">Synonym for fiftyoneDegreesStatusCode type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:134</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga5ba06bcfd18437e9145833037dd7ecc9"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a></div><div class="ttdeci">#define FileGetPath</div><div class="ttdoc">Synonym for fiftyoneDegreesFileGetPath function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:337</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga778f0a000e8f736d47febcfb05586f44"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga778f0a000e8f736d47febcfb05586f44">EXCEPTION_SET</a></div><div class="ttdeci">#define EXCEPTION_SET</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_EXCEPTION_SET macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:441</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga7ad7ecba8293409ee538458c83fbd23e"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga7ad7ecba8293409ee538458c83fbd23e">EXCEPTION_OKAY</a></div><div class="ttdeci">#define EXCEPTION_OKAY</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_EXCEPTION_OKAY macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:444</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga8780bffcae60e8593485d281e4914545"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga8780bffcae60e8593485d281e4914545">THREAD_JOIN</a></div><div class="ttdeci">#define THREAD_JOIN</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_THREAD_JOIN macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:454</div></div>

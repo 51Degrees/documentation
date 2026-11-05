@@ -82,9 +82,55 @@ static&#160;void&#160;</td><td class="c-table__cell"><b>cantFindDataFile</b> (St
 <tr class="c-table__row memitem:a6f90817f1cea8b373af2d4bdee60c37b" id="r_a6f90817f1cea8b373af2d4bdee60c37b"><td class="c-table__cell">static&#160;File&#160;</td><td class="c-table__cell"><a class="el" href="#a6f90817f1cea8b373af2d4bdee60c37b">getEvidenceFile</a> (String evidenceFilename)  throws Exception </td></tr>
 <tr class="c-table__row memdesc:a6f90817f1cea8b373af2d4bdee60c37b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Tries to find the passed file, or if null a default file.  <br /></td></tr>
 <tr class="c-table__row memitem:a65d7d50ebba10898845671bd5a22299d" id="r_a65d7d50ebba10898845671bd5a22299d"><td class="c-table__cell">static&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a65d7d50ebba10898845671bd5a22299d">getDataFileLocation</a> (String dataFilename)  throws Exception </td></tr>
-<tr class="c-table__row memdesc:a65d7d50ebba10898845671bd5a22299d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Tries to find the passed file, or if null a default file.  <br /></td></tr>
+<tr class="c-table__row memdesc:a65d7d50ebba10898845671bd5a22299d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Tries to find the passed file, or if null the first data file found, or the free Lite file when there is none.  <br /></td></tr>
+<tr class="c-table__row memitem:ae1217e7570b29521e87ec348ff410d85" id="r_ae1217e7570b29521e87ec348ff410d85"><td class="c-table__cell">static&#160;File&#160;</td><td class="c-table__cell"><a class="el" href="#ae1217e7570b29521e87ec348ff410d85">findDataFile</a> (String file)</td></tr>
+<tr class="c-table__row memdesc:ae1217e7570b29521e87ec348ff410d85"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Finds a file below the project root, as <code><a class="elRef" href="../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1util_1_1_file_finder.html#a5928dad09922d0811c51f154af53208b">FileFinder#getFilePath(String)</a></code> does.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="ae1217e7570b29521e87ec348ff410d85" name="ae1217e7570b29521e87ec348ff410d85"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae1217e7570b29521e87ec348ff410d85">&#9670;&#160;</a></span>findDataFile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">File fiftyone.devicedetection.examples.shared.DataFileHelper.findDataFile </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Finds a file below the project root, as <code><a class="elRef" href="../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1util_1_1_file_finder.html#a5928dad09922d0811c51f154af53208b">FileFinder#getFilePath(String)</a></code> does. </p>
+<p>A free data file that is missing has a <code class="JavaDocCode">&lt;file&gt;.link</code> in the data repository, so the data repository's script is run to download it, and the file is looked for again. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>the name of the file, or the end of its path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the file </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>if the file was not found, naming the command that downloads it when there is one </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a65d7d50ebba10898845671bd5a22299d" name="a65d7d50ebba10898845671bd5a22299d"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65d7d50ebba10898845671bd5a22299d">&#9670;&#160;</a></span>getDataFileLocation()</h2>
 
@@ -112,7 +158,7 @@ static&#160;void&#160;</td><td class="c-table__cell"><b>cantFindDataFile</b> (St
 </table>
 </div><div class="c-member__body">
 
-<p>Tries to find the passed file, or if null a default file. </p>
+<p>Tries to find the passed file, or if null the first data file found, or the free Lite file when there is none. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dataFilename</td><td>a filename to find </td></tr>

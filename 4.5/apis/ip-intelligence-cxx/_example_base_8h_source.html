@@ -152,34 +152,41 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_example_base_
 <div class="c-code__line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>EXTERNAL <span class="c-code__keywordtype">void</span> fiftyoneDegreesExampleCheckDataFile(</div>
 <div class="c-code__line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_struct" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *dataset);</div>
 <div class="c-code__line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
-<div class="c-code__line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="c-code__keyword">typedef</span> void (*fiftyoneDegreesIpAddressHandlerPtr)</div>
-<div class="c-code__line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    (<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* ipAddress, <span class="c-code__keywordtype">void</span>* state);</div>
-<div class="c-code__line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
-<div class="c-code__line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>EXTERNAL uint32_t fiftyoneDegreesIterateFakeIPv4s(</div>
-<div class="c-code__line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    uint32_t rangeStart,</div>
-<div class="c-code__line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    uint32_t rangeEnd,</div>
-<div class="c-code__line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    uint32_t increment,</div>
-<div class="c-code__line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    fiftyoneDegreesIpAddressHandlerPtr ipAddressHandler,</div>
-<div class="c-code__line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="c-code__keywordtype">void</span> *state);</div>
-<div class="c-code__line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span></div>
-<div class="c-code__line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>EXTERNAL <span class="c-code__keywordtype">void</span> fiftyoneDegreesEvidenceFileIterate(</div>
-<div class="c-code__line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *fileName,</div>
-<div class="c-code__line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="c-code__keywordtype">char</span> * buffer,</div>
-<div class="c-code__line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="c-code__keywordtype">int</span> length,</div>
-<div class="c-code__line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="c-code__keywordtype">void</span> *state,</div>
-<div class="c-code__line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="c-code__keywordtype">void</span>(*callback)(<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>*, <span class="c-code__keywordtype">void</span> *));</div>
-<div class="c-code__line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="c-code__line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span></div>
-<div class="c-code__line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>EXTERNAL <span class="c-code__keywordtype">void</span> fiftyoneDegreesEvidenceFileIterateWithLimit(</div>
-<div class="c-code__line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *fileName,</div>
-<div class="c-code__line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="c-code__keywordtype">char</span> *buffer,</div>
-<div class="c-code__line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="c-code__keywordtype">int</span> length,</div>
-<div class="c-code__line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="c-code__keywordtype">int</span> limit,</div>
-<div class="c-code__line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="c-code__keywordtype">void</span> *state,</div>
-<div class="c-code__line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="c-code__keywordtype">void</span>(*callback)(<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>*, <span class="c-code__keywordtype">void</span> *));</div>
-<div class="c-code__line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="c-code__line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="c-code__line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="c-code__preprocessor">#endif</span></div>
+<div class="c-code__line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>EXTERNAL <a class="code hl_enumeration" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> fiftyoneDegreesExampleGetFilePath(</div>
+<div class="c-code__line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *dataFolderName,</div>
+<div class="c-code__line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *fileName,</div>
+<div class="c-code__line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="c-code__keywordtype">char</span> *destination,</div>
+<div class="c-code__line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="c-code__keywordtype">size_t</span> size);</div>
+<div class="c-code__line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
+<div class="c-code__line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="c-code__keyword">typedef</span> void (*fiftyoneDegreesIpAddressHandlerPtr)</div>
+<div class="c-code__line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    (<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* ipAddress, <span class="c-code__keywordtype">void</span>* state);</div>
+<div class="c-code__line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span></div>
+<div class="c-code__line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>EXTERNAL uint32_t fiftyoneDegreesIterateFakeIPv4s(</div>
+<div class="c-code__line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    uint32_t rangeStart,</div>
+<div class="c-code__line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    uint32_t rangeEnd,</div>
+<div class="c-code__line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    uint32_t increment,</div>
+<div class="c-code__line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    fiftyoneDegreesIpAddressHandlerPtr ipAddressHandler,</div>
+<div class="c-code__line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="c-code__keywordtype">void</span> *state);</div>
+<div class="c-code__line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span></div>
+<div class="c-code__line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>EXTERNAL <span class="c-code__keywordtype">void</span> fiftyoneDegreesEvidenceFileIterate(</div>
+<div class="c-code__line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *fileName,</div>
+<div class="c-code__line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="c-code__keywordtype">char</span> * buffer,</div>
+<div class="c-code__line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="c-code__keywordtype">int</span> length,</div>
+<div class="c-code__line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="c-code__keywordtype">void</span> *state,</div>
+<div class="c-code__line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="c-code__keywordtype">void</span>(*callback)(<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>*, <span class="c-code__keywordtype">void</span> *));</div>
+<div class="c-code__line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="c-code__line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span></div>
+<div class="c-code__line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>EXTERNAL <span class="c-code__keywordtype">void</span> fiftyoneDegreesEvidenceFileIterateWithLimit(</div>
+<div class="c-code__line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *fileName,</div>
+<div class="c-code__line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="c-code__keywordtype">char</span> *buffer,</div>
+<div class="c-code__line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="c-code__keywordtype">int</span> length,</div>
+<div class="c-code__line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="c-code__keywordtype">int</span> limit,</div>
+<div class="c-code__line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="c-code__keywordtype">void</span> *state,</div>
+<div class="c-code__line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="c-code__keywordtype">void</span>(*callback)(<span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>*, <span class="c-code__keywordtype">void</span> *));</div>
+<div class="c-code__line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="c-code__line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="c-code__line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="c-code__preprocessor">#endif</span></div>
+<div class="ttc" id="agroup___fifty_one_degrees_status_html_ga887881c8b6ec9f0c8510913831ebd19e"><div class="ttname"><a href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a></div><div class="ttdeci">fiftyoneDegreesStatusCode</div><div class="ttdoc">Status returned from the initialisation of a resource.</div><div class="ttdef"><b>Definition</b> status.h:81</div></div>
 <div class="ttc" id="astructfiftyone_degrees_config_ipi_html"><div class="ttname"><a href="structfiftyone_degrees_config_ipi.html">fiftyoneDegreesConfigIpi</a></div><div class="ttdoc">IP Intelligence specific configuration structure.</div><div class="ttdef"><b>Definition</b> ipi.h:248</div></div>
 <div class="ttc" id="astructfiftyone_degrees_data_set_ipi_html"><div class="ttname"><a href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a></div><div class="ttdoc">Data set structure containing all the components used for IP intelligence.</div><div class="ttdef"><b>Definition</b> ipi.h:287</div></div>
 <div class="ttc" id="astructfiftyone_degrees_example_parameters_html"><div class="ttname"><a href="structfiftyone_degrees_example_parameters.html">fiftyoneDegreesExampleParameters</a></div><div class="ttdef"><b>Definition</b> ExampleBase.h:67</div></div>

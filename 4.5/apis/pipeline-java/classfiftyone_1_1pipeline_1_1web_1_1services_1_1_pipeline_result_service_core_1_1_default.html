@@ -84,7 +84,7 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a246c6c22423b413f9667841e32d49168" id="r_a246c6c22423b413f9667841e32d49168"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a246c6c22423b413f9667841e32d49168">Default</a> (<a class="el" href="interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_web_request_evidence_service_core.html">WebRequestEvidenceServiceCore</a> evidenceService, <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html">Pipeline</a> pipeline)</td></tr>
 <tr class="c-table__row memdesc:a246c6c22423b413f9667841e32d49168"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Create a new instance.  <br /></td></tr>
 <tr class="c-table__row memitem:ac589367277fcfe744b0edd5687d8ddfd" id="r_ac589367277fcfe744b0edd5687d8ddfd"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ac589367277fcfe744b0edd5687d8ddfd">process</a> (HttpServletRequest request)</td></tr>
-<tr class="c-table__row memdesc:ac589367277fcfe744b0edd5687d8ddfd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Populate the evidence from the request and process through the <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,...">Pipeline</a>.  <br /></td></tr>
+<tr class="c-table__row memdesc:ac589367277fcfe744b0edd5687d8ddfd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html" title="A closeable structure to contain the inputs and outputs of Pipeline processing.">FlowData</a> is kept in the request, and whatever handles the end of the request closes it.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-attribs" class="g-docs__section-heading"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -147,13 +147,8 @@ Protected Attributes</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Populate the evidence from the request and process through the <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,...">Pipeline</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">request</td><td>the <code><a class="el" href="">HttpServletRequest</a></code> to process </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>The <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html" title="A closeable structure to contain the inputs and outputs of Pipeline processing.">FlowData</a> is kept in the request, and whatever handles the end of the request closes it. </p>
+<p>If processing fails it never reaches the request, so it is closed here instead. </p>
 
 <p>Implements <a class="el" href="interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_pipeline_result_service_core.html#aaf04391d95ac74b4fa6c5c0d53539fb6">fiftyone.pipeline.web.services.PipelineResultServiceCore</a>.</p>
 

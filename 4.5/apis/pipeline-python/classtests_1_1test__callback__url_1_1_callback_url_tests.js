@@ -1,0 +1,15 @@
+var classtests_1_1test__callback__url_1_1_callback_url_tests =
+[
+    [ "test_accepts_the_host", "classtests_1_1test__callback__url_1_1_callback_url_tests.html#a8f74d54a72c4a3c70377513dee6f910e", null ],
+    [ "test_adds_a_single_slash", "classtests_1_1test__callback__url_1_1_callback_url_tests.html#ab0b5cfac74f7725fcd7f14b92e13ddc4", null ],
+    [ "test_checks_the_scheme", "classtests_1_1test__callback__url_1_1_callback_url_tests.html#ada00719325038c5d392c1759da23544c", null ],
+    [ "test_collapses_a_double_slash", "classtests_1_1test__callback__url_1_1_callback_url_tests.html#a56557e74af0cb7a8a9369651103b2ed6", null ],
+    [ "test_keeps_a_single_slash_on_the_endpoint", "classtests_1_1test__callback__url_1_1_callback_url_tests.html#a9115cac17f9cde4b74e06a35809b8964", null ],
+    [ "test_missing_when_a_part_is_empty", "classtests_1_1test__callback__url_1_1_callback_url_tests.html#a6845cbd1758a3ff6efbb609b57734d8c", null ],
+    [ "test_nothing_given_can_end_the_string", "classtests_1_1test__callback__url_1_1_callback_url_tests.html#afceb03f65c2ad92f9ca01ba3cf027fdc", null ],
+    [ "test_refuses_the_host", "classtests_1_1test__callback__url_1_1_callback_url_tests.html#aad541aaddc3f8db6b998e7ec2c2412f4", null ],
+    [ "test_refuses_the_host_outside_ascii", "classtests_1_1test__callback__url_1_1_callback_url_tests.html#a81b8da064a8f7fff3c8909984f513f9b", null ],
+    [ "test_the_endpoint_is_encoded", "classtests_1_1test__callback__url_1_1_callback_url_tests.html#a3db5a8f3c896653f3cec18308317e812", null ],
+    [ "test_the_invalid_url_is_the_one_built", "classtests_1_1test__callback__url_1_1_callback_url_tests.html#ad19df7b2d284274569fc1de8dbc09873", null ],
+    [ "test_writes_a_lone_surrogate_as_the_replacement_character", "classtests_1_1test__callback__url_1_1_callback_url_tests.html#a3d620079cec1f8c3d7616d5d3f2061c3", null ]
+];

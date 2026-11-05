@@ -428,33 +428,36 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">                    loggerFactory)</div>
 <div class="c-code__line">                    .build();</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            Pipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
+<div class="c-code__line">            <span class="c-code__comment">// The pipeline closes the engines when it is closed.</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">try</span> (Pipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
 <div class="c-code__line">                .addFlowElement(cloudRequestEngine)</div>
 <div class="c-code__line">                .addFlowElement(ageElement)</div>
-<div class="c-code__line">                .build();</div>
+<div class="c-code__line">                .setAutoCloseElements(<span class="c-code__keyword">true</span>)</div>
+<div class="c-code__line">                .build()) {</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            String dob = <span class="c-code__stringliteral">&quot;18/12/1992&quot;</span>;</div>
+<div class="c-code__line">                String dob = <span class="c-code__stringliteral">&quot;18/12/1992&quot;</span>;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keywordflow">try</span> (FlowData flowData = pipeline.createFlowData()) {</div>
-<div class="c-code__line">                flowData</div>
-<div class="c-code__line">                    .addEvidence(<span class="c-code__stringliteral">&quot;cookie.date-of-birth&quot;</span>, dob)</div>
-<div class="c-code__line">                    .process();</div>
-<div class="c-code__line">    </div>
-<div class="c-code__line">                String starSign =</div>
-<div class="c-code__line">                    flowData.getFromElement(ageElement).getStarSign();</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (starSign == <span class="c-code__keyword">null</span>) {</div>
-<div class="c-code__line">                    <span class="c-code__comment">// The service answered but offers no star sign</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// product, which is what the 51Degrees cloud says,</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// because star signs are only served by the example</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// service. The connection, the property and evidence</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// key negotiation and the request itself all worked.</span></div>
-<div class="c-code__line">                    System.out.println(<span class="c-code__stringliteral">&quot;The cloud service at &quot;</span> + endpoint()</div>
-<div class="c-code__line">                        + <span class="c-code__stringliteral">&quot; does not offer the star sign product, so no &quot;</span></div>
-<div class="c-code__line">                        + <span class="c-code__stringliteral">&quot;star sign is available for a date of birth of &quot;</span></div>
-<div class="c-code__line">                        + dob + <span class="c-code__stringliteral">&quot;.&quot;</span>);</div>
-<div class="c-code__line">                } <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">                    System.out.println(<span class="c-code__stringliteral">&quot;With a date of birth of &quot;</span> + dob</div>
-<div class="c-code__line">                        + <span class="c-code__stringliteral">&quot;, your star sign is &quot;</span> + starSign + <span class="c-code__stringliteral">&quot;.&quot;</span>);</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">try</span> (FlowData flowData = pipeline.createFlowData()) {</div>
+<div class="c-code__line">                    flowData</div>
+<div class="c-code__line">                        .addEvidence(<span class="c-code__stringliteral">&quot;cookie.date-of-birth&quot;</span>, dob)</div>
+<div class="c-code__line">                        .process();</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">                    String starSign =</div>
+<div class="c-code__line">                        flowData.getFromElement(ageElement).getStarSign();</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">if</span> (starSign == <span class="c-code__keyword">null</span>) {</div>
+<div class="c-code__line">                        <span class="c-code__comment">// The service answered but offers no star sign</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// product, which is what the 51Degrees cloud says,</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// because star signs are only served by the example</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// service. The connection, the property and evidence</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// key negotiation and the request itself all worked.</span></div>
+<div class="c-code__line">                        System.out.println(<span class="c-code__stringliteral">&quot;The cloud service at &quot;</span> + endpoint()</div>
+<div class="c-code__line">                            + <span class="c-code__stringliteral">&quot; does not offer the star sign product, so no &quot;</span></div>
+<div class="c-code__line">                            + <span class="c-code__stringliteral">&quot;star sign is available for a date of birth of &quot;</span></div>
+<div class="c-code__line">                            + dob + <span class="c-code__stringliteral">&quot;.&quot;</span>);</div>
+<div class="c-code__line">                    } <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">                        System.out.println(<span class="c-code__stringliteral">&quot;With a date of birth of &quot;</span> + dob</div>
+<div class="c-code__line">                            + <span class="c-code__stringliteral">&quot;, your star sign is &quot;</span> + starSign + <span class="c-code__stringliteral">&quot;.&quot;</span>);</div>
+<div class="c-code__line">                    }</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 </div><!-- fragment --><p>to give an output of: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">With a date of birth of 18/12/1992, your star sign is Sagittarius.</div>

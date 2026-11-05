@@ -79,15 +79,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_metadata_on_p
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-java/blob/main/examples/device-detection/console/src/main/java/fiftyone/devicedetection/examples/console/MetadataOnPrem.java">GitHub</a>.</p>
 <p> 
  <p>
- This example requires a local data file. The free 'Lite' data file can be acquired by
- pulling the git submodules under this repository (run `git submodule update --recursive`) 
- or from the <a href="https://github.com/51Degrees/device-detection-data">device-detection-data</a>
- GitHub repository.
+ This example requires a local data file. The free 'Lite' data file can be downloaded with the
+ scripts in the <a href="https://github.com/51Degrees/data">data</a> GitHub repository, which
+ this repository includes at <code>cxx/data</code>. Fetch the submodules by running
+ <code>git submodule update --init --recursive</code>, then run
+ <code>sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash</code> from the repository root,
+ which saves the file as <code>cxx/data/device-detection/51Degrees-LiteV4.1.hash</code>.
  </p>
  <p>
  The Lite data file is only used for illustration, and has limited accuracy and capabilities.
  Find out about the more capable data files that are available on our 
- <a href="https://51degrees.com/pricing">pricing page</a>
+ <a href="https://51degrees.com/pricing">pricing page</a>.
  </p>
    </p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">/* *********************************************************************</span></div>
@@ -113,11 +115,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_metadata_on_p
 <div class="c-code__line"><span class="c-code__comment"> * ********************************************************************* */</span></div>
 <div class="c-code__line"><span class="c-code__keyword">package </span>fiftyone.devicedetection.examples.console;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.fiftyone.data.FiftyOneAspectPropertyMetaData;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.devicedetection.examples.shared.DataFileHelper;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.devicedetection.hash.engine.onpremise.flowelements.DeviceDetectionHashEngine;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.devicedetection.hash.engine.onpremise.flowelements.DeviceDetectionHashEngineBuilder;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.core.data.EvidenceKeyFilterWhitelist;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.Constants;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.fiftyone.data.CloseableIterable;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.fiftyone.data.ComponentMetaData;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.fiftyone.data.ProfileMetaData;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.fiftyone.data.ValueMetaData;</div>
@@ -137,12 +141,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_metadata_on_p
 <div class="c-code__line"><span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>MetadataOnPrem {</div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> Logger logger = LoggerFactory.getLogger(GettingStartedOnPrem.class);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">/* In this example, by default, the 51degrees &quot;Lite&quot; file needs to be somewhere in the project</span></div>
-<div class="c-code__line"><span class="c-code__comment">    space, or you may specify another file as a command line parameter.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">/* In this example, by default, the 51degrees &quot;Lite&quot; file is used from the data repository in</span></div>
+<div class="c-code__line"><span class="c-code__comment">    cxx/data, and is downloaded if it is missing, or you may specify another file as a command line</span></div>
+<div class="c-code__line"><span class="c-code__comment">    parameter.</span></div>
 <div class="c-code__line"><span class="c-code__comment"></span> </div>
 <div class="c-code__line"><span class="c-code__comment">    Note that the Lite data file is only used for illustration, and has limited accuracy and</span></div>
 <div class="c-code__line"><span class="c-code__comment">    capabilities. Find out about the Enterprise data file here: https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-metadataonprem.java&amp;utm_term=lite_v_4_1_hash */</span></div>
-<div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> String LITE_V_4_1_HASH = <span class="c-code__stringliteral">&quot;51Degrees-LiteV4.1.hash&quot;</span>;</div>
+<div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> String LITE_V_4_1_HASH = <span class="c-code__stringliteral">&quot;device-detection/51Degrees-LiteV4.1.hash&quot;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> main(String[] args) <span class="c-code__keywordflow">throws</span> Exception {</div>
 <div class="c-code__line">        configureLogback(getFilePath(<span class="c-code__stringliteral">&quot;logback.xml&quot;</span>));</div>
@@ -155,7 +160,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_metadata_on_p
 <div class="c-code__line">        logger.info(<span class="c-code__stringliteral">&quot;Running MetadataOnPrem example&quot;</span>);</div>
 <div class="c-code__line">        String dataFileLocation;</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">try</span> {</div>
-<div class="c-code__line">            dataFileLocation = getFilePath(dataFile).getAbsolutePath();</div>
+<div class="c-code__line">            dataFileLocation =</div>
+<div class="c-code__line">                    DataFileHelper.findDataFile(dataFile).getAbsolutePath();</div>
 <div class="c-code__line">        } <span class="c-code__keywordflow">catch</span> (Exception e) {</div>
 <div class="c-code__line">            DataFileHelper.cantFindDataFile(dataFile);</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">throw</span> e;</div>
@@ -171,7 +177,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_metadata_on_p
 <div class="c-code__line">                <span class="c-code__comment">// example. See the documentation for more detail on this and other</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// configuration options:</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_device_detection__features__performance_options.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-metadataonprem.java&amp;utm_term=run</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-metadataonprem.java&amp;utm_term=run</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-metadataonprem.java&amp;utm_term=run</span></div>
 <div class="c-code__line">                .setPerformanceProfile(Constants.PerformanceProfiles.LowMemory)</div>
 <div class="c-code__line">                <span class="c-code__comment">// inhibit auto-update of the data file for this test</span></div>
 <div class="c-code__line">                .setAutoUpdate(<span class="c-code__keyword">false</span>)</div>
@@ -224,71 +230,92 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_metadata_on_p
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> outputProfileDetails(DeviceDetectionHashEngine ddEngine,</div>
-<div class="c-code__line">                                            PrintWriter output) {</div>
-<div class="c-code__line">        <span class="c-code__comment">// Group the profiles by component and then output the number of profiles </span></div>
+<div class="c-code__line">                                            PrintWriter output) <span class="c-code__keywordflow">throws</span> Exception {</div>
+<div class="c-code__line">        <span class="c-code__comment">// Group the profiles by component and then output the number of profiles</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// for each component.</span></div>
-<div class="c-code__line">        Map&lt;String, List&lt;ProfileMetaData&gt;&gt; groups =</div>
-<div class="c-code__line">                StreamSupport.stream(ddEngine.getProfiles().spliterator(), <span class="c-code__keyword">false</span>)</div>
-<div class="c-code__line">                                .collect(Collectors.groupingBy(p -&gt; p.getComponent().getName()));</div>
-<div class="c-code__line">        groups.forEach((k,v)-&gt;output.format(<span class="c-code__stringliteral">&quot;%s Profiles: %d\n&quot;</span>, k , v.size()));</div>
+<div class="c-code__line">        <span class="c-code__comment">//</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// A try-with-resource block MUST be used for the collections of</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// metadata returned by the engine. Each one holds a reference to the</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// engine&#39;s data set until it is closed, so if it is left open the</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// data set cannot be freed when the engine is closed.</span></div>
+<div class="c-code__line">        Map&lt;String, Long&gt; groups;</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">try</span> (CloseableIterable&lt;ProfileMetaData&gt; profiles = ddEngine.getProfiles()) {</div>
+<div class="c-code__line">            groups = StreamSupport.stream(profiles.spliterator(), <span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">                    .collect(Collectors.groupingBy(</div>
+<div class="c-code__line">                            p -&gt; p.getComponent().getName(),</div>
+<div class="c-code__line">                            Collectors.counting()));</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        groups.forEach((k,v)-&gt;output.format(<span class="c-code__stringliteral">&quot;%s Profiles: %d\n&quot;</span>, k , v));</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Output the component name as well as a list of all the associated properties.</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// If we&#39;re outputting to console then we also add some formatting to make it</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// more readable.</span></div>
-<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> outputComponents(DeviceDetectionHashEngine ddEngine, PrintWriter output){</div>
-<div class="c-code__line">        ddEngine.getComponents().forEach(c -&gt; {</div>
-<div class="c-code__line">            output.println(<span class="c-code__stringliteral">&quot;Component - &quot;</span>+ c.getName());</div>
-<div class="c-code__line">            outputProperties(c, output);</div>
-<div class="c-code__line">        });</div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> outputComponents(DeviceDetectionHashEngine ddEngine, PrintWriter output)</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">throws</span> Exception {</div>
+<div class="c-code__line">        <span class="c-code__comment">// See outputProfileDetails for why this is a try-with-resource block.</span></div>
+<div class="c-code__line">        <span class="c-code__keywordflow">try</span> (CloseableIterable&lt;ComponentMetaData&gt; components = ddEngine.getComponents()) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">for</span> (ComponentMetaData c : components) {</div>
+<div class="c-code__line">                output.println(<span class="c-code__stringliteral">&quot;Component - &quot;</span>+ c.getName());</div>
+<div class="c-code__line">                outputProperties(c, output);</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> outputProperties(ComponentMetaData component, PrintWriter output) {</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (component.getProperties().iterator().hasNext() == <span class="c-code__keyword">false</span>) {</div>
-<div class="c-code__line">            output.println(<span class="c-code__stringliteral">&quot;    ... no properties&quot;</span>);</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">return</span>;</div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> outputProperties(ComponentMetaData component, PrintWriter output)</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">throws</span> Exception {</div>
+<div class="c-code__line">        <span class="c-code__comment">// The properties of a component, and the values of a property, are</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// collections that are closed in the same way.</span></div>
+<div class="c-code__line">        <span class="c-code__keywordflow">try</span> (CloseableIterable&lt;FiftyOneAspectPropertyMetaData&gt; properties =</div>
+<div class="c-code__line">                     component.getProperties()) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (properties.iterator().hasNext() == <span class="c-code__keyword">false</span>) {</div>
+<div class="c-code__line">                output.println(<span class="c-code__stringliteral">&quot;    ... no properties&quot;</span>);</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">return</span>;</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">for</span> (FiftyOneAspectPropertyMetaData property : properties) {</div>
+<div class="c-code__line">                <span class="c-code__comment">// Output some details about the property.</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// If we&#39;re outputting to console then we also add some formatting to make it</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// more readable.</span></div>
+<div class="c-code__line">                output.format(<span class="c-code__stringliteral">&quot;    Property - %s [Category: %s] (%s)\n        &quot;</span> +</div>
+<div class="c-code__line">                                <span class="c-code__stringliteral">&quot;Description: %s\n&quot;</span>,</div>
+<div class="c-code__line">                        property.getName(),</div>
+<div class="c-code__line">                        property.getCategory(),</div>
+<div class="c-code__line">                        property.getType().getName(),</div>
+<div class="c-code__line">                        property.getDescription());</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">                <span class="c-code__comment">// Next, output a list of the possible values this property can have.</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// Most properties in the Device Metrics category do not have defined</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// values so exclude them.</span></div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (property.getCategory().equals(<span class="c-code__stringliteral">&quot;Device Metrics&quot;</span>)==<span class="c-code__keyword">false</span>) {</div>
+<div class="c-code__line">                    StringBuilder values = <span class="c-code__keyword">new</span> StringBuilder(<span class="c-code__stringliteral">&quot;        Possible &quot;</span> +</div>
+<div class="c-code__line">                            <span class="c-code__stringliteral">&quot;values: &quot;</span>);</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">try</span> (CloseableIterable&lt;ValueMetaData&gt; propertyValues =</div>
+<div class="c-code__line">                                 property.getValues()) {</div>
+<div class="c-code__line">                        Spliterator&lt;ValueMetaData&gt; spliterator2 =</div>
+<div class="c-code__line">                                propertyValues.spliterator();</div>
+<div class="c-code__line">                        StreamSupport.stream(spliterator2, <span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">                                .limit(20)</div>
+<div class="c-code__line">                                .forEach(value -&gt; {</div>
+<div class="c-code__line">                                    <span class="c-code__comment">// add value</span></div>
+<div class="c-code__line">                                    values.append(truncateToNl(value.getName()));</div>
+<div class="c-code__line">                                    <span class="c-code__comment">// add description if exists</span></div>
+<div class="c-code__line">                                    String d = value.getDescription();</div>
+<div class="c-code__line">                                    <span class="c-code__keywordflow">if</span> (Objects.nonNull(d) &amp;&amp; d.isEmpty() == <span class="c-code__keyword">false</span>) {</div>
+<div class="c-code__line">                                        values.append(<span class="c-code__stringliteral">&quot;(&quot;</span>)</div>
+<div class="c-code__line">                                                .append(d)</div>
+<div class="c-code__line">                                                .append(<span class="c-code__stringliteral">&quot;)&quot;</span>);</div>
+<div class="c-code__line">                                    }</div>
+<div class="c-code__line">                                    values.append(<span class="c-code__stringliteral">&quot;,&quot;</span>);</div>
+<div class="c-code__line">                                });</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">                        <span class="c-code__keywordflow">if</span> (spliterator2.estimateSize() &gt; 20) {</div>
+<div class="c-code__line">                            values.append(<span class="c-code__stringliteral">&quot; +  more ...&quot;</span>);</div>
+<div class="c-code__line">                        }</div>
+<div class="c-code__line">                    }</div>
+<div class="c-code__line">                    output.println(values);</div>
+<div class="c-code__line">                }</div>
+<div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
-<div class="c-code__line">        component.getProperties()</div>
-<div class="c-code__line">                .forEach(property-&gt; {</div>
-<div class="c-code__line">                            <span class="c-code__comment">// Output some details about the property.</span></div>
-<div class="c-code__line">                            <span class="c-code__comment">// If we&#39;re outputting to console then we also add some formatting to make it</span></div>
-<div class="c-code__line">                            <span class="c-code__comment">// more readable.</span></div>
-<div class="c-code__line">                            output.format(<span class="c-code__stringliteral">&quot;    Property - %s [Category: %s] (%s)\n        &quot;</span> +</div>
-<div class="c-code__line">                                            <span class="c-code__stringliteral">&quot;Description: %s\n&quot;</span>,</div>
-<div class="c-code__line">                                    property.getName(),</div>
-<div class="c-code__line">                                    property.getCategory(),</div>
-<div class="c-code__line">                                    property.getType().getName(),</div>
-<div class="c-code__line">                                    property.getDescription());</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">                            <span class="c-code__comment">// Next, output a list of the possible values this property can have.</span></div>
-<div class="c-code__line">                            <span class="c-code__comment">// Most properties in the Device Metrics category do not have defined</span></div>
-<div class="c-code__line">                            <span class="c-code__comment">// values so exclude them.</span></div>
-<div class="c-code__line">                            if (property.getCategory().equals(<span class="c-code__stringliteral">&quot;Device Metrics&quot;</span>)==false) {</div>
-<div class="c-code__line">                                StringBuilder values = new StringBuilder(<span class="c-code__stringliteral">&quot;        Possible &quot;</span> +</div>
-<div class="c-code__line">                                        <span class="c-code__stringliteral">&quot;values: &quot;</span>);</div>
-<div class="c-code__line">                                Spliterator&lt;ValueMetaData&gt; spliterator2 =</div>
-<div class="c-code__line">                                        property.getValues().spliterator();</div>
-<div class="c-code__line">                                StreamSupport.stream(spliterator2, false)</div>
-<div class="c-code__line">                                        .limit(20)</div>
-<div class="c-code__line">                                        .forEach(value -&gt; {</div>
-<div class="c-code__line">                                            <span class="c-code__comment">// add value</span></div>
-<div class="c-code__line">                                            values.append(truncateToNl(value.getName()));</div>
-<div class="c-code__line">                                            <span class="c-code__comment">// add description if exists</span></div>
-<div class="c-code__line">                                            String d = value.getDescription();</div>
-<div class="c-code__line">                                            if (Objects.nonNull(d) &amp;&amp; d.isEmpty() == false) {</div>
-<div class="c-code__line">                                                values.append(<span class="c-code__stringliteral">&quot;(&quot;</span>)</div>
-<div class="c-code__line">                                                        .append(d)</div>
-<div class="c-code__line">                                                        .append(<span class="c-code__stringliteral">&quot;)&quot;</span>);</div>
-<div class="c-code__line">                                            }</div>
-<div class="c-code__line">                                            values.append(<span class="c-code__stringliteral">&quot;,&quot;</span>);</div>
-<div class="c-code__line">                                        });</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">                                if (spliterator2.estimateSize() &gt; 20) {</div>
-<div class="c-code__line">                                    values.append(<span class="c-code__stringliteral">&quot; +  more ...&quot;</span>);</div>
-<div class="c-code__line">                                }</div>
-<div class="c-code__line">                                output.println(values);</div>
-<div class="c-code__line">                            }</div>
-<div class="c-code__line">                        });</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"> </div>

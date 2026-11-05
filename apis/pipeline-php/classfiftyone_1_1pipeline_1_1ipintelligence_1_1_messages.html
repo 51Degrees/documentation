@@ -77,6 +77,8 @@ Data Fields</h2></td></tr>
 <tr class="c-table__row memitem:acf73aad0a5a45962a79bcfea169df07d" id="r_acf73aad0a5a45962a79bcfea169df07d"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#acf73aad0a5a45962a79bcfea169df07d">DATA_FILE_EXTENSION_ERROR</a></td></tr>
 <tr class="c-table__row memitem:a0067e6904f1265a71a3d778a5e516245" id="r_a0067e6904f1265a71a3d778a5e516245"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a0067e6904f1265a71a3d778a5e516245">GLOBAL_ENGINE_SETTINGS_REJECTED</a></td></tr>
 <tr class="c-table__row memitem:a6f78a0e87de03c3f2d366747ce9ce39f" id="r_a6f78a0e87de03c3f2d366747ce9ce39f"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a6f78a0e87de03c3f2d366747ce9ce39f">EXTENSION_NOT_LOADED</a></td></tr>
+<tr class="c-table__row memitem:a472d379fbdb1d367b936ef1453ff8e24" id="r_a472d379fbdb1d367b936ef1453ff8e24"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a472d379fbdb1d367b936ef1453ff8e24">RESULTS_CLOSED</a></td></tr>
+<tr class="c-table__row memitem:a6d74e16f57ef2b9709db8b1be2f51cfb" id="r_a6d74e16f57ef2b9709db8b1be2f51cfb"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a6d74e16f57ef2b9709db8b1be2f51cfb">ENGINE_CLOSED</a></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Field Documentation</h2>
 <a id="abd6b07411dca73ed25418494966c45f2" name="abd6b07411dca73ed25418494966c45f2"></a>
@@ -137,6 +139,27 @@ Data Fields</h2></td></tr>
 </div><div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                             =</div>
 <div class="c-code__line"><span class="c-code__stringliteral">&#39;There is no IP intelligence data file at %s&#39;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6d74e16f57ef2b9709db8b1be2f51cfb" name="a6d74e16f57ef2b9709db8b1be2f51cfb"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6d74e16f57ef2b9709db8b1be2f51cfb">&#9670;&#160;</a></span>ENGINE_CLOSED</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const fiftyone\pipeline\ipintelligence\Messages::ENGINE_CLOSED</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                       =</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;The on-premise IP intelligence engine has been closed, so it cannot &#39;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;process evidence. Build a new pipeline.&#39;</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -204,6 +227,28 @@ Data Fields</h2></td></tr>
 </div><div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                     =</div>
 <div class="c-code__line"><span class="c-code__stringliteral">&quot;&#39;%s&#39; is not a valid performance profile. Valid profiles are: %s.&quot;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a472d379fbdb1d367b936ef1453ff8e24" name="a472d379fbdb1d367b936ef1453ff8e24"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a472d379fbdb1d367b936ef1453ff8e24">&#9670;&#160;</a></span>RESULTS_CLOSED</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const fiftyone\pipeline\ipintelligence\Messages::RESULTS_CLOSED</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                        =</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;These IP intelligence results have been closed, so their &#39;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;properties cannot be read. Read the values needed before closing &#39;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;the FlowData.&#39;</span></div>
 </div><!-- fragment -->
 </div>
 </div>

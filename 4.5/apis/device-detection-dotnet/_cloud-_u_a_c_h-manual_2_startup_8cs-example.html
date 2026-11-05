@@ -129,13 +129,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud-_u_a_c_
 <div class="c-code__line">    ...</div>
 <div class="c-code__line">   <span class="c-code__keyword">public</span> IActionResult Index()</div>
 <div class="c-code__line">   {</div>
-<div class="c-code__line">       <span class="c-code__keyword">using</span> (var flowData = _pipeline.CreateFlowData())</div>
-<div class="c-code__line">       {</div>
-<div class="c-code__line">           _evidenceService.AddEvidenceFromRequest(flowData, Request);</div>
-<div class="c-code__line">           flowData.Process();</div>
-<div class="c-code__line">           SetHeaderService.SetHeaders(Response.HttpContext, flowData);</div>
-<div class="c-code__line">           <span class="c-code__keywordflow">return</span> View(flowData);</div>
-<div class="c-code__line">       }</div>
+<div class="c-code__line">       var flowData = _pipeline.CreateFlowData();</div>
+<div class="c-code__line">       <span class="c-code__comment">// Disposed when the response is sent, after the view has</span></div>
+<div class="c-code__line">       <span class="c-code__comment">// read it.</span></div>
+<div class="c-code__line">       HttpContext.Response.RegisterForDispose(flowData);</div>
+<div class="c-code__line">       _evidenceService.AddEvidenceFromRequest(flowData, Request);</div>
+<div class="c-code__line">       flowData.Process();</div>
+<div class="c-code__line">       SetHeaderService.SetHeaders(Response.HttpContext, flowData);</div>
+<div class="c-code__line">       <span class="c-code__keywordflow">return</span> View(flowData);</div>
 <div class="c-code__line">   }</div>
 <div class="c-code__line">    ...</div>
 </div><!-- fragment --></li>
@@ -195,17 +196,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud-_u_a_c_
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keyword">public</span> IActionResult Index()</div>
 <div class="c-code__line">        {</div>
-<div class="c-code__line">            <span class="c-code__keyword">using</span>(var flowData = _pipeline.<a id="a4" name="a4"></a><a class="code hl_functionRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html#a6adf8dd2a8f0435adb8bf9e857b922db">CreateFlowData</a>())</div>
-<div class="c-code__line">            {</div>
-<div class="c-code__line">                <span class="c-code__comment">// Add evidence</span></div>
-<div class="c-code__line">                _evidenceService.<a id="a5" name="a5"></a><a class="code hl_functionRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_web_1_1_services_1_1_i_web_request_evidence_service.html#abe25b6639707591991a5553f9de84bc3">AddEvidenceFromRequest</a>(flowData, Request);</div>
-<div class="c-code__line">                <span class="c-code__comment">// Process</span></div>
-<div class="c-code__line">                flowData.Process();</div>
-<div class="c-code__line">                <span class="c-code__comment">// Set response headers</span></div>
-<div class="c-code__line">                <a id="_a6" name="_a6"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_web_1_1_services_1_1_set_header_service.html">SetHeaderService</a>.<a id="a7" name="a7"></a><a class="code hl_functionRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_web_1_1_services_1_1_set_header_service.html#ad007e18b20fe6822f29152a420fa5d43">SetHeaders</a>(Response.HttpContext, flowData);</div>
-<div class="c-code__line">                <span class="c-code__comment">// Send results to view</span></div>
-<div class="c-code__line">                <span class="c-code__keywordflow">return</span> View(flowData);</div>
-<div class="c-code__line">            }</div>
+<div class="c-code__line">            var flowData = _pipeline.<a id="a4" name="a4"></a><a class="code hl_functionRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_pipeline.html#a6adf8dd2a8f0435adb8bf9e857b922db">CreateFlowData</a>();</div>
+<div class="c-code__line">            <span class="c-code__comment">// Register the flow data instance for disposal</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// when the response is sent.</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// If we just have a &#39;using&#39; block then it will</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// be disposed before the view can access the</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// values that it needs.</span></div>
+<div class="c-code__line">            HttpContext.Response.RegisterForDispose(flowData);</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__comment">// Add evidence</span></div>
+<div class="c-code__line">            _evidenceService.<a id="a5" name="a5"></a><a class="code hl_functionRef" href="../../pipeline-dotnet/4.4/interface_fifty_one_1_1_pipeline_1_1_web_1_1_services_1_1_i_web_request_evidence_service.html#abe25b6639707591991a5553f9de84bc3">AddEvidenceFromRequest</a>(flowData, Request);</div>
+<div class="c-code__line">            <span class="c-code__comment">// Process</span></div>
+<div class="c-code__line">            flowData.Process();</div>
+<div class="c-code__line">            <span class="c-code__comment">// Set response headers</span></div>
+<div class="c-code__line">            <a id="_a6" name="_a6"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_web_1_1_services_1_1_set_header_service.html">SetHeaderService</a>.<a id="a7" name="a7"></a><a class="code hl_functionRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_web_1_1_services_1_1_set_header_service.html#ad007e18b20fe6822f29152a420fa5d43">SetHeaders</a>(Response.HttpContext, flowData);</div>
+<div class="c-code__line">            <span class="c-code__comment">// Send results to view</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> View(flowData);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>

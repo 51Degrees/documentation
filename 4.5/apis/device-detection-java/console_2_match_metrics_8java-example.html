@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_matc
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.devicedetection.examples.shared.EvidenceHelper;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.devicedetection.hash.engine.onpremise.data.DeviceDataHash;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.devicedetection.hash.engine.onpremise.flowelements.DeviceDetectionHashEngine;</div>
-<div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.devicedetection.shared.testhelpers.FileUtils;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.core.data.ElementPropertyMetaData;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.core.data.FlowData;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.core.flowelements.Pipeline;</div>
@@ -134,7 +133,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_matc
 <div class="c-code__line">                    <span class="c-code__keywordtype">boolean</span> showDescs, OutputStream out) <span class="c-code__keywordflow">throws</span> Exception {</div>
 <div class="c-code__line">        PrintWriter writer = <span class="c-code__keyword">new</span> PrintWriter(out, <span class="c-code__keyword">true</span>);</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (Objects.isNull(dataFile)) {</div>
-<div class="c-code__line">            dataFile = FileUtils.getHashFileName();</div>
+<div class="c-code__line">            dataFile = DataFileHelper.getDataFileLocation(<span class="c-code__keyword">null</span>);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        logger.info(<span class="c-code__stringliteral">&quot;Constructing pipeline from file &quot;</span> + dataFile);</div>
 <div class="c-code__line"> </div>

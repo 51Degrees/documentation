@@ -18,6 +18,8 @@ var classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils
     [ "set_resource_key_in_config", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a2e54ea637d9a37606f17eb2095a2b781", null ],
     [ "DATA_FILE_AGE_WARNING", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a6ee88046cddd830a21bea29583db4dbd", null ],
     [ "DATA_FILE_ENV_VAR", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a5611baa235d7ab24a65923d032a8bd55", null ],
+    [ "DATA_FOLDER", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a93ef113934a3e3857411e5b468659276", null ],
+    [ "DOWNLOAD_SOURCE", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a2244cc292663420bd94b123b61256728", null ],
     [ "ENDPOINT_ENV_VAR", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#af919b8b681fe43c574cbeeb7b35815d7", null ],
     [ "FIND_FILES_TIMEOUT_S", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#aa409cfd626d64aaf5e6f68affcf985d5", null ],
     [ "LEGACY_RESOURCE_KEY_ENV_VAR", "classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#ae77e98e744abca31aa19ca99497a5e6f", null ],

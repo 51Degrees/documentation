@@ -74,7 +74,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a846e767230c1551375ba747556122e1f" id="r_a846e767230c1551375ba747556122e1f"><td class="c-table__cell">static&#160;<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a846e767230c1551375ba747556122e1f">ParseOptions</a> (string[] args)</td></tr>
 <tr class="c-table__row memdesc:a846e767230c1551375ba747556122e1f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Parse the command line arguments passed to the example to get the common options.  <br /></td></tr>
 <tr class="c-table__row memitem:a70f509af4cb7b91228edbf0ef7234b21" id="r_a70f509af4cb7b91228edbf0ef7234b21"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a70f509af4cb7b91228edbf0ef7234b21">FindFile</a> (string filename, DirectoryInfo dir=null)</td></tr>
-<tr class="c-table__row memdesc:a70f509af4cb7b91228edbf0ef7234b21"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Uses a background task to search for the specified filename within the working directory.  <br /></td></tr>
+<tr class="c-table__row memdesc:a70f509af4cb7b91228edbf0ef7234b21"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Finds a file by name.  <br /></td></tr>
 <tr class="c-table__row memitem:a287673a13fb50326d4280b8c3905869d" id="r_a287673a13fb50326d4280b8c3905869d"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a287673a13fb50326d4280b8c3905869d">FindDataFile</a> (string filename, DirectoryInfo dir=null)</td></tr>
 <tr class="c-table__row memdesc:a287673a13fb50326d4280b8c3905869d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the path to an IP Intelligence data file.  <br /></td></tr>
 <tr class="c-table__row memitem:a638905b0d959dd8804be539e11ea54af" id="r_a638905b0d959dd8804be539e11ea54af"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a638905b0d959dd8804be539e11ea54af">LogDataFileInfo</a> (<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_data_file_info.html">DataFileInfo</a> info, ILogger logger)</td></tr>
@@ -184,16 +184,16 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
 </table>
 </div><div class="c-member__body">
 
-<p>Uses a background task to search for the specified filename within the working directory. </p>
-<p>If the file cannot be found, the algorithm will move to the parent directory and repeat the process. This continues until the file is found or a timeout is triggered.</p>
+<p>Finds a file by name. </p>
+<p>The data repository in cxx/data is looked in first, and a free data file it links to is downloaded there when it is missing. Any other file is searched for with a background task within the working directory, and then each parent directory in turn, until it is found or a timeout is triggered.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filename</td><td></td></tr>
+    <tr><td class="paramname">filename</td><td>The name of the file to find. </td></tr>
     <tr><td class="paramname">dir</td><td>The directory to start looking from. If not provided the current directory is used. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The path to the file, or null if it could not be found. </dd></dl>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_mixed_2_getting_started-_console_2_program_8cs-example.html#a3">OnPremise/Mixed/GettingStarted-Console/Program.cs</a>.</dd>
 </dl>
 

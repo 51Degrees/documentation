@@ -1,5 +1,7 @@
 var classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils =
 [
     [ "checkDataFile", "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils.html#a45d80c2604023eccc203e66e4106a3df", null ],
+    [ "downloadMissingDataFile", "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils.html#aedb278f432ea7213290eda8206dfda9a", null ],
+    [ "getDataFileCommand", "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils.html#a5acdc682c2d994243c91f1a23536ee80", null ],
     [ "useDataFileFromEnv", "classfiftyone_1_1pipeline_1_1devicedetection_1_1examples_1_1onpremise_1_1classes_1_1_example_utils.html#a525ef3f0cd30b796be38bade7ea452c2", null ]
 ];

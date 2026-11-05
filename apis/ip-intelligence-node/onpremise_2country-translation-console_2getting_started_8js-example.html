@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2cou
 <div class="c-code__line">  require(path.join(__dirname, <span class="c-code__stringliteral">&#39;/../exampleUtils&#39;</span>)).ExampleUtils;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// In this example, by default, the 51degrees &quot;Lite&quot; file needs to be in the</span></div>
-<div class="c-code__line"><span class="c-code__comment">// cxx/ip-intelligence-data</span></div>
-<div class="c-code__line"><span class="c-code__comment">// directory, or you may specify another file as a command line parameter.</span></div>
+<div class="c-code__line"><span class="c-code__comment">// cxx/data/ip-intelligence folder, where it is downloaded if missing,</span></div>
+<div class="c-code__line"><span class="c-code__comment">// or you may specify another file as a command line parameter.</span></div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> LITE_V_4_1_IPI = <span class="c-code__stringliteral">&#39;51Degrees-LiteV41.ipi&#39;</span>;</div>
 <div class="c-code__line"></div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> listValue = (data, key) =&gt; {</div>
@@ -206,15 +206,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2cou
 <div class="c-code__line">    run(dataFile, process.stdout);</div>
 <div class="c-code__line">  } <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">    console.error(<span class="c-code__stringliteral">&#39;Failed to find an IP intelligence data file. Make sure &#39;</span> +</div>
-<div class="c-code__line">      <span class="c-code__stringliteral">&#39;the ip-intelligence-data submodule has been updated by running &#39;</span> +</div>
-<div class="c-code__line">      <span class="c-code__stringliteral">&#39;`git submodule update --recursive`.&#39;</span>);</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;the cxx/data submodule has been fetched by running &#39;</span> +</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;`git submodule update --init --recursive`.&#39;</span>);</div>
 <div class="c-code__line">  }</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">module.exports = {</div>
 <div class="c-code__line">  run</div>
 <div class="c-code__line">};</div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:54</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:116</div></div>
 <div class="ttc" id="aclass_ip_intelligence_on_premise_pipeline_builder_html"><div class="ttname"><a href="class_ip_intelligence_on_premise_pipeline_builder.html">IpIntelligenceOnPremisePipelineBuilder</a></div><div class="ttdef"><b>Definition</b> ipIntelligenceOnPremisePipelineBuilder.js:35</div></div>
 <div class="ttc" id="aclass_pipeline_builder_html_a194e9f8c65f03f128778149a38d32c3f"><div class="ttname"><a href="../../pipeline-node/4.5/class_pipeline_builder.html#a194e9f8c65f03f128778149a38d32c3f">PipelineBuilder::add</a></div><div class="ttdeci">add(flowElement)</div></div>
 </div><!-- fragment --> </div><!-- primary -->

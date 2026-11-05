@@ -122,47 +122,57 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2fai
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">function</span> failuretomatch_checkifmobile($pipeline, $userAgent = <span class="c-code__stringliteral">&#39;&#39;</span>)</div>
 <div class="c-code__line">{</div>
-<div class="c-code__line">    <span class="c-code__comment">// We create the flowData object that is used to add evidence to and read data from</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// We create the flowData object that is used to add evidence to and read data from.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// It is closed in the finally block, which releases the results of the</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// detection straight away.</span></div>
 <div class="c-code__line">    $flowData = $pipeline-&gt;createFlowData();</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">try</span> {</div>
+<div class="c-code__line">        <span class="c-code__comment">// Add the User-Agent as evidence</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">// Add the User-Agent as evidence</span></div>
+<div class="c-code__line">        $flowData-&gt;evidence-&gt;set(<span class="c-code__stringliteral">&#39;header.user-agent&#39;</span>, $userAgent);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    $flowData-&gt;evidence-&gt;set(<span class="c-code__stringliteral">&#39;header.user-agent&#39;</span>, $userAgent);</div>
+<div class="c-code__line">        <span class="c-code__comment">// Now we process the flowData</span></div>
+<div class="c-code__line">        $result = $flowData-&gt;process();</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">// Now we process the flowData</span></div>
-<div class="c-code__line">    $result = $flowData-&gt;process();</div>
+<div class="c-code__line">        <span class="c-code__comment">// First we check if the property we&#39;re looking for has a meaningful result</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">// First we check if the property we&#39;re looking for has a meaningful result</span></div>
+<div class="c-code__line">        echo <span class="c-code__stringliteral">&quot;Does User-Agent &#39;&lt;b&gt;&quot;</span> . $userAgent . <span class="c-code__stringliteral">&quot;&lt;/b&gt;&#39; represent a mobile device?:&quot;</span>;</div>
+<div class="c-code__line">        echo <span class="c-code__stringliteral">&quot;&lt;/br&gt;\n&quot;</span>;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    echo <span class="c-code__stringliteral">&quot;Does User-Agent &#39;&lt;b&gt;&quot;</span> . $userAgent . <span class="c-code__stringliteral">&quot;&lt;/b&gt;&#39; represent a mobile device?:&quot;</span>;</div>
-<div class="c-code__line">    echo <span class="c-code__stringliteral">&quot;&lt;/br&gt;\n&quot;</span>;</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> ($result-&gt;device-&gt;ismobile-&gt;hasValue) {</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">if</span> ($result-&gt;device-&gt;ismobile-&gt;value) {</div>
-<div class="c-code__line">            echo <span class="c-code__stringliteral">&#39;Yes&#39;</span>;</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> ($result-&gt;device-&gt;ismobile-&gt;hasValue) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> ($result-&gt;device-&gt;ismobile-&gt;value) {</div>
+<div class="c-code__line">                echo <span class="c-code__stringliteral">&#39;Yes&#39;</span>;</div>
+<div class="c-code__line">            } <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">                echo <span class="c-code__stringliteral">&#39;No&#39;</span>;</div>
+<div class="c-code__line">            }</div>
 <div class="c-code__line">        } <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">            echo <span class="c-code__stringliteral">&#39;No&#39;</span>;</div>
+<div class="c-code__line">            echo <span class="c-code__stringliteral">&quot;We don&#39;t know for sure. The reason given is:&quot;</span>;</div>
+<div class="c-code__line">            echo <span class="c-code__stringliteral">&quot;&lt;/br&gt;\n&quot;</span>;</div>
+<div class="c-code__line">            <span class="c-code__comment">// If it doesn&#39;t have a meaningful result, we echo out the reason why</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// it wasn&#39;t meaningful</span></div>
+<div class="c-code__line">            echo $result-&gt;device-&gt;ismobile-&gt;noValueMessage;</div>
+<div class="c-code__line">            echo <span class="c-code__stringliteral">&quot;&lt;/br&gt;\n&quot;</span>;</div>
 <div class="c-code__line">        }</div>
-<div class="c-code__line">    } <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        echo <span class="c-code__stringliteral">&quot;We don&#39;t know for sure. The reason given is:&quot;</span>;</div>
-<div class="c-code__line">        echo <span class="c-code__stringliteral">&quot;&lt;/br&gt;\n&quot;</span>;</div>
-<div class="c-code__line">        <span class="c-code__comment">// If it doesn&#39;t have a meaningful result, we echo out the reason why</span></div>
-<div class="c-code__line">        <span class="c-code__comment">// it wasn&#39;t meaningful</span></div>
-<div class="c-code__line">        echo $result-&gt;device-&gt;ismobile-&gt;noValueMessage;</div>
-<div class="c-code__line">        echo <span class="c-code__stringliteral">&quot;&lt;/br&gt;\n&quot;</span>;</div>
-<div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    echo <span class="c-code__stringliteral">&quot;&lt;/br&gt;\n&quot;</span>;</div>
-<div class="c-code__line">    echo <span class="c-code__stringliteral">&quot;&lt;/br&gt;\n&quot;</span>;</div>
+<div class="c-code__line">        echo <span class="c-code__stringliteral">&quot;&lt;/br&gt;\n&quot;</span>;</div>
+<div class="c-code__line">        echo <span class="c-code__stringliteral">&quot;&lt;/br&gt;\n&quot;</span>;</div>
+<div class="c-code__line">    } <span class="c-code__keywordflow">finally</span> {</div>
+<div class="c-code__line">        $flowData-&gt;close();</div>
+<div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// Some example User-Agents to test</span></div>
+<div class="c-code__line"><span class="c-code__comment">// Some example User-Agents to test. The pipeline is closed in the finally</span></div>
+<div class="c-code__line"><span class="c-code__comment">// block once they have been.</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">$iPhoneUA = <span class="c-code__stringliteral">&#39;Mozilla/5.0 (iPhone; CPU iPhone OS 11_2 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C114&#39;</span>;</div>
-<div class="c-code__line">failuretomatch_checkifmobile($pipeline, $iPhoneUA);</div>
+<div class="c-code__line"><span class="c-code__keywordflow">try</span> {</div>
+<div class="c-code__line">    $iPhoneUA = <span class="c-code__stringliteral">&#39;Mozilla/5.0 (iPhone; CPU iPhone OS 11_2 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C114&#39;</span>;</div>
+<div class="c-code__line">    failuretomatch_checkifmobile($pipeline, $iPhoneUA);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">$badUserAgent = <span class="c-code__stringliteral">&#39;nonsense ua...&#39;</span>;</div>
-<div class="c-code__line">failuretomatch_checkifmobile($pipeline, $badUserAgent);</div>
+<div class="c-code__line">    $badUserAgent = <span class="c-code__stringliteral">&#39;nonsense ua...&#39;</span>;</div>
+<div class="c-code__line">    failuretomatch_checkifmobile($pipeline, $badUserAgent);</div>
+<div class="c-code__line">} <span class="c-code__keywordflow">finally</span> {</div>
+<div class="c-code__line">    $pipeline-&gt;close();</div>
+<div class="c-code__line">}</div>
 <div class="ttc" id="aclassfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder_html"><div class="ttname"><a href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html">fiftyone\pipeline::core::PipelineBuilder</a></div></div>
 <div class="ttc" id="aclassfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise_html"><div class="ttname"><a href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise.html">fiftyone\pipeline\devicedetection::DeviceDetectionOnPremise</a></div></div>
 </div><!-- fragment --> </div><!-- primary -->

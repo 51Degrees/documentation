@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data_collection_ipi.html#af031394a7b906477d8110f3196b0bc24":[3,0,2,18,0],
 "class_fiftyone_degrees_1_1_ip_intelligence_1_1_property_meta_data.html":[3,0,2,19],
 "class_fiftyone_degrees_1_1_ip_intelligence_1_1_property_meta_data.html#a01a607d7763b161ccd0d18a95804ce3c":[3,0,2,19,2],
 "class_fiftyone_degrees_1_1_ip_intelligence_1_1_property_meta_data.html#a0a3f98b1dd9fc3ce3be26d01c591aa33":[3,0,2,19,16],

@@ -73,11 +73,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <p>The 51Degrees device detection API is built on the 51Degrees <a class="el" href="dir_fdedb0aba14d44ce9d99bc100e026e6a.html" title="/home/runner/work/documentation/documentation/apis/51degrees-cxx/src/common/README.md">common API</a>.</p>
 <h1>Pre-requisites</h1>
 <h2><a class="el" href="group___fifty_one_degrees_synonyms.html#gaad0a959cad42d676f5184f89b6188f99" title="Synonym for fiftyoneDegreesData type.">Data</a> File</h2>
-<p>In order to perform device detection, you will need to use a 51Degrees data file. This repository includes a free, 'lite' file in the 'device-detection-data' submodule that has a significantly reduced set of properties. To obtain a file with a more complete set of device properties see the <a href="https://51degrees.com/pricing?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-cxx&amp;utm_content=readme.md&amp;utm_term=data-file">51Degrees website</a>. If you want to use the lite file, you will need to install <a href="https://git-lfs.github.com/">GitLFS</a>.</p>
-<p>For Linux: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">sudo apt-get install git-lfs</div>
-<div class="c-code__line">git lfs install</div>
-</div><!-- fragment --><p>Then, navigate to the device-detection-data directory and execute:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">git lfs pull</div>
+<p>In order to perform device detection, you will need to use a 51Degrees data file. A free, 'lite' file that has a significantly reduced set of properties is available through the <a href="https://github.com/51Degrees/data">data</a> submodule. To obtain a file with a more complete set of device properties see the <a href="https://51degrees.com/pricing?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-cxx&amp;utm_content=readme.md&amp;utm_term=data-file">51Degrees website</a>. To download the lite file into <code>data/device-detection</code>, run one of these from the repository root. The examples also download it when it is missing.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">sh data/get-data-files.sh 51Degrees-LiteV4.1.hash</div>
+</div><!-- fragment --><div class="c-code__block c-code__block--outline"><div class="c-code__line">./data/get-data-files.ps1 51Degrees-LiteV4.1.hash</div>
 </div><!-- fragment --><h2>Building and testing</h2>
 <p>Cloning, building with CMake or Visual Studio, and running the tests are the same for every product in this repository, and are described in the repository README.</p>
 <h1>Referencing the API</h1>

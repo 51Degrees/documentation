@@ -5,6 +5,8 @@ var classtests_1_1test__datafile__update__service_1_1_file_system_watcher_tests 
     [ "tearDown", "classtests_1_1test__datafile__update__service_1_1_file_system_watcher_tests.html#ada2715e86f50983a10f64745337e2774", null ],
     [ "testFileSystemWatcherKeepsWatchingAfterFailedRefresh", "classtests_1_1test__datafile__update__service_1_1_file_system_watcher_tests.html#af2afeee2d8818eb3e001c74db30051a9", null ],
     [ "testFileSystemWatcherKeepsWatchingWhileFileIsMissing", "classtests_1_1test__datafile__update__service_1_1_file_system_watcher_tests.html#ae1fd119645e1a4e39039e33d5079b32d", null ],
+    [ "testUnregisterStopsAutomaticUpdates", "classtests_1_1test__datafile__update__service_1_1_file_system_watcher_tests.html#a7c9b749d1114648119e2ec4460fb6408", null ],
+    [ "testUnregisterStopsFileSystemWatcher", "classtests_1_1test__datafile__update__service_1_1_file_system_watcher_tests.html#aa562e8b81edc1b730f8989e9ae3b4e4d", null ],
     [ "write", "classtests_1_1test__datafile__update__service_1_1_file_system_watcher_tests.html#a94ccc6e0eb4af4b7a1810d2c1b187c1f", null ],
     [ "folder", "classtests_1_1test__datafile__update__service_1_1_file_system_watcher_tests.html#ad59d15c5821b072a4250954cbff659af", null ],
     [ "path", "classtests_1_1test__datafile__update__service_1_1_file_system_watcher_tests.html#a75f2eb47f9e1461ca12f8964f5604cd1", null ],

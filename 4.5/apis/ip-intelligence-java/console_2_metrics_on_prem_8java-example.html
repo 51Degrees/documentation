@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_metr
 <div class="c-code__line">                        <span class="c-code__comment">// detection speed in this example. See the</span></div>
 <div class="c-code__line">                        <span class="c-code__comment">// documentation for more detail on this and other</span></div>
 <div class="c-code__line">                        <span class="c-code__comment">// configuration options.</span></div>
-<div class="c-code__line">                        <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-metricsonprem.java&amp;utm_term=automatic-datafile-updates</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-metricsonprem.java&amp;utm_term=automatic-datafile-updates</span></div>
 <div class="c-code__line">                        .<a id="a4" name="a4"></a><a class="code hl_function" href="classfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_builder.html#ab30a53dd8247ec1467e5a5cfc0ab8114">setPerformanceProfile</a>(Constants.PerformanceProfiles.MaxPerformance)</div>
 <div class="c-code__line">                        <span class="c-code__comment">// inhibit sharing usage for this example</span></div>
 <div class="c-code__line">                        .<a id="a5" name="a5"></a><a class="code hl_function" href="classfiftyone_1_1ipintelligence_1_1_i_p_intelligence_on_premise_pipeline_builder.html#aa6bf6401f31e617a21d6f801330f153a">setShareUsage</a>(<span class="c-code__keyword">false</span>)</div>
@@ -477,11 +477,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_metr
 <div class="c-code__line">        String result = <span class="c-code__keyword">null</span>;</div>
 <div class="c-code__line">        <span class="c-code__comment">// Every value is closed, not only the first, as each one wraps a</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// native object of its own.</span></div>
-<div class="c-code__line">        <span class="c-code__keywordflow">for</span> (ValueMetaData value : profile.getValues(name)) {</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (result == <span class="c-code__keyword">null</span>) {</div>
-<div class="c-code__line">                result = value.getName();</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">try</span> (CloseableIterable&lt;ValueMetaData&gt; values = profile.getValues(name)) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">for</span> (ValueMetaData value : values) {</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (result == <span class="c-code__keyword">null</span>) {</div>
+<div class="c-code__line">                    result = value.getName();</div>
+<div class="c-code__line">                }</div>
+<div class="c-code__line">                value.close();</div>
 <div class="c-code__line">            }</div>
-<div class="c-code__line">            value.close();</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> result;</div>
 <div class="c-code__line">    }</div>

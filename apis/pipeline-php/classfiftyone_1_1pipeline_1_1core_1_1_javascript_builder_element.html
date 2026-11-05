@@ -257,7 +257,7 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
 </div><div class="c-member__body">
 
 <p>The session id to render into the script. </p>
-<p>The template writes the session id inside quotes without any escaping, so a session id that is not 1 to 64 ASCII letters, digits and hyphens is rendered as an empty string, whether it came from the SequenceElement or from the query string. This is the rule proposed for the pipeline specification in 51Degrees/specifications pull request 31, which is still open.</p>
+<p>The template writes the session id inside quotes without any escaping, so a session id that is not 1 to 64 ASCII letters, digits and hyphens is rendered as an empty string, whether it came from the SequenceElement or from the query string, as the pipeline specification says.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">mixed</td><td class="paramname">$value</td><td>The query.session-id evidence, or null </td></tr>

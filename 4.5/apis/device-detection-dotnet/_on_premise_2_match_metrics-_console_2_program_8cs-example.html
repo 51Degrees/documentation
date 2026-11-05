@@ -308,9 +308,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                <span class="c-code__keywordflow">if</span>(dataFile == <span class="c-code__keyword">null</span> || File.Exists(dataFile) == <span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    Logger.LogError(<span class="c-code__stringliteral">&quot;Failed to find a device detection data file. &quot;</span> +</div>
-<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;If using the default &#39;lite&#39; data file, make sure that git lfs is &quot;</span> +</div>
-<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;installed and that the device-detection-data submodule has been &quot;</span> +</div>
-<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;updated by running `git submodule update --recursive`.&quot;</span>);</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;If using the default &#39;lite&#39; data file, make sure that the &quot;</span> +</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;submodules have been fetched by running `git submodule update &quot;</span> +</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;--init --recursive`, so that it can be downloaded.&quot;</span>);</div>
 <div class="c-code__line">                    <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> <a id="_a15" name="_a15"></a><a class="code hl_classRef" href="../../pipeline-dotnet/4.4/class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_configuration_exception.html">PipelineConfigurationException</a>($<span class="c-code__stringliteral">&quot;Data file &#39;{dataFile}&#39; not found&quot;</span>);</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line"> </div>

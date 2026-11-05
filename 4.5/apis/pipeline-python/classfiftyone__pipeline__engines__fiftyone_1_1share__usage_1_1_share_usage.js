@@ -3,6 +3,7 @@ var classfiftyone__pipeline__engines__fiftyone_1_1share__usage_1_1_share_usage =
     [ "__init__", "classfiftyone__pipeline__engines__fiftyone_1_1share__usage_1_1_share_usage.html#ae01dcce17ba2de5bff714df7782e08de", null ],
     [ "__del__", "classfiftyone__pipeline__engines__fiftyone_1_1share__usage_1_1_share_usage.html#a59d36d6784eeb7879fb204505b9d8475", null ],
     [ "add_to_share_usage", "classfiftyone__pipeline__engines__fiftyone_1_1share__usage_1_1_share_usage.html#af8cff194f108f80f9f202018037db5e5", null ],
+    [ "close", "classfiftyone__pipeline__engines__fiftyone_1_1share__usage_1_1_share_usage.html#a2fde4fa7a64732d01b178b75e56db1f1", null ],
     [ "get_constant_xml", "classfiftyone__pipeline__engines__fiftyone_1_1share__usage_1_1_share_usage.html#ae9c48e5b0a714948b869e787e5a73c95", null ],
     [ "get_data_from_evidence", "classfiftyone__pipeline__engines__fiftyone_1_1share__usage_1_1_share_usage.html#a3c60eb210375255f0e9d4c11db5b0d98", null ],
     [ "get_evidence_key_filter", "classfiftyone__pipeline__engines__fiftyone_1_1share__usage_1_1_share_usage.html#a320f3cfe56d92d1e7ef9a3527b385b9f", null ],

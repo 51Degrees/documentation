@@ -176,16 +176,29 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('web_2_getting_
 <div class="c-code__line">                    .setAutoUpdate(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                    .build(dataFileLocation, <span class="c-code__keyword">false</span>);</div>
 <div class="c-code__line">            <span class="c-code__comment">// The SequenceElement provides the sequence evidence required by</span></div>
-<div class="c-code__line">            <span class="c-code__comment">// the JsonBuilderElement.</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// the JsonBuilderElement. The pipeline closes all three elements,</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// the engine and its data file included, when destroy closes it.</span></div>
 <div class="c-code__line">            pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(LoggerFactory.getILoggerFactory())</div>
 <div class="c-code__line">                    .addFlowElement(<span class="c-code__keyword">new</span> SequenceElementBuilder(</div>
 <div class="c-code__line">                            LoggerFactory.getILoggerFactory()).build())</div>
 <div class="c-code__line">                    .addFlowElement(engine)</div>
 <div class="c-code__line">                    .addFlowElement(<span class="c-code__keyword">new</span> JsonBuilderElementBuilder(</div>
 <div class="c-code__line">                            LoggerFactory.getILoggerFactory()).build())</div>
+<div class="c-code__line">                    .setAutoCloseElements(<span class="c-code__keyword">true</span>)</div>
 <div class="c-code__line">                    .build();</div>
 <div class="c-code__line">            DataFileHelper.logDataFileInfo(engine);</div>
 <div class="c-code__line">        } <span class="c-code__keywordflow">catch</span> (Exception e) {</div>
+<div class="c-code__line">            <span class="c-code__comment">// A servlet whose init fails is never destroyed, so whatever was</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// built is closed here.</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">try</span> {</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (pipeline != <span class="c-code__keyword">null</span>) {</div>
+<div class="c-code__line">                    pipeline.close();</div>
+<div class="c-code__line">                } <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (engine != <span class="c-code__keyword">null</span>) {</div>
+<div class="c-code__line">                    engine.close();</div>
+<div class="c-code__line">                }</div>
+<div class="c-code__line">            } <span class="c-code__keywordflow">catch</span> (Exception closeException) {</div>
+<div class="c-code__line">                e.addSuppressed(closeException);</div>
+<div class="c-code__line">            }</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> ServletException(<span class="c-code__stringliteral">&quot;Failed to create pipeline from data file &#39;&quot;</span> +</div>
 <div class="c-code__line">                    dataFileLocation + <span class="c-code__stringliteral">&quot;&#39;&quot;</span>, e);</div>
 <div class="c-code__line">        }</div>

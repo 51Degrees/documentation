@@ -83,6 +83,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ad148d1fd7bc34cce528327b53d1fd8b9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Magic getter to allow $FlowData-&gt;FlowElementKey getting. <br /></td></tr>
 <tr class="c-table__row memitem:a22ef300974d60c0d7f486bfa185ab8d6" id="r_a22ef300974d60c0d7f486bfa185ab8d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a22ef300974d60c0d7f486bfa185ab8d6">process</a> ()</td></tr>
 <tr class="c-table__row memdesc:a22ef300974d60c0d7f486bfa185ab8d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">process function runs the process function on every attached FlowElement allowing data to be changed based on evidence This can only be run once per FlowData instance.  <br /></td></tr>
+<tr class="c-table__row memitem:a24a08b2aa8dbc98e4ae2ae3d18846718" id="r_a24a08b2aa8dbc98e4ae2ae3d18846718"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a24a08b2aa8dbc98e4ae2ae3d18846718">close</a> ()</td></tr>
+<tr class="c-table__row memdesc:a24a08b2aa8dbc98e4ae2ae3d18846718"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Release the native resources held by the element data in this FlowData, such as the results of an on-premise engine, which keep the engine's data in memory until they are released.  <br /></td></tr>
 <tr class="c-table__row memitem:ab78004bd9a322ae74c4836e71832352a" id="r_ab78004bd9a322ae74c4836e71832352a"><td class="c-table__cell"><a id="ab78004bd9a322ae74c4836e71832352a" name="ab78004bd9a322ae74c4836e71832352a"></a>
 &#160;</td><td class="c-table__cell"><b>getFromElement</b> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html">FlowElement</a> $flowElement)</td></tr>
 <tr class="c-table__row memdesc:ab78004bd9a322ae74c4836e71832352a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Retrieve data by FlowElement object. <br /></td></tr>
@@ -148,6 +150,31 @@ array&#160;</td><td class="c-table__cell"><b>$errors</b> = []</td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a24a08b2aa8dbc98e4ae2ae3d18846718" name="a24a08b2aa8dbc98e4ae2ae3d18846718"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a24a08b2aa8dbc98e4ae2ae3d18846718">&#9670;&#160;</a></span>close()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\core\FlowData::close </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Release the native resources held by the element data in this FlowData, such as the results of an on-premise engine, which keep the engine's data in memory until they are released. </p>
+<p>Call it in a finally block once the FlowData is finished with, so that this happens straight away rather than when the garbage collector next runs.</p>
+<p>Only element data with a close method of its own is closed, so element data that needs no cleanup, such as an entry in a results cache, is left alone. Values already read are unaffected. </p>
+
+</div>
+</div>
 <a id="a18a4a821f4f2c51eccecd12a373216f3" name="a18a4a821f4f2c51eccecd12a373216f3"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a18a4a821f4f2c51eccecd12a373216f3">&#9670;&#160;</a></span>get()</h2>
 

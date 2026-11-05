@@ -101,9 +101,11 @@ Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a0413a7c6994b34f7dfee60fa26a4a7a2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Construct a new instance of the IP intelligence engine.  <br /></td></tr>
 <tr class="c-table__row memitem:ae14a4a6eed137077995afa243a608298" id="r_ae14a4a6eed137077995afa243a608298"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ae14a4a6eed137077995afa243a608298">ProcessEngine</a> (IFlowData data, <a class="el" href="interface_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_data_1_1_i_ip_data_on_premise.html">IIpDataOnPremise</a> ipData)</td></tr>
 <tr class="c-table__row memdesc:ae14a4a6eed137077995afa243a608298"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Perform processing for this engine.  <br /></td></tr>
-<tr class="c-table__row memitem:ae1352f90cc3dc142c07b0c8c6f721499" id="r_ae1352f90cc3dc142c07b0c8c6f721499"><td class="c-table__cell"><a id="ae1352f90cc3dc142c07b0c8c6f721499" name="ae1352f90cc3dc142c07b0c8c6f721499"></a>
-override&#160;void&#160;</td><td class="c-table__cell"><b>UnmanagedResourcesCleanup</b> ()</td></tr>
-<tr class="c-table__row memdesc:ae1352f90cc3dc142c07b0c8c6f721499"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Dispose of any unmanaged resources. <br /></td></tr>
+<tr class="c-table__row memitem:a62a2f2770e824b796697b65b7dee3550" id="r_a62a2f2770e824b796697b65b7dee3550"><td class="c-table__cell"><a id="a62a2f2770e824b796697b65b7dee3550" name="a62a2f2770e824b796697b65b7dee3550"></a>
+override&#160;void&#160;</td><td class="c-table__cell"><b>ManagedResourcesCleanup</b> ()</td></tr>
+<tr class="c-table__row memdesc:a62a2f2770e824b796697b65b7dee3550"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Dispose of the property and component meta data, which own native copies of their entries. <br /></td></tr>
+<tr class="c-table__row memitem:ae1352f90cc3dc142c07b0c8c6f721499" id="r_ae1352f90cc3dc142c07b0c8c6f721499"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ae1352f90cc3dc142c07b0c8c6f721499">UnmanagedResourcesCleanup</a> ()</td></tr>
+<tr class="c-table__row memdesc:ae1352f90cc3dc142c07b0c8c6f721499"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Dispose of the native engine, then the configuration it was built with.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-properties" class="g-docs__section-heading"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -362,6 +364,38 @@ override&#160;EventHandler&lt;&#160;EventArgs&#160;&gt;&#160;</td><td class="c-t
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ae1352f90cc3dc142c07b0c8c6f721499" name="ae1352f90cc3dc142c07b0c8c6f721499"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae1352f90cc3dc142c07b0c8c6f721499">&#9670;&#160;</a></span>UnmanagedResourcesCleanup()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">override void FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngine.UnmanagedResourcesCleanup </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Dispose of the native engine, then the configuration it was built with. </p>
+<p>The data set is freed when the last results that refer to it are freed, which is when their flow data is disposed. </p>
 
 </div>
 </div>

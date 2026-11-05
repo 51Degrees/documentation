@@ -80,15 +80,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2off
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-python/blob/main/device-detection/fiftyone_devicedetection_examples/src/fiftyone_devicedetection_examples/onpremise/offlineprocessing.py">GitHub</a>.</p>
 <p> 
 <p>
-This example requires a local data file. The free 'Lite' data file can be acquired by
-pulling the git submodules under this repository (run `git submodule update --recursive`) 
-or from the <a href="https://github.com/51Degrees/device-detection-data">device-detection-data</a>
-GitHub repository.
+This example requires a local data file. The free 'Lite' data file can be downloaded with the
+scripts in the <a href="https://github.com/51Degrees/data">data</a> GitHub repository, which
+this repository includes at <code>cxx/data</code>. Fetch the submodules by running
+<code>git submodule update --init --recursive</code>, then run
+<code>sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash</code> from the repository root,
+which saves the file as <code>cxx/data/device-detection/51Degrees-LiteV4.1.hash</code>.
 </p>
 <p>
 The Lite data file is only used for illustration, and has limited accuracy and capabilities.
 Find out about the more capable data files that are available on our 
-<a href="https://51degrees.com/pricing">pricing page</a>
+<a href="https://51degrees.com/pricing">pricing page</a>.
 </p>
   </p>
 <p>Required PyPi Dependencies:</p><ul>
@@ -142,15 +144,15 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">        <span class="c-code__comment"># In this example, we use the DeviceDetectionPipelineBuilder</span></div>
 <div class="c-code__line">        <span class="c-code__comment"># and configure it in code. For more information about</span></div>
 <div class="c-code__line">        <span class="c-code__comment"># pipelines in general see the documentation at</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># https://51degrees.com/documentation/_concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-offlineprocessing.py&amp;utm_term=run</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># https://51degrees.com/documentation/_pipeline_api__concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-offlineprocessing.py&amp;utm_term=run</span></div>
 <div class="c-code__line">        pipeline = DeviceDetectionPipelineBuilder(</div>
 <div class="c-code__line">            data_file_path = data_file,</div>
 <div class="c-code__line">            <span class="c-code__comment"># We use the low memory profile as its performance is</span></div>
 <div class="c-code__line">            <span class="c-code__comment"># sufficient for this example. See the documentation for</span></div>
 <div class="c-code__line">            <span class="c-code__comment"># more detail on this and other configuration options:</span></div>
 <div class="c-code__line">            <span class="c-code__comment"># https://51degrees.com/documentation/_device_detection__features__performance_options.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-offlineprocessing.py&amp;utm_term=run</span></div>
-<div class="c-code__line">            <span class="c-code__comment"># https://51degrees.com/documentation/_features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-offlineprocessing.py&amp;utm_term=run</span></div>
-<div class="c-code__line">            <span class="c-code__comment"># https://51degrees.com/documentation/_features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-offlineprocessing.py&amp;utm_term=run</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># https://51degrees.com/documentation/_pipeline_api__features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-offlineprocessing.py&amp;utm_term=run</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># https://51degrees.com/documentation/_pipeline_api__features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-offlineprocessing.py&amp;utm_term=run</span></div>
 <div class="c-code__line">            performance_profile = <span class="c-code__stringliteral">&quot;LowMemory&quot;</span>,</div>
 <div class="c-code__line">            <span class="c-code__comment"># inhibit sharing usage for this test, usually this</span></div>
 <div class="c-code__line">            <span class="c-code__comment"># should be set &quot;true&quot;</span></div>
@@ -161,47 +163,50 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">            <span class="c-code__comment"># in order to help us improve detection of new devices/browsers/etc, then</span></div>
 <div class="c-code__line">            <span class="c-code__comment"># this additional data will need to be collected and included as evidence</span></div>
 <div class="c-code__line">            <span class="c-code__comment"># to the Pipeline. See</span></div>
-<div class="c-code__line">            <span class="c-code__comment"># https://51degrees.com/documentation/_features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-offlineprocessing.py&amp;utm_term=run#Low_Level_Usage_Sharing</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># https://51degrees.com/documentation/_pipeline_api__features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-offlineprocessing.py&amp;utm_term=run#Low_Level_Usage_Sharing</span></div>
 <div class="c-code__line">            <span class="c-code__comment"># for more details on this.</span></div>
 <div class="c-code__line">            usage_sharing = <span class="c-code__keyword">False</span>,</div>
 <div class="c-code__line">            <span class="c-code__comment"># Inhibit auto-update of the data file for this example</span></div>
 <div class="c-code__line">            auto_update = <span class="c-code__keyword">False</span>,</div>
 <div class="c-code__line">            licence_keys = <span class="c-code__stringliteral">&quot;&quot;</span>).add_logger(logger).<a class="code hl_namespace" href="namespacebuild.html">build</a>()</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        records = 0</div>
-<div class="c-code__line">        yaml = YAML()</div>
-<div class="c-code__line">        <span class="c-code__comment"># Replace tab characters as they are not valid in unquoted YAML values</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># and some evidence files contain them in user-agent strings.</span></div>
-<div class="c-code__line">        content = evidence_yaml.read().replace(<span class="c-code__stringliteral">&#39;\t&#39;</span>, <span class="c-code__stringliteral">&#39; &#39;</span>)</div>
-<div class="c-code__line">        yaml_data = yaml.load_all(content)</div>
+<div class="c-code__line">        <span class="c-code__comment"># The pipeline is closed at the end of the with block, which</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># releases the native data it holds.</span></div>
+<div class="c-code__line">        <span class="c-code__keyword">with</span> pipeline:</div>
+<div class="c-code__line">            records = 0</div>
+<div class="c-code__line">            yaml = YAML()</div>
+<div class="c-code__line">            <span class="c-code__comment"># Replace tab characters as they are not valid in unquoted YAML values</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># and some evidence files contain them in user-agent strings.</span></div>
+<div class="c-code__line">            content = evidence_yaml.read().replace(<span class="c-code__stringliteral">&#39;\t&#39;</span>, <span class="c-code__stringliteral">&#39; &#39;</span>)</div>
+<div class="c-code__line">            yaml_data = yaml.load_all(content)</div>
 <div class="c-code__line">        </div>
-<div class="c-code__line">        <span class="c-code__keywordflow">try</span>:</div>
-<div class="c-code__line">            <span class="c-code__comment"># Keep going as long as we have more document records.</span></div>
-<div class="c-code__line">            <span class="c-code__keywordflow">for</span> evidence <span class="c-code__keywordflow">in</span> yaml_data:</div>
-<div class="c-code__line">                <span class="c-code__comment"># Output progress.</span></div>
-<div class="c-code__line">                records = records + 1</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (records % 100 == 0):</div>
-<div class="c-code__line">                    logger.log(<span class="c-code__stringliteral">&quot;info&quot;</span>, f<span class="c-code__stringliteral">&quot;Processed {records} records&quot;</span>)</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">try</span>:</div>
+<div class="c-code__line">                <span class="c-code__comment"># Keep going as long as we have more document records.</span></div>
+<div class="c-code__line">                <span class="c-code__keywordflow">for</span> evidence <span class="c-code__keywordflow">in</span> yaml_data:</div>
+<div class="c-code__line">                    <span class="c-code__comment"># Output progress.</span></div>
+<div class="c-code__line">                    records = records + 1</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">if</span> (records % 100 == 0):</div>
+<div class="c-code__line">                        logger.log(<span class="c-code__stringliteral">&quot;info&quot;</span>, f<span class="c-code__stringliteral">&quot;Processed {records} records&quot;</span>)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">                <span class="c-code__comment"># write the yaml document separator</span></div>
-<div class="c-code__line">                print(<span class="c-code__stringliteral">&quot;---&quot;</span>, file = output)</div>
-<div class="c-code__line">                <span class="c-code__comment"># Pass the record to the pipeline as evidence so that it can be analyzed</span></div>
-<div class="c-code__line">                headers = {}</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">for</span> key <span class="c-code__keywordflow">in</span> evidence:</div>
-<div class="c-code__line">                    <span class="c-code__comment"># Convert to string - YAML may parse values like ?1 as booleans</span></div>
-<div class="c-code__line">                    <span class="c-code__comment"># Keys already have header. prefix in the YAML file</span></div>
-<div class="c-code__line">                    headers[key] = str(evidence[key])</div>
+<div class="c-code__line">                    <span class="c-code__comment"># write the yaml document separator</span></div>
+<div class="c-code__line">                    print(<span class="c-code__stringliteral">&quot;---&quot;</span>, file = output)</div>
+<div class="c-code__line">                    <span class="c-code__comment"># Pass the record to the pipeline as evidence so that it can be analyzed</span></div>
+<div class="c-code__line">                    headers = {}</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">for</span> key <span class="c-code__keywordflow">in</span> evidence:</div>
+<div class="c-code__line">                        <span class="c-code__comment"># Convert to string - YAML may parse values like ?1 as booleans</span></div>
+<div class="c-code__line">                        <span class="c-code__comment"># Keys already have header. prefix in the YAML file</span></div>
+<div class="c-code__line">                        headers[key] = str(evidence[key])</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">                self.analyseEvidence(headers, pipeline, output, yaml)</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">except</span> BaseException <span class="c-code__keyword">as</span> err:</div>
-<div class="c-code__line">            <span class="c-code__comment"># We can&#39;t read the evidence values, so cant write them to the output. Will just</span></div>
-<div class="c-code__line">            <span class="c-code__comment"># have to skip this entry.</span></div>
-<div class="c-code__line">            logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>, err)</div>
+<div class="c-code__line">                    self.analyseEvidence(headers, pipeline, output, yaml)</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">except</span> BaseException <span class="c-code__keyword">as</span> err:</div>
+<div class="c-code__line">                <span class="c-code__comment"># We can&#39;t read the evidence values, so cant write them to the output. Will just</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># have to skip this entry.</span></div>
+<div class="c-code__line">                logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>, err)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__comment"># write the yaml document end marker</span></div>
-<div class="c-code__line">        print(<span class="c-code__stringliteral">&quot;...&quot;</span>, file = output)</div>
+<div class="c-code__line">            <span class="c-code__comment"># write the yaml document end marker</span></div>
+<div class="c-code__line">            print(<span class="c-code__stringliteral">&quot;...&quot;</span>, file = output)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        ExampleUtils.check_data_file(pipeline, logger)</div>
+<div class="c-code__line">            ExampleUtils.check_data_file(pipeline, logger)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">def </span>analyseEvidence(self, evidence, pipeline, output, yaml):</div>
 <div class="c-code__line">        <span class="c-code__comment"># FlowData is a data structure that is used to convey information required for</span></div>
@@ -209,46 +214,50 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">        <span class="c-code__comment"># Information required for detection is called &quot;evidence&quot; and usually consists</span></div>
 <div class="c-code__line">        <span class="c-code__comment"># of a number of HTTP Header field values, in this case represented by a</span></div>
 <div class="c-code__line">        <span class="c-code__comment"># dictionary of header name/value entries.</span></div>
-<div class="c-code__line">        data = pipeline.create_flowdata()</div>
-<div class="c-code__line">        <span class="c-code__comment"># Add the evidence values to the flow data</span></div>
-<div class="c-code__line">        data.evidence.add_from_dict(evidence)</div>
-<div class="c-code__line">        <span class="c-code__comment"># Process the flow data.</span></div>
-<div class="c-code__line">        data.process()</div>
+<div class="c-code__line">        <span class="c-code__comment"># Closing the FlowData, which the with statement does at the end of</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># the block, releases the results of the detection straight away.</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># Without it each record&#39;s results would stay in memory until the</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># garbage collector next runs.</span></div>
+<div class="c-code__line">        <span class="c-code__keyword">with</span> pipeline.create_flowdata() <span class="c-code__keyword">as</span> data:</div>
+<div class="c-code__line">            <span class="c-code__comment"># Add the evidence values to the flow data</span></div>
+<div class="c-code__line">            data.evidence.add_from_dict(evidence)</div>
+<div class="c-code__line">            <span class="c-code__comment"># Process the flow data.</span></div>
+<div class="c-code__line">            data.process()</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        device = data.device</div>
+<div class="c-code__line">            device = data.device</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        values = {}</div>
-<div class="c-code__line">        <span class="c-code__comment"># Add the evidence values to the output</span></div>
-<div class="c-code__line">        <span class="c-code__keywordflow">for</span> key <span class="c-code__keywordflow">in</span> evidence:</div>
-<div class="c-code__line">            values[key] = evidence[key]</div>
-<div class="c-code__line">        <span class="c-code__comment"># Now add the values that we want to store against the record.</span></div>
-<div class="c-code__line">        values[<span class="c-code__stringliteral">&quot;device.ismobile&quot;</span>] = device.ismobile.value() <span class="c-code__keywordflow">if</span> device.ismobile.has_value() <span class="c-code__keywordflow">else</span> <span class="c-code__stringliteral">&quot;Unknown&quot;</span></div>
-<div class="c-code__line">        values[<span class="c-code__stringliteral">&quot;device.platformname&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;platformname&quot;</span>)</div>
-<div class="c-code__line">        values[<span class="c-code__stringliteral">&quot;device.platformversion&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;platformversion&quot;</span>)</div>
-<div class="c-code__line">        values[<span class="c-code__stringliteral">&quot;device.browsername&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;browsername&quot;</span>)</div>
-<div class="c-code__line">        values[<span class="c-code__stringliteral">&quot;device.browserversion&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;browserversion&quot;</span>)</div>
-<div class="c-code__line">        values[<span class="c-code__stringliteral">&quot;device.tac&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;tac&quot;</span>)</div>
-<div class="c-code__line">        values[<span class="c-code__stringliteral">&quot;device.devicetype&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;devicetype&quot;</span>)</div>
-<div class="c-code__line">        values[<span class="c-code__stringliteral">&quot;device.hardwarevendor&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;hardwarevendor&quot;</span>)</div>
-<div class="c-code__line">        values[<span class="c-code__stringliteral">&quot;device.hardwarename&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;hardwarename&quot;</span>)</div>
-<div class="c-code__line">        values[<span class="c-code__stringliteral">&quot;device.hardwaremodel&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;hardwaremodel&quot;</span>)</div>
-<div class="c-code__line">        values[<span class="c-code__stringliteral">&quot;device.nativedevice&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;nativedevice&quot;</span>)</div>
-<div class="c-code__line">        values[<span class="c-code__stringliteral">&quot;device.nativename&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;nativename&quot;</span>)</div>
-<div class="c-code__line">        values[<span class="c-code__stringliteral">&quot;device.nativemodel&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;nativemodel&quot;</span>)</div>
-<div class="c-code__line">        <span class="c-code__comment"># DeviceId is a unique identifier for the combination of hardware, operating</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># system, browser and crawler that has been detected.</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># Our device detection solution uses machine learning to find the optimal</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># way to identify devices based on the real-world evidence values that we</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># observe each day.</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># As this changes over time, the result of detection can potentially change</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># as well. By storing the device id, we can use this as a lookup in future</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># rather than performing detection with the original evidence again.</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># Do this by passing an evidence entry with:</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># key = query.51D_ProfileIds</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># value = [the device id]</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># This is much faster and avoids the potential for getting a different </span></div>
-<div class="c-code__line">        <span class="c-code__comment"># result.</span></div>
-<div class="c-code__line">        values[<span class="c-code__stringliteral">&quot;device.deviceid&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;deviceid&quot;</span>)</div>
+<div class="c-code__line">            values = {}</div>
+<div class="c-code__line">            <span class="c-code__comment"># Add the evidence values to the output</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">for</span> key <span class="c-code__keywordflow">in</span> evidence:</div>
+<div class="c-code__line">                values[key] = evidence[key]</div>
+<div class="c-code__line">            <span class="c-code__comment"># Now add the values that we want to store against the record.</span></div>
+<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.ismobile&quot;</span>] = device.ismobile.value() <span class="c-code__keywordflow">if</span> device.ismobile.has_value() <span class="c-code__keywordflow">else</span> <span class="c-code__stringliteral">&quot;Unknown&quot;</span></div>
+<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.platformname&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;platformname&quot;</span>)</div>
+<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.platformversion&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;platformversion&quot;</span>)</div>
+<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.browsername&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;browsername&quot;</span>)</div>
+<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.browserversion&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;browserversion&quot;</span>)</div>
+<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.tac&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;tac&quot;</span>)</div>
+<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.devicetype&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;devicetype&quot;</span>)</div>
+<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.hardwarevendor&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;hardwarevendor&quot;</span>)</div>
+<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.hardwarename&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;hardwarename&quot;</span>)</div>
+<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.hardwaremodel&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;hardwaremodel&quot;</span>)</div>
+<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.nativedevice&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;nativedevice&quot;</span>)</div>
+<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.nativename&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;nativename&quot;</span>)</div>
+<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.nativemodel&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;nativemodel&quot;</span>)</div>
+<div class="c-code__line">            <span class="c-code__comment"># DeviceId is a unique identifier for the combination of hardware, operating</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># system, browser and crawler that has been detected.</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># Our device detection solution uses machine learning to find the optimal</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># way to identify devices based on the real-world evidence values that we</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># observe each day.</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># As this changes over time, the result of detection can potentially change</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># as well. By storing the device id, we can use this as a lookup in future</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># rather than performing detection with the original evidence again.</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># Do this by passing an evidence entry with:</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># key = query.51D_ProfileIds</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># value = [the device id]</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># This is much faster and avoids the potential for getting a different </span></div>
+<div class="c-code__line">            <span class="c-code__comment"># result.</span></div>
+<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.deviceid&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;deviceid&quot;</span>)</div>
 <div class="c-code__line">        yaml.dump(values, output)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">def </span>main(argv):</div>
@@ -280,8 +289,9 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">    <span class="c-code__keywordflow">else</span>:</div>
 <div class="c-code__line">        logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>,</div>
 <div class="c-code__line">            <span class="c-code__stringliteral">&quot;Failed to find a device detection data file. Make sure the &quot;</span> +</div>
-<div class="c-code__line">            <span class="c-code__stringliteral">&quot;device-detection-data submodule has been updated by running &quot;</span> +</div>
-<div class="c-code__line">            <span class="c-code__stringliteral">&quot;`git submodule update --recursive`.&quot;</span>)</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;data submodule is there, by running &quot;</span> +</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;`git submodule update --init --recursive`, and run this &quot;</span> +</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;example again to download the file.&quot;</span>)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> __name__ == <span class="c-code__stringliteral">&quot;__main__&quot;</span>:</div>
 <div class="c-code__line">    main(sys.argv[1:])</div>

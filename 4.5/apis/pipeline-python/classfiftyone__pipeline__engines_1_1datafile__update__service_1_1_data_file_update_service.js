@@ -7,6 +7,7 @@ var classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_data_file_
     [ "register_data_file", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_data_file_update_service.html#a6ac3302ea9129265da5dec3ab76d406a", null ],
     [ "register_pipeline", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_data_file_update_service.html#aafa9d2ba898847b7b76c587870ca5ec3", null ],
     [ "track_local_data_file_changes", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_data_file_update_service.html#a34ab1105e607b793c3470cd1086eaac2", null ],
+    [ "unregister_data_file", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_data_file_update_service.html#a87aa7773c7d80a76168061ab3228f4d7", null ],
     [ "update_data_file", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_data_file_update_service.html#a54474e728ebf6e665eec94f795a3456a", null ],
     [ "FILE_SYSTEM_WATCHER_INTERVAL_SECONDS", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_data_file_update_service.html#a1b18297532dcc727619b8a1811d422dc", null ],
     [ "on_complete_methods", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_data_file_update_service.html#a0d94cb6a9c25829875ef0ad76b6b769b", null ],

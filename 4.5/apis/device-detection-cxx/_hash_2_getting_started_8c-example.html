@@ -105,10 +105,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_hash_2_gettin
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__preprocessor">#define MAX_EVIDENCE 8</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">static</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *dataDir = <span class="c-code__stringliteral">&quot;device-detection-data&quot;</span>;</div>
+<div class="c-code__line"><span class="c-code__keyword">static</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *dataDir = <span class="c-code__stringliteral">&quot;data/device-detection&quot;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// In this example, by default, the 51degrees &quot;Lite&quot; file needs to be in the</span></div>
-<div class="c-code__line"><span class="c-code__comment">// device-detection-data,</span></div>
+<div class="c-code__line"><span class="c-code__comment">// data/device-detection folder, and is downloaded there when it is missing,</span></div>
 <div class="c-code__line"><span class="c-code__comment">// or you may specify another file as a command line parameter.</span></div>
 <div class="c-code__line"><span class="c-code__comment">//</span></div>
 <div class="c-code__line"><span class="c-code__comment">// Note that the Lite data file is only used for illustration, and has</span></div>
@@ -493,8 +493,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_hash_2_gettin
 <div class="c-code__line">    <span class="c-code__comment">// example. See the documentation for more detail on this and other </span></div>
 <div class="c-code__line">    <span class="c-code__comment">// configuration options:</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/documentation/_device_detection__features__performance_options.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-cxx&amp;utm_content=examples-c-hash-gettingstarted.c&amp;utm_term=main</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-cxx&amp;utm_content=examples-c-hash-gettingstarted.c&amp;utm_term=main</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-cxx&amp;utm_content=examples-c-hash-gettingstarted.c&amp;utm_term=main</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-cxx&amp;utm_content=examples-c-hash-gettingstarted.c&amp;utm_term=main</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-cxx&amp;utm_content=examples-c-hash-gettingstarted.c&amp;utm_term=main</span></div>
 <div class="c-code__line">    <a class="code hl_typedef" href="group___fifty_one_degrees_hash_synonyms.html#ga57af4ba244b4cebab0cf24de6d6d3008">ConfigHash</a> config = <a id="_a47" name="_a47"></a><a class="code hl_define" href="group___fifty_one_degrees_hash_synonyms.html#gaef431ba768d121b39837cef7e1a51158">HashLowMemoryConfig</a>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Path for the data file.</span></div>
@@ -506,7 +506,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_hash_2_gettin
 <div class="c-code__line">        strcpy(dataFilePath, argv[1]);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        status = <a id="a49" name="a49"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a>(</div>
+<div class="c-code__line">        status = fiftyoneDegreesExampleGetFilePath(</div>
 <div class="c-code__line">            dataDir,</div>
 <div class="c-code__line">            dataFileName,</div>
 <div class="c-code__line">            dataFilePath,</div>
@@ -515,23 +515,23 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_hash_2_gettin
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (status != <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gaa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a>) {</div>
 <div class="c-code__line">        printf((<span class="c-code__stringliteral">&quot;Failed to find a device detection &quot;</span></div>
-<div class="c-code__line">            <span class="c-code__stringliteral">&quot;data file. Make sure the device-detection-data &quot;</span></div>
-<div class="c-code__line">            <span class="c-code__stringliteral">&quot;submodule has been updated by running &quot;</span></div>
-<div class="c-code__line">            <span class="c-code__stringliteral">&quot;`git submodule update --recursive`&quot;</span>));</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;data file. Make sure the data submodule is there, &quot;</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;by running `git submodule update --init data`, and &quot;</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;run this example again to download the file.&quot;</span>));</div>
 <div class="c-code__line">        fgetc(stdin);</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> 1;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Check if the example is compiled for memory usage only in which case</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// the in memory configuration must be used.</span></div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (<a id="a50" name="a50"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga1e09607f004644224a45bc6057393de6">CollectionGetIsMemoryOnly</a>()) {</div>
-<div class="c-code__line">        config = <a id="_a51" name="_a51"></a><a class="code hl_define" href="group___fifty_one_degrees_hash_synonyms.html#ga90e4ca7b9a7843dcfd2ab2a2340ca694">HashInMemoryConfig</a>;</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (<a id="a49" name="a49"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga1e09607f004644224a45bc6057393de6">CollectionGetIsMemoryOnly</a>()) {</div>
+<div class="c-code__line">        config = <a id="_a50" name="_a50"></a><a class="code hl_define" href="group___fifty_one_degrees_hash_synonyms.html#ga90e4ca7b9a7843dcfd2ab2a2340ca694">HashInMemoryConfig</a>;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    </div>
 <div class="c-code__line">    <span class="c-code__comment">// The example shows how non HTTP header evidence can be provided. Set</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// special evidence processing to true to ensure this example returns </span></div>
 <div class="c-code__line">    <span class="c-code__comment">// results.</span></div>
-<div class="c-code__line">    config.<a id="a52" name="a52"></a><a class="code hl_variable" href="structfiftyone_degrees_config_hash.html#a7df616c1c12c853ce8042fa41a184f3f">b</a>.<a id="a53" name="a53"></a><a class="code hl_variable" href="structfiftyone_degrees_config_device_detection.html#a4f9955e955f2449663aea927c5a46ccb">processSpecialEvidence</a> = <span class="c-code__keyword">true</span>;</div>
+<div class="c-code__line">    config.<a id="a51" name="a51"></a><a class="code hl_variable" href="structfiftyone_degrees_config_hash.html#a7df616c1c12c853ce8042fa41a184f3f">b</a>.<a id="a52" name="a52"></a><a class="code hl_variable" href="structfiftyone_degrees_config_device_detection.html#a4f9955e955f2449663aea927c5a46ccb">processSpecialEvidence</a> = <span class="c-code__keyword">true</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    ExampleParameters params;</div>
 <div class="c-code__line">    params.dataFilePath = dataFilePath;</div>
@@ -579,7 +579,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_hash_2_gettin
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga324c123e74727b62612edeead5d0f6a6"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga324c123e74727b62612edeead5d0f6a6">EvidenceCreate</a></div><div class="ttdeci">#define EvidenceCreate</div><div class="ttdoc">Synonym for fiftyoneDegreesEvidenceCreate function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:240</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga4b242308dfc68d6092df3607fbccd0cc"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga4b242308dfc68d6092df3607fbccd0cc">PropertiesGetRequiredPropertyIndexFromName</a></div><div class="ttdeci">#define PropertiesGetRequiredPropertyIndexFromName</div><div class="ttdoc">Synonym for fiftyoneDegreesPropertiesGetRequiredPropertyIndexFromName function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:325</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga556b4dfadc53ec16baa29a33f59fe666"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga556b4dfadc53ec16baa29a33f59fe666">StatusCode</a></div><div class="ttdeci">fiftyoneDegreesStatusCode StatusCode</div><div class="ttdoc">Synonym for fiftyoneDegreesStatusCode type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:134</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga5ba06bcfd18437e9145833037dd7ecc9"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a></div><div class="ttdeci">#define FileGetPath</div><div class="ttdoc">Synonym for fiftyoneDegreesFileGetPath function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:337</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga7f401bb6e675245fd73ac77c3b7d8992"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga7f401bb6e675245fd73ac77c3b7d8992">EvidencePrefix</a></div><div class="ttdeci">fiftyoneDegreesEvidencePrefix EvidencePrefix</div><div class="ttdoc">Synonym for fiftyoneDegreesEvidencePrefix type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:140</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga9154c7bee1590af184d75fbe74a1c4dd"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga9154c7bee1590af184d75fbe74a1c4dd">EvidenceAddString</a></div><div class="ttdeci">#define EvidenceAddString</div><div class="ttdoc">Synonym for fiftyoneDegreesEvidenceAddString function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:324</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gaa90cac659d18e8ef6294c7ae337f6b58"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gaa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a></div><div class="ttdeci">#define SUCCESS</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_STATUS_SUCCESS status code.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:478</div></div>

@@ -192,6 +192,18 @@ var annotated =
           [ "TestPipeline", "classtests_1_1classes_1_1testpipeline_1_1_test_pipeline.html", "classtests_1_1classes_1_1testpipeline_1_1_test_pipeline" ]
         ] ]
       ] ],
+      [ "test_callback_url", "namespacetests_1_1test__callback__url.html", [
+        [ "CallbackUrlTests", "classtests_1_1test__callback__url_1_1_callback_url_tests.html", "classtests_1_1test__callback__url_1_1_callback_url_tests" ]
+      ] ],
+      [ "test_close", "namespacetests_1_1test__close.html", [
+        [ "ClosingData", "classtests_1_1test__close_1_1_closing_data.html", "classtests_1_1test__close_1_1_closing_data" ],
+        [ "ClosingElement", "classtests_1_1test__close_1_1_closing_element.html", "classtests_1_1test__close_1_1_closing_element" ],
+        [ "PlainElement", "classtests_1_1test__close_1_1_plain_element.html", "classtests_1_1test__close_1_1_plain_element" ],
+        [ "FailingElement", "classtests_1_1test__close_1_1_failing_element.html", "classtests_1_1test__close_1_1_failing_element" ],
+        [ "RecordedElement", "classtests_1_1test__close_1_1_recorded_element.html", "classtests_1_1test__close_1_1_recorded_element" ],
+        [ "BrokenElement", "classtests_1_1test__close_1_1_broken_element.html", "classtests_1_1test__close_1_1_broken_element" ],
+        [ "CloseTests", "classtests_1_1test__close_1_1_close_tests.html", "classtests_1_1test__close_1_1_close_tests" ]
+      ] ],
       [ "test_cloudengine", "namespacetests_1_1test__cloudengine.html", [
         [ "CloudEngineTests", "classtests_1_1test__cloudengine_1_1_cloud_engine_tests.html", "classtests_1_1test__cloudengine_1_1_cloud_engine_tests" ]
       ] ],
@@ -235,6 +247,7 @@ var annotated =
         [ "JavaScriptBuilderSequenceTests", "classtests_1_1test__javascriptbuilder__sequence_1_1_java_script_builder_sequence_tests.html", "classtests_1_1test__javascriptbuilder__sequence_1_1_java_script_builder_sequence_tests" ]
       ] ],
       [ "test_javascriptbuilder_variables", "namespacetests_1_1test__javascriptbuilder__variables.html", [
+        [ "_CapturedAll", "classtests_1_1test__javascriptbuilder__variables_1_1___captured_all.html", "classtests_1_1test__javascriptbuilder__variables_1_1___captured_all" ],
         [ "_Captured", "classtests_1_1test__javascriptbuilder__variables_1_1___captured.html", "classtests_1_1test__javascriptbuilder__variables_1_1___captured" ],
         [ "JavaScriptBuilderVariablesTests", "classtests_1_1test__javascriptbuilder__variables_1_1_java_script_builder_variables_tests.html", "classtests_1_1test__javascriptbuilder__variables_1_1_java_script_builder_variables_tests" ]
       ] ],

@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// Create a pipeline and add both engines to it. For more information</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// about pipelines in general see the documentation at</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// https://51degrees.com/documentation/_concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-mixed-gettingstarted-console-gettingstarted.js&amp;utm_term=run</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-mixed-gettingstarted-console-gettingstarted.js&amp;utm_term=run</span></div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> pipeline = <span class="c-code__keyword">new</span> core.PipelineBuilder()</div>
 <div class="c-code__line">    .add(deviceEngine)</div>
 <div class="c-code__line">    .add(ipEngine)</div>
@@ -309,17 +309,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line">    run(deviceDataFile, ipDataFile, process.stdout);</div>
 <div class="c-code__line">  } <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (deviceDataFile === undefined) {</div>
-<div class="c-code__line">      console.error(<span class="c-code__stringliteral">&#39;Failed to find a device detection data file. A &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;lite data file is available from the device-detection-data &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;repository on GitHub &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;https://github.com/51Degrees/device-detection-data. The full &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;path to a data file can be specified as the first command &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;line argument&#39;</span>);</div>
+<div class="c-code__line">      console.error(<span class="c-code__stringliteral">&#39;Failed to find a device detection data file. &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;Make sure the cxx/data submodule has been fetched by running &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;`git submodule update --init --recursive`. The full path to a &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;data file can be specified as the first command line argument&#39;</span>);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (ipDataFile === undefined) {</div>
 <div class="c-code__line">      console.error(<span class="c-code__stringliteral">&#39;Failed to find an IP intelligence data file. &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;Make sure the ip-intelligence-data submodule has been updated &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;by running `git submodule update --recursive`. The full path &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;Make sure the cxx/data submodule has been fetched by running &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;`git submodule update --init --recursive`. The full path &#39;</span> +</div>
 <div class="c-code__line">        <span class="c-code__stringliteral">&#39;to a data file can be specified as the second command line &#39;</span> +</div>
 <div class="c-code__line">        <span class="c-code__stringliteral">&#39;argument&#39;</span>);</div>
 <div class="c-code__line">    }</div>
@@ -331,7 +329,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line">};</div>
 <div class="ttc" id="aclass_data_extension_html"><div class="ttname"><a href="class_data_extension.html">DataExtension</a></div><div class="ttdef"><b>Definition</b> dataExtension.js:23</div></div>
 <div class="ttc" id="aclass_data_extension_html_a208dbc998aec51823620213f54daf71b"><div class="ttname"><a href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">DataExtension::getValueHelper</a></div><div class="ttdeci">static getValueHelper(elementData, propertyName)</div><div class="ttdoc">Helper to get a human readable value of an aspect property value.</div><div class="ttdef"><b>Definition</b> dataExtension.js:55</div></div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:54</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:116</div></div>
 <div class="ttc" id="aclass_ip_intelligence_on_premise_html"><div class="ttname"><a href="class_ip_intelligence_on_premise.html">IpIntelligenceOnPremise</a></div><div class="ttdoc">On premise version of the 51Degrees IP Intelligence Engine Uses a data file to process evidence in Fl...</div><div class="ttdef"><b>Definition</b> ipIntelligenceOnPremise.js:99</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->

@@ -407,6 +407,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('performance_2m
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> err != nil {</div>
 <div class="c-code__line">                log.Fatalf(<span class="c-code__stringliteral">&quot;Failed to create engine: %v&quot;</span>, err)</div>
 <div class="c-code__line">            }</div>
+<div class="c-code__line">            <span class="c-code__comment">// Stopping the engine frees its data set. Deferring the call</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// stops it however this function returns.</span></div>
+<div class="c-code__line">            defer engine.Stop()</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Run example</span></div>
 <div class="c-code__line">            report, err := runPerformance(engine, params, numThreads)</div>
@@ -436,8 +439,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('performance_2m
 <div class="c-code__line">                    log.Fatalf(<span class="c-code__stringliteral">&quot;Failed to write the performance results: %v&quot;</span>, err)</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">            engine.Stop()</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__keywordflow">return</span> nil</div>
 <div class="c-code__line">        })</div>

@@ -163,13 +163,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line">  <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">true</span>;</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// Load in a datafile</span></div>
+<div class="c-code__line"><span class="c-code__comment">// Load in a datafile, which is downloaded into the cxx/data submodule if</span></div>
+<div class="c-code__line"><span class="c-code__comment">// it is missing.</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">const</span> datafile = (process.env.directory || __dirname) + <span class="c-code__stringliteral">&#39;/../../../../../cxx/device-detection-data/51Degrees-LiteV4.1.hash&#39;</span>;</div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> datafile = <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a2" name="a2"></a>findFile(<span class="c-code__stringliteral">&#39;51Degrees-LiteV4.1.hash&#39;</span>);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keywordflow">if</span> (!fs.existsSync(datafile)) {</div>
-<div class="c-code__line">  console.error(<span class="c-code__stringliteral">&quot;The datafile required by this example is not present. Please ensure that the &#39;device-detection-data&#39; submodule has been fetched.&quot;</span>);</div>
-<div class="c-code__line">  <span class="c-code__keywordflow">throw</span> (<span class="c-code__stringliteral">&quot;No data file at &#39;&quot;</span> + datafile + <span class="c-code__stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="c-code__line"><span class="c-code__keywordflow">if</span> (datafile === undefined) {</div>
+<div class="c-code__line">  console.error(<span class="c-code__stringliteral">&quot;The datafile required by this example is not present. Please ensure that the &#39;cxx/data&#39; submodule has been fetched.&quot;</span>);</div>
+<div class="c-code__line">  <span class="c-code__keywordflow">throw</span> (<span class="c-code__stringliteral">&#39;No data file found&#39;</span>);</div>
 <div class="c-code__line">}</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Helper function to read property values from flowData</span></div>
@@ -252,7 +253,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line">    res.end(compiledFunction(</div>
 <div class="c-code__line">      {</div>
 <div class="c-code__line">        evidenceUsed,</div>
-<div class="c-code__line">        dataSourceTier: <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a2" name="a2"></a>getDataTier(pipeline),</div>
+<div class="c-code__line">        dataSourceTier: <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a3" name="a3"></a>getDataTier(pipeline),</div>
 <div class="c-code__line">        hardwareVendor: getValueHelper(flowData, <span class="c-code__stringliteral">&#39;hardwarevendor&#39;</span>),</div>
 <div class="c-code__line">        hardwareName: getValueHelper(flowData, <span class="c-code__stringliteral">&#39;hardwarename&#39;</span>),</div>
 <div class="c-code__line">        deviceType: getValueHelper(flowData, <span class="c-code__stringliteral">&#39;devicetype&#39;</span>),</div>
@@ -282,7 +283,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line">  setPipeline</div>
 <div class="c-code__line">};</div>
 <div class="ttc" id="aclass_device_detection_on_premise_pipeline_builder_html"><div class="ttname"><a href="class_device_detection_on_premise_pipeline_builder.html">DeviceDetectionOnPremisePipelineBuilder</a></div><div class="ttdef"><b>Definition</b> deviceDetectionOnPremisePipelineBuilder.js:35</div></div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:46</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:108</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

@@ -156,83 +156,89 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mat
 <div class="c-code__line">            <span class="c-code__comment"># We want to show the matching evidence characters as part of this example, so we have to set</span></div>
 <div class="c-code__line">            <span class="c-code__comment"># this flag to true.</span></div>
 <div class="c-code__line">            update_matched_useragent = <span class="c-code__keyword">True</span>).add_logger(logger).<a class="code hl_namespace" href="namespacebuild.html">build</a>()</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment"># The pipeline is closed at the end of the with block, which</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># releases the native data it holds.</span></div>
+<div class="c-code__line">        <span class="c-code__keyword">with</span> pipeline:</div>
+<div class="c-code__line">            ExampleUtils.check_data_file(pipeline, logger)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__comment"># Closing the FlowData, which the with statement does at the end</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># of the block, releases the results of the detection straight</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># away, rather than when the garbage collector next runs.</span></div>
+<div class="c-code__line">            <span class="c-code__keyword">with</span> pipeline.create_flowdata() <span class="c-code__keyword">as</span> data:</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">                <span class="c-code__comment"># Process a single evidence to retrieve the values</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># associated with the user-agent and other evidence such as sec-ch-* for the</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># selected properties.</span></div>
+<div class="c-code__line">                data.evidence.add_from_dict(self.Evidence)</div>
+<div class="c-code__line">                data.process()</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">                device = data.device</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">                output(<span class="c-code__stringliteral">&quot;--- Compare evidence with what was matched ---\n&quot;</span>)</div>
+<div class="c-code__line">                output(<span class="c-code__stringliteral">&quot;Evidence&quot;</span>)</div>
+<div class="c-code__line">                <span class="c-code__comment"># output the evidence in reverse value length order</span></div>
+<div class="c-code__line">                <span class="c-code__keywordflow">for</span> entry <span class="c-code__keywordflow">in</span> sorted(self.Evidence.items(), key=<span class="c-code__keyword">lambda</span> item: len(item[1]), reverse=<span class="c-code__keyword">True</span>):</div>
+<div class="c-code__line">                    output(f<span class="c-code__stringliteral">&quot;    {entry[0]}: {entry[1]}&quot;</span>)</div>
+<div class="c-code__line">                <span class="c-code__comment"># Obtain the matched User-Agents: the matched substrings in the</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># User-Agents are separated with underscores - output in forward length order.</span></div>
+<div class="c-code__line">                output(<span class="c-code__stringliteral">&quot;Matches&quot;</span>)</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">for</span> entry <span class="c-code__keywordflow">in</span> sorted(device.useragents.value(), key=<span class="c-code__keyword">lambda</span> item: len(item)):</div>
+<div class="c-code__line">                    output(f<span class="c-code__stringliteral">&quot;    Matched User-Agent: {entry}&quot;</span>)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">                output(<span class="c-code__stringliteral">&quot;&quot;</span>)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">                output(<span class="c-code__stringliteral">&quot;--- Listing all available properties, by component, by property name ---&quot;</span>)</div>
+<div class="c-code__line">                output(<span class="c-code__stringliteral">&quot;For a discussion of what the match properties mean, see: https://51degrees.com/documentation/_device_detection__hash.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-match_metrics.py&amp;utm_term=match-properties-discussion#DeviceDetection_Hash_DataSetProduction_Performance\n&quot;</span>)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">                <span class="c-code__comment"># get the properties available from the DeviceDetection engine</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># which has the key &quot;device&quot;. For the sake of illustration we will</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># retrieve it indirectly.</span></div>
+<div class="c-code__line">                hashEngineElementKey = pipeline.get_element(<span class="c-code__stringliteral">&quot;device&quot;</span>).datakey</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">                <span class="c-code__comment"># retrieve the available properties from the hash engine. The properties</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># available depends on</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># a) the use of restricted_properties in the builder (see above)</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># which controls which properties will be extracted, and also affects</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># the performance of extraction</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># b) the tier of data file being used. The Lite data file contains fewer</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># than 20 of the &gt;200 available properties</span></div>
+<div class="c-code__line">                availableProperties = dict(pipeline.get_properties()[hashEngineElementKey])</div>
 <div class="c-code__line">        </div>
-<div class="c-code__line">        ExampleUtils.check_data_file(pipeline, logger)</div>
+<div class="c-code__line">                <span class="c-code__comment"># create a Map keyed on the component name of the properties available</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># components being hardware, browser, OS and Crawler.</span></div>
+<div class="c-code__line">                <span class="c-code__keyword">def </span>get_component(property):</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">return</span> property[1][<span class="c-code__stringliteral">&quot;component&quot;</span>]</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        data = pipeline.create_flowdata()</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__comment"># Process a single evidence to retrieve the values</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># associated with the user-agent and other evidence such as sec-ch-* for the</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># selected properties.</span></div>
-<div class="c-code__line">        data.evidence.add_from_dict(self.Evidence)</div>
-<div class="c-code__line">        data.process()</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">        device = data.device</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">        output(<span class="c-code__stringliteral">&quot;--- Compare evidence with what was matched ---\n&quot;</span>)</div>
-<div class="c-code__line">        output(<span class="c-code__stringliteral">&quot;Evidence&quot;</span>)</div>
-<div class="c-code__line">        <span class="c-code__comment"># output the evidence in reverse value length order</span></div>
-<div class="c-code__line">        <span class="c-code__keywordflow">for</span> entry <span class="c-code__keywordflow">in</span> sorted(self.Evidence.items(), key=<span class="c-code__keyword">lambda</span> item: len(item[1]), reverse=<span class="c-code__keyword">True</span>):</div>
-<div class="c-code__line">            output(f<span class="c-code__stringliteral">&quot;    {entry[0]}: {entry[1]}&quot;</span>)</div>
-<div class="c-code__line">        <span class="c-code__comment"># Obtain the matched User-Agents: the matched substrings in the</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># User-Agents are separated with underscores - output in forward length order.</span></div>
-<div class="c-code__line">        output(<span class="c-code__stringliteral">&quot;Matches&quot;</span>)</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">for</span> entry <span class="c-code__keywordflow">in</span> sorted(device.useragents.value(), key=<span class="c-code__keyword">lambda</span> item: len(item)):</div>
-<div class="c-code__line">            output(f<span class="c-code__stringliteral">&quot;    Matched User-Agent: {entry}&quot;</span>)</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">        output(<span class="c-code__stringliteral">&quot;&quot;</span>)</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">        output(<span class="c-code__stringliteral">&quot;--- Listing all available properties, by component, by property name ---&quot;</span>)</div>
-<div class="c-code__line">        output(<span class="c-code__stringliteral">&quot;For a discussion of what the match properties mean, see: https://51degrees.com/documentation/_device_detection__hash.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-match_metrics.py&amp;utm_term=match-properties-discussion#DeviceDetection_Hash_DataSetProduction_Performance\n&quot;</span>)</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__comment"># get the properties available from the DeviceDetection engine</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># which has the key &quot;device&quot;. For the sake of illustration we will</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># retrieve it indirectly.</span></div>
-<div class="c-code__line">        hashEngineElementKey = pipeline.get_element(<span class="c-code__stringliteral">&quot;device&quot;</span>).datakey</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__comment"># retrieve the available properties from the hash engine. The properties</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># available depends on</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># a) the use of restricted_properties in the builder (see above)</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># which controls which properties will be extracted, and also affects</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># the performance of extraction</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># b) the tier of data file being used. The Lite data file contains fewer</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># than 20 of the &gt;200 available properties</span></div>
-<div class="c-code__line">        availableProperties = dict(pipeline.get_properties()[hashEngineElementKey])</div>
-<div class="c-code__line">        </div>
-<div class="c-code__line">        <span class="c-code__comment"># create a Map keyed on the component name of the properties available</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># components being hardware, browser, OS and Crawler.</span></div>
-<div class="c-code__line">        <span class="c-code__keyword">def </span>get_component(property):</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">return</span> property[1][<span class="c-code__stringliteral">&quot;component&quot;</span>]</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">        availableProperties = dict(sorted(availableProperties.items(),key=<span class="c-code__keyword">lambda</span> item: get_component(item)))</div>
-<div class="c-code__line">        categoryMap = groupby(availableProperties.items(), get_component)</div>
-<div class="c-code__line">        <span class="c-code__comment"># iterate the map created above</span></div>
-<div class="c-code__line">        <span class="c-code__keywordflow">for</span> component, properties <span class="c-code__keywordflow">in</span> categoryMap:</div>
-<div class="c-code__line">            output(component)</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">for</span> propertyKey, property <span class="c-code__keywordflow">in</span> properties:</div>
-<div class="c-code__line">                propertyName = property[<span class="c-code__stringliteral">&quot;name&quot;</span>]</div>
-<div class="c-code__line">                propertyDescription = property[<span class="c-code__stringliteral">&quot;description&quot;</span>]</div>
+<div class="c-code__line">                availableProperties = dict(sorted(availableProperties.items(),key=<span class="c-code__keyword">lambda</span> item: get_component(item)))</div>
+<div class="c-code__line">                categoryMap = groupby(availableProperties.items(), get_component)</div>
+<div class="c-code__line">                <span class="c-code__comment"># iterate the map created above</span></div>
+<div class="c-code__line">                <span class="c-code__keywordflow">for</span> component, properties <span class="c-code__keywordflow">in</span> categoryMap:</div>
+<div class="c-code__line">                    output(component)</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">for</span> propertyKey, property <span class="c-code__keywordflow">in</span> properties:</div>
+<div class="c-code__line">                        propertyName = property[<span class="c-code__stringliteral">&quot;name&quot;</span>]</div>
+<div class="c-code__line">                        propertyDescription = property[<span class="c-code__stringliteral">&quot;description&quot;</span>]</div>
 <div class="c-code__line">                </div>
-<div class="c-code__line">                <span class="c-code__comment"># while we get the available properties and their metadata from the</span></div>
-<div class="c-code__line">                <span class="c-code__comment"># pipeline we get the values for the last detection from flowData</span></div>
-<div class="c-code__line">                value = device[propertyKey]</div>
+<div class="c-code__line">                        <span class="c-code__comment"># while we get the available properties and their metadata from the</span></div>
+<div class="c-code__line">                        <span class="c-code__comment"># pipeline we get the values for the last detection from flowData</span></div>
+<div class="c-code__line">                        value = device[propertyKey]</div>
 <div class="c-code__line">                </div>
-<div class="c-code__line">                <span class="c-code__comment"># output property names, values and descriptions</span></div>
-<div class="c-code__line">                <span class="c-code__comment"># some property values are lists.</span></div>
-<div class="c-code__line">                <span class="c-code__keywordflow">if</span> value.has_value() <span class="c-code__keywordflow">and</span> isinstance(value.value(), list):</div>
-<div class="c-code__line">                    output(f<span class="c-code__stringliteral">&quot;    {propertyName}: {len(value.value())} Values&quot;</span>)</div>
-<div class="c-code__line">                    <span class="c-code__keywordflow">for</span> item <span class="c-code__keywordflow">in</span> value.value():</div>
-<div class="c-code__line">                        output(f<span class="c-code__stringliteral">&quot;        : {item}&quot;</span>)</div>
+<div class="c-code__line">                        <span class="c-code__comment"># output property names, values and descriptions</span></div>
+<div class="c-code__line">                        <span class="c-code__comment"># some property values are lists.</span></div>
+<div class="c-code__line">                        <span class="c-code__keywordflow">if</span> value.has_value() <span class="c-code__keywordflow">and</span> isinstance(value.value(), list):</div>
+<div class="c-code__line">                            output(f<span class="c-code__stringliteral">&quot;    {propertyName}: {len(value.value())} Values&quot;</span>)</div>
+<div class="c-code__line">                            <span class="c-code__keywordflow">for</span> item <span class="c-code__keywordflow">in</span> value.value():</div>
+<div class="c-code__line">                                output(f<span class="c-code__stringliteral">&quot;        : {item}&quot;</span>)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">                <span class="c-code__keywordflow">else</span>:</div>
-<div class="c-code__line">                    output(f<span class="c-code__stringliteral">&quot;    {propertyName}: {value.value()}&quot;</span>)</div>
+<div class="c-code__line">                        <span class="c-code__keywordflow">else</span>:</div>
+<div class="c-code__line">                            output(f<span class="c-code__stringliteral">&quot;    {propertyName}: {value.value()}&quot;</span>)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (show_descs == <span class="c-code__keyword">True</span>):</div>
-<div class="c-code__line">                    output(f<span class="c-code__stringliteral">&quot;        {propertyDescription}&quot;</span>)</div>
+<div class="c-code__line">                        <span class="c-code__keywordflow">if</span> (show_descs == <span class="c-code__keyword">True</span>):</div>
+<div class="c-code__line">                            output(f<span class="c-code__stringliteral">&quot;        {propertyDescription}&quot;</span>)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        output()</div>
-<div class="c-code__line">        logger.log(<span class="c-code__stringliteral">&quot;info&quot;</span>, <span class="c-code__stringliteral">&quot;Finished Match Metrics Example&quot;</span>)</div>
+<div class="c-code__line">            output()</div>
+<div class="c-code__line">            logger.log(<span class="c-code__stringliteral">&quot;info&quot;</span>, <span class="c-code__stringliteral">&quot;Finished Match Metrics Example&quot;</span>)</div>
 <div class="c-code__line">    </div>
 <div class="c-code__line">    <span class="c-code__comment"># Evidence values from a windows 11 device using a browser</span></div>
 <div class="c-code__line">    <span class="c-code__comment"># that supports User-Agent Client Hints.</span></div>
@@ -257,8 +263,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mat
 <div class="c-code__line">    <span class="c-code__keywordflow">else</span>:</div>
 <div class="c-code__line">        logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>,</div>
 <div class="c-code__line">            <span class="c-code__stringliteral">&quot;Failed to find a device detection data file. Make sure the &quot;</span> +</div>
-<div class="c-code__line">            <span class="c-code__stringliteral">&quot;device-detection-data submodule has been updated by running &quot;</span> +</div>
-<div class="c-code__line">            <span class="c-code__stringliteral">&quot;`git submodule update --recursive`.&quot;</span>)</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;data submodule is there, by running &quot;</span> +</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;`git submodule update --init --recursive`, and run this &quot;</span> +</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;example again to download the file.&quot;</span>)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> __name__ == <span class="c-code__stringliteral">&quot;__main__&quot;</span>:</div>
 <div class="c-code__line">    main(sys.argv[1:])</div>

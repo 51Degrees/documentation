@@ -69,15 +69,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-java/blob/main/examples/device-detection/web/getting-started.onprem/src/main/java/fiftyone/devicedetection/examples/web/GettingStartedWebOnPrem.java">GitHub</a>.</p>
 <p> 
     <p>
-    This example requires a local data file. The free 'Lite' data file can be acquired by
-    pulling the git submodules under this repository (run `git submodule update --recursive`) 
-    or from the <a href="https://github.com/51Degrees/device-detection-data">device-detection-data</a>
-    GitHub repository.
+    This example requires a local data file. The free 'Lite' data file can be downloaded with the
+    scripts in the <a href="https://github.com/51Degrees/data">data</a> GitHub repository, which
+    this repository includes at <code>cxx/data</code>. Fetch the submodules by running
+    <code>git submodule update --init --recursive</code>, then run
+    <code>sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash</code> from the repository root,
+    which saves the file as <code>cxx/data/device-detection/51Degrees-LiteV4.1.hash</code>.
     </p>
     <p>
     The Lite data file is only used for illustration, and has limited accuracy and capabilities.
     Find out about the more capable data files that are available on our 
-    <a href="https://51degrees.com/pricing">pricing page</a>
+    <a href="https://51degrees.com/pricing">pricing page</a>.
     </p>
       </p>
 <h2>Overview</h2>
@@ -116,6 +118,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">package </span>fiftyone.devicedetection.examples.web;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.devicedetection.examples.shared.DataFileHelper;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.devicedetection.shared.DeviceData;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.core.configuration.PipelineOptions;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.core.configuration.PipelineOptionsFactory;</div>
@@ -128,6 +131,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line"><span class="c-code__keyword">import</span> javax.servlet.http.HttpServlet;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> javax.servlet.http.HttpServletRequest;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> javax.servlet.http.HttpServletResponse;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> java.io.File;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.io.PrintWriter;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.common.testhelpers.LogbackHelper.configureLogback;</div>
@@ -142,6 +146,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> main(String[] args) <span class="c-code__keywordflow">throws</span> Exception {</div>
 <div class="c-code__line">        configureLogback(getFilePath(<span class="c-code__stringliteral">&quot;logback.xml&quot;</span>));</div>
 <div class="c-code__line">        logger.info(<span class="c-code__stringliteral">&quot;Running Example {}&quot;</span>, GettingStartedWebOnPrem.class);</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment">// If the data file the configuration names is not at that path, it</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// is searched for, and the free Lite file is downloaded if missing.</span></div>
+<div class="c-code__line">        String dataFile = PipelineOptionsFactory.getOptionsFromFile(</div>
+<div class="c-code__line">                getFilePath(resourceBase) + <span class="c-code__stringliteral">&quot;/WEB-INF/51Degrees-OnPrem.xml&quot;</span>)</div>
+<div class="c-code__line">                .findAndSubstitute(<span class="c-code__stringliteral">&quot;DeviceDetectionHashEngine&quot;</span>, <span class="c-code__stringliteral">&quot;DataFile&quot;</span>);</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (!<span class="c-code__keyword">new</span> File(dataFile).exists()) {</div>
+<div class="c-code__line">            System.setProperty(<span class="c-code__stringliteral">&quot;TestDataFile&quot;</span>,</div>
+<div class="c-code__line">                    DataFileHelper.getDataFileLocation(dataFile));</div>
+<div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        String portEnv = System.getenv(<span class="c-code__stringliteral">&quot;PORT&quot;</span>);</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (portEnv != <span class="c-code__keyword">null</span>) {</div>
@@ -208,8 +222,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
 <div class="c-code__line"></div>
-<div class="ttc" id="aclassfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem_html_a104af3a6def2e098ddd91fc93f5b78b5"><div class="ttname"><a href="classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem.html#a104af3a6def2e098ddd91fc93f5b78b5">fiftyone.devicedetection.examples.web.GettingStartedWebOnPrem.processRequest</a></div><div class="ttdeci">void processRequest(HttpServletRequest request, HttpServletResponse response)</div><div class="ttdef"><b>Definition</b> GettingStartedWebOnPrem.java:85</div></div>
-<div class="ttc" id="aclassfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem_html_a2289398b53fa454ee88c5bd1cd25ea58"><div class="ttname"><a href="classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem.html#a2289398b53fa454ee88c5bd1cd25ea58">fiftyone.devicedetection.examples.web.GettingStartedWebOnPrem.doGet</a></div><div class="ttdeci">void doGet(HttpServletRequest request, HttpServletResponse response)</div><div class="ttdoc">Handles the HTTP GET method.</div><div class="ttdef"><b>Definition</b> GettingStartedWebOnPrem.java:131</div></div>
+<div class="ttc" id="aclassfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem_html_a104af3a6def2e098ddd91fc93f5b78b5"><div class="ttname"><a href="classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem.html#a104af3a6def2e098ddd91fc93f5b78b5">fiftyone.devicedetection.examples.web.GettingStartedWebOnPrem.processRequest</a></div><div class="ttdeci">void processRequest(HttpServletRequest request, HttpServletResponse response)</div><div class="ttdef"><b>Definition</b> GettingStartedWebOnPrem.java:98</div></div>
+<div class="ttc" id="aclassfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem_html_a2289398b53fa454ee88c5bd1cd25ea58"><div class="ttname"><a href="classfiftyone_1_1devicedetection_1_1examples_1_1web_1_1_getting_started_web_on_prem.html#a2289398b53fa454ee88c5bd1cd25ea58">fiftyone.devicedetection.examples.web.GettingStartedWebOnPrem.doGet</a></div><div class="ttdeci">void doGet(HttpServletRequest request, HttpServletResponse response)</div><div class="ttdoc">Handles the HTTP GET method.</div><div class="ttdef"><b>Definition</b> GettingStartedWebOnPrem.java:144</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

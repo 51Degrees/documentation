@@ -342,17 +342,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line">    console.log(`Local cloud API listening on: http:<span class="c-code__comment">//localhost:${PORT}`);</span></div>
 <div class="c-code__line">  } <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (deviceDataFile === undefined) {</div>
-<div class="c-code__line">      console.error(<span class="c-code__stringliteral">&#39;Failed to find a device detection data file. A &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;lite data file is available from the device-detection-data &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;repository on GitHub &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;https://github.com/51Degrees/device-detection-data. The full &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;path to a data file can be specified as the first command &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;line argument&#39;</span>);</div>
+<div class="c-code__line">      console.error(<span class="c-code__stringliteral">&#39;Failed to find a device detection data file. &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;Make sure the cxx/data submodule has been fetched by running &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;`git submodule update --init --recursive`. The full path to a &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;data file can be specified as the first command line argument&#39;</span>);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (ipDataFile === undefined) {</div>
 <div class="c-code__line">      console.error(<span class="c-code__stringliteral">&#39;Failed to find an IP intelligence data file. &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;Make sure the ip-intelligence-data submodule has been updated &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;by running `git submodule update --recursive`. The full path &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;Make sure the cxx/data submodule has been fetched by running &#39;</span> +</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;`git submodule update --init --recursive`. The full path &#39;</span> +</div>
 <div class="c-code__line">        <span class="c-code__stringliteral">&#39;to a data file can be specified as the second command line &#39;</span> +</div>
 <div class="c-code__line">        <span class="c-code__stringliteral">&#39;argument&#39;</span>);</div>
 <div class="c-code__line">    }</div>
@@ -364,7 +362,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line">  server,</div>
 <div class="c-code__line">  setPipeline</div>
 <div class="c-code__line">};</div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:54</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:116</div></div>
 <div class="ttc" id="aclass_ip_intelligence_on_premise_html"><div class="ttname"><a href="class_ip_intelligence_on_premise.html">IpIntelligenceOnPremise</a></div><div class="ttdoc">On premise version of the 51Degrees IP Intelligence Engine Uses a data file to process evidence in Fl...</div><div class="ttdef"><b>Definition</b> ipIntelligenceOnPremise.js:99</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->

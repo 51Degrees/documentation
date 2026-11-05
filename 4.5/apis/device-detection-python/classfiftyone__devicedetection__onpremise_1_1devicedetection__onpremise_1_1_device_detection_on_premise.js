@@ -1,6 +1,7 @@
 var classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise =
 [
     [ "__init__", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise.html#add1f159001eda1b500e0ebd309f6631d", null ],
+    [ "close", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise.html#a035e12ebb3e85629fc3112ac9af9d8ae", null ],
     [ "get_component", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise.html#a3fb1bf7fb4cb5b1518418b37344d92b0", null ],
     [ "get_evidence_key_filter", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise.html#a25c45a8b0d8e535d6adeda2ed8b11910", null ],
     [ "get_metric_properties", "classfiftyone__devicedetection__onpremise_1_1devicedetection__onpremise_1_1_device_detection_on_premise.html#a8b1c092e0c3e7ce90b55a1deca67fdfe", null ],

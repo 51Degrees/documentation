@@ -107,8 +107,9 @@ var NAVTREEINDEX0 =
 "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_reporting_1_1_minimal.html":[2,0,0,1,0,0,7,0],
 "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_reporting_1_1_minimal.html#a9402b0a8830905be395dd8397cc48043":[2,0,0,1,0,0,7,0,0],
 "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_data_file_helper.html":[2,0,0,1,1,0],
-"classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_data_file_helper.html#a65d7d50ebba10898845671bd5a22299d":[2,0,0,1,1,0,1],
-"classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_data_file_helper.html#a6f90817f1cea8b373af2d4bdee60c37b":[2,0,0,1,1,0,2],
+"classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_data_file_helper.html#a65d7d50ebba10898845671bd5a22299d":[2,0,0,1,1,0,2],
+"classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_data_file_helper.html#a6f90817f1cea8b373af2d4bdee60c37b":[2,0,0,1,1,0,3],
+"classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_data_file_helper.html#ae1217e7570b29521e87ec348ff410d85":[2,0,0,1,1,0,1],
 "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_data_file_helper_1_1_datafile_info.html":[2,0,0,1,1,0,0],
 "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_evidence_helper.html":[2,0,0,1,1,1],
 "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_evidence_helper.html#a5357b74a41ed8cbe0309f1e278c3095a":[2,0,0,1,1,1,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a084dd5a84bdebf55a12672b1cc20db0b":[2,0,0,3,4,45],
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a08e98353bc66d6e78c453e81b21f5880":[2,0,0,3,4,58],
 "classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a0aeec9c2fe428dc1c907a38f24b87ebc":[2,0,0,3,4,291],
-"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a0af0cc47b7542d215f071c1251795af6":[2,0,0,3,4,73],
-"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a0ba0697c908dd0d95adffe7c9e909280":[2,0,0,3,4,49]
+"classfiftyone_1_1devicedetection_1_1shared_1_1_device_data_base.html#a0af0cc47b7542d215f071c1251795af6":[2,0,0,3,4,73]
 };

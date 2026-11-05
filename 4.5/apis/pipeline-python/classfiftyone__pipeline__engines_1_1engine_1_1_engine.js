@@ -1,6 +1,7 @@
 var classfiftyone__pipeline__engines_1_1engine_1_1_engine =
 [
     [ "__init__", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a0d5c73d6a07685aa5c6c0ff87383a3d8", null ],
+    [ "close", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aa9212c13330326a4ea9aa44253746e91", null ],
     [ "in_cache", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a9d186f20091539afd22a08f28f387805", null ],
     [ "on_registration", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aaf9b874db8b7ca0424d769cfaa3d7f92", null ],
     [ "process", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a1753c81a9469244593de5ace9145c773", null ],

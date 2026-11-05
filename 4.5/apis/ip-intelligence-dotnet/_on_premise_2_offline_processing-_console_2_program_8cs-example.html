@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">server.client-ip: <span class="c-code__stringliteral">&#39;1.2.3.4&#39;</span></div>
 </div><!-- fragment --><p>We create a IP Intelligence pipeline to read the data and find out about the associated IP address, we write this data to a YAML formatted output stream.</p>
 <p>As well as explaining the basic operation of off line processing using the defaults, for advanced operation this example can be used to experiment with tuning IP Intelligence for performance and predictive power using Performance Profile, Graph and Difference and Drift settings.</p>
-<p>Evidence files can be obtained from the <a href="https://github.com/51Degrees/ip-intelligence-data">ip-intelligence-data repository</a>.</p>
+<p>Evidence files can be obtained from the <a href="https://github.com/51Degrees/data">data repository</a>.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/ip-intelligence/OnPremise/OfflineProcessing-Console/Program.cs">GitHub</a>.</p>
 <p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=header">contact us</a>.</p>
 <p>Required NuGet Dependencies:</p><ul>
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                var logger = loggerFactory.CreateLogger&lt;Program&gt;();</div>
 <div class="c-code__line">                <span class="c-code__comment">// In this example, we use the IpiPipelineBuilder and configure it</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// in code. For more information about builders in general see the documentation at</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                <span class="c-code__comment">// Note that we wrap the creation of a pipeline in a using to control its life cycle</span></div>
 <div class="c-code__line">                <span class="c-code__keyword">using</span> (var pipeline = <span class="c-code__keyword">new</span> IpiPipelineBuilder(loggerFactory)</div>
@@ -139,8 +139,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                    <span class="c-code__comment">// data file is paged from disk rather than loaded entirely into RAM.</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// See the documentation for more detail on this and other</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// configuration options.</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run</span></div>
 <div class="c-code__line">                    .SetPerformanceProfile(PerformanceProfiles.LowMemory)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Inhibit sharing usage for this example.</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// In general, off line processing usage should NOT be shared back to 51Degrees.</span></div>
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                    <span class="c-code__comment">// in order to help us improve the detection, then</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// this additional data will need to be collected and included as evidence</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// to the Pipeline. See</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run#Low_Level_Usage_Sharing</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-offlineprocessing-console-program.cs&amp;utm_term=run#Low_Level_Usage_Sharing</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// for more details on this.</span></div>
 <div class="c-code__line">                    .SetShareUsage(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Inhibit auto-update of the data file for this example</span></div>
@@ -270,8 +270,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            <span class="c-code__keywordflow">else</span></div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                logger.LogError(<span class="c-code__stringliteral">&quot;Failed to find a IP Intelligence data file. Make sure the &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;ip-intelligence-data submodule has been updated by running &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;`git submodule update --recursive`.&quot;</span>);</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;Enterprise data file is in cxx/data/ip-intelligence, or supply &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;the path to a data file as a command line argument.&quot;</span>);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Dispose the logger to ensure any messages get flushed</span></div>

@@ -71,13 +71,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <p>The 51Degrees IP intelligence API is built on the 51Degrees <a class="el" href="dir_fdedb0aba14d44ce9d99bc100e026e6a.html" title="/home/runner/work/documentation/documentation/apis/51degrees-cxx/src/common/README.md">common API</a>.</p>
 <h1>Pre-requisites</h1>
 <h2><a class="el" href="group___fifty_one_degrees_synonyms.html#gaad0a959cad42d676f5184f89b6188f99" title="Synonym for fiftyoneDegreesData type.">Data</a> file</h2>
-<p>In order to perform IP intelligence, you will need to obtain a 51Degrees data file. Lite data file can be obtained for free as specified in the <a href="https://github.com/51Degrees/ip-intelligence-data/"><code>ip-intelligence-data/README</code></a>. To obtain an Enterprise data file please <a href="https://51degrees.com/contact-us?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-cxx&amp;utm_content=readme.md&amp;utm_term=data-file">contact us</a>.</p>
-<p>By default, the downloaded data file has to be placed in the 'ip-intelligence-data' folder at the root of this repository for the tests and examples to work.</p>
+<p>In order to perform IP intelligence, you will need to obtain a 51Degrees data file. The free Lite data file is downloaded by <code>data/get-data-files.sh</code> or <code>data/get-data-files.ps1</code>, in the <a href="https://github.com/51Degrees/data">data</a> submodule. To obtain an Enterprise data file please <a href="https://51degrees.com/contact-us?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-cxx&amp;utm_content=readme.md&amp;utm_term=data-file">contact us</a>.</p>
+<p>By default, the data file has to be in the <code>data/ip-intelligence</code> folder of this repository for the tests and examples to work, which is where the scripts save it. The tests also need the free ASN data file, <code>51Degrees-IPIV4AsnIpiV41.ipi</code>, which the scripts download as well.</p>
 <p>The examples resolve the location of the data file in the following order:</p>
 <ol type="1">
 <li>A path supplied as a command line argument to the example.</li>
 <li>The <code>51DEGREES_IPI_PATH</code> environment variable containing an explicit path to the data file.</li>
-<li>A search of the parent folder structure for the expected file name in the 'ip-intelligence-data' folder, where the free 'Lite' data file is expected to be placed.</li>
+<li>A search of the parent folder structure for the expected file name in the <code>data/ip-intelligence</code> folder, where the free 'Lite' data file is downloaded to. When it is missing there, the example runs the data repository's script to download it.</li>
 </ol>
 <p>Note that on Linux shells the <code>51DEGREES_IPI_PATH</code> variable name starts with a digit, so it must be set with the <code>env</code> command, for example <code>env 51DEGREES_IPI_PATH=/path/to/file.ipi ./GettingStarted</code>, rather than a plain <code>export</code>.</p>
 <h1>Building and testing</h1>
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <h1>Examples</h1>
 <p>There are several examples available, the source files can be found in the <a href="../../examples/ipi"><code>examples/ipi</code></a> folder. The examples are written in C or CPP.</p>
 <h2>⚠️ Required files</h2>
-<p>See <code>ip-intelligence-data/README</code> (local / <a href="https://github.com/51Degrees/ip-intelligence-data/">GitHub</a>) on how to pull and/or generate necessary files.</p>
+<p>See the data repository README (local / <a href="https://github.com/51Degrees/data#get-the-data-files">GitHub</a>) on how to download the necessary files.</p>
 <h2>Running examples in Visual Studio</h2>
 <p>All the examples are available to run in the <code>VisualStudio/IpIntelligence/IpIntelligence.sln</code> solution.</p>
 <h2>IP Intelligence Examples</h2>

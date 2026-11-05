@@ -86,6 +86,10 @@ Collaboration diagram for fiftyone\pipeline\ipintelligence\SwigData:</h2>
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a10c957971565e4fb223c13bb63ec64fe" id="r_a10c957971565e4fb223c13bb63ec64fe"><td class="c-table__cell"><a id="a10c957971565e4fb223c13bb63ec64fe" name="a10c957971565e4fb223c13bb63ec64fe"></a>
 &#160;</td><td class="c-table__cell"><b>__construct</b> ($engine, $result, ?string $echoIp=null, ?string $echoIpv6=null)</td></tr>
+<tr class="c-table__row memitem:a58a3cc707f7a92303705ead57921de00" id="r_a58a3cc707f7a92303705ead57921de00"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a58a3cc707f7a92303705ead57921de00">close</a> ()</td></tr>
+<tr class="c-table__row memdesc:a58a3cc707f7a92303705ead57921de00"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Release the native results, which keep the engine's data in memory while they are held, even after the engine is closed or its data is refreshed.  <br /></td></tr>
+<tr class="c-table__row memitem:a945f480e6be8fa4f010460f849c8303b" id="r_a945f480e6be8fa4f010460f849c8303b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a945f480e6be8fa4f010460f849c8303b">get</a> (string $key)</td></tr>
+<tr class="c-table__row memdesc:a945f480e6be8fa4f010460f849c8303b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a property value, once the results are known to be open.  <br /></td></tr>
 <tr class="c-table__row memitem:a710a4677844acf4d0c10360be71c00da" id="r_a710a4677844acf4d0c10360be71c00da"><td class="c-table__cell"><a id="a710a4677844acf4d0c10360be71c00da" name="a710a4677844acf4d0c10360be71c00da"></a>
 &#160;</td><td class="c-table__cell"><b>__isset</b> ($key)</td></tr>
 <tr class="c-table__row memitem:acdb871c8a86dfebed3a0944420f3ac9e" id="r_acdb871c8a86dfebed3a0944420f3ac9e"><td class="c-table__cell"><a id="acdb871c8a86dfebed3a0944420f3ac9e" name="acdb871c8a86dfebed3a0944420f3ac9e"></a>
@@ -94,8 +98,6 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a082e5c1182873279f7a509b8378d56bb pub_methods_classfiftyone_1_1pipeline_1_1engines_1_1_aspect_data" id="r_a082e5c1182873279f7a509b8378d56bb"><td class="c-table__cell">
 &#160;</td><td class="c-table__cell"><b>__construct</b> (<a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_engine.html">Engine</a> $flowElement)</td></tr>
 <tr class="c-table__row memdesc:a082e5c1182873279f7a509b8378d56bb pub_methods_classfiftyone_1_1pipeline_1_1engines_1_1_aspect_data"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for element data Adds default missing property service if not available. <br /></td></tr>
-<tr class="c-table__row memitem:ae2f79a5a8a5bd24d3e54e2827df75dcf pub_methods_classfiftyone_1_1pipeline_1_1engines_1_1_aspect_data" id="r_ae2f79a5a8a5bd24d3e54e2827df75dcf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_aspect_data.html#ae2f79a5a8a5bd24d3e54e2827df75dcf">get</a> (string $key)</td></tr>
-<tr class="c-table__row memdesc:ae2f79a5a8a5bd24d3e54e2827df75dcf pub_methods_classfiftyone_1_1pipeline_1_1engines_1_1_aspect_data"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a value (unless in a flowElement's restrictedProperties list) If property not found, call the attached missing property service.  <br /></td></tr>
 <tr class="c-table__row inherit_header pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_element_data"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_element_data.html">fiftyone\pipeline\core\ElementData</a></h3></td></tr>
 <tr class="c-table__row memitem:a209b75a20dee72f9832d9bf7c667c745 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_element_data" id="r_a209b75a20dee72f9832d9bf7c667c745"><td class="c-table__cell">
 &#160;</td><td class="c-table__cell"><b>__construct</b> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html">FlowElement</a> $flowElement)</td></tr>
@@ -124,6 +126,63 @@ Additional Inherited Members</h2></td></tr>
 <tr class="c-table__row memitem:a2bd57a03444c3d3ea2a0cbd6486e032b pro_methods_classfiftyone_1_1pipeline_1_1core_1_1_element_data" id="r_a2bd57a03444c3d3ea2a0cbd6486e032b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_element_data.html#a2bd57a03444c3d3ea2a0cbd6486e032b">getInternal</a> (string $key)</td></tr>
 <tr class="c-table__row memdesc:a2bd57a03444c3d3ea2a0cbd6486e032b pro_methods_classfiftyone_1_1pipeline_1_1core_1_1_element_data"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Called by the get() method Returns the requested property from the data.  <br /></td></tr>
 </table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a58a3cc707f7a92303705ead57921de00" name="a58a3cc707f7a92303705ead57921de00"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a58a3cc707f7a92303705ead57921de00">&#9670;&#160;</a></span>close()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\ipintelligence\SwigData::close </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Release the native results, which keep the engine's data in memory while they are held, even after the engine is closed or its data is refreshed. </p>
+<p>Values already read are unaffected, and reading a property afterwards throws an exception. Closing the FlowData closes its results. </p>
+
+</div>
+</div>
+<a id="a945f480e6be8fa4f010460f849c8303b" name="a945f480e6be8fa4f010460f849c8303b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a945f480e6be8fa4f010460f849c8303b">&#9670;&#160;</a></span>get()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\ipintelligence\SwigData::get </td>
+          <td>(</td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>$key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get a property value, once the results are known to be open. </p>
+<p>Checked here, because AspectData::get turns an exception from getInternal into a missing property message. </p><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Exception </p>
+
+<p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_aspect_data.html#ae2f79a5a8a5bd24d3e54e2827df75dcf">fiftyone\pipeline\engines\AspectData</a>.</p>
+
+</div>
+</div>
 </div><!-- primary -->
 </div><!-- inner -->
 <div id="page-nav" class="page-nav-panel">

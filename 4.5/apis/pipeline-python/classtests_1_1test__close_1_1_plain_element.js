@@ -1,0 +1,5 @@
+var classtests_1_1test__close_1_1_plain_element =
+[
+    [ "__init__", "classtests_1_1test__close_1_1_plain_element.html#acba1ef944cbdfbe79c520866688483ae", null ],
+    [ "process_internal", "classtests_1_1test__close_1_1_plain_element.html#a75e1177ea5183a92098c7742af10381d", null ]
+];

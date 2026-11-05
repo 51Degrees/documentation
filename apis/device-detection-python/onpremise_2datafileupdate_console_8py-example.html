@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2dat
 <h3>Manual Download</h3>
 <p>If you prefer to download files yourself, you may do so here: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">https://distributor.51degrees.com/api/v2/download?LicenseKeys=&lt;your_license_key&gt;&amp;Type=27&amp;Download=<span class="c-code__keyword">True</span>&amp;Product=22</div>
 </div><!-- fragment --><h2>Lite Data File</h2>
-<p>Lite data files (free-to-use, limited capabilities, no license key required) are created roughly once a month and cannot be updated using auto-update, they may be downloaded from <a href="https://github.com/51Degrees/device-detection-data">Github</a> and are included with source distributions of this software.</p>
+<p>Lite data files (free-to-use, limited capabilities, no license key required) are created roughly once a month and cannot be updated using auto-update, they may be downloaded with the scripts in the <a href="https://github.com/51Degrees/data">data</a> repository on GitHub.</p>
 <h1>Update on Start-Up</h1>
 <p>You can configure the pipeline builder to download an Enterprise data file on start-up. </p><h2>Pre-Requisites</h2>
 <ul>
@@ -260,15 +260,18 @@ from the 51Degrees <a href="https://51degrees.com/pricing">pricing page</a>.</p>
 <div class="c-code__line">                auto_update = <span class="c-code__keyword">False</span>,</div>
 <div class="c-code__line">                licence_keys = <span class="c-code__stringliteral">&quot;&quot;</span>).add_logger(logger).<a class="code hl_namespace" href="namespacebuild.html">build</a>()</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment"># and output the results</span></div>
-<div class="c-code__line">            ExampleUtils.check_data_file(pipeline, logger)</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (ExampleUtils.get_data_file_tier(pipeline.get_element(<span class="c-code__stringliteral">&quot;device&quot;</span>)) == <span class="c-code__stringliteral">&quot;Lite&quot;</span>):</div>
-<div class="c-code__line">                logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>,</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;Will not download an &#39;Enterprise&#39; data file over the top of &quot;</span></div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;a &#39;Lite&#39; data file, please supply another location.&quot;</span>)</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">raise</span> Exception(<span class="c-code__stringliteral">&quot;File supplied has wrong data tier&quot;</span>)</div>
-<div class="c-code__line">            logger.log(<span class="c-code__stringliteral">&quot;info&quot;</span>, <span class="c-code__stringliteral">&quot;Existing data file will be replaced with downloaded data file&quot;</span>)</div>
-<div class="c-code__line">            logger.log(<span class="c-code__stringliteral">&quot;info&quot;</span>, f<span class="c-code__stringliteral">&quot;Existing data file will be copied to {copy_data_file_name}&quot;</span>)</div>
+<div class="c-code__line">            <span class="c-code__comment"># The pipeline is closed at the end of the with block, which</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># releases the native data it holds before the file is replaced.</span></div>
+<div class="c-code__line">            <span class="c-code__keyword">with</span> pipeline:</div>
+<div class="c-code__line">                <span class="c-code__comment"># and output the results</span></div>
+<div class="c-code__line">                ExampleUtils.check_data_file(pipeline, logger)</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (ExampleUtils.get_data_file_tier(pipeline.get_element(<span class="c-code__stringliteral">&quot;device&quot;</span>)) == <span class="c-code__stringliteral">&quot;Lite&quot;</span>):</div>
+<div class="c-code__line">                    logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>,</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;Will not download an &#39;Enterprise&#39; data file over the top of &quot;</span></div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;a &#39;Lite&#39; data file, please supply another location.&quot;</span>)</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">raise</span> Exception(<span class="c-code__stringliteral">&quot;File supplied has wrong data tier&quot;</span>)</div>
+<div class="c-code__line">                logger.log(<span class="c-code__stringliteral">&quot;info&quot;</span>, <span class="c-code__stringliteral">&quot;Existing data file will be replaced with downloaded data file&quot;</span>)</div>
+<div class="c-code__line">                logger.log(<span class="c-code__stringliteral">&quot;info&quot;</span>, f<span class="c-code__stringliteral">&quot;Existing data file will be copied to {copy_data_file_name}&quot;</span>)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment"># do we really want to do this</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (interactive):</div>
@@ -321,41 +324,44 @@ from the 51Degrees <a href="https://51degrees.com/pricing">pricing page</a>.</p>
 <div class="c-code__line">            data_update_product_type=<span class="c-code__stringliteral">&quot;V4Enterprise&quot;</span>,</div>
 <div class="c-code__line">            ).add_logger(logger).<a class="code hl_namespace" href="namespacebuild.html">build</a>()</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">        <span class="c-code__comment"># The pipeline is closed at the end of the with block, which stops</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># the automatic updates and the file system watcher, and releases</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># the native data it holds.</span></div>
+<div class="c-code__line">        <span class="c-code__keyword">with</span> pipeline:</div>
+<div class="c-code__line">            <span class="c-code__comment"># thread blocks till update checking is complete - or if there is an</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># exception we don&#39;t get this far</span></div>
+<div class="c-code__line">            update_event.wait()</div>
+<div class="c-code__line">            output(f<span class="c-code__stringliteral">&quot;Update on start-up complete - status - {update_event.status}&quot;</span>)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__comment"># thread blocks till update checking is complete - or if there is an</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># exception we don&#39;t get this far</span></div>
-<div class="c-code__line">        update_event.wait()</div>
-<div class="c-code__line">        output(f<span class="c-code__stringliteral">&quot;Update on start-up complete - status - {update_event.status}&quot;</span>)</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> update_event.status == UpdateStatus.AUTO_UPDATE_SUCCESS:</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__keywordflow">if</span> update_event.status == UpdateStatus.AUTO_UPDATE_SUCCESS:</div>
+<div class="c-code__line">                output(<span class="c-code__stringliteral">&quot;Modifying downloaded file to trigger reload - please wait for that&quot;</span></div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot; to complete&quot;</span>)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            output(<span class="c-code__stringliteral">&quot;Modifying downloaded file to trigger reload - please wait for that&quot;</span></div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot; to complete&quot;</span>)</div>
+<div class="c-code__line">                <span class="c-code__comment"># wait for the dataUpdateService to notify us that it has updated</span></div>
+<div class="c-code__line">                update_event.clear()</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment"># wait for the dataUpdateService to notify us that it has updated</span></div>
-<div class="c-code__line">            update_event.clear()</div>
+<div class="c-code__line">                <span class="c-code__comment"># it&#39;s the same file but changing the file metadata will trigger reload,</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># demonstrating that if you download a new file and replace the</span></div>
+<div class="c-code__line">                <span class="c-code__comment"># existing one, then it will be loaded</span></div>
+<div class="c-code__line">                now = datetime.now().timestamp()</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">try</span>:</div>
+<div class="c-code__line">                    os.utime(data_file, (now, now))</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">except</span>:</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">raise</span> Exception(<span class="c-code__stringliteral">&quot;Could not modify file time, abandoning &quot;</span></div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;example&quot;</span>)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment"># it&#39;s the same file but changing the file metadata will trigger reload,</span></div>
-<div class="c-code__line">            <span class="c-code__comment"># demonstrating that if you download a new file and replace the</span></div>
-<div class="c-code__line">            <span class="c-code__comment"># existing one, then it will be loaded</span></div>
-<div class="c-code__line">            now = datetime.now().timestamp()</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">try</span>:</div>
-<div class="c-code__line">                os.utime(data_file, (now, now))</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">except</span>:</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">raise</span> Exception(<span class="c-code__stringliteral">&quot;Could not modify file time, abandoning &quot;</span></div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;example&quot;</span>)</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> update_event.wait(120):</div>
-<div class="c-code__line">                output(f<span class="c-code__stringliteral">&quot;Update on file modification complete, status: {update_event.status}&quot;</span>)</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> update_event.wait(120):</div>
+<div class="c-code__line">                    output(f<span class="c-code__stringliteral">&quot;Update on file modification complete, status: {update_event.status}&quot;</span>)</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">else</span>:</div>
+<div class="c-code__line">                    output(<span class="c-code__stringliteral">&quot;Update on file modification timed out&quot;</span>)</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">else</span>:</div>
-<div class="c-code__line">                output(<span class="c-code__stringliteral">&quot;Update on file modification timed out&quot;</span>)</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">else</span>:</div>
-<div class="c-code__line">            logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>, <span class="c-code__stringliteral">&quot;Auto update was not successful, abandoning example&quot;</span>)</div>
-<div class="c-code__line">            error_message = f<span class="c-code__stringliteral">&quot;Auto update failed: {update_event.status}&quot;</span></div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> update_event.status == UpdateStatus.AUTO_UPDATE_ERR_429_TOO_MANY_ATTEMPTS:</div>
-<div class="c-code__line">                output(error_message)</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">else</span>:</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">raise</span> Exception(error_message)</div>
+<div class="c-code__line">                logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>, <span class="c-code__stringliteral">&quot;Auto update was not successful, abandoning example&quot;</span>)</div>
+<div class="c-code__line">                error_message = f<span class="c-code__stringliteral">&quot;Auto update failed: {update_event.status}&quot;</span></div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> update_event.status == UpdateStatus.AUTO_UPDATE_ERR_429_TOO_MANY_ATTEMPTS:</div>
+<div class="c-code__line">                    output(error_message)</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">else</span>:</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">raise</span> Exception(error_message)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        output(<span class="c-code__stringliteral">&quot;Finished Example&quot;</span>)</div>
 <div class="c-code__line"> </div>

@@ -2,6 +2,7 @@ var class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_eleme
 [
     [ "IpiOnPremiseEngine", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html#a0413a7c6994b34f7dfee60fa26a4a7a2", null ],
     [ "GetDataDownloadType", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html#a11acb8eff150322514ffd288452eb4fe", null ],
+    [ "ManagedResourcesCleanup", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html#a62a2f2770e824b796697b65b7dee3550", null ],
     [ "ProcessEngine", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html#ae14a4a6eed137077995afa243a608298", null ],
     [ "RefreshData", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html#a05b20e4b739ae46a2b5e5d7317247dfd", null ],
     [ "RefreshData", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html#a5cb7fa413bd2802b7f30852c2faf5d33", null ],

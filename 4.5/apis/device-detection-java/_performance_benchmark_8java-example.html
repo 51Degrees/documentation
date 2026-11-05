@@ -67,22 +67,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance_b
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <p>The example illustrates a "clock-time" benchmark for assessing detection speed.</p>
-<p>Using a YAML formatted evidence file - "20000 Evidence Records.yml" - supplied with the distribution or can be obtained from the <a href="https://github.com/51Degrees/device-detection-data/blob/master/20000%20Evidence%20Records.yml">data repository on Github</a>.</p>
+<p>Using a YAML formatted evidence file - "20000 Evidence Records.yml" - which is downloaded by the scripts in the <a href="https://github.com/51Degrees/data">data repository on GitHub</a>, and by the example itself when the file is missing.</p>
 <p>It's important to understand the trade-offs between performance, memory usage and accuracy, that the 51Degrees pipeline configuration makes available, and this example shows a range of different configurations to illustrate the difference in performance.</p>
 <p>Requesting properties from a single component reduces detection time compared with requesting properties from multiple components. If you don't specify any properties to detect, then all properties are detected.</p>
 <p>Please review <a href="/documentation/4.5/_device_detection__features__performance_options.html">performance options</a> and <a href="/documentation/4.5/_device_detection__hash.html#DeviceDetection_Hash_DataSetProduction_Performance">hash dataset options</a> for more information about adjusting performance.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-java/blob/main/examples/device-detection/console/src/main/java/fiftyone/devicedetection/examples/console/PerformanceBenchmark.java">GitHub</a>.</p>
 <p> 
  <p>
- This example requires a local data file. The free 'Lite' data file can be acquired by
- pulling the git submodules under this repository (run `git submodule update --recursive`) 
- or from the <a href="https://github.com/51Degrees/device-detection-data">device-detection-data</a>
- GitHub repository.
+ This example requires a local data file. The free 'Lite' data file can be downloaded with the
+ scripts in the <a href="https://github.com/51Degrees/data">data</a> GitHub repository, which
+ this repository includes at <code>cxx/data</code>. Fetch the submodules by running
+ <code>git submodule update --init --recursive</code>, then run
+ <code>sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash</code> from the repository root,
+ which saves the file as <code>cxx/data/device-detection/51Degrees-LiteV4.1.hash</code>.
  </p>
  <p>
  The Lite data file is only used for illustration, and has limited accuracy and capabilities.
  Find out about the more capable data files that are available on our 
- <a href="https://51degrees.com/pricing">pricing page</a>
+ <a href="https://51degrees.com/pricing">pricing page</a>.
  </p>
    </p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">/* *********************************************************************</span></div>

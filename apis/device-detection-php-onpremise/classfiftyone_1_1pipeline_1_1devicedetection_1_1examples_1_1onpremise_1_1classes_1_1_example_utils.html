@@ -76,6 +76,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a525ef3f0cd30b796be38bade7ea452c2" id="r_a525ef3f0cd30b796be38bade7ea452c2"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a525ef3f0cd30b796be38bade7ea452c2">useDataFileFromEnv</a> ($engine, $logger)</td></tr>
 <tr class="c-table__row memdesc:a525ef3f0cd30b796be38bade7ea452c2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Use the data file named by the 51DEGREES_DD_PATH environment variable, when it is set, in place of the one set in php.ini.  <br /></td></tr>
+<tr class="c-table__row memitem:aedb278f432ea7213290eda8206dfda9a" id="r_aedb278f432ea7213290eda8206dfda9a"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#aedb278f432ea7213290eda8206dfda9a">downloadMissingDataFile</a> ($path)</td></tr>
+<tr class="c-table__row memdesc:aedb278f432ea7213290eda8206dfda9a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Download a free data file that is missing, with the data repository's script, when the file's link is in the folder where it goes.  <br /></td></tr>
+<tr class="c-table__row memitem:a5acdc682c2d994243c91f1a23536ee80" id="r_a5acdc682c2d994243c91f1a23536ee80"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a5acdc682c2d994243c91f1a23536ee80">getDataFileCommand</a> ($path)</td></tr>
+<tr class="c-table__row memdesc:a5acdc682c2d994243c91f1a23536ee80"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The command that downloads a free data file with the data repository's script, or null when the file's link is not in the folder where it goes.  <br /></td></tr>
 <tr class="c-table__row memitem:afa64226bf74f290f3447a64cf2927df9" id="r_afa64226bf74f290f3447a64cf2927df9"><td class="c-table__cell"><a id="afa64226bf74f290f3447a64cf2927df9" name="afa64226bf74f290f3447a64cf2927df9"></a>
 static&#160;</td><td class="c-table__cell"><b>output</b> ($message)</td></tr>
 <tr class="c-table__row memitem:a0f34bc151d2f4e7b55e7397c9215830e" id="r_a0f34bc151d2f4e7b55e7397c9215830e"><td class="c-table__cell"><a id="a0f34bc151d2f4e7b55e7397c9215830e" name="a0f34bc151d2f4e7b55e7397c9215830e"></a>
@@ -97,6 +101,8 @@ Data Fields</h2></td></tr>
 const&#160;</td><td class="c-table__cell"><b>DATA_FILE_AGE_WARNING</b> = 30</td></tr>
 <tr class="c-table__row memitem:a71234aff3efb06f6eeccf71ab87fb555" id="r_a71234aff3efb06f6eeccf71ab87fb555"><td class="c-table__cell"><a id="a71234aff3efb06f6eeccf71ab87fb555" name="a71234aff3efb06f6eeccf71ab87fb555"></a>
 const&#160;</td><td class="c-table__cell"><b>DATA_FILE_ENV_VAR</b> = '51DEGREES_DD_PATH'</td></tr>
+<tr class="c-table__row memitem:ae7dec651169d3c43ce5d2766be7907f1" id="r_ae7dec651169d3c43ce5d2766be7907f1"><td class="c-table__cell"><a id="ae7dec651169d3c43ce5d2766be7907f1" name="ae7dec651169d3c43ce5d2766be7907f1"></a>
+const&#160;</td><td class="c-table__cell"><b>DATA_DOWNLOAD_SOURCE</b> = 'examples-51degrees-php'</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a45d80c2604023eccc203e66e4106a3df" name="a45d80c2604023eccc203e66e4106a3df"></a>
@@ -142,6 +148,82 @@ const&#160;</td><td class="c-table__cell"><b>DATA_FILE_ENV_VAR</b> = '51DEGREES_
 
 </div>
 </div>
+<a id="aedb278f432ea7213290eda8206dfda9a" name="aedb278f432ea7213290eda8206dfda9a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aedb278f432ea7213290eda8206dfda9a">&#9670;&#160;</a></span>downloadMissingDataFile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\devicedetection\examples\onpremise\classes\ExampleUtils::downloadMissingDataFile </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>$path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Download a free data file that is missing, with the data repository's script, when the file's link is in the folder where it goes. </p>
+<p>The data repository keeps each free data file as &lt;file&gt;.link, holding the address it is downloaded from, and the repository is the folder above the link's folder. The command is printed before it runs, and again if the file is still missing.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$path</td><td>Where the data file goes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">bool True when the data file is there </dd></dl>
+
+</div>
+</div>
+<a id="a5acdc682c2d994243c91f1a23536ee80" name="a5acdc682c2d994243c91f1a23536ee80"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5acdc682c2d994243c91f1a23536ee80">&#9670;&#160;</a></span>getDataFileCommand()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\devicedetection\examples\onpremise\classes\ExampleUtils::getDataFileCommand </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>$path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The command that downloads a free data file with the data repository's script, or null when the file's link is not in the folder where it goes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$path</td><td>Where the data file goes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a525ef3f0cd30b796be38bade7ea452c2" name="a525ef3f0cd30b796be38bade7ea452c2"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a525ef3f0cd30b796be38bade7ea452c2">&#9670;&#160;</a></span>useDataFileFromEnv()</h2>
 
@@ -174,7 +256,7 @@ const&#160;</td><td class="c-table__cell"><b>DATA_FILE_ENV_VAR</b> = '51DEGREES_
 </div><div class="c-member__body">
 
 <p>Use the data file named by the 51DEGREES_DD_PATH environment variable, when it is set, in place of the one set in php.ini. </p>
-<p>The engine is created once, when PHP starts, from the FiftyOneDegreesHashEngine.data_file setting in php.ini, so that setting must still name a data file that exists. When the environment variable names a different file, the engine is reloaded from that file. The reload lasts for the life of the PHP process, so each process reloads once and later requests find the engine already using the file.</p>
+<p>The engine is created once, when PHP starts, from the FiftyOneDegreesHashEngine.data_file setting in php.ini, so that setting must still name a data file that exists. When the environment variable names a different file, the engine is reloaded from that file. The reload lasts for the life of the PHP process, so each process reloads once and later requests find the engine already using the file. A free file from cxx/data that has not been downloaded yet is downloaded first.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">mixed</td><td class="paramname">$engine</td><td>The device detection engine in the pipeline </td></tr>

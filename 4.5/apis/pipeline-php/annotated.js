@@ -12,6 +12,7 @@ var annotated =
         [ "core", null, [
           [ "AspectPropertyValue", "classfiftyone_1_1pipeline_1_1core_1_1_aspect_property_value.html", "classfiftyone_1_1pipeline_1_1core_1_1_aspect_property_value" ],
           [ "BasicListEvidenceKeyFilter", "classfiftyone_1_1pipeline_1_1core_1_1_basic_list_evidence_key_filter.html", "classfiftyone_1_1pipeline_1_1core_1_1_basic_list_evidence_key_filter" ],
+          [ "CallbackUrl", "classfiftyone_1_1pipeline_1_1core_1_1_callback_url.html", "classfiftyone_1_1pipeline_1_1core_1_1_callback_url" ],
           [ "Constants", "classfiftyone_1_1pipeline_1_1core_1_1_constants.html", "classfiftyone_1_1pipeline_1_1core_1_1_constants" ],
           [ "ElementData", "classfiftyone_1_1pipeline_1_1core_1_1_element_data.html", "classfiftyone_1_1pipeline_1_1core_1_1_element_data" ],
           [ "ElementDataDictionary", "classfiftyone_1_1pipeline_1_1core_1_1_element_data_dictionary.html", "classfiftyone_1_1pipeline_1_1core_1_1_element_data_dictionary" ],
@@ -36,7 +37,7 @@ var annotated =
           [ "DeviceDetectionPipelineBuilder", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_pipeline_builder.html", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_pipeline_builder" ],
           [ "HardwareProfileCloud", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_hardware_profile_cloud.html", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_hardware_profile_cloud" ],
           [ "Messages", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_messages.html", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_messages" ],
-          [ "SwigData", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_data.html", null ],
+          [ "SwigData", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_data.html", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_data" ],
           [ "SwigHelpers", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_helpers.html", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_helpers" ]
         ] ],
         [ "did", null, [
@@ -80,7 +81,7 @@ var annotated =
           [ "IpIntelligenceOnPremisePipelineBuilder", "classfiftyone_1_1pipeline_1_1ipintelligence_1_1_ip_intelligence_on_premise_pipeline_builder.html", "classfiftyone_1_1pipeline_1_1ipintelligence_1_1_ip_intelligence_on_premise_pipeline_builder" ],
           [ "IpIntelligencePipelineBuilder", "classfiftyone_1_1pipeline_1_1ipintelligence_1_1_ip_intelligence_pipeline_builder.html", "classfiftyone_1_1pipeline_1_1ipintelligence_1_1_ip_intelligence_pipeline_builder" ],
           [ "Messages", "classfiftyone_1_1pipeline_1_1ipintelligence_1_1_messages.html", null ],
-          [ "SwigData", "classfiftyone_1_1pipeline_1_1ipintelligence_1_1_swig_data.html", null ],
+          [ "SwigData", "classfiftyone_1_1pipeline_1_1ipintelligence_1_1_swig_data.html", "classfiftyone_1_1pipeline_1_1ipintelligence_1_1_swig_data" ],
           [ "SwigHelpers", "classfiftyone_1_1pipeline_1_1ipintelligence_1_1_swig_helpers.html", "classfiftyone_1_1pipeline_1_1ipintelligence_1_1_swig_helpers" ]
         ] ],
         [ "translation", null, [

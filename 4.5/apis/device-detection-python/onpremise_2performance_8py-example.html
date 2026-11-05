@@ -74,15 +74,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2per
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-python/blob/main/device-detection/fiftyone_devicedetection_examples/src/fiftyone_devicedetection_examples/onpremise/performance.py">GitHub</a>.</p>
 <p> 
 <p>
-This example requires a local data file. The free 'Lite' data file can be acquired by
-pulling the git submodules under this repository (run `git submodule update --recursive`) 
-or from the <a href="https://github.com/51Degrees/device-detection-data">device-detection-data</a>
-GitHub repository.
+This example requires a local data file. The free 'Lite' data file can be downloaded with the
+scripts in the <a href="https://github.com/51Degrees/data">data</a> GitHub repository, which
+this repository includes at <code>cxx/data</code>. Fetch the submodules by running
+<code>git submodule update --init --recursive</code>, then run
+<code>sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash</code> from the repository root,
+which saves the file as <code>cxx/data/device-detection/51Degrees-LiteV4.1.hash</code>.
 </p>
 <p>
 The Lite data file is only used for illustration, and has limited accuracy and capabilities.
 Find out about the more capable data files that are available on our 
-<a href="https://51degrees.com/pricing">pricing page</a>
+<a href="https://51degrees.com/pricing">pricing page</a>.
 </p>
   </p>
 <p>Required PyPi Dependencies:</p><ul>
@@ -131,24 +133,26 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">def </span>process_user_agent(user_agent):</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment"># First we create the flowdata using the global pipeline</span></div>
-<div class="c-code__line">    flowdata = pipeline.create_flowdata()  <span class="c-code__comment"># pylint: disable=used-before-assignment</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># First we create the flowdata using the global pipeline. Closing it,</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># which the with statement does when the function returns, releases the</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># results of the detection straight away.</span></div>
+<div class="c-code__line">    <span class="c-code__keyword">with</span> pipeline.create_flowdata() <span class="c-code__keyword">as</span> flowdata:  <span class="c-code__comment"># pylint: disable=used-before-assignment</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment"># Here we add the user agent as evidence</span></div>
-<div class="c-code__line">    flowdata.evidence.add(<span class="c-code__stringliteral">&quot;header.user-agent&quot;</span>, user_agent)</div>
+<div class="c-code__line">        <span class="c-code__comment"># Here we add the user agent as evidence</span></div>
+<div class="c-code__line">        flowdata.evidence.add(<span class="c-code__stringliteral">&quot;header.user-agent&quot;</span>, user_agent)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment"># We process the flowdata to get the results</span></div>
-<div class="c-code__line">    flowdata.process()</div>
+<div class="c-code__line">        <span class="c-code__comment"># We process the flowdata to get the results</span></div>
+<div class="c-code__line">        flowdata.process()</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment"># To check whether the User-Agent is a mobile device we look at the ismobile</span></div>
-<div class="c-code__line">    <span class="c-code__comment"># property inside the Device Detection Engine</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># To check whether the User-Agent is a mobile device we look at the ismobile</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># property inside the Device Detection Engine</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment"># first we check if this has a meaningful result</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># first we check if this has a meaningful result</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> flowdata.device.ismobile.has_value():</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">return</span> flowdata.device.ismobile.value()</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">else</span>:</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">return</span> <span class="c-code__keywordtype">None</span></div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> flowdata.device.ismobile.has_value():</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> flowdata.device.ismobile.value()</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">else</span>:</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> <span class="c-code__keywordtype">None</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">def </span>process_user_agent_list(data_file, user_agent_list, list_number, output, skip=False):</div>
 <div class="c-code__line">    <span class="c-code__keyword">global</span> pipeline</div>
@@ -161,23 +165,26 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line">        usage_sharing=<span class="c-code__keyword">False</span>,</div>
 <div class="c-code__line">        auto_update=<span class="c-code__keyword">False</span>).<a class="code hl_namespace" href="namespacebuild.html">build</a>()</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    results = {</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&quot;mobile&quot;</span>: 0,</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&quot;notmobile&quot;</span>: 0,</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&quot;unknown&quot;</span>: 0</div>
-<div class="c-code__line">    }</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">for</span> user_agent <span class="c-code__keywordflow">in</span> user_agent_list:</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">if</span> skip:</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">break</span></div>
-<div class="c-code__line">        result = process_user_agent(user_agent[0])</div>
-<div class="c-code__line">        if(result == <span class="c-code__keywordtype">None</span>):</div>
-<div class="c-code__line">            results[<span class="c-code__stringliteral">&quot;unknown&quot;</span>] += 1</div>
-<div class="c-code__line">        if(result == <span class="c-code__keyword">True</span>):</div>
-<div class="c-code__line">            results[<span class="c-code__stringliteral">&quot;mobile&quot;</span>] += 1</div>
-<div class="c-code__line">        if(result == <span class="c-code__keyword">False</span>):</div>
-<div class="c-code__line">            results[<span class="c-code__stringliteral">&quot;notmobile&quot;</span>] += 1</div>
+<div class="c-code__line">    <span class="c-code__comment"># The pipeline is closed at the end of the with block, which releases</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># the native data it holds.</span></div>
+<div class="c-code__line">    <span class="c-code__keyword">with</span> pipeline:</div>
+<div class="c-code__line">        results = {</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;mobile&quot;</span>: 0,</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;notmobile&quot;</span>: 0,</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;unknown&quot;</span>: 0</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">for</span> user_agent <span class="c-code__keywordflow">in</span> user_agent_list:</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> skip:</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">break</span></div>
+<div class="c-code__line">            result = process_user_agent(user_agent[0])</div>
+<div class="c-code__line">            if(result == <span class="c-code__keywordtype">None</span>):</div>
+<div class="c-code__line">                results[<span class="c-code__stringliteral">&quot;unknown&quot;</span>] += 1</div>
+<div class="c-code__line">            if(result == <span class="c-code__keyword">True</span>):</div>
+<div class="c-code__line">                results[<span class="c-code__stringliteral">&quot;mobile&quot;</span>] += 1</div>
+<div class="c-code__line">            if(result == <span class="c-code__keyword">False</span>):</div>
+<div class="c-code__line">                results[<span class="c-code__stringliteral">&quot;notmobile&quot;</span>] += 1</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    output.put(results, list_number)</div>
+<div class="c-code__line">        output.put(results, list_number)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment"># Run the process</span></div>
 <div class="c-code__line"><span class="c-code__keyword">def </span>run(data_file, skip = False):</div>
@@ -214,7 +221,7 @@ Find out about the more capable data files that are available on our
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> __name__ == <span class="c-code__stringliteral">&quot;__main__&quot;</span>:</div>
 <div class="c-code__line">    ap = argparse.ArgumentParser(description=<span class="c-code__stringliteral">&#39;Run detection benchmark.&#39;</span>)</div>
 <div class="c-code__line">    ap.add_argument(<span class="c-code__stringliteral">&#39;-d&#39;</span>, <span class="c-code__stringliteral">&#39;--data_file&#39;</span>, default=<span class="c-code__stringliteral">&#39;&#39;</span>, help=<span class="c-code__stringliteral">&#39;Path to data file&#39;</span>)</div>
-<div class="c-code__line">    ap.add_argument(<span class="c-code__stringliteral">&#39;-u&#39;</span>, <span class="c-code__stringliteral">&#39;--user_agents_file&#39;</span>, default=<span class="c-code__stringliteral">&#39;../../cxx/device-detection-data/20000 User Agents.csv&#39;</span>, help=<span class="c-code__stringliteral">&#39;Path to user agents evidence file&#39;</span>)</div>
+<div class="c-code__line">    ap.add_argument(<span class="c-code__stringliteral">&#39;-u&#39;</span>, <span class="c-code__stringliteral">&#39;--user_agents_file&#39;</span>, default=<span class="c-code__stringliteral">&#39;../../cxx/data/device-detection/20000 User Agents.csv&#39;</span>, help=<span class="c-code__stringliteral">&#39;Path to user agents evidence file&#39;</span>)</div>
 <div class="c-code__line">    ap.add_argument(<span class="c-code__stringliteral">&#39;-j&#39;</span>, <span class="c-code__stringliteral">&#39;--json_output&#39;</span>, default=<span class="c-code__stringliteral">&#39;&#39;</span>, help=<span class="c-code__stringliteral">&#39;Output results in JSON format&#39;</span>)</div>
 <div class="c-code__line">    args = ap.parse_args()</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> args.data_file == <span class="c-code__stringliteral">&quot;&quot;</span>:</div>

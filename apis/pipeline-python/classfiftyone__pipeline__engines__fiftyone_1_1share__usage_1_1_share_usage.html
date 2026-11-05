@@ -84,6 +84,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:ae01dcce17ba2de5bff714df7782e08de" id="r_ae01dcce17ba2de5bff714df7782e08de"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae01dcce17ba2de5bff714df7782e08de">__init__</a> (self, interval=1200, requested_package_size=10, cookie=None, query_whitelist=[], header_blacklist=[], share_percentage=1, endpoint=&quot;https://devices-v4.51degrees.com/new.ashx&quot;, request_timeout=<a class="el" href="namespacefiftyone__pipeline__engines__fiftyone_1_1share__usage.html#a18054b9a05a20dab5cf11351fc452cc7">REQUEST_TIMEOUT</a>)</td></tr>
 <tr class="c-table__row memdesc:ae01dcce17ba2de5bff714df7782e08de"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for <a class="el" href="classfiftyone__pipeline__engines__fiftyone_1_1share__usage_1_1_share_usage.html">ShareUsage</a> element.  <br /></td></tr>
 <tr class="c-table__row memitem:a59d36d6784eeb7879fb204505b9d8475" id="r_a59d36d6784eeb7879fb204505b9d8475"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a59d36d6784eeb7879fb204505b9d8475">__del__</a> (self)</td></tr>
+<tr class="c-table__row memitem:a2fde4fa7a64732d01b178b75e56db1f1" id="r_a2fde4fa7a64732d01b178b75e56db1f1"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2fde4fa7a64732d01b178b75e56db1f1">close</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a2fde4fa7a64732d01b178b75e56db1f1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Wait for any usage data already being sent, then stop the threads that send it.  <br /></td></tr>
 <tr class="c-table__row memitem:ae9c48e5b0a714948b869e787e5a73c95" id="r_ae9c48e5b0a714948b869e787e5a73c95"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae9c48e5b0a714948b869e787e5a73c95">get_constant_xml</a> (self)</td></tr>
 <tr class="c-table__row memitem:ac7a07d1df93e3b33916af34b50a6b889" id="r_ac7a07d1df93e3b33916af34b50a6b889"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac7a07d1df93e3b33916af34b50a6b889">get_flow_elements</a> (self)</td></tr>
 <tr class="c-table__row memitem:a320f3cfe56d92d1e7ef9a3527b385b9f" id="r_a320f3cfe56d92d1e7ef9a3527b385b9f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a320f3cfe56d92d1e7ef9a3527b385b9f">get_evidence_key_filter</a> (self)</td></tr>
@@ -279,6 +281,32 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a2fde4fa7a64732d01b178b75e56db1f1" name="a2fde4fa7a64732d01b178b75e56db1f1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2fde4fa7a64732d01b178b75e56db1f1">&#9670;&#160;</a></span>close()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_engines_fiftyone.share_usage.ShareUsage.close </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Wait for any usage data already being sent, then stop the threads that send it. </p>
+<p>The pipeline calls this when it is closed. </p>
+
+<p>Reimplemented from <a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aa9212c13330326a4ea9aa44253746e91">fiftyone_pipeline_engines.engine.Engine</a>.</p>
 
 </div>
 </div>

@@ -145,27 +145,29 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line"> </div>
 <div class="c-code__line">$pipeline = $builder-&gt;add($device)-&gt;build();</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// We create the flowData object that is used to add evidence to and read data from</span></div>
+<div class="c-code__line"><span class="c-code__comment">// We create the flowData object that is used to add evidence to and read data from.</span></div>
+<div class="c-code__line"><span class="c-code__comment">// It is closed, with the pipeline, in the finally block at the end of the</span></div>
+<div class="c-code__line"><span class="c-code__comment">// page, which releases the results of the detection straight away.</span></div>
 <div class="c-code__line">$flowData = $pipeline-&gt;createFlowData();</div>
+<div class="c-code__line"><span class="c-code__keywordflow">try</span> {</div>
+<div class="c-code__line">    <span class="c-code__comment">// We set headers, cookies and more information from the web request</span></div>
+<div class="c-code__line">    $flowData-&gt;evidence-&gt;setFromWebRequest();</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// We set headers, cookies and more information from the web request</span></div>
-<div class="c-code__line">$flowData-&gt;evidence-&gt;setFromWebRequest();</div>
+<div class="c-code__line">    <span class="c-code__comment">// Now we process the flowData</span></div>
+<div class="c-code__line">    $flowData-&gt;process();</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// Now we process the flowData</span></div>
-<div class="c-code__line">$flowData-&gt;process();</div>
+<div class="c-code__line">    $device = $flowData-&gt;device;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">$device = $flowData-&gt;device;</div>
+<div class="c-code__line">    <span class="c-code__comment">// Some browsers require that extra HTTP headers are explicitly</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// requested. So set whatever headers are required by the browser in</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// order to return the evidence needed by the pipeline.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// More info on this can be found at</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/blog/user-agent-client-hints?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-php&amp;utm_content=examples-onpremise-useragentclienthints-web.php&amp;utm_term=top</span></div>
+<div class="c-code__line">    Utils::setResponseHeader($flowData);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// Some browsers require that extra HTTP headers are explicitly</span></div>
-<div class="c-code__line"><span class="c-code__comment">// requested. So set whatever headers are required by the browser in</span></div>
-<div class="c-code__line"><span class="c-code__comment">// order to return the evidence needed by the pipeline.</span></div>
-<div class="c-code__line"><span class="c-code__comment">// More info on this can be found at</span></div>
-<div class="c-code__line"><span class="c-code__comment">// https://51degrees.com/blog/user-agent-client-hints?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-php&amp;utm_content=examples-onpremise-useragentclienthints-web.php&amp;utm_term=top</span></div>
-<div class="c-code__line">Utils::setResponseHeader($flowData);</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// Determine whether the free &#39;Lite&#39; data file is in use so that the</span></div>
-<div class="c-code__line"><span class="c-code__comment">// contact-us banner can be shown only on that tier.</span></div>
-<div class="c-code__line">$showContactUs = ExampleUtils::getDataFileTier($flowData-&gt;pipeline-&gt;getElement(<span class="c-code__stringliteral">&#39;device&#39;</span>)) === <span class="c-code__stringliteral">&#39;Lite&#39;</span>;</div>
+<div class="c-code__line">    <span class="c-code__comment">// Determine whether the free &#39;Lite&#39; data file is in use so that the</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// contact-us banner can be shown only on that tier.</span></div>
+<div class="c-code__line">    $showContactUs = ExampleUtils::getDataFileTier($flowData-&gt;pipeline-&gt;getElement(<span class="c-code__stringliteral">&#39;device&#39;</span>)) === <span class="c-code__stringliteral">&#39;Lite&#39;</span>;</div>
 <div class="c-code__line">?&gt;</div>
 <div class="c-code__line">&lt;head&gt;</div>
 <div class="c-code__line">    &lt;title&gt;User-Agent Client Hints Example&lt;/title&gt;</div>
@@ -287,6 +289,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2use
 <div class="c-code__line">    };</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">&lt;/script&gt;</div>
+<div class="c-code__line">&lt;?php</div>
+<div class="c-code__line">} <span class="c-code__keywordflow">finally</span> {</div>
+<div class="c-code__line">    $flowData-&gt;close();</div>
+<div class="c-code__line">    $pipeline-&gt;close();</div>
+<div class="c-code__line">}</div>
 <div class="ttc" id="aclassfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder_html"><div class="ttname"><a href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html">fiftyone\pipeline::core::PipelineBuilder</a></div></div>
 <div class="ttc" id="aclassfiftyone_1_1pipeline_1_1core_1_1_utils_html"><div class="ttname"><a href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1core_1_1_utils.html">fiftyone\pipeline::core::Utils</a></div></div>
 <div class="ttc" id="aclassfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise_html"><div class="ttname"><a href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise.html">fiftyone\pipeline\devicedetection::DeviceDetectionOnPremise</a></div></div>

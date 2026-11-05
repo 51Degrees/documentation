@@ -10,6 +10,7 @@ var classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder =
     [ "get_javascript_elements", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#a3b46fd475e8ee3790213e62cde9325e5", null ],
     [ "get_setheader_elements", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#abfc1e6bc08954a1bdb3359f98589f1ac", null ],
     [ "add_javaScriptbuilder", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#a492867cf08d70629b08d6e40ef3ffa47", null ],
+    [ "auto_close_elements", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#a85d3af1f41d10e64aff434034527de72", null ],
     [ "data_file_update_service", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#adf1720db7616a8328a771ff3ddfc93d9", null ],
     [ "flow_elements", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#aa36afe690afcd86e9c03c89a6cb5a748", null ],
     [ "javascriptbuilder_settings", "classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#ac572743a7447e4a59a40410aa7669716", null ],

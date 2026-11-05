@@ -166,7 +166,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">        <span class="c-code__comment">// Get the IP address parameter from the request for custom lookup</span></div>
 <div class="c-code__line">        String inputIpAddress = request.getParameter(<span class="c-code__stringliteral">&quot;client-ip&quot;</span>);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__comment">// The detection has already been carried out by the PipelineFilter</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// The detection has already been carried out by the PipelineFilter,</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// which closes the FlowData at the end of the request, so it is not</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// closed here.</span></div>
 <div class="c-code__line">        FlowData flowData = flowDataProvider.getFlowData(request);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// Determine target IP for display.</span></div>
@@ -197,14 +199,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">            String htmlTemplate = loadTemplate(resourceBase + <span class="c-code__stringliteral">&quot;/WEB-INF/html/index.html&quot;</span>);</div>
 <div class="c-code__line">            String processedHtml = substituteTemplateValues(htmlTemplate, deviceData, ipiData, targetIp, flowData);</div>
 <div class="c-code__line">            out.println(processedHtml);</div>
-<div class="c-code__line">        } <span class="c-code__keywordflow">finally</span> {</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (flowData != <span class="c-code__keyword">null</span>) {</div>
-<div class="c-code__line">                <span class="c-code__keywordflow">try</span> {</div>
-<div class="c-code__line">                    flowData.close();</div>
-<div class="c-code__line">                } <span class="c-code__keywordflow">catch</span> (Exception e) {</div>
-<div class="c-code__line">                    logger.warn(<span class="c-code__stringliteral">&quot;Error closing flow data&quot;</span>, e);</div>
-<div class="c-code__line">                }</div>
-<div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>

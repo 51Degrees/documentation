@@ -84,6 +84,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:aafa9d2ba898847b7b76c587870ca5ec3" id="r_aafa9d2ba898847b7b76c587870ca5ec3"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aafa9d2ba898847b7b76c587870ca5ec3">register_pipeline</a> (self, pipeline)</td></tr>
 <tr class="c-table__row memitem:a6ac3302ea9129265da5dec3ab76d406a" id="r_a6ac3302ea9129265da5dec3ab76d406a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6ac3302ea9129265da5dec3ab76d406a">register_data_file</a> (self, data_file)</td></tr>
 <tr class="c-table__row memdesc:a6ac3302ea9129265da5dec3ab76d406a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function to register a datafile with the update service @type data_file: DataFile.  <br /></td></tr>
+<tr class="c-table__row memitem:a87aa7773c7d80a76168061ab3228f4d7" id="r_a87aa7773c7d80a76168061ab3228f4d7"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a87aa7773c7d80a76168061ab3228f4d7">unregister_data_file</a> (self, data_file)</td></tr>
+<tr class="c-table__row memdesc:a87aa7773c7d80a76168061ab3228f4d7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Stop the checks and updates of a datafile, for example when its engine is closed.  <br /></td></tr>
 <tr class="c-table__row memitem:a34ab1105e607b793c3470cd1086eaac2" id="r_a34ab1105e607b793c3470cd1086eaac2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a34ab1105e607b793c3470cd1086eaac2">track_local_data_file_changes</a> (self, data_file)</td></tr>
 <tr class="c-table__row memdesc:a34ab1105e607b793c3470cd1086eaac2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check for local changes to a datafile.  <br /></td></tr>
 <tr class="c-table__row memitem:a58f7214404384fe4bd4a8eb7cbc8f295" id="r_a58f7214404384fe4bd4a8eb7cbc8f295"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a58f7214404384fe4bd4a8eb7cbc8f295">on_complete</a> (self, on_complete_method)</td></tr>
@@ -310,9 +312,42 @@ Static Public Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Check for local changes to a datafile. </p>
-<p>Used by the file system watcher. A refresh that fails is logged, and reported with AUTO_UPDATE_REFRESH_FAILED as on the update route. The next check is scheduled whatever happens, so that a later file is still picked up. @type data_file: DataFile </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Used by the file system watcher. A refresh that fails is logged, and reported with AUTO_UPDATE_REFRESH_FAILED as on the update route. The next check is scheduled whatever happens, so that a later file is still picked up, until the data file is unregistered. @type data_file: DataFile </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data_file</td><td>Datafile to check updates for </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a87aa7773c7d80a76168061ab3228f4d7" name="a87aa7773c7d80a76168061ab3228f4d7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a87aa7773c7d80a76168061ab3228f4d7">&#9670;&#160;</a></span>unregister_data_file()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_engines.datafile_update_service.DataFileUpdateService.unregister_data_file </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>data_file</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Stop the checks and updates of a datafile, for example when its engine is closed. </p>
+<p>Checks already scheduled are cancelled, and a check already running schedules no other, so nothing is left holding the data file or its engine. @type data_file: DataFile </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data_file</td><td>Datafile to stop checking </td></tr>
   </table>
   </dd>
 </dl>

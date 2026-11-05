@@ -79,7 +79,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:ab10d4c619b5e6f2ffcef2f61acd0343e" id="r_ab10d4c619b5e6f2ffcef2f61acd0343e"><td class="c-table__cell">static&#160;<a class="el" href="class_fifty_one_1_1_device_detection_1_1_examples_1_1_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ab10d4c619b5e6f2ffcef2f61acd0343e">ParseOptions</a> (string[] args)</td></tr>
 <tr class="c-table__row memdesc:ab10d4c619b5e6f2ffcef2f61acd0343e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Parse the command line arguments passed to the example to get the common options.  <br /></td></tr>
 <tr class="c-table__row memitem:a54667c0d9989760b8cd9dcaac814c938" id="r_a54667c0d9989760b8cd9dcaac814c938"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a54667c0d9989760b8cd9dcaac814c938">FindFile</a> (string filename, DirectoryInfo dir=null)</td></tr>
-<tr class="c-table__row memdesc:a54667c0d9989760b8cd9dcaac814c938"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Uses a background task to search for the specified filename within the working directory.  <br /></td></tr>
+<tr class="c-table__row memdesc:a54667c0d9989760b8cd9dcaac814c938"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Finds a file by name.  <br /></td></tr>
 <tr class="c-table__row memitem:ace6be8df88a95f56b3e37106851bcd37" id="r_ace6be8df88a95f56b3e37106851bcd37"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#ace6be8df88a95f56b3e37106851bcd37">GetDataFilePathFromEnv</a> ()</td></tr>
 <tr class="c-table__row memdesc:ace6be8df88a95f56b3e37106851bcd37"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get an explicit device detection data file path from the environment.  <br /></td></tr>
 <tr class="c-table__row memitem:a98700d42bb8cbda8f7481a01b86c8996" id="r_a98700d42bb8cbda8f7481a01b86c8996"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a98700d42bb8cbda8f7481a01b86c8996">FindDataFile</a> (string filename, DirectoryInfo dir=null)</td></tr>
@@ -335,16 +335,16 @@ Properties</h2></td></tr>
 </table>
 </div><div class="c-member__body">
 
-<p>Uses a background task to search for the specified filename within the working directory. </p>
-<p>If the file cannot be found, the algorithm will move to the parent directory and repeat the process. This continues until the file is found or a timeout is triggered.</p>
+<p>Finds a file by name. </p>
+<p>The data repository in cxx/data is looked in first, and a free data file it links to is downloaded there when it is missing. Any other file is searched for within the working directory, and then each parent directory in turn, until it is found or a timeout is triggered.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filename</td><td></td></tr>
+    <tr><td class="paramname">filename</td><td>The name of the file to find. </td></tr>
     <tr><td class="paramname">dir</td><td>The directory to start looking from. If not provided the current directory is used. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The path to the file, or null if it could not be found. </dd></dl>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_performance_multi_property-_console_2_program_8cs-example.html#a12">OnPremise/PerformanceMultiProperty-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_performance_sweep-_console_2_program_8cs-example.html#a12">OnPremise/PerformanceSweep-Console/Program.cs</a>.</dd>
 </dl>
 

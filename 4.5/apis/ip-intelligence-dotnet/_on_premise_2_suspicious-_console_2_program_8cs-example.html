@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">        {</div>
 <div class="c-code__line">            <span class="c-code__comment">// In this example, we use the IpiPipelineBuilder and configure it</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// in code. For more information about builders in general see the documentation at</span></div>
-<div class="c-code__line">            <span class="c-code__comment">// https://51degrees.com/documentation/_concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-suspicious-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-suspicious-console-program.cs&amp;utm_term=run</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Note that we wrap the creation of a pipeline in a using to control its life cycle</span></div>
 <div class="c-code__line">            <span class="c-code__keyword">using</span> (var pipeline = <span class="c-code__keyword">new</span> IpiPipelineBuilder()</div>
@@ -126,8 +126,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">                <span class="c-code__comment">// data file is paged from disk rather than loaded entirely into RAM.</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// See the documentation for more detail on this and other</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// configuration options.</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-suspicious-console-program.cs&amp;utm_term=run</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-suspicious-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-suspicious-console-program.cs&amp;utm_term=run</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-suspicious-console-program.cs&amp;utm_term=run</span></div>
 <div class="c-code__line">                .SetPerformanceProfile(PerformanceProfiles.LowMemory)</div>
 <div class="c-code__line">                <span class="c-code__comment">// inhibit sharing usage for this example, usually this should be set to &quot;true&quot;</span></div>
 <div class="c-code__line">                .SetShareUsage(<span class="c-code__keyword">false</span>)</div>
@@ -243,10 +243,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">        <span class="c-code__keywordflow">else</span></div>
 <div class="c-code__line">        {</div>
 <div class="c-code__line">            logger.LogError(<span class="c-code__stringliteral">&quot;Failed to find a IP Intelligence data file. Make sure the &quot;</span> +</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;ip-intelligence-data submodule has been updated by running &quot;</span> +</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;`git submodule update --recursive`. By default, the &#39;lite&#39; file included &quot;</span> +</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;with this code will be used. A different file can be specified &quot;</span> +</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;by supplying the full path as a command line argument&quot;</span>);</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;Enterprise data file is in cxx/data/ip-intelligence. A different &quot;</span> +</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;file can be specified by supplying the full path as a command &quot;</span> +</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;line argument&quot;</span>);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// Dispose the logger to ensure any messages get flushed</span></div>

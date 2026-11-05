@@ -1,0 +1,5 @@
+var classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_data =
+[
+    [ "close", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_data.html#a1fdbd6c80e9655b10306565614d19d8b", null ],
+    [ "get", "classfiftyone_1_1pipeline_1_1devicedetection_1_1_swig_data.html#ab6da730fef99d82e604a87234c55d215", null ]
+];

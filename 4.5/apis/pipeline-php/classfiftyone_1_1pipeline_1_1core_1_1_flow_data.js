@@ -2,6 +2,7 @@ var classfiftyone_1_1pipeline_1_1core_1_1_flow_data =
 [
     [ "__construct", "classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html#a8190c40d0d13c4fdab66a5cc1c459dd5", null ],
     [ "__get", "classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html#ad148d1fd7bc34cce528327b53d1fd8b9", null ],
+    [ "close", "classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html#a24a08b2aa8dbc98e4ae2ae3d18846718", null ],
     [ "get", "classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html#a18a4a821f4f2c51eccecd12a373216f3", null ],
     [ "getEvidenceDataKey", "classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html#a76bac2653d20ecc9295743bc3874eacd", null ],
     [ "getFromElement", "classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html#ab78004bd9a322ae74c4836e71832352a", null ],

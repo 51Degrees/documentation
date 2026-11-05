@@ -2,6 +2,7 @@ var class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_
 [
     [ "DeviceDetectionHashEngine", "class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html#a4ac91ee29b7a896dd45fa43adf3ac45b", null ],
     [ "GetDataDownloadType", "class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html#afbc5d070be40c005a34c15fc449c78e2", null ],
+    [ "ManagedResourcesCleanup", "class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html#a3eb61fe29300e9c6caf0341295ef81bb", null ],
     [ "ProcessEngine", "class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html#aa95a1830cc0c5aa7389b316113790dee", null ],
     [ "RefreshData", "class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html#ad316187fef4f7eb76b267d68599db1cd", null ],
     [ "RefreshData", "class_fifty_one_1_1_device_detection_1_1_hash_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_device_detection_hash_engine.html#a6df58212b76ed5ae621ca583fc175f4b", null ],

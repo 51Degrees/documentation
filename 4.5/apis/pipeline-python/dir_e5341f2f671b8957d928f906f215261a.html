@@ -147,14 +147,14 @@ Directory dependency graph for js_templates:</h2>
 <p>Run it with Node 24 from the <code><a class="el" href="namespacetests.html">tests</a></code> directory. </p><pre class="fragment">cd tests
 npm ci
 npm test
-</pre><p>Each check prints a line and the last line gives the totals. The <code>Template <a class="el" href="namespacetests.html">tests</a></code> workflow runs the same command on every pull request, and the <code>Consumer <a class="el" href="namespacetests.html">tests</a></code> workflow builds pipeline-dotnet against the template and runs the tests that drive it in a real browser.</p>
+</pre><p>Each check prints a line and the last line gives the totals. The <code>Template <a class="el" href="namespacetests.html">tests</a></code> workflow runs the same command on every pull request, and the <code>Consumer <a class="el" href="namespacetests.html">tests</a></code> workflow builds 51degrees-dotnet against the template and runs the tests that drive it in a real browser.</p>
 <h1>Shipping / Deployment</h1>
 <p>This repo is not a stand-alone package, but is shipped as part of and used by each of the following repositories / packages:</p><ul>
-<li><a href="https://github.com/51Degrees/pipeline-dotnet">pipeline-dotnet</a> as a submodule</li>
-<li><a href="https://github.com/51Degrees/pipeline-java">pipeline-java</a> as a submodule</li>
-<li><a href="https://github.com/51Degrees/pipeline-node">pipeline-node</a> as a submodule</li>
-<li><a href="https://github.com/51Degrees/pipeline-python">pipeline-python</a> as a submodule</li>
-<li><a href="https://github.com/51Degrees/pipeline-php-core">pipeline-php-core</a> as a static dependency</li>
+<li><a href="https://github.com/51Degrees/51degrees-dotnet">51degrees-dotnet</a> as a submodule</li>
+<li><a href="https://github.com/51Degrees/51degrees-java">51degrees-java</a> as a submodule, under <code>pipeline/</code></li>
+<li><a href="https://github.com/51Degrees/51degrees-node">51degrees-node</a> as a submodule, under <code>pipeline/</code></li>
+<li><a href="https://github.com/51Degrees/51degrees-python">51degrees-python</a> as a submodule, under <code>pipeline/</code></li>
+<li><a href="https://github.com/51Degrees/51degrees-php/tree/main/pipeline/core">51degrees-php</a> as a static dependency</li>
 </ul>
 <p>Wherever it is a submodule it will be updated by <code>Nightly Submodule Update</code> action, wherever it is a static dependency it will be updated by the <code>Nightly Package Update</code> action within a target repository.</p>
 <p>No special action is needed from the user to deploy the template, just be aware that any changes introduced in this repo will automatically propagate and affect the above packages. </p>

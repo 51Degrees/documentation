@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line"><span class="c-code__comment">// Number of threads to start for performance analysis.</span></div>
 <div class="c-code__line"><span class="c-code__preprocessor">#define THREAD_COUNT 4</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">static</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* dataDir = <span class="c-code__stringliteral">&quot;ip-intelligence-data&quot;</span>;</div>
+<div class="c-code__line"><span class="c-code__keyword">static</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* dataDir = <span class="c-code__stringliteral">&quot;data/ip-intelligence&quot;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">static</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* dataFileName = <span class="c-code__stringliteral">&quot;51Degrees-LiteV41.ipi&quot;</span>;</div>
 <div class="c-code__line"> </div>
@@ -539,7 +539,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        status = <a id="a48" name="a48"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a>(</div>
+<div class="c-code__line">        status = fiftyoneDegreesExampleGetFilePath(</div>
 <div class="c-code__line">            dataDir,</div>
 <div class="c-code__line">            dataFileName,</div>
 <div class="c-code__line">            dataFilePath,</div>
@@ -554,7 +554,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">        strcpy(ipAddressFilePath, argv[2]);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        status = <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a>(</div>
+<div class="c-code__line">        status = fiftyoneDegreesExampleGetFilePath(</div>
 <div class="c-code__line">            dataDir,</div>
 <div class="c-code__line">            ipAddressFileName,</div>
 <div class="c-code__line">            ipAddressFilePath,</div>
@@ -568,7 +568,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Report the files that are being used with the performance test.</span></div>
 <div class="c-code__line">    printf(<span class="c-code__stringliteral">&quot;\n\nIP Address file is: %s\n\nData file is: %s\n\n&quot;</span>,</div>
-<div class="c-code__line">        <a id="a49" name="a49"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gaeba8e0f92b8ec11371b79692835655b7">FileGetFileName</a>(ipAddressFilePath),</div>
+<div class="c-code__line">        <a id="a48" name="a48"></a><a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gaeba8e0f92b8ec11371b79692835655b7">FileGetFileName</a>(ipAddressFilePath),</div>
 <div class="c-code__line">        <a class="code hl_define" href="group___fifty_one_degrees_synonyms.html#gaeba8e0f92b8ec11371b79692835655b7">FileGetFileName</a>(dataFilePath));</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Wait for a character to be pressed.</span></div>
@@ -602,7 +602,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga3d27dae403ca9c710843f613868aa9bf"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga3d27dae403ca9c710843f613868aa9bf">IpAddress</a></div><div class="ttdeci">fiftyoneDegreesIpAddress IpAddress</div><div class="ttdoc">Synonym for fiftyoneDegreesIpAddress type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:200</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga4921f9a186627faaebc505056ab7ed6e"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga4921f9a186627faaebc505056ab7ed6e">INSUFFICIENT_MEMORY</a></div><div class="ttdeci">#define INSUFFICIENT_MEMORY</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_STATUS_INSUFFICIENT_MEMORY status code.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:479</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga556b4dfadc53ec16baa29a33f59fe666"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga556b4dfadc53ec16baa29a33f59fe666">StatusCode</a></div><div class="ttdeci">fiftyoneDegreesStatusCode StatusCode</div><div class="ttdoc">Synonym for fiftyoneDegreesStatusCode type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:134</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga5ba06bcfd18437e9145833037dd7ecc9"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga5ba06bcfd18437e9145833037dd7ecc9">FileGetPath</a></div><div class="ttdeci">#define FileGetPath</div><div class="ttdoc">Synonym for fiftyoneDegreesFileGetPath function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:337</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga778f0a000e8f736d47febcfb05586f44"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga778f0a000e8f736d47febcfb05586f44">EXCEPTION_SET</a></div><div class="ttdeci">#define EXCEPTION_SET</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_EXCEPTION_SET macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:441</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga8780bffcae60e8593485d281e4914545"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga8780bffcae60e8593485d281e4914545">THREAD_JOIN</a></div><div class="ttdeci">#define THREAD_JOIN</div><div class="ttdoc">Synonym for FIFTYONE_DEGREES_THREAD_JOIN macro.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:454</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_ga8b26393b63aa3d2946049a1809328586"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#ga8b26393b63aa3d2946049a1809328586">IpType</a></div><div class="ttdeci">fiftyoneDegreesIpType IpType</div><div class="ttdoc">Synonym for fiftyoneDegreesIpType type.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:199</div></div>

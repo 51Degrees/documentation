@@ -92,6 +92,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a5e815ddacaab5b1893f7e034ad0d04d3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Not supported.  <br /></td></tr>
 <tr class="c-table__row memitem:a9ed4133a0ca324ce5f4c78c200e3a2be" id="r_a9ed4133a0ca324ce5f4c78c200e3a2be"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9ed4133a0ca324ce5f4c78c200e3a2be">on_registration</a> (self, pipeline)</td></tr>
 <tr class="c-table__row memdesc:a9ed4133a0ca324ce5f4c78c200e3a2be"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function called after the engine is registered with a pipeline the engine base class registers the datafile but we also need to initialise the SWIG wrapper so call self.init_engine() here after the datafile is registered.  <br /></td></tr>
+<tr class="c-table__row memitem:a035e12ebb3e85629fc3112ac9af9d8ae" id="r_a035e12ebb3e85629fc3112ac9af9d8ae"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a035e12ebb3e85629fc3112ac9af9d8ae">close</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a035e12ebb3e85629fc3112ac9af9d8ae"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Stop the data file updates and release the native engine.  <br /></td></tr>
 <tr class="c-table__row memitem:aab872dbde97c42a6a921fcaee3923968" id="r_aab872dbde97c42a6a921fcaee3923968"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aab872dbde97c42a6a921fcaee3923968">process_internal</a> (self, flow_data)</td></tr>
 <tr class="c-table__row memdesc:aab872dbde97c42a6a921fcaee3923968"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Internal process method of the Device Detection On Premise engine Gets properties through the SWIG wrapper and stores them in a <a class="el" href="classfiftyone__devicedetection__onpremise_1_1swig__data_1_1_swig_data.html" title="Extention of AspectData made for retrieving results created by the SWIG wrapper of the On Premise Dev...">SwigData</a> extension of the ElementData class.  <br /></td></tr>
 <tr class="c-table__row memitem:a3fb1bf7fb4cb5b1518418b37344d92b0" id="r_a3fb1bf7fb4cb5b1518418b37344d92b0"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3fb1bf7fb4cb5b1518418b37344d92b0">get_component</a> (self, property)</td></tr>
@@ -103,6 +105,7 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a33b6757ea1c9e08cd1f1ae487cb47cb1 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a33b6757ea1c9e08cd1f1ae487cb47cb1"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a33b6757ea1c9e08cd1f1ae487cb47cb1">refresh</a> (self, identifier)</td></tr>
 <tr class="c-table__row memitem:a1753c81a9469244593de5ace9145c773 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a1753c81a9469244593de5ace9145c773"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a1753c81a9469244593de5ace9145c773">process</a> (self, flowdata)</td></tr>
 <tr class="c-table__row memitem:aaf9b874db8b7ca0424d769cfaa3d7f92 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_aaf9b874db8b7ca0424d769cfaa3d7f92"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aaf9b874db8b7ca0424d769cfaa3d7f92">on_registration</a> (self, pipeline)</td></tr>
+<tr class="c-table__row memitem:aa9212c13330326a4ea9aa44253746e91 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_aa9212c13330326a4ea9aa44253746e91"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aa9212c13330326a4ea9aa44253746e91">close</a> (self)</td></tr>
 <tr class="c-table__row memitem:aea94d49344f58867c6bac6446b5768d1 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_aea94d49344f58867c6bac6446b5768d1"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aea94d49344f58867c6bac6446b5768d1">register_data_file</a> (self, <a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a204eafca1dfafd1fbd3c6df369576c3f">data_file</a>)</td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
@@ -307,6 +310,30 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a035e12ebb3e85629fc3112ac9af9d8ae" name="a035e12ebb3e85629fc3112ac9af9d8ae"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a035e12ebb3e85629fc3112ac9af9d8ae">&#9670;&#160;</a></span>close()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_onpremise.devicedetection_onpremise.DeviceDetectionOnPremise.close </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Stop the data file updates and release the native engine. </p>
+<p>Its data is freed once no results read from it are still held, so close every FlowData the engine processed as well. Closing the pipeline closes the engine. </p>
+
+</div>
+</div>
 <a id="a3fb1bf7fb4cb5b1518418b37344d92b0" name="a3fb1bf7fb4cb5b1518418b37344d92b0"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3fb1bf7fb4cb5b1518418b37344d92b0">&#9670;&#160;</a></span>get_component()</h2>
 

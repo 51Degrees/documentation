@@ -205,26 +205,30 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('usagesharing_2
 <div class="c-code__line">                    <span class="c-code__keyword">new</span> File(Objects.requireNonNull(getClass().getClassLoader().</div>
 <div class="c-code__line">                            getResource(<span class="c-code__stringliteral">&quot;51d.xml&quot;</span>)).getFile()));</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment">// Build a new Pipeline from the configuration.</span></div>
-<div class="c-code__line">            Pipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder()</div>
+<div class="c-code__line">            <span class="c-code__comment">// Build a new Pipeline from the configuration. Closing the</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// pipeline closes the ShareUsageElement it created, which sends</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// any usage data still queued.</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">try</span> (Pipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder()</div>
 <div class="c-code__line">                .addService(http)</div>
-<div class="c-code__line">                .buildFromConfiguration(options);</div>
-<div class="c-code__line">                </div>
-<div class="c-code__line">            <span class="c-code__comment">// Alternatively, the commented code below shows how to</span></div>
-<div class="c-code__line">            <span class="c-code__comment">// configure the ShareUsageElement in code, rather than</span></div>
-<div class="c-code__line">            <span class="c-code__comment">// using a configuration file.</span></div>
-<div class="c-code__line">            <span class="c-code__comment">//ShareUsageElement usageElement = new ShareUsageBuilder(loggerFactory, http)</span></div>
-<div class="c-code__line">            <span class="c-code__comment">//    .setSharePercentage(0.01)</span></div>
-<div class="c-code__line">            <span class="c-code__comment">//    .setMinimumEntriesPerMessage(2500)</span></div>
-<div class="c-code__line">            <span class="c-code__comment">//    .build();</span></div>
-<div class="c-code__line">            <span class="c-code__comment">//Pipeline pipeline = new PipelineBuilder()</span></div>
-<div class="c-code__line">            <span class="c-code__comment">//    .addFlowElement(usageElement)</span></div>
-<div class="c-code__line">            <span class="c-code__comment">//    .build();</span></div>
+<div class="c-code__line">                .buildFromConfiguration(options)) {</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            System.out.println(</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;Pipeline created with share usage element. Evidence processed &quot;</span> + </div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;with this pipeline will now be periodically shared with &quot;</span> +</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;51Degrees using the specified configuration.&quot;</span>);</div>
+<div class="c-code__line">                <span class="c-code__comment">// Alternatively, the commented code below shows how to</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// configure the ShareUsageElement in code, rather than</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// using a configuration file.</span></div>
+<div class="c-code__line">                <span class="c-code__comment">//ShareUsageElement usageElement = new ShareUsageBuilder(loggerFactory, http)</span></div>
+<div class="c-code__line">                <span class="c-code__comment">//    .setSharePercentage(0.01)</span></div>
+<div class="c-code__line">                <span class="c-code__comment">//    .setMinimumEntriesPerMessage(2500)</span></div>
+<div class="c-code__line">                <span class="c-code__comment">//    .build();</span></div>
+<div class="c-code__line">                <span class="c-code__comment">//Pipeline pipeline = new PipelineBuilder()</span></div>
+<div class="c-code__line">                <span class="c-code__comment">//    .addFlowElement(usageElement)</span></div>
+<div class="c-code__line">                <span class="c-code__comment">//    .setAutoCloseElements(true)</span></div>
+<div class="c-code__line">                <span class="c-code__comment">//    .build();</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">                System.out.println(</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;Pipeline created with share usage element. Evidence processed &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;with this pipeline will now be periodically shared with &quot;</span> +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;51Degrees using the specified configuration.&quot;</span>);</div>
+<div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>

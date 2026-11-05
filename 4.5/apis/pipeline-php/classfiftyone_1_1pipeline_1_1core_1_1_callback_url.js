@@ -1,0 +1,6 @@
+var classfiftyone_1_1pipeline_1_1core_1_1_callback_url =
+[
+    [ "of", "classfiftyone_1_1pipeline_1_1core_1_1_callback_url.html#a22ba3d0b9693340ca4118e5d52784422", null ],
+    [ "$url", "classfiftyone_1_1pipeline_1_1core_1_1_callback_url.html#ac505eff7a685ea243130b349bd6f9cf0", null ],
+    [ "$valid", "classfiftyone_1_1pipeline_1_1core_1_1_callback_url.html#ad22e6293919cd707d08b1b63d8586f62", null ]
+];

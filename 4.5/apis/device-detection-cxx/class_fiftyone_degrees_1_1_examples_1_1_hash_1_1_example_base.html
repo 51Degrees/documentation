@@ -106,6 +106,8 @@ virtual&#160;</td><td class="c-table__cell"><b>~ExampleBase</b> ()</td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a6734b9e683eb10bdf69965452bb270ef" id="r_a6734b9e683eb10bdf69965452bb270ef"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a6734b9e683eb10bdf69965452bb270ef">reportStatus</a> (<a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> status, const char *fileName)</td></tr>
 <tr class="c-table__row memdesc:a6734b9e683eb10bdf69965452bb270ef"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reports the status of the data file initialization.  <br /></td></tr>
+<tr class="c-table__row memitem:a35f0b497ac1d7c122cfbef9e5ad0791e" id="r_a35f0b497ac1d7c122cfbef9e5ad0791e"><td class="c-table__cell">static&#160;<a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a35f0b497ac1d7c122cfbef9e5ad0791e">getFilePath</a> (const char *dataFolderName, const char *fileName, char *destination, size_t size)</td></tr>
+<tr class="c-table__row memdesc:a35f0b497ac1d7c122cfbef9e5ad0791e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Finds a file in the data folder, and downloads it first when it is missing and the data repository links to it.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -251,6 +253,63 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a35f0b497ac1d7c122cfbef9e5ad0791e" name="a35f0b497ac1d7c122cfbef9e5ad0791e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a35f0b497ac1d7c122cfbef9e5ad0791e">&#9670;&#160;</a></span>getFilePath()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> FiftyoneDegrees::Examples::Hash::ExampleBase::getFilePath </td>
+          <td>(</td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>dataFolderName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>fileName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">char *</td>          <td class="c-table__cell"><span class="paramname"><em>destination</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t</td>          <td class="c-table__cell"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Finds a file in the data folder, and downloads it first when it is missing and the data repository links to it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataFolderName</td><td>name of the folder to look in </td></tr>
+    <tr><td class="paramname">fileName</td><td>name of the file to find </td></tr>
+    <tr><td class="paramname">destination</td><td>memory to write the path of the file to </td></tr>
+    <tr><td class="paramname">size</td><td>of the destination in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status of the last search </dd></dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_getting_started_8cpp-example.html#_a34">Hash/GettingStarted.cpp</a>, <a class="el" href="_hash_2_match_metrics_8cpp-example.html#_a31">Hash/MatchMetrics.cpp</a>, <a class="el" href="_hash_2_meta_data_8cpp-example.html#_a20">Hash/MetaData.cpp</a>, <a class="el" href="_hash_2_reload_from_file_8cpp-example.html#_a21">Hash/ReloadFromFile.cpp</a>, <a class="el" href="_hash_2_reload_from_memory_8cpp-example.html#_a23">Hash/ReloadFromMemory.cpp</a>, and <a class="el" href="_hash_2_strongly_typed_8cpp-example.html#_a25">Hash/StronglyTyped.cpp</a>.</dd>
+</dl>
+
+</div>
+</div>
 <a id="ab1b41d82459f972f94ff1504b3f9b635" name="ab1b41d82459f972f94ff1504b3f9b635"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab1b41d82459f972f94ff1504b3f9b635">&#9670;&#160;</a></span>getHashCode()</h2>
 

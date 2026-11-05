@@ -39,7 +39,7 @@ var NAVTREEHIDESYNC = true;
 var NAVTREEINDEX =
 [
 "/documentation/4.5/index.html",
-"classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_html_content_helper.html"
+"classfiftyone_1_1ipintelligence_1_1examples_1_1web_1_1_getting_started_web_on_prem_test.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

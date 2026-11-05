@@ -166,14 +166,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2off
 <div class="c-code__line">  <span class="c-code__comment">// In this example, we use the IpIntelligenceOnPremisePipelineBuilder</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// and configure it in code. For more information about</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// pipelines in general see the documentation at</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// https://51degrees.com/documentation/_concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-offlineprocessing-console-offlineprocessing.js&amp;utm_term=run</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-offlineprocessing-console-offlineprocessing.js&amp;utm_term=run</span></div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> pipeline = <span class="c-code__keyword">new</span> <a class="code hl_class" href="class_ip_intelligence_on_premise_pipeline_builder.html">IpIntelligenceOnPremisePipelineBuilder</a>({</div>
 <div class="c-code__line">    dataFile,</div>
 <div class="c-code__line">    <span class="c-code__comment">// We use the balanced profile as its performance is</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// sufficient for this example. See the documentation for</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// more detail on this and other configuration options:</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/documentation/_features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-offlineprocessing-console-offlineprocessing.js&amp;utm_term=run</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-offlineprocessing-console-offlineprocessing.js&amp;utm_term=run</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-offlineprocessing-console-offlineprocessing.js&amp;utm_term=run</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-offlineprocessing-console-offlineprocessing.js&amp;utm_term=run</span></div>
 <div class="c-code__line">    performanceProfile: <span class="c-code__stringliteral">&#39;Balanced&#39;</span>,</div>
 <div class="c-code__line">    <span class="c-code__comment">//  Inhibit sharing usage for this example.</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// In general, off line processing usage should NOT be shared back to 51Degrees.</span></div>
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2off
 <div class="c-code__line">    <span class="c-code__comment">// If you specifically want to share data that is being processed off line</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// in order to help us improve the data, then this additional data will</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// need to be collected and included as evidence to the Pipeline. See</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/documentation/_features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-offlineprocessing-console-offlineprocessing.js&amp;utm_term=run#Low_Level_Usage_Sharing</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-offlineprocessing-console-offlineprocessing.js&amp;utm_term=run#Low_Level_Usage_Sharing</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// for more details on this.</span></div>
 <div class="c-code__line">    shareUsage: <span class="c-code__keyword">false</span>,</div>
 <div class="c-code__line">    <span class="c-code__comment">// inhibit auto-update of the data file for this test</span></div>
@@ -258,9 +258,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2off
 <div class="c-code__line">      (output, content) =&gt; { fs.appendFileSync(output, content); });</div>
 <div class="c-code__line">  } <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">    console.error(<span class="c-code__stringliteral">&#39;Failed to find an IP intelligence &#39;</span> +</div>
-<div class="c-code__line">      <span class="c-code__stringliteral">&#39;data file. Make sure the ip-intelligence-data &#39;</span> +</div>
-<div class="c-code__line">      <span class="c-code__stringliteral">&#39;submodule has been updated by running &#39;</span> +</div>
-<div class="c-code__line">      <span class="c-code__stringliteral">&#39;`git submodule update --recursive`.&#39;</span>);</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;data file. Make sure the cxx/data submodule &#39;</span> +</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;has been fetched by running &#39;</span> +</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;`git submodule update --init --recursive`.&#39;</span>);</div>
 <div class="c-code__line">  }</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2off
 <div class="c-code__line">};</div>
 <div class="ttc" id="aclass_data_extension_html"><div class="ttname"><a href="class_data_extension.html">DataExtension</a></div><div class="ttdef"><b>Definition</b> dataExtension.js:23</div></div>
 <div class="ttc" id="aclass_data_extension_html_a208dbc998aec51823620213f54daf71b"><div class="ttname"><a href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">DataExtension::getValueHelper</a></div><div class="ttdeci">static getValueHelper(elementData, propertyName)</div><div class="ttdoc">Helper to get a human readable value of an aspect property value.</div><div class="ttdef"><b>Definition</b> dataExtension.js:55</div></div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:54</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:116</div></div>
 <div class="ttc" id="aclass_ip_intelligence_on_premise_pipeline_builder_html"><div class="ttname"><a href="class_ip_intelligence_on_premise_pipeline_builder.html">IpIntelligenceOnPremisePipelineBuilder</a></div><div class="ttdef"><b>Definition</b> ipIntelligenceOnPremisePipelineBuilder.js:35</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
