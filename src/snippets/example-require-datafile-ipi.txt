@@ -1,0 +1,15 @@
+@htmlonly
+<p>
+This example requires a local IP Intelligence data file. The free 'Lite' data file can be
+downloaded with the scripts in the <a href="https://github.com/51Degrees/data">data</a> GitHub
+repository, which this repository includes at <code>cxx/data</code>. Fetch the submodules by
+running <code>git submodule update --init --recursive</code>, then run
+<code>sh cxx/data/get-data-files.sh 51Degrees-LiteV41.ipi</code> from the repository root,
+which saves the file as <code>cxx/data/ip-intelligence/51Degrees-LiteV41.ipi</code>.
+</p>
+<p>
+The Lite data file gives RegisteredCountry, RegisteredName and RegisteredOwner, and is only used
+for illustration. The Enterprise data file has every property, including the location, network
+and connection properties. <a href="https://51degrees.com/contact-us">Contact us</a> about a copy.
+</p>
+@endhtmlonly
