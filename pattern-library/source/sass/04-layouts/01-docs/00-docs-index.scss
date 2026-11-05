@@ -224,6 +224,20 @@
   padding: 2px;
   margin: 0 size(-2) size(-1);
 
+  // In the docs header the box takes a question, so it grows into any free
+  // space there, up to a width that fits a whole question.
+  .g-header--docs & {
+    flex: 1 1 auto;
+    max-width: rem(480px);
+  }
+
+  // The search script removes hidden once the 51degrees.com assistant can
+  // answer. Until then the box keeps its space but is not shown, so the
+  // header does not move when the box appears.
+  &[hidden] {
+    visibility: hidden;
+  }
+
   .c-search {
     z-index: 1;
     margin-right: size(0);
