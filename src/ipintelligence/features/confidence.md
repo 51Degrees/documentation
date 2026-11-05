@@ -14,7 +14,7 @@ Always check the value of `LocationConfidence` when determining how to use IP In
 
 - **High** confidence results can be relied upon and considered useful for all practical purposes.
 
-- **Medium** confidence results might be useful where the use case can tolerate a degree of inaccuracy.
+- **Medium** confidence results might be useful where the use case can tolerate a degree of imprecision.
 
 - **Low** or **Unknown** confidence results should be discarded when the results might be used to make consequential decisions. Instead of using the results consider asking the user to share their location via device APIs such as GPS and then using reverse geocoding, or enter their postal address manually. Subsequent processing may also be similar to handling an exception when obtaining the result.
 
