@@ -2,7 +2,7 @@
 
 # Introduction
 
-New device detection data files are released daily by 51Degrees. This page demonstrates various methods to update device detection data files, including automatic and manual approaches.
+We release new device detection data files daily. These examples show how to update data files automatically or manually.
 
 For more information on data file updates in general, see the [automatic data file updates](@ref PipelineApi_Features_AutomaticDatafileUpdates) documentation.
 

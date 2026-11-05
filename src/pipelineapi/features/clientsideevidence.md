@@ -9,14 +9,10 @@
 * Query parameters
 * Request metadata such as source IP address
 
-Any device making a request to a web site will include some of this information.
+Any device making a request to a website will include some of this information.
 For example, the User-Agent HTTP header is almost always populated as part of a
 request.
-In some cases though, additional @evidence providing more detail can be obtained
-from code running directly on the client device. In some cases, this may even be 
-required.
-For example, this technique can be used to retrieve the latitude and longitude 
-from devices that have this capability.
+Code running on the client device can collect additional @evidence, such as latitude and longitude on devices that support it. Some results require this client-side evidence.
 
 See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/web-integration.md#client-side-features)
@@ -81,10 +77,7 @@ next request.
 
 ## Background callback
 
-A request is made to the server in the background that includes the extra values 
-as form parameters. The server sends this through the pipeline and the result is 
-packaged as JSON and sent in the response to the client, which will update it's 
-JSON payload data, making the new values available to all client-side code.
+The client sends the extra values to the server as form parameters in a background request. The server processes them through the Pipeline and returns JSON results. The client then updates its JSON data so client-side code can access the new values.
 
 Adding this feature to the page may result in data being written to the client
 device using `cookies` or `sessionStorage` for efficiency.
@@ -161,7 +154,7 @@ examples such as the
 [device detection examples](@ref DeviceDetection_Examples_GettingStarted_Web_Index)
 or [reverse geocoding examples](@ref ReverseGeocoding_Examples_WebIntegration_Examples).
 
-# Static and Quasi-Static Script Approaches
+# Static and semi-static scripts
 
 ## Overview
 51Degrees provides multiple ways to integrate device detection using client-side JavaScript evidence collection.
@@ -194,7 +187,7 @@ This script includes JavaScript snippets that perform client-side evidence colle
 
 ### Script Assembly
 * The `JSONBuilderElement` and `JavaScriptBuilderElement` (part of the 51Degrees @Pipeline) inject the snippet properties into a JavaScript template.
-* Templates are available at: (https://github.com/51Degrees/javascript-templates).
+* Templates are in the [javascript-templates](https://github.com/51Degrees/javascript-templates) repository.
 * The result is the complete `51degrees.core.js` script.
 
 ### Client-Side Execution
@@ -215,19 +208,19 @@ fod.complete(function() {
 ## Semi-Static Scenario
 
 If your environment already includes a static script (e.g., `<script src="<myscript.js URL>">`) and cannot add another dynamically generated one, a semi-static integration approach is recommended.
-This method merges 51Degrees-generated snippets into your existing script, allowing some dynamic behaviour while maintaining a mostly static setup.
+This method merges 51Degrees-generated snippets into your existing script, allowing some dynamic behavior while maintaining a mostly static setup.
 
-Please note the implementation of this approach is not part of the 51Degrees solution as it involves your custom system, thus you have to implement it yourself - we only give the general outline here.
+You must implement this integration in your own system. The steps below are an outline.
 
 ### Implementation Options
 
-### Option 1 — Dynamic Merge per Request
+### Option 1, dynamic merge per request
 * Modify your existing script to be generated dynamically on your server.
 * Pass all HTTP header evidence to the 51Degrees @Pipeline during script generation.
 * The @Pipeline returns an appropriate version of the snippet (e.g., different for iPhone, iPad, or Mac).
 * Your script includes that snippet dynamically before returning it to the client.
 
-### Option 2 — Cached Variants (Semi-Static)
+### Option 2, cached variants (semi-static)
 * Pre-generate and cache short-lived variants of the 51Degrees-generated script for device groups (e.g., iPhone, iPad, Mac).
 * Your script can decide which cached snippet to load based on basic client-side conditions.
 * Cached variants should be refreshed whenever the data file updates.

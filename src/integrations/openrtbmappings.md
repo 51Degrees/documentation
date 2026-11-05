@@ -13,7 +13,7 @@ The following table lists the OpenRTB (3.2.18 Object: Device) field names, suppo
 |ua|Browser user agent string.|User-Agent field from HTTP header.|The User-Agent string can be used to identify the device, application, operating system, software vendor or software version of the requesting device.|
 |sua|Structured user agent information defined by a UserAgent object (see Section 3.2.29 of the OpenRTB 2.6 spec).|Info obtained from the [User-Agent Client Hints (UA-CH) HTTP headers](@ref DeviceDetection_Features_UACH_Overview) (or equivalent NavigatorUAData JS object) sent by the browsers that support it.|ua may contain a reduced User-Agent string, thus if present, 'sua' should be considered a more accurate and complete device info. [You can also convert UA-CH values into sua information (and vice versa)](https://github.com/51Degrees/sua-uach-conversion) with our [sua and UA-CH converter](https://51degrees.github.io/sua-uach-conversion/).|
 |devicetype|The general type of device. Refer to List 5.21.|[DeviceType](https://51degrees.com/developers/property-dictionary?item=Device%7CDevice)| Indicates the type of the device based on values set in other properties, such as IsMobile, IsTablet, IsSmartphone, IsSmallScreen etc.<br>See [OpenRTB Device Type Mappings](@ref Integrations_OpenRTBMappings_DeviceType) table below.|
-|make|Device make (e.g., “Apple”)|[HardwareVendor](https://51degrees.com/developers/property-dictionary?item=Device%7CName)|Indicates the name of the company that manufactures the device or primarily sells it, e.g. Samsung.<br>The full set of vendor values is contained in the 51Degrees [on-premise data file](@ref DeviceDetection_CloudToOnPremise).
+|make|Device make (e.g., “Apple”)|[HardwareVendor](https://51degrees.com/developers/property-dictionary?item=Device%7CName)|Indicates the name of the company that manufactures the device or primarily sells it, e.g. Samsung.<br>The full set of vendor values is contained in the 51Degrees [on-premise data file](@ref DeviceDetection_CloudToOnPremise).|
 |model|Device model (e.g., “iPhone”)|[HardwareNamePrefix](https://51degrees.com/developers/property-dictionary?item=Device%7CName)| |
 |os|Device operating system (e.g., "iOS")|[PlatformName](https://51degrees.com/developers/property-dictionary?item=Operating%20System%7CName)|Indicates the name of the operating system the device is using.<br>The full set of platform values is contained in the 51Degrees [on-premise data file](@ref DeviceDetection_CloudToOnPremise).|
 |osv|Device operating system version (e.g., "3.1.2").|[PlatformVersion](https://51degrees.com/developers/property-dictionary?item=Operating%20System%7CName)|Indicates the version or subversion of the software platform.|
@@ -51,7 +51,7 @@ The following table lists the OpenRTB (3.2.19 Object: Geo) field names, supporte
 |zip|ZIP or postal code.|[ZipCode](https://51degrees.com/developers/property-dictionary?item=Location%7CRegion%20Areas)||
 |utcoffset|Local time as the number +/- of minutes from UTC.|[TimeZoneOffset](https://51degrees.com/developers/property-dictionary?item=Location%7CTime%20Zone)||
 
-# Unsupported OpenRTB API
+# Unsupported OpenRTB fields
 
 Currently, the following fields are not directly supported by 51Degrees. Unless stated otherwise, this is because the value is unique to an individual device.
 

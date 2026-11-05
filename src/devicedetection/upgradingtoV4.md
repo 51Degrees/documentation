@@ -5,8 +5,7 @@
 This guide details how current Version 3 customers of 51Degrees can upgrade to Version 4.
 
 Version 4 is faster, has a smaller data file, and has an upgraded algorithm that allows better detection of new, different, and rare User-Agents.
-Additionally, Version 4 has support for [Google's changes to the User-Agent](https://learnclienthints.com/) and the new 
-[User-Agent Client Hints](https://51degrees.com/blog/updates-to-user-agent-client-hints-version-4-4) HTTP request header.
+Version 4 supports [Google's changes to the User-Agent](https://learnclienthints.com/) and [User-Agent Client Hints](https://51degrees.com/blog/updates-to-user-agent-client-hints-version-4-4) HTTP request headers.
 
 The steps to upgrade will vary depending on whether you are using our Cloud or On-premise service.
 
@@ -98,8 +97,7 @@ fiftyoneDegreesDataSetInitStatus status =
     fileName, &provider, properties, 4, 1000);
 ```
 
-An equivalent service can be set up using the V4 device detection API. However, the Hash data files have been significantly improved for V4, 
-and are now equivalent or superior to Pattern in every way. As such, Hash is now the only option. It takes the following parameters:
+The V4 Device Detection API uses Hash data files. To initialize the data set, supply the following parameters:
 
 1. A resource manager. This is similar to the V3 provider, but provides a generic way of managing resources in a thread-safe manner.
 2. A configuration structure. This defines the way the data set is used. For example, whether the data set is loaded into memory, or streamed from file.
@@ -121,9 +119,7 @@ fiftyoneDegreesStatusCode status =
         exception);
 ```
 
-To process a User-Agent with the old API, the `fiftyoneDegreesMatch` is called with a workset
-which has been fetched from the provider. Instead new set of results should be created, then
-the `fiftyoneDegreesResultsHashFromUserAgent` is used in a similar way to `fiftyoneDegreesMatch`.
+V3 calls `fiftyoneDegreesMatch` with a workset from the provider. In V4, create a results structure and pass it to `fiftyoneDegreesResultsHashFromUserAgent`.
 
 ```{c}
 fiftyoneDegreesResultsHash *result =
@@ -264,7 +260,7 @@ delete config
 <!-- ===================================================================================
      |                                      .NET                                       |
      =================================================================================== -->
-Note: If you are working with a ASP.NET or ASP.NET Core web app then check those tabs for a more focused migration guide.
+Note: If you are working with an ASP.NET or ASP.NET Core web app, use the corresponding tab for a focused migration guide.
 
 The [getting started](@ref DeviceDetection_Examples_GettingStarted_Console_Index) examples may 
 be a useful reference while migrating.
@@ -296,7 +292,7 @@ var pipeline = new DeviceDetectionPipelineBuilder()
 The supplied settings will be dependent on your old implementation:
 
 - If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [configure.51degrees.com](https://configure.51degrees.com) (this will only take a few minutes and does not require any payment). Next, change the first line to `.UseCloud` and pass in the Resource Key you created.
-- If using `MemoryFactory` rather that `StreamFactory` then change the performance profile to `MaxPerformance`.
+- If using `MemoryFactory` rather than `StreamFactory`, change the performance profile to `MaxPerformance`.
 - If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionHashEngineBuilder`. The `SetCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
 - If you have auto updates disabled then remove the `SetDataUpdateLinceseKey` line and instead use `SetAutoUpdate(false)` and `SetUpdateOnStartup(false)`.
 
@@ -473,7 +469,7 @@ This file should follow the usual structure of a pipeline configuration file. Fo
 }
 ```
 
-- Modification to `Application_Start` method in the application class from `"global.asax.cs"` file to include loading of assemblies required by the pipeline is needed. Again, this is different for cloud and On-premise scenarios. See snippets for both below. 
+- Update `Application_Start` in the application class in `"global.asax.cs"` to load the assemblies the pipeline needs. Use the snippet for your cloud or on-premise deployment below.
 
 On-premise:
 ```{cs}
@@ -556,7 +552,7 @@ be a useful reference while migrating.
 
 First, add the `FiftyOne.DeviceDetection` and `FiftyOne.Pipeline.Web` NuGet packages. Don't forget to remove the old `51Degrees.mobi-core` package and any related packages as well.
 
-Add the following lines to you 'ConfigureService' method:
+Add the following lines to your 'ConfigureService' method:
 
 ```{cs}
 services.AddSingleton<DeviceDetectionHashEngineBuilder>();
@@ -1064,10 +1060,10 @@ New in V4:
 - `51D_set_resp_headers`
 
 New requirements in V4:
-- Building V4 module requires a compiler that support C11.
+- Building the V4 module requires a compiler that supports C11.
 - libatomic1
  
-Changes in behaviour:
+Changes in behavior:
 - `51D_match_all` also takes evidence from query string and cookie.
  - Evidence input from query string takes precedence over header evidence.
    - For example, if `User-Agent` is supplied via query string, the value will be used instead of the header `User-Agent`.
@@ -1114,7 +1110,7 @@ New in V4:
 - To support automatic requesting relevant User-Agent Client Hints, a new function `set_resp_headers` can be added to the `vcl_deliver` block. This only works with browsers that support User-Agent Client Hints. For device detection to work with User-Agent Client Hints, the function `match_all` should be used.
 
 New requirements in V4:
-- Building V4 module requires a compiler that support C11.
+- Building the V4 module requires a compiler that supports C11.
 - libatomic1
  
 Further reads:

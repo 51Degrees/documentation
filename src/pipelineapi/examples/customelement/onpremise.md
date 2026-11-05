@@ -2,9 +2,7 @@
 
 # Introduction
 
-This example takes the very simple @flowelement described in the
-[simple flow element example](@ref PipelineApi_Examples_CustomElement_FlowElement), and adds
-a @datafile, upgrading the @flowelement to an @aspectengine. 
+Extend the @flowelement from the [simple flow element example](@ref PipelineApi_Examples_CustomElement_FlowElement) with a @datafile to create an @aspectengine.
 
 Instead of storing data statically, as the [simple flow element example](@ref PipelineApi_Examples_CustomElement_FlowElement)
 did, this example will store it in a @datafile which will be loaded and can also be updated.
@@ -41,8 +39,7 @@ To include this, add the following to the `<dependencies>` section of the projec
 ```
 @endsnippet
 @startsnippet{node}
-Add a dependency to the `fiftyone.pipeline.engines` NPM package to the package.json, and required it
-in the source with `require("fiftyone.pipeline.engines")`.
+Add the `fiftyone.pipeline.engines` npm package as a dependency in package.json, then load it with `require("fiftyone.pipeline.engines")` in your source.
 @endsnippet
 @endsnippets
 
@@ -105,9 +102,7 @@ First let's change the class to extend `OnPremiseAspectEngineBase` (which partia
 `IStarSignData` - the interface extending @aspectdata which will be added to the @flowdata, and 
 `IAspectPropertyMetaData` - instead of `IElementPropertyMetaData`.
 
-The existing constructor needs to change to match the `OnPremiseAspectEngineBase` class. So it takes
-the additional arguments of a @datafile path, and a temporary @datafile path. This is the location of the @datafile
-that the @aspectengine will use, and where to make a temporary copy if required.
+Update the constructor to match `OnPremiseAspectEngineBase`. Add the @datafile path the @aspectengine will read and a path for a temporary @datafile copy, if required.
 
 The constructor will also read the @datafile containing the star signs into memory. This is done in another
 method so that it can also be used by the `RefreshData` method when a new @datafile is downloaded (this is not

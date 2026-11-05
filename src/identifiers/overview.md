@@ -1,4 +1,4 @@
-@page Identifiers_Overview Overview
+@page Identifiers_Overview Identifiers overview
 
 **51Did** (51Degrees Identifier) and **PMP** (Preference Management Platform) are derived signals downstream systems can act on without seeing the raw inputs.
 

@@ -8,8 +8,7 @@ This means it's not possible to identify the exact iPhone/iPad model using only 
 
 To solve this, 51Degrees uses **client-side JavaScript** to gather additional evidence from the device,
 such as screen resolution and GPU model.
-This allows us to identify the precise Apple hardware model - including the specific iPhone/iPad generation.
-Even when the User-Agent string is generic.
+This evidence can identify a model or narrow the result to a group of models, even when the User-Agent string is generic.
 
 This feature is built into the [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) functionality,
 and is automatically enabled when the relevant property is included in your Resource Key.
@@ -25,7 +24,7 @@ When a request from an Apple device is received:
 2. Based on this, the server sends JavaScript to the client that gathers device-specific information.
 3. The JavaScript runs on the client and returns a **hardware profile ID**.
 4. This ID is sent back to the server.
-5. The server updates the detection result with the exact Apple model.
+5. The server updates the detection result with the detected Apple model or group of models.
 
 This works even in edge cases such as:
 
@@ -65,13 +64,13 @@ Apple has continually worked to homogenize any information that a website can ge
 
 Below we cover the detection results that are experienced for each iPhone, starting from the iPhone 3GS, when using Safari.
 
-The 'percentage' column refers to the percentage of the data submissions we have received that would return that detection result for that particular display mode. For example, '100.00%' in Standard mode indicates that 100% of our submissions for that device would receive that result if the data from the submission were passed to our detection script. '1.50%' in indicates that 1.5% of our submissions would receive that detection result.
+The 'percentage' column shows the share of data submissions that would return each detection result for the given display mode. For example, '100.00%' in Standard mode means all submissions for that device would return that result when passed to our detection script. '1.50%' means 1.5% of submissions would return that result.
 
 As we receive more data on Apple devices, this table will change. We will update this table following each update to the JavaScript. The tables currently match the released JavaScript created on 22 September 2026.
 
-For optimized viewing of the table, it is recommended you zoom out within your browser.
+Zoom out in your browser to see more of the table.
 
-### iPhones using browser in Mobile mode and in standard display mode {#iphones_mobile_standard_mode}
+### iPhones in mobile browser mode and standard display mode {#iphones_mobile_standard_mode}
 |Device|Results|Percentage|
 |---|---|---|
 |iPhone 18 Pro Max|iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max|100.00%|
@@ -127,7 +126,7 @@ For optimized viewing of the table, it is recommended you zoom out within your b
 |iPhone 4|iPhone 4|100.00%|
 |iPhone 3GS|iPhone 3GS|100.00%|
 
-### iPhones using browser in Mobile mode and in zoomed display mode {#iphones_mobile_zoom_mode}
+### iPhones in mobile browser mode and zoomed display mode {#iphones_mobile_zoom_mode}
 This table is for display zoom, an iPhone accessibility feature. It is not the normal zoom operation in browsers. It is enabled in Settings > Display & Brightness > Display Zoom > Zoomed.
 
 |Device|Results|Percentage|
@@ -178,7 +177,7 @@ This table is for display zoom, an iPhone accessibility feature. It is not the n
 |iPhone 6 Plus|iPhone 6 Plus|100.00%|
 |iPhone 6|iPhone 6|100.00%|
 
-### iPhones using browser in Desktop mode {#iphones_desktop_mode}
+### iPhones in desktop browser mode {#iphones_desktop_mode}
 |Device|Display Mode|Results|Percentage|
 |---|---|---|---|
 |iPhone 18 Pro Max|Standard|iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max|100.00%|

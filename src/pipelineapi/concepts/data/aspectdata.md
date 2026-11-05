@@ -2,8 +2,7 @@
 
 # Introduction
 
-**Aspect data** is the container for data that is returned as a result of the processing 
-performed by an @aspectengine.
+**Aspect data** holds the results returned by an @aspectengine.
 Just as an @aspectengine is a specialization of a @flowelement, **aspect data** is a 
 specialization of @elementdata. 
 

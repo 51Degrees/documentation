@@ -6,7 +6,7 @@ The [OpenRTB 2.6 specification](https://github.com/InteractiveAdvertisingBureau/
 User Agent (`device.sua`) format for representing User-Agent Client Hints. This is commonly
 used in programmatic advertising and real-time bidding scenarios.
 
-# Passing SUA to Device Detection
+# Pass SUA to Device Detection
 
 If you receive UA-CH data in the SUA format, you can pass it directly to the device detection
 engine with the `query.` or `cookie.` prefix:
@@ -46,9 +46,7 @@ headers before processing:
 - `Sec-CH-UA-Arch`
 - `Sec-CH-UA-Bitness`
 
-The conversion happens natively in the device detection engine (in the C layer), making it
-efficient and seamless. This eliminates the need for any additional pipeline elements or
-pre-processing steps that were required in earlier versions.
+The device detection engine converts SUA evidence in its C layer. You do not need additional pipeline elements or preprocessing steps.
 
 # Related Pages
 

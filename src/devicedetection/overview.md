@@ -2,7 +2,7 @@
 
 # Introduction
 
-Device Detection identifies the device, operating system, and browser hitting your website, plus over 250 other details you can use to fine-tune experiences across smartphones, tablets, desktops, TVs, and other connected devices.
+Device Detection identifies the device, operating system, and browser making a request to your website. It also returns over 250 other details about smartphones, tablets, desktops, TVs, and other connected devices.
 
 [Quick Start Guide](@ref DeviceDetection_Quickstart) - Get running in minutes.
 
@@ -11,7 +11,7 @@ Device Detection identifies the device, operating system, and browser hitting yo
 ## How It Works
 
 
-At the core of 51Degrees is our patented [Hash Algorithm](@ref DeviceDetection_Hash). It scans the User-Agent and other HTTP headers to identify devices in record time. Want to jump straight to real-world uses? Scroll down to Common use cases. Or stick around to see how we tackle the tougher challenges modern web traffic throws our way.
+Our patented [Hash algorithm](@ref DeviceDetection_Hash) uses the User-Agent and other HTTP headers to identify devices. The sections below explain its capabilities and common use cases.
 
 - **Apple devices:** We use JavaScript detection to see through Apple's hidden User-Agents and spot specific iPhone/iPad models.
 - **Modern browsers:** We support [User-Agent Client Hints](@ref DeviceDetection_Features_UACH_Overview) from Chromium browsers to keep detection accurate, even as Google reduces Android User-Agent details.
@@ -27,32 +27,32 @@ Dig deeper in our [technical spec](https://github.com/51Degrees/specifications/b
 
 ### Apple Device Detection
 
-Apple makes device detection tricky by hiding User-Agent details. We bypass that with client-side JavaScript to identify specific iPhone/iPad models with precision.
+We use client-side JavaScript to identify specific iPhone/iPad models that cannot be distinguished from their User-Agents alone.
 
 [Learn more about Apple Detection](@ref DeviceDetection_Features_AppleDetection)
 
 ### User-Agent Client Hints
 
-Browsers like Chrome are cutting down User-Agent info. Our Client Hints support ensures you stay ahead and maintain accurate detection.
+We support User-Agent Client Hints to identify devices when Chromium browsers reduce the details in their User-Agent headers.
 
 [Learn more about User-Agent Client Hints](@ref DeviceDetection_Features_UACH_Overview)
 
 ### TAC Lookup
 
-Need to identify a mobile device from its IMEI number? Our Type Allocation Code (TAC) lookup has you covered.
+Use the Type Allocation Code (TAC) from an IMEI number to identify a mobile device.
 
 [Learn more about TAC Lookup](@ref DeviceDetection_Features_TacLookup)
 
 ---
 
-## Flexible Integration Options
+## Integration options
 
 
 Choose what fits your stack:
 
 - **Cloud API:** No infrastructure headaches, always updated, pay-as-you-go.
-- **On-premise:** Maximum control, lightning speed, enterprise security.
-- **Hybrid:** The best of both worlds.
+- **On-premise:** Run detection on your own servers.
+- **Hybrid:** Combine cloud and on-premise deployment.
 
 [Compare integration options](@ref DeviceDetection_Quickstart) | [See how to migrate from Cloud to On-premise](@ref DeviceDetection_CloudToOnPremise)
 
@@ -67,18 +67,18 @@ Our patented [Hash Algorithm](@ref DeviceDetection_Hash) is built for performanc
 - **Fast startup:** Loads the data file into memory and is ready to detect in under 150 milliseconds on the same Graviton3 instance, which matters most where servers start and stop as demand changes
 - **Low latency:** Each detection takes microseconds when the data file is in memory, and there is no network call
 - **Performance-critical ready:** Perfect for high-load servers, edge environments, and real-time systems
-- **Accuracy:** Maintains industry-leading accuracy across [250+ device properties](https://51degrees.com/developers/property-dictionary)
+- **Device details:** Returns [250+ device properties](https://51degrees.com/developers/property-dictionary)
 - **Efficiency:** Keeps memory and bandwidth usage minimal
 - **Deployment flexibility:** Runs in-process by default, or deploys out-of-process or on a separate server if needed
 
-Read the [full technical specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd) for the nitty-gritty details.
+Read the [full technical specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/README%2Emd) for implementation details.
 
 ---
 
 ## Migrating from older versions or other providers
 
 
-Already using 51Degrees V3 or another device detection tool? Thinking of making the switch? We've made it easy. Our migration guides show exactly how our properties and features match up with what you're used to - so you can transition smoothly without missing a beat.
+Use our migration guides to compare properties and features when moving from 51Degrees V3 or another device detection tool.
 
 - **Upgrading from 51Degrees V3?** Check out our [V4 upgrade guide](@ref DeviceDetection_UpgradingtoV4).
 - **Moving from DeviceAtlas or WURFL?** We've got dedicated migration guides. [See all migration guides](@ref DeviceDetection_MigrationGuides_Index)
@@ -88,7 +88,7 @@ Already using 51Degrees V3 or another device detection tool? Thinking of making 
 ## Examples and Getting Started
 
 
-Want to see how it works? Dive into our examples and hit the ground running:
+Choose an example for your application type and deployment:
 
 ### 💡 Quick Start
 - [Quick Start Guide](@ref DeviceDetection_Quickstart) - Get started in minutes

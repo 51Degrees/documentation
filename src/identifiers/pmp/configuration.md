@@ -1,6 +1,6 @@
 @page Identifiers_PMP_Configuration Configuration attributes
 
-The attributes PMP reads from its own `<script>` tag.
+Set the following attributes on the PMP `<script>` tag:
 
 | Attribute                      | Required | Default | Purpose |
 |--------------------------------|----------|---------|---------|

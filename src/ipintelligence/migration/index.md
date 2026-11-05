@@ -1,6 +1,6 @@
 @page IpIntelligence_Migration Migration Guide
 
-If you are evaluating 51Degrees IP Intelligence as a replacement for another provider, the pages below show how the response fields you are used to map to the equivalent 51Degrees properties. The mapping is at the property/field level only; semantics, accuracy methodology and weighting can differ between providers.
+The pages below map other providers' response fields to 51Degrees properties. A field mapping does not guarantee equivalent results. Providers may define properties, location precision, and weighting differently.
 
 For the complete, always-current 51Degrees property list see the [property dictionary](https://51degrees.com/developers/property-dictionary).
 

@@ -2,7 +2,7 @@
 
 # Overview
 
-Diversity properties are used to express how many different @profiles for a specific @component are seen within an IP range. This can be used to make various conclusions about what traffic from a certain range is likely to be. A diversity can relate to any @component, an example is `HardwareDiversity`, which is the number of different hardware profiles. This is different from the number of unique physical devices, as there could be 2 of the same model smartphone.
+Diversity properties describe the variety of @profiles for a @component within an IP range. For example, `HardwareDiversity` measures different hardware profiles rather than individual physical devices. The 2 smartphones in an IP range could share one hardware profile.
 
 Properties of this type have values between 0-10, where 0 indicates unknown, 1 is a low diversity, and 10 is high diversity.
 

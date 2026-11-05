@@ -11,9 +11,9 @@ Reverse geocoding turns GPS coordinates into real places. Give us a latitude and
 ## How It Works
 
 
-You provide coordinates, we return location details like:
+Provide coordinates to receive location details such as:
 
-- **Country and region** - Know exactly where your users are
+- **Country and region** - Identify the country and region associated with the supplied coordinates
 - **Cities and neighborhoods** - Get local context for personalization
 - **Street addresses** - Turn coordinates into human-readable locations
 - **Points of interest** - Identify nearby landmarks and businesses
@@ -42,7 +42,7 @@ Help users fill out forms by converting their GPS location into a full address a
 
 Understand where your traffic comes from. Map user behavior to specific cities, regions, or countries.
 
-### 🚫 Compliance and Geo-fencing
+### 🚫 Geographical restrictions
 
 Enforce geographic restrictions for content licensing, gambling regulations, or data protection laws.
 
@@ -55,7 +55,7 @@ Convert GPS coordinates into actionable addresses for emergency response or deli
 ## Getting Started
 
 
-Ready to start? Check out our examples:
+Choose a quick start or example:
 
 - [Quick Start Guide](@ref ReverseGeocoding_Quickstart) - Set up in minutes
 - [Complete Examples](@ref ReverseGeocoding_Examples_Index) - Dive deeper with code samples

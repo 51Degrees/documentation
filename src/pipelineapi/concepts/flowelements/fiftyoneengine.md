@@ -6,12 +6,7 @@ A **51Degrees On-premise Engine** adds functionality to an @onpremiseengine that
 specific to 51Degrees. @Metadata is exposed which relates to the data structure
 common to most 51Degrees data files.
 
-In many cases, a **51Degrees engine** contains a [native](@term{NativeCode}) binary which
-the **engine** acts as a wrapper for. This gives the improved performance achievable with [native](@term{NativeCode}) code,
-while still seamlessly slotting in with the target language (it is not always obvious that a 
-[native](@term{NativeCode}) binary has been used). It also means that all languages the **engine** is
-implemented in can more readily benefit from any optimizations or features which are added to the
-[native](@term{NativeCode}) library.
+Many **51Degrees engines** wrap a [native](@term{NativeCode}) binary and expose it through the target language's interface. These wrappers share the optimizations and features implemented in the [native](@term{NativeCode}) library.
 
 See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#On-premise-engines)

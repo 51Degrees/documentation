@@ -21,10 +21,10 @@ And the following operating systems:
 
 These lists are not exhaustive, so please [contact us](https://51degrees.com/contact-us) if you don't see your environment listed.
 
-Of the operating systems, we target from the latest versions to the older versions that are still maintained by the vendor. For programming languages, we target the LTS (Long Term Support) versions.
+We target operating system versions that their vendors still maintain. For programming languages, we target long-term support (LTS) versions.
 
 ## Building from source
-We automatically test and distribute binary packages for a limited list of platforms and architectures.  In case the provided binary package does not run on your environment - you have to build the library from source for your specific platform and architecture. All 51Degrees language libraries provide instructions on building the library from source.  F.e. see:
+We automatically test and distribute binary packages for a limited set of platforms and architectures. If a package does not run in your environment, build the library from source for your platform and architecture. Each language library includes build instructions. For example:
 
 - [Building Device Detection .NET library from source](https://github.com/51Degrees/51degrees-dotnet/blob/main/device-detection/README.md#build-from-source)
 - [Building Device Detection Java library from source](https://github.com/51Degrees/51degrees-java/tree/main/device-detection#build-and-install-from-source)
@@ -104,7 +104,7 @@ you have a configuration that is not covered, [contact us](https://51degrees.com
 @startsnippet{cxx}
 These are automatically tested on [GitHub](https://github.com/51Degrees?q=cxx&type=all&language=&sort=).
 <div id="cxx-versions"></div>
-Windows includes Framework and Core.
+
 If you have a configuration that is not covered, please [contact us](https://51degrees.com/contact-us).
 @endsnippet
 @startsnippet{dotnet}
@@ -128,8 +128,7 @@ If you have a configuration that is not covered, please [contact us](https://51d
 @endsnippet
 @startsnippet{node}
 These are automatically tested on [GitHub](https://github.com/51Degrees?q=node&type=all&language=&sort=).
-Testing targets the current Node.js LTS versions, the tables below are built from the
-CI configuration of each repository so they always reflect the versions currently tested.
+Testing targets current Node.js LTS versions. The tables below use each repository's CI configuration to list the versions tested.
 
 Device Detection:
 <div id="node-versions"></div>

@@ -9,8 +9,7 @@ This page explains how to use the JavaScript approach with our API.
 The [UA-CH headers page](@ref DeviceDetection_Features_UACH_Headers) explains the alternative.
 The [Overview page](@ref DeviceDetection_Features_UACH_Overview) includes advice if you're unsure which approach to take.
 
-Using the UA-CH JavaScript API is very simple if you are calling our Cloud Service directly. 
-See details below.
+For calls directly to our Cloud Service, follow the Cloud instructions below.
 
 Otherwise, if you are using one of our web integrations, you can use the 'Integrated' 
 approach described below. If not, you'll need to use the 'non-integrated' approach instead.
@@ -36,10 +35,7 @@ In either case, you need to ensure the `JavascriptGetHighEntropyValues` property
 in the results (all properties are included by default for On-premise).
 
 ## Integrated {#UACH_Javascript_Integrated}
-If you are using our [web integration](@ref PipelineApi_Features_WebIntegration) with
-[client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) enabled, then this will take
-care of sending the snippet to the client device, getting the values back to the server and
-passing them into our API.
+With [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) enabled, our [web integration](@ref PipelineApi_Features_WebIntegration) sends the snippet to the browser, returns the values to your server, and passes them to our API.
 
 No additional configuration is required for either Cloud or On-premise solutions. The device
 detection engine natively processes the `getHighEntropyValues()` result when passed as evidence.
@@ -108,6 +104,4 @@ headers before processing:
 - `Sec-CH-UA-Arch`
 - `Sec-CH-UA-Bitness`
 
-The conversion happens natively in the device detection engine (in the C layer), making it
-efficient and seamless. This eliminates the need for any additional pipeline elements or
-pre-processing steps that were required in earlier versions.
+The device detection engine converts the evidence in its C layer. You do not need additional pipeline elements or preprocessing steps.

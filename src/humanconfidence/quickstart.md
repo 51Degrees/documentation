@@ -28,7 +28,7 @@ Human Confidence comes from the 51Degrees cloud service. It isn't in the on-prem
 
 **Benefits:**
 - **Server-side decision** - The value goes from the cloud to your server, so a browser can't change it
-- **No SDK needed** - The examples are one file each in Node.js, PHP and Python, calling the cloud over HTTPS
+- **No SDK needed** - Use the single-file Node.js, PHP, and Python examples to call the cloud over HTTPS
 
 **Things to consider:**
 - **Holding page** - A visitor you haven't checked yet waits a moment on a holding page while the script runs

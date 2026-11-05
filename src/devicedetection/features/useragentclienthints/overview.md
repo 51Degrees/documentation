@@ -2,7 +2,7 @@
 
 # Introduction
 
-User-Agent Client Hints (UA-CH) are part of a Google proposal to replace the existing User-Agent HTTP header.
+User-Agent Client Hints (UA-CH) provide device and browser information through HTTP headers or a JavaScript API.
 
 This page gives an overview of UA-CH detection in our API. It also provides guidance on which mechanism to use based on your use-case.
 
@@ -41,16 +41,16 @@ We have examples that demonstrate UA-CH detection in various scenarios:
 ## Current support
 
 
-The 51Degrees Device Detection API provides comprehensive UA-CH support:
+51Degrees Device Detection supports the following UA-CH capabilities:
 
-- **Basic support** - We detect devices using the Sec-CH-UA header (since December 7, 2020)
-- **Full support** - We detect devices, operating systems, and browsers from UA-CH headers (Version 4.4 and data files from [June 2022 onwards](https://51degrees.com/blog/updates-to-user-agent-client-hints-version-4-4))
+- **Basic support** - Detect devices using the Sec-CH-UA header
+- **Full support** - Detect devices, operating systems, and browsers from UA-CH headers with Version 4.4 and data files from [June 2022 onwards](https://51degrees.com/blog/updates-to-user-agent-client-hints-version-4-4)
 - **Windows 11 detection** - We [identify Windows 11 using User-Agent Client Hints](https://51degrees.com/blog/windows-11-detectable-with-uach) (the [only reliable method](https://docs.microsoft.com/en-us/microsoft-edge/web-platform/how-to-detect-win11))
 
 ## JavaScript API support
 
 
-We added support for the UA-CH [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API) in:
+The UA-CH [JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API) requires:
 
 - .NET API version 4.4.19 
 - Data files from March 6, 2023
@@ -120,7 +120,7 @@ The authors of the proposal have written [a web.dev guide to how UA-CH works](ht
 ## Technical context
 
 
-User-Agent Client Hints extends the previously existing Client Hints content negotiation feature.
+User-Agent Client Hints extend the Client Hints content negotiation feature.
 
 **General documentation:**
 - [MDN Client Hints documentation](https://developer.mozilla.org/en-US/docs/Glossary/Client_hints)

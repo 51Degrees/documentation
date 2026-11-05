@@ -2,10 +2,7 @@
 
 # Introduction
 
-The @Pipeline has been designed as an extensible hierarchy of functionality which is fully
-publicly accessible. This allows third-party developers to create custom @flowelements that
-focus on their core business logic, while also benefiting from the features of the @Pipeline, such as
-@buildfromconfiguration, @automaticdatafileupdates, @resultcaching, @webintegration, etc.
+Create custom @flowelements to add your business logic to the @Pipeline. You can use features such as @buildfromconfiguration, @automaticdatafileupdates, @resultcaching, and @webintegration.
 
 # Choosing the right classes to extend
 

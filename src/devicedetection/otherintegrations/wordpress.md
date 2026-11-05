@@ -1,10 +1,10 @@
 @page DeviceDetection_OtherIntegrations_Wordpress WordPress
 
-# 51Degrees - Optimize by Device & Location
+# Optimize by device and location
 
 Optimize your website for a range of devices and personalize your content based on your user’s location.
 
-Using real-time data, our plugin can optimize your website for users, based on device type and location. Upgrade your analytic reporting with a click of a button. Install from the WordPress plugin manager by searching for “51Degrees”.
+Our plugin uses device and location data to help you adapt your website and analytics reports. Install it from the WordPress plugin manager by searching for “51Degrees”.
 
 \htmlonly
 <iframe src="https://player.vimeo.com/video/631017900?h=8e8c844804" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
@@ -26,7 +26,7 @@ Using real-time data, our plugin can optimize your website for users, based on d
 
 3.  Check `Send Page View` if you want to send Default Page View hits along with Custom Dimensions. It is only recommended if you have not already integrated with any other Google Analytics plugin to avoid data duplication.
 
-4.  Click `Save Changes`. This will prompt to the new Custom Dimensions screen where you can find all the Custom Dimensions available with the Resource Key.
+4.  Click `Save Changes` to open the Custom Dimensions screen, which lists the dimensions available with your Resource Key.
 
 5.  Click on `Enable Google Analytics Tracking` to enable tracking of all the Device Data Properties as Custom Dimensions.
 
@@ -85,7 +85,7 @@ window.onPMPCompletion = function (preference) {
 
 *Value replacement*
 
-You can insert snippets into your pages that will be replaced with the corresponding value. For example, the text `{Pipeline::get("device", "browsername")}` would be replaced with `Chrome`, `Safari` and `Firefox`, etc, depending on the browser being used by the person visiting your site. To set this up, take the text from the 'Usage in Content' column on the 'Properties' tab of the plugin.
+Insert a snippet such as `{Pipeline::get("device", "browsername")}` into your page to display the corresponding value, such as `Chrome`, `Safari`, or `Firefox`. Copy snippets from the 'Usage in Content' column on the plugin's 'Properties' tab.
 
 *Conditional blocks*
 
@@ -148,7 +148,7 @@ Now, when the user clicks on the 'Use my location' button, the JavaScript that w
 
 ## Apple device models
 
-Determining the exact model of Apple devices is more difficult that others. This is because Apple include limited information about the device hardware in the 'User-Agent' HTTP header that is sent to the webserver. To get around this problem, device detection uses JavaScript that runs directly on the client to gather some additional information. This can usually be used to determine the exact model of device and will at least narrow down the possibilities.
+Apple includes limited hardware information in the 'User-Agent' HTTP header. We use client-side JavaScript to gather more evidence and identify an Apple model or narrow the result to a group of models.
 
 The WordPress plugin will handle this for you automatically. However, be aware that, due to having to get additional data from the client, the model may be less clear on the first request than on subsequent requests. After the JavaScript runs on the client, a second request is made and the array of values would be significantly narrowed down.
 
@@ -173,7 +173,7 @@ The WordPress plugin will handle this for you automatically. However, be aware t
 4. Activate the 51Degrees plugin.
 
 
-## Manual installation using GitHub Repository
+## Manual installation from GitHub
 
 If you want to build the plugin yourself and install locally, you will need to follow these steps:
 

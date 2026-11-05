@@ -2,7 +2,7 @@
 
 # Getting Started with Reverse Geocoding
 
-Reverse geocoding turns GPS coordinates into real places like countries, cities, and addresses. Here's how to set it up in minutes.
+Reverse geocoding converts latitude and longitude to location details such as countries, cities, and addresses. Follow these steps to set it up.
 
 ## Step 1: Get Your Resource Key
 

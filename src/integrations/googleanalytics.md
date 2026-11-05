@@ -34,7 +34,7 @@ The last three come from @ref IpIntelligence_Overview, which looks up the visito
 
 [Create a Resource Key from this link](https://configure.51degrees.com/AQRVdgJ-Hdo_5wU130g). It opens with Human Confidence, the properties Human Confidence needs, and the crawler properties already ticked. Tick the other properties you want from the table, untick Human Confidence if your plan doesn't include it, and add the License Key from your plan.
 
-Tick only what you will send. HardwareName, PriceBand and ReleaseAge depend on the exact device model, and for some devices, such as iPhones, the exact model needs a little JavaScript in the page, so the event waits for it.
+Select only the properties you will send. HardwareName, PriceBand, and ReleaseAge depend on the detected model. For some devices, including iPhones, the client script gathers additional evidence before sending the event.
 
 The key sits in your page where anyone can read it, so limit it to your own domains, otherwise someone else could spend your requests.
 

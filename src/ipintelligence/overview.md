@@ -2,7 +2,7 @@
 
 # Introduction
 
-IP Intelligence provides geolocation, ISP, connection type, and network information for any IP address to enhance user experience, security, and content delivery.
+IP Intelligence returns geolocation, ISP, connection type, and network information for IP addresses. Use this data to adapt content delivery and assess requests.
 
 [Quick Start Guide](@ref IpIntelligence_Quickstart) - Get running in minutes.
 
@@ -14,7 +14,7 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 51Degrees uses an algorithm to identify IP network ranges and locations. The engine returns:
 
 - **Network data:** ISP, organization, connection type
-- **Location data:** Country, region, city with probability weighting
+- **Location data:** Country, region, and city
 - **Ultra-low latency:** Sub-millisecond with in-process in-memory deployment
 - **Performance-critical ready:** Ideal for real-time servers, edge/load balancers, and high-load scenarios
 - **Deployment flexibility:** In-process by default, with optional out-of-process or separate server deployment
@@ -28,21 +28,21 @@ See [technical specification](https://github.com/51Degrees/specifications/blob/m
 ## Advanced Features
 
 
-### Enhanced Coverage
+### Coverage
 
 Data sourced from aggregating real device usage and multiple authoritative databases to provide comprehensive global coverage.
 
-### Privacy Protections
+### Coordinate randomization
 
 Coordinates returned for an IP address are [randomized](@ref IpIntelligence_Features_Randomization) to within 1km of the original point, which keeps them precise enough for practical applications.
 
-### Accuracy Weighting
+### Weighted results
 
-Multiple data sources are [weighted](@ref IpIntelligence_Features_Weighting) to provide the most accurate results possible.
+Use [weighted results](@ref IpIntelligence_Features_Weighting) to interpret location precision.
 
 ### Device Detection Integration
 
-Combine IP Intelligence with [Device Detection](@ref DeviceDetection_Overview) for comprehensive optimization and enhanced accuracy.
+Combine IP Intelligence with [Device Detection](@ref DeviceDetection_Overview) to use network, location, and device data together.
 
 ---
 
@@ -51,7 +51,7 @@ Combine IP Intelligence with [Device Detection](@ref DeviceDetection_Overview) f
 
 Choose what fits your stack:
 
-- **On-premise:** Maximum control, lightning speed, enterprise security.
+- **On-premise:** Run detection on your own servers.
 - **Cloud API:** No infrastructure headaches, always updated, pay-as-you-go.
 
 [Compare integration options](@ref IpIntelligence_Quickstart)
@@ -61,7 +61,7 @@ Choose what fits your stack:
 ## Examples and Getting Started
 
 
-Want to see how it works? Dive into our examples and hit the ground running:
+Choose a quick start or an example for your application:
 
 - [Quick Start Guide](@ref IpIntelligence_Quickstart)
 - [Console Examples](@ref IpIntelligence_Examples_GettingStarted_Console_Index)
@@ -85,11 +85,11 @@ Serve location-relevant content (news, language, pricing) while adapting to devi
 
 Anticipate network characteristics based on ISP and connection type to optimize content delivery and user experience.
 
-### 🛡️ Fraud Detection & Security
+### 🛡️ Fraud detection and security
 
 Detect click fraud, suspicious logins, and automated attacks by analyzing IP patterns, locations, and device combinations.
 
-### 🚫 Compliance & Geo-blocking
+### 🚫 Geographical restrictions
 
 Enforce geographical restrictions for gambling, content licensing, or data protection law such as GDPR.
 

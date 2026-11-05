@@ -2,7 +2,7 @@
 
 Access to the cloud service is controlled by a Resource Key, which you create for free at [configure.51degrees.com](https://configure.51degrees.com/). Paid properties and higher request limits come from a License Key, which comes with a subscription and is attached to the Resource Key when you create it, so the License Key itself never goes on a page. The difference between the two keys is set out on @ref Services_Cloud_ResourceKeys.
 
-When a Resource Key is created, you choose the properties that it will return from queries, and once these are set they cannot be changed. However, it is possible to create more keys, each tied to whichever properties you choose.
+Choose the properties when you create a Resource Key. Its property list cannot be changed later. Create a new key if you need a different list.
 
 For a comprehensive list of all available properties and their descriptions, see the [Property Dictionary](https://51degrees.com/developers/property-dictionary).
 
@@ -19,7 +19,7 @@ For example, if you intend to look up latitude and longitude data to get a count
 
 ![](images/configurator-location-country.png)
 
-You should choose as many properties as you need here; once the Resource Key is generated, its list of permitted properties cannot be changed.
+Choose the properties you need before generating the Resource Key. You cannot change its property list later.
 
 ## Step 2: Review Configuration
 
@@ -27,7 +27,7 @@ Some properties require a subscription to appear in query results, or for querie
 
 ## Step 3: Implement
 
-Finally your newly created Resource Key is available. The Implement screen shows code examples much like this documentation but with your new Resource Key in place, and allows you to copy the Resource Key itself from the Resource Key section. It is important that you record the Resource Key somewhere at this point; it is not possible to see a list of Resource Keys attached to an account, so once you have left Step 3 you cannot return to it.
+The Implement screen shows code examples with your new Resource Key already inserted. Copy and save the key from the Resource Key section before leaving Step 3. You cannot list the Resource Keys attached to an account or return to this step later.
 
 ![](images/configurator-implement-key.png)
 
@@ -39,4 +39,4 @@ Make a note of that Resource Key and then continue following the @introduction.
 
 If you have a Resource Key and need to establish which properties it has access to, you can construct a URL https://configure.51degrees.com/YOUR_RESOURCE_KEY. This will show Step 1 with the properties for this specific key already selected.
 
-Beware: do not continue to Steps 2 or 3. Doing this will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it will create a new Resource Key.
+Continuing to Steps 2 or 3 creates a new Resource Key. It does not edit the existing key, because Resource Keys cannot be changed.

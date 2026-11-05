@@ -9,7 +9,7 @@ We demonstrate how to use the
 feature to:
 <ul>
   <li>Pass the required information from the web context to the pipeline API.</li>
-  <li>Populate relevant response headers such as Accept-CH for User-Agent Client Hints</li>
+  <li>Populate relevant response headers such as Accept-CH for User-Agent Client Hints.</li>
   <li>Acquire and process evidence from client-side JavaScript. This is used to determine 
   iPhone / iPad models.</li>
 </ul>

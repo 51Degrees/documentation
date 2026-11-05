@@ -17,8 +17,7 @@ This allows the @flowdata to return the @elementdata instance as the correct typ
 
 # Name conflicts
 
-The @Pipeline does not require that each @flowelement has a unique 
-**element data key**. In fact, it is sometimes desirable for this to be the case.
+Different @flowelement instances in a @Pipeline may use the same **element data key**. Sharing a key can be useful, as the example below shows.
 However, care must be taken to ensure that conflicting key names do not cause
 unexpected behavior or errors.
 

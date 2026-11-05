@@ -2,11 +2,7 @@
 
 # Introduction
 
-**Results caching** refers to a cache that exists at the level of an @aspectengine.
-If **caching** is enabled then when a request arrives at the @aspectengine, it will first check
-to see if it has recently processed a request with the same evidence. If it has then the 
-result determined from the previous processing will be returned without any further work
-being required.
+With **result caching** enabled, an @aspectengine checks for a cached result matching the request's evidence. If a match exists, the engine returns that result instead of processing the evidence again.
 
 **Results caching** will provide improved performance in most scenarios where the processing
 time of an @aspectengine is significant. However, profiling should always be undertaken to 

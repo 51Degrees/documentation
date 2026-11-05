@@ -12,7 +12,7 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 **Benefits:**
 - **No infrastructure** - No servers or data files to manage
 - **Always updated** - Latest IP intelligence data automatically
-- **Quick setup** - Get running in minutes with just an API key
+- **Quick setup** - Create a Resource Key to configure your cloud request
 
 **Things to consider:**
 - **Internet dependency** - Requires network connectivity
@@ -38,13 +38,13 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 
 **Licensing:** Requires a [License Key](https://51degrees.com/pricing)
 
-### Combined Device Detection + IP Intelligence
-**Best for:** Comprehensive user profiling and enhanced accuracy
+### Combine Device Detection and IP Intelligence
+**Best for:** Combining device characteristics with network and location data
 
 **Benefits:**
 - **Complete user context** - Combine location/network data with device characteristics
 - **Enhanced fraud detection** - Cross-reference device properties with IP risk data
-- **Optimized content delivery** - Device capabilities + geographic location for perfect targeting
+- **Content delivery** - Use device capabilities and geographic location to tailor content
 - **Advanced analytics** - Rich user segmentation with both device and location dimensions
 
 **Things to consider:**

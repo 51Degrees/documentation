@@ -14,7 +14,7 @@ for more technical details.
 
 # Configuration
 
-Idiomatic set up of logging varies greatly between languages, but the basic principals apply
+Logging setup of logging varies greatly between languages, but the basic principles apply
 to all. Both an @elementbuilder, and a @pipelinebuilder, are provided with a **logger factory**
 so that every new object that is created has **logging** functionality specific to its instance.
 Standard log levels are adhered to, so the information logged can be limited to 'warn' for example.
@@ -71,7 +71,7 @@ PipelineBuilder builder = new PipelineBuilder(new MyLoggerFactory());
 @endsnippet
 @startsnippet{node}
 
-In node.js a Pipeline has an instance of an eventEmitter inside it which can be used to listen to events, logs and errors.
+In Node.js, a Pipeline contains an eventEmitter instance that you can use to listen for events, logs, and errors.
 
 ```{js}
 
@@ -90,7 +90,7 @@ The PHP pipeline implementation includes a Logger class that can be used to reco
 
 Here is an example of a basic logger that stores its logs in an array.
 
-The log object passed to the overriden logInternal function is an associative array that contains:
+The log object passed to the overridden logInternal function is an associative array that contains:
 
 * time - Y-m-d H:i:s format timestamp
 * level - one of "trace", "debug", "information", "warning", "error", "critical"
@@ -136,7 +136,7 @@ The python pipeline implementation includes a Logger class that can be used to r
 
 Here is an example of a basic logger that stores its logs in a list.
 
-The log object passed to the overriden log_internal function is a dictionary that contains:
+The log object passed to the overridden log_internal function is a dictionary that contains:
 
 * time - Y-m-d H:i:s format timestamp
 * level - one of "trace", "debug", "information", "warning", "error", "critical"
@@ -161,7 +161,7 @@ class MemoryLogger(Logger):
 
 ```
 
-After making a logging class, you would then use this in a Pipeline by using it in the PipelineBuilder when making your pipeline:
+Pass your logger to the PipelineBuilder when creating the Pipeline:
 
 ```{python}
 

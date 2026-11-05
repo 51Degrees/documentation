@@ -2,12 +2,7 @@
 
 # Introduction
 
-In the context of the @Pipeline, **asynchronous execution** refers to the use of 
-non-blocking processing. 
-@Lazyloading is closely related to this as it is effectively non-blocking processing 
-for an individual @aspectengine.
-In contrast, **asynchronous execution** refers to non-blocking execution of the 
-@Pipeline as a whole.
+**Asynchronous execution** runs the @Pipeline without blocking the caller. @Lazyloading provides non-blocking processing for an individual @aspectengine.
 
 # Language support
 
@@ -32,8 +27,7 @@ PHP is single-threaded and does not support non-blocking execution out of the bo
 The @Pipeline has no support for **asynchronous execution** nor @lazyloading in PHP.  
 @endsnippet
 @startsnippet{node}
-Node.js, being based on JavaScript is a fundamentally asynchronous language. As such,
-the @Pipeline will work in a non-blocking way by default through the use of promises.
+In Node.js, the @Pipeline uses JavaScript promises to process requests without blocking by default.
 
 See the node documentation for more details about 
 [blocking vs non-blocking calls](https://nodejs.org/de/docs/guides/blocking-vs-non-blocking/). 

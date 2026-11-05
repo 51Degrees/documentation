@@ -4,12 +4,12 @@ A signed envelope, encoded as an <a href="https://github.com/SWAN-community/owid
 
 ## Terminology
 
-The two layers are distinct and the documentation below uses the words deliberately.
+A 51Did has two layers, the signed identifier and the match key inside its payload.
 
 - The **51Did** is the **identifier**, the whole base64 OWID envelope (version, domain, date, payload, signature). It changes byte-for-byte every time the cloud issues one, even for the same inputs, because the date and signature change with each call.
 - The **match key** is the part of the payload that is stable and comparable, being the bytes after the flags byte and the License Id, which for the probabilistic type is a 32-byte hash. It is the same across reissues for the same device + IP + usage, meaning that if two 51Dids were issued for the same inputs, their match keys are equal even though the wrapping identifiers differ. Every reader exposes it under that name, `MatchKey` in .NET. Earlier text and an older .NET property called it the probabilistic value, or `Hash`, and those mean the same bytes.
 
-Comparing two browsers means comparing the match keys carried inside their identifiers, never the identifiers themselves. The envelope also carries the identifier's creation time, to the minute in UTC, so how old a 51Did is can be read from the identifier with no other call. Calling either layer "the identifier" without qualification leads to incorrect comparisons, and calling the inner field "the probabilistic identifier" is the same confusion under another name. The three levels, the byte layout and what every reader must and must not expose are set out in the [51Did specification](https://github.com/51Degrees/specifications/tree/main/did-specification), which this page summarises.
+Comparing two browsers means comparing the match keys carried inside their identifiers, never the identifiers themselves. The envelope also carries the identifier's creation time, to the minute in UTC, so how old a 51Did is can be read from the identifier with no other call. Calling either layer "the identifier" without qualification leads to incorrect comparisons, and calling the inner field "the probabilistic identifier" is the same confusion under another name. The [51Did specification](https://github.com/51Degrees/specifications/tree/main/did-specification) defines the layers, byte layout, and reader requirements summarized on this page.
 
 Derived from three inputs:
 

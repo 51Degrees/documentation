@@ -47,7 +47,7 @@ follow certain rules:
 
 1. A configuration method on an **element builder** must have one and only one parameter.
 2. The builder must have at least one method named 'Build' which returns an instance that implements `FlowElement`.
-3. The types of any parameters on configuration methods and build methods must be string or have a static `parse` method. This can be in the boxed class in the case of primative type e.g. `Integer.parseInt` is used for `int`. It is used to parse the string value from the configuration file.
+3. The types of any parameters on configuration methods and build methods must be string or have a static `parse` method. This can be in the boxed class in the case of primitive type, for example, `Integer.parseInt` is used for `int`. It is used to parse the string value from the configuration file.
 @endsnippet
 @endsnippets
 

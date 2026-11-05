@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_ThirdPartyCookies Third-Party Cookies Detection
+@page DeviceDetection_Features_ThirdPartyCookies Third-party cookie detection
 
 # Introduction
 
@@ -10,7 +10,7 @@ For businesses that rely on third-party cookies for functionality such as cross-
 
 # How It Works
 
-The detection mechanism relies on verifying whether the browser can send cookies to a third-party domain. This is achieved through generated @ref PipelineApi_Features_ClientSideEvidence "client-side evidence" JavaScript that contains special detection snippets.
+The generated @ref PipelineApi_Features_ClientSideEvidence "client-side evidence" JavaScript checks whether the browser can send a cookie to a third-party domain.
 
 ## Two-Origin Architecture
 
@@ -74,7 +74,7 @@ Third-party cookies detection is automatically performed when using the 51Degree
 
 **Note:** If you are using the 51Degrees Cloud service, you need a Resource Key that includes the `ThirdPartyCookiesEnabled` and `ThirdPartyCookiesEnabledJavascript` properties. The @ref Services_Configurator "Resource Key guide" shows how to create one.
 
-When the JavaScript is loaded and makes its callback to the cloud service, the detection happens transparently. The results are available in the response data alongside other device detection properties.
+After the JavaScript callback to the cloud service, the response includes the cookie detection result alongside the other device detection properties.
 
 ## Custom Endpoint Configuration
 

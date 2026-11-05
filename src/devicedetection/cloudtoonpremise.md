@@ -14,7 +14,7 @@ On-premise deployment works better when you need:
 - **Offline capability** - No internet connection required
 - **Predictable costs** - Fixed licensing instead of per-request pricing
 
-## Migration Steps Overview
+## Migration steps
 
 1. Get an On-premise license and data file
 2. Update package dependencies (if needed)
@@ -23,7 +23,7 @@ On-premise deployment works better when you need:
 5. Set up data file updates
 6. Test and optimize performance
 
-## Step 1: Get License and Data File
+## Step 1: Get a license and data file
 
 **For testing:**
 - Download the free Lite data file with the scripts in the [data](https://github.com/51Degrees/data) repository on GitHub

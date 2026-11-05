@@ -2,26 +2,26 @@
 
 # Welcome to 51Degrees
 
-Real-time user intelligence that transforms web requests into powerful insights
+Device, network, and location data from web requests
 
-Why settle for vague analytics when you can truly understand who's visiting your site and what they need? 51Degrees gives you instant, precise intelligence so you can detect devices, pinpoint locations, and deliver brilliant user experiences at lightning speed, all with industry-leading accuracy.
+Use 51Degrees to detect devices and retrieve location and network data from web requests.
 
 ## What We Do
 
 
-At 51Degrees, we turn every user interaction into a chance to learn, optimize, and impress. Here's how:
+Our services include:
 
 - **Device Detection** - Detect 250+ device properties from HTTP headers and other signals to tailor every user experience.
-- **IP Intelligence** - Unlock geolocation, ISP, and network data from IP addresses for sharper insights and smarter decisions.
+- **IP Intelligence** - Retrieve geolocation, ISP, and network data from IP addresses.
 - **Human Confidence** - Rate every visit High, Medium, or Low by how likely it is that a person is viewing the page.
 - **Reverse Geocoding** - Transform latitude and longitude into real-world addresses, cities, and regions.
 - **Identifiers** - Generate 51Dids, identifiers that name the terms they were created under, and capture user marketing preferences (PMP) to feed downstream systems.
-- **Ultra-fast Performance** - Enjoy lightning-fast detection speeds thanks to in-process deployment.
-- **On-premise Options** - Prefer to keep your data close? Our on-premise options run entirely on your own servers.
+- **In-process deployment** - Run detection in your application process.
+- **On-premise deployment** - Run the services on your own servers.
 
 ---
 
-## Get Started Fast
+## Get started
 
 
 Mix and match our services to fit your needs:
@@ -52,7 +52,7 @@ How likely it is that a person, not a script, is viewing the page, from the 51De
 
 ### Reverse Geocoding
 
-Turn GPS coordinates into meaningful places. Bring real-world context to your digital experiences.
+Convert GPS coordinates to addresses, cities, and regions.
 
 - [Overview](@ref ReverseGeocoding_Overview) - Map coordinates to addresses, cities, and regions
 - [Quick Start](@ref ReverseGeocoding_Quickstart) - Step-by-step implementation guide
@@ -68,7 +68,7 @@ Signed, probabilistic device-bound identifiers (51Did) and an embeddable prefere
 
 ### Client-Side Only
 
-Prefer a lightweight approach? Implement device detection directly in the browser - no server-side code needed.
+Run device detection directly in the browser without server-side code.
 
 - [configure.51degrees.com](https://configure.51degrees.com/) - Create a Resource Key and get the JavaScript snippet for it
 - [Resource Key guide](@ref Services_Configurator) - Creating a Resource Key step by step
@@ -79,7 +79,7 @@ Prefer a lightweight approach? Implement device detection directly in the browse
 ## Language Support
 
 
-Work in the language that suits you best. Our services are production-ready across:
+Use the following libraries to integrate Device Detection and IP Intelligence:
 
 | Language | Device Detection | IP Intelligence |
 |----------|------------------|-----------------|
@@ -100,7 +100,7 @@ Tailor your setup for maximum performance:
 - [Nginx Module](https://github.com/51Degrees/51degrees-nginx) - integrate device detection at the edge
 - [Google Analytics 4](@ref Integrations_GoogleAnalytics) - send device, location, crawler and Human Confidence properties to your reports
 - [Prebid Integration](@ref Integrations_Prebid) - enrich OpenRTB bid requests
-- [UA Parser JS](https://github.com/51Degrees/ua-parser-js) - seamless cloud API integration
+- [UA Parser JS](https://github.com/51Degrees/ua-parser-js) - integrate with the cloud API
 - [Varnish Module](https://github.com/51Degrees/51degrees-varnish) - cache smarter, deliver faster
 
 Explore all our SDKs on [GitHub](https://github.com/51Degrees/).
@@ -118,9 +118,9 @@ Device Detection + IP Intelligence = spot-on content delivery.
 
 Detect mobile users in rural areas and serve relevant content tailored to their needs.
 
-### 🛡️ Fraud Prevention & Security
+### 🛡️ Fraud prevention and security
 
-Device Detection + IP Intelligence = rock-solid risk assessment.
+Combine Device Detection and IP Intelligence to assess device and location patterns.
 
 Spot suspicious device and location patterns, detect bots, and prevent account takeovers.
 
@@ -132,11 +132,11 @@ Enrich bid requests with precise device and location data for sharper targeting.
 
 ### 📈 Advanced Analytics
 
-Device Detection + IP Intelligence = next-level audience segmentation.
+Combine Device Detection and IP Intelligence to segment audiences by device and location.
 
 See the difference between "iPhone users in London" and "Android tablet users in rural areas" for highly targeted insights.
 
-### 🌍 Geo-Compliance & Personalization
+### 🌍 Location and personalization
 
 IP Intelligence + Reverse Geocoding = smarter, compliant experiences.
 
@@ -163,7 +163,7 @@ Everything you need to succeed:
 - [Reverse Geocoding](@ref ReverseGeocoding_Quickstart) - From coordinates to addresses
 - [Identifiers](@ref Identifiers_Overview) - 51Did and PMP
 
-### Deep Dives
+### Detailed guides
 
 - [Device Detection Overview](@ref DeviceDetection_Overview)
 - [IP Intelligence Overview](@ref IpIntelligence_Overview)

@@ -19,7 +19,7 @@ Most v4 responses, including the detection endpoints, are cacheable only by the 
 # RESTful API
 
 
-In the most raw form Cloud Service is accessible via a RESTful API, documented in the [Cloud REST API reference](https://cloud.51degrees.com/api-docs/index.html).
+Call the Cloud Service directly through its REST API. See the [Cloud REST API reference](https://cloud.51degrees.com/api-docs/index.html).
 
 ---
 

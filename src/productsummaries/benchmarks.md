@@ -12,8 +12,7 @@ platforms and configurations than an in-depth exploration of performance.
   desktop PC built in 2008 to a 128-core server, and version 4.5.34 of the IP
   Intelligence C library on five of them.
 
-If performance is important to you then we highly recommend running your own
-profiling.
+Profile performance in your own environment before choosing a configuration.
 
 # Running your own tests
 

@@ -2,10 +2,10 @@
 
 # Introduction
 
-We have also integrated our Device Detection to Nginx. This page describes in detail how you can install and use our module in your Nginx environment.
+Use our Nginx module to run Device Detection in Nginx. This page explains installation and configuration.
 # Prerequisites
 
-For the latest tested versions and tested platforms information, please refer to our @testedversions page.
+See our @testedversions page for tested versions and platforms.
 
 # Installing
 If you haven’t already, you can obtain the latest version of the API from the [51degrees-nginx repository](https://github.com/51Degrees/51degrees-nginx).
@@ -37,7 +37,7 @@ Finally, run the 51Degrees tests with the default 51Degrees Lite data file, whic
 make test
 ```
 
-To run the 51Degrees together with the Nginx test suite, run the following command:
+To run the 51Degrees tests together with the Nginx test suite, run:
 ```
 make test-full
 ```
@@ -51,7 +51,7 @@ make [test|test-full] 51DEGREES_DD_PATH=/path/to/51Degrees-EnterpriseV4.1.hash
 
 Before you start performing any detections, you may wish to configure the detection.
 
-## Init Settings
+## Initialization settings
 Detection configuration directives.
 
 |Directives|
@@ -75,11 +75,11 @@ Match directives.
 |Syntax: `51D_set_resp_headers` *on \| off*;<br>Default: 51D_set_resp_headers  off<br>Context: main, server, location<br>Allow Client Hints to be set in response headers where it is applicable to the user agent (e.g. Chrome 89 or above) so that more evidence can be returned in subsequent requests, allowing more accurate detection. Value set in a block overwrites values set in precedent blocks (e.g. value set in `location` block will overwrite value set in `server` and `main` blocks). This will only be available from the 4.3.0 version onwards.|
 
 # New features
-Following set of new features has been introduced in Nginx Device Detection V4 module:
+The Nginx Device Detection V4 module supports:
 - Detection match metrics
 - Javascript and property overrides
 - False Positive controls
-- User-Agent Client Hint supports
+- User-Agent Client Hints support
 
 ## Detection match metrics
 This V3 functionality is extended with more options available in V4. These metrics can be used in the same way as the properties.
@@ -89,7 +89,7 @@ This V3 functionality is extended with more options available in V4. These metri
 
 ## Javascript and property overrides
 
-Some certain properties might require further steps to obtain. For example, to determine ScreenPixelsWidth, users might need to execute the Javascript returned from ScreenPixelsWidthJavascript property in client User-Agents. In V4, we allow users to request the Javascript as static content via using `51D_get_javascript_single` and `51D_get_javascript_all` directives.
+Some properties require JavaScript to run in the browser. For example, run the JavaScript from ScreenPixelsWidthJavascript to obtain ScreenPixelsWidth. Use `51D_get_javascript_single` or `51D_get_javascript_all` to serve the JavaScript as response content.
 
 Once the value has been obtained by executing the Javascript in client user agent, it can be added as evidence in the next request's cookie or query argument. 51Degrees module will override the returned value with what it found in the request.
 
@@ -97,7 +97,7 @@ Once the value has been obtained by executing the Javascript in client user agen
 
 Nginx Device Detection V4 module supports `False Positives` features as described at [False Positives](@ref DeviceDetection_Features_FalsePositiveControl) via settings of directives `51D_drift`, `51D_difference`, and `51D_allow_unmatched`. When `AllowUnmatched` is set to `off`, if `HasValue` is `false`, a `NoMatch` will be returned. Else, if `AllowUnmatched` is set to `on`, when a match can not be found, default profile will be returned such as `Unknown`, `N/A`, or similar.
 
-## User-Agent Client Hint supports
+## User-Agent Client Hints support
 
 User-Agent Client Hint was introduced by Google in Chrome, preventing traditional detection using User-Agents from performing accurate matches. In Nginx Device Detection V4 module, `51D_set_resp_headers` was implemented to allow Client Hint request headers to be set in responses so that more evidence is provided in subsequent requests, allowing better matches.
 

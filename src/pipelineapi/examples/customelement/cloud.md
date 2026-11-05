@@ -2,9 +2,7 @@
 
 # Introduction
 
-This example takes the very simple @flowelement described in the
-[simple flow element example](@ref PipelineApi_Examples_CustomElement_FlowElement),
-and delegates all the logic to a Cloud Service.
+Extend the @flowelement from the [simple flow element example](@ref PipelineApi_Examples_CustomElement_FlowElement) to run its processing in a Cloud Service.
 
 Instead of the data being stored locally and processing being carried out by the @flowelement
 directly, as demonstrated in the [simple flow element example](@ref PipelineApi_Examples_CustomElement_FlowElement),

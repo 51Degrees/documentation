@@ -2,19 +2,15 @@
 
 # Introduction
 
-The @Pipeline API has been designed to be easy to use, adding IDE auto-complete support where possible. 
-However, one of our key design goals was to allow new properties to be added without the API software 
-needing to be updated. These goals are often in conflict and lead to the creation of several possible 
-mechanisms to retrieve property values.
+The @Pipeline API supports IDE auto-completion where possible. You can also retrieve properties added to a data source after your API software was compiled. The access methods below support these different requirements.
 
 See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/access-to-results.md#)
 for more technical details.
 
-# Detail
+# Ways to access properties
 
-The precise nature of the available accessors depend on the language being used but we have aimed 
-to support the following use cases:
+Available accessors depend on the language. They support the following use cases:
 
 1. Accessing properties without any 'magic strings' and with IDE auto-complete support.
 2. Accessing a property that has been returned by the data source but did not exist when the 

@@ -2,7 +2,7 @@
 
 # Overview
 
-Key crawler properties include `CrawlerUsage` and `CrawlerProductTokens`. `CrawlerUsage` contains a list of the uses of the crawler data. Crawlers are categorised into one or more of the below crawler usage values based on our judgement of publicly available information from the crawler controller and any research.
+Key crawler properties include `CrawlerUsage` and `CrawlerProductTokens`. `CrawlerUsage` lists how the crawler uses collected data. We assign one or more usage values based on information published by the crawler operator and our research.
 
 
 # Values
@@ -29,7 +29,7 @@ Control what your content can be used for by checking the `CrawlerUsage` propert
 
 - **Feed** Indicates that the crawler is used for aggregating news, information, or data.
 
-- **Discovery** Indicates that the crawler is used to gain an understanding of the discoverability or search ranking of the crawled website or web page. Primarily relating to Search Engine Optimisation (SEO).
+- **Discovery** Indicates that the crawler gathers information about a website's discoverability or search ranking, primarily for search engine optimization (SEO).
 
 
 # IsArtificialIntelligence

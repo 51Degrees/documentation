@@ -15,8 +15,7 @@ the configuration knobs that drive throughput and memory: the
 how the data file is loaded, and the size of the property and value caches.
 Pick a profile, run the example, and use the numbers to decide whether to
 trade memory for throughput on your target hosts. The example covers the
-On-premise Hash engine — Cloud performance is dominated by network round-trip
-and is not benchmarked here.
+on-premise Hash engine. Cloud performance depends on network round-trip time and is not benchmarked here.
 
 The example ships across every supported language with a matching pattern, so
 the same workload can be measured across runtimes.

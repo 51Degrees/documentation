@@ -1,4 +1,4 @@
-@page ReverseGeocoding_Examples_CombiningServices Combined Device Detection + Reverse Geocoding
+@page ReverseGeocoding_Examples_CombiningServices Combine Device Detection and Reverse Geocoding
 
 # Introduction
 

@@ -16,9 +16,7 @@ match with another.
 
 When a hash match occurs, each individual key field value should also be checked 
 for equality between the keys to ensure a true match.
-This is necessary because the possibility space for a large number of keys with arbitrary 
-value types is far larger than that of a 32-bit integer, so hash collisions 
-can occur.
+Different field values can produce the same 32-bit hash code, so compare the fields as well as the hash.
 
 # Usage example
 

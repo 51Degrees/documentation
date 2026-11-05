@@ -25,7 +25,4 @@ requests as the machine has processors, timed in the same way. They include the
 server's own request handling and the program making the requests, so look at
 their trend rather than comparing their values with the other rows.
 
-We run performance tests regularly on GitHub Actions. The performance of this
-may not be as good as a dedicated machine, as it's running on a GitHub runner,
-but gives an indication of consistency. Results from dedicated machines are in
-the [hardware benchmarks](@ref ProductSummaries_Benchmarks_Hardware).
+We run performance tests regularly on GitHub Actions to track consistency over time. Throughput on a hosted runner may differ from throughput on a dedicated machine. See the [hardware benchmarks](@ref ProductSummaries_Benchmarks_Hardware) for dedicated-machine results.

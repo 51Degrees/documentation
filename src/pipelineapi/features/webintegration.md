@@ -2,10 +2,7 @@
 
 # Introduction
 
-One of the primary use cases for the @Pipeline is as part of the request processing for a website 
-or web service. 
-To make using the 51Degrees @Pipeline as simple as possible in this scenario, we
-have produced a range of packages to integrate with different web frameworks.
+Use a web integration package to run the 51Degrees @Pipeline when your website or web service processes a request. Packages are available for the frameworks listed below.
 
 See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/web-integration.md#)

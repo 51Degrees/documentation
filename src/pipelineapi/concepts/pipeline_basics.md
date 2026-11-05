@@ -2,11 +2,10 @@
 
 # 51Degrees Pipeline documentation
 
-The Pipeline API has been created by 51Degrees to remove friction from the process of working with real-time data micro-services.
-It is the mechanism for delivering 51Degrees data services such as device detection but it is more than that.
+Use the 51Degrees Pipeline API to combine real-time data services, including device detection, in one configurable pipeline.
 
 The Pipeline aggregates multiple different services from multiple vendors into a single, simple request.
-The plug-in based architecture makes it easy for new services to be added by third parties. You can also add your own custom elements, taking advantage of the features built into the Pipeline and allowing you to focus on your business logic.
+The plug-in architecture supports third-party services and your own custom elements. Use the built-in Pipeline features to handle common processing tasks while you implement your business logic.
 
 ## Fundamentals
 
@@ -23,7 +22,7 @@ For a deeper understanding of the Pipeline concept, start with the @Pipeline pag
 
 ## Key features
 
-- Seamless switching between On-premise data and cloud backed data services.
+- Switch between on-premise data and cloud-backed data services.
 - Automatic updating of On-premise data files from a configurable central service, including in place updates to avoid the need to interrupt running processes.
 - For web environments, JavaScript bundling to improve client side performance and network efficiency.
 - Support for high performance native data processing libraries via SWIG.

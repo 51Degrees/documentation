@@ -2,8 +2,7 @@
 
 # Introduction
 
-This example shows how to get set up web app which runs the @Pipeline 
-with a simple configuration.
+This example shows how to set up a web application that runs the @Pipeline with a simple configuration.
 
 Evidence is automatically passed from the web request to the Pipeline. 
 Depending on the language, implementation of features such as 
