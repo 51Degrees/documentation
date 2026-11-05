@@ -27,7 +27,7 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 
 **Coordinate randomization**: 51Degrees randomizes `Latitude` and `Longitude` within around 1 km of the true average location for the IP range. The randomization is applied during data file generation, so the value returned for a given IP address is stable across all lookups against the same data file and only changes when a new data file is published. This guarantees the coordinates cannot be classified as personal data. No other property is affected. See [Randomization](@ref IpIntelligence_Features_Randomization).
 
-**Location confidence**: 51Degrees rolls up location certainty into a single string-valued `LocationConfidence` property covering the town and country. IPInfo's `radius` field expresses accuracy as a numeric kilometer figure; the closest categorical 51Degrees equivalent is `LocationConfidence`, which complements the numeric `AccuracyRadiusMax` and `AccuracyRadiusMin` properties. See the [property dictionary](https://51degrees.com/developers/property-dictionary) for the set of possible values.
+**Location confidence**: 51Degrees rolls up location certainty into a single string-valued `LocationConfidence` property covering the town and country. IPInfo's `radius` field expresses precision as a numeric kilometer figure; the closest categorical 51Degrees equivalent is `LocationConfidence`, which complements the numeric `AccuracyRadiusMax` and `AccuracyRadiusMin` properties. See the [property dictionary](https://51degrees.com/developers/property-dictionary) for the set of possible values.
 
 # ASN product
 

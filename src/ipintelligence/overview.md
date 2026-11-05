@@ -34,7 +34,7 @@ Data sourced from aggregating real device usage and multiple authoritative datab
 
 ### Privacy Protections
 
-Coordinates returned for an IP address are [randomized](@ref IpIntelligence_Features_Randomization) to within 1km of the original point, which keeps them accurate enough for practical applications.
+Coordinates returned for an IP address are [randomized](@ref IpIntelligence_Features_Randomization) to within 1km of the original point, which keeps them precise enough for practical applications.
 
 ### Accuracy Weighting
 
