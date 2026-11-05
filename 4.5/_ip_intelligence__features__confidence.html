@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <p>Always check the value of <code>LocationConfidence</code> when determining how to use IP Intelligence results.</p>
 <ul>
 <li><b>High</b> confidence results can be relied upon and considered useful for all practical purposes.</li>
-<li><b>Medium</b> confidence results might be useful where the use case can tolerate a degree of inaccuracy.</li>
+<li><b>Medium</b> confidence results might be useful where the use case can tolerate a degree of imprecision.</li>
 <li><b>Low</b> or <b>Unknown</b> confidence results should be discarded when the results might be used to make consequential decisions. Instead of using the results consider asking the user to share their location via device APIs such as GPS and then using reverse geocoding, or enter their postal address manually. Subsequent processing may also be similar to handling an exception when obtaining the result.</li>
 </ul>
 <p>See the <a href="https://51degrees.com/developers/property-dictionary?item=Location%7CCoordinates%20Accuracy">property dictionary</a> for more information. </p>
