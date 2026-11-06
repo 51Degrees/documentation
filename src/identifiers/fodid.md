@@ -1,13 +1,13 @@
 @page Identifiers_51Did 51Did (51Degrees Identifier)
 
-A signed envelope, encoded as an <a href="https://github.com/SWAN-community/owid/blob/main/explainer.md">OWID - Open Web ID</a> (the SWAN community schema that defines the binary layout, signature, and verification rules), wrapping a **probabilistic value** that two recipients can compare to decide whether they have observed the same browser instance under the same usage purpose.
+A signed envelope, encoded as an <a href="https://github.com/SWAN-community/owid/blob/main/explainer.md">OWID - Open Web ID</a> (the SWAN community schema that defines the binary layout, signature, and verification rules), wrapping a **probabilistic value** that two recipients can compare to decide whether they have observed the same browser instance. The usage purpose is recorded separately in the payload and is not part of that value.
 
 ## Terminology
 
 A 51Did has two layers, the signed identifier and the match key inside its payload.
 
 - The **51Did** is the **identifier**, the whole base64 OWID envelope (version, domain, date, payload, signature). It changes byte-for-byte every time the cloud issues one, even for the same inputs, because the date and signature change with each call.
-- The **match key** is the part of the payload that is stable and comparable, being the bytes after the flags byte and the License Id, which for the probabilistic type is a 32-byte hash. It is the same across reissues for the same device + IP + usage, meaning that if two 51Dids were issued for the same inputs, their match keys are equal even though the wrapping identifiers differ. Every reader exposes it under that name, `MatchKey` in .NET. Earlier text and an older .NET property called it the probabilistic value, or `Hash`, and those mean the same bytes.
+- The **match key** is the part of the payload that is compared, being the 32 bytes after the flags byte and the License Id, or 16 bytes for the random type. For the probabilistic type it is a hash that is the same across reissues for the same device + IP + usage, and for the hashed email type a hash that is the same for the same email address and salt, meaning that if two 51Dids of either type were issued for the same inputs, their match keys are equal even though the wrapping identifiers differ. For the random type it is new on every call. Every reader exposes it under that name, `MatchKey` in .NET. Earlier text and an older .NET property called it the probabilistic value, or `Hash`, and those mean the same bytes.
 
 Comparing two browsers means comparing the match keys carried inside their identifiers, never the identifiers themselves. The envelope also carries the identifier's creation time, to the minute in UTC, so how old a 51Did is can be read from the identifier with no other call. Calling either layer "the identifier" without qualification leads to incorrect comparisons, and calling the inner field "the probabilistic identifier" is the same confusion under another name. The [51Did specification](https://github.com/51Degrees/specifications/tree/main/did-specification) defines the layers, byte layout, and reader requirements summarized on this page.
 
@@ -24,10 +24,10 @@ Derived from three inputs:
 The value inside the envelope comes in three types. Bits 6-7 of the payload flags byte (see *Payload layout* below) record which one a given 51Did carries.
 
 - **Probabilistic** - a 32-byte SHA-256 derived from the Device ID and the client IP. The same device on the same network produces the same value for every caller, with no inputs beyond the usual Device Detection evidence and `id.usage`. This is the value the rest of this page uses in its examples.
-- **Random** - a fresh, server-generated 16-byte GUID rather than a derived hash. The cloud neither stores nor echoes it, so it is not stable across calls. No inputs beyond `id.usage` are needed.
-- **Hashed Email** - a 32-byte SHA-256 of a caller-supplied email and a 2-byte salt, `SHA-256(lowercase(trim(email)) || saltBytes)`. The same email and salt always produce the same value for every caller. Requires the `id.email` input described under *Request inputs*, with the salt taken from `id.salt` or falling back to a salt configured by 51Degrees.
+- **Random** - a 16-byte GUID rather than a derived hash. For every identifier it creates, the cloud generates a new version 4 UUID as defined in [RFC 9562 section 5.4](https://www.rfc-editor.org/rfc/rfc9562#section-5.4), whose 128 bits are 122 random bits plus the version and variant bits. The match key holds those 16 bytes in the order .NET's `Guid.ToByteArray()` writes them, with the first three fields least significant byte first, so counting from byte 0 the version `4` is in the top four bits of byte 7 and the variant `10` is in the top two bits of byte 8. For the usual text form, read the bytes with .NET's `new Guid(byte[])`, or reverse the order within bytes 0 to 3, within bytes 4 and 5, and within bytes 6 and 7 before writing them as hex. The cloud neither stores nor echoes the value, so a random match key is not stable across calls, and the two random properties in one response carry different values. No inputs beyond `id.usage` are needed.
+- **Hashed Email** - a 32-byte SHA-256 of a caller-supplied email address and a salt of 2 to 64 bytes, `SHA-256(saltLength || salt || UTF-8(lowercase(trim(email))))`, where `||` joins bytes and `saltLength` is one byte holding the number of bytes in the salt. The salt goes first, behind its length, so two different pairs of email and salt never give the hash the same bytes. The 32 bytes of the hash are the match key, with no further encoding. The same email and salt always produce the same value for every caller, whatever the usage. Requires the `id.email` input described under *Request inputs*, with the salt taken from `id.salt` or falling back to a salt configured by 51Degrees. For example, `id.email=User@Example.COM` with `id.salt=Npw`, being the two bytes `36 9C`, hashes the bytes `02 36 9C` followed by the UTF-8 bytes of `user@example.com` and gives the match key `747e0f5f09ae03849ce0fc00c0579a2c8bf0b1a3146ca2e8f47c6b6e12e35287`, shown here in hex.
 
-Each type is offered in two scopes: **global** (one value across all callers) and **lic** (scoped to your License Key), see *Properties*.
+Each type is offered in two scopes, **global** and **lic**, see *Properties*. Only the probabilistic type's value depends on the scope, being one value across all callers for global and a value scoped to your License Key for lic. The random and hashed email types are made the same way in both scopes, so the two hashed email properties carry the same match key and each random property gets a new value of its own. A lic property of any type is issued only when the request carries a License Key, added to the Resource Key or sent beside it.
 
 ## Usage flags
 
@@ -52,18 +52,18 @@ Each property returns a full 51Did identifier (the OWID envelope, signed). The v
 | `fodid.idprobglobal` | Probabilistic | Unique across all callers from device+network. |
 | `fodid.idproblic`    | Probabilistic | Unique only across the caller's License Key.   |
 | `fodid.idrandglobal` | Random        | Unique across all callers.                     |
-| `fodid.idrandlic`    | Random        | Unique only across the caller's License Key.   |
+| `fodid.idrandlic`    | Random        | Made the same way as `fodid.idrandglobal`, and issued only with a License Key. |
 | `fodid.idhemglobal`  | Hashed Email  | Unique across all callers.                     |
-| `fodid.idhemlic`     | Hashed Email  | Unique only across the caller's License Key.   |
+| `fodid.idhemlic`     | Hashed Email  | The same match key as `fodid.idhemglobal`, issued only with a License Key. |
 
 ## Request inputs
 
 - **Evidence** - Device Detection evidence (User-Agent / UA-CH) AND client IP (`client-ip` query parameter, `client-ip` HTTP header, or the server-supplied client IP).
 - **Usage policy** - the request's `id.usage` value. Supplied either directly or derived by the cloud from a consent string, as described under *Setting the usage policy* below.
-- **`id.email`** (Hashed Email only) - raw email address. The cloud trims and lowercases it and applies no other transform.
-- **`id.salt`** (Hashed Email only) - URL-safe base64 of a 2-byte salt chosen by the caller, e.g. `Npw`. When the request does not supply one, a salt configured by 51Degrees is used instead.
+- **`id.email`** (Hashed Email only) - raw email address, sent as a query parameter or HTTP header. The value has to parse as an email address. The cloud removes leading and trailing white space, then lowercases the value by rules that do not depend on language (for ASCII, `A` to `Z` become `a` to `z`) and encodes the result as UTF-8. It applies no other transform, so dots and `+` suffixes are kept as sent. The whole value is hashed, so a display name sent with the address, as in `Jo <jo@example.com>`, is accepted and becomes part of the hash. Send the bare address.
+- **`id.salt`** (Hashed Email only) - the salt chosen by the caller, 2 to 64 bytes written as URL-safe base64 ([RFC 4648 section 5](https://www.rfc-editor.org/rfc/rfc4648#section-5)) with or without `=` padding, sent as a query parameter or HTTP header, for example `Npw` for the two bytes `36 9C`. A value containing `+` or `/`, the standard base64 characters, is refused. When the request sends no `id.salt` at all, the 51Degrees cloud uses a salt of its own that 51Degrees does not publish, so a match key made that way is the same for the same email on every call and for every caller, but cannot be reproduced outside the cloud. The self-hosted container does not carry that salt, so a Hashed Email 51Did from the container needs `id.salt`.
 
-If a Hashed Email property is requested without `id.email`, or with an `id.salt` value that is not valid URL-safe base64 of 2 bytes, the property is returned with a no-value reason naming the problem. An invalid salt is never silently replaced, as re-salting would hand the caller a different identifier with nothing to say why. The supplied values are never echoed back. The raw `id.email` value is used only to compute the hash, and it is not logged, not shared in usage statistics, and not retained.
+If a Hashed Email property is requested without `id.email`, with an `id.email` value that is not an email address, or with an `id.salt` value that is not URL-safe base64 of 2 to 64 bytes, the property is returned with a no-value reason naming the problem. The exception is a request whose only 51Did properties are Hashed Email ones and that sends neither `id.email` nor `id.salt`, which gets no `fodid` section at all. Where a request sends `id.email` or `id.salt` both as a query parameter and as a header, the first valid value is used, taking the query parameter first. An invalid salt is never replaced by the 51Degrees salt, as re-salting would hand the caller a different identifier with nothing to say why. The supplied values are never echoed back. The raw `id.email` value is used only to compute the hash, and it is not logged, not shared in usage statistics, and not retained.
 
 ## When the identifier is created
 
@@ -190,7 +190,7 @@ Every reader exposes the same surface, set out in the [package surface](https://
 
 ## Comparing two 51Dids
 
-Two 51Dids issued for the same device + IP + usage will differ at the byte level because the envelope embeds a fresh timestamp and signature on each call. The byte-level difference is in the **identifier** (the wrapper), whereas the **match key** carried inside is stable across reissues. To decide whether the two refer to the same browser instance, compare the match keys, never the full base64 identifiers.
+Two 51Dids issued for the same device + IP + usage will differ at the byte level because the envelope embeds a fresh timestamp and signature on each call. The byte-level difference is in the **identifier** (the wrapper), whereas the **match key** carried inside is stable across reissues. The random types are the exception, as their match key is new on every call. To decide whether the two refer to the same browser instance, compare the match keys, never the full base64 identifiers.
 
 The match key is one of the fields the reader exposes after parsing the payload, named in each language's own style, being `MatchKey` in .NET, `getMatchKey()` in Java and PHP, `matchKey` in Node.js, `match_key` in Python, and `match_key()` in Rust. Treat it as the key for caching and for spotting duplicates.
 
