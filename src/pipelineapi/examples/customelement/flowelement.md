@@ -1,10 +1,8 @@
-@page PipelineApi_Examples_CustomElement_FlowElement Simple Custom Flow Element
+@page PipelineApi_Examples_CustomElement_FlowElement Simple custom flow element
 
 # Introduction
 
-This example shows a very simple @flowelement which takes a date of birth
-and returns a star sign. Although a basic (and not all that useful) @flowelement, the
-example demonstrates how you can start to implement your own @flowelements.
+Build a @flowelement that takes a date of birth and returns a star sign. Use this example as a starting point for your own @flowelements.
 
 # Download example
 
@@ -35,16 +33,15 @@ To include this, add the following to the `<dependencies>` section of the projec
 <dependency>
     <groupId>com.51degrees</groupId>
     <artifactId>pipeline.core</artifactId>
-    <version>4.2.0</version>
+    <version>4.5.128</version>
 </dependency>
 ```
 @endsnippet
 @startsnippet{php}
-Add a dependency to the `fiftyone.pipeline.core` composer package to the composer.json, and required it in the source with `include("../vendor/autoload.php");`
+Add the `fiftyone.pipeline.core` Composer package as a dependency in composer.json, then load it with `include("../vendor/autoload.php");` in your source.
 @endsnippet
 @startsnippet{node}
-Add a dependency to the `fiftyone.pipeline.core` NPM package to the package.json, and required it
-in the source with `require("fiftyone.pipeline.core")`.
+Add the `fiftyone.pipeline.core` npm package as a dependency in package.json, then load it in your source with `require("fiftyone.pipeline.core")`.
 @endsnippet
 @endsnippets
 
@@ -193,9 +190,7 @@ Now the abstract methods can be implemented to create a functional @flowelement.
 
 # Builder
 
-Now the @flowelement needs one final thing, an @elementbuilder to construct it.
-This only needs to provide the @flowelement with a logger and an @elementdata factory -
-as this example has no extra configuration options.
+Create an @elementbuilder that constructs the @flowelement with a logger and an @elementdata factory. This example has no additional configuration options.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -271,16 +266,6 @@ This new @flowelement can now be added to a @pipeline and used like:
 @snippet "simpleEvidenceFlowElement.js" usage
 
 To print the star sign of the user.
-@endsnippet
-@startsnippet{java}
-This new @flowelement can now be added to a @pipeline and used like:
-
-@snippet "pipeline.developer-examples.flowelement/src/main/java/pipeline/developerexamples/flowelement/Main.java" usage
-
-to give an output of:
-```{bash}
-With a date of birth of 18/12/1992, your star sign is Sagittarius.
-```
 @endsnippet
 @endsnippets
 

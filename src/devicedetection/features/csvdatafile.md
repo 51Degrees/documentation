@@ -1,17 +1,17 @@
-@page DeviceDetection_Features_CsvDataFile CSV Data File
+@page DeviceDetection_Features_CsvDataFile CSV data file
 
 # Overview
 
 As well as providing device detection, we also offer access to a CSV version of our data.
 This includes all property values for all profiles (hardware, platform, browser, and crawler). It does not include any information to help determine device details from User-Agent or UA-CH values.
 
-# Use Cases
+# Use cases
 
-This data may be used to lookup details using some other key such as TAC or the model name returned by native apps running on the device. 
+Use this data to look up device details by a key such as a TAC or a model name returned by a native app.
 
-It can also be used to obtain sets of possible values for each value (this can also be accessed using the API with the standard data file – see the [metadata examples](@ref DeviceDetection_Examples_Metadata_Index))
+Use it to obtain the possible values for each property. You can also access these values through the API with the standard data file, as shown in the [metadata examples](@ref DeviceDetection_Examples_Metadata_Index).
 
-You may load the data into a database or similar indexing system if you wish. The unique keys (profile id) for each profile are included in the CSV. These values are also returned by the device detection API. One use for this would be to store the profile ids along with other details related to the request. Later, some offline process could then use the profile ids to lookup the corresponding device values in the database, rather than needing to do device detection on the original evidence again.
+You can load the CSV into a database or another indexing system. The CSV includes unique profile IDs, which the device detection API also returns. Store these IDs with request details so that an offline process can look up device values later without repeating detection on the original evidence.
 
 # How do I get it?
 

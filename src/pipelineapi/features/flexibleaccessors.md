@@ -1,20 +1,16 @@
-@page PipelineApi_Features_FlexibleAccessors Flexible Accessors
+@page PipelineApi_Features_FlexibleAccessors Flexible accessors
 
 # Introduction
 
-The @Pipeline API has been designed to be easy to use, adding IDE auto-complete support where possible. 
-However, one of our key design goals was to allow new properties to be added without the API software 
-needing to be updated. These goals are often in conflict and lead to the creation of several possible 
-mechanisms to retrieve property values.
+The @Pipeline API supports IDE auto-completion where possible. You can also retrieve properties added to a data source after your API software was compiled. The access methods below support these different requirements.
 
 See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/access-to-results.md#)
 for more technical details.
 
-# Detail
+# Ways to access properties
 
-The precise nature of the available accessors depend on the language being used but we have aimed 
-to support the following use cases:
+Available accessors depend on the language. They support the following use cases:
 
 1. Accessing properties without any 'magic strings' and with IDE auto-complete support.
 2. Accessing a property that has been returned by the data source but did not exist when the 
@@ -44,7 +40,7 @@ If you have an instance of the element that you want to get data for, this can a
 get the data populated by that instance:
 
 ```{cs}
-var deviceData = flowdata.getFromElement(deviceDetectionEngine);
+var deviceData = flowdata.GetFromElement(deviceDetectionEngine);
 ```
 
 After you have the specific element data instance, the individual properties can be accessed as 
@@ -155,14 +151,14 @@ For example, if you are using the 51Degrees device detection engine then after t
 you can request the device data from it:
 
 ```{php}
-$deviceData = flowdata->device;
+$deviceData = $flowdata->device;
 ```
 
 If you have an instance of the element that you want to get data for, this can also be used to get the 
 data populated by that instance without having to know the associated name:
 
 ```{php}
-$deviceData = $flowdata->getFromElement(deviceDetectionEngine);
+$deviceData = $flowdata->getFromElement($deviceDetectionEngine);
 ```
 
 After you have the specific element data instance, the individual properties can be accessed using normal property accessors. 
@@ -175,7 +171,7 @@ $flowdata->device->ismobile;
 ```
 @endsnippet
 @startsnippet{python}
-In python, auto-complete support is not feasible so you need to know the name of the element and property that you're accessing.
+In Python, auto-complete support is not feasible so you need to know the name of the element and property that you're accessing.
 For example, if you are using the 51Degrees device detection engine then after the @flowdata has been processed, 
 you can request the device data from it:
 

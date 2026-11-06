@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine 51Degrees On-premise Engine
+@page PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine 51Degrees on-premise engine
 
 # Introduction
 
@@ -6,12 +6,7 @@ A **51Degrees On-premise Engine** adds functionality to an @onpremiseengine that
 specific to 51Degrees. @Metadata is exposed which relates to the data structure
 common to most 51Degrees data files.
 
-In many cases, a **51Degrees engine** contains a [native](@term{NativeCode}) binary which
-the **engine** acts as a wrapper for. This gives the improved performance achievable with [native](@term{NativeCode}) code,
-while still seamlessly slotting in with the target language (it is not always obvious that a 
-[native](@term{NativeCode}) binary has been used). It also means that all languages the **engine** is
-implemented in can more readily benefit from any optimizations or features which are added to the
-[native](@term{NativeCode}) library.
+Many **51Degrees engines** wrap a [native](@term{NativeCode}) binary and expose it through the target language's interface. These wrappers share the optimizations and features implemented in the [native](@term{NativeCode}) library.
 
 See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#On-premise-engines)
@@ -64,9 +59,9 @@ The metadata contained in a **value** is:
 ## Components {#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components}
 A **component** defines a group of **properties** that are related.
 
-In a 51Degrees data set, a **property** only exists in a single **component**. For example, the ``Browser Name``
-**property** is part of the ``Software`` **component**, whereas the ``Model Name`` **property** is part of
-the ``Hardware`` **component**.
+In a 51Degrees data set, a **property** only exists in a single **component**. For example, the ``BrowserName``
+**property** is part of the ``BrowserUA`` **component**, whereas the ``HardwareModel`` **property** is part of
+the ``HardwarePlatform`` **component**.
 
 The metadata contained in a **component** is:
 
@@ -74,15 +69,14 @@ The metadata contained in a **component** is:
 | -------- | ----------- |
 | Id       | The unique id of the **component**. This is usually a number and will remain the same when a data file is updated. |
 | Name     | The name of the **component** that gives a more 'human' identifier than id. By convention, this is unique within the data file. |
-| Default profile| The default **profile** for the **component**. This is used to provide **values** for the **component's** **properties** when a **profile** matching the @evidence cannot be found. |
+| Default profile| The default **profile** for the **component**. When the **engine** allows unmatched results, this is used to provide **values** for the **component's** **properties** when a **profile** matching the @evidence cannot be found. |
 | Properties| The **properties** associated with this **component**. |
 
 
 ## Profiles {#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles}
 A **profile** defines a unique set of **values** for all **properties** of a single **component**. 
 
-An **engine** will populate @aspectdata with at least one **profile** for each **component** 
-in the data file. This means that all properties should be able to present a value, even if that value is 'Unknown'. 
+An **engine** populates @aspectdata with the **profiles** matched for each **component**. By default, when no **profile** matches for a **component**, that **component's** properties have no value, so check that a value is available before using it. When the **engine** is configured to allow unmatched results, as the `AllowUnmatched` option does for Device Detection, the **component's** default **profile** is used instead and its properties return default values such as 'Unknown'. See [false positives](@ref DeviceDetection_Features_FalsePositiveControl).
 
 Internally, this is how **values** are stored in @elementdata once @evidence has been processed. However,
 these **profiles** are also exposed directly as @metadata so all possible results can be interrogated.

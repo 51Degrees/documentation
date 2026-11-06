@@ -1,9 +1,7 @@
 @htmlonly
 <p>
 To run this example, you will need to create a <strong>Resource Key</strong>.
-The Resource Key is used as shorthand to store the particular set of
-properties you are interested in as well as any associated License Keys
-that entitle you to increased request limits and/or paid-for properties.
+The Resource Key stores your selected properties and any associated License Keys that allow more requests or access to paid properties.
 </p>
 <p>
 You can create a Resource Key at

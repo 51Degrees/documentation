@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_FlowElements_CloudEngine Cloud Engine
+@page PipelineApi_Concepts_FlowElements_CloudEngine Cloud engine
 
 # Introduction
 
@@ -18,9 +18,7 @@ This is because all the complex processing and any data that is required for tha
 by the associated [Cloud Service](@term{CloudService}). The trade-off is that a **Cloud Engine**
 cannot provide the same performance as an @onpremiseengine.
 
-In many cases, a **Cloud Engine's** performance is sufficient and is ideal for small environments where
-memory is in short supply. On small services such as a cloud Lambda function where there are low limits to the size of
-the services, **Cloud Engines** are a perfect fit.
+Consider a **Cloud Engine** when local memory is limited, such as in a small Lambda function. Account for the latency of requests to the cloud service.
 
 As **Cloud Engines** typically offload the actual processing onto a [Cloud Service](@term{CloudService}), this
 also makes them a good choice for environments that lack processing power. By letting a
@@ -37,7 +35,7 @@ populated from a request to the [Cloud Service](@term{CloudService}).
 Typically, a **Cloud Engine** does not carry out processing itself. Instead, its processing consists of sending
 a call to a [Cloud Service](@term{CloudService}) and interpreting the result.
 
-# 51Degrees Cloud Engines
+# 51Degrees cloud engines
 
 The functionality of all @aspectengines that make use of the 51Degrees cloud is split into two 
 separate @aspectengines.

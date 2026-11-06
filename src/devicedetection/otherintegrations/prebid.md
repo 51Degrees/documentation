@@ -1,7 +1,7 @@
 @page DeviceDetection_OtherIntegrations_Prebid Prebid (Moved)
 
-# Location Changed
+# Prebid integration documentation
 
-The Prebid integration is now part of the broader 51Degrees data-enrichment story - Device Detection, 51Did, and IP Intelligence - and is no longer a device-detection-only feature.
+The Prebid integration covers Device Detection, 51Did, and IP Intelligence.
 
-This page has been moved to [Integrations -> Prebid](_integrations__prebid.html).
+See [Integrations -> Prebid](_integrations__prebid.html) for the documentation.

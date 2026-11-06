@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_UACH_Headers HTTP Headers
+@page DeviceDetection_Features_UACH_Headers HTTP headers
 
 # Introduction
 
@@ -10,15 +10,11 @@ The [Overview page](@ref DeviceDetection_Features_UACH_Overview) includes advice
 
 # Background
 
-In the past, device detection worked primarily by examining the 
-value of the User-Agent HTTP header. This header is always sent as part 
-of the first request to a web server, meaning device information was 
-available immediately on the server-side.
+Device detection can use the User-Agent HTTP header when it is present in the first request.
 
 With UA-CH, only a limited subset of information is sent as part of the 
 first request.
-If the server wishes to know more, then it needs to set a HTTP header in
-the response to request the additional detail.
+To request more detail, set an HTTP response header.
 
 The 51Degrees API will automatically determine the names and values of
 any response headers that need to be set based on the initial information.
@@ -70,9 +66,7 @@ Permissions-Policy: ch-ua-full-version-list=(self "https://cloud.51degrees.com")
 If you are using our Pipeline API on your server (either cloud or On-premise) then you'll
 need a way to set the `Accept-CH` header in the response to the client.
 
-In either case, you need to ensure the relevant `SetHeaderBrowserAccept-CH`, `SetHeaderHardwareAccept-CH` and 
-`SetHeaderPlatformAccept-CH` properties are included in the results (all properties are included 
-by default for On-premise).
+Include the relevant `SetHeaderBrowserAccept-CH`, `SetHeaderHardwareAccept-CH`, and `SetHeaderPlatformAccept-CH` properties in the results. On-premise detection includes all properties by default.
 If you're unsure which ones are relevant for you, see the 
 [required values](@ref DeviceDetection_Features_UACH_RequiredUachHeaders) page.
 
@@ -111,8 +105,7 @@ such that the web application may not function without them. When the browser su
 it checks if the indicated Client Hints were sent in the original request, and if not, immediately makes another request supplying 
 the missing Client Hints.   
 
-This has to be used with caution for it may often cause another round trip for the client. We recommend only using `Critical-CH` if you need to do the 
-device detection immediately on the very first request from the user. 
+Use `Critical-CH` only when you need device detection on the first request, because it can cause an additional browser round trip.
 
 In that case, the application or middleware logic must 
 consider if the Client Hints necessary for the device detection were missing. If the Client Hints were missing, the application or 
@@ -125,10 +118,8 @@ Critical-CH: sec-ch-ua-arch, sec-ch-ua-full-version, sec-ch-ua-full-version-list
 Accept-CH:  sec-ch-ua-arch, sec-ch-ua-full-version, sec-ch-ua-full-version-list, sec-ch-ua-model, sec-ch-ua-platform, sec-ch-ua-platform-version
 ```
 
-## B2B Service Supplier {#UACH_Http_Headers_BtoB}
-If your service would be classed as a third-party in the 'browser to web server' communication, 
-then you'll also need to arrange for your clients to let their users know that it's okay to
-send your server UA-CH values.
+## B2B service supplier {#UACH_Http_Headers_BtoB}
+If your service receives requests as a third party, ask your customers to configure their websites so that browsers can send UA-CH values to your service.
 This is because the 'high-entropy' UA-CH values are not sent to third-parties by default.
 
 In order to do this, you'll need to ask your customers to use the `Delegate-CH` HTML directive or

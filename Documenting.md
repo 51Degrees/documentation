@@ -301,7 +301,7 @@ This contains the structure of the navigation. First there is the main page (def
 
 
 # General Standardization
-All headings should be written in Title Case. e.g. 'Last of the Mohican's'
+All headings should be written in sentence case, with capitals only for the first word, product names such as Device Detection and IP Intelligence, and other names. e.g. 'How the cloud service works'
 
 Use single quotation when  enclosing text.
 

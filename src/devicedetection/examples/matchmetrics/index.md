@@ -1,3 +1,3 @@
-@page DeviceDetection_Examples_MatchMetrics_Index Match Metrics
+@page DeviceDetection_Examples_MatchMetrics_Index Match metrics
 
 @subpage DeviceDetection_Examples_MatchMetrics_OnPremiseHash

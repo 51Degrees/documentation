@@ -1,20 +1,18 @@
-@page PipelineApi_Features_AgentSignature Agent Signatures
+@page PipelineApi_Features_AgentSignature Agent signatures
 
 # Introduction
 
-An **agent** is a program that fetches pages on someone's behalf, such as a
-search crawler or an assistant acting for a user, rather than a person using
-a browser. Most agents can only be recognized by what they say about
-themselves, and anything an agent says about itself can be copied by
-something else.
+An **agent** works for a user on a specific task. A search crawler collects pages for its operator. Most of these programs can only be recognized by what they declare about themselves, which another program can copy.
 
-**Web Bot Auth** is an IETF protocol that lets an agent prove who it is
+**Web Bot Auth** is a protocol, still an IETF draft, that lets an agent prove who it is
 instead. The agent holds a private key, publishes the matching public key at
 an address on its own website, and signs each request it sends. A website
-can then check the signature against the published key. A signature either
-checks out or it does not, and it cannot be produced without the private
-key, so this is the one signal in bot detection that is proof rather than
-inference.
+can then check the signature against the published key. A valid signature
+cannot be produced without the private key, so it proves that a holder of a
+key the agent publishes signed the request, which is proof rather than
+inference. A valid signature does not prove who sent the request, because a
+signed request can be replayed until its signature expires, and a signature
+says nothing about whether the agent can be trusted.
 
 The **agent signatures** @flowelement reads the three request headers that a
 signed request carries, checks the signature, and adds an @elementdata to
@@ -34,13 +32,7 @@ Signature: sig=:abc==:
   the signature was made, when it stops being valid, and which key was used.
 - `Signature` carries the signature itself.
 
-Three more terms are used below. A **directory** is the small JSON document
-that an agent publishes at a well known address on its site, holding the
-public keys it signs with. A **thumbprint** is a short fingerprint of a
-public key, worked out from the key itself, which is how the request names
-the key it used without sending the whole key. The **signature base** is the
-exact block of text the agent signed, which the element rebuilds from the
-parts of the request the agent said it covered.
+A **directory** is a JSON document an agent publishes at a well-known address on its site. It holds the agent's public signing keys. A **thumbprint** is a short identifier derived from a public key, so a request can name the key without sending it. The **signature base** is the exact text the agent signed, reconstructed from the request components it covered.
 
 Only a handful of agents sign today, OpenAI's ChatGPT agent among them, so
 almost every request reports the `Absent` status. An absent signature is
@@ -55,14 +47,12 @@ the authority has to be rebuilt from those two before the signature can be
 checked. The @webintegration adds every header automatically.
 
 The standards behind this feature are the IETF Web Bot Auth protocol draft,
-[draft-ietf-webbotauth-httpsig-protocol-00](https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/),
-with its companion drafts for the
-[key directory](https://datatracker.ietf.org/doc/html/draft-meunier-webbotauth-httpsig-directory)
-and the
-[agent card](https://datatracker.ietf.org/doc/html/draft-meunier-webbotauth-registry-03),
+[draft-ietf-webbotauth-httpsig-protocol-01](https://datatracker.ietf.org/doc/html/draft-ietf-webbotauth-httpsig-protocol-01),
+which also defines the key directory, with its companion draft for the
+[agent card](https://datatracker.ietf.org/doc/html/draft-meunier-webbotauth-registry-04),
 built on
 [RFC 9421](https://datatracker.ietf.org/doc/html/rfc9421) for HTTP message
-signatures and [RFC 8941](https://datatracker.ietf.org/doc/html/rfc8941) for
+signatures and [RFC 9651](https://datatracker.ietf.org/doc/html/rfc9651) for
 the header syntax.
 
 See the
@@ -71,10 +61,7 @@ for more technical details.
 
 # Properties {#AgentSignature_Properties}
 
-The element adds twelve properties. Every one of them can report that it has
-no value together with a message saying why, so a detail that was not sent
-never looks like an answer. Only `AgentSignature` and `AgentSignatureReason`
-always have a value.
+The element adds twelve properties. `AgentSignature` and `AgentSignatureReason` always have values. Each other property can have no value and a message explaining why.
 
 | Property                     | Type      | When it has a value                                                                                                                                       |
 | ---------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -187,12 +174,7 @@ fetch them. The first time a signed request arrives from an agent that this
 @Pipeline has not seen before, the keys are not held yet and a request over
 the network has to be made.
 
-That fetch does not hold up your page. The request waits for the fetch only
-for the wait budget, 350 milliseconds by default. If the keys have not
-arrived by then, the request reports `Timeout` with the `DirectoryPending`
-reason and carries on through the @Pipeline, while the fetch keeps running
-in the background. The next request from that agent, moments later, finds
-the keys already there and reports `Verified`.
+The request waits for the fetch up to the wait budget, 350 milliseconds by default. If the keys have not arrived, the request reports `Timeout` with the `DirectoryPending` reason and continues through the @Pipeline while the fetch runs in the background. After a successful fetch, later requests can use the cached keys. A request reports `Verified` only if its signature passes verification.
 
 **This means the very first request from a new agent can report `Timeout`,
 and that is deliberate rather than a fault.** The alternative would be to
@@ -229,16 +211,20 @@ The address the keys are fetched from also comes from the request, so the
 element checks an address before making a request to it rather than
 trusting it:
 
-- Keys are only ever fetched over HTTPS. The protocol draft permits plain
-  HTTP and 51Degrees does not, because a key fetched over plain HTTP proves
+- Keys are only ever fetched over HTTPS, as the protocol draft requires
+  of a key directory, because a key fetched over plain HTTP proves
   nothing about who published it.
 - An address carrying user information before an `@`, or written as an IP
   address in a range that only appears inside a network, such as a
   loopback, private, link local, carrier grade or IPv6 unique local range,
   is refused, because a sender-chosen address in one of those ranges is how
   a server is made to fetch its own internal services.
-- Redirects are not followed on directory and agent card fetches, so the
-  document read is always the one at the address that was checked.
+- The element's own client does not follow redirects, and a directory or
+  agent card that arrives from any address other than the one checked is
+  refused, so the document read is always the one at the address that was
+  checked. If you supply a client with `SetHttpClient`, turn its redirects
+  off as well, because a client that follows a redirect still sends a
+  request to the new address before the answer is refused.
 - No more than `SetMaxResponseBytes` is read from any response, so a
   request cannot point the element at an endless document.
 

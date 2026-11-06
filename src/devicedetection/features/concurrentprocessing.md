@@ -1,17 +1,14 @@
-@page DeviceDetection_Features_ConcurrentProcessing Concurrent Processing
+@page DeviceDetection_Features_ConcurrentProcessing Concurrent processing
 
 # Introduction
 
-When using a @PerformanceProfile that loads collections completely into memory, the API's ability
-to handle concurrent requests is only limited by the available hardware resources. However, when
-using a lower memory @PerformanceProfile where collections are partially or fully read from file,
-consideration needs to be given to how many parallel threads will be accessing the @Pipeline. 
+With a @PerformanceProfile that loads collections completely into memory, available hardware limits concurrent requests. When collections are read partly or entirely from a file, configure concurrency for the number of threads that will access the @Pipeline.
 
 See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/advanced-features/parallel-processing.md#)
 for more technical details.
 
-# Detail
+# Configure concurrency
 
 For @PerformanceProfiles such as `LowMemory` and `Balanced`, the concurrency is limited by the number
 of file handles available in the file pool. In most implementations, the default value for this is
@@ -102,7 +99,7 @@ Or in config file:
         {
             "elementName": "deviceDetectionOnPremise",
             "elementParameters": {
-                "performanceProfile": "LowMemmory",
+                "performanceProfile": "LowMemory",
                 "dataFilePath": "51Degrees-LiteV4.1.hash",
                 "concurrency": 30
             }
@@ -113,7 +110,7 @@ Or in config file:
 ```
 @endsnippet
 @startsnippet{php}
-For PHP, the concurrency options is set in the php.ini file.
+For PHP, set the concurrency option in the php.ini file.
 ```
 extension=/usr/lib/php/20170718/FiftyOneDegreesHashEngine.so
 FiftyOneDegreesHashEngine.data_file=/path to your file/51Degrees-LiteV4.1.hash

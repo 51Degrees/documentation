@@ -1,4 +1,4 @@
-@page DeviceDetection_Examples_GettingStarted_Console_Index Getting Started - Console
+@page DeviceDetection_Examples_GettingStarted_Console_Index Getting started with console applications
 
 # Introduction
 
@@ -12,17 +12,14 @@ pipeline into a larger application.
 
 Two deployment models are covered:
 
-- **Cloud** — calls 51Degrees' hosted Cloud service over HTTPS. The simplest
-  path to a working detection: a Resource Key configures the pipeline, no data
-  file is needed locally. See @ref DeviceDetection_Examples_GettingStarted_Console_Cloud.
+- **Cloud** calls our hosted service over HTTPS. Configure the pipeline with a Resource Key. You do not need a local data file. See @ref DeviceDetection_Examples_GettingStarted_Console_Cloud.
 
-- **On-premise** — runs the Hash engine inside your own process against a
-  locally distributed data file. Suitable when network access is restricted or
-  when you need the lowest per-call latency. See
-  @ref DeviceDetection_Examples_GettingStarted_Console_OnPremise.
+- **On-premise** runs the Hash engine in your process with a local data file. Use it when network access is restricted or per-call latency is a priority. See @ref DeviceDetection_Examples_GettingStarted_Console_OnPremise.
 
-Both examples are available across every supported language with a matching
-pattern, so the same logic can be compared side by side. If you intend to
+The cloud example is available in C#, Java, Node.js, PHP, Python, and Rust, and
+the on-premise example in those languages and in C, C++, Nginx, and Varnish.
+Each follows the same pattern in every language, so the same logic can be
+compared side by side. If you intend to
 deploy inside a web framework rather than a console, see
 @ref DeviceDetection_Examples_GettingStarted_Web_Index instead.
 

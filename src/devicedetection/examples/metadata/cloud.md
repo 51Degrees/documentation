@@ -1,8 +1,8 @@
-@page DeviceDetection_Examples_Metadata_Cloud Metadata Cloud
+@page DeviceDetection_Examples_Metadata_Cloud Cloud metadata
 
 # Introduction
 
-This example shows how to interrogate the metadata returned by the 51Degrees Cloud service.
+This example shows how to read metadata returned by the 51Degrees Cloud service.
 
 @startsnippets
 @grabexample{device-detection-dotnet,_cloud_2_metadata-_console_2_program_8cs,C#}

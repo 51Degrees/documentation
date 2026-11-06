@@ -2,10 +2,7 @@
 
 # 51Degrees UAParser
 
-We've forked the popular UAParser.js library (which relies solely on a 
-[deprecated User-Agent](https://51degrees.com/blog/countdown-to-gday-phase-6-reduced-mobile-tablet-ua)) to create the
-[51Degrees UAParser](https://github.com/51Degrees/ua-parser-js), which has support for both User-Agents and User-Agent 
-Client Hints (UA-CH).
+The [51Degrees UAParser](https://github.com/51Degrees/ua-parser-js) supports User-Agents and User-Agent Client Hints (UA-CH). See the [User-Agent reduction background](https://51degrees.com/blog/countdown-to-gday-phase-6-reduced-mobile-tablet-ua) for the limits of User-Agent information.
 
 Depending on your environment, you may need to delegate UA-CH to the third-party cloud.51degrees.com domain.
 There are two ways to tell the browser that it is allowed to pass the Client Hints to the third-party domain:
@@ -17,7 +14,9 @@ You can find out more on which method is more suitable for your environment via
 [this UAParser blog](https://51degrees.com/blog/introducing-51degrees-uaparser). You can also see the 51Degrees UAParser 
 in action with this [UAParser demonstration page.](https://51degrees.github.io/ua-parser-js/)
 
-# Download UAParser {#Download_UAParser}## Download the 51D UAParser
+# Download UAParser {#Download_UAParser}
+
+## Download the 51Degrees UAParser
 
 The packages are available via:
 
@@ -27,7 +26,7 @@ The packages are available via:
 
 ## Migrating from UAParser.js to 51Degrees UAParser
 
-### Creating a Resource Key
+### Create a Resource Key
 
 Before integrating 51Degrees UAParser, you need to register and configure a 51Degrees Resource Key using the 
 [configure.51degrees.com](https://configure.51degrees.com/), where you choose the device 
@@ -85,9 +84,7 @@ To migrate this code to use 51Degrees UAParser:
 2. We need to either use Accept-CH and Permissions-Policy headers or add a Delegate-CH meta tag within the `<head>` 
 element. We chose the latter in the below migrated code snippet example.
 3. Change the script import statement to use the path to the new package in the src attribute or use a CDN link.
-4. The new 51Degrees UAParser is inherently asynchronous, thus UAParser is a promise. We prefer resolving promises 
-using the [await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await) keyword – in order to use the top-level await, we must set the script [type="module" ()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). 
-It is possible, however, to use the UAParser without await, calling then () instead.
+4. UAParser returns a promise. Use [await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await) to read the result. For top-level await, set the script [type to module](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). You can also handle the promise with then ().
 5. Here is the code to obtain the result object, notice the await keyword and the Resource Key: 
 `let result = await UAParser("<your Resource Key>");`
 6. The code below obtaining the result can stay the same, but if you had additional properties configured for 
@@ -171,10 +168,7 @@ Here is what we need to change to migrate this to use 51Degrees UAParser:
             https.createServer(options, async function (req, res) { 
             // note the await keyword and parameters 
                 let result = await UAParser("your Resource Key", req.headers); 
-                res.end("
-51Degrees:
-" + JSON.stringify(result, null, ' ') + "
-                ");
+                res.end("51Degrees: " + JSON.stringify(result, null, ' '));
             })
             .listen(443, '0.0.0.0');
 ```
@@ -205,16 +199,14 @@ Client Hints if it did not send them on the first attempt, so it starts another 
         // note the await keyword and parameters 
         let result = await UAParser("your Resource Key", req.headers); 
  
-        ch = 'Sec-CH-UA, Sec-CH-UA-Arch, Sec-CH-Bitness, Sec-CH-UA-Full-Version, \ 
-        Sec-CH-UA-Full-Version-List, Sec-CH-UA-Mobile, Sec-CH-UA-Model, \ 
-        Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version, Sec-CH-UA-WoW64' 
+        const ch = 'Sec-CH-UA, Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, ' +
+            'Sec-CH-UA-Full-Version-List, Sec-CH-UA-Mobile, Sec-CH-UA-Model, ' +
+            'Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version, Sec-CH-UA-WoW64'
  
         res.setHeader('Critical-CH',ch) 
         res.setHeader('Accept-CH', ch) 
  
-        res.end("
-51Degrees:
-" + JSON.stringify(result, null, ' ') + ""); 
+        res.end("51Degrees: " + JSON.stringify(result, null, ' ')); 
         }) 
         .listen(443, '0.0.0.0'); 
 ```

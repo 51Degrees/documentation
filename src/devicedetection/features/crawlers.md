@@ -2,7 +2,7 @@
 
 # Overview
 
-Key crawler properties include `CrawlerUsage` and `CrawlerProductTokens`. `CrawlerUsage` contains a list of the uses of the crawler data. Crawlers are categorised into one or more of the below crawler usage values based on our judgement of publicly available information from the crawler controller and any research.
+Key crawler properties include `CrawlerUsage` and `CrawlerProductTokens`. `CrawlerUsage` lists how the crawler uses collected data. We assign one or more usage values based on information published by the crawler operator and our research.
 
 
 # Values
@@ -29,25 +29,25 @@ Control what your content can be used for by checking the `CrawlerUsage` propert
 
 - **Feed** Indicates that the crawler is used for aggregating news, information, or data.
 
-- **Discovery** Indicates that the crawler is used to gain an understanding of the discoverability or search ranking of the crawled website or web page. Primarily relating to Search Engine Optimisation (SEO).
+- **Discovery** Indicates that the crawler gathers information about a website's discoverability or search ranking, primarily for search engine optimization (SEO).
 
 
 # IsArtificialIntelligence
 
 `IsArtificialIntelligence` is a property designed to give you easy answers about AI crawling. If the crawler has a `CrawlerUsage` related to AI this will be True.
 
-- **True** The crawler is confirmed by the controller to be used to train artificial intelligence.
+- **True** The crawler operates for an AI related purpose, such as the Index, Train, or Input uses in `CrawlerUsage`.
 
-- **False** The crawler is not used to train artificial intelligence. This may be based on the controller documentation or on the capabilities and purpose of the crawler. For crawlers which do not read website content it is assumed they cannot be used to train artificial intelligence.
+- **False** The crawler does not operate for an AI related purpose. This may be based on the controller documentation or on the capabilities and purpose of the crawler. For crawlers which do not read website content it is assumed they cannot be used for an AI related purpose.
 
-- **Unknown** It is not possible to determine whether the crawler is being used to train artificial intelligence.
+- **Unknown** It is not possible to determine whether the crawler operates for an AI related purpose.
 
 - **N/A** Not a crawler.
 
 
-# Signed Agents
+# Signed agents
 
-`IsCrawler` and the other crawler properties tell you what an agent declares about itself. An @agentsignature tells you what an agent has proved. The two are used together.
+`IsCrawler` and the other crawler properties tell you what a crawler declares about itself. A verified @agentsignature proves that the request was signed with a key that the crawler or agent publishes. The two are used together.
 
 A crawler declares itself through its User-Agent header, and any other program can send the same header, so a declaration is a claim. Under the IETF Web Bot Auth protocol an agent instead signs its request with a private key and publishes the matching public key on its own site. That signature either checks out or it does not, and it cannot be produced without the private key, so `AgentSignature` is proof where `IsCrawler` is a claim.
 

@@ -2,7 +2,7 @@
 
 This page is for a site whose consent management platform produces a TC string, which is how the IAB Europe Transparency and Consent Framework (TCF) records what a visitor consented to. The cloud reads that string, works out the usage of the @ref Identifiers_51Did from the purposes the string grants, and records inside the identifier that the usage came that way.
 
-Putting a consent management platform and the 51Degrees client script on a page is @ref Identifiers_PMP_CmpWiring. This page is what the cloud does with the string once it arrives.
+To connect a consent management platform to the 51Degrees client script, see @ref Identifiers_PMP_CmpWiring. This page explains how the cloud processes the resulting string.
 
 ## Sending the string
 

@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_FlowElements_OnPremiseEngine On-premise Engine
+@page PipelineApi_Concepts_FlowElements_OnPremiseEngine On-premise engine
 
 # Introduction
 
@@ -42,9 +42,8 @@ All 51Degrees **engines** have been designed so that processing will be uninterr
 
 ## Temporary data files
 
-An **engine** can optionally create a temporary copy of the data file to use. This is good practice when making use of the
-[update functionality](@ref PipelineApi_Features_AutomaticDatafileUpdates), as an **engine** can be configured so that it streams data from the data file. When a temporary data file
-is used, the original data file cannot be updated because the **engine** will have a lock on the file.
+An **engine** can optionally create a temporary copy of the data file to use. When an **engine** streams data from the data file rather than loading it all into memory, the temporary copy is needed for the
+[update functionality](@ref PipelineApi_Features_AutomaticDatafileUpdates), because the **engine** keeps the file it reads from open. With a temporary copy, the original data file is free to be updated.
 
 ## Metadata
 

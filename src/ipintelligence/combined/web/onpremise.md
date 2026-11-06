@@ -1,4 +1,4 @@
-@page IpIntelligence_Combined_Web_OnPremise On-Premise Web
+@page IpIntelligence_Combined_Web_OnPremise On-premise web
 
 # Introduction
 

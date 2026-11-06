@@ -1,4 +1,4 @@
-@page PipelineApi_Examples_CustomElement_ClientSideEvidence Custom Engine Using Client-Side Evidence
+@page PipelineApi_Examples_CustomElement_ClientSideEvidence Custom engine using client-side evidence
 
 # Introduction
 
@@ -6,8 +6,7 @@ This example takes the very simple @flowelement described in the
 [simple flow element example](@ref PipelineApi_Examples_CustomElement_FlowElement), and adds
 a JavaScript @property to use @clientsideevidence. 
 
-Instead of using @evidence which is already available, as the [simple flow element example](@ref PipelineApi_Examples_CustomElement_FlowElement)
-did, this example will send JavaScript to the client to get the @evidence.
+The [simple flow element example](@ref PipelineApi_Examples_CustomElement_FlowElement) uses @evidence already available to the server. This example sends JavaScript to the browser to collect @evidence.
 
 # Download example
 
@@ -35,13 +34,12 @@ To include this, add the following to the `<dependencies>` section of the projec
 <dependency>
     <groupId>com.51degrees</groupId>
     <artifactId>pipeline.core</artifactId>
-    <version>4.2.0</version>
+    <version>4.5.128</version>
 </dependency>
 ```
 @endsnippet
 @startsnippet{node}
-Add a dependency to the `fiftyone.pipeline.core` NPM package to the package.json, and required it
-in the source with `require("fiftyone.pipeline.core")`.
+Add the `fiftyone.pipeline.core` npm package as a dependency in package.json, then load it with `require("fiftyone.pipeline.core")` in your source.
 @endsnippet
 @endsnippets
 
@@ -244,7 +242,7 @@ client-side JavaScript automatically run.
 @showsnippet{node,Node.js}
 @defaultsnippet{Select a tab to view language specific usage.}
 @startsnippet{dotnet}
-Using a ASP.NET Core project (full example included in the source), a [pipeline configuration](@ref PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration) file can be
+Using an ASP.NET Core project (full example included in the source), a [pipeline configuration](@ref PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration) file can be
 added to the 'appsettings.json' to load the new @flowelement and a 'JavaScriptBuilderElement' to
 include the client-side JavaScript:
 ```{json}
@@ -322,7 +320,7 @@ The message is constructed in the controller in the same way as in the [previous
 
 @endsnippet
 @startsnippet{node}
-Using a simple HTTP server, a pipeline can created containing the new @flowelement.
+Using a simple HTTP server, create a pipeline containing the new @flowelement.
 ```{js}
 let pipeline = new FiftyOnePipelineCore.pipelineBuilder()
     .add(astrology)

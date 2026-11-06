@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_Data_EvidenceKeyFilter Evidence Key Filter
+@page PipelineApi_Concepts_Data_EvidenceKeyFilter Evidence key filter
 
 # Introduction
 
@@ -16,8 +16,7 @@ for more technical details.
 
 # Usage
 
-**Evidence key filters** are used by @flowdata to generate @datakeys. These @datakeys can then
-used in @caching.
+Use **evidence key filters** with @flowdata to generate @datakeys for @caching.
 This allows the @datakey to contain the minimum amount of necessary information to determine
 if a given @flowdata will result in the same output from a given @aspectengine as another, regardless
 of any other values that may be present in the @evidence.
@@ -35,7 +34,7 @@ are in a list supplied at construction time.
 
 ## Filter aggregator
 
-The filter aggregator combines multiple filters together using a logical OR approach, i.e. if any one of the child filters would allow the inclusion of an evidence key then this aggregator will allow it as well.
+The filter aggregator includes an evidence key if any child filter includes it. This combines the filters with a logical OR.
 
 ## Share usage filter
 
@@ -44,13 +43,15 @@ It will include anything that meets the following criteria:
 
 1. Any HTTP header.
 2. Any cookie with a name that starts with '51D_'.
-3. A user session cookie.
-4. Any evidence that is not a header, cookie or query string parameter.
+3. A user session cookie, in .NET and Java. It is used only to tell user sessions apart when session tracking is turned on, and it is never sent to 51Degrees.
+4. Any session value with a name that starts with '51D_'.
+5. Any evidence that is not a header, cookie, session value or query string parameter.
+
+In .NET, evidence named `id.email`, `id.salt`, `request-query` or `request-path` is never shared, whatever its prefix and however the filter is configured.
 
 Configuration options allow this to be tuned to meet your requirements:
 
 1. A blacklist of HTTP header names to exclude from sharing can be supplied.
-2. Sharing of user session cookies can be disabled and the name of the cookie
-  is customizable. (This will default to the appropriate cookie for the language, 
-  for example the ASP.NET session cookie in .NET)
+2. In .NET and Java, session tracking can be turned on and the name of the session cookie
+  can be changed. (The default is the ASP.NET session cookie in .NET and `JSESSIONID` in Java.)
 3. A whitelist of query string parameters to share can be supplied.

@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_Configuration_Builders_ElementBuilder Element Builder
+@page PipelineApi_Concepts_Configuration_Builders_ElementBuilder Element builder
 
 # Introduction
 
@@ -46,8 +46,8 @@ However, if they want to take advantage of the @buildfromconfiguration method on
 follow certain rules:
 
 1. A configuration method on an **element builder** must have one and only one parameter.
-2. The builder must have at least one method named 'Build' which returns an instance that implements `FlowElement`.
-3. The types of any parameters on configuration methods and build methods must be string or have a static `parse` method. This can be in the boxed class in the case of primative type e.g. `Integer.parseInt` is used for `int`. It is used to parse the string value from the configuration file.
+2. The builder must have at least one method named 'build' which returns an instance that implements `FlowElement`.
+3. The types of any parameters on configuration methods and build methods must be string or have a static `parse` method. This can be in the boxed class in the case of primitive type, for example, `Integer.parseInt` is used for `int`. It is used to parse the string value from the configuration file.
 @endsnippet
 @endsnippets
 
@@ -58,8 +58,7 @@ with the configuration provided.
 A build method can take additional arguments and a **builder** may have multiple build methods.
 When an argument appears on all build methods for that **builder** it becomes compulsory.
 
-For example, a 'Resource Key' is compulsory for 51Degrees' @cloudengines. Consequently, it appears as 
-an argument in all build methods for the associated **builders**.
+Not every compulsory option is a build argument. For example, 51Degrees' @cloudengines need a 'Resource Key', which is set on the cloud request engine's builder with `SetResourceKey` in .NET or `setResourceKey` in Java. Building fails with an exception if no key has been set.
 
 Combinations of compulsory arguments can also be arranged. For example, 51Degrees' @onpremiseengines 
 require either a filename or a data structure containing the file data in memory.

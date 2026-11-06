@@ -1,12 +1,8 @@
-@page PipelineApi_Features_ResultCaching Result Caching
+@page PipelineApi_Features_ResultCaching Result caching
 
 # Introduction
 
-**Results caching** refers to a cache that exists at the level of an @aspectengine.
-If **caching** is enabled then when a request arrives at the @aspectengine, it will first check
-to see if it has recently processed a request with the same evidence. If it has then the 
-result determined from the previous processing will be returned without any further work
-being required.
+With **result caching** enabled, an @aspectengine checks for a cached result matching the request's evidence. If a match exists, the engine returns that result instead of processing the evidence again.
 
 **Results caching** will provide improved performance in most scenarios where the processing
 time of an @aspectengine is significant. However, profiling should always be undertaken to 
@@ -18,8 +14,8 @@ may have internal caches for various reasons, these are separate to the @Pipelin
 
 In the .NET API, @aspectengines can be configured to flag whether an instance of
 @Aspectdata has originated from the cache or from processing of the engine. For example, 
-if CacheHitOrMiss is set to true then the CacheHit value will be set to true
-on the @Aspectdata. The primary use case for this is to validate in testing 
+if `CacheHitOrMiss` is set to true, then `CacheHit` is true on @aspectdata that came
+from the cache and false on @aspectdata that the engine produced. The primary use case for this is to validate in testing 
 whether a cache hit or miss has occurred.
 
 See the

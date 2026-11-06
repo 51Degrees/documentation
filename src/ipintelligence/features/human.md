@@ -8,6 +8,6 @@ We do this using a mixture of data points including the declarations made by the
 
 # Usage
 
-The `HumanProbability` property returns a value between `1` and `10`. The value is our assessment as to the likelihood that the provided IP address relates to a human, or not. `1` means it is very unlikely to be a human, `10` highly likely.
+The `HumanProbability` property returns a value from `0` to `10`, or `-1` when the probability is unknown. The value is our assessment of how likely it is that the IP address relates to a human. `0` to `3` means low confidence that it is a human, `4` to `6` medium confidence, and `7` to `10` high confidence.
 
 See the [property dictionary](https://51degrees.com/developers/property-dictionary?item=Location%7CHuman%20Detection) for more information.

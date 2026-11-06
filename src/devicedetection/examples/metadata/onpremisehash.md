@@ -1,8 +1,8 @@
-@page DeviceDetection_Examples_Metadata_OnPremiseHash Metadata On-premise Hash
+@page DeviceDetection_Examples_Metadata_OnPremiseHash On-premise Hash metadata
 
 # Introduction
 
-This example shows how to interrogate the metadata associated with the contents of a Device Detection @datafile.
+This example shows how to read metadata about a Device Detection @datafile.
 
 @startsnippets
 @showsnippet{c,C}
@@ -14,7 +14,7 @@ This example shows how to interrogate the metadata associated with the contents 
 @grabexample{device-detection-python,onpremise_2metadata_console_8py,Python}
 @grabexample{rust,dd-onprem-metadata,Rust}
 @startsnippet{c}
-Metadata is only available in C++ wrapper layer to provide a convenient way for higher level languages to access additional data to internal components of the Device Detection engine. C developer can access these information directly without a need for additional MetaData entities.
+The C++ wrapper exposes metadata so that higher-level languages can access internal Device Detection data. In C, you can access this information directly without additional metadata objects.
 @endsnippet
 @grabbedexample
 @endsnippets

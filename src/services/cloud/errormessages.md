@@ -1,8 +1,8 @@
-@page Services_Cloud_ErrorMessages Error Messages
+@page Services_Cloud_ErrorMessages Error messages
 
 # Cloud error response messages
 
-This page contains explainers for cloud error messages when using 51Degrees services.
+Use this page to diagnose errors returned by the 51Degrees Cloud service.
 
 ### Continuous processing of unique User-Agents {#Continuous_processing_of_unique_User_Agents}
 Continuous processing of unique User-Agents is limited. This is to limit the amount of offline processing that is performed using the 51Degrees Cloud service. You can resume making requests when the number of seconds in the `Retry-After` response header has elapsed. To find out more see the [cloud documentation](https://cloud.51degrees.com/api-docs/index.html)
@@ -15,7 +15,7 @@ There is an issue with the Cloud service. Check the @servicestatuspage for curre
 If the problem persists then please create a new issue on our [cloud-issues GitHub](https://github.com/51Degrees/cloud-issues/issues) repository.
 
 ### Invalid License supplied {#Invalid_license_supplied}
-The supplied License Key(s) do not contain any valid products for the 51Degrees Cloud service. The keys you have provided will be displayed in the error message returned from the service. Validate that these are the same keys found in your sign-up email. If the keys match, then please refer to our [pricing page](https://51degrees.com/pricing) to validate you have chosen the correct subscription.
+The supplied License Key(s) do not contain any valid products for the 51Degrees Cloud service. The keys you have provided will be displayed in the error message returned from the service, so remove them before you share the message anywhere public, such as a GitHub issue, because anyone who has a License Key can make requests that count against its subscription. Validate that these are the same keys found in your sign-up email. If the keys match, then please refer to our [pricing page](https://51degrees.com/pricing) to validate you have chosen the correct subscription.
 
 ### Invalid product {#Invalid_product}
 The product(s) mentioned in the error message is invalid. Cross-reference this with the mapping in the @ref Product_to_subscription_mapping "product to subscription mapping" and check that you have access to the correct subscription by checking your sign-up email. Otherwise, please see our [pricing page](https://51degrees.com/pricing) for details.
@@ -30,13 +30,13 @@ Your subscription does not contain the products required to access location prop
 This error means that there are no properties that are offered by the Cloud service which can be accessed by the available products that are defined by your License Keys. The error will list the available products, cross-reference this with the mapping in the @ref Product_to_subscription_mapping "product to subscription mapping" and the [property dictionary](https://51degrees.com/developers/property-dictionary).
 
 ### Non-unique properties requested {#Non_unique_property_requested}
-A non-unique property has been requested; make sure that each property is only requested once and specify the property name in the format: `<product>.<property>` to avoid ambiguity, e.g., `device.ismobile` or `location.country`. This may occur when using the `values` parameter in requests to the Cloud service. Refer to the [cloud property metadata](https://cloud.51degrees.com/api/metadata/properties) for a list of valid properties IDs.
+Request each property only once. Use the `<product>.<property>` format, such as `device.ismobile` or `location.country`, to avoid ambiguity when using the `values` parameter. See [cloud property metadata](https://cloud.51degrees.com/api/metadata/properties) for valid property IDs.
 
 ### Only add-on product provided {#Only_add_on_product_provided}
-This product is an add-on to one of the plans outlined on the [pricing page](https://51degrees.com/pricing). The base subscription is licensed in a separate Licence Key. Ensure this Licence Key found in your sign-up email has been included when creating your Resource Key on [configure.51degrees.com](https://configure.51degrees.com/).
+This product is an add-on to one of the plans outlined on the [pricing page](https://51degrees.com/pricing). The base subscription is licensed in a separate License Key. Ensure this License Key found in your sign-up email has been included when creating your Resource Key on [configure.51degrees.com](https://configure.51degrees.com/).
 
 ### Product to subscription mapping {#Product_to_subscription_mapping}
-Some error messages from the 51Degrees Cloud service may list the products that are available in the request or the products that are required to resolve the error. These map to a subscriptions references on the @pricing page and the [property dictionary](https://51degrees.com/developers/property-dictionary).
+Some cloud error messages list the products available to the request, or the products needed to resolve the error. Match those products to the subscriptions on the @pricing page and the [property dictionary](https://51degrees.com/developers/property-dictionary).
 
 ### Products in subscription not valid {#Products_in_subscription_not_valid}
 The products available in your subscription are not valid. Refer to the error message for products available in your subscription and cross reference this with the mapping in the @ref Product_to_subscription_mapping "product to subscription mapping". Check that you have access to the correct subscription by checking your sign-up email, otherwise, please see our [pricing page](https://51degrees.com/pricing) to sign up for a valid 51Degrees Cloud product.
@@ -48,7 +48,7 @@ There were no products available that are associated with the Cloud service. Ref
 There are no available properties which are associated with the products determined in the request. Refer to the products listed in the original error message and the mapping in the @ref Product_to_subscription_mapping "product to subscription mapping", then visit the 51Degrees [property dictionary](https://51degrees.com/developers/property-dictionary) to see the table of available properties for your subscription.
 
 ### Referer or origin header not set {#Referer_or_Origin_header_not_set}
-The Referer or Origin header has not been provided in the request. These headers are used to validate that the traffic has originated from a legitimate source. Make sure that the Referer or Origin header is set when making requests to the 51Degrees Cloud service. You can resume making requests when the number of seconds in the `Retry-After` response header has elapsed. If using one of the native pipeline APIs then you can use the `CloudRequestOrigin` setting in the Pipeline or Cloud Request Engine builder to specify the origin. Note that, as with all engine builder methods, this can also be specified in the configuration file.
+A Resource Key that names domains is accepted only from a request whose `Referer` or `Origin` header names one of them. A request with neither header is refused with `401` and the message under [Resource Key not authorized on domain](@ref Resource_key_not_authorized_on_domain), naming an empty domain. A Resource Key that names no domains, and a License Key sent alone, need neither header, which suits a server. See [the domains a Resource Key accepts](@ref Resource_key_domains). If using one of the native pipeline APIs then you can use the `CloudRequestOrigin` setting in the Pipeline or Cloud Request Engine builder to specify the origin. Note that, as with all engine builder methods, this can also be specified in the configuration file.
 
 ### Requests have been blocked {#Requests_have_been_blocked}
 Your requests to the service have been blocked. This is because the requests to the Cloud service have been found in breach of the terms of service and access to the service has been removed. For details, please review the 51Degrees [terms and policies](https://51degrees.com/terms).
@@ -75,10 +75,10 @@ A Resource Key is required to access the 51Degrees Cloud service. This contains 
 The OWID public-key endpoint, `/owid/api/v3/public-key`, needs a Resource Key or a License Key, and returns `401` without one. Its plain-text answer lists the places to supply one, being the `X-51D-Resource-Key` or `X-51D-License-Key` header, the `resource=` or `license=` query parameter, or a `resource` or `license` form field. A License Key alone is enough, with no `values` list, because the endpoint always returns the same fields.
 
 ### Sequence value invalid {#Sequence_value_invalid}
-The value for the `sequence` parameter could not be parsed to an integer, make sure that the `sequence` value is an integer. If the problem persists then please create a new issue on our [cloud-issues GitHub](https://github.com/51Degrees/cloud-issues/issues) repository.
+The `sequence` parameter must be an integer. Check its value and retry. If the error persists, create an issue in the [cloud-issues GitHub](https://github.com/51Degrees/cloud-issues/issues) repository.
 
 ### Sequence value not found {#Sequence_value_not_found}
-The value for the `sequence` parameter could not found. If the `sequence` parameter has been provided in the request, make sure that the value in is an integer. Otherwise, please create a new issue on our [cloud-issues GitHub](https://github.com/51Degrees/cloud-issues/issues) repo.
+The `sequence` value could not be found. If you supplied the `sequence` parameter, check that its value is an integer. Otherwise, create an issue in the [cloud-issues GitHub](https://github.com/51Degrees/cloud-issues/issues) repository.
 
 ### Signing key date malformed {#Signing_key_date_malformed}
 The `date` parameter on the OWID public-key endpoint (`/owid/api/v3/public-key?date=`) could not be parsed. It must be an unsigned 32-bit integer giving the number of minutes since `2020-01-01T00:00:00Z` (the OWID envelope's date encoding). Returned as HTTP `400`.
@@ -96,4 +96,4 @@ The supplied License Key(s) do not contain any valid products for the 51Degrees 
 Your trial period has expired. To keep using the Cloud service, please upgrade your subscription. See our [pricing page](https://51degrees.com/pricing) for details on subscriptions.
 
 ### Values required for license-key call {#Values_required_for_license_key_call}
-This request authenticated with a License Key but did not list which properties to return. A bare License Key has no property list, so License-key callers must list the properties they want via `values`: the `X-51D-Values` header, the `?values=` query parameter, or a `values` form field. See the 51Degrees [Property Dictionary](https://51degrees.com/developers/property-dictionary) for the properties available on your license. Returns `400`.
+This request authenticated with a License Key but did not list which properties to return. A bare License Key has no property list, so Callers using a License Key must list the properties they want via `values`: the `X-51D-Values` header, the `?values=` query parameter, or a `values` form field. See the 51Degrees [Property Dictionary](https://51degrees.com/developers/property-dictionary) for the properties available on your license. Returns `400`.

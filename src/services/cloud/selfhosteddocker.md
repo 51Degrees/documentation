@@ -1,10 +1,10 @@
-@page Services_Cloud_SelfHostedDocker Self-Hosted Docker
+@page Services_Cloud_SelfHostedDocker Self-hosted Docker
 
 The Self-Hosted Cloud Docker image runs the
 [51Degrees Cloud Service](@ref Services_Cloud_Overview) API entirely on your own
 infrastructure. It is **single-tenant**: every request is authorized by the
 License Key(s) you start the container with. There are no
-[resource keys](@ref Services_Cloud_ResourceKeys), and the container makes
+[Resource Keys](@ref Services_Cloud_ResourceKeys), and the container makes
 **no outbound calls** to 51Degrees services - no usage sharing and no
 entitlement/billing lookups.
 
@@ -19,7 +19,7 @@ documentation served by the running container at `/api-docs`.
   to it. It already contains the data files it needs (see Data Files below).
 - One or more 51Degrees **License Keys** that entitle the products you need.
 
-# Data Files
+# Data files
 
 The data files are baked into the `51degrees/cloud-private` image at
 `/app/data/assets`, so you do not need to supply or mount anything:
@@ -31,7 +31,7 @@ The data files are baked into the `51degrees/cloud-private` image at
 each image is tagged with its build date. To move to newer data, pull a newer
 image (see Updating).
 
-# Environment Variables
+# Environment variables
 
 | Variable | Required | Description |
 | -------- | -------- | ----------- |

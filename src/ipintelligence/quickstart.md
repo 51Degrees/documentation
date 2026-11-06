@@ -1,10 +1,10 @@
-@page IpIntelligence_Quickstart IP Intelligence Quick Start
+@page IpIntelligence_Quickstart IP Intelligence quick start
 
-# Getting Started with IP Intelligence
+# Getting started with IP Intelligence
 
 IP Intelligence provides geolocation, ISP, connection type, and network information from IP addresses. It helps enhance user experience, security, and content delivery.
 
-## Choose Your Integration
+## Choose your integration
 
 ### Cloud API
 **Best for:** Quick deployment, minimal infrastructure, always up-to-date data
@@ -12,16 +12,16 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 **Benefits:**
 - **No infrastructure** - No servers or data files to manage
 - **Always updated** - Latest IP intelligence data automatically
-- **Quick setup** - Get running in minutes with just an API key
+- **Quick setup** - Create a Resource Key to configure your cloud request
 
 **Things to consider:**
 - **Internet dependency** - Requires network connectivity
 - **Latency** - Network round-trip time for each request
 - **Data processing** - Occurs on 51Degrees infrastructure
 
-**Licensing:** Will require a [Resource Key](https://configure.51degrees.com) once launched. [Contact us](https://51degrees.com/contact-us) to start your IP Intelligence trial.
+**Licensing:** Requires a [Resource Key](https://configure.51degrees.com), which is free to create. The free plan includes the country and `LocationConfidence`, and paid plans add more IP Intelligence properties. See [pricing](https://51degrees.com/pricing).
 
-### On-premise Deployment
+### On-premise deployment
 **Best for:** High-performance, data-sensitive, or offline environments
 
 **Benefits:**
@@ -38,13 +38,13 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 
 **Licensing:** Requires a [License Key](https://51degrees.com/pricing)
 
-### Combined Device Detection + IP Intelligence
-**Best for:** Comprehensive user profiling and enhanced accuracy
+### Combine Device Detection and IP Intelligence
+**Best for:** Combining device characteristics with network and location data
 
 **Benefits:**
 - **Complete user context** - Combine location/network data with device characteristics
 - **Enhanced fraud detection** - Cross-reference device properties with IP risk data
-- **Optimized content delivery** - Device capabilities + geographic location for perfect targeting
+- **Content delivery** - Use device capabilities and geographic location to tailor content
 - **Advanced analytics** - Rich user segmentation with both device and location dimensions
 
 **Things to consider:**
@@ -54,7 +54,7 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 
 **Licensing:** Requires licenses for both Device Detection and IP Intelligence services
 
-## Language-Specific Integration
+## Language-specific integration
 
 Select your language below for detailed setup instructions:
 
@@ -91,7 +91,7 @@ To get started with C++ IP intelligence On-premise:
 
 @endsnippet
 @startsnippet{dotnet}
-### Console Applications
+### Console applications
 
 1. Install the [FiftyOne.IpIntelligence](https://www.nuget.org/packages/FiftyOne.IpIntelligence) package via Nuget.
 2. Choose your deployment option:
@@ -99,7 +99,7 @@ To get started with C++ IP intelligence On-premise:
    * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - Local processing with data files
    * [Combined Example](@ref IpIntelligence_Combined_Console_OnPremise) - Mix IP Intelligence with Device Detection
 
-### Web Applications (ASP.NET Core)
+### Web applications (ASP.NET Core)
 
 1. Install the [FiftyOne.IpIntelligence](https://www.nuget.org/packages/FiftyOne.IpIntelligence) and [FiftyOne.Pipeline.Web](https://www.nuget.org/packages/FiftyOne.Pipeline.Web) packages via Nuget.
 2. Follow the [web integration guide](@ref PipelineApi_Examples_WebIntegration) to add the @Pipeline middleware.
@@ -110,7 +110,7 @@ To get started with C++ IP intelligence On-premise:
 
 @endsnippet
 @startsnippet{java}
-### Console Applications
+### Console applications
 
 1. Add the IP Intelligence dependency to your project:
    ```xml
@@ -124,7 +124,7 @@ To get started with C++ IP intelligence On-premise:
 2. Choose your deployment option:
    * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - Local processing with data files
 
-### Web Integration
+### Web integration
 
 For web applications, add the web integration dependency:
 ```xml
@@ -139,7 +139,7 @@ Choose your deployment option:
 
 @endsnippet
 @startsnippet{go}
-### Console Applications
+### Console applications
 
 1. Install the IP Intelligence package:
    ```bash
@@ -148,21 +148,21 @@ Choose your deployment option:
 2. Choose your deployment option:
    * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - Local processing with data files
 
-### Web Integration
+### Web integration
 
 For web applications, you can integrate IP Intelligence into your HTTP handlers:
 * [On-premise Web Example](@ref IpIntelligence_Examples_GettingStarted_Web_OnPremise) - Local processing
 
 @endsnippet
 @startsnippet{rust}
-### Console Applications
+### Console applications
 
 1. Add the [`fiftyone-ip-intelligence`](https://crates.io/crates/fiftyone-ip-intelligence) crate from crates.io (for example with `cargo add fiftyone-ip-intelligence`).
 2. Choose your deployment option:
    * [On-premise Example](@ref IpIntelligence_Examples_GettingStarted_Console_OnPremise) - Local processing with a data file.
    * [Cloud Example](@ref IpIntelligence_Examples_GettingStarted_Console_Cloud) - The 51Degrees cloud service, no local data file.
 
-### Web Integration
+### Web integration
 
 For web applications, integrate IP Intelligence into your axum handlers:
 * [On-premise Web Example](@ref IpIntelligence_Examples_GettingStarted_Web_OnPremise) - Local processing.

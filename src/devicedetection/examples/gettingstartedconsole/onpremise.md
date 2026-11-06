@@ -1,13 +1,10 @@
-@page DeviceDetection_Examples_GettingStarted_Console_OnPremise Getting Started Console On-premise
+@page DeviceDetection_Examples_GettingStarted_Console_OnPremise Getting started with on-premise detection in a console application
 
 # Introduction
 
-This example shows how to get set up an On-premise Device Detection @aspectengine and use it 
-to process User-Agents and/or User-Agent Client Hints.
+This example shows how to set up an on-premise Device Detection @aspectengine to process User-Agents, User-Agent Client Hints, or both.
 
-There are many different ways to use the pipeline. Rather that creating examples for every scenario, 
-we have used the following table where possible when creating the 'getting started' examples. 
-You can mix and match elements from different examples in order to match your use case.
+The table shows how each example configures the pipeline. You can combine elements from different examples to suit your application.
 
 |            | Console             | Web                 |
 |------------|---------------------|---------------------|
@@ -27,15 +24,15 @@ You can mix and match elements from different examples in order to match your us
 @grabexample{rust,dd-onprem-getting-started,Rust}
 @grabbedexample
 @startsnippet{varnish}
-This example shows how to use 51Degrees On-premise device detection to determine details about a device based on its User-Agent and User-Agent Client Hint HTTP header values.
+This example shows how to use 51Degrees On-premise device detection to determine details about a device based on its User-Agent HTTP header value. To use User-Agent Client Hints as well, call `match_all` instead of `match_single`.
 
 This example is available in full on [GitHub](https://github.com/51Degrees/51degrees-varnish/blob/main/examples/hash/gettingStarted.vcl).
 
 @include{doc} example-require-datafile.txt
 
-The path to the data needs to be updated before running the example.
+Update the data file path before running the example.
 
-In a Linux environment, the following commands:
+In a Linux environment, run the following commands:
 
 ```bash
 $ curl localhost:8080 -I -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
